@@ -1,0 +1,318 @@
+SOURCE: 1.0 Maintenance & Repair\1.10 Continuous Improvement\3. Quick Win\Spreader Bar Protection.pdf
+PAGES: 9
+ENCRYPTED: True
+DECRYPT: 1
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2015 
+1505-1.10-1378 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Spreader Bar Protection  
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Spreader Bar Protection ............................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ............................................ 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Spreader Bar Protection 
+DATE 
+7/10/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1505-1.10-1378 
+Caterpillar Confidential:  GREEN          Page 1 of 8 
+ 
+1.0 Introduction  
+The dragline uses hoist chains to lift the bucket up and lower it down. Hoist chains are on both 
+sides of the bucket. A spreader bar is between the upper hoist chain and lower hoist chain and it 
+is used to prevent the hoist chains rubbing on the bucket. See below picture. 
+ 
+Figure 1 Spread bar with rubber protection 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Spreader Bar Protection 
+DATE 
+7/10/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1505-1.10-1378 
+Caterpillar Confidential:  GREEN          Page 2 of 8 
+The dimensions of a new spreader bar will vary depending upon the size of the bucket. 
+ 
+Figure 2 New spreader bar 
+ 
+ 
+2.0 Best Practice Description 
+For initial operation of the dragline, especially for new operators, the service life of the spreader 
+bar is very short, about two months. Sometimes even shorter to about a few hours depending on 
+the operator’s skills. Once it was broken, maintenance people must rush to the site, a crane must 
+be used to restore the dragline back to operation as soon as possible, even at night shift. 
+ 
+Figure 3 Broken spreader bar 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Spreader Bar Protection 
+DATE 
+7/10/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1505-1.10-1378 
+Caterpillar Confidential:  GREEN          Page 3 of 8 
+ 
+Figure 4 Typical Failures   
+ 
+Most of spreader bars were broken by hitting the top of the bucket. The key to prolong the service 
+life of the spreader bar is to prevent it from hitting on the bucket, which seems impossible.  Given 
+they cannot completely avoid the spreader bar hitting against bucket, a method to reduce the 
+hitting force was created. Used rubber tires are put on the spreader bar to reduce direct impact to 
+spreader bar. It has been proven this works effectively. See Pic 5 and Pic 6 below. 
+ 
+ 
+Figure 5 Spreader bar without rubber protection 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Spreader Bar Protection 
+DATE 
+7/10/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1505-1.10-1378 
+Caterpillar Confidential:  GREEN          Page 4 of 8 
+ 
+Figure 6 Spreader bar with rubber protection 
+ 
+3.0 Implementation Steps 
+ 
+NOTICE  
+Dispose of all rubber tires according to local regulations and mandates. 
+  
+WARNING! 
+IT IS ESSENTIAL THAT ALL APPROPRIATE SAFETY MEASURES SUCH AS THOSE SET 
+FORTH IN THE APPLICABLE MACHINE MAITENANCE MANUAL ARE FOLLOWED UP 
+ACCORDING THE PERFORMACE OF THIS WORK. 
+ 
+Find and collect the old useless rubber tires, make sure the inner hole diameter is over 20 inches 
+and the outer diameter is roughly the same. Put them on the spreader bar one by one closely. 
+  
+Depending on the tube size and length of the spreader bar, the quantity and size of the rubber 
+tires used on the spreader bar will vary accordingly. 
+ 
+EDITORS NOTE: Please note the extra weight added to the boom by this practice.  Follow 
+appropriate safety measures to ensure boom is not over its rated capacity.  This may require not 
+filling buckets to capacity. 
+ 
+  
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Spreader Bar Protection 
+DATE 
+7/10/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1505-1.10-1378 
+Caterpillar Confidential:  GREEN          Page 5 of 8 
+4.0 Benefits 
+ 
+The exact benefits per year is difficult to calculate, but according to customer’s statistics: 
+ 
+Money Saved 
+• Repair Cost: 
+o Over $800K USD per year  
+o I t includes the machine down time, employee’s salary, the auxiliary equipment and 
+tools, such as cranes, trucks, all materials consumed, such as welding rods, oxygen 
+and acetylene, angle grinders and so on. 
+• Increased uptime 
+o I t also increased the dragline uptime and made the customer satisfied and 
+increased loyalty. 
+ 
+5.0 Resources Required 
+ 
+• Old useless rubber tires 
+• Trucks 
+• Cranes 
+• General tools 
+ 
+ 
+  
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Spreader Bar Protection 
+DATE 
+7/10/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1505-1.10-1378 
+Caterpillar Confidential:  GREEN          Page 6 of 8 
+6.0 Supporting Attachments / References 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Spreader Bar Protection 
+DATE 
+7/10/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1505-1.10-1378 
+Caterpillar Confidential:  GREEN          Page 7 of 8 
+ 
+ 
+ 
+  
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Spreader Bar Protection 
+DATE 
+7/10/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1505-1.10-1378 
+Caterpillar Confidential:  GREEN          Page 8 of 8 
+ 
+ 
+7.0 Related Best Practices 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+Would like to acknowledge the contributions of the following Heidaigou coal mine personnel for 
+providing material to the creation of this Best Practice: 
+ 
+Li Baiyu: Dragline workshop supervisor 
+Li Xuefei: Dragline workshop deputy supervisor 
+Li Xinbiao: Mechanical and Electrical Office Chief 
+ 
+This Best Practice was written by: 
+Name: Morgan Han 
+Title: Acting Project Manager, Zhungeer mine site, WesTrac China 
+E-mail: Morgan.han@westrac.com.cn
+ 
+Phone: +86-18910856535

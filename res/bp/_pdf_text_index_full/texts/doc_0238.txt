@@ -1,0 +1,164 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Dealer Fabricated Tool Management.pdf
+PAGES: 3
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+November 2006  
+1106-4.4-1041  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Dealer Fabricated Tool 
+Management  
+ 
+Application  Maintenance  Site 
+Management  
+Component 
+Rebuild Safety MARC 
+Management  
+ 
+ 
+ 
+Dealer Fabricated Tool Management ........................ 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 3 
+5.0  Resources Required .......................................... 3 
+6.0  Supporting Attachments / References ............... 3 
+7.0  Related Best Practices ...................................... 3 
+8.0  Acknowledgements ........................................... 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Dealer Fabricated Tool Management 
+DATE 
+4/11/2017 
+CHG 
+NO 
+02 
+NUMBER 
+1106-4.4-1041  
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+1.0 Introduction  
+ 
+Dealers design and fabricate many tools used in the service department, on service vehicles, and 
+on jobsites.  Fabricated tooling and equipment typically includes workbenches, rebuild stands, 
+material handling equipment, parts cleaning and staging baskets, and many specialty tools. 
+Often, fabricated tools are created without a formal process to design or manufacture the tool, or 
+to maintain, track, repair, or replace the tool if lost or damaged.  This Best Practice discusses a 
+fabricated tooling management process. 
+ 
+2.0 Best Practice Description 
+ 
+Proper tooling is important for rebuild quality and labor efficiency.  Whether the tool is a 
+purchased tool or a fabricated tool, the impact is the same if the tool is not available when 
+needed. 
+ 
+A purchased tool is easier to maintain, repair, or replace because required parts can be ordered 
+from the supplier.  When a tool has been designed and manufactured in-house, the part numbers 
+and specifications of the tool may be unknown unless there is a fabricated tool management 
+process in place. 
+ 
+An effective fabricated tool management process includes: 
+• Practice that all fabricated tools have an enginee ring-quality blueprint on file with design 
+dimensions and specifications as well as any purchased part numbers and suppliers 
+identified. 
+• Fabricated tool engineering blueprints are stored in a database by SCMS code for easy 
+search if needed.  Engineering blueprints are usually stored electronically in a PDF format. 
+• Any maintenance that the tool may require is defin ed in the design blueprint.  Maintenance 
+is tracked through the normal tooling PM processes. 
+• Some dealers also record cost in time and material s to fabricate the tool. 
+ 
+ 
+See example below: Fabricated Final Drive Bearing Cup Removal Tool - 793 
+     
+  
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Dealer Fabricated Tool Management 
+DATE 
+4/11/2017 
+CHG 
+NO 
+02 
+NUMBER 
+1106-4.4-1041  
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+3.0 Implementation Steps 
+ 
+• Develop an engineering drawing for any tool develo ped in house.  Drawing needs to include: 
+o Accurate dimensions of the tool. 
+o Type and specification of materials used to make t he tool. 
+o Construction process – such as weld locations and specification. 
+o Any parts utilized to make the tool with part numb er and supplier identified. 
+o Calibration requirements is needed 
+o Maintenance requirements if needed 
+o Usage of tool – SCMS code. 
+o Cost to construct the tool (optional) 
+• Create a database archive for the fabricated tool records. 
+• Assign responsibilities and ownership for tool des ign and drawings. 
+• Assign responsibilities and ownership for keeping database current. 
+ 
+4.0 Benefits 
+ 
+o Complete information on a tool makes it easy to re pair, replace, or duplicate. 
+o Easy to share fabricated tool design information w ith other branches.  Creates a commonality 
+among all dealer branches and reduces need to redesign. 
+o Makes “mass production” of the tooling easier (i.e .: workbenches, parts baskets, stands, etc) 
+   
+ 
+5.0 Resources Required 
+ 
+ Time required to implement. 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+  Dale Brehm 
+  Global Mining Product Support

@@ -1,0 +1,373 @@
+SOURCE: 1.0 Maintenance & Repair\1.02 Condition Monitoring\3. Quick Win\Fluid Analysis Sampling Cart.pdf
+PAGES: 8
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+January 15 
+1206-2.15-1047 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Fluid Analysis Sampling 
+Cart  
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+Fluid Analysis Sampling Cart ..................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fluid Analysis Sampling Cart 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.15-1047 
+Caterpillar Confidential:  GREEN          Page 1 of 7 
+1.0 Introduction  
+ 
+Preventive Maintenance service provides a unique opportunity to plan and execute key Condition 
+Monitoring routines that must be performed at regular intervals. The machine is stopped every 
+250 or 500 hrs, washed, and remains in the shop for 8 to 12 hours. The planning and scheduling 
+department includes the Condition Monitoring activities in the PM services. The Condition 
+Monitoring, or “Detection” routines normally included in the PM stops are: 
+ 
+1. Visual Inspections 
+a. Pre-Wash Inspection 
+b. During PM Inspection 
+c. Post PM Inspection 
+ 
+2. Performance Tests (including operational tests such as brakes, steering, etc.) 
+ 
+3. Fluid Analysis 
+a. SOS sampling 
+b. Fluids cleanliness (ISO rating) 
+c. Magnetic Plugs inspection 
+d. Magnetic Screens inspection 
+e. Filter cutting / inspection 
+ 
+This Best Practice deals with the handling, organization, and interpretation of the Fluid Analysis 
+samples taken during PM service. 
+     
+2.0 Best Practice Description 
+ 
+This dealer’s facility designed, fabricated and incorporated four (4) small carts to assist in handling 
+and gathering all Fluid Analysis samples taken during PM service.  
+ 
+ 
+     
+Sampling Carts assigned to the PM bay 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fluid Analysis Sampling Cart 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.15-1047 
+Caterpillar Confidential:  GREEN          Page 2 of 7 
+ 
+ 
+  
+ 
+General View of the Sampling Cart            This picture shows the content of a Cart prepared to be used in the next PM service 
+ 
+Enough compartments were included to allocate space for all Magnetic Plugs, Magnetic and 
+Regular Screens (such as Transmission Screens, Primary Fuel Screen, Hoist Screens, etc.) 
+ 
+     
+ 
+ 
+These compartments are designed for the Magnetic Plugs,   The compartments located underneath the main cabinet  
+Screens and Filter samples     are designed to hold the SOS samples 
+ 
+Implemented working procedure: 
+ 
+1. Initially these carts are equipped with a set of new Magnetic Plugs and Screens, properly 
+stored in plastic bags.  
+2. The PM service crew selects a cart and moves it to the specific sampling area at the 
+machine.   
+3. SOS samples are taken, labeled and stored in the assigned compartment of the cart.  
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fluid Analysis Sampling Cart 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.15-1047 
+Caterpillar Confidential:  GREEN          Page 3 of 7 
+4. The magnetic plugs are removed, inspected and stored in the compartment of the cart 
+labeled for the specific magnetic plug location. New or recycled magnetic plugs are 
+reinstalled in the machine.  
+5. The same procedure applies to screens and magnetic screens.  
+6. The rest of the filters are cut open, inspected, and samples are placed in their respective 
+compartments.  
+7. Once all samples are gathered, the cart is sent to the technical office. 
+ 
+    
+ 
+ 
+ 
+8. The technical office analyzes the samples, interprets and records the findings. To support 
+the analysis the on-site lab maintains updated guidelines regarding the amount and 
+characteristics of the metallic debris.  
+ 
+ 
+      
+ 
+ 
+Examples of Interpretation Guides for Magnetic Plugs and Engine Oil Filters 
+ 
+9. Pictures are taken for inclusion in the individual electronic files for each machine.  
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fluid Analysis Sampling Cart 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.15-1047 
+Caterpillar Confidential:  GREEN          Page 4 of 7 
+ 
+10. SOS samples are registered in the on-site control system and sent to the local SOS Lab. 
+ 
+11. After the analysis of all samples is completed, the cart with all the reviewed elements is 
+returned to the PM Bay where the parts are recycled and stored in a clean cart, ready for 
+the next service.  
+ 
+12. Damaged parts /elements are replaced with new ones. 
+ 
+ 
+     
+ 
+ 
+The cart filled with recycled materials is made available for the next service. 
+ 
+These carts are currently used to support the sampling routines included in the PM services for a 
+fleet of 793 B and 793C Off-Highway Trucks. 
+ 
+3.0 Implementation Steps 
+ 
+1. Determine the type and quantity of samples to handle based on machine models to be 
+serviced. Consider the number of machines, frequency of service operations, sampling 
+locations (pre-PM and/or PM bay), turnaround time of sampling table (time in the lab to 
+analyze and release the cart), etc. 
+ 
+2. Adopt the design provided in the attachment section of this Best Practice, or customize it 
+to suit particular needs. 
+ 
+3. Fabricate the appropriate number of carts. Stainless steel is the preferred material. 
+ 
+4. Train the PM personnel in the correct procedures. 
+ 
+5. Assign and train a person responsible for receiving and analyzing the samples. 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fluid Analysis Sampling Cart 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.15-1047 
+Caterpillar Confidential:  GREEN          Page 5 of 7 
+6. Acquire and equip carts with an exchange set of magnetic plugs / magnetic screens. 
+ 
+7. Assign carts to PM bays and/or pre-PM locations. 
+ 
+8. Implement and control the correct execution of the working procedures. 
+ 
+9. Observe the execution of the implemented process, identify areas for correction, and 
+implement improvements.   
+ 
+4.0 Benefits 
+ 
+The main benefits identified are: 
+ 
+• Improved discipline of Fluid Analysis sampling. 
+ 
+• Minimizes possibility of error from sample mishandling. 
+ 
+• Improves organization of PM routines - resources are allocated in advance. 
+ 
+• Reduces the execution time for sampling activities, which reduces overall PM execution time. 
+ 
+• Improves interpretation accuracy by gathering and providing all samples to one dedicated 
+expert. 
+ 
+• Improved Contamination Control of Fluid Samples. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Fabricated Cart: the cost of fabricating each cart locally was US $580. Use this cost as 
+reference only. The number of carts required depends on fleet size and the frequency of the 
+PM services/sampling. 
+ 
+• One set of Magnetic Plugs, Screens, Magnetic Screens per service. The quantity of items and 
+parts number will depend on the specific equipment to service. 
+ 
+• Assign and train one person in the analysis and interpretation of samples that are gathered 
+during PM. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Fabrication Drawings, see below. 
+ 
+     
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fluid Analysis Sampling Cart 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.15-1047 
+Caterpillar Confidential:  GREEN          Page 6 of 7 
+    
+ 
+ 
+Sampling Cart Drawings 
+ 
+Note: Remember to review and customize the design to your particular needs. 
+ 
+ 
+ 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fluid Analysis Sampling Cart 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.15-1047 
+Caterpillar Confidential:  GREEN          Page 7 of 7 
+7.0 Related Best Practices 
+ 
+None at this time. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Abelardo A. Flores 
+Senior Equipment Management Consultant 
+Caterpillar Global Mining  
+Flores_Abelardo@cat.com 
+Ph: +56-993097135 
+ 
+Our acknowledgements to the personnel of Finning Alumbrera for their willingness to share their 
+ideas and achievements that certainly will contribute to the success of other Mobile Equipment 
+Maintenance Operations. 
+ 
+Our special recognition to: 
+ 
+Victor Mato, Finning Alumbrera Project Manager 
+victor.mato@finning.com.ar 
++54-0835485295 
+ 
+Enrique Uriburu, former Finning’s Alumbrera Project Manager 
+ 
+and in the Planning area: 
+ 
+Jose Medina, Scheduler & Fluid Samples Analyst 
+ 
+For further details and information regarding this Best Practice, please contact the author.

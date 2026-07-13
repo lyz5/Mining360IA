@@ -1,0 +1,233 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Connection Bypass on Main Cooling for 3500 Engine Test.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2016 
+1605-4.03-1434 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Connection Bypass on 
+Main Cooling for 3500 
+Engine Test 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Connection Bypass on Main Cooling for 3500 Engine 
+Test ............................................................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar  welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Connection Bypass on Main Cooling for 3500 Engine 
+Test 
+DATE 
+7/1/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-4.03-1434 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+1.0 Introduction  
+ 
+To Conduct the tests on the dynamometer which prefixes are ATY and FDB (793C / D), the hydraulic 
+oil cooler circuit on the engine block needs to be shut down. Since the SISWEB does not provide an 
+immediate or direct connection between these two points, a horseshoe-shaped tube has been 
+designed to meet this requirement. The problem is that once the device was disconnected a large 
+amount of hot water was leaked during the test creating the risk of burning the components around it 
+and even causing injuries to the technicians. A tension gripping system was designed for the same 
+device in order to hold it more securely, but some problems came up because the vibrations of 
+engine. (See Fig. 1.) 
+ 
+ 
+Fig. 1. 
+  
+This Best Practice aims to design a main cooling system connecting device during the 3500 engines 
+test in order to solve the aforementioned problems. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Connection Bypass on Main Cooling for 3500 Engine 
+Test 
+DATE 
+7/1/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-4.03-1434 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+2.0 Best Practice Description 
+ 
+  
+  
+Fig. 2. 
+ 
+A direct link between the cylinder block and the hco cooler with a C-shaped device and a bedpan 
+CAT tube (340-1590) is designed, which has the same dimensions of the inlet cooler. The tube is 4.5 
+inch diameter and 32 inch long.  It has two soft angles that allow the free passage of coolant without 
+creating turbulences. The original material is factory galvanized steel. Its structure is made up of two 
+welded pieces together that gives a C-shaped appearance. The tube is secured with two clamps and 
+an original factory grommet (6V-6782, 6V-6783, 103-0892). (See Fig. 2). 
+ 
+3.0 Implementation Steps 
+ 
+To implement the improvement the 340-1590 tube is taken and cut thru the lower outlet of the coolant 
+and welded back again at the same point but in the opposite direction to its original design to match 
+the coolant inlet. Then the two inlets are put together by means of a single hose and special clamps 
+are then attached. To hold it safely, the two clamps and the grommet are installed (PN: 6V-6782, 6V-
+6783, 103-0892) into the ½ " diameter thread that the oil cooler elbow has. 
+ 
+    
+  
+. 
+ 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Connection Bypass on Main Cooling for 3500 Engine 
+Test 
+DATE 
+7/1/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-4.03-1434 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+4.0 Benefits 
+ 
+1) It prevents the device to be ejected unexpectedly due to the force of the hot coolant at full engine 
+load by using fewer joint points with hoses and to have a better grip to CAT original accessories. 
+ 
+2) It improves the installation times of accessories during the readiness of the 3516 engines in the 
+dynamometer. 
+ 
+3) Less parts resources for the device coupling to the engine. 
+ 
+5.0 Resources Required 
+ 
+All the resources used must be identified for the design, fabrication, commissioning 
+(implementation) and thus maintainability of the improvement, such as: 
+• Personnel: Cutting and machining and welding. 
+• Total investment: ~$650 (Parts and Labor). 
+• Appoint manufacturing plans: (pending by the supplier) 
+• Equipment and tools: electric hacksaw cutter, TIG welding equipment. 
+ 
+6.0 Supporting Attachments / References 
+None 
+ 
+7.0 Related Best Practices 
+None 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Connection Bypass on Main Cooling for 3500 Engine 
+Test 
+DATE 
+7/1/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-4.03-1434 
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+8.0 Acknowledgements 
+ 
+Original idea written by: 
+Nombre: Wilson Arias.  
+Cargo y empresa: Supervisor II de Servicio Minería, RELIANZ. 
+Correo electrónico: wilson.arias@relianz.com.co 
+ 
+Nombre: Javier Novoa.  
+Cargo y empresa: Supervisor Contratista de Motores, TRACDIESEL. 
+Correo electrónico: t.tracdieselltda@yahoo.com 
+ 
+Nombre: Manuel Delgado.  
+Cargo y empresa: Supervisor III de Servicio Minería, RELIANZ 
+Correo electrónico: manuel.delgado@relianz.com.co 
+ 
+ 
+Checked by: 
+ 
+Luis Alberto Fernandez Chica | Ingeniero de Desarrollo y Coordinador de Best Practices  
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 5347 | Mobile: 3013724303 | 
+luisalberto.fernandez@relianz.com.co | www.relianzcat.com
+  
+ 
+Translated by: 
+ 
+Edgard E. Romero Avena | DPC Admin / Learning Solutions Specialist 
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 35186 | Mobile: 3103688012 | 
+edgard.romero@relianz.com.co | www.relianzcat.com

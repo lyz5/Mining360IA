@@ -1,0 +1,361 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Getting Started with MCTS 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Getting Started with MCTS ........................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+  
+April 2007 
+0906-4.5-1013 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+The Major Component Tracking System (MCTS) is a Web based system designed to monitor 
+major component status and history from the time a new component is installed new until the 
+component is eventually scrapped.  
+ 
+MCTS is a user-friendly tool that allows dealers to: 
+ 
+• Track major components and critical parts from cradle-to-grave. 
+• Document component lives and reasons for replacement. 
+• Identify component location on prime product at any time. 
+• Provide critical part location within components at any time. 
+• Identify component and critical part current and total life hours. 
+ 
+The component data is stored in a central MCTS database. When a prime product is shipped from 
+the factory, the MCTS system records the component serial numbers installed in that product.  As 
+the component begins its active life, the dealer will enter maintenance records into the system to 
+track the movement of the component from product to product.  Note that MCTS is a component 
+tracking system – one of the most difficult things to do when using MCTS is to change focus from 
+machine to component.  The next most difficult is deciding when and how to get started. 
+ 
+Prior to using MCTS, the dealer should fully understand that a commitment to keeping data 
+current comes with a commitment to use MCTS.  For any database of this kind to maintain high 
+quality data, the participating dealers must be consistent and committed. 
+ 
+This Best Practice contains the process for getting started in using MCTS. 
+ 
+2.0 Best Practice Description 
+ 
+The initial decision and commitment to use MCTS to track components has been made.  What 
+comes next?   
+ 
+The initial decisions in the MCTS tracking process are: 
+ 
+1. Identify which components are to be tracked. 
+2. Determine how the data will be submitted to MCTS. 
+3. Appoint the MCTS Dealer Contact. 
+4. Determine who will be responsible for entering and maintaining the MCTS data. 
+5. Set-up timeline 
+6. Train all MCTS Dealer Administrators and MCTS Dealer Users. 
+ 
+3.0 Implementation Steps 
+ 
+1. Which components are to be tracked?  MCTS currently offers a list of component types to 
+be tracked.  If there is a component the dealer wishes to track that is not on this list, contact 
+the MCTS System Administrator to request that it be added.  The list is also on the second tab 
+of the MCTS Data Input Spreadsheet attached to this document.  Caterpillar suggests starting 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Getting Started with MCTS 
+DATE 
+2/17/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0407-3.1-1076 
+Caterpillar Confidential:  GREEN          Page 1 of 7 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+with the major powertrain components (engine, transmission, torque converter, final drive, 
+differential and wheel groups).  The dealer may want to start with a specific fleet or set of 
+machines covered under contract with Caterpillar. 
+ 
+2. How will the data be submitted to MCTS?  Data may be entered in MCTS by several 
+methods, including Manual Entry, MCTS/Manager Interface, Cat Mailbox Interface, or, for 
+historical data, the MCTS Data Spreadsheet. 
+ 
+Manual Entry directly into the website. 
+ 
+ 
+ 
+ 
+Access the Create pages 
+via Create Menu. 
+Enter the serial number 
+and date of the 
+operation you wish to 
+enter. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Getting Started with MCTS 
+DATE 
+2/17/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0407-3.1-1076 
+Caterpillar Confidential:  GREEN          Page 2 of 7 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+  
+ 
+ 
+ 
+Cat Mailbox Interface from existing Dealer component tracking system 
+ 
+      
+ 
+ 
+ 
+ MCTS / Manager Interface 
+Fill in the requested 
+data and click Save 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Getting Started with MCTS 
+DATE 
+2/17/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0407-3.1-1076 
+Caterpillar Confidential:  GREEN          Page 3 of 7 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+MCTS Data Input Spreadsheet 
+For initial set-up or loading a large volume of history data 
+ 
+ 
+ 
+3. MCTS Dealer Contact  
+This person is the single person responsible for MCTS correspondence, error reports, etc.  
+Any requests for access to MCTS must come from the appointed MCTS Dealer Contact 
+person so the dealership can maintain control over their own access list.  When the MCTS 
+Dealer Contact person requests access for other users, they must include: Name, CWS ID, 
+and type of access.  The two types of access for MCTS are Dealer Administrator (with ability to 
+enter, edit, and view) and Dealer User (view only). 
+ 
+The MCTS Dealer Contact person is also the one responsible for or who delegates 
+responsibility for completing documentation for MCTS and training others at the dealership. 
+ 
+4. Who will be entering and maintaining the MCTS data? 
+The dealership must decide who will be entering and maintaining data for the dealership.  It is 
+recommended that a limited number of people have administrative rights to reduce the risk of 
+data errors.  This person is usually the same one as who will be providing the set-up 
+information.  At some dealerships, the Dealer Contact person also enters and maintains the 
+data.  At others, a group is responsible for data entry and one person serves as the MCTS 
+Dealer Contact.  The MCTS Contact person could be in a variety of different roles: 
+CSA/MARC, Central Planning/Components, Product Support, Service Department, 
+Forecasting, Operations, Technical Support, CRC – the dealer must decide where is the best 
+fit. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Getting Started with MCTS 
+DATE 
+2/17/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0407-3.1-1076 
+Caterpillar Confidential:  GREEN          Page 4 of 7 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+5. Set-Up 
+ 
+Dealer Profile Form 
+The first document that must be provided to the MCTS System Administrator is the Dealer 
+Profile.  This form contains all the information for the MCTS System Administrator to set up 
+MCTS for data entry.  A partial example of this data can be found on the Dealer Profile page 
+(under Reports) in MCTS.  The MCTS Dealer Contact person will receive an annual review 
+requesting confirmation that the Dealer Profile information is up-to-date and correct.  The 
+names and type of access for each MCTS user at the dealer must be reviewed.  Additionally, 
+customer and job site information can be entered, which will populate the drop down menus 
+within MCTS.  The Dealer Profile page in MCTS is maintained by the MCTS System 
+Administrator. 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Getting Started with MCTS 
+DATE 
+2/17/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0407-3.1-1076 
+Caterpillar Confidential:  GREEN          Page 5 of 7 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Submitting Data 
+ 
+Once the MCTS System Administrator receives the dealer information and adds the dealer to 
+the list, the system is ready to accept data.  MCTS already contains first install information 
+from the factory (component serial number, prime product serial number, build date, dealer 
+code). All other information such as location on host, customer, and job site data can be added 
+at the time the dealer receives the machine. This data can be input by using the “edit” function 
+at the end of each operation line, or can be updated with the first removal operation. 
+ 
+If the dealership has chosen to submit historical component life data via the MCTS Input 
+Spreadsheet, the spreadsheet should be e-mailed to the MCTS System Administrator after the 
+system is initially set up.  The System Administrator will perform a data integrity check and 
+then it will be loaded into MCTS.  At this time, only the MCTS System Administrator and users 
+from the originating dealership may see the spreadsheet data (the component life history page 
+is marked “Spreadsheet Load”).  After any errors have been corrected, it will be released for 
+general view by all participating dealers. 
+ 
+ 
+ 
+6. Training 
+MCTS is not difficult to use, but it is very beneficial to learn the rules of data entry and 
+business rules for required fields.  A training session can be conducted via Sametime or in 
+person.  The MCTS Dealer Contact person and any persons responsible for entering and 
+editing the data at dealer should attend. 
+ 
+4.0 Benefits 
+MCTS has evolved since its initial introduction in 2002.  Dealer feedback has helped improve the 
+system and increase usability. Caterpillar has also developed additional ways to assist the Dealer 
+with this process.  This Best Practice includes some of those tips and tools to help make the 
+process a little clearer and easier. 
+ 
+5.0 Resources Required 
+Access to MCTS 
+Personnel – 1+, as determined by the dealer 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Getting Started with MCTS 
+DATE 
+2/17/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0407-3.1-1076 
+Caterpillar Confidential:  GREEN          Page 6 of 7 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+MCTS Data Input Spreadsheet and Instruction Letter 
+MCTS Dealer Profile Form 
+MCTS Introduction PowerPoint 
+ 
+7.0 Related Best Practices 
+ 
+0906-3.1-1020  MCTS Used to Monitor and Manage Component Life 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Shari Weber 
+MCTS System Administrator 
+Cat Global Mining 
++1 309 675 8115 
+Weber_Shari_A@cat.com 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Getting Started with MCTS 
+DATE 
+2/17/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0407-3.1-1076 
+Caterpillar Confidential:  GREEN          Page 7 of 7

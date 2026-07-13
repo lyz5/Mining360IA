@@ -1,0 +1,428 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2024 
+4.01-241220-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Oil Patch Analysis During 
+Engine Dyno Test 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Oil Patch Analysis During Engine Dyno Test ............. 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Oil Patch Analysis During Engine Dyno Test 
+DATE 
+12/20/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-241220-1 
+Caterpillar: Confidential Yellow          Page 2 of 6 
+1.0 Introduction  
+ 
+To seek continuous improvements in quality, processes and procedures, that Matco perform daily 
+at the CRC and to ensure consistent and reliable component performance is achieved in the field. 
+Matco designed and custom built a unique dual oil patch sample tooling, for each dyno cell which 
+is situated in the control room of the dyno cells, eliminating the need for the cell operator to enter 
+the dyno cell, multiple times during any engine testing, to remove/change the sample patch for 
+inspection and taking multiple patch samples at three five minute intervals, will assist in identifying 
+any issues that potentially could result in considerable internal engine damage, if no patch sample 
+testing was performed during the dyno test.  
+ 
+2.0 Best Practice Description 
+ 
+Using this patch sampling, multiple times within the environment of the control room, while the 
+engine is operating at the various speeds and load points, provides improved management of each 
+patch sample.  
+For storage purposes and history of each engine patch test. Matco developed a Patch Test Service 
+Report (SR) format that is used to place the patch on, including at what time interval the patch was 
+inspected at, as seen in picture 1. 
+ 
+Picture 1: Format used to record the oil test samples. 
+ORDER NUMBER : DATE:
+ENGINE NUMBER: CLIENT:
+SERIAL NUMBER: REPAIR:
+0-5 MINUTES 1/2 LOAD
+RPM RPM
+LOAD HP LOAD HP
+0.00% 50.00%
+OIL TEMP ( ºF) OIL TEMP ( ºF)
+5-10 MINUTES FULL LOAD 
+RPM RPM
+LOAD HP LOAD HP
+0.00% 100.00%
+OIL TEMP ( ºF) OIL TEMP ( ºF)
+10-15 MINUTOS TRQ MAXIMO
+RPM RPM
+LOAD HP LOAD HP
+25.00% 100.00%
+OIL TEMP ( ºF) OIL TEMP ( ºF)
+ 
+TECHNICIAN: SUPERVISOR:
+____________________________________ _____________________________
+ 
+Quality Managment Systems 
+ISO 9001 FO-CRC-09 R0
+CODEPATCH TEST DYNAMOMETER REPORT
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Oil Patch Analysis During Engine Dyno Test 
+DATE 
+12/20/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-241220-1 
+Caterpillar: Confidential Yellow          Page 3 of 6 
+During the dyno test, pressure oil is directed from the engine, prior to the engine filter, through one 
+hose that connects the tooling above the sample patch, this patch will then collect any debris for 
+analysis and the oil passing through the patch, is then returned to the engine.   
+ 
+The purpose of each patch test at the various intervals, is to ensure we have very clean samples 
+with no debris and if for any reason, metallic debris were identified, then it would result in an 
+immediate engine shut down, to investigate root causes.  
+ 
+As shown in picture 2, this is the individual patch tooling, used for both dyno cells which is in the 
+control center. There are two inlet and two return lines one for each dyno cell. When the inlet valve 
+is closed to remove the patch, the lower valve is open, to permit oil drainage into the tank.  
+ 
+ 
+ 
+Picture 2: This are the parts used in the patch test system. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+With the engine inside of the Dyno Cell one hose is connected, at the oil cooler adapter to the 
+interface monitor (communication control between the engine and monitor panel) as shown in 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Oil Patch Analysis During Engine Dyno Test 
+DATE 
+12/20/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-241220-1 
+Caterpillar: Confidential Yellow          Page 4 of 6 
+picture 4. The hose from the monitoring panel goes directly into the enclosed operator booth where 
+the patch test tooling is located.  
+ 
+Shown in picture 3, 4 and 5 is an example of a C175-20 engine connection. 
+ 
+Next, we place the screen and a clean patch in the canister and install the cap, as shown in picture 
+6, and when the engine is started, pressure oil from the engine prior to the oil filter will start to flow 
+through the patch and after five minutes the inlet control valve is then closed to the remove the first 
+patch while the test is still running. Each patch is then replaced by a new one and the valve is 
+Picture 3: Engine hose connections in green. 
+Picture 4: Interface hose 
+connection in green.
+Picture 5: General view of 
+interface and engine.
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Oil Patch Analysis During Engine Dyno Test 
+DATE 
+12/20/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-241220-1 
+Caterpillar: Confidential Yellow          Page 5 of 6 
+opened again to allow oil flow. This process will be repeated several times during the engine test. 
+Picture 7 is an example of the patch samples at the various times. 
+ 
+ 
+ 
+During and after the dyno test is concluded, the patches are then labeled by sequence and 
+analyzed by the technician. The results are then recorded by pictures and on the paper format for 
+filing purposes. 
+ 
+ 
+4.0 Benefits 
+ 
+- Multiple filter samples can be taken throughout the programed dyno test.  
+- Cost saving by eliminating filter replacement after the dyno test 
+- No filters are removed in dyno cell 
+- Rapid detection of any debris. 
+- Eliminates potential costly failures during the dyno test.  
+ 
+ 
+5.0 Resources Required 
+ 
+Fabricate Patch Tooling. 
+ 
+Picture 6 Picture 7 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Oil Patch Analysis During Engine Dyno Test 
+DATE 
+12/20/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-241220-1 
+Caterpillar: Confidential Yellow          Page 6 of 6 
+6.0 Supporting Attachments / References 
+ 
+Patch Test Report (see Appendix) 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+  
+Angel Daniel Dorado 
+Continuous Improvement 
+E-mail: adorado@matco.com.mx 
+ 
+Recognition: 
+ 
+Rubén Aguirre Barrios 
+CRC Technician 
+ 
+Francisco Martín Quintana Quintana 
+CRC Technician 
+ 
+José Manuel Alcala Contreras 
+CRC Supervisor 
+E-mail: jalcala@matco.com.mx
+ 
+ 
+Fernando Preciado Castro 
+CRC Technical Consultant 
+E-mail: fpreciado@matco.com.mx
+ 
+ 
+
+===== PAGE 7 =====
+Empresas Matco, S.A. de C.V
+Folio:
+1) Filter module 3) Oil filter test process
+A) Test module valve verification
+1) Inlet valve (1) must be open.
+2) Return valve (2) must be open.
+3) Purge valve to oil tank (4) must be closed.
+4) Patch chamber latches must be up securing the conection.
+5) Oil drain valve from tank must be closed.
+4) Patch change 1E2500D
+A) Patch test module components
+1) Oil inlet
+2) Oil Return
+3) Chamber / Patch section 1E2500D
+4) Oil purge to tank
+5) Oil tank
+6) Oil tank drain
+2) Patch installation A) Test module valve verification
+1) Inlet valve (1) must be closed.
+2) Return valve (2) must be closed.
+3) Purge valve to oil tank (4) must be open.
+4) Oil tank drain valve must be open (6)
+5) Leave the drain valve open for 5 minutes to purge all the oil.
+6) Change the test patch.
+7) Repeat the process as necessary.
+A) Open the patch chamber and instal the mini patch Note: After two complete engine tests, the oil tank must be
+number 1E2500D
+ in the lower part of the chamber empty and cleaned. 
+Quality and safety consideration: Review Date
+1. Make sure there is no visible leakage in the connections and that the oil tank is not completely full.
+2. When the patch is placed on the chamber, verify there is no visible contamination.
+3. When in doubt, ask the supervisor before acting.
+4. Wear your personal protective equipment at all times. 03
+04
+00
+01
+02
+Nota: Previously to the next step, make sure to follow the 
+process shown in IT-CRC-07
+Supervisor:
+Dynamometer Technician
+PROCESS SHEET
+Dynamometer Patch Test 
+Area Section
+Dynanometer Filter Test
+Page: Version: Date:
+1 de 3 00 24/11/2021
+IT-CRC-07
+1
+2
+3
+45
+6
+
+
+===== PAGE 8 =====
+Empresas Matco, S.A. de C.V
+Folio:
+1) Identify the engine model and fixtures needed.
+Engine Model C32 y C27
+(A) (B)
+(G) (H)
+A) The inlet hose for the patch test must be before the oil filter.
+SOS sample connection in the filter base (H)
+( C ) (D) B) The return hose of the patch test must be connected in a no 
+A) Engines 3500 and C175 have an oil check on one of the covers pressure zone, oil inlet tube (G).
+and a quick connect adapor (B)
+B) Engines C32 and C27 will use the oil tank inlet adaptor (C)
+and the adaptor (B) installed in the oil filter base of the
+engine (D)
+Engine Model 3500 and C175
+2) Fixtures and adaptors intallation 4) Fixtures cleaning and storage
+A) Follow the contamination control guidelines to properly clean 
+and store the fixtures to make sure there is no external contamination
+that can disturb the test.
+(E) (F)
+A) The inlet hose for the patch test must be connected before the oil
+filter of the engine. Hose connected to the heat exchanger (E)
+B) The return hose of the patch test must be connected in a no 
+pressure zone. Hose connected in the crankshaft cover (F).
+Quality and safety consideration: Review Date
+1. Make sure there is no visible leakage in the connections and that the oil tank is not completely full.
+2. When the patch is placed on the chamber, verify there is no visible contamination.
+3. Verify that all the connections and fixtures are properly tight.
+3. When in doubt, ask the supervisor before acting.
+4. Wear your personal protective equipment at all times. 04
+00
+01
+03
+02
+Note: After the patch test is done, clean the fixtures with solvent to 
+store them in the assigned cabinet (VIDMAR).
+Supervisor:
+Dynamometer Technician
+PROCESS SHEET
+Dynamometer Patch Test 
+Area
+Dynanometer
+Section
+Filter Test
+Version:
+00
+Date:
+24/11/2021
+Page:
+2 de 3
+IT-CRC-07
+
+
+===== PAGE 9 =====
+Folio:
+1)  Engine Test Report Document D) The technician in charge of the test must sign the format
+A) The Date, Work Oder, Engine Serial Number, Engine Model, and send it to the supervisor. 
+and client will be recorded on the Document.  
+2) Uploading the format to the System.
+A) Take photos of the patches and upload them to the company´s
+system to keep the record online. 
+B) The picture must be clear in each of the tested patches
+B) After the test, grab the patch and the information will beas well as the information of the engines that was captured
+writed down on the format FO-CRC-09. in the format FO-CRC-09
+C) The patch will be attatched to the format  FO-CRC-09 with HP,
+RPM and Oil Temperature values during that patch time. 
+1. Make sure there is no visible leakage in the connections and that the oil tank is not completely full.
+2. When the patch is placed on the chamber, verify there is no visible contamination.
+3. Verify that all the connections and fixtures are properly tight.
+3. When in doubt, ask the supervisor before acting. 
+4. Wear your personal protective equipment at all times. 
+02
+IT-CRC-07
+Supervisor:
+Dynamometer Technician
+Quality and safety consideration:
+03
+04
+Revisión Fecha
+00
+01
+Page: Version: Date:
+3 de 3 00 24/11/2021
+PROCESS SHEET
+Dynamometer Patch Test 
+Area Section
+Dynanometer Filter Test

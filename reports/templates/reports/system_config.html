@@ -1,0 +1,83 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>System Config | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell ia-config-shell" data-system-config-root>
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Platform administration</p>
+                <h1>System Config</h1>
+            </div>
+            <div class="summary">
+                <span class="summary-value" id="system-config-count">0</span>
+                <span class="summary-label">items</span>
+            </div>
+        </header>
+
+        <section class="ia-config-main">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">SQL Server orientation</p>
+                    <h2 id="system-config-title">Database Servers</h2>
+                </div>
+                <div class="ia-toolbar">
+                    <label class="ia-filter">
+                        <span>Search</span>
+                        <input type="search" id="system-search" placeholder="Search configuration...">
+                    </label>
+                    <button type="button" class="button secondary" id="system-add">Add Server</button>
+                    <button type="button" class="button secondary" id="system-refresh-tables" hidden>Refresh Tables</button>
+                    <button type="button" class="button secondary" id="system-refresh">Refresh</button>
+                </div>
+            </div>
+
+            <div class="ia-tabs" id="system-tabs">
+                <button type="button" class="ia-tab active" data-tab="database-configs">Database Servers</button>
+                <button type="button" class="ia-tab" data-tab="managed-tables">Managed Tables</button>
+            </div>
+
+            <div class="table-scroll ia-config-table-wrap">
+                <table class="data-table" id="system-table"></table>
+            </div>
+        </section>
+    </main>
+
+    <div class="browser-modal" id="system-modal" hidden aria-hidden="true">
+        <div class="browser-modal__backdrop" data-system-modal-close></div>
+        <div class="browser-modal__panel browser-modal__panel--fullscreen" role="dialog" aria-modal="true" aria-labelledby="system-modal-title">
+            <div class="browser-modal__header">
+                <div>
+                    <p class="eyebrow">System Config</p>
+                    <h2 id="system-modal-title">Database Server</h2>
+                </div>
+                <button class="icon-button" type="button" data-system-modal-close aria-label="Close">×</button>
+            </div>
+            <form id="system-form" class="ia-config-form">
+                <div id="system-form-fields" class="form-grid"></div>
+                <div class="form-actions">
+                    <button type="button" class="button secondary" data-system-modal-close>Cancel</button>
+                    <button type="submit" class="button secondary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="browser-center-message" id="system-message" hidden aria-hidden="true">
+        <div class="browser-center-message__card">
+            <strong class="browser-center-message__text" id="system-message-text"></strong>
+            <div class="browser-center-message__actions">
+                <button type="button" class="button secondary" id="system-message-ok">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'reports/system_config.js' %}?v=20260708-1"></script>
+</body>
+</html>

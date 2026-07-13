@@ -1,0 +1,204 @@
+===== PAGE 1 =====
+March 2021 
+4.03-210303-1
+875 W Cushing St., Tucson, AZ 85745                                                                                                                                                                                                 cat.com/mining 
+M
+INING DEALER BEST PRACTICE 
+980H Steering Pump Maximum 
+Angle Piston Torque Tool 
+M
+aintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+ 980H
+ Steering Pump Maximum Angle Piston Torque Tool….1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description .................................... 2 
+3.0 Implementation Steps.......................................... 3 
+4.0 Benefits ................................................................ 3 
+5.0 Resources Required............................................ 3 
+6.0 Supporting Attachments / References................ 4 
+7.0 Related Best Practices ........................................ 4 
+8.0 Acknowledgements ............................................. 5 
+D
+ISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+980H Steering Pump Maximum Angle Piston Torque Tool 
+DATE 
+3/3/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210303-1 
+Caterpillar Confidential:  YELLOW  P age 2 of 5 
+1.0 Introduction 
+D
+uring the revision process of the 980H Steering Pumps, there has been trouble both while 
+removing and torqueing the pistons. While one of the two pistons in the Steering Pump could be 
+disassembled thanks to hexagonal bolt gap, the other piston’s grip point was not reliable. The 
+tightening tool could damage the piston using this method.  
+2.
+0 Best Practice Description 
+D
+uring the revision process of the Steering Pump shown in the below image, the seal O-ring 
+located under the pistons must be removed to replace it with a new one. Although an allen bolt 
+hole is made in the design for disassembling the right piston, this hole is not available in the left 
+piston. Tightening and loosening with the help of a wrench may cause to scratch and damage the 
+part. With the help of the tool we have implemented, this process does not damage the part and 
+can be easily adjusted to the desired torque value. 
+ 
+ 
+ 
+ 
+ 
+ 
+There is an allen 
+bolt hole made in 
+the design for 
+disassembling 
+This piston must be 
+removed by this 
+point where it has 
+the potential to 
+cause damage to 
+surface. 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+980H Steering Pump Maximum Angle Piston Torque Tool 
+DATE 
+3/3/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210303-1 
+Caterpillar Confidential:  YELLOW           Page 3 of 5 
+3.0 Implementation Steps 
+ 
+1. Follow the assembly procedure as outlined in Specification media number UENR2001, section 
+“Piston Pump (Steering)”. 
+a. Place the tool over the maximum angle piston and engage the flat areas for tightening.  
+b. Torque the part properly, as specified in UENR2001.  It is tightened more securely 
+thanks to its full grip. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+It minimizes the risk of damage. 
+ 
+Torque can be adjusted more easily in tightening. 
+ 
+It provides easier working opportunity for the technician. 
+ 
+5.0 Resources Required 
+Material: 50 TL 
+Labor: 2 hours 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+980H Steering Pump Maximum Angle Piston Torque Tool 
+DATE 
+3/3/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210303-1 
+Caterpillar Confidential:  YELLOW           Page 4 of 5 
+6.0 Supporting Attachments / References 
+ 
+980H Steering Pump Torque Tool Technical Drawing.pdf 
+ 
+ 
+Steering Pump Angle Piston Torque Tool.MP4 
+SIS2.0 Media Number reference: UENR2001, Piston Pump (Steering) 
+ 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+980H Steering Pump Maximum Angle Piston Torque Tool 
+DATE 
+3/3/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210303-1 
+Caterpillar Confidential:  YELLOW           Page 5 of 5 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+Aycan ULU 
+CRC Workshop Engineer  
+Borusan Makina ve Güç Sistemleri  
+ 
+This Best Practice designed by:  
+Aycan ULU 
+CRC Workshop Engineer  
+Borusan Makina ve Güç Sistemleri  
+ 
+Project and Best practice supported by  
+Emre KARAHAN 
+CRC Gebze Leader  
+Borusan Makina ve Güç Sistemleri  
+ 
+Volkan YAYMAN 
+CRC Leader 
+Borusan Makina ve Güç Sistemleri

@@ -1,0 +1,225 @@
+SOURCE: Improving Ripper Cylinder Performance thru D11.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2022 
+2.06-220729-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Improving Ripper Cylinder 
+Performance thru D11 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Improving Ripper Cylinder Performance thru D11 ..... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits ............................................................. 4 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving Ripper Cylinder Performance thru D11 
+DATE 
+7/29/2022 
+CHG 
+NO 
+00 
+NUMBER 
+2.06-220729-1 
+Caterpillar: Confidential Yellow P age 2 of 6 
+1.0 Introduction 
+I
+n iron ore mines, Ground Engaging Tools (GET) represent significant owning costs since wear rates 
+are very severe on these operations. As per Caterpillar Handbook of Ripping  (media number 
+AEDK0752), a very critical factor on ripper  tip wear rate and ripping production are track type tractor 
+ripping operating techniques, specifically referring to shank position during ripping pass.  
+Li
+terature and best operational practices recommend that  the frame should be parallel to the ground, 
+tracks flat on the ground, and shank slightly forward of vertical. In iron ore mines, operational efficiency 
+teams have adopted as convention that all  these conditions will be met if ripper tilt cylinder rods are 
+60% extended.  
+E
+ven though these techniques are widely used, it is hard for the operator to visually define this optimum 
+cylinder rod extension. The objective of this best practice is  to give the operator an easy -to-see 
+reference of this recommended cylinder extension using a rod attached to ripper tilt cylinder heads.  
+2
+.0 Best Practice Description 
+This bes
+t practice consists of the production of rod type tools, with length equal to 60% of rod extension, 
+design showed in Figure 1, to be fastened to ripper tilt cylinder heads, using its own bolts, as per Figure 
+2. Rod length must be changed according to machine model/prefix and/or cylinder PN. Table 1
+describes some of the possible lengths for the most common track type tr actor models on mining
+applications.
+Figure 1 - Rod design 
+
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving Ripper Cylinder Performance thru D11 
+DATE 
+7/29/2022 
+CHG 
+NO 
+00 
+NUMBER 
+2.06-220729-1 
+Caterpillar: Confidential Yellow P age 3 of 6 
+Figure 2 - Rod fastened 
+Model Prefix Ripper Tilt Cyl. PN* Fully extended rod length (mm) 60% extended rod length (mm) 
+D11 KSN 465-1711 830.00 498.00 
+D11T AMA 
+130-3263 (RH)
+130-6381 (LH)
+830.00 498.00 
+D10 76X 3G-2220 818.60 491.16 
+D10T2 RAB 374-2285 660.00 396.00 
+D9 J3D 521-8391 456.90 274.14 
+D9T TWG 521-8391 456.90 274.14 
+*Only considering single shank arrangements.
+After installation, operators will have a view of the ideal cylinder rod extension, as shown in Figure 3. 
+Figure 3 - Shank correctly positioned according to rod reference 
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving Ripper Cylinder Performance thru D11 
+DATE 
+7/29/2022 
+CHG 
+NO 
+00 
+NUMBER 
+2.06-220729-1 
+Caterpillar: Confidential Yellow P age 4 of 6 
+3
+.0 Implementation Steps 
+1. D
+evelop specific designs for each target machine on the project
+2. Manufacture rod tools for each target machine
+3. Install the tools
+4. Train operators
+5. Field following
+4
+.0 Benefits 
+I
+n the current conditions, basing the cutting angle only on the operator’s perception, ripper tips wear in 
+a dome-shaped pattern, as shown in Figure 4. 
+Figure 4 - Dome shaped wear pattern 
+Using the correct techniques will allow  for more uniform and sharp wear of ripper tips, lowering GET 
+cost per hour. The difference is clearly visible when comparing Figure 4 with Figure 5, which shows the 
+desirable wear pattern. 
+
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving Ripper Cylinder Performance thru D11 
+DATE 
+7/29/2022 
+CHG 
+NO 
+00 
+NUMBER 
+2.06-220729-1 
+Caterpillar: Confidential Yellow P age 5 of 6 
+Figure 5 - Sharp shaped wear pattern 
+Using this reference for operating techniques improvement led to an increase of around 20% of ripper 
+tips lifetime. Additionally, to the parts cost savings associated, it represented higher physical availability 
+and lower medium time between stops of track type tractors fleet on the tested site.  Correct ripping 
+removes the load from the rear idler and reduces track spin, improving undercarriage life. 
+5
+.0 Resources Required 
+• T
+hird party partner to manufacture the tools
+• Labor hours to install the tools
+6
+.0 Supporting Attachments / References 
+• AED
+K0752
+• PEXT9050
+7
+.0 Related Best Practices 
+N
+.A. 
+
+
+===== PAGE 6 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving Ripper Cylinder Performance thru D11 
+DATE 
+7/29/2022 
+CHG 
+NO 
+00 
+NUMBER 
+2.06-220729-1 
+Caterpillar: Confidential Yellow P age 6 of 6 
+8.0 Acknowledgements 
+T
+his Best Practice was written by: 
+J
+efferson Netto 
+SOTREQ S/A 
+E-mail: jefferson.netto@sotreq.com.br
+Mobile: +55 031 9 9967-7110
+C
+amila Rendeiro 
+SOTREQ S/A 
+E-mail: camila.rendeiro@sotreq.com.br
+Mobile: + 55 091 9 8146 9575
+       
+Thais Garcia  
+       SOTREQ S/A   
+E-mail: thais.garcia@sotreq.com.br
+Mobile: + 55 94 8131-2676

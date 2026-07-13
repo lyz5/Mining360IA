@@ -1,0 +1,302 @@
+SOURCE: 1.0 Maintenance & Repair\1.01 Preventive Maintenance\3. Quick Win\Sensor Fault Diagnosis Simulator Device.pdf
+PAGES: 10
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+August 2021 
+1.01-210817-2
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+M
+INING DEALER BEST PRACTICE 
+Sensor Fault Diagnosis 
+Simulator Device 
+M
+aintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+Sensor Fault Diagnosis Simulator Device........………0 
+1.
+0 Introduction ........................................................ 1 
+2.0 Best Practice Description .................................. 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits ............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ........................................... 9 
+D
+ISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Sensor Fault Diagnosis Simulator Device 
+DATE 
+8/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210817-2 
+Caterpillar: Confidential Yellow Page 1 of 9 
+1.0 Introduction 
+Thi
+s Best Practice developed by Sotreq provides an auxiliary diagnostic tool option to correct the fault 
+or simulate pressures in less time, around 2 minutes, making the equipment less maintenance time, 
+improving physical availability and consequently increasing production, the model is configurable to 
+work on different Caterpillar models as needed. 
+The di
+agnostic simulator device checks if the fault occurs in: 
+• S
+ensor
+• Harness
+• ECM (Electronic Control Module)
+2.
+0 Best Practice Description 
+I
+t is common in workshops that there is some delay in obtaining an electrical diagnosis due to factors 
+such as lack of resources, skill, and lack of knowledge of the maintenance technician. In most cases, 
+the diagnosis is not concluded with assertiveness and/or the customer also allows the equipment to 
+return to operation with a failure so as not to impact the production of ore loading. 
+W
+hen the problem is not completely resolved, the client is directly impacted on its indicators such as 
+DF, MTBF and MTTR. As an example: A diesel engine oil pressure sensor diagnostic can range from 
+01 to 04 hours depending on who is responsible for execution and based on what resources are 
+available. If the shutdown occurs with the equipment undergoing corrective maintenance, the event will 
+result in an increase in the meantime to repair (MTTR), and if the problem is not effectively solved, 
+there will be a decrease in the mean time between failures (MTBF) as the equipment will certainly stop 
+in corrective maintenance again in a short period of time for the same reason. There will also be a 
+decrease in the indicator related to physical availability (DF) because the equipment will be at a 
+standstill in maintenance. 
+
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Sensor Fault Diagnosis Simulator Device 
+DATE 
+8/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210817-2 
+Caterpillar: Confidential Yellow P age 2 of 9 
+The project used the Arduino® platform as the basis for its control system. Arduino® is an Open-Source 
+platform for electronic prototyping that can be used with its own programming language developed for 
+use with your hardware, also using its own editor of codes: The Arduino Software, which is an integrated 
+development environment, with relatively simple command lines and few steps, the insertion of 
+parameters related to pressure simulation (increase and decrease) can be done by connecting the 
+equipment to the sensor allegedly damaged, then the input of information into the system occurs 
+through potentiometers that allow  the adjustment of the engine oil pressure parameters, the device's 
+motherboard receives, processes and displays the data on the screen of a computer previously 
+connected to the device, the software screen displays: Engine oil pressure in psi (With its improper 
+operating status, if detected) engine oil level status, atmospheric pressure and accelerometer position, 
+the advantage of using an Open- Source platform, specifically in the case of this project, is justified 
+taking into account the very low cost compared to similar proprietary technologies, which makes it 
+possible to replicate and implement the project more easily in the various maintenance and repair 
+processes routinely carried out by the teams, in addition to allowing easy replacement of 
+parts/components relatively quickly. 
+Process map exemplifying the failure detection performed by the system, in case of abnormality, the detection of incorrect 
+functioning of the sensor, also allows to indirectly verify the proper functioning of other associated devices present in the 
+equipment. 
+The f
+unctioning of the electronic system is outlined below with the representation of its constituents 
+and operating flow (indicated by the red arrows) from the input of information, processing and 
+feedback, which consists of the information displayed on the screen, the operating process is also 
+exemplified. of the functions generator and the PWM generator, in addition to the identification of the 
+components of each system. 
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Sensor Fault Diagnosis Simulator Device 
+DATE 
+8/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210817-2 
+Caterpillar: Confidential Yellow Page 3 of 9 
+Simplified layout for device operation, showing components. 
+S
+implified layout for Function Generator and PWM Generator. 
+
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Sensor Fault Diagnosis Simulator Device 
+DATE 
+8/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210817-2 
+Caterpillar: Confidential Yellow Page 4 of 9 
+3.0 Implementation Steps 
+Thi
+s process offers tangible benefits to customers and also to the Group's resellers, as its ultimate 
+objective is to improve fleet productivity by reducing machine downtime in maintenance. This will 
+improve your KPIs while bringing more reliability to the equipment and the process as a whole. 
+3.
+1 - Disconnect the sensor with the possible failure of the harness to which the first quadrant is 
+connected informs the failure in question. 
+3.
+2 Disconnect the sensor with the possible failure of the harness to which the first quadrant is 
+connected informs the failure in question. 
+
+
+===== PAGE 6 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Sensor Fault Diagnosis Simulator Device 
+DATE 
+8/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210817-2 
+Caterpillar: Confidential Yellow Page 5 of 9 
+3.3 When turning on the simulator, on the potentiometer, simulate the pressure of the sensor. 
+If the pressure increases as it is manually graduated, this indicates that the harness and ECM 
+are normal, indicating a failure in the sensor. 
+S
+imulation of pressure increase indicating correct operation of the harness and ECM (Electronic Control Module) This simulation makes 
+possible the immediate detection of failure in the sensor. 
+
+
+===== PAGE 7 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Sensor Fault Diagnosis Simulator Device 
+DATE 
+8/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210817-2 
+Caterpillar: Confidential Yellow Page 6 of 9 
+Device working in the configuration step, with cables required for connections. 
+4.
+0 Benefits 
+• D
+ecrease in the time needed to assertively carry out a failure diagnosis
+• Reduction in Maintenance Time
+• Simple construction tool, with the potential to circumvent any budget restrictions for its
+development.
+• Easy usability makes the adoption of the device possible by technicians with less
+experience or procedural knowledge about technical fault investigation.
+5.
+0 Resources Required 
+ Table with resources needed to build the device. 
+Item Qty Type Description
+1 1 Unit Arduino
+2 1 Unit Function Generator
+3 1 Unit PWM Generator
+4 5 Unit Potentiometer
+5 2 Unit 9V Battery
+6 1 Unit LM 2904N Integrated Circuit
+7 1 Unit Printed Circuit Broad
+8 1,5 m 1,5 mm Wire 
+9 1 Unit Project Box
+10 5 Unit Knob
+11 4 Unit Resistor
+12 6 Unit Audio and Video Connector
+13 2 m Microphone Cable
+14 1 Unit Alligator Clamp
+
+===== PAGE 8 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Sensor Fault Diagnosis Simulator Device 
+DATE 
+8/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210817-2 
+Caterpillar: Confidential Yellow Page 7 of 9 
+6.0 Supporting Attachments / References 
+Project box measurements for component allocation: Arduino, Function Generator, PWM Generator, Voltmeter and 
+Potentiometers. 
+Project box measurements for component allocation: Arduino, Function Generator, PWM Generator, Voltmeter and 
+Potentiometers. 
+
+
+===== PAGE 9 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Sensor Fault Diagnosis Simulator Device 
+DATE 
+8/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210817-2 
+Caterpillar: Confidential Yellow Page 8 of 9 
+Connec
+ting the Potentiometers to the Arduino, Function Generator and PWM Generator 
+More information: 
+• P
+erform system energy supply with 02 (two) 9V batteries.
+• C
+onnect the signal outputs to the DB9 connector.
+• C
+arry out the manufacture of cables for connection between the Simulator Box and the
+harness.
+7.
+0 Related Best Practices 
+The pr
+oject is entirely authorial, with no need for specific reference literature, for the electrical 
+system and the source code, and can be used in different types of equipment with compatible 
+sensors, making only minor adjustments. 
+
+
+===== PAGE 10 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Sensor Fault Diagnosis Simulator Device 
+DATE 
+8/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210817-2 
+Caterpillar: Confidential Yellow Page 9 of 9 
+8.0 Acknowledgements 
+S
+otreq would like to thank Technician Paulo Antônio for his excellent performance in carrying out 
+this project, his persistence and knowledge made this improvement possible. In addition to Paulo, 
+Sotreq would like to thank the commitment of the Engineering and Product Support Team, always 
+dedicated to that which is its vocation: Provide the best mining solutions to customers. 
+G
+iesi Nascimento 
+Sotreq S/A  
+M
+ining Engineering 
+E-m
+ail: giesi.nascimento@sotreq.com.br
+Mobile: + 55 94 8803-0040 
+Paulo Antônio 
+Sotreq S/A 
+Mining Mechanic 
+E-mail: paulo.antonio@sotreq.com.br
+Mobile: +55 94 9113-6959

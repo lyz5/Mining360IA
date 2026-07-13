@@ -1,0 +1,257 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+September 2024 
+1.01-240905-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/minin g 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Rolling Maintenance Parts 
+for Reducing PM Time 
+794/798 AC 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+Rolling Maintenance Parts for Reducing PM Time 
+794/798 AC ................................................................ 1 
+1.0  Introduction ........................................................ 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 4 
+4.0  Benefits ............................................................. 5 
+5.0  Resources Required .......................................... 5 
+6.0  Supporting Attachments / References ............... 5 
+7.0  Related Best Practices ...................................... 7 
+8.0  Acknowledgements ........................................... 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+
+===== PAGE 2 =====
+MI
+NING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Rolling Maintenance Parts for Reducing PM Time 794 / 
+798 AC 
+DATE 
+9/5/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-240905-1 
+Caterpillar: Confidential Yellow             Page 2 of 7   
+1.0 Introduction 
+Taking time during a PM to inspect and clean reusable screens, filters and magnetic plugs can 
+directly impact maintenance time. Utilizing a set of rotating maintenance parts, such as clean 
+screens or a Centrifugal COF with new seals during the PM and cleaning the parts after the truck 
+has been returned to service and before the next PM, will reduce the PM timeline and increase 
+availability of a technician during machine downtime.  
+2.0 Best Practice Description 
+To reduce the PM timeline, it’s necessary to have additional parts so that the removed parts can be 
+cleaned, analyzed and potentially repaired post PM. Those parts are proposed on the next table 
+(1).  Rolling these parts reduce 3.5 hours on every PM.  
+Item Description System Part s Number Time reduced hours 
+1 Screens Drive Train 313-4082** 1
+2 COF Rotor AS Filter 
+Centrifugal 
+Engine 
+lubrication 494-6433*** 1
+3 Oil Screen Engine 
+lubrication 364-8521** 0.5
+4 Magnetic plugs 
+Final drive , 
+Wheel , Drive 
+Pump , and 
+High pressure 
+pump 
+Wheels (6V-3298) ** 
+Final drive (6V-0439)** 
+High pressure fuel pump 
+(3J-1907) ** 
+Driven Pump (377-
+9588)** 
+1 
+Total  3.5  
+** For 794 and 798 AC all parts are used on both trucks 
+***Only engines with Centrifugal oil filter. 
+Item 1 - Changing 7 clean screens during the PM only takes 30 min. The other time that it takes for 
+cleaning with water will take an hour.   
+
+===== PAGE 3 =====
+M
+INING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Rolling Maintenance Parts for Reducing PM Time 794 / 
+798 AC 
+DATE 
+9/5/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-240905-1 
+Caterpillar: Confidential Yellow  Page 3 of 7 
+Image 
+2 Clean Screen Ready to install  
+Image 3: Clean Screens installed on the inverter cabinet 
+Item 2 - Rolling COF with new seals and paper ready to change, it’s only necessary to unbolt two 
+clamps and change the group part  
+Image 4: COF Centrifugal Oil Filter ready to install 
+
+
+===== PAGE 4 =====
+M
+INING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Rolling Maintenance Parts for Reducing PM Time 794 / 
+798 AC 
+DATE 
+9/5/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-240905-1 
+Caterpillar: Confidential Yellow  Page  4  of  7 
+Item 3 - Clean Oil Screen ready to change, also gives the availability for change if there are problems 
+on the screen, having time to replace it for the next PM with another new one.  
+Image 5: Oil Screen 
+Item 4 - Magnetic Plugs, having additional magnetic plugs inside box, waiting for the next PM. Improves 
+exchange time and allows opportunity to properly analyze & trend magnetic plug results.  
+Image 6 Wood Box with plugs  
+3.0 Implementation Steps 
+1. Train and inform about the PM technical personnel about the rolling parts that must be ready
+for the maintenance
+2. Every 6 month evaluate the rolling parts to assess if some parts are worn or have any defects
+that could affect the performance
+3. Send magnetic plugs to CM analyst to inspect & record results, creating a history of weight,
+color, etc.
+
+
+===== PAGE 5 =====
+MI
+NING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Rolling Maintenance Parts for Reducing PM Time 794 / 
+798 AC 
+DATE 
+9/5/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-240905-1 
+Caterpillar: Confidential Yellow  Page 5 of 7  
+4.0 Benefits 
+ Reduce maintenance time
+ Provide better control for the rolling parts to reduce failures.
+ Having better control of magnetic plugs, to study and create history.
+5.0 Resources Required 
+ Necessary to have a kit to change as rolling part, described on table 1
+ A dedicated area and process to weigh and analyze metal generated by magnetic plugs
+6.0 Supporting Attachments / References 
+Every 500 hours, Engine Oil pan sump screen (item 3) must be inspected and clean (M0106737-03). 
+Image  
+
+
+===== PAGE 6 =====
+MI
+NING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Rolling Maintenance Parts for Reducing PM Time 794 / 
+798 AC 
+DATE 
+9/5/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-240905-1 
+Caterpillar: Confidential Yellow  Page 6 of 7
+Every 500, it is necessary to clean the centrifugal oil filter (M0106737-03). 
+Only is needed to disassembly an assembly item 1 
+in the image.  Reusing the clamps 3 and 2. 
+Paper COF and seals are new and installed before 
+the PM 
+Every 500 hours, it is necessary to clean / inspect the air filter element of electric cabinet (metal sand 
+filters - M0106737-03). 
+Clean the screens with water (low pressure) 
+and wait all the filters to dry completely. 
+
+===== PAGE 7 =====
+MI
+NING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Rolling Maintenance Parts for Reducing PM Time 794 / 
+798 AC 
+DATE 
+9/5/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-240905-1 
+Caterpillar: Confidential Yellow  Page 7 of 7   
+The implementation will cost $7190.84 one kit for 4 trucks to use the same parts from one truck to 
+another. With more trucks it will be necessary to increase by two or more kits.  
+Item Description System Parts Number Cost (Reference) $ 
+Sales price 
+1 Screens Drive Train 313-4082** 56.70
+2 COF Rotor AS Filter 
+Centrifugal 
+Engine 
+lubrication 494-6433*** 6345.39
+3 Oil Screen Engine 
+lubrication 364-8521** 439.80
+4 Magnetic plugs Power train Wheels (6V-3298) ** 223.95 
+5 Power train Final drive (6V-0439) ** 68.92 
+6 Engine
+High pressure fuel pump 
+(3J-1907) ** 2.23 
+7 Engine Driven Pump (377-9588)** 53.85 
+Total 7190.84
+7.
+0 Related Best Practices 
+0509-1.02-1167 – Magnetic Plug Inspection Trays and Inspection Process 
+8.0 Acknowledgements 
+The idea for this Best Practice belongs to:  
+Juan David Coila  
+Specialist support trucks 
+Juan.coila@ferreyros.com.pe 
+Juan Francisco Cháve
+z Viladegut 
+Specialist 798AC Truck  
+Juan.chavez@ferreyros.com.pe 
+This Best
+ practice was written by : 
+Juan Francisco Chávez Viladegut 
+Juan.chavez@ferreyros.com.pe 
+Special tha
+nks to the PM Group of 798AC At Sociedad Minera Cerro Verde Project

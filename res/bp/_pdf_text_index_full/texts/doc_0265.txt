@@ -1,0 +1,289 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\793C Aftercooler Adapter Remover.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+  
+October 18 
+4.03-171229-01 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      mining.cat.com  
+  
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Aftercooler Adapter Remover – 793C, 793D 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Removal Adapter Aftercooler – 793C, 793D .............. 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Resources Required .......................................... 3 
+5.0 Supporting Attachments / References ............... 4 
+6.0 Related Best Practices ...................................... 4 
+7.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Aftercooler Adapter Remover 
+DATE 
+10/25/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-171229-01 
+Caterpillar Confidential:  YELLOW          Page 1 of 5 
+1.0 Introduction  
+ 
+A tool was developed to eliminate the damage to the aftercooler housing (P/N 210-2603 & 210-
+2581) when removing adapters (P/N 371-5945 & 371-5944.) Due to the small size of the 
+adapters, it is often difficult to remove them without the risk of causing damage to other 
+components. 
+ 
+2.0 Best Practice Description 
+ 
+Install the developed tool inside the space between the aftercooler core and the adapter. Make 
+sure to adjust the nails and pull the adapter. 
+ 
+BEFORE 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+AFTER 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Aftercooler Adapter Remover 
+DATE 
+10/25/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-171229-01 
+Caterpillar Confidential:  YELLOW          Page 2 of 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Aftercooler Adapter Remover 
+DATE 
+10/25/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-171229-01 
+Caterpillar Confidential:  YELLOW          Page 3 of 5 
+3.0 Implementation Steps 
+Design for the tool is shown below. Further dimensions are shown in the attachments section 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Through the implementation of this tool, the following benefits have been observed: 
+ 
+ Extraction time reduction: 
+o Before: 1 hour 
+o Now:  8 minutes 
+ Significant safety increase by reducing the risk of hand injuries to technicians 
+ Significant reduction to adapter and aftercooler housing damage 
+ 
+4.0 Resources Required 
+ 
+There are minimal expenses associated with developing and fabricating this tool. The total cost 
+for the tool was $420 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Aftercooler Adapter Remover 
+DATE 
+10/25/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-171229-01 
+Caterpillar Confidential:  YELLOW          Page 4 of 5 
+5.0 Supporting Attachments / References 
+ 
+Below are the required manufacturing drawings and the stress analysis conducted on the lifting 
+tool. 
+ 
+  
+6.0 Related Best Practices 
+ 
+None 
+ 
+7.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ Pablo Alcántara Michuy 
+ Ferreyros S.A. 
+  
+The idea for this Best Practice belongs to: 
+Gengis Gamonal Condori 
+Ferreyros S.A. 
+ 
+This Best Practice was revised by: 
+ Aninu Mitacc Vizcardo 
+ Ferreyros S.A. 
+ aninu.mitacc@ferreyros.com.pe

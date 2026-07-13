@@ -1,0 +1,354 @@
+SOURCE: Procedure to Measure End Play for the Fan Drive on 785C-D Engines.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+January 2023 
+1.05-230127-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Procedure to Measure End 
+Play for the Fan Drive on 
+785C/D Engines 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Procedure to Measure End Play for the Fan Drive on 
+785C/D Engines ......................................................... 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 3 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Procedure to Measure End Play for the Fan Drive on 
+785C/D Engines 
+DATE 
+1/27/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-230127-1 
+Caterpillar: Confidential Yellow          Page 2 of 7 
+1.0 Introduction  
+ 
+The cooling system  performs several functions which are critical to proper machine operation:  It 
+maintains proper engine temperature for optimum performance, cools compressed inlet air to 
+optimize combustion and dissipates excess heat  from other machine systems and components. 
+ 
+Caterpillar has implemented hydraulically driven demand fan on certain products to improve fuel 
+efficiency and provide more efficient cooling, but there are plenty of machines still in operation 
+which use a mechanically-operated  cooling fan. 
+ 
+A properly functioning fan drive is critical to engine reliability, as it works to maitain a safe 
+temperature range. A failing fan drive bearings can cause complication in the repair due to fan and 
+radiator core damage and result in expensive cost repairs.   
+ 
+ 
+ 
+Figure 1. Fan Drive system of 785C/D engine (source: media SERV1857). 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Procedure to Measure End Play for the Fan Drive on 
+785C/D Engines 
+DATE 
+1/27/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-230127-1 
+Caterpillar: Confidential Yellow          Page 3 of 7 
+2.0 Best Practice Description 
+ 
+The fan hub assembly plays an integral roll in keeping the fan drive in place so it can maintain the 
+optimal speed of the system. To prevent the fan drive from failing off, this Best Practice provides a 
+procedure to measure end play for fan drive and accuratelly diagnose the problem and fix it as 
+efficiently as possible.  
+ 
+ 
+3.0 Implementation Steps 
+ 
+1. Park the machine on a level surface and engage the parking brake; 
+2. In order to relieve the tension on the fan drive belts, Insert suitable 19.1 mm (0.75 inch) tooling 
+386-3359 into square hole  in the belt tensioner, and pry the arm of the belt tensioner in a 
+counterclockwise Direction; 
+3. Remove the belts; 
+4. Attach the magnetic base of a dial indicator to the support of the fan drive; 
+ 
+ 
+Figure 2. Position of magnetic base on fan drive Support. 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Procedure to Measure End Play for the Fan Drive on 
+785C/D Engines 
+DATE 
+1/27/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-230127-1 
+Caterpillar: Confidential Yellow          Page 4 of 7 
+5. Place the indicator tip on the backface of the hub; 
+ 
+           
+               Figure 3. Place the indicator tip on the backface of fan drive hub. 
+ 
+6. Use tooling 4C-5647 to lever and move the hub; 
+ 
+ 
+Figure 4. Use a pry bar to move the hub in one direction until the movement stops. 
+ 
+ 
+Pry bar  
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Procedure to Measure End Play for the Fan Drive on 
+785C/D Engines 
+DATE 
+1/27/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-230127-1 
+Caterpillar: Confidential Yellow          Page 5 of 7 
+7. Read the dial indicator movement; 
+8. If the dial indicator reading is above 0.25mm from point of reference at the zero position, replace 
+the hub and bearings; 
+9. Install the belts; 
+10. Slowly release the arm of the belt tensioner in order to apply tension to the fan drive belts. 
+Remove the tooling; 
+11. Take measuments every 500 hours PM and  plot the measures in a graph to analyze the trend. 
+ 
+ 
+ 
+ 
+                                     Figure 5. Graph for monitoring fan drive end play. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+0,06
+0,09
+0,10 0,10
+0,00
+0,02
+0,04
+0,06
+0,08
+0,10
+0,12
+ 65.800  66.000  66.200  66.400  66.600  66.800  67.000  67.200  67.400  67.600
+End Play (mm) 
+SMU (hours)
+Fan Drive End Play
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Procedure to Measure End Play for the Fan Drive on 
+785C/D Engines 
+DATE 
+1/27/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-230127-1 
+Caterpillar: Confidential Yellow          Page 6 of 7 
+4.0 Benefits 
+ 
+ Better parts inventory management; 
+ Monitoring fan drive end play; 
+ Avoid catastrophic failures and damages to the fan and radiator core; 
+ Reduction of unscheduled machine downtime.  
+ 
+ 
+ 
+                                            Figure 6. Downtime hours comparison. 
+ 
+ 
+5.0 Resources Required 
+ 
+ Dial Indicator  
+ Magnetic Base 
+ 4C-5647 Long Pry Bar 
+ 386-3359 Sliding T-Handle (3/4”) 
+ Trained Technician 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Belts - Inspect/Adjust/Replace (SEBU7173-22) 
+Fan Drive - Remove (SENR1486-03) 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+26
+12
+0
+5
+10
+15
+20
+25
+30
+35
+40
+Fan drive catastrophic failure Bearing Preventive Replacement
+Hours (h)
+Downtime Hours Comparison
+Time to 
+repair 
+reduced by 
+54%
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Procedure to Measure End Play for the Fan Drive on 
+785C/D Engines 
+DATE 
+1/27/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-230127-1 
+Caterpillar: Confidential Yellow          Page 7 of 7 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+ 
+Jorge A. Ruegger Silva 
+jorge.silva@sotreq.com.br 
+Phone: +55 19 99830-9067 
+This Best Practice was created and implemented by: 
+ 
+Raul Amaral 
+raul.amaral@sotreq.com.br 
+Phone: +55 62 98144-0428 
+ 
+Roberto Moraes 
+Roberto.moraes@sotreq.com.br 
+Phone: +55 62 98159-2425 
+Elias Miranda 
+elias.miranda@sotreq.com.br 
+Phone: +55 62 98100-7572 
+ 
+ 
+Best Practice Champion: 
+ 
+Fellipe Viana 
+fellipe.viana@sotreq.com.br 
+Phone: +55 31 99194-3974 
+ 
+ 
+  
+ Special thanks to: 
+ 
+ 
+Paulo Vieira 
+Claudinei Ataide 
+Belimar Costa 
+Gleiser Oliveira 
+Rogério Pinto 
+Jefferson Ronaro 
+Aluizio Carvalho 
+Julio Duarte 
+Edirlei Carvalho 
+Anderson Silva 
+Vinício Anjos

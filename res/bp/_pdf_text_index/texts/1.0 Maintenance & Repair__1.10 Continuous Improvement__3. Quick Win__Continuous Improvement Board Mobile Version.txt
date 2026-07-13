@@ -1,0 +1,351 @@
+===== PAGE 1 =====
+May 2021 
+1.10-210531-1
+ Caterpillar: Confidential Green 
+M
+INING DEALER BEST PRACTICE 
+Continuous Improvement 
+Board Mobile Version
+M
+aintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+Continuous Improvement Board Mobile Version..…….1 
+1.
+0 Introduction .......................................................... 2 
+2.0 Best Practice Description.................................... 2 
+3.0 Implementation Steps ......................................... 2 
+4.0 Benefits ................................................................ 7 
+5.0 Resources Required ........................................... 7 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices........................................ 7 
+8.0 Acknowledgements ............................................. 7 
+D
+ISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Continuous Improvement Board Mobile Version 
+DATE 
+5/31/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-210531-1 
+Caterpillar Confidential:  YELLOW           Page 2 of 7 
+1.0 Introduction  
+ 
+Unnecessary time was being used to manually enter Continuous Improvement (CI) suggestions that 
+were documented on paper into Excel. At the same time, a lot of paper was being used needlessly. 
+Situations had occurred where ideas and suggestions were being misrepresented through double 
+handling of information. Also, there had been instances of lost CI papers which lead to wasted time 
+attempting to rectify. This process was also deemed not entirely efficient as decisions made about 
+suggestions were communicated to the technicians manually. As a result, some technicians could not 
+be informed about the final status of their continuous improvement proposal.  
+ 
+2.0 Best Practice Description 
+ 
+In the current situation, technicians write their suggestions one by one on paper. The paper is left on 
+the board and the quality expert takes it from the papers and manually makes an excel entry. The 
+proposal is then evaluated by a committee and the technician is expected to be informed of the final 
+status of the proposal by the relevant engineer and the relevant team leader. Borusan has come up 
+with a more efficient process to capture CI initiatives and replace their CI board.  
+There is a feature such as recording the data of the current application on a platform that can be 
+accessed by the quality expert after the user clicks the button. Each record is transmitted to the online 
+platform in an accessible format. Data can be opened in preferred formats such as Excel, pdf, html. In 
+addition, there is an ability to send notifications to encourage technician. The desired notifications will 
+be able to send to technicians and it is possible to add visuals to the notification content. If 
+technicians will transmit suggestions by using the application, it will be prevented from entering the 
+suggestions written on paper one by one in Excel. 
+ 
+3.0 Implementation Steps 
+ 
+Step 1: Click the application icon and enter the application. While using the application, the device 
+must be connected to the internet. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Continuous Improvement Board Mobile Version 
+DATE 
+5/31/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-210531-1 
+Caterpillar Confidential:  YELLOW           Page 3 of 7 
+Step 2: The home screen opens.  
+ 
+Step 3: Continuous improvement area, date, department, occupational health and environmental 
+safety (if relevant), expected to be filled from the user. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Continuous Improvement Board Mobile Version 
+DATE 
+5/31/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-210531-1 
+Caterpillar Confidential:  YELLOW           Page 4 of 7 
+ 
+Step 4: After the entries are completed, the "Click to Save" button is clicked and the "Registration 
+Successful" notification is displayed to the user. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Step 5: For the user who wants to send the photo of the proposal, the "Click to Share Image" button 
+is clicked and the screens where the user can take a photo and then send the photo are shown. The 
+user is given the opportunity to take as many photos as they want with the "Try Again" option. When 
+the "OK" button is clicked, the photo that is selected to be sent as an E-mail. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Continuous Improvement Board Mobile Version 
+DATE 
+5/31/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-210531-1 
+Caterpillar Confidential:  YELLOW           Page 5 of 7 
+Step 6: When the "Click to See the Suggestion Status" button is clicked, the platform where the 
+existing suggestions are transferred opens and the status of the suggestions is shown to the user. 
+By clicking the "Click to Return to the Main Screen" button, you return to the home screen and 
+another suggestion can be entered. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Continuous Improvement Board Mobile Version 
+DATE 
+5/31/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-210531-1 
+Caterpillar Confidential:  YELLOW           Page 6 of 7 
+Step 7: Evaluation results are shared as push notifications. This feature is also used to encourage 
+technicians to give suggestions. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Note:  
+ 
+• If a dealer wishes to develop their own application, please reach out to Serdar for assistance 
+(contact in Acknowledgements section). 
+o Borusan used an application called Kodular to build this application utilizing a modular 
+programming technique.  
+ 
+• All the technicians have an android device. Therefore, this application is only available on 
+Android and is not accessible from the Google Play Store.  
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Continuous Improvement Board Mobile Version 
+DATE 
+5/31/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-210531-1 
+Caterpillar Confidential:  YELLOW           Page 7 of 7 
+4.0 Benefits 
+ 
+1) Fast tracking mechanism 
+ 
+2) Process efficiency with digitalization 
+ 
+3) Sharing the results of the suggestions instantly with the relevant technicians 
+ 
+4) Instant notification of the technicians who needs feedback 
+ 
+5) Simple and user-friendly application interface 
+ 
+6) Elimination of the paper waste 
+ 
+5.0 Resources Required 
+ 
+Item                             Requirements 
+Material 0$ 
+Labor (as money) 0$ 
+ 
+There may be costs associated with outsourcing application development if dealer’s IT department is 
+unable to product it ‘in-house’.  
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+Hümeyra Buğçe Bali 
+CRC Engineer Intern 
+Borusan Makina ve Güç Sistemleri  
+ 
+This Best Practice designed by:  
+Serdar Gürler  (sgurler@borusan.com) 
+CRS Workshop Engineer  
+Borusan Makina ve Güç Sistemleri  
+ 
+Project and Best practice supported by  
+Serdar Gürler  
+CRS Workshop Engineer  
+Borusan Makina ve Güç Sistemleri

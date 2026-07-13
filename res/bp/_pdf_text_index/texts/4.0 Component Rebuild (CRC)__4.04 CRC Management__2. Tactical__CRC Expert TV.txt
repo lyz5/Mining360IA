@@ -1,0 +1,456 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+CRC Expert TV 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+CRC Expert TV .......................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 6 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+January 2014 
+1310-4.04-1324 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+ 
+Creating a standard work is essential to control quality in workshops. Considering that there is a 
+different level of experience among technicians, it becomes more challenging. For non-English 
+speaking countries due to the language barrier, SIS cannot be used effectively by the technician 
+on a daily basis on the floor.  
+ 
+This Best Practice presents a different approach to efficiently handle the in-place training of the 
+technicians by using the visual (with video support) instructions together with the processes & 
+procedures written, which helps to keep the quality of the work done and reduce the rework.  
+ 
+ 
+2.0 Best Practice Description 
+ 
+During the daily operation on the shop floor, the technicians frequently refer to SIS and other in-
+house developed standard work procedures.  
+ 
+CRC Expert TV combines SIS information (Disassembly-Assembly-Reusability Guidelines) with 
+CRC specific processes and demonstrates it visually with video support. It represents a Step-by-
+step Operating Instructions/ Procedures with videos for engines and drive train components 
+relating to Disassembly & Assembly processes. The instruction/procedure consist of: 
+ 
+• Step Number 
+• Step description 
+• Reference (the source of the information described) 
+• Video (showing how to do) 
+• Control Checklists 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Expert TV 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1310-4.04-1324 
+Caterpillar Confidential:  YELLOW          Page 1 of 8 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+Screenshot view from 3500 SERIES ENGINE DISASSEMBLY PROCEDURE 
+ 
+Note: In addition to the common components’ disassembly/assembly processes, some key points 
+are described in the steps and shown in the videos accordingly. These are:  
+ 
+• Critical areas to pay attention while preparing defect list 
+• How to measure parts to determine reusability 
+• How to perform special tests on the parts (i.e. crack testing) 
+• Selecting correct tools for the job and instructions to use them 
+ 
+For quick access and friendly use of the CRC Expert TV, the customized software was 
+developed. Every technician has their own login and password to enter the software at any time 
+for self-training, updating the knowledge and skills or basically for assistance while going through 
+the component disassembly/assembly processes.  
+Each work bay is equipped with touch screen Kiosk terminals which make the system available 
+all the time. Also, team leaders/Supervisors use an iPad application that allows them to check & 
+control checklists as well as show the training video required to the technicians. 
+ 
+As the Expert TV is based on the software, it enables timely tracking and easy updating of the 
+existing instructions/procedures and/or adding new ones if some changes are made and/or a new 
+component/equipment is received by CRC. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Expert TV 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1310-4.04-1324 
+Caterpillar Confidential:  YELLOW          Page 2 of 8 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+    
+                       
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Screenshots how CRC Expert TV is used in iPad 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Expert TV 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1310-4.04-1324 
+Caterpillar Confidential:  YELLOW          Page 3 of 8 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Screenshots how CRC Expert TV is used in a touch screen kiosk terminal by technicians 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Expert TV 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1310-4.04-1324 
+Caterpillar Confidential:  YELLOW          Page 4 of 8 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+      
+Screenshot view how CRC Expert TV is used in a daily work 
+ 
+ 
+  
+Technician can 
+switch to 
+procedure to see 
+how to do the 
+step in View 
+procedure 
+section Technician is 
+able to 
+continue 
+filling out the 
+checklist after 
+page is 
+switched 
+back to view 
+procedure. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Expert TV 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1310-4.04-1324 
+Caterpillar Confidential:  YELLOW          Page 5 of 8 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.0 Implementation Steps 
+ 
+• Gather a team/committee to create/review processes including Training, HSE and I.T. 
+departments. 
+• Determine the scope of the project. 
+• Determine/map “As Is” rebuild processes. 
+• Evaluate the current practice for improvements.  
+• Prepare the new standard work (instruction/ procedure) based on SIS, and the dealer’s own 
+experience. 
+• Review “To Be” processes (instruction/procedure) with the Training Department and HSE 
+Department in terms of safety updates. Make the necessary corrections/additions if they are 
+required. 
+• Develop/improve current checklists according to new updates. 
+• Organize necessary training for ready and approved standard instruction/procedure with the 
+technicians, whose work process has been chosen. 
+• After implementation of new processes, schedule the work area for video shooting of all the 
+steps in the standard instruction/procedure. 
+• As soon as all the steps of the standard instruction/procedure are shot in video, they should be 
+uploaded into the CRC Expert TV software, which has been created by I.T. Department for this 
+purpose. 
+ 
+The Expert TV has a feedback system to contact with the technical support team. It is 
+continuously updated according to the CRC operation needs. 
+ 
+ 
+4.0 Benefits 
+ 
+• Providing a good technical visual training for a new or experienced technician, which 
+saves time and money compared to the training in class 
+• Increase sustainability of standard work in processes 
+• Maintain the high quality of the work done 
+• Reduce the rework percentage 
+• Training material for class trainings 
+ 
+5.0 Resources Required 
+ 
+• O n average, $600 USD per procedure to be shot by an Operator. 
+• N ecessary tooling determined, support equipment (overhead cranes, benches, etc.). 
+• Technicians, Training department, Technical support department and Safety Engineer. 
+• IT support. 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Expert TV 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1310-4.04-1324 
+Caterpillar Confidential:  YELLOW          Page 6 of 8 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+6.0 Supporting Attachments / References 
+ 
+When preparing the instructions/procedures the following information sources have been used: 
+• SIS (CAT standard instructions/procedures for components disassembly/assembly 
+manuals, reusability guidelines and specifications). 
+ 
+EDITOR’S NOTE:  Though Borusan cannot share the software code, they may be contacted if 
+another dealer wishes to implement and has technical questions. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+EDITOR’S NOTE:  Caterpillar is expanding its SIS capabilities to include industry standard 
+graphical icons to help make procedures quicker to follow.  As NextGen SIS (phases 1 & 2) are 
+rolled out in 2014-2015, expect 3D graphical animations to be made available as well.  Each 
+dealer will need to determine if they want to tailor a video strategy as defined in this Best 
+Practice, or utilize the new features being added to SIS. 
+ 
+Currently you can reference media number UENR2257 (793F Off-Highway Truck Field Assembly) 
+for examples of the new icons in use.  More documents are being updated with these new 
+graphics as time and resources allow. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Expert TV 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1310-4.04-1324 
+Caterpillar Confidential:  YELLOW          Page 7 of 8 
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+8.0 Acknowledgements 
+ 
+The idea of creating & implementing this Best Practice belongs to 
+ 
+ 
+ 
+Andrey UMAROV 
+CRC Process Engineer 
+Borusan Makina 
+Kazakhstan LLP 
+aumarov@borusan.com  
++7 (700) 928 82 33 
+ 
+Azamat IBRAYEV 
+Service Engineer 
+Borusan Makina Kazakhstan 
+LLP 
+aibrayev@borusan.com  
++7 (701) 521 34 32 
+ 
+Chokan AIBATYROV  
+Service Engineer  
+Borusan Makina 
+Kazakhstan LLP  
+caibatyrov@borusan.com     
++7 (777) 576 92 88  
+ 
+Evgeniy NIKONENKO 
+Training Instructor 
+Borusan Makina 
+Kazakhstan LLP  
+enikonenko@borusan.com      
++7 (701) 900 15 82  
+ 
+Alibek SHAKENOV  
+Service Training Instructor 
+Borusan Makina 
+Kazakhstan LLP  
+alshakenov@borusan.com      
++7 (707) 305 93 71 
+ 
+Rafet KAYMAKCI  
+Service Development 
+Manager  
+Borusan Makina Kazakhstan 
+LLP  
+rcaymakci@borusan.com     
++7(701) 951 98 51 
+ 
+Baris SAYIN  
+Component Rebuild 
+Center (CRC) Manager  
+Borusan Makina 
+Kazakhstan LLP 
+bsayin@borusan.com     
++7(701) 951 99 32 
+ 
+Eser APAYDIN  
+Continuous Improvement & 
+Quality Manager  
+Borusan Makina 
+Kazakhstan LLP  
+eapaydin@borusan.com    
++7(701) 951 98 04 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Expert TV 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1310-4.04-1324 
+Caterpillar Confidential:  YELLOW          Page 8 of 8

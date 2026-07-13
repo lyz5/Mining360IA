@@ -1,0 +1,219 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+August 19 
+4.03-190214-01 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.     
+ catminer.com 
+  
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Installation Valve Guides Assembly – C175 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Installation Valve Guides Assembly – C175 .................... 1 
+1. Introduction ............................................................... 2 
+2. Best Practice Description .......................................... 2 
+3. Implementation Steps ............................................... 3 
+4. Benefits ..................................................................... 4 
+5. Resources Required ................................................. 4 
+6. Supporting Attachments / References ...................... 4 
+7. Related Best Practices .............................................. 4 
+8. Acknowledgements ................................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information 
+provided by one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no 
+representation or warranty about the information contained in this document or the products referenced herein. 
+Caterpillar welcomes additional “Best Practice” recommendations from our dealer network.  
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Installation Valve Guides Assembly – C175 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-190214-01 
+Caterpillar Confidential:  YELLOW         Page 2 of 5 
+1. Introduction  
+In the C175 models, the KENR6052 assembly manual indicates that the valve  guides are 
+installed one at a time  in the cylinder head. This is done by using the valve guide driver 283-
+0052 and a suitable hammer . The proposed  tool described in this best practice has been 
+designed to install the 4 valve guides simultaneously , while still keeping installation efforts to 
+a minimum. 
+ 
+2. Best Practice Description 
+This tool will be able to install all 4 valve guides all at once, thus decreasing the time to 
+complete the task. It also makes the task more efficient and easier to complete. To install, the 
+guides must be centered on the cylinder head, and an appropriate press must be used to 
+install the valve guides themselves. Implementation steps and drawings are shown below. 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Installation Valve Guides Assembly – C175 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-190214-01 
+Caterpillar Confidential:  YELLOW         Page 3 of 5 
+3. Implementation Steps 
+ 
+Manufacture tool according to the dimensions of cylinder head. 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Installation Valve Guides Assembly – C175 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-190214-01 
+Caterpillar Confidential:  YELLOW         Page 4 of 5 
+ 
+ 
+ 
+4. Benefits 
+ 
+• Increases safety by minimizing the risk of damage to hands 
+• Minimizes the efforts in the installation 
+ 
+5. Resources Required 
+ 
+• Expense to fabricate the tool $ 415 
+ 
+6. Supporting Attachments / References 
+ 
+None 
+ 
+7. Related Best Practices 
+ 
+None 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Installation Valve Guides Assembly – C175 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-190214-01 
+Caterpillar Confidential:  YELLOW         Page 5 of 5 
+8. Acknowledgements 
+ 
+This Best Practice was written by: 
+ Pablo Alcántara Michuy 
+ Ferreyros S.A. 
+  
+The idea for this Best Practice belongs to: 
+Alexander Aranda Abanto 
+Ferreyros S.A. 
+ 
+This Best Practice was revised by: 
+ Aninu Mitacc Vizcardo 
+ Ferreyros S.A. 
+ aninu.mitacc@ferreyros.com.pe

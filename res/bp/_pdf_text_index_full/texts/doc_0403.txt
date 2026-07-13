@@ -1,0 +1,375 @@
+SOURCE: Improved Assembly Process of the 793D-F XL Front Brake.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2022 
+4.03-221219-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Improved Assembly 
+Process of the 793D/F XL 
+Front Brake  
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+                                  
+ 
+Improved Assembly Process of the 793D/F XL Front 
+Brake ......................................................................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ............................................................. 5 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ........................................... 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Assembly Process of the 793D/F XL Front 
+Brake 
+DATE 
+12/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221219-1 
+Caterpillar: Confidential Yellow          Page 2 of 7 
+1.0 Introduction  
+ 
+During the installation activity of the XL front brake assembly of the 793D or F after being rebuilt, it is 
+common to find a misalignment between the splines of the discs and plates in relation to the brake 
+assembly due to the lack of an appropriate tool for proper alignment. 
+ 
+Since this misalignment takes place during component PCR,  it is necessary to fix  it in the field upon  
+the brake assembly removal, placing it horizontally for alignment between the parts before component 
+installation in the suspension and front wheel set, ending with the bearings preload. 
+ 
+This problem significantly increases the time spent for the front brake assembly replacement process. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+This best pract ice describes the development  and use of a device/tool  to mitigate the impact of two 
+types of misalignments during the assembly process, as follows: 
+  
+A. Disc spline misalignment: 
+Since Hub, PN 265-3189 is not always delivered from customer site to the CRC  together with 
+the brake assembly, it often leads to misalignment. 
+ 
+ 
+ 
+Figure 1 - Disc spline misalignment in relation to the 265-3189 hub during the component installation. 
+ 
+ 
+B. Decentralization of the plates and disks in relation to the hub: 
+As much as the hub is used, this will ensure that the splines are aligned during assembly  
+(previous example), however the plates and discs can still be installed centered in relation to 
+the brake assembly (housing).  
+ 
+The images below show a set of brake with the splines  of the discs aligned but showing the 
+decentralization in relation to the set (housing) which makes it impossible to install the Hub 
+during the assembly of the component in the field. 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Assembly Process of the 793D/F XL Front 
+Brake 
+DATE 
+12/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221219-1 
+Caterpillar: Confidential Yellow          Page 3 of 7 
+ 
+ 
+Figures 2 and 3 - Decentralization of the discs and plates in relation to the set. 
+ 
+Note: The idea contained in this best practice, written for 793F trucks can be replicated to all other 
+truck models with XL brake arrangements, since you make the adjustments needed according to the 
+specific hub used and dimensions of each one. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The customization of a Hub, PN 265 -3189 to be used as a tool will make it possible to correct these 
+two problems mentioned in the previous topic. 
+ 
+• Acquisition of a PN 265-3189 Hub: 
+ 
+ 
+Figures 4,5 and 6 - 265-3189 Hub drawings 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Assembly Process of the 793D/F XL Front 
+Brake 
+DATE 
+12/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221219-1 
+Caterpillar: Confidential Yellow          Page 4 of 7 
+• Suitability Tool: 
+This tool can be adapted from the Hub, PN 265-3189 with the addition of spacers welded along the 
+inner diameter of the part according to the specifications below: 
+ 
+ 
+Figures 7 and 8 - Spacers (four welded bosses) 
+ 
+ 
+ 
+Figure 9 - 04 X 31,50mm of Steel bar with 11mm Ø (welding position). 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Assembly Process of the 793D/F XL Front 
+Brake 
+DATE 
+12/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221219-1 
+Caterpillar: Confidential Yellow          Page 5 of 7 
+ 
+• Utilization procedure for the tooling: 
+ 
+1 - Position the brake assembly in a horizontal position on a service bench; 
+2 - Use an appropriate tool to release the parking brake in order to keep the plates and discs 
+free to move; 
+3 - Install an appropriate lifting device for the tooling (customized hub with welded spacers); 
+4 - Position and slide the tooling between the splines of the brake discs; 
+5 - Make sure the brake discs are correctly aligned and centered; 
+6 - Apply the parking brake; 
+7 - Remove the tooling from the brake assembly. 
+ 
+ 
+4.0 Benefits 
+ 
+• Safety:  Eliminate the risk of injuries by avoiding rework in the field and preventing technician's 
+exposure to the risks inherent to correlated activities. 
+ 
+• Contamination control:  Once the component is received/ready for installation in the machine, there 
+is no need for disassembling it thus eliminating exposure to external environmental contaminants. 
+ 
+• Reliability of CRC service:  Use of the proposed tool for brake assembly alignment provides a fast, 
+safe and quality installation; damage to the parts is avoided. 
+ 
+• Elimination of rework during component installation:   This process ensures that the front brake 
+assembly is installed on the machine in the standard time as it eliminates the possibility of field 
+rework. 
+ 
+The chart below shows the installation time considering customer's standard time to carry out the R&I, 
+that is, from the equipment stop in the maintenance box to the release of the machine for operation, 
+including the tire repair and lubrication works.  
+ 
+The process without using this suitability tool (total time with rework +R&I) spends 10,5h (161%) more 
+than optimized one (Optimized R&I).  
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Assembly Process of the 793D/F XL Front 
+Brake 
+DATE 
+12/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221219-1 
+Caterpillar: Confidential Yellow          Page 6 of 7 
+ 
+ 
+Chart 1 – Difference between the former process VS Optimized   
+ 
+ 
+ 
+5.0 Resources Required 
+ 
+• 265-3189 Hub; 
+• Welding process and supplies 
+• 04 X 31,50mm of Steel bar 11mm Ø. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Cleaning Front Wheel Groups Of 793, 795, And 797 Off-Highway Trucks {4002, 4006, 
+4008, 4200, 4205, 4208, 4215, 4234, 4251} (SEBF8490-03) 
+• Wheel, Brake And Suspension (Front) - Install - Extended Life (UENR2257-10) 
+• Service And Parking Brake (Front) - Remove And Install (UENR1142-04) 
+• Service And Parking Brake (Front) - Disassemble (UENR1142-04) 
+• Service And Parking Brake (Front) - Assemble (UENR1142-04) 
+ 
+ 
+7.0 Related Best Practices 
+ 
+This best practice may be used joint with the BP below: 
+• 1206-4.03-1277 - Disassemble / Assemble Tool for 793D/F  Hub Brake 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Assembly Process of the 793D/F XL Front 
+Brake 
+DATE 
+12/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221219-1 
+Caterpillar: Confidential Yellow          Page 7 of 7 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+ 
+Paulo Vieira  
+paulo.vieira@sotreq.com.br 
++55-31-97166-3280 
+ 
+ 
+ 
+ 
+This Best Practice was developed and implemented by: 
+ 
+Anderson Silva 
+Anderson.silva@sotreq.com.br 
++55-31-98887-4301 
+ 
+Gleiser Oliveira 
+Gleiser.oliveira@sotreq.com.br 
++55-31-99941-2977 
+ 
+Belimar Costa 
+      belimar.costa@sotreq.com.br 
++55-31-99967-0731 
+ 
+Elias Miranda 
+Elias.miranda@sotreq.com.br 
++55-62-98100-7572 
+Claudinei Ataide 
+claudinei.ataide@sotreq.com.br 
++55-31-97188-7413 
+ 
+Poliane Paiva 
+poliane.paiva@sotreq.com.br 
++55-31-99666-0911 
+ 
+Gustavo Lage 
+gustavo.lage@sotreq.com.br 
++55-31-98675-8296 
+ 
+Fabio Almeida  
+Fabio.almeida@sotreq.com.br 
++55-31-98862-5685 
+ 
+Thiago Assis 
+Thiago.assis@sotreq.com.br 
++55-31-98887-4301 
+ 
+Danuzia Lima 
+Danuzia.lima@sotreq.com.br 
++ 55-31-99730-6465 
+ 
+  
+Best Practice Champion: 
+ 
+ 
+Fellipe Viana 
+Fellipe.Viana@sotreq.com.br 
+55-31-991943974 
+ 
+ 
+  
+Special thanks in development to: 
+ 
+ 
+Rogerio Pinto Edirlei Carvalho Jorge Silva 
+Julio Duarte Jefferson Ronaro Aluizio Carvalho

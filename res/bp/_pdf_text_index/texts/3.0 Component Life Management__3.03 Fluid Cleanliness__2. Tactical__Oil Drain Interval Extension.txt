@@ -1,0 +1,209 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Oil Drain Interval 
+Extension 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+MARC 
+Management 
+ 
+ 
+ 
+Oil Drain Interval Extension........................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 2 
+7.0 Related Best Practices ...................................... 2 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+December 2006 
+1206-2.1-1050 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Hydraulic and powertrain oil quality is a critical factor in component durability. Changing oil at the 
+recommended interval is intended to remove contaminants and maintain oil viscosity and additive 
+levels to specification. However, some progressive customers and dealers have found that 
+keeping oil very clean reduces both contaminant levels and reduces the rate of oil oxidation. 
+Viscosity and additive levels also last much longer when oil is kept clean. This behavior led to 
+experimentation to see if oil life could be extended, which has proven successful at numerous 
+sites throughout the world.  
+ 
+2.0 Best Practice Description 
+ 
+In general, oil life may be extended if two major factors are controlled and closely monitored: 
+• Contaminant levels 
+• Oxidation 
+ 
+Contaminant levels can be controlled by aggressive filtration and maintaining oil cleanliness levels 
+of ISO18/15 or better. This may be achieved by the use of off-board filtration (kidney-looping), 
+improved onboard filtration, or both. 
+ 
+Oxidation of the oil is caused by overheating, chemical reaction with wear metals in the oil, or a 
+combination of both. Overheating (cooking) the oil is caused by excessive operating temperatures. 
+Chemical oxidation is caused by a chemical reaction between wear metals in the oil and the oil 
+itself. Minimizing wear metals dramatically slows the chemical oxidation process. 
+ 
+3.0 Implementation Steps 
+ 
+There are no formal recommendations from Caterpillar on extending oil life for powertrain and 
+hydraulic components. Some informal recommendations have emerged from dealer/ customer 
+experience include: 
+ 
+1. On new machines or rebuilt components, a larger than normal amount of break-in debris is 
+generated. A good practice is to change the oil for the first time at the recommended interval. 
+ 
+2. Take oil samples at the end of each PM interval before PM and again after PM. Starting and 
+ending samples provide a baseline for how much the oil is degrading over the PM period. 
+ 
+3. If particulate counts are higher than ISO 18/15, off-board filtration (kidney-looping) should be 
+used to clean the oil.  
+ 
+4. The use of Ultra-High Efficiency (UHE) filters is recommended for most applications. These 
+filters trap and retain more debris and help to maintain higher levels of oil cleanliness. 
+However, UHE filters may plug during the PM intervals as they clean the system. This is not 
+abnormal and is not a filter failure. Once the system can maintain ISO 18/15 or better at the 
+end of the PM period, the UHE filters are maintaining cleanliness and off-board filtration may 
+be discontinued if desired. Typically, once oil cleanliness achieves ISO 16/13 or better at the 
+end of the PM period, off-board filtration will not clean the oil any further. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Oil Drain Interval Extension 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.1-1050 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+5. After the first oil change, oil life may be extended based on two conditions. Develop a plan to 
+monitor these conditions with the SOS lab.  
+a. Particulate levels should be ISO 18/15 or less. 
+b. Oxidation should not exceed 80%. Oxidation typically increases at a fairly predictable 
+rate until it reaches around 80%, then increases very rapidly. Oil should be changed 
+before oxidation reaches 80%.  
+  
+4.0 Benefits 
+ 
+An increasing number of customers have extended oil life by as much as 400% in some cases. 
+This extension results in fewer oil changes and significant savings in new oil and disposal costs of 
+used oil.  
+Examples include: 
+ 
+785 – 793 Trucks  Recommended   Actual 
+     Change Interval    Change Interval 
+     (Hours)    (Hours) 
+Rear Axle    2,000     8,000    
+Transmission   1,000     2,000  
+Steering    2,000      3,000 
+Hydraulics   2,000     3,000 
+ 
+The actual savings may vary somewhat depending on the amount of extended life achieved, new 
+oil cost, and disposal cost. 
+ 
+5.0 Resources Required 
+ 
+1. Sampling and oil life extension plan with SOS facility. 
+ 
+2. Off-board filtration equipment and training in place. 
+ 
+3. Personnel trained and assigned to monitor oil conditions and 
+make decisions to continue to run or change the oil based on 
+oil condition. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Improving Component Durability booklets (see next page) 
+Specifically: 
+ Fluid Cleanliness Management    SEBF1020      
+ 
+ 
+7.0 Related Best Practices 
+ 
+0806-2.1-1000  Fluid cleanliness management  
+0806-2.1-1003  On-board Machine Filtration 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Oil Drain Interval Extension 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.1-1050 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Dick Douglas 
+Market Consultant 
+Caterpillar Global Mining 
+Douglas_Richard_D@cat.com 
+1-309-675-5699 
+ 
+Resources were used from several large customers, however specific details were not available 
+for sharing. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Oil Drain Interval Extension 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.1-1050 
+Caterpillar Confidential:  GREEN          Page 3 of 3

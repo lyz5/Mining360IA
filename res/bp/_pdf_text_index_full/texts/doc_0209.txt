@@ -1,0 +1,282 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Tool to Install Transmission Control Valve 383-7597 Ring Retainer.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Tool to Install 
+Transmission Control 
+Valve 383-7597 Ring 
+Retainer 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+Tool to Install Transmission Control Valve 383-7597 
+Ring Retainer ............................................................. 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network 
+ 
+ 
+ 
+ 
+  
+June 2014 
+1406-4.01-1342 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Caterpillar has changed the retainer ring for the transmission control spool valves. This new ring-
+retaining (Part number: 383-7597) is stronger, but the installation of this ring is more difficult. This 
+Best Practice is a simple tool that facilitates the installation of the retainer ring while using the 
+Caterpillar tool (Part number: 446-5933). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Ferreyros has developed a simple tool that compresses the spring spool, giving enough space for 
+the installation of the retainer ring. 
+ 
+ 
+ 
+ 
+ 
+Before Now 
+Compressor 
+Bracket 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Install Transmission Control Valve 383-7597 
+Ring Retainer 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1406-4.01-1342 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Install Transmission Control Valve 383-7597 
+Ring Retainer 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1406-4.01-1342 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+The technician must place the spool in the bracket hole and then press  t he spring with the 
+compressor.  The compressor tool locks into position allowing both hands  free to insert the ring -
+retaining to spool with the use of CAT tools  – cone and tube  ( Part number: 446- 5933) and a 
+hammer. After that, the assembled spool valve is removed from the tool. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                          
+Hammer 
+CAT tool 
+(Tube) 
+CAT tool 
+(Cone) 
+Ring retaining 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Install Transmission Control Valve 383-7597 
+Ring Retainer 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1406-4.01-1342 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+                                                 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+Design and fabricate a tool as shown above. 
+ 
+4.0 Benefits 
+ 
+• Faci litates the installation of retainer ring. 
+• Less time required. 
+ 
+5.0 Resources Required 
+ 
+• Minimal expense to fabricate the tool.  
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+Ring retaining 
+Spool for transmission control 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Install Transmission Control Valve 383-7597 
+Ring Retainer 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1406-4.01-1342 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+       Aninu Mitacc 
+       Ferreyros S.A.A. 
+            
+The idea for this best practice belongs to: 
+ 
+Carlos Cossio 
+Ferreyros S.A. 
+ 
+Samuel Rosas 
+Ferreyros S.A. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Install Transmission Control Valve 383-7597 
+Ring Retainer 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1406-4.01-1342 
+Caterpillar Confidential:  GREEN          Page 5 of 5

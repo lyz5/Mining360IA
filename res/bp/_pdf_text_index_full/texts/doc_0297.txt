@@ -1,0 +1,240 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Parts Buffer Enhancement.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+January 2007  
+0107-4.5-1060  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Parts Buffer Enhancement  
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety 
+ 
+ 
+ 
+Parts Buffer Enhancement ...................................... 1 
+1.0  Introduction ........................................................ 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 3 
+5.0  Resources Required .......................................... 3 
+6.0  Supporting Attachments / References ............... 4 
+7.0  Related Best Practices ...................................... 4 
+8.0  Acknowledgements ........................................... 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+ 
+ 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Parts Buffer Enhancement 
+DATE 
+2/2/07 
+CHG 
+NO 
+01 
+NUMBER 
+0107-4.5-1060  
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+ 
+1.0 Introduction  
+ 
+In a CRC, parts cleaning is typically performed in dedicated general parts cleaning work bay.  
+Parts cleaning may utilize several technologies, including high-pressure cabinet washing, manual 
+solvent washing, or gasket scraping.  Parts cleaning must be managed to provide high quality 
+rebuilds while minimizing costs and “over-cleaning”. 
+ 
+Clean parts introduce minimal contaminates into a component, reducing internal parts wear and 
+providing longer service life.  Clean parts also help assure that joints fit accurately and securely 
+without future leaks.  Worn parts often retain gasket material, hard carbon, and rust in their joint 
+mating areas, even after high-pressure cabinet washing.  These surface areas minimally require 
+scraping and possibly buffing/blasting if the contamination is aggressive. 
+ 
+Many cleaning processes create airborne debris. Minimal effects find the debris deposited on 
+staged clean parts and inside equipment, while a worst case could send debris though the entire 
+shop rebuild/assembly areas. In all instances, uncontrolled airborne debris creates an adverse 
+situation for repair quality. 
+ 
+This Best Practice describes a well-designed method of controlling the airborne debris generated 
+when buffing parts.  It uses a downdraft table, often considered a standard piece of CRC cleaning 
+equipment, to help control buffing debris.  These benches are typically used only with hand-held 
+angle grinder type buffers but can be used more effectively with bench grinder type buffer. 
+ 
+2.0 Best Practice Description 
+ 
+Parts buffing is often performed with a handheld angle grinder over a downdraft table.  A bench 
+grinder buffer is typically a more efficient (faster) tool if the piece part can be conveniently hand-
+held.  Controlling the bench grinder’s airborne debris is often difficult since the wheel guard 
+extraction systems are somewhat ineffective. 
+ 
+The most effective debris extraction system utilizes a bench grinder mounted on a fabricated 
+platform. The platform allows the buffer to be positioned into the downdraft table’s working area, 
+where it is pinned in place. Once in-place, the platform assembly activates a switch allowing the 
+operator to start the buffer. When the operator is finished with the buffer it can be stopped, 
+unpinned, and pivoted outside the downdraft table working area to the side of the table. The table 
+is now clean and available for standard use. 
+ 
+Downdraft tables are effective at controlling buffing debris. Compared to a wheel guard extraction 
+system, the table draws much more air through the buffing wheels and guards.  This arrangement 
+catches much more buffing debris, preventing it from drifting onto the cleaning technicians, 
+previously cleaned parts, or into the shop area.  
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Parts Buffer Enhancement 
+DATE 
+2/2/07 
+CHG 
+NO 
+01 
+NUMBER 
+0107-4.5-1060  
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+3.0 Implementation Steps 
+ 
+1. Determine area in shop to be designated for clea ning/buffing. 
+a. Assure cleaning area has supporting utilities (c ompressed air for angle buffer, lighting, 
+and electricity as needed) 
+b. Assure area has adequate space and access for eq uipment and parts staging. 
+ 
+2. Design and construct enhanced buffing equipment 
+3. Size to needs 
+4. Establish equipment usability/configuration to a ssure easy cleaning/maintenance and 
+professional appearance. 
+a. Establish new/adjusted repair/rebuild time requi rement targets as needed. 
+5. Eliminate the current processes/tooling/equipmen t strategy (only one best way). 
+a. Install the layout/equipment changes into the sh op 
+6. This may occur in phases, as needed, such as sho p arrangement, then equipment final 
+design/fabrication. 
+7. Promote change feedback as installation may surf ace new problems.  
+a. Train employees to use the new procedures/equipm ent.  Follow-up/enforce 
+immediately. 
+b. Establish equipment maintenance schedule/respons ibility. 
+c. Review process/equipment performance once establ ished. 
+d. Establish and install any adjustments as needed.  
+ 
+4.0 Benefits 
+ 
+Saves Labor  – Well designed/organized cleaning equipment reduces buffing efforts.  Product 
+staged in accessible carts reduces space needed.  Less effort is required to maintain a clean 
+work area and fewer parts need follow-up cleaning before assembly. 
+ 
+Saves Time   – Parts are not staged in different areas for different types of cleaning, reducing 
+work flow interruptions.  Protecting parts against airborne debris interferes less with cleaning. 
+ 
+Increases Quality  – More effective cleaning equipment simplifies cleaning processes and 
+promotes high technician professionalism. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Facility 
+o Re-organize workstation to allow for downdraft tab le and buffer placement, incoming 
+and outgoing staging, and table maintenance as needed. 
+ 
+• Support Equipment 
+o A bench type buffer and an effectively sized downd raft table with side and overhead 
+panels. 
+o A fabricated platform for the buffer.  This would be attached to a pivot shaft. 
+o A pivot shaft attached to the platform and suspend ed by flange-mounted bearings. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Parts Buffer Enhancement 
+DATE 
+2/2/07 
+CHG 
+NO 
+01 
+NUMBER 
+0107-4.5-1060  
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+o Fabricated plates (3). 
+o Two plates attached to the side of the downdraft t able, serving as platforms for the 
+flange-mounted bearings. 
+o One plate attached to the side of the downdraft ta ble, servicing as a buffer platform 
+pinning anchor.  
+o Flange mounted bearings (2) 
+o A fabricated pivot-locking pin with a retention ch ain. 
+o A micro-switch installed to assure the buffer cann ot be started until the buffer is 
+pivoted/locked in the proper position. 
+o An electric terminal box for safe connections and plug-ins. 
+o Electrical cords as needed between switches, termi nals, and power supplies. 
+o Clip fasteners for electric cord routing/retention . 
+o Miscellaneous fastening hardware 
+ 
+• People 
+o Establish current cleaning concerns with team 
+o Establish process, layout, and equipment improveme nts through team. 
+ 
+• Training 
+o Define/establish/enforce new processes, roles and responsibilities with production 
+teams. 
+o Remove replaced items (buffers/tables) from operat ions to prevent less effective 
+cleaning. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Several supporting attachments.  
+ 
+7.0 Related Best Practices 
+ 
+0107-4.4-1061   Parts Blasting Enhancement 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Russ Young 
+6 Sigma Black Belt 
+Cat Global Mining

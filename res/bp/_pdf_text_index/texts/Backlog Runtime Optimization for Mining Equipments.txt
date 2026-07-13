@@ -1,0 +1,243 @@
+===== PAGE 1 =====
+February 2023 
+1.06-230217-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+M
+INING DEALER BEST PRACTICE 
+Backlog Runtime 
+Optimization for Mining 
+Equipments
+M
+aintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+Backlog Runtime Optimization for Mining 
+Equipments.................................................................1
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 3 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 6 
+D
+ISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Runtime Optimization for Mining Equipments 
+DATE 
+2/17/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.06-230217-1 
+Caterpillar: Confidential Yellow P age 2 of 6 
+1.0 Introduction 
+F
+acing mining sector current scenario, customers have been seeking partnerships with d ealers, 
+searching for best practices which allow them to reduce equipment’s operating cost, making 
+productivity more efficient, and thus allowing their process to be more competitive when compared 
+to competitors. 
+D
+uring maintenance activities, it has been observed that many technicians stop their activities and 
+take a considerable time to search for literature on procedures, print and interpret , since most of 
+the contract technician come from Sotreq’s mechanical  school and still do not have the ability  to 
+find literature quickly, the time to execute preventive measures is significant. 
+W
+hen performing preventive maintenance services, such as the 500-hour interval for instance, 
+technicians receive a maintenance plan form, called Backlog and Service Order Form, in which the 
+tasks are qualified as pending execution, as shown in the following Picture 01. 
+ Picture 01 – Example of a Backlog and Service Order Form. 
+Aiming to accomplish those tasks in accordance with Caterpillar quality standards, technicians must 
+be oriented by literature guidance’s . Thus, they took some time searching and printing them and 
+once the service is completed, those are discarded. 
+To r
+educe the field technician's search time, service technician becomes responsible for searching, 
+printing, and delivering the procedures to the field technicians as well as the backlog forms to be 
+carried out according to Picture 02: 
+
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Runtime Optimization for Mining Equipments 
+DATE 
+2/17/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.06-230217-1 
+Caterpillar: Confidential Yellow P age 3 of 6 
+P
+icture 02 – 500-hour preventive maintenance with a transmission test and adjustment. 
+Approximately 15 printed sheets. 
+H
+owever, it was noticed the process could still be improved, since it was resulting in many prints 
+and several paper sheets per activity, prejudicing the environment. 
+O
+bserving the necessity to optimize backlogs runtime, this project was conceived and executed. 
+2
+.0 Best Practice Description 
+A
+ll procedures printed before, are generated via QR code. Only these codes are printed and added 
+to the backlog sheet. In this way, technicians, using the corporate cell phones, scan the code and 
+the procedures are visualized on its screen, encouraging sustainability,  and saving time to more 
+critical activities. 
+T
+wo studies were carried out to verify the execution time of a 500-hour preventive service: 
+1. T
+he first study measured the time spent by the field team to gather the necessary
+information, print the procedures, and perform the service as it was originally done.
+Considering two technicians running, on average, it used to take about 16-hour-service plus
+2 hours for the technician finding the necessary procedures in the system, read and interpret.
+In addition, 5 to 15 sheets were printed.
+2. I
+n the second, the service technicians started to check in advance the necessary literature
+to perform the task and create a QR code that directs to the SIS2 link. The se codes are
+printed on the back page of the backlog and sent to the area for technicians to run as Picture
+03 illustrates.
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Runtime Optimization for Mining Equipments 
+DATE 
+2/17/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.06-230217-1 
+Caterpillar: Confidential Yellow P age 4 of 6 
+Picture 03 – Example of an optimized backlog sheet containing QR codes. 
+A
+fter this implementation, the time for a 500-hour preventive service decreased around two hours. 
+In addition, the printed backlog reduced to two pages. 
+In 2020, for instance, 135 revisions were carried out in the operational fleet at Usiminas Mineração, 
+containing five D8T track-type tractors. Considering each review approximately 15 sheets are 
+printed, 2025 sheets were saved by year. 
+A
+fter the project implementation, 270 hours and 270 sheets are saved yearly on preventive service 
+currently. 
+3
+.0 Implementation Steps 
+1. M
+easure execution time on a routine service maintenance,
+2. Define time interval for each activity related to the preventive service, such as literature search
+and print,
+3. Anticipate and catalog all literature related to backlog activities before field technicians,
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Runtime Optimization for Mining Equipments 
+DATE 
+2/17/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.06-230217-1 
+Caterpillar: Confidential Yellow          Page 5 of 6 
+4. Generate QR code via online program containing all necessary literature to perform backlog 
+activity, 
+5. Print a single sheet containing backlog tasks and in the back of that sheet print generated QR 
+codes, 
+6. Share that sheet to field technicians, who should use their corporate cellphone to read the code 
+and perform the activities correctly. 
+ 
+4.0 Benefits 
+ 
+• Environmentally friendly process 
+• Reduction from 2430 to 2160 hours in  500-hour preventive maintenance, which stands for 
+11%. Also decrease of 13% print material according to Graphic 01 considering a year period: 
+ 
+ 
+Graphic 01 – Savings related to QR code implementation. 
+ 
+*For this test 500-hour preventive maintenance was elected, however it can expand to different services. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Printer 
+• QR code generation program. 
+ 
+6.0 Supporting Attachments / References 
+ 
+See https://br.qr-code-generator.com for QR code generation. 
+ 
+7.0 Related Best Practices 
+ 
+N.A 
+  
+0
+500
+1000
+1500
+2000
+2500
+SERVICE HOURS PRINTED SHEETS
+2430
+20252160
+1755
+Implemented Project Savings
+Before QR code implementation After QR code implementation
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Runtime Optimization for Mining Equipments 
+DATE 
+2/17/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.06-230217-1 
+Caterpillar: Confidential Yellow          Page 6 of 6 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Maxuel Teixeira 
+Mining Performance Engineer / PE 
+maxuel.teixeira@sotreq.com.br 
++55 31 99946-7652 
+ 
+This Best Practice was co-written and implemented by: 
+ 
+Marcelo Fátima 
+Service Technician 
+marcelo.fatima@sotreq.com.br 
+ 
+Lázara Fonseca 
+Technical Consultant / TC 
+lazara.fonseca@sotreq.com.br 
++55 31 97108-7268 
+ 
+Also, an acknowledgment the following individual that assisted in developing this Best Practice: 
+ 
+Paulo Cezar Martins Vieira, Mining Technical Consultant / TC from Sotreq S.A.

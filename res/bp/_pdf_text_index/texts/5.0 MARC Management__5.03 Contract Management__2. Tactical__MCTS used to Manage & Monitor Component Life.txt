@@ -1,0 +1,558 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Major Component Tracking System Used 
+to Monitor & Manage Component Life  
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+Major Component Tracking System Used to Monitor & 
+Manage Component Life ............................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 7 
+4.0 Benefits .............................................................. 7 
+5.0 Resources Required .......................................... 8 
+6.0 Supporting Attachments / References ............... 8 
+7.0 Related Best Practices ...................................... 9 
+8.0 Acknowledgements ............................................ 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+ 
+  
+September 2006 
+0906-3.1-1020 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+The Major Component Tracking System (MCTS) is a web based corporate DBS database 
+developed for use by the mining dealers to track major components and component parts.  
+ 
+MCTS:  
+• Provides a consistent worldwide method for dealers to track major components from 
+cradle-to-grave through all life cycles. 
+ 
+• Provides one safe source for component life data for dealers and Caterpillar.   
+ 
+• Acts as a durability database by providing a complete list of all component lives from new 
+to present.  
+ 
+• Provides actual and complete component life data, which is essential to accurately forecast 
+component life and rebuild frequency when MARC contract costs are being calculated. 
+ 
+• Assists in daily fleet management decisions by proving instant, complete and accurate 
+component history. 
+ 
+• Permits participating dealers to share component life data in the same format. 
+ 
+• Provides numerous, powerful, and user-friendly data analysis tools and reports. 
+ 
+• Use is free of charge to participating dealers. Caterpillar pays for system maintenance and 
+the cost of tools and enhancements. 
+ 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Type of Data Tracked 
+ 
+MCTS formats component life data by each component life cycle. Each life cycle consists of only 
+a few key pieces of information: 
+• Component Serial Number 
+• Installation Date 
+• Operation Type: (Remove or Install) 
+• Reason for Removal (Failure, PCR, Wear Out, etc) 
+• Component Install Type (New, PCR, Dealer Rebuild, Customer Rebuild, ReMan, etc) 
+• Work Order Number 
+• Prime Product Serial Number (in which component was installed) 
+• Prime Product Model Number (793B, 994, etc) 
+• Prime Product Customer ID (customer fleet number or name used to identify machine) 
+• Prime Product Hours at Installation or Removal 
+• Customer Name and Mine Site 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MCTS Used To Monitor & Manage Component Life 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.1-1020 
+Caterpillar Confidential:  GREEN          Page 1 of 9 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+This information is typically obtained from each work order where a tracked major component has 
+been removed or installed. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MCTS Data Entry Screen 
+Simple and user-friendly screens provide fast and efficient data entry 
+ 
+Component Serialization 
+ 
+MCTS tracks serialized components in the same way prime products are tracked. Each 
+component must have a unique serial number. Currently, the only major components, which 
+are serialized at the factory, are the engine, transmission, and torque converter. If the 
+component does not have a CAT serial number, a unique identification number may be 
+assigned by the dealer.  
+ 
+Component History Report Life Cycle Report 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MCTS Used To Monitor & Manage Component Life 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.1-1020 
+Caterpillar Confidential:  GREEN          Page 2 of 9 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+The dealer assigned number is entered into MCTS using the dealer's main store dealer code 
+as a prefix. For example, a Wyoming Machinery Final drive is numbered FD102, would be 
+E490FD102 in MCTS. This assures that each component serial number is unique in the world. 
+MCTS will not permit the use of duplicate serial numbers.  
+ 
+MCTS Report Formats: 
+ 
+MCTS provides component life data in three different formats: 
+1. Component History Report 
+2. Life Cycle Report 
+3. Weibull Analysis 
+  
+Component History Report 
+The most frequently used report for day-to-day component management is the component 
+history report.  In this format, all of the key data for each component installation and removal is 
+located on a single line. All of the installation and removal information for the entire history of a 
+component is listed in chronological order. This makes the data easy to view and understand.  
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Component History Report 
+Each component life cycle consists of an installation and removal 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MCTS Used To Monitor & Manage Component Life 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.1-1020 
+Caterpillar Confidential:  GREEN          Page 3 of 9 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Component Life Cycle Report 
+ 
+The life cycle report is the most convenient way to look at how fleet component lives compare 
+to each other in a specific application. Component lives start with “Life Cycle 1” (new) and 
+progress chronologically through each component rebuild. This report may also be used to 
+compare the average component life of an older model machine to a newer model in the same 
+application.  
+ 
+Because MCTS provides customer and site-specific data, component lives can be compared 
+from similar applications. However, it should be noted that the sample size declines as life 
+cycles progress. This is because all components have typically completed the early life cycles 
+and the data is mature. Later life cycles list only the components replaced and do not account 
+for those still running in that life cycle. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MCTS Life Cycle Summary 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MCTS Used To Monitor & Manage Component Life 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.1-1020 
+Caterpillar Confidential:  GREEN          Page 4 of 9 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Weibull Analysis 
+ 
+Weibull analysis is a statistical tool, which predicts the rate of failure of a population based on 
+the early failures of a few units. This tool has two required inputs: 
+1. Number of failures and specific hours at which they occurred 
+2. N umber of units still running and hours on those units 
+ 
+Based on this data, Weibull can predict the failure rate of the remainder of the population. 
+ 
+This Weibull tool has been used by Caterpillar for many years, but has been time and labor 
+intensive to use. MCTS has specially designed software to calculate the needed inputs and 
+provide an accurate Weibull analysis in seconds. This is possible because MCTS already 
+contains the number of component replacements (failures) and the hours at which they were 
+replaced. MCTS does not track hours on units running, but does know the installation date, 
+and calculates an average monthly hour accumulation based on the units replaced.  
+ 
+In some cases, one or more early hour component failures due to workmanship may skew the 
+predicted component life downward. These early hour failures may not be indicative of the 
+actual durability of the component population. MCTS has a feature, which allows the early hour 
+failures to be edited out, and the results recalculated. Early hour failures may be edited out in 
+the following increments: 
+• 0 – 20 hours 
+• 0 – 200 hours 
+• 0 – 1,000 hours. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MCTS Used To Monitor & Manage Component Life 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.1-1020 
+Caterpillar Confidential:  GREEN          Page 5 of 9 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+The Weibull analysis is a powerful tool, 
+ which can be used to predict and manage component life proactively.  
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MCTS Used To Monitor & Manage Component Life 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.1-1020 
+Caterpillar Confidential:  GREEN          Page 6 of 9 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+3.0 Implementation Steps 
+ 
+MCTS is a powerful tool, which is easy to update and maintain. However, because it tracks 
+component life from new; the complete history of each component tracked must be entered.  
+ 
+The initial data cleansing (removing data sequencing errors & other common data errors), and 
+loading of accurate component history is a one-time exercise, but is absolutely essential. A 
+founding principle of MCTS is that it is better to have no data, than bad data. The amount of labor 
+required to cleanse (remove errors) from the data, is dependent on the number of components 
+being tracked and the quality of dealer component history records. Dealer component history is 
+transferred to a simple Microsoft Excel spreadsheet, which contains all of the required MCTS 
+fields.  
+ 
+A full-time MCTS system administrator is available to help: 
+• Answer dealer questions 
+• Provide system user training 
+• Review cleansed history data for completeness and accuracy before loading 
+ 
+Dealers interested in using MCTS should contact: 
+Shari Weber 
+MCTS System Administrator  
+Weber_Shari_Aat.com 
++1 309 675 8115 
+ 
+4.0 Benefits 
+ 
+Implementation and Maintenance Cost 
+Accurate component life data benefits both Caterpillar and the dealer. The investment for the 
+capability related to component life data cleansing (removing data sequencing errors, 
+mismatches, etc.) and maintaining history data, can be substantial. Caterpillar provides MCTS 
+free of charge. This includes system maintenance and the development of additional tools and 
+enhancements. Once component history has been entered and is current, maintaining the data is 
+very quick and easy. Data entries are only made when a component is removed or installed: 
+typically every 3-4 years. 
+ 
+MCTS Data Access  
+MCTS is a web-based system that is available to dealers and branch stores anywhere in the 
+world with internet-access. Only authorized and registered users may access MCTS data. 
+Dealers identify individuals they wish to be authorized by name. Caterpillar users also must be 
+registered by name on a need-to-know basis. The MCTS system administrator is the only person 
+who can register individuals and grant access to the system.  
+ 
+Data Storage and Integrity 
+All component life data is stored on Caterpillar DB2 corporate servers, which are fully protected 
+and maintained by Caterpillar Information Services. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MCTS Used To Monitor & Manage Component Life 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.1-1020 
+Caterpillar Confidential:  GREEN          Page 7 of 9 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Ease of Use 
+MCTS was designed to be very user-friendly and intuitive to use. Most users can navigate the 
+system with little or no training. However, a detailed step-by-step tutorial is also included in the 
+MCTS homepage.  
+ 
+System Speed 
+The types of standard reports (component history / life cycle / Weibull) provided by MCTS have 
+historically been manually produced and were labor intensive. MCTS uses the power of the DBS 
+servers, along with purpose designed, and proven software to produce the standardized reports 
+in 5 – 10 seconds.  
+ 
+MCTS Capability 
+Tools and enhancements to the system are not announced until they are fully developed, proven 
+and placed in production. The many features and benefits of MCTS are not promises of future 
+performance. They are fully functional and in use today.  
+ 
+ 
+5.0 Resources Required 
+ 
+MCTS is free of charge for Dealers to use.  The commitment to enter data and keep it current is a 
+requirement for participating dealers. 
+ 
+A MCTS Dealer Contact person must be appointed for each Dealer.  This person is the one point 
+of contact for the MCTS System Administrator for any MCTS related questions and controls 
+Dealer access and entry of data into MCTS.  The MCTS Contact person or another designated 
+person or persons, will have the responsibility to enter and maintain the data in MCTS, including 
+the initial data loading process. 
+ 
+The Dealer selects the population to be entered into MCTS.  This will usually be the same as 
+what is being tracked today by the dealer’s system.  If the Dealer desires to only track recently 
+delivered machines, then the Dealer will enter the first change-out information directly into MCTS. 
+ 
+Component Data that has multiple install and remove operations is referred to as “History Data”.  
+If Dealer desires to enter this data, it must be transferred to the MCTS Data Input Microsoft Excel 
+Spreadsheet, and submitted to the MCTS System Administrator. Data is checked and corrected 
+in this process for sequence errors and other common data errors. Once the data is approved by 
+the Dealer and the MCTS System Administrator, the data is uploaded into MCTS. 
+ 
+The Manpower Requirements for this History Data loading process varies by Dealer depending on 
+the quantity and quality of the data, it can take from 1-3 man months. 
+ 
+6.0 Supporting Attachments / References 
+ 
+• MCTS Intro - Microsoft PowerPoint file located in the Attachments Tab of this pdf 
+document. 
+• Other documents can be found on Catminer.com 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MCTS Used To Monitor & Manage Component Life 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.1-1020 
+Caterpillar Confidential:  GREEN          Page 8 of 9 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+7.0 Related Best Practices 
+None applicable 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was co-authored by: 
+Shari Weber 
+Caterpillar Global Mining 
+MCTS System Administrator – Component Management 
+Weber_Shari_A@cat.com 
++1-309-6755-8115 
+ 
+Dick Douglas 
+Component Durability Subject Matter Expert 
+Caterpillar Global Mining 
+Douglas_Richard_D@cat.com  
++1-309-675-5699 
+ 
+Example data screens courtesy of Wyoming Machinery: 
+ Steve Marler 
+ Contracts/Technology Supervisor 
+ Wyoming Machinery 
+ 
+srmarler@wyomingcat.com 
+ 
+ 
+ Rodrigo Jeber 
+ Sotreq 
+ 
+rodrigo.jeber@sotreq.com.br 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MCTS Used To Monitor & Manage Component Life 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.1-1020 
+Caterpillar Confidential:  GREEN          Page 9 of 9

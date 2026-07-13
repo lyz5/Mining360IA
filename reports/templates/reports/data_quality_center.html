@@ -1,0 +1,186 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Quality Center | Mining360IA</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell dq-page-shell" data-dq-page data-dq-run-url="{% url 'data-quality-run' %}" data-dq-preview-url="{{ dq_preview_url }}" data-source-key="{{ dq_source_key }}" data-object-name="{{ dq_object_name }}">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Data Quality</p>
+                <h1>Data Quality Center</h1>
+                <p class="page-intro">Run checks on any table or view, review impacted records, and keep a history of executions.</p>
+            </div>
+            <div class="actions">
+                <button type="button" class="button" data-dq-run-all>Run All Checks</button>
+                <div class="summary">
+                    <span class="summary-value" data-dq-score>{{ dq_score|floatformat:0 }}%</span>
+                    <span class="summary-label">score</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="workspace-band">
+            <div class="placeholder-panel">
+                <p class="eyebrow">Target</p>
+                <h2>{{ dq_source_label }}</h2>
+                <p>{{ dq_object_label }}</p>
+                <p class="table-subtext">Last run: {% if dq_last_run %}{{ dq_last_run|date:"Y-m-d h:i A" }}{% else %}-{% endif %}</p>
+            </div>
+            <div class="placeholder-panel">
+                <p class="eyebrow">Status</p>
+                <h2 data-dq-status>{{ dq_run_status }}</h2>
+                <p>Active controls: {{ dq_controls|length }}</p>
+            </div>
+        </section>
+
+        <section class="dq-toolbar">
+            <form method="get" class="dq-search-form">
+                <input type="search" name="q" value="{{ dq_filter_query }}" placeholder="Search checks">
+                <select name="category">
+                    <option value="">All categories</option>
+                    {% for item in dq_categories %}
+                        <option value="{{ item }}" {% if dq_filter_category == item %}selected{% endif %}>{{ item }}</option>
+                    {% endfor %}
+                </select>
+                <input type="hidden" name="source_key" value="{{ dq_source_key }}">
+                <input type="hidden" name="object_name" value="{{ dq_object_name }}">
+                <button type="submit" class="button secondary">Apply</button>
+            </form>
+        </section>
+
+        <section class="dq-kpi-row compact">
+            <div class="dq-kpi"><span class="dq-kpi-label">Controls</span><strong>{{ dq_controls|length }}</strong></div>
+            <div class="dq-kpi"><span class="dq-kpi-label">Last run</span><strong>{{ dq_last_run|default:"-" }}</strong></div>
+            <div class="dq-kpi"><span class="dq-kpi-label">Source</span><strong>{{ dq_source_label }}</strong></div>
+            <div class="dq-kpi"><span class="dq-kpi-label">Object</span><strong>{{ dq_object_label }}</strong></div>
+        </section>
+
+        <section class="table-section dq-table-section">
+            <div class="section-head">
+                <h2>Controls</h2>
+            </div>
+            <div class="table-wrap">
+                <table class="dq-table">
+                    <thead>
+                        <tr>
+                            <th>Control</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Impacted</th>
+                            <th>Error %</th>
+                            <th>Description</th>
+                            <th>Exec ms</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody data-dq-body>
+                        {% for control in dq_controls %}
+                            <tr data-dq-row data-dq-key="{{ control.key }}" data-dq-category="{{ control.category|lower }}" data-dq-name="{{ control.name|lower }}" data-dq-status-text="{{ control.status|lower }}">
+                                <td>{{ control.name }}</td>
+                                <td>{{ control.category }}</td>
+                                <td><span class="status-badge {% if control.status == 'OK' %}success{% elif control.status == 'Critical' %}failed{% else %}neutral{% endif %}">{{ control.status }}</span></td>
+                                <td>{{ control.impacted_records }}</td>
+                                <td>{{ control.error_percentage }}%</td>
+                                <td>{{ control.description }}</td>
+                                <td>{{ control.execution_ms }}</td>
+                                <td class="dq-actions">
+                                    <button type="button" class="button secondary" data-dq-run-control data-dq-control-key="{{ control.key }}">Run</button>
+                                    {% if control.latest_run_id %}
+                                        <button type="button" class="button secondary" data-dq-view-records data-dq-run-id="{{ control.latest_run_id }}" data-dq-control-key="{{ control.key }}">View Records</button>
+                                        <a class="button secondary" href="{% url 'data-quality-export' control.latest_run_id control.key %}">Export</a>
+                                    {% else %}
+                                        <button type="button" class="button secondary" disabled>View Records</button>
+                                        <button type="button" class="button secondary" disabled>Export</button>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr><td colspan="8" class="empty compact">No control matches the current filters.</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="dq-history-band">
+            <div class="placeholder-panel">
+                <p class="eyebrow">Execution history</p>
+                <h2>Recent runs</h2>
+                <div class="dq-history-list">
+                    {% for run in dq_history %}
+                        <article class="dq-history-item">
+                            <div>
+                                <strong>{{ run.source_name }}</strong>
+                                <p>{{ run.object_name }}</p>
+                                <p class="table-subtext">{{ run.created_at|date:"Y-m-d h:i A" }}</p>
+                            </div>
+                            <div>
+                                <span class="status-badge {% if run.score >= 95 %}success{% elif run.score >= 80 %}neutral{% else %}failed{% endif %}">{{ run.score|floatformat:0 }}%</span>
+                            </div>
+                        </article>
+                    {% empty %}
+                        <div class="empty compact">No execution history yet.</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <div class="dq-modal" data-dq-modal hidden aria-hidden="true">
+            <div class="dq-modal-backdrop" data-dq-close></div>
+            <div class="dq-modal-panel" role="dialog" aria-modal="true" aria-label="Data quality check details">
+                <div class="dq-modal-head">
+                    <div>
+                        <p class="eyebrow">Data Quality</p>
+                        <h2 data-dq-title>Data Checks</h2>
+                        <p class="table-subtext" data-dq-context></p>
+                    </div>
+                    <button type="button" class="icon-button dq-close" data-dq-close aria-label="Close data quality checks" title="Close data quality checks"></button>
+                </div>
+                <div class="dq-spinner" data-dq-spinner hidden>
+                    <div class="preview-spinner" aria-hidden="true"></div>
+                    <div class="preview-overlay-text">Running data quality checks...</div>
+                </div>
+                <div class="dq-result-table-wrap">
+                    <table class="dq-table">
+                        <thead>
+                            <tr>
+                                <th>Control</th>
+                                <th>Status</th>
+                                <th>Impacted</th>
+                                <th>Error %</th>
+                                <th>Description</th>
+                                <th>Exec ms</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody data-dq-modal-body>
+                            <tr><td colspan="7" class="empty compact">Run a check to see details here.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="dq-records-panel" data-dq-records-panel hidden>
+                    <div class="dq-records-head">
+                        <h3 data-dq-records-title>View Records</h3>
+                        <button type="button" class="icon-button dq-close" data-dq-close aria-label="Close records" title="Close records"></button>
+                    </div>
+                    <div class="dq-records-actions">
+                        <a class="button secondary" data-dq-records-export href="#">Export to Excel</a>
+                    </div>
+                    <div class="dq-records-wrap">
+                        <table class="dq-table">
+                            <thead data-dq-records-head></thead>
+                            <tbody data-dq-records-body></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

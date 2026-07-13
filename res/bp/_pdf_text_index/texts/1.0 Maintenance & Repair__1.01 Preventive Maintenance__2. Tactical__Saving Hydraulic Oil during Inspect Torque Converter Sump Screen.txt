@@ -1,0 +1,257 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 11 
+0905-1.01-1224 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      catminer.com 
+ 
+ 
+ 
+ 
+B E S T  P R A C T I C E  S E R I E S 
+Saving Hydraulic Oil during 
+Inspect Torque Converter 
+Sump Screen 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+Saving Hydraulic Oil during Inspect Torque Converter 
+Sump Screen ............................................................. 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information pro vided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty  
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Saving Hydraulic Oil during Inspect Torque Converter 
+Sump Screen 
+DATE 
+6/23/2011 
+CHG 
+NO 
+00 
+NUMBER 
+0905-1.01-1224 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+ 
+1.0 Introduction  
+Inspecting the Torque Converter Sump Screen is one of the Preventive Maintenance tasks and 
+should be a part of the Condition Monitoring program. Dealer experience indicates to remove the 
+screen for inspection, it is necessary to drain approximately 10 L (2.6 Gal) of oil from the torque 
+converter housing. This oil is then discarded and new oil is used to adjust the oil level. 
+ 
+ 
+2.0 Best Practice Description 
+This Best Practice outlines the parts and procedure to drain the oil and pump into the tank utilizing a 
+kidney loop tool. Using this procedure minimizes the risk of spilling oil and eliminates wasted oil. 
+ 
+ 
+3.0 Implementation Steps 
+To implement this Best Practice: 
+ 
+1. This method can be performed on the following trucks: 
+ 
+MODEL PREFIX 
+777B 4 YC 
+777C 4XJ 
+777D 2YW, 3PR, AGC, AGY, FKR 
+777F JRP 
+785 8GB 
+785B 6HK 
+785C 1HW, 5AZ, APX 
+785D DMC, MSY 
+789 9ZC 
+789B 7EK 
+789C 2 BW 
+793 3SJ 
+793B 1HL 
+ 
+2. Install the appropriate adapter and connectors on each truck in the fleet. These parts are 
+available from Caterpillar. Reference part numbers listed below. 
+ 
+3. Utilize a kidney loop tool to drain oil from the torque converter housing and pump into the 
+hydraulic tank. 
+ 
+4. Remove the screen for inspection and clean if necessary and then reinstall. 
+ 
+5. Check oil levels and adjust if necessary. 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Saving Hydraulic Oil during Inspect Torque Converter 
+Sump Screen 
+DATE 
+6/23/2011 
+CHG 
+NO 
+00 
+NUMBER 
+0905-1.01-1224 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+Although additional parts must be purchased and installed, there is no additional labor time needed 
+during the PM to perform this procedure. No oil is discarded so there is a savings in the amount of oil 
+needed to perform the screen inspection during PM. Since a connector is used instead of the drain 
+plug, you no longer have to replace the drain plug gasket at each PM. 
+ 
+Example for a fleet of 50 X 777C/D: 
+Assume the screen is inspected at each PM and the PM interval is 330 hours. Approximately 10 liters 
+of oil is discarded at each PM. This results in 884 PM events per year for the fleet and 8,840 liters of 
+discarded oil.  
+ 
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Saving Hydraulic Oil during Inspect Torque Converter 
+Sump Screen 
+DATE 
+6/23/2011 
+CHG 
+NO 
+00 
+NUMBER 
+0905-1.01-1224 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+ 
+ 
+The tables below show the potential annual savings for this fleet utilizing information provided by 
+Trakindo. The currency has been converted to US dollars. 
+ 
+ 
+Description Oil Qty / PM 
+event 
+PM 
+Events 
+(fleet) 
+Total Oil 
+Drained 
+Oil cost per 
+Liter (US $) 
+Total Oil Cost 
+(US $) 
+Hydraulic oil drained 
+when checking T/C 
+screen 
+10 L 884 8,840 L $4.40 $38,896 
+ 
+ 
+Using the drain plug, the 2A-3398 gasket should be replaced each PM. Utilizing this Best Practice, 
+the drain plug is not used so there is no gasket to replace which increases the savings. 
+ 
+ 
+Part Number Description Qty Price (US $) Total (US $) 
+2A-3398 Gasket 884 $3.20 $2,828.80 
+ 
+ 
+NOTE: Benefits will vary depending upon inspection frequency of the torque converter sump screen 
+and whether inspection is performed during torque converter oil change. 
+ 
+ 
+5.0 Resources Required 
+This simple installation requires 4 parts, i.e.: 
+1. Bushing 
+2. Coupler - male 
+3. Cap As 
+4. Coupler – female (for kidney loop tool) 
+ 
+ 
+No. Part Number Description Qty 
+1 3R-7117 Bushing 1 per truck 
+2 9S-9271 Coupler - male 1 per truck 
+3 9S-9272 Cap as 1 per truck 
+4 9S-9273 Coupler - female 1 
+5 126-7538 Nozzle as 1 
+6 201-8057 Cap 1 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Saving Hydraulic Oil during Inspect Torque Converter 
+Sump Screen 
+DATE 
+6/23/2011 
+CHG 
+NO 
+00 
+NUMBER 
+0905-1.01-1224 
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+6.0 Supporting Attachments / References 
+None 
+ 
+7.0 Related Best Practices 
+None 
+ 
+8.0 Acknowledgements 
+This Saving Hydraulic Oil during Inspect Torque Converter Sump Screen was authored by: 
+Bustanil Arifin 
+Equipment Health Analyst 
+PT. Trakindo Utama-Sorowako 
+bustanil.arifin@trakindo.co.id 
+Office 021-5249272 
+ 
+Written by: 
+Djati Waloejo 
+Corporate Best Practice 
+Product Support Standard & Development 
+PT. Trakindo Utama-Jakarta 
+dwaloejo@trakindo.co.id 
+6221782 2373 ext: 1221

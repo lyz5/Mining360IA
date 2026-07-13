@@ -1,0 +1,387 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Cost Effective Gasket and Paint Cleaning Processes.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+March 2007  
+0307-4.01-1072  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Cost Effective Gasket and Paint 
+Cleaning Processes 
+ 
+Application  Maintenance  Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety MARC 
+Management 
+ 
+ 
+ 
+ 
+Cost Effective Gasket and Paint Cleaning Processes 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 4 
+4.0  Benefits ............................................................. 5 
+5.0  Resources Required .......................................... 5 
+6.0  Supporting Attachments / References ............... 6 
+7.0  Related Best Practices ...................................... 6 
+8.0  Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+bout the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHO UT THE WRITTEN PERMISSION OF CATERPILLAR  
+Cost Effective Paint & Gasket Removal Processes 
+DATE 
+22 MAR 07 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.01-1072  
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+ 
+1.0 Introduction  
+ 
+Efficient parts cleaning processes are critical to several facets of CRC operations.  Parts cleaning 
+may be considered a non-value adding step, but it represents a substantial portion of labor and 
+expenses in the rebuilding process.  The cleaning step is an important segment in the critical 
+path, since the last parts disassembled are the first parts needed in assembly.  All other parts 
+must wait in staging until those critical few are cleaned, rebuilt, and cleaned again before the 
+component is ready for assembly. 
+ 
+There are many technologies used in the cleaning process, such as high-pressure cabinet 
+washers, buffing, grinding, blast cleaning, and solvent washing.  Ideally, the fastest and least 
+costly process is applied to each part as needed.  Automatic cleaning is typically preferred for 
+cost control and consistent quality.  Gasket removal and seal surface cleaning is difficult because 
+it often requires extensive manual labor.  Paint removal is difficult because: 
+• Ferrous metals require a caustic solution to remov e most paints.  This is expensive to buy, 
+and the remaining wastes are expensive to dispose of. 
+• Non-ferrous metals require very high cost chemical s to strip paint, and these are also very 
+expensive to dispose of in many regions. 
+ 
+This Best Practice will discuss paint and gasket removal without requiring such expensive 
+chemical processes. The processes employed will provide a sufficient level of cleanliness without 
+“over-cleaning.” These new processes will also minimize part damage and processing time/labor. 
+ 
+2.0 Best Practice Description 
+ 
+Parts cleaning is often performed by lesser-skilled employees – those with the least experience in 
+the dealer and/or product.  They are typically trained by outgoing personnel from that area, and 
+receive little follow-up unless the rebuild technicians complain about dirty parts. Some rebuild 
+centers will also require technicians to clean parts, with each tech being responsible for his or her 
+own parts.  Cleaners typically: 
+• Grind and scrape all the gaskets off before the ca binet washing. This removal requires 
+time, labor, and effort making the parts more vulnerable to damage and reducing the 
+effectiveness of gaskets and seals.  Excess grinding and scraping also creates airborne 
+debris that will spread into the shop and require additional cleanup. 
+• Grind/scrape all the gaskets off after the cabinet  washing, typically long after the parts have 
+cooled and gaskets have hardened, again using lots of time.  This excess grinding and 
+scraping creates the same problems mentioned above.  In addition, abrasives and debris 
+can contaminate the parts and become incorporated into the rebuilt component, and affect 
+service life. 
+• Use several methods to remove paint: blast cleanin g requires time and facility resources.  
+Grinding/buffing to remove all the paint also requires significant time and labor and spreads 
+airborne debris.  Chemical removal consumes caustic, or more expensive chemicals, which 
+add excessive disposal costs to direct expenses.  Some operations don’t clean paint 
+beyond the aluminum-safe solution washes.  This omission leaves curled paint surfaces on 
+the parts, which: 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHO UT THE WRITTEN PERMISSION OF CATERPILLAR  
+Cost Effective Paint & Gasket Removal Processes 
+DATE 
+22 MAR 07 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.01-1072  
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+ 
+ 
+ 
+o Creates an inferior painting 
+surface, resulting in a low-quality 
+product image to the customer. 
+o Causes paint chips to re-enter the 
+assembly process; contaminating 
+bearing surfaces and blocking 
+lubrication passages. Results can 
+reduce service life or possibly 
+cause early failure. 
+o Creates a mess in the work bays, 
+with paint chips breaking off the 
+parts and flying around the shop.  
+This adds to shop cleaning efforts 
+and demonstrates an 
+unprofessional image to 
+employees and the customer. 
+ 
+Effective gasket and paint cleaning processes 
+provide balance towards getting parts cleaned to 
+a consistent quality and minimizing the time, 
+labor, and supplies to perform the cleaning.  This 
+process follows: 
+• Gaskets/sealants that soften during the 
+cabinet washer cycle should be quickly 
+scraped off with a putty knife immediately 
+after the wash cycle.  The parts should 
+still be hot and the gaskets should be 
+easy to scrape off quickly.  Many of the 
+gaskets may have already fallen off the 
+parts during the wash cycle. 
+• Gaskets that were not softened and 
+subsequently difficult to remove after the 
+wash cycle, should be scraped or ground 
+off before the second wash cycle.  This 
+will minimize post-wash grinding and 
+further wash cycles.  This is commonly 
+required with gaskets exposed to high 
+heat or those applied with aggressive 
+sealing chemicals. This is common with 
+exhaust gasket and head gasket areas – 
+those exposed to high combustion heat. 
+ 
+ 
+ 
+Disassemble 
+Will gasket 
+material be 
+loosened by 
+washer?
+Buff gasket seal 
+surfaces 
+Will gasket 
+seal surface 
+be cleaned by 
+washer?
+N
+N
+High pressure 
+cabinet wash 
+Immediately 
+inspect washed 
+parts (while hot)
+Soft gaskets 
+still on 
+parts?
+Hand scrape 
+gaskets (putty 
+knife)
+Stage/inspect 
+parts N
+Y
+Paint & Gasket Removal Process 
+(Best Practice scope in green box)  
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHO UT THE WRITTEN PERMISSION OF CATERPILLAR  
+Cost Effective Paint & Gasket Removal Processes 
+DATE 
+22 MAR 07 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.01-1072  
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+• Once processed by the cabinet washer, painted part s may be: 
+o “Buffed” with a powered bench-mounted, or hand-hel d angle grinder.  Although 
+rust/corrosion should be completely removed, only the paint chips need be removed 
+up to the point of where the paint remains adheres to the part.  The sharp broken 
+paint edge on the part should only be “feathered” to blend it into the part surface.  
+The blend-line should disappear under a good coat of paint. 
+o Blast cleaned with a automatic tumbling cleaner  
+• Blast clean aggressive corrosion only as needed.  This may be performed manually, 
+especially for larger/sensitive parts, or with an automatic tumbling blaster, for other parts.  
+Blast only critical areas and blast to “feather” out paint to minimize time, labor, and supply 
+expense.  Always wash parts after blast cleaning due to the amount of abrasive carry-over. 
+ 
+Establish consistent and cost-effective cleaning processes: 
+• Perform cleaning only with specialized cleaning em ployees.  Do not permit rebuild 
+technician to share in the general cleaning area duties as a rule.  Rebuild technicians may 
+only clean in the general cleaning area only under special circumstances and to expedite 
+a repair. 
+• Establish a training process or course to prepare the cleaning specialist. Include best-in-
+class visual aids and physical samples. Implement the training consistently with 
+demonstrated qualification standards. Emphasize quality and cost effectiveness. Review 
+performance periodically to assure quality does not drift and process improvements are 
+documented/replicated. 
+• Establish cleaning equipment maintenance programs for consistent operations.  Include 
+schedules, checklists, and reliable supply delivery/inventory systems.  Define individual 
+responsibilities for equipment operators and maintainers.  Enforce daily/consistently. 
+• Lead cleaners and disassembly technicians as a tea m to capitalize on the location, and 
+opportunities to share employees between functional areas. This also allows for better 
+parts reuse and applied failure analysis process control.  Parts often must be cleaned for 
+better reuse and AFA decisions, and a team can coordinate these processes with the 
+least effort/ bureaucracy. 
+ 
+3.0 Implementation Steps 
+ 
+1. Document as-is cleaning processes, equipment, an d performance. 
+a. Develop practical performance metrics. 
+b. Document subjective observations through definit ions and visual aids. 
+c. Account for employee experience and strategy in applying employees to function. 
+d. Include area equipment maintenance programs, rol es/responsibilities, and adherence. 
+2. Define future cleaning strategy based on expecte d product type, volume, size, etc. 
+a. Plan for typical rebuild volumes as well as expe cted peak production business cycles. 
+b. Investigate specialized cleaning facilities, equ ipment, tools and processes. 
+c. Utilize Cat Facility Development and Service Too ls Development. 
+d. Visit best-in-class dealers to observe their ope rations. 
+3. Apply future strategy to shop layout plans. 
+a. Consider staging location’s effects on product p rotection and flow. 
+b. Add changes to shop layout drawing. 
+c. Include shop technician teams in the review/appl ication stages. 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHO UT THE WRITTEN PERMISSION OF CATERPILLAR  
+Cost Effective Paint & Gasket Removal Processes 
+DATE 
+22 MAR 07 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.01-1072  
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+d. Include outside groups providing facility/equipm ent support functions, as needed. 
+e. Use Cat Facility Development and Service Tools D evelopment expertise as required. 
+4. Develop/document the new cleaning (and disassemb ly – as needed) strategy/procedure, with 
+new roles and responsibilities. 
+5. Establish facility/equipment maintenance strateg ies as needed. 
+6. Establish adjusted repair/rebuild time requireme nt targets as needed. 
+7. Establish adjusted cleaning (and disassembly) gr oup leadership as needed. 
+8. Present strategy to shop employees. 
+9. Implement the staging processes, layout, and equ ipment changes into the shop. 
+a. This may occur in phases (as needed). 
+b. Test new processes to establish “best-fit” appli cation for shop. 
+10. Train employees to use the new procedures.  Follow-up/enforce immediately. 
+11. Review process and support system performance once established. 
+12. Establish and implement adjustments as needed. 
+ 
+4.0 Benefits 
+ 
+• Increased capacity - These concepts increased clea ning stage throughput for a given amount 
+of labor hours, by specializing and effectively training the employees.  Supply 
+control/availability minimizes production delays. 
+• Reduced cost – Labor hour targets per cleaning seg ment were reduced as mentioned above.  
+“Over-cleaning” was almost eliminated and consistently controlled with periodic process 
+review.  Equipment is better maintained with consistent cleaners and comprehensive 
+maintenance support.  Supply control minimizes production interruptions.  
+• Increased quality – Reduced over-cleaning allowed time for focusing on the tough cleaning 
+areas, and consistent cleaning methods increased the skills applied to those areas. 
+• Improved image – Effective processes and employees  in the cleaning area promote a higher 
+level of professionalism with the employees.  A cleaner environment also promotes employee 
+professionalism and this was immediately obvious to all customers visiting the CRC.  They 
+turned a typically “dirty corner” into a productive working area. 
+ 
+5.0 Resources Required 
+• Investment costs vary, depending on cleaning area/ system related gaps found and local 
+labor/material costs: 
+o Equipment upgrades to provide product quality/cons istency. 
+o Facility upgrades to provide effective product flo w to match new processes. 
+o System development to assure facility/equipment re liability. 
+• Support Equipment – as needed: 
+o Equipment organization aids (racks, cabinets). 
+o Airborne debris containment (downdraft tables, eva cuation systems, etc.). 
+o Utility reels for effective facility cleaning effo rts. 
+o Automatic cleaning equipment (tumbling blasters, c abinet washers, etc.). 
+• People 
+o Establish current cleaning, quality, costs, and en vironmental concerns with team. 
+o Establish process, facility, and equipment improve ments through team. 
+o Establish team organization/leadership to coordina te/support contingent functions. 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHO UT THE WRITTEN PERMISSION OF CATERPILLAR  
+Cost Effective Paint & Gasket Removal Processes 
+DATE 
+22 MAR 07 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.01-1072  
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+• Training 
+o Establish the improvement benefits with the produc tion team. 
+o Define and enforce the new process and duties with  the production team. 
+o Define and enforce new support systems/process/dut ies with support teams. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+0107-4.5-1060  -CRC Parts Buffer Enhancement 
+0207-4.5-1063  -CRC Material Transport Strategy 
+0107-4.4-1061  -CRC Parts Blasting Enhancement 
+0207-4.4-1066 
+  -CRC Proper Lighting Provides Effective Working En vironment 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Russ Young 
+6 Sigma Black Belt

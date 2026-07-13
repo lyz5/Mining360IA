@@ -1,0 +1,218 @@
+SOURCE: 3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\Measuring Oil Cleanliness.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Measuring Oil Cleanliness 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+MARC 
+Management 
+ 
+ 
+ 
+ 
+Measuring Oil Cleanliness ......................................... 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments .................................... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+August 2006 
+0806-2.10-1001 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+Maximizing component life requires maintaining high levels of fluid cleanliness. The ability to 
+effectively and consistently measure debris in fluids is a key element in catching failures 
+before they occur. Laser particle counters are used to measure the amount of debris in oil. 
+These units may be permanent installations in an oil analysis lab or portable units for field use.  
+ 
+Lab units are more repeatable and have less variability, but transportation to a lab and processing 
+could take up to two days.  
+ 
+Portable units provide real-time information at the mine site but are more variable due to 
+instrument quality and operator variability of how samples are processed. Both approaches have 
+benefit and drawbacks. 
+ 
+2.0 Best Practice Description 
+Closely monitoring and tracking particle count data for each compartment is an effective way to 
+manage fluid cleanliness and component performance. Particle counts before and after PM 
+service help to identify the following; 
+ 
+2.1 Cleanliness at the Start of the PM Period 
+Compartment oil cleanliness after PM service, off-board filtration, etc. at the beginning of the PM 
+interval. 
+ 
+2.2 Cleanliness at the End of the PM Period 
+Compartment oil cleanliness at the end of the PM interval prior to PM service. This indicates if 
+the on-board filtration is capable of keeping the oil clean.  
+ 
+2.3 Break-In Period Completion 
+If end of PM readings exceed ISO 18/15, off-board filtration is recommended during PM to 
+remove excess contamination.  If oil cleanliness is ISO 18/15 or better, the filters are capable of 
+maintaining fluid cleanliness and off-board filtration is not required. 
+ 
+2.4 Component Failure In Progress 
+After the break-in period is complete, particle counts will usually stabilize to +/- 1 ISO code 
+range (due to measurement variability). If particle increase is more than the normal range of 
+variability, a failure may be in progress. Failures almost always generate large amounts of 
+debris that can usually be detected by particle count. SOS sample data should be used to verify 
+if a failure is in progress. 
+ 
+3.0 Implementation Steps 
+ 
+3.1 Oil Analysis Lab 
+If an oil analysis lab is close, it is the lower cost option for particle count measurements. Some 
+dealers and customers use portable counters for immediate results and oil analysis at PM or if 
+the portable counter indicates a problem. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Measuring Oil Cleanliness 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1001 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.2 Portable Particle Counters   
+Portable counters are expensive, costing $10,000 or more per unit. However, they are rapidly 
+gaining acceptance due to their convenience and real-time feedback. Particle counters are 
+available with a variety of functions, including data recording.  
+ 
+3.3 Data Management 
+Looking at row after row of particle count numbers can be mind numbing. If particle count is to 
+be used as a tool, it must be displayed in a manner which permits easy visual assessment of 
+trends and abnormal increases. Particle count data for each compartment of each machine can 
+be tracked using the attached software 
+ 
+3.4 Develop New Wear Material Trends 
+If replacing standard filtration with HE or UHE filtration, more debris will be captured and wear 
+materials in the oil will increase at a much slower rate. New trends will be much lower than 
+traditional level. New trends will need to be developed based on the performance with the 
+improved filtration. 
+ 
+4.0 Benefits 
+ 
+1. Trending particle data for all particles provides an easy-to-use and convenient tool to monitor 
+component health. If particle count raises sharply, an SOS sample can be used to determine 
+the specific wear metal showing elevated levels. 
+ 
+2. Lower levels of contaminants extend the duration of failures in progress and allow more time 
+to schedule repairs before a catastrophic failure occurs. 
+ 
+3. Portable counters allow real time multiple samples from all machine compartments, as well as 
+new bulk fuel and bulk oils. 
+ 
+5.0 Resources Required 
+ 
+• Oil analysis lab or portable particle counter 
+ 
+• Access software program that allows input of particle count data, stores information in tables 
+and provides output reports.  
+o Developed and shared by Griff Jones (Unatrac). 
+o Obtained through Jeff Wolffe, EAME Mining Rep.
+ Wolffe_Jeffrey_S@cat.com  
+(Available mid-July 2006) 
+ 
+• Advice on particle counter selection features and use available from Caterpillar Marketing & 
+Product Support Division Contamination Control Group.  
+o Contact Dave Baumann, Baumann_David_L@cat.com or Carmen Rose. 
+Rose_Carmen_L@cat.com  
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Measuring Oil Cleanliness 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1001 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+6.0 Supporting Attachments 
+Component Life Management Master Document PDF file. (Click on Attachments within this 
+document to view/open file) 
+ 
+7.0 Related Best Practices 
+0806-2.10-1000  -Managing Fluid Cleanliness 
+ 
+8.0 Acknowledgements 
+This Measuring Oil Cleanliness Best Practice was authored by: 
+Dick Douglas 
+Market Consultant 
+Caterpillar Global Mining 
+Douglas_Richard_D@cat.com  
+1-309-675-5699 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Measuring Oil Cleanliness 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1001 
+Caterpillar Confidential:  GREEN          Page 4 of 4

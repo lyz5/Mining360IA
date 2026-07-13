@@ -1,0 +1,460 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2024 
+1.11-240621-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Eliminating Live Work 
+When Purging Air from the 
+Brake System on 785C 
+Trucks  
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+  
+Eliminating Live Work When Purging Air from the 
+Brake System on 785C Trucks .................................. 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 7 
+6.0 Supporting Attachments / References ............. 11 
+7.0 Related Best Practices .................................... 11 
+8.0 Acknowledgements .......................................... 11 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Eliminating Live Work When Purging Air from the Brake 
+System on 785C Trucks 
+DATE 
+6/21/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-240621-1 
+Caterpillar: Confidential Yellow                 Page 2 of 11 
+1.0 Introduction  
+ 
+Live Work is any task (i.e testing, commissioning,  or troubleshooting) that requires a system to be 
+energized and the person performing the job to enter the footprint of the machine (excludes doing the 
+same task from the machine cabin or outside the machine footprint). 
+ 
+ 
+ 
+ 
+ 
+ 
+Caterpillar has worked closely with the mining industry to review service literature and maintenance 
+and repair procedures as well as testing and adjustment tasks to find solutions to remove live work 
+from these publications. Dealers are also developing procedures to complete maintenance in more 
+clever and safer ways and this best practice is a good example of that. 
+ 
+ 
+Brake purging on LMTs is a key part of the maintenance activities on a mine site and is done 
+regularly as per the operating and maintenance manual. This procedure is described in 
+SENR1494.This document does not specify the tools to produce quick couplers on each 4 corners to 
+facilitate the air bleeding and the hose assembly needs to perform this activity outside the footprint of 
+the machine while maintaining eye contact for the operator. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+This best practice covers the fabrication of a ‘’brake air purge tool GP’’ as well as modifications to the 
+rear final axle and front wheel hubs to facilitate the maintenance task for bleeding the air from the brake 
+system. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+This best practice complements SENR1494. 
+All steps in this instruction apply. The difference is that the drain valves have been made more 
+accessible, with a quick-connect to facilitate this task and that the drain hose is fabricated with 
+appropriate length to allow eye contact with the operator. 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Eliminating Live Work When Purging Air from the Brake 
+System on 785C Trucks 
+DATE 
+6/21/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-240621-1 
+Caterpillar: Confidential Yellow                 Page 3 of 11 
+Rear Axle Installation 
+ 
+1. Remove (26) adapter as (169-7403) and (9) Purge screw (9F-2167) from hose as (152-7744).  
+ 
+2. Install (1) Tee (3E-7410), (3) Adapter (6G-3432), (2) Quick Connect Tap (6V-3965), Seal (2M-9780), 
+Seal (3J-1907), Seal (214-7568), (9) Purge Screw (9F-2167), Cap- Dust (6V-0852). 
+ 
+                        9,1,2,3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Eliminating Live Work When Purging Air from the Brake 
+System on 785C Trucks 
+DATE 
+6/21/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-240621-1 
+Caterpillar: Confidential Yellow                 Page 4 of 11 
+Front Hub Installation 
+ 
+1. Remove (2) Adapter (9D-6125) and (7) Purge Screw (9F-2167) from both front brake Anchors 
+(177-1606). 
+ 
+ 
+ 
+2. Install (F1) Adapter (5P-1404), (F2) Elbow (6V-8077), (F3) Quick Connect Tap (6V-3965), (F4) 
+Seal (214-7568), (F5) Cap- Dust (6V-0852) to both front brake anchors (177-1606). 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Eliminating Live Work When Purging Air from the Brake 
+System on 785C Trucks 
+DATE 
+6/21/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-240621-1 
+Caterpillar: Confidential Yellow                 Page 5 of 11 
+Air purge tool GP Fabrication. 
+ 
+1. Build air Purge tool using below parts. 
+ 
+ 
+ 
+ 
+Brake Air Purge 
+1. Use a 177-7862 Hose As and two 6V-4143 Coupler Assemblies to construct a bypass hose. 
+2. Apply the parking brake. This will release the pressure in the lines. 
+ 
+ 
+ 
+Illustration 1 g00297437 
+(1) Pressure tap on the rear slack adjuster 
+(2) Pressure tap for parking brake release pressure 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Eliminating Live Work When Purging Air from the Brake 
+System on 785C Trucks 
+DATE 
+6/21/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-240621-1 
+Caterpillar: Confidential Yellow                 Page 6 of 11 
+3. Put one end of the bypass hose on the pressure tap for the slack adjuster. Use the pressure 
+tap on the rear slack adjuster (1) for both rear wheels. Use the pressure tap on the front slack 
+adjuster for both front wheels. 
+4. Put the other end of the bypass hose on a pressure tap for parking brake release pressure (2). 
+ 
+ 
+ 
+Illustration 2 g00282133 
+(P) Purge valve for the parking brake 
+(S) Purge valve for the service brake 
+ 
+5. Note: Identification letters are embossed on the purge valves at the top of the brake housing. 
+The purge valve for the parking brake is labelled with a "P". The purge valve for the service 
+brake is labelled with an "S". 
+6. Connect air purge tool to the Quick Connect Tap (6V-3965) on either of the rear wheels to a 
+suitable container. 
+7. Run the engine at low idle. Move the parking brake lever to the OFF position. 
+8. Pull down the retarder control. 
+9. Open the purge valve (9F-2167) on the Air Purge Tool GP. Leave the purge valve open until 
+there is a constant flow of oil. 
+10. Close the purge valve. Move the retarder control to the OFF position. Activate the parking 
+brake to release the pressure. Remove the jumper hose. 
+Note: To verify that all the air was removed from the service brake lines, perform the following 
+steps. 
+Note: To make sure that the makeup oil tank is full, operate the engine at high idle for 20 
+seconds before each brake application. 
+11. Move the parking brake lever to the OFF position to allow full travel of the service brake piston. 
+12. Push down on the brake pedal or pull down the retarder control. 
+13. Open the purge valve (9F-2167) on the Air Purge Tool on a front wheel brake housing and 
+purge the brake system. Leave the purge valve open until there is a continuous flow of oil. 
+14. Close the purge valve. Release the brake pedal or move the retarder control to the OFF 
+position. 
+15. Do Steps 11 through 13 until there is a continuous flow of oil. 
+16. Do Steps 1 through 14 for the other three wheels. 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Eliminating Live Work When Purging Air from the Brake 
+System on 785C Trucks 
+DATE 
+6/21/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-240621-1 
+Caterpillar: Confidential Yellow                 Page 7 of 11 
+Note: After you purge the brakes, you may need to reset the actuating pins for the overstroke switch. 
+The actuating pins for the overstroke switch are on the master cylinders. A brake overstroke condition 
+is a Level III warning. 
+When you need to reset the actuating pin, you will push the actuating pin into the housing. Push the 
+actuating pin into the housing until the bottom of the pin is flush with the bottom of the housing. 
+ 
+4.0 Benefits 
+ 
+When completing the procedure, the air purge tool GP can be connected to the quick connect 
+modifications for each wheel to perform this task quicker and safer by having direct visual contact 
+with the operator in the cab. Below example shows the purge of air from one of the rear wheels drain 
+points: 
+ 
+  
+ 
+  
+ 
+ 
+ 
+5.0 Resources Required 
+ 
+5.1 People 
+ 
+Job can be performed by two people (Operator and technician). 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Eliminating Live Work When Purging Air from the Brake 
+System on 785C Trucks 
+DATE 
+6/21/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-240621-1 
+Caterpillar: Confidential Yellow                 Page 8 of 11 
+5.2 Tooling 
+ 
+FRONT HUBS 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Eliminating Live Work When Purging Air from the Brake 
+System on 785C Trucks 
+DATE 
+6/21/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-240621-1 
+Caterpillar: Confidential Yellow                 Page 9 of 11 
+REAR WHEELS 
+ 
+ 
+ 
+  
+ 
+ 
+  
+
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Eliminating Live Work When Purging Air from the Brake 
+System on 785C Trucks 
+DATE 
+6/21/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-240621-1 
+Caterpillar: Confidential Yellow                 Page 10 of 11 
+ ‘’Air purge tool GP’’ 
+ 
+ 
+ 
+ 
+By-pass hose (same as SENR1494) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Eliminating Live Work When Purging Air from the Brake 
+System on 785C Trucks 
+DATE 
+6/21/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-240621-1 
+Caterpillar: Confidential Yellow                 Page 11 of 11 
+6.0 Supporting Attachments / References 
+ 
+SENR1494 
+ 
+7.0 Related Best Practices 
+ 
+Mining Dealer Best Practice  
+Maintenance & Repair: Elimination of Live Work - Checking HMS Slew Ring Tilting Play  
+(Publication Number 1.11-230525-1) 
+ 
+8.0 Acknowledgements 
+ 
+This procedure and tooling was developed by the Mantrac site team at the Sukari Gold Mine in Egypt. 
+ 
+Following a request from the customer to consider the elimination of live work when carrying out 
+brake bleeding. 
+ 
+This best practice was written in collaboration between Angel Rincon Martinez CAT Industry Rep and 
+Edward Nicklin, Mantrac Mining Support Performance Manager.

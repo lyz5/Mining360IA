@@ -1,0 +1,205 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Use Cameras to Conduct CRC Process Reviews.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+March 2008  
+0408-4.1-1117  
+  
+ 
+DEALER BEST PRACTICE SERIES  
+Use Cameras to Conduct 
+CRC Process Reviews 
+Application  Maintenance  Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety MARC 
+Management 
+ 
+ 
+ 
+Use Cameras to Conduct CRC Process Reviews ..... 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits ............................................................. 2 
+5.0  Resources Required .......................................... 3 
+6.0  Supporting Attachments / References ............... 3 
+7.0  Related Best Practices ...................................... 3 
+8.0  Acknowledgements ........................................... 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+ 
+ 
+ 
+ 
+ 
+ 
+1.0 Introduction  
+ 
+CRC processes and uninterrupted workflow are vital to optimizing component rebuild efficiency, 
+component turnaround time, controlling costs, and maintaining quality. Process mapping is an 
+important tool to help establish “as is” and “to be” processes. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Use Cameras to Conduct CRC Process Reviews 
+DATE 
+6/6/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0408-4.1-1117  
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+ 
+This Best Practice discusses Ferreyros program using portable video cameras in the CRC to 
+document the actual processes, study bottlenecks, determine root causes for delays and waste, and 
+develop a Continuous Improvement plan. 
+ 
+2.0 Best Practice Description    
+   
+Dealer uses video cameras to study specific areas of activity in the CRC. The time and motion activity 
+is recorded over a period of time and reviewed by a CI team. 
+ 
+The video can be fast-forwarded to significantly shorten the time required to study the processes. 
+The cameras are mounted on an adjustable stand which can be easily moved and relocated 
+anywhere in the shop. They are used to study general processes as well as specific situations where 
+an improvement is desired. 
+ 
+               
+  
+ 
+     
+ 
+ 
+          
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Use Cameras to Conduct CRC Process Reviews 
+DATE 
+6/6/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0408-4.1-1117  
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+ 
+ 
+3.0 Implementation Steps 
+ 
+• Dealer needs to have a Continuous Improvement mana ger or 6 Sigma Black Belt responsible 
+for CI in the CRC. 
+• Cameras, stands, and recording equipment are purch ased commercially. 
+• CI team needs to be familiar with 6 Sigma, Lean pr ocess management, and other process 
+analysis techniques, such as Caterpillar Production System 
+ 
+CPS for Dealers – Deployment Resources: 
+ 
+https://dealer.cat.com/en/bt/process-improvement/ci-for-dealers/c/deployment-resources.html  
+ 
+4.0 Benefits 
+ 
+• Useful analysis tool for Continuous Improvement ef forts 
+• Captures processes as they really happen. 
+ 
+Examples of CI from Ferreyros 
+ 
+                 
+ 
+ 
+Crankshaft turning tool 
+locks 
+In position for easy short 
+block assembly 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Use Cameras to Conduct CRC Process Reviews 
+DATE 
+6/6/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0408-4.1-1117  
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+                   
+  
+ 
+  
+  
+  
+ 
+5.0 Resources Required 
+ 
+• Investment in equipment 
+• CI team and program 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+Labor Efficiency Lowers CRC Costs   0207-4.5-1062 
+Improving CRC Component Turnaround time  0906-4.5-1 013c 
+ 
+8.0 Acknowledgements 
+ 
+Special thanks to: 
+ 
+Aninu Mitacc 
+Ferreyros  
+CRC Quality, Safety, and Continuous Improvement Manager 
+ 
+This Best Practice Written by: 
+ 
+Dale Brehm 
+6 Sigma Black Belt 
+Cat Global Mining Product Support 
+ 
+Rocker arm D&A bench 
+Camshaft Bearing 
+Installation Tool

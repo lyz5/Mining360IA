@@ -1,0 +1,279 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Fluid Cooler Testing Basin.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2006  
+1006-4.4-1025  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Fluid Cooler Testing Basin 
+ 
+Application  Maintenance  Site 
+Management  
+Component 
+Rebuild Safety MARC 
+Management  
+ 
+ 
+ 
+Fluid Cooler Testing Basin......................................... 1 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 4 
+5.0  Resources Required .......................................... 4 
+6.0  Supporting Attachments / References ............... 4 
+7.0  Related Best Practices ...................................... 5 
+8.0  Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Fluid Cooler Testing Basin 
+DATE 
+24 OCT 06 
+CHG 
+NO 
+01 
+NUMBER 
+1006-4.4-1025 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+1.0 Introduction  
+ 
+Efficient/accurate cooler testing is an important part of the component repair/rebuild process. A 
+fluid cooler that leaks, contains trapped debris, or is plugged can cause component failures. 
+Cooler testing is usually performed with adapters stored in boxes, on open shelves, under 
+workbenches, or randomly hooked on open pegboards. These adapter storage practices can lead 
+to: 
+• Dirty adapters that can contaminate the system or require cleaning before use. 
+• Damaged adapters 
+• Lost or misplaced adapters 
+ 
+This Best Practice describes the test equipment and implementation. A well-designed test area 
+and tooling can improve process efficiency and quality. 
+ 
+Fluid cooler testing capability provides revenue by allowing the dealer to perform testing rather 
+than outsourcing cooler service. It also reduces cooler-related warranty claims. 
+ 
+2.0 Best Practice Description 
+ 
+Using specially designed basin for 
+cooler testing reduces the possibility of 
+contamination and damage by using a 
+special cooler testing basin in a 
+cleaning bay, not in the test and/or 
+group assembly area. Additionally, a 
+dealer should keep all housings, 
+fixtures, pipes, etc., with the cooler 
+group in the bay to reduce chances of 
+contamination. 
+ 
+The basin should be: 
+• Sized for the dealer’s common 
+products. 
+• Insulated/heated if the dealer 
+chooses to test with heat 
+• Smooth painted exterior designed with few areas to  catch dust/dirt/crime for fast/easy 
+cleaning and professional image. 
+• Equipped with aluminum, counterbalanced lid for ea sy operation. 
+ 
+Additionally, the dealer may wish to include: 
+• An adapter storage drawer built into the basin low er section 
+o Reduces space consumption by storing tools in basi n footprint 
+o Reduces lost adapters by keeping them in securable  drawer(s) close to where they 
+are used. 
+o Provides easy adapter inventory review by organizi ng adapters in foam cutouts. 
+o Test notes, special instructions, or other referen ces may also be stored in sections 
+of the drawer(s). 
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Fluid Cooler Testing Basin 
+DATE 
+24 OCT 06 
+CHG 
+NO 
+01 
+NUMBER 
+1006-4.4-1025 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+• Air regulator manifold permanently mounted and plu mbed into the facility air system for 
+ease-of-use (requires only one hand to set/adjust).   
+o Manifold may be permanently mounted on test basin.  
+o Manifold may be pin-mounted (stored in drawer betw een uses) for controlled book-
+outs to other shop/field service departments. 
+ 
+3.0 Implementation Steps  
+ 
+1. Determine area in shop to be designated for cool er testing. 
+a. Assure test area has supporting utilities (compr essed air and electricity as needed) 
+b. Assure area has adequate space and access. 
+ 
+2. Design and construct test basin 
+ 
+3. Establish tooling needs and storage requirements . 
+a. Research current tool inventories and test refer ences/notes in dealer. 
+b. Research Caterpillar tool recommendations and te st references. 
+c. Design drawers to include: 
+i. Foam cutouts for current adapters with plenty of  room for future additions. 
+ii. Test references/notes in a shop-consistent form at/organization for easy 
+maintenance. 
+ 
+4. Determine if heated basin water is desired (this  is not a Caterpillar test requirement, but 
+is desired by many dealers). 
+a. Choose heater and design into basin for easy mai ntenance. 
+b. Assure designated test area has supporting utili ties for heater. 
+ 
+5. Determine most applicable air-regulator manifold  application: 
+a. Design manifold for efficient set-up, adjustment , and storage as needed. 
+b. Design basin drawers for portable manifold stora ge if needed. 
+ 
+6. Develop/adjust and document test procedure with quality checklists as needed. 
+ 
+7. Establish new/adjusted repair/rebuild time requi rement targets as needed. 
+a. Eliminate the current processes/tooling/equipmen t strategy. 
+b. Remove replaced items (tools/adapters) from oper ations to prevent risky applications. 
+c. Include inter-department use issues as needed. 
+ 
+8. Install the layout/equipment changes into the sh op 
+a. This may occur in phases, as needed, such as sho p arrangement, then equipment final 
+design/fabrication. 
+b. Promote change feedback as installation may surf ace new problems.  
+ 
+9. Train employees to use the new procedures/equipm ent.  
+a. Establish current testing concerns with team. 
+b. Establish process, layout, and equipment improve ments through team. 
+c. Operation training, safety training. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Fluid Cooler Testing Basin 
+DATE 
+24 OCT 06 
+CHG 
+NO 
+01 
+NUMBER 
+1006-4.4-1025 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+ 
+10. Establish equipment maintenance schedule/responsibility. 
+ 
+11. Review process/equipment performance once established. 
+ 
+12. Establish and install any adjustments as needed. 
+ 
+4.0 Benefits 
+ 
+• Testing capability remains in-house. 
+• Labor efficiency gain: 
+o Well designed/organized test equipment reduces set -up and teardown time.  
+o Integrated/timed (smart) product flow simplifies p rocess and reduces administrative/rebuild 
+labor.  
+o Product staged with like-product reduces space req uirements. 
+o Test delays avoided by keeping test parts/ adapter s organized. 
+• Increases quality: 
+o Avoids unexpected cooler failure upon reinstallati on to machine. 
+ 
+5.0 Resources Required 
+ 
+Facility 
+• Re-organize workstation to allow for basin placeme nt, incoming and outgoing staging, and a 
+workbench as needed. 
+ 
+Support Equipment 
+• Well-built basins with heaters 
+• A generic work bench to install/remove adapters, a nd assemble cooler groups as needed. 
+• Caterpillar test adapters. The dealer may already have these. 
+• Drawer foam inserts are available Caterpillar and must be custom cut per each shops needs. 
+• Lifting devices such as cranes may be shared with other functions in the shop. Lift 
+requirements are relatively low for a typical Caterpillar repair/rebuild facility and would be 
+determined by the size of coolers and or cooler groups being handled. 
+• Lifting chains, straps, and/or brackets may also b e shared with other functions. 
+ 
+People 
+• One trained operator (based on demand).  
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Fluid Cooler Testing Basin 
+DATE 
+24 OCT 06 
+CHG 
+NO 
+01 
+NUMBER 
+1006-4.4-1025 
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+7.0 Related Best Practices 
+ 
+Also see Best Practice #1006-4.4-1023, Floor Mounted Cooler Assembly Fixtures . 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+8.0 Acknowledgements 
+• This Best Practice was written by: 
+ 
+Russ Young 
+Black Belt, Cat Global Mining

@@ -1,0 +1,307 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2023 
+1.05-230217-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Tool and Process to Purge 
+the 794AC Hydraulic 
+System to Prevent Pump 
+Damage after Draining 
+Fluid 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Tool and Process to Purge the 794AC Hy.-System…1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool and Process to Purge the 794AC Hydraulic 
+System to Prevent Pump Damage after Draining Fluid 
+DATE 
+2/17/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-230217-1 
+Caterpillar: Confidential Yellow          Page 2 of 6 
+1.0 Introduction  
+ 
+To prevent the hydraulic pump from sucking in air and damaging the hydraulic system it is 
+necessary to purge air from the hydraulic lines whenever the fluid has been drained such as during 
+commissioning, certain maintenance, and component changeouts.   
+ 
+The procedure from Caterpillar to pressurize the hydraulic tank and purge the air from the pump's 
+hydraulic system for the 794AC is not clear and there is no single tool for efficiently  isolating the 
+breather and pressuring the system to ultimately purge the air. 
+ 
+2.0 Best Practice Description 
+ 
+The Tooling and Process described throughout this document is a Best Practice used to prevent 
+damage/wear and shortened component life by efficiently purging air from the hydraulic sys tem 
+components and lines during commissioning, certain maintenance,  and major component 
+changeout.
+ 
+ 
+Sotreq successfully applied this Best Practice during the commissioning of a fleet of 794AC Trucks 
+in Northern Brazil. The customer acknowledged the success and efficiency of the process and 
+mandated it for future hydraulic system maintenance. 
+ 
+Please see the instructions and reference images below for the air purging process. 
+ 
+ 
+Figure 1 – View of the hydraulic tank and adapter  
+ 
+ 
+1. Temporarily remove the breather (E) at the top of the hydraulic tank and cover the hole. See 
+Breather (Hoist and Brake Tank) - Replace (SEBU9099-08). If necessary, use tool 185-3630 
+to remove the breather.  
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool and Process to Purge the 794AC Hydraulic 
+System to Prevent Pump Damage after Draining Fluid 
+DATE 
+2/17/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-230217-1 
+Caterpillar: Confidential Yellow          Page 3 of 6 
+ 
+Figure 2 – Removing the breather 
+2. Insert an air adapter and regulator into the vent location. 
+3. Pressurize the hydraulic tank to 70 kPa (10 psi) to hydraulic priming system. Do not add 
+pressure on the hydraulic system. (70 kPa/10 psi Maximum) 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Sotreq used a filter (4T -6788) to  develop the tool. The filter is cut, and part of the filter head 
+(threaded plate) is used. Additionally, a plate with a pressure tap is installed.  
+ 
+With this tool ready, the b reather at the top of the hydraulic tank must be removed, allowing the 
+tool to be installed in place of the breather. The pressure entry must be connected to the pressure 
+inlet to the air hose, with a pressure regulator limited to 10 psi. 
+ 
+  
+Figure 3 – Cutting area of the filter head, to manufacture the tool 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool and Process to Purge the 794AC Hydraulic 
+System to Prevent Pump Damage after Draining Fluid 
+DATE 
+2/17/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-230217-1 
+Caterpillar: Confidential Yellow          Page 4 of 6 
+ 
+Figure 4 – Cutting the filter head                                                                                                                             
+ 
+After the flange cut, weld a thick washer to the top of the flange. After that, install an elbow (085-
+7356) on top of the thick washer with thread for the inlet of a pressure tap with a pressure regulator 
+(4C-8852). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 5 – Flange with and without the washer and elbow adapter                                                                                                                           
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 6 – Manufactured tool without and with the pressure regulator                                                                                                                             
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool and Process to Purge the 794AC Hydraulic 
+System to Prevent Pump Damage after Draining Fluid 
+DATE 
+2/17/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-230217-1 
+Caterpillar: Confidential Yellow          Page 5 of 6 
+ 
+ 
+ 
+        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 7 – Usage of the manufactured tool during the hydraulic tank pressurization process (Max. 10 psi)                                                                                                                            
+ 
+ 
+4.0 Benefits 
+ 
+• Performance agility for the air purging process. 
+• Low manufacturing cost of the tool. 
+• Easy storage.  
+ 
+ 
+5.0 Resources Required 
+ 
+Item Quantity 
+Used Filter (it will be discarded) 1  
+Quick Coupling P/N 6V-3965 1 
+Elbow Adapter P/N 085-7356 1 
+Labor, Welder 1 hour 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+N/A. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A. 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool and Process to Purge the 794AC Hydraulic 
+System to Prevent Pump Damage after Draining Fluid 
+DATE 
+2/17/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-230217-1 
+Caterpillar: Confidential Yellow          Page 6 of 6 
+8.0 Acknowledgements 
+ 
+SOTREQ (Northern Brazil) would like to express its deep admiration for the professionals involved 
+in improving the maintenance and repair processes developed by Mining Engineering. 
+ 
+SOTREQ would also like to thank the indispensable technical contribution of Doug Friedrich of 
+Caterpillar Inc. 
+ 
+ 
+Joaquim Natividade Jesus. 
+Technical Consultant - SOTREQ 
+Mobile: +55 94 8123-0522 
+joaquim.jesus@sotreq.com.br
+ 
+ 
+ 
+Reinaldo Angelo 
+Engineering Coordinator - SOTREQ 
+Mobile: + 031 9 9996-5562 
+reinaldo.angelo@sotreq.com.br 
+ 
+ 
+George Costa  
+Engineering Intern - SOTREQ S/A  
+george.costa@sotreq.com.br 
+ 
+ 
+Douglas Friedrich  
+Manager, Site Performance – CATERPILLAR  
+Friedrich_Douglas_W@cat.com  
+Mobile: +1.305.807.9542

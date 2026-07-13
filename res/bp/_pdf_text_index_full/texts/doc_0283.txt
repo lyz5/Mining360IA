@@ -1,0 +1,219 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Gauge for Measuring Duo Cone Seal Ramp Wear.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Gauge for Measuring Duo 
+Cone Seal Ramp Wear 
+ 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+Gauge for Measuring Duo Cone Seal Ramp Wear ............ 0 
+1.0 Introduction ......................................................... 1 
+2.0 Best Practice Description ....................................... 1 
+3.0 Implementation Steps ............................................ 2 
+4.0 Benefits ............................................................... 3 
+5.0 Resources Required .............................................. 3 
+6.0 Supporting Attachments / References ...................... 3 
+7.0 Related Best Practices ........................................... 3 
+8.0 Acknowledgements ............................................... 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by one or 
+more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty about the 
+information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best Practice” 
+recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+January 2013 
+1210-4.03-1291 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+ 
+During final drive rebuild, it is necessary to inspect and evaluate the duo cone seal ramp for 
+reusability or salvage according to SEBF8132.  This Best Practice is a simple gauge that can be 
+fabricated and used by a technician to quickly and accurately evaluate the seal ramp. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+ 
+The key dimensions of the duo cone that need to be checked are shown in Figure 1 below.   
+These checks are required to determine is the ramp can be reuse, salvaged, or must be replaced. 
+ 
+ 
+ 
+ 
+Figure 1. Duo Cone Seal Dimensions and Measures 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Comparison Rule Used To Measure Wear of Duo Cone 
+Seal Ramp 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.03-1291 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+This Best Practice is to fabricate a gauge with the profile of the duo cone seal ramp.  
+ See Figure 2 below. 
+ 
+ 
+ 
+ 
+ 
+Picture 2. Gauge rule 10° 
+ 
+3.0 Implementation Steps 
+ 
+ 
+• Fabricate a gauge.
+ 
+• Locate the duo cone seal ramp in the component.  
+• Place the gauge in the duo cone profile (See Figure 3 and 4 below).  
+• Use a light to check for any gaps between the gauge and the ramp.  That light 
+represents the wear on the ramp.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                    Figure 3.                                               Figure 4 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Comparison Rule Used To Measure Wear of Duo Cone 
+Seal Ramp 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.03-1291 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4.0 Benefits 
+ 
+• Quickly measure ramp wear and angle. 
+• Consistency in the inspection. 
+• Proper reuse and salvage decisions 
+ 
+5.0 Resources Required 
+ 
+• Fabrication shop 
+ 
+6.0 Supporting Attachments / References 
+ 
+SEBF8132 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Name     Frank Córdova R. 
+Title        Green Belt CPS  
+E mail     
+frank.cordova@ferreyros.com.pe 
+ 
+Recognition: 
+ 
+Team:                         Miguel Mauriola / Operations Support Chief 
+       Raul Padilla, Roberto Tufiño / Quality control Supervisor 
+ Carlos Espinoza / Operations Support technical communicator 
+ Quality inspectors. 
+ 
+Sponsor:                     Rodolfo Gerstein / Manager Machine Shop 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Comparison Rule Used To Measure Wear of Duo Cone 
+Seal Ramp 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.03-1291 
+Caterpillar Confidential:  GREEN          Page 3 of 3

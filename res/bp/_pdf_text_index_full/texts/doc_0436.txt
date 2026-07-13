@@ -1,0 +1,358 @@
+SOURCE: Swing Motor Sensors Position Change on HMS 6060AC.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2023 
+1.04-230202-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Swing Motor Sensors 
+Position Change on HMS 
+6060AC  
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Swing Motor Sensors Position Change on HMS 
+6060AC ...................................................................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits ............................................................. 4 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Swing Motor Sensors Position Change on HMS 
+6060AC 
+DATE 
+2/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230202-1 
+Caterpillar: Confidential Yellow          Page 2 of 7 
+1.0 Introduction  
+ 
+The two pressure sensors (PN 534-4587) and the temperature sensor  (PN 534-4592) of HMS 
+6060AC swing system are located on the rear swing motors closest to the walkway, as shown on 
+the picture 1. Therefore, due to the  position of these sensors, they can be easily damaged by 
+people walking on the walkway or at service / maintenance work in this area. 
+ 
+ 
+Picture 1: Pressure sensors PN 534-4587 applied at rear swing motors, near the walkway. 
+ 
+2.0 Best Practice Description 
+ 
+To avoid damages of these sensors, they should be  removed from the rear swing motors  to the 
+front swing motors. Pictures 2 to 4 show details about this modification. In this area, the sensors are 
+protected from almost all external damage, and this saves costs and downtime. 
+Pressure 
+sensors 
+Walkway 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Swing Motor Sensors Position Change on HMS 
+6060AC 
+DATE 
+2/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230202-1 
+Caterpillar: Confidential Yellow          Page 3 of 7 
+  
+ 
+ 
+ 
+ 
+Picture 4: Rear and front swing motor’s location at machine model 6060AC. 
+ 
+ 
+Picture 2: Original position of sensors at swing motors - rear 
+of machine. 
+Picture 3: Position of sensors at swing motors after 
+modification - front of machine. 
+Rear swing 
+motors 
+Front swing 
+motors 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Swing Motor Sensors Position Change on HMS 
+6060AC 
+DATE 
+2/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230202-1 
+Caterpillar: Confidential Yellow          Page 4 of 7 
+3.0 Implementation Steps 
+ 
+Note: Parts list in the "5.0 Resources Required" 
+ 
+1. Stop and shutdown the machine. Lock the safety device preventing the machine from switching 
+on, apply a warning sign. 
+2. Remove the sensors installed on the rear swing motors and install  the plugs and seals (items 
+#1 and #2 of parts list) at same location. 
+3. At front swing motors, install the  manifolds (items #3 and #8 of parts list)  one on each motor 
+and install all the flanges and adapters (items #4 to #7 of parts list). 
+4. Install the pressure and temperature sensors at the manifolds installed on the front swing 
+motors; 
+5. Develop 3 electrical harness using the wire and conduit ( items #11 and #12 of parts list). The 
+connectors of these harness are Deutsch type (items #9 and #10 of parts list). Each harness 
+has 4 meters and a female connector in terminal and male connector in other; 
+6. Connect these harnesses at original harness and at the sensors. 
+ 
+The pictures 5 and 6 show details of all swing motors after installation. 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+1. Maintenance: Eliminate failures by people walking near the sensors. 
+2. Productivity: Contribute to improve the Mean Time Before Failure (MTBF) of the machine. 
+3. Safety: Easy access. 
+4. Commercial: All items involved have CAT part numbers. 
+ 
+ 
+ 
+Picture 5: Rear swing motors after installation, without 
+sensors. 
+Picture 6: Front swing motors after installation, with sensors 
+installed on the manifolds. 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Swing Motor Sensors Position Change on HMS 
+6060AC 
+DATE 
+2/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230202-1 
+Caterpillar: Confidential Yellow          Page 5 of 7 
+5.0 Resources Required 
+ 
+The table 1 below show all the items used for this improvement. 
+ 
+ITEM PART 
+NUMBER DESCRIPTION QUANTITY 
+1 367-5991 Plug 04 ea 
+2 155-9644 Seal 04 ea 
+3 507-4242 Manifold 02 ea 
+4 451-4733 Seal 12 ea 
+5 438-9272 Bolt 16 ea 
+6 487-2026 Adapter 04 ea 
+7 484-8870 Flange 08 ea 
+8 534-1181 Bolt 16 ea 
+9 155-2260 Kit connector plug 3 pin 03 ea 
+10 9W-0844 Pin 12 ea 
+11 Local supply Electrical wire 1.5 mm 24 meters 
+12 Local supply Electrical conduit 12 meters 
+ 
+Total parts cost US$: 2,518.16 
+ Labor: 8 hour – 2 technicians 
+ 
+6.0 Supporting Attachments / References 
+ 
+BI017741 - Parts catalogue 6060AC FS 
+SEHS9615-03 - Servicing Deutsch HD and DT style connectors 
+Parts list - see attached  
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+João Marinho 
+joao.marinho@sotreq.com.br
+ 
+ 
+This Best Practice was written and implanted by: 
+ 
+Alexsander Faria 
+alexsander.faria@sotreq.com.br
+ 
+ 
+João Marinho 
+joao.marinho@sotreq.com.br 
+ 
+Fabio Leonardo  
+fabio.leonardo@sotreq.com.br 
+Table 1: Items used in this improvement. 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Swing Motor Sensors Position Change on HMS 
+6060AC 
+DATE 
+2/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230202-1 
+Caterpillar: Confidential Yellow          Page 6 of 7 
+Best Practice Champion 
+ 
+Fellipe Viana 
+fellipe.viana@sotreq.com.br 
+ 
+Special thanks in development to: 
+ 
+Antonio Frieiro 
+antonio.frieiro@sotreq.com.br 
+ 
+Ary Rizel 
+ary.rizel@sotreq.com.br 
+ 
+Carlos Dias 
+carlos.dias@sotreq.com.br 
+ 
+Cirley Ribeiro 
+cirley.ribeiro@sotreq.com.br 
+ 
+Cassio Pereira 
+Cassio.Pereira@sotreq.com.br 
+ 
+Daniel Cunha 
+daniel.cunha@sotreq.com.br 
+ 
+Davy Dutra 
+davy.dutra@sotreq.com.br 
+ 
+Douglas Reis 
+douglas.reis@sotreq.com.br 
+ 
+Fabio Xavier 
+Fabio.Xavier@sotreq.com.br 
+ 
+Heder Coelho  
+Heder.Coelho@sotreq.com.br 
+ 
+Janair Xavier 
+janair.xavier@sotreq.com.br 
+ 
+Jud Oliveira 
+jud.oliveira@sotreq.com.br 
+ 
+Michael Silva 
+michael.freire@sotreq.com.br 
+ 
+Paulo Pirani 
+paulo.pirani@sotreq.com.br 
+ 
+Rodolpho Wachsmuth 
+rodolpho.wachsmuth@sotreq.com.br 
+ 
+Ronan Duarte 
+ronan.duarte@sotreq.com.br 
+ 
+ 
+ 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Swing Motor Sensors Position Change on HMS 
+6060AC 
+DATE 
+2/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230202-1 
+Caterpillar: Confidential Yellow          Page 7 of 7 
+Thiago Rezende 
+Thiago.Rezende@sotreq.com.br 
+ 
+Ygor Ceolin  
+ygor.ceolin@sotreq.com.br 
+ 
+Yuri Oliveira 
+ygor.ceolin@sotreq.com.br

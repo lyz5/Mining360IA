@@ -1,0 +1,1448 @@
+SOURCE: 1.0 Maintenance & Repair\1.01 Preventive Maintenance\1. Strategic\Preventive Maintenance Strategy.pdf
+PAGES: 17
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+September 2007 
+1007-2.0-1101 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      mining.cat.com 
+ 
+ 
+ 
+B E S T  P R A C T I C E  S E R I E S 
+Preventive Maintenance 
+(Strategic) 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+Preventive Maintenance (Strategic) ........................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ...................................... 12 
+4.0 Benefits ............................................................ 13 
+5.0 Resource Requirements .................................. 14 
+6.0 Supporting Attachments .................................. 17 
+7.0 Related Best Practices .................................... 17 
+8.0 Acknowledgements .......................................... 17 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information pro vided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 2 of 17 
+1.0 Introduction  
+ 
+Preventive Maintenance (PM) is critical to the success of any maintenance and repair system. It 
+is one of th e foundation elements and, as such should be considered a focal point in the overall 
+equipment maintenance management strategy. The goals of PM are to maintain equipment in 
+optimum operating condition, to reduce the risk of failure and subsequent unschedul ed 
+equipment repairs, and to optimize equipment owning and operating costs.  
+ 
+In order to meet these goals the well -designed PM process should consist of multiple 
+characteristics. Obviously, as the name implies PM must first be preventive in nature, that i s 
+some of the key ingredients of PM are time -based, fixed-interval activities that are planned and 
+scheduled based on manufacturers’ recommendations. These preventive activities are focused 
+primarily on eliminating excessive wear in components and systems to ensure that optimum 
+component lives are achieved and that equipment runs in peak operating condition. Routine 
+service activities such as fluid and filter changes are examples of the preventive aspects of PM.  
+ 
+To be completely effective Preventive Maint enance must also have predictive qualities, i.e. 
+periodic inspection, measurement and non -destructive test activities should assist the 
+maintenance organization in the determination of when adjustments or component repair / 
+replacement are required. Predic tive maintenance activities are condition -based relative to some 
+predetermined set of criteria and should focus on defect detection and failure avoidance to 
+reduce the risk of equipment breakdown. Predictive activities tend to be more complex relative to 
+their preventive counterparts and range from the most basic visual or “seat of the pants” 
+observations, “special tests” involving specialized instrumentation for pressure and temperature 
+measurements, fluids management and analysis, and on-board electronic system data analysis. 
+ 
+Lastly, since Preventive Maintenance is the most frequent and predictable of planned 
+maintenance activities, it presents a convenient “window of opportunity” for corrective repairs to 
+address problems identified through condition mon itoring. Although it may appear to be 
+somewhat reactive, adding this corrective quality to your Preventive Maintenance process is 
+crucial since it supports the goals of equipment reliability by insuring that defects detected during 
+condition monitoring can be planned, scheduled and executed on a before failure basis. In other 
+words, it is much more desirable to react to symptoms and small problems on a planned basis 
+during PM than to attempt to react to failures which by their nature tend to be unexpected a nd 
+unplanned. 
+ 
+This Best Practice relates specifically to the Preventive Maintenance process applied to large Off 
+Highway Trucks performed in a shop environment and is covered under version II of Site 
+Assessment items 2.9.1 - 2.9.9. 
+ 
+2.0 Best Practice Description 
+ 
+Preventive Maintenance consists of a logical sequence of steps or sub -processes that typically 
+include: 
+ 
+ Preliminary preparation & organization, 
+ Initial PM activities, 
+ Core PM activities, 
+ PM decision criteria & audit process, and 
+ Finalizing the PM. 
+ 
+The following is a brief description of each of those steps: 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 3 of 17 
+• Preliminary preparation & organization 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure #1 - Preliminary Preparation & Organization Process Flow 
+ 
+The Preventive Maintenance program is generated by Planning and Sc heduling and agreed 
+upon by the Operations / Production Department. The program forecast is developed a week in 
+advance and must be sufficiently flexible to accommodate adjustments to reflect deviations in 
+hour accumulation projections.  The program takes each of the following into account: 
+ 
+ PM service interval targets,  
+ Resource availability (manpower, bay space, parts, tooling, etc.), 
+ Use of the stop as a “Window of Opportunity” to perform other tasks (backlogged 
+and other scheduled repairs), 
+ Impact on fleet availability guarantee / commitment, 
+ Mine production requirements (status of the production plan). 
+ 
+Once the plan moves into action the PM service package is delivered to the Maintenance 
+Department for review. The PM service package includes the work o rders for PM and 
+backlogged repairs to be performed during PM, all PM checklists, Gantt charts, parts consists 
+lists for PM and repairs to be performed during the PM, special instructions, etc. It is passed to 
+the Supervisor or individual in charge of the PM bay. This enables that person to organize the 
+job, i.e. verify that the parts required for PM and any other work on the schedule have arrived 
+and are distributed such that the work is performed in the most efficient manner possible, 
+review the sequence of events (Gantt chart) to confirm that it is logical, assign manpower, and 
+distribute the workload among the staff.  
+ 
+Dispatch / Operations 
+Control & 
+Communications
+Revised 
+PM 
+Program
+Maintenance 
+Superintendent
+Form
+Machine taken 
+out of service
+Field / Shop 
+PM?
+Field
+Shop
+Deliver 
+machine to 
+wash bay
+PM Supervisor 
+workorder review 
+& analysis
+Organize PM Job
+Form
+Form
+PS - 3 & 3a
+Planning &
+Scheduling
+PM - 1
+PM - 2
+PM - 4
+PM - 5 & 5c
+Planning &
+Scheduling
+Parts
+  Management
+A
+START
+Preventive
+Maintenance 
+Strategy
+Analyze 
+potential 
+changes in 
+Scheduling 
+scenario
+Weekly PM 
+Program
+Coordinate 
+stop with 
+Operations & 
+Dispatch
+Form
+Form
+Record Date / Time
+& Event Code
+Performance
+Evaluation
+K
+Perform PM in the field
+(not covered here)
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 4 of 17 
+Parts and parts kits are to be delivered and held in a secure location in the PM bay, the day 
+prior to the scheduled PM date. It is the r esponsibility of the individual in charge of PM activity 
+to verify that the parts required for PM and any other work on the schedule have been delivered 
+to the PM bay, are complete (nothing is missing), and are distributed / organized such that the 
+work can be performed in the most efficient manner possible. Parts are organized as follows: 
+ 
+ PM parts: mandatory, exchange and optional parts kits, 
+ Backlog and scheduled repair parts. 
+ 
+• Initial PM Activities 
+ 
+ 
+ 
+ 
+Figure #2 – Initial Preventive Maintenance Process Flow 
+ 
+Once the equipment has been taken out of service and delivered to the wash bay, the Operator 
+Log Book should be reviewed and discussed between the operator and the Technicians 
+responsible for performing the PM. It is important to note that informati on received from 
+operators tends to be relatively low -tech, visual, symptom -oriented, and “seat -of-the-pants” 
+observations thus PM Technicians must be sufficiently skilled and experienced to interpret 
+operator input and translate the feedback into action.   
+Before beginning any work on the equipment a Safety Risk Analysis must be performed to 
+minimize any chance of personal injury. Once completed, fluids sampling and magnetic plug 
+exchange should be performed in order to obtain a valid sample before debris can settle out of 
+the oil. Clearly a pre -PM inspection that includes fluid sampling (SOS), magnetic plug 
+inspections, VIMS and other on-board system downloads performed several days in advance of  
+Deliver 
+machine to 
+wash bay
+post-Wash 
+Audit
+Fail
+Pass Deliver Machine to 
+PM Bay
+Inform PM Crew of 
+Additional Work
+Form
+Form
+Form
+Form
+Form
+Form
+MC - 2
+Condition
+  Monitoring
+PM - 3
+PM - 4 PM - 4
+PM - 3
+PM - 6
+MC-4 & 4a
+Form
+Operator 
+Interview
+Perform SOS & 
+magnetic plug 
+exchange
+pre-Wash 
+Inspection
+Review, Analyze, 
+Discuss Operator 
+Log Book.
+pre-Wash 
+Inspection 
+Checklist
+Wash 
+Machine
+Selective 
+Cleaning
+Special instruction 
+developed to guide 
+the wash crew in 
+effective machine 
+cleaning process.
+Review / Analyze 
+Workorder ... 
+Backlogged & 
+Scheduled Repair 
+Summary
+Preliminary 
+PM Task 
+Checklist
+Preliminary 
+PM Task 
+Execution
+Review / Analyze 
+Pending B’log List
+Pending 
+Backlogs 
+Report
+New 
+Defect(s) 
+Found?
+No
+Yes
+Redo machine 
+wash
+Condition
+  Monitoring
+Perform Safety 
+Risk Analysis
+Safety Risk 
+Analysis 
+checklist
+A
+C
+B
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 5 of 17 
+the PM is preferable however circumstances may prohibit thi s from taking place. Therefore, if 
+site-specific conditions or policies prevent the pre -PM inspection from taking place, it is 
+important that this activity takes place as soon as possible in the actual PM process. 
+Washing can sometimes remove evidence of a  defect or pending problem. Therefore a visual, 
+walk-around inspection may help identify the source of leaks … oil, fuel, coolant, etc. Other 
+system performance tests / checks are better performed outside the shop or PM bay. Those 
+include:  
+ 
+ Loose, missing, broken bolts, fasteners,   clamps, etc., 
+ Accident damage, i.e. bent sheet metal, broken  parts, etc., 
+ Air system performance, 
+ Air compressor condition, 
+ Brake performance, 
+ Parking brake performance, 
+ Engine performance (@ torque converter stall), 
+ Hoist system performance, 
+ Traction control system performance, etc. 
+ 
+Results from these preliminary inspections should be compared to the pending backlog 
+summary and any new defects reported to the PM Supervisor for attention later on in the 
+process. 
+ 
+Equipment cle anliness is critical to contamination control and sound overall maintenance 
+practices. The well-run PM operation should include training for the wash crew instructing them 
+on detailed procedures for the proper execution of this important task. In addition,  procedures 
+should be developed warning the crew to avoid directing water spray on areas such as engine 
+exhaust stacks, electrical / electronic components (alternators, etc.), electrical connectors, 
+breathers, etc. To promote efficiency / ease of repair, c ontamination control and shop 
+housekeeping, the list of all repairs to be performed in parallel with the PM (scheduled or 
+backlogged) should be reviewed to determine if those areas of the machine would benefit from 
+additional, selective cleaning.  The sour ce document is any workorder related to scheduled or 
+backlogged repairs. Equipment cleanliness should be audited and, if it does not meet required 
+standards, any deviations attended to prior to moving on to the PM bay. 
+ 
+Since safety is fundamental to any s uccessful PM operation, the following tasks are best 
+performed after the machine has been washed but before it has been moved into the PM bay: 
+ 
+ Hoist cylinder mounts (pins & bearings), 
+ Steering linkage (ballstuds, pins & bearings), 
+ Steering system cycle time, 
+ A-frame bearing wear, 
+ Body pivot pin & bushing, 
+ Body safety cable, 
+ Suspension cylinder pressures, 
+ 
+Here again, results from these preliminary tests and inspections should be compared to the 
+pending backlog summary and any new defects reported to the PM  Supervisor for attention 
+later on in the process. 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 6 of 17 
+• Core PM Activities 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure #3 – Core Preventive Maintenance Process Flow 
+ 
+The following safety procedures must be complied with prior to beginning work in the PM bay: 
+ 
+ Turn master switch to the off position, 
+ Apply the parking brake, 
+ Place the wheel chocks in position, 
+ Apply lock-out tags and other warning devices as required, 
+ Raise dump body & attach safety cable. 
+ 
+Fluids cleanliness is a basic step in achieving optimum componen t lives. As such, the PM 
+process should begin with checks of ISO cleanliness levels and system / component flushing. 
+Once the initial particle count readings have been recorded, the “kidney looping” hardware 
+should be installed and the process performed on the following components and systems: 
+ 
+ Differential housing & rear wheel groups, 
+ Transmission & torque converter groups, 
+ Steering system, 
+ Hydraulic system, 
+ 
+Final particle count readings should also be recorded as well as the time required to achieve oil 
+cleanliness specifications. NOTE: If the oil in any of these systems is to be changed as part of 
+the PM, the initial (pre -oil change) reading should be documented and the kidney looping 
+process carried out after the oil has been replaced. 
+ 
+PM Machine 
+Safety 
+Procedures
+PM Service 
+& Inspection 
+Checklists
+Machine delivered 
+to PM bay
+Perform machine 
+safety routines
+Perform PM 
+service routines Form
+ Perform 
+kidney 
+looping
+Pass
+Fail
+ISO 
+cleanliness 
+level OK?
+Form
+Perform backlog 
+validation 
+routines
+Perform 
+backlogged & 
+other scheduled 
+repairs
+Pending 
+Backlogs 
+Report
+Review / 
+Analyze 
+Pending 
+Backlog List
+Form
+Form
+PM-4
+MC-5
+PM-4
+  Condition
+  Monitoring
+PM-3
+PM-6
+Active Faults
+/ Snapshots?
+No
+Yes
+ Repair
+Action
+Needed?
+Yes
+No Can Repair 
+ Be Deferred?
+Yes
+No
+B
+C
+Document initial 
+ISO levels
+Attach filtration 
+equipment
+Pass
+Fail
+ISO 
+cleanliness 
+level OK?
+Download On-
+Board Electronic 
+Systems Data
+Perform PM 
+Inspection & 
+Performance 
+Test Routines
+H GF DE
+I
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 7 of 17 
+On-board electro nic systems data may be downloaded concurrent with the kidney looping 
+process for comparison to baseline reference data, predetermined acceptability criteria, and 
+data collected previously to predict pending problems or identify changes in equipment status . 
+These on-board system checks will assist in determining future work plans and revisions to the 
+maintenance plan or strategy. The analyses should focus on the following areas: 
+ 
+ Maintenance … events / problems with the  machine or a system on the machine, 
+component operation / performance, component life management / 
+prediction / optimization, failure analyses … 
+ Production … payload management, cycle times / distances, production report 
+summaries / analyses … 
+ Operations … changes in application severity, compliance with system operating 
+parameters, haul road management, machine performance... 
+ 
+If active faults or snapshots are discovered, decisions should be taken as to whether corrective 
+actions are required and, if so, if they should be addressed immediate ly or deferred to the 
+backlog list. Just as in SOS and magnetic plug inspections, it is preferable to download VIMS 
+and other on-board systems several days in advance of the PM as part of a pre -PM inspection. 
+It is mentioned here only because site -specific circumstances, conditions or policies may 
+prevent the pre-PM inspection from taking place. 
+ 
+The remaining PM activities should be performed in the sequence defined by the Gantt chart 
+developed by Planning and provided in the PM Service Package. Preventive  Maintenance 
+service tasks, e.g. drain / refill fluid compartments, replace filters, exchange filter canisters, 
+screens, breathers, magnets, replace seals, etc., are to be performed per the defined service 
+interval on each of the following components and systems: 
+ 
+ Engine including fuel system, fuel tank & air intake system, 
+ Fan drive hub, 
+ Transmission, Torque converter, & Differential,  
+ Rear wheel groups, Brake system including brake wear measurement, 
+ Front wheel hubs, 
+ Steering & Hoist systems. 
+PM inspection and performance test routines are to be performed per schedule on each of the 
+following components and systems: 
+ 
+ Engine including fuel system & fuel tank, 
+ Transmission, 
+ Torque converter, 
+ Differential, 
+ Rear wheel groups, 
+ Brake systems, 
+ Front wheel hubs, 
+ Steering system, 
+ Hoist system. 
+ 
+Findings should be referenced to manufacturers’ specifications and acceptability criteria. All 
+results should be documented immediately so as not to be lost or forgotten. 
+ 
+Backlog validation routines are designed to confirm t hat issues entered into the backlog system 
+are accurate and to assess potential defects identified during the preliminary (wash bay) 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 8 of 17 
+inspection. The Pending Backlog Report is one of several “operational reports”; it is a “must” for 
+any person involved in t he PM inspection or who will enter a Backlog Request.  The primary 
+objectives of this report are: 
+ 
+ Facilitate the detection routines by letting the originator know what is already in the 
+records, 
+ Avoid duplication of entries, 
+ Increase the use of any “Window of Opportunity” to execute Backlogs in parallel with 
+PM.  
+ 
+Backlogged and other scheduled repairs can be executed in the PM bay or in the shop repair 
+bay as indicated by the Gantt chart for the PM. 
+ 
+• PM Decision Criteria & Audit Process 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure #4 - Decision Criteria & Audit Process Flow 
+ 
+Shop-found defects, problems identified during the preliminary (wash bay) inspection, PM 
+inspections, and/or performance test routines, are the most difficult to deal with. The inability to 
+plan ahead complicates the issue. Proper handling of shop -found defects is a critical aspect of 
+any equipment management strategy.  
+ 
+As such, several things need to be in place to streamline the decision -making process relative 
+to shop-found defects. The PM Team shou ld be trained to distinguish urgent from non -urgent 
+defects. This training can be supplemented through the development, publication, and 
+communication of clear guidelines that provide direction in the determination of the criticality of 
+shop-found defects. An example of repair urgency assessment guidelines may read as follows: 
+ 
+ The repair of shop -found defects should be considered urgent and executed 
+immediately if they meet the following criteria: 
+ 
+Backlog 
+Request 
+Form
+No
+Yes New Defects 
+Found?
+Urgency, 
+perform repair 
+now?
+Open 
+Technical 
+Backlog 
+Request
+Post-PM 
+inspection & 
+detailing
+post-PM 
+Audit
+Pass
+Fail
+Form
+Repair in 
+parallel with 
+PM?
+No
+Yes
+No
+Yes
+Execute shop-
+found defect 
+repairs
+Repair in 
+parallel with 
+PM?
+No
+Yes
+J
+BM-2
+Backlog
+  Management
+Backlog
+  Management
+D
+Communicate 
+needs to 
+Planning & 
+Shop 
+Management
+H GE F
+I
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 9 of 17 
+ Defects that have safety implications, e.g. problems with the steering, brake, 
+lighting, critical warning systems, etc., or 
+ 
+ Defects that carry significant risk in terms of contingent damage, repair cost 
+premiums, or increased time to repair as a result of running to failure versus 
+repair-before-failure, e.g. structures, most major components, etc. 
+ 
+Other critical ingredients for success include: 
+ 
+ PM Technicians must be analytical and knowledgeable in safety / risk assessment. 
+ PM Technicians must feel empowered to make decisions and act upon them. 
+ 
+If the repair p riority of a shop -found defect is determined to be urgent, the following questions 
+should be asked: 
+ 
+ Will the execution of the repair require staff (specialized or other) that is not readily 
+available? 
+ Will the time required to execute the repair in parall el with the PM cause the next 
+scheduled PM to be delayed due to a conflict for PM bay space? 
+ Will the repair require parts to be procured that will delay the start of the next 
+scheduled PM? 
+ Will the repair require tooling or other resources to be obtained that will delay the 
+start of the next scheduled PM? 
+ 
+If the answer to any of the questions above is “Yes”, the machine should be moved to the main 
+shop and the repair made under the guidelines defined in Repair Management. 
+ 
+If it is determined that the rep air priority of a shop -found defect is not urgent, the guidelines 
+below are applicable: 
+ 
+ Minor defects, i.e. loose bolts, fasteners, fittings, leaks, etc. that can be executed 
+quickly and without the need for parts, special tooling / instructions, etc. 
+should be performed in parallel with the PM provided there is no 
+interference with or delays in the existing PM schedule. 
+ Repair of minor defects that will interfere with or delay the existing PM schedule due 
+to the time required to execute the repair, obtain  / organize manpower, 
+parts, special tooling / instructions, etc. should be entered into the Backlog 
+Management process. 
+ 
+A fully functional Backlog Management system ensures that details are captured and not lost. 
+As was noted above, if the defect is dete rmined to be non -urgent but cannot be repaired in 
+conjunction with the PM, it must be entered into the Backlog Management system in the form of 
+a backlog request. This record is used to communicate pending repairs to the Planning 
+Department whose responsib ility is to plan and schedule the repair in the most efficient, 
+effective manner possible. The following are critical to the success of the Backlog Management 
+system: 
+ 
+ Avoid duplication … compare new entries with the pending backlog list,  
+ Ensure that information provided in the backlog request is as accurate and complete 
+as possible,  
+ The percentage of backlogs identified during PM should be minimal. 
+ 
+Executing the PM program as planned can spell the difference between success and failure. 
+The post - PM audit process is the best way to ensure compliance with the PM plan. If properly 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 10 of 17 
+communicated, the audit results can be used in an ongoing continuous improvement effort to 
+refine the PM process to meet site-specific requirements. The audit process can take one of the 
+following forms: 
+ 
+ Supervisor sign-off at critical points in the process (preferred method), 
+ Random checks after PM completion. 
+ 
+Using post -PM audit results to define PM training opportunities, refine / improve the PM 
+checklists, and identify shor tcomings in the PM process will enhance PM quality and 
+effectiveness. 
+ 
+• Finalizing the PM 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Once work in the PM bay has been completed, the machine should be moved to the main 
+repair shop to correct any urgent, shop -found defects identified during the PM process. If none 
+were found, the PM Supervisor or individual responsible for PM should advise dispatch and the 
+Operations Department that the machine is available for service.  
+ 
+Complete 
+Work Order(s) 
+Data Entry
+Machine returned 
+to service
+No
+Yes
+Work Order 
+Data 
+Complete?
+Return to 
+appropriat
+e area to 
+obtain 
+correct / 
+complete 
+data
+Performance
+Evaluation
+Complete 
+shift log 
+report
+PM - 7
+Update PM 
+system
+Bulletin board
+Post- PM 
+activities
+Collect & return unused 
+Backlog & scheduled 
+repair parts
+Collect VIMS 
+downloads
+Collect oil samples, 
+magnetic plugs, filters, 
+screens, breathers, etc.
+Prepare PM bay for next 
+service, i.e. clean & 
+re-organize facility
+Parts
+  Management
+Condition
+  Monitoring
+K
+Form
+PM - 8 Form
+J
+Collect & return 
+unused parts from 
+Optional PM Parts Kit
+Urgent
+Shop-Found 
+Defects?
+No
+Yes
+Move machine to 
+main shop for 
+unscheduled, shop-
+found defect repair
+  Repair
+  Management
+Inform dispatch & 
+Operations; return 
+machine to service
+Figure #5 – Finalizing the Preventive Maintenance Process Flow 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 11 of 17 
+Many management decisions are based upon knowle dge of the workload. If this information is 
+not kept up to date and communicated, management has little idea as to the amount of 
+available manpower at any given point in time. Most mines do a reasonably good job through 
+the use of manual or electronic sche duling boards.  It is the responsibility of the individual in 
+charge of PM to inform Planning as soon as a PM is complete. This action takes the machine 
+“off the books” of the Maintenance Department, the PM downtime clock stops running, and the 
+time recorded on the PM workorder. 
+ 
+After the machine has been released from PM, it is the time to correct any shortcomings in the 
+data. The PM Supervisor or individual responsible for PM should audit all paperwork to verify 
+that it is complete and accurate before pa ssing it on to the Planning Department for entry into 
+the machine history archive. Data sources from PM typically include: 
+ 
+ PM checklists, 
+ Work orders for PM, backlogs, and any scheduled or unscheduled repairs executed 
+during the PM process, 
+ Backlog requests, 
+ Maintenance shift log. 
+ 
+Any deviations or omissions in the results must be corrected before forwarding the data to 
+Planning and the PM team should be advised to ensure that these problems are not repeated in 
+the future.  
+ 
+Information and documentation related to PM should be distributed to the proper personnel as 
+quickly as possible to assure that it is acted upon.  This information includes: 
+ 
+ PM work orders & checklists, 
+ Downloaded electronic files, 
+ Fluid samples, 
+ Magnetic plugs, filters, screens, strainers, etc. 
+ 
+Distribution of PM information results to the appropriate individuals in a timely manner facilitates 
+its use as a source for process performance improvement. PM results and related information 
+can be used to identify problems not only with the  equipment but also with the PM execution 
+and Planning & Scheduling processes. 
+ 
+Parts can be a significant cause of delay downtime if they are not managed correctly. Effective 
+PM parts management will reduce maintenance costs and streamline the process by making it 
+more efficient. Parts returns normally associated with the PM process are: 
+ 
+ Unused parts from optional PM parts kits, 
+ Parts from backlog or other scheduled repairs that were not completed during the 
+PM. 
+ 
+In order to be fully effective, an individ ual should be assigned to be responsible for managing 
+PM parts. It may be necessary to devise a special PM parts return policy since many Parts 
+Departments struggle with parts returns once they have been assigned to a workorder. 
+ 
+Clean, orderly facilities support quality work. Preparing the PM bay for the next scheduled 
+service ensures that facilities are maintained such that future work can be performed as 
+efficiently and effectively as possible. This preparation includes: 
+ 
+ Cleaning / removing fluids from the floor to eliminate potential work hazards, 
+ Returning tooling and equipment to its proper location, 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 12 of 17 
+ Replenishing supplies, e.g. shop rags, cleaning fluids, etc., as required, to support 
+efficient PM execution. 
+ 
+Keys to success in this area include the d evelopment of a checklist for procedures to maintain 
+the PM bay in good working order and assigning individual accountability for keeping the PM 
+bay in good condition. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+• Preventive Maintenance Strategy 
+ 
+Critical steps associated with the implementation of the Preventive Maintenance process begin 
+with the definition and development of the PM strategy. The PM strategy should be documented 
+in writing and must consider and define each of the following elements: 
+ 
+ PM service interval … typically 250 to 500 hours, 
+ The PM plan … define the equipment to be serviced and the scope of work to be 
+performed, 
+ Manpower,  
+ Training, 
+ Infrastructure and resource requirements, 
+ PM evaluation measurements / reports … how will PM performance be measured? 
+ 
+• PM Plan Definition 
+ 
+What machines will be covered, how many and which routines will be included in the PM 
+implementation plan, e.g.  
+ 
+ 20 X 793D Off Highway Trucks, 
+ Machine washing, 
+ PM service (lubes, oils and filters), 
+ Condition Monitoring, e.g. 
+ Oil sampling, inspection of magnetic plugs, screens & filters, 
+ Visual inspections for damage and wear, 
+ System performance tests and adjustment, 
+ On-Board electronic systems data management, 
+ Execution of opportunity repairs (backlogged and other repairs). 
+ 
+• Manpower 
+ 
+What human resources are required to implement and execute the Preventive Maintenance 
+plan, i.e. quantity, roles & responsibilities, personal attributes, skills, etc. (Also see Resource 
+Requirements / Human Resources in section 5 .0) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+• Training 
+ 
+How can pe rsonnel competency be assessed? What training will be needed to develop the 
+skills required to perform the tasks related to Preventive Maintenance? 
+ 
+• Infrastructure and Resource Requirements 
+ 
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 13 of 17 
+What infrastructure and resources will be required to execute the  Preventive Maintenance 
+plan?: 
+ 
+ PM / Wash bays … quantity and physical dimensions? Dedicated facilities?, 
+ Special tooling and instrumentation … dedicated to PM?, 
+ Parts … PM parts kits, backlogged repair parts, etc., 
+ Machine-specific inspection checklists a nd forms … “traditional PMP”, “8 Step”, 
+Trakindo “PM Workscopes”, etc., 
+ Well-defined procedures … documented in writing. 
+ 
+(Also see Resource Requirements / Logistical Resources in section 5 .0) 
+ 
+• PM Performance Measurement / Reporting 
+ 
+What defines success in Preventive Maintenance? What performance measures are available 
+that aid in quantifying our efforts in Preventive Maintenance? Once these questions have been 
+answered, the following issues need to be taken into account when developing a plan to 
+quantify Preventive Maintenance performance: 
+ 
+ Raw input data requirements, 
+ Data sources, 
+ Data collection frequency and responsibilities, 
+ Data flow and management, 
+ Calculation methodology, 
+ Performance goals and acceptability criteria, 
+ Analysis and interpretation roles & responsibilities,  
+ Analysis and interpretation guidelines, 
+ Information management / archiving, 
+ Report formats (templates), 
+ Report timing and frequency, 
+ Communications / distribution network, 
+ Distribution format and media. 
+ 
+Please see the document “Me trics (KPI’s) to Assess Process Performance” for a complete 
+listing and explanation of Preventive Maintenance process performance metrics. 
+ 
+4.0 Benefits 
+ 
+Successful implementation of a comprehensive Preventive Maintenance process, i.e. one that 
+includes not only preventive qualities but is also predictive and corrective in nature, will support 
+the goals of most mining organizations as follows:  
+ 
+ Equipment productivity … equipment condition is maintained in accordance with design 
+specifications and operating at peak performance. 
+ 
+ Fleet production … equipment breakdowns and resultant unplanned repairs are held to 
+a minimum resulting in a reduction in failure frequency and downtime. 
+ 
+ Operating costs … component lives are optimized and contingent damage is avoided. 
+ 
+ Labor efficiency … manpower is deployed in a proactive (planned) rather than reactive 
+(crisis “management”) manner. 
+ 
+
+===== PAGE 14 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 14 of 17 
+ Safety … critical systems such as steering and brakes are performing to design 
+specifications. 
+ 
+As a result, cost per ton will be optimize d on a long -term basis resulting in increased customer 
+satisfaction. 
+ 
+5.0 Resource Requirements 
+ 
+• Human Resources:  
+ 
+Human resource requirements associated with the implementation and execution of the 
+Preventive Maintenance plan include: 
+ 
+ Planner … defines and organizes resource & time estimates to facilitate effective, 
+efficient Preventive Maintenance execution. 
+ 
+ Ensures that PM activities are aligned with the PM strategy. 
+ Defines, organizes & procures facilities, manpower, parts, tooling, forms, 
+checklists, etc. for PM.  
+ Establishes priorities for PM execution. 
+ Communicates and obtains approval for the PM plan from the mine Operations 
+Department. 
+ Communicates the PM plan to the Parts Department and other external 
+resources. 
+ 
+ Fleet Analyst  (Reliability Engineer)  … provides technical assistance to the Planner 
+related to PM content and execution. 
+ 
+ Defines PM checklists for each model of equipment and provides them to the 
+Planner. 
+ Ensures that PM checklists are reflective of current manufacturers’ guidelines  
+and recommendations. 
+ Updates PM checklists to comply with equipment age, application, and condition.  
+ Revises PM checklists to address the key issues. 
+ Follows-up / analyzes PM inspection and performance test results. 
+ 
+ Parts (central parts warehouse) … to support  on-site Parts Department operations with 
+timely PM parts delivery. 
+ 
+ Assembles PM parts kits (mandatory, exchange, and optional) for shipment to 
+ site.  
+ Assembles SOS kits for shipment to site. 
+ Guarantees PM parts availability at the site. 
+ Identifies PM part number changes & revise PM parts lists accordingly. 
+ 
+ Parts (on-site parts warehouse) … to support the Preventive Maintenance process with 
+timely delivery of quality parts. 
+ 
+ Receives PM parts kits from the central parts warehouse. 
+ Verifies that the PM parts kits received agree with the PM program. 
+ Stores the PM parts kits in a clean, secure location. 
+ Delivers PM parts kits to the assigned location in the PM bay prior to the arrival 
+of the equipment. 
+
+===== PAGE 15 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 15 of 17 
+ Re-conditions the exchange PM parts kits and replenishes the optional PM parts 
+kits. 
+ Retrieves the SOS bottles for shipment to the oil lab.  
+ 
+ Scheduler … translates the Preventive Maintenance plan into an actionable schedule. 
+ 
+ Schedules PM’s in accordance with the PM plan and strategy and resource 
+availability.  
+ Publishes / distributes the PM program to all appropriate areas. 
+ Updates the PM program to comply with variations in equipment utilization. 
+ Uses the “Window of Opportunity” presented by PM as well as planning goals for 
+PM to schedule backlogged repairs in conjunction with PM. 
+ 
+ Wash Bay Team … cleans the equipment in a manner that promotes effective, efficient 
+PM execution. 
+ 
+ Adheres to established procedures for equipment washing … use high-flow water 
+cannons and smaller, portable devices as appropriate. 
+ Uses steam / detergent to clean areas that will be worked on during the PM.  
+ Avoids damage to equipment by directing water away  from sensitive areas. 
+ Assures machine cleanliness quality for PM. 
+ 
+ Technicians … perform Preventive Maintenance activities in ac cordance with the 
+guidelines and procedures outlined in the PM plan. 
+ 
+ Meet / exceed the goals for PM quality (MTBSafter PM) and efficiency 
+(MTTRPM).  
+ Document results; complete PM checklists as you go. 
+ Provide complete, accurate information on checklists. 
+ Execute all tasks included in the plan; backlogs, etc. 
+ Pay attention to details; use inspections, performance tests and other Condition 
+Monitoring techniques to identify defects or potential problems. 
+ Correct defects immediately if possible; enter backlogs for those that cannot be 
+addressed. 
+  
+ PM Supervisor … directs, supervises and audits all PM tasks in a manner that 
+enhances equipment performance and reliability. 
+ 
+ Ensures compliance with all PM procedures. 
+ Promotes effective, efficient PM execution. 
+ Ensures safe execution of PM procedures. 
+ Identifies PM resource limitations & seek solutions. 
+ Defines PM training needs and deficiencies. 
+ Verifies that all PM data integrity; ensures that PM recordkeeping is accurate and 
+complete. 
+ Audits PM process to guarantee the quality of PM execution. 
+ 
+• Logistical Resources:  
+ 
+Logistical resource requirements associated with the execution of the Preventive Maintenance 
+plan include: 
+ 
+
+===== PAGE 16 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 16 of 17 
+ Facilities 
+ 
+ Wash Bay(s) … 
+ Sized to dimensions of largest equipment. 
+ Quantity sufficient to minimize delays. 
+ Equipped to remove mud, grease and debris … high -volume water 
+cannons, high -pressure guns, steam, de -greaser for selective 
+cleaning.  
+ Designed for access … platforms & ladders. 
+ Drainage (water & debris), water recycling capability, oil / gr ease / 
+water separation capability provided. 
+ 
+ PM Bay(s) …  
+ Dedicated PM bay(s) / facilities. 
+ Sized to dimensions of largest equipment. 
+ Quantity sufficient to minimize delays. 
+ Compressed air, water, & electricity supplies available. 
+ Fluids handling … evacuation, delivery (filtered, metered and quick 
+disconnects) and spillage clean-up capability. 
+ Work environment … well lighted, portable lighting, doors for dust / 
+contamination control, quality work surface, exhaust / smoke 
+control.  
+ 
+ Tooling 
+ 
+ Dedicated hand tools, tool boxes, & work carts. 
+ Dedicated special tooling … pneumatic tools, filter cutting device, oil extraction 
+(SOS), etc. 
+ Dedicated testing / diagnostic instrumentation … pressure / temperature / speed 
+packages, particle counter, etc.  
+ Dedicated service / technical literature. 
+ Personal safety equipment. 
+ 
+ Equipment 
+ 
+ Personal safety and first aid provisions. 
+ Workbenches equipped with vices. 
+ Workstation … writing surface w/ computer access. 
+ Secure cabinetry for PM tooling & instrumentation, literature, PM and repair parts 
+receiving / storage. 
+ Cleaning materials … parts washing / solvent tank, shop vacuum, shop towels, 
+rags, soap, etc. 
+ Filter cart (“kidney looping”), lifting devices, chains / slings, hydraulic jacks and 
+stands, ladders and platforms, wheel chocks, ... 
+ Workbenches equipped with vices. 
+ Fire protection / extinguishing devices. 
+ 
+ Information 
+ 
+ Weekly PM schedule. 
+ PM performance bulletin board. 
+ Work orders for PM and repairs (backlogs, etc) to be performed during PM.  
+
+===== PAGE 17 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Preventive Maintenance – Strategic Best Practice  
+DATE 
+10 Sep 07 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1101 
+Caterpillar Confidential:  GREEN         Page 17 of 17 
+ PM checklists specific to each model / equipment. 
+ Active backlog list for equipment to be maintained. 
+ Gantt charts for all activities performed during PM.   
+ Parts consists lists for PM and repairs to be performed during the PM.  
+ Special instructions, etc.  
+ 
+Significant implementation costs include logistical resources (primarily PM / wash bays and 
+the associated tooling and equipment) and the time and expertise invested in supporting 
+material content development (checklists, procedures, guidelines, etc.). 
+ 
+6.0 Supporting Attachments 
+ 
+• Cat Global Mining Equipment Management Process Map (Preventive Maintenance)  
+• “Metrics (KPI’s) to Assess Process Performance“ - Microsoft Word Document 
+ 
+7.0 Related Best Practices 
+ 
+• Goals & Objectives for Preventive Maintenance (ref. 1006 - 3.1 - 1022) 
+• Improved PM Operations Using Specialized Bays (ref. 0607 - 2.9 - 1081) 
+• Utilizing VIMS Data for Effective Planned Maintenance (ref.1006 -2.15 -1027) 
+ 
+8.0 Acknowledgements 
+ 
+This “Preventive Maintenance“ Strategic Best Practice was authored by: 
+ 
+Jim McCaherty 
+Mining Equipment Management / Processes Division 
+Caterpillar Global Mining 
+(309) 675-5595 
+McCaherty_James_W@cat.com 
+ 
+Special recognition to Daniel Adkison for his contributions in this effort.

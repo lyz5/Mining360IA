@@ -1,0 +1,169 @@
+===== PAGE 1 =====
+December 2022 
+1.04-221209-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+M
+INING DEALER BEST PRACTICE 
+Final Drive Gear-Coupling 
+Assembly Tool for Multiple 
+HEX
+M
+aintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+F
+inal Drive Gear-Coupling Assembly Tool for Multiple 
+HEX ...........................................................................1  
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+D
+ISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Final Drive Gear-Coupling Assembly Tool for Multiple 
+HEX 
+DATE 
+12/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-221209-1 
+Caterpillar: Confidential Yellow          Page 2 of 4 
+1.0 Introduction  
+ 
+Component repair center  (CRC) receives diverse customer’s components daily and it is v ery 
+important to check the correct p osition of the assemble parts  aiming to prevent failures related to 
+assembly mistaken. 
+ 
+Since Caterpillar has distinguished left and right side of  Housing Motor (425-3520 RH / 425-3521 
+LH), it is required to have close attention to assembly process, once it is possible to assembly Gear 
+Coupling (199-4719) in the mistaken position. 
+Image 1 shows Gear Coupling assembled in the mistaken position. 
+ 
+ 
+Image 1 – Gear-Coupling mistaken assembly. 
+ 
+Thus, CRC technicians developed a tool which avoids the mistaken assembly of the final drive 
+gear-coupling 199-4719. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice proposes to use an old Body AS 542-1323 of the Motor GP-Travel from a down 
+equipment as a standard. In this case, it was defined to paint the structure in blue to differentiate it 
+as a tool, as shown in image 2: 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Final Drive Gear-Coupling Assembly Tool for Multiple 
+HEX 
+DATE 
+12/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-221209-1 
+Caterpillar: Confidential Yellow          Page 3 of 4 
+  
+Image 2 – Gauge assembly tool. 
+ 
+Then, technicians use it as a gauge in the bottom of the Housing Motor in both left and right sides, 
+orienting the flange to the correct position and, consequently, providing a correct installation of the 
+Gear Coupling (199-4719). 
+ 
+ 
+Image 3 – Example of a gauge tool use in the workshop. 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Final Drive Gear-Coupling Assembly Tool for Multiple 
+HEX 
+DATE 
+12/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-221209-1 
+Caterpillar: Confidential Yellow          Page 4 of 4 
+3.0 Implementation Steps 
+ 
+1. Define an old Body AS of the Motor GP -Travel PN 542-1323 from a down equipment as a 
+standard. 
+2. Choose a different color to paint the part due to set it as a tool. 
+3. Insert the tool in the bottom of the Housing Motor 425-3520 RH / 425-3521 LH as a gauge. 
+4. Put the Gear-coupling PN 199-4719 on the top of the Housing Motor matching the flange. 
+5. Check if the flange position of both parts are matching correctly. 
+6. Position the bolts in their position. 
+7. Torque the bolts using the specified measure. 
+8. Remove the tool. 
+ 
+4.0 Benefits 
+ 
+• Certify the correct assembly of the Gear Coupling (199-4719) in the Final Drive GP 
+avoiding assembly mistakes. 
+ 
+5.0 Resources Required 
+ 
+• An old Body AS of the Motor GP-Travel PN 542-1323. 
+• Paint. 
+ 
+6.0 Supporting Attachments / References 
+ 
+N.A. 
+ 
+7.0 Related Best Practices 
+ 
+N.A. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+  Allan Batista 
+Technical Analyst 
+allan.batista@sotreq.com.br
+ 
++55 31 99946-7652 
+ 
+This Best Practice was co-written and implemented by: 
+ 
+ 
+Wagner Reis                                            Lázara Fonseca 
+Service Technician                                  Technical Consultant / TC 
+wagner.reis@sotreq.com.br                     lazara.fonseca@sotreq.com.br

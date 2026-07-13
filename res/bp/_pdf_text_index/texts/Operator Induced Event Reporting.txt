@@ -1,0 +1,251 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+April 2024 
+2.04-240429-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Operator Induced Event 
+Reporting 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Operator Induced Event Reporting ............................ 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits ............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Operator Induced Event Reporting 
+DATE 
+4/29/2024 
+CHG 
+NO 
+00 
+NUMBER 
+2.04-240429-1 
+Caterpillar: Confidential Yellow          Page 2 of 6 
+1.0 Introduction  
+ 
+Machines create a host of data that is used to monitor machine health and to point out concerns 
+with the application. However, even though operator behaviors and human error have a 
+significant impact on safety as well as machine and component durability, alarms related to 
+operator behavior often do not get the required attention early on when training might still be used 
+to correct behaviors. This then represents a lost opportunity to proactively use such information to 
+prevent incidents and limit the adverse effect on machine durability and operating cost. This Best 
+Practice seeks to drive a proactive reporting into the mining organization including especially 
+operations and training departments.   
+ 
+ 
+2.0 Best Practice Description 
+ 
+Operator induced event reporting creates a means to monitor and communicate about machines 
+being operated outside of their expected limits resulting in events being created in the on board 
+monitoring systems. While not always black and white, e.g. a payload overload event might be 
+driven by a faulty suspension, the ability to track these events enables mining maintenance and 
+operations team to identify trends in operator behavior that might affect safety, machine and 
+component health. That knowledge then creates a solid foundation to work with operators to 
+change undesired or even harmful behavior ideally before it results in failures or incidents.  
+ 
+The approach mining operations take for this reporting might vary in level of detail, frequency of 
+reporting etc. depending on preferences, availability of data or local regulations. Shorter intervals 
+make it easier to provide almost real time feedback to operators, monitoring trends over longer 
+periods of time can help judge the effectiveness of the actions taken to improve. However, the 
+principle remains the same: 
+ 
+ 
+ 
+Figure 1: Suggested Process for Operator Induced Event Reporting 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Operator Induced Event Reporting 
+DATE 
+4/29/2024 
+CHG 
+NO 
+00 
+NUMBER 
+2.04-240429-1 
+Caterpillar: Confidential Yellow          Page 3 of 6 
+ 
+Figure 2: Tracking Events Over time allows to identify trends 
+ 
+Figure 3: Example of event summary per day (Power Bi) 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Operator Induced Event Reporting 
+DATE 
+4/29/2024 
+CHG 
+NO 
+00 
+NUMBER 
+2.04-240429-1 
+Caterpillar: Confidential Yellow          Page 4 of 6 
+ 
+Figure 4: Example of detailed dashboard for production and maintenance department to identify 
+trends on machine abuse. 
+3.0 Implementation Steps 
+ 
+Prerequisite for implementing this best practice is a connected fleet that reports events into the 
+cloud on a regular basis (e.g. via MineStar Health Equipment Insights or Vision Link), the more 
+frequent that reporting happens the more “real-time” the available data.  
+ 
+In addition, the following is required: 
+- List of events that are caused by operator abuse that can be married up with VL or HEI data 
+using Event IDs. That list might vary depending on the models in question and based on what 
+maintenance and operations teams on site decide to classify as “operator driven event” 
+(example of a list below, can be amended depending on site requirements). 
+- Vision Link or HEI to generate dashboards directly or Power Bi or other data analysis 
+application to link different datasets and create visualizations. 
+- Resource(s) dedicated to the creation of dashboards, analysis of alerts and making 
+recommendations regarding corrective actions to improve the operations & optimize cost per 
+tons. 
+Once a decision has been made to implement Operator Induced Event (OIE) reporting and the 
+prerequisites mentioned above are in place, a decision needs to be made regarding the 
+frequency of the report. Experience has shown that operations departments prefer daily reports to 
+enable timely follow up with operators. This is particularly true if “operator id” is not used which 
+makes it difficult to tie back events to individuals over longer periods. 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Operator Induced Event Reporting 
+DATE 
+4/29/2024 
+CHG 
+NO 
+00 
+NUMBER 
+2.04-240429-1 
+Caterpillar: Confidential Yellow          Page 5 of 6 
+4.0 Benefits 
+ 
+OIE reporting that is shared across the mining organization makes operator driven events more 
+visible in the entire organization. Needs for additional training can be identified on a group or 
+individual basis and used to develop customized learning plans that drive the reduction of events. 
+Targeted training can help improve site safety and help reduce machine operating cost. 
+ 
+5.0 Resources Required 
+ 
+• Access to machine events through the cloud (Vision Link / Health Equipment Insights).  
+• User proficient in creating dashboards in HEI or VL, Power Bi or other data analysis 
+solution. 
+• Cross reference list to classify operator driven events (example below) 
+• 3W action plan to facilitate tracking of actions for training, production & maintenance 
+departments, dealers can be added to the plan as required. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Suggested list of operator Event Ids (may need to adjust based on site requirements) 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Operator Induced Event Reporting 
+DATE 
+4/29/2024 
+CHG 
+NO 
+00 
+NUMBER 
+2.04-240429-1 
+Caterpillar: Confidential Yellow          Page 6 of 6 
+Suggested list of operator Event Ids ctd. (may need to adjust based on site requirements) 
+ 
+ 
+ 
+• Event ID list is attached. 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+       This Best practice was written by: 
+ 
+        Bernd Albers  
+        Site Performance Manager Northern Africa & Middle East 
+        w +49 (0) 231 726 601 01    m +49 (0) 176 1922 3408  
+        Albers_Bernd@cat.com
+  
+ 
+  
+Thanks for helping to develop this best practice and put it to work at mining operations goes to   
+Edward Nicklin, Mohamed Belal, Edwin Bwenge and Abdelhamid Hefzy of Mantrac and Maxence  
+Hug and Papa Djibril Diagne of Neemba.

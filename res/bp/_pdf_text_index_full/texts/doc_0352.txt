@@ -1,0 +1,796 @@
+SOURCE: 5.0 MARC Management\5.01 MARC Market Strategy and Rate Development\1. Strategic\MARC Rate Development.pdf
+PAGES: 14
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+MARC Rate Development 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+ 
+MARC Rate Development .......................................... 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ...................................... 13 
+4.0 Benefits ............................................................ 13 
+5.0 Resources Required ........................................ 13 
+6.0 Supporting Attachments / References ............. 14 
+7.0 Related Best Practices .................................... 14 
+8.0 Acknowledgements .......................................... 14 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+ 
+  
+September 2010 
+0906-5.05-1009 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Maintenance and Repair Contracts (MARC) can be both a source of revenue for a dealership 
+and at the same time provide a high level of customer satisfaction. For both of these goals to be 
+reached, it’s critical that a dealership uses a cross-functional approach that ensures the input 
+and participation of multiple departments. 
+ 
+Areas such as parts, service, sales, and administration need to be involved in developing the 
+MARC rate. Each area can have critical assumptions that should be involved in rate 
+development.  
+ 
+The Dealer MARC Rate Development Best Practice ensures an enterprise communication of 
+roles, responsibilities, and expectations. With these established, the goals of revenue 
+generation and customer satisfaction are easier to reach. 
+ 
+2.0 Best Practice Description 
+ 
+2.1 Evaluate and Understand Customer Needs 
+ 
+A dealer must thoroughly understand the customer’s requirements before establishing the per-
+hour MARC rate. Those requirements must be documented and communicated and become the 
+“inclusions” and “exclusions” in the per-hour rate. 
+ 
+Among other things, the dealership gathers market intelligence about customer needs, industry 
+trends, political and environmental conditions, and develops an understanding of competitive 
+offerings in the service and parts after-market business. 
+ 
+2.1.1 Inputs 
+• Dealer/Caterpillar definition of product and market  
+• Product and market strategies 
+• Customer contact and interviews 
+• External research/competition 
+• Dealer solution history 
+• Customer fingerprint on current business dealings (i.e. Parts / labor sales) 
+• Contracts performance 
+• Special pricing arrangements 
+• Environmental and political conditions 
+• Equipment sales 
+• Economic forecast 
+ 
+2.1.2 Steps 
+1. View business from customers’ perspective 
+2. Develop list of qualifying and determining needs based on customers’ behaviors 
+3. Force rank all needs in order of importance 
+4. Capture field data for competitor market penetration and performance  
+5. Determine competitor capabilities, both current and future 
+6. Review solution history 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MARC Rate Development 
+DATE 
+2/20/15 
+CHG 
+NO 
+02 
+NUMBER 
+0906-5.05-1009 
+CAT Confidential:  YELLOW  Page 2 of 14 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+2.1.3 Outputs 
+• Customer and market needs 
+• Dealer/competitor strengths and weaknesses (as viewed by market and customer) 
+• Sales opportunities 
+ 
+2.2 Complete Dealer Capability Review 
+ 
+MARC rate development begins with a required dealer capability review. It compares current 
+dealership capabilities to the customer request for service in the MARC, and documents the 
+gaps. It is important to review and understand exactly what the customer wants and to 
+determine if the dealer can deliver the request. This process needs to be completed up front in 
+order to ensure sufficient time to explore a cost-benefit analysis of the opportunities presented 
+by the customer, or to secure a supplier commitment for the service.  
+ 
+The Dealer Capability Review is broken down into 4 section: 
+1. General Contract Information 
+2. Dealer Workshop Capability 
+3. Dealer Component Repair and Salvage Capability 
+4. Dealer Labour Skills Capability 
+ 
+(See attached Dealer Capability Review Form.doc)  
+ 
+ 
+2.3 Complete Due Diligence Process 
+The due diligence process will be the safe source document to capture contract details, critical 
+assumptions, site profile and capabilities, application information, Maintenance and Repair 
+Process responsibilities and component risks. This work is done up front to ensure consistent 
+contract communication across the dealer departments. 
+ 
+For assistance with the Due Diligence process, please contact the CGM Regional MARC 
+Consultant for your region. 
+ 
+(See attached RP2009 Due Diligence Form – revised June 2009.xlsx)  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MARC Rate Development 
+DATE 
+2/20/15 
+CHG 
+NO 
+02 
+NUMBER 
+0906-5.05-1009 
+CAT Confidential:  YELLOW  Page 3 of 14 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.4 Complete CliPP Analysis 
+The CliPP data sheet is used to record information for the lower power train life prediction.  
+Once the CliPP data sheet has been filled out, please contact the CGM Regional MARC 
+Consultant for your region to have the analysis performed and the results communicated. 
+ 
+(See attached CLIPP Analysis Form.doc)  
+ 
+ 
+2.5 Localize the Builder File 
+ 
+Assembling the MARC Team is an important part of “Localizing” the Builder file. It is an 
+important step to ensure the proposed site operations group can execute the MARC for the 
+proposed parts and labor dollars for each repair option: R&I, Exchange Components, Running 
+Repairs, and Preventive Maintenance (PM’s). 
+ 
+The perspective must be from whatever facility will be used to deliver the service. Quoted PM 
+times must be in line with the dealer’s capability at the Site. For example, if the quoted PM time 
+is 25 hours for a 500-hour truck PM, can it be completed in 25 hours? Site-specific details (does 
+the work need to be done outside, etc.) must be considered. If operations cannot execute a 
+service in the hours listed in Builder, then adjustments MUST be made prior to tendering the 
+rate per hour to the customer. 
+ 
+For each Repair Option, compare the proposed intervals with the due diligence document and 
+the territory experience for each model. Make adjustments as required to ensure the total 
+number of repair events is calculated for the requested term. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MARC Rate Development 
+DATE 
+2/20/15 
+CHG 
+NO 
+02 
+NUMBER 
+0906-5.05-1009 
+CAT Confidential:  YELLOW  Page 4 of 14 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Next, for each Repair Option, compare the proposed Parts and Labor dollars to the dealership’s 
+ability to execute and deliver the MARC. The objective is to confirm that the operations Project 
+Manager’s group can deliver the proposal, based on the customer requirements, dealer 
+capability, and current list of standard jobs. If unfavorable, change the Builder file to match the 
+capability. 
+ 
+(See the Best Practice “Localizing a Centerline BUILDER File for MARC Rate Development” for 
+more detailed instructions.) 
+ 
+2.6 Review Infrastructure Cost to Deliver Required Services 
+ 
+Once repair options have been priced in accordance to the pricing strategy, additional 
+infrastructure costs must be calculated. This includes such factors as: 
+• Additional tools, equipment, facilities 
+• Employees or skills required 
+• Parts capabilities 
+• Location 
+• Freight 
+• Storage 
+• Contract administration 
+• Service technicians and classifications 
+• Management staff 
+• Logistics (travel time, mileage, housing, meals) 
+• Communication equipment 
+• Computer systems.  
+ 
+The infrastructure review may also reveal the customer requires a service on-site on a product 
+currently not supported by the dealership. This process may require additional training to 
+current staff or it may require that another resource with the specific skills be hired by the 
+dealership. These additional infrastructure costs must be included in the final MARC contract.  
+The attached worksheet template can be used to calculate the additional infrastructure costs 
+required to execute the MARC. 
+ 
+(See attached Infrastructure Requirements Form.xls)  
+ 
+ 
+ 
+2.7 Identify Logistics Costs to Deliver the Required Services 
+ 
+It is essential that any cost related to transporting tools, equipment or staff be accounted for in 
+the final MARC cost model. The dealership can determine if a favorable cost-benefit business 
+opportunity exists. The dealer must determine how to recoup all or part of the investment 
+needed to meet those logistic requirements. 
+ 
+(See attached Logistics Cost Worksheet.xls)  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MARC Rate Development 
+DATE 
+2/20/15 
+CHG 
+NO 
+02 
+NUMBER 
+0906-5.05-1009 
+CAT Confidential:  YELLOW  Page 5 of 14 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.8 Identify Financial Costs to Deliver the Required Services 
+ 
+Each MARC contract will be unique and will require an analysis of additional financial costs and 
+risks the dealership must realize to deliver the proposed services. Financial costs include 
+depreciation and additional insurance expenses, additional tax implications, the cost of money 
+and other liabilities the dealership must identify prior to committing an obligation to deliver a 
+MARC.  A worksheet template can be used to calculate the additional financial costs required to 
+execute the MARC. 
+ 
+(See attached Financial Costs Form.doc)  
+ 
+ 
+2.9 Document Risk Decisions – Probability & Reserve 
+ 
+Contract risk is documented as part of the due diligence process; however it is very important to 
+calculate the “cost” of risk. Risk is defined in several areas of the contract; 
+ 
+2.9.1 Before and After Failure Probability (80/20) 
+ 
+The probability review entails accounting for repair event risk. Some components will “cost” 
+slightly more than the repair option in the business plan, and some will “cost” slightly less. The 
+80/20 probability process takes 80% of the before-failure repair option price and 20% of the 
+after-failure repair option price, and combines both figures to establish the repair option price.   
+ 
+A “what if” analysis can be performed using “80/20”, “70/30”, or “50/50”. The level of confidence 
+the dealer has in the components will dictate the probability percentage used.  
+ 
+The following example illustrates an engine repair using 80/20 for the first, second and third 
+overhaul, and the remove and install labor to establish a rate per hour for the engine repair 
+option. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MARC Rate Development 
+DATE 
+2/20/15 
+CHG 
+NO 
+02 
+NUMBER 
+0906-5.05-1009 
+CAT Confidential:  YELLOW  Page 6 of 14 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+2.9.2 Repair Reserve Contingency  
+ 
+“Contingency” is one of the most difficult concepts in CALCULATOR to understand. It is also 
+often referred to as “Repair Reserve”.  “Contingency” is used for two primary reasons: 
+• To build risk into a contract. 
+• To provide a means for having consistent pricing between an initial MARC sale and 
+subsequent renewals of a contract. 
+ 
+CALCULATOR is the software application used to establish a MARC rate for any piece of 
+equipment. CALCULATOR interfaces with BUILDER for repair option information (labor hours, 
+downtime, parts pricing and quantity, interval, and miscellaneous costs). This information is 
+used over a specified contract term to produce a MARC rate. 
+  
+ 
+A simple example of “Contingency” is as follows: 
+ 
+• Dealer prices a MARC contract on an engine that covers only a major overhaul. The major 
+overhaul is scheduled to occur every 24,000 hours at a cost of $100,000. The contract term 
+is 40,000 hours.  
+16000
+32000
+48000
+60000
+Total
+Remove & Install 9,536.08$    9,536.08$      9,536.08$      28,608.24$   0.48$           
+Recon 1st OH 82,721.24$  82,721.24$   1.38$           
+Recon 2nd OH 101,817.38$  101,817.38$ 1.70$           
+Replace REMAN 110,254.00$  110,254.00$ 1.84$           
+Recon After Failure 38,730.75$  38,730.75$    38,730.75$    116,192.25$ 1.94$           
+7.33$           
+40.96$         
+Labor: $24,000 
+Parts: $79,401.55 
+$103,410.55 
+x 80 % 
+$82,721.24 
+Labor: $60 
+Parts: $137,757.50 
+$137,817.50 
+X 80% 
+$110,254.00 
+Labor: $60 
+Parts: $193,593.75 
+$193,653.75 
+X 20% 
+$38,730.75 
+Labor: $24,000 
+Parts: $ 103,271.72 
+$127,271.72 
+X 80% 
+$101,817.73 
+Parts & Labor as 
+required. 
+Cumulative Total 
+Engine Cost per 
+Hour  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MARC Rate Development 
+DATE 
+2/20/15 
+CHG 
+NO 
+02 
+NUMBER 
+0906-5.05-1009 
+CAT Confidential:  YELLOW  Page 7 of 14 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Below is a timeline graph of this scenario: 
+ 
+ 
+“Contingency” is defined as the cost of a component that is associated with the percentage of 
+life used while under contract.  “Contingency” is only calculated for components that are to be 
+installed during the contract term, but will be removed after the contract has expired. 
+ 
+In the above scenario, the:  
+• % of Life Used Under the Contract = 16,000/24,000 = 66% 
+• % of Life Used not under the Contract = 8,000/24,000 = 33% 
+ 
+In the above scenario, the “Contingency” = 66% of the cost of the component ($100,000) = 
+$66,666 
+ 
+Therefore, “Contingency” = (% of Life Used Under the Contract) * (Cost of Event) 
+ 
+If “Contingency” were applied to this contract, the cost of the contract would be the sum of the 
+first occurrence of the event under contract at 24,000 hours plus the “Contingency” amount of 
+the second event. 
+ 
+First Event    $100,000 
+“Contingency”   $  66,666 
+Total Cost  $166,666 
+ 
+This scenario can vary depending on the frequency of the event and the term of the contract. 
+ 
+Trigger (%):  
+ 
+In the prior example, the event had a used life of 66% at the end of the contract. When the 
+user enters a percent sign (%) in this field in CALCULATOR, the application will only 
+calculate “Contingency” if the used life is greater than the Trigger percentage.  
+ 
+ 
+ 
+ 
+ 
+ 
+Start Hour 40,000 
+End Hour 
+24,000 Hour First 
+Occurrence 
+covered under 
+ 
+48,000 Hour 
+Second 
+Occurrence not 
+covered under 
+ 
+16,000 
+Life 
+Covered 
+Under 
+Contract 
+8,000 
+Life 
+Covered 
+not under 
+contract 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MARC Rate Development 
+DATE 
+2/20/15 
+CHG 
+NO 
+02 
+NUMBER 
+0906-5.05-1009 
+CAT Confidential:  YELLOW  Page 8 of 14 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+If, in the above example, the Trigger were set to 70% for this event, “Contingency” would not 
+be calculated and the contract would be priced at $100,000. If the Trigger were set to 60% for 
+this event, “Contingency” would be calculated and the contract would be priced at $166,666. 
+ 
+Reserve (%) 
+ 
+Since the Trigger causes an “all or nothing” scenario, an additional adjustment can be made 
+to the “Contingency” formula using a Reserve percentage.  
+ 
+Refer to the original example: 
+ 
+Scenario 1: Trigger = 60% and Used Life = 66% - “Contingency” is calculated as $66,666 
+Scenario 2: Trigger = 70% and Used Life = 66% - “Contingency” is calculated as $0 
+ 
+Suppose in Scenario 2; there were a preference to calculate some “Contingency” (instead of 
+$0).  
+ 
+If the “Reserve %” were set to 50%, the above example would calculate Contingency as 
+follows: 
+1. Calculate the cost of Contingency, 
+2. Apply the Trigger of 70%, 
+3. The Used Life of the event (66%) is below the trigger %, 
+4. In this case, the Reserve is calculated as 50% of the total “Contingency” or $33,333 
+5. Total cost for the contract = $133,333. 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MARC Rate Development 
+DATE 
+2/20/15 
+CHG 
+NO 
+02 
+NUMBER 
+0906-5.05-1009 
+CAT Confidential:  YELLOW  Page 9 of 14 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Contingency Graph 
+ 
+In the graph below, values are shown that could be calculated based on a specific Trigger 
+and Reserve %.  Assume that the Trigger is 70% and the Reserve is 50%. 
+ 
+ 
+ 
+Contingency as Risk 
+ 
+Assume the value ($100,000) of the event in the example is the cost of a “before failure” 
+repair. This means that the contract was calculated assuming all occurrences of this event 
+are scheduled, before failure events. There is an inherent risk that the event may occur as a 
+failure.  
+ 
+Applying “Contingency” can provide for the risk of failure events. In our example a value of 
+$66,666 is applied for the risk of failure. This may be a significant cost for a customer, so the 
+user should consider using the Trigger and Reserve % to adjust the risk.  
+ 
+ 
+Used Life of Event 
+0% 100% 70% 
+0 
+Total Value of 
+Component 
+C
+o
+n
+t
+i
+n
+g
+e
+n
+c
+y 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MARC Rate Development 
+DATE 
+2/20/15 
+CHG 
+NO 
+02 
+NUMBER 
+0906-5.05-1009 
+CAT Confidential:  YELLOW  Page 10 of 14 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+If the Dealer creates a MARC using “Before Failure’ and “After Failure” to provide for risk, the 
+user should be careful when applying “Contingency” to avoid jeopardizing the 
+competitiveness of the rate. 
+ 
+Contingency for Smoothing Contract Extensions 
+• In the example, the dealer calculates a 40,000-hour contract for $100,000. The cost-per-
+hour (CPH) is $2.50 
+• If an extension is offered after the end of the initial contract for 8,000 hours. The CPH 
+would be $12.50 
+• The reason is: the customer has a shorter time frame (8,000 vs. 40,000 hours) to pay for 
+the Engine. 
+• If contingency is applied to the first contract. The total is $166,666, and the CPH would be 
+$4.17 
+• On the extension the customer prepays for $66,666 of the Engine in the first contract. The 
+total of the extension is $33,333. The CPH is $4.17 
+ 
+2.9.3 Component Intervals  
+ 
+Consider the number of rebuilds over the MARC term. Selecting appropriate component 
+intervals is an important element of the rate development process.  When selecting appropriate 
+component intervals, consider the number of components required as well as how realistic and 
+achievable the interval is.   
+ 
+Small incremental improvements in component life can have a significant impact on the total 
+contract cost.  Average Component Lives can impact the total number of components over the 
+contract term. 
+ 
+ 
+6000  1 2 3 4 5 6 7 8 9  
+8000  1 2 3 4 5 6 7  
+10 000  1 2 3 4 5  
+12 000  1 2 3 4  
+15 000  1 2 3  
+20 000  1 2  
+30 000  1  
+  0 10k 20k 30k 40k 50k 60k 
+  
+ 
+ 
+ 
+ 
+C 
+O 
+M 
+P 
+O 
+N 
+E 
+N 
+T 
+ 
+ 
+H 
+O 
+U 
+R 
+S 
+ 
+Contract Terms 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MARC Rate Development 
+DATE 
+2/20/15 
+CHG 
+NO 
+02 
+NUMBER 
+0906-5.05-1009 
+CAT Confidential:  YELLOW  Page 11 of 14 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+2.10 Develop Rate Per Hour using Calculator 
+ 
+Once the due diligence is complete and the infrastructure requirements have been reviewed, 
+Calculator can be used to combine repair options and infrastructure in establishing the “rate-per-
+hour,” to present to the customer.  
+ 
+Calculator contains a complete listing of Repair Options, PM’s, Infrastructure, Travel Time & 
+Mileage, and Management Fees that equate to a rate-per-hour. 
+ 
+Additional Note:  If Dealer Net pricing is established in Builder for both Parts and Labor, then 
+Calculator can also provide the corresponding Cost per Hour in addition to the MARC Rate per 
+Hour. 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MARC Rate Development 
+DATE 
+2/20/15 
+CHG 
+NO 
+02 
+NUMBER 
+0906-5.05-1009 
+CAT Confidential:  YELLOW  Page 12 of 14 
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Each of the steps explained above. 
+ 
+1. Evaluate and understand customer needs 
+2. Dealer Capability Review 
+3. Complete due diligence process 
+4. CliPP Analysis 
+5. CGM Builder Centerline file (refer to CGM Builder Best Practice) 
+6. Localize Builder file 
+7. Review Infrastructure costs to deliver required services 
+8. Identify logistics costs to deliver required services 
+9. Identify financial costs to deliver required services 
+10. Document Risk Decisions – Probability & Reserve 
+11. Create Calculator Budget 
+ 
+ 
+4.0 Benefits 
+ 
+• Predictable revenue stream to dealer 
+• Enterprise approach to the Mining MARC opportunity.  
+• Employee satisfaction will result from participating in the rate development process and clearly 
+communicated goals and expectations.  
+• Customer satisfaction resulting from proper dealer execution and communication. Ensuring 
+MARC team members understand their roles and expectations, execution is a simply a 
+function of extending authority and allowing the staff to be responsible for their own areas. 
+ 
+ 
+5.0 Resources Required 
+ 
+• The primary resource required to implement the Rate Development Process is an enterprise 
+approach to MARC management. It is imperative to approach the MARC management 
+business from top management down. Top-down directives ensure the staff is empowered to 
+make business decisions and has the authority and management support required to be 
+successful.  
+ 
+• Each dealer department will need a dedicated resource as a representative to support the 
+project sponsor and MARC manager when implementing an enterprise Rate Development 
+Process. 
+ 
+• Builder and Calculator software. 
+ 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MARC Rate Development 
+DATE 
+2/20/15 
+CHG 
+NO 
+02 
+NUMBER 
+0906-5.05-1009 
+CAT Confidential:  YELLOW  Page 13 of 14 
+
+===== PAGE 14 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+6.0 Supporting Attachments / References 
+ 
+• CLIPP Analysis Form.doc  (MS-Word document) 
+• Infrastructure Requirements Form.xls (MS-Excel document) 
+• Logistics Cost Worksheet.xls (MS-Excel document) 
+• Financial Cost Form.doc (MS-Word document) 
+• Dealer Capability Review Form.doc (MS-Word Document) 
+• RP2009 Due Diligence Form – Revised June 2009.xlsx (MS-Excel document) 
+ 
+7.0 Related Best Practices 
+0906-3.3-1021 - Developing a MARC Management Plan 
+0907-3.3-1086 - Localizing a Centerline BUILDER File for MARC Rate Development 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Don O’Neill 
+Caterpillar Global Mining 
+Product Support - MARC Manager 
+ONeill_Don_G@cat.com 
++1 309 675 4861 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+MARC Rate Development 
+DATE 
+2/20/15 
+CHG 
+NO 
+02 
+NUMBER 
+0906-5.05-1009 
+CAT Confidential:  YELLOW  Page 14 of 14

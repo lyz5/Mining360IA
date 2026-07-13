@@ -1,0 +1,410 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+August 2022 
+1.10-220824-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Drilling Deck Platform 
+MD6420 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+ 
+Drilling Deck Platform MD6420 .................................. 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ............................................................. 5 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ........................................... 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Drilling Deck Platform MD6420 
+DATE 
+8/24/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-220824-1 
+Caterpillar: Confidential Yellow          Page 2 of 8 
+1.0 Introduction  
+ 
+Maintenance and repair work on a drilling rig can be risky and time-consuming. Working over the trench 
+of the drilling platform while add proper name for risky activity here “t ensioning pulldown” is just one 
+key example of such an activity.   It Is important for the mechanic to have a safe footing while conducting 
+this maintenance activity so he/she can concentrate on the activity and not have to worry about falling 
+into the trench. 
+ 
+The typical solution  used by customers  is placing scrap wood over the “ trench” which also present 
+additional risk and time challenges -  proper size, proper thickness, good condition- not rotted, being 
+secure, searching for the scrap wood each time maintenance is needed, handling the improvised 
+platform, etc.  The photos in Figure 1 show this situation. 
+ 
+The customer and maintenance personnel asked Sotreq to come up with a solution to support efficient 
+and effective, risk and time minimizing maintenance on the drilling deck.   
+ 
+ 
+ 
+ 
+Figure 1: Scenario before Best Practice implementation 
+ 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice describes Sotreq’s solution of a Drilling Deck Maintenance Platform that provides 
+and supports efficient, effective, and safe maintenance work behind the mast when the mast is lowered.  
+ 
+The development and implementation of the platform is the result of collaboration between 
+engineering teams and product support from SOTREQ and the customer's drilling team at the mine.  
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Drilling Deck Platform MD6420 
+DATE 
+8/24/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-220824-1 
+Caterpillar: Confidential Yellow          Page 3 of 8 
+While this solution for this site was for the MD6420, it can easily be developed for other drill models. 
+ 
+Some notes: 
+Each machine will have its own platform. 
+• When not in use, the platforms should be stored in a known/staged location so that they are 
+always readily available. 
+• To avoid loss or damage to the equipment, supports were installed on the handrails on the left and 
+right sides of the platform to allow lifting and moving to position it in a safe manner. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Implementation of this best practice solution is broken into two key steps 
+1. Design and Build the Platform 
+2. Assembly  
+ 
+ 
+Step 1: Design & Build Platform 
+• Interview the mechanics and analyze the problem locally 
+• Review potential solutions / Choose the best solution 
+• Measure work area (gap/trench) 
+• Determine best material to make the platform out of 
+• Design in Autocad (see diagrams below) 
+• Build main planform 
+• Check for Proper Fit / Adjust as necessary. 
+  
+ 
+Step 2:  Assembly 
+• Add handles/supports (allowing it to be mobile) for handling during maintenance. 
+ 
+ 
+Protection on equipment 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Drilling Deck Platform MD6420 
+DATE 
+8/24/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-220824-1 
+Caterpillar: Confidential Yellow          Page 4 of 8 
+ 
+          
+ 
+ 
+                   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Targeted protection 
+ 
+• Add support for fixing to the left side handrail in line with the cab. 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+• Test platform in place. 
+ 
+ 
+Figure 2: Platform support oriented location 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Drilling Deck Platform MD6420 
+DATE 
+8/24/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-220824-1 
+Caterpillar: Confidential Yellow          Page 5 of 8 
+4.0 Benefits 
+ 
+Key Benefits of implementing this best practice include the following: 
+• Improved Safety in working area 
+• Improved Efficiency and Effectiveness (confidence in stability of working area) 
+• Easy installation and replication for other machine models 
+ 
+ 
+BP in Action:  The platform is being used daily on demand. In the images below, there is evidence of 
+its use when performing a service with the mast lowered, which proves the greater safety and 
+convenience for mechanics. 
+ 
+ 
+Figure 3: Evidence of platform use 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Drilling Deck Platform MD6420 
+DATE 
+8/24/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-220824-1 
+Caterpillar: Confidential Yellow          Page 6 of 8 
+5.0 Resources Required 
+ 
+1020 steel for grid production. 
+ 
+“AutoCad” software for producing the graphic expression of the project 
+ 
+ 
+ 
+ 
+                                                                     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Manpower to Design:  ~4 hours 
+ 
+Manpower to Build:  ~8 hours 
+1 2 
+ 
+3 
+Figure 4: Measures used to build the platform 
+
+===== PAGE 7 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Drilling Deck Platform MD6420 
+DATE 
+8/24/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-220824-1 
+Caterpillar: Confidential Yellow P age 7 of 8 
+6.0 Supporting Attachments / References 
+7
+.0 Related Best Practices 
+N/A
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Drilling Deck Platform MD6420 
+DATE 
+8/24/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-220824-1 
+Caterpillar: Confidential Yellow          Page 8 of 8 
+8.0 Acknowledgements 
+ 
+We would like to thank everyone involved in this improvement, as well as the customer's trust in our 
+suggestion. 
+ 
+ Raissa Maués Nascimento 
+Fleet Performance Engineer 
+Sotreq S/A 
+ 
+Gladyson Silva 
+Technical Consultant 
+Sotreq S/A 
+ 
+Thiago Dillon 
+Technical Analyst 
+Sotreq S/A: 
+ 
+Glauber Nogueira 
+Predictive Technician 
+Sotreq S/A 
+ 
+Fernando Melo  
+Technical Mechanic 
+Sotreq S/A 
+ 
+Felisberto Dias 
+Technical Mechanic 
+Sotreq S/A 
+ 
+Elias Nogueira 
+Technical Mechanic 
+Sotreq S/A 
+ 
+Francisco Lopes 
+Technical Mechanic 
+Sotreq S/A 
+ 
+Josinei Ataide Valentim 
+Fleet Performance Engineer 
+Sotreq S/A 
+ 
+Isaac Pedrosa 
+Engineering Consultant 
+Sotreq S/A

@@ -1,0 +1,153 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2020 
+4.01-201217-01 
+  
+ Caterpillar: Confidential Yellow 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Storage Stand For 
+Adapters And Plates Used 
+In Transmission Test 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Rebuild (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Storage Stand For Adapters And Plates Used In 
+Transmission Test
+ 
+1.0  Introduction ........................................................ 1 
+2.0  Best Practice Description ................................... 1 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits .............................................................. 3 
+5.0  Resources Required .......................................... 3 
+6.0  Supporting Attachments / References ............... 3 
+7.0  Related Best Practices ...................................... 3 
+8.0  Acknowledgements ............................................ 3 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 2 =====
+M
+INING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Storage Stand For Adapters And Plates Used In 
+Transmission Test 
+DATE 
+12/17/2020 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-201217-
+01 
+Caterpillar Confidential:  Yellow  Page 1 of 3 
+1.0 Introduction 
+Borusan M
+akina Kazakhstan has developed a stand for storing adapters and plates used in 
+transmission and torque converter tests. The stand is very practical and improves safety when 
+storing and handling adapters and plates.  
+2.0 Best Practice Description 
+The adapters and plates used in transmission tests used to be stored on the ground or leaning on 
+the wall. Some of the plates weigh more than 50 kg. If the plates fell or slipped, they could cause 
+serious injuries to people nearby.  
+BEFORE 
+To address this hazard, a storage stand has been designed for the plates. The stand is made from 
+several different sized sections (keeping the Six Sigma 5S principles in mind), to hold 18 adapters 
+and plates up to 950 mm wide. The dimensions of the stand can be changed to fit the needs of the 
+dealer.  
+
+
+===== PAGE 3 =====
+M
+INING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Storage Stand For Adapters And Plates Used In 
+Transmission Test 
+DATE 
+12/17/2020 
+CHG 
+NO 
+00 
+NUMBER 
+4-01-201217-
+01 
+Caterpillar Confidential:  Yellow  Page 2 of 3 
+AFTER 
+3
+.0 Implementation Steps 
+The following drawings show the designs with the dimensions (in millimeters) of the stand. 
+
+
+===== PAGE 4 =====
+M
+INING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Storage Stand For Adapters And Plates Used In 
+Transmission Test 
+DATE 
+12/17/2020 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-201217-
+01 
+Caterpillar Confidential:  Yellow  Page 3 of 3 
+4
+.0 Benefits 
+ Saf
+er work environment;
+ 5S – Sort, Set in order, Shine, Standardize and Sustain (Six Sigma)
+5.0 Resources Required 
+ Drawin
+gs;
+ Weldi
+ng shop.
+6.0 Supporting Attachments / References 
+The drawings required are attached to this Best Practice. 
+7.0 Related Best Practices 
+1407-4.01-1346 
+Storage and Transport Basket for Brake Discs and Plates 
+8.0 Acknowledgements 
+The idea of creating & implementing this Best Practice belongs to: 
+Y
+ernar NARGELOV  Syrlan MYRZABEKOV 
+Service Engineer  Technician 
+Mining Division CSA and Service Standards Welding Shop 
+Borusan Makina Kazakhstan LLP  Borusan Makina Kazakhstan LLP 
+This Best Practice was written by: 
+Yerbol AIT
+PAYEV 
+Planning Engineer  
+YAitpayev@borusan.com 
+Borusan Makina Kazakhstan LLP 
++7 (771) 050 69 69

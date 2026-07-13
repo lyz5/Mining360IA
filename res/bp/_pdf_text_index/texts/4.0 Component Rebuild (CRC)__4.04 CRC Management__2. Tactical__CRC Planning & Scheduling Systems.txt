@@ -1,0 +1,439 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+November 2007  
+0208-4.2-1114  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+CRC Planning and 
+Scheduling Systems 
+ 
+Application  Maintenance  Site 
+Management  
+Component 
+Rebuild Safety MARC 
+Management  
+ 
+ 
+ 
+ 
+ 
+CRC Planning and Scheduling Systems ................... 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits ............................................................. 5 
+5.0  Resources Required .......................................... 6 
+6.0  Supporting Attachments / References ............... 6 
+7.0  Related Best Practices ...................................... 6 
+8.0  Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHE RS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+CRC Planning & Scheduling Systems 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0208-4.2-1114 
+Caterpillar Confidential:  YELLOW          Page 1 of 6 
+1.0 Introduction  
+ 
+Efficient planning and scheduling of CRC manpower and resources to the workload, and 
+adjusting for constant changes is a major challenge for most dealerships. Caterpillar has no 
+preferred software available to dealers to perform this function. Often, planning and scheduling of 
+work orders is performed on a display board or on an Excel worksheet. Supervisors spend much 
+of their day managing work assignments and workload in their areas. 
+ 
+When a CRC has more than 50 technicians, and especially when there is more than one shift, a 
+formal scheduling process and supporting software becomes a necessity. 
+ 
+Several dealers have found and implemented software designed to facilitate planning and 
+scheduling. These software programs come from systems used in manufacturing plants and from 
+the airline industries to manage many resources and tasks in a constantly changing environment. 
+ 
+This Best Practice discusses a scheduling process implemented at Finning Chile.  
+  
+ 
+2.0 Best Practice Description 
+ 
+The dealer objective in implementing a new planning and scheduling process was to improve 
+customer satisfaction with component rebuilds completed in a time, predictable manner. At the 
+same time, to increase labor efficiency and CRC resource utilization by improving short and 
+medium term planning and scheduling processes in the CRC, Machine Shop Salvage, and Parts 
+deliveries. 
+ 
+The pain: 
+• Lack of coordination between the CRC and machine s hop support. 
+• Lack of the ability to track and monitor work orde r status and completion target. 
+• Poor use of available resources – bottlenecks and delays. 
+• Unknown actual current and future work load 
+• Ineffective communication between planners, foreme n, technicians 
+• Work order completion forecast seldom achieved. 
+• Lack of scheduling and coordination of subcomponen t and the major component rebuild. 
+• Lack of coordination between the arrival of a comp onent and the start of the rebuild. 
+ 
+     
+    The major steps in implementing a new scheduling process and system include: 
+• Create a team to work on the project.  
+• Study software packages available and select suppl ier. 
+• Create detailed process maps for most common rebui ld activities. Each separate activity 
+that requires a resource must be identified. Standard times for each segment are 
+necessary. 
+• Define each resource.  This includes technicians a nd workbays, but can also include major 
+tooling, such as test bench time, dyno time, overhead crane, etc. 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHE RS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+CRC Planning & Scheduling Systems 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0208-4.2-1114 
+Caterpillar Confidential:  YELLOW          Page 2 of 6 
+• Define inter-dependence of each activity.  This me ans tasks that cannot be started until a 
+previous task is complete, and those tasks that can be performed at the same time. (Gantt 
+Chart) 
+• Install and customize software. 
+• People training as required. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+There are several dealers who are using scheduling software from suppliers. There are currently 
+suppliers with systems operating very successfully. Including (but not limited to): 
+ 
+• Preactor International 
+Cornbrash Park - Bumpers Way 
+Chippenham - Wiltshire 
+SN14 6RA - UK 
+Tel: + 44 1249 650316 
+Fax: + 44 1249 443413 
+Email: sales@preactor.com 
+Website: www.preactor.com 
+• Ultimus 
+• Q-Plus 
+ 
+Caterpillar does not endorse these particular suppliers; simply some dealers have successful 
+experience working with them. Caterpillar welcomes additional suggestions from our dealer 
+network. 
+ 
+The most difficult part of the implementation of a scheduling system is to define each rebuild 
+activity (segments) in a process map. The activity must define the task and the time required. The 
+activity needs to include parts ordering and delivery, and work performed in the machine shop. 
+ 
+Many process maps will be similar, such as for 3500 series engines, so that a standardize 
+template can be used. Some models may have to be customized. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Sample 3516 Process Map: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHE RS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+CRC Planning & Scheduling Systems 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0208-4.2-1114 
+Caterpillar Confidential:  YELLOW          Page 3 of 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+Another important step is to create a Gantt chart of the entire process, which defines which 
+segments must wait for a previous segment to complete, and which segments can be performed 
+at the same time in different bays / locations, and how much time each segment requires. 
+ 
+ 
+ 
+ 
+ 
+ 
+Receiving / 
+Cleaning / 
+Disassembly 
+Subcomponents 
+Machine Shop 
+Parts 
+Assembly / Paint/ 
+Testing / Shipping 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHE RS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+CRC Planning & Scheduling Systems 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0208-4.2-1114 
+Caterpillar Confidential:  YELLOW          Page 4 of 6 
+Sample Gantt Chart 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+When the process mapping process is complete, the scheduling software can be installed and 
+program to match each task to a resource and produce a schedule. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHE RS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+CRC Planning & Scheduling Systems 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0208-4.2-1114 
+Caterpillar Confidential:  YELLOW          Page 5 of 6 
+Sample Technician Schedule 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Near the end of each shift, the technician turns in his schedule for the day. Each task is 
+marked either as “Done”, “Not Initiated”, or “Need X amount more time”. 
+ 
+The information is entered into the schedule program, and a new schedule created based on 
+progress and any changes. 
+ 
+Unplanned changes, such as an unplanned technician absence, can be entered into the 
+schedule as it occurs and work for that day will be automatically redistributed. 
+ 
+4.0 Benefits 
+ 
+• All available manpower is fully scheduled and util ized. 
+• Schedule can show shop workloads months into the f uture and help plan incoming workloads. 
+• Management reports show area manpower utilization and bottlenecks. Enables corrective 
+measures to be taken. 
+• Component turnaround time in the CRC is greatly re duced. Capacity is improved. 
+• Supervisors do less crisis management. 
+• Customers can have an exact status check on their work and expected completion time in 
+seconds. 
+Work 
+Order 
+Number  
+Work 
+Station 
+Activity Required Time 
+Start time 
+Finish Time  
+“Complete “ 
+“Not Initiated” or 
+“Need More Time”  
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHE RS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+CRC Planning & Scheduling Systems 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0208-4.2-1114 
+Caterpillar Confidential:  YELLOW          Page 6 of 6 
+• Improved communications – all departments. 
+• Technicians know daily schedule and standard times  for each job. 
+• Allows more regular tooling maintenance and manage s interruptions due to maintenance. 
+ 
+ 
+ 
+  
+ 
+ 
+              
+ 
+ 
+ 
+ 
+                                         
+ 
+                  Utilization Report                                                        Bottleneck Report 
+ 
+ 
+5.0 Resources Required 
+• Software cost with installation. 
+• Team to develop process map templates for common r epairs. 
+• Total time- start to finish one year. 
+ 
+ 
+6.0 Supporting Attachments / References 
+  
+None 
+ 
+7.0 Related Best Practices 
+ 
+None at this time. 
+ 
+8.0 Acknowledgements 
+ 
+Omar Nef  
+CRC Planning Manager  
+Finning Chile  
+Antofagasta, Chile  
+Omar.nef@finning.cl

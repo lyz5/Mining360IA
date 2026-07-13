@@ -1,0 +1,358 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Cell-Specific Service 
+Reports 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+Cell-Specific Service Reports ..................................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+April 2007 
+0407-4.5-1067 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Service reports are critical to effective CRC operations.  Service report writing is non-value 
+adding and is typically performed differently by every technician in the shop.  Training technicians 
+to write “good” service reports is performed many different ways as well.  Since the typical 
+technician is seldom interested in spending time writing, comprehensive/consistent service 
+reports are even harder to get. 
+ 
+Effective service reports should be as brief as possible, while providing all the critical repair-
+related information.  In general, the information is summarized as: 
+ 
+• Complaint – Voice of the customer.  Symptoms, etc. 
+• Cause – Root cause of failure, including the part and group numbers, etc. 
+• Correction – How was the root cause corrected, and the resulting damage fixed, etc. 
+ 
+Properly written service reports are valuable for several purposes: 
+• Customer - Service-billing justification for additional work performed, operation corrections, 
+maintenance enhancements, etc. 
+• Warranty – “Original” revenue repair clarification for assessing warranty application. 
+Service claim narrative development, and audit trail (proof of repair), etc. 
+• Rebuild – Last repair/rebuild description/clarification for assessing the worn-out core’s 
+rebuild-ability, etc. 
+• Caterpillar – Failure related information for assessing the vehicle’s quality/capability, etc. 
+ 
+Excellent service reports provide all critical information for several users.  Given the repetitive 
+nature in many CRC workstations, several dealers have simplified service reporting with special 
+cell-specific reporting forms.  Such forms combine the benefits of a service checklist and service 
+report into one document, saving the technician time in writing. This Best Practice will address 
+such service reporting methods and introduce examples of how dealers employ process 
+checklists in their service report forms. 
+ 
+2.0 Best Practice Description 
+ 
+Traditional service reporting simply utilized the familiar orange and white Caterpillar service 
+report.  The form includes complaint, cause, and correction areas.  Additional notes can be added 
+on the bottom of the form.  Limitations of this type of reporting include: 
+• Technicians often do not complete much of the root cause information with machine-
+specific identity because sub-component cores arrive with no machine serial number.   
+• The report does not prompt the technician to include specific repair-related data such as 
+measurements, etc. 
+• Technicians typically include excess information when it is difficult for them to remember 
+what data is really needed.  They spend many hours writing to “cover themselves,” “just in 
+case”.  This wasted time expands when there is a lesser repair workload and the 
+technicians need to keep themselves busy. 
+• Those reviewing service report histories find themselves reading everything reported on a 
+job instead of scanning the form for the information they need. Many pieces of critical 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cell-Specific Cell Reports 
+DATE 
+2/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0307-4.5-1067 
+Caterpillar Confidential:  YELLOW          Page 2 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+information are not recorded due to the technician trying to remember too many job-related 
+issues. The report is written like a book with no index. 
+• Many warranty repair jobs are returned to the CRC for further explanation or data to better 
+explain failures and corrections.  Returning jobs is more frequent with non-Caterpillar OEM 
+products due to the low staff experience with these situations and the required product 
+data. 
+• Some dealers write service history with lead employees or technical writers, due to the 
+difficulty in capturing effective reporting from the technicians.  Although these reports may 
+be more readable, they often end up under-reporting critical information due to 
+communication gaps that typically occur when trying to relay highly detailed information.  
+This method is also typically more costly than effective service reporting systems, given 
+the number of employees involved. 
+In general, traditional service reporting is a very generic process with little guidance to assist in 
+capturing comprehensive and critical information.  This system costs dealers: 
+• Excess labor when technicians over-report. 
+• Excess administrative efforts when reported information is extensive or disorganized. 
+• Excess cash flow expense and worsened customer relations when technicians under-
+report. 
+ 
+An improved service-reporting scheme provides several aids for the CRC technicians and 
+administration staff to more effectively capture service information.  Reporting aids support 
+rebuild goals of efficiency and quality by prompting job activities (such as spec lookup). Excess 
+(non-value adding) activity is avoided. Such a system includes: 
+• Cell-specific service reports to guide the technician that performs a relatively repetitive 
+rebuild process.  These reports are created to support sub-component, sub-routine, or 
+sub-process rebuild operations: 
+• Brake Groups • Hydraulic Control Valves • Pumps - Oil 
+• Cam/crank shafts • Major component assembly • Pumps - Water 
+• Cooler Groups • Major component disassembly • Turbochargers 
+• Cylinders heads • Major component test • Warranty – New Machine 
+• Cylinder Blocks • Pistons, Rods & Liners • Warranty – New Parts 
+• Fuel Systems • Planetary Groups • Warranty – Non-Cat 
+ These service reports include some items from the traditional generic Caterpillar reports 
+such as areas for Complaint, Cause, Correction, SIMS, etc.  They also include specific 
+questions and or part descriptions in fields that require technician response.  These 
+responses are in the form of short comments or checkboxes to show iron status or 
+corrective actions.  Such prompts are especially important for Non-Cat warranty reports 
+involving obscure data needs that technicians may not frequently encounter. 
+• Cell-specific service reports use sequenced prompts and responses that match the rebuild 
+process.  This consistency facilitates technician-to-technician training and promotes 
+consistent skill development in the new employee. (See note below) 
+• Cell specific service reports may be called “process checklists”.  These reports typically 
+include rebuild task directives to prompt a technician to perform processes.  Certain steps 
+may be required for every rebuild, or may only be required by earlier test results (Ex: if a 
+technician can feel a valve stem wear step with his or her fingernail, then he or she must 
+measure the stem diameter).  Tasks may be temporarily added to perform product updates 
+or fixes. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cell-Specific Cell Reports 
+DATE 
+2/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0307-4.5-1067 
+Caterpillar Confidential:  YELLOW          Page 3 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Cell-specific service reports may include a response field to record test specifications.  
+This field makes it easy for the technician to record all of the needed Caterpillar specs at 
+one time, much more efficient than revisiting the service manual when each spec is 
+needed. The spec fields can also help prevent errors in memorization. 
+• The cell-specific service reports may be designed for each type of component and for each 
+CRC work area function.  The easiest way to distribute these reports is to simply keep 
+them with the other work order information.  The reports can be designed to imitate the 
+dealer’s electronic service report template and thus serve as a report entry guide. 
+ 
+Note: 
+• The reporting aids may not appear as useful to an experienced rebuild technician as they 
+would be to an apprentice or inexperienced technician*.  While this is true for experienced 
+technicians who perform the same rebuild operations every day, many experienced 
+technicians move around a CRC completing various rebuild segments.  These aids 
+become especially useful in prompting such activities. 
+• The CRC provides a great environment to train new technicians for future promotion into 
+machine repair work.  Typical succession plans include first learning about components in 
+the CRC, then machine systems and diagnostics in the machine repair shop with later 
+opportunities in field service.  This type of succession planning requires the CRC to 
+continuously replenish itself with new employees.  Using cell-specific service reports with 
+process prompting supports the lesser skilled employees and helps sustain consistent 
+quality in key rebuild operations. 
+ 
+*For the purposes of this Best Practice, a rebuild technician (“apprentice”) is lesser skilled 
+and would not have the broad experience of a traditional service technician 
+(“journeyman”).  The rebuild technician, in general, should be in the grooming stages to 
+move into a diagnostic/repair technician position through a succession plan.  This is an 
+important plan since most dealers develop their own technicians and must do so as 
+effectively as possible. 
+ 
+3.0 Implementation Steps 
+ 
+1. Document/find the as-is service report methods and materials in the CRC rebuild areas. 
+2. Define future rebuild reporting requirements and processes based on expected product type, 
+volume, size, etc. 
+a. Plan for typical rebuild volumes as well as expected repetitive nature of rebuilds. 
+b. Investigate specialized reporting media and gathering/storage/retrieval equipment 
+(template formats, electronic documents, server storage/distribution systems, on-floor 
+terminals, etc.). 
+c. Use Cat Service Operations Dev. and Information Systems expertise as needed. 
+d. Review other dealer systems and results as needed. 
+e. Focus on the typical reporting - 80-90% of reporting/storing/retrieving circumstances. 
+f. Add-in flexible capabilities (such as special reporting templates for product 
+improvements) for minority requirements. 
+3. Apply improved reporting strategy to operations and shop areas. 
+a. Develop report/checklist templates. 
+b. Consider product updates in the reporting aids. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cell-Specific Cell Reports 
+DATE 
+2/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0307-4.5-1067 
+Caterpillar Confidential:  YELLOW          Page 4 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+c. Consider reporting enhancement replication outside of CRC (especially R&I functions).  
+d. Include shop technician teams in the develop review/application stages. 
+e. Include the Standard Job’s team in the development process.  
+f. Use Cat Service Operations Dev. and Information Systems expertise as needed. 
+4. Develop/document the new reporting strategy/procedure, with new roles/responsibilities as 
+needed. 
+5. Adjust  
+a. Repair/rebuild time requirement targets as needed (capture resultant efficiencies). 
+b. Service labor charge-out rates to reflect time and material repair efficiency gains. 
+c. Administrative duties/tasks to reflect new system requirements and efficiency gains. 
+6. Present strategy to shop employees. 
+7. Implement reporting processes, templates, and system changes into the shop/office areas. 
+a. This may occur in phases (as needed). 
+8. Train employees/customers to use the new procedures.  Follow-up/enforce immediately. 
+9. Eliminate previous reporting practices/systems to eliminate old habits. 
+10. Review process/template performance once established. 
+11. Establish and implement adjustments as needed. 
+ 
+4.0 Benefits 
+ 
+• Increased capacity - Fewer returned warranty work orders reduces task interruptions for staff - 
+more time available (with less administrative rework) to plan/organize. 
+• Reduced cost – Fewer returned warranty/policy work orders allows service/warranty staff to 
+focus on current issues to reduce accounts-receivable associated with outstanding claims.  
+Comprehensive reporting justifies revenue to customers, reducing policy allowance expense.  
+Data organization (in tables, not paragraphs) enables faster operations/warranty processing. 
+• Increase efficiencies - Service technicians are prompted on core reporting requirements, 
+reducing associated labor.  Rebuild target times drop, raising standard (flat-rate) job profits. 
+• Increased quality – Rebuild processes are prompted to be more consistent/accurate, 
+increasing quality, especially with less experienced employees.  Training is conducted more 
+consistently and focuses on critical tasks and product updates. 
+• Improved Operator/Technician Safety – Properly trained technicians perform tasks in a safer 
+manner, reducing overall risk exposure. 
+ 
+5.0 Resources Required 
+ 
+• Equipment Requirement Gaps Vary 
+o Most dealers already have computer and electronic template capability. 
+o Report forms are typically custom-designed and require wide participation for effective 
+buy-in. 
+• Facility 
+o Technicians need aisle-accessible PC terminal space to retrieve specs and submit 
+electronic reporting (if required).  Difficult/expensive for staff to effectively perform this 
+function. 
+• Support Equipment - Costs vary greatly per region 
+o Technicians need on-floor terminals to effectively retrieve spec’s and submit electronic 
+reporting (if required).  Difficult/expensive for staff to effectively perform. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cell-Specific Cell Reports 
+DATE 
+2/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0307-4.5-1067 
+Caterpillar Confidential:  YELLOW          Page 5 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• People 
+o Establish current reporting concerns with team. 
+o Establish process, systems, and equipment improvements through team. 
+• Training 
+o Define, implement, and enforce the new process, systems, and duties with the 
+production team. 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Component Rebuild Service Operations Development & Assessment (SODA) 
+ 
+• Sample Service Reports (see attachments in this PDF file) 
+o Cylinder Block Inspection & Reconditioning Report 
+o Fuel System Test Sheet 
+o Connecting Rod Checkoff Sheet 
+o 3400 Series Engines – Quality Control Check List 
+ 
+Note: Report form examples are actual dealer examples and do not represent 
+Caterpillar-development. 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Russ Young 
+6 Sigma Black Belt 
+young_russell_k@cat.com 
+(309) 675-4583 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cell-Specific Cell Reports 
+DATE 
+2/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0307-4.5-1067 
+Caterpillar Confidential:  YELLOW          Page 6 of 6

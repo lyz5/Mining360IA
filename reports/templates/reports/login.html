@@ -1,0 +1,58 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign in | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body class="login-body">
+    <main class="login-shell">
+        <section class="login-panel">
+            <div class="login-brand">
+                <div class="login-mark">
+                    <span>M</span>
+                </div>
+                <span>Mining360</span>
+                <p class="eyebrow">Mining Intelligence</p>
+            </div>
+
+            <div class="login-panel-head">
+                <h1>Welcome back</h1>
+                <p class="login-copy">Sign in with your Mining360 account or Microsoft identity.</p>
+            </div>
+
+            {% if messages %}
+                <div class="login-messages">
+                    {% for message in messages %}
+                        <p class="alert-text">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <form method="post" class="local-login-form">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+                <label>
+                    <span>User</span>
+                    <input type="text" name="username" value="{{ username|default:'' }}" autocomplete="username" required autofocus>
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input type="password" name="password" autocomplete="current-password" required>
+                </label>
+                <button class="button login-button" type="submit">Continue</button>
+            </form>
+
+            <div class="login-divider">
+                <span>or</span>
+            </div>
+
+            <a class="button secondary login-button" href="{% url 'auth-start' %}{% if next %}?next={{ next|urlencode }}{% endif %}">
+                Continue with Microsoft
+            </a>
+        </section>
+    </main>
+</body>
+</html>

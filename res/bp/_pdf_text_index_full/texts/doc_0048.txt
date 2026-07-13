@@ -1,0 +1,2345 @@
+SOURCE: 1.0 Maintenance & Repair\1.03 Planning & Scheduling\1. Strategic\Strategic Plan to Recover the Performance of a Mining Equipment Fleet.pdf
+PAGES: 36
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+June 2021 
+1.03-210611-1 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.     
+ Mining.cat.com 
+ Caterpillar: Confidential Green 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Strategic Plan to Recover 
+the Performance of a 
+Mining Equipment Fleet 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Strategic Plan to recover the Performance of a Mining 
+Equipment Fleet ........................................................... 0
+ 
+1.0 Introduction .......................................................... 1 
+2.0 Best Practice Description .................................... 2 
+3.0 Implementation Steps.......................................... 6 
+4.0 Benefits .............................................................. 16 
+5.0 Resources Required.......................................... 17 
+6.0 Supporting Attachments / References.............. 26 
+7.0 Related Best Practices ...................................... 26 
+8.0 Acknowledgements ........................................... 26 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 1 of 26 
+1.0 Introduction  
+ 
+Maintenance and repair programs dedicated to support and ensure mining equipment performance 
+are always challenged by application type and production plan requirements. Mining customers 
+continuously seek operational excellence to achieve expected production at the optimum cost/ton.  
+ 
+In this scenario,  equipment performance is a key variable to control and maintain over time, 
+motivating production and maintenance department s to work together toward common goals, of 
+which Safety, Availability, Reliability, Productivity, and Cost per Ton are the usual goals considered. 
+The maintenance department leads  control for availability and reliability  while the production 
+department is responsible for  utilization, productivity and operating the equipment within  
+specifications. Both departments share the responsibility for safety and cost per ton. 
+ 
+Ideally, joint efforts of the production and maintenance departments, supported by the equipment 
+supplier, should ensure proper and stable equipment performance results. However, due to several 
+internal and/or external factors, the equipment performance can be affected and start to decline 
+over time. The first indication of this undesired situation is normally reflected in equipment 
+availability and reliability.  Subsequently, this will negatively affect production results. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Typical behavior of mining production equipment in terms of MTBS vs SMU (Hours) 
+ 
+This normal behavior, as illustrated in the graph above, can be aggravated if the maintenance effort 
+is not increased, affecting availability and reliability  results. When maintenance departments f ace 
+this type of challenge, there are several improvement options to consider, namely improving 
+maintenance processes or machine application conditions.  Improving M&R processes is a “long 
+term” effort that requires intensive discipline and focus of the maintenance organiz ation, which at 
+the same time, is being challenged by frequent unscheduled events. 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 2 of 26 
+This best practice describes the strategic foundational elements and methodology  to improve 
+equipment fleet availability and reliability in a relatively “short time”. This approach is based on the 
+concept to identify and recover/repair the worst performing equipment.   
+ 
+There are multiple advantages of applying this option, the most important being: 
+• Improved fleet performance results will be achieved in a shorter time. 
+• Each repaired machine will reduce the amount of support required. 
+• Program results can be measured machine-by-machine, rather than the whole fleet. 
+• Repair programs can be executed by a separate parallel crew, without disturbing the regular 
+maintenance operation. 
+ 
+This best practice is the result of strategies, concepts, and experience gained when applied to a 
+fleet of (61) Caterpillar 797F OHT operating in Buenavista del Cobre (BVC), Cananea, Sonora, 
+Mexico. The owner of the BVC operation, Grupo Mexico, agreed to j oin efforts with MATCO and 
+Caterpillar to implement and execute the 797F fleet recovery.  
+ 
+Note: Although this BP was applied to 797F trucks, the concept is applicable to other mobile fleets. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The procedure or action plan presented here is applicable whenever there might be a need to 
+improve availability and reliability results of a mobile mining equipment fleet. This approach should 
+be considered as a “shock treatment” and the objective should be to recover fleet performance in 
+a short timeframe, not as a continuous maintenance practice or methodology.   
+ 
+The proposed recovery plan is based on selecting and repairing the worst perform ing machines, 
+namely those that negatively influence overall fleet performance the most. By  repairing the worst 
+equipment, the final impact on fleet performance will be more significant, enabling performance 
+goals to be achieved faster. 
+ 
+The following illustration graphically represents the recovery plan to improve fleet performance. 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 3 of 26 
+The recovery of equipment fleet performance must be supported by strong initiatives to improve or 
+re-enforce the Maintenance & Repair Processes  to “sustain the gains”  and avoid performance 
+deterioration to a level in where another recovery program must be applied. 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The repair plan is designed to recover the “worst” perfomers and includes five different stages to 
+follow.  The recovery team includes Planning & Scheduling, Parts, and Service Departments. 
+ 
+The recovery process plan has 5 stages, abbreviated DPEEC. 
+ 
+ 
+ 
+ 
+ 
+Stage #1:  Detection Phase.   
+There are two distinct activities performed in this phase: 
+1. The selection of equipment to enter the repair program. 
+2. Detailed machine inspections designed to determine the specific repairs / 
+adjustments / upgrades  needed to fix the causes of poor equipment 
+performance. 
+Key points to consider in this Phase: 
+ Equipment s election:  Although the Planning Department  leads this , it’s 
+considered part of this stage to define and prioritize the worst performers. 
+ Performance analysis (for equipment selected):  Thorough analysis is critical to 
+prepare and focus inspection toward key areas or specific machine systems. 
+ Inspection: Conduct detailed machine inspections with the goal of determining 
+all “remedies” (fixes) for equipment problems. 
+ Document corrective actions: Generate all b acklogs and documentation to 
+support the repair program definition. 
+Detect
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 4 of 26 
+Stage #2:  Planning Phase. 
+Planning drives three main activities: 
+1. Evaluation and selection of equipment to enter the repair program. 
+2. Definition of the detailed repair program. 
+3. Setup of targeted performance goals for equipment after the repairs. 
+Planning & Scheduling is involved in other stages, but now we will focus in stage 2. 
+Key points to consider in this stage: 
+ Equipment Ranking: Based on equipment performance, Planning determines 
+equipment rankings used to select equipment that will enter the repair process. 
+ Lead the scheduling process for the detailed inspections and repairs. 
+ Determine the detailed repair plan based on the inspection results. 
+ Define the Post Repair performance targets of the equipment. 
+ 
+ 
+Stage #3:  Execution Phase. 
+This stage is where all planned repairs completed. The main responsibilities of the 
+repair crew are to perform with effectiveness (quality)  and efficiency (speed) , 
+observing the duration and quality targets defined by Planning. 
+Key points to consider in this stage: 
+ Ensure completion of all repairs planned. 
+ Manage resources to achieve repair efficiency and quality. 
+ Maintain communication to the entire organization, informing of repair progress 
+and new-found defects. 
+ Work closely with Planning to ensure the best program results. 
+ 
+ 
+Stage #4:  Evaluation Phase.  
+This stage includes two types of evaluation: 
+1. Execution of the repair program. 
+2. Performance of the equipment “post-repair”. 
+Key points to consider in this stage: 
+ Repair Program: What “went right” or what “went w rong” with respect to the 
+program and the execution of it. 
+ Post-repair:  Equipment performance results after returned to operation.  
+ Follow-up: It is very important to consider a follow crew to ensure machines 
+operate as expected and symptoms of abnormal conditions are promptly fixed. 
+ It’s important to use the correct KPI´s and targets defined in the Planning Phase. 
+ 
+ 
+Stage #5:  Correct / Improve Phase 
+Continuous Improvement is applied, directed to any phase of the process. 
+Key points to consider in this stage: 
+ The recovery team analyzes performance of each phase of the DPEEC process. 
+ Identify opportunities to improve. 
+ Generate 3W action plans  to follow -up the corrective/improvement actions 
+implementation. 
+ After validation of improvement actions, solutions must be incorporated into the 
+recovery plan process. 
+Execute
+Evaluate
+Correct / 
+Improve
+Plan
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 5 of 26 
+We recommend considering these five stages to execute a recovery plan. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Detection      Planning 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+            
+Execution     Evaluation        
+Execution
+Execution – Efficiency & Quality
+Short & Medium Term Planning
+Preparation of Work 
+packs / clear scope
+To Execution – Defined Shutdown 
+windows
+Register of detailed repairs by individual Truck
+Repair Systems Tests
+Tests in Operations – Establish baseline
+Deliver Equipment to Mine 
+Operations
+Monitor Performance (runtime) – MTBS Post repair – Availability 
+Post repair – Effective use of Resources (MR)
+Delivery - Final Machine Quality Inspection
+Involvement with Production – Tests with 
+Operators
+Performance Evaluation
+Validation – Plan Compliance Goals
+Analysis of Service work
+Evaluation results of Operations
+Tracking
+Validated Positive Impact in the Fleet 
+(Stepped Improvements)
+  Work that went well
+  What are the opportunities
+  Availability     …..   MTBS&MTTR
+  Reliability       …..   MTBF
+  % Planned vs Breakdown
+  ...Backlog management trends
+  Efficiency of Servicing to unplanned stops
+  Operator feedback and assistance
+  Monitoring Operations 
+Delivered Equipment Results – Confirmed & validated with 
+Operations
+Inspections
+“ Evaluation of Worst Performing Trucks & Root causes, 
+Ring Fence Trucks going to be Rebuilded”
+DETECTION
+Ranking Sequence of Inspections
+Condition / Performance of the Trucks
+  
+  
+  
+    
+         
+Mag Plug Inspection Guide
+PM
+Inspections
+Periodic / Daily
+Inspections
+Pre-PM
+Inspections
+Post-PM
+Inspections
+Operator
+Inspections
+Pre-PCR 
+Inspections
+Performance 
+Test
+Planning
+Targeted focus on the Plan to deliver Improved 
+Fleet Results
+Critical Equipment identification - Impact on the 
+Fleet
+Programming of Inspections – Dedicated 
+Machine Inspectors
+Planning of Repairs - Minor Major Repairs 
+(MMR)
+Identification and Request for Resources
+Define Goals and Repair of Equipment
+To Programming the Work
+Plan Presented, Certified & Committed – Results % Scheduled
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 6 of 26 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  Correct - Improve 
+ 
+The preparation, resource mobilization, and implementation details are addressed in section 3.0. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+This describes the steps to implement and execute this best practice, allowing the project to achieve 
+successful results.  Several adjustments introduced after the original plan are included here.  
+ 
+Customer’s Needs Identification 
+ 
+The first step is to clearly identify the pain or customer needs , regarding equipment fleet 
+performance. In the case of BVC, the concerns were 797F fleet availability and reliability results. 
+ 
+To identify the best course of action, a team of MATCO and Caterpillar specialists visited the mine 
+and evaluated the maintenance and repair processes and practices. In this case, the customer 
+provided all needed information and supported this evaluation.  
+ 
+This team highlighted several M&R opportunities that related to or caused low equipment 
+performance.  The team indicated the need to launch M&R process improvements, but also realized 
+that fleet performance instability (reflected in high percent of unscheduled work) would make this 
+effort difficult to successfully complete.  
+ 
+This challenge indicated that the best course of action would be to stabilize the fleet performance 
+results (short-term) and improve M&R processes to ensure sustainability (medium/long term).  
+Correction - Improve
+Continuous Improvement
+Continuous 
+Improvement
+Plan
+Execute
+Evaluate
+Correct
+Continuous Improvement
+Detect
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 7 of 26 
+Project Approval 
+ 
+The MATCO and Caterpillar team presented a proposal to the customer mining department, which 
+included two main initiatives, a short-term plan and medium/long term plan. 
+ 
+The short-term plan was designed as a “shock treatment”, to stabilize fleet performance in a short 
+time period by identifying then repairing the worst performing machines. This would reduce 
+workload of the M&R team, allowing them to focus on improving the M&R processes.  
+ 
+The medium/long term plan would focus to improve M&R processes, support the efforts of the 
+maintenance organization, and allow them to be self-sufficient and achieve the expected equipment 
+performance results.  
+ 
+In summary, the alternatives presented and accepted by Grupo Mexico, included a short -term  
+project plan and a medium/long term project plan. The graphics below illustrate the objectives and 
+the expected outcomes of each. 
+ 
+ 
+Short term Project 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+As mentioned before, short -term project o bjectives were to stabilize and improve the 797F fleet 
+performance results. The three main activities considered were: 
+1. Repair the worst performing trucks. 
+a. The main metrics to consider are physical availability and MTBS. 
+b. Additional metrics for consolidation are MTBF and the ratio of MTBS/MTBF 
+2. Actively implement quick wins related to M&R processes. 
+3. Work to improve the equipment application and operation (if possible).  
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 8 of 26 
+ 
+ 
+The main initiatives of the medium/long term plan were designed to provide the right tools and 
+processes to the maintenance organization and enable M&R teams to sustain and manage the 
+results achieved by the short-term plan. The four main initiatives were: 
+1. Improve and implement all updated M&R processes. 
+2. Develop processes owners of MATCO and BVC. 
+3. Continue working to improve and manage of the equipment application and operation. 
+4. Integrate the short-term plan methodology into the PCR program and long repairs.  
+ 
+Grupo Mexico agreed to move forward with the short-term plan, which is the main topic of this best 
+practice. The team developed and documented a project charter to formalize the short-term plan.  
+These objectives were to align the team, define the “pain”, summarize the project objectives, and 
+clearly document commitments and expectations. 
+ 
+ 
+Planning 
+ 
+The Planning department plays a critical role in structuring the plan, defining the timeline, and 
+establishing expected performance results (in terms of availability). A big part of the recovery plan’s 
+success was to build a solid methodology to select  machines and estimate the impact of each 
+machine repaired.  
+ 
+The following is the calculation methodology used to determine the impact of each machine 
+repaired, based on the initial availability performance of a specific machine. The impact calculation 
+will easily highlight that highest positive impact on the equipment fleet is obtained by selecting and 
+repairing the worst performing equipment.  This methodology will also help determine the recovery 
+time for availability results (from “X” availability to “Z” availability). 
+ 
+  
+
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 9 of 26 
+Initial assumed conditions: 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Table 1 
+ 
+Identify equipment for repair: 
+Identifying & prioritizing candidate trucks must be done carefully to ensure the correct forecasted 
+impact of the repair programs. In this example,  the candidate trucks were identified based on 
+machine Physical Availability (PA). Machine reliability is another input to consider, but in this case, 
+only physical available was used. 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Table 2 
+ 
+Hours Down = Machine Calendar hours – (Machine Calendar Hours x Machine PA %) 
+ 
+ 
+Define expected performance: 
+The next step is to define the expected PA goal after repairs are completed, or when the repaired 
+truck is returned back in operation. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Table 3 
+
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 10 of 26 
+ 
+With this target of 90% PA, the increment or impact on overall fleet availability can be calculated. 
+ 
+• Hours down at 90% PA = Machine Calendar Hours x (100% - PA target) [hours] 
+• Gain (DT hours) = Current Down Hours – Hours Down at 90 % PA  [hours] 
+ 
+       Table 4 
+ 
+Forecasted Fleet PA % = 100% – (Original Fleet M&R Hours – Gain) / Fleet Calendar Hours   
+ 
+The two columns on the right display the cumulative PA increment for the fleet and incremental PA 
+per machine. With this projection, the total fleet recovery forecast can be represented graphically. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+As it can be seen in the graph, each truck repaired will produce first a decrease in availability, due 
+to the downtime related to each machine-specific repair program, and then an increase in 
+availability due to the positive impact of returning a recovered truck to 90% physical availability. 
+
+
+===== PAGE 12 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 11 of 26 
+The positive increment by machine and of the entire fleet was calculated and presented in table 4. 
+The decrease in availability due to the time the machine will be down for the repair program can be 
+calculated as follows. 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+     
+       Table 5 
+ 
+Impact on fleet PA = # trucks under repair x repair duration (hours) / Fleet total calendar hours 
+(Another equation is “unavailability”, namely:  Impact% = Recovery DT hours / Fleet Total Calendar hours  
+ 
+By using this calculation methodology, the planning department can estimate the duration and the 
+number of candidate machines required to meet the fleet availability goal.  This is calculated by 
+using actual machine performance data and estimated repair downtime hours.  
+ 
+In this sp ecific project, it was calculated that to achieve target performance of 86% physical 
+availability, the team needed to repair at least 25% of the 797 fleet, or 15 trucks.  The calendar time 
+required to repair 15+ trucks will depend on the number trucks repaired at the same time.  
+ 
+Once goals are defined for expected impact on machine and fleet performance, the results of the 
+effort can be evaluated at any time and corrections can be applied if needed. 
+ 
+ 
+Equipment Selection 
+ 
+As mentioned previously, it is vitally important to correctly analyze equipment performance, select 
+candidate machines, and prioritize equipment in the repair program. 
+ 
+The team discovered that careful attention should be paid to the selection process, since equipment 
+performance results could be very unstable and variable. Due to this dynamic situation, the team 
+needed a suitable system to easily read equipment performance and make correct decisions. For 
+this reason,  the team developed an equipment performance dashboard, shown in the next 
+illustration.  
+ 
+
+
+===== PAGE 13 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 12 of 26 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The information selected and included in the dashboard were:  
+• Physical Availability. 
+• MTBS. 
+• MTTR. 
+• Percentage of Component Usage. 
+• Pending Backlogs. 
+• Pending Service Letters. 
+ 
+The relationship between PA, MTBS , and MTTR must be carefully observed because availability 
+can be directly influenced by performing short repairs (low MTTR).  However, machine reliability, 
+expressed as MTBS, cannot be bought as depicted in this example. Here additional metrics of 
+MTBF and the ratio of MTBS/MTBF can also be considered.  
+ 
+Using this dashboard, the candidate list was built, with the objective to prioritize worst performers. 
+ 
+ 
+Resources 
+ 
+After defining the expectations and project goals, the team defined and mobilized the necessary 
+resources. See section 5.0 for a detailed description of the resources allocated for this project. 
+ 
+ 
+Project start up and machine scheduling 
+ 
+At this stage, repair programs for specific machines could commence. In this situation, the ultimate 
+decision to start the recovery plan was given by the customer’s maintenance department. The steps 
+this team needed to pay attention to were: 
+ 
+
+
+===== PAGE 14 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 13 of 26 
+ Based on candidate selection, the first step was to schedule the in-depth machine inspection 
+(the first stage of the recovery plan). 
+ Inspection results were processed by planning and scheduling, to build the repair program. 
+ A detailed repair program was presented to the customer for first truck candidate. The repair 
+program included:  
+o Equipment selection criteria. 
+o List of activities, Gantt chart, and duration of the repair.  
+o Parts and component list. 
+o Quote for all required / recommended parts and components. 
+ Customer approval 
+ Work with customer planning and scheduling department to include the stoppage for the 
+recovery truck into the weekly, short term program.  
+ Stop the machine and execute the repair program following the plan.  
+ It is important to remember that the five-step approach continues to select and define the 
+repair program of the following truck candidates. 
+ 
+ 
+Follow Up and Control 
+ 
+Based on the team’s experience, it’s recommended to include the following activities in this phase: 
+ 
+ During execution of the repair program: 
+o Daily execution progress gets validated. 
+o Daily progress is promptly and effectively communicated to the organization.  
+o The goals of prompt and effective communication are to: 
+ Inform all parties. 
+ Engage / involve the entire team to promptly and properly react to the 
+unexpected new defects and difficulties found.  
+o To formalize and communicate effectively, the team implemented two controls: 
+ A one-page summary report 
+ A technical bulletin board to be displayed in the repair bay. 
+ 
+The examples of the follow up report and bulletin board are shown below. 
+ 
+One-page summary repair progress report  
+ 
+ 
+
+
+===== PAGE 15 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 14 of 26 
+ 
+ 
+ 
+Bulletin Board Design and Implemented in the repair bay  
+ 
+ 
+This bulletin board was the method to easily display and effectively communicate the information 
+to the shop organization. It was the “visual factory” for the project.  
+ 
+ 
+Equipment Delivery 
+ 
+The method and process to deliver the truck to production operations is another important step to 
+consider. This is the opportunity for the maintenance & repair team to show the operations 
+department what was targeted, what was accomplished, and let the operations department inspect 
+and confirm all updates and repairs done (specifically targeting the truck operator and supervisor). 
+ 
+It is important to mention that in order to ensure the best possible truck operation, Grupo Mexico 
+assigned fixed operators per truck returned to operation. This is vital to t ruck performance and  
+facilitates the relationship with the maintenance team assigned to “follow up”. 
+ 
+        Photos of the first truck delivered to operation, truck 797F  Internal Number 642 
+
+
+===== PAGE 16 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 15 of 26 
+ 
+     The operator receiving the truck and information of the repair details  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Each truck repaired and returned to the operation received a distinctive identification.  
+ 
+This sign helps to quickly identify repaired machines and increase the pride and responsibility of 
+the repair team. 
+ 
+ 
+Post Repair 
+ 
+After repairs are completed and machines returned to operation, the post repair “follow-up” routine 
+starts. For this routine, the team included (3) distinctive tasks, 
+ 
+ “Post-Mortem” analysis performed right after the repairs are completed.  
+o The objective is to document and analyze “what went right” and “what didn’t go well” 
+and “what needs to be improved”. 
+ Follow up of the operational performance KPI’s.  
+o For this purpose, the team developed and used a special report that includes the top 
+tier metrics such as, Physical Availability, Availability Index, MTBS, MTTR, % 
+Scheduled Work. 
+ Corrections.  
+o Corrections were applied based on the “post-mortem” analysis and the equipment 
+performance results. 
+ 
+
+
+===== PAGE 17 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 16 of 26 
+ 
+Documentation of Benefits 
+ 
+As part of the implementation steps, it is important to include the closure and documentation of the 
+benefits of the recovery plan. These benefits were documented, analyzed and validated in 
+conjunction with the customer, Grupo Mexico. 
+ 
+The benefits were evaluated base on operational performance results of repaired machines and 
+the return on investment (ROI). Details of benefits obtained are included in section 4.0. 
+ 
+ 
+4.0 Benefits 
+ 
+When analyzing the benefits of applying a recovery plan, it is important to consider the gains 
+achieved in six different areas. 
+ 
+ Equipment performance 
+ Production and operation 
+ Profit, return of investment 
+ Maintenance and repair workload 
+ Dealer support – Trusted partner   
+ 
+Equipment Performance 
+ 
+The first documented benefit after repair completion was operational performance . The following 
+are the performance results of the first three 797F trucks repaired, namely Availability, Utilization, 
+Availability index, MTBS, MTTR, and MTBF.  These trucks have customer id #642, #600 & #602. 
+ 
+797F Truck #1:  #642 
+ 
+The first truck that was selected and repaired had the following performance indicators. 
+ 
+ 
+ 
+The results shown below highlight the trend and time to stabilize the final performance.   
+ 
+ 
+ 
+Accum to Apr 2018 
+
+===== PAGE 18 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 17 of 26 
+Physical Availability, Utilization and Availability Index 
+As shown in the Availability, Utilization and Availability Index graphs, after the initial period to 
+stabilize results, the machines reached stable performance results above 90%. 
+ 
+It is important to highlight that utilization also increased, indicating that the production department 
+was satisfied with conditions and performance truck.  Production likes reliable equipment. 
+ 
+ 
+MTBS, MTBF and MTTR 
+ 
+Production and Operation 
+ 
+In the short term, the production department received tangible results that directly influenced truck 
+utilization and operator satisfaction.  Each truck candidate included a complete repair and upgrade 
+of the operator station, which also included installing a commercial radio in the cab, which was very 
+well received by the operator.  
+ 
+The combination of equipment performance results, improved operator station, and operator 
+comfort support the increased utilization and subsequent contribution to production goals.  
+ 
+ 
+  
+
+
+===== PAGE 19 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 18 of 26 
+Return of Investment – ROI 
+ 
+MATCO and Grupo Mexico defined the return on investment (ROI) for the first trucks repaired.  The 
+table below includes the benefits regarding availability, operating hours, and production (tonnes).  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+With the incremental operating hours and increased production related for repaired trucks, the ROI 
+was calculated between 1 to 4 months. See table below for more details.  
+ 
+ 
+ 
+ 
+ 
+ 
+As shown in the ROI results table, the team differentiated repairs including components and without 
+including components. This is calculated because the repair stoppage was also used as a window 
+of opportunity to replace components included in the PCR program.  
+ 
+ 
+Maintenance and Repair Workload 
+ 
+Another benefit to highlight is related to the decrease in M&R workload of the maintenance 
+organization. Post-repair t rucks that returned to operation performed with higher availability and 
+reliability, which translated into fewer scheduled and unscheduled maintenance stoppages. 
+ 
+The maintenance organization benefits from decreased workload and can allocate more time to 
+improve M&R processes. This is important to sustain the equipment performance results. 
+ 
+ 
+Dealer Support – Trusted Partnership 
+ 
+This recovery plan presented a valuable opportunity to both dealer and customer teams.  Both 
+organizations joined efforts toward the common goal of effectively supporting the production plan 
+of BVC operation.  The time working together, addressing challenges, and successfully 
+implementing and executing the recovery plan was very positive to recognize strengths, respect 
+each other, and build trust. This built a positive foundation for future challenges. 
+ 
+  
+
+
+===== PAGE 20 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 19 of 26 
+5.0 Resources Required 
+ 
+Successfully implementing a fleet recovery plan such as this one, requires assigning adequate 
+resources to ensure the proper execution of all steps and phases of the plan. It’s recommended for 
+the recovery plan to be implemented separately from the regular daily M&R activities. That means 
+that the resources here included are to be considered 100% dedicated solely to the recovery plan.  
+ 
+When properly selected and managed, the five types of resources noted below guarantee the 
+established goals for future recovery repairs will be achieve without setbacks. The main types are: 
+ Human Resources – Personnel 
+ Manual and specialized tools 
+ Facilities – Repair shop bay and Offices 
+ Parts and Components 
+ Vehicles – Follow up and Service 
+ 
+ 
+HR – Personnel 
+ 
+Personnel is possibly the most important resource to be considered and selected in advance of 
+project startup. The project team followed and recommend are to carefully select adequate people 
+to fill the responsibilities of: 
+• Leadership  
+• Repair Execution  
+ 
+The people assigned to leadership roles were tasked with the following responsibilities:  
+• Customer relationships. 
+• Project management. 
+• Planning. 
+• Coordination of parts and components. 
+• Guide and manage the execution of repairs. 
+• Supervise the “follow up” of equipment already repaired. 
+ 
+The technicians selected for repair execution must have: 
+• Solid knowledge of the machines being repaired,  
+• Experience in component replacement (remove, install, commissioning),  
+• Troubleshooting,  
+• Data analysis,  
+• Inspections routines,  
+• A very proactive approach to failure avoidance  
+• Full commitment for all safety guidance and procedures.  
+ 
+The quantity of technicians and supervisors will depend on the quantity of machines to be repaired 
+in parallel (simultaneously).  The quality and experience of t echnicians is critical, and these 
+resources cannot be underestimated.  In the case of this project, the team selected and recruited 
+the best technicians throughout the entire MATCO dealership. 
+
+===== PAGE 21 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 20 of 26 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+It is important for all team members to receive a “project induction”, in the key project elements, 
+overall goals and objectives, importance to the company , and their role and responsibilities in 
+meeting the expected results.  
+ 
+For this project, t he management team allocated adequate time to perform this induction for all 
+team members that arrived on site to be integrated in the project. It was clearly communicated to 
+all dealer personnel that they were NOT called to fix machines but were selected to be part of a 
+very important project for the customer and dealership.  
+ 
+ 
+Manual and Specialized Tools 
+ 
+The objective is to have the right tool at the right time for the right work. Tools are a critical element 
+to ensure efficiency and effectiveness of repairs executed by the technician teams. 
+ 
+The leaders and supervisors for repair execution selected and acquired the tools required for the 
+technicians. The attached tools list does not include common tools that all technicians have in their 
+toolboxes.  
+
+
+===== PAGE 22 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 21 of 26 
+As a summary the following table illustrates the investment in tools for a project.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The organization and handling of tools is equally important as the tools themselves and it’s vital to 
+ensure the proper conditions and availability of tools when required.  The team designed and 
+allocated suitable cabinets and installed in the assigned shop repair bay.  See pictures below.  
+ 
+   
+ 
+  
+
+
+===== PAGE 23 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 22 of 26 
+Facilities – Repair shop bay and Offices 
+ 
+Another critical resource to consider is facilities, including the repair shop bay and office space. It 
+is important to remember that the recovery project be performed in parallel to all other regular M&R 
+activities. For that reason, it is important to assign a shop bay and office space for the project team.  
+ 
+The customer, Grupo Mexico, understood the importance of allocating project resources and they 
+assigned a shop bay exclusively for the recovery project. Below is the layout schematic used to 
+equip the shop bay to meet the requirements of all targeted repair activities.  
+ 
+ 
+ 
+
+
+===== PAGE 24 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 23 of 26 
+ 
+A mobile office was added, specially designed to accommodate all the functions of project 
+management and planning & scheduling. The following images show the office design and set up. 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 25 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 24 of 26 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The investment to prepare the shop bay and office space was approximately $43,000 USD. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Parts and Components 
+ 
+After completion of the inspection phase, the planning department identify all repair activities to be 
+completed, with the correspondant Parts and Components (P&C).  It’s important not to 
+understimate the time and effort required to acquire parts and component. This includes Quotation, 
+Availability and Parts orders, Authorization, Parts delivery and Storage in the shop repair bay.  
+ 
+The quantity and consideration of parts and components will be driven by the conditions of your 
+equipment fleet.  Regarding components, the percent of remaining life and component health are 
+variables that will define whether to include or not include component exchanges  during the 
+program.  
+
+
+===== PAGE 26 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 25 of 26 
+ 
+Vehicles – Follow-up and Service 
+ 
+The team included a “follow-up stage” to ensure the best possible results of the recovery plan. 
+“Follow-up” includes analysis of performance KPI’s  and physically following repaired trucks in 
+operation. The main functions and actions of the follow-up team were: 
+ Quick response to unscheduled stops. 
+ Field inspections. 
+ PM inspections. 
+ Backlogs generation and execution. 
+ Analysis and proper reaction to performance KPI’s. 
+ Direct support to machine operators. 
+ Application and operation advisory. 
+ 
+Project leadership must provide all necessary resources to facilitate and assure correct execution 
+of this important function.  This mainly consisted of a dedicated service vehicle, equipped with all 
+needed regular hand and diagnostic tools. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+
+
+===== PAGE 27 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Strategic Plan to Recover the Performance of a Mining 
+Equipment Fleet 
+DATE 
+6/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.03-210611 -1 
+Caterpillar Confidential:  YELLOW                 Page 26 of 26 
+ 
+6.0 Supporting Attachments / References 
+ 
+1. Project Charter 
+2. Equipment and tooling list (hand tools, workshop and offices) .  
+3. Metrics Report 
+ 
+BVC Project Charter - 
+M&R (Corto Plazo).pd
+BVC Metrics 
+report.pdf
+BVC Tooling (Shop 
+Inspection Office).xlsx  
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Special recognition should be given to the managers of Grupo Mexico’s Cananea operation, whom 
+supported the implementation and successful results of the recovery plan presented here.  
+ 
+This best practice was written by: 
+ 
+Glenn Carrasco 
+Black Belt project leader 
+Matco    
+gcarrasco@matco.com.mx 
+ 
+ 
+John Hoffman 
+Product Performance Manager  
+Caterpillar Global Mining 
+Hoffman_John_A_II@cat.com
+ 
+ 
+ 
+
+===== PAGE 28 =====
+N
+S
+EW
+Inspections
+Bandit Truck Program
+Mining Equipment Management
+Cananea- Grupo Mexico Project
+2017
+Mission
+Improve Fleet Results for the 793 Haul 
+Trucks at Cananea – Grupo Mexico to 
+effectively support Production and 
+prepare the Fleet for Implementation 
+of Maintenance and Repair Processes
+“ Evaluation of Worst Performing Trucks & Root causes, 
+Ring Fence Trucks going to be Rebuilded”
+DETECTION
+PROJECT DEFINITION
+Ranking Sequence of Inspections
+Condition / Performance of the Trucks
+MTTR
+Availability
+MTBS
+Distribution of 
+Problems
+Components 
+overdue
+Outstanding 
+Backlogs
+Execution of Inspections
+Definition of Repair Actions 
+Needed
+Planning
+Targeted focus on the Plan to deliver Improved 
+Fleet Results
+Critical Equipment identification - Impact on the 
+Fleet
+Programming of Inspections – Dedicated 
+Machine Inspectors
+Planning of Repairs - Minor Major Repairs 
+(MMR)
+Identification and Request for Resources
+Define Goals and Repair of Equipment
+Execution
+Execution – Efficiency & Quality
+Short & Medium Term Planning
+Preparation of Work 
+packs / clear scope
+To Execution – Defined Shutdown 
+windows
+Register of detailed repairs by individual Truck
+Repair Systems Tests
+Tests in Operations – Establish baseline
+Deliver Equipment to Mine 
+Operations
+Performance Evaluation
+Validation – Plan Compliance Goals
+Analysis of Service work
+Evaluation results of Operations
+Tracking
+Validated Positive Impact in the Fleet 
+(Stepped Improvements)
+  Work that went well
+  What are the opportunities
+  Availability     …..   MTBS&MTTR
+  Reliability       …..   MTBF
+  % Planned vs Breakdown
+  ...Backlog management trends
+  Efficiency of Servicing to unplanned stops
+  Operator feedback and assistance
+  Monitoring Operations 
+Correction - Improve
+Continuous Improvement
+Continuous 
+Improvement
+Plan
+Execute
+Evaluate
+Correct
+STRATEGIC PILLARS
+ 
+ Pillar #1 – SPECIALIZED REPAIR TAILORED TO EACH TRUCKS PROCESSED
+ Pillar #2 – REPAIRS DONE IN PARALLEL WITH THE REST OF SHOP ACTIVITIES
+ Pillar #3 – EACH PHASE IS DETAILED DEFINED AND MEASUREABLE
+ Pillar #4 – RESULTS ARE MEASURED & CONTROLED BASED ON THE REPAIRED 
+UNITS 
+ Pillar #5 – SPECIALIZED RESOURCES ASSIGNED TO THE PROJECT
+ Pillar #6 – INTEGRATION WITH THE REST OF THE ON GOING IMPROVEMENT 
+INITIATIVES
+Pillar # 7 – INTEGRATION OF THE MAINTENANCE AND PRODUCTION DEPARTMENT
+Pillar #8 – INTEGRATION OF GRUPO MEXICO – MATCO - CATERPILLAR
+PREPARATION OF 
+RESOURCES
+To Programming the Work
+PERSONAL
+Parts & 793 
+Rebuilt 
+Components
+Facility 
+Tools & Equipment
+Production Team
+PREPARATION
+Timing of inspections – Generation of Backlogs – Detection levels Plan Presented, Certified & Committed – Results % Scheduled Monitor Performance (runtime) – MTBS Post repair – Availability 
+Post repair – Effective use of Resources (MR)
+Delivered Equipment Results – Confirmed & validated with 
+Operations Continuous Improvement
+Delivery - Final Machine Quality Inspection
+Involvement with Production – Tests with 
+Operators
+Best Practice 
+Processes
+Maintenance & Repair (M&R) 
+Implementation
+Detect
+Mag Plug Inspection Guide
+PM
+Inspections
+Periodic / Daily
+Inspections
+Pre-PM
+Inspections
+Post-PM
+Inspections
+Operator
+Inspections
+Pre-PCR 
+Inspections
+Performance 
+Test
+
+
+===== PAGE 29 =====
+Planteamiento de Proyecto 
+                                           
+                                           
+Y = f ( X)
+Y=  Incrementar la disponibilidad física a 85% de la flota de camiones 797F de 
+BVC 
+X1=  Incrementar la disponibilidad física de cada camión intervenido a 88% 
+X2=  Intervenir XX camiones en el período de Marzo a Diciembre del 2017 
+X3= Enfoque del plan de recuperación de la flota en las máquinas más 
+problemáticas (bandidos) 
+X4=  Ejecutar el plan de recuperación de la flota en forma paralela a la operación 
+de mantenimiento. 
+X5=  Plan de recuperación soportado por una efectiva estructura de trabajo, 
+infraestructura, herramienta, refacciones, etc. 
+X6=  Diseño y ejecución de plan de recuperación siguiendo el concepto de linea de 
+producción con etapas muy definidas (DPEEC). 
+X7=  La recuperación de los KPI's de la flota se basan en indicadores específicos 
+de las máquinas problemáticas. 
+X8=  Efectivo control y seguimiento de los camiones intervenidos (Follow-up) 
+X9=  Fuerte involucramiento de departamento de producción (Operación). 
+Alcance de proyecto: 
+- Principal: Flota de camiones 797F de Buenavista del Cobre (BVC). 
+- Secundario: Contribuir al desarrollo de personal y procesos. 
+Fuera de proyecto: 
+Este proyecto no tiene responsabilidad directa sobre: 
+- Implementación de proyectos de mejora de procesos de 
+mantenimiento y reparación (M&R) de BVC. 
+- Proyecto formal de desarrollo de personal de mantenimiento de 
+Matco y BVC. 
+Nombre del Proyecto:    Plan Corto Plazo Flota 797F 
+Situación Deseada 
+(¿Qué beneficios se obtendrán? / ¿Qué visión tengo?) 
+Oportunidad 
+(¿Cuál es la situación actual?) 
+La producción actual y futura de la operación BVC, depende en gran medida de 
+las horas máquina disponible (disponibilidad de equipo) y su correspondiente 
+confiabilidad (mínima interrupciones de proceso). 
+Nuestra visión de la situación futura de la flota de camiones 797F,es que estos 
+operen en un ambiente controlado, satisfaciendo las metas de disponibilidad y 
+confiabilidad a un óptimo costo de mantenimiento. Esto se consigue a través del 
+trabajo en conjunto de mantenimiento y producción, aplicando procesos y técnicas 
+de gestión de vanguardia de administración de equipos móviles de minería 
+(MEM). 
+Para conseguir la estabilidad  en los resultados de la flota, debemos asegurar un 
+mínimo estandar de condición en los equipos. Esto nos proporciona una base 
+para una implementación efectiva de gestión de MEM.
+Finalmente la estabilidad del mantenimiento y los resultados de la flota, entregan 
+al departamento de producción una flota de equipo confiable con la que puede 
+trabajar para  obtener la óptima productividad  de los equipos. 
+ - La actual gestión de mantenimiento y producción están siendo desafiadas 
+por los resultados de la flota de camiones 797F 
+  - El nivel y variabilidad de los resultados en terminos de disponibilidad, 
+confiabilidad y eficiencia de las reparaciones (PA 82%, MTBS 20h, MTTR 4- 
+5h), sobrecargan las tareas de mantenimiento y a la vez producen 
+interrupciones que afectan negativamente el cumplimiento de las metas de 
+producción. 
+- Procesos de mantenimiento con variadas oportunidades. 
+- Recursos desafiados para emprender una recuperación de flota al mismo 
+tiempo de mantener funcionando las tareas de mantenimiento habitual. 
+Objetivos 
+(¿Cuáles son los objetivos del proyecto? 
+Alcance 
+(¿Cuáles son las limitantes del proyecto?) 
+Plan del Proyecto 
+(¿Qué actividades se van a seguir? ¿Cuándo se van hacer?) 
+Selección del Equipo 
+(¿Integrantes? ¿Cuáles son sus roles?) 
+• Inicio:   16 / Enero / 2017 
+• Fin:       XX  / Diciembre / 2017 
+1. → Definir estrategia de recuperación de flota (Enero 2017) 
+2. → Definir recursos en cantidad y tiempo (Enero 2017)
+3. → Aprobación / Involucramiento de niveles gerenciales Grupo México y Matco 
+(Enero 2017), Caterpillar (Febrero 2017) 
+4. → Movilización y preparación de recursos, preparación de logística para 
+arranque de proyecto. Instalación de recursos / lugar de trabajo 
+(Febrero / Marzo 2017) 
+5. → Planificación de secuencia de reparaciones e impacto en resultados. 
+(Febrero 2017) 
+6. → Ejecución del plan aplicado al primer equipo (DPEEC) (Abril 2017) 
+7. → Diseño e implementación de reportes de retroalimentación / reporte de 
+resultados / correción de desviaciones (Marzo 2017)
+8. → Gestión de proyecto - ejecución y seguimiento de puntos de revisión de 
+avance (Mensual) 
+9. → Cumplimiento de metas (Entregables), traspaso de experiencias y cierre de 
+proyecto (Diciembre 2017) 
+ 
+• Dueños de Proceso: 
+      
+• Patrocinador: 
+          
+  Alfredo Fonseca,  1 Grupo México , Josh Meyer 
+• Líderes de Proyecto: 
+        
+Jesús Campos, 1 Grupo México (Recomendación: 1 persona de 
+departamento de planeación) 
+• Equipo de Implementación: 
+         - Planificación: Martín F. Barredez 
+         - Programación: 
+XXXX 
+         - Líder de Ejecución: Miguel Olivas 
+         - Equipo de Técnicos: 
+• Responsible / Coordinator: 
+       
+Terry L. Miller (Site Performance Manager) 
+          José Gutiérrez (Dealer Mining Coordinator) 
+          1 Grupo Mexico (BVC) 
+•
+ Soporte SME:                           • Black Belt: 
+   Carlos Luque (Matco)                            Gle nn R. Carrasco (Matco) 
+     Abelardo Flores (MEM) 
+     Erik Tautkus (PPM) 
+     Grupo Cameron McGovern (MEM) 
+
+===== PAGE 30 =====
+EQUIPO REPARADO RESULTADOS AL DÍA SMU ENTREGA 
+horas 
+RESUMEN EJECUTIVO 
+RESULTADO MENSUAL MÉTRICAS DE PRIMER NIVEL (TOP TIER) 
+KPI - Métrica Antes Rep. META ACUM. ABRIL MAYO JUNIO JULIO AGOSTO SEPT. 
+(Dic 16 a Feb 17) septiembre 20, 2017 mayo 1, 2017 mayo 31, 2017 junio 30, 2017 julio 31, 20 17 agosto 31, 2017 septiembre 20, 2017 
+Horas Operadas 3494 556.6 654.6 610.8 657.2 626.8 410.0 
+Disponibilidad Física 77.9 % 90% 92.6% 89.5% 96.1% 92.3% 94.9% 91.5% 90.3% 
+Utilización Disponibilidad 71.9 % 85% 92.5% 92.5% 91.6% 91.9% 93.0% 92.1% 94.6% 
+Index Disponibilidad 74.7 % 88% 92.0% 88.8% 95.7% 91.7% 94.6% 90.8% 89.8% 
+MTBS 18.9 h 40 h 44.8 29.3 109.1 40.7 43.8 44.8 45.6 
+MTTR 6.4 h 3 - 7 h 3.9 3.7 4.9 3.7 2.5 4.5 5.2 
+MTBF 120 h 68.5 39.8 163.7 61.1 65.7 78.3 82.0 
+El seguimiento incluído en este reporte comienza a partir de las 7:00 AM del día 4 de Abril. 
+BUENAVISTA DEL COBRE - PROYECTO RECUPERACION FLOTA 797F - M&R CORTO PLAZO 
+SEGUIMIENTO DE RESULTADOS EQUIPOS RE-ACONDICIONADOS
+RESUMEN EJECUTIVO 
+DT 642 
+FECHA ENTREGA 
+abril 3, 2017                               25,786 septiembre 20, 2017 
+Página 1 de 3 
+
+===== PAGE 31 =====
+EQUIPO REPARADO FECHA ENTREGA FECHA DE REPORTE SMU ENTREGA 
+horas 
+BUENAVISTA DEL COBRE - PROYECTO RECUPERACION FLOTA 797F - M&R CORTO PLAZO 
+SEGUIMIENTO DE RESULTADOS EQUIPOS RE-ACONDICIONADOS
+GRÁFICAS DE TENDENCIAS (ACUMULADO 2017) 
+DT 642 abril 3, 2017 septiembre 20, 2017                     25,786 
+60% 
+65% 
+70% 
+75% 
+80% 
+85% 
+90% 
+95% 
+100% 
+abril-04 
+abril-09 
+abril-14 
+abril-19 
+abril-24 
+abril-29 
+mayo-04 
+mayo-09 
+mayo-14 
+mayo-19 
+mayo-24 
+mayo-29 
+junio-03 
+junio-08 
+junio-13 
+junio-18 
+junio-23 
+junio-28 
+julio-03 
+julio-08 
+julio-13 
+julio-18 
+julio-23 
+julio-28 
+agosto-02 
+agosto-07 
+agosto-12 
+agosto-17 
+agosto-22 
+agosto-27 
+septiembre-01 
+septiembre-06 
+septiembre-11 
+septiembre-16 
+septiembre-21 
+septiembre-26 
+Porcentaje (PA% & Utilización) 
+Indice de Disponibilidad 
+DT 642 - Acumulado 2017 
+Meta Indice Disponibilidad Indice Disponibilidad 
+60.0% 
+65.0% 
+70.0% 
+75.0% 
+80.0% 
+85.0% 
+90.0% 
+95.0% 
+100.0% 
+abril-04 
+abril-09 
+abril-14 
+abril-19 
+abril-24 
+abril-29 
+mayo-04 
+mayo-09 
+mayo-14 
+mayo-19 
+mayo-24 
+mayo-29 
+junio-03 
+junio-08 
+junio-13 
+junio-18 
+junio-23 
+junio-28 
+julio-03 
+julio-08 
+julio-13 
+julio-18 
+julio-23 
+julio-28 
+agosto-02 
+agosto-07 
+agosto-12 
+agosto-17 
+agosto-22 
+agosto-27 
+septiembre-01 
+septiembre-06 
+septiembre-11 
+septiembre-16 
+septiembre-21 
+septiembre-26 
+Porcentaje (PA% & Utilización) 
+Disponibilidad Física & Utilización 
+DT 642 - Acumulado 2017 
+PA % Utilización Meta PA% 
+0.0 
+10.0 
+20.0 
+30.0 
+40.0 
+50.0 
+60.0 
+70.0 
+80.0 
+90.0 
+100.0 
+110.0 
+120.0 
+130.0 
+140.0 
+150.0 
+160.0 
+170.0 
+abril-04 
+abril-09 
+abril-14 
+abril-19 
+abril-24 
+abril-29 
+mayo-04 
+mayo-09 
+mayo-14 
+mayo-19 
+mayo-24 
+mayo-29 
+junio-03 
+junio-08 
+junio-13 
+junio-18 
+junio-23 
+junio-28 
+julio-03 
+julio-08 
+julio-13 
+julio-18 
+julio-23 
+julio-28 
+agosto-02 
+agosto-07 
+agosto-12 
+agosto-17 
+agosto-22 
+agosto-27 
+septiembre-01 
+septiembre-06 
+septiembre-11 
+septiembre-16 
+septiembre-21 
+septiembre-26 
+Horas 
+Tiempo Medio entre Detenciones y Fallas (MTBS & MTBF) 
+DT 642 - Acumulado 2017 
+MTBS MTBF Meta MTBS Meta MTBF 
+0.00 
+1.00 
+2.00 
+3.00 
+4.00 
+5.00 
+6.00 
+7.00 
+8.00 
+9.00 
+10.00 
+11.00 
+12.00 
+abril-04 
+abril-09 
+abril-14 
+abril-19 
+abril-24 
+abril-29 
+mayo-04 
+mayo-09 
+mayo-14 
+mayo-19 
+mayo-24 
+mayo-29 
+junio-03 
+junio-08 
+junio-13 
+junio-18 
+junio-23 
+junio-28 
+julio-03 
+julio-08 
+julio-13 
+julio-18 
+julio-23 
+julio-28 
+agosto-02 
+agosto-07 
+agosto-12 
+agosto-17 
+agosto-22 
+agosto-27 
+septiembre-01 
+septiembre-06 
+septiembre-11 
+septiembre-16 
+septiembre-21 
+septiembre-26 
+Horas 
+MTTR - Tiempo Medio para Reparar 
+DT 642 - Acumulado 2017 
+MTTR Meta Inferior MTTR Meta Sup MTTR 
+Disponibilidad Física y Utilización se encuentran estables por arriba de la meta. Índice de Disponibilidad se muestra estable por arriba de la meta 
+.
+La gráfica muestra que el MTBS y MTBF están estables. MTTR se ha mantenido estable 
+Página 2 de 3 
+
+===== PAGE 32 =====
+EQUIPO REPARADO FECHA ENTREGA FECHA DE REPORTE SMU ENTREGA 
+horas 
+BUENAVISTA DEL COBRE - PROYECTO RECUPERACION FLOTA 797F - M&R CORTO PLAZO 
+SEGUIMIENTO DE RESULTADOS EQUIPOS RE-ACONDICIONADOS
+GRÁFICAS DE TENDENCIAS (SEPTIEMBRE 2017) 
+DT 642 abril 3, 2017 septiembre 20, 2017                     25,786 
+0% 
+10% 
+20% 
+30% 
+40% 
+50% 
+60% 
+70% 
+80% 
+90% 
+100% 
+Porcentaje (PA% & Utilización) 
+Indice de Disponibilidad 
+DT 642 - Mes Septiembre 2017 
+Meta Indice Disponibilidad Indice Disponibilidad 
+0.0% 
+10.0% 
+20.0% 
+30.0% 
+40.0% 
+50.0% 
+60.0% 
+70.0% 
+80.0% 
+90.0% 
+100.0% 
+Porcentaje (PA% & Utilización) 
+Disponibilidad Física & Utilización 
+DT 642 - Mes Septiembre 2017 
+PA % Utilización Meta PA% 
+0.0 
+20.0 
+40.0 
+60.0 
+80.0 
+100.0 
+120.0 
+140.0 
+160.0 
+180.0 
+200.0 
+Horas 
+Tiempo Medio entre Detenciones y Fallas (MTBS & MTBF) 
+DT 642 - Mes Septiembre 2017 
+MTBS MTBF Meta MTBS Meta MTBF 
+0.00 
+1.00 
+2.00 
+3.00 
+4.00 
+5.00 
+6.00 
+7.00 
+8.00 
+9.00 
+10.00 
+11.00 
+12.00 
+Horas 
+MTTR - Tiempo Medio para Reparar 
+DT 642 - Mes Septiembre 2017 
+MTTR Meta Inferior MTTR Meta Sup MTTR 
+Disponibilidad Física Índice de Disponibilidad.
+MTBS y MTBF. MTTR dentro de los límites 
+Página 3 de 3 
+
+===== PAGE 33 =====
+LISTADO DE HERRAMIENTAS PARA EJECUCIÓN
+PROYECTO "M&R CORTO PLAZO 797F BVC"
+# No. Parte Descripción Cantidad Precio Unit. Total T.M Proveedor T. Entrega
+Herramienta Neumática
+1 222-3048 PISTOLA DE IMPACTO 3/8 2
+2 222-3050 PISTOLA DE IMPACTO 1/2 4
+3 222-3053 PISTOLA DE IMPACTO 3/4 2
+4 222-3054 PISTOLA DE IMPACTO 1 1
+5 222-3055 PISTOLA DE IMPACTO 1 1
+6 222-3065 PULIDORA GRANDE 3
+7 5P-9718 RESPALDO PULIDORA 10
+8 222-3074 BURIL 2
+9 223-1159 LAPIZ NEUMATICO 2
+Herramienta de Torque / Ajuste
+1 9U-5020 TORQUE 3/8 2
+2 9U-5006 TORQUE 1/2 2
+3 9U-5007 TORQUE 3/4 1
+4 QC3ETT250 PROBADOR DE TORQUE SNAP-ON 1
+Herramienta de Torque / HYTORC (Cambio de componentes)
+1 AVANTY ICE-3 HYTORC 1" (460-3084 FT-LBS) 1
+2 AVANTY ICE-5 HYTORC 1" (804-5360 FT-LBS9 1
+3 STEALTH-4 LLAVE (604-4020 FT-LBS) 1
+4 STEALTH-4 CARTUCHO 55 MM 0
+5 STEALTH-4 CARTUCHO 46 MM 1
+6 STEALTH-2 LLAVE (278-1869 FT-LBS) 1
+7 STEALTH-2 CARTUCHO 46 MM 1
+8 JGUN-A3-SP PISTOLA NEUMATICA DE 1" 2
+9 JGUN-A1-SP PISTOLA NEUMATICA DE 3/4" 1
+10 JGUN-FRL-A REGULADOR DE PRESIÓN 1
+11 AV3-HEAD BRAZO DE REACCIÓN P/SUSP. DELANTERAS 1
+12 020046MM DADO IMPACTO 1" X 46 MM 1
+13 020055MM DADO IMPACTO 1" X 55 MM 1
+14 080055MM DADO IMPACTO 1 1/2" X 55 MM 1
+15 HY-115-2 FUENTE DE PODER PARA AVANTY Y STEALTH 1
+Herramienta Especializada (2da. Parte)
+3 INSTALACIÓN DE BELLOWS
+396-9127 HERRAMIENTA BELLOWS MANIFULES 1
+421-4079 HERRAMIENTA BELLOWS SALIDA TURBINA 1
+421-4080 HERRAMIENTA BELLOWS ENTRADA TURBINA 1
+4 RD51858 ASPIRADORA 16 GL USO RUDO
+5 176-6536 EXTRACTOR (TRANSMISIÓN) 2
+6 5P-8715 EXTRACTOR (SUSP. TRASERAS) 6
+7 KIT DE MUESTREO COMPLETO 1
+8 PRESIÓN DE ACUMULADORES
+175-5507 Nitrogen Charging Group 1
+9U-6740 Accumulator Charging Gp 1
+152-2023 Nitrogen Charging Fitting Gp 1
+334-1071 Adapter 1
+9U-6741 Adapter 1
+Herramienta de Levante
+1 439-3938 ESLABONES 3/8 4
+2 439-3939 ESLABONES 3/4 4
+3 439-3940 ESLABONES 1/2 4
+4 439-3941 ESLABONES 1 1/4 3
+5 439-3942 ESLABONES 7/8 3
+6 439-3943 ESLABONES 1 1/2 3
+7 1U-8263 BANDA 4.88 M 4218 KG 1
+8 1U-8252 BANDA 3.66 M 2812 KG 1
+9 1U-8246 BANDA 2.44 M 2109 KG 1
+10 1U-8245 BANDA 4.27 M 1406 KG 1
+11 PULPOS 3 GANCHOS 11,200 LBS 1
+12 PULPOS 4 GANCHOS 39,000 LBS 1
+13 CADENAS CON GANCHOS 4 MTS 2
+14 URR5886 MANERAL DE 1" 1
+15 URR47015 TECLE 750 KG PALANCA 1
+16 URR47315 TECLE 3.2 T PALANCA 1
+TOTAL MXN -$                
+USD -$                
+
+===== PAGE 34 =====
+# No. Parte Descripción Cantidad Precio Unit. Total T.M Proveedor T. Entrega
+Herramienta de Inspección
+1 FABRICACIÓN EXTENCIÓN ELECTRICA 15 MTS USO RUDO 3
+2 4C-6478 LAMPARA TRABAJO 15.24 M 2
+3 1U-7321 LAMPARA MANO 3
+4 PECE55 CEPILLOS DE ALAMBRE 5
+5 1U-9366 CINTA METRICA 2
+6 441-5254 PISTOLA PARA LAVAR CON SOLVENTE 1
+Herramienta de Diagnóstico
+1 317-7484 COMUNICADOR (Cambia a 466-6258) 2
+2 305-5528 CABLE VIMS 3G 2
+3 127-9797 VIMS STD 1
+4 257-9140 MULTIMETRO 2
+5 198-4240 INDICADOR DE PRESIÓN DIGITAL 1
+6 349-4200 TERMOMETRO DIGITAL 1
+7 6V-7830 TETRAGAUGE 2
+8 6V-4157 INDICADORES DE PRESIÓN (TRANSMISIÓNES) 1
+Herramienta Especializada
+1 KIT COMPLETO PARA A/C
+208-1356 BOMBA DE VACIO A/C 1
+208-1341 MANOMETROS R134 1
+208-1335 MANGUERA AZUL 1
+208-1336 MANGUERA ROJA 1
+272-3091 MANGUERA AMARILLA 1
+208-1339 COPLE BAJA 1
+208-1340 COPLE ALTA 1
+6V-7145 CASE 1
+9U-5325 TERMOMETRO 1
+2 HERRAMIENTA PRUEBA ADMISIÓN 1
+321-6022 PRESURIZADOR 2
+4C-8858 COPLE 2
+030-8370 ADAPTADOR 2
+4C-7046 REGULADOR 1
+4C-7091 VALVULA 1
+4C-7120 CONECTOR 2
+8L-6005 TEE 1
+3B-7722 CONECTOR 1
+123-5176 MANGUERA 1
+032-3506 ADAPTADOR 1
+3B-7255 CONECTOR 1
+4C-7159 CONECTOR 1
+3 KIT DE MUESTREO COMPLETO 1
+Escaleras
+1 BYPETA26 ESCALERA DE 2 MTS 2
+2 BYPETA33 ESCALERA DE 1 MTS 2
+TOTAL MXN -$               
+USD -$               
+LISTADO DE HERRAMIENTAS PARA INSPECCIÓN
+PROYECTO "M&R CORTO PLAZO 797F BVC"
+
+===== PAGE 35 =====
+Lista de Equipamiento de Oficina
+PROYECTO "M&R CORTO PLAZO 797F BVC"
+Cant. Descripción Precio Unit. Monto Moneda Ubicación
+Equipamiento de Computo
+2 Computadoras de Escritorio Área de planeación / Taller.
+2 Pantallas de 42" 4 en planeación.
+1 Escaner ScanJet Pro 2500 f1 Área de planeación.
+1 Impresora a color Área de planeación.
+2 Laptos con ET - Vims - SIS Taller.
+2 Camaras fotográficas Inspección / Ejecución
+1 Internet para Oficina Oficina
+1 Banda Ancha Móvil (Backup) Oficina
+Total:
+Mobiliario
+1 Oficina Móvil 12x60
+1 Acondicionar Oficina
+1 Muebles Oficina
+Total:
+Equipamiento Oficina
+3 Pizarrones de corcho En las 3 áreas.
+3 Pintarrones En las 3 áreas.
+1 Botiquín de primeros auxilios. 1 área
+2 Radios con frecuencia de mina Taller.
+4 Radios con frecuencia interna Taller / Oficina.
+Equipamiento Eléctrico y Red
+6 Conexiones 110 V Sala de juntas.
+8 Conexiones 110 V Sala de Juntas (Centro de mesa)
+1 Conexiones HDMI Sala de Juntas (Centro de mesa)
+1 Conexión telefónica Sala de Juntas (Centro de mesa)
+2 Conexión Ethernet Sala de Juntas (Centro de mesa)
+6 Conexiones 110 V Oficina de Ejecución
+2 Conexión Ethernet Oficina de Ejecución
+14 Conexiones 110 V Área de planeación.
+5 Conexión Ethernet Área de planeación.
+
+===== PAGE 36 =====
+Lista de Equipamiento de Bahías
+PROYECTO "M&R CORTO PLAZO 797F BVC"
+BAHÍAS Y CONTENDOR DE HERRAMIENTAS
+MARCA MODELO CANT. DESCRIPCIÓN ID LAYOUT PRECIO MONEDA SUBTOTAL COMENTARIOS
+VIDMAR VIDMAR 2 GABINETE VIDMAR PARA CONTENEDOR DE 
+HERRAMIENTAS / SUMINISTROS 12 KIT DE LIMPIEZA DE MANGUERAS Y 
+CONSUMUBLES
+ULINE H-3916 2 RACK DE REFACCIONES (Estantería de Acero 
+para Uso Pesado - 72 x 36 x 84") 2 PARA COLOCAR KITS DE BACKLOGS 
+CLASIFICADOS POR SISTEMA
+CAT 4C-3875 1 LAVADORA DE SOLVENTE (121.92 x 55.88 x 
+25.40 cm) 13 EN ESPERA DE FECHA TENTETIVA DE 
+LLEGADA
+IMM FABRICAR 1 GABINETE PARA HERRAMIENTA 
+ESPECIALIZADA 6 RESGUERDAR HERRAMIENTA DEL 
+PROYECTO
+IMM FABRICAR 1 GABINETE PARA CADENAS Y ESLINGAS 18 SOLO PARA EQUIPO DE LEVANTE
+IMM FABRICAR 4 MESAS DE TRABAJO (MOVILES) 1
+IMM FABRICAR 1 CASETA DE SUPERVISOR 4
+IMM FABRICAR 4 CANASTAS PARA PARTES EN WIP
+CANASTAS PARA RESGUARDO DE 
+PARTES A REUTILIZAR DURANTE LA  
+REPARACIÓN
+IMM FABRICAR 8 BASE PARA CAJA DE HERRAMIENTAS 14
+BRADLEY
+Lava ojos:
+# Grainger: 4YF98
+# Fabricante:  S19-921
+Base Lava ojos:
+# Grainger: 3NY85
+# Fabricante:  S19-399
+2 LAVA OJOS (Está disponible en la página de 
+Grainger en dos secciones) 21 VER CON CLIENTE
+FABRICAR 2 ESCALERAS 16 Ver con Cliente
+FABRICAR 2 ESCALERAS CHICAS 17 Ver con Cliente
+1 Riñon de Aceite Eje Trasero 19 Ver con Cliente
+1 Riñon de Aceite de Transmisión 19 Ver con Cliente
+1 Riñon de Aceite de Dirección 19 Ver con Cliente
+1 Riñon de Aceite de Hidráulico 19 Ver con Cliente
+TOTAL MXN -$                      
+USD -$

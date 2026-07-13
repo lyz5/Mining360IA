@@ -1,0 +1,251 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Engine Bay Buggy Steps 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+Engine Bay Buggy Steps ........................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+  
+November 2011 
+1107-1.11-1239 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+An increased number of technician incidents have been caused by improper working platforms in 
+Off Highway Truck (OHT) engine bays. The engine components and accompanying supports 
+provide an unsuitable surface for supporting technician footing during servicing. The lack of 
+ergonomic working area has caused increased technician fatigue and incidents. On some 
+occasions, technicians using these as foot holds have caused damage to electrical and hydraulic 
+components. 
+ 
+This best practice details the addition of foldaway “buggy steps” that can be used by technicians 
+during servicing to provide adequate working platforms. The installation of well-positioned steps 
+should also reduce or eliminate the need to use ladders and platforms from ground level for 
+adequate support.   
+ 
+ 
+2.0 Best Practice Description 
+ 
+A current practice for many technicians is to complete OHT engine servicing using work platforms 
+or ladders for support from ground level. Shifting these platforms is often a timely exercise and 
+often these platforms are blocked by engine cross members or strut mounts. Subsequently it is a 
+common scene where technicians utilize the chassis and other components in the engine bay as 
+foot holds while completing servicing.     
+ 
+Support steps can be fitted in strategic locations onto the chassis rail where sufficient clearance is 
+available. As shown in Figure 1, the supports should be placed in a conspicuous area while 
+having little to no effect on other systems located in the engine bay. If the mounts are to be 
+welded on any areas other than shown in this Best Practice, it should be verified that the position 
+will not affect the integrity of the component the mount is welded to.  The Dealers Solutions 
+Network (DSN) can be contacted to assure the location of the mount will not affect the reliability 
+of the component to be welded on.  Hand holds also should be present to assist in the use of the 
+steps. 
+ 
+After servicing, the supports can be folded away to maintain space beside the engine. The 
+supports should also be installed using the four fastening points for easy removal if required.  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Engine Bay Buggy Steps 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1107-1.11-1239 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Fig. 1 Buggy step installed onto weld-plate 
+ 
+  
+Different sized supports can be used where clearance is an issue. It is suggested that the 
+supports should be of similar design to those shown in Figure 3 as well as having a load rating 
+and an adequate slip resistant surface.  
+  
+ 
+ 
+Fig. 2 Different sized steps installed on strut mount and frame rail 
+  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Engine Bay Buggy Steps 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1107-1.11-1239 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Fig. 3 Example of foot hold products 
+ 
+ 
+3.0 Implementation Steps 
+ 
+1. Buggy steps shown in the best practice have been installed on a 793C OHT, but 
+installation can be replicated in OHT’s ranging from 777 – 797.  
+ 
+2. The foot-hold products shown above can be procured from the Caterpillar parts system by 
+referencing Part Number 153-3861. 
+   
+3. Weld plates can be fabricated from 12mm Grade 250 mild steel plate with M8 threaded 
+holes to suit foot hold anchor points. 
+ 
+4. 25mm M8x1.25 fasteners (8T-4908) and flat washers (9M-1974) to suit should be used to 
+affix foot holds to threaded weld plates. 
+ 
+5. Weld plate can be welded to chassis frame with a minimum of 6” from structural weld 
+seams or joins. Weld seams must run parallel to the chassis rail only to mitigate high 
+stresses; Figure 1 shows weld plate fixed to the chassis with seams on both top and 
+bottom edges. All weld quality shall conform to American National Standards Institute 
+(ANSI)/American Welding Society (AWS) D14.3.  Consult DSN if welding on a location 
+other than what is shown in this Best Practice. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Engine Bay Buggy Steps 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1107-1.11-1239 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4.0 Benefits 
+ 
+1. 450kg load rated, slip resistant “buggy steps” provide a safer platform for technician 
+footing. 
+2. Steps allow mechanics to more safely move about in engine bays. 
+3. Mechanics can position themselves more comfortably in engine bays for more ergonomic 
+working conditions. 
+4. Steps provide for less cramped working conditions. 
+5. Spring-loaded steps fold away flat against chassis rail when not in use. 
+6. Minimized usage of ladders to access engine bay area. 
+ 
+ 
+5.0 Resources Required 
+ 
+Step Part Number (153-3861). 
+25mm M8x1.25 fasteners (8T-4908). 
+Flat Washers (9M-1974). 
+Fabrication of threaded weld plate required.  
+SMA Welding required on truck body.
+  
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None at this time. 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Paul Carter 
+WesTrac workshop coordinator KCGM  
+paul.carter@westrac.com.au 
++61 8 9022 1336 
+Gary Austin 
+gary.austin@westrac.com.au 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Engine Bay Buggy Steps 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1107-1.11-1239 
+Caterpillar Confidential:  GREEN          Page 4 of 4

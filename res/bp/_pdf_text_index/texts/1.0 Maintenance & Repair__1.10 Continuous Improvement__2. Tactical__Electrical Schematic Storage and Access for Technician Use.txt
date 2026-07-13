@@ -1,0 +1,260 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Electrical Schematic 
+Storage and Access for 
+Technician Use 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Electrical Schematic Storage and Access for 
+Technician Use .......................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 1 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 2 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+October 2012 
+1208-1.10-1285 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+ 
+With the advancement of Technology in today’s Electrical & Hydraulic Systems, it is a 
+requirement that Service Technicians have ready access to a readable System Schematic. 
+It is important for these schematics to be readily accessible for Shop and Field use, as well as 
+being large enough to read, durable enough to withstand wind & rain, and allow for temporary 
+marking with grease pencils during the trouble-shooting process. 
+ 
+2.0 Best Practice Description 
+ 
+Newmont’s Phoenix Mine has created a cabinet that stores laminated copies of hydraulic and 
+electrical schematics for all their mobile equipment.  This cabinet is located in the Main Shop and 
+is easily accessible to all technicians.  Technicians can remove a laminated schematic, take it to 
+the machine they are working on, mark it up with a grease pencil as they trace wires or hoses and 
+work their way through a diagnostic fault-tree. 
+When they are finished with the schematic, it can be easily wiped clean and placed back in the 
+cabinet for the next use. 
+ 
+3.0 Implementation Steps 
+ 
+Cabinet  
+Deciding what type of Cabinet is available or that space constraints allow for. 
+Ideally the cabinet should allow the schematics to hang in a way they can dry if they are wet. 
+Newmont’s cabinet is 18” deep x 39” wide x 54” height. 
+By having two rods in one direction and two in the other direction, you can quickly sort through 
+and find the schematic you want and then slide all to the rearward area, the others to the front, 
+then when you open the front panel, the one you want is easily removed from the rods. 
+ 
+Schematics 
+“Blown Up” schematics should be printed and laminated in the appropriate size to hang in the 
+selected cabinet.  The schematics are taken directly from the CAT service manual. 
+The schematics should hang in a way that when the cabinet is opened, the description of each 
+schematic is readily visible. 
+On the back side of each schematic, critical system spec’s are provided for reference. 
+At least once a year the schematics should be checked to verify they still match what is available 
+in SIS. 
+ 
+4.0 Benefits 
+ 
+This resource facilitates a more rapid and accurate trouble-shooting & diagnostic process 
+because technicians are inclined to fully utilize these accessible, user friendly schematics. 
+These schematics are relatively inexpensive to produce, so they can be easily updated any time 
+SIS changes are made to the source document. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electrical Schematic Storage and Access for 
+Technician Use 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1208-1.10-1285 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+5.0 Resources Required 
+ 
+• Cabinet 
+o The file cabinet in this example is made by: 
+o Easi File Corporation 
+o Irvine, California.   Ph  1-714-855-4121 
+o Easi File Model no. EF200 
+• Laminated Schematics 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electrical Schematic Storage and Access for 
+Technician Use 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1208-1.10-1285 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electrical Schematic Storage and Access for 
+Technician Use 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1208-1.10-1285 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Newmont’s Phoenix Site Tige Brown 
+Cashman’s Phoenix Site Manager Phil Kendall 
+Caterpillar’s Product Performance Manager Howard Woolard 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electrical Schematic Storage and Access for 
+Technician Use 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1208-1.10-1285 
+Caterpillar Confidential:  GREEN          Page 4 of 4

@@ -1,0 +1,293 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Lug Nut Disassembly and Assembly Support Apparatus.pdf
+PAGES: 8
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+February 2022 
+4.03-220202-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+M
+INING DEALER BEST PRACTICE 
+Lug Nut Disassembly and 
+Assembly Support 
+Apparatus
+M
+aintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+Lug 
+Nut Disassembly and Assembly Support 
+Apparatus...................................................................... 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description.................................... 2 
+3.0 Implementation Steps ......................................... 4 
+4.0 Benefits ................................................................ 6 
+5.0 Resources Required ........................................... 7 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices........................................ 7 
+8.0 Acknowledgements ............................................. 8 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lug Nut Disassembly and Assembly Support 
+Apparatus 
+DATE 
+2/02/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220202-1 
+Caterpillar: Confidential  Yellow          Page 2 of 8 
+1.0 Introduction  
+ 
+It’s difficult for a single person to perform the removal and tightening process of lug nuts on tires, 
+and there is potential for a safety incident to occur because the tools used could become dislocated 
+and cause injury or damage. Therefore, the current process requires two people - one person to 
+support and the other person to do the removal/tightening process. However, by using this lug nut 
+support apparatus, the tire lug nuts of machines can be removed and tightened in a safer manner 
+with a single person.  
+ 
+ 
+2.0 Best Practice Description 
+ 
+The lug nuts on the machine’s tires are removed and tightened with a bolt gun. During the removal 
+or tightening of the lug nuts, an extension intermediate arm and counter support are required as 
+they are on the inside of the rim.  This process requires two people working together. During 
+removal, some bolts may be jammed and a  socket wrench is used with the intermediate arm by 
+applying force. During tightening, the lug nuts must be at torque when fitted.  Bolts that are not 
+tightened properly can loosen and even fall. In any of these situations, during removal or tightening, 
+the arm or wrench can dislocate, causing a dangerous situation. Different situations just described 
+can be seen in the pictures below. 
+ 
+ 
+ 
+Figure 1: Bolts are loose 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lug Nut Disassembly and Assembly Support 
+Apparatus 
+DATE 
+2/02/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220202-1 
+Caterpillar: Confidential  Yellow          Page 3 of 8 
+ 
+ 
+Figure 2: A bolt has fallen 
+ 
+When the apparatus is not used, removal and assembly processes can be seen in the pictures 
+below. 
+ 
+ 
+Figure 3: Two-person disassembly of bolts 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lug Nut Disassembly and Assembly Support 
+Apparatus 
+DATE 
+2/02/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220202-1 
+Caterpillar: Confidential  Yellow          Page 4 of 8 
+ 
+Figure 4: A person slogging on dissembling bolts 
+ 
+3.0 Implementation Steps 
+ 
+1. Tilt the apparatus on its wheels and bring it next to the machine by pushing or pulling it. 
+ 
+2. Adjust the height of the apparatus according to the lug nut height range. 
+ 
+3. Place the long intermediate link in a suitable support place from the various ones attached to 
+the apparatus. 
+ 
+4. Remove or tighten the lug nuts. 
+ 
+ 
+Figure 5: Disassembly of the lug nuts with the new apparatus 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lug Nut Disassembly and Assembly Support 
+Apparatus 
+DATE 
+2/02/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220202-1 
+Caterpillar: Confidential  Yellow          Page 5 of 8 
+ 
+Figure 6: Assembly of the lug nuts with the new apparatus 
+ 
+ 
+Figure 7: Various support places located on the apparatus 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lug Nut Disassembly and Assembly Support 
+Apparatus 
+DATE 
+2/02/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220202-1 
+Caterpillar: Confidential  Yellow          Page 6 of 8 
+ 
+Figure 8: Tools are used safely, parallel to the ground 
+ 
+4.0 Benefits 
+ 
+• Diverse range of use, because it can be adjusted according to the machine size and the lug nut 
+height; 
+• Convenient to use in the field and easy to transport; 
+• Provides support for the long intermediate arm and socket wrench when removing or tightening 
+lug nuts; 
+• Allows one person to easily perform the process of removing and tightening the lug nuts; 
+• Prevents injury or damage by eliminating the risk of the socket wrench or long intermediate arm 
+being dislodged during disassembly and assembly.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 9: The apparatus can be easily transported 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lug Nut Disassembly and Assembly Support 
+Apparatus 
+DATE 
+2/02/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220202-1 
+Caterpillar: Confidential  Yellow          Page 7 of 8 
+5.0 Resources Required 
+ 
+Item Cost 
+Material $35 
+Labor 3 hours 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Drawing (attached) 
+ 
+Figure 10: Engineering print of the apparatus. Dimensions in cm 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lug Nut Disassembly and Assembly Support 
+Apparatus 
+DATE 
+2/02/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220202-1 
+Caterpillar: Confidential  Yellow          Page 8 of 8 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+ 
+Mustafa Tuzcu  
+CRC Engineer Intern 
+Borusan Makina ve Güç Sistemleri  
+ 
+ 
+This Best Practice designed by : 
+ 
+Ferdi Yiğit 
+Quality and CI Specialist 
+Borusan Makina ve Güç Sistemleri  
+ 
+ 
+Project and Best Practice supported by : 
+ 
+Barış Kaan Bilir 
+Ankara CRC Team Leader  
+Borusan Makina ve Güç Sistemleri  
+ 
+Volkan Yayman 
+CRC Manager  
+Borusan Makina ve Güç  Sistemleri

@@ -1,0 +1,796 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER  BEST PRACTICE SERIES  
+Payload Management 
+ 
+Maintenance Application Component Life 
+Management 
+Component 
+Rebuild 
+MARC 
+Management 
+   
+ 
+ 
+ 
+Payload Management ................................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ...................................... 13 
+4.0 Benefits ............................................................ 14 
+5.0 Resources Required ........................................ 14 
+6.0 Supporting Attachments / References ............. 15 
+7.0 Related Best Practices .................................... 15 
+8.0 Acknowledgements .......................................... 15 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+  
+ 
+ 
+ 
+ 
+  
+November 2012 
+0707-1.1-1089 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+Off highway truck payload management is a fundamental requirement for proper equipment 
+management. Proper payload management results in the following benefits: 
+ 
+1. Enhanced safety 
+2. Productivity optimization -  Best possible ROI / Asset utilization 
+3. Fuel consumption optimization 
+4. Improved tire life management 
+5. Improved component life management 
+6. Improved frame and body life management 
+7. Improved body and bucket fill factors 
+8. Overall cost per ton improvements 
+9. Documented target payload 
+10. Sustainable payload management practices 
+11. Integral Historical data sets 
+ 
+Payload Management practices provides the most benefit when implemented and applied 
+throughout the life of a machine. This will include implementation of practices prior to the order of 
+the first machine and practices applied through the life of the machine.   
+ 
+There are many tools used to achieve successful Payload Management. Tools such as tare 
+weight scales, or full size scales, and volumetric scanning can improve customer operations. 
+ 
+The tools are used to ensure proper bucket and body sizing prior to placing the machine orders, 
+to adhere to target payloads and proper load placement, to recording and managing periodically   
+gathered data. These are steps that will be discussed in greater detail throughout this document.  
+ 
+Whenever dealers enter into a contract with a customer guaranteeing Component Cost per Hour 
+and Availability, they should include a requirement that the customer follows a truck payload 
+agreement which would be based on Caterpillar’s Truck Payload Policy “10/10/20”.  
+ 
+Compliance to the Large Mining Truck - Truck Payload Policy "10/10/20" and diligent truck 
+payload management are also requirements when requesting participation from Caterpillar in 
+support of warranty considerations, maintenance and repair contracts (MARC’s) for Mining 
+Trucks, and risk partnering agreements. It should be agreed that regularly validated VIMS data is 
+the agreed and accepted source for payload data. 
+ 
+Non-compliance to the Large Mining Truck - Truck Payload Policy "10/10/20" and poor truck 
+payload management will increase risk and raise the following concerns: 
+ 
+1. Safety, exceeding steering, brake and ROPS (roll over protection structure) certification. 
+2. Loss in productivity due to under- or over-loads. 
+3. Tire life reduction from impact damage (spillage) or exceeding TKPH/TMPH value of the 
+tire. 
+4. Decreased component life. 
+5. Increase in quantity, severity and frequency of frame/body cracks. 
+6. Increase in haul road maintenance cost and frequency.  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Payload Management 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0707-1.1-1089 
+Caterpillar Confidential:  GREEN         Page 1 of 15 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+ 
+A customer who is non-compliant to the dealer Truck Payload Agreement in a contract 
+agreement/policy could result in the dealer cancelling the guarantee or entire contract. 
+  
+Non-compliance to the Caterpillar’s Large Mining Truck - Truck Overload Policy "10/10/20" 
+could result in warranty claims being denied due to failures outside defective parts and 
+workmanship, goodwill support being denied due to not managing the customer and their 
+requirements, and the Risk Partnering agreement being canceled or modified. All of the above 
+financially impact the dealer and customer. 
+ 
+2.0 Best Practice Description 
+Off Highway Truck payload management involves multiple steps and systems. To achieve the 
+best cost per ton value, trucks need appropriately sized bodies (matched to the loading tool 
+wherever possible), accurate payload targets, properly updated off- and on-board software, and 
+hardware that is correctly configured and calibrated. An ongoing maintenance, support and 
+service program also needs to be in place to ensure that the on-board system is monitored and 
+maintained to deliver consistent data. Once the data is off-board it needs to be correctly 
+interpreted, reported and archived. Reports must be completed as necessary so that safety, 
+productivity, and component lives are optimized. Any contractual deviations and training 
+requirements need to be quickly identified and resolved. 
+ 
+      Key Segments 10/10/20 Policy 
+• Material density studies will deliver material weight which can be used to better determine 
+bucket and body sizes. Utilizing the correct bucket and body sizes will deliver the correct pass 
+match, eliminate partial bucket fills and additional passes to complete the load. Additional 
+passes can increase cost per ton by 5–10% 
+ 
+                                          
+                               
+                                          Example of TVS (Volumetric Scanning) 
+ 
+ 
+ 
+ 
+Scanner 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Payload Management 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0707-1.1-1089 
+Caterpillar Confidential:  GREEN         Page 2 of 15 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+• C orrect target payload will deliver the payload that the loading tool operators should achieve 
+on every load. Target Payload is Target Gross Machine Weight minus Empty Weight equaling 
+Target Payload. 
+ 
+                  
+          
+  
+ 
+           
+                                               
+ Example of truck tare weight system  
+              
+Ongoing measurement and understanding of payloads is an exercise that must be performed 
+several times per year to gain a clear understanding of operational changes and improvements. 
+An annual weighing will not deliver the sampling to effectively manage change. 
+ 
+                          
+                                           
+                                                    Example of truck weight and scanning system 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Payload Management 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0707-1.1-1089 
+Caterpillar Confidential:  GREEN         Page 3 of 15 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+• Training 
+- Operations – to understand the importance and effects of truck spotting and load 
+placement on payload management 
+- Maintenance – to understand the importance and effect that cylinder maintenance and 
+proper strut pressure has on payload management 
+• Systems – VIMS (Vital Information Management System), TPMS (Truck Payload 
+Management System), RAC (Road Analysis Control) 
+• Effects of Payload Management 
+- Machine durability – struts, tires, components 
+- Machine stability, spillage 
+- Cycle time / productivity 
+- Accurate target payloads 
+- Fuel consumption improvement 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Payload 
+Accuracy 
+ 
+ 
+Safety 
+ 
+Fuel 
+ 
+Component 
+Life 
+ 
+Machine 
+Stability 
+ 
+Spillage 
+ 
+Productivity 
+ 
+Payload 
+Management 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Payload Management 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0707-1.1-1089 
+Caterpillar Confidential:  GREEN         Page 4 of 15 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+ 
+2.1 Large Mining Truck - Truck Payload Policy "10/10/20"  
+Caterpillar’s payload policy, referred to as the “10/10/20” policy, states that. 
+ 
+“No more than 10 percent of payloads may exceed 110% the target payload; no single payload shall ever exceed 
+the Maximum Allowable Payload, typically 120% of Target Payload. The mean of the payloads shall not exceed the 
+target payload, hence no more than 50 percent of payloads may exceed the Target Payload. The rated capacity of 
+the tires should always be considered in any evaluation.” 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Payload Management 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0707-1.1-1089 
+Caterpillar Confidential:  GREEN         Page 5 of 15 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+Correct target payload: 
+• The correct target payload for each truck on site should be calculated and recorded. This 
+can be performed and documented using a tare weight system.  
+• Chassis weight, truck configuration, body, tires, fuel tank, factory, debris and local 
+attachments all need to be factored into the calculation in order to ensure correct target 
+payload. 
+• Caterpillar has a weight configuration MS Excel file that is useful to calculate target 
+payload if the “Tare Weight System” is unavailable. Contact the regional Caterpillar Global 
+Mining Commercial Representative for access to this file or to schedule a tare weight 
+system for the applicable model(s).  
+• The correct, documented target payload, should be programmed into the TPMS/VIMS 
+system. 
+• Future attachments and additional body liners need to be monitored and the current Target 
+Payload must be recalculated and adjusted if needed. 
+• “Carry back” in each body must be monitored and removed. 
+• C alibrated scales or a tare weight system must be used to verify tare weights.   
+• The data collected from the tare weight system or scales will only be recognized if the 
+operator is in current certification. 
+ 
+                       
+                 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Payload Management 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0707-1.1-1089 
+Caterpillar Confidential:  GREEN         Page 6 of 15 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+ 
+ 
+ Example of Caterpillar Payload Configuration Calculation MS Excel, files available from Global Mining Representative 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Payload Management 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0707-1.1-1089 
+Caterpillar Confidential:  GREEN         Page 7 of 15 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+2.2 Training 
+ 
+2.2.1 Operations Training 
+Operations Training is a key component of payload management. Both truck and loader 
+operators as well as mine management (supervision, engineering, planning, etc.) need a good 
+understanding of proper load placement and accurate target payloads.  A detailed understanding 
+of VIMS payload warnings, score board operation, payload lamp functions and the potential 
+effects of poor payload management is also part of this key segment. 
+ 
+Placement of payload 
+There are three types of improper load placement: load shifted towards the front, 
+load shifted towards the rear, and load shifted towards the side.  
+ 
+All three types of improper load placement negatively impact frame and body life. If the load is 
+shifted towards the front, the front brakes, wheel bearings, front tires, front suspension, steering, 
+hydraulic hoist system, body rest pads, and body canopy will be negatively impacted.  
+ 
+Moving the CG (center of gravity) forward will also result in the VIMS system recording an 
+inaccurate light load. 
+ 
+If the load is shifted towards the rear, the final drives, suspension cylinders, and rear tires will be 
+negatively impacted. Furthermore, the payload will become unstable and may spill off the back of 
+the body. 
+ 
+Moving the CG back will also result in the VIMS system recording an inaccurate heavy load. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Payload Management 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0707-1.1-1089 
+Caterpillar Confidential:  GREEN         Page 8 of 15 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+ 
+ 
+If the load is shifted towards the side, the final drive, bearings, hoist cylinders, and pivot bore 
+areas will be negatively impacted.  
+ 
+An off center load will also result in the VIMS system recording an inaccurate load. 
+ 
+ 
+Loading trucks on uneven ground greater than 5% grade will also result in inaccurate payload 
+under the loading tool. Second gear reweigh may improve the accuracy of the displayed / 
+recorded payload. 
+ 
+Loading trucks with one or both sets of the rear wheels contacting the load face or toe will 
+negatively impact the tires, frame and suspension cylinders. This will also result in an 
+inaccurate load under the loading tool. Second gear reweigh may improve the accuracy of the 
+displayed / recorded payload. 
+ 
+It is important that the section of road where the truck initially changes from 1
+st to 2nd gear is as 
+level and even as possible – this will optimize the 2nd gear reweigh and improve payload 
+accuracy. 
+ 
+    TVS (Volumetric Scanning) can be used to view and monitor load placement as well as  
+    assist in operator training. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Payload Management 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0707-1.1-1089 
+Caterpillar Confidential:  GREEN         Page 9 of 15 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+       
+   
+ 
+                                                   
+ 
+The data delivered from scales and scanning will document the load position with both primary 
+numbers and a visual image. As load position is critical to TPMS accuracy, scales are the tool 
+for taking these measurements and recording the data.  During weight studies, it is important 
+to determine if the body load indicator is in the correct location.  This is gained by physically 
+viewing the load position relative to the body load indicator whilst you have a best practice 
+payload, IE optimal axle distributions and target payload. 
+ 
+Empty axle split is also critical to TPMS accuracy. If attachments are added and the factory 
+empty axle split is change, TPMS system will be affected and impact the accuracy of the data. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+Right rear 
+suspension cylinder 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Payload Management 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0707-1.1-1089 
+Caterpillar Confidential:  GREEN         Page 10 of 15 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+  Example of truck contacting the bench. Notice how the pressure in the right rear suspension cylinder is 
+dramatically higher than the other cylinders. 
+ 
+ 
+ 
+2.2.2 Maintenance Training 
+ 
+Suspension cylinder maintenance: 
+• The accuracy of the data from each suspension cylinder is critical to the system accuracy. 
+• The mechanical function of the cylinders need to be maintained with the correct oil and 
+nitrogen charge, adequate grease for the front cylinders, and adequate lubrication for all 
+suspension link/cylinder pins (refer to SEHS9411-10 Servicing the Suspension Cylinders For 
+Off Highway Trucks for more information). 
+• The sensing function needs to be maintained.  Strut pressure sensors, harness, harness plugs 
+and the seals/valves in the sensing block all need to be in good working order. 
+• The suspension cylinders and sensing system should be a part of the site maintenance 
+program. Ride height, nitrogen charge, and sensor accuracy should be checked at least once 
+per year or every 6000 SMU. 
+• The suspension cylinder pressure trends, left to right pressure variance, and event list should 
+be monitored on a weekly basis using VIMSpc, VIMS supervisor, or MineStar Health. The 
+trends can show trucks with pressure sensing events or nitrogen leaks.  The VIMS event list 
+will show any intermittent or active fault codes. 
+ 
+ 
+ 
+ 
+ 
+ Example of a custom MineStar suspension cylinder exception report 
+ 
+This report indicates any units with individual cylinder pressures that deviate 10% outside the fleet 
+average. The report also shows any left to right cylinder differences with a positive or negative 
+variance greater that 50 PSI.  This allows trucks with active or potential problems to be identified so 
+corrective steps can be taken. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Payload Management 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0707-1.1-1089 
+Caterpillar Confidential:  GREEN         Page 11 of 15 
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ Example of custom MineStar trend graphs 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Payload Management 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0707-1.1-1089 
+Caterpillar Confidential:  GREEN         Page 12 of 15 
+
+===== PAGE 14 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.3 Systems – VIMS, TPMS, RAC 
+ 
+2.3.1 VIMS  
+Refer to the following: 
+RENR2630: Systems Operation - 784C – 797B Off Highway Truck / Tractors Vital Information 
+Management System (VIMS) 
+RENR2635:  Systems Operation - 784C – 797B Off Highway Truck / Tractors VIMS Truck 
+Payload System 
+KENR5955-02: Systems Operation - 773F, 773F OEM, 777F and 777F OEM Off-Highway 
+Truck/Tractors and 775F and 775F OEM Quarry Truck Vital Information Management System 
+(VIMS) 
+KENR9023-04: Systems Operation - 793F and 797F Off-Highway Truck VIMS, Monitoring and 
+Payload 
+ 
+2.3.2 TPMS 
+Refer to the following: 
+SENR4733: Systems Operation and Testing and Adjusting – 69D – 793 Off Highway Truck / 
+Tractor and 771D-775E Quarry Trucks Payload System 
+ 
+2.3.3 RAC 
+Refer to the following: 
+RENR2636: Systems Operation – Off Highway Truck Road Analysis Control (RAC) 
+ 
+2.4 Effects of Payload Management 
+Refer to the following Cornerstone Technical Sales Presentation: 
+AEXC0614:  Mining Machine Applications 
+AERQ0021-01:  Haul Road Design & Management   
+AEXC0638:  Truck Tire Management 
+ 
+3.0 Implementation Steps 
+• Conduct density analysis using TVS (Transcale Volumetric Scanning) when sizing truck 
+and loading tool bodies and buckets. This will deliver material density and offer greater 
+details when sizing fleets based on different material densities. Perform a scale study to 
+validate target payload, body capacity and TPMS accuracy. 
+• Perform a tare weight (target payload) study at the time of commissioning to establish and 
+verify target payload. 
+• Create systems to record and document payload data and operations. 
+• Conduct training with maintenance, and operations personnel. 
+• Establish strut maintenance and calibration programs. 
+Left hand set show a normal trend, right hand set shows a truck with problems.  
+ Mechanical and charge problems typically impact all cylinder trend lines, if one cylinder is under 
+charged, the other three cylinders carry more load.  
+ Electrical issues typically impact a single trend line, as the other cylinders are still carrying their 
+typical load. 
+ May be indicating a Front-Right load placement condition. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Payload Management 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0707-1.1-1089 
+Caterpillar Confidential:  GREEN         Page 13 of 15 
+
+===== PAGE 15 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+• Assign personnel responsible for reporting abnormal or an out of spec condition. 
+• Maintain and re-evaluate implementation steps on a semi or quarterly basis or as needed 
+after abnormal or out of spec condition is identified. 
+  
+ 
+4.0 Benefits 
+Off highway truck payload management is a fundamental requirement for good equipment 
+management. It is also a factor in optimizing owning and operating costs. Focus on payload 
+management can result in the following benefits: 
+ 
+1. Enhanced safety 
+2. Productivity optimization (cost per ton reduction) 
+3. Fuel consumption optimization 
+4. Improved tire life management 
+5. Improved component life management 
+6. Improved frame and body life management 
+7. Target Payload accuracy 
+8. More accurate body and bucket sizing 
+9. TPMS management and data accuracy 
+Good payload management can be used to support warranty and goodwill claims along with 
+these additional benefits: 
+• Managing payloads and max GVW will place the truck in a safe range when considering 
+structures and braking designs of the hauling units 
+• Managing consistent target payloads will reduce operating costs of the hauling fleet thus 
+reducing cost per ton 
+• When hauling units are operated in the max GVW range, Cat mechanical drive trucks will 
+perform in 2
+nd gear on 12% total effective grade at a lower engine RPM than in 1st gear, 
+max RPM which will increases fuel burn and reduces engine life 
+• Documented material density, which helps with proper bucket and body sizing, less free 
+board, reduced tare weights and greater payloads. Proper bucket and body sizing can also 
+reduce partial passes reducing cost per ton 
+• These tools will also validate the accuracy of the on-board systems on a regular basis 
+ 
+ 
+5.0 Resources Required 
+The size of the fleet and the level of detail required in the reports will drive the required resources. 
+Payload management should be part of the equipment management process on site. 
+ 
+If the fleet is large enough and the site has a dedicated Fleet Analyst, payload management 
+should be part of their responsibility. Tare weight, full size scales and volumetric scanning system 
+should be considered as on site validation tools. 
+ 
+The computers and programs at site level should already be in place for VIMS and ET (electronic 
+technician). If not, a notebook computer and subscriptions to VIMSpc and VIMS Supervisor will 
+be required.  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Payload Management 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0707-1.1-1089 
+Caterpillar Confidential:  GREEN         Page 14 of 15 
+
+===== PAGE 16 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+• For large fleets, various wireless communication options and EMS reporting packages are 
+available to provide exception based and detailed reports on a daily, weekly and monthly 
+basis. 
+• Calibrated scales should be used when possible for setting target payload and calibrating 
+suspension cylinders. Dealers and Caterpillar can assist in obtaining these resources. 
+These systems are also designed to communicate with the systems we have in place 
+today. 
+  
+6.0 Supporting Attachments / References 
+Caterpillar Mining Trucks Payload Management Guidelines AEX0250-02.pdf 
+Road Analysis Control Salesgram TELQ4461.pdf 
+Truck Production System Salesgram YEXQ0274.pdf 
+Machine ECM and VIMS Set-Up Information.pdf 
+ 
+7.0 Related Best Practices 
+None at this time. 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Alexander Colquhoun 
+Finning Canada 
+Equipment Manager – Mining 
+ 
+Marty Dains 
+Caterpillar Global Mining 
+Dains Marty 
+M@cat.com 
+ 
+Oscar Villalobos 
+Caterpillar Global Mining 
+VILLALOBOS_Oscar_E@cat.com 
+ 
+Tim Noon 
+Caterpillar Global Mining 
+Noon_Timothy_E@cat.com 
+ 
+Sean Gladieux 
+Caterpillar Global Mining 
+Gladieux Sean M@cat.com 
+ 
+Kent Clifton 
+Caterpillar Global Mining  
+Clifton_Kent_H@cat.com 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Payload Management 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0707-1.1-1089 
+Caterpillar Confidential:  GREEN         Page 15 of 15

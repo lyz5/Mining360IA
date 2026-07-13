@@ -1,0 +1,118 @@
+===== PAGE 1 =====
+MINING DEALER BEST PRACTICE SERIES
+Fabricated Tool to Remove and 
+Install OHT Wheel Studs 
+Application Maintenance Site 
+Manage
+ment
+Component 
+Rebuild Safety MARC 
+Manage
+ment
+Fabricated Tool to Remove and Install OHT Wheel 
+Studs..........................................................................0  
+1.0 Introduction........................................................ 1 
+2.0 Best Practice Description .................................. 1 
+3.0 Implementation Steps........................................ 3 
+4.0 Benefits ............................................................. 3 
+5.0 Resources Required.......................................... 3 
+6.0 Supporting Attachments / References............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ........................................... 3 
+March 07
+0307-4.3-1071
+DISCLAIMER: The information and potential benefits included in this document are based upon 
+information provided by one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. 
+Caterpillar makes no representation or warranty about the information contained in this document or 
+the products referenced herein. Caterpillar welcomes additional “Best Practice” recommendations from 
+our dealer network.
+
+===== PAGE 2 =====
+CAT GLOBAL MINING DEALER BEST PRACTICE SERIES
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED.
+1.0 Introduction 
+There is no Caterpillar designed tool to remove and install Off Highway Truck wheel studs from 
+the flange except for the 797wheel group.  For other models, the common practice is to remove 
+the studs manually with a hammer.  This process creates considerable noise in the shop, is time 
+consuming, and fatiguing for the technician 
+Some dealers have designed a hydraulic press operated tool for stud removal and installation.   
+2.0 Best Practice Description 
+Tooling required: 
+Cat 3S6224 Hydraulic 
+Pump Gp 
+RC154 Hydraulic Cylinder
+15 Ton Capacity
+Fabricated Tool for OHT
+777-793
+Fabricated Tool to Remove & Install OHT Wheel Studs 
+DATE 
+3/22/2007 
+CHG 
+NO 
+01 
+NUMBER 
+0307-4.3-1071
+Caterpillar: Confidential  GREEN
+Page 1 of 3
+
+===== PAGE 3 =====
+CAT GLOBAL MINING  DEALER BEST PRACTICE SERIES
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED.
+Fabricated Tool to Remove & Install OHT Wheel Studs 
+DATE 
+3/22/2007 
+CHG 
+NO 
+01 
+NUMBER 
+0307-4.3-1071
+The process: 
+Tool used to remove a stud.   
+• To install studs, simply reverse the tool.
+• Works on both front and rear wheel hubs.
+• Stud is pressed out through the machined hole
+in the base of the tool.
+Caterpillar: Confidential  GREEN
+Page 2 of 3
+
+===== PAGE 4 =====
+CAT GLOBAL MINING DEALER BEST PRACTICE SERIES
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED.
+Fabricated Tool to Remove & Install OHT Wheel Studs 
+DATE 
+3/22/2007 
+CHG 
+NO 
+01 
+NUMBER 
+0307-4.3-1071
+3.0 Implementation Steps 
+• It is necessary to fabricate the stud removal and installation tool.
+• Drawing are attached to this Best Practice
+4.0 Benefits 
+• Improves labor efficiency and requires less time to remove / install stud than manual methods.
+• Reduces shop noise levels.
+• Less fatiguing for the technici an.
+5.0 Resources Required 
+• Machine shop to fabricate the tool.
+6.0 Supporting Attachments / References 
+Detail Design Drawings of Wheel Stud Removal & Installation Tool 
+• OHT RxI Wheel Stud Print Plano1.jpg
+• OHT RxI Wheel Stud Print Plano2.jpg
+• OHT RxI Wheel Stud Prints H-321-1.jpg
+7.0 Related Best Practices 
+8.0 Acknowledgements 
+This Best Practice was written by  
+Dale Brehm 
+6 Sigma Black Belt 
+Caterpillar Global Mining 
+Brehm_dale_E@cat.com
+  
++1.309.675.6325 
+Special thanks to the information provided by:  
+Gecolsa - CAT 
+Caterpillar: Confidential  GREEN
+Page 3 of 3

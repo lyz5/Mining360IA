@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "datasets": {
+    "FPR Global DB + RLS": {
+      "dataset_id": "364edd69-532c-4e10-867f-3b3d4dfdb6c7",
+      "purpose": "Fleet performance and downtime KPI semantic model.",
+      "date_table": {
+        "table": "Date",
+        "primary_date_column": "Date",
+        "candidate_date_columns": [
+          "Date",
+          "Calendar",
+          "Dates",
+          "Date Value",
+          "Full Date"
+        ]
+      },
+      "entities": {
+        "equipment": {
+          "table": "EquipmentList_MiningProd",
+          "business_terms": [
+            "equipment",
+            "machine",
+            "asset",
+            "fleet",
+            "model"
+          ],
+          "columns": {
+            "model": {
+              "primary": "Model",
+              "candidates": [
+                "Model",
+                "Model Lookup",
+                "ModelName",
+                "Equipment Model"
+              ]
+            }
+          }
+        },
+        "mine_site": {
+          "table": "MineSiteList_MiningProd",
+          "business_terms": [
+            "site",
+            "mine",
+            "minesite",
+            "customer site"
+          ],
+          "columns": {
+            "site": {
+              "primary": "MineSite",
+              "candidates": [
+                "MineSite",
+                "Minesite",
+                "Site",
+                "Site Name",
+                "Minesite Name"
+              ]
+            }
+          }
+        },
+        "downtime": {
+          "table": "Downtimes",
+          "business_terms": [
+            "downtime",
+            "down hours",
+            "stoppage",
+            "unavailability"
+          ]
+        }
+      },
+      "measures": {
+        "availability": {
+          "business_terms": [
+            "availability",
+            "disponibilite",
+            "disponibilité",
+            "physical availability",
+            "pa"
+          ],
+          "primary_measure": "Availability New",
+          "candidate_measures": [
+            "Availability New",
+            "Availability Trucks",
+            "Availability HMS",
+            "Avail 2",
+            "Avail Per Equip",
+            "Availability New Hours"
+          ],
+          "response_format": "percentage",
+          "notes": "Use the existing semantic-model measure. Do not recompute availability from source SQL unless semantic model execution is unavailable."
+        },
+        "downtime_hours": {
+          "business_terms": [
+            "downtime hours",
+            "down hours",
+            "heures d'arret",
+            "heures d'arrêt"
+          ],
+          "primary_measure": "DonwtimeHours",
+          "candidate_measures": [
+            "DonwtimeHours",
+            "TotalDowntimeAll",
+            "DownHours Per Equip"
+          ],
+          "response_format": "hours"
+        },
+        "mtbf": {
+          "business_terms": [
+            "mtbf",
+            "mean time between failures"
+          ],
+          "primary_measure": "MTBF New",
+          "candidate_measures": [
+            "MTBF New",
+            "MTBF",
+            "MTBF Per Equip"
+          ],
+          "response_format": "hours"
+        },
+        "mtbs": {
+          "business_terms": [
+            "mtbs",
+            "mean time between shutdowns"
+          ],
+          "primary_measure": "MTBS New",
+          "candidate_measures": [
+            "MTBS New",
+            "MTBS",
+            "MTBS Per Equip"
+          ],
+          "response_format": "hours"
+        },
+        "mttr": {
+          "business_terms": [
+            "mttr",
+            "mean time to repair"
+          ],
+          "primary_measure": "MTTR",
+          "candidate_measures": [
+            "MTTR",
+            "MTTR Per Equip"
+          ],
+          "response_format": "hours"
+        }
+      },
+      "question_patterns": {
+        "availability_by_model_site_month": {
+          "metric": "availability",
+          "required_filters": [
+            "equipment.model",
+            "mine_site.site",
+            "date.month"
+          ],
+          "example": "What is the availability of 777 at Fekola in May 2026?"
+        }
+      }
+    }
+  }
+}

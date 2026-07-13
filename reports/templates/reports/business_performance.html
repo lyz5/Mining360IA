@@ -1,0 +1,130 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title }} | Business Performance | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+{% include "reports/includes/app_nav.html" %}
+<main class="app-shell bp-shell" data-bp-root data-page="{{ page_code }}" data-customer="{{ customer }}"
+      data-api-base="/business-performance/api/" data-customer-base="/business-performance/customers/">
+    <header class="bp-header">
+        <div>
+            <p class="eyebrow">Mining Business Unit</p>
+            <h1>{% if customer %}{{ customer }}{% else %}Business Performance{% endif %}</h1>
+            <p>{{ page_description }}</p>
+        </div>
+        <div class="bp-refresh">
+            <span>Data last refreshed</span>
+            <strong data-last-refresh>{% if config.last_successful_refresh %}{{ config.last_successful_refresh|date:"d F Y - H:i" }}{% else %}Not available{% endif %}</strong>
+            {% if is_bp_admin %}<a href="{% url 'business-performance-config' %}" class="icon-button" title="Configure semantic model" aria-label="Configure semantic model">⚙</a>{% endif %}
+        </div>
+    </header>
+
+    <nav class="bp-tabs" aria-label="Business Performance pages">
+        <a href="{% url 'business-performance' %}" class="{% if page_code == 'overview' and not customer %}active{% endif %}">Overview</a>
+        <a href="{% url 'business-performance-page' 'customers' %}" class="{% if page_code == 'customers' or customer %}active{% endif %}">Customers</a>
+        <a href="{% url 'business-performance-page' 'parts-sales' %}" class="{% if page_code == 'parts-sales' %}active{% endif %}">Parts Sales</a>
+        <a href="{% url 'business-performance-page' 'machine-sales' %}" class="{% if page_code == 'machine-sales' %}active{% endif %}">Machine Sales</a>
+    </nav>
+
+    <section class="bp-filter-bar">
+        <button type="button" class="button secondary" data-filter-toggle>Filters</button>
+        <div class="bp-active-filters" data-active-filters><span>No active filters</span></div>
+        <button type="button" class="button" data-apply-filters>Apply Filters</button>
+        <button type="button" class="button secondary" data-reset-filters>Reset</button>
+    </section>
+
+    <section class="bp-filter-panel" data-filter-panel hidden>
+        <label>Date<input name="year" type="number" min="2000" max="2100" placeholder="2026" inputmode="numeric"></label>
+        <label>Customer<input name="customer" value="{{ customer }}" placeholder="Search or enter values"></label>
+        <p class="bp-filter-help">Separate multiple values with commas. Access scopes and Power BI RLS remain enforced.</p>
+    </section>
+
+    <section class="bp-state" data-bp-state>
+        <div class="bp-skeleton-grid"><i></i><i></i><i></i><i></i></div>
+        <p>Loading semantic model data...</p>
+    </section>
+    <section class="alert bp-error" data-bp-error hidden>
+        <strong data-error-title>Semantic Model Unavailable</strong>
+        <p data-error-message></p>
+        <button type="button" class="button secondary" data-retry>Retry</button>
+    </section>
+
+    <div data-bp-content hidden>
+        <section class="bp-kpis" data-kpis></section>
+
+        {% if customer %}
+        <section class="bp-customer-actions">
+            <a class="button secondary" href="{% url 'business-performance-page' 'customers' %}">Back to Customers</a>
+            <a class="button secondary" href="{% url 'business-performance-page' 'parts-sales' %}?customer={{ customer|urlencode }}">View Parts Sales</a>
+            <a class="button secondary" href="{% url 'business-performance-page' 'machine-sales' %}?customer={{ customer|urlencode }}">View Machine Sales</a>
+        </section>
+        {% endif %}
+
+        <section class="bp-grid bp-grid--wide" data-overview-only>
+            <article class="bp-panel bp-panel--span2">
+                <div class="bp-panel-head"><div><p class="eyebrow">Portfolio</p><h2>Top Customers</h2></div>
+                    <div class="bp-panel-actions"><select data-top-n><option>10</option><option selected>20</option><option>30</option><option value="500">All Customers</option></select><button class="icon-button" data-export="customers" title="Export Excel">⇧</button></div>
+                </div>
+                <label class="bp-table-search">Search customer<input type="search" data-table-search="customers"></label>
+                <div class="table-scroll"><table class="data-table bp-data-table" data-table="customers"></table></div>
+            </article>
+            <article class="bp-panel">
+                <div class="bp-panel-head"><div><p class="eyebrow">Annual evolution</p><h2>Revenue Trend</h2></div></div>
+                <div class="bp-chart" data-chart="trend"></div>
+            </article>
+            <article class="bp-panel">
+                <div class="bp-panel-head"><div><p class="eyebrow">80/20 analysis</p><h2>Revenue Concentration</h2></div></div>
+                <div class="bp-chart" data-chart="pareto"></div>
+            </article>
+            <article class="bp-panel bp-panel--span2">
+                <div class="bp-panel-head"><div><p class="eyebrow">Rule-based analysis</p><h2>Key Insights</h2></div></div>
+                <ul class="bp-insights" data-insights></ul>
+            </article>
+        </section>
+
+        <section class="bp-panel" data-detail-only>
+            <div class="bp-panel-head">
+                <div><p class="eyebrow">Semantic model result</p><h2 data-detail-title>{{ page_title }}</h2></div>
+                <div class="bp-panel-actions">
+                    <button class="icon-button" data-export-current="xlsx" title="Export Excel" aria-label="Export Excel">⇧</button>
+                    <button class="icon-button" data-export-current="csv" title="Export CSV" aria-label="Export CSV">CSV</button>
+                </div>
+            </div>
+            <label class="bp-table-search">Search displayed rows<input type="search" data-table-search="details"></label>
+            <div class="table-scroll"><table class="data-table bp-data-table" data-table="details"></table></div>
+            <div class="bp-pagination"><button class="button secondary" data-prev-page>Previous</button><span data-page-status></span><button class="button secondary" data-next-page>Next</button></div>
+        </section>
+    </div>
+</main>
+<script>
+    window.addEventListener("error", function (event) {
+        var root = document.querySelector("[data-bp-root]");
+        if (!root) return;
+        var loading = root.querySelector("[data-bp-state]");
+        var panel = root.querySelector("[data-bp-error]");
+        if (loading) loading.hidden = true;
+        if (panel) {
+            panel.hidden = false;
+            panel.querySelector("[data-error-title]").textContent = "Page initialization failed";
+            panel.querySelector("[data-error-message]").textContent = event.message || "The Business Performance script could not start.";
+        }
+    });
+    window.setTimeout(function () {
+        if (window.MINING360_BP_READY) return;
+        var root = document.querySelector("[data-bp-root]");
+        if (!root) return;
+        root.querySelector("[data-bp-state]").hidden = true;
+        var panel = root.querySelector("[data-bp-error]");
+        panel.hidden = false;
+        panel.querySelector("[data-error-title]").textContent = "Page initialization timeout";
+        panel.querySelector("[data-error-message]").textContent = "The Business Performance interface did not start. Reload the page to retrieve the latest script.";
+    }, 15000);
+</script>
+<script src="{% static 'reports/business_performance.js' %}?v=20260712-3"></script>
+</body>
+</html>

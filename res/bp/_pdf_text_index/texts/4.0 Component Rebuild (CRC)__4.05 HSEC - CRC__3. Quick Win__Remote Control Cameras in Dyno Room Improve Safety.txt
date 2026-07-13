@@ -1,0 +1,174 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+March 2008  
+0408-5.1-1118  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Remote Control Cameras 
+in Dyno Room Improve 
+Safety 
+Application  Maintenance  Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety MARC 
+Management 
+ 
+ 
+ 
+Remote Control Cameras in Dyno Room Improve 
+Safety ........................................................................ 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits ............................................................. 4 
+5.0  Resources Required .......................................... 4 
+6.0  Supporting Attachments / References ............... 4 
+7.0  Related Best Practices ...................................... 4 
+8.0  Acknowledgements ........................................... 4 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Remote Control Cameras in Dyno Room Improve 
+Safety 
+DATE 
+4/12/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0408-5.1-1118  
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+1.0 Introduction  
+ 
+A few dealers have installed remote control cameras in the dyno test cell. The test cell operator 
+can conduct the dyno test, monitor changes, and visually monitor the engine, all without leaving 
+the control room. 
+ 
+2.0 Best Practice Description   
+                  
+This Best Practice has been implemented by Ferreyros.  Three wall mount remote control 
+cameras are located in the dyno test cell. The cameras can operate by a toggle switch and pan 
+from side to side and zoom in as required. Ferreyros has installed one camera on each side of the 
+engine, and another in front of the engine. A video monitor in the control room displays images. 
+ 
+3.0 Implementation Steps 
+ 
+Acquire cameras, monitors, and remote control hardware. Approximate cost $1500 per camera. 
+ 
+ 
+   
+  
+ 
+ 
+                             
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Remote Control Cameras in Dyno Room Improve 
+Safety 
+DATE 
+4/12/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0408-5.1-1118  
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Remote Control Cameras in Dyno Room Improve 
+Safety 
+DATE 
+4/12/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0408-5.1-1118  
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+4.0 Benefits 
+ 
+• Technician can monitor both instruments and visual  condition at the same time. 
+• Technician does not have to enter the dyno test ce ll at any point during the test. 
+• Technician not expose to trip or fall hazards. 
+ 
+5.0 Resources Required 
+ 
+• Purchase and install cameras 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+None at this time. 
+ 
+8.0 Acknowledgements 
+ 
+Special thanks to: 
+ 
+Aninu Mitacc 
+Ferreyros  
+CRC Quality, Safety, and Continuous Improvement Manager 
+ 
+Written by 
+ 
+Dale Brehm 
+6 Sigma Black Belt 
+Cat Global Mining Product Support

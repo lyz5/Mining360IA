@@ -1,0 +1,167 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\OHT Rear Wheel End Shipping Covers.pdf
+PAGES: 3
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+OHT Rear Wheel Shipping 
+Covers 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+OHT Rear Wheel Shipping Covers ............................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 2 
+7.0 Related Best Practices ...................................... 2 
+8.0 Acknowledgements ............................................ 2 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+  
+February 2010 
+0912-4.01-1195 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+It is important that after a wheel group has been rebuilt, it is properly sealed and protected for 
+storage in an exchange program inventory or for shipping to a job site. 
+ 
+This Best Practice contains a list of part numbers for all the covers, caps, plugs, seals, and 
+hardware used by the factory to ship and store wheel groups. 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The attachment to this Best Practice is a spreadsheet for all the part numbers required for 
+professional storage and shipping of wheel groups.  The only part that does not have a Caterpillar 
+part number is the plastic caps used to cover the wheel studs.  The supplier and supplier part 
+number are provided in the attachment. 
+ 
+3.0 Implementation Steps 
+ 
+Standardize a preparation for shipping process to include the installation of seals, covers, plugs, 
+etc.  Most of these parts are reusable.   
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+OHT Rear Wheel Shipping Covers 
+DATE 
+2/18/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0912-4.01-1195 
+Caterpillar Confidential:  GREEN          Page 1 of 2 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+ 
+4.0 Benefits 
+ 
+• Protects the component from handling damage during storage and shipping. 
+• Improves the quality appearance and image of the component. 
+• Helps to prevent corrosion and contamination of the component.  
+ 
+ 
+ 
+5.0 Resources Required 
+ 
+• Supply of the needed parts. 
+• Standard process to prepare a wheel group for shipping. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+7.0 Related Best Practices 
+ 
+0107-4.4-1053  Recommended Shipping and Storage Stands for Major Components 
+ 
+8.0 Acknowledgements 
+ 
+For additional information on this Best Practice contact: 
+ 
+Kiwi Haig 
++56-2-366-5136 
+Haig_Kevin@cat.com 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+OHT Rear Wheel Shipping Covers 
+DATE 
+2/18/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0912-4.01-1195 
+Caterpillar Confidential:  GREEN          Page 2 of 2

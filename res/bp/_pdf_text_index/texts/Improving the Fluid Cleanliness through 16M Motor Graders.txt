@@ -1,0 +1,280 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+August 2022 
+3.01-220810-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Improving the Fluid 
+Cleanliness through 16M 
+Motor Graders  
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Improving the Fluid Cleanliness through 16M Motor 
+Graders ...................................................................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 3 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits ............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Fluid Cleanliness Through 16M Motor 
+Graders 
+DATE 
+8/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220810-1 
+Caterpillar: Confidential Yellow          Page 2 of 6 
+1.0 Introduction  
+ 
+One of the main goals of mining companies around the operations of mobile equipment is to ensure 
+safe conditions, good component lives, and the high productivity of technicians during maintenance.  
+ 
+Most of the manufacturers worked to improve their machine serviceability to avoid component 
+damages and deliver a better bottom line in maintenance. This includes filter relocations, design 
+changes, new models to perform PMs, etc. All of it going to help the people in front of the line about 
+this subject matter. 
+ 
+However, there are innumerous site conditions that have their particularities that affect the 
+technician’s mindset to perform maintenance achieving the technical quality levels recommended by 
+Caterpillar. 
+ 
+A Mining Site in Upper North Brazil uses to face high contamination levels into the 16M Tandem, 
+affecting the brakes and oil cleanliness. Also, the shop technician’s feedback reported some difficulty 
+to perform breather replace during the preventive maintenance. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                 Picture 1 - Breather (4H-6112) place faces contamination around bauxite operations. 
+ 
+This Best Practice: 
+ 
+Caterpillar SEBU9228-17 literature recommends replacing the Breather (4H -6112) on the 
+impossibility of removal for cleaning, or advanced state of damage. It is also recommended a 500-
+hour period to replace this part during preventive maintenance. 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Fluid Cleanliness Through 16M Motor 
+Graders 
+DATE 
+8/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220810-1 
+Caterpillar: Confidential Yellow          Page 3 of 6 
+View of the MG-16 Motor Grader: 
+ 
+Breather identification (4H-6112) on the MG 16 Motor Grader under the Machine 
+ 
+ 
+ 
+ Breather (4H-6112) is replaced in Preventive Maintenance every 500 hours of operation. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice prevents contamination by various types of debris, promoting changes in the 
+Breather of the Caterpillar MG 16 Motor Grader, which reduces risks to the equipment's integrity, 
+simplifying cleaning and adding dynamism to maintenance. 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Fluid Cleanliness Through 16M Motor 
+Graders 
+DATE 
+8/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220810-1 
+Caterpillar: Confidential Yellow          Page 4 of 6 
+ 
+ 
+New Breather position after procedure completion. 
+ 
+These improvements consist of adding an extender made by the SOTREQ Engineering Team and 
+repositioning the Breather  (4H-6112) making the material accumulation on the structure more 
+difficult. 
+ 
+                  
+ 
+Breather new position - CAT MG 16 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Fluid Cleanliness Through 16M Motor 
+Graders 
+DATE 
+8/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220810-1 
+Caterpillar: Confidential Yellow          Page 5 of 6 
+3.0 Implementation Steps 
+ 
+For the procedure of repositioning the b reather, Caterpillar literature PECP5030 -11 was used for 
+technical guidance on the execution of the assembly procedures, from a mining customer's need, 
+this Best Practice was developed respecting the existing Caterpillar standardization for 
+compatibility of the fluids and dimensioning of the threads on the terminals. 
+ 
+4.0 Benefits 
+ 
+•  Reduced risk of Tandem contamination during routine operation. 
+•  More simple maintenance/replacement processes during preventive maintenance. 
+•  Improved accessibility. 
+•  Decreased time required for maintenance. 
+ 
+5.0 Resources Required 
+ 
+Genuine Caterpillar parts were used to ensure the System's reliability and effectiveness. 
+ 
+Item Qty (Unity/Length) PN 
+Hose 2 m 456-8409 
+Coupling Perm 01 124-1925 
+Coupling Permanent 01 124-1891 
+Clip 02 1S0-994 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+CAT PECP5030-11 Literature. 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+We would like to thank the Engineering and Product Support team for support in the development 
+of this Best Practice. 
+ 
+We would like to thank Technician Alan S. Martins for their support. 
+ 
+Our special thanks to Doug Friedrich of Caterpillar Inc. For unique technical insights that contribute 
+to the continued evolution of our operations, Thanks Doug. 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Fluid Cleanliness Through 16M Motor 
+Graders 
+DATE 
+8/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220810-1 
+Caterpillar: Confidential Yellow          Page 6 of 6 
+Bruno Cuimar  
+Sotreq S/A 
+Fleet Performance Engineer  
+E-mail: bruno.cuimar@sotreq.com.br 
+Mobile: +55 091 3211-9610 / +55 91 9265-6029 
+ 
+Doug Friedrich 
+Caterpillar Inc. 
+Site Performance Manager 
+E-mail: friedrich_douglas_w@cat.com 
+Mobile: +1.305.807.9542

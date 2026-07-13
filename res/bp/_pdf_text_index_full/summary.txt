@@ -1,0 +1,8 @@
+PDF files: 447
+Total pages: 3191
+Total extracted characters: 4478846
+Statuses:
+  ok: 447
+Manifest: C:\Users\diagnepa\Documents\MBA\Supports CAT\CAT Documentation\Best Practice Maintenanc and Repair\_pdf_text_index_full\manifest.csv
+Errors: C:\Users\diagnepa\Documents\MBA\Supports CAT\CAT Documentation\Best Practice Maintenanc and Repair\_pdf_text_index_full\errors.log
+Text folder: C:\Users\diagnepa\Documents\MBA\Supports CAT\CAT Documentation\Best Practice Maintenanc and Repair\_pdf_text_index_full\texts

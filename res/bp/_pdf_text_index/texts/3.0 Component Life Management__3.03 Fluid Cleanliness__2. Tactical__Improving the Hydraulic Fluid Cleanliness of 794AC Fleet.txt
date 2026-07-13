@@ -1,0 +1,625 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+November 2021 
+3.03-211105-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Improving the Hydraulic 
+Fluid Cleanliness of 794AC 
+Fleet 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Improving the Hydrulic Fluid Cleanliness of 794C 
+Fleet .............................................................................. 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description.................................... 3 
+3.0 Implementation Steps ......................................... 5 
+4.0 Benefits ................................................................ 8 
+5.0 Resources Required ......................................... 10 
+6.0 Supporting Attachments / References ............. 10 
+7.0 Related Best Practices...................................... 10 
+8.0 Acknowledgements ........................................... 12 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Hydraulic Fluid Cleanliness of 794AC 
+Fleet 
+DATE 
+11/5/2021 
+CHG 
+NO 
+00 
+NUMBER 
+3.03-211105-1 
+Caterpillar: Confidential Yellow                  Page 2 of 11 
+1.0 Introduction  
+ 
+Guaranteeing the fluid cleanliness is one of the biggest challenges of the maintenance manager in 
+his quest to guarantee performance of components. 
+ 
+Maintaining the fluid cleanliness below or equal to the Caterpillar guideline/ISO 18/16/13 is a 
+challenge for most of the major mining operations in Brazil even before fluids go into the machine 
+due to oil transport, storage and transferring between tanks and machines.  Additional factors can 
+affect the cleanliness inside of the machines’ hydraulic systems  due to leaks in damaged hoses, 
+broken seals, and overall unintentional contamination during maintenance; in conditions of high 
+utilization where maintenance has to be done in windows of opportunity, which may occur outside 
+of a clean bay, contamination control becomes more and more important but also more and more 
+difficult resulting in the need for filtration. 
+ 
+One of Sotreq’s largest customer s encountered the following SAE 10W SOS results out of 
+specification in the hydraulic systems of their 794AC Fleet and bulk storage tanks. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Source/Picture 1: Customer/Dealer SOS Results and SAE10W at oil tank in site 
+ 
+This customer already has an oil filtration system for the bulk storage tanks, so they requested the 
+support of the dealer to find a solution to maintain oil cleanliness on board the trucks.  This type of 
+solution would guarantee clean oil throughout the machine, independent of existing conditions, and 
+result in improved component life and reduced downtime during PM’s (preventive maintenance).  
+With this solution the customer is also looking for improved serviceability of the electric drive trucks, 
+lower number of tools used in the overall maintenance and an overall lower maintenance ratio.   
+Their vision was to apply the principles of conventional off -board kidney looping machine 
+(filtration/dialysis, participle count, etc.) typically used during PMs to an on-board kidney looping 
+system 
+ 
+Sotreq developed an on-board continuous filtration (oil dialysis) system.  This aftermarket solution 
+aligns with market practices of continuous cleaning for hydraulic compartments for mobile 
+equipment. 
+ 
+Implementation of this system i n the 794AC trucks has shown good results – clean oil, clean 
+compartments, and lower maintenance ratio.  Longer life for the hydraulic c omponents is the 
+ultimate goal for this system; it is expected that this will be the ultimate result of the developed 
+system. 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Hydraulic Fluid Cleanliness of 794AC 
+Fleet 
+DATE 
+11/5/2021 
+CHG 
+NO 
+00 
+NUMBER 
+3.03-211105-1 
+Caterpillar: Confidential Yellow                  Page 3 of 11 
+ 
+This on-board solution can be readily implemented by other dealers with similar customer 
+requests/needs.   (Notes:  Caterpillar does not have an on-board solution.  There is no expectation 
+of Caterpillar developing an on-board system.  This best practice demonstrates a dealer -based 
+solution.) 
+ 
+2.0 Best Practice Description 
+ 
+The 794AC hydraulic system of the 794AC trucks is comprised of approximately 11 principal items,  
+with filters at the entrance of each component capable of filtering particles of 4 microns, as shown 
+in the figure below.  As a note, 10W  oil is used throughout the Brazilian market.   
+ 
+The customer requested that Sotreq come up with a “bulletproof” solution for keeping the hydraulic 
+system clean that didn’t adversely affect the components or overall functionality and reliability of the 
+truck.  The challenge was to transform a conventional off board dialysis system to a system 
+integrated (onboard) with the OEM equipment (base machine). 
+ 
+ 
+Picture 2 – Steering Filter, (2) Radiator Fan Filter, (3) PTO filter, (4) Hydraulic Tank Filter, (5) Hydraulic 
+Tank, (6) Steering Tank, (7) Radiator Fan Tank, (8) PTO, (9) Lift Tank, (10) GP Li ft Valve, (11) Lift Filters . 
+ 
+As seen in the Best Practice 1.01.210827-1, this Brazilian customer operates a fleet of 794AC trucks 
+with maintenance based on the lean concept with focus on improving the productivity of the PM.  To 
+do conventi onal dialysis in  the shop demands preparation time, connection checks, regular 
+maintenance and testing of the dialysis machines and allocation of personnel/time for the actual 
+dialysis.  Conventional analysis does  not support improved PM productivity and is not 100% 
+effective in the long term of operation.    
+ 
+Sotreq evaluated OEM dialysis systems in its existing Sotreq network and partnered with an OEM, 
+that they had previously worked with on other applications, to create an on-board filtration system 
+to 1) deliver high quality compartment cleaning, 2) conform to the recommended Caterpillar ISO 
+specification, 3) facilitate quality and efficient maintenance and 4) cause no risks to the machine (as 
+it is connected directly to the machine). 
+ 
+A filtration unit with 1.458 L of flow and volume for the hydraulic system of the 794AC at 3 times per 
+12 working hour shift  was chosen.  It was sized to hold 4 Kg of dirt, 2 L of water and 4 Kg of oil 
+oxidation.  It had the capability to filter 98.7% of the particles of 3 microns or above and 50% of the 
+particles between 0.8 to 3 microns. 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Hydraulic Fluid Cleanliness of 794AC 
+Fleet 
+DATE 
+11/5/2021 
+CHG 
+NO 
+00 
+NUMBER 
+3.03-211105-1 
+Caterpillar: Confidential Yellow                  Page 4 of 11 
+This on-board dialysis system complements the filtration system of the 794AC.  It provides additional 
+protection and redundancy in situations 1) where the machine hydraulic system has a bypass due 
+to high contamination and 2) on some 794AC  trucks, there are no electronic restriction 
+indications/alarms since in most cases there are no sensors that are ultimately connected to the 
+machine monitoring system. This system has the potential to be a powerful tool for the long-te rm 
+extension (above 4,000 hours) of the fleet’s hydraulic oil (oil oxidation retention). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Picture 3: On-board filtration unit selected 
+ 
+The basic design of this on-board solution follows the principals of the conventional dialysis with oil 
+suctioned from the hydraulic tank, passed through the filtration unit (now onboard vs. off board) and 
+then returned to the same hydraulic tank.  A clean oil supply at all time is the result. 
+ 
+NOTE:  EACH CUSTOMER OR DEALER CAN DEFINE THE BEST ON-BOARD FILTRATION UNIT 
+FOR THE FLEET WHILE RESPECTING THE TECHNICAL ASPECTS AND RISK FOR THE 
+EQUIPMENT.  THIS BEST PRACTICE DOES NOT AIM TO PRODUCE A COMMERCIAL/FOR SALE 
+SYSTEM OR TO TRANSFORM IT INTO A PRODUCTION SOLUTION.  THE BEST PRACTICE 
+DEMONSTRATES RESULTS OF A FIELD TEST PERFORMED FOR THIS CONCEPT. 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Hydraulic Fluid Cleanliness of 794AC 
+Fleet 
+DATE 
+11/5/2021 
+CHG 
+NO 
+00 
+NUMBER 
+3.03-211105-1 
+Caterpillar: Confidential Yellow                  Page 5 of 11 
+Note: Caterpillar genuine parts are used for the hoses, connectors, clamps,  and other parts to 
+support the configuration and installation of the on-board filtering system.  The filtration unit itself is 
+the only non-Caterpillar part, which is available from an OEM that Sotreq has previously partnered 
+with in applications for mining, construction, industrial and power generation. 
+ 
+Note:  If the on-board filtration system has any failure in the unit or a connection between the 
+unit/installation, the system will not damage the truck hydraulic system. 
+• If the on-board filtration system has any restrictions in the hydraulic line, the unit discharges the 
+oil into the tank without any damage since it is not connected to the main hydraulic line. 
+• There are no restriction valves installed throughout the unit. 
+• If there is an electrical failure no damage will occur as the unit hydraulic lines work separately 
+from the main truck hydraulic lines.  
+• The assumption is the on-board filter connection is the same as connecting an off-board system. 
+ 
+ 
+   
+Pictures 4: On-board filtration Hydraulic Flow, Suction Line and Return Line 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The project was developed around three f ronts of implementation (once the filtration unit was 
+chosen by on the fleet’s characteristics): 
+1) Installation of the filtration system power supply. 
+2) Installation of the filtration system unit on board the truck and attached to the platform 
+3) Training of the mechanics on both operation and maintenance 
+ 
+STEP 1:  Installation of the filtration system power supply 
+ 
+The power system is shown below.  An electrical box with thermocouples was located next to the 
+ECM cabinet.  The installation took into consideration existing safety guidelines for mounting and 
+connection of common accessories. 
+ 
+Closed Hydraulic 
+Circuit 
+Unit Hydraulic 
+Suction Line  
+Unit Hydraulic 
+Return Line 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Hydraulic Fluid Cleanliness of 794AC 
+Fleet 
+DATE 
+11/5/2021 
+CHG 
+NO 
+00 
+NUMBER 
+3.03-211105-1 
+Caterpillar: Confidential Yellow                  Page 6 of 11 
+ 
+Pictures 4 – Installation guideline to step 1 
+ 
+ 
+Step 2: Installation of the filtration system unit on board the truck attached to the platform. 
+ 
+This part of the installation pertains to the hydraulic connections (from suction to return-to -tank) 
+and the filtration unit itself.  The suction lines are located below the hydraulic tank and directed to 
+the filtration unit (red).  After filtering, the oil flow s through the hoses (blue) with access to the 
+hydraulic tank through the hydraulic line manifold. 
+ 
+ 
+             
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Hydraulic Fluid Cleanliness of 794AC 
+Fleet 
+DATE 
+11/5/2021 
+CHG 
+NO 
+00 
+NUMBER 
+3.03-211105-1 
+Caterpillar: Confidential Yellow                  Page 7 of 11 
+ 
+Picture 5 – Installation guideline to step 2 
+ 
+ 
+The on-board filtration system actuates only when the engine is functioning. 
+ 
+ 
+Pictures 6 – Installation guideline to step 2 
+ 
+It should be noted that the 794AC’s in Brazil do not have the hydraulic cabinets.  The filtration unit 
+was therefore installed in the location where the hydraulic cabinet would have been and next to 
+the grease tank.  This location provides good access for maintenance and inspection for both the 
+filtration until and grease tank (grease level). 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Hydraulic Fluid Cleanliness of 794AC 
+Fleet 
+DATE 
+11/5/2021 
+CHG 
+NO 
+00 
+NUMBER 
+3.03-211105-1 
+Caterpillar: Confidential Yellow                  Page 8 of 11 
+Step 3:  Training of the technicians on both operation and maintenance. 
+ 
+Training of the technician on both the operations and maintenance of the on-board filtration 
+system was conducted through use of the documentation and in practice.  All the safety 
+aspects were identified, mapped, and mitigated during a risk assessment. 
+ 
+ 
+ 
+ 
+ 
+Pictures 7 – Service Training, On-board Filtration Guideline, Risk Assessment, Unit at Upper Platform 
+ 
+4.0 Benefits 
+ 
+1. Improved Cleaning of the Hydraulic System: 
+ 
+The on-board filtration system has proven effective in delivering results even with leaks and 
+other existing contamination onboard as well as the high particle count (ISO > 18/16/13) in 10W 
+oil in the customer’s oil tanks that are used to fill the 794AC’s. 
+ 
+Results for one of the trucks at 4,000 hours (Case study MT500174) are shown below. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Case Study (MT500174) – Delivering better bottom line about cleanliness 
+ 
+ 
+ 
+ 
+ 
+Cleanliness of Oil 10W inside 
+the 794AC Hydraulic Tank 
+On-board filtration  
+Installed 
+ISO 18/16/13 (Avg)  
+Less Component Wear Out  
+Oil Extension Opportunity  
+Delivering high Quality 
+Oil Supply  to the 
+Hydraulic System 
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Hydraulic Fluid Cleanliness of 794AC 
+Fleet 
+DATE 
+11/5/2021 
+CHG 
+NO 
+00 
+NUMBER 
+3.03-211105-1 
+Caterpillar: Confidential Yellow                  Page 9 of 11 
+2. Improved Reliability and Performance: 
+ 
+No exchange events in the hydraulic system, minor components and PTO were encountered 
+between 0 and 4,000 hours . The onboard filtration system has contributed to a reduction in 
+unscheduled downtime, even with outstanding CPI issues that have caused wear elements in 
+the oil , or other downtime events. Ultimately, we expect to see major components  
+meeting/exceeding life expectancy with the addition of this on-board filtration system. 
+ 
+ 
+Downtime Drives Accumulated (4,000 hours) – Hydraulic System had zero downtime events.  
+  
+ 
+ 
+Downtime Drives Breakdown (4,000 hours) – No hydraulic system issues. The Brake System in this case was CPI 
+failures about the piston wear out, not around the oil condition.  
+ 
+ 
+3. Improved PM Productivity: 
+ 
+Sotreq’s execution team conducted an evaluation of the time and actual task routes/movements 
+of the lubrification process, including fluid cleaning and supply of the trucks.   Use of the on-
+board filtration system instead of the off -board kidney looping machine has eliminated 6 hours 
+and 20 minutes of work from the PM process.  Additionally, this system has both increased the 
+PM productivity and reduced the maintenance ratio of the machine. 
+ 
+ 
+ 
+203
+183
+128 122
+58 52 48 38 18 14
+0,78%
+1,47%
+1,96%
+2,43%
+2,65% 2,85% 3,03% 3,17% 3,24% 3,30%
+0%
+1%
+1%
+2%
+2%
+3%
+3%
+4%
+0
+50
+10 0
+15 0
+20 0
+25 0
+BRAKE ELETRIC EN GI NE AIR
+CO NDITIONER
+STE ERING SUSPENSION STRUCTURE PO WER TRAIN AUTOMATIC
+LUBRICATION
+TIRES  (TKPH)
+Hours
+UNSCHEDULE DOWNTIME DRIVES - TOP 10
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Hydraulic Fluid Cleanliness of 794AC 
+Fleet 
+DATE 
+11/5/2021 
+CHG 
+NO 
+00 
+NUMBER 
+3.03-211105-1 
+Caterpillar: Confidential Yellow                  Page 10 of 11 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Flow Diagram – Off-board kidney looping process  
+ 
+ 
+Chart 1 –  
+Approximately 6 hours of manpower can be removed from the PM process by replacing the off-board kidney loop 
+process with the new on-board process. 
+*Average time to perform the filtration when ISO is above of limits. 
+ 
+ 
+ 
+ 
+5.0 Resources Required 
+ 
+Project Investment Cost – Please contact the Project Sponsor 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Contamination Control Guideline, Customer Feedback Survey, 794AC OMM.  
+ 
+ 
+7.0 Related Best Practices 
+ 
+A PM Model do deliver higher availability of 794AC fleet – 1.01.210827-1 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Hydraulic Fluid Cleanliness of 794AC 
+Fleet 
+DATE 
+11/5/2021 
+CHG 
+NO 
+00 
+NUMBER 
+3.03-211105-1 
+Caterpillar: Confidential Yellow                  Page 11 of 11 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Júlio César Corrêa 
+Product Performance and Engineering Manager (Sponsor) – SOTREQ S/A 
+Julio.correa@sotreq.com.br 
++ 55 94 98111-6441 
+ 
+Fábio Cota 
+fabio.cota@sotreq.com.br 
+Product Performance Consultant (6 Sigma Leader) – SOTREQ S/A 
++ 55 94 88078155 
+ 
+Fagner Feitosa 
+Technical Communicator – SOTREQ S/A 
+fagner.feitosa@sotreq.com.br 
++ 55 94 9115-2927 
+ 
+Joaquim Jesus 
+Technical Specialist – SOTREQ S/A 
+Joaquim.jesus@sotreq.com.br   
++ 55 94 81230522 
+ 
+Reinaldo Angelo 
+Reinaldo.angelo@sotreq.com.br
+  
+Product Performance Consultant (Project Champion by Dealer) – SOTREQ S/A 
++ 55 31 9996-5562 
+ 
+Germano Silva 
+Germano.Silva@sotreq.com.br  
+Field Engineer – 794AC Project / SOTREQ S/A 
++ 55 94 98128-2775 
+ 
+Jefferson Netto 
+Jefferson.netto@sotreq.com.br
+ 
+Field Technical Consultant – 794AC Project / SOTREQ 
++ 55 31 9967-7110 
+ 
+Douglas Friedrich  
+Site Performance Manager – CATERPILLAR  
+Friedrich_Douglas_W@cat.com 
++1.305.807.9542

@@ -1,0 +1,379 @@
+SOURCE: 5.0 MARC Management\5.04 Financial Management\1. Strategic\Accrual Accounting for Maintenance & Repair Contracts.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Accrual Accounting for 
+Maintenance & Repair 
+Contracts 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Accrual Accounting for Maintenance & Repair 
+Contracts.................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+February 2008 
+0906-4.5-1013 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+1.0 Introduction  
+There are two acceptable accounting options to record transactions for maintenance and repair 
+contracts.  The first option is accrual accounting (deferred accounts), which is considered the best 
+practice for recognizing and recording transactions related to maintenance and repair contracts.  
+This method allows the measurement of not only the current cash in flows / outflows but also 
+allows the inclusion of future expected cash inflows / outflows.  The main focus of accrual 
+accounting is the proper matching of revenues to expenses.   The second option called cash 
+accounting only provides a snapshot of past financial activity up to today.  This method does not 
+match revenues to costs.  The accrual accounting method is usually the required accounting 
+process for companies over a certain size in most countries. There are exceptions to this rule. 
+Some geographic locations still adhere to the cash basis of accounting for legal entity reporting.  
+This best practice is not intended to replace the accounting process used by an entity but to give 
+a better understanding why accrual accounting will give a more accurate picture of contract 
+performance.  
+ 
+2.0 Best Practice Description 
+This best practice is intended as guidance to help contract managers to understand the key 
+concepts of accrual accounting vs. cash basis accounting and the benefits of accrual accounting 
+to effectively measure contract profitability.  
+ 
+3.0 Implementation Steps 
+ 
+Understanding Cash vs. Accrual Accounting Practices. 
+   
+Cash Basis Accounting: 
+Revenues are recognized & recorded when cash is actually received. 
+Expenses are recognized & recorded when they actually are paid. 
+ 
+Accrual Basis Accounting: 
+Revenues are recognized and recorded when it is earned. 
+Expenses are recognized and recorded when they are incurred. 
+ 
+Accounting for Separately Priced Extended Warranty and Product Support Maintenance 
+Contracts.  FASB Technical Bulletin #90-1. 
+ 
+Revenues: Revenues from product support maintenance contracts should be deferred and 
+recognized as income on a straight-line basis over the contract period except in those 
+circumstances in which sufficient historical evidence indicates that the costs of performing 
+services under contract are incurred on other than a straight-line basis.  In those circumstances, 
+revenue should be recognized over the contract period in proportion to the expected costs to be 
+incurred in performing services under the contract. 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Accrual Accounting for Maintenance and Repair 
+Contracts 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0000-1.1-1001 
+Caterpillar Confidential:  GREEN         Page 1 of 5 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Immediate Revenue Recognition:  Product maintenance contracts are not incidental to the sale 
+of a product but are independent transactions under which the customer agrees to purchase at a 
+determined rate and the provider of services agrees to perform certain services at that rate. The 
+customer decision to purchase Caterpillar equipment cannot entail any obligation to purchase the 
+maintenance & repair contract, nor oblige the dealer to provide any additional services.  The 
+dealer may lower product prices in expectation of selling maintenance contracts. However it is the 
+dealers pricing or marketing strategy, that determines the appropriate financial reporting of 
+transactions.  Because the obligation extends over a period of time, immediate revenue 
+recognition is inappropriate. 
+ 
+Costs: Costs that are directly related to the acquisition of a contract and that would not have 
+been incurred but for the acquisition of that contract should be deferred and charged to expense 
+in proportion to the revenue recognized.  All other costs, such as costs of services performed 
+under the contract, general and administrative expenses should be charged to expense as 
+incurred. 
+ 
+Loss: A loss should be recognized on product maintenance agreements if the sum of the 
+expected costs of providing services under the contracts exceeds related unearned revenue.  
+Product maintenance contracts should be grouped in a consistent manner to determine if a loss 
+exists.  If a loss exists then a liability should be recognized for the loss. 
+ 
+Revenue Recognition Options: When applying FTB 90-1, the contract manager should always 
+evaluate the expected pattern of maintenance related costs and should not default to recognizing 
+revenue on a straight line basis because of lack of “sufficient historical evidence” regarding such 
+costs.  Although the evaluation of the expected pattern of maintenance-related costs should focus 
+on future related cash outflows, historical evidence about past costs, if available, should be used 
+to assist in that evaluation.  It the contract manager does not have sufficient historical evidence 
+on which to base an estimate of future maintenance costs, such information should be available 
+from other sources. In those circumstances, revenues should be recognized over the contract in 
+proportion to the expected costs to be incurred in performing services under the contract. 
+ 
+  
+Revenue Recognition Criteria:  Revenues must be recognized under accrual accounting when 
+the following four criteria are met. 
+ 
+Persuasive evidence of an arrangement exists. 
+Delivery has occurred or services have been rendered. 
+The seller’s price to the buyer is fixed or determinable. 
+Collection is reasonably assured. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Accrual Accounting for Maintenance and Repair 
+Contracts 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0000-1.1-1001 
+Caterpillar Confidential:  GREEN         Page 2 of 5 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Requirements for Effective Accrual Processes: 
+  
+Managers must understand the operational processes. 
+Create standard jobs. 
+Then develop life cycle schedule from standard jobs. 
+Create a budget. 
+Practice proactive event scheduling. 
+Condition monitoring. 
+Understand the sold solution. 
+Accountability – roles and responsibility. 
+Understand variance analysis. 
+ 
+ 
+4.0 Benefits 
+ 
+Benefits of Matching Revenues to Costs: 
+ 
+Provide accurate feedback to management on contract performance. 
+Have the ability to timely identify non-profitable contracts so corrective action can take place. 
+Provide accurate pricing for future contract negotiations. 
+Let the accurate and true numbers drive operational decisions 
+Focus efficiency improvements where they belong. 
+Focus training on where it belongs. 
+Focus investments where they belong. 
+ 
+ 
+ 
+5.0 Resources Required 
+ 
+ 
+Define local and national governmental accounting requirements. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Accrual Accounting for Maintenance and Repair 
+Contracts 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0000-1.1-1001 
+Caterpillar Confidential:  GREEN         Page 3 of 5 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+6.0 Supporting Attachments / References 
+ 
+Below are three examples of contribution statements.      
+       
+  Building a Marginal Contribution Statement - Revenue Only – Budget – SOLD SOLUTION   
+        
+    Actual billings to customer   
+1 Customer Invoiced Amount in period.  Hours * Rate  $                  220.00  
+    Under consumption or Over consumption   
+2 Deferred Revenue of Lines 3-4-5-6  $                        0 
+    Total sales price of all components consumed   
+3 Total Parts & Components in the period   $                 (100.00) 
+    Total sales price of all labor consumed   
+4 Total Labor In the period   $                 (100.00) 
+    Total sales price of miscellaneous costs   
+5 Miscellaneous consumed in work orders in the period   $                  (10.00) 
+    Total sales price of all M&O fees associated   
+6 Management Overhead Fees to the contract in the period   $                  (10.00) 
+    Caterpillar product in kind or support received    
+7 Contract Support from customer  $                      0 
+    Accumulated of Line 2 at end of contract   
+8 Deferred Revenue Reconciliation    $                      0 
+    Total of Line 3-4-5-6-7-8   
+9 Total Sales    $                 (220.00) 
+        
+      1 = 9 at budget 
+ 
+ 
+ Building a Marginal Contribution Statement - Revenue Only – Under consumption – EXCESS REVENUES  
+        
+    Actual billings to customer   
+1 Customer Invoiced Amount in period.  Hours * Rate  $                  220.00  
+    Under consumption or Over consumption   
+2 Deferred Revenue of Lines 3-4-5-6  $                50.00  
+    Total sales price of all components consumed   
+3 Total Parts & Components in the period   $                 (100.00) 
+    Total sales price of all labor consumed   
+4 Total Labor in the period   $                  (50.00) 
+    Total sales price of all miscellaneous costs   
+5 Miscellaneous consumed in work orders in the period   $                  (10.00) 
+    Total sales price of all M&O fees associated   
+6 Management Overhead Fees to the contract in the period   $                  (10.00) 
+    Caterpillar product in kind or support received    
+7 Contract Support from customer  $                        -    
+    Accumulated of Line 2 at end of contract   
+8 Deferred Revenue Reconciliation    $                  (50.00) 
+    Total of Line 3-4-5-6-7-8   
+9 Total Sales    $                 (220.00) 
+        
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Accrual Accounting for Maintenance and Repair 
+Contracts 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0000-1.1-1001 
+Caterpillar Confidential:  GREEN         Page 4 of 5 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ Building a Marginal Contribution Statement - Revenue Only – Over consumption – EXCESS COSTS 
+        
+    Actual billings to customer   
+1 Customer Invoiced Amount in period.  Hours * Rate  $                  220.00  
+    Under consumption or Over consumption   
+2 Deferred Revenue of Lines 3-4-5-6  $              (50.00) 
+    Total sales price of all components consumed   
+3 Total Parts & Components in the period   $                 (200.00) 
+    Total sales price of all labor consumed   
+4 Total Labor in the period   $                  (50.00) 
+    Total sales price of all miscellaneous costs   
+5 Miscellaneous consumed in work orders in the period   $                  (10.00) 
+    Total sales price of all M&O fees associated   
+6 Management Overhead Fees to the contract in the period   $                  (10.00) 
+    Caterpillar product in kind or support received    
+7 Contract Support from customer  $                        -    
+    Accumulated of Line 2 at end of contract   
+8 
+Deferred Revenue 
+Reconciliation    $                   50.00  
+    Total of Line 3-4-5-6-7-8   
+9 Total Sales    $                 (220.00) 
+ 
+ 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+ 
+ 
+The Financial Accounting Standards Board (FASB) is a private, not-for-profit organization whose 
+primary purpose is to develop generally accepted accounting principles (GAAP) within the United 
+States in the public’s interest.  The Security and Exchange Commission (SEC) designated the FASB 
+as the organization responsible for setting accounting standards for public companies in the U.S.  It 
+was created in 1973.  The FASB mission is “to establish and improve standards of financial 
+accounting and reporting for the guidance and education of the public, including issuers, auditors and 
+user’s. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Accrual Accounting for Maintenance and Repair 
+Contracts 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0000-1.1-1001 
+Caterpillar Confidential:  GREEN         Page 5 of 5

@@ -1,0 +1,294 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2023 
+1.01-230221-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Bucket Stop Measuring 
+Device for 994H Wheel 
+Loader 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+                                                                            Bucket Stop Measuring Device for 994H Wheel  
+                                                                            Loader ...…………………………………………………1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required (per machine) ................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bucket Stop Measuring Device for 994H Wheel Loader 
+DATE 
+2/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230221-1 
+Caterpillar: Confidential Yellow          Page 2 of 7 
+1.0 Introduction  
+ 
+When measuring the rear bucket stops that protect the tilt cylinders when the bucket is in the 
+racked back position, the attachments need to be moved, causing difficulty and inaccuracy in 
+the measurement values performed by the technician. 
+ 
+This best pract ice provides a solution that significantly optimizes the technician's bucket stop 
+measurement activity. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+One of the main machines responsible for production in a mining industry is the wheel loader. 
+These versatile machines move and articulate the implements with ease. During loading where 
+the implement is used, one of the possible movements is the racked back position. In this 
+position the bucket is fully retracted, allowing the tilt cylinders to be fully opened to the point of 
+reaching their end of stroke. 
+ 
+This end-of-stroke condition of the tilt cylinders can damage the cylinders and rods if pressure 
+is applied to the cylinder or bucket when they are in this position. Caterpillar's recommendation 
+is to avoid this condition and to apply stops at the rear of the bucket, so the stops will touch the 
+lift arm before the tilt cylinders reach their end of stroke during the racked back position. 
+ 
+The rack back stops should be checked prior to installing a different bucket,  lift arms or tilt 
+cylinders. The standardization of the stops is done by measurements between the bucket and 
+the lifting arm, recommended in the procedure "Bucket Stops Provide Additional Protection for 
+Tilt Cylinder (i08683630)". 
+ 
+During this activity, improvement points were identified to optimize the measurement and 
+assertiveness. 
+ 
+ 
+ 
+Picture 1 – Bucket stop location. 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bucket Stop Measuring Device for 994H Wheel Loader 
+DATE 
+2/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230221-1 
+Caterpillar: Confidential Yellow          Page 3 of 7 
+The device consists of a rod (Picture 2), a magnetic base, and a laser tape measure: 
+ 
+ 
+Picture 2 – Installed device. 
+ 
+3.0 Implementation Steps 
+ 
+1. Following the recommendations for measuring stops contained in the procedure "Bucket 
+Stops Provide Additional Protection for Tilt Cylinder (i08683630)"  and shown in Table 1, 
+there is a necessity to keep the center of the bucket pin at a height of 2.524mm from the 
+ground (D1) (Picture 3), with the bucket in the racked back position: 
+ 
+ 
+ 
+Table 1 – Reference table. 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bucket Stop Measuring Device for 994H Wheel Loader 
+DATE 
+2/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230221-1 
+Caterpillar: Confidential Yellow          Page 4 of 7 
+ 
+Picture 3 – Distance of the ground. 
+ 
+ 
+ 
+2. To perform the measurement using the device, the rod must be installed in the bucket pin 
+with the aid of a bolt in the same specifications as the internal thread of the bucket pin  
+according to Picture 4: 
+ 
+ 
+Picture 4 – Rod installed in the bucket pin. 
+ 
+3. In the center of the head of this screw, a boss should be adapted for mounting the rod. A 
+movable bearing should be installed at the end of the rod. This mobile bearing will be 
+responsible for fixing the rod in the bolt applied to the bucket pin, so that the rod is 
+rotational. 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bucket Stop Measuring Device for 994H Wheel Loader 
+DATE 
+2/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230221-1 
+Caterpillar: Confidential Yellow          Page 5 of 7 
+4. The rod should have a length of 2.524mm (Picture 5) and has the function of referencing 
+the measure D1, according to the recommendations contained in the literature i08683630. 
+Therefore, the rod will replace the need for measurement between the bucket and the 
+ground. 
+ 
+ 
+ 
+Picture 5 – Length of the rod. 
+ 
+ 
+5. Magnetics bases are used to hold the laser tape measure during measurement and 
+should be installed at the rear of the bucket (Picture 6). 
+ 
+2524mm 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bucket Stop Measuring Device for 994H Wheel Loader 
+DATE 
+2/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230221-1 
+Caterpillar: Confidential Yellow          Page 6 of 7 
+ 
+Picture 6 – Magnetics bases installed. 
+ 
+6. The laser measuring tape takes the measurements, and the values are sent via 
+Bluetooth to a cell phone application. 
+ 
+ 
+4.0 Benefits 
+• Better ergonomics when taking measurements. 
+• Greater assertiveness in taking measurements. 
+ 
+5.0 Resources Required (per machine) 
+Labor for installing the tool on the machine:  10 minutes. 
+Necessary parts:  
+ 
+- Rod carbon steel SAE1045 (2.524mm) x 10mm. 
+- Laser tape measurement tool. 
+- Magnetic base. 
+ 
+6.0 Supporting Attachments / References 
+“Bucket Stops Provide Additional Protection for Tilt Cylinder - M0064430-05 - i08683630”. 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bucket Stop Measuring Device for 994H Wheel Loader 
+DATE 
+2/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230221-1 
+Caterpillar: Confidential Yellow          Page 7 of 7 
+7.0 Related Best Practices 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice Was Written By: 
+ 
+Marcelo Augusto 
+Sotreq S/A - Mining Engineering  
+E-mail: marcelo.augusto@sotreq.com.br 
+ 
+This Best Practice was co-written and implemented by:  
+ 
+Elynelson Raiol 
+Sotreq S/A - Mining Engineering Consulting 
+E-mail: elynelson.raiol@sotreq.com.br 
+ 
+I would like to thank the following individuals that assisted in using and authoring this Best 
+Practice:  
+ 
+Maurício Calixto 
+Sotreq S/A - Mechanical Technician 
+E-mail: maurício.calixto@sotreq.com.br 
+ 
+Luis Gustavo Rocha 
+Sotreq S/A - Coordinator Engineering  
+E-mail: luis.gustavo@sotreq.com.br

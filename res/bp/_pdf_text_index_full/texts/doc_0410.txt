@@ -1,0 +1,642 @@
+SOURCE: Improving the Shutdown Switch Positioning on 793D Mining Trucks.pdf
+PAGES: 10
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2022 
+1.01-221219-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Improving the Shutdown 
+Switch Positioning on 
+793D Mining Trucks 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Improving the Shutdown Switch Positioning on 793D 
+Mining Trucks ............................................................. 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 3 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 7 
+5.0 Resources Required .......................................... 9 
+6.0 Supporting Attachments / References ............... 9 
+7.0 Related Best Practices ...................................... 9 
+8.0 Acknowledgements .......................................... 10 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Shutdown Switch Positioning on 793D 
+Mining Trucks 
+DATE 
+12/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-221219-1 
+Caterpillar: Confidential Yellow                 Page 2 of 10 
+1.0 Introduction  
+ 
+This Best Practice reduces possible work and material accidents by changing the position of this 
+switch reducing the height by approximately 30 cm (11,8" Inches) in relation to original position. 
+ 
+In the Brazil North region, the median height of operators is frequently under the world average, 
+sometimes the support structure is required for improving the ergonomics condition and mitigating 
+risks for the employees. 
+ 
+Implementing this Best Practice makes it possible for more people to access the shutdown switch 
+safely and more efficiently. 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Original position of the Shutdown Switch – Source: SOTREQ/Giesi Nascimento. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Shutdown Switch Positioning on 793D 
+Mining Trucks 
+DATE 
+12/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-221219-1 
+Caterpillar: Confidential Yellow                 Page 3 of 10 
+2.0 Best Practice Description 
+ 
+For reducing the difficulty of accessing the switch by the operator, SOTREQ moved the shutdown 
+switch to the front right side (near the access ladder) of the CAT 793D mining truck, thus eliminating 
+the use of any auxiliary device to access the switch. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+New shutdown switch position – Source: SOTREQ/Giesi Nascimento. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Shutdown Switch Positioning on 793D 
+Mining Trucks 
+DATE 
+12/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-221219-1 
+Caterpillar: Confidential Yellow                 Page 4 of 10 
+3.0 Implementation Steps 
+ 
+The implementation of this Best Practice is  described below. Contact SOTREQ  to request 
+additional information about specific details. 
+   
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    
+ 
+ 
+After removal, it will be necessary a H arness to connect the switch to the E lectrical Circuit. 
+Approximately 1 m of 3 mm thick 03 threads wire will be required. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+To connect the switch to the 
+assembled cable, use 02 (03 
+Threads) Deutsch connectors. 
+On the front of the equipment, weld 
+the switch protection box to the 
+chassis spar and connect the 
+harness to the switch. 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Shutdown Switch Positioning on 793D 
+Mining Trucks 
+DATE 
+12/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-221219-1 
+Caterpillar: Confidential Yellow                 Page 5 of 10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+              Before/After Implementation – Source: SOTREQ/Giesi Nascimento. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fix the harness to the support 
+with 01 clamp (PN 130 -5300), 
+01 bolt (PN 8T -4136), 01 
+Washer (PN 8T -4121), 01 M10 
+nuts. 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Shutdown Switch Positioning on 793D 
+Mining Trucks 
+DATE 
+12/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-221219-1 
+Caterpillar: Confidential Yellow                 Page 6 of 10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                   Harness Fixing Process Before/After - Source: SOTREQ S/A 
+ 
+ 
+Make the connection of the 03 Threads connector with the equipment's electrical circuit. 
+  
+Test activating the switch to verify the functionality. 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Shutdown Switch Positioning on 793D 
+Mining Trucks 
+DATE 
+12/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-221219-1 
+Caterpillar: Confidential Yellow                 Page 7 of 10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+This change position, reduce the distance range by 16% (1.88 m to 1.57 m) by the 
+operator/technician who is working on the maintenance of the equipment. 
+ 
+Additionally, a time reduction (New Time: Approximately 30 seconds) was observed after 
+implementation of this Best Practice: 
+ 
+• Productivity – Time Reduction for Switch Actuation. 
+ 
+• Personal Safety – Engine Shutdown process simplified in risk situations. 
+ 
+ 
+Testing after installation: 
+ 
+• Operator Height 1.51 m. 
+ 
+Before the change: Difficulty accessing and viewing the switch 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Shutdown Switch Positioning on 793D 
+Mining Trucks 
+DATE 
+12/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-221219-1 
+Caterpillar: Confidential Yellow                 Page 8 of 10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+After the change: easy visualization and no difficulty in activating the switch. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Shutdown Switch Positioning on 793D 
+Mining Trucks 
+DATE 
+12/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-221219-1 
+Caterpillar: Confidential Yellow                 Page 9 of 10 
+5.0 Resources Required 
+ 
+Qty. Unity Descrição 
+1 Unity Fixing Toggle 
+1 Unity 5P-9299 Clip 
+2 Unity. 8T-4136 Bolt 
+2 Unity. M10 Sow 
+2 Unity. 8T-4121 Hard Washer 
+1 Unity. Male Connector (3 Threads) 
+1 Unity. Female Connector (3 Threads) 
+1 Unity. 3E-5169 Switch Guard  
+1 Unity. 158-6634 Switch 
+1 Unity. 130-5300 Clip 
+1 M 3,0 mm Wire (3 Threads) 
+ 
+6.0 Supporting Attachments / References 
+   
+For additional Information about mounting please contact SOTREQ Engineering Team. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3D Drawings: Fonte – SOTREQ/Giesi Nascimento. 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving the Shutdown Switch Positioning on 793D 
+Mining Trucks 
+DATE 
+12/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-221219-1 
+Caterpillar: Confidential Yellow                 Page 10 of 10 
+8.0 Acknowledgements 
+ 
+The Sotreq Team  
+ 
+Special Thanks To: Doug Friedrich (Caterpillar Inc.)  
+ 
+Giesi Nascimento  
+ 
+SOTREQ S/A  
+Engenharia de Mineração 
+E-mail: giesi.nascimento@sotreq.com.br
+ 
+Mobile: + 55 94 98803-0040 
+ 
+John Landim 
+ 
+SOTREQ S/A  
+Suporte ao Produto 
+E-mail: john.landim@sotreq.com.br
+ 
+Mobile: + 55 94 99212-4924 
+ 
+Doug Friedrich  
+ 
+Caterpillar Inc. 
+E-mail: friedrich_douglas_w@cat.com

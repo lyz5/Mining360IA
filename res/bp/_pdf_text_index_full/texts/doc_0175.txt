@@ -1,0 +1,231 @@
+SOURCE: 3500 Engine Exhaust Manifold Salvage.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+August 2024 
+4.02-240819-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+3500 Engine Exhaust 
+Manifold Salvage 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+3500 Engine Exhaust Manifold Salvage .................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Exhaust Manifold Salvage 
+DATE 
+8/19/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-240819-1 
+Caterpillar: Confidential Yellow          Page 2 of 5 
+1.0 Introduction 
+  
+This document contains information on how to salvage the exhaust manifold of 3500 engines by 
+using metal spray technology. 
+ 
+ 
+ 
+ 
+Figure 1. Typical 3500 Exhaust Manifold 
+ 
+ 
+2.0 Best Practice Description 
+ 
+This new process has been developed at MATCO machine shop to salvage the 3500 exhaust 
+manifold ends when fretting and pitting exists. The salvage procedure is an alternative that is more 
+durable than a machined sleeve. 
+ 
+The salvage procedure consists of pre- machining the exhaust manifold to remove the damage, 
+thread cutting the surface to be salvaged, metal spraying the surface,  and finally machining the 
+outside diameter. 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Exhaust Manifold Salvage 
+DATE 
+8/19/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-240819-1 
+Caterpillar: Confidential Yellow          Page 3 of 5 
+3.0 Implementation Steps 
+ 
+3.1. Pre-Machining: The exhaust manifolds must be pre-machined to remove the pitting on it, most 
+of the time cutting off 0.040” to the outside diameter is adequate. After pre-machining is complete, 
+machine a 20 threads per inch pattern on the surface to create the bond interface for the spray. 
+The total depth of thread cut should be around 0.020” - 0.030” and if thread cut done on the 
+workpiece, consider the usage of grit blasting not mandatory. 
+ 
+      
+ 
+Figure 2. Exhaust Manifold (Thread Cutting) 
+ 
+ 
+3.2. Surface protection: Use anti-bond paint to protect the areas you do not want to be sprayed. 
+ 
+ 
+ 
+Figure 3. Exhaust Manifold (Surface Protection) 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Exhaust Manifold Salvage 
+DATE 
+8/19/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-240819-1 
+Caterpillar: Confidential Yellow          Page 4 of 5 
+3.3. Metal Spraying: Can be performed by either an industrial robot or by hand. Consumable wire 
+used Oerlikon Metco 8400 or equivalent. For spraying parameters please see product datasheet. 
+ 
+ 
+Figure 4. Exhaust Manifold (Sprayed) 
+ 
+ 
+3.4 Finishing cut: Use a horizontal lathe to machine workpiece to desired specifications. 
+ 
+ 
+                
+ 
+Figure 5. Exhaust Manifold (Machined) 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Exhaust Manifold Salvage 
+DATE 
+8/19/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-240819-1 
+Caterpillar: Confidential Yellow          Page 5 of 5 
+4.0 Benefits 
+ 
+4.1. Increases the lifetime of the salvage using wear resistant materials to create the coating. 
+ 
+4.2. Eliminates the need to install a machined sleeve when pitting exists on exhaust manifolds 
+ 
+4.3. Reduces labor time. 
+ 
+5.0 Resources Required 
+ 
+5.1. Conventional or CNC horizontal lathe 
+ 
+5.2 Industrial robot (optional).  
+ 
+5.3 Metal spray equipment. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+SEBF2125 – Thermal Spray Procedures for Exhaust Manifold (I.D. & O.D.) 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+ 
+Name: Oscar De La O / Machine Shop Engineer 
+E-mail: odelao@matco.com.mx
+ 
+Company: Empresas MATCO S.A. de C.V. 
+ 
+Recognition: 
+ 
+Team: 
+Lauro Alvarado / Machine Shop Chief 
+Julián Pintado / Machine Shop Engineer 
+Oscar De La O / Machine Shop Engineer

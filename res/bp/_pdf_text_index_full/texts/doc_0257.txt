@@ -1,0 +1,265 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\3500 Engine Cylinder Head Bolt Torque Fixture.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+August 2008  
+0808-4.4-1127  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+3500 Engine Cylinder Head 
+Bolt Torque Fixture 
+ 
+ 
+Application  Maintenance  Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety MARC 
+Management 
+ 
+ 
+ 
+3500 Engine Cylinder Head Bolt Torque Fixture ....... 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 6 
+5.0  Resources Required .......................................... 6 
+6.0  Supporting Attachments / References ............... 7 
+7.0  Related Best Practices ...................................... 7 
+8.0  Acknowledgements ........................................... 7 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Engine Cylinder Head Bolt Torque Fixture 
+DATE 
+4/11/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0808-4.4-1127  
+Caterpillar Confidential:  GREEN          Page 2 of 7 
+1.0 Introduction  
+ 
+This Best Practice is a dealer-fabricated fixture to improve the process to set 3500 engine 
+cylinder head bolt torque.  The fixture allows the use of a pneumatic torque wrench with proper 
+alignment and engagement of the sockets on the head bolts and support of the torque wrench 
+and reaction arm. 
+The fixture reduces the time required to torque all the cylinder head bolts by 20% or more, 
+reduces technician fatigue, and improves the safety of the procedure. 
+ 
+                
+  
+2.0 Best Practice Description 
+ 
+The purpose of this fixture is to improve the process for setting cylinder head bolt torques on 
+3500 series engines. 
+The fixture is mounted on the cylinder head with all eight sockets engaged on the head bolts. 
+A pneumatic torque wrench is used to torque the bolts individually following the Service Manual 
+sequence and initial torque.  The reaction arm of the torque wrench is a pin that is secured in the 
+center of the fixture.  This allows easy access to all the bolts. 
+After initial torque, the bolt head position is marked on the fixture and the final “torque turn” is 
+performed. 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Engine Cylinder Head Bolt Torque Fixture 
+DATE 
+4/11/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0808-4.4-1127  
+Caterpillar Confidential:  GREEN          Page 3 of 7 
+Note:  The head bolts are torqued before the fuel injector is installed in the cylinder head. Fixture 
+does not have spring clearance with the injector installed. 
+                 
+ 
+                
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The first step is to fabricate the steel top plate of the fixture.  Using a Caterpillar print, holes are 
+drilled in the plate matching the cylinder head bolt hole pattern.  See drawing below. 
+ 
+Sockets are slip fitted into the plate hole pattern and retained by a flange on the top of the socket 
+and a snap ring on the under side of the plate. 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Engine Cylinder Head Bolt Torque Fixture 
+DATE 
+4/11/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0808-4.4-1127  
+Caterpillar Confidential:  GREEN          Page 4 of 7 
+Socket diameters will need to be machined to create a flange at the top of the socket.  The 
+groove is also machined in the sockets to hold a snap ring.  The sockets are slip fitted into the 
+plate and held in position by the flange and the snap ring. 
+Sockets used are Cat part number 124-0662.  This is a ¾ “ 12PT socket – 5” long.  The diameter 
+of the socket is machined to provide .003-.005” clearance through the plate. 
+ 
+ 
+ 
+            
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Engine Cylinder Head Bolt Torque Fixture 
+DATE 
+4/11/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0808-4.4-1127  
+Caterpillar Confidential:  GREEN          Page 5 of 7 
+ 
+ 
+A torque wrench and a reaction arm for the torque wrench will need to be manufactured.  It is 
+best to work with your torque wrench supplier to match a reaction arm and wrench to this fixture. 
+ 
+                           
+ 
+ 
+Torque wrench is a Norbar PTM52 Model 18101B06.  Range is 147-735 ft/lbs, ¾” drive. 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Engine Cylinder Head Bolt Torque Fixture 
+DATE 
+4/11/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0808-4.4-1127  
+Caterpillar Confidential:  GREEN          Page 6 of 7 
+ 
+ 
+It may be beneficial to make several fixtures as well as spare parts  (sockets, reaction arm). 
+Keep your drawings and specifications for potential future replication of the tool if needed. 
+ 
+ 
+4.0 Benefits 
+ 
+• Reduces time required to torque head bolts 20% or more. 
+• Less fatigue on technician. 
+• Better torque accuracy. 
+• Less chance of socket coming off the bolt during t orque – improve technician safety. 
+ 
+5.0 Resources Required 
+• Machine shop and time to fabricate.  Approximate c ost of the fixture is US $1500. 
+• Cost of pneumatic wrench, air regulator, and react ion arm approximately US$7500. 
+ 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Engine Cylinder Head Bolt Torque Fixture 
+DATE 
+4/11/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0808-4.4-1127  
+Caterpillar Confidential:  GREEN          Page 7 of 7 
+ 
+ 
+6.0 Supporting Attachments / References 
+None 
+ 
+7.0 Related Best Practices 
+None at this time. 
+ 
+8.0 Acknowledgements 
+ 
+Special thanks to: 
+ 
+Craig Priddle 
+OEM Remanufacturing 
+Craig.priddle@oemreman.com  
+ 
+ 
+Dale Brehm 
+6 Sigma Black Belt 
+Cat Global Mining Product Support

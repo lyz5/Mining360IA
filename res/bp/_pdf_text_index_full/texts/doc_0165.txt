@@ -1,0 +1,280 @@
+SOURCE: 3.0 Component Life Management\3.04 Removal & Installation\2. Tactical\Component Install Kits Improve R&I Process.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Major Component 
+Installation Kits Improve 
+R&I Process 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+Major Component Installation Kits Improve R&I 
+Process ...................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+November 2006 
+0107-2.3-1052 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Proper installation of major components into a machine can have substantial impact on 
+component life and reliability. A high quality installation procedure requires a well-defined process 
+utilizing the right tools, parts, and readily available technical information. 
+ 
+This Best Practices discusses the use of standardized component installation “kits” that include 
+all parts, control checklists, and other technical information required to perform a major 
+component installation. 
+ 
+Standardized install kits help insure that component installations are performed in a consistent, 
+efficient, high quality manner to deliver optimum component life. 
+ 
+  
+  
+ 
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Various Major Component Install Kits 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Major Component Installation Kits Improve R&I 
+Process 
+DATE 
+2/18/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-2.3-1052 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.0 Best Practice Description 
+ 
+Many dealers, working with their customers, have jointly developed a standardized component 
+installation process along with a required parts Bill of Materials  (RBOM) for the installation.  The 
+required Bill of Materials is often delivered in the form of a “kit”, which can either be shipped along 
+with the component from the dealer shop or assembled on the mine site.   
+ 
+The important benefit of this Best Practice is that everything needed to perform a job 
+professionally and efficiently is staged with the component when a major component is installed 
+in a machine. 
+ 
+    
+  
+ 
+3.0 Implementation Steps 
+ 
+There are typically two parts of a component installation kit. The first is a Required Bill of 
+Materials kit containing all the parts required to perform the component installation. The second is 
+a literature package containing checklists, technical information, and other required forms and 
+documents. 
+ 
+Bill of Materials 
+Every component installation requires some parts. Caterpillar R & I checklists list many of these 
+required parts.  Typically, parts include standard as well as break-in High Efficiency fluid filters, 
+mounts and mount hardware, air intake system seals, coolant system hoses and clamps, drive 
+shaft bolts, or any other required hardware. 
+ 
+In addition, many dealers customize the installation parts kits to meet specific customer needs as 
+related to machine application or customer preference.  Many customers, for example, want to 
+change all compartment fluid hoses whenever a component is removed as standard practice. 
+ 
+Engine installation standard parts kit and steering hoses 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Major Component Installation Kits Improve R&I 
+Process 
+DATE 
+2/18/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-2.3-1052 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+The best way to manage installation Bill of Materials is to develop a spreadsheet organized by 
+machine model and arrangement.  Each component would then have a specific list of parts for 
+the installation. In this way, the parts list is created one time and used every time a component 
+matching the model an arrangement is rebuilt. Once the list is developed, the dealer should 
+ensure part numbers remain current. 
+ 
+Shown below is a sample Bill of Materials used by one dealer.  Note that this example is several 
+years old and part numbers may not be fully current. 
+ 
+ 
+ 
+Attached to this Best Practice is a sample spreadsheet of the installation kits used by one dealer. 
+This information is intended as an example and part numbers many not be current. 
+ 
+Information Package 
+ 
+A typical information package for a component installation includes: 
+• Caterpillar R & I Checklist (See Attachments for index and checklists) 
+• R & I Special Instructions 
+• Oil Sample Kit 
+• Forms required for the installation record keeping and component tracking. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Major Component Installation Kits Improve R&I 
+Process 
+DATE 
+2/18/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-2.3-1052 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+       
+  
+ 
+In addition, some dealers have developed special plastic cards with special instructions to 
+attach to components.  
+ 
+ 
+       
+    
+    
+  
+ 
+ 
+4.0 Benefits 
+ 
+• Creates a standardized R & I process 
+• Increases R & I efficiency – less machine downtime 
+• Ensures correct R & I process 
+• Improves component reliability 
+• Improves component life 
+• Develops customer relations 
+   
+5.0 Resources Required 
+ 
+• Time to develop Bill of Materials and process 
+• Materials for assembling Component Install Kits 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Major Component Installation Kits Improve R&I 
+Process 
+DATE 
+2/18/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-2.3-1052 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+6.0 Supporting Attachments / References 
+ 
+Attached to this PDF: 
+Component Install Kits.xls   Sample Bill of Materials lists 
+R&I Checklists in SIS (PDF files)  A collection of R&I checklists in PDF format 
+ 
+Note: The file “Index and Form Numbers.xls” contains a listing of the applicable models for each checklist.  
+ 
+Special Instructions 
+REHS0715 Removal and Installation of Engine and Torque Converter 785-793 
+REHS0716 Removal and Installation of Transmission 785 – 793 
+REHS0717 Removal and Installation of Differential and Final Drive 785-793 
+ 
+Guidelines 
+SEBF1017 Improving Component Durability – Component Removal and Installation  
+ 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+     
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+Caterpillar Global Mining 
+6 Sigma Black Belt 
+Brehm_Dale_E@cat.com 
++1 309 675 6325 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Major Component Installation Kits Improve R&I 
+Process 
+DATE 
+2/18/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-2.3-1052 
+Caterpillar Confidential:  GREEN          Page 5 of 5

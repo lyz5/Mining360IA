@@ -1,0 +1,209 @@
+===== PAGE 1 =====
+November 2023 
+4.03-231124-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+M
+INING DEALER BEST PRACTICE 
+Transmission Carrier 
+Disassembly Tool 
+M
+aintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+T
+ransmission Carrier Disassembly Tool .................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits ............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ........................................... 6 
+D
+ISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Transmission Carrier Disassembly Tool 
+DATE 
+11/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-231124-1 
+Caterpillar: Confidential Yellow P age 2 of 6 
+1.0 Introduction 
+O
+ne of the key steps in component repairs, is the disassembly process, utilizing the correct tools, 
+to prevent any personal injuries, including any component damage and when certain tools may not 
+be available, the CRC Continuous Improvement Team (CIT) will analyze options, to improve 
+Disassembly and Assembly (D&A) Processes. 
+T
+his transmission carrier (rotating stand) is one example of the professional approach, the CIT  is 
+responsible for at the CRC, to improve workmanship quality and safety. 
+2
+.0 Best Practice Description 
+D
+uring our CRC assessment, of the transmission carrier disassembly process, it did offer several 
+opportunities for improvement (i.e). 
+• D
+isassembly was performed on a flat bench surface, which prevented removal of the
+planetary gear shaft(s) resulting in the technician physically sliding the carrier over the edge
+of the work bench to remove the shaft, creating unsupported sections of the carrier.
+• Turning the carrier on the bench surface, would create deterioration of the carrier’s face(s)
+that was in contact with the workbench.
+• Large transmission carriers require more effort by the technician to rotate the carrier on the
+bench surface in order to remove the shaft(s), resulting in potential hand slippage and finger
+cuts on sharp edges of the carrier.
+B
+ased on these observations, it was decided to design a tool that would support the various 
+transmission planetary carriers on a rotary surface, allowing effortless carrier rotation by the 
+technician to remove the shaft(s) from the carrier.   
+I
+magen 1. 3D Modeling. 
+
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Transmission Carrier Disassembly Tool 
+DATE 
+11/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-231124-1 
+Caterpillar: Confidential Yellow P age 3 of 6 
+I
+magen 2. Upper view.       Imagen 3. Side view. 
+    Imagen 4. Bottom view.         Imagen 5. Tool being used.  
+I
+magen 6. Carrier stoppers. 
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Transmission Carrier Disassembly Tool 
+DATE 
+11/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-231124-1 
+Caterpillar: Confidential Yellow P age 4 of 6 
+Version 1.2: 
+1. Mu
+ltiple rollers of two different lengths, with durable plastic sleeves and sealed bearings were
+incorporated in the design to support varous models of transmission carriers.
+2. The two (adjustable) slide stops were added, for central (carrier) positioning on the tool to
+eliminate any carrier movement on the rollers, while driving the shaft lock pins out of the carrier
+bore into the shaft for shaft removal, in either sectioned area of the rotary base.
+3. A protecting shelf was added in order to receive the shaft and avoid possible damage.
+I
+mage 7. Extended Length Rollers. 
+I
+mage 8. Clamping levers for stoppers.        Image 9. Shaft protecting shelf.  
+
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Transmission Carrier Disassembly Tool 
+DATE 
+11/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-231124-1 
+Caterpillar: Confidential Yellow P age 5 of 6 
+3.0 Implementation Steps 
+O
+nce the design and fabrication of the tooling was completed, the next step was the introduction 
+and commissioning of the tooling to the various CRC technicians assigned  to the transmission 
+disassembly workstations and to provide them with proper training in the use of the tool. 
+T
+he main purpose of this training was to focus on the Central Positioning of the carrier on the 
+rollers, the two quick slide lock adjusters to prevent carrier movement across the rollers  when 
+driving out the lock pins from the carrier bore into the shaft and the removal of the shaft from the 
+carrier, in either slot / sectioned area of the rotary base. 
+4
+.0 Benefits 
+T
+he use of this tool will provide additional benefits to the disassembly process of transmission 
+carriers.  
+• T
+echnician Safety: With the carrier completely supported on a rotary base, will reduce  the risk
+of any mishandling, or injury, as the technician will not need to perform any unsupported
+movement of the carrier, on the workbench edge, to remove the planetary shaft(s).
+• I
+mprove Quality: During the disassembly process, carriers will no longer be slid across or
+rotated on any workbench surface, eliminating potential carrier surface damage and technician
+fatigue.
+5
+.0 Resources Required 
+P
+arts List: 
+The tool consists of two main parts, the top plate and the base support. 
+The top plate holds the rollers on which the carrier will rotate, as well as the slots for the planetary 
+shafts to go through. The base basically supports this plate. 
+T
+op plate: 
+Plate with slots for rollers and shafts to pass through 
+Rollers (made of nylamid) 
+Stopper 
+Eye bolt thread 
+B
+ase support: 
+Top plate collar to support the top plate. 
+Base support for the whole structure, this gives the necessary height for the shaft to come out. 
+Shaft receiving plate (Shaft will be dropped onto this plate; it must be rubber covered. 
+Total production cost was about $750.00 USD, this includes material and labor. 
+
+===== PAGE 6 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Transmission Carrier Disassembly Tool 
+DATE 
+11/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-231124-1 
+Caterpillar: Confidential Yellow P age 6 of 6 
+6.0 Supporting Attachments / References 
+• C
+heck attachment for Drawings and Video
+• For any further questions, please contact the dealer representative (see below)
+7
+.0 Related Best Practices 
+N/
+A 
+8
+.0 Acknowledgements 
+T
+his Best Practice was written by:  
+Jesús Cabanillas 
+Asesor Técnico CRC 
+Empresas MATCO SA de CV 
+Correo: jcabanillas@matco.com.mx 
+R
+ecognition: 
+José Candelario García 
+Supervisor de desarmado de componentes del Tren de Fuerza 
+Empresas MATCO SA de CV 
+Correo: jcagarcia@matco.com.mx

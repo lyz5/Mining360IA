@@ -1,0 +1,185 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Utilizing exchange program for slow-turn salvaged parts to improve CRC TAT.pdf
+PAGES: 3
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+September 2006  
+1006-4.2-1030  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+ 
+Utilizing exchange program for slow-turn 
+salvaged parts to improve CRC TAT 
+Application  Maintenance  Site 
+Management  
+Component 
+Rebuild Safety MARC 
+Management  
+ 
+ 
+ 
+Improving CRC Turnaround through Machine Shop 
+Subcomponent Exchange Program . Error! Bookmark 
+not defined. 
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ....................................... 2 
+4.0  Benefits ............................................................. 2 
+5.0  Resources Required ......................................... 2 
+6.0  Supporting Attachments / References .............. 2 
+7.0  Related Best Practices ...................................... 2 
+8.0  Acknowledgements ........................................... 2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Improving CRC Turnaround through Machine Shop 
+Subcomponent Exchange Program 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1006-4.2-1030 
+Caterpillar Confidential:  YELLOW          Page 1 of 2 
+1.0 Introduction  
+ 
+During the process of rebuilding major components, select parts are often sent to a machine shop 
+for salvage work. The machine shop may be dealer owned, or an outside contractor.  Lead-time 
+for the salvage work to be completed causes a delay in the rebuild process.  Delays and 
+interruptions to the rebuild workflow further cause inefficiencies, which impact operational 
+performance and delivery. 
+   
+The following inefficiencies are resultant from excessive delays in the workflow.  
+•  Parts often need to be moved for temporary storag e.  
+•  Parts may need to be cleaned again before assembl y. 
+•  Parts can get lost or disorganized.   
+• The work in process time is increased thus impacti ng shop capacity. 
+ 
+An effective solution is to create an “exchange” inventory of commonly salvaged subcomponents, 
+readily available to eliminate machine shop salvage delays. 
+ 
+2.0 Best Practice Description 
+ 
+One dealer conducted an analysis of turnaround time for subcomponents, which were sent to the 
+machine shop for salvage.  Research found that some subcomponents typically experienced a 10-
+day lead-time from the machine shop back to the rebuild center. The delays were causing 
+bottlenecks, subsequently affecting shop efficiency. 
+ 
+The decision was made to create a “subcomponent exchange” program for those parts identified 
+as causing significant delays to the rebuild process.  
+ 
+Criterion established: 
+ 
+If Salvage Lead-time: 
+ 
+1. Greater than 5 days, and 
+2. Turns more than 10 times annually. 
+ 
+Then: 
+** Stock spare subcomponent inventory at the Machine Shop  
+ 
+Subcomponents, which fell into this scenario typically, included: 
+• Engine blocks 
+• Crankshafts 
+• Spindles. 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Improving CRC Turnaround through Machine Shop 
+Subcomponent Exchange Program 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1006-4.2-1030 
+Caterpillar Confidential:  YELLOW          Page 2 of 2 
+3.0 Implementation Steps 
+ 
+The “machine shop subcomponent exchange” concept makes a good 6 Sigma project.  
+Implementation steps would include: 
+ 
+• Define  the impact on shop efficiency as result of delays in waiting for machine shop 
+salvage. 
+• Measure  the delays and identify which subcomponents cause the delays. 
+o Measure the impact in terms of less labor efficien cy and impact on work in process.   
+o If you have a major component exchange inventory, then improving component 
+turnaround time may allow you to reduce your component inventory level. 
+• Analyze  cost versus benefit of stocking exchange subcomponents and payback 
+time/volume. 
+• Improve .  Create subcomponent exchange program and document the benefits. 
+• Control.   Monitor impact on labor efficiency and shop turnaround time. 
+ 
+ 
+4.0 Benefits 
+ 
+• Labor efficiency due to uninterrupted workflow, le ss material handling, less re-cleaning of 
+parts. 
+• Increased shop capacity due to better component tu rnaround time. 
+• Future reduction to major component exchange inven tories due to better turnaround time. 
+• Less shop space utilized for temporary storage.   
+• Better overall use of assets. 
+   
+5.0 Resources Required 
+Investment in exchange subcomponents. 
+ 
+6.0 Supporting Attachments / References 
+None applicable at this time. 
+` 
+7.0 Related Best Practices 
+ 
+0906-4.5-1013 - Improving CRC Component Turnaround       
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+6 Sigma Black Belt 
+Caterpillar Global Mining - Product Support 
+brehm_dale_e@cat.com   
++1-309-675-6325

@@ -1,0 +1,486 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2023 
+1.10-230221-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+A Method for Failure 
+Analysis for the 994K Pre-
+Lubrication System 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+A Method for Failure analysis for the 994k Pre-
+Lubrication System .................................................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 3 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits ............................................................. 8 
+5.0 Resources Required .......................................... 8 
+6.0 Supporting Attachments / References ............... 8 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ........................................... 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Method for Failure Analysis for the 994K Pre-
+Lubrication System 
+DATE 
+2/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230221-1 
+Caterpillar: Confidential Yellow          Page 2 of 9 
+1.0 Introduction  
+ 
+In January 2020, the new fleet of 994K loaders started operating at the S11D mine, northern Brazil, 
+where the extraction modal is heavily based on the mobile crushers feeding system, in a system 
+called Loading and Carriage. 
+ 
+The 04 994K loaders operating at the S11D mine started their operation as part of a customer effort 
+to increase iron ore production, and increase the flexibility of operations, which at that time were 
+mainly composed of TRUCKLESS. 
+ 
+Since the beginning of the operation, GAPS in the application of the assets were identified, especially 
+in the turbochargers and other Engine components that suffer from the lack of adequate lubrication 
+during starts. The pre-lubrication system automatically enters before starts when one of the following 
+conditions is not present: 
+ 
+• Engine oil pressure more than or equal to 3 kPa. (4 psi) 
+• Engine run for the last (02) two minutes. 
+• The Coolant temperature is more than 50° C (122° F) 
+ 
+The improper use of the pre-lubrication system can cause catastrophic failures in the turbocharger 
+and accelerated wear in the engine's moving components.  
+ 
+As part of an initiative by the SOTREQ Engineering and Product Support team, to reduce the impacts 
+caused by an operation of this nature, some training plans were implemented to identify possible 
+problems in the system: 
+ 
+• Training Plans. 
+• Operational Monitoring.  
+• Negotiations with the Maintenance Team.  
+ 
+We identified a failure in the electric engine, Circuit Breakers, and leaks in the pumps. Tests are 
+currently available for the pump, relay, and electric engine power supply, however, there are no 
+actual tests for the engine or information available about them. 
+ 
+The new approach was made on the Dealer, focusing, on the Project, People Development, and 
+Process. 
+ 
+o PROJECT: To efficiently control the service life and carry out tests of the components of the 
+pre-lubrication system. 
+o PEOPLE DEVELOPMENT : Identification of operators, with a higher incidence of pre-
+lubrication system bypass, relating the records to the Operator's Time/Registration, and 
+weekly handling of alarms and analysis of VIMS  memories with the person responsible for 
+the operation. 
+o PROCESS: Identification of system failures and operation problems, and elaboration of a 
+procedure that seeks the moment to replace system components before failures occur so 
+that potential risks can be prevented. 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Method for Failure Analysis for the 994K Pre-
+Lubrication System 
+DATE 
+2/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230221-1 
+Caterpillar: Confidential Yellow          Page 3 of 9 
+It was possible to reduce, and sometimes eliminate 100% of corrective events in the pre- lubrication 
+system, considerably reducing the impacts of failures related to the pre-lubrication system on the 994K 
+KPIs. 
+ 
+2.0 Best Practice Description 
+ 
+Some equipment fleet 994K Wheel Loaders in S11D mine had several failures in the pre-lubrication 
+system. These failures can be confused with normal situations, in which the system is not activated. 
+This situation is common. An electric engine failure will not generate failure codes. 
+ 
+Early premature failures in the system's engine have made it difficult to solve and detect problems in 
+the lubrication system, as there are no parameters to define the failure. No failure codes show the 
+engine has a problem. 
+ 
+Failures in electric engines are not always simple to detect and solve, the coils do not have resistance 
+close to 0 Ω or overload (indicating open circuit) or close to 0 Ω (0.1 Ω indicating short circuit). There 
+is no parameter for us to effectively define that the electric engine has a problem. 
+ 
+The pre-lubrication system has a standard structure, with the components: 
+ 
+CIRCUIT BREAKER: 
+IMAGE 01: CIRCUIT BREAKER 
+ 
+ENGINE RELAY: 
+IMAGE 02: PRE-LUBE RELAY 
+ 
+ELECTRIC ENGINE: 
+IMAGE 03: ELECTRIC ENGINE 
+ 
+ 
+THE PRE-LUBRICATION SYSTEM HAS A STANDARD STRUCTURE, WITH THE COMPONENTS: 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Method for Failure Analysis for the 994K Pre-
+Lubrication System 
+DATE 
+2/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230221-1 
+Caterpillar: Confidential Yellow          Page 4 of 9 
+ 
+IMAGE 04: SYSTEM SCHEMATIC.
+ 
+ 
+IMAGE 05: CIRCUIT APPLIED TO 994K
+ 
+ 
+Analyzing the structure of a new machine it is possible to define the default parameters to be 
+followed, as the Failure Analysis consists of defining default values and verifying their evolution over 
+time. 
+ 
+The resistance of a cable and a coil can change quickly as they are used, however, the previous 
+analysis of this information can serve as parameters to be compared. 
+ 
+After analyzing the resistance of the defined points, the same points must be checked on the 
+equipment every 250 hours, based on the reference values, the changes in each point are visible. 
+ 
+This data is used to define the best time to replace system components before failure occurs and to 
+be able to quantify the useful life of each component. 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Method for Failure Analysis for the 994K Pre-
+Lubrication System 
+DATE 
+2/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230221-1 
+Caterpillar: Confidential Yellow          Page 5 of 9 
+3.0 Implementation Steps 
+ 
+The first part of the work is evaluating the operational and maintenance conditions of machines and 
+evaluating the failures in the system components and perform the following measurements: 
+ 
+ RESISTANCE IN ELECTRIC ENGINE. 
+        
+Image 06: Electric Engine and measuring point
+ 
+ 
+Values for a New Engine: 
+ 
+DESCRIPTION 
+PART-
+NUMBER FIXING POINTS 
+STANDART 
+VALUE 
+ENGINE 116-7153 1 - 2 2,6MΩ 
+ENGINE 116-7153 1 - 3 2,6MΩ 
+ENGINE 116-7153 2 - 3 0,2Ω 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Method for Failure Analysis for the 994K Pre-
+Lubrication System 
+DATE 
+2/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230221-1 
+Caterpillar: Confidential Yellow          Page 6 of 9 
+ RELAY RESISTANCE 
+ 
+Image 07: Electrical Relay and Measuring Points 
+ 
+ 
+               Values for New Relay: 
+ 
+DESCRIPTION 
+PART 
+NUMBER FIXING POINTS 
+STANDART 
+VALUE 
+RELAY 337-9078 Bobina 2-3 16 Ω +1,6 
+RELAY 337-9078 Contatos 1-4 0,2Ω 
+ 
+ SYSTEM CONNECTION (CABLES) 
+ 
+IMAGE 08: SYSTEM CABLING
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Method for Failure Analysis for the 994K Pre-
+Lubrication System 
+DATE 
+2/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230221-1 
+Caterpillar: Confidential Yellow          Page 7 of 9 
+Values for New Cabling 
+ 
+Relay Cable for Engine (CBL-CW1 RD-
+4) 472-4095 BETWEEN TERMINALS 0,2 Ω 
+Motor cable to Ground 2 (CBL-CV1 BK-
+4) 472-4094 BETWEEN TERMINALS 0,2 Ω 
+CABLE FROM CIRCUIT BREAKER TO 
+RELAY 3 (CBL-CY1 RD-4) 472-4096 BETWEEN TERMINALS 0,2 Ω 
+BUS CABLE TO CIRCUIT BREAKER 4 
+(CBL-CU1 RD-4) 432-4304 BETWEEN TERMINALS 0,2 Ω 
+ 
+After carrying out the measurements and setting the default values, the resistance of the points must 
+be checked every 250 hours, the measurement procedure takes approximately 5 minutes.  
+ 
+All measurements must be made with the equipment off, the parking brake applied, the main switch 
+open and the circuit breaker output cable removed. 
+ 
+It is possible to define the circuit activity and the time to replace the components of the system. In the 
+example, it is possible to verify that the resistance of the electric motors of the 994K (PC30 and 
+PC32) is very low as specified, not enough to be considered short circuits, but low enough to define 
+that the motors are not working and must be replaced. 
+ 
+SYSTEM COMPONENTS PC30 PC31 PC32 PC33 
+DESCRIPTION 
+PART 
+NUMBER 
+MEASURING 
+POINTS 
+STANDARD 
+VALUE VALUE  VALUE  VALUE  VALUE 
+ENGINE 116-7153 1 - 2 2,6M Ω 55.9Ω 1,222MΩ 95Ω 2,6MΩ 
+ENGINE 116-7153 1 - 3 2,6M Ω 55.8Ω 2,9MΩ 95Ω 2,6MΩ 
+ENGINE 116-7153 2 - 3 0,2Ω 0,1Ω 0,2Ω 0,2Ω 0,2Ω 
+RELAY 337-9078 COIL 2-3 16 Ω+_1,6 16,1Ω 16,3Ω 16,25Ω 16,1Ω 
+RELAY 337-9078 
+CONTACT 
+POINTS 1-4 0,2 Ω 0,1Ω 0,2Ω 0,2Ω 0,2Ω 
+RELAY CABLE FOR ENGINE 
+1 (CBL-CW1 RD-4) 472-4095 
+BETWEEN 
+TERMINALS 0,2 Ω 0,1Ω 0,2Ω 0,2Ω 0,2Ω 
+ CABLE ENGINE TO 
+GROUNDING 2 (CBL-CV1 
+BK-4) 472-4094 
+BETWEEN 
+TERMINALS 0,2 Ω 0,2Ω 0,2Ω 0,2Ω 0,2Ω 
+CIRCUIT BREAKER CABLE 
+FOR RELAY 3 (CBL-CY1 
+RD-4) 472-4096 
+BETWEEN 
+TERMINALS 0,2 Ω 0,2Ω 0,2Ω 0,2Ω 0,2Ω 
+Cable AS for Circuit 
+Breaker (CBL-CU1 RD-4) 432-4304 
+BETWEEN 
+TERMINALS 0,2 Ω 0,2Ω 0,2Ω 0,2Ω 0,2Ω 
+ 
+ 
+IMAGE 09: Resistance Test between points 1-2 of the Electric Engine. 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Method for Failure Analysis for the 994K Pre-
+Lubrication System 
+DATE 
+2/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230221-1 
+Caterpillar: Confidential Yellow          Page 8 of 9 
+ 
+ 
+On the 994K (PC31) motor has the resistance between points 01-02 below normal, the image below 
+shows the moment of measurement. The motor was still working, he could move the pump, however, 
+its useful life was ending, because its internal insulation was bad. 
+ 
+4.0 Benefits 
+ 
+Some benefits can be listed, after applying measurements to the 994K: 
+ 
+ Feedback from mechanics on simple and effective testing of system components. 
+ Removal of components with failures not identified by the machine system and scheduling 
+the replacement of components that are out of the standard. 
+ Assurance that the pre-lubrication system is working. 
+ Accurate lifetime measurement and replacement planning for damaged components. 
+ 
+ 
+5.0 Resources Required 
+ 
+The measurement requires a PN 257-9140 Multimeter 
+ 
+6.0 Supporting Attachments / References 
+ 
+N/A. 
+ 
+7.0 Related Best Practices 
+ 
+N/A. 
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Method for Failure Analysis for the 994K Pre-
+Lubrication System 
+DATE 
+2/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230221-1 
+Caterpillar: Confidential Yellow          Page 9 of 9 
+8.0 Acknowledgements 
+ 
+THIS BEST PRACTICE WAS WRITTEN BY 
+ 
+Arthur Almeida  
+SOTREQ S/A 
+Mining Engineering Consulting 
+E-mail: arthur.almeida@sotreq.com.br
+ 
+Mobile: +55 (31) 9 9785-9765 
+ 
+Thais Garcia 
+SOTREQ S/A 
+Technical Analyst 
+E-mail: thais.garcia@sotreq.com.br 
+Mobile: + 55 94 8131-2676 
+ 
+Wender Batista 
+SOTREQ S/A  
+Fleet Performance Consultant 
+E-mail: wender.batista@sotreq.com.br
+ 
+Mobile: +55 (94) 9 9294-2816 
+ 
+Cid Clay Quirino 
+SOTREQ S/A 
+Mining Engineering Coordinator 
+E-mail: cid.quirino@sotreq.com.br
+ 
+Mobile: +55 (94) 9 9272-9916 
+ 
+ 
+Special Thanks To: 
+ 
+Doug Friedrich 
+Caterpillar Inc. 
+E-mail: friedrich_douglas_w@cat.com 
+ 
+Edivando Moreira 
+SOTREQ S/A 
+Mining Supervisor 
+E-mail: edivando.moreira@sotreq.com.br

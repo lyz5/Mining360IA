@@ -1,0 +1,166 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+BEST PRACTICE SERIES
+High Efficiency Breather 
+Filters 
+ 
+Application Maintenance Site 
+Management
+Component 
+Rebuild Safety MARC 
+Management
+ 
+ 
+ 
+ 
+High Efficiency Breather Filter....................................1  
+1.0 Introduction........................................................2  
+2.0 Best Practice Description ..................................2  
+3.0 Implementation Steps........................................2  
+4.0 Benefits .............................................................2  
+5.0 Resources Required..........................................2  
+6.0 Supporting Attachments ....................................3  
+7.0 Related Best Practices ......................................3  
+8.0 Acknowledgements ...........................................3  
+ 
+ 
+ 
+ 
+ 
+  
+August 2006
+0806-2.10-1004
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      catminer.com 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+High Efficiency Breather Filters 
+DATE 
+22 Aug 06 
+CHG 
+NO 
+01 
+NUMBER 
+0806-2.10-1004
+ 
+1.0 Introduction  
+ 
+A compartment breather filter plays a critical role in extending component life. The breather filter 
+must allow air to easily pass through it while preventing microscopic particulate particles from 
+entering the compartment and contaminating the fluid with abrasive debris. 
+ 
+Fuel, hydraulic and powertrain systems use a wide variety of breather filters, which means a mine 
+must stock multiple filters to accommodate all machines in its fleet. There are no specific design 
+guidelines for the size, type, or efficiency of breather filters. 
+ 
+2.0 Best Practice Description 
+ 
+On newer machines, increasingly sophisticated, high-performance systems and components 
+require very clean fluids. Most standard breather filters are not efficient enough to provide 
+maximum protection to new systems. In addition, a mine must stock multiple part numbers of 
+standard breathers to service a fleet. 
+ 
+An alternative is to standardize on the use of spin-on High Efficiency 4-micron fuel filters as 
+breathers for all compartments. This includes fuel, hydraulic, transmission, etc. These filters are 
+very high performance and reduce the number of breather part numbers that have to be stocked. A 
+common practice is to use the same HE fuel filter as is used on one or more of the machines in the 
+fleet.  
+ 
+3.0 Implementation Steps 
+ 
+When used as breather filters, HE fuel filters are mounted upside down so that falling dirt and 
+debris are deflected from the top of the filter. The filter is mounted on a combination mounting stud 
+and mounting bracket that is fabricated by the dealer. A hose is then installed between the 
+mounting bracket and compartment. Care must be taken to insure that only non-vented 
+compartment caps are used so that all air entering and leaving the compartment must pass 
+through the breather filter. 
+ 
+4.0 Benefits 
+ 
+Dust entering fluid compartments through inefficient breather filters is often a source of fluid 
+contamination. This can be easily prevented with the use of HE fuel filters as breathers. When 
+used as fuel tank breathers, HE filters have reduced or eliminated premature fuel filter plugging in 
+extremely dusty applications. HE fuel filters are also larger than standard breathers and have much 
+greater capacity. There have been no documented cases of these filters plugging. They are 
+typically replaced only once or twice a year. 
+ 
+5.0 Resources Required 
+Mounting brackets and hoses must be fabricated and installed by the dealer. This requires very 
+simple machining, welding and hose-making capabilities. See diagram contained Component Life 
+Management Master Document PDF (click on attachments in this file). 
+ 
+ 
+Caterpillar Confidential:Yellow
+Reproduction constitutes an uncontrolled document
+Page 2 of 3
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+High Efficiency Breather Filters 
+DATE 
+22 Aug 06 
+CHG 
+NO 
+01 
+NUMBER 
+0806-2.10-1004
+ 
+6.0 Supporting Attachments  
+ 
+Component Life Management Master Document PDF (click on attachments in this file) 
+ 
+7.0 Related Best Practices 
+0806-2.10-1000  -Managing Fluid Cleanliness 
+ 
+8.0 Acknowledgements 
+This High Efficiency Breather Filters Best Practice was authored by: 
+Dick Douglas 
+Market Consultant 
+Caterpillar Global Mining 
+Douglas_Richard_D@cat.com  
+1-309-675-5699  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Caterpillar Confidential:Yellow
+Reproduction constitutes an uncontrolled document
+Page 3 of 3

@@ -1,0 +1,260 @@
+SOURCE: 1.0 Maintenance & Repair\1.01 Preventive Maintenance\3. Quick Win\OHT Transmission and Hydraulic Filter Replacement Tool.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+August 2015 
+1506-1.01-1381 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+OHT Transmission & 
+Hydraulic Filter 
+Replacement Tool 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+OHT Transmission & Hydraulic Filter Replacement 
+Tool ............................................................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+OHT Transmission & Hydraulic Filter Replacement 
+Tool 
+DATE 
+10/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1506-1.01-1381 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction  
+ 
+The service team of one of the Borusan Makina Kazakhstan’s projects has made a tool to safely, 
+easily and quickly replace transmission and hydraulic filters of 777D/F trucks in the site during big 
+PMs. 
+ 
+Previously, different on-hand things were used like ladders, barrels to reach the filters, which was 
+not safe. Two technicians were needed to do this task. Besides, during the removal of the filter 
+the used oil from the filter might spill out onto the technicians and the floor of the pit stop that 
+violated the rules of Contamination Control (CC) and safety. The filter replacement process with 
+the old way required more time and more effort. 
+ 
+This tool helps the service team replace transmission and hydraulic filters quickly, safely and by 
+using only the efforts of one technician. Moreover, this tool can be modified for other models of 
+trucks if it is required.  
+ 
+ 
+2.0 Best Practice Description 
+ 
+This tool consists of three main parts: 1. Baseplate with the two types of filter base adapters on it 
+– it is needed for keeping removed filters fixed and helps to disassemble filters; 2. Used oil 
+collection tank; 3. Ladder itself that makes the tool mobile, which is important for field service 
+people. 
+ 
+ 
+                                           
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Transmission and Hydraulic Filter Replacement Tool pictures in 3D 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+OHT Transmission & Hydraulic Filter Replacement 
+Tool 
+DATE 
+10/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1506-1.01-1381 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+3.0 Implementation Steps 
+ 
+The tool is in use.  
+ 
+1. Place the tool under the truck. 
+2. Step up the ladder and remove the filter. 
+3. Put the removed filter onto the tool. 
+4. Take out the tool under the truck. 
+5. Using the filter base adapter, disassemble the filter. 
+6. Then by using the reverse order, install a new filter to the truck. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Practical use of Transmission and Hydraulic Filter Replacement Tool 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+OHT Transmission & Hydraulic Filter Replacement 
+Tool 
+DATE 
+10/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1506-1.01-1381 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+4.0 Benefits 
+ 
+• Safe, easy and quick replacement of transmission and hydraulic filters of 777D/F trucks in 
+the site during big PMs. 
+• Efficient utilization of man hours (one technician is enough to do this task). 
+• Th is tool can be modified for other models of trucks if it is required. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Welding Shop. 
+• Material and parts required is indicated in the drawings attached. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+The detail and assembly drawings of the Transmission and Hydraulic Filter Replacement Tool are 
+attached. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A. 
+ 
+ 
+8.0 Acknowledgements 
+ 
+The idea of creating & implementing this Best Practice belongs to: 
+ 
+Sabyrzhan SAMENOV    Vladimir KUNITSA & Farid ABDRASHITOV 
+Altyntau Project Manager   Altyntau Project Welders 
+Borusan Makina Kazakhstan LLP   Borusan Makina Kazakhstan LLP 
+ssamenov@borusan.com
+       
+          
+Yernar NARGELOV 
+Service Engineer 
+Mining Product Support Department 
+Borusan Makina Kazakhstan LLP 
+ynargelov@borusan.com
+    
+  
+ 
+This Best Practice was written by:  
+Gulnaz MANSUROVA 
+CRC Process Engineer 
+Borusan Makina Kazakhstan LLP 
+gmansurova@borusan.com 
++7 (701) 951 98 14

@@ -1,0 +1,173 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Proper Gear Reminder for 
+Trucks Descending Grades 
+with ARC 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+ 
+Proper Gear Reminder for Trucks Descending Grades 
+with ARC .................................................................... 1
+ 
+1.0 Best Practice Description ................................... 2 
+2.0 Implementation Steps ........................................ 2 
+3.0 Benefits .............................................................. 3 
+4.0 Resources Required .......................................... 3 
+5.0 Supporting Attachments .................................... 3 
+6.0 Related Best Practices ...................................... 3 
+7.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+September 2006 
+0906-1.2-1016 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Best Practice Description  
+ 
+This Best Practice deals with reminding truck operators to select and engage the proper gear for 
+descending a grade when using Automatic Retarder Control (ARC). For effective use of ARC, the 
+truck must have the proper transmission gear engaged before descending the grade. To remind 
+operators to make the gear change, mines have placed signs indicating the proper gear to be 
+selected and engaged. The proper gear signs are placed near the beginning of the downhill 
+grades. Each sign informs the operator which gear should be selected and engaged according to 
+the machine’s Operation and Maintenance Manual (O&MM). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.0 Implementation Steps 
+ 
+• Establish the proper gear to be selected and engaged for each grade in the mine as per the 
+O&MM. 
+ 
+• Train operators 
+ 
+• Place the correct gear indicator signs prior to each downhill grade.  
+ 
+• Additional signs may be advisable along the grade to remind the operator of the correct gear. 
+ 
+ 
+3
+793
+For trucks with loads 
+Temperature of the brake oil: 
+110 - 121 Deg C 
+Truck Gear Speed (kph) 
+793 4 27 
+785 4 31 
+777 5 34 
+ 
+A suggested proper gear sign for a 793 
+A sign at Newmont Yannacocha 
+in Peru. It reads: 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Proper Gear Reminder for Trucks Descending Grades 
+with ARC 
+DATE 
+21 SEP 2006 
+CHG 
+NO 
+02 
+NUMBER 
+0906-1.2-1016 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Benefits 
+ 
+Proper gear selection while descending grades allows for effective use of the Automatic Retarder 
+Control. ARC is designed to reduce brake wear and brake system overheating. Many operators 
+overlook the fact that the transmission must be engaged in a particular gear suitable for 
+descending the grade. Without the proper lower gear, the ARC will not be effective. Engine 
+overspeed, accelerated brake wear, and brake system overheating can result. 
+ 
+4.0 Resources Required 
+ 
+All that is required are signs appropriately placed before downhill grades that inform the operator 
+of the proper gear to use while descending the grade. The sign may be a simple as a symbol of a 
+gear with a number at the center. The number indicates the correct gear to be selected and 
+engaged before descending the grade. Such a pictograph avoids any language problems. In 
+situations where different truck models require different gears to be selected and engaged, the 
+sign may indicate the particular truck model: 793, 797, etc. 
+ 
+5.0 Supporting Attachments  
+None applicable. 
+ 
+6.0 Related Best Practices 
+None applicable 
+ 
+7.0 Acknowledgements 
+This Best Practice was authored by: 
+Fred Ringness 
+Caterpillar Global Mining  
+Product Support Manager – Site Capabilities 
+Ringness_Fred@cat.com 
+309-675-4882 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Proper Gear Reminder for Trucks Descending Grades 
+with ARC 
+DATE 
+21 SEP 2006 
+CHG 
+NO 
+02 
+NUMBER 
+0906-1.2-1016 
+Caterpillar Confidential:  GREEN          Page 3 of 3

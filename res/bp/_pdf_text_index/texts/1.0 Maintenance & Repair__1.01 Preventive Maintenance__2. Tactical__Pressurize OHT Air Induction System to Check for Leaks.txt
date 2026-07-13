@@ -1,0 +1,261 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+April 2011 
+1011-1.01-1217 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Pressure OHT Air Induction 
+System to Check for Leaks 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+ 
+Pressure OHT Air Induction System to Check for 
+Leaks ......................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR 
+Pressurize OHT Air Induction System to Check for 
+Leaks 
+DATE 
+8/30/2016 
+CHG 
+NO 
+02 
+NUMBER 
+1011-1.01-1217 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+1.0 Introduction  
+Condition Monitoring (CM) is a critical component to any successful Maintenance & Repair (M&R) 
+repair-before-failure strategy.  The foundation of any successful Condition Monitoring program is 
+regular and thorough machine inspections.  Discipline to conduct inspections and the attention to 
+detail to detect potential problems or existing defects is very important.  Defect detection must be 
+followed by prompt and appropriate execution by the Backlog Management and Planning & 
+Scheduling departments. 
+ 
+Dust entry through the air induction system and into the engine can cause significant downtime, 
+productivity loss, customer frustration, and significant man-hours to repair or replace the engine.  
+ 
+2.0 Best Practice Description 
+Pressurizing the air induction system can allow the maintenance team to check for proper 
+integrity and sealing of the induction tubes, hoses and clamps.  Early detection of problems or 
+potential problems is very important. Use machines with known healthy air systems to establish 
+site specific baselines for silicone and aluminum in engine oil SOS. This will aid SOS interpreters 
+in identifying air systems issues. 
+ 
+3.0 Implementation Steps 
+1. Identify service interval to employ this test. (For instance: Every 500 hour PM, etc).   
+2. Employ lockout and tag-out procedure.  
+3. Remove air filters. 
+4. Install test caps to all filter housings and secure in place using threaded nut. 
+5. Pressurize test cap using clean and dry shop air.   
+a. Suggest air pressure to 4 psi (28 kpa). 
+6. Listen for any sounds of air leakage from the system.   
+a. Good: No sound of air leakage. 
+b. Not Good: Sound of air leakage. If sound of air leakage, identify air source and take 
+appropriate action to resolve. 
+7. Spray mild dilution of soapy water on joints and rubber hoses in air induction system. 
+8. Visually inspect for bubbles (bubbles indicate the presence of a leak in that location). 
+a. Good:  No soapy bubbles (machine has a well sealed induction system). 
+b. Not Good: If air bubbles are seen.  If so, identify and take appropriate action to resolve. 
+ 
+Photos of Test Caps to Test Air Induction System for Leaks.  Design features are: 
+1) Long hollow tube to allow cap to be secured in place of air filter 
+2) Test port to supply air pressure to cap during pressure testing 
+3) O- ring groove to seal to machine and prevent air leakage 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR 
+Pressurize OHT Air Induction System to Check for 
+Leaks 
+DATE 
+8/30/2016 
+CHG 
+NO 
+02 
+NUMBER 
+1011-1.01-1217 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+ 
+ 
+ 
+Basic directions to use the test caps to pressurize the system: 
+Step 4: Install test caps and tighten nut to seal test cap. 
+  
+ 
+O-Ring Groove to 
+Seal to Machine 
+Port to Supply Air 
+Pressure 
+Hollow Tube to 
+Secure Test Cap 
+Tighten Nut to 
+Secure Test Cap 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR 
+Pressurize OHT Air Induction System to Check for 
+Leaks 
+DATE 
+8/30/2016 
+CHG 
+NO 
+02 
+NUMBER 
+1011-1.01-1217 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+Step 5: Pressurize air induction system. 
+  
+ 
+ 
+Step 6: Spray mild soapy water on joints, hoses, and clamps. 
+  
+ 
+  
+ 
+ 
+ 
+Air Pressure: About 
+4 psi (28 kPa) 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR 
+Pressurize OHT Air Induction System to Check for 
+Leaks 
+DATE 
+8/30/2016 
+CHG 
+NO 
+02 
+NUMBER 
+1011-1.01-1217 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+Step 7: Visually inspect for bubbles. 
+  
+ 
+4.0 Benefits 
+Detection of air induction pressure loss and / or loose induction clamps clamp can have 
+significant benefits.  Early detection is key to limiting severity of failure, repair cost of parts and 
+labor, and machine downtime to resolve. 
+ 
+5.0 Resources Required 
+The major resource required to implement this Best Practice is the fabrication of the test caps to 
+install on the air filter boxes.   
+Fabrication costs are approximately US $ 1000 / per set of four. 
+ Parts List is as Follows: 
+1) O- ring Seal: 096-0037  (ID: 264.5 mm, Cross Section: 8.4 mm) 
+2) Wing Nut:  1N-8161 
+3) Material for Test Cap:  Aluminum 
+ 
+6.0 Supporting Attachments / References 
+• 793 Drawing 
+• SOS Interpretation 1 help sheets pg 12 
+ 
+ 
+7.0 Related Best Practices 
+ 
+Best Practice 0107-2.15-1059 “Using VIMS
+® to Determine Air Filter Replacement Intervals” 
+explains how to use VIMS® to check your air filter performance. 
+  
+Bubbles are 
+Evident.  Need to 
+Take Action 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR 
+Pressurize OHT Air Induction System to Check for 
+Leaks 
+DATE 
+8/30/2016 
+CHG 
+NO 
+02 
+NUMBER 
+1011-1.01-1217 
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Oscar Delport 
+Condition Monitoring Specialist – Jwaneng Mine 
+Barloworld Equipment Botswana 
+ODelport@barloworld-equipment.com 
+Phone: +267 580 5262 
+ 
+John Hoffman 
+Product Support Consultant 
+Caterpillar Global Mining 
+Hoffman_John_A_II@cat.com
+ 
+Phone: +27 11 256 8312

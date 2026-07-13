@@ -1,0 +1,304 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  0909-1.01-1183 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      mining.cat.com 
+ 
+ 
+ 
+ 
+B E S T  P R A C T I C E  S E R I E S 
+Wheel Loader Lubricated 
+Pin Inspection 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ M A RC 
+Management 
+ 
+ 
+ 
+Wheel Loader Lubricated Pin Inspection ................... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information pro vided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Wheel Loader Grease Lubricated Pin Inspection 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0909-1.01-1183 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+1.0 Introduction  
+ 
+The purpose of this best practice is to establish a preventive maintenance procedure to avoid 
+unexpected failures of grease  lubricated pin joints  in Large Wheel Loaders.  Depending on the 
+equipment application, this procedure will allo w for wear trending and aid in determining useful life of 
+the pin and successfully completing repairs before a failure occurs.  
+ 
+By inspecting greased lubricated pins periodically, we can: 
+ 
+• Identify a temperature increase related to the wear  of the pin  or failure on the lubrication 
+system. 
+• Optimize grease use on every pin. 
+ 
+Grease lubricated pin joints can have  sudden failures, which cause issues with the production and 
+maintenance flow of a mine site. Sometimes more grease than is needed is used, contamina ting the 
+environment and increasing operation costs. This best practice will aid in reducing this occurrence.  
+ 
+The pin inspection process and subsequent data analysis w ill aid in avoiding unscheduled downtime 
+and help to increase machine availability. 
+  
+By optimizing the amount of grease used we will reduce Owning and Operating  costs and also avoid 
+contamination of the environment. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+These pictures show the effects of uncontrolled wear and lubrication problems. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Wheel Loader Grease Lubricated Pin Inspection 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0909-1.01-1183 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+2.0 Best Practice Description 
+ 
+The full pin inspection includes: 
+ 
+• Measuring the joint temperature imm ediately after operation , at refueling  or shift changes, 
+and during Pre-PM inspections. 
+• Measuring the amount of grease injected into each pin.  
+• Document the temperatures and volume of grease injected. 
+ 
+In order to perform the best practice a n infrared thermometer will be needed to read pin joint  
+temperatures. To measure the injected grease volume, the mechanic will need a measured container.  
+. 
+The information must be recorded, s o tha t the data can be trended  and analyzed to help achieve 
+accurate repair before failure. 
+ 
+As pin operating temperatures will change due to ambient temperatures and operating conditions 
+different baselines may need to be set for each machine. The variation from these baselines will 
+indicate that a failure is immanent.  
+ 
+                                     
+"grasa formato.xls"                         
+"Temperatura de 
+pine 994F_Ricaldi.xls" 
+ 
+3.0 Implementation Steps 
+ 
+1. Inform the preventive maintenance manager and inspectors of the process 
+2. Establish who will be responsible for carrying out the procedure 
+3. Establish baseline pin temperatures 
+4. Begin regularly scheduled data collection.   
+ 
+In order to set a baseline pin temperature a machine in good condition should be operated in its 
+normal operation environment. The various pin temperatures should then be recorded along with the 
+ambient temperature. The delta between the pin temperature and the ambient temperature  will be 
+monitored for deviation from the baseline.  
+ 
+Once the process has been implemented and a baseline set if during future inspections deviation is 
+noted between the baseline and the actual temperature reading a potential problem may be indicated. 
+ 
+This best practice has b een set up in various mine  sites o ver the past 5 years where the 
+implementation process took less than a month. The areas involved were Planning and Maintenance. 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Wheel Loader Grease Lubricated Pin Inspection 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0909-1.01-1183 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+Implementation of this best practice can aid in reducing costly pin joint failures and the unscheduled 
+downtime associated with these failures.  
+ 
+Experience has shown that a specific 994F wheel loader with no inspections of the pins o r grease 
+system presented major joint failures. In this instance the repair required two D pins ($3699USD) and 
+an A pin ($2 ,499USD), these costs do not include labor to repair  or downtime. The failures occurred 
+during the first 4000 hours of operation. 
+ 
+Another machine, which experiences a major load, had experienced 3 pin D failures in the fir st 2000 
+operation hours ($5,400USD) 
+ 
+ 
+Loaders placed into service after the implementation of this best practice in 2007 have had no failures 
+related to the pin joints.   
+ 
+ 
+ 
+Data analysis 
+-Temperature trends 
+-Alarms 
+-Backlogs 
+Warehouse inspection 
+(Preventive 
+maintenance) 
+Measure the amount of injected 
+grease 
+-Temperature trends 
+-Alarms 
+-Backlogs 
+ 
+-Measurement 
+requirements 
+Field inspection (Pre preventive 
+maintenance, refuels, shift change) 
+Take temperature data 
+Data analysis 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Wheel Loader Grease Lubricated Pin Inspection 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0909-1.01-1183 
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+ 
+5.0 Resources Required 
+ 
+• Field inspector 
+• Infrared thermometer 
+• Measured containers 
+• Maintenance personnel 
+• 4 hour training per person 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was described by: 
+ 
+Anggello Valdez 
+WL& WD specialist – Ferreyros 
+avaldezs@ferreyros.com.pe 
+ 
+Prepared by: 
+ 
+ 
+  Alberto Franco D’Alfonso 
+  CI & BP Champion – Ferreyros 
+  afrancod@ferreyros.com.pe

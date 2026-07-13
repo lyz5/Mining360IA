@@ -1,0 +1,512 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Road Defect Management 
+Training Exercise 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+Road Defect Management Training Exercise............. 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+Starting Conditions ..................................................... 5 
+3.0 Implementation Steps ........................................ 6 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+  
+February 2010 
+1107-1.2-1094 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+This Best Practice provides the methodology to carry out a training exercise associated with road 
+maintenance (defect management). It is highly recommended that this exercise be included as 
+part of a comprehensive Equipment Management training program. 
+ 
+The exercise consists of a simulation of a hypothetical mine site, comprising a fleet of dump 
+trucks, haul roads, machine repair centers, and management personnel. 
+ 
+After carrying out the exercise, participants will be able to understand the relationship between 
+road conditions, machine deterioration, and the impact proper road management processes have 
+on obtaining the optimal cost per ton. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 1 – Road Segments 
+ 
+ 
+This Best Practice provides all of the resources required to run this exercise during a training 
+program. The exercise has been designed in a way that any one can edit it and add or remove 
+complexities. 
+ 
+2.0 Best Practice Description 
+ 
+The purpose of this exercise is to provide a top view of the mode of operation of a typical open 
+mine site, and to provide participants an opportunity to understand the relationship between 
+machine application, operation and repair activities.  See the attachment RDM – Exercise 
+Guidelines.doc for a full description of the training exercise. The main elements of this exercise 
+are (see Figure 2): 
+ 
+Facilitators: Five facilitators are needed for the exercise. Their role descriptions are as follows: 
+ 
+Facilitator #1 – Lead the RDM Exercise:  
+• Lead exercise round brief, execution, and debrief. 
+• Act as the “Mine Manager” and set the scene for the group to get the lowest 
+Cost/Ton in the required time frame. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Road Defect Management Training Exercise 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1107-1.2-1094 
+Caterpillar Confidential:  GREEN          Page 1 of 7 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Facilitator #2 – Assist Operations:  
+• Your main role is to load trucks.  Provide the supplied ticket with the payload value 
+to each truck at the beginning at each cycle. 
+• Provide the “Truck Exchange Time” to each truck coming for a new load, according 
+to the following criteria: 
+o 5 minutes:  There is another truck in the Shovel Floor at time of loading. 
+o 10 minutes:  The truck operator dump the load and reload (doesn’t like the load). 
+o 0 minutes:  if none of the two previous conditions is achieved. 
+• Assisting road segment controllers and machine operators as necessary. 
+ 
+Facilitator #3 – Assist the MARC operation:  
+• The Repair Shop:  Tyres, GET and Power Train. 
+• FPO and Payload Analysts. 
+ 
+Facilitator #4 – Assist Management: 
+• Operations Supervisor 
+• Production Supervisor 
+• MARC Manager 
+ 
+Facilitator #5 – Capture all data: 
+• From the exercise and calculate associated metrics in the Facilitator Score Board. 
+• Capturing Debrief discussion on flipcharts. 
+ 
+Truck Operator:  Operate the truck and assess its health condition throughout the exercise. 
+ 
+Wheel Dozer and Motor Grader Operators:  objective is to keep Road Segments free of defects. 
+ 
+Haul Road Segment Controllers (Figure 1):  objective is to evaluate and document the condition 
+of each road segment according to truck (Payload) traffic and weather (rainfall) conditions. 
+ 
+Production Supervisor:  objective is to maximize production at a minimum cost. 
+ 
+Operations Supervisor:  objective is to maximize machine availability and utilization (minimum 
+cost). 
+ 
+MARC Manager:  on charge of the maintenance and repair activities in the operation, including 
+repair shop mechanics, payload and FPO analysts. 
+ 
+FPO Analyst:  objective is to improve cycle time and reduce machine application severity.   
+ 
+Payload Analyst:  objective is to improve payload distribution and evaluate the Payload 
+Distribution 
+ 
+Reliability Analyst:  objective is to assess machine condition and identify potential problems.  
+Secondary objective is to minimize the number of machine stoppages. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Road Defect Management Training Exercise 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1107-1.2-1094 
+Caterpillar Confidential:  GREEN          Page 2 of 7 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Repair Shop – Tyre Mechanic:  objective is to change tyres on machines. 
+ 
+Repair Shop – Power Train Mechanic:  objective is to repair power train failures on machines. 
+ 
+Repair Shop – GET Mechanic:  objective is to replace GET elements on machines.  
+ 
+ 
+ 
+Ready Line
+Truck 
+Operator 
+#1
+Truck 
+Operator 
+#2
+Truck 
+Operator 
+#n
+Wheel 
+Dozer 
+Operator
+Motor 
+Grader 
+Operator
+Shovel 
+Operator
+Dump 
+Point
+Flat 
+Road
+Ramp 2
+Switch 
+back
+Ramp 1
+Shovel 
+Floor
+Production 
+Supoervisor
+Operations 
+Supervisor
+MARC 
+Manager
+Tyres
+GET
+Power 
+Train
+Operations
+Mine Management
+Health Monitoring
+Repair Shop
+Faculty Board
+FPO 
+Analyst
+Payload 
+Analyst
+ 
+ 
+Figure 2 – Exercise and participant layout 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Road Defect Management Training Exercise 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1107-1.2-1094 
+Caterpillar Confidential:  GREEN          Page 3 of 7 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Facilitator Score Board 
+ 
+Facilitators must keep the score board updated at all times, by filling in the yellow cells with 
+information from each exercise round.  Use a flipchart or a Data Projector to show the Score 
+Board. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 3 - Facilitator Score Board showing the four areas of analysis 
+ 
+The Facilitator Score Board will display four main areas: 
+ 
+• Operating Conditions: 
+o Rainfall Rate 
+o Target Payload 
+o Target Cost/Ton 
+o Contractual Machine Availability 
+• Productivity Results 
+o Cycle times 
+o Production values 
+• Cost Results: 
+o Cost per ton 
+o Cost per hour 
+• Equipment Performance Results: 
+o Truck Availability 
+o Support Equipment Availability 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Road Defect Management Training Exercise 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1107-1.2-1094 
+Caterpillar Confidential:  GREEN          Page 4 of 7 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+One Score Board must be used at each exercise round. 
+ 
+Starting Conditions 
+The objective of the exercise is to deliver maximum payload at the minimum cost, over a period 
+of time.  The default time of each exercise round is 10 minutes, but the faculty can make it 
+longer if time allows. 
+ 
+The detailed starting conditions are available in the attachment “RDM – Exercise 
+Guidelines.doc” 
+ 
+Carrying out the Exercise 
+The exercise is designed to provide participants an opportunity to understand the relationship 
+between machine application, operation and repair activities. It is also designed to give an 
+opportunity to experience some of the personal aspects leading a project team in a mining 
+environment.  
+ 
+At the end of each round facilitators will debrief and identify some of the personal learning as 
+well as the key learning associated with tools and methodology. 
+ 
+A specific sequence of activities for each round is in the attached file. 
+ 
+Participant Guidelines 
+The attached file contains job descriptions for each participant, which should be passed out in 
+sealed envelopes before beginning the exercise. 
+ 
+Presenting the Exercise Results: Student’s Wrap-Up Meeting 
+After finishing all rounds of the exercise, it is recommended to present the results back to the 
+Faculty showing relevant findings that will help to improve their processes and reduce their 
+costs. 
+This presentation should include preliminary assessment results and identify “low hanging fruit” 
+– items that can be quickly and easily addressed.   
+ 
+Closing discussion 
+The closing discussion should include preliminary assessment results and identify those “low 
+hanging fruit” items that can be quickly and easily addressed.  Selected participants may 
+present the following areas: 
+ 
+Strengths:  Start the discussion highlighting what is good and positive as per found 
+from the exercise.  Present strong arguments and evidence that supports your findings.   
+ 
+Opportunities:  Show those areas where problems are identified.  It is advisable to 
+show a viable solution for each problem found in the Operation.  Avoid showing 
+problems that may not have any practical solution.    
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Road Defect Management Training Exercise 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1107-1.2-1094 
+Caterpillar Confidential:  GREEN          Page 5 of 7 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Implementation Steps 
+ 
+• Recommended number of participants is between 11 and 26. 
+• Make copies of all required materials, including nameplates and desk papers (see 
+attachments).  
+• The APD-South Equipment Management team can be contacted for recommendations on 
+carrying out this exercise. 
+ 
+4.0 Benefits 
+ 
+• Serves as a consistent training tool in improving Equipment Management  
+• Was first conducted during the EM Update (level 2) training program in October 2006 (APD-S, 
+Melbourne) 
+• Testimonials: 
+o “The Equipment Management group exercise was beneficial to the [training] course.” 
+o “Group exercise on Wednesday – good overview of all topics and understand it to the 
+next level.” 
+ 
+5.0 Resources Required 
+ 
+Table 1 – Tools and Supplies required during the exercise. 
+ 
+ITEM Description Quantity Comments  
+01 Role’s hard copies One per student Put hard copies on the table before commencing the 
+exercise. 
+ 
+02 Digital still / video camera 1 Capture the process for future presentation  
+03 White board or data projector 1 Faculty will record and display status of the exercise.  
+04 Portable memory devices 
+(USB stick) 1 To share information amongst team members  
+05 Laser pointer 1 To show potential problems in the white board  
+06 A4 envelopes 17 One envelope per role (such as MARC Manager, etc.)  
+07 Clipboards 1 per machine Each Truck, Wheel Dozer and Motor Grader operators 
+record their own information. 
+ 
+08 Dump Trucks 1 per Truck 
+Operator 
+http://www.megabloks.com/en/products/description.php
+?key=1&level=2&level2=1&lId=0&iID=1171&subCat=51 
+ 
+ 
+ 
+Refer to RDM Exercise Guidelines.doc 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Road Defect Management Training Exercise 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1107-1.2-1094 
+Caterpillar Confidential:  GREEN          Page 6 of 7 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+6.0 Supporting Attachments / References 
+ 
+• “RDM – Exercise Guidelines.doc”  Everything you need to know about the training exercise 
+and how it can be carried out. 
+• “Faculty Score Board.xls”  Showing the scor board that can be projected on a screen while 
+conducting the exercise.  This board shows metrics associated with cycle times and cost. 
+• “A3 Participant Desk Paper.ppt”  Desk papers for participants to use during the exercise.  
+These papers contain correlation tables, such as: road deterioration vs. truck traffic; tyre repair 
+times, etc. 
+• “A4 Participant Job and Road Defect Name Plates.ppt”  Name tags for each of the 
+participants and other tickets used during the exercise. 
+• “Exercise Results.xls”  The production results of an actual training session. 
+ 
+7.0 Related Best Practices 
+ 
+1106-1.1-1035  Cost Reduction Through Haul Road Management Process. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Stuart Wheeler 
+Equipment Management Consultant 
+Cat Global Mining 
+Ph: +61 3 9953 9272 
+Mobile: +61 418 320 142 
+Fax: +61 3 9933 5339 
+Wheeler_stuart_g@cat.com 
+ 
+Oscar Villalobos 
+Equipment Management Consultant 
+Cat Global Mining 
+Ph: +61 3 9953 9121 
+Mobile: +61 409 165 847 
+Fax: +61 3 9933 5339 
+Villalobos_Oscar_E@cat.com 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Road Defect Management Training Exercise 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1107-1.2-1094 
+Caterpillar Confidential:  GREEN          Page 7 of 7

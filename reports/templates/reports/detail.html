@@ -1,0 +1,503 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if report %}{{ report.display_name }}{% else %}Report{% endif %} | Mining360IA</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell report-shell">
+        <header class="topbar">
+            <div>
+                <h1>{% if report %}{{ report.display_name }}{% else %}Power BI report{% endif %}</h1>
+            </div>
+            <div class="actions">
+                {% if reports %}
+                    <label class="visually-hidden" for="report-select">Report</label>
+                    <select id="report-select" class="header-report-select">
+                        {% for item in reports %}
+                            <option value="{% url 'report-detail' item.id %}" {% if report and item.id == report.id %}selected{% endif %}>
+                                {{ item.display_name }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                {% endif %}
+                <a class="button secondary" href="{% url 'reporting' %}">Back</a>
+                {% if report and report.web_url %}
+                    <a class="button" href="{{ report.web_url }}" target="_blank" rel="noreferrer">Open Power BI</a>
+                {% endif %}
+                {% if report %}
+                    <button type="button" id="fullscreen-report" class="icon-button fullscreen-toggle" aria-label="Open report in fullscreen" title="Fullscreen"></button>
+                {% endif %}
+            </div>
+        </header>
+
+        {% if error %}
+            <section class="alert">
+                <strong>Report unavailable</strong>
+                <p>{{ error }}</p>
+            </section>
+        {% elif report %}
+            <section class="filter-panel">
+                <div>
+                    <label for="date-start">Start date</label>
+                    <input id="date-start" type="date">
+                </div>
+                <div>
+                    <label for="date-end">End date</label>
+                    <input id="date-end" type="date">
+                </div>
+                <div class="filter-actions">
+                    <button type="button" id="apply-date-filter" class="button">Apply</button>
+                    <button type="button" id="reset-report-filters" class="button secondary">Reset</button>
+                </div>
+                <div>
+                    <label for="quick-date-range">Quick range</label>
+                    <select id="quick-date-range">
+                        <option value="">Select range</option>
+                        <option value="mtd">Month To Date</option>
+                        <option value="ytd">Year To Date</option>
+                        <option value="last-12-months">Last 12 Months</option>
+                        <option value="last-year">Last Year</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="rls-role-select">RLS role</label>
+                    <select id="rls-role-select">
+                        {% for role in role_options %}
+                            <option value="{{ role }}" {% if role == selected_role %}selected{% endif %}>{{ role }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="quick-date-actions">
+                    <button type="button" id="diagnose-slicers" class="button secondary">Diagnose slicers</button>
+                </div>
+                <p id="filter-status" class="filter-status" aria-live="polite"></p>
+            </section>
+            {% if report.embed_url and embed_token %}
+                <section class="report-frame-wrap">
+                    <div
+                        id="powerbi-report"
+                        class="report-frame"
+                        data-report-id="{{ report.id }}"
+                        data-embed-url="{{ report.embed_url }}"
+                        data-embed-token="{{ embed_token }}">
+                    </div>
+                </section>
+            {% else %}
+                <section class="alert">
+                    <strong>Embed unavailable</strong>
+                    <p>The report can still be opened in Power BI from the top button.</p>
+                </section>
+            {% endif %}
+        {% endif %}
+    </main>
+    <aside id="slicer-diagnostics" class="diagnostics-pane" aria-hidden="true">
+        <div class="diagnostics-pane-head">
+            <div>
+                <p class="eyebrow">Diagnostic</p>
+                <h2>Detected slicers</h2>
+            </div>
+            <button type="button" id="close-slicer-diagnostics" class="icon-button" aria-label="Close panel">x</button>
+        </div>
+        <div id="slicer-diagnostics-content" class="diagnostics-content"></div>
+    </aside>
+    <div id="diagnostics-backdrop" class="diagnostics-backdrop" hidden></div>
+    {% if report.embed_url and embed_token %}
+        <script src="https://cdn.jsdelivr.net/npm/powerbi-client@2.23.7/dist/powerbi.min.js"></script>
+        <script>
+            const reportSelect = document.getElementById("report-select");
+            const rlsRoleSelect = document.getElementById("rls-role-select");
+
+            function urlWithSelectedRole(targetUrl) {
+                const url = new URL(targetUrl, window.location.origin);
+                if (rlsRoleSelect && rlsRoleSelect.value) {
+                    url.searchParams.set("role", rlsRoleSelect.value);
+                }
+                return url.toString();
+            }
+
+            if (reportSelect) {
+                reportSelect.addEventListener("change", function () {
+                    if (this.value) {
+                        window.location.href = urlWithSelectedRole(this.value);
+                    }
+                });
+            }
+
+            if (rlsRoleSelect) {
+                rlsRoleSelect.addEventListener("change", function () {
+                    const url = new URL(window.location.href);
+                    url.searchParams.set("role", this.value);
+                    window.location.href = url.toString();
+                });
+            }
+
+            const container = document.getElementById("powerbi-report");
+            const models = window["powerbi-client"].models;
+            const config = {
+                type: "report",
+                tokenType: models.TokenType.Embed,
+                accessToken: container.dataset.embedToken,
+                embedUrl: container.dataset.embedUrl,
+                id: container.dataset.reportId,
+                permissions: models.Permissions.Read,
+                settings: {
+                    panes: {
+                        filters: { visible: false },
+                        pageNavigation: { visible: true }
+                    },
+                    background: models.BackgroundType.Default
+                }
+            };
+            const embeddedReport = powerbi.embed(container, config);
+            const filterStatus = document.getElementById("filter-status");
+            const applyDateFilter = document.getElementById("apply-date-filter");
+            const resetReportFilters = document.getElementById("reset-report-filters");
+            const fullscreenReport = document.getElementById("fullscreen-report");
+            const diagnoseSlicers = document.getElementById("diagnose-slicers");
+            const quickDateRange = document.getElementById("quick-date-range");
+            const closeSlicerDiagnostics = document.getElementById("close-slicer-diagnostics");
+            const slicerDiagnostics = document.getElementById("slicer-diagnostics");
+            const slicerDiagnosticsContent = document.getElementById("slicer-diagnostics-content");
+            const diagnosticsBackdrop = document.getElementById("diagnostics-backdrop");
+
+            function setStatus(message, isError = false) {
+                if (!filterStatus) return;
+                filterStatus.textContent = message;
+                filterStatus.classList.toggle("error", isError);
+            }
+
+            function asPowerBIDate(value, endOfDay = false) {
+                return `${value}T${endOfDay ? "23:59:59.999" : "00:00:00.000"}Z`;
+            }
+
+            function toInputDate(date) {
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, "0");
+                const day = String(date.getDate()).padStart(2, "0");
+                return `${year}-${month}-${day}`;
+            }
+
+            function firstDayOfMonth(date) {
+                return new Date(date.getFullYear(), date.getMonth(), 1);
+            }
+
+            function addMonths(date, months) {
+                return new Date(date.getFullYear(), date.getMonth() + months, 1);
+            }
+
+            function filterTargetLabel(filter) {
+                const target = filter && filter.target;
+                if (!target) return "unknown target";
+                if (Array.isArray(target)) {
+                    return target.map(item => `${item.table || "?"}[${item.column || item.hierarchy || "?"}]`).join(", ");
+                }
+                return `${target.table || "?"}[${target.column || target.hierarchy || "?"}]`;
+            }
+
+            function isBravoDateTarget(filter) {
+                const target = filter && filter.target;
+                if (!target || Array.isArray(target)) return false;
+                return String(target.table || "").toLowerCase() === "date";
+            }
+
+            function canApplyDateRangeToSlicer(state) {
+                const filters = state && state.filters ? state.filters : [];
+                return filters.some(filter => {
+                    const target = filter.target || {};
+                    return String(target.table || "").toLowerCase() === "date"
+                        && String(target.column || "").toLowerCase() === "date";
+                });
+            }
+
+            async function getActivePageSlicers() {
+                const pages = await embeddedReport.getPages();
+                const activePage = pages.find(page => page.isActive) || pages[0];
+                const visuals = await activePage.getVisuals();
+                return visuals.filter(visual => visual.type === "slicer");
+            }
+
+            async function syncBravoDateSlicers(dateFilter) {
+                const slicers = await getActivePageSlicers();
+                let synced = 0;
+                let skipped = 0;
+
+                for (const slicer of slicers) {
+                    let state;
+                    try {
+                        state = await slicer.getSlicerState();
+                    } catch {
+                        skipped++;
+                        continue;
+                    }
+
+                    const filters = state && state.filters ? state.filters : [];
+                    const targetsBravoDate = filters.some(isBravoDateTarget);
+                    if (!targetsBravoDate) {
+                        continue;
+                    }
+
+                    if (!canApplyDateRangeToSlicer(state)) {
+                        skipped++;
+                        continue;
+                    }
+
+                    try {
+                        await slicer.setSlicerState({ filters: [dateFilter] });
+                        synced++;
+                    } catch {
+                        skipped++;
+                    }
+                }
+
+                return { synced, skipped };
+            }
+
+            async function renderSlicerDiagnostics() {
+                if (!slicerDiagnostics || !slicerDiagnosticsContent) return;
+                slicerDiagnostics.classList.add("open");
+                slicerDiagnostics.setAttribute("aria-hidden", "false");
+                if (diagnosticsBackdrop) diagnosticsBackdrop.hidden = false;
+                slicerDiagnosticsContent.innerHTML = "<p>Reading slicers...</p>";
+
+                try {
+                    const slicers = await getActivePageSlicers();
+                    if (!slicers.length) {
+                        slicerDiagnosticsContent.innerHTML = "<p>No slicers detected on the active page.</p>";
+                        return;
+                    }
+
+                    const rows = [];
+                    for (const slicer of slicers) {
+                        let state;
+                        try {
+                            state = await slicer.getSlicerState();
+                        } catch (error) {
+                            rows.push(`
+                                <tr>
+                                    <td>${slicer.name}</td>
+                                    <td>${slicer.title || "-"}</td>
+                                    <td colspan="3">State unreadable: ${error.message || error}</td>
+                                </tr>
+                            `);
+                            continue;
+                        }
+
+                        const filters = state.filters || [];
+                        const targets = filters.length
+                            ? filters.map(filterTargetLabel).join("<br>")
+                            : "No filters in current state";
+                        const dateCompatible = canApplyDateRangeToSlicer(state) ? "Yes" : "No";
+                        const bravoDate = filters.some(isBravoDateTarget) ? "Yes" : "No";
+
+                        rows.push(`
+                            <tr>
+                                <td><code>${slicer.name}</code></td>
+                                <td>${slicer.title || "-"}</td>
+                                <td>${targets}</td>
+                                <td>${bravoDate}</td>
+                                <td>${dateCompatible}</td>
+                            </tr>
+                        `);
+                    }
+
+                    slicerDiagnosticsContent.innerHTML = `
+                        <div class="table-wrap compact">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Visual name</th>
+                                        <th>Title</th>
+                                        <th>Target</th>
+                                        <th>Table Date</th>
+                                        <th>Sync Date[Date]</th>
+                                    </tr>
+                                </thead>
+                                <tbody>${rows.join("")}</tbody>
+                            </table>
+                        </div>
+                    `;
+                } catch (error) {
+                    slicerDiagnosticsContent.innerHTML = `<p class="diagnostic-error">Slicer diagnostic error: ${error.message || error}</p>`;
+                }
+            }
+
+            async function applyDateRange(start, end, label = "Date filter applied") {
+                document.getElementById("date-start").value = start || "";
+                document.getElementById("date-end").value = end || "";
+
+                if (!start && !end) {
+                    setStatus("Choose at least one date.", true);
+                    return;
+                }
+
+                const conditions = [];
+                if (start) {
+                    conditions.push({
+                        operator: "GreaterThanOrEqual",
+                        value: asPowerBIDate(start)
+                    });
+                }
+                if (end) {
+                    conditions.push({
+                        operator: "LessThanOrEqual",
+                        value: asPowerBIDate(end, true)
+                    });
+                }
+
+                const filter = {
+                    $schema: "http://powerbi.com/product/schema#advanced",
+                    target: {
+                        table: "Date",
+                        column: "Date"
+                    },
+                    logicalOperator: "And",
+                    conditions: conditions,
+                    filterType: models.FilterType.AdvancedFilter
+                };
+
+                try {
+                    await embeddedReport.updateFilters(models.FiltersOperations.Replace, [filter]);
+                    const slicers = await syncBravoDateSlicers(filter);
+                    const syncMessage = slicers.synced
+                        ? ` ${slicers.synced} date slicer(s) synchronized.`
+                        : " No compatible Date[Date] slicer found on the active page.";
+                    setStatus(`${label}: ${start || "..."} au ${end || "..."}.${syncMessage}`);
+                } catch (error) {
+                    setStatus(`Date filter error: ${error.message || error}`, true);
+                }
+            }
+
+            if (applyDateFilter) {
+                applyDateFilter.addEventListener("click", async function () {
+                    const start = document.getElementById("date-start").value;
+                    const end = document.getElementById("date-end").value;
+                    await applyDateRange(start, end, "Date filter applied on Date[Date]");
+                });
+            }
+
+            if (quickDateRange) {
+                quickDateRange.addEventListener("change", async function () {
+                    if (!this.value) return;
+                    const today = new Date();
+                    const range = this.value;
+                    let startDate;
+                    let label;
+
+                    if (range === "mtd") {
+                        startDate = firstDayOfMonth(today);
+                        label = "Month To Date";
+                    } else if (range === "ytd") {
+                        startDate = new Date(today.getFullYear(), 0, 1);
+                        label = "Year To Date";
+                    } else if (range === "last-12-months") {
+                        startDate = addMonths(firstDayOfMonth(today), -11);
+                        label = "Last 12 Months";
+                    } else if (range === "last-year") {
+                        startDate = new Date(today.getFullYear() - 1, 0, 1);
+                        const endOfLastYear = new Date(today.getFullYear() - 1, 11, 31);
+                        label = "Last Year";
+                        await applyDateRange(toInputDate(startDate), toInputDate(endOfLastYear), label);
+                        quickDateRange.value = range;
+                        return;
+                    } else {
+                        return;
+                    }
+
+                    await applyDateRange(toInputDate(startDate), toInputDate(today), label);
+                });
+            }
+
+            if (resetReportFilters) {
+                resetReportFilters.addEventListener("click", async function () {
+                    try {
+                        await embeddedReport.removeFilters();
+                        document.getElementById("date-start").value = "";
+                        document.getElementById("date-end").value = "";
+                        if (quickDateRange) quickDateRange.value = "";
+                        setStatus("Report-level filters removed.");
+                    } catch (error) {
+                        setStatus(`Reset filter error: ${error.message || error}`, true);
+                    }
+                });
+            }
+
+            if (fullscreenReport) {
+                fullscreenReport.addEventListener("click", async function () {
+                    const frameWrap = document.querySelector(".report-frame-wrap");
+                    try {
+                        if (frameWrap && frameWrap.requestFullscreen) {
+                            await frameWrap.requestFullscreen();
+                            setStatus("Report opened in fullscreen.");
+                        } else if (embeddedReport.fullscreen) {
+                            embeddedReport.fullscreen();
+                            setStatus("Report opened in Power BI fullscreen.");
+                        } else {
+                            setStatus("Fullscreen is not supported by this browser.", true);
+                        }
+                    } catch (error) {
+                        setStatus(`Fullscreen error: ${error.message || error}`, true);
+                    }
+                });
+            }
+
+            if (diagnoseSlicers) {
+                diagnoseSlicers.addEventListener("click", renderSlicerDiagnostics);
+            }
+
+            function closeDiagnosticsPane() {
+                if (!slicerDiagnostics) return;
+                slicerDiagnostics.classList.remove("open");
+                slicerDiagnostics.setAttribute("aria-hidden", "true");
+                if (diagnosticsBackdrop) diagnosticsBackdrop.hidden = true;
+            }
+
+            if (closeSlicerDiagnostics) {
+                closeSlicerDiagnostics.addEventListener("click", closeDiagnosticsPane);
+            }
+            if (diagnosticsBackdrop) {
+                diagnosticsBackdrop.addEventListener("click", closeDiagnosticsPane);
+            }
+
+            embeddedReport.on("loaded", async function () {
+                const today = new Date();
+                const startDate = new Date(today.getFullYear(), 0, 1);
+                if (quickDateRange) quickDateRange.value = "ytd";
+                await applyDateRange(toInputDate(startDate), toInputDate(today), "Year To Date applied on load");
+            });
+        </script>
+    {% else %}
+        <script>
+            const reportSelect = document.getElementById("report-select");
+            const rlsRoleSelect = document.getElementById("rls-role-select");
+
+            function urlWithSelectedRole(targetUrl) {
+                const url = new URL(targetUrl, window.location.origin);
+                if (rlsRoleSelect && rlsRoleSelect.value) {
+                    url.searchParams.set("role", rlsRoleSelect.value);
+                }
+                return url.toString();
+            }
+
+            if (reportSelect) {
+                reportSelect.addEventListener("change", function () {
+                    if (this.value) {
+                        window.location.href = urlWithSelectedRole(this.value);
+                    }
+                });
+            }
+            if (rlsRoleSelect) {
+                rlsRoleSelect.addEventListener("change", function () {
+                    const url = new URL(window.location.href);
+                    url.searchParams.set("role", this.value);
+                    window.location.href = url.toString();
+                });
+            }
+        </script>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,238 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Analyzer Data Validation 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+ 
+Analyzer Data Validation ............................................ 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments .................................... 3 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+September 2006 
+0906-3.3-1010 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+This Best Practice deals with MARC Management. The ability to accurately forecast the financial 
+health of a MARC throughout its term, especially where CGM is providing support through a Risk 
+Partnering/Sharing agreement, is reliant on accurate Analyzer application setup as well as regular 
+interfacing of accurate operational and financial data into Analyzer. 
+   
+The Analyzer Data Validation Process is made up of a Master Process, which includes the initial 
+application setup process as well as the revised data file process. This Master Process is then 
+broken down into detailed sub-processes for each of the major Master Process steps. 
+ 
+Goal: Accurate forecasting of MARC financial health using Analyzer. 
+Objectives: Identify and communicate Analyzer setup and data file inaccuracies to the applicable 
+Dealer for correction.   
+Scope:  Detection of Analyzer data inaccuracies leading to inaccurate forecasting. Applies to any 
+Analyzer data file used by Cat and/or Dealer personnel. 
+ 
+2.0 Best Practice Description 
+ 
+Currently there is not a consistent process being used by CGM and Dealers. Dealers focus on 
+known areas that consistently create data inaccuracies and make the necessary corrections. 
+Dealers then forward the data to CGM. It is then up to CGM to search through the data in no set 
+order or process in an attempt to ensure any additional data inaccuracies are identified and 
+eventually corrected.  
+ 
+The Analyzer Data Validation Process, included in the Attachments Tab of this file (ALZ Global 
+Validation Process.vsd), eliminates the guesswork as to where one should look for potential data 
+inaccuracies. It provides the roadmap necessary to ensure each major area of Analyzer data is 
+reviewed and scrutinized before the data is considered accurate. If any issues or questions arise 
+during the process, notes are taken and then communicated to the appropriate Dealer personnel 
+for corrective action. 
+ 
+3.0 Implementation Steps 
+ 
+1. Communicate process to the MARC supervisor for review and suggestions. Make necessary 
+revisions. 
+2. Communicate process to the Regional MARC Consultants (RMCs) for review and suggestions. 
+Make necessary revisions. 
+3. Pilot process within CGM and one Dealer. Make necessary revisions. 
+4. Implement process within CGM, including the RMCs. 
+5. Deploy process globally to receptive Dealers. 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Analyzer Data Validation 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.3-1010 
+Caterpillar Confidential:  GREEN         Page 2 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4.0 Benefits 
+ 
+The identification and communication of Analyzer data inaccuracies is key to making accurate 
+MARC financial health forecasts using Analyzer.  
+ 
+- Time & Cost:  
+o Implementing this process ensures the timely delivery of accurate Analyzer data 
+required to for operational and financial decisions to be made by Dealers and CGM. For 
+contracts with a RP/RS agreement, an audit, primarily of Analyzer data,  performed by 
+CGM is required before any settlement can take place. Ensuring accurate Analyzer data 
+through this process will greatly reduce the time required to prepare for and perform 
+such audits. With the growing number of MARCs, it is imperative to have a globally 
+consistent process to reduce the time required to review the data to ensure timely 
+reporting of results using the same amount of resources. 
+ 
+- Quality: 
+o CGM:  
+- Increased accuracy of support accruals/budgeting 
+- Reduced financial risk by identifying incorrect Analyzer usage and amending 
+inaccurate data 
+- Increased accuracy of support payments 
+o Dealer 
+- Increased accuracy of accruals/budgeting 
+- Ability to react to operational issues that are having a negative financial impact 
+- Ability to replicate operational practices that are having a positive financial impact 
+ 
+5.0 Resources Required 
+ 
+Critical Assumption: Analyzer has been successfully implemented and is currently being used. 
+ 
+- Facilities: N/A 
+- Tools: N/A 
+- Support Equipment: N/A 
+- Labor: Having trained Analyzer users is critical to the success of this process.  
+- Users should have received some form of basic Analyzer training either internally or 
+through Caterpillar.  
+- In addition, users should have a basic understanding of Microsoft Access (MS Access 2000 
+Level 1 & 2).  
+- Operations and Financial resources within the Dealership must be accessible to the user. 
+ 
+6.0 Supporting Attachments  
+ 
+Refer to ALZ Analyzer Global Validation Process.vsd – Microsoft Visio file (zipped), located in the 
+“Attachments” Tab of this pdf file. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Analyzer Data Validation 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.3-1010 
+Caterpillar Confidential:  GREEN         Page 3 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None applicable 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was authored by: 
+ Jeremy Middleton 
+ Caterpillar Global Mining 
+ Contract & Controls Analyst 
+ MIDDLETON_JEREMY_R@cat.com 
++1 309 675 4531 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Analyzer Data Validation 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.3-1010 
+Caterpillar Confidential:  GREEN         Page 4 of 4

@@ -1,0 +1,238 @@
+SOURCE: CAT 988H - Cooling System Temperature Measurement Optimization.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+August 2024 
+1.05-240813-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+CAT 988H - Cooling System 
+Temperature Measurement 
+Optimization  
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+                                                                            CAT 988H – Cooling System Temperature 
+                                                                            Measurement Optimization…………………………….1                   
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CAT 988H - Cooling System Temperature 
+Measurement Optimization 
+DATE 
+8/13/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-240813-1 
+Caterpillar: Confidential Yellow          Page 2 of 5 
+1.0 Introduction  
+ 
+During a normal cooling system efficiency diagnosis, the measurement of the radiator delta is 
+requested (the difference in the inlet and outlet temperature.)   This allows us to  identify any  
+abnormalities in the heat exchange system. When the result is different from the specification, there 
+are several possibilities such as: water pump, thermostatic valve, coolers and radiator. 
+ 
+ When troubleshooting options converge to the radiator, we must determine which radiator core is 
+causing the problem, which can be an internal or external obstruction. 
+ 
+This best practice was designed to optimize machine downtime in corrective maintenance and 
+increase the accuracy of the diagnosis by quickly identifying which radiator core has a problem, in 
+addition to reducing maintenance costs for the customer by avoiding the replacement  of 
+unnecessary parts. 
+ 
+2.0 Best Practice Description 
+ 
+The replacement of all radiator cores is both expensive and timeconsuming.  If replacing all cor es, 
+equipment can be stopped for up to  24 hours, depending on the resource availability. This Best 
+Practice covers the process to test the cores individually in order to identify and replace only the 
+one that has problems.  
+ 
+If diagnosis has found the water pump and thermostatic valves are efficient and not the cause of 
+the issue, the individual cores should be tested.  During testing, a uniform temperature between the 
+individual cores is expected, however, if any of the cores  present an irregular temperature, it is an 
+indication that there is something abnormal and the core should be changed.  
+ 
+For diagnosis of the machine's cooling system, the literature REHS8874 – i05505126 highlights that 
+the difference between the lower and upper parts of the radiator must be 4 + 5 –  5 °C (39,2 + 41 – 
+41 °F), as shown below. 
+ 
+ 
+Image 01: literature for diagnostic guidance 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CAT 988H - Cooling System Temperature 
+Measurement Optimization 
+DATE 
+8/13/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-240813-1 
+Caterpillar: Confidential Yellow          Page 3 of 5 
+As the example below, where it was verified that a core  had its temperature lower than the others, 
+so it is understood that the cooling liquid was not flowing through it and that there was an obstruction. 
+ 
+ 
+Image 2: Individual temperature measurement in each hive. 
+ 
+The points where the temperature should be measured are at the top of the cores near the 
+connecting hoses between them, as shown in the images below. 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CAT 988H - Cooling System Temperature 
+Measurement Optimization 
+DATE 
+8/13/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-240813-1 
+Caterpillar: Confidential Yellow          Page 4 of 5 
+Image 3 à 8: Measurements taken at the top of the cores. 
+ 
+ 
+Image 9: Result of individual measurement in hives. 
+ 
+3.0 Implementation Steps 
+ 
+1. Implement the procedure described in this Best Practice into the maintenance process. 
+ 
+2. Establish a training and development schedule for all maintenance personnel. 
+ 
+3. Monitor and plan incremental improvements to the process as needed. 
+ 
+4.0 Benefits 
+ 
+• Assertiveness in the diagnosis. 
+ 
+• Reduced maintenance cost with trouble-free parts replacement. 
+ 
+• Reduced machines downtime. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CAT 988H - Cooling System Temperature 
+Measurement Optimization 
+DATE 
+8/13/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-240813-1 
+Caterpillar: Confidential Yellow          Page 5 of 5 
+5.0 Resources Required 
+ 
+• Infrared Thermometer 251-0030  
+ 
+ 
+Image 10: Caterpillar Infrared Thermometer 251-0030 
+ 
+6.0 Supporting Attachments / References 
+ 
+Coolant Temperature Is High (RENR5033-36) – i05462668. 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Maxuel Teixeira 
+Mining Performance Engineer / PE 
+maxuel.teixeira@sotreq.com.br 
++55 31 99946-7652 
+ 
+This Best Practice was written and implemented by: 
+ 
+Marcelo Fátima 
+Service Technician 
+marcelo.fatima@sotreq.com.br
+ 
++55 31 984879250

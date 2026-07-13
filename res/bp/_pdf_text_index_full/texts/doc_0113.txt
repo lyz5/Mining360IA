@@ -1,0 +1,226 @@
+SOURCE: 1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\R1300G Stand Chock Set.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2015 
+1511-1.11-1403 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+R1300G Stand Chock Set 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+R1300G Stand Chock Set .......................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+R1300G Stand Chock Set 
+DATE 
+6/23/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1511-1.11-1403 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction  
+ 
+There is the safety requirement in mine sites that all rubber-tired equipment must be equipped 
+with stand chocks. Borusan Makina Kazakhstan has decided to take this opportunity and develop 
+its own stand chocks at a place on the equipment where they will be kept if they are not used.  
+ 
+There is the Equipment Rebuild Shop (ERS) in the CRC where old machines are renewed to the 
+status of the new ones. During a R1300G UG Loader rebuild, we designed and fabricated the first 
+stand chock set for this machine. In the future stand chocks will be developed for other wheel 
+machines (R1600G, R1700, R2900, AD30, AD45, AD55, AD60, 980H, 988H, 992G, 16H, 160H, 
+140H, etc.). 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The R1300G stand chock set consists of 2 x Stand Chocks and 1 x Chock Holder. The stand 
+chocks and their holder were designed to meet the following criteria: ergonomics, weight, 
+installation place in the equipment, and tire dimensions of the equipment.  
+ 
+The Chock Holder (1) is installed on the splashguard of the wheel and fastened to the walking 
+platform of the loader with its bolts. The holder is removable to provide access to the filter behind 
+it during PMs. Each Stand Chock (2) has a convenient handle (3) to carry and the locking 
+sleeve (4) that keeps the stand chock in place by connecting it to the bolt (5), which is welded to 
+the splashguard beforehand. Each locking sleeve has the chain so that the customer would not 
+lose them in the mine site during the operation. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+R1300G Stand Chock Set 
+DATE 
+6/23/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1511-1.11-1403 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+3.0 Implementation Steps 
+ 
+The stand chock set is in use.  
+ 
+ 
+4.0 Benefits 
+ 
+• H elps mining customers to follow the safety requirement about stand chocks. 
+• It can be additional business for the dealer. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Machine Shop. 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+R1300G Stand Chock Set 
+DATE 
+6/23/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1511-1.11-1403 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+6.0 Supporting Attachments / References 
+ 
+The necessary drawings of the R1300G Stand Chock Set are attached. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+• 1603-1.11-1421 - AD30 Chock Stand Set 
+ 
+8.0 Acknowledgements 
+ 
+The idea of creating & implementing this Best Practice belongs to: 
+ 
+Azamat IBRAYEV    Igor LISSIN 
+Equipment Rebuild Shop Supervisor  CRC Quality Engineer 
+Borusan Makina Kazakhstan LLP   Borusan Makina Kazakhstan LLP 
+akenzhetayev@borusan.com     ilissin@borusan.com
+  
+ 
+Dmitriy SILINSKIY    Andrey ASUMS 
+Welding Engineer    Electrical & Gas Welder 
+Borusan Makina Kazakhstan LLP   Borusan Makina Kazakhstan LLP 
+dsilinskiy@borusan.com   AAsmus@borusan.com
+  
+ 
+Alexandr KARPACHYOV   Azamat ORAZALINOV 
+Electrical & Gas Welder   Electrical & Gas Welder 
+Borusan Makina Kazakhstan LLP   Borusan Makina Kazakhstan LLP 
+akarpachyov@borusan.com    aorazalinov@borusan.com 
+ 
+ 
+Yernar NARGELOV    Syrlan MYRZABEKOV 
+Service Engineer    Repairman 
+Mining Product Support Department  Equipment Rebuild Shop 
+Borusan Makina Kazakhstan LLP   Borusan Makina Kazakhstan LLP 
+ynargelov@borusan.com   smyrzabekov@borusan.com
+  
+      
+This Best Practice was written by:  
+Gulnaz MANSUROVA 
+CRC Process Engineer 
+Borusan Makina Kazakhstan LLP 
+gmansurova@borusan.com 
++7 (701) 951 98 14

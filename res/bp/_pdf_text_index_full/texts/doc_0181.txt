@@ -1,0 +1,335 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\1. Strategic\Labor Efficiency Lowers CRC Costs.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2007  
+0207-4.5-1062  
+  
+ 
+DEALER BEST PRACTICE SERIES  
+Labor Efficiency Lowers 
+CRC Costs 
+ 
+Application  Maintenance  Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety MARC 
+Management 
+ 
+ 
+ 
+Labor Efficiency Lowers CRC Costs .......................... 0 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ....................................... 2 
+4.0  Benefits ............................................................. 5 
+5.0  Resources Required ......................................... 5 
+6.0  Supporting Attachments / References .............. 5 
+7.0  Related Best Practices ...................................... 5 
+8.0  Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER :  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+1.0 Introduction  
+ 
+Component rebuild costs are driven by two factors:  
+1. Parts consumed:  
+• Parts consumption is the result of parts reuse and  salvage capability. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Labor Efficiency Lowers CRC Costs 
+DATE 
+6/6/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0207-4.5-1062  
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+2. Labor consumed.  
+• Labor is consumed in processes, tooling, and asset  utilization. 
+ 
+Most large mining customers utilize exchange components in order to minimize the impact of 
+repairs/rebuilds on machine availability. Component exchange programs require “flat rates,” so 
+that when improvements are made to shop processes (thereby increasing labor efficiency), the 
+hours saved, reduce the cost of the rebuild and increase the profit margin.  
+ 
+In addition to creating a higher profit margin, the hours reduced through efficiency improvements 
+become available to be used to handle additional work.  Labor efficiency therefore has a 
+compounded impact on both profit margins and shop capacity. 
+ 
+2.0 Best Practice Description 
+ 
+The basic principle behind improving labor efficiency is simply stated as identifying and 
+eliminating waste.  Waste is defined as “any activity that consumes resources but creates no 
+value for the customer.” 
+ 
+Some waste is obvious, such as time spent “waiting” for something. This includes waiting for 
+parts, waiting for access to tooling, forklifts, overhead cranes, and waiting for process delays 
+caused by bottlenecks. 
+ 
+Other forms of waste are not so obvious, such as underutilized assets or using skilled employees 
+to do unskilled work. 
+ 
+Part of the issue relates to culture.  Long established shops with set procedures and processes 
+often have wasteful habits that are simply “the way things have always been done.” In such an 
+environment, it is hard to identify the waste and harder still to change the culture. 
+ 
+Some dealers have created strategic campaigns to raise awareness of the definition of waste, the 
+cost of waste, and to involve all employees in a “War on Waste.”  
+ 
+The key success factors in improving labor efficiency are: 
+• Create detailed process maps for all shop areas. 
+• Train all employees on the definition and cost of waste.  
+• Engage all employees in the elimination of waste. 
+• Assign shop floor supervisors with responsibility to improve efficiencies in their work areas. 
+ 
+Often there are costs involved with effort to improve efficiency.  The cost can come from 
+improved tooling, facility design and layout, work flow processes, or staff changes.  Where costs 
+are involved, a benefit versus cost assessment should be analyzed. 
+ 
+There are numerous training materials available on managing efficiency by eliminating wasteful 
+non-value added activities.  Caterpillar has a waste elimination program for manufacturing plants 
+titled Caterpillar Production Systems  (CPS) (Form numbers YEGT 1751, 1752, 1753, and 1758). 
+While the program is manufacturing-oriented, the principles also apply to a CRC environment.  
+There are also numerous references available on the Internet. 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Labor Efficiency Lowers CRC Costs 
+DATE 
+6/6/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0207-4.5-1062  
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+ 
+3.0 Implementation Steps 
+ 
+Three generally accepted areas of change drive labor efficiency/ Continuous Improvement. Those 
+are: 
+• Operational Changes. Identify and eliminate waste.   6 Sigma and Process Mapping are 
+effective tools to for operational changes. 
+• Culture. Train and engage employees to drive chang es from the bottom up.  Create an 
+attitude that makes change possible and improves the way we work. 
+• Management.  A dedication to Continuous Improvemen t and measuring performance 
+results. 
+ 
+Common Sources of Waste 
+•  Waiting 
+o For parts 
+o For tooling 
+o For service literature or reference information 
+o For customer W/O authorization 
+o For process bottlenecks & interruptions 
+o For Machining shop support 
+o For Manpower resource 
+• Excess Motion 
+o Excess movement in work station 
+o Getting parts 
+o Getting tools 
+o Moving components and parts 
+o Moving tool box 
+o Looking for parts / tools in workbay 
+o Power tools 
+• Asset utilization 
+o Skilled mechanic doing unskilled labor  
+o Excessive storage of in-process work  
+o Poor safety – employee lost time 
+o Workload variation 
+o Tooling management, maintenance, & calibration 
+• Work done over 
+o Service rework 
+o Parts cleaning multiple times 
+o Parts order and re-orders. 
+o Moving components & parts in and out of staging 
+o Dyno test more than once 
+o Damaged or rusted parts 
+ 
+• Tooling efficiency 
+o Proper cleaning equipment 
+o Proper machining / salvage equipment 
+o Component rebuild stands / rollover equipment 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Labor Efficiency Lowers CRC Costs 
+DATE 
+6/6/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0207-4.5-1062  
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+o Material handling – overhead cranes, jib cranes, s lings, hooks, forklift 
+o Storage – staging areas and storage racks, baskets  
+o Cleanliness protection 
+ 
+The two most valuable management tools for labor efficiency improvement are process maps and 
+time studies. These analysis tools will help identify work-in-process bottlenecks and time spent in 
+each step of the rebuild process.  It also helps to identify duplications within the process, such as 
+repeated cleaning of parts, material handling duplications, and other non-value added activity. 
+ 
+ 
+Example of Level I Process Map 
+Below are examples of actual dealer efficiency improvement actions: 
+ 
+Labor Efficiency Issue Solution 
+Parts order and re-orders causing delays Standard " must-do" kits for common rebuilds 
+  Parts evaluated and ordered during component  
+  disassembly.   
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Labor Efficiency Lowers CRC Costs 
+DATE 
+6/6/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0207-4.5-1062  
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+  
+Sub-components areas have common must-do 
+parts cabinets.  
+  Parts delivered direct to work station 
+Improper tooling causing labor inefficiency  
+Machi ning shop buys improved high efficiency line 
+bore and engine block resurface tooling  
+  New horizontal cabinent washer. 
+    
+Parts / labor to recondition 3500 cylinder 
+head exceeds price of Reman head group 
+ 
+Utilize Reman head groups as standard "Must Do"  
+parts kit. 
+    
+    
+    
+Mechanics spend too much time in 
+assembly work station looking for parts 
+and tools  
+Standardize assembly area toolbox and toolbox 
+layout. 
+. 
+Develop organized assembly parts cart and 
+standard baskets. 
+    
+ 
+ 
+Example:  Cooler assembly workstations:  
+• Efficiency enhancements in the station include a 
+repair stand with easy access and a wall mounted, 
+organized toolbox with all required tools for that 
+workstation. The tooling stays in the work area and 
+is dealer-owned. See Related Best Practices 
+section.  
+ 
+                                          
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Labor Efficiency Lowers CRC Costs 
+DATE 
+6/6/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0207-4.5-1062  
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+4.0 Benefits 
+ 
+o Improved service profit margins – especially for f lat rate rebuilds. 
+o Increased shop capacity and higher revenues 
+o Better component turnaround time – requires less E xchange inventory 
+o Better working environment  
+o Reduces need for additional shop space and manpowe r 
+ 
+The following example is actual dealer results: 
+ 
+ 
+     
+5.0 Resources Required 
+  
+o Management commitment to a culture change and Cont inuous Improvement process 
+o Employee training on waste and eliminating waste 
+o Project team (possibly 6Sigma) 
+o Cost versus benefit to improve shop tooling and pr ocesses. 
+ 
+6.0 Supporting Attachments / References 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+Component Turnaround Time                     0906- 4.5-1013 
+Using Cameras to Conduct CRC Process Reviews 0408-4 .1-1117 
+CRC Hand Tool Management     0107-4.4-1057 
+Floor Mounted Cooler Assembly Fixtures   1006-4.4-1 023 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+Dale Brehm  
+6 Sigma Black Belt 
+Global Mining Product Support

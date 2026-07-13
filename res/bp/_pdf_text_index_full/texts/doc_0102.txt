@@ -1,0 +1,210 @@
+SOURCE: 1.0 Maintenance & Repair\1.11 HSEC - M&R\2. Tactical\Pneumatic Service Pit Barrier.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Pneumatic Service Pit 
+Barrier 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+Pneumatic Service Pit Barrier .................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+1007-1.11-1210 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Due to limited ground clearances, service pits are now a common practice with underground 
+mining workshops.  Upon completion of service, the pits can present a potential falling hazard.  
+To mitigate this risk, sites commonly use barriers or plates.  Either approach involves heavy lifting 
+or use of forklifts. 
+  
+This Best Practice details a pneumatically operated barrier that moves into place and retracts for 
+service with a simple switch.  This system provides a safety barrier to the pit without heavy lifting 
+and also saves time required with construction. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The barrier is divided into two sections.  The proportion of the two sections can be adjusted per 
+site requirements.  However, the shorter section needs to be long enough to have two hinged 
+points to properly leverage it in and out of the way.  One section must have the intersecting 
+portion made narrower to fit within the opposite section when collapsed into the pit; to avoid an 
+interference of the two sections.  Image 1 shows the barrier in the erected position. 
+ 
+ 
+Image 1: Pit barrier in the erected position 
+ 
+Both sections are operated by dedicated pneumatic actuators.  They can also be plumbed to 
+operate independently if required.  When the barrier is folded down, the sections sit below the 
+floor level to limit obstruction.  This prevents the barrier itself from being damaged by parts of the 
+machines moving over the pit.  Image 2 shows the barrier already folded down. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR, 
+Pneumatic Service Pit Barrier 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1007-1.11-1210 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+Fig 2: Pit barrier in folded position 
+ 
+ 
+3.0 Implementation Steps 
+ 
+This specific pit barrier was procured through Booth Engineering in Australia.  The product is built 
+to Australian and New Zealand standards.  Caterpillar does not endorse this particular supplier.  
+However, our customers had experience with this company and product.  There are also barriers 
+for other applications in working at heights. 
+ 
+BOOTH Engineering Pty Ltd 
+PO Box 154 
+Lonsdale    S.A. 5160 
+Australia 
+Telephone :  +61-(0)8-8381 1867 
+Facsimile :  +61-(0)8-8381 3932 
+E-mail :  Email@boothengineering.com 
+Website :  www.boothengineering.com 
+Contact :  Stuart Booth (Managing Director) 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR, 
+Pneumatic Service Pit Barrier 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1007-1.11-1210 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Safety Concerns 
+• Various pinch points exist with this solution.  Booth Engineering has agreed to provide 
+documentation on this upon request 
+• Can the barrier collapse unexpectedly? 
+o The pneumatic cylinders hold everything in raised position and lowered position. It 
+doesn't lock in place, the air pressure is sufficient to hold it very firmly in place. 
+o The pneumatic cylinders are fitted with pilot check valves. If the air compressor is 
+turned off overnight and pressure runs down, the pilot check valves ensure that the 
+air is held in the bottom end of the cylinders, thereby keeping the rails raised. The 
+pilot check valves require a positive pressure to allow them to release air from the 
+cylinders. The only way to lower them is to operate the main control valve when air 
+pressure has been built up. 
+ 
+ 
+4.0 Benefits 
+ 
+1. Safety against personnel falling into service pits. 
+2. Eliminate heavy manual handling by other methods of pit barriers. 
+3. Reduce labor time requirement to set up and take down manual barriers. 
+ 
+5.0 Resources Required 
+ 
+Cost of installation is varied, depending on the structure of the pit lining for attachment of 
+mounting points.  Cost also depends on any required modifications such as the staircase top for 
+the barrier to fit below and surface and also avoid tripping of personnel when using the staircase. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None at this time. 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Trevor Walker 
+Mobile Maintenance Coordinator 
+BHP Billiton 
+Leinster Operations 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR, 
+Pneumatic Service Pit Barrier 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1007-1.11-1210 
+Caterpillar Confidential:  GREEN          Page 3 of 3

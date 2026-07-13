@@ -1,0 +1,160 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\1. Strategic\Managing Parts Reuse & Replace Decisions with Dedicated Resource.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+DEALER BEST PRACTICE SERIES  
+Managing Parts Reuse/Replace 
+Decisions with Dedicated Resource 
+ 
+Application  Maintenance  Site 
+Management  
+Component 
+Rebuild Safety MARC 
+Management  
+ 
+ 
+ 
+Managing Parts Reuse/Replace Decisions with 
+Dedicated Resource .................................................. 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits ............................................................. 3 
+5.0  Resources Required .......................................... 3 
+6.0  Supporting Attachments / References ............... 3 
+7.0  Related Best Practices ...................................... 3 
+8.0  Acknowledgements ........................................... 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+ 
+ 
+ 
+ 
+ 
+1.0 Introduction  
+ 
+Caterpillar has many guidelines on parts reuse criteria, and inspection / measurement procedures 
+to determine reusability.  These guidelines are primarily technical guidelines and do not address a 
+“process” by which to determine parts reuse during component rebuilds. 
+ 
+Parts “reuse” or “replace” decisions during major component rebuild are one of the most 
+important controllable cost drivers in the rebuilding process. Proper reuse decisions are vital. 
+Rebuild cost increases when parts are replaced, that could have been reused. If the rebuild is a 
+component exchange flat rate rebuild or MARC contract rebuild, this action directly reduces CRC 
+margins. In addition to increased costs and reduced margins, poor rebuild/reuse decisions can 
+result in component failure or shortened component life. 
+
+===== PAGE 2 =====
+ 
+Often, decisions to replace or reuse a part will be made by virtually any mechanic in the shop.   
+This decision often lacks consistency from one mechanic to another due to experience, training, 
+and even a fear of risk.  
+ 
+This Best Practice discusses managing parts reuse decisions through a consistent process. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Some dealers have been very successful in managing parts reuse by creating a specialist level 
+position in the shop.  This position has been assigned overall responsibility for the parts reuse 
+decisions and standard practices.  
+  
+Responsibilities include: 
+• Inspect all parts for reuse during the disassembly  or parts cleaning steps of the rebuild 
+process. 
+• Facilitate the ordering of parts being replaced or  transported for salvage, early in the rebuild 
+process, to avoid delay/interruption during assembly. 
+• Assist with warranty failure analysis. 
+• Establish shop standard reuse policies and practic es. 
+• Create and maintain Required Bill of Materials (RB OM) and/or “Must Replace” parts kits for 
+the most common component rebuilds.  
+o Establish parts reuse performance analysis reporti ng for training program 
+development. 
+• Measure program effectiveness through annual scrap  analysis and “Re-do” analysis. 
+• Participate in CRC cost management initiatives. 
+• Conduct parts reuse, and salvage training. 
+• Assume lead-person responsibilities in disassembly  and cleaning areas.  Coach 
+technicians in proper disassembly & assembly techniques 
+   
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+3.0 Implementation Steps 
+ 
+• The individual must be well trained in reusability  guidelines, applied failure analysis, and 
+the use of inspection/measurement equipment or tooling. 
+o The Reuse Specialist should be available for each shift of a multi-shift operation. 
+Due to the importance of the position and the daily workload, a back-up person 
+should also be available and qualified. 
+o The Reuse Specialist would work primarily in the D isassembly or Parts Cleaning 
+area in an “assembly line” rebuild process.  For a “Bay Build” process, the reuse 
+specialist would float from bay to bay throughout disassembly. 
+o A reuse inspection workstation may be required wit h a computer terminal, good 
+lighting, magnification equipment, crack detection and other inspection and 
+measuring equipment.  Close access to magnaflux, crankshaft and camshaft 
+inspection benches also helpful. 
+ 
+4.0 Benefits 
+   
+• Manage parts reuse decisions as part of a consiste nt process. 
+• Remove repair decisions from the hands of lesser-e xperienced people. 
+• Reduce rebuild costs and / or re-do risks. 
+• Impact CRC margins and profit. 
+• Improve rebuild quality and component life. 
+• Improve shop efficiency – (specifically if “Must D o” parts kits are developed). 
+Parts Reuse / 
+Replace inspections 
+occur at these steps 
+
+===== PAGE 4 =====
+ 
+Other examples of benefits, which dealers have reported in process changes made to standard 
+CRC practices: 
+ 
+• Process change requiring all engine blocks to be r esurfaced and stainless steel water insert 
+installed.       
+• Process change requiring all connecting rods to be  magnafluxed. 
+• Process change requiring the fork spread of camsha ft followers to be measured prior to reuse.        
+                                
+5.0 Resources Required 
+• A qualified individual for Parts Reuse Specialist should have extensive mechanical or 
+engineering experience.  
+ 
+6.0 Supporting Attachments / References 
+ 
+Component Reuse Training dates and contact: 
+https://dealer.cat.com/en/ps/service/rpe/c/2017-training-schedule.html  
+DPC course # 41658 
+ 
+Why Reuse and Salvage Parts (info and case study): 
+https://channel1.videonitch.com/LearningPrograms/Pass/1640?CategoryID=0 
+ 
+7.0 Related Best Practices 
+None applicable at this time. 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+Caterpillar Global Mining 
+Six Sigma Black Belt – Product Support Group

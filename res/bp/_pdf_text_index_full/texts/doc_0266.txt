@@ -1,0 +1,225 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\797F Oil Pan Support Assembly.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+October 18 
+4.03-171229-03 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.   mining.cat.com 
+ Caterpillar: Confidential Green 
+ 
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Oil Pan Support Assembly – 797F 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+ Removal of  bearing differentialError! Bookmark not defined. 
+1.0 Introduction ............... Error! Bookmark not defined. 
+2.0 Best Practice Description .......................................... 2 
+3.0 Implementation Steps ............................................... 3 
+4.0 Benefits ..................................................................... 4 
+5.0 Resources Required ................................................. 5 
+6.0 Supporting Attachments / References ...................... 6 
+7.0 Related Best Practices .............................................. 7 
+8.0 Acknowledgements ................................................... 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based  upon information 
+provided by one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no 
+representation or warranty about the information contained in this document or the products referenced herein. 
+Caterpillar welcomes additional “Best Practice” recommendations from our dealer network. 
+
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Pan Oil Support Assembly - 797F 
+DATE 
+10/25/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-171229-03 
+Caterpillar Confidential:  YELLOW          Page 1 
+of 4 Caterpillar: Confidential Green 
+1.0 Introduction 
+A support tool  has been designed for the assembly process of the  oil pan on the C175 
+models. This tool helps keep all parts of the oil pan level and evenly distributed during  the 
+time of installation which makes it an easier and more effective process. 
+ 
+2.0 Best Practice Description 
+Place the oil pan in the dedicated slots of the support tool. U se the adjustable supports to 
+help assemble all parts of the oil pan until you get it completely level.  
+ 
+ 
+  
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Pan Oil Support Assembly - 797F 
+DATE 
+10/25/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-171229-03 
+Caterpillar Confidential:  YELLOW          Page 2 
+of 4 Caterpillar: Confidential Green 
+3.0 Implementation Steps 
+ 
+Manufacture support according to the dimensions of oil pan 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Through the implementation of this tool, the following benefits have been observed: 
+ 
+• Reduced installation time: 
+o Before: 40 minutes 
+o Now:  15 minutes 
+• Significant safety increase by reducing the risk of hand injuries to technicians 
+ 
+ 
+4.0 Resources Required 
+The total cost to develop and fabricate this tool was $2,348 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Pan Oil Support Assembly - 797F 
+DATE 
+10/25/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-171229-03 
+Caterpillar Confidential:  YELLOW          Page 3 
+of 4 Caterpillar: Confidential Green 
+5.0 Supporting Attachments / References. 
+ 
+ 
+ 
+ 
+ 
+6.0 Related Best Practices 
+None 
+ 
+7.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ Pablo Alcántara Michuy 
+ Ferreyros S.A. 
+  
+The idea for this Best Practice belongs to: 
+Franklin Llanos 
+Ferreyros S.A. 
+ 
+This Best Practice was revised by: 
+ Aninu Mitacc Vizcardo 
+ Ferreyros S.A. 
+ aninu.mitacc@ferreyros.com.pe

@@ -1,0 +1,236 @@
+SOURCE: 1.0 Maintenance & Repair\1.10 Continuous Improvement\3. Quick Win\Changing the Position of the Jack Sensor Box – MD6640.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+February 2022 
+1.10-220218-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+M
+INING DEALER BEST PRACTICE 
+Changing the Position of 
+the Jack Sensor Box – 
+MD6640
+M
+aintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+C
+hanging the Position of the Jack Sensor Box – 
+MD6640 ........................................................................ 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description.................................... 3 
+3.0 Implementation Steps ......................................... 3 
+4.0 Benefits ................................................................ 4 
+5.0 Resources Required ........................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices........................................ 5 
+8.0 Acknowledgements ............................................. 5 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Changing the Position of the Jack Sensor Box – 
+MD6640 
+DATE 
+2/18/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-220218-1 
+Caterpillar: Confidential  Yellow          Page 2 of 5 
+1.0 Introduction  
+ 
+The maintenance and repair of the sensors of the front jacks to the activity in the MD6640 is done 
+at a height of approximately 3 meters in a condition of difficult access, without a fixed anchor 
+point, without a support base appropriate, exposing the technician to a high risk of falling during 
+the execution of the activity. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Jack sensor box 
+factory default position 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Changing the Position of the Jack Sensor Box – 
+MD6640 
+DATE 
+2/18/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-220218-1 
+Caterpillar: Confidential  Yellow          Page 3 of 5 
+2.0 Best Practice Description 
+ 
+The jack sensor box was removed and reinstalled in an easily accessible position for technicians 
+now located at the bottom of the machine, allowing ground level access, thus eliminating the risk 
+of falling from work at height. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+1.With the equipment stopped and the equipment's electrical control system blocked, remove the   
+front Jack Sensor Box from their original factory position. 
+ 
+ 
+ 
+ 
+ 
+2. Install the 2 front Jack Sensor Box in the bottom of the machine close to the ground, as shown 
+in the figure below. 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Changing the Position of the Jack Sensor Box – 
+MD6640 
+DATE 
+2/18/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-220218-1 
+Caterpillar: Confidential  Yellow          Page 4 of 5 
+ 
+ 
+3. Connect the box cables and hoses according to the electrical diagram. 
+ 
+ 
+4.0 Benefits 
+ 
+1. Easy access 
+2. Elimination of exposure to falls of different level. 
+ 
+ 
+T
+he Sotreq team removed the jack sensor box from the factory position and installed it in another 
+more easily accessible position. 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Drawing (see document appendix) 
+   
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Changing the Position of the Jack Sensor Box – 
+MD6640 
+DATE 
+2/18/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-220218-1 
+Caterpillar: Confidential  Yellow          Page 5 of 5 
+7.0 Related Best Practices 
+ 
+The upgrade is preferably implemented during preventive maintenance. 
+ 
+8.0 Acknowledgements 
+ 
+      This Best Practce was written by: 
+ 
+      Josinei Ataíde Valentim
+ 
+      Fleet Performance Engineer 
+      +55 (94) 991902053 
+      josinei.valentim@sotreq.com.br
+ 
+ 
+      Raissa Maués Nascimento 
+      Fleet Performance Engineer 
+      +55 (94) 992764580 
+      raissa.nascimento@sotreq.com.br  
+ 
+ 
+      This Best Practices was designed and implemented by: 
+ 
+      Josinei Ataíde Valentim
+ 
+      Fleet Performance Engineer 
+      +55 (94) 991902053 
+      josinei.valentim@sotreq.com.br 
+ 
+ 
+ 
+Special thanks to the efforts of the engineering team at Sotreq Salobo, always willing to offer 
+support in the development of solutions for partners and customers, and other participants 
+involved in this project.

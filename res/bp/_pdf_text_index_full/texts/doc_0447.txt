@@ -1,0 +1,258 @@
+SOURCE: Wear Cap Installation Tool for ERS 7495.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+March 2023 
+1.04-230309-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Wear Cap Installation Tool 
+for ERS 7495 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Wear Cap Installation Tool for ERS 7495 .................. 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 3 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Wear Cap Installation Tool for ERS 7495 
+DATE 
+3/9/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230309-1 
+Caterpillar: Confidential Yellow          Page 2 of 5 
+1.0 Introduction  
+ 
+In the routine activity of removing and installing a Wear Cap - WC 62 (PN398-3042) for the ERS 7495 
+Dipper lip adapter, an accident occurred involving an employee's hand and fingers. It was observed 
+that the activity of replacing the WC to protect the penetration adapters presents ergonomic risks 
+related to hand and finger crushing. The activity was performed manually by only one employee. This 
+incident was widely publicized among the leaders of the client Vale S11D and Sotreq, as shown in 
+Figure 1 below.  
+ 
+Figure 1: Installation Procedure Comparison 
+ 
+ 
+The Wear Cap used at the time is the WC-62 with 28kg. Dimensions are described in Figure 3 below.  
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2: Wear Cap Information 
+ 
+ 
+A method was developed to mitigate the possibility of future accidents. The solution is a magnetic 
+base and support with a lifting capacity of 400kg that could be used by two people more safely. 
+ 
+  
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Wear Cap Installation Tool for ERS 7495 
+DATE 
+3/9/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230309-1 
+Caterpillar: Confidential Yellow          Page 3 of 5 
+2.0 Best Practice Description 
+ 
+The idea of this best practice was to provide a safe way of removing and installing Wear Caps.   
+ 
+A method and structure was developed that allows workers to avoid moving the Wear Cap directly 
+with his hands and at the same time mitigate ergonomic damage by dividing the hoisted load between 
+two people. 
+ 
+3.0 Implementation Steps 
+ 
+The implementation of this best practice can be divided into 3 steps, outlined below. 
+ 
+STEP 1:  Determine Magnet Based on Lifting Requirements 
+ 
+The magnetic base has: 
+1) The capacity for lifting plates weighing up to 400kg 
+2) A safety factor of 3.5 
+3) An operating temperature of up to 80ºC.   
+ 
+Figure 3: Magnet 
+ 
+The dimension of the chosen magnet are 1) a height of 96mm, 2) a width of 94mm and 3) a length of 
+168mm. It does not need electrical power as it is built with high energy permanent magnets.  
+STEP 2:  Build Lifting Structure 
+ 
+The support is made of 1/2" ABNT 1020 steel tubes for greater strength. It has two 500mm lifting rods 
+and a 314.9 mm "V". Using two technicians, the support is coupled to the magnetic base and the 
+lifting is carried out by them.  
+Figure 4: Support Description 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Wear Cap Installation Tool for ERS 7495 
+DATE 
+3/9/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230309-1 
+Caterpillar: Confidential Yellow          Page 4 of 5 
+STEP 3: How to Use 
+ 
+The lifting tool developed specifically for this best practice is inserted into the upper eye of the 
+magnetic lifter. A technician performs the fitting using a rod to pull the wear cap as shown in Figure 6 
+below. Using two technicians, the dipper adapter wear cap can be lifted. 
+  
+4.0 Benefits 
+ 
+For the Wear Cap R&I: 
+ 
+• Greater security in carrying out the R&I activities 
+• Decreased risk of crushing and pinching fingers 
+ 
+5.0 Resources Required 
+ 
+• 1 magnetic base with a capacity of 400kg with eyelet 
+• 1 lifting rod with two handles 
+• 1 rod to pull the helmet already attached to the magnetic lifter 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Cat Ground Engaging Tool – Parts Catalog: HMS, ERS, DGL & LHD 
+ 
+7.0 Related Best Practices 
+ 
+       N/A 
+ 
+ 
+ 
+ 
+ 
+Figure 5: Lift Execution 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Wear Cap Installation Tool for ERS 7495 
+DATE 
+3/9/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230309-1 
+Caterpillar: Confidential Yellow          Page 5 of 5 
+8.0 Acknowledgements 
+ 
+We thank the entire engineering team that was involved in the development of this best practice: 
+ 
+Thiago Dillion 
+Expanded Mining Products 
+thiago.dillon@sotreq.com.br 
++55 94 9  
+ 
+Anderson Lima  
+Expanded Mining Products  
+anderson.lima@sotreq.com.br 
+ 
+Webert Lopes 
+Expanded Mining Products 
+webert.lopes@sotreq.com.br  
+ 
+Thiago Rezende 
+Expanded Mining Products 
+thiago.rezende@sotreq.com.br
+  
+ 
+Rudson Maciel 
+Expanded Mining Products 
+rudson.maciel@sotreq.com.br

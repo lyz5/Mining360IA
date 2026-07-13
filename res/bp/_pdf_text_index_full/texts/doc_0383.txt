@@ -1,0 +1,242 @@
+SOURCE: Blade Edge Wear Levels Monitoring Using a Color Gauge on 16H16M16 Motor Grader.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2023 
+1.01-230222-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Blade Edge Wear Levels 
+Monitoring Using a Color 
+Gauge on 16H/16M/16 
+Motor Grader 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+Blade Edge wear Levels Monitoring Using a Color 
+Gauge on 16H/16M/16 Motor Grader ........................ 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits ............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Blade Edge Wear Levels Monitoring Using a Color 
+Gauge on 16H/16M/16 Motor Grader 
+DATE 
+2/22/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230222-1 
+Caterpillar: Confidential Yellow P age 2 of 6 
+1.0 Introduction 
+C
+urrently, the monitoring of the levels of wear on the blade edges is carried out by the maintenance 
+team, in which it is necessary to travel to the place of operation and request the equipment to stop 
+to perform the measurement. 
+T
+hese downtimes impact equipment productivity, use of resources and labor. 
+The idea is that the operator uses the Color Gauge before the start of his wo rk shift to check the 
+wear range of the blade edge and, thus, communicate the maintenance, providing a follow -up of 
+the edge wear. 
+T
+he objective of this Best Practice is to assist the operators in monitoring the blade wear edges, 
+creating, through a Color Gauge, bands with colors, which will guide the operator to inform 
+maintenance team about the current level of edge wear. This tool will also allow the operator to 
+know if the edges of the blade are in proper condition for operation. 
+2
+.0 Best Practice Description 
+T
+his Best Practice proposes the elaboration of a Color Gauge with three colors that will classify the 
+wear levels into three bands. These tracks have the following categories: 
+G
+reen Band: it shows that the edge measurement is within the work specifications. 
+Y
+ellow Band: it indicates that the edge is close to the minimum range limit specified for work and, 
+in this case, maintenance technicians must schedule its replacement as soon as possible. 
+R
+ed Band: it guides the operator and maintenance t eam that the edge has already exceeded the 
+specified work wear limit and it must be replaced immediately. 
+I
+n this way, before starting the service, using this Color Gauge, the operator can measure the edge 
+wear level and inform the maintenance team. 
+M
+aintenance, in turn, through the information shared by the operator, can monitor the edge wear 
+before the start of each work shift. 
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Blade Edge Wear Levels Monitoring Using a Color 
+Gauge on 16H/16M/16 Motor Grader 
+DATE 
+2/22/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230222-1 
+Caterpillar: Confidential Yellow P age 3 of 6 
+            
+Picture 1 - Operator using gauge color to assess blade edge wear level 
+  Picture 2 - Gauge color for 16M motor grader 
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Blade Edge Wear Levels Monitoring Using a Color 
+Gauge on 16H/16M/16 Motor Grader 
+DATE 
+2/22/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230222-1 
+Caterpillar: Confidential Yellow P age 4 of 6 
+3.0 Implementation Steps 
+1) C
+olor Gauge fabrication with a 1.5mm thick sheet metal and specific dimensions for the
+edge as shown below:
+Picture 3 - Color Gauge dimensions for manufacturing 
+P
+icture 4 - Standard measurement references for 16M, 16H and 16 
+4T-8317 
+H
+eight 10” 
+C
+olor Gauge information 
+G
+reen = 110 mm (=43,31%) 
+       Yellow = 20 mm (7,87%) 
+ 
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Blade Edge Wear Levels Monitoring Using a Color 
+Gauge on 16H/16M/16 Motor Grader 
+DATE 
+2/22/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230222-1 
+Caterpillar: Confidential Yellow P age 5 of 6 
+2) Guide operators how to use the Color Gauge.
+3) Guide maintenance team on how to use the Color Gauge.
+4) Establish the measure collection frequency and an information flow and between operator
+and maintenance departments.
+4
+.0 Benefits 
+1)
+Time Saving
+The use of the Color Gauge will reduce machine downtime for edge measurement, as the
+operator itself evaluates the edges before starting the operation.
+2)
+Efficiency Improvement
+Color Gauge  will allow a better control over edge wear monitoring and  changing edges
+improved predictability.
+3) R
+esource savings
+The use of Color Gauge to measure the edges will prevent the maintenance team from
+moving towards the equipment on a daily basis and will also prevent damage to the edge
+fixing base due to lack of wear monitoring.
+5
+.0 Resources Required 
+1) C
+olor Gauge - Supply the color gauge as per the specified colors and measurements.
+2) O
+perators – train operators how to use the Color Gauge efficiently.
+3) M
+aintenance team - Train the maintenance team in managing the flow of information about the
+measures passed on by the operator.
+T
+he 4T-8317 edge is the recommended option for MG`s 16H, 16M, 16 and, for this reason, the gauge 
+measurements are based on the specified wear parameters for it. 
+6
+.0 Supporting Attachments / References 
+Mot
+or Grader Cutting Edge Options – www.Dealer.cat.com . 
+CMIC - PECJ0025-03 GET PSK Section 10 - Motor Graders - www.Dealer.cat.com . 
+7
+.0 Related Best Practices 
+N/
+A 
+
+===== PAGE 6 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Blade Edge Wear Levels Monitoring Using a Color 
+Gauge on 16H/16M/16 Motor Grader 
+DATE 
+2/22/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230222-1 
+Caterpillar: Confidential Yellow P age 6 of 6 
+8.0 Acknowledgements 
+T
+his Best Practice was written and implemented by: 
+Fe
+rnando Laguardia 
+Consultor Técnico 
+fernando.laguardia@sotreq.com.br 
++ 55 31 99195-2158
+Al
+so, an acknowledgment the following individual that assisted in developing this Best Practice: 
+       
+Lázara Fonseca 
+Consultora Técnico 
+lazara.fonseca@sotreq.com.br 
++55 31 97108-726 8
+E
+lynelson Raiol 
+Sotreq S/A - Engineering Technical Consultant 
+E-mail: elynelson.raiol@sotreq.com.br

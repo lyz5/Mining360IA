@@ -1,0 +1,301 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2022 
+4.03-220201-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Adapter for High Pressure Fuel 
+Pump Cleaning 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Adapter for High Pressure Fuel Pump Cleaning ........ 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description .................................... 2 
+3.0 Implementation Steps.......................................... 2 
+4.0 Benefits ................................................................ 3 
+5.0 Resources Required............................................ 3 
+6.0 Supporting Attachments / References................ 3 
+7.0 Related Best Practices ........................................ 5 
+8.0 Acknowledgements ............................................. 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Adapter for High Pressure Fuel Pump Cleaning 
+DATE 
+02/01/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220201-1 
+Caterpillar: Confidential  Yellow          Page 2 of 5 
+1.0 Introduction 
+  
+This improvement describes how to perform the cleaning process in the lubrication line for high 
+pressure fuel pumps, during the process of C175 engine partial overhaul, without failure by 
+utilizing an adapter tool that Ferreyros designed. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The improvement consists of using an adapter on the high-pressure fuel pump of C175 engines 
+and connecting it to the upper oil inlet line, using the oil-supplied injection pump test stand to 
+perform the cleaning and remove the remaining used oil. 
+ 
+The following steps are required to use this tool. Refer to Section 6.0 for images. 
+  
+1. Install the high-pressure pump lifting bracket (P/N 487-8643).  
+2. Install the high-pressure pump on the injection pump test stand. 
+3. Install the adapter on the top oil line of the high-pressure pump. 
+4. Install the test stand oil supply hose onto the adapter. 
+5. Turn on the test stand. 
+6. Regulate the oil supply pressure between 45 to 50 PSI. 
+7. Flush with clean oil for approximately 30 minutes. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Design the adapter to be used for connection to the lubrication line of the high-pressure fuel 
+pump. The adapter is shown below and should be designed according to the blueprint attached in 
+Section 6.0. 
+ 
+  
+Figure 1: Multipurpose tool for assembling the C175 engine auxiliary water pump. 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Adapter for High Pressure Fuel Pump Cleaning 
+DATE 
+02/01/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220201-1 
+Caterpillar: Confidential  Yellow          Page 3 of 5 
+4.0 Benefits 
+ 
+• Prevents contamination in the process of repairing the engine by removing remaining oils that 
+may contain contaminants inside the lubrication system of the high-pressure fuel pump; 
+• Avoids related failures due to contamination. 
+ 
+ 
+5.0 Resources Required 
+ 
+Item Cost 
+Adapter $42 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+M0072382 (Inspection, Salvage, Reuse, and Cleaning of the C175 Tier 2 Engine Fuel Rails and 
+Critical Fuel Lines) 
+M0122417 (Inspection, Salvage, Reuse, and Cleaning of 3500 Tier 4 and C175 Tier 4 Engines 
+Fuel Rails and Critical Fuel Lines)  
+ 
+Engineering print for the fabrication of the adapter: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Adapter for High Pressure Fuel Pump Cleaning 
+DATE 
+02/01/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220201-1 
+Caterpillar: Confidential  Yellow          Page 4 of 5 
+• Installation of the high-pressure fuel pump on the injection pump test stand using bracket P/N 
+487-8643. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+• Installation of the adapter and oil supply hose: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Adapter for High Pressure Fuel Pump Cleaning 
+DATE 
+02/01/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220201-1 
+Caterpillar: Confidential  Yellow          Page 5 of 5 
+• Supply oil from the injection pump test bench with a pressure between 45 to 50 PSI to 
+perform the cleaning: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A. 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Manuel Oregon Antezana & Fernando Moreno Villaizan 
+ 
+This Best Practice was revised by: 
+ 
+Aninu Mitacc Vizcardo 
+aninu.mitacc@ferreyros.com.pe 
+ 
+This Best Practice procedure was developed by: 
+ 
+Manuel Oregon Antezana

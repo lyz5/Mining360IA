@@ -1,0 +1,101 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ resource.title }} | Resources | Mining360IA</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell resource-view-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">{{ resource.extension }} resource</p>
+                <h1>{{ resource.title }}</h1>
+            </div>
+            <div class="summary">
+                <span class="summary-value">{{ resource.extension }}</span>
+                <span class="summary-label">{{ resource.section }}</span>
+            </div>
+            <div class="actions">
+                <a class="button secondary" href="{% url 'resources' %}">Back</a>
+                <button type="button" class="icon-button fullscreen-toggle" data-resource-fullscreen aria-label="Read fullscreen" title="Read fullscreen"></button>
+            </div>
+        </header>
+
+        <section class="workspace-band">
+            <div class="placeholder-panel">
+                <p class="eyebrow">Classification</p>
+                <h2>{{ resource.section }}</h2>
+                <p>{{ resource.category }} / {{ resource.level }}</p>
+            </div>
+            <div class="placeholder-panel">
+                <p class="eyebrow">File</p>
+                <h2>{{ resource.filename }}</h2>
+                <p>{{ resource.size_label }} stored as {{ resource.mime_type }}</p>
+            </div>
+        </section>
+
+        <section class="resource-detail-meta">
+            <span>{{ resource.filename }}</span>
+            <span>{{ resource.section }}</span>
+            <span>{{ resource.category }}</span>
+            <span>{{ resource.level }}</span>
+            <span>{{ resource.folder_path }}</span>
+            <span>{{ resource.size_label }}</span>
+        </section>
+
+        {% if resource.is_pdf %}
+            <section class="resource-viewer" data-resource-viewer>
+                <iframe src="{{ resource.raw_url }}#toolbar=0&navpanes=0&scrollbar=1&view=Fit" title="{{ resource.title }}"></iframe>
+            </section>
+        {% elif resource.is_text %}
+            <section class="resource-text-viewer" data-resource-viewer>
+                <pre>{{ text_content }}</pre>
+            </section>
+        {% else %}
+            <section class="alert">
+                <strong>Preview unavailable</strong>
+                <p>This file type can be opened from the top button.</p>
+            </section>
+        {% endif %}
+    </main>
+    <script>
+        (function () {
+            const viewer = document.querySelector("[data-resource-viewer]");
+            const fullscreenButton = document.querySelector("[data-resource-fullscreen]");
+
+            function setFullscreenState(isFullscreen) {
+                if (!viewer || !fullscreenButton) return;
+                viewer.classList.toggle("fullscreen-mode", Boolean(isFullscreen));
+                fullscreenButton.setAttribute("aria-label", isFullscreen ? "Exit fullscreen reading" : "Read fullscreen");
+                fullscreenButton.setAttribute("title", isFullscreen ? "Exit fullscreen" : "Read fullscreen");
+            }
+
+            if (viewer && fullscreenButton) {
+                fullscreenButton.addEventListener("click", async () => {
+                    try {
+                        if (document.fullscreenElement === viewer) {
+                            await document.exitFullscreen();
+                            return;
+                        }
+                        if (viewer.requestFullscreen) {
+                            await viewer.requestFullscreen();
+                            return;
+                        }
+                        setFullscreenState(!viewer.classList.contains("fullscreen-mode"));
+                    } catch (error) {
+                        setFullscreenState(!viewer.classList.contains("fullscreen-mode"));
+                    }
+                });
+
+                document.addEventListener("fullscreenchange", () => {
+                    setFullscreenState(document.fullscreenElement === viewer);
+                });
+            }
+        }());
+    </script>
+</body>
+</html>

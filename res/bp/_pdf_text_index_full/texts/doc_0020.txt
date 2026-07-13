@@ -1,0 +1,380 @@
+SOURCE: 1.0 Maintenance & Repair\1.01 Preventive Maintenance\3. Quick Win\Cooling System Thermal Inspection.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Cooling System Thermal 
+Inspection  
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Cooling System Thermal Inspection .......................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments/References ................. 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgement ............................................. 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+January 2015 
+1411-1.01-1359 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction 
+ 
+This Best Practice aims to establish a preventive maintenance procedure to help forewarn 
+unscheduled downtime, reduced PCR or even catastrophic engine or converter failures due to 
+high operating temperatures. 
+ 
+Efficiency in the cooling system decreases when external and/or internal obstruction of radiator 
+cores happen. This produces high engine and/or converter operating temperatures. 
+ 
+An effective way to determine if cores present internal/external obstruction is by using 
+thermography. 
+ 
+Thermographic inspection as part of maintenance is a strategy to: 
+ 
+• Determine possible internal and/or external clogging of radiator cores 
+• Avoid non-scheduled downtimes due to engine or converter overheating 
+• Avoid catastrophic failures related to high temperature 
+• Avoid excessive repair costs of severe wear components due to high operating 
+temperatures 
+• Reduce assessment time over engine temperature. Prevents customer discomfort 
+• More graphical diagnosis, easier to understand, quick define and very technical  
+ 
+ 
+2.0 Best Practice Description 
+ 
+The inspection process is mainly focused on using a thermal imager or camera (417-5122 or other 
+similar or with best features) and can be replicated by other dealers worldwide. 
+ 
+When executing thermographic inspection, the following considerations must be taken into account:  
+ 
+• Inspection must be performed in the field 
+• Engine temperature must be over 90ºC (Work the machine / engine to get all systems hot) 
+• Full engine rpm’s 
+• Avoid reflected high temperatures 
+• Consider emissivity equal to 0.95 for pipes (painted) 
+• Assessment for radiator’s internal clogging will be performed qualitatively (comparative) 
+• Cooler deltas’ assessment will be performed quantitatively 
+ 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cooling System Thermal Inspection 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1411-1.01-1359 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+I. Inspection Procedure for Radiator’s Condition (qualitative analysis): 
+ 
+Radiator’s internal obstruction assessment is performed due to comparison (qualitative) 
+ 
+• Ask Operations for authorization to perform tests with equipment on the field  
+• Head to equipment and coordinate with operator: 
+ Park equipment 
+ Accelerate 
+• Ensure machine is safe before approaching 
+• Stand behind equipment, approximately 5-6m distance (see Fig1 & Fig2) 
+• Take thermal image (See Fig3 & Fig4) 
+ 
+ 
+ 
+Fig1. Location to register thermal image 
+ 
+ 
+Fig2. All radiator must be captured completely on the 
+thermal image area  
+ 
+ 
+Fig3. Radiator cores disposition 
+ 
+ 
+Fig4. Example of how to take a thermal image. Radiator in 
+good conditions 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cooling System Thermal Inspection 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1411-1.01-1359 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+II. Assessment Procedure of radiator’s delta temperature (quantitative): 
+ 
+This assessment’s objective is to measure coolers’ efficiency by using delta temperature and 
+quantitative analysis from thermal image. 
+ 
+• Climb machinery through its left side and record temperatures of the following parts: 
+                
+Chart 1-Checkpoints for radiators’ delta 
+ 
+ 
+ 
+ 
+Fig5. (T1) Radiators’ inlet temperature 
+ 
+ 
+Fig6. (T3) Temperature towards the water pump 
+(referential temperature) 
+ 
+ 
+Fig7. (T2) Radiators’ outlet temperature 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cooling System Thermal Inspection 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1411-1.01-1359 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+III. Thermal Images Analysis: 
+ 
+1. To assess the radiator’s condition (internal obstruction or clogging) compare all cores with 
+another, heat distribution must be uniform among them all. As example, Fig4. shows a 
+uniform heating distribution in all cores 
+ 
+• Thermal images that DO NOT show uniform distribution are shown below. These do have 
+“cold zones” which is clear evidence that there exists internal obstruction (Fig9 & Fig10) 
+ 
+ 
+Fig9. 04 Cores with internal clogging or obstruction. 
+994F Loader  
+ 
+Fig10. 03 Cores with internal clogging or obstruction. 
+994F Loader   
+ 
+Figure 6 (Fig6.) shows an inspection performed on our customer’s 994F loader in Cerro Verde, 
+where 03 cores were clogged (15% of the total) generating engine- over-heating. After cores were 
+replaced, the issue was fixed. 
+ 
+Figure 5 (Fig5.) shows 04 clogged cores on our customer’s 994F. After cores replacement, the 
+engine-over-heating issue was fixed. 
+ 
+• Schedule cores replacement in case internal clogging is found 
+ 
+ 
+2. In case there is no internal clogging, analyze temperature delta of thermal images from T1 
+& T2 points (see Chart 1) – Fig5, Fig6 & Fig7 
+ 
+• If delta temperature is lower than indicated in chart 1, it may indicate that external clogging 
+of radiator or hydraulic cooler is happening. Set the radiator’s cores external cleaning 
+function (use air or hot water) 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cooling System Thermal Inspection 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1411-1.01-1359 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.0  Implementation Steps 
+ 
+This Best Practice arose as a necessity to identify possible internal clogging of radiator cores. Two 
+failures we found due to radiator’s internal clogging in a customer’s mine, where the failure 
+determination process led to a quite long assessment period. 
+ 
+This Best Practice can be replicable by other dealers worldwide. 
+ 
+Implementation Steps are: 
+ 
+ 
+• Assessment must be scheduled in maintenance planning 
+• It is recommended to have a 2000hrs periodicity 
+• Set who will be responsible of data compilation 
+• Coordinate with the person in charge of machine operation to have access to the equipment 
+• Coordinate with operator a 15 minute downtime with the equipment turned on 
+• Ensure machine is safe to approach 
+• Quickly take thermal images to the radiator from the equipment’s rear-end 
+• Complete pre checks 
+I. Check for proper coolant level 
+II. Check for debris build-up in airstream of all cooling cores 
+III. Check for coolant leaks 
+• Assess thermal images, record them, schedule cores’ replacement as needed and issue a 
+report 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+Efficiency loss in the engine’s cooling system ends up as high operating temperatures both, engine 
+and torque converter, causing high internal wear or catastrophic failure as a result of overheating. 
+ 
+In one example from Southern Peru, 4100masl, 03 catastrophic failures of 3516B engines 
+generated a very high loss. New engines were purchased for US$570,253.50. 
+ 
+Implementing periodic thermographic inspections as strategy ensures the engine and converter to 
+reaches their PCR. The torque converter in the mine was repaired on average every 5000hrs of 
+operation, the cost of repairing it is US$48,886.00. This cost can be eliminated by implementing this 
+Best Practice. 
+ 
+Powertrain overheating issues cause unscheduled equipment downtime. This means that the 
+equipment’s availability is lower than expected. Cerro Verde mine 994F loader’s availability 
+decreased to 80% due to overheating issues. But after implementing thermographic inspections and 
+repairing the radiator, loader’s availability remains above 88%. 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cooling System Thermal Inspection 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1411-1.01-1359 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+Benefits of implementing this Best Practice are:  
+ 
+• Avoid catastrophic failures 
+• The component reaches its PCR 
+• Reduces rebuild cost 
+• Reduces rebuild time 
+• Reduces down time 
+• More productivity 
+• Better availability 
+• Quick define, graphic and easier to understand 
+ 
+ 
+ 
+5.0 Resources Required 
+ 
+Investment needed to implement this Best Practice: 
+ 
+• Trained staff on thermal cameras 
+• Pick-up truck to transport staff to where the front loader is located 
+• Fluke Ti32 Thermal Camera 417-5122 or Flir E60 or more advanced thermal cameras 
+ 
+ 
+ 
+6.0 Supporting Attachments/References 
+ 
+• SEBD0518-10 Know Your Cooling System {0708, 1000, 1350, 7000}. 
+ 
+7.0 Related Best Practices 
+ 
+• Best Practice: “Cooling system Performance for LWL 994” 
+ 
+8.0 Acknowledgement 
+ 
+This Best Practice was written by: 
+ 
+Fidel Sarmiento Córdova 
+Auxiliary Fleet Support Engineer/Technical Department 
+fidel.sarmiento@ferreyros.com.pe 
+511 984058638 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cooling System Thermal Inspection 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1411-1.01-1359 
+Caterpillar Confidential:  GREEN          Page 6 of 6

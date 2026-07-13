@@ -1,0 +1,284 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Optimizing Component Removal & 
+Installation Quality through Customer 
+Certification 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+Optimizing Component Removal & Installation Quality 
+through Customer Certification .................................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+September 2006 
+1006-2.3-1026 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Proper Major Component Removal and Installation (R&I) practices are vitally important for 
+component reliability and life.  Mistakes made during component removal and installations are a 
+leading cause of early hour failures or shortened life. To ensure that component removal and 
+installation is performed following a well-defined process, many Caterpillar dealers have provided 
+training, and in some cases, even “Certified” customers as qualified to perform component R & I. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Caterpillar Dealers have invested considerable financial and manpower resources into creating 
+major component rebuild capabilities that deliver cost efficient, high quality for their customers.  A 
+poorly performed removal and / or installation process can negate the efforts put into component 
+rebuild. 
+ 
+Some dealers have taken steps to control the R&I process in order to protect their investment in 
+the rebuild and also to ensure that the component delivers expected reliability and life. 
+ 
+Typical actions have included: 
+• Dealer must do the component installation.                               
+• Dealer must supervise the installation 
+• Dealer trains and certifies the customer to perform component removals and installations. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Start with a process audit by the dealer to the customer. Then provide subsequent training on 
+proper major component removal and installation.  The most important success factor is a 
+common, shared objective by customer and dealer. A shared objective will ensure component 
+reliability and life through proper R & I practices. 
+ 
+Implementation Steps: 
+ 
+1. Customer Shop Audit / Inspection 
+a. Tooling 
+b. Contamination control practices 
+c. Cleaning equipment 
+d. R & I area 
+e. Component storage / staging 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ensuring Rebuild Quality through Certified R&I 
+DATE 
+2/18/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1006-2.3-1026 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+2. Training: 
+a. Failure Analysis – Determine 
+cause for removal 
+b. Document removal – hours, 
+history, oil analysis, particle 
+count 
+c. System inspection and clean 
+up process– debris removal 
+d. Rebuild related system:  
+radiator, coolers, pumps, 
+hoses, and air intake, etc. 
+e. Installation procedures / 
+checklists 
+f. Test and brake-in 
+procedures 
+g. Fluid cleanliness  - ISO 
+particle count specifications 
+h. Standardized installation 
+parts kits (see example to 
+the right) 
+i. Record keeping –installation 
+checklists, parts Bill of 
+Materials, particle count, test 
+results. 
+j. Dealer feedback – completed installation checklists, initial SOS 
+ 
+ 
+ 
+During replacement of any major component, attention should be given to the 
+related systems & sub-components, which may impact performance and life 
+of the newly replaced component. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ensuring Rebuild Quality through Certified R&I 
+DATE 
+2/18/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1006-2.3-1026 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+4.0 Benefits 
+ 
+• Improved reliability 
+o Improper installation is a leading cause of early hour component failures and shortened 
+life.   
+o Proper installation positively impacts: 
+ Machine availability, which impacts production rates at the site.  
+ Maintenance costs by avoiding unnecessary costly repairs. 
+ 
+• Improved durability.   
+o Proper installation helps to maximize component life and reduce cost per ton. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Dealer must have a qualified inspector and training instructor.  In addition, training materials 
+may need to be developed. 
+ 
+• Customer may require improved tooling or shop facility improvements. 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+References: 
+See also, Improving Component Durability – Component Removal and Installation - SEBF1017 
+ 
+This booklet explains how problems in the component removal and 
+installation process often cause components to fail. 
+ 
+The booklet contains 24 pages of high -quality, full color graphics 
+and text, which provide an easy -to -understand explanation of: 
+• Common failures caused by poor R&I practices 
+• Importance of the R&I process 
+• Best practices  
+• Risk management in cleaning contaminated systems 
+ 
+The booklet also explains the how the component replacement 
+process has evolved from the days of the early track-type tractors to 
+today’s modern machines with electronically controlled engines and 
+transmissions. A common sense approach to risk management is 
+also discussed regarding how much time to invest in system 
+disassembly and cleaning after a catastrophic component failure. 
+ 
+The booklet is intended for all levels of dealer and customer 
+personnel involved with the operation and maintenance of 
+earthmoving equipment. It is particularly useful to those who 
+manage equipment operation and maintenance. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ensuring Rebuild Quality through Certified R&I 
+DATE 
+2/18/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1006-2.3-1026 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Attachments: 
+R&I Checklists in SIS (pdf).zip.  The attached .zip file contains a collection of R&I checklists for 
+various equipment models. Please click on the on the “Attachments” tab in this electronic Adobe 
+file.  
+ 
+ 
+7.0 Related Best Practices 
+None applicable. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ensuring Rebuild Quality through Certified R&I 
+DATE 
+2/18/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1006-2.3-1026 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+Caterpillar Global Mining  
+Product Support Group – 6 Sigma Black Belt 
+Brehm_Dale_E@cat.com 
++1 309 675 6325 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ensuring Rebuild Quality through Certified R&I 
+DATE 
+2/18/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1006-2.3-1026 
+Caterpillar Confidential:  GREEN          Page 5 of 5

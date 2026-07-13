@@ -1,0 +1,305 @@
+SOURCE: 5.0 MARC Management\5.04 Financial Management\1. Strategic\Understanding the Sarbanes-Oxley Act of 2002.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Understanding the 
+Sarbanes-Oxley Act of 
+2002 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Understanding the Sarbanes-Oxley Act of 2002 ........ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+July 2007 
+0906-4.5-1013 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Off balance sheet accounting misdeeds of corporations during the 1990’s were pivotal events that 
+set the stage for governmental and investor outrage and the passage of the Sarbanes-Oxley 
+(SOX) Act of 2002. The SOX act has dramatically heightened standards and penalties for U.S. 
+reporting companies. This means that all companies listed on a U.S stock exchange – including 
+those headquartered overseas – must demonstrate they have proper controls in place. Other 
+governments, including the European Union and Canada, have followed with their own versions 
+of “truth in reporting” legislation. These laws represent a shift from disclosure legislation to 
+substantive regulation of procedures and practices. Companies are now required to file quarterly 
+reports to the Securities and Exchange Commission to disclose “all material off-balance sheet 
+transactions, arrangements, obligations (including contingent obligations), that may have a 
+material current or future effect on financial condition, changes in financial condition, results of 
+operations, liquidity, capital expenditures, capital resources, or significant components of 
+revenues or expenses. Truth in reporting is now a global issue – MARC contracts may link 
+customers, dealers and Caterpillar into a compliance partnership.  
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice is intended as guidance to help businesses understand the objectives and 
+components of any truth in reporting legislation such as Sarbanes-Oxley and appreciate the need 
+to evaluate all contracts as well as their internal processes and procedures. This is a high level 
+guide and does not replace the need to understand parent company requirements, local and 
+national governmental statutes, or any rules related to industry or site of operations.  
+ 
+3.0 Implementation Steps 
+ 
+A. A business must understand the objectives of Sarbanes-Oxley. Financial control must 
+be in place to ensure:  
+• An asset or liability exists at a point in time. 
+• The transaction occurred within the period reported. 
+• The asset, liability, expense or revenue item is measured or valued appropriately. 
+• The financial statements are complete without undisclosed items or omissions. 
+• The company has the rights to all assets and the obligations of all liabilities. 
+• All amounts are presented and classified appropriately. 
+ 
+B. Understand how Sarbanes-Oxley impacts a business 
+Six areas where SOX impacts a business are: 
+• Reporting / Accountability: Leadership must now certify in writing that financial statements 
+are presented fairly and have NO untrue statements or omissions of material facts. 
+Management has the responsibility for having an adequate system of internal controls to 
+protect integrity of the numbers reported. 
+• Audit Committee: There must be an experienced audit committee that is made up of 
+independent directors. 
+• Conduct: Companies must have a published code of conduct with protection for 
+whistleblowers. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Understanding the Sarbanes-Oxley Act of 2002 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0000-1.1-1001 
+Caterpillar Confidential:  GREEN         Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Penalties: It is now a criminal offense for leadership to issue fraudulent financial 
+statements. 
+• Independence: Auditors must be fully independent, cannot perform any other function for a 
+company and cannot accept employment for one year removed from the engagement. 
+ 
+C. Evaluate your risk management process.  
+• Risk management means that companies have accurate and tested control systems in 
+place that allow for almost real time capture of important data and identification of 
+problems. Risk arises as a consequence of the day-to-day choices employees make, and 
+these choices are a consequence of the environment in which they work and the ways 
+they are monitored and compensated. 
+• Understand the control environment. This comes from the top down. There are six 
+components of environment: integrity and ethical values, commitment to competence, 
+management philosophy and operating style, organizational structure, assignment of 
+authority and responsibility, and human resource policies and practices. 
+• Review your internal and external risk. There are 7 components of risk. Risk can come 
+from new technologies, information systems, new personnel, rapid growth, new product, 
+restructuring, or foreign operations. 
+ 
+D. Evaluate the control components. 
+• Control activities – “how you do it.” There are 3 areas of control activities. The first is the 
+preventative, detective and corrective controls. The second is the organizational controls 
+that ensure there is adequate segregation of duties. Lastly is the system design, with 
+consideration for both location and  controls aspects. 
+• Information and communication – “Are you getting what you need?”. The review can be 
+summed up as yes or no questions. Do you get the right data? Did you communicate the 
+data? Is the data in the right form? Did you get the data in the right time frame? Yes to all 
+of the questions means people get what they need. 
+• Monitoring. – “Is anybody paying attention?” There must be an assessment of the quality 
+of internal controls over time. Detection and timeliness of response is key. Response is 
+better done before an audit. 
+ 
+E. Evaluate your control objectives.  
+• Companies usually have controls related to operational objectives. MARC objectives could 
+include fleet availability, contract costs, component lives, labor costs etc. Controls over 
+processes to report accurate operational metrics are the cornerstone of providing reliable 
+financial information. Reliable financial information brings compliance. 
+ 
+F. Understand financial reporting requirements. 
+• Entities must disclose information that is reasonably likely to have a material effect on 
+financial condition or results of operations. One key candidate for review is related to off-
+balance sheet arrangements. MARC contracts usually include clauses and verbal 
+agreements that must be reviewed continuously to ensure compliance. Below are some 
+examples, but is not limited to: 
+ 
+1. Risk sharing techniques 
+2. Penalties 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Understanding the Sarbanes-Oxley Act of 2002 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0000-1.1-1001 
+Caterpillar Confidential:  GREEN         Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3. Make well clauses. 
+4. Betterment clauses. 
+5. Environmental liabilities 
+6. Transfer of assets during and at end of contract. 
+7. Rebates. 
+8. Availability clauses. 
+9. Verbal agreements. 
+ 
+G. Understand disclosure thresholds. 
+ 
+• If a Liability or loss is “probable”, the amount can be estimated, and should be recorded on the 
+books. 
+• If a potential loss is deemed “probable” but the amount cannot be reasonably estimated then 
+no liability is booked but disclosure is required to inform users. 
+• If the loss is deemed “remote” then no recognition or disclosure is required. 
+ 
+H. Disclose items related to material off-balance sheet arrangements. 
+ 
+• The nature and business purpose of the entities off-balance sheet arrangements. 
+• The importance of the off-balance sheet arrangement to the company for liquidity, capital 
+resources, market risk or credit risk support or other benefits. 
+• The financial impact of the arrangements on the company revenue, expenses, cash flows and 
+the companies exposure to risk as the result of the arrangements. 
+• Known events, demands, commitments, trends or uncertainties that may affect the availability 
+or benefits to the registrant of material off-balance sheet arrangements. 
+ 
+4.0 Benefits 
+ 
+Avoidance of penalties and protection of the company’s reputation. 
+ 
+• It is now a criminal offense to certify, corrupt, alter, or destroy documents or audit records. 
+Should financial statements ever be re-stated after issue, CEO’s and CFO’s have to 
+surrender monetary bonuses that were paid based on the statements released. They could 
+also be barred from serving in those positions in the future. Fraud means automatic prison 
+term for 25 to 30 years. 
+• Protection of company reputation. Civil lawsuits have been filed by stockholders for loss of 
+stock value based on admitted lack of internal controls. 
+• Reviewing your contracts, internal controls & operational processes is a wise businesses 
+practice and is an attribute of a successful company. 
+ 
+5.0 Resources Required 
+ 
+Risk management and process control must be accepted and receive involvement from all 
+disciplines in an organization. Examples of key process would include but are not limited to: 
+ 
+• F inance and accounting. 
+• Human resources. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Understanding the Sarbanes-Oxley Act of 2002 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0000-1.1-1001 
+Caterpillar Confidential:  GREEN         Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Contract managers. 
+• Marketing. 
+• IT Systems. 
+• Operations. 
+• Top Management. 
+• Independent auditors. 
+• Local and national accounting standards. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Sarbanes-Oxley and MARCs 2007.PDF 
+ 
+Additional information from: 
+Sarbanes-Oxley Act of 2002. 
+Securities and Exchange Commission: Various releases including 33-8182: 34-47264; FR-67. 
+Report on Contract Risk Management: provided by Protiviti Risk Consulting. 
+Discover the Hidden Benefits of Sarbanes-Oxley, by Sun Microsystems Financial Site. 
+File Under ‘Nightmare’ CFO.com web  
+Sarbanes-Oxley, Corporate Governance and Operational Risk: by Alan Morrison, University of 
+Oxford, Sarbanes-Oxley Seminar July 22, 2004. 
+US GAAP Accounting Standards Board. 
+ 
+7.0 Related Best Practices 
+ 
+None at this time. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Tim Shaw 
+MARC Analyst 
+Cat Global Mining – Product Support 
+Shaw_Timothy_E@cat.com 
++1 309 675 4124 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Understanding the Sarbanes-Oxley Act of 2002 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0000-1.1-1001 
+Caterpillar Confidential:  GREEN         Page 4 of 4

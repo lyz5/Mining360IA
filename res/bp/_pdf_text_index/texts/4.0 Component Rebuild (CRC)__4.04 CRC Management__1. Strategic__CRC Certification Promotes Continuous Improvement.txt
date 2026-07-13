@@ -1,0 +1,393 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+CRC Certification 
+Promotes Continuous 
+Improvement 
+ 
+ 
+Application Maintenance Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+CRC Certification Promotes Continuous Improvement
+ ................................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+May 2008 
+0708-4.3-1125 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Dealer Component Rebuild Centers (CRCs) are vital to the support of Mining customers in 
+achieving machine cost per hour and availability objectives.  CRCs also represent a major source 
+of revenue income for both Caterpillar and Caterpillar dealers. 
+ 
+A successful CRC must achieve high standards of quality, efficiency, cleanliness, standardized 
+processes, consistency, and image.  The Global Mining CRC Certification program is a process 
+to assess CRC performance and standards, identify opportunities for improvement, and create an 
+integrated Continuous Improvement plan. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Today’s CRC Certification Guide (copy attached to this BP) examines approximately 89 key 
+processes with 285 standards.  The standards represent the top critical success factors that 
+significantly impact quality, efficiency, capacity, image, and administration. This ultimately affects 
+the ability to meet customer component life, availability, and cost per ton objectives, as well as 
+meet dealer financial goals. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The CRC Certification Guide is designed to assess each of the 89 key processes by checking the 
+enabling standards.  The standards include: 
+• Does the process exist? 
+• Is there a process owner? 
+• Is the process well implemented and kept current? 
+• Is the process followed? 
+• Does the process produce the expected result? 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Certification Promotes Continuous Improvement 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0708-4.3-1125 
+Caterpillar Confidential:  YELLOW          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Example Process and Standards 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Often, there is a published Caterpillar Global Mining “Best Practice” to support a key process, as 
+illustrated below: 
+ 
+Best Practice: Failure Analysis Process - A Key Tool To Manage Quality 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The report form, database, lab, qualified technician, tooling, and communication equipment all 
+contribute to an effective Applied Failure Analysis process/system. 
+ 
+The objectives of CRC Certification are to assist dealers in identifying improvement opportunities 
+and developing work plans for CRC Continuous Improvement. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Certification Promotes Continuous Improvement 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0708-4.3-1125 
+Caterpillar Confidential:  YELLOW          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Key areas include: 
+ 
+Quality 
+Component rebuild quality not only affects warranty costs, it also provides expected component 
+life and machine availability to mining customers.  These contributions have significant impact on 
+MARC contract financial performance and ultimately impacts new machine sales.  Quality rebuilt 
+components influence customer machine, parts, and service sales and build loyalty, relationships, 
+and preference for Caterpillar machines and dealer product support.  Certification reviews quality 
+systems such as calibration, equipment, control documents, reuse practices, and training.  
+ 
+Efficiency 
+Parts and labor efficiency is vital to a CRC operation in reducing the costs of goods sold, direct 
+operating costs, and component rebuild turnaround time through high utilization of CRC assets.  
+Certification reviews bottlenecks, delays, non-value-adding processes, and other sources of 
+waste.  Also considered is equipment, job controls systems, parts reuse.  
+ 
+Capacity 
+Caterpillar active mining machine population around the world has doubled in the past three 
+years.  The population is forecast to double again in the next three years.  The dealer has three 
+basic options in providing for the growing customer’s component renewal requirements: 
+• Become more efficient 
+• Invest in more facilities, tooling, and people. 
+• Use Reman components for peak shaving. 
+• Combination of the above. 
+Certification assessment reviews efficiency, product velocity, and asset utilization to help guide 
+investment decisions for the most effective benefit.   Infrastructure sizing and personnel 
+development is also considered for effective throughput.  
+ 
+Image 
+Many of the Contamination Control standards are a part of CRC Certification as they impact 
+quality and efficiency.  Image is more than just a “clean” shop.  It includes orderly parts staging, 
+proper tools/equipment, smooth workflow, etc.  Image certainly helps sell dealer services to your 
+customers.  Cleanliness and organization creates a professional work environment for the CRC 
+technicians. 
+ 
+Administration 
+Administration impacts everything that happens in the shop from planning and scheduling, to 
+standard rebuild times, flat rates, rebuild kits, technical communication, software systems, etc. 
+Effective administration is vital to CRC performance.  Certification reviews those administrative 
+processes/systems, beyond measurement, that effect on-floor efficiency and quality. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Certification Promotes Continuous Improvement 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0708-4.3-1125 
+Caterpillar Confidential:  YELLOW          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Continuous Improvement 
+ 
+In 1999, Caterpillar Global Mining introduced the CRC Certification program.  The intention was 
+to provide direct Caterpillar assistance to dealers to evaluate and improve CRC operations. 
+Since that time, over 20 Mining dealers have conducted CRC Certification reviews. 
+ 
+Other changes over the recent years included the creation of CGM “Best Practices” to share 
+ideas and proven solutions, and to support the Certification process. 
+ 
+The CRC Certification Guide has also changed over the years to be much more process focused. 
+ 
+A Dealer CRC Managers “Best Practices” Knowledge Network was created as a tool for dealers 
+to communicate with each other.  Worldwide CRC Conferences are sponsored on a regular basis 
+and conducted at a selected host dealer in order to share ideas, Best Practices, and common 
+concerns. 
+ 
+Many dealers have established a 6Sigma Blackbelt or CI Champion position with responsibility for 
+CRC development. 
+ 
+These programs are all aimed at assisting dealer CRCs to provide globally consistent support to 
+mining customers. 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+A CRC Certification review for all major component areas is typically performed in one week.   
+• The assessment is performed on the shop floor typically with a Caterpillar Global Mining 
+team and CRC area supervisors.  This usually takes three to four days.  
+• After the assessment, the Caterpillar/Dealer team reviews the results for consensus.    
+• Agreed-upon results are then analyzed to create improvement/priority recommendations. 
+• The dealer then determines an action plan to implement selected recommendations. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Certification Promotes Continuous Improvement 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0708-4.3-1125 
+Caterpillar Confidential:  YELLOW          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Steps to arrange / conduct a CRC Certification assessment 
+ 
+ 
+• Review CRC Certification Guide and Instructions 
+• Determine desired timeframe to perform the process phases 
+• Arrange for Caterpillar involvement through Regional Mining Service Rep and District SOR 
+• Conduct a self-assessment using the CRC Certification Guide  
+• Prepare CRC as needed for the certify assessment (usually 2-3 months).  Document pre-
+assessment adjustments 
+• Conduct assessment, analyze findings, develop recommendations, and create action plan. 
+• Implement action plan. 
+ 
+4.0 Benefits 
+ 
+Most dealers completing the CRC Certification have developed a variety of improvement 
+recommendations ranging from simple “Quick Wins” to significant “Process” changes.  Several of 
+the CRC Manager comments, regarding the “value” of the Certification processes, are as follows: 
+ 
+“ We started tracking our average engine turnaround time and found it was over 35 days.  
+Changes we have made have taken out over 5 days” 
+ 
+“We eliminated almost two technicians from the piston, rod, and liner rebuild area and 
+redeployed them. We will save $250,000 per year.” 
+ 
+“We changed our administrative process and reduced average component turnaround time by 
+five days.” 
+ 
+“We can get one additional life out of engine blocks by installing inserts at the first rebuild” 
+ 
+ 
+5.0 Resources Required 
+ 
+• Management time to prepare and conduct assessment 
+• Staff time to implement work/action plan 
+• Incremental improvement investment costs 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+CRCC Guide 08.04.20.xls 
+ 
+7.0 Related Best Practices 
+ 
+Failure Analysis Process – A Key Tool to Manage Quality 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Certification Promotes Continuous Improvement 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0708-4.3-1125 
+Caterpillar Confidential:  YELLOW          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+6 Sigma Black Belt 
+Cat Global Mining Product Support 
+brehm_dale_e@cat.com 
++1 309 675 6325 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Certification Promotes Continuous Improvement 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0708-4.3-1125 
+Caterpillar Confidential:  YELLOW          Page 6 of 6

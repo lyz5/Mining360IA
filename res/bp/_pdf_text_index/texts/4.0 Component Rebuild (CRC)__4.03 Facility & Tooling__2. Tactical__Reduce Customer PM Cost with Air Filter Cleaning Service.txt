@@ -1,0 +1,201 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Reduce Customer PM Cost 
+with Air Filter Cleaning 
+Service 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+Reduce Customer PM Cost with Air Filter Cleaning 
+Service ....................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+November 2006 
+1106-4.4-1045 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Fleets of Mining Off Highway Trucks working 24 hours a day, 365 day a year, consume up to 70 
+air filters per machine per year.  Air Filters thus represent a significant preventative maintenance 
+cost.  Some dealers have invested in high technology air filter cleaning equipment and offer a 
+filter cleaning service to their customers.   There are many suppliers for air filters and the 
+business is very price competitive.  A filter cleaning service creates an advantage that most 
+competitive filter suppliers do not offer and can play a major role in capturing air filter sales 
+business. 
+ 
+Cleaning and re-using air filters up to 10 times is especially effective in controlling costs of 
+Maintenance and Repair Contracts, Customer Support Agreements, and Rental fleets and helps 
+to lower customer PM costs. 
+ 
+2.0 Best Practice Description 
+ 
+Dealers who provide a filter cleaning service usually do so with a “filter exchange” program. 
+Customer returns a dirty filter with no visible damage and receives a cleaned filter. 
+There is a flat rate charge approximately equal to 25% of the cost of a new filter.  I 
+ 
+Data from dealers who provide filter cleaning service report that air filter can be effectively 
+cleaned between 3 and 10 times before they can no longer be reused.  Life of the cleaned filters 
+is close to 90% of the life of a new filter and air filtration is equal to that of a new filter. 
+ 
+Caterpillar no longer provides air filter cleaning equipment.  The preferred equipment for air filter 
+cleaning is the Sonic Dry Clean Air Filter Cleaning System.  The system is a sonic vibration and 
+synchronized air injection cleaning booth with dust collection system and inspection lighting.  
+Other required equipment includes a filter dryer, air compressor, filter track, racks, and a dust 
+collection and disposal. 
+ 
+                                       
+ 
+                                                            
+Filter Track – feed to cleaner Filter Drying Booth 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Reduce Customer PM Cost with Air Filter Cleaning 
+Service 
+DATE 
+2/19/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1106-4.4-1045 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+       
+  
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+• Assess business opportunity.  Important points include: 
+o Customer acceptance 
+o Potential filter sales growth 
+o Volume 
+o Impact on MARCs, CSAs, and Rental maintenance costs. 
+o Competition    
+• Caterpillar no longer offers air filter cleaning equipment.  Dealers performing an air filter 
+cleaning service are utilizing Sonic Dry Clean as the equipment supplier. 
+• Determine number of cleaning machines required for expected volume and number of working 
+shifts.  Approximate floor space required is 80 square meters per cleaning machine. 
+• Identify facility space. 
+Air Filter Cleaner and Filter track 
+ 
+Filter Storage and Packaging 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Reduce Customer PM Cost with Air Filter Cleaning 
+Service 
+DATE 
+2/19/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1106-4.4-1045 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Get quotation for equipment and training from supplier.  Approximately US $80,000 per 
+cleaner. 
+• Perform return on investment analysis 
+• Develop market plan. 
+• Acquire and train personnel. 
+• Install equipment   (6 – 8 weeks) 
+• Develop filter tracking process – bar code or stickers to document number of times filter has 
+been cleaning and reused. 
+ 
+4.0 Benefits 
+   
+• Lowers customer PM costs 
+• Captures air filter business 
+• Can be used to service competitive machines and capture incremental business 
+• Environmental – recycle air filters 
+ 
+5.0 Resources Required 
+  
+• Floor space – 80 square meters or more for multiple air cleaning stations 
+• Cleaning equipment – approximately US $80,000 per cleaner. 
+• Personnel 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+Six Sigma Black Belt - Global Mining Product Support 
+brehm_dale_e@cat.com 
+309 –675-6325 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Reduce Customer PM Cost with Air Filter Cleaning 
+Service 
+DATE 
+2/19/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1106-4.4-1045 
+Caterpillar Confidential:  GREEN          Page 3 of 3

@@ -1,0 +1,289 @@
+SOURCE: 3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\Bulk Fuel Cleanliness Management.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Bulk Fuel Cleanliness Management 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+Bulk Fuel Cleanliness Management ........................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 3 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+ 
+  
+March 2012 
+1001-3.03-1200 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+The management of fuel cleanliness is essential for maximizing fuel injector life and reducing 
+unplanned truck downtime.  It is important to ensure proper contamination control throughout the 
+entire fuel delivery process.  This Best Practice will focus on maintaining fuel cleanliness from the 
+moment it leaves the supplier to the time it is pumped into a machine’s fuel tank. 
+ 
+Each stage in the process for delivering fuel to the equipment on a mine site needs to be 
+evaluated in terms of ability to provide adequate contamination control.  Things to assess at each 
+stage include, but are not limited to; hoses, fast fill connectors, screen filters, caps, pumps, 
+comptometers, level indicators, tanks, control valves, tank breathers and purge valves.  Visually 
+inspect and properly maintain these components, replacing when necessary.  Frequently sample 
+the fuel at each stage making sure its quality is ISO 18/16/13 or cleaner with a maximum water 
+content of 1,000 ppm.  
+ 
+The following flowchart is an example of a process for fuel delivery to the equipment on site.  As 
+can be seen, there are many areas to ensure fuel quality and contamination control. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Fuel Cleanliness Management 
+DATE 
+2/17/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.03-1200 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Figure 1 - Example Fuel Delivery Stages 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Fuel Cleanliness Management 
+DATE 
+2/17/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.03-1200 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.0 Best Practice Description 
+ 
+Fuel cleanliness from suppliers is difficult to control from a contamination (debris & water) 
+perspective.  Fuel quality impacts injector wear/life resulting in engine power loss events and 
+unplanned machine downtime.  Contaminated fuel further impacts onboard filtration life.  This 
+scenario leads to excessive fuel consumption and often results in mid-life injector set 
+replacement. 
+ 
+An improved onsite Bulk Fuel Filtration process will ensure fuel cleanliness, to reduce/eliminate 
+power loss events, improve injector life, improve machine uptime, and further reduce filter 
+change-out costs.  
+ 
+Clean fuel permits the machine’s onboard fuel filters to function properly without plugging.  
+Injectors should also last to engine overhaul and provide improved long-term fuel 
+economy/engine performance.
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Assess the need to implement an on-site Bulk Fuel Filter Coalescer Unit based on supplier fuel 
+quality and the presence of one on site.  Technical information and pricing on Caterpillar Bulk 
+Fuel Filter Coalescer Units can be obtained through Cat Global Mining and the Cat Filter and 
+Fluids Group. 
+ 
+Analyze every stage in the fuel delivery process to the site to determine areas where the fuel can 
+become contaminated.  Identify personnel to inspect, maintain and repair/replace the contaminant 
+barriers.  Record fuel cleanliness at each stage to ensure ISO 18/16/13 standards are met and 
+water content does not exceed 1,000 ppm.  By recording the ISO levels both upstream and 
+downstream of each stage will aid in determining if and where contaminants may be entering the 
+system. 
+ 
+ 
+4.0 Benefits 
+ 
+Fuel cleanliness management has proven to provide the following: 
+ 
+• Reduce the number of injectors replaced per year. 
+• Reduce the number of on-board fuel filters and water separators replaced per year. 
+• Reduce the hours of unscheduled truck downtime. 
+ 
+This will result in cost savings on parts and labor and increase the utilization of the truck fleet.   
+ 
+A financial analysis of a real life scenario was performed to assign a dollar value to the benefits 
+associated with maintaining fuel cleanliness.  The results are summarized in the following table. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Fuel Cleanliness Management 
+DATE 
+2/17/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.03-1200 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Fuel Filtration Financial Analysis
+Year 1 Year 2 Year 3 Year 4 Year 5
+789 Fuel Filtration Program Net Benefit: 151,050$     151,050$     151,050$     151,050$     151,050$     
+O&O Cost Savings: 14,603$       14,603$       -$                 -$                 -$                 
+Production Gains: -$                 -$                 161,498$     161,498$     161,498$     
+793D Fuel Filtration Program Net Benefit: 103,959$     103,959$     103,959$     103,959$     103,959$     
+O&O Cost Savings: 37,550$       37,550$       -$                 -$                 -$                 
+Production Gains: -$                 -$                 415,281$     415,281$     415,281$     
+Total: 307,162$     307,162$     831,789$     831,789$     831,789$     
+NPV @ 8%:
+Decreased O&O Costs Increased Production
+2,385,543$                     
+ 
+Figure 2 – Example Benefits 
+ 
+ 
+In this example, the fleet consists of 789’s and 793D’s.  The ‘Fuel Filtration Program Net Benefits’ 
+represents the cost savings on fuel injectors, fuel filters, water separators and labor before and 
+after implementing this Best Practice. 
+ 
+Eliminating unscheduled truck downtime results in an increase in truck utilization.  The benefits 
+can be realized through either an O&O Cost savings or production gains.  Note, only one of the 
+two can be realized at any given time, not both.   
+ 
+For the example above, in years 1 and 2 production is held constant and therefore, the benefits 
+result in lower O&O Costs.  In other words, utilization increases, operating hours increase and 
+O&O Cost per hour decreases.     
+ 
+Conversely, in years 3 through 5 production is increased and the benefits result in production 
+gains.  Now, since utilization increases, operating hours increase which results in increased 
+productivity. 
+ 
+This is just one example of how the benefits can be captured using the table above.  In some 
+cases, increased production would be the only area of interest for benefit and likewise with O&O 
+Cost savings.  Obviously, the NPV value will vary depending on the scenario. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Fuel Cleanliness Management 
+DATE 
+2/17/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.03-1200 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+5.0 Resources Required 
+ 
+• Dedicated personnel to monitor fuel cleanliness at each stage. 
+• Bulk Fuel Filter Coalescer (if not already present). 
+• Particle Counter. 
+• Replacement Parts (hoses, fast fill connectors, screen filters, caps, pumps, etc.). 
+ 
+6.0 Supporting Attachments / References 
+ 
+Fuel Filtration Value Analysis Tool - Fuel Filtration Value Analysis Tool_Template.xls 
+ 
+7.0 Related Best Practices 
+ 
+0806-2.10-1000  Managing Fluid Cleanliness 
+1106-2.10-1037  Bulk Fuel Storage & Handling 
+0806-2.10-1006  Bulk Fuel Filtration 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was authored by: 
+ 
+ Tommy Wagner 
+ Marketing Representative 
+ Caterpillar Global Mining 
+ 
+Wagner_Thomas_A@cat.com 
+ 309-675-6677 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Fuel Cleanliness Management 
+DATE 
+2/17/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.03-1200 
+Caterpillar Confidential:  GREEN          Page 5 of 5

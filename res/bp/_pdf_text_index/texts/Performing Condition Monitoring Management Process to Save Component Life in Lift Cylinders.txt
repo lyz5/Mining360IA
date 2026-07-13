@@ -1,0 +1,274 @@
+===== PAGE 1 =====
+August 2022 
+3.01-220825-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+MINING DEALER BEST PRACTICE 
+Performing Condition 
+Monitoring Management 
+Process to Save 
+Component Life in Lift 
+Cylinders 
+Maintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC)
+ 
+MARC  
+Management 
+Performing Condition Monitoring Management 
+Process to Save Component Life in Lift Cylinders ..... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 6 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 7 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performing Condition Monitoring Management Process 
+to Save Component Life in Lift Cylinders 
+DATE 
+8/25/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220825-1 
+Caterpillar: Confidential Yellow Page 2 of 8 
+1.0 Introduction 
+Manufacturers/dealers are constantly approached by customers on how to consistently achieve 
+the best results in anticipating component failures using the condition monitoring process. In certain 
+mining assets components (Ex: Diesel Engines and Transmission) used in mobile equipment 
+models, this measurement can be done directly through “VIMs System” online from the online 
+monitoring system data.  
+In other types of components like Cylinders, Pumps and small components it is not possible to 
+detect failures using this path due to having few sensitive parameters to monitor.    
+Hence the CMMP (Condition Monitoring Management Process) can be improved by other practices 
+to evaluate parameters behavior and anticipate failures.  Hydro Paragominas, one of the most 
+important customers in the Brazil North, developed and performed this process with good results. 
+Hydro Paragominas is proud of the work done in the development of this solution and wants to 
+share the solution with the world.  Hydro and Sotreq are willing to talk directly with other Caterpillar 
+Dealers; the Sotreq contacts listed below will help facilitate the contact with Hydro. 
+2.0 Best Practice Description 
+This best practice is part of Hydro’s and Sotreq’s effort to improve the monitoring and 
+troubleshooting process for cylinders based on the real case of the CMMP application. 
+The development of alternative monitoring/troubleshooting was based on the customer’s need  to 
+reduce the time to fix and improve fleet availability/productivity.   
+Thermography, and other operational tests, deliver the means to monitor and provide detection 
+capabilities before catastrophic failure and helped define future intervention in the HEX, based on 
+the HEX monitoring of components in the tool cylinder of a 390F. 
+Basic Operation: 
+There is literature that describes the operational verification (KENR9995-07), cylinder drop - 
+verification - empty bucket (KENR9995-00) and cycle speed - verification (KENR9995-02) to 
+evaluate the lifting cylinders of the boom. 
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performing Condition Monitoring Management Process 
+to Save Component Life in Lift Cylinders 
+DATE 
+8/25/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220825-1 
+Caterpillar: Confidential Yellow Page 3 of 8 
+Figure 1.  Fluid Temperature 
+The equipment was positioned to perform the cylinder drop test (Figure 2), and the boom lift 
+cylinder was measured from the rod fixing pin to the cylinder liner fixing pin, and after 5 minutes 
+with the engine off, no displacement of the cylinder rod was identified through the measurement 
+(the cylinders kept the same measurements). 
+Figure 2. Position of the drop test equipment 
+Before performing the cycle speed test, the pump relief pressures were checked for the boom lift 
+function and found to be 5206 psi for the 01# pump and 5173 psi for the 02# pump (Figure 3). 
+Figure 3. Pump Pressure 
+Note: The pressures were a little above the specified value, but not enough to change the test result. 
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performing Condition Monitoring Management Process 
+to Save Component Life in Lift Cylinders 
+DATE 
+8/25/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220825-1 
+Caterpillar: Confidential Yellow Page 4 of 8 
+The machine implement was positioned as oriented by CAT literature to perform the cylinder cycle 
+speed test and the cylinder cycle time from soil to fully extended rod position, and it was collected 
+in 7.26 seconds. 
+The cylinder speed procedure specifies a time of 5.8 ± 0.5 for a new cylinder, a maximum of 7.5 
+seconds for reconditioning the cylinder and a maximum of 8.7 seconds for the service limit for the 
+boom cylinder (Figure 4). 
+Figure 4. Pump Pressure Test 
+The procedure for setting the cycle time defined in Troubleshooting CAT was carried out, and the 
+lifting time specified by the lower operation and maintenance manual was detected. 
+After finishing the cycle time and pressure tests, the thermography test was performed, with the 
+aid of the thermographic camera, so that the differential temperature of the cylinders was recorded. 
+Using thermography on the EH3201, a thermal difference was identified in the boom cylinder on 
+the right side, as can be seen in Figure 5a with a temperature differential of ~5°C in relation to the 
+left side. 
+Figure 5a. Thermography on the EH3201 Lift 
+Cylinders 
+Figure 5b. EH3201 on the operation front being 
+inspected by Hydro's predictive team 
+Source: Field Technicians Source: sis.cat.com 
+
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performing Condition Monitoring Management Process 
+to Save Component Life in Lift Cylinders 
+DATE 
+8/25/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220825-1 
+Caterpillar: Confidential Yellow Page 5 of 8 
+The hottest points of the cylinders were captured by the camera and it was observed that the lifting 
+cylinder l/d of the boom has a temperature of 5°C above the lifting cylinder l/e (Figure 6). 
+Figure 6. Thermographic image indicating ~5°C 
+difference between the hottest points of the 
+boom lift cylinders 
+The Remanufacturing Center (Cat-Dealer) evaluation of the cylinder allowed us to relate the field 
+symptoms and conclude that the thermographic method can be used to define with more assurance 
+the cylinder needing to be removed. 
+Figure 7. Cyclinder at the CRC
+ 
+The next image shows some important details after disassembling the cylinder in the 
+remanufacture center and evaluating internal evidence, confirming the relation between cylinder 
+failure mode presented in the field and causes. See below that the failure mode presented in Figure 
+8 represents the cause of temperature increase in the field thermographic process. 
+
+
+===== PAGE 6 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performing Condition Monitoring Management Process 
+to Save Component Life in Lift Cylinders 
+DATE 
+8/25/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220825-1 
+Caterpillar: Confidential Yellow Page 6 of 8 
+Figure 8. Internal failure at cylinder 
+Based on this study, it was possible to see the effectiveness of using this process to indicate 
+possible internal oil leakage by the cylinder seal assembly. The Remanufacturing Center confirmed 
+that removing the cylinder based on the thermography along with the other tests was shown to be 
+the proper decision to save money. 
+3.0 Implementation Steps 
+1. Define and establish the right process to measurement
+o Operational Verification (KENR9995-07) – standard practice
+o Cylinder Drop Verification (KENR9995-00) – standard practice
+o Cycle Speed Verification (KENR9995-02) – standard practice
+o Thermography – added practice (key to this best practice)
+Note: Please see the basic description in the above section for the detail. 
+2. Apply the process in one real case in the field to define and remove components before failure
+3. Send component to the CRC to evaluate internal failure stage and relation of failure to field
+failure mode (temperature and time to cycle)
+4. Standardize the process to additional machines and cylinders
+5. Continuously improve the process and measure the cost-saving of the CMMP procedure
+4.0 Benefits 
+ Improved machine availability and productivity;
+o Components like cylinders that have a few typical condition monitoring parameters can
+be better monitored with additional methods like thermography
+o Replacement plans (parts, scheduled downtime, etc.) can be put in place before failure
+of the component
+ Allows greater agility in temperature assessment (lower MTTR);
+
+
+===== PAGE 7 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performing Condition Monitoring Management Process 
+to Save Component Life in Lift Cylinders 
+DATE 
+8/25/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220825-1 
+Caterpillar: Confidential Yellow Page 7 of 8 
+ Reduces risks through less time spent in the asset's operating zone (Elimination of live-work);
+ Provides greater sensitivity in decision making for asset shutdown and definition of the next
+cycle time measurement step;
+ Provides greater predictability in the cylinder replacement planning and scheduling process.
+o Wear evaluation increase the accuracy of the replacement forecast
+o Improves material stock planning by using the hours actually operated as a parameter
+5.0 Resources Required 
+Parts: Genuine CAT parts were used to facilitate the purchase by the customer; this will support 
+future repair needs/replacement. 
+6.0 Supporting Attachments / References 
+Thermal camera 
+7.0 Related Best Practices 
+N/A 
+8.0 Acknowledgements 
+SOTREQ would like to thank the immense commitment of its Mining Engineering team to deliver 
+the best fleet performance.   
+All best practices are developed prioritizing safety; it is the way our team works for our customers, 
+partners and ourselves.    
+We would like to mention and thank Doug Friedrich for the close collaboration with our company . 
+Doug has provided necessary insights and very important technical input for project development. 
+Thanks to The Customer for challenging the dealer to figure out this solution; we are glad that you 
+are happy and satisfied with the final result.  
+
+===== PAGE 8 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performing Condition Monitoring Management Process 
+to Save Component Life in Lift Cylinders 
+DATE 
+8/25/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220825-1 
+Caterpillar: Confidential Yellow Page 8 of 8 
+Cid Clay Quirino 
+Sotreq S/A 
+Mining Engineering Coordinator 
+E-mail: cid.quirino@sotreq.com.br
+Camila Rendeiro  
+Sotreq S/A 
+Technical Consultant (TC) 
+E-mail: camila.rendeiro@sotreq.com.br
+Bruno Cuimar 
+Sotreq S/A 
+Product Performance Engineer 
+E-mail: bruno.cuimar@sotreq.com.br
+Daniel Pinheiro 
+www.hydro.com/brasil 
+Senior Operations and Support Engineering 
+E-mail: daniel.pinheiro@hydro.com
+Weiber Lima de Souza 
+www.hydro.com/brasil 
+Inspection, Prediticve and Engineering Supervisor 
+E-mail: weiber.de.souza@hydro.com
+Doug Friedrich  
+Caterpillar Inc. 
+Site Performance Manager 
++1 (305) 807-9542
+E-mail: friedrich_douglas_w@cat.com

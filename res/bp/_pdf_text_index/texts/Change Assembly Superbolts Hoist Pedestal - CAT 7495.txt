@@ -1,0 +1,231 @@
+===== PAGE 1 =====
+February 2023 
+1.04-230203-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+M
+INING DEALER BEST PRACTICE 
+Change Assembly 
+Superbolts Hoist Pedestal - 
+CAT 7495 
+Maintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+C
+hange Assembly Superbolts Hoist Pedestal - CAT 
+7495 ...........................................................................1 
+1.0 Introduction........................................................2  
+2.0 Best Practice Description ................................... 4 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+DI
+SCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Change Assembly Superbolts Hoist Pedestal      
+CAT 7495 
+DATE 
+2/3/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230203-1 
+Caterpillar: Confidential Yellow          Page 2 of 6 
+1.0 Introduction  
+ 
+The models “D” and “E” super bolts  that are mounted on the left hoist drum pedestal and rear lugs of 
+the gearcase base after the completion of gearcase assembly become inaccessible for torque checking 
+in maintenance.  
+ 
+Sotreq presented an option for  mounting super bolts  inversely to CAT  that made the super bolts  
+accessible for torque checking without removing the hoist gearcase.  This solution was approved and 
+implemented in a machine assembly in Brazil.  
+ 
+ 
+ 
+ 
+Figure 1: Machine 7495 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Change Assembly Superbolts Hoist Pedestal      
+CAT 7495 
+DATE 
+2/3/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230203-1 
+Caterpillar: Confidential Yellow          Page 3 of 6 
+ 
+ 
+Figure 2: Location of super bolts of hoist pedestal 
+ 
+Below is the identification (inside the red rectangles) of the screws that had the assembly in reverse 
+arrangement. 
+ 
+Figure 3: Screws arrangement “C” hoist pedestal 
+ 
+The screws arrangement “C” was kept according to the drawing orientation, even being covered by the 
+reducer, as these have super  bolts on both sides and would not bring the advantage of the models 
+mentioned above. 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Change Assembly Superbolts Hoist Pedestal      
+CAT 7495 
+DATE 
+2/3/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230203-1 
+Caterpillar: Confidential Yellow          Page 4 of 6 
+2.0 Best Practice Description 
+ 
+The purpose of this Best Practice is to change the mounting orientation of the hoist pedestal hardware 
+fixture shown in the drawings  S006762 and S006970  to facilitates access for the prevent ative 
+maintenance team performing torque verification on the ERS  7495 hoist pedestal super bolts.  This 
+results in less maintenance and inspection time and consequently less overall downtime. 
+ 
+ 
+Figure 4: Rear bearing of the reductor hoist 
+ 
+Figure 5: LE pedestal internal screws 
+ 
+Figure 5: LE pedestal external screws 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Change Assembly Superbolts Hoist Pedestal      
+CAT 7495 
+DATE 
+2/3/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230203-1 
+Caterpillar: Confidential Yellow          Page 5 of 6 
+  
+Figure 6: LE pedestal 
+  
+Figure 7: Super bolts detail 
+ 
+The inversion of the mounting arrangement in the drawings cited was carried out with a total of 12 
+screws model “D” and 2 screws model “E”. 
+ 
+3.0 Implementation Steps 
+ 
+To implement this best practice, follow the steps below: 
+ 
+1. Assemble the super bolts PN 443-2362 model “D” and PN 467-0893 model “E” in the 
+position shown in this BP during the equipment assembly process or intervention to replace 
+the super bolts.  
+2. At the time of installation, use suitable to rque equipment and technicians with proper 
+confined space training. 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Change Assembly Superbolts Hoist Pedestal      
+CAT 7495 
+DATE 
+2/3/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230203-1 
+Caterpillar: Confidential Yellow          Page 6 of 6 
+4.0 Benefits 
+ 
+• Facilitates the visual inspection process during maintenance 
+• Improved accessibility for maintenance 
+• Reduce the labor time to complete torque maintenance by 40% 
+ 
+5.0 Resources References 
+ 
+• Tools  
+• Super Bolts - PN 443-2362 model “D” and PN 467-0893 model “E 
+ 
+6.0 Supporting Attachments / References 
+ 
+Figure 03- 
+https://sis2.cat.com/?_ts=1638882519740#/detail?keyword=82637920&serialNumber=ER6&ieSystem
+ControlNumber=NIS000733536&productStructureId=00001655&tab=parts 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+Anderson Lima  
+Expanded Mining Products  
+anderson.lima@sotreq.com.br
+ 
+Sotreq S/A 
+ 
+Webert Lopes 
+Expanded Mining Products 
+webert.lopes@sotreq.com.br 
+Sotreq S/A 
+ 
+Thiago Rezende 
+Expanded Mining Products 
+thiago.rezende@sotreq.com.br 
+Sotreq S/A 
+ 
+Thiago Dillon 
+Expanded Mining Products 
+thiago.dillon@sotreq.com.br 
+Sotreq S/A 
+ 
+Josian Araújo 
+Expanded Mining Products 
+josian.araujo@sotreq.com.br  
+Sotreq S/A

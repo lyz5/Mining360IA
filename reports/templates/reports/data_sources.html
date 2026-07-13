@@ -1,0 +1,84 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sources | Mining360IA</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Live sources</p>
+                <h1>Sources</h1>
+                <p class="page-intro">Open a source, pick a view, then run the SQL live against the target database.</p>
+            </div>
+            <div class="actions">
+                <a class="button" href="{% url 'source-add' %}">Add source</a>
+                <div class="summary">
+                    <span class="summary-value">{{ source_count }}</span>
+                    <span class="summary-label">sources</span>
+                </div>
+            </div>
+        </header>
+
+        <div id="source-flash" class="flash" hidden role="status" aria-live="polite"></div>
+
+        <section class="table-section">
+            <div class="section-head">
+                <h2>Registered sources</h2>
+            </div>
+            <div class="source-grid">
+                {% for item in source_cards %}
+                    {% with source=item.source inventory=item.inventory %}
+                    <article class="source-card" data-source-key="{{ source.key }}">
+                        <div class="source-card-head">
+                            <div>
+                                <p class="eyebrow">{{ source.engine }}</p>
+                                <h3>{{ source.name }}</h3>
+                            </div>
+                            <span class="status-badge {{ source.status_class }}" data-source-status>{{ source.verification_status|default:source.status }}</span>
+                        </div>
+                        <p class="table-subtext">{{ source.description }}</p>
+                        <dl class="source-meta">
+                            <div>
+                                <dt>{% if source.engine == "Snowflake" %}Account{% else %}Instance{% endif %}</dt>
+                                <dd>{{ source.server }}</dd>
+                            </div>
+                            <div>
+                                <dt>{% if source.engine == "Snowflake" %}Database{% else %}Default database{% endif %}</dt>
+                                <dd>{{ source.database|default:"-" }}</dd>
+                            </div>
+                            <div>
+                                <dt>Owner</dt>
+                                <dd>{{ source.owner }}</dd>
+                            </div>
+                            <div>
+                                <dt>{{ inventory.label }}</dt>
+                                <dd>{% if inventory.count is not None %}{{ inventory.count }}{% else %}N/A{% endif %}</dd>
+                            </div>
+                            <div>
+                                <dt>Custom views</dt>
+                                <dd>{{ inventory.custom_views }}</dd>
+                            </div>
+                        </dl>
+                        <div class="source-actions">
+                            <a class="button secondary" href="{% url 'source-detail' source.key %}">Open source</a>
+                            <a class="icon-action" href="{% url 'source-edit' source.key %}" aria-label="Edit source" title="Edit source"></a>
+                            <button type="button" class="icon-action refresh-action js-verify-source" data-verify-url="{% url 'source-verify' source.key %}" aria-label="Verify source" title="Verify source"></button>
+                            <button type="button" class="icon-action delete-action js-delete-source" data-delete-url="{% url 'source-delete' source.key %}" aria-label="Delete source" title="Delete source"></button>
+                        </div>
+                        <div class="table-subtext" data-source-last-verified>{% if source.last_verified %}Last verified: {{ source.last_verified }}{% endif %}</div>
+                    </article>
+                    {% endwith %}
+                {% empty %}
+                    <div class="empty">No sources registered yet. Use Add source to create the first connection.</div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</body>
+</html>

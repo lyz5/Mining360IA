@@ -1,0 +1,363 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2023 
+1.10-230728-2 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Increasing MTBF by 
+Installing a Second 
+Primary Fuel Filter on the 
+994K Wheel Loader 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Increasing MTBF by Installing a Second Primary Fuel 
+Filter on the 994K Wheel Loader................................. 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description .................................... 2 
+3.0 Implementation Steps.......................................... 3 
+4.0 Benefits ................................................................ 6 
+5.0 Resources Required............................................ 7 
+6.0 Supporting Attachments / References................ 7 
+7.0 Related Best Practices ........................................ 7 
+8.0 Acknowledgements ............................................. 7 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations fr om our dealer network.  
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Increasing MTBF by Installing a Second Primary Fuel 
+Filter on the 994K Wheel Loader 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-2 
+Caterpillar: Confidential  Yellow          Page 2 of 8 
+1.0 Introduction  
+ 
+A fleet of four 994K Wheel Loaders was introduced to a mine in Brazil in early 2020 in loaders feed 
+mobile crushers and load off-road trucks at the mine.  It is important to maintain feeding of the crushers 
+to avoid interruption in the ore processing to support the crusher operation the loader operate in “load 
+and carry” mode where the loader is constantly moving the material.  
+ 
+The mine was designed to be essentially “TRUCKLESS” so the mine does not have fixed fuel stations, 
+causing that fuel is brought to the mine’s fuel distribution point and then transferred to other tanks and 
+then to the loaders themselves , this  results in poor fuel quality due to contamination and water 
+condensation in tanks and ultimately in the loaders. 
+    
+The loaders are equipped with 3516 engines with an average of 150 liter per hours of fuel consumption, 
+in this fleet the Preventive Maintenances (PM’s) are performing every 250 hours and normally the fluids 
+and filters would be replaced during the PM’s but because of the fuel quality and contamination issues 
+the fuel filters reach saturation with contamination around ~125 hours.   
+ 
+As there is no by -pass in the systems, when a filter is clogged the machine is stopped due to low 
+performance this “corrective stop” to replace the primary filter results in: 
+ 
+a. lower MTBF,  
+ 
+b. increased maintenance time and  
+loss of production. 
+ 
+In this site, the client doesn't have fuel cleanliness system. It is very important and Sotreq also 
+recommends to work on filtering the fuel before it is put into the machine. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Adding a second primary fuel filter in parallel in the fuel line is this Best Practice idea that was applied 
+to the loader (and can be applied to other machines) to mitigate the poor fuel quality at site and the 
+resulting losses in maintenance/performance and production. 
+ 
+With the second primary fuel filter in place, fluid and filter changes can occur at the regular PM interval 
+of 250 hours instead of 125 hours. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Increasing MTBF by Installing a Second Primary Fuel 
+Filter on the 994K Wheel Loader 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-2 
+Caterpillar: Confidential  Yellow          Page 3 of 8 
+ 
+Before (Only one primary fuel filter) After (Two fuel filter in parallel) 
+ 
+ 
+ 
+                                                                              
+3.0 Implementation Steps 
+ 
+After a Sotreq multidisciplinary team identified “poor fuel quality” as the main contributor to the need to 
+change the fuel filter at 125 hours, a simple but effective solution was implemented in 3 steps: 
+ 
+1) Procure a secondary primary filter (P/N: 438-5385) 
+2) Design and develop a support to hold the two primary filter solution, this support bracket was 
+developed by Sotreq is shown below. 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Increasing MTBF by Installing a Second Primary Fuel 
+Filter on the 994K Wheel Loader 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-2 
+Caterpillar: Confidential  Yellow          Page 4 of 8 
+  
+Project new support  Support after install  
+ 
+3) Test and Monitor the Solution: With the implemented two primary filter design, the fluid and  
+filter changes are again being done at the 250 hours PM’s instead of at ~120 hours corrective 
+maintenance stop. 
+ 
+Important: No bracket or chassis issues have been encountered after  
+ 
+Equipment TAG Operating hours  
+after install modification 
+MRK00332  PC30 5280 hours 
+MRK00333  PC31 3345 hours 
+MM900315  PC32 Waiting for application 
+MM900320  PC33 485 hours 
+ 
+In this chart below it is possible to see the events number of “Fleet Fuel Filter Restriction” and 
+“Low Fuel Pressure” reduced significantly after modifying another filter in the fuel line. 
+ 
+Note: PC30 have no alarms during this period, the installation on it machine occurred before all 
+other machines in fleet in 2020. 
+ 
+Fleet Fuel Filter Restriction + Low Fuel Pressure during evaluation 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Increasing MTBF by Installing a Second Primary Fuel 
+Filter on the 994K Wheel Loader 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-2 
+Caterpillar: Confidential  Yellow          Page 5 of 8 
+ 
+ 
+The next graphic is presented reliability and failure probability “For Fuel Filter” in PC32, the unique 
+machine without second filter until this moment. 
+Reliability behavior to PC32 (Without second filter)  
+ 
+The next chart shows the reliability and failure probability for “For Fuel Filter” in PC30, after installing 
+the second filter from the start of operation. in this behavior is clear the result with second filter is 
+better them PC33. 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Increasing MTBF by Installing a Second Primary Fuel 
+Filter on the 994K Wheel Loader 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-2 
+Caterpillar: Confidential  Yellow          Page 6 of 8 
+Reliability behavior to PC30 (With second filter)  
+ 
+ 
+Note: The reliability and failure probability is only for fuel filter group at 994 fleet. 
+Additionally, Sotreq has been working with the customer to better understand the machine 
+maintenance / performance issues related to the poor fuel quality and consider additional steps for 
+control contamination at the site. 
+ 
+As a result, in addition to the two primary filter system on the loader, the customer is in the process 
+of implementing a fuel station where c ontamination can be better controlled as well as other 
+contamination control procedures throughout the fueling process. 
+ 
+ 
+4.0 Benefits 
+ 
+Benefits: 
+• Less Maintenance / Increase MTBS Performance 
+• Increase Productivity / Production 
+ 
+Less corrective maintenance to replace the primary fuel filter, consequent, increasing the value of 
+MTBS and decreasing the accident risk of the technician exposure to field work . Furthermore, 
+increasing of equipment overall effectiveness. 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Increasing MTBF by Installing a Second Primary Fuel 
+Filter on the 994K Wheel Loader 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-2 
+Caterpillar: Confidential  Yellow          Page 7 of 8 
+5.0 Resources Required 
+ 
+Computer with drawing software, metal plate, filter base. 
+Labor (Fabrication/Assembly):  08 hours – 3000,00 BRL 
+ 
+ 
+Parts need: 
+PN Qty Description Price 
+2256948 4 SEAL-O-RING  R$         57,63  
+8T4182 4 BOLT  R$           6,35  
+8T4121 8 WASHER-HARD  R$           3,01  
+8T4133 4 NUT  R$           2,11  
+3211326 1 BASE AS FILTER  R$   6.489,87  
+ 
+ 
+The total cost is the cost of the parts, plus the cost of the labor:  
+ 
+6558,97 BRL + 3000,00 BRL = 9558,97 BRL (~2000 USD) 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Drawing attached 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+SOTREQ would like to thank the immense commitment of Engineering team, always willing to 
+deliver the best fleet performance possible by developing strategic solutions. 
+ 
+We would like to mention the close collaboration of Doug Friedrich of Caterpillar with our company, 
+thanks Doug!  
+This Best Practice Was Written By: 
+ 
+Francisco Sales 
+Sotreq S/A Mining Engineering Consulting 
+E-mail: francisco.sales@sotreq.com.br 
+ 
+Thais Garcia 
+Sotreq S/A Mining Engineering Analyst 
+E-mail: thais.garcia@sotreq.com.br 
+ 
+ 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Increasing MTBF by Installing a Second Primary Fuel 
+Filter on the 994K Wheel Loader 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-2 
+Caterpillar: Confidential  Yellow          Page 8 of 8 
+ 
+Arthur Almeida  
+Sotreq S/A Mining Engineering Consulting 
+E-mail: arthur.almeida@sotreq.com.br 
+ 
+Wender Batista 
+Sotreq S/A Fleet Performance Consultant 
+E-mail: wender.batista@sotreq.com.br 
+ 
+Doug Friedrich 
+Caterpillar Inc. 
+E-mail: friedrich_douglas_w@cat.com

@@ -1,0 +1,653 @@
+SOURCE: A Lean Strategy for Reducing Major Component R&I Downtime through Planning and Implementation.pdf
+PAGES: 11
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2022 
+3.04-220707-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+A Lean Strategy for 
+Reducing R&I Downtime 
+through Planning and 
+Implementation for Major 
+Components 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+  
+A Lean Strategy for Reducing R&I Downtime through 
+Planning and Implementation for Major Componets .. 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits ........................................................... 10 
+5.0 Resources Required ........................................ 10 
+6.0 Supporting Attachments / References ............. 10 
+7.0 Related Best Practices .................................... 10 
+8.0 Acknowledgements ......................................... 11 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Lean Strategy for Reducing Major Component R&I 
+Downtime through Planning and Implementation 
+DATE 
+7/7/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.04-220707-1 
+Caterpillar: Confidential Yellow                  Page 2 of 11 
+1.0 Introduction  
+ 
+PCR (Planned Component Replacement) is one of the most important events during the life cycle 
+of a major component because it can have significant impact of productivity on the site:  large 
+financial investment, large machine downtime and large amount of manpower. 
+ 
+Customers usually have the challenge of balancing the need to do the PCR with the mine’s 
+production requirements.  Any gains related to PCR’s can have a positive impact on the TCO of the 
+assets as well as the overall customer perceptions of the equipment and support provided. 
+ 
+A Brazilian customer was having trouble achieving this balance, they challenged Sotreq to optimize 
+the R&I (Removal & Install) of major components so that they could meet the production at the same 
+time completing all of the required PCR’s.  The immediate focus was the 797F fleet’s C175-20 LRC 
+engine as the R&I for this component was causing significant delays in achieving production.  
+Sotreq, based on history and their M&R (Maintenance & Repair) knowledge and experience, quickly 
+understood that the R&I downtime contribution suffered from many factors related to resources –  
+parts & component, manpower, tooling, etc.  
+ 
+Sotreq set about optimizing the R&I of the 797F C175- 20 LRC Engine through lean strategic 
+planning / preparation and implementation. 
+ 
+ 
+ 
+ 
+Figure 1 – (Spot Example: 18 samples) Some Historical of R&I downtime for C175-20 LRC in 797 
+fleet @Brazil (Planned + Unplanned situations), Average of Engine R&I = 4,9 days 
+ 
+2.0 Best Practice Description 
+ 
+The Problem Solving® methodology was used by a multi-functional experienced team (mechanics, 
+component planned, technical support, etc.) looking to identify the main “waste” contributors during 
+the planning and execution of the C175-20 LRC R&I (Removal & Install).  The key waste contributors 
+were tooling logistics, tooling availability, handling/lifting capabilities and manpower  as shown 
+Figure 1. 
+y = 4,9 days
+0
+1
+2
+3
+4
+5
+6
+7
+8
+0 5 10 15 20
+C175-20 LCR / 797 Engine R&I @ Brazil (@6 people working by shift)
+Number of Samples 
+Engine R&I Average Downtime (Days) 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Lean Strategy for Reducing Major Component R&I 
+Downtime through Planning and Implementation 
+DATE 
+7/7/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.04-220707-1 
+Caterpillar: Confidential Yellow                  Page 3 of 11 
+ 
+ 
+Figure 2 – Waste in C175-20 R&I in Copper Site @Brazil 
+ 
+This group also evaluated the implementation of improvements that did not depend on the actual 
+stoppage of the equipment. The preparation/configuration (set up) of the stock/exchange C175-20 
+LRC engine, and the development of work with consideration to safety and risk mitigation were 
+incorporated into the R&I process with the following activities: 
+ 
+- Installation of peripheral engine parts (pre-lube, starting motor, Oil Renewal System –(ORS))  
+- Installation of the torque convertor onto the stock/exchange engine 
+- Installation of the intake hose on the stock/exchange engine 
+- Pre-assembly of hoses and clamps for faster installation 
+- Adherence to contamination control 
+- Definition and organization of the R&I layout (area, tooling, etc.) to execute the tasks 
+- Definition of roles, responsibilities, work tasks within the R&I process 
+ 
+The key to success for this work was to anticipate and standardizes of the activities necessary for      
+the R&I. Best Practice 1.01-210827-1 provides a good demonstration of this process. 
+ 
+Another important success factor was high involvement/engagement of the team through 
+understanding individual task as well as the overall objective of the R&I. Throughout the R&I process 
+from planning to execution, meetings were held maintain the focus on and the partnership to achieve 
+the R&I goal. 
+ 
+  
+25%; 
+35%; 
+20%; 
+20%; 
+Tooling Availability
+Logistics to take the tooking
+required during the execution
+Manpower
+Availability of handling/lif shop
+capabilities
+Insufficient Labor Available 
+Tooling Logistics (having 
+tooling at the right place/right 
+time) 
+Insufficient Handling 
+Resources (cranes, lift 
+trucks, …) to perform R&I 
+Tooling Availability 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Lean Strategy for Reducing Major Component R&I 
+Downtime through Planning and Implementation 
+DATE 
+7/7/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.04-220707-1 
+Caterpillar: Confidential Yellow                  Page 4 of 11 
+3.0 Implementation Steps 
+ 
+This Best Practice is focused on the C175-20 engine, but the basic strategy and steps outlined 
+below could be applied to essentially any PCR / major component R&I.  Sotreq believes other 
+Dealers and Customers can increase equipment availability and reduce downtime through the 
+implementation of this best practice. 
+ 
+ 
+Step 1: R&I Planning & Preparation:  Plan for the R&I of the C175-20 engine before stopping the 
+equipment by defining the MACRO details involved:  
+ 
+1. Tools needed for the R&I execution 
+2. Gant Chart/chronogram detailing all activities and the time (sequence and duration) for the 
+manpower 
+3. Activities associated with the configuration of the stock/exchange engine 
+4. Step-by-step documentation (aligned with the OMM’s)  
+5. Meetings/discussions to accompany the R&I process 
+6. Work area layout 
+ 
+ Tools 
+Tool availability directly impact s the time and quality of the execution of the service.  
+Understanding this we developed the list based on OMM r eference, the experience of the 
+execution team and the review of other best practice literature. 
+ 
+Tools are separated and put on standby one day before the scheduled R&I in order to 
+minimize the impact of unavailability of the machine and inefficient use of manpower to 
+procure the tooling throughout the shop.  All actions that  improve efficiency and/or reduce 
+non-productive time should be sought out,  considered, and planned to support an efficient 
+and effective equipment stop. 
+ 
+ 
+ 
+Figure 3 – Tooling List required to Perform an Optimized 797 Engine R&I 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Lean Strategy for Reducing Major Component R&I 
+Downtime through Planning and Implementation 
+DATE 
+7/7/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.04-220707-1 
+Caterpillar: Confidential Yellow                  Page 5 of 11 
+ Gant Chart / Chronogram 
+ 
+It is essential to have a detailed plan/schedule with resources, activities, and durations.  For this 
+project, the plan was developed based on the removal and installation processes in the machine 
+OMM along with the modifications based on the technical team’s experience and the customer 
+requirements (i.e., maintenance targets, production targets, etc.).   
+ 
+As the process was based on lean modeling, the R&I was divided into three key work areas:  1) 
+Engine/Radiator Front, 2) Engine Sides and 3) Rear Engine and Converter. 
+ 
+The team was divided to optimize the work - avoid conflicting work and safety risks. 
+ 
+Figure 4a illustrates the distribution of activities.  This chart is objective and is an easy way to 
+know what needs to be done and monitor the progress in order to adhere to the target completion. 
+ 
+ 
+ 
+Figure 4a – Master Plan to Perform a LEAN 797 Engine R&I 
+ 
+ 
+ 
+ 
+ 
+Activities Position on 
+Truck Equipe Duration
+(Hours) % Done
+1. Engine Configuration - 10:20:00 100%
+1.1 Install small components - - 2:30:00 100%
+Pneumatic Start Motor - - 1:00:00 100%
+Pneumatic compressior - - 0:30:00 100%
+Auxiliar water pump - - 0:30:00 100%
+Pre lubrication motor - - 0:30:00 100%
+Install prelubrication lines - - 0:30:00 100%
+Configuration pneumatic start motor - - 0:20:00 100%
+Install and configuration prelubrication relay - - 0:30:00 100%
+Configuration pnematic compressior - - 0:20:00 100%
+Install anti-cavitation lines - - 1:00:00 100%
+Install inlet hose - - 1:00:00 100%
+Install water pump hose - - 0:20:00 100%
+Install priming pump harness - - 0:10:00 100%
+Install ground cable - - 0:10:00 100%
+Install Torque Converter - - 2:00:00 100%
+Install front Engine Mount - - 1:30:00 100%
+2. Separation of Resources and Toolings
+Manual Tooling (Electrical Wrench, Torque Wrench, ...) - 100%
+Lifiting Material - 100%
+Hydarulic Lift Jack - 0%
+3. REMOVE AND INSTALL ENGINE, TORQUE CONVERTER AND RADIATOR 57:40:00 91%
+3.1 Preparation 5:05:00 100%
+Washer Truck - Equipe 1 / 2 2:00:00 100%
+Position truck on bay - Equipe 1 / 2 0:30:00 100%
+Raise up body - Equipe 1 / 2 0:20:00 100%
+Install wheel chocks - Equipe 1 / 2 0:15:00 100%
+Drain Radiator Frente do Motor Equipe 1 0:20:00 100%
+Drain Engine Frente do Motor Equipe 1 0:20:00 100%
+Drain Renew Tank LD do Motor Equipe 1 0:20:00 100%
+Drain Torque Converter Conversor torque Equipe 2 0:20:00 100%
+Drains Air Tank Frontal Motor Equipe 2 0:10:00 100%
+Turn Off Supression System Apoio Apoio 0:15:00 100%
+Remove Telemetric System Apoio Apoio 0:15:00 100%
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Lean Strategy for Reducing Major Component R&I 
+Downtime through Planning and Implementation 
+DATE 
+7/7/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.04-220707-1 
+Caterpillar: Confidential Yellow                  Page 6 of 11 
+ Activities associated with the configuration of the stock/exchange engine 
+ 
+Based on the premise of executing the maximum number of activities before the machine is 
+even stopped, the configuration of the stock/exchange engine needs to be done in the weeks 
+preceding the stop.  Below are some examples of the activities done to the engine: 
+ 
+- Installation of the peripheral motor parts (pre-lube, starting motor, Oil Renewal System –
+(ORS)) 
+- Installation of the torque convertor on the stock/exchange engine 
+- Installation of the intake hose on the stock/exchange engine 
+- Configuration of the Engine Pads 
+- Routing/Clamping the harnesses for the priming and prelube pumps 
+- Fill the Engine Oil 
+ 
+This list should serve as an example not a comprehensive list.  The key to this step is 
+the do as much work as possible to prepare this stock/exchange engine before its 
+installation.  
+ 
+  
+Figure 4b – Spare Engine Set up (part of preparation before machine downtime) 
+ 
+ 
+ 
+ Step-by Step Documentation (aligned with the OMM’s) 
+ 
+To support the activities, all the literature for executing the service/activities of the OMM 
+along with any local additions should be printed out for use on the day of the activity.  This 
+material is organized to facilitate efficient consultation according to the division of labor.  
+The following books were printed for the C175-20 LRC R&I: 
+ 
+Book 01: Radiator Removal Literature 
+Book 02: Engine Removal Literature 
+Book 03: Engine Installation Literature 
+Book 04: Radiator Installation Literature 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Lean Strategy for Reducing Major Component R&I 
+Downtime through Planning and Implementation 
+DATE 
+7/7/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.04-220707-1 
+Caterpillar: Confidential Yellow                  Page 7 of 11 
+ 
+ 
+Figure 5 – Standard Job (documented) by Technician by Process 
+ 
+ Meetings/Discussions to Accompany R&I  
+ 
+A routine of a brief meeting every 30 minutes with the leadership team was established where 
+the plan was updated based on actions completed and alignment was made for the next 
+steps. 
+ 
+The figure below illustrates the monitoring of the key tasks for both the configuration of the 
+stock/exchange engine and the engine R&I.  In order to optimize and facilitate the 
+reading/comprehension of the information by the entire team, the plan was prepared in a 
+simple and objective manner. 
+ 
+During the entire process, the alignment with the executions team was fundamental and was 
+carried out during the group exchange dialogues and objective meetings where the work 
+objectives, defined strategy and work progress were reinfo rced.  Team input and alignment 
+early in the process were essential. Team involvement made the team more committed and 
+focused on the end result.  Reinforcing all information and efficiency gains must be 
+considered from the planning to the execution of the activities. 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Lean Strategy for Reducing Major Component R&I 
+Downtime through Planning and Implementation 
+DATE 
+7/7/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.04-220707-1 
+Caterpillar: Confidential Yellow                  Page 8 of 11 
+ 
+ 
+Figure 6 – Follow up Dashboard of Management team 
+ 
+ Work Area Layout 
+ 
+As a reminder, the entire process is based on the lean philosophy focused on reducing waste 
+in the process and optimizing end time by having all resources where they are needed when 
+they are needed. 
+ 
+After careful analysis of the resources and activities a “two box work area” layout was 
+proposed, validated by the site security team, and implemented for this site. The equipment 
+was positioned perpendicular to the overhead crane as shown in Figure 7 below.  
+ 
+Each dealer/customer will need to determine the appropriate layout for their site. 
+ 
+ 
+Figure 7 – Standard LEAN Layout (Particular for this Case Study) 
+ 
+It should also be noted that the approximately 80 hours of manpower were required for 
+preparation and configuration before the machine was even stopped for this engine R&I. 
+Resources
+Activies Responsible Status Observations
+Kit to install Engine Marcio Complet Material was delivery 11th Dec
+Kit to install Torque Converter Marcio Complet
+Components
+Pneumatic Compressor Marcio Complet Pedido emitido, previsão de entrega 11/12
+Auxiliary water pump Marcio Complet
+Start Pneumatic Motor Marcio Complet
+Renew  Valve Marcio Complet
+Engine Prelubrication pump Marcio Complet
+Position the Engine on Bay Aparecido Complet
+Lubrication Engine Aparecido
+Activies Responsible Status Observations
+Hydraulic Jack Lift Marcio
+Prepare lift material Carlos Provide resources one day before
+Prepare manual tooling Carlos Provide resources one day before
+Provide Electrical Impact Wrench Ediclei Provide resources one day before
+Provide Pneumatic Wrenchs Ediclei Provide resources one day before
+Provide Oil Collector Ediclei Provide resources one day before
+Provide Clean ELC Collector Ediclei
+Provide Stairs Ediclei Complet Using the resoruces for Preventive BOX
+Dormentes (Calçar motor e radiador) Wallace Provide resources one day before
+Provide electrical to rework harness Fábio Complet
+Programação da equipe de AFEX e Despacho Marcio
+Activies to Configuration Engine
+Activies to R&I Engine
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Lean Strategy for Reducing Major Component R&I 
+Downtime through Planning and Implementation 
+DATE 
+7/7/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.04-220707-1 
+Caterpillar: Confidential Yellow                  Page 9 of 11 
+Step 2: R&I Implementation:   
+ 
+The R&I Planning and Preparation Task results in the following: 
+ 
+ LEAN Plan in Place  – A detailed GANT chart is in place based on customer requirements, 
+manpower and other resource availability. 
+ R&I Bay Ready – All Parts & Consumables, Tooling, Documentation, Fluids are properly placed 
+in the work bay. 
+ Replacement Engine Ready – A staged component is ready for immediate installation. 
+ 
+The truck should be taken from production, washed, positioned in the work bay at the appropriate 
+time when all the above three items are in place. 
+ 
+The key R&I Implementation Tasks are as shown in Figure 8. 
+ 
+ 
+ 
+Figure 8.  Key R&I Tasks – Please use appropriate documentation for the specific component. 
+ 
+Activities are grouped by position on the equipment and a logical sequence.  Like a Formula 1 team, 
+each mechanic is engaged in their own specific set of critic al tasks contributing to the optimized 
+R&I.   All tooling, parts and other resources are available and appropriately placed in the workbay 
+contributing to the optimized R&I. 
+ 
+Note: In addition to a Gant chart with the entire plan in the maintenance book, a white board is in 
+use in the bay with key timing info (arrival, estimated departure, etc.), personnel, additional 
+backlogs/work and more; Sotreq is in the considering implementing a monitor to track the status of 
+the work in real time.   
+ 
+there is an opportunity to improve this process, that is to put into the workshop, a monitor display 
+to help the team drives the task to achieve the downtime target. We did not implement it on this 
+case.  
+Key R&I Tasks
+Drain Fluids
+Deconfigure & Remove Radiator
+Remove Center Bar
+Deconfigure & Remove Engine & Torque Converter
+Configure Radiator
+Install Engine, Torque Converter & Radiator
+Configure Electrical, Hydraulic, Inlet & Exhaust Systems
+Implement Torque Procedures
+Add Fluids and Lubrication
+Implement Test Procedures
+Implement Liberation/Release Procedures.
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Lean Strategy for Reducing Major Component R&I 
+Downtime through Planning and Implementation 
+DATE 
+7/7/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.04-220707-1 
+Caterpillar: Confidential Yellow                  Page 10 of 11 
+4.0 Benefits 
+ 
+Key Benefits:  
+ 
+• Implementation of the Lean Strategy described in this best practice focused on 1) R&I Planning 
+& Preparation and 2) R&I Implementation will increase equipment availability through less 
+downtime.   The planning/preparation is key to success as the machine s hould not be taken 
+down until all the resources (including the replacement component) are in place and ready to be 
+used in the actual R&I. 
+ 
+Sotreq Results from this Specific Case: 
+ 
+The results from the implementations were widely acknowledged by the custom er showing that 
+Sotreq was able to meet the company’s needs in minimizing actual downtime to meet  production 
+targets at this particular time but also that Sotreq has a good planning / preparation strategy that 
+could be applied for all R&I’s.   
+ 
+Sotreq woul d be happy to show other dealers the specifics of the plan, preparation, resource 
+requirements for this specific case; please feel free to contact one of the authors. 
+ 
+5.0 Resources Required 
+ 
+Key Resources include the following: 
+ 
+• Planning and Engineering Personnel 
+• Execution Team Personnel 
+o Mechanics – to execute the activities according to the lean model 
+o Project Leader – to monitor overall effective and efficient completion of work / address needs 
+o Supervisor(s) - to monitor mechanics and areas of work / address needs 
+• Tooling – required for each specific activity (based on OMM and local work guidelines) 
+ 
+Note:  For additional details please reach out to Sotreq. 
+ 
+6.0 Supporting Attachments / References 
+ 
+  DMAIC Methodology, 6 Sigma Process; Lean Manufacturing Guidebook, VPS – Customer 
+  Production System Guideline, 794AC Service Manual.        
+ 
+7.0 Related Best Practices 
+ 
+Best Practice (1.01-210827-1) – A PM Model to Deliver a Higher Availability for 794AC Trucks 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Lean Strategy for Reducing Major Component R&I 
+Downtime through Planning and Implementation 
+DATE 
+7/7/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.04-220707-1 
+Caterpillar: Confidential Yellow                  Page 11 of 11 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Júlio César Corrêa 
+Manager, Product Performance and Engineering 
+Julio.correa@sotreq.com.br 
++ 55 94 98111-6441 
+ 
+Fábio Cota 
+Product Performance Consultant (R&I Project Engineer) 
+fabio.cota@sotreq.com.br 
++ 55 94 98807-8155 
+ 
+In Colaboration with Product Support team of SOTREQ in Salobo Mine, Maintenance Team of 
+Customer, and Douglas Friedrich, Site Performance Manager of CATERPILLAR.  
+ 
+Marcio Nunes Griffith 
+797F Maintenance Supervisor of Customer 
+ 
+Carlos Travassos 
+Product Support Coordinator 
+carlos.travassos@sotreq.com.br 
++ 55 94 981230515 
+ 
+Leonardo Rezende 
+Product Support Manager  
+Leonardo.rezende@sotreq.com.br
+  
++ 55 94 9255-6644

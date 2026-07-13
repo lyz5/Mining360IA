@@ -1,0 +1,235 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Wheel Station Upender Equipment.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2007  
+0707-4.4-1090  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Wheel Station Upender 
+Equipment  
+Application  Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety MARC 
+Management 
+ 
+ 
+Wheel Station Upender Equipment ........................... 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 4 
+4.0  Benefits ............................................................. 4 
+5.0  Resources Required .......................................... 5 
+6.0  Supporting Attachments / References ............... 5 
+7.0  Related Best Practices ...................................... 5 
+8.0  Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The following document is provided as a resource for Caterpillar dealers and customer mine sites. Content was provided 
+by one mine site to be shared with others as a suggested practice. Caterpillar shares it with you as a reference, not a 
+requirement, and has not written, edited, validated, or specifically endorsed the content. Caterpillar reserves the right to 
+add to, delete from, or remove this document entirely at any time in the future. 
+ 
+ 
+ 
+  
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Wheel Station Upender Equipment 
+DATE 
+4/11/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0707-4.4-1090  
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+1.0 Introduction  
+ 
+Handling large wheel groups during rebuild can be a difficult task. A wheel group typically arrives 
+to the CRC mounted on a shipping stand. It must then be rotated from the horizontal position to a 
+vertical position before disassembly. After rebuild, it must be again rotated from the vertical 
+position back to a horizontal position for mounting on a shipping stand. 
+ 
+The process normally involves the use of two overhead cranes and multiple chains to perform the 
+necessary rotations. It also requires several technicians to perform the operation.  
+ 
+Industrial equipment commonly called “upenders” are manufactured by several suppliers and are 
+well-suited to the task of efficiently and securely rotating heavy components from horizontal to 
+vertical positions and back. 
+ 
+ 
+            
+  
+ 
+ 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Industrial “upenders” are manufactured by a number of suppliers, such as Bushman and Titan. 
+They are available in sizes ranging up to 30+ ton capacity. They typically can move a wheel 
+station from horizontal to vertical position in less than 30 seconds. 
+Some dealers have fabricated their own wheel group upender tooling. 
+ 
+ 
+Disassemble / assemble 
+position  
+Horizontal shipping position 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Wheel Station Upender Equipment 
+DATE 
+4/11/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0707-4.4-1090  
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Examples of commercially available upenders 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Wheel Station Upender Equipment 
+DATE 
+4/11/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0707-4.4-1090  
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+ 
+  
+ 
+ 
+  
+  
+ 
+Upenders installed in Cat dealer CRC’s  
+                       
+ 
+3.0 Implementation Steps 
+ 
+It is best to work with a reputable supplier to identify proper requirements before installing an 
+upender. You will need to know the maximum forecast load weight and floor space available in 
+the wheel group rebuild area.  
+ 
+Some upenders have power options, such as electric or hydraulic. It is important that an upender 
+used for wheel group handling has both power up and power down. 
+   
+4.0 Benefits 
+ 
+• Raising and lowering wheel groups takes 50%+ less time. 
+• Much reduced risk of damaging the wheel group duri ng handling. 
+• Requires only one technician to operate. 
+• Frees up overhead cranes for other tasks. 
+• Lesser risk of accidents. 
+  
+ 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Wheel Station Upender Equipment 
+DATE 
+4/11/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0707-4.4-1090  
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+5.0 Resources Required 
+ 
+Costs vary by options and capacity.  Contact a supplier for a quote. An investment analysis 
+should be preformed to measure cost versus benefit. 
+ 
+Suppliers generally work through regional representatives and distributors. Contact information is 
+available on their websites. See also: 
+ 
+Titan Worldwide Inc. 
+http://www.titanworldwide.com/  
+ 
+Bushman Equipment Inc. 
+http://www.bushman.com/  
+ 
+  
+6.0 Supporting Attachments / References 
+ 
+None.     
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+ 
+ 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+Caterpillar Global Mining 
+6 Sigma Black Belt

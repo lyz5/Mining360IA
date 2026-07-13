@@ -1,0 +1,127 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Source | Mining360IA</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Create source</p>
+                <h1>Add source</h1>
+                <p class="page-intro">Enter the source manually, save it to the registry, then verify it from the source card when needed.</p>
+            </div>
+            <div class="actions">
+                <a class="button secondary" href="{% url 'data-sources' %}">Back</a>
+            </div>
+        </header>
+
+        {% if error %}
+            <section class="alert">
+                <strong>Source save failed</strong>
+                <p>{{ error }}</p>
+            </section>
+        {% endif %}
+
+        <section class="table-section">
+            <form method="post" class="source-edit-form" data-source-form data-default-engine="{{ form.engine|default:'SQL Server' }}">
+                {% csrf_token %}
+                <div class="form-grid">
+                    <div>
+                        <label for="name">Source name</label>
+                        <input id="name" name="name" type="text" value="{{ form.name|default:'' }}" required>
+                    </div>
+                    <div>
+                        <label for="engine">Engine</label>
+                        <select id="engine" name="engine">
+                            <option value="SQL Server" {% if form.engine == "SQL Server" or not form.engine %}selected{% endif %}>SQL Server</option>
+                            <option value="Snowflake" {% if form.engine == "Snowflake" %}selected{% endif %}>Snowflake</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="owner">Owner</label>
+                        <input id="owner" name="owner" type="text" value="{{ form.owner|default:'' }}">
+                    </div>
+                    <div class="full-width">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" rows="4">{{ form.description|default:'' }}</textarea>
+                    </div>
+                    <div class="checkbox-row">
+                        <label>
+                            <input type="checkbox" name="is_active" checked>
+                            Active after validation
+                        </label>
+                    </div>
+                    <div class="full-width engine-section" data-engine-section="SQL Server" {% if form.engine == "Snowflake" %}hidden{% endif %}>
+                        <p class="eyebrow">SQL Server connection</p>
+                        <div class="engine-grid">
+                            <div>
+                                <label for="server">Server</label>
+                                <input id="server" name="server" type="text" value="{{ form.server|default:'' }}" required>
+                            </div>
+                            <div>
+                                <label for="port">Port</label>
+                                <input id="port" name="port" type="number" min="1" max="65535" value="{{ form.port|default:'1433' }}">
+                            </div>
+                            <div>
+                                <label for="database">Default database (optional)</label>
+                                <input id="database" name="database" type="text" value="{{ form.database|default:'' }}">
+                            </div>
+                            <div>
+                                <label for="user">User</label>
+                                <input id="user" name="user" type="text" value="{{ form.user|default:'' }}">
+                            </div>
+                            <div class="full-width">
+                                <label for="password">Password</label>
+                                <input id="password" name="password" type="password" value="" placeholder="Optional">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="full-width engine-section" data-engine-section="Snowflake" {% if form.engine != "Snowflake" %}hidden{% endif %}>
+                        <p class="eyebrow">Snowflake connection</p>
+                        <div class="engine-grid">
+                            <div>
+                                <label for="account">Account</label>
+                                <input id="account" name="account" type="text" value="{{ form.account|default:'' }}" required>
+                            </div>
+                            <div>
+                                <label for="warehouse">Warehouse</label>
+                                <input id="warehouse" name="warehouse" type="text" value="{{ form.warehouse|default:'' }}" required>
+                            </div>
+                            <div>
+                                <label for="role">Role</label>
+                                <input id="role" name="role" type="text" value="{{ form.role|default:'' }}">
+                            </div>
+                            <div>
+                                <label for="database_snowflake">Database</label>
+                                <input id="database_snowflake" name="database" type="text" value="{{ form.database|default:'' }}" placeholder="Optional">
+                            </div>
+                            <div>
+                                <label for="default_schema">Default schema (optional)</label>
+                                <input id="default_schema" name="default_schema" type="text" value="{{ form.default_schema|default:'' }}">
+                            </div>
+                            <div>
+                                <label for="user_snowflake">User</label>
+                                <input id="user_snowflake" name="user" type="text" value="{{ form.user|default:'' }}" required>
+                            </div>
+                            <div class="full-width">
+                                <label for="password_snowflake">Password</label>
+                                <input id="password_snowflake" name="password" type="password" value="" placeholder="Optional">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="button">Validate and create</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="{% static 'reports/source_form.js' %}"></script>
+</body>
+</html>

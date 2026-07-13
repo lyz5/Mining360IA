@@ -1,0 +1,234 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+January 2007  
+0107-4.4-1061  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Parts Blasting 
+Enhancement  
+ 
+Application  Maintenance  Site 
+Management  
+Component 
+Rebuild Safety MARC 
+Management  
+ 
+ 
+Parts Blasting Enhancement ................................... 1 
+1.0  Introduction ........................................................ 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 3 
+5.0  Resources Required .......................................... 4 
+6.0  Supporting Attachments / References ............... 4 
+7.0  Related Best Practices ...................................... 4 
+8.0  Acknowledgements ........................................... 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Parts Blasting Enhancement 
+DATE 
+2/6/07 
+CHG 
+NO 
+01 
+NUMBER 
+0107-4.4-1061  
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+ 
+1.0 Introduction  
+ 
+In a CRC, parts cleaning is typically performed in dedicated general parts cleaning work bay.  
+Parts cleaning may utilize several technologies, including high-pressure cabinet washing, manual 
+solvent washing, or gasket scraping.  Parts cleaning must be managed to provide high quality 
+rebuilds while minimizing costs and “over-cleaning”. 
+ 
+Clean parts introduce minimal contaminates into a component, reducing internal parts wear and 
+providing longer service life.  Clean parts also help assure that joints fit accurately and securely 
+without future leaks.  Worn parts often retain gasket material, hard carbon, and rust in their joint 
+mating areas, even after high-pressure cabinet washing.  These surface areas minimally require 
+scraping and possibly buffing/blasting if the contamination is aggressive. 
+ 
+Many cleaning processes create airborne debris. Minimal effects find the debris deposited on 
+staged clean parts and inside equipment, while a worst case could send debris though the entire 
+shop rebuild/assembly areas. In all instances, uncontrolled airborne debris creates an adverse 
+situation for repair quality. 
+ 
+This Best Practice describes a well-designed method of controlling the airborne debris generated 
+when blast-cleaning parts. Methods in the scope include sand, glass-bead, and steel-shot 
+blasting.  A segregated blast room is used with blast cabinets, often considered a standard piece 
+of CRC cleaning equipment, to help control blasting emissions.  Buffers are often used in the 
+general cleaning area but tough cleaning is often performed more effectively with blast cabinet 
+cleaners. 
+ 
+2.0 Best Practice Description 
+ 
+Aggressive part cleaning is often performed with a handheld angle buffers over a downdraft table 
+or bench-mounted buffer.  A cabinet-type blast cleaner is typically a more efficient (faster) tool if 
+the piece part has a sensitive surface, and/or is heavily corroded or carbon coated.  Controlling 
+the blast cabinet’s airborne debris is often difficult.  Most cabinets leak some abrasive dust when 
+new, and get progressively worse with age.  Additionally, controlling airborne debris from bench 
+grinders is difficult since the blast cabinet seals and extraction/separation system typically emit 
+debris over a large space while running. 
+ 
+The most effective debris control system uses cabinet blasters in a segregated room.  The room 
+is built with one access door with a walk-through curtain.  The blasting room is ventilated with an 
+exhaust fan that provides a negative pressure.  This assures general shop air is pulled into the 
+room, preventing airborne debris from entering the shop area.  The extraction fan(s) typically run 
+only while the blast cabinets are running.  This arrangement catches much more debris than 
+standard practice, preventing it from drifting onto the cleaning technicians, previously cleaned 
+parts, or into the shop area. 
+ 
+Access to the room is restricted to only one doorway with a curtain to maximize shop-to-room 
+airflow.  Note that some rooms have been built with three sides of walk-through curtains for 
+maximum access. The extraction fans in these rooms, while substantial, could not create enough 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Parts Blasting Enhancement 
+DATE 
+2/6/07 
+CHG 
+NO 
+01 
+NUMBER 
+0107-4.4-1061  
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+airflow through the curtains to control the airborne debris and dust still drifted throughout the 
+shop.  
+ 
+3.0 Implementation Steps 
+ 
+-  Determine area in shop to be designated for blasting. 
+• Assure cleaning area has supporting utilities (compressed air for blasting, lighting, and 
+electricity as needed). 
+• Assure area has adequate space and access for equipment/supplies, and parts staging 
+(outside of blasting room). 
+ 
+-  Research and choose blasting equipment 
+• Size cabinets, exhaust fans, and supply storage equipment, to needs. 
+• Establish equipment usability/configuration to assure easy cleaning/maintenance and 
+professional appearance. 
+• Consider glass-bead as well as steel-shot machines.  Suggest J-Belt tumbling design (as 
+apposed to a rotating cage) for steel-shot type machines. 
+ 
+-  Establish new/adjusted repair/rebuild time requirement targets as needed. 
+• Eliminate the current processes/tooling/equipment strategy (only one best way). 
+ 
+-  Install the layout/equipment changes into the shop 
+• This may occur in phases, as needed, such as shop arrangement, then equipment final 
+design/fabrication. 
+• Promote change feedback as installation may surface new problems.  
+ 
+-  Train employees to use the new procedures/equipment.  Follow-up/enforce 
+immediately. 
+• Suggest parts are staged outside of Blast area.  Transport parts cart to and from staging 
+area immediately outside of blasting room. 
+ 
+-  Establish equipment maintenance schedule/responsibility. 
+ 
+-  Review process/equipment performance once established. 
+ 
+-  Establish and install any adjustments as needed. 
+ 
+4.0 Benefits 
+ 
+Saves Labor  – Well designed/organized cleaning equipment reduces cleaning efforts.  Less 
+effort is required to maintain a clean work area and fewer parts need follow-up cleaning before 
+assembly. 
+ 
+Saves Time   – Parts are not staged in different areas for different types of cleaning, reducing 
+work flow interruptions.  Protecting parts against airborne debris interferes less with cleaning. 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Parts Blasting Enhancement 
+DATE 
+2/6/07 
+CHG 
+NO 
+01 
+NUMBER 
+0107-4.4-1061  
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+Increases Quality  – More effective cleaning equipment simplifies cleaning processes and 
+promotes high technician professionalism. 
+ 
+5.0 Resources Required 
+ 
+-  Facility 
+• Re-organize work area to allow for blasting room, blasting cabinet(s) placement, incoming 
+and outgoing staging, and supply storage as needed. 
+ 
+-  Support Equipment 
+• Well-built blast cabinets, both manual and tumbling steel-shot cabinets. 
+• Effective walk-through doorway curtain. 
+• Sized-right exhaust system. 
+• Miscellaneous supply storage and work area cleaning tools (brooms, dust pans, etc.). 
+ 
+-  People 
+• Establish current cleaning concerns with team 
+• Establish process, layout, and equipment improvements through team. 
+ 
+-  Training 
+• Define/establish/enforce new processes, roles and responsibilities with production teams. 
+• Remove replaced items (general-area blast cabinets) from operations to prevent less 
+effective cleaning. 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+0107-4.5-1060    Parts Buffer Enhancement 
+ 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Russ Young 
+Black Belt 
+Cat Global Mining

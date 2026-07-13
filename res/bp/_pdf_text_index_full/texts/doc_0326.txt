@@ -1,0 +1,221 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Component Rebuild Customer Reports.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+November 2006 
+1106-4.5-1040 
+  
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIE S 
+Component Rebuild 
+Customer Reports 
+ 
+Application Maintenance Component Life 
+Management 
+Component 
+Rebuild 
+MARC 
+Management 
+ 
+ 
+ 
+Component Rebuild Customer Reports ..................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Rebuild Customer Report 
+DATE 
+3/18/2016 
+CHG 
+NO 
+03 
+NUMBER 
+1106-4.5-1040 
+Caterpillar Confidential:  YELLOW          Page 1 of 3 
+1.0 Introduction  
+ 
+In order to achieve mining customer cost per ton objectives, customers must manage the 
+component life of their equipment fleet.  The key success factors in managing component life are 
+to minimize unplanned failures and to optimize planned component rebuild intervals.  
+ 
+Planned component rebuild intervals can be based on a number or factors including past 
+experience, condition monitoring, fuel consumption, oil analysis, or even arbitrary target hours. 
+ 
+Minesite conditions can change over time and impact component life. Negative impacts can come 
+from deeper pits, longer hauls, overloading, as well as maintenance and monitoring.  Positive 
+changes can come from continuous improvement initiatives such as contamination control, fluid 
+cleanliness, application and payload management, and better maintenance and monitoring. 
+ 
+When a component is repaired or rebuilt in the dealer CRC, dealers are able to assess the 
+condition of the component.  Dealer-documentation of the component’s condition can be valuable 
+information for the customer.  Some dealers have provided technical reports back to the customer 
+after every component rebuild or repair. These reports may also offer recommendations and 
+information the customer can use to better manage component life. 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice contains several standard reports from MCTS used by some dealers to 
+provide information and recommendations to mining customers. 
+ 
+Failure Analysis Report 
+   
+ This report is generated any time a component has suffered a failure or unplanned rebuild or  
+     repair.  The report includes: 
+• Component identification  
+• Hours, rebuild history (and total fuel consumption for engines) 
+• Any applicable supporting data:  VIMS / SOS / Particle Count 
+• Root Cause of Failure identification 
+• Recommendations to avoid future failures  
+ 
+       Component Rebuild Report  
+ 
+This report is generated for every planned before-failure component rebuild.  The purpose of 
+the report is to assess the condition of the component and potential remaining life. The report 
+includes: 
+• Component identification 
+• Hours, rebuild history  (total fuel consumption for engines) 
+• Any applicable supporting data:  VIMS / SOS / Particle Count 
+• Technical assessment of internal wear. 
+• Recommendations to improve life or adjust PCR interval. 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Rebuild Customer Report 
+DATE 
+3/18/2016 
+CHG 
+NO 
+03 
+NUMBER 
+1106-4.5-1040 
+Caterpillar Confidential:  YELLOW          Page 2 of 3 
+       Fleet Component Life Summary 
+ This is a management report usually generated once a year and presented to the customer.  It  
+           provides an overview of average component life by model and by component.  It also reports  
+           the percentage of rebuilds performed before-failure and after failure. 
+ 
+• Average component life by component and model. 
+• Average component life for planned before-failure rebuilds 
+• Average component life for after-failure rebuilds. 
+• Percent of rebuilds made before failure. 
+• Percent of rebuilds made after failure. 
+ 
+A sample report is attached.  This example was generated using the Caterpillar Major 
+Component Tracking System (MCTS). 
+          
+ 
+ 
+ The component life information is also sometimes reported as a histogram bell curve graph. 
+ 
+3.0 Implementation Steps 
+ 
+1. Determine level of customer and dealer interest in CRC reports and specific needs. 
+2. Create standard report forms, per customer and dealer feedback. 
+3. Create a process to collect the information and create the report.  Assign ownership. 
+4. Implement a component life tracking system.  (See the Caterpillar Major Component 
+Tracking System Best Practice under Site Management – Component Life) 
+5. Develop customer communication process for these reports with feedback. 
+6. Document Benefits. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Rebuild Customer Report 
+DATE 
+3/18/2016 
+CHG 
+NO 
+03 
+NUMBER 
+1106-4.5-1040 
+Caterpillar Confidential:  YELLOW          Page 3 of 3 
+7. Develop follow-up assessment 6-12 months after implementation to measure actual 
+benefits. 
+ 
+4.0 Benefits 
+   
+• Improves customer cost per ton and preference for Caterpillar equipment. 
+• Builds customer relations. 
+• Contributes to both dealer and customer Continuous Improvement initiatives. 
+• Controls cost and risks of MARC contracts. 
+• Increases components life. 
+• Reduces component rebuild cost. 
+ 
+5.0 Resources Required 
+  
+Personnel time to create and manage report system and process. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Dealers interested in using MCTS should contact:  
+Jon Duvall 
+MCTS System Administrator  
+Duvall_Jon_D@cat.com 
++1 309 675-7115 
+ 
+https://mcts.cat.com/
+ 
+ 
+7.0 Related Best Practices 
+ 
+1106-4.5-1036 Component Life Tracking a Valuable CRC Performance Indicator  
+ 
+ 0906-3.1-1020  Major Component Tracking System Used to Monitor and Manage 
+Component Life 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Name:  Dale Brehm 
+Title:  Global Mining Product Support 
+E-mail:  brehm_dale_e@cat.coml 
+Phone:  309 –675-6325

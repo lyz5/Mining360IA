@@ -1,0 +1,1146 @@
+SOURCE: 1.0 Maintenance & Repair\1.01 Preventive Maintenance\1. Strategic\Preventive Maintenance Strategy (Spanish).pdf
+PAGES: 17
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   1 de 17  
+__________________________________________________  
+Serie de “Mejores Prácticas” 
+ 
+Mantenimiento Preventivo (MP- Estratégico) 
+ 
+Mantenimiento Preventivo (Estratégico)  1 
+1.0 Introducción  2 
+2.0 Descripción de las mejores prácticas  3 
+3.0 Pasos para la implementación  12 
+4.0 Beneficios  13 
+5.0 Requerimiento de recursos  14 
+6.0 Literatura de apoyo  17 
+7.0 Otras mejores prácticas relacionadas  17 
+8.0 Agradecimientos  17 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+EXENCIÓN DE RESPONSABILIDAD: La información y los p osibles beneficios 
+sugeridos en este documento están basados en la inf ormación proporcionada por 
+uno o más distribuidores Cat®, y basados en la opin ión de dichos distribuidores es 
+que se les considera como "Mejores Prácticas". Cate rpillar no se responsabiliza ni 
+da garantía sobre la información contenida en este documento o en los productos 
+mencionados en este documento. Caterpillar agradece  y acoge recomendaciones 
+adicionales sobre "Mejores Prácticas" de nuestra red de distribuidores. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   2 de 17  
+1.0  Introducción: 
+ 
+El Mantenimiento Preventivo (MP) es fundamental para el éxito de cualquier sistema 
+de mantenimiento y reparación. Es uno de los pilare s, y como tal, debe ser 
+considerado el punto central en la estrategia global de gestión del mantenimiento de 
+los equipos. Los objetivos del MP se enfocan para m antener al equipo en 
+condiciones óptimas de funcionamiento, para reducir  el riesgo de fallas y las 
+posteriores reparaciones no programadas, y para optimizar los costos de posesión y 
+operación de los equipos. 
+ 
+Para poder lograr estos objetivos, los procesos de un MP bien diseñado deben 
+poseer características múltiples. Obviamente, como su nombre lo indica, el MP debe 
+ser ante todo preventivo por naturaleza , esto es que algunos de los ingredientes 
+clave del MP estén basados en periodos de tiempo , actividades a intervalos fijos 
+que se planifican y programan sobre la base de las recomendaciones de los 
+fabricantes. Estas actividades preventivas se centr an principalmente en la 
+eliminación o control del desgaste excesivo de los componentes y sistemas para 
+asegurar que se alcancen sus vidas óptimas y que lo s equipos funcionen en 
+condiciones óptimas de operación. Estas actividades  rutinarias de servicio, como 
+cambio de fluidos y cambio de filtros, son ejemplos  de los aspectos preventivos del 
+MP. 
+ 
+Para que el Mantenimiento Preventivo sea realmente eficaz, éste debe tener 
+también cualidades predictivas, por ejemplo, inspecciones periódicas, actividades de 
+medición y pruebas no destructivas que ayuden  a la organización de mantenimiento 
+en la determinación de cuándo se requieren ajustes o reparaciones/ reemplazos de 
+componentes. Las actividades de mantenimiento predictivo se basa n en las 
+“condiciones del equipo” , considerando un conjunto de criterios predetermin ados, 
+y se deben enfocar en la detección de defectos  y evitar las fallas para reducir el 
+riesgo de paralización del equipo. Las actividades de predicción tienden a ser más 
+complejas que sus contrapartes preventivas, y van d esde las inspecciones visuales 
+más básicas basadas principalmente en la experienci a, "pruebas especiales" con 
+instrumentación especializada para mediciones de pr esión y temperatura, la gestión 
+y análisis de fluidos, y el análisis de la data de los sistemas computarizados del 
+equipo.  
+ 
+Por último, dado que el Mantenimiento Preventivo es  el más predecible y frecuente 
+de las actividades de mantenimiento, nos ofrece una  conveniente "ventana de 
+oportunidad"  para las reparaciones correctivas y para resolver los problemas 
+identificados a través del monitoreo de condiciones  del equipo. Aunque pueda 
+parecer algo reactivo, el agregar esta cualidad rea ctiva a los procesos de 
+Mantenimiento Preventivo es crucial , ya que apoya los objetivos de confiabilidad 
+del equipo asegurándose que los defectos detectados  durante el monitoreo de 
+condiciones puedan ser planificados, programados y corregidos con anterioridad a 
+la falla . En otras palabras, es mucho más deseable reaccion ar a los síntomas y a 
+los problemas pequeños de manera planificada durant e los MP que intentar 
+reaccionar a las fallas, las que por naturaleza tie nden a ser inesperadas y no se 
+pueden planificar, con el consecuente aumento en el  tiempo de paralización, costos 
+adicionales de mantenimiento; y en algunos casos co mprometiendo la seguridad y 
+el medio ambiente. 
+
+===== PAGE 3 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   3 de 17  
+ 
+Esta “Mejor Práctica” se refiere específicamente al  proceso de Mantenimiento 
+Preventivo aplicado a camiones para la minería,  re alizado en un entorno de taller y 
+está contemplado en el “Site Assessment Tool” (SAT)  versión II, en los artículos 
+2.9.1 - 2.9.9. 
+ 
+ 
+2.0 Descripción de las mejores prácticas  
+ 
+El Mantenimiento Preventivo consiste en una secuenc ia lógica de pasos o sub-
+procesos que típicamente incluyen: 
+ 
+2.1. Preparación y organización preliminar 
+2.2. Preparación y organización preliminar 
+2.3. Las actividades iniciales del  MP 
+2.4. Las actividades principales del MP 
+ 
+2.5. Los criterios de decisión del MP y del proceso de auditoría, y  
+2.6. Finalización del MP  
+ 
+La siguiente es una breve descripción de cada uno de esos pasos:  
+ 
+2.1 Preparación y organización preliminar  
+ 
+El programa de Mantenimiento Preventivo es generado  por el área de Planificación 
+y Programación,  y conciliado con el departamento d e Operaciones/ Producción. El 
+programa se desarrolla con una semana de anticipaci ón y debe ser lo 
+suficientemente flexible para incorporar los ajustes necesarios para dar cabida a las 
+desviaciones en las proyecciones de la acumulación de horas de los equipos. El 
+programa tiene en consideración cada uno de los siguientes puntos: 
+ 
+✓ Los objetivos de cumplimiento de los intervalos de servicio MP (se controla con la 
+precisión de servicio)  
+✓ La disponibilidad de recursos (mano de obra, disponibilidad de nave, piezas, 
+herramientas, etc.). Ayuda a minimizar los tiempos muertos durante el MP 
+✓ El uso de la detención como una "ventana de oportunidad" para realizar otras 
+tareas (reparaciones diferidas <backlogs> y otras reparaciones programadas) 
+✓ Impacto en la garantía de disponibilidad de la flota /compromisos adquiridos 
+✓ Los requisitos de producción de la mina (el avance del plan de producción) 
+ 
+Para poner el plan en acción, el paquete de servici os MP es entregado al 
+Departamento de Mantenimiento para que lo revise. E l paquete de servicios incluye 
+las órdenes de trabajo para el MP y para las repara ciones diferidas (backlogs) que 
+se realizarán durante el MP, todos los listados de verificación MP (checklists), los 
+diagramas Gantt (plan de trabajo), los listados de repuestos para el MP y para las 
+reparaciones que se ejecutarán durante el MP, instr ucciones especiales, etc. Se le 
+entrega al Supervisor o a la persona encargada de l a nave de MP. Esto le permitirá 
+a esa persona organizar el trabajo, por ejemplo, ve rificar que los repuestos e 
+insumos necesarios para el MP y cualquier otro trab ajo en el programa ya hayan 
+llegado y se distribuyan de tal forma que el trabaj o se realice de la manera más 
+eficiente posible, revisar la secuencia de tareas ( diagrama de Gantt) para confirmar 
+
+===== PAGE 4 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   4 de 17  
+que sea lógico, asignar la mano de obra, y distribu ir la carga de trabajo entre el 
+personal.  
+ 
+Los repuestos y los kits de repuestos se entregan y  se mantienen en un lugar 
+seguro en la nave de MP desde el día previo a la fe cha programada del MP. Es 
+responsabilidad de la persona encargada de la realización del MP el verificar que los 
+repuestos necesarios para la MP y cualquier otro tr abajo incluido en el programa 
+hayan sido entregados y se encuentren en la nave de  MP, que estén completos 
+(que no les falte nada), y se hayan distribuido /or ganizado de manera que el trabajo 
+pueda realizarse de la manera más eficiente posible. Los repuestos se organizan de 
+la siguiente forma: 
+ 
+✓ Los repuestos para el MP: kits de cambio obligatorio, partes/ conjuntos de 
+intercambio, y kits de repuestos para cambio opcional. 
+✓ Repuestos para las acciones correctivas diferidas (backlogs) y reparaciones 
+menores. 
+ 
+ 
+2.2 Las actividades iniciales del MP 
+ 
+Una vez que el equipo ha sido retirado de la operac ión y entregado a la nave de 
+lavado, debe revisarse el libro de registro del ope rador (bitácora de operación) y 
+discutido entre el operador y los técnicos responsa bles de realizar el MP. Es 
+importante tener en cuenta que la información recib ida de los operadores tiende a 
+ser relativamente de baja tecnología, visual, centr ada en los síntomas, y 
+observaciones basadas en la intuición y experiencia  propia, por lo que los técnicos 
+de MP deben ser lo suficientemente experimentados y  calificados como para 
+traducir e interpretar la información del operador y poder tomar acción al respecto. 
+ 
+Antes de comenzar cualquier trabajo en el equipo, s e debe realizar el “Análisis de 
+Riesgo en el Trabajo” (ART) para minimizar el riesg o de lesiones personales. Una 
+vez completado, se debe realizar el muestreo de flu idos con el fin de obtener una 
+muestra válida, antes que se sedimente el aceite; y  el intercambio tapones 
+magnéticos. Es evidente que es preferible hacer una  inspección previa al MP con 
+varios días de anticipación, que incluya el muestre o de fluidos (SOS), las 
+inspecciones de tapones magnéticos, descargas del V IMS y de otros sistemas a 
+bordo; sin embargo, puede ser que las circunstancia s no permitan que esto se 
+realice. Por lo tanto, si las condiciones específicas o políticas del lugar de trabajo no 
+permiten que se realice la inspección previa al MP;  es importante que esta actividad 
+se realice tan pronto como sea posible al inicio del proceso del MP.   
+ 
+A veces el lavado puede eliminar la evidencia de un  defecto o un problema 
+pendiente. Por lo tanto,  una inspección visual alr ededor del equipo puede ayudar a 
+identificar la fuente de las filtraciones... aceite , combustible, refrigerante, etc. Otros 
+controles de rendimiento del sistema o pruebas se r ealizan mejor fuera del taller o 
+fuera de la nave MP. Entre ellos se incluyen: 
+ 
+✓ Tornillos sueltos, perdidos, rotos, abrazaderas, sujetadores, etc.,  
+✓ Daños por accidentes, por ejemplo planchas dobladas, piezas rotas, etc., 
+✓ Rendimiento del sistema de aire, 
+✓ El estado del compresor de aire, 
+
+===== PAGE 5 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   5 de 17  
+✓ Rendimiento del freno 
+✓ Estado del freno de parqueo, 
+✓ El rendimiento del motor (con convertidor de torque calado), 
+✓ El rendimiento del sistema de levante, 
+✓ El rendimiento del sistema de control de tracción, etc. 
+ 
+Los resultados de estas inspecciones deben ser comp arados con el resumen de 
+trabajos pendientes (backlogs) y reportar cualquier  nuevo defecto al Supervisor de 
+MP para que sean atendidos más adelante en el proceso. 
+ 
+La limpieza del equipo es fundamental para las prác ticas de control de 
+contaminación y para las buenas prácticas de manten imiento en general. Una 
+operación de MP bien administrada debe incluir la c apacitación para el personal de 
+lavado, instruyéndolos sobre los procedimientos det allados para la correcta 
+ejecución de esta importante tarea. Además, los procedimientos deben desarrollarse 
+advirtiendo al personal para que eviten dirigir el agua hacia áreas tales como tubos 
+de escape de motores, componentes eléctricos /elect rónicos (alternadores, etc.), 
+conectores eléctricos, respiraderos, etc. Para prom over la eficiencia/ facilidad de 
+reparación, control de la contaminación, y limpieza de la nave, debe revisarse la lista 
+de todas las reparaciones que deben realizarse en paralelo con el MP (programados 
+o atrasados) con el fin de determinar si sería bene ficioso que esas áreas de la 
+máquina se limpien de manera selectiva y mas prolija. La fuente de esta información 
+es cualquier orden de trabajo relacionada a reparac iones programadas o backlogs. 
+La limpieza de los equipos debe ser auditada , y si no cumple con los estándares 
+requeridos las desviaciones detectadas deben correg irse antes de pasar a la nave 
+de MP. 
+ 
+Dado que la seguridad es fundamental para cualquier  operación exitosa de MP, las 
+siguientes tareas se realizan mejor una vez que la máquina ha sido lavada, pero 
+antes que se le traslade a la nave de MP: 
+ 
+✓ Inspeccionar los soportes de los cilindros de levante (pines y cojinetes), 
+✓ Varillaje de dirección (rótulas, pasadores y cojinetes), 
+✓ Tiempo del ciclo del sistema de dirección, 
+✓ Desgaste de los cojinetes de soporte de la estructura de la funda posterior, 
+✓ Alojamiento y pasador de la tolva, 
+✓ Cable de seguridad de la tolva, 
+✓ Presiones de los cilindros de suspensión, 
+ 
+Una vez más, los resultados de estas pruebas prelim inares e inspecciones deben 
+ser comparados con el resumen de trabajos pendiente s (backlogs) y reportar 
+cualquier nuevo defecto al Supervisor de MP para qu e se corrija mas adelante en el 
+proceso. 
+ 
+ 
+2.3 Las actividades principales del MP 
+ 
+Se deben cumplir los siguientes procedimientos de s eguridad antes de iniciar el 
+trabajo en la nave de MP:  
+
+===== PAGE 6 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   6 de 17  
+ 
+✓ Gire el interruptor principal a la posición de apagado, 
+✓ Aplicar el freno de estacionamiento, 
+✓ Colocar los bloqueos de ruedas en su posición, 
+✓ Colocar etiquetas de bloqueo y otros dispositivos de advertencia según sea 
+necesario, 
+✓ Levantar la tolva y conectar el cable de seguridad. 
+ 
+La limpieza de los fluidos es un paso fundamental p ara el logro de una vida óptima 
+de los componentes. Como tal, el proceso de MP debe comenzar con la 
+comprobación de  los niveles ISO de limpieza  (con el contador de partículas), y 
+con el lavado/ limpieza del componente o sistema de ser necesario. Una vez que las 
+lecturas iniciales del conteo de partículas se han registrado, se debe instalar el 
+equipo de “dializado” y proceder con la limpieza de l aceite de los siguientes 
+componentes y sistemas: 
+ 
+✓ Carcaza del diferencial y conjuntos de rueda trasera, 
+✓ Conjunto de Transmisión y convertidor de torque, 
+✓ Sistema de dirección, 
+✓ Sistema hidráulico, 
+ 
+Debe registrarse el conteo final de partículas, así  como el tiempo requerido para 
+alcanzar las especificaciones “ISO 4406” de limpiez a del aceite. NOTA: Si se va a 
+cambiar el aceite en cualquiera de estos sistemas c omo parte del MP, la lectura 
+inicial  (antes del cambio de aceite) debe ser docu mentada y realizar el proceso de 
+diálisis después de que el aceite haya sido cambiado.
+ 
+ 
+Simultáneamente al proceso de diálisis, se puede proceder a descargar los datos de 
+los sistemas electrónicos a bordo de la máquina par a compararlos con los datos 
+referenciales de desempeño, criterios de aceptación  predeterminados, y 
+comparación con datos de descargas anteriores para predecir posibles problemas o 
+identificar cambios en el estado del equipo.  Estos  controles del sistema de 
+información a bordo ayudarán a preparar los planes de trabajo a futuro, y revisar el 
+plan de mantenimiento o su estrategia. El análisis se debe enfocar en las siguientes 
+áreas:  
+ 
+✓ Mantenimiento... eventos y problemas con la máquina o un sistema de la 
+máquina, funcionamiento y desempeño de los componentes, gestión de vida de los 
+componentes /predicción /optimización,  análisis de fallas… 
+✓ Producción ... resúmenes de informes de producción /análisis de gestión de la 
+carga, tiempos de los ciclos y distancias... 
+✓ Operaciones ... cambios en la severidad de la aplicación, el cumplimiento del 
+funcionamiento del sistema dentro de los parámetros, la gestión de caminos de 
+acceso, el rendimiento de la máquina ... 
+ 
+Si se identifican fallas activas o problemas puntua les, se deben tomar decisiones 
+sobre las medidas correctivas a adoptar y, según co rresponda a la situación, se 
+deben afrontar de inmediato (preferible) o diferirl o ingresándolo a la lista de 
+pendientes (backlogs). Al igual que en el SOS y en las inspecciones de tapones 
+
+===== PAGE 7 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   7 de 17  
+magnéticos, es preferible descargar el VIMS y otros  sistemas con varios días de 
+antelación al MP,  como parte de una inspección pre via al MP. Se le menciona aquí 
+sólo porque las circunstancias específicas del siti o, condiciones y políticas pueden 
+impedir que se ejecute la inspección previa al MP. 
+ 
+Las actividades restantes del MP deben realizarse e n la secuencia definida por el 
+diagrama de Gantt elaborado por Planificación  y provista en el paquete de 
+servicios para el MP. Las tareas de servicio de Man tenimiento Preventivo, por 
+ejemplo, drenaje /recarga con compartimentos de flu idos, cambio de filtros, cambio 
+de filtro de cartuchos, coladores, respiraderos, ta pones /filtros magnéticos, 
+reemplazo de sellos, etc., han de realizarse en el intervalo de servicio definido para 
+cada uno de los siguientes componentes y sistemas: 
+ 
+✓ Motor, incluyendo el sistema de combustible, tanque de combustible,  y el 
+sistema de admisión de aire 
+✓ Mando del ventilador 
+✓ La transmisión, convertidor de torque, diferencial  
+✓ Los grupos de las ruedas traseras, sistema de frenos que incluye la medición del 
+desgaste del freno 
+✓ Los cubos de las ruedas delanteras, 
+✓ Sistemas de dirección y sistema de levante. 
+ 
+Las inspecciones del MP y las pruebas rutinarias  de desempeño se deben 
+realizar según el programa en cada uno de los siguientes componentes y sistemas:  
+ 
+✓ Motor, incluyendo al  sistema de combustible y el tanque de combustible, 
+✓ Transmisión, 
+✓ Convertidor de torque, 
+✓ Diferencial, 
+✓ Grupos de las ruedas traseras, 
+✓ Sistema de frenos, 
+✓ Cubos de las ruedas delanteras, 
+✓ Sistema de dirección, 
+✓ Sistema de levante. 
+ 
+Los resultados se deben cruzar con las especificaci ones del fabricante y según los 
+criterios de aceptación. Todos los resultados deben ser documentados de 
+inmediato para que no se pierdan u olviden . 
+ 
+Las rutinas de validación de los trabajos diferidos  (backlogs) están diseñados para 
+asegurar que los datos ingresados al sistema de con trol trabajos diferidos sean 
+precisos y que se evalúen los defectos potenciales que se identificaron durante la 
+inspección previa (en la nave de lavado). El “Reporte de Trabajos Diferidos” 
+(Pendientes) es uno de varios “Reportes Operacionales”, es indi spensable para 
+cualquier persona involucrada en las inspecciones MP o para aquellos que ingresan 
+requerimientos de trabajos diferidos. Los objetivos  principales de este reporte son 
+los siguientes: 
+
+===== PAGE 8 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   8 de 17  
+ 
+✓ Facilitar las rutinas de detección al permitirle al autor que sepa lo que ya está en 
+el expediente, 
+✓ Evitar la duplicación de entradas, 
+✓ Incrementar el uso de cualquier "ventana de oportunidad" para ejecutar en 
+paralelo los trabajos diferidos (backlogs) con el MP. 
+ 
+Se pueden realizar los backlogs y otros trabajos pr ogramados en la nave de MP o 
+en el taller de reparaciones, tal como lo indique el diagrama Gantt del MP. 
+ 
+2.4 Los criterios de decisión del MP y del proceso de auditoría (Control de Calidad) 
+ 
+Los defectos mas difíciles de afrontar son aquellos  detectados en el taller, 
+problemas identificados durante la inspección preli minar (en la nave de lavado), 
+inspecciones durante el MP, y /o durante las rutina s de las pruebas de desempeño. 
+La incapacidad para planificar estas tareas con ant icipación hace que estos 
+casos sean más complicados . El manejo adecuado de los defectos detectados en 
+el taller es un aspecto crítico de cualquier  estrategia de gestión de equipos. 
+ 
+Como tal, para agilizar el proceso de toma de decis iones relativas a los defectos 
+encontrados en el taller, se deben resolver y entender previamente varios puntos. El 
+equipo de PM debe ser entrenado para distinguir ent re los defectos que requieren 
+atención urgente de los defectos que no son urgente s. Esta capacitación puede ser 
+complementada a través de la elaboración, publicaci ón y comunicación de 
+directrices claras (guías) que ayuden en  la determ inación de la criticidad de los 
+defectos encontrados en el taller. Un ejemplo de la s directrices para la evaluación 
+de la urgencia de reparación podría ser de la siguiente manera: 
+ 
+✓ La reparación de los defectos hallados en el talle r deben ser considerados 
+urgentes y deben ser ejecutados de inmediato si cumplen los siguientes criterios: 
+ 
+□□ □□  Los defectos que tengan implicaciones de seguridad, por ejemplo, 
+problemas con la dirección, frenos, iluminación, sistemas críticos de alerta, 
+etc., o 
+□□ □□  Los defectos que de dejarse funcionar hasta la falla, en lugar de repararlos 
+antes de la falla, constituyen un riesgo significativo en términos de daño 
+contingente o progresivo, aumento significativo en los costos de reparación, o 
+aumento del tiempo para reparar, por ejemplo, los elementos estructurales, la 
+mayoría de los componentes mayores, etc. 
+ 
+Otros factores críticos para el éxito incluyen: 
+ 
+✓ Los técnicos de MP deben ser analíticos y tener conocimiento en la evaluación 
+de la seguridad /riesgo. 
+✓ Los técnicos MP deben sentirse facultados para tomar decisiones y actuar 
+conforme a esas decisiones. 
+ 
+Si se ha determinado que la prioridad para la repar ación de un defecto hallado en el 
+taller es de urgencia, se deben plantear las siguientes preguntas: 
+
+===== PAGE 9 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   9 de 17  
+ 
+✓ ¿La ejecución de la reparación requiere de personal especializado, o de otro tipo, 
+que no está actualmente disponible? 
+✓ ¿Podrían producirse demoras en el siguiente MP programado debido el tiempo 
+que toma ejecutar la reparación en paralelo con el MP actual, y al conflicto 
+(requerimiento simultaneo) para el uso de las naves de MP?  
+✓ ¿Se requerirán repuestos que por esperarlos (no disponibles en sitio) puedan 
+demorar la ejecución del siguiente MP programado? 
+✓ ¿Se requerirán herramientas y recursos adicionales que deben conseguirse y 
+demorarán el inicio del siguiente MP programado?  
+ 
+Si la respuesta a cualquiera de las preguntas anter iores es "Sí", la máquina se 
+debe llevar al taller de reparación , y ejecutar las reparaciones conforme a las 
+directivas de la “Gestión de Reparaciones”.  
+ 
+Si se determina que la prioridad de un defecto hall ado en el taller no es urgente, las 
+siguientes directrices son aplicables: 
+ 
+✓ Los defectos menores, por ejemplo, pernos sueltos, elementos de sujeción, 
+acoples, fugas, etc. que se pueden reparar de forma rápida y sin la necesidad de 
+repuestos, herramientas especiales /instrucciones, etc. debe realizarse en paralelo 
+con el MP siempre que no haya interferencia o demoras con la programación 
+vigente del MP. 
+✓ Los defectos menores cuya reparación pueda interferir o retrasar el programa 
+actual del MP, ya sea debido al tiempo requerido para ejecutar la reparación, 
+obtener /organizar la mano de obra, conseguir repuestos, herramientas especiales 
+/instrucciones, etc. Deben diferirse e ingresarse al sistema de “Gestión de 
+Backlogs”. Nota: Considerar que esta decisión puede afectar la confiabilidad del 
+equipo luego del PM si la gravedad es subestimada. 
+ 
+Un Sistema totalmente funcional de Gestión de Backl ogs garantiza que la 
+información detallada sea capturada y no se pierda.  Como se señaló anteriormente, 
+si se ha determinado que el defecto no tiene priori dad urgente y que no se puede 
+reparar en paralelo con el MP, debe ingresarse al S istema de Gestión de Backlogs, 
+con un requerimiento de trabajo diferido (OT diferi da). Este registro se utiliza para 
+comunicar las  reparaciones pendientes al Departame nto de Planificación, cuya 
+responsabilidad es planificar y programar la reparación de la manera más eficiente y 
+efectiva posible. Los siguientes puntos son fundame ntales para el éxito del sistema 
+de Gestión de Backlogs: 
+ 
+✓ Evitar la duplicación ... comparar las nuevas entradas con la lista de Backlogs en 
+espera, 
+✓ Asegurar que la información proporcionada en la solicitud de backlog sea lo más 
+precisa y completa como sea posible, 
+✓ El porcentaje de backlogs detectados durante el MP debe ser mínimo. 
+ 
+La ejecución del programa de MP tal como se planifi có puede marcar la diferencia 
+entre el éxito y el fracaso. El proceso de auditoría posterior al MP es la mejor  
+manera de asegurar el cumplimiento del plan del MP . Si se realiza una buena 
+
+===== PAGE 10 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   10  de 17  
+comunicación, los resultados de la auditoría pueden  ser usados como parte del  
+esfuerzo de mejora continua para perfeccionar el pr oceso de MP y así cumplir con 
+los requisitos específicos de performance en la ope ración. El proceso de auditoría 
+puede tomar una de las siguientes formas: 
+ 
+✓ Supervisor pone su V° B°  en los puntos críticos en el proceso (método preferido) 
+✓ Realizar controles aleatorios  después de la finalización MP. 
+ 
+Al usar los resultados de  la auditoría posterior a l MP para definir oportunidades de 
+capacitación en MP, al refinar /mejorar las listas de verificación de PM (checklists), y 
+al determinar las deficiencias en el proceso de MP se tendrá información que 
+ayudará a  mejorar la calidad y eficacia de los MP. 
+ 
+2.5 Finalización del MP 
+ 
+Una vez que se ha completado el trabajo en la nave de MP, la máquina se debe 
+trasladar al taller de reparaciones para corregir c ualquier defecto urgente detectado 
+en el taller durante el proceso de MP. Si no se enc ontró ningún defecto, el 
+supervisor de MP o la persona responsable por el MP  debe avisar al despacho y al 
+Departamento de Operaciones que la máquina se encue ntra disponible para su 
+operación.   
+ 
+Muchas de las decisiones de gestión se basan en el conocimiento de la carga 
+de trabajo . Si esta información no se mantiene al día y se co munica, la gerencia 
+tiene poca idea en cuanto a la cantidad de mano de obra disponible en cualquier 
+momento dado. En la mayoría de las minas se hace ra zonablemente un buen 
+trabajo a través del uso de tableros de programació n electrónica o manual. Es la 
+responsabilidad del encargado de MP informar a plan ificación tan pronto como el 
+MP se haya completado. Esta acción libera a la máqu ina de las manos de MP y se 
+deja de contabilizar el tiempo de máquina detenida, y el tiempo empleado se registra 
+en la orden de trabajo del MP. 
+ 
+Después de la máquina ha sido entregada por MP, es el momento de corregir 
+cualquier posible error en los datos. El Supervisor  MP, o la persona responsable del 
+MP, debe auditar todos los documentos para verifica r que estén completos y 
+contengan la data precisa antes de pasarlo al Departamento de Planificación para la 
+ingresarlo en el archivo del historial de la máquin a. Las fuentes de datos de MP 
+incluyen típicamente lo siguiente: 
+ 
+✓ Las listas de verificación del MP (Checklists) 
+✓ Las órdenes de trabajo para el MP, backlogs, y cualquier reparación programada 
+o no programada ejecutados durante el proceso del MP 
+✓ Los requerimientos de backlogs, 
+✓ El registro del turno de mantenimiento (planillas del uso de mano de obra).
+ 
+ 
+Cualquier omisión o desviación en los resultados de ben ser corregidas antes de 
+enviar los datos al equipo de Planificación y el eq uipo de MP debe ser notificado 
+para asegurar que estos problemas no se repitan en el futuro. 
+ 
+La información y documentación relacionada con el M P debe ser distribuida al 
+
+===== PAGE 11 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   11  de 17  
+personal adecuado lo más rápidamente posible, para asegurarse de que se actúe 
+en consecuencia. Esta información incluye: 
+ 
+✓ Las ordenes de trabajo del MP y sus listas de comprobación (checklists), 
+✓ Descargas de archivos electrónicos de la máquina, 
+✓ Las muestras de fluidos, 
+✓ Los tapones magnéticos, filtros, coladores, etc. 
+ 
+La distribución oportuna de la información de los r esultados del MP, a las personas 
+apropiadas, permite que ésta se use como una fuente de alimentación en el proceso 
+de mejora del desempeño. Los resultados del MP y la  información relacionada se 
+pueden utilizar para identificar problemas, no sólo  con el equipo, sino también con 
+los procesos de ejecución del MP,  así como de planeamiento y programación. 
+ 
+Los repuestos pueden ser una causa significativa de demoras y aumento del tiempo 
+de paralización si no se les administra correctamen te. La gestión eficaz de los 
+repuestos para el MP reducirá los costos de mantenimiento y simplificará el proceso, 
+haciéndolo más eficiente. Las devoluciones de repue stos normalmente asociadas al 
+proceso de MP se deben a: 
+ 
+✓ Los repuestos opcionales que no se utilizaron de los kits de MP, 
+✓ Los repuestos de los backlogs u otras reparaciones programadas que no se 
+ejecutaron durante el MP.
+ 
+ 
+Para que sea plenamente eficaz, se recomienda asign ar a una persona para 
+que sea responsable de los repuestos del MP . Puede que sea necesario 
+establecer una  política de devolución de repuestos  especial, ya que muchos 
+Departamentos de Repuestos se oponen a la devolució n de repuestos una vez que 
+se han asignado a una orden de trabajo. 
+ 
+Las instalaciones limpias y ordenadas (5S) facilita n un trabajo de alta calidad . 
+Preparar la nave de MP para el próximo servicio pro gramado asegura que las 
+instalaciones se mantengan de tal forma que el sigu iente trabajo se haga tan 
+eficiente y efectivamente como sea posible. Esta preparación incluye: 
+ 
+✓ Servicio de limpieza / eliminación de los fluidos del piso para eliminar los peligros 
+potenciales en el trabajo, 
+✓ Regresar las herramientas y equipos a sus ubicaciones adecuadas,
+ 
+✓ Reposición de suministros, por ejemplo, trapos de taller, líquidos de limpieza, 
+etc., según se requiera para apoyar la ejecución eficiente del MP. 
+ 
+Una de las claves para el éxito en esta área es el desarrollo de una lista de 
+verificación (checklist) para los procedimientos de l MP y así mantener la nave 
+en buen orden de funcionamiento, asignando responsables que se comprometan en 
+mantener la nave de MP en buenas condiciones. 
+ 
+ 
+ 
+ 
+
+===== PAGE 12 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   12  de 17  
+3.0 Pasos para la implementación 
+ 
+• Estrategia de Mantenimiento Preventivo 
+Los pasos críticos asociados con la implementación del proceso de mantenimiento 
+preventivo comienzan con la definición y desarrollo de la estrategia de MP . La 
+estrategia de MP debe documentarse por escrito y de be considerar y definir cada 
+uno de los siguientes elementos: 
+✓ Intervalos de servicio para los MP ... típicamente  de 250 a 500 horas, 
+✓ El plan del MP... definir los equipos a ser reparados y el alcance del trabajo a 
+realizar, 
+✓ Mano de Obra 
+✓ Capacitación y entrenamiento, 
+✓ Necesidades de infraestructura y de recursos, 
+✓ La evaluación de las mediciones del MP / informes ... ¿Cómo se medirá el 
+rendimiento de MP? 
+ 
+• Definición del Plan de MP 
+A qué máquinas se considerará, ¿Cuántas y cuáles se rán las rutinas a incluir en el 
+plan de implementación del MP?, por ejemplo, 
+ 
+✓ 20 X 797F camiones fuera de carretera  
+✓ Lavado de la máquina 
+✓ Servicio de MP (lubricantes, aceites y filtros), 
+✓ Monitoreo de condiciones, por ejemplo, 
+□□ □□  Muestreo de aceite, la inspección de los tapones magnéticos, coladores y 
+filtros, 
+□□ □□  Inspección visual para detectar daños y desgaste, 
+□□ □□  Pruebas de rendimiento de sistemas y ajustes, 
+□□ □□  Gestión de datos de los sistemas electrónicos de a bordo, 
+✓ Ejecución de las reparaciones de oportunidad (backlogs y otras reparaciones). 
+ 
+• Mano de Obra 
+¿Qué recursos humanos se necesitan para implementar  y realizar el Plan de 
+Mantenimiento Preventivo?, por ejemplo, la cantidad  de personal, roles y 
+responsabilidades, atributos personales, habilidade s, etc. (Ver también las 
+necesidades de recursos /recursos humanos en la Sección 5.0) 
+ 
+• Capacitación 
+¿Cómo se puede evaluar la competencia (habilidades y conocimientos) del 
+personal? ¿Qué entrenamiento se necesita para desar rollar las habilidades 
+necesarias para realizar las tareas relacionadas con el mantenimiento preventivo? 
+ 
+• Infraestructura y Requerimiento de Recursos  
+¿Qué infraestructura y recursos serán necesarios pa ra ejecutar el Plan de 
+Mantenimiento Preventivo? 
+✓ Naves para los MP y lavado ... Cantidad de naves y sus dimensiones físicas? 
+¿Instalaciones dedicadas/ especializadas?, 
+✓ Herramientas especiales e instrumentación…. Dedica dos exclusivamente a 
+
+===== PAGE 13 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   13  de 17  
+MP?..., 
+✓ Repuestos... kits de repuestos para los MP, repuestos para los trabajos diferidos 
+(backlogs), etc. 
+✓ Listados de verificación y formularios específicos para el modelo de máquina... 
+"MP tradicional", "MP de 8 pasos ”, etc.,  
+✓ Procedimientos bien definidos... documentados por escrito. 
+(Ver también las necesidades de recursos y recursos logísticos en la Sección 5.0) 
+ 
+• Medición del Desempeño del MP /reportes 
+¿Qué es lo que define el éxito en el mantenimiento preventivo? ¿Cuáles son las 
+medidas de desempeño que están disponibles y que ay udan en la cuantificación de 
+nuestros esfuerzos en el mantenimiento preventivo? Una vez que se hayan 
+respondido estas preguntas, los siguientes temas de ben tomarse en consideración 
+cuando se elabore un plan para cuantificar el rendi miento de Mantenimiento 
+Preventivo 
+✓ Los requerimientos para el ingreso de data básica, 
+✓ Las fuentes de donde se obtiene la data, 
+✓ La frecuencia de recolección de la data y las responsabilidades relacionadas, 
+✓ El flujo de datos y su manejo, 
+✓ Metodología de cálculo, 
+✓ Los objetivos de rendimiento y los criterios aceptación, 
+✓ Los análisis e interpretación de los roles y responsabilidades, 
+✓ Análisis e interpretación de las directrices (guías de trabajo), 
+✓ Gestión de la información /archivamiento, 
+✓ Los formatos para los informes (plantillas), 
+✓ Reporte de tiempos y frecuencias, 
+✓ Comunicaciones /red de distribución, 
+✓ Los formatos de distribución y los medios de comunicación.
+ 
+ 
+Por favor, consulte el documento "Indicadores (KPI)  para evaluar el 
+desempeño del proceso" para obtener una lista completa y una explicación de 
+las métricas de rendimiento de los procesos de mantenimiento preventivo. 
+ 
+ 
+4.0 Beneficios 
+ 
+ 
+La implementación exitosa de un proceso integral  de mantenimiento preventivo, por 
+ejemplo, que incluya no sólo la meta de cualidades preventivas, sino también 
+cualidades predictivas y correctivas por naturaleza, apoyará a lograr los objetivos de 
+la mayoría de las organizaciones mineras de la siguiente manera: 
+ 
+✓ Productividad de los equipos ... se mantiene la condición del equipo de acuerdo a 
+las especificaciones de diseño y opera con el máximo rendimiento. 
+✓ Producción de la flota ... las averías y sus consecuentes reparaciones no 
+planificadas se mantienen en su mínima expresión, dando por resultado una 
+disminución en la frecuencia de fallas y en el tiempo de paralización. 
+✓ Costos de operación ... se optimizan las vidas de los componentes y se evitan 
+
+===== PAGE 14 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   14  de 17  
+daños progresivos o contingentes. 
+✓ La eficiencia del trabajo ... la mano de obra se utiliza de manera proactiva 
+(planificada) en lugar de ser reactiva (crisis de la "gestión"). 
+✓ Seguridad ... Los sistemas críticos tales como por ejemplo los sistemas de 
+dirección y los sistemas de frenos se encuentran funcionando según las 
+especificaciones de diseño. 
+ 
+Como resultado, el costo por tonelada se optimizará  en el largo plazo, dando por 
+resultado un incremento en la satisfacción del cliente. 
+ 
+ 
+5.0 Requerimientos de Recursos 
+ 
+• Recursos Humanos: 
+Las necesidades de recursos humanos asociados con l a implementación y 
+ejecución del plan de mantenimiento preventivo incluyen: 
+ 
+► Planner ... define y organiza los recursos y tiemp os estimados para facilitar la 
+ejecución más eficaz y eficiente  de las actividades del mantenimiento preventivo. 
+□□ □□  Asegura que las actividades estén alineadas con la estrategia del MP. 
+□□ □□  Define, organiza y separa las instalaciones, mano de obra, repuestos, 
+herramientas, formularios, listas de verificación, etc. para el MP. 
+□□ □□  Establece las prioridades para la ejecución del MP. 
+□□ □□  Se comunica y obtiene la aprobación del Departamentote Operaciones para el 
+plan del MP 
+□□ □□  Comunica el plan del MP al Departamento de Repuestos y a otros proveedores 
+externos. 
+ 
+ 
+► Analista de Flota (Ingeniero de Confiabilidad) ...  Proporciona apoyo técnico al 
+Planner relativo  al contenido del MP y a su ejecución. 
+□□ □□  Define los listados de verificación del MP para cada modelo y los suministra al 
+Planner. 
+□□ □□  Se asegura que los listados de verificación del MP reflejen las directrices actuales 
+de los fabricantes y sus recomendaciones. 
+□□ □□  Actualiza los listados de verificación para que vayan de acuerdo con la edad de 
+los equipos, su  aplicación y condición actual. 
+□□ □□  Revisa los listados de verificación del MP para que se aborden los temas clave 
+que se encuentran en seguimiento. 
+□□ □□  Hace seguimiento /analiza los resultados de las inspección y pruebas de  
+rendimiento. 
+ 
+► Repuestos (almacén central de repuestos... para da rle soporte al Departamento 
+de Repuestos en el lugar de trabajo, con entregas o portunas de repuestos para los 
+MP. 
+□□ □□  Arma Kits de repuestos para los MP (mandatorios, de intercambio, y opcionales) 
+para su envío al sitio de trabajo. 
+□□ □□  Arma kits de SOS para su envío al sitio de trabajo. 
+□□ □□  Garantiza la disponibilidad de repuestos para los MP en el sitio de trabajo. 
+□□ □□  Identifica los cambios en los números de parte de los repuestos del MP y 
+actualiza los listados conforme a ello. 
+
+===== PAGE 15 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   15  de 17  
+ 
+► Repuestos (almacén en el lugar de trabajo)... para  darle soporte al proceso de 
+Mantenimiento Preventivo con la entrega oportuna de repuestos de calidad. 
+□□ □□  Recibe los kits para los MP desde el almacén central de repuestos. 
+□□ □□  Verifica que los kits de repuestos recibidos estén conforme al programa de MP. 
+□□ □□  Almacena los kits de repuestos MP en un lugar limpio y seguro. 
+□□ □□  Entrega los kits de repuestos MP a la ubicación asignada en la nave de MP antes 
+de la llegada del equipo programado.
+ 
+□□ □□  Re-acondiciona las piezas de los kits de repuestos de intercambio del MP y 
+completa los kits de repuestos opcionales reponiendo lo que se haya utilizado. 
+□□ □□  Recupera las botellas de SOS para su envío al laboratorio de aceite. 
+ 
+► Programador... convierte el plan de mantenimiento preventivo en el cronograma 
+ejecutable. 
+□□ □□  Programa los MP en conformidad con el plan MP, a la estrategia y los recursos 
+disponibles. 
+□□ □□  Publica /distribuye el programa del MP a todas las áreas apropiadas. 
+□□ □□  Actualiza el cronograma MP para incorporar las variaciones por la utilización del 
+equipo (ajuste de horómetros). 
+□□ □□  Utiliza la "Ventana de Oportunidad" que ofrece el MP, considerando los objetivos 
+del MP, para programar reparaciones diferidas (backlogs) en conjunto con el MP. 
+ 
+► Equipo encargado de la nave de lavado... limpia el  equipo en un modo que 
+promueva la eficacia y eficiencia en la ejecución del MP. 
+□□ □□  Cumplen con los procedimientos establecidos para el lavado de los equipos... 
+utilizan de manera apropiada los cañones de alto caudal de agua así como los 
+equipos portátiles mas pequeños. 
+□□ □□  Utilizan vapor /detergente para limpiar las áreas que serán intervenidas durante la 
+ejecución del MP. 
+□□ □□  Evita daños en el equipo al dirigir el agua lejos de las áreas de sensibles. 
+□□ □□  Asegura la calidad de la limpieza de las máquinas para ejecutar el MP. 
+ 
+► Los técnicos... realizar las actividades de manten imiento preventivo de acuerdo 
+con las guías y procedimientos descritos en el plan de MP. 
+□□ □□  Cumplen /exceden los objetivos de calidad para las MP (MTBS después de MP) y 
+de eficiencia (MTTR del MP). 
+□□ □□  Documentan los resultados, completan las listas de control de MP sobre la 
+marcha. 
+□□ □□  Proporcionan información completa y precisa en las listas de verificación. 
+□□ □□  Ejecutan todas las tareas incluidas en el plan; backlogs, etc. 
+□□ □□  Prestan atención a los detalles, realizan inspecciones, pruebas de rendimiento y 
+otras técnicas de monitoreo de condiciones para identificar los defectos o problemas 
+potenciales. 
+□□ □□  Corrigen los defectos inmediatamente de ser posible, registran en el sistema de 
+backlogs aquellos que no se puedan corregir en esta oportunidad. 
+ 
+► Supervisor MP... dirige, supervisa y audita todas las tareas de mantenimiento 
+preventivo de una manera que resulte en una mejora del rendimiento y confiabilidad 
+de los equipos. 
+□□ □□  Asegura que los procedimientos del MP se realicen con SEGURIDAD. 
+
+===== PAGE 16 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   16  de 17  
+□□ □□  Asegura el cumplimiento de todos los procedimientos del MP. 
+□□ □□  Promueve la ejecución eficaz y eficiente del MP. 
+□□ □□  Identifica las limitaciones en los recursos para el MP y busca soluciones. 
+□□ □□  Define las necesidades y deficiencias para el entrenamiento en MP  
+□□ □□  Verifica la integridad de toda la data del MP, asegura que los registros sean 
+precisos y completos. 
+□□ □□  Audita los procesos del MP para garantizar la calidad de la ejecución del MP. 
+ 
+• Recursos logísticos: 
+Los requerimientos  de recursos logísticos asociado s con la ejecución del plan de 
+mantenimiento preventivo incluyen: 
+ 
+► Instalaciones 
+□□ □□  Nave(s) de Lavado... 
+• Dimensionadas para los equipos mas grandes. 
+• Cantidad suficiente para reducir al mínimo las dem oras. 
+• Equipado para quitar el barro, la suciedad y la gr asa... cañones de agua 
+de alto caudal, pistolas de alta presión, vapor, desengrasante para la 
+limpieza selectiva. 
+• Diseñado con plataformas de acceso y escaleras. 
+• Drenaje (agua y residuos), con capacidad de recicl ado de agua, 
+capacidad de separación de aceite / grasa / agua. 
+ 
+□□ □□  Nave(s) de MP... 
+• Nave(s)/ instalaciones dedicadas para MP 
+• Dimensionadas para los equipos mas grandes. 
+• Cantidad suficiente para reducir al mínimo los ret rasos. 
+• Disponibilidad de aire comprimido, agua, electrici dad  
+• Manipulación de fluidos... evacuación de usados, e ntrega (filtrado, medido 
+y con conexiones rápidas) y capacidad de limpieza de los derrames. 
+• Ambiente de trabajo... bien iluminado, iluminación  portátil, puertas para el 
+control del polvo/ contaminación, superficie de trabajo de calidad, tubos de 
+escape /control de humos. 
+ 
+► Herramientas 
+□□ □□  Herramientas manuales dedicadas al área, cajas de herramientas, carros de 
+trabajo. 
+□□ □□  Herramientas especiales dedicadas al área... herramientas neumáticas, 
+dispositivo de corte de filtros, toma de muestras de aceite (SOS), etc. 
+□□ □□  Instrumentos de diagnóstico y pruebas dedicados... presión / temperatura / 
+velocidad, contador de partículas, etc. 
+□□ □□  Literatura técnica de servicio dedicada al área. 
+□□ □□  Equipos de protección personal. 
+ 
+► Equipamiento 
+□□ □□  Equipos de seguridad personal y botiquín de primeros auxilios. 
+□□ □□  Protección contra Incendios / extintores. 
+□□ □□  Bancos de trabajo equipados con tornillos de banco. 
+□□ □□  Estación de trabajo... área de escritura con acceso a computadora. 
+□□ □□  Gabinetes seguros para las herramientas e instrumentación del MP, literatura, y 
+recepción/ almacenaje de repuestos 
+
+===== PAGE 17 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Mantenimiento Preventivo- Mejor Práctica Estratégica 
+ 
+ 
+Fecha: 
+10-Sep-2007 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1007-2.0-1101 
+Caterpillar Confidential GREEN   17  de 17  
+□□ □□  Materiales de limpieza... lavado de piezas / tanque de lavado con solvente, 
+aspiradora de taller, papel toalla, trapos, jabón, etc. 
+□□ □□  Carros de diálisis de aceite, dispositivos de elevación, cadenas o eslingas, gatos 
+hidráulicos y soportes, escaleras y plataformas, cuñas para las ruedas... 
+ 
+► Información 
+□□ □□  Programa/ cronograma semanal de MP. 
+□□ □□  Periódico mural para publicar el rendimiento del MP. 
+□□ □□  Las órdenes de trabajo para los MP y las reparaciones que se realizarán durante 
+el MP. 
+□□ □□  Listas de verificación MP específicas para cada modelo / equipo. 
+□□ □□  Listado vigente de los Backlogs para los equipos a darles mantenimiento. 
+□□ □□  Cartas Gantt para todas las actividades realizadas durante el MP. 
+□□ □□  Listado de repuestos por cada actividad que se realizará durante el MP. 
+□□ □□  Instrucciones especiales, etc. 
+ 
+Los costos más importantes de implementación incluy en los recursos logísticos 
+(naves de MP, naves de lavado, todo su equipamiento  y herramental asociado) y el 
+tiempo y experiencia invertidos en desarrollar el c ontenido de los materiales de 
+soporte (listados de verificación, procedimientos, directrices, etc.)  
+ 
+ 
+6.0 Literatura de apoyo 
+• Diagrama de procesos de la gestión de equipos de “Caterpillar Global Mining” 
+(Mantenimiento Preventivo)  
+• "Indicadores (KPI) para evaluar el desempeño del proceso" - Documento en  
+Microsoft Word 
+ 
+7.0 Otras “Mejores Prácticas” Relacionadas 
+• Metas y Objetivos para el mantenimiento preventivo (ref. 1006 - 3.1 - 1022) 
+• Mejora de las Operación de los MP Utilizando Naves Especializadas (ref. 0607 a 
+2,9 - 1081) 
+• Proceso de MP de 8 etapas (ref. 1011-1.01-1219) 
+• Utilizando los datos del VIMS para el mantenimiento planeado eficaz (ref.1006 -
+2,15 -1,027) 
+ 
+8.0 Reconocimientos 
+Esta “Mejor Práctica” estratégica de "Mantenimiento Preventivo" fue escrita por: 
+ 
+Jim McCaherty  
+Mining Equipment Management / Processes Division  
+Caterpillar Global Mining  
+(309) 675-5595  
+McCaherty_James_W@cat.com 
+ 
+Un reconocimiento especial a Daniel Adkison por sus contribuciones en  este 
+esfuerzo. 
+ 
+ 
+Traducido y revisado por Carlos R. Molina.

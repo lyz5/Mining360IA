@@ -1,0 +1,412 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+February 21  
+1.01-210212-1 
+875 W Cushing St., Tucson, AZ 85745 cat.com/minin g 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Universal base for track 
+type tractors final drives 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Universal Final Drive Base ......................................... 0
+ 
+1.0  Introduction ........................................................ 1 
+2.0  Best Practice Description ................................... 2 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits .............................................................. 2 
+5.0  Resources Required .......................................... 3 
+6.0  Supporting Attachments / References ............ 3-9 
+7.0  Related Best Practices .................................... 10 
+8.0  Acknowledgements .......................................... 10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Universal base for track type tractors final drives 
+DATE 
+2/12/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210212-1 
+Caterpillar: Confidential Yellow                  Page 1 of 10 
+1.0 Introduction  
+ 
+During the disassembly process, the TTT final dr ives are transported vertically, except when 
+they are washed, as it is done horizontally. 
+This is due to the fact that it is necessary to have access to wash the component internally on 
+both sides, as illustrated in the following image. 
+ 
+ 
+ 
+ 
+ 
+After removing the brake and the planetary reduction from the Dozer final drives, the spindle-
+wheel assembly is sent to pre-wash on two wooden pallets; this handling and transport is 
+complicated and unstable due to its geometry, generating an unsafe condition for those around 
+during the execution of the task. 
+This Best Practice proposes the design and manufacture of a universal base for the secure 
+attachment and transport of the Spindle-Wheel assembly in all models of Dozer Final drives when 
+they are sent to the washing area during the disassembly process. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Universal base for track type tractors final drives 
+DATE 
+2/12/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210212-1 
+Caterpillar: Confidential Yellow                  Page 2 of 10 
+2.0 Best Practice Description 
+ 
+This best practice applies to all models of final drives on D9, D10 and D11track-type 
+tractors. The base is manufactured in A36 Steel; it has two fastening points to transport it 
+by means of the forklift. In each one, a curved support is installed; these are separated 485 
+mm from each other, where the side of the Spindle and the wheel rest. The first one rests 
+to 732mm and the second one rests to 462mm measured from the ground. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+ Take measurements to the different models on Dozers final drives. 
+ Design of the base according to the measures taken. 
+ Load Analysis of the base.  
+ Manufacturing of the base. 
+ Conduct tests at the shops with different models of final drives.  
+ Start-up, after disclosing it to the operation with its change format. 
+ 
+ 
+4.0 Benefits 
+ 
+ It is safe when transporting the component. 
+ It is safe for the personnel when transporting. 
+ There’s some reduction in transporting times due to its reliability by the fastening of the 
+component to the base. 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Universal base for track type tractors final drives 
+DATE 
+2/12/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210212-1 
+Caterpillar: Confidential Yellow                  Page 3 of 10 
+5.0 Resources Required 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Universal base for track type tractors final drives 
+DATE 
+2/12/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210212-1 
+Caterpillar: Confidential Yellow                  Page 4 of 10 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Universal base for track type tractors final drives 
+DATE 
+2/12/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210212-1 
+Caterpillar: Confidential Yellow                  Page 5 of 10 
+  
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Universal base for track type tractors final drives 
+DATE 
+2/12/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210212-1 
+Caterpillar: Confidential Yellow                  Page 6 of 10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Universal base for track type tractors final drives 
+DATE 
+2/12/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210212-1 
+Caterpillar: Confidential Yellow                  Page 7 of 10 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Universal base for track type tractors final drives 
+DATE 
+2/12/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210212-1 
+Caterpillar: Confidential Yellow                  Page 8 of 10 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Universal base for track type tractors final drives 
+DATE 
+2/12/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210212-1 
+Caterpillar: Confidential Yellow                  Page 9 of 10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Universal base for track type tractors final drives 
+DATE 
+2/12/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210212-1 
+Caterpillar: Confidential Yellow                  Page 10 of 10 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Enrique Urbina 
+CRC Development Project Chief RELIZAN CAT 
+Email: enrique.urbina@relianz.com.co 
+ 
+Juan Luis Perez  
+CRC Engineer Assistant RELIZAN CAT  
+Email: practicante.desarrollocrc@relianz.com.co 
+ 
+Elkin Perez 
+CRC Workshop Supervisor
+ DIMANTEC 
+Email: elkin.perez@dimantec.com.co 
+ 
+Checked by: 
+ 
+       Luis Alberto Fernandez Chica 
+      BP Coordinator & Development Engineer RELIANZ CAT 
+      Email: luisalberto.fernandez@relianz.com.co 
+ 
+        Karen De La Hoz Benitez  
+       Training engineer RELIANZ CAT 
+       Email: karen.delahoz@relianz.com.co 
+Translated by:  
+ 
+Edgard Romero Avena  
+Learning Solutions Specialist RELIANZ CAT 
+Email: edgard.romero@relianz.com.co

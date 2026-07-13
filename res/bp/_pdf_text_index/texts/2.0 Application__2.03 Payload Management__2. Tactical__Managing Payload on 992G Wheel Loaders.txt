@@ -1,0 +1,395 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Managing Payload on 992G 
+Wheel Loaders 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+Managing Payload on 992G Wheel Loaders.............. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+November 2006 
+1106-1.1-1046 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+This Best Practice illustrates the use of VIMSTM data for managing payloads in an application 
+where 992G Wheel Loaders were required to deliver precise payloads. 
+ 
+Application background: 
+• Iron Ore loaded onto train cars for 
+transport via public rail network 
+• Mining contractor responsible for 
+loading the train cars. 
+ 
+This practice was developed when the 
+contractor approached the Caterpillar Dealer 
+to find a payload system that would address 
+the following:  
+• Rail wagon axle loadings are critical to 
+the public railway. 
+• Maximum payload critical for client. 
+• Validation that wagons loaded 
+correctly by the Contractor 
+ 
+Precision payloads would rely upon VIMS functioning and reporting correctly, subsequently 
+leading to:  
+• Lower cost per ton, by delivering maximum payloads to the Port. 
+• Eliminate overloading of the wagon /axles. 
+• Correct payload in wagons to maximize revenue for customer  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+992G loading ore wagons 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Payload on 992G Wheel Loaders 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1106-1.1-1046 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+2.0 Best Practice Description 
+ 
+VIMS would be utilized for acquiring key payload data, as it was already on the 992G Wheel 
+Loaders. Although, originally it did not report total truck weight, so Caterpillar changed the VIMS 
+report and machine configuration file to enable this feature. 
+ 
+1. Every train loaded has an ID number (i.e. “7625”) and every wagon used to transport the ore, 
+displays a “wagon ID” which was painted on the wagons by the railway company.  
+ 
+• The Wagon ID numbering system 
+has been categorized by target 
+payload (for example: #100 to 
+#200 would have a target weight 
+of 68 tons; and #201 - #300 would 
+have a target weight of 66 tons).  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2. The train number is entered when the 
+train stops. This number is entered into 
+the “BLAST NUMBER” field.  
+ 
+3. The 992G operator begins to load the 
+train, and after the first bucket, is 
+prompted to enter the wagon ID (which 
+is painted on the side of the ore wagon).  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Prompt for Train Number 
+Wagon identification numbers painted to the 
+side of ore wagons. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Payload on 992G Wheel Loaders 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1106-1.1-1046 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+ 
+4. VIMS prompts the operator to select the 
+Material ID for loading “fines” or “lump” onto 
+the train.  
+ 
+5. The operator will load two full buckets, take a 
+payload reading, and adjust the third and final 
+load accordingly, to match the target payload 
+of the wagon. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+6. After the shift is complete and the machine is parked, the payload data is uploaded via 
+wireless link directly into a program (provided by the dealer) on an office computer. Summary 
+reports are generated to analyze payloads by train ID.  
+ 
+7. The total payload (tons) loaded, is verified by the Client when unloading at the port. Both the 
+VIMS report and Client report are then reconciled. If excessive variation is discovered in each 
+wagon, the operator will complete additional training on the payload system. 
+ 
+The VIMS payload reporting system is accurate, and a report confirms the payload weight 
+variance on every wagon. (See next page). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+992G VIMS Payload Data 
+Prompt for material ID 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Payload on 992G Wheel Loaders 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1106-1.1-1046 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+992G VIMS Data uploaded into Payload Analysis Detailed Report program 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Payload on 992G Wheel Loaders 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1106-1.1-1046 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+3.0 Implementation Steps 
+ 
+1. Client paints the wagon ID numbers onto the 
+ore wagons. 
+2. Dealer relocates keypad to enable easy 
+operator input into VIMSTM.   
+3. Dealer creates Train Loading Report Program 
+to verify actual wagon payloads. 
+4. Caterpillar had to change the report files and 
+configuration files in the 992G loader system 
+5. Contractor has a master test weight fabricated 
+and certified. 
+6. Dealer and contractor set-up VIMS
+TM. and 
+trained 992G operators. 
+ 
+ 
+4.0 Benefits 
+ 
+1. Train weight-to-Port weight is verified and accurate. 
+2. The axle loadings are checked and wagon loads verified. 
+3. The Customer has maximum payload railed to the Port. (One-half a ton short/ wagon could 
+result in a potential revenue loss of $7 million) 
+4. Correct axle weights reduce risk to the customer (in the case of a derailment). 
+5. Correct payload in wagons maximizes revenue for customer. 
+ 
+ 
+5.0 Resources Required 
+ 
+1. Client paints wagon ID numbers to wagons    - $5,000 
+2. Dealer made report program. (No charge)    - $       0 
+3. Contractor fabricates calibration weight & validates.   - $7,000 
+4. Dealer relocates VIMS key pad      - $1,000 
+5. Dealer conducts site training. (No charge)    - $       0 
+ 
+       TOTAL   - $13,000 
+ 
+ 
+6.0 Supporting Attachments / References 
+None applicable. 
+ 
+7.0 Related Best Practices 
+None applicable. 
+ 
+VIMS keypad relocated for easier operator access 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Payload on 992G Wheel Loaders 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1106-1.1-1046 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Dale Moody  
+Customer Support Manager 
+WesTrac Equipment 
+dale.moody@westrac.com.au  
+ 
+For additional information regarding this Best Practice, please contact: 
+Justin C. Swisher 
+Caterpillar Global Mining  
+Product Evaluation Engineer 
+swisher_justin_c @cat.com  
++1-309-494-4169 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Payload on 992G Wheel Loaders 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1106-1.1-1046 
+Caterpillar Confidential:  GREEN          Page 6 of 6

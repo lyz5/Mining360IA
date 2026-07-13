@@ -1,0 +1,416 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+April 07 
+1006-3.1-1022 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      mining.cat.com 
+ 
+ 
+ 
+ 
+B E S T  P R A C T I C E  S E R I E S 
+Goals & Objectives for 
+Preventive Maintenance 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+ 
+Goals & Objectives for Preventive Maintenance ........ 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments .................................... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Goals & Objectives for Preventive Maintenance 
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1006-3.1-1022 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+1.0 Introduction  
+ 
+Site support processes such as Preventive Maintenance are often times very much task -oriented, 
+that is, the individuals responsible for their execution are aware of the activities associated with 
+the particular job but are unaware of  the contributions their area of responsibility is making to the 
+overall success of the project.  Using Performance Metrics to help define the specific impact that 
+their role plays in the success of the project tends to make employees more goal -oriented and 
+less task -oriented significantly increasing their personal involvement, sense of ownership and 
+consequently performance in their jobs. 
+ 
+This Best Practice relates to version II of Site Assessment items 2.9.1 and 2.9.8. 
+ 
+2.0 Best Practice Description 
+ 
+A condition-based maintenance program is comprised of a number of critical functions.  Due to 
+the frequency with which it is performed and the overall impact it can have on the success of a 
+mine site, one of the most important of those functions is Preventive Mai ntenance (PM).  
+Unfortunately, the term Preventive Maintenance has become almost generic in that it is used to 
+describe virtually any maintenance, service or repair activity not performed as a result of a 
+breakdown or failure. 
+ 
+Preventive Maintenance commo nly involves a number of activities completed within the same 
+time frame or window of opportunity. These activities normally include, but are not limited to the 
+following:  
+ 
+• Machine washing (either complete or partial washing), 
+• Lubrication service (changing oil and filters and greasing of required locations), 
+• Fluids management (taking oil samples, inspecting magnetic plugs, screens or filters), 
+• Inspections (visual) for defects, damage, and wear, 
+• Conducting instrumented system tests or measurements of performance, and 
+• Execution of repairs for known defects and problems. 
+ 
+When the term Preventive Maintenance is used, care must be taken to establish and understand 
+which of the above activities are actually included. 
+ 
+Machine downtime is a function of frequency and duration shutdown events.  Because PM is a 
+high frequency activity (typically done every 250 to 500 hours), it is a major contributor to 
+machine downtime particularly when PM duration (affected by efficiency) is long.  This explains 
+why PM efficiency should be a primary concern. Another equally important concern should be PM 
+quality / effectiveness ... getting the maximum possible benefit from the PM downtime event. 
+ 
+Unfortunately, many mines and, as a consequence, the individuals responsible for perfor ming 
+Preventive Maintenance at those mines, view it as repetitive, routine, boring and, in many 
+instances, almost punitive duty. When this is the case, PM execution in terms of efficiency and 
+more often effectiveness suffers and the value of Preventive Maintenance is greatly diminished. 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Goals & Objectives for Preventive Maintenance 
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1006-3.1-1022 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+One way to re -engage PM personnel is to assist them in their understanding and appreciation of 
+the importance of Preventive Maintenance. Defining Key Performance Indicators (KPI’s) that 
+relate to the efficiency and effectiveness of the PM function and training the staff on the impact of 
+those KPI's on overall site operations and success will encourage the staff to become more 
+accountable for their performance and should drive improvement in the PM process.  
+ 
+KPI's that quantify and contribute to an understanding of PM efficiency and effectiveness are: 
+ 
+• Mean Time Between Shutdowns after PM (MTBS  after PM): A measure of PM effectiveness 
+and a clear indication of the quality of the job performed.  Establish a target for hours to the 
+first shutdown after PM and report back to the PM crew not only their actual performance 
+relative to the target but also the cause of the first stoppage so issues that are found to be 
+chronic can be addressed through changes in the PM process.  When a rmed with this kind 
+of information the PM staff should be capable of providing better (more reliable) 
+performance in terms of MTBS after the equipment is returned to operation. The 
+Benchmark (best in class) for large Off Highway Trucks is 105 hours; a real istic target is 2 
+to 3 times the overall MTBS.   
+ 
+• Unavailability due to PM: A measure that quantifies the impact of PM on availability. There 
+is no Benchmark associated with this metric but a reasonably valid target is in the range of 
+2.75 to 3.25% for lar ge Off Highway Trucks in the 785 – 793 size class. The result of this 
+measure should be taken in context with MTBS after PM.  If unavailability due to PM is below 
+the range and MTBS after PM is low, it is a safe assumption that insufficient time and effort  is 
+being placed on PM. Conversely, if unavailability due to PM is above the range and MTBS 
+after PM is high, one can assume that the site is placing substantial emphasis on the value of 
+PM.  
+ 
+• Mean Time To Repair for PM (MTTR PM): Average PM execution time ; a measure of PM 
+efficiency. There is no Benchmark associated with this measure but a reasonable target is 
+in the 7.75 to 8.5 hour range for large Off Highway Trucks that are on a 250 hour PM 
+service interval.  The target for equipment that is on a 500 ho ur PM service interval is 
+higher, i.e. double that of the 250 hour interval. Establish target times for PM completion 
+times and compare actual PM execution times relative to those targets. 
+ 
+• Service Accuracy (SA) : A measurement of Preventive Maintenance exe cution timeliness 
+based on a statistical calculation that predicts the probability that the next PM service will 
+occur within the recommended range (+/ - 25 hours of target interval).  The calculation is 
+based upon past performance and assumes that PM inter vals are normally distributed 
+about the mean. The Benchmark for S.A. is 95% but an aggressive target that will yield 
+excellent results is 90%. 
+ 
+• Backlogs executed during PM :  Quantifies the use of the “window of opportunity” 
+presented during the PM shutdown. 
+ 
+• Backlogs generated during PM :  Quantifies the use of the “window of opportunity” 
+presented during the PM shutdown for defect detection (an element of Condition 
+Monitoring). 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Goals & Objectives for Preventive Maintenance 
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1006-3.1-1022 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+3.0 Implementation Steps 
+ 
+Critical steps associated with the development and implem entation of a performance -based 
+Preventive Maintenance process include: 
+ 
+• PM Strategy:   
+ 
+ Define what metrics will be used to quantify PM performance.  
+ Establish realistic performance targets for those metrics. 
+ Determine the raw data required to make the ne cessary calculations for quantifying the 
+metrics identified above (turn the data into information you can use to help manage the 
+site). 
+ Define the distribution network necessary to communicate the information. 
+ Define PM report format, display, and frequency requirements. 
+ 
+• Personnel:   
+ 
+ Determine what individuals in the organization will be responsible to the acquisition of 
+raw data, the calculation of the required performance measures, and the distribution of 
+that information.  Much of this activity will ta ke place in the Planning Department at 
+most sites; the planner, “Fleet Analyst” (reliability engineer) are key individuals involved 
+in on-site data management, i.e. calculations, analysis / interpretation, and distribution. 
+ The scheduler must be aware of r esults interpretation guidelines and have access to 
+the results since the nature of his work puts him in a position to drive positive change. 
+ Define the individuals who will be responsible for PM.  Include not only Technicians but 
+also their Management and Supervision. (It is our belief that PM is important enough to 
+justify developing “specialists” for the PM activity). 
+ Determine who will be responsible for training the organization in the analysis and 
+interpretation of PM performance results; include site  management and everyone 
+involved in the execution of Preventive Maintenance activities. 
+ Determine what individual(s) from the PM organization will represent the interests of 
+PM in Continuous Improvement process. 
+ 
+• Implementation: 
+ 
+ Deliver the training on the analysis and interpretation of PM performance results. 
+ Establish a specific location in the area that Preventive Maintenance is executed for the 
+display of PM performance results. Dedicated bay(s) assigned to PM activities is 
+preferred. 
+ Publish and display PM performance results in the designated area. 
+ Use the output from the analysis and interpretation of PM performance results as input 
+to the on -site Continuous Improvement process … devise solutions to identified 
+problems. 
+ Take appropriate action(s) to  implement solutions identified in the Continuous 
+Improvement process. 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Goals & Objectives for Preventive Maintenance 
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1006-3.1-1022 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+ 
+ 
+ 
+ 
+Execution Time (MTTR) MTBS after PM  
+Service Accuracy
+Unavailability due to PM
+Blogs executed during PM
+B a c k l o g s  E j e c u t a d o s
+0
+50
+100
+150
+200
+250
+E n e r o  F e b r e r o  Marzo  A b r i l M a y o J u n i o J u l i o
+M eses
+C an t id ad
+M e t a  M e s M e t a  P M B L  e n  P M B L  e n  T a l l e r T o t a l  e j e c u t a d o s
+Cumpl imi ent o Ti em pos de  Ejec uci on
+0
+2 0
+4 0
+6 0
+8 0
+1 0 0
+1 2 0
+1 4 0
+1 6 0
+E n e r o  F e b r e r o  M a r z o  A b r i l M a y o J u n i o J u l i o
+Me ses
+%  d e M et a 
+M TBS de spue s PM vs M TBS Fl ota
+0
+5
+1 0
+1 5
+2 0
+2 5
+3 0
+3 5
+4 0
+4 5
+E n e r o  F e b r e r o  Marzo  A b r i l M a y o J u n i o J u l i o
+M ese s
+H o r as
+M T B S  F l o t a
+M T B S d es pu e s  PM
+P r e c i s i o n  d e  S e r v i c i o
+0
+5 0
+1 0 0
+1 5 0
+2 0 0
+2 5 0
+3 0 0
+3 5 0
+4 0 0
+0 5 1 0 1 5 2 0 2 5 3 0
+H or as  S er v i c io
+Indis ponibi lida d por  PM
+1
+2
+3
+4
+5
+6
+7
+8
+PM
+Analysis
+Preventive Maintenance KPI's results
+ 
+ 
+ 
+ 
+Photo 1: PM performance and 
+scheduling board in the PM bay at a 
+mine in Brazil. 
+Photo 2:  A PM Technician 
+explaining his interpretation of PM 
+performance. 
+Photo 3:  Schematic of the 
+section of the PM Board 
+dedicated to display the PM 
+KPI’s. PM performance results. 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Goals & Objectives for Preventive Maintenance 
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1006-3.1-1022 
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+4.0 Benefits 
+ 
+Benefits are accrued as a result of the influence of increased PM performance on fleet reliability, 
+that is improved overall MTBS, and ar e linked to the impact of increased PM effectiveness and 
+efficiency and the resultant overall improvement of fleet availability. 
+ 
+The payback period is based on the fleet size, initial (pre -implementation) level of PM 
+performance, and the extent of improvement realized and can be quantified in terms of increased 
+machine availability (additional productive hours), improved resource deployment (personnel and 
+facilities), and the reduction or elimination of penalties related to performance guarantee 
+shortfalls. 
+ 
+5.0 Resources Required 
+ 
+• Human Resources:  Human resource requirements can be identified through a review of 
+the specific steps outlined in the “Personnel” section of the “Implementation Steps” 
+guidelines above. The majority of those resource requirements wi ll be contained within the 
+Preventive Maintenance organization of the Maintenance Department, the Maintenance 
+Planning organization and the Training department. 
+ 
+• Facility Resources:  A bulletin board or some other medium to display and communicate 
+results of the Preventive Maintenance process will be required to implement this Best 
+Practice. 
+ 
+Costs include the physical implementation of a bulletin board to display and communicate results 
+of the Preventive Maintenance process, the time spent developing mater ials and training the PM 
+staff in the analysis and interpretation of those results, and the implementation of related changes 
+developed via the Continuous Improvement process. 
+ 
+6.0 Supporting Attachments  
+ 
+Metrics (KPI’s) to Assess Process Performance –PDF document (see Attachments tab) 
+ 
+7.0 Related Best Practices 
+ 
+None  
+ 
+8.0 Acknowledgements 
+ 
+This Goals & Objectives for Preventive Maintenance Best Practice was authored by: 
+ 
+Jim McCaherty 
+Mining Equipment Management / Processes Division 
+Caterpillar Global Mining 
++1 309 675 5595 
+McCaherty_James_W@cat.com 
+ 
+We would also like to acknowledge Sotreq’s Mining Division for their willingness to share their 
+accomplishments with Caterpillar mining dealers worldwide. 
+ 
+Special recognition to: 
+ 
+Pedro Perim – Sotreq – Mining Business & Operations Support Manager 
+Alexandre Renno - Sotreq - Mining Project Support Mgr (formerly Sotreq Project Mgr at Samarco)

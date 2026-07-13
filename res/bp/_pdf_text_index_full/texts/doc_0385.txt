@@ -1,0 +1,282 @@
+SOURCE: C175 Cylinder Block Flushing.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+January 2024 
+4.01-240115-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+C175 Cylinder Block 
+Flushing 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+                                                                            C175 Cylinder Block Flushing ………………………...1 
+1.0
+ Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C175 Cylinder Block Flushing 
+DATE 
+1/15/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-240115-1 
+Caterpillar: Confidential Yellow          Page 2 of 6 
+1.0 Introduction  
+ 
+This Best Practice is for all Global CRC’s , that are looking to further improve and certify C175 
+cylinder block cleanliness, prior to assembly.  
+ 
+This tooling was locally design and fabricated by Matco, to provide closed loop flushing, of all the 
+C175 cylinder block oil ports, at regulated pressures, of up to 50 PSI.  
+ 
+The mobile cart design is equipped with multiply drawer storage, 60 Liter fluid tank, 50 GPM 
+diaphragm pump, with three individual valves. Two valves will either direct fluid to the upper or 
+lower sections, of the cylinder block or a combined supply and return to the tank. The third valve is 
+utilized for kidney looping of the tank fluid, to maintain a fluid cleanliness of 16/13 or less.   
+ 
+The supply fluid from the pump to the cylinder block, goes through a two- micron fuel filter and the 
+returning fluid from the cylinder block goes through the (patch sample) and then through the return 
+two-micron fuel filter to the tank.  
+ 
+ 
+ 
+Figure 1. C175-20 Flushing Tooling 
+ 
+2.0 Best Practice Description 
+ 
+Having closed loop flushing capabilities, to constantly supply clean fluid flow and pressure 
+through all oil ports of the C175 cylinder block, and monitoring (patch samples) of the return fluid 
+during the flushing process, which will ensure that all cylinder block oil ports are completely clean, 
+and the cylinder block is certified for assembly. 
+ 
+3.0 Implementation Steps 
+ 
+3.1 Defining the Scope: With the volume of C175-20 engines Matco rebuild annually, it was decided 
+to start with the C175, due to the financial impact, if the Customer expected engine life was not 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C175 Cylinder Block Flushing 
+DATE 
+1/15/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-240115-1 
+Caterpillar: Confidential Yellow          Page 3 of 6 
+achieved, or if any premature failure occurred, from hidden debris and Matco will continue to 
+develop this tooling for the other engine models they rebuild.   
+ 
+3.2 Analysis for Design: Once the scope was defined by the Matco design team, it was then 
+conceptually laid out in drawings, identifying, mobile cart size, tool storage needs, fluid tank and 
+pump capacity, valving, filtration, tube lengths and interface connections.  
+ 
+ 
+ 
+ 
+Figure 2. C175 Flushing Tool Group Design. 
+ 
+3.3 Flushing Tooling Group: This photo briefly illustrates some of the main features of the flushing 
+cart and layout of the fluid tank, valving, inline filters, sample patch cylinder, diaphragm pump, 
+line routing, etc.   
+ 
+ 
+ 
+Figure 3. C175 Flushing Loop Tool Group. 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C175 Cylinder Block Flushing 
+DATE 
+1/15/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-240115-1 
+Caterpillar: Confidential Yellow          Page 4 of 6 
+3.4 Connections that were not available on the local market (i.e.) for the spray-jet  ports, main bores, 
+camshaft cross over ports, were design and then fabricated in Nylamid material (Illustration below) 
+utilizing O-rings grooves for secure sealing and the camshaft port, cross over connection was 
+fabricated in silicon (blue) with an  Internal tube passage and the mold was design by the team 
+and fabricated in the 3D printer (photos of fabricated samples below). 
+ 
+             
+ 
+ 
+ 
+Figure 4. Nylamid connectors for oil ports, camshaft / valve train ports.                                       
+ 
+ 
+3.5 The majority of the customized items, that could not be locally purchased were fabricated by the 
+Matco team, with minor outsource support and the man-hours, to fit up this tooling on a C175-20 
+engine is approximately 1.5 hours. 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C175 Cylinder Block Flushing 
+DATE 
+1/15/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-240115-1 
+Caterpillar: Confidential Yellow          Page 5 of 6 
+3.6 Fit-Up Process. 
+ 
+• Option to install cylinder block in rollover fixture. 
+ 
+• Install all connectors to ( i.e.) main bearing bore, cooling jet, camshaft, valve train ports, etc.  in 
+the cylinder block. 
+ 
+• Connect the supply and return hoses from the tooling to the cylinder block. 
+ 
+• Install the patch. 
+ 
+• Start the pump and set it to approximately (25-35 PSI) checking for any leaks and if no leaks are 
+visible, the system pressure can be increased to a maximum of (45-50 PSI). 
+ 
+• After approximately five minutes of flushing, turn off the pump and check the patch for any debris. 
+ 
+• If no debris, is identified in the patch. Remove the tooling. 
+ 
+• If any debris is identified in the patch. Repeat the process until we can observe a thoroughly  
+clean patch.                                                        
+ 
+4.0 Benefits 
+ 
+• Pressure flush of all cylinder block oil ports. 
+ 
+• Patch sample taken and recorded in history file, of oil port cleanliness before assembly. 
+ 
+• Critical oil ports in the cylinder block are thoroughly clean, ensuring no bearing damage from 
+debris at start-up. 
+ 
+5.0 Resources Required 
+ 
+• Flushing Loop Tooling. 
+ 
+• Hoses, connectors, fittings, plugs, etc. 
+ 
+• Engine Stand 
+ 
+6.0 Supporting Attachments / References 
+ 
+• M0080689 / Cylinder Block Cleaning and Audit Process 
+ 
+Please contact the Matco design team for more details as there is an update to the prototype in 
+progress as of the submission date of this Best Practice. 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C175 Cylinder Block Flushing 
+DATE 
+1/15/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-240115-1 
+Caterpillar: Confidential Yellow          Page 6 of 6 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+ 
+Name: Erik Missael Barrera Gurrola /  
+E-mail: missael.barrera@matco.com.mx 
+Company: Empresas MATCO S.A. de C.V. 
+ 
+Recognition: 
+Kiwi Haig / Project advisor 
+Luis Ángel Cuevas / Evaluation and cleaning Supervisor 
+Salvador Carranza / CRC Technical Consultant 
+Missael Barrera / CRC Technical Consultant

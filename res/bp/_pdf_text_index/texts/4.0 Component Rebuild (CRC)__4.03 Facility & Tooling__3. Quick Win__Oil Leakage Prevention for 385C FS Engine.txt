@@ -1,0 +1,241 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+May 2014  
+1402-4.03-1335  
+  
+ 
+    
+    
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Oil Leakage Prevention 
+Adapter for 385C FS (EAM 
+prefix) Engine DYNO Test  
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC)  
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Oil Leakage Prevention Adapter for 385C FS (EAM 
+prefix) Engine DYNO Test ......................................... 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits ............................................................. 3 
+5.0  Resources Required .......................................... 3 
+6.0  Supporting Attachments / References ............... 3 
+7.0  Related Best Practices ...................................... 3 
+8.0  Acknowledgements ........................................... 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Oil Leakage Prevention for 385C FS Engine 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1402-4.03-1335  
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction  
+ 
+When the 385C FS Engine (EAM prefix) was tested with a DYNO, the oil leaked from the rear 
+housing of the engine with the gears installed.  To prevent this, the gears were not installed 
+during the assembly of the engine, they were installed after the engine was tested. While this 
+method fixed the problem with the oil leakage, it has caused extra movements to the engine like 
+the assembly – test – more assembly. 
+ 
+This tool allows testing of the engine with the gears installed without the oil leakage.  
+ 
+ 
+2.0 Best Practice Description 
+ 
+Borusan Makina Kazakhstan has developed the cap-like adapter that is installed into the rear 
+housing of the engine by using 3 retaining bolts, CAT screws (8 x 0T-0772 & 2 x 0T-0320) & CAT 
+seal (1 x 3D-8417) and prevents the oil leakage during the DYNO test. 
+ 
+. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The views of the cap from different sides and in section 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Oil Leakage Prevention for 385C FS Engine 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1402-4.03-1335  
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+3.0 Implementation Steps 
+ 
+The adapter in use.  
+ 
+1. The adapter is installed into the rear housing o f the engine before the DYNO test.  The center 
+adapter was furnished in this case by Power Test ( 
+www.pwrtst.com ).  If you choose to use 
+another DYNO supplier, please note that center adapter may be a different size and require a 
+different seal and different bore size, in the seal retainer, to mount it in. 
+ 
+ 
+ 
+ 
+ 
+     Retaining Bolts 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+       3D-8417 Seal 
+ 
+ 
+ 
+2. The drive shaft installation & DYNO test of the engine with the adapter installed. 
+ 
+ 
+No oil has leaked during the DYNO test of the C18 engine of the 385C FS machine with prefix 
+EAM. 
+ 
+0T -0320 SCREWS 
+0T -0772 SCREWS 
+Cat Seal part 6V-5043 
+SEAL-O-RING 
+ 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Oil Leakage Prevention for 385C FS Engine 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1402-4.03-1335  
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+ 
+4.0 Benefits 
+ 
+• Prevents the oil leakage during the engine DYNO te st. 
+• Removes the necessity to install the gears after t he engine DYNO test. 
+ 
+ 
+5.0 Resources Required 
+ 
+• 10 x CAT screws (8 x 0T-0772 & 2 x 0T-0320); 
+• 1 x CAT seal (1 x 3D-8417); 
+• 3 x retaining bolts made by the turner; 
+• 1 x 6V-5043 SEAL-O-RING 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+The adapter and retaining bolts fabrication drawings are attached to this Best Practice. 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+The idea of creating & implementing this Best Practice belongs to: 
+ 
+Ali CEKIC    Bauyrzhan AKHANOV 
+Engine Team Leader    Designer 
+Borusan Makina Kazakhstan LLP  Borusan Makina Kazak hstan LLP 
+acekic@borusan.com        
++7 (701) 951 97 97   Rafaiil FOLMAN 
+      Turner 
+Almaz KENZHETAYEV  Borusan Makina Kazakhstan LLP 
+Machine Shop Supervisor  Machine Shop 
+Borusan Makina Kazakhstan LLP   
+akenzhetayev@borusan.com     Alexander ROGOZIK 
++7 (701) 803 04 87   Technician 
+      Borusan Makina Kazakhstan LLP 
+      Machine Shop 
+This Best Practice was written by: 
+Gulnaz MANSUROVA 
+CRC Process Engineer 
+Borusan Makina Kazakhstan LLP 
+gmansurova@borusan.com  
++7 (701) 951 98 14

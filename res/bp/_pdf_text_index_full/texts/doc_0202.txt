@@ -1,0 +1,191 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Improved 3500 Engine Exhaust Manifold Salvage.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES
+Improved 3500 Engine 
+Exhaust Manifold Salvage 
+ 
+Maintenance 
+and Repair Application Component 
+Renewal (CRC)
+Component 
+Life 
+Management
+Component 
+Rebuild 
+MARC 
+Management 
+ 
+ 
+ 
+3500 Engine Exhaust Manifold Salvage ............Error! 
+Bookmark not defined. 
+1.0 Introduction........................................................1  
+2.0 Best Practice Description ..................................1  
+3.0 Implementation Steps........................................1  
+4.0 Benefits .............................................................2  
+5.0 Resources Required..........................................2  
+6.0 Supporting Attachments / References...............2 
+7.0 Related Best Practices ......................................3  
+8.0 Acknowledgements ...........................................3  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+April 09
+0906-4.5-1013
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      catminer.com
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+ 
+ 
+1.0 Introduction  
+ 
+Significant cost savings can be achieved by salvaging the ends (seals area) of certain 3500 
+engine exhaust manifolds. 
+ 
+2.0 Best Practice Description 
+ 
+The ends of the manifolds are machined down, a fabricated repair sleeve is installed, and the 
+manifold can return to service. 
+ 
+3.0 Implementation Steps 
+ 
+CAUTION: SAFETY PROCEDURES FOR THE SHOP EQUIPMENT INVOLVED MUST BE 
+FOLLOWED. 
+• Clean the exhaust manifold using a shot-peen or sandblast method. 
+• Inspect the manifold for cracks. If a crack is found, salvage of the manifold is not 
+recommended, as the cracks may continue to propagate. 
+• Machine the end of the manifold to 4.374 ± .001 inches, 1.750 inches long. 
+ 
+ 
+4,370” ±0,001” 
+1,750” 
+Improved 3500 Engine Exhaust Manifold Salvage  
+DATE 
+4/3/2009 
+CHG 
+NO 
+00 
+NUMBER 
+0000-1.1-1001
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+ 
+• Fabricate a sleeve from SAE 1040 grade mechanical tubing, DOM, 4.370” ID by 4.563” OD 
+by 1.750” length with an inside chamfer of 45 degrees by .06 long. The inside diameter 
+should be about 4.370 as delivered.  
+ 
+ 
+ 
+• Heat the fabricated sleeve to approximately 250 degrees F. 
+• Before dropping the sleeve onto the manifold some “High Temperature Manifold Sealer” 
+2P-2333 is applied to it by means of a brush. 
+• Drop the heated sleeve onto the machined exhaust manifold using heat resistant gloves. 
+The sleeve material should provide .003 to .004 inches interference fit. 
+ 
+4.0 Benefits 
+ 
+• The finished manifolds can be mixed along with new manifolds on the same engine bank, 
+because the centerlines have not changed. 
+• To reduce turnaround time for an engine rebuild, sufficient quantities of spare manifolds can be 
+inventoried. 
+• The manifold can be sleeved additional times, if inspection criteria about cracking are met. 
+ 
+5.0 Resources Required 
+ 
+• 22-inch swing lathe with cutting tools. 
+• Oven. 
+ 
+6.0 Supporting Attachments / References 
+ 
+See publication SEPD0611, page 36, “A new exhaust seal and a new exhaust manifold sleeve 
+are used in the exhaust manifold groups.” 
+ 
+ 
+Improved 3500 Engine Exhaust Manifold Salvage  
+DATE 
+4/3/2009 
+CHG 
+NO 
+00 
+NUMBER 
+0000-1.1-1001
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+Improved 3500 Engine Exhaust Manifold Salvage  
+DATE 
+4/3/2009 
+CHG 
+NO 
+00 
+NUMBER 
+0000-1.1-1001
+ 
+7.0 Related Best Practices 
+ 
+See Best Practice number 0907-4.5-1091 
+ 
+ 
+8.0 Acknowledgements 
+ 
+ 
+The idea of improvement of this Best Practice, belongs to:  
+ 
+Luis Meneses 
+Machine Shop Chief 
+Gecolsa CAT 
+luis_meneses@gecolsa.com.co
+57 5 3741022 
+ 
+ 
+This Best Practice was revised and re-written by:  
+  
+Edgar Castañez N 
+Machine Shop Development Engineer 
+Gecolsa CAT 
+edgar_castanez@gecolsa.com.co
+57 5 3741022

@@ -1,0 +1,405 @@
+SOURCE: 1.0 Maintenance & Repair\1.04 Repair Management\3. Quick Win\Adjustable Guard Storage Vehicle.pdf
+PAGES: 9
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+  
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A                                                                           Mining.cat.com 
+ 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+ADJUSTABLE GUARD STORAGE 
+VEHICLE 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+ADJUSTABLE GUARD STORAGE VEHICLE ........... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits ............................................................. 7 
+5.0 Resources Required .......................................... 7 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ........................................... 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information pro vided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ADJUSTABLE GUARD STORAGE VEHICLE 
+DATE 
+02/05/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-181008-01 
+Page 1 of 8 
+Caterpillar Confidential: YELLOW  
+ 
+ 
+ 
+1.0 Introduction  
+ 
+Following the disassembly of excavators and dozers, the resulting guard pieces are not properly 
+disposed in a storage area of the workshop. As such, the repair process can be delayed and 
+inefficient due to parts being unevenly scattered around multiple pallets. 
+ 
+ To overcome this issue, a guard storage vehicle was designed with a vertical partition feature. 
+This feature will then allow the guard parts to be stored altogether and to occupy less space. 
+Another design feature is the adjustability of the vehicle in the sense that technicians can 
+customize the gaps between iron partitions according to their needs.  
+ 
+Overall, there will be an increase in efficiency and simplicity; the relevant parts will be 
+compartmentalized and transported simultaneously to the washing and measurement 
+department.  
+ 
+ 
+      
+ 
+ 
+               BEFORE                                       AFTER 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ADJUSTABLE GUARD STORAGE VEHICLE 
+DATE 
+02/05/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-181008-01 
+Page 2 of 8 
+Caterpillar Confidential:  YELLOW  
+ 
+ 
+ 
+2.0 Best Practice Description 
+ 
+To build the designed vehicle, the welding department mounted the wheels under a sheet plate to 
+provide mobility, and added partitions on top of the plate at specific intervals. Furthermore, the 
+intervals between the partitions were designed to be adjustable as needed by the technicians. A  
+handle was also attached to facilitate directions and usage. By using this vehicle, storing the 
+guard parts has become more organized while transitioning between departments has become 
+easier. 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ADJUSTABLE GUARD STORAGE VEHICLE 
+DATE 
+02/05/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-181008-01 
+Page 3 of 8 
+Caterpillar Confidential:  YELLOW  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ADJUSTABLE GUARD STORAGE VEHICLE 
+DATE 
+02/05/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-181008-01 
+Page 4 of 8 
+Caterpillar Confidential:  YELLOW  
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+1- Wheel and iron partition placement 
+ 
+      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ADJUSTABLE GUARD STORAGE VEHICLE 
+DATE 
+02/05/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-181008-01 
+Page 5 of 8 
+Caterpillar Confidential:  YELLOW  
+ 
+ 
+ 
+2- Attachment of iron partitions on top of the sheet plate 
+ 
+ 
+                  FIXED                                 ADJUSTABLE 
+ 
+ 
+       
+                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ADJUSTABLE GUARD STORAGE VEHICLE 
+DATE 
+02/05/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-181008-01 
+Page 6 of 8 
+Caterpillar Confidential:  YELLOW  
+ 
+ 
+ 
+3- Attachment of the handles  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ADJUSTABLE GUARD STORAGE VEHICLE 
+DATE 
+02/05/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-181008-01 
+Page 7 of 8 
+Caterpillar Confidential:  YELLOW  
+ 
+ 
+4.0 Benefits 
+ 
+1- Improvement in process speed and efficiency  
+2- Improvement in process flow due to parts’ compartmentalization (transporting, washing, 
+removing-attaching process) 
+3- Prevention of irregular placement of the guard parts. (The extra pallet occupation was removed) 
+4- Gaps’ customization in between iron partitions as needed by the technicians. 
+ 
+ 
+5.0 Resources Required 
+ 
+A vehicle can be built with 2 technicians working for 1 day. 
+ 
+Piece Measurement Quantity Unit Cost ($) 
+Plate (1mx2mx3mm) 1 20 
+Iron Partitions (40cmx40cmx2mm) 10 4 
+Iron pipe (1mx2mmx2mm) 5 5 
+Wheel - 2(locked)+2(regular) 20 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgments 
+ 
+This Best Practice was written by:   
+Can Özcan 
+CRC Engineer Alpha Intern  
+Borusan Makina ve Güç Sistemleri   
+  
+This Best Practice was designed by:   
+ 
+Emre Karahan 
+Gebze CRC Supervisor 
+Borusan Makina ve Güç Sistemleri 
+ 
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ADJUSTABLE GUARD STORAGE VEHICLE 
+DATE 
+02/05/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-181008-01 
+Page 8 of 8 
+Caterpillar Confidential:  YELLOW  
+ 
+ 
+Ali Kılıç  
+Workshop Engineer  
+Borusan Makina ve Güç Sistemleri 
+ 
+Erkin Bulut 
+Workshop Engineer 
+Borusan Makina ve Güç Sistemleri   
+ 
+The project and best practice were supported by: 
+Ömer Emre Demirkale   
+CRC Manager   
+Borusan Makina ve Güç Sistemleri   
+  
+Rafet Kaymakci   
+Mining Customer Support Manager   
+Borusan Makina ve Güç Sistemleri

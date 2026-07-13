@@ -1,0 +1,385 @@
+SOURCE: 2.0 Application\2.04 Training - Application\2. Tactical\Mining Equipment Operation Improvement Program.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Mining Equipment 
+Operation Improvement 
+Program 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+Mining Equipment Operation Improvement Program . 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+  
+ 
+ 
+ 
+ 
+  
+May 2011 
+1101-2.04-1219 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+The following document will describe the steps taken by Marcosa to improve the operation  of 
+Cat® equipment on a customer site.  Marcosa has developed a program that  aims to increase 
+operational performance, develop operator skills and knowledge, and reduce overall cost. 
+ 
+2.0 Best Practice Description 
+ 
+The following Best Practice provides details of an operational improvement program developed by 
+Marcosa for a  Cat machine fleet. This quarterly p rogram aims to increase production through 
+efficient daily inspections, on the job training and improved motivation of the operators.  
+ 
+During the program, the equipment  is m onitored for  the following criteria: productivity, cost per 
+hour due to operational failure, tires lost due to operational incident , Operator induced events  
+(VIMS and over loads), physical availability, MTBF and MTTR. The operators are assessed in 
+practical and theoretical criteria through a checklist for each model of equipment. 
+ 
+Both equipment and operators are classified in a range of 0 to 5 stars according to the 
+performance (equipment), knowledge and skills (operators).  
+ 
+Operators are split into teams with a team leader , who in this case was called  the “godparents” of 
+the equipment. At the end of the program, the equipment with the highest score wins, and each 
+team member receives Cat prizes according to rank. The final score is calculated by the average 
+stars of the equipment x7 and the average stars of the team x 3, divided by 10: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Logo  
+CAT Prizes 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Improving Mining Equipment Operation Improvement 
+Program 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1101-2.04-1219 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Equipment Measurement Spreadsheet 
+Operator Evaluation Checklist 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Improving Mining Equipment Operation Improvement 
+Program 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1101-2.04-1219 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Implementation Steps 
+ 
+• Collect past 3 months of fleet data:  
+- % productivity 
+- Cost per hour due to operational failure (service, parts, miscellaneous) 
+- Quantity of tires lost by operational accident (cut, collision, spinning) 
+- Quantity of operational failure (level 2 VIMS events, overloads) 
+- MTBF or MTBS 
+- MTTR 
+• Establish monthly goals for each fleet (Suggestion: + 5% to 10% from baseline for each 
+criteria, over the previous target) 
+• Develop an operator evaluation checklist for each equipment model  
+• Develop a spreadsheet to control data and calculate scores  
+• Generate a training schedule 
+• Set up meetings to discuss the project with key customer departments 
+• Define team roles and responsibilities including: 
+o “Godparents” of each piece of equipment 
+o Individual responsible for reporting equipment data 
+o Individual responsible for managing the equipment measurement spreadsheet 
+• Publicize the program (Logo, T-shirts, banners, e-mails, etc.); 
+• Begin the program 
+ 
+ 
+4.0 Benefits 
+ 
+• For the Customer: 
+ 
+ Increased operational safety 
+ Costs reduction with maintenance and accidents 
+ Increased tire life due to better underfoot conditions  
+ Increased availability and reliability of the equipment 
+ Increased useful life of the components 
+ Increased productivity 
+ Higher quality operator inspections 
+ Establishment of a new mining culture: Increased ownership of the equipment and 
+operational excellence of the mining equipment 
+ O perator turnover reduction 
+ Better condition of the haul roads, waste pile and loading areas 
+ Additional dealer support and strengthening of the partnership between dealer and 
+customer 
+ Specific training schedule according to the costumer’s needs 
+ Greater sense of responsibility by the operators 
+ Greater development of the costumer’s manpower 
+ Introduction of new practices, skills and knowledge 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Improving Mining Equipment Operation Improvement 
+Program 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1101-2.04-1219 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• For the Operator: 
+ 
+ Increased safety  
+ Greater professional development and recognition 
+ Greater sense of team (Responsibility for the equipment) 
+ Greater incentive for self development 
+ Transfer of the knowledge and skills among the operators  
+ 
+• For the Dealer: 
+ 
+ Greater profitability of the business of their costumer 
+ Greater synergy with the costumer 
+ Be recognized by the costumer as a solution provider 
+ Dissemination of the Cat Best Practices 
+ I mprovements in the operation of the costumer’s mining equipment 
+ Additional dealer support and strengthening of the partnership between dealer and 
+costumer; 
+ 10% of the realized cost reduction related to maintenance, tires, accidents, etc. will be paid 
+to the Dealer 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Improving Mining Equipment Operation Improvement 
+Program 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1101-2.04-1219 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+5.0 Resources Required 
+ 
+• Human:  
+ 
+-  Continuous Improvement Champion 
+-  Operational Instructor focused on the program. 
+-  Person to gather data and transfer to the spreadsheet; 
+ 
+• Features: 
+ 
+- Operator Evaluation Checklist; 
+- Equipment Measurement spreadsheet; 
+- Cat Prizes ($7,000 USD) 
+- Communication material (T-shirts, banners, etc. – $1,800USD) 
+ 
+Total Investments: $8,800 USD 
+ 
+Note: The customer bears the costs with the program.  
+ 
+6.0 Supporting Attachments / References 
+ 
+• Equipment Measurement Spreadsheet 
+• Operator Evaluation Checklist 
+• MMM Presentation 
+• Operator Induced Events.ppt 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+ 
+Name: Pablo Felipe Lisboa 
+Title: Continuous Improvement Champion 
+E-mail: 
+pablo.felipe@marcosa.com.br 
+Phone: (+55) 71 2107-7574 / 8111-1902 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Improving Mining Equipment Operation Improvement 
+Program 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1101-2.04-1219 
+Caterpillar Confidential:  GREEN          Page 5 of 5

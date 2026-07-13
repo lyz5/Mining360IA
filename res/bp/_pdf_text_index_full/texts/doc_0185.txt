@@ -1,0 +1,542 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Alternator, Starting Motor, and ECM Training Test Bench.pdf
+PAGES: 11
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2016 
+1510-4.01-1397 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Alternator, Starting Motor, and 
+ECM Training Test Bench 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Alternator, Starting Motor, and ECM Training Test 
+Bench ......................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 9 
+5.0 Resources Required .......................................... 9 
+6.0 Supporting Attachments / References ............. 10 
+7.0 Related Best Practices .................................... 10 
+8.0 Acknowledgements .......................................... 10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Alternator, Starting Motor, and ECM Training Test 
+Bench 
+DATE 
+2/19/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1510-4.01-1397 
+Caterpillar Confidential:  GREEN         Page 1 of 10 
+1.0 Introduction  
+ 
+In our workshop, technicians need to able to verify the assembly and operation of an alternator and 
+starting motor after an overhauling motor. Testing allows the dealer to ensure that the alternator and 
+starting motor will operate properly on the machine.  Rotation of an alternator and starting motor 
+provides the most conclusive evaluation. 
+ 
+Most electronic control modules and electronic monitors work with the same strategy. Sometimes it is 
+not possible to find some ECM and monitor failures on the machine. Some customers bring the ECM 
+and monitor to the workshop in order to check and get information. 
+ 
+The alternator, starting motor and ECM testing bench has been designed to test and find faults for 
+reduced cost. The bench also provides opportunities for training.  
+ 
+2.0 Best Practice Description 
+ 
+The alternator, starting motor, and ECM test bench is designed to do the final test of the alternator 
+and starting motor after an overhaul. Also this bench provides testing and flashing of all kind of ECM 
+and monitors for the technician.  
+ 
+The Alternator and starting bench capabilities are as following: 
+ Able to measure current and voltage of alternator 
+ Able to measure voltage at R terminal 
+ Able to measure speed of alternator 
+ Able to measure current and voltage of starting motor 
+ Able to measure voltage on the solenoid 
+The ECM test bench capabilities are as following: 
+ Able to connect to all type of ECMs 
+ Able to test all type of monitoring systems 
+ Able to flash and load configuration to various ECM 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Alternator, Starting Motor, and ECM Training Test 
+Bench 
+DATE 
+2/19/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1510-4.01-1397 
+Caterpillar Confidential:  GREEN         Page 2 of 10 
+3.0 Implementation Steps 
+ 
+Step-1 Build the holder of starting motor. 
+ 
+ 
+ 
+Step-2 Build the holder for the alternator and battery box 
+ 
+                                                                                                                            
+                                                                                                          
+                                                                                                  
+Step-3 Build the controller of the test bench board 
+ 
+ 
+                                                                                                           
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Alternator, Starting Motor, and ECM Training Test 
+Bench 
+DATE 
+2/19/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1510-4.01-1397 
+Caterpillar Confidential:  GREEN         Page 3 of 10 
+Step-4 Mount the Voltmeter and the Ammeter on the controller box. 
+ 
+ 
+  
+ 
+ 
+Step-5 Build the controller for the alternator and starting motor system 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Note: Drawing document is in the attachment. 
+ 
+                   
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Alternator, Starting Motor, and ECM Training Test 
+Bench 
+DATE 
+2/19/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1510-4.01-1397 
+Caterpillar Confidential:  GREEN         Page 4 of 10 
+ 
+Step-6 Draw the electrical schematic of the board. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Note: All electrical schematic are in the attachments. 
+ 
+Step-7 Install the wiring for all the devices for the alternator and starting motor according to the 
+electrical schematic. 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Alternator, Starting Motor, and ECM Training Test 
+Bench 
+DATE 
+2/19/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1510-4.01-1397 
+Caterpillar Confidential:  GREEN         Page 5 of 10 
+Step-8 Install the wiring for all the devices for the ECM tester according to the electrical schematic 
+ 
+ 
+ 
+ 
+ 
+ 
+9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Step-9 Make the ECM connection board for Cat data CAN data and the supply for the ECM 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Note: ATA connection wires is are also available inside of the board. 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Alternator, Starting Motor, and ECM Training Test 
+Bench 
+DATE 
+2/19/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1510-4.01-1397 
+Caterpillar Confidential:  GREEN         Page 6 of 10 
+ 
+ 
+ 
+Step-10 Build the guard protection for the drive system and assembly speed sensor for the alternator 
+and starting motor 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Alternator, Starting Motor, and ECM Training Test 
+Bench 
+DATE 
+2/19/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1510-4.01-1397 
+Caterpillar Confidential:  GREEN         Page 7 of 10 
+ 
+Step-11 Test the connection between the ECM and Cat ET program 
+ 
+   
+ 
+ 
+Step-12 Test the alternator and starting motor 
+ 
+ 
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Alternator, Starting Motor, and ECM Training Test 
+Bench 
+DATE 
+2/19/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1510-4.01-1397 
+Caterpillar Confidential:  GREEN         Page 8 of 10 
+ 
+ 
+Step-13 Perform the test, file the report before and after overhauling the starting motor and the 
+alternator 
+ 
+ALTERNATOR AND STARTING MOTOR OVERHAUL REPORT 
+MACHINE MODEL 330 D COSTUMER  BORUSAN 
+SERİAL NUMBER RAS00198 ENGINE MODEL C9 
+ALTERNATOR NO LOAD FULL LOAD RESULT 
+ VOLTAGE 28.4 DC VOLT 23 DC VOLT OK 
+CURRENT 13 AMPER 50 A OK 
+RPM 1500 RPM 1470 RPM OK 
+R-TERMINAL 13.1 DC VOLT 13.8 DC VOLT OK 
+MECHANIC PROBLEM OK OK OK 
+STARTING MOTOR NO LOAD FULL LOAD RESULT 
+ VOLTAGE 28.4 DC VOLT 21 DC VOLT OK 
+CURRENT O 121 AMPER OK 
+RPM 0 RPM 5000 RPM OK 
+MECHANIC PROBLEM GEAR CRACK GEAR NOT FORWARD GEAR NOT WORKING 
+SELENOID NO LOAD FULL LOAD RESULT 
+
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Alternator, Starting Motor, and ECM Training Test 
+Bench 
+DATE 
+2/19/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1510-4.01-1397 
+Caterpillar Confidential:  GREEN         Page 9 of 10 
+VOLTAGE 28.4 VOLT 21 DC VOLT OK 
+ 
+4.0 Benefits 
+ 
+ 
+ 
+The following alternator and starting motor tests can be performed on this bench. 
+ 
+1) Perform an alternator output test 24V/12V on the bench 
+2) Perform a regulator test  on the bench 
+3) Perform starter test on the bench 
+4) Perform  no-load starter test on the bench 
+ 
+The following monitoring and ECM tests can be performed on this bench. 
+ 
+1) Test monitoring system input components 
+2) Test monitoring system output components 
+3) Test monitoring system display panel  
+4) Test monitoring system input processor 
+5) Test ECM for input and output component 
+6) Use Cat ET to perform flash programing 
+7) Use Cat ET to perform factory password 
+8) Use Cat ET to perform copy configuration and replace  
+ 
+5.0 Resources Required 
+ 
+Item  Cost (USD) 
+Material  $1690 
+Cat Parts  $1459.31 
+Labor Design $250 
+Assembly $1250 
+Total  $4649.31 
+
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Alternator, Starting Motor, and ECM Training Test 
+Bench 
+DATE 
+2/19/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1510-4.01-1397 
+Caterpillar Confidential:  GREEN         Page 10 of 10 
+ 
+6.0 Supporting Attachments / References 
+ 
+ Electrical Schematic 
+ Technical Drawing  
+ Presentation of Test Bench 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Salih Ertekin 
+Service Training Instructor 
+Borusan Makina ve Güç Sistemleri 
+ 
+This Best Practice designed by: 
+ 
+Salih Ertekin 
+Service Training Instructor 
+Borusan Makina ve Güç Sistemleri 
+ 
+Project and Best practice supported by 
+ 
+Ömer Emre Demirkale 
+Ankara Region Service Manager 
+Borusan Makina ve Güç Sistemleri 
+ 
+Rafet Kaymakci 
+Mining Customer Support Manager 
+Borusan Makina ve Güç Sistemleri

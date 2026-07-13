@@ -1,0 +1,1134 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2022 
+1.09-221212-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ Caterpillar: Confidential Yellow 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+A Roadmap to Planning 
+and Perform a ‘NMI – New 
+Marketing Introduction’ for 
+CAT Electric Drive Trucks 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+A Roadmap to Palanning and Perform a NMI for Cat 
+Electric Drive Trucks    …………………………………1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 3 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits ............................................................ 22 
+5.0 Resources Required ........................................ 23 
+6.0 Supporting Attachments / References ............. 23 
+7.0 Related Best Practices .................................... 23 
+8.0 Acknowledgements .......................................... 23 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 2 of 23 
+1.0 Introduction  
+ 
+Developing an effective NMI (New Market Introduction) process is a challenging process for most CAT 
+dealers.  It is important that the Project Manager brings a 360 -degree technical-operational vision of 
+the Key Factors that are a part of the validation process for the product. 
+ 
+While there are many publications available on the NMI  (New Market Introduction) and NPI (New 
+Product Introduction), most tend to be more fragmented, highly specialized for a particular product, 
+more maintenance focused or more operations focused.  Typically, they also fail to connect and explore 
+the integrated business vision with the customer’s value chain, addressing aspect of Total Cost of 
+Ownership (TCO), CPH (Cost Per Hour)  and CPT (Cost Per Ton),  Maintenance Ratio (MR) and 
+more.  With these it is not uncommon to have surprises once the trucks go into production cause a lot 
+of rework or other financial intervention to achieve customer objectives for the machines. 
+ 
+This case study was an effective roadmap for introducing the Caterpillar electric -drive 794AC’s into 
+Brazil, a market dominated by Komatsu  electric drive 930E -4’s; until the 794AC’s  were introduced, 
+there were no better options for this customer.  Utilizing this roadmap  was critical to achieving al l the 
+customer critical KPI targets for th e 6 x 794AC trucks.  The client was very impressed with the whole 
+NMI process (from preparation through implementation through actual operation/production).  The high 
+performance of this 794AC fleet based on the successful NMI has given the customer confidence to 
+move forward with additional 794AC purchases. 
+ 
+Other dealers facing challenges with NMI should be able to utilize the concept of this  roadmap 
+presented in this paper to successfully introduce new machines into their territory.  SOTREQ  is a big 
+proponent of dealer collaboration and would be available to discuss this NMI in more detail. 
+ 
+ 
+ 
+Figure 1 – This roadmap supported the 794AC introductions in Brazil 
+
+
+===== PAGE 3 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 3 of 23 
+2.0 Best Practice Description 
+ 
+This Best Practice is a roadmap developed by SOTREQ for introducing the CAT 794AC truck into Brazil 
+with an approach well integrated into the mining customer’s value chain. This same roadmap could be 
+applied to NMI by other Dealers in other regions.  
+ 
+This introduction brings together the following: 
+ 
+• SOTREQ experience/expertise. 
+• Use of NMI documentation. 
+• Analysis of other operations (different models, types of customers/operations, etc).  
+• Interaction with Caterpillar LMT/OHT Product Groups. 
+• Specific product support and commercial (operations/customer) support at the site. 
+ 
+From concept standpoint, the 794AC NMI in Brazil was developed and build based on two key drivers: 
+technical requirements needed, and commercial goals demanded. For this case, must consider these 
+two ones: 
+ 
+Product Support Perspective – Key Technical Requirements 
+ 
+a. Technical Mindset: Utilize technical information already available from Caterpillar as well as other 
+dealers… 
+b. Strategy & Experience: Build a MSR (Maintenance Strategy Review)  and understand the risks 
+with introducing the new model.  Utilize the experience gained from other new model introductions 
+at your site. 
+c. Challenges - Learning & Assessment : Utilize the lessons learned from other projects 
+implemented on sit e:  challenges of qualified labor, evaluation of customer performance (KPI’s), 
+indirect cost (CPH) that occur, etc. 
+d. Strategy & Process:  Understand the business model for the operation / support of the new 
+equipment on site - MARC, CSA, CVA, etc.  Clearly establish the strategies and processes for parts, 
+labor, tooling, shop productivity, etc. 
+e. Customer Expectations: Fully understand all the customer’s KPI  targets/required performance 
+(Physical Availability, MTBF, MTTR, MR (Maintenance Ratio, Cost Per Hour, Cost Per Ton, etc. 
+f. Put in place all the technical infrastructure in order to achieve the customer performance targets –  
+safely and productively. 
+ 
+Operational & Customer Support – Commercial Goals demanded  
+ 
+a. Benchmark the competition .  Understand what they are doing better or different than the Cat 
+model on site and see how some might be applied to the Cat NMI. 
+b. Consider innovation: Technology, techni cal support, continuous improvement projects, safe 
+maintenance, manpower productivity, etc.  
+c. Understand your customer: The Customer will always compare you with the competition, not only 
+in relation to the quantitative indicators to be delivered but also t o the qualitative aspects.  
+Remember:  The NMI Trucks are the “newcomer” to the site. 
+
+===== PAGE 4 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 4 of 23 
+d. Utilize the NMI platform : Implement technical solutions that align with the customer’s strategies 
+and “business levers”.  Remember:  The more you tailor to the customer’s needs the better the 
+chances that the customer will recognize the product as a success. 
+e. Create a New Communicati on Routine: Create robust communication channels (daily, weekly, 
+monthly, etc) to maintain visibility and partnership with the customer.  Use these channels to 
+demonstrate the differentiation between how Caterpillar/Dealer work with the customer compared 
+to that of the competition. 
+f. Have a Marketing Plan : Work with your marketing t eam to create a targeted plan that 
+communication the right message to the customer.  
+g. Analyze Customer Insights: Measure the opinion of the customer (mine management, operations 
+and maintenance) with regular surveys to capture the thoughts and necessities of the customer.   
+This will help you to adjust as frequently as necessary the processes in the project. 
+Figure 2 – Build a marketing plan to have customer confidence. Source: SOTREQ/Julio Correa 
+ 
+  
+
+
+===== PAGE 5 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 5 of 23 
+3.0 Implementation Steps 
+ 
+Following are the key steps to implementing this roadmap/model for the introduction of a new model of 
+truck or other machine into one’s territory.  It was successfully used for the 794AC  introduction into 
+Brazil.  It should be useful as other dealers introduce the 794AC  or any other new model into their 
+regions. 
+ 
+Step 1.  Risk Management / Maintenance Strategy Reference (MSR) 
+Step 2.  Customer Value Chain 
+Step 3.  Product Experience 
+• Parts 
+• Major Components 
+• Tooling 
+• Maintenance Strategy 
+• Component Management 
+• Training and Building People Knowledge 
+ 
+ Step 5.  Communication Plan 
+ 
+Figure 3 – The roadmap chart to dealer to set their NMI processes 
+ 
+ 
+ 
+ 
+ 
+ 
+23
+ROADMAP NMI
+INTRODUCING CAT ELECTRIC DRIVE TRUCKS
+CUSTOMER VALUE CHAIN
+COMUNICATIONMSR 
+RISK MANAGEMENT PRODUCT EXPERIENCE
+Connect the key drivers:
+1. Product 
+2. Opera�ons 
+3. Site Proﬁle
+4. People
+Set up strategy to 
+address the risk involved 
+on MSR
+Work closely with 
+customer to undestand 
+the key value from 
+them. What is the KPIs 
+beyond the known to be 
+the “best truck”
+Transforme the key 
+value of customer in 
+process to be managing 
+on project rou�nes
+Set up straight 
+comunica�on around 
+the outcomes with 
+project sponsors, 
+customer and 
+Procurement teams
+
+===== PAGE 6 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 6 of 23 
+3.1. RISK MANAGEMENT / MAINTENANCE STRATEGY REFERENCE (MSR) 
+  
+Understanding the risks of any new fleets is important to the success of any new fleet introduction.  
+Capturing detailed technical  information is the first step in constructing a risk based  MSR 
+(Maintenance Strategy Reference).    
+ 
+A detailed Caterpillar Best Practice exists that can support you in your risk management efforts:  
+Fleet Risk Management – Improving the 794AC Truck Performance Based on MSR 
+ 
+ 
+ 
+ 
+ 
+Figure 4 – Best Practice published around the MSR and Risk Management as part of Roadmap 
+ 
+  
+
+
+===== PAGE 7 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 7 of 23 
+3.2. CUSTOMER VALUE CHAIN 
+ 
+Doing an initial value survey  with key site customer  (in this case, maintenance, operations, and 
+procurement) will help you to understand the important needs/ acceptance criteria for the new 
+product.  
+ 
+Figure 5 – 794AC NMI Survey, Pre-work to build the Product Experience. 
+ 
+From the surveys, a risk / MSR Matrix can be developed which details the key drivers of the 
+customer.  With this, clear goals and objectives can be determined which fully align with the 
+business vision of the introduction. 
+ 
+Below you can see the What, Why and How for the 794AC NMI in Brazil: 
+ 
+What is important for customer? Why? (VOC) How to build it? 
+Parts service level > 90% (on site) CAT parts shortage, PA > 90% 
+/ MTBF > 60 h, MTTR < 5 h. 
+Settled ABC stock strategy, 
+dealer (B and C), CAT (A and 
+B). 100% of items in Brazil. 
+Major mechanical components 
+unplanned impact < 1% of PA 
+CPIs, Low reliability, unplanned 
+failures other sites, part 
+shortage, need to achieve 
+performance KPIs 
+Some mechanical major 
+components available on site 
+Major electrical components unplanned 
+impact < 1% of PA 
+CPIs, Low reliability, unplanned 
+failures other sites, part 
+shortage, need to achieve 
+performance KPIs 
+Some electrical major 
+components available on site 
+No labor injures around 794AC 
+maintenance repair. Safety 
+improvement during maintenance repair 
+Comparison features between 
+the major CAT competitor 
+against 794AC 
+During machine configuration 
+considered all safety devices 
+and technology features 
+available. 
+Reliable product – Product and Quality 
+issues < 1% PA, MTBF < 10% 
+Bad reputation of 797F 
+performance (Winning 
+Together) 
+Have CPI parts on site, perform 
+PIQ in assembly, 
+Maintenance Ratio and Parts 
+Commonality with another CAT Models 
+Cost per hour., Cost per ton, 
+Comparison with our major 
+competitor 
+Perform Standard PM, address 
+more improvement to reduce 
+people on some repair process 
+60,00%
+5,00%
+30,00%
+5,00%
+% Maintenance Team
+Product Performance Product Issues
+Safety (Repair) Maintenance Ratio
+65,00%
+15,00%
+10,00%
+10,00%
+% Operational People
+Product Productivity Safety
+Fuel Reduction Technology Features
+35,00%40,00%
+15,00%
+10,00%
+% Procurement Team
+Low Cost Per Hour Low Cost Per Ton
+Product Performance Safety
+
+===== PAGE 8 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 8 of 23 
+Low Fuel Burn Rate High fuel cost thru mining site. 
+Competitor has great 
+performance in fuel burn 
+Address best fuel performance 
+x productivity and find out fuel 
+projects (CI) to optimize it. 
+Product Performance (People) New introduction of truck in 
+territory who major product is 
+mechanical trucks. 
+Service training in Tucson (AZ) 
+and develop an internal 
+program to speed up the people 
+training into 794AC 
+Product Performance (Tooling) Former Product Introduction 
+required a bunch of “fancy and 
+expensive” tooling to perform 
+maintenance 
+Build a Tooling list based on 
+site needs not only based on 
+RDTL suggested by CAT. Make 
+a cross reference what 
+competitor and CAT site trucks 
+need, to show commonality 
+between models. 
+Product Productivity Have robust support to get 
+more from truck to show its 
+value 
+Regular field production study, 
+Race Render® simulations, 
+regular operational training. 
+ 
+ 
+3.3. PRODUCT EXPERIENCE 
+ 
+Once you have done your risk management assessment and understand the need/acceptance 
+criteria, it is important to construct your NMI process focused on the product itself.   
+ 
+3.3.1. PARTS  
+A Parts Strategy for NMI needs to consider the service challenges, logistics, costs and 
+required Service Level (i.e. >90%). 
+ 
+• Building an Appropriate Spare Parts List:  
+ 
+o Utilize the Caterpillar 794AC RDSL (Recommended Dealer Stocking List)  as the 
+starting point for the site parts list.  Note: SOTREQ did a detailed review with the 794AC 
+Team where some adjustments were made to actual need and quantities. 
+o Utilize your backlog list and the parts consumption list (0 – 2000 hours) from other 794AC 
+dealers around the world.   
+o Utilize your experience from other models on site (some which may have been captured 
+through site MSR’s) 
+o Understand parts related to current CPI, PIQ and other known failures from other dealers 
+and adjust your list accordingly. 
+ 
+  NOTE:  SOTREQ’S 794AC NMI Spare Parts list had 1,345 items. 
+ 
+• Ensuring a Stocking Level of > 90% 
+ 
+o Identify key service areas and group parts by those groups instead of a general “line 
+item” list.  Manage and take-action on parts by the groups.  One such grouping is as 
+follows:  A/C, Cab., Hydraulic, Electrical, PM, Minor Components etc. 
+
+===== PAGE 9 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 9 of 23 
+o Define the list of NMI parts that will be stocked in country by the customer, dealer and 
+by the Cat parts deport (servicing 100% of the NMI parts). 
+o Use the standard Dealer parts processes and CAT parts expediting process to manage 
+the parts.   
+ 
+NOTE: Due to specific pressures of this NMI , monthly meeting between SOTREQ  and 
+Caterpillar (parts, engineering) were established to supplement the standard processes. 
+ 
+Picture 6 – Parts Management developed into NMI 794AC introduction 
+ 
+ 
+• Reviewing Parts Costs of the Competition vs. Cat 
+ 
+o Understanding the competition in terms of both maintenance and 
+operations/productivity is important .  Through direct numbers, discussions with 
+management and technicians and observations, a lot of information about parts quality 
+of parts (part s issues, component  changeouts, etc) and costs can be gathered and 
+factored into the NMI plan.     
+ 
+NOTE: In this NMI  introduction, direct numbers for the competition w ere available.  
+SOTREQ used this information establish parts benchmarks (customer always talking 
+about low parts overall parts costs, etc) t o best manage parts and c omponents and 
+show the best possible cost/hour for the 794AC trucks. 
+ 
+ 
+
+
+===== PAGE 10 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 10 of 23 
+ 
+ 
+ 
+Figure 7 – Parts cost competitive analysis against the competitor Brazil site 
+ 
+ 
+3.3.2. MAJOR COMPONENTS 
+ 
+You will want to support the customer on establishing a plan for planned component removals 
+as part of the NMI.   Each customer has their strategies (hours, condition, condition + hours, 
+budget availability, etc.).   
+ 
+SOTREQ developed a specific strategy for the 794AC  NMI which has the trucks on a two-year 
+trial.  A key feature of this strategy was that the impact of components needed to have <1%  
+impact of Physical Availability.  To reach this target and reduce capital, SOTREQ developed and 
+applied the approach below.  SOTREQ believe each dealer could “capitalize” on this approach 
+to support their specific needs.  SOTREQ  would be happy to walk interested dealers through 
+this approach. 
+ 
+1. Develop a Reliability Curve (Weibull Analysis) – starting with data available. 
+2. Evaluate Failure Rate of each component (CPI’s/Warranty) vs. Impact on Physical 
+Availability. 
+3. Account for the logistic availability challenges for critical parts/components. 
+4. Develop a Risk Buying Curve – gradual buying as the machines’ SMU’s increase. 
+5. Evaluation competition acquisition costs if the data is available and compare with Cat 
+costs, determine best cost/hour/useful life ratio. 
+ 
+NOTE: For this NMI, 7 Major Components and 4 Hydraulic Components with high physical 
+availability were purchased.  See Figures 8 and 9 below for details. 
+ 
+10
+Frota: 06 Equipamentos
+Período: 10000 Horas
+Frota: 06 Equipamentos
+Período: 10000 Horas
+Custo PM – 794AC
+Custo PM – 930E
+ Engenharia de Mineração desenvolveu e atuou junto a área de 
+suporte a operações (Visconti) no D/N e C/L das peças de preventiva, 
+tornando mais competitivas que o concorrente Komatsu;
+ Melhorando o TCO/ custo por hora do 794AC;
+COMPETITIVE ANALISIS – C AT  794 X KOMA TSU 930E -4
+
+===== PAGE 11 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 11 of 23 
+ 
+ 
+Figure 8 – Major components purchased during the 794AC trial in Brazil 
+ 
+ 
+Figure 9 – Hydraulic components purchased during the 794 trials in Brazil 
+ 
+
+
+===== PAGE 12 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 12 of 23 
+ 
+ 
+Figure 10 – Example: Cost per hour analysis, comparison cost x life between 794AC and competition 
+ 
+ 
+3.3.3. TOOLING 
+ 
+The added NMI Tooling requirements should be defined through a combination of the Tooling 
+List provided by Caterpillar and the results of the MSR done and include the following: 
+ 
+1. Basic Truck Tooling not currently available on site. 
+2. PM Tooling, Diagnostic Tooling, Assembly Tooling currently not available on site. 
+3. Torque Tooling currently not available on site. 
+4. Tooling recommended by Caterpillar and other Dealer (based on their experience). 
+ 
+It is important to connect the tooling to the strategy of increasing productivity and safety of the 
+workforce.   
+ 
+NOTE: In this NMI case, SOTREQ  made numerous acquisitions that reduced assembly time  
+and maintenance repair time while still maintaining a safety focus (Elimination of Live Work); 
+the list is attached. 
+ 
+ 
+3.3.4. MAINTENANCE STRATEGY 
+ 
+The Mainten ance Strategy must be built upon the MSR, Risk Management and those key 
+aspects from the customer surveys.  Discussions with other dealers  on their experience 
+(including downtime drivers) and strategies also are useful.  Use of Best Practices, FPC 
+Simulation and other tools will also support a great strategy. 
+ 
+In this NMI case, in addition to the above, there were additional KPI’s as part of the commercial 
+agreement that were also a foundation to the strategy. 
+ 
+ 
+
+
+===== PAGE 13 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 13 of 23 
+ 
+Figure 11 – Maintenance Strategy build to perform in high numbers of KPIs. 
+ 
+In this NMI, after defining the performance metrics anchored in the technical evaluation,  
+SOTREQ developed a robust Maintenance & Repair Strategy and published this strategy as a 
+Best Practice:  A PM Model to Deliver a Higher Availability for 794AC Trucks. 
+  
+ 
+ 
+Figure 12 – Best Practice Published around the Maintenance Strategy thru this NMI Concept 
+ 
+
+
+===== PAGE 14 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 14 of 23 
+3.3.5. EQUIPMENT MANAGEMENT 
+ 
+Within the Product Experience section, i t was emphasized that building a robust plan for all 
+aspects of Equipment Management is essential for the customer to have all the benefit/feature 
+of the product and a successful NMI.    
+ 
+Thinking Outside the Box 
+ 
+It is often necessary and important to think outside the box to find additional solutions to mitigate 
+both operational and maintenance risks .  Below are some of these “outside the box” solutions 
+that SOTREQ has applied to this NMI. 
+ 
+ 
+ 
+ 
+Figure 13 – Best Practice Published around the Maintenance Strategy thru this NMI Concept 
+ 
+ 
+CAT Products/Technology 
+ 
+• 1- Driver Safety System (DSS) – DSS can be used to reduce the risk of accidents 
+due to fatigue, typically at night.  (Safety). 
+ 
+• 2- Digital Video Recording (DVR) – Used to access operator practices (good and 
+bad) and their training.  It has also been used as part of accident investigation.   
+(Safety and Productivity). 
+ 
+• 3 - Final Driver and Axle Oil 60 (FDAO 60) – 60 FDAO (Synthetic Oil) is an option 
+to extend the oil life and reduce cost/hour and maintenance ratio – all a part of the 
+maintenance strategy (TCO, Maintenance Ratio and Productivity). 
+ 
+1 
+2 
+3 
+
+===== PAGE 15 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 15 of 23 
+Third-Party 
+ 
+• On-Board Kidney Looping can be one opportunity to increase productivity, reduce 
+maintenance ratio and reduce cost/hour.   
+ 
+SOTREQ has developed and implemented a Caterpillar Best Practice that would be 
+easily replicable to your truck fleets - Improving the Hydraulic Fluid Cleanliness 
+of 794AC Fleet.  
+ 
+Picture 13 – Best Practice Published around the kidney looping on board thru 794AC Trucks 
+ 
+Understanding the Mine Operation Model 
+ 
+It is important to understand the Mine Operation Model (MARC, CVA, CSA, other) for the site in 
+building the Equipment Management Process.  The customer is observing the “effort” that is spent 
+to maintain the performance results (Physical Availability, MTBF, MTTR, etc.); a strong process 
+will show that the NMI product is not a “heavy maintenance”!  Bear in mind that most mining relates 
+to 4.0 Industry and are looking for mechanisms to reduce rework and manpower on site. 
+ 
+In this NMI, the operation model was a CVA  with parts and labor under dealer responsibility  and 
+commitments in both performance and costs. SOTREQ took this opportunity to implement several 
+mechanisms to support in this new mining environment. 
+ 
+NOTE: In the case of the typical mining dealer, they may look for market alternatives or simplified 
+maintenance processes.  
+
+
+===== PAGE 16 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 16 of 23 
+ 
+ 
+Figure 14 – M&R Processes Customized to Customer Site Managed by Web System 
+ 
+ 
+Figure 15 –Inspectors doing inspections with tablets, 25% - time improvement to have the backlog planned 
+ 
+
+
+===== PAGE 17 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 17 of 23 
+ 
+Figure 16 – Strong Condition Monitoring Strategy to address the risk found through MSR 
+ 
+As a reminder, use all the condition monitoring tools available (standard, new technology, etc) to 
+capture and attend all product risks.  Using Supercomms and RaceRender are two examples of using 
+“New Technology”.  
+ 
+ 
+ 
+Figure 17 – Some software’s (Race Render) supported the condition monitoring strategy 
+ 
+
+
+===== PAGE 18 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 18 of 23 
+3.3.6. TRAINING PEOPLE & BUILDING KNOWLEDGE 
+ 
+Training and Building Knowledge are critical to the overall success of the NMI and future performance 
+of the product.  Many operations make the mistake of just looking for technical training associated with 
+the product maintenance and the operation of the product.   
+ 
+The training and a knowledge base are necessities for e veryone involved in the NMI  process - from 
+operators and mechanics in the field to site management to company management at corporate 
+headquarters. 
+ 
+In this NMI, the engineers that developed the NMI process developed the training material; this detailed 
+material was used to provide the technical and operations training in numerous training sessions  
+throughout SOTREQ and the customer’s organization to ensure the appropri ate understanding and 
+ultimately success of the NMI .  To be more specific, over 320 hours of training was conducted 
+throughout the NMI process. 
+ 
+Additionally, as there was a competitive product on site and there is constant comparison between the 
+two products by the customer it was important to promote and defend our strengths.  Adding the 
+appropriate comparative information in the training material was successful used to by both the 
+SOTREQ personnel and Customer to understand the positive differentiators of the Cat 794AC over the 
+competition. 
+ 
+SOTREQ developed “Playbooks” to support the training.  If interested SOTREQ would be happy to 
+share these playbooks. Figure 18 – Build the Knowledge around the NMI is one the most important part of product experience 
+ 
+ 
+
+
+===== PAGE 19 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 19 of 23 
+ 
+Figure 19 – Playbooks designed to training the shop people around the differences of CAT x Competitors 
+ 
+ 
+3.3.7. PRODUCT PROBLEMS MANAGEMENT 
+ 
+Depending on where your NMI  machines were in the production line, not all updates and 
+product improvements that are available to those machines may be on your machines.  
+Consider implementing the updates and improvements during the assembly to minimize the 
+impact of them in production. 
+ 
+Some key actions: 
+ 
+• Work with your Caterpillar NMI contacts to be fully aware of the updates and product 
+improvements.   
+• Determine what should be fixed or applied during assembly.   
+• Plan appropriately for the required work (manpower, parts, scheduling, etc.). 
+ 
+Two important “windows of opportunity” for understanding and implementing fixes or quality 
+corrections/updates are as follows: 
+ 
+• Pre-Delivery Audit (P DA):  Request that PDA’s  (“quality inspections”) are done on your 
+trucks and review of those PDA’s.  Confirm that all appropriate updates are made.  If they 
+cannot be corrected before delivery, make sure that you have the resources and planning 
+in place to correct before commissioning. 
+ 
+• Partners In Quality (PIQ):  Work with your Cat representatives to prepare for and perform 
+all quality corrections and product improvements during machine assembly.  Performing 
+these corrections at machine assembly will minimize what needs to be done at PM or other 
+
+
+===== PAGE 20 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 20 of 23 
+downtime (scheduled or unscheduled) and support both better performance and better 
+customer perception. It is important to alert the factory on the any issues found after the 
+PDA. 
+ 
+ 
+ 
+Picture 20 – Make sure all trucks around the NMI made PDA before shipment. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Picture 21 – All the product updates made during the assembly
+ 
+ 
+After NMI, standard technical processes should commence, including but not limited to the 
+following:  PPM Reviews, DPPM / DSN entries, Performance Reviews, CI Projects, technical rep 
+visits, Parts Escalation, and more. 
+
+
+===== PAGE 21 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 21 of 23 
+            3.3.8. COMUNICATION PLAN 
+ 
+Building your NMI  Plan in the project manager methodology of a  WBS – Work Breakdown 
+Structure, will give more organization and clarity on all the important aspects for introducing a new 
+model into the region.  Establishing a robust Communication Plan is cr itical for creating alignment 
+and engagement throughout the process. 
+ 
+ 
+Figure 22 – Example of WBS build for NMI Process 
+ 
+ 
+Regular established meetings with proper participants, update status, actions, responsibilities 
+are key to successful communication.   
+ 
+For this NMI, the following communication routine was established: 
+• Week Meetings (Follow Up Meeting) – Update the status of the NMI Plan with key process 
+owners:  Dealer Process Owners, PMO Team, CAT Region and NMI Teams. 
+ 
+• Bimonthly Meetings (Executive Meeting) – Asses the status of the implementation with 
+stakeholders:  CAT & Dealer Sponsors, Dealer Process Owners, PMO Team, CAT & Dealer 
+NMI Team and Dealer Implementation Team. 
+ 
+NOTE: After NMI Implementation, it is suggested that a governance regime should remain in 
+place for ~6 months after operations begins to monitor the performance and adjust as needed. 
+ 
+
+
+===== PAGE 22 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 22 of 23 
+4.0 Benefits 
+ 
+A few of the key benefit of this NMI  Introduction, i n addition to the benefits  received through the 
+individual best practices used in this document, are as follows: 
+ 
+• Better risk management through use of the MSR. 
+• Improved PM productivity by reducing waste. 
+• Improved contamination control and hydraulic oil life extension. 
+  
+There are numerous results to demonstrate the success of this NMI. Some of the results are confidential 
+but additional details may be shared through the SOTREQ management team.  Here are some of the 
+highlights: 
+ 
+• Achieving KPI’s for the 794AC Trucks: 
+ 
+o Physical Availability:     > 90% for 1.5 years and going 
+o MTBF:     > 60 hours for 1.5 years and going 
+o Cost Per Hour & Cost Per Ton: 5% less than the competition 
+ 
+• Customer Satisfaction with the 794AC trucks, as determined through customer surveys: 
+o MR (Maintenance Ratio):  87% 
+o Fleet Performance & Reliability: 93% 
+o Productivity:    > 90% 
+ 
+• All of the CPH & CPT targets for the trial were met. 
+ 
+• The high performance of this 794AC fleet based on the successful NMI  has given the 
+customer confidence to move forward with additional 794AC purchases: 
+ 
+o 9 x 794AC Trucks at another Vale site. 
+o 11 x 794AC Trolley Truck as part of the customer’s carbon reduction focus for the future. 
+ 
+• The customer recognized SOTREQ with award plaques for excellent fleet performance 
+(PA, MTBF, MTTR). 
+              
+ 
+ 
+
+
+===== PAGE 23 =====
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Roadmap to Planning and Perform a “NMI - New 
+Marketing Introduction” for CAT Electric Drive Trucks 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221212-1 
+Caterpillar: Confidential Yellow                 Page 23 of 23 
+5.0 Resources Required 
+ 
+We suggest that dealer who want to introduce their NMI  with this roadmap have a PMO  (Project 
+Manager Office – Leader to embrace and connect all the people and resources required). 
+ 
+All the cost around the project – please contact the dealer to understand it. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Contact the dealer to have access of all the parts and component list. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+• Fleet Risk Management – Improving the 794AC Truck Performance Based on MSR 
+• A PM Model to Deliver a Higher Availability for 794AC Trucks 
+• Improving the Hydraulic Fluid Cleanliness of 794AC Fleet 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice Was Written By: 
+ 
+Júlio César Corrêa  
+Product Performance and Engineering Manager – SOTREQ S/A 
+NMI Champion of Electric Drive Trucks in SOTREQ  
+Julio.correa@sotreq.com.br  
++ 55 94 98111-6441  
+ 
+Ricardo Oliveira 
+Technical Manager – SOTREQ S/A  
+Ricardo.Oliveira@sotreq.com.br  
++ 55 31 974557-44  
+ 
+Fábio Cota  
+Consultant, Product Performance (Project Leader by Dealer) – SOTREQ S/A 
+fabio.cota@sotreq.com.br  
++ 55 94 98807-8155 
+ 
+Douglas Friedrich  
+Site Performance Manager – CATERPILLAR  
+Friedrich_Douglas_W@cat.com  
++1.305.807.9542

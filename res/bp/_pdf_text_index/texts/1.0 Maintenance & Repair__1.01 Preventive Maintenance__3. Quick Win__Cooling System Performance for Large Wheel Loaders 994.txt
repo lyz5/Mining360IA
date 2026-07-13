@@ -1,0 +1,391 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+August 2013 
+1212-1.01-1303 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.     mining.cat.com/bp 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Cooling System 
+Performance for LWL 994 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Cooling System Performance for LWL 994 ................ 0 
+1.0 Introduction ........................................................ 1 
+2.0 Description of Best Practice ............................... 1 
+3.0 Implementation Steps ........................................ 6 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information pro vided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cooling System Performance for LWL 994 
+DATE 
+8/8/2013 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.01-1303 
+Caterpillar Confidential:  GREEN          Page 1 of 7 
+1.0 Introduction  
+ 
+The purpose  of this Best Practice is to establish  procedures wit hin preventive  maintenance to avoid 
+unexpected downtimes or damage in major components  due to high engine, transmission or implement 
+temperatures. W hen the radiator is externally obstructed (dirt from the front loader plus water or oil) the cooling 
+system loses efficiency and also if there is internal contamination in the cooling system.  
+ 
+With periodic evaluations and inspections of the cooling system we will: 
+• Rule out problems related to dirt and clogging of radiator and coolants 
+• Avoid catastrophic failure associated to high temperature caused by contamination of coolants and 
+radiators 
+• Determine whether the coolants and radiator are dissipating the heat correctly 
+ 
+2.0 Description of Best Practice 
+ 
+Temperature measuring procedure: 
+ 
+The following graphics show engine coolant diagrams and the locations to be evaluated by temperature. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cooling System Performance for LWL 994 
+DATE 
+8/8/2013 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.01-1303 
+Caterpillar Confidential:  GREEN          Page 2 of 7 
+ 
+Machine - Left 
+ 
+ 
+Machine - Right       Machine - Left 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cooling System Performance for LWL 994 
+DATE 
+8/8/2013 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.01-1303 
+Caterpillar Confidential:  GREEN          Page 3 of 7 
+Temperatures Chart 
+ 
+System Temp L o c a t i o n  
+(On Diagram) 
+Referenced Value Measured Value Expected 
+Tolerance 
+Radiator Inlet T1 107.9     
+Radiator Outlet T2 99.5     
+Radiator Delta T2-T1 -8.4 0 +/- 1.0°C 
+Engine Oil Water Cooler Inlet T3 99.5     
+Engine Oil Water Cooler Outlet T4 101.4     
+Engine Oil Cooler Delta T4-T3 1.9 0 +/- 1.0°C 
+Powertrain Water Cooler Inlet T5 100.5     
+Powertrain Water Cooler Outlet T6 103.3     
+Powertrain Cooler Delta T6-T5 2.8 0 +/- 1.0°C 
+*Brake Cooler exempt due to  high operator variability and minimal system impact* 
+Powertrain Oil-to-Air Inlet T7 127.4     
+Powertrain Oil-to-Air Exit T8 101.1     
+Powertrain Oil-to-Air Delta T8-T7 -26.3 0 +/- 4.0°C 
+Implement Cooler Inlet T9 94.7     
+Implement cooler Exit T10 79     
+Implement Sys Delta T10-T9 -15.7 0 +/- 2.0°C 
+Steering Cooler Inlet T11 80.4     
+Steering Cooler Exit T12 68.1     
+Steering Sys Delta T12-T11 -12.3 0 +/- 2.0°C 
+All temperature deltas’ referencing traditional machine truck loading cycles. Deviation from truck loading 
+cycles will results in inaccurate data. Fully opend thermostate is also required which equates to a coolant 
+temperature at or above 92°C 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cooling System Performance for LWL 994 
+DATE 
+8/8/2013 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.01-1303 
+Caterpillar Confidential:  GREEN          Page 4 of 7 
+ 
+Air flow test procedure: 
+ 
+This procedure is to be used as REFERENCE ONLY relative to supporting historical dat a from the machine 
+being tested. Machine cooling system should be set to factory specs and pressures and cooling cores 
+completely cleaned.  
+Use this data as a reference for future test for the machine S/N being tested. 
+    
+The procedure of the air flow tes t with 8T -2700 tool and pressure registry of the coolant system is described 
+below. 
+ 
+It is for measuring the amount of air passing through the radiator.  
+• Put the machine in a horizontal terrain 
+• Start the engine and park the equipment 
+• Locate a ladder in the posterior part of the equipment and secure it 
+• Configure the blow by 8T-2700 equipment for measuring 
+• Measure 8 points (shown below) 
+• To measure air pressure in the same point, mark the radiator’s guards with a marker 
+• Engine rpm and fan rpm should be registered to obtain a standard measurement 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+Image 1- Exterior clogging of the implement’s core  
+ 
+ 
+ 
+The information must be saved in order to generate particular trends of each machine.   
+Repair actions, such as cleanliness, parts replacement, etc. can be generated depending on the analysis. 
+ 
+The data analysis compared to previous experiences may indicate that less air amount is going through the 
+radiator, impacting directly on the cooling system performance. 
+ 
+ 
+ 
+  
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cooling System Performance for LWL 994 
+DATE 
+8/8/2013 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.01-1303 
+Caterpillar Confidential:  GREEN          Page 5 of 7 
+Reference Example: 
+ 
+Machine - Rear (Exit Grills Removed for Clarity) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+S/N:  442-XXXXX 
+  
+  
+Airflow Reading #1 
+(Machine Baseline) 
+Airflow Reading #2 Airflow Reading #3 Airflow Reading #4 
+Point A         
+Point B         
+Point C         
+Point D         
+Point E         
+Point F         
+Point G         
+Point H         
+  
+NOTE: Reading #1 should be taken after cooling system is thouroghly cleaned. Reading #1 should then be used 
+as a baseline point for all future measurements pertaining to the same machine serial number  
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cooling System Performance for LWL 994 
+DATE 
+8/8/2013 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.01-1303 
+Caterpillar Confidential:  GREEN          Page 6 of 7 
+3.0 Implementation Steps 
+ 
+a. Report about the process to those in charge of the machine 
+b. Ensure the machine is safe to approach 
+c. Complete Pre Checks 
+i. Check for proper coolant level 
+ii. Check/replaced thermostats – ensure proper orientation 
+iii. Check water pump for functionality 
+iv. Check for debris build-up in the airstream of ALL cooling cores – clean as needed 
+d. Establish who will be responsible of taking data 
+e. Periodically take data 
+f. Complete Post Checks 
+i. Replace any part removed 
+ii. Double check for leaks 
+ 
+4.0 Benefits 
+ 
+The hig h engine temperature can cause a catastrophic engine failure if not  controlled. The cost of  a 3516B 
+engine of a 994F is $570,253. Downtime of an engine failure  is high because of the labor involved and the 
+probability of finding an available engine when needed.  
+In Glencore Tintaya mining site, at 4100 mosl, we’ve had t wo catastrophic engine failures which represent long 
+downtime periods due to coolant’s high temperature. Also, when we have very high coolant temperatures for a 
+long period of time , there is also t he possibility of compromising  other systems such as the converter, which 
+also uses coolant. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Staff involved in the job 
+• Ladder 
+• Inspector or supervisor 
+ 
+6.0 Supporting Attachments / References 
+ 
+• SEBD0518 “Know Your Cooling System{0708, 1000, 1350, 7000}” 
+  
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cooling System Performance for LWL 994 
+DATE 
+8/8/2013 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.01-1303 
+Caterpillar Confidential:  GREEN          Page 7 of 7 
+ 
+ 
+7.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+  
+      Jose Benites Price 
+        Loader and Auxiliary Equimenent / Technical Supporte 
+        Jose.benites@ferreyros.com.pe 
+ 
+ 
+      Anggello Valdez Sosa 
+        Loader and Auxiliary Equimenent / Technical Supporte 
+        Anggello.valdez@ferreyros.com.pe

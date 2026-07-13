@@ -1,0 +1,174 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+AFA Guidelines for 
+Analyzing Duo-cone Seal 
+Failures 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+AFA Guidelines for Analyzing Duo-cone Seal Failures
+ ................................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+January 2013 
+1301-4.04-1307 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+1.0 Introduction  
+ 
+Numerous Caterpillar published Applied Failure Analysis (AFA) guidelines and training packages 
+exist, however, most of the guidelines apply to metallurgical parts failures.   There are few guidelines 
+that discuss seal or other non-metal parts failure analysis. 
+ 
+Determining the root cause of any failure is important so that actions can be taken to avoid future 
+repeat failures. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+At this time, Caterpillar does not have an official guideline on analyzing duo-cone seal failures.  
+Reuse and salvage guidelines do exist, but do not specifically cover the most common causes of 
+failure. 
+ 
+Hastings Deering has written an internal guideline to assist their technicians and AFA staff with the 
+analysis of duo-cone seal failures.  The guideline is attached to this Best Practice. 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+AFA Guidelines for Analyzing Duo-cone Seal Failures 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.04-1307 
+Caterpillar Confidential:  YELLOW          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.0 Implementation Steps 
+ 
+Since the document is not an official Caterpillar publication at this time, it is intended for dealer use 
+only. 
+ 
+The principles contacted in the guideline can be used to assist your AFA staff with duo-cone seal 
+failure analysis and technician training. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+AFA Guidelines for Analyzing Duo-cone Seal Failures 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.04-1307 
+Caterpillar Confidential:  YELLOW          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+4.0 Benefits 
+ 
+Use “root cause” information to take actions to prevent future repeat failures. 
+Provide professional quality AFA reports. 
+ 
+ 
+5.0 Resources Required 
+ 
+Staff time to review or incorporate into technician training. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+• A GUIDE TO WHY DUO CONE SEALS LEAK2.pdf 
+ 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Michael Brown – Hastings Deering 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+AFA Guidelines for Analyzing Duo-cone Seal Failures 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.04-1307 
+Caterpillar Confidential:  YELLOW          Page 3 of 3

@@ -1,0 +1,433 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.04 CRC Management\1. Strategic\Forecasting CRC Component Rebuild Volume and Capacity.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+March 2008  
+0608-4.3-1122  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Forecasting CRC 
+Component Rebuild 
+Volume and Capacity 
+Application  Maintenance  Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety MARC 
+Management 
+ 
+ 
+ 
+Forecasting CRC Component Rebuild Volume and 
+Capacity .................................................................... 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits ............................................................. 6 
+5.0  Resources Required .......................................... 6 
+6.0  Supporting Attachments / References ............... 6 
+7.0  Related Best Practices ...................................... 6 
+8.0  Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Forecasting CRC Component Rebuild Volume and 
+Capacity 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0608-4.3-1122  
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+1.0 Introduction  
+ 
+Forecasting future component rebuild volumes enables the dealer to make plans to manage 
+future customer requirements and to forecast future revenues.  CRC component rebuild volume 
+from mining customers is directly tied to the active mining machine populations and changes to 
+that population. 
+Over the past three years, the worldwide population of Caterpillar Large Off Highway Trucks (785 
+and up) has doubled.  Forecasts indicate that the active population of machines will double again 
+in the next three to four years. 
+Populations for other mining machine models for mining markets are showing similar growth 
+forecasts. 
+This dramatic growth of active mining machine populations will impact future CRC component 
+rebuild volumes.   Future customer component rebuild requirements may exceed current CRC 
+capacity and create a need for expansion and/or efficiency improvement. 
+This Best Practice is a tool to forecast future component rebuild volumes, to assess current 
+capacity, and to develop a “Five Year Plan” to manage the growth in the Mining business. 
+This Best Practice is a Caterpillar / Dealer joint project from APD. 
+ 
+ 
+ 
+ 
+ 
+These machines 
+now entering first 
+rebuild cycle 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Forecasting CRC Component Rebuild Volume and 
+Capacity 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0608-4.3-1122  
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+2.0 Best Practice Description    
+ 
+This Best Practice is a process to assess current active mining machine population in a dealer 
+territory and to forecast the growth in machine population.  With that data, a dealer can estimate 
+the expected increase in major component rebuilds the machine population growth will generate. 
+The expected future component rebuild needs can then be balanced against the CRC maximum 
+capacity given current processes and assets.  Plans can then be made to manage the change. 
+                           
+               
+ 
+3.0 Implementation Steps 
+ 
+• The first step is to determine which mining machin e models families create the majority of 
+the CRC component rebuilds.   The chart below is a dealer analysis of CRC rebuilds by 
+machine model family (2007 data). 
+ 
+                                            
+ 
+ 
+       Off High Trucks clearly have the largest impact, however, the other machine models          
+       combined also generate significant rebuild volume.   
+ 
+• The next step is to gather machine population data  for the machines models generating 
+most of the CRC rebuild activity.  Refer to the OHT population chart in section one above.  
+To develop the chart, LOHT machine sales data was collected for the past twelve years 
+and forecast sales data for the next 10 years.  The average life of a LOHT was assumed to 
+be 12 years. 
+To calculate the current “active” population, add together all the sales for the past twelve 
+years.  To calculate future population, add the forecast sales and subtract the machines 
+that are more than 12 years old for each year. 
+It is helpful to create a graph similar to the graph in section one. 
+This process should be repeated for each major family of mining machines.   
+                Large Off Highway Trucks  
+                Track Type Tractors  
+                Wheel Loaders  
+                Motor Graders  
+                Wheel Dozers  
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Forecasting CRC Component Rebuild Volume and 
+Capacity 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0608-4.3-1122  
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+• The next step is to calculate the percentage of ac tive machine population increase from 
+each year to the next year.  The percent growth of machine population can be used to 
+predict expected growth in CRC component rebuilds.  The “percent” change in population 
+should relate directly to a “percent” change in CRC component rebuilds. 
+ 
+Example Forecast: 
+ 
+     
+LOHT Population (785 - Up)   
+Year Sales 
+Accumulated 
+Population *  
+Percent 
+Change 
+    1998 18 18 N/A 
+1999 17 35 94% 
+2000 19 54 54% 
+2001 22 76 41% 
+2002 26 102 34% 
+2003 29 131 28% 
+2004 31 162 24% 
+2005 31 193 19% 
+2006 41 234 21% 
+2007 62 296 26% 
+2008 81 377 27% 
+Forecast        
+2009 112 489 30% 
+2010 129 600 23% 
+2011 147 712 19% 
+2012 159 817 15% 
+2013 175 916 12% 
+2014 195 1009 10% 
+                      
+                  * Assumes 12 year machine life 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Example: 
+ 
+1. Sales history data entered in table. 
+2. Sales forecast data entered in table. 
+3. Active population calculated 
+assuming 12-year machine life. 
+4. Year to year change calculated. 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Forecasting CRC Component Rebuild Volume and 
+Capacity 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0608-4.3-1122  
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+Planned machine component rebuilds occur two years after a new machine is delivered.  
+Today’s (2008) planned rebuilds in the shop are from machines sold prior to 2006.  The 
+rebuilds next year (2009) will be for machines sold before 2007.  The rebuild forecast for 
+next year is then based on the population change from 2006 to 2007. 
+ 
+ 
+ 
+LOHT Population (785 - Up)     
+Year Sales 
+Accumulated 
+Population 
+Percent 
+Change 
+Forecast 
+Rebuilds 
+1998 18 18 N/A   
+1999 17 35 94%   
+2000 19 54 54%   
+2001 22 76 41%   
+2002 26 102 34%   
+2003 29 131 28%   
+2004 31 162 24%   
+2005 31 193 19%   
+2006 41 234 21%   
+2007 62 296 26% 200 
+2008 81 377 27% 242 
+Forecast         
+2009 112 489 30% 307 
+2010 129 600 23% 391 
+2011 147 712 19% 507 
+2012 159 817 15% 622 
+2013 175 916 12% 738 
+2014 195 1009 10% 847 
+ 
+• Assumes 12 year machine life 
+ 
+Note:  In the example above, with only a 20-30% annual growth in machine population, the  
+           CRC component rebuilds will go from 242 in 2008 to 507 in 2011.   The expected CRC     
+           component rebuild requirements double in the next three years.   
+ 
+A blank Excel spreadsheet is attached to the Best Practice.  Enter machine sales history, sales 
+forecast, and your 2007 CRC component rebuild volume, and the spreadsheet will calculate 
+expected forecast volumes. 
+ 
+ 
+ 
+ 
+ 
+ 
+Example: 
+ 
+Dealer rebuilt 200 OHT components 
+in the CRC in 2007. 
+ 
+What is the forecast for 2008? 
+• Rebuilds in 2008 are on 
+machines sold prior to 2006. 
+• Growth in 2006 was 21% 
+• 2008 Forecast; 
+200 +21% = 242 
+What is forecast for 2009? 
+• Based on pre-2007 
+machines 
+• 2007 growth 26% 
+• 2009 Forecast:  
+242 + 26% = 307 
+ 
+2007 Actual Rebuilds 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Forecasting CRC Component Rebuild Volume and 
+Capacity 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0608-4.3-1122  
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+Assumptions: 
+This process for estimating future CRC component rebuild volumes is based on a number of 
+important assumptions.  These assumptions should be carefully considered for validity. 
+• Assumes a 12-year average machine life.  If life i s longer, the impact is higher active 
+machine populations.  Shorter life lowers active machine populations. 
+• Assumes machine sales forecast is reasonably accur ate.  Commodity prices maintain the 
+growth in Mining.  Mines that may be near the end of their productive life need to be 
+considered.  New mines being opened need to be considered in the machine sales 
+forecast. 
+• Assumes that customers performing all or a part of  their own component rebuilds will not 
+change policy.  There is some risk that mines may not be able to continue their own 
+rebuilds with expanded fleets and personnel shortages. 
+• Assumes that dealer and customers policy on use of  Reman components will not change.  
+Using Reman major components displaces component rebuilds, so a change in policies 
+changes CRC rebuild volumes. 
+• Assumes that the balance between planned and unpla nned component rebuilds will not 
+change.  Level of unplanned component rebuilds (failures) will not increase or decrease 
+CRC rebuild volume. 
+• Assumes CRC rebuilds are proportional to active po pulation of machines. 
+ 
+Using the forecast: CRC Planning 
+ 
+Once a long range forecast for CRC component rebuild volume is determined, that forecast 
+needs to be compared to the present CRC capacity given manpower, shifts, facility, tooling, and 
+processes. 
+Where forecasted component rebuild requirements within the next few years exceed present 
+CRC capacity, it is appropriate to develop a plan to manage the future component rebuild 
+requirements. 
+ 
+Options for Increasing CRC Capacity 
+ 
+• Improve Component Turnaround Time (efficiency) 
+o Eliminate bottlenecks  
+o Eliminate waste (lean processes) 
+o Optimize asset utilization (planning and schedulin g) 
+o Streamline processes 
+• Increase Resources 
+o Add / retain technicians 
+o Add / expand shifts 
+o Add facility and work bay space 
+o Add / modernize tooling 
+• Utilize Reman Major Components for Peak Shaving 
+• Utilize Reman subcomponents in lieu of salvage 
+• Increase Parts and Spare Component Inventories. 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Forecasting CRC Component Rebuild Volume and 
+Capacity 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0608-4.3-1122  
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+4.0 Benefits 
+A long-range component rebuild forecast allows a dealer CRC to: 
+• Plan to meet mining customer future component rebu ild needs. 
+• Utilize dealer assets effectively. 
+ 
+5.0 Resources Required 
+ 
+• Management time to collect data, analyze, and revi ew findings 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Components rebuild forecast spreadsheet. 
+OHT sales forecasts by region. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+• Improving CRC Component Turnaround Time 
+•  CRC Planning & Scheduling Systems 
+• Labor Efficiency Lowers CRC Costs 
+ 
+Editor’s note:  Although the mining business is becoming ever more cyclical, the principals of this best 
+Practice during a projected growth cycle are still relevant.  
+ 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+6 Sigma Black Belt 
+Cat Global Mining Product Support

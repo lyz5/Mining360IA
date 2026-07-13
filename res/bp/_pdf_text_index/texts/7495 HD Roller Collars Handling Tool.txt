@@ -1,0 +1,148 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+September 2022 
+1.04-220919-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+7495 HD Roller Collars 
+Handling Tool 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+7495 HD Roller Collars Handling Tool ....................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ........................................... 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+7495HD Roller Collars Handling Tool 
+DATE 
+9/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-220919-1 
+Caterpillar: Confidential Yellow P age 2 of 4 
+1.0 Introduction 
+I
+t is difficult to manually transport the lower roller collars of the 7495 HD and HR excavators as their 
+design is not favorable for packaging and transporting by the mechanics. 
+Figure 1: Roller collars accessory tool 
+2
+.0 Best Practice Description 
+T
+he Best practice developed is a device to assist in handling the 7495 undercarriage lower roller 
+retaining collars. With commonly available parts and little labor. Implementation of Best Practices can 
+be easily done during maintenance to minimize bad posture. 
+Figure 2: Before and after Improvement 
+Before After
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+7495HD Roller Collars Handling Tool 
+DATE 
+9/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-220919-1 
+Caterpillar: Confidential Yellow P age 3 of 4 
+3.0 Implementation Steps 
+A. Design Tool
+B. D
+etermine Material to Construct Tool
+Figure 3: Tool specifications 
+Figure 4: material used to create the tool 
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+7495HD Roller Collars Handling Tool 
+DATE 
+9/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-220919-1 
+Caterpillar: Confidential Yellow P age 4 of 4 
+4.0 Benefits 
+• Safety:  Risks related to accidents and injury due to ergonomics when carrying out the manual
+transport of the component have been reduced.
+• Productivity: Time and effort to move is reduced.
+5
+.0 Resources Required 
+Manpower:  16 Hours 
+6
+.0 Supporting Attachments / References 
+N/A 
+7.0 Related Best Practices 
+N/A 
+8.0 Acknowledgements 
+Special thanks to the efforts of the engineering team at Sotreq Salobo, always willing to offer 
+support in the development of solutions for partners and customers, and other participants involved in 
+this project. 
+  
+Sotreq S/A 
+  Daniel Simões 
+  Performance Consultant 
+Kleison Oliveira 
+Fleet Performance Engineer 
+Sotreq S/A 
+D
+anilo Erick 
+Welder 
+Sotreq S/A 
+Leonar
+do Antunes 
+Fleet Performance Engineer 
+Sotreq S/A 
+T
+hiago Dillon 
+Technical Analyst 
+Sotreq S/A

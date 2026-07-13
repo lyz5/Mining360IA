@@ -1,0 +1,233 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+On-board Fluid Filtration 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+MARC 
+Management 
+ 
+ 
+ 
+ 
+On-board Fluid Filtration ............................................ 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments .................................... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+August 2006 
+0806-2.10-1003 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+Maintaining very clean fluid throughout the entire life cycle of the major component or system is 
+the best way to maximize component life and improve reliability. The micron rating of filters on 
+many mining machine systems are sized so as not to plug during the initial break-in period on 
+new machines. This does not provide optimal filtration capability to maintain very high levels of oil 
+cleanliness after the break-in period is complete.  
+ 
+2.0 Best Practice Description 
+Ultra-High Efficiency (UHE) 6-micron hydraulic filters are the most aggressive approach to 
+removing break-in debris as quickly as possible and maintaining the highest level of fluid 
+cleanliness. The UHE filters are used in place of standard filters for all machine systems except 
+the engine. Because these filters effectively trap very small particles, some filter plugging will 
+occur during the initial PM periods. The frequency and duration of filter plugging will vary by 
+system.  
+ 
+2.1 Break-in Debris 
+ 
+2.1.1 Steering System 
+The steering systems essentially consist of a small piston pump, steering cylinders and a 
+control valve. Once the initial assembly debris is removed from this system, it produces very 
+little break-in debris and normally stays very clean when a UHE filter is installed. 
+ 
+2.1.2 Transmission 
+Transmission clutch discs, and gears produce moderate amounts of break-in debris. This 
+process usually takes between 100-200 hours to complete. Even if the transmission were 
+perfectly clean after assembly, break-in debris would still be produced. When standard filters 
+are replaced by UHE filters on transmission and torque converter circuits, plugging will occur 
+during the break-in period of 150-200 hours. The vast majority of machines will plug only one 
+filter. A few will plug a second filter. After the break-in period is complete, the UHE filters will 
+usually maintain the fluid at ISO 16/13 at all times with no further plugging. 
+ 
+2.1.3 Final Drive & Differential 
+The rear axle produces very large amounts of break-in debris from gears. This process may 
+last up to 8,000 hours. This debris is almost all very small abrasive particles from the hardened 
+gears. Due to inconsistent performance of the rear axle lube filter on machines with ground 
+driven lube pumps, it is difficult to estimate the frequency and duration of filter plugging. The 
+new 793D has a hydraulically driven continuous lube system that is much more effective. 
+However, there is virtually no experience with this system yet. 
+ 
+Improved on-board machine filtration generally consists of three steps: 
+ 
+2.2 Ultra High Efficiency (UHE) Filters 
+Install 6-micron UHE filters wherever possible.  
+ 
+2.3 Supplemental Filters 
+Any hydraulic circuit or component that has the opportunity to contaminate the hydraulic tank 
+with debris in the event of a failure should have supplemental filters installed. This includes 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+On-board Fluid Filtration 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1003 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+hydraulically operated fan motors that often have no filtration, and the case drain lines on some 
+hydraulic pumps.  
+ 
+2.4 Off-Board Filtration 
+Off-board filtration should be used to supplement the UHE filters in the rapid removal of break-in 
+debris on new machines or with rebuilt components or major system repairs. Particle counts 
+should be taken at the end of the PM period before PM service. When the UHE filters can 
+maintain ISO 18/15 or better throughout the PM interval without plugging for two consecutive 
+PM intervals, they are capable of maintaining cleanliness. Off-board filtration may be 
+discontinued at this point.  
+ 
+3.0 Implementation Steps 
+ 
+Three basic steps are required: 
+ 
+3.1 UHE Filter Part Numbers 
+Determine the machines models and identify the part number and quantity of UHE filters 
+required. Contact Matt Kimbro,
+ KIMBRO_MATT_G@cat.com , Caterpillar Filters & Fluids Group. 
+ 
+3.2 Off-Board Filter Carts 
+The use of off-board filtration is required after major repairs and recommended to accelerate the 
+completion of the component break-in period. An adequate number of properly sized carts and 
+tooling is required for repair and PM. 
+ 
+3.3 Customer Understanding and Acceptance 
+Both customer and dealer personnel must understand and accept that premature filter plugging 
+is expected for a short period of time. When filter plugging occurs, the machine should be 
+brought in, a new filter quickly installed, and the machine put back into service immediately. 
+Whether the machine is brought in immediately or at the end of the shift is at the discretion of 
+the dealer and customer.  
+ 
+If the customer or dealer is not willing to accept filter plugging during the break-in period, this 
+initiative should not be implemented. 
+ 
+4.0 Benefits 
+ 
+Maintaining oil cleanliness for major components and machine systems increases both reliability 
+and durability. Electro-hydraulic control valves, which are widely used in transmission controls 
+and implement hydraulics, are very intolerant of microscopic, ferrous debris. Heavily loaded 
+wheel and final drive bearings, as well as, duo-cone seals are also easily damaged by abrasive 
+debris from break-in of gears. Quickly reaching and maintaining ISO 18/15 or better significantly 
+reduces the number of contamination induced failures and repairs and significantly extends 
+component life. This is the most effective way to reduce cost per ton and increase reliability and 
+durability. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+On-board Fluid Filtration 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1003 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+5.0 Resources Required 
+ 
+The number and size of filter carts required is determined by fleet size. Carts may be purchased 
+through Cat Service Tool Group, outside suppliers, or built by the dealer. Training for 
+maintenance and operation personnel is also required so that they fully understand the function 
+and importance of the use of filter carts. 
+ 
+6.0 Supporting Attachments  
+Component Life Management Master Document PDF (Click on  “Attachments” tab inside of this 
+document to open/view) 
+ 
+“Improving Component Durability” booklet set - Form # SEBF1021, (see next page) 
+Consists of one of each of the following: 
+ Fuel Systems   SENR9620 
+ Final Drives and Differentials SEBF1015 
+ Powershift Transmissions  SEBF1016 
+ Component R&I   SEBF1017 
+ Engines    SEBF1018 
+ Hydraulics    SEBF1019 
+ Managing Fluid Cleanliness SEBF1020 
+ 
+7.0 Related Best Practices 
+0806-2.10-1003  -Managing Fluid Cleanliness 
+0806-2.10-1002  -Off-board Fluid Filtration 
+ 
+8.0 Acknowledgements 
+This On-board Fluid Filtration Best Practice was authored by: 
+Dick Douglas 
+Market Consultant 
+Caterpillar Global Mining 
+Douglas_Richard_D@cat.com  
+1-309-675-5699 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+On-board Fluid Filtration 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1003 
+Caterpillar Confidential:  GREEN          Page 4 of 4

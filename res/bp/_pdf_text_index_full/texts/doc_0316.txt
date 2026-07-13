@@ -1,0 +1,398 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.04 CRC Management\1. Strategic\Component Repair, Rebuild, Reman Strategy.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Component Repair / 
+Rebuild / Reman Strategy 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Component Repair / Rebuild / Reman Strategy ......... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation .................................................. 3 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+March 2008 
+0608-4.3-1123 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+This Best Practice is to communicate the key points of the Global Mining / Reman “Major 
+Component Repair / Rebuild / Reman” strategy and to share a process used by several dealers 
+to develop a CRC policy for the use of Reman components and subcomponents to support 
+customer component rebuild requirements. 
+ 
+2.0 Best Practice Description     
+ 
+In 1999, a series of studies and projects were initiated to determine the best method to deliver 
+Mining customer component rebuild requirements at the lowest cost per hour. 
+It was clear that dealers with an efficient CRC and good salvage capabilities could deliver the 
+lowest rebuild costs for 1
+st and 2nd life cycle component rebuilds.  The ability to deliver 
+economical rebuilds beyond the 2nd life cycle was dependant on the dealer capability and cost to 
+salvage major castings, such as engine blocks and spindles. 
+It was also clear that not all dealers had a CRC or advanced salvage capability. 
+ 
+A strategy was created with the following key points: 
+ 
+• Dealer rebuild for the 1
+st and 2nd component life cycles is the primary path to support 
+Mining customer needs and deliver lowest cost per hour. 
+• For 3rd or higher life cycle rebuilds, or when dealer rebuilds are no longer economically 
+practical, Reman major components become the primary path. 
+• Reman major components can support CRC workload cycles with peak shaving. 
+• Reman minor subcomponents can support CRC rebuilds. 
+• Reman major component pricing was positioned to enable / encourage dealer CRC 
+investment. 
+• For dealers with low machine populations and limited CRC capability, the Reman option 
+for major components serve as the primary path to support Mining customer needs. 
+ 
+Prior to 2003, Reman major component pricing was generally based on a “percentage of new” 
+formula.  In 2003, new pricing formulas were established based on “Dealer Centerline” 2
+nd rebuild 
+parts and labor price.  Reman prices were to be set at a premium above average dealer 2nd 
+rebuild price.  The “premium” was set at 10% for component rebuilds priced over $60,000 and 
+higher premiums (10%-45%) for lower cost components. 
+ 
+“Dealer Centerline 2
+nd Rebuild Parts and Labor Price” data is determined from Repair Option 
+Builder.  Repair option costs are adjusted year to year per dealer input. 
+ 
+This pricing formula was established to assure that an efficient CRC could complete with Reman 
+prices and justify CRC investments. 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Repair, Rebuild, Reman Strategy 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0608-4.3-1123 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+See chart for target premiums: 
+ 
+ 
+ 
+ 
+Component Rebuild Cost Data 
+ 
+Prior to 2003 / 2004, 2
+nd component rebuild cost data contained in “Repair Option Builder” was 
+determined with a limited level of validation against actual dealer cost information.  Today, that 
+process has changed.  Data today is based on an analysis of a large number of actual dealer 
+work orders.  Annual conferences are held with a number of key dealerships to fine tune the data, 
+document actual parts reuse and salvage costs, and to identify the cost drivers and the cost of 
+required updates.  The centerline price data today, especially for the larger mining machines, 
+reflects “real world” dealer costs and prices. 
+ 
+Still, some dealer’s rebuild costs are higher than the centerline.  Centerline data is by definition a 
+world average rebuild price.   From one dealer to another, there is often a level of variation due to 
+many factors, such as labor rate or salvage capability, etc.   
+ 
+The chart below illustrates the variation in rebuild costs from one dealer to another.  In the chart, 
+dealer “A” has low labor rates and good parts salvage capability, dealer “B” has much higher 
+labor rates, Dealer “C” has limited machine shop / salvage capability.  The key point is that not all 
+dealer CRC average component rebuild costs are the same and may be either above or below 
+the world average. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Repair, Rebuild, Reman Strategy 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0608-4.3-1123 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+Within the strategy, there are three major roles that Reman components and subcomponents play in 
+the support of a CRC.  Those are: 
+• Peak shaving when CRC workloads exceed capacity and / or inventories of exchange 
+components are low. 
+• Using Reman subcomponents in rebuilds to accelerate the rebuild or when dealer salvage 
+costs exceed the cost of a Reman part or subcomponent. 
+• Replacing high hour major components when rebuild and salvage costs are expected to 
+exceed Reman cost. 
+ 
+Many dealers have developed a formal internal policy to guide decisions on when to use Reman and 
+when to rebuild.  The policies are based on rebuild cost and process analysis.  Developing a formal 
+CRC Reman usage policy guides decisions and lowers CRC costs. 
+ 
+ 
+ 
+3.0 Implementation  
+ 
+The following are the key considerations for creating a CRC policy for using Reman products. 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Repair, Rebuild, Reman Strategy 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0608-4.3-1123 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Peak Shaving Policy 
+ 
+Most mining customers use exchange components to maximize machine availability.  The 
+inventory of exchange components may either be dealer owned or customer owned components.   
+This inventory should have a “minimum stock” level of inventory defined by machine model and 
+by component.  “Minimum” stock is usually equal to a 30-60 day demand. 
+If exchange component inventory falls below the minimum stock level and the CRC cannot supply 
+needed demand, Reman major components should be considered to manage the situation until 
+exchange inventories can be replenished. 
+Considerations include: 
+• Current and scheduled CRC workload. 
+• CRC Component Turnaround Time 
+• Monthly exchange inventory demand and minimum stock level. 
+• Time required for CRC to replenish exchange component inventory to above minimum, 
+given current workload. 
+• Other options, such as exchange inventory seed with new components. 
+• T ime required to order and receive a Reman component. 
+ 
+The ability to plan and schedule incoming rebuilds through good customer communications is 
+vital to the process.  If incoming component rebuilds can be planned several months in advance, 
+workload peaks are more manageable. 
+ 
+An example of a Peak Shaving Policy is: 
+“If exchange inventory of 793C engines falls below 10 units (30 day normal demand) and the 
+CRC cannot replenish the inventory within 10 days, a Reman engine is ordered”. 
+ 
+Use of Reman Parts and Subcomponents 
+ 
+Most dealer CRCs have a standard parts rebuild kit to define the parts, including Reman 
+subcomponents, which are to be used in the rebuild.  The kit also defines which components will 
+be rebuilt / salvaged by the CRC or locally outsourced. The decisions are based on a dealer 
+rebuild cost versus Reman cost analysis. 
+ 
+As example, Reman offers 3500 series engine cylinder head groups, bare cylinder head, and 
+upgrade to new.  A dealer cost review would determine the parts, labor, and salvage cost to 
+rebuild a cylinder head group and a bare cylinder head.  Those costs would be compared to 
+Reman costs.  Depending on labor rates, labor hours, dealer salvage ability and capacity, the 
+dealer would select the most economical option.  The best option then becomes the CRC 
+standard practice.  Dealer may choose to standardize on using Reman Cylinder Head groups, or 
+to do their own rebuilds. 
+ 
+Other considerations should include the impact on component turnaround time.  In the example 
+above, cylinder heads can be rebuilt at the same time that other work is being done on the engine 
+and probably does not cause a delay.  Salvaging a spindle for a final drive may, however, add 
+several days to the component rebuild turnaround time.  The delay may cost more than it is worth 
+and Reman may be a better choice to accelerate the rebuild. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Repair, Rebuild, Reman Strategy 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0608-4.3-1123 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Another consideration may be warranty coverage and cost or current product updates / 
+improvements. 
+ 
+ 
+Subcomponent Policy example: 3500 Engine Rebuilds   
+ 
+ Reman subcomponents in standard rebuild kits: Always use. 
+• Water pumps (always use) 
+• Alternators (always use) 
+• Oil Coolers (always use) 
+• Turbo cartridges (always use) 
+• Cylinder Pack  (always use) 
+• Injectors (always use) 
+    Reman subcomponents for use if core requires salvage. 
+• Crankshaft  
+• Cylinder Head Group 
+• Camshaft  
+ 
+High Hour Major Components 
+ 
+When a dealer rebuild becomes more expensive than Reman, or when the level of salvage 
+required exceeds dealer capability, Reman major components should be considered. 
+Some dealers have a clear policy such as 1
+st and 2nd rebuilds are done in the CRC, 3rd rebuilds 
+are replaced with Reman. 
+Some dealers as a standard practice will do the 3rd rebuild and use Reman thereafter. 
+The ability and cost to salvage major castings is the determining factor to consider. 
+Another consideration for very high hour parts is fatigue life and the component life expected.  
+Each dealer needs to determine what is the “economical” rebuild life cycle for the territory.  
+Economical rebuild life cycles can be different by machine model, by customer, and by 
+component.   
+The cost must also be balanced against the component life expectations.   Typically, 3
+rd life cycle 
+or higher rebuilds on a component may not deliver the same life as previous rebuilds. 
+Specific policies can be created based on high hour rebuild cost history and component life data. 
+ 
+One important requirement is to be able to track component life cycles and hours.  The hours and 
+rebuild history information needs to be available when the component arrives to the shop.  The 
+decision to rebuild or replace with a Reman component should be made before work is started on 
+the component.  This means that the CRC must have easy assess to component history and life 
+information. 
+The same can be said for tracking individual key parts.  Reused key parts (such as gears, 
+connecting rods, etc) should be marked when reused with the hours accumulated. 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Repair, Rebuild, Reman Strategy 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0608-4.3-1123 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4.0 Benefits 
+ 
+• Lower CRC rebuild costs. 
+• Improve CRC and MARC margins. 
+• Fully utilize CRC assets 
+• Lower customer cost per hour. 
+• Improve CRC turnaround time. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Team to develop dealer policies. 
+• A component life tracking and rebuild history database. 
+• A CRC planning and scheduling process. 
+• Standard jobs and rebuild kits.  
+ 
+6.0 Supporting Attachments / References 
+ 
+7.0 Related Best Practices 
+1006.42.1030 Improving CRC Turnaround Time Through 
+Machine Shop Subcomponent Exchange Program 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+6 Sigma Black Belt 
+Cat Global Mining Product Support 
+brehm_dale_e@cat.com 
++1 309 675 6325 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Repair, Rebuild, Reman Strategy 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0608-4.3-1123 
+Caterpillar Confidential:  GREEN          Page 6 of 6

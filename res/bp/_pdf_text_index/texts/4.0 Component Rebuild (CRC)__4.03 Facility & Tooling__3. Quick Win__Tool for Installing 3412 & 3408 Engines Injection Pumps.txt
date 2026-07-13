@@ -1,0 +1,240 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Tool for Installing 3412 & 
+3408 Engines Injection 
+Pumps  
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Tool for Installing 3412 & 3408 Engines Injection 
+Pumps ........................................................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+April 2014 
+1401-4.03-1332 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+ 
+The 3412 and 3408 engines use the direct injection system, and the HEUI system for the fuel 
+supply to the injectors. The direct injection system uses a large pump that is located at the top 
+of the engine block, where it fits in the engine by using a seal to prevent oil leakage. In the 
+installation process of the pump; the levers or slings are used (Figure 1); this method puts the 
+technician, the seal and some other engine components at risk. 
+ 
+      
+Figure 1. Tools for pump installation using slings. 
+ 
+ 
+Figure 2. Tools for pump installation using lever. 
+ 
+A tool that ensures a safe and fast installation process for the technicians and the machine is 
+now presented. 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Installing 3412 & 3408 Engines Injection Pumps 
+DATE 
+30/12/2013 
+CHG 
+NO 
+00 
+NUMBER 
+1401-4.03-1332 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+2.0 Best Practice Description 
+ 
+When fitting into the engine, the injection pumps have a seal that is commonly damaged during 
+the installation process, this is mainly due to the method used which is not precise enough to 
+guide the bomb back to its final position into the engine. 
+ 
+ 
+ 
+Figure 3. Direct Injection System Pump 
+ 
+The designed tool (Figure 4) consists of 6 parts, which allow it to have the mobility needed for 
+its application. The pump is fixed by the camshaft end thru 4 bolts to coupling “A” of the tool; 
+(See Figure 4). This coupling is connected to a main bolt “B” and this one spins on the “C” 
+base that is held to the engine housing. The “C” base converts the bolt rotational movement in 
+the linear movement of the pump by placing it concentrically and take it to a final position, 
+smoothly and precisely. 
+ 
+ 
+Figure 4. Tool for installing the injection pump 
+ 
+ 
+  
+Seal location 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Installing 3412 & 3408 Engines Injection Pumps 
+DATE 
+30/12/2013 
+CHG 
+NO 
+00 
+NUMBER 
+1401-4.03-1332 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.0 Implementation Steps 
+ 
+For the installation of the pump, follow the following steps (See Figure 5). 
+ 
+1. Place the pump on top of the engine using a lifting device (The weight of the fuel 
+injection pump housing and governor is 65 kg). Then, place the tool coupling to the pump 
+camshaft end by using 2 bolts (9M-6590). 
+2. Install the tool support on the housing timing gear using two bolts (0S-1594) and their 
+washers (5M-2894). 
+3. Insert the main tool bolt into the base and turn to be long enough so that the tip of the 
+bolt passes through the pin in the tool coupling. Secure the bolt to the coupling using a hex 
+bolt. 
+4. Turn the main bolt using a wrench or pneumatic tool to bring the pump nearer to its final 
+position. 
+5. Continue with the location of other accessories of the pump according to the SIS manual 
+on injection pumps. 
+ 
+ 
+Figure 5. Implementation steps 
+ 
+4.0 Benefits 
+• It facilitates the task of installing the injection pump on 3412 engines during its assembly 
+process  
+• It reduces the risk of accidents for technicians when the lever is not used. 
+• It protects the engine components from bumps, scratches or dents and minimizes the risk 
+of damaging the seal (PN: 6V-4314, value: USD $ 28). 
+  
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Installing 3412 & 3408 Engines Injection Pumps 
+DATE 
+30/12/2013 
+CHG 
+NO 
+00 
+NUMBER 
+1401-4.03-1332 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+5.0 Resources Required 
+ 
+The manufacturing cost of the tool is USD $210, the additional attachments for the installation 
+are listed in Table 1. In the document Tool Drawing (Injection pump).pdf the dimensions can 
+be seen (See attachments). 
+ 
+Table 1. Hardware Required 
+Part Number Description Qty 
+0S-1594 3/8-16X1 inch Bolt 2 
+9M-6590 1/2-13 x 1 inch Bolt 2 
+9L-9132 3/8 inch Washer 2 
+ 
+6.0 Supporting Attachments / References 
+• SENR2095-01: Fuel Injection Pump Housing And Governor 
+• Tool Drawing (Injection pump).pdf 
+ 
+7.0 Related Best Practices 
+None 
+ 
+8.0 Acknowledgements 
+ 
+Name Yesit Manjarres 
+Title Technical Instructor 
+Email yesit_manjarres@gecolsa.com.co 
+Phone  +57 313 5276108 
+  
+Name Herman Muriel 
+Title Service Engineer III 
+Email herman_muriel@gecolsa.com.co 
+Phone  +57 312 6914881 
+ 
+Checked and written by:  
+  
+Name:  Luis Alberto Fernandez Chica. 
+Title:  Development Engineer - Coordinator Best 
+Practices GECOLSA 
+Email: luisalberto_fernandez @gecolsa.com.co 
+ 
+Name:  Johan Navarro de la Hoz 
+Title Process Analyst 
+ 
+Translated by: 
+ 
+Edgard Romero (English / Spanish Instructor) 
+edgard_romero@gecolsa.com.co 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Installing 3412 & 3408 Engines Injection Pumps 
+DATE 
+30/12/2013 
+CHG 
+NO 
+00 
+NUMBER 
+1401-4.03-1332 
+Caterpillar Confidential:  GREEN          Page 4 of 4

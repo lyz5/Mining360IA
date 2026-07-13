@@ -1,0 +1,296 @@
+SOURCE: 2.0 Application\2.06 GET Management\1. Strategic\Auxiliary Fleet and Loaders GET Chart for Preventive Maintenance.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Auxiliary Fleet and 
+Loaders GET Chart for 
+Preventive Maintenance 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+Auxiliary Fleet and Loaders GET Chart for Preventive 
+Maintenance .............................................................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  
+The information and potential benefits included in this document are based upon information provided 
+by one or more Caterpillar dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or 
+warranty about the information contained in this document or the products referenced herein. Caterpillar welcomes 
+additional “Best Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+February 2011 
+1010-2.06-1214 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+At the Xstrata Tintaya mine site there are other Ground Engaging Tool (GET) suppliers besides 
+Caterpillar, such as Metalogenia and BladeMaster.  As a result of the presence of several suppliers, 
+the consumption and invoicing of Caterpillar’s GET has decreased.  Through mechanic technicians, 
+planners, or workshop managers, the customer has several people making the decisions for product 
+purchasing. 
+ 
+To differentiate Caterpillar GET, Ferreyros has proposed an alternative solution.  This proposal 
+consists of a chart of all Caterpillar GET consumables for every piece of mine equipment.  The goal is 
+to increase Caterpillar GET’s visibility, and make it easier for customers to choose Caterpillar GET. 
+ 
+This improvement has allowed Ferreyros to increase participation in current market and grow their 
+sales considerably. 
+ 
+ 
+2.0 Best Practice Description 
+The chart below shows the equipment model with its Caterpillar parts number, graphics, quantity of 
+pieces, proper fit, and customer’s ellipse code.   
+ 
+In addition to the information in the chart below, it may be helpful to include: 
+• I nformation relating to any reuse of the parts or if they are replaced 100% of the time 
+• Any GET Kits that are available 
+• Any tooling required for the removal and installation of the GET 
+• Reference to any heal shrouds, MAWPs, or other wear products (Chock bars, Chocky buttons, 
+Chocky Blocks, or Roll bars) 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR 
+Auxiliary Fleet and Loaders GET Chart for Preventive 
+Maintenance 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1010-2.06-1214 
+Caterpillar Confidential:  YELLOW          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+Figure 1:  Part Number GET Chart - chart dimensions are 60” x 40”. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR 
+Auxiliary Fleet and Loaders GET Chart for Preventive 
+Maintenance 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1010-2.06-1214 
+Caterpillar Confidential:  YELLOW          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Figure 2:  Larger view of detail in Figure 1. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR 
+Auxiliary Fleet and Loaders GET Chart for Preventive 
+Maintenance 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1010-2.06-1214 
+Caterpillar Confidential:  YELLOW          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+Figure 3:  Table Detail included in Figure 1 and Figure 2. 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+1.   Park machine requiring GET 
+2.   Locate part number and amount required per machine 
+3.   Perform a boneyard analysis to identify if current GET is correct fit for machine/application 
+4.   Create table for each type of equipment/part and insert images 
+5.   Enter customer’s code for every part number 
+6.   Perform a search for the torque and tooling needed to install/remove GET 
+7.   Create chart for mine site by combining information for all equipment on site 
+8.   Print large size chart (poster) 
+9.   Format chart to be displayed and identify place to set in mine Workshop 
+ 
+Optional: 
+If the customer used PartStore
+tm, set up the GET groups in the PartStoretm system to further facilitate 
+the ordering and replacement process. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR 
+Auxiliary Fleet and Loaders GET Chart for Preventive 
+Maintenance 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1010-2.06-1214 
+Caterpillar Confidential:  YELLOW          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4.0 Benefits 
+• Reduced searching time in parts manual 
+• Reduced time spent by planner when searching customer (ellipse) codes 
+• Reduced time to request spare parts  
+• Reduced time to identify proper adjustment and welding procedures 
+• Provides increase visibility to Caterpillar GET resulting in increased business/revenue for the 
+dealer 
+• Provides an approximate time savings of 67% for the customer (Chart 1), significantly 
+reducing the time to request GET for scheduled maintenance 
+ 
+ 
+Chart 1:  Approximate time to perform task  
+ 
+Personnel Description of the job Spent Time 
+(min) 
+Spent time using 
+the chart (min) 
+M. Technician search in parts manual 30 5 
+Planner Search ellipse codes 30 0 
+Planner Spare parts request 30 30 
+M. Technician Torque search 30 5 
+Time spent 120 40 
+Difference 67% 
+ 
+ 
+ 
+5.0 Resources Required 
+• GET Field Inspector 
+ 
+ 
+6.0 Supporting Attachments / References 
+• GET PSK  
+• Service Manual (SIS) 
+• Boneyard Analysis:  PERJ0008-03 Cat Parts Pro Ground Engaging Tools (GET) – English 
+• PartStore:  PEDJ0075-01  Cat
+® PartStore™ Brochure 
+• Wear Protection:  PEHJ0208-01 Total Wear Protection 
+• Wear Protection:  IRM812121240  Mechanically Attached Wear Plate System (MAWPS) with 
+Abrasion Resistant Material (ARM) 
+• Wear Protection:  IRM804220530  Cat® Chocky Bars, wear buttons, roll bars, and wear blocks 
+ 
+ 
+7.0 Related Best Practices 
+None 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR 
+Auxiliary Fleet and Loaders GET Chart for Preventive 
+Maintenance 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1010-2.06-1214 
+Caterpillar Confidential:  YELLOW          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+8.0 Acknowledgements 
+This Best Practice was described by:  
+César Roa Juárez                                                   Martín Gallegos Barriga 
+GETs & UC Inspector – Ferreyros                          GETs and UC Specialist - Ferreyros 
+croa@ferreyros.com.pe                                           mgallego@ferreyros.com.pe 
+   
+Prepared by: 
+Alberto Franco D’Alfonso 
+CI & BP Champion – Ferreyros 
+afrancod@ferreyros.com.pe  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR 
+Auxiliary Fleet and Loaders GET Chart for Preventive 
+Maintenance 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1010-2.06-1214 
+Caterpillar Confidential:  YELLOW          Page 6 of 6

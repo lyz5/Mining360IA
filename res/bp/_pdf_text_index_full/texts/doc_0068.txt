@@ -1,0 +1,379 @@
+SOURCE: 1.0 Maintenance & Repair\1.04 Repair Management\3. Quick Win\Contamination Control Covers during Cylinder Block Removal and Installation.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2012 
+1106-3.04-1235 
+       
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Contamination Control 
+Covers During Components 
+Removal and Installation 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+Contamination Control Covers During Components 
+Removal and Installation ............................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by one or 
+more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty about the 
+information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best Practice” 
+recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contamination control covers during components 
+removal and installation 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1106-3.04-1235 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+1.0   Introduction  
+ 
+Components that must be removed due to equipment repair in the field (OHT, TTT, MG etc.) are 
+likely to be affected by  contamination due to the environmental conditions at the mine site. 
+Leaving the component  exposed to the environment can result in larger  problems apart from 
+those solved thru the repair. 
+ 
+ 
+2.0   Best Practice Description 
+ 
+Considering continuous improvement and aiming at the contamination control of the work done at 
+mine site, the  use of a protector (acrylic) for the equipment  repairs has been implemented.  The 
+cover protects  the exposed area when the c omponent is removed, improving the working 
+conditions (reducing the risk of equipment damage). 
+ 
+ 
+ 
+Case 1: Cylinder Block Protection Cover 
+The picture shows the cylinder area exposed to the contamination during cylinder head removal 
+and installation.  The camshaft area is plugged with a wad of cloth that can cause the component 
+to be exposed to additional contamination. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contamination control covers during components 
+removal and installation 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1106-3.04-1235 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+I. The acrylic protector enables visibility, and at the same time, it is linked together to a plate-
+spacer to cover the cylinders in the cylinder blocks of CAT® engines.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+II. The protector has a handle that allows its manipulation and easy removal. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+III. The protector is made in proportion to the plate-spacer in order to adjust perfectly in the 
+housing. The protector is made by using a used plate-spacer. 
+Handle 
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contamination control covers during components 
+removal and installation 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1106-3.04-1235 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+IV. A seal keeps the piston / liner area from being contaminated. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Case 2: 793 Truck Housing Protection Cover  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+As part of the P lanned Component Replacement  (PCR) quality improvement program for a fleet 
+of trucks i t was necessary to execute a contamination control plan every time the final drive, 
+transmissions exchange or repair regarding cracks or threads repair is done.  As a result an 
+acrylic cover with foamy seals was created. 
+ 
+ 
+The Plate-Spacer depends on the 
+engine model. 
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contamination control covers during components 
+removal and installation 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1106-3.04-1235 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+3.0   Implementation Steps 
+ 
+ E xisting need to fight contamination was determined.  
+ 
+ P rotectors design:  In Case 1 - taking the plate-spacer as a baseline for a determined 
+engine.  In Case 2 - the 793 truck final drive coupling dimensions were taken. 
+ 
+ P rotector assembled along with the spacer and the handle. 
+ 
+ A seal installed to make sure that the protector would isolate exposed opening completely.  
+ 
+ D ecision of implemented is made.   
+ 
+ 
+ 
+4.0   Benefits 
+ 
+• Because of  the protec tor implementation the contamination inside the components  is 
+greatly reduced, if not eliminated, during the removal process. Additionally, the oil / coolant 
+contamination is avoided resulting in the component being more reliable during its lifecycle. 
+ 
+• The economic benefits will be seen thru a longer equipment and/or component  life, more 
+working hours (availability), and less downtime. 
+5.0   Resources Required 
+ 
+• Acrylic Sheet 
+• Used Plate-Spacer  
+• Handle 
+• Gasket (Seal) 
+ 
+Case 1: If a new plate- spacer is used ( Example: Plate-Spacer 110-6994) the cost in DBS is 
+approximately $529000 COP  ($285 USD) . The acrylic, bolts, handle and the thread on the 
+spacer cost will be approximately $60000 COP  ($32 USD). The caps can be used on 8WM 
+engines.  The same concept can be applied on other engines; the proper plate-spacer must be 
+used depending on each cylinder block.  
+ 
+Case 2: The manufacture cost is approximately $100000 COP  ($54 USD). These cover are 
+used in 793 trucks housing s but the design can be adapted to use o n any equipment to be 
+repaired. 
+ 
+ 
+6.0   Supporting Attachments / References 
+ 
+None 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contamination control covers during components 
+removal and installation 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1106-3.04-1235 
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+7.0   Related Best Practices 
+ 
+1206-2.9-1048  Contamination Control Using Plugs & Caps 
+0911-4.03-1230  WIP Parts Storage Boxes and Lifting Tool 
+ 
+ 
+8.0   Acknowledgements 
+ 
+The idea for this Best practice belongs to: 
+ 
+Joseph Torres Mendoza 
+Service Engineer 
+        joseph_torres@gecolsa.com.co 
+ 
+Juan Arevalo 
+Service Engineer 
+ juan_arevalo@gecolsa.com.co 
+ 
+Harold Vides 
+Service Engineer 
+        harold _torres@gecolsa.com.co 
+ 
+ 
+ 
+This Best Practice was written by: 
+ 
+Carlos Velilla M. 
+Development Specialist 
+Technical Department 
+carlos_velilla@gecolsa.com.co 
+57 5 336-1225 
+ 
+Jose Hernandez Calzada 
+Development Analyst 
+Technical Department 
+       
+jose_hernandez@gecolsa.com.co

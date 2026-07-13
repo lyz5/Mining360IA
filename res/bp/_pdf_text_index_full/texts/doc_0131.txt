@@ -1,0 +1,394 @@
+SOURCE: 2.0 Application\2.04 Training - Application\3. Quick Win\Tracking Abusive Shifts on Large Off Highway Trucks.pdf
+PAGES: 8
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Tracking Abusive Shifts on 
+Large Off Highway Trucks 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Tracking Abusive Shifts on Large Off Highway 
+Trucks ....................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+February 2009 
+0911-2.04-1189 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+1.0 Introduction  
+ 
+Monitoring operator-induced events through VIMS is recommended to ensure machines are being 
+adequately operated within their design parameters. Abusive shifts recorded by VIMS have been 
+traditionally analyzed and reported as a single generic event.  
+ 
+Note that VIMS has the capability of reporting on the four different types of abusive shifts, these are:  
+ 
+1) First to reverse (directional shift) 
+2) Neutral to first 
+3) First to neutral 
+4) Reverse to first (directional shift).  
+ 
+Identifying the predominant ‘type’ of abusive shifts will help to implement corrective actions.  
+ 
+2.0 Best Practice Description 
+ 
+The following information outlines the process for logging an event due to an ‘abusive’ shift. An event will 
+be logged with an engine speed of at least 1500 or 1800 rpm depending on the conditions and the truck 
+model. Abusive shifting can result in reduced power train life and can be eliminated with operator training. 
+Please note, the most recent software for 785, 789, 793 and 797 has been proven to not be a cause of 
+abusive shifting characteristics. 
+ 
+• First to reverse (Directional Shift) 
+ 
+An event will be logged if the operator shifts the transmission control from first gear into reverse with an 
+engine speed of at least 1,500 or 1,800 rpm (depending on conditions and truck model).  
+ 
+A transmission shift from first to reverse, whilst maintaining at least eight kilometres per hour (kph) ground 
+speed, will hold the machine in forward gear. Once ground speed is less than eight kph the transmission 
+will shift into neutral. Ground speed must be less than three kph before the transmission will shift into 
+reverse.  
+ 
+• Neutral to first 
+ 
+An event will be logged when a shift occurs from neutral to first with an engine speed of at least 1,500 or 
+1,800 rpm (depending on conditions and truck model).  
+An abusive shift may occur by shifting into first gear when the engine speed exceeds 1,500 or 1,800 rpm 
+(depending on conditions and truck model).  
+ 
+A practical scenario may be seen following a body raise whilst dumping.  
+ 
+The scenario is as follows: 
+ 
+Throttle is increased to induce power to hoist the body in a shorter time. Once the body is completely 
+elevated, the hoist control lever is placed into the float position following a shift into first gear.  
+Consequentially, there isn’t time for engine speed to reduce to below 1,500 or 1,800 rpm (depending on 
+conditions and truck model), resulting in a logged event.  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tracking Abusive Shifts on Large Off Highway Trucks 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-2.04-1189 
+Caterpillar Confidential:  GREEN          Page 1 of 7 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Neutral to Reverse 
+ 
+An event will be logged when a shift occurs from neutral to reverse with an engine speed of at least 1,500 
+or 1,800 rpm (depending on conditions and truck model).  
+ 
+• Reverse to first (Directional Shift) 
+ 
+An event will be logged when the transmission shifts from reverse to forward with engine speed of at least 
+1,500 or 1,800 rpm (depending on conditions and truck model). 
+ 
+Please see section 6.0 ‘Supporting Attachments/References’ for details pertaining to event limits. 
+Please see section 6.0 ‘Supporting Attachments/References’ for details pertaining to the 793D Planetary 
+Transmission, including clutch engagement information. 
+ 
+3.0 Implementation Steps 
+ 
+It is suggested that abusive shifts be tracked and trended over a period of time on a fleet of machines to 
+identify any incorrect operating practices. Should these events be present, subsequent action will need to 
+be taken by the onsite training department to eliminate and rectify any incorrect operating techniques.    
+ 
+4.0 Benefits 
+ 
+Benefits of analyzing and trending abusive shifts include but are not limited to: 
+ 
+• Improved machine operation 
+• Operator awareness and education 
+• Reduced downtime 
+• Optimized power train component life  
+ 
+5.0 Resources Required 
+ 
+The following items will be required to analyze the four different abusive shifts: 
+• VIMS equipped Off Highway Truck 
+• VIMS PC 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tracking Abusive Shifts on Large Off Highway Trucks 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-2.04-1189 
+Caterpillar Confidential:  GREEN          Page 2 of 7 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Analyzing abusive shifts on VIMS PC 
+ 
+ 
+ 
+Select date range and select the four types of abusive shifts. 
+ 
+ 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tracking Abusive Shifts on Large Off Highway Trucks 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-2.04-1189 
+Caterpillar Confidential:  GREEN          Page 3 of 7 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Transmission shift event engine speed limits 
+ 
+797B EOS to enable 
+protection (not 
+trigger event) 
+EOS to trigger 
+event 
+Transmission Engine Speed Engine Speed 
+1F-R 1000 1500 
+R-1F 1000 1500 
+N-1F 1000 1800 
+N-R 1000 1800 
+Three second warning duration. 
+ 
+797F EOS to enable 
+protection (not 
+trigger event) 
+EOS to trigger 
+event 
+Transmission Engine Speed Engine Speed 
+1F-R 1000 1500 
+R-1F 1000 1500 
+N-1F 1000 1800 
+N-R 1000 1800 
+Ten second warning duration  
+ 
+785/789/793D EOS to enable 
+protection (not 
+trigger event) 
+EOS to trigger 
+event 
+Transmission Engine Speed Engine Speed 
+1F-R 1350 1500 
+R-1F 1350 1500 
+N-1F 1350 1500 
+N-R 1350 1500 
+Three second warning duration. 
+ 
+793F EOS to enable 
+protection (not 
+trigger event) 
+EOS to trigger 
+event 
+Transmission Engine Speed Engine Speed 
+1F-R 1350 1500 
+R-1F 1350 1500 
+N-1F 1350 1500 
+N-R 1350 1500 
+   Ten second warning duration. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tracking Abusive Shifts on Large Off Highway Trucks 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-2.04-1189 
+Caterpillar Confidential:  GREEN          Page 4 of 7 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+793D Transmission – Planetary (RENR8326 ‘Systems Operation – 793D OHT System Power Train - 
+Transmission Planetary’) 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tracking Abusive Shifts on Large Off Highway Trucks 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-2.04-1189 
+Caterpillar Confidential:  GREEN          Page 5 of 7 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Components of the transmission  
+(1) Input shaft  
+(2) Rotating housing  
+(3) Sun gear  
+(4) Planetary gears  
+(5) No. 1 clutch  
+(6) No. 2 clutch  
+(7) Center shaft  
+(8) Rotating housing of No. 3 clutch  
+(9) No. 3 clutch  
+(10) Sun gear  
+(11) Ring gear  
+(12) No. 4 clutch  
+(13) Ring gear  
+(14) No. 5 clutch  
+(15) Sun gear  
+ 
+(16) No. 6 clutch  
+(17) Hub  
+(18) Sun gear  
+(19) Planetary carrier  
+(20) Planetary carrier and output shaft  
+(21) Planetary gears  
+(22) Ring gear  
+(23) Planetary gears  
+(24) Planetary gears  
+(25) Planetary carrier  
+(26) Coupling hub  
+(27) Coupling ring gear  
+(28) Ring gear  
+(29) Planetary carrier 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tracking Abusive Shifts on Large Off Highway Trucks 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-2.04-1189 
+Caterpillar Confidential:  GREEN          Page 6 of 7 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Engagement of Transmission Clutches     
+Transmission Speed     Engaged Clutches in the Transmission     
+NEUTRAL-1     3     
+NEUTRAL-2     1     
+REVERSE     1 and 6     
+FIRST speed     1 and 5     
+SECOND speed     2 and 5     
+THIRD speed     1 and 4     
+FOURTH speed     2 and 4     
+FIFTH speed     1 and 3     
+SIXTH speed     2 and 3     
+ 
+ 
+ 
+ 
+7.0 Related Best Practices 
+None 
+ 
+8.0 Acknowledgements 
+ 
+For further information regarding this Best Practice, please contact: 
+ 
+Rafael Castrillon 
+Development Engineer 
+Castrillon_Rafael@cat.com 
+Office  +61 03 9953 9121 
+Cell +61 04 3745 1730 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tracking Abusive Shifts on Large Off Highway Trucks 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-2.04-1189 
+Caterpillar Confidential:  GREEN          Page 7 of 7

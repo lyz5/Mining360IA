@@ -1,0 +1,288 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Salvage Of Pin Slot 
+Using Standard  Sleeve 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+1.0
+ Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefit ............................................................... 4 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+May 2013 
+1305-4.02-1314 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+According to Reuse and S alvage guidelines SEBF8257- 11, worn or damaged housing pin slots 
+holes can be salvaged by installing sleeves made of SAE 1020 steel. There is no sleeve part 
+number serviced, so dealers typically make their own sleeves with specifications contained in the 
+Reuse and Salvage guide: 
+ 
+ 
+1. Bore a hole into the housing in order to accept a sleeve.  
+a. Use a 17.46 mm (0.687 inch) boring tool with a spiral or a straight contour and a 12.7 mm (0.50 
+inch) tool guide. 
+b. Line up the tool with the unworn portion of the hole. 
+c. Be sure that you only bore the deformed portion of the hole. The depth of the counterbore should 
+allow the sleeve to remain even with the top of the housing surface. 
+2. Fabricate a sleeve for repair from SAE 1020 steel with a 0.05 mm (0.002 inch) press fit. Drill the sleeve 
+to 12.29 mm (0.484 inch). Ream the sleeve to the correct size after installation. 
+ 
+ 
+Ferreyros has identified a supplier of a standard sleeve that meets the specifications required and 
+therefore no longer manufactures our own sleeves.  This saves time and reduces cost in the 
+shop. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The fabrication of sleeve in Ferreyros workshop takes about 30 min per sleeve in conventional 
+machine and 10 min per sleeve in CNC machine.  The cost of labor as well as the cost of utiliz ing 
+expensive machining tools was considered 
+ 
+By using a commercially available standard sleeve with measures from ID ½” x OD ¾” x ¾ length, 
+Ferreyros had reduced repair time by 75% and costs approximately  50%. The ID is standard with 
+finish measure from 12.7 +/- 0.005 mm (See the picture 1). 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Of Pin Slot  
+Holes By Using Standard Sleeves 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1305-4.02-1314 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Picture 1. Dimensions of standard sleeve 
+ 
+The salvage of pin slots with that standard sleeve is used in parts as: 8P3513, 7G5746, 6Y8674, 
+6Y3297, 3Q6581, 3P2374, 2P4363, 2022730, 1752635, 1109269 and all parts which works with pin 
+slot  from ID ½” . 
+ 
+Cost of a standard sleeve is approximately $15.00 each. 
+ 
+3.0 Implementation Steps 
+ 
+1. Place the sleeves in the freezer for six hours. 
+ 
+ 
+Picture 2. Frozen sleeves 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Of Pin Slot  
+Holes By Using Standard Sleeves 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1305-4.02-1314 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2. Bore a hole into the housing in order to accept a sleeve. The dimensions should be ID Ø 19.07 +/- 
+0.01 mm x 19.08 +/- 0.02 mm length. 
+ 
+ 
+Picture 3. Plate being bored in the HAAS machine 
+ 
+ 
+3. Press the standard sleeve into the housing using an installer PIN. 
+ 
+ 
+ 
+Picture 4. Standard sleeve being installed 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Of Pin Slot  
+Holes By Using Standard Sleeves 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1305-4.02-1314 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+4. The surface of the sleeve should be even with the surface of the housing. 
+ 
+ 
+ 
+Picture 4. Standard sleeve installed 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefit 
+ 
+• Reduce the pin slot time repair by 75%. 
+• Reduce the use of labor by 80%. 
+• Reduce the sleeve cost by 50%. 
+• Use of the Hass machine instead of two machines (See the picture 5). 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Of Pin Slot  
+Holes By Using Standard Sleeves 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1305-4.02-1314 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+            
+  
+ 
+Picture 5. Comparison between the use of machines 
+ 
+5.0 Resources Required 
+ 
+EDITOR’S NOTE:  Although Caterpillar does not endorse this particular supplier, Ferreyros has 
+experience with the following products or companies. We welcome additional supplier 
+recommendations from our dealer network 
+ 
+• The standard sleeve from ID Ø ½” are provided by MSC Industrial Supply Co.  
+o Code:  # 09662495  (Gibraltar Products) 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+Before 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Of Pin Slot  
+Holes By Using Standard Sleeves 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1305-4.02-1314 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Name     Frank Córdova R. 
+E mail     frank.cordova@ferreyros.com.pe 
+ 
+Recognition: 
+ 
+Team:                  Miguel Mauriola / Operations Support Chief 
+                            Frank Córdova / Operations Support Assistant 
+                            José Huayamis / Technical Comunicator 
+                            Carlos Aguirre / Hass Machine Operator  
+Sponsor:             Rodolfo Gerstein / Manager Machine Shop 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Of Pin Slot  
+Holes By Using Standard Sleeves 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1305-4.02-1314 
+Caterpillar Confidential:  GREEN          Page 6 of 6

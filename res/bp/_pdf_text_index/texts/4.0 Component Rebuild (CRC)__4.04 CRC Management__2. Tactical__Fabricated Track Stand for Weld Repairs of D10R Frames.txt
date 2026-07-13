@@ -1,0 +1,218 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Fabricated Track Stand for 
+Weld Repairs of D10R 
+Frames 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+Fabricated Track Stand for Weld Repairs of D10R Frames 0 
+1.0 Introduction ......................................................... 1 
+2.0 Best Practice Description ....................................... 1 
+3.0 Implementation Steps ............................................ 2 
+4.0 Benefits ............................................................... 3 
+5.0 Resources Required .............................................. 3 
+6.0 Supporting Attachments / References ...................... 3 
+7.0 Related Best Practices ........................................... 4 
+8.0 Acknowledgements ............................................... 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+January 2013 
+1210-4.04-1289 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+A fabricated stand has been designed for use in the Ferreyros S.A. weld shop in the repair of D10R rear 
+frames.  The stands makes it easier, safer, and much more efficient to align the frame tube and support for 
+weld repairs.  Stand drawing are not available, but photos are provided to show the design concept. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The fabricated fixture consists of two stands mounted on a level platform, one to mount the frame tube and 
+the other for the support.  The two stands are designed to center the tube to the support for welding the tube 
+to the support.  (See picture 1). 
+ 
+ 
+ 
+ 
+Picture 1. Frame Rear D10R 
+ 
+To repair cracks between the tube and the support (zone A in photo), the tube must be correctly aligned to 
+the support. 
+ 
+ 
+ 
+ 
+ 
+Tube 
+Support 
+Assembly Device 
+1 
+2 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fabricated Track Stand for Weld Repairs of D10R 
+Frames 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1289 
+Caterpillar Confidential:  YELLOW          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Implementation Steps 
+ 
+ 
+• Fixture is fabricated as shown below. 
+• Part 1 of the fixture is to hold the tube in the correct position for alignment.  Mounting locations are as shown.  
+ 
+ 
+ 
+Picture 2. Centered tube on the part 1 of assembly device 
+ 
+• Part 2 of the fixture holds the support.  Mount locations are as shown. 
+ 
+ 
+ 
+Picture 3. Centered tube on the part 1 of assembly device 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fabricated Track Stand for Weld Repairs of D10R 
+Frames 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1289 
+Caterpillar Confidential:  YELLOW          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+• Weld the union “A” between the tube and the support. 
+ 
+ 
+ 
+Picture 4. Welding the union “A” 
+ 
+ 
+4.0 Benefits 
+ 
+ 
+• Time required to set up and align the tube to the support is reduced by 70%. 
+• Parts alignment is very precise. 
+• Time required to perform the welding is significantly reduced.   
+• Weld quality is easier to control. 
+• Material handling is easier to perform. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Fabrication shop 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+Union A 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fabricated Track Stand for Weld Repairs of D10R 
+Frames 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1289 
+Caterpillar Confidential:  YELLOW          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Name     Frank Córdova R. 
+E mail     
+frank.cordova@ferreyros.com.pe 
+ 
+Recognition: 
+ 
+Team:                  Miguel Mauriola / Operations Support Chief 
+                            María Ávila / Welding Chief 
+                   Alex Alaya, Cesar Vidangos / Welding Supervisor 
+Sponsor:              Rodolfo Gerstein / Manager Machine Shop 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fabricated Track Stand for Weld Repairs of D10R 
+Frames 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1289 
+Caterpillar Confidential:  YELLOW          Page 4 of 4

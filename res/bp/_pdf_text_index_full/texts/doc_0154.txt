@@ -1,0 +1,288 @@
+SOURCE: 3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\SOS Lab Data Entry Improvement using New Electronic System.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+S·O·STM Lab Data Entry 
+Improvement using New 
+Electronic System 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+1.0
+ Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+  
+ 
+ 
+ 
+ 
+  
+January 2015 
+1411-3.03-1357 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+ 
+Oil Cleanliness Analysis is one of the primary functions of S·O·STM program. This analysis is 
+carried out for 80% of all incoming samples to S·O·STM laboratory. This test determines the 
+presence of particles in the oil, which are classified by many symbols. 
+Before, we had manually written down all results of this test. Manual Data entry increases the 
+time for Oil Cleanliness Analysis. It is double work, when we first write the results on paper and 
+then we transfer these same results to S·O·STM Service manager. Using the paper-based 
+information makes it inconvenient to keep this information and search for these results. 
+ 
+This Best Practice is aimed to improve the procedures of oil cleanliness analysis with using an 
+electronic device. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Borusan Makina Kazakhstan has developed the software application which improves the process 
+of visual analysis of oils. 
+ 
+Before 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+SOS Lab Data Entry Improvement using New 
+Electronic System 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1411-3.03-1357 
+Caterpillar Confidential:  YELLOW          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+After 
+ 
+ 
+. 
+3.0 Implementation Steps 
+ 
+The new process of analysis.  
+ 
+1. First, prior to the analysis, the employee should open the software on PC, which has been 
+developed by IT specialist. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+SOS Lab Data Entry Improvement using New 
+Electronic System 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1411-3.03-1357 
+Caterpillar Confidential:  YELLOW          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+  
+ 
+2. Then, using Tablet, we connect to the PC though the Remote Desktop Control Program. 
+3. Make visual evaluations of bottle cap. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+SOS Lab Data Entry Improvement using New 
+Electronic System 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1411-3.03-1357 
+Caterpillar Confidential:  YELLOW          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+ 
+4. If the sample is clear, use the ISO button, and after completion of the analysis, the software 
+prepares the list of samples, which should be analyzed on the Particle Counter. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+SOS Lab Data Entry Improvement using New 
+Electronic System 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1411-3.03-1357 
+Caterpillar Confidential:  YELLOW          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+ 
+5. After full completion, the employee pushes ‘Export’ button, and program automatically create 
+the txt file with necessary fields to upload them in Dataxfer folder. 
+ 
+ 
+ 
+6. The Results are automatically uploaded to the appropriate samples in S·O·S
+TM Service 
+Manager Program. 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+• Data entry convenience 
+• Freedom of paper data storage 
+• Software generates the list of samples for Particle Counting 
+• Automatic export to the S·O·S
+TM Service Manager program 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+SOS Lab Data Entry Improvement using New 
+Electronic System 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1411-3.03-1357 
+Caterpillar Confidential:  YELLOW          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+5.0 Resources Required 
+ 
+• 1 Tablet PC 
+• Dealer must use LIMS software - S·O·STM Services Manager Program 
+• Specifically developed application 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+If another dealer would like to replicate this software, they may contact Gulnaz Mansurova at 
+Borusan for details. 
+ 
+Gulnaz Mansurova, CRC Process Engineer 
++7 (721) 248 26 26 ext. 117  
+Oktyabrsky distrist, Karaganda-Temirtau 12 km, 
+opposite "Ispat-Karmet" tennis  court 
+100005 Karaganda, Kazakhstan   
+gmansurova@borusan.com 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+The idea of creating & implementing this Best Practice belongs to: 
+ 
+Laura IVANSKAYA     Alexander PYAK     
+S·O·S
+TM Lab Analyst     IT Helpdesk Specialist  
+Borusan Makina Kazakhstan LLP    Borusan Makina Kazakhstan LLP 
+livanskaya@borusan.com      apyak@borusan.com    
+          
+Zhumat NURPEISSOV     Natalya KOROLKOVA 
+S·O·STM Lab Analyst      S·O·STM Lab Supervisor 
+Borusan Makina Kazakhstan LLP     Borusan Makina Kazakhstan LLP  
+      znurpeissov@borusan.com       nkorolkova@borusan.com 
+ 
+ 
+This Best Practice was written by: 
+ 
+Natalya KOROLKOVA 
+S·O·S
+TM Lab Supervisor 
+Borusan Makina Kazakhstan LLP   
+nkorolkova@borusan.com    
++7 (701) 763 97 10 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+SOS Lab Data Entry Improvement using New 
+Electronic System 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1411-3.03-1357 
+Caterpillar Confidential:  YELLOW          Page 6 of 6

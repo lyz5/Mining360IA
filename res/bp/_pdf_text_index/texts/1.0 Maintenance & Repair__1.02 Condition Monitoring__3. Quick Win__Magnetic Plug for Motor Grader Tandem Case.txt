@@ -1,0 +1,309 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+January 2013 
+1210-1.02-1286 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Magnetic Plug for Motor 
+Grader Tandem Case 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Magnetic Plug for Motor Grader Tandem Case ......... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Magnetic Plug for Motor Grader Tandem Box 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-1.02-1286 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+1.0 Introduction  
+The sprocket/chain drive in a Motor Grader is a large source of fine metal debris in the 
+tandem drive box. A natural property of sprocket/chain drive is that there is rubbing at points 
+of contact, creating small filings. These filings contaminate the lubrication oil and move to 
+other components, which accelerates the normal wear. 
+ 
+This Best Practice outlines the installation of magnetic plugs in the tandem box to aid in the 
+removal of metal particles from the lubrication fluid. The plug should not only keep the oil 
+cleaner, but also reduce component degradation and extra wear. 
+ 
+2.0 Best Practice Description 
+Currently, only the standard magnetic plug is installed on certain M-series machines. However, to 
+inspect and clean it requires oil in the tandem case to be drained, as it is located in the bottom of 
+the case. This makes regular inspections and cleaning of the magnetic plug only as frequent as 
+the oil-change, preventing it from being effective after time. 
+ 
+Two new magnetic plugs can be installed per tandem box, on the inner side of the cover-plates 
+where the plug would not interfere in the operation of the parts in motion. This location would 
+enable the plugs to be exposed to a considerable amount of oil for cleansing, as it circulates 
+during operation. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 1 
+The magnetic-plug installed on the 
+cover-plate. 
+ 
+Figure 2 
+A cover-plate assembly in the tandem box. The 
+plug is clearly not an obstacle. 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Magnetic Plug for Motor Grader Tandem Box 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-1.02-1286 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+ 
+Figure 3 
+Alternative orientation (left) compared to 
+centralized mount (right). Note that the left 
+cover plate also houses the breather. 
+3.0 Implementation Steps 
+1. According to Appendix 1, fabricate the magnetic-plug mounting plate. 
+Notes: 
+a. The mounting plate can be made from 16mm Grade 250 mild steel plate 
+b. The magnetic plug (6V-3298) shown in Figures 1-3 are from a D11T Track-Type 
+Tractor. As the plug is the same across most models, and also used in different 
+machines, it is readily available making this Best Practice easier to undertake. See 
+Appendix 2 for an abridged list of machines that use the 6V-3298 magnetic plug. 
+2. M ark the cover plate with the welding location, and weld the mount to it. 
+Notes: 
+a. On the outer side of the cover plate, it is an option to stamp “MAGNET” into the metal 
+so that technicians are aware of the new service point. This should be done before the 
+welding process to make it easier to stamp the letters. 
+b. A thread should be cut into the hole that matches the magnetic plug. The thread size 
+on the plug is 1⅝”-12. 
+c. The mounts should be welded to the back or “inner side” of the cover-plate and be 
+centralised. The weld seams must run parallel to the edges of the cover plate and 
+oriented so that the stem of the magnetic plug faces downward. Figures 1 and 3 shows 
+the orientation relative to the cover plate, and Figure 2 shows orientation relative to the 
+tandem box. Figure 3 shows 
+the cover plate with the 
+breather, where the mounting 
+plate is offset. 
+d. Figure 1 shows a cover-plate 
+(8D-1802) from a 16H Motor 
+Grader, which is also shared by 
+the 14H Motor Grader. This 
+Best Practice works for the 16M 
+and 14M Motor Grader models, 
+which have a slightly different 
+cover-plate (266-9728). The 
+same idea can be applied to 
+other Motor Grader models; 
+however, mounting plate 
+dimensions may differ. 
+3. After assuring weld quality, grind the 
+welding seams to give a nice, smooth 
+finish. 
+a. Spray-paint the mounting plate 
+for a proper finish. 
+4. Install the cover plate to the machine. 
+ 
+4.0 Benefits 
+1. Effective contamination control 
+2. Cleaner lubrication oil for longer 
+3. Reduce piston bore scuffing, as seen in brake housing 
+4. Increase seal and component life 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Magnetic Plug for Motor Grader Tandem Box 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-1.02-1286 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+5. Reduce general wear accelerated by abrasive particles 
+6. Provides a particle removal component for motor graders not previously installed with a 
+magnetic-plug as standard. 
+- Some M series motor graders have a magnetic plug installed from factory, however it is 
+also the drain plug, and requires draining the oil in order to clean and inspect it. 
+ 
+5.0 Resources Required 
+Fabrication of magnetic plug mount required 
+Magnetic plug (6V-3298) 
+Stamping tools 
+Appropriate welding tools 
+Hand grinder 
+Caterpillar Yellow paint 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Appendix 2 
+ 
+ 
+ 
+Appendix 1 
+Engineering Drawing showing the dimensions of the magnetic plug 
+mounting plate. 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Magnetic Plug for Motor Grader Tandem Box 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-1.02-1286 
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+ 
+Appendix 2 
+List of machines also using the 6V-3298 Magnetic Plug. 
+Machine Type Model Serial # Prefix 
+Track-Type Tractors 
+D11 N, R, T N Series: 4HK, 74Z  
+R Series: 7PZ, 8ZR, 9TR, 9XR, AAF 
+T Series: AMA, GEB, JEL, JNS, MDG, TPB 
+D10 N, R, T -- Series: 76X, 84W 
+N Series: 2YD, 3SK 
+R Series: 3KR, AKT 
+T Series: RJG 
+D9 L, N, R, T L Series: 14Y 
+N Series: 1JD, 6XJ 
+R Series: 7TL, 8BL, ABK, ACL, JJB, WDM 
+T Series: RJS, TWG 
+ 
+7.0 Related Best Practices 
+N/A 
+ 
+8.0 Acknowledgements 
+Patrick Galea    Victor Lai    Adrian Grech 
+Hastings Deering   Caterpillar Global Mining  Caterpillar Global Mining 
+Dealer Personnel   Equipment Management  IBL - Assisting Engineer 
+patgalea@hastdeer.com.au  Lai_Victor_K@cat.com  Grech_Adrian@cat.com

@@ -1,0 +1,467 @@
+SOURCE: Improved GPS Antenna Harness Routing in 794AC Commend Trucks.pdf
+PAGES: 12
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2023 
+1.10-230724-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+IMPROVED GPS ANTENNA 
+HARNESS ROUTING IN 
+794AC COMMAND TRUCKS 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Improved GPS Antenna Harness Routing in 794AC 
+Commend Trucks ......................................................... 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description.................................... 3 
+3.0 Implementation Steps ......................................... 4 
+4.0 Benefits .............................................................. 10 
+5.0 Resources Required ......................................... 11 
+6.0 Supporting Attachments / References ............. 12 
+7.0 Related Best Practices...................................... 12 
+8.0 Acknowledgements ........................................... 12 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recomm endations from our dealer network.  
+ 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Improved GPS Antenna Harness Routing in 794AC 
+Commend Trucks 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230724-1 
+Caterpillar: Confidential  Yellow     Page 2 of 12 
+1.0 Introduction 
+T
+his best practice aims to develop an interim solution to avoid GPS antennas connector (PN: 492-
+7319) and GPS coaxial harness (PN: 569-9658 LH; 569-9659 RH) damage by falling rocks from 
+the canopy. 
+T
+he following illustration 1 shows the total downtime associated rocks damaging the harness in the 
+goal post in Quellaveco - 794 autonomous fleet. 
+Illustration 1: Downtime associated. 
+S
+ome reasons for these rocks coming down from the canopy could be related to: 
+• S
+uddenly detentions in high-speed conditions.
+• Wrong practices during the loading stage.
+• Wrong load distribution in the body.
+Damage caused by falling rocks on GPS antennas and 
+harness 
+GPS coaxial harness damaged or broken by falling 
+rocks  
+Illu
+stration 2: Examples of damage generated in the goal post by rocks falling from the canopy.  
+
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Improved GPS Antenna Harness Routing in 794AC 
+Commend Trucks 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230724-1 
+Caterpillar: Confidential  Yellow     Page 3 of 12 
+Symptoms about this failure mode are: CMD truck triggers the following events. 
+• E
+1252 Low position of the machine.
+• E2290 Primary GPS Antenna insufficient precision.
+• E2291 Secondary GPS Antenna insufficient precision.
+• E1536 GPS Corrections are not received.
+• Event 1394 Unacceptable orientation of the machine.
+2.
+0 Best Practice Description 
+T
+he implementation of this best practice requires modify the GPS (PN: 569-9658 LH; 569-9659 
+RH) antenna harness routing in the unseen side of the goal post arms. 
+R
+outing the coaxial harness away line of fire for falling rocks will avoid the downtime events for 
+troubleshooting (work at height) and parts replacement that will increase the maintenance cost in 
+long term. 
+T
+he next illustrations show the current design vs the modification proposal. 
+Illustration 3: Current Design 
+Illustration 4: Proposal modification 
+1 
+2 
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Improved GPS Antenna Harness Routing in 794AC 
+Commend Trucks 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230724-1 
+Caterpillar: Confidential  Yellow     Page 4 of 12 
+3.0 Implementation Steps 
+T
+he current installation of the Master (PN: 569-9658 LH) and Slave GPS (569-9659 RH) antenna 
+harness is as follows: 
+Illustration 5: Current arrangement 
+T
+he GPS antenna harness is installed on the upper horizontal support of the Goalpost structure. 
+Illustration 6: Actual routing for RIGHT side and LEFT side coaxial harness  
+Illustration 7: Actual routing for both RIGHT and LEFT side coaxial harness upon the platform  
+GPS 
+LH 
+GPS 
+RH 
+GPS ANTENNA 
+HARNESS 
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Improved GPS Antenna Harness Routing in 794AC 
+Commend Trucks 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230724-1 
+Caterpillar: Confidential  Yellow     Page 5 of 12 
+The implementations steps are the following: 
+a) Loos
+en the Bracket As (252-9628), rotate the GPS 1(Master PN: 492-7319) and GPS 2(Slave
+PN: 492-7319) antenna 90° with the antenna connector facing the front.
+Illustration 8: Loosen support and rotate both antennas. 
+b) The harness of the GPS 1 and GPS 2 antennas are routed through the front part of the vertical
+support.
+• T
+he following NPs are used to fasten the harness:
+ITEM NP COMPONENT 
+1 8T-3490 
+Nut-Weld  
+(M10X1.5-THD) 
+5 144-4613 Angle AS 
+7 198-4777 
+Washer-Hard  
+(11X25X10-MM Thk) 
+8 204-2281 STRAP-CABLE 
+9 204-8000 Mounting-Cable Tie 
+12 344-5675 
+Nut  
+(M10X1.5-THD) 
+16 479-2172 Bolt AS  
+20 8T-4121 
+Washer-Hard  
+(11X21X2.5-MM Thk) 
+29 8T-6685 
+Bolt  
+(M10X1.5X110-MM) 
+Illustration 9: Route the outcoming harness for each GPS antenna 
+(2) NP 252-9628 Bracket as
+
+
+===== PAGE 6 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Improved GPS Antenna Harness Routing in 794AC 
+Commend Trucks 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230724-1 
+Caterpillar: Confidential  Yellow     Page 6 of 12 
+• The fastening of the harness is as follows:
+Illustration 10: Route for coaxial harness 
+c) T
+o fasten the harness to the base of the antenna support, the following parts are used on both
+sides:
+Illustration 11: Base antenna support hardware 
+ITEM PN COMPONENT 
+8 204-2281 STRAP-CABLE 
+14 381-2621 Mounting-Cable Tie 
+20 8T-4121 
+Washer-Hard  
+(11X21X2.5-MM Thk) 
+28 8T-6466 
+Bolt  
+(M10X1.5X60-MM) 
+
+
+===== PAGE 7 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Improved GPS Antenna Harness Routing in 794AC 
+Commend Trucks 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230724-1 
+Caterpillar: Confidential  Yellow     Page 7 of 12 
+d) The harnesses of the GPS antennas are attached to the lower part of the horizontal structure.
+• T
+he two structural supports (1) are reused to hold the antenna harness through the lower
+holes.
+Illustration 12: LH coaxial harness supported to structure.  
+• The harness of the GPS Master antenna is attached through holes A, B and C
+.
+• The harness of the Slave GPS antenna is attached through hole D.
+Illustration 13: Harness routed bellow structure. 
+Structural support
+ 
+A
+ B
+C
+ D
+
+
+===== PAGE 8 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Improved GPS Antenna Harness Routing in 794AC 
+Commend Trucks 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230724-1 
+Caterpillar: Confidential  Yellow     Page 8 of 12 
+• The following parts are used to fasten the harness:
+Illu
+stration 14: Harness fastened by support. 
+e) Y
+ou must weld two bosses (A-B) PN: 294-4550, in the lower part of the structure and attach
+the harness of the GPS antennas.
+Illustration 15: Boss welded and support attachments for harness.  
+ITEM NP COMPONENT 
+8 204-2281 STRAP-CABLE 
+11 322-1358 Bracket AS  
+11 8T-3490 
+Nut-Weld  
+(M10X1.5-THD) 
+12 344-5675 
+Nut  
+(M10X1.5-THD) 
+14 381-2621 Mounting-Cable Tie 
+16 479-2172 Bolt AS  
+20 8T-4121 
+Washer-Hard  
+(11X21X2.5-MM Thk) 
+25 183-7121 
+Bolt  
+(M10X1.5X35-MM) 
+
+
+===== PAGE 9 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Improved GPS Antenna Harness Routing in 794AC 
+Commend Trucks 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230724-1 
+Caterpillar: Confidential  Yellow     Page 9 of 12 
+• The following parts are used to fasten the harness:
+Illustration 16: Boss welded and support attachments for harness.  
+f) Weld 4 bosses (A, B, C and D) PN: 294-4550, at the bottom of the goalpost structure.
+g) I
+nstall the harness under the structure.
+Illu
+stration 17: Bosses added, and harness support bellow the structure.  
+ITEM NP COMPONENT 
+8 204-2281 STRAP-CABLE 
+13 345-3753 Mounting-Cable Tie 
+20 8T-4121 WASHER-HARD 
+25 183-7121 
+Bolt  
+(M10X1.5X35-MM) 
+
+
+===== PAGE 10 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Improved GPS Antenna Harness Routing in 794AC 
+Commend Trucks 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230724-1 
+Caterpillar: Confidential  Yellow     Page 10 of 12 
+• The following NPs are used to fasten the harness:
+Illustration 18: Boss welded and support attachments for harness.  
+h) Finish the routing in the input connectors to the second GPS antenna harness section (RH-
+LH).
+Illustration 19: Finally route the coaxial harness to the connectors at the platform.  
+4.
+0 Benefits 
+T
+he benefits of this best practice will be associated with the following topics: 
+ S
+afety: Reduce the time to be exposed to height work.
+ Maintenance: Eliminate the downtime associated with this failure mode, therefore the MTBF
+and Availability will increase.
+ITEM NP COMPONENT 
+8 204-2281 STRAP-CABLE 
+13 345-3753 Mounting-Cable Tie 
+20 8T-4121 WASHER-HARD 
+25 183-7121 
+Bolt  
+(M10X1.5X35-MM) 
+
+
+===== PAGE 11 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Improved GPS Antenna Harness Routing in 794AC 
+Commend Trucks 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230724-1 
+Caterpillar: Confidential  Yellow     Page 11 of 12 
+5.0 Resources Required 
+T
+he following parts were used to implement this improvement in the truck: 
+NP COMPONENTE CANTIDAD 
+127-9323 Bracket AS  2 
+144-4613 Angle AS 4 
+144-8344 Spacer(11X19X20-MM Thk) 6 
+183-7121 Bolt(M10X1.5X35-MM) 7 
+198-4777 Washer-Hard(11X25X10-MM Thk) 4 
+204-2281 Strap-Cable 25 
+204-8000 Mounting-Cable Tie 4 
+274-7450 Bracket AS  1 
+322-1358 Bracket AS  4 
+344-5675 Nut(M10X1.5-THD) 8 
+345-3753 Mounting-Cable Tie 5 
+381-2621 Mounting-Cable Tie 6 
+479-2171 Bolt AS  2 
+479-2172 Bolt AS  8 
+8T-3490 Spacer(11X20X40-MM Thk) 8 
+8T-4121 Washer-Hard(11X21X2.5-MM Thk) 16 
+8T-4184 Bolt(M12X1.75X45-MM) 1 
+8T-4223 Washer-Hard(13.5X25.5X3-MM Thk) 1 
+8T-6466 Bolt(M10X1.5X60-MM) 2 
+8T-6685 Bolt(M10X1.5X110-MM) 4 
+294-4550 Boss Weld 6 
+Resources: 
+• M
+anlift
+• Welding equipment
+• 1 Welder
+• 1 electrical technician
+• 1 electrical specialist
+Ins
+tallation Time: 
+• 3.
+5 hours
+C
+alibrations: 
+•
+GAMS
+
+===== PAGE 12 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Improved GPS Antenna Harness Routing in 794AC 
+Commend Trucks 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230724-1 
+Caterpillar: Confidential  Yellow     Page 12 of 12 
+PM to consider: 
+• 1000hr
+s
+• 2000hrs
+       Implementation total cost: 
+6.
+0 Supporting Attachments / References 
+794 AC Truck MT5 - SIS 2.0 (cat.com) 
+7.
+0 Related Best Practices 
+N
+one 
+8.
+0 Acknowledgements 
+This best practice was written and implemented by: 
+Steve A. Tapia Caceres 
+Electrical trucks support engineer - FERREYROS 
+steve.tapia@ferreyros.com.pe 
+phone: (+51) 950 512 464 
+B
+rigitte Mamani Concha 
+Autonomous trucks electrical specialist - FERREYROS 
+Brigitte.mamani@ferreyros.com.pe 
+phone: (+51) 951 846 468 
+J
+aisson Chara Taco 
+Technical Representative / LMT Electric-Drive Mining Trucks - Perú – CATERPILLAR 
+jaisson.chara@cat.com 
+ mobi le: (+51) 915 227 438

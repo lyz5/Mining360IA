@@ -1,0 +1,235 @@
+SOURCE: Drawbar Inspection and Adjustment Procedure for Motor Grader 16M3-16.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2023 
+1.04-230222-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Drawbar Inspection and 
+Adjustment Procedure for 
+Motor Grader 16M3/16 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Drawbar Inspection and Adjustment Procedure for 
+Motor Grader 16M3/16 ............................................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ........................................... 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Drawbar Inspection and Adjustment Procedure for 
+Motor Grader 16M3/16 
+DATE 
+2/22/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230222-1 
+Caterpillar: Confidential Yellow          Page 2 of 4 
+1.0 Introduction  
+ 
+In order to improve adjustment history of table/circle assembly, an inspection and adjustment procedure 
+was created. 
+ 
+After some circle drive failures, it was identified that it was not evident if the assembly had been adjusted 
+and, if so, by whom. 
+ 
+2.0 Best Practice Description 
+ 
+After an occurrence of a fracture in the circle drive, it was observed some of the circle fixing shoes were 
+out of specification. 
+ 
+Since the mentioned episode , a standard inspection document was created with the Q R code of the 
+procedure for table/circle assembly and the circle drive adjustment. 
+ 
+By using the phone to read the QR code, technicians may have access to the procedure for table/circle 
+assembly adjustment in SIS and/or access to the video on channel 1, which shows how the procedure 
+should be performed. 
+ 
+During the service, the technician fills out a header about the equipment’s data, found/adjusted 
+values, and activity's technician identification aiming to create a maintenance history document 
+(Image 1) of the table/circle set, allowing a better control of the implement's maintenance activities. 
+ 
+ 
+Image 1 - Technical Report 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Drawbar Inspection and Adjustment Procedure for 
+Motor Grader 16M3/16 
+DATE 
+2/22/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230222-1 
+Caterpillar: Confidential Yellow          Page 3 of 4 
+3.0 Implementation Steps 
+ 
+A pilot project was tested during preventive maintenance, focusing on validating the use of the 
+described procedure as images 2, 3, 4 and 5 illustrates: 
+ 
+   
+                  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Images 2 and 3 - Procedure instructions containing parts identification, specification measurements and a blank space to 
+fill with the found measure 
+ 
+      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+     Image 4 - Identification and blank filling spaces table                         Image 5 - Example of filled table 
+ 
+ 
+3.1 Test and Monitor the Solution:  
+ 
+After table/circle assembly inspection and adjustment report implementation, it was no longer observed 
+new occurrences of assembly failure, thus evidencing the efficiency of the developed procedure.   
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Drawbar Inspection and Adjustment Procedure for 
+Motor Grader 16M3/16 
+DATE 
+2/22/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230222-1 
+Caterpillar: Confidential Yellow          Page 4 of 4 
+4.0 Benefits 
+ 
+• Adjustment history 
+• Process improvement 
+• P remature failures avoidance 
+• Reduction on adjustment time/downtime 
+• Reduction on rework and/or warranty claim costs 
+ 
+5.0 Resources Required 
+ 
+N/A 
+ 
+6.0 Supporting Attachments / References 
+ 
+SEBU9228-17- i07192342 
+UENR6762-06 - i06147741 (steps 25 to 30) 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Glauber Soares 
+Sotreq S/A - Mining Engineering  
+E-mail: glauber.soares@sotreq.com.br
+ 
+ 
+This Best Practice was co-written and implemented by: 
+ 
+Fernando Laguardia 
+Sotreq S/A - Mining Engineering Consultant 
+E-mail: fernando.laguardia@sotreq.com.br
+ 
+ 
+Lázara Fonseca 
+Sotreq S/A - Mining Engineering Consultant 
+E-mail: lazara.fonseca@sotreq.com.br
+ 
+ 
+Luis Gustavo Rocha 
+Sotreq S/A - Engineering Coordinator  
+E-mail: luis.gustavo@sotreq.com.br

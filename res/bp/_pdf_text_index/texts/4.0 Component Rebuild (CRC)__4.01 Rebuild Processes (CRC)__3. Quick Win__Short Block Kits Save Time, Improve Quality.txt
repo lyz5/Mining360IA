@@ -1,0 +1,214 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+March 2008 
+0408-4.1-1116 
+  
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Short Block Kits Save 
+Time, Improve Quality 
+Application Maintenance Component 
+Rebuild 
+Component Life 
+Management 
+MARC 
+Management 
+ 
+ 
+ 
+Short Block Kits Save Time, Improve Quality ............. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Short Block Kits Save Time, Improve Quality 
+DATE 
+10/21/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0408-4.1-1116 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction  
+ 
+Many dealer Component Rebuild Centers study shop processes and re-align them to a factory-
+like workflow. The focus is to create standardized processes and uninterrupted work efficiency. 
+ 
+This Best Practice contains Ferreyros’ shortage/parts delivery process and short block rebuild kit 
+for 3500 series engines. 
+ 
+2.0 Best Practice Description   
+ 
+This Best Practice is an engine block rebuild kit with special storage/delivery carts. 
+ 
+The short block kit contains both new and reused parts. The parts are arranged on the cart in the 
+order that they are used. This saves time for the technician when all parts required are unwrapped 
+and unboxed, ready to install, and arranged in the order that they will be needed. 
+ 
+The storage/delivery cart itself is sealed for contamination control with reusable plastic covers and 
+portable vapor capsules that contain corrosion inhibitor. This saves wrapping and unwrapping time 
+and reduces the consumption of plastic wrap. 
+ 
+The cart is stored in a staging area and only delivered to the work bay at the moment that it is 
+required. 
+       
+3.0 Implementation Steps 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+Short Block Kit Staging Area 
+• Wheeled carts 
+• Sealed for CC 
+• Parts arranged in same 
+order used. 
+ 
+• Design and fabricate 
+cart. 
+• Determine layout. 
+• Designate 
+responsibility for 
+managing carts / kits. 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Short Block Kits Save Time, Improve Quality 
+DATE 
+10/21/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0408-4.1-1116 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+             
+      
+    
+ 
+ 
+ 
+             
+ 
+ 
+ 
+ 
+ 
+      
+     
+ 
+ 
+      
+  
+        
+ 
+ 
+ 
+Rust Inhibitor Cartridge 
+Provides rust protection up 
+to two years. 
+Parts partially assembled and 
+ready to use. Locations 
+numbered. 
+Note snap rings are all oriented 
+in the same position for easy 
+Quality Control inspection. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Short Block Kits Save Time, Improve Quality 
+DATE 
+10/21/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0408-4.1-1116 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+4.0 Benefits 
+ 
+• Efficient use of skilled assembly technician time. 
+• No lost time wrapping and unwrapping parts. 
+• Parts located exactly where they need to be – no lost time searching for parts. 
+• Effective use of out-of-bay staging and floor space. 
+ 
+5.0 Resources Required 
+ 
+• Weld / Fabrication shop. 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+• 1107-4.03-1142 - Sealed Storage / Staging Cabinets Reduce Costs 
+ 
+8.0 Acknowledgements 
+ 
+Special thanks to: 
+ 
+Aninu Mitacc 
+Ferreyros  
+CRC Quality, Safety, and Continuous Improvement Manager 
+ 
+Please contact the Subject Matter Expert with any questions: 
+ 
+Dale Brehm 
+6 Sigma Black Belt 
+Cat Global Mining Product Support 
+brehm_dale_e@cat.com 
++1 309 675 6325

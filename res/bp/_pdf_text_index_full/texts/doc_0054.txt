@@ -1,0 +1,316 @@
+SOURCE: 1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\Cat 6015 Disassembly of shovel final brake.pdf
+PAGES: 8
+ENCRYPTED: True
+DECRYPT: 1
+
+
+===== PAGE 1 =====
+February 2021 
+1.04-210211-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+ Caterpillar: Confidential Yellow 
+MIN
+ING DEALER BEST PRACTICE 
+Cat 6015 - Disassembly of 
+shovel final brake 
+Main
+tenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+Shovel Final Brake Disassembly process................0  
+1.0 Introduction ......................................................1 
+2.0 Best Practice Description ................................2 
+3.0 Implementation Steps...................................2-5 
+4.0 Benefits ............................................................5 
+5.0 Resources Required........................................5 
+6.0 Supporting Attachments / References............6 
+7.0 Related Best Practices ....................................7 
+8.0 Acknowledgements .........................................7 
+DISCLAIMER: The information and potential benefits included in this document are based upon information 
+provided by one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar  makes no 
+representation 
+or  warranty about the information contained in this document or the products referenced herein. 
+Caterpillar welcomes additional “Best Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Disassembly of shovel final brake 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-210211-1 
+Caterpillar : Confidential Yellow       Page 1 of 7 
+1.0 Introduction 
+The Cat 6015 Hydraulic Front Shovel final drive brakes are an important part with a complex removal 
+process.  
+The Caterpillar procedure (BI644878) recommends using two bolts with their M8 nuts by pressing 
+the washer (thrust collar) while tightening the nuts uniformly to extract the retaining ring (Circlip).  
+The implementation of the bolts does not guarantee that the surface goes down uniformly every time 
+which generates an abrasive wear between the piston and the housing (stripes). This could alter the 
+reliability of the repair of the component and the reusability of parts if not done precisely. It could 
+also increase the time under repair when the tightening is not adequate, or the applied loads are not 
+uniform. This best practice can also reduce risk of the part ejecting out in an uncontrolled manner. 
+Parts reusability for damage to the piston at the submitting dealership is around 70%. 
+Figure 1 - Bolts used in current procedure. 
+F
+igure 2 - Taken from the CAT procedure. 
+This Best Practice aims to be able to disassemble the brake safely and reliably from a tool, 
+preventing the washer ( thrust collar) from injuring the technicians, and it is also possible to 
+eliminate the redo and cost overrun in case something comes up.  
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Disassembly of shovel final brake 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-210211-1 
+Caterpillar : Confidential Yellow                  Page 2 of 7 
+2.0 Best Practice Description 
+ 
+This tool applies to the disassembly and assembly process on the final drive brakes on a 6015. 
+It is geometrically “t-shaped". The vertical piece is a worm drive of 1” UNC that at one end has 
+a hollow cylinder to rest on the pressure washer (thrust collar). The horizontal  piece is a flat 
+base of A36 steel that has a nut fixed in the center where the bolt travels; In addition, it has two 
+holes of 22mm diameter at its ends designed to improve the grip between the tool and the final 
+drive, ensuring the safety of the technicians and the component. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+       
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+1. Final Drive measurements are taken. 
+2. Design of the tool according to the measurements and ergonomics of the operation. 
+3. Load analysis of the tool. 
+4. Tool manufacturing. 
+5. Test conducted at the shop. 
+6. Start-up, after disclosing it to the operation with its change format. 
+ 
+ 
+ 
+Figure 3 - Tool for the brake 
+disassembly and assembly process. 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Disassembly of shovel final brake 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-210211-1 
+Caterpillar : Confidential Yellow                  Page 3 of 7 
+7. Operation of the tool (See Figure 4) 
+ 
+ 
+8. The tool is inserted in the final drive. 
+9. Place the bolts on the ends of the flat base in order to fasten them to the final drive in 
+the holes marked in red (Figure 5). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+10. Make sure that the tool is properly adjusted to the component. 
+Figure 4 - Tool Operation 
+Figure 5 - Bolt placement 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Disassembly of shovel final brake 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-210211-1 
+Caterpillar : Confidential Yellow                  Page 4 of 7 
+11. Start rotating the worm drive in order to lower the hollow cylinder of the tool against the 
+Thrust Collar, compressing the piston springs, releasing the Circlip. 
+ 
+ 
+ 
+ 
+12. Remove the retainer ring. 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 6 - Tool Operation (continued) 
+ 
+Figure 7 - Clip ready for removal 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Disassembly of shovel final brake 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-210211-1 
+Caterpillar : Confidential Yellow                  Page 5 of 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+ Minimized risk of parts ejecting while disassembling. 
+ Reduction in 70% as of the disassembly and installation time of the brakes in the final drives. 
+ Elimination of redoes due to failures in the thread of the M8 bolts. 
+ 
+ 
+5.0 Resources Required 
+ 
+The investment regarding the manufacturing process of the tool was $200 USD. 
+ 
+Figure 8 - Reference of Disassembly 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Disassembly of shovel final brake 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-210211-1 
+Caterpillar : Confidential Yellow                  Page 6 of 7 
+6.0 Supporting Attachments / References 
+ 
+CAT procedure for assembly and disassembly of the 6015 Hydraulic Front Shovel final drives 
+(BI644878). 
+ 
+DRAWING: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Disassembly of shovel final brake 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-210211-1 
+Caterpillar : Confidential Yellow                  Page 7 of 7 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Enrique Urbina 
+CRC Development Project Chief RELIZAN CAT 
+Email: enrique.urbina@relianz.com.co 
+ 
+Juan Sebastián De la Hoz  
+CRC Service Engineer
+ RELIZAN CAT  
+Email: juan.delahoz@relianz.com.co 
+ 
+Juan Luis Perez   
+CRC Engineer Assistant RELIZAN CAT  
+Email: practicante.desarrollocrc@relianz.com.co 
+ 
+ 
+Reinaldo Peñaloza 
+CRC Service Engineer RELIZAN CAT 
+Email: reinaldo.penaloza@relianz.com.co 
+ 
+Alejandro Cervantes 
+CRC Intern RELIANZ CAT  
+Email: alejocerva@gmail.com

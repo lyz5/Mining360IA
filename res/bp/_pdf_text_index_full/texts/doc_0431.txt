@@ -1,0 +1,286 @@
+SOURCE: Salvage C175 Engine Block Coolant Passage Using Metal Spray.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2023 
+4.02-231220-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Salvage C175 Engine Block 
+Coolant Passage Using 
+Metal Spray 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Salvage C175 Engine Block Coolant Passage Using 
+Metal Spray  ............................................................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage C175 Engine Block Coolant Passage Using 
+Metal Spray 
+DATE 
+12/20/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231220-1 
+Caterpillar: Confidential Yellow          Page 2 of 6 
+1.0 Introduction  
+ 
+Significant cost savings can be achieved by salvaging the coolant passages on the top deck surface 
+of the C175 engine cylinder block using metal spray technology. 
+ 
+2.0 Best Practice Description 
+ 
+Coolant passage salvage consists of machining the damaged surface using an end mill to eliminate 
+the pitting, grit blasting the surface to create a bond interface, metal spraying the surface,  and 
+machining the top deck to create a uniform surface. 
+ 
+                                 
+                                                         
+ 
+Figure 1. Coolant passage’s surface affected by pitting 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage C175 Engine Block Coolant Passage Using 
+Metal Spray 
+DATE 
+12/20/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231220-1 
+Caterpillar: Confidential Yellow          Page 3 of 6 
+3.0 Implementation Steps 
+ 
+3.1. Rough cut: Eliminate the pitting on the coolant passages surface using an end mill to machine 
+a pocket that contains the damage. Most of the time a 0.040” deep pocket is enough for removing 
+pitting. 
+ 
+ 
+            
+ 
+Figure 1 Machined pocket on coolant passage surface. 
+ 
+ 
+3.2. Top deck bore and thread protection: Use anti -bond materials to cover and protect all the 
+threads and bores which are near to the area to be sprayed on the top deck. 
+ 
+ 
+ 
+Figure 2. Top deck bore and thread protected 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage C175 Engine Block Coolant Passage Using 
+Metal Spray 
+DATE 
+12/20/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231220-1 
+Caterpillar: Confidential Yellow          Page 4 of 6 
+3.3. Grit blasting: Follow the instructions in SEBF2120 “Thermal Spray Procedures for Engine 
+Cylinder Block Top Surface”. Propel a stream of aluminum oxide against the block surface under 
+high pressure to prepare the work piece for metal spray. 
+ 
+ 
+                     
+                        
+Figure 3. Grit blasted surface 
+ 
+ 
+ 
+ 
+3.4. Metal spraying the surface: Using an industrial robot and metal spray equipment, it is possible 
+to control velocity, distance and position of the spray with a high degree of accuracy improving the 
+strength of the bond and finish of the coating. For the spraying parameters use the specifications 
+found in SEBF2120 “Thermal Spray Procedures for Engine Cylinder Block Top Surface”. 
+ 
+                     
+ 
+Figure 4. Sprayed coolant passages using an industrial robot 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage C175 Engine Block Coolant Passage Using 
+Metal Spray 
+DATE 
+12/20/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231220-1 
+Caterpillar: Confidential Yellow          Page 5 of 6 
+3.5. Finishing cut: Machine the top deck surface according to the specifications found in the Reuse and 
+Salvage Guidelines SEBF9185 “Specifications and Salvage for Cylinder Blocks in C175 Engines”. 
+ 
+              
+ 
+ 
+ 
+Figure 5. Machined top deck surface 
+ 
+4.0 Benefits 
+ 
+4.1. Increases the life of the salvage by using wear resistant materials to create the coating. 
+ 
+4.2. Eliminates the need to metal spray the whole top deck surface when pitting exists on coolant 
+passages. 
+ 
+4.3. This salvage process is cheaper than spraying the whole top deck surface and saves valuable 
+consumables and reduces labor time as only the areas affected by pitting are sprayed. 
+ 
+5.0 Resources Required 
+ 
+5.1. Multi-purpose CNC machining center (Rottler F100 Series or similar) 
+ 
+5.2. Grit blasting equipment 
+ 
+5.3 Industrial robot 
+ 
+5.4 Metal spray equipment 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage C175 Engine Block Coolant Passage Using 
+Metal Spray 
+DATE 
+12/20/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231220-1 
+Caterpillar: Confidential Yellow          Page 6 of 6 
+6.0 Supporting Attachments / References 
+ 
+6.1. SEBF9185 “Specifications and Salvage for Cylinder Blocks in C175 Engines” 
+ 
+6.2. SEBF2120 “Thermal Spray Procedures for Engine Cylinder Block Top Surface”  
+ 
+6.2. SEBF9238 “Fundamentals of Arc Spray for Reconditioning Components”  
+ 
+7.0 Related Best Practices 
+ 
+7.1. Mounting Fixture for Arc Spray Gun 
+7.2. Setting-Up the Robot Using a Cone Tool 
+7.3. Salvage C175 Engine Cylinder Block Upper and Lower Liner Bores Using Metal Spray 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+Name: Oscar Javier De La O / Machine Shop Supervisor 
+E-mail: odelao@matco.com.mx
+ 
+Company: Empresas MATCO S.A. de C.V. 
+ 
+ 
+Recognition: 
+ 
+Team: 
+Jesús Lauro Alvarado / Machine Shop Chief 
+Julian Enrique Pintado / Machine Shop Supervisor

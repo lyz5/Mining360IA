@@ -1,0 +1,202 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.04 CRC Management\3. Quick Win\Component Rebuild History Tracking and Tagging.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+May 2008  
+0608-4.5-1121  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Component Rebuild History 
+Tracking and Tagging 
+ 
+Application  Maintenance  Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety MARC 
+Management 
+ 
+ 
+ 
+Component Rebuild History Tracking ........................ 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits ............................................................. 3 
+5.0  Resources Required .......................................... 3 
+6.0  Supporting Attachments / References ............... 3 
+7.0  Related Best Practices ...................................... 3 
+8.0  Acknowledgements ........................................... 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Component Rebuild History Tracking 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0608-4.5-1121  
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction  
+ 
+When a major component is coming to the CRC for a rebuild, information on repair / rebuild 
+history and total hours on the component must be readily available.  This information is to help 
+make rebuild decisions regarding the current rebuild.   
+ 
+Quick assess to history and hours information allows the CRC to determine the salvage work 
+which may be required, critical parts which may need to be replaced or salvaged, or whether 
+replacing the component with a Reman component should be considered. 
+ 
+This Best Practice is a major component marking procedure for tracking component hours and 
+history information.   
+ 
+ 
+2.0 Best Practice Description 
+ 
+ 
+The objective of this Best Practices is to create a process where the CRC has easy access to 
+component history information.  As example, it may save a lot of time and effort if the CRC knows 
+in advance that an engine coming in has 55,000 total hours, has been rebuilt three times, and the 
+block has been machined twice and is at minimum deck height. 
+ 
+Several dealers have developed an identification tag that is permanently installed on a major 
+component each time the component is rebuilt.  The tag is stenciled with key information 
+necessary for future rebuilds on that component. 
+ 
+Key information required needs to be determined by the dealer.  Often included are: 
+ 
+• Component Serial Number                 
+• Component Arrangement 
+• Performance Spec 
+• Test Document Number 
+• Work Order Number / Date 
+• Hours on current rebuild 
+ 
+Other information, such as customer name, machine model, etc may also be included. 
+ 
+If a component does not have a factory serial number, such as final drive, then the dealer assigns 
+a serial number to the component. 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Component Rebuild History Tracking 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0608-4.5-1121  
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+Example from Wyoming Machinery Co. 
+                                                                                      
+     
+  
+ 
+Example from C. I. Walker Machinery Co. 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+This Best Practice is easy to replicate and involves minimal cost. 
+ 
+Steps Include; 
+ 
+• Determine what information needs to be on an ID ta g. 
+• Design tags 
+• Determine a standard mounting location for common machine components. 
+• Assign responsibility for stenciling and installin g tags on components. 
+• To start the program, it would be necessary to gat her past history of components coming 
+into the shop and make sure that previous rebuild information is marked on the tag. 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Component Rebuild History Tracking 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0608-4.5-1121  
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+4.0 Benefits 
+ 
+• Quick assess to history and hours information. 
+• Better repair and reuse / salvage decisions. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Minimal cost of tags and stencil equipment. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+7.0 Related Best Practices 
+ 
+C175 ID Tags for Engines that Require Thicker Integral Seals 1606-4.01-1439 
+ 
+8.0 Acknowledgements 
+ 
+Photos from Wyoming Machinery Company and C. I.  Walker Machinery Co. 
+ 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+6 Sigma Black Belt 
+Cat Global Mining Product Support

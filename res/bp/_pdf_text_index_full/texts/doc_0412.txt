@@ -1,0 +1,304 @@
+SOURCE: Inversion of 793D A-Frame Pin.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2022  
+1.01-220602-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Inversion of 793D A-Frame 
+Pin 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Inversion of 793D A-Frame Pin .................................. 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 3 
+3.0 Implementation Steps ........................................ 6 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Inversion of 793D A-Frame Pin 
+DATE 
+6/2/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-220602-1 
+Caterpillar: Confidential Yellow          Page 2 of 7 
+1.0 Introduction  
+ 
+The procedure to adjust the 793D A-frame pin clearance (PN 8X-2936) requires removing the hoist 
+system hose 146-6174 to gain access to the plate 8X-2939 and bolts 8T-0664 to perform the final 
+torque. 
+ 
+The hose removal will expose the hydraulic system to external contaminants and will also increase 
+the hours to execute the pin adjustment procedure. 
+ 
+ 
+Picture 01 – View of the area of access to adjust the A-frame pin clearance. 
+  
+Pictures 02 & 03 – Detail of hoist system hose 146-6174 that needs to be removed to adjust the 
+A-frame pin clearance. 
+  
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Inversion of 793D A-Frame Pin 
+DATE 
+6/2/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-220602-1 
+Caterpillar: Confidential Yellow          Page 3 of 7 
+This Best Practice will depict the procedur e to invert the A -frame pin thus eliminating the 
+contamination risk as well as reducing labor hours and improving machine availability, with benefits 
+for either customers or dealers. 
+ 
+2.0 Best Practice Description 
+ 
+The original installation position of the A-frame pin 8X-2936. The plate 8X-2939 and the adjustment 
+shims 8X-2934 are on the right side next to the hoist system valve group. 
+ 
+ 
+Picture 04 – Factory arrangement, adjustment plate at the right side of A-frame pin. 
+ 
+Picture 05 – Factory arrangement, detail of bolts and adjustment plate of A-frame pin. 
+ 
+To avoid removing the hose to perform the pin adjustment, the customer changed the installation 
+side of the pin. Now the adjustment plate is on the left side where there is  enough space to carry 
+out the pin clearance adjustment without the need to remove other parts. 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Inversion of 793D A-Frame Pin 
+DATE 
+6/2/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-220602-1 
+Caterpillar: Confidential Yellow          Page 4 of 7 
+ 
+ 
+Picture 06 – A-frame pin after inversion, adjustment plate at the left side of A-frame pin with free 
+space for pin clearance adjustment. 
+ 
+Before inverting the A -frame pin, secure the A -frame front end using a hydraulic  stand. It is 
+suggested to use 9U-7489 100-ton hydraulic lift stand. Example of another supplier’s hydraulic lift 
+stand is in the Picture 08. Use a suitable lifting device (not shown) to remove pin. The weight of the 
+8X-2936 A-frame pin is approximately 73kg. 
+ 
+1. Removal procedure 
+ 
+ 
+ 
+ 
+ 
+1.1. Remove the hydraulic lines to gain access to the A-frame pin as depicted in Picture 07. 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Inversion of 793D A-Frame Pin 
+DATE 
+6/2/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-220602-1 
+Caterpillar: Confidential Yellow          Page 5 of 7 
+ 
+Picture 07 – Hydraulic lines to be removed to gain access to the A-frame pin. 
+ 
+1.2. Remove the hoist valve group. 
+1.3. Remove the 12 bolts that attach the retaining caps of A-frame pin. 
+1.4. After removing the 12 bolts, support the rear end of differential housing with a hydraulic lift 
+stand and raise it until the yoke contacts the lower face of the truck frame, thus allowing to 
+remove and invert the A-frame pin. See Picture 08. 
+ 
+ 
+Picture 08 – Example of list stand to support the differential housing. 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Inversion of 793D A-Frame Pin 
+DATE 
+6/2/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-220602-1 
+Caterpillar: Confidential Yellow          Page 6 of 7 
+2. Installation procedure 
+ 
+Proceed in the reverse order of removal procedure. 
+ 
+3. General information 
+ 
+These procedures take 8 calendar hours. After doing so, t he procedure to check A-frame pin end 
+play decreases from 4 calendar hours to 2 calendar hours  and the maintenance interval remains  
+2,000 hours. After executing the end play check 4 times (8,000 hours), customer obtain gains in 
+machine downtime. For machine downtime dilution, it  is suggested to execute the pin inversion  
+during: 
+  
+• the yoke rebore; 
+• the yoke weld repair; or 
+• the oversize bearing installation. 
+ 
+The 793D Operation and Maintenance Manual SEBU 7792 states that inspecting the end play 
+adjustment of the rear axle housing is recommended at the initial 2000 service hours. Yearly 
+inspection and maintenance of the end play of the rear axle housing will maximize service life.  
+However, in case of severe applications,  the end play adjustment of the rear axle housing is 
+recommended at every 6 months . Dealership and customer may use any of these maintenance 
+intervals to invert the A-frame pin to mitigate impact in machine downtime. 
+ 
+3.0 Implementation Steps 
+ 
+1. Obtain the total labor hours required to adjust A-frame pin clearance in its original configuration, 
+i.e. adjustment plate at the right side of A-frame pin. 
+2. Invert the pin according to the procedure shown in topic 2.0. 
+3. Execute the procedure to adjust A-frame pin clearance, i.e. adjustment plate at the left side of 
+A-frame pin. Register the total labor hours and compare it with original configuration. 
+ 
+4.0 Benefits 
+ 
+• Reduces labor hours and consequently the machine downtime to adjust A-frame pin 
+clearance – case study at the customer Kinross shows that labor hours reduced from 4 
+hours to 2 hours with one technician. 
+• Eliminate the source of contamination by avoiding the removal of the hoist system hose 
+146-6174 and oil refill. 
+ 
+5.0 Resources Required 
+ 
+This procedure requires the use of an 100 ton hydraulic lift stand, a torque wrench to tight the bolts, 
+a micrometer and a flick to measure the shims. It is recommended to execute the inversion of A-
+frame pin during a bushing replacement. 
+ 
+ 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Inversion of 793D A-Frame Pin 
+DATE 
+6/2/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-220602-1 
+Caterpillar: Confidential Yellow          Page 7 of 7 
+6.0 Supporting Attachments / References 
+ 
+• Operation and Maintenance Manual, SEBU7792, “793D Off-Highway Truck. 
+• Testing and Adjusting, RENR8327, "793D Power Train Testing and Adjusting", "Rear Axle 
+Housing End Play - Adjust". 
+ 
+7.0 Related Best Practices 
+ 
+Inversion of the body pivot pins on mining trucks (number 1.01-210211-1). 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Aluízio Marinho de Carvalho Silva 
+Mining Technical Consultant / TC 
+aluizio.carvalho@sotreq.com.br
+ 
++55 31 99194-3541 
+ 
+I would like to thank the following individuals that assisted in using and authoring this Best 
+Practice: 
+ 
+• Edirlei Cleber Carvalho, Performance Engineer from Sotreq S.A 
+ 
+• Paulo Cezar Martins Vieira, Mining Technical Consultant/TC from Sotreq S.A.

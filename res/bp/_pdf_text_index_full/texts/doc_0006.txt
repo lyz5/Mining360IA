@@ -1,0 +1,434 @@
+SOURCE: 1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\D10 Roller Retainer ARM Coating.pdf
+PAGES: 8
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 11 
+0912-1.11-1197 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      mining.cat.com 
+ 
+ 
+ 
+ 
+B E S T  P R A C T I C E  S E R I E S 
+D10N/R/T Roller Retainer ARM Coating 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+D10N/R/T Roller Retainer ARM Coating .................... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 3 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information pro vided  b y  
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D10N/R/T Roller Retainer ARM Coating 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0912-1.11-1197 
+Caterpillar Confidential:  GREEN          Page 1 of 7 
+ 
+ 
+1.0 Introduction  
+ 
+Under normal operating conditions, premature wear can occur on the retainers and bolts for the 
+rollers on the D10T/R/N Track-Type Tractor(s).  This wear is due to mixed material flow (abrasive 
+and high impact) across the external face of the rollers.  The result of this wear can cause a 
+decrease in roller service life. 
+ 
+Oil leaking from the worn roller retainers and bolts may cause unplanned downtime in the field.  
+In some cases, rollers have to be changed at 50% to 60% of their service life.   
+ 
+This Best Practice will outline a procedure to protect the retainer and bolts from abrasive wear.  
+The objective is to allow  120% of service life on the  roller shell without failure in the field .  
+Ultimately, improving roller performance and reducing cost per hour. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D10N/R/T Roller Retainer ARM Coating 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0912-1.11-1197 
+Caterpillar Confidential:  GREEN          Page 2 of 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 1 - Example of wear on the retainer and bolts. 
+ 
+ 
+Missing retainer bolt due to 
+abrasive wear. 
+Oil leaking from the roller due to 
+the loose retainer. 
+Severe retainer wear to due abrasive 
+material flow. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D10N/R/T Roller Retainer ARM Coating 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0912-1.11-1197 
+Caterpillar Confidential:  GREEN          Page 3 of 7 
+2.0 Best Practice Description 
+ 
+Some applications for D10N/R/T Track -Type Tractors consist of highly abrasive material.  These 
+applications can greatly reduce service life on the rollers, retainers and bolts.   
+ 
+To help increase service life in these applications an Abrasion Resistant Material (ARM) coating 
+may be applied to the roller retainers (both single and double flange).  This coating is applied b y  
+welding Tungsten Carbide ARM particles on the retainers. 
+  
+The coating may be applied before installing new rollers or during routine maintenance (shell and 
+seal replacement).  It is good practice to coat all rollers at the same time to allow for even wear 
+distribution. 
+ 
+The Tungsten Carbide coating adds 200 grams per roller, which equals a total of 3.2 kg for all 16 
+rollers.  This added weight does not have an affect on equipment operation. 
+ 
+The following figure illustrates Tungsten Carbide ARM coating applied to a roller retainer. 
+ 
+ 
+Figure 2 - Tungsten Carbide ARM Coating Applied to the Roller Retainer 
+ 
+ 
+ 
+ 
+ 
+ 
+Areas where ARM 
+coating has been applied 
+to protect the roller 
+retainer and bolts from 
+abrasive wear. 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D10N/R/T Roller Retainer ARM Coating 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0912-1.11-1197 
+Caterpillar Confidential:  GREEN          Page 4 of 7 
+The following picture depicts the roller with Tungsten Carbide ARM coa ting installed on the 
+undercarriage. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 3 - Roller with Tungsten Carbide ARM coating 
+ 
+ 
+3.0 Implementation Steps 
+ 
+In order to properly coat the rollers with Tungsten Carbide ARM, these steps must be followed: 
+ 
+1. Clean the surface  of the roller to be coated with Tungsten Carbide ARM using a grinder with 
+steel circular brush attachment.  Ensure all paint, rust, debris, etc. is completely removed. 
+2. Pre-heat the roller to 302 ºF (150 ºC) using therm al furnace equipment ( maintain this 
+temperature while coating with Tungsten Carbide ARM).  This allows proper adherence to the 
+roller surface. 
+3. Weld and/or coat with Tungsten Carbide ARM using a tungsten material dispenser.  Ensure to 
+maintain a roller temperature of 302 ºF (150 ºC).  
+4. Check your work area to ensure that there are no slag penetration problems. 
+ 
+ 
+4.0 Benefits 
+ 
+Benefits associated with this Best Practice include: 
+ 
+• Reduce unscheduled downtime in the field due to leaks or over-heated rollers (dry gaskets).   
+• Reduce roller cost per hour. 
+• Increase the service life of the rollers. 
+ 
+ 
+ 
+ 
+Tungsten Carbide ARM coating 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D10N/R/T Roller Retainer ARM Coating 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0912-1.11-1197 
+Caterpillar Confidential:  GREEN          Page 5 of 7 
+This Best Practice was implemented in a large South American Gold mine.  The following three 
+figures demonstrate the benefits realized at this site. 
+ 
+4,000.00
+7,500.00
+3,500.00
+0.00
+2,000.00
+4,000.00
+6,000.00
+8,000.00
+HOURS
+Without
+ARM
+With ARM Service life
+increase
+TYPES
+D 10R MACHINERY ROLLER SERVICE LIFE INCREASE WITH ARM COATING 
+ 
+Figure 4 – Example of Roller Service Life Impacts 
+ 
+In this example the service life on the rollers in creased from 4,000 hours to 7,500 hours. 
+ 
+ 
+ 
+0.402
+0.226
+0.428
+0.239
+0.00
+0.10
+0.20
+0.30
+0.40
+0.50
+USD$/Hr
+195-5855 195-5856
+N/ PART
+D 10R ROLLER COST PER HOUR WITHOUT Vs. WITH ARM COATING
+ 
+Figure 5 – Example of Roller Cost per Hour Impacts 
+ 
+In the example above, t he roller cost per hour decreased by 43.8% for a single flange roller and  
+by 44.2% for a double flange roller. 
+ 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D10N/R/T Roller Retainer ARM Coating 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0912-1.11-1197 
+Caterpillar Confidential:  GREEN          Page 6 of 7 
+1,336.00
+22,048.20
+0
+5,000
+10,000
+15,000
+20,000
+25,000
+$
+Cost Benefit
+COST Vs. BENEFIT WITHIN 7.500 HOURS
+ 
+Figure 1 - Example of Cost vs. Benefit Associated with Tungsten Carbide ARM Coating  
+ 
+In the figure above, the benefit realized from coating rollers with Tungsten Carbide ARM is 
+significant compared to the cost.  With an investment of $1,336.00 USD, the total benefit from 
+increasing the service life on 16 rollers to 7,500 hours is $22,048.20.  
+ 
+ 
+5.0 Resources Required 
+ 
+• 3G welder operator, equipment and welding materials. 
+• Welder labor hours: 2 hours per retainer.  
+• Undercarriage warehouse coordination. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+PEKP9400-04 Custom Track Service Handbook 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D10N/R/T Roller Retainer ARM Coating 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0912-1.11-1197 
+Caterpillar Confidential:  GREEN          Page 7 of 7 
+8.0 Acknowledgements 
+ 
+ 
+This Best Practice was described by: 
+ 
+  Fernando Briones Castope 
+  GETs & UC Inspector – Ferreyros 
+  fbriones@ferreyros.com.pe 
+   
+Martín Gallegos Barriga 
+  GETs & UC Specialist - Ferreyros 
+  mgallego@ferreyros.com.pe 
+ 
+ 
+Prepared by: 
+ 
+  Alberto Franco D’Alfonso 
+  CI & BP Champion – Ferreyros 
+  afrancod@ferreyros.com.pe

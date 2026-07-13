@@ -1,0 +1,433 @@
+SOURCE: 1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Expanded Mining Products In-Pit Workshop.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+August 19 
+1.01-190320-02 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Expanded Mining Products 
+In-Pit Workshop 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Expanded Mining Products In-Pit Workshop .............. 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Expanded Mining Products In-Pit Workshop 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-190320-02 
+Caterpillar Confidential:  YELLOW          Page 2 of 6 
+1.0 Introduction  
+ 
+Hydraulic mining shovels, electric rope shovels, draglines and rotary drills work deep inside the 
+pit, which is generally far away from the main workshop. Tramming these machines would prove 
+to be very time consuming and costly. In some cases, additional equipment and labor must be 
+brought in – For example, a water truck would be required to water down the undercarriage to 
+prevent overheating and subsequent failure of track rollers. Therefore, service work on these 
+machines must be performed within the pit in a designated flat area (shovel pad/drill pad) 
+ 
+This Best Practice describes the use of an in-pit workshop that can be placed at the shovel pad or 
+drill pad. Additional considerations are also included to the health & safety of technicians. As the 
+active mining faces progress, this workshop can be moved to a more suitable position. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Instead of working under the weather or sheltering in an empty container, an in-pit workshop can 
+be built and placed at the shovel pad to execute service work faster and more efficiently. The in-
+pit workshop can either be self-built locally, bought as a standard unit, or built by a supplier to 
+specifications. 
+ 
+The pictures in this best practice show one unit built by a local supplier in Australia. The pictures 
+are reproduced with permission from the supplier and Caterpillar does not endorse this specific 
+supplier. It is simply shown as an example of the possibilities. 
+ 
+Figure 1 shows a standard ready-made unit with side opening doors – Converted from a standard 
+container, this option allows for easy transportation. The doors can be locked in the open 
+position.  When opened, they act as side walls on both sides and have fold-down work benches.  
+A roof is placed at the top to shed the container from a harsh sun for better cooling.  Extendable 
+awnings can be wound out to extend the shaded area.  A lockable store room is built in for 
+storage of tools and parts. 
+ 
+Figure 2 shows a separate unit which is a combined wash room and lunch room.  Separate units 
+can be introduced for higher occupancy rates. Access ramps provide safe entry and exit to both 
+areas.  They can be built as foldable units or removal and storage in the lunch room for 
+transportation.  The air conditioning unit is flushed with the external side wall to avoid damage 
+during transportation. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Expanded Mining Products In-Pit Workshop 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-190320-02 
+Caterpillar Confidential:  YELLOW          Page 3 of 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+Fig 4: Store room for parts and tools. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig 2: Wash room and lunch room as one unit. 
+(Port Container Services Pty Ltd) 
+Wash room 
+Awning over 
+wash basins 
+Lunch room 
+Ramps & 
+rails 
+Air 
+conditioning 
+ 
+ 
+ 
+ 
+ 
+Fig 1: New mobile workshop from brochure. 
+(Port Container Services Pty Ltd) 
+Extendable 
+awning 
+Cooling 
+roof 
+Fold-down 
+benches 
+Doors can be 
+locked open 
+Workshop 
+tooling 
+Lockable 
+store room 
+ 
+ 
+ 
+Fig 3: Set up at one mine site 
+Gen set 
+ Wash room & 
+lunch room 
+Workshop 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Expanded Mining Products In-Pit Workshop 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-190320-02 
+Caterpillar Confidential:  YELLOW          Page 4 of 6 
+ 
+Figure 3 is an existing setup on site.  A generator set is also included in the setup to provide 
+power for lighting, electrical tools, and utilities in the lunch/wash room (The lunch room module is 
+set on the ‘back side’ of the workshop module.) The castor wheels attached to the doors are 
+shown in their stowed position. 
+ 
+Figure 5 shows a general layout plan at a shovel pad. The usual safety perimeter and barriers 
+need to be set up, with the ground leveled and electrical cables set out of the way to prevent trips 
+and falls. The gen set should also be placed in a relation with prevailing winds blowing fumes 
+away from the modules. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+Workshop Module 
+Wash & 
+Lunch Room 
+Gen Set 
+ 
+  
+ 
+ 
+Establish safety 
+perimeter 
+ 
+ 
+Prevent “Trip & 
+Fall” situations 
+with power 
+cables 
+Generator set placed 
+for minimum noise and 
+fume effects  
+Shovel pad 
+Fig 5:  General layout plan. 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Expanded Mining Products In-Pit Workshop 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-190320-02 
+Caterpillar Confidential:  YELLOW          Page 5 of 6 
+ 
+ 
+3.0 Implementation Steps 
+ 
+To implement such a project, a champion needs to be elected to research and manage the 
+process of introducing such a setup. 
+ 
+i. Research on suitable suppliers and products available. 
+ii. Obtain budgetary pricing with contingency costs for justification. 
+iii. Develop justification costing model. 
+iv. Research on requirements by technicians. 
+v. Determine power requirements for suitable gen set. 
+vi. Research on site requirements and legislations. 
+vii. Review suitability and availability of equipment for transporting modules. 
+viii. Select suitable supplier. 
+ix. Develop and finalize on requirements of the modules with supplier. 
+x. Obtain authorization to purchase. 
+xi. Develop instructions on usage of the workshop. 
+xii. Develop instructions for starting and shutting down of gen set. 
+xiii. When delivered, commission and conduct training on usage of the whole setup. 
+xiv. Move to desired location. 
+ 
+ 
+4.0 Benefits 
+ 
+There are a few different benefits in using such a setup. 
+i. Savings in technician labor due to availability of common parts being stored in the mobile 
+workshop. 
+ii. Savings in technician labor with less frequent traveling to and from the main workshop 
+when work involves component repairs. 
+iii. Improved work quality that can impact reliability and improve MTBS (Mean Time Between 
+Shutdowns). 
+iv. Lower downtime so that machine can get back to work earlier for higher production. 
+ 
+As an example, assume: 
+A shovel moving 3,000 tonnes of material per hour in a gold mine with a 1:4 strip ratio. 
+Ore has 10gm gold per tonne and gold recovery is 85%. 
+Utilization is 70%. 
+400 repair jobs per year, 40% of which can make use of the in-pit workshop to an advantage. 
+Savings of 15 minutes for each of these jobs. 
+ 
+Additional hours available = 400 x 40% x (15/60) x 70% = 28 hours per year 
+Additional ore moved   = (3000 ÷ 5) x 28 = 16,800 tonnes per year 
+Additional gold production = 16,800 x (10 ÷ 31) x 85% = 4,606 oz gold per year 
+Additional benefit @ $1200 per ounce = 4,606 x 1200 = $5.5M per year 
+  
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Expanded Mining Products In-Pit Workshop 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-190320-02 
+Caterpillar Confidential:  YELLOW          Page 6 of 6 
+ 
+5.0 Resources Required 
+ 
+The project of introducing this setup on site requires a Champion.  The Champion is required to 
+source and cost the project.  The benefits can then be presented to management for approval.  
+When approved, the Champion will oversee the development of detailed specifications, build-up, 
+purchase, document development and commissioning of the setup.  In most instances, the site 
+should already have a shovel or drill pad in the vicinity of the load area.  If this is not the case, the 
+Champion will have to work with Production and Mine Engineers on location of such an area. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Idea & pictures: 
+Luke Seaton 
+Product Support Representative 
+Hastings Deering Australia Limited 
+Queensland, Australia 
+Luke.Seaton@hastingsdeering.com.au 
+ 
+Permission to utilize supplier pictures/information: 
+Luke Stevens 
+Container Technician 
+Port Container Services 
+Tel: +614 1307 7899 
+luke@port.com.au 
+www.portcontainerservices.com.au 
+ 
+Written by: 
+Victor Lai 
+Equipment Management Consultant 
+Caterpillar Global Mining 
+lai_victor_k@cat.com

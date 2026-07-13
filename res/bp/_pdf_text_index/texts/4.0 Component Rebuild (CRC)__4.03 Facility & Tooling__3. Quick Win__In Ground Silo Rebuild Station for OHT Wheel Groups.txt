@@ -1,0 +1,245 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+September 2006  
+0906-4.3-1012  
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      catminer.com 
+ 
+    
+    
+    
+BEST PRACTICE SERIES  
+In-Ground Silo Rebuild 
+Station for OHT Wheel 
+Groups 
+ 
+Application  Maintenance  Site 
+Management  
+Component 
+Rebuild Safety MARC 
+Management  
+ 
+ 
+ 
+ 
+In-Ground Silo Rebuild Station for OHT Wheel 
+Groups ....................................................................... 1 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ....................................... 4 
+4.0  Benefits ............................................................. 4 
+5.0  Resources Required ......................................... 5 
+6.0  Supporting Attachments .................................... 5 
+7.0  Related Best Practices ...................................... 6 
+8.0  Acknowledgements ........................................... 6 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN  
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED.  
+In Ground Silo Rebuild Station for OHT Wheel Groups 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0906-4.3-1012  
+ 
+1.0 Introduction  
+ 
+The size of large Off Highway Truck Wheel Groups makes rebuild difficult.  Wheel group rebuild 
+procedure requires the wheel group to be positioned vertically for disassembly and assembly.   
+Technicians work with ladders and work platforms to rebuild the larger model Wheel Groups.  A 
+new wheel group rebuild work station concept consists of an in ground silo, a rotating platform to 
+hold the wheel group and rotate the spindle for wheel bearing preload adjustment, and a 
+hydraulic motor and adjustable lift to raise and lower the wheel station to any desired height.  
+Technicians can work on wheel stations at waist height and eliminate the need for ladders and 
+platforms for disassembly and assembly. 
+ 
+2.0 Best Practice Description 
+ 
+The common practice for Off Highway Truck wheel group rebuild is to stand the wheel station 
+vertically on the shop floor for disassembly and assembly. Larger wheel groups are up to 12 feet 
+tall.  Disassembly and assembly requires technicians to work with ladders and work platforms in 
+order to reach the internal parts of the wheel group. 
+ 
+The in ground silo concept positions the wheel station on a rotating platform mounted on a 
+hydraulic lift which is installed in a silo or in the shop floor. 
+ 
+The lift can raise or lower the wheel group to any desired height, allowing mechanics to work on 
+the wheel station at waist height without the need for ladders and platforms.  The hydraulic motor 
+also can rotate the wheel station spindle to seat and adjust the main bearing preload.  A similar 
+set-up without rotating capability can be used in the disassembly area for adjusting component 
+height.  
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN  
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED.  
+In Ground Silo Rebuild Station for OHT Wheel Groups 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0906-4.3-1012  
+ 
+ 
+ 
+ 
+ 
+Final Drive D/A Fixture: 
+ 
+ 
+ 
+ Positions and secures the spindle and wheel group 
+ Clamp and mounting system adjusts for 777-797 rear  Wheel Station 
+ Rotates spindle 0-4 rpm for seating and setting be aring pre-load  
+ Hydraulic power unit and controls included 
+ 40,000 lb capacity lift system available for pit i nstallation in facilities with restricted crane 
+hook height 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN  
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED.  
+In Ground Silo Rebuild Station for OHT Wheel Groups 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0906-4.3-1012  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+1.  A silo is constructed in the shop floor to contain the rotating platform, hydraulic motor, and lift.  
+(See attached drawing for specifications) 
+ 
+2.  Install hydraulic motor, platform, and lift. (See attachments for specifications) 
+ 
+Contact Caterpillar Service Tool Consultant prior to prep or purchase.  
+ 
+4.0 Benefits 
+ 
+• Significant improvement in labor efficiency, and o verall less time to rebuild a wheel group. 
+• Improved rebuild precision in the installation of seals and other components. 
+• Improved precision in setting the main bearing pre load. 
+• Improved technician comfort and work environment. 
+• Reduces overhead crane hook height requirement. 
+• Eliminates the need for platforms and steps. 
+Grates to 
+cover silo 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN  
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED.  
+In Ground Silo Rebuild Station for OHT Wheel Groups 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0906-4.3-1012  
+ 
+ 
+ 
+ 
+5.0 Resources Required 
+ 
+Investment includes  
+ Construction of a silo work-station in the shop fl oor,  
+ Installing a rotating wheel group platform with a hydraulic motor and lift.   
+ 
+Cost ranges from $100,000 to $150,000 depending on the size and capacity of the work-station. 
+Also required, technician training in the station’s proper use and safety. 
+ 
+6.0 Supporting Attachments  
+ 
+Tool Operating Manual NEHS1172 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN  
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED.  
+In Ground Silo Rebuild Station for OHT Wheel Groups 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0906-4.3-1012  
+ 
+ 
+ 
+  
+7.0 Related Best Practices 
+ 
+None applicable. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was authored by: 
+ 
+Dale Brehm 
+Caterpillar Global Mining 
+6 Sigma Black Belt

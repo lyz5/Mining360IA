@@ -1,0 +1,238 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+0707-2.14-1088 
+  
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Schematics Work Station 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Schematics Work Station ........................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Schematics Work Station 
+DATE 
+1/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0707-2.14-1088 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+1.0 Introduction  
+ 
+This Best Practice introduces a simple workstation that has improved both the efficiency of 
+workshop schematic diagnosis, tidiness of the workshop bays and office, and helped protect 
+printed and laminated schematic diagrams. 
+ 
+Schematics are frequently used in the repair bays to diagnose system faults. The workstation 
+provides a dedicated, well-lit working surface, protects and houses laminated schematics 
+(organized by model), plus has eliminated lost time and frustration brought about by trying to find 
+the required schematic diagrams. 
+ 
+2.0 Best Practice Description 
+ 
+As depicted in Illustration 1, the workstation has a sloped work surface that is illuminated from 
+above. This surface is dedicated for schematic work and is at the height requested by the 
+technicians. The station includes 27 horizontally positioned storage canisters for housing the 
+schematics by machine model. These canisters are made from 100 mm PVC threaded end water 
+pipe. Threaded pipe ends chained to the front panel act as end caps.  Beneath the canisters are 
+two cupboards for extra storage of manuals and spare schematics. The workstation has lockable 
+wheels but, in this situation, remains dedicated to the auto-electrician area. 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Schematics Work Station 
+DATE 
+1/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0707-2.14-1088 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+ 
+ 
+3.0 Implementation Steps 
+ 
+• Build workstation as per diagram in section 6.0 below. 
+• Print and laminate schematics in the largest size practical. 
+• Dedicate a location in the workshop for the workstation. 
+ 
+ 
+4.0 Benefits 
+ 
+Prior to this workstation, schematics were hung from a metal frame on newspaper-style clamps.  
+This consumed a large area of the workshop office or bay space. It was untidy and often resulted 
+in lost time by having to walk to the office from the repair bay and then try to find the required 
+schematics. The new workstation has realized the following benefits: 
+• Less space required for storage 
+• Laminated schematics are better protected and no longer require folding 
+• Schematics are stored by model 
+• Dedicated and lit schematic reviewing surface 
+• Workstation is now located in the repair bay area (rather than the office) 
+• Technicians are 
+happier
+ 
+ with the new arrangement. This should not be underestimated. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Schematics Work Station 
+DATE 
+1/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0707-2.14-1088 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+5.0 Resources Required 
+ 
+The workstation costs approximately AUD $4,500 to construct.  Refer to the diagrams of the 
+workstation for dimensions and some basic instructions. Below is the required bill of materials: 
+• 27 lengths of 100 mm Diameter PVC water pipe with one treaded end 
+• 27 x 100 mm diameter threaded end caps 
+• 27 x chains to connect end caps to canisters 
+• 3 mm black steel as per diagrams 
+• 6mm rivet nuts as per attached 
+• Fluorescent tube for lighting with associated power supply and sealed plug 
+• 1” steel RHS for lighting bracket 
+• RHS for strengthening as per diagrams 
+• 4 x heavy duty castors / wheels 
+• Rubber matting for bench top 
+• Lock, handles, hinges & urethane door seals for cupboards 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Schematics Work Station 
+DATE 
+1/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0707-2.14-1088 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+ 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Refer to the drawing of the workstation above 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Schematics Work Station 
+DATE 
+1/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0707-2.14-1088 
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+7.0 Related Best Practices 
+None. 
+ 
+8.0 Acknowledgements 
+This Best Practice written by: 
+ 
+Tim Mansfield 
+Equipment Management Consultant 
+Caterpillar Global Mining  
+Australia 
+tmansfield@cat.com 
++61 3 9953 9230 
+ 
+Please contact the author for further details or information regarding this Best Practice. 
+ 
+Special mention must be made of Hastings-Deering Australia for their willingness to share this 
+Best Practice. In particular, we wish to recognize: 
+ 
+Matt Pacey 
+Team Leader 
+Hastings-Deering 
+Maintenance Department  
+Queensland Australia

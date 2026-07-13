@@ -1,0 +1,219 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Wireless SIS Web Workstation.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Wireless SIS WEB 
+Workstation 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Wireless SIS WEB Workstation ................................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 1 
+5.0 Resources Required .......................................... 1 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+  
+September 2007 
+1007-4.5-1087 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+Certain areas in dealer shops require frequent consultation of Caterpillar literature. Information in 
+guides and manuals contains steps to accomplish assembly or disassembly, schematics of 
+components, and other important information. 
+ 
+This Best Practice presents a solution in the form of a shop-installed computer workstation 
+connected wirelessly to the Internet, providing all needed Caterpillar information quickly and 
+easily. 
+ 
+2.0 Best Practice Description 
+ 
+Optimizing resources, such as tools and labor -hours, is an important aspect within processes. In  
+the case of shops, technical areas get support in the form of parts manuals and equipment 
+schematics that are available in Caterpillar applications on Internet.  
+ 
+Three years ago, necessary literature had to be printed and distributed to technicians of the shop 
+by the literature analyst. This technique incurred costs like: paper, prints, and time of literature 
+analyst and technicians to obtain parts manuals needed. A bottleneck was created while the 
+literature analyst delivered manuals to technicians. To relieve this bottleneck, a new project was 
+implemented. 
+ 
+The project consisted of installing wireless workstations in each bay of the shop where 
+technicians would have access to Internet and therefore to Caterpillar literature. 
+ 
+3.0 Implementation Steps 
+ 
+• Configure and/or install a wireless network. 
+• Assemble wireless workstation, details are shown on figure 1. 
+• Configure each workstation with needed options 
+ 
+4.0 Benefits  
+ 
+• Improved labor cost profit margins 
+• Optimization of man-hour labor 
+• Increased shop productivity and higher revenues  
+• Reduce time on getting information from manuals 
+• Online access to updated information in all areas 
+ 
+5.0 Resources Required 
+  
+• Wireless network: Allow access to Internet and applications. 
+• Training for technicians and supervisors to know how to operate workstation 
+• Thin Client with wireless card: Allow thin client get connected to wireless network 
+• 15’’ Flat Monitor 
+• Barcode Scanner: Its function is to read technician’s ID from their ID card and code labeled on 
+the piece or component 
+• Keyboard with touchpad 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Wireless SIS WEB Workstation 
+DATE 
+2/19/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1007-4.5-1087 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Uninterruptible Power Supply: Provides battery backup power it also safeguards equipment 
+from damaging voltage surges 
+• SIS WEB Workstation Stand: It is built with fiberglass from a local supplier, 24.5 lbs, for more 
+specifications see drawings 
+• Bar Code Printer (Optional just for Receiving and dispatch area): Printer is used for printing 
+barcodes to label the components, pieces, or tools for traceability 
+• Trained personal to configure workstations 
+Figure 1. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Wireless SIS WEB Workstation 
+DATE 
+2/19/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1007-4.5-1087 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Cost Details 
+    
+Item Description Price($US)  * Price do not include import duty 
+1 Adesso Keyboard with Touchpad (Black)* 70 
+ ** Drawings match with models listed 
+above 
+2 Barcode Scanner (Symbol LS-9208) 150 
+3 Workstation stand** 400 
+4 15'' LCD Monitor 160 
+5 Barcode label printer (Zebra TLP-2844) 500 
+6 Thin client + wireless card (HP 57XX) 370 
+7 APC Back-UPS* 150 
+Total 1800 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Queue time study.xls – Spreadsheet showing changes in queue times before and after 
+installation of workstations. 
+• Flow Processes vs. Cost Chart.pdf – Details the process and cost savings of implementing 
+the workstations in shops. 
+• Drawings.pdf – Engineering drawings of the workstation stand 
+ 
+7.0 Related Best Practices 
+ 
+None at this time. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Ricardo Chegwin (Designer) 
+Gecolsa Cat 
+Best Practices Champion 
++57 5 3755050 
+ricardo_chegwin@gecolsa.com.co 
+ 
+ 
+                                 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Wireless SIS WEB Workstation 
+DATE 
+2/19/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1007-4.5-1087 
+Caterpillar Confidential:  GREEN          Page 3 of 3

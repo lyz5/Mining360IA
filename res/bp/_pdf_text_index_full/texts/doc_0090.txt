@@ -1,0 +1,2028 @@
+SOURCE: 1.0 Maintenance & Repair\1.09 Performance Evaluation\1. Strategic\Performance Evaluation.pdf
+PAGES: 29
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2015 
+1311-1.09-1326 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Performance Evaluation 
+(Strategic) 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Performance Evaluation (Strategic) ........................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ...................................... 25 
+4.0 Benefits ............................................................ 27 
+5.0 Resources Required ........................................ 27 
+6.0 Supporting Attachments / References ............. 28 
+7.0 Related Best Practices .................................... 28 
+8.0 Acknowledgements .......................................... 28 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 1 of 28 
+1.0 Introduction  
+ 
+The principal mission of the maintenance organization is the preservation of the primary function 
+of the equipment throughout his productive life. All routines and processes required to maintain 
+the equipment function must be established in order to minimize equipment downtime and the 
+resulting production losses. 
+ 
+Caterpillar Global Mining Maintenance & Repair process contains ten distinctive or specific sub 
+processes that are organized in five principal steps: 
+ 
+Detect the Maintenance & Repair Needs 
+Plan and schedule the Maintenance Events  
+Execute repairs efficiently and effectively 
+Evaluate results 
+Correct or Improve through the application of direct known actions and/or by Continuous 
+Improvement. 
+ 
+As it can be seen one of the key steps is the evaluation of results. The work is not completed at 
+the end of the execution of the repairs. Effective management requires measuring performance or 
+result, comparing these results with targets and goals, discovering or identifying the problems or 
+sub-standard condition, focusing prioritized actions to improve, correct or ensure sustainability of 
+gains already obtained. 
+ 
+This Strategic Best Practice is dedicated to describe the overall process and routines of the M&R 
+Performance Evaluation Process and how it will together with the rest of the M&R processes 
+support your Maintenance organization to achieve the expected results. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The demanding goals of today’s Mining Industry has motivated and reinforced the continuous 
+search of operating efficiency in all areas of the production process. Mobile equipment plays an 
+important role in the achievement of these goals, and their ability to perform according to the 
+specifications relies on the observation of three major factors: Maintenance, Design and 
+Application. Each of these three areas has to be considered and managed effectively to optimize 
+the productivity of the equipment.  
+ 
+A well designed and effectively implemented Maintenance System considers and manages all the 
+variables related to these 3 major factors, Maintenance, Design and Application through a series 
+of various specific processes with specific outcome that supports the final results of the mining 
+equipment fleet. 
+ 
+“You can’t Manage what you don’t Measure”, is an old and well known management expression. It 
+reinforces the unavoidable need for measuring, to detect if the outcome of any actions or 
+processes is getting better or worse.  
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 2 of 28 
+Performance evaluation is the process dedicated to measure, identify the areas of opportunities 
+and/or problems, provide timely information to the process owners to support and facilitate the 
+identification of corrective actions to enable effective management of the M&R operation.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Illustration 1: The end result or overall performance of the Maintenance & Repair operation is a combination  
+                      of the contributions or outcome of the various processes that compose the M&R process model. 
+ 
+ 
+The explanation of the Evaluation Process will be addressed in this Best Practice document 
+dividing the overall process in six general steps, Strategy Definition, Data Collection, Transform 
+Data into Information, Interpretation – Analysis – Action Plan, Implementation – Validation – 
+Learning and the last Process Management.  
+ 
+ 
+Performance Evaluation High Level Process 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+STRATEGY  
+DEFINITION 
+ 
+DATA COLLECTION 
+TRANSFORMING 
+DATA INTO 
+INFORMATION 
+INTERPRETATION, 
+ANALYSIS AND ACTION 
+PLAN IDENTIFICATION  
+ IMPLEMENTATION, 
+VALIDATION & 
+LEARNING 
+PROCESS 
+MANAGEMENT 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 3 of 28 
+START Performance Evaluation 
+(PE) Strategy Definition
+WHEN
+WITH WHAT
+HOW
+FOR WHAT (WHY)
+WHAT
+Customer Support 
+Agreement (CSA)
+WHERE ARE WE?
+Safety & Local 
+Regulations
+Maintenance 
+Engineering
+Customer additional 
+Requirements
+Maintenance 
+Strategy
+Maintenance & 
+Repair Processes
+PERFORMANCE 
+EVALUATION STRATEGY 
+GUIDE DOCUMENT
+END
+Make the 
+Performance 
+Evaluation 
+Strategy Guide 
+Book available to 
+process owners 
+and process 
+operators
+Identify and implement a procedure to 
+keep the document updated and to 
+prevent undesired changes
+EM documents Archive
+P.E. Data Base
+Strategy
+Step 1: Strategy Definition 
+ 
+In this section the definition of 6 basic questions are address: WHAT – FOR WHAT – HOW – 
+WITH WHAT – WHEN – WHERE ARE WE. 
+ 
+WHAT: what is our mission statement … what do we supposed to do.  
+FOR WHAT: What are our goals, objectives, targets of the overall operation and sub processes. 
+HOW: Description of procedures and methodology on how we are going to do it. 
+WITH WHAT: What are our resources to execute the tasks and achieve the mission goals and 
+objectives. 
+WHEN: when are the tasks performed, with what frequency, etc. 
+WHERE ARE WE: A necessary step to be able to manage the process. In this step we define the 
+reporting system.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Illustration 2: Building the Strategy for the PE Process 
+ 
+The main output of this stage is the documented strategy for the Performance Evaluation Process. 
+This is one of the most vital steps in any process, the definition of the strategy, definition of our 
+Mission, Goals and Objectives, How we are Going to Do It (working procedures), Resources, best 
+timing to perform the various routines and the way we will report where we are with respect to our 
+goals and targets.  
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 4 of 28 
+START Activate access to all Data Sources 
+defined & required.
+“KPI Matrix”
+Collect and Input Data into Processing System based on defined Frequency, format,…
+Work Order
+Database
+Maintenance Related 
+Stoppages Log ( Availability 
+affected) 
+Operations - Maintenance 
+Downtime Log
+Production and Operation 
+Data Base
+Reconciled Data Base 
+Opportunity Maintenance
+(Availability not affected) 
+Financial Safety M&R Processes Tires, Welding, Air 
+Conditioning,... Others – Third Parties Site Reviews (SAT, GAT, 
+Operational Reviews, …)
+Planning & 
+Scheduling
+Backlog 
+Management
+Parts 
+Management
+Preventive 
+Maintenance
+Condition 
+Monitoring
+Repair 
+Management
+Component 
+Management
+Continuous 
+Improvement
+Human Resources 
+& Training
+INPUTS
+INPUTS
+Operation - ProductionMaintenance
+Reconciliation Process
+Adjust – Tune Up Data Processing System
+(Check for Readiness)
+Adjust / Correct Data 
+Collection System
+ 
+The strategy is the map, the “blue print” to follow to achieve the desired outcome. For this reason 
+the strategy must be documented, archived and made available to all personnel in the 
+organization. The whole organization at a different level of involvement has to have easy access 
+to the strategy to understand the direction, challenges and goals we are facing. 
+ 
+ 
+Step 2: Data Collection  
+ 
+In this step all data sources access are activated and the required inputs defined in the strategy, in 
+the “KPI’s Matrix”, are collected. The data reconciliation is also considered in this phase. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+           Illustration 3: Opening the “access” to all data source / Data Bases. 
+ 
+ 
+Step 3: Transforming Data into Information 
+ 
+After the data gets collected and reconciled the various KPI’s are calculated following the formulas 
+and calculation methodology defined in the strategy and the first stage of structuring the 
+management reports (“Phase I” is addressed). Here we start transforming the data into meaningful 
+information. 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 5 of 28 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+    Illustration 4: KPI’s Calculations and first step of building the management reports 
+ 
+ 
+Note 1: We call “Phase I” management reports to the reports that are in the process to be 
+completed that only includes the results of the metrics calculation presented in Graphs, Tables or 
+other forms. At this stage the interpretation and corrective actions are not considered. 
+ 
+ 
+Note 2: For KPI’s calculation formulas, procedures and recommended 
+targets & benchmarks we recommend consulting the CGM booklet 
+“Metrics (KPI’s) To Assess Process Performance. 
+ 
+This document contains the metrics recommended to assess the overall 
+Maintenance & Repair operation (Top Tier Metrics) and the individual 
+processes involved (Process Metrics). 
+  
+ 
+ 
+ 
+ 
+ 
+Step 4: Interpretation, Analysis & Action 
+ 
+This step is dedicated to the interpretation of the KPI’s / reports, analysis and detection of the 
+opportunities to improve determining the corrective actions needed. The interpretation of the 
+metrics / management reports is a task that must be taken by the responsible department for 
+structuring the reports and the on-site process owners and managers. It is a collective 
+responsibility.  
+ 
+ 
+ 
+ 
+Data Processing - KPI’s Results Calculation
+Application
+Severity
+MARC / CSA 
+Financial
+MARC / CSA 
+Commitments
+Operational
+Analysis
+Maintenance 
+Processes
+Fleet
+Performance
+Third Party 
+Performance
+Produce Management Report
+(“Phase I” - charts, graphs & tables)
+Safety & 
+Environmental
+Ready for Interpretation Phase
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 6 of 28 
+ 
+Illustration 5: The reports (Phase I) is sent to the on-site organization process owners in preparation of the final 
+Analysis – Corrective Actions identification meeting. 
+ 
+ 
+ 
+The management reports are normally being prepared by the Planning or Maintenance 
+Engineering department and then send to the process owners for their review and contribution to 
+the final analysis and interpretation. The organization gets together in a formal meeting to review, 
+discuss and find the opportunities to correct or improve. 
+ 
+The participation and feedback of the on-site organization is important first to consider “first hand” 
+information / feedback to support the interpretation of the KPI’s and secondly to get the 
+appropriate commitment from everybody to move forward with the corrective actions to implement. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 7 of 28 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Illustration 6: The organization identifies the opportunities and corrective actions to apply. 
+ 
+ 
+As a result of this step the final interpretation with the correspondent corrective actions are 
+included in the management reports and in the 3W action plans. The Management Reports and 
+the 3W action plans “must speak to each other”. We measure – Interpret – Identify Opportunities – 
+and Act, this is a chain of events that must be very clear to each members of the service crew. 
+ 
+ 
+Step 5: Implementation, Validation and Learning 
+ 
+This phase is dedicated to the implementation of the corrective actions; follow up of the results, 
+introduce adjustments if necessary and finally learning from the results. We have to ensure we 
+always learn from the good and specially the bad results of our management actions. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Update Interpretation and Corrective Actions Plan
+Enter updated Information Analysis,  Interpretation and Corrective Actions 
+into Management Report
+(“Phase II”)
+Corrective action(s)
+required?
+Yes
+Submit project
+to Continuous
+Improvement Process (Idea 
+Generation)
+Continuous
+Improvement
+Yes Solution Known
+?
+PE Effective Solutions Data 
+Base
+PE Interpretation Guideline
+No
+PE Strategy Data Base
+No
+Maintain and Sustain Good Work Identify the most appropriate 
+recommended Solution
+Recommended Solution proposed by 
+CIContingency Plan (Temporary Solution)
+Define / Determine detailed action plan. Identify specific corrective actions 
+(What), accountability (Who), expected completion or check date (When) 
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 8 of 28 
+ 
+Illustration 7: The corrective actions are being implemented and the results monitored. 
+ 
+ 
+The corrective actions effects are closely monitored through the KPI’s results and direct 
+observations of the process owners. Both positive and not that positive effect are being captured 
+to enrich the Interpretation Guidelines and Effective Solutions Data Base (Continuous Learning). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Illustration 8: If the solution/corrective action provides the expected 
+results the solution is validated, stored in the Data Base for future 
+references, the team is congratulated and the new procedures/solution is 
+incorporated as a regular operating procedure to maintain the gains.  
+ 
+ 
+ 
+Corrective Actions / Solutions
+Working
+?
+Yes
+No
+Recommend to Maintain Changes / 
+Solution(s)
+Congratulate Team, Process Owners, 
+Process Operators,...
+Update, record effectiveness of Changes / 
+Solution(s) into PE Data Base
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 9 of 28 
+ 
+Illustration 8: If the solution/corrective action doesn’t work, the team has to define the most appropriate course of action: 
+involve the team of CI if it is the case, make an extraordinary analysis meeting to adjust or refocus the corrective actions and 
+or gather prepare all information for the next Equipment Management results analysis meeting. 
+ 
+ 
+ 
+In the same way for those solutions that doesn’t work 
+we need to gather all related information and store it 
+in the Data Base for future reference. We need to 
+learn from our mistakes. 
+ 
+ 
+ 
+ 
+ 
+  
+
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 10 of 28 
+Step 6: Process Management 
+ 
+This stage is dedicated to manage the necessary actions to control the process and ensure the 
+"expected outcome(s)" are met.  It’s like managing a factory, keeping the processes working to 
+meet the production targets. The main steps in managing a process are: 
+ 
+Define the Outcome (Product)  Goals & Objectives  How we are going to Measure (KPI’s)  
+Acceptability Criteria (Targets)  Measure  Interpret  Identify corrective Actions  Implement 
+ Follow Up 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Illustration 9: The Final Results (Equipment Fleet Performance) is the result of the collective contributions of the involved 
+processes; in this case the 10 M&R core processes  
+ 
+ 
+The 9 steps above applies to the overall M&R process as well as to the 10 individual key 
+functions, …the final result overall outcome is the result of all the contributions of each of the 10 
+M&R elements. So, if we want to keep the factory running and producing at the design level we 
+need to manage each of these 10 fundamental elements. 
+ 
+ 
+ 
+
+===== PAGE 12 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 11 of 28 
+ 
+M&R Processes Goals-Outcomes and KPI’s Definition 
+ 
+We measure because we want to be able to apply the correct actions, manage the processes  and 
+ensure the achievement of a specific outcome. The identification of the outcome(s) of a particular  
+process is the first step in defining the most appropriate metrics to use. 
+ 
+The Performance Evaluation process takes the lead in linking the o utcome of o verall M&R 
+operation and the outcome of each of the M&R processes with the recommended metrics. 
+ 
+M&R Outcomes and KPI’s – Top Level Outcome 
+ 
+First to define is the overall outcome the M&R organization has to aim for. 
+ 
+Top Tier Results 
+ 
+The final performance of the equipment fleet is our goal and ultimate outcome. We can summarize 
+this outcome or goal as: 
+ 
+“Maintain the equipment in optimum conditions to support the current and future  
+production goals and the operation cost” 
+ 
+The following measures are “Top Tier” performance metrics or Key Performance Indicators (KPI’s) 
+that enable management to assess at a high level the results of the mobile equipment fleet. 
+ 
+ Production Plan Compliance   
+This metrics is  a comparison between production plan and actual production tonnage, 
+expressed in percentage.  Even though this metric relates to the customer meeting the 
+production, it is also important for the maintenance organization to understand the core 
+business and their participation in the final production value chain 
+ 
+Production Plan Compliance = Actual Production Tonnage
+Production Plan Tonnage × 100 (%)  
+ 
+ Utilization (Asset and Availability) 
+Utilization or operating hours is the metrics that will provide an indication of revenue (for 
+internal business) and level of utilization of the equipment to support the production plan.  
+Asset Utilization  is the proportion of time that a machine is operating (operating hours) 
+divided by the total calendar time in the period, expressed as a percentage. 
+ 
+Asset Utilization = Operating Hours
+Total Calendar Hours × 100 (%)  
+
+===== PAGE 13 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 12 of 28 
+ 
+Another metric to measure the utilization is Utilization of Availability . This metric is defined 
+as the ratio of operating hours to the time the machine is capable of functioning (available 
+hours). 
+ 
+Utilization of Availability = Operating Hours
+Operating Hours +  Standby Hours × 100 (%) 
+ 
+ Availability (Physical, Contractual and Index) 
+The availability metrics provide the total equipment hours that the Maintenance and Repair 
+organization is giving to the production department. This is a good indication of the 
+maintenance organization capability to support the production plan. There are three types of 
+availability which are normally used. 
+ 
+Contractual Availability 
+Contractual Availability is the ratio of time that a machine is capable of functioning in the 
+intended operation (available hours) to total hours in the period under consideration (typically 
+either based on calendar or scheduled hours), expressed as a percentage. The calculation of 
+available hours is not a pure calculation since the result is amended by dow ntime hours that 
+are specifically excluded or limited by the terms of the contract. 
+ 
+Contractual Availability  = Total Hours ∗ − MARC Downtime Hours
+Total Hours ∗ × 100 (%) 
+ 
+*Note: “Total Hours” are typically either based on calendar or scheduled hours depending upon the calculation 
+methodology defined in the agreement or customer expectations. 
+ 
+Availability Index 
+Availability Index is defined as The ratio of MTBS (average shutdown frequency) to the sum of 
+MTBS and MTTR (average shutdown duration), expressed as a percentage. 
+ 
+Availability Index  = MTBS
+MTBS +  MTTR × 100 (%) 
+ 
+The production department normally looks at Physical Availability that bacomes also one of the 
+top goals for the maintenance department. However, the maintenance department in order to 
+have a more effective availability management tool use the Availability Index, that provides a 
+performance result that is not influenced by the utilization of the equipment and also it provides 
+
+===== PAGE 14 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 13 of 28 
+a direct link to the frequency of the stops (MTBS) and the duration of the M&R events (MTTR) 
+or turnaround time. 
+ 
+ Mean Time Between Shutdowns (MTBS) 
+The metric is defined as the average operating time between machine stoppages. It is a 
+function of the average frequency of equipment downtime events, expressed in hours. 
+ 
+MTBS  = Operating Hours
+Number of Shutdowns (hours) 
+ 
+ Mean Time To Repair (MTTR) 
+The metric calculates average downtime hours (including delays and response time) required 
+to complete repairs, expressed in hours. 
+ 
+MTTR = Total Downtime Hours
+Number of Shutdowns  (hours) 
+ 
+ Scheduled Downtime 
+The metric measures the percentage of total downtime hours performed in a given period that 
+have been planned and scheduled. 
+ 
+% Scheduled Downtime  = Scheduled Downtime Hours
+Total Downtime Hours × 100 (%) 
+ 
+ Maintenance Ratio 
+Maintenance Ratio is a dimensionless ratio of maintenance and repair man- hours to machine 
+operating hours.  It is an indication of the amount of effort required to keep equipment in 
+service, as well as the efficiency with which labor is deployed and the ef fectiveness of the 
+workforce in carrying out its duties. Maintenance Ratio can be calculated as either “charged” or 
+“overall.”  “Charged” Maintenance Ratio considers only work order man- hours (direct labor). 
+Repair Shop, Component Rebuild Center, and labor  is not included in the calculation.  
+“Overall” Maintenance Ratio includes all the elements of “charged” Maintenance Ratio plus 
+staff, supervision, and idle time. 
+Maintenance and repair man- hours are obtained from the work order.  It should include actual 
+time spent working on all forms of maintenance, repairs, and modifications, as well as 
+inefficiencies that result from inspection and diagnostic time, or any delay for bay space, parts, 
+tooling, literature, repair support equipment, decision making, etc. 
+Operating hours are obtained from machine service meter readings and should include 
+production delay hours. 
+ 
+
+===== PAGE 15 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 14 of 28 
+ 
+Maintenance Ratio = Maintenance and Repair Man − Hours
+Operating Hours  
+ 
+ 
+ Top Problems Summary 
+Top Problem Summary is t he distribution of problems affecting a fleet of equipment ranked in 
+terms of MTBS,  MTTR, Impact on Availability and Costs . All mining support operations have 
+limited resources. The most successful operations are those that have a clear understanding of 
+the problems and issues facing them to focus their efforts and allocate the appropriate 
+resources. 
+ 
+MTBS  = Operating Hours
+Number of Shutdowns (hours) 
+ 
+ 
+MTTR = Total Downtime Hours
+Number of Shutdowns  (hours) 
+ 
+ 
+Impact on Availability = (1 − Availability) × Downtime Hours
+Total Downtime Hours × 100 (%) 
+ 
+ 
+Cost per Hour (by system) = Cost
+Operating Hours      (US$
+ℎ𝑜𝑜𝑜𝑜𝑜𝑜� )   
+ 
+   
+ PIP or PSP Completion 
+PIP or PSP Completion measures completeness of Product Improvement or Support Program 
+execution during a period of time. The metric is used to monitor the status of implementation of 
+factory programs.The factory program completion status is calculated as the ratio of programs 
+completed on a machine- by-machine basis relative to the number of programs that are active 
+and applicable at the time under consideration. This ratio is expressed as a percentage.  
+ 
+PIP / PSP Completion = Factory Programs Completed 
+Number of Programs that are Active  × 100 (%) 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 16 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 15 of 28 
+ Cost 
+Maintenance Cost is part of the total cost of operating a particular equipment and it is normally 
+expressed in relation to the production figures of the equipment. As an example for hauling 
+trucks it will be tons transported and for the loading tools tons loaded. 
+ 
+Maintenance Cost = Total Maintenance Cost in the Period 
+Tons      (US$) 
+  
+M&R Outcomes and KPI’s – Processes Outcome(s) 
+ 
+Now it is time to review the M&R processes outcome(s) or contributions to support the final 
+equipment fleet performance. 
+ 
+ 
+Preventive Maintenance 
+ 
+“Contribute to equipment function preservation, availability and reliability by timely, efficient 
+and effective execution of the PM services” 
+ 
+ 
+Specific Outcomes – Objectives 
+ 
+ 
+How do we Measure (KPI’s) 
+ 
+PM services performed On Time  
+ 
+Service Accuracy 
+ 
+Efficient Execution  
+ 
+PM MTTR 
+ 
+ 
+Effective/Quality Execution 
+ 
+MTBS after PM 
+ 
+PM Availability Impact managed effectively  
+ 
+% of unavailability due to PM services 
+ 
+ 
+Minimum delays in the execution of the PM 
+services 
+ 
+PM MTTR without Delays  
+ 
+ 
+Effective/efficient use of PM manpower 
+ 
+ 
+PM Maintenance Ratio 
+ 
+ 
+Effective Use of PM Window of Opportunity 
+ 
+ 
+Backlogs executed in PM   
+Backlogs generated in PM 
+ 
+
+===== PAGE 17 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 16 of 28 
+ 
+Condition Monitoring (CM) 
+ 
+“Timely detection of abnormal conditions to support Failures Prevention” 
+ 
+ 
+ 
+Specific Outcomes – Objectives 
+ 
+ 
+How do we Measure (KPI’s) 
+ 
+Effective Failures Prevention 
+ 
+MTBF 
+Failure Reduction 
+ 
+ 
+Controlled Failures Impact 
+ 
+% unavailability due to Unscheduled Events 
+ 
+ 
+Effective CM Contribution / Effort 
+ 
+Total Backlogs Generated 
+Backlogs generated by   Origin 
+ 
+ 
+Effective Detection 
+ 
+Detection Level 
+% of Failures without CM warning 
+ 
+ 
+Effective On Target Detection 
+ 
+% Backlogs generated in Top Ten Problems 
+ 
+ 
+Valuable CM Contribution 
+ 
+ 
+CM Cost Savings 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 18 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 17 of 28 
+ 
+Backlog Management 
+ 
+“Efficient & Effective Management of Defects Detected” 
+ 
+ 
+ 
+Specific Outcomes – Objectives 
+ 
+How do we Measure (KPI’s) 
+ 
+Backlog Pending effectively managed 
+ 
+Total Backlog Pending 
+Backlogs Pending per Machine 
+ 
+Backlog Balance in control  
+ 
+Backlogs Generated – Executed – Pending  
+ 
+Impact of Pending Backlogs in control 
+ 
+Estimated Time (DT) to Repair (ETTR) & 
+Estimated Labor to Repair (ELTR) 
+ 
+ 
+Backlog Management Process stages effectively 
+managed 
+ 
+Backlog Status distribution 
+ 
+Avoid risk due to age of Backlogs 
+ 
+% of Backlogs > 30 days (aging) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 19 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 18 of 28 
+ 
+Planning & Scheduling 
+ 
+“Support the M&R operation with quality Plans & Instructions to contribute to meet the goal 
+of 80% scheduled Down Time” 
+ 
+ 
+ 
+Specific Outcomes – Objectives 
+ 
+ 
+How do we Measure (KPI’s) 
+ 
+Deliver Plans to gain the control of the 
+equipment fleet: 
+ 
+ Plan for 80% scheduled Downtime 
+Manage effectively the unavailability of    
+equipment 
+Maintain equipment Backlog in control 
+ 
+ 
+ 
+% Scheduled Downtime 
+Scheduled Unavailability vs. Actual Unavailability 
+(Unavailability Distribution Analysis) 
+Backlog Management Results 
+ 
+Timely schedule and execution of the M&R 
+events / tasks 
+ 
+ 
+Service Accuracy 
+ 
+Plans and programs being followed and 
+performed as scheduled 
+ 
+Schedule Compliance by Hours 
+Scheduled Compliance by Events 
+ 
+ 
+Components managed effectively 
+ 
+Component Management Results 
+% of Components Exchanged Scheduled 
+% of Components > Life Target 
+ETTR of Components > Life Target  
+ 
+ 
+Timely & effective application of equipment 
+factory updates/programs   
+ 
+% of Factory Programs Completed 
+ETTR for Factory Programs not Completed 
+ 
+ 
+Complete and accurate equipment repair history 
+kept updated 
+ 
+Work Order Management 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 20 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 19 of 28 
+ 
+ 
+ 
+Repair Management 
+ 
+“Efficient (Time) & Effective (Quality) execution of Scheduled and Unscheduled M&R 
+Events” 
+ 
+ 
+Specific Outcomes – Objectives 
+ 
+How do we Measure (KPI’s) 
+ 
+Preparation and execution of the tasks managed 
+effectively to meet the targeted down time 
+ 
+MTTR of Shop and Field 
+MTTR without Delays 
+Unavailability goals for various M&R categories 
+Unavailability due to Delays 
+ 
+ 
+Quality execution of repairs and services 
+ 
+MTBS after short repairs & services  
+Performance of equipment after repairs (MTBS 
+& MTTR after 250 hours of big repairs 
+completion) 
+% of Redo 
+  
+ 
+Effective support of the equipment reliability 
+goals by using extensively the windows of 
+opportunities 
+ 
+ 
+Backlogs executed in parallel 
+Backlogs generated 
+Backlog Execution Targets Completion 
+ 
+ 
+Effective use and guidance of Service Crew 
+ 
+Maintenance Ratio  
+ 
+Ensure Clean Work Environment 
+ 
+ 
+Contamination Control Ratings 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 21 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 20 of 28 
+ 
+ 
+ 
+ 
+Parts Management 
+ 
+“Efficient & Effective Support to M&R activities: The Right Parts & Components and the 
+Right Time and at Right Location” 
+ 
+ 
+Specific Outcomes - Objectives: 
+ 
+How do we Measure (KPI’s) 
+ 
+Define and maintain updated the Parts & 
+Component Inventory 
+ 
+Service Fill Level (Instantaneous) 
+Service Fill Level (24 Hours) 
+ 
+ 
+Effective management of the Inventory  
+ 
+Inventory Items 
+Inventory Cost 
+Inventory Rotation 
+ 
+ 
+Efficient Response to Emergency Requests 
+ 
+Percentage of Emergency Orders 
+Response Time for Emergency Orders 
+ 
+ 
+Support effectively the Backlog Management 
+Program 
+ 
+% of Backlogs waiting for Parts 
+Average Days for Backlogs waiting for Parts 
+ 
+ 
+Effective parts support to the overall M&R 
+operation 
+ 
+% of Unavailability due to Parts 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 22 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 21 of 28 
+Component Management 
+ 
+“Effective management of Components, a key Cost Driver” 
+ 
+ 
+Specific Outcomes – Objectives 
+ 
+How do we Measure (KPI’s) 
+ 
+Achieve equipment component Life Target 
+ 
+% Component achieved Life Target 
+ 
+ 
+ 
+Component exchanged at the optimum time 
+(Monitor the component closely to exchange 
+them at the optimum time. Minimize Component 
+Failures). 
+ 
+ 
+% Component Exchanged Scheduled 
+ 
+ 
+Monitor and manage the overall PCR to meet 
+the PCR budget, the spinal cord of the CSA 
+agreement. 
+ 
+ 
+Component Replacement Cost 
+ 
+ 
+ 
+Efficient execution of all component replacement 
+maintaining the impact on the Availability in 
+control. 
+ 
+Unavailability due to Component Replacement 
+ 
+PCR’s executed with Quality to support the 
+correct performance of the equipment after 
+repair.  
+Effective use of the PCR window of Opportunity 
+ 
+ 
+ 
+Availability Index after Component Exchange 
+ 
+Parallel work (Backlogs) executed during 
+Component Exchange 
+ 
+Planned Component Replacement Plan 
+executed as planned 
+ 
+% PCR plan compliance 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 23 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 22 of 28 
+HR / Training / HR Development 
+ 
+“Effective management of the most important Asset … Our Personnel”  
+ 
+ 
+Specific Outcomes – Objectives 
+ 
+How do we Measure (KPI’s) 
+ 
+Clear definition of the organization with clear  
+R&R 
+Attract, hire, retain and manage the workforce 
+efficiently.   
+ 
+Unavailability due to people / personnel Delays 
+Available / effective Man-Hours 
+ 
+ 
+ 
+Adequate quantity of personnel allocation to 
+execute the M&R routines. Support them 
+efficiently. 
+ 
+ 
+Hands On Personnel to Machine Ratio  
+Direct Maintenance Personnel 
+Total Personnel to Machine Ratio 
+ 
+ 
+Monitor and manage the total M&R operation 
+personnel. Balance personnel needs and 
+budget. 
+ 
+ 
+Total Maintenance Personnel 
+ 
+ 
+ 
+Manage the overtime within targets. Use 
+overtime results as an indication of man-power 
+availability and effectiveness. Always compare 
+with % Unscheduled Work. 
+ 
+ 
+Overtime Ratio 
+ 
+Achieve optimum MR results. 
+ 
+Maintenance Ratio 
+ 
+Measure and provide adequate training to 
+develop the people and to support the actual 
+organization challenges 
+ 
+ 
+Training Hours Ratio 
+Training Hours by Systems 
+Training Program Compliance  
+ 
+Define and manage clearly the quantity of 
+Competencies required and satisfied. 
+ 
+Competencies Required 
+Competencies Satisfied 
+ 
+ 
+Manage and Retain your people 
+ 
+Attrition Rate 
+
+===== PAGE 24 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 23 of 28 
+ 
+Continuous Improvement (CI) 
+ 
+“Effectively support the M&R operation with innovative, applicable and valuable solutions 
+to allow the continuous search for excellence” 
+ 
+ 
+Specific Outcomes - Objectives 
+ 
+How do we Measure (KPI’s) 
+ 
+Motivate the organization to constantly 
+discovering new ideas to Improve. 
+Select & transform the ideas into CI projects 
+  “Keep the Ideas flowing to the process” 
+ 
+CI Ideas Generated  
+CI Ideas to CI Projects Candidate 
+ 
+ 
+ 
+Keep the CI groups actively working (keep the 
+blood flowing) 
+ 
+CI Projects Opened in the period 
+Active CI Projects 
+ 
+ 
+Guide the organization to the areas of “pain” 
+ 
+ 
+CI Projects to Top Ten Problems 
+ 
+ 
+Manage effectively the CI Initiatives 
+ 
+ 
+CI Projects On time 
+Average CI Project Execution 
+Projects Closed in the Period 
+ 
+ 
+Quantify the amount of valid solutions and value 
+delivered to the organization. Manage 
+accordingly. 
+ 
+CI Project Delivered Value 
+Quantity of Validated Projects Solution(s) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 25 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 24 of 28 
+Performance Evaluation 
+ 
+“Provide accurate and timely management information to support the effective control of 
+the M&R processes” 
+ 
+In the case of the Performance Evaluation we need to support the following objectives. The 
+achievement of these objectives will be measured by compliance. 
+ 
+• Provide a clear definition of the desired outcome(s) (What are we here for…)  for the 
+overall system and sub-processes 
+• Define together with respective process owners the Goals, Objectives and Targets for 
+each particular process (Overall & Sub processes) 
+• D efine the appropriate Key Performance Indicators to measure the defined 
+Outcome(s)  
+• Identify the data needed to be collected to generate the KPI’s and implement the Data 
+Collection System  
+• Identify the Distribution Network and timely generate and communicate the KPI’s and 
+Management Reports 
+• Provide an accurate and effective interpretation, identifying the opportunities and 
+correct actions to follow 
+• Identify the recommended corrective action(s) to follow and/or the need for 
+Continuous Improvement in the immediate term and / or the need for the involvement 
+of Continuous Improvement 
+• Follow up the results to validate or adjust the corrective or improvement action 
+implemented. Keep Updated 3W plans. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 26 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 25 of 28 
+ 
+3.0 Implementation Steps 
+ 
+The implementation steps to follow will depend on the current situation of your mine site operation. 
+By saying that, what we are recommending as a first step is a thorough evaluation of your 
+maintenance operation. Determine the “As Is” situation. Compare with the recommended model. 
+Determine areas of opportunities and finally establish an action plan to correct or improve those 
+areas of opportunities. 
+ 
+1. - Evaluate your on-site maintenance operation 
+  
+- Apply GAT (Gap Analysis Tool) - available through Global Mining Product Support division 
+ 
+ 
+ 
+The GAT is a survey dedicated to evaluate the 10 different  processes recommended by 
+Caterpillar Global Mining. 
+ 
+2. - Establish the “As Is” situation  
+ 
+ In establishing the “As Is” situation we recommend performing two distinct activities: 
+ 
+• Determine the Process Flow Diagrams of all your processes implemented on site 
+ 
+Based on the observations guided by the GAT tool and the on-site investigation draw 
+and document the current processes on site. 
+ 
+• Establish the Baseline.  
+ 
+Measure the current performance results and document them for future reference. 
+Apply the set of metrics recommended in CGM document dedicated to “KPI’s for 
+evaluating Maintenance and Repair Processes”  
+ 
+ 
+
+
+===== PAGE 27 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 26 of 28 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+This document contains the KPI’s included in the GAT, calculation methodology and 
+interpretation guidelines. 
+ 
+3. - Determine the areas of opportunities 
+ 
+Determine the areas of opportunities by comparing the “As Is” situation with the 
+recommended processes detailed in the series of Strategic Best Practices (BP 1007-2.0-
+1101 to BP 1007-2.0-1110). 
+ 
+4. - Define the Action Plan 
+ 
+• Document your findings. The use of a 3 W form is recommended to record your findings, 
+opportunities. 
+• Devise and document the solutions for improving or correcting the weaknesses. Use the 
+related BP’s to support your search for ideas / solutions. Use a separate column in your 
+3W form to record the solution / actions to take. 
+• Analyze and determine resources needed, time to implement and expected benefits. 
+• Prioritize the implementation of the different actions based on the Return on Investment 
+(ROI) results. 
+• Assign responsibilities and expected completion dates for each of the activities.  
+ 
+5. - Get the “Buy-In” of the on-site organization 
+ 
+It is very important to get the buy-in of the on-site organization. They are the ultimate 
+“process owners” of the maintenance & repair strategy.  Present the action plan, the 
+implementation strategy and the expected benefits. Involve them in the implementation of the 
+solutions and plan an in-depth training of all the involved personnel. 
+ 
+6. - Implement 
+ 
+Execute the implementation plan.   
+ 
+
+===== PAGE 28 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 27 of 28 
+7. - Follow up 
+ 
+Follow up closely the implementation of your action plan.   
+ 
+• Set up “check points” / milestones 
+• Review compliance of committed dates for tasks completion 
+• Receive & analyze work progress from the specific responsible 
+• Reinforce the positive results 
+• Identify and eliminate threats and obstacles  
+• Support the ownership of the on-site organization  
+• Support the positive change of personnel, correct the negative attitudes or oppositions 
+• Make adjustments as necessary 
+ 
+8. - Measure the Results – Improve / Adjust if needed 
+ 
+It is absolutely necessary to measure the results of the improvements implemented at the 
+level of each individual processes and at the final outcome, fleet performance. 
+ 
+Measure and trend the behavior of the KPI’s selected for establishing the “baseline” when the 
+“As Is” situation was established. Compare and adjust as necessary.  
+ 
+ 
+4.0 Benefits 
+ 
+“We can manage what we can measure”, this old and well known management principle 
+summarize all benefits related to the Performance Evaluation M&R process. 
+ 
+ 
+We are confident that the implementation of the performance evaluation process together with the 
+rest of the M&R processes and the disciplined execution of them will help you to gain the control 
+of your maintenance processes. Gaining control of your maintenance operation is everything. If 
+you are in control of the operation you can guide your organization and efforts to the direction 
+your maintenance strategy and ultimately the production plan of the mine will indicate. 
+ 
+ 
+5.0 Resources Required 
+ 
+In general terms the resources needed are related to two key areas, people involved and in 
+charge of the PE process and a data processing system to gather all captured data and transform 
+it into valuable information.  
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 29 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Performance Evaluation – M&R Strategic Best Practice 
+DATE 
+12/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.09-13269 
+Caterpillar Confidential:  GREEN         Page 28 of 28 
+6.0 Supporting Attachments / References 
+ 
+The following documents are available to support the selection, use and interpretation of the 
+recommended M&R KPI’s. 
+ 
+Performance Metrics for Mobile Mining Equipment – rev 1.1.pdf 
+Mining Process Metrics - rev 03.pdf 
+ 
+ 
+7.0 Related Best Practices 
+ 
+CGM Cat M&R Process  BP 1007-2.0-1100 
+ 
+Preventive Maintenance  BP 1007-2.0-1101 
+Condition Monitoring   BP 1007-2.0-1102 
+Backlog Management   BP 1007-2.0-1103 
+Planning & Scheduling   BP 1007-2.0-1104 
+Parts Management   BP 1007-2.0-1105 
+Component Management  BP 1007-2.0-1106 
+Repair Management   BP 1007-2.0-1107 
+Human Resources / Training  BP 1007-2.0-1108 
+Performance Evaluation  BP 1007-2.0-1109 
+Continuous Improvement  BP 1007-2.0-1110 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Abelardo A. Flores 
+Senior Market Professional 
+Mining Equipment Management 
+ 
+Caterpillar Global Mining 
+Flores_Abelardo@cat.com

@@ -1,0 +1,222 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Exhaust Manifold Lifting Tool - C175 Engines.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+January 2016 
+1508-4.01-1390 
+  
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Exhaust Manifold Lifting 
+Tool - C175 Engines 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Exhaust Manifold Lifting Tool - C175 Engines ................ 0
+ 
+1. Introduction ........................................................... 1 
+2. Best Practice Description ........................................ 1 
+3. Implementation Steps ............................................. 3 
+4. Benefits ................................................................. 3 
+5. Resources Required ................................................ 3 
+6. Supporting Attachments / References ....................... 3 
+7. Related Best Practices ............................................. 4 
+8. Acknowledgements ................................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+Editor’s Note:  The use of this installation tool and the processes discussed within this Best Practice is not a substitute 
+for applicable laws, standards and regulations and does not alter or limit the obligation of individuals who utilize the tool  to 
+fully comply with federal, state and local law and prudent safety measures relating to the use of lifting devices. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Exhaust Manifold Lifting Tool - C175 Engines 
+DATE 
+3/29/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1508-4.01-1390 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+1. Introduction  
+ 
+Ferreyros has developed a simple tool to improve the process of assembling the C175 engines in 
+installing the exhaust manifold. The tool allows greater stability during installation and prevents 
+the exhaust manifold to flex during lifting. Align the contact faces exhaust manifold with respect to 
+the cylinder head, providing the proper angle, reducing the time and effort applied by the 
+technician. Caterpillar does not have a special tool for this process. 
+ 
+ 
+ 
+2. Best Practice Description 
+ 
+ 
+The following photos show the fixture and process. 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+TOOL LIFTING EXHAUST MANIFOLDS - C175 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Exhaust Manifold Lifting Tool - C175 Engines 
+DATE 
+3/29/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1508-4.01-1390 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+The technician proceeds to install the threads of the bolts to secure the exhaust manifolds 
+cylinder head in the lower part. 
+ 
+Proceed to install the tool on the exhaust manifold and lift the component with a sling to align the 
+contact faces exhaust manifold with respect to the cylinder head. 
+ 
+ 
+ 
+CYLINDER HEAD 
+BOLTS 
+SLING 
+BOLT  M18 X 1.5 
+PROPER ALIGN 
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Exhaust Manifold Lifting Tool - C175 Engines 
+DATE 
+3/29/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1508-4.01-1390 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+Install the gasket and the bolts securing the exhaust manifold to the cylinder head at the top. 
+Remove the tool and apply the appropriate torque to the bolts securing the exhaust manifold. 
+ 
+ 
+The exhaust manifold is safely installed without losing its stability at all times. This same tool 
+should be used for the removal process, because it minimizes risks during the operation for the 
+exhaust manifold and the people around. 
+ 
+3. Implementation Steps 
+ 
+Design the tool. 
+   
+4. Benefits 
+ 
+• Improve operator safety. 
+• Improve process efficiency. 
+• Prevents damage to the exhaust manifold during remove or install. 
+ 
+5. Resources Required 
+ 
+• Minimal expense to fabricate the tool. 
+ 
+6. Supporting Attachments / References 
+ Prints 
+GASKET 
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Exhaust Manifold Lifting Tool - C175 Engines 
+DATE 
+3/29/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1508-4.01-1390 
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+ 
+7. Related Best Practices 
+ 
+None 
+ 
+8. Acknowledgements 
+ 
+This Best Practice was written by: 
+ Jhon Meneses Cuzcano 
+ Ferreyros S.A. 
+  
+ 
+The idea for this Best Practice belongs to: 
+David Huamanchumo Urcia  
+Pomahuacre Ramírez Eder 
+Mateo Bernardo John 
+Ferreyros S.A. 
+ 
+ 
+This Best Practice was revised by: 
+ Aninu Mitacc Vizcardo 
+ Ferreyros S.A. 
+ aninu.mitacc@ferreyros.com.pe

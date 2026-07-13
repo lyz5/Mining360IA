@@ -1,0 +1,592 @@
+SOURCE: 1.0 Maintenance & Repair\1.07 Parts Management\3. Quick Win\Longwall Move Box Process.pdf
+PAGES: 11
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2016 
+1605-1.07-1437 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Longwall Move Box 
+Process 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Longwall Move Box Process ...................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Implementation Steps ........................................ 1 
+3.0 Best Practice Description ................................... 3 
+4.0 Benefits .............................................................. 4 
+5.0 Supporting Attachments/References ................. 5 
+6.0 Resources Required ........................................ 10 
+7.0 Related Best Practices .................................... 10 
+8.0 Acknowledgements .......................................... 10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Longwall Move Box Process 
+DATE 
+7/8/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.07-1437 
+Caterpillar Confidential:  GREEN         Page 1 of 10 
+1.0 Introduction 
+Description: 
+Providing prepackaged boxes with critical spares for Longwall moves greatly enhances customer 
+satisfaction by preventing delays during the move period. Equipment can quickly be put back into 
+service reducing the downtime and subsequent cost to the customer. 
+      Scope:  
+      This Best Practice will describe a process that will enhance a dealer support strategy to be 
+implemented at any Underground Longwall operation. 
+      History: 
+      The move box process pre-dates the Caterpillar Inc. acquisition of the EMP products. In the 
+underground mining business, the delays brought about by having to travel a long way to get the 
+necessary parts to keep production equipment running can be more challenging than surface 
+mining. This process has been in existence to help mitigate those challenges for the last 15 years. 
+      Impact: 
+      Having immediate access to all critical spares identified previously allows maintenance personnel 
+to quickly react to situations that could have jeopardized the Longwall move schedule and 
+subsequent production loss due to missed start up dates. It is an opportunity for a dealer to work 
+closely with their customer and improves the overall customer/dealer relationship. 
+      Resource Requirements: 
+      This process requires minimal capital expense to initiate and in essence is an extension of the 
+warehouse management that already exists at all dealerships. 
+ 
+2.0 Implementation Steps 
+      Target Customer: 
+       Once a target customer has been identified, research should be done or at least confirmed on 
+the specification of the equipment that customer is operating. 
+       Critical Parts Listing: 
+       Service personnel should then create the lists of parts based on their experience and product 
+knowledge. These lists should cover all utility vehicles and shield haulers as well as parts likely to 
+be damaged on the Longwall equipment being relocated. 
+       Training: 
+       Employees who are involved in this process need to be trained on the process itself and aware of    
+their role and responsibilities in order to ensure a successful implementation. 
+       Equipment: 
+       Once it has been determined how many boxes may be required, a purchase order request needs 
+to be submitted, approved and then the purchase made. The boxes used by CB Mining are 
+typically around $700 US. (see addendum 1) 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Longwall Move Box Process 
+DATE 
+7/8/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.07-1437 
+Caterpillar Confidential:  GREEN         Page 2 of 10 
+    
+ 
+                         
+                                             Addendum 1 
+     
+       
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Longwall Move Box Process 
+DATE 
+7/8/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.07-1437 
+Caterpillar Confidential:  GREEN         Page 3 of 10 
+3.0 Best Practice Description 
+Pre-delivery steps: 
+Check warehouse stock of the previously created critical parts lists. Create a quote from those 
+CPL’s. A dealer representative should then set up a meeting with the target customer and present 
+the program and the CPL proposals. Any requirements from the customer over and above should 
+be added to the CPL’s and re-submitted to the customer. Establish the protocol on additional 
+larger items such as electric motors, axles and winches as to whether the dealer keeps them 
+locally or in the mine warehouse. 
+This should be done 4-6 weeks before any Longwall move is scheduled as they have to approve 
+the parts quote and allow time for the logistics. 
+Delivery: 
+Once a PO has been received the production department sets up a work order to which the 
+warehouse can then issue the quoted parts. An inventory contents list needs to be created for 
+each move box being supplied and affixed externally and a copy enclosed within the box itself. 
+The boxes are then locked and delivered to the mine. Upon receipt at the mine warehouse a 
+dealer representative should schedule a visit and handover the keys to the boxes once the 
+contents have been inventoried and the contents approved by the customer. The boxes can then 
+be transported underground to a convenient location for the move. 
+Post-delivery: 
+When the Longwall move has been completed the move boxes are transported back out to the 
+mine warehouse. The contents are inventoried and the contents approved by both a dealer 
+representative and the customer before being returned to the dealer warehouse. The keys are 
+handed back to the dealer representative at this time and the boxes shipped back to the 
+dealership. The results of this exit inventory determines what the customer will be invoiced 
+Qualifiers: 
+If no preference is given by the customer with regard to new or exchange components then the 
+dealer retains that discretionary right of supply. 
+1. When a new part is supplied no used core will be accepted in return. 
+2. Any exchange part core not returned will be invoiced at the new retail price. 
+3. Move boxes will be provided for a period not to exceed 4 weeks. If this time period is 
+exceeded the box contents will be invoiced for the full value of the quote. 
+4. All the parts will be quoted at the normal customer list price including applicable discount. 
+5. The customer PO has to be a minimum deposit of $1,500.00 US per box. The deposit is 
+required as sometimes the customer will damage the box (see addendum 2).  The deposit 
+amount can vary depending on the costs by the dealer to produce the box. 
+6. Any maintenance or replacement of boxes will be deducted from the deposit 
+7. No parts can be returned after the exit inventory and boxes have been returned to the 
+dealership 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Longwall Move Box Process 
+DATE 
+7/8/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.07-1437 
+Caterpillar Confidential:  GREEN         Page 4 of 10 
+ 
+Addendum 2 
+ 
+ 
+ 
+4.0 Benefits 
+The intent of the program is to immediately make available parts which may be required during a 
+Longwall move, both on the Longwall itself, or the equipment being utilized to facilitate the move. 
+This reduces the downtime and helps the customer achieve his production startup target date. 
+This availability of parts increases opportunity of the dealer capturing the part sale with an OEM 
+part. 
+The implementation of this program enhances both the reputation of the dealer and the customer 
+satisfaction and loyalty 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Longwall Move Box Process 
+DATE 
+7/8/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.07-1437 
+Caterpillar Confidential:  GREEN         Page 5 of 10 
+5.0 Supporting Attachments/References 
+Typical move box contents as used by CB Mining 
+Standard SH620 Move Box (New Style DM Scoop) 
+SAP Part Number Description QTY 
+317666-SR Logic Card (Contactorless Panel) 1 
+262258-SR IGBT Tram Panel (Contactorless Panel) 1 
+262276-SR IGBT Pump Starter 1 
+898204-SR Assy LH Control Handle 1 
+349512-SR Bell Crank Lift Cylinder 1 
+606311-SR Steering Cylinder 1 
+224431-SR Tilt Cylinder 1 
+606310-SR Battery Lift Cylinder 1 
+219380 Push/Pull Cable (Breaker Reset) 1 
+226391 1/2" X 1.25" SS Bolt (Elec Enclosures) 8 
+217548 1/2" SS FLAT WASHER (Elec Enclosures) 8 
+229691 1/2" SS LOC WASHER (Elec Enclosures) 8 
+391289 Tape Switch 6" 1 
+391290 Tape Switch 12" 1 
+236465 Accelerator Switch 1 
+212568 Current Transducer 1 
+606982 Fuse 30A 4 
+229108 Pump Fuse 125A 2 
+215155 Tram Fuse 450A 2 
+317144 Diode 4 
+362229 Relay Standard 2 
+358294 Relay Socket Standard 2 
+625570 I.S. Relay 1 
+391063 Solenoid 2 
+248709 Head Light 1 
+222316 Head Light 1 
+272244 Main Circuit Breaker 800A 1 
+222586 UVR Coil 1 
+238231 U Joint 2 
+606536 Drive Line Front and Rear 1 
+244427 Drive Line Yoke (Reducer) 1 
+351727 Drive Line Yoke Axle 1 
+476-1268 7/8"X12" Bolt Axle Mounting 8 
+222177 7/8" Loc Nut Axle Mounting 8 
+207380 Wheel Mounting Washer 16 
+126319 Wheel Mounting Bolt 16 
+205542 Winch (Bolt In) 1 
+234784 2 Speed Winch Motor 1 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Longwall Move Box Process 
+DATE 
+7/8/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.07-1437 
+Caterpillar Confidential:  GREEN         Page 6 of 10 
+276923 Connecting Link Winch Chain 1 
+332439 Winch Drive Chain 160 
+332351 Winch Drive Sprocket 2 
+219882 Steer Cyl Nut 2 
+208878 Steer Cyl Washer 2 
+235848 Steer Cyl Pin 2 
+258729 Brake Hand Pump 1 
+244413 2 Speed Winch Valve 1 
+244374 Main Relief 1 
+305179 Unloading Valve 1 
+357246 Priority Flow Control Valve 1 
+373567 Rev Brake Mod Valve 1 
+271749 Main Gear Pump 1 
+248304 Solenoid Valve 1 
+ 
+ 
+      Standard SH630 (636) MOVE BOX 
+SAP Part Number Description QTY 
+317666-SR Logic Card Contactorless 1 
+253363-SR Logic Card Contactor 1 
+253741-SR IGBT Tram Panel Contactor 1 
+262258-SR IGBT Tram Panel Contactorless 1 
+262276-SR IGBT Pump Starter 1 
+208147-SR Bell Crank Lift Cyl 1 
+241860-SR Steering Cylinder 1 
+224431-SR Tilt Cylinder 8.5" 4 Port 1 
+235793-SR Tilt Cylinder 8.5"2 Port 1 
+219380 Push/Pull Cable 1 
+236465 Accelerator Switch 1 
+212568 Current Transducer 1 
+248734 Light Switch 1 
+213178 Master Switch 1 
+229108 Pump Fuse 125A 2 
+621522 Tram Fuse 500A 2 
+317144 Diode 4 
+237497 Relay Standard 1 
+251044 Relay Socket Standard 1 
+625570 I.S. Relay 1 
+391063 Solenoid 1 
+222316 Head Light 1 
+272244 Main Circuit Breaker 800A 1 
+222586 UVR Coil 1 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Longwall Move Box Process 
+DATE 
+7/8/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.07-1437 
+Caterpillar Confidential:  GREEN         Page 7 of 10 
+238231 U Joint 1 
+288434 Drive Line Frt Small Axle 1 
+300892 Drive Line Rear Small Axle 1 
+285137 Drive Line Rear 8.5C 1 
+285134 Drive Line Front 8.5C 1 
+282192 7/8"X12" NF Small Axle Mounting 8 
+230844 7/8" NF Nut Small Axle Mounting 8 
+226800 Small Axle Wheel Stud 16 
+226800 Small Axle Wheel Nut 16 
+245162 Small Axle Wheel Nut Cap 16 
+316966 1.25"X12.5" Big Axle Mounting 8 
+236002 1.25" Flex Loc Nut Big Axle Mounting 8 
+322845 Axle Tech Wheel Stud 16 
+241586 Axle Tech Wheel Nut 16 
+220975 Spring Brake 1 
+205542 Winch 1 
+234784 2 Speed Winch Motor 1 
+207408 Winch Coupling 1 
+220439 Winch Adapter 1 
+218087 Castle Nut 1 1/4" 2 
+230938 Steer Cyl Pin 828 2 
+244413 2 Speed Winch Valve 1 
+244374 Main Relief 1 
+227628 Charging Valve 1 
+263747 Brake Dif Loc Valve 1 
+207847 Gear Pump 1 
+248304 Solenoid Valve 1 
+246445 Canopy Post 1 
+205893 Canopy Mount 1 
+ 
+      Standard SH650 DC MOVE BOX  
+SAP Part Number Description QTY 
+317666-SR Logic Card Contactorless 1 
+262258-SR IGBT Tram Panel Contactorless 1 
+262276-SR IGBT Pump Starter 1 
+898609-SR Control Handle 1 
+317045-SR Lift Cylinder 1 
+317043-SR Tilt Cylinder 1 
+236465 Accelerator Switch 1 
+237497 Relay Standard 1 
+251044 Relay Socket Standard 1 
+625570 I.S. Relay 1 
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Longwall Move Box Process 
+DATE 
+7/8/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.07-1437 
+Caterpillar Confidential:  GREEN         Page 8 of 10 
+391063 Solenoid 1 
+222316 Head Light 1 
+212568 Current Transducer 1 
+253392 Driver Board 1 
+333365 128-12 DC-DC Converter 1 
+214407 128-24 DC-DC Converter 1 
+322182 Circuit Breaker 800Amp 1 
+222586 UVR Coil 1 
+240361 Resistor 33K 3 
+317144 Diode 4 
+317145 PTC Thermister 1 
+229108 Fuse 125 Amp 2 
+215705 Fuse 500 Amp 2 
+244022 Modular Cable Phone Cord 1 
+240034 LCD Display 1 
+320868 Drive Line Front and Rear 1 
+323192 U Joint Front and Rear 2 
+284718 Speed Reducer Yoke Front and Rear 1 
+326298 Axle Yoke Front and Rear 1 
+322558 1.25"X10" Axle Mounting Bolt 8 
+236002 1.25" Loc Nut Axle Mounting 8 
+320716 Wheel Mounting Nut 16 
+373059 Adaptor Winch Motor 1 
+328816 Winch Motor 1 
+328650 Rev Modulating Brake Valve 1 
+305179 Unloading Valve 1 
+224929 Accumulator 1 
+318417 HRC Valve 2 
+365543 Trunion HRC Valve 1 
+326643 Steering Adapter HRC Valve 1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Longwall Move Box Process 
+DATE 
+7/8/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.07-1437 
+Caterpillar Confidential:  GREEN         Page 9 of 10 
+ 
+Marshall County Coal Shield Move 
+SAP Part Number Description QTY 
+377929 BRACKET,BASELIFT CYLINDER 1 
+4140891 CABLE(HOSE-YEL)SKK24(Cr)/SKK24(Cr) 4.0M 50 
+351685 ISO ADAPTER PMC-R; II 1; SKK24 8 
+4140829 CABLE(HOSE-YEL)SKK24(Cr)/SKK24(Cr) 1.0M 5 
+4287723 SOLENOID DRIVER SD1 CR WITH PROT.CAP USA 25 
+318825 PLUG,CODE,10K OHMS 1 
+4394865 CABLE(HOSE) B66/0S4(Cr) 20FT 2 
+128743 STAPLE(LONG), 3/8" F/SKK24 100 
+165446 BAR (UV) 2 
+663369 PLUG-IN ELBOW LUMBERG-SKK24 3 
+315495 BLIND PLUG, SKK24 WITH O-RING 100 
+145336 ACCUMULATOR 2 
+310604 VALVE,NG20 PILOT OPRTD LEG CHK W/KN VLV 2 
+310603 VALVE,PILOT OPRTD LEG CHECK,W/OUT PLUGS 2 
+327868 VALVE,YIELD,420 BAR 3 
+4341364 HP-BLOCK BALL VALVE SIBK 2515/2S DN 25 3 
+204146 ELBOW,MANIFOLD,150 DEG DN40SUPERSTECKO 6 
+204144 ELBOW,MANIFOLD,150 DEGREE DN50 3 
+204141 ELBOW,MANIFOLD,150 DEGREE DN50 6 
+4367163 CABLE(BLUE)SKK24(Cr)/OS-4(Cr) 1:1 1800MM 14 
+4331307 CABLE(BLUE)SKK24(Cr)/OS-4(Cr) SD1 600MM 20 
+4331308 CABLE(BLUE)OS-4(Cr)/OS-4(Cr) SD1 1300MM 50 
+4224199 CABLE  OS4 OS4  1800MM 1:1 CR 10 
+4367161 CABLE(BLUE) OS-4(Cr)/OS-4(Cr) SD1 1800MM 10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Longwall Move Box Process 
+DATE 
+7/8/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.07-1437 
+Caterpillar Confidential:  GREEN         Page 10 of 10 
+ 
+ 
+ 
+6.0 Resources Required 
+(see implementation steps) 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+Lou Delbene  
+CB Mining 
+ldelbene@cbmining.com
+ 
+ 
+Tom Mack 
+CB Mining 
+tmack@cbmining.com
+ 
+ 
+Jennifer Leoni 
+CB Mining 
+jleoni@cbmining.com

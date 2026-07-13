@@ -1,0 +1,551 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+June 2006 
+0806-2.70-1007 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Condition Monitoring – 
+Field Inspections 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+ 
+Condition Monitoring – Field Inspections ................... 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 3 
+3.0 Implementation Steps ........................................ 6 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 7 
+6.0 Supporting Attachments .................................... 8 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ............................................ 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring - Field Inspections 
+DATE 
+20 JUN 06 
+CHG 
+NO 
+02 
+NUMBER 
+ 
+0806-2.70-1007 
+Caterpillar Confidential:  GREEN          Page 2 of 8 
+1.0 Introduction  
+ 
+This Best Practice deals with Condition Monitoring and Maintenance Management. The on time 
+detection of potential problems is the key requisite to achieve the ultimate goal of "Repairing 
+Before Failure".  
+ 
+The Field Inspection process includes three major activities:  
+1. Operator Inspection,  
+2. Field technical Inspection  
+3. Pre - PM technical Inspection  
+ 
+These three activities take place in the field and compliment each other to achieve the objectives 
+defined below.  
+ 
+Goal: On time detection of potential machine problems or failures. 
+ 
+Objectives: Detect and register  > 80% of pending visual defects of machines.   
+ 
+Scope: Detection of machine problems by visual inspections and basic predictive tests. It applies 
+to all machines operated at the site.   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring - Field Inspections 
+DATE 
+20 JUN 06 
+CHG 
+NO 
+02 
+NUMBER 
+ 
+0806-2.70-1007 
+Caterpillar Confidential:  GREEN          Page 3 of 8 
+2.0 Best Practice Description 
+ 
+2.1 Field Inspection Process Overview (Operator Inspections) 
+ 
+The diagram above describes the recommended process for the Operator Inspections. 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring - Field Inspections 
+DATE 
+20 JUN 06 
+CHG 
+NO 
+02 
+NUMBER 
+ 
+0806-2.70-1007 
+Caterpillar Confidential:  GREEN          Page 4 of 8 
+The critical points to observe when utilizing this process are: 
+ 
+2.1.1 Log Book 
+A logbook should be implemented. The logbook must remain in the machine cab and be 
+reviewed by the inspector at the time of the machine inspection.  
+ 
+Implementation of a logbook and the inspector interview of the operator to reduce to a 
+minimum the need for double checks. 
+ 
+2.1.2 Inspector 
+Operator interview. The inspector should interview the operator when performing the machine 
+inspection and understand his feedback, validate and transform it into a technical repair 
+request (Backlog Request). 
+                                                                                                                                                                                
+2.1.3 Operator Checklist 
+The operator check list included (printed) in the logbook should be structured into two major 
+sections: 
+• Shift start section: To be completed through a visual inspection (operator walk around) 
+prior to the start of the shift.  
+• Shift end section: Completed at the end or during the shift based on the operational 
+assessment of the machine. 
+ 
+2.1.4 Operator Backlogs 
+The Backlogs that are generated as a result of operator feedback should identify clearly the 
+name and / or ID of the operator to facilitate feedback and possible recognition. 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring - Field Inspections 
+DATE 
+20 JUN 06 
+CHG 
+NO 
+02 
+NUMBER 
+ 
+0806-2.70-1007 
+Caterpillar Confidential:  GREEN          Page 5 of 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Select / Stop machine to Inspect 
+Inspection Plan PM Plan Planning Special Requirement
+Interview Operator
+Pending Backlog 
+Report
+Machine Inspection
+Field Service Crew 
+analyze call & inspect 
+machine
+Valid Call ?
+Inform Dispatch - 
+Classify stop as 
+operational delay
+Repair can be 
+deferred / 
+scheduled?
+Yes
+Open a Technical 
+Backlog with clear 
+originator identification
+Dispatch records stop - ask Field 
+Service attention
+Type of Inspection ?
+Interview Operator
+Review Pending 
+Backlog Report / File
+Interview Operator
+Machine Inspection
+Review Machine Log Book
+Operator Log 
+Book
+Backlog already 
+identified / recorded ?
+Yes
+Review Machine Log Book
+No
+Dispatch call Pre - PM Inspection
+Review Machine Log Book
+Defects 
+Found?
+Pending Backlog 
+Report
+Field Inspection 
+Checklist
+Repair can be 
+deferred / 
+scheduled?
+Yes
+No
+PM week Plan
+SOS & Magnetic 
+Plugs VIMS Download
+Pre PM 
+Inspection 
+Checklist
+SOS / MP 
+inspection Hot 
+Sheet
+VIMS events 
+pareto
+Pending Backlog 
+Report
+Backlogs scheduled 
+for next PM
+Backlogs 
+validation
+Modify BL schedule 
+for next PM
+Any new Defects 
+found?
+Repair can be 
+deferred / 
+scheduled?
+No
+Yes
+No
+No
+Return Machine to 
+Operation
+Direct machine 
+to Shop
+Open Work Order
+e
+e
+Yes
+Inspection 
+completed?
+Yesf
+f
+Inform job completion 
+to Mine Dispatch
+Yes No
+g
+Inspection Plan
+No
+Yes
+Backlogs in Yellow 
+report
+(monitor)
+g
+g
+Regular Field Inspection
+No
+Fill & Submit technical 
+Blog request
+To Planning
+Submit suggested new BL 
+schedule for next PM
+Planning & 
+Scheduling
+Planning & 
+Scheduling Inform results of 
+Inspections & Backlog 
+validation to Planning & 
+Scheduling
+No
+Planning & 
+Scheduling
+a
+b
+c c
+d
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring - Field Inspections 
+DATE 
+20 JUN 06 
+CHG 
+NO 
+02 
+NUMBER 
+ 
+0806-2.70-1007 
+Caterpillar Confidential:  GREEN          Page 6 of 8 
+ 
+2.2 Field Inspection Process Overview (Technical Field Inspections) 
+ 
+The diagram on the previous page illustrates how the Technical Field Inspection Process should 
+flow. 
+ 
+Critical points to observe when utilizing this process are: 
+ 
+2.2.1 Inspector-Operator Interview.  
+Technical Field Inspections should incorporate all routines from the operator interview and the 
+analysis of the Operator Log Book.  
+ 
+2.2.2 Avoid Backlog Duplication  
+Before generating a Backlog the inspector must review the Backlog pending list report to avoid 
+duplication of entries. 
+ 
+2.2.3 Pending Backlog Report.  
+The use of this report is also a big contributor to the efficiency and effectiveness of the 
+inspections. The correct use of this report allows the inspectors to concentrate on the detection 
+of new defects. 
+                                                                                                                                                                                  
+2.2.4 Measure the results  
+Measure the results /contribution of all the different inspection routines.  
+ 
+In order to assess the contribution of the various inspection routines, be prepared to classify 
+the Backlogs generated in those routines.  
+ 
+3.0 Implementation Steps 
+ 
+1. Identify and train Field Inspectors. 
+ 
+2. Provide logbooks and training to the Operators. 
+ 
+3. Provide a designated location for field inspections and operator interviews. Some mines 
+have used the fuel island and the refueling stop to perform the daily inspection and 
+operator interview. 
+ 
+4. Develop site-specific inspection checklists for each model of machine. 
+ 
+5. Provide the inspectors with the current backlog list for each machine to be inspected. 
+6. Implement the Best Practice for Backlog Management. 
+ 
+4.0 Benefits 
+ 
+The on time detection of potential problems is the key requisite to achieve the ultimate goal of 
+"Repairing Before Failure".  
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring - Field Inspections 
+DATE 
+20 JUN 06 
+CHG 
+NO 
+02 
+NUMBER 
+ 
+0806-2.70-1007 
+Caterpillar Confidential:  GREEN          Page 7 of 8 
+The on time detection, registration (Backlog generation) and communication of potential 
+problems allows Planning and Scheduling to: 
+ 
+1. Implement and manage an effective Backlog function. 
+2. Schedule the necessary repairs at the right time (At the right window of opportunity and 
+Before Failure)  
+3. Provide effective use of all windows of opportunities (Machine stops). 
+ 
+4.1 Measurable Benefits 
+ 
+4.1.1 Time and Cost 
+The difference in time and cost between a repair executed before failure and an unscheduled 
+one has been established in the range of 5 to 8. 
+ 
+4.1.2 Quality 
+MTBS as a reliability indicator is also positively influenced by a well planned and scheduled 
+repair. Effectively using windows of opportunities is the first contributor to MTBS results. By 
+performing scheduled repairs, the pressure from operations is reduced, allowing the service 
+crew to better concentrate and executes the repairs more effectively. 
+ 
+5.0 Resources Required 
+ 
+A successful Field Inspection Program requires a minimum level of resources located in all areas 
+indicated above. 
+ 
+5.1 Facilities:  
+A suitable location has to be implemented / designated in the field to perform the inspections. 
+Some efficient mines have implement field facilities to perform the inspections in conjunction 
+with other operational required activities, such as refueling and tire management. (See 
+supporting attachments). 
+ 
+5.2 Tools:  
+The field crew has to be equipped with all inspection and predictive tools defined in the 
+inspection checklists, such as infrared temperature gauge, pressure gauges, magnifying 
+devices, penetrating inks, etc. 
+ 
+5.3 Support Equipment:  
+Equipped vehicles must be provided to assist the inspections routines. There will be cases in 
+which the machines will have to be inspected in another location of the mine.  
+(See supporting attachments). 
+ 
+5.4 Labor:  
+Trained Inspectors and Operators are key for the success of the inspections. Operators must 
+receive basic technical training and inspectors must be trained in specialized predictive 
+techniques. 
+ 
+Investment will depend on the specific site conditions.  
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring - Field Inspections 
+DATE 
+20 JUN 06 
+CHG 
+NO 
+02 
+NUMBER 
+ 
+0806-2.70-1007 
+Caterpillar Confidential:  GREEN          Page 8 of 8 
+ 
+6.0 Supporting Attachments  
+ 
+Field Inspection Tips & Examples - PowerPoint Presentation (Click on “Attachments” tab within 
+this document to view). 
+ 
+7.0 Related Best Practices 
+0806-2.70-1008  - Backlog Management 
+ 
+8.0 Acknowledgements 
+This Condition Monitoring – Field Inspection Best Practice was authored by: 
+Abelardo Flores 
+Equipment Management Consultant-Site Management 
+Caterpillar Global Mining 
+ +56-9 3097135 
+Flores_Abelardo@cat.com

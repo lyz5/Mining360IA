@@ -1,0 +1,239 @@
+SOURCE: 5.0 MARC Management\5.02 Contract Development and Implementation\3. Quick Win\Escalating MARCs Based on Forecasted Parts Consumption.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Escalating MARCs Based 
+on Forecasted Parts 
+Consumption 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Escalating MARCs Based on Forecasted Parts 
+Consumption .............................................................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+ 
+  
+July 2007 
+0807-3.3-1084 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Using methods for establishing accurate and sufficient parts escalation factors is critical in 
+preventing MARC contract overrun.  
+ 
+Currently, there is no tool within the CSA Toolkit that will escalate parts based on forecasted parts 
+consumption and automatically generate a relevant ‘master parts list’ price history record. A tool 
+in the form of an Excel macro and a corresponding BUILDER database was developed by the 
+CGM MARC group that will accomplish this. 
+ 
+Two widely used escalation methods that are being used today include the ‘Basket of Parts’ and 
+the ‘Corporate Average’ approaches.   
+ 
+The ‘Corporate Average’ approach simply uses the net movement in published Caterpillar parts 
+prices as the factor for escalating parts in the MARC contract.  The potential for error using this 
+method is that the published corporate price change contains several hundred thousand part 
+numbers across all applications. As the MARCs are mining-specific and often contain high $ 
+major components, the weighted average may not closely reflect rises in mining product, product 
+family, REMAN product, etc.  To illustrate the potential for error, consider this: When using the 
+‘Corporate Average’ method, pricing changes to skid-steer loader tracks and C2.2 connecting 
+rods are factored when escalating a 797 MARC contract. 
+ 
+The ‘Basket of Parts’ approach uses a list of representative serviceable parts for a particular 
+machine.  This list is agreed upon between the customer and the dealer.  The amount of increase 
+or decrease to the total parts cost of this basket is how the escalation factor is determined.  The 
+potential for error using this method is that each part in the basket has a quantity of ‘1’.  This does 
+not take into account the total numbers of each part that will be used or the replacement % 
+anticipated.  Also, this method does not take into account which of these parts will actually be 
+consumed in the coming term to be analyzed for escalation.
+  To illustrate the potential for error, 
+consider this:  The price change of a new engine (most likely included in the basket) will affect the 
+escalation rate, even though your dealer may never purchase a new engine (because Rebuild or 
+Reman is actually used).  Additionally, an engine overhaul or change-out may not even be 
+scheduled in the coming term to be analyzed for escalation, but the price movement of the engine 
+will be factored nonetheless. 
+ 
+The escalation method presented in this Best Practice calculates a weighted escalation factor 
+based on forecasted parts consumption.  All dealer personnel who participated in the refinement 
+of this Best Practice during the 2007 MARC Conference agree that this method of escalation is 
+the most logical. 
+ 
+2.0 Best Practice Description 
+ 
+The key elements in using a ‘Forecasted Parts Consumption’ approach to MARC escalation are 
+that: 
+• each part is properly weighted at the actual quantities per repair or maintenance event, 
+• each part is properly weighted with the anticipated and/or experienced replacement 
+percentage, and  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Escalating MARCs Based on Forecasted Parts 
+Consumption 
+DATE 
+2/20/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0807-3.3-1084 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• each repair event is accounted for at the anticipated number of occurrences within the 
+escalation term to be analyzed. 
+ 
+The process utilizes macros within an Excel spreadsheet and a specialized BUILDER database 
+that contains the necessary queries.  The process also requires the representative Dealer 
+BUILDER file for the machine to be analyzed be up-to-date and accurately maintained. 
+ 
+Instructions are available in the attached file, Parts Price Escalation Variance Analysis.ppt 
+ 
+3.0 Implementation Steps 
+ 
+• Contract language to support the Escalation process must be in place. 
+ 
+• To obtain a subscription of BUILDER 1.8.1 software, contact:   
+ 
+ Caterpillar Media Logistics Subscriptions 
+ 1- 800-566-7782 (U.S. and Canada) or (309) 266-0942 
+ Fax: (309) 266-4647 
+ Media_logistics@cat.com 
+ 
+ 
+or 
+ 
+  
+• To determine the latest version of CSA software, reference:  
+https://dealersoftware.cat.com/sofTrack/searchInput.do 
+ 
+• For access to the CGM BUILDER Downloads webpage in order to view and download posted 
+CGM BUILDER files, contact Bill Gallagher at Gallagher_William_L@Cat.com 
+ 
+• To keep up-to-date of any additional utilities or changes to the CSA tools join the CSA Toolkit 
+User Group: https://kn.cat.com/cat.cfm?id=7308 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Escalating MARCs Based on Forecasted Parts 
+Consumption 
+DATE 
+2/20/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0807-3.3-1084 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4.0 Benefits 
+ 
+• Provides real-life escalation factors based on the Forecasted Parts Consumption for the 
+periods. 
+• Provides an escalation history and summary page that tracks escalation through time and 
+allows labor and miscellaneous escalation to be entered into a total escalation formula. 
+• Automatically generates a relevant ‘master parts list’ price history record that tracks parts 
+prices through time 
+• Escalation factors can be logically explained and illustrated to the customer. 
+ 
+5.0 Resources Required 
+ 
+• BUILDER Software 
+• Microsoft Excel 
+ 
+6.0 Supporting Attachments / References 
+ 
+BUILDER Database: MARC Escalation Analysis.mdb 
+Excel Spreadsheet required: MARC Escalation Analysis Worksheet.xls 
+ 
+7.0 Related Best Practices 
+ 
+0807-3.3-1085  Updating BUILDER™ Files with Current Parts  
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+ William L. Gallagher 
+ CGM Core 14 BUILDER Developer 
+Gallagher_William_L@Cat.com 
++1 309-675-8085 
+ 
+Dealer personnel who participated in the refinement of this Best Practice during the 2007 MARC 
+Conference include: 
+• Mike Lewandowski - Westrac 
+• Andrew  Broadbent - Unatrac 
+• David Griffin - Cashman 
+• Walter Burls - Barloworld Equipment 
+• Shaun Brown -Trakindo 
+• Mauricio Bustos - Finning 
+• Pedro Medar - Finning 
+• Metz Krammer - Toromont 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Escalating MARCs Based on Forecasted Parts 
+Consumption 
+DATE 
+2/20/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0807-3.3-1084 
+Caterpillar Confidential:  GREEN          Page 3 of 3

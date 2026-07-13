@@ -1,0 +1,586 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+August 2012 
+0906-4.5-1013 
+  
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Detecting Combustion Gas 
+Leaks in the Cooling 
+System 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+Detecting Combustion Gas Leaks in the Cooling 
+System ....................................................................... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits ............................................................ 10 
+5.0 Resources Required ........................................ 11 
+6.0 Supporting Attachments / References ............. 11 
+7.0 Related Best Practices .................................... 13 
+8.0 Acknowledgements .......................................... 13 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Detecting Combustion Gas Leaks in Cooling System. 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.04-1255 
+Caterpillar Confidential:  GREEN         Page 1 of 13 
+1.0 Introduction  
+ 
+The objective of this Best Practice initiative is to correctly diagnose combustion gases in the 
+cooling system in a diesel engine.  The principal benefit is time reduction in the repair process 
+that allows downtime to be lowered when this situation arises.  This tool must be used 
+concurrently with the Electronic Technician. 
+ 
+2.0 Best Practice Description 
+ 
+Diagnostic tool to detect combustion gases leaking into the engine cooling system.  Finning has 
+created their own special tool design for bubble view in coolant system when a failure is present in 
+engine series 3500B (coolant consumption and relief valve opened) nicknamed the 
+“Burbujómetro” or “Bubble Meter”. 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+3.1 Utilization procedure 
+ 
+If a combustion gas leak to the cooling system is verified, apply the next procedure.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+WARNING 
+ 
+STEAM AND HOT COOLANT CAN PRODUCE SEVERE BURNS. 
+ 
+DO NOT LOOSEN THE FILL COVER OR PRESSURE COVER OF A HOT ENGINE. 
+ 
+ALLOW THE ENGINE TO COOL BEFORE REMOVING THE FILL COVER OR PRESSURE 
+COVER. 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Detecting Combustion Gas Leaks in Cooling System. 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.04-1255 
+Caterpillar Confidential:  GREEN         Page 2 of 13 
+ 
+1. Loosen and remove the fill covers from the piston skirt side to facilitate the coolant discharge. 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Detecting Combustion Gas Leaks in Cooling System. 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.04-1255 
+Caterpillar Confidential:  GREEN         Page 3 of 13 
+ 
+ 
+4.-  Remover la cubierta que se encuentra a un costado de la zona de carga del lado de la 
+camisa. 
+ 
+5.-  Remover tapón identificado en la imagen a fin de conectar la línea de retorno de la 
+herramienta de prueba, este tapón sólo queda visible una vez removida la cubierta mencionada 
+en el punto 4. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2. Connect the line between the coolant 
+by-pass valve and reservoir. 3. Open by-pass valve so that the coolant 
+discharges and fills up the reservoir. 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Detecting Combustion Gas Leaks in Cooling System. 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.04-1255 
+Caterpillar Confidential:  GREEN         Page 4 of 13 
+4. Remove the plug cover located on the side of the case.  
+* See image, shunt tank in upper platform - right side - behind the fiber glass cover, the  plug can be 
+found in the shunt tank (right side jacket water fill cap) 
+ 
+ 
+5. Remove the plug identified in the image below to connect the return line of the test tool.   
+ 
+ 
+ 
+6. Behind thermostat box, remove cover Lumber 8T -6762 (a plug-pipe mounted in the front manifold)  
+in every diesel engine bank (right and left side). 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Detecting Combustion Gas Leaks in Cooling System. 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.04-1255 
+Caterpillar Confidential:  GREEN         Page 5 of 13 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+7. Install the Adapters in the area of the 
+removed plug with the correct quick 
+coupler. 
+8. Install tool to the end of the by-pass 
+valve, which connects where the removed 
+plug existed, while in the off position. 
+9. Connect red hose on the right bank with 
+the quick coupler. 
+10. Connect black hose on the left bank with 
+the quick coupler. 
+
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Detecting Combustion Gas Leaks in Cooling System. 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.04-1255 
+Caterpillar Confidential:  GREEN         Page 6 of 13 
+ 
+ 
+ 
+ 
+ 
+11. Connect tool between the transparent lines and the return line that must be connected to the side 
+of the upper shunt tank (radiator cap), on the casing side.  
+ 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Detecting Combustion Gas Leaks in Cooling System. 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.04-1255 
+Caterpillar Confidential:  GREEN         Page 7 of 13 
+ 
+12. Connect the end of the tool (indicated above by #4) to the side of upper shunt tank  (radiator cap) 
+to point (A), identified in Step 5. 
+ 
+Note: All the by -pass valves must be in the closed position, before 
+installing the tool and before the refrigerant charge cycle. 
+ 
+ 
+13. Charge with the same drained refrigerant to the recommended level according to the 
+maintenance manual. 
+ 
+ 
+ 
+ 
+ 
+ 
+16.-  Poner en marcha el motor diesel a baja RPM en vacío. 
+ 
+17.-  El motor debe tomar una temperatura de operación para la prueba, sobre los 85° C. 
+ 
+18.-  Realizar la comunicación entre la máquina y el técnico electrónico  
+. 
+ 
+19.-  Una vez realizada la comunicación, seleccionar el ECM del motor en el menú Archivo de la 
+barra de herramientas del ET. 
+ 
+ 
+ 
+ 
+ 
+  
+14. Install the fill cover ensuring coolant level 
+visibility. 
+15. Connect the ET communicator. 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Detecting Combustion Gas Leaks in Cooling System. 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.04-1255 
+Caterpillar Confidential:  GREEN         Page 8 of 13 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+20.-  Realizar una prueba de solenoide a fin de verificar el correcto funcionamiento de los solenoides 
+de los inyectores, a través del menú de diagnóstico, sub menú DIAGNOSTIC TEST. 
+ 
+ 
+ 
+ 
+21. - If during a test a problem is identified. If during a test, a problem is identified, correct it. If not 
+then continue. 
+ 
+22. - Open the 3 installed tool by-pass valves. 
+  
+WARNING 
+ 
+IF YOU MAKE CONTACT WITH A RUNNING ENGINE, YOU MAY SUFFER BURNS CAUSED BY 
+THE HOT ENGINE COMPONENTS AND PERSONAL INJURY BY THE ROTATING COMPONENTS. 
+ 
+WHEN WORKING ON A RUNNING ENGINE AVOID THE CONTACT WITH THE HOT OR 
+ROTATING COMPONENTS.   
+ 
+ 
+ 
+Note: The by-pass valve must be located in the described position, because if 
+tool damage exists in the transparent zone there is a chance of a hot coolant 
+leak, which can cause human and environmental damage.   
+ 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Detecting Combustion Gas Leaks in Cooling System. 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.04-1255 
+Caterpillar Confidential:  GREEN         Page 9 of 13 
+ 
+ 
+23. Increase the engine RPM to 1300 RPM without load (neutral position). 
+ 
+24. Select “Cylinder cutout test” on the Diagnostic menu, Diagnostic test sub menu, on the ET tool 
+bar. 
+ 
+ 
+ 
+25. Cut all the right side of the rear and front module, from the unit 1 (front engine) to unit 11 (rear 
+engine) and proceed to activate each individual injector solenoid for 30 seconds. 
+ 
+ 
+ 
+ 
+Note: Always must be an active unit from the evaluated bank. 
+ 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Detecting Combustion Gas Leaks in Cooling System. 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.04-1255 
+Caterpillar Confidential:  GREEN         Page 10 of 13 
+26. When the cylinder cut -out is done and after activation,  you must  check for combusti on gas 
+bubbles and pressure generation. These bubbles are visible through the transparent hose indicating 
+each engine side, right and left on the thermostat box.    
+ 
+ 
+ 
+27. The picture above is  evaluating the right side of a 3524B engine so you must  pay attention for 
+bubbles in the transparent hoses coming from the right side.  
+ 
+28. Apply the same procedure for the left side to identify the affected unit. 
+ 
+29. To check the diagnostic, use the Dummy Injector procedure on the unit with problems. 
+ 
+30. Once the power unit with problems is identified, proceed with the unit repairs. 
+ 
+ 
+4.0 Benefits 
+ 
+• Increased safety. There isn’t contact between technician and nitrogen. 
+• REDO reduction.  
+• Diagnostic repair time reduction. 
+• Avoid all engine regulation, decreasing probabilities of failures in good units.  
+  
+ 
+ 
+ 
+ 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Detecting Combustion Gas Leaks in Cooling System. 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.04-1255 
+Caterpillar Confidential:  GREEN         Page 11 of 13 
+5.0 Resources Required 
+ 
+• 1 polycarbonate tube (50 - 60 cm)  ¾” internal diameter. 
+• 1 polycarbonate tube (50 - 60 cm)  1” internal diameter. 
+• Hoses with couplings. 
+• Adapters, by-pass valves and one base.  
+• 2 suitcases to store and protect these tools. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+ 
+1. Viewfinder 
+2. Bank Identification Hoses 
+3. By-Pass Hoses 
+4. Upper Shunt Tank Hoses 
+5. Quick Couplers 
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Detecting Combustion Gas Leaks in Cooling System. 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.04-1255 
+Caterpillar Confidential:  GREEN         Page 12 of 13 
+ 
+
+===== PAGE 14 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Detecting Combustion Gas Leaks in Cooling System. 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.04-1255 
+Caterpillar Confidential:  GREEN         Page 13 of 13 
+7.0 Related Best Practices 
+ 
+While this Best Practice highlights Finning’s way of testing for gas leaks, below is Caterpillar’s 
+documented process to check for a gas leak in a combustion engine. It is left to the dealer to 
+decide which practice is best for them.  
+ 
+1. Remove rocker arm assembly. 
+CATERPILLAR  Method 
+2. Remove Injector. 
+3. Make sure all Fuel is out of the cylinder. 
+4. Install “Dummy Injector” by using injector hold down clamp. 
+5. Pressurize “Dummy Injector” to a maximum of 100 psi (compressed air or nitrogen). 
+a. Warning: When pressurizing the cylinder, the engine may rotate. 
+b. Warning: DO NOT exceed 100 psi when using this tool. 
+6. Open ball valve until the gauge stabilizes at 100 psi. 
+7. Close ball valve. 
+8. Watch gauge for slow and steady pressure release back to zero. 
+9. If gauge drops to “Zero” in less than 2 seconds, the cylinder is suspect. 
+10. Repeat steps 1-9 for each additional cylinder head. 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Idea coordinator. 
+ 
+Elías Sandoval G. 
+Asesor Técnico Operación Finning Escondida 
+Operación Finning Escondida 
+Móbile: +56 9 9918802 
+elias.sandoval@finning.cl 
+ 
+ 
+Idea generators. 
+ 
+Fernando Valdés V. 
+Jorge Olmos C. 
+Poirot Escovedo.

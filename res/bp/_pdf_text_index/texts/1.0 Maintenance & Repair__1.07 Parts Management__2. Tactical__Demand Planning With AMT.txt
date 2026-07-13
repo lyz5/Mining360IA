@@ -1,0 +1,521 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+February 2018 
+1802-1.07-1214 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Demand Planning with 
+AMT 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Demand Planning with AMT....................................... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 6 
+4.0 Benefits .............................................................. 7 
+5.0 Resources Required .......................................... 8 
+6.0 Supporting Attachments / References ............... 8 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ............................................ 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information pro vided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Demand Planning with AMT 
+DATE 
+5/25/2018 
+CHG 
+NO 
+00 
+NUMBER 
+1802-1.07-1214 
+Caterpillar Confidential:  YELLOW          Page 1 of 8 
+1.0 Introduction  
+ 
+The purpose of this best practice is to document and communicate how to use the 3rd party 
+software AMT (Asset Management Tool) for mining parts demand planning. AMT is a server or 
+cloud-based program (both options available depending on the need of the user) that manages 
+the site assets for a customer. The system has been adopted by various dealers around the 
+world to manage mining assets, including those under a MARC (Maintenance & Repair 
+Contract), and provides total dealer territory component visibility. This tool was developed by 
+iSolutions, which was then acquired by RPM (Runge Pincock Minarco) in 2016.  
+ 
+ 
+2.0 Best Practice Description 
+ 
+OVERVIEW  
+The demand planning best practice document provides AMT system user understanding to 
+support each customer’s asset needs and have clearer visibility to those product support 
+opportunities within a dealer’s territory. Adoption & utilization of AMT systems by dealers 
+provides a central planning hub that can be used and shared between internal dealer 
+departments.   
+ 
+This internal process should aim to capture field validated data that is utilized across the 
+dealership to make sound business decisions. The process owner must ensure departmental 
+engagement and a periodic & cyclical process should be embedded into the business to 
+ensure the data housed in AMT is current and maintained.  
+ 
+SYSTEM 
+In a dealer’s territory where a large installed base of production machines exists, the benefit of 
+a tool such as AMT becomes more apparent. Regional population in scope (decided by the 
+dealer and based on the points below) for demand planning should be loaded into the system. 
+In the past only MARC machines were loaded & managed, but that mindset has since changed 
+for several dealers to now load / maintain all mining machines in the territory (i.e. both MARC 
+and non-MARC).  
+ 
+Assets generally loaded and maintained in AMT would include:  
+• Customer mining machines 
+• Machines under MARC and non-MARC  
+• Assets primarily used for production or to support production 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Demand Planning with AMT 
+DATE 
+5/25/2018 
+CHG 
+NO 
+00 
+NUMBER 
+1802-1.07-1214 
+Caterpillar Confidential:  YELLOW          Page 2 of 8 
+Below is a graphic of the type of data that would be brought into AMT for demand planning 
+purposes: 
+ 
+ 
+ 
+ 
+VALIDATION 
+After the assets are loaded and set up in the system, periodic field validation and AMT system 
+maintenance is required to ensure the data is updated. Although the frequency is determined 
+by the dealer, it is recommended to perform this maintenance / validation at least once per 
+month. The data requiring an update would include:  
+• Meter reading (SMU – Service Meter Units)  
+• Machine utilization (trend) 
+• Machine status (i.e. Operating, parked, scrapped, sold) 
+• Major component last change-out details (updated) 
+• Customer sales status and / or Customer probability of sale for upcoming opportunity 
+events (%) 
+• Customer’s component maintenance strategy (i.e. Rebuild, Reman, etc.) (Part 
+classification) 
+• Primary part number of the major component for the specific machine serial number 
+(PPN – Primary Part Number) 
+• Component schedule understanding / alignment with customer (based on latest site 
+plan and condition monitoring) 
+• System adjustments in long term planning, aligned with customers plans 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Demand Planning with AMT 
+DATE 
+5/25/2018 
+CHG 
+NO 
+00 
+NUMBER 
+1802-1.07-1214 
+Caterpillar Confidential:  YELLOW          Page 3 of 8 
+PROCESS FLOW 
+ 
+               
+ 
+   
+COMPONENT STRATEGY  
+Once the customer / dealer component strategy has been validated & maintained in AMT, a 
+forward-looking dealer territory forecast can be discussed and shared across dealer 
+departments. Three elements of analysis are required as below: 
+ 
+1) Determine whether PEX (Dealer Parts Exchange) stock level is adequate, considering CRC 
+(Component Rebuild Centre) component rebuild turnaround time 
+2) Determine the piece parts that will be required for the rebuilds using local dealer builder files 
+& standard jobs 
+3) Understand customer requirements & CRC maximum capacity to determine if peak shaving 
+is needed by utilizing Reman major components to support turnaround times & machine 
+availability requirements at site 
+4) Order the necessary parts and/or components and plan the necessary labor & tooling 
+requirements to support the rebuild / replacement events 
+5) Collaborate with the dealer’s product support commercial and Global Aftermarket Solutions 
+teams to improve the probability of sale %’s for those that have currently been classified as 
+less than 50% 
+ 
+PCR / PLESN  
+On a quarterly basis, Caterpillar requests a validated, forward-looking PCR / PLESN (Planned 
+Component Replacement / Plan for Every Serial Number) forecast for a two-year period from 
+dealers. Here, validation means the dealer has spoken with the customer and verified the most 
+current site rebuild / replacement plans for the serial numbers in question, rather than just 
+using a theoretical calculation to estimate the rebuild / replacement plans. These dealer 
+territorial volumes are aggregated into a global perspective to better understand where any 
+inventory adjustments are necessary. From an inventory standpoint, the Cat Inventory 
+Management (IM) team compares the on-hand and on-order (with our supply base) levels by 
+part number to the forecasted demand being reflected in PCR & PLESN. IM then makes the 
+decision to adjust schedules on the supply base as needed to meet those projected demand 
+levels. After inventory adjustment decisions have been made by IM, the data is categorized by 
+value (US$ Dealer Net) by Cat distribution center and by product line, and provided back to the 
+dealers on a quarterly basis for those that participated in the particular quarter’s cycle. It 
+should be mentioned that all mining dealers are strongly encouraged to participate in each 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Demand Planning with AMT 
+DATE 
+5/25/2018 
+CHG 
+NO 
+00 
+NUMBER 
+1802-1.07-1214 
+Caterpillar Confidential:  YELLOW          Page 4 of 8 
+quarter’s cycle to ensure the supply base is understanding & receiving accurate and updated 
+signals from the field regarding what parts & quantities will be needed and when. 
+ 
+Also included in the process should be the logical outcome where dealers are placing planned 
+orders (CPRO – Committed Planned Replacement Order; or FDO – Future-Dated Order) that 
+align with the PCR / PLESN signals received from the site. By placing planned orders that 
+align with these signals, dealers can improve the probability their order will be filled when 
+needed, given planned orders have a higher priority in the system (i.e. CPRO order type is the 
+highest priority order other than critical life and/or war-type situations).  
+ 
+Additionally, the PCR / PLESN information provided by dealers is utilized by other internal Cat 
+divisions such as product groups (i.e. Lifecycle analysis, projected opportunities, repair option 
+gaps & potential pricing reviews) and regional teams (i.e. Address lower probability of sale 
+opportunities to further work these and close to our favor).  
+ 
+EXAMPLE OF DEALER FORECASTING PROCESS (Hastings Deering AUS / PNG) 
+The process outlined on the following page showcases the involvement of a number of key 
+dealer functions in order to both produce the component and part forecast as well as 
+incorporate this into an overall dealer Sales & Operational Planning (S&OP) process. The 
+outcome of this process is the placement of orders on Cat to meet forecasted customer 
+demand for those parts and components the dealer currently does not have in inventory. 
+ 
+An additional acronym used in the process map below that has not yet been mentioned is IPP. 
+This stands for Incremental Piece Parts, and involves Hastings Deering’s process / analysis of 
+identifying the average replacement rate for piece parts used in the component rebuilds. 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Demand Planning with AMT 
+DATE 
+5/25/2018 
+CHG 
+NO 
+00 
+NUMBER 
+1802-1.07-1214 
+Caterpillar Confidential:  YELLOW          Page 5 of 8 
+Component Forecast & Parts Planning Management Process
+PEX Review
+ AMT Component Forecast
+Parts Inventory Review
+Recommendations
+Executive Team
+ Standard Jobs
+IPP Demand
+AMT Governance Framework
+AMT Component 
+Forecast By Primary Part 
+Number and Rebuild 
+Location
+AMT Component 
+Strategy Tasks
+Sales Status & Strategy 
+Forecast Health
+AMT Component 
+Forecast – Next 12 
+Months
+Std Job + IPP Piece Part 
+Forecast – Months 4 to 
+12
+Standard Job by Group 
+Number (AMT Primary 
+Part Number)
+PEX Inventory 
+Adjustment 
+Recommendations
+Piece Part Inventory 
+Order 
+Recommendations
+PEX Inventory Review – 
+Next 12 Months
+Piece Part Inventory 
+Review – Stock, FDO and 
+CPRO Orders
+PEX Dept. Review 
+(Week 1)
+Fleet Solutions & PEX 
+Dept. Review 
+(Week 2)
+PEX Inventory 
+Adjustment Approvals
+Piece Part Inventory 
+Order Approvals
+Group Inventory 
+Control Review
+(Weeks 1 & 2)
+Standard Job Piece 
+Part Review
+SMU
+Last Performed
+Next Due
+Review Status
+Sales Status
+Probability of Purchase
+First 2 weeks of each mth3rd week of each mth First 2 weeks of each mth Prior to End of MonthOngoingBefore 3rd week of each mth
+Piece part Inventory 
+Project 
+Recommendations
+PEX Inventory Project 
+Recommendations
+Piece Part Inventory 
+Project Approvals
+PEX Inventory Project 
+Approvals
+Component Overhaul 
+Average Incremental 
+Piece Part Replacement
+Component IPP 
+Review
+Combined AMT + PEX 
+Core + Repair Core 
+Component Overhaul 
+Demand
+Ongoing
+ 
+ 
+  
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Demand Planning with AMT 
+DATE 
+5/25/2018 
+CHG 
+NO 
+00 
+NUMBER 
+1802-1.07-1214 
+Caterpillar Confidential:  YELLOW          Page 6 of 8 
+3.0 Implementation Steps 
+ 
+Implementing this Best Practice will require the commitment of the following key stakeholders 
+to ensure success. 
+ 
+1) Dealer senior level management responsible for: 
+a) Committing to the vision of demand planning 
+b) Cascading this vision to lower levels within the dealership to ensure all key departments 
+are on board and aligned 
+c) Empowering the individuals responsible for executing demand planning with the 
+necessary resources to be successful 
+ 
+2) Customer facing personnel responsible for (could be PSSR’s (Parts & Service Sales 
+Representatives), account representatives, site planners, or other site personnel): 
+a) Collecting customer maintenance planning information and repair strategies to be 
+pursued 
+b) Updating component replacement schedules, machine meter readings and actual 
+component replacement data (serial number, major component part number, date when 
+service was performed, hours on component when service was performed) 
+c) Maintaining the estimated probability of sale %’s and Sales Status for future component 
+replacements  
+ 
+3) Service Operations personnel responsible for: 
+a) Ongoing Standard Job development  
+b) IPP parts identification through average work order analysis routines to ensure these 
+are regularly updated as component lives are extended and the associated replacement 
+%’s of the required piece parts can fluctuate 
+ 
+4) AMT administration personnel responsible for: 
+a) Performing regular analysis of AMT Forecast 
+b) Bringing together the component forecast and the piece part requirements 
+c) Sharing this data across the dealership to the impacted departments to ensure all 
+departments are leveraging the same data / source and planning accordingly 
+ 
+5) Parts Department personnel responsible for: 
+a) Analyzing the component replacement requirements against PEX inventory levels to 
+determine Cat Reman peak shaving needs, and placing CPRO’s accordingly and as 
+needed 
+b) Analyzing and placing CPRO orders for required piece parts to meet the expected CRC 
+rebuild demand 
+ 
+6) CRC and/or Service Department personnel responsible for: 
+a) Analyzing the expected rebuild signals from AMT to ensure sufficient capacity exists to 
+address the demand 
+b) Planning labor and tooling to align with the expected rebuild demand 
+ 
+7) Product Support Sales Department personnel responsible for: 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Demand Planning with AMT 
+DATE 
+5/25/2018 
+CHG 
+NO 
+00 
+NUMBER 
+1802-1.07-1214 
+Caterpillar Confidential:  YELLOW          Page 7 of 8 
+a) Analyzing the AMT data where the probability of sale %’s for certain opportunities are 
+lower than expected 
+b) Collaborating with the necessary partners such as Global Aftermarket Solutions to 
+address the lower probability % and ensure steps are being taken to close the 
+opportunity in our favor (i.e. assurance, bundling, CSA, pricing, etc.). 
+ 
+Successfully bringing this process together requires an overall S&OP management process to 
+manage all steps as the end-to-end process cannot be successfully performed in isolation by a 
+single functional department. 
+ 
+ 
+4.0 Benefits 
+ 
+The benefits of a robust demand planning process are not only for Caterpillar and the dealer, 
+but extend to the customer as well, providing a win/win/win scenario. The graphic below 
+highlights the high-level benefits for each party, though these lists are not exhaustive.  
+ 
+ 
+ 
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Demand Planning with AMT 
+DATE 
+5/25/2018 
+CHG 
+NO 
+00 
+NUMBER 
+1802-1.07-1214 
+Caterpillar Confidential:  YELLOW          Page 8 of 8 
+5.0 Resources Required 
+ 
+The resources required to establish a robust demand planning process depends on the 
+process, people, and system to be leveraged. The process has been laid out in this best 
+practice, and the people mentioned above need to have the necessary time to carry out these 
+functions. From a system standpoint, AMT has been mentioned here as a tool that has worked 
+well for several large mining dealers to support the demand planning process. If AMT is 
+considered for a dealer, a decision needs to be made whether to go with the more-expensive 
+server option, or lesser-expensive (and fewer capabilities) Cloud-based option. For further 
+consideration and discussion, the dealer can contact the regional Global Aftermarket Solutions 
+Demand Planner.  
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Demand planning best practice supporting screen shot document_AMT.pptx 
+https://dealer.cat.com/en/ps/parts/partsgrams.html (parts grams regarding CPRO and FDO 
+order types) 
+ 
+ 
+7.0 Related Best Practices 
+ 
+F-Series Truck Rebuild Parts Availability - Best Practice Document 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Special thanks to Hastings Deering (Australia) for sharing valuable information to support this 
+best practice. 
+ 
+This Best practice was written by: 
+Mark Lynch 
+Demand Consultant 
+Lynch_mark@cat.com  
++61 8 9475 8508

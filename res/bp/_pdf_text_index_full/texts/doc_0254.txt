@@ -1,0 +1,337 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Tooling Setup for R&I of Steering Cylinders & Tie Rods in LOHT.pdf
+PAGES: 8
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Tooling Setup for R&I of 
+Steering Cylinders/Tie 
+Rods in LOHT 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Tooling Setup for R&I of Steering Cylinders/Tie Rods 
+in LOHT...................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+9.0 Appendix – Hoist Specifications......................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+April 2013 
+1301-4.03-1305 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+1.0 Introduction  
+ 
+The objective of this Best Practice is to outline the procedure and tooling required to effectively 
+and safely remove/install steering cylinders and tie rods from Large Off-Highway Trucks (LOHT). 
+A procedure currently exists in SIS for this process; however this Best Practice is designed to 
+improve the tooling setup used to facilitate removal and installation. The benefits are primarily to 
+ensure mechanic/fitter safety and reduce the physical exertion required in the removal/installation 
+process.  
+ 
+ 
+2.0 Best Practice Description 
+ 
+Secure the steering cylinder/tie rod support frame by bolting it to the turntable of a common belly 
+guard hoist. The turntable allows 360 degree movement of the support frame to easily align it with 
+the steering cylinder or tie rod before they are disconnected. The belly guard hoist has a 
+pneumatically operated motor to drive the wheels, eliminating the need for the operator to push 
+and pull the hoist. The hydraulic lift system is contained within the hoist and is manually operated 
+by the lever arm. These factors combine to produce an efficient, safe and an easy to execute 
+method of steering cylinder and tie rod removal and installation in LOHT. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+3.1 Hoist  
+ 
+Source an appropriately sized and rated hoist with turntable in accordance with the size of the 
+steering cylinder or tie rod that is to be removed/installed from the truck. The hoist is hydraulically 
+driven from a pneumatically operated motor, allowing the entire assembly to be moved easily. 
+The flat surface of the hoist is raised or lowered by physically pumping the lever arm up and 
+down, or via a separate lever (depending on model), to the desired level, as per a standard pallet 
+jack. Refer to Sections 6 and Section 9 of this document for specifications and other details. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tooling Setup for R&I of Steering Cylinders & Tie Rods 
+in LOHT 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.03-1305 
+Caterpillar Confidential:  GREEN          Page 1 of 7 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+       
+  
+Figure 3.1 Belly guard hoist to be used as steering cylinder/tie rod hoist. 
+ 
+ 
+3.2 Support Frame 
+ 
+Ensure that the support frame conforms to the relevant local standard(s) for weight bearing 
+requirements. 
+ 
+. 
+Figure 3.2 Support frame for steering cylinder/tie rod. 
+610 mm 
+200 mm 
+70 mm 
+Pneumatic drive 
+controls 
+Turntable 
+Pneumatically powered 
+drive wheel 
+Support chains 
+Pneumatic hose 
+connection 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tooling Setup for R&I of Steering Cylinders & Tie Rods 
+in LOHT 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.03-1305 
+Caterpillar Confidential:  GREEN          Page 2 of 7 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+3.3 Assembly 
+  
+Secure the support frame to the hoist by bolting it to the turntable. Ensure that the type and 
+number of bolts is in accordance with any relevant local standard to support the steering cylinder 
+or tie rod. Note that the weight of a steering cylinder from a 797F is approximately 329 kg (725 
+lbs).  
+ 
+ 
+Figure 3.3 Support frame bolted to turntable on hoist. 
+ 
+3.4 Install & Remove  
+ 
+Install/remove the steering cylinder and tie rods using the hoist/support frame assembly in 
+accordance with the Removal & Installation Instructions outlined in document KENR8579-04 
+located in SIS. 
+ 
+Support frame bolted 
+to turntable 
+Pneumatic hose 
+connection 
+Chains to secure steering 
+cylinder/tie rod 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tooling Setup for R&I of Steering Cylinders & Tie Rods 
+in LOHT 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.03-1305 
+Caterpillar Confidential:  GREEN          Page 3 of 7 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+Figure 3.4 Hoist raised and placed in position. 
+ 
+ 
+Figure 3.5 Support frame positioned under steering cylinder. 
+ 
+Support chain hooks 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tooling Setup for R&I of Steering Cylinders & Tie Rods 
+in LOHT 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.03-1305 
+Caterpillar Confidential:  GREEN          Page 4 of 7 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+Figure 3.6 Steering cylinder secured to support frame and jack lowered ready for removal from 
+beneath the truck. 
+ 
+4.0 Benefits 
+ 
+• Assembly is robust and secure, reducing the likelihood of tooling failure or dropping of the 
+steering cylinder or tie rod. 
+• Pneumatic drive motor eliminates manual pushing and pulling of the hoist, reducing operator 
+fatigue. 
+• Increased efficiency by reducing component change out time. 
+• Since the hoist was originally designed to be used to remove and install the belly pan of 
+various machines, it can also be used for this purpose. 
+ 
+5.0 Resources Required 
+ 
+• 1 x Steering cylinder/tie rod hoist with pneumatic motor drive control. 
+• 1 x Suitable support frame. 
+• 4- 8 x Bolts (size and number as required) to secure support frame to the turntable on the hoist. 
+• Shifter/Pneumatic drill to secure support frame to the hoist. 
+• Pneumatic air supply to drive the hoist. 
+ 
+6.0 Supporting Attachments / References 
+ 
+• SIS document: KENR8579-04 (Steering Cylinder R&I – SMCS: 4303-010) or any other LOHT 
+removal & installation document of a steering cylinder. 
+• Belly pan hoist sourced from Hedweld, Model number: Tl10018. 
+(http://www.hedweld.com.au/trilift/belly-pan-hoist-and-tooling/belly-pan-hoist) 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tooling Setup for R&I of Steering Cylinders & Tie Rods 
+in LOHT 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.03-1305 
+Caterpillar Confidential:  GREEN          Page 5 of 7 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Adam Rieck – Equipment Management Consultant 
+Caterpillar Global Mining 
+ 
+The idea of creating and implementing this Best Practice belongs to: 
+ 
+Victor Lai – Equipment Management Consultant 
+Caterpillar Global Mining 
+ 
+Recognition: 
+ 
+Lance Norbury – Workshop Supervisor 
+WesTrac WA – Boddington mine site 
+ 
+ 
+ 
+9.0 Appendix – Hoist Specifications 
+ 
+An example of a potential belly pan hoist sourced from Hedweld, Model number: Tl10018. 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tooling Setup for R&I of Steering Cylinders & Tie Rods 
+in LOHT 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.03-1305 
+Caterpillar Confidential:  GREEN          Page 6 of 7 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tooling Setup for R&I of Steering Cylinders & Tie Rods 
+in LOHT 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.03-1305 
+Caterpillar Confidential:  GREEN          Page 7 of 7

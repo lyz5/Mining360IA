@@ -1,0 +1,137 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Valve GP-Modulating Test Tool.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+Maintenance and 
+Repair 
+MINING DEALER BEST PRACTICE 
+Valve GP- Modulating 
+Test Tool 
+Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC 
+Management 
+Valve GP- Modulating Test Tool ................................ 1 
+1.0 lntroduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits ............................................................. 4 
+5.0 Resources Required ......................................... .4 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ........................................... 5 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of "Best Practices." Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional "Best 
+Practice" recommendations from our dealer network. 
+875 W Cushing St., Tucson, AZ 85745 
+November 2021 
+4.03-211110-1 
+cat.com/mining 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+1.0 lntroduction 
+When transmissions are brought to the workshop to be revised, the Valve GP- Modulating should 
+be tested to see whether it is properly working. Normally, an electrical test is performed. This test 
+measures the current on the solenoid, and if it is between specific values, we believe it works 
+properly. However, this test can only help us decide if the Valve GP- Modulating is working 
+electrically; it does not give a clue about whether or not it is working physically. This means the 
+Valve GP- Modulating could have physical damage, but the electrical test would not be able to 
+detect it, and since we don't test the whole transmission, old valves were assembled without 
+physical testing after revision. That is a huge risk and could lead to other part failures and costly 
+and inefficient rework. Therefore, to detect any kind of physical damage, one of our engineers 
+designed a test tool for the Valve GP- Modulating. 
+2.0 Best Practice Description 
+The basic logic behind the test is to simulate the working principle of the Valve GP- Modulating 
+by using this tool. After connecting the Valve GP- Modulating, the pressure gauge and the 
+signal generator to each other, the voltage is applied to the modulation valve in increasing 
+incremental steps. Then the pressure gauge is checked to see whether the pressure is 
+increasing step by step and if it reaches the peak point (about 400 PSI). lf it reaches the peak 
+point, it is working properly. lf the Valve GP- Modulating couldn't make it to the peak pressure 
+point, that means it is not working properly. You can view the process in the attached video. 
+3.0 Implementation Steps 
+1. Create the test tool according to the attached engineering print.
+2. Connect the Valve GP- Modulating to the test tool. (Tank and pump lines are specified.)
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS VVITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+DATE CHG 
+Valve GP- Modulating Test Tool NO NUMBER 
+11/10/2021 00 4.03-211110-1 
+Caterpillar: Confidential Yellow Page 2 of 5 
+
+===== PAGE 3 =====
+3. Connect the tank and pump lines.
+MINING DEALER BEST PRACTICE 
+4. Attach one (1) pressure gauge to the valve to be tested and one (1) pressure gauge to the
+input line. Attach the signal energy cable.
+• 
+• 
+• • • • • 
+• • ------• • •
+• 
+• • •
+• • • • • 
+• • •
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS VVITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+DATE CHG 
+Valve GP- Modulating Test Tool NO NUMBER 
+11/10/2021 00 4.03-211110-1 
+Caterpillar: Confidential Yellow Page 3 of 5 
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+5. Check the pressure on the modulation by applying voltage (in increasing incremental steps)
+to the modulation valve and see whether the valve is working or not. The pump inlet
+pressure should reach 400 PSI.
+4.0 Benefits 
+• Eliminates the risk of reassembling physically damaged valves;
+• Prevents damage to other parts of equipment that would be caused by faulty and
+damaged valves;
+• Decreases rework cost and time if the valve is found to be physically damaged;
+• Delivers higher quality and more efficient service back to the customer.
+5.0 Resources Required 
+ltem Cost 
+Aluminum Plate $30 
+(200x11 0x80 cm) 
+Signal Generator $160 
+Labor $60 
+Total $250 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS VVITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+DATE CHG 
+Valve GP- Modulating Test Tool NO 
+11/10/2021 00 
+Caterpillar: Confidential Yellow 
+NUMBER 
+4.03-211110-1 
+Page 4 of 5 
+
+===== PAGE 5 =====
+6.0 Supporting Attachments / References 
+Valve GP- Modulating Test Tool_Technical Drawing.pdf 
+Valve GP- Modulating Test Tool_ Video.mp4 
+7 .0 Related Best Practices 
+N/A. 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+Mustafa Tuzcu 
+CRC Engineer Intern 
+Borusan Makina ve Güc; Sistemleri 
+This Best Practice was designed by: 
+Aycan Ulu 
+CRS Workshop Engineer 
+Borusan Makina ve Güc; Sistemleri 
+This Best Practice and project were supported by: 
+Emre Karahan 
+Gebze CRC Supervisor 
+Borusan Makina ve Güc; Sistemleri 
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS VVITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+DATE CHG 
+Valve GP- Modulating Test Tool NO NUMBER 
+11/10/2021 00 4.03-211110-1 
+Caterpillar: Confidential Yellow Page 5 of 5

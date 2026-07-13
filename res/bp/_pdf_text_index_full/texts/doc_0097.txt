@@ -1,0 +1,185 @@
+SOURCE: 1.0 Maintenance & Repair\1.10 Continuous Improvement\3. Quick Win\Machine Inspection Technician Toolbox.pdf
+PAGES: 9
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+MINING DEALER BEST PRACTICE 
+Machine Inspection 
+Toolbox 
+Maintenance and 
+Repair  Application 
+Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC 
+Management
+Machine Inspection Toolbox…………………………...1 
+1.0      Introduction.........................................................2 
+2.0 Best 
+Practice Description ..................................4 
+3.0 Implementation Steps........................................4 
+4.0 Benefits .............................................................8 
+5.0 Resources Required..........................................8 
+6.0 Supporting Attachments / References ..............9 
+7.0 Related Best Practices ................................... ....9 
+8.0 Ackno
+wledgements ...........................................9 
+, 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+April 2021 
+1.10-210413-1
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+Page 2 of 9 Caterpillar Confiden tial: YELLOW 
+Figure 1 - Broken Plastic Case  Figure 2 - Broken Hose 
+1.0 Introduction 
+For machine inspections, the general tool requirements are: 
+• Pressure test gages
+• Pressure hoses
+• Blowby hose
+• Blowby meter and its attachments
+• Computer
+• ET control device
+• Aerometer
+• Thermometer
+• Hydrometer battery tester
+• Voltmeter
+• Filter cutter tool
+T
+his best practice provides an improvement it two areas: 
+1. Handling
+Handling this equipment in separate individual carry cases can or result six or seven cases being 
+used. Since the cases can be heavy, the technician would need to make several trips (time 
+consuming) or risk damaging boxes and equipment. Those plastic cases are often too firm, intending 
+to protect the attachments and devices, but still often becoming damaged as they move around. 
+2. Safety
+When attempting to carrying out a variety of pressure tests with a limited number of gages available, 
+a safety risk can occur. The safety risk occurs when a hoses and gages are required to be handled 
+by the technician (both removal and re-fitting) in order to test various pressures without having 
+sufficient time to allow oil and components to cool. 
+THE INFORMATION HEREIN MAY N OT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Inspection Tec hnician Toolbox 
+DATE CHG Number 
+NO 
+04/13/2021 00 1.10-210413-1
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+Page 3 of 9 Caterpillar Confiden tial: YELLOW 
+Figure 3 - Old Plastic Cases 
+Figure 4 - Old Inspection Method  
+This Best Practice solution is to provide a single ‘Machine Inspection Technician Toolbox’. 
+THE INFORMATION HEREIN MAY N OT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Machine Inspection Tec hnician Toolbox 
+DATE CHG 
+NO 
+04/13/2021 00 1.10-210413-1
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+Page 4 of 9 Caterpillar Confiden tial: YELLOW 
+2.0 Best Practice Description 
+The Machine Inspection Technician Toolbox enables its user to carry its inspection dev ices and 
+attachments easily, quickly and safely. 
+The toolbox consists of 5 shelves containing the following:  
+1. Twenty pressure test gages of various ratings
+2. Aerometer, Thermometer, Hydrometer battery tester, Voltmeter and a Filter cutter tool
+3. Computer and ET control device
+4. Blowby meter and attachments
+5. Pressure hoses and a blowby hose
+T
+he fifth shelf is larger than other shelves providing space for  longer hoses. Sty rofoam is used to 
+secure the equipment. More details and a sketch can be found in the Supporting Attachments / 
+References part. 
+3.0 Implementation S teps 
+Step1: Connecting pressure test gages to metal plate 
+THE INFORMATION HEREIN MAY N OT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Inspection Tec hnician Toolbox 
+DATE CHG 
+NO 
+04/13/2021 00 1.10-210413-1
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+Page 5 of 9 Caterpillar Confiden tial: YELLOW 
+Step2: Labeling pressure test gages acco rding to their order and pressure value 
+Step3: Shaping styrofoam for placing devices and attachments 
+THE INFORMATION HEREIN MAY N OT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Machine Inspection Tec hnician Toolbox 
+DATE CHG 
+NO 
+04/13/2021 00 1.10-210413-1
+
+===== PAGE 6 =====
+MINING DEALER BEST PRACTICE 
+Page 6 of 9 Caterpillar Confiden tial: YELLOW 
+Step4: Placing devices and attachments 
+Step5: Placing devices and its attachments to the Inspection Box 
+THE INFORMATION HEREIN MAY N OT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Inspection Tec hnician Toolbox 
+DATE CHG 
+NO 
+04/13/2021 00 1.10-210413-1
+
+
+===== PAGE 7 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY N OT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Inspection Tec hnician Toolbox 
+DATE CHG 
+NO 
+04/13/2021 00 1.10-210413-1
+Caterpi llar Confi den tial: YELLOW     Page 7 of 9
+
+===== PAGE 8 =====
+MINING DEALER BEST PRACTICE 
+Page 8 of 9 Caterpillar Confiden tial: YELLOW 
+4.0 Benefits 
+1. Reduces inspection time from 1 days to around 2 hours
+2. Reduces number of journeys to and from equipment store carrying multiple plastic c ases
+3. Prevents occupational-work accid ents which are based on lack of equipment.
+4. Increases quality of pressure measurement.
+5.0 Resources Required 
+THE INFORMATION HEREIN MAY N OT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Machine Inspection Tec hnician Toolbox 
+DATE CHG 
+NO 
+04/13/2021 00 1.10-210413-1
+
+
+===== PAGE 9 =====
+MINING DEALER BEST PRACTICE 
+Page 9 of 9 Caterpillar Confiden tial: YELLOW 
+6.0 Supporting Attachments / References 
+A sketch of the metal sheet where pressure test gages placed in. 
+7.0 Relat
+ed Best Practices 
+None. 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+Ibrahim Hakki Er duran 
+CRC Engineer Intern 
+Borusan Makina ve Güç Sistemleri 
+This Best Practice designed by: 
+Mert Emre Aksu 
+ERS Techni cian 
+Borusan Makina ve Güç Sistemleri 
+Project and Best practice supported by 
+Ömer Emre Demirkale 
+CRC Manager 
+Borusan Makina ve Güç Sistemleri 
+Rafet Kaymakci 
+Mining Customer S upport Manager 
+Borusan Makina ve Güç Sistemleri 
+THE INFORMATION HEREIN MAY N OT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Machine Inspection Tec hnician Toolbox 
+DATE CHG 
+NO 
+04/13/2021 00 1.10-210413-1

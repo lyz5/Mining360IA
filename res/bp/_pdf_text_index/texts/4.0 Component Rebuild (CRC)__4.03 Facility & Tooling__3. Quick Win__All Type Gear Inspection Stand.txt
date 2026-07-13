@@ -1,0 +1,146 @@
+===== PAGE 1 =====
+March 2021 
+4.03-210316-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+MINING DEALER BEST PRACTICE 
+All Type Gear 
+Inspection Stand 
+Maintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+All Type Gear Inspection Stand ................................. 1 
+1.0 Introduction ....................................................... 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ....................................... 3 
+4.0 Benefits ............................................................. 5 
+5.0 Resources Required ......................................... 5 
+6.0 Supporting Attachments / References .............. 5 
+7.0 Related Best Practices...................................... 5  
+8.0 Acknowledgements ........................................... 6 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+All Type Gear Inspection Stand
+DATE 
+3/16/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210316-1 
+Caterpillar: Confidential Yellow Page 2 of 6 
+1.0 Introduction 
+Gears and gear systems are used for power transmissions in various components. Since these 
+gears are under intense operating conditions, the parts must be inspected with great care and 
+attention. If damaged gears are not found, the rebuilt component may fail when it’s put back into 
+service. 
+To inspect the gears more effectively, controlling them with a stand under appropriate lighting will 
+produce more positive results. 
+2.0 Best Practice Description 
+A gear inspection stand will provide better accessibility to and more accurate results of all 
+sizes of gears in a component. All gears from a single component can be inspected at the 
+same time with this stand. With the light attached to the stand, thorough inspection of the 
+gears can be achieved and even minimal damage and wear can be found.  
+Steel tubes, a weldable steel profile and an LED lamp are used in this project. The 
+engineering prints for the stand can be found in the attachments section. Below are 
+pictures of the manufactured stand. 
+
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+All Type Gear Inspection Stand
+DATE 
+3/16/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210316-1 
+Caterpillar: Confidential Yellow Page 3 of 6 
+3.0 Implementation Steps  
+1. Different types of gears are placed on the appropriate control rod.
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+All Type Gear Inspection Stand
+DATE 
+3/16/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210316-1 
+Caterpillar: Confidential Yellow Page 4 of 6 
+2. The moving lamp is brought closer to the gears to be inspected and the light height is
+adjusted.
+3. The stand is controlled from both sides by turning the gears under the light.
+
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+All Type Gear Inspection Stand
+DATE 
+3/16/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210316-1 
+Caterpillar: Confidential Yellow Page 5 of 6 
+4. Inspection of the gears for any damage or wear is performed.
+4.0 Benefits  
+ Easy inspection of all types of gears at the same time;
+ Produces more accurate results of inspections;
+ Minimizes overlooking gear damage, such as spot fractures on the gear planetary teeth.
+5.0 Resources Required 
+Item Cost 
+Material $170 
+Labor $390 
+Total $560 
+6.0 Supporting Attachments / References  
+All Type Gear Inspection Stand_Engineering Print.pdf 
+7.0 Related Best Practices  
+N/A. 
+
+
+===== PAGE 6 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+All Type Gear Inspection Stand
+DATE 
+3/16/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210316-1 
+Caterpillar: Confidential Yellow Page 6 of 6 
+8.0 Acknowledgements  
+This Best Practice was written by: 
+Mustafa Tuzcu 
+CRC Engineer Intern 
+Borusan Makina ve Güç Sistemleri 
+This Best Practice was designed by: 
+Ahmet Çakır 
+Assistant Technician 
+Borusan Makina ve Güç Sistemleri 
+Satılmış Çelik 
+Assistant Technician 
+Borusan Makina ve Güç Sistemleri 
+This Best Practice and project were supported by: 
+Ömer Emre Demirkale 
+CRC Manager 
+Borusan Makina ve Güç Sistemleri

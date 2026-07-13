@@ -1,0 +1,295 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Wireless Pager System Optimizes Workflow Process.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2011  
+1106-4.01-1237  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+   Wireless Pager System 
+Optimizes Workflow 
+Process 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC)  
+ 
+MARC  
+Management 
+ 
+ 
+Wireless Andon Pager System Optimizes Workflow 
+Process ..................................................................... 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 4 
+4.0  Benefit ............................................................... 5 
+5.0  Resources Required .......................................... 5 
+6.0  Supporting Attachments / References ............... 5 
+7.0  Related Best Practices ...................................... 5 
+8.0  Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Wireless Andon Pager System Optimizes Workflow 
+Process 
+DATE 
+6/6/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1106-4.01-1237  
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+1.0 Introduction  
+ 
+During the repair process in the CRC machining cent er, workflow interruptions and delays can 
+occur due to a variety of reasons, such as issues w ith tooling, parts, logistics, technicians, etc.  
+Quick and effective response by shop management to resolve the interruptions maintain the 
+workflow and minimizes downtime of equipment and pe rsonnel, reducing the cost of downtime 
+and improving the repair Turn Around Time (TAT). 
+ 
+ 
+2.0 Best Practice Description 
+The Ferreyros CRC machining center uses a wireless system to alert quality inspectors and 
+supervisors of any problem in the production workflow process.  This gives the operator the ability 
+to call for the required assistance at the moment a  problem occurs. For this purpose, the 
+technicians need a system that allows instant commu nication with the proper resource to solve 
+the problem and allow the continuity of production. 
+ 
+The machining workstations also require the transpo rt of large parts into and out of the 
+workstation.  The wireless system is used to alert the parts runners when a job is completed to 
+removed the completed component and bring in the next job. 
+ 
+This Best Practice presents a wireless system of alerts that allows direct communication between 
+the workstation operator and the supervisor, quality inspector, or runner who will attend the call. 
+ 
+The system is set up so that each workstation has a  wireless paging device that allows the 
+operator to page the Supervisor, Quality Inspector, or Runner. 
+ 
+ 
+The team receives the call through a wireless wrist  band receiver indicating attention is needed 
+and which work station.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Wireless Andon Pager System Optimizes Workflow 
+Process 
+DATE 
+6/6/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1106-4.01-1237  
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+Old system  
+ 
+Andon call lights 
+New system  
+ 
+Call button and wrist pagers  
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Wireless Andon Pager System Optimizes Workflow 
+Process 
+DATE 
+6/6/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1106-4.01-1237  
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+ 
+ 
+To achieve efficient attention to the workstations, the workshop has been zoned according to load 
+balancing.  Pagers in each area are set up to notify the supervisor, quality inspector, or parts 
+runner for that area. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Wireless Andon Pager System Optimizes Workflow 
+Process 
+DATE 
+6/6/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1106-4.01-1237  
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+The system used by Ferreyros has software that stores all call information and attention to 
+workstations by different teams, thus allowing different reports on the call time for staff, per 
+workstation, per shift, etc. 
+ 
+The supplier for Ferreyros was Vellux, however, there are many commercially available suppliers of 
+paging systems. 
+ 
+ 
+E-mail: 
+velluxperu@promhispanos.com  
+Web Site: www.velluxsystems.com   
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+• Define the work area zone and number or work stati ons in the zone 
+• Define the responders for each zone: Supervisors, Quality Inspectors, Runners 
+• Acquire hardware and software and install 
+• Train personnel 
+• Implement 
+ 
+The wireless system project was conducted as Caterpillar Production Systems project to reduce 
+excess motion, time, over process, inventory, and transport. 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Wireless Andon Pager System Optimizes Workflow 
+Process 
+DATE 
+6/6/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1106-4.01-1237  
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+ 
+4.0 Benefit 
+• Communicate a delay in seconds to Supervisors, Qua lity Inspectors, and Runners 
+• Lets you route the call to the people assigned to each point 
+• Reduces travel time and increases shop productivit y, which reduces cost and increases 
+profitability 
+• Vibrating wristbands alert responder no matter whe re he may be located.  Much more 
+efficient than the “visual” Andon light system 
+• Reduce the risk of accidents. The workers are not distracted by looking at traffic lights 
+• The workshop can measure delay times and number of  calls of each operator, optimizing 
+time and human resources work. This will allow opti mal management within each 
+workshop 
+• More organized workshop and good communication 
+ 
+5.0 Resources Required 
+ 
+• Call buttons for each workstation for every workst ation 
+• Pager wristband for each Supervisor, Quality Inspe ctor or Runner 
+• Transmission master VM2700 multi functions 
+• 2 relays (01 repeater VBR-100H and 01 repeater VPR -100H)  
+• Custom software 
+• Total Investment US$ 8,200 for 35 workstations and  8 pagers. 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Name Patricia Valdivieso Naupari 
+Title Black Belt CPS & 6 Sigma 
+E mail 
+pvaldivie@ferreyros.com.pe   
+Phone 00 51 1 6265101 
+ 
+Recognition: 
+ 
+Team:   Liliana Falcón/Planning Chief 
+                                    Rafael Volta/Machine Shop Chief 
+                        Gabriel Sedano , Nelson Cha ppa /Planners 
+                         Supervisors, Quality Inpec tors and Runners  
+Sponsor:  Carlos Dongo/ Manager CRC 
+Owner:                        Rodolfo Gerstein/ Manager Machine Shop 
+Black Belt :                  Patricia Eguchi , Patricia Valdivieso

@@ -1,0 +1,611 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+OHT Brake Pressure - 
+Leakage Test 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+ 
+OHT Brake Pressure - Leakage Test ......................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits .............................................................. 7 
+5.0 Resources Required .......................................... 7 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ............................................ 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+April 2015 
+1504-4.03-1375 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+1.0 Introduction 
+ 
+Brake operation is very important and any problem in the assembly can potentially lead to braking 
+issues in the field and at the Finning Chile (CRC Antofagasta) before installing the brake group on 
+the spindle, pressure tests are performed on the service and park brake release systems for 
+leakage. 
+ 
+One hydraulic pump is used, to supply regulated oil pressure to the service and park brake oil 
+supply ports. 
+ 
+2.0 Best Practice Description 
+ 
+ 
+2.1 Install hoses in the parking and service brake ports. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.2 Connect same hoses to the test tooling with quick couplings. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Parking 
+Service 
+ 
+Service Parking 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+OHT Brake Pressure - Leakage Test 
+DATE 
+5/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-4.03-1375 
+Caterpillar Confidential:  GREEN          Page 1 of 8 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+2.3 Caption shows hose connections between brake group ports and test tooling.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.4 Apply oil pressure according to the Caterpillar publications for the models been tested. 
+ 
+ 
+ 
+ 
+Model Document Parking Pressure Service Pressure 
+773 SSNR2986 460+-32 PSI 460+-32 PSI 
+777 RENR3324-SSNR2986 460+-32 PSI 460+-32 PSI 
+777F KENR9267 720+-100 PSI 720+-100 PSI 
+789 SSNR6331 680+-30 PSI 680+-30 PSI 
+793 SENR6343-SSNR1454-KENR8738-RENR8330 680+-30 PSI 680+-30 PSI 
+797 RSNR2611 728+-20 PSI 728+-20 PSI 
+797B RSNR2581 728+-20 PSI 728+-20 PSI 
+797F KENR8374 728+-20 PSI 728+-20 PSI 
+ 
+ 
+Note: Any time you perform the pressure tests, always check SIS for the latest Information. 
+                 
+2.5 To test the parking brake piston movement, open the pump valve and parking release valve. 
+Then slowly apply pressure, according to the Caterpillar specifications. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abrir 
+Ce
+rr
+ar 
+Parking Brake Hose Service Brake 
+ 
+Parking Pump Hose Parking Pump Hose 
+ 
+Open 
+Tank (return) 
+ 
+Oil supply 
+Pump 
+Parking 
+Service 
+ 
+Open 
+Open 
+Close 
+Close 
+Close 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+OHT Brake Pressure - Leakage Test 
+DATE 
+5/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-4.03-1375 
+Caterpillar Confidential:  GREEN          Page 2 of 8 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+2.6 When the specified pressure has been reached, check if the parking brake piston, discs and 
+plates have moved down (released) and then applied when the pressure is released as illustrated 
+in the caption.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 2.7 Apply and release parking brake pressure (st eps 2.5 - 2.6) again and repeat this sequence at 
+least 5 times. In order to ensure proper seating of the piston seals and check for any leakage. 
+ 
+2.8 To check for leakage, leave the parking brake pressure applied (close off parking brake valve 
+at the test tooling) Then open the service brake valve on the test tooling and slowly apply 
+pressure to the service brake piston port per the Caterpillar specifications. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+Applied Released 
+Pump 
+Parking 
+Service 
+ 
+Close 
+Close 
+Close 
+Open 
+Open 
+Open 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+OHT Brake Pressure - Leakage Test 
+DATE 
+5/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-4.03-1375 
+Caterpillar Confidential:  GREEN          Page 3 of 8 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+2.9 Check if the service piston has moved (up) the discs and plates to the applied position as 
+illustrated in the caption. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.10 Apply and release pressure on the service brake port (steps 2.8 - 2.9) again and repeat this 
+sequence at least 5 times, to ensure proper seating of the piston seals and check for any leaks. 
+ 
+ 
+2.11 To check for leakage, leave the service brake pressure applied, close off the service brake 
+valve at the test tooling and then move the oil supply valve to tank return per the caption. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Released 
+ 
+ 
+Applied 
+ 
+ 
+Pump 
+Parking 
+Service 
+ 
+Tank (return) 
+ 
+Oil supply 
+ 
+Open 
+Open 
+Open 
+Close 
+Close 
+Close 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+OHT Brake Pressure - Leakage Test 
+DATE 
+5/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-4.03-1375 
+Caterpillar Confidential:  GREEN          Page 4 of 8 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+2.12 Check the parking and service brake pressure for 15 minutes, for any leakage and if no 
+pressure decrease is observed, the brake assembly is considered good. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+ 
+3.1 Description of parts of the pump 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Valve (Pump) 
+Valve (Parqueo) 
+ (Servicio) 
+Pressure gauge (Pump) 
+Pressure gauge (Parking) 
+Pressure gauge (Service) 
+Tank (return) 
+ 
+ 
+Oil supply 
+ 
+Switch (on/off) 
+Quick coupling (Parking) 
+Quick coupling (Service) 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+OHT Brake Pressure - Leakage Test 
+DATE 
+5/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-4.03-1375 
+Caterpillar Confidential:  GREEN          Page 5 of 8 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.2 Hydraulic pump circuit 
+ 
+ 
+ 
+ 
+1.- Main supply hose. 
+2.- Bridge hose (pump - parking). 
+3.- Pressure gauge hose ( pump ). 
+4.- Bridge hose (Parking-Service). 
+5.- Pressure gauge hose Parking. 
+6.- Pressure gauge hose Service. 
+7.-Taking pressure hose Parking. 
+8.-Taking pressure hose Service. 
+9.- Pump 10.000 PSI. 
+ 
+ 
+ 
+Electric control 
+9 
+ 
+8 
+ 
+8 
+ 
+7 
+ 
+7 
+ 
+6 
+ 
+6 
+ 
+5 
+ 
+5 
+ 
+4 
+ 
+3 
+ 
+3 
+ 
+2 
+ 2 
+ 
+1 
+ 
+1 
+ 
+   
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+OHT Brake Pressure - Leakage Test 
+DATE 
+5/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-4.03-1375 
+Caterpillar Confidential:  GREEN          Page 6 of 8 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.3 External to the brake hose. 
+ 
+4.0 Benefits 
+ 
+• Quickly identifies any potential leak source. 
+• Checks application of the park and service brake pistons. 
+• Avoid unnecessary field repairs and machine downtime. 
+       
+5.0 Resources Required 
+ 
+• Test Tooling (fabricated) 
+• Staff training. 
+ 
+6.0 Supporting Attachments / References 
+ 
+• KENR8374: 797F and 797F XQ Off-Highway Truck Braking System. 
+• RSNR2581: 797B Camiones de Obras Sistema de frenos. 
+• RSNR2611: 797 Camión de Obras Sistema de frenos. 
+• SENR6343: 793B Off-Highway Truck Air System and Brakes. 
+• SSNR1454: 793C Camión de Obras Sistema de aire y frenos. 
+• KENR8738: 793F and 793F CMD Off-Highway Truck Braking System. 
+• RENR8330: 793D Off-Highway Truck Air System and Brakes. 
+• SSNR6331: 789B Camión de Obras Sistema de Aire y Frenos. 
+• KENR9267: 777F OEM Off-Highway Truck Hydraulic System. 
+• RENR3324: 776D, 777D and 777D HAA Off-Highway Truck/Tractors Air System and 
+Brakes. 
+• SSNR2986: 740 Camión Articulado, 768C, 769C, 769D, 772B, 773B, 773D, 773E, 773F, 
+776, 776B, 776C, 776D, 777, 777B, 777C, 777D, 777F, 784B, 784C, 785, 785B, 785C, 
+785D, 789, 789B, 789C, 793, 793B, 793C y 793D de Obras/Tractores, 773E, 773F, 775F, 
+777F y 785D de Obras/Tractores OEM y 771C, 771D, 775B, 775D, 775E y 775F para 
+Canteras Aux. de tracción automá. electrón. (AETA) 
+ 
+   
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+OHT Brake Pressure - Leakage Test 
+DATE 
+5/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-4.03-1375 
+Caterpillar Confidential:  GREEN          Page 7 of 8 
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+7.0 Related Best Practices 
+ 
+• N one. 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Best practice written by:  
+ 
+Name: Jorge Jouanne Navarrete   Mail: jorge.jouanne@finning.com 
+ 
+ 
+Best practice reviewed by: 
+ 
+Name:  Daniel Deluccio Zapata  Mail: daniel.deluccio@finning.com 
+Name:  Nelson Avendaño Rojas   Mail: nelson.avendano@finning.com 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+OHT Brake Pressure - Leakage Test 
+DATE 
+5/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-4.03-1375 
+Caterpillar Confidential:  GREEN          Page 8 of 8

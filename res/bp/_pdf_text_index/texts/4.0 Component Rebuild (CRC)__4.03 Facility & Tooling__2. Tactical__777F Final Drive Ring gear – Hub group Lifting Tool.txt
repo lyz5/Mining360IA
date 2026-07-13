@@ -1,0 +1,207 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+Lifting Tool for 777F Final 
+Hub - Ring Gear Group 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Lifting Tool for 777F Final Hub - Ring Gear Group .... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+Editor’s Note:  The use of this installation tool and the processes discussed within this Best Practice is not a substitute 
+for applicable laws, standards and regulations and does not alter or limit the obligation of individuals who utilize the tool  to 
+fully comply with federal, state and local law and prudent safety measures relating to the use of lifting devices .  
+ 
+ 
+ 
+ 
+  
+March 2015 
+1501-4.03-1362 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+ 
+The assembly process of the 777 final drives is a task that is performed frequently at the CRC 
+shops.  Due to this and taking into account the size and weight of the pieces to be assembled, 
+there is an increase of the risk of serious accidents in the vertical process assembly at the shop 
+(similar procedure to those used for the models 793, as described in the SIS web). 
+ 
+This Best practice aims to facilitate the development of this task thru the design a lifting tool which 
+is fast, easy, and safe use. 
+ 
+2.0 Best Practice Description 
+ 
+This tool applies to the 777 Final drive Ring gear – Hub group.  It consists of two symmetrical arms 
+joined by a 7/16 "x 1 ½" 8 grade in the center, forming a reverse scissor, and it also has a calibrated 
+chain link 21" long attached to each upper end of the arms by a bolt 7/16" x 1 ½" 8 grade (each bolt 
+has its nut and washer welded). 
+ 
+ 
+The tool weight is 2.7 kg, and has a safety factor equal to 9.7 corresponding to the lifting weight, i.e. 
+200 kg 1. It´s necessary to keep in mind that for the correct lifting, the part should be held in three 
+spots, thus, these different tools are required. 
+This system is used to carry the ring group from the workbench to the height of the final drive upright 
+at approximately 1.8 m. It’s worth mentioning that the final drive ring gear group can be installed 
+unaffectedly by the use of the tool, being the tool removed once it is positioned.  i.e. once the part is 
+laid on the final drive, the internal geometry of this allows enough space for the tool not to be trapped 
+and can be easily removed smoothly just by releasing the lifting spots. 
+ 
+3.0 Implementation Steps 
+ 
+• Check the status of the tool (1) to verify the integrity of it before be using. 
+• Check that the hub (2) is properly torqued to the ring gear to avoid problems during the lifting. 
+• Position the 3 units in each hub hole (3) so that the chains can be lifted and stressed by the jib 
+crane hook (4). 
+• Raise the ring gear hub group assembly - (5) until the desired height (6). 
+• Place the piece in its final seat and remove the tools (7). 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+777F Final Drive Ring gear – Hub group Lifting Tool 
+DATE 
+3/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1362 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+4.0 Benefits 
+ 
+• Easy fabrication 
+• Easy operation 
+• Improved component assembly time 
+• Safe load lifting 
+ 
+5.0 Resources Required 
+ 
+Drawings of the tool (see attached) 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+777F Final Drive Ring gear – Hub group Lifting Tool 
+DATE 
+3/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1362 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+777F Final Drive Ring gear – Hub group Lifting Tool 
+DATE 
+3/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1362 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+7.0 Related Best Practices 
+None 
+ 
+8.0 Acknowledgements 
+ 
+Enrique Urbina  
+CRC Development Projects Chief, GECOLSA 
+Email: enrique_urbina@gecolsa.com.co 
+ 
+Melissa Chimá B. 
+CRC Service Engineer, GECOLSA. 
+Email: melissa_chima@gecolsa.com.co
+ 
+ 
+ 
+Checked and written by: 
+ 
+David Antonio Gonzalez Fernandez 
+CRC Service Engineer, GECOLSA 
+Email: antonio_gonzalez@gecolsa.com.co 
+ 
+Luis Alberto Fernández Ch. 
+Development Engineer  
+GECOLSA_CAT División Minería 
+Technical Departament, Engineering and development area. 
+Email: luisalberto_fernandez@gecolsa.com.co 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+777F Final Drive Ring gear – Hub group Lifting Tool 
+DATE 
+3/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1362 
+Caterpillar Confidential:  GREEN          Page 4 of 4

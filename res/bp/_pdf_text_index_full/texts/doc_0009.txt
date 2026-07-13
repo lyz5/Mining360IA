@@ -1,0 +1,196 @@
+SOURCE: 1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Gasoline Engine Powered Filter Cart.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+May 2012 
+1108-1.01-1258 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.     mining.cat.com/bp 
+ 
+ 
+ 
+ 
+D E A L E R  B E S T  P R A C T I C E  S E R I E S 
+FILTER CART – GASOLINE 
+ENGINE POWERED 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 2 
+7.0 Related Best Practices ...................................... 2 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Filter Cart – Gasoline Engine Powered 
+DATE 
+5/14/2012 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.01-1258 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+ 
+1.0 Introduction  
+ 
+This Best Practice is a dealer fabricated oil filtration tool to accommodate Field Service Operation on 
+doing Maintenance and Repair to filtrate new or use oil until meet CAT Roll off Specification. 
+ 
+This tool solves power source problems in remote areas that have no existing electricity or 
+compressor sources, and provide better services to customer by simplifying the job by minimizing the 
+tools required to complete the filtration service by compartmentalizing the process into a semi-
+compact filtration cart. 
+ 
+2.0 Best Practice Description 
+ 
+The purpose of fabricating this tool is accommodating Field Service Operation on the oil filtration 
+process while the job is located at a remote area without existing electricity or compressor.  
+ 
+Technicians do not need to find electricity or bring compressor to job location for filtration process 
+because it is all incorporated in a semi-portable gasoline engine driven filtration tool. Just like ordinary 
+filtration cart, connect the hose to the tool and machine for kidney looping or connect the hose to the 
+tool, machine and oil barrel for transferring new oil.  
+ 
+ 
+                     
+                                    
+ 
+Gasoline Engine 
+Inlet Port (to Suction Port) 
+Front View 
+Rear View 
+Outlet Port (to Return Port) 
+Pulley 
+Second Filter 
+First Filter 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Filter Cart – Gasoline Engine Powered 
+DATE 
+5/14/2012 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.01-1258 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+              
+     
+  
+                                Kidney looping Process                             Oil Transfer Process 
+ 
+3.0 Implementation Steps 
+ 
+• The first step is to fabricate the tool. 
+• The design and required parts lists are attached to this Best Practice. 
+ 
+4.0 Benefits 
+ 
+Save Time –  
+- Reduces the number of required tools transported to the job location. 
+- Improves work time efficiencies, reducing job preparation. 
+ 
+5.0 Resources Required 
+ 
+People- 
+Trained personnel in effective use of the new tooling. 
+ 
+Tools 
+Fabricate a filter cart either internally or contract locally. 
+ 
+6.0 Supporting Attachments / References 
+ 
+- Required Design 
+- Required Part List 
+ 
+7.0 Related Best Practices 
+- N/A 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Filter Cart – Gasoline Engine Powered 
+DATE 
+5/14/2012 
+CHG 
+NO 
+00 
+NUMBER 
+1108-1.01-1258 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+8.0 Acknowledgements 
+      Expertise by: 
+• Expertise by: 
+o Isroil 
+o PT Trakindo Utama Samarinda Branch - INDONESIA  
+o Email  : isroil@trakindo.co.id     
+o Phone : +62 541 260 269  
+o Mobile : +62 812 4053939 
+       This Best Practice was written by: 
+o David J. Wilde 
+o Corporate Best Practice 
+o Product Support Standard and Development 
+o PT. Trakindo Utama - Head Office 
+o Email: djwilde@trakindo.co.id 
+o Office: 62217822373 ext: 1120

@@ -1,0 +1,367 @@
+SOURCE: 1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\MD6640 Drills - Installation of Safety Slings to Support the Mast Machinery.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+February 19 
+1.11-180328-03 
+  
+Caterpillar Confidential:  YELLOW   mining.cat.com 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+MD6640 Drills - Installation 
+of safety slings to support 
+the mast machinery  
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Installation of safety slings to support the mast Machinery 
+DATE 
+2/4/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-180328-03 
+Caterpillar Confidential:  YELLOW          Page 1 of 5 
+1.0 Introduction  
+ 
+The mining ind ustry has managed to make  safety a main value and create actionable rules to 
+increase safety in operations. Our permanent challenge is to mitigate and better remove the causes 
+of any incidents. Procedures related to maintenance of mining equipment are constantly reviewed 
+and improved due to the risk involved in handling large components. Furthermore, there is also the 
+risk of workers’ permanent exposure to crushing, falling and shock hazards, which has the potential 
+to result in energy incidents. 
+ 
+Although there are specific procedures for safely conducting maintenance, the workers conducting 
+these pr ocesses should continue to identify additional measures that would mitigate  undesired 
+situations. 
+ 
+Another important source of information is the Incident Records of our Clients  which helped to 
+develop additional safety measures in order to prevent future incidents from occurring. 
+ 
+In the case of the MD6640 Drill, several operating error incidents with high fatality potential were 
+reported during prolonged maintenance due to uncontrolled movements of the mast machinery (10-
+ton weight). 
+ 
+ 
+2.0 Best Practice Description 
+ 
+This best practice proposes the installat ion of a hard barrier which  prevents any uncontrolled 
+movement or sliding of the  mast machinery in the event of operational error s during prolonged 
+maintenance of the MD6640 Drill. The main safety syste m to fix the drill mast machinery is the 
+transmission pulldown brake applied by a spring when the system is de -energized, and then 
+released electrically when energized. This system  involves a risk in the case of  involuntary 
+energization due to human error which may release the fixation of the mast machinery. 
+ 
+This best practice proposes  the installation of two (2)  T/T (thimble-thimble) steel wire rope slings 
+(10 ton each) and two (2) screw pin anchor shackles  (8.5 ton each) to secure mast machinery to 
+the mast frame at a certain height. This should prevent any sliding even when brakes are set and 
+ensure that all energy sources are isolated and blocked. 
+ 
+The installation of these slings allows for a hard barrier which guarantees better safety standards 
+for a large-scale work and prolonged exposure to the mast machinery travel area. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Installation of safety slings to support the mast Machinery 
+DATE 
+2/4/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-180328-03 
+Caterpillar Confidential:  YELLOW          Page 2 of 5 
+3.0 Implementation Steps 
+ 
+The implementation of this Best Practice is recommended for prolonged exposure and is targeted 
+to work on mast machinery platform with the mast in vertical position. 
+ 
+Installation of the slings: 
+ 
+ 
+Stage 
+ 
+ 
+Process 
+ 
+Guidelines 
+ 
+ 
+Safety slings should be installed for activities involving prolonged exposure 
+(works involving continuous exposure of at least 4 hours, considering 2 
+hours for the installation and removal of the slings, which is approx. 50% of 
+the actual work time) . This installation procedure should be included in 
+safety documentation and risks should be considered in addition to control 
+measures of the activity. 
+ 
+ 
+Use of Slings 
+ 
+Use certified ¾” slings and 1" shackles. Check them frequently for cracks 
+in the slings or forces badly exerted on shackles. 
+ 
+Car positioning 
+ 
+Before starting, when the equipment is still energized, position the upper 
+part of the mast machinery between the 5th and 6th diagonal beam of the 
+mast (from top to bottom). The operator shall perform this operation 
+assisted by maintenance personnel. 
+ 
+ 
+Brake 
+ 
+ 
+The operator must apply the lifting brake and perform the isolation and 
+locking procedure. 
+ 
+ 
+Mast anchorage 
+ 
+ 
+Safety harnesses must be worn at all times. 2 personnel should conduct 
+this task. Man-lifting equipment must be used for slings and shackles. 
+ 
+ 
+Sling Installation 
+ 
+ 
+Two ¾” slings must be used in the installation (¾” as minimum diameter) 
+with 1” shackles (1” as minimum diameter). There must be a sling on each 
+side of the mast machinery, embracing the 5th diagonal beam and the mast 
+machinery frame . Th e slings must be tightened as much as  possible, 
+requiring 2 people to assist. 
+ 
+ 
+Sling 
+Uninstallation 
+ 
+Two people and man -lifting equipment are necessary to perform this 
+operation. With the hoist brake applied and the equipment locked, remove 
+the pin from both shackles, and then remove the shackles. Finally, remove 
+the slings.  
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Installation of safety slings to support the mast Machinery 
+DATE 
+2/4/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-180328-03 
+Caterpillar Confidential:  YELLOW          Page 3 of 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Materials: T/T Slings and Screw pin anchor shackles 
+ 
+ 
+ 
+ 
+Slings installed      Working in the drill mast 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Installation of safety slings to support the mast Machinery 
+DATE 
+2/4/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-180328-03 
+Caterpillar Confidential:  YELLOW          Page 4 of 5 
+ 
+MD6640 Drill Lay-out 
+ 
+     
+ 
+Figure N° 1 Figure N° 2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Pass the sling down in U shape over 
+the 5th diagonal of the mast and then 
+pass it through the side frame of the 
+mast machinery until the loop is 
+joined to the other end of the same 
+sling by using a shackle. 
+ 
+Position the top of the car in this 
+area.  
+The red loops indicate the 
+trajectory each sling must 
+follow embracing the 5th 
+diagonal beam of the 
+mast and the side frame 
+of the machinery mast 
+right under the adjustment 
+bogies. 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Installation of safety slings to support the mast Machinery 
+DATE 
+2/4/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-180328-03 
+Caterpillar Confidential:  YELLOW          Page 5 of 5 
+ 
+4.0 Benefits 
+ 
+Reduce the possibility of a potentially fatal incident caused by  high energy exchange if the mast 
+machinery slides through the mast. In such case, the mast machinery hoist/lifting brake would also 
+fail. 
+ 
+5.0 Resources Required 
+ 
+2 ¾" slings (¾" minimum diameter) 
+2 1" shackles (1” minimum diameter) 
+2 mechanics for installation 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+N/A 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+Generation, Implementation and improvement guidelines on Service Report LO04-18 
+ 
+Luis Olave Albarrán 
+Senior Service Engineer 
+Shovel and Drill Technical Support 
+luis.olave@finning.com 
+ 
+Daniel Araya Rodriguez  
+Service Engineer  
+Shovel and Drill Technical Support  
+Daniel.araya@finning.com 
+ 
+ 
+Juan Crooker Acosta 
+Best Practices Coordinator 
+Audits & Processes – IKC 
+Juan.crooker@finning.com

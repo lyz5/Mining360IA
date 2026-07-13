@@ -1,0 +1,550 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Electronic Engine Simulation Board 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Electronic Engine Simulation Board ........................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits ............................................................ 10 
+5.0 Resources Required ........................................ 12 
+6.0 Supporting Attachments / References ............. 12 
+7.0 Related Best Practices .................................... 12 
+8.0 Acknowledgements .......................................... 12 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+April 2015 
+1504-1.08-1376 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+1.0 Introduction  
+ 
+Training room capability is one of the very important keys to perform technical training in an efficient 
+way. Typically TCDP requires classroom and on-the-job training for each competency level. The 
+classroom trainings give theoretical information for electrical system of the machine and many 
+trainees cannot imagine the functionality of the system that is written in the documentation. Since the 
+availability of finding a real engine during classroom training is nearly impossible, therefore the 
+combination of both classroom and on-the-job training is very crucial. The Cat Electronic Engine 
+Simulation Board has been designed to find an optimum solution for cost savings and to combine 
+classroom training with on-the-job training to deliver the efficient training sessions for trainees. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The CAT Electronic Engine Simulation board is designed to get same electrical system functionality 
+of C9 engine. The board consists of: 
+ 
+Injectors  
+ECM 
+Sensors, switches and relays 
+Gear motor to trigger the gear where speed sensor equipped 
+Excavator monitoring control module 
+Product link control module 
+The connection cable net with electrical parts to run the system  
+Test points according to electrical schematic of the engine 
+ET connection port 
+Visual camera 
+Etc… 
+ 
+The board function is like an engine. When the start key is turned on, all components are energized 
+and run like a real engine electrical circuit. It allows trainees to check functionality, test the circuit, 
+measure the voltage, current and resistance, visually understand the electrical flow priorities and 
+detect the problem. The board also provides failure simulation for trainees to be aware of usual 
+problems and to check the diagnostic codes when the system generates one.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electronic Engine Simulation Board 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.08-1376 
+Caterpillar Confidential:  GREEN         Page 1 of 12 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.0 Implementation Steps 
+ 
+Step-1 is to build holder of sensors, injectors and HEUI pump. 
+ 
+  
+   
+ 
+ 
+ 
+ 
+Step-2 is to allign all componets to board and connect cables according to electrical scematic 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electronic Engine Simulation Board 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.08-1376 
+Caterpillar Confidential:  GREEN         Page 2 of 12 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+Drawing and dimension of the main body is following; 
+ 
+  
+The next step is to put the electrical component board and main body together 
+ 
+ 
+  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electronic Engine Simulation Board 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.08-1376 
+Caterpillar Confidential:  GREEN         Page 3 of 12 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+Hydraulic excavator monitoring system has been designed with level sensors, action alarm and rear 
+camera. The following picture is how to build excavator monitoring simulation board. 
+ 
+ 
+  
+ 
+ 
+All monitor, sensors and warning alert modules were mounted to the plate. The wiring connection was 
+designed according to electrical schematic. 
+Measurement jacks have been located in the circuit to test the individual lines 
+ 
+ 
+  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electronic Engine Simulation Board 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.08-1376 
+Caterpillar Confidential:  GREEN         Page 4 of 12 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+Product Link system PL300 ECM module was mounted to the left side of board and PL100 ECM to 
+the right side of the main board 
+ 
+ 
+  
+  
+ 
+   
+ 
+    
+ 
+ 
+ 
+ 
+ 
+The wiring harness was designed according to Product Link electrical schematic  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electronic Engine Simulation Board 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.08-1376 
+Caterpillar Confidential:  GREEN         Page 5 of 12 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+The engine ECM, power unit, gear motor assembly and wiring harness were located into rear side of 
+the main board 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+The LED system has been designed to illustrate functionality of the heater lines, fuel line of injectors, 
+and oil line between HEUI pump and injectors. 
+ 
+ 
+ 
+ 
+             
+ 
+ 
+ 
+ 
+2 1 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electronic Engine Simulation Board 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.08-1376 
+Caterpillar Confidential:  GREEN         Page 6 of 12 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+ 
+ 
+How does it work? 
+ 
+• Start operation when the key turned on 
+• Gear motor starts to run  
+• Timing sensor equipped on the output shaft gear generate signal to the engine ECM 
+• When the RPM on gear motor output shaft reaches 170rpm, the engine ECM sends energy to 
+the injectors 
+• Module generates sound similar a diesel engine  
+ 
+ 
+      
+                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Rear Section 
+ 
+Front Section 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electronic Engine Simulation Board 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.08-1376 
+Caterpillar Confidential:  GREEN         Page 7 of 12 
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+ 
+ 
+There are two different colors led the line to injectors. 
+• Blue led flash is the line of HEUI oil 
+• Red led flash is the line of fuel 
+When the key is switched on, the LED flash illustrates flow of oil and fuel to injectors in an alignment. 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electronic Engine Simulation Board 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.08-1376 
+Caterpillar Confidential:  GREEN         Page 8 of 12 
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+ 
+    
+ 
+ 
+Excavator Monitoring Simulator 
+Main front board Rear Section 
+ 
+Product Link Simulator 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electronic Engine Simulation Board 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.08-1376 
+Caterpillar Confidential:  GREEN         Page 9 of 12 
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+4.0 Benefits 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electronic Engine Simulation Board 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.08-1376 
+Caterpillar Confidential:  GREEN         Page 10 of 12 
+
+===== PAGE 12 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+The following trainings can be given to technicians and engineers: 
+ 
+1) Basic Electric and Electronic training 
+a) Reading electrical schematic 
+b) Electric parts and remits 
+c) Using multimeter 
+d) Serial and parallel circuit 
+e) Making diagnostic codes and learn strategy in electronic systems 
+2) Electronic Technician Program Training 
+a) How to use electronic technician program 
+b) Loading flash program 
+c) Adjust configuration parameter on ET program 
+d) Find and remove active codes and event codes 
+e) View status parameter 
+f) Using override menu 
+g) Use Data log and real time graphic 
+3) Electronic Engine Training 
+a) System operation of electronic engine 
+b) Demonstrate input and output devices 
+c) Evaluation of engine performance specifications 
+4) CAT hydraulic excavator monitoring system training 
+a) Demonstrate monitor menu 
+b) Demonstrate active code and logged code 
+c) Demonstrate calibration  solenoid and sensors 
+d) Demonstrate configuration parameters 
+5) Product link training 
+a) Demonstrate how to register 
+b) Assembled and control  PL ECM 
+c) How to use Product link parameters 
+6) HEUI fuel system training 
+a) Demonstrate part of fuel system 
+b) Testing HEUI pump 
+c) Demonstrate injector solenoid  
+d) Demonstrate cylinder cutout test 
+7) Electrical and electronic failure analyze training 
+a) Demonstrate active codes and solve problem 
+b) Demonstrate logged codes  
+c) Demonstrate active event codes 
+d) Demonstrate logged event codes 
+8) TCDP basic electrical and monitoring systems on the job training 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electronic Engine Simulation Board 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.08-1376 
+Caterpillar Confidential:  GREEN         Page 11 of 12 
+
+===== PAGE 13 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+5.0 Resources Required 
+ 
+Total cost of investments: 
+  
+Item  Cost (USD) 
+Material  $ 3,800 
+Cat Parts  $ 13,000  
+Labor Design $ 2,500 
+Assembly $ 1,300 
+Total  $ 20,600  
+  
+6.0 Supporting Attachments / References 
+• English EESB TOOL OPERATION MANUEL BMGS001.pdf 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Salih Ertekin 
+Service Training Instructor 
+Borusan Makina ve Güç Sistemleri 
+ 
+The idea for This Best Practice belongs to:  
+ 
+Salih Ertekin  
+Service Training Instructor 
+Borusan Makina ve Güç Sistemleri 
+ 
+Ferdi Yiğit 
+Technician 
+Borusan Makina ve Güç Sistemleri 
+ 
+Project and Best practice supported by 
+ 
+Ömer Emre Demirkale 
+Ankara region service manager 
+Borusan Makina ve Güç Sistemleri 
+ 
+Rafet Kaymakci 
+Mining customer support manager 
+Borusan Makina ve Güç Sistemleri 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electronic Engine Simulation Board 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.08-1376 
+Caterpillar Confidential:  GREEN         Page 12 of 12

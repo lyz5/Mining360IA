@@ -1,0 +1,362 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2024 
+1.10-240709-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Power Wedge 
+Improvement Adapter 
+Retention System GET 
+7495 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Power Wedge Improvement Adapter Retention 
+System GET 7495 ...................................................... 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 4 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 7 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices .................................... 10 
+8.0 Acknowledgements .......................................... 10 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Power Wedge Improvement adapter Retention System 
+GET 7495 
+DATE 
+7/9/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-240709-1 
+Caterpillar: Confidential Yellow  Page 2 of 10 
+1.0 Introduction 
+I
+n the introduction of GET 7495 period 2015, 2016, 2017, 2018, 2019 no events were observed in the 
+adapter hammerless system. In the year 2022 we present loose adapter wedge events and evaluate 
+the need to implement a retention cap with a clamping screw. 
+ 
+T
+he 7495 machine is of high production and rarely do we have times of opportunity to be able to 
+intervene in the equipment and perform adjustment checks on the 3983032-power wedge that allow us 
+to maintain reliability in the System. 
+❶ C - Clamp  3983030 
+❷ Wedge    3983032 
+❸ Adapter   4683015 
+❹ Wear cap   5980634 
+❺ Tip   4508080 
+Fig 1. Review of the system in court 
+Fig 2. System Parts 
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Power Wedge Improvement adapter Retention System 
+GET 7495 
+DATE 
+7/9/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-240709-1 
+Caterpillar: Confidential Yellow  Page 3 of 10 
+  
+T
+he inspections that are carried out is a few minutes to check the adjustment of the wedges and the 
+cleaning of the pieces that contain accumulated dirt, the need to improve the design of the wedge is 
+created to reduce the frequency of inspection of the wedge, this action will allow us to increase the 
+reliability of the product. 
+ 
+A
+fter the events caused by the insurance, the following implementation was determined where the 
+retention cover was redesigned, and a fastening screw was implemented. 
+Fig 3. Operation Equipment. 
+Fig 4. Dipper condition for inspection 
+Fig 5. Power wedge with improved retention cap 
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Power Wedge Improvement adapter Retention System 
+GET 7495 
+DATE 
+7/9/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-240709-1 
+Caterpillar: Confidential Yellow  Page 4 of 10 
+2.0 Best Practice Description 
+To gu
+arantee the permanence of the wedge in the adapter and avoid possible misalignment of the 
+wedge, an improvement is made to the cover and a screw is added. 
+• T
+he design of the wedge screw changed to be able to place a cover that contains a hexagonal
+head screw to hold the cover.
+3
+.0 Implementation Steps 
+• A
+ new cover with greater depth for the head of the screw was manufactured and drilled in the
+center of the body as shown in the following image of the power wedge to condition a hexagonal
+head bolt.
+Before   After 
+Fig 6. Parts of the new wedge 
+Fig 7. Power wedge side view 
+Screw Drilling 
+trim cap 
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Power Wedge Improvement adapter Retention System 
+GET 7495 
+DATE 
+7/9/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-240709-1 
+Caterpillar: Confidential Yellow  Page 5 of 10 
+4.0 Benefits 
+• R
+eduction of torque inspection time in wedge 3983032, reduced by 67% due to the anti-
+rotation operation.
+• T
+he power wedge readjustment time is reduced by 89% due 15 days interval.
+• R
+eduction in HH value.
+12 Hours
+4 Hours
+AFTER BEFORE
+MONTHLY INSPECTION
+9 Hours
+1 Hour
+AFTER BEFORE
+MONTHLY ADJUSTMENT
+89%
+$1.062,00 
+$118,00 
+ $-
+ $200,00
+ $400,00
+ $600,00
+ $800,00
+ $1.000,00
+ $1.200,00
+AFTER BEFORE
+VALUE HH
+Before   After
+67% 
+89% 
+Before         After 
+Before               After 
+
+===== PAGE 6 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Power Wedge Improvement adapter Retention System 
+GET 7495 
+DATE 
+7/9/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-240709-1 
+Caterpillar: Confidential Yellow  Page 6 of 10 
+• Reduction in shovel stop time.
+• T
+he following table indicates the time that the system lasted, without adjustments after the
+settlement of the system.
+OPERATION 1st and 2nd 
+ADJUSTMENT 
+ACCUMULATED HOURS 
+WITHOUT ADJUSTMENT 
+QUELLAVECO Correct 4845 Hours 
+ANTAPACCAY Correct 1307 Hours 
+ 
+4 Hours
+0 Hr
+AFTER BEFORE
+STOP TIME SHOVEL
+100%
+Fig 8. Power wedge ADJUSTMENT 
+Before           After 
+
+
+===== PAGE 7 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Power Wedge Improvement adapter Retention System 
+GET 7495 
+DATE 
+7/9/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-240709-1 
+Caterpillar: Confidential Yellow  Page 7 of 10 
+5.0 R
+esources Required 
+ Design plans for manufacturing (see appendix).
+ Improved hammerless safety arming.
+ Manufacture of protective covers.
+6.0 S
+upporting Attachments / References 
+ Dat
+a and monitoring of wedge settings.
+Before using the improved wedge, the racket had 2 interventions between each preventive
+maintenance, now the insurance is adjusted after 24 hours, then 200 hours and every 500
+hours.
+Inspection 
+Date 
+Inspection 
+Hours 
+QUELLAVECO POSICIÓN 
+Status Pos RH Pos 2 Pos  3 Pos 4 Pos 5 Pos 6 Pos 7 Pos 8 Pos 9 Pos LH 
+12/11/2021 0 Task Installation Installation Installation Installation Installation Installation Installation Installation Installation Installation 
+Turn 360° 360° 360° 360° 360° 360° 360° 360° 360° 360° 
+1/12/2021 456 Task ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT 
+Turn 360° 360° 360° 360° 360° 360° 360° 360° 360° 360° 
+7/01/2022 1213 Task ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT 
+Turn 360° 360° 360° 360° 360° 360° 360° 360° 360° 360° 
+9/02/2022 1686 Task ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT 
+Turn 360° 360° 360° 360° 360° 360° 360° 360° 360° 360° 
+24/03/2022 2563 Task ADJUSTMENT OK ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT OK OK 
+Turn 360° 360° 360° 360° 360° 360° 360° 360° 360° 360° 
+28/04/2022 3559 Task ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT 
+Turn 360° 360° 360° 360° 360° 360° 360° 360° 360° 360° 
+4/05/2022 3592 Task ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT 
+Turn 360° 360° 360° 360° 360° 360° 360° 360° 360° 360° 
+9/06/2022 4259 Task OK OK OK ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT OK OK OK 
+Turn 360° 360° 360° 360° 360° 360° 360° 360° 360° 360° 
+2/07/2022 4845 Task OK OK OK OK OK OK OK OK OK OK 
+Turn 360° 360° 360° 360° 360° 360° 360° 360° 360° 360° 
+Fig 9. Power wedge ADJUSTMENT 
+
+===== PAGE 8 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Power Wedge Improvement adapter Retention System 
+GET 7495 
+DATE 
+7/9/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-240709-1 
+Caterpillar: Confidential Yellow  Page 8 of 10 
+Inspection 
+Date 
+Inspection 
+Hours 
+ANTAPACCAY POSITION 
+Status Pos RH Pos 2 Pos  3 Pos 4 Pos 5 Pos 6 Pos 7 Pos 8 Pos LH 
+24/09/2022 0 Task Installation Installation Installation Installation Installation Installation Installation Installation Installation 
+Turn 360° 360° 360° 360° 360° 360° 360° 360° 360° 
+15/10/2022 521 Task ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT 
+Turn 45° 360° 45° 45° 45° 45° 45° 45° 45° 
+1/11/2022 1140 Task OK OK OK OK OK OK OK OK OK 
+Turn 0° 0° 0° 0° 0° 0° 0° 0° 0° 
+5/12/2022 1780 Task ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT ADJUSTMENT 
+Turn 45° 45° 45° 45° 45° 45° 45° 45° 45° 
+10/01/2022 2672 Task ADJUSTMENT OK ADJUSTMENT ADJUSTMENT OK ADJUSTMENT ADJUSTMENT OK OK 
+Turn 90° 0° 45° 360° 0° 360° 360° 0° 0° 
+2/02/2022 3455 Task OK OK OK OK OK OK OK OK OK 
+Turn 0° 0° 0° 0° 0° 0° 0° 0° 0° 
+     New Design 
+Fig 10. Wedge 3983032 Design Drawings 1 (drawing in appendix) 
+
+===== PAGE 9 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Power Wedge Improvement adapter Retention System 
+GET 7495 
+DATE 
+7/9/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-240709-1 
+Caterpillar: Confidential Yellow  Page 9 of 10 
+Fig 11. Wedge 3983032 Design Drawings 2 (drawing in appendix) 
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Power Wedge Improvement adapter Retention System 
+GET 7495 
+DATE 
+7/9/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-240709-1 
+Caterpillar: Confidential Yellow                Page 10 of 10 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Jorge Muñoz Silva 
+  Product Specialist GET & UC - Ferreyros 
+  jorge.munoz@ferreyros.com.pe 
+ 
+Jack Sanchez Valle 
+  Product Specialist GET & UC - Ferreyros 
+  jack.sanchez@ferreyros.com.pe 
+Validated by: 
+             Luis Takahashi Revolledo 
+  Product Manager GET & UC – Ferreyros 
+  luis.takahashi@ferreyros.com.pe 
+Fig 12. Wedge 3983032 Design Drawings 2 (drawing in appendix)

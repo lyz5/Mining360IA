@@ -1,0 +1,320 @@
+SOURCE: Plateau Honing Recovery of C175 and 3500 Liners.pdf
+PAGES: 8
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2024 
+4.02-241220-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Plateau Honing Recovery 
+of C175 and 3500 Liners 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Plateau Honing Recovery of C175 and 3500 Liners ................ 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Recovery of C175 and 3500 Liners using Plateau 
+Honing 
+DATE 
+12/20/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-241220-1 
+Caterpillar: Confidential Yellow          Page 2 of 8 
+1.0 Introduction  
+This Best Practice is aimed at restoring liners on Ultra Class trucks using Plateau Honing. 
+Scope  
+C175 and 3500 liners from Finish Hone to Plateau Honing, considering the reusability tolerances 
+of the liner in terms of honing angle, roughness and internal diameter. 
+2.0 Best Practice Description 
+This Best Practice details the procedure and standards for performing liner honing on C175 and 
+3500 engines. It provides a comprehensive guide from the necessary preliminary steps prior to 
+honing through to acceptance criteria for dimensional evaluation, visual inspection and roughness 
+measurement after the process. This  document also sets out precise protocols to ensure quality 
+and precision at every stage of the process, ensuring that honed liners meet the required standards 
+to guarantee optimum performance. 
+3.0 Implementation Steps 
+● Preliminary steps (carried out in the CRC workshop) 
+Acceptance criteria for dimensional assessment according to GSP-STT-VB-0003. 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Recovery of C175 and 3500 Liners using Plateau 
+Honing 
+DATE 
+12/20/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-241220-1 
+Caterpillar: Confidential Yellow          Page 3 of 8 
+• Acceptance criteria for visual inspection. The following will render the cylinder liners 
+unusable: Stains (see reusability guide for more details), scratches, pitting and out-of-size. 
+ 
+  
+ 
+● Acceptance criteria for roughness measurement. 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Recovery of C175 and 3500 Liners using Plateau 
+Honing 
+DATE 
+12/20/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-241220-1 
+Caterpillar: Confidential Yellow          Page 4 of 8 
+1. Parameters for Honing in Rottler H85A 
+● Sensitivity: 6.00  
+● Choice of stones: [514-9-14R] + [514-9-14J] 
+● Brush selection: [514-9-14H] 
+● Roughing stone (stone 1) operating ranges:  
+○ 514-9-14R  
+○ 50% rough load 
+○ 40% finish load  
+○ 10% plateau load  
+○ 180 RPM.  
+○ 0.020 mm 
+● Finishing stone (stone 2) operating ranges: 
+○ 514-9-14J 
+○ 30% rough load  
+○ 20% finish load  
+○ 10% plateau load  
+○ 180 RPM 
+○ 0.005 mm 
+● Plateau honing (brushes) operating ranges: 
+○ 514-9-14H 
+○ 30% rough load 
+○ 20% finish load 
+○ 8% plateau load 
+○ 4 strokes 
+○ 80 RPM. 
+● Setting angle: 40° 
+● Stone: 
+○ Upper and lower height margin: 22.00 mm 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Recovery of C175 and 3500 Liners using Plateau 
+Honing 
+DATE 
+12/20/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-241220-1 
+Caterpillar: Confidential Yellow          Page 5 of 8 
+2. Evaluation after honing 
+● Image taken after honing. The honing angle is 140° ± 6°. 
+ 
+ 
+● The dimension of the housing (E) must be within the following limits: 
+○ [C175]: 175.000 - 175.065 mm. 
+○ [3516]: 170.000 - 170.065 mm. 
+ 
+ 
+140°+-
+ 
+Finish after honing 
+ Honing tolerance 
+ 
+New Cylinder Liner: 145° 
+[C175] 
+New Cylinder Liner: 146° 
+[3500] 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Recovery of C175 and 3500 Liners using Plateau 
+Honing 
+DATE 
+12/20/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-241220-1 
+Caterpillar: Confidential Yellow          Page 6 of 8 
+● Roughness 
+○ Cut off (λc) = 2.5mm.  
+○ Rvk = 1.2 μm - 3.8 μm.  
+○ Rk = 1.6 μm (max).  
+○ Rpk = 0.6 μm (max).  
+○ Mr2% = 80% + / - 10%. 
+4.0 Benefits 
+● It provides a clear and standardized framework for performing C175 and 3500 liner honing, 
+ensuring quality in the process. 
+ 
+● It helps to optimize the use of resources such as time, labor and tools, resulting in greater 
+efficiency and cost reduction, with annual savings of: 
+○ $386 per C175 liner recovered. 
+○ $276 per 3500 liner recovered. 
+5.0 Resources Required 
+● Initial finishing accessories kit 
+○ 4 Stone holders: 514-9-6R 
+○ 1 Head: 514-9-4A 
+○ 1 Shaft: 514-9R 
+○ 4 Stones: 514-9-14R 
+● Final finishing accessories kit 
+○ 4 Stone holders: 514-9-6R 
+○ 1 Head: 514-9-4A 
+○ 1 Shaft: 514-9R 
+○ 4 Stones: 514-9-14J 
+● Plateau honing accessories kit 
+○ 4 Stone holders: 514-9-6R 
+○ 1 Head: 514-9-4A 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Recovery of C175 and 3500 Liners using Plateau 
+Honing 
+DATE 
+12/20/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-241220-1 
+Caterpillar: Confidential Yellow          Page 7 of 8 
+○ 1 Shaft: 514-9R 
+○ 4 Stones: 514-9-14H 
+ITEM PROCESS HOLDER STONE TOOL QTY CODE 
+1 ROUGHING PROCESS 
+514-9-6R 
+STONE 4 514-9-14R 
+2 FINISHING PROCESS STONE 4 514-9-14J 
+3 PLATEAU PROCESS BRUSH 4 514-9-14H 
+ 
+ 
+ 
+ 
+ 
+ 
+                  
+ 
+Stone 514-9-14R                                             Holder Stone 514-9-6R 
+6.0 Supporting Attachments / References 
+● SEBF8068-36, “Inspection and Reuse Guideline of Cylinder Liners in Cat Engines” 
+● Blueprint, “Camisa C175” 
+● Blueprint, “Camisa 3500” 
+7.0 Related Best Practices 
+None 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Recovery of C175 and 3500 Liners using Plateau 
+Honing 
+DATE 
+12/20/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-241220-1 
+Caterpillar: Confidential Yellow          Page 8 of 8 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+       Moises Quispe Mendoza 
+ 
+This Best Practice was revised by: 
+Aninu Mitacc Vizcardo 
+aninu.mitacc@ferreyros.com.pe

@@ -1,0 +1,297 @@
+SOURCE: 5.0 MARC Management\5.01 MARC Market Strategy and Rate Development\2. Tactical\Building Operational Budgets.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PR ACTICE SERIES  
+ Building Operational Budgets  
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Renewal 
+(CRC) 
+Component 
+Life 
+Management 
+ MARC 
+Management 
+ 
+ 
+ 
+Building Operational Budgets ..................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+November 2008 
+1108-3.3-1132 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+This Best Practice outlines a strategy for building operational budgets with the appropriate 
+level of detail to facilitate contract performance review, highlighting problem areas.  
+ 
+Operating budgets generally cover operating expenses for normal operations. Operating 
+expenses can be budgeted (planned for) and accounted for on a monthly, quarterly, and/or 
+annual basis. Operating budgets are usually fixed through a process different from that used 
+on capital budgets (in some companies, all management above a certain level participate in 
+the process). Once fixed, budgets are usually not changed during the period-except maybe for 
+emergency reductions following unexpectedly poor sales results or other disasters.  
+ 
+Operating budgets generally cover predictable, repeatable costs. Items bought under an  
+expense budget” (as opposed to a capital budget) are not registered as capital assets and are 
+not depreciated. That means the company charges the full amount against income during that 
+reporting period, incurring all tax consequences for it during that period.  
+ 
+Caution should be observed building this type of budget. Too much detail is inefficient, 
+requiring a great deal of data cleansing for administrative staff.  It does not provide the benefits 
+for this effort. Budgets that are too broad in scope do not deliver the level of detail required for 
+analysis, which can result in positive direction for change. 
+ 
+Most Caterpillar dealers have the capability to create operational budgets, but few have a 
+formalized process to review the budget performance. It is necessary to highlight the problem 
+areas and establish action plans to mitigate the performance risks. This process provides 
+tangible dealer benefits in the form of improved productivity and reducing overall operating 
+costs, which leads to a reduced risk in MARC’s and lower overall repair, and maintenance 
+costs. 
+ 
+By implementing an operational budget, a dealer is able to see firsthand the areas that need 
+improvement. Seeing the areas that need improvement will allow the dealer to make decisions 
+to increase profitability and better performance.  
+ 
+ 
+2.0 Best Practice Description 
+ 
+There are two different approaches to budgeting. The first approach is referred to as the 
+behavior approach. The underlying assumption of this approach is that managers will be the 
+most highly motivated if budgets are reasonable and achievable. Targets of this approach can 
+be achieved through reasonably efficient operations. With this approach, failure to stay within 
+budget in contrast is viewed as unacceptable. The second approach is referred to as the total 
+quality approach. The basic premise of this approach is that each segment of the operation 
+strives to improve. Each operation strives to eliminate non-value added activities. With this 
+approach, budget amounts are set to achieve absolute efficiency.  
+ 
+There also two different approaches for a time period when using operational budgets. The 
+first approach is the fiscal year approach. The fiscal approach contains annual budgets that 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Building Operational Budgets 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-3.3-1132 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+are divided monthly into four quarters. As the end of a quarter approaches, revisions are done 
+for economic changes. This process ensures that the budgets are reviewed at least several 
+times per year.  
+ 
+As the year progresses the planning process gets shorter. The second approach is referred to 
+as the rolling twelve-month approach. With this approach a new month/quarter is added to 
+the end of the budget as the quarter ends. The budget always covers the upcoming twelve-
+month period. The advantage of this approach is that this is a stabilized planning horizon. This 
+approach consists of continuous review and assessment of the budget estimates. 
+ 
+3.0 Implementation Steps 
+ 
+As a dealer gains contract experience, the use of historical data becomes the best source of 
+information when populating the budget amounts. 
+ 
+For dealers with first time projects, the proposal can go back to the team and then to the most 
+experience members of the dealership to populate the budget amounts. The dealer may also 
+go to other dealers with existing operations for assistance with the first time project.  
+ 
+All areas of the business become involved in the development of an operational budget.  From 
+the sales department, parts department, to IT, all aspects of the business become a part of the 
+budgetary strategy.  
+  
+*This figure illustrates how input from all areas of the business makes this strategy work 
+ 
+                                        Service Department 
+                           -Labor hour                  -Structure of Job/Component Codes 
+                          -Types of Repairs         -Misc. Charges    
+                          -Repair Process  
+Customer         Caterpillar 
+-Wants and Needs       - Guidance/Council 
+ 
+Sales Department       Administration 
+-Models               -Financial Tracking 
+-Sales Strategy              -Reporting Structures 
+-Customer Needs 
+-Sales/Marketing Strategy 
+     Parts Department  Human Resources  
+    - Parts Inventories       -Staffing and Support 
+     - Parts Exchange        -Training/Development 
+Information Technology   
+ - Communication     
+ - Net Work Development 
+ 
+ 
+ 
+ 
+MARC 
+Strategy 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Building Operational Budgets 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-3.3-1132 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+An individual or team entity acting as a single point of contact should be appointed to be 
+responsible for following and managing a budget after it has been implemented.  
+ 
+See the files attached to this document, which contain examples of budgets that can be used 
+for site and analyzer application.  
+ 
+4.0 Benefits 
+ 
+• Enhanced management responsibility 
+o Causes a manager to consider all aspects of the operation. 
+• Decision making responsibilities over company resources. 
+o Management is forewarned of issues real time. 
+o Holds employees accountable for the results of their decisions. 
+• Coordination of Activities 
+o Preparation and communication across departments provides another 
+department quantitative terms of what is expected during a period. 
+• Cross check the critical assumptions 
+o Rate development process. 
+• Performance Evaluation 
+o Budget provide a yard stick with each department measured. 
+o A cross check to rate development critical assumptions. 
+o Provides a clear line of site to provision requirements. 
+ 
+ 
+5.0 Resources Required 
+ 
+The project manager has the single biggest impact on the profitability of a contract in terms of 
+budget performance. The project manger must coordinate the use of resources through 
+planning and organizing.  The project manager must also possess the ultimate responsibility 
+as a decision maker. 
+ 
+With budget performance, the work order technician has the next biggest impact on the 
+profitability of a contract. The work order technician must coordinate costs through planning 
+and organizing, and posses a high level of responsibility as decision maker. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+The attached files detail and outline the features and benefits of operational budgets for the 
+site application. 
+ 
+ Building Operational Budgets.ppt 
+ Mine Site Budget_2.xls 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Building Operational Budgets 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-3.3-1132 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+7.0 Related Best Practices 
+ 
+0907-3.3-1086  Localizing a Centerline Builder File for MARC Rate Development  
+ 
+Building operational budgets – Analyzer element requires the implementation of the Best 
+Practice listed above. This implementation will ensure the budgets created and used in 
+Analyzer will match the product sold by the dealer and delivered to the site. 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was authored by: 
+Don O’Neill 
+GMD MARC Development & Support 
+309.675.4861 
+oneill_don_g@cat.com 
+ 
+ 
+This Best Practice as co-authored by: 
+Rachel Merriman 
+GMD Intern 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Building Operational Budgets 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1108-3.3-1132 
+Caterpillar Confidential:  GREEN          Page 4 of 4

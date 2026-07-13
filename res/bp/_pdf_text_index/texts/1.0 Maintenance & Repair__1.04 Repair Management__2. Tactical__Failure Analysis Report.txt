@@ -1,0 +1,307 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+September 2011 
+0911-1.04-1226 
+  
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Failure Analysis Report 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Failure Analysis Report .............................................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 9 
+4.0 Benefits .............................................................. 9 
+5.0 Resources Required .......................................... 9 
+6.0 Supporting Attachments / References ............... 9 
+7.0 Related Best Practices ...................................... 9 
+8.0 Acknowledgements ............................................ 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Failure Analysis Report 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-1.04-1226 
+Caterpillar Confidential:  GREEN                 Page 1 of 9 
+1.0 Introduction  
+ 
+Trakindo is one of the largest dealerships in the world, due to the nature of the archipelagos they 
+have over 60 branches and 20 site offices that make up their dealership network. Each one of the 
+branches has specific capabilities from parts distribution, field service capability to component 
+rebuilds. From these outlets they have put together a series of best practices that they have 
+recognized internally to help all the branches.  
+ 
+This best practice is dealing with Failure Analysis Management. It begins with the complete 
+report to the specially supporting document for warranty, any redo reports and finally product 
+problems.  
+ 
+The reason for this best practice is that Failure Analysis Management has a big impact on 
+Trakindo’s working business. After carrying out surveys at their major branches Trakindo has 
+found that there was no consistency in a standard process and document to ensure all the 
+complete documentation is available at time reporting for Failure Analysis.  
+ 
+2.0 Best Practice Description 
+ 
+Previously Trakindo had no standard documents for Failure Analysis reporting. The documents 
+that was available where incomplete in content.  
+ 
+This new standard document will ensure that the technician or respective person can fill out all 
+the correct available information and follow up with the respective person if any information is 
+missing. Long term it will also standardize the Failure Analysis Report management and ensure 
+that with cross transfer of people they are using the same process across all branches.  
+ 
+This best practice will also save time in reporting Failure Analysis, hopefully speeding up 
+warranty claims and carry out in solving problems that occur.  
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Failure Analysis Report 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-1.04-1226 
+Caterpillar Confidential:  GREEN                 Page 2 of 9 
+Below is the old format for managing Failure Analysis reporting process.  
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Failure Analysis Report 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-1.04-1226 
+Caterpillar Confidential:  GREEN                 Page 3 of 9 
+Below is the new format for managing Failure Analysis reporting process. This can be found in the 
+Trakindo portal or system.  
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Failure Analysis Report 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-1.04-1226 
+Caterpillar Confidential:  GREEN                 Page 4 of 9 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Failure Analysis Report 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-1.04-1226 
+Caterpillar Confidential:  GREEN                 Page 5 of 9 
+Sample Report  
+ 
+ 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Failure Analysis Report 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-1.04-1226 
+Caterpillar Confidential:  GREEN                 Page 6 of 9 
+ 
+ 
+ 
+ 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Failure Analysis Report 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-1.04-1226 
+Caterpillar Confidential:  GREEN                 Page 7 of 9 
+ 
+ 
+ 
+ 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Failure Analysis Report 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-1.04-1226 
+Caterpillar Confidential:  GREEN                 Page 8 of 9 
+ 
+ 
+ 
+ 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Failure Analysis Report 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-1.04-1226 
+Caterpillar Confidential:  GREEN                 Page 9 of 9 
+3.0 Implementation Steps 
+ 
+- Determine the personnel who will be responsible to fill out the Failure Analysis Report form.  
+- Advise where the form is located in the portal or system.  
+- Advise all respective persons to implement using the form in the day to day process.  
+- Promote change feedback as installation may create new problems.  
+- Train all employees who have to use the new form regarding why this is required and the 
+importance of having all completed documentation available on time at job closing.  
+- Review process performance once established.  
+- Complete any adjustment as required.  
+ 
+4.0 Benefits 
+ 
+Efficiency – With the implementation of this new format the failure analysis management will 
+become more efficient. It will save the administration time to check that all required information is 
+complete. If not they will also be able to see which persons is require to send the missing related 
+information.  
+ 
+Increase Quality – More effective form simplifies the process - promoting high technician 
+professionalism, higher standard and increasing brand image.  
+ 
+5.0 Resources Required 
+ 
+People – Training for those involved with Failure Analysis to advise on the importance 
+completing the form, and the use of the new standard document.  
+ 
+6.0 Supporting Attachments / References 
+ 
+- PSDV.SVTC.FRM.001.R0 Failure Analysis Report Form 
+ 
+7.0 Related Best Practices 
+- 
+ 
+8.0 Acknowledgements 
+       
+       This Best Practice was re-written by: 
+o Herwina Dewi 
+o Corporate Best Practice 
+o Product Support Standard and Development 
+o PT. Trakindo Utama - Head Office 
+o Email: herwina.dewi@trakindo.co.id 
+o Office: 62217822373 ext: 1129

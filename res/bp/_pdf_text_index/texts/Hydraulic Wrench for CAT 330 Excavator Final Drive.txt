@@ -1,0 +1,418 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+March 2025 
+4.03-250326-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Hydraulic Wrench for CAT 
+330 Excavator Final Drive 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Hydraulic Wrench for CAT 330 Excavator Final Drive 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ........................................................... 12 
+5.0 Resources Required ........................................ 13 
+6.0 Supporting Attachments / References ............. 13 
+7.0 Related Best Practices .................................... 13 
+8.0 Acknowledgements ......................................... 13 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Wrench for CAT 330 Excavator Final Drive 
+DATE 
+3/26/2025 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-250326-1 
+Caterpillar: Confidential Yellow                Page 2 of 13 
+1.0 Introduction 
+  
+To successfully assemble and disassemble the 330 Excavator side final drive, it is necessary to install 
+the slide bearing in the housing and tighten the nut. However, the nut must be tightened to a torque of 
+2950 ± 295 lb-ft (4000 ± 400 N-m), which cannot be done with a hand tool because of the high torque 
+value. Special equipment must be used to perform this operation. 
+ 
+ 
+Fig. 1 Nut 
+ 
+Fig. 2 Stand for onboard final drive disassembly and assembly 
+ 
+Other dealers who assemble this onboard gearbox have to use a special bench to perform this 
+operation. However, at our dealership, repairs on these bevel gears are quite rare, so we have 
+developed an alternative assembly fixture that allows us to successfully perform this operation without 
+the use of a special bench. 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice describes a tool that is designed to tighten the nut on an onboard final drive using a 
+bench that is normally used for hydraulic cylinder assembly. Using it will avoid the need to purchase a 
+specialized on-board final drive disassembly and assembly stand, as you can make an alternative stand 
+yourself. 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Wrench for CAT 330 Excavator Final Drive 
+DATE 
+3/26/2025 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-250326-1 
+Caterpillar: Confidential Yellow                Page 3 of 13 
+To work with this wrench, you must use a special hydraulic cylinder assembly and disassembly stand. 
+Follow the instructions below to complete the task: 
+ 
+1. Bolt the onboard gearbox to the bracket. 
+2. Lift the onboard final drive to stand height with slings and crane and secure it to the stand. Leave 
+the slings taut for insurance. 
+3. Install the wrench in the hydraulic motor and lock it in place. 
+4. Start turning the hydraulic motor in the desired direction to tighten or loosen the nut. 
+5. Dismantle this construction from the stand. 
+ 
+ 
+When working with a hydraulic wrench, safety precautions and proper standards of procedure must be 
+followed to avoid injury or damage. In addition, it is recommended that all necessary tools and 
+accessories are checked , and that the equipment is visually inspected and tested before beginning 
+work. 
+ 
+ 
+Fig. 3 tool for assembly, disassembly of the onboard final drive 
+ 
+ 
+3.0 Implementation Steps 
+ 
+This tool consists of two parts: in the form of a wrench clamped into a low -torque hydraulic motor 
+mounted on the machine and a locking bracket mounted in the front headstock. 
+The wrench is made as follows: 
+ 
+Wrench 
+Final dive 
+ 
+Bracket 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Wrench for CAT 330 Excavator Final Drive 
+DATE 
+3/26/2025 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-250326-1 
+Caterpillar: Confidential Yellow                Page 4 of 13 
+ 
+Drawing 1 wrench 
+ 
+  
+Fig. 4 wrench 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Wrench for CAT 330 Excavator Final Drive 
+DATE 
+3/26/2025 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-250326-1 
+Caterpillar: Confidential Yellow                Page 5 of 13 
+ 
+Drawing 2 nut 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Wrench for CAT 330 Excavator Final Drive 
+DATE 
+3/26/2025 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-250326-1 
+Caterpillar: Confidential Yellow                Page 6 of 13 
+ 
+Drawing 3 coupling 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Wrench for CAT 330 Excavator Final Drive 
+DATE 
+3/26/2025 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-250326-1 
+Caterpillar: Confidential Yellow                Page 7 of 13 
+ 
+Drawing 4 cover 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Wrench for CAT 330 Excavator Final Drive 
+DATE 
+3/26/2025 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-250326-1 
+Caterpillar: Confidential Yellow                Page 8 of 13 
+ 
+Drawing 5 pipe 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Wrench for CAT 330 Excavator Final Drive 
+DATE 
+3/26/2025 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-250326-1 
+Caterpillar: Confidential Yellow                Page 9 of 13 
+ 
+Drawing 6 pipe 
+
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Wrench for CAT 330 Excavator Final Drive 
+DATE 
+3/26/2025 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-250326-1 
+Caterpillar: Confidential Yellow                Page 10 of 13 
+Assemble the wrench according to the drawings attached above. 
+Turn the inner diameter of the socket (item 1) after welding. 
+Milling the teeth of the coupling (pos.1) after welding. 
+You can use an old nut from a hydraulic cylinder to assemble it. 
+ 
+Bracket: 
+ 
+ 
+Drawing 7 bracket  
+ 
+ 
+Fig 5 wrench 
+
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Wrench for CAT 330 Excavator Final Drive 
+DATE 
+3/26/2025 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-250326-1 
+Caterpillar: Confidential Yellow                Page 11 of 13 
+ 
+Drawing 8 eyelet  
+
+
+===== PAGE 12 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Wrench for CAT 330 Excavator Final Drive 
+DATE 
+3/26/2025 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-250326-1 
+Caterpillar: Confidential Yellow                Page 12 of 13 
+ 
+Drawing 9 flange 
+ 
+Assemble the bracket according to the drawing. 
+The lug can be used from an old hydraulic cylinder with a suitable diameter.  
+ 
+4.0 Benefits 
+ 
+A tool consisting of a wrench clamped into a low-torque hydraulic motor mounted on the machine 
+and a locking bracket has several advantages over buying a special stand: 
+ 
+Reduced costs. It is much cheaper to assemble a wrench set with a hydraulic motor and fixing 
+bracket than to buy a special stand for assembly and disassembly of hydraulic cylinders 
+separately which is available at many dealers. This allows you to save a significant amount of 
+money on production equipment. 
+ 
+Space saving. Using this tool saves space in the shop, as it takes up much less space than a 
+separate stand. This is especially important for small workshops where every square meter 
+counts. 
+ 
+
+
+===== PAGE 13 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Wrench for CAT 330 Excavator Final Drive 
+DATE 
+3/26/2025 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-250326-1 
+Caterpillar: Confidential Yellow                Page 13 of 13 
+Versatility. This tool can be used with a variety of hydraulic motors and brackets, making it a 
+versatile and flexible production tool. 
+In general, the use of this tool can significantly improve the efficiency and economy of production, 
+reduce costs and simplify the work process. 
+ 
+5.0 Resources Required 
+ 
+• The machining shop and the time spent 
+• H ydraulic cylinder repair bench 
+• Consumption for metal 
+• The old nut from the hydraulic cylinder 
+• The old eyelet from the hydraulic cylinder 
+ 
+            The manufacturing cost will be $2,000. 
+ 
+6.0 Supporting Attachments / References 
+ 
+• see drawings 
+ 
+7.0 Related Best Practices 
+ 
+No 
+ 
+8.0 Acknowledgements 
+ 
+Writers: 
+Konobeitsev Kirill 
+Quality Engineer 
+Email: kkonobeitsev@borusan.com
+ 
+Phone number 87768626561 
+ 
+Creators: 
+Bezuglov Algis 
+Head of the power transmission section 
+Email: abezuglov@borusan.com
+ 
+Phone number: 87010829154 
+ 
+Papchenkov Maxim 
+Design Engineer 
+Email: mpapchenkov@borusan.com 
+Phone number: 87752738518

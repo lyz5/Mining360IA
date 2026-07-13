@@ -1,0 +1,338 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Hydraulic Stand For 
+Disassembly of Rear 
+Suspension Cylinders 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+Hydraulic Stand For Disassembly of Rear 
+Suspension Cylinders ................................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 7 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+April 2013 
+1303-4.03-1310 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+MINING DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+The disassembly process for rear suspension cylinder takes one and a half hours approximately. 
+In order to improve that time Ferreyros has implemented a hydraulic stand that allows them to do 
+the same process in 20 minutes.  
+ 
+2.0 Best Practice Description 
+ 
+The focus of this Best Practice is improving the efficiency, safety, and ergonomics of suspension 
+cylinder disassembly. The hydraulic stand can be used for two cylinders simultaneously (See 
+picture 1).  Using the stand, both cylinders are located vertically and the operator does not have 
+to strain to handle the cylinders manually. 
+ 
+ 
+ 
+Picture 1. Suspension cylinder into hydraulic stand   
+ 
+ 
+Before this Best Practice, the cylinder was positioned horizontally (See the picture 2). That 
+operation took a long time and the technician had to do more physical activity. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Stand For  
+Disassembly Of Rear Suspension Cylinders 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1303-4.03-1310 
+Caterpillar Confidential:  GREEN         Page 1 of 7 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+MINING DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Picture 2. Cylinder mounted before this best practice. 
+ 
+3.0 Implementation Steps 
+ 
+Disassemble Process using stand 
+ 
+ 
+• Use a sling in order to place the cylinder in the hydraulic stand. 
+ 
+ 
+ 
+Picture 3. Inside the fuel tank 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Stand For  
+Disassembly Of Rear Suspension Cylinders 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1303-4.03-1310 
+Caterpillar Confidential:  GREEN         Page 2 of 7 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+MINING DEALER BEST PRACTICE SERIES 
+ 
+ 
+• A ttach the cylinder with a pin in bottom level of the stand. 
+ 
+ 
+ 
+ 
+Picture 4. Cylinder cap clamped by a pin. 
+ 
+ 
+ 
+ 
+ 
+Picture 5. The top part of the cylinder is clamped by eight bolts and is adjustable for different sized cylinders 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Stand For  
+Disassembly Of Rear Suspension Cylinders 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1303-4.03-1310 
+Caterpillar Confidential:  GREEN         Page 3 of 7 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+MINING DEALER BEST PRACTICE SERIES 
+ 
+• The bolts are removed using a pneumatic tool. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Picture 6. Bolt removed 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Stand For  
+Disassembly Of Rear Suspension Cylinders 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1303-4.03-1310 
+Caterpillar Confidential:  GREEN         Page 4 of 7 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+MINING DEALER BEST PRACTICE SERIES 
+ 
+• Remove the Rod by pulling upward on the sling with a jib crane (See the picture 7) 
+ 
+ 
+ 
+ 
+ 
+Picture 7. Steps to remove the rod 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Stand For  
+Disassembly Of Rear Suspension Cylinders 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1303-4.03-1310 
+Caterpillar Confidential:  GREEN         Page 5 of 7 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+MINING DEALER BEST PRACTICE SERIES 
+ 
+• O nce the rod is removed, the inside diameter from the cylinder is measured with a micrometer 
+(See picture 8) in order to check the dimensional tolerance. After that, a lifting bracket is bolted 
+to the cylinder for removing the cylinder from the stand. 
+ 
+ 
+ 
+ 
+ 
+Picture 8. Steps to remove the cylinder 
+ 
+ 
+4.0 Benefits 
+ 
+• Safety operation – less manual handling. 
+• Reduce the disassembly time by 80%. 
+• Two suspension cylinders can be disassembled simultaneously. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Stand For  
+Disassembly Of Rear Suspension Cylinders 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1303-4.03-1310 
+Caterpillar Confidential:  GREEN         Page 6 of 7 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+MINING DEALER BEST PRACTICE SERIES 
+ 
+ 
+5.0 Resources Required 
+ 
+Fabrication shop. 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+None 
+ 
+ 
+7.0 Related Best Practices 
+ 
+ 
+None 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Name     Frank Córdova R. (Green Belt) 
+E mail     
+frank.cordova@ferreyros.com.pe 
+ 
+ 
+Recognition: 
+ 
+Team:                  Mario Femenia / Hydraulic Chief 
+     Miguel Mauriola / Operations Support Chief (Black Belt) 
+     Frank Córdova / Operations Support Assistant 
+     Hydraulic technicians  
+Sponsor:              Rodolfo Gerstein / Manager Machine Shop 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Stand For  
+Disassembly Of Rear Suspension Cylinders 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1303-4.03-1310 
+Caterpillar Confidential:  GREEN         Page 7 of 7

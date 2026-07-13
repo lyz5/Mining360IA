@@ -1,0 +1,215 @@
+SOURCE: 1.0 Maintenance & Repair\1.06 Backlog Management\2. Tactical\Tagging Recorded Backlogs  .pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+January 2016 
+1508-1.06-1384 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Tagging Recorded 
+Backlogs 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Tagging Recorded Backlogs ...................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tagging Recorded Backlogs 
+DATE 
+1/20/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1508-1.06-1384 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction  
+ 
+Backlogs are normally recorded on the electronic work order management system which needs to 
+be constantly reviewed in order to track outstanding faults. Backlogs (faults identified for further 
+work) on mining equipment are identified during various inspections as part of a structured 
+preventive maintenance process. These Backlogs in most cases are recorded on paper before 
+being entered into the electronic work order management system where it is scheduled, parts 
+ordered and labor is allocated for the job.  
+ 
+Often different people see the fault, complete the paperwork and / or look up the work order 
+management system. This can create double-ups or wasted time looking up work order system 
+for faults on each machine. If the Technician does not have access to the work order 
+management system, then time is wasted by completing Backlog paperwork for Administrators 
+and Supervisors to review and enter. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+By physically tagging Backlog faults on machines, Technicians can see what has been previously 
+recorded. This Best Practice outlines the process of physically tagging faults on machines so they 
+can be easily identified and others know the fault has been recorded as Backlog and scheduled 
+for future repairs.  This does not replace the paper or electronic recording and work order 
+management system. It's a way to physically identify recorded faults without the need to check the 
+paper or electronic system. 
+ 
+Tags can be any form of identification but one that has proven to perform well is the use of colored 
+cable ties (zip ties). In the example below we see bright yellow cable ties that are un-cut. These 
+are easily identifiable and it’s obvious in the example below that this leaking brake line has been 
+identified previously and a Backlog work order should therefore have been generated.  
+ 
+ 
+       
+Example of a yellow cable tie on a leaking brake line     Closer view of the cable tie on the brake line 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tagging Recorded Backlogs 
+DATE 
+1/20/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1508-1.06-1384 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+            Example of a coolant line identified for backlog work 
+ 
+Missing bolts, broken brackets, failing pumps, starters, and most components can still be tagged. 
+With cracks this is generally done with a paint pen already but is still the same principal.... marking 
+the fault so it can be easily physically identified.   
+ 
+3.0 Implementation Steps 
+ 
+Write up a process document / flowchart that outlines the steps to identify faults and ensure it is 
+tagged and recorded correctly in the work order management system. This should include…  
+ 
+1. The selection of a suitable tag and ensure this is used exclusively for Backlog 
+identification. This tag should be easily visible, robust and may also have reference 
+information written on it. 
+2. Establish a document and/or an electronic process to capture Backlog information and 
+enter this directly into the work order management system  
+3. Ensure tags are applied to the machine and removed when the work is complete. 
+4. Establish a reporting system where a full and current Backlog report can be produced for a 
+specific machine. 
+5. Establish a regular inspection program where the machine condition can be checked 
+against the Backlog report and fault severity and therefore urgency can be escalated or 
+reduced depending on condition. 
+ 
+  
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tagging Recorded Backlogs 
+DATE 
+1/20/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1508-1.06-1384 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+ 
+4.0 Benefits 
+ 
+• Recorded Backlog faults can be easily identified physically on the machine during 
+inspections. 
+• Technicians do not need to check paper or electronic records to see if the fault is recorded 
+therefore saves Technician time. 
+• Technicians do not waste time writing up Backlog reports on faults they identified if it has 
+already been recorded. 
+• Admin or Supervisor personnel do not waste time entering new Backlog reports that 
+double up on existing entries and it avoids ordering parts twice for the same job. 
+• If other work is performed on the machine you can easily see other identified faults and 
+these may be incorporated into the current work which saves time and helps reduce 
+outstanding Backlog. 
+ 
+ 
+5.0 Resources Required 
+ 
+• A supply of suitable tags. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+N/A 
+ 
+ 
+7.0 Related Best Practices 
+ 
+• 1211-1.06-1295 - Backlog Management - Setting Effective Backlog Execution Targets 
+• 1007-2.0-1103   - Backlog Management 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Written by Andy Reid – Caterpillar Global Mining, Melbourne Australia 
++61 3 99539136 
+Reid_Andrew_J@cat.com
+ 
+ 
+Thank you to the team at WesTrac Boddington for supplying the photos.

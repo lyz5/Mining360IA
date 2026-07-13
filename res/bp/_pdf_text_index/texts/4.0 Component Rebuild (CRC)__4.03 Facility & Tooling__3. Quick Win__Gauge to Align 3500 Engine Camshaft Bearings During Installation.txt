@@ -1,0 +1,234 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+GAUGE TO ALIGN 3500 
+ENGINE CAMSHAFT BEARINGS 
+DURING INSTALLATION 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+GAUGE TO ALIGN 3500 ENGINE CAMSHAFT BEARINGS 
+DURING INSTALLATION  ............................................... 0 
+1.0 Introduction ......................................................... 1 
+2.0 Best Practice Description ....................................... 2 
+3.0 Implementation Steps ............................................ 3 
+4.0 Benefits ............................................................... 3 
+5.0 Resources Required .............................................. 3 
+6.0 Supporting Attachments / References ...................... 4 
+7.0 Related Best Practices ........................................... 4 
+8.0 Acknowledgements ............................................... 4 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by one or 
+more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty about the 
+information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best Practice” 
+recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+May 2012 
+1205-4.03-1276 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Camshaft bearings must be installed with the oil holes in the bearing aligned exactly with the oil 
+passages in the cylinder in order to assure proper lubrication to the camshaft.   
+ 
+The install procedure states to position the oil hole on the bearing 20 degrees (plus or minus 5 
+degrees) off the horizontal centerline.   
+ 
+1. Install camshaft bearing (1) on tooling (A). 
+ 
+ 
+ 
+2. Position camshaft bearing (1) and Tooling (A) in the bore.  
+Note: The joint in camshaft bearing (1) must be on the horizontal centerline of the bore. The 
+upper oil hole must be 20 ± 5 degrees above the horizontal centerline of the bore. The lower oil 
+hole of camshaft bearing (1) should be 20 ± 5 degrees below the horizontal centerline of the 
+bore. The joints of camshaft bearing (1) on the right side of the engine must face the inside of 
+the cylinder block. The joints of camshaft bearing (1) on the left side of the engine must face 
+the outside of the cylinder block. 
+This Best Practice provides a very simple gauge to assure proper alignment. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool Guide for Installing Camshaft Bearings 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1205-4.03-1276 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.0 Best Practice Description 
+ 
+This is a very simple angle gauge to mark a position on the block to use to align the camshaft bearing oil 
+hole. 
+ 
+Bend a steel plate at 90°.   Make a notch of 3mm wide at a distance of 92.00 ± 0.06mm (3.620 ± 0.002inch)  
+(A).     The notch is used to locate the proper position on the block for alignment of the bearing  
+       oil hole.   The block is marked with a fine point marking pencil. 
+                
+ 
+                   
+                                                                          
+            
+                                         
+  
+ 
+ 
+Place the gauge on the edge of the block as shown and mark the bearing alignment location (notch) with a 
+marking pencil  
+ 
+ 
+    
+ 
+ 
+ 
+ 
+Notch - Mark  location 
+A 
+3mm notch 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool Guide for Installing Camshaft Bearings 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1205-4.03-1276 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Using the 8S2241 bearing installation tool, place the bearing on the installation tool.  Rotate the installation tool 
+and bearing to line up the bearing oil hole with the mark on the block.  Install the bearing with press tool. 
+ 
+      
+  
+ 
+ 
+ 
+ 
+                         
+  
+ 
+3.0 Implementation Steps 
+ 
+Fabricate the gauge as shown.   
+ 
+ 
+4.0 Benefits 
+ 
+• Quick, easy and correct installation of camshaft bearings. 
+ 
+ 
+5.0 Resources Required 
+ 
+Minimal expense to fabricate the tool. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool Guide for Installing Camshaft Bearings 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1205-4.03-1276 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+ 
+8.0 Acknowledgements 
+ 
+The idea for this Best Practice, belong to: 
+Segundo Varas 
+Ferreyros S.A.A. 
+ 
+This Best Practice was written by: 
+ Richard Navarro Villena 
+ Ferreyros S.A.A.  
+ 
+richard.navarro@ferreyros.com.pe 
+ 
+This Best Practice was revised by: 
+ Aninu Mitacc Vizcardo 
+ Ferreyros S.A.A.  
+ 
+aninu.mitacc@ferreyros.com.pe 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool Guide for Installing Camshaft Bearings 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1205-4.03-1276 
+Caterpillar Confidential:  GREEN          Page 4 of 4

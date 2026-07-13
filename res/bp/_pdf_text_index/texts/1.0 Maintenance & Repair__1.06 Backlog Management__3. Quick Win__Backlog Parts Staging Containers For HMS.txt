@@ -1,0 +1,312 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+July 19 
+1.06-190320-01 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Backlog Parts Staging 
+Containers For HMS 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Backlog Parts Staging Containers For HMS .............. 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information pro vided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Parts Containers for HMS 
+DATE 
+7/31/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.06-190320-01 
+Caterpillar Confidential:  YELLOW          Page 2 of 5 
+1.0 Introduction  
+ 
+The backlog management process starts when the recorded defect gets converted into a work 
+order, put into a work plan, and parts are then ordered for the execution of the job. If the ordered 
+parts are not available on site, they will have to be backordered from the Dealer main warehouse 
+or from a Caterpillar distribution center. Backordered parts can take several days to arrive, 
+depending on availability and source; parts may also be non-Caterpillar outside purchases. As 
+the ordered parts arrive at different times, they are stored in the backlog parts staging area.  
+When all the parts for the job have arrived, the job will have a “Parts Order Complete” stamped 
+either manually or electronically and the job can then be scheduled for the work to be completed, 
+generally when the machine is down for a PM Service.  In most instances, there will be more than 
+one backlog job. 
+ 
+In most instances, the parts are placed on shelves or in boxes with the work orders. Some mine 
+sites will have a box for each machine and identified by plant numbers or serial numbers. Many 
+cases, the boxes used are too small even for a minor PM Service. This Best Practice focuses 
+specifically on hydraulic mining shovels as it is common to place parts in secondary locations due 
+to their size – Introducing the risk for these to get misplaced or missed when the machine is ready 
+for service work. 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice describes the use of large portable containers for backlog job parts.  These 
+containers are typically 600 to 1000 liters in capacity (The ones shown in this document are 
+approximately 780 liters.) Dividers can be used when there are multiple jobs for a machine. This 
+will help the technicians to easily sort out the required parts for each job. The containers can even 
+be purchased with lids for contamination control or with castor wheels for manual handling 
+instead of utilizing a fork lift truck. 
+ 
+The containers will be able to be moved with a manual pallet fork or powered fork lift truck.  If 
+manual handling is required, they should be fitted with castor wheels.  They can then be easily 
+slid out of a row for stocking the parts inside.  When the scheduled machine is ready to be moved 
+into the workshop for the jobs to be done, the whole container can be moved to the bay and 
+placed next to the machine for unloading the parts. 
+ 
+All backlog jobs are planned, and Maintenance Department will therefore have time to organize 
+the parts to be in the bay before the machine arrives.  The size of these containers should 
+therefore not be an issue in transferring from the warehouse to the workshop bay.  In fact, the use 
+of these containers re-enforces the use of a single trip to the workshop bay. 
+ 
+  
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Parts Containers for HMS 
+DATE 
+7/31/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.06-190320-01 
+Caterpillar Confidential:  YELLOW          Page 3 of 5 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figures 1 and 2 show two different methods of positioning the containers in a warehouse.  For 
+sites with a large fleet, there may be less floor space in the warehouse to have all the containers 
+at floor level and may need to be stacked on shelves.  Stacking introduces some issues with the 
+requirements of using a fork lift truck every time when parts are needed to be placed in the 
+containers on higher levels. 
+ 
+Figure 4 shows a container with castor wheels where it can be manually pushed in and out for 
+stocking.  This container also has the option of ventilating holes on the side which may be desired 
+for specific purposes.  Please note that the containers shown in figures 1, 2 and 3 do not have 
+louvers at the top of the sides.  They are molded corrugations for added strength and rigidity. 
+  
+Fig. 2: Typical backlog parts containers at 
+ground level 
+ 
+ 
+Fig. 1: Typical backlog parts containers 
+stacked up 
+ 
+Fig. 3: Use of manual pallet fork trolley 
+ 
+  
+Fig. 4: Container with castor wheels  
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Parts Containers for HMS 
+DATE 
+7/31/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.06-190320-01 
+Caterpillar Confidential:  YELLOW          Page 4 of 5 
+ 
+Figure 5 shows how parts for multiple jobs can be organized in their own individual boxes 
+contained within the container.  This also aids in the workshop when multiple technicians are on 
+the job and saves time trying to sort through parts for different jobs.  Figure 6 shows the typical 
+containers for smaller traditional machines.  They are useful to the point when some larger parts 
+are ordered.  Such larger parts will require a separate location for storage. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+a) Review feasibility of using containers of suitable size. 
+b) Research on such containers.  A few suggestions to search for: pallet bins, parts 
+containers, mega bins, warehouse containers. 
+c) Set out area for the parts staging area. 
+d) Develop procedure of backlog management process if not already done so.  Refer to 
+another Best Practice; Backlog Management 1007-2.0-1103 August 2006. 
+e) Review availability of equipment to handle containers of desired size. 
+f) Purchase containers and utilize. 
+ 
+ 
+4.0 Benefits 
+ 
+There are multiple benefits when using such containers on site. 
+ 
+a) It will assist in contamination control efforts. 
+b) Parts are collated in one container and have less tendencies to be misplaced.  Misplaced 
+parts cost time and labor to locate.  In some cases, they must be reordered and it will 
+increase downtime of the machine.  If a reordered part does not have immediate delivery, 
+the machine may have to return to work with a defect which may fail while in operation. 
+  
+Fig. 5: Enough room for 1 PM Service and 4 
+backlog jobs. 
+ 
+Fig. 6: Typical small containers used for 
+smaller traditional machines. 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Parts Containers for HMS 
+DATE 
+7/31/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.06-190320-01 
+Caterpillar Confidential:  YELLOW          Page 5 of 5 
+ 
+c) It promotes better control of the backlog jobs when the parts are all in one container. 
+d) Moving the whole container out to the workshop as a carrier saves time in getting the parts 
+to the machine in one single trip. 
+e) Technicians get started on the jobs earlier. 
+f) Lower machine downtime. 
+g) Reduced frustrations of technicians and warehouse personnel. 
+h) Professional environment promotes professional work. 
+ 
+ 
+5.0 Resources Required 
+ 
+a) Set out appropriate space. 
+b) Mark out space with lines. 
+c) Handling equipment (manual lift truck, powered lift truck). 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+ 
+7.0 Related Best Practices 
+ 
+• Parts Management Best Practice 
+• Backlog Management Best Practice 
+ 
+ 
+8.0 Acknowledgements 
+ 
+WesTrac Equipment 
+KCGM MARC Team 
+Kalgoorlie, Western Australia 
+Australia 
+ 
+Written by: 
+Victor Lai 
+Equipment Management Consultant 
+Caterpillar Global Mining 
+Lai_victor_k@cat.com

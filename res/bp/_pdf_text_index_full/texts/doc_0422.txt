@@ -1,0 +1,343 @@
+SOURCE: Pipe Rack Interlock Switch on MD6290, MD6240 and MD6420 Models.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+March 2023 
+1.04-230308-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Pipe Rack Interlock Switch 
+on MD6290, MD6240 and 
+MD6420 Models 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Pipe Rack Interlock Switch on MD6290, MD6240 and  
+6420 Models …………………………………………….1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 3 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ............................................................. 4 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Pipe Rack Interlock Switch on MD6290, MD6240 and 
+6420 Models 
+DATE 
+3/8/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230308-1 
+Caterpillar: Confidential Yellow          Page 2 of 6 
+1.0 Introduction  
+ 
+The machines models MD6420, MD6290 and MD6240 is equipped with a pipe rack interlock 
+system. This system consists of a position switch – part number 517-7109 – installed on the mast 
+to identify the position of pipe rack. If the pipe rack moves off its stop inside the mast the proximity 
+switch will activate and stop the pulldown. This prevents the rotary head from hitting the pipe rack, 
+preventing operational accidents. 
+ 
+To activate the pulldown command, it is necessary to swing the pipe rack against stop (open 
+position). In that position the pulldown can resume. 
+ 
+But, when adding drill pipe however, you need to use pulldown and rotation with the pipe loader in 
+the mast. To do this, place the switch in the operation's cab in the by -pass position (towards the 
+unlock symbol). This will allow the rotation and pulldown functions to work when the pipe loader is 
+out. The pictures 1 and 2 show the switches cited above. 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Picture 1: Position switch on the mast Picture 2: By-pass switch in the operator’s cab 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Pipe Rack Interlock Switch on MD6290, MD6240 and 
+6420 Models 
+DATE 
+3/8/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230308-1 
+Caterpillar: Confidential Yellow          Page 3 of 6 
+2.0 Best Practice Description 
+ 
+The by-pass switch in the operator’s cab (part number 472 -4601) is a single two position switch 
+and the position it is not returnable. At this condition, the operator can forget the switch in by-pass 
+position and actuate the pulldown command with the pipe rac k inside of the mast, causing an 
+accident between the pipe rack and rotary drive. 
+ 
+To avoid this accident, the type of the by-pass switch was changed to a spring returnable switch 
+part number 246-8912, as shown in the pictures 3 and 4. 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Note: Parts list in the "5.0 Resources Required" 
+ 
+1. Stop and shutdown the machine. Lock the safety device preventing switch, apply a warning 
+sign. 
+2. Using a screwdriver, remove the installation bolts of the drill functions panel. 
+3. Access the electrical terminals of the by-pass switch and disconnect them. 
+4. Using a 1/2" open- end wrench at the hexagonal connection of switch, remove the original by -
+pass switch. 
+5. Using the same open-end wrench, install the new by-pass switch. Note: the normal position of 
+this switch is in the lock symbol. 
+6. Connect the electrical terminals. 
+7. Using a screwdriver, install the drill functions panel. 
+8. Open the safety device preventing switch and turn on the machine. 
+9. Test the new by-pass switch installed in the pipe rack interlock system. 
+ 
+ 
+ 
+ 
+ 
+Picture 3: Placing the switch in by-pass position Picture 4: Switch returned to the original 
+position 
+By-pass 
+switch 
+By-pass 
+switch 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Pipe Rack Interlock Switch on MD6290, MD6240 and 
+6420 Models 
+DATE 
+3/8/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230308-1 
+Caterpillar: Confidential Yellow          Page 4 of 6 
+The picture 5 shows details of this installation. 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+1. Safety: Eliminate accidents by operator forget the switch at by-pass position. 
+2. Maintenance: Eliminate failures due to collisions rotary head and pipe rack. 
+3. Installation: It's a simple installation, with low labor. 
+4. Costs: Very low cost. 
+ 
+ 
+ 
+Lock 
+position 
+Drill functions 
+panel bolts 
+Drill functions 
+panel bolts 
+By pass switch 
+hexagonal 
+connection 
+Picture 5: Details of change the by-pass switch 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Pipe Rack Interlock Switch on MD6290, MD6240 and 
+6420 Models 
+DATE 
+3/8/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230308-1 
+Caterpillar: Confidential Yellow          Page 5 of 6 
+5.0 Resources Required 
+ 
+The tables 1 and 2 below show the items and tolls used for this improvement. 
+ 
+Table 1: PARTS LIST 
+ITEM PART NUMBER DESCRIPTION QUANTITY 
+1 246-8912 Switch assembly 01 ea 
+ 
+Table 2: TOOLS 
+TOOL DESCRIPTION QUANTITY 
+1 Screwdriver 01 ea 
+2 Open-end wrench 01 ea 
+ 
+Total parts cost US$: 58.62 
+Labor: 0.5 hour – 1 technician 
+ 
+6.0 Supporting Attachments / References 
+ 
+BI012798-00 – Parts catalogue MD6290 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+João Marinho 
+joao.marinho@sotreq.com.br
+ 
+ 
+This Best Practice was written and implanted by: 
+ 
+Cirley Ribeiro 
+cirley.ribeiro@sotreq.com.br
+ 
+ 
+João Marinho 
+joao.marinho@sotreq.com.br 
+ 
+Ygor Ceolin  
+ygor.ceolin@sotreq.com.br 
+ 
+Best Practice Champion 
+ 
+Fellipe Viana 
+fellipe.viana@sotreq.com.br
+ 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Pipe Rack Interlock Switch on MD6290, MD6240 and 
+6420 Models 
+DATE 
+3/8/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230308-1 
+Caterpillar: Confidential Yellow          Page 6 of 6 
+Special thanks in development to: 
+ 
+Antonio Frieiro 
+antonio.frieiro@sotreq.com.br 
+ 
+Ary Rizel 
+ary.rizel@sotreq.com.br 
+ 
+Carlos Dias 
+carlos.dias@sotreq.com.br 
+ 
+Cassio Pereira 
+Cassio.Pereira@sotreq.com.br 
+ 
+Daniel Cunha 
+daniel.cunha@sotreq.com.br 
+ 
+Davy Dutra 
+davy.dutra@sotreq.com.br 
+ 
+Douglas Reis 
+douglas.reis@sotreq.com.br 
+ 
+Fabio Xavier 
+Fabio.Xavier@sotreq.com.br 
+ 
+Heder Coelho  
+Heder.Coelho@sotreq.com.br 
+ 
+Janair Xavier 
+janair.xavier@sotreq.com.br 
+ 
+Jud Oliveira 
+jud.oliveira@sotreq.com.br 
+ 
+Michael Silva 
+michael.freire@sotreq.com.br 
+ 
+Paulo Pirani 
+paulo.pirani@sotreq.com.br 
+ 
+Ronan Duarte 
+ronan.duarte@sotreq.com.br 
+ 
+Thiago Rezende 
+Thiago.Rezende@sotreq.com.br 
+ 
+Yuri Oliveira 
+ygor.ceolin@sotreq.com.br

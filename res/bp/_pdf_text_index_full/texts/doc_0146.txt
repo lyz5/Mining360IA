@@ -1,0 +1,259 @@
+SOURCE: 3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\Bulk Fuel Filtration.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Bulk Fuel Filtration 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+ 
+Bulk Fuel Filtration ..................................................... 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments .................................... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+August 2006 
+0806-2.10-1006 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Modern fuel systems use electronic unit injectors which deliver precise amounts of fuel at 
+pressures up to 25,000 psi, and control injection timing to within thousandths of a second. 
+Electronic unit injectors control the performance and fuel economy of the engine and are 
+expensive to replace when worn. A rough estimate of injector replacement cost with parts and 
+labor is approximately $1,000 per cylinder. And, of course, there’s the cost of taking a machine 
+out of production. 
+ 
+Injectors operated on clean fuel should last through engine overhaul. The fuel filters on the 
+machine are designed to provide final filtration for moderately clean supply fuel. Machine filtration 
+is not intended to clean fuel contaminated with large amounts of dirt and water. If contaminated 
+fuel is used, the capability of the onboard filtration is overwhelmed and injectors either wear out 
+prematurely or seize.  
+ 
+For a variety of unavoidable reasons, fuel delivered to mine sites is usually contaminated with dirt 
+and water. Because fuel is a very low margin commodity, suppliers almost never provide 
+adequate bulk fuel filtration or exercise recommended storage practices. As a result, customers 
+receive and use contaminated fuel, resulting in premature injector failure and wear out. This 
+causes excessive fuel consumption and often results in mid-life injector set replacement. 
+ 
+Bulk fuel filtration has been used in the aviation industry for more than 50 years to address the 
+same problems. Caterpillar has now adopted this proven technology to help mining customers 
+clean contaminated fuel. 
+ 
+2.0 Best Practice Description 
+Bulk fuel filtration consists of high capacity filters, which remove both excess dirt and water from 
+the supply fuel before it is put into the machine.  
+ 
+Caterpillar has engineered a packaged system to remove both dirt and water. It requires very 
+little maintenance and contains safeguards to prevent contaminated fuel from passing through 
+the unit. The unit is self-contained on a skid and is located between the fuel storage tank and 
+fueling station. It provides single pass filtration and is offered in four sizes depending on the 
+maximum flow rate of the fuel delivery system. 
+ 
+2.1 Dirt (Particulate Filter) 
+4-micron, beta 200, full synthetic particulate filter elements remove dirt in a single pass. Filter 
+change intervals of up to one month depending on the level of fuel contamination. 
+ 
+2.2 Water (Coalescing Filter) 
+Coalescer unit contains multiple elements capable of removing up to 3% water by volume to 
+1,000 ppm (0.1%) or less at the rated flow. Water is automatically drained, requiring no manual 
+intervention. Coalescing elements do not plug and usually require changing only once a year. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Fuel Filtration 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1006 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Fuel Filtration 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1006 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.3 Flow Control Valve 
+An automated flow control valve slows down or stops fuel outlet flow if particulate filters plug or 
+there are massive amounts of water in the fuel. This assures only clean fuel leaves the unit. 
+ 
+3.0 Implementation Steps 
+Technical information and pricing on these units is available from Cat Global Mining and the Cat 
+Filters and Fluids group. Unit sizing is determined by the maximum flow rate of the fuel delivery 
+system. Four different sizes are available: 
+ 
+50 &100 GPM 
+Small units intended for remote day tank applications or for portable use on a fuel truck where 
+fueling is done manually.  
+ 
+ 200 GPM 
+Intended for fuel stations using fast-fill where maximum flow does not exceed 200 gpm. This 
+unit will handle trucks through 793. 
+ 
+ 300 GPM 
+ Intended for fast-fill of 797 trucks where fuel flow rates exceed 200 gpm. 
+ 
+4.0 Benefits 
+ 
+Supplying clean fuel to the machine permits the onboard fuel filters to function properly without 
+plugging.  
+ 
+Most injectors should last to engine overhaul and provide improved long-term fuel 
+economy and engine performance. 
+ 
+5.0 Resources Required 
+ 
+Permanent installation requires only a small concrete pad downstream of the bulk storage tank 
+and supply pump. The unit is installed in series in the fuel supply line to the fueling station. 
+ 
+A water container is required nearby to store the waste-water removed from the fuel. No 
+electrical power is required for the unit unless it is used in freezing climates.  
+ 
+An optional electric heating element is available to prevent water from freezing in the bottom of 
+the coalescer tank. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Fuel Filtration 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1006 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+6.0 Supporting Attachments  
+ 
+Component Life Management Master Document, PDF file. (Click on Attachments within this 
+document to view) 
+ 
+An explanation of how the unit works, along with visuals is available in the “Managing Fluid 
+Cleanliness” booklet form SEBF1020. 
+ 
+ 
+ 
+ 
+ 
+ 
+7.0 Related Best Practices 
+0806-2.10-1005 -Bulk Oil Filtration 
+0806-2.10-1000 -Managing Fluid Cleanliness 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Fuel Filtration 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1006 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+This Bulk Fuel Filtration Best Practice was authored by: 
+Dick Douglas 
+Market Consultant 
+Caterpillar Global Mining 
+Douglas_Richard_D@cat.com  
+1-309-675-5699 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Fuel Filtration 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1006 
+Caterpillar Confidential:  GREEN          Page 6 of 6

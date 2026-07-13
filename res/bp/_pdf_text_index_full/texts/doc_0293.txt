@@ -1,0 +1,264 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Managing CRC Supplies.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2007  
+1007-4.5-1093  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Managing CRC Supplies 
+and Consumables 
+Application Maintenance Component 
+Rebuild 
+Component Life 
+Management MARC 
+Management 
+ 
+ 
+ 
+Managing CRC Supplies and Consumables ............. 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits ............................................................. 2 
+5.0  Resources Required .......................................... 3 
+6.0  Supporting Attachments / References ............... 3 
+7.0  Related Best Practices ...................................... 4 
+8.0  Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRI TTEN PERMISSION OF CATERPILLAR  
+Delivery of supplies to CRC work bays (Supplier Cart) 
+DATE 
+6/7/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1007-4.5-1093  
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction  
+ 
+In today’s CRC environment where CRC efficiency is required, most dealers strive to minimize 
+work interruptions. Any time a technician must leave his work bay, this creates an interruption. 
+ 
+Gecolsa, the Caterpillar dealer in Colombia, has recently implemented a process in the shop to 
+deliver supplies and consumables to each of the 44 different work bays twice a day, using a 
+stocked delivery cart for this purpose.  Supplies and consumables are stored in the tool crib, and 
+under the new process, tool crib personnel deliver supplies to the work bays using a fully stocked 
+cart. 
+ 
+Technicians no longer need to leave their workstation in order to get common supplies and 
+consumables. 
+ 
+The delivery of supplies using a “supply cart” is far more efficient than the almost daily technician 
+trip to the tool room previously required. In addition, this practice eliminates a common work 
+interruption and better utilizes the time of skilled technicians.  
+ 
+2.0 Best Practice Description 
+ 
+ 
+         
+                            
+ 
+Previously, the supplies and consumables delivery process was centralized. Technicians were 
+responsible for getting their own supplies. Technicians had to leave their work bays, walk to CRC 
+Tool Room and order supplies or tools required for their tasks. 
+ 
+In order to increase efficiency, a supply delivery process was developed. The target was to deliver 
+supplies directly to CRC work bays. A special delivery cart was designed to hold commonly 
+consumed items and easily transport them to the workstations. 
+ 
+ 
+ 
+ 
+ 
+ 
+Before  After  
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRI TTEN PERMISSION OF CATERPILLAR  
+Delivery of supplies to CRC work bays (Supplier Cart) 
+DATE 
+6/7/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1007-4.5-1093  
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+3.0 Implementation Steps 
+ 
+• Communicate new process to CRC personnel. 
+ 
+        Before                       After 
+ 
+     
+  
+ 
+• Determine a supply list - with the highest demand.  
+ 
+Supply lists includes such items as rolls of plastic for Contamination Control, sand paper and 
+emory cloth, loctite, brushes, silicon, markers, gloves,  gasket compound, o-ring compound, 
+duct tape, greases, cleaners, penetrating oils, paper towels, etc. See attachments for a parts 
+list and part numbers. 
+ 
+3.1 Establish a model of inventory EOQ ( The Economic Order Quantity ( EOQ ) Inventory  Model) 
+•  Define 
+1. When to enter an order for an item - minimum sto ck level. (Re-order point) 
+2. Quantity to order – maximum stock level. 
+3. Average consumption rates for fast moving items.  
+• Design the best route to deliver the supplies, as per bay’s needs. 
+ 
+4.0 Benefits 
+ 
+Between benefits obtained by this implementation are: 
+ 
+• Reduce in dead time to get supplies. (Saves 80%) 
+• Improve supply consumption control. 
+• Increase quality of Tool Room service. 
+• Reduce in congestion and waiting at tool room. 
+• Less technician interruptions. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRI TTEN PERMISSION OF CATERPILLAR  
+Delivery of supplies to CRC work bays (Supplier Cart) 
+DATE 
+6/7/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1007-4.5-1093  
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+ 
+ 
+5.0 Resources Required 
+ 
+• A cart for deliveries - $1000 
+• A person in charge of cart and deliver supplies. 
+• Software for inventory administration. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Cost Analysis 
+Cart’s drawings 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRI TTEN PERMISSION OF CATERPILLAR  
+Delivery of supplies to CRC work bays (Supplier Cart) 
+DATE 
+6/7/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1007-4.5-1093  
+Caterpillar Confidential:  GREEN          Page 4 of 3 
+ 
+ 
+Editor’s addition:  photos of clear acrylic boxes in work bays at Ferreyros, with inventory stocking 
+list, as well as assembly lube (with ISO spec).  Both are maintained/filled by dedicated resource, 
+not technician.  
+ 
+7.0 Related Best Practices 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRI TTEN PERMISSION OF CATERPILLAR  
+Delivery of supplies to CRC work bays (Supplier Cart) 
+DATE 
+6/7/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1007-4.5-1093  
+Caterpillar Confidential:  GREEN          Page 5 of 3 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Karen Zambrano 
+CRC 
+Gecolsa CAT 
+karen_zambrano@gecolsa.com.co 
+ 
+Carlos Acosta Galarcio 
+Mining Technical Communicator 
+Mining Technical Department 
+Gecolsa CAT 
+carlos_acosta@gecolsa.com.co  
+ 
+The idea of this Best Practice belongs to: 
+ 
+Ricardo Chegwin 
+Mining Technical Manager 
+Gecolsa CAT 
+ricardo_chegwin@gecolsa.com.co  
+ 
+ 
+Additional photos from Ferreyros CRC, Lima Peru

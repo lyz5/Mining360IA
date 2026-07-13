@@ -1,0 +1,160 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IA Config | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    {{ sections|json_script:"ia-config-sections-data" }}
+    <main class="app-shell ia-config-shell" data-ia-config-root data-api-base="/ia-config/api" data-is-admin="{% if is_ia_admin %}1{% else %}0{% endif %}">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">AI administration</p>
+                <h1>IA Config</h1>
+            </div>
+            <div class="summary">
+                <span class="summary-value">{{ sections|length }}</span>
+                <span class="summary-label">sections</span>
+            </div>
+        </header>
+
+        <section class="ia-config-hero">
+            {% for section in sections %}
+                <button type="button" class="ia-section-card js-ia-section-card {% if forloop.first %}active{% endif %}" data-section-code="{{ section.code }}">
+                    <span class="ia-section-card__title">{{ section.name }}</span>
+                    <span class="ia-section-card__meta">{{ section.description|default:"No description provided" }}</span>
+                </button>
+            {% endfor %}
+        </section>
+
+        <section class="ia-config-grid">
+            <aside class="ia-config-sidebar">
+                <div class="placeholder-panel">
+                    <p class="eyebrow">Controls</p>
+                    <h2>Intent extraction</h2>
+                    <p>The chatbot first extracts a structured JSON intent, then the backend generates controlled DAX from configuration.</p>
+                </div>
+
+                <div class="placeholder-panel">
+                    <p class="eyebrow">Test Intent</p>
+                    <label class="ia-field">
+                        <span>Section</span>
+                        <select id="ia-test-section"></select>
+                    </label>
+                    <label class="ia-field">
+                        <span>Question</span>
+                        <textarea id="ia-test-question" rows="5" placeholder="Type a mining question..."></textarea>
+                    </label>
+                    <div class="ia-inline-actions">
+                        <button type="button" class="button secondary" id="ia-run-test">Test Intent</button>
+                    </div>
+                    <div class="ia-output-block">
+                        <span class="ia-output-label">JSON Intent</span>
+                        <pre id="ia-test-intent" class="ia-code-block"></pre>
+                    </div>
+                    <div class="ia-output-block">
+                        <span class="ia-output-label">DAX</span>
+                        <pre id="ia-test-dax" class="ia-code-block"></pre>
+                    </div>
+                    <div class="ia-output-block">
+                        <span class="ia-output-label">Validation</span>
+                        <pre id="ia-test-validation" class="ia-code-block"></pre>
+                    </div>
+                    <div class="ia-output-block">
+                        <span class="ia-output-label">Status</span>
+                        <div id="ia-test-status" class="flash" hidden></div>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="ia-config-main">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Configuration</p>
+                        <h2 id="ia-active-section-title">Performance</h2>
+                    </div>
+                    <div class="ia-toolbar">
+                        <label class="ia-filter">
+                            <span>Search</span>
+                            <input type="search" id="ia-resource-search" placeholder="Search definitions...">
+                        </label>
+                        <label class="ia-filter">
+                            <span>Status</span>
+                            <select id="ia-resource-active">
+                                <option value="">All</option>
+                                <option value="1">Active</option>
+                                <option value="0">Inactive</option>
+                            </select>
+                        </label>
+                        <button type="button" class="button secondary" id="ia-add-item">Add</button>
+                        <button type="button" class="button secondary" id="ia-refresh-items">Refresh</button>
+                        <button type="button" class="button secondary" id="ia-import-semantic">Import Semantic Model</button>
+                    </div>
+                </div>
+
+                <div class="ia-tabs" id="ia-resource-tabs">
+                    <button type="button" class="ia-tab active" data-resource-type="question-examples">Question Examples</button>
+                    <button type="button" class="ia-tab" data-resource-type="synonyms">Synonyms</button>
+                    <button type="button" class="ia-tab" data-resource-type="metrics">Metrics Mapping</button>
+                    <button type="button" class="ia-tab" data-resource-type="filters">Filters Mapping</button>
+                    <button type="button" class="ia-tab" data-resource-type="dax-templates">DAX Templates</button>
+                    <button type="button" class="ia-tab" data-resource-type="semantic-tables">Semantic Tables</button>
+                    <button type="button" class="ia-tab" data-resource-type="semantic-columns">Semantic Columns</button>
+                    <button type="button" class="ia-tab" data-resource-type="semantic-measures">Semantic Measures</button>
+                    <button type="button" class="ia-tab" data-resource-type="semantic-relationships">Semantic Relationships</button>
+                    <button type="button" class="ia-tab" data-resource-type="business-vocabulary">Business Vocabulary</button>
+                    <button type="button" class="ia-tab" data-resource-type="few-shot-examples">Few Shot Examples</button>
+                    <button type="button" class="ia-tab" data-resource-type="prompt-templates">Prompt Templates</button>
+                    <button type="button" class="ia-tab" data-resource-type="business-rules">Business Rules</button>
+                    <button type="button" class="ia-tab" data-resource-type="powerbi-pages">Power BI Pages</button>
+                    <button type="button" class="ia-tab" data-resource-type="visual-mapping">Visual Mapping</button>
+                    <button type="button" class="ia-tab" data-resource-type="kpi-targets">KPI Targets</button>
+                    <button type="button" class="ia-tab" data-resource-type="recommended-actions">Recommended Actions</button>
+                    {% if is_ia_admin %}
+                        <button type="button" class="ia-tab" data-resource-type="debug-runs">Debug</button>
+                    {% endif %}
+                </div>
+
+                <div class="table-scroll ia-config-table-wrap">
+                    <table class="data-table" id="ia-resource-table"></table>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <div class="browser-modal" id="ia-config-modal" hidden aria-hidden="true">
+        <div class="browser-modal__backdrop" data-ia-modal-close></div>
+        <div class="browser-modal__panel browser-modal__panel--fullscreen" role="dialog" aria-modal="true" aria-labelledby="ia-modal-title">
+            <div class="browser-modal__header">
+                <div>
+                    <p class="eyebrow">IA Config</p>
+                    <h2 id="ia-modal-title">Create item</h2>
+                </div>
+                <button class="icon-button" type="button" data-ia-modal-close aria-label="Close">×</button>
+            </div>
+            <form id="ia-config-form" class="ia-config-form">
+                <div id="ia-config-form-fields" class="form-grid"></div>
+                <div class="form-actions">
+                    <button type="button" class="button secondary" data-ia-modal-close>Cancel</button>
+                    <button type="submit" class="button secondary" id="ia-save-item">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="browser-center-message" id="ia-center-message" hidden aria-hidden="true">
+        <div class="browser-center-message__card">
+            <strong class="browser-center-message__text" id="ia-center-message-text"></strong>
+            <div class="browser-center-message__actions">
+                <button type="button" class="button secondary" id="ia-center-message-ok">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'reports/ia_config.js' %}?v=20260707-1"></script>
+</body>
+</html>

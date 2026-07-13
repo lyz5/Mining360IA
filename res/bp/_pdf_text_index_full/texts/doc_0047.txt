@@ -1,0 +1,1627 @@
+SOURCE: 1.0 Maintenance & Repair\1.03 Planning & Scheduling\1. Strategic\Planning & Scheduling.pdf
+PAGES: 34
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+1007-2.0-1104 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Planning and Scheduling 
+(Strategic) 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Planning and Scheduling ........................................... 0
+ 
+(Strategic) .................................................................. 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ...................................... 27 
+4.0 Benefits ............................................................ 30 
+5.0 Resource Requirements .................................. 30 
+6.0 Supporting Attachments / References ............. 33 
+7.0 Related Best Practices .................................... 33 
+8.0 Acknowledgements .......................................... 33 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 1 of 33 
+1.0 Introduction  
+ 
+Planning and Scheduling (PS) is one of the core functions of the maintenance and repair system. It 
+plays a critical role in the development, implementation and execution of a repair -before-failure 
+philosophy and supports the goal of achieving a high percentage of planned and scheduled repairs. 
+Planning & Scheduling must define the maintenance strategy, transform it into clear and effective 
+plans and activities, schedule them through to execution, and control the results by developing the 
+most appropriate corrective management action plans. 
+ 
+Planning and Scheduling manages all of the various maintenance-related downtime scenarios 
+throughout a machine’s lifecycle: Condition Monitoring, Unscheduled and Scheduled repairs, 
+Preventive Maintenance and Planned Component Replacements. See Figure 1. 
+ 
+ 
+ 
+        
+ 
+These maintenance and repair activities must be planned and executed in coordination with the labor, 
+machine, parts, and resource availability. Effective Planning and Scheduling ultimately achieves a 
+balance between M&R required activities, resource availability and capability, and overall fleet 
+availability. It’s a matter of completing the required monthly M&R activities within the target fleet 
+unavailability time reserved for maintenance and repair.  
+ 
+2.0 Best Practice Description 
+ 
+ 
+Description Outline 
+2.1 Planning & Scheduling Overview 
+2.2 Planning & Scheduling Process 
+2.2.1 Strategy 
+2.2.2 Records & Recordkeeping 
+2.2.3 Planning 
+2.2.4 Scheduling 
+2.2.5 Technical Support 
+2.2.6 Availability Management 
+2.2.7 Performance Evaluation 
+ 
+2.1 Planning & Scheduling Overview 
+ 
+Fig. 1 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 2 of 33 
+Planning and Scheduling functions can be categorized as tactical…” what should we do?”, 
+technical…” how should we do it?” and logistical…”when should we do it?”. Planning must first 
+provide the “What” by transforming the Maintenance Strategy into actionable plans supported by clear 
+goals and objectives. Scheduling follows with the “when” by defining the actual schedules of the plan 
+activities, when to execute them and triggering the allocation of needed resources. The what, how 
+and when can be represented three major areas or columns, the Tactical, the Technical and the 
+Logistical. See Figure 2. 
+ 
+ 
+ 
+The planning organization must first define their overall goals and objectives before a maintenance 
+strategy or plan can be developed. We offer four main goals and objectives: 
+ 
+• Provide tactical & logistical support to the entire organization. 
+ 
+• Provide updated Short, Medium & Long Term maintenance plans. 
+ 
+• Track and support the mine production plans to balance the maintenance activities within the 
+availability goals (manage fleet availability).  
+ 
+• Guide the M&R organization with updated performance/execution information, KPI’s and 
+management recommendations..  
+   
+ 
+There are many inputs that must be considered when developing the maintenance strategy and plan 
+in support of the goals and objectives. The strategy, which yields the guidelines for each maintenance 
+activity, will be unique depending upon site-specific details. For example, the production plan, fleet 
+characteristics, dealer maintenance contractual definitions, and application severity will dictate 
+available fleet downtime, dealer maintenance responsibilities, maintenance activities required, etc… 
+this is the “what” portion of the strategy. Other inputs such as maintenance facilities, budget, parts, 
+and labor availability will define the logistical “how” and “when” portions of the maintenance strategy. 
+Strategy development will be covered in further detail in section 2.2.1. 
+ 
+The Planning and Scheduling organization is ultimately responsible for the support, execution, 
+management, and success of the overall maintenance program while still accommodating the 
+Fig. 2 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 3 of 33 
+production plan. The responsibility is quite extensive. Therefore, in support of the maintenance 
+strategy and plan, the implementation of multiple other process and organizations will be required. 
+These processes will provide both the inputs and execute the outputs of Planning and Scheduling. 
+For example, the Condition Monitoring (CM) groups’ findings will generate the input that 
+generates/adjusts the short, medium, and long-term maintenance plans. At the same time, P&S will 
+define (output) the activities to be executed by the CM group. In other words, the P&S group defines 
+the CM activities that feed directly back into the P&S information input - creating a closed process 
+loop. The same relationship exists for the Preventive Maintenance, Repair Management, Backlog 
+Management, and Parts groups. The following graphic illustrates that Planning and Scheduling is truly 
+the brain of the operation sitting at the center of the supporting disciplines, both receiving information 
+and defining guidelines and activities for each. See Figure 3. 
+ 
+ 
+ 
+ 
+Planning’s main function is to translate the maintenance strategy into continuously updated 
+maintenance plans.  
+ 
+The plan then drives the functions of: 
+ 
+1. Event scheduling 
+2. Availability management 
+3. Labor/resource management 
+4. Record keeping 
+5. Provide technical support 
+6. Performance evaluation 
+7. Identify and lead continuous improvement plans 
+ 
+2.2 Planning & Scheduling Process 
+ 
+Fig. 3 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 4 of 33 
+2.2.1 Strategy 
+The basis for any successful Planning and Scheduling process is a documented and complete 
+strategy. As mentioned, the strategy will be the governing reference document that defines what the 
+organization intends to accomplish and a plan of how the strategy will be executed. Robust strategies 
+include both the high level P&S objective and description but also outlines of the process approach, 
+sequencing, duties, and functions. The following is an example of a well-defined P&S strategy index 
+(See Table 1). Notice that the strategy includes the description for the specific P&S processes and 
+also the supporting functions mentioned above (condition monitoring, parts management, etc): 
+ 
+ 
+One tool available to help develop the P&S strategy is the “Maintenance Strategy Reference (MSR).” 
+MSR is a tool available to specifically define a model-specific maintenance strategy. Dealer personnel 
+use the tool to document the site profile, equipment profile, risks, etc. in order to develop the condition 
+monitoring, preventive maintenance, and roles & responsibilities strategy to best maintain that 
+machine. However, this is only a portion of the overall P&S organization strategy.  
+ 
+Table 1 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 5 of 33 
+Now that the P&S strategy is defined, the organization can begin developing the overall P&S plan for 
+each maintenance sub-function (PM, Condition Monitoring, Backlogs, etc). These functions will be 
+carried out by the various maintenance areas either owned or in partnership with the P&S group. The 
+plan must define three elements for each maintenance function: 
+ 
+1. Functions and routines 
+2. Resources required 
+3. Expected results 
+ 
+The overall process diagram below shows the seven areas that must work together and contribute to 
+the execution and evaluation of each maintenance function (Preventive Maintenance, Condition 
+Monitoring, Backlogs, etc). 
+ 
+1. Planning: planning of all the maintenance activities 
+2. Data Collection: Implement the data collection systems and collection of the Production and 
+M&R data (i.e. machine availability, delays, stoppages, PM intervals, backlogs pending, etc.) 
+3. Scheduling: management and triggering of machines and resources to execute the plan. 
+4. Logistics: management of the parts and tools required to execute the plan. 
+5. Human Resources: management of the labor required to execute the plan. 
+6. Technical Support: On or off site technical resources required to resolve and communicate 
+maintenance specifications. 
+7. Control: Utilization of the data collection results to evaluate the M&R organization 
+effectiveness. 
+ 
+Immediately following the General Process map below (Figure 4), an example process review will be 
+shown for the Preventive Maintenance function. This specific example will demonstrate how the three 
+elements (routines, resources, results) are defined for PM’s and how the seven areas are required in 
+support of the PM activity. 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 6 of 33 
+ 
+ 
+ Fig. 4 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 7 of 33 
+Example of the Plan definition for Preventive Maintenance (one of the multiple maintenance 
+functions/activities that must be defined by the plan) and elements of the seven areas required 
+for execution of the PM activity: 
+ 
+ 
+ 
+  
+ 
+ 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 8 of 33 
+ 
+ 
+  
+ 
+ 
+ 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 9 of 33 
+ 
+2.2.2 Records & Recordkeeping 
+ 
+Timely, accurate, and complete data is critical for effective Planning and Scheduling. The planning 
+function starts with machine performance and work status data from both the production and 
+maintenance organizations. Reports and data from these groups drive the planning decision process: 
+ 
+Sources of data/reports: 
+ 
+1. Mine Dispatch – Machine availability and downtime data. 
+2. Field Service – Shift reports and work completion status. 
+3. Service Shop – Shift reports and completed work orders. 
+4. Tire shop – tire availability, shift progress, and completed orders. 
+ 
+Remember that one of the major P&S goals is to track and support the mine production plans by 
+balancing the maintenance activities within the unavailability goals (manage fleet availability). 
+Planning must begin with accurate machine performance data showing machine downages both 
+maintenance and non-maintenance related. Only with this data can Planning evaluate the ongoing 
+M&R completed work versus fleet availability and adjust the maintenance plans accordingly. There 
+are two sources for this data; the dispatch log from operations and the work orders/shift log from 
+maintenance. Since the two systems are independent, frequent meetings must occur between 
+operations and maintenance to reconcile these two databases. The operations and maintenance 
+organizations must agree on when the machine was down and for what reasons…mainly 
+maintenance or non-maintenance related which will determine contractual availability. For best results 
+this reconciliation meeting should occur daily while the events are current and easily recalled. 
+ 
+Now that the P&S group knows available time for maintenance activities, it must have the 
+maintenance data showing work completion rate in accordance with the plan and schedule. P&S 
+must have a system in place to compare shift log reports with work order entry to determine when 
+and what type of work is being completed. P&S uses this information to determine time spent for each 
+maintenance activity (PM’s, detection routines, scheduled and unscheduled repairs, etc) and 
+determines if the plan and schedule must be adjusted to meet monthly targets. Later sections will 
+provide more detail on how this information is used. In short, systems must be implemented to 
+provide operational and maintenance work data that facilitates program planning and scheduling 
+adjustment. Work orders must be generated for all maintenance and repair events regardless of 
+availability impact. Avoid the use of general “blanket” or standing work orders for smaller jobs 
+because this will hinder later investigation of maintenance events in terms of availability. Blanket 
+orders lose the detail and identification of specific problematic machine components or systems. The 
+shift log can be used as a comparison to the work order system to make sure that work orders are 
+being generated for each maintenance event. 
+ 
+Work order data is valuable to allow the adequate analysis and report generation. Repair events 
+should be categorized by SMCS code. This simply allows for more detail of the work order that can 
+be utilized for downstream data analysis. Likewise, more detail and data should be captured by 
+accurate use of shift reports and SIMS tickets to identify cause of failure. Part of the planning function 
+is to monitor the cost structure of the maintenance operation to ensure the correct cost balance. 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 10 of 33 
+Including the parts and labor on the work order will enable planning to calculate the percent spent in 
+each category.  
+ 
+The final output of this data and recordkeeping will be the management reports.  These reports are 
+used to measure and evaluate the maintenance groups’ performance and effectiveness. They are 
+related to the performance metrics and are used to evaluate if the maintenance effort is resulting in 
+target machine availability, MTBS, MTTR, etc. If these top indicators are below target then more 
+function specific metrics and reports can be used to determine root cause such as Service Accuracy, 
+% Scheduled Work, Backlog completion rate, etc. Performance evaluation will be covered later in the 
+document but the following are examples of management reports generated from the same 
+maintenance and operations database discussed above.  See Charts 1 – 5. 
+ 
+Top Tier Management Reports:
+ 
+ Availability, MTBS, MTTR 
+ 
+ 
+Chart 1 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 11 of 33 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Chart 2 
+Chart 3 
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 12 of 33 
+ 
+ 
+Supporting Reports:
+ 
+ Service Accuracy, % Scheduled work, Backlog generation vs. completion, etc. 
+ 
+ 
+Chart 4 
+
+===== PAGE 14 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 13 of 33 
+ 
+ 
+ 
+2.2.3 Planning 
+ 
+Planning must balance activities between maintenance requirements, machine availability and 
+resources. The Planner’s overall goal is to perform the required Preventive Maintenance, Backlogs, 
+PCRs, Major and Minor repairs, and Condition Monitoring within the allowed unavailability time for 
+each fleet. Remember that it all starts with the maintenance strategy. Now the goal is to develop this 
+strategy into Short, Medium, and Long-term maintenance plans for the fleet and individual machines. 
+We will use the Planned Component Replacements (PCRs), part of the Long-term plan, as an 
+example to illustrate the planning process.  
+ 
+The initial PCR plan is developed for the fleet based on multiple factors. The first being factory 
+component life projections, historical life data, and results from any previously performed MSR. As 
+the component reaches the life target it becomes increasing important to replace that component. 
+This replacement urgency must be managed against fleet and machine availability target and 
+available resources. The PCR plan will define the specific serial number machines to receive specific 
+component replacements (i.e. torque converter) in a given week through the next 12 months and the 
+impact on availability and resources. For example, machine 107 will be changing the engine and 
+torque converter during week 3 of the first month.  
+ 
+ 
+ 
+ 
+ 
+ 
+Chart 5 
+
+===== PAGE 15 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 14 of 33 
+We now have an initial Long-term plan to start labor, tooling and parts preparation. See Table 2. 
+ 
+ 
+ 
+The first step is complete, but now the Planner must continue to finalize the plan in order to eventually 
+deliver it to scheduling for execution.  
+ 
+Continuing on the Planner must make adjustments to potentially any plan but especially the PCR plan 
+based on condition monitoring findings. Results from inspections, SOS, magnetic plugs, etc. may 
+dictate that a specific component get replaced earlier than expected or is able to be delayed to 
+accommodate a different activity. A useful tool for communication of component condition is the “Hot 
+Sheet”.  
+ 
+Note: The Hot Sheet will be covered in more detail in the Condition Monitoring Best Practice (BP# 
+1007-2.0-1102). A basic example is shown below to demonstrate its influence with planning.  
+See Table 3. 
+ 
+For example, by highlighting the machine component in red, the Hot Sheet quickly identifies the 
+components needing immediate attention potentially sooner than the PCR plan defines. The Planner 
+then should compare these results with his PCR plan to determine required changes. 
+ 
+Table 2 
+
+===== PAGE 16 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 15 of 33 
+ 
+ 
+ 
+Now the Planner is ready to present the Medium-term plan to the rest of the maintenance team 
+(Project Manager, Parts Manager, Shop Manager, Scheduler, Fleet Analyst, etc.) for preparation and 
+initial approval. Each representative will compare the PCR plan to their current commitments, 
+resources, and capabilities to determine how the PCR plan will fit into other work and obligations. For 
+example, the Scheduler will begin to integrate the PCR plan with his current schedule of PM’s and 
+scheduled repairs. If adjustments are needed, modifications to the PCR plan can be made at this 
+time. 
+ 
+The next step is to determine the other maintenance activities that can be combined with the PCR 
+while the machine is down. The Planner can take advantage of this window of opportunity to include 
+additional Backlogs and Minor/Major repairs in parallel with the PCR in order to minimize the overall 
+impact on machine downtime (availability). Once the overall PCR program is complete the Planner 
+will submit it to the Scheduler and a Pre-PCR inspection will be scheduled to validate the specific 
+machine PCR program. The Pre-PCR inspection process, goals, and objectives will be covered 
+extensively in the Condition Monitoring BP# 1007-2.0-1102. It is basically a validation exercise of the 
+maintenance activities and any special machine health improvements needing planned during the 
+PCR. 
+ 
+Now that the PCR program is complete the Planner can prepare the Service Packages to aid in the 
+PCR execution. Service Packages are a culmination of work orders, Gantt charts, standard jobs 
+descriptions, and technical or special instructions needed for the repairs. These are documents 
+provided to the shop foreman and technicians to guide their activities and work flow during the PCR.  
+ 
+One of the Planner’s last but most complex and critical activities is to determine the final impact on 
+machine downtime and maintenance resources but also expected machine performance after the 
+PCR. Machine downtime is managed using the “Unavailability Distribution” concept where the 
+machine’s total allowed monthly downtime is portioned among the various maintenance events. In 
+this case, the Planner wants to make sure that the PCR time planned for this month will not exceed 
+Table 3 
+
+===== PAGE 17 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 16 of 33 
+the PCR allowance of 2.0%. If the 2% is exceeded then one of the other maintenance activities must 
+be adjusted down to compensate. See Table 4. 
+ 
+Note: Availability Management and the Unavailability Distribution process detail will be covered in 
+section 2.2.6. 
+ 
+ 
+ 
+ 
+Similar to the unavailability impact, the Planner must determine the labor and facilities resources 
+required for the PCR and how it may impact other planned work. For example, there are a finite 
+number of labor hours available during a given day, week, and month. The Planner must organize the 
+planned work with consideration of available labor to complete the work. Notice that labor estimates 
+are part of the example PCR plan spreadsheet shown at the beginning of this section.  
+ 
+Looking ahead the Planner must consider how he or she will measure the success of the M&R 
+activities, especially for a PCR, which is one of the most extensive and resource-demanding functions 
+that the M&R team will execute. The Planner must measure how effectively and efficiently his team 
+performed the execution of the PCR. He can achieve this evaluation through the use of metrics. One 
+of the Planner’s last responsibilities is to define, gather data, track, and analyze these M&R 
+performance metrics. Performance Evaluation will be covered more thoroughly in Section 2.2.7 but 
+following are a few examples.  
+ 
+For example, the Planner will want to measure: 
+ 
+Availability after PCR: Considering the amount of PCR investment, the customer should see a 
+significant improvement in machine reliability. Setting a post-PCR availability target will indicate the 
+effectiveness of the PCR repairs and if the correct components and systems were addressed during 
+the PCR to yield significantly improved availability. 
+ 
+MTBS after PCR: Will measure the PCR effectiveness with a focus on if the pre-PCR inspection and 
+evaluation process added value by determining the chronic system and component problems that 
+caused past frequent shut downs. 
+ 
+Table 4 
+
+===== PAGE 18 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 17 of 33 
+MTTRPCR: Will measure the efficiency or preparedness of the M&R team to execute the specific PCR 
+plan. This metric will help determine if the work plan was realistic and accurate in terms of labor and 
+time allowance. On the other hand, it may indicate that the work plan was good but the execution did 
+not follow the plan, i.e. work sequence, labor reallocation, parts shortages, etc.  
+ 
+These are just three of many KPI’s used to evaluate M&R performance. The point here is that the 
+Planner must define the metrics to be utilized to evaluate his future M&R activities, in this case a 
+PCR. 
+ 
+The very last step for the Planner is a final review of the PCR plan with the M&R team; i.e. the Project 
+Manager, Parts Manager, Shop Manager, etc. Once final approval is give by each member regarding 
+resources, cost, PCR scope, etc., the Planner can release the job to the Scheduler to be executed. 
+ 
+Overall the Planner must define the Short, Medium, and Long-term maintenance plans with 
+consideration to Condition Monitoring results and their required adjustments to the plan. The Planner 
+must also set goals for the monthly completion rates of backlogs. He will be tracking the total number 
+of backlogs pending per machine versus his monthly target. For example, if the backlog creation rate 
+is higher that the execution rate then the total pending will increase. The Planner must set the target 
+completion rate for the Scheduler in order to achieve his monthly target for pending backlogs per 
+machine. Ultimately the Planner is responsible for defining all maintenance activities and developing 
+plans for the Scheduler to execute while evaluating performance of the overall M&R organization and 
+making the appropriate performance improvements. 
+ 
+2.2.4 Scheduling 
+ 
+The main function of Scheduling is the execution of the M&R plan. The Planner defines all M&R 
+activity requirements but it is Scheduling that determines when these activities will occur and how 
+they will be combined to maximize resources, minimize downtime, etc. The scheduling is 
+accomplished through the creation, communication, and facilitation of a rolling 7-Day Short Term 
+Program. Initially it may seem simple to populate a weekly calendar with M&R activities but the 
+complexity occurs when these activities must be balanced with machine-specific and fleet availability, 
+available labor, and resources.  
+ 
+The following section discusses the five scheduling stages required to achieve the final balanced 7-
+Day program.  
+ 
+Stage 1: Schedule PM events and Backlogs in parallel.  
+ 
+The best starting point for populating the 7-Day program is the Preventive Maintenance (PM) events 
+because they are well-defined, known interval, high frequency activities. Inputs will be the defined PM 
+intervals from Planning, estimated machine hour accumulation and actual hour meter readings. With 
+these inputs, the Scheduler knows current machine hours and can accurately estimate when the 
+machine will need to be serviced to meet its PM interval target.  
+ 
+Due to high PM frequency and consistency, these operations become a prime window of opportunity 
+to perform backlog repairs in parallel. The planning department should be setting backlog execution 
+targets based on scheduled PM downtime, portion of PM downtime reserved for backlog completion, 
+
+===== PAGE 19 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 18 of 33 
+and estimated time per backlog. For example, if PM downtime is 10 hours with 40% reserved for 
+backlogs then 4 hours are available for backlog repairs. With a historical backlog repair time of 1 hour 
+the Scheduler should target 4 backlogs per PM. By reviewing the current backlogs “ready to go”, 
+priority, and estimated time to repair the appropriate backlogs can be chosen and placed in the 7-Day 
+program. 
+ 
+Note: Backlogs scheduled are always subject to change based on the backlog validation results from 
+the Pre-PM inspection. 
+ 
+At this point the Scheduler has populated the 7-Day program with PM’s and machine specific 
+backlogs to be performed during the PM downtime. He is now ready to move to Stage 2 which adds 
+the other M&R events in an attempt to occupy any remaining shop bay time, labor etc. 
+ 
+Stage 2: Incorporate PCR’s and other Scheduled Major & Minor repairs. 
+ 
+Again, this input comes from Planning in the form of impending PCR’s. As discussed earlier in the 
+Planning section, the Planner will submit a machine-specific PCR plan based on accumulated 
+component hours and recent Condition Monitoring feedback (Hotsheet method). It is the Scheduler’s 
+job to add this PCR to the 7-Day program in coordination with the already scheduled PM’s and 
+backlogs. A PCR typically will occupy bay space and resources for multiple days therefore it will 
+consume a relatively large portion of the 7-Day program.  
+ 
+The last remaining M&R event for consideration is a Scheduled Major or Minor repair. These simply 
+are existing backlogs that require either a separate stop (outside a PM stoppage) or a PM downtime 
+extension. There are two possible reasons for this event: first is priority. For multiple reasons, the risk 
+for failure might be too high to operate the machine until the next PM opportunity to perform the 
+repair. Therefore, a new scheduling window must be opened to down the machine for repair. A 
+second scenario could arise from a situation where the backlog creation rate is surpassing the 
+backlog execution rate and new scheduling windows must be opened to catch up on pending 
+backlogs. Ideally, Planning will establish a monthly backlog execution goal that gains control of the 
+pending backlog workload over a targeted time period. In either case, Planning will define this 
+requirement and the Scheduler must eventually accommodate this additional Scheduled Repair within 
+the 7-Day plan. 
+ 
+At the end of Stage 2, the 7-Day program will resemble the following example with PM’s, PCR’s, and 
+backlogs populating the schedule. See Table 5. 
+ 
+ 
+ Table 5 
+
+===== PAGE 20 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 19 of 33 
+ 
+Stage 3: Balance Downtime & labor required with Availability goal and labor available. 
+ 
+Now that the Scheduler has populated the 7-Day program he must make sure the schedule is not in 
+violation of fleet availability targets and available labor resources. For availability: (reference to Table 
+6 below), the total machine downtime hours are calculated for each day. This is a tally of known 
+scheduled downtime and estimated unscheduled downtime based on historical work order data. With 
+daily downtime hours established, the Scheduler can estimate a daily fleet availability. In the example 
+below, Friday’s estimated availability is 88%. If the availability target is 85%, then the schedule is 
+above target and has room for adjustment if needed (i.e. shifting work from a different day to Friday). 
+ 
+ 
+ 
+ 
+Likewise, the same exercise is done for labor hours. In this example, 150 hours of labor are available 
+each day. It can be seen that the schedule for some days exceeds the 150 hours available and 
+therefore jobs must be shifted to days with lower labor estimates.  
+ 
+While focusing on the weekly balance, the Scheduler must also track monthly availability and labor 
+impact. The two tables below illustrate the methodology of translating fleet availability to available 
+M&R hours. By multiplying the fleet production plan hours by the availability goal (90% in this case) 
+the Scheduler can estimate his available M&R hours for the month, in this case 720 hours (see 
+Tables 7 & 8). As the M&R work continues through the month the schedule must deduct the used 
+hours from the total available for the month. The main reason for this tracking is to make sure he will 
+not consume too many hours early in the month and leave insufficient hours for the end of the month 
+activities. If nothing else, the schedule must always continue to accommodate PM’s. If he does not 
+reserve enough hours for the end, then the M&R hour total will exceed 720 and availability will not 
+make the 90% target. 
+Table 6 
+
+===== PAGE 21 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 20 of 33 
+ 
+ 
+ 
+ 
+Graphical representation is also a helpful tool to balance workload between weeks of the month. In 
+the example below it becomes apparent that the current schedules for week 1 and 2 are heavy on 
+work. The lower workload (higher projected fleet availability) of week 3 makes it a good option to 
+accept activities from week 1 and 2. Note that the Scheduler must consider more than just availability 
+and labor allowances. In the bottom two graphs, Service Accuracy shows PM execution compliance.  
+Significant changes to the PM schedule to meet availability or labor targets will adversely affect 
+Service Accuracy compliance. Everything is a balance. See Chart 6. 
+ 
+ 
+ 
+Table 7 Table 8 
+Chart 6 
+
+===== PAGE 22 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 21 of 33 
+The Scheduler will be working closely with the Planner to authorize program adjustments due to 
+availability or labor constraints. When a balanced 7-Day program is finalized, the Scheduler will 
+initiate orders for logistics; external & internal labor, PM kits, backlog parts, special tooling, etc. 
+ 
+Stage 4: Share and communicate the schedule to the organization. 
+ 
+To ensure agreement and successful execution, the final schedule must be reviewed with the 
+appropriate staff and management personnel. The management meeting will be at a higher strategic 
+level with the Production Manager, Project Manager, Customer Maintenance Manager, Planner, etc. 
+A second more tactical meeting should occur with the Fleet Analyst, Parts Supervisor, Shop 
+Manager, Planner, etc. In both meetings the intent is to find potential conflicts, make modifications if 
+necessary and finalize the upcoming schedule. Once consensus has been reached, the program is 
+published for execution to production, the shop, and the field and support departments. 
+ 
+Stage 5: Control execution/completion of the program. 
+ 
+The most dynamic aspect of the Scheduler’s responsibilities is tracking, adjusting and executing the 
+current 7-Day program. It’s a very fast paced activity because of the multitude of real-time data to 
+track from multiple mine organizations. Usually the first step is to review of the work progression for 
+the previous day via work orders or the shift log report. The Scheduler must determine if the repair 
+and PM shop is ahead or behind schedule and how the schedule must be adjusted. Changes to the 
+current day’s or week’s schedule must immediately be communicated to production dispatch. If the 
+shop is ahead of schedule, the Scheduler must determine what jobs can be added and request from 
+dispatch that the appropriate machines be pulled from production. Likewise, if shop work is behind, 
+the Scheduler must request production dispatch to delay the delivery of the scheduled machines. 
+Continuous job completion, follow up, and making the appropriate adjustments is essential to 
+maintain the most effective and efficient use of shop resources and machine production uptime. 
+Towards the end of shift, the Scheduler must update the 7-Day program with the daily changes and 
+review/finalize these changes with the management or tactical meeting participants discussed above. 
+Therefore everyone is clear on what the schedule originally was for the day, what was executed, the 
+required adjustments and implications, and the revised schedule for the rest of the week. 
+ 
+2.2.5 Technical Support 
+ 
+As shown in the “General Process” map above, the Technical Support function or group is one of the 
+seven critical areas required for a successful Planning and Scheduling department. The Technical 
+group is responsible for analyzing incoming information pertaining to the local equipment health and 
+current product problems. They provide overall technical support of the planning and the subsequent 
+shop execution of the maintenance and repair requirements. They communicate technical 
+requirements to planning and act as a technical reference for shop operations.  
+ 
+The Technical groups’ main responsibility to Planning is to provide the latest factory and local 
+support/rework program requirements, i.e. PIP’s, PSP’s, local dealer solutions, etc.  Providing the 
+parts, labor, and time details allow the Planner to plan the job within the existing ST, MT and LT 
+(short, medium, long-term) programs. The Technical group can enter a Backlog request to Planning if 
+the job is to be completed in the medium to short term, or coordinate it with Planning as a Scheduled 
+
+===== PAGE 23 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 22 of 33 
+Repair in the long term plan. Lastly, the technical group should also track the completion of these 
+programs on a serial number basis to assure fleet compliance.  
+ 
+Another function of the group is to provide technical guidance to the M&R operations side. The main 
+shop, PM shop, and field mechanics require support related to scheduled and emergency repairs. 
+The Technical group shall provide effective support of requests regarding parts, repair instructions, 
+special tooling, etc. They shall also be the liaison to the dealer and factory technical personnel. 
+ 
+Over time the Technical group will accumulate much machine health and product problem information 
+through networking with factory and fellow dealer personnel, and also developing problem solutions 
+internally. As a means to facilitate quick information retrieval, the Technical group must develop and 
+maintain a solutions database to retain resolution definitions and instructions.  
+ 
+Technical communication channels need to be identified and used to facilitate fast and accurate data 
+transfer to Planning and Repair Management. Part of this efficiency could come from having a 
+computerized data and document system for the Technical group to reference. Requests to the group 
+can accumulate and sometimes be difficult to manually manage. The use of a request tracking 
+system will free up the technical personnel to concentrate more time on providing data and reduce 
+the chance of requests being lost. 
+ 
+2.2.6 Availability Management 
+ 
+The overall goal of Planning and Scheduling is to accomplish the required M&R activities during the 
+two categories of machine stoppages: planned periods of fleet unavailability and any operational 
+windows of opportunity. Fleet unavailability is determined by the CSA or MARC availability 
+commitment between the customer and dealer. Operational windows of opportunity are based upon 
+the mine production department goals for machine utilization. In the following example (Table 9), the 
+availability goal is 89%, which leaves 11% of the machine time available for M&R activities. Similarly, 
+the Utilization of Asset defines the operational window of opportunity. This is the time that the 
+customer has the machine available for production, but is not actively using the machine. In this 
+example, the Utilization of Asset is 85%, which yields an additional 4% of machine time potentially 
+available for M&R activities.  
+ 
+Note: the operational window of opportunity represents the time that the machine is available for 
+production and is not being utilized but is still controlled by the customer. Therefore the dealer’s 
+window of opportunity is strictly dependent on the customer’s willingness to allow the dealer access to 
+the machine during this unutilized time. In other words, it’s not guaranteed M&R time. 
+ 
+ 
+ Table 9 
+
+===== PAGE 24 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 23 of 33 
+At this point, Planning and Scheduling has defined large portions of M&R time. In order to best 
+manage and utilize the available time for M&R activities, the Unavailability goal and operational 
+window of opportunity must be broken down into available hours. Continuing with the example, the 
+11% unavailability allowance translates into 792 available M&R hours per month (See Table 10). As 
+the month progresses, Planning and Scheduling will tally the hours consumed via work orders and 
+shift log report history. This allows P&S to track the remaining M&R hours available through the end 
+of the month.  
+ 
+ 
+ 
+ 
+This hour breakdown is a good start but is still too general because it represents all hours for all M&R 
+activities combined. In order to make adjustments during the month, the analysis must break down 
+and track both the hours consumed and remaining per each M&R activity (i.e. PM, PCR, CM, 
+scheduled and unscheduled events). 
+ 
+The first step is to breakdown the 11% unavailability allowance. We call this the Unavailability 
+Distribution Goal. It should be defined within the P&S Strategy and Plan but will change as fleet and 
+application characteristics change. Below is an example distribution of the 11%. A portion of the 11% 
+is allocated to each of the M&R activities (See Table 11). This will enable the Planner and Scheduler 
+to more accurately analyze the time spent per activity.  
+ 
+Next, the Unavailability Distribution Goal is combined with the Unavailability Hour Goal to yield hours 
+consumed and remaining for each of the M&R activity categories. The last chart shows this hour 
+distribution. See Table 11. 
+ 
+We have now developed a useful Availability Management tool. By tracking consumed and remaining 
+M&R activities hours, Planning and Scheduling can manage and adjust the monthly and weekly 
+program to meet the distribution goals and assure appropriate time is spent for each M&R activity. In 
+some cases, the consumed hours will approach or exceed the total hour goal for that activity. For 
+example, detection routines (CM) have used 37 hours versus the 36 hours targeted by the distribution 
+(see Table 11). In this case, P&S would consider the operational windows of opportunity to execute 
+required detection routines for the rest of the month. The operational hours will complement the 
+unavailability hours. As described in Stage 3 of the 2.2.4 Scheduling section, this is simply one more 
+tool to facilitate P&S’s balance between machine downtime and available labor. 
+ 
+Table 10 
+
+===== PAGE 25 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 24 of 33 
+ 
+ 
+ 
+2.2.7 Performance Evaluation 
+ 
+Long term effectiveness and improvement of the Planning and Scheduling department must begin 
+with a formalized performance measurement system. Based on the performance results, contributing 
+factors can be determined and improvement plans can be developed and implemented. Effectiveness 
+of the improvement plans is evaluated by the same performance metrics and the cycle continues.  
+The following is a general methodology to measure and analyze the performance of the Planning and 
+Scheduling group, along with the M&R organization’s compliance to the program. The end goal is to 
+identify positive and negative contributors to the top-tier metrics and develop improvement plans to 
+address the underperforming areas of the M&R organization.  
+ 
+The M&R organization’s ultimate goal is to meet the fleet performance top-tier metric targets. 
+Therefore, start with gathering data and calculating the top tier metrics to measure the overall fleet 
+results. The first “performance check” is to compare results to previously established targets. This will 
+expose the underperforming top-tier metrics. These underperformers will require further investigation 
+into the contributing lower-tier metrics to find root cause. The following example lists the 
+recommended top tier metrics. See Table 12. 
+ 
+Table 11 
+
+===== PAGE 26 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 25 of 33 
+ 
+ 
+ 
+Full definition of all metrics mentioned can be found in the “Metrics (KPI’s) to Access Process 
+Performance” document attached, and found at CatMiner.com under Maintenance & Service. The 
+KPI document includes each metric’s description, formula, contributing metrics, and 
+interpretation guidelines. Utilize this document as a guide to identify the under-performing 
+contributing metrics which will eventually identify the area of the M&R organization that either 
+lacks execution compliance or requires process change. 
+ 
+Perhaps the one metric that will give the best indication of the M&R organization’s “level of control” of 
+fleet condition and performance is % Scheduled Downtime. This a simple ratio of scheduled 
+downtime hours and total overall downtime hours. This metric reflects the Condition Monitoring, 
+Preventive Maintenance, and Backlog Management’s ability to detect a defect and effectively plan, 
+schedule, and execute a repair before the defect results in an unscheduled repair. It measures the 
+effectiveness of the M&R organization’s preventive maintenance approach of repairing before failure. 
+The benchmark target is 80% scheduled downtime. The nature of mobile equipment allows for a 
+certain amount of unscheduled downtime (thus the 20% benchmark). Unscheduled downtime will be 
+minimized as the M&R routines and execution improve.  
+ 
+One area to investigate for potential problems that could be affecting top tier metric performance is 
+the Unavailability Distribution mentioned in the previous section. Remember that the Planning group’s 
+goal is to develop an M&R plan that achieves the top tier fleet performance targets. Shown below is a 
+comparison between the Distribution Targets and Monthly Results (See Table 13). Deviations from 
+the targets raise many questions. Is the plan realistic to properly maintain the fleet? Is the schedule 
+following the plan? Are the executors complying with the plan and/or schedule? Did we plan for 
+efficiency? Did we schedule all needed resources? Again, metrics will lead the analyst to potential 
+problems areas. Further investigation is always needed to find root cause. 
+ 
+Table 12 
+
+===== PAGE 27 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 26 of 33 
+ 
+ 
+ 
+Another good starting point to evaluate the M&R organization’s basic ability to plan, schedule and 
+execute activities is Service Accuracy. The plot below shows the actual PM execution intervals 
+relative to the 250 hr target (See Chart 7). Considering that Preventive Maintenance is the most basic 
+and frequent routine, it serves as a good initial review of the organization’s capability to schedule and 
+execute work on time. Assuming the PM’s are defined and scheduled accurately, a poor Service 
+Accuracy metric will point to the shop and PM crew’s preparedness and compliance to the schedule 
+as the root cause. 
+ 
+ 
+ 
+ 
+ 
+ 
+Table 13 
+Chart 7 
+
+===== PAGE 28 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 27 of 33 
+After the top tier metrics are defined and targets established, the last few examples were given as 
+good starting points for indicators of performance. Performance Evaluation is an extensive topic and 
+can be increased in detail as required by the top metric results and indication to improve. As 
+mentioned earlier, the objective is to first evaluate the state of the top tier metrics and expand the 
+analysis deeper into the supporting metrics until the root cause or underperforming areas are 
+identified.  For example, each M&R process can be evaluated through multiple levels of metrics. See 
+Table 14. 
+ 
+ 
+ 
+ 
+The final goal of Performance Evaluation is to identify the problem areas, develop improvement 
+action plans, implement, and measure improvement. Applying performance metrics is the first step in 
+evaluating the M&R processes and their execution. Subsequent improvement falls under the much 
+larger subject of Continuous Improvement. 
+ 
+3.0 Implementation Steps 
+ 
+The implementation steps to follow will depend on the current situation of your mine site operation. As 
+a first step, we recommend a thorough evaluation of your maintenance operation to determine the “As 
+Is” situation. Compare this with the recommended model. Determine areas of opportunity and 
+establish an action plan to correct or improve those areas. 
+Table 14 
+
+===== PAGE 29 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 28 of 33 
+ 
+1. - Evaluate your on-site maintenance operation 
+  
+• Apply GAT (Gap Analysis Tool) - available through Global Mining Product Support 
+division 
+ 
+ 
+ 
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The GAT is a survey that evaluates the 10 M&R Processes recommended by Caterpillar Global 
+Mining. Utilize this tool to concentrate on Planning and Scheduling. 
+ 
+2. - Establish the “As Is” situation  
+ 
+• Determine the Process Flow Diagrams of all your processes implemented on site with 
+focus on Planning and Scheduling. 
+ 
+Based on the observations guided by the GAT tool and the on-site investigation, draw 
+and document the current processes on site. 
+ 
+• Establish the Baseline.  
+ 
+Measure the current performance results and document them for future reference. 
+Apply the set of metrics recommended in CGM document dedicated to “KPI’s for 
+evaluating Maintenance and Repair Processes”  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 30 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 29 of 33 
+ 
+This document contains the KPI’s included in the GAT, calculation methodology and 
+interpretation guidelines. 
+ 
+3. - Determine the areas of opportunities 
+ 
+Determine the areas of opportunities by comparing the “As Is” situation with the recommended 
+processes detailed in this P&S Best Practice. 
+ 
+4. - Define the Action Plan 
+ 
+• Document your findings. The use of a 3W form (Who will do What by When) is 
+recommended to record your findings and opportunities. 
+• Devise and document the solutions for improving or correcting the weaknesses. Use the 
+related BP’s to support your search for ideas/solutions. Use a separate column in your 
+3W form to record the solution/actions to take. 
+• Analyze and determine resources needed, time to implement, and expected benefits. 
+• Prioritize the implementation of the different actions based on the Return On Investment 
+(ROI) results. 
+• Assign responsibilities and expected completion dates for each of the activities.  
+ 
+5. - Get the “Buy-In” of the on site organization 
+ 
+It is very important to get the buy-in of the on-site organization. They are the ultimate “process 
+owners” of the Maintenance & Repair strategy including Planning & Scheduling. Present the 
+action plan, the implementation strategy and the expected benefits. Involve them in the 
+implementation of the solutions and plan an in-depth training of all the involved personnel. 
+ 
+6. - Implement 
+ 
+Execute the implementation plan.   
+ 
+7. - Follow up 
+ 
+Follow up closely with the implementation of your action plan.  
+ 
+• Set up “check points” 
+• Review compliance of committed dates for tasks completion 
+• Receive & analyze work progress from the specific responsible 
+• Reinforce the positive results 
+• Identify and eliminate threats and obstacles  
+• Support the ownership of the on-site organization 
+• Support the positive change of personnel, correct the negative attitudes or oppositions 
+• Make adjustments as necessary 
+ 
+ 
+8. - Measure the Results – Improve /Adjust if needed 
+
+===== PAGE 31 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 30 of 33 
+ 
+It is absolutely necessary to measure the results of the improvements implemented at the level 
+of each individual processes and at the final outcome, fleet performance. 
+ 
+Measure and trend the behavior of the KPI’s selected for establishing the “baseline” when the 
+“As Is” situation was established. Compare and adjust as necessary. 
+ 
+4.0 Benefits 
+ 
+1. Higher reliability and machine availability 
+2. More efficient use of shop facilities and labor resources 
+3. Lower cost per hour and cost per ton 
+4. Improved MTTR 
+ 
+In general, benefits from adopting the M&R Process Best Practices including Planning and 
+Scheduling is represented in the following slide. See Figure 5. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5.0 Resource Requirements 
+ 
+• Human Resources:  
+Fig. 5 
+
+===== PAGE 32 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 31 of 33 
+ 
+Human resource requirements associated with the execution of the Planning & Scheduling 
+plan include: 
+ 
+ Fleet Analyst
+ 
+ (Reliability Engineer) … provides leadership and direction for all on- site 
+Condition Monitoring activities. 
+ Defines Condition Monitoring routines that correlate to equipment health, 
+operation & application.  
+ Reviews / revises Condition Monitoring procedures & checklists to ensure 
+they focus on significant issues. 
+ Ensures the accuracy & completeness of data acquired through Condition 
+Monitoring.  
+ Evaluates / interprets all Condition Monitoring data. 
+ Advises Planning of issues related to equipment health, maintenance, 
+application & operation. 
+ 
+ Planner
+ 
+ … develops plans including resource & time estimates for the M&R routines.  
+ Ensures that routines, plans and activities are aligned with the strategy. 
+ Defines, organizes & procures facilities, manpower, parts, tooling, forms, 
+checklists, etc. 
+ Establishes M&R activity priorities for execution. 
+ Monitors maintenance and repair performance metrics for compliance with 
+goals; devises & communicates plans to address shortfalls to the Project 
+Manager.  
+ 
+ Scheduler
+ 
+ … translates the M&R plan into an actionable schedule.  
+ Identifies “Windows of Opportunity” for execution of M&R activities. 
+ Schedules the weekly program with resource availability. 
+ Publishes / distributes the schedule & obtains agreement from all 
+appropriate areas. 
+ Adjusts the weekly program to comply with variations in equipment 
+utilization & resource availability. 
+ 
+ Parts Analyst
+ 
+ … su pports the M& R program by providing the right parts at the right time 
+in the right quantity. 
+ Maintains parts & components on site inventory based on planning 
+recommendations 
+ Manages the on site parts inventory 
+ Implements, maintains and supplies parts kits  
+ Identifies and corrects deviations 
+ 
+ 
+ 
+ 
+ 
+ Technical Communicator
+ 
+ … be the single point of contact for all technical 
+communications. 
+ Keeps fluent channels of technical communications (internal – external) 
+ Provide updated technical information of on site equipment 
+
+===== PAGE 33 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 32 of 33 
+ Searches, acquires, and finds available solutions for technical problems 
+ Provides technical support to planning and service operations  
+ 
+ Data Entry Clerk
+ 
+ … maintains the Record Keeping System  
+ Checks and audits all incoming information (WO, Shift Reports, etc.) 
+ Enters the incoming information into the Information Management System 
+(Computerized or Paper System) in a timely manner 
+  
+ Project Manager
+ 
+ … is the primary on- site individual responsible for the implementation  
+and execution of the Planning & Scheduling strategy. 
+ Has total familiarity with customer expectations, contractual commitments. 
+ Authorizes resources to support successful implementation of the 
+Planning & Scheduling strategy. 
+ Audits fleet and P&S process metrics; takes action to eliminate any 
+deficiencies.  
+ Authorizes revisions to P&S strategy and procedures. 
+ 
+• 
+ 
+Logistical Resources:  
+Logistical resource requirements associated with the execution of the Planning & Scheduling 
+plan include: 
+ 
+ 
+ 
+Work Space 
+ Suitable office space to accommodate all P&S personnel and Functions. 
+Must be organized in working areas, have enough space, promote 
+efficiency. Location is very important, must facilitate the follow up of all 
+work in process. 
+ 
+ 
+ 
+Meeting Room 
+ Suitable meeting room where all plans are displayed and analyzed. 
+Should be equipped with Projector, Clipboards, Boards, Bulletin Boards, 
+etc. 
+ 
+ 
+ 
+Office Equipment 
+ P&S office(s) must be equipped appropriately, avoid any delays / 
+inefficiencies due to lack of office equipment. Computer terminals, 
+Printers, Plotters, Fax Machines, Desks, Bulletin Boards, Flat Computer 
+Screens, etc., are some of the equipment to consider.  
+ 
+ 
+ 
+ 
+Transportation 
+ Maintenance & Repair events take place in different locations. P&S must 
+have transportation available to check, follow up and inspect these 
+activities. Regular visits to the Pit are also necessary and highly 
+recommended.  
+
+===== PAGE 34 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Planning & Scheduling 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1104 
+Caterpillar Confidential:  GREEN         Page 33 of 33 
+ 
+ 
+ 
+Communications and Information Management System 
+ Efficient communication systems are a must. P&S coordination is very 
+critical. Suggested equipment include the following systems:    
+ 
+- Telephone (Internal & External) 
+- Radio Com.  
+- Internal Computer Network 
+- External Computer Network (Connected to Central Store)  
+- Dispatch terminal 
+ 
+6.0 Supporting Attachments / References 
+ 
+Maintenance Strategy Reference (MSR) 
+Site Assessment Tool (SAT) 
+Gap Analysis Tool (GAT) 
+“Metrics (KPI’s) to Assess Process Performance” 
+ 
+Reference material and contact names to the above can be found at CatMiner.com 
+ 
+7.0 Related Best Practices 
+ 
+1. M&R Processes … Our Model   BP 1007-2.0-1100 
+2. Preventive Maintenance   BP 1007-2.0-1101 
+3. Condition Monitoring   BP 1007-2.0-1102 
+4. Backlog Management   BP 1007-2.0-1103 
+5. Parts Management    BP 1007-2.0-1105 
+6. Component Management   BP 1007-2.0-1106 
+7. Repair Management   BP 1007-2.0-1107 
+8. Human Resources / Training  BP 1007-2.0-1108 
+9. Performance Evaluation   BP 1007-2.0-1109 
+10. Continuous Improvement   BP 1007-2.0-1110 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Matt Maziarz 
+Sr. Site Performance Consultant 
+Caterpillar Global Mining 
+Maziarz_Matthew_J@cat.com 
+Ph: 309-675-5208 
+ 
+Special thanks to Abelardo Flores for providing the process maps and subject matter guidance. 
+ 
+For further details and information regarding this Best Practice, please contact the author.

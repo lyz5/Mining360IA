@@ -1,0 +1,583 @@
+SOURCE: 3.0 Component Life Management\3.04 Removal & Installation\1. Strategic\Machine Shop Components Lifting Operations Assurance Strategy.pdf
+PAGES: 12
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+August 2015 
+1504-3.04-1372 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Machine Shop Components 
+Lifting Operations 
+Assurance Strategy 
+ 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+Machine Shop Components Lifting Operations 
+Assurance Strategy .................................................... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 8 
+5.0 Resources Required ........................................ 10 
+6.0 Supporting Attachments / References ............. 10 
+7.0 Related Best Practices .................................... 10 
+8.0 Acknowledgements .......................................... 11 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Shop Components Lifting Operations 
+Assurance Strategy 
+DATE 
+8/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-3.04-1372 
+Caterpillar Confidential:  GREEN         Page 1 of 11 
+1.0 Introduction  
+ 
+The process of component lifting at the machine shops differs from the equipment disassembly and 
+assembly process (as illustrated on SISWEB) due to the final mounting location that the machining 
+equipment has (see Figure 1), this fact forces the technician to perform potentially risky movements, 
+involving also the machine and even the component itself. 
+ 
+ 
+Figure 1. SISWEB Horizontal Lifting (assembly and disassembly) versus the vertical installation in the machining tool 
+ 
+Besides, earlier in the component lifting process, the correct selection of accessories, chains or slings 
+depended on the technician´s knowledge and their availability to be on-site; so they did not always 
+perform the lifting procedure properly. This put the physical integrity of the components, machines, 
+and also the technician in danger. 
+ 
+  
+ 
+Figure 2. Frequent accidents due to inadequate lifting movements. a) Damage to the property; b) blow to the technical staff. 
+ 
+This Best Practices aims to improve the steps that must be taken into account when performing a 
+safe lifting procedure, and transporting components inside the machine shop. This also considers the 
+final installation positions on the different machining devices and the increase of safety in these tasks. 
+ 
+  
+a b 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Shop Components Lifting Operations 
+Assurance Strategy 
+DATE 
+8/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-3.04-1372 
+Caterpillar Confidential:  GREEN         Page 2 of 11 
+2.0 Best Practice Description 
+ 
+The improvement is to establish a methodical strategy for lifting and transporting component, taking 
+into account the final position of the component installation on different machines (Mounting mill 
+boring machine, lathe, etc.). By defining and standardizing the lifting elements that are required in 
+each of the repair processes, this aims to reduce the potential risk and accident that can cause 
+casualties or damage to the property and to speed up the process of moving components. 
+ 
+This strategy consists of: 
+ 
+• Illustrative posters in work areas 
+o They are located on each machine, showing the most common working components of 
+these, identifying their P/N and weight. 
+ 
+• L ifting manual 
+o It's guidebook for the component lifting safely and simply. 
+o This manual consists of the following parts: 
+ a) P/N components index of higher turnover in the shop 
+ b) List of lifting elements capacity (shackles, eyebolts, chains, etc.) 
+ c) Components weights Listings (SISWEB) 
+ d) Lifting calculations reports for each component (under international 
+standards) 
+ 
+• Components lifting Kit shelves. 
+o The shelves are located closest to each of the machines; there you can find all the lifting 
+elements organized by kits, according to the lifting manual. See Fig. 3 
+ 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Shop Components Lifting Operations 
+Assurance Strategy 
+DATE 
+8/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-3.04-1372 
+Caterpillar Confidential:  GREEN         Page 3 of 11 
+ 
+ 
+Figure 3. - 1. Illustrative posters; 2. Lifting Manual; 3. Lifting kit shelves 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Planning: 
+ 
+ We had access to all the information regarding parts or components with a higher turnover.  
+ A statistical analysis was conducted and finally a list of parts by P/N was acquired for each of 
+the machining devices at the shop.  
+ 
+1 
+2 
+3 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Shop Components Lifting Operations 
+Assurance Strategy 
+DATE 
+8/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-3.04-1372 
+Caterpillar Confidential:  GREEN         Page 4 of 11 
+ 
+ 
+Figure 4. Example of the statistical analysis of components of higher turnover in the shop 
+ 
+ The weight and the lifting recommendations (for assembly and disassembly processes) of 
+each component were sought thru SISWEB identifying the P/N of the tooling and lifting 
+accessories used as well. 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Shop Components Lifting Operations 
+Assurance Strategy 
+DATE 
+8/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-3.04-1372 
+Caterpillar Confidential:  GREEN         Page 5 of 11 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Shop Components Lifting Operations 
+Assurance Strategy 
+DATE 
+8/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-3.04-1372 
+Caterpillar Confidential:  GREEN         Page 6 of 11 
+ 
+Figure 5. Data on the SIS Web and final listing of main components with P/N and weights. 
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Shop Components Lifting Operations 
+Assurance Strategy 
+DATE 
+8/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-3.04-1372 
+Caterpillar Confidential:  GREEN         Page 7 of 11 
+ 
+ Some training was given in areas such as: Safe handling and lifting of overhead cranes under 
+international standards to one engineer and one supervisor for every 30 components listed 
+above. 
+ This trained personnel conducted field work. The safe lifting mode of each component in each 
+machine tool was checked, considering the position used in these in accordance with the most 
+frequent repairs. 
+ The memory calculation was performed for each specific lifting operation, under the standards: 
+ ASME B30.9 slings 
+ ASME B30.26 Rigging Hardware 
+ or OSHA 1910.184 Slings 
+ The tooling to be used was identified and classified in each areas and the cabinets to store the 
+kits were made. 
+ 
+ 
+Figure 6. SISWEB Research work; field work and lifting elements identification and calculations; Lifting movements assessment for the 
+installation on the machine. 
+Implementation 
+ 
+ A lifting manual or a guide showing the list of components is issued. Such listing includes 
+the components weight and also the kits for each machine specific components at the 
+shop. A manual or guide is printed for each area (divided into machines groups).  
+ Some acrylic boards are located in each area (Component name, P/N and weight) per 
+machine. 
+ The technicians were trained on safe lifting conditions and lifting manual handling as a 
+result of this strategy.  
+ The route of the process is as follows: 
+ 
+ 
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Shop Components Lifting Operations 
+Assurance Strategy 
+DATE 
+8/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-3.04-1372 
+Caterpillar Confidential:  GREEN         Page 8 of 11 
+ 
+ 
+ 
+ 
+Figure 7. Execution Process of the lifting operations assurance strategy in the machine shop 
+ 
+4.0 Benefits 
+• 32.2% time reduction in 6 months regarding canvas slings and lifting accessories 
+consumption; it went from $ 7,023.56 USD to $ 4,761.00 USD, considering that the second 
+cost includes the sum of canvas sling consumption after the upgrade ($ 2.218,66USD), 
+plus the initial investment made by switching to chain slings ($ 2.542,34USD, longer 
+service life) see figure 8. 
+1. When the component is 
+in the machining shop 
+area, the information on 
+the boards becomes 
+really useful; its P/N 
+and its net weight are 
+identified. 
+2. The technician consults 
+the lifting manual or 
+guide; he gets the 
+component P/N and 
+goes to the index to 
+check for information 
+regarding lifting. 
+3. Once on the page, all the 
+information regarding lifting is 
+analyzed, it includes photos 
+and lifting elements to be 
+used by identifying their P/Ns. 
+4. The lifting manual will lead us to the right 
+shelf where the lifting kits are (lifting 
+elements) organized for the moving and 
+installation of such component in the 
+machine. 
+5. We install the lifting kit in the component. That 
+process can be checked thru recommendations and 
+illustrations in the manual.  
+6. Finally, the 
+component is 
+lifted, taken to 
+and installed in 
+the machine. 
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Shop Components Lifting Operations 
+Assurance Strategy 
+DATE 
+8/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-3.04-1372 
+Caterpillar Confidential:  GREEN         Page 9 of 11 
+ 
+ 
+Figure 8. Costs reduction stats per lifting elements consumption with the implementation of the strategy. 
+ 
+• Accident reduction per lifting operations. The six-month term before the upgrade 4 minor 
+accidents were reported; three of them including personal injuries and another one 
+property damage. After the upgrade (Sept. 2014) and up to now; we have not had any 
+accidents, which means a total cost per accident of USD $ 4,712.73. See Figure 9. 
+ 
+ 
+ 
+TOTAL COST
+2014
+$40,36
+CANVAS SLING COST 
+$7.023,56
+MARCH
+APRIL
+MAY
+JUNE
+JULY
+AUGUST
+SEPTEMBER
+OCTOBER
+NOVEMBER
+DECEMBER
+2015
+2014
+$40,36
+$739,84
+$3.126,19
+$1.367,60
+$1.749,57
+$7.023,56
+$2.218,66
+$0,00
+$1.416,10
+$130,34
+$0,00
+$70,91
+$601,31JANUARY
+FEBRAURY
+% Reduction of consumption 
+canvas slings 68,4%
+cost of investment and 
+consumption chain sling after 
+improvement
+$4.761,00
+% Cost reduction including the 
+initial investment in chain slings 32,2%
+$ 2.542,34
+DOLLAR
+M
+$ 1.918 S
+D
+2015 $0,00
+$2.218,66
+$601,31
+COP
+$ 2.046
+ 
+INITIAL INVESTMENT CHAIN 
+SLING
+$ 2.542,34
+$0,00
+$500,00
+$1.000,00
+$1.500,00
+$2.000,00
+$2.500,00
+$3.000,00
+$3.500,00
+$4.000,00
+$4.500,00
+$5.000,00
+CANVAS SLING 
+MONTHS
+Polinómica (MONTHS)
+$7.023,56 $2,218,66
+100%  Canvas
+Sling
+32,2%
+Cost reduction including the initial 
+investment in chain slings  
+Add INITIAL INVESTMENT 
+CHAIN SLING
+$2.542,34
+$3.958,44
+BRAND EQUIPMENT EQUIPMET COST COST PER HOUR REPAIR 
+COST
+ HOUR 
+DOWN
+SICK 
+LEAVE
+COST PER 
+ACCIDENT
+FD-FADAL CENTRO DE MECANIZADO VERTICAL CNC 1 75.000,00$          6,14$                          1 1  $                    606,14 
+MILLTRONICS TORNO PARALELO CNC 2 MILLTRONICS 264.075,08$        9,21$                           $                             -   
+EASTAR TORNO CNC #5 350.000,00$        16,32$                        $                             -   
+HANKOOK TORNO VERTICAL CNC 1 HANKOOK 692.545,10$        22,05$                        $                             -   
+ROTTLER RECTIFICADORA VERTICAL CNC 1 526.695,12$        13,99$                       410$              4,5  $                    472,95 
+DOOSAN ALESADORA CNC #1 793.671,85$        25,71$                       1 5  $                3.025,71 
+MILTRONICS ALESADORA CNC #2 392.244,59$        16,45$                        $                             -   
+HULTSFRED ALESADORA 2 45.000,00$          5,95$                           $                             -   
+WEBSTER BENNET TORNO VERTICAL 2 100.000,00$        7,94$                          1 1  $                    607,94 
+MILLTRONICS FRESADORA 1 CNC 66.289,71$          3,27$                           $                             -   
+4.712,73 $  
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Shop Components Lifting Operations 
+Assurance Strategy 
+DATE 
+8/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-3.04-1372 
+Caterpillar Confidential:  GREEN         Page 10 of 11 
+• An approximately 15% time reduction in the lifting operations, mainly due to: 
+o No waste of time due to decision making for the selection of lifting elements. 
+o There’s sorting and organization of lifting kits on site per component and 
+machining device. 
+ 
+5.0 Resources Required 
+ 
+• Statistics of components of higher turnover in the shop 
+• SIS WEB 
+• 1 engineer and 1 supervisor for every 30 components. 
+• C ertified Training under lifting processes standard and selection of elements. 
+• $ 4,800 USD for boards printing, lifting manual and the investment in canvas slings 
+changing (this depends on the capacity of the shop). 
+• $ 8,300 USD for costs of lifting kits storage shelves (this depends on the work capacity 
+of the shop). 
+ 
+6.0 Supporting Attachments / References 
+• L ifting manual (for example) 
+ 
+7.0 Related Best Practices 
+NONE 
+ 
+  
+
+===== PAGE 12 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Shop Components Lifting Operations 
+Assurance Strategy 
+DATE 
+8/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-3.04-1372 
+Caterpillar Confidential:  GREEN         Page 11 of 11 
+8.0 Acknowledgements 
+ 
+Sergio Maury Benedetti  
+Gerente Taller Rectificaciones   
+RELIANZ Mining Solutions 
+sergio.mauri@relianz.com.co
+  
+ 
+Carlos Abella Gonzales 
+Ingeniero Servicio Taller Rectificaciones 
+RELIANZ Mining Solutions 
+carlos.abella@relianz.com.co 
+ 
+Kevin De La Cruz Palacio 
+Analista III Ingeniería 
+DIMANTEC Ltda. 
+Supervisores.maquinado@dimantec.com.co
+ 
+ 
+Luis Fernandez Chica 
+Ingeniero De Desarrollo y Coordinador de Best Practices 
+RELIANZ Mining Solutions 
+luisalberto.fernandez@relianz.com.co
+ 
+ 
+Yicelis Contreras Hernandez 
+Estudiante Práctica – Área Rectificaciones 
+DIMANTEC Ltda.  
+Practicantes.resctificaciones3@dimantec.com.co
+ 
+Checking by: 
+ 
+Luis Alberto Fernandez Chica | BPs Coordinator and Development Engineer 
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 5347 | Cellphone: 3013724303 | 
+luisalberto.fernandez@relianz.com.co
+ 
+ 
+Edgard E. Romero Avena | Translator 
+edgard.romero@relianz.com.co

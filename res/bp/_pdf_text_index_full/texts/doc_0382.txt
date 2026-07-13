@@ -1,0 +1,220 @@
+SOURCE: Basket to Storage Caps C175-16 and C175-20.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2022 
+4.03-221209-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Basket to Storage Caps 
+C175-16 and C175-20 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Basket to Storage Caps C175-16 and C175-20 ......... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits ............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Basket to Storage Caps C175-16 and C175-20 
+DATE 
+12/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221209-1 
+Caterpillar: Confidential Yellow          Page 2 of 6 
+1.0 Introduction  
+ 
+This improvement contributes to a safer and more efficient washing and storage process for 
+C175-16 and C175-20 engine mounts and accessories. 
+ 
+2.0 Best Practice Description 
+ 
+The improvement consists of implementing a basket with exclusive divisions and compartments 
+for each of the parts that make up the C175 engine mount assembly: mounts, plates, studs, bolts 
+and nuts. This allows that none of the parts placed in it suffer any kind of damage by bumping 
+into each other during washing and/or storage. 
+ 
+ 
+ 
+Figure 1: How mounts and their accessories used to be stored BEFORE 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Basket to Storage Caps C175-16 and C175-20 
+DATE 
+12/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221209-1 
+Caterpillar: Confidential Yellow          Page 3 of 6 
+ 
+Figure 2: New shape and arrangement of mounts and accessories NOW 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Basket to Storage Caps C175-16 and C175-20 
+DATE 
+12/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221209-1 
+Caterpillar: Confidential Yellow          Page 4 of 6 
+3.0 Implementation Steps 
+ 
+Basket design for C175-16/20 engine beds. 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+• Eliminate the danger or risk of stored parts bumping and damaging each other. 
+• Store in a safer, more orderly, and efficient manner the parts that constitute the C175 
+engine mount assembly: mounts, plates, studs, bolts and nuts. 
+ 
+5.0 Resources Required 
+ 
+• Expense to fabricate the basket US$ 380.00 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Basket to Storage Caps C175-16 and C175-20 
+DATE 
+12/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221209-1 
+Caterpillar: Confidential Yellow          Page 5 of 6 
+6.0 Supporting Attachments / References 
+ 
+• Drawing appendix 
+ 
+ 
+ 
+7.0 Related Best Practices 
+  
+None 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Basket to Storage Caps C175-16 and C175-20 
+DATE 
+12/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221209-1 
+Caterpillar: Confidential Yellow          Page 6 of 6 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Carlos Vasquez Auqui, Jose Vives Martinez and Fernando Moreno Villaizan. 
+ 
+This Best Practice was revised by: 
+Aninu Mitacc Vizcardo 
+aninu.mitacc@ferreyros.com.pe 
+ 
+This Best Practice procedure was developed by: 
+Carlos Vasquez Auqui

@@ -1,0 +1,169 @@
+SOURCE: 1.0 Maintenance & Repair\1.02 Condition Monitoring\1. Strategic\Magnetic Plug Inspection Trays and Inspection Process.pdf
+PAGES: 3
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 11 
+0509-1.02-1167 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      mining.cat.com 
+ 
+ 
+ 
+ 
+B E S T  P R A C T I C E  S E R I E S 
+Magnetic Plug Inspection 
+Trays and Inspection 
+Process 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Renewal 
+(CRC) 
+Component 
+Life 
+Management 
+ MARC 
+Management 
+ 
+ 
+ 
+ 
+Magnetic Plug Inspection Trays and Inspection 
+Process ...................................................................... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 2 
+7.0 Related Best Practices ...................................... 2 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon  information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes addi tional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Magnetic Plug Inspection Trays and Inspection 
+Process 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0509-1.02-1167 
+Caterpillar Confidential:  GREEN          Page 1 of 2 
+ 
+1.0 Introduction  
+During the PM process magnetic plug inspections and changes can be sped up by creating 
+labeled trays of clean plugs that will replace the plugs in the machine.  This tray would then be 
+sent back to the CM analyst for inspection and result recording.  By having a common person do 
+the inspections, ratings will be consistent between inspections and machines.  
+Recording pictures of the magnetic plugs, plug ratings, and component life can help the CM 
+analyst track changes in the magnetic plug condition from PM to PM.  Tracking and trending the 
+information from magnetic plug inspections can be used to gain better understanding of 
+component life and plan for a PCR. 
+ 
+2.0 Best Practice Description 
+Magnetic plug trays should be prepared that contain clean magnetic plugs in individual, labeled 
+bins (Figure 1.)  When a plug is removed from the machine it is replaced by a clean plug from the 
+tray and the used plug is placed in the appropriately labeled bin. 
+ 
+ 
+Figure 1: Two examples of labeled magnetic plug trays. 
+ 
+ Once all the plugs on a machine are replaced, the tray containing the used plugs should be 
+sent to a CM analyst who will inspect and record the condition of all the plugs.  Pictures should be 
+taken and saved with the component life hours and plugs should be rated based on the attached 
+document.  Saving pictures with the component life hours allows the analyst to view how a certain 
+plug looked at the last PM compared to the current PM. 
+A database or spread sheet should be developed to help track and trend the component life 
+data, and store plug ratings and pictures.  Information gathered during this process can be used to 
+gain a better understanding of component life and plan for a PCR. 
+By having the same personal examine and rate the magnetic plugs, as opposed to different 
+mechanics working on the machines, you assure that all plugs are rated on a similar scale 
+between machines and between repairs.  This helps develop reliable component life estimates as 
+well as eliminates unnecessary downtime when a component is incorrectly rated as needing 
+repair. 
+ Once the plugs have been inspected and the results recorded, plugs that can be returned to 
+service should be cleaned and put in a bin ready for the next machine PM. 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Magnetic Plug Inspection Trays and Inspection 
+Process 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0509-1.02-1167 
+Caterpillar Confidential:  GREEN          Page 2 of 2 
+NOTE:  Changing the magnetic plugs as part of the pre-PM process rather than part of the PM 
+process can help in planning process.  If the machine has significant wear and a component 
+needs to be changed it can be properly scheduled and operations won’t expect the machine back 
+before it will be available. 
+ 
+3.0 Implementation Steps 
+ 
+1. Consider the type and number of machines, frequency of magnetic plug inspections, 
+service location (pre-PM and/or PM bay), turnaround time for tray inspection (time in lab 
+to inspect and release tray), etc. 
+ 
+2. Decide on a tray design based on mine preference and fabricated the appropriate number 
+of trays.  Equip the trays with new/recycled magnetic plugs. 
+ 
+3. Train the PM personnel in the correct procedures. 
+ 
+4. Develop a database or spread sheet to be used for tracking and trending component life. 
+ 
+5. Assign and train a person responsible for receiving and analyzing the magnetic plug trays 
+and tracking component life. 
+ 
+6. Assign carts to PM bays and/or pre-PM locations. 
+ 
+7. Implement and control the correct execution of the working procedures. 
+ 
+4.0 Benefits 
+ 
+• Reduces time the machine is in the shop for magnetic plug inspections. 
+• Common inspection ratings with only 1 analyst inspecting plugs rather than multiple 
+mechanics. 
+• Provides information that can help in component life and PCR planning. 
+• Avoid unnecessary downtime from mis-rated magnetic plugs leading to unneeded 
+component repairs. 
+ 
+5.0 Resources Required 
+• Labeled trays for magnetic plug sets. 
+• Personal assigned to examining and rating magnetic plugs and tracking component life. 
+ 
+6.0 Supporting Attachments / References 
+ 
+7.0 Related Best Practices 
+ 
+1206-2.15-1047  Fluid Analysis Sampling Cart

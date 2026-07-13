@@ -1,0 +1,1194 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+January 2014 
+1211-1.06-1295 
+  
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Backlog Management - 
+Setting Effective Backlog 
+Execution Targets 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+         
+Backlog Management - Setting Effective Backlog 
+Execution Targets ...................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ...................................... 15 
+4.0 Benefits ............................................................ 16 
+5.0 Resources Required ........................................ 17 
+6.0 Supporting Attachments / References ............. 17 
+7.0 Related Best Practices .................................... 17 
+8.0 Acknowledgements .......................................... 17 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 1 of 17 
+1.0 Introduction  
+ 
+Backlog Management , as described in the Cat Global Mining M&R process is a very dynamic 
+function. It requires constant attention and effort to manage and control the different phases of 
+the process in order to meet the target of machine pending backlogs  (risk) which is  one of the 
+major influencers on % of Scheduled Downtime. 
+   
+The primary objective of the detection routines  (Condition Monitoring plan) is the timely detection 
+of any abnormal condition that can develop into an unscheduled event or failure, and for Backlog 
+Management is the efficient and effective transformation of the input / alerts from Condition 
+Monitoring into effective repair / corrective actions to be scheduled before failure.    
+ 
+At this time , it is convenient to remember our definition of Backlog  (BL). Any defects that have 
+been detected and the repair can be deferred is a Backlog … if we have a defect entered in our 
+records, then we are already late and need to Act. Backlog Management  is the efficient and 
+effective management of the total “To Do” List.  
+ 
+This definition support s the dynamic of the Backlog Management process, making  the 
+organization act promptly in a presence of a Backlog Analy zing – Planning – Allocating 
+Resources – Scheduling the Execution and finally Executing it to fix the abnormal condition 
+detected to eliminate the risk of a break down.  
+ 
+The number of pending backlogs in a  fleet of equipment or in a particular machine is the result of 
+the balance maintained between Backlog s Generated – Backlogs Pending – Backlogs Executed. 
+The close control of these three parameters is the key to managing the backlog workload, simple 
+to do it in a small fleet of machines but it can be very difficult when the fleet size gets incremented 
+and / or we lose control of the Backlog workload balance. 
+ 
+The best practice herein presented describes the preferred methodology / procedure to set up 
+effective backlog execution targets to guide the organization in meeting the expected pending 
+backlog goal.  
+ 
+For better understanding and integration with the rest of the M&R processes consider working 
+this Best Practices in conjunction with the BP 1110-1.03-1261, “Unavailability Distribution”.    
+ 
+ 
+2.0 Best Practice Description 
+ 
+As mentioned before, the main objective is to maintain the balance between BL Generated – 
+Executed – Pending to achieve the end goal of minimum unscheduled events.  In the 
+understanding that unscheduled events or failures can be minimized by keeping  the risk of failure 
+low through a proactive Detection & Backlog Management strategy, this Best Practice provides 
+the M&R recommended methodology to keep the maintenance organization focused throug h 
+determining and observing effective Backlog execution targets.  
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 2 of 17 
+1.- Determine Total Backlog Pending Goal 
+ 
+As we already mentioned, pending backlogs is equal to risk of failures or unscheduled events.  
+So it is very obvious that we need to keep this number as low as possible. But remember at the 
+time of setting a goal or target that we need to analyze and consider the current status of the 
+equipment condition / Backlog Pending.  
+ 
+Define: 
+ 
+Target for Pending Backlogs / Equipment =   A  
+Total Pending Backlogs =  A x Number of Machines 
+ 
+Considerations: 
+ 
+ 
+For New Machines 
+Participate in the assembly of the machines and ensure the machines are delivered with zero 
+(“0”) Backlogs. Bring the machine back to the shop within the first 200 hours of operation and 
+clean all possible backlogs / defects that may have been developed as the results of the first 
+operating hours. 
+ 
+For new machines , the recommended Pending BL Goal should be “0” (zero). This in fact will 
+guide your organization to keep an eye on the machines and not only rely on the performance of 
+new equipment to support the availability. 
+ 
+Pending Backlog / Equipment = 0 
+Total Pending Backlogs = 0 x Number of Machines = 0 
+ 
+ Yes it is a 
+very aggressive goal
+ 
+, but goals are made for “moving” , to promote  actions of the 
+organizations in the right direction. 
+ 
+For Mature Machines 
+In the case of mature machines , it is very challenging to maintain the above goal of “zero 
+Backlogs”, and if taken the pur suit of it must be supported by very effective execution of the 
+detection routines, efficient Backlog Management system and a very well controlled quality of all 
+repairs that are being executed. At any time , the machine gets worked on by the maintenance 
+crew it must be returned to operation with zero backlogs pending. 
+ 
+Effective operations have proven that it is possible to maintain the pending backlogs in control at 
+levels below 5 BL. We recommend setting  your targets in the range of 0 to 5 BL pending per 
+machine. 
+ 
+ 
+When Pending Backlog is out of control 
+In this case, when Pending Backlogs is out of control and the machines have several 
+accumulated defects, the recommended strategy is to use an escalating targets strategy. This will 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 3 of 17 
+Unavailability Distribution Percentage Hours
+Preventive Maintenance 3.24% 723
+Planned Component Replacement (PCR) 1.21% 270
+Major / Minor Scheduled Repairs 0.43% 96
+Detection Routines 0.33% 74
+Tires 1.33% 297
+Other Repair Centers 0.11% 24
+Unscheduled Repairs 6.92% 1545
+TOTAL UNAVAILABILITY 13.57% 3029
+ESTIMATED AVAILABILITY 86.43% 19291
+TOTAL HOURS TO EXECUTE M&R EVENTS 2902
+REMAINING HOURS FOR M&R EVENTS -128
+AVAILABILITY GOAL 87.00% 19418
+ 
+help in avoiding the frustration of the organization that may be produced as a result of not being 
+able to achieve the desired goal in the expected timeframe. 
+ 
+It is also convenient in this type of situations to conduct a thorough inspection of your fleet to 
+ensure the information available by planning & scheduling is as accurate as possible. Re member 
+that in this type of situation, it is normal for the detection level gets negatively affected. 
+ 
+Note: To develop the description of the process of setting the BL execution targets, we will use 
+the same case scenario / information used in the “Unavai lability Distr ibution” Best Practice, 
+BP1110-1.03-1261. 
+ 
+ 
+       Equipment Type   793 OHT 
+       Number of Equipment  30 
+       Physical Availability Goal         87% 
+       Utilization of Asset          81% 
+       Month     January 
+ 
+ 
+With a final adjusted Unavailability Distribution of (see BP1110-1.03-1261): 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+From BP1110-1.03-1261: 
+ 
+“The above chart is the representation where we applied some of the adjustment ideas. We 
+eliminated 1 PCR, reduced the M&M time by reducing the allocated time for M&M by frequency 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 4 of 17 
+Backlog Management - Generated / Executed / Pending
+Fleet of 30 OHT 
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+Abril May June July August September October November December
+Number of Blogs
+BL Generated BL Executed BL Pending Goal (pending)
+Goal for total pending Blogs
+Note: The colours selected for this graph doesn't refer to the 3 stages of BLs
+Truck fleet  - Backlog Management Information
+Abril May June July August September October November December January
+30 31 30 31 31 30 31 30 31 31
+Number of Trucks 30 30 30 30 30 30 30 30 30 30
+Hours in the Month 21600 22320 21600 22320 22320 21600 22320 21600 22320 22320
+Backlogs/ Machine 10 10 12 16 13 19 27 32 35
+Backlogs Generated 75 71 157 345 236 457 576 478 450
+Backlogs Executed 55 87 101 225 312 270 340 345 357
+Backlogs Pending 312 296 352 472 396 583 819 952 1045
+Goal Pending BL/Machines 5 5 5 5 5 5 5 5 5
+Goal for Total Pending BL 150 150 150 150 150 150 150 150 150
+Delta 
+with the agreement to execute more backlogs in parallel with the PM services, and increase the 
+target for using the windows of opportunities for inspections. Reduction of the estimated time for 
+the unscheduled repairs is not suggested; it would be just a mathematical adjustment. What we 
+can do with the unscheduled repairs is to ensure that the unscheduled hours don’t increase and 
+to set effective machine performance targets for the scheduled repairs to be performed. This will 
+give better control of the future unscheduled repairs reduction.” 
+ 
+2.- Analyze the balance between BL Generated – Executed – Pending 
+ 
+The Backlog Management information we will use for this case scenario is the following: 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+A picture of this data revealed more clearly the situation: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 5 of 17 
+Unavailability Distribution Percentage Hours
+Preventive Maintenance 3.24% 723
+The graphical representation of the data very quickly  highlights the challenge that we are facing. 
+In the last 4 months, the BL Generation has been greater than the BL Execution, ending the 
+month of December with a negative delta of 895 BL for the whole fleet, or an excess of 29.83 BL 
+per machine.  
+ 
+The deviation to be corrected: Current Pending BL + BL Generation (Est.) – Pending BL Goal 
+               =   1045+ 464 (average of last two months) – 150 
+            =   1359 
+ 
+So, the first step is to recognize we have a problem, the second step will be …”how to solve it”.  
+There are many questions that can be raised at this time, such as: 
+ 
+- How did we end up in this situation?  
+- Why we didn’t react sooner? 
+- Is this situation already affecting our % scheduled work (or % Break Downs)? 
+- Why were we not able to increase the execution rate? 
+- Do we have parts problems? 
+- Do we have resources problems? 
+- … 
+ 
+All valid questions, but now is  the time to fix this situ ation. How can we guide our organization to 
+focus their efforts to correct this situation? The answer is … Effective BL Execution Targets. 
+ 
+3.-  Determine the BL Execution Targets 
+ 
+Backlog Execution Targets will have to address 2 issues, How Many Backlogs we will have to 
+execute and Who will do It. 
+ 
+Let’s start with the most frequent activity in our maintenance operation, PM services.  
+ 
+3.1 Backlogs to execute in PM services 
+ 
+First determine the PM Service  time for the period, normally one month. The Unavai lability 
+Distribution will provide this information. 
+ 
+ 
+ 
+ 
+ 
+ 
+We have a projection of 723 hours for all our PMs for the month of January. Now, how many 
+Backlogs we can possibly execute in parallel without affecting the efficiency of the PM? 
+ 
+The answer is in the PM Backlog Execution Window and in the Backlog Average ETTR  
+(Estimated Time To Repair). 
+ 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 6 of 17 
+ 
+ 
+PM Backlog Execution Window 
+The BL execution window within the PM services needs to be determined by analyzing the 
+sequence of activities to be executed and specifically determining the time the machine is de-
+energized (engine shut off). The use of the 8 Step PM will be of great advantage;  in this case the 
+BL execution window is always constant. 
+ 
+In the case study example we are using an 8 step 10 hours constant  duration for all PM services. 
+The analysis of the activities to be performed during PM will provide for your operation the final 
+scheduling window for Backlogs. The key is to determine the time interval in where the machine 
+being serviced is de-energized. 
+ 
+For our example we will use 6 hours (60% of the total PM S ervice duration) as our scheduling 
+windows. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+              
+In this illustration the on site planner at Batu Hijau – Trakindo is working in the  
+definition of the Backlog Scheduling Window. 
+ 
+Now we have to determine the average estimated time to repair (ETTR) of the backlogs in our 
+records. The ETTR records are as follows: 
+ 
+ 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 7 of 17 
+Abril May June July August September October November December
+BL ETTR 218.4 207.2 246.4 330.4 277.2 408.1 573.3 666.4 731.5
+ELTR 436.8 414.4 492.8 660.8 554.4 816.2 1146.6 1332.8 1463
+Total available Labor H 1500 1500 1500 1500 1500 1500 1500 1500 1500
+10 % of T.avail labor 150 150 150 150 150 150 150 150 150
+BL Total ETTR 732
+Total Pending Backlogs 1045
+BL average ETTR 0.70 h
+Total PM hours month 723 h
+Month BL execution window 434 h
+BL Total ETTR 732
+Total Pending Backlogs 1045
+BL average ETTR 0.70 h
+BL Execution Target - PM 620 BLs
+BL to execute / PM 8.6
+ 
+ETTR = Estimated Time To Repair,  ELTR = Estimated Labor To Repair 
+ 
+Based on the month of December information the average ETTR (Estimated Time To Repair) for 
+the pending Backlogs is: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+With this information we can determine the BL execution target for the PM services for the month 
+of January. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The 620 BLs to execute is the result of dividing the BL execution window by the BL average 
+ETTR.  BL exec. Target – PM = 434 h / 0.70 h = 620 BLs  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 8 of 17 
+This is our first target.  
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+PCR Backlog Execution Window 
+In the case of the PCR ’s the Backlogs that we can execute will be determined by the current 
+backlogs per machine times the number of PCR’s that we will perform in the period. The goal is 
+to execute 100% of the Backlogs pending on the PCR machines.  
+ 
+In this case after the adjustments done to the projected unavailability distribution we ended with 2 
+PCR’s with a total duration of 270 hours or 11.25 days (See page of BP BP1110-1.03-1261).  
+ 
+The Backlogs that can be executed in this window are: 2 (PCR’s) x 35 (BLs per machine) 
+               = 70 BLs 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+With the addition of Backlogs to execute during PCR’s the total number of Backlogs that we are 
+projecting to execute is 690. But the correction needed is 1359 (page 5), still not enough. 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 9 of 17 
+ 
+ 
+Detection Routines 
+In this case we will not try to force a specific  number of backlogs to execute, but we will 
+recommend our inspectors to contribute with the correction of small defects that does not affect 
+the performance or their primary role of defect detection. In this scenario in where the % of 
+unscheduled DT is significant we need to be careful not to deviate the focus / attention from the 
+main objective of critical functions such as the detection routines. 
+ 
+We will not assign any target of BL execution to this routine. We recommend you to analyze your 
+particular situation and take the best suitable decision for it. 
+ 
+ 
+Tires & Other Repair Centers 
+Normally these types of jobs are being taken by another crew / workshops. Because of that and 
+because of safety reasons we don’t recommend performing work in parallel. Normally that’s the 
+case, exceptions need to be evaluated at your site and the decision needs to be taken at that 
+time. 
+ 
+We will not assign any target of BL execution to these routines. The BL target situation at this 
+stage stays the same.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Unscheduled Repairs 
+In the case of Unscheduled Repairs we need to analyze the distribution of the unscheduled 
+events and determine the amount of work that is being executed in the field and in the workshop. 
+The Field Service normally takes care of the small repairs in the field. Repairs that don’t require 
+opening components, compartments, systems because of Contamination Control issues and also 
+those that is easy and quick to solve. If a component or system needs to be open and/or the 
+estimated time to repair recommend not to execute in the field are send to the workshop. 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 10 of 17 
+Field MTTR 20.0 min
+Stops in the Field 907
+Total Hours for the Month 302
+Shop MTTR 5.7 h
+Stops in the Shop 218
+Total Hours for the Month 1243
+Total Unscheduled Down Time 1545
+ 
+We will not assign any tasks for the work to be done in the field but we will do so for the 
+unscheduled repairs that are executed in the workshop. 
+ 
+The case scenario that we are going to use presents the following distribution for the 
+unscheduled repairs (determine your particular situation in your operation): 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Note: Remember to define and use your specific operation situation. 
+ 
+ 
+In order to determine the quantity of Backlogs to execute in this unscheduled repairs window we 
+need to consider the following issues: 
+ 
+- The work in parallel cannot represent a disruption for the execution of the main repair that in 
+this case is the unscheduled or break down repair.  
+- Availability of labor. 
+- Backlogs in “Green” or Ready to Go. 
+ 
+The recommendation is to analyze every unscheduled stop together with Planning & Scheduling 
+to determine if any work can be done in parallel and also to define the specific backlog to 
+execute.   
+ 
+We will take a very conservative decision and will start with a target of Backlog execution of 5% 
+of the total Shop - Unscheduled DT window. 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 11 of 17 
+ 
+And the number of Backlogs to execute in this window will be: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+At this time the scenario for the Backlog Execution targets looks like: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+We have a target of 779 Backlogs to execute, but as stated in page 5 the correction needed is 
+1359. It is time to open another window to fit in the required delta of 580 BL’s. 
+ 
+ 
+ 
+M&M Backlog Execution Window 
+The primary use of the Major & Minor Repairs window is to balance the Backlog workload 
+executing those Backlogs that cannot be fitted into the other scheduling windows.  The two 
+primary windows for Backlog execution are PM services and PCR’s. The third window to consider 
+is unscheduled work that because of its nature it is very difficult to get full advantage of them.  So, 
+when we face a situation in where the PM and PCR’s w indows are max out  in terms of Backlog 
+execution, the strategy is to open another window  tailored to fit the additional Backlogs to 
+execute. This window is the Major & Minor Repairs window.  
+ 
+The Planner has to design the length and frequency of the M&M window having four  variables to 
+play with, the amount of Backlogs to execute, the % of unavailability, the work force (labor) 
+required and the timeframe to fix the problem and get the Backlog situation in control.  
+ 
+ 
+ 
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 12 of 17 
+ 
+In this case the M&M window required to fit the required 580 Backlogs is: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+A 1.82% of unavailability would put us well below the availability target (87%; see BP 1110- 1.03-
+1261) we have to comply with. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+At this stage we need to make a decision based on three options: 
+ 
+- Not open another window in favor of the availability target 
+- Open a window of 406 hours and take an extra 1.82% of availability pushing the estimated 
+availability target down to 85.04 % 
+- Reduce the M&M repair window to a percentage that doesn’t affect too much the availability 
+and can be negotiated with the customer or production department. 
+ 
+Now it is starting to be clear that the elephant (Backlog pending) cannot be eaten in one month. 
+ 
+It is a challenge, but if we want to improve the unscheduled DT situation (6.92%) we need to 
+reduce the risk of failures by cleaning the pending Backlog list. So in this example we will go with 
+the alternative 3 of using a reduced window (less hours / percentage) for the M&M repairs. 
+ 
+To complete the example we will use the adjustment done by the planner in the example 
+presented in the BP  BP1110-1.03-1261, in where the final percentage of unavailability for the 
+M&M repair window was determined to be 0.43%. 
+ 
+
+===== PAGE 14 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 13 of 17 
+By Frequency
+M&M Sched. Repairs Frequency 500 h
+M&M Sched. Repairs Duration 4 h
+By Exception
+Major Repairs qty
+2
+Duration 12 h/each
+By Frequency
+M&M Sched. Repairs Frequency
+500 h
+M&M Sched. Repairs Duration 2 h
+By Exception
+Major Repairs qty
+2
+Duration 12 h/each
+When the M&M window was adjusted basically we reduced the duration of this window from 4 to 
+2 hours, this was done in the final adjustments introduced to try to meet the availability target. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+When you end up with a situation like this in where the M&M window / duration is very limited (2 
+hours) the best strategy is to add this window to the current PM services. It is convenient to 
+mention that when the M&M window  is larger it is beneficial to open a separate window normally 
+in between the PM services. This will increase the frequency that the service crew will be able to 
+“see” and “touch” the machine and have more chances to prevent unexpected failures (Detect – 
+Plan – Execute).   
+ 
+The time duration and the number of Backlogs to execute in this window will be: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+In the case of the specific repairs of 12 hours (2 Machines for 12 hours each) the decision to make 
+is whether to attach these repairs  to a PM Service or to perform a complete different stop. The 
+urgency of the repairs will tell. When deciding to execute the repairs in a different stop the time for 
+washing needs to be considered. 
+ 
+ 
+
+===== PAGE 15 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 14 of 17 
+The unavailability distribution and the Backlog Targets look like this: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+With this target of 884 Backlogs to execute we are at 65% of the total correction needed (1359 
+Backlogs). As we mentioned before the total correction cannot be made in one single month. 
+ 
+To determine the final timeframe (months) that we will use to complete the corrections needed 
+and bring the situation of Backlogs pending back in control, we have to analyze the resources 
+needed and available in terms of labor, parts, facilities and equipment. 
+ 
+Important to notice is that even though we cannot correct the deviation in one month, the targeted 
+backlog execution represent an increase of more than 200% compared with the current backlog 
+execution (last month = 357 BL executed). 
+ 
+As mentioned before in the analysis of the Backlog Balance (Generated – Executed – Pending), 
+there are several questions to investigate: 
+ 
+- How did we end up in this situation?  
+- Why we didn’t react sooner? 
+- Is this situation already affecting our % scheduled work (or % Break Downs)? 
+- Why were we not able to increase the execution rate? 
+- Do we have parts problems? 
+- Do we have resources problems? 
+ 
+One thing is perfectly clear; we need to do something different, maintaining an execution rate of 
+Backlogs below the amount that is being generated in the same period (357 executed vs. 450) 
+will only make the situation worst. We have to stop digging and start filling the hole we created. 
+ 
+
+===== PAGE 16 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 15 of 17 
+Abril May June July August September October November December
+BL ETTR 218.4 207.2 246.4 330.4 277.2 408.1 573.3 666.4 731.5
+ELTR 436.8 414.4 492.8 660.8 554.4 816.2 1146.6 1332.8 1463
+Total available Labor H 1500 1500 1500 1500 1500 1500 1500 1500 1500
+10 % of T.avail labor 150 150 150 150 150 150 150 150 150
+Based on the data provided the workforce situation is a big challenge, the amount of estimated 
+labor in the pending backlog is increasing rapidly and could pass the available labor if no 
+corrections are introduced. 
+ 
+ 
+Most probably for this case the organization will have to make a decision to increase the overtime 
+or request external support (labor force peak shaving) to overcome the situation. 
+ 
+We recommend at this stage to present the organization with the analysis of the situation and the 
+plan to increase the Backlog execution following specific targets and accountabilities. Discuss the 
+alternatives and implement. 
+ 
+Follow up closely the results, specially the achievement of the BL execution targets. Make the 
+adjustments necessary, apply the same methodology for the following month and monitor the 
+results to ensure the achievement of the target for total Backlog pending, achieve the balance 
+between the BL Executed – Generated & Pending.  
+ 
+As mentioned before we need to do something different to turnaround the Backlog Pending 
+situation otherwise we will be carrying a constant risk of having unexpected events (unscheduled 
+or break downs). We have to stop digging and start filling the hole we are into. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The implementation of this concept is relatively simple. This is a concept and procedure that has 
+to be the responsibility of the on site planner. It is a strategic job.  
+ 
+The steps for implementation are as follows: 
+ 
+ Evaluate your planning process. Determine the AS IS situation with respect to determine and 
+use of the Unavailability Distribution and the Backlog Execution Targets.  
+ If not in use, adopt the Unavailability Distribution procedure described in the BP1110-1.03-
+1261. 
+ Determine the equipment fleet operating parameters (utilization, availability target …) . 
+ Investigate and gather all needed information. 
+ Populate your Unavailability Distribution and define the windows of opportunities to do work in 
+parallel. 
+ Determine and analyze the Backlog Management situation. 
+ Apply the methodology here presented to determine the BL execution targets. 
+
+===== PAGE 17 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 16 of 17 
+ Present the concept and targets to your organization. This step is very important to get the 
+“buy in” of your organization. The success of this procedure depends on the collective work of 
+the on site organization. 
+ Incorporate the BL Execution Targets in all your planning meetings. Remember that the task of 
+determining the BL Execution Targets is a task that should be (must) done by the planner, in 
+some dealers called “Strategic Planning”. 
+ Link the Long, medium and short-term plans to the Backlog Management situation. 
+ Follow up. Closely follow up the execution and accomplishment of the targets defined. 
+ Always analyze the results of your Backlog Management together with the % Unscheduled 
+Work or Breakdown DT and the Condition Monitoring KPI’s results specially “Detection Level”. 
+A low detection level can easily ruin your Backlog Management balancing efforts. 
+ Manage as necessary. 
+ 
+ 
+4.0 Benefits 
+ 
+The definition and use of effective Backlog Execution Targets will provide a way to help focus the 
+organization toward failure prevention. Specific targets provide a quantifiable way of assigning 
+responsibilities and manage by results achievement.  
+ 
+For Planning: 
+ 
+ Clear goals and targets for following up and controlling the execution of the scheduled tasks. 
+ Better management of the adjustments that may be necessary to introduce. 
+ Gain control. 
+ Moving from expecting “good” things to happen … to controlling and making it happen. 
+ 
+For the Work Shop crews (PM services, unscheduled, PCR’s, etc.) 
+ 
+ Clear set of goals to guide and meet the required backlog execution. 
+ Better information to make better decision (When and when not to extend or do extra repairs). 
+ Clear identification of opportunities. 
+ Better management of maintenance activities. 
+ Integration of the efforts with the rest of the areas of the maintenance organization.   
+ 
+For the Operation Department” 
+ 
+ Better response from the maintenance department to the operator’s feedback. 
+ Better, more reliable equipment to operate (Backlogs in control).  
+ 
+For the Production Department 
+ 
+ Backlogs in control  better, more reliable machines  better planning of production. 
+ Better machines. 
+ 
+ 
+ 
+
+===== PAGE 18 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting effective Backlog Execution Targets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-1.06-1295 
+Caterpillar Confidential:  GREEN         Page 17 of 17 
+ 
+ 
+5.0 Resources Required 
+ 
+The implementation of this BP will not require any extra manpower or infrastructure, but 
+depending on your particular situation it will be necessary to adequate or re-design the function 
+and role & responsibilities of the planner. Special attention must be dedicated to the cases in 
+where the planner gets primarily focused in building and structuring the short-term. Building the 
+short-term plan is a scheduling function. If that’s the case, we recommend separating the 
+functions of planning and scheduling and assigning resources for both functions. 
+ 
+The procedure here presented in this BP is a responsibility of the planner. It is part of building 
+strategic guidelines for the organization to follow. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+No attachments. 
+ 
+7.0 Related Best Practices 
+ 
+• BP1110-1.03-1261 – “Unavailability Distribution”- Effectively Manage the Unavailability of 
+your Equipment Fleet. 
+• BP 1007-2.0-1103 – Backlog Management 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was created and written by: 
+ 
+Abelardo A. Flores 
+Product Performance Manager  
+Caterpillar Mining Chile Servicios Ltda. 
+flores_abelardo@cat.com 
+ 
+For further details and information regarding this Best Practice, please contact the author.

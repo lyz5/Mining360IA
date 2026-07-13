@@ -1,0 +1,214 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Knowledge Base | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    {{ sections|json_script:"kb-sections-data" }}
+    <main class="app-shell ia-config-shell kb-shell" data-kb-root data-api-base="/knowledge-base/api">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Mining 360 AI</p>
+                <h1>Knowledge Base</h1>
+            </div>
+            <div class="summary">
+                <span class="summary-value" id="kb-coverage-score">0%</span>
+                <span class="summary-label">coverage</span>
+            </div>
+        </header>
+
+        <section class="ia-config-grid">
+            <aside class="ia-config-sidebar">
+                <div class="placeholder-panel">
+                    <p class="eyebrow">Knowledge Coverage Test</p>
+                    <label class="ia-field">
+                        <span>Section</span>
+                        <select id="kb-test-section"></select>
+                    </label>
+                    <label class="ia-field">
+                        <span>KPI</span>
+                        <input id="kb-test-kpi" type="text" placeholder="availability">
+                    </label>
+                    <label class="ia-field">
+                        <span>User question</span>
+                        <textarea id="kb-test-question" rows="5" placeholder="Give me availability for Fekola 777 in May 2025"></textarea>
+                    </label>
+                    <div class="ia-inline-actions">
+                        <button type="button" class="button secondary" id="kb-run-coverage">Test Coverage</button>
+                    </div>
+                    <pre id="kb-coverage-result" class="ia-code-block"></pre>
+                </div>
+
+                <div class="placeholder-panel">
+                    <p class="eyebrow">Generate Knowledge</p>
+                    <p>Generate draft knowledge from IA Config and semantic model metadata. Generated items are marked To Review.</p>
+                    <label class="ia-field">
+                        <span>Section</span>
+                        <select id="kb-generate-section"></select>
+                    </label>
+                    <div class="ia-inline-actions">
+                        <button type="button" class="button secondary" id="kb-generate">Generate Knowledge</button>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="ia-config-main">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Central brain</p>
+                        <h2 id="kb-active-title">Overview</h2>
+                    </div>
+                    <div class="ia-toolbar">
+                        <label class="ia-filter">
+                            <span>Search</span>
+                            <input type="search" id="kb-search" placeholder="Search knowledge...">
+                        </label>
+                        <label class="ia-filter">
+                            <span>Section</span>
+                            <select id="kb-section-filter"></select>
+                        </label>
+                        <label class="ia-filter">
+                            <span>Status</span>
+                            <select id="kb-status-filter">
+                                <option value="">All</option>
+                                <option value="Draft">Draft</option>
+                                <option value="To Review">To Review</option>
+                                <option value="Validated">Validated</option>
+                                <option value="Rejected">Rejected</option>
+                                <option value="Deprecated">Deprecated</option>
+                                <option value="Imported">Imported</option>
+                            </select>
+                        </label>
+                        <label class="ia-filter">
+                            <span>Active</span>
+                            <select id="kb-active-filter">
+                                <option value="">All</option>
+                                <option value="1">Active</option>
+                                <option value="0">Inactive</option>
+                            </select>
+                        </label>
+                        <button type="button" class="button secondary" id="kb-add">Add</button>
+                        <button type="button" class="button secondary" id="kb-refresh">Refresh</button>
+                    </div>
+                </div>
+
+                <div class="ia-tabs" id="kb-tabs">
+                    <button type="button" class="ia-tab active" data-resource-type="overview">Overview</button>
+                    <button type="button" class="ia-tab" data-resource-type="powerbi-metadata">Power BI Metadata</button>
+                    <button type="button" class="ia-tab" data-resource-type="business-glossary">Business Glossary</button>
+                    <button type="button" class="ia-tab" data-resource-type="kpi-dictionary">KPI Dictionary</button>
+                    <button type="button" class="ia-tab" data-resource-type="mining-terminology">Mining Terminology</button>
+                    <button type="button" class="ia-tab" data-resource-type="question-library">Question Library</button>
+                    <button type="button" class="ia-tab" data-resource-type="synonym-library">Synonym Library</button>
+                    <button type="button" class="ia-tab" data-resource-type="business-rules">Business Rules</button>
+                    <button type="button" class="ia-tab" data-resource-type="prompt-library">Prompt Library</button>
+                    <button type="button" class="ia-tab" data-resource-type="recommended-actions">Recommended Actions</button>
+                    <button type="button" class="ia-tab" data-resource-type="ai-logs">AI Logs</button>
+                    <button type="button" class="ia-tab" data-resource-type="user-feedback">User Feedback</button>
+                    <button type="button" class="ia-tab" data-resource-type="powerbi-interaction">Power BI Interaction</button>
+                </div>
+
+                <section id="kb-overview-panel" class="kb-overview-panel"></section>
+                <div class="table-scroll ia-config-table-wrap" id="kb-table-wrap" hidden>
+                    <table class="data-table" id="kb-table"></table>
+                </div>
+                <section id="powerbi-interaction-panel" class="kb-overview-panel" hidden
+                         data-api-base="/knowledge-base/powerbi-interaction/api"
+                         data-embed-config-url="/powerbi-interaction/embed-config/__REPORT_ID__/">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">Validated navigation repository</p>
+                            <h2>Power BI Interaction</h2>
+                        </div>
+                        <div class="ia-inline-actions">
+                            <button type="button" class="button secondary" id="pbi-import-reports">Import Reports</button>
+                            <button type="button" class="button secondary" id="pbi-add-item">Add</button>
+                        </div>
+                    </div>
+                    <div class="ia-tabs" id="pbi-interaction-tabs">
+                        <button type="button" class="ia-tab active" data-pbi-resource="reports">Reports</button>
+                        <button type="button" class="ia-tab" data-pbi-resource="pages">Pages</button>
+                        <button type="button" class="ia-tab" data-pbi-resource="visuals">Visuals</button>
+                        <button type="button" class="ia-tab" data-pbi-resource="slicers">Slicers</button>
+                        <button type="button" class="ia-tab" data-pbi-resource="kpi-page-mappings">KPI to Page</button>
+                        <button type="button" class="ia-tab" data-pbi-resource="kpi-visual-mappings">KPI to Visual</button>
+                        <button type="button" class="ia-tab" data-pbi-resource="intent-navigation-mappings">Intent Navigation</button>
+                        <button type="button" class="ia-tab" data-pbi-resource="supported-actions">Actions</button>
+                        <button type="button" class="ia-tab" data-pbi-resource="logs">Debug Logs</button>
+                        <button type="button" class="ia-tab" data-pbi-resource="navigation-test">Navigation Test</button>
+                    </div>
+                    <div class="ia-toolbar">
+                        <label class="ia-filter"><span>Search</span><input type="search" id="pbi-search" placeholder="Search mappings..."></label>
+                        <label class="ia-filter"><span>Status</span><select id="pbi-status"><option value="">All</option><option>Imported</option><option>To Review</option><option>Validated</option><option>Deprecated</option></select></label>
+                        <button type="button" class="button secondary" id="pbi-refresh">Refresh</button>
+                    </div>
+                    <div class="table-scroll ia-config-table-wrap" id="pbi-table-wrap"><table class="data-table" id="pbi-table"></table></div>
+                    <section id="pbi-navigation-test" hidden>
+                        <div class="form-grid">
+                            <label class="ia-field"><span>Section</span><select id="pbi-test-section"></select></label>
+                            <label class="ia-field"><span>Metric</span><input id="pbi-test-metric" value="availability"></label>
+                            <label class="ia-field"><span>Minesite</span><input id="pbi-test-minesite" placeholder="Fekola"></label>
+                            <label class="ia-field"><span>Period</span><input id="pbi-test-period" placeholder="2025-05"></label>
+                            <label class="ia-field"><span>Model</span><input id="pbi-test-model" placeholder="777"></label>
+                            <label class="ia-field"><span>Customer</span><input id="pbi-test-customer"></label>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="button secondary" id="pbi-test-resolve">Resolve</button>
+                            <button type="button" class="button secondary" id="pbi-test-preview" disabled>Preview</button>
+                        </div>
+                        <pre id="pbi-test-output" class="ia-code-block"></pre>
+                        <div id="pbi-test-embed" class="report-frame" style="min-height:650px" hidden></div>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <div class="browser-modal" id="kb-modal" hidden aria-hidden="true">
+        <div class="browser-modal__backdrop" data-kb-modal-close></div>
+        <div class="browser-modal__panel browser-modal__panel--fullscreen" role="dialog" aria-modal="true" aria-labelledby="kb-modal-title">
+            <div class="browser-modal__header">
+                <div>
+                    <p class="eyebrow">Knowledge Base</p>
+                    <h2 id="kb-modal-title">Create item</h2>
+                </div>
+                <button class="icon-button" type="button" data-kb-modal-close aria-label="Close">×</button>
+            </div>
+            <form id="kb-form" class="ia-config-form">
+                <div id="kb-form-fields" class="form-grid"></div>
+                <div class="form-actions">
+                    <button type="button" class="button secondary" data-kb-modal-close>Cancel</button>
+                    <button type="submit" class="button secondary" id="kb-save">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="browser-center-message" id="kb-center-message" hidden aria-hidden="true">
+        <div class="browser-center-message__card">
+            <strong class="browser-center-message__text" id="kb-center-message-text"></strong>
+            <div class="browser-center-message__actions">
+                <button type="button" class="button secondary" id="kb-center-message-ok">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="browser-modal" id="pbi-modal" hidden aria-hidden="true">
+        <div class="browser-modal__backdrop" data-pbi-modal-close></div>
+        <div class="browser-modal__panel browser-modal__panel--fullscreen" role="dialog" aria-modal="true">
+            <div class="browser-modal__header"><h2 id="pbi-modal-title">Power BI Interaction</h2><button class="icon-button" type="button" data-pbi-modal-close aria-label="Close">×</button></div>
+            <form id="pbi-form" class="ia-config-form"><div id="pbi-form-fields" class="form-grid"></div><div class="form-actions"><button type="button" class="button secondary" data-pbi-modal-close>Cancel</button><button type="submit" class="button secondary">Save</button></div></form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/powerbi-client@2.23.7/dist/powerbi.min.js"></script>
+    <script src="{% static 'reports/powerbi_embed.js' %}?v=20260712-1"></script>
+    <script src="{% static 'reports/knowledge_base.js' %}?v=20260707-1"></script>
+    <script src="{% static 'reports/powerbi_interaction.js' %}?v=20260712-1"></script>
+</body>
+</html>

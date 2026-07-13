@@ -1,0 +1,249 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Tool For Easy Measurement of Backlash Between Bevel Gear and Pinion.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Tool For Easy Measurement of 
+Backlash Between Bevel Gear 
+and Pinion 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Tool For Easy Measurement of Backlash Between 
+Bevel Gear and Pinion ............................................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+May 2012 
+1205-4.03-1273 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+1.0 Introduction  
+ 
+For the accurate measurement of the backlash between the bevel gear and pinion in Caterpillar 
+wheel loaders, it is important to keep the pinion gear in a fixed position while taking 
+measurements.  This Best Practice is a simple fabricated tool to lock the pinion gear while 
+measuring backlash.  Refer to machine Service Manuals for differential bevel gear assembly, 
+procedure to test / adjust bevel gear backlash. 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool For Easy Measurement of Backlash Between Bevel 
+Gear and Pinion 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1205-4.03-1273 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.0 Best Practice Description 
+ 
+Ferreyros has developed a very simple tool to fix the pinion, for measuring the backlash of the 
+bevel gear and pinion. 
+This tool allows easier measurement of the backlash without repeating the procedure several 
+times. This tool enables accurate and reliable measurement to be performed in the least amount 
+of time. 
+ 
+ 
+ 
+Process: 
+ 
+1. Set the tool to the housing pinion with 4 bolts. 
+ 
+2.  Adjust the jaws according the diameter of the splined shaft pinion. 
+ 
+3. Tighten 2 bolts to secure jaws to the pinion. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Set the tool to housing pinion 
+adjusting 4 bolts. See picture 
+below. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool For Easy Measurement of Backlash Between Bevel 
+Gear and Pinion 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1205-4.03-1273 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4. Proceed to the measurement of backlash in the bevel gear. 
+       
+  
+ 
+ 
+3.0 Implementation Steps 
+ 
+Design and fabricate a tool as shown above. 
+ 
+ 
+4.0 Benefits 
+ 
+• More accuracy in the measurement in less time. 
+ 
+• Ensure that the test procedure meets the specification CAT. 
+ 
+• The tool is adaptable for models 824, 824B, 824C, 834B, 834C, 844, 844C, 980G, 988B, 
+988F, 988G, 988H and many more. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Fabrication of tool. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+      None. 
+  
+7.0 Related Best Practices 
+ 
+None. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool For Easy Measurement of Backlash Between Bevel 
+Gear and Pinion 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1205-4.03-1273 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+       This Best Practice was written by: 
+ 
+       Billy Urday Abarca . 
+       Ferreyros S.A.A. 
+       billy.urday@ferreyros.com.pe 
+ 
+The idea for this best practice, belongs to: 
+ 
+CRC Power Train Technicians 
+Ferreyros S.A.A. 
+ 
+This Best Practice was revised by: 
+ 
+Aninu Mitacc Vizcardo 
+Ferreyros S.A.A. 
+aninu.mitacc@ferreyros.com.pe 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool For Easy Measurement of Backlash Between Bevel 
+Gear and Pinion 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1205-4.03-1273 
+Caterpillar Confidential:  GREEN          Page 4 of 4

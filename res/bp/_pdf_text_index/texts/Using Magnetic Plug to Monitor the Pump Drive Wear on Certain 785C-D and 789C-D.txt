@@ -1,0 +1,175 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+September 2022 
+3.01-220919-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Using Magnetic Plug to 
+Monitor the Pump Drive 
+Wear on Certain 785C-D 
+and 789C-D 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Using Magnetic Plug to Monitor the Pump Drive Wear 
+on Certain 785C-D and 789C-D ................................. 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Magnetic Plug to Monitor the Pump Drive Wear on 
+Certain 785C-D & 789C-D 
+DATE 
+9/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220919-1 
+Caterpillar: Confidential Yellow P age 2 of 5 
+1.0 Introduction 
+The Caterpillar Pump Drive is one important component of the powertrain. Its  main purpose is to 
+transfer power from the engine to the hoist , brake, steering, and transmission systems by driving the 
+hoist, rear brake cooling, steering, and transmission pumps. Lubrication of the pump drive is provided 
+by oil from the torque converter charging pump section. 
+T
+he field technician came up with the aim of a simple and practical way to better monitor the pump 
+drive wear by installing the magnetic plug in place of the existing conventional plug. In addition to the 
+maintenance and inspection procedures Caterpillar had already established, magnetic plug inspection 
+will certainly be an advantage when the decision of whether repairing the pump drive must be taken.  
+2
+.0 Best Practice Description 
+T
+he main goal of this best practice is to provide a way for maintenance personnel to better monitor 
+component wear  throughout its life upon magnetic plug inspection within scheduled maintenance 
+intervals. Currently, customers only use the SOS program to analy ze the hydraulic oil condition, 
+therefore it is not possible to determine whether  the wear is from the p ump drive o r from another  
+component. 
+Figure 1:  Magnetic plug location on pump drive housing 
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Magnetic Plug to Monitor the Pump Drive Wear on 
+Certain 785C-D & 789C-D 
+DATE 
+9/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220919-1 
+Caterpillar: Confidential Yellow P age 3 of 5 
+Figure 2: Hydraulic system SOS Analysis 
+T
+he purpose of the existing plug replacement by a magnetic plug is to determine if there are any 
+abnormal particles found as a consequence of pump drive wear since it is not possible through S.O.S 
+analysis. 
+3
+.0 Implementation Steps 
+2. Inc
+lude pump drive magnetic plug inspection in the maintenance checklist.
+3. Implement the pump drive magnetic plug inspection process at every 250 service hours
+maintenance intervals.
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Magnetic Plug to Monitor the Pump Drive Wear on 
+Certain 785C-D & 789C-D 
+DATE 
+9/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220919-1 
+Caterpillar: Confidential Yellow P age 4 of 5 
+4.0 Benefits 
+• W
+ear source can be found quickly.
+• Reduced downtime with diagnoses that is efficient utilization of man hour. One technician can
+perform the diagnostic in less than 1 hour.
+• Better condition monitoring process and increased pump drive life.
+• Avoid misunderstanding and misinterpretation of metallic particles source found in S.O.S.
+• Reduce the unscheduled downtimes. The performance time to diagnose and R&I is reduced to
+3 hours which is a 50% reduction.
+Figure 3: Downtime reduction graph 
+5.0 Resources Required 
+• S
+uggested resource: 01 unit of 235-3610 magnetic plug
+• Suggested resource: 01 unit of 3J-1907 Seal-O-Ring
+6
+.0 Supporting Attachments / References 
+• SI
+S: Pump Drive – Remove & Install SENR1500 – 18
+7
+.0 Related Best Practices 
+N
+one 
+Downtime hrs. 
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Magnetic Plug to Monitor the Pump Drive Wear on 
+Certain 785C-D & 789C-D 
+DATE 
+9/19/2022 
+CHG 
+NO 
+00 
+NUMBER 
+3.01-220919-1 
+Caterpillar: Confidential Yellow P age 5 of 5 
+8.0 Acknowledgements 
+T
+he idea for this Best Practice belongs to:        Special thanks to: 
+Sidinei Lúcio de Lima             Poliane de Souza Paiva 
+Rildonson Mota Bento          Aluízio Carvalho 
+Rodrigo dos Santos Reis           Rogério Gonçalves Pinto 
+       Júlio César Duarte 
+     Moacir Antônio        
+This Best Practice was written by:       
+Gleiser Antônio de Oliveira          
+Performance Engineer 
+gleiser.oliveira@sotreq.com.br 
++55 31 999412977

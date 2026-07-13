@@ -1,0 +1,223 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+October 2023 
+4.02-231002-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Setting Up the Metal Spray 
+Robot Using a Cone Tool 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Setting Up the Metal Spray Robot Using a Cone   
+Tool ............................................................................ 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by  
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting Up the Metal Spray Robot Using a Cone Tool 
+DATE 
+10/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231002-1 
+Caterpillar: Confidential Yellow          Page 2 of 5 
+1.0 Introduction  
+ 
+It is necessary to keep distance and angle as accurate as possible during the spraying process to 
+create a quality metal coat. Use of a robotic arm to control position and distance will provide the 
+necessary accuracy. 
+ 
+To decrease the set-up time of the job, a cone tool is used to teach the dimensional specifications for 
+the robot. Keep in mind that each type of arc spray wire needs different parameters as distance, voltage, 
+etc. Use the information found in the Reuse and Salvage Guideline SEBF2120 “Thermal Spray 
+Procedures for Engine Cylinder Block Top Surface” when spraying a cylinder block SIS 2.0 (cat.com). 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The cone tool (Figure 1) is constructed of Nylamid (UHMW solid rod). This tool allows the teaching 
+of programming points with greater accuracy, improving the quality of the coating. 
+ 
+It is necessary to install the cone into the arc shield of the arc spray gun, doing this keeps the center 
+line (Figure 2) of the spray during the teaching of the points. 
+ 
+ 
+ 
+                                             
+                 
+                                   Figure 1                                                         Figure 2 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting Up the Metal Spray Robot Using a Cone Tool 
+DATE 
+10/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231002-1 
+Caterpillar: Confidential Yellow          Page 3 of 5 
+3.0 Implementation Steps 
+ 
+3.1 Select the correct cone tool dimension, depending on the type of the wire  being used in your 
+application. The distance is found in the reuse and salvage guidelines. SEBF2120 “Thermal Spray 
+Procedures for Engine Cylinder Block Top Surface”. For example,  TAFA 75B or OERLIKON 
+METCO 8400, a 5-inch-tall cone is utilized. 
+ 
+ 
+3.2 To assemble the cone tool in arc spray gun: Unscrew the arc shield from the arc spray gun (1), 
+disassembly the air cap inserts from the arc shield (2), install the cone tool into the arc shield (3). 
+Now screw the arc shield to the arc spray gun again. 
+ 
+ 
+                              
+ 
+             (1)                                                   (2)                                                             (3) 
+ 
+Figure 2. Installing the cone tool into the arc spray gun 
+ 
+3.3 Teaching the robot using the cone tool : Once the cone tool is installed into the arc spray gun, 
+the robot can be jogged to create the routine or path to metal spray the work piece. 
+ 
+ 
+ 
+Figure 3: Teaching the robot the spray path using a cone tool 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting Up the Metal Spray Robot Using a Cone Tool 
+DATE 
+10/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231002-1 
+Caterpillar: Confidential Yellow          Page 4 of 5 
+4.0 Benefits 
+ 
+• Reduces the metal spray robot set-up time 
+• Allows salvaging the cylinder block liner bores of the C175 engines.  
+• Improves the quality of the coating 
+ 
+5.0 Resources Required 
+ 
+• Nylamid (UHMW solid rod) rod 
+• Horizontal lathe 
+• Metal spray equipment 
+• Industrial robot 
+• Manufacturing Price ~ 130USD 
+ 
+6.0 Supporting Attachments / References 
+ 
+• SEBF2120 “Thermal Spray Procedures for Engine Cylinder Block Top Surface”  
+SIS 2.0 (cat.com) 
+ 
+• Cone Tool Drawing - Units are Inches 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Setting Up the Metal Spray Robot Using a Cone Tool 
+DATE 
+10/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231002-1 
+Caterpillar: Confidential Yellow          Page 5 of 5 
+7.0 Related Best Practices 
+ 
+4.02-231002-2 Mounting Fixture for Metal Spray Gun 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Name: Julian Enrique Pintado / Machine Shop Supervisor 
+E-mail: jpintado@matco.com.mx
+ 
+Company: Empresas MATCO S.A. De C.V. 
+ 
+Recognition: 
+ 
+Team: 
+Jesús Lauro Alvarado / Machine Shop Chief 
+Oscar Javier De La O / Machine Shop Supervisor

@@ -1,0 +1,871 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Machine Rebuild Using 
+Pack By Dealer Work Order 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+Machine Rebuild Using Pack By Dealer Work Order . 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 3 
+3.0 Implementation Steps ...................................... 10 
+4.0 Benefits ............................................................ 14 
+5.0 Resources Required ........................................ 18 
+6.0 Supporting Attachments / References ............. 18 
+7.0 Related Best Practices .................................... 18 
+8.0 Acknowledgements .......................................... 18 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+  
+July 2009 
+0908-4.01-1079 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Purpose:  This Best Practice has been developed to provide dealers with a proven machine 
+rebuild process that utilizes the Pack By Dealer Work Order Program (PBWO) available through 
+Caterpillar, Inc.  In addition, it offers suggestions on how to improve rebuild operations in order to 
+deliver efficiencies with dealer parts and service operations, which ultimately improve our 
+customer’s machine availability and productivity. Note, the following information is specific to the 
+example provided below. Results may vary based on different circumstances. 
+ 
+Process:  Machine rebuild programs and processes can vary from one dealer to another and 
+provide customers with different results.  Empire Machinery, working on behalf of a high profile 
+customer, was able to develop and implement a machine rebuild program for 793B trucks that 
+consistently meet their customer’s expectations of quality, turnaround time, and performance.  
+This process was refined as 61 trucks were rebuilt over the course of 3 years. 
+ 
+ 
+ 
+ 
+Currently, there is limited understanding of the PBWO Program and how it can impact a dealer’s 
+rebuild process, parts operations, and service operations.  The PBWO is a special service 
+provided by Caterpillar that enables dealers to place orders for machine, engine, or major 
+component rebuilds by the dealer’s work order segment.  Orders are then packed complete and 
+accurate per the dealer’s specifications and shipped when the dealer needs the rebuild parts.  An 
+area on each case label is customizable by the dealer and can include such items as the work 
+order segment, operation number, and service manual page numbers.  This program was a 
+critical element of the truck rebuild program and enabled Empire to deliver all 61 truck rebuilds on 
+time.  
+ 
+Payoff:  The programs and processes described in this Best Practice lead to tangible benefits to 
+both customers and dealers.  Some of the potential savings and efficiencies realized include: 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 1 of 18 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Parts Operations Efficiencies:  
+• Reductions in time for 
+o Identifying parts 
+o Ordering parts 
+o Expediting parts 
+o Waiting for parts 
+o Parts stocking 
+o Parts picking 
+o Parts verification 
+o Parts returns 
+• Parts capacity improvements 
+• Reduction in transportation costs 
+• No emergency fees 
+• Inventory carrying cost reductions 
+• Billing efficiency improvements 
+  
+Service Operations Efficiencies: 
+• Rebuild efficiency improvements 
+• Increased workshop capacity  
+• Technician productivity improvements 
+• Turnaround time improvements 
+• Work in process reductions 
+ 
+Customer Related Benefits: 
+• Availability improvements 
+• Productivity improvements 
+• Mean time between repair events improvements 
+• Cycle time improvements    
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 2 of 18 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.0 Best Practice Description 
+ 
+The following machine rebuild Best Practice was developed and modified as 61 trucks were rebuilt 
+at Empire Machinery.  This Best Practice focuses on improvements in processes; utilization of the 
+PBWO Program; establishing team focus; communications; training; and parts & service 
+operations.  Lessons learned in each area are discussed. 
+ 
+Improved Processes 
+ 
+1) Rebuild Process Map 
+In order to drive continuous improvements with the rebuild program and meet customer 
+expectations & deadlines, a truck rebuild process map was created.  This process map identified 
+all the key players in the rebuild program and outlined specific roles and responsibilities.  It further 
+aided the Dealer Rebuild Manager in establishing clear communications across the rebuild teams. 
+ 
+The rebuild process was broken down into 3 main steps:  1) planning, organizing, and scheduling; 
+2) disassembly & repair; and 3) assemble & commission.  Each step in the process was clearly 
+described and an accountable owner was identified. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 3 of 18 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2) PBWO Program Process 
+An integral part of the rebuild program was the utilization of the PBWO Program offered by 
+Caterpillar.  In order to use this program the dealer established their work order segments and 
+created parts consists per segment.  These segments and parts consists, along with the machine 
+model and serial number, were provided to Customer Services in Morton approximately 60 days 
+prior to the rebuild.  Customer Services reviewed the lists to identify package quantities, cancel & 
+replacements, etc. and worked with the dealer to resolve any potential order entry grief.  The 
+dealer then placed the order by entering an “E” type stock order into DBS approximately 30 days 
+prior to requiring the parts. 
+ 
+Once the order was received, Caterpillar packed the parts, verified for accuracy, consolidated and 
+labeled the cartons according to the dealer’s instructions on the work order segment.  Customer 
+Services initiated expediting from suppliers or brought material in from another facility if parts are 
+not available in Morton.  One consolidated invoice was generated for the parts orders and they 
+were shipped freight prepaid (for dealers in Americas North or to the port of exit for all other 
+dealers).  The following process map provides a high level overview. 
+ 
+ 
+Dealer provides 
+rebuild parts consist 
+lists to Morton 
+Customer Services 
+PBWO Coordinator
+Morton Customer 
+Services/IM review 
+consist lists to 
+identify Package 
+Quantity, CRB, etc.
+Dealer cleans the 
+consist list to resolve 
+any potential grief 
+prior to order entry
+Dealer & Morton 
+Customer Service 
+coordinate the timing 
+& placement of 
+rebuild orders
+Dealer enters “E” 
+type stock order into 
+DBS
+Is part available ?
+Part is backordered 
+at Morton
+Morton Customer 
+Service initiates 
+expediting from 
+supplier or brings in 
+material from 
+another facility
+Part is verified for 
+accuracy, packed, 
+consolidated , & 
+labeled according to 
+Work Order Segment
+Orders are invoiced 
+& shipped complete 
+to meet build 
+schedule
+Orders are delivered 
+& parts are received 
+in by dealer
+Dealer performs 
+rebuild & bills 
+customer
+If necessary , 
+backorders can be 
+invoiced & shipped 
+separately
+ 
+ 
+ 
+Parts Kits 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 4 of 18 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+A multi-tabbed Excel spreadsheet was created that listed parts kits/consists for each of the work 
+order segments.  These were used to later place orders. 
+ 
+Example of Parts Kit ordered through the PBWO Program 
+ 
+ 
+ 
+Team Focus 
+ 
+One of the key success factors relating to this rebuild program was the dedication and teamwork 
+from all participants.  The first step was focused on creating a partnership with the customer 
+where his requirements and timelines were well communicated.  In order to support this effort, 
+weekly rebuild meetings were established where all functions of the rebuild program were 
+represented.  These included the customer, onsite mining support team (dealer), the rebuild team 
+located at the dealership, the CRC shop, Hydraulic shop, Engine Spec shop, Parts Department, 
+and Wheel Group shop.   
+ 
+The team developed more than 60 parts kits that were ordered through the PBWO program.  They 
+coordinated work between the mine site and dealers’ rebuild facilities.  Roles and responsibilities 
+were defined in order to minimize ambiguity and clarify ownership.  Every player knew their role 
+and accepted the responsibility to meet the customer’s deadlines. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 5 of 18 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Communications 
+ 
+Communication! Communication! Communication!  This program would not have been successful 
+without the concerted effort from every rebuild participant to discuss the status of their work, any 
+issues or concerns, and the vision, goal, and expectations of the rebuild program.  All technicians 
+had a clear understanding of their roles and responsibilities. 
+ 
+As a result of the weekly team meetings, no issue or problem was ever more than a week old.  All 
+issues were coordinated and handled as they occurred. 
+ 
+The truck rebuild schedule was managed by the Rebuild Manager and based upon inputs from the 
+customers.  This schedule drove all work.  Key elements of the rebuild schedule are listed as 
+follows:   
+ 
+• PO # 
+• Truck # 
+• Serial # 
+• Original mine site 
+• Destination mine site 
+• WO # 
+• Rebuild # 
+• Frame type (new or rebuild) 
+• Parts kits ordered 
+• Location of rebuild (which dealer branch) 
+• Actual date of disassembly 
+• Date shipped to dealer 
+• Date of disassembly at dealer 
+• Start date of assembly at dealer 
+• Frame needed by 
+• Steering cylinders/center steering arms/accumulators needed by 
+• Hoses needed by 
+• All pumps needed by 
+• Engines & TC needed by 
+• Hoist cylinders & rear struts needed by 
+• Axle housing, transmissions, differentials needed by 
+• Date shipped to mine site 
+• Start date of assembly 
+• Date of commission 
+• # days to build 
+• First rebuild quote (TA) 
+• Total cost of rebuild (at Customer price level) 
+ 
+Training 
+ 
+Another key success factor relating to the rebuild program concerned the cross training of all 
+technicians.  The technicians located at the dealer’s rebuild facilities were cross trained with the 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 6 of 18 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+mining support team (onsite team) to see what processes could be improved with each others 
+work.  Teams of technicians were formed to complete rebuilds and quality control checks were 
+performed by the other technician teams on all outgoing rebuilds. 
+ 
+Parts & Service Operations Improvements 
+ 
+Several parts & service operations improvements were implemented for this rebuild program.  
+Every work order was opened prior to rebuilding each truck so parts kits could be ordered.  A 
+template was used for all rebuilds so that the work order segments were always the same from 
+one rebuild to another. 
+ 
+The PBWO Program allowed parts to be shipped from Morton to the workshop bays directly.  
+Each rebuild team had the responsibility of organizing the parts kits into their rebuild bay.  The 
+parts kits were never stocked or picked from the dealer’s normal parts inventory. 
+ 
+ 
+ 
+ 
+ 
+Each carton was labeled per the dealer’s specifications.  In this example, the label contained the 
+dealer name, machine model, truck rebuild number, parts kit name, group number, service 
+manual page number, work order number, and work order segment.  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 7 of 18 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+All packaged quantities were placed in Vidmars and utilized in the workshop bays so technicians 
+were not waiting on parts.  Transmission rebuild kits were developed and placed in wheeled 
+carts. 
+ 
+  
+  
+ 
+The Parts Department maintained wheeled rebuild kits that were utilized by the engine spec 
+shop. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 8 of 18 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+As hoses were removed from the truck, each was labeled and placed in the appropriate colored 
+bin and then sent to the hydraulic shop.  The hoses were either refurbished or replaced with new 
+and then returned to the rebuild area in the bins.  White bins were for cooling system hoses.  Tan 
+bins were for hoist and hydraulic system hoses.  Grey bins were for brake system hoses.  Green 
+bins were for transmission and powertrain systems.  Red bins were for steering system hoses 
+and blue bins were grease system hoses. 
+ 
+ 
+ 
+ 
+ 
+Complete new cab assemblies were utilized in the rebuild program to improve turnaround time, 
+technician productivity and provided a lower cost option for the customer vs. rebuilding the old 
+cabs. 
+ 
+There are two options available for complete cab assemblies available through the Caterpillar 
+parts system: 
+ 
+Upgrade Cabs – These cabs are very similar to current production cabs, including current 
+markings and paint schemes.  Cabs include the latest engineering upgrades and control modules.  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 9 of 18 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+These cabs are available for Large Off-Highway trucks and are typically available in the inventory 
+system. 
+ 
+Replacement Cabs – These cabs are serial number specific and custom-built to match the 
+original consist of the machine when the machine was new.  These cabs are not placed in 
+inventory, but are made as ordered.  Lead times can vary. 
+ 
+For more information on Upgrade/Replacement cabs, please see Information Release Memo 
+PELJ0501. 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The rebuild process and associated Best Practices were developed over the course of 3 years; 
+however, they can quickly be replicated and incorporated with other dealer rebuild programs.  
+Even though this program was developed as a result of rebuilding 61 - 793B trucks, it can be 
+utilized with a much smaller number of machines.  Several of the processes can be implemented 
+with existing dealer rebuild programs or modified/adapted to meet specific dealer needs. 
+ 
+The PBWO Program offered by Caterpillar is not only appropriate for dealer rebuilds; but also for 
+Certified Rebuilds, Certified Powertrains, Emissions Upgrades and major component rebuilds.  
+Again, a large number of machine rebuilds are not required to ensure this program is cost 
+effective. 
+ 
+Additional Rebuild steps included: 
+ 
+Frames 
+Hybrid versions of the 793D frame were used in the rebuild program.  These hybrid frames are 
+available through Decatur, and are designed to be compatible with the 793B and 793C models.  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 10 of 18 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+The hybrid frames are further retrofitted by the rebuilding dealer to become a complete B or C 
+frame.  Full retrofit instructions can be found in Special Instruction REHS3396.  The following 
+pictures include examples of modifications made by the dealer to complete the hybrid frame 
+conversion.  
+ 
+ 
+ 
+Brackets not found on the “D” frames were added including the radiator supports.  Jig fixtures 
+were developed to aid in locating the new parts. 
+ 
+  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 11 of 18 
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+All catwalks, handrails, and engine enclosures were repaired.  The platform was fitted on the 
+frame.   
+ 
+ 
+Tanks 
+ 
+Fuel tanks, hoist tanks, and steering tanks were inspected and repaired. 
+ 
+ 
+Wheel Groups 
+ 
+The rear axle group, which includes both rear wheel stations, differential, transmission, all valves, 
+filters, and line groups were shipped to CRC.  The group was then disassembled and rebuilt per 
+the program guidelines. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 12 of 18 
+
+===== PAGE 14 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+All valves and housings were resealed.  All hoses and sensors were replaced and all new 
+mounting hardware was used.  All components were then reassembled and shipped back to the 
+mine site to meet the chassis. 
+ 
+Axle Housing 
+ 
+The axle housing rebuild process included glass beading the entire housing inside and out.  The 
+housing was Magna-fluxed to identify cracks.  A dimensional inspection was conducted to 
+determine the extent of wear, warping, and roundness.  Gusset plates were added to bottom of 
+the housing for extra strength.  All bolt holes were plug welded.  All faces, bores, and registers 
+were welded.  The housing was Meta-Lax stress relieved.  All bores, faces, registers and bolt 
+holes were re-machined to specification.  Cleaned and painted the unit inside and out.  Built up 
+bottom strut bores if required. 
+ 
+ 
+ 
+Mining Support Team 
+ 
+The Mining Support Team disassembly duties included removal of tires, fluids, and the bed.  
+Each truck was disassembled in 5 days to 3 transportable loads:  chassis, final drive, and the 
+falloff load. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 13 of 18 
+
+===== PAGE 15 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+The Mining Support Team’s build team consisted of 4 technicians.  Three loads hit the assembly 
+site.  It took 7 days from lay out of the loads to the truck being in the dirt. 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+Dealer Perspective 
+ 
+The dealer realized several benefits/savings from integrating parts and service operations 
+improvements along with utilization of the PBWO program.  These benefits were validated 
+through discussions and documentation provided by Jeremy Hefner and Tom Lamb at Empire 
+Machinery. 
+ 
+Benefits relating from parts efficiencies were estimated to be approximately $58,880. per truck 
+and were broken down as follows: 
+ 
+• Parts Identification - $43,890. Savings 
+o Prior to the program, technicians were spending 3-4 hours per night at an overtime 
+rate to identify the rebuild parts.   
+• Parts Ordering - $612. Savings 
+o Prior to the PBWO Program, it would take the technicians anywhere from 30 
+minutes to 2 hours to order parts for 1 work order segment.  There were 35 work 
+order segments for each truck rebuild.  
+• Emergency Fees - $408. Savings 
+o With the PBWO Program, the dealer does not pay any emergency fees. 
+• Time Spent Waiting for Parts - $575. Savings 
+o Technicians would typically wait anywhere from 30 minutes to 8 hours for parts 
+depending on how they ordered them 
+• Parts Stocking - $5,280. Savings 
+o Parts for the rebuild program where not stocked in the dealer’s parts inventory.  
+They went directly to the dealer’s rebuild bay.   
+• Parts Picking - $256. Savings 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 14 of 18 
+
+===== PAGE 16 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+o Since the rebuild parts where never stock in the dealer’s inventory, there was no 
+cost associated with pulling parts when needed by the technicians. 
+• Parts Returns - $320 Savings 
+o On initial rebuilds, 30 to 40 parts were returned per rebuild.  With the PBWO 
+program, parts returns were reduced to 5 to 10 parts. 
+• Freight - $3,054 Savings 
+o With the PBWO Program, the freight was prepaid for Americas North dealers. 
+• Inventory Carrying Costs - $4,485. Savings 
+o Since the rebuild parts were never carried in the dealer’s inventory, carrying costs 
+were eliminated. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Benefits relating from service operations efficiencies were estimated at $45,029. per truck and 
+were broken down as follows: 
+ 
+• Rebuild Efficiency - $33,120 Savings 
+o The rebuild portion of the program (time in shop) went from 10 weeks to 4 weeks, 
+which resulted in reduced labor hours at the current wage rate. 
+• Technician Productivity - $5,520. Savings 
+o This metric went from the dealer average of 85% to 95% under the rebuild program, 
+which meant a technician was 6 minutes more productive per rebuild hour.  This 
+reduced lost time resulted from the implementation of the best practices previously 
+mentioned. 
+• Turnaround time - $6,389. Savings 
+o Turnaround time went from 110 days to 52 days and the financial impact of this 
+reduction in work in process provided this savings. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 15 of 18 
+
+===== PAGE 17 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+Customer Perspective 
+ 
+The rebuild program utilizing PBWO provided significant benefits to the customer.  These 
+included: 
+ 
+• Truck availability went from an average of 85% to 92%. 
+• Gained 60 days production per truck, which basically paid for the rebuild. 
+• Mine realized an overall 7% availability improvement the first year of the rebuild, which 
+equated to an extra “truck’s” worth of production. 
+• Rebuilt trucks incorporated all the latest updates. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 16 of 18 
+
+===== PAGE 18 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Customer Success Measured…  
+ 
+ 
+ 
+Customer Success Sustained…  
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 17 of 18 
+
+===== PAGE 19 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+5.0 Resources Required 
+ 
+With regards to people, the truck rebuild team was comprised of the customer, an overall Rebuild 
+Manager, Material Handler, Mining Support Team Manager (responsible for rebuild operations on 
+the mine site), Mining Support Team (located at the mine site), Transport person, Rebuild Teams, 
+Parts Analyst, and the CRC, Engine, Wheel Group, and Hydraulic shops.  See the Rebuild 
+Process Map in Item 2 - Best Practice Description for details regarding the specific roles and 
+responsibilities. 
+ 
+From a cost standpoint, a 5% fee of the total parts order (at Dealer Net) was charged for the 
+specialized services provided by Caterpillar Logistics. 
+ 
+6.0 Supporting Attachments / References 
+ 
+The following documents are available to support the use of the machine rebuild program utilizing 
+the PBWO Program. 
+ 
+• Machine Rebuild Schedule Template (Excel) 
+• Rebuild Process Map (Excel) 
+• Component Status Sheet Template (Excel) 
+• Customer % of Life Component Chart (Excel) 
+• PBWO Overview Presentation (Powerpoint) 
+• PBWO Frequently Asked Questions (Word) 
+• PBWO Dealer Order Entry Presentation (Powerpoint) 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+David A. Barker   Rick L. Lippert 
+Caterpillar Global Mining Marketing & Product Support Center of Excellence 
+Barker_david_a@cat.com lippert_rick_l@cat.com 
+Phone:  309-494-1748  Phone:  309-578-9837 
+ 
+A special thanks and recognition is given to the following Empire Machinery people that 
+supported the development of this Best Practice by providing their time, information and 
+documentation. 
+ 
+Jeremy Hefner, Inventory Control Manger 
+Tom Lamb, Exchange & CAT Reman Manager 
+Mike Hutter, Part Sales Representative 
+Manny Peru, Truck Rebuild Program Shop Lead 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR. 
+Machine Rebuild Using Pack By Dealer Work Order 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0908-4.01-1079 
+Caterpillar Confidential:  YELLOW            Page 18 of 18

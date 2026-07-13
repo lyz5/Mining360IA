@@ -1,0 +1,871 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+August 2007 
+1007-2.0-1102 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      mining.cat.com 
+ 
+ 
+ 
+B E S T  P R A C T I C E  S E R I E S 
+Condition Monitoring 
+Strategy 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+Condition Monitoring (Strategic) ................................. 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 9 
+4.0 Benefits ........................................................... 10 
+5.0 Resource Requirements .................................. 10 
+6.0 Supporting Attachments .................................. 13 
+7.0 Related Best Practices .................................... 13 
+8.0 Acknowledgements ......................................... 13 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information pro vided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring – Strategic Best Practice  
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1102 
+Caterpillar Confidential:  GREEN         Page 2 of 13 
+ 
+1.0 Introduction  
+ 
+The demands for increased production and reduced cost per ton in the mining industry have 
+caused mining companies to look for new ways to increase equipment availability and reduce 
+operating costs. Equipment maintenance is a key contributor to overall operating costs of 
+production loading and haulage equipment. It has been demonstrated that the total costs 
+associated with unscheduled downtime events (failures) can be as much as fifteen times that of 
+the same repair performed on a scheduled basis when factors such as reduced parts reuse due 
+to contingent damage, incremental labor (inefficient use of manpower), and lost production as a 
+result of increased equipment repair downtime are considered.  
+ 
+Availability is driven by the frequency and duration of machine downtime events (failures and 
+preemptive shutdowns). Studies have shown that shutdown frequency is the primary element in 
+this inter-dependency. Shutdown frequency is a function of inherent machine failure rate and 
+equipment maintenance management effectiveness. Traditional statistical machine reliability 
+calculations are based on failure rates; they ignore preemptive maintenance shutdowns which 
+occur as a result of preventive and predictive (non-failure-related) actions which are focused on 
+problem / failure avoidance.  
+ 
+As such, many mining companies have adopted a repair-before-failure strategy in the interest of 
+reducing the number of unscheduled downtime events. A well-conceived, fully functional 
+Condition Monitoring plan to support the timely and accurate detection of changes in equipment 
+health / performance and operation / application severity is the foundation of any condition-based 
+and repair-before-failure maintenance strategy. 
+ 
+This Best Practice relates to version II of Site Assessment items 2.13.1 - 2.13.8. 
+ 
+2.0 Best Practice Description 
+ 
+The first step in failure avoidance is the awareness that potential problems or conditions that may 
+lead to potential machine shutdowns exist. Condition Monitoring is the means by which we detect 
+those problems and associated machine condition. Condition Monitoring is based on proactive 
+data acquisitio n and analysis routines (processes & sub -processes) used together to facilitate 
+early detection of machine defects or changes in machine health and application severity 
+enabling proactive maintenance, repair, and application management to take place. Optim al 
+Condition Monitoring routines for mobile equipment include: 
+ 
+ Operator Inspections, 
+ Periodic / Daily Inspections, 
+ pre-PM Inspections, 
+ PM Inspections, 
+ post-PM Audit Inspections, 
+ pre-PCR Inspections, 
+ Fluids Management & Analyses, 
+ On-board Machine Electronic Data Monitoring, 
+ Machine Systems Performance Tests, 
+ Application Analyses, and 
+ Learning from Failures / Failure & Wear Analyses. 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring – Strategic Best Practice  
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1102 
+Caterpillar Confidential:  GREEN         Page 3 of 13 
+The following is a brief description of each of those Condition Monitoring routines: 
+ 
+• Operator Inspections 
+ 
+Operators spend more time in the machine, and as a result are more familiar with the 
+equipment and its operation than anyone involved in its management. The scope of the 
+operators’ involvement in Condition Monitoring includes pre-shift inspection, machine condition 
+& performance evaluation during the shift, and post-shift operational assessment. Roles and 
+responsibilities of the operators in these activities include:  
+ 
+• pre-Shift Inspection 
+ 
+ Review machine log book; discuss with Operator from previous shift, 
+ Perform visual, walk-around inspection, 
+ Record findings … pre-shift checklist & machine log book,  
+ Report defects to appropriate area (Dispatch / in-pit supervision). 
+ 
+• Machine Condition & Performance Evaluation during the Shift 
+ 
+ Monitor machine condition & performance as ongoing process,  
+ Use all the “tools” at his disposal, 
+ Use / activate on-board monitoring system(s), 
+ Report defects / abnormalities to appropriate area  (Dispatch / in-pit supervision),  
+ Learn from “failures”.  
+ 
+• post-Shift Operational Assessment 
+ 
+ Perform post-shift machine performance assessment, 
+ Record observations … post-shift checklist & machine log book, 
+ Discuss with Operator of next shift. 
+ 
+Characteristics of the pre-shift and post-shift inspection checklists are: 
+ 
+• pre-Shift Inspection Checklist 
+ 
+ Designed to capture visual observations, 
+ Low tech; no tools or instrumentation needed, 
+ Brief (<10 minutes); easy to complete, 
+ Minimum training required.  
+ 
+• post-Shift Inspection Checklist 
+ 
+ Designed to capture subjective operational abnormalities, 
+ Low tech … “seat of the pants”,  
+ No tools or instrumentation needed, 
+ Brief (<5 minutes); easy to complete, 
+ Minimum training required. 
+ 
+• Periodic / Daily Inspections 
+ 
+Daily inspections should be scheduled during convenient “windows of opportunity” such as the 
+daily lubrication and refuel stop. These inspections should be performed by a highly skilled, 
+detail-oriented Inspector, are typically quick and easy to perform (15 to 20 minutes duration), 
+and tend to be based on low-tech, visual, subjective observations although items such as tire 
+pressure checks and fluid additions are frequently included.  
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring – Strategic Best Practice  
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1102 
+Caterpillar Confidential:  GREEN         Page 4 of 13 
+The daily inspection also includes: 
+• an Operator interview,  
+• a review of available information (Operators’ logbook, backlog repair list, top problems 
+summary, etc.),  
+• and a visual inspection.  
+ 
+Critical to the success of the daily inspection are well-guided, machine-specific inspection 
+checklists, well-documented procedures, minimal reliance on verbal communications, and the 
+Inspectors’ ability to analyze, interpret and translate Operator input into technical feedback and 
+action such as backlog repair requests.  
+ 
+• pre-PM Inspections 
+ 
+The pre-PM inspection is performed to verify that the list of activities planned for Preventive 
+Maintenance is accurate and complete. The pre-PM inspection must be scheduled and 
+executed in time to allow Planning to respond to feedback from the inspection.  Pre-PM 
+inspections are typically allow enough time for the fluid lab to come back with the associated 
+results and interpretation. 
+ 
+Pre-PM inspections) are the responsibility of the Field Inspectors and Technicians. In addition 
+to all of the activities normally done during the daily inspection activities such as fluid sampling, 
+magnetic plug inspections, VIMS & other on-board system downloads, and backlog repair 
+validation are included in the pre-PM inspection. The pre-PM inspection should be 
+accomplished during the same “windows of opportunity” as the daily inspection and in the same 
+amount of time (15 to 20 minutes duration). The same factors that drive success of the daily 
+inspection are also critical to the success of the pre-PM inspection. 
+ 
+• PM Inspections 
+ 
+One of most important  goals and objectives of Preventive Maintenance is efficient, effective 
+execution of periodic preventive and predictive maintenance routines. Since Preventive 
+Maintenance is performed on a regular basis (typically every 250 to 500 hours) and the times 
+allocated to PM can be somewhat lengthy (a shift or more), it is possible to execute several 
+Condition Monitoring routines during the “Window of Opportunity” presented by PM. These 
+include Operator interviews, fluids management, on-board system checks, and machine 
+systems performance tests, all of which are described and discussed separately in this 
+document.  
+ 
+In addition to those mentioned in the previous paragraph, the following Condition Monitoring 
+activities are normally associated with and executed during Preventive Maintenance: 
+ 
+• pre-Wash Inspection … inspect before the evidence is washed away. 
+ 
+ Perform visual, walk-around inspection for … 
+ 
+ Frame & structural cracks, weld failures, etc., 
+ Loose, missing, broken bolts fasteners, clamps, etc., 
+ Oil / fuel/ coolant / air leaks, 
+ Accident damage, e.g. bent sheet metal, broken items, etc. 
+ 
+ System performance tests on … 
+ 
+ Air system, 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring – Strategic Best Practice  
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1102 
+Caterpillar Confidential:  GREEN         Page 5 of 13 
+ Air compressor, 
+ Service brakes, 
+ Parking brake, 
+ Engine, 
+ Hoist circuit, 
+ Traction control system. 
+ 
+• Preliminary PM Inspection … tasks better performed outside the PM bay. 
+ 
+ Inspect for wear or excessive movement of: 
+ 
+ Hoist cylinder mounts (pins & bearings), 
+ Steering linkage (ballstuds, pins & bearings), 
+ Steering system cycle time, 
+ A-frame bearing wear, 
+ Body pivot pin & bushing, 
+ Body safety cable, 
+ Suspension cylinder pressures, … 
+ 
+• PM Inspection … tasks performed inside the PM bay. 
+ 
+ Inspect for leaks, loose or missing fasteners, lines / hose routing, cracks and other 
+damage in the following areas: 
+ 
+ Engine compartment (above, inside & below), 
+ Front corners (brakes, struts, steering linkage, …), 
+ Center of machine (above& below), 
+ Rear of machine (above& below), 
+ Access / egress systems, 
+ Operator’s station, 
+ Upper platform, 
+ Frame. 
+ 
+• post-PM Audit Inspections 
+ 
+Executing the Preventive Maintenance program as planned can mean the difference between 
+success & failure. Auditing the PM process is the best way to ensure compliance with the PM 
+plan. Post-PM Audit Inspections can be used to enhance PM quality and effectiveness by 
+defining PM training opportunities, refining the PM checklists, and identifying shortcomings in 
+the PM process. If properly communicated, the audit results can be used in an ongoing 
+continuous improvement effort to refine the PM process to meet site-specific requirements.  
+The PM audit process can be accomplished in several ways, Supervisor sign-off at critical 
+points in the process (preferred method) and random checks after PM completion being the two 
+most common approaches.        
+ 
+• pre-PCR Inspections 
+ 
+The pre-PCR Inspection is a comprehensive assessment of machine condition performed prior 
+to planned major component replacement. The intention is to identify all of the defects that exist 
+on a piece of equipment far enough in advance that preventive and corrective actions can be 
+taken in conjunction with the “window of opportunity” presented by the PCR event with the 
+ultimate goal of returning the machine back into service with zero defects after the PCR. Engine 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring – Strategic Best Practice  
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1102 
+Caterpillar Confidential:  GREEN         Page 6 of 13 
+replacement usually provides the best opportunity since downtime duration associated with 
+engine replacement is greater than most other components. 
+ 
+Participants in this inspection include representatives from the Field Inspection team, Shop 
+Staff and Supervision, the Parts Department and the Fleet Analyst. Pre-PCR inspection 
+activities include: 
+• fluid sampling,  
+• magnetic plug inspection,  
+• on-board electronic system downloads,  
+• detailed visual inspections,  
+• special instrumented testing, and  
+• backlogged repair validation.  
+ 
+The pre-PCR Inspection team uses detailed, machine-specific checklists developed from the 
+repair / downtime history, the pending backlog list and the top problem summary for the 
+machine in question as key inputs that guide their work. 
+ 
+The pre-PCR Inspection should require no more than one shift (typically 4 to 8 hours) to 
+perform. It should be scheduled and executed to permit Planning response to the pre-PCR 
+results. Once the pre-PCR Inspection is completed, a machine-specific plan should be 
+developed and scheduled for execution during the PCR. The Fleet Analyst should establish 
+goals for improvement, e.g. availability and MTBS, and monitor performance after the PCR to 
+determine if those goals have been achieved.  
+ 
+• Fluids Management & Analyses 
+ 
+This sub-process involves multiple routines including: 
+• scheduled oil sampling (SOS),  
+• particle count,  
+• “kidney looping” (fluids dialyses),  
+• magnetic plug inspections,  
+• filter / breather / strainer / screen inspections, and  
+• fluid consumption, e.g. oil, fuel, coolant, grease.  
+ 
+The objectives of fluid management and analyses are: 
+• assess equipment condition in terms of : 
+o compartment cleanliness,  
+o component wear and fluid leakage,  
+o transfer and/or consumption, e.g. engine oil burn.  
+• Assess oil condition in terms of: 
+o Oil cleanliness (ISO count), 
+o Oil condition (oxidation, additive contents, etc.) 
+ 
+In addition, fuel burn rate can be used as an indication of machine application severity. Due to 
+the importance of fluid cleanliness and contamination control, it is important to include 
+monitoring of bulk storage and fluid handling / distribution in the Condition Monitoring strategy. 
+ 
+• On-board Machine Electronic Data Monitoring 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring – Strategic Best Practice  
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1102 
+Caterpillar Confidential:  GREEN         Page 7 of 13 
+Machine electronics have evolved in the area of systems control. This has opened many doors 
+for electronics to monitor equipment performance, health, operating techniques and application 
+severity.  VIMS, ECM’s, and other electronic monitoring and control systems contain a wealth of 
+information that can be used to detect potential failures and identify operational practices or 
+application characteristics that dictate changes to the operation / application or modifications to 
+the maintenance strategy designed to deal with those changes.   
+ 
+In order for the information to be useful, the Condition Monitoring strategy needs to clearly 
+define procedures for diligent data collection.  The data then needs to flow into a well-organized 
+system where it can be: 
+• trended,  
+• compared to pre-defined performance targets or application criteria,  
+• analyzed and, 
+•  corrective action(s) taken.   
+ 
+• Machine Systems Performance Tests 
+ 
+Machine systems tests are used to confirm proper performance or to monitor and trend 
+degradation in performance relative to baseline (commissioning) test results and factory 
+specifications defining acceptability criteria. They typically require some form of special tooling 
+or instrumentation and are primarily focused on major components and systems, e.g. engine, 
+transmission, torque converter. steering, brakes, or hydraulics. These tests are designed to 
+measure specific system and component performance including both static and dynamic 
+checks, e.g. system speed, temperature and pressure tests, torque stall, brake hold 
+performance, etc. Machine systems tests follow specific checklists and procedural guidelines 
+and are typically performed during PM and after repair(s) to ensure that proper system / 
+component performance has been restored.  
+ 
+ 
+• Application Analyses 
+ 
+The application environment in which a piece of equipment is used in has a direct impact on the 
+overall performance of that equipment. Given the fact that changes in machine application with 
+respect to haul road grades (grades become steeper or shallower), time spent on grade 
+(increasing pit depth), haul distances (hauls typically become longer), etc., it would be expected 
+to see variations in application severity over time.  
+ 
+Maintenance must recognize the impact of changes in application severity and modify 
+maintenance practices and the maintenance management strategy accordingly, e.g. the 
+component replacement plan.  
+ 
+Ongoing evaluation of mine operations via tracking, trending and reporting application severity 
+should be a standard practice of any Maintenance Department. Proactive analysis and 
+interpretation of those results is the first indication to management to initiate a more in-depth 
+investigation, e.g. modification of operational practices or of the maintenance strategy. The 
+reactive alternative is to wait until the equipment “tells” management that something in the 
+application has changed through premature component failures.  
+ 
+Application characteristics are critical variables that must be considered in the definition of and 
+subsequent revisions to the maintenance strategy, particularly with respect to component life 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring – Strategic Best Practice  
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1102 
+Caterpillar Confidential:  GREEN         Page 8 of 13 
+targets. Application severity analysis routines are intended to contribute to an overall 
+understanding of the Condition Monitoring picture via the short, medium, and long-term 
+assessments of mine severity.  
+ 
+Data sources are typically on-board electronic systems (primarily VIMS or TPMS) and mine 
+production and dispatch reports. In a haul truck scenario the most critical application 
+parameters include: 
+• fuel burn rate,  
+• haul cycle detail,. including:  
+o haul cycle distances  
+o cycle times and  
+o number of haul cycles 
+o travel speeds for each segment in the overall cycle,  
+• payload management,  
+• haul road conditions,  
+• production,  
+• transmission shift count / frequency,  
+• etc.  
+ 
+Equipment-specific guidelines and acceptability criteria for each machine must be identified to 
+quantify the impact of application on performance. 
+ 
+• Learning from Failures / Failure & Wear Analyses 
+ 
+The Condition Monitoring process include analysis routines for all failures and unscheduled 
+downtime events with the clear goal of detecting the root cause of the failure / event and a 
+determination as to why the operation was unable to prevent failures from happening and/or 
+what could be done differently to prevent them  from happening again. In establishing these 
+routines it will be needed to consider input from each of the following: 
+ 
+• Analysis of machine repair history: 
+ Pareto Analysis 
+ Top Ten ranking by MTBS, MTTR, impact on availability & costs 
+  
+• Failure Analysis: 
+ Root cause failure analysis of failures & unscheduled downtime events 
+ 
+• Analysis of effectiveness of: 
+ Repair actions 
+ Detection routines   
+ 
+• Input from other mines with: 
+ Similar equipment 
+ Similar application 
+• Input from the manufacturer: 
+ Technical Information Bulletins 
+ Service Magazine articles 
+ Factory programs 
+ 
+The Condition Monitoring strategy should define the linkage between the failure analysis and 
+the steps required to implement changes via the Continuous Improvement process. 
+ 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring – Strategic Best Practice  
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1102 
+Caterpillar Confidential:  GREEN         Page 9 of 13 
+3.0 Implementation Steps 
+ 
+Critical steps associated with the implementation of an on-site Condition Monitoring process 
+include the definition and development of: 
+ 
+• Condition Monitoring Strategy 
+ 
+ Contract scope, goals & commitments 
+ Fleet characteristics 
+ Condition Monitoring routines 
+ Manpower requirements 
+ Training requirements 
+ Resource requirements 
+ Performance Metrics 
+ Analysis and Interpretation 
+ 
+• Plan Definition 
+ 
+ Which Condition Monitoring routines will be required to implement the strategy, i.e.  
+  Operator Inspections, Periodic / Daily Inspections, pre-PM Inspections, … ? 
+ 
+• Manpower 
+ 
+ What human resources are required to implement and execute the Condition Monitoring    
+  plan, i.e. roles & responsibilities, personal attributes, quantity, skills, … ? 
+ 
+•  Training 
+ 
+ How can we assess personnel competency? What training will be required to develop 
+the skills required to perform the tasks related to Condition Monitoring? 
+ 
+• Resources 
+ 
+ What resources are required to execute the Condition Monitoring plan, i.e. machine-
+specific inspection checklists, well-defined procedures, special tooling, 
+instrumentation, dedicated equipment, data management system, external 
+resources, … ? 
+ 
+• Performance Metrics 
+ 
+ What defines success in Condition Monitoring? Which performance measures are 
+available that aid in quantifying our efforts in Condition Monitoring? Once these 
+questions have been answered, the following issues need to be taken into 
+account when developing a plan to quantify Condition Monitoring performance: 
+ 
+ Raw input data requirements 
+ Data sources 
+ Data collection frequency & responsibilities 
+ Data flow & management 
+ Calculation methodology 
+ 
+Please see the document “Metrics (KPI’s) to Assess Process Performance” for a complete 
+listing and explanation of Condition Monitoring process performance metrics. 
+ 
+• Analysis and Interpretation 
+ 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring – Strategic Best Practice  
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1102 
+Caterpillar Confidential:  GREEN         Page 10 of 13 
+ Data are neither the goal nor the end result; it is the means by which we gain an 
+understanding of what is occurring. The analysis and interpretation routines are 
+sub-process by which all Condition Monitoring results are collectively analyzed 
+and interpreted taking into consideration all possible relationships and potential 
+causes. These routines help guide us to the best possible conclusions and 
+subsequently to the best recommendations and corrective action plans. The 
+following issues need to be considered when developing the plan to analyze and 
+interpret Condition Monitoring results: 
+ 
+ Performance goals & acceptability criteria 
+ Analysis & interpretation roles & responsibilities  
+ Analysis & interpretation guidelines 
+ Information management / archiving 
+ Report formats (templates) 
+ Report timing & frequency 
+ Communications / distribution network 
+ Distribution format & media 
+ Linkage to Production / Operations 
+ Linkage to the Continuous Improvement process 
+ 
+4.0 Benefits 
+ 
+Successful implementation and execution of the Condition Monitoring process will: 
+• facilitate timely and accurate detection of changes in: 
+o  equipment health  
+o  performance and operation  
+o application severity  
+• reduce the number of failures and unscheduled downtime repair events  
+• favorable impact on overall operation and maintenance costs,  
+• efficient use of labor resources,  
+• equipment reliability / availability  
+• improving production and cost per ton. 
+ 
+5.0 Resource Requirements 
+ 
+• Human Resources:  
+ 
+Human resource requirements associated with the execution of the Condition Monitoring plan 
+include: 
+ 
+ Fleet Analyst (Reliability Engineer) … provides leadership and direction for all on-site 
+Condition Monitoring activities. 
+ 
+ Define Condition Monitoring routines that correlate to equipment health,
+ operation & application.  
+ Review / revise Condition Monitoring procedures & checklists to ensure they
+ focus on significant issues. 
+ Ensure accuracy & completeness of data acquired through Condition Monitoring.  
+ Evaluate / interpret all Condition Monitoring data. 
+ Advise Planning of issues related to equipment health, maintenance, application
+ & operation. 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring – Strategic Best Practice  
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1102 
+Caterpillar Confidential:  GREEN         Page 11 of 13 
+ 
+ Planner … develops plans including resource & time estimates to execute Condition 
+Monitoring routines. 
+ 
+ Ensure that Condition Monitoring activities are aligned with the strategy. 
+ Define, organize & procure facilities, manpower, parts, tooling, forms, checklists,
+ etc. for Condition Monitoring.  
+ Establish priorities for Condition Monitoring execution. 
+ Monitor maintenance and repair performance metrics for compliance with goals;
+ devise & communicate plans to address shortfalls to the Project Manager.  
+ Monitor Condition Monitoring performance; correct as necessary. 
+ 
+ Scheduler … translates the Condition Monitoring plan into an actionable schedule. 
+ 
+ Identifies “Windows of Opportunity” for execution of Condition Monitoring
+ activities. 
+ Schedules weekly Condition Monitoring activities in accordance with the
+ Condition Monitoring plan & strategy and resource availability. 
+ Publishes / distributes the Condition Monitoring schedule & obtains agreement
+ from all appropriate areas. 
+ Adjusts the Condition Monitoring schedule to comply with variations in equipment
+ utilization & resource availability. 
+ 
+ Operators … identify defects & equipment health issues on an ongoing basis before
+ during & after the shift. 
+ 
+ Continuously assess machine condition, health & performance. 
+ Document results of his assessment through pre & post-shift checklists and the
+ machine logbook. 
+ Take appropriate preventive action in response to input from on-board warning
+ systems. 
+ Communicate machine condition & performance issues to Dispatch, Field
+ Service & Inspectors. 
+ 
+ Field Inspectors … participates in all Condition Monitoring activities in the field in 
+accordance with the CM strategy / plan. 
+ 
+ Translate Operator input into root-cause technical information. 
+ Execute all periodic / daily field inspections. 
+ Participate in the execution of pre-PM inspections. 
+ Participate in the execution of pre-PCR inspections. 
+ Provide accurate, complete information on inspection checklists and field
+ documentation.  
+ Assess priority of defects detected via field Condition Monitoring tasks. 
+ Generate / enter backlog repair requests. 
+ 
+ 
+ 
+ Technicians … perform pre-PM, PM & pre-PCR Condition Monitoring activities in 
+accordance with the Condition Monitoring strategy / plan. 
+ 
+ Become familiar with proper use & operation of all Condition Monitoring tooling &
+ instrumentation related to pre-PM, PM & pre-PCR activities. 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring – Strategic Best Practice  
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1102 
+Caterpillar Confidential:  GREEN         Page 12 of 13 
+ Adhere to guidelines & procedures defined for those Condition Monitoring
+ activities. 
+ Document results; provide accurate, complete  information on checklists & forms. 
+ Generate backlog repair requests for defects that cannot be addressed
+ immediately. 
+  
+ Project Manager … primary on-site individual responsible for the implementation and
+ execution of the Condition Monitoring strategy. 
+ 
+ Total familiarity with customer expectations, contractual commitments and the
+ Condition Monitoring strategy. 
+ Authorizes resources to support successful implementation of the Condition
+ Monitoring strategy. 
+ Audit fleet and Condition Monitoring process metrics;  takes action to eliminate
+ any deficiencies.  
+ Authorizes revisions to Condition Monitoring strategy and procedures. 
+ Authorizes modifications to the component exchange program based on
+ Condition Monitoring input. 
+ 
+• Logistical Resources:  
+ 
+Logistical resource requirements associated with the execution of the Condition Monitoring 
+plan include: 
+ 
+ Facilities 
+ 
+ Designate specific locations for each Condition Monitoring activity … repair shop
+ bays, PM bays, fuel island / bay … 
+ Allocate office space for Condition Monitoring data collection and analysis. 
+ 
+ Tooling 
+ 
+ Dedicated special tooling … filter cutting device, oil extraction (SOS), kidney
+ looping, etc. 
+ Dedicated diagnostic instrumentation … pressure / temperature / speed gauge
+ packages, particle counter, etc.  
+ Dedicated service / technical literature. 
+ Personal safety equipment. 
+ 
+ Equipment 
+ 
+ Field transportation … pick-ups for field use, 
+ Communications devices … to / from Dispatch, field, shop, Condition Monitoring
+ office, 
+ Computer(s) dedicated to information access, Condition Monitoring archive … 
+ Computerized maintenance management system … software package for data
+ management, information analysis and interpretation, and report
+ generation. 
+ 
+ Information 
+ 
+ Weekly schedule for Condition Monitoring routines, 
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Condition Monitoring – Strategic Best Practice  
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1102 
+Caterpillar Confidential:  GREEN         Page 13 of 13 
+ Work orders for Condition Monitoring & related Condition Monitoring activities,
+ e.g. Preventive Maintenance, 
+ Condition Monitoring checklists and procedures specific to each routine for every
+ model / equipment, 
+ Interpretation guidelines and acceptability criteria, 
+ Special instructions, etc., 
+ Training (dealer Training Dept). 
+ 
+ External Resources (access to) 
+ 
+ Oil Lab (SOS / particle count), 
+ CRC (wear measurements, failure analyses …), 
+ Service providers for wear  measurements, vibration analyses, …  
+ Training (external training providers). 
+ 
+Significant implementation costs include logistical resources (primarily the required equipment 
+and tooling), the time invested in material content development (checklists, procedures, 
+guidelines, etc.), training for the Condition Monitoring staff, and the acquisition of personnel 
+with the capabilities to execute the Condition Monitoring process. 
+ 
+6.0 Supporting Attachments 
+ 
+• Cat Global Mining Equipment Management Process Map (Condition Monitoring)  
+• “Metrics (KPI’s) to Assess Process Performance“ – PDF Document 
+ 
+7.0 Related Best Practices 
+ 
+0806-2.70-1007  Condition Monitoring – Field Inspections 
+0806-2.70-1008  Backlog Management 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This “Condition Monitoring “ Strategic Best Practice was written by: 
+ 
+Jim McCaherty 
+Mining Equipment Management / Processes Division 
+Caterpillar Global Mining 
+1 (309) 675-5595 
+McCaherty_James_W@cat.com 
+ 
+Special recognition to Daniel Adkison, Fred Ringness, and Abelardo Flores for their contributions.

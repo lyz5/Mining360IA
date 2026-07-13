@@ -1,0 +1,239 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+March 2008  
+0608-4.4-1119  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+3500 Engine Series 
+Camshaft Bearing 
+Installation Tool  
+ Maintenance 
+and Repair Application Component Life 
+Management  
+Component 
+Renewal 
+ MARC 
+Management   
+ 
+ 
+ 
+3500 Engine Series Camshaft Bearing Installation 
+Tool 1
+ 
+1.0  Introduction ...................................................... 2 
+2.0  Best Practice Description ............................... 2 
+3.0  Implementation Steps...................................... 2 
+4.0  Benefits ............................................................. 5 
+5.0  Resources Required ........................................ 5 
+6.0  Supporting Attachments / References ........... 6 
+7.0  Related Best Practices .................................... 6 
+8.0  Acknowledgements ......................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Engine Series Camshaft Bearing Installation Tool 
+DATE 
+4/11/2017 
+CHG 
+NO 
+04 
+NUMBER 
+0608-4.4-1119  
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+1.0 Introduction  
+ 
+This Best Practices is a fabricated tool to install camshaft bearing on Caterpillar 3500 series 
+engines.  It can install one entire bank of bearings at the same time.  It is adaptable to handle 
+3508, 3512, and 3516 engines. 
+The tool significantly reduces the time required to install camshaft bearings and improves 
+technician safety compared to other manual installation methods. 
+ 
+ 
+2.0 Best Practice Description                                      
+ 
+Tool installed in 3516.                                                Tool segments and press. 
+                  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The following are the drawings and cylinder specifications required to fabricate the tool.  
+Downloadable drawings can be found as attachments to this Best Practice. 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Engine Series Camshaft Bearing Installation Tool 
+DATE 
+4/11/2017 
+CHG 
+NO 
+04 
+NUMBER 
+0608-4.4-1119  
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Engine Series Camshaft Bearing Installation Tool 
+DATE 
+4/11/2017 
+CHG 
+NO 
+04 
+NUMBER 
+0608-4.4-1119  
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+ 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Engine Series Camshaft Bearing Installation Tool 
+DATE 
+4/11/2017 
+CHG 
+NO 
+04 
+NUMBER 
+0608-4.4-1119  
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+• Reduces labor required to install camshaft bearing s 
+• Improves quality of installation. 
+• Improves technician safety and ergonomics. 
+ 
+5.0 Resources Required 
+ 
+• Machine shop to fabricate assemblies. 
+• 70,000 kPa (10,000 psi) hydraulic power supply for  cylinder. 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Engine Series Camshaft Bearing Installation Tool 
+DATE 
+4/11/2017 
+CHG 
+NO 
+04 
+NUMBER 
+0608-4.4-1119  
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+6.0 Supporting Attachments / References 
+ 
+Tool Drawings – see attachments section of the PDF file 
+ 
+ 
+Although Caterpillar does not endorse this particular supplier, the submitting dealer has experience with the following products or 
+companies. We welcome additional supplier recommendations from our dealer network. 
+ 
+Atlas Machine and Supply, Inc. 
+   7000 Global Drive. 
+  Louisville , Ky. 40258 
+www.atlasmachine.com 
+Contact: 
+Dennis Hanna 
+   VP/ General Manager 
+    502-584-7262     
+   
+drhanna@atlasmachine .com 
+ 
+7.0 Related Best Practices 
+ 
+None at this time 
+ 
+8.0 Acknowledgements 
+ 
+Special thanks to: 
+Aninu Mitacc 
+Ferreyros 
+CRC Quality, Safety and Continuous Improvement Manager 
+ 
+Mike Weddle 
+Whayne Supply Company 
+Michael_weddle@whayne.com  
+ 
+ 
+ 
+Written up by: 
+ 
+CGM – Dale Brehm 
+6 Sigma Black Belt 
+Caterpillar Global Mining Product Support

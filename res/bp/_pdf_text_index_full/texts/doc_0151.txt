@@ -1,0 +1,339 @@
+SOURCE: 3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\Off-Board Machine Filtration.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Off-Board Fluid Filtration 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+MARC 
+Management 
+ 
+ 
+ 
+ 
+Off-Board Fluid Filtration ............................................ 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments .................................... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+August 2006 
+0806-2.10-1002 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+The performance expectations for components and systems on modern mining machines have 
+grown rapidly in the past two decades. This has driven the design of hydraulic systems to operate 
+at much higher pressures, and dramatically increased the load factor on drivetrain components. 
+The increased performance demands also increase the rate of abrasive wear and failure of 
+components compared to older designs, which operated at lower load factors.  
+ 
+2.0 Best Practice Description 
+ 
+2.1 Debris 
+In order to increase durability, it is necessary to operate components and systems in much 
+cleaner fluids throughout the life of the component. There are three sources of debris: 
+ 
+2.1.1 Assembly Debris 
+A large amount of debris is often present in machine systems when new machines are 
+assembled. In the past, failure to remove this debris caused a high rate of system malfunctions 
+and component failures at the factory and in early-hour operation. As a result, portable filter 
+carts were designed for use in the factory to clean machine systems before machines were 
+shipped. When used properly, these carts effectively removed assembly debris and cleaned 
+systems to a factory ship target of ISO 18/15. This cleaning of systems prior to shipment 
+dramatically reduced the incidence of early-hour problems. 
+ 
+2.1.2 Break-In Debris 
+There is a widespread misconception that nearly all system debris is from  new machine 
+assembly, and that once systems are cleaned properly, they stay clean. This is not true. Most 
+components produce debris as a result of the normal break-in process. The length of the 
+break-in process and volume of debris produced varies by system. A mining truck provides a 
+good example of how systems vary. 
+ 
+Steering System 
+Steering systems essentially consist of a small piston pump, steering cylinders and a 
+control valve. Once assembly debris is removed from this system, it produces very little 
+break-in debris and normally stays clean with standard machine filtration. 
+ 
+Transmission 
+Transmission clutch discs, and gears produce moderate amounts of break-in debris. 
+This process usually takes between 100-200 hours to complete. Even if the 
+transmission were perfectly clean after assembly, break-in debris would still be 
+produced. 
+ 
+Final Drive & Differential 
+The rear axle produces very large amounts of break-in debris from gears. This process 
+may last up to 8,000 hours. This debris is almost all very small abrasive particles from 
+the hardened gears. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Off-board Fluid Filtration 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1002 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.1.3 Normal Wear Debris 
+After the break-in process is complete, components still produce microscopic wear particles, 
+but at a much slower rate. The rate is largely affected by how many wear particles are already 
+in the oil. If the oil is contaminated with a high number of abrasive particles, the normal 
+component wear process is greatly accelerated. If the oil is very clean, the normal wear 
+process is much slower, which significantly extends component life. 
+ 
+On-board machine filtration on most mining machines is not capable of maintaining high levels 
+of fluid cleanliness necessary to maximize component life. As a result, portable factory filtration 
+carts are used during PM’s and after system repairs. This practice has grown with the increase 
+in MARC contracts and extended component life guarantees. 
+ 
+2.2 Off-Board Machine Filtration (Kidney Loop) 
+The use of off-board filtration carts started in the factory to remove assembly debris that was 
+causing frequent production line and early-hour problems. The practice eventually migrated to 
+dealers where the carts were initially used to clean systems after a major repair or component 
+replacement. This later evolved into use of carts during PM intervals. Those dealers found that 
+consistent use of the carts for several hours during PM removed large amounts of debris and 
+helped to achieve and maintain a much better level of oil cleanliness. 
+ 
+There are four basic applications of filtration carts in dealer shops and mine sites: 
+ 
+2.2.1 New Machine Assembly: 
+Large mining machines are too big to ship fully assembled, so large components such as 
+wheel groups are assembled in the field. It is impossible to maintain system cleanliness when 
+major components are open to contamination during assembly.  
+ 
+Even in systems that are shipped assembled (such as hydraulics) cleanliness levels on new 
+machines often exceed the factory roll-off spec of ISO 18/15. This has caused great debate 
+between dealers who claim the system arrived dirty and factory personnel who claim it left 
+clean. There are three reasons for this: 
+ 
+System Not Cleaned Properly 
+In a few cases, the system cleanliness may exceed the pre-shipment specification, due 
+to inadequate cleaning prior to shipment. 
+ 
+Variability in Particle Counters 
+Particle counters (whether lab or portable) basically shine a small laser beam through 
+an oil sample and count the number and size of shadows caused by particles in the oil. 
+They also count water droplets, air bubbles and large agglomerated particles oil 
+additives. Inherent variability in both, the particle counter and the sample treatment 
+process, may account for elevated readings of one to two ISO codes. This is problem is 
+even more prevalent in the field use of portable particle counters where cleaning 
+between samples and sample treatment techniques may vary widely. It is not 
+uncommon (due to variability in the particle counter) to deliver varied results (readings) 
+from the same oil sample.   
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Off-board Fluid Filtration 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1002 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Additive Interference 
+Some new oils contain large amounts of additives. Some of these additive molecules 
+attract and form large clusters in systems where the oil is not be used (such as new 
+systems). These clusters may get large enough appear as a debris particle to a particle 
+counter, and cause the particle count to be higher than it actually is. On new machines, 
+systems should be exercised 1-2 hours to break down these additive clusters before a 
+relatively accurate particle count can be taken. 
+ 
+2.2.2 PM Intervals 
+Many dealers or customers who are interested in maximizing component life use filtration carts 
+for the major systems during normal PM’s. It typically takes 10-15 minutes per system to 
+connect the carts to each system (rear axle, transmission, hydraulics, steering) at the start of 
+the PM. Carts are then allowed to run unattended for several hours while normal PM services 
+are completed.  
+ 
+2.2.3 System Oil Changes: 
+A long-standing spec for new oil cleanliness has been ISO 16/13. With the increasing level of 
+additives in the oil, filtering oil to this level has become increasingly difficult. In addition, not all 
+sites can justify the cost of permanent recirculating filtration for new oil. A viable alternative is 
+to fill the compartment with new oil and then install and use an off-board filter cart to achieve 
+the desired cleanliness. Machine system contamination is not a problem since the filtration 
+process occurs before the machine is started. It also has the added benefit of removing some 
+system contaminants that would not otherwise be removed if only new clean oil was installed. 
+ 
+2.2.4 Major Repairs 
+When major components are replaced or systems are opened up for repair, filtration carts 
+should be used to maximize system cleanliness. A leading cause of failure of rebuilt 
+components is failure to clean the system before the new component is put back in service. 
+This is especially true with catastrophic failures, where the system is contaminated with failure 
+debris. 
+ 
+3.0 Implementation Steps 
+ 
+There are several criteria for the number and size of carts required. 
+ 
+Cart Size 
+Cart filter size and flow rate is determined by the capacity of the system being filtered. As a 
+rule of thumb, the cart should be sized to filter the volume of the system 35 times in a 
+reasonable period of time. 
+ 
+Oil Type 
+A different cart is required for each oil type. (Example: rear axle oil cannot  be mixed with 
+hydraulic oil) 
+ 
+Fleet Size 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Off-board Fluid Filtration 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1002 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+The number and model of machines being maintained determine the number of carts required. 
+For medium and large fleets, two sets of carts are often required: one set for PM and one for 
+repair. An inadequate number of carts often results in a cart being used for PM or repair and 
+unavailable for use on another machine when needed. 
+ 
+Help with determining the correct number of carts needed, cart size and required tooling is 
+available from the Caterpillar Service Tools Group or from the Marketing and Product Support 
+Contamination Control Group. 
+ 
+Service Tools Group – contact Jim Balfanz, 
+Balfanz_James_W@cat.com 
+ 
+Contamination Control Group – contact Dave Baumann, Baumann_David_L@cat.com 
+ 
+4.0 Benefits 
+ 
+Maintaining oil cleanliness for major components and machine systems increases both reliability 
+and durability. Electro-hydraulic control valves, which are widely used in transmission controls 
+and implement hydraulics, are very intolerant of microscopic, ferrous debris. Heavily loaded 
+wheel and final drive bearings, as well as, duo-cone seals are also easily damaged by abrasive 
+debris commonly found in new oil. Assuring the new oil is cleaned to the desired cleanliness 
+level, and maintaining ISO 18/15 or better significantly reduces the number of contamination 
+induced failures and repairs and significantly extends component life. 
+ 
+5.0 Resources Required 
+ 
+The number and size of filter carts required is determined by fleet size. Carts may be purchased 
+through Caterpillar Service Tool Group, outside suppliers, or built by the dealer. Training for 
+maintenance and operation personnel is also required so that they fully understand the function 
+and importance of the use of filter carts. 
+ 
+6.0 Supporting Attachments  
+ 
+“Improving Component Durability” booklet set- form # SEBF1021.  
+Consists of one of each of the following: 
+ Fuel Systems   SENR9620 
+ Final Drives and Differentials SEBF1015 
+ Powershift Transmissions  SEBF1016 
+ Component R&I   SEBF1017 
+ Engines    SEBF1018 
+ Hydraulics    SEBF1019 
+ Managing Fluid Cleanliness SEBF1020 
+ 
+7.0 Related Best Practices 
+0808-2.10-1003  -On-board Fluid Filtration 
+0806-2.10-1000  -Managing Fluid Cleanliness 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Off-board Fluid Filtration 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1002 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+This Off-board Fluid Filtration Best Practice was authored by: 
+Dick Douglas 
+Market Consultant 
+Caterpillar Global Mining 
+Douglas_Richard_D@cat.com  
+1-309-675-5699 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Off-board Fluid Filtration 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1002 
+Caterpillar Confidential:  GREEN          Page 6 of 6

@@ -1,0 +1,869 @@
+SOURCE: 1.0 Maintenance & Repair\1.06 Backlog Management\1. Strategic\Backlog Management .pdf
+PAGES: 14
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+August 2006 
+1007-2.0-1103 
+  
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Backlog Management 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+ 
+Backlog Management ................................................ 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ...................................... 13 
+4.0 Benefits ............................................................ 13 
+5.0 Resources Required ........................................ 14 
+6.0 Supporting Attachments .................................. 14 
+7.0 Related Best Practices .................................... 14 
+8.0 Acknowledgements .......................................... 14 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Management 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1103 
+Caterpillar Confidential:  GREEN  Page 2 of 14 
+1.0 Introduction  
+ 
+This Best Practice deals with the creation, management, and reporting of maintenance and repair 
+Backlogs. Implementing this Best Practice will improve machine availability and reduce operating 
+costs by the reduction of unplanned, costly repairs. It will also provide a method to identify, 
+manage and schedule necessary repairs before failure.  
+ 
+This Best Practice addresses the items in Site Assessment Section 2.8. 
+ 
+Backlog is generally understood to be the work that has not been completed by the nominated 
+“required-by-date”. Backlogs are also managed as pending workload for the repair centers. Our 
+approach to Backlog Management is to view it as a powerful tool to proactively prevent failures. 
+Backlog management is one of the keys to a good equipment maintenance system. If the effort 
+that goes into condition monitoring does not result in a high percentage of planned and scheduled 
+repairs, the corresponding results of reliability, costs and availability will be adversely effected. 
+The planning and scheduling routines will also be disrupted. 
+ 
+2.0 Best Practice Description 
+ 
+Backlog Management  
+ 
+Backlog management is one of the keys to a good equipment maintenance system. If the effort 
+that goes into condition monitoring does not result in a high percentage of planned and 
+scheduled repairs, the corresponding results of reliability, costs and availability will be adversely 
+effected. The planning and scheduling routines will also be disrupted. 
+ 
+Backlog is generally understood to be the work that has not been completed by the nominated 
+“required-by-date”. Backlogs are also managed as pending workload for the repair centers. Our 
+approach to Backlog Management is to view it as a powerful tool to proactively prevent failures.  
+ 
+It is commonly understood that there are certain types of failures that will occur, with no signs or 
+measurable warning. Examples are those related to the electronic or electrical control systems. 
+Fortunately our experience shows that most of the failures that mobile equipment experience that 
+cause significant downtime are detectable well in advance of failure, allowing the organization to 
+plan the appropriate corrective actions.   
+ 
+There are two areas that we would like to stress: the early detection of possible failures and their 
+appropriate corrective planning actions. Early detection of potential problems increases the time 
+window to plan the necessary repairs. 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Management 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1103 
+Caterpillar Confidential:  GREEN  Page 3 of 14 
+ 
+We would like to use this diagram above to illustrate our approach to Backlog Management. 
+Backlog Management is the process occurring between the detection of a symptom of a potential 
+or hidden failure and the occurrence of the actual failure itself.  
+ 
+Condition Monitoring and Backlog Management are so critical to achieving the goal of reliability, 
+that any maintenance organization must be able to assess and improve the process. Establishing 
+a logical approach for this planning stage is probably the first step.  
+We would like to contribute to this effort by presenting a process that was developed in 
+conjunction with our mining dealers. 
+ 
+ 
+2.1 Backlog Management Process    
+ 
+2.1.1 Generating the Repair Request. 
+ 
+The effectiveness of Backlog Management begins with the information that is provided by the 
+maintenance inspector, the operator, the Fleet Analyst, or whomever inspected the equipment at 
+the time the repair needs are determined.  
+ 
+As a first step in defining the process we recommend adopting a unique form to communicate the 
+repair need, designing the form in accordance with the desired end result. This form will be used 
+primarily by the inspector, field and shop mechanics, supervisors, and should be available to 
+anyone that needs to enter a repair request. The results of the operators’ input need to be 
+filtered, normally done by an inspector, to transform their request into a formal repair request. 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Management 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1103 
+Caterpillar Confidential:  GREEN  Page 4 of 14 
+As soon as a repair request is generated, it becomes a Backlog (BL) in our process, triggering 
+the planning actions. It is also added to the database and is introduced into the general 
+evaluation process.  
+ 
+ Description Purpose  (Desire End Result) 
+   
+Equipment ID Mine internal ID commonly used Tracking and statistical evaluations 
+Date Date when Backlog was 
+generated 
+Evaluate the response time of the system (age 
+of Backlogs) 
+Reference 
+Number 
+Number assigned in Planning Tracking  
+Work Order 
+Number 
+Optional. Used if Work Order is 
+opened as soon as the BL is 
+generated. 
+Enters the BL to the Maintenance Support 
+Software 
+Type of 
+Inspection 
+Identifies the generation source 
+(Condition Monitoring routines + 
+operational areas, such as Field, 
+PM, Shop, others) 
+Evaluate the contribution of the different 
+organization areas 
+Symptom  State the problem Identify the warning signs that were detected 
+that indicated the need for a specific repair 
+Repair Action Describe the repair action 
+needed 
+Identify a precise repair need eliminating 
+further inspections 
+System Identifies the major systems of 
+the equipment (Use of SMCS 
+codes recommended) 
+Statistical Analysis. 
+- Actual BLs per system 
+- BLs per system generated 
+Priority Identifies the urgency  Planning. Treat the BLs accordingly to their 
+urgency 
+Estimate of 
+Repair Times  
+Identifies the Labor hours and 
+Downtime estimated for the 
+repair 
+Estimate criticality of Backlog and future shop 
+work load 
+Parts request Identifies the parts needed for 
+the repair  
+Parts must be identified by the generator (man 
+on the machine) 
+Tooling, Special 
+Equipment, 
+Consumables 
+Identifies special needs for 
+tooling, equipment, 
+consumables, information, etc. 
+Efficient Planning. 
+Requested by  Identifies the generator. 
+Especially important when 
+operator is involved.  
+Facilitate possible verification.  
+Recognition & motivation. 
+Supervisor 
+approval 
+Supervisor is responsible for the 
+quality of the BL generated 
+Efficient Planning. 
+Keypunched OK Identifies when the BL is entered 
+into the database 
+Process control 
+Parts estimated 
+arrival date 
+For Parts department use. Planning & control. 
+Parts arrival date Identifies the actual parts arrival 
+date  
+Triggers the next planning stage, schedule the 
+repairs. 
+ 
+Accurate and complete information permits the planning department to perform their functions 
+effectively and efficiently, avoiding further effort duplication due to reevaluation of repairs needed. 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Management 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1103 
+Caterpillar Confidential:  GREEN  Page 5 of 14 
+The following Backlog Record Form is proposed for gathering the list of information required. This 
+form is currently in use by various operations that operates Caterpillar  and other brands 
+equipment. 
+ 
+NOTE: The “Type Of Inspection” field can be modified to accommodate the condition monitoring 
+routines that are implemented and the organization areas that may contribute with the Backlog 
+generation. 
+ 
+Now that we have our entry point defined, we can go into the second stage, the planning 
+process. 
+ 
+BACKLOG RECORD FORM
+Equip. No: Date Reference No.
+W. Order No.
+ 
+Type of Inspection:         Operator       Field      Preventive Maint.              Other
+Symptom :
+Action :
+System :
+1000 Engine 3101 Torque Conv. 4300 Steering 7000 Basic Mach. 9500 Various
+1400 Electrical 4050 Final Drive 5050 Hydraulic 7200 Suspensions 9600 Factory Modif.
+3000 Transmission 4250 Brakes 5500 Tires 7320 A/C
+Priority :                              Urgent         Next PM         When Possible         Monitor
+Estimate of Repair Times
+                Machine Hours Hr.                                    Man Hours Hr.
+Parts Request
+Item Quantity Part Number Description Page Item Observations
+1
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+Order Number
+Tooling, Consumables and Support Equipment
+Lift Truck Liquid Nitrogen
+Crane Jack
+Tire Equipment Washing
+Requested by: Estimated Arrival Date
+Supervisor Approval Parts Arrival Date
+Keypunched OK
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Management 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1103 
+Caterpillar Confidential:  GREEN  Page 6 of 14 
+2.1.2 Backlog Planning Process Stage 
+ 
+As soon as the Backlog Form is completed it enters the planning area. There are three major 
+phases in the Backlog Management process: 
+ 
+• Backlog received and entered to the database. Waiting to be processed. 
+• Backlog planned and waiting for resources, normally parts. 
+• Backlog ready to be executed. Scheduled, waiting to be executed. 
+ 
+To facilitate the identification of these phases and the handling of the quantity of Backlogs 
+entering the system, we assigned colors to these stages. Red, Blue and Green are the colors 
+selected respectively. 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Let’s follow a Backlog through the entire process: 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Management 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1103 
+Caterpillar Confidential:  GREEN  Page 7 of 14 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The starting point of the planning process begins in the “Red stage” where the Backlog request is 
+entered into the database. At this point the request could stay “waiting to be planned” or could 
+pass to the next stage if the planning actions are taken immediately. As soon as the planning 
+actions are taken, analyzed, the actual repair required is established, and the resources needed 
+(parts and others) are ordered, the Backlog is passed to the next stage, the “Blue stage”. All 
+Backlogs in this blue stage are waiting for some resources, most frequently parts. The next 
+stage, the “Green stage”, contains all Backlogs that are “ready to go”, with all the necessary 
+resources allocated. The arrival or physical availability of parts and other special resources is the 
+condition to move the Backlog to this last stage. At this point the Backlog is ready to be 
+scheduled for execution or to be performed in the earliest window of opportunity. 
+ 
+The use of distinctive areas of functionality and responsibility helps with possible improvements 
+determined by the continuous evaluation of your maintenance operation. 
+  
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Management 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1103 
+Caterpillar Confidential:  GREEN  Page 8 of 14 
+2.1.3 Evaluating the Process 
+ 
+As we stated at the beginning of this section, the ultimate goal is to achieve the targets for 
+percentage of scheduled work and equipment reliability. Keeping this final goal in mind the 
+Backlog Management process can be evaluated, for each of the defined functional areas and 
+assess the contribution of them in the achievement of the desired end results. 
+ 
+Backlog Management Performance Indicators 
+ 
+Indicator  Description Purpose 
+   
+Quantity of Backlogs The number of Backlogs in 
+the process. Repair need 
+identified, not executed. 
+Evaluates the work load and risk for failures 
+Quantity of Backlogs 
+generated 
+Number of Backlogs entered 
+into the system  
+Evaluates the condition monitoring ability to detect 
+potential problems. 
+Estimated Time to 
+Repair 
+Sum of all repair estimated 
+time determined at the time 
+the Backlog was generated 
+Evaluates the severity of the Backlog work load 
+and potential loss of availability 
+Percentage of Backlogs 
+over 30 days 
+Measured from the date the 
+backlog was generated 
+Evaluates the quality of the response of the system 
+to react proactively to eliminate potential problems. 
+Quantity of Backlogs in 
+the different process 
+phases (Red-Blue-
+Green) 
+The number of Backlogs 
+identified that are waiting for 
+planning, waiting for parts 
+and waiting for being 
+executed 
+Identifies the weak area, where the process is 
+being delayed. 
+Backlogs per type of 
+Inspection 
+Backlogs generated by the 
+operators, inspectors, PM & 
+others. 
+Identifies the areas that are contributing in the 
+failure detection. 
+Backlogs per system Backlogs sorted by machine 
+systems. 
+Permit the comparison between the current and the 
+potential problems.  
+Backlogs generated per 
+system 
+Backlogs generated sorted 
+by machine systems. 
+Evaluates the ability of the condition 
+monitoring routines to detect the critical 
+problems. 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Management 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1103 
+Caterpillar Confidential:  GREEN  Page 9 of 14 
+We recommend starting by visualizing the balance between Backlog Generation, Execution and 
+Total pending. It is also important to include the goal / target for total pending backlogs, to set up 
+a clear management guide. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Management 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1103 
+Caterpillar Confidential:  GREEN  Page 10 of 14 
+2.1.4 Estimating Time to Repair and Labor Hours 
+ 
+Estimated Time to Repair in Downtime (Machine estimated hours) and labor (man power 
+required to execute the Backlog) is a good management metric for severity of the pending 
+Backlogs. The Goal shown in this graph is the line for 10 % of the available labor hours. It is 
+important to maintain the hours estimated for Backlogs below 10% of the available hours on the 
+shop floor. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Management 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1103 
+Caterpillar Confidential:  GREEN  Page 11 of 14 
+2.1.5 Assessing Response Time 
+ 
+Backlogs > 30 days is a good indication for assessing the response time of your organization. 30 
+days is a Benchmark. We have to try eliminating the Backlog generated within 30 days. 
+Remember that Backlogs are potential failures. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Management 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1103 
+Caterpillar Confidential:  GREEN  Page 12 of 14 
+2.1.6 Backlog Management – Backlog Status 
+ 
+This report allows you to identify the areas of responsibility on the pending Backlogs. From all 
+pending Backlogs, what percentage is in process in the planning area (Red), what percentage is 
+waiting for parts / resources (Blue) and what percentage is ready to go (Green)? The managers 
+can now concentrate on improving the appropriate area of opportunity. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Sample Backlog Management Report 
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Management 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1103 
+Caterpillar Confidential:  GREEN  Page 13 of 14 
+ 
+This is an example of a Backlog Management Report used in a 793B coal operation 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+1. Use the results on condition monitoring inspections to create Backlogs. 
+2. A sample Backlog form is attached. 
+3. Implement the 3-phase (Red, Blue, Green) method for categorizing and tracking Backlogs. 
+4. Use the attached evaluation process to determine the performance of your Backlog system. 
+5. Refer to Backlog Process Map (page 7). 
+ 
+4.0 Benefits 
+ 
+• Fewer high cost unscheduled repairs. 
+• Higher reliability and machine availability. 
+• More efficient use of shop facility and labor force. 
+• Lower cost per hour and cost per ton. 
+ 
+
+===== PAGE 14 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Backlog Management 
+DATE 
+22 AUG 06 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1103 
+Caterpillar Confidential:  GREEN  Page 14 of 14 
+5.0 Resources Required 
+• Backlog Record Form (attached) 
+• Thorough machine inspection resulting in Backlogs entered into the process. 
+• Three binders:  (Red, Blue, Green) for tracking the Backlogs, or a computer system to 
+duplicate this functionality. 
+• Individual in the Planning & Scheduling Department responsible for entering Backlogs, tracking 
+their progress, and producing the process performance evaluation reports. 
+ 
+6.0 Supporting Attachments  
+No Supporting Attachments are included with this document. 
+ 
+7.0 Related Best Practices 
+0806-2.70-1007  - Condition Monitoring Field Inspections 
+ 
+8.0 Acknowledgements 
+This Backlog Management Best Practice was authored by: 
+Abelardo Flores 
+Equipment Management Consultant-Site Management 
+Caterpillar Global Mining 
+ +56-9 3097135 
+Flores_Abelardo@cat.com

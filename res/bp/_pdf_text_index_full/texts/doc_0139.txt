@@ -1,0 +1,710 @@
+SOURCE: 3.0 Component Life Management\3.01 Improving Component Life\1. Strategic\Component Life Management Improvement Process.pdf
+PAGES: 13
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Component Life 
+Improvement Process 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Renewal 
+(CRC) 
+Component 
+Life 
+Management 
+ MARC 
+Management 
+ 
+ 
+ 
+Component Life Improvement Process ...................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ...................................... 12 
+4.0 Benefits ............................................................ 12 
+5.0 Resources Required ........................................ 12 
+6.0 Supporting Attachments / References ............. 12 
+7.0 Related Best Practices .................................... 12 
+8.0 Acknowledgements .......................................... 12 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+  
+January 2010 
+1001-3.01-1198 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Machine drive train major component rebuild costs account for over 60% of total machine 
+maintenance and repairs costs excluding tires and fuel.  The most effective way to reduce 
+machine operating costs is through improving major component life.  This directly impacts 
+machine cost per hour, and therefore cost per ton.   
+ 
+Improving major component life also has the additional benefit of reducing the frequency of 
+planned and unplanned machine stoppages, which increases machine overall availability and 
+production. 
+ 
+This Best Practice discusses the fundamentals and process for managing and improving major 
+component life. 
+ 
+2.0 Best Practice Description 
+ 
+Managing major component life involves two basic fundamentals: 
+ 
+• Eliminate or reduce unplanned component removals due to failures or premature wear.  
+Since failures often shorten life by 50% or more, actions to reduce the frequency of failures 
+has a significant impact on average fleet component life. 
+• Set, monitor, evaluate, and adjust planned component replacement (PCR) targets for 
+optimum life. 
+ 
+           
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Life Improvement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.01-1198 
+Caterpillar Confidential:  GREEN         Page 1 of 12 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Variations 
+                                                        Process 
+ 
+1.  Collect and analyze component life data and information.   
+ 
+• Fleet component life hours achieved are tracked and summarized by machine model.   
+Suggested required data includes:  
+o Machine model 
+o Machine serial number 
+o Component name (such as engine, transmission, wheel group, differential, torque 
+converter, suspension, etc) 
+o Component serial number (or assigned ID number) 
+o Component removal date. 
+o Hours on component when removed. 
+o Removal planned or unplanned?  (Failure or Planned Component Replacement) 
+o Root Cause of Failure. (Part / Part Group causing failure) 
+o Component source (Component removed was New, Reman, or Rebuilt) 
+o Other data as appropriate, such as “Total engine fuel burn” can be helpful. 
+ 
+• The component life data should be collected as a minimum for all component removals 
+over the past three years.  Over a three year period, close to 100% of the fleet 
+components will have completed a life cycle.  Component life data that is more than five 
+years old should not be used in the analysis of “current” fleet component life performance. 
+ 
+•  Useful data analysis tools are histogram and box plot graphs, which illustrate the 
+distribution of the data and variation in the data.  Data can be sorted and reviewed by any 
+of the data fields above. (By model, by component, by new components, by rebuilt 
+components, by failures, by PCRs, etc) 
+ 
+• A normal distribution often has two “bell curves”.  One curve represents failures and early 
+removals - the other represents planned removals. 
+ 
+                                        Histogram Component Life Distribution 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                                             
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Life Improvement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.01-1198 
+Caterpillar Confidential:  GREEN         Page 2 of 12 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Histograms and S-curves: 
+ 
+This analysis tool shows the distribution by hours of all component removals (both failures and 
+PCRs) and the accumulated percentage of the fleet that has completed a life cycle. 
+ 
+Note that the below actual data histogram shows a typical Reliability – Durability “Bath Tub” 
+curve as shown in the “Strategy” histogram above.   
+ 
+ From the distribution of the removal hours and incidents, “opportunities” can be identified.      
+ 
+Opportunities:  Quality, Reliability, and Durability (PCRs) 
+ 
+ 
+      
+ 
+                    
+  
+        
+ 
+ 
+ 
+ 
+• Other data analysis tools. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Life Improvement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.01-1198 
+Caterpillar Confidential:  GREEN         Page 3 of 12 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+                                                                          793C Box Plot 
+                             
+                                                     Engines             Wheel Groups        Transmissions 
+ 
+          Box Plot (by machine model) shows variation and outlaying data points. 
+ 
+                          
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                     Box Plot (by engines and by year) … shows trends and variations  
+ 
+ 
+High variation 
+Early hour 
+failures 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Life Improvement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.01-1198 
+Caterpillar Confidential:  GREEN         Page 4 of 12 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2. Reducing Early Failures and Premature Wear Out 
+ 
+The management and reduction of early hour failures and premature wear out is a key success 
+factor in increasing overall component life and machine reliability, 
+• Identify the root causes of failure impacting the machines. 
+• Determine and prioritize the top issues. 
+• Develop containment and solutions 
+ 
+Root Causes 
+ 
+It is important to the process to identify the “root cause” for any component removed prior to 
+reaching the planned life target.  A technical failure analysis is the best means to identify the 
+root causes of failures. 
+ A common mistake is to identify “what” failed rather than “why” it failed.  Understanding true 
+root causes enables preventative actions to be developed and implemented. 
+ 
+Failures usually originate from one or more of the following sources: 
+• Part defect (Caterpillar or Rebuilder Reuse and Salvage)  
+• Workmanship defect (Caterpillar or Rebuilder) 
+• Engineering Design (Caterpillar) 
+• Maintenance practices (Minesite) 
+• Operation practices (Minesite) 
+• Improper Removal and Installation -system contamination  (Installer) 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Life Improvement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.01-1198 
+Caterpillar Confidential:  GREEN         Page 5 of 12 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+            
+It is vital to establish a policy to perform technical failure analysis on all premature removals 
+and a resource to provide the analysis.  Most Caterpillar dealers have extensive Applied 
+Failure Analysis (AFA) training, tooling and lab equipment required, as well as extensive 
+knowledge of Caterpillar equipment, specifications, and technical product issues. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Life Improvement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.01-1198 
+Caterpillar Confidential:  GREEN         Page 6 of 12 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Define and Prioritize Issues 
+ 
+ The accumulation of failure analysis information allows the top reasons for failures to be   
+identified and prioritized by those issues which are most impacting component life and 
+machine availability.   Plans and actions can then be developed to contain known problems 
+and find permanent solutions. 
+ Pareto charts are often used to summarize and prioritize root causes of both downtime as well  
+as major repairs that cause a component to be removed.  Below is an example engine major 
+repair pareto. 
+ 
+ 
+            
+793 Engine Removal
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20Removals
+ 
+ 
+ 
+ 
+  
+              
+Cylinder 
+Head   
+Gasket
+Valve     
+Spring PTO
+After-        
+cooler Turbo Injector
+Rod    
+Bearing
+Cluster 
+Gear
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Life Improvement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.01-1198 
+Caterpillar Confidential:  GREEN         Page 7 of 12 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+793 Drive Train Component Removals
+0
+5
+10
+15
+20
+25
+ 
+ 
+ 
+ 
+ Action Plan – Containment and Solutions 
+ 
+Once key issues effecting component life performance and availability are identified and 
+prioritized, action plans can be developed.  Action plans consist of temporary containment 
+measures and permanent corrective measures. 
+ 
+Temporary containment options may include: 
+• Identify which machines that may be affected by an issue. 
+• Inspect machines for a defect. 
+• Monitor machines for signs of a developing problem.  VIMS data, oil analysis, particle 
+count, magnetic plug and filter inspections, testing, etc. 
+• Perform a mid-life replacement of part or subcomponent known to be causing issues. 
+• Temporary machine systems modification. 
+ 
+Permanent solutions may include: 
+• Updated part or design from Caterpillar 
+• Change in workmanship procedure. 
+• Change in maintenance procedure. 
+• Change in operation procedure. 
+ 
+ 
+ 
+ 
+Note: 
+Steering
+ Pump
+Dou-cone
+ seals
+Rear Axle
+ Lube Pump Thrust button
+Trans Control 
+Valve
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Life Improvement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.01-1198 
+Caterpillar Confidential:  GREEN         Page 8 of 12 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+While the above process is to a method to manage “component life”, a similar process is often 
+used to manage “availability”.  Both involve identification of the top drivers and a containment 
+and resolution plan.  For component life management, measure is hours at removal.  For 
+availability management, measure is downtime, often measured as Mean Time Between 
+Stoppage (MTBS) and Mean Time to Repair (MTTR). 
+ 
+      Example of “Containment” Plan 
+ 
+Issue: 793D Dou-Cone Seals 
+• The Rear Wheel & Brake Group fails due to duo cone seal leaks. The toric rings have been 
+reported to take a permanent set. This causes face load loss that results in a brake oil leak. 
+• Duo cone seal repairs accounted for 18 repairs and 582 repair hours in past 12 months. 
+Caterpillar Input:   
+• Aware of issue – improved seal released reference Service Magazine SEPD0971 
+Containment Action: 
+• Inspect for leaks at 500 hour PM 
+• Monitor oil analysis, viscosity, and particle count at 500 hour PM 
+• Identify machines running with old seals and those with new seals 
+• Remove old seal part numbers from parts stock 
+• Update component exchange inventory. 
+Implement Solution: 
+• Install new seal part number at rebuild or at repair. 
+ 
+  
+ E xample of “Solution” Plan 
+ 
+Issue: Early Hours Transmission failures due to installation errors  
+• 7 low hour transmission failures for 238 repair hours in past 12 months. 
+Caterpillar Input:   
+• Use recommended R&I checklist and installation Special Instruction procedure 
+Implement Solution: 
+• Create a checklist for technicians. 
+• Supervisor must sign off on checklist 
+• Whenever a transmission is rebuilt, also rebuild the transmission pump and cooler. 
+• Replace all fluid lines during installation. 
+• Check control valve settings on commissioning. 
+• Always replace drive shaft bolts with new bolts – do not reuse bolts. 
+• Check fluid oil analysis and particle count after 24 hours – kidney lube oil system if 
+needed. 
+• Develop a standard installation parts required “kit”. 
+• Training for technicians. 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Life Improvement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.01-1198 
+Caterpillar Confidential:  GREEN         Page 9 of 12 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 3.  Manage and Adjust Planned Component Replacement Intervals 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                 Histogram Wheel Group Life 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+• Determine Component Life Targets 
+o Cat / Dealer Recommendation 
+o Experience and History 
+o Experience in similar applications. 
+o Load Factors – Fuel Burn Rate 
+    
+      • Track Component PCR Life 
+o Average PCR Life  
+o Life Histogram – Distribution and Variation 
+o Percentage of Components Reaching PCR 
+     
+      • Adjusting PCR Targets 
+o Evaluate Component Condition during rebuild – Life 
+remaining? 
+o Rebuild based on condition rather than by hours alone 
+ Monitor oil consumption, smoke, oil analysis, particle 
+count, VIMS, etc 
+o Evaluate parts reusability/rebuild costs at PCR. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+     
+      
+PCR Management Benchmarks 
+•  Variation - PCRs are performed at +/- 5% of target hours. (Scheduling) 
+•  Distribution – 80% of components reach PCR target. (Maint. / Monitoring) 
+     
+      
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Life Improvement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.01-1198 
+Caterpillar Confidential:  GREEN         Page 10 of 12 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Additional Information: 
+ 
+ 
+Cost Drivers 
+ 
+Typical rebuild cost comparison of various machine components show that for Off Highway Trucks, 
+the engines and wheel groups are the key cost drivers and thus the key opportunity for cost reduction 
+through improved life. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Life Improvement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.01-1198 
+Caterpillar Confidential:  GREEN         Page 11 of 12 
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The fundamentals of this component life improvement process are: 
+• Collect and Analyze Component Life Data 
+• Manage Early Hour Failures and Premature Wear Out. 
+• Manage and Adjust Planned Component Rebuild (PCR) Intervals 
+ 
+To implement, the requirements are: 
+ 
+• Company commitment to create an availability / component life management process. 
+• Process owner:  Assign a Reliability Manager / Engineer  
+• Administrative system and database to track component life. 
+• Maintenance and Repair records database 
+• Policy on performing failure analysis and a database for reports and history tracking. 
+• Developed desired management reports. 
+• Use data to identify opportunities. 
+• Explore opportunities for causes and solutions. 
+• Implement containment and solutions. 
+ 
+ 
+4.0 Benefits 
+ 
+• Improved fleet availability and production. 
+• Increased average fleet component life lowers cost per hour. 
+• Reduced unplanned machine stoppages – improved scheduling and planning. 
+• Lower parts consumption due to reduced failure rates. 
+ 
+5.0 Resources Required 
+ 
+• Staff 
+• Cost of AFA ‘s 
+• Cost of Databases 
+ 
+6.0 Supporting Attachments / References 
+Sample Component Life Tracking Spreadsheet 
+ 
+7.0 Related Best Practices 
+ 
+ 
+ 
+8.0 Acknowledgements 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Life Improvement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1001-3.01-1198 
+Caterpillar Confidential:  GREEN         Page 12 of 12

@@ -1,0 +1,388 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+1206-2.9-1048 
+  
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Contamination Control 
+Using Plugs & Caps 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+Contamination Control Using Plugs & Caps............... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ............................................ 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contamination Control Using Plugs & Caps 
+DATE 
+1/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.9-1048 
+Caterpillar Confidential:  GREEN          Page 1 of 8 
+1.0 Introduction  
+ 
+Dealers can improve their Contamination Control Program by expanding the use of plastic caps 
+and plugs. During repair, every machine component or system that is opened/disassembled has 
+to be protected to avoid contamination. Caterpillar supplies a variety of plastic caps and plugs 
+through the normal parts system. This practice leads to Contamination Control practices that 
+have proven to effectively contribution to component durability. 
+ 
+Our task as maintenance personnel is to embrace and implement the correct repair/service 
+procedures that will ensure the best possible results in terms of repair quality and efficiency.  
+ 
+A dealer and customer partnered to launch a strong project to introduce and implement all 
+necessary Contamination Control initiatives. This effort started to give positive results that can be 
+seen in both component durability and failures reduction. Implementing this aspect of 
+Contamination Control has aided this dealer in achieving 5 Stars in the Caterpillar Contamination 
+Control Audit program during the last two years, making it the first mining maintenance operation 
+to achieve this recognition.    
+ 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice facilitates the supply of plastic plugs and caps (P&C) by locating them close to 
+all repairs in progress. A Latin American dealer designed and fabricated two portable cabinets that 
+can be easily moved to the repair bays. The cabinets are stocked with a complete set of plastic 
+plugs and caps for quick access. 
+ 
+         
+  
+ 
+General view of one of the P&C cabinets 
+ 
+    
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contamination Control Using Plugs & Caps 
+DATE 
+1/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.9-1048 
+Caterpillar Confidential:  GREEN          Page 2 of 8 
+    
+  
+ 
+Plastic plugs and caps are stored in plastic bags and the cabinet doors are sealed to eliminate any external contamination. 
+ 
+     
+  
+ 
+All P&C compartments are identified and replenishment is the responsibility of the on-site warehouse. 
+ 
+When a repair is in progress, the technicians move the cabinet close to the work area to have the 
+P&C close and easily available when needed. Whenever a compartment/system/component is 
+open, the appropriate plastic plugs and caps are selected and installed over the openings. 
+ 
+Warehouse personnel check the P&C Cabinet quantities as part of their daily check routine.  
+ 
+All shop personnel follow this practice and its use is constantly supervised through the 
+Supervisors, Staff Personnel, and Project Manager.  
+ 
+3.0 Implementation Steps 
+ 
+1. Based on the magnitude of your operation (number of bays and typical workload) define 
+the number of cabinets needed. 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contamination Control Using Plugs & Caps 
+DATE 
+1/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.9-1048 
+Caterpillar Confidential:  GREEN          Page 3 of 8 
+2. Fabricate the plugs & caps cabinet. The cost to fabricate each cabinet locally was 
+approximately US $1,500 
+ 
+3. Define the set of plastic plugs and caps to maintain in the cabinet, both part numbers and 
+quantity. You can follow the recommendations included in Section 6.0. 
+ 
+4. Order a complete set of Plugs & Caps. Define the inventory limits for replenishment. Make 
+the warehouse personnel responsible for replenishment. 
+ 
+5. Always use new Plugs & Caps. Experience shows that recycling caps is not worth the 
+effort and introduces possibilities for contamination. 
+ 
+6. Prepare the cabinets and stock with the plugs and caps. Assign them to the shop. 
+ 
+7. Train personnel in the use of the plugs and caps and the cabinet system. 
+ 
+8. Instruct supervisors to reinforce the need to properly utilize these protective devices. 
+ 
+9. Make shop supervisors responsible for the maintenance of the carts and their correct use. 
+ 
+10. Include the carts in all Shop Facilities & Equipment Audits.       
+ 
+4.0 Benefits 
+ 
+• Contamination Control 
+o Ensures proper storage of open machine systems / components. 
+o Eliminate oil spillages, improve cleanliness of working area. 
+o Contributes to component durability. 
+ 
+• Work quality - by having plugs and caps easily visible and available, reduces occurrences of 
+work being performed without caps. 
+ 
+• Work Efficiency - contributes to improve work efficiency (Mean Time to Repair). Items are 
+available for immediate use and don’t have to be searched for. 
+ 
+• Environmental Control - prevents oil spills, contributes to a better and cleaner environment. 
+ 
+• Image - contributes to enhance the dealer image, shows professional work done following all 
+recommended procedures. 
+ 
+• Easy to manage. This supply system for the plugs and caps is very visible and easy to 
+supervise. Everyone can see it in the shop. 
+ 
+5.0 Resources Required 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contamination Control Using Plugs & Caps 
+DATE 
+1/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.9-1048 
+Caterpillar Confidential:  GREEN          Page 4 of 8 
+• Fabricated portable cabinet. The cost of each cart fabricated locally in Argentina was US 
+$1,500. Use this cost as reference only. The number of carts to fabricate depends on the 
+equipment fleet size and the frequency of the repairs/services that are performed in the shop. 
+ 
+• One complete set of plastic plugs & caps. The whole recommended set has a list cost of US 
+$1,443.  See Section 6.0 for the complete parts list. 
+ 
+• Local warehouse staff or parts specialist for replenishment and inventory control of the 
+cabinets. 
+ 
+6.0 Supporting Attachments / References 
+ 
+1. Drawing used for original fabrication: 
+ 
+                 
+ 
+ 
+2. Recommended parts list for stocking the plugs & caps cabinet: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contamination Control Using Plugs & Caps 
+DATE 
+1/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.9-1048 
+Caterpillar Confidential:  GREEN          Page 5 of 8 
+Columns headings are: Unit Price, Total Price, Part Number, Quantity, Thread Size, and 
+specific dimensions (“Diam. Tubo” refers to Tube Diameter) 
+  
+                     
+  
+ 
+ 
+                     
+  
+ 
+ 
+                     
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contamination Control Using Plugs & Caps 
+DATE 
+1/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.9-1048 
+Caterpillar Confidential:  GREEN          Page 6 of 8 
+                  
+  
+                  
+  
+ 
+               
+  
+ 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contamination Control Using Plugs & Caps 
+DATE 
+1/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.9-1048 
+Caterpillar Confidential:  GREEN          Page 7 of 8 
+ 
+ 
+ 
+                     
+                    
+  
+ 
+ Total Cost: US$ 1,442.80 
+ 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contamination Control Using Plugs & Caps 
+DATE 
+1/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1206-2.9-1048 
+Caterpillar Confidential:  GREEN          Page 8 of 8 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Abelardo A. Flores 
+Senior Equipment Management Consultant 
+Caterpillar Global Mining  
+Flores_Abelardo@cat.com 
+Ph: +56-993097135 
+ 
+Our acknowledgements to the personnel of Finning Alumbrera for their willingness to share their 
+ideas and achievements that certainly contributes to the success of other Mobile Equipment 
+Maintenance Operations. 
+ 
+Our special recognition to: 
+ 
+Victor Mato, Finning Alumbrera Project Manager. 
+victor.mato@finning.com.ar 
+Ph: +54-0835485295 
+Enrique Uriburu, former Finning Alumbrera Project Manager 
+ 
+and in the Shop & Planning area: 
+ 
+Victor Latof, Finning’s Alumbrera Maintenance Superintendent  
+Jose Medina, Finning’s Alumbrera Scheduler & Fluid Samples Analyst 
+ 
+For further details and information regarding this Best Practice, please contact the author.

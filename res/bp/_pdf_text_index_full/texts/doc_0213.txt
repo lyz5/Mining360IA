@@ -1,0 +1,244 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\2. Tactical\Cleaning and Recycling of Metallic Waste in Machining Shop.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Cleaning and Recycling of 
+Metallic Waste in 
+Machining Shop 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+Cleaning and Recycling of Metallic Waste in 
+Machining Shop ......................................................... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+bout the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+June 2014 
+1406-4.02-1343 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+New cleaning equipment which improves the control, removal, and recycling of metallic waste has 
+been implemented in the machine shop in Ferreyros SA. The equipment is an industrial vacuum. 
+ 
+2.0 Best Practice Description 
+ 
+When large components (salvaged by welding) are machined, a large amount of metallic metal 
+shavings are created. This residue hinders the work of the operators, poses a contamination 
+control risk, and creates an unprofessional shop image. 
+ 
+ 
+ 
+ 
+Picture 1.  Metal shavings on floors and tooling. 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cleaning and Recycling of Metallic Waste in Machining 
+Shop 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1406-4.02-1343 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Picture 2.  Some Large Components must be cleaned mid way through the machining in order to 
+continue the  process. 
+ 
+3.0 Implementation Steps 
+ 
+ 
+ 
+Picture 3. The solution that has been implemented is the use of a large, industrial quality vacuum 
+that is easily portable in the shop 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cleaning and Recycling of Metallic Waste in Machining 
+Shop 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1406-4.02-1343 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+Picture 4. Cleaning  ERS Dipper Saddle 
+ 
+ 
+ 
+ 
+Picture 5. Recycling of metallic waste  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cleaning and Recycling of Metallic Waste in Machining 
+Shop 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1406-4.02-1343 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Features of the industrial vacuum: 
+ 
+• Trademark:   WIELAND 
+• Model:    IS-46M ATEX 3D 
+• Weight :    143 Kg 
+• Volt:     230  
+• Kw:    478  
+• Max mains prefuse:  25 amp 
+ 
+EDITOR’S NOTE: Although Caterpillar does not endorse this particular supplier, Ferreyros has 
+experience with the above products or companies. We welcome additional supplier 
+recommendations from our dealer network. 
+ 
+ 
+• Before and after -  
+ 
+ 
+ 
+ 
+Picture 6. Cleaning of metallic waste 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cleaning and Recycling of Metallic Waste in Machining 
+Shop 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1406-4.02-1343 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4.0 Benefits 
+ 
+• Reduce cleaning time by 80% 
+• Reduce the number of staff for cleaning (from 2 people to 1) 
+• Better monitoring of metallic waste 
+• It is portable and can be used in any work area that has power output. 
+ 
+5.0 Resources Required 
+ 
+Purchase cost of a industrial vacuum. 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+ 
+Team:                  Miguel Mauriola / Operations Support Chief 
+                            Romulo Olarte /Supervisor 
+                            José Huayamis / Technical Communicator 
+Owner:                Rafael Volta / Machine Shop Chief 
+Sponsor:             Rodolfo Gerstein / Manager Machine Shop 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cleaning and Recycling of Metallic Waste in Machining 
+Shop 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1406-4.02-1343 
+Caterpillar Confidential:  GREEN          Page 5 of 5

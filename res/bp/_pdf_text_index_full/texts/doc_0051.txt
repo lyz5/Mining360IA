@@ -1,0 +1,272 @@
+SOURCE: 1.0 Maintenance & Repair\1.03 Planning & Scheduling\2. Tactical\Improved Operations Using Specialized Inspection Facility.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+November 5, 2010 
+1002-1.03-1203 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Improved Operations Using 
+Specialized Inspection 
+Facility  
+ 
+ 
+Improved Operations Using Specialized Inspection 
+Facility ........................................................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 4 
+5.0 Manpower Resources Required ........................ 4 
+6.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved PM Operations Using Specialized Bay 
+DATE 
+1/13/2015 
+NUMBER 
+1002-1.03-1203 
+Caterpillar Confidential: GREEN  Page 1 of 5 
+1.0 Introduction  
+ 
+Performance and maintenance are key issues that are affected by communication, monitoring, 
+and accountability. In the age of communication and technology a focus on specific problems and 
+issues can be developed to enhance machine performance and maintenance.  This can be done 
+in a way that is understandable and attainable across the organization.      
+ 
+One can see this method of execution with the Albian Sands’ Mobile Maintenance Practice 
+focused on improving Physical Availability.  As the process exists now, Pre-PMs are conducted 5 
+days prior to major service; this practice entails bringing the intended truck into the service shop 
+for inspection and S-O-S™ .  However, this did not maximize machine downtime aligned with 
+Albian’s Maintenance Strategy.  Reliability and inefficient downtime indicated that further 
+investigation needed to occur. 
+ 
+2.0 Best Practice Description 
+The performance metrics in use at Albian today utilizes time as an essential part of the 
+calculation.  Analysis of shutdowns and stoppages are required when attempting to understand 
+what is affecting physical availability.  The following is the site definition of a Shutdown/Stoppage: 
+ 
+“Shutdown / Stoppage:  An event that take a machine out of service 
+Shutdowns may be scheduled or unscheduled and include all types of 
+maintenance and repair activities excluding daily lubes, refueling and 
+inspections executed during lube or refueling activities.” 
+ 
+Observational analysis was completed with machine fueling, lubrication, and operator break time.  
+Utilizing this time for inspections are considered opportune down time and do not count against 
+MTTR, MTBS and hence Physical Availability. 
+ 
+A Daily Inspection Guide and a modified Pre-PM Program were developed to maximize the 
+opportune downtime.   
+ 
+A custom facility was built for personnel to maximize execution during these short windows.  The 
+requirements of this facility included an office space, staging area for the Pre-Pm, and a small 
+parts facility to execute minor repairs that could be completed during the daily inspection 
+(Headlights, clamps, etc). 
+* Appendix A gives detailed layout and illustrations of proper layout. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+• Process mapping and analysis of opportune downtime and with the mine site. 
+• Develop downtime best practices with current activates and to-be activities. 
+• Develop process and check sheets for the plan 
+• Develop plan for the facility depending on the level of work required 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved PM Operations Using Specialized Bay 
+DATE 
+1/13/2015 
+NUMBER 
+1002-1.03-1203 
+Caterpillar Confidential: GREEN  Page 2 of 5 
+ 
+ 
+For this site the best layout was determined to be a 12.9M (40 ft) Sea Container divided up into 
+three sections.  At one end located the PM staging area, the middle for the office, and the other 
+end for parts storage as seen in the image below: 
+ 
+ 
+ 
+ 
+Resources necessary within the facility would be a 10 day plan, Daily Inspection Forms, Parts 
+Order Forms, Pre-PM Forms, Time Card Books, and Work Order Request Forms.  These 
+resources can be stored on paper records, or on a computer system as to optimize 
+communication, asset utilization, and proper tracking. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Parts Storage 
+Office 
+PM Staging 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved PM Operations Using Specialized Bay 
+DATE 
+1/13/2015 
+NUMBER 
+1002-1.03-1203 
+Caterpillar Confidential: GREEN  Page 3 of 5 
+ 
+ 
+ 
+ 
+ 
+A centralized location of the facility near the fuel and lubrication station was seen to be the best 
+fit.  This would provide technicians an optimal location and necessary resources.  Location on the 
+image below demonstrates layout in comparison to the haul roads. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Daily Inspection & 
+Pre-PM Location 
+Lube Island 
+(Fuel & Oil Top Off) 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved PM Operations Using Specialized Bay 
+DATE 
+1/13/2015 
+NUMBER 
+1002-1.03-1203 
+Caterpillar Confidential: GREEN  Page 4 of 5 
+ 
+4.0 Benefits 
+At Albian the team was able to eliminate Pre-PM downtime by utilizing time during breaks, 
+lubrication, and shift changes.  This resulted in $6,000,000 per 1.0%, and for the fleet of 797s 
+they were able to save $4,794,521 on a yearly basis (based on .8%). 
+ 
+The Daily inspections are allowing Albian to capture critical Backlogs that were not being 
+captured.  Minor repairs that can be completed during fueling are also completed as needed at 
+the correct item.   
+ 
+5.0 Manpower Resources Required 
+• Dedicated support from both organizations on the supporting team members and execution 
+• Construction team for facility development and placement 
+ 
+6.0 Acknowledgements 
+ 
+ Written by:  Charles Watts 
+ Caterpillar Global Mining 
+ Phone: +780 747 3543 
+ Email: Watts_Charles_B@cat.com 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Trucks 38
+Pre- PM Hr 5
+Frequency 500
+Yearly Hrs 7000
+Number of PM 14
+Downtime 2660
+Un Availability 0.80%
+Savings $4,794,521
+Pre-PM Inpact
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved PM Operations Using Specialized Bay 
+DATE 
+1/13/2015 
+NUMBER 
+1002-1.03-1203 
+Caterpillar Confidential: GREEN  Page 5 of 5 
+ 
+ 
+ 
+ 
+ 
+ 
+Appendix: 
+  
+  
+ 
+ 
+ 
+ 
+ 
+Technician’s office workstation 
+Unit Tracking Board

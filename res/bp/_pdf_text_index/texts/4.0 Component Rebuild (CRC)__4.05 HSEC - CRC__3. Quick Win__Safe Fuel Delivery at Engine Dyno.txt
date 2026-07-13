@@ -1,0 +1,123 @@
+===== PAGE 1 =====
+March 2021 
+4.05-210317-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+MINING DEALER BEST PRACTICE 
+Safe Fuel Delivery 
+at Engine Dyno 
+Maintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+Safe Fuel Delivery at Engine Dyno….……………….…..1 
+1.0 Introduction……………………………………………2 
+2.0 Best Practice Description……………………………2 
+3.0 Implementation Steps………………………………..2 
+4.0 Benefits……………………………………………..…3 
+5.0 Resources Required…………………………………3 
+6.0 Supporting Attachments / References……..………3 
+7.0 Related Best Practices…………………………....…3 
+8.0 Acknowledgements………………………………..…4 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by one 
+or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty about 
+the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best Practice” 
+recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Safe Fuel Delivery at Engine Dyno
+DATE 
+3/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.05-210317-1 
+Caterpillar: Confidential Yellow Page 2 of 4 
+1.0 Introduction  
+The Dyno Engine Test room, a common shop at dealers, is where engines are tested to see 
+whether they are working properly or not. To perform a test, the engine fuel line should be filled 
+with fuel and then pressure should be increased. Normally, a manual process is in place where 
+the fuel transfer pump is used with the help of a battery. 24 units is the voltage necessary to run 
+the fuel transfer pump, but in many countries, including Turkey, 220 units is the standard voltage 
+of electric sockets, which is why a battery must be used. 
+One of our technicians at Borusan Makina ve Güç Sistemleri has found a new way to perform 
+this process by using a converter to decrease the voltage, eliminating the use of the battery. 
+This new process is easier and safer to perform than the old one, because it does not require 
+the technician to be in the room while the test is being performed. 
+2.0 Best Practice Description  
+In this new process the battery is replaced with a converter that decreases voltage from 220 units 
+to 24 units. The converter is controlled with a key that you press to start the process. Electricity is 
+sent to the converter. The converter converts electricity to the necessary voltage and sends the 
+electricity to the gas pump. The gas pump then fills the engine fuel line with fuel.   
+3.0 Implementation Steps  
+1. Connect the fuel transfer pump and converter with the cable.
+In these photos the connection cable can not be seen since it passes under the floor.
+
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Safe Fuel Delivery at Engine Dyno
+DATE 
+3/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.05-210317-1 
+Caterpillar: Confidential Yellow Page 3 of 4 
+2. Connect the converter and key. This completes the process and the engine is ready to be
+tested.
+3. If you press the “FUEL” button, the fuel line will be filled with fuel from the gas pump.
+4.0 Benefits 
+ Reduces engine preparation labor hours since one technician can test the engine;
+ Creates a safer working environment since no technician needs to be in the test room;
+ Reduces electricity cost since the battery is not needed.
+5.0 Resources Required  
+Item Cost 
+Converter $60 
+5 Meter Cable $5 
+Key $4 
+Total $69 
+6.0 Supporting Attachments / References  
+N/A. 
+7.0 Related Best Practices  
+N/A. 
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Safe Fuel Delivery at Engine Dyno
+DATE 
+3/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.05-210317-1 
+Caterpillar: Confidential Yellow Page 4 of 4 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+Ibrahim Hakki Erduran 
+CRC Engineer Intern 
+Borusan Makina ve Güç Sistemleri 
+This Best Practice was designed by: 
+Murat Altınışık 
+Dyno Team Leader 
+Borusan Makina ve Güç Sistemleri 
+Osman Öztekin 
+Technician 
+Borusan Makine ve Güç sistemleri 
+This Best Practice and project were supported by: 
+Ömer Emre Demirkale 
+CRC Manager 
+Borusan Makina ve Güç Sistemleri 
+Rafet Kaymakci 
+Mining Customer Support Manager 
+Borusan Makina ve Güç Sistemleri

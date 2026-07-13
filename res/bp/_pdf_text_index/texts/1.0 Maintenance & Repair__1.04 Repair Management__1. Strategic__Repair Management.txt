@@ -1,0 +1,1364 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+1007-2.0-1107 
+  
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Repair Management  
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Repair Management .................................................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ...................................... 17 
+4.0 Benefits ............................................................ 19 
+5.0 Resources Required ........................................ 19 
+6.0 Supporting Attachments / References / 
+Resources ................................................................ 20 
+7.0 Related Best Practices .................................... 20 
+8.0 Acknowledgements .......................................... 21 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 1 of 21 
+““AAddeeqquuaattee  RReessoouurrcceess  OOrrggaanniizzeedd  &&  MMaannaaggeedd  ttoo  PPeerrffoorrmm  
+EEffffiicciieenntt  &&  EEffffeeccttiivvee  RReeppaaiirrss””  
+1.0 Introduction  
+ 
+This Best Pr actice is part of a series of Strategic Best Practices that are directed to address in 
+detail the ten (10) different processes of the Caterpillar Global Mining Maintenance & Repair 
+Process recommended to manage your on site mining operations. 
+ 
+Repair management is the functional element that is dedicated to the execution of all the 
+maintenance activities on the equipment. These activities can be planned or unscheduled, 
+requiring from the on site organization the appropriate preparation in terms of resources  and 
+skills to respond adequately. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+There are two distinct service areas that Repair Management must consider in a mining 
+operation, the shop and the field.  Because of the nature of the services performed in these two 
+areas, effective mines recognize the need of organizing the support in the same way, 
+developing & assigning specialized crew and equipment to each of them. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+  
+ 
+      Field Service Operation         Shop Operation  
+ 
+ 
+ 
+Adequate human resources (HR), both in quantity and quality (appropriate skills), organized 
+effectively (organization structure), and equipped with the right tools and facilities are the 
+critical contributing areas to the performance results of your repair management function. 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 2 of 21 
+ 
+Mine Production 
+Requirements  
+ 
+CSA’s definitions 
+Fleet  
+Characteristics 
+Site  
+Characteristics 
+External Support 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The Right People, well equipped supported by adequate Facilities… key for  
+Success in Repair Management. 
+            Photo: Courtesy of Sotreq, Brazil – Samarco On Site Crew 
+ 
+2.0 Best Practice Description 
+ 
+The scope and characteristics of the Repair Management (RM) function will be determined by 
+the maintenance activities / routines that are going to be performed in a particular mine site. 
+The first step in designing and implementing the Repair Management function is to analyze the 
+Maintenance Strategy to determine the characteristics of the service required. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+Maintenance 
+Strategy 
+ 
+Establish the Repair 
+Management Plan 
+(What is what we have to 
+accomplish and How…)  
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 3 of 21 
+In the Repair Management Plan, we outline all the necessary procedures and resources to 
+perform the Maintenance & Repair activities efficiently and effectively. -  “What are we going to 
+do? How are we going to do it? What resources will we need?” 
+ 
+ 
+   
+ 
+Mining mobile equipment are subjected to maintenance and repair activities that can be executed 
+in the Field or in the Shop. Our strategy has to consider these two main areas, Field and Shop. 
+The activities that normally take place in these two areas are: 
+ 
+Field Service 
+ 
+- Diagnostic of unscheduled machine stops 
+- Short / small repairs 
+- Repairs that don’t require the opening of a component or system 
+- Visual observation of machine application and operation 
+- Coordination of all Field machine related activities    
+ 
+Shop Service 
+ 
+- Scheduled machine maintenance & repair, including 
+o Preventive Maintenance 
+o Component Exchange (PCR) 
+o Major & Minor Repairs  (Backlogs executed outside the normal windows of 
+opportunities) 
+- Unscheduled Repairs  
+- General coordination of the entire maintenance operation 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 4 of 21 
+Field Service 
+ 
+The Field Service is a very dynamic function that must respond quickly and effectively to all 
+types of service calls. The right personnel properly equipped and trained in the correct working 
+processes are key issues to consider at the time of the implementation of the Field Service. 
+ 
+The first process to review and understand is the overall Field Shift operation, the tasks that 
+the field crew performs to keep repairs progressing from one shift to the next. Many sites 
+overlook the importance of an effective handoff of work. Preparing the work and information to 
+ensure the continuation of the field support in the upcoming shifts is often as important as the 
+work actually being done on a given shift. As there are multiple shifts to cover the 24 / 7 mine 
+operation, effective handoff of work is vital to an efficient Field Service operation. 
+ 
+An efficient and effective shift passing is a must and is  based on accurate information. We 
+recognize three groups of information that must be present in the shift passing process: 
+ 
+1.- Equipment Related 
+- Fleet Status Report 
+- Updated Maintenance & Repair Program (Week) 
+2.- Mine / Production Related 
+- Mine active issues (Application and/or Operation) 
+- Production / Operation Plan 
+- Mine accessibility 
+3.- Resources 
+ - Personnel 
+       
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 5 of 21 
+ 
+1.- Equipment Related Information 
+ 
+The incoming shift must quickly identify the status of all the equipment in the fleet and the Field 
+Service priorities to follow. The Equipment Status Report is a commonly used tool for this 
+purpose. 
+ 
+ 
+ 
+ 
+Equipment operating, on stand 
+by, or down and location. It also 
+provides a balancing count to 
+ensure all equipment are 
+considered / included. 
+ 
+ 
+A quick summary of the support 
+equipment status is also 
+included in the report. 
+ 
+Service priorities 
+ 
+ 
+            
+Example of a Field Service Report 
+ 
+The Fleet Status Report gives a quick  and effective view of the current status of all the 
+equipment of the operation. Now the M&R Schedule for the week gives the other portion of the 
+information needed. “What equipment is scheduled to be down?” 
+ 
+ 
+ 
+ 
+ 
+The updated M&R program is 
+submitted daily to the Field Service 
+crew. 
+ 
+Field Service follows up the 
+program and assists with the 
+stoppage of the machines when 
+needed. 
+ 
+ 
+ 
+ 
+ 
+2.- Mine / Production Related Information 
+Mine Operation ABC
+      Fleet Status
+Shift: A Date: 18-Sep-06
+Total Equip. Operating Available Avail % Down Shop Tires Field
+Fleet 1 17 13 1 82% 3 2 1 0
+Fleet 2 14 11 1 86% 2 1 0 1
+Fleet 3 9 9 0 100% 0 0 0 1
+Fleet 4 17 15 0 88% 2 1 0 1
+Total 57 48 2 88% 7 4 1 3
+Service Field Vehicles
+Vehicle Status Observations
+FS - 101 Available OK
+FS - 102 Available OK
+FS - 103 Available Scheduled for PM; Replacement already requested.
+General Observations:  
+- Priority 1 is Truck 107. Located in Blasting Area. 
+- Truck 287 scheduled for 200 h PM at 5:00 AM
+Maintenance & Repair Program                                   Week: 43
+Date: September, xx, 2006
+Time Friday Saturday Sunday Monday Tuesday Wednesday Thursday
+ 05:00 110 - PM2 108 - PM2 103 - PM1 106 - PM1 101 - PM2
+ 07:00
+ 09:00 109 - PM1 108 PCR 108 PCR 108 PCR 108 PCR
+ 11:00 107 - PM3
+ 13:00 105 SR
+ 15:00
+ 17:00
+ 19:00
+ 21:00
+ 23:00
+     Downtime - Availability Projection
+PM h
+8 16 16 8 8 0 0
+Backlogs 2 4 8 0 0 0 0
+# Backlogs
+Scheduled h 8 20 24 24 24
+Unscheduled h 12 12 12 12 12 12 12
+Total h 30 32 36 40 44 36 36
+Est. Availability 88% 87% 85% 83% 82% 85% 85%
+     Labor Hours Required - Projection
+MH - PMs 40 80 80 40 40 0 0
+MH - Backlogs 12 24 32 8 8 0 0
+Scheduled h 24 0 0 60 72 72 72
+Unscheduled h 48 48 48 48 48 48 48
+MH - Required 124 152 160 156 168 120 120
+MH - Available 150 150 150 150 150 150 150
+Notes:
+- Truck 105 is still due for this week. We will confirm the new date for entering this unit to the   
+  Shop.
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 6 of 21 
+ 
+The second type of information the Field Service crew needs is that related to the mine 
+operation. Where are the machines working? What is the safest / quickest access to the 
+working areas? Are there any safety issues? Are there any designated blasting locations or 
+times? Etc.  
+ 
+We recommend considering three types of mine related information: 
+ 
+- Production / Operation Plan. The 
+production plan identifies the current and 
+future mine work zones. 
+ 
+-  Mine accessibility. The access roads in 
+open pits mines are very dynamic, 
+changing constantly according to the 
+production needs. The Field Service crew 
+has to be updated regularly. A good 
+practice is to include this review in every 
+shift changes.  
+ 
+- Mine active issues (application  and/or 
+operation). Applications and operation 
+related issues that were detected through 
+direct observations or condition monitoring 
+analysis and are currently active.  
+  
+3.- Resources.  
+ 
+What are the resources the shift has to run the shift (personnel and equipment). The resources 
+situation has to be defined quickly to correct any shortcomings with the central maintenance 
+shop. The shift has to be fully equipped in a short time, to be ready to continue the service of 
+the work in progress and accept new calls. 
+ 
+ 
+ 
+ 
+ 
+Good example of a well-equipped field vehicle. 
+ 
+ 
+ 
+ 
+ 
+ 
+All necessary information is received, the resources reviewed and augmented as necessary. Now 
+is time to organize and distribute the work,  
+ 
+  
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 7 of 21 
+ 
+ 
+ 
+1 - 2 Based on the equipment that are down, two first actions are 
+taken. Personnel is assigned to specific machines being serviced 
+in the field and if necessary some services are transferred to the 
+main shop. 
+ 
+ 
+3 - 4 The rest of the Field Service crew is organized to cover the 
+different sectors of the mine and the field base if one is 
+established. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The mine sectors are assigned to different 
+Field Service crew teams.  This is just the 
+starting point. During the shift operation 
+the service – team coordination is 
+constant and very dynamic. 
+Communication, within FS teams and the 
+dispatch is very critical.   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+In some operations and because of the 
+extension of the mine, a good idea is to 
+establish a field base, dedicated to short 
+services and to reduce the pressure on 
+the mobile field service teams. 
+ 
+ 
+ 
+ 
+ 
+The oncoming shift receives the information from the former shift. The resources are reviewed 
+and augmented if necessary and the personnel are organized to cover all production areas of the 
+mine. Now it’s time to run the shift, to perform the tasks that normally takes place during the shift.  
+ 
+Field Base
+Field Crew 1: West & North sectors of the Mine
+Field Crew 2: East & lower benches of the Mine
+Field Crew 3: South of Mine and SE Dumps
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 8 of 21 
+ 
+Receive new service Requests
+new calls. These calls are unscheduled and the attention 
+priority is given by operations. The Field Service crew 
+accepts the call, records it in the shift log and assigns 
+personnel according to resource availability and location. 
+ The first responsibility is to accept and provide support to 
+ 
+Control execution of Field Work
+multiple locations at the same time. An efficient follow up of 
+all the work in progress must be performed. Critical points to 
+observe are the diagnostic /determination of the problem and 
+needed repairs and the decision to repair the machine in the 
+Field or send it to the Shop. The Field as we said before is 
+the first point of contact from maintenance and is dedicated 
+to small / short repairs that don’t require extensive labor or 
+disassembly of components / systems of the machine. 
+ The work in progress in Field Service can be happening in  
+ 
+Coordinate scheduled equipment  The Field Service is the “owner” of all equipment in the Field,  
+to main shop
+scheduled to the shop or other repair centers, so they know 
+of the destination and reason of the repairs and can assist in 
+the stop or movement of the machines if necessary. 
+    maintenance wise. FS has to be informed of all equipment  
+ 
+Supervise / control equipment to In the same way the Tire Shop program (Shop & Field) has  
+Tire Service
+ 
+   to be communicated to Field Service for the same reasons 
+as above. 
+Perform application/operation  FS crew is constantly in the mine driving all existing roads. 
+observations
+the visual detection of the mine application and operation 
+issues that can be pursued to eliminate or reduce the impact 
+on the equipment. 
+    We encourage incorporating in the FS responsibilities 
+ 
+Supervise / support other Field As we stated before, Field Service is the “owner” of all  
+Maintenance related activities
+ 
+ maintenance activities that happen in the field. Field Service 
+has to be informed and their responsibilities includes the 
+follow up and general supervision of the execution of the 
+work scheduled. 
+ 
+ 
+ 
+ 
+ 
+Shop Service 
+ 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 9 of 21 
+The shop is where the majority of the maintenance activities are executed and coordinated. 
+These maintenance activities can be scheduled and / or unscheduled and include: 
+ 
+In the case of scheduled activities: 
+ 
+- Preventive Maintenance 
+- Component Exchange (PCR) 
+- Major & Minor Repairs   
+ 
+And for the unscheduled activities: 
+ 
+- Major, long repairs that cannot be handled in the field 
+- Any kind of repairs that represent a risk of contamination of any system or compartment on 
+the machines 
+- Any repair that because of the work load of the field crew needs to be taken under the 
+responsibility of the main shop 
+ 
+Fleet characteristics, facilities, logistics, labor availability, level of competencies, site 
+characteristics, etc. are the type of inputs that are captured in the maintenance strategy and are 
+used to define and organize the work force and resources in the main shop. These resources 
+are normally organized and distributed in multiple shifts to properly support the mine operation, 
+that normally works under a 24 hours 7 days a week regimen. 
+ 
+ 
+It is a continuous operation of multiple shifts that has to 
+be managed correctly to ensure efficiency at all times. 
+Shift by shift, the work on the equipment is completed. 
+In the same way as in the field service operation 
+discussed previously, efficient shift passing is a must. 
+ 
+In the case of the shop, the key information that is 
+required at the beginning of each shift is similar as that 
+identified in the field service, but with slightly different 
+objectives: 
+ 
+1.- Machine related Information 
+-    Fleet Status Report 
+- Work in progress, work performed and pending (shift 
+report). 
+-   Updated Maintenance & Repair Program 
+- Service Packages for machines that are scheduled 
+for service. 
+ 
+2.- Mine / Production Related 
+-   Mine active issues (Application &/or Operation) 
+-   Production / Operation Plan 
+-   Mine accessibility 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 10 of 21 
+ 
+3.- Resources 
+- Personnel 
+- Facilities 
+- Support Equipment 
+ 
+ 
+As stated before, the information the shop operation needs for the shift start up is very similar to 
+that analyzed in the field service section, but because of the nature of  the work that is 
+performed in the shop, this information must be focused in a different way to cover the 
+continuation of longer repairs and the scheduled work. 
+ 
+1.- Machine Related Information 
+ 
+In this case the shop must always have a clear picture of what is the status of all machines and 
+any work that is being executed in the shop and all other related areas, such as the tire shop, 
+welding, the field, etc. 
+ 
+There are two main means that shift operations maintain this information: Dedicated Bulletin 
+Boards and the Shift Report. Both compliment each other. 
+ 
+  This is a good example of a Fleet Status Board currently in use in Samarco, Sotreq operation in Brazil.  
+ 
+While the status board provides a quick view of the status of all machines in the fleet, the shift 
+report is used to summarize the work already completed and any remaining tasks that are 
+necessary to complete the maintenance or repair.   
+ 
+The other pieces of information that are also included at this point are the updated 
+Maintenance & Repair Program and the corresponding Service Packages. The M&R program 
+contains the list of machines with the services scheduled and the service packages include all 
+the needed instructions to perform those scheduled services or repairs. 
+ 
+2.- Mine / Production Related Information   
+ 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 11 of 21 
+In the case of the shop, this information is made available as a reference to be used if 
+necessary. Normally when the shop personnel have to perform any work in the field they are 
+assisted by the field service personnel. 
+ 
+3.- Resources 
+ 
+The information related to resources is much more critical in the case of the shop. The shop 
+operation involves the use of multiple resources, such as facilities, special equipment, tooling, 
+and of course the personnel scheduled and available to perform the work. 
+  
+Every shift has distinct steps or phases that are important to observe. We recognize 8 
+different stages during the shift period:  
+ 
+- Shift Passing. The incoming shift receives the information from the outgoing shift. 
+- Shift Organization. The resources are organized based on the jobs to be performed. 
+- Communication. The news and general maintenance operation status is communicated in 
+the daily coordination meetings. 
+- Setting Priorities. Review / Define / confirm priorities for work continuation.   
+- Shift Operation. Executing the services and repairs as planned. 
+- Complete Records. Close work orders and complete necessary records. 
+- Next Shift Preparation. Prepare information for incoming shift. 
+- Shift Passing. The incoming shift receives the information of the work status and priorities. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 12 of 21 
+ 
+ 
+Now that we have the shifts organized and functioning in both operational areas (field and shop), it is 
+time to look at two typical types of services that take place in these areas … the scheduled and / or 
+unscheduled repairs. 
+ 
+Unscheduled Repairs 
+ 
+An unscheduled stop by definition is an event that happens at random. The chain of events or 
+stages that are important to consider in this type of service are:  
+ 
+- Operator communicates machine down. 
+- Dispatch requests service to the FS crew. 
+- Initial assessment of the problem and call validation. 
+- Troubleshooting of failure. 
+- Decision: Repairs must be done immediately and can it be done in the field or shop? 
+- Based on the result of the assessment three actions can be taken: 
+o Repair in the Field. 
+o Generate a Backlog. 
+o Transfer machine and repair to the Shop. 
+- Generate records. 
+- If repair is completed in the field, the machine is release to operation. 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 14 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 13 of 21 
+ 
+        Machine Down, Operator    Initial assessment and problem validation,  
+         Communicates to Dispatch,    Troubleshooting / diagnosis of failure 
+        Dispatch requests service 
+ 
+The decision of making the repair immediately and performing it in the field or the shop has 
+to be made as soon as the diagnosis defines the repair actions needed. 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+If the decision is to send the repair to 
+the shop, the equipment with the 
+supporting documentation (Work 
+Order) must be transferred. In some 
+cases, the machine can be moved to 
+the shop in some others the machine 
+remains in the mine.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 15 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 14 of 21 
+ 
+ 
+ 
+ 
+ 
+At the time of executing the repairs, the Backlogs 
+Pending and Ready to Go lists must be reviewed to 
+see if the repair was already covered by a Backlog.   
+ 
+The Backlogs Ready to Go list must be reviewed to 
+see if there are any Backlogs that can be done in 
+parallel during the window of opportunity of the 
+unscheduled stop. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+At the end of the repair(s), the machine is released to operation, the mine 
+dispatch is informed and all maintenance records are completed and closed for 
+that particular machine. The records to be completed are normally the work 
+order and the shift reports (field and shop if it is the case). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Scheduled Repairs 
+ 
+In the case of Scheduled repairs, this type of service happens in the Shop and involves the 
+following chain of events: 
+ 
+- Machine / Service is included in the M&R program or is requested in advance. 
+- Machine stop and transfer to the shop is coordinated with Dispatch. 
+- The scheduled repairs / services are executed according to the plan. 
+- Pending tasks are passed to the next shift if necessary. 
+- Repairs are completed and a post repair inspection is peformed. 
+- Close documentation (WO, checklists, Blogs, shift reports…)  
+
+===== PAGE 16 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 15 of 21 
+- Release machine to work. 
+ 
+ 
+ 
+In this case, the repair or service is included in the weekly M&R program and the repairs to be performed are 
+precisely defined in the dedicated documentation for a specific machine. Work Orders, Gantt Charts, Special 
+Instructions, etc., are included in what we call the “Service Package”. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The equipment is released to the 
+shop and the scheduled services 
+are executed. 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 17 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 16 of 21 
+ 
+ 
+In the case of repairs that are scheduled or last for more than a shift, the information has to be passed from 
+shift to shift until the tasks are completed. The outgoing s hift reports on what was performed and more 
+importantly on what are the next steps that the incoming shift has to continue working. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+At the completion of the repairs, the shop crew must test the 
+machine and perform the post – repairs inspections.  The machine 
+is then released to operation. The mine dispatch is informed and 
+the maintenance records are closed and submitted at the end of 
+the shift to Planning. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 18 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 17 of 21 
+3.0 Implementation Steps 
+ 
+The implementation steps to follow will depend on the current situation of your mine site 
+operation. What we are recommending as a first step is a thorough evaluation of your 
+maintenance operation. Determine the “As Is” situation. Compare with the recommended model. 
+Determine areas of opportunities and finally establish an action plan to correct or improve those 
+areas of opportunities. 
+ 
+1.- Evaluate Your On Site Maintenance Operation 
+  
+- Apply GAT (Gap Analysis Tool) - available through Global Mining Product Support division 
+ 
+ 
+ 
+ 
+      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The GAT is a su rvey dedicated to evaluating the 10 different processes recommended by 
+Caterpillar Global Mining. 
+ 
+ 
+2.- Establish the “As Is” Situation  
+ 
+ In establishing the “As Is” situation, we recommend performing two distinct activities: 
+ 
+• Determine the Process Flow Diagrams of all your processes implemented on site. 
+ 
+Based on the observations guided by the GAT tool and the on site investigation, draw 
+and document the current processes on site. 
+ 
+• Establish the Baseline.  
+ 
+Measure the current performance results and document them for future reference. 
+Apply the set of metrics recommended in CGM document dedicated to “KPI’s for 
+Evaluating Maintenance and Repair Processes”  
+ 
+ 
+ 
+
+===== PAGE 19 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 18 of 21 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+This document contains the KPI’s included in the GAT, calculation methodology and 
+interpretation guidelines. 
+ 
+3.- Determine the Areas of Opportunities 
+ 
+Determine the areas of opportunities by comparing the “As Is” situation with the 
+recommended processes detailed in this Strategic Best Practices and the Process Maps 
+available through Cat Global Mining. 
+ 
+4.- Define the Action Plan 
+ 
+• Document your findings. The use of a 3-W form is recommended to record your 
+findings, opportunities, and plans. The 3-W form will define, “What needs to be 
+done”, “Who will do it”, and “When it will be completed”. 
+• Devise and document the solutions for improving or correcting the weaknesses. Use 
+the related BP’s to support your search for ideas / solutions. Use a separate column 
+in your 3W form to record the solution or actions to be taken. 
+• Analyze and determine resources needed, time to implement, and expected 
+benefits. 
+• Prioritize the implementation of the different actions based on Return On Investment 
+(ROI) results. 
+• Assign responsibilities and expected completion dates for each of the activities.  
+ 
+5.- Get the “Buy-In” of the On Site Organization 
+ 
+It is very important to get the buy -in of the on site organization. They are the ultimate 
+“process owners” of the maintenance & repair strategy.  Present the action plan, the 
+implementation strategy and the expected benefits. Involve them in the implementation of the 
+solutions and plan an in-depth training of all the involved personnel. 
+ 
+6.- Implement 
+ 
+Execute the implementation plan.   
+
+===== PAGE 20 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 19 of 21 
+ 
+7.- Follow up 
+ 
+Follow up closely the implementation of your action plan.   
+ 
+• Set up “check points”. 
+• Review compliance of committed dates for tasks completion. 
+• Receive & analyze work progress from the person specifically responsible. 
+• Reinforce the positive results. 
+• Identify and eliminate threats and obstacles. 
+• Support the ownership of the on site organization  
+•    Support the positive change of personnel. Correct the negative attitudes or opposition. 
+• Make adjustments as necessary. 
+ 
+8.- Measure the Results – Improve / Adjust If Needed 
+ 
+It is absolutely necessary to measure the results of the improvements implemented at the 
+level of each individual process and at the final outcome, fleet performance. 
+ 
+Measure and trend the behavior of the KPI’s selected for establishing the “baseline” when the 
+“As Is” situation was established. Compare and adjust as necessary.  
+ 
+ 
+4.0 Benefits 
+ 
+Repair Management is the function in the overall Maintenance & Repair process dedicated to the 
+execution of repairs. It is where all the plans and strategies are executed. A properly structured 
+organization must be adequately  equipped with tooling, equipment and appropriate facilities. It 
+must follow clear and effective working procedures. It is the foundation necessary to meet the 
+goals of efficiency and effectiveness. The BP presented here and the detail documentation of the  
+Repair Management flow diagrams will give you the information to size the task before you.  
+ 
+Repair Management is another important part of the puzzle of the recommended Maintenance 
+and Repair Processes supporting the ultimate goal of safe and productive operation of the mining 
+equipment at the lowest possible cost per ton. 
+ 
+ 
+ 
+5.0 Resources Required 
+ 
+The resources required will vary widely with the characteristics of your operation, such as size of 
+the fleet of equipment, geographical location, complexity, maintenance strategy, etc. All these 
+factors will in the end determine the type of organization and the facilities and equipment that will 
+be needed.  
+ 
+In terms of human resources, there are some key positions that must be considered at the time of 
+defining and structuring the organization.   
+
+===== PAGE 21 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 20 of 21 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+6.0 Supporting Attachments / References / Resources 
+ 
+The following documents are available to support the use of KPI’s when measuring performance 
+results of mining equipment and M&R processes. 
+ 
+Performance Metrics for Mobile Mining Equipment 
+ 
+Metrics (KPI’s) to assess process performance 
+ 
+ 
+7.0 Related Best Practices 
+ 
+Cat Global Mining M&R Processes BP 1007-2.0-1100 
+Preventive Maintenance  BP 1007-2.0-1101 
+Condition Monitoring   BP 1007-2.0-1102 
+Backlog Management   BP 1007-2.0-1103 
+Planning & Scheduling   BP 1007-2.0-1104 
+Parts Management   BP 1007-2.0-1105 
+Component Management  BP 1007-2.0-1106 
+Human Resources / Training  BP 1007-2.0-1108 
+Performance Evaluation  BP 1007-2.0-1109 
+Continuous Improvement  BP 1007-2.0-1110 
+M&R Operations 
+Supervisor
+Shop Shift 
+Supervisor
+Field Shift 
+Supervisor
+PM Supervisor
+Leads the M&R operation to assure the 
+effective and efficient support of scheduled 
+and unscheduled repairs
+Coordinates and directs shop resource 
+priorities to meet daily repair goals
+Manages daily preventive maintenance plan 
+Coordinates and directs field maintenance 
+and repair resources… Boss of the field 
+operations during his shift.
+Shop Technician
+Field Technician
+Executes shop repairs
+Performs field diagnosis and repairs
+
+===== PAGE 22 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repair Management – M&R Processes 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-2.0-1107 
+Caterpillar Confidential:  GREEN         Page 21 of 21 
+ 
+8.0 Acknowledgements 
+ 
+This best practice was written by: 
+ 
+Abelardo A. Flores 
+Sr. Equipment Management Consultant 
+Caterpillar Global Mining 
+Flores_Abelardo@cat.com 
+Phone:  1-309-360-2767

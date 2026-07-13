@@ -1,0 +1,573 @@
+SOURCE: 1.0 Maintenance & Repair\1.04 Repair Management\3. Quick Win\Process for Removing Rust from Fuel Tanks.pdf
+PAGES: 10
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+March 2013 
+1302-1.04-1311 
+  
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Process for Removing Rust 
+from Fuel Tanks 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+Process for Removing Rust from Fuel Tanks............. 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 8 
+5.0 Resources Required .......................................... 8 
+6.0 Supporting Attachments / References ............... 8 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ............................................ 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+VENDOR DISCLAIMER STATEMENT 
+Although Caterpillar does not endorse this particular supplier, Ferreyros has experience with the following products or 
+companies. We welcome additional supplier recommendations from our dealer network.  
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Removing Rust From A Fuel Tank 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1302-1.04-1311 
+Caterpillar Confidential:  GREEN         Page 1 of 9 
+1.0 Introduction  
+ 
+A new process to remove rust from a fuel tank has been implemented at Machining Workshop in 
+Ferreyros S.A using a chemical rust solvent instead of sandblasting.  The process reduces cost 
+to clean fuels tanks by 70%. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The focus of this Best Practice is a new method to remove the rust from a fuel tank by applying a 
+chemical solvent (see the picture 1).  Solvent selected does not have any environmental or safety 
+hazards, is very effective, and can be reused. This operation takes two hours for each side of fuel 
+tank and can be performed by one technician.  
+ 
+Dealer uses Evapo-rust.  Evapo-rust information and specifications is ready available on internet 
+and product available through multiple sources. 
+ 
+ 
+                                                                              
+Picture 1. Evapo-rust barrel liquid (55 gallons) 
+ 
+Our former process to clean rust from fuel tanks was to cut a plate out of the fuel tank for 
+access and sandblasting the inside of the tank to remove rust.  The process required up to 
+four technicians (two welders, two handlers) and took a long time (five days approximately). 
+ 
+With the new process using solvent, time to clean the fuel tanks was reduced from five days down 
+to 1.5 days.  Costs include the cost of the solvent was reduced from $6500 to $818. 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Removing Rust From A Fuel Tank 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1302-1.04-1311 
+Caterpillar Confidential:  GREEN         Page 2 of 9 
+ 
+The results after application of Evapo-rust inside the fuel tank are shown in the picture 2. 
+ 
+ 
+ 
+Picture 2. Before                                                              After 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Removing Rust From A Fuel Tank 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1302-1.04-1311 
+Caterpillar Confidential:  GREEN         Page 3 of 9 
+3.0 Implementation Steps 
+ 
+ 
+ 
+Process  
+ 
+• Check rust level inside the fuel tank through its holes (See the picture 3). 
+ 
+ 
+ 
+ 
+ 
+Picture 3. Inside the fuel tank 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Removing Rust From A Fuel Tank 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1302-1.04-1311 
+Caterpillar Confidential:  GREEN         Page 4 of 9 
+ 
+• It is not necessary to completely fill the tank with solvent.  With only a partial fill, the tank can 
+be rotated in order to clean all the rust inside the tank.  Two hours in each position is sufficient 
+for cleaning the rust.  For example, in the following pictures the fuel tank 785C was cleaned 
+using 110 gallons of solvent.  Solvent can be reused. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fill the fuel tank and first position Second position 
+Flip position Third position 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Removing Rust From A Fuel Tank 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1302-1.04-1311 
+Caterpillar Confidential:  GREEN         Page 5 of 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fifth position Fourth position 
+Sixth position Drain the Evapo-rust liquid 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Removing Rust From A Fuel Tank 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1302-1.04-1311 
+Caterpillar Confidential:  GREEN         Page 6 of 9 
+ 
+• Clean inside the fuel tank with cold water. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Picture 4. Cleaning with cold water 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Removing Rust From A Fuel Tank 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1302-1.04-1311 
+Caterpillar Confidential:  GREEN         Page 7 of 9 
+• The fuel tank must be completely dry inside. Apply VCI (Vapor Corrosion Inhibitors) after that. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Picture 5. Application of VCI 
+ 
+• Finally, the fuel tank is wrapped with Stretch Film. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Picture 5. Wrapped tank with Stretch Film 
+ 
+ 
+
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Removing Rust From A Fuel Tank 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1302-1.04-1311 
+Caterpillar Confidential:  GREEN         Page 8 of 9 
+4.0 Benefits 
+ 
+• Reduce the use of labor 80%. 
+• Excellent rust removal 
+• No messy residues to remove 
+• Reduce the turnaround time to remove rust in 70% by each fuel tank (see the picture 6). 
+• Reduce the cost to remove rust in 88% by each fuel tank (see the picture 6). 
+• Evapo-rust has multiple other rust removal applications. 
+ 
+ 
+ 
+Picture 6.  Comparison between cost and time – after and before this best practice 
+ 
+ 
+5.0 Resources Required 
+ 
+• See the picture 6. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Removing Rust From A Fuel Tank 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1302-1.04-1311 
+Caterpillar Confidential:  GREEN         Page 9 of 9 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Name     Frank Córdova R. 
+E mail     frank.cordova@ferreyros.com.pe 
+ 
+ 
+Recognition: 
+ 
+Team:                  Miguel Mauriola / Operations Support Chief 
+     Frank Córdova / Operation Support Assistant 
+                        Jose Huayamis / Technical Comunicator 
+     Liliana Falcón/Planning Chief 
+  
+Sponsor:              Rodolfo Gerstein / Manager Machine Shop

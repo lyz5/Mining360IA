@@ -1,0 +1,239 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\3500 Crankshaft Installing Guide Block.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+May 2011  
+0911-4.03-1229  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+3500 Crankshaft  Installing 
+Guide Block 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC)  
+ 
+MARC  
+Management 
+ 
+ 
+ 
+3500 Crankshaft  Installing Guide Block .................... 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 3 
+5.0  Resources Required .......................................... 4 
+6.0  Supporting Attachments / References ............... 5 
+7.0  Related Best Practices ...................................... 5 
+8.0  Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Crankshaft  Installing Guide Block 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0911-4.03-1229 
+Caterpillar Confidential:  YELLOW          Page 1 of 5 
+1.0 Introduction  
+ 
+Many Trakindo branches overhaul engines and some technicians have found it difficult to install the 
+crankshaft.   This can affect the efficiency of the installation, expose the component to potential 
+damage, and reduce cleanliness and safety.  To improve the crankshaft installation, Trakindo has 
+created a standard operating procedure to install the crankshaft using guide blocks. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Many times when installing a crankshaft to a cylinder block, it will collide with the cylinder block. This 
+Best Practice helps the technician avoid the potential collision when using the proper lifting equipment 
+for this installation.   The guide blocks presented in this document assist in guiding crankshaft’s main 
+journals into the blocks main bearing. 
+ 
+ 
+Figure 1:   Parts needed for guide blocks. 
+ 
+ 
+ 
+Figure 2 :  Guide blocks and bolts. 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Crankshaft  Installing Guide Block 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0911-4.03-1229 
+Caterpillar Confidential:  YELLOW          Page 2 of 5 
+ 
+Figure 3:   Guide block location on cylinder block. 
+ 
+ 
+ 
+Figure 4:   Guide block in front and rear cylinder block bearing webs. 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Crankshaft  Installing Guide Block 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0911-4.03-1229 
+Caterpillar Confidential:  YELLOW          Page 3 of 5 
+3.0 Implementation Steps 
+ 
+- Fabricate the Guide Block from solid rubber or po lyurethane.  
+- Integrate use of the Guide Blocks into the standa rd operating procedure. 
+o Install the guide blocks after the upper half of t he main bearings are installed. 
+o Assure shaft is handled with crane and appropriate  strap/chain/fixture. 
+- Train employees to use the new procedures/equipme nt. 
+- Review process/equipment performance once establi shed. 
+ 
+4.0 Benefits 
+ 
+Safety and Installation Time 
+- Well designed/organized installation will improve  the time to install and safety. 
+ 
+Quality 
+- Guide blocks allow crankshaft installation with l ittle or no journal denting opportunities.   
+- A more effective/simplified installation process will promote higher technician professionalism, 
+higher standards, and increased brand image. 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Crankshaft  Installing Guide Block 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0911-4.03-1229 
+Caterpillar Confidential:  YELLOW          Page 4 of 5 
+ 
+5.0 Resources Required 
+ 
+Tools 
+- 4 x (89 x 57.2 x 80) mm fabricated solid rubber/p olyurethane  
+- 4 x 2N-5014 Bolt 
+ 
+ 
+Figure 5 :  Drawing of guide block to be fabricated. 
+ 
+People 
+- Establish the new process, layout, and equipment improvement through the team. 
+- Remove replaced items from less effective cranksh aft installation processes.  Sustain the 
+gains. 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+3500 Crankshaft  Installing Guide Block 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0911-4.03-1229 
+Caterpillar Confidential:  YELLOW          Page 5 of 5 
+ 
+6.0 Supporting Attachments / References 
+ 
+Working Instructions – Install Crankshaft Using Guide Block  
+(WIN Install Crankshaft Using Guide Block.doc) 
+ 
+Cat tooling for C175 Crank Installation Guides (4) 417-2349 
+Photos of use at LEC attached 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Djati Waloejo 
+Corporate Best Practice 
+Product Support Standard and Development 
+PT. Trakindo Utama - Head Office 
+Email: dwaloejo@trakindo.co.id 
+Office: 62217822373 ext: 1121 
+ 
+  
+Expertise by : 
+Simon Tingay 
+Technical Support Manager 
+Product Support Division - Service Mining 
+PT. Trakindo Utama - Head Office 
+Email: simon.tingay@trakindo.co.id 
+Office: +62 21 782 2373  Ext.1223

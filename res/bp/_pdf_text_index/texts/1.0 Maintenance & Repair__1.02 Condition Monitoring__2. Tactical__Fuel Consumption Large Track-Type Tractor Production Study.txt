@@ -1,0 +1,370 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+January 15 
+1105-1.02-1233 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Fuel Consumption / Large 
+Track-Type Tractor 
+Production Study 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Fuel Consumption / Large Track-Type Tractor 
+Production Study ........................................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Caterpillar dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or 
+warranty about the information contained in this document or the products referenced herein. Caterpillar welcomes 
+additional “Best Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fuel Consumption / Large Track-Type Tractor 
+Production Study 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1105-1.02-1233 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+1.0 Introduction  
+Fuel Consumption is an important element of the cost per ton / cost per yard equation. This best 
+practice deals with measuring the fuel consumption of a Large Track-Type Tractor during a 
+production study. It also suggests guidelines for measuring the time, volume and centroidal push 
+distance of a track-type tractor productivity study. 
+ 
+2.0 Best Practice Description 
+This best practice recommends measuring fuel consumption by weight rather than by volume. It 
+recommends completely draining the tractor’s fuel tank before the study, and then transferring a 
+weighed, measured amount of fuel from an auxiliary fuel tank to the tractor’s fuel tank. Upon 
+completion of the production study, the remaining fuel is transferred back to the auxiliary fuel tank and 
+weighed. The weight of the fuel can then be converted into liters/gallons.    
+ 
+ 
+  
+  
+ 
+Above left, a 250-gallon plastic tote is utilized for an auxiliary fuel tank in which the fuel is transferred 
+into the tractor by gravity feed. Fuel is drained out of the tractor by gravity feed.  
+Middle, 55-gallon steel drums are utilized for auxiliary fuel tanks in which the transfer of fuel into the 
+tractor occurs by an electric transfer pump. Fuel is drained out of the tractor by gravity feed. Above 
+right, technician reads scale weight of barrel of diesel fuel.         
+ 
+Key Elements of A Productivity Study: 
+1. Time  
+2. Volume 
+3. Distance 
+4. Machine Health 
+5. Operators 
+6. Pit Study vs. Area Study  
+ 
+2.1 Time 
+• Time can be measured as a single segment from start to finish or it can be measured in cycle 
+segments such as doze time, carry time, out-of-pit time and reverse time.  
+• It is recommended to use a digital stopwatch displaying hundredths of a minute.  
+• A study can be timed in minutes and seconds, but the key is not mix the two type of 
+measurement.  
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fuel Consumption / Large Track-Type Tractor 
+Production Study 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1105-1.02-1233 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+2.2 Volume 
+• Volume is measured by means of a survey taken before and after a test.  
+• Recommend the customer or a third party conduct the survey as it makes the study more 
+creditable.  
+• In a non-fuel production study, the cut area volume and corresponding average push distance, 
+(centroidal push distance), is all that is required.  
+• In a fuel production study, the cut area volume and corresponding centroidal push distance is 
+required as well as the centroidal push distance for the fill area.  
+• It is desirable to match the fill area volume with the cut area volume, but in reality is difficult to 
+achieve.  
+ 
+2.3 Distance 
+• Production is a function of the cycle time and blade load capabilities. One of the variables 
+affecting cycle time is the distance the blade load of material is moved. If two tractors move 
+material the same distance, cycle times, as a function of each tractors design and capability, 
+can be compared and analyzed. However, if the doze distances are not the same for the other 
+tractor, then cycle times are not directly comparable, nor are the rates of production.  
+• In a production study, it is possible through surveying to not only determine the pit volume but 
+also the location of the pit centroid – as defined by the centroidal push distance “L”. The 
+centroid is also defined as the center of mass of the material moved. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+• When measuring fuel consumption during a productivity study, it is important to establish a 
+centroidal push distance for both the cut area and the fill area. Combining the two centroidal 
+distances provides an overall centroidal distance for that pit. Caterpillar Competitive Report 
+TEXR 0524 illustrates how centrodial distances are applied to a Productivity Study. This report 
+can be found in the Global Sales Library. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Centroidal Distance = Distance A+ Distance B 
+Fill area 
+Cut area 
+B 
+A 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fuel Consumption / Large Track-Type Tractor 
+Production Study 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1105-1.02-1233 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+ 
+ 
+ 
+ 
+ 
+The above picture illustrates the measurement of a centroidal push distance for a test pit of a track-
+type tractor fuel / production study.   
+ 
+2.4 Machine Health  
+• Before the study, carefully select tractors of equal comparison. Key comparisons include blade 
+capacities; ripper or counterweight equipped, track width and grouser height.  
+• Make certain machines are within specifications. Be sure to account for the following items:  
+• Torque Converter Stall 
+• High Idle 
+• Low Idle 
+• Boost pressure 
+• Fuel Filters  
+• Air Filters  
+• Ground Engaging Tools 
+- Cutting Edges … new vs. old and thick vs. thin, as it can effect penetration  
+- Ripper Tooth … new  
+• Grouser Height … affects traction and productivity  
+ 
+2.5 Operator 
+• Operator technique can have an influence on the outcome of the study if more than one 
+operator is used. 
+• Conducting a series of multiple pits and switching operators and tractor location within the pits 
+will produce the highest level of confidence for the study results.   
+• Before the testing begins, adequate time is needed for the operators to become familiar with 
+tractors they are requested to operate.         
+ 
+A 
+B 
+Cut Area 
+Fill Area 
+Centroid = A + B 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fuel Consumption / Large Track-Type Tractor 
+Production Study 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1105-1.02-1233 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+2.6 Pit Study vs. Area Study 
+• The best method to measure Track-Type Tractor productivity is to use a series of single slots.  
+• The single slot reduces the number of variables introduced to the study. 
+• An area dozing study is a valid study but introduces more variability due to operator technique, 
+especially when removing the center berm of material left between slots.   
+• For Width of a single pit, stake out an area that is approximately one and a half times the width 
+of the tractor. Multiple single pits should be utilized in the total study. 
+• For Length, stake out an area that is long enough to accommodate one hour of study time. The 
+length will also vary according to material type and tractor size. 200 feet is a good distance to 
+start from. 
+• For Depth, dig to a depth of approximately 75% to 100% of blade height. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+• The above diagram illustrates the layout of a multiple pit tractor study, switching operators and 
+tractor location in each study.  
+ 
+3.0 Implementation Steps 
+The first step is to estimate the amount of fuel needed to conduct the study. Too little fuel and the 
+tractor will run out of fuel during the study. Too much fuel and it will take longer to transfer the fuel in 
+and out of the auxiliary tank at the beginning and end of the study. Obtain an adequate sized auxiliary 
+fuel tank, large enough to hold the amount of fuel to be used in the study. The auxiliary tank may 
+range from a metal barrel to a plastic tote. 
+ 
+The transfer of fuel is accomplished by either a transfer pump or gravity fed. If gravity fed, then a 
+lifting device such as a service truck equipped with a boom is required. A load link or scale, capable 
+of weighing the amount of fuel to be used during the study, is also required.    
+ 
+4.0 Benefits 
+Measuring fuel consumption by weight is more accurate and reliable than measuring it by volume or 
+the use of fuel flow meters. Topping off the fuel tank before and after a study is a simple method, but 
+is highly dependent on many factors and therefore is not always accurate. The following factors 
+contribute to a low level of confidence when measuring fuel consumption by topping off the fuel tank. 
+The tractor must be parked on a perfectly level location for both fueling and refueling. One must be 
+assured that no voids or air bubbles remain in the tank during fueling. The fuel tank must always be 
+filled to the exact same level, before and after the test. This process requires a calibrated fuel meter 
+for measuring the amount of fuel pumped into the tractor’s fuel tank. This process requires 
+Study 2 
+OP A OP B OP B OP A OP B OP A OP B OP A 
+Pit 1 Pit 2 Pit 3 Pit 4 Pit 5 Pit 6 Pit 7 Pit 8 
+Tractor 
+1 
+Tractor 
+2 
+Tractor 
+2 
+Tractor 
+1 
+Tractor 
+2 
+Tractor 
+1 
+Tractor 
+1 
+Tractor 
+2 
+Study 4 Study 3 Study 1 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Fuel Consumption / Large Track-Type Tractor 
+Production Study 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1105-1.02-1233 
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+compensating for the difference of fuel temperature before and after a test, as hot fuel returned from 
+the engine to the fuel tank will affect the volume of the fuel in the tank.    
+   
+Fuel flow meters mounted on Track-Type Tractors in the past have not proven to be reliable. It 
+requires two flow meters per tractor, one for the fuel supply line and one for the fuel return line. It 
+requires splicing into the fuel lines, which is messy and is difficult to return the fuel lines back to 
+original condition after the study, especially on competitive tractors.     
+ 
+Using auxiliary tanks to measure fuel consumption by weight has been successful with small and 
+medium size track-type tractors by attaching the auxiliary tank to the tractor. The difficulty of this 
+method for large track-type tractors is finding an adequate location to mount a tank large enough to 
+complete a study. The tractor’s fuel lines also need to be spliced. 
+ 
+Caterpillar Large Track-Type Tractors today are equipped with an ECM (Electronic Control Module) 
+that records total fuel burned. The ECM estimates fuel consumption rather than actually measuring 
+fuel consumption. Also, competitive tractors may not have a comparable onboard fuel burn 
+measurement system. 
+ 
+ 
+5.0 Resources Required 
+• Auxiliary fuel tanks, one per tractor. Auxiliary tanks may be in the form of metal barrels or 
+plastic totes.  
+• Fuel Transfer pumps if transferring fuel from barrels. 
+• Appropriate diameter and length hoses for fuel transfer.  
+• Lifting straps. 
+• Service truck equipped with a crane or lifting device.  
+• Load Link or scale capable of weighing amount of fuel needed for the study. 
+ 
+6.0 Supporting Attachments / References 
+Caterpillar D9R vs. Komatsu D275A-5 Competitive Report TEJB 9563 
+Caterpillar D11T vs. Komatsu D475A-5 Competitive Report TEXR 0524 
+ 
+7.0 Related Best Practices 
+0808-2.15-1129  - Managing Fuel Consumption Reduces Cost 
+ 
+ 
+8.0 Acknowledgements

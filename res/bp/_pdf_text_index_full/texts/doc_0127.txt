@@ -1,0 +1,627 @@
+SOURCE: 2.0 Application\2.04 Training - Application\2. Tactical\VIMS Utilization & Operator Training.pdf
+PAGES: 10
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+VIMStm Utilization & 
+Operator Training 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+VIMS
+tm Utilization & Operator Training ....................... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 6 
+4.0 Benefits .............................................................. 8 
+5.0 Resources Required .......................................... 8 
+6.0 Supporting Attachments / References ............... 8 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ............................................ 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+December 2012 
+1211-2.04-1296 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+1.0 Introduction  
+Operator training is critically important to a mine as it can have a real, tangible impact on a site’s 
+overall cost per ton and profitability. Operating Cat equipment within its design parameters will 
+have a positive impact on the physical availability and productivity metrics for the mine. However, 
+despite the importance and impact of this topic, much variation is seen from mine to mine when 
+considering the amount of feedback and instruction that takes place after the initial training 
+course is provided or after a new machine is delivered to the site. This best practice focuses on a 
+tool that may be utilized to a greater degree by many mines to further enhance the operator 
+training program, which is the utilization of VIMS
+tm data. 
+ 
+2.0 Best Practice Description 
+Mining customers may regularly download and analyze VIMStm data in the Maintenance 
+department to determine how machine components and systems are currently functioning in order 
+to proactively preempt an unplanned repair. Or, the Maintenance department may download and 
+analyze data to determine how components and/or systems were behaving before a failure 
+occurred as part of the failure analysis process. Additionally, the Operations department may 
+analyze VIMS
+tm data to understand productivity measurements such as total number of cycles, 
+payload hauled per cycle, cycle time, average loader passes, estimated fuel rate per cycle, etc. 
+Although these are good, legitimate uses of VIMS
+tm data, the Training department is another area 
+of mine management that can benefit from the effective use of VIMStm data. 
+ 
+If the mine management system MineStar is used, VIMS
+tm data is wirelessly and continuously 
+streamed to the mine controller’s office. If the mine does not have the capability to wirelessly 
+stream data back to the office, VIMStm information can be downloaded manually by a service 
+technician. If data is captured in this fashion, a laptop will be needed which has VIMSpc or VIMS 
+2011A installed, along with a VIMS
+tm cable.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+VIMS Utilization & Operator Training 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-2.04-1296 
+Caterpillar Confidential:  GREEN          Page 1 of 9 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+Once the data arrives at the office, it can then be accessed by the Training department supervisor 
+for analysis. Some key areas to consider for analysis include the following: 
+ 
+• Event List: this is a record of all the events / diagnostics that have occurred on a machine, 
+retaining the last 500 machine and system events. Some of the events which can be 
+operator-induced may include: 
+ 
+o Park Brake 
+o Brake Stroke 
+o Payload Overload 
+o Payload Overload Abuse 
+o Payload Overload Dump 
+o Engine Speed 
+o Abusive Shift 
+o Gear Select 
+o Coast in Neutral 
+o Body Position 
+o Body Up / Ground Speed 
+o Fuel Level 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Image of an Events List detailed report indicating payload overloads and abuse, gear select (neutral), and low fuel level. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+VIMS Utilization & Operator Training 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-2.04-1296 
+Caterpillar Confidential:  GREEN          Page 2 of 9 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+• Data Logger: captures real-time machine data similar to the event recorder, but must be 
+activated by the operator or service technician. When taking a Data Logger, data is 
+collected from all VIMStm parameters at a sampling rate of once per second, and a 
+maximum of 30 minutes of data can be stored. Operator trainers and shift supervisors can 
+utilize this tool to help understand how an operator’s technique may be impacting the 
+machine. When using this feature, it is recommended to take several Data Loggers of the 
+same scenario (i.e. truck cycles from loading tool to the dump point, and the return) to 
+ensure the data captured represents reality. Some useful parameters to graph from a Data 
+Logger include: 
+ 
+o Actual Gear 
+o Brake Stroke 
+o Engine Fuel Rate 
+o Engine Speed 
+o Ground Speed 
+o Machine Rack 
+o Max Bias / Second 
+o Max Rack / Second 
+o Park Brake 
+o Payload 
+o Retarder 
+o Throttle Position 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Loading Haul 
+D&
+M Return 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+VIMS Utilization & Operator Training 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-2.04-1296 
+Caterpillar Confidential:  GREEN          Page 3 of 9 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+Image of a Data Logger graph example indicating throttle variation and machine rack spikes in load & dump areas, and 1st gear on 
+approximately half the haul road. 
+ 
+• Cumulative: show number of occurrences of specific events over the life of the machine. 
+Some useful occurrences to track which can be operator-induced are: 
+o Number of Abusive Shifts – 1st to Reverse 
+o Number of Abusive Shifts – Neutral to 1st 
+o Number of Abusive Shifts – Neutral to Reverse 
+o Number of Abusive Shifts – Reverse to 1st 
+o Engine Time @ Idle 
+o Estimated Fuel Used Idling 
+o Estimated Total Fuel Used 
+o Time in Gear (depends on machine, but all gears should be analyzed including 
+neutral and reverse) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Image of a Cumulative report indicating abusive shift occurrences and time spent in different gears. Note: for a particular site, 
+41.5% idle time may be acceptable / reasonable; further analysis would need to be done given the application. 
+ 
+ 
+ 
+ 
+ 
+ 
+FDBnnnnn 
+4.7% 
+7.3% 
+11.3% 
+6.4% 
+9.8% 
+9.3% 
+7.6% 
+41.5% 
+2.1% 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+VIMS Utilization & Operator Training 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-2.04-1296 
+Caterpillar Confidential:  GREEN          Page 4 of 9 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+• Truck Payload: utilizes strut pressure technology for payload measurement. The truck 
+system stores up to 2,400 payload cycles, cycle times, distance, time, and date of each 
+payload. Some of the factors that may be beneficial to track in order to determine 
+deviations from the average are: 
+ 
+o Payload 
+o Load Time 
+o Stopped Empty Time 
+o Stopped Loaded Time 
+o Cycle Time 
+o Fuel Rate (estimate) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Image of a Payload Detail report indicating payload, stopped empty, stopped loaded, and estimated fuel rate. When analyzing this 
+data, one needs to ensure similar data such as cycle distance and travel times is compared. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+VIMS Utilization & Operator Training 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-2.04-1296 
+Caterpillar Confidential:  GREEN          Page 5 of 9 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.0 Implementation Steps 
+In order to be able to analyze the VIMStm reports mentioned above, the following steps need to 
+be in place at a mine site: 
+ 
+1. Develop a regular download process of VIMStm data. This can be either a manual process 
+(using the VIMStm cable mentioned below in Resources Required section), or performed 
+wirelessly using a mine management system such as MineStar which can communicate the 
+data back to the mine office. If the process is done manually, data should be downloaded 
+on a weekly basis or more frequently to ensure analysis that is performed is current and 
+relevant. To establish a wireless process at the site, additional information can be provided 
+by the local Cat dealer.  
+ 
+2. Establish a destination folder on the shared drive where VIMStm data can be stored for the 
+life of the machine. Access to this one-safe-source of VIMStm data can be restricted to 
+those who will be using the data to produce information and reports.  
+ 
+3. Designate an individual (or individuals depending on the size of the fleet and corresponding 
+workload) to perform the analysis of the VIMS
+tm operational data. This individual should be 
+familiar with the mine and equipment operation, as well as have an understanding of 
+VIMStm, its functionality, and its capability. 
+ 
+4. Determine what parameters will be analyzed and what metrics will be tracked. This 
+determination should be made after seeking input from all user groups of the information, 
+such as the Training, Operations, and Maintenance departments.  
+ 
+5. Analyze the parameters and produce the reports as agreed upon in the previous step. 
+Analysis and reporting should be done at least once per week to show the importance of 
+the initiative, keep the information in front of the intended audience, and trend results which 
+reveal improvement or decline in the tracked metrics. Some sites may want to do this after 
+every shift in order to analyze what has recently occurred on the last shift. These reports 
+should be provided to the Shift Supervisor, Training Manager, Operations Manager, 
+Maintenance Manager, and others who should be made aware. 
+ 
+6. Run comparison reports to determine how one crew compares to the others, and also 
+possibly how one site compares to sister sites the company may have. This level of 
+analysis, which can be produced on a weekly or monthly basis, can highlight training 
+opportunities for particular crews and/or sites which are experiencing a relatively higher 
+number of events. However, the inverse could also occur where good practices from one 
+crew or site could be replicated to other crews or sites in order to lower the overall number 
+of events, increase the overall productivity of the equipment, and lower the cost per ton. 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+VIMS Utilization & Operator Training 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-2.04-1296 
+Caterpillar Confidential:  GREEN          Page 6 of 9 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+Depending on the level of technological automation at site, these reports can take from 30 
+minutes to one hour to produce. Some examples of these reports are found below: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+7. Make the reports visible to those responsible for and affected by the results (Training, 
+Operations, and Maintenance departments). Graphs can be placed in hallways, lunch 
+room, pre-shift meeting room, etc. to communicate results and performance by shift / crew. 
+Doing so can be a key contributor in keeping overall event numbers low, as site personnel 
+Site 1 
+Site 2 
+Site 3 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+VIMS Utilization & Operator Training 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-2.04-1296 
+Caterpillar Confidential:  GREEN          Page 7 of 9 
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+is aware of the current situation and challenges, and can work together to resolve potential 
+issues.  
+ 
+8. Determine whether any of the issues identified in the data are operator-specific or broader 
+across multiple operators and/or crews. If the former is true, awareness, understanding, 
+and instruction should be given to the operator to correct the situation. If the latter is true, 
+training should be coordinated with the training instructor and/or Cat dealer to provide the 
+necessary instruction on proper operating technique for the operating staff.  
+ 
+4.0 Benefits 
+Although the benefits will vary by mine site, the following may be expected: 
+• Reduction in number of VIMS
+tm events per machine 
+• Improved physical availability 
+• Improved MTBS (Mean Time Between Stoppages) 
+• Tons per hour increase 
+ 
+One customer site that anonymously contributed to this Best Practice has seen a large reduction 
+in the overall number of events since its inception of in-depth VIMS
+tm analysis by the Training 
+department about five years ago. Also, interestingly enough, at one time the site stopped 
+preparing these reports. However, due to the health numbers beginning to rise, the reports were 
+prepared again to bring the number of events back down. In other words, the site has definitely 
+seen tangible value in utilizing VIMS
+tm information as part of its Training program. 
+ 
+5.0 Resources Required 
+• Laptop computer(s) loaded with VIMSpc or VIMS 2011A software program for those 
+individuals who will be analyzing the data. 
+• If performing manual downloads, the VIMStm cable will be needed: 127-9797 (used for 
+machines with VIMStm 68k and VIMStm ABL), or 305-5528 (used for machines with VIMStm 
+3G). 
+• Equipment training analyst with application and/or operating experience, as well as 
+familiarity with VIMS
+tm. 
+ 
+In addition to these items, team work is also a key ingredient required to make this initiative work. 
+It takes the Operations Trainer, Operations Supervisors, Equipment Operators, and the 
+Maintenance department working together to resolve issues that are encountered. 
+ 
+6.0 Supporting Attachments / References 
+VIMS
+tm information – https://mining.cat.com/vims 
+ 
+7.0 Related Best Practices 
+None. 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+VIMS Utilization & Operator Training 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-2.04-1296 
+Caterpillar Confidential:  GREEN          Page 8 of 9 
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+8.0 Acknowledgements 
+ 
+John Zimmerman 
+Caterpillar Global Mining 
++1 309 494-7008 
+Zimmerman_john_a@cat.com 
+ 
+Cashman Equipment is specially acknowledged for contributing information related to this best 
+practice. Cat Global Mining extends its appreciation to Cashman Equipment for sharing this idea 
+with the extended Cat mining team. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+VIMS Utilization & Operator Training 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1211-2.04-1296 
+Caterpillar Confidential:  GREEN          Page 9 of 9

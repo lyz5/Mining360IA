@@ -1,0 +1,251 @@
+===== PAGE 1 =====
+September 2023 
+1.01-230928-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+MI
+NING DEALER BEST PRACTICE 
+Improvement in the 
+Refrigerant Dryer 
+Replacement Process of 
+the Air Conditioner System 
+for 793F Fleet
+Mai
+ntenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+        Improvement in the Refrigerant Dryer........................       1 
+1
+.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+DI
+SCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improvement in the refrigerant Dryer replacement 
+process of the air conditioner system for 793F fleet  
+DATE 
+9/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230928-1 
+Caterpillar: Confidential Yellow          Page 2 of 5 
+1.0 Introduction  
+ 
+The dryer filter of the air conditioning system is a component composed of desiccant particles 
+whose purpose is to retain solid impurities and absorb moisture.   To identify when the filter needs 
+to be changed , just examine the inlet and outlet pipes of the filter, the temperature must be the 
+same in both tubes, these checks are carried out  in the preventive maintenance of the 793F . An 
+analysis of the downtime drivers of the PM process identified that a large amount of time is spent 
+with refrigerant dryer replacement, due to the complexity of the component connections. 
+ 
+2.0 Best Practice Description 
+ 
+This BP provides information for installing a quick connect coupling for the refrigerant dryer (257-
+3226) of the air conditioning system of  a 793F.  Without a quick connect coupling, the refrigerant 
+gas is drained (exhausted) by not having a check valve. Thus, it is always necessary to carry out 
+the refrigerant recovery fully, which increases the maintenance time and costs.  
+ 
+3.0 Implementation Steps 
+ 
+The implementation of this BP consists of replacing the rigid piping interconnecting the filter dr yer 
+with a quick connect coupling hose system. 
+ 
+ 
+Figure 01 – Refrigerant Dryer as Shipped on 793F. 
+ 
+ 
+• Collect the refrigerant gas using the PN 285-7352 tool, remove the PN 357-2994 tube and 
+the 257-3226 filter dryer.  
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improvement in the refrigerant Dryer replacement 
+process of the air conditioner system for 793F fleet  
+DATE 
+9/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230928-1 
+Caterpillar: Confidential Yellow          Page 3 of 5 
+• Assemble the hose assembly according to the specifications: 
+ 
+ Hose 541-7161 – 600 mm 
+ 478-5446 - 01 Terminal 
+ 320-1720 – 01 Terminal 
+• Order the following parts: 
+ 02 quick coupling PN 103-6100 
+ 01 Filter Dryer PN 3E-3535 
+ 
+ 
+Figure 02 - Applied improvement using quick coupling system. 
+ 
+ 
+3.1 Steps Summary: 
+ 
+1. Layout definition (Line Routing) for installation of air conditioning system lines; 
+2. Acquisition of parts needed for installation; 
+3. Installation of new dryer and air conditioner lines to charge the refrigerant on the system. 
+ 
+ 
+4.0 Benefits 
+ 
+• Maintenance cost reduction 
+• Contamination control 
+• Maintenance time reduction 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improvement in the refrigerant Dryer replacement 
+process of the air conditioner system for 793F fleet  
+DATE 
+9/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230928-1 
+Caterpillar: Confidential Yellow          Page 4 of 5 
+4.1 Save with implementation: 
+ 
+ 
+ 
+ 
+ 
+ 
+5.0 Resources Required 
+ 
+ Hose 5417161 – 600 mm. 
+ 
+ 4785446 - 01 Terminal. 
+ 
+ 3201720 – 01 Terminal. 
+ 
+ 02 quick coupling PN 103-6100. 
+ 
+ 01 Filter Dryer PN 3E-3535. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+In-Line Refrigerant Dryer - Remove and Install (SENR5664-35). 
+ 
+Receiver Dryer (Refrigerant) - Replace (SEBU8751-22). 
+ 
+ 
+Original Dryer Filter (Time) Filter Dryer With Quick Coupler (Time)
+2.92 0.42
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improvement in the refrigerant Dryer replacement 
+process of the air conditioner system for 793F fleet  
+DATE 
+9/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230928-1 
+Caterpillar: Confidential Yellow          Page 5 of 5 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+      This Best Practice was written by:  
+ 
+      Wender Madeira 
+      wender.madeira@sotreq.com.br
+ 
+      Phone: 55-31-98885-7675 
+ 
+      Belimar Costa 
+      belimar.costa@sotreq.com.br 
+      Phone: 55-31-99967-0731 
+ 
+Special thanks in development and implementation to: 
+ 
+Claudinei Ataide 
+claudinei.ataide@sotreq.com.br 
++55-31-97188-7413 
+ 
+Paulo Vieira 
+Paulo.vieira@sotreq.com.br 
++55-31-97166-3280 
+ 
+Anderson Silva 
+Anderson.silva@sotreq.com.br 
+55-31-996957094 
+ 
+Thiago Assis 
+Thiago.assis@sotreq.com.br 
++55-31-98887-4301 
+ 
+Gustavo Lage 
+gustavo.lage@sotreq.com.br 
++55-31-98675-8296 
+ 
+       
+Claudio Cunha 
+Claudio.cunha@sotreq.com.br 
+Phone: 55-31-99929-3361 
+ 
+ 
+Best Practice Champion: 
+ 
+Fellipe Viana 
+fellipe.viana@sotreq.com.br 
+Phone: +55 31 99194-3974

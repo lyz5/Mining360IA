@@ -1,0 +1,296 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Lifting Tool for 3500 Engines Series Cylinder Liners.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+Lifting Tool for 3500 
+Engines Series Cylinder 
+Liners 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Lifting tool for 3500 engines series cylinder liners ...... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+Editor’s Note:  The use of this installation tool and the processes discussed within this Best Practice is not a substitute 
+for applicable laws, standards and regulations and does not alter or limit the obligation of individuals who utilize the tool  to 
+fully comply with federal, state and local law and prudent safety measures relating to the use of lifting devices .  
+ 
+ 
+ 
+ 
+  
+March 2015 
+1501-4.03-1360 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 I ntroduction  
+ 
+The 3500 series engine has 16 cylinders, therefore the same number of liners with an approximate weight of 
+18.3 kg each.  Which makes the installation process (lifting and handling) a difficult task to be achieved 
+because it can cause back injuries, bruises, bumps and extreme fatigue for the technicians (see Fig. 1). 
+ 
+ 
+ 
+Fig. 1. Liners handling and lifting process thru the installation process. 
+ 
+This Best Practice aims to facilitate the development of this task with the design of a lifting tool  which is of 
+easy, fast and safe use. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool for 3500 Engines Series Cylinder Liners 
+DATE 
+3/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1360 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+2.0 Best Practice Description 
+ 
+The tool applies to 3500 series engines liners.  It  consists of two simple straight top links, two more "L" shaped 
+lower links both made of steel plate A514 g A 20mm x 4mm; also, two arcs in TIVAR® 1000 (attached data 
+sheet) 20mm thickness and internal diameter equal to the outer diameter of the liner.  All this goes together 
+symmetrically by hexagonal bolts 3/16" x 1" 8 grade with their spacing washers, lock nuts and at the upper end 
+it´s placed a ring to engage the lifting equipment, forming a clamp as a whole (as shown in the figure).  The 
+clamp closure which is secured with a 1/8" steel pin blocking the rings from closing prevents the rings from 
+splitting. 
+ 
+ 
+Fig. 2. Disassembly and assembly tool 
+ 
+The approximate weight of the tool is 1.7kg with a safety factor of 8 times the weight of the liner (18.3 kg). 
+The tool is used for lifting from the floor level, where the baskets having the liners kit (16 in total) are, to the 
+counter where the protective wrapping plastic is removed (the liner is prepared for installation).  Then it´s 
+raised back into the engine. The upper ring allows the required rotation to concentrically fit the liner along with 
+the block hole where it will finally be installed. 
+NOTE: It is important that the lifting equipment to be used for this be of slow and precise movement, because 
+when it comes to inserting the liner on the block; the hitting caused by the equipment without this feature 
+should be avoided. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool for 3500 Engines Series Cylinder Liners 
+DATE 
+3/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1360 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+3.0 Implementation Steps 
+ 
+1. Check the status of the tool for physical defects (cracks, stretching, bending parts, etc.) before using 
+it to ensure proper operation. Remove the lock pin to open the rings of the tool and hold the liner at the 
+top edge; by closing and fastening the rings with the pin back again. 
+2. Lift the liner partially and slowly and make sure the tool closes automatically thru its scissor 
+mechanism. 
+3. Fully lift to bring it to the counter where the plastic wrap is removed and the liner is prepared for 
+installation. Hold the liner the same way and raise it to the engine block. 
+4. Close to the engine, the degree of freedom of the upper ring of the tool is used to turn the liner into 
+the insertion angle of the block hole. Once the liner is secure enough, the locking pin is removed and 
+the rings of the tool are open and the liner is finally released (Fig. 3 - 4a).  An even safer and faster 
+method is to rotate the roll over holding the engine to give such angle that the surface of the block holes 
+is horizontal and perpendicularly receive the liner that is being hoisted (4b). 
+ 
+Fig. Operating Procedure. 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+• Easy fabrication 
+• Easy operation 
+• It decreases the risks of extreme fatigue, back pains and bruises due to falls of the technicians. 
+• Lightweight for easy transport (with maximum weight of 1.7kg) 
+ 
+ 
+ 
+ 
+5.0 Resources Required 
+ 
+Drawings and date sheet of the tool (see attached) 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool for 3500 Engines Series Cylinder Liners 
+DATE 
+3/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1360 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+Fig. 4. Data sheet TIVAR® 1000 
+ 
+Fig. 5. FEA Analysis, Strength Calculations, Design Factor. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool for 3500 Engines Series Cylinder Liners 
+DATE 
+3/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1360 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+Fig. 6. Drawing of the tool 
+7.0 Related Best Practices 
+None 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool for 3500 Engines Series Cylinder Liners 
+DATE 
+3/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1360 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+8.0 Acknowledgements 
+ 
+Enrique Urbina  
+CRC Development Projects Chief, GECOLSA 
+Email: enrique_urbina@gecolsa.com.co 
+ 
+David Antonio Gonzalez Fernandez 
+CRC Service Engineer, GECOLSA 
+Email: antonio_gonzalez@gecolsa.com.co 
+ 
+Melissa Chimá B. 
+CRC Service Engineer, GECOLSA. 
+Email: melissa_chima@gecolsa.com.co
+ 
+ 
+Yesit Manjarres 
+Training Engineer, GECOLSA. 
+Email: yesit_manjarres@gecolsa.com.co 
+ 
+ 
+Checked and written by: 
+ 
+Luis Alberto Fernández Ch. 
+Development Engineer  
+GECOLSA_CAT División Minería 
+Technical Department, Engineering and Development Area. 
+Email: luisalberto_fernandez@gecolsa.com.co 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool for 3500 Engines Series Cylinder Liners 
+DATE 
+3/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1360 
+Caterpillar Confidential:  GREEN          Page 6 of 6

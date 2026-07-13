@@ -1,0 +1,186 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+April 2023 
+4.03-230411-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Pump Transport Apparatus 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Pump Transport Apparatus ........................................ 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits ............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Pump Transport Apparatus 
+DATE 
+4/11/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230411-1 
+Caterpillar: Confidential Yellow P age 2 of 5 
+1.0 Introduction 
+D
+ifferent types of pump groups come to our workshop for maintenance or overhaul. The pumps 
+sent by the customer are unloaded from the transport vehicle with the forklift. Most of the time the 
+pumps are placed inside the cage or on the pallet. In this way, it is shipped between workshops. 
+2
+.0 Best Practice Description 
+T
+he pumps that come to our workshop are placed on a cage or pallet and moved between the 
+workshops by pallet truck or forklift. During this delivery phase, the pumps are not stationary in 
+the cage or on the pallet. At this stage, situations such as overturning and falling may occur in the 
+pumps. These accidents can result in high costs. This study was carried out because the pumps 
+did not stay in a fixed position in the cage before this transportation apparatus was made and 
+they were damaged during transportation between workshops. A new tool has been made to 
+prevent these situations. In the new process, an apparatus was made to carry the pumps. This 
+carrying apparatus is suitable for pumps of all sizes. The pumps are placed on the transport 
+apparatus and fixed with bolts. In this way, the pump will not be damaged even if events such as 
+overturning or falling occur in the pump carrying apparatus. 
+3
+.0 Implementation Steps 
+S
+tep 1: Pumps are prepared for shipping between workshops. 
+S
+tep 2: Pump carrying apparatus is prepared. 
+
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Pump Transport Apparatus 
+DATE 
+4/11/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230411-1 
+Caterpillar: Confidential Yellow P age 3 of 5 
+Step 3: The pump to be transported is placed on the transport apparatus. 
+S
+tep 4: After the pump is placed, it is fixed with bolts from the bottom of the transport apparatus. 
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Pump Transport Apparatus 
+DATE 
+4/11/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230411-1 
+Caterpillar: Confidential Yellow P age 4 of 5 
+Step 5 : After the fixing process, the transport is easily performed. In case of overturning and falling, 
+no damage will occur to the pump. 
+4
+.0 Benefits 
+• S
+afe transport
+• Time is saved thanks to precautions
+• It provides cost savings by preventing possible accidents
+• Increasing credibility between the company and the customer
+5.0 Resources Required 
+T
+he production of the transport stand was made in our own workshop. The materials cost a total  
+of 233.70 €. One person working in the welding room completed the production in 6 hours of 
+work.  
+Since this apparatus is suitable for pumps of all sizes and weights, 1 piece was made. There will 
+be no cost after that. 
+
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Pump Transport Apparatus 
+DATE 
+4/11/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230411-1 
+Caterpillar: Confidential Yellow P age 5 of 5 
+6
+.0 Supporting Attachments / References 
+Dr
+awings attached 
+7
+.0 Related Best Practices 
+NO
+NE 
+8
+.0 Acknowledgements 
+T
+his Best Practice was written by: 
+E
+sra Ulubay  
+CRC Planning Officer  
+Borusan Makina ve Güç Sistemleri 
+T
+his Best Practice designed by: 
+A
+bdullah Akbenli  
+Expert Technician  
+Borusan Makina ve Güç Sistemleri 
+P
+roject and Best Practice supported by: 
+H
+alit Yağız Vural  
+Workshop Engineer  
+Borusan Makina ve Güç Sistemleri

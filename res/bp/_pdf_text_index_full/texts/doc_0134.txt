@@ -1,0 +1,612 @@
+SOURCE: 2.0 Application\2.06 GET Management\2. Tactical\Improving GET Replacement Process.pdf
+PAGES: 10
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Improving GET 
+Replacement Process 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+Improving GET Replacement Process ....................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 9 
+8.0 Acknowledgements ............................................ 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+  
+February 2011 
+1011-2.06-1216 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+This Best Practice provides faster and better logistics, plus increases safety of Ground Engagement 
+Tools (GET) replacement and repairing on the job site. Additionally, it supports efficient repair and 
+transport of the components and GET tools, and the service performance in field such as welding and 
+washing. 
+ 
+2.0 Best Practice Description 
+ 
+Marcosa built a GET truck to better meet the customer’s needs.   
+ 
+ 
+ 
+  
+  
+ 
+ 
+Features of the truck include: 
+ 
+• Platform box for parts storage 
+• Cabinets for storage 
+• Generator – 25Kva three phase electrical power 
+• Air compressor 
+• Welding machine 
+• Work Room with counter tops and vise 
+• Water pressure vessel with manual retraction reel 
+• Crane 
+• Rear platform box to support storage and transport of GET 
+ 
+A detailed description of the truck features can be found in Section 6.0. 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Improving GET Replacement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1011-2.06-1216 
+Caterpillar Confidential:  GREEN          Page 1 of 9 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+GET Replacement: 
+ 
+The GET truck attends the field repairing and replacing GETs and undercarriage, transporting and 
+storing the backup parts.  Note: A tag line should be used to control the load. 
+ 
+         
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Improving GET Replacement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1011-2.06-1216 
+Caterpillar Confidential:  GREEN          Page 2 of 9 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Support for the corrective and inspection team: 
+ 
+• Repairing of undercarriage (re-torque bolts) 
+• Utilization of the truck (crane) to move components 
+• Welding Services 
+• Blowtorch services 
+• Support with the High Torque (compressed air system) 
+• Washing of machines and components with high pressured water 
+• Utilization of GET tools (components assembly bench, etc.) 
+• Energy providing 110v ~220v 
+ 
+   
+  
+ 
+   
+  
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Improving GET Replacement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1011-2.06-1216 
+Caterpillar Confidential:  GREEN          Page 3 of 9 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ Support for the main workshop: 
+ 
+• Removal of components 
+• Removal of discarded material. 
+• Transporting of components on the jobsite. 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The process started with the truck. Choosing the best truck and adapting it to the customer’s need, 
+then listing the items and designing the tools and features.  See Section 6.0 for truck features 
+description. 
+ 
+The date of implementation was May 15, 2010. It took one and a half months to build and implement. 
+People involved were: Contract manager, Field Supervisor, technicians, and CI Champion. 
+ 
+The project was laid out in the following 6 Sigma format (Non 6 Sigma Project): 
+ 
+• Define: Design the truck and features 
+• Measure: Investment and utilization 
+• Analyze: Benefits  
+• Improve: Redesign – Change/Add features and details 
+• Control:  Measure improvement / utilization 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Improving GET Replacement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1011-2.06-1216 
+Caterpillar Confidential:  GREEN          Page 4 of 9 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+The benefits of the truck include: 
+ 
+• Provides increased safety 
+• Improves the logistic process 
+• Provides faster and more efficient replacement and repair of GETs and components 
+• Providing better support on the jobsite with complementary services such as: welding, washing 
+and transportation of GET- parts and components 
+• Transport of new, scrap, and GET needing repair 
+• Improve quality 
+ 
+Financial benefits for Marcosa have included: 
+ 
+• Reduced downtime for the customer because the service is performed in the field, resulting in 
+increased availability. 
+• Marcosa receives a bonus of up to 2.5% of the value of the contract by increasing the 
+availability over target. 
+ 
+ 
+5.0 Resources Required 
+ 
+The truck created by Marcosa consisted of the following cost.  Truck and modification details can be 
+found in Section 6.0. 
+ 
+• 01 Truck (Volkswagen 13.180 Constellation Standard – $80,760 USD (BRL$: 136.000,00)) 
+• Modifications for GET Support (See Section 6.0 for details – $30,285 USD (BRL$ 51.000,00)) 
+• 01 Munck (Crane) (Model MK 6,5T – $23,705 USD (BRL$ 39.980,00)) 
+ 
+Total Investment: $134,750 USD (BRL$ 250.980,00) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Improving GET Replacement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1011-2.06-1216 
+Caterpillar Confidential:  GREEN          Page 5 of 9 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Base Truck Information 
+ 
+Engine: 
+MWM 4.12 TCE 4-cylinder - Turbo and intercooler - Common Rail. Power - 180 hp Euro III / 132 kw / 
+2200 rpm Torque - 600 Nm / 61 mkgf / 1550 to 2000 rpm Alternator - 80A - 14V Battery - 2 X (12V - 100 
+Ah) 24V Injection system: Common Rail  
+ 
+Transmission:  
+Box Models - Eaton FS 4205 A  
+Gears - 5 forward, 1 reverse - 5 speed  
+Clutch - Sachs, dry disc  
+Drive - push type self-tuning  
+ 
+Cabin:  
+Constellation Stand  
+ 
+Chassis: 
+Type - U LNE Profile Ladder 38 (cm3) 163  
+Tubeless radial tires - 900R X 20-14 PR  
+Steering - ZF 8095 - Hydraulic  
+Plastic Fuel Tank - 275 liters  
+ 
+Weight (kg): 
+4,340 = 8,375 / 4,800 = 8,315 (kg) / 5207 = 8255 (Kg) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Improving GET Replacement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1011-2.06-1216 
+Caterpillar Confidential:  GREEN          Page 6 of 9 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Truck Modifications for GET Support 
+ 
+CJ. QUANTITY COMPOSITION 
+STRUCTURE 
+1 
+ 
+Platform (dry cargo) 2000 mm long, geometrically designed to absorb all kinds of active efforts. 
+Constructed in carbon steel plate, SAE1010/20, joined by electric arc type MIG.  
+1 
+ 
+Side Guard, fabricada made from carbon steel plate with SAE1010/20 450mm high , hinges and lock nuts 
+(butterfly type) for closing. 
+ 
+1  
+Step back, in carbon steel plate SAE1010/20 slip. 
+2 
+ 
+Rear cabinets, Made by folded profiles and panels on carbon steel plates SAE 1010/20, with 
+doors, special locks and sealing through automotive rubber against dust and water. The doors 
+have access controlled by a key lock. Doors with vertical opening are supported by gas shock 
+absorbers. 
+ 
+1 
+ 
+Duralumin Trunk polished and creased, with thermal insulation on the ceiling, internal galvanized iron 
+rods, chess carbon steel plate, thickness of 3/16”, one left side door (driver side), one front window and 
+one central window on the right side. 
+ 
+1 
+ 
+Attached to the vehicle, made through metal plates on the rear, preventing the longitudinal 
+displacement of the implement, guides and shock absorbing system with elastomer (plastprene) on the 
+front. 
+ 
+2 
+ 
+Rear fender, made of carbon steel plate, with a transversal 1/8" plate, and 2mm folded frame.  
+ 
+2 
+ 
+Rear anti-clay, made of synthetic rubber with the IMPACTO logo. 
+ 
+1 
+ 
+Rear bumper,  articulated, in accordance to the norm RTQ32/04 of INMETRO, resolution 152/03 of 
+CONTRAN and decree 11/04 of. DENATRAN 
+ 
+ 
+  
+FUNCIT
+ION 
+ 
+ 
+Trigger set, mechanical, through the PTO/TDF properly sized, with reinforced driveshaft, bearings, base, 
+mounting brackets and strap stretching system. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Improving GET Replacement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1011-2.06-1216 
+Caterpillar Confidential:  GREEN          Page 7 of 9 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Micro-adjustable throttle for rotation control.  
+ 
+ 
+ 
+  
+ 
+ 
+GENERATOR 
+1 
+ 
+Generator 25Kva three phase eletrical Power, auto-excited and auto-regulated by 
+compensating system based on winding excitation, Electromagnetic circuit built by discs printed 
+on laminated silicon steel or treated low carbon steel, enameled wires of class H (180 °) and 
+insulating quality. Housing in cold rolled steel welded with anticorrosive treatment. Insulation 
+Class F (155 ° C)- Protection class IP21Norma construction and testing: ABNT / IEC / NEMA. 
+Powered by hydraulic actuator via the control lever 
+ 
+ 
+1 
+ 
+Protection panel and reading of instruments, assembled on closed steel Box for vertical standing, 
+containing ammeter, voltmeter, frequency meter and breaker. 
+ 
+ 
+AIR 
+1 
+ 
+Air compressor Piston , two stages in line with displacement 20PCM nominal maximum 
+pressure of 175 Kg, powered by three phase 220V electric motor and equipped with pressure 
+switch, safety valve and records, prepared to work intermittently and the air tank of 200 liters.  
+ 
+1  
+Dehumidifier air coalescing filter with retention of 99% humidity. 
+1 
+ 
+Manual retraction reel with 20 feet of hose 1 / 4 "quick coupler, and hose connection. 
+ 
+ 
+  
+WELDING 
+1 
+ 
+Welding machine model TDC435 ED with three- phase power source, Digital Electronic 
+Technology DSP (Digital Signal Processor) for welding with coated electrodes and TIG process 
+in direct current (DC). Facility for the operator, which allows you to adjust the welding current 
+with the machine turned on empty, thereby preserving the values on the display, after welding 
+Control range from 500 to 400 A. Gauge electrode 6010/6011/6013/7018 until 6mm.  
+ 
+  
+WATER 
+1 
+ 
+Pressure vessel with a capacity of 200 liters, built in carbon steel SAE 1010/1020, with spherical 
+heads, flange for cleaning and inspection, filler type Kanlock, venture suction pump vacuum 
+type, safety valve with regulator pressure gauge with full scale of 300psi, suction hose 3 (three) 
+meters long, a record sphere type size 1” for controlling, level display (maximum and minimum), 
+Handbook MANUFACTURING AS STANDARD NR- 13. Lower output sphere type “1. Lower 
+tank ready for discharge lubricant and also self loading, made of air. "Does not require 
+ 
+booster pump, "(patent pending). 
+1  
+Manual retraction reel, hose Ø1 / 2 "with 10 meters in length and adjustable nozzle. 
+ 
+  
+ACCESSORIES 1 
+ 
+Bench vise nº8, installed on the services bench. 
+ 
+1 
+ 
+Motoesmeril industrial, motor elétrico de 1/2cv monofásico, 60Hz, 220 volts com rebolo de 6” 
+x ¾” x ½”. 
+ 
+1 
+ 
+Services Bench dimensions of 1200mm (length) x 700mm (width) x 1000mm (height), with two 
+drawers, two doors and locks, sealed through automotive rubber. Constructed in carbon steel 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Improving GET Replacement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1011-2.06-1216 
+Caterpillar Confidential:  GREEN          Page 8 of 9 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+plate, thickness of 2mm and top made of wood. 
+1 
+ 
+Oxy-acetylene set,  with support for accommodation of cylinders, built in carbon steel plate 
+based on 3 / 16 " and body 1 / 8". Support for wrapping hoses, 5m double hose for blowtorch, 
+pen to cut, cutting flame valve and pressure regulators. (Cylinders not included with the set); 
+1 
+ 
+Internal cabinet for tools ,  dimensions 1000mm (length) x 500mm (width) x 1600mm (height), 
+built entirely of carbon steel plate of 2mm, with two divisions for the storage of tools and four 
+doors with locks with automotive rubber for sealing. 
+1 
+ 
+Reversing alarm 
+ 
+1 
+ 
+Spare tire 
+ 
+2 Support with fire extinguisher of 8kg - Dry Chemical 
+1 
+ 
+Plastic reservoir for drinking water with capacity of 20 liters 
+ 
+ 
+7.0 Related Best Practices 
+ 
+Best Practice Number:  1006-1.05-1208, Backhoe-Hammer to remove large mining GET 
+Best Practice Number:  1010-2.06-1214, Auxiliary Fleet and Loaders GET Chart for Preventive 
+Maintenance 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+ 
+Name: Pablo Felipe Lisboa 
+Title: Continuous Improvement Champion 
+E-mail: 
+pablo.felipe@marcosa.com.br 
+Phone: (+55) 71 2107-7553 / 8111-1902 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Improving GET Replacement Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1011-2.06-1216 
+Caterpillar Confidential:  GREEN          Page 9 of 9

@@ -1,0 +1,225 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2023 
+1.11-230726-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Adjusting the LED Lamps 
+Intensity on the 794 
+Truck’s Dash Panel for 
+Nighttime Operation 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+ 
+                                                                            Adjusting the LED Lamps Intensity on the 794 
+                                                                            Truck’s Dash Panel for Nighttime Operation .....…….1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description .................................... 2 
+3.0 Implementation Steps.......................................... 3 
+4.0 Benefits ................................................................ 4 
+5.0 Resources Required............................................ 5 
+6.0 Supporting Attachments / References................ 5 
+7.0 Related Best Practices ........................................ 5 
+8.0 Acknowledgements ............................................. 5 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network . 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Adjusting the LED Lamps Intensity on the 794 Truck’s 
+Dash Panel for Nighttime Operation 
+DATE 
+7/26/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230726-1 
+Caterpillar: Confidential  Yellow          Page 2 of 5 
+1.0 Introduction  
+ 
+The back lighting intensity of the dashboard signal lamps does not have another level. Signaling 
+LEDs have a strong light for nighttime operation, and some operators complain of eye discomfort 
+due to the brightness. As a result, they paint or place stickers on the panel to reduce the light. The 
+addition of a potentiometer will allow the operator to manually control the LED lighting intensity. 
+ 
+ 
+ 
+Illustration 1: Signal lamps cap painted by operators. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+By installing the potentiometer in the LED' s electrical circuit, it was possible to adjust the lamp’ s 
+intensity. We installed the improvement in a truck and monitored the results and the operator ’s 
+opinion. It has improved the comfort of operation at nighttim e and as result of reducing the  
+brightness there have been no more complaints from operators. 
+ 
+              
+Illustration 2: Intensity levels.  
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Adjusting the LED Lamps Intensity on the 794 Truck’s 
+Dash Panel for Nighttime Operation 
+DATE 
+7/26/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230726-1 
+Caterpillar: Confidential  Yellow          Page 3 of 5 
+3.0 Implementation Steps 
+ 
+We elaborated the step-by -step to implement the improvement. The first step was searching for 
+parts compatible with the equipment's electrical system and specifications. The parts defined were 
+potentiometer #610-2112 and knob #432-2913. Both parts already are used in the equipment 
+system. 
+                         
+ 
+Illustration 3: Parts  
+ 
+We design the electrical schematic to support our technicians in this job . We installed the 
+potentiometer in series with the negative wire 200-Y1 BK-20 cable. We used the pin A and B. 
+.        
+Illustration 4: Schematic 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Adjusting the LED Lamps Intensity on the 794 Truck’s 
+Dash Panel for Nighttime Operation 
+DATE 
+7/26/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230726-1 
+Caterpillar: Confidential  Yellow          Page 4 of 5 
+ 
+ 
+Illustration 5: Electrical installation 
+ 
+The potentiometer and knob were installed on the dash panel, see the image below.  
+ 
+                                
+. 
+Illustration 6: Potentiometer and Knob 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+• Reduce ergonomic discomfort for the operator's eyes during the night. 
+• Quick regulation of the intensity levels of the LED’s  
+• Avoid damage to the panel with paints and adhesives to reduce brightness. 
+• Low cost 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Adjusting the LED Lamps Intensity on the 794 Truck’s 
+Dash Panel for Nighttime Operation 
+DATE 
+7/26/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230726-1 
+Caterpillar: Confidential  Yellow          Page 5 of 5 
+5.0 Resources Required 
+ 
+PART NUMBER DESCRIPTION. QUANTITY. 
+610-2112 Potentiometer 1 
+432-2913 Knob 1 
+     
+Table 1: Parts 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Instrument Panel - Remove and Install (UENR2271-23) 
+ 
+ 
+7.0 Related Best Practices 
+ 
+NA.  
+ 
+ 
+8.0 Acknowledgements 
+ 
+We would like to thank all the professionals involved in this development. A simple, low -cost idea 
+with positive results. Congratulations to everyone involved in the development of the solution. 
+  
+SOTREQ would also like to thank the indispensable technical  contribution of Doug Friedrich of 
+Caterpillar Inc.    
+ 
+ 
+Paulo Gama 
+Performance Engineer. – SOTREQ S/A 
+Paulo.Gama@sotreq.com.br
+ 
++ 55 94 99196-8973 
+ 
+ 
+Pablo Gama.  
+Mechanical Technician – SOTREQ S/A 
+ 
+ 
+Reinaldo Angelo.  
+Engineering Coordinator - SOTREQ S/A 
+reinaldo.angelo@sotreq.com.br
+ 
++ 55 31 9996-5562

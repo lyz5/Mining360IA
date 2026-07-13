@@ -1,0 +1,304 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Plastic Media Used for Major Component Cleaning and Paint Removal.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Plastic Media for 
+Component Cleaning and 
+Paint Removal 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+Plastic Media for Component Cleaning and Paint 
+Removal ..................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+September 2007 
+1007-4.5-1092 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+A new process to pre-clean and remove paint from major components has been implemented at 
+Trakindo. This process uses a commercially available recycled ground plastic as a sand blast 
+media. The plastic is ground into tiny particles with a consistency similar to sugar grains and is an 
+excellent sand blast medium. 
+ 
+The plastic does not harm non-metallic parts such as plastic, rubber, and wiring harnesses. It also 
+does not harm soft metals such as aluminum. It efficiently and effectively removes paint down to 
+bare metal. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Plastic Media for Component Cleaning and Paint 
+Removal 
+DATE 
+2/18/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-4.5-1092 
+Caterpillar Confidential:  GREEN         Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The cleaning process steps are as follows: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Cleaning process
+High pressure 
+cleaned with 
+hot water
+Blown dry
+with
+compressed air
+Mounted on
+rot-able
+stand
+Blast cleaned 
+using 
+plastic media
+Blown off
+with 
+compressed air
+Engine 
+disassembled
+Piece parts
+stacked in
+baskets
+Baskets &
+block / housings
+cleaned in 
+cabinet washer
+baskets &
+block / housings
+blown dry
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Plastic Media for Component Cleaning and Paint 
+Removal 
+DATE 
+2/18/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-4.5-1092 
+Caterpillar Confidential:  GREEN         Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Step one is to clean the component with high-pressure hot water and blow dry with compressed 
+air. 
+ 
+ 
+ 
+Next, in the case of engines, the component is mounted on a rotating stand that can rotate the 
+engine through 270 degrees. Custom adapters were made to accommodate a better degree of 
+rotation. (See attachment for details). 
+ 
+ 
+ 
+The component is then blasted using the plastic media and then blown off with compressed air. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Plastic Media for Component Cleaning and Paint 
+Removal 
+DATE 
+2/18/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-4.5-1092 
+Caterpillar Confidential:  GREEN         Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The supplier for the plastic media blast is Clemco Industries. Product information and list of 
+distributors is available at their website: 
+ 
+http://www.clemcoindustries.com/ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Plastic Media for Component Cleaning and Paint 
+Removal 
+DATE 
+2/18/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-4.5-1092 
+Caterpillar Confidential:  GREEN         Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4.0 Benefits 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Plastic Media for Component Cleaning and Paint 
+Removal 
+DATE 
+2/18/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-4.5-1092 
+Caterpillar Confidential:  GREEN         Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+5.0 Resources Required 
+  
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Cleaning-Trakindo.ppt - PowerPoint file detailing the process 
+     
+7.0 Related Best Practices 
+ 
+None at this time. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+ 
+Howard Standring 
+P.T. Trakindo Utama 
++62 021 782 2373 
+howard.standring@trakindo.co.id 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Plastic Media for Component Cleaning and Paint 
+Removal 
+DATE 
+2/18/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1007-4.5-1092 
+Caterpillar Confidential:  GREEN         Page 6 of 6

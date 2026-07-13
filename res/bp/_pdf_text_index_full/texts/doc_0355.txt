@@ -1,0 +1,359 @@
+SOURCE: 5.0 MARC Management\5.01 MARC Market Strategy and Rate Development\3. Quick Win\Localizing a Centerline File for MARC Rate Development.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Localizing a Centerline File 
+for MARC Rate 
+Development
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+1.0
+ Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+October 2014 
+0907-3.3-1086 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+ 
+The Global (sometimes referred to as factory) LCC (Life Cycle Cost) maintenance and repair 
+centerline is a theoretical baseline of operating cost parameters, derived collaboratively with each 
+product group, and based on medium application.  The sole safe-source for these files include the 
+CGM Builder downloads page (for Builder Centerline files), and the AMT production server for 
+AMT Centerline files).  Most expanded mining product centerlines are built using AMT software, 
+and traditional CGM machines are built using Builder software. Regional MARC Consultants 
+(RMC’s) will have access to the latest AMT Centerline files, and Builder files are available for 
+download. 
+ 
+This LCC centerline development process is a critical input to support any O&O (Owning and 
+Operating), or TCO (Total Cost of Ownership) cost estimation.  Operating cost is comprised of 
+energy requirements, repair cost (including undercarriage), planned maintenance cost, and 
+special wear items.  Reference the latest edition of the O&O chapter found in the Caterpillar Inc. 
+performance handbook for a comprehensive list of criteria.  LCC Centerline development 
+provides baseline maintenance and repair cost per hour rate calculation in support of CSA 
+(Customer Support Agreements) and MARCs (Maintenance And Repair Contracts). 
+ 
+An LCC centerline is a collection of tasks that define equipment servicing activities (minor/major 
+repairs, overhauls, inspections, maintenance, replacement, etc.). These strategy tasks or repair 
+options are performed at pre-determined design life or “time” intervals (measured in machine 
+hours, tons, calendar, etc.) on a given equipment, assembly, or a component. Costs of the tasks 
+are derived from service task job operations, detailing the scope, parts, labor, and any 
+miscellaneous requirements associated with the servicing task.  
+ 
+Global LCC centerlines should not be confused with or used verbatim in site, customer or 
+application specific needs, nor should it be construed as a MARC (Maintenance and Repair 
+Contract) rate.  These centerlines should be used as a starting point during the localization 
+process. 
+ 
+2.0 Best Practice Description 
+ 
+The objective of this MARC rate localization process is to build rates that are:  
+• Machine, customer and mine-site specific.  
+• Realistic and achievable.  
+• Reflective of what a dealer can deliver.  
+ 
+This document provides process guidelines to support localization (modification) of global LCC 
+centerline files.  This will ensure that the rate accurately reflects the repair strategy of the 
+Dealership, the configuration of the machine, and that the Dealer can deliver what is specified in 
+the centerline file. This process will result in reasonable estimates in support of quoting a MARC 
+contract (no attempt is made or implied to provide precise hourly costs). This best practice will 
+also include examples of the mechanisms of how to accomplish localization using Builder G3 and 
+AMT software.   
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Localizing a Centerline File for MARC Rate 
+Development 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0907-3.3-1086 
+Caterpillar Confidential:  YELLOW          Page 1 of 5 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+The centerline user community should use the global LCC centerline file as a starting point, but it 
+will need to be localized/modif ied to achieve a realistic, regional, site specific and dealer 
+attainable LCC rate to suit equipment and site conditions.   
+ 
+ 
+3.0 Implementation Steps 
+Under no circumstance should a global LCC centerline file be used as a MARC rate without 
+reviewing each strategy task / repair option and by selecting the appropriate strategy task / repair 
+option for the application. 
+ 
+Ensure users start with the most current LCC centerline available. Changes/updates  to the global 
+LCC centerlines will be communicated to the Dealers, regions  and to RMCs and the centerline 
+files will be posted either on mining.cat.com builder downloads page or on the AMT production 
+server (contact your local RMC for access to the latest AMT Centerline files) . The dealer connect  
+site “Maintenance and Repair Contract (MARC) Management” will be the primary method used to 
+facilitate communications of updates, exchange information, and transfer LCC centerline change 
+knowledge among LCC centerline users and stakeholders.   
+ 
+It is imperative that all stakeholders join this Dealer connect site in order to receive the 
+information. This process will ensure global centerline change knowledge is distri buted 
+appropriately to regions, RMC’s and to Dealers.   
+ 
+In addition to using the global LCC centerline as a start, there are several localization aspects that 
+must be reviewed.  T he following localization criteria must be reviewed for each repair option / 
+strategy task and modified as necessary to ensure the Dealership can deliver within the CSA 
+/MARC proposal: 
+ 
+• Selecting the appropriate repair options/strategy tasks  
+Certain major and minor assemblies will have different repair options available. For instance, a 
+797F mining truck’s engine may have the option of recondition or replacing with Reman. Both 
+repair options/strategy tasks will be listed on the Centerli ne. In order to choose the appropriate 
+strategy task for the application, the user must know the preferred repair strategy of the 
+Dealership for major and minor components. Note: Some LCC files contain alternate and 
+redundant repair options that could inflate the MARC rate if a single preferred repair strategy is 
+not selected.  This will inflate costs if alternate and redundant options are included (in addition 
+to the preferred repair option).  For example, two mutually exclusive strategies may exi st at the 
+same service interval and either the ‘Recondition before Failure’ or the ‘Replace with Cat 
+Reman’ strategy task must be used – not both since they are conflicting.   
+ 
+In order to choose the appropriate Repair Options/strategy tasks for the application, the user 
+must know the actual machine configuration in terms of mandatory and optional attachments. 
+Optional attachments or optional configurations are identified by “If Equipped (IEQ)” in the job 
+condition field in Builder G3 or by cost bearer selection in AMT.  “External” cost bearer will 
+indicate that the strategy task is an option / or typically excluded from contract rates.  If it 
+should be included in any rate calculation, it must be changed to “Contract”.  A Dealer may use 
+the actual Machine Shipping Order (MSO), or may retrieve the machine consist from SIMSi 
+(Service Information Management System) at the following web address: 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Localizing a Centerline File for MARC Rate 
+Development 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0907-3.3-1086 
+Caterpillar Confidential:  YELLOW          Page 2 of 5 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+https://sims.cat.com/sims/simsi/index.jsp A PDF example of what the SIMSi Product 
+Configuration search will produce is provided in the ‘Supporting Attachments/References’ 
+section of this Best Practice.  
+ 
+• First / Frequency Interval hours - PCR (Planned Component Replacement)  
+It is imperative to  use realistic and achievable component lives.  Artificial PCR (Planned 
+Component Replacement) life inflation (without sufficient data to corroborate) which lowers the 
+rate should NEVER be used to gain financial competiveness.  An acceptable rate reduction  
+strategy should consider tenants of Rate Commercialization which is an acceptable  CGM 
+mechanism in place to support competitive bids.  Poor decision strategies such as artificially 
+inflating PCR lives may lead to unprofitable business decisions, and ultimately brand erosion 
+since component lives will most likely not achieve expectations. 
+ 
+While not all PCR deviations need to be reviewed by the global MARC teams, guidance for 
+PCR life increases which requires a global MARC team review may include (but is no t limited 
+to) any change that will reduce the scope by at least one rebuild/overhaul during  the term of 
+the contract. 
+ 
+• Labor Hours 
+Due to regional dealer variances and varying skill sets, the global centerline labor hours will 
+need to be reviewed and may need to be modified to suit local competency levels, and number 
+of tradespeople per repair option.   The centerline labor hours (Duration and Labor Hours) for 
+R&I and Recondition jobs are estimates and should be reviewed and adjusted based on local 
+expertise and experience.   
+ 
+• Labor Rates 
+Ensure the labor rates in the Builder Labor Table / AMT quick editor labor rates are configured 
+for your Dealership’s rates.  You should review the total costs associated with each Repair 
+Option / Strategy Task  to make sure your Dealership can deliver at this cost.  It is each 
+Dealer’s responsibility to configure the rates with established Field/Shop labor rates. 
+ 
+• Parts replacement percentages 
+Based on local conditions, application , repair strategy, maintenance and operating  practices, 
+individual part replacement percentages may need to be adjusted from the global centerline 
+position.  This is  based on local expertise and experience. 
+ 
+• Dealer part pricing/part identification 
+Obtain the appropriate regional dealer pricing file (s), and I mport the latest parts pricing into 
+your centerline file.  This provides DN (Component Unit Cost) and SCL (Component Unit List) 
+for that specific region.  CAT Global Mining Parts & Pricing (CGMPP), and the local Dealer 
+price tapes are the sole safe- sources for CGM parts pricing information.  Next Ge n SIS and 
+SIS web are sole safe- sources for CGM parts  data (excluding pricing) , drawings and 
+identification. 
+ 
+• Salvage opportunities 
+CGM Centerline files developed with Caterpillar engines include Job Operations within the 
+Engine Overhaul Repair Options for salvage work for the cylinder block and crankshaft. Engine 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Localizing a Centerline File for MARC Rate 
+Development 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0907-3.3-1086 
+Caterpillar Confidential:  YELLOW          Page 3 of 5 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+block and engine crankshaft Salvage costs are provided in the centerline files based on actual 
+dealer cost data.  A spreadsheet (found on the Builder downloads page in the supporting 
+documents section) details  actual DN costs of the crank and block  for specified engines . The 
+source CRC data was used to provide accurate cost for salvaging the engine block and 
+crankshaft for both first and second overhaul.  Use the existing actual cost structure if you 
+have no machine history on salvage.  Y ou will need to modify the %  replacement of the 
+components to reach the average actual CRC costs identified in the spreadsheet. If your 
+dealership has accumulated statistically significant sample size, change the % replacement 
+value to match your current actual salvage cost.  
+Not all Build er files have been updated to reflect the salvage costs. Use the spreadsheet on 
+the Builder downloads to represent the salvage costs to the engine block and crankshaft. 
+ 
+• Custom Repair Options 
+Add any custom Repair Options  / Strategy Tasks that may be required.  For example, if there 
+are certain regulatory / safety requirements needed in your region, a ‘Safety Inspection’ might 
+need to be included and performed every 250 hours and assigned 2 hours  of labor to the job 
+since it is a required local regulatory r equirement.  Alternately, if it is customary for your 
+Dealership to perform CM (Condition Monitoring ) services as part of the CSA arrangement, 
+these CM repair options / strategy tasks should be added to the centerline. 
+ 
+The attached document illustrates various examples of how to tailor the centerline Builder or AMT  
+file in order to: 
+• Match the machine configuration sold to the customer. 
+• Reflect the repair strategy of the Dealership for major and minor components. 
+• Review a nd edit labor hours, PCR intervals, parts replacement percentages, salvage 
+opportunities, etc. 
+To implement this Best Practice, apply the same logic that is outlined in the examples within the 
+supporting PowerPoint documents. 
+ 
+4.0 Benefits 
+The Benefit of applying this process when localizing global LCC centerline files is assurance that 
+your MARC or other CSA rate will be: 
+• Machine and mine-site specific. 
+• Realistic and achievable. 
+• Reflective of what a dealer can deliver. 
+ 
+5.0 Resources Required 
+AMT and or BuilderG3 software.   
+ 
+6.0 Supporting Attachments / References 
+• Estimating Owning and Operating Costs.pdf - Caterpillar Performance handbook, 
+• CGM Centerline File Localization.pptx – Instructions contained in this Best Practice in 
+PowerPoint format  
+• SIMS Product Configuration Example.pdf – Sample product consist printout from SIMSi.  
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Localizing a Centerline File for MARC Rate 
+Development 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0907-3.3-1086 
+Caterpillar Confidential:  YELLOW          Page 4 of 5 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+7.0 Related Best Practices 
+0906-5.05-1009 MARC Rate Development 
+1006-3.3-1024 Ensuring MARC Profitability 
+0807-3.3-1085 Updating builder files with current parts 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+William L. Gallagher 
+Caterpillar Global Mining 
+Gallagher_William_L@cat.com 
++1 309 675-8085 
+ 
+Revised by: 
+Chris Byrnes 
+Caterpillar Global Mining 
+Product Support Consultant 
+Byrnes_Christopher_J@cat.com 
++1 414 301-8149 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Localizing a Centerline File for MARC Rate 
+Development 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0907-3.3-1086 
+Caterpillar Confidential:  YELLOW          Page 5 of 5

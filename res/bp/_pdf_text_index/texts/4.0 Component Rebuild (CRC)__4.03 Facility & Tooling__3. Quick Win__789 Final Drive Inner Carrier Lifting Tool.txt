@@ -1,0 +1,297 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+October 18 
+4.03-160927-02 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      Mining.cat.com 
+ 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+789 FINAL DRIVE INNER 
+CARRIER LIFTING TOOL 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+                                                                       789 FINAL DRIVE INNER CARRIER LIFTING TOOL .... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Accessory for the lifting of the 789 Final Drive Inner 
+Carrier 
+DATE 
+10/10/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-160927-02 
+Caterpillar Confidential:  YELLOW          Page 1 of 5 
+ 
+ 
+1.0 Introduction  
+ 
+Although the horizontal disassembly process is displayed for the 789 OHT Final Drive, no specific 
+information is available on SISWEB about the first carrier’s removal procedure. Nonetheless, at 
+RELIANZ, both assembly and disassembly processes are carried out vertically. For this reason, a 
+new tool is necessary to ensure the safe handling of the equipment and the expedition of the task to 
+the technician; finally pointing to the time reduction required and the difficulty of the procedure. 
+ 
+ 
+ 
+This best practice lays out the design of a tool that will allow the removal of the first carrier while 
+placing the 789 final drive component vertically. 
+ 
+2.0 Best Practice Description 
+ 
+The tool consists of  an ASTM A36 “T-shaped” steel block , to  which a threaded ring (CROSBY 
+M24X36 4-ton capacity) and a  lifting equipment hook are attached. The tool also has two hook-
+shaped ASTM A36 steel blocks on each side (symmetrical to the vertical axis of the lifting ring) which 
+are assembled onto the block by means of UNC ½" hexagonal threaded bolts. These blocks are the 
+ones that finally hold the carrier. 
+ 
+The main features of the tool are: 
+Dimensions: 100mm x 230mm x 83mm (D x W x H) 
+Total weight: 9.30 Kg. 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Accessory for the lifting of the 789 Final Drive Inner 
+Carrier 
+DATE 
+10/10/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-160927-02 
+Caterpillar Confidential:  YELLOW          Page 2 of 5 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+• Review the status of the tool (1) to verify its integrity before usage. 
+• Once the final drive’s outside carrier is removed, place the lifting tool in the upper opening of the sun             
+gear and adjust it to the required diameter (2). 
+• Secure the moving parts as shown in Fig (2). 
+• By using the Jib crane, hoist the carrier (3) to the desired height. 
+• Locate the component in its final housing (stowage, basket, box) (4) and remove the tools (5). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+The main benefits provided by this implementation are: 
+• Reduction in the removal time of the planetary carrier. 
+• Reduction in the ergonomic risk of the technicians. 
+• Easiness in the performance of the task. 
+ 
+5.0 Resources Required 
+ 
+Welder, equipment and materials according to the tool drawings. 
+ 
+ 
+ 
+ 
+1 2 3 
+4 5 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Accessory for the lifting of the 789 Final Drive Inner 
+Carrier 
+DATE 
+10/10/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-160927-02 
+Caterpillar Confidential:  YELLOW          Page 3 of 5 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Accessory for the lifting of the 789 Final Drive Inner 
+Carrier 
+DATE 
+10/10/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-160927-02 
+Caterpillar Confidential:  YELLOW          Page 4 of 5 
+ 
+ 
+ 
+The minimum safety factor related to this tool is 24.8. Since this safety factor is greater than 5.0, the 
+tool is indeed a safe one to use. 
+ 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Accessory for the lifting of the 789 Final Drive Inner 
+Carrier 
+DATE 
+10/10/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-160927-02 
+Caterpillar Confidential:  YELLOW          Page 5 of 5 
+ 
+ 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Name: David González 
+Job Role: Service Engineer / Relianz  
+Email: antonio.gonzalez@relianz.com.co 
+ 
+Name: Carlos Herrera 
+Job Role: Contract Auditor / Relianz 
+Email: carlos.herrera@relianz.com.co 
+ 
+Name: Wilson Arias 
+Job Role: Service Supervisor II/ Relianz 
+Email: wilson.arias@relianz.com.co 
+ 
+Name: Carlos Velilla 
+Job Role: Service engineer/ Relianz 
+Email: carlos.velilla@relianz.com.co 
+ 
+Checked by: 
+ 
+Luis Alberto Fernandez Chica | Development engineer & BP Coordinator 
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 5347 | Cellphone: 3013724303 | 
+luisalberto.fernandez@relianz.com.co | www.relianzcat.com  
+ 
+ 
+Edgard E. Romero Avena | DPC Admin / English Instructor & Learning Solutions Specialist 
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 35186 | Cel: 3103688012 | 
+edgard.romero@relianz.com.co

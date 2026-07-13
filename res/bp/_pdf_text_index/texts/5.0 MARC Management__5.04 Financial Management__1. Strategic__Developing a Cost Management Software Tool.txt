@@ -1,0 +1,541 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Developing a Cost 
+Management Software Tool 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Developing a Cost Management Software Tool ......... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits .............................................................. 7 
+5.0 Resources Required .......................................... 8 
+6.0 Supporting Attachments / References ............... 9 
+7.0 Related Best Practices ...................................... 9 
+8.0 Acknowledgements ............................................ 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+June 2012 
+1109-5.04-1259 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Mining companies have devoted special attention to cost management and profitability of service contracts 
+in order to improve the results of their operations. Several tools and methods have been introduced as a 
+way of incorporating the traditional accounting vision, new perspectives and analysis of the contractual 
+costs.  
+ 
+Among these methods, the activity-based costing and management stand out (ABC costing). The ABC 
+allows one to control the activities and processes as a way of improving organizational performance and 
+the value perceived by the customer.  
+ 
+The incorporation of the vision of processes and activities into the costing and profitability system gives 
+managers an important tool for better understanding of the contract business and its outcome. The 
+products and services offered by any contract are a direct consequence of their production processes. The 
+understanding and analysis of these processes enable the implementation of improvement initiatives to 
+increase business profitability. 
+ 
+This Best Practice aims to develop a model for cost and income evaluation and management based on 
+ABC activities in the area of Sotreq's Mining contracts and to deploy a (software) system to determine 
+these costs. 
+ 
+We are going to develop a tool for decision-making where it is possible to identify the equipment 
+maintenance cost and the contract structure to support the operation, indicating where and when to take 
+action. In general, the solution aims to: 
+ 
+1. Expand reporting of results. Currently by profit center, at customer, contract, fleet and equipment level. 
+2. Enable comparison of the projection (which guided the contract negotiation) with the actual contract life 
+(actual x projected) 
+3. Enable comparison of the projection (made by the Contract Development area) to budgeted (made by 
+the contract manager) 
+4. Develop projections, using actual results to calculate a new estimate for the contract and the fleet, 
+allowing corrections 
+5. Provide spreadsheet adjustments to calculate rates for new contracts 
+At the end of the project, we implemented cost control providing different views: 
+ Cost control by sector: Monitoring and detailed costs control of various contract sectors, with a 
+greater level of detail than what is provided by the accounting system 
+ Process costs: Obtainment and analysis of process cost information enabling systematic 
+proposition of improvement initiatives, increased productivity and more efficient use of resources  
+ Cost per Customer: Detailed costs per customer and contract, pointing to activities performed on 
+each equipment 
+ Costs per Equipment: Detailed costs by equipment, enabling the review of differentiated values 
+according to the operational complexity for each equipment  
+ Hourly costs: Personnel costs, occupancy, equipment, etc., broken down by sector, activity, work 
+order, customer, allowing for more efficient resource management  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a Cost Management Software Tool 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1109-5.04-1259 
+Caterpillar Confidential:  YELLOW                Page 1 of 12 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.0 Best Practice Description 
+ 
+Concepts and Theoretical basis 
+Based primarily on cost classifications, COSTING SYSTEMS were developed for allocating costs to 
+products, cost centers, activities, among others.  
+a. Costing System: 
+The process that is used to accumulate costs by products or services. A Costing System is formed by 
+joining a principle and a costing method.  
+b. Principles of Costing:  
+Basic philosophies that govern each system. The principles of costing answers the question "what 
+costs will be allocated to products or services?" 
+c. Costing Methods:  
+The mechanics of cost allocation to products or other objects. The methods answer the question 
+"How are costs allocated?" 
+d. Method of Cost Centers:  
+This method splits the company into cost centers to which it allocates the costs incurred within a given 
+period by means of predefined pro rata settings. Cost Centers are determined by factors of organization, 
+location, responsibility and uniformity. According to the function they perform the Cost Centers can be 
+classified as production, auxiliary, sales and common. Sotreq has its accounts organized according to this 
+methodology. 
+Method of Activity-Based Costing (ABC): 
+ 
+ABC is a method that tracks the organization's or unit's activities and checks how these activities are 
+related to revenue generation and resource consumption. It aims at assessing the activities carried out by a 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a Cost Management Software Tool 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1109-5.04-1259 
+Caterpillar Confidential:  YELLOW                Page 2 of 12 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+company using vectors (drivers) to allocate them in a more realistic way to products and services. This will be 
+the methodology adopted in the modeling of this solution. 
+ 
+Description of Methodology 
+As initial project scope, we elected a MARC (Maintenance and Repair Contract) set with a customer 
+of Sotreq’s Mining Business Unit. After the initial project, the PBTH (Power By The Hour) and MARC contracts 
+of other customers will be added. All cost centers (administrative, operational and financial were considered in 
+the data survey and financial analysis. The modeling was developed considering all the possibilities of service 
+contracts that exist today in Sotreq. 
+The original structure of cost centers and accounts of the Mining Business Unit were adopted, as well 
+as the hierarchy of cost viewing, namely: customer, contract, fleet, equipment. At a later stage, the possibility 
+of extending the hierarchy up to the component level will be evaluated. 
+Next, the resources, activities and objects were identified and set with their interrelationships. 
+a. Resources: 
+ 
+ 
+Resources are the cost elements of the activity-based costing. Each resource represents a type of 
+cost or expense that will be driven to the activities. 
+Under the current accounting plan used by Sotreq, the following groups of financial accounts were 
+considered as resources: 
+ 
+ 
+b. Activities: 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a Cost Management Software Tool 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1109-5.04-1259 
+Caterpillar Confidential:  YELLOW                Page 3 of 12 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+The activities are combinations of human, material, financial and technological resources to produce 
+goods or services. 
+The following activities were considered in the modeling: 
+ 
+c. Objects: 
+ 
+ 
+The cost objects are the end point where the costs are appropriated. They are the reason why an 
+ABC model is developed in a company. They can be products, services, customers (markets), sales channels, 
+subsidiaries, business units, or any other entity one wants to bear for several different purposes. 
+In the model, we considered the fleet and its equipment as end objects in the cost appropriation 
+system: 
+ 
+To allocate resources to activities and objects, allocation criteria are set. Thus, the drivers represent 
+the criteria by which the costs are allocated, from the accounting information, through Resources and 
+Activities, up to Cost Objects. 
+In the system there are two categories of cost drivers, each of which represents the metrics for 
+allocation at a certain stage:  
+ 1st-stage drivers: are the metrics used to allocate costs to activities. Determine the proportions to 
+allocate resources to activities and to reallocate items of cost between activities (field inspection, PM, 
+correction, lubrication, etc.).  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a Cost Management Software Tool 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1109-5.04-1259 
+Caterpillar Confidential:  YELLOW                Page 4 of 12 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 2nd-stage drivers: are the metrics used to allocate costs to objects. They represent, in general, 
+statistics which tell how the activities were demanded by the objects (fleet and equipment). We can cite an 
+example: number of hours allocated to work orders, the amount produced by product, sales volume and 
+number of visits per product.  
+Following the conceptual definition above, we began the specification, collection and validation of the 
+financial and operational information necessary:  
+1) Initially, we listed all ledger accounts with accounting entries in 2010 in the cost centers of the contract; 
+2) For each account, we set the criteria for apportionment (drivers) by activity or object;  
+3) Next, all accounting entries of revenue, taxes, costs and monthly expenses in fiscal year 2010 were 
+raised by account and cost center; 
+4) According to the drivers set, the accounting entries were redirected to the activities and, finally, to the 
+objects (equipment); 
+5) With the above conceptual model validated, we carried out: 
+ parameter setting of the cost model in the Sollus ABM software of the Gradda company; 
+ input data and calculation of the test period (2010). 
+6) Together with Sotreq's IT staff, we set the specifications, led the development and validated the 
+interface which provides data that automates the software input process 
+It was determined that this project requires a second phase which proposed improvements as well as 
+next steps for the currently deployed model. 
+The visualization and dissemination of the monthly earnings will be performed through users' report 
+inquiry and charts prepared. They will be divided among the Business Unit Board, Regional Managers, 
+Contract Management and the Contract Development area. 
+After the end of the 1st phase of the project, the software will be delivered to a central administrator, with 
+free user access, which will be set by the respective area managers.
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+This project had its origin in a joint study by Sotreq Mining Business Unit areas of Contract 
+Development and Systems and Process Development located at the branch of Contagem - MG. Besides the 
+mentioned areas, the IT Headquarters and Mining Operations also participated. Beginning in December 2010 
+and ending in June 2011, the project was developed and deployed in seven months.  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a Cost Management Software Tool 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1109-5.04-1259 
+Caterpillar Confidential:  YELLOW                Page 5 of 12 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+We understand its replication is possible both to the company's other business units, as well as to 
+other Caterpillar dealers, providing they have DBS and SAP systems in use.  
+The following were identified as potential risks and associated their strategies to counter or mitigate 
+such risks, the following factors:  
+ Difficulties in team allocation:  
+ Plan ahead of schedule. 
+ Scope not adhering to needs:  
+ High involvement of Sotreq's project team and internal customers throughout the project. 
+ Poor collaboration in the support areas: 
+ Involve support areas through the project sponsor. 
+ Difficulty in obtaining the data: 
+ Diagnose the source information in advance and monitor the data collection. 
+ Difficulty in building interfaces and processes for automation of data supply: 
+ Ensure its availability  
+ Map data sources clearly 
+ Set processes for manual data collection 
+ Adapt model complexity to the information available 
+The deployment project for the cost management model was carried out according to the steps 
+detailed below (see schedule in Annexes): 
+I. Step 1 - Project Planning and Management:  
+a. Meet to set up expectations/earnings of the project; 
+b. Meeting of control 1; 
+c. Closing meeting. 
+II. Step 2 - Conceptual Definition of the cost model:  
+a. Conceptual Definition of the cost model: 
+b. Definition of resources, activities, objects and their correlation; 
+c. Specification of the necessary financial and operational information; 
+d. Raising of the necessary financial and operational information; 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a Cost Management Software Tool 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1109-5.04-1259 
+Caterpillar Confidential:  YELLOW                Page 6 of 12 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+e. Validation of the necessary financial and operational information; 
+III. Step 3 - Parameter Setting and Validation of the Sollus ABM Cost Model:  
+a. Validation of the conceptual model; 
+b. Parameter setting of the Sollus ABM Cost Model: 
+c. Input data and calculation of one test period (2010). 
+IV. Step 4 - Training in Sollus ABM and Knowhow Transfer:  
+a. Presentation and validation of the cost model in Sollus ABM; 
+b. Training in Sollus ABM. 
+V. Step 5 - Preparation Of Permanent Interfaces and Proposal of Improvements: 
+a. Specification of permanent  interfaces to provide data; 
+b. Formulation of permanent  interfaces to provide data; 
+c. Validation of permanent  interfaces to provide data; 
+d. Proposals for improvements and next steps for evolution of the model. 
+VI. Step 6 - Findings of the 5 subsequent months: 
+a. Findings of the subsequent months (January-May 2011); 
+b. Monitoring the findings of the 5 following months (January-May 2011). 
+ 
+ 
+4.0 Benefits 
+ 
+Often, business managers make important decisions about pricing, product and customer mix, 
+allocations of resources and budgets based on information provided by the company's costing system.  
+Activity-Based Management (ABM) is a method that allows companies to control their activities and 
+processes in order to improve organizational performance and value perceived by your customer.  
+The ABM can track the company's costs with greater accuracy than traditional methods. Some of the 
+benefits that may result from using the ABC methodology:  
+ Cost finding of each individual equipment, service contract, customer, or process with a high accuracy 
+level 
+ Obtainment of useful operational control information  
+ Routing existing contracts correction through initiatives to reduce costs, fleet change, addition of 
+machines, contract renegotiations  
+ Improve the pricing model for new contracts. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a Cost Management Software Tool 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1109-5.04-1259 
+Caterpillar Confidential:  YELLOW                Page 7 of 12 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+The ABM model is based on the premise that the company's resources be consumed by processes 
+and activities. Likewise, the company's processes and activities exist only to serve, directly or indirectly, the 
+demand for their products, services and customers. The implementation of an ABC cost management model 
+will provide multiple benefits including:  
+ Cost Control: Monitoring and detailed process of cost control services and contract, as a whole. Source 
+analysis and cost-generating factors, providing feedback to reduce costs 
+ Profitability: Identification of equipment and fleets, contracts and more, less profitable business 
+customers, providing information for well-founded decision-making 
+ Process improvement: Obtainment and analysis of information on the process costs enable systematic 
+proposition of improvement initiatives, increased productivity and more efficient use of resources 
+ Feedback for planning: Using the information provided by the model of cost management, managers 
+now have a tool to set the company's strategic and financial planning 
+ Pricing: Detailed analysis of unit costs for pricing of service contracts 
+ Analysis of outsourcing: Information for decision making about outsourcing parts of the production 
+process 
+ Simulation Scenarios: Through the simulation scenarios, it enables impact evaluation of initiatives and 
+action plans before putting them into practice;  
+ Dissemination of information: Possibility of Online availability of financial information and performance 
+indicators for various Mining managers. 
+ 
+ 
+5.0 Resources Required 
+ 
+For this project, Sotreq invested in hiring a consulting and software development company: 
+ Consulting Hours: 160h;  
+ Investment: R$ 32,000.00 (thirty-two thousand reais);  
+Sotreq’s team was composed of 2 dedicated people 1 week per month for 5 months.  
+It was not necessary to acquire specific hardware to install the software, because computers used by 
+Sotreq already have the required operational capacity. Nor was it necessary to hire additional manpower 
+to operate and/or use the software because the assignments were absorbed in the daily work loads. The 
+project team involved in the project participated in training which was managed and implemented by the 
+software development company; participated in replicating the training of new users in-house. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a Cost Management Software Tool 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1109-5.04-1259 
+Caterpillar Confidential:  YELLOW                Page 8 of 12 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+6.0 Supporting Attachments / References 
+ 
+ Activity Module Screen; 
+ Object Module Screen; 
+ Hourly Operated Rate Report; 
+ Comparative Report of Earnings by Fleet Equipment; 
+ Hourly Operated Rate Report; 
+ Fleet Report Annualized by Operated Hour. 
+ 
+ 
+7.0 Related Best Practices 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice of Cost Management in Sotreq's Mining Contracts was created by: 
+Angela Maria Martino Ferreira 
+Systems and Process Development 
+Support Sales and MKT - Mining Business Unit 
+Sotreq S.A. 
+(31)3359.6202 
+angela.ferreira@sotreq.com.br 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a Cost Management Software Tool 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1109-5.04-1259 
+Caterpillar Confidential:  YELLOW                Page 9 of 12 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Activity Module Screen 
+ 
+ 
+Object Module Screen 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a Cost Management Software Tool 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1109-5.04-1259 
+Caterpillar Confidential:  YELLOW                Page 10 of 12 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Value Report by Hourly Operated Rate 
+ 
+ 
+Comparative Report of Earnings by Equipment Within Fleet  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a Cost Management Software Tool 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1109-5.04-1259 
+Caterpillar Confidential:  YELLOW                Page 11 of 12 
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Value Report by Hourly Operated Rate 
+ 
+Annualized Fleet Report by Hourly Operated Rate 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a Cost Management Software Tool 
+DATE 
+2/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1109-5.04-1259 
+Caterpillar Confidential:  YELLOW                Page 12 of 12

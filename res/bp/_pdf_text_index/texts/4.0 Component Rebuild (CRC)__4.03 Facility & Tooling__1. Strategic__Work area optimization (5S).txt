@@ -1,0 +1,321 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Work Area Optimization (5S) 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+Work Area Optimization (5S) ..................................... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+  
+ 
+ 
+ 
+ 
+  
+July 2009 
+0910-4.03-1180 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Efficient Component Rebuild Center (CRC) space management is an important factor of productivity. 
+Missing tools in a specific area can cause major time loss and can lead to potential accidents using 
+“will-do” tools instead of the one fit for the job.  Overstocking of unnecessary material and tooling 
+increases the cost of the department without adding any value.   
+ 
+Many CRC shops around the globe have been in place for several  years.  T his Best Practice  is a 
+structured approach to address facility revamp.   The principles outlined can apply to numerous 
+facilities, both for dealers and customers.  
+ 
+ 
+2.0 Best Practice Description 
+ 
+Different principles are used in the industry to help organizations manage their working environments. 
+This Best Practice utilizes a workplace organization methodology that originated from Henry Ford, and 
+was later impr oved by the Japanese.  It is commonly known as “5S” because it uses a list of five 
+Japanese words, when translated into English, start with the letter S. 
+ 
+1 – Seiri = Sort: Go through all the tools, materials, etc.  in the work area and keep only essential items.  Everything else is 
+stored, returned or discarded. 
+2 – Seiton = Straighten or Set in Order: Focus  on efficiency.  Arrange the tools, equipment and parts to  promote work flow 
+and maximize efficiency.  A place for everything and everything is in its place (separation and labeling).  Limit the objects 
+sitting on the floor.  If possible, make things mobile.  Final set-up must take consideration of ergonomics for the workers. 
+3 – Seisō = Sweeping, Shining or Cleanliness: Systematic Cleaning.  At the end of each shift, the work area is cleaned up 
+and everything is restored to its place.  This makes it easy to know everything is accounted for and where it should be.   
+Everyone becomes a janitor. 
+4 – Seiketsu =  Standardizing: Standardized work practices or operating in a consistent and standardized fashion.   
+Everyone knows exactly what his/her responsibilities are to keep above 3S’s.   
+5 – Shitsuke =  Sustaining the discipline: Maintaining and reviewing standards.   Maintain the focus on this new way of 
+operating, and do not allow a gradual decline back  to the old ways .  However, when an issue arises such as a suggested 
+improvement, a new way of working or a new tool, then a review of the first 4S's is appropriate.   
+ 
+Figure 1 - 5S diagram 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Work Area Optimization (5S) 
+DATE 
+2/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0910-4.03-1180 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+A sixth phase, "Safety," is sometimes added.  Purists, however, argue that adding it is unnecessary 
+since following 5S correctly will result in a safe work environment. 
+Two basic rules of the 5S methodology are as follows: 
+• It should take no more than 5 seconds to find the tool you need 
+• It should take no more than 5 minutes to clean the area. 
+ 
+3.0 Implementation Steps 
+ 
+• Assign a team to perform 5S 
+• Conduct training on the 5S methodology 
+• Select  an area to implement 5S  
+ 
+ 
+ 
+Figure 2 - Implementing 5S 
+ 
+ 
+ 
+ 
+ 
+ 
+Because it’s not always feasible to halt operations in order to implement 5S, focusing on one area at a 
+time while it’s temporarily relocated is advisable in most applications. 
+ 
+ 
+1. Sort: Create an inventory and discard everything unnecessary 
+ 
+ 
+ 
+Figure 3 - Sort 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Work Area Optimization (5S) 
+DATE 
+2/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0910-4.03-1180 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2. Straighten: Define a place for everything and put everything in its place 
+ 
+ 
+ 
+Figure 4 - Straighten 
+ 
+ 
+3. Shine: Systematic cleaning, painting 
+ 
+ 
+ 
+Figure 5 - Shine 
+ 
+ 
+4. Standardize 
+ 
+Color code all tools , i dentify staging areas  for components,  ensure parts delivery  location, clearly 
+identify rebuilt components.  R ebuild procedures should be constantly updated and a copy kept in the 
+designated rebuild area. 
+ 
+ 
+ 
+Figure 6 - Standardize 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Work Area Optimization (5S) 
+DATE 
+2/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0910-4.03-1180 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+5. Sustain the discipline 
+ 
+Upon completion of implementing 5S,  employees will be proud of their work bays  and keep them 
+clean, ensuring others do as well.  But in time what was once new will become routine.  Therefore, an 
+audit schedule must be an integral part of every project with no exception tolerated, constantly work on 
+keeping everyone’s commitment alive.  Additionally, a maintenance schedule for the area should be  
+defined (painting, equipment maintenance, contamination control and process audits, etc.). 
+ 
+ 
+4.0 Benefits 
+ 
+• Additional work bays utilizing the same floor plan 
+• Improvements in safety, productivity and engagement 
+• Eliminate excess parts and tools 
+• Tools become more accessible and are more easily accounted for 
+• Consistent workflow and quality 
+ 
+At a customer’s site, the implementation should include the dealer’s participation to make sure that the 
+necessary tooling and procedures are correct, and that contamination control included. 
+ 
+ 
+ 
+Figure 7 - CRC before and after 5S implementation 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Work Area Optimization (5S) 
+DATE 
+2/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0910-4.03-1180 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+5.0 Resources Required 
+• Project sponsor 
+• Logistic manager 
+• Trainer (1 day) 
+• 2 full time employees 
+• 1 painter (occasional) 
+• 1 welder to fabricate catwalks and mobile carts (occasional) 
+• 1 drawing engineer for above (occasional) 
+• Dealer involvement for contamination control, special tooling and procedures advice. 
+• Project duration per area: approx 8-10 days w/ 30 min. meetings beginning & end of each day 
+• Shelving, racking, High density polyethylene (HDPE) for assembly tables, labeling, paint etc…  
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+ 
+ 
+Figure 8 - Mobile cart with an oil retention tub, designed and built in house for final drives  
+ 
+ 
+ 
+ 
+Figure 9 - Hydraulic adjustable height tables with HDPE liner for component assembly 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Work Area Optimization (5S) 
+DATE 
+2/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0910-4.03-1180 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+7.0 Related Best Practices 
+ 
+0107-4.4-1057 CRC Hand Tool Management  
+0906-4.5-1013 Improving CRC Rebuild Turnaround Time 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+ 
+Michel Tremblay 
+Hewitt Equipment Ltd. 
+tremblaym@hewitt.ca 
+(1) 418-965-6017 
+ 
+Special thanks to: 
+ArcelorMittal Mines Canada 
+Mont Wright mine, 
+Prov. Quebec, Canada 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Work Area Optimization (5S) 
+DATE 
+2/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0910-4.03-1180 
+Caterpillar Confidential:  GREEN          Page 6 of 6

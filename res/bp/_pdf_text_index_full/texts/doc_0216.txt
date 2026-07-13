@@ -1,0 +1,328 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\2. Tactical\Salvage Mounting Surfaces of the Track Guides.pdf
+PAGES: 9
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Salvage Mounting 
+Surfaces of the Track 
+Guides 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+1.0 Introduction ...................................................... 1 
+2.0 Best Practice Description ................................. 1 
+3.0 Implementation Steps ...................................... 3 
+4.0 Benefits ............................................................ 5 
+5.0 Resources Required ........................................ 5 
+6.0 Supporting Attachments / References ............. 5 
+7.0 Related Best Practices .................................... 7 
+8.0 Acknowledgements .......................................... 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided 
+by one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or 
+warranty about the information contained in this document or the products referenced herein. Caterpillar welcomes 
+additional “Best Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+April 2015 
+1501-4.02-1368 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+According to Reuse and Salvage guidelines REHS1757, worn or damaged skids from Bogie 
+Front, Bogie Middle and Bogie Rear for models D10N, D10R, D10T, D10T2, and D11N, D11R, 
+D11T can be salvaged by welding.  
+ 
+Ferreyros has identified a process that can reduce time when there is excessive worn or 
+damaged skids. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+ 
+Picture 1: Bogie Middle, skids showing worn. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Mounting Surfaces of the Track Guides 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1368 
+Caterpillar Confidential:  GREEN              Page 1 of 8 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Picture 2: Bogie Front, skid presents excessive damage 
+ 
+Previously, the recovery of excessive worn skids is as follows: 
+ 
+• Remove skids with excessive damage. 
+• M anufacture two rectangular blocks with dimensions similar to the removed skid 
+• Weld blocks. 
+• Grinding blocks according to print. 
+  
+This process takes approximately 76.43 hours and the component stays in the shop for about 
+20 days. 
+ 
+Currently, skids replacement are made, which will be centered by two dowels. These skids are 
+to finished size and welding is only needed for grinding the surface wears. 
+ 
+With this improvement, time to perform this process was reduced from 76.43 to 58.434, while 
+the time the component stays in the workshop decreases by 10 days. 
+ 
+ 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Mounting Surfaces of the Track Guides 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1368 
+Caterpillar Confidential:  GREEN              Page 2 of 8 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Implementation Steps 
+ 
+• Evaluate Bogies as measures indicated on the print to see the need to change skids. 
+• Remove worn skates with Arc- Air. To remove skates considering Table 1 and Figure 3. 
+ 
+ 
+Picture 3: Distance to cut excessive wear skate 
+ 
+Table 1 
+Bogie Length D (mm) 
+D10 140 mm 
+D11 160 mm 
+ 
+• Rectify the area that was cut with Arc-Air; see final dimensions in Table 2. 
+ 
+Note: For grinding, place the Bogie in a device (Picture 4). In case Bogie presents 
+threaded damaged bores, they have to be corrected because the component has to be 
+centered in the device by this threaded bores. 
+Tabla 2 
+Bogie Length D (mm) 
+D10 125 mm 
+D11 148 mm 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Mounting Surfaces of the Track Guides 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1368 
+Caterpillar Confidential:  GREEN              Page 3 of 8 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+                Picture 4: Device where Bogies are housed 
+ 
+• Drill holes for guide pins and install the pins. These pins will center new skids. 
+NOTE: Drill a depth of 10 mm. hole spacing is 80±0.1 mm while the hole spacing 
+between the skids is 466 ± 0.1 mm. 
+ 
+Picture 5: Distance between holes for pins on skids 
+• Install new skids taking as reference the location of the guide pin. 
+ 
+ 
+Picture 6: Installation of new skids 
+ 
+80±0.1 mm  
+466±0.1 mm 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Mounting Surfaces of the Track Guides 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1368 
+Caterpillar Confidential:  GREEN              Page 4 of 8 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Weld the new skids mounted on the Bogie: 
+ 
+a) Preheat to 160°C the weld area (3 "around). 
+ 
+b) Use welding process FCAW and tubular wire AWS A5.20. Strutting installed skids, 
+then weld opposite zones to avoid deformation. 
+ 
+NOTE: Pay attention to manufacturing best practices for the welding process. 
+ 
+c) Cover with blankets, finish and cool. 
+ 
+• Standardize welded area using a grinding wheel. 
+ 
+4.0 Benefits 
+ 
+• Reduced turnaround time by 45%. 
+• Reduced hours in 23.6%. 
+ 
+i. Preceding process, 76.433 h 
+ii. Current process: 58.434 h 
+ 
+5.0 Resources Required 
+ 
+• Enabled skids. 
+• Standard AWS D1.1 2010 
+ 
+6.0 Supporting Attachments / References 
+ 
+A. Enabled skids D10 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Mounting Surfaces of the Track Guides 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1368 
+Caterpillar Confidential:  GREEN              Page 5 of 8 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Mounting Surfaces of the Track Guides 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1368 
+Caterpillar Confidential:  GREEN              Page 6 of 8 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+B. Enabled skids D11 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Mounting Surfaces of the Track Guides 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1368 
+Caterpillar Confidential:  GREEN              Page 7 of 8 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Name           Roger Rodríguez  
+E mail           roger.rodriguez@ferreyros.com.pe 
+ 
+Recognition: 
+ 
+Team:  Miguel Mauriola / Operations Support Chief 
+   Carlos Espinoza / Technical Communicator 
+                   Roger Rodriguez / Operations Support Assistance  
+    
+Sponsor:           Luis Aguilar / Manager Machine Shop 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Mounting Surfaces of the Track Guides 
+DATE 
+5/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1368 
+Caterpillar Confidential:  GREEN              Page 8 of 8

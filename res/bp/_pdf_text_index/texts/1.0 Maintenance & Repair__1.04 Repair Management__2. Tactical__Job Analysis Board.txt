@@ -1,0 +1,654 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2016 
+1605-1.04-1431 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Job Analysis Board 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Job Analysis Board .................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 7 
+6.0 Supporting Attachments / References ............... 8 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ............................................ 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Job Analysis Board 
+DATE 
+6/16/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.04-1431 
+Caterpillar Confidential:  GREEN          Page 1 of 8 
+ 
+1.0 Introduction  
+ 
+It was identified that the communication of important information in regards to job scope, job 
+control, planned job duration and cross shift hand-over of component replacement jobs were 
+poor, resulting in extended periods of machine downtime and increased expenses to the MARC 
+(Maintenance And Repair Contract) through inefficiency and scope creep.  Progress on the 
+bigger jobs such as component replacements are generally charted on a Gantt Chart for tracking.  
+These are sometimes kept in the Service Office and mechanics do not have visual contact with it 
+readily. 
+ 
+As work is performed on a machine in the workshop, the work includes paperwork such as work 
+order for the repair, work orders for backlog jobs, parts lists, inspection sheets, Service Letters 
+and time cards.  These are generally organized as a work pack and placed at any available space 
+on the work bench.  They end up being oily and dirty which sometimes get soiled with smudges 
+and become difficult to extract information from the documents. 
+ 
+It is therefore desirable to have a separate board or bench space for the necessary documents to 
+improve job control.  WesTrac Equipment had implemented the Job Analysis Board at two MARC 
+sites.  It was piloted at Mt Whaleback site with trials made on a whiteboard.  The board was then 
+finalised over twelve months and built for each workshop bay.  The idea was then adopted at the 
+Boddington site. 
+ 
+As the board was being developed, other items were added.  Items such as wheel chocks, step 
+ladders and clean-up utensils were also added to improve labor efficiencies.  Relevant safety tags 
+were also added. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice describes the use of a Job Analysis Board that has provision for placing 
+different necessary documents for the mechanics’ quick reference.  It has a small bench for 
+writing and board space for other documents such as the Gantt Chart for the job.  All the required 
+clean-up tools are also placed at the back of the board to assist in efficient execution of the job 
+from start to finish.   
+ 
+Figure 1 shows an early version of the job analysis board that was placed on trial.  As utilization 
+of the board increased, the layout was modified for improvements.  The various personnel 
+involved such a mechanics, leading-hands and supervisors had input to the modifications of the 
+board.  Figure 2 shows the final version of the board layout that includes the necessary 
+documents. 
+  
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Job Analysis Board 
+DATE 
+6/16/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.04-1431 
+Caterpillar Confidential:  GREEN          Page 2 of 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+Project Plan for PCR 
+ 
+ 
+ 
+JHA & procedures 
+ 
+ 
+ 
+Job hand-over 
+information 
+ 
+ 
+ 
+Budget labor hours for 
+each major component 
+ 
+ 
+Work order 
+labor tracking 
+“Actual vs. Budget” 
+ 
+ 
+ 
+“S” Curve for job tracking 
+ 
+ 
+ 
+Parts requisitions 
+Fig 1:  An early version of the Job Analysis Board on trial. 
+ 
+F 
+ 
+ 
+ 
+G 
+ 
+ 
+ 
+H 
+ 
+ 
+ 
+I 
+ 
+ 
+ 
+J 
+ 
+ 
+ 
+K 
+Fig 2:  The accepted final version of the Job Analysis Board. 
+A 
+ 
+ 
+ 
+ 
+B 
+ 
+ 
+ 
+ 
+C 
+ 
+ 
+ 
+ 
+D 
+ 
+ 
+ 
+ 
+E 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Job Analysis Board 
+DATE 
+6/16/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.04-1431 
+Caterpillar Confidential:  GREEN          Page 3 of 8 
+ 
+Reference to figure 2: 
+ 
+A. Job Duration Information:  This is a record of the uptime and downtime of planned jobs.  
+The expected uptime will be modified through the duration of the job depending on any 
+delays if the jobs are completed sooner than originally planned.  Only the uptime information 
+is entered for breakdown jobs.  The ‘Planned Downtime’ information will just be ‘BD’ (Break 
+Down). 
+B. Pre-Work Inspection:  Pre-work inspections are conducted as the machine is placed in the 
+workshop.  Any defects identified are listed in the form.  The Shift Supervisor reviews the 
+identified defects.  Only defects related to safety or are expected to cause the machine to 
+have in-service breakdowns will be added to the events scope.  All other defects will be 
+placed in the Backlog system for the next opportune time which will generally be the next PM 
+Service. 
+C. Backlog Capture:  The defects identified in the Pre-work inspections to be placed in the 
+Backlog system will be recorded in the Backlog Capture form for each individual defect.  
+These will be converted to jobs for any required parts order and for planning into the next 
+opportune stoppage. 
+D. Events Scope:  The defects identified in the Pre-Work inspections which are not placed in 
+the Backlog system will be converted to additional jobs by the Shift Supervisor.  These will be 
+added to the events scope as an updated events scope.  The expected uptime will be 
+updated accordingly. 
+E. Safety:  A ‘Take 5’ is completed to carry out pre-work inspections.  After the ‘Take 5’, all 
+safety documents such as JHA (Job Hazard Analysis) and SWP (Standard Work Procedure) 
+are stored here for reference. 
+F. Gantt Chart:  A Gantt Chart is placed here for jobs that are planned to exceed 100 hours 
+duration.  These jobs will generally be major component replacements.  The Gantt Chart 
+provides an understanding of the flow of the job and assist in distribution and requirements of 
+other labor such as electricians and welders. 
+G. Chase Waste Reminder:  This is a reminder of the CPS principles of reducing wastes. 
+H. CPS Input Cards:  CPS input cards used for continuous improvements.  Any personnel can 
+have input into CPS through the use of these cards. 
+I. Labor Tracker:   For jobs that exceed 100 hours duration, the ‘S’ Curve chart will be inserted 
+to track actual labor against planned labor. 
+J. Hand-overs & Parts:  All cross shift written hand-over documents are stored here for 
+continuity of the jobs.  These will include any SIS print-outs, parts requisition copies and shift 
+change notes. 
+K. Work Scopes:  All work scopes (event scopes) from the work order system is printed and 
+placed here.  AMT is the work order system used at these sites. 
+  
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Job Analysis Board 
+DATE 
+6/16/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.04-1431 
+Caterpillar Confidential:  GREEN          Page 4 of 8 
+ 
+Figure 3 shows the front side of a typical unit.  This unit shows the set-up at the front just before 
+the unit number was painted on.  Each board has a number painted on and each number is of a 
+different color.  All the equipment and tools associated to that board are color coded to ensure 
+that they are returned to the right spot. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+Hook for tall ladder 
+ 
+ 
+Lifting hook for relocation 
+ 
+ 
+Mini shelf for Service 
+Manual and folders 
+ 
+ 
+Shelf 
+ 
+ 
+Storage for step box 
+  
+Hanging hook 
+ 
+ 
+Job board 
+ 
+ 
+Hook for short ladder 
+ 
+ 
+Wheel chock storage on 
+both sides 
+ 
+ 
+Stable base 
+Fig 3:  Front side of Job Analysis Board. 
+ 
+Ladder stowed on the hook 
+ 
+Light sticks for directing 
+machines 
+ 
+Service manual on its shelf 
+ 
+Cleaning tools color coded to 
+the board  
+ 
+All the necessary tags 
+(eg. Out of Service, Danger, 
+Lock-out, etc) 
+ 
+ 
+Two more brackets for wheel 
+chock storage 
+ 
+ 
+Shelf for water bucket 
+  
+Fig 4:  Back side of Job Analysis Board. 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Job Analysis Board 
+DATE 
+6/16/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.04-1431 
+Caterpillar Confidential:  GREEN          Page 5 of 8 
+ 
+ 
+Figure 4 shows the rear side of the unit.  All the necessary tags for performing a job are stored 
+here.  The clean-up utensils are also stored at the back against its individual ‘shadow’.  They are 
+color coded to the board.  It this case it is a green color for Board Number 2.  The number is also 
+painted at the front and sides of the board in green.  A quick walk-around at the end of a shift will 
+very quickly identify any missing items. 
+ 
+Figure 5 shows the Job Analysis Boards in use in the workshop.  Take note that Board 3 is yellow 
+numbered and Board 5 is red numbered. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Before the manufacturing of the boards are initiated, it must first be decided on what information 
+is required and desired to be available on the board.  Below is a general flow process for the 
+implementation steps. 
+ 
+i. Make a list of the information required to perform the job efficiently.  The example in this 
+BP should be a very good start. 
+ii. D etermine the tags that are required to complete a job from start to finish. 
+iii. Determine the utensils required for clean-up during and after a job.  Make note of the long 
+items such as brooms and mops. 
+  
+ 
+Fig 5:  Job Analysis Boards 3 and 5 in use. 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Job Analysis Board 
+DATE 
+6/16/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.04-1431 
+Caterpillar Confidential:  GREEN          Page 6 of 8 
+ 
+ 
+iv. Lay out all the required items at the front and back of the board to determine the size of the 
+board.  The height should be such that any personnel of average height will be able to 
+reach all items that require to be attached and detached. 
+v. Develop additional required documentation if not available. 
+vi. Design the shape of the board for fabrication. 
+a. Suitable height and width dimensions. 
+b. Stability when standing on the workshop floor. 
+c. Ability to be relocated by crane, forklift or personnel.  If the board is to have attached 
+castor wheels, they should be heavy duty lockable ones to avoid movements when 
+in use. 
+vii. Review the design with workshop personnel.  Modify if appropriate. 
+viii. Sections of the board should have clear Perspex holders for easy viewing of some 
+documents. 
+ix. In general, the whole board is fabricated from steel.  If the structure is fabricated from 
+aluminium for weight savings, part of it should have a steel plate for magnetic button 
+holders to keep some documents on the board.  These will generally be quick change type 
+of documents for temporary notice. 
+x. If desired, part of it can be made of white-board material for writing.  
+xi. Select a fabricator for quotation and fabrication. 
+xii. Lay out the location for the boards in the workshop. 
+xiii. Acquire the equipment for storing with the board.  Mark them (color code or otherwise) 
+according to each board. 
+xiv. Have it fabricated and delivered with the elected paint scheme. 
+xv. Communicate with workshop personnel on implementation of their use. 
+xvi. When delivered, set up the board as initially planned. 
+xvii. Commence utilizing the boards. 
+xviii. Monitor the use of the boards and retrain personnel if required. 
+ 
+ 
+4.0 Benefits 
+ 
+Job control is an important part of any work order in a workshop.  Lack of job control will introduce 
+wastes in labor utilization and parts usage in many cases.  They all potentially contribute to 
+additional downtime.  The list below provide a view of some of the benefits of using a job analysis 
+board. 
+i. Mechanics have all the necessary tags readily available at one spot near the work bay. 
+ii. Mechanics have all the necessary forms and inspection sheets readily availability. 
+  
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Job Analysis Board 
+DATE 
+6/16/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.04-1431 
+Caterpillar Confidential:  GREEN          Page 7 of 8 
+ 
+iii. The work orders and other relevant documents such as backlog jobs, Service Letters, 
+Special Instructions are in a work pack readily available at the work bay. 
+iv. Documents do not get soiled by work benches, which saves time and effort of office 
+personnel when closing the jobs. 
+v. The Gantt chart can be easily and readily viewed by mechanics and workshop personnel 
+for information on progress of the job, especially for larger jobs such as component 
+replacements. 
+vi. Mechanics save time with readily available wheel chocks at the board and not having to 
+get them from their stowage area. 
+vii. Other commonly used access equipment such as ladders and step box are also readily 
+available. 
+viii. When the job is completed, valuable time is saved when all the equipment used can be 
+easily placed back on the board. 
+ix. In cases of any spills and when the machine had been moved out after a job is completed, 
+the general clean-up equipment is readily available. 
+x. Job control and work flow are improved. 
+xi. There is a higher visibility of the jobs which promotes compliance to plan. 
+xii. Communication at shift hand-overs are improved. 
+xiii. The readily available documents and tags invokes higher safety awareness. 
+xiv. Closer adherence to procedures is promoted. 
+xv. Removes waste and challenges employees to use the CI system. 
+xvi. Downtime is reduced through the all the above. 
+ 
+ 
+5.0 Resources Required 
+ 
+In almost all mine sites, most or all the required documents are already existing.  The Planner 
+needs to review the required documents list for the board and develop any desired ones that are 
+not yet available.  He/she can then develop the shape and size of the board to accommodate all 
+the required documents and equipment. 
+ 
+The Project Manager/Maintenance Superintendent will set up an awareness program for the use 
+of the board.  This can be communicated to all workshop personnel through shift change 
+meetings and any other relevant meetings.  A supplier will have to be appointed. 
+  
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Job Analysis Board 
+DATE 
+6/16/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-1.04-1431 
+Caterpillar Confidential:  GREEN          Page 8 of 8 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Idea and implementation by: 
+ 
+Clint Dallow 
+WesTrac Equipment 
+Western Australia 
+Contract Manager 
+BHP Mt Whaleback MARC 
+clint.dallow@westrac.com.au
+ 
+ 
+ 
+Damien Burrows 
+WesTrac Equipment 
+Western Australia 
+Contract Manager 
+Newmont Boddington Gold MARC 
+damien.burrows@westrac.com.au
+ 
+ 
+ 
+Author: 
+Victor Lai 
+Equipment Management Consultant 
+Caterpillar Global Mining 
+lai_victor_k@cat.com

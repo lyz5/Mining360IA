@@ -1,0 +1,813 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+November 2022 
+1.09-221111-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Utilizing Downtime 
+Analysis to Improve 
+Availability 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+                                                                            Utilizing Downtime Analysis to Improve Availability…1 
+1.0
+ Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ...................................... 12 
+4.0 Benefits ............................................................ 13 
+5.0 Resources Required ........................................ 13 
+6.0 Supporting Attachments / References ............. 13 
+7.0 Related Best Practices .................................... 14 
+8.0 Acknowledgements .......................................... 14 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ 
+Downtime Analysis to Improve Availability 
+ 
+DATE 
+11/11/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221111-1 
+Caterpillar: Confidential Yellow                 Page 2 of 14 
+1.0 Introduction  
+ 
+• Increasing equipment availability is the objective of all maintenance organizations. A 
+robust and fact-based process to identify and address the reasons of unavailability is the 
+most effective way to manage and sustainably increase availability.  
+• Some customers perform this analysis internally but others lack the resources or 
+knowledge and Site Performance Managers from the Dealer and/or Caterpillar can support 
+this process, creating a unique relationship with the customers’ maintenance organization. 
+• This best practice describes methods to codify and analyze downtime, the process to 
+analyze, how to identify opportunities, how to structure a customer meeting to review, and 
+how to track action items. 
+  
+ 
+2.0 Best Practice Description 
+ 
+ 
+2.1 Source of Data 
+• The source of downtime information can be dispatch data, maintenance records, or a 
+combination of both. 
+o Ideally, dispatch and Maintenance & Repair records are reconciled on a regular 
+basis, therefore downtime categories are accurate in both systems. 
+• The quality & accuracy of the data used can substantially influence the analysis results. 
+Measuring with sufficient granularity (detail) is important for the data to be meaningful. 
+• Quality of initial source data should not delay beginning the analysis because observations 
+and improvements are possible with even poor-quality information. 
+• Processing data can be done in excel since most or all computerized maintenance 
+management software (CMMS) have export functionality.  Some dispatch or maintenance 
+software programs have pre-programmed functionalities. 
+ 
+ 
+2.2 Time Usage Model  
+ 
+To successfully calculate the top tier and M&R process metrics, it is imperative that the mine site 
+departments (production operations and maintenance) have a common understanding of the time 
+usage model. Teams need to be aligned to ensure a common understanding of categories, terms, 
+and calculations. 
+ 
+Caterpillar suggests the “time usage model” as shown in the table below. Customers may have 
+different definitions or variations of the time usage model.  When Caterpillar and dealers work with 
+any site, it is advisable to ensure the time usage model and coding system are clearly understood. 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ 
+Downtime Analysis to Improve Availability 
+ 
+DATE 
+11/11/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221111-1 
+Caterpillar: Confidential Yellow                 Page 3 of 14 
+ 
+Reference publication PEBJ0190 Caterpillar Mining Equipment Management (MEM) Performance 
+Metrics 
+ 
+ 
+2.3 Codification of Downtime 
+ 
+Each time a machine stops for maintenance or repair, a few critical things must be captured.  It’s 
+preferable to capture any delay time, if applicable.  Critical information for each stoppage should 
+include:  
+• Stoppage type:  Scheduled or Unscheduled 
+• Cause of the stoppage:  PM, PCR, etc. 
+• Responsibility code:  Maintenance, Operations, Other, etc.  
+• Responsible party:  Customer, Dealer, Tire contractor, Fire suppression contractor, etc. 
+• Machine system or subsystem affected (engine, final drives, steering, etc.).   
+ 
+Repair delays cause the repair time to increase beyond the mine standards.  Examples of delays 
+might be due to “waiting for parts”, “waiting for labor”, or “waiting for facilities”, etc.  There are two 
+primary methods to capture repair delays and either can assist the site to define continuous 
+improvement opportunities. 
+• Capture all downtime at the machine system or subsystem level then record additional 
+second level detail that defines the repair delays. 
+• Capture delay codes such as “waiting for parts”, “waiting for labor”, “waiting for facilities”, 
+etc. as primary downtime categories. 
+ 
+In this Best Practice example, the mine site uses AMT software, but similar structure can be used for 
+any maintenance database tool (SAP, Wenco, JD Edwards). Fields of the database are presented in 
+an Access table below.  
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ 
+Downtime Analysis to Improve Availability 
+ 
+DATE 
+11/11/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221111-1 
+Caterpillar: Confidential Yellow                 Page 4 of 14 
+• For analysis reasons, it’s recommended to use standard (predefined) downtime cause 
+descriptions.  This prevents duplication or inaccuracies from reasons such as spelling 
+mistakes, difference in descriptions, etc. 
+• Caterpillar Service Management Control System (SMCS) codes are standardized 
+information codes and are strongly recommended, especially where dealer personnel 
+perform maintenance. SMCS website 
+o The high-level structure for component codes includes a limited number of “basic” 
+categories (less than 10).  These include: engine (1000), transmission & drive line 
+(3000), drive train (4000), implement controls (5000), machine (7000), etc.   
+ Capturing these categories lacks sufficient granularity to action. 
+o The detailed structure for component codes consists of a numeric table that offers 
+significantly more codes (a few thousand).  These include examples from the 
+engine system such as: turbocharger (1052), camshaft (1210), piston (1214), etc. 
+ Capturing at this level can be time consuming but can provide the additional 
+level of detail that is desirable. 
+• Some mines will select a shorter list than the detailed structure noted above.  Careful 
+consideration should be given to decide the level of detail expected. It is advisable that this 
+list should not be shorter than 100 codes. 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ 
+Downtime Analysis to Improve Availability 
+ 
+DATE 
+11/11/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221111-1 
+Caterpillar: Confidential Yellow                 Page 5 of 14 
+ 
+ 
+2.3.1 Data Structure  
+ 
+• Some of the fields described can be seen in this example below. 
+• Please note that the same maintenance stoppage (turbo leak) has two downtime entries, 
+one waiting for parts and one for the actual repair. 
+• It should be emphasized that this is only (1) shutdown, otherwise this would impact MTBS 
+and MTBF calculations & results. 
+ 
+ 
+ 
+In order for the data to be easily analyzed, all fields of the table need to be codified.  This is most 
+efficiently performed with preselected categories or systems.  SMCS codes can be used for 
+Component description, but due to large number of options (~3,000) most mines use a shorter list 
+of Component codes (see comments in the section “codification of downtime” above). 
+  
+ 
+2.3.2 Non-Mechanical Causes and Delays 
+ 
+• It is important to capture repair delays because defining these delays provides 
+opportunities to target areas for improvement (possible inputs to the Continuous 
+Improvement (CI) process).  
+o Measuring & reporting delay categories (“waiting for xx”) enables the team to define 
+how much “pain” was caused and help motivate changes or improvements in the 
+M&R organization (such as additional people, more or different types of tools, more 
+parts, etc.). 
+• A percentage of the equipment downtime is not due to the repair itself, but delays due to 
+waiting for parts, labor, tooling or other resources. 
+• A downtime analysis which does not include delays is incomplete and can lead to false 
+conclusions. 
+• Waiting for parts, waiting for labor, etc. can be documented either in a separate entry, or 
+as a variation on the repair (% of time, or hours). 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ 
+Downtime Analysis to Improve Availability 
+ 
+DATE 
+11/11/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221111-1 
+Caterpillar: Confidential Yellow                 Page 6 of 14 
+Table 1: List of non-mechanical delay codes 
+ 
+Attached below are reference tables extracted from the document titled “Caterpillar Mining Equipment 
+Management (MEM) Performance Metrics”.  It should be emphasized that different customers will 
+have slightly different definitions and codes. 
+ 
+ 
+ 
+2.3.3 Handling Accidents and Equipment Abuse 
+ 
+• Sometimes the root cause of a component and machine failure is due to operational abuse. 
+• A downtime description, such as “accident”, or “operational abuse” needs to be utilized to 
+differentiate those and allocate to the appropriate responsibility within the organization. 
+ 
+ 
+2.3.4 Handling Simultaneous Work and Backlog Performed at PM 
+ 
+• When jobs (work orders) are performed in parallel, downtime should be measured once.  
+However, it is still expected that labor hours are accurately captured for each work order in the 
+work order management system. 
+• Backlogs performed during PM within the PM “window of opportunity” or within a single shift 
+can be allocated to PM downtime.  Alternatively, downtime due to PM and downtime due to 
+backlog repairs can be captured separately and allocated to the appropriate machine system.  
+o It should be reinforced that assigning backlogs within the PM window of opportunity 
+is acceptable only if the PM time is reasonable.  Typically, most PM stoppages are 
+targeted for completion within a single shift of slightly longer. 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ 
+Downtime Analysis to Improve Availability 
+ 
+DATE 
+11/11/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221111-1 
+Caterpillar: Confidential Yellow                 Page 7 of 14 
+o Note: A PM time of 47 hours is not reasonable.  Therefore, it is suggested that 
+downtime should be correctly and reasonably allocated to “PM time” and downtime 
+allocated to backlogs should be correctly captured and allocated to that machine 
+system (as an example frame welding). 
+• Backlogs performed at PM that cause the PM stoppage time to extend, need to be 
+documented and allocated to the correct machine system / subsystem.   
+• However, a work order is still required for each repair and should include both system category 
+and labor hours. 
+ 
+2.3.5 Handling Downtime from PM Execution 
+ 
+• Measure PM execution and compare with site goals and industry benchmarks. 
+• Often backlogs or repairs downtime is incorrectly allocated to PM, causing the downtime due 
+to “PM” to be overinflated and downtime due to other reasons to be underreported in other 
+machine systems (such as hydraulics, electrical, etc.).   
+o Attention is needed to ensure this doesn’t drive the wrong conclusions. 
+o As an example, if the top downtime drivers and impact on availability are used to 
+prioritize improvement actions, then overreporting PM and underreporting other work 
+could drive the wrong behavior.  
+• Trending of “PM unavailability” for trucks is typically more stable and consistent over time due 
+to the size of fleets compared to fleets of a single unit or small fleets.  
+• When the 8-Step PM process is used, PM trending can be used by grouping all PM types 
+together (PM1, PM2, PM3, PM4, PM5, etc.) for each machine equipment model. 
+• If the 8-Step PM process is not used, then each machine model and PM type should be 
+separated and reported as shown in the table below (i.e. PM250, PM500, PM1000, etc.). 
+ 
+ 
+ 
+2.4 Processing Data and Analysis  
+ 
+• The information needs to be analyzed and displayed in a convenient format to allow the 
+maintenance organization to investigate and determine opportunities to improve.  Pareto 
+charts of top 5 or top 10 are recommended. The impact of each DT category needs to be 
+clearly indicated. 
+• It’s recommended that (2) types of Pareto analyses be reported for each machine fleet. 
+o Top10 by downtime hours 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ 
+Downtime Analysis to Improve Availability 
+ 
+DATE 
+11/11/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221111-1 
+Caterpillar: Confidential Yellow                 Page 8 of 14 
+o Top10 by stoppage events 
+• Processing data can be done in excel, since all software have the export functionality, but 
+some dispatch or maintenance software have pre-programmed functionalities. 
+2.4.1 Identifying Top Issues / Significant Event Failures  
+ 
+• Pivot tables can be utilized to extract top downtime causes, by system and by delay code. 
+• Identify top 10 issues. Those should raise flags in investigating the root cause and the remedy. 
+• Compare downtime per category with industry benchmarks to identify gaps and potential 
+opportunities (refer to metrics document or known benchmarks for that machine). 
+ 
+Cat code Equivalent Unavailability 
+  (HRS) 
+Occurrences Unavailability % 
+(Impact on Availability) 
+PM 90.7 5 6.3% 
+Engine (CC) 59.3 1 4.1% 
+Daily Inspection 26.8 62 1.9% 
+GET 18.2 12 1.3% 
+Electrical System 17.5 16 1.2% 
+Swing System 14.3 10 1.0% 
+Engine 12.8 3 0.9% 
+Hydraulic System Distribution  
+(Hoses, Lines, Tanks, Coolers) 11.2 5 0.8% 
+Frame/Chassis/Structures 9.2 1 0.6% 
+Bucket/Dipper 8.3 10 0.6% 
+Undercarriage 7.6 4 0.5% 
+Lubrication/Auto lube system 4.1 9 0.3% 
+Filters 3.1 6 0.2% 
+Accident Damage 2.7 1 0.2% 
+Cooling System 1.9 1 0.1% 
+Hydraulic System (Pumps & Motors) 1.8 1 0.1% 
+Grand Total 289 94 20% 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ 
+Downtime Analysis to Improve Availability 
+ 
+DATE 
+11/11/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221111-1 
+Caterpillar: Confidential Yellow                 Page 9 of 14 
+ 
+ 
+Attached below is a reference table for large mining trucks indicating reference information by 
+machine system for MTBS, MTTR and availability impact.  This table can be located in the “Caterpillar 
+Mining Equipment Management (MEM) Performance Metrics” document publication PEBJ0190. 
+ 
+ 
+2.5 Identifying & Addressing Root Causes 
+ 
+• Technical reports and feedback from customer and dealer personnel will be required to 
+understand and evaluate root cause of failures and other stoppages. 
+• At a high-level view, failures might be attributable to maintenance performance, operations 
+conditions or behaviors, manufacturer machine or parts quality, or combination these. 
+• Continuous Improvement projects are often valuable opportunities to identify and address root 
+cause of downtime. 
+
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ 
+Downtime Analysis to Improve Availability 
+ 
+DATE 
+11/11/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221111-1 
+Caterpillar: Confidential Yellow                 Page 10 of 14 
+• Focus on cases or failures which may require contingency plans to protect the fleet, if issues 
+can affect more units (parts, labor). 
+ 
+2.6 Availability and Availability Index  
+ 
+Caterpillar recommends using Availability index with physical availability. 
+• Physical Availability = (Calendar Hours - Downtime Hours) / Calendar Hours.  
+• Availability index = MTBS / (MTBS + MTTR) 
+• MTBS = Operating Hours / Number of Shutdowns 
+• MTTR = Downtime Hours / Number of Shutdowns 
+ 
+Low utilization (i.e., high standby hours) will artificially inflate Physical Availability (PA) and can 
+provide the maintenance department with a false sense of "good performance". 
+ 
+The table below is an example that demonstrates this concept.  In this example, 3 trucks have 
+completely different reliability (MTBS), but because of differences in utilization, the physical 
+availability results are the same. Therefore, the conclusion is that physical availability without 
+understanding utilization can be deceiving.  Availability index is a reporting metric that removes the 
+differences due to changes in utilization.  Availability index is a more objective way to measure the 
+efficiency (speed) and effectiveness (quality) of the maintenance organization. 
+ 
+ 
+ 
+ 
+2.7 Follow up and Tracking Actions  
+ 
+An action plan is a critical part of implementing improvements.  A 3W (Who, What, When) type 
+management methodology is the recommended approach to improving availability. 
+ 
+It’s recommended to conduct monthly meetings with the customer, dealer and Cat representative if 
+possible.  This team should include key members of the maintenance organization such as: site 
+maintenance manager, senior planner, foreman, condition monitoring, reliability engineering, 
+continuous improvement, and the Cat & dealer site performance managers.  
+ 
+In the below example a column is added every month to document progress towards each objective.  
+ 
+
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ 
+Downtime Analysis to Improve Availability 
+ 
+DATE 
+11/11/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221111-1 
+Caterpillar: Confidential Yellow                 Page 11 of 14 
+ 
+ 
+  
+internal machine 
+model who what when start status update update
+yes 6020B
+Key Account 
+manager/ 
+Site Manager
+significant electrical downtime. consider 
+proposing an electrician for 2 rotations of 
+troubleshooting and hands on training to reduce 
+downtime
+15-Dec 08-Nov ongoing
+10 Aug: HMS expert will do 2 
+rotations, customer has hired two 
+electrician experts 
+no 6040FS Logistics 
+department provide a quotation and lead time for 6040FS stick 30-Aug 22-Aug ongoing
+yes all Key Account 
+Manager 
+consider offering a hose inspector, to improve 
+machine reliability and support business 15-Dec 08-Nov ongoing 10 Aug: waiting for input from KAM 8 December: Will be discussed during 
+the visit on site this weekend 
+yes 777E KYD Country Parts 
+Manager confirm RDSL orders placed
+01-Jun 31-May ongoing
+21 Jun: no specific stocking for the 
+777E KYD prefix was done, reminder 
+send on actions taken since
+yes all
+Country 
+Technical 
+Manager
+it was identified during the training for the hose 
+team that there is no maintenance of the 
+equipment, creating a risk of producing hoses out 
+of specification. Paul visit planning 
+01-Aug 28-Mar ongoing
+10 Aug: SPM to confirm with Parts 
+Manager
+15 April: Several options are currently 
+being discussed between dealership 
+and the central team. I do not want to 
+speak on their behalf, they will come 
+back to you once the investments 
+decisions are made, the sooner the 
+better. )
+no 6020B KAM/ SPM
+Customer has concerns about productivity of 
+6020B older units next steps are:
+1. TA2 inspection by Dealer Expert technician 
+2. Feedback to GM on the production study led by 
+the dealer
+15-Sep ongoing
+no MD6240 PSSR/ service 
+director
+source track frame to replace cracked/ propose 
+repair
+ο do we really need to replace U/C with non-Cat
+o can the track frame be repaired (dealer)
+01-Sep 01-Jun ongoing
+yes all PSSR/ SPM
+General monitor A/C related downtime trend
+o make a list of maintenance operations from 
+OMM and builder and share with customer PSSR 
+(done) - complete
+o prepare training offer to customer SPM/ PSSR
+o ensure stock for A/C parts is available on VMI 
+Dealer Site Manager
+o offer technician for A/C from dealer, include 
+tooling
+01-Jun 01-May ongoing
+10 Aug: trainer will arrive in August 8 Feb: training planned June 
+no MD6250 Site Manager
+o evaluate condition of coolers/ radiators of 
+MD6250 and undertand frequency of cleaning 
+15-Apr 06-Apr ongoing
+10 May: customer does not clean 
+radiators frequently enough according 
+to dealer, however during SPM visit all 
+radiators inspected were clean 
+yes 6040FS
+Cat Tech 
+Rep/ Dealer 
+Technical 
+Director
+track issues
+o settle repair with the customer
+o order tracks for stock
+o investigate issue 
+15-Apr 15-Mar ongoing
+10 Aug: Christian to provide feedback 
+on parts ordered and position
+10 May:  
+pins ordered
+replace pins on 6040FS CTS tracks
+order track for FS02
+yes 
+D10 
+downtime 
+on UC
+PSSR review CTS/ liaise with GET expert/undertand root 
+cause of downtime/ offer service to the customer
+10-Sep 10-Aug ongoing
+no all SPM/ Dealer 
+Site Manager
+Elimination of Live Work, share all available 
+instructions SPM/ consider supporting 
+implementation Dealer Site Manager
+20-Dec 09-Dec complet
+e
+no 789D TC AFA on TC on HT?? Failed in November 20-Dec 09-Dec complet
+e
+no 6040FS Site Manager share report for block valve issue, which caused 
+the pump failures 12-Nov 08-Nov complet
+e
+yes 6040FS Site Manager CTS on 6040FS 10-Mar 10-Feb complet
+e
+yes 6020B Site Manager service kit for brakes has the wrong parts in it, 6 
+kits received with this issue, make a DSN report 10-Dec 08-Dec complet
+e
+10 January: order was correctly filled
+
+===== PAGE 12 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ 
+Downtime Analysis to Improve Availability 
+ 
+DATE 
+11/11/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221111-1 
+Caterpillar: Confidential Yellow                 Page 12 of 14 
+2.8 Roles and Responsibilities  
+ 
+It’s important to assign roles such that each person is clear what their contributions and deliverables 
+are as part of the continuous improvement process.  Some examples are noted below: 
+ 
+Gather initial data  Planner/ reliability analyst  
+Identify top 5 / top 10 issues by category  Planner/ Reliability analyst  
+Perform Root Cause Analysis – identify 
+opportunities in maintenance, operations, parts 
+logistics, quality, etc. 
+Planner/ Reliability analyst/ Condition 
+Monitoring/ technical experts  
+Define improvement actions Planner/ Reliability analyst/ Condition 
+Monitoring/ technical experts  
+Regular meeting/ follow-up  Maintenance Manager/ Planner/ 
+reliability analyst / CI/ Dealer Site 
+Manager/ PSSR/ SPM/ tech rep 
+ 
+Note: If site has a Caterpillar or Dealer SPM assigned, the SPM can overview process and drive 
+execution of deliverables, especially opportunities identified. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The first step is to get agreement or alignment with the customer, Dealer and Caterpillar personnel 
+about the objectives of the exercise, roles & responsibilities, and resources.  Customers often 
+have apprehension about sharing internal information so developing a trusting relationship is 
+necessary prior to this stage. Agreement and commitment of all parties (customer, dealer, 
+Caterpillar) at a management level helps get traction and start the process in the right way. 
+ 
+An important reminder is that no data is perfectly accurate.  Therefore, it’s suggested not to delay 
+the beginning of the analysis due to quality of initial source data.  Valuable observations, 
+conclusions and recommendations are possible even with poor-quality information. Initial wins will 
+boost morale and encourage the maintenance organization to improve data accuracy and improve 
+the quality of recommendations and action plans that can be implemented. 
+ 
+Attached is a list of recommended actions, performed on a monthly basis: 
+1. Get data from planning department. 
+2. Analyze data: 
+• Identify top issues per product, frequency and duration. 
+• Identify outliers, significant failures/ incidents. 
+• Prioritize analysis of products which not reaching availability/ reliability goal. 
+3. Gather information about top unavailability contributors: significant failures/ incidents review 
+technical reports and maintenance records. 
+4. Identity opportunities, gaps, actions required and prepare recommendations for customer, 
+dealer, Caterpillar.  
+5. If needed, conduct an internal meeting to agree on action plan with different areas (parts 
+department, CRC, technical department, Caterpillar). 
+
+===== PAGE 13 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ 
+Downtime Analysis to Improve Availability 
+ 
+DATE 
+11/11/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221111-1 
+Caterpillar: Confidential Yellow                 Page 13 of 14 
+6. Prepare data presentation (PowerPoint or Word). 
+7. Plan and conduct a meeting with the maintenance organization and get customer input on 
+actions required / recommendations. 
+8. Manage action plan and follow up. 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+• Improve availability by optimizing resource utilization in areas with highest opportunity. 
+• Dealer, customer, Caterpillar work towards the same goals and align priorities. 
+• Improved relationship and trust with the customer. 
+• Data based approach allows efficient use of resource on the most urgent issues. 
+ 
+5.0 Resources Required 
+ 
+• Agreement with customer to share maintenance data. 
+• Dispatch and/ or maintenance system to document downtime. 
+• Process owner can be Site Manager, Site Performance Manager or Reliability Engineer. 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Sample report 
+• Caterpillar Mining Equipment Management (MEM) Performance Metrics [Caterpillar Media 
+Publications: PEBJ0190 (English), PSBJ90190 (Spanish), PRBJ0190 (Russian), 
+PPBJ0190 (Portuguese) 
+
+
+===== PAGE 14 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ 
+Downtime Analysis to Improve Availability 
+ 
+DATE 
+11/11/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-221111-1 
+Caterpillar: Confidential Yellow                 Page 14 of 14 
+• Caterpillar Service Management Control System (SMCS) SMCS website 
+ 
+7.0 Related Best Practices 
+ 
+• BP 1311-1.09-1326:  Performance Evaluation (Strategic) 
+• BP 1.03-210611-1:    Strategic Plan to Recover the Performance of a Mining Equipment 
+Fleet  
+• BP 1007-2.0-1000:    Continuous Improvement (Strategic) 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Ioannis Pyrovolakis 
+Site Performance Manager - Northern Africa 
+Caterpillar Global Mining – Surface Mining & Technology Division 
+w +41228494421 m +41789190134  
+pyrovolakis_ioannis@cat.com 
+ 
+Special recognition to Jean-Dennis, Maxence Hug, and Mamane Abderamane for their 
+contribution in implementation and Chris Gayet for his guidance.

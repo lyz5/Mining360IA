@@ -1,0 +1,166 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Users | Mining360IA</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Access control</p>
+                <h1>Users</h1>
+            </div>
+            <div class="actions">
+                <a class="button secondary" href="{% url 'dashboard' %}">Back</a>
+            </div>
+        </header>
+
+        {% if messages %}
+            <section class="alert">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </section>
+        {% endif %}
+
+        <section class="user-admin-grid">
+            <article class="user-admin-panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Active Directory</p>
+                        <h2>Search person</h2>
+                    </div>
+                </div>
+                <form method="get" class="user-search-form">
+                    <input type="search" name="q" value="{{ query }}" placeholder="Name, email, or UPN" autocomplete="off">
+                    <button class="button" type="submit">Search</button>
+                </form>
+                {% if search_error %}
+                    <div class="alert">
+                        <strong>Directory search failed</strong>
+                        <p>{{ search_error }}</p>
+                    </div>
+                {% endif %}
+                <div class="directory-results">
+                    {% for person in directory_results %}
+                        <form method="post" action="{% url 'users-add' %}" class="directory-person">
+                            {% csrf_token %}
+                            <input type="hidden" name="azure_ad_id" value="{{ person.id }}">
+                            <input type="hidden" name="display_name" value="{{ person.displayName }}">
+                            <input type="hidden" name="user_principal_name" value="{{ person.userPrincipalName }}">
+                            <input type="hidden" name="email" value="{{ person.primary_email }}">
+                            <input type="hidden" name="job_title" value="{{ person.jobTitle }}">
+                            <div>
+                                <strong>{{ person.displayName|default:person.userPrincipalName }}</strong>
+                                <span>{{ person.userPrincipalName }}</span>
+                                {% if person.jobTitle %}<small>{{ person.jobTitle }}</small>{% endif %}
+                            </div>
+                            <label class="inline-check">
+                                <input type="checkbox" name="is_platform_admin">
+                                Admin
+                            </label>
+                            <div class="role-checks compact">
+                                <label><input type="checkbox" name="can_access_reporting"> Reporting</label>
+                                <label><input type="checkbox" name="can_access_ai"> IA</label>
+                                <label><input type="checkbox" name="can_access_data"> Data</label>
+                                <label><input type="checkbox" name="can_access_sources"> Data Source</label>
+                                <label>Business Performance
+                                    <select name="business_performance_role">
+                                        <option value="">No access</option>
+                                        <option>Executive</option><option>Business Manager</option><option>Country Manager</option>
+                                        <option>Account Manager</option><option>Viewer</option><option>Administrator</option>
+                                    </select>
+                                </label>
+                                <label>BP countries<input name="bp_scope_countries" placeholder="Mali, Guinea"></label>
+                                <label>BP customers<input name="bp_scope_customers" placeholder="Fekola, SNIM"></label>
+                                <label>Power BI RLS role<input name="bp_rls_role" placeholder="Optional"></label>
+                            </div>
+                            <button class="button secondary" type="submit">Add</button>
+                        </form>
+                    {% empty %}
+                        {% if query %}
+                            <p class="muted-text">No matching directory user.</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </article>
+
+            <article class="user-admin-panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Mining360IA</p>
+                        <h2>Authorized users</h2>
+                    </div>
+                </div>
+                <div class="table-scroll">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>UPN</th>
+                                <th>Roles</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user_item in platform_users %}
+                                <tr>
+                                    <td>{{ user_item.display_name }}</td>
+                                    <td>{{ user_item.user_principal_name }}</td>
+                                    <td>
+                                        <form method="post" action="{% url 'users-roles-update' user_item.id %}" class="user-role-form">
+                                            {% csrf_token %}
+                                            <label><input type="checkbox" name="is_platform_admin" {% if user_item.is_platform_admin %}checked{% endif %}> Admin</label>
+                                            <label><input type="checkbox" name="can_access_reporting" {% if user_item.can_access_reporting %}checked{% endif %}> Reporting</label>
+                                            <label><input type="checkbox" name="can_access_ai" {% if user_item.can_access_ai %}checked{% endif %}> IA</label>
+                                            <label><input type="checkbox" name="can_access_data" {% if user_item.can_access_data %}checked{% endif %}> Data</label>
+                                            <label><input type="checkbox" name="can_access_sources" {% if user_item.can_access_sources %}checked{% endif %}> Data Source</label>
+                                            <label>Business Performance
+                                                <select name="business_performance_role">
+                                                    <option value="">No access</option>
+                                                    {% for value,label in bp_role_choices %}
+                                                        {% if value %}<option value="{{ value }}" {% if user_item.business_performance_role == value %}selected{% endif %}>{{ label }}</option>{% endif %}
+                                                    {% endfor %}
+                                                </select>
+                                            </label>
+                                            <label>BP countries<input name="bp_scope_countries" value="{% if user_item.business_performance_scope.country %}{{ user_item.business_performance_scope.country|join:', ' }}{% endif %}" placeholder="Mali, Guinea"></label>
+                                            <label>BP customers<input name="bp_scope_customers" value="{% if user_item.business_performance_scope.customer %}{{ user_item.business_performance_scope.customer|join:', ' }}{% endif %}" placeholder="Fekola, SNIM"></label>
+                                            <label>Power BI RLS role<input name="bp_rls_role" value="{{ user_item.business_performance_scope.rls_role|default:'' }}" placeholder="Optional"></label>
+                                            <button class="button icon-only secondary" type="submit" title="Save roles" aria-label="Save roles">
+                                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8"/><path d="M7 3v5h8"/></svg>
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <span class="status-badge {% if user_item.is_active %}success{% else %}failed{% endif %}">
+                                            {% if user_item.is_active %}Active{% else %}Disabled{% endif %}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <form method="post" action="{% url 'users-toggle' user_item.id %}">
+                                            {% csrf_token %}
+                                            <button class="button secondary" type="submit">
+                                                {% if user_item.is_active %}Disable{% else %}Enable{% endif %}
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% empty %}
+                                <tr>
+                                    <td colspan="5">No platform user yet. The first Microsoft account to sign in becomes platform admin.</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

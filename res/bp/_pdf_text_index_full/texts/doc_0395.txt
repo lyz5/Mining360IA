@@ -1,0 +1,590 @@
+SOURCE: Elimination of Live Work - Checking HMS Slew Ring Tilting Play.pdf
+PAGES: 16
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+May 2023 
+1.11-230525-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ Caterpillar: Confidential Yellow 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Elimination of Live Work - 
+Checking HMS Slew Ring 
+Tilting Play 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play .................................................................... 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description.................................... 3 
+3.0 Implementation Steps ......................................... 4 
+4.0 Benefits .............................................................. 16 
+5.0 Resources Required ......................................... 16 
+6.0 Supporting Attachments / References ............. 16 
+7.0 Related Best Practices...................................... 16 
+8.0 Acknowledgements ........................................... 16 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play 
+DATE 
+5/25/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230525-1 
+Caterpillar: Confidential  Yellow                Page 2 of 16 
+1.0 Introduction  
+ 
+Live Work: Any task (i.e. testing, commissioning or troubleshooting) that requires the system to 
+be energized and the person to enter the footprint of the machine (excludes doing the same task 
+from the machine cabin or outside the machine footprint). 
+ 
+This “Elimination of Live Work (ELW) Procedure” replaces the corresponding description in the 
+HMS machine documentation. The intention of the procedure is to eliminate live work by 
+removing the technician from the area of the machine to reduce possible hazard of injury while 
+inspecting or maintaining the machine. 
+This procedure provides the information to measure the tilting play of the swing gear. The tilting 
+play must be measured at machine commissioning and used as a reference to measure increase 
+of play. 
+This procedure can be done using Cat Multitool GP to eliminate the risk of proximity to the 
+machine.  
+ 
+ 
+ 
+ 
+                              
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play 
+DATE 
+5/25/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230525-1 
+Caterpillar: Confidential  Yellow                Page 3 of 16 
+2.0 Best Practice Description 
+ 
+This applies when checking the HMS slew ring tilting play for all machine listed below.  
+ 
+ 
+ 
+Important Safety Information  
+ 
+Operators and maintenance personnel should be protected in the best possible way while  
+working on the machine. Therefore, all work should only be carried out (if not described  
+differently): 
+ not with and on running engines / motor 
+ not while the machine is moving 
+ not with moving work equipment 
+ not under raised work equipment 
+ not on systems under pressure 
+ not on components that are too hot to be touched by hand with gloves. 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play 
+DATE 
+5/25/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230525-1 
+Caterpillar: Confidential  Yellow                Page 4 of 16 
+3.0 Implementation Steps 
+ 
+Tools Required:                                                             
+ 
+ 
+ 
+ 
+ 
+Job Preparation:  
+ 
+1. Isolate the machine before positioning the 
+Tool GP on it. 
+2. Allow only authorized people to perform the 
+job procedures. 
+3. Job needs 3 people to perform it (Operator, 
+Spotter, and Inspector). 
+4. Ensure that all slew ring bolts are tightened as 
+described in the Service Manual. 
+ 
+Job Procedure: 
+ 
+1. Assemble Tool GP (576-0855). 
+2. Assemble magnet tool (1) to Stud (3). 
+3. Assemble stud (3) to swivel post snug (6). 
+4. Assemble sensor to swivel post snug (6), after magnet tool (1) is located into position on 
+the slew ring. 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play 
+DATE 
+5/25/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230525-1 
+Caterpillar: Confidential  Yellow                Page 5 of 16 
+ 
+ 
+ 
+5. Attach measurement tool group to the Slew  
+   Ring by holding the magnet tool against the  
+   slew ring component then turn the handle  
+   counterclockwise a full 180 degrees. 
+ 
+Note: Turning the magnet tool handle 
+counterclockwise 180 degrees activates the magnet 
+and turning the magnet tool handle clockwise 180 
+degrees de-activates the magnet. 
+ 
+ 
+ 
+Note: Ensure that the areas where the measurement 
+tool group attaches to the machine are clean and 
+free of debris. 
+ 
+ 
+ 
+ 
+Note: Ensure that the magnet tool has full contact against the component.  
+ 
+ 
+ 
+6. Adjust the locations of the measurement tool group, adjust the location of stud using the slotted 
+hole on the bracket, or change the sensor tip using the 6V-6042 Indicator Point GP to ensure that the 
+sensor tip is against the component. 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play 
+DATE 
+5/25/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230525-1 
+Caterpillar: Confidential  Yellow                Page 6 of 16 
+ 
+ 
+Note: Ensure that casting imperfections or locators 
+do not interfere with the sensor tip. If necessary, 
+adjust the location of the sensor, failure to adjust the 
+location may invalidate the results of the test.  
+ 
+ 
+Note: Ensure that magnet tool has full contact 
+against the component to receive an accurate 
+measurement, the sensor should be perpendicular to 
+Under Carriage. 
+ 
+7. Attach the extension cable to the sensor. 
+ 
+8. Route the extension cable to a location where the 
+technician can perform the inspection inside the cab 
+to be away from the line of fire. 
+ 
+9. Secure the extension cable using tie straps or 
+other means so that the connections do not come 
+loose, and the cable are protected during the test. 
+ 
+10.Connect the extension cable lead to the Cat Multi-
+Tool. 
+                         
+Cable Extensions Inspector arrangement  
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play 
+DATE 
+5/25/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230525-1 
+Caterpillar: Confidential  Yellow                Page 7 of 16 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Inspector performing the inspection inside the cab  
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play 
+DATE 
+5/25/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230525-1 
+Caterpillar: Confidential  Yellow                Page 8 of 16 
+ 
+ 
+ 
+11.   Adjust the adapter to the correct position. 
+ 
+ 
+  
+12.  Turn ON the Cat Multi-Tool and configure for the electronic position sensor test. 
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play 
+DATE 
+5/25/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230525-1 
+Caterpillar: Confidential  Yellow                Page 9 of 16 
+13.Verify that all personnel are accounted for and prepare the machine for maintenance. Refer to the 
+appropriate machine-specific Operation and Maintenance Manual, Prepare the Machine for 
+Maintenance. 
+ 
+“The Technician conducting the inspection is out of the live zone of the machine” 
+Electronic Position Indicator Test and Cat Multi-Tool Screen Shots 
+ 
+ 
+• Select, "Electronic Position Indicator Test" from the home screen.  
+
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play 
+DATE 
+5/25/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230525-1 
+Caterpillar: Confidential  Yellow                Page 10 of 16 
+ 
+ 
+ 
+• Select single or four channels.  
+ 
+ 
+ 
+ 
+ 
+• Verify that the correct sensors and adapters are being used. 
+
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play 
+DATE 
+5/25/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230525-1 
+Caterpillar: Confidential  Yellow                Page 11 of 16 
+ 
+ 
+ 
+• Verify that the adapter has the correct ID set. Refer to the matrix in the Appendix in Tool Operating 
+Manual, NEHS1278, " 515-8465 Multi-Tool Plus". 
+ 
+Note: Once the Multi Tool Plus has the adapter and correct Cable ID set, the Multi Tool will 
+automatically go to the next screen. However, the user can select "Continue Anyway" to move to the 
+next screen. 
+ 
+• Set the position sensor to zero in the Cat Multi-Tool. 
+ 
+
+
+===== PAGE 12 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play 
+DATE 
+5/25/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230525-1 
+Caterpillar: Confidential  Yellow                Page 12 of 16 
+• From More menu select (Zero). 
+ 
+ 
+ 
+ 
+ 
+Measure the Slew ring Tilting Play. 
+ 
+14. Place the machine on level ground  
+15. Empty the bucket  
+16. Position the superstructure parallel with the tracks  
+17. Position the machine as shown in fig. 5 
+ 
+
+
+===== PAGE 13 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play 
+DATE 
+5/25/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230525-1 
+Caterpillar: Confidential  Yellow                Page 13 of 16 
+18. Position the Sensor and GP. on the slew ring in location 1 (fig. 4) 
+ 
+ 
+ 
+ 
+ 
+19. Set Multi-Tool Plus gauge to zero.  
+20. Position the machine as shown in fig. 6. 
+ 
+
+
+===== PAGE 14 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play 
+DATE 
+5/25/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230525-1 
+Caterpillar: Confidential  Yellow                Page 14 of 16 
+ 
+ 
+21. Read gauge and determine the amount of swing ring tilting play. Record value in form. 
+ 
+ 
+ 
+22. Position the Sensor and GP. on the slew ring in location 2 (fig.4). 
+
+
+===== PAGE 15 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play 
+DATE 
+5/25/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230525-1 
+Caterpillar: Confidential  Yellow                Page 15 of 16 
+23. Repeat steps 1 to 22. 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+ I
+t improves the safety of the task.  
+ i
+ncremental business for Cat technology.  
+ t
+ransfer Cat technology to the customers.  
+ 
+5.
+0 Resources Required 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Swing Bearing Movement - Measure (i08787866) 
+ 
+7.0 Related Best Practices 
+ 
+NIA 
+ 
+
+
+===== PAGE 16 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Elimination of Live Work - Checking HMS Slew Ring 
+Tilting Play 
+DATE 
+5/25/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-230525-1 
+Caterpillar: Confidential  Yellow                Page 16 of 16 
+8.0 Acknowledgements 
+ 
+Hassan Elgammal 
+Mining key account manager 
+Email:  HGammal@mantracegypt.com 
+Mobile: +201279437066 
+ 
+Ahmed Samir Shaaban  
+Mining Technical Communicator Supervisor 
+Email:  Ashaaban@mantracegypt.com 
+Mobile: +201210610616 
+ 
+Ali Ahmed Elnagar 
+Condition monitoring specialist  
+Email: aelnagar@mantracegypt.com  
+Mobile: +201282103164

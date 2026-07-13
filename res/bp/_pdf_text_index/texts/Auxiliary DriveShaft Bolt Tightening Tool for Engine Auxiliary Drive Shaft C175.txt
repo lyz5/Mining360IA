@@ -1,0 +1,176 @@
+===== PAGE 1 =====
+July 2024 
+4.03-240731-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+M
+INING DEALER BEST PRACTICE 
+Auxiliary Drive Shaft Bolt 
+Tightening Tool for Engine 
+Auxiliary Drive Shaft C175 
+M
+aintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+A
+uxiliary Drive Shaft Bolt Tightening Tool for Engine 
+Auxiliary Drive Shaft C175 ......................................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ........................................... 7 
+D
+ISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Auxiliary Drive Shaft Bolt Tightening Tool for Engine 
+Auxiliary Drive Shaft C175 
+DATE 
+7/31/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-240731-1 
+Caterpillar: Confidential Yellow Page 2 of 7 
+1.0 Introduction 
+A
+ new tool has been designed for tightening the rear PTO drive shaft bolts on C175 engines. 
+2
+.0 Best Practice Description 
+T
+his Best Practice covers an upgraded design to the standard CAT tool P/N 478-1934.  The 
+standard Cat tool allows 9 of the 12 rear PTO bolts on the C175 engine to be tightened before the 
+tool is repositioned, and due to cylindrical geometry of the bolt contact area, creates a potential for 
+contaminate generation with constant use.  The new design is shaped to allow 11 of the 12 rear 
+PTO bolts to be tightened before repositioning the tool and utilizes a grooved bolt contact area 
+that minimizes the risk of generating contamination. 
+F
+igure 1: Tool N/P 478-1934 
+
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Auxiliary Drive Shaft Bolt Tightening Tool for Engine 
+Auxiliary Drive Shaft C175 
+DATE 
+7/31/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-240731-1 
+Caterpillar: Confidential Yellow Page 3 of 7 
+F
+igure 2: Modified tool design for tightening the rear PTO drive shaft bolts of C175 engines. 
+3
+.0 Implementation Steps 
+T
+he use of the new tool is similar to the CAT tool (478-1934) it is placed in the rear housing and 
+allows to lock one bolt of the rear PTO drive shaft of the C175 engines and tighten 11 bolts to the 
+specified torque, then turn to lock another bolt and tighten the last bolt. 
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Auxiliary Drive Shaft Bolt Tightening Tool for Engine 
+Auxiliary Drive Shaft C175 
+DATE 
+7/31/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-240731-1 
+Caterpillar: Confidential Yellow Page 4 of 7 
+4
+.0 Benefits 
+• I
+t allows to adjust in the first stage up to 11 bolts of the 12 that hold the shaft of the rear PTO
+drive of C175 engine, then just finish with the bolt that was used as a lock.
+• I
+n addition, the knurled shape of the tool does not generate any contaminants when using the
+tool for bolt tightening.
+5
+.0 Resources Required 
+• F
+abrication of the new tool according to drawing.
+• M
+anufacturing costs ~ 320,00 USD
+
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Auxiliary Drive Shaft Bolt Tightening Tool for Engine 
+Auxiliary Drive Shaft C175 
+DATE 
+7/31/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-240731-1 
+Caterpillar: Confidential Yellow Page 5 of 7 
+6.0 Supporting Attachments / References 
+
+
+===== PAGE 6 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Auxiliary Drive Shaft Bolt Tightening Tool for Engine 
+Auxiliary Drive Shaft C175 
+DATE 
+7/31/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-240731-1 
+Caterpillar: Confidential Yellow Page 6 of 7 
+
+
+===== PAGE 7 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Auxiliary Drive Shaft Bolt Tightening Tool for Engine 
+Auxiliary Drive Shaft C175 
+DATE 
+7/31/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-240731-1 
+Caterpillar: Confidential Yellow P age 7 of 7 
+7
+.0 Related Best Practices 
+N
+one 
+8
+.0 Acknowledgements 
+      
+This Best Practice was written by: 
+      John Mateo Bernardo y Fernando Moreno Villaizan 
+      Fernando.moreno@ferreyros.com.pe 
+      T
+his Best Practice was revised by: 
+      Aninu Mitacc Vizcardo 
+      aninu.mitacc@ferreyros.com.pe 
+     
+The idea of this Best Practice belongs to: 
+     John Mateo Bernardo

@@ -1,0 +1,302 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Managing Fluid Cleanliness 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+ 
+Managing Fluid Cleanliness ....................................... 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments .................................... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+August 2006 
+0806-2.10-1000 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction 
+ 
+This Best Practice provides an overview of the importance of maintaining clean fluids and offers 
+suggestions on how best to achieve that. Detailed information can be found in the specific Best 
+Practice publications cited. 
+ 
+Minimizing machine operating cost is critical to minimizing cost-per-ton. Aside from the cost of 
+tires, fuel, and operator, about 70% of total machine operating cost is the life cycle costs of 
+machine powertrain components. On a typical large mining truck, the cost distribution is as 
+follows: 
+ - Engine     40% 
+ - Transmission & Torque Converter 10% 
+ - Final Drive & Differential   40% 
+ - Miscellaneous    10% 
+ 
+Component life cycle cost is roughly defined as cost to rebuild the component divided by actual 
+component life in hours. Example: 
+($100,000 rebuild cost ÷ 10,000 hour life = $10 hour life cycle cost) 
+ 
+Extending the life of a component is the most important factor in reducing its life cycle cost. This 
+does not mean simply extending overhaul intervals and allowing components to wear more 
+severely. It means implementing a strategy to reduce the rate of wear and achieve longer 
+component life without incurring excessive wear. 
+ 
+2.0 Best Practice Description 
+ 
+The best way to minimize power train cost per hour is to extend component life and utilize 
+the value built into the component.  The most effective way to accomplish this is to operate the 
+component with very clean oil throughout its entire life. 
+ 
+Fluid cleanliness management is a strategy to: 
+• Remove component and/or system break-in debris as quickly as possible on new and 
+rebuilt components. 
+• Maintain very clean oil in the component and/or system throughout the entire PM interval 
+and entire component life. 
+ 
+3.0 Implementation Steps 
+ 
+3.1 Dealer & Customer Commitment 
+ 
+3.1.1 Understand the Causes of Component Wear and Failure 
+• Reference Improving Component Durability booklets  
+(See Section 6.0 Supporting Attachments) 
+• Tolerate Early-Hour Filter Plugging 
+• Use Off-Board Filtration to Remove Break-In Debris 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Fluid Cleanliness 
+DATE 
+8 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1000 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.2 Bulk Fuel Filtration  
+ 
+For a variety of unavoidable reasons, fuel delivered to mine sites is usually contaminated with dirt 
+and water. Because fuel is a very low margin commodity, suppliers almost never provide 
+adequate bulk fuel filtration or exercise recommended storage practices. As a result, mines 
+receive and use contaminated fuel, resulting in premature injector failure and wear out. This 
+results in excessive fuel consumption and often results in mid-life injector set replacement. 
+ 
+The fuel filters on the machine are designed to provide final filtration for moderately clean supply 
+fuel. Machine filtration is not intended to clean fuel contaminated with large amounts of dirt and 
+water. If contaminated fuel is used, the capability of the onboard filtration is overwhelmed and 
+injectors either wear out prematurely or seize.  
+ 
+Bulk fuel filtration has been used in the aviation industry for more than 50 years to address the 
+same problems. Caterpillar has now adopted this proven technology to help mining customers 
+clean contaminated fuel. 
+ 
+Bulk fuel filtration consists of high capacity filters, which remove both excess dirt and water from 
+the supply fuel before it is put into the machine.  
+Caterpillar has engineered a packaged system to remove both dirt and water. It requires very 
+little maintenance and contains safeguards to prevent contaminated fuel from passing through 
+the unit. The unit is self-contained on a skid and is located between the fuel storage tank and 
+fueling station. It provides single pass filtration, and is offered in four sizes depending on the 
+maximum flow rate of the fuel delivery system. 
+ 
+3.3 Bulk Oil Filtration  
+A widespread misconception is that new oil is automatically clean because of its appearance. In 
+fact, nearly all new oil is contaminated to some degree with dirt, metal particles, plastic, water, or 
+other foreign debris. These contaminants are introduced in the transportation and storage 
+process from the time the oil leaves the refinery until it is used by the end-user. 
+ 
+Very little new bulk oil meets the recommended Caterpillar cleanliness spec for new oil of 
+ISO16/13. This includes oil delivered in bulk tanks, steel barrels, plastic cubes, and small plastic 
+containers. 
+ 
+Unfiltered new oil should never be taken directly from the container and placed into the machine. 
+This is true whether the oil is being used for refilling a compartment at an oil change interval or 
+simply topping off a system.  
+ 
+A variety of bulk oil filtration methods are available and the best one for each situation is dictated 
+by factors such as: volume of oil used, location, available infrastructure, and cost. 
+ 
+3.4 Off-Board Machine Fluid Filtration  
+Filtration carts can make a major contribution to extending component life. Many mines and 
+Caterpillar dealers use filtration carts for the major systems during normal preventive 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Fluid Cleanliness 
+DATE 
+8 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1000 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+maintenance. Carts are connected to major systems (rear axle, transmission, hydraulics, 
+steering) and operate unattended while PM services are completed. 
+ 
+3.5 On-Board Machine Fluid Filtration  
+The micron rating of filters on many mining machine systems are sized so as not to plug during 
+the initial break-in period on new machines. This does not provide optimal filtration capability to 
+maintain very high levels of oil cleanliness after the break-in period is complete. 
+The most aggressive approach to removing break-in debris as quickly as possible and 
+maintaining the highest level of fluid cleanliness is to use Ultra-High Efficiency (UHE) 6-micron 
+filters in place of standard filters for all machine systems except the engine. Because these 
+filters effectively trap very small particles, some filter plugging will occur during the initial PM 
+periods.  
+ 
+3.6 Breather Filters  
+Dust entering fluid compartments through inefficient breather filters is often a source of fluid 
+contamination. This can be easily prevented with the use of spin-on High Efficiency 4-micron 
+fuel filters as breathers for all compartments. When used as fuel tank breathers, HE filters 
+have reduced or eliminated premature fuel filter plugging in extremely dusty applications. HE 
+fuel filters are also larger than standard breathers and have much greater capacity.  
+ 
+3.7 Measuring Oil Cleanliness  
+Component life is maximized when high levels of fluid cleanliness are maintained. The ability 
+to effectively and consistently measure debris in fluids is a basic requirement of managing fluid 
+cleanliness. Tracking fluid particle data is one way to monitor component health. If a particle 
+count raises sharply, an SOS sample can be used to determine the specific wear metal 
+showing elevated levels. 
+ 
+4.0 Benefits 
+ 
+Improved Durability 
+-Up to 1/3 longer life of powertrain and implement hydraulic components 
+-Does not apply to engine due to soot in lube oil. 
+ 
+Improved Reliability 
+ -Reduce or eliminate repairs caused by contamination debris.  
+ 
+Improved Parts Reusability 
+-Reduced wear rates of internal parts improve reusability. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Fluid Cleanliness 
+DATE 
+8 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1000 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+5.0 Resources Required 
+• Bulk Fuel Filter Coalescer 
+• Bulk Oil Filtration 
+o Permanent filtration installation (or) 
+o Portable filtration carts (or) 
+o Barrels (or) 
+o Cubes (or) 
+o On-Machine (or) 
+o Off-Board Filtration Carts 
+• Portable Particle Counters 
+• Particle Count Data Management Software 
+• Improving Component Durability Training Booklets 
+ 
+6.0 Supporting Attachments  
+ 
+See Component Life Management Strategy Document (Click on Attachments tab within this 
+document to view attached file) 
+ 
+Improving Component Durability booklets (see next page) 
+ 
+7.0 Related Best Practices 
+0808-2.10-1006  -Bulk Fuel Filtration 
+0808-2.10-1005  -Bulk Oil Filtration 
+0808-2.10-1002  -Off-board Fluid Filtration 
+0808-2.10-1002  -On-board Fluid Filtration 
+0808-2.10-1004  -Breather Filters 
+0808-2.10-1001  -Measuring Oil Cleanliness 
+ 
+8.0 Acknowledgements 
+ 
+This Managing Fluid Cleanliness Best Practice was authored by: 
+ 
+Dick Douglas 
+Market Consultant 
+Caterpillar Global Mining 
+Douglas_Richard_D@cat.com  
+1-309-675-5699 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Fluid Cleanliness 
+DATE 
+8 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1000 
+Caterpillar Confidential:  GREEN          Page 5 of 5

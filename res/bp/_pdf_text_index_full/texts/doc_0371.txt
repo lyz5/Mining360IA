@@ -1,0 +1,286 @@
+SOURCE: 5.0 MARC Management\5.04 Financial Management\3. Quick Win\ANALYZER - Recalculation Process Improves Projection Accuracy.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+ANALYZER
+TM
+ Recalculation Process 
+Improves Projection Accuracy 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+ANALYZER
+TM
+ Recalculation Process Improves 
+Projection Accuracy ................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+November 2006 
+1106-3.3-1043 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+The ANALYZERTM Recalculation Process Best Practice deals with MARC Management. 
+ 
+Current users of Analyzer have communicated confusion regarding the Analyzer recalculation 
+process and how it differs based on the respective dealer’s Financial Year-End. Failure to use the 
+proper recalculation process will have a detrimental impact to Analyzer’s ability to accurately 
+forecast the financial/performance health of contracts as well as provide accurate reporting of 
+historical activity.  
+ 
+By following the recommendations detailed in the Analyzer Recalculation Process Best Practice, 
+users can be confident that all current work order and billing information is accounted for in the 
+projection calculations as well as historical functionality in Analyzer. The overall benefit is 
+increased accuracy of Analyzer projections.  
+ 
+2.0 Best Practice Description 
+ 
+The recommended process for recalculating Analyzer is communicated and put into practice 
+during Analyzer training classes. However, not all training participants will immediately begin using 
+Analyzer or will be regular users of the tool, resulting in confusion as to what recalculation date to 
+use during the recalculation process.  
+ 
+The Analyzer Recalculation Process Best Practice, provides the user with a recommended 
+process for selecting the appropriate recalculation date as well as actually recalculating Analyzer. 
+ 
+1) Determine the suggested Recalculation Date 
+ 
+a) Determining the Latest Invoice Period 
+ 
+⇒ Navigate to the View Data Tables screen and double-click Contract Cost under the 
+Transaction Data heading. 
+ 
+⇒ Use the scroll bar at the bottom of the screen until the Invoice Period column is visible. 
+Select (highlight) the Invoice Period column and select 
+ (Sort Descending). 
+ 
+⇒ The first date (yyyymm) in the Invoice Period column represents the latest period work 
+orders were invoiced to the customer and corresponds to the dealer’s accounting 
+system. This period does not represent the date when the work order was opened. 
+ 
+NOTE: Any work order in Analyzer without an Invoice Period value in the Contract Cost 
+Table is considered Work In Process (WIP) and is included in the Analyzer projection 
+regardless of the recalculation date used. 
+ 
+b)   Determining Analyzer’s Financial Year-End  
+ 
+⇒ In order to determine the required recalculation date, first confirm the Dealer Data File’s 
+financial year-end. This is accomplished by navigating to the Administration switchboard 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ANALYZERTM Recalculation Process Improves 
+Projection Accuracy 
+DATE 
+2/23/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1106-3.3-1043 
+Caterpillar Confidential:  GREEN         Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+of Analyzer and selecting Set Financial Dates. The file’s year-end month is displayed at 
+the top. 
+ 
+(1) Financial Year-End is December (If Financial Year-End is not December, please skip 
+to (2) Financial Year-End other than December) 
+ 
+(a) If the Dealer Data File’s financial year-end is December, the Recalculation Date 
+is determined using the following methodology. 
+ 
+- Dealer Data File Year-End = December 
+- ContractCost Table Invoice Period column latest period = 200605 
+- Recalculation Date: First of the month following the Invoice Period Month 
+ 
+(b) Based on the information provided above, the suggested recalculation date is 
+June 1, 2005 (First of the month following the Invoice Period Month). Using this 
+date will ensure Analyzer includes all work orders and customer billings through 
+June 1, 2005 in the recalculation process. 
+ 
+(2) Financial Year-End other than December 
+ 
+(a) If the Dealer Data File is based on a financial year-end other than December, the 
+latest Invoice Period must be converted back to the equivalent calendar date 
+using the methodology illustrated below. 
+ 
+- Dealer Data File Year-End = June 
+- ContractCost Table Invoice Period column latest period = 200704 
+- Recalculation Date: First of the month following the Invoice Period Month 
+converted to the corresponding Calendar Date 
+ 
+(b) Navigate to the Administration switchboard of Analyzer and select Set Financial 
+Dates. 
+ 
+(c) Scroll down the Financial Date Column until you reach the date value equal to 
+the ContractCost Table Invoice Period latest period value. 
+ 
+(d) Using the above ContractCost Table Invoice Period column latest period 
+example, scroll down until you reach 200704. The corresponding Calendar Date 
+field value is 200610. 
+ 
+(e) The recommended Recalculation date is November 1, 2006 (First of the month 
+following the Invoice Period Month converted to the corresponding Calendar 
+Date). Using this date will ensure Analyzer includes all work orders and customer 
+billings through November 1, 2006 in the recalculation process. 
+ 
+ 
+2) Resetting the System Clock 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ANALYZERTM Recalculation Process Improves 
+Projection Accuracy 
+DATE 
+2/23/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1106-3.3-1043 
+Caterpillar Confidential:  GREEN         Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+a) Now that the Recalculation Date is known, reset your computer’s system clock to the 
+suggested recalculation date. 
+ 
+ 
+ 
+3) Recalculate Analyzer 
+ 
+a) From the main Analyzer switchboard select Recalculate Analyzer and click OK to the pop-
+up message. 
+ 
+b) When the Analyzer Recalculation Finished screen is displayed, select CLOSE.  
+ 
+c) Analyzer Recalculation is now complete. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+1. In order to successfully implement this Best Practice, the critical assumption is that all users 
+have received basic Analyzer user training either internally or from Caterpillar.  
+ 
+2. In addition, it is recommended that users have, at a minimum, Level 1 Microsoft Access 
+training and are comfortable navigating within an Access database/tables. 
+ 
+4.0 Benefits 
+ 
+• Reduce user confusion when the need to recalculate Analyzer presents itself  
+• Provide a globally consistent Analyzer recalculation process. (Dealers that have a Financial 
+Year-End other than December will find this Best Practice especially useful). 
+ 
+5.0 Resources Required 
+ 
+1. Full implementation of Analyzer 1.6W is required. 
+2. MS Access 2000 (full version) 
+3. Having trained Analyzer users is critical to the success of this process. Users should have 
+received some form of basic Analyzer training either internally or through Caterpillar. 
+4. In addition, users should have a basic understanding of Microsoft Access (MS Access 2000 
+Level 1).  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ANALYZERTM Recalculation Process Improves 
+Projection Accuracy 
+DATE 
+2/23/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1106-3.3-1043 
+Caterpillar Confidential:  GREEN         Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+6.0 Supporting Attachments / References 
+ 
+ANALYZER Recalculation Procedure.doc - clicking on the “Attachments” tab in this Adobe 
+electronic file will open this Microsoft Word document. 
+ 
+7.0 Related Best Practices 
+ 
+0906-3.3-1010  - Analyzer Validation Process 
+1006-3.3-1031  - Managing Historical "Un-Cleansed" Work Orders in ANALYZER 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Jeremy Middleton 
+Contracts & Controls Analyst  
+Middleton_Jeremy_R@cat.com 
++1 309-675-4531 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+ANALYZERTM Recalculation Process Improves 
+Projection Accuracy 
+DATE 
+2/23/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1106-3.3-1043 
+Caterpillar Confidential:  GREEN         Page 4 of 4

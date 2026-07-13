@@ -1,0 +1,500 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\3. Quick Win\Reconditioning of Cylinder Block – Cleaning of Metal Spray Waste.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+April 2015  
+1501-4.02-1366  
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+    
+    
+BEST PRACTICE SERIES  
+ 
+Reconditioning of Cylinder 
+Block – Cleaning of Metal 
+Spray Waste 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC)  
+ 
+MARC  
+Management 
+ 
+     
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 3 
+5.0  Resources Required .......................................... 6 
+6.0  Supporting Attachments / References ............... 6 
+7.0  Related Best Practices ...................................... 6 
+8.0  Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+bout the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Enabled of Cylinder Block –  Cleaning of Metalized 
+Waste 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1366  
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+1.0 Introduction 
+ 
+This Best Practice is a result of Six Sigma methodology at Ferreyros’ Machine Shop.  After the 
+final machining of top deck, we need to clean the metal spray waste from water passage holes, 
+threaded holes, dowel holes, and corners of the top deck. 
+ 
+Previously, reconditioned block with metal spray was cleaned using different file types and 
+manual threaded taps. The job required 16 man-hours. Currently, using different kinds of tools the 
+effective time is 9 man-hours. 
+ 
+Both former and current procedures of cleaning will be described below. 
+ 
+2.0 Best Practice Description 
+ 
+Previously, the cylinder block cleaning process after final machining was using flat file, circle file 
+and manual threaded tap. The process shown below: 
+ 
+N° Step Picture 
+Operators 
+required for both 
+top deck 
+Time for both top 
+deck 
+1 
+Cleaning 
+inspection 
+camshaft window 
+ 
+2 45 min 
+2 Cleaning curve 
+area 
+ 
+2 16 min 
+3 
+Cleaning 
+surrounding 
+surfaces  
+ 
+2 30 min 
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Enabled of Cylinder Block –  Cleaning of Metalized 
+Waste 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1366  
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+4 Cleaning dowel 
+hole 
+ 
+2 60 min 
+5 
+Cleaning water 
+passages and 
+threaded holes 
+ 
+2 160 min 
+6 Side and bottom 
+threaded holes 
+ 
+2 83.5 min 
+ 
+ 
+Currently, for the cleaning of metal spray waste, the following is required: 
+ 
+• Special taps 
+• Special drill cutting tool 
+• Cylindrical and conical cutting tool 
+• Mounted stones 
+ 
+The technique is simple: install the cylindrical or conical cutting pneumatic emery tool to perform 
+cleaning camshaft inspection windows, curved areas and adjacent surfaces. Then, for cleaning 
+dowel holes, mounted stones are used.  Next step is to clean cylinder head holes for which a 
+device is used as a guide and special drill cutting tool. Finally in cleaning side and bottom holes a 
+threaded is used with special tap (machine tap). 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Enabled of Cylinder Block –  Cleaning of Metalized 
+Waste 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1366  
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+Works involved are: 
+ 
+• Cleaning dowel holes & threaded holes: 80 min per cylinder block 
+• Removing burrs: 30 min per cylinder block 
+• Bottom cylinder block: 30 min 
+• Sanding (finishing):30 min 
+ 
+3.0 Implementation Steps 
+ 
+• Define the areas to be cleaned. 
+• Use the toolkit as detailed in subsection 5 “Resou rces Required” 
+• Cleaning Process: 
+o Cleaning camshaft windows 
+o Cleaning curved areas 
+o Cleaning dowels areas 
+o Cleaning adjacent surfaces  
+o Cleaning cylinder head holes area 
+o Cleaning threaded holes 
+ 
+4.0 Benefits 
+ 
+The main benefit of this Best Practice is to reduce cylinder block cleaning time, the following 
+graphs show the cleaning time before and after. 
+ 
+• Reduction of man-hours by 44% 
+• Less time for cylinder blocks cleaning. Old proces s 16 hours, current process 9 hours. 
+• Work improvement, more effective working with tech nology that facilitates the tasks. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Enabled of Cylinder Block –  Cleaning of Metalized 
+Waste 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1366  
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+90 min per block  
+45 min per bank 
+ 
+32 min per block 
+ 
+60 min per block 
+ 
+120 min pe r block  
+1.5 min per dowel 
+5 dowel per cylinder 
+head area 
+ 
+320 min per block  
+1 min per water pass hole 
+1.5 min per cylinder head 
+threaded hole. 
+ 
+167 min per 
+block 
+20 sec per hole 
+500 holes 
+ 
+1 2
+3
+5 6
+4
+Total processing time: 16 hours 
+1 Operator – Cleaning camshaft 1 Operator – Cleaning curved areas 
+1 Operator – Cleaning dowels area 
+1 Operator – Cleaning cylinder head holes area 1 Operator – Cleaning threaded holes 
+1 Operator - Cleaning adjacent area 
+* Total processing time include time needed 
+Old Process Method 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Enabled of Cylinder Block –  Cleaning of Metalized 
+Waste 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1366  
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1 operario - Limpieza superficie aledaña 
+ 
+ 
+ 
+60 min per block  
+30 min per bank 
+ 
+20 min per block  
+ 
+ 
+40 min per block  
+ 
+ 
+80  min pe r block  
+1 min per dowel 
+5 dowel per 
+cylinder head area 
+ 
+ 
+160 min per block  
+10 min per cylinder head 
+threaded hole. 
+ 
+42 min  per block  
+5 sec per hole 
+500 holes  
+1 2
+3
+5 6
+4
+Total processing time: 9 hours 
+1 Operator – Cleaning camshaft 1 Operator – Cleaning curved areas 
+1 Operator – Cleaning dowels area 
+1 Operator – Cleaning threaded holes 1 operator – Cleaning cylinder head hole s area  
+ 
+* Total processing time include time needed 
+Current Process Method 
+1 Operator - Cleaning adjacent area 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Enabled of Cylinder Block –  Cleaning of Metalized 
+Waste 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1366  
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+5.0 Resources Required 
+ 
+Quantity  Tools  
+1 Stanley 019151M 19-inch Series 2000 Tool Box with Tray 
+1 Multi-Tool system: Dremel 8200 
+2 Special threading tap OSG 5/16-18 COATED - Harmetall 
+2 Special threading tap OSG 3/8-16 COATED - Harmetall 
+2 Special threading tap OSG 5/8-11 COATED - Harmetall 
+2 Special threading tap 3/4-14 NPT COATED - Harmetall 
+2 Special threading tap OSG 1/2-13 COATED - Harmetall 
+2 Special threading tap OSG 3/4-16 COATED - Harmetall 
+2 Universal Tool UT8729-18 ANGEL DIE DRINDER, 1800RPM, REAR 
+EXHAUST, 0.9 HP 
+1 Drill INGERSOL RAND 8506 ATC 
+2 Special drill cutting tool 20.6 Techcut Carbide - Harmetall 
+2 Special drill cutting tool 11.5 Techcut Carbide - Harmetall 
+2 Cylindrical cutting tool ZYA 1225 Carburo de Tugsteno 12 mm 
+2 Cutting tool KEL 1020 Carburo de Tugsteno 
+1 Hand Deburring Tool 155-00184 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Name     Roger Rodriguez Ocrospoma      
+E mail     roger.rodriguez@ferreyros.com.pe 
+ 
+Recognition: 
+ 
+Team:                  Miguel Mauriola / Operations Support Chief 
+                            Carlos Espinoza / Technical Communicator 
+                            José Huayamis / Technical Communicator 
+         Sandro Falcón / CNC programmer 
+         Roger Rodriguez / Operations Support Assis tance       
+Owner:        Rafael Volta / Machine Shop Chief 
+Sponsor:              Luis Aguilar / Manager Machine Shop

@@ -1,0 +1,684 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.04 CRC Management\1. Strategic\Managing CRC Operations in Legacy SAP ERP.pdf
+PAGES: 18
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Managing Legacy CRC 
+Operations Utilizing SAP 
+ERP 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Managing Legacy CRC Operations Utilizing SAP ERP
+ ................................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 7 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+9.0 Appendix ............................................................ 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+December 2012 
+1210-4.04-1287 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+ 
+Long lead times and large costs associated with unplanned downtime of mine loading tools mandate 
+that Component Rebuild Center (CRC) process owners have a clear line of sight to information 
+required to manage work in progress associated with electric rope shovels, draglines and drills 
+components being repaired at the CRC. SAP modules implemented in the legacy Bucyrus service 
+centers did not come with turnkey metrics and reports geared towards CRC management, forcing 
+individual regions to develop ad hoc reports. 
+ 
+It is possible to purchase software geared towards managing the constantly changing environment in 
+a CRC. Typical software costs with installation are approximately $75,000 and have an estimated 
+total start to finish time of one year. The transition period associated with the transfer of Caterpillar 
+service facilities to dealers presents a short window to improve performance within the current SAP 
+enterprise resource planning software currently used at legacy Bucyrus service facilities prior to 
+Dealer Day One.  
+ 
+This best practice discusses metrics and reports implemented at Caterpillar Canada’s Edmonton 
+CRC using existing reports from SAP. These metrics and reports help establish baselines for CRC 
+performance and can be used to drive Continuous Improvement projects to increase efficiency, 
+quality, and turnaround with Six Sigma, 5S, and CPS methodologies. 
+ 
+2.0 Best Practice Description 
+ 
+In order to facilitate an improvement initiative, it is critical that the project team be able to measure 
+and record metrics and Key Performance Indicators (KPI’s). These measurements are then used to 
+analyze, improve and control performance.  
+ 
+Lack of metrics for CRC Work In Process (WIP) can lead to missed customer promise dates, poor 
+customer experience, cost overruns and excessive delays from last labor to work order invoicing. It is 
+common for WIP to stagnate if work orders requiring parts with long lead times are not followed up on 
+a regular basis. Often these work orders are not started until the repair becomes a burning issue and 
+result in overtime costs and damaged relations with the end customer.  
+ 
+In facilities where service exchange components are sold, it is critical to track cores owed from 
+customers to ensure that they are returned in a timely manner. By establishing visual reports and 
+metrics, process owners can follow up on potential problems before they escalate into machine down 
+situations.  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 1 of 17 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+The following reports and metrics were established at the Caterpillar Canada CRC:  
+ 
+2.1 WIP Dashboard Report: 
+ 
+The WIP Dashboard report presents a high level summary of all work orders.  
+ 
+CATERPILLAR CANADA - EDMONTON CRC  
+WORK IN PROGRESS – DASHBOARD 9/30/2012 
+Service work order margin % 41% 
+Average Promise Date Adherence - % 59% 
+Average Total Days Order Open  181 
+Total WIP - $  $ 8,084,817  
+Total Count Of Work Orders 417 
+Average Last Labor to Invoice (Days) 57 
+Labor Utilization Metrics 
+Total Productive Hours 24136 
+Total Overhead Hours 5461 
+Total Labor Utilization 82% 
+Table 1: WIP Dashboard Report 
+ 
+Metrics included in this report are: 
+ 
+2.1.1 Service work order margin % 
+Process owners can avoid losses by reviewing margin associated with orders in WIP. Any 
+work orders at risk of not meeting margin targets can be managed to mitigate losses. 
+ 
+2.1.2 Promise Date Adherence 
+Work orders at risk of not meeting the date promised to customers are flagged for process 
+owner action. Orders at risk of missing the promised delivery date can be identified and 
+addressed. 
+ 
+2.1.3 Total Days Order Open 
+Orders open for an excessive period of time tie up WIP funds and are indicators of process 
+issues. Monitoring total days since order creation can help identify these issues.  
+ 
+2.1.4 Total Days since Last Labor to Invoice (LLI) 
+Excessive LLI delays the timing of cash flows, negatively impacting a company’s financial 
+position. Reducing this metric results in improved profitability by eliminating WIP holding 
+charges and increases customer satisfaction via efficient invoicing practices. Benchmarks for 
+LLI range from 6-10 days. The appropriate goal will vary based on factors surrounding 
+obtaining customer purchase order numbers, parts/core return processes, report reviews, and 
+many others. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 2 of 17 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+2.1.5 Labor Utilization Report: 
+This metric tracks labor utilization at the CRC. By tracking labor utilization, process owners can 
+address gaps and bottleneck in planning and scheduling activities at the CRC. Unutilized labor 
+is often the result of the Caterpillar 8 wastes. Identifying and eliminating these wastes will 
+result in and improvement in the labor utilization metric. 
+ 
+2.2 Service Exchange Core Tracker: 
+Delays associated with the return of cores from customer sites can result in longer repair lead times 
+and in some cases, lost cores. This report presents a count of cores owed by customer and as well 
+as potential core charges associated with the outstanding cores 
+ 
+Canada Service Exchange - Core Tracker Summary 
+Account 
+Manager Customer Cores > 60 
+days  Core Charge  30 - 60 
+days  Core $ 30 - 60  
+AM 1 CUSTOMER 1 44 $            937,331 22  $            339,864  
+AM 2 CUSTOMER 2 46 $         1,572,937 5  $              40,507  
+AM 3 CUSTOMER 3 3 $         78,618.00 2  $              44,057  
+AM 4 CUSTOMER 4 2 $              43,807 11  $            669,096  
+Table 2: Service Exchange Core Tracker 
+ 
+2.3 Service Exchange (SX) Dashboard: 
+This report presents a snapshot of current levels of Inventory, WIP and outstanding cores by part 
+number, allowing the process owner to ensure that the correct inventory level is available to serve 
+service exchange customers. 
+ 
+Canada: Service Exchange Inventory Dashboard 
+PART PART DESCRIPTION INVENTORY CORES 
+OWED WIP TOTAL SX 
+INVENTORY 
+STOCKING 
+PLAN DELTA 
+1524416-SR DUMP CYLINDER REBUILD 1 0 0 1 1 0 
+1521221-SR SWING PUMP REBUILD 0 0 0 0 1 -1 
+1521197-SR VARIABLE PUMP 1 0 0 1 1 0 
+1521134-SR HYDRAULIC MOTOR REBUILD 0 1 0 1 1 0 
+1471865-SR DRIVE, PUMP GEARBOX 0 0 0 0 1 -1 
+1467010-SR DUMP CYLINDER, REBUILD 3 0 0 3 2 1 
+1461462-SR REM -TPI 1461462-SR RH170 TRAVEL MOTOR B 0 0 1 1 1 0 
+1459401-SR PUMP HYD COOLING FAN RH200, REBUILD 1 0 0 1 1 0 
+1459392-SR REM 1459392-SR MAIN VARIABLE PUMP RGA 11 0 0 0 0 5 -5 
+1459391-SR PUMP, MAIN "OLD CONFIGURATION" 0 1 0 1 2 -1 
+1456272-SR REM - 1456272-SR Swing Pump  RGA93362-1 0 0 0 0 1 -1 
+1455174-SR REM 1455174-SR VARIABLE PUMP BOSCH RGA 1 6 0 0 6 1 5 
+1453560-SR REM 1453560-SR ROTOR NEW STYLE INOTEC W/ 2 0 0 2 2 0 
+1453559-SR ROTOR, OLD STYLE 1 0 0 1 2 -1 
+1453555-SR DRIVE, NEW STYLE PUMP DRIVE 1 1 0 2 1 1 
+1453554-SR DRIVE, FINAL 1 0 1 2 1 1 
+1453549-SR CYLINDER, BUCKET CURL 1 0 0 1 2 -1 
+1453544-SR CYLINDER, FS STICK 1 0 0 1 2 -1 
+1451867-SR REM – TPI – 1451867-SR S54 SWING TRANSMI 0 1 0 1 1 0 
+1451773-SR Trans swing old style 1451773-SR 0 1 0 1 7 -6 
+1451680-SR DRIVE, NEW STYLE FINAL 4 0 0 3 2 1 
+Table 3: Service Exchange Inventory Dashboard 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 3 of 17 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.0 Implementation Steps 
+ 
+The high level process steps involved with implementation of these metrics are:  
+- Establish work in progress management team 
+- Identify and assign ownership of WIP reporting 
+- Create reports by combining standard SAP reports utilizing feedback from process owners 
+- Measure and communicate metrics 
+- Document benefits 
+- Identify Continuous Improvement (CI) projects based on collected metrics 
+ 
+The SAP transaction codes required to compile the metrics are:  
+- CATS_DA 
+– Display Working Times  
+- CJI3 – Display Actual Cost Line Items 
+- IWBK – Material Availability Information 
+- IW37 – Change Operations 
+- IW38 – Change Planned Maintenance (PM) Orders 
+- ZSD033 – Sales Order Report 
+- Z_DEV_51000056 – Invoiced Sales Report  
+- Z_CORES – Cores Owed By Customer 
+- ZCUST_CONSIGN – Consignment inventory 
+- Z_PLANT_INVENTORY – Plant Inventory 
+ 
+Output from these sessions is used to create the required metrics, see attached spreadsheets for 
+sample calculations of each metric from the standard SAP Reports 
+ 
+3.1 WIP Dashboard Report:  
+This report is run from SAP transaction code IW38 (See attached example). The default report layout 
+will have to be modified to include all the required fields. Layouts can be saved by the user for future 
+use.  
+ 
+3.1.1 Service work order margin % 
+Compare the actual cost for work orders on IW38 by totaling all costs for parent and child 
+orders from CJI3. CJI3 will have to be run with all order numbers from IW38 entered into the 
+order field. Compare to the contract value for associated sales order in ZSD033 for margin 
+calculation.   
+ 
+3.1.2 Promise Date Adherence 
+Generate by comparing the sales order due date in ZSD033 to the current date. Cross 
+reference with work order from IW38 for ease of recognition.  
+ 
+3.1.3 Total Days Order Open 
+Calculate total days that each order has been open order by comparing the current date to the 
+order creation date on IW38 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 4 of 17 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.2 Total Days since Last Labor to Invoice (LLI) 
+Determine total days LLI by comparing the last labor charged data from CJI3 for each service 
+document invoice creation date on invoice report.. Obtain service orders for all invoiced service 
+documents from IW38 (include completed and historical orders). Use service orders numbers to run 
+CJI3 for last labor dates (It is important to only include labor lines). Compare last labor date to invoice 
+billing date to determine LLI. In the case of multiple invoice dates, eliminate duplicates and only 
+include last invoice date. 
+   
+3.3 Labor Utilization Report: 
+Use a combination of data from CJI3 and CATS_DA to determine labor utilization. By using 
+CATS_DA, it is possible to determine all labor charged to work orders for a given time period. This 
+value can then be combined with CJI3 data for overhead accounts to determine utilization. Note: It 
+will be necessary to determine local GL code for indirect labor. Consult with costs analyst in finance 
+for GL code.   
+ 
+3.4 Service Exchange Core Tracker: 
+This report is derived by running transaction code Z_Cores. The standard report from SAP will show 
+all service exchange components and will indicate exchange posted date for components that have 
+been shipped to the customer. The report can be further formatted to include account representative 
+information and core charge information that is maintained in a manual table.  
+ 
+3.5 Service Exchange Dashboard: 
+Use plant specific out put from Z_Plant_Inventory,  and WIP level from IW38. You will also need 
+Sales Backlog to populate part numbers associated with IW38 orders 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 5 of 17 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+4.0 Benefits 
+Defined KPI’s provide the process owner a clear line of sight to service operation performance. These 
+metrics can then be used for future continuous improvement projects.  
+ 
+The reports generated from this project were used to manage a component repair contract with a 
+customer resulting in the CRC meeting the customer’s on-time delivery expectations and achieving a 
+3 month rolling average improvement from 42% to 86%.  
+ 
+ 
+ 
+In addition, along with some 5S activities, a reduction in active WIP resulted in improved utilization of 
+shop floor space and a better work environment, as indicated in Figure 1 and 2 below.  Note work 
+bays and work in process parts staging are much better organized, improving efficiency and work 
+flow.  
+ 
+  
+  
+Figure 1: Shop Floor Before            Figure 2: Shop Floor After 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 6 of 17 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+Finally, these metrics can be used to monitor health of WIP for transition from Caterpillar to Dealers 
+and to resolve problems prior to Dealer Day One transitions in facilities utilizing SAP.    
+ 
+5.0 Resources Required 
+Personnel time to create and communicate reports 
+ 
+6.0 Supporting Attachments / References 
+- WIP Dashboard 
+- LLI Calculation  
+- Labor Utilization Calculation 
+- Service Exchange Core Tracker 
+- Service Exchange Dashboard 
+ 
+7.0 Related Best Practices 
+- 0906-4.5-1013 – CRC Component Turnaround  
+- 0208-4.2-1114 – CRC Planning & Scheduling Systems 
+- 0107-4.5-1055 – Managing Exchange Component Inventory Reduces Costs 
+- 0307-4.5-1069 – Improving the Last Labor to Work Order Invoicing (LLI) Process 
+ 
+8.0 Acknowledgements 
+Dan Patin 
+Finning Canada DD1 WIP Lead  
+patin_dan_f@cat.com 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 7 of 17 
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+9.0 Appendix 
+ 
+9.1 CATS_DA – Display Working Times  
+This report should be run for the period that the labor analysis is required for. Company code is 
+dependent on local company code. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 8 of 17 
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+9.2 CJI3 – Display Actual Cost Line Items 
+- Project is required only when calculating overhead costs for labor utilization.  
+- Network/order should be filled in from IW38 work orders.  
+- Ensure that 
+  is used to copy work order list from IW38. Also note that 
+  should be used and 
+not “Ctrl + V” to past work order list.  
+- Update further settings to “999,999,999” 
+- For controlling area see financial rep 
+- Profile is “000000000001” 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 9 of 17 
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+9.3 IWBK – Material Availability Information 
+ 
+- Order should be filled in from IW38 work orders.  
+- Ensure that 
+  is used to copy work order list from IW38. Also note that 
+  should be used and 
+not “Ctrl + V” to paste work order list.  
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 10 of 17 
+
+===== PAGE 12 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+9.4 IW37 – Change Operations 
+- Order should be filled in from IW38 work orders.  
+- Ensure that 
+  is used to copy work order list from IW38. Also note that 
+  should be used and 
+not “Ctrl + V” to past work order list.  
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 11 of 17 
+
+===== PAGE 13 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+9.5 IW38 – Change PM Orders 
+- Report should be run without any selections (run everything blank) to ensure that all possible 
+orders are captured 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 12 of 17 
+
+===== PAGE 14 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+9.6 ZSD033 – Sales Order Report 
+- Sales organization is dependent on local organization 
+- Distribution channel and division should be entire range from dropdown menu 
+- Plant is range should include all applicable plants 
+- Sales order should be copied from IW38 for all applicable service sales orders 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 13 of 17 
+
+===== PAGE 15 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+9.7 Z_DEV_51000056 – Invoiced Sales Report  
+- Posting period and fiscal year is for period being analyzed 
+- Sales organization is local sales organization 
+- Sales document range should be large enough to include all possible service sales documents 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 14 of 17 
+
+===== PAGE 16 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+9.8 Z_CORES – Cores Owed By Customer 
+- Sales organization is local sales organization  
+- Plant is local plant 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 15 of 17 
+
+===== PAGE 17 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+9.9 ZCUST_CONSIGN – Consignment inventory 
+- Material number range should be derived form local Service exchange stocking plan. If one does 
+not exist, material number “ *SR*” can be used to include all service part numbers in stock  
+- Ensure that 
+  is used to copy part number list. Also note that 
+  should be used and not “Ctrl + 
+V” to past work order list.  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 16 of 17 
+
+===== PAGE 18 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+9.10 Z_PLANT_INVENTORY – Plant Inventory 
+- Plant is local plant number 
+- Material number range should be derived form local Service exchange stocking plan. If one does 
+not exist, material number “ *SR*” can be used to include all service part numbers in stock  
+- Ensure that 
+  is used to copy part number list. Also note that 
+  should be used and not “Ctrl + 
+V” to past work order list. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing CRC Operations in Legacy SAP ERP 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1287 
+Caterpillar Confidential:  YELLOW               Page 17 of 17

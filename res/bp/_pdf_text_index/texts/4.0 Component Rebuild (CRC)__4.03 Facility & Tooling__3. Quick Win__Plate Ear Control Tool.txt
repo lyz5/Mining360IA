@@ -1,0 +1,138 @@
+===== PAGE 1 =====
+MINING DEALER BEST PRACTICE 
+PLATE EAR CONTROL 
+TOOL 
+Maintenance and 
+Repair      Application 
+Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC 
+Management
+Plate Ear Control Tool...………………………………1 
+1.0 I
+ntroduction........................................................2 
+2.0 Best Practice Description ..................................2 
+3.0 Implementation Steps........................................3 
+4.0 Benefits .............................................................6 
+5.0 Resources Required..........................................6 
+6.0 Supporting Attachm ents / References.  ...........6 
+7.
+0 Related Best Practices ......................................6 
+8.0 Acknowledgements ...........................................6 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+April 2021 
+4.03-210430-1
+
+===== PAGE 2 =====
+Caterpillar Confiden tial: YELLOW Page 3 of 6 
+1.0 Introduction 
+When c
+onsidering the how reusable plates are in a transmission, the condition of the plate is 
+inspected as is the dimensional conformance of the plate. The profile and dimensions of the 
+tangs/ears on the transmission plates are inspected during rebuild to establish whether they can be 
+re-used. 
+2.0 Best Practice Description 
+Each plate has 5 or 6 tangs/ears, each containing a slot. The slot dimensions vary according to the 
+model. The conformance of each of the slots should be checked in accordance with salvage guideline 
+SEBF8257. 
+The Plate Ear Control Tool is machined and acts as a go/no-go to quickly determine the suitability 
+and conformity of the slots in the clutch plates. Slots shall be inspected using a tool based on the 
+maximum size. 
+This go/no-go tool saves a lot of inspection and recording time ( For example, a transmission of D8T 
+has 2 pistons, 1 3 plates with 5 slots in each plate. That is 90 measurements and these measurements 
+also have records). The simple drawing below showing the tool can be used in all transmissions with 
+pin diameter 12.64mm (Plate numbers include 8P-2051, 6I-8500, 7G-0437, 232-7432, 385-8958). 
+Some pistons also have slots in this way so can also utilize this tool (9G-0280 & 9G-0285). 
+THE INFORMATION HEREIN MAY N OT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Plate Ear Control Tool 
+DATE CHG 
+NO 
+04/30/2021 00 4.03-210430-1
+NUMBER
+
+===== PAGE 3 =====
+Caterpillar Confiden tial: YELLOW Page 4 of 6 
+3.0 Implementation S teps 
+Step 1: Flat surfaces on tool are kept towards to technician. 
+Step 
+2: Usability on both sides of the tool is checked to ensure that the radiused portions adjusted to 
+the maximum size fit into the ovalized areas on the slots 
+Step 
+3: 
+• Tool enters the slot => Re-use
+• Tool does not re-enter the slot => Do not re-use
+• Tool has excessive clearance in the slot => Do not re-use
+Reusability 
+status is checked by determining whether the apparatus passes through the Slot holes in 
+the Plate ears. 
+THE INFORMATION HEREIN MAY N OT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Plate Ear Control Tool 
+DATE CHG 
+NO 
+04/30/2021 00 4.03-210430-1
+NUMBER
+
+===== PAGE 4 =====
+Caterpillar Confiden tial: YELLOW Page 5 of 6 
+Not 
+Reusable 
+Reusable 
+THE INFORMATION HEREIN MAY N OT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Plate Ear Control Tool 
+DATE CHG 
+NO 
+04/30/2021 00 4.03-210430-1
+ Gap alongside the
+Tool representing 
+excessive wear of 
+slot in tang/ear
+ Tool fits in slot
+ No gap alongside the Tool 
+re
+presenting no excessive 
+wear of slot in tang/ear
+NUMBER
+
+===== PAGE 5 =====
+Caterpillar Confiden tial: YELLOW Page 6 of 6 
+4.0 Benefi
+ts 
+Reusability s tatus is checked by determining whether the tool’s passes through the Slot holes in the 
+Plate ears. 
+1) Plate slot inspection time is reduced.
+2) The go/no- go tool  decreases r isk because each measurement has a margin of error, with
+the risk reduced when the same work is done with less measurement.
+5.0 Resources Required 
+Labor :3 hours 
+6.0 Supporting Attachments / References 
+None. 
+7.0 Related Best Practices 
+None. 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+Mustafa Tuzcu 
+CRC Engineer Intern 
+Borusan Maki na ve Güç Sistemleri 
+This Best Practice designed by: 
+Ahmet Çakır 
+Assistant Techni cian 
+Borusan Makina ve Güç Sistemleri 
+Satılmış Çelik 
+Assistant Techni cian 
+Borusan Makina ve G üç Sistemleri 
+Project and Best practice supported by 
+Ömer Emre Demirkale 
+CRC Manager 
+Borusan Makina ve Güç Sistemleri 
+THE INFORMATION HEREIN MAY N OT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Plate Ear Control Tool 
+DATE CHG 
+ 
+04/30/2021 00
+NO 4.03-210430-1
+NUMBER

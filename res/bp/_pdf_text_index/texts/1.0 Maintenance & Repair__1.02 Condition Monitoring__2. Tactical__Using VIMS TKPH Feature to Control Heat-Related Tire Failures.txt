@@ -1,0 +1,326 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 11 
+1006-1.2-1033 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      mining.cat.com 
+ 
+ 
+ 
+ 
+B E S T  P R A C T I C E  S E R I E S 
+Using VIMS TKPH Feature 
+to Control Heat-Related 
+Tire Failures 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+Using VIMS TKPH Feature to Control Heat-Related 
+Tire Failures ............................................................... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information pro vided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using VIMS TKPH Feature to Control Heat-Related 
+Tire Failures 
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1006-1.2-1033 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+1.0 Introduction  
+ 
+With the recent tire shortage many customers are using VIMS TKPH feature to help reduce the 
+number of heat related tire failures.  TKPH stands for “Ton-Kilometer Per Hour”, and is a measure 
+used by tire manufacturers to “rate” the ability of their tires to carry a load over a period of time.  It 
+is calculated, quite simply, by multiplying the average tire load by the average speed per hour.  If 
+the TKPH value for a particular tire is exceeded, the tire overheats and may eventually fail. 
+ 
+The TKPH Monitor allows a site to more carefully manage their tire expense by reducing the 
+number of tires scrapped due to heat separation.  The TKPH Monitor constantly monitors tire 
+loading, and provides warnings to the operator and site management, to change the machine’s 
+operation, thus allowing the tires to cool down.  
+ 
+2.0 Best Practice Description 
+ 
+The TKPH Monitor is based on the SAE standard for calculating TKPH. The calculation uses real 
+time data from VIMS including payload, distance traveled, ambient air temperature, speed of the 
+truck, and truck weight. VIMS stores TKPH values in a rolling database with a time base that can 
+be adjusted from one to twelve hours. Most tire manufactures recommend using a four-hour time 
+base. TKPH also makes adjustments when the machine is traveling loaded or unloaded. While 
+unloaded, the front and rear axles to bear equal amounts of machine weight. During this 
+condition, the front tires will typically have the higher TKPH values because the truck empty 
+weight distribution transfers more weight to the front two tires and the rear four tires share the 
+same load. When loaded, however, only one-third of the weight will be on the front axles. This 
+condition will result in the front and rear TKPH values being aligned closer together. 
+ 
+When VIMS calculates that the TKPH limit has been exceeded, the operator will receive an event 
+notification and the truck will become speed limited. The operator will maintain full control, except 
+the machine will not accelerate to maximum speed. Site personnel can customize the speed limit.   
+ 
+While operating the truck below the TKPH Limiting Speed, the operator will have full control of the 
+machine speed up to the Limiting Speed value. As the tires cool off the TKPH Feature will start 
+giving control back to the operator.  Once the TKPH values fall below the TKPH deactivation 
+value, the operator will be prompted to turn speed limiting off by pressing the OK key on the 
+keypad. This was done as a safety feature to keep the operator in control of the machine at all 
+times. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using VIMS TKPH Feature to Control Heat-Related 
+Tire Failures 
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1006-1.2-1033 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+ 
+How the events for VIMS TKPH work: 
+ 
+ 
+1. When the TKPH values remain above the activation threshold for one minute, a “TKPH R 
+WARNING HI” message will be displayed on the message center:  
+ 
+a. At this point, it is recommended for the operator to reduce drive speed to allow the tires 
+to begin cooling down. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2. Once the truck speed has been reduced below the target speed limit, the “Truck Speed 
+Limited” message will be displayed on the VIMS Message Center: 
+ 
+a. This is a reminder to the operator that the Machine is speed limited. This message can 
+be “snoozed” to the operator for ten minutes.  
+ 
+b. When this event is active, the operator will have full functionality of the truck, but can 
+only achieve top speed that has been previously determined by the site. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3. Once the tires have cooled down and VIMS has calculated that the TKPH event is getting 
+ready to be removed, the operator is alerted with a “Speed Limit Off in One Minute” event. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using VIMS TKPH Feature to Control Heat-Related 
+Tire Failures 
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1006-1.2-1033 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+ 
+ 
+4. This last “Press [OK] to Stop Speed Limiting” message will remain displayed for thirty 
+seconds.  
+ 
+a. The TKPH Speed Limiting will be immediately deactivated once the [OK] key is 
+pressed.  
+b. If the [OK] key is not pressed within thirty seconds the message will reappear at one-
+minute intervals and be displayed for thirty seconds.   
+c. Once the operator pushes the [OK] button, they will have total control of machine 
+speed. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Set up a plan of action to implement VIMS TKPH on your site. 
+ 
+1. Work with the site’s local tire manufacture to determine appropriate settings for the application.  
+a. Determine TKPH ratings for the tires presently running at site. 
+b. Determine desired speed limit to cool down tires before overheating 
+c. Have the tire manufacture run a heat study at your site. 
+d. Check tire pressures on a scheduled basis.  
+ 
+2. Work with personnel from Operations and Production in developing a process to use VIMS 
+TKPH on your site. 
+a. Set up instructions for operators to follow once they get a TKPH Event. 
+b. Work with Production to determine what needs to be done when a truck gets a TKPH 
+event. If the truck is on a long haul cycle, possibly move to a shorter haul cycle until 
+such time that the tires cool down. 
+c. Run a daily report on TKPH, by truck, to monitor TKPH values. 
+ 
+Example of a VIMS TKPH daily report 
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using VIMS TKPH Feature to Control Heat-Related 
+Tire Failures 
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1006-1.2-1033 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+ 
+ 
+ 
+3. In conjunction with the site’s tire supplier, a tire study should be performed to determine the 
+appropriate activation and deactivation points to trigger the speed limiting function. The site’s 
+tire supplier is the expert in this area and must be consulted.  
+a. The site should decide on an appropriate speed limit.  The slower the speed, the faster 
+the tires will cool down, but a balance must be met between tire maintenance needs 
+and production needs.  
+b. Once satisfied with these limits, the Caterpillar dealer representative, or site’s service 
+technician, can set the activation and deactivation points through the ET service tool. 
+ 
+4.0 Benefits 
+ 
+• Manage and subsequently reduce tire expenses by limiting the number of tires scrapped due 
+to heat separation. 
+o One Mine Maintenance Superintendent had recently quoted:  
+ "Since implementing the TKPH system at Saraji, we reduced our tire costs by 
+eliminating heat-related tire failures.“ 
+• Customers can monitor tires on a proactive basis to ensure maximum life (due to the 
+automatic monitoring of tire loading through TKPH). 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using VIMS TKPH Feature to Control Heat-Related 
+Tire Failures 
+DATE 
+6/17/2011 
+CHG 
+NO 
+02 
+NUMBER 
+1006-1.2-1033 
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+• Improved machine availability  
+ 
+5.0 Resources Required 
+ 
+No additional resources are required to use the VIMS TKPH after you enable this feature.  
+ 
+6.0 Supporting Attachments / References 
+ 
+References: 
+• Speed Management for CAT Mining Trucks TKPH           TEKQ0350 
+Attachments: 
+• TKPH Monitor Set-up and Training.ppt     
+Microsoft PowerPoint file can be found in the Attachments Tab of this PDF file. 
+ 
+7.0 Related Best Practices 
+ 
+None at this time. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Jimmy McCarty 
+Caterpillar Global Mining  
+Applications Specialist Machine Health Monitoring 
+Mccarty_jimmy_t@cat.com 
+830-372-2747

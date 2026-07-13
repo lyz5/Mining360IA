@@ -1,0 +1,260 @@
+SOURCE: 1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Improving Availability through Dealer Customer PM Partnering.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES
+Improving Availability through 
+Dealer/Customer PM Partnering 
+ 
+Application Maintenance Site 
+Management
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management
+ 
+ 
+ 
+Improving Availability through Dealer/Customer PM 
+Partnering ..................................................................0  
+1.0 Introduction........................................................1  
+2.0 Best Practice Description ..................................1  
+3.0 Implementation Steps........................................2  
+4.0 Benefits .............................................................2  
+5.0 Resources Required..........................................3  
+6.0 Supporting Attachments / References...............3 
+7.0 Related Best Practices ......................................3  
+8.0 Acknowledgements ...........................................3  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+March 07
+0307-3.1-1070
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      catminer.com
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+Improving Availability through Dealer/customer PM 
+Partnering 
+DATE 
+3/22/2007 
+CHG 
+NO 
+01 
+NUMBER 
+0307-3.1-1070
+ 
+1.0 Introduction 
+ 
+Significant improvements in machine availability can be gained through an integrated partnership 
+between dealer and customer mechanics for the preventative maintenance process.  Availability 
+is improved by increasing the PM process efficiency and better completion of backlog repairs.   
+ 
+Low availability and frequent unscheduled repairs drove a restructuring of the PM process.  A full 
+time dealer mechanic dedicated to PM’s was put in place to: 
+1. Assist with minor mechanic repairs,  
+2. Ensure complete inspections,  
+3. Create/manage backlogs to be performed in  the repair shop immediately after PM 
+completion.   
+ 
+The number of site mechanics was also increased to enable the completion of as many minor 
+repairs as possible while minimizing the time spent in PM.   
+ 
+Dealer mechanic assistance, sufficient manpower, disciplined execution of procedures, and 
+accurate backlog management resulted in increased machine availability and decreased 
+unscheduled shop repair time. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The duration of preventative maintenance for each machine is four hours. 
+• 1 hour in wash bay 
+• 1 hour for lubrication 
+• 2 hours of mechanical repair 
+ 
+Lubrication activities include 
+• Oil replacement,  
+• Kidney loop filtration for remaining oil, 
+• Collecting of SOS samples,  
+• Cutting and examination of every filter.  
+ 
+The mechanical repair bay work is driven by a serial number specific clipboard documenting the 
+activities to be completed. 
+ 
+Clipboard includes: 
+• Backlog repair work orders 
+• Mag plug inspection sheet 
+• Operator “fix list” 
+• Checklist of inspections and functionality checks 
+ 
+The dealer mechanic handles the VIMS download and acts upon the data to perform additional 
+diagnostics or repairs. 
+ 
+Caterpillar:Confidential Yellow
+-Reproduction Constitutes an Uncontrolled Document-
+Page 1 of 3
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+Overall, the dealer mechanic resides in the mechanical repair bay to complete as many backlogs 
+as possible and ensure that the remaining are documented accurately and addressed thereafter in 
+the main repair shop. The main repair shop will keep the machine as long as it takes to complete 
+all backlogs unless lacking parts or resources force the work to be postponed until next PM. 
+ 
+On a daily basis, one PM mechanic works the fuel island to check lube levels, perform general 
+inspections, check for leaks, and document operator feedback. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+• Identify and train PM customer and dealer mechanics. 
+• Provide adequate separate areas for wash, lube, and mechanical repair. 
+• Provide inspection checklists for filters, mag plugs, structures, and functional checks. 
+• Provide kidney lube filtration equipment and efficient means to cut filters and document 
+findings for further investigation. 
+• Create management system for backlog, work order, and inspection documentation to be 
+available to the mechanics by serial number. 
+• Provide all required PM tools. 
+• Provide means for the dealer mechanic to provide accurate and timely communication of 
+backlog repairs to the main shop. 
+ 
+4.0 Benefits 
+ 
+Increased availability and decrease in unscheduled repairs. 
+ 
+ 
+Truck availability improvement graph:  
+• Dealer and site started the new PM 
+process in mid-2006 among other 
+operations changes: 
+ 
+• Main shop is running 72% 
+scheduled work for trucks and 
+80 – 90% for all other machines 
+combined.   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Improving Availability through Dealer/customer PM 
+Partnering 
+DATE 
+3/22/2007 
+CHG 
+NO 
+01 
+NUMBER 
+0307-3.1-1070
+ 
+Caterpillar:Confidential Yellow
+-Reproduction Constitutes an Uncontrolled Document-
+Page 2 of 3
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+Improving Availability through Dealer/customer PM 
+Partnering 
+DATE 
+3/22/2007 
+CHG 
+NO 
+01 
+NUMBER 
+0307-3.1-1070
+ 
+5.0 Resources Required 
+ 
+1. Target eight mechanics per shift broken down as follows: 
+     (including the one dealer mechanic in the mechanical bay) 
+• Wash bay:  2  
+• Lube bay:  3 – 4 
+• Mechanical bay:  2 – 3 
+ 
+2. Kidney loop filter cart 
+3. Filter cutting and inspection bench 
+4. System to communication work  order and checklist information 
+ 
+6.0 Supporting Attachments / References 
+None 
+ 
+7.0 Related Best Practices 
+0806-2.7-1008  - Backlog Management 
+1006-2.13-1027  - Utilizing VIMS Data for Effective Planned Maintenance 
+0806-2.7-1007  - Condition Monitoring – Field Inspection 
+1106-2.14-1036  - Oil Filter Cutting Bench 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Matt Maziarz 
+Sr. Site Performance Consultant 
+Caterpillar Global Mining 
+Maziarz_Matthew_J@cat.com
+Ph: 309-675-5208 
+ 
+Charlie Watts 
+Technical Representative 
+Caterpillar Global Mining 
+Watts_Charles_B@cat.com
+Ph: 480-774-2078 
+ 
+Our acknowledgements to the personnel of Cashman Equipment for their willingness to share 
+their ideas and achievements. 
+ 
+Lloyd Tutor 
+Cashman Project Manager 
+Llyod_tutor@cashmanequipment.com
+Ph: 702-649-8777 
+ 
+For further details and information regarding this Best Practice, please contact the author. 
+Caterpillar:Confidential Yellow
+-Reproduction Constitutes an Uncontrolled Document-
+Page 3 of 3

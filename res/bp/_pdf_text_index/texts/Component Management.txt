@@ -1,0 +1,1382 @@
+===== PAGE 1 =====
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Component Management 
+(Strategic) 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+Component Management (Strategic) ......................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Implementation Steps ........................................ 3 
+3.0 Best Practice Description ................................. 10 
+4.0 Benefits ............................................................ 15 
+5.0 Resource Requirements .................................. 16 
+6.0 Supporting Attachments .................................. 19 
+7.0 Related Best Practices .................................... 19 
+8.0 Acknowledgements .......................................... 20 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+March 2008 
+1007-2.0-1106 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+The top-level goal of most mining operations is to minimize cost per ton. Maintenance and repair 
+of machine components have a significant impact, as much as 50 to 60%, on the overall costs of 
+supporting large mining equipment. As such, major components are key cost drivers. From a 
+component maintenance and repair perspective, cost per ton can be influenced in several ways 
+including: 
+ 
+ Maintenance & repair cost minimization … the cost element in the component cost per 
+hour calculation, 
+ Life maximization … the time element in the component cost per hour calculation,  
+ Functional integrity … when c omponents and systems are operating properly, they 
+contribute positively to the productivity (Tons per Hour) of equipment. 
+ 
+Optimizing each of these three factors is a constant challenge for the equipment maintenance 
+management team. 
+ 
+The cost ingredient can be influenced as follows: 
+ 
+Before versus after-failure replacement … most component replacement costs can be minimized 
+via a planned, before-failure replacement approach. 
+ Component-related manpower labor … the Equipment Manager may not be able to 
+control labor rates but he can have a significant influence on his overall labor costs by 
+improvements in repair labor efficiency and effectiveness.  
+ Component inventory carrying costs … insuring that component requirements are 
+adequate to cover short -term (prot ective) as well as medium/long -term (Planned 
+Component Replacement) projections, that they do not exceed what is required, and 
+that they are kept in a manner that they are ready to use when required. 
+ 
+Component lives vary substantially for mine to mine for a given piece of equipment based 
+primarily on application severity, operating practices and maintenance effectiveness. Thus a 
+detailed Component Management strategy and a plan to execute that strategy that takes into 
+account not only maintenance but is also flexible enough to accommodate changes in application 
+severity and operating practices, and assesses their potential impact on component health are 
+critical to the long-term success of any mining support operation.  
+ 
+To a lesser degree, component exchange can impact downtime (availability). Because even in 
+the extreme case, i.e. lower than expected component lives and inefficient replacement 
+procedures, component replacement occurs relatively infrequently, the impact on availability 
+would be no more than 6% relative to a target of <1%. However, component repairs can have a 
+significant negative influence on machine availability (excessive machine downtime). If frequent 
+or chronic (repetitive) component repairs are found to be the case, please refer to the guidelines 
+found under Repair Management. 
+ 
+Component Management is a far-reaching process in terms of the other processes it interacts 
+with. Clearly the success of Component Management is based upon an integrated approach that 
+communicates directly with Condition Monitoring, Planning & Scheduling, Preventive 
+Maintenance, and Repair Management and indirectly with Parts Management, Human Resources 
+& Training, Performance Evaluation, and Continuous Improvement. In addition to those “internal”, 
+on-site processes, Component Management also relies heavily on external resources such as 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 2 of 20 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+parts and service organizations, i.e. Component Rebuild Centers and the central parts 
+department. 
+ 
+This Best Practice relates specifically to the Component Management process as applied to large 
+Off Highway Trucks and is covered under version II of Site Assessment items 2.3.1 - 2.3.5 as well 
+as module #7 of the Gap Analysis Tool. 
+ 
+2.0 Implementation Steps 
+ 
+Implementation of an on-site Component Management process requires the development of a 
+long-term strategy focused on achieving desired, site-specific goals. The strategy includes the 
+definition and documentation of a logical sequence of steps and a plan to execute the strategy as 
+follows: 
+ 
+Figure #1 – Determine Scope of Component Management Coverage 
+ 
+• Scope of Coverage … determine the extent of the operation 
+ 
+ Equipment Management Responsibility(s): 
+ Equipment model(s) 
+ Quantity of equipment 
+ Asset Utilization (hours per machine per month) 
+START
+Define Scope 
+of Component
+Coverage
+MARC / CSA 
+Documentation
+A
+Remove & Install
+PM Only
+Time & Materials
+Full MARC
+other
+Major Components
+Minor Components
+Pumps
+Valves
+Cylinders & 
+Actuators
+others
+Engine
+Torque Convertor
+Transmission
+Differential
+Wheel Groups – F/R
+Type of Services
+Which Components
+Which Components
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 3 of 20 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ Type of Service: 
+ Preventive Maintenance only 
+ Component Removal and Installation 
+ Time and Materials only 
+ Full Maintenance and Repair Contract (MARC) 
+ other(s) 
+ 
+ Component Responsibility(s): 
+ Major Components: 
+ Engine 
+ Torque Converter 
+ Transmission 
+ Differential 
+ Wheel Groups (front and/or rear) 
+ other(s) 
+ 
+ Minor Components: 
+ Pumps 
+ Valves 
+ Cylinders and Actuators 
+ other(s) 
+ 
+ 
+Figure #2 – Establish Goals, Objectives and Exchange Parameters for Component Management 
+ 
+• Goals and Objectives … define life/cost target criteria 
+ 
+A
+Analyze
+Component 
+Exchange 
+Parameters
+B
+Analyze
+Site-Specific
+Component
+Life Target Input 
+Parameters
+On-Condition
+Fixed Interval
+(hours)
+Total Fuel Burn
+Hours & Condition
+In Conjunction
+With Other 
+Components
+After Failure
+MSR
+Document
+Builder Files
+(Component 
+Centerlines)
+Global Component 
+Life History
+Prior Experience /
+Historical Site 
+Performance 
+MARC / CSA
+Factory
+Recommendations
+Application
+Analysis Software
+MinEIA / FPCMCTS CLPP
+Machine
+History
+Database
+Define / 
+Document
+Component
+Life Targets
+Define / 
+Document
+Component
+Exchange
+Criteria
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 4 of 20 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ Component Life Targets: 
+ Prior experience/historical site performance 
+ MARC/CSA commitments (Builder files) 
+ Factory recommendations (e.g. CLiPP) 
+ Global component life history (e.g. MCTS) 
+ Application analysis software (e.g. MinEIA, FPC, FPO, etc.) 
+ other(s) 
+ 
+ Component Cost Targets: 
+ Prior experience/historical site performance 
+ MARC/CSA calculations (CSA Suite files) 
+ CRC/Rebuild Center input 
+ other(s) 
+ 
+• Component Exchange Parameters … define component exchange criteria 
+ 
+ Fixed interval (hours-based) 
+ On-Condition 
+ Hours and Condition 
+ Total Fuel Burn 
+ In conjunction with other components 
+ After failure 
+ other(s) 
+ 
+Define Key 
+Component
+Life Management
+Considerations
+B C
+Component-Related
+PM Activities
+PM Intervals
+Lubricant Type / 
+Quality
+Preventive
+Maintenance
+Repair
+Management
+Pre-PM Inspections
+Fluids Management
+Daily Field
+Inspections
+Operator
+Inspections
+Maintenance
+Application
+Operations
+Condition
+Monitoring
+ aa
+ bb
+Diagnostic & 
+Troubleshooting 
+Techniques
+Removal &
+Installation
+Procedures
+Mid-Life Repair
+Strategy
+Repair vs. Replace
+Strategy
+Standard Repair
+Procedures
+CRC / Rebuild Shop
+Liaison
+Condition
+Monitoring
+Preventive
+Maintenance
+Repair
+Management
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 5 of 20 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Figure #3 – Define Key Component Life Management Considerations & Acceptability Criteria  
+ 
+Figure #3a – Define Key Component Life Management Considerations & Acceptability Criteria (cont’d.) 
+ 
+• Component Life Considerations … identify factors affecting component lives  
+ 
+ Maintenance 
+ Preventive Maintenance: 
+ PM intervals 
+ Lubricant type/quality 
+ Component-related PM activity(s) 
+ 
+ Condition Monitoring: 
+ Operator inspections 
+ Periodic field inspections 
+ pre-PM inspections 
+ Fluids management … SOS, magnetic plug inspection, LPD, contamination  
+control, fluids consumption, etc. 
+ 
+ Repair Management: 
+ Diagnostic & troubleshooting techniques 
+ Removal & installation procedures 
+ Mid-life reconditioning plan 
+ Repair versus replacement guidelines 
+ Standard repair procedures 
+C D
+ bb
+Define
+Site-Specific
+Performance
+Targets &
+Acceptability
+Criteria
+ aa Analyze Application
+Input Parameters
+Analyze Operational
+Input Parameters
+Haul Cycle
+Analysis
+Haul Road
+Profile
+Fuel Burn Rate
+Altitude
+Ambient 
+Temperature
+Precipitation
+   Performance
+  Evaluation
+Condition
+ Monitoring
+Determine
+Protective
+Component
+Stock 
+Requirements
+Condition
+ Monitoring
+Haul Road
+Conditions
+Production
+Payload 
+Management
+Operational
+Abuse
+Asset Utilization
+ Parts
+   Management
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 6 of 20 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ CRC/rebuild shop quality 
+ 
+ Application: 
+ Fuel burn rate 
+ Haul cycle analysis 
+ Haul road profiles 
+ Altitude 
+ Ambient temperature 
+ Precipitation 
+ other(s) 
+ 
+ Operation: 
+ Payload management 
+ Haul road conditions 
+ Production 
+ Operational abuse 
+ Asset Utilization 
+ other(s) 
+ 
+• Acceptability Criteria … define site- specific performance targets 
+ 
+ Maintenance parameters: 
+ Preventive Maintenance 
+ Condition Monitoring 
+ Repair Management 
+ 
+ Application parameters 
+ 
+ Operational parameters 
+ 
+ 
+Figure #4 – Define Component Support & Management Requirements 
+ 
+• Component Support … determine site-specific component requirements 
+D
+Develop
+Component
+Inventory
+Storage Plan
+ Parts
+   Management
+E
+CRC Turnaround
+Capability
+Common Stock
+Site Infrastructure
+Private Stock
+Costs – Benefits
+Analysis
+Site Logistics
+Transportation
+Handling &
+Protection
+On vs. Off Site 
+Storage
+Technical Updates
+& Obscelecence
+Site Specific
+Modifications
+“Cannibalization”
+Policy
+Define
+Component
+Identification
+Plan Site-Specific
+Identification
+Number
+Component
+Serial Number
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 7 of 20 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ Protective component inventory: 
+ Dedicated vs. Shared stocking plan 
+ Protective stock quantities (by component) 
+ Site logistics 
+ Site infrastructure 
+ CRC/Rebuild Center turnaround capabilities 
+ Cost - Benefits analyses  
+ Other(s) 
+ 
+ PCR (Planned Component Replacement) inventory: 
+ Rebuild/Reman/New component replacement strategy 
+ PCR stock quantities (by component) 
+ PCR stock timing (short/medium/long-term forecast) linked to Asset Utilization 
+ Dedicated vs. Shared stocking plan 
+ CRC/Rebuild Center turnaround capabilities 
+ Other(s) 
+ 
+ Component Inventory Handling & Storage: 
+ Handling & protection 
+ Transportation 
+ On vs. off-site storage 
+ Reman core returns (see Parts Management) 
+ Obscelecence/technical updates 
+ Site-specific modifications 
+ Removal/installation parts kits 
+ * “Cannibalization” policy 
+ Other(s) 
+ 
+*NOTE: “Cannibalization” is the practice of taking parts from a downed machine to support 
+the repair of a defect on another machine. This occurs either when the parts support process 
+is weak, i.e. the quality of the on- site inventory is substandard resulting in a poor service fill 
+level, or when an inordinate amount of unscheduled repairs take place, i.e. other 
+maintenance and repair processes are weak resulting in a significant percentage of 
+unplanned repair activities. In effect, “cannibalization” is a poor practice put in place to prop 
+up one or more other weak processes. 
+ 
+While Global Mining neither endorses nor encourages “cannibalization”, we recognize that it 
+is an accepted practice at some sites. Thus, mine management must define a clear policy 
+related to “cannibalization”, that is, “will we do it?” and, if so, “how will we manage it?” to 
+minimize its detrimental impac t on Planning & Scheduling (and thus the timely execution of 
+needed repairs). 
+ 
+• Component Identification … define identification plan 
+ Component serial numbers 
+ Local identifier 
+ Tags/indelible marker 
+ “chip” 
+ 
+• Component Tracking … monitor component life/repair history 
+ Tracking system: 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 8 of 20 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ Manual system (paper) 
+ Locally-developed system (e.g. Excel spreadsheets) 
+ Computerized Maintenance Management System (third party) 
+ MCTS (Caterpillar Major Component Tracking System) 
+ Other(s) 
+ 
+ Statistical tracking parameters: 
+ Operation (operated hours, operational abuse, …)  
+ Application (cumulative fuel burn, distance traveled, …)  
+ Movement history 
+ Failure mode analysis 
+ Repair/rebuild history 
+ Workorder history 
+ Other(s) 
+ 
+• Component Commissioning … document/validate performance baselines 
+ Determine components to be evaluated, 
+ Define commissioning test procedures, forms and checklists, 
+ Establish interpretation and acceptability criteria, 
+ Develop and document “decision tree” guidelines for non-compliance with acceptability 
+criteria. 
+ 
+• Manpower 
+Determine human resources required to implement and execute the Component 
+Management plan, i.e. define and document quantities, roles & responsibilities, personal 
+attributes, skills, etc. (Also see Resource Requirements/Human Resources in section 5 .0). 
+ 
+• Training 
+How can personnel competency be assessed? What training will be required to develop the 
+skills required to perform the tasks related to Component Management? 
+ 
+• Infrastructure and Resource Requirements 
+What infrastructure and resources will be requir ed to execute the Component Management 
+plan? 
+ 
+ Shop work bays … appropriately equipped to handle large, heavy components  
+ Specialized tooling and instrumentation 
+ Machine-specific inspection and Condition Monitoring checklists 
+ R&I procedures … well -defined; documented in writing 
+ Data management equipment 
+ External resources 
+ Other(s)  
+ 
+(Also see Resource Requirements/Logistical Resources in section 5 .0). 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 9 of 20 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Figure #5 – Define Component Tracking & Reporting Requirements 
+ 
+• Performance Measurement/Reporting 
+What defines success in Component Management? What performance measures are 
+available that aid in quantifying our efforts in Component Management? The document 
+“Metrics (KPI’s) to Assess Process Performance” (attached) contains a complete listing and 
+explanation of recommended performance metrics for the Component Management process. 
+ 
+Once these questions have been answered, the following issues need to be taken into 
+account when developing a plan to quantify Component Management performance: 
+ 
+ Raw input data requirements, 
+ Data sources, 
+ Data collection frequency and responsibilities, 
+ Data flow and management, 
+ Calculation methodology, 
+ Performance goals and acceptability criteria, 
+ Analysis and interpretation roles & responsibilities,  
+ Analysis and interpretation guidelines, 
+ Information management/archiving, 
+ Report formats (templates), 
+ Report timing and frequency, 
+ Communications/distribution network, 
+ Distribution format and media. 
+ 
+ 
+ 
+ 
+3.0 Best Practice Description 
+ 
+E
+Analyze Statistical 
+Component Tracking
+Parameters
+  Performance
+ Evaluation
+Hour Accumulation 
+Rates
+Movement History
+Current Hours 
+Failure Mode
+Analysis
+Repair History
+Workorder
+History
+Mark / Identify
+Components
+END OF 
+STRATEGY F
+Define / Document 
+Statistical Component 
+Tracking
+Requirements
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 10 of 20 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Once the scope, goals/objectives, strategy and plan rel ated to Component Management have 
+been defined and documented, it is time to initiate the process. This Component Management 
+Best Practice describes and focuses on the various scenarios of Component Management as one 
+of the active elements in our maintenance and repair model, including: 
+ 
+ Preventive Maintenance 
+ Condition Monitoring 
+ Unscheduled Component Repair 
+ Component Replacement  
+ 
+The following is a brief description of each of those Component Management scenarios: 
+ 
+ 
+• Preventive Maintenance 
+Preventive Maintenance provides a regular and convenient “window of opportunity” to perform 
+routine service activities (e.g. change fluids and filters, perform Condition Monitoring 
+procedures on those components and systems to monitor changes/deterioration in their 
+performance over time). Thus the primary goals of PM as it relates to Component Management 
+are to maintain components in peak operating condition and to assess component health and 
+performance as compared to manufacturers’ specifications and/or predetermined, site-specific 
+acceptability criteria. 
+ 
+The PM process is initiated and Component Management-related PM activities are driven by 
+the Planning & Scheduling process using the intervals and checklists defined during the 
+development of the Component Management strategy. Aside from the component/system 
+service activities, the key elements of Component Management that take place during PM are 
+Condition Monitoring routines. These routines vary from the most basic (i.e. operator interview 
+and visual inspections), and continue through to fluids management, (e.g. SOS, 
+filter/breather/strainer inspection), operational and special instrumented tests, and on-board 
+electronic systems downloads which enable the site to monitor not only changes in system 
+performance but also changes in the operation and/or application severity. Any of these 
+changes may dictate modifications to the Component Management plan and/or the component 
+replacement program.  
+ 
+Once the PM process is completed, Component Management responsibilities continue with the 
+documentation of results and the communication of those results to the appropriate party 
+(typically the Fleet Analyst). All component/system condition parameters are recorded and 
+documented in the component life/repair history with any discrepancies (condition-based 
+exceptions) being communicated on an urgent basis and, if it is determined that action is 
+required beyond that normally performed during PM, the equipment is typically moved to the 
+main workshop for repair under the guidelines of Repair Management as defined in the 
+“Component Life Considerations” topic of the “Implementation Steps” section of this Best 
+Practice. 
+ 
+The description above should make it clear that Component Management is not a stand-alone 
+process and that success in this area requires strong linkage and integration with several other 
+processes, most notably Planning & Scheduling, Condition Monitoring, and Repair 
+Management. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 11 of 20 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Condition Monitoring 
+ 
+In addition to those activities associated with PM, component/system Condition Monitoring 
+procedures occur in conjunction with other phases of equipment management operations, 
+specifically during operator inspections, daily/field inspections and pre-PM inspections. The 
+scope of coverage in each of those areas varies significantly in terms of the activities 
+performed. A brief description of each of those areas follows: 
+ 
+ Operator Inspections: 
+Operators spend more time with and as a result should be more familiar with the 
+equipment than anyone involved in its management. The scope of the operators’ 
+involvement in component condition monitoring should include both the pre-shift 
+visual inspection as well as the post-shift component operation and performance 
+assessment. These activities are relative low-tech when compared to other condition 
+monitoring routines.  
+ 
+The pre-shift inspection includes: 
+ A visual, walk-around inspection 
+ The documentation of findings on pre-shift inspection checklist or machine logbook 
+ Reporting urgent defects to Dispatch or in-pit Supervision 
+ 
+The post-shift routine includes: 
+ Exception-based assessment of machine condition and performance 
+ Recording machine performance observations on post -shift inspection checklist or 
+machine logbook 
+ Communication of observations to Operator for upcoming shift 
+ 
+Please see “Operator Inspections” routine in the Condition Monitoring Strategic Best Practice 
+for additional details. 
+ 
+ Daily/Field Inspections: 
+Daily inspections should be scheduled during convenient “windows of opportunity” 
+such as shift changes and/or daily lubrication and refueling stops. These inspections 
+should be performed by a highly skilled, detail-oriented Inspector, are typically quick, 
+easy to perform (15 - 20 minutes in duration), and, once again tend to be relatively 
+lo-tech, subjective observations although activities such as tire pressure checks and 
+fluid additions are frequently included. The daily inspection also includes an 
+Operator interview, a review of available information (e.g. Operators’ logbook, 
+backlog repair list, top problems summary, etc.) in addition to the visual inspection. 
+ 
+Critical to the success of the daily inspection are well-guided, machine-specific 
+inspection checklists, well-documented procedures, minimal reliance on verbal 
+communications and the Inspectors’ ability to analyze, interpret and translate 
+Operator input into technical feedback and action such as backlog repair requests. 
+ 
+ Pre-PM Inspections: 
+The pre-PM inspection is performed to verify that the list of activities planned for 
+Preventive Maintenance is accurate and complete. In order to be effective, the pre-
+PM inspection must be scheduled and executed in time to allow Planning to respond 
+to feedback from the inspection. Execution of the pre-PM inspection is the 
+responsibility of the Field Inspectors and Technicians. In addition to all of the 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 12 of 20 
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+activities normally performed during the daily field inspection, fluid sampling, 
+magnetic plug inspections, VIMS and other on-board electronic system downloads, 
+and backlog repair validation are included in the pre-PM inspection. 
+ 
+The pre-PM inspection should be accomplished during the same “windows of 
+opportunity” as the daily field inspection and in the same amount of time (15 - 20 
+minutes). The same factors that drive success of the daily field inspection are also 
+critical to the success of the pre-PM inspection. 
+ 
+It is important to note that for any of these activities to add value, it is imperative that accurate, 
+complete feedback is documented and communicated in a timely fashion to the Fleet Analyst. 
+He or she is then responsible for the analyzing the results, updating the machine/component 
+history files and component “Hot Sheet”, and communicating advice to Planning regarding the 
+need for repairs outside the normal plan. Only then can abnormal conditions/performance and 
+changes in application severity be detected in time to take preventive or corrective actions that 
+can preserve and maintain component health. This is particularly important as components 
+approach the final stages of their predicted useful life and will, in some cases, enable 
+component lives to be extended beyond their planned replacement interval. 
+ 
+ 
+• Unscheduled Component Repair 
+Component replacement may be necessary as a result of findings that result from either the 
+Preventive Maintenance or Condition Monitoring routines as discussed in the previous two 
+topics. In addition, events that take place during normal equipment operations may lead to 
+component replacement. Unexpected component problems and failures will occur at even the 
+best-managed sites. As such, one of the goals of component management is to make the 
+replacement as transparent as possible in terms of the downtime and costs associated with the 
+repair or replacement.  
+ 
+When an operator determines that conditions justify stopping a piece of equipment, the first 
+order of business is to advise Dispatch of the situation. Dispatch must then send the field 
+service team to the machine for attention. Based on the information available (from Dispatch or 
+Operations), the field service team should collect any resources it feels are required before 
+going to the machine. Once the field service team arrives at the machine, it uses those 
+resources as well as operator input, field inspection, and on-board system analysis to make a 
+determination as to whether or not the call is valid. If the call is not valid, the machine is 
+returned to service and a field shift report is generated. This information may be used later by 
+the Training Department to define operator training requirements. 
+ 
+If the call is valid, a workorder is opened and the field service team must next determine if the 
+problem can be backlogged for future repair or if the repair is more urgent in nature. If urgent, it 
+may be addressed in the field or the shop. (The strategy for Repair Management should take 
+into account the estimated duration of the repairs in order to make the determination as to 
+whether repairs are performed in the field or the shop. Repairs requiring more than 30 minutes 
+to an hour to perform are typically thought to be beyond the scope of the field service team.) 
+ 
+The next step is to determine if the problem is component-related. If it is not, the repair falls 
+under the guidelines defined by the Repair Management process. If it is component related, the 
+guidelines defined in the Component Management strategy are applied, e.g. repair/replace 
+criteria, component repair/life history, and the component replacement plan. If the repair option 
+is decided, once again the repair falls under the guidelines defined by the Repair Management 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 13 of 20 
+
+===== PAGE 14 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+process. If replacement is deemed necessary, the machine is either driven or transported to the 
+main shop for service.  
+ 
+When the machine arrives in the main shop, the workorder is transferred from the field to the 
+shop where the supervisor assigns manpower. Technicians will first verify that the diagnostic 
+decisions taken in the field are accurate and, if found to be incorrect, the proposed action must 
+be revised accordingly. 
+ 
+Assuming the analysis and decisions are correct, Planning is advised and at that point they will 
+attempt to treat the situation much the same as if it were a planned component replacement. 
+Planning will define and procure resources including the component, R&R parts kit, people, 
+facilities, tooling, equipment, and information just as though the replacement was planned. In 
+addition, Planning should review the backlog repair list to determine if the parts and resources 
+are available and decide if the “window of opportunity” presented by stoppage is sufficient to 
+allow backlogged repairs to be made in parallel with component replacement.  
+ 
+Once the resources have been identified and obtained, the plan is in place and ready for 
+execution. This execution takes place under the guidelines defined by the Repair Management 
+process. The execution phase should include not only the task itself but also the commissioning 
+of the “new” component as well as protection, handling, and transportation of the used 
+component for return. The final steps are to perform a quality check of the work and to 
+document the process via the workorder for inclusion in the machine/component history files. 
+ 
+• Component Replacement 
+ 
+Planned component replacement (PCR) is driven by the Planning and Scheduling area and 
+executed under the procedures outlined in the Repair Management process (please see 
+Planning & Scheduling and Repair Management strategic Best Practices). In order to be 
+effective, component replacement activities must also draw upon resources included in the 
+condition monitoring, parts, and human resources areas as well. However, Planning relies 
+heavily upon the guidelines and disciplines defined by the Component Management strategy 
+and plan.  
+ 
+Component Management is responsible for providing multiple inputs that aid in the 
+development of the component replacement plan as well as its scheduling and execution. The 
+initial component life predictions established during the “Goals & Objectives” phase of the 
+component management strategy serve as the baseline from which actual component 
+exchange intervals are determined. The final determination as to when a component is to be 
+exchanged will be based upon one or more component exchange criteria. These criteria are 
+also best defined when the strategy is developed and will require that multiple exchange 
+parameters be monitored to determine optimum useful lives for each component. 
+ 
+In addition to initial life projections, component life factors that relate to equipment maintenance, 
+application, and operation must be monitored to insure that component lives are optimized and 
+component failures can be avoided. Acceptability criteria related to each of the equipment 
+maintenance, application, and operation life factors must be established when the component 
+exchange strategy is developed. They must be tracked, trended, monitored, and factored into 
+the timing of the exchange plan. It is also necessary to define a tracking system and 
+methodology to record and monitor each of the component life factors against initial targets. 
+This system should include the capability to track not only actual performance relative to those 
+targets but also to record component repair/rebuild history, movement history, failure mode, and 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 14 of 20 
+
+===== PAGE 15 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+workorder history. The database information is obtained from component condition monitoring 
+and is managed/archived to support the component management process. 
+ 
+Once it has been determined that a component is due to be exchanged, Planning will need to 
+pull information from other resources defined by the component replacement strategy. 
+Replacement component source options include dealer rebuild, Reman, or new. Component 
+availability and acquisition time are key factors to be considered in the decision making 
+process. Cost is also a consideration and details such as component exchange quality and 
+downtime need to be included in addition to the initial cost of the component to the contract. 
+The final plan should consider and include availability of labor (manpower), facilities, tooling, 
+installation parts kits, and special instructions associated with the exchange. Other jobs 
+(backlogged repairs) that will take place during the “window of opportunity” provided by the 
+component replacement need to be considered as well. Once this information has been defined 
+and procured, the job can be sent to Scheduling for inclusion in the weekly program. 
+ 
+The execution phase should include not only the task itself but also the commissioning of the 
+“new” component and protection, handling, and transportation of the used component for return. 
+Just as was the case with the unplanned component replacement, the final steps are to perform 
+a quality check of the work and to document the process via the workorder for inclusion in the 
+machine/component history files. 
+ 
+4.0 Benefits 
+ 
+Implementation and execution of a detailed, fully functional Component Management process 
+will support the following top-level goals of most mining organizations:  
+ 
+ Component life … component lives are optimized and may potentially be extended as a 
+result of a Component Management strategy based upon conditional criteria. 
+ 
+ Maintenance costs … manpower is deployed proactively (on a planned basis) rather 
+than reactively (crisis “management”) reducing labor force requirements and 
+costs via more efficient use of labor resources; equipment breakdowns, and 
+resultant unplanned repairs are held to a minimum reducing both repair 
+downtime and costs of failure-related contingent damage. 
+ 
+ Component reliability … component reliability is optimized resulting in a reduction in 
+failure frequency, increased fleet availability, asset utilization, and production 
+(tons). 
+ 
+ Machine productivity … equipment condition is maintained in accordance with design 
+specifications and operating at peak performance resulting in maximized 
+productivity (tons per hour). 
+ 
+Contributions of the above factors will yield minimized Cost per Ton and reduced MARC risk 
+resulting in increased customer satisfaction and dealer profitability. Additionally, development of 
+a Component Management strategy will aid in directing the efforts of Condition Monitoring to 
+address the challenges of maintenance, application and operation on a site-specific basis. 
+ 
+Once the implementation strategy and plan have been established, the Gap Analysis Tool and 
+process flow map for Component Management should be used to define the “as is” situation in 
+order to identify opportunities for improvement (i.e. gaps/weak areas) in the on-site operations. 
+Armed with this information, the site is then ready to take action to address those areas 
+identified in the assessment exercise. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 15 of 20 
+
+===== PAGE 16 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+5.0 Resource Requirements 
+ 
+• Human Resources (on-site):  
+ 
+Human resource requirements associated with the on-site execution of the Component 
+Management plan include: 
+ 
+ Fleet Analyst (Reliability Engineer) … tracks and monitors component -related inputs for 
+ all on-site activities to insure compliance with the strategy for 
+ Component Management. 
+ 
+ Consolidates Condition Monitoring and component life statistics to update 
+ a component “Hot Sheet” as input to the component replacement 
+ program. 
+ Defines component-related Condition Monitoring routines that correlate to 
+ equipment health, application and operation.  
+ Reviews component-related Condition Monitoring procedures and 
+ checklists to ensure they focus on significant issues and makes 
+ revisions as required. 
+ Advises Planning of issues related to component health, maintenance, 
+ application and operation. 
+ 
+ Planner … develops plans including resource and time estimates to execute all on- site 
+ Component Management routines. 
+ 
+ Develops and maintains the medium/long-term component replacement 
+ program. 
+ Serves as the primary on-site communications link to external support 
+ resources, e.g. central parts organization, CRC/component 
+ rebuild facility, external contractors …  
+ Ensures that component-related maintenance activities, e.g. inspections, 
+ tests, adjustments, repairs, replacement, are aligned with the 
+ strategy. 
+ Establishes priorities for component-related maintenance activities. 
+ Develops the short-term plan for component-related tasks. 
+ Defines, organizes and procures facilities, manpower, parts, tooling, 
+ forms, checklists, etc. for component-related maintenance 
+ activities; develops these inputs into a formal plan. 
+ Monitors component-related maintenance and Component Management 
+ process performance metrics for compliance with goals; devises 
+ and communicates plans to address shortfalls to the Project 
+ Manager. 
+ 
+ Scheduler … translates the Component Management plan into an actionable schedule.  
+ 
+ Develops the short-term plan into a schedule for component-related repair 
+ and replacement activities. 
+ Schedules weekly component-related activities in accordance with the 
+ Component Replacement Plan/strategy and resource availability. 
+ Publishes/distributes the weekly schedule and obtains agreement from 
+ all appropriate areas. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 16 of 20 
+
+===== PAGE 17 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ Identifies “Windows of Opportunity” for execution of backlogged repairs in 
+ conjunction with component replacement. 
+ 
+NOTE: The Scheduler and Fleet Analyst all work within the Planning Department and report 
+to the Planner. Depending upon the magnitude of the operation and the scope of its 
+responsibilities, a Planning Supervisor and multiple individuals may be required to staff each 
+of those three key positions. Some larger operations have determined that in addition to those 
+three positions they require specialized logistical staff whose responsibilities are to liaison with 
+off-site resources for the purpose of procuring parts, components and external (third-party) 
+suppliers to support efforts in planning and scheduling of component-related as well as other 
+maintenance and repair activities. A detailed discussion of planning and scheduling process 
+for component repair and exchange can be found in the Planning and Scheduling strategic 
+best practice. 
+ 
+ Operators … identify component -related defects and health issues on an ongoing basis  
+  before, during and after the shift. 
+ 
+ Continuously assess component condition, health and performance. 
+ Document observations through pre & post-shift checklists and the 
+ machine logbook. 
+ Take appropriate preventive actions in response to input from on-board 
+ warning systems. 
+ Communicate component condition and performance issues to Dispatch, 
+ Field Service staff and Inspectors. 
+ 
+ Field Inspectors … participate in all activities in the field in accordance with the weekly 
+ plan. 
+ 
+ Translate component-related Operator input into root-cause technical 
+ information. 
+ Execute all periodic/daily field inspections. 
+ Participate in the execution of pre-PM inspections. 
+ Participate in the execution of pre-PCR inspections. 
+ Provide accurate, complete information on inspection checklists and field
+ documentation.  
+ Generate/enter backlog repair requests. 
+ 
+ Technicians … execute all planned and unplanned maintenance activities in 
+ compliance with defined guidelines and procedures. 
+ 
+ Acquire thorough knowledge and understanding of all component/systems 
+ operation and apply that knowledge in the execution of component-
+ related maintenance tasks. 
+ Be familiar with proper use and operation of all specialized tooling and
+ instrumentation related to component diagnostics/troubleshooting, 
+ repair and replacement (R&I) activities. 
+ Document results; provide accurate, complete  information on checklists 
+ and forms. 
+ Generate backlog repair requests for defects that cannot be addressed
+ immediately. 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 17 of 20 
+
+===== PAGE 18 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ Project Manager … primary on- site individual responsible for the implementation and 
+ execution of the Component Management strategy/plan. 
+ 
+ Total familiarity with customer expectations, contractual commitments and 
+ the Component Management strategy. 
+ Authorizes resources to support successful implementation of the 
+ Component Management plan. 
+ Authorizes revisions to Component Management strategy and procedures. 
+ Authorizes modifications to the component exchange program. 
+ 
+• Human Resources (off-site): 
+ 
+ Component Specialist … primary off -site contact individual responsible for interacting 
+ with mining operations on component support issues. 
+ 
+ Receives the medium/long-term plan from multiple sites within a territory 
+ and factors those needs into the CRC/Rebuild Shop program. 
+ Communicates with on-site operations relative to availability of 
+ components to satisfy component rebuild/exchange requirements 
+ defined in the short-term plan. 
+ Manages transportation/return of components to be rebuilt. 
+ Receives repair/life history data from on-site operations for components 
+ to be rebuilt. 
+ Communicates cause of failure information to on-site mining operations. 
+ 
+ Parts Specialist … primary off -site contact individual responsible for interacting with 
+ mining operations on parts support issues related to components. 
+ 
+ Manages Reman and new component inventory to supplement CRC/
+ Rebuild Shop rebuild capability. 
+ Procures component R&I parts kits from Parts Department to support on-
+ site component exchange requirements. 
+ Manages transportation/return of Reman cores. 
+ Receives commissioning and post-installation fluid samples from newly 
+ installed components; exception-based results communications 
+ back to sites. 
+ 
+• Logistical Resources:  
+ 
+Logistical resource requirements associated with the execution of the component 
+repair/exchange plan include: 
+ 
+ Facilities 
+ 
+ Bays adequately sized to meet needs of largest equipment. 
+ Quantity sufficient to minimize delays. 
+ Compressed air, water, & electricity supplies available. 
+ Fluids handling … evacuation, delivery (filtered, metered and quick 
+ disconnects) and spillage clean-up capability. 
+ Work environment … well lighted, portable lighting, doors for dust/
+ contamination control, quality work surface, exhaust/smoke 
+ control. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 18 of 20 
+
+===== PAGE 19 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ Tooling 
+ 
+ Technician hand tools, tool boxes, and work carts. 
+ Special tooling … pneumatic tools, filter cutting device, oil ext raction  
+ (SOS), etc.. 
+ Testing & diagnostic instrumentation … pressure/temperature/speed 
+ packages, particle counter, etc.  
+ 
+ Equipment 
+ 
+ Personal safety equipment and first aid provisions. 
+ Workbenches equipped with vices. 
+ Workstation … writing surface w/ co mputer access. 
+ Cleaning materials … parts washing/solvent tank, shop vacuum, shop 
+ towels, rags, soap, etc. 
+ Filter cart (“kidney looping”), lifting devices, chains/slings, hydraulic jacks 
+ and stands, ladders and platforms, wheel chocks, ... 
+ Fire protection/extinguishing devices. 
+ 
+ Information 
+ 
+ Weekly schedule for component repair/exchange tasks. 
+ Work orders for component repair/exchange tasks. 
+ R&I guidelines, checklists and procedures specific to each component 
+repair/exchange task. 
+ Service/technical literature. 
+ Special instructions, etc. 
+ 
+Significant implementation costs include logistical resources required to execute the 
+Component Management plan, e.g. facilities, tooling and equipment, as well as 
+protective/PCR component inventory acquisition and carrying costs.  
+ 
+6.0 Supporting Attachments 
+ 
+• Cat Global Mining Equipment Management Process Map (Component Management)  
+•  “Metrics (KPI’s) to Assess Process Performance“ - Microsoft Word Document 
+ 
+7.0 Related Best Practices 
+ 
+• MARC Rate Development (ref. 0609-3.3-1009) 
+• Getting Started with MCTS (ref. 0407-3.1-1076) 
+• MCTS Used to Monitor & Manage Component Life (ref. 0906-3.1-1020) 
+• Managing Exchange Component Inventory Reduces Costs (ref. 0107-4.5-1055) 
+• Ensuring Rebuild Quality through Certified Removal & Installation (ref. 1006-2.3-1026) 
+• Major Component Installation Kits Improve R&I Process (ref. 0107-2.3-1052) 
+• Recommended Shipping & Storage Stands for Major Components (ref. 0107-4.4-1053) 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 19 of 20 
+
+===== PAGE 20 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+This “Component Management“ Strategic Best Practice was authored by: 
+ 
+Jim McCaherty 
+Mining Equipment Management Processes Division 
+Caterpillar Global Mining 
+1 (309) 675-5595 
+McCaherty_James_W@cat.com 
+ 
+Special recognition to Bob Nelson for his contributions.  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Component Management – Strategic  
+DATE 
+14 Mar 08 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1106 
+Caterpillar Confidential:  GREEN         Page 20 of 20

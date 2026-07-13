@@ -1,0 +1,320 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2006  
+0207-4.4-1058  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Airless Spray Painting 
+ 
+Application  Maintenance  Site 
+Management  
+Component 
+Rebuild Safety MARC 
+Management  
+ 
+ 
+ 
+Airless Spray Painting ............................................... 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits ............................................................. 3 
+5.0  Resources Required .......................................... 4 
+6.0  Supporting Attachments / References ............... 4 
+7.0  Related Best Practices ...................................... 4 
+8.0  Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Airless Spray Painting 
+DATE 
+6/7/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0207-4.4-1058  
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+1.0 Introduction  
+ 
+Almost every repaired or rebuilt component must be painted.  A durable coat of paint provides: 
+• An easy to clean and dirt repelling product surfac e. 
+• Protection from the typical Caterpillar operating environment 
+• The ability to help identify any unexpected leaks.  
+• A consistent product image.  
+• A professional finish that customers expect for a premium service. 
+ 
+In traditional dealer operations, components/machines are typically painted immediately after 
+assembly/testing and cleaning. 
+ 
+In the more progressive service operations, piece parts are given an initial coat of paint early in 
+the repair/rebuild process.  Once medium/large size parts are reconditioned, exterior surfaces 
+area painted while carefully shielding the interior surfaces. These parts, such as final drive 
+spindles, wheels, brakes, and engine blocks, are much easier to keep clean through the 
+repair/rebuild process. 
+ 
+An effective painting system provides: 
+- Professional painted surface finishes 
+- Minimal set-up and clean-up labor 
+- Multiple user flexibility 
+- Minimum supply/material (chemical) costs. 
+ 
+Airless spray systems provide the maximum flexibility at minimum cost of production. 
+ 
+2.0 Best Practice Description 
+ 
+Painting operations are often not a core competency of a repair/rebuild shop.  For that reason, it 
+is often assigned to every technician and/or it is not provided effective tools/equipment or 
+process. 
+ 
+Most shop managers would prefer to outsource this activity, but since painting is needed on an 
+inconsistent basis, it is usually performed by the lower skilled, or all technicians. 
+ 
+Traditional air spray guns  are typically used with a gun cup.  More progressive shops use a 
+remote paint tank with an air spray gun.  Both arrangements require thinning the paint and 
+filtering it before loading the cup or tank.  The gun cup arrangement requires frequent cleaning 
+(daily at minimum) and many shops deal with unclean spray guns that have hardened overnight 
+and require extensive cleaning or replacement.  A remote paint tank does not require as much 
+cleaning making it well suited for the automotive industry which demands a higher grade finish, 
+but may be over-kill (inefficient) for industrial products. 
+ 
+Airless painting  provides an industry acceptable finish without the air spray process complexity.  
+It is best suited for frequently used colors (typically Cat™ yellow).  Other colors are best handled 
+with aerosol cans or traditional air spray cups, given their limited application.  In addition to being 
+easier to manage, airless spray painting typically takes less time and covers surface 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Airless Spray Painting 
+DATE 
+6/7/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0207-4.4-1058  
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+imperfections better because each 
+coat has more pigments (its 
+thicker).  Airless spray painting 
+requires a slightly different 
+technique.  The painter must paint 
+faster since the paint is flowing 
+from the gun faster, which results 
+in near show-quality finishes.  
+Airless painting is especially 
+effective in intermittent painting 
+scenarios; typical in a rebuild 
+center that only paints their rebuilt 
+products. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+• Determine the anticipated type and volume of paint ing to be processed annually and the 
+forecast for future volumes for at least the next five years. 
+• Establish painting equipment needs, placement, and  storage requirements. 
+o Research airless spray equipment suppliers and sup port providers. 
+o Establish air spay equipment suppliers and support  as needed. 
+Airless painting system showing a portable pump, bucket, and spray nozzle 
+Airless painting cart in a CRC environment 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Airless Spray Painting 
+DATE 
+6/7/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0207-4.4-1058  
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+o Research Caterpillar equipment recommendations (ai rless equipment experience is 
+with Graco). 
+o Determine support equipment/supplies needed for ea ch spray technology.  Include 
+paint quantities, workbenches, storage cabinets, thinners, filters, replacement parts, 
+and reference materials. 
+• Develop, adjust and document rebuild procedure wit h quality checklists as needed.  Include 
+“intermediate” parts painting if this is a preferred improvement.  
+• Establish new and adjusted rebuild time requiremen t targets as needed.  These targets 
+should decrease as well as supply consumption, such as thinning/cleaning chemicals.  The 
+savings should be taken in-house as a return on investment, not passed on to the 
+customer. 
+• Present strategy to shop employees. 
+• Install the equipment changes into the shop (This may occur in phases as needed.) 
+• Train employees to use the new procedures/equipmen t. Follow-up/enforce immediately. 
+• Review process/equipment performance once establis hed. 
+• Establish and install any adjustments as needed. 
+ 
+4.0 Benefits 
+ 
+• Increased capacity – Airless spraying reduces spra y time with faster flowing paint sprays, and 
+applying more paint per coat (fewer coats required).  Paint dries faster because it is not 
+thinned (the thinner doesn’t need time to evaporate out of the paint). 
+• Reduced labor – Several traditional painting steps  are eliminated: 
+o The equipment does not need daily cleaning.  Many shops do not clean their airless 
+equipment for months at a time.  They typically shut the unit off and only make sure the 
+spray tip is immersed in thinner to prevent dry-out.  
+o The paint does not require thinning/straining.  Th e equipment sprays pure paint at high 
+pressure (>1000 psi).  Inline electric heaters thin 
+the paint if painting is performed in a cold 
+environment <60 ° F.  Debris is filtered out with 
+an equipment standard inline filter.  The filter is 
+typically replaced annually or less. 
+o The paint does not need mixing.  A paint 
+recirculation circuit can mix the paint.  An 
+optional lid (replacing the 5-gallon paint bucket) 
+includes a mixing propeller and air-powered 
+motor.  The paint never needs handling, outside 
+of opening the paint bucket and installing the 
+suction-tube/mixer lid. 
+o The airless spray unit can be installed outside of  
+the paint booth, with only the spray lines/gun 
+inside the booth.  This facilitates easier booth 
+cleaning and reduces equipment 
+contamination/overspray/cleaning. 
+• Painting flexibility – The paint equipment needs o nly to be switched on to begin painting.  If 
+the paint has been settling for more than a day, the operator may need to turn the mixer on for 
+A covered paint bucket with mixer 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Airless Spray Painting 
+DATE 
+6/7/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0207-4.4-1058  
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+5 minutes prior to painting (while they prepare their piece for painting).  Once painted, the 
+operator, switches the equipment off, and immerses the spray tip into thinner.  There is no 
+need to batch-process components.  An airless painter is portable and can be transported for 
+field painting where the procedures are greatly simplified for a dirtier environment. 
+• Improved operator safety – Although paint is spray ed at >100psi (can cause injury), this is 
+easily avoided with reasonable caution.  Paint operators receive much less chemical exposure 
+since they do much less paint/thinner handling and less equipment cleaning. 
+•  Reduced cost – Less paint thinners, filters, and cleaners are used, reducing supply costs.  
+Airless painting produces less cleaning rags and thinners for disposal. 
+ 
+5.0 Resources Required 
+ 
+• Investment Costs Vary ($3,000 - $4,000 US) – airle ss spray systems could include: 
+o High-pressure pumps (such as the Graco Bulldog or King models)* 
+o Inline paint filter* 
+o Paint container lid with propeller mixer* 
+o Inline electric paint heater (typically not needed ) 
+* Recommended for initial painting unit. 
+• Additional equipment for non-yellow paint (dealer often has this already): 
+o Air spray gun cups or remote paint cups. 
+o Paint mixing/straining equipment 
+• Support Equipment 
+o Workbenches and supply shelves. 
+o Dry waste and fluid waste containers. 
+• People 
+o Establish current painting/cost concerns with team . 
+o Establish process, layout, and equipment improveme nts through team. 
+• Training 
+o Establish the improvement benefits with the produc tion team. 
+o Define, establish, and enforce the new process and  duties with the production team. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Diagrams shown from: 
+ 
+Graco Inc. 
+88-11th Avenue N.E. 
+Minneapolis, MN 55413 
+www.graco.com 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Airless Spray Painting 
+DATE 
+6/7/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0207-4.4-1058  
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Russ Young 
+6 Sigma Black Belt 
+Cat Global Mining

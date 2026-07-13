@@ -1,0 +1,283 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\In-Ground Silo for Cabinet Washers.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2012  
+1205-4.03-1280  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+ 
+In-Ground Silo for Cabinet 
+Washers 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC)  
+ 
+MARC  
+Management 
+ 
+In-Ground Silo for Cabinet Washers  .............................. 0 
+1.0  Introduction  ......................................................... 1 
+2.0  Best Practice Description  ...................................... 2 
+3.0  Implementation Steps  ........................................... 4 
+4.0  Benefits  ............................................................... 4 
+5.0  Resources Required  .............................................. 4 
+6.0  Supporting Attachments / References  ..................... 4 
+7.0  Related Best Practices  ........................................... 4 
+8.0  Acknowledgements  .............................................. 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information ands potential benefits included in this document are based upon information provided by one or 
+more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty about the 
+information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best Practice” 
+recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+In-ground Silo for Cabinet Washers 
+DATE 
+6/9/2017  
+CHG 
+NO 
+00  
+NUMBER 
+1205-4.03-1280  
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+1.0  Introduction 
+  
+Most vertical parts washers are up to 14 feet tall and used to clean engine blocks, spindles, or 
+baskets containing piece parts.  Most have the pumps and motors contained in the bottom of the 
+washer cabinet with an additional base that is typically 3 feet high.  As a result, the loading 
+platform of the washer is 4 to 5 feet above the floor level.  
+ 
+The height of the platform above the floor level increases the time and effort required to load and 
+unload parts and components 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Increased height 
+of the floor to 
+the platform 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+In-ground Silo for Cabinet Washers 
+DATE 
+6/9/2017  
+CHG 
+NO 
+00  
+NUMBER 
+1205-4.03-1280  
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+ 
+ 
+2.0  Best Practice Description 
+A quick and simple way of improving the of lifting and handling parts mount the washer is a  “silo” 
+or pit in the floor so that the load platform is close to floor level.  The silo will need to be large 
+enough to provide access to the base of the washer for routine maintenance and repair.  The 
+exposed silo area can be covered with removable grating. 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+In-ground Silo for Cabinet Washers 
+DATE 
+6/9/2017  
+CHG 
+NO 
+00  
+NUMBER 
+1205-4.03-1280  
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+In-ground Silo for Cabinet Washers 
+DATE 
+6/9/2017  
+CHG 
+NO 
+00  
+NUMBER 
+1205-4.03-1280  
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+It is important to design access to the washer base for routine servicing. 
+ 
+ 
+ 
+ 
+3.0  Implementation Steps 
+ 
+Construct a silo considering the dimensions of the washing machine so that the loading platform 
+is located at the height of the floor.  Several dealers who have implemented this practice have 
+been very pleased with the benefits. 
+ 
+4.0  Benefits 
+ 
+• Reduces the time of entry and exit of components t o the washing machine. 
+• Improves technician ergonomic.  
+• Reduce time for cleaning the solvent tank. 
+.  
+ 
+5.0  Resources Required 
+ 
+Construction of silo. 
+ 
+6.0  Supporting Attachments / References 
+ 
+ None 
+ 
+7.0  Related Best Practices 
+ 
+None Applicable.  
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+In-ground Silo for Cabinet Washers 
+DATE 
+6/9/2017  
+CHG 
+NO 
+00  
+NUMBER 
+1205-4.03-1280  
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+ 
+8.0  Acknowledgements 
+ 
+The idea for this Best Practice belongs to: 
+Ferreyros SAA 
+ 
+This Best Practice was revised by:  
+Aninu Mitacc Vizcardo  
+Ferreyros SAA 
+aninu.mitacc@ferreyros.com.pe

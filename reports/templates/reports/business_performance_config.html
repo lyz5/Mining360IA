@@ -1,0 +1,44 @@
+{% load static %}
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Business Performance Config | Mining360</title><link rel="stylesheet" href="{% static 'reports/styles.css' %}"></head>
+<body>{% include "reports/includes/app_nav.html" %}
+<main class="app-shell bp-shell" data-bp-config data-save-url="{% url 'business-performance-config-api' %}">
+    <header class="bp-header"><div><p class="eyebrow">Administration / Semantic Models</p><h1>Business Performance Config</h1><p>Customer Fleet & Revenue Planning Model connection and controlled mappings.</p></div><a class="button secondary" href="{% url 'business-performance' %}">Back to module</a></header>
+    <section class="bp-panel">
+        <div class="bp-panel-head"><div><p class="eyebrow">Connection</p><h2>Semantic Model</h2></div><div class="bp-panel-actions"><button class="button secondary" type="button" data-import-model data-import-url="{% url 'business-performance-import-model-api' %}">Import & Match Model</button><button class="button" type="button" data-save-config>Save Configuration</button></div></div>
+        <div class="bp-config-grid">
+            <label>Workspace ID<input name="workspace_id" value="{{ config.workspace_id }}"></label>
+            <label>Semantic Model Name<input name="semantic_model_name" value="{{ config.semantic_model_name }}"></label>
+            <label>Semantic Model ID<input name="semantic_model_id" value="{{ config.semantic_model_id }}"></label>
+            <label>Report ID<input name="report_id" value="{{ config.report_id }}"></label>
+            <label>Tenant ID<input name="tenant_id" value="{{ config.tenant_id }}"></label>
+            <label>Authentication Mode<select name="authentication_mode"><option {% if config.authentication_mode == 'Power Automate' %}selected{% endif %}>Power Automate</option><option {% if config.authentication_mode == 'Existing Power BI connection' %}selected{% endif %}>Existing Power BI connection</option><option {% if config.authentication_mode == 'Service Principal' %}selected{% endif %}>Service Principal</option></select></label>
+            <label>Default Currency<input name="default_currency" value="{{ config.default_currency }}"></label>
+            <label>Default Date Range<input name="default_date_range" value="{{ config.default_date_range }}"></label>
+            <label>Default LOB<input name="default_lob" value="{{ config.default_lob }}"></label>
+            <label>Default Division<input name="default_division" value="{{ config.default_division }}"></label>
+            <label>API Endpoint<input name="api_endpoint" value="{{ config.api_endpoint }}"></label>
+            <label>XMLA Endpoint<input name="xmla_endpoint" value="{{ config.xmla_endpoint }}"></label>
+            <label>Cache Duration (seconds)<input type="number" name="cache_duration_seconds" value="{{ config.cache_duration_seconds }}"></label>
+            <label>Query Timeout (seconds)<input type="number" name="query_timeout_seconds" value="{{ config.query_timeout_seconds }}"></label>
+            <label>Default Top N<input type="number" name="top_n_default" value="{{ config.top_n_default }}"></label>
+            <label>Active Fleet Status<input name="active_fleet_status_value" value="{{ config.active_fleet_status_value }}"></label>
+            <label>Opportunity Threshold<select name="opportunity_threshold_mode"><option value="median" {% if config.opportunity_threshold_mode == 'median' %}selected{% endif %}>Median</option><option value="average" {% if config.opportunity_threshold_mode == 'average' %}selected{% endif %}>Average</option><option value="configured" {% if config.opportunity_threshold_mode == 'configured' %}selected{% endif %}>Configured</option></select></label>
+            <label>Fleet Quadrant Threshold<input type="number" step="any" name="opportunity_fleet_threshold" value="{{ config.opportunity_fleet_threshold|default_if_none:'' }}"></label>
+            <label>Revenue/Fleet Threshold<input type="number" step="any" name="opportunity_revenue_threshold" value="{{ config.opportunity_revenue_threshold|default_if_none:'' }}"></label>
+        </div>
+        <p class="muted-text">Client secrets are never stored or displayed here. Authentication continues to use the secured Mining360 credentials store.</p>
+    </section>
+    <section class="bp-panel">
+        <div class="bp-panel-head"><div><p class="eyebrow">Controlled metadata</p><h2>Measures and Fields Mapping</h2></div><label class="bp-table-search">Search mappings<input type="search" data-mapping-search></label></div>
+        <div class="table-scroll"><table class="data-table bp-mapping-table"><thead><tr><th>Logical Name</th><th>Display Name</th><th>Type</th><th>Power BI Table</th><th>Column / Measure</th><th>Format</th><th>Enabled</th></tr></thead><tbody>
+        {% for item in mappings %}<tr data-mapping-row data-id="{{ item.id }}" data-search="{{ item.logical_name }} {{ item.display_name }} {{ item.object_name }}">
+            <td><code>{{ item.logical_name }}</code>{% if item.is_required %}<span class="status-badge failed">Required</span>{% endif %}</td>
+            <td><input name="display_name" value="{{ item.display_name }}"></td><td>{{ item.object_type }}</td>
+            <td><input name="table_name" value="{{ item.table_name }}" {% if item.object_type == 'measure' %}placeholder="Optional"{% endif %}></td>
+            <td><input name="object_name" value="{{ item.object_name }}"></td><td><input name="format_string" value="{{ item.format_string }}"></td>
+            <td><input type="checkbox" name="is_active" {% if item.is_active %}checked{% endif %}></td>
+        </tr>{% endfor %}</tbody></table></div>
+    </section>
+    <div class="bp-toast" data-config-toast hidden></div>
+</main><script src="{% static 'reports/business_performance_config.js' %}?v=20260712-1"></script></body></html>

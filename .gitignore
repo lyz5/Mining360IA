@@ -1,0 +1,11 @@
+powerbi_credentials.local.json
+mining360_sqlserver.local.json
+*.pyc
+__pycache__/
+db.sqlite3
+*.sqlite3
+*.log
+.env
+*.env
+reports/live_sources_state.json
+reports/live_sources_custom.json

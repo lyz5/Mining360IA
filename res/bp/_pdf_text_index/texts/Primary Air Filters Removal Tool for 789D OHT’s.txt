@@ -1,0 +1,288 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+May 2024 
+1.01-240507-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Primary Air Filters Removal 
+Tool for 789D OHT’s 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Primary Air Filters Removal Tool for 789D OHT’s ...... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ........................................... 7 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Primary Air Filters Removal Tool for 789D OHT’s 
+DATE 
+5/7/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-240507-1 
+Caterpillar: Confidential Yellow          Page 2 of 7 
+1.0 Introduction  
+ 
+Reusing air filters is a good practice recommended by CAT to preserve the environment and 
+save costs. CAT establishes the reuse and cleaning of primary air filters up to two times; this 
+represents a cost savings compared to air filters that were used once and discarded due to the 
+extraction process. 
+ 
+In this operation, some complications have occurred when removing the primary air filters on the 
+789D as they get stuck inside the pre- cleaner when the machines are in PM (Preventive 
+Maintenance). In some situations, the filters become so stuck that the technicians have to drill 
+into the filters with a pry bar and attempt to pull them out. Once the filter is punctured, it can no 
+longer be reused, and costs will increase due to the need to acquire more new filters to replace 
+the discarded ones. 
+ 
+ 
+  
+  
+ 
+This Best Practice is intended to make a tool to easily remove the air filters from the 789D without 
+damaging them. 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice intends to use a removal tool to  easily remove the primary air filters during 
+PM in the 789D. The tool must be attached to the filter to be removed and supported to the pre-
+cleaner. Once the tool is attached to the filter, the technician must turn a handle a few times and 
+the filter will come out of the pre- cleaner. It is not necessary to remove the entire filter from the 
+pre-cleaner, removing the filter one inch will be enough. 
+ 
+The tool must  be removed in the opposite way of installation. The filter can now be easily 
+removed by hand from the pre-cleaner. 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Primary Air Filters Removal Tool for 789D OHT’s 
+DATE 
+5/7/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-240507-1 
+Caterpillar: Confidential Yellow          Page 3 of 7 
+The tool is manufactured with a bracket with 4 supports and a worm screw welded to a rotating 
+handle. The tool also incorporates a round plate, a hard washer, a nut, and a lock nut. There is 
+a rubber band supported to the round plate with a clamp. When removing the air filter, tighten 
+another clamp on the opposite side of the rubber band to tighten the filter. 
+ 
+  
+ 
+ 
+3.0 Implementation Steps 
+ 
+A. Remove the pre-cleaner cover. 
+ 
+    
+ 
+ 
+B. Attach the plate with the rubber band to the filter and tighten the clamp to it. 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Primary Air Filters Removal Tool for 789D OHT’s 
+DATE 
+5/7/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-240507-1 
+Caterpillar: Confidential Yellow          Page 4 of 7 
+     
+ 
+C. Attach the bracket to the plate by inserting the tool pin into the hole in the plate. 
+ 
+  
+ 
+D. Attach the bolt with a hard washer, locknut, and nut to the plate. Tighten the nut with the lock 
+nut to prevent them from turning freely relative to the bolt when removing the filter. 
+ 
+   
+ 
+E. Turn the tool handle counterclockwise and you will begin to see the filter come out of the pre-
+cleaner. Continue turning until the filter comes out approximately one inch. 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Primary Air Filters Removal Tool for 789D OHT’s 
+DATE 
+5/7/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-240507-1 
+Caterpillar: Confidential Yellow          Page 5 of 7 
+ 
+ 
+F. Remove the tool in the reverse order of installation. 
+ 
+G. Finish removing the filter from the pre-cleaner by hand. 
+ 
+H. Perform the same procedure for the air filter on the opposite side. 
+ 
+ 
+4.0 Benefits 
+ 
+This tool will facilitate the removal of the primary air filters on the 789D. These filters are prone to 
+get stuck inside the pre- cleaner when trying to remove them in the PM. In some cases, the filter 
+must be punctured with a pry bar to remove it and can no longer be reused. The tool facilitates the 
+removal of the filters and maintains their functionality. The filter can be reused two more times after 
+the first use. 
+ 
+5.0 Resources Required 
+ 
+Investment 
+ 
+Parts and fabrication materials = US$ 600. 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Primary Air Filters Removal Tool for 789D OHT’s 
+DATE 
+5/7/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-240507-1 
+Caterpillar: Confidential Yellow          Page 6 of 7 
+6.0 Supporting Attachments / References 
+ 
+ 
+Item Description QTY 
+1 Bracket 1 
+2 Turning Handle 1 
+3 Plate 1 
+4 Washer 1 
+5 Nut 1 
+6 Locknut 1 
+--- Rubber band 1 
+--- Clamps 2 
+ 
+ 
+• All relevant drawings are included in the appendix. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Primary Air Filters Removal Tool for 789D OHT’s 
+DATE 
+5/7/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-240507-1 
+Caterpillar: Confidential Yellow          Page 7 of 7 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+Andrés Sierra 
+Technical Communicator – Relianz Mining Solutions. 
+andres.sierra@relianz.com.co
+ 
+ 
+Checked by: 
+ 
+Germán Álvarez | Black Belt  
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 5347 | Cel: +57 300 805 1914 | 
+german.alvarez@relianz.com.co | www.relianzcat.com  
+ 
+Edgard Romero | Learning Solutions Specialist / DPC & SISWEB Admin  
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 35186 | Cel: 3114224468 | 
+edgard.romero@relianz.com.co | www.relianzcat.com

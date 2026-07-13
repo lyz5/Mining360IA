@@ -1,0 +1,240 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Bypass Valve Cover Installation Tool in Oil Filters Base for 3500 Engines.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+March 2015  
+1501-4.03-1361  
+  
+ 
+    
+    
+ 
+ 
+Bypass Valve Cover 
+Installation Tool in Oil 
+Filters Base for 3500 
+Engines   
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC)  
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Bypass Valve Cover Installation Tool in Oil Filters 
+Base for 3500 Engines .............................................. 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits ............................................................. 2 
+5.0  Resources Required .......................................... 2 
+6.0  Supporting Attachments / References ............... 2 
+7.0  Related Best Practices ...................................... 4 
+8.0  Acknowledgements ........................................... 4 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Bypass Valve Cover Installation Tool in Oil Filters Base 
+for 3500 Engines 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1361  
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+1.0 Introduction  
+ 
+Current process for installation of the 3500 engine oil filter base valve springs (PN: 7G-6713) and th e 
+respective cover is performed manually. Compressing  the spring to the closed position of the cover, 
+requires the technician to exert a considerable amo unt of force (17Kg) in a small area. This task 
+involves and requires a great amount of physical effort, and with multiple oil filter base covers/springs 
+this task becomes uncomfortable and tiring for the technician. 
+ 
+ 
+Figure 1. Procedure manual installation of the cover 
+ 
+This Best practice aims to facilitate the development of this task to design a user-friendly process that 
+is fast and safe to use. 
+ 
+2.0 Best Practice Description 
+ 
+This tool applies to the bases of 3500 engine oil filters.  The press consists of a C-shaped piece made 
+of 7/16" steel grade 514.  Compression is performed by an endless 7/8" screw with a pitch of 7 mm, 
+with a C-shaped tip that rotates freely to accommodate the spring covers on the oil filter bases.  Also, 
+two screws are used that are similar to the original cover screws but longer (4"), guide the cover while 
+being compressed and prevent rotation. 
+ 
+  
+Figure 2. Tool Architecture. 
+ 
+The tool weight is 1.7kg. The spring requires a force equal to or greater than 17 kg.  For this reason 
+this system is in the form of a press which facilitates the installation.  
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Bypass Valve Cover Installation Tool in Oil Filters Base 
+for 3500 Engines 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1361  
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+3.0 Implementation Steps 
+ 
+• Check the status of the tool to verify the integri ty before use. 
+• Place spring and cover fitting with guide screws. (1) 
+• Install the tool "C" ensuring proper engagement wi th the flat bottom of the base, turn the screw 
+(down) until the tool is self-supporting the product of the force exerted by the spring (2). 
+• Next bring down the screw cap to its final install ation position (3), then manually remove the 
+interim guides and install the screws (bolts).  
+• You should remove one guide and install one bolt, then repeat for the other, so that you never 
+have the tool on the part without a bolt or guide screw in place. 
+• Finally tighten to the required torque (4). 
+  
+Figure 3. Procedure for operation of the tool. 
+ 
+• After installing the cap, release the lead screw to remove the tool  
+ 
+4.0 Benefits 
+ 
+• Easy fabrication 
+• Easy operation 
+• Improved component assembly 
+• Spring secure installation, reduces accidents 
+• Decreases fatigue avoid manual installation techni cian 
+ 
+ 
+5.0 Resources Required 
+ 
+Plans of the tool (see attached map) 
+ 
+6.0 Supporting Attachments / References 
+ 
+EDITOR’S NOTE:  Due to the fact P/N 7G-6713 Spring can work with multiple oil bases, please make 
+sure this tool is applicable to your application.  Dimensions will vary, depending on the operation you 
+are undergoing. 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Bypass Valve Cover Installation Tool in Oil Filters Base 
+for 3500 Engines 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1361  
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+ 
+ 
+ 
+ 
+Figure 4. Map of the tool. 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Bypass Valve Cover Installation Tool in Oil Filters Base 
+for 3500 Engines 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1361  
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+ 
+Safety factor 3.7 with test load 18kg 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+Enrique Urbina  
+CRC Development Projects Chief, GECOLSA 
+Email: 
+enrique_urbina@gecolsa.com.co  
+ 
+Melissa Chimá B. 
+Ingeniera de Servicio CRC, GECOLSA. 
+Email: 
+melissa_chima@gecolsa.com.co 
+ 
+ 
+Checked and written by: 
+ 
+David Antonio Gonzalez Fernandez 
+Ingeniero de Servicio CRC, GECOLSA 
+Email: 
+antonio_gonzalez@gecolsa.com.co  
+ 
+Luis Alberto Fernández Ch. 
+Ingeniero de Desarrollo  
+GECOLSA_CAT División Minería 
+Departamento Técnico, área Ingeniería y Desarrollo. 
+Email:
+ luisalberto_fernandez@gecolsa.com.co

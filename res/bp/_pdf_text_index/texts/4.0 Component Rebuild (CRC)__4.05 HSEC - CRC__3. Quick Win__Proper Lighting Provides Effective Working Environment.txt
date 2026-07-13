@@ -1,0 +1,300 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2007  
+0207-4.4-1066  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Proper Lighting Provides 
+Effective Working 
+Environment  
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety 
+ 
+ 
+Proper Lighting Provides Effective Working 
+Environment .............................................................. 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 4 
+4.0  Benefits ............................................................. 4 
+5.0  Resources Required .......................................... 5 
+6.0  Supporting Attachments / References ............... 5 
+7.0  Related Best Practices ...................................... 5 
+8.0  Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Proper Lighting Provides Effective Working 
+Environment 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0207-4.4-1066  
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+1.0 Introduction  
+ 
+Component Rebuild Center (CRC) work bay lighting is critical to several facets of CRC operations.   
+Proper lighting provides an effective working environment for rebuild technicians by allowing them 
+to see the smallest details, improving parts reuse decisions and workmanship in general.  Good 
+lighting also reduces eyestrain and worker fatigue, while promoting high professionalism to 
+customers and employees.  A clean, well-lit environment promotes quality and leads the effort in 
+setting an internal image of excellence for all the employees to follow in their daily tasks.   
+ 
+Part reuse decisions are constantly being performed in a CRC.  Parts are being washed or 
+otherwise salvaged.  Work is being performed above, below, and often inside small and large 
+parts/components.  Improper lighting in any of these scenarios can contribute to technician errors 
+in judgment or misread scales.  Installing unreusable parts, misadjusting systems, or missing 
+process details may result in early component failure, short component service life, or possibly 
+catastrophic failure.  Substandard lighting limits technician capability and physically promotes a 
+substandard capability to the customers and employees.  Good shop lighting shows that the 
+dealer is serious about promoting the quality advertised and sell.   
+ 
+2.0 Best Practice Description 
+ 
+Traditional shop lighting  efforts are generally based on ceiling lights.  A new shop will have 
+more shadows and a generally darker environment with only ceiling lights.  Lighting deficiencies 
+often go unnoticed given the many adjustments needed to assure work gets performed 
+effectively.  As the shop’s walls, ceilings, floors, equipment, and light fixtures get dirtier (especially 
+with unprotected concrete), they reflect less light, creating a darker shop.  This becomes more 
+evident during the winter months with shorter days.  Shops with normally open doors (not 
+recommended) will also be darker during colder months when the doors remain closed during the 
+day.  Lighting is often improved by increasing the number of ceiling lights or random light fixtures 
+in the shop.  These additions help but are generally ineffective given their height and/or location.  
+It’s difficult to get enough ceiling lights to provide enough light with gray containers, equipment, 
+and product, as well as dirty floors/walls absorbing much of it.  Roof skylights help, but only 
+during the first shift on sunny days. 
+ 
+Enhanced CRC lighting  provides a well-lit environment without excessive lighting costs or 
+maintenance.  Effective lighting is provided through a comprehensive effort of coverage: ignoring 
+one area will reduce lighting efficiency overall and provide inconsistent results.  Increasing efforts 
+in other area(s) may not provide enough to compensate for the loss. 
+• Ceiling lights are needed to provide enough genera l lighting for well-light aisles and bay 
+work areas.  Most dealers require lighting engineers to assure enough lighting given a 
+ceiling height and shop colors.  Roof-mounted skylights are highly recommended to provide 
+natural lighting and reduce daytime lighting costs.  Skylights must not replace ceiling 
+fixtures due to lighting needed during 2 nd  and 3 rd  shifts and other times with marginal 
+outside lighting.  
+• Sidelights are needed on walls and columns as need ed to reduce shadows.  Locate lights 
+10-12 ‘ above shop floor.  These fixtures provide lighting for the work bay area, on the side 
+and below major components, and workbench tops. 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Proper Lighting Provides Effective Working 
+Environment 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0207-4.4-1066  
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+• Task/local lighting should be located above workbe nches.   These lights are typically 4’ 
+fluorescent lights suspended at the center of the workbench approximately 7’ above the 
+floor.  These fixtures are primarily for workbench tasks and parts inspections.  They also 
+greatly supplement the sidelights since the workbenches are on the work bay perimeter 
+and close to the major component. 
+• Droplights are needed on every work bay perimeter,  on rewinding reels.  Stationary lighting 
+fixtures are not capable of directing enough light to tasks, such as work on the inside of part 
+cavities or parts in the middle of the work bay.  Droplights are best stored by suspending 
+them from reels to assure: 
+o The lights are easily retrieved for use. 
+o Easily stored for cleanup/protection. 
+o The technician does not substitute a lower wattage  flashlight.  
+• Large bridge crane beams should have light fixture s to compensate as they often block 
+ceiling lights when moved to a working position.  This prevents reducing the light under the 
+hoist being used. 
+• Use reflective colors in the shop to conserve avai lable light and create a professional work 
+environment.  Smooth painted 
+surfaces help prevent dirt/dust from 
+sticking and are easier to clean. 
+o Ceiling should have shiny or 
+light painted surfaces – 
+including structural beams/ 
+trusses.  Avoid exposed spray-
+on or paper-faced insulation as 
+these surfaces absorb dirt and 
+are difficult to clean without 
+damage. 
+o Walls are often painted tan or 
+off-white up to 7’-8’ high to 
+reduce noticeable staining.  The 
+upper area of the wall should 
+be painted white to reflect as 
+much light as possible since it 
+is much less vulnerable to 
+staining. 
+o Floors must be sealed 
+(reapplied regularly) so 
+oil/grease are not absorbed, 
+dark staining is prevented, and 
+cleaning efforts are reduced.  
+Floors may be painted lighter 
+than concrete (if impact 
+damage is controlled) for 
+maximum light reflection and 
+cleaning ease. 
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Proper Lighting Provides Effective Working 
+Environment 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0207-4.4-1066  
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+o Paint equipment, especially cabinets, cranes, and workbenches, with bright yellow or 
+another reflective color.  Use high-gloss paint for maximum durability and cleaning 
+ease. 
+• Keep the CRC clean to prolong its lighting effecti veness.  Attractive paint and effective 
+lighting deteriorate quickly (along with employee pride) if not kept clean.  Focus on areas 
+originating dirt, grease and airborne debris to control spreading contaminates. Maintain 
+areas daily, especially disassembly/cleaning areas with: 
+o Downdraft tables. 
+o Contained blast cleaning. 
+o Smooth painted walls. 
+o Large oil-trapping grids in the floor. 
+o Effective cabinet washer evacuation. 
+o Utilities, such as air lines, on retracting reels.  
+o Equipment/tool racks/cabinets to maintain organiza tion. 
+ 
+ 
+3.0 Implementation Steps 
+• Assess the CRC’s status and document conclusions i n text and pictures. Focus on: 
+o Lighting capability in every aisle, work bay, and corner.  Observe shadows and 
+transient conditions with crane usage. 
+o Special lighting needs, such as for detailed inspe ctions. 
+o Lighting during all working shifts and with all do ors closed. 
+o Typical shop cleanliness conditions and cleaning h abits. 
+o Building and equipment colors.  Note reflectivity,  condition, and cleanliness. 
+• Establish lighting needs, placement, and painting requirements. 
+o Research/establish lighting specialist as a consul ting SME. 
+o Establish lighting equipment suppliers and support  as needed. 
+o Research Caterpillar equipment recommendations for  fixtures, arrangement, etc. 
+o Determine painting resources and support services.  
+• Develop and design CRC color scheme surface requir ements and paint types. 
+• Adjust and document housekeeping requirements, pro cedures, roles and responsibilities 
+(with quality checklists as needed). 
+• Establish new repair/rebuild time requirement targ ets as needed. 
+• Present strategy to shop employees. 
+• Install the equipment changes into the shop (This may occur in phases as needed.) 
+• Train employees to use the new procedures/equipmen t. Follow-up/enforce immediately. 
+• Review process and equipment performance once esta blished. 
+• Establish and install any adjustments as needed. 
+ 
+4.0 Benefits 
+• Reduced non-chargeable (general cleaning) labor - work bay cleanliness is maintained 
+during normal daily activity, not at the “end of period cleanup”.  Lighting better shows what 
+should be cleaned.  Saved labor is applied to increased revenue, providing more profits. 
+• Increased quality – more accurate parts reuse insp ections and more consistent cleaning 
+standards.  Technicians provide effective workmanship due to less (eye and general) 
+fatigue. 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Proper Lighting Provides Effective Working 
+Environment 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0207-4.4-1066  
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+• Improved technician safety – obstacles are easier to see and maintaining cleanliness 
+reduces airborne debris. 
+• Improved CRC image – customers see a more professi onal rebuild environment, helping to 
+increase price realization.  Employees experience a quality/professional environment, 
+encouraging them to provide the same level of contribution in their efforts. 
+ 
+5.0 Resources Required 
+ 
+• Investment costs vary, depending on lighting-relat ed gaps found and local labor/material 
+costs: 
+o Light fixture installation 
+o New paint required on worn/abused equipment. 
+o Preparation for building paint job(s) 
+o Skylight installation. 
+• Support Equipment 
+o Equipment organization aids (racks, cabinets). 
+o Airborne debris containment (downdraft tables, eva cuation systems, etc.) 
+o Utility reels for effective cleaning efforts. 
+o Used oil grids for oil containment. 
+• People 
+o Establish current painting, and other environmenta l< concerns with team. 
+o Establish process, facility, and equipment improve ments through team. 
+• Training 
+o Establish the improvement benefits with the produc tion team. 
+o Define, establish, and enforce the new process and  duties with the production team. 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Russ Young 
+6 Sigma Black Belt

@@ -1,0 +1,340 @@
+SOURCE: 3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\Bulk Oil Filtration.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Bulk Oil Filtration 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+MARC 
+Management 
+ 
+ 
+ 
+ 
+Bulk Oil Filtration ........................................................ 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+August 2006 
+0806-2.10-1005 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Improving component life is a key factor in achieving the lowest cost per ton. Few factors can 
+extend component life as much as clean oil. 
+ 
+Modern powershift transmissions and implement hydraulic systems use large numbers of electro-
+hydraulic control valves, which require very clean oil to operate properly. Even in gear-case 
+environments, such as the final drives and differentials, roller bearings are highly loaded and can 
+be damaged from microscopic abrasive debris in the oil. 
+ 
+Fluid cleanliness begins by ensuring that oil put in the machine is clean to begin with. 
+Nearly all new oil is contaminated to some degree with dirt, metal particles, plastic, water, or 
+other foreign debris. A widespread misconception is that new oil is automatically clean because 
+of its appearance. However, contaminants are introduced in the transportation and storage 
+process from the time the oil leaves the refinery until it is used. Very little new bulk oil meets the 
+recommended Caterpillar cleanliness spec for new oil of ISO16/13. This includes oil delivered in 
+bulk tanks, steel barrels, plastic cubes, and small plastic containers. 
+ 
+New oil that does not meet the cleanliness spec should be filtered until it does meet the following 
+cleanliness specs: 
+  
+Desired  ISO 16/13 
+ Maximum  ISO 18/15 
+ 
+There are a variety of methods for filtering new oil. These include: 
+  
+1. Permanent filtration installation 
+2. Portable filtration 
+a. Barrels 
+b. Cubes 
+3. On-Machine 
+ 
+The method used may vary depending on a number of factors. These include:  
+1. Volume of oil being used 
+2. Location 
+3. Available infrastructure 
+4. Cost 
+ 
+2.0 Best Practice Description 
+ 
+2.1 Permanent Filtration Installation 
+Large, permanently installed filtration systems are often the best choice for facilities which use 
+large volumes of new oil and have centralized oil supply systems.  
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Oil Filtration 
+DATE 
+14 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1005 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Typical users of permanent filtration systems include: 
+• Dealer main store shops 
+• Large branch stores 
+• Component rebuild centers 
+• Large shops at mine sites.  
+ 
+Permanent systems usually consist of three major components: 
+  
+2.1.1 Main Storage Tank 
+A large storage tank holds the entire supply of a particular grade of oil, and usually has a 
+capacity of several thousand gallons. A large storage tank is required for each grade of oil used. 
+ 
+2.1.2 Day Tank 
+It is time-consuming and impractical to try to clean several thousand gallons of oil in the main 
+storage tank. The primary reason is that the entire supply will be re-contaminated with unfiltered 
+oil when the tank is re-filled. The recommended method is to pump oil from the storage tank into 
+a smaller day tank sized, which has adequate capacity to supply needs for 1-2 days. The smaller 
+volume of the day tank can be refilled and filtered at night for use the next day. It is also not 
+affected by re-filling of the main storage tank. 
+ 
+2.1.3 Re-circulating Filtration System 
+Permanently mounted pumps continuously circulate oil from the day tank, through a bank of 
+particulate filters and back into the day tank. This process is usually performed at night during off-
+shift periods continues for several hours until the desired cleanliness is achieved in the day tank.  
+While this system does require a sizeable capital investment, it is the most economical method 
+for supplying large volumes of clean oil for high volume applications. 
+ 
+Caterpillar does not supply permanent system components, but can assist in recommending 
+proper system design and reputable suppliers. 
+ 
+2.2 Portable Filtration 
+Large, permanently installed filtration systems are often too expensive for smaller branch stores 
+and mine site repair shops. In these applications, various forms of portable filtration is often the 
+best option.  
+ 
+2.2.1 Filter Carts 
+Smaller facilities often purchase and store new oil in steel barrels or 1,000-liter plastic cubes. 
+Caterpillar offers portable filter carts and fittings to clean the oil in the barrels and cubes before it 
+is pumped into the machine. This is the same basic process of re-circulating oil through a filter 
+bank as permanent installations, except on a much smaller scale. Portable carts are much less 
+expensive, but also filter much smaller volumes and are more labor intensive to manage. 
+However, they are the most practical and economical alternative for smaller facilities. 
+ 
+2.3 On-Machine Filtration 
+In some application, the volume of new oil used is inadequate to justify permanent filter systems, 
+but enough to make filtering individual cubes and barrels difficult to manage. While it is desirable 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Oil Filtration 
+DATE 
+14 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1005 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+to clean new oil before it is pumped into the machine, new oil may also be cleaned after it is 
+placed in the machine. This is a two-step process: 
+ 
+2.3.1 Series Filtration from the Container 
+Unfiltered new oil should never be taken directly from the container and placed into the machine. 
+This is true whether the oil is being used for refilling a compartment at an oil change interval or 
+simply topping off a system.  
+ 
+If a re-circulating filter system is not used, a simple single-pass filter arrangement offers an 
+acceptable alternative. The filter arrangement consists of three 5 micron, beta 75 ultra-high 
+efficiency hydraulic filters in series followed by a water absorbing filter. The new oil flows from the 
+container through each of the five-micron filters in series, and then through the water-absorbing 
+filter.  
+ 
+The filter bases must not contain bypass valves, so that if particulate filters begin to plug, oil flow 
+stops requiring the plugged filters to be changed. The water-absorbing filter effectively absorbs 
+any water in the oil and automatically blocks flow when the water absorbing media is depleted.  
+ 
+Using this arrangement will assure that most large particulate contaminants and all excess water 
+is removed from the new oil. 
+ 
+2.3.2 Off-Board Machine Filtration  (Kidney Loop) 
+The use of off-board filtration carts is required to clean machine systems after a major 
+component or system repair before the machine is returned to service. They are also commonly 
+used during machine PM to clean the oil while the machine is already down for service. These 
+carts should also be used during oil changes to filter new oil that was not cleaned to ISO 16/13 
+before being placed in the machine.  
+ 
+The new oil must be filtered in the compartment until it reaches the desired cleanliness before the 
+machine is started or placed backing service. 
+ 
+3.0 Implementation Steps 
+ 
+3.1 Permanent Filtration 
+System design guidance and supplier recommendations can be obtained from the Caterpillar 
+Service Tools Group or from the Caterpillar Product Support Division Contamination Control 
+Group. 
+ 
+3.2 Portable Filtration 
+The size and number of portable filtration carts needed for filtering new oil containers is 
+determined by the number of different oil types and type of containers being used. A wide variety 
+of carts are available from Caterpillar. Information may be obtained through the Contamination 
+Control Group or Service Tool Group. 
+ 
+3.3 On-Machine Filtration 
+Series filter arrangements for each grade of oil is required. These are an inexpensive method to 
+fabricate using filter bases and UHE hydraulic filters available through the Caterpillar parts 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Oil Filtration 
+DATE 
+14 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1005 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+system. Caterpillar no longer offers water absorbing filter elements. These may be easily 
+obtained from a number of large filter manufacturers. Part numbers of UHE filters and filter bases 
+are available through the Caterpillar Fluids and Filters group. 
+ 
+Off-board filtration carts are already required for major system and component repairs. They are 
+also commonly used during PM. There are a variety of filter cart sizes available through 
+Caterpillar. Information may be obtained from the Caterpillar Service Tools Group or from the 
+PSD Contamination Control Group. 
+ 
+4.0 Benefits 
+ 
+Assuring clean oil is supplied to machine systems increases both reliability and durability.  
+ 
+Electro-hydraulic control valves, which are widely used in transmission controls and implement 
+hydraulics, are very intolerant of microscopic, ferrous debris.  
+ 
+Heavily loaded wheel and final drive bearings, as well as, duo-cone seals are also easily 
+damaged by abrasive debris commonly found in new oil.  
+ 
+Assuring the new oil is cleaned to the desired cleanliness level significantly reduces the 
+number of contamination-induced failures and repairs. 
+ 
+5.0 Resources Required 
+ 
+See implementation steps above. 
+ 
+6.0 Supporting Attachments / References  
+ 
+An explanation of the various methods of bulk oil filtration, along with visuals is available in the 
+Improving Component Durability -Managing Fluid Cleanliness booklet.  
+(Form Number SEBF1020) 
+ 
+7.0 Related Best Practices 
+See also: 
+0806-2.10-1000 -Fluid Cleanliness Management 
+0806-2.10-1006 -Bulk Fuel Filtration 
+ 
+8.0 Acknowledgements 
+This Bulk Oil Filtration Best Practice was authored by: 
+Dick Douglas 
+Market Consultant 
+Caterpillar Global Mining 
+Douglas_Richard_D@cat.com  
+1-309-675-5699 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Oil Filtration 
+DATE 
+14 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1005 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+Improving Component Durability -Managing Fluid Cleanliness booklet.   
+Form Number ‘ SEBF1020. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Oil Filtration 
+DATE 
+14 AUG 06 
+CHG 
+NO 
+02 
+NUMBER 
+0806-2.10-1005 
+Caterpillar Confidential:  GREEN          Page 6 of 6

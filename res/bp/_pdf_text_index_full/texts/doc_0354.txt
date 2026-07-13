@@ -1,0 +1,220 @@
+SOURCE: 5.0 MARC Management\5.01 MARC Market Strategy and Rate Development\2. Tactical\Ensuring MARC Profitability.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Ensuring MARC 
+Profitability 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+Ensuring MARC Profitability ....................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+October 2006 
+1006-3.3-1024 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Maintenance and Repair Contracts (MARC) can provide a great service to customers and a 
+worthwhile return for dealers, but only when developed and executed properly. Experience in 
+Global Mining has shown contracts being unprofitable for the following reasons: 
+  
+32%
+19%
+9%
+13%
+18%
+9%
+Innaccurate Rates
+Rate discounting
+Contract Language
+Application/Operation
+Maintenance Management
+Product Quality
+ 
+ 
+This Best Practice describes the macro-level components to ensuring a successful Maintenance 
+& Repair Contract (MARC).  
+ 
+2.0 Best Practice Description 
+ 
+Key components to ensuring profitability for a MARC, encompass the following: 
+ 
+1. Accurate Rates 
+a. Make commercial decisions with a clear understanding of the cost base 
+ 
+2. Careful Rate Discounting 
+a. Account for all discounts when determining rates – customer demand for lower rates 
+cannot outweigh the bottom line. 
+ 
+3. Contract Language 
+a. Use contract language that balances the interests of the customer and dealer. 
+ 
+4. Application / Operations 
+a. Understand the relationships of costs in regards to time and contract age 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ensuring Contract Profitability 
+DATE 
+2/20/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1006-3.3-1024 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+5. Maintenance Management 
+a. Consider contract costs along with availability 
+b. Have the proper management tools in place 
+ 
+6. Product Quality  
+a. Understand that product improvements are not certain, and cannot be guaranteed to 
+lower costs 
+ 
+Other contributing factors to ensuring success: 
+• Balance the interests of PINS with concern for profitability and risk 
+• Avoid start up & implementation deficiencies 
+• Consider the MARC as a value differentiator, versus a merchandizing tool 
+• Have realistic expectations of Caterpillar support resources, and plan appropriately  
+ 
+Effective management of the contract should also consider the following: 
+• Ensure a line of site to performance targets  
+• Use consistent MARC practices throughout the entire organization 
+• Combine accountability and authority 
+• Negotiate contracts with experienced individuals given full information and with Cat interest 
+in mind 
+• Have tools (“ready-sell-bid-negotiate-execute-claim”) in place 
+• Ensure full understanding within Caterpillar and Dealer 
+• Bring all dealers to use consistent practices 
+ 
+ 
+3.0 Implementation Steps 
+ 
+It is strongly recommended that a MARC Management Plan be established. The Management 
+Plan will address the following: (Please refer to the 0906-3.3-1029 - Developing a MARC 
+Management Plan Best Practice Publication.) 
+ 
+1. Organization Structure and Communication Plan: 
+a. Determine who & how to support MARC’s; and determine the communication strategy. 
+2. Financial Plan 
+a. Determine the key measures to track and report regarding the health and success of 
+contracts. 
+3. Parts Plan 
+a. Used in determining what components will be needed to support contracts. 
+4. Information Systems 
+a. Set-up the Dealer Business System to support contracts 
+ 
+4.0 Benefits 
+ 
+• Fair, realistic expectations between Caterpillar, Dealer, and Customer 
+• Contracts that will benefit both the Dealer and Customer, and subsequently provide higher 
+potential for profitability 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ensuring Contract Profitability 
+DATE 
+2/20/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1006-3.3-1024 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+5.0 Resources Required 
+ 
+• MARC Management staff in-place 
+• Dealer Business System to support contract administration and management. 
+• Clear top-down directives in-place to empower MARC Management staff the capability of 
+making sound decisions for a successful, profitable contract. 
+ 
+ 
+6.0 Supporting Attachments / References 
+No attachments or references associated with this document. 
+ 
+7.0 Related Best Practices 
+ 
+0906-3.3-1021  - Developing a MARC Management Plan 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+Don O’Neill 
+Caterpillar Global Mining  
+Product Support Group – MARC Manager 
+ONeill_Don_G@cat.com 
+ +1 309 675 4861 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ensuring Contract Profitability 
+DATE 
+2/20/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1006-3.3-1024 
+Caterpillar Confidential:  GREEN          Page 3 of 3

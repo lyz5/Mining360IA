@@ -1,0 +1,429 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Lifting Tool for Single Grouser Shoes Install and Removal on D Series TTT.pdf
+PAGES: 10
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2014 
+1401-3.04-1331 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Lifting Tool for Single 
+Grouser Shoes Install & 
+Removal on D6, D9, D10 & 
+D11 Series TTT 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Lifting Tool for Single Grouser Shoes Install & 
+Removal on D6, D9, D10 & D11 Series TTT .............. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 9 
+8.0 Acknowledgements ............................................ 9 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool for single grouser shoes install and removal 
+on D6; D9; D10 & D11 series TTT 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1401-3.04-1331 
+Caterpillar Confidential:  GREEN          Page 1 of 9 
+1.0 Introduction  
+ 
+Due to their irregular ge ometry, weight, and quantity by e quipment, the track s hoes are one of the 
+most difficult and awkward components to handle during the track assembly and disa ssembly 
+operations on Track Type Tractors. The track shoe weights vary according to the model, ranging from 
+30kg (D6 series) to 85kg (D11 series) in large groups from 41 to 53 track shoes in the D11 series and 
+D9 series respectively. This results in a slow, risky , and stressful process for the technical personnel  
+involved in the handling of this component. 
+ 
+This Best Practice provides the design of a tool that allows easy manipulation of the track shoes in 
+any process that involves lifting, turning and moving of this. 
+ 
+Editor’s Note:  The use of this installation tool and the processes discussed within this Best Practice 
+is not a substitute for applicable laws, standards and regulations and does not alter or limit the 
+obligation of individuals who utilize the tool to fully comply with federal, state and local law and 
+prudent safety measures relating to the use of lifting devices. 
+ 
+2.0 Best Practice Description 
+ 
+For the lifting and handling of the track shoes in any install and removal operations; a lift chain 
+assembly is currently used (see Fig. 1). 
+ 
+ 
+  
+ 
+Fig.1. Lifting equipment previously used for track shoes. 
+ 
+Some lifting equipment similar to this one h ave certain safety disadvantages during the operation 
+when turning the track shoe to an angle higher than 15 ° and up to 30 ° on the imaginary axis which 
+closes the lifting triangle (see left photograph, Fig. 1.) Because this Clamping Shoe (see component 
+# 4 Fig. 1) is a horizontal lifting device for materials having thin and flat gripping areas; these 
+considerably lose their ability to grasp the angles exceed aforementioned (see image B, Figure 2.). 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool for single grouser shoes install and removal 
+on D6; D9; D10 & D11 series TTT 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1401-3.04-1331 
+Caterpillar Confidential:  GREEN          Page 2 of 9 
+             
+     Fig.2. Maximum allowed angle for horizontal clamps1 
+ 
+On the other hand, the use of this device demands some effort from the technician in order to 
+bend the tracks and overcome the horizontal resting position of the hanging shoe, when seeking 
+the alignment position of the shoe and the master link holes as well for the final installation of the 
+bolts. 
+ 
+Fig.3. New proposed track shoe lifting tool 
+ 
+                                            
+1 CrosbyIP Garras para izaje/ http://www.iph.com.ar/descargas/Mordazas_pchapa.pdf. By Crosby Group, Inc. 2006 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool for single grouser shoes install and removal 
+on D6; D9; D10 & D11 series TTT 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1401-3.04-1331 
+Caterpillar Confidential:  GREEN          Page 3 of 9 
+The new proposed tool is designed to prevent the drawbacks described previously.  It consists of 
+two symmetrical assemblies reinforced with AISI 1045 steel, three teeth which form a clamping 
+grip in ASTM A36 steel connected by a AISI 1045 steel plate .  These two assemblies are joined 
+by an ASTM – 1020 steel bar-tube telescopic system, which allows an opening and closing range 
+of the clamps from 24 to 36 inches maximum (measured from the bottom of each clamp) covering 
+all the models of track shoes that are within a length of this range. The three teeth of the clamp 
+secure the track shoe on the lateral profile of the main grouser, allowing easy 180° rotation on the 
+axis of the grouser by means of a ¾ inch pin (AISI 1045) which connects the clamp to the lateral 
+assemblies. 
+ 
+At the upper ends of the tool we can see ter minals made of 1045 steel sheet having ¾" diameter 
+bore, as anchor points. These are located to permit the installation and precise auto center of the 
+bolt shackle threaded up to 5/8".  This way, the closing pin of these can easily turn over the bore, 
+always having symmetry between the two anchor points.  F orming 45° to 60° angles for the 
+opening of a 36" and 24" tool respectively. Two steel wire slings of 26.5" long with a low 
+resistance of 300kg each, close the lifting triangle by means of a master link or shackle of 7/8" 
+(see Figure 3). 
+ 
+On the lateral plates, the tool consists of rectangular rings on a 3/8"  rod for the optional 
+installation of ropes as lifting guides and it also serves as clamping handles for manipulating the 
+tool. 
+ 
+3.0 Implementation Steps 
+ 
+ Fabricate the tool according to the drawings , taking into account the selection of the materials 
+given. (See attached drawings). 
+ Select the lifting accessories (steel slings, shackles, etc.) as recommended by l oading 
+regulations listed below, taking into account the availability of local suppliers: 
+o Total Lifting load 120kg 
+o Correct length of sling to keep lifting angle less than 90° for the largest shoe 
+o S ymmetrical Lifting 
+o 26.5 " long steel slings 
+o 300kg tension maximum steel slings (each) 
+o Screwed pin lower shackles (See Fig. 3) 
+o Pin upper shackl e, nut and safety pin (See Fig. 3) . It can also use a master link 
+assembly 
+ Before attaching the track shoe, check the condition of the tool for cracks, misuse or any 
+defect that do not guarantee its design properties and proper operation.  Also check the label 
+or specification plate, making sure the loading capacity covers the weight of the shoe to be 
+hoisted. 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool for single grouser shoes install and removal 
+on D6; D9; D10 & D11 series TTT 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1401-3.04-1331 
+Caterpillar Confidential:  GREEN          Page 4 of 9 
+    
+ 
+Fig. 4. Holding the shoe and critical points for prior review before using the tool. 
+ 
+ Once you have the lifting equipment complete, including the main tool as shown in Fig . 3. You 
+must extend the telescopic bar enough to exceed the width of the shoe that will be hoisted 
+(See Fig. 4). 
+ The telescopic bar closes, holding the shoe on the main grouser, so that the lateral  profiles of 
+this make contact with the bottom of the grips. For the master link  disassembly process, this 
+must be done before completely losing the bolts . It is important to check for safety th at the 
+telescopic bar is not up to 12 ¾" out of the pipe (See Fig. 5) during the lifting operation.  
+This distance is identified and marked on the bar. 
+ 
+ 
+Fig.5. Maximum opening distance of the pipe with lifting load applied. 
+ 
+ The lifting is done only unti l the shoe hang s freely, at which point the fastening should be 
+double checked and the lifting angles are less than 90° .  Also ensure the symmetry, the 
+closing, and automatic lock of the telescopic bar  are ok. Finally, proceed to completely lift the 
+shoe and move it where required (See Fig. 6). 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool for single grouser shoes install and removal 
+on D6; D9; D10 & D11 series TTT 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1401-3.04-1331 
+Caterpillar Confidential:  GREEN          Page 5 of 9 
+ 
+ 
+ 
+Fig.6. Procedure for lifting and handling of the shoe in the installation and/or removal process. 
+ 
+ To release the shoe, you must ensure that there is no tension in the lifting slings and they must 
+allow to reopen the telescopic bar enough to disengage the shoe.   Also, it should already be 
+on a safe surface (disassembly process) , or fastened with bolts to the master link (installation 
+process). 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool for single grouser shoes install and removal 
+on D6; D9; D10 & D11 series TTT 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1401-3.04-1331 
+Caterpillar Confidential:  GREEN          Page 6 of 9 
+4.0 Benefits 
+ 
+ P ractical design easy to manufacture. 
+ Economically feasible. Tool cost USD $500 plus lifting attachments costs USD $250 for a total 
+cost of USD $750. 
+ Light tool and easy to transport, as it is easily detachable. The heaviest part is the sub-
+assembly, which is only 8kg (including clamp, see Fig. 4). 
+ C lamping claws that allow the shoe to rotate 80 °  (both ways) is on the axis of the grouser .  
+This allows you to easily align the shoe with the master link bores in the installation procedure 
+of the bolts. 
+ Auto-lock of the telescopic system by symmetric lifting which causes force components into 
+compression between the pipe and the bar ensuring the safe fastening of the shoe. 
+ Its telescopic design allows to cover shoe models from 24" to 36" inches wide on single 
+grouser shoe. 
+ It requires less physical effort from the technical personnel for its handling in the disassembly 
+and assembly shoe process, making them safer, comfortable and faster. 
+ It allows the installation of guiding ropes for a greater control of the movements when lifting, 
+and at the same time these rectangular rings serve as handles for manipulating the sub -
+assemblies of the tool. 
+ 
+5.0 Resources Required 
+ 
+ M aterials and components required (See Fig. 3) 
+ Design drawings (See Fig. 7A; 7B; 7C) 
+ Total cost of the tool USD $750 (including all lifting attachments) 
+ Lifting equipment (jib crane, bridge crane, etc.) with a minimum capacity of 200kg 
+ A technician. 
+ 
+6.0 Supporting Attachments / References 
+ Maximum track shoe weight 85kg approx. (D11 series).  
+ID. ANALISYS DESCRIPTION TEST LOADS (kg) DESIGN FACTOR
+A Sub-assembly. Lifting Fork and 
+connector pin. 135/2»70 + gravity 5,9
+B Sub-assembly. Terminal, side 
+plate and telescopi pipe. 135/2»70 + gravity 35
+C Sub-assembly, Terminal, side 
+plate and Telescopic bar. 135/2»70 + gravity 36
+D Complete assembly of the tool 90*1.5=135 + gravity 7,2
+CRITICAL SCENARIO,  36" TOOL OPENING @ MAXIMUM TEST LOAD 
+ 
+ 
+Table 1. Tests loads description and Safety factor results. 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool for single grouser shoes install and removal 
+on D6; D9; D10 & D11 series TTT 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1401-3.04-1331 
+Caterpillar Confidential:  GREEN          Page 7 of 9 
+                      
+Fig. 6.  Design Factor Validation design factor under the ASME B30.20-2003 standard:  
+Below-the-Hook lifting device. Minimum 5:1 
+ 
+ 
+Fig. 7A Tool Design drawings 
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool for single grouser shoes install and removal 
+on D6; D9; D10 & D11 series TTT 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1401-3.04-1331 
+Caterpillar Confidential:  GREEN          Page 8 of 9 
+ 
+Fig. 7B Tool Design drawings 
+ 
+ 
+Fig. 7C Tool Design drawings 
+ 
+ 
+ 
+ 
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool for single grouser shoes install and removal 
+on D6; D9; D10 & D11 series TTT 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1401-3.04-1331 
+Caterpillar Confidential:  GREEN          Page 9 of 9 
+7.0 Related Best Practices 
+None 
+ 
+ 
+8.0 Acknowledgements 
+Name:  Jorge Monterroza   
+Title: Foreman 
+Email: Jorge_monterroza@gecolsa.com.co 
+  
+Name:  William Lopez                   
+Title:  Technical Communicator 
+Email:  william_lopez@gecolsa.com.co 
+ 
+Name:  Habit Navarro                   
+Title:  Undercarriage Shop supervisor 
+ 
+Name:  Javier Torres                     
+Title  Welder 
+ 
+Checked and written by:  
+Name:  Luis Alberto Fernandez Chica. 
+Title:  Development Engineer - Coordinator Best 
+Practices GECOLSA 
+Email: luisalberto_fernandez @gecolsa.com.co 
+ 
+Translated by: Edgar Romero (GECOLSA, English-Spanish Instructor)

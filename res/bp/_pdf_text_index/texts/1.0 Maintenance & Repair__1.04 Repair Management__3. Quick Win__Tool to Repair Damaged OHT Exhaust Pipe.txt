@@ -1,0 +1,179 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+1011-1.04-1218 
+  
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Tool to Repair Damaged 
+OHT Exhaust Pipe 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+Tool to Repair Damaged OHT Exhaust Pipe ............. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 2 
+7.0 Related Best Practices ...................................... 2 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Caterpillar dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or 
+warranty about the information contained in this document or the products referenced herein. Caterpillar welcomes 
+additional “Best Practice” recommendations from our dealer network.
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Repair Damaged OHT Exhaust Pipe 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1011-1.04-1218 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction  
+Special tools that enable fast and simple repairs are an important element of a mine site’s Repair 
+Management discipline.  Tools for specific tasks promote efficient repair execution and help 
+minimize machine downtime, improve machine repair time, and put the truck back to work faster 
+to help production. 
+ 
+Denting, crushing, or other damage to the exhaust pipes on Cat Off Highway Trucks can happen 
+during truck loading by rocks falling out the bucket or off the canopy.  When this occurs, a means 
+of easily and quickly repairing the exhaust by straightening it can minimize truck downtime.  
+ 
+2.0 Best Practice Description 
+This special tool allows quick and simple repairs to damaged or dented exhaust pipes. 
+ 
+3.0 Implementation Steps 
+1. Identify machine and size of exhaust that needs straightening.   
+2. Measure the inside diameter of an exhaust pipe that is not damaged. 
+3. Research local scissor jack suppliers for a suitable jack size.  Note:  Be sure to ensure the 
+closed height of the jack is smaller than the inside diameter of the exhaust pipe.  
+a. For example:  793D exhaust extension 8X-3142, has an inside diameter of 260 mm.  
+The collapsed height of the jack + two times the thickness of the steel plates needs to 
+be less than 260 mm in order to insert the jack.  Additional clearance is advisable to 
+allow space to insert the jack into the damaged exhaust pipe. 
+4. Purchase appropriately sized scissor-jack (Capacity of 0.75–1.0 ton jack is sufficient).   
+a. For example:   
+i. Manufacturer: US General #66907 
+ii. Manufacturer: Torin #T10152 
+iii. Manufacturer: Torin #T144871 
+5. Weld correct sized steel plates that conform to the ID of the exhaust pipe. See attached 
+drawing. 
+6. Insert scissor-jack into damaged exhaust pipe. 
+7. Extend scissor-jack to bend damaged exhaust to correct shape. 
+  
+Damaged exhaust on LOHT: 
+  
+ 
+Scissor-jack tool with plates welded to jack. 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Repair Damaged OHT Exhaust Pipe 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1011-1.04-1218 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+ 
+  
+Install tool in exhaust and extend to straighten.  Photo of repaired exhaust pipe. 
+ 
+  
+ 
+4.0 Benefits 
+Scissor-jack design with conforming steel plates to the exhaust ID offers a simple, inexpensive, 
+and quick method of straightening a damaged exhaust pipe. 
+ 
+5.0 Resources Required 
+The major resource required to implement this Best Practice is purchasing a scissor jack welding 
+the steel plates to the jack.   
+Fabrication costs are approximately US $ 300 / per set. 
+ 
+6.0 Supporting Attachments / References 
+None. 
+ 
+7.0 Related Best Practices 
+None. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Repair Damaged OHT Exhaust Pipe 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1011-1.04-1218 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Oscar Delport 
+Condition Monitoring Specialist – Jwaneng Mine 
+Barloworld Equipment Botswana 
+ODelport@barloworld-equipment.com 
+Phone: +267 580 5262 
+ 
+John Hoffman 
+Product Support Consultant 
+Caterpillar Global Mining 
+Hoffman_John_A_II@cat.com 
+Phone: +27 11 256 8312

@@ -1,0 +1,201 @@
+SOURCE: 1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\Motor Grader Edge Installation Tool.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Improving Motor Grader Edge Installation 
+Process with Special Fitting Tool  
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Improving Motor Grader Edge Installation Process 
+with Special Fitting Tool ............................................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 2 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+0607-2.14-1080 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Motor grader edge replacement is typically a slow, labor-intensive, and ergonomically challenging 
+process. 
+ 
+One dealer designed and fabricated a tool to hold the edge at the proper height and angle for 
+improving installation operations. Using the tool has lowered the time required to install cutting 
+edges (reduced downtime), lowered costs and labor, and minimized the manual handling required 
+by the operator.  
+ 
+This Best Practice is a Quick Win project. 
+ 
+2.0 Best Practice Description 
+ 
+The edge installation tool shown in this Best Practice was designed and fabricated by the dealer. 
+The key features are: 
+• The tool holds up to four edges plus the hardware needed to fit the edge to the machine 
+(Figure 1).   
+• The edge is mechanically held at the correct angle. This allows the edge to be fitted without 
+the use of manual handling (Figure 2). 
+ 
+ 
+  
+Figure 1 – MG fitting tool 
+ 
+A set of four edges is loaded onto the installation tool, which is then lifted by a forklift to the 
+motor grader. Technicians install the edge using hardware being stored in the tool. After 
+installation, the forklift simply moves down to the next position. Minimal handling of the edge is 
+required.  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Motor Grader Edge Fitting Tool 
+DATE 
+2/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0607-2.14-1080 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+  
+  
+Figure 2 – Fitting tool in use 
+ 
+3.0 Implementation Steps 
+ 
+• Est ablish a need for the tool (risk assessment), including expected volume of motor grader 
+edge replacements 
+• Purchase required steel for fabrication (consider size of motor graders) 
+o Fabrication/ welding crew can provide recommendations based on attached 
+diagrams 
+o Use a sample set of edges from parts stock for fabrication measurements 
+• Collaborate with the Maintenance team (end users) to establish a fabrication design 
+• Fabricate the tool 
+• Based on a Job Safety Assessment (JSA), train users and implement the tool in the new 
+process 
+ 
+4.0 Benefits 
+ 
+• Reduced installation time / cost, and reduced Mean Time to Repair 
+• The job only requires two technicians instead of three, saving considerable labor costs. 
+• Less manual handling by technicians, improving ergonomics and safety. 
+• If the motor grader is covered in a MARC, the labor costs saved during the edge installation 
+process help to reduce dealer costs and contract risk.  
+ 
+5.0 Resources Required 
+ 
+• Fabrication material and time 
+• Attached diagrams 
+• For further instructions please contact Hastings Deering at Ernest Henry Mine, North West 
+Queensland Australia (see Acknowledgements). 
+ 
+6.0 Supporting Attachments / References 
+ 
+Dimensions are shown in Figure 3. These dimensions are relevant for a 16H size motor grader. 
+Enlarged photos are available in the attached PowerPoint file.  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Motor Grader Edge Fitting Tool 
+DATE 
+2/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0607-2.14-1080 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Figure 3 – Tool overall dimensions and specifications 
+ 
+7.0 Related Best Practices 
+ 
+While the Best Practice listed below relates to the Component Rebuild Center, and not 
+specifically to Maintenance processes, the topic of labor efficiency and the related benefits serve 
+as complimentary information to that presented here. 
+ 
+0207-4.5-1062  Labor Efficiency Lowers CRC Costs 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Trevor Seedwell 
+Maintenance Supervisor 
+Hastings Deering, Ernest Henry Mine 
+(07) 47 694 414 
+trevor.seedwell@hastingsdeering.com.au 
+ 
+Also, special thanks to the Maintenance Team at Hastings Deering Ernest Henry Mine for final 
+product fabrication.  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Motor Grader Edge Fitting Tool 
+DATE 
+2/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0607-2.14-1080 
+Caterpillar Confidential:  GREEN          Page 3 of 3

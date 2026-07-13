@@ -1,0 +1,119 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit {{ source.name }} | Sources | Mining360IA</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">{{ source.engine }}</p>
+                <h1>Edit source</h1>
+                <p class="page-intro">{{ source.name }}</p>
+            </div>
+            <div class="actions">
+                <a class="button secondary" href="{% url 'source-detail' source.key %}">Back</a>
+            </div>
+        </header>
+
+        <section class="table-section">
+            <div class="section-head">
+                <h2>Connection settings</h2>
+            </div>
+            {% if error %}
+                <section class="alert">
+                    <strong>Source save failed</strong>
+                    <p>{{ error }}</p>
+                </section>
+            {% endif %}
+            <form method="post" class="source-edit-form" data-source-form data-default-engine="{{ source.engine }}">
+                {% csrf_token %}
+                <div class="form-grid">
+                    <input type="hidden" name="engine" value="{{ source.engine }}">
+                    <div>
+                        <label for="owner">Owner</label>
+                        <input id="owner" name="owner" type="text" value="{{ source.owner }}">
+                    </div>
+                    <div class="full-width">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" rows="4">{{ source.description }}</textarea>
+                    </div>
+                    <div class="checkbox-row">
+                        <label>
+                            <input type="checkbox" name="is_active" {% if source.is_active %}checked{% endif %}>
+                            Active
+                        </label>
+                    </div>
+                    <div class="full-width engine-section" data-engine-section="SQL Server" {% if source.engine == "Snowflake" %}hidden{% endif %}>
+                        <p class="eyebrow">SQL Server connection</p>
+                        <div class="engine-grid">
+                            <div>
+                                <label for="server">Server</label>
+                                <input id="server" name="server" type="text" value="{{ source.server }}" required>
+                            </div>
+                            <div>
+                                <label for="port">Port</label>
+                                <input id="port" name="port" type="number" min="1" max="65535" value="{{ source.port }}">
+                            </div>
+                            <div>
+                                <label for="database">Default database (optional)</label>
+                                <input id="database" name="database" type="text" value="{{ source.database }}">
+                            </div>
+                            <div>
+                                <label for="user">User</label>
+                                <input id="user" name="user" type="text" value="{{ source.user }}">
+                            </div>
+                            <div class="full-width">
+                                <label for="password">Password</label>
+                                <input id="password" name="password" type="password" value="" placeholder="Leave blank to keep current password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="full-width engine-section" data-engine-section="Snowflake" {% if source.engine != "Snowflake" %}hidden{% endif %}>
+                        <p class="eyebrow">Snowflake connection</p>
+                        <div class="engine-grid">
+                            <div>
+                                <label for="account">Account</label>
+                                <input id="account" name="account" type="text" value="{{ source.connection_details.account|default:'' }}" required>
+                            </div>
+                            <div>
+                                <label for="warehouse">Warehouse</label>
+                                <input id="warehouse" name="warehouse" type="text" value="{{ source.connection_details.warehouse|default:'' }}" required>
+                            </div>
+                            <div>
+                                <label for="role">Role</label>
+                                <input id="role" name="role" type="text" value="{{ source.connection_details.role|default:'' }}">
+                            </div>
+                            <div>
+                                <label for="database_snowflake">Database</label>
+                                <input id="database_snowflake" name="database" type="text" value="{{ source.database }}" placeholder="Optional">
+                            </div>
+                            <div>
+                                <label for="default_schema">Default schema (optional)</label>
+                                <input id="default_schema" name="default_schema" type="text" value="{{ source.connection_details.default_schema|default:'' }}">
+                            </div>
+                            <div>
+                                <label for="user_snowflake">User</label>
+                                <input id="user_snowflake" name="user" type="text" value="{{ source.user }}" required>
+                            </div>
+                            <div class="full-width">
+                                <label for="password_snowflake">Password</label>
+                                <input id="password_snowflake" name="password" type="password" value="" placeholder="Leave blank to keep current password">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="button">Save</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="{% static 'reports/source_form.js' %}"></script>
+</body>
+</html>

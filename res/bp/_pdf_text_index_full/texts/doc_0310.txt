@@ -1,0 +1,211 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Tooling for Deburring Cylinder Block Top Deck after Machining.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+March 2013 
+1302-4.02-1312 
+  
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Tooling for Deburring 
+Cylinder Block Top Deck 
+after Machining 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Tooling for Deburring Cylinder Block Top Deck after 
+Machining................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+VENDOR DISCLAIMER STATEMENT 
+Although Caterpillar does not endorse this particular supplier, Ferreyros has experience with the following products or 
+companies. We welcome additional supplier recommendations from our dealer network.  
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tooling for Deburring Cylinder Block Top Deck after 
+Machining 
+DATE 
+10/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1302-4.02-1312 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+1.0 Introduction  
+ 
+A new tool which improves the deburring of the top deck surface in engine block 3500 has been 
+implemented at the machining workshop in Ferreyros S.A. The tool is a Lessmann nylon abrasive 
+bristle disc. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Previously, the deburring process of top deck surface was a manual process using rasps and 
+hand deburring tools. It took three hours approximately.  The new process using an abrasive 
+bristle disc (See the picture 1) has reduced the top deck surface deburring time by 90% (15 
+minutes approximately). In addition, manual deburring was performed using three technicians, but 
+now requires only one. 
+ 
+ 
+ 
+Picture 1. Abrasive bristle disc 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tooling for Deburring Cylinder Block Top Deck after 
+Machining 
+DATE 
+10/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1302-4.02-1312 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+The brand and specifications of the abrasive bristle disc are shown below: 
+ 
+• Trademark: LESSMANN. 
+• Code: 405.850 - Abrasive nylon SIC K 120 x 0,6mm. 
+• Dimensions: 400 x 25 mm 
+• Trim: 25 mm 
+• Bore: 50 mm 
+ 
+ 
+3.0 Implementation Steps 
+ 
+ 
+• After machining the top deck surface, install an abrasive bristle disc on the milling machine 
+(Rottler F99Y in this case - See the picture 2). 
+ 
+ 
+ 
+ 
+Picture 2. Abrasive bristle disc installed. 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tooling for Deburring Cylinder Block Top Deck after 
+Machining 
+DATE 
+10/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1302-4.02-1312 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+ 
+• In order to eliminate edges and burrs as a result of grinding, a pass using the abrasive disc is 
+performed rotating at a speed between 600 – 700 rpm. 
+ 
+ 
+ 
+Picture 3. Starting with the deburring 
+ 
+ 
+4.0 Benefits 
+ 
+• Reduce the top deck surface deburring time by 90%. 
+• Reduce the use of labor by 60%. 
+ 
+5.0 Resources Required 
+ 
+None 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tooling for Deburring Cylinder Block Top Deck after 
+Machining 
+DATE 
+10/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1302-4.02-1312 
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Name     Frank Córdova R. 
+E mail     frank.cordova@ferreyros.com.pe 
+ 
+Recognition: 
+ 
+Team:                  Miguel Mauriola / Operations Support Chief 
+                            Frank Córdova / Operations Support Assistant 
+                            José Huayamis / Technical Communicator 
+Owner:                Rafael Volta / Machine Shop Chief 
+Sponsor:             Rodolfo Gerstein / Manager Machine Shop

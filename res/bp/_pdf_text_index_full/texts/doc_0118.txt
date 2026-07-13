@@ -1,0 +1,352 @@
+SOURCE: 2.0 Application\2.02 Haul Road Management\1. Strategic\Haul Road Optimization.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Haul Road Optimization 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Renewal 
+(CRC) 
+Component 
+Life 
+Management 
+ MARC 
+Management 
+ 
+ 
+ 
+Haul Road Optimization ............................................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ....................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by one 
+or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty about 
+the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best Practice” 
+recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+January 2014 
+0409-2.02-1165 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+Properly designed and optimized haul roads can help to reduce cycle times, reduce fuel burn, 
+reduce component wear, and increase profit.  The haul road optimization process is designed to 
+identify haul roads that don’t meet optimum performance criteria and improve them to realize cycle 
+time and fuel gains.  The Global Mining CI team has developed a process to provide several 
+optimized options for haul roads and provide estimates in the gains or benefits that could be 
+realized with each option. 
+ 
+2.0 Best Practice Description 
+2.1  Opportunity Recognition 
+ The best opportunities for haul road optimization lie in permanent haul roads with up hill 
+hauls.  The optimization process takes some time, and haul road work may not be able to be 
+started right away, so selected roads need to be part of the mine’s long term plans.  
+Optimization candidates can be identified by: 
+o C ontaining slopes with greater than 10% grade 
+o S egments of non-constant grades 
+o S egments where operators are unable to maintain full throttle. 
+o Segments in which transmission downshifts to 1
+st gear 
+o Poorly designed intersections or swithcbacks 
+ 
+ 
+ 
+Figure 1: Example of mine with series of uphill roads, intersections and switchbacks  
+ 
+2.2  Data Collection 
+ The data collection can be done by onsite personal with or without Caterpillar Dealer or 
+Global Mining personal present.  Once a target haul road has been identified two types of data 
+are required for the optimization process; GPS data and truck Datalogger data.  Mine 
+production and cost data is also required for the financial models. 
+ 
+2.2.1  GPS Data – The GPS data should be taken on the target road with the hardware used 
+on site.  This insures the data can be merged with the site property maps without data 
+correction.  Data should be from production run only and should not go through scales or any 
+other short term deviation 
+Data points should be taken in 5 lanes – one on the outside edge of each side, one down 
+the middle (Figure 1, red lines), and one in the middle of each lane (Figure 1, blue lines).  The 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Haul Road Optimization 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0409-2.02-1165 
+Caterpillar Confidential GREEN          Page 1 of 5 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+middle of the loaded haul lane will be the data used for optimization, the others will be used to 
+define the road in the mine’s programs to find fill and cut volumes. 
+ 
+ 
+  
+ 
+Figure 2: Example of handheld high precision GPS units 
+ 
+Data points should be taken every 3-5 feet (1 to 2 meters).  This will provide coverage of 
+all road surfaces that the truck may feel, and allow for better optimization in road transition 
+areas.  If data points are more than 10-20 feet (4 to 6 meters) the optimization program cannot 
+efficiently optimize the road surface. 
+ 
+7803300
+7803350
+7803400
+7803450
+7803500
+7803550
+7803600
+669800 669850 669900 669950 670000 670050 670100 670150 670200
+Easting (meters)
+Northing (meters)
+ 
+Name Easting Northing Elevation Code
+1 371052.821 110551.356 5980.693 ramp
+2 371051.578 110545.939 5980.602 ramp
+3 371049.262 110538.222 5980.410 ramp
+4 371047.737 110533.751 5980.305 ramp
+5 371045.778 110528.484 5980.293 ramp
+6 371043.724 110523.961 5980.364 ramp
+7 371041.662 110519.013 5980.423 ramp
+8 371039.393 110514.003 5980.394 ramp
+9 371037.116 110509.500 5980.542 ramp
+10 371034.690 110505.289 5980.674 ramp
+11 371032.472 110501.407 5980.735 ramp  
+682 370777.972 109438.451 6188.188 ramp
+683 370785.126 109430.593 6186.959 ramp
+684 370792.173 109422.755 6185.861 ramp
+700 370599.703 109576.942 6215.010 rd
+701 370595.220 109582.649 6215.577 rd
+702 370592.353 109586.108 6215.926 rd  
+Figure 3: Example of DGPS data 
+ 
+It is advisable that the surveyor adds comments to the GPS waypoints about each lane, as 
+shown in Figure 3 (right) 
+ 
+2.2.2  Datalogger Data –  
+ Datalogger data should be taken at least 5 times from at least 3 different trucks.  All three 
+trucks should have good struts and the oil and grease should be recently recharged.  The 
+analysis of all these Dataloggers will help eliminate variations in driver performance from the 
+study.  The data should be watched for anomalies caused by haul road traffic, or serious 
+driver deviation 
+ Data should be taken from normal production runs, not runs where the truck stops for 
+scales. Going through the scales adds distance to the run, and affects the speed profile as the 
+truck slows to enter the scales and accelerates out.  If the drivers are aware a study is taking 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Haul Road Optimization 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0409-2.02-1165 
+Caterpillar Confidential GREEN          Page 2 of 5 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+place, they should know the study is of the haul road and not how they’re driving, so they 
+should drive as they always do. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Start Datalogger before loading 
+ 
+Stop and download Datalogger 
+after dumping 
+ 
+Figure 4: Datalogger setup and download 
+ 
+ 
+ The Datalogger data should be downloaded along with the VIMS payload and event data. 
+ 
+2.2.3 Production and Cost Data –  
+Collect production and cost numbers from the mine in order to build the financial model, 
+this includes: 
+o Target Payload (ton) 
+o Scheduled Hours: (hrs/day) 
+o On-site fuel cost: (US$/gal) 
+o Operator efficiency (%) 
+o Utilization? (%) 
+o Striping ratio ( tons:tons or yd3:ton) 
+o Ore Grade ( oz/ton or lb/ton) 
+o Incremental margin on commodity price (US$/lb or oz) 
+o Ore Recovery Factor (%) 
+ 
+ 
+2.3  Road Optimization 
+ The data gathered from the site is then sent to the Global Mining CI group.  The CI group 
+will optimize the GPS data and provide several options with varying levels of optimization.  The 
+most optimized roads will provide the most benefit, but will also require the most amount of 
+road work.  Estimated cycle times and financial benefits will also be provided for each design. 
+ The CI group may also provide other recommended changes to the haul road, including 
+possible redesigns that would reduce cycle times, super-elevations required to maintain speed 
+around corners and cross fall recommendations to ensure proper drainage. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Haul Road Optimization 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0409-2.02-1165 
+Caterpillar Confidential GREEN          Page 3 of 5 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.4  Presentation 
+ The optimized GPS data can be loaded into either the mine’s mapping software or into a 
+3D program to produce a 3D representation of the road.  Mine software can also get estimates 
+of the material that needs to be moved for the road work required. 
+ A presentation should be prepared and presented to the mine management that will be 
+making road change decisions.  Road options, cycle time changes and financial benefits 
+should be provided for consideration. 
+ 
+ 
+ 
+Figure 5: Example of road design using a 3D mapping software 
+ 
+ 
+2.5  Follow Up 
+ Once an optimized option has been selected, mine personnel should be worked with to 
+come up with a time table for road work to begin.  If the site does not currently employ any 
+systems such as CAES, the options can be presented to them as a way to improve their road 
+work efficiency, speed and accuracy. 
+ When road work is completed new cycle time and GPS data should be collected so the 
+actual realized gains can be measured and reported.  The GPS data can be sent back to the 
+CI team and any gains from further optimization can be looked at. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Haul Road Optimization 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0409-2.02-1165 
+Caterpillar Confidential GREEN          Page 4 of 5 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Implementation Steps 
+ 
+1. Haul roads that would benefit from optimization should be identified.  The possibility of 
+improvements should be discussed with the mine management. 
+2. Data should be collected and sent to the Cat Global Mining CI group for optimization. 
+3. When the haul road data has been optimized and returned a presentation should be prepared 
+and presented to the mine management. 
+4. When an optimized option has been chosen, a road work plan and timeline should be 
+discussed with the mine.  Options for additional systems that would aid in the road work 
+should also be discussed. 
+5. Once road work is complete new data should be collected and analyzed for actual gains. 
+ 
+4.0 Benefits 
+Optimized haul roads can provide substantial gains in cycle times, depending on the state, 
+length and grade of the current haul road.  Reduction in cycle times can lead to either an increase in 
+production or a reduction in O&O costs. 
+An optimization process at one mine resulted in a 9% improvement in cycle time on a 3 mile 
+haul road.  Additional gains can be seen in component life gains from reduced hard shifting along 
+the haul road. 
+ 
+ 
+5.0 Resources Required 
+• Mine site Surveyor – Current road to be surveyed using mine equipment 
+• CI team – Provide optimized options and estimated gains. 
+• Dealer support – Collect data to be sent to CI team, present optimized options to the mine 
+management, and to follow up on road work to be completed. 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+7.0 Related Best Practices 
+ 
+1106-1.1-1035  Cost Reduction Through Haul Road Management Process 
+1107-1.2-1094  Road Defect Management Training Exercise 
+ 
+8.0 Acknowledgements 
+ 
+This Best practice was written by: 
+Victor Delrosso 
+Caterpillar Global Mining Division 
+DelRosso_Victor@cat.com 
+For more information contact: 
+Oscar Villalobos 
+Caterpillar Global Mining 
+VILLALOBOS_Oscar_E@cat.com 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Haul Road Optimization 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0409-2.02-1165 
+Caterpillar Confidential GREEN          Page 5 of 5

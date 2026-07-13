@@ -1,0 +1,379 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+793D Converter Removal & 
+Installation Tool 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+793D Converter Removal & Installation Tool ............. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+  
+October 2013 
+1306-3.04-1316 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+Currently the tools for removal and installation of the 793D OHT Torque Converter are chains and 
+eyebolts (Fig. 1). These tools were designed for high safety, but we felt we have improved upon 
+the process. 
+ 
+This document shows a tool (preliminary design) for the converter removal and installation more 
+safely and quickly. 
+ 
+ 
+ 
+ 
+Figure 1.  SIS procedure for the Converter removal 
+ 
+ 
+2.0 Best Practice Description 
+The tool consists of three bent and welded plates as shown in Figure 2. 
+ 
+ 
+Figure 2. Converter Removal & Installation Tool 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793D Converter Remover & Install Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-3.04-1316 
+Caterpillar Confidential:  GREEN          Page 1 of 7 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+The two holes that are observed, the slot type and the circular one have specific functions. In 
+the first one, the shackle for lifting during removal is located; it has this shape so the 
+component can be inclined and it allows a better coupling. The other circular hole is used for 
+a guide rope while the component is being lifted.  See figure 3. 
+   
+ 
+3.0 Implementation Steps  
+ 
+Steps for Removal 
+1. Refer to document RENR8328-05 Torque converter Removal. 
+2. Clean the bolt holes on the converter top  
+3. Attach the removal tool (1) to torque converter (6 ) using 5/8 – 11 x 2.50 UNC Bolt (2), 5/8 
+– 11 x 3.25 UNC (3), and two 5/8 washers (4). Tighten bolts to 60 N·m (see figure 4) 
+4. Attach  the screw pin shackle (5) to straight slot in R&I tool 
+5. Attach appropriate overhead lifting device of minimum 2 ton capacity to raise and support 
+the tool with the converter (The weight of torque converter is approximately 1043 kg). 
+ 
+Steps for Install   
+1. Clean the bolt holes on the converter top  
+2. Attach the removal tool (1) to torque converter (6) using 5/8 – 11 x 2.50 UNC Bolt (2), 5/8 
+– 11 x 3.25 UNC (3), and two 5/8 washers (4). Tighten bolts to 60 N·m (see figure 4) 
+3. Attach  Screw Pin Shackle (5) to circular hole in R&I tool 
+4. Attach appropriate overhead lifting device to raise and support the tool with the convert.  
+5. Continue with the guide RENR8328-05 Torque converter Install  for install the other 
+components 
+ 
+       
+ 
+Figure 3. Tool position on the top converter 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793D Converter Remover & Install Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-3.04-1316 
+Caterpillar Confidential:  GREEN          Page 2 of 7 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+            
+ 
+Figure 4. (1) Tool, (2) 0S-1625 bolt, (3)1D-4585 Bolt, (4) 8T-4122 Washers, (5) 5P-8622 Shackle, 
+(6) Torque converter (removal position) 
+ 
+ 
+ 
+ 
+              
+ 
+Figure 5. Torque converter during removal 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793D Converter Remover & Install Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-3.04-1316 
+Caterpillar Confidential:  GREEN          Page 3 of 7 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+The tool can be used in the following converter: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+With this tool it is easier to control the inclination and alignment of the coupling to fly wheel 
+housing.  This also helps keep things more level. 
+ 
+ 
+ 
+ 
+5.0 Resources Required 
+• Hardware list  (see table below) 
+• Technical Personnel. 
+• Material and equipment required to make the tool. 
+ 
+Table 2. Hardware Required 
+Part Number Description Qty 
+0S-1625 5/8-11 x 2.50 inch Bolt 1 
+1D-4585 5/8-11 x 3.25 inch Bolt 1 
+8T-4122 5/8 inch Washer 2 
+5P-8622 Screw Pin Shackle (6.5 Ton)               1 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+• SIS document: SENR 8328-05 (Torque Converter Remove – SMCS: 3101-011) 
+• SIS document: SENR 8328-05 (Torque Converter Install – SMCS: 3101-012) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Table 1. Converter that apply 
+Part Number Description 
+240-7186 Torque Converter Group 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793D Converter Remover & Install Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-3.04-1316 
+Caterpillar Confidential:  GREEN          Page 4 of 7 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+• 793D Converter R&I Tool Drawing.   
+ 
+Figure 6. Tool Drawing 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793D Converter Remover & Install Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-3.04-1316 
+Caterpillar Confidential:  GREEN          Page 5 of 7 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+• Finite Element Analysis for R&I Tool 
+ 
+Figure 7. Safety Factor Analysis 
+ 
+Physical Properties 
+Material AISI 1045 Steel, cold drawn 
+Mass 7.982 Kg 
+Density 7850 Kg/m3 
+Yield Strength 530 MPa 
+Tensile Strength 625 MPa 
+Shear Modulus 80 Gpa 
+Study Properties 
+Analysis type Static 
+Mesh type Solid mesh 
+Mesh Quality Second order tetrahedral elements 
+Model type Lineal elastic isotropic 
+Failure criteria Von Mises Stress Maximum 
+Fixtures 
+Type Fixtures details 
+Foundation 
+Bolt  
+Quantity 2 
+Nominal Diameter 5/8 inch 
+Pre-load (Torque) 60 N·m 
+Virtual 
+Wall 
+Entities 2 faces (below faces) 
+Wall type 
+Friction coefficient 
+Bonded 
+0.15 
+Loads 
+Gravity 9.81 m/s2 
+Vertical Force 10300 N (400 kg approx.) 
+Study Results 
+Von Mises Maximum Stress 79.9  Mpa 
+Minimum Safety Factor 6.64 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793D Converter Remover & Install Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-3.04-1316 
+Caterpillar Confidential:  GREEN          Page 6 of 7 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+Based on the finite element analysis and considering the minimum safety factor given by the 
+ASME B30.20-2003 standard: Below-the-Hook lifting device, the tool loading  capacity is 2200 
+Kg 
+ 
+ 
+Editor’s Note:  Caterpillar will soon have a tool similar to this available to Dealers.  You may request plans from 
+Gecolsa to fabricate your own or order one from Caterpillar when it becomes available. The use of the this installation tool 
+and the processes discussed within this Best Practice is not a substitute for applicable laws, standards and regulations 
+and does not alter or limit the obligation of individuals who utilize the tool to fully comply with federal, state and local law 
+and prudent safety measures relating to the use of lifting devices.  
+ 
+ 
+7.0 Related Best Practices 
+ 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Name Carlos Herrera 
+Title Project Engineer 
+Email carlos_herrera@gecolsa.com.co 
+Phone +57 318 775-8426 
+ 
+Name Jose Vilaro 
+Title Fleet Leader 
+Email jose_vilaro@gecolsa.com.co 
+Phone +57 315 445-4077 
+ 
+Name William Gonzalez 
+Title PM Coordinator 
+Email wgonzalez@drummondltd.com 
+Phone +57 316 522-4727 
+ 
+Checked and written by: 
+ 
+The GECOLSA Development and Engineering Area Team 
+Luis Fernandez (Coordinator Best Practices)  
+Email: luisalberto_fernandez@gecolsa.com.co 
+ 
+Johan Navarro (Process analyst). 
+ 
+Special thanks to: 
+ 
+Ricardo Chegwin (Technical     manager 
+Email: ricardo_chegwin@ gecolsa.com.co 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793D Converter Remover & Install Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-3.04-1316 
+Caterpillar Confidential:  GREEN          Page 7 of 7

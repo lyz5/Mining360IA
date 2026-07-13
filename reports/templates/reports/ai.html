@@ -1,0 +1,104 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell ai-workspace" data-ai-ask-url="{% url 'ai-ask' %}"
+          data-embed-config-url="/powerbi-interaction/embed-config/__REPORT_ID__/"
+          data-interaction-events-url="/powerbi-interaction/logs/__LOG_ID__/events/">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Semantic model assistant</p>
+                <h1>AI</h1>
+            </div>
+            <div class="summary">
+                <span class="summary-value">{% if openai_enabled %}OpenAI{% else %}Rules{% endif %}</span>
+                <span class="summary-label">Power BI semantic model</span>
+            </div>
+        </header>
+
+        <section class="ai-chat-shell">
+            <div class="ai-chat-panel">
+                <div class="ai-chat-head">
+                    <div>
+                        <p class="eyebrow">Ask Mining360</p>
+                        <h2>Chat</h2>
+                    </div>
+                    <span class="ai-model-badge">{% if openai_enabled %}OpenAI + Power BI{% else %}Semantic fallback{% endif %}</span>
+                </div>
+
+                <div id="ai-chat-thread" class="ai-chat-thread" aria-live="polite"></div>
+
+                <div class="ai-chat-composer">
+                    <textarea id="ai-question" rows="3" placeholder="Ask about availability, downtime, models or sites..."></textarea>
+                    <div class="ai-actions">
+                        <button type="button" id="ai-run-question" class="button">Send</button>
+                        <button type="button" class="button secondary js-ai-example" data-question="Minesite: Fekola, Date: Mai 2026, Model: 6020">6020 Fekola May</button>
+                        <button type="button" class="button secondary js-ai-example" data-question="Minesite: Fekola, tous les models sur les douzes derniers mois">All models last 12 months</button>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="ai-side-panel">
+                <section class="ai-context-panel">
+                    <p class="eyebrow">Intent context</p>
+                    <dl id="ai-context-list"></dl>
+                </section>
+
+                <section id="ai-loading" class="ai-loading" hidden>
+                    <span class="loading-spinner"></span>
+                    <span>Querying semantic model...</span>
+                </section>
+
+                <section id="ai-error" class="alert" hidden>
+                    <strong>AI query failed</strong>
+                    <p id="ai-error-text"></p>
+                </section>
+            </aside>
+        </section>
+
+        <section id="ai-table-section" class="ai-table-section" hidden>
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Result set</p>
+                    <h2>Returned data</h2>
+                </div>
+            </div>
+            <div class="table-scroll">
+                <table id="ai-result-table" class="data-table"></table>
+            </div>
+        </section>
+
+        <section id="ai-powerbi-section" class="ai-table-section" hidden>
+            <div class="section-heading">
+                <div><p class="eyebrow">Power BI interaction</p><h2 id="ai-powerbi-title">Relevant report</h2></div>
+                <div id="ai-powerbi-status" class="summary-label"></div>
+            </div>
+            <div id="ai-powerbi-report" class="report-frame" style="min-height:720px"></div>
+        </section>
+
+        <section id="ai-dax-section" class="ai-dax-section" hidden>
+            <details>
+                <summary>DAX query</summary>
+                <pre id="ai-dax"></pre>
+            </details>
+        </section>
+
+        <section id="ai-debug-section" class="ai-dax-section" hidden>
+            <details>
+                <summary>Debug payload</summary>
+                <pre id="ai-debug"></pre>
+            </details>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/powerbi-client@2.23.7/dist/powerbi.min.js"></script>
+    <script src="{% static 'reports/powerbi_embed.js' %}?v=20260712-1"></script>
+    <script src="{% static 'reports/ai.js' %}?v=20260712-1"></script>
+</body>
+</html>

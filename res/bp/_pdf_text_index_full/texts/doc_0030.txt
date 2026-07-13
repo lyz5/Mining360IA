@@ -1,0 +1,218 @@
+SOURCE: 1.0 Maintenance & Repair\1.02 Condition Monitoring\2. Tactical\Electronic Data Usage for Equipment Management on Construction Projects.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Electronic Data Usage for 
+Equipment Management on 
+Construction Projects 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Electronic Data Usage for Equipment Management on 
+Construction Projects ................................................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 1 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+  
+ 
+ 
+ 
+ 
+  
+February 2013 
+1301-1.02-1304 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+ 
+The introduction of electronic data reporting and tracking on mobile construction equipment has allowed fleet 
+managers to monitor their fleets in ‘real time’ with an abundance of data flowing in on a daily basis.  
+Unfortunately all of this data can overwhelm a fleet manager and sometimes cause them to micro-manage 
+rather than looking at their overall fleet status.  For many fleets, focusing on the basic fleet data can still 
+provide the biggest return in time savings and consistent, correct data coming from their machines. 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice outlines how focusing on managing a few very basic pieces of electronic data can translate 
+into time efficiencies for and cost savings for an entire equipment department on a construction project where 
+the work and environment changes on a daily basis. 
+ 
+3.0 Implementation Steps 
+ 
+The largest obstacle to implementing electronic data into the fleet management process is to have participation 
+and buy-in from the entire equipment management staff.  Everyone needs to be on the same page and 
+understand the benefit to both their job roles as well as the overall fleet benefits.  There also needs to be an 
+understanding from the top management level that there is some implementation costs, however those costs 
+will be easily returned in the manpower and equipment cost savings. 
+ 
+4.0 Benefits 
+ 
+This project site is utilizing pieces of Technology, bundled together, each with their own value added traits: 
+ 
+Equipment Location and Runtime 
+o Caterpillar Product Link is being utilized to aid in managing runtime and utilization reporting.   
+ Equip location reported hourly with PL522 
+ Equipment runtime and utilization reporting 
+ Fuel utilization reporting (burned idle vs. production) 
+ Fault code reporting and maintenance plan tracking 
+ Geo-fencing parameters and hourly location logger  
+ Idling tracking (Idle based on engine RPMs) 
+ 
+  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electronic Data Usage for Equipment Management on 
+Construction Projects 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-1.02-1304 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+Equipment Fuel Management 
+o Smart” Lube Trucks  
+ The smart lube truck is a modern lube truck outfitted with a computer, wireless capabilities, and 
+electronic flow-meters installed on each reel.  
+ The rear screen displays the list of equipment within a 200 ft radius and the current hour meter 
+reading. This system also records the amount of fluids (fuel/oil) added to the machine and time 
+stamps it with the hour meter. 
+ There is a tablet in use in the cab of the lube truck, linked to the OEM Website and the “live” lube 
+sheet. This living document is updated as the equip drives the job and allows the lube technician to 
+plan his route based on what needs fuel and what doesn’t. 
+ This tablet has a software that can be used to pull the exact location of the piece of equipment 
+needing fuel, oils or other lube services in the field. 
+o Allows access to the Job Equipment Management system for any information that may be 
+needed while in the field. 
+o Fuel Management – OEM Solutions (part of the Smart Lube truck) 
+ Displays list of equipment within 200 ft 
+ The meter hours are displayed for the selected unit 
+ Tracks time and amount fuel and oil dispensed to equipment 
+ U ploads quantities into the customer database 
+ Eliminates man hours of data entry and possible error in records 
+  
+  
+o Fuel Master System  
+ This system is utilized at the Fuel Farm to dispense fuel into the Lube Trucks 
+ Eliminates man hours of data entry and record keeping 
+ Utilizes RFID  technology to control fuel being dispensed, fuel will not be dispensed without the  
+RFID tag 
+ Records fuel dispensed, tied into the ECM which checks for error codes and allows for the 
+reduction of stolen fuel 
+ Enhances fuel control and accurate fuel records 
+ 
+The OEM Computer Display Screen in the back of the Lube Truck 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electronic Data Usage for Equipment Management on 
+Construction Projects 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-1.02-1304 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+5.0 Resources Required 
+ 
+To implement these strategies there needs to be a dedicated electronics data ‘champion’ within the fleet 
+department that is capable of evaluating the equipment fleet and deciding what pieces and/or systems fit best 
+with the operation.  A thorough vetting process should take place when looking at all of the products available 
+on the market.  This individual would also be responsible for creating and delivering the training to the entire 
+equipment staff to ensure a clear consistent message is delivered.  A dedicated Information Technology 
+person would also be very beneficial to ensuring that systems will communicate effectively with each other 
+before choosing vendor(s). 
+ 
+Once the strategy is deployed and systems are in place, each of the disciplines within the equipment 
+department should have a dedicated person to monitor the data, run reports, and compile action items based 
+on the incoming data.  If the systems are left as part someone else’s already long list of daily activities it may 
+quickly get left behind and the true value will not be realized.
+ 
+ 
+6.0 Supporting Attachments / References 
+N/A 
+ 
+7.0 Related Best Practices 
+N/A 
+ 
+8.0 Acknowledgements 
+Scott Weyant 
+Product Support Manager 
+Caterpillar Inc. 
+Weyant_Scott_T@cat.com 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Electronic Data Usage for Equipment Management on 
+Construction Projects 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-1.02-1304 
+Caterpillar Confidential:  GREEN          Page 3 of 3

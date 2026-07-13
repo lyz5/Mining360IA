@@ -1,0 +1,196 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 11 
+0409-1.01-1166 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      mining.cat.com 
+ 
+ 
+ 
+ 
+B E S T  P R A C T I C E  S E R I E S 
+Using Idle Time VIMS™ 
+Data for Pre-PM Analysis 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Renewal 
+(CRC) 
+Component 
+Life 
+Management 
+ MARC 
+Management 
+ 
+ 
+ 
+Using Idle Time VIMS™ Data for Pre-PM Analysis .... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Idle Time VIMS™ Data For Pre PM Analysis 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0409-1.01-1166 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction  
+Idle time VIMS data can be used during pre-PM analysis to speed the pre-PM process and 
+check systems that may otherwise have gone unchecked.  The idle time data can be taken while no 
+one is present at the machine, or while inspection personal are doing other checks.  Examining 5 
+minutes of idle time data can eliminate the need for more time consuming tests, such as checking the 
+steering cycles with gauges, and can detect faults in systems that may have gone unchecked, like the 
+battery and charging system. 
+ 
+2.0 Best Practice Description 
+5 minutes of idle and 1 minute of engine off data collected during the Pre PM inspection can be 
+used to speed up the Pre PM analysis.  The collected data can be analyzed for certain truck 
+performance parameters without operator influences.  This analysis can allow the PM downtime to be 
+utilized more effectively. 
+Assuming the truck is shut off, start the truck, run through operational tests and inspect 
+machine while it idles for at least 5 minutes before shutting the machine down.  After the engine is 
+stopped, turn to key on, take a snapshot (EREC) and download the data before releasing the truck.  
+The same data can be gathered by running a datalogger for the entire pre-PM test/inspection.  Note: 
+If an aftermarket shutdown timer is available, it can be used to collect the same data.   
+ 
+The downloaded VIMS® data can then be analyzed for the following: 
+ 
+• Battery voltage – Battery voltage is an excellent indicator of the condition of the charging 
+system when the truck was running and the battery condition when the engine was shut down.  
+When the engine is off and key on a voltage drop below 24 volts is indicative of a problem in 
+the battery system.  
+ 
+• Engine fan speed & coolant temperature – This data can help insure the engine fan control 
+and cooling circuit are working properly and not over cooling the engine.  If the steering cycle 
+blips can bee seen in the engine fan speed graph, or the engine coolant temperature drops 
+below 190 degrees the fan has likely locked up and is over cooling the engine. 
+ 
+• Engine speed – A blip in the engine speed can be seen every time the steering cycles.  This 
+data eliminates the need to check steering cycles with gauges and the need to check 
+accumulators if the cycle times are correct.  Cycle times less than 30 seconds can indicate a 
+cut in or a cut out problem in the steering system. 
+ 
+• Electrical problems – The 5 minutes of continuous information from all sensors on the truck 
+can be useful in troubleshooting should there be an electrical problem or intermediate event on 
+the truck.  Also, if a sensor is going bad it can be added to the PM kit. 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Idle Time VIMS™ Data For Pre PM Analysis 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0409-1.01-1166 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+• Three days prior to the scheduled PM let the machine idle for 5 minutes while doing other pre-
+PM inspections, download the data before releasing the machine. 
+• Analyze the data and modify the PM appropriately based on findings. 
+ 
+4.0 Benefits 
+• Saves time by allowing systems to be checked through VIMS™ data rather than by hooking 
+up gauges. 
+• Improves PM efficiency by providing information that may detect problems that would have 
+been overlooked during normal pre-PM inspections. 
+• Can help improve fleet availability. 
+ 
+ 
+ 
+Steering cycles should be greater than 30 
+seconds. 
+Battery voltage should not drop below 24 
+volts. 
+Fan speed should decreases with coolant temp and 
+coolant temp should not drop below 190 degrees. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Idle Time VIMS™ Data For Pre PM Analysis 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+0409-1.01-1166 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+5.0 Resources Required 
+ 
+The major resource required to implement this Best Practice will be the people and the time 
+dedicated to analyzing the data collected from the machine.  The VIMS data will be collected from 
+the machine using the VIMSpc software.  VIMS Application training may also be required if the 
+users are not familiar with the analysis of VIMS data. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+References: 
+VIMSpc subscription numbers:  JERD2137 (Dealer Site License) 
+                                                  JERD2138 (Dealer Annual Subscription) 
+                                                   JERD2175 (Customer Annual Subscription) 
+ 
+  VIMS Application Guide   SELD7001 
+ 
+ 
+7.0 Related Best Practices 
+ 
+1006-2.3-1027  Utilizing VIMS Data for Effective Planned Maintenance  
+ 
+ 
+8.0 Acknowledgements 
+ 
+This best practice was submitted by: 
+ 
+ Wes Rhoden - warhoden@wyomingcat.com 
+Matt Blakeman - mdblakeman@wyomingcat.com 
+ Wyoming Machinery Company

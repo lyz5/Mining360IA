@@ -1,0 +1,285 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+May 21 
+4.03-210531-1 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.     
+ Mining.cat.com 
+ Caterpillar: Confidential Green 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Workshop Daily Planning 
+Board 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Workshop Daily Planning Board ………………………0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description .................................. 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ........................................... 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Workshop Planning Daily Board 
+DATE 
+5/31/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210531-1 
+Caterpillar Confidential:  YELLOW          Page 1 of 4 
+1.0 Introduction  
+ 
+Borusan Makina Kazakhstan’s Component Rebuild Shop (CRS) has implemented a daily planning 
+board to efficiently follow up its daily operations.  
+Due to this  board, the workshop supervisor and service engineers can visually see the current 
+volume of work in the workshop. In addition, the board allows  the work-in-process starting from 
+Awaiting Disassembly to Component ready to dispatch to be observed. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+There are several participants in the component repair process. There is a Shop supervisor, Team 
+leader, Planning Engineer, Spare Parts specialist, and Machine Shop Engineer. Due to the large 
+number of participates in the repair process, important information has the potential to be lost during 
+communication. It influenc es the turnaround time of the repaired components. The components 
+that were not ready by the planned time may  cause complaints from the customers. Besides, the 
+planning accuracy of the shop was far from the target. That is why an idea to represent visually the 
+work-in-process (WIP) of the shop has been implemented.  
+The board structure is quite simple. It consists of Engine and PT work orders, which go through the 
+repair process on the board. At our dealership, the planning engineer is responsible for constantly 
+updating the workflow board.  
+ 
+Clarifications to the Board: 
+ 
+• Awaiting Disassembly – the work orders awaiting disassembly are put on this section; 
+• Disassembly – the work orders being disassembled are put on this section; 
+• Defect list preparation – the work orders for which defect lists are prepared; 
+• Technical Report preparation – the work orders for which technical reports are prepared; 
+• Awaiting Defect li st from MS (Machine Shop)  – when we are awaiting information on 
+salvage work. 
+• Awaiting answer from CAT – when we need information on components from the CAT.  
+• Awaiting repair – the work orders approved by Customers and put on the plan are shown 
+here, but the shop have not touched them yet due to several reasons (dates of spare parts 
+arrival and MS salvage are not known or their dates are known but it will take long time until 
+the spare parts come and salvage work is done). 
+• Awaiting spare parts – the work orders awaiting spare parts are shown on this section. MS 
+salvage is finished; 
+• Awaiting salvage – the work orders with 100% of spare parts awaiting salvage are shown 
+here. Usually salvage goes parallel with awaiting spare parts, but sometimes salvage is done 
+after all spare parts are delivered. In this case we have to wait until salvage is finished and 
+after that assemble the component; 
+• Awaiting spare Parts, partial assembly – the work orders where we can start assembling 
+subcomponents of the component until we are waiting for the rest spare parts. 
+• Awaiting Assembly – the work orders with 100% of spare parts but cannot be assembled 
+due to the lack of people or spare bays; 
+Assembly – the work orders being assembled are put on this section. 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Workshop Planning Daily Board 
+DATE 
+5/31/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210531-1 
+Caterpillar Confidential:  YELLOW          Page 2 of 4 
+• Awaiting Test – the work orders assembled but cannot be tested due to the lack of people 
+or spare bays; 
+Test – the work orders being tested are put on this section. 
+Additional awaiting – the work orders that are finished but cannot be dispatched. For 
+example, the finished torque converter is awaiting the completion of the engine overhaul. As 
+soon as the engine is finished, they will be connected and then dispatched to the Customer. 
+• COMPLETED (components are ready) – the work orders finished are shown here; 
+• COMPLETED Defect list and Technical report are sent to be quoted)  – the work orders on 
+which defect lists and technical reports have been prepared and sent to be quoted, and now 
+they are waiting for Customer’s approval. 
+ 
+Picture 1. Our Workshop Daily Planning Board structure 
+ 
+Clarifications to the magnetic stripe template that is used in the Board: 
+ 
+• Work Order No. – the work order number is written here; 
+• Customer Name – the customer name is written here; 
+• Model – the engine or machine model is written here; 
+• Component – the component name is written here; 
+• Spare Parts, Start Assy Date – the date of component assembly starting is written here; 
+• Last Spare Part Coming Date – the date when the last spare part will come is written here; 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Workshop Planning Daily Board 
+DATE 
+5/31/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210531-1 
+Caterpillar Confidential:  YELLOW          Page 3 of 4 
+• MS, Start Salvage Date – the date when the Machine Shop is planning to start salvaging of 
+parts; 
+• MS, Last Part Date – the date when the last salvaged part comes from the Machine Shop 
+is written here; 
+• PTD Plan Date –  the date when the Planning- and-Technical Department puts this work 
+order in the plan, by this date the Component Rebuild Shop (CRS) must finish the work order 
+(component); 
+• CRS Plan Date – the date when the CRS is planning to finish this work order (component) 
+as per its availability. 
+ 
+ 
+ 
+ 
+ 
+ 
+Picture 2. Our magnetic stripe template (for the Board) 
+ 
+ 
+3.0 Implementation Steps 
+ 
+In order to implement the Workshop Daily Planning Board in daily operations: 
+ 
+1) Purchase the equipment required (metallic board, magnetic stripes, markers); 
+2) Think over what information will be on a magnetic stripe and order the quantity you required; 
+3) Transfer the repair process and downtime into the board (awaiting disassembly, disassembly, 
+awaiting parts, etc.); 
+4) Start using the board for your daily WIP components. For example, we (Shop supervisor, Team 
+leader, Planning Engineer, Spare Parts specialist, and Machine Shop Engineer ) makes 
+meetings beside this Board 3 times a week and discuss the current status, plans, concerns, etc. 
+This Board visually helps to see the WIP and not to miss anything during the repair process. 
+ 
+See below the photo of Workshop Daily Planning Board implemented in our daily operations. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Picture 3. Our Workshop Daily Planning Board in use 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Workshop Planning Daily Board 
+DATE 
+5/31/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210531-1 
+Caterpillar Confidential:  YELLOW          Page 4 of 4 
+4.0 Benefits 
+ 
+• Visual representation of WIP components on a daily base; 
+• Easy to use and follow up WIP components; 
+• Improved planning of work-in-process components; 
+• Improved communication between shops and related departments;  
+• Correct components repair history data; 
+• Increased Customers’ loyalty to the CRC. 
+ 
+ 
+5.0 Resources Required 
+ 
+• 3-meter metallic board;  
+• Magnetic stripes with the information needed to stick on the board; 
+• Markers (that can be erased from the magnetic stripe when the work order is finished). 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+N/a. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/a. 
+ 
+ 
+8.0 Acknowledgements 
+ 
+The idea of creating & implementing this Best Practice belongs to: 
+ 
+Andrey UMAROV          
+CRS Supervisor           
+Component Rebuild Shop (CRS)    
+Borusan Makina Kazakhstan LLP         
+ 
+ 
+This Best Practice was written by: 
+Gulnaz MANSUROVA 
+CRC Quality Engineer 
+Borusan Makina Kazakhstan LLP 
+gmansurova@borusan.com 
++7 (701) 951 98 14

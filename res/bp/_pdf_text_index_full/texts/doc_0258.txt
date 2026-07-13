@@ -1,0 +1,310 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\3500 Engine Cylinder Liner Clamp Tool.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+3500 Engine Cylinder Liner 
+Clamp Tool 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+3500 Engine Cylinder Liner Clamp Tool .................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+July 2014 
+1407-4.03-1352 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+ 
+Installing cylinder liner and seals into the engine block is an important operation.  Any issues with 
+the proper positioning of the seals can lead to future head joint coolant leakage.  Some dealers 
+have a concern that once liners and seals are installed in the block, the liner may move during 
+block rotation as pistons, rod, crankshaft are installed. 
+Some dealers have fabricated a device to hold the cylinder liner in place during short block 
+assembly.   
+ 
+ 
+2.0 Best Practice Description 
+ 
+While most dealers are using bolts and washers to lock the liner down, Finning Chile is using a 
+more efficient and simple device consisting of a fabricated polyurethane block and two bolts and 
+washers.  Each block clamps two liners. 
+ 
+Photos below show design and use of the tool. 
+ 
+ 
+Figure 1 Clamping device and location on block.  1 clamp per 2 cylinders 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Cylinder Liner Clamp Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1407-4.03-1352 
+Caterpillar Confidential:  YELLOW          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2 One clamp for every 2 cylinders 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 3 Side view for thickness 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Cylinder Liner Clamp Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1407-4.03-1352 
+Caterpillar Confidential:  YELLOW          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 4 Close up view 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 5 One clamp for every other cylinder 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Cylinder Liner Clamp Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1407-4.03-1352 
+Caterpillar Confidential:  YELLOW          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.0 Implementation Steps 
+ 
+Fabricate a sufficient number of polyurethane blocks cut and sized to match 3500 liner flange.  
+35-40 ft-lb is the bolt torque. 
+ 
+ 
+4.0 Benefits 
+ 
+• Ensures positioning of liner will not move during engine rotation. 
+• Protects integrity of the liner band seals. 
+• Reduces risk of future seal leakage. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Low cost – easy to make device. 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Drawings.pdf 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Photos are from Finning Chile. 
+ 
+Idea submitted by Kevin Haig, Caterpillar Global Mining 
++56 2 2366 5136 
+Haig_Kevin@cat.com 
+ 
+Written By: 
+Dale Brehm 
+Product Support Manager, Caterpillar Global Mining 
++1 309 675 6325 
+Brehm_Dale_E@cat.com 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Cylinder Liner Clamp Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1407-4.03-1352 
+Caterpillar Confidential:  YELLOW          Page 4 of 4

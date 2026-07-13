@@ -1,0 +1,391 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2022 
+4.03-220201-2 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Multi-Purpose Tool for 
+Assembly Pump GP Water 
+Auxiliary  
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Multi-Purpose Tool for Assembly Pump GP Water 
+Auxiliary ........................................................................ 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description .................................... 2 
+3.0 Implementation Steps.......................................... 3 
+4.0 Benefits ................................................................ 5 
+5.0 Resources Required............................................ 5 
+6.0 Supporting Attachments / References................ 6 
+7.0 Related Best Practices ........................................ 6 
+8.0 Acknowledgements ............................................. 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Multi-Purpose Tool for Assembly Pump GP Water 
+Auxiliary 
+DATE 
+2/01/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220201-2 
+Caterpillar: Confidential Yellow           Page 2 of 7 
+1.0 Introduction  
+ 
+This best practice was developed to reduce human involvement during the pump GP auxiliary 
+assembly by using a unique tool that Ferreyros developed for this purpose. This best practice 
+gives the specification and design requirements to build the tool, as well as the process steps to 
+implement and use the tool in the assembly process. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The tool might be used with 3508 692, 3512 662, 3516 722, 3508 746, 3508B 26R 3512 8BR, 
+3512 962, 3516 2PK, 3516B 77R, 785C APX 992G 994 94F 777D 3PR, 785D DMC engines.  
+This tool will be used for installing the bearing P/N 127-5400, ceramic seal, impeller and cover 
+following a sequence below. 
+ 
+The design specs for the tool are shown in the supporting attachments section, and below is what 
+the finished tool will look like.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 1: Multi-purpose tool. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Multi-Purpose Tool for Assembly Pump GP Water 
+Auxiliary 
+DATE 
+2/01/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220201-2 
+Caterpillar: Confidential Yellow           Page 3 of 7 
+3.0 Implementation Steps 
+ 
+1. Install the seal on the pump GP auxiliary. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2: Seal installation. 
+ 
+2. Install the bearing P/N 127-5400 using the multi-purpose tool on the hydraulic press as shown 
+in the figure below. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 3: Bearing installation. 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Multi-Purpose Tool for Assembly Pump GP Water 
+Auxiliary 
+DATE 
+2/01/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220201-2 
+Caterpillar: Confidential Yellow           Page 4 of 7 
+3. Rotate the auxiliary GP pump and install the ceramic seal. Use the multi-purpose tool like 
+figure 4 shows. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 4: Ceramic seal installation using the multi-purpose tool 
+ 
+4. Place the auxiliary GP pump on the multi-purpose tool. Use the tool to avoid axial displacement 
+during the impeller installation. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 5: Impeller installation using multi-purpose tool. 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Multi-Purpose Tool for Assembly Pump GP Water 
+Auxiliary 
+DATE 
+2/01/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220201-2 
+Caterpillar: Confidential Yellow           Page 5 of 7 
+5. Install the pump cover using the multi-purpose tool. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 6: Impeller cover with the multi-purpose tool. 
+ 
+ 
+4.0 Benefits 
+ 
+• Decreases human effort during the installation of the bearing, seal, impeller and cover during 
+pump GP auxiliary assembly; 
+• Simplifies the assembly process for the pump GP water auxiliary. 
+ 
+ 
+5.0 Resources Required 
+ 
+Item Cost 
+Multi-Purpose Tool  $650 
+ 
+Tool was made by a third party. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Multi-Purpose Tool for Assembly Pump GP Water 
+Auxiliary 
+DATE 
+2/01/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220201-2 
+Caterpillar: Confidential Yellow           Page 6 of 7 
+6.0 Supporting Attachments / References 
+ 
+SEBF8418 (Reuse and Salvage of Water Pumps) 
+ 
+ 
+ 
+Units in mm 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Multi-Purpose Tool for Assembly Pump GP Water 
+Auxiliary 
+DATE 
+2/01/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-220201-2 
+Caterpillar: Confidential Yellow           Page 7 of 7 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+José Guillermo Parra & Fernando Moreno Villaizan 
+Ferreyros S.A. 
+ 
+ 
+This Best Practice was revised by: 
+ 
+Aninu Mitacc Vizcardo 
+Ferreyros S.A. 
+aninu.mitacc@ferreyros.com.pe 
+ 
+The idea for this best practice belongs to: 
+ 
+Jose Guillermo Parra 
+Ferreyros S.A.

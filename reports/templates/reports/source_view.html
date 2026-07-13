@@ -1,0 +1,161 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ view.name }} | {{ source.name }} | Mining360IA</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">{{ source.engine }} live query</p>
+                <h1>{{ view.name }}</h1>
+                <p class="page-intro">{{ view.description }}</p>
+            </div>
+            <div class="actions">
+                <a class="button secondary" href="{% url 'source-detail' source.key %}">Back</a>
+            </div>
+        </header>
+
+        {% if error %}
+            <section class="alert">
+                <strong>Live query failed</strong>
+                <p>{{ error }}</p>
+            </section>
+        {% endif %}
+
+        <section class="workspace-band">
+            <div class="placeholder-panel">
+                <p class="eyebrow">Source</p>
+                <h2>{{ source.name }}</h2>
+                <p>{{ source.server }} / {{ source.database }}</p>
+            </div>
+            <div class="placeholder-panel">
+                <p class="eyebrow">Rows</p>
+                <h2>{{ result.row_count|default:0 }}</h2>
+                <p>Returned live using the current SQL definition.</p>
+            </div>
+        </section>
+
+        <section class="table-section">
+            <div class="section-head section-head-inline">
+                <h2>Live data</h2>
+                <form method="get" class="limit-form">
+                    <label for="limit">Limit</label>
+                    <input id="limit" name="limit" type="number" min="1" max="5000" value="{{ limit }}">
+                    <div>
+                        <label for="date_from">Date from</label>
+                        <input id="date_from" name="date_from" type="date" value="{{ date_from }}">
+                    </div>
+                    <div>
+                        <label for="date_to">Date to</label>
+                        <input id="date_to" name="date_to" type="date" value="{{ date_to }}">
+                    </div>
+                    <div>
+                        <label for="quick_range">Quick range</label>
+                        <select id="quick_range" name="quick_range">
+                            <option value="" {% if not quick_range %}selected{% endif %}>Custom</option>
+                            <option value="mtd" {% if quick_range == "mtd" %}selected{% endif %}>Month To Date</option>
+                            <option value="ytd" {% if quick_range == "ytd" %}selected{% endif %}>Year To Date</option>
+                            <option value="last-12-months" {% if quick_range == "last-12-months" %}selected{% endif %}>Last 12 Months</option>
+                            <option value="last-year" {% if quick_range == "last-year" %}selected{% endif %}>Last Year</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="button">Run live query</button>
+                </form>
+            </div>
+
+            <div class="query-shell">
+                <details class="query-panel">
+                    <summary>
+                        <span>
+                            <span class="eyebrow">SQL</span>
+                            <span class="query-panel-title">Query definition</span>
+                        </span>
+                    </summary>
+                    <pre>{{ view.sql }}</pre>
+                </details>
+
+                {% if result %}
+                    <div class="table-wrap live-table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    {% for column in result.columns %}
+                                        <th>{{ column }}</th>
+                                    {% endfor %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in result.row_values %}
+                                    <tr>
+                                        {% for value in row %}
+                                            <td>{{ value }}</td>
+                                        {% endfor %}
+                                    </tr>
+                                {% empty %}
+                                    <tr>
+                                        <td colspan="{{ result.columns|length }}" class="empty">No rows returned.</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+    (function () {
+        const quickRange = document.getElementById("quick_range");
+        const dateFrom = document.getElementById("date_from");
+        const dateTo = document.getElementById("date_to");
+        if (!quickRange || !dateFrom || !dateTo) return;
+
+        function pad(value) {
+            return String(value).padStart(2, "0");
+        }
+
+        function toInputDate(date) {
+            return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+        }
+
+        function firstOfMonth(date) {
+            return new Date(date.getFullYear(), date.getMonth(), 1);
+        }
+
+        function addMonths(date, months) {
+            return new Date(date.getFullYear(), date.getMonth() + months, 1);
+        }
+
+        function applyQuickRange(value) {
+            const today = new Date();
+            if (value === "mtd") {
+                dateFrom.value = toInputDate(firstOfMonth(today));
+                dateTo.value = toInputDate(today);
+            } else if (value === "ytd") {
+                dateFrom.value = `${today.getFullYear()}-01-01`;
+                dateTo.value = toInputDate(today);
+            } else if (value === "last-12-months") {
+                dateFrom.value = toInputDate(firstOfMonth(addMonths(today, -11)));
+                dateTo.value = toInputDate(today);
+            } else if (value === "last-year") {
+                dateFrom.value = `${today.getFullYear() - 1}-01-01`;
+                dateTo.value = `${today.getFullYear() - 1}-12-31`;
+            }
+        }
+
+        quickRange.addEventListener("change", function () {
+            if (this.value) {
+                applyQuickRange(this.value);
+                this.form.submit();
+            }
+        });
+    })();
+</script>
+</html>

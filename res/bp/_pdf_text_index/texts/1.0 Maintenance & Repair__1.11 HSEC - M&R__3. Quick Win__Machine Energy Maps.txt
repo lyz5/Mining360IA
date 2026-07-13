@@ -1,0 +1,375 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+  
+August 19 
+1.11-181017-06 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      mining.cat.com 
+ 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Machine Energy Maps  
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments - References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon in formation provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additio nal “Best 
+Practice” recommendations from our dealer network. 
+
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Energy Maps 
+DATE 
+8/16/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-181017-06 
+Caterpillar Confidential:  YELLOW          Page 1 of 7 
+1.0 Introduction  
+ 
+Mining equipment is fundamental in achieving production goals at any mining operation. To ensure 
+the availability and reliability of the equipment, it is necessary to include maintenance and repair tasks 
+that must be executed with efficiency, quality, and safety.  
+ 
+When conducting maintenance procedures, blocking or deactivating stored energy in equipment is a 
+routine task. However, this requires rigorous follow-up of established safety procedures - procedures 
+known in Finning as "The Rules of Life". The Rules of Life are a set of rules that define behaviors of 
+mandatory compliance for all employees, disobedience of these rules is considered unacceptable.  
+ 
+We have developed this Best Practice to ensure that all personnel involved in the maintenance and 
+repair processes identify these life rules when working with mining equipment. Elimination of energy 
+points in a practical and fast way will directly improve efficiency and increase safety standards. 
+  
+2.0 Best Practice Description  
+ 
+This best practice consists of the development and implementation graphics for the different 
+Caterpillar equipment models, with a visual and easy understanding representation of the energy 
+points that must be neutralized or blocked before carrying out the maintenance and repair work.  
+ 
+This best practice (BP) complements the information of the maintenance guidelines and procedures 
+and increases access to information – especially for technicians that are in the training process – by 
+summarizing and facilitating the identification of the components and systems of the equipment.  
+ 
+2.1 Opportunity  
+ 
+In 2016, a serious accident involving energy exchange occurred due to the release of oil 
+subjected to residual pressure. This accident brought attention to effective procedures and 
+controls of energy blockage/elimination. 
+  
+First, measures were aimed at identification of energy only in areas and places where 
+measuring instruments were used. Once all APCIEs (High Potentials for Energy Exchange) 
+were identified, the need to continue to strengthen and develop the content was identified and 
+information was extended to all the machine systems. Communication of this information to the 
+end users was simple, graphical, didactic and in a quick-access format.  
+ 
+The first equipment models selected for the development of the “Equipment Energy Maps”.  
+were the CAT-793F Truck and the CAT 994H Wheel Loader. These diagrams identify each of 
+the components and systems that have or may have energy and include basic energy isolation 
+procedures (system or component to block and / or isolate - Blocking point - How? - With 
+what? - Risk).  
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Energy Maps 
+DATE 
+8/16/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-181017-06 
+Caterpillar Confidential:  YELLOW          Page 2 of 7 
+These diagrams were installed at key points of the workshops, using giant graphics to ensure 
+adequate visualization of them by the technicians. Below are two examples of the developed 
+Equipment Energy Map: 
+ 
+ 
+Energy Map for CAT 793F Truck 
+ 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Energy Maps 
+DATE 
+8/16/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-181017-06 
+Caterpillar Confidential:  YELLOW          Page 3 of 7 
+ 
+Energy Map for CAT 994H Wheel Loader 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Energy Maps 
+DATE 
+8/16/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-181017-06 
+Caterpillar Confidential:  YELLOW          Page 4 of 7 
+3.0 Implementation Steps  
+ 
+We recommend the following steps when implementing this Best Practice 
+ 
+3.1 Tasks assignment  
+ 
+Once the need to generate energy maps is identified, it is necessary to bring together the 
+areas of the organization involved in the development and implementation of this BP (In our 
+case: SHEQ, Engineering, Operations, Mentoring).  
+ 
+Each of these areas must assume the responsibility of developing certain tasks – according to 
+their specialization – forming an effective project team. The area of prevention and operations 
+are those who define what is required to improve those identified areas of high potentials for 
+energy exchange. In this case, the Engineering and Mentoring Area, due to their technical 
+capabilities, were responsible for identifying and delivering the complete and detailed 
+information of each machine type, consolidating the necessary data, and ensuring that no 
+additional information was required.  
+ 
+3.2 Select Format  
+ 
+Once the Engineering and Mentoring area compile the technical information of the equipment 
+and the potential energies, they proceed to choose the design and format of the maps. In our 
+situation, the Safety area (SHEQ) was responsible for the execution of this task, since they are 
+the ones with experience to define the visual requirements, so that the message gets 
+communicated effectively to the service personnel (See the examples of Energy Maps).  
+ 
+3.3 Maps Distribution  
+ 
+Once the first draft of the Energy Maps has been completed, we recommend distributing and 
+analyzing them with the technicians. At this stage, make sure to gather suggestions from the 
+technicians and define the final form of implementation for the field service and the workshop. 
+For the field service, we recommend including the Energy Maps information in the service 
+folders with instructions to be applied to scheduled and unscheduled jobs. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Energy Maps 
+DATE 
+8/16/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-181017-06 
+Caterpillar Confidential:  YELLOW          Page 5 of 7 
+3.4 Printing and Implementation  
+ 
+The printing of the Energy Maps in a big format, was done locally with the following provider:  
+ 
+Artegraf E.I.R.L 
+Rut 76056383-8  
+Av. Argentina N°1312, Antofagasta, Chile  
+Contacto Rossana Acuña, artegraf@vtr.net  
+ 
+The Energy Maps were installed in the areas of the workshop corresponding to Preventive 
+Maintenance and execution of Scheduled and Non-Scheduled tasks. 
+ 
+ 
+ 
+ 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Energy Maps 
+DATE 
+8/16/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-181017-06 
+Caterpillar Confidential:  YELLOW          Page 6 of 7 
+3.5 Start-up and Benefits Validation  
+ 
+Once the information / maps get implemented in the workshop, field operations, and shop work 
+areas, their proper use should be monitored and their positive contribution in avoiding accidents 
+validated.  
+ 
+4.0 Benefits  
+ 
+The main benefits of this best practice are in: Safety and Efficiency of the Technicians.  
+ 
+4.1 Safety  
+ 
+With the implementation of these maps, technicians were trained and made aware of the 
+importance of blocking and eliminating stored or residual energies that represented a high risk 
+in the execution of maintenance and repair tasks. Since the implementation of this Best 
+Practice no incident has occurred due to this type of risks.  
+ 
+4.2 Efficiency  
+ 
+It should be noted that the Equipment Energy Maps, consolidate in a single document all the 
+information required by the technicians, improving the information search times that is normally 
+done using SIS (Service Information System) or Workshop service manuals. Improved times 
+that positively impact the efficiency of maintenance and repair tasks.  
+ 
+5.0 Resources Required  
+ 
+Resources required to implement this Best Practice are as follows: 
+ 
+ - MS Power Point Software 
+- Printing Cost (USD 90 each map approx.) 
+ 
+6.0 Supporting Attachments - References  
+ 
+N/A.  
+ 
+7.0 Related Best Practices  
+ 
+N/A.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Machine Energy Maps 
+DATE 
+8/16/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-181017-06 
+Caterpillar Confidential:  YELLOW          Page 7 of 7 
+8.0 Acknowledgements  
+ 
+This Best Practice was generated and implemented by:  
+ 
+         Juan Carlos Osses Madrid     Eduardo Calderon Ibañez 
+      Gerente Operaciones Minería        Ingeniero SHEQ 
+Cel: +569 94795847        Contrato Centinela 
+Email:juan.osses@finning.com        Cel: +569 66287348 
+         Email:eduardo.calderon@finning.com 
+ 
+This Best Practice was written by:  
+ 
+Juan Crooker Acosta    Carolina Rojas Morales 
+Coordinador Programa Mejores Prácticas      Analista Operacional 
+     Finning SA – Antofagasta         Finning SA – Antofagasta 
+          Cel: +56 966163251         Cel: +56 956889465 
+Email:juan.crooker@finning.com     Email:carolina.rojas@finning.com

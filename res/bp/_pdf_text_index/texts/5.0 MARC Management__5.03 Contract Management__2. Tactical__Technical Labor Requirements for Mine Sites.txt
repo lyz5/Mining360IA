@@ -1,0 +1,256 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Technician Labor 
+Requirements Guide for 
+Greenfield Mine Sites 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Technician Labor Requirements Guide for Greenfield 
+Mine Sites .................................................................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Results ............................................................... 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+November 2007 
+0906-4.5-1013 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+This Best Practice provides a technician labor requirement guide to dealers maintaining a fleet of 
+Caterpillar machines at a Greenfield mine site.  It offers suggestions on how to calculate 
+manpower requirements to a dealer that has not otherwise provided service in a mining 
+application.   
+ 
+Attention should be given to adequate manpower as it helps ensure early success and an 
+improved customer relationship. Management and technician structure should be developed 
+based on the needs of the customer. This structure can range from just on-site technicians to a full 
+maintenance department with project managers, planners, fleet analysts and service billers.   
+ 
+Parts and Service departments should be involved in developing the staffing requirements for on-
+site personnel. A review of existing staffing should be considered if functions such as invoicing 
+and warranty would be conducted off site. 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice will outline the logic that should be applied when determining the technician 
+labor requirements for a dealer who is new to mining.  This will ensure that the technician 
+workforce accurately reflects the maintenance strategy of the dealership, the machine population, 
+and that the dealer can deliver the availability and reliability the customer is demanding. 
+ 
+Listed are the criteria used in developing the labor requirements  
+• Annual utilization per machine 
+• Fleet size by model 
+• Number of shifts 
+• Scheduling 
+• Total days off per year 
+• Technician hours worked per day 
+• Technician efficiency / availability 
+  
+Roles that are calculated include 
+• Shop technicians 
+• Field technicians 
+• Supervisors 
+• Schedulers / Planners 
+ 
+To determine labor requirements there must be an understanding of the performance metrics for 
+mobile mining equipment.  The Performance Metrics for Mobile Mining Equipment document that 
+is attached in this Best Practice provides useful information on the Maintenance Ratio.  The 
+Maintenance Ratio is an indication of the amount of effort required to keep equipment in service 
+as well as the efficiency with which labor is deployed and the effectiveness of the workforce. The 
+Maintenance Ratio is calculated by dividing Maintenance and Repair Man-Hours by Operating 
+Hours.  The Maintenance Ratio could be lower for machines where the site performance is 
+defined as excellent versus poor. It is not realistic to say that a Greenfield site will be operating as 
+“excellent” immediately. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Determining Technical Labor Requirements for 
+Greenfield Sites 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0000-1.1-1001 
+Caterpillar Confidential:  GREEN         Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The Labor Analysis.xls spreadsheet attached to this document should be considered a reference 
+point for determining labor requirements.  The values calculated in this spreadsheet should not be 
+considered finite.  It is not intended to replace sound maintenance planning procedures. 
+ 
+The information in this best practice should be adapted to local requirements.  The values used in 
+the attached Labor Analysis.xls spreadsheet are worldwide averages.  Caution must be taken 
+when assessing local abilities. 
+ 
+The following steps should be taken to determine labor requirements: 
+ 
+1. In the “Man Hours” tab enter 
+a. Days in a year 
+b. Days of leave etc. 
+c. Days in cycle 
+d. Days worked per cycle 
+e. Hours worked per day 
+f. Shifts worked per day 
+g. Efficiency Factor 
+ 
+2. In the “Maintenance Ratios” tab 
+a. Review maintenance ratios for each machine type 
+b. Modify maintenance ratios as necessary 
+ 
+3. In the “Calculations” tab 
+a. Review the Ratio of total techs 
+b. Modify Ratio of total techs as necessary 
+c. Review the Ratio of management to total techs 
+d. Modify the Ratio of management to total techs as necessary 
+ 
+4. In the “Fleet Entry” tab enter 
+a. Each machine model by selecting it from the drop down box 
+b. Quantity of each machine model 
+c. Annual utilization of each machine model 
+ 
+5. In the “Fleet List” tab enter 
+a. Model 
+b. Serial Number 
+c. Planned Annual Usage 
+d. Start Hours 
+ 
+6. What to do if your machine is not listed in drop down box 
+a. In the “Maintenance Ratios” tab 
+1. Change the name of one of the “other” machines to fit your need 
+2. Enter the maintenance ratio of the new machine 
+The Efficiency Factor  is the percentage of 
+time the technician actually spends working.  
+The factor can and should be adapted to fit 
+local requirements. 
+The Maintenance Ratios are 
+worldwide averages.  They can 
+and should be adapted to fit 
+local requirements. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Determining Technical Labor Requirements for 
+Greenfield Sites 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0000-1.1-1001 
+Caterpillar Confidential:  GREEN         Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+b. I n the “Calculations” tab 
+1. Change the name of the same “other” machine that was changed in the 
+“Maintenance Ratios” tab 
+c. In the “Fleet Entry” tab 
+1. Unhide column “O” 
+1. Highlight columns “N” and “P” 
+2. “Right Click” while your cursor is in the highlighted columns 
+3. Select Unhide 
+4. Change the name of the same “other” machine that was changed in 
+the “Maintenance Ratios” and “Calculations” tab 
+2. Rehide column “O” 
+1. Highlight column “O” 
+2. “Right Click” while your cursor is in the highlighted columns 
+3. Select Hide 
+ 
+4.0 Results 
+ 
+The Labor Analysis.xls spreadsheet provides a baseline number of shop and field technicians 
+required to perform the maintenance on a Caterpillar fleet at a new mine site.  It also gives a 
+number of direct supervisors and schedulers / planners needed per the number of technicians.  
+There is an assumption that equal amounts of work are done on each shift. 
+ 
+The numbers identified in this tool should be considered a reference point.  The values calculated 
+in this spreadsheet should not be considered finite.  It is not intended to replace sound 
+maintenance planning procedures. 
+ 
+5.0 Resources Required 
+ 
+People – an understanding of the required maintenance data is required 
+ 
+6.0 Supporting Attachments / References 
+ 
+Performance Metrics for Mobile Mining Equipment.pdf 
+Greenfield Guidebook.pdf 
+Labor Analysis.xls 
+ 
+7.0 Related Best Practices 
+ 
+NA 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Mark Hazen 
+Marketing Rep 
+Hazen_mark_r@cat.com 
+309-494-4172 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Determining Technical Labor Requirements for 
+Greenfield Sites 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0000-1.1-1001 
+Caterpillar Confidential:  GREEN         Page 3 of 3

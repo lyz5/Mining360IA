@@ -1,0 +1,713 @@
+===== PAGE 1 =====
+April 2023 
+1.09-230421-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+M
+INING DEALER BEST PRACTICE 
+Identifying Physical 
+Availability Loss Factors 
+through Downtime 
+Stratification by CPI/PN 
+M
+aintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+I
+dentifying Physical Availability Loss Factors through 
+Downtime startification by CPI/PN ............................. 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 9 
+4.0 Benefits ............................................................. 9 
+5.0 Resources Required ........................................ 10 
+6.0 Supporting Attachments / References ............. 11 
+7.0 Related Best Practices .................................... 11 
+8.0 Acknowledgements ......................................... 11 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Identifying Availability Loss Factors through Downtime 
+Stratification by CPI/PN 
+DATE 
+4/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-230421-1 
+Caterpillar: Confidential Yellow                Page 2 of 11 
+1.0 Introduction  
+ 
+This Best Practice describes the process used to collect, analyze, and report the percent Physical 
+Availability (and other metrics) lost by machine/fleet per CPI number and/or part number. 
+ 
+Currently, top downtime drivers are often reported by machine system. These are either defined 
+by SCMS codes (https://servicedata.cat.com/Home/SMCSInquiry) or defined on a site-by-site 
+preference. There is infrequent correlation between the downtime and the part that caused the 
+failure and specifically if there is an existing CPI project that covers that failure mode. This means 
+that both the dealer and Caterpillar know the systems that are causing the top downtime but not 
+the components responsible. 
+ 
+Downtime Stratification is a process that provides granularity to the downtime and can be used to: 
+• Improve fleet management 
+• D evelop predictive maintenance strategies 
+• P rovide Product Support with information that can assist with CPI ranking and resource 
+allocation   
+ 
+2.0 Best Practice Description 
+ 
+Physical Availably PA is a top tier metric vital to customer production and is a critical element of 
+the customer experience. Downtime is recorded and analyzed to better understand the machine 
+systems responsible for negative impact on PA. 
+ 
+By utilizing the Downtime Stratification approach, a representative from each of the customer, 
+dealer and Caterpillar, from the reliability division and a Caterpillar data analyst can determine PA 
+loss by specific part number and correlate it to appropriate CPI project.  
+ 
+Downtime data is provided to the dealer/Caterpillar by the customer. There are situations where 
+the first step involves the dealer and customer working together to reconcile raw data. 
+Collaboration is required between the customer, dealer, and Caterpillar to evaluate the downtime 
+and associate it with part numbers. Using the 80:20 rule of data distribution as described in 
+Downtime Priorities, Jack-knife Diagrams, and the Business Cycle by Peter F. Knights, Appendix 
+A, 80% of the downtime data is analyzed. 
+Caterpillar and the dealer are then responsible for assigning applicable CPIs to these down 
+events. The Site Performance Manager (SPM) or Technical Representative will analyze the data 
+and calculate top tier metrics per CPI #. The data is then sent to a Stratification Analyst for 
+consolidation. This process is mapped out below in Figures 2.0 & 2.1. 
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Identifying Availability Loss Factors through Downtime 
+Stratification by CPI/PN 
+DATE 
+4/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-230421-1 
+Caterpillar: Confidential Yellow                Page 3 of 11 
+Downtime Stratification Process Map 
+ 
+Figure 2.0 
+ 
+Downtime Stratification SIPOC 
+ 
+Figure 2.1 
+ 
+ 
+ 
+Customers use various systems for capturing machine stoppages. The downtime is reconciled, 
+consolidated, and shared with their dealers and Caterpillar typically through the site’s 
+management system.  
+ 
+Downtime information required: 
+1. Unit ID, 
+2. Time stamp 
+3. Downtime Duration 
+4. Event description  
+ 
+Suppliers Inputs Processes Output Customers
+Site downtime data events Mine mainenance and Operations
+Repair/Work order information
+(Parts required to fix down event)
+Labor Information
+(Labor required to fix down event)
+Dealer
+(Reliability Engineer / Fleet Analyst) Part number vs. downtime event(s)
+Dealer
+Downtime Impact Metrics (Event 
+count, DT hours, %PA, MTTR, MTBS)
+Caterpilar CPI / EngineeringRanked/Prioritized CPI issues based 
+on Customer Experience
+Caterpillar
+(SPM / Tech Rep) CPI / DPPM number vs. Part Number
+Mine Maintenance and Operations Contact
+Prioritized ICA / PCA
+DOWNTIME
+STRATIFICATION
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Identifying Availability Loss Factors through Downtime 
+Stratification by CPI/PN 
+DATE 
+4/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-230421-1 
+Caterpillar: Confidential Yellow                Page 4 of 11 
+Customer, Caterpillar Site Performance Manager (SPM) or Technical Representative and the 
+Dealer Reliability Engineer (RE) or Fleet Analyst, analyze, at a minimum, the top 80% of 
+downtime and identify the part causing the failure. Where applicable, a corresponding CPI is 
+added.  
+ 
+Resources utilized for this task include:  
+1. W ork order information 
+2. DSN entries 
+3. TEAM channels 
+4. CPI lists 
+5. General site knowledge of team members 
+ 
+The Caterpillar SPM/Tech Rep utilizes a pivot table to compute, by CPI/PN: 
+1. Down time hours 
+2. Physical Availability % 
+3. Event Court 
+4. MTTR 
+5. MTBS 
+ 
+An Excel file, updated monthly by the Stratification Analyst, can be used to analyze the data. See 
+the attached file called Downtime Stratification Workbook, Appendix B. The file can range from 3 
+tabs for a single fleet of machines to an unlimited number of tabs representing an unlimited 
+number of fleets that we want to analyze with combined data. 
+ 
+The Downtime Stratification Workbook should contain separate tabs for: 
+ 
+1. B asic CPI information and top tier metrics associated with each issue (Figure 2.2 and 2.3, 
+Appendix B). 
+ 
+A report, in Excel format, can be generated using the following website. (Access is limited to 
+Caterpillar Product Support contacts). 
+https://qrwb.ecorp.cat.com/cpi/Reports/CustomCriteria.cfm
+  
+Under the “Product and Parts” tab, select the model you are interested in from list provided. 
+Then select the items listed in #1 below from the “Outputs” tab. Finally, select “Export Details” 
+to generate the CPI list. This list will aid in assigning specific down event to their respective 
+CPIs and can be filtered for Open, Pending, and Closed Issues as well. 
+ 
+The first section of the Excel sheet will contain the CPI information. 
+• Issue Number 
+• List Number 
+• Title 
+• Primary Status 
+• Secondary Status 
+• Target Closure Date 
+• Risk Level 
+• Days Open 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Identifying Availability Loss Factors through Downtime 
+Stratification by CPI/PN 
+DATE 
+4/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-230421-1 
+Caterpillar: Confidential Yellow                Page 5 of 11 
+Downtime Stratification CPI Issue List 
+ 
+Figure 2.2 
+ 
+ 
+The tab will also contain formulas for combining data from each fleet (1 tab per fleet) and 
+consolidating it if the project is combining the same model over multiple sites for comparison, 
+as shown in Figure 2.3. 
+ 
+• Downtime Impact (Hours) 
+• Event Count 
+• PA loss (%) 
+• MTBS (Hours) MTBS is calculated to include both scheduled and unscheduled downtime. 
+• MTTR (Hours) 
+ 
+ 
+ 
+Issue ID # List Title Primary Status Scnd Status Target Risk Level Days ICA PCA
+459805 2 2700 794/6/8 AC Front Wheel Flange Cracking (584-4172) Open Active 31-Mar-23 W (Watch) 973 PS47189
+485427 52 542
+794 AC, HOUSING GP-RRAX-Gp, AXLE AS-MACHINED, PANHARD ROD MOUNTING, CRACKED 
+(4479247)
+Open Active 31-Dec-23 A (High) 525
+M0128925
+478505 29 2700
+794/6/8 PARK BRK, SEAL-RECTANGULAR, LEAKS OIL/LUBE, (1750100) Open Active 09-Aug-22 W (Watch) 667 PS47087(794/6)
+M0128576
+479365 4 542
+CPI479365 - 794 AC, 796 AC, 798 AC, DRIVETRAIN BLOWER MOTOR FAILURES (303-5861) Closed Resolved 01-Nov-22 B (Medium) 595
+PS54603 PS47304
+M0134645
+500158 2004 3360
+794 AC GEAR GP-FRONT, PUMP GP-WATER -B (4160612)(20R0896) Pending Submitted 31-Dec-22 W (Watch) 236
+385830 46 3360
+CPI 385830: C175, 793F, 794, 795F, 797F, Alternator Tensioner Torsion Spring Failures, Guard 
+failures
+Closed Resolved 17-Dec-19 C (Low) 1049
+Same Part
+461219 13 542 794 AC, 796 AC, 798 AC Starter Motor Failures (277-7662) [793F Replication Project] Open Active 31-Dec-22 A (High) 951 Same Part
+M0131985
+464779 24 542
+796/8 AC HRC Low HP NPI - 5422643 - LEAKS HYDRAULIC FLUID FROM STEERING LINES - 5692102 Open Active 16-Dec-22 C (Low) 645
+TIB M0127729
+438190 100 1132
+CPI438190 793F/795F/797F 794/796/798, 6&quot; E-Stat Seizes or Sticks or Non-Responsive (494-
+2623)
+Open Active 30-Nov-22 B (Medium) 1122
+TIB - M0135889 SM - M0117053
+439991 78 5279
+LMT Alternator and Regulator Failures (437-0125, 421-7193, 424-7245) (Eng) Closed Resolved 08-Apr-22 C (Low) 1148
+448166 79 542 794/6/8 LRC Low HP Field Follow - Left & Right Lower Rear Strut Spherical Bearings (431-8494) 
+Cracked
+Open Active 15-Jun-22 B (Medium) 952 Same Part
+475003 25 542
+798 AC (also used on 794/6) - UPPER FRONT RIGHT AND LOWER LEFT SUSPENSION CYLINDER PIN 
+FRACTURED AT STEPPED LOCATION IN PIN - 4832755
+Open Active 31-Dec-23 A (High) 695 Same Part
+PS47349
+M0123441
+M0126777
+M0126783
+476875 26 3360
+CPI 476875 793F T4 & 794 AC T4, HARNESS GP-WRG-Gp, HARNESS AS-FOAM, OPEN CIRCUIT, 
+(5404514)
+Closed Resolved 29-Jun-22 B (Medium) 685 PS54618 (796)
+PS47016 (794/8)
+472870 49 542
+796/8 AC HRC Low HP NPI - 4422536 - CRACKED BEZEL/DASH PANELS AND MISSING BUTTONS - 
+4322929
+Open Active 31-Aug-22 B (Medium) 533
+Test Iron
+505978 3099 6709
+798 AC HRC Low HP NPI - OIL SANDS SPECIFIC - View through right side mirror obstructed by 
+exhaust box (6048945) on OS HP dump body (6020835)
+Open Accepted 31-Jul-22 B (Medium) 111
+431806 910 542
+79X LRC Field Follow - Damaged Egress Ladder and Battery Box Closed Resolved 17-Oct-19 B (Medium) 212
+451937 54 542
+794/6/8 LRC Low HP Field Follow - Cracked Bottom Hydraulic Tank Mounting Strap (442-3480) Open Active 30-Nov-22 A (High) 1057 Same Part
+M0117783
+410103 643 3360
+CPI 410103 793F,795F,794F,797F, C175-16 and C175-20 Camshaft Spalling Failures (4883487, 
+4883489, 4883490, & 4883491)
+Closed Resolved 13-Dec-21 B (Medium) 1491
+M0131895 PS46860
+M0126425
+451924 1190 542
+794/6/8 - Front Wheel Mounting Group 447-9174 - Missing Coiled Pin 447-9170 Open Active 31-May-22 B (Medium) 1071
+485865 1798 4337
+All Truck Applications C175 Intake Valve Recession ( 513-3495) - CSL Closed Cancelled 31-Dec-22 W (Watch) 420
+504614 3072 542
+794/796/798 AC - AXLE GP-FRONT, AXLE AS-FRONT-MACHINED, CRACKED (443-8883, 447-9166, 
+539-6288)
+Open Active 31-Dec-22 A (High) 140
+474605 23 542
+796/8 AC HRC Low HP NPI - 4466066 KING PIN RUSTED, CORRODED, DAMAGE TO THRUST RINGS 
+AND BEARING
+Open Active 23-Dec-22 B (Medium) 525
+Same Part
+498557 1979 2700
+796/8 AC HRC Low HP NPI - CRACKED REAR OUTER WHEEL ADAPTERS- 5652968 Closed Resolved 31-Mar-22 W (Watch) 139
+452506 1204 542
+796/8 LRC Low HP Field Follow - Weld Cracked Between Rear Left Frame Lug (442-3153) and 
+Frame Crosstube (536-8505)
+Closed Resolved 17-Sep-20 B (Medium) 158
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Identifying Availability Loss Factors through Downtime 
+Stratification by CPI/PN 
+DATE 
+4/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-230421-1 
+Caterpillar: Confidential Yellow                Page 6 of 11 
+Top Tier Metrics 
+ 
+Figure 2.3 
+ 
+ 
+2. Scatter plot (Figure 2.4) See referenced document, Downtime Priorities, Jack-knife Diagrams, 
+and the Business Cycle by Peter F. Knights, Appendix A. 
+ 
+The scatter plot is based on a jackknife graph and uses a logarithmic scale to plot MTTR 
+against Event Count. There are limits calculated for both the x and y axis and the plot displays 
+the effect of each CPI on fleet PA. The limits, when displayed on the graph, divide it into 4 
+quadrants. Three quadrants represent “Chronic and Acute” issues, “Chronic” issues and 
+“Acute” issues. They can be color coded and ranked to provide a clear visual representation of 
+the effect of each CPI issue on fleet uptime. It is preferable to associate ID numbers to each 
+CPI so that the scatter plot is not too busy and becomes difficult to read as the number of 
+units/fleets increase. 
+ 
+If the project includes multiple fleets, the MTTR is the combined average, and the Event count 
+is the sum of events of all fleets for each specific CPI. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Issue ID #
+ Model AC - Site 1 
+ Model AC - Site 2 
+ Model AC - Site 3 
+ AC Fleet - Combined 
+ Model AC - Site 1 
+ Model AC - Site 2 
+ Model AC - Site 3 
+ AC Fleet - Combined 
+ Model AC - Site 1 
+ Model AC - Site 2 
+ Model AC - Site 3 
+ AC Fleet - Combined 
+ Model AC - Site 1 
+ Model AC - Site 2 
+ Model AC - Site 3 
+ AC Fleet - Combined 
+ Model AC - Site 1 
+ Model AC - Site 2 
+ Model AC - Site 3 
+ AC Fleet - Combined 
+459805 2 2,906          247             - 3,153          22               -              - 22                   3.24% 0.47% - 3.71% 2,153          - - 2,153          132             - - 143             
+485427 52 - 422             - 422             - 8                 - 8                     - 0.80% - 0.80% - 6,517          - 6,517          - 53               - 53               
+464779 24 33               16               7                 56               10               2                 2                 14                   0.04% 0.03% 0.04% 0.11% 4,736          26,272       8,733          13,247       3                 8                 3                 4                 
+472870 49 - - 17               17               - - 4                 4                     - - 0.10% 0.10% - - 4,364          4,364          - - 4                 4                 
+410103 643 289             - - 289             2                 - - 2                     0.32% - - 0.32% 23,682       - - 23,682       144             - - 144             
+451924 1190 225             - - 225             1                 - - 1                     0.25% - - 0.25% 47,364       - - 47,364       225             - - 225             
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Identifying Availability Loss Factors through Downtime 
+Stratification by CPI/PN 
+DATE 
+4/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-230421-1 
+Caterpillar: Confidential Yellow                Page 7 of 11 
+Downtime Stratification Scatter Plot 
+ 
+Figure 2.4 
+ 
+ 
+3. Top Metrics for each fleet in scope (Figure 2.5). This is a pivot table that is produced from the 
+analyzed data that has associated part numbers and CPI numbers already assigned.  
+ 
+There are 6 columns of data required from each fleet so that the data can be compiled in the 
+Downtime Stratification Issue list tab.  
+ 
+If there are multiple fleets, these 6 columns of data should be copied from a separate pivot 
+table for each specific fleet into the Downtime Stratification Workbook to be combined. 
+ 
+• CPI/NPI 
+• PA% 
+• MTTR 
+• MTBS 
+• Downtime Hours 
+• Event Count 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Identifying Availability Loss Factors through Downtime 
+Stratification by CPI/PN 
+DATE 
+4/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-230421-1 
+Caterpillar: Confidential Yellow                Page 8 of 11 
+Fleet ‘A’ Metrics Summary Sheet 
+ 
+Figure 2.5 
+ 
+4. The dashboard (Figure 2.6) is an optional tab that summarizes the data collected and analyzed 
+in the other workbook tabs and provides a high-level overview of the project results. This is 
+useful when managing multiple worksites under one project. 
+Information recommended in the dashboard include: 
+ 
+• Dealer 
+• Customer 
+• Model 
+• Number of units 
+• Current SMU 
+• Target PA 
+• Overall Fleet PA 
+• Δ PA 
+• Δ CPI 
+ 
+Much of this information can be found by searching for the machine serial number in DPP (Digital 
+Performance Plus). 
+Downtime Stratification Dashboard 
+ 
+Figure 2.6 
+ 
+ 
+ 
+CPI/NPI PA% MTTR MTBS DT Count
+479365 0.053% 48.9 92194.9 244         5             
+474605 0.041% 63.8 153675.9 191         3             
+498557 0.036% 82.0 230527.5 164         2             
+452506 0.023% 53.4 230556.1 107         2             
+448166 0.012% 28.0 230581.5 56           2             
+497956 0.010% 23.4 230586.1 47           2             
+451107 0.009% 42.9 461176.1 43           1             
+478157 0.008% 18.0 230591.5 36           2             
+438190 0.006% 2.8 46119.1 28           10           
+430935 0.006% 9.3 153730.3 28           3             
+451937 0.006% 6.5 115298.3 26           4             
+384757 0.005% 24.0 461195.0 24           1             
+473472 0.005% 7.1 153732.5 21           3             
+Dealer Customer Site Model Units   Fleet 
+SMU
+DPP 
+Month PA Target  ∆ P.A. 
+(R12)
+∆ P.A. 
+(R3) ∆ CPI
+NA Dealer NA Customer Site 1 6 5740 Jul/22 68.2% 77.8% 74.0% 81.9% -4.1% -7.9% 5.2%
+AU Dealer AU Customer Site 2 12 12938 Jul/22 84.0% 83.7% 83.0% 90.0% -6.3% -7.0% 3.6%
+SA Dealer SA Customer Site 3 2 21406 Jul/22 88.1% 81.1% 79.6% 84.0% -2.9% -4.4% 6.7%
+Avg. R12 Avg. R3
+AC
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Identifying Availability Loss Factors through Downtime 
+Stratification by CPI/PN 
+DATE 
+4/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-230421-1 
+Caterpillar: Confidential Yellow                Page 9 of 11 
+The Stratification Analyst is responsible for: 
+1. Entering the individual site’s KPIs 
+2. Updating the CPI issue list 
+3. Keeping the dashboard information current 
+ 
+Additional data that may be useful to your Stratification project include: 
+1. ICA/PCA information 
+2. Service Letter Completion Rate 
+3. Utilization of Availability 
+4. Customer Type (MARC, DIM, DIWM, DIFM) 
+ 
+3.0 Implementation Steps 
+ 
+The Downtime Stratification project started with a fleet of 794AC trucks operating in Western 
+Canada. The fleet was not meeting PA targets and to determine the root causes, a deep dive was 
+required to find the specific product problems that were contributing to the overall physical 
+availability loss.  
+ 
+The pilot was introduced in July 2021 and a total of 13 electric drive fleets (794/6/8) from all 
+around the world were providing data/metrics within the first month. The data was combined to 
+provide Caterpillar with a global representation of which CPIs were causing the most PA loss.  
+Downtime Stratification can be applied to any machine fleet where downtime is captured and can 
+be implemented immediately. The most critical steps in the process are the first two. All three 
+parties must be invested and aligned and willing to assign team members to do the labor- 
+intensive tasks outlined in steps 3 to 7 below. 
+ 
+Steps Required to Implement this Best Practice 
+ 
+1. Get alignment between Caterpillar, Dealer and Customer 
+2. Assignment of roles within each organization to handle collection, analysis and sharing of the 
+data 
+3. Customer collects and reconciles downtime data. 
+4. Dealer, Customer and Caterpillar analyze minimum 80% of data to assign part numbers 
+causing failure 
+5. Dealer and Caterpillar assign CPIs to the downtime data 
+6. Caterpillar team member analyzes data to calculate required metrics 
+7. Caterpillar Project Analyst compiles fleet metrics and presents results  
+ 
+4.0 Benefits 
+ 
+Caterpillar Benefits 
+ 
+• Direct correlation between CPI Rankings and impact to Customer experience (machine 
+physical availability) 
+• CPI resource allocation 
+• Visibility to chronically unreported issues (hose that fails 100 times) 
+• Line of sight to management to effective ICA definition and implementation 
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Identifying Availability Loss Factors through Downtime 
+Stratification by CPI/PN 
+DATE 
+4/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-230421-1 
+Caterpillar: Confidential Yellow                Page 10 of 11 
+Dealer Benefits 
+• Sharing field corrective action with other participating dealers while awaiting a PCA  
+• Identifying when ICA or PCA solutions have not been implemented 
+• Identifying areas to improve fleet downtime such as for rework, PMs, and waiting on 
+parts/labor.    
+• Identifying high frequency, low duration failures that cause as much downtime as the one-
+off, long duration events 
+• Support prioritization of backlog execution vs impact to physical availability 
+ 
+Customer Benefits 
+• Increased fleet reliability and availability 
+• Increased efficiency of labor resources 
+• Lower cost per hour and cost per ton 
+• Improved MTTR and MTBS 
+ 
+5.0 Resources Required 
+ 
+Customer engagement is a vital step in Downtime Stratification. Providing detailed stoppage 
+records to the dealer is a crucial step in the process. The dealer must have a representative that 
+can compile and sort the raw data from the customer should it be required so that it is in a 
+useable format. The time spent on this task depends on factors such as the complexity of the raw 
+data and the fleet size. On average, it is expected to take 1 hour per week. Another task 
+performed by the dealer representative includes collaborating with the Cat team and the 
+customer, preferably in a 1 hour long weekly meeting, to analyze line by line, 80% of the DT and 
+assign part numbers/missing details and CPI numbers. The Caterpillar SPM or Tech Rep is then 
+required to spend an additional half hour per week (up to 2 hours per month) organizing the 
+stratified data and calculating the metrics. A Caterpillar Stratification Analyst compiles the data. 
+Both Microsoft Excel and Power BI can be used as a tool by the Stratification Analyst for 
+computing the data and/or presenting the results. On average, each of the Customer, the dealer 
+and Caterpillar, invests 8 hours per month to Downtime Stratification. Table 5.0 summarizes the 
+required resources. 
+ 
+Resources Required 
+ 
+Table 5.0 
+Personnel Resource Task Estimated Duration 
+(hours/month/fleet)
+Customer - Maintenance & 
+Operation contact Reconcile D/T data captured throught site management system 4
+Dealer - Reliability Engineer / 
+Fleet Analyst D/T data to Excel format 4
+Customer - Maintenance & 
+Operation contact
+Dealer - Reliability Engineer / 
+Fleet Analyst
+Caterpillar - SPM or Tech Rep
+Caterpillar - SPM or Tech Rep Analyze D/T data and calculate Top Tier Metrics 2
+Caterpillar - Stratification Analyst Compile metrics and other pertinent information into the 
+Downtime Stratification Workbook 2
+Assign CPI and/or part numbers to 80% of the D/T data 4
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Identifying Availability Loss Factors through Downtime 
+Stratification by CPI/PN 
+DATE 
+4/21/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.09-230421-1 
+Caterpillar: Confidential Yellow                Page 11 of 11 
+6.0 Supporting Attachments / References 
+ 
+Appendix A: Downtime Priorities, Jack-knife Diagrams, and the Business Cycle by Peter F. 
+Knights 
+Appendix B: Downtime Stratification Workbook  
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Iesha Courtney 
+Technical Representative 
+Courtney_iesha_a@cat.com
+ 
+1-780-714-8506 
+ 
+Special thanks to Imtiaz Wadiwale for pioneering this pilot project and developing the Excel file that 
+utilizes pivot tables and a scatter plot to combine, analyze and display the output.

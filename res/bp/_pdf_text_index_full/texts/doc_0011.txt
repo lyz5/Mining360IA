@@ -1,0 +1,322 @@
+SOURCE: 1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Improved PM Operations with Specialized Bay.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Improved PM Operations 
+Using Specialized Bay  
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Improved PM Operations Using Specialized Bay ....... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+0607-2.9-1081 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Planned Maintenance operations represent a significant time and capital obligation to dealers and 
+customers. PM causes machine downtime and thus can significantly impact production, 
+increasing effects with fleet size. Dealers supporting sites under Maintenance and Repair 
+Contracts have an even further interest in performing PMs quickly and safely as to meet contract 
+obligations and maintain profitability. Typical barriers to maximum PM efficiency include machine 
+access, part availability, tool/equipment availability, and technician underutilization.  
+ 
+After a full PM study including technician “voice of the customer,” a dealer developed a full plan to 
+increase Off Highway Truck service efficiency and safety. The basis of this plan includes a PM 
+Module to provide a safe and effective working environment for PM technicians. Additional 
+improvements were made to the service workforce and “work scope” to fully encompass all 
+aspects of PM operations and possible improvements. 
+ 
+This Best Practice illustrates safe and effective machine access through the PM module and also 
+contains details on other aspects relating to PM efficiency.  
+ 
+2.0 Best Practice Description 
+ 
+The need for improving PM operations becomes apparent 
+when comparing PM operations to a racing team. Just as 
+racecars return to the pits for periodic maintenance, trucks 
+must receive regular maintenance on-site. Pit crews are 
+made of several people each with a very specific function. 
+Care is taken to speed and safety – for example, the 
+entire team wears helmets and fire retardant suits 
+although only one member actually delivers the fuel. The 
+time required for the crew to complete their tasks directly 
+impacts the success of the team, and great teams often 
+set themselves apart with outstanding pit crews. As such, each member of the crew is trained to 
+perform flawlessly in his or her assigned function. The result is an operation demonstrating near 
+choreographic perfection. 
+ 
+While not as fast-paced as a Grand Prix, mine productivity can greatly benefit from improved PM 
+operations. The primary benefit can be gained from providing technicians the best possible 
+environment in which to perform their work. The PM Module was developed after a dealer’s 
+complete PM study. Its design intention is to provide everything needed to perform the job right 
+the first time:  
+• Elevated work platforms and access steps 
+• Hand rails & pneumatic operated access ways 
+• Built-in filtration & lube dispensing equipment 
+• Coolant recycle tanks 
+• Service Administration office / IT link 
+• Oil filter inspection / sample room 
+• Tool chests & specialized tooling 
+• Parts cabinets 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved PM Operations Using Specialized Bay 
+DATE 
+3/6/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0607-2.9-1081 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Waste oil evacuation 
+• Lighting / compressed air / water / cleaner / electrical power 
+ 
+The resulting design is an “H type” PM Module for two 793C’s.  
+ 
+ 
+ 
+ 
+ 
+Panoramic view of both bays 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved PM Operations Using Specialized Bay 
+DATE 
+3/6/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0607-2.9-1081 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Access to all areas of truck upper deck 
+ 
+ 
+Access to transmission and rear cab areas 
+ 
+The service workforce also plays an important role in PM efficiency. With skilled technicians 
+already in short supply, a workforce re-categorization can help lower costs and still provide 
+utmost functionality in PM activities. PM technicians can be trained to perform a specific PM job 
+and develop skills by way of becoming familiar with such jobs.  
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved PM Operations Using Specialized Bay 
+DATE 
+3/6/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0607-2.9-1081 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+To complement the PM Module, it is important to ensure technicians have a guide to ensure all 
+PM tasks are done correctly. Varying skill levels, differing languages, needs for continued 
+consistency, and a way to communicate updates all present challenges. The solution is a “work 
+scope,” which includes: 
+• Multiple languages 
+• Step-by-step approach 
+• Graphical displays 
+• Safety reminders 
+• Tooling requirements (including part numbers) 
+• Parts required (including part numbers and quantities) 
+• Fluid details and quantities 
+• Inspection prompts 
+ 
+3.0 Implementation Steps 
+ 
+P.T. Trakindo Utama’s Service Project and Development Department designed the PM Platform. 
+It required approximately 2 – 3 months to assemble the PM platform after the Service Project and 
+Development Department prepared the materials and sent them to the site.  
+ 
+There are several tools needed on the PM Platform such as Fluid delivery, kidney looping, etc. All 
+tools were assembled on PM Platform. 
+ 
+After the PM Platform has been assembled on-site, it is recommended to dry run the platform and 
+make any required modifications. Upon Trakindo’s first dry run, a major improvement was 
+identified to include a PM office on the platform. This office helps technicians in situations where 
+they may need to check SIS about a failure found on the unit, etc. 
+ 
+Once the PM Platform has been installed and ready for production use, the dealer must train the 
+technicians and familiarize them with new PM Platform and related processes. 
+Inbuilt kidney looping (5 micron final filter) for final drive, transmission, and torque converter oil. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved PM Operations Using Specialized Bay 
+DATE 
+3/6/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0607-2.9-1081 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4.0 Benefits 
+ 
+Batu Hijau has 115 units of 793C’s. As a big site, an improvement in the quality of Preventive 
+Maintenance has a high potential to increase the availability of units. Before the site used a PM 
+Platform, average machine downtime for PM 500 was about 8 hours. After implementation of the 
+PM Platform, average machine downtime for PM 500 went down to 6 hours. This reduction 
+certainly increases the availability of trucks and at the same time improves the quality of 
+Preventive Maintenance.  
+ 
+ 
+ 
+ 
+Referring to the table above, for the fleet of 115 793C’s, production increased 1,136,200 tons per 
+year. The benefits of consistent PM also include increased component life and reduced costs. 
+Using the PM Platform also increased the mean time of first stoppage for service after PM, 
+indicating that the quality of PM had been increased. See the chart below: 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved PM Operations Using Specialized Bay 
+DATE 
+3/6/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0607-2.9-1081 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+After Batu Hijau began using the PM Platform in 2005, the mean time first stoppage after PM 
+increased from 100 hours to 140 hours, showing the quality of PM has increased. 
+ 
+5.0 Resources Required 
+ 
+• Investment costs to build PM platform: approximately USD 218,000, not including 
+improvement and adjustment costs. 
+• PM job tools such as kidney looping, hand tools, hoses & adapters, etc. 
+• Technician training in new PM module operation. 
+• Socialization to Customer’s operator, to build operators awareness about the new PM 
+Platform. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Video of PM Platform – can be downloaded separately here
+ (37.1 MB) 
+Trakindo PM Workscope for 793C 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Dina Indria Puspita 
+Service Operation Development – PT. Trakindo Utama 
+Ph. +62 21 789 0544/45 ext 1656  
+Email. dinaindria.puspita@trakindo.co.id 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved PM Operations Using Specialized Bay 
+DATE 
+3/6/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0607-2.9-1081 
+Caterpillar Confidential:  GREEN          Page 6 of 6

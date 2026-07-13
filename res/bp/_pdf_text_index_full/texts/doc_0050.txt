@@ -1,0 +1,312 @@
+SOURCE: 1.0 Maintenance & Repair\1.03 Planning & Scheduling\2. Tactical\3-Stage Wash Bay For Cold Climate.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+0911-1.03-1186 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+3-Stage Wash Bay For Cold 
+Climate 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+3-Stage Wash Bay For Cold Climate ......................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3-Stage Wash Bay for Cold Climate 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-1.03-1186 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+ 
+1.0 Introduction  
+ 
+This document is an example of a practice undertaken at a specific work-site. The detail provided 
+may be site specific therefore the information within should be taken as a suggestion. Please note 
+that the intention of this best practice is to provide an ‘idea’ for reducing delays due to the 
+washing of equipment in cold weather. Specific design detail has not been provided and may 
+need to be further investigated depending on site requirements.  
+ 
+The best practice has been created as a suggestion for the following:  
+ 
+• Efficient use of water 
+• Proper after treatment and disposal of contaminated water and mud  
+• Reduced washing time during freezing period 
+   
+During winter, temperatures at this site average -23 C (-10F), although can drop as low as -40 C 
+(-40F). The time taken to wash a production truck can be more than eight hours due to the ice 
+build-up caused by spraying water on frozen surfaces. This situation can bring about increased 
+planning and shop coordination for PM and specific repairs. This eight-hour process coupled 
+with the occupancy of the washing area can cause delays to other machines. Implementation of a 
+warm-up area can result in increased production. During winter, the warm-up and primary wash 
+processes are the most time consuming steps, both approximately equal in duration. With the use 
+of only one bay initially, it can take about four hours to defrost and four hours to clean equipment. 
+ 
+The combination of oil and soap produces a compound that is expensive to treat. Therefore, there 
+is a need to separate the washing cycle into two processes to first remove oil and to later use 
+soap to clean. This also assists to reduce water consumption.  
+ 
+The two processes are as follows: 
+ 
+• Primary 
+• Finishing 
+ 
+Note that soap is only used during the ‘finishing’ process, with minimal water volume. 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3-Stage Wash Bay for Cold Climate 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-1.03-1186 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The main project consists of three areas: 
+1. Warm-up area 
+2. Primary wash area 
+3. Finishing area 
+ 
+They are complemented with three facilities:   
+1. Component washing area 
+2. Mud collecting area 
+3. Water-oil treatment plant 
+ 
+A separate automated wash bay is used for washing light vehicles and service trucks. This 
+shares the same setup, such as high pressure jets and a hydraulic lift, to allow equipment to be 
+effectively cleaned.  
+ 
+Warm-up area: This is the means of entry into the wash process. The warm up area is separated 
+from the wash bay by a vertical door. High capacity forced air heaters direct the hot airflow to the 
+machine. Soap-free water is used to clean the floor with a high-pressure hose. The facility also 
+contains a soap-free high-pressure water and steam. Mud is directed to a mud-pit by water 
+pressure jets located in a gutter. The gutters are located throughout the midsection of the bay and 
+on the entry and exit sides of each bay. Large amounts of mud are moved with a skid steer 
+loader. Grease is hand shoveled into a used-grease tub, located in the bay, for future treatment. 
+To allow year-round efficient utilization, this area has an adjacent bay on one side for the tire 
+shop. See the layout plan in section six for further clarification. This allows the warm-up area to 
+be used for maneuvering the tire manipulator or as an additional bay for quick fixes when the 
+main shop is crowded. On average, it now takes two hours to defrost equipment. 
+ 
+Primary wash area: This bay breaks down mud and oils which are directed to a mud pit via 
+gutters. A simple oil-water separator exists to separate the oil, which would otherwise not be 
+possible if soap were used. Also, a larger volume of water is required at this stage resulting in a 
+larger volume of runoff into the gutters. On average, this process takes one and a half hours.  
+ 
+This area is equipped with nine soap-free water canons. Components, such as shovel masts and 
+track frames, can be washed in this area whilst onboard a trailer before proceeding to the 
+component washing area. The following list is a configuration of the setup: 
+ 
+• Each side of the primary wash area contains two fixed canons on an elevated catwalk 
+• Two sets of canons are at floor level. One set on each side of the wash area. 
+• One mobile water canon 
+• Soap-free water/steam high pressure washer  
+ 
+Finishing area: With the oil and mud mostly cleaned from the machine, high pressure steam and 
+soap cleaning equipment can now be used to clean the machine with a low volume of water. The 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3-Stage Wash Bay for Cold Climate 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-1.03-1186 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+ 
+emulsified water and oil is directed to a sump and is pumped to a treatment plant. On average, 
+this process takes one and a half hours. 
+ 
+Component washing area: This area is adjacent to the machine wash bay. See the layout plan 
+in section six for further clarification. The following list is a configuration of the setup: 
+• Fifteen ton overhead crane  
+• High pressure steam and soap cleaning equipment 
+• Emulsified water and oil is directed to a sump and is pumped to a treatment plant.  
+ 
+A floor cleaning hose is not used in this area to minimize the water volume being processed at 
+the water-oil treatment plant. 
+ 
+Mud settling basin: The finishing and component wash areas use water jets to direct dirty water 
+and mud to the mud settling basin through gutters. Note that emulsified water and oil are not 
+directed to the mud settling basin. A skid steer loader assists with larger volumes of mud. A 
+gravity fed water-oil separator transfers any overflow from the basin to an exterior basin for final 
+treatment. A wheel loader is used to transfer mud to an external storage area once the mud-
+settling basin becomes full. 
+ 
+Water-oil treatment plant- This is a specialized unit that makes use of physical and chemical 
+processes to separate the emulsified oils from the water. Note that specific details for the 
+treatment plant have not been made available. 
+ 
+3.0 Implementation Steps 
+ 
+Evaluate: 
+• Physical space requirements for current and future equipment 
+• Utilization time of washing installation 
+• Water consumption needed for each area 
+• Mud quantities to be transferred into the holding basin and treatment areas Volume of 
+emulsified water and oil to be treated and treatment areas  
+• Secondary usage of warm-up area when not in use 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3-Stage Wash Bay for Cold Climate 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-1.03-1186 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+ 
+ 
+4.0 Benefits 
+  
+• Average time in each bay 
+o Defrost: 2 hours 
+o Primary 1.5 hours 
+o Finishing 1.5 hours  
+• Overall time saving: 37.5% (average)  
+o Reduction of warm-up time by 50%  
+o Reduction of total wash time by 30%  
+• Improved worker efficiency. Reduced wash-bay delays improve worker effectiveness. 
+• Improved overall efficiency and quality of the washing.  
+• Reduction of non-productive time through an improvement of the wash-bay effectiveness, 
+mainly due to the machine being in the warm-up area instead of waiting outside. 
+• Reduction in the amount of emulsified water and oil to be treated 
+• Ability to contain more equipment in the overall process. 
+ 
+ 
+ 
+5.0 Resources Required 
+ 
+• Engineering department to develop the project 
+• Management acceptance for funding this major investment  
+• Training – Two people are required to operate this facility 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3-Stage Wash Bay for Cold Climate 
+DATE 
+1/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0911-1.03-1186 
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+ 
+6.0 Supporting Attachments / References 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+ 
+For further information, please contact Michel Tremblay as per the below details: 
+ 
+Michel Tremblay 
+Hewitt Equipment Ltd. 
+tremblaym@hewitt.ca 
+(+1) 418-965-6017 
+ 
+ 
+Special thanks to: 
+ArcelorMittal Mines Canada 
+Mont Wright mine, 
+Prov. Quebec, Canada

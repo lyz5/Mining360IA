@@ -1,0 +1,397 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+0608-1.1-1124 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Communicating VIMS 
+Events Using Critical Event 
+Advice 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+Communicating VIMS Events Using Critical Event 
+Advice ........................................................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 6 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 7 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Communicating VIMS Events Using Critical Events Advice 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0608-1.1-1124 
+Caterpillar Confidential:  GREEN          Page 1 of 7 
+  
+1.0 Introduction  
+ 
+Depending on the site, VIMS events can occur on machines occasionally, to very frequently. A 
+system event indicates that the VIMS system has a fault, while a machine event indicates that the 
+machine has been operated outside its intended design envelope.  Managing VIMS events is critical 
+to maintaining goo d machine health.  This Best Practice describes how to communicate the 
+occurrence of machine events to the customer, in a way that is proactive & helpful, rather than 
+reactive and blaming.  This helps make the Dealer/Customer relationship more positive, and increase 
+customer satisfaction by taking the stance that “Prevention is better than Cure”.  It also helps to 
+identify and communicate operator practices that may not be safe. 
+ 
+The Critical Event Advice can lead to greater customer acceptance and commitment towards 
+application management, a potential increase in component life, and the resulting reduction in 
+machine operating costs.  Prior to the Critical Event Advice being implemented onsite, the following 
+difficulties were experienced: 
+• Customers saw VIMS events as a hitting stick for denying poor component life  
+• Customers were defensive about how the machines were operated 
+• It was difficult to convince customers to change operator behavior 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Table 1 below describes how the Critical Event Advice (CEA) process works, from downloading the 
+VIMS data, to how the customer should be approached. 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Communicating VIMS Events Using Critical Events Advice 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0608-1.1-1124 
+Caterpillar Confidential:  GREEN          Page 2 of 7 
+ 
+Table 1 – CEA Process Description 
+ 
+ 
+ 
+NOTE: It is critical that the Dealer Project Manager approach the customer face to face initially (within 
+24 hours), to help personalize the process, and illustrate the importance of the information. 
+ 
+The first task is to download the VIMS data from the machine.  The second task, as stated above, is 
+to add the events to the Site Specific Equipment Health Spreadsheet.  The purpose of this 
+spreadsheet is to keep a running tab of the machine event history of each unit, and to provide the 
+ability to trend events over time.  Figure 2 below is an example of what this spreadsheet can look like. 
+ 
+ 
+Task Description Person 
+Responsible When 
+1. 
+All contract machines will be 
+downloaded at +/- 250 hour 
+intervals. 
+MSS  
+Coordinator 
+Foreman 
+250 hour 
+intervals 
+2. 
+Information will be uploaded into 
+the site specific Equipment 
+Health download spreadsheet. 
+Project Manager At time of 
+download 
+3. All site specific spreadsheets will 
+be copied to the dealer server. Site Admin At time of 
+upload 
+4. 
+All Critical Event exceptions will 
+be communicated to the 
+customer using the Critical Event 
+Advice format. 
+Project Manager Within 24 hours 
+of download 
+5. 
+Initial Communication to the 
+customer MUST be face to face. 
+Initial communication will be 
+followed with an electronic copy 
+of all documentation  
+Project Manager Within 24 hours 
+of download 
+6. All recommendations will be 
+followed up and or implemented Project Manager Within 14 days 
+7. 
+Summary of all Critical Events 
+will be included in the Monthly 
+Report using the Critical Event 
+Summary format. 
+Project Manager Monthly 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Communicating VIMS Events Using Critical Events Advice 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0608-1.1-1124 
+Caterpillar Confidential:  GREEN          Page 3 of 7 
+ 
+ 
+ 
+Figure 2 – Site Specific Equipment Health Spreadsheet 
+Task 4 calls for the communication of recent events to the customer, using the Critical Event Advice 
+(CEA) format.  All details of the event are spelled out in this document, including potential causes, 
+potential ramifications, and suggested action items.  Supporting documentation is also attached 
+electronically when delivered via email.  By going further than simply identifying the event, the 
+communication becomes more proactive, arming the customer with the knowledge of what to do 
+about it. The following page shows an example of an actual CEA.   
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Communicating VIMS Events Using Critical Events Advice 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0608-1.1-1124 
+Caterpillar Confidential:  GREEN          Page 4 of 7 
+
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Communicating VIMS Events Using Critical Events Advice 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0608-1.1-1124 
+Caterpillar Confidential:  GREEN          Page 5 of 7 
+ 
+The final step in the process (task 7) is to provide the customer a summary of the events that have 
+occurred over an extended period (monthly would be recommended).  The following is an example 
+of a monthly CEA summary.   
+ 
+ 
+ 
+ 
+ 
+CRITICAL EVENT ADVICE  
+Monthly Report Summary (Example) 
+ 
+“Name of Your Site” 
+ 
+ 
+ 
+Critical Event Advice 
+Unit ID Event Quantity Reported On 
+Truck 001 
+Engine Overspeed 
+ 
+ 
+Brake Overheat 
+Transmission 
+Abuse 
+Gear Select 
+7 @ 2200 RPM 
+2 @ 2400 RPM 
+1 @ 2600 RPM 
+3 
+3 
+ 
+7 
+20.08.06 
+20.08.06 
+20.08.06 
+20.08.06 
+03.09.06 
+ 
+03.09.06 
+Wheel Loader 
+002 
+As Above As Above As Above 
+Dozer 003 As Above As Above As Above 
+Grader 004 As Above As Above As Above 
+    
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Communicating VIMS Events Using Critical Events Advice 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0608-1.1-1124 
+Caterpillar Confidential:  GREEN          Page 6 of 7 
+3.0 Implementation Steps 
+ 
+A process for downloading VIMS data on a regular basis is necessary.  Storage locations for the data 
+will also be required, depending on data retention requirements.  The customer may wish to have a 
+copy on a local site server, and you may also wish to have a backup copy on a dealer server, to 
+provide access to both parties.   
+ 
+Once data is available, use a template such as the one shown to record all details required about the 
+event.  Make an educated guess (based on machine and local mine site knowledge) about the cause 
+of the event.  Seek advice if necessary, regarding the potential ramifications of the event.  Finally, 
+suggest some actions that may help to reduce the occurrence in future. 
+ 
+It will also be necessary to establish a channel for communicating the CEA.  The recipient may 
+depend upon what type of event has occurred (e.g. Truck overloading events may need to be 
+directed to the production superintendent, while low engine oil events may need to go to the 
+Maintenance Manager or Planner).  Whoever the intended recipient(s), they will need to be aware of 
+the process, and support it.   
+ 
+Steps required to implement this Best Practice: 
+• Establish who will be involved (downloading, analyzing, receiving), and get their commitment 
+• Make sure there is a regular process for VIMS downloads and storage where it is accessible to 
+everyone involved 
+ 
+4.0 Benefits 
+ 
+Increasing Quality (quality of service) – As a result of the CEA process, the dealer has been able 
+to develop a much healthier relationship with both the maintenance and production departments 
+onsite.  The customer now sees the link between machine events, and increased downtime/costs. 
+ 
+Saving Time – Less time and effort is needed to rally around the customer, in order to effect change 
+in operational practices, due to their heightened awareness. 
+ 
+Lowering Cost/Ton (through better component life) – With effective communication between 
+departments, practices that are detrimental to component life can be managed more effectively. 
+ 
+Improving Operator/Technician Safety (identifying unsafe operating techniques) – By catching 
+poor operating practices early, any potential safety issues can be addressed proactively, before an 
+incident occurs.   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Communicating VIMS Events Using Critical Events Advice 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0608-1.1-1124 
+Caterpillar Confidential:  GREEN          Page 7 of 7 
+ 
+5.0 Resources Required 
+ 
+People 
+• Personnel to download VIMS data (if not automated) 
+• Project Manager to produce CEA report from template (minimal time required) 
+ 
+6.0 Supporting Attachments / References 
+ 
+Equipment Health Process Overview – PowerPoint presentation (Click on the “Attachments” tab 
+within this document to view) 
+ 
+7.0 Related Best Practices 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was authored by: 
+ 
+Bill Bacon 
+CSA Manager – Northern Region 
+Hastings Deering 
++61 3 4940 4401 
+bill.bacon@hastingsdeering.com.au 
+ 
+Stuart Wheeler 
+Equipment Management Consultant 
+Caterpillar Global Mining 
++61 3 9953 9272 
+wheeler_stuart_g@cat.com

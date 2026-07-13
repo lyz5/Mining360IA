@@ -1,0 +1,280 @@
+SOURCE: Improving Safety During Repair Management of the 994K.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+August 2022 
+1.11-220810-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+M
+INING DEALER BEST PRACTICE 
+Improving Safety During 
+Repair Management of the 
+994K 
+Maintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+I
+mproving Safety During Repair Management of the 
+994K .......................................................................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 3 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits ............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ........................................... 5 
+D
+ISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving Safety During Repair Management of the 
+994K 
+DATE 
+8/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-220810-1 
+Caterpillar: Confidential Yellow          Page 2 of 5 
+1.0 Introduction  
+ 
+In most mining sites around the world, the safety policy, as well as compliance issues, push 
+mining companies to set up continuous improvement (CI) projects to make the maintenance 
+process better, protecting the lives of technicians during the execution. 
+ 
+In 2020, the first 994K loaders began operating at the S11D mine in Brazil, as part of the customer’s 
+effort to increase iron ore production and increase asset flexibility. The 994K Wheel Loader has a 
+steering frame lock link  that maintains alignment between both fr ames. Sotreq has identified an 
+improved process in handling this link. 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+Figure 1 – 994K Wheel Loader 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving Safety During Repair Management of the 
+994K 
+DATE 
+8/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-220810-1 
+Caterpillar: Confidential Yellow          Page 3 of 5 
+2.0 Best Practice Description 
+ 
+The 994K Wheel Loader steering frame lock link is used during maintenance to avoid crush risk 
+and increase the security of the technicians. The steering lock link has two pins, one in each end.  
+ 
+The image below, shows the details of the steering frame lock link: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2 – 994K steering frame lock link 
+ 
+ 
+ 
+To improve the mechanics' safety, a handling device was welded onto the top of each steering 
+lock pin and on two locations of the steering lock link. These handling devices will reduce the 
+risk of serious injury to personnel. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving Safety During Repair Management of the 
+994K 
+DATE 
+8/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-220810-1 
+Caterpillar: Confidential Yellow          Page 4 of 5 
+3.0 Implementation Steps 
+ 
+SOTREQ removed both pins PN 124-3820 and the link 391-2310 from the machine. A steel bar 
+of 3/8” was welded on the top of both pins and at two locations on the link to create handles. 
+When welding, use pre-heat and low hydrogen wire to reduce the risk of cracking. Inspect the 
+heat affected zone of pins and link for surface cracks up to 48 hours after welding. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                 
+ Figure 3 – (1) Pins PN 124-3820 / (2) Drawing / (3) After Best Practice – Source: Sotreq/Wender Batista 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+      
+Figure 4 – (1) Link PN 391-2310 / (2) Drawing / (3) After Best Practice – Source: Sotreq/Wender Batista 
+ 
+1 
+ 
+ 
+2
+ 
+ 
+3
+ 
+ 
+1 
+ 
+ 
+2
+ 
+ 
+3
+ 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improving Safety During Repair Management of the 
+994K 
+DATE 
+8/9/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.11-220810-1 
+Caterpillar: Confidential Yellow          Page 5 of 5 
+4.0 Benefits 
+ 
+• Safe and efficient removal and install of the steering frame lock link; 
+• Less risk to technicians during maintenance and repair processes; 
+• Improved ergonomics. 
+ 
+5.0 Resources Required 
+ 
+Item Cost 
+Material, ASTM A36 Steel Bar $10 
+Labor, Welder $50 
+ 
+6.0 Supporting Attachments / References 
+ 
+Drawings are attached 
+ 
+7.0 Related Best Practices 
+ 
+• 793D Final Drive Planetary Group Lifting Tool  
+• Exhaust Manifold Lifting Tool – C175 Engines 
+• R&I Tool for 797 Steering Cylinders 
+• Tool for R&I of the 797F High Pressure Fuel Pump 
+ 
+8.0 Acknowledgements 
+ 
+SOTREQ would like to express our admiration for the professionals involved in improving the 
+maintenance and repair process.  
+ 
+SOTREQ thanks the technical contribution of Doug Friedrich of Caterpillar Inc; Thanks Doug. 
+ 
+Wender Batista 
+Sotreq S/A 
+Fleet Performance Consultant 
+E-mail: wender.batista@sotreq.com.br 
+Mobile: +55 (94) 9 9294-2816 
+ 
+Cid Clay Quirino 
+Sotreq S/A 
+Mining Engineering Coordinator 
+E-mail: cid.quirino@sotreq.com.br 
+Mobile: +55 (94) 9 9272-9916 / +55 (31) 9 9899-6108 
+ 
+Arthur Almeida                                                             Doug Friedrich 
+Sotreq S/A                                                                      Caterpillar Inc 
+Technical Consultant                                                      E-mail: friedrich_douglas_w@cat.com 
+E-mail: arthur.almeida@sotreq.com.br 
+Mobile: +55 (031) 9 9785-9765

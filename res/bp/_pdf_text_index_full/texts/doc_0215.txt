@@ -1,0 +1,286 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\2. Tactical\Salvage Jobs Standardization.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2016 
+1506-4.02-1380 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Salvage Jobs 
+Standardization 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Salvage Jobs Standardization .................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Jobs Standardization 
+DATE 
+2/9/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1506-4.02-1380 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+1.0 Introduction  
+ 
+Borusan Makina Kazakhstan has implemented Repair Drawing in the Machine Shop to 
+standardize salvage operations.  
+ 
+Previously, every time the component came in for salvage, the machine operator spent a lot of 
+time searching for information in SIS (for specifications), plus send a request for the drawing 
+required and wait for it. Besides, it created a number of problems like unclear repair 
+requirements, lack of quality control, no repair history, no salvage time planning. 
+ 
+The implementation of Repair drawing has reduced pre-salvage time, standardized salvage 
+operations, improved the quality control and allowed to keep the repair history and plan the 
+salvage operation time.  
+ 
+ 
+2.0 Best Practice Description 
+ 
+Repair Drawing combines component salvage specifications and drawing in one document. It 
+consists of four main parts: 
+ 
+I  -  General information about the component with Repair Drawing No,  
+i.e. W/O No, Component name, Machine Model, Part No and Qty. 
+ 
+II  -  Component salvage specification with the time allocated per each operation, 
+i.e. Operation No, Damage Description, Dimensions before Salvage, Standard 
+Operation Name & Description (or how the defect will be fixed), Material, Procedure & 
+Tools (recommended to use), Technician Name, Planned Time, Actual Time. 
+ 
+III -  Quality Control field with the place for sticker of QC Passed, 
+ 
+IV -  Drawing. 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Jobs Standardization 
+DATE 
+2/9/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1506-4.02-1380 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Page 1. Repair Drawing 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Page 2. Repair Drawing 
+Part I 
+Part II 
+Part III 
+Part IV 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Jobs Standardization 
+DATE 
+2/9/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1506-4.02-1380 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+Repair Drawings are currently kept in MS Word. In the future within the planned implementation 
+of CDOMS (Component Daily Operations Monitoring System) in the Machine Shop, they will be 
+transferred to the software for a more convenient application. 
+ 
+3.0 Implementation Steps 
+ 
+In order to prepare Repair Drawing the following steps should be done: 
+• Determine the defect of the component (usually it is done during the inspection) 
+• Find the procedure that will fix the defect in the SIS 
+• Divide by operations in the Repair Drawing template 
+• Complete all columns of the Repair Drawing template except the columns indicating 
+dimensions before salvage, technician name and actual time spent for each operations 
+• Attach the drawing that was taken from the SIS or DSN inquiry 
+• Give the ready Repair Drawing the operator (the operator will complete the rest columns) 
+• Collect the Repair Drawing after the salvage operations is finished 
+• Keep the Repair Drawing for the Repair History 
+ 
+4.0 Benefits 
+ 
+• Reduced pre-salvage time (there is no need to search for specs and drawings) 
+• Standardized salvage / repair operations 
+• Improved Quality Control 
+• Repair History are kept 
+• Improved planning time for component savage 
+ 
+5.0 Resources Required 
+ 
+• A Qualified Service Engineer with enough engineering experience and a SIS user. 
+• Laptop & printer with A4 Paper. 
+•  
+ 
+6.0 Supporting Attachments / References 
+ 
+EDITOR’S NOTE:  Upon review, Caterpillar has the following recommendations to go with this 
+Best Practice: 
+• Recommend establishing some sort of dating system on the prints, so they know when the 
+print was current.   
+• Recommend establishing a print maintenance program, with the technical svc's group, to 
+assure any changes are installed into their prints, as they are announced through Svc 
+Magazines, or other update publications. 
+• This would parallel any other product update maintenance programs the dealer has for 
+their major component rebuild control documents. 
+• Recommend dealer building their salvage standard jobs with their traditional standard job 
+system (that they use for rebuilding major components) if possible, instead of this Best 
+Practice (different) system. 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage Jobs Standardization 
+DATE 
+2/9/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1506-4.02-1380 
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+ 
+8.0 Acknowledgements 
+ 
+The idea of creating & implementing this Best Practice belongs to: 
+ 
+Yenlik MIRZABEKOVA   Yevgeniy MARSHAL 
+Machine Shop Service Engineer  Machine Shop Team Leader 
+Borusan Makina Kazakhstan LLP   Borusan Makina Kazakhstan LLP 
+ymirzabekova@borusan.com   ymarshal@borusan.com
+   
++7 (701) 763-97-87    + 7 (701) 461 44 76 
+ 
+ 
+This Best Practice was written by:  
+Gulnaz MANSUROVA 
+CRC Process Engineer 
+Borusan Makina Kazakhstan LLP 
+gmansurova@borusan.com 
++7 (701) 951 98 14

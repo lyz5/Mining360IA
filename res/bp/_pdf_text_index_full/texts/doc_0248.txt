@@ -1,0 +1,314 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Plug and Play System for Engine Readiness in the Dynamometer.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2016June 16 
+1605-4.03-1435 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+“Plug and Play” System for 
+Engine Readiness on the 
+Dynamometer  
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Plug and Play System for Engine Readiness in the 
+Dynamometer 
+DATE 
+6/17/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-4.03-1435 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+1.0 Introduction  
+ 
+A good readiness process of the engine on the dynamometer at the time of the performance tests is 
+key to ensuring the correct assessment of all operational parameters. 
+The large number of electrical, hydraulic and pneumatic connections and the great lengths of cables 
+and hoses increase the risk of accidents for the technicians and for the components as well. They 
+also originate connection errors and increase the engine readiness time. The aforementioned gives a 
+disorganized appearance during the engine setting before running the test. See Fig. 1. 
+ 
+ 
+  
+Fig. 1. Engine electrical connection before the upgrade. 
+ 
+This Best Practice aims to improve the aforementioned problems thru the design of a plug and play 
+system for the various connections required at the engine readiness stage when testing on the 
+dynamometer. 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Plug and Play System for Engine Readiness in the 
+Dynamometer 
+DATE 
+6/17/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-4.03-1435 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+2.0 Best Practice Description 
+ 
+This improvement consists of quick, safe and orderly “plug and play” connections, for the 
+installation of the hydraulic, pneumatic and electrical lines that the engine requires  when it is 
+tested during its readiness stage on the dynamometer. This routing of lines from the SISWEB 
+workstation to the dynamometer is done through internal  channel drains of the room; 
+centralizing all the terminals in a single panel on one side and very near the equipment and the 
+engine so as to reduce the lengths and organize the final connecting bridges to the engine. 
+See Fig. 2. 
+ 
+The panel basically consists of the relocation of the following connections listed in the following 
+chart: 
+PLUG AND PLAY CONECTORS 
+1 
+P1 ENGINE OIL PRESSURE INLET 
+P2 ENGINE FUEL PRESSURE INLET 
+P3 ENGINE BOOST PRESSURE INLET 
+P4 TEST POINT PRESSURE INLET 
+2 T ENGINE TEMPERATURES INLET 
+3 ECM ELECTRONIC CONTROL MODULE CONNECTOR 
+4 HYDAC IN HIGH PRESSURE FROM ENGINE INLET (PARTICLE COUNTDOWN) 
+HYDAC OUT LOW PRESSURE TO ENGINE OUTLET(PARTICLE COUNTDOWN) 
+ 
+ 
+ 
+Figure 2. 
+3.0 Implementation Steps 
+From the workstation ports (A) the hoses to the pressure taps of the lubrication system, fuel and air 
+are connected; and the c ables extension for the thermocouples , are taken to the channel drains , 
+enter the point (B) and exit through the point (C), then by a metal conduit s are routed up to the plate 
+(D), which is anchored by bolts to a channel welded to the dynamometer base. See Fig. 3. 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Plug and Play System for Engine Readiness in the 
+Dynamometer 
+DATE 
+6/17/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-4.03-1435 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 3. 
+ 
+4.0 Benefits 
+ 
+The benefits that come with this best practice are safety  oriented, as it seeks to eliminate the risk of 
+falling by tripping due to the large number of electrical, hydraulic and pneumatic connections , which 
+are organized and protected. Thanks to the implementation of plug and play the risk of making wrong 
+connections are greatly diminished, leading to a faster readiness process when running the test. 3. 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Plug and Play System for Engine Readiness in the 
+Dynamometer 
+DATE 
+6/17/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-4.03-1435 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+5.0 Resources Required 
+ 
+List of specific accessories for each connection. See Fig. 4: 
+ 
+ID P/N Description QTY 
+1 N/A Plate (6.3 * 170 *240) mm 1 
+2,5 8T-3613 Nipple AS valved 6 
+6 4U-1697 Adaptor bulkhead 6 
+6A 5B-3254 Nut 6 
+7 145-8833 Union Adapter 6 
+- 6V-4144 Coupler AS 6 
+11 7X-7481 Thermocouple Wire - Bulk (m) 4 
+10 103-8134 Receptacle (12 pins) 1 
+3 155-2255 Plug kit connector (12 pins) 1 
+12 9X-1343 Receptacle (40 pins) 1 
+4 8T-9834 Connector Plug (40 pins) 1 
+- 126-1767 Pin - Connector 12 
+- 126-1768 Socket - Connector 12 
+9 N/A Hose - .25" OD 40m 
+8 N/A Brass Fitting - .25" * .25" 4 
+ 
+ 
+ 
+Figure 4. 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Plug and Play System for Engine Readiness in the 
+Dynamometer 
+DATE 
+6/17/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-4.03-1435 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+6.0 Supporting Attachments / References 
+ 
+Figure 5. 
+ 
+ 
+ 
+ 
+7.0 Related Best Practices 
+• 0906-4.4-1014 - Dyno Room Fluid Lines 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Plug and Play System for Engine Readiness in the 
+Dynamometer 
+DATE 
+6/17/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-4.03-1435 
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+8.0 Acknowledgements 
+ 
+Edwin Galindo Jimenez. | Especialista en reconstrucción de Motores CRC 
+RELIANZ Mining Solutions| Tel: (5) 3361200, | Cel: 3135909609 | 
+jesus.galindo@relianz.com.co | www.relianzcat.com  
+ 
+Emilio Ramos Orozco. | Especialista en reconstrucción de Motores CRC  
+RELIANZ Mining Solutions| Tel: (5) 3361200, | Cel: 3003758338 | 
+emilio.ramos@relianz.com.co | www.relianzcat.com  
+ 
+David A. Gonzalez F. | Ingeniero de Servicio CRC 
+RELIANZ Mining Solutions| Tel: (5) 3361200, Ext: 35257 | Cel: 3008004910 | 
+antonio.gonzalez@relianz.com.co | www.relianzcat.com  
+ 
+Manuel Delgado Martínez | Ingeniero de Bancos de Prueba II 
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 35336 | Cel: 3178479589 | 
+manuel.delgado@relianz.com.co | www.relianzcat.com  
+ 
+Luis Alberto Fernandez Chica | Ingeniero de Desarrollo y Coordinador de Best Practices  
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 5347 |Mobile: 3013724303 | 
+luisalberto.fernandez@relianz.com.co | www.relianzcat.com  
+ 
+Translated by: 
+ 
+Edgard E. Romero Avena | DPC Admin / Learning Solutions Specialist 
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 35186 | Mobile: 3103688012 | 
+edgard.romero@relianz.com.co | www.relianzcat.com

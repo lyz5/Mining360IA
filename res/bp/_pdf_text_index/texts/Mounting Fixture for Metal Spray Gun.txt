@@ -1,0 +1,288 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+October 2023 
+4.02-231002-2 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Mounting Fixture for Metal 
+Spray Gun 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Mounting Fixture for Metal Spray Gun ....................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 7 
+4.0 Benefits ............................................................. 8 
+5.0 Resources Required .......................................... 8 
+6.0 Supporting Attachments / References ............... 8 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ........................................... 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mounting Fixture for Metal Spray Gun 
+DATE 
+10/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231002-2 
+Caterpillar: Confidential Yellow          Page 2 of 8 
+1.0 Introduction  
+ 
+This Best Practice document contains information on how to build a mounting fixture (as shown 
+here for a C175 engine block - Figure 1 and 9) to affix a metal spray gun to an industrial robot.  
+ 
+The use of industrial robot for metal spray purposes allows for precise control and accurate material 
+velocity to create a strong bond coat which is evenly distributed. 
+ 
+2.0 Best Practice Description 
+ 
+Use the fixture to locate the metal spray gun in a way that the robot can utilize all available axes 
+keeping the correct orientation of the spray gun to complete the spray coat.   
+ 
+The manufacture process to build the fixture consists of cutting a 0.5-inch aluminum plate to create 
+an assembly shown as follows:  
+ 
+ 
+ 
+Figure 1. Mounting Fixture Assembly 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mounting Fixture for Metal Spray Gun 
+DATE 
+10/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231002-2 
+Caterpillar: Confidential Yellow          Page 3 of 8 
+ 
+Figure 2 - Units are Inches 
+ 
+ 
+Figure 3 - Units are Inches 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mounting Fixture for Metal Spray Gun 
+DATE 
+10/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231002-2 
+Caterpillar: Confidential Yellow          Page 4 of 8 
+ 
+Figure 4 - Units are Inches 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mounting Fixture for Metal Spray Gun 
+DATE 
+10/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231002-2 
+Caterpillar: Confidential Yellow          Page 5 of 8 
+ 
+Figure 5 - Units are Inches 
+ 
+Figure 6 - Units are Inches 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mounting Fixture for Metal Spray Gun 
+DATE 
+10/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231002-2 
+Caterpillar: Confidential Yellow          Page 6 of 8 
+ 
+Figure 7 
+ 
+ 
+ 
+ 
+ 
+Figure 8 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mounting Fixture for Metal Spray Gun 
+DATE 
+10/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231002-2 
+Caterpillar: Confidential Yellow          Page 7 of 8 
+3.0 Implementation Steps 
+ 
+Use 0.5-inch aluminum plate and machine the different pieces of the assembly. 
+ 
+Drill and tap the holes. 
+  
+Assemble the mounting fixture by welding all pieces together. 
+ 
+ 
+Clamp the fixture into the 6
+th axis of the robot, using mounting screws. 
+ 
+       Assemble the Smart Arc Gun onto the fixture as shown. 
+ 
+ 
+Figure 9. Smart Arc Gun mounted on the fixture application in block Spot Face 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mounting Fixture for Metal Spray Gun 
+DATE 
+10/2/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231002-2 
+Caterpillar: Confidential Yellow          Page 8 of 8 
+4.0 Benefits 
+ 
+• Increases the reach capabilities of the robot 
+• Allows spraying of the cylinder block liner bores of C175 engines 
+• Improves the metal spray Set-Up times, improvement by 30% 
+ 
+5.0 Resources Required 
+ 
+Aluminum plate (0.5-inch thickness) 
+Milling machine 
+Metal spray equipment 
+Industrial robot 
+Welder with aluminum welding capabilities 
+Manufacturing Price ~ 650 USD 
+ 
+6.0 Supporting Attachments / References 
+ 
+• SEBF9238 “Fundamentals of Arc Spray for Reconditioning Components” SIS 2.0 (cat.com) 
+• Drawings see file attachment - Units are Inches 
+   
+7.0 Related Best Practices 
+ 
+4.02-231002-1 Setting Up the Metal Spray Robot Using a Cone Tool 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+ 
+Name: Julian Enrique Pintado / Machine Shop Supervisor 
+E-mail: jpintado@matco.com.mx
+ 
+Company: Empresas MATCO S.A. De C.V. 
+ 
+Recognition: 
+ 
+Team: 
+Jesús Lauro Alvarado / Machine Shop Chief 
+Oscar Javier De La O / Machine Shop Supervisor

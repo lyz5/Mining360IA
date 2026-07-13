@@ -1,0 +1,146 @@
+SOURCE: 1.0 Maintenance & Repair\1.02 Condition Monitoring\3. Quick Win\Oil Filter Cutting Tool (Field Operations).pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+March 2021 
+1.02-210315-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+ Caterpillar: Confidential Green 
+M
+INING DEALER BEST PRACTICE 
+Oil Filter Cutting Tool 
+(Field Operations) 
+Maintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+Oil Filter Cutting Tool (Field Operations) ..................... 1 
+1.0 Introduction........................................................... 2 
+2.0 Best Practice Description .................................... 2 
+3.0 Implementation Steps .......................................... 3 
+4.0 Benefits................................................................. 4 
+5.0 Resources Required ............................................ 4 
+6.0 Supporting Attachments / References ................ 4 
+7.0 Related Best Practices ........................................ 4 
+8.0 Acknowledgements.............................................. 4 
+D
+ISCLAIMER: The information and potential benefits included in this document are based upon information provided by one 
+or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty about 
+the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best Practice” 
+recommendations from our dealer network. 
+
+===== PAGE 2 =====
+THE INFORMATION HEREIN MAY N OT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Oil Filter Cutting Tool (Field Operations) 
+DATE  
+3/15/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.02-210315-1  
+Caterpillar: Confidential Yellow Page 2 of 4 
+1.0 Introduction 
+Oil filters must be inspected during maintenance in order to detect malfunctions of the components 
+in advance and to prevent future malfunctions. It is necessary to remove the filter from the 
+machine, cut the filter and check the elements in the filter.  
+T
+wo best practices have been published in this area of work. One, the Oil Filter Cutting Bench, is a 
+stand that holds the filter while it’s being cut, and aids in the process of removing oil from the filter 
+to check for abnormal elements. The other best practice, OHT Transmission & Hydraulic Filter 
+Replacement Tool, is a ladder stand that allows the technician to safely and easily reach the filter 
+and securely hold it while it’s being cut. These best practices are more suited for shops and pits. 
+However, there is not always an ability to check the filter in these areas. This portable filter cutting 
+tool has been developed to provide easier service and maintenance processes in the field. 
+T
+his tool ensures that the filters are cut without damaging the natural environment and the working 
+environment. For example, m ost of the operations performed in the field use a variety of methods 
+that cause work accidents, such as hand injuries, but this tool helps to reduce those accidents. 
+This tool was also developed with a large oil sump that is aimed at eliminating the risk of oil 
+leaking to the environment. This tool allows for easy portability as well, allowing machine 
+inspections and maintenance to be performed in different locations, such as service vehicles. 
+2.0 Best 
+Practice Description 
+A
+ simple drawing of the filter cutting tool is given in the figure below. The chamber of the tool is 
+made of 0.5 mm thick sheet metal. In addition, th e fixing part is manufactured with an M14 stud. 
+
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY N OT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Oil Filter Cutting Tool (Field Operations) 
+DATE  
+3/15/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.02-210315-1  
+Caterpillar: Confidential Yellow Page 3 of 4 
+3.0 I
+mplementation S teps 
+1. T
+he filter is removed from the machine and placed in the hopper of the tool.
+2. The filter is fixed at three points.
+3. T
+he fixed filter is cut with the help of the filter cutting tool and the process is completed.
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY N OT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Oil Filter Cutting Tool (Field Operations) 
+DATE  
+3/15/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.02-210315-1  
+Caterpillar: Confidential Yellow Page 4 of 4 
+4.0 B
+enefits 
+• P
+ortability that allows cutt ing in service vehicles or next to the machine during maintenance;
+• Reduces work accidents by minimizing the risk of dropping the filter cutting tool;
+• Eliminates oil leaking to the surrounding environment while cutting.
+5.0 Resour
+ces Required 
+Item Cost 
+Material $65 
+Labor $15 
+ Total $80 
+6.0 S
+upporting Attachments / References 
+N
+/A. 
+7.0 Relat
+ed Best Practices 
+• 1106
+-2.14-1036  -  OHT Transmission and Hydraulic Filter Replacement Tool
+• 1506-1.01-1381  -  Oil Filter Cutting Bench
+8.0 Acknowledgement
+s 
+This B
+est Practice was written by: 
+Mustafa Tuzcu 
+CR
+C Engineer Intern 
+Borusan Makina ve Güç Sistemleri 
+This B
+est Practice designed by: 
+Fulya 
+Şahin 
+Service Operation Engineer 
+Borusan Makina ve Güç Sistemleri 
+Ömer
+ Emre Demirkale 
+CRC Manager 
+Borusan Makina ve Güç Sistemleri

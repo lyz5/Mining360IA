@@ -1,0 +1,248 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+October 2006  
+1006-4.2-1029  
+  
+ 
+DEALER BEST PRACTICE SERIES  
+Powertrain Control Valve 
+Rebuild Strategy 
+ 
+Application Maintenance Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+Powertrain Control Valve Rebuild Strategy ............... 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 4 
+5.0  Resources Required .......................................... 4 
+6.0  Supporting Attachments / References ............... 4 
+7.0  Related Best Practices ...................................... 5 
+8.0  Acknowledgements ........................................... 5 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED O R TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Power Train Control Valve Rebuild Strategy 
+DATE 
+24 OCT 06 
+CHG 
+NO 
+02 
+NUMBER 
+1006-4.2-1029 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+1.0 Introduction  
+ 
+Control valves continue to be a critical component for long rebuilt torque converter and 
+transmission service lives. The same technician who rebuilds the clutches, planetary and transfer 
+gear groups typically handles control valve rebuilding – and in the same location.   
+ 
+This Control Valve Rebuild Strategy Best Practice involves separating the valve rebuild process 
+from the other major component activities. It means treating valve rebuilding in a similar 
+environment to diesel engine fuel system service. 
+ 
+ 
+The valve group should be transferred from the general disassembly and cleaning area to a 
+“clean/controlled” environment for rebuild by a specialist. Then after rebuild it is returned to the 
+assembly area for installation. 
+ 
+This rebuild strategy: 
+• Improves valve rebuild consistency and efficiency.  
+• Reduces the power train rebuild technician’s skill  requirements in the general rebuild and 
+assembly functions. 
+• Improves rebuild quality with potential to improve  component life. 
+ 
+2.0 Best Practice Description 
+ 
+Valves are the most complex group in the major component.  A typical rebuild technician 
+processes only one valve group per rebuild job, giving him limited repetitive exposure to valve 
+rebuilding. This situation: 
+• Reduces efficiency. 
+• Increases error risk. 
+• Increases technician skill requirements and cost.  
+ 
+Valve parts are more vulnerable to debris than other component parts and require special 
+cleaning. They are typically hand cleaned in the washers used for other parts. 
+ 
+Valve handling damage and/or poor reuse decisions often result in unnecessary replacement 
+and/or mid-life failures. Heavy debris-related damage can make the root cause of failure difficult 
+to determine. 
+ 
+Valve groups are complex assemblies that are best handled by an experienced specialist.  
+Experience is best developed with job repetition. Repetition may not sufficiently occur if the 
+technician rebuilds the entire major component. It is recommended that a special technician 
+handle the valve group rebuild. 
+ 
+Once removed from the major component, the valve groups must first be transferred to a 
+specialized valve rebuild area.   
+Note:  Some dealers use this area to rebuild other machine-related valves, such as implement, 
+and/or steering clutch and brake valves. 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED O R TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Power Train Control Valve Rebuild Strategy 
+DATE 
+24 OCT 06 
+CHG 
+NO 
+02 
+NUMBER 
+1006-4.2-1029 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+The valve rebuild area should be a climate-controlled area with filtered air inlets that create a 
+positive air pressure to keep other shop dust/debris out. This area may be similar to traditional 
+fuel system rebuild area recommendations.  
+ 
+The valve rebuild area is purpose-designed with: 
+• Valve-specific wash baskets to organize/protect di sassembled parts 
+• Automatic washing equipment for consistent cleanli ness, no damage, and reduced rebuild 
+labor. 
+• Special tools for high-quality work and reduced re build labor.  
+• Effective valve group packaging and contamination control supplies to protect the group until 
+installed on the major component. 
+• Protective staging area where the group will remai n until the general assembly technician is 
+ready to install it into the major component. 
+ 
+The valve group is transferred to the major component general assembly bay when the assembly 
+technician is ready for it.  Staging it in this bay prior to installation is acceptable only if the valve is 
+fully assembled and protected from contamination and external physical damage. 
+ 
+3.0 Implementation Steps 
+ 
+1. Determine the anticipated type and volume of val ves to be rebuilt annually and the forecast for 
+future volumes for at least the next five years. 
+a. Determine the total number of labor hours requir ed to perform valve rebuilds and the 
+number of employees required to supply these hours. 
+b. Establish the amount of space required to disass emble, clean, rebuild, and assemble 
+the valves. 
+c. Establish what handling/storage equipment is req uired to stage incoming, in-process, 
+and outgoing valve groups. 
+d. Include peak factors to accommodate for expected  business cycles, overall 
+increases/decreases, and sudden transients as expected. 
+e. Include specialized product storage (shelves, ca rts, racks, etc.) and handling (cranes, 
+carts, lift trucks, tugs, etc) equipment. 
+2. Establish tooling needs and storage requirements . 
+a. Research current dealer tool inventories and reb uild references/notes. 
+b. Research Caterpillar tool recommendations and re build references. 
+c. Establish needed cleaning, rebuild, and storage equipment for groups and tools. 
+3. Apply the strategy to shop layout plans. 
+a. Consider rebuild location’s effects on product p rotection and flow paths. 
+b. Include shop technician teams in the review/appl ication stages. 
+4. Consider the current segregated fuel system rebu ild area. This area may have reduced 
+utilization with the advent of electronic and/or unit fuel injector applications. 
+  
+5. Develop, adjust and document rebuild procedure w ith quality checklists as needed. 
+6. Establish new/adjusted repair/rebuild time requi rement targets as needed. 
+7. Install the layout/equipment changes into the sh op (This may occur in phases as needed.) 
+8. Train employees to use the new procedures/equipm ent. Follow-up/enforce immediately. 
+9. Review process/equipment performance once establ ished. 
+10. Establish and install any adjustments as needed. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED O R TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Power Train Control Valve Rebuild Strategy 
+DATE 
+24 OCT 06 
+CHG 
+NO 
+02 
+NUMBER 
+1006-4.2-1029 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+ 
+4.0 Benefits 
+• Increased capacity: These concepts reduce space/ti me requirements in the general rebuild 
+bays, allowing the dealer to increase the number of jobs completed in each bay. 
+• Increased space utilization: Fuel rebuild area is often underutilized due to new product 
+designs.  Unused space could be used for valve rebuilding. 
+• Increased quality: Valve rebuild technicians devel op more specialized skills in the most 
+complex rebuild area, increasing rebuild service life 
+• Reduced labor/costs: Dealer technicians work more effectively with more space, specialized 
+support equipment/tools, and fewer job variables.  Valves are rebuilt faster. 
+• Technicians require fewer skills: Specialized jobs  allow dealers to develop/utilize less 
+experienced technicians sooner after hire date. They can also develop them effectively with 
+increasing skill requirements. Technicians do not have to know everything to contribute to a 
+rebuild process. 
+ 
+5.0 Resources Required 
+ 
+• Facility 
+o Re-organize workstation/shop to allow for valve re build process, incoming and outgoing 
+staging, parts washer, and a workbench as needed. 
+o The fuel rebuild area may support this function wi th little resource adjustment, 
+depending on its current status, size, and rebuild volume. 
+• Support Equipment 
+o Well-built washers will cost approximately US$2,00 0 - US$8,000. 
+o A generic workbench to disassemble/assemble valves  as needed. 
+o Specialized Caterpillar tools. (The dealer may alr eady have these.) 
+o Staging equipment/racks as needed for incoming/out going valves. Include containers 
+for valve protection. Eliminates floor staging. 
+o Lifting devices such as cranes may be shared with other functions in the shop. Lift 
+requirements are relatively low for a typical Caterpillar repair/rebuild facility and would 
+be determined by the size of valve groups being handled. 
+o Lifting chains, straps, and/or brackets may also b e shared with other functions. 
+• People 
+o Establish current valve rebuild concerns with team  
+o Establish process, layout, and equipment improveme nts through team. 
+• Training 
+o Define/establish/enforce new processes, roles, and  responsibilities with production 
+teams. 
+ 
+6.0 Supporting Attachments / References 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED O R TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Power Train Control Valve Rebuild Strategy 
+DATE 
+24 OCT 06 
+CHG 
+NO 
+02 
+NUMBER 
+1006-4.2-1029 
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+ 
+ 
+Enclosed dedicated room for pump and valve rebuilds – MATCO CRC in Hermosillo, Sonora, MX 
+ 
+7.0 Related Best Practices 
+ 
+• 1009-4.01-1211 - Transmission Control Valve Test B ench 
+ 
+8.0 Acknowledgements 
+ 
+• This Best Practice was written by: 
+Russ Young 
+Black Belt, Cat Global Mining

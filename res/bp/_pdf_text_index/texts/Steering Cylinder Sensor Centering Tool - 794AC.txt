@@ -1,0 +1,287 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2022 
+4.03-221212-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+STEERING CYLINDER 
+SENSOR CENTERING TOOL 
+- 794AC 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Steering Cylinder Sensor Centering Tool - 794AC ..... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 6 
+4.0 Benefits ............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ........................................... 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Steering Cylinder Sensor Centering Tool - 794AC 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221212-1 
+Caterpillar: Confidential Yellow          Page 2 of 8 
+1.0 Introduction  
+ 
+Due to the lack of a tool for the correct centering of the steering cylinder sensor, a device was 
+designed and manufactured to avoid damage to the sensor stem. 
+ 
+2.0 Best Practice Description 
+ 
+This improvement consists of a disc to keep the sensor centered in the cylinder and a holder to fix the 
+sensor during piston assembly. 
+ 
+To use this tool, you need to perform the following steps: 
+ 
+ 
+1. Install the bar (without adjusting it) to be able to adjust the distance. 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Steering Cylinder Sensor Centering Tool - 794AC 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221212-1 
+Caterpillar: Confidential Yellow          Page 3 of 8 
+2. Install the centering disc on the steering cylinder. 
+ 
+ 
+ 
+ 
+ 
+3. Adjust the bar already centered. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Steering Cylinder Sensor Centering Tool - 794AC 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221212-1 
+Caterpillar: Confidential Yellow          Page 4 of 8 
+4. Remove the centering disc. 
+ 
+ 
+      
+ 
+ 
+5. Adjust the steering cylinder support vertically to center the stem of the sensor assembly. 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Steering Cylinder Sensor Centering Tool - 794AC 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221212-1 
+Caterpillar: Confidential Yellow          Page 5 of 8 
+6. Install part of the piston in the steering cylinder. 
+ 
+ 
+ 
+7. Loosen the nut and turn the clamp pin 90°, lift and remove the clamp. 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Steering Cylinder Sensor Centering Tool - 794AC 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221212-1 
+Caterpillar: Confidential Yellow          Page 6 of 8 
+3.0 Implementation Steps 
+ 
+Manufacture the centering disk and the fastener as shown in the attached drawings. 
+ 
+4.0 Benefits 
+ 
+● Sensor damage prevention during installation 
+● Easy, simple and quick sensor installation 
+ 
+ 
+5.0 Resources Required 
+ 
+● Expense to fabricate the tool US$ 550.00 
+ 
+6.0 Supporting Attachments / References 
+ 
+o Sensor bar  
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Steering Cylinder Sensor Centering Tool - 794AC 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221212-1 
+Caterpillar: Confidential Yellow          Page 7 of 8 
+o Centering disc 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Steering Cylinder Sensor Centering Tool - 794AC 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-221212-1 
+Caterpillar: Confidential Yellow          Page 8 of 8 
+7.0 Related Best Practices 
+ 
+NA 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ Paul Schubert Changra Heredia 
+ Pablo Alcántara Michuy 
+ Ferreyros S.A. 
+  
+The idea for this Best Practice belongs to: 
+ Paul Schubert Changra Heredia 
+Pablo Alcántara Michuy 
+Ferreyros S.A. 
+ 
+This Best Practice was revised by: 
+ Aninu Mitacc Vizcardo 
+ Ferreyros S.A. 
+ aninu.mitacc@ferreyros.com.pe

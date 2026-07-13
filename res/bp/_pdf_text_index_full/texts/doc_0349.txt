@@ -1,0 +1,185 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.05 HSEC - CRC\3. Quick Win\Protection Cage for Hydraulic Press.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+May 2007  
+0507-4.4-1079  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+ Hydraulic Press Protection 
+Cage 
+Application  Maintenance  Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety MARC 
+Management 
+ 
+ 
+Hydraulic Press Protection Cage ............................... 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits ............................................................. 3 
+5.0  Resources Required .......................................... 4 
+6.0  Supporting Attachments / References ............... 4 
+7.0  Related Best Practices ...................................... 4 
+8.0  Acknowledgements ........................................... 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Protection Cage for Hydraulic Press 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0507-4.4-1079  
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+1.0 Introduction  
+ 
+Hydraulic presses use multiple tons of force to remove/install pins, bushings, and other press-fit 
+parts.  This force can cause the part to suddenly give way or fracture, creating a potential risk of 
+flying debris. 
+ 
+Some dealers have designed and built a simple chain link cage around hydraulic presses to 
+protect the operator and other shop personnel from this risk. 
+ 
+This Best Practice is a Quick Win project. 
+ 
+2.0 Best Practice Description 
+ 
+The protective cage (see photos) shown in this Best Practice was designed and fabricated by the 
+dealer.  The key features are: 
+• It is portable and has channels in the base to acc ommodate transport using a forklift. 
+• The cage is painted high visibility yellow. 
+• The back of the cage opens like a gate to allow ac cess to the press and the set up of 
+carriers and other parts on the press. Specific cage dimensions will vary with the press in 
+use, but should allow ample room for operators to move about the press. 
+• The top of the cage is open to allow access by ove rhead or jib crane. 
+• The press is operated by a pigtail remote control while the operator stands outside the 
+cage. 
+• The cage has a view port so the operator can see t he press and hydraulic pump gages. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+ 
+ 
+Cage has open top, gated back, and forklift channels. 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Protection Cage for Hydraulic Press 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0507-4.4-1079  
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+Protects operator and other shop personnel from potential flying debris.   
+ 
+   
+ 
+View Port so operator can see gauges. 
+Pigtail remote control. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Protection Cage for Hydraulic Press 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0507-4.4-1079  
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+5.0 Resources Required 
+  
+• The cage requires 8–10 hours to fabricate  
+• Material cost is under $1000. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+ 
+Special thanks to Finning Chile for their permission to share this information. 
+ 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+6 Sigma Black Belt 
+Global Mining Product Support

@@ -1,0 +1,282 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+April 2024 
+4.02-240418-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Salvage C175 Engine 
+Cylinder Block Upper and 
+Lower Liner Bores Using 
+Metal Spray 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Salvage C175 Engine Cylinder Block Upper and 
+Lower Liner Bores Using Metal Spray  ....................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ............................................................. 5 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ........................................... 6
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage C175 Engine Block Cylinder Block Upper and Lower Liner 
+Bores using Metal Spray 
+DATE 
+4/18/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-240418-1 
+Caterpillar: Confidential Yellow          Page 2 of 6 
+1.0 Introduction  
+ 
+Significant cost savings can be achieved by salvaging the upper- and lower-cylinder block liner 
+bores of the C175 engine cylinder block using metal spray technology. 
+ 
+ 
+ 
+Figure 1. Pitting on upper- and lower-cylinder block liner bores 
+ 
+ 
+2.0 Best Practice Description 
+ 
+This process has been developed as a superior salvage procedure. This procedure eliminates the 
+need to install a machined sleeve when pitting exists on the upper - and lower-cylinder block liner 
+bores in C175 engines. 
+ 
+Upper- and lower-cylinder block liner bores salvage procedure consists of: Machining the cylinder 
+block liner bores to remove the pitting, grit blasting the surface to create the bond interface, metal 
+spraying the surface, and machining the inside diameter of the bore. 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage C175 Engine Block Cylinder Block Upper and Lower Liner 
+Bores using Metal Spray 
+DATE 
+4/18/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-240418-1 
+Caterpillar: Confidential Yellow          Page 3 of 6 
+3.0 Implementation Steps 
+ 
+3.1. Rough cut: Upper- and lower-cylinder block liner bores must be machined to remove the pitting.  
+Most of the time, cutting off 0.040” to the diameter of the bore must by enough. It depends on how 
+deep pitting is. 
+ 
+ 
+ 
+Figure 2. Rough cut on upper and lower seal surfaces 
+ 
+ 
+3.2. Top deck bore and thread protection: Use anti -bond materials to cover and protect all the 
+threads and bores which are near to the area to be sprayed. 
+ 
+ 
+ 
+Figure 3. Top deck bore and thread protected 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage C175 Engine Block Cylinder Block Upper and Lower Liner 
+Bores using Metal Spray 
+DATE 
+4/18/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-240418-1 
+Caterpillar: Confidential Yellow          Page 4 of 6 
+3.3. Grit blasting: Follow the instructions in SEBF2120 “Thermal Spray Procedures for Engine 
+Cylinder Block Top Surface”. Propel a stream of aluminum oxide against the block surface under 
+high pressure to prepare the work piece for metal spray. 
+ 
+ 
+ 
+ 
+Figure 4. Grit blasted surface 
+ 
+ 
+ 
+3.4. Metal spraying the surface: Using an industrial robot and metal spray equipment it is possible 
+to control velocity, distance and position of the spray with a high degree of accuracy improving the 
+strength of the bond and finish of the coating.  For the spraying parameters use the specifications 
+found in SEBF2120 “Thermal Spray Procedures for Engine Cylinder Block Top Surface”. 
+ 
+ 
+ 
+ 
+Figure 5. Spraying upper- and lower-cylinder block liner bores 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage C175 Engine Block Cylinder Block Upper and Lower Liner 
+Bores using Metal Spray 
+DATE 
+4/18/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-240418-1 
+Caterpillar: Confidential Yellow          Page 5 of 6 
+ 
+ 
+Figure 6. Sprayed upper- and lower-cylinder block liner bores 
+ 
+ 
+3.5. Finishing cut: Machine the upper and lower bore surfaces according to the specifications found 
+in the Reuse and Salvage G uidelines SEBF9185 “Specifications and Salvage for Cylinder Blocks 
+in C175 Engines”. 
+ 
+        
+ 
+Figure 7. Upper- and lower-cylinder block liner bores repaired 
+ 
+4.0 Benefits 
+ 
+4.1. Increases the life of the salvage using wear resistant materials to create the coating. 
+ 
+4.2. Eliminates the need to install a machined sleeve when pitting exists on upper- and lower-
+cylinder block liner bores. 
+ 
+4.3. Reduces labor time.  
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Salvage C175 Engine Block Cylinder Block Upper and Lower Liner 
+Bores using Metal Spray 
+DATE 
+4/18/2024 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-240418-1 
+Caterpillar: Confidential Yellow          Page 6 of 6 
+5.0 Resources Required 
+ 
+• Multi-purpose CNC machining center (Rottler F100 Series or similar) 
+ 
+• Grit blasting equipment 
+ 
+• Industrial robot 
+ 
+• Metal spray equipment 
+ 
+6.0 Supporting Attachments / References 
+ 
+• SEBF9185 “Specifications and Salvage for Cylinder Blocks in C175 Engines”. 
+ 
+• SEBF2120 “Thermal Spray Procedures for Engine Cylinder Block Top Surface”. 
+ 
+7.0 Related Best Practices 
+ 
+• Mounting Fixture for Arc Spray Gun 
+ 
+• Setting-Up the Robot Using a Cone Tool 
+ 
+• Salvage C175 Engine Cylinder Block Upper and Lower Liner Bores Using Metal Spray 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Oscar Javier De La O / Machine Shop Supervisor 
+odelao@matco.com.mx 
+Empresas MATCO S.A. de C.V. 
+ 
+Recognition: 
+ 
+Team: 
+ 
+Jesús Lauro Alvarado / Machine Shop Chief 
+ 
+Julian Enrique Pintado / Machine Shop Supervisor

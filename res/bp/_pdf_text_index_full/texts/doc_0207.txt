@@ -1,0 +1,281 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Storage Device to Transport Brake Discs.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2014 
+1407-4.01-1346 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Storage and Transport 
+Basket for Brake Discs and 
+Plates  
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Storage and Transport Basket for Brake Discs and 
+Plates ......................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Storage Device to Transport Brake Discs 
+DATE 
+10/31/2014 
+CHG 
+NO 
+00 
+NUMBER 
+1407-4.01-1346 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+1.0 Introduction  
+ 
+This Best Practice is a fabricated adjustable basket for the quick, safe, and easy storage and 
+transport of brake discs. Previously, a disc storage “tree” style rack was used.  The “tree” rack 
+was typically top heavy and difficult to move from a staging area to the work bay when needed. In 
+general, parts in process are staged in a staging area instead of using work bay space for 
+staging. Parts are delivered “just in time” as required.  This new device reduces the risk of 
+damage to the discs due to tip over of the “tree” design racks. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Ferreyros has developed an adjustable device for the transport of brake discs.  
+ 
+ 
+ 
+                                                                                                                                                       
+     
+ 
+Figure 1 
+    
+ 
+ 
+ 
+        
+ 
+Before 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Storage Device to Transport Brake Discs 
+DATE 
+10/31/2014 
+CHG 
+NO 
+00 
+NUMBER 
+1407-4.01-1346 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+   
+  
+   Figure 2      Figure 3 
+ 
+The storage basket can be adjusted with the help of a pin (made from a steel tube and plastic 
+cover), depending on the size of the brake discs.  A forklift is used to transport the baskets. 
+  
+ 
+ 
+Figure 4 
+ 
+Now 
+Pin 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Storage Device to Transport Brake Discs 
+DATE 
+10/31/2014 
+CHG 
+NO 
+00 
+NUMBER 
+1407-4.01-1346 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+ 
+Figure 5 
+ 
+ 
+Figure 6 – Pin made from steel tube with plastic cover 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Storage Device to Transport Brake Discs 
+DATE 
+10/31/2014 
+CHG 
+NO 
+00 
+NUMBER 
+1407-4.01-1346 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+3.0 Implementation Steps 
+ 
+ 
+The following drawings show the designs with dimensions (in centimeters) of the basket. 
+ 
+ 
+ 
+Basket 
+ 
+   
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+General Basket assembly 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Storage Device to Transport Brake Discs 
+DATE 
+10/31/2014 
+CHG 
+NO 
+00 
+NUMBER 
+1407-4.01-1346 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+ 
+ 
+ 
+                    
+ 
+ 
+4.0 Benefits 
+ 
+• Improved safety in the handling and transport of brake discs. 
+• Improved efficiency 
+• Parts in process are kept organized. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Fabrication of  basket 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Storage Device to Transport Brake Discs 
+DATE 
+10/31/2014 
+CHG 
+NO 
+00 
+NUMBER 
+1407-4.01-1346 
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Aninu Mitacc  
+Ferreyros S.A. 
+ 
+The idea for this Best Practice belongs to:  
+ 
+Quality circle 
+Ferreyros S.A. 
+ 
+Members 
+David Vera Dianderas 
+Juan Sanchez Cuba 
+Jhon Casella Agreda 
+Luis Luy Chavez 
+Antonio Vizcarra Zuasnabar

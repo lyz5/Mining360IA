@@ -1,0 +1,452 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.04 CRC Management\3. Quick Win\Hydraulic Shop Stand for Lubrication of Suspension Cylinders During Assembly.pdf
+PAGES: 12
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Hydraulic Shop Stand for 
+Lubrication of Suspension 
+Cylinders During Assembly 
+ 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+Hydraulic Shop Stand for Lubrication of Suspension 
+Cylinders During Assembly ........................................ 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices .................................... 11 
+8.0 Acknowledgements .......................................... 11 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+January 2013 
+1301-4.04-1306 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+1.0 Introduction  
+ 
+During the rebuild of suspension cylinders, adding oil to the cylinder in the final step is time 
+consuming.  The processes in most of the Disassembly / Assembly guides are to mount the 
+cylinder in a vertical position, add the oil, and then add install the head of the cylinder. 
+ 
+Today, the hydraulic shop has fabricated a stand for the lubrication of the cylinder. 
+ 
+Before this Best Practice, the cylinder was placed vertically using a jib crane all the time, in that 
+position the cylinder was filled with oil. The average time of this operation was two hours. At the 
+present time, it only takes ten minutes. 
+ 
+ 
+D & A Guide Process 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Shop Stand for Lubrication of Suspension 
+Cylinders During Assembly 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.04-1306 
+Caterpillar Confidential:  GREEN         Page 1 of 11 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.0 Best Practice Description 
+ 
+A horizontal stand has been designed to hold the suspension cylinder.  The stand has a tray in the 
+base to make sure no hydraulic oil can spill on the shop floor.  
+ 
+The use of the stand reduces the time required by 90% and the bay jib crane is only required for a 
+few minutes to mount the cylinder instead of the normal 2 hours.  The crane can then be used for 
+other tasks. 
+ 
+ See photo 1. 
+ 
+ 
+ 
+ 
+Photo 1: Suspension Cylinder Stand 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Drip Pan Adjustable 
+Support 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Shop Stand for Lubrication of Suspension 
+Cylinders During Assembly 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.04-1306 
+Caterpillar Confidential:  GREEN         Page 2 of 11 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Implementation Steps 
+ 
+• Fabricate a lubrication stand.  Prints are provided below. 
+ 
+• The process 
+ 
+1. Assemble Cylinder is placed on the stand using the jib crane.  Photo 2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Photo 2. Cylinder placed 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Adjustable Support –  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Shop Stand for Lubrication of Suspension 
+Cylinders During Assembly 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.04-1306 
+Caterpillar Confidential:  GREEN         Page 3 of 11 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+2. Rotate the cylinder 90 degrees.  Photo 3 below. 
+ 
+ 
+ 
+ 
+Photo 3. Direction of rotation 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Shop Stand for Lubrication of Suspension 
+Cylinders During Assembly 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.04-1306 
+Caterpillar Confidential:  GREEN         Page 4 of 11 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.  Install stand lock bar in order to keep the cylinder in position. 
+ 
+ 
+ 
+Photo 4. Lock bar 
+ 
+4. Fill with oil using an oil pump. 
+ 
+ 
+ 
+ 
+Photo 5.   Fill with oil 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Shop Stand for Lubrication of Suspension 
+Cylinders During Assembly 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.04-1306 
+Caterpillar Confidential:  GREEN         Page 5 of 11 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4.0 Benefits 
+ 
+• Reduce lubrication time by 90%. 
+• Before this Best Practice, the jib crane was used all the time during lubrication process.  Now 
+the jib crane is just used for eight minutes approximately. 
+• Improve ergonomics and safe handling. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Fabrication Workshop. 
+• The average cost of this device is $ 1,500 USD (based on $50/hour labor rate)            
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Shop Stand for Lubrication of Suspension 
+Cylinders During Assembly 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.04-1306 
+Caterpillar Confidential:  GREEN         Page 6 of 11 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Shop Stand for Lubrication of Suspension 
+Cylinders During Assembly 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.04-1306 
+Caterpillar Confidential:  GREEN         Page 7 of 11 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Shop Stand for Lubrication of Suspension 
+Cylinders During Assembly 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.04-1306 
+Caterpillar Confidential:  GREEN         Page 8 of 11 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Shop Stand for Lubrication of Suspension 
+Cylinders During Assembly 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.04-1306 
+Caterpillar Confidential:  GREEN         Page 9 of 11 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Shop Stand for Lubrication of Suspension 
+Cylinders During Assembly 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.04-1306 
+Caterpillar Confidential:  GREEN         Page 10 of 11 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Name     Frank Córdova R. 
+E mail     
+frank.cordova@ferreyros.com.pe 
+ 
+Recognition: 
+ 
+Team:                  Mario Femenia / Hydraulic Chief 
+         Roberto Bonilla / Hydraulic Supervisor 
+                 Miguel Mauriola / Operations Support Chief 
+       Frank Córdova / Operations Support Assistant 
+Sponsor:              Rodolfo Gerstein / Manager Machine Shop 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Shop Stand for Lubrication of Suspension 
+Cylinders During Assembly 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-4.04-1306 
+Caterpillar Confidential:  GREEN         Page 11 of 11

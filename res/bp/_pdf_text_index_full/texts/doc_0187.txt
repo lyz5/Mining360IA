@@ -1,0 +1,259 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Engine Wiring Harness Installation Aid - C175 Engines.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+April 2016 
+1603-4.01-1419 
+  
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  SERIES  
+Engine Wiring Harness 
+Installation Aid - C175 
+Engines 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Engine Wiring Harness Installation Aid - C175 Engines ........ 0
+ 
+1. Introduction ................................................................ 1 
+2. Best Practice Description .............................................. 1 
+3. Implementation Steps ................................................... 5 
+4. Benefits ...................................................................... 5 
+5. Resources Required ..................................................... 5 
+6. Supporting Attachments / References............................. 5 
+7. Related Best Practices .................................................. 6 
+8. Acknowledgements...................................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+MINING BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Engine Wiring Harness Installation Aid - C175 Engines 
+DATE 
+4/1/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1603-4.01-1419 
+Caterpillar Confidential:  YELLOW          Page 1 of 6 
+1. Introduction  
+ 
+The engine wiring harness groups have a large number of small parts used in its installation.  
+Matco has implemented a process to aid in the installation of the engine wiring harnesses on 
+C175 engines.  Installation of these harnesses was found to be challenging and time consuming, 
+and a more visible guide was desired to aid the assemblers.   
+ 
+2. Best Practice Description 
+ 
+This Best Practice uses a print of each of the main engine wiring groups.  Each print is printed on 
+a large background using a plotter-type printer.  They are then displayed temporarily in the 
+assembly bay while the harnesses are being installed.  The assembler then has a very clear, 3-D 
+image of the harnesses and all their connectors, as well as a storage location for each part.   
+ 
+ 
+ 
+      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+MINING BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Engine Wiring Harness Installation Aid - C175 Engines 
+DATE 
+4/1/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1603-4.01-1419 
+Caterpillar Confidential:  YELLOW          Page 2 of 6 
+ 
+Close up illustrating the many small parts involved: 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+MINING BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Engine Wiring Harness Installation Aid - C175 Engines 
+DATE 
+4/1/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1603-4.01-1419 
+Caterpillar Confidential:  YELLOW          Page 3 of 6 
+ 
+Prior to being printed, each print is imported into Microsoft Paint program and is edited to show a 
+cabinet location for each part.  Also added is an indicator if the part is part of an assembly kit.  The 
+‘Meas Unit’ field was changed to LOC (location) Cabinet.  Also a line was added to create another 
+column so that an indicator (in this case a “B”) could be used to indicate that this part is included in 
+their parts kit.  
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+MINING BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Engine Wiring Harness Installation Aid - C175 Engines 
+DATE 
+4/1/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1603-4.01-1419 
+Caterpillar Confidential:  YELLOW          Page 4 of 6 
+Cabinet drawers are organized and labelled to store replacement parts for easy retrieval and 
+stocking.  
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+MINING BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Engine Wiring Harness Installation Aid - C175 Engines 
+DATE 
+4/1/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1603-4.01-1419 
+Caterpillar Confidential:  YELLOW          Page 5 of 6 
+It is suggested that the prints are affixed to plexiglass for protection, and to enable simple edits 
+with a marker as needed.   
+ 
+ 
+ 
+3. Implementation Steps 
+ 
+• Send email to Gallagher_William_L@cat.com requesting, by part number, the engine wiring 
+group.   
+• Set up a cabinet of drawers with the required spare parts, divided and labelled appropriately 
+with part number, location code, and quantity per engine.  
+• Open the prints in Microsoft Paint and add the location codes next to each part.  
+• Make large print-outs that can be referenced easily during installation of the harnesses.  
+   
+4. Benefits 
+ 
+• Organized, easily and quickly retrieved parts.  
+• Clear visual representation greatly improve installation process efficiency. 
+• Reduced time to install C175-20 wiring harnesses from 48 man hours to 6 man hours. 
+ 
+5. Resources Required 
+ 
+• Suitable parts cabinet w/ drawers and dividers 
+• Resource to set up and label cabinet, and to designate cabinet locations on the print 
+• Process to restock as necessary 
+ 
+6. Supporting Attachments / References. 
+ 
+None 
+ 
+
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+MINING BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Engine Wiring Harness Installation Aid - C175 Engines 
+DATE 
+4/1/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1603-4.01-1419 
+Caterpillar Confidential:  YELLOW          Page 6 of 6 
+7. Related Best Practices 
+ 
+None 
+ 
+8. Acknowledgements 
+ 
+This Best Practice procedure was developed by: 
+ Kiwi Haig, CGM 
+ Jesus Campos, Empresas Matco S.A. de C.V 
+ Fernando Preciado, Empresas Matco S.A. de C.V 
+ 
+This Best Practice was written by: 
+ Bill Gallagher 
+ +1 309 675 8085 
+ GALLAGHER_WILLIAM_L@cat.com
+ 
+ C at Global Mining

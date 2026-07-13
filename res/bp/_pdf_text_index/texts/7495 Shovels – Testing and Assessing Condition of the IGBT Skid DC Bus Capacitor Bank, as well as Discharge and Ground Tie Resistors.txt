@@ -1,0 +1,802 @@
+===== PAGE 1 =====
+July 2023 
+1.01-230724-1
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining  
+M
+INING DEALER BEST PRACTICE 
+7495 Shovels - Testing and 
+Assessing Condition of the IGBT 
+Skid DC Bus Capacitor Bank, as 
+well as Discharge and Ground Tie 
+Resistors 
+Maintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+           7495 Shovels - Testing and Assessing Condition...…...1 
+1.
+0 Introduction .......................................................... 2 
+2.0 Best Practice Description.................................... 6 
+3.0 Implementation Steps ......................................... 7 
+4.0 Benefits .............................................................. 20 
+5.0 Resources Required ......................................... 20 
+6.0 Supporting Attachments / References ............. 21 
+7.0 Related Best Practices...................................... 21 
+8.0 Acknowledgements ........................................... 21 
+I
+SCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 2 of 21 
+1.0 Introduction  
+ 
+           The purpose of this document is to provide methodology to test, and assess the condition of DC Bus 
+           (DC Link) Capacitors, DC Bus Precharge/Discharge Resistors, and the Ground Tie (Ground Fault)  
+           Resistors on board the 7495 shovels. 
+ 
+DC Bus Capacitors are utilized in the IGBT Skid (Motion Drive) to stabilize and store DC Current 
+produced by the AFE (Active Front End) IGBT’s while working in the Motoring (Rectification) Mode. 
+ 
+This current is then used by the individual Motion Inverters (Hoist, Swing and Crowd) to produce  
+Variable Frequency AC Current, required for fluent motor speed and torque control: 
+ 
+ 
+ 
+  ELECTROCUTION HAZARD - The electrical system contains hazardous voltage levels. 
+DO NOT remove any covers that will expose energized hazardous-voltage electrical 
+components without shutting down and discharging the electrical system. 
+DO NOT perform any maintenance on the electrical system until after the electrical system has 
+been shut down and the voltage has been discharged by qualified personnel. 
+Read and understand the instructions and warnings found in the Operation and Maintenance 
+Manual to properly shut down the electrical system and discharge hazardous-voltage 
+electrical components. 
+Failure to follow these instructions will result in personal injury or death. 
+ 
+ 
+When service or maintenance must be performed in a hazardous-voltage component 
+enclosure, always assume that a hazardous voltage level could be present. 
+Qualified personnel should manually check for hazardous voltage using electrical measuring 
+tools that have the capacity to measure the hazardous-voltage components being checked. 
+The voltage level present must be confirmed to be below 50 Volts before any exposure to the 
+hazardous-voltage components can take place. 
+Failure to follow these instructions could result in personal injury or death. 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 3 of 21 
+ 
+ 
+Fig 1 – Location of DC Bus (DC Link) Capacitors in the 7495 IGBT Skid – typical 
+ 
+ 
+ 
+Fig 2 – DC Bus Capacitors C12, C22, C13 & C23 in the Crowd Inverter Cabinet (left), and  
+Capacitors C32, C42, C33 & C43 in the Swing Inverter Cabinet (right)  
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 4 of 21 
+ 
+ 
+                                       Fig 3 – Eight DC Bus Capacitors as shown in the Siemens IGBT Schematic 
+ 
+ 
+Although the DC Bus (DC Link) Capacitors are very reliable components, they may fail due to 
+temperature extremes (overheating), voltage spikes, but most commonly due to electrical erosion 
+(arcing) at the Power Connecting Blades or Sockets: 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 5 of 21 
+ 
+ 
+                  Fig 4 –  Capacitor Power Connecting  Blade deteriorated by arcing – typical 
+ 
+ 
+ 
+                                  Fig 5 –  Capacitor Backplane Connections (Sockets)  
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 6 of 21 
+2.0 Best Practice Description 
+ 
+             As this procedure is based on recording a DC Bus Capacitor Bank voltage, discharged through a set  
+   of Precharge/Discharge Resistors, and Ground Tie Resistors, the current condition of individual    
+   resistors connected across a DC Bus will be affecting the total resistance of the DC Bus. 
+   
+   Resistors connected across the DC Bus are shown on the Siemens schematic excerpt below: 
+ 
+ 
+ 
+                                                      Fig 6 –  Resistors across DC Bus 
+ 
+S  
+S           Since the noted Resistors are not only involved in discharging the DC Bus, but also in pre-charging   
+   The DC Bus, it is recommended to inspect them and verify resistance of each section – refer to  
+             Step 10 at the end of the procedure. 
+ 
+             This is especially important with shovels that have been in operation for several years. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 7 of 21 
+3.0 Implementation Steps 
+ 
+Prior to inspecting any electrical components connected to the DC Bus, perform the mine approved  
+   machine isolation procedure and ensure that the DC Bus has been discharged. 
+   Refer to Special Instruction M0071820-01 
+ 
+ 
+ 
+                                Fig 7 – Location of Discharge & Pre -charge Resistors atop the IGBT Skid  
+ 
+ 
+ 
+               Fig 8 – View of DC Bus Discharge and Ground Fault Resistors –  left side facing Skid  
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 8 of 21 
+ 
+ 
+      Fig 9 – View of DC Bus Discharge Resistors and Pre-charge Limiting Resistor –  right side of Skid 
+  
+           
+ 
+                                        Fig 10 – Total resistance values of DC Bus and each Resistor section  
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 9 of 21 
+In order to quickly verify whether or not the DC Bus Pre-charge/Discharge Resistors and the Ground 
+Tie Resistors did not deteriorate with time and operating conditions, it is recommended to obtain 
+quick reference reading of DC Bus Resistance, should the actual total DC Bus Resistance be 
+significantly different then calculated value of 4817 Ω  +/_ 300 Ω 
+ 
+To perform this task, ensure that all applicable safety procedures have been applied, and that the DC 
+Bus has been discharged. 
+ 
+At this point, locate the DC Bus (DC Link) Voltage Transducers U152 (wires 0842 & 0843) and U452 
+(wires 0742 & 0743), and use a quality multimeter set to Ohm's scale, to read the DC Bus Total 
+Resistance. Record this value, to be used later in Capacitor Test Calculator. 
+ 
+Refer to images below for reference: 
+ 
+ 
+ 
+F         Fig 11 – Location of DC Bus (DC Link) Voltage Transducers U452 and U152 in the Transducer Tray 
+ 
+ 
+NOTE:  This Transducer Tray is in the Control / Power Supply Cabinet of the IGBT   Skid on the 
+older vintage machines, and in the cabinet located at the back of the SIBAS  
+             Cabinet (rear of skid) on the newer machines. 
+ 
+ 
+
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 10 of 21 
+            
+ 
+ 
+                                  Fig 12 –  Schematic of U452 and U152 Connections to DC Bus 
+ 
+ 
+ 
+ 
+In order to test and assess the condition of DC Bus Capacitor, a (Windaq/Dataq) recording will be  
+required, followed by review of the recordings, and entry of captured data into specially prepared 
+Calculation Sheet.  
+      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 11 of 21 
+Step 1] Using the Reference Recording provided with this publication, open the WinDaq Pro+ Data  
+                         Acquisition software and create a recording of the required signals. 
+ 
+             NOTE: 
+             Please verify that the Test Panel channels are set to +/- 10V FS (Full Scale), and the BEB 
+             Circuit Channel is set to +/- 1000V FS to avoid potential oversaturation and damage to  
+             DATAQ Recorder Channel Amplifiers 
+ 
+           Step 2] Using the IGBT Skid Test Panel, as well as Siemens Schematics, connect the DATAQ  
+                         ( Windaq ) Recorder to capture the following signals: 
+ 
+a) DC Bus Voltage Transducers (DCV#1 and DCV#2) 
+b) Chopper Current Transducers (ICH#1 and ICH#2) 
+c) BEB Pushbutton  
+   
+                 
+ 
+                                        Fig 13 – Test Panel recording points  
+ 
+ 
+ 
+ 
+
+
+===== PAGE 12 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 12 of 21 
+ 
+ 
+                                  Fig 14 – BEB Circuit (wire UP28) HTB2-19 or K06 recording point  
+ 
+ 
+            Warning: This is a 120V AC circuit, and connecting the Dataq / Windaq recorder may require removal  
+                             of power by turning off the UPCB Breaker in the ZAC Cabinet  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 13 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 13 of 21 
+ 
+ 
+                         Fig 15 –  BEB Circuit NODE 7 PLC (Input I36.3) alternative recording point  
+ 
+Warning: This is a 120V AC circuit, and connecting the Dataq / Windaq recorder may require removal  
+                             of power by turning off the UPCB Breaker in the ZAC Cabinet  
+ 
+ 
+ 
+STEP 3] If the IGBT Skid is still running (DC Bus is up and approximately 1800V is displayed on the  
+                          HMI overview screen), start the Recorder, and then push the BEB button. 
+ 
+                          If the shovel is not running, start it up, allow the DC Bus to reach 1800V DC and stabilize  
+                          (Allow to run for ~1 minute after reaching 1800V), start the Recorder, and then push the  
+                          BEB button. 
+ 
+                          Shortly after the DC Bus value on the HMI Overview Screen reaches “zero “volts, stop the  
+                          Recorder, and close the recording. 
+ 
+ 
+
+
+===== PAGE 14 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 14 of 21 
+STEP 4]   After the recording has been stopped, utilize the WinDaq Waveform Browser to replay the   
+                           Recording.  
+                           Since we will be investigating the DC Link Voltage, as well as elapsed time since BEB has  
+                           been activated, using the View dropdown menu, format the screen to display only the      
+                           three significant channels / signals of interest, utilizing the User-specified format option: 
+ 
+ 
+ 
+                                                Fig 16 – Formatting Screen to User -specified format  
+ 
+                                               
+ 
+                                           Fig 17 – Formatting Screen to display 3 top channels only  
+ 
+ 
+
+
+===== PAGE 15 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 15 of 21 
+STEP 5]   At this point, use the Compression option in the Edit dropdown menu, to find the point on  
+                           the recording where the BEB Pushbutton was activated. In this example compression of 20    
+                           was used: 
+ 
+              
+ 
+                                                         Fig 18 – Applying compression factor of 20  
+ 
+Once the compressed screen appears, move the Cursor Line by clicking the mouse immediately 
+below the Cursor Line, and dragging it to the beginning of area where the BEB signal dropped off.  
+ 
+          
+                                              
+                                        Fig 1 9 – Moving the Cursor Line to the point of interest  
+ 
+
+
+===== PAGE 16 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 16 of 21 
+Now observe the AFE Regeneration Points (dips) on the recording and move the cursor to the point 
+passed the end of the last regeneration point. At this stage, decompress the recording to 
+compression factor of 1. 
+ 
+                 
+ 
+        Fig 20 – Relocating cursor and decompressing the recording to original state – compression of 1  
+ 
+STEP 6]   At this point, review the DC Link Voltage signal to find the area of the last AFE        
+                Regeneration Point, and move the Cursor Line to the edge of the very next division  
+                (vertical grid line) on the recording.  
+                This will be the starting point of the voltage and time measurement: 
+ 
+ 
+ 
+                 Fig 21 – Moving Cursor Line to the next division just passed the AFE Regeneration Point  
+ 
+ 
+
+
+===== PAGE 17 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 17 of 21 
+STEP 7] From the position established as the Starting Point of the measurement, make note  
+                          of the DC Bus Voltage and Recording Time: 
+ 
+ 
+ 
+                        Fig 22 – Starting point of the measurement - note the DC Bus Voltage and Recording Time  
+ 
+STEP 8] Now move the recording forward (to the right) by using the right Arrow on the Slider Bar, 
+                          or the Slider button at the bottom of the screen, to the division line just prior to the voltage  
+                          signal dropping off (Choppers firing point). 
+                          From the position established as End Point of the measurement, make note of the DC    
+                          Bus Voltage and Recording Time: 
+ 
+         
+ 
+                             Fig 23 – End point of the measurement - note the DC Bus Voltage and Recording Time  
+ 
+
+
+===== PAGE 18 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 18 of 21 
+          STEP 9]  At this point close the WINDAQ Software opting for “ Exit with No save “, 
+ 
+                                             
+ 
+                   and utilize the 7495 IGBT Capacitor Test Calculator provided with this publication, to enter  
+                         values previously noted at the Starting point of the measurement, the End point of the  
+                         measurement, as well as the DC Bus Voltage and Resistance into the Excel spreadsheet: 
+ 
+      
+ 
+               Fig 24 – IGBT Capacitor Check Calculator with recording values entered -  full capacitance present  
+ 
+            Important Note: 
+ 
+              Please enter the relevant values obtained from the recordings in the cells highlighted in    
+              yellow, in the rows annotated with the word “Enter “only. 
+              Do not attempt to change any other values, as this will falsify the calculation.  
+ 
+   If the measured DC Bus Resistance was different from the calculated value of 4817 Ω +/- 300 Ω ,  
+               then enter the Total Bus Resistance Measured value in the IGBT Capacitor Check Calculator. 
+ 
+
+
+===== PAGE 19 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 19 of 21 
+STEP 10] Should the measured DC Bus Resistance be different from the calculated value of 4817 Ω  
++/- 300 Ω , at this point, inspect condition of Resistors, wiring and terminations atop the        
+IGBT Skid. Removal of IGBT Skid Top covers will be required – for location reference see      
+                  Fig 7 through Fig 9, on pages 8 and 9 of this publication.                                                                                                                                                             
+ 
+                 Disconnect one wire feeding each Resistor Section, and using an Ohmmeter verify resistance            
+                 against the annotated drawing from Fig. 10 below: 
+ 
+ 
+ 
+ 
+   The acquired resistance readings, and comments resulting from the inspection can be entered in    
+   the 7495 IGBT Capacitor Test Calculator. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 20 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 20 of 21 
+4.0 Benefits 
+ 
+Early detection of DC Bus capacitance fluctuation will ensure solid power source for the IGBT 
+Modules. 
+ 
+It has been proven through historical machine failure data that failure of DC Link Capacitor will 
+consequently lead to failure of the IGBT Module, and thus testing of the DC Link Capacitors 
+should become a part of annual preventive maintenance practices. 
+Implementation of this practice will increase machine reliability, and control Total Operating Costs 
+of the 7495 Shovel. 
+ 
+ 
+5.0 Resources Required 
+       
+• High Voltage Gloves and Capacitor Discharge Tool as per Special Instruction M0071820-01 
+• 8 Channel Analog Input DATAQ Recorder 
+• WinDaq Pro+ Data Acquisition software, and WinDaq Waveform Browser software 
+• Laptop preloaded with the above WinDaq Acquisition and Browser software  
+• BNC Test Cables with Banana Plugs for the use on Test Panel Points ( +/- 10V DC ) 
+• Test Leads with Banana Plugs for BEB Circuit leads ( 120V AC ) rated at 1000V DC.       
+     
+             
+ 
+                Fig 25 – Twisted pair of 1000V Test Leads (left) and BNC low voltage cable (right)  
+ 
+ 
+ 
+
+
+===== PAGE 21 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Caterpillar 7495 Shovels - Testing and Assessing 
+Condition of the IGBT Skid DC Bus……… 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230724-1 
+Caterpillar: Confidential  Yellow                Page 21 of 21 
+6.0 Supporting Attachments / References 
+ 
+ 
+Attachments: 
+ 
+ 7495 IGBT Capacitor Test Calculator 
+ 
+ Special Instruction M0071820-01 
+Procedure to Verify No Power on the IGBT in DC Bus 
+ 
+ Disassembly & Assembly Procedure M0069644-50 
+DC Bus Capacitor – Remove & Install (including discharge information) 
+ 
+ Service Magazine M0078294-01 
+Inspection Procedure for DC Bus Capacitor 
+ 
+ DC Bus Discharge Reference Recording – Master 
+ 
+ Instructions how to use WinDaq Reference File (Recording) 
+ 
+ 
+References:  
+ 
+ 
+     Parts Reference: 
+ 
+                DC Link Discharge Resistors 10k Ω       BI 62041410    SAP 1125430   CAT  472-3609 
+ 
+                Ground Tie Resistors 33 k Ω                   BI 62041411    SAP 1125431   CAT  472-3610 
+ 
+                DC Bus Capacitor 2000 µF                       BI 62039652     SAP 1124165   CAT  472-6699 
+ 
+     Capacitor & IGBT Power Tips Grease     BI 1579910       SAP 1579910   CAT  529-3659 
+ 
+ 
+7.0 Related Best Practices 
+ 
+Not available 
+ 
+8.0 Acknowledgements 
+ 
+                  SPECIAL THANKS to Caterpillar’s Electrical Service Manager, Electric Rope Shovels,  
+                   PLC, Drive System, for his engineering assistance in creating this publication.

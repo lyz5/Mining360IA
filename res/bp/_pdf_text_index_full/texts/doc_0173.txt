@@ -1,0 +1,641 @@
+SOURCE: 3.0 Component Life Management\3.04 Removal & Installation\3. Quick Win\Manufacture Oversize Hoist Bolt Kit.pdf
+PAGES: 10
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ June 2016 
+1512-3.04-1406 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Manufacture Oversize 
+Hoist Bolt Kit  
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+1.0
+ Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 8 
+5.0 Resources Required .......................................... 9 
+6.0 Supporting Attachments / References ............... 9 
+7.0 Related Best Practices ...................................... 9 
+8.0 Acknowledgements ............................................ 9 
+Recognition ................................................................ 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Manufacture  Over Size Hoist Bolt Kit  
+DATE 
+7/1/2016 
+CHG 
+NO 
+000 
+NUMBER 
+1512-3.04-1406 
+Caterpillar Confidential:  GREEN          Page 1 of 9 
+1.0 Introduction 
+ 
+This improvement has been entered into the production line serviceable components Finning 495HR 
+CRC Shovels and Drilling. Finning had to manufacture oversize bolts which have the function of 
+extending the use of the Drum and Crown components. 
+ 
+2.0 Best Practice Description 
+ 
+Generally in the assembling processes of the hoist drum (Drum P/N S006620 and Crown P/N 
+E020030-01), the following pin is used: bolt P/N B006876-01 - Standard measurement (1.750") or bolt 
+P/N B006876-02 – Standard measurement (1.810”).  
+When the bolt B006876-01/02 cannot be used because of the bolt bore is out of line and will not fit, 
+we need to manufacture an oversize bolt to reuse components. 
+ 
+Cross Reference 
+    Bucyrus  Caterpillar 
+Hoist Drum     S006620  1401502 
+Crown   E020030-01  1389171 
+Bolt   B006876-01  1271430 
+Bolt   B006876-02   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Manufacture  Over Size Hoist Bolt Kit  
+DATE 
+7/1/2016 
+CHG 
+NO 
+000 
+NUMBER 
+1512-3.04-1406 
+Caterpillar Confidential:  GREEN          Page 2 of 9 
+3.0 Implementation Steps 
+ 
+A. STANDARD BOLT MANUFACTURING CAT PARTS PN B006876-01 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                        
+Picture 1 
+ 
+ 
+Figure 1.  This picture represents crown fixing bolt and drum, nominal size 1.750” +/- 0.002”  
+ 
+A. OVERSIZE BOLT FOR COMPONENTS SALVAGE 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                   
+Picture 2 
+ 
+ 
+ 
+Figure 2, The oversize bolt with 1.830” nominal size for Drum and Crown assembly.  The bolt is 
++0.080 larger than original diameter to assure it fits with the bolt bore. 
+ 
+ 
+ 
+ 
+ 
+ 
+Bolt  PN B006876 
+Description Measure 
+Head 2.750” 
+Body 1.750” 
+Thread 1.750 – 5 UNC 
+Bolt length  7.250” 
+Bolt  PN B006876- SM 
+Description Measure 
+Head 2.750” 
+Body 1.830” 
+Thread 1.750 – 5 UNC 
+Bolt length 7.250” 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Manufacture  Over Size Hoist Bolt Kit  
+DATE 
+7/1/2016 
+CHG 
+NO 
+000 
+NUMBER 
+1512-3.04-1406 
+Caterpillar Confidential:  GREEN          Page 3 of 9 
+A. STEPS OF THE MANUFACTURING PROCESS 
+ 
+1.  Facing and turning point 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  Material: Steel Bar AISI / SAE 4340  
+Hardness: 270-305 HB  
+Effort Creep> 70 (kg / mm2) Traction Effort 95 ^ -105 (Kg / mm2)  
+Dimensions: Diameter 3" x Length 8.250"  
+  
+2. Rough and Machined Head and Body 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Manufacture  Over Size Hoist Bolt Kit  
+DATE 
+7/1/2016 
+CHG 
+NO 
+000 
+NUMBER 
+1512-3.04-1406 
+Caterpillar Confidential:  GREEN          Page 4 of 9 
+Descriptions:  
+ 
+Equipment: Semi CNC lathe SN 71  
+RPM Used: 650-810 rpm  
+Feedrate: 0.27 mm / min  
+Inserts Used: TNMG 220408-MN (KENAMETAL) VNMG 160408-PM (SANDVIK) 
+ 
+ 
+3. Grinding Machining and Head Milling  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Manufacture  Over Size Hoist Bolt Kit  
+DATE 
+7/1/2016 
+CHG 
+NO 
+000 
+NUMBER 
+1512-3.04-1406 
+Caterpillar Confidential:  GREEN          Page 5 of 9 
+Descriptions: 
+ 
+Equipment: Conventional milling and Semi CNC lathe SN 71  
+Used RPM: 400-450 rpm  
+Machining feed 0.6 mm / min  
+Inserts Used: SEXT 14M4AGSN-MN (KORLOY)         
+ 
+ 
+ 
+4. External thread 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Description:   
+   
+  Equipment: Conventional Lathe SN 50  
+Used RPM: 125 rpm  
+Thread type: 1.75 - 5 UNC 2A  
+Feedrate: According Standardized Chart  
+Inserts Used: ERM22-N60 (KORLOY) QUALITY PC3030T 266RG-22 (SANDVIK) 
+QUALITY 1020 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Manufacture  Over Size Hoist Bolt Kit  
+DATE 
+7/1/2016 
+CHG 
+NO 
+000 
+NUMBER 
+1512-3.04-1406 
+Caterpillar Confidential:  GREEN          Page 6 of 9 
+5. Drilling of security hole 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Descriptions: 
+ 
+Equipment: Radial Drill 
+Used RPM: 250 RPM 
+Type of wire: 0.12 mm / min. 
+Used inserts: Bit 0.27 15% Cobalt 
+Length: Trainee Drilling 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Manufacture  Over Size Hoist Bolt Kit  
+DATE 
+7/1/2016 
+CHG 
+NO 
+000 
+NUMBER 
+1512-3.04-1406 
+Caterpillar Confidential:  GREEN          Page 7 of 9 
+ 
+6. Drum and crown ream and bolt installation 
+ 
+ 
+The bolt bore must be mechanized for the final measurements to be uniform (diameter bolt bore of 
+drum = diameter bolt bore of spider). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Tools:     Manual Expandable Reamer 
+Reamer Range:    1.732" to 1.811" 
+Adjusting nominal bore diameter: 1.750" to 1.771" 
+Length:     Intern for both components 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hoist  bolt installed 
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Manufacture  Over Size Hoist Bolt Kit  
+DATE 
+7/1/2016 
+CHG 
+NO 
+000 
+NUMBER 
+1512-3.04-1406 
+Caterpillar Confidential:  GREEN          Page 8 of 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+Reuse drum/spider assembly when: 
+a. The bolt (part number B006876-01/02) cannot be used. 
+b.  The measurement bolt bore is out the maximum permissible range. 
+ 
+ 
+ 
+
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Manufacture  Over Size Hoist Bolt Kit  
+DATE 
+7/1/2016 
+CHG 
+NO 
+000 
+NUMBER 
+1512-3.04-1406 
+Caterpillar Confidential:  GREEN          Page 9 of 9 
+ 
+5.0 Resources Required 
+ 
+Machinery and equipment Tools 
+ 
+• Conventional Lathe SN 50 
+• Semi CNC lathe SN 71 
+• Conventional milling 
+• Radial Drill 
+ 
+Materials 
+ 
+• AISI steel bar / SAE4340 
+• Inserts Machining 
+• Drill Center 
+• Cobalt Drill 
+    
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Reference Drawing  PN B006876-01 
+ 
+EDITOR’S NOTE:  B006876-01 has been converted to an AA part type.  Check NextGen SIS for the 
+latest part information. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+• N/A 
+ 
+8.0 Acknowledgements 
+• Finning – CRC Shovels and Drill. 
+ 
+Recognition 
+Team  Rafael Nilo/ Machine Shop Supervisor 
+   Johny Perez/Technical Supervisor 
+   Nelson Troncoso/Welding Supervisor 
+   Daniel Gajardo/Mechanical Supervisor 
+   Rodrigo Vicencio/ Operation Chief 
+ 
+Sponsor  Sebastián Gómez/ CRC Manager – Expanded Product Line

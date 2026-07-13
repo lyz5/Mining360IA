@@ -1,0 +1,727 @@
+SOURCE: 1.0 Maintenance & Repair\1.07 Parts Management\1. Strategic\Parts Management (Strategic).pdf
+PAGES: 13
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Parts Management 
+ 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Parts Management ..................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ...................................... 11 
+4.0 Benefits ............................................................ 11 
+5.0 Resources Required ........................................ 11 
+6.0 Supporting Attachments / References ............. 11 
+7.0 Related Best Practices .................................... 12 
+8.0 Acknowledgements .......................................... 12 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+1007-2.0-1105 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+1.0 Introduction  
+ 
+Parts Management is a critical logistical function that supports the Scheduled and Unscheduled 
+Maintenance and Repair activities. A properly managed parts inventory and procurement system 
+is fundamental to achieving fleet availability targets in the most cost-effective manner.  Accurate 
+and complete demand history and a well-supported forecast of future needs are key elements 
+that enable the Parts Department to have the correct parts, in the correct quantities and at the 
+correct time.  To accomplish this, the parts, planning and service groups need to coordinate their 
+activities and share information related to all repairs and repair plans. 
+ 
+This Best Practice outlines the implementation of the Parts Management function on site to 
+effectively support planned Maintenance and Repair as well as unscheduled repair events. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Outlined in the following sections are the ingredients that support an efficient parts warehouse 
+operations is being maintained at the mine site. 
+      
+Description Outline for Parts Management 
+2.1 Parts Management Strategy 
+2.2 On-Site Warehouse 
+2.3 Parts Inventory Management   
+2.4 Component Inventory Management 
+2.5 Backlog Parts Management 
+2.6 Tool Management 
+2.8 Human Resources 
+2.9 Performance Measurement 
+ 
+2.1 Parts Management Strategy 
+ 
+The basis of any successful Parts Management (PM) process is a documented and complete 
+strategy. The strategy will be the overall reference document that defines what the organization 
+intends to accomplish and a plan of how the strategy will be executed. We begin to form the plan 
+by clearly defining the goals and objectives of the Parts Management process. These goals and 
+objectives need to link with the Maintenance Strategy, Planning department, site characteristics 
+and in country logistics. Many other factors may influence the Parts Management strategy 
+depending on the repair habits and in country business policies.   
+ 
+• Provide 24 / 7 support to the daily on-site M&R operation 
+• Manage efficient & effectively the on site inventory 
+• Maintain effective Parts / Components Supply channels 
+• Work closely with the Planning & Scheduling area to provide the adequate Parts & 
+Components support to the Scheduled Activities  
+• Support with Parts & Components the unscheduled events. Meet planning expectations / 
+goals   
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Parts Management 
+DATE 
+2/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1105 
+Caterpillar Confidential:  GREEN                      Page 1 of 12 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Manage efficient & effectively the additional related resources: Tools, Instruments, 
+Consumables, etc.  
+• Maintain and submit updated information of Parts Management          
+ 
+ 
+2.2 Warehouse Operations and Support 
+ 
+The location, size and hours of operation of the warehouse are important. The location of the 
+warehouse should be within a short walking distance of the repair shop. If at all possible, parts 
+should be delivered to the bays or to a drop area specified in the shop by a parts runner. This will 
+insure the technicians spend their time servicing machines in the bays and not searching for 
+parts.   
+ 
+ 
+ 
+ 
+Storage of the parts should be efficient and orderly. The received parts should be put away in 
+their location daily to insure inventory accuracy. Location of frequently used parts such as 
+maintenance items should be near the front of the parts warehouse for easy retrieval.  
+  
+Warehouse layout and storage are important to Warehouse Support.  Adequate warehouse 
+space is essential. As density of parts increase, operational efficiency falls. Part numbers per 
+1000 square feet is a good measure for density. 
+ 
+Calculate the parts numbers per 1000 square feet and follow the guidelines below to confirm if 
+warehouse rearranging or addition is necessary. 
+ 
+ <1000: Probably too much warehouse space 
+ =1000: Used for new warehouse design 
+ 1001-1500: Indicates a warehouse comfortably full but not stressed 
+ 1501-2000: Indicates a need to provide new warehouse space. 
+ 2001-2500: Warehouse is approaching gridlock, insufficient space to operate efficiently. 
+ >2500: The warehouse should be impossible to move around in, and aisles are full. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Parts Management 
+DATE 
+2/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1105 
+Caterpillar Confidential:  GREEN                      Page 2 of 12 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Methods of storage and location of inventory by class are important considerations. The following 
+items should be considered. 
+ 
+• What type of storage equipment is being used? For dense storage and to maximize 
+warehouse storage efficiency, we recommend the use of storage cabinets (Vidmar).  This is 
+the number one storage concept that is recommended. Sixty to seventy-five percent of Cat 
+parts that are inventoried can be stored in a cabinet. The cabinet concept allows storage that 
+is easily accessible at the ground level without lifts. The location should be near the front of 
+the parts department where it can be easily picked.   
+• The second storage concepts recommended are bins (15% to 20% of Cat parts are stored in 
+bins), which have a 24” depth, 36” depth or 48” depth.   
+• Racking is then the third major storage concept. 
+o For cabinets and bins especially, only one part should be stored in a given location.  
+Although dealers are storing more than one part on a given section of racking, we 
+encourage them to assign multiple locations to a rack section depending on the number 
+of items being stored. 
+o The faster moving items (items with high demand based on calls) should be stored 
+near the main aisles or sections of cabinets & bins.  In other words, high demand items 
+should be stored close to the work area.  
+• Is enough floor space available to store major components within the warehouse?  Store 
+these components inside, if possible because of the outside elements. 
+• What type of warehouse location system is used or is planning to use?  The location system 
+should be easy to understand and can be learned in 20 minutes.  Should include aisle, 
+section, elevation & opening.  
+• Specific areas of the warehouse should be designated for PM kits, Backlog parts, Component 
+installation kits that are used for repetitive repairs/maintenance for easy access. 
+• The method used in parts storage should follow Cat Contamination Control guidelines.  
+  
+The hours of operation of the warehouse should match that of the repair shop, 24/7.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Parts Management 
+DATE 
+2/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1105 
+Caterpillar Confidential:  GREEN                      Page 3 of 12 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+2.3 Parts Inventory Management 
+ 
+Inventory Control Management is simply providing the right parts in the right quantity to the right 
+place, at the right time at the lowest cost. Parts become stocked because of either anticipated 
+demand or historical demand. Once a part has been added to stock, it may be controlled in a 
+variety of ways, but will typically have a minimum and maximum setting.  Minimums define 
+“when” to order while maximums help define “how much” to order. 
+ 
+Lead-time is a critical factor with minimum vs maximum.  Lead-time is the total number of 
+elapsed days from when a part reaches order point to when the resulting stock order is 
+received, put away (physically and in the system) and made available for sale.  If overstated, it 
+may create needless surplus of stocked items, eventually having a negative impact on turnover.  
+If understated, it may cause stock backorders that will impact customer service. Lead-time is 
+affected by country location, import restrictions, and local transportation. 
+ 
+The key to having the correct parts available is working closely with the planning and repair 
+management functions of the site operations. Knowledge of the fleet make-up and repetitive 
+maintenance and/or repairs play an important role in maintaining inventory. Standard job usage 
+helps to identify parts needed for service work. Pre-ordering the parts allows sufficient levels of 
+inventory to be maintained. Some parts take longer to acquire than others. Maintaining 
+communication with the Backlog management group is equally important so jobs can be 
+released for scheduling when the parts become available.  
+ 
+ 
+Another important ingredient to the ordering process is having one central location identified in 
+the warehouse where the parts orders from the repair shop are received. This may be a 
+computer terminal or in-basket. This limits the overlooked parts orders. Receiving and 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Parts Management 
+DATE 
+2/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1105 
+Caterpillar Confidential:  GREEN                      Page 4 of 12 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+inventorying of the parts daily is important. Having the parts on the shelf  and in the inventory 
+system will minimize inventory carrying cost by eliminating duplication of unnecessary parts. 
+ 
+Consumables and high rotation items need to be readily available. This can be merely having 
+bins located in the repair shop with seals, nuts and bolts. Their levels need to be monitored to 
+insure a good supply is kept available. An accounting method will need to be developed to 
+insure the items get allocated fairly to the work orders. Field service strategy also requires 
+similar strategy in order to reduce the waiting time for field technicians. 
+ 
+ 
+Proper fluids handling will need to be determined. Storage and dispensing of the fluids will 
+need to be safe and according to local safety regulations. Contamination Control plays an 
+important role in the storing and dispensing of the fluids. Likewise, waste management of the 
+used fluids is important so not to contaminate the environment.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Parts Management 
+DATE 
+2/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1105 
+Caterpillar Confidential:  GREEN                      Page 5 of 12 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+The use of PM parts kits will also increase the efficiency of parts management. PM kits and 
+rebuild kits should be used for the most frequent “known” routine and repairs. The kits are built 
+ahead of time, off site, based on the planning and scheduling activities. All the parts are 
+collected in a “box” that are associated with the repair. The kit is delivered in its entirety to the 
+technician. Kits should not be built for less frequent repairs because part numbers may change 
+and additional labor would be required to update the kits. Parts and kits should also be made 
+available to the field technicians in the same manner as they are for shop technicians. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Parts Management 
+DATE 
+2/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1105 
+Caterpillar Confidential:  GREEN                      Page 6 of 12 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.4 Component Inventory Management 
+ 
+An adequate Component Management plan plays an important role in the overall success of the 
+operation, keeping costs and downtime under control. This is extremely important when 
+equipment enters the component exchange interval that adequate component availability exists. 
+Component Inventory Management involves a number of activities. These activities complement 
+one another and typically include: 
+ 
+• Component tracking. 
+• Component storage and transportation controls. 
+• Fluent communications between the site and the rebuild center. 
+• Well-defined and updated planned component replacement strategy (PCR). 
+• Measurement and tracking of carrying costs related to the Component Management 
+strategy. 
+ 
+Keeping an up-to-date inventory with the proper amount of components that matches the fleet 
+requirements and schedules is important. Inventory includes protective and normal stock for 
+supporting the Planned Component Repairs (PCR’s). Strategy for handling this inventory is 
+important also. Are the components going to be dedicated to the particular site or as part of a 
+pool of components available for multiple sites? Coordination with the rebuild center and 
+planning/scheduling is critical based on the Long Term and Medium Term repair plans. 
+Rotation of stock is important in order to make the latest engineering design changes 
+available.. Cores need to be properly identified when taken out of equipment so tracking of 
+hours to track hours of operation and failure mode is accurate.  
+ 
+By effectively performing these on-site activities, it is possible to manage components within 
+the defined goals. Clearly there are other support functions that must exist that go beyond on-
+site operations, e.g. Component Rebuild Center and spare parts / component support. Thus 
+the functionality of site support software should focus on the on-site activities as well as the 
+interaction between the site and those outside support entities. 
+ 
+Core Management is consistently an area of significant financial opportunity whether speaking    
+of component cores or warranty cores. Cores need to be returned and properly tagged so the 
+parts department can disperse them properly for rebuilding or warranty credit. Some elements 
+of core handling are identified below and need to have processes defined: 
+ 
+• Who is responsible for inspecting worn cores? One person? 
+• Is warranty core inspection accuracy at least 99%? Is full core credit issued when the parts 
+department says it should?   
+• Do regular processes exist to physically locate all remaining worn undistributed cores and 
+update inventory and general ledger if they can’t be found? 
+• Are core processing areas neat, organized and efficient? 
+• Are cores cased and staged in racks? 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Parts Management 
+DATE 
+2/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1105 
+Caterpillar Confidential:  GREEN                      Page 7 of 12 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.5 Backlog Management 
+ 
+The backlog can take many forms. It can be a simple list of expected jobs or it can be a series of 
+open work orders in a computerized database.  When the computer system has a quick and 
+easy method of opening work orders, it is the preferred method, parts can be ordered ahead of 
+time to eliminate delays.  
+ 
+A specific area in the warehouse needs to be identified for storing parts for backlogs until the 
+equipment is scheduled or the entire list of parts is available. The inventory needs to be 
+protected from technicians helping themselves. This also holds true for backordered parts 
+identified for an open work order. 
+ 
+Once the complete inventory of parts is available, the person(s) responsible for planning and 
+repair management needs to be contacted so the work can be scheduled. Following the Backlog 
+process map logic where colored logs are used, the paper copy would move from the Blue 
+Phase to the Green Phase. 
+ 
+2.6 Tool Management 
+ 
+Providing specialized tools and test instruments is crucial to maintaining a fleet. This inventory 
+of tools is expensive and requires special handling. The tools are usually kept in the parts 
+department and inventoried. A check-out and check-in procedure needs to be established so the 
+tools don’t disappear or end up locked in a personal toolbox. Repairs to the tooling need to be 
+identified in a timely fashion. Completing a tag that identifies needed repairs upon check-in will 
+serve the purpose. Regular testing of the tooling and gauges is required on a scheduled basis. 
+Proper tagging or labeling of the tooling should be required that indicates the date last tested. 
+One person should be made responsible for tool management. 
+ 
+2.7 Human Resources 
+ 
+Maintaining the Parts Operations positions with qualified staff is important to fulfilling the 
+strategy identified and assuring the success of the process. Listed are the recommended 
+positions and associated activity: 
+ 
+• Parts Analyst is the on site leader of the Parts/Components operation 
+• Warehouse Operation staff must cover 100% of shop – field operations 
+• Tool Room Attendant keeps specialized tools and test instruments available and in good 
+condition 
+• Parts Runner supports efficiency of the service operations by taking parts to the shop and 
+returning used and unused parts/cores to the parts department.  
+• Local Purchasing is a must in acquiring local needed resources and maintaining an 
+efficient local supplier network 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Parts Management 
+DATE 
+2/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1105 
+Caterpillar Confidential:  GREEN                      Page 8 of 12 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.8 Performance Measurement  
+ 
+The use of metrics should be considered when managing a parts operation. They are used to 
+determine how well maintenance and repair activities are supported by the parts inventory and 
+evaluate the relationship between the Parts Operations, Planning and Scheduling, and 
+Maintenance Departments in their efforts to avoid unnecessary parts related downtime. Please 
+reference section 2.5 in the Metrics ( KPI’s) to Assess Process Performance written by A. Flores 
+and J. McCaherty. Contact A. Flores or J. McCaherty to receive a copy.      
+ 
+ 
+Warehouse Service Fill Level (instantaneous) 
+ 
+ 
+ 
+ 
+ 
+Instantaneous Service Fill level is a parts management efficiency indicator that quantifies the 
+percentage of individual parts requests entered against the on-site parts warehouse for repairs 
+(including Backlog parts requests) and filled/closed at the first call.  A reflection of the level of 
+satisfaction of on-site parts warehouse performance.  The Benchmark for Instantaneous 
+Service Fill Level is 95%.  An aggressive target is > 90%. 
+ 
+ Service Fill Level (24 hours) 
+ 
+ 
+ 
+ 
+ 
+Service Fill Level after 24 hours is a parts management efficiency indicator that quantifies the 
+percentage of individual parts requests entered against the on-site parts warehouse for repairs 
+(including Backlog parts requests) and filled / closed in the first 24 hours after the first call.  A 
+reflection of the level of satisfaction of on-site parts warehouse performance.  We do not have 
+sufficient data to define a Benchmark but an aggressive target is 100%. 
+ 
+ 
+ Unavailability Parts 
+ 
+ 
+ 
+ 
+Unavailability due to parts delays quantifies the impact of parts delay events on availability.  
+There is no Benchmark associated with this metric but a reasonable target is < .5%.  If 
+unavailability (downtime) due to parts delays is significantly higher than .5%, it may signify 
+potential problems with inventory quality / quality and/or a higher than normal percentage of 
+unplanned downtime, i.e. the inability of the maintenance organization to detect problems in 
+advance of failure and plan & schedule the work and associated resources accordingly.  If 
+parts inventory quality / quality is found to be an issue, it may be due either to the fact that the 
+Service Fill Level = 
+(instantaneous)
+Parts Orders Closed at 1st Request
+Total Parts Orders
+X 100         (%)Service Fill Level = 
+(instantaneous)
+Parts Orders Closed at 1st Request
+Total Parts Orders
+X 100         (%)
+Service Fill Level = Parts Orders Closed in 1st 24 Hours 
+Total Parts Orders
+X 100         (%)Service Fill Level = 
+(After 24 Hours)
+Parts Orders Closed
+Total Parts Orders
+X 100         (%)Service Fill Level = Parts Orders Closed in 1st 24 Hours 
+Total Parts Orders
+X 100         (%)Service Fill Level = 
+(After 24 Hours)
+Parts Orders Closed
+Total Parts Orders
+X 100         (%)
+Unavailability PD  = Parts Delay Downtime
+Total Downtime
+X 100         (%)(1 – Availability)  XUnavailability PD  = Parts Delay Downtime
+Total Downtime
+X 100         (%)(1 – Availability)  X
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Parts Management 
+DATE 
+2/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1105 
+Caterpillar Confidential:  GREEN                      Page 9 of 12 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+maintenance organization is not doing a good job of defining the parts inventory support 
+requirements to the Parts Department or that the parts Department is not delivering on its 
+obligation to support the site with the required parts. 
+ 
+Emergency Response Time 
+ 
+Emergency Response Time quantifies the average response time (in days) to satisfy parts 
+requests that cannot be filled instantaneously.  This parameter works and should be analyzed 
+in conjunction with Instantaneous Service Fill Level.  There is no Benchmark or target for this 
+metric. 
+ 
+Parts Inventory Rotation 
+ 
+Parts Inventory Rotation is defined as the annual turnover of parts held in the on-site parts 
+warehouse.  No Benchmark is available for this parameter.  Defining a realistic target for this 
+metric is highly dependent upon site logistics of the specific operation including transportation, 
+the capacity and design of the parts warehouse, the remoteness of the site, costs associated 
+with carrying the inventory and the specific requirements of the site in terms of any availability 
+guarantees that may be in place. 
+ 
+Emergency Orders 
+ 
+Emergency Orders quantifies the percentage of parts orders that are placed against the 
+system on an emergency basis, i.e. “panic mode”.  The percentage of Emergency Orders is 
+another method of analyzing the extent to which the maintenance organization is behaving 
+pro-actively and control of the fleet.  There is no Benchmark or target for this metric. 
+ 
+Inventory  (items) 
+ 
+This metric quantifies the number of individual line items maintained on-site in the parts 
+inventory.  Because this is proportional to the size of the fleet being supported, there is no 
+Benchmark or target for this metric.  Trending inventory levels over a 6 to 12 month period and 
+relating the trend to fleet performance results such as MTBS, MTTR and % of scheduled work, 
+is one way of determining the impact of parts support on the overall site performance. 
+ 
+Inventory  (value) 
+ 
+This metric quantifies the value of the on-site parts inventory.  Here again, because this is 
+proportional to the size of the fleet being supported, there is no Benchmark or target for this 
+metric.  Trending inventory value over a 6 to 12 month period and relating the trend to fleet 
+performance results such as MTBS, MTTR and % of scheduled work, is one way of 
+determining the impact of parts support on the overall site performance.  
+ 
+% of Backlogs waiting for Parts. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Parts Management 
+DATE 
+2/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1105 
+Caterpillar Confidential:  GREEN                      Page 10 of 12 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+This metric measures how many of the Backlogs are waiting on parts. This metric    is found by 
+dividing the total number of backlog orders by the number of Backlog orders that are waiting 
+on parts. There is no benchmark  
+ 
+3.0 Implementation Steps 
+• R eview Parts Management strategy established from PM process map 
+• Request from Regional office that they seek help from M&PSD Facility Planning group to 
+provide design assistance 
+• Locate parts warehouse close to repair shop 
+• Employee qualified staff with Parts management background 
+• Review Planning/Scheduling and Backlog Management Best Practices to identify integration of 
+processes   
+• Implement metrics and monitor to insure Parts Operations efficiency 
+ 
+4.0 Benefits 
+• Increased machine availability 
+• Efficient managed Parts Department 
+• Balanced parts inventory 
+• Minimum parts inventory cost 
+• Lower cost per ton and cost per hour 
+ 
+5.0 Resources Required 
+• Parts manager who understands inventory control and warehouse management 
+• Parts management system for storing and ordering parts 
+• Good communications between departments 
+• Familiarization of Contamination Control standards  
+• Parts Management process map 
+• Warehouse personnel 
+• Adequate warehouse space 
+• Transportation 
+• Storage Bins, Racks, Retrieval Equipment   
+ 
+6.0 Supporting Attachments / References 
+ 
+• Metrics (KPI’s) To Assess Process Performance.pdf  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Parts Management 
+DATE 
+2/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1105 
+Caterpillar Confidential:  GREEN                      Page 11 of 12 
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+7.0 Related Best Practices 
+• Maintenance & Repair Processes     1007-2.0-1100 
+• Preventive Maintenance        -1101  
+• Condition Monitoring                                              -1102   
+• Backlog Management             -1103 
+• Planning & Scheduling        -1104 
+• Component Management        -1106 
+• Repair Management        -1107 
+• Human Resource / Training       -1108 
+• Performance Evaluation        -1109 
+• Continuous Improvement        -1110   
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Michael Staley 
+Caterpillar Global Mining 
+Product Support Manager-Mining Equipment Management Processes 
+Staley_Mike_R@cat.com 
++1.309.675.4940 
+ 
+Please contact Subject Matter Experts Abelardo Flores (
+Flores_Abelardo@cat.com) or Jim 
+McCaherty (Mccaherty_James_W@cat.com) with questions regarding this Best Practice. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Parts Management 
+DATE 
+2/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1007-2.0-1105 
+Caterpillar Confidential:  GREEN                      Page 12 of 12

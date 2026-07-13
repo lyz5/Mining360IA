@@ -1,0 +1,488 @@
+SOURCE: A PM Model to Deliver Higher Availability for 794AC Trucks.pdf
+PAGES: 11
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+August 2021 
+1.01-210827-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+M
+INING DEALER BEST PRACTICE 
+A PM Model to Deliver a 
+Higher Availability for 
+794AC Trucks 
+M
+aintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+A
+ PM Model to Deliver a Higher Availability for 794AC 
+Trucks ........................................................................... 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description.................................... 3 
+3.0 Implementation Steps ......................................... 5 
+4.0 Benefits ................................................................ 9 
+5.0 Resources Required ......................................... 10 
+6.0 Supporting Attachments / References ............. 10 
+7.0 Related Best Practices...................................... 10 
+8.0 Acknowledgements ........................................... 10 
+D
+ISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+ A PM Model to Deliver Higher Availability for 794AC Trucks 
+DATE 
+8/27/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210827-1 
+Caterpillar: Confidential Yellow        P age 2 of 11 
+1.0 Introduction 
+Thi
+s Best Practice pioneers building a Preventive Maintenance Model which results in high 
+productivity, quality and safety  based on implementing effective and efficient maintenance 
+processes that can be applied to the 794AC Caterpillar electric drive trucks. 
+In 
+terms of maintenance, customers are demanding: 
+1) Less
+ labor (lower maintenance ratio)
+2) Less maintenance downtime
+3) More proactive vs. reactive maintenance on their truck fleets in terms of overall maintenance.
+Wi
+th effective maintenance the customer expects: 
+1) Higher
+ physical availability (performance)
+2) Quality and reliability
+3) Lower lifecycle costs.
+794AC
+ trucks have recently been introduced into the Brazilian market and so aspects of their 
+maintenance were not well known. The key competition in 320t size class in Brazil is well 
+established and has shown consistent and low variability in the PM downtime; the customers expect 
+similar from the 794AC trucks.  
+C 
+Competitor PM Unavailability Distribution delivered in Brazil. They put standardization into the PM process downtime to control the wastes and let 
+more time to backlogs.  
+St
+arting from the demands as part of the Brazil 794AC NMI, the Sotreq Technical Team utilized the 
+LEAN concept to develop a PM model that would eliminate waste during task execution allowing 
+for more time for backlog execution as required by planning and condition monitoring while 
+maintaining quality and reliability. Basically, what we did was make sure each mechanic had and 
+did standard work based on previous technical analysis.     
+Thi
+s Best Practice is what Sotreq utilized in terms of maintenance to introduce the 794AC in Brazil 
+and provide the customer with tangible results (increased productivity, quality, reliability, lower 
+direct costs) and practices (lower maintenance ratio). This Best Practice could easily be applied to 
+other dealers and customers introducing new truck fleets into their operations. 
+
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+ A PM Model to Deliver Higher Availability for 794AC Trucks 
+DATE 
+8/27/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210827-1 
+Caterpillar: Confidential Yellow        P age 3 of 11 
+2.0 Best Practice Description 
+Normally, when developing a “Preventive Maintenance” program for mobile equipment the 
+concentration is on the processes of planning, scheduling, condition monitoring tasks and quality 
+worksheets that will be utilized by the PM team rather than the execution itself.  
+Rar
+ely, the focus is on identifying models and methods that answer the following: 
+• How can we achieve the specific goals of PM unavailability (and the targeted performance)?
+• What does the maintenance team need to do to achieve those specific goals?
+• How should they perform the specific tasks?
+• How are they trained and follow instructions for the specific tasks?
+• How well do they perform the specific tasks?
+Sot
+req did extensive research on fleets worldwide to understand the “unavailability of 794AC fleets” 
+and then used that information to design a maintenance strategy to successfully introduce the 
+794AC’s into Brazil. Sotreq determined that PM duration should be 2.9% of unavailability to achieve 
+a Physical Availability of >90%.  As a note, the unavailability due to tires is  ~3.5%, which is 
+considered normal for the site of this project with heavy rainfall and poor roads. 
+Unavailability Distribution Required for Physical Availability <90% 
+Af
+ter further research, Sotreq developed a Preventive Maintenance m odel focused on optimizing 
+their work through a detailed PM plan with all resources (parts, tools, devices, etc.) and workflows  
+(tasks, routes, durations, etc.) well defined and available. 
+Ear
+ly in the model development, it was important to establish the maintenance intervals (every 250 
+or 500 hours) and the workflows of the maintenance execution for each interval (see table below). 
+12
+MAINTENANCE STRA TEGY (MSR)
+• DEFINITION OF UNAVAILABILITY DISTRIBUITION (PA> 90%, MTBF > 60 HRS)
+ Based on down�me drives knowledge built from other trucks around the world and suppor�ng by CAT CPI 
+informa�on, we built the unavailability distribu�on to deliver the bo�on line se�led with customer for 794AC;
+*with wash labor
+Unavailability T arget
+PM: 2,9%
+Uncheduled*: 4,2%
+Tires**:3,50% - 1,80%
+Inpec�ons: 0,69%
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+ A PM Model to Deliver Higher Availability for 794AC Trucks 
+DATE 
+8/27/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210827-1 
+Caterpillar: Confidential Yellow        P age 4 of 11 
+• Mechanical and electrical inspections are done every 125 hours.
+• Sotreq decided to have “pit stop” (less than 4 hours , every 250 hours during a “window of
+opportunity”) for inspections (mechanical, electrical, lubrication) and fuel filter change
+(needed due to biodiesel saturation).  As a note, regular backlogs are not performed during
+a “pit stop”, only critical ones such as SOS, alarms level 3, etc.
+• The PM 500 (500 hour) is the first pass at the structured maintenance execution with an
+effective distribution of processes, people, and resources to minimize waste during the
+execution of the maintenance.
+• Every 500 hours, this macro flow will be repeated and broken down into the individual
+activities as shown in the Implementation section below.
+Maintenance Intervals for the 794AC 
+PM 250 hours – Window Opportunity to replace filters and make regular inspections 
+16
+ONLY PM 250 – FLOW MAP (PIT STOP)
+Check Oil Level (20 Minutes)
+SOS Samples (1:00 Hour)
+- Front wheel and Final Drives
+- Engine
+- Hydraulic
+PM Cab (25 Minutes):
+- Clean up the operator cab; 
+- Check water level and others;
+PM Engine (30 Minutes)
+- Replacing Fuel Filters (Bio Diesel); 
+- Magne�c Plug (HPFP); 
+- Draining of Fuel Tank Sediments
+Field Inspec�ons (2:00 Hours)
+- Electrics & Eletronics; 
+- Mechanical Inspec�ons
+- Lub Inspec�ons and Check;
+Delivering Checklist
+
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+ A PM Model to Deliver Higher Availability for 794AC Trucks 
+DATE 
+8/27/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210827-1 
+Caterpillar: Confidential Yellow        P age 5 of 11 
+Every 500 hours – Flow Map to execute PM + Backlogs 
+3.0 Im
+plementation Steps 
+First Key Step:  Each PM interval was organized to technically balance the activities/tasks without 
+over burdening any one interval knowing that the overall PM unavailability had to be <2.9%.  To do 
+this, Sotreq started by evaluating all the PM tasks/activities and determining the duration for them. 
+By adding up all the tasks/activities, the final downtime for each PM interval  was known, the 
+maintenance tasks/activities could be distributed by person for efficiency, like in a factory, according 
+to Sotreq’s LEAN model: 
+• Nor
+mally the 2000-hour, 3000 hours & 4000-hour PM’s have extensive maintenance
+requirements; with this model the maintenance is distributed throughout the other PM’s.
+• This distribution is different than what would be seen in a typical “8 Step PM”.
+• Some examples include valve recession which was done at 4,000 hours, and has now been
+moved to the 2500-hour PM and front/rear suspension charging from 1,000 hours to 500-
+hour PM.
+PM Downtime Schematic (not included wash bay + 2 hours) 
+At th
+is site, Sotreq uses the “maintenance ratio” of 3 PM mechanics + 2 electricians for rapid, 
+systematic LEAN PM execution. A s we finish up the PM downtime, the planning team can set up 
+extra time with the same manpower to work on conditional maintenance (backlogs). Below is an 
+example of the time distribution by mechanic for each type of PM. 
+15
+PM FLOW MAP – FROM ON PM 500 TO 4000 PM
+SOS Samples - Pré 
+Wash Inspec�on Washing Bay Electrical T&A
+Machine on
+Mechanical T&A
+Machine on
+Electrical Tes�ng → Electrical PM → PM Cab / Air Condi�oning
+Mechanical Test → PM Engine → PM Hydraulics → Lubrica�on
+Inspec�ons: Electrical, Mechanical, Lubrica�on, Chassis, Scales
+Delivering Checklist 
+(Final T&A)
+PM BAY
+Backlogs: Mechanical and 
+Electrical
+
+
+===== PAGE 6 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+ A PM Model to Deliver Higher Availability for 794AC Trucks 
+DATE 
+8/27/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210827-1 
+Caterpillar: Confidential Yellow        P age 6 of 11 
+*PRO’s = guidelines.
+Seco
+nd Key Step : To support the execution of the PM intervals in the determined duration, the 
+following were developed and used for each PM interval, for each PM team member, for each 
+task/activity:  Gantt charts, playbooks, guidelines, checklists and more Team members were trained 
+by the maintenance supervisor using this same documentation. 
+Examples of Gantt Chart for each PM and Checklist Developed 
+19
+PM DOCUMENTA TION DEVELOPED BY SOTREQ 
+ GANTT Chart BY PM;
+ PM Guidelines by Type (Tasks, Safety, Tooling,
+Parts, etc);
+ Checklist for all ac��vi�es;
+ Cri�cal Path Guidelines ;
+ “T&A” checklists”.
+
+
+===== PAGE 7 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+ A PM Model to Deliver Higher Availability for 794AC Trucks 
+DATE 
+8/27/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210827-1 
+Caterpillar: Confidential Yellow        P age 7 of 11 
+Examples of Playbooks and Guidelines for each type of PM 
+It
+ is important to highlight that this technical documentation step for supporting the strategy of the 
+maintenance model created also serves to evaluate and determine what additional technical 
+resources are necessary to execute the specific maintenance activities properly and efficiently.  
+For example, in terms of velocity, Sotreq analyzed shops from around the world and applied some 
+of the best practices related to shop resources found in this project. 
+Examples of devices implemented to provide optimized execution thru PM tasks 
+20
+PREVENTIVE MAINTENANCE PLA YBOOK
+21
+• DEVICES AND BEST PRACTICES
+ We analy zed for  6 months the Best W orkshop
+pra c�ces, lubrica�on that could applied in the
+workshop , without sophis�cated process ;
+ We developed devices that made it possible
+ac c ess and c onsulta�on of tec hnic al mater ial in 
+the area (Elec tr ic al, M ec hanic al, SIS , ...) schemes
+ We developed devices that enable execu�on of
+prev en�v e ac�v i�es of most eﬀec�v e way
+(Quick plug change kit measure suspension
+tool )
+ We standardize the ﬂow previously described
+with management framework in view of
+maintenance preven�ve ..
+Scheme Cart and Manual Consulta�on 
+Screen touch screen 23.8 "
+Scan T ool Quick height of 
+Suspension
+Quick change kit Magne�c
+Management rou�ne of the
+Preven�ve
+PM STRA TEGY (MSR)
+
+===== PAGE 8 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+ A PM Model to Deliver Higher Availability for 794AC Trucks 
+DATE 
+8/27/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210827-1 
+Caterpillar: Confidential Yellow        P age 8 of 11 
+Third Key Step:   Build an organized PM bay with a layout for the resources (tools, parts, devices, 
+etc.) that would support an efficient workflow and eliminate extra movement of the team members 
+supporting the LEAN concept in our model. 
+Example of PM Bay Implemented in Brazil 
+The routing/movement for each team member was developed, tested/evaluated, documented, and 
+then implemented. You can see a simulation of the workflow route for each PM team member for 
+the 500 hour and 1000 hours PM’s.   
+Example PM 500 and 1000 of flow process for each technician 
+Caterpillar : Conﬁden�al Green
+12
+PM LEAN PROCESSES
+• PM BAY
+ All resources available at the Bay at the start of the PM;
+ Resources laid out for eﬃciency of designed PM.
+Caterpillar : Conﬁden�al Green
+13
+MEC - CMEC - BMEC - A
+ELET - BELET - A
+PREVENTIVE 500 HOURS – KA MISHIBA I (EXA MPLE)
+Preven�ve:500 Hours (Step 01)
+T otal Time:11:55
+HH ELET: 14:45
+HH MEC:19:55
+ElectricalTe s t
+Electric PM
+PM CABIN
+MechanicalTe s t
+PM Hydr aulic
+PM lubr ica�on
+PM Engine
+PREVENTIVE 1000 HOURS – KA MISHIBA I (EXA MPLE)
+ELET - BELET - A
+MEC - A MEC - B MEC - C
+Preven�ve:1000 Hours 
+T otal Time:10:45
+HH ELET: 11:45
+HH MEC:14:40
+PM Hydr aulic
+PM Engine
+PM lubr ica�on
+MechanicalTe s t
+ ElectricalTe s t
+Electric PM
+PM CAB
+
+===== PAGE 9 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+ A PM Model to Deliver Higher Availability for 794AC Trucks 
+DATE 
+8/27/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210827-1 
+Caterpillar: Confidential Yellow        P age 9 of 11 
+Fourth Key Step:  Training is important to the success of  the maintenance. Each team member 
+was trained by the maintenance supervisor and technical team.   
+Training consisted of the following: 
+• Overall knowledge of truck/truck systems
+• Specific Tasks/Activities that each team member may be required to perform
+• How to safely do the tasks/activities
+• How each team member’s work ties into the reliability (MTBF)  and overall performance of the
+fleet….amongst more. 
+Plans are in place to evaluate each team member and the fleet performance on a regular basis and 
+re-train the team as required. 
+Training Plan executed during the PM Project 
+4.0 Benefits 
+Thi
+s model supports delivering the following results consistently: 
+• High Productivity based on achieving Planned PM Unavailability
+• Quality & Reliability
+• Safety
+As
+ you can see in the below graphic, the Sotreq Maintenance Model is delivering better than the 
+planned 2.9% PM unavailability allowing us to meet/exceed targeted Physical Availability. 
+Additionally, Sotreq is delivering great reliability to the 794AC fleet – MTBF > 60 hours even though 
+Sotreq is executing more technical tasks for the 794AC fleet compared to the competition.   
+29
+Assembly Workshop
+Sotreq / C AT
+TRA INING A ND WORKSHOPs
+• DEVELOPMENT DEEP KNOWLEDGE ABOUT 794AC
+ 12 People in Service Trainning between CAT and SOTREQ (Brazil)
+ 15 days of interac�on between Project Development Team and Execu�on Team;
+ More than 100 hours in virtual workshops around the PM Documenta�on;
+• SPREADING THE TECHNICAL KNOWLEDGE THRU TEAMS
+ Engineering se�led a robust training grid with CT and SAP;
+ + 120 hours of service training
+ + 120 hours of PM service training
+ +96 hours of CAT online training and workshop for Support to the
+SOTREQ 
+ 20 hours of PM Service Training Guideline and M&R rou�nes for PM
+programmers and Supervisors;
+ + 20 hours of workshops on improvements, parts, components,
+processes, etc. with product support;
+
+
+===== PAGE 10 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+ A PM Model to Deliver Higher Availability for 794AC Trucks 
+DATE 
+8/27/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210827-1 
+Caterpillar: Confidential Yellow        Page 10 of 11 
+OBS: Some product issues affected the PA, without this matter PA was 93%. MTBFc = 62 hrs 
+RECOM
+MENDATION: Can you share the graphs and trends to support the statements provided above? 
+5.0 Reso
+urces Required 
+Pro
+ject Investment Cost – Around $ 3,000 USD 
+Facility – $500 USD (paint the shop floor) 
+Tools – $500 USD (write board and stands) 
+Support equipment – $1,000 (repair the kidney looping carts) 
+Training – $ 1,500 USD (travel costs, and documentation) 
+Information System – $500 (books and printing) 
+6.0 Suppor
+ting Attachments / References 
+DMA
+IC Methodology, 6 Sigma Process, Lean Manufacturing Guidebook, VPS – Customer 
+Production System Guideline, 794AC Service Manual.  
+7.0 Rel
+ated Best Practices 
+We c
+onsider as support information some Best Practice: 
+Unavailability Distribution – Effectively Manage the Unavailability of your Fleet 
+8.0 Ac
+knowledgements 
+This Best Practice was written by: 
+Júlio César Corrêa 
+Manager, Product Performance and Engineering – SOTREQ S/A 
+Julio.correa@sotreq.com.br 
++ 55 94 98111-6441
+Fábio Cota 
+Consultant, Product Performance (Project Leader by Dealer) – SOTREQ S/A 
+fabio.cota@sotreq.com.br 
++ 55 94 98807-8155 
+
+
+===== PAGE 11 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+ A PM Model to Deliver Higher Availability for 794AC Trucks 
+DATE 
+8/27/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210827-1 
+Caterpillar: Confidential Yellow        Page 11 of 11 
+Reinaldo Angelo
+Consultant, Product Performance – SOTREQ S/A
+Reinaldo.angelo@sotreq.com.br  
+ + 55 31 9996-5562
+Douglas Friedrich  
+Manager, Site Performance – CATERPILLAR 
+Friedrich_Douglas_W@cat.com 
++1.305.807.9542

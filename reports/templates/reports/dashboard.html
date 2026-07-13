@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Mining Intelligence</p>
+                <h1>Mining360</h1>
+                
+            </div>
+            <div class="summary">
+                <span class="summary-value">{{ modules|length }}</span>
+                <span class="summary-label">modules</span>
+            </div>
+        </header>
+
+        <section class="workspace-band">
+            <div class="placeholder-panel">
+                <p class="eyebrow">Workspace</p>
+                <h2>Operational console</h2>
+                <p>Navigation, reporting, AI, sources, data workflows, and knowledge resources are grouped in one dashboard shell.</p>
+            </div>
+            <div class="placeholder-panel">
+                <p class="eyebrow">Status</p>
+                <h2>Ready for use</h2>
+                <p>The application is connected to Power BI and SQL Server and is structured for incremental expansion.</p>
+            </div>
+        </section>
+
+        <section class="module-grid">
+            {% for module in modules %}
+                <a class="module-card" href="{% url module.url_name %}">
+                    <span class="module-name">{{ module.name }}</span>
+                    <span class="module-description">{{ module.description }}</span>
+                </a>
+            {% endfor %}
+        </section>
+    </main>
+</body>
+</html>

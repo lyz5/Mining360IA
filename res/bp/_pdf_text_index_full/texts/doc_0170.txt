@@ -1,0 +1,414 @@
+SOURCE: 3.0 Component Life Management\3.04 Removal & Installation\3. Quick Win\793 Transmission Remove & Install Tool.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+793 Transmission Remove 
+& Install Tool 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+793 Transmission Remove & Install Tool ................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+July 2011 
+0812-3.04-1228 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+The ideal method to removal or install a transmission in an Off Highway Truck is to remove the 
+truck body.  This method provides clear access for an overhead crane to lift the transmission 
+during the removal and installation process.   
+ 
+It is not always practical to remove the truck body, however, with the body on the truck, the body 
+interferes with the lifting cable and it is not possible to lift and position the transmission properly 
+for installation. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                  Truck Body Interferes with the Hoist Cables 
+ 
+In addition, transmissions should only be lifted using the lifting eye locations on the center of the 
+transmission housing.  Using other locations such as the rear of the housing can cause cracks in 
+the housing.  
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793 Transmission Remove & Install Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0812-3.04-1228 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Trakindo has developed a fixture comprised of a rail and a lifting cage to perform removal 
+installation without removing the body.  The rail is positioned on the truck frame.  The cage, 
+equipped with three hand hoists that hold the transmission, is placed on the rail.  The cage then 
+can be moved to the proper position and the transmission is raised or lowered using the cage 
+hoists. 
+ 
+This Best Practice is a Quick Win project. 
+ 
+2.0 Best Practice Description 
+This fixture is a lifting devi ce and needs to be designed and built to conform to local regulations 
+and requirements. 
+ 
+Dimensions will depend on truck model, and may not work with “F” series trucks. 
+ 
+Tool Concept 
+ 
+Rail:  To be placed on the truck frame. 
+ 
+Cage:  Equipped with three one ton or higher hoists.  The cage is lowered on to the rail with an 
+overhead crane, and then moved along the rail using a ratchet puller to the transmission 
+compartment location.  Hoists are used to raise or lower the transmission. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793 Transmission Remove & Install Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0812-3.04-1228 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Process steps 
+ 
+1. Installing the rail on the frame 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2. Installing the cage on the rail 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793 Transmission Remove & Install Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0812-3.04-1228 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+3. Positioning the cage above the transmission 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4. Lifting up the transmission by using hand hoist 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5. Moving the transmission group to the Overhead Crane lifting position using a ratchet puller. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793 Transmission Remove & Install Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0812-3.04-1228 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+6. Lifting up the transmission group by using Overhead Crane 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+7. Placing the transmission group on shipping / storage stand. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+• Design and fabricate the fixture.  See design prints attached. 
+• Document removal and install process.  See process attached. 
+• Train technicians. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793 Transmission Remove & Install Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0812-3.04-1228 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+4.0 Benefits 
+• Improved lifting and handling process. 
+• Reduced time required to remove and install a transmission 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5.0 Resources Required 
+o Costs to design and fabricate the fixture (diagram attached) 
+o 25 tons (or more) over head crane 
+o Three hand hoists (at least 1 ton each) to lift the transmission. (1U-9207) 
+o 8S-9906 ratchet puller to pull the transmission group 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+o All videos available upon request to contact below 
+o Previous activity when 793 transmission removing process video. 
+o 793 Transmission R&I Tool Concept video. 
+o First time trial using the tool to remove 793 transmission video. 
+ 
+7.0 Related Best Practices 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ Hendi Windiarto 
+PRODUCT SUPPORT STANDARDS & DEVELOPMENT 
+PT Trakindo Utama - INDONESIA 
+• Email  : hendi.windiarto@trakindo.co.id 
+• Office  : +62 21 7890544, 7890545 ext 1653 
+• Mobile : +62 812 9539347 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793 Transmission Remove & Install Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0812-3.04-1228 
+Caterpillar Confidential:  GREEN          Page 6 of 6

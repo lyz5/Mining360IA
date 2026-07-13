@@ -1,0 +1,222 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Tool for Blocking the 793 
+OHT Hoist Cylinder Rod  
+ Maintenance and 
+Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+.0    
+Tool for Blocking the 793 OHT Hoist Cylinder Rod .............. 0
+ 
+1.0 Introduction ................................................................. 1 
+2.0 Best Practice Description ............................................ 1 
+3.0 Implementation Steps ................................................. 2 
+4.0 Benefits ....................................................................... 3 
+5.0 Resources Required ................................................... 3 
+6.0 Supporting Attachments / References ......................... 3 
+7.0 Related Best Practices ................................................ 4 
+8.0 Acknowledgements ..................................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+May 2013 
+1212-1.11-1301 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+1.0 Introduction  
+ 
+Hoist cylinders are essential  for proper functioning  of mining trucks . Due to the weight of these 
+components lifting and handling are a high safety risk. When suspended the rod can come off the 
+cylinder and cause an accident . Chains are used to retain the rod and  reduce the risk. During the 
+manipulation of this component, the risk for an accident is still present.  
+ 
+ 
+2.0 Best Practice Description 
+ 
+In search for safer working procedures, a tool has been designed in order to make the repairs easier 
+and reduce risk . This consists of a clamping mechanism that  retains the rod and cylinder while 
+working on the component. 
+ 
+ 
+ 
+ 
+Figure 1 
+The tool is designed to be installed prior to removing the cylinder. 
+ 
+ 
+Tool for 
+cylinder rod 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tools for Blocking the 793 OHT Hoist Cylinder Rod 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.11-1301 
+Caterpillar Confidential: GREEN          Page 1 of 5 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Figure 2 
+In figure 3, the tool assembly process is shown.  
+ 
+ 
+ 
+Figure 3 
+3.0 Implementation Steps 
+ 
+• D esign and manufacture the tool shown. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tools for Blocking the 793 OHT Hoist Cylinder Rod 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.11-1301 
+Caterpillar Confidential: GREEN          Page 2 of 5 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4.0 Benefits 
+ 
+- Reduce accident risk while performing maintenance and repairs on 793 trucks 
+- Improve efficiency of maintenance processes.  
+- Improve ergonomics for workers exposed to 793 truck repairs 
+ 
+5.0 Resources Required 
+ 
+The necessary elements in order to implement the Best Practice are: 
+• Workforce 
+• Materials (according to drawing) 
+• Fabrication Tools 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+Stress Analysis 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tools for Blocking the 793 OHT Hoist Cylinder Rod 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.11-1301 
+Caterpillar Confidential: GREEN          Page 3 of 5 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tools for Blocking the 793 OHT Hoist Cylinder Rod 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.11-1301 
+Caterpillar Confidential: GREEN          Page 4 of 5 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+Name : Kaor Rojas 
+Title : PCR Supervisor 
+E-mail : kaor_rojas @gecolsa.com.co 
+Phone : +57 316-428-5924 
+  
+Checked and written by: 
+  
+Name : Ricardo Chegwin 
+Title : Technical manage  
+E-mail : ricardo_chegwin@ gecolsa.com.co 
+  
+Special thanks to: 
+The Development and Engineering  Area Team 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tools for Blocking the 793 OHT Hoist Cylinder Rod 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.11-1301 
+Caterpillar Confidential: GREEN          Page 5 of 5

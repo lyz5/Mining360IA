@@ -1,0 +1,354 @@
+SOURCE: 1.0 Maintenance & Repair\1.08 Training\2. Tactical\Assurance and Accuracy in Torque Application in Tractor Link-Track Master Bolts.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2015 
+1506-1.08-1363 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Assurance and Accuracy in 
+Torque Application in 
+Tractor Master Track Links 
+Bolts 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Assurance and Accuracy in Torque Application in 
+Tractor Master Track Links Bolts ............................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Assurance and Accuracy in Torque Application in 
+Tractor Link-Track Master Bolts 
+DATE 
+6/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1506-1.08-1363 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+1.0 Introduction  
+ 
+In the newly modified master track link, the torque application requires a high degree of accuracy 
+and also the required degrees (90 ° +/- 10 °) are not easy to mark in the hexagonal bolt, generating 
+an incorrect torque application to the track link. See Fig. 1. 
+ 
+This Best Practice provides a quick and safe solution for the precise marking regarding rotation 
+degrees when applying the final torque on the tractor master track link bolts. 
+ 
+2.0 Best Practice Description 
+ 
+The current degree marking is done through the technicians´ knowledge or expertise which generates 
+errors that ultimately result in redoes for torque loss of or a failure in the bolts due to torque excess. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 1. Incorrect angle marking for the torque of the master track link. 
+ 
+              
+To control the correct degree marking, a magnetic gauge was designed and manufactured tha t 
+allows a better degree accuracy. Fig. 2 
+ 
+ 
+ 
+  
+ 
+ 
+120° 
+In this case, a technician was asked to mark the 90 ° required for 
+the torque and it was an evident lack of knowledge 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Assurance and Accuracy in Torque Application in 
+Tractor Link-Track Master Bolts 
+DATE 
+6/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1506-1.08-1363 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 2. Gauge for degrees marking 
+ 
+Written on the visible surface of the gauge is the bolt specified diameter, the initial reference point of 
+rotation and the difference, plus the most used degrees of torque for this. 
+ 
+ 
+This applies for the degree marking in the different models of bolts thru the different equipment and 
+due to the fact that they are magnetic, they offer the convenience of placing them in any position. 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Assurance and Accuracy in Torque Application in 
+Tractor Link-Track Master Bolts 
+DATE 
+6/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1506-1.08-1363 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+3.0 Implementation Steps 
+ 
+Logistics: 
+ 
+• Data collection regarding the procedure of degrees marking. 
+• M agnetic gauge kit for the degrees marking. 
+• Creation of a standard operating index card for controlling the torque. 
+• Disclose the Best Practice to the personnel. 
+ 
+Operation: 
+ 
+• Clean the area around the bolt. 
+• Apply the pre-torque to the bolts according to the suggested sequence. 
+• Install the gauge matching the initial reference point with one of the vertices of the hexagonal 
+bolt head and mark this point. Also, mark the final point of rotation as indicated by the gauge 
+(see Fig. 2). 
+• Remove the gauge and implement further rotation in the route from the starting point to the 
+end point marked. 
+• Perform the procedure for all the bolts in the same order of the pre-torque application (see Fig. 
+3). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig. 3. Pre-torque and grades application sequence 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Assurance and Accuracy in Torque Application in 
+Tractor Link-Track Master Bolts 
+DATE 
+6/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1506-1.08-1363 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+4.0 Benefits 
+ 
+• Reduction of 90% of redoes for torque loss of the master track link bolts. Under 65% of failures 
+in less than 300 working days to 5.4% failure in the f leet of 37 machines.  (See report 
+attached). 
+ 
+• More accuracy regarding degrees marking. 
+• Easy to use and it applies for any bolts that require further rotation 
+• The lack of dependence on the skill and / or knowledge of the technician to determine grades. 
+• Incr eased equipment availability. 
+ 
+5.0 Resources Required 
+ 
+• Magnetic gauges according to the drawings 
+ 
+6.0 Supporting Attachments / References 
+ 
+ Standard operation index card for the Master track link torque (D11, D10, D9, D6) 
+                
+ 
+7.0 Related Best Practices 
+None 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Assurance and Accuracy in Torque Application in 
+Tractor Link-Track Master Bolts 
+DATE 
+6/23/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1506-1.08-1363 
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+8.0 Acknowledgements 
+ 
+Jairo Julio 
+Planning Analyst  
+GECOLSA_CAT Mining Division 
+Email: Jairo_julio@gecolsa.com.co 
+ 
+Samuel Vellojin Cantillo. 
+Process Analyst 
+GECOLSA_CAT Mining Division 
+Email: Samuel_vellojin@gecolsa.com.co 
+ 
+Checked and written by: 
+ 
+Jorge Monterroza  
+Undercarriage Shop Foreman  
+GECOLSA_CAT Mining Division 
+Email: Jorge_monterroza@gecolsa.com.co 
+ 
+Luis Alberto Fernández Ch. 
+Development Engineer  
+GECOLSA_CAT Mining Division 
+Technical Department, Engineering and development Area. 
+Email: luisalberto_fernandez@gecolsa.com.co

@@ -1,0 +1,429 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+April 2007  
+0307-4.5-1069  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Improving the Last Labor to Work 
+Order Invoicing (LLI) Process 
+ 
+Application  Maintenance  Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety MARC 
+Management 
+ 
+ 
+ 
+Improving the Last Labor to Work Order Invoicing 
+(LLI) Process ............................................................. 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 3 
+3.0  Implementation Steps ........................................ 5 
+4.0  Benefits ............................................................. 6 
+5.0  Resources Required .......................................... 6 
+6.0  Supporting Attachments / References ............... 7 
+7.0  Related Best Practices ...................................... 7 
+8.0  Acknowledgements ........................................... 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRIT TEN PERMISSION OF CATERPILLAR  
+Improving the Last Labor to Work order Invoicing (LLI) 
+Process 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.5-1069  
+Caterpillar Confidential:  YELLOW          Page 2 of 7 
+1.0 Introduction  
+ 
+Last Labor to Invoice (LLI) is a measure of the time in days from the completion of a repair to 
+when the work order is closed and the customer is invoiced.  Managing and working to reduce 
+this metric is a critical part of maintaining an efficient service shop or CRC.  Excessive LLI 
+delays the timing of cash flows, which can negatively impact a company’s financial position.  In 
+some cases, capital charges are levied against Service Work In Process (SWIP) that has yet to 
+be invoiced.  Eliminating these non-value added charges will lead to improved profitability.  
+Finally, by reducing the time a customer has to wait to be invoiced, increased customer 
+satisfaction can be achieved. 
+ 
+Perhaps the most critical element is driving the awareness of the issue across the service 
+department.  There are improvements that can be made to the process, but without the 
+appreciation of the issue, delays can continue to occur when attention is diverted to what is 
+deemed a more important use of time.  This Best Practice documents the work of several 
+dealers to determine the root causes and potential solutions to excessive LLI.   
+ 
+A good benchmarks for LLI is three days.  The appropriate goal will vary from dealer to dealer 
+based on factors surrounding obtaining customer purchase order numbers, parts/core return 
+processes, report reviews, and many others.  
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRIT TEN PERMISSION OF CATERPILLAR  
+Improving the Last Labor to Work order Invoicing (LLI) 
+Process 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.5-1069  
+Caterpillar Confidential:  YELLOW          Page 3 of 7 
+2.0 Best Practice Description 
+ 
+It is important to identify the “As-Is” process prior to attempting to make improvements so 
+bottlenecks and other opportunities can be identified and then demonstrated through the “To-Be” 
+process.  When all details of the process can be viewed, it is much more likely that problems will 
+be more apparent and give you a baseline for future improvements.  The LLI process varies from 
+dealer to dealer, but the following is an example of an improved process implemented by a 
+dealer. 
+ 
+ 
+ 
+Many LLI processes allow excessive time during the routing and review portions without giving 
+an individual responsibility for ensuring steps are completed in a timely manner.   
+ 
+In the process above, the floor supervisor is responsible for checking over the job upon being 
+tagged as “Ready to Go” by the lead hand and then routing the work order to the biller.  Prior to 
+routing to the biller, a Work Order Completion checklist is completed.  This can be completed by 
+the technician or a supervisor, but should be done by whoever is desired to have responsibility 
+for ensuring the work order is complete and is received by the biller in a timely fashion.  The 
+checklist ensures that all information necessary to close the work order and invoice the customer 
+has been completed.   
+ 
+A sample is shown below. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Repair work  
+Completed  
+Lead Hand  
+Inspection  
+Repair green  
+tagged (ready) by  
+Lead Hand.  
+Customer advised  
+Supervisor checks  
+job, routes to  biller  
+Biller  adds last  
+labor, Total $  
+Excessive variance/high  
+warranty or policy $?  
+Supervisor reviews jobs  
+daily until resolved  – 
+pull system  
+Supervisor adds review  
+sheet, returns to  biller  
+Biller  
+closes/invoices job  End  
+YES  
+NO  
+Repair work  
+Completed  
+Lead Hand  
+Inspection  
+Repair green  
+tagged (ready) by  
+Lead Hand.  
+Customer advised  
+Supervisor checks  
+job, routes to   biller  
+Biller  adds last  
+labor, Total $  
+Excessive variance/high  
+warranty or policy $?  
+Supervisor reviews jobs  
+daily until resolved  – 
+pull system  
+Supervisor adds review  
+sheet, returns to  biller  
+Biller  
+closes/invoices job  End  
+YES  
+NO  
+Repair work  
+Completed  
+Lead Hand  
+Inspection  
+Repair green  
+tagged (ready) by  
+Lead Hand.  
+Customer advised  
+Supervisor checks  
+job, routes to  biller  
+Biller  adds last  
+labor, Total $  
+Excessive variance/high  
+warranty or G/W $?  
+Supervisor reviews jobs  
+daily until resolved  – 
+pull system  
+Supervisor adds review  
+sheet, returns to  biller  
+Biller  
+closes/invoices job  End  
+YES  
+NO  
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRIT TEN PERMISSION OF CATERPILLAR  
+Improving the Last Labor to Work order Invoicing (LLI) 
+Process 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.5-1069  
+Caterpillar Confidential:  YELLOW          Page 4 of 7 
+ 
+Upon totaling the work order, if a job is determined to have excessive variance or is a high dollar 
+warranty or goodwill job, the biller routes it to a supervisor with a pull system.  This keeps the 
+supervisor focused only on work orders that need attention.  Review time can be a major cause 
+of delays in processing work orders when they sit unnoticed, adding unnecessary time to the 
+process. To combat this delay, excessive variance or high dollar warranty and goodwill work 
+orders are required to be reviewed by supervisors on a daily basis to keep the review time to a 
+minimum.   
+ 
+Ensuring that routing and reviewing of work orders is completed in a timely manner is only the 
+beginning of the potential ways to keep LLI to a minimum.  Other key behaviors include: 
+ 
+• Ensure accurate labor, parts, and miscellaneous ch arges in work orders to minimize back 
+outs 
+• Turn in complete  service reports the first  time 
+• Stay ahead of warranty/goodwill issues 
+• Utilize DBS Parts Shop Return process to simplify parts return process (See References ) 
+• Develop reliable process for obtaining customer P. O. numbers 
+Technician: Work Order No:     
+Last Labor Date: 
+Done? Task 
+Comments: 
+Signature Clerk: 
+Date: Date: 
+Work Order Completion Checklist 
+1. Perform Final Inspection 
+2. Report additionals to your lead person or supervisor 
+3. Verify Oils/ Lubricants are on Service Reports 
+4. Verify all Cores are turned in 
+5. Verify all necessary Parts are returned 
+6. Verify Service Report is filled out completely and accurately 
+A. Make, Model, S/N fields completed? 
+B. Any related driven information? 
+C. Service Meter reading included? 
+D. SIMS reports completed? 
+E. Three C's completed? (Complaint, Cause, Correction) 
+F. Service Report signed? 
+7. Warranty Jobs: 
+A. Cat tag filled out & attached to warranty part? 
+B. Parts delivered to warranty storage? 
+8. Clean up work area 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRIT TEN PERMISSION OF CATERPILLAR  
+Improving the Last Labor to Work order Invoicing (LLI) 
+Process 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.5-1069  
+Caterpillar Confidential:  YELLOW          Page 5 of 7 
+• Establish timing criteria to prevent flood of work  orders at the end of the month 
+• Top level management emphasis on importance of tim ely paperwork 
+• Work with necessary parties to plan for periods of  high workload 
+• Ensure adequate backup during vacation periods 
+• Schedule uninterrupted review time for supervisors  
+ 
+ 
+There are many potential process improvements, and the deficiency causing the most delay in 
+the process can vary from dealer to dealer or even between dealer branch stores.  It is important 
+to analyze the situation from all angles to ensure that all the potential root causes are found.  
+However, perhaps the most critical step is developing a culture that avoids unnecessary 
+delays in the process .  Simply taking steps to ensure the Service Reports to review do not get 
+filed under a stack of other work or continuing to follow up until the necessary information is 
+gathered will help reduce LLI. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The first step to improving LLI is to create an “As-Is” process map.  Once this is complete, 
+identify potential root causes with methods such as a fishbone diagram.  An improved process 
+designed to address the identified root causes should then be implemented.  An important part 
+of the implementation process is providing training.  Without an understanding of the importance 
+of LLI across the organization, it will be difficult to maintain improvements in the long-term.  
+Some general training that is key to reducing LLI includes: 
+  
+• Service Warranty Policy 
+• Goodwill Policy 
+• Parts Warranty Policy 
+• Service Report Writing 
+• STW – Time and Daily Work Order Submittal  
+• Customer Communication and Follow-Up 
+• Importance of Reducing LLI 
+ 
+The key to a successful implementation is embedding control methods to ensure that any 
+improvements made to the process are followed in the long-term, rather than just falling back 
+into the previous, unsuccessful process.  Potential control methods include: 
+ 
+• Weekly DBS reports tracking LLI 
+• Track work orders by responsible technician 
+• Daily reports visible to Supervisors 
+• Develop standard operating procedures 
+ 
+There have been instances in which a dealer showed significant improvement, but without a 
+control method in place, fell back to previous levels of performance.  In some cases, the 
+performance was even worse than the original state.  No improvement project is complete 
+without a control in place. 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRIT TEN PERMISSION OF CATERPILLAR  
+Improving the Last Labor to Work order Invoicing (LLI) 
+Process 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.5-1069  
+Caterpillar Confidential:  YELLOW          Page 6 of 7 
+ 
+4.0 Benefits 
+Dealers who implemented similar process improvements to those outlined in this Best Practices 
+have seen results and benefits such as: 
+  
+• Reduce LLI by upwards of 50% 
+• Improved timing of cash flows leads to reduced int erest expense 
+• Improved profitability (If capital charges are lev ied) 
+• Overall more efficient service operation 
+• Timely invoicing leads to increased customer satis faction 
+ 
+5.0 Resources Required 
+ 
+Parts Shop Return Process Detail 
+ 
+A tool that often goes unused in DBS is the Parts Shop Return Process. It helps to simplify the 
+parts return process by allowing the technician to simply choose which parts to return from the list 
+associated with the work order in question.  This eliminates additional work looking up the part 
+number or group number again and makes it easier to get the correct number the first time.  This 
+also raises a flag to the parts department so they know a returned part is in transit to eliminate 
+unnecessary backorders.   
+ 
+Ensure that this tool is being used – in some cases, it was not even installed in the dealer’s DBS 
+environment.  See the screenshots below to identify if it is installed.  To search for a work order, 
+simply enter the work order number or segment number.  If desired, a particular part can also be 
+searched for within a work order. 
+ 
+DBS – SHOP REQ PARTS RETURN MODULE  
+
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRIT TEN PERMISSION OF CATERPILLAR  
+Improving the Last Labor to Work order Invoicing (LLI) 
+Process 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.5-1069  
+Caterpillar Confidential:  YELLOW          Page 7 of 7 
+ 
+ 
+ 
+DBS – SHOP REQ PARTS RETURN MODULE 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This best practice was created by compiling the proposed processes and results of several dealer 
+Six Sigma projects related to reducing Last Labor to Invoice and Service Work in Process.  
+Projects by the following dealers and Black Belts were referenced: 
+• Finning Canada 
+o Bob Smith 
+• Hawthorne Pacific 
+o Chris Giannaris 
+• Yancey Brothers 
+o John Miller

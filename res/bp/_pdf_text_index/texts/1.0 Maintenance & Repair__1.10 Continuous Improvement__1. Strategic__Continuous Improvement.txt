@@ -1,0 +1,470 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+BEST PRA CTICE SERIES  
+Continuous Improvement 
+(Strategic) 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Continuous Improvement (Strategic) ......................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+1007-2.0-1110 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Continuous Improvement is a critical part of the overall Mining Equipment Management process.  
+To provide consist product support service to mining customers, it is necessary to continuously 
+evaluate all aspects of the operations to identify the gaps in operations and areas that can be 
+improved.  This will help you better manage the availability, reliability and cost of the operation. 
+ 
+To accomplish this, a Continuous Improvement program should be implemented that adopts an 
+organized approach to define and analyze problems, prioritize problems based on time, money & 
+resources, determine corrective action and apply the solutions.  This approach will need to 
+involve the entire organization, as the input for Continuous Improvement comes from many 
+functional areas within the operation. 
+ 
+The Continuous Improvement process is a loop of an “input of information” that is used in the 
+improvement process to identify gaps in performance, develop a fix and the “feedback of 
+corrective actions” to the various functional areas for implementation.  The Continuous 
+Improvement process starts with  
+• Input from the results of the current actions in the form of KPI’s (top tier metrics).  
+Example: Low Availability 
+• Drill down into the Process Metrics to find the Root Cause of the poor performance.  
+Example: MTTR is too high…time to repair.  
+• Develop Corrective Action(s), example: Provide training for mechanics to improve 
+efficiency. 
+• Communicate Corrective Action(s) to appropriate areas in organization. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Detect
+Condition Monitoring
+Machine Health 
+ Application 
+ Operation 
+Plan
+Planning & Scheduling
+Backlog Management
+Parts Management
+Training
+Human Resources
+Execute
+Preventive Maintenance
+Repair Management
+Component Management
+Evaluate
+Performance Evaluation
+Organized Analysis
+Management Reports
+Action Plans
+Correct
+Continuous Improvement
+Solutions 
+Feedback Loop with Corrective Action
+to Specific Functional Area
+Feedback Loop with Corrective Action
+to Specific Functional Area
+Cat Global Mining
+Maintenance Model
+Detect
+Condition Monitoring
+Machine Health 
+ Application 
+ Operation 
+DetectDetect
+Condition Monitoring
+Machine Health 
+ Application 
+ Operation 
+Plan
+Planning & Scheduling
+Backlog Management
+Parts Management
+Training
+Human Resources
+Execute
+Preventive Maintenance
+Repair Management
+Component Management
+ExecuteExecute
+Preventive Maintenance
+Repair Management
+Component Management
+Evaluate
+Performance Evaluation
+Organized Analysis
+Management Reports
+Action Plans
+Correct
+Continuous Improvement
+Solutions 
+CorrectCorrect
+Continuous Improvement
+Solutions 
+Feedback Loop with Corrective Action
+to Specific Functional Area
+Feedback Loop with Corrective Action
+to Specific Functional Area
+Cat Global Mining
+Maintenance Model
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Continuous Improvement (Strategic) 
+DATE 
+2/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1110 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.0 Best Practice Description 
+The first step is to identify the problems using input from the results of current actions in the form 
+of Top Tier Metrics – KPI”s.  The Continuous Improvement process should not be limited to 
+technical / "iron" - related issues alone since problems may be the result of operational, service or 
+other product support-related areas, e.g. parts. Problem reports should be analyzed on the basis 
+of machine, system, component, part number and / or frequency with the key criteria for inclusion 
+on the list being costs and downtime. 
+ 
+Once the problems are defined, the challenge for the equipment manager is to identify the root 
+cause(s) of each of the problems and to take action to manage them (minimize their impact on 
+the operation) until they can be resolved.  To properly identify the root cause, it will be necessary 
+to drill down into the Top Tier Metrics to identify the process metric that is associated with the 
+poor performance.  Cause & Effect Diagrams (Fishbone) are effective tools to identify root cause. 
+ 
+After the root cause has been identified, a solution to the problem can be developed and 
+communicated back to the appropriate area(s) for implementation. 
+ 
+A follow-up check must be performed to validate that the proposed corrective action is producing 
+the desired results. 
+ 
+ Ideally, the Continuous Improvement exercise results in problem avoidance or, at least, 
+minimization. Steps toward solution may involve modifications to the machine design or 
+configuration, modification to the operation or application of the machine, modifications to 
+machine maintenance practices, additional manpower, training, tooling or other support 
+resources. 
+ 
+This Best Practice describes the strategic best practice of implementing a Continuous 
+Improvement program.   
+ 
+To have a successful Continuous Improvement program you will need to include the following 
+elements: 
+• Strategy 
+• Procedures 
+• Resources 
+• Execution/Implementation 
+• Performance Evaluation 
+ 
+2.1 Strategy 
+The strategy defines the scope, goals & objectives of your Continuous Improvement Program and 
+should address the following areas: 
+• “Top Tier” site performance 
+• Maintenance & Repair management process performance 
+• Application severity 
+• Operational issues & operating practices 
+• Design / technical issues 
+• Costs / financial performance 
+• Safety 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Continuous Improvement (Strategic) 
+DATE 
+2/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1110 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Parts support 
+• CRC / dealer rebuild capabilities 
+ 
+2.2 Procedures 
+A Continuous Improvement program will require the use some type of Business Process 
+Improvement methodology that provides the necessary steps to follow and tools to use during the 
+various phases of a project.  Some examples of Business Process Improvement methodologies 
+would be 6 Sigma and GMP+. 
+ 
+Part of the business process improvement methodology involves: 
+• Project identification 
+• Project prioritization & selection 
+• Project management 
+ 
+2.3 Resources 
+A Continuous Improvement team coordinator should be identified to provide leadership to the 
+Continuous Improvement efforts within the organization.  This coordinator will provide leadership 
+to a team of subject matter experts (SME’s) that will be assigned to each project from the various 
+functional areas depending on the nature of the project.  The entire team must be trained and 
+competent in the Business Process Improvement methodologies. 
+ 
+2.4 Execution/Implementation 
+To ensure successful execution of Continuous Improvement projects, the teams must meet on a 
+regular basis to provide consistency and follow-up on the established work plans.  To make sure 
+that the project stays on track, a 3W work plan template should be used to identify: 
+ 
+• What:  Task or action to be performed 
+• Who:  Person responsible for completing the task 
+• When: Date that the task is expected to be completed 
+ 
+What Who When 
+Task 1 Person 1 Date 1 
+Task 2 Person 2 Date 2 
+Task 3 Person 3 Date 3 
+Task 4 Person 4 Date 4 
+  
+Once the corrective action has been developed and communicated, the appropriate area 
+personnel must implement the fix that has been recommended by the Continuous Improvement 
+team. 
+ 
+2.5 Performance Evaluation 
+For a fully functional Continuous Improvement program, performance must be measured against 
+pre-established Top Tier Metrics (KPI’s) and reported on a regular basis.   
+ 
+Some examples of KPI’s for Continuous Improvement are: 
+• Quantity of Continuous Improvement projects opened in the period 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Continuous Improvement (Strategic) 
+DATE 
+2/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1110 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Quantity of Continuous Improvement projects active 
+• Quantity of Continuous Improvement projects closed in the period 
+• Average project execution time 
+• Completed project delivered value 
+ 
+These KPI reports should be distributed to the appropriate people in your organization on a 
+monthly basis.  The reporting process should include:  
+• Content of report 
+• Distribution list 
+• Frequency of distribution 
+ 
+ 
+3.0 Implementation Steps 
+The Continuous Improvement process consists of the following steps and tools: 
+ 
+• Identifying key problems that are affecting the performance 
+o Comparing actual vs. planned results using KPI’s. 
+o Problem reports 
+o Root Cause Analysis (Fishbone Analysis) 
+o Site/Operation Audits 
+ Site Assessment Tool 
+ Contamination Control Compliance Guide 
+ Gap Analysis Tool 
+• Quantify the impact on the fleet operation 
+o Cost 
+o Availability 
+o Repair Frequency 
+o Repair Duration 
+o Manpower & tooling Requirements 
+• Prioritizing the problems for selection of candidate Continuous Improvement Projects 
+o A filtering process to evaluate the cost & ease of implementation 
+• Identification of root cause by drilling down into the process metrics to determine the 
+element that is causing the poor performance.  
+o Cause & Effect Diagrams (Fishbone) 
+• Identify potential solutions & determine best course of action 
+o Pugh Matrix evaluation 
+• Develop an action plan which will define the following: 
+o What is the corrective action? 
+o Who is responsible for implementation of this action? 
+o When will this corrective action be completed? 
+• Implement and complete the plan 
+• Monitor and quantify the results to verify the effects of the corrective action. 
+o Establish & monitor Continuous Improvement KPI’s 
+ 
+Each of these steps should be followed using Business Process Improvement methodology and 
+tools available. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Continuous Improvement (Strategic) 
+DATE 
+2/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1110 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+The eventual corrective action may involve modifications to the machine design or configuration, 
+modifications to the operation or application of the machine, modifications to machine 
+maintenance practices, additional manpower, training, or other support resources.  It may become 
+necessary to involve the additional resource from other groups within the organization or from 
+Caterpillar. 
+ 
+ 
+4.0 Benefits 
+Successful implementation and execution of a Continuous Improvement program will: 
+• Deliver quality support services in an efficient manner 
+• Improve profitability 
+• Improve customer satisfaction through  
+o Increased availability 
+o Lower cost per ton 
+o Increased productivity 
+ 
+ 
+5.0 Resources Required 
+Human Resources:  Human resource requirements associated with the implementation and 
+execution of Continuous Improvement include: 
+• Team coordinator 
+o Provides overall leadership to team. 
+• Subject Matter Experts  
+o Function as team members with specific areas of expertise 
+ 
+Logistical Resources:  Logistical resource requirements associated with the implementation and 
+execution of Continuous Improvement include: 
+• Information  
+o Regular input (monthly reports) from other functional areas 
+o KPI’s/Top Tier Metrics 
+o Problem reports, etc. 
+ 
+6.0 Supporting Attachments / References 
+ 
+• 6 Sigma or similar Business Process Improvement methodology & training 
+ 
+See the attached files: 
+• Cat Global Mining Equipment Management Process Map 
+• “Metrics (KPI’s) to Assess Process Performance” – PDF Document 
+• Performance Metrics for Mobile Mining Equipment 
+ 
+ 
+7.0 Related Best Practices 
+ 
+1007-2.0-1109   Performance Evaluation (Strategic) will be published Jan 2008  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Continuous Improvement (Strategic) 
+DATE 
+2/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1110 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Dave Allan 
+Continuous Improvement Manager 
+Cat Global Mining 
+Allan_david_w@cat.com 
+Ph. +1-309-636-5651 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Continuous Improvement (Strategic) 
+DATE 
+2/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1007-2.0-1110 
+Caterpillar Confidential:  GREEN          Page 6 of 6

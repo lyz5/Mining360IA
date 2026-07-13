@@ -1,0 +1,407 @@
+SOURCE: TIR - Technical Information Release Process.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+September 2024 
+1.05-240913-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+TIR-Technical Information 
+Release Process 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+TIR - Technical Information Release Process ............ 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 7 
+5.0 Resources Required .......................................... 7 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+TIR - Technical Information Release Process 
+DATE 
+9/13/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-240913-1 
+Caterpillar: Confidential Yellow          Page 2 of 7 
+1.0 Introduction  
+ 
+Technical Information Release (TIR) is a Caterpillar Dealer produced document used to 
+communicate product problems, interim resolutions, dealer repair/setup procedures with 
+appropriate groups within the dealership. TIR’s are an effective and efficient path to inform 
+multiple areas of the dealer, customers, and 3rd parties (where applicable). This best practice will 
+outline and explain TIR structure, data collection and distribution. 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice provides guidelines on how a TIR should be structured to effectively 
+communicate information, display illustrations, capture data, document accessibility and 
+distribution among the Dealership. 
+ 
+3.0 Implementation Steps 
+ 
+TIR Document Structure:  
+ 
+• TIR Header should include Dealer name and confidential level  
+• Media number required to track and identify each TIR – the use of the publication date 
+may be an option (example: TIR2021-11-15) 
+• Publication Date – Date of TIR Publication 
+• Date Updated – Date of latest revision 
+• Distribution shows the confidential level of the TIR such as “Dealer only”, “Customers”, 
+“3
+rd Party” 
+• Priority shows severity of the TIR such as “Information Only”, “Take Necessary 
+Precautions”, “Immediate Action” 
+ 
+ 
+        Figure 1 - Technical Information Release Example 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+TIR - Technical Information Release Process 
+DATE 
+9/13/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-240913-1 
+Caterpillar: Confidential Yellow          Page 3 of 7 
+Subject – Description of the Technical Information Release 
+SMCS – SMCS Codes applicable to the TIR 
+Models – Affected Prefix / Serial numbers 
+Introduction – Elaborate on the subject, provide brief background information 
+Problem – Outline the issue, include potential contingent damage 
+Solution – Outline interim/permanent solutions, include action items if required 
+Data Capture Table – Failure information requested and communicated back to the technical                      
+department (If Applicable) 
+ 
+ 
+TIR Introduction: 
+ 
+This section is intended to provide background information on the technical information 
+release. Details as to why this is required and how it will be accomplished.  
+ 
+TIR Problem: 
+ 
+This section provides details on the problem outlined by the TIR. Clear and descriptive 
+information is required to communicate historic, current and potential issues this 
+problem may cause. If possible, include (pictures, diagrams, drawings etc) to ensure the 
+problem is fully understood by the intended audience. 
+ 
+TIR Solution.  
+ 
+Parts/Tools Required: 
+Table of all parts and tooling required to complete the Technical Information Release. 
+This will ensure parts and tooling can be ordered ahead of time and planned 
+accordingly before the work gets done. It will also be used for future reference when the 
+particular TIR requires repairs or maintenance related tasks. 
+ 
+      
+ 
+Figure 2 - Example TIR Parts List 
+                                     
+   
+Reference Part Number Description Quantity 
+A 328002044 Top Bracket 1 
+B 328002045 Bottom Bracket 1 
+C Bolt (1”-8”) 7X0415 4 
+D Stover Nut 6K-3632 4 
+E FTA-TSB-4HD-50 Rubber Gasket (7ft) 2 
+ 
+Colour coded 
+confidential level 
+for quick reference 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+TIR - Technical Information Release Process 
+DATE 
+9/13/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-240913-1 
+Caterpillar: Confidential Yellow          Page 4 of 7 
+Installation Procedure: 
+ 
+Step by step instructions to ensure the Technical Information Release is completed 
+efficiently and in a repeatable manner on each applicable machine. If needed, provide 
+pictures, drawings and schematics to clarify the procedure.  
+ 
+*** List any reference documents related to the Technical Information Release 
+ 
+Safety Section: 
+ 
+This section is intended to provide any precautions that should be taken during the 
+inspection, repair or other procedure outlined in the Technical Information Release. 
+ 
+Example: 
+Follow site-based safety recommendations.  
+Review referenced literature and follow safety recommendations.  
+Before you perform any repairs or before you perform any maintenance, read all safety information. Understand all safety 
+information before you perform any repairs or before you perform any maintenance.  
+ 
+Do not attempt to disassemble or assemble this machine until you read and understand 
+the disassembly and assembly instructions. Improper disassembly and assembly 
+procedures could result in injury or death. 
+ 
+ 
+TIR Conclusion: 
+ 
+Quick summary of the problem, solution, and general recommendations to implement 
+the TIR. 
+ 
+TIR Revisions: 
+ 
+  Enter details of any revision made to this TIR Rev (01,02,03 etc) 
+ 
+Revision Date Editor Description of Change 
+01    
+    
+ 
+TIR Risk Assessment: 
+ 
+Utilize a risk matrix to assess any associated risks involved with the Technical Information 
+Release. Risks during the installation process, machine operation and maintenance 
+requirements for the projected life of the equipment.  
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+TIR - Technical Information Release Process 
+DATE 
+9/13/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-240913-1 
+Caterpillar: Confidential Yellow          Page 5 of 7 
+Figure 3 - Example of Risk Assessment Matrix 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Could it affect any of the following: 
+• Safety Devices – Handrails/Towing/Lifting/Tie-offs/Lock Out 
+• ROPS/FOPS 
+• Steering 
+• Brakes 
+• Egress 
+ 
+Perform Peer Review to assess all potential risks associated with the TIR. With any Technical 
+Information Release, a validation period may be necessary to monitor how machine performance is 
+affected. 
+ 
+TIR Capture Form: 
+ 
+If applicable, provide a template capture form to gather data from the field. Provide instructions on 
+how to fill out the capture form in the TIR and how to communicate the information back to the 
+appropriate contacts. 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+TIR - Technical Information Release Process 
+DATE 
+9/13/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-240913-1 
+Caterpillar: Confidential Yellow          Page 6 of 7 
+TIR Illustrations: 
+ 
+The use of relevant illustrations helps communicate information efficiently. Ensure to use arrows and 
+descriptions to point out the correct part of the illustration to avoid misinterpretation. 
+• Refer to the operation manual for the device that you are using for advice on how to achieve 
+quality photos and videos. 
+• Allow for ample lighting to reduce the number of photos that will be discarded due to 
+blurriness. 
+o Try to use natural light whenever possible. 
+o Good lighting will also reduce or prevent shadows from developing on the components 
+you are photographing. 
+ 
+• Capturing Photo, Video, Or Audio Evidence of Machine Issues  
+ 
+• Review the photos before forwarding them off to ensure that the photos show the problem 
+clearly. 
+ 
+Figure 4 - Example Photo Showing Exact location with multiple pictures and arrows 
+ 
+ 
+TIR Distribution / Communication: 
+ 
+Technical Information Release has a wide range audience, including service, technical and 
+depending on the issue, parts department. It is recommended that a TIR email distribution list is 
+created to ensure consistent communication. Other platforms such as MS Teams, SharePoint and 
+other shared sites are recommended for extended end-user reach. 
+ 
+Draft version of the TIR is sent to the Technical Team for peer review, discuss any background 
+information, DPPM and CPI Status. Review any special procedures or tooling required to complete 
+the work. 
+ 
+All current TIR’s are reviewed by the Technical Team on a quarterly basis to ensure the latest 
+information is communicated and outlines the best solution currently available. 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+TIR - Technical Information Release Process 
+DATE 
+9/13/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.05-240913-1 
+Caterpillar: Confidential Yellow          Page 7 of 7 
+Communication Path (Examples) 
+ 
+• Email - Send email to appropriate contacts 
+• MS Teams – Create a Library of TIR’s within a dealer MS Teams Site 
+• SharePoint – Create a Library of TIR’s on a dealer SharePoint Site. 
+• Technical Meeting – Share and discuss newly published TIR’s in customer technical 
+meetings. 
+ 
+4.0 Benefits 
+ 
+• Ensures crucial information is communicated effectively and efficiently 
+• Easy and quick to publish 
+• Data is returned consistently to the technical team 
+• Early warning process for potential emerging issues 
+ 
+5.0 Resources Required 
+ 
+Technical Subject Matter Expert (Dealer) 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+(TIR) Technical Information Release Template - Attachment 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Roger Sieber 
+Finning Canada 
+Product Performance Manager 
+rsieber@finning.com
+ 
++1 780 215 3255 
+ 
+Determine 
+Feasibility for 
+TIR
+Write TIR
+ Peer Review
+ Communicate 
+TIR
+Gather field 
+Feedback and 
+Revise as 
+Necessary

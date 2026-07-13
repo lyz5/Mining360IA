@@ -1,0 +1,254 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Device for Grinding 3500 
+Rocker Arm Bushings  
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Device for Grinding 3500 Rocker Arm Bushings .. 0 
+1.0 Introduction ......................................................... 1 
+2.0 Best Practice Description ....................................... 1 
+3.0 Implementation Steps ............................................ 4 
+4.0 Benefits ............................................................... 4 
+5.0 Resources Required .............................................. 4 
+6.0 Supporting Attachments / References ...................... 4 
+7.0 Related Best Practices ........................................... 4 
+8.0 Acknowledgements ............................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by one or 
+more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty about the 
+information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best Practice” 
+recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+May 2012 
+1205-4.03-1275 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+  
+Replacing rocker arms during the rebuild of an engine adds considerable cost to the rebuild.   Salvaging 
+the rocker arms by replacing the bushing can represent a considerable cost savings.  Installing a new 
+bushing and machining the inside diameter to the proper surface finish is a precise operation.  Ferreyros 
+has developed a special fixture that attaches to the connecting rod boring tool to provide easy centering 
+for machining. 
+ 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Since tool prints are not currently available, the following photos show the fixture and process. 
+ 
+ 
+ 
+The fixture simulates a connecting rod with a center-to-center dimension of 250mm.  The lower bore 
+holds the rocker arm and folding clamp plate to lock the rocker arm in position. 
+ 
+ 
+ 
+ 
+The fixture is installed on the connecting rod boring machine as shown. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Rectify 3500 Rocker Arm Bushings 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1205-4.03-1275 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+    
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Top coupling 
+Lateral coupling 
+Gate clamp for holding 
+rocker arm 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Rectify 3500 Rocker Arm Bushings 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1205-4.03-1275 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Rocker arm is positioned in the proper position using a coupling pin.  Once in position, the gate clamp is 
+used to lock the rocker arm in the corrent position. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        
+  
+ 
+     
+  
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Rectify 3500 Rocker Arm Bushings 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1205-4.03-1275 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+                                                                                             
+  
+ 
+ 
+     
+3.0 Implementation Steps 
+ 
+Design a tool similar to a rod 3500 with a distance between centers of 250mm. 
+ 
+4.0 Benefits 
+ 
+• More efficient – very quick set up for machining. 
+• Less chance of damaging rocker arm bushing 
+• Improves the quality of rocker arm bushing grinding process 
+• Allows even grinding – better quality. 
+ 
+5.0 Resources Required 
+ 
+Minimal expense to fabricate the tool. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Reuse and Salvage Guide SEBF8174 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Rectify 3500 Rocker Arm Bushings 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1205-4.03-1275 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+The idea for this Best Practice belongs to: 
+ 
+ Juvencio Rios 
+ Ferreyros S.A.A.  
+ 
+ 
+This Best Practice was writen by: 
+ 
+ Richard Navarro Villena 
+ Ferreyros S.A.A.  
+ 
+richard.navarro@ferreyros.com.pe 
+ 
+ 
+This Best Practice was revised by: 
+ 
+ Aninu Mitacc Vizcardo 
+ Ferreyros S.A.A.  
+ 
+aninu.mitacc@ferreyros.com.pe 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Rectify 3500 Rocker Arm Bushings 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1205-4.03-1275 
+Caterpillar Confidential:  GREEN          Page 5 of 5

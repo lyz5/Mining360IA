@@ -1,0 +1,193 @@
+SOURCE: 1.0 Maintenance & Repair\1.01 Preventive Maintenance\3. Quick Win\C175 Engine Oil Change.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2015 
+1505-1.01-1377 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+C175 Engine Oil Change 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+C175 Engine Oil Change ........................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C175 Engine Oil Change 
+DATE 
+7/24/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1505-1.01-1377 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+ 
+1.0 Introduction 
+ 
+There is an opportunity for contamination to enter the clean side of the oil system on 793F, 795F 
+and 797F during a routine engine oil PM. If the oil filter canister covers are not sufficiently clean, 
+the contamination left on the covers can enter the clean side of the filters causing reduced engine 
+life.  We have witnessed these covers not being cleaned and know that debris will enter into the 
+clean side of the oil system. This contamination will damage the rod and main bearings, but by 
+how much is dependent on the size and amount of debris in the cap. 
+ 
+In addition, when removing the oil pump suction screen, contamination can enter into the system 
+while the screen is being inspected and cleaned. 
+ 
+This Best Practice aims at reducing the chance for contamination as well as reducing the amount 
+of time required to complete the PM through the use of swing components.  Utilizing the "swing" 
+cover approach will save around 10-15 minutes per PM, but the big advantage is in quality of the 
+PM. 
+ 
+  
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C175 Engine Oil Change 
+DATE 
+7/24/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1505-1.01-1377 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+2.0 Best Practice Description 
+ 
+For the benefits to be realized in PM efficiency, CC compliance, and achieving engine life, the 
+dealer or customer will need to have at least one extra set of oil filter canister covers (with plugs) 
+and an oil pump suction screen. Good Contamination Control practices recommend these 
+components be placed in sealed plastic bags and delivered to the bay as part of a Standard PM 
+Kit (BP number 1007-2.0-1105). When the new engine oil filter elements are installed a technician 
+should place a new O-ring seal onto the clean replacement covers, and then install onto the oil 
+filter canister. After removal of the oil pump suction screen, the clean replacement screen can be 
+installed along with the cover. 
+ 
+         
+                    
+ 
+ 
+3.0 Implementation Steps 
+ 
+• Procure a spare set of oil filter canister covers, plugs and engine oil suction screen 
+• Determine method for cleaning and bagging of components 
+• Implement cleaned covers and suction screen into the engine oil PM kit 
+ 
+ 
+  
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C175 Engine Oil Change 
+DATE 
+7/24/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1505-1.01-1377 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+4.0 Benefits 
+• Reduction of contamination entering the engine lube system 
+• Reduced time spent cleaning components 
+• Suction screen will be cleaned and material will be inspected by a qualified technician for 
+more consistent interpretation 
+• Mine sites vary from $5K to $25K per truck per hour. If you use a conservative $10k per 
+hour that is $166 per min or $1666 every 10 minutes. So you can see that in time savings 
+alone you will pay for the swing components on the first PM on the first truck. Currently 
+there is no way to quantify how much you are shortening the life of the engine if you 
+choose to not use swing covers and screen. 
+ 
+ 
+5.0 Resources Required 
+ 
+• The cost of the filter covers is $450 x 2 and the suction screen is $130 or $1,030USD total. 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Kevin Storms 
+Field Solutions Development Team 
+Phone: +1 765 448 5689 
+Email:  STORMS_KEVIN_P@cat.com

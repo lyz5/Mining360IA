@@ -1,0 +1,448 @@
+doc_id,relative_path,bytes,pages,text_chars,status,text_file
+doc_0001,1.0 Maintenance & Repair\1.01 Preventive Maintenance\1. Strategic\8 Step Preventive Maintenance Process (Spanish).pdf,256753,6,13856,ok,texts\doc_0001.txt
+doc_0002,1.0 Maintenance & Repair\1.01 Preventive Maintenance\1. Strategic\8 Step Preventive Maintenance Process.pdf,475748,7,13724,ok,texts\doc_0002.txt
+doc_0003,1.0 Maintenance & Repair\1.01 Preventive Maintenance\1. Strategic\Goals & Objectives for Preventive Maintenance.pdf,1941691,6,15657,ok,texts\doc_0003.txt
+doc_0004,1.0 Maintenance & Repair\1.01 Preventive Maintenance\1. Strategic\Preventive Maintenance Strategy (Spanish).pdf,285491,17,50170,ok,texts\doc_0004.txt
+doc_0005,1.0 Maintenance & Repair\1.01 Preventive Maintenance\1. Strategic\Preventive Maintenance Strategy.pdf,544768,17,44920,ok,texts\doc_0005.txt
+doc_0006,1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\D10 Roller Retainer ARM Coating.pdf,878406,8,9325,ok,texts\doc_0006.txt
+doc_0007,1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Electrical System Preventive Maintenance.pdf,4699608,17,16116,ok,texts\doc_0007.txt
+doc_0008,1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Expanded Mining Products In-Pit Workshop.pdf,423825,6,10407,ok,texts\doc_0008.txt
+doc_0009,1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Gasoline Engine Powered Filter Cart.pdf,259075,4,5044,ok,texts\doc_0009.txt
+doc_0010,1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\HMS Mobile Elevated Workshop.pdf,563499,9,14455,ok,texts\doc_0010.txt
+doc_0011,1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Improved PM Operations with Specialized Bay.pdf,39218307,7,10362,ok,texts\doc_0011.txt
+doc_0012,1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Improving Availability through Dealer Customer PM Partnering.pdf,292800,4,7293,ok,texts\doc_0012.txt
+doc_0013,1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Inversion of the body pivot pins on mining trucks.pdf,1010289,5,6856,ok,texts\doc_0013.txt
+doc_0014,1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Pressurize OHT Air Induction System to Check for Leaks.pdf,942301,6,7533,ok,texts\doc_0014.txt
+doc_0015,1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Saving Hydraulic Oil during Inspect Torque Converter Sump Screen.pdf,151196,5,6829,ok,texts\doc_0015.txt
+doc_0016,1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Using BUILDER™ to Generate the Most Comprehensive PM Checklist.pdf,876762,6,7124,ok,texts\doc_0016.txt
+doc_0017,1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Using VIMStm Data for Pre PM Analysis.pdf,124662,4,7048,ok,texts\doc_0017.txt
+doc_0018,1.0 Maintenance & Repair\1.01 Preventive Maintenance\3. Quick Win\C175 Engine Oil Change.pdf,85664,4,5453,ok,texts\doc_0018.txt
+doc_0019,1.0 Maintenance & Repair\1.01 Preventive Maintenance\3. Quick Win\Cooling System Performance for Large Wheel Loaders 994.pdf,422676,8,9723,ok,texts\doc_0019.txt
+doc_0020,1.0 Maintenance & Repair\1.01 Preventive Maintenance\3. Quick Win\Cooling System Thermal Inspection.pdf,363949,7,10924,ok,texts\doc_0020.txt
+doc_0021,1.0 Maintenance & Repair\1.01 Preventive Maintenance\3. Quick Win\OHT Transmission and Hydraulic Filter Replacement Tool.pdf,1038262,4,5685,ok,texts\doc_0021.txt
+doc_0022,1.0 Maintenance & Repair\1.01 Preventive Maintenance\3. Quick Win\Sensor Fault Diagnosis Simulator Device.pdf,1754309,10,11673,ok,texts\doc_0022.txt
+doc_0023,1.0 Maintenance & Repair\1.01 Preventive Maintenance\3. Quick Win\Universal base for track type tractors final drives.pdf,1492391,11,7967,ok,texts\doc_0023.txt
+doc_0024,1.0 Maintenance & Repair\1.01 Preventive Maintenance\3. Quick Win\Used Oil Drain Fixture For OHT Final Drives.pdf,2006470,6,5291,ok,texts\doc_0024.txt
+doc_0025,1.0 Maintenance & Repair\1.01 Preventive Maintenance\3. Quick Win\Wheel Loader Lubricated Pin Inspection.pdf,170653,5,7876,ok,texts\doc_0025.txt
+doc_0026,1.0 Maintenance & Repair\1.02 Condition Monitoring\1. Strategic\Condition Monitoring Strategy.pdf,1791651,13,33661,ok,texts\doc_0026.txt
+doc_0027,1.0 Maintenance & Repair\1.02 Condition Monitoring\1. Strategic\Magnetic Plug Inspection Trays and Inspection Process.pdf,154242,3,6329,ok,texts\doc_0027.txt
+doc_0028,1.0 Maintenance & Repair\1.02 Condition Monitoring\2. Tactical\Communicating VIMS Events Using Critical Event Advice.pdf,667718,8,11499,ok,texts\doc_0028.txt
+doc_0029,1.0 Maintenance & Repair\1.02 Condition Monitoring\2. Tactical\Condition Monitoring - Field Inspection.pdf,4942025,8,12557,ok,texts\doc_0029.txt
+doc_0030,1.0 Maintenance & Repair\1.02 Condition Monitoring\2. Tactical\Electronic Data Usage for Equipment Management on Construction Projects.pdf,114431,4,7773,ok,texts\doc_0030.txt
+doc_0031,1.0 Maintenance & Repair\1.02 Condition Monitoring\2. Tactical\Fuel Consumption Large Track-Type Tractor Production Study.pdf,4101314,6,13196,ok,texts\doc_0031.txt
+doc_0032,1.0 Maintenance & Repair\1.02 Condition Monitoring\2. Tactical\Maintenance Planning for OHT Bodies.pdf,4537674,7,10196,ok,texts\doc_0032.txt
+doc_0033,1.0 Maintenance & Repair\1.02 Condition Monitoring\2. Tactical\Managing Fuel Consumption Reduces Cost.pdf,109178,5,8293,ok,texts\doc_0033.txt
+doc_0034,1.0 Maintenance & Repair\1.02 Condition Monitoring\2. Tactical\Use of a Hot Sheet for Component Management.pdf,100937,7,14228,ok,texts\doc_0034.txt
+doc_0035,1.0 Maintenance & Repair\1.02 Condition Monitoring\2. Tactical\Using VIMS TKPH Feature to Control Heat-Related Tire Failures.pdf,2621718,6,10255,ok,texts\doc_0035.txt
+doc_0036,1.0 Maintenance & Repair\1.02 Condition Monitoring\2. Tactical\Using VIMS to Manage Overcooled Engines.pdf,119121,7,11956,ok,texts\doc_0036.txt
+doc_0037,1.0 Maintenance & Repair\1.02 Condition Monitoring\2. Tactical\Using VIMS® to Determine Air Filter Replacement Intervals.pdf,76093,5,10590,ok,texts\doc_0037.txt
+doc_0038,1.0 Maintenance & Repair\1.02 Condition Monitoring\2. Tactical\Utilization of Existing Onboard Electronics.pdf,306001,9,21808,ok,texts\doc_0038.txt
+doc_0039,1.0 Maintenance & Repair\1.02 Condition Monitoring\2. Tactical\Utilizing VIMS Data for Effective Planned Maintenance.pdf,1334520,5,6614,ok,texts\doc_0039.txt
+doc_0040,1.0 Maintenance & Repair\1.02 Condition Monitoring\3. Quick Win\Applying Heat Tabs on 3400 3500 C-Series Engine Cylinder Heads.pdf,537233,5,6163,ok,texts\doc_0040.txt
+doc_0041,1.0 Maintenance & Repair\1.02 Condition Monitoring\3. Quick Win\Fluid Analysis Sampling Cart.pdf,211736,8,10361,ok,texts\doc_0041.txt
+doc_0042,1.0 Maintenance & Repair\1.02 Condition Monitoring\3. Quick Win\Magnetic Plug for Motor Grader Tandem Case.pdf,120162,5,8117,ok,texts\doc_0042.txt
+doc_0043,1.0 Maintenance & Repair\1.02 Condition Monitoring\3. Quick Win\Oil Filter Cutting Bench.pdf,286617,5,8481,ok,texts\doc_0043.txt
+doc_0044,1.0 Maintenance & Repair\1.02 Condition Monitoring\3. Quick Win\Oil Filter Cutting Tool (Field Operations).pdf,571236,4,5322,ok,texts\doc_0044.txt
+doc_0045,1.0 Maintenance & Repair\1.02 Condition Monitoring\3. Quick Win\Prediction of Failure of Starting Motors on D11R Machines.pdf,221382,9,10275,ok,texts\doc_0045.txt
+doc_0046,1.0 Maintenance & Repair\1.02 Condition Monitoring\3. Quick Win\Sample Tubing Bag.pdf,5272856,3,3341,ok,texts\doc_0046.txt
+doc_0047,1.0 Maintenance & Repair\1.03 Planning & Scheduling\1. Strategic\Planning & Scheduling.pdf,854499,34,64448,ok,texts\doc_0047.txt
+doc_0048,1.0 Maintenance & Repair\1.03 Planning & Scheduling\1. Strategic\Strategic Plan to Recover the Performance of a Mining Equipment Fleet.pdf,5276301,36,65751,ok,texts\doc_0048.txt
+doc_0049,1.0 Maintenance & Repair\1.03 Planning & Scheduling\1. Strategic\Unavailability Distribution.pdf,215223,16,31331,ok,texts\doc_0049.txt
+doc_0050,1.0 Maintenance & Repair\1.03 Planning & Scheduling\2. Tactical\3-Stage Wash Bay For Cold Climate.pdf,70641,6,10719,ok,texts\doc_0050.txt
+doc_0051,1.0 Maintenance & Repair\1.03 Planning & Scheduling\2. Tactical\Improved Operations Using Specialized Inspection Facility.pdf,238281,6,7608,ok,texts\doc_0051.txt
+doc_0052,1.0 Maintenance & Repair\1.04 Repair Management\1. Strategic\Repair Management.pdf,612766,22,36227,ok,texts\doc_0052.txt
+doc_0053,1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\793B Workshop Test.pdf,7476355,9,8309,ok,texts\doc_0053.txt
+doc_0054,1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\Cat 6015 Disassembly of shovel final brake.pdf,592336,8,7823,ok,texts\doc_0054.txt
+doc_0055,1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\Contamination Control Using Plugs & Caps.pdf,522533,9,10611,ok,texts\doc_0055.txt
+doc_0056,1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\Detecting Combustion Gas Leaks to Cooling System.pdf,639142,14,13569,ok,texts\doc_0056.txt
+doc_0057,1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\Failure Analysis Report.pdf,280538,10,8104,ok,texts\doc_0057.txt
+doc_0058,1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\Job Analysis Board.pdf,302085,9,16824,ok,texts\doc_0058.txt
+doc_0059,1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\Mobile Hangar for Welding Truck Bodies in the Field.pdf,460185,6,8611,ok,texts\doc_0059.txt
+doc_0060,1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\Portable In-Pit Welding Shop for Shovel Buckets.pdf,575733,6,5510,ok,texts\doc_0060.txt
+doc_0061,1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\Service Card System.pdf,1191603,5,6837,ok,texts\doc_0061.txt
+doc_0062,"1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\Support for transporta​tion and R&I of 793 front Wheel, Brake and suspension.pdf",935410,8,11786,ok,texts\doc_0062.txt
+doc_0063,1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\Temporary Rim & Tires for Shop Transportation and Support.pdf,255808,5,7771,ok,texts\doc_0063.txt
+doc_0064,1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\Tool for R&I of the 797F High Pressure Fuel Pump.pdf,1713617,9,14253,ok,texts\doc_0064.txt
+doc_0065,"1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\Tool for Track Mounting in D9, D10 and D11 TTT Series on Maintenance Conveyor.pdf",329156,6,9302,ok,texts\doc_0065.txt
+doc_0066,1.0 Maintenance & Repair\1.04 Repair Management\3. Quick Win\Adjustable Guard Storage Vehicle.pdf,1324816,9,7298,ok,texts\doc_0066.txt
+doc_0067,1.0 Maintenance & Repair\1.04 Repair Management\3. Quick Win\Backpack for Field Service Electrician Tools.pdf,804862,10,15037,ok,texts\doc_0067.txt
+doc_0068,1.0 Maintenance & Repair\1.04 Repair Management\3. Quick Win\Contamination Control Covers during Cylinder Block Removal and Installation.pdf,353575,6,7940,ok,texts\doc_0068.txt
+doc_0069,1.0 Maintenance & Repair\1.04 Repair Management\3. Quick Win\Large Hex Stick Cylinder Transport Brackets.pdf,138461,4,6279,ok,texts\doc_0069.txt
+doc_0070,1.0 Maintenance & Repair\1.04 Repair Management\3. Quick Win\Platform for working on the TTT undercarriage.pdf,2545025,9,12619,ok,texts\doc_0070.txt
+doc_0071,1.0 Maintenance & Repair\1.04 Repair Management\3. Quick Win\Process for Removing Rust from Fuel Tanks.pdf,359739,10,8723,ok,texts\doc_0071.txt
+doc_0072,1.0 Maintenance & Repair\1.04 Repair Management\3. Quick Win\Scavenge Pump Support Bracket for C-175 Engine.pdf,1157987,9,14196,ok,texts\doc_0072.txt
+doc_0073,1.0 Maintenance & Repair\1.04 Repair Management\3. Quick Win\Schematics Workstation.pdf,263377,6,6673,ok,texts\doc_0073.txt
+doc_0074,1.0 Maintenance & Repair\1.04 Repair Management\3. Quick Win\Tool to Repair Damaged OHT Exhaust Pipe.pdf,451993,4,5315,ok,texts\doc_0074.txt
+doc_0075,1.0 Maintenance & Repair\1.05 Component Management\1. Strategic\Leveraging PLESN Data at the Dealership.pdf,3448162,7,18674,ok,texts\doc_0075.txt
+doc_0076,1.0 Maintenance & Repair\1.05 Component Management\3. Quick Win\Ripper Guard Installation Tool.pdf,20715626,10,10768,ok,texts\doc_0076.txt
+doc_0077,1.0 Maintenance & Repair\1.06 Backlog Management\1. Strategic\Backlog Execution Targets.pdf,291560,18,35463,ok,texts\doc_0077.txt
+doc_0078,1.0 Maintenance & Repair\1.06 Backlog Management\1. Strategic\Backlog Management .pdf,361208,14,20319,ok,texts\doc_0078.txt
+doc_0079,1.0 Maintenance & Repair\1.06 Backlog Management\2. Tactical\Tagging Recorded Backlogs  .pdf,230177,4,6912,ok,texts\doc_0079.txt
+doc_0080,1.0 Maintenance & Repair\1.06 Backlog Management\3. Quick Win\Backlog Parts Staging Containers For HMS.pdf,460779,5,9305,ok,texts\doc_0080.txt
+doc_0081,1.0 Maintenance & Repair\1.07 Parts Management\1. Strategic\Ordering Parts with Part Store.pdf,839627,12,16720,ok,texts\doc_0081.txt
+doc_0082,1.0 Maintenance & Repair\1.07 Parts Management\1. Strategic\Parts Management (Strategic).pdf,1880401,13,27927,ok,texts\doc_0082.txt
+doc_0083,1.0 Maintenance & Repair\1.07 Parts Management\2. Tactical\Demand Planning With AMT.pdf,1388978,9,17522,ok,texts\doc_0083.txt
+doc_0084,1.0 Maintenance & Repair\1.07 Parts Management\2. Tactical\Service Vehicle Modifications for Improved Parts Transportation.pdf,596711,10,10139,ok,texts\doc_0084.txt
+doc_0085,1.0 Maintenance & Repair\1.07 Parts Management\3. Quick Win\Longwall Move Box Process.pdf,383375,11,16483,ok,texts\doc_0085.txt
+doc_0086,1.0 Maintenance & Repair\1.08 Training\1. Strategic\Apprentice Program Recommendation by Westrac.pdf,246232,14,16424,ok,texts\doc_0086.txt
+doc_0087,1.0 Maintenance & Repair\1.08 Training\2. Tactical\Air Condition Simulation Board.pdf,1646245,7,7729,ok,texts\doc_0087.txt
+doc_0088,1.0 Maintenance & Repair\1.08 Training\2. Tactical\Assurance and Accuracy in Torque Application in Tractor Link-Track Master Bolts.pdf,135914,6,7286,ok,texts\doc_0088.txt
+doc_0089,1.0 Maintenance & Repair\1.08 Training\2. Tactical\Electronic Engine Simulation Board.pdf,2136486,13,11736,ok,texts\doc_0089.txt
+doc_0090,1.0 Maintenance & Repair\1.09 Performance Evaluation\1. Strategic\Performance Evaluation.pdf,1326152,29,48263,ok,texts\doc_0090.txt
+doc_0091,1.0 Maintenance & Repair\1.10 Continuous Improvement\1. Strategic\Continuous Improvement.pdf,1775947,7,14522,ok,texts\doc_0091.txt
+doc_0092,1.0 Maintenance & Repair\1.10 Continuous Improvement\2. Tactical\Electrical Schematic Storage and Access for Technician Use.pdf,2790899,5,5994,ok,texts\doc_0092.txt
+doc_0093,1.0 Maintenance & Repair\1.10 Continuous Improvement\2. Tactical\Managing Continuous Improvement Projects.pdf,94229,5,7879,ok,texts\doc_0093.txt
+doc_0094,1.0 Maintenance & Repair\1.10 Continuous Improvement\3. Quick Win\Changing the Position of the Jack Sensor Box – MD6640.pdf,1105587,5,5240,ok,texts\doc_0094.txt
+doc_0095,1.0 Maintenance & Repair\1.10 Continuous Improvement\3. Quick Win\Continuous Improvement Board Mobile Version.pdf,603374,7,8366,ok,texts\doc_0095.txt
+doc_0096,1.0 Maintenance & Repair\1.10 Continuous Improvement\3. Quick Win\Install Protector GP-Edge 994K.pdf,345469,4,4903,ok,texts\doc_0096.txt
+doc_0097,1.0 Maintenance & Repair\1.10 Continuous Improvement\3. Quick Win\Machine Inspection Technician Toolbox.pdf,2569455,9,6948,ok,texts\doc_0097.txt
+doc_0098,1.0 Maintenance & Repair\1.10 Continuous Improvement\3. Quick Win\Spreader Bar Protection.pdf,1106841,9,7532,ok,texts\doc_0098.txt
+doc_0099,1.0 Maintenance & Repair\1.10 Continuous Improvement\3. Quick Win\Truck 793D - Hinge installation on the hydraulic tank cover.pdf,610343,5,6205,ok,texts\doc_0099.txt
+doc_0100,1.0 Maintenance & Repair\1.11 HSEC - M&R\2. Tactical\HMS Bucket Repair Jig.pdf,240083,6,7696,ok,texts\doc_0100.txt
+doc_0101,1.0 Maintenance & Repair\1.11 HSEC - M&R\2. Tactical\Improved Method Of Shimming & Replacing OHT Tray Pads.pdf,137047,4,7196,ok,texts\doc_0101.txt
+doc_0102,1.0 Maintenance & Repair\1.11 HSEC - M&R\2. Tactical\Pneumatic Service Pit Barrier.pdf,264455,4,6233,ok,texts\doc_0102.txt
+doc_0103,1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\3516 Engine Crankshaft Counterweight Installation Removal tool.pdf,541466,7,8287,ok,texts\doc_0103.txt
+doc_0104,1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\Additional Safety Measures for the 793B.pdf,1142448,9,8896,ok,texts\doc_0104.txt
+doc_0105,1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\Engine Bay Buggy Steps.pdf,220363,5,7330,ok,texts\doc_0105.txt
+doc_0106,1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\Ladder for 797 Front Suspension Maintanance.pdf,2702874,9,12967,ok,texts\doc_0106.txt
+doc_0107,1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\Machine Energy Maps.pdf,484679,8,11016,ok,texts\doc_0107.txt
+doc_0108,1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\Machine Lockout Device Installation for Caterpillar Equipment.pdf,198581,8,7242,ok,texts\doc_0108.txt
+doc_0109,1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\MD6640 Drills - Installation of Safety Slings to Support the Mast Machinery.pdf,475165,6,9110,ok,texts\doc_0109.txt
+doc_0110,1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\Motor Grader Edge Installation Tool.pdf,1018290,4,5932,ok,texts\doc_0110.txt
+doc_0111,1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\Parts Mezzanine Safety Gate.pdf,101311,4,5270,ok,texts\doc_0111.txt
+doc_0112,1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\R&I Tool for 797 Steering Cylinders.pdf,3864424,11,14301,ok,texts\doc_0112.txt
+doc_0113,1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\R1300G Stand Chock Set.pdf,841174,4,5487,ok,texts\doc_0113.txt
+doc_0114,1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\Tool for Blocking the 793 OHT Hoist Cylinder Rod.pdf,244562,6,5047,ok,texts\doc_0114.txt
+doc_0115,1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\Tool for Removing the Pin on 793 OHT.pdf,4513210,6,5745,ok,texts\doc_0115.txt
+doc_0116,1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\Wheel Chock Mobility.pdf,167413,4,6594,ok,texts\doc_0116.txt
+doc_0117,2.0 Application\2.02 Haul Road Management\1. Strategic\Cost Reduction Through Haul Road Management Process.pdf,153330,7,12582,ok,texts\doc_0117.txt
+doc_0118,2.0 Application\2.02 Haul Road Management\1. Strategic\Haul Road Optimization.pdf,189238,6,11925,ok,texts\doc_0118.txt
+doc_0119,2.0 Application\2.02 Haul Road Management\1. Strategic\Road Analysis Control (RAC) .pdf,1190183,9,15781,ok,texts\doc_0119.txt
+doc_0120,2.0 Application\2.03 Payload Management\1. Strategic\Payload Management.pdf,1885057,16,25142,ok,texts\doc_0120.txt
+doc_0121,2.0 Application\2.03 Payload Management\2. Tactical\Managing Payload on 992G Wheel Loaders.pdf,293413,7,8438,ok,texts\doc_0121.txt
+doc_0122,2.0 Application\2.03 Payload Management\2. Tactical\Measuring New Empty Machine Weight (EMW).pdf,588368,5,9520,ok,texts\doc_0122.txt
+doc_0123,"2.0 Application\2.04 Training - Application\1. Strategic\Dealer, Customer, Municipalities - Partnership to Develop Operators.pdf",265402,7,10676,ok,texts\doc_0123.txt
+doc_0124,2.0 Application\2.04 Training - Application\2. Tactical\Excessive Idling - Reducing Fuel Consumption with VIMS and MineStar Health.pdf,108674,6,10956,ok,texts\doc_0124.txt
+doc_0125,2.0 Application\2.04 Training - Application\2. Tactical\Mining Equipment Operation Improvement Program.pdf,10427297,6,8577,ok,texts\doc_0125.txt
+doc_0126,2.0 Application\2.04 Training - Application\2. Tactical\Road Defect Management Training Exercise.pdf,2283516,8,14225,ok,texts\doc_0126.txt
+doc_0127,2.0 Application\2.04 Training - Application\2. Tactical\VIMS Utilization & Operator Training.pdf,404956,10,16000,ok,texts\doc_0127.txt
+doc_0128,2.0 Application\2.04 Training - Application\3. Quick Win\Correct Gear Reminder While Ascending Up a Grade.pdf,51051,3,4587,ok,texts\doc_0128.txt
+doc_0129,2.0 Application\2.04 Training - Application\3. Quick Win\Correct Gear Reminder While Descending Down a Grade Using ARC.pdf,88153,3,4768,ok,texts\doc_0129.txt
+doc_0130,2.0 Application\2.04 Training - Application\3. Quick Win\Operator Perception .pdf,624021,4,6798,ok,texts\doc_0130.txt
+doc_0131,2.0 Application\2.04 Training - Application\3. Quick Win\Tracking Abusive Shifts on Large Off Highway Trucks.pdf,120257,8,10382,ok,texts\doc_0131.txt
+doc_0132,2.0 Application\2.05 Productivity Analysis\2. Tactical\Using Video Overlay for Communication of Mine Site Opportunities.pdf,5361625,13,23041,ok,texts\doc_0132.txt
+doc_0133,2.0 Application\2.06 GET Management\1. Strategic\Auxiliary Fleet and Loaders GET Chart for Preventive Maintenance.pdf,3095936,7,8035,ok,texts\doc_0133.txt
+doc_0134,2.0 Application\2.06 GET Management\2. Tactical\Improving GET Replacement Process.pdf,763640,10,14536,ok,texts\doc_0134.txt
+doc_0135,2.0 Application\2.06 GET Management\2. Tactical\Motor Grader Ripper - Mounted Mining Bit System.pdf,319581,7,9218,ok,texts\doc_0135.txt
+doc_0136,"2.0 Application\2.06 GET Management\2. Tactical\Tool for Removing the Teeth Ripper in 16 (G,H,M) & 24 (H,M) Motorgraders.pdf",346702,6,8358,ok,texts\doc_0136.txt
+doc_0137,2.0 Application\2.06 GET Management\3. Quick Win\Backhoe-Hammer to remove large mining GET.pdf,489486,6,7003,ok,texts\doc_0137.txt
+doc_0138,2.0 Application\2.07 HSEC - Application\1. Strategic\Safety Processes for a Mine Site.pdf,267187,13,30848,ok,texts\doc_0138.txt
+doc_0139,3.0 Component Life Management\3.01 Improving Component Life\1. Strategic\Component Life Management Improvement Process.pdf,234941,13,17579,ok,texts\doc_0139.txt
+doc_0140,3.0 Component Life Management\3.01 Improving Component Life\3. Quick Win\OHT Brake Group Baseline Wear Indicator Plate.pdf,731008,6,293,ok,texts\doc_0140.txt
+doc_0141,3.0 Component Life Management\3.02 Component Life Tracking\2. Tactical\Getting Started With MCTS.pdf,1160330,8,11710,ok,texts\doc_0141.txt
+doc_0142,3.0 Component Life Management\3.02 Component Life Tracking\2. Tactical\MCTS used to Manage & Monitor Component Life.pdf,1638215,10,16248,ok,texts\doc_0142.txt
+doc_0143,3.0 Component Life Management\3.02 Component Life Tracking\2. Tactical\Using Weibull To Determine Optimal Component Life Cycle Analysis.pdf,1456974,8,13124,ok,texts\doc_0143.txt
+doc_0144,3.0 Component Life Management\3.03 Fluid Cleanliness\1. Strategic\Fluid Cleanliness Management.pdf,1781730,5,10962,ok,texts\doc_0144.txt
+doc_0145,3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\Bulk Fuel Cleanliness Management.pdf,204970,6,9443,ok,texts\doc_0145.txt
+doc_0146,3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\Bulk Fuel Filtration.pdf,2296582,6,8039,ok,texts\doc_0146.txt
+doc_0147,3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\Bulk Fuel Storage and Handling.pdf,107224,5,10062,ok,texts\doc_0147.txt
+doc_0148,3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\Bulk Oil Filtration.pdf,263869,6,12266,ok,texts\doc_0148.txt
+doc_0149,3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\Improving the Hydraulic Fluid Cleanliness of 794AC Fleet.pdf,1847632,11,18900,ok,texts\doc_0149.txt
+doc_0150,3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\Measuring Oil Cleanliness.pdf,1775307,4,7399,ok,texts\doc_0150.txt
+doc_0151,3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\Off-Board Machine Filtration.pdf,60972,6,13543,ok,texts\doc_0151.txt
+doc_0152,3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\Oil Drain Interval Extension.pdf,61261,4,7111,ok,texts\doc_0152.txt
+doc_0153,3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\On-Board Machine Filtration.pdf,1772247,4,9014,ok,texts\doc_0153.txt
+doc_0154,3.0 Component Life Management\3.03 Fluid Cleanliness\2. Tactical\SOS Lab Data Entry Improvement using New Electronic System.pdf,428966,7,6748,ok,texts\doc_0154.txt
+doc_0155,3.0 Component Life Management\3.03 Fluid Cleanliness\3. Quick Win\Ensuring Proper Lube with Quick Disconnect Fittings.pdf,199371,3,5052,ok,texts\doc_0155.txt
+doc_0156,3.0 Component Life Management\3.03 Fluid Cleanliness\3. Quick Win\High Efficiency Breather Filters.pdf,1959603,3,5133,ok,texts\doc_0156.txt
+doc_0157,3.0 Component Life Management\3.03 Fluid Cleanliness\3. Quick Win\Reduction of Internal Contamination for Hoses.pdf,2138752,5,6758,ok,texts\doc_0157.txt
+doc_0158,3.0 Component Life Management\3.03 Fluid Cleanliness\3. Quick Win\Self Contained Bulk Oil Filtration Day Tank.pdf,122639,4,7853,ok,texts\doc_0158.txt
+doc_0159,3.0 Component Life Management\3.03 Fluid Cleanliness\3. Quick Win\Series High Efficiency Fuel Filters.pdf,228944,5,7292,ok,texts\doc_0159.txt
+doc_0160,3.0 Component Life Management\3.04 Removal & Installation\1. Strategic\Machine Shop Components Lifting Operations Assurance Strategy.pdf,926503,12,15973,ok,texts\doc_0160.txt
+doc_0161,3.0 Component Life Management\3.04 Removal & Installation\2. Tactical\740 TYRE - RIM Remove and Install Supporting Tool.pdf,287136,5,5099,ok,texts\doc_0161.txt
+doc_0162,3.0 Component Life Management\3.04 Removal & Installation\2. Tactical\777 Final Drive Replacement Stand.pdf,2777750,4,6317,ok,texts\doc_0162.txt
+doc_0163,3.0 Component Life Management\3.04 Removal & Installation\2. Tactical\793D Converter Remove & Install Tool.pdf,309182,8,9230,ok,texts\doc_0163.txt
+doc_0164,3.0 Component Life Management\3.04 Removal & Installation\2. Tactical\Change Hydraulic Hoses During Major Component R&I.pdf,75139,4,4614,ok,texts\doc_0164.txt
+doc_0165,3.0 Component Life Management\3.04 Removal & Installation\2. Tactical\Component Install Kits Improve R&I Process.pdf,3910470,6,8134,ok,texts\doc_0165.txt
+doc_0166,3.0 Component Life Management\3.04 Removal & Installation\2. Tactical\Customer Certification for Major Component Remove & Install.pdf,3779210,6,8285,ok,texts\doc_0166.txt
+doc_0167,3.0 Component Life Management\3.04 Removal & Installation\2. Tactical\D11 Converter Remove & Install Tool.pdf,221248,7,8673,ok,texts\doc_0167.txt
+doc_0168,3.0 Component Life Management\3.04 Removal & Installation\2. Tactical\Mining Trucks Dump Body Removal & Install System.pdf,2031904,12,20581,ok,texts\doc_0168.txt
+doc_0169,3.0 Component Life Management\3.04 Removal & Installation\2. Tactical\Tooling Setup for R&I of Steering Cylinders & Tie Rods in LOHT.pdf,490095,8,9041,ok,texts\doc_0169.txt
+doc_0170,3.0 Component Life Management\3.04 Removal & Installation\3. Quick Win\793 Transmission Remove & Install Tool.pdf,5518769,7,7178,ok,texts\doc_0170.txt
+doc_0171,3.0 Component Life Management\3.04 Removal & Installation\3. Quick Win\Attachment for RI of Steering Accumulators for 797F.pdf,1589264,10,17674,ok,texts\doc_0171.txt
+doc_0172,3.0 Component Life Management\3.04 Removal & Installation\3. Quick Win\Cylinder Head Lifting Jib.pdf,138974,4,5575,ok,texts\doc_0172.txt
+doc_0173,3.0 Component Life Management\3.04 Removal & Installation\3. Quick Win\Manufacture Oversize Hoist Bolt Kit.pdf,640183,10,8996,ok,texts\doc_0173.txt
+doc_0174,3.0 Component Life Management\3.04 Removal & Installation\3. Quick Win\Selective Cleaning Using Dry Ice.pdf,283682,7,11865,ok,texts\doc_0174.txt
+doc_0175,3500 Engine Exhaust Manifold Salvage.pdf,829413,5,5348,ok,texts\doc_0175.txt
+doc_0176,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\1. Strategic\Bore Measuring Tool.pdf,1880950,8,6017,ok,texts\doc_0176.txt
+doc_0177,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\1. Strategic\Creating Standard Component Rebuild Parts Kits.pdf,407421,7,7825,ok,texts\doc_0177.txt
+doc_0178,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\1. Strategic\Disassembly Strategy Can Improve Engine Turnaround Time.pdf,2820969,7,6745,ok,texts\doc_0178.txt
+doc_0179,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\1. Strategic\Failure Analysis Process – A Key Tool to Managing Quality.pdf,4568825,7,12639,ok,texts\doc_0179.txt
+doc_0180,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\1. Strategic\In-Process Staging Strategy.pdf,335797,6,11257,ok,texts\doc_0180.txt
+doc_0181,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\1. Strategic\Labor Efficiency Lowers CRC Costs.pdf,174586,6,10515,ok,texts\doc_0181.txt
+doc_0182,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\1. Strategic\Managing Parts Reuse & Replace Decisions with Dedicated Resource.pdf,101438,4,6358,ok,texts\doc_0182.txt
+doc_0183,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\1. Strategic\Material Transport Strategy.pdf,245331,6,13219,ok,texts\doc_0183.txt
+doc_0184,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\1. Strategic\Work Order Photos Administration System.pdf,249123,5,7119,ok,texts\doc_0184.txt
+doc_0185,"4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Alternator, Starting Motor, and ECM Training Test Bench.pdf",1859621,11,10615,ok,texts\doc_0185.txt
+doc_0186,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Cost Effective Gasket and Paint Cleaning Processes.pdf,147114,6,15260,ok,texts\doc_0186.txt
+doc_0187,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Engine Wiring Harness Installation Aid - C175 Engines.pdf,294736,7,6572,ok,texts\doc_0187.txt
+doc_0188,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Installation of New Rod Pin Bearing by Cooling.pdf,136444,6,6680,ok,texts\doc_0188.txt
+doc_0189,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Kits for Dynamometer Test.pdf,659567,12,10569,ok,texts\doc_0189.txt
+doc_0190,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Machine Rebuild Process Using Pack By Dealer Work Order.pdf,3648890,19,27559,ok,texts\doc_0190.txt
+doc_0191,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\OHT Rear Wheel End Shipping Covers.pdf,243119,3,3690,ok,texts\doc_0191.txt
+doc_0192,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Powertrain Valve Rebuild Strategy.pdf,169457,5,10295,ok,texts\doc_0192.txt
+doc_0193,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Transmission Control Valve Test Bench.pdf,1112933,6,12960,ok,texts\doc_0193.txt
+doc_0194,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Use Cameras to Conduct CRC Process Reviews.pdf,211090,4,4954,ok,texts\doc_0194.txt
+doc_0195,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Wireless Pager System Optimizes Workflow Process.pdf,397023,6,8007,ok,texts\doc_0195.txt
+doc_0196,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\980H Differential Brake Test.pdf,704937,6,6226,ok,texts\doc_0196.txt
+doc_0197,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\C175 ID Tags for Engines that Require Thicker Integral Seals.pdf,152445,4,4189,ok,texts\doc_0197.txt
+doc_0198,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\C175 Main Oil Gallery - D&A Debris Protection.pdf,62013,3,4090,ok,texts\doc_0198.txt
+doc_0199,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Computerized Torques Wrenches Used to Improve Quality Control.pdf,61210,3,4343,ok,texts\doc_0199.txt
+doc_0200,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Exhaust Manifold Lifting Tool - C175 Engines.pdf,247467,5,5421,ok,texts\doc_0200.txt
+doc_0201,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Fluid Cooler Testing Basin.pdf,343515,5,8921,ok,texts\doc_0201.txt
+doc_0202,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Improved 3500 Engine Exhaust Manifold Salvage.pdf,117366,4,4661,ok,texts\doc_0202.txt
+doc_0203,"4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Piston, Rod, & Liner Staging Equipment.pdf",139442,5,9553,ok,texts\doc_0203.txt
+doc_0204,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Plastic Media Used for Major Component Cleaning and Paint Removal.pdf,3142313,7,5764,ok,texts\doc_0204.txt
+doc_0205,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Process for Removing Rust from Fuel Tanks.pdf,359739,10,8732,ok,texts\doc_0205.txt
+doc_0206,"4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Short Block Kits Save Time, Improve Quality.pdf",220847,4,4962,ok,texts\doc_0206.txt
+doc_0207,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Storage Device to Transport Brake Discs.pdf,634025,7,5699,ok,texts\doc_0207.txt
+doc_0208,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Storage Stand For Adapters And Plates Used In Transmission.pdf,607123,4,4315,ok,texts\doc_0208.txt
+doc_0209,4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Tool to Install Transmission Control Valve 383-7597 Ring Retainer.pdf,259527,6,5239,ok,texts\doc_0209.txt
+doc_0210,4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\1. Strategic\Managing Parts Reuse & Replace Decisions with Dedicated Resource.pdf,101438,4,6359,ok,texts\doc_0210.txt
+doc_0211,4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\2. Tactical\3500 Cylinder Head Water Passage Fixture.pdf,707442,8,6507,ok,texts\doc_0211.txt
+doc_0212,4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\2. Tactical\3500 Engine Series Water Lines Group Parts Salvage.pdf,2263614,11,8843,ok,texts\doc_0212.txt
+doc_0213,4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\2. Tactical\Cleaning and Recycling of Metallic Waste in Machining Shop.pdf,239827,6,5503,ok,texts\doc_0213.txt
+doc_0214,4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\2. Tactical\Cost and Time Reduction Using Tap Thread Coated with Vanadium.pdf,143868,4,4191,ok,texts\doc_0214.txt
+doc_0215,4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\2. Tactical\Salvage Jobs Standardization.pdf,96283,5,7084,ok,texts\doc_0215.txt
+doc_0216,4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\2. Tactical\Salvage Mounting Surfaces of the Track Guides.pdf,193695,9,7658,ok,texts\doc_0216.txt
+doc_0217,4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\2. Tactical\Salvage Of Pin Slot Using Standard Sleeve.pdf,205647,7,7337,ok,texts\doc_0217.txt
+doc_0218,4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\3. Quick Win\Hydraulic Cylinder Head Salvage by Installing Bronze Bushing.pdf,112554,4,6034,ok,texts\doc_0218.txt
+doc_0219,4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\3. Quick Win\Improved 3500 Engine Exhaust Manifold Salvage.pdf,117366,4,4662,ok,texts\doc_0219.txt
+doc_0220,4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\3. Quick Win\Reconditioning of Cylinder Block – Cleaning of Metal Spray Waste.pdf,388168,7,9412,ok,texts\doc_0220.txt
+doc_0221,4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\3. Quick Win\Tooling for Deburring Cylinder Block Top Deck after Machining.pdf,129021,5,5334,ok,texts\doc_0221.txt
+doc_0222,4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\3. Quick Win\Use of Thermography Camera to Control Quality of Welding.pdf,174655,6,6929,ok,texts\doc_0222.txt
+doc_0223,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\1. Strategic\Work area optimization (5S).pdf,225411,7,9315,ok,texts\doc_0223.txt
+doc_0224,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\3500 Crankshaft and Camshaft Storage.pdf,700893,10,11612,ok,texts\doc_0224.txt
+doc_0225,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\3500 Engine Aftercooler Assembly Test.pdf,338781,4,4781,ok,texts\doc_0225.txt
+doc_0226,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\3500 Engine Cylinder Head Group Lifting Tool.pdf,1497818,9,7795,ok,texts\doc_0226.txt
+doc_0227,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\3500 Filter Base Stud Installation Tool.pdf,506849,6,6893,ok,texts\doc_0227.txt
+doc_0228,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\773 Transfer Gear Adjusting Fixture.pdf,802095,4,4567,ok,texts\doc_0228.txt
+doc_0229,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\777F Final Drive Ring gear – Hub group Lifting Tool.pdf,166867,5,6119,ok,texts\doc_0229.txt
+doc_0230,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\785 789 Transmissi​on Disassembl​y Assembly Stand.pdf,1203620,4,4932,ok,texts\doc_0230.txt
+doc_0231,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\793D Final Drive Planetary Group Lifting Tool.pdf,1736007,10,8789,ok,texts\doc_0231.txt
+doc_0232,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\797F Truck Brake Accumulator Remove and Install Tool.pdf,1799211,9,12736,ok,texts\doc_0232.txt
+doc_0233,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Brake Apply - Leakage Test.pdf,336164,9,10015,ok,texts\doc_0233.txt
+doc_0234,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Bypass Valve Cover Installation Tool in Oil Filters Base for 3500 Engines.pdf,627815,5,6458,ok,texts\doc_0234.txt
+doc_0235,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\C15 and C18 Engines Camshaft Bearings Assembly and Disassembly Stand.pdf,894547,6,7259,ok,texts\doc_0235.txt
+doc_0236,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Crankshaft and Camshaft Washing Stand for Turntable Washer.pdf,953845,4,6024,ok,texts\doc_0236.txt
+doc_0237,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\CRC Hand Tool Management.pdf,82589,5,10440,ok,texts\doc_0237.txt
+doc_0238,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Dealer Fabricated Tool Management.pdf,160592,3,5304,ok,texts\doc_0238.txt
+doc_0239,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Dyno Room Fluid Lines.pdf,145090,4,7338,ok,texts\doc_0239.txt
+doc_0240,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Electric Pallet Trucks Reduce Material Handling Costs.pdf,146284,4,5857,ok,texts\doc_0240.txt
+doc_0241,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Fabricated Tool for Final Drive Carrier Shaft Disassembly.pdf,1023472,9,6306,ok,texts\doc_0241.txt
+doc_0242,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Front Housing & Fan GP Rotating Stand for 3500 Series Engines.pdf,1264678,5,6319,ok,texts\doc_0242.txt
+doc_0243,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\In-Ground Silo for Cabinet Washers.pdf,290637,6,5197,ok,texts\doc_0243.txt
+doc_0244,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Installation Tool Sun Gear – Final Drive 793 - 797.pdf,263648,6,5427,ok,texts\doc_0244.txt
+doc_0245,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Lifting Tool for 3500 Engines Series Cylinder Liners.pdf,211297,7,8271,ok,texts\doc_0245.txt
+doc_0246,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Lifting Tool for Single Grouser Shoes Install and Removal on D Series TTT.pdf,704277,10,14543,ok,texts\doc_0246.txt
+doc_0247,"4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\OHT, LMT Rear Suspension Test Bench.pdf",493260,6,6166,ok,texts\doc_0247.txt
+doc_0248,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Plug and Play System for Engine Readiness in the Dynamometer.pdf,433918,7,8369,ok,texts\doc_0248.txt
+doc_0249,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Reduce Customer PM Cost with Air Filter Cleaning Service.pdf,126696,4,6325,ok,texts\doc_0249.txt
+doc_0250,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Spacer Plate Storage Rack.pdf,185617,4,4139,ok,texts\doc_0250.txt
+doc_0251,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Testing Procedures for C175 dampers.pdf,1401109,11,13595,ok,texts\doc_0251.txt
+doc_0252,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Tool Calibration Lab.pdf,553406,6,7125,ok,texts\doc_0252.txt
+doc_0253,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Tool to Support Large Planetaries.pdf,502399,7,5960,ok,texts\doc_0253.txt
+doc_0254,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Tooling Setup for R&I of Steering Cylinders & Tie Rods in LOHT.pdf,490095,8,9035,ok,texts\doc_0254.txt
+doc_0255,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\WIP Parts Storage Boxes and Lifting Tool.pdf,559534,10,9915,ok,texts\doc_0255.txt
+doc_0256,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\3500 Crankshaft Installing Guide Block.pdf,2200437,6,6171,ok,texts\doc_0256.txt
+doc_0257,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\3500 Engine Cylinder Head Bolt Torque Fixture.pdf,239115,7,6986,ok,texts\doc_0257.txt
+doc_0258,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\3500 Engine Cylinder Liner Clamp Tool.pdf,1964846,5,4795,ok,texts\doc_0258.txt
+doc_0259,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\3500 Engine Series Camshaft Bearing Installation Tool .pdf,426130,6,5281,ok,texts\doc_0259.txt
+doc_0260,"4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\3500, 3400, and C175 Crankshaft Turn Tool for Shortblock.pdf",405273,7,6377,ok,texts\doc_0260.txt
+doc_0261,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\3600 & C280 Cam Follower Holding Tools.pdf,281675,4,5567,ok,texts\doc_0261.txt
+doc_0262,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\777 - Carrier Pin Extraction Tool.pdf,1357697,7,7272,ok,texts\doc_0262.txt
+doc_0263,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\789 Final Drive Inner Carrier Lifting Tool.pdf,727235,6,6653,ok,texts\doc_0263.txt
+doc_0264,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\789-793 Final Drive Lifting Tool.pdf,1036665,8,7586,ok,texts\doc_0264.txt
+doc_0265,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\793C Aftercooler Adapter Remover.pdf,988980,5,4498,ok,texts\doc_0265.txt
+doc_0266,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\797F Oil Pan Support Assembly.pdf,672555,4,4060,ok,texts\doc_0266.txt
+doc_0267,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\980H Steering Pump Maximum Angle Piston Torque Tool.pdf,440365,5,5417,ok,texts\doc_0267.txt
+doc_0268,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Adapter for High Pressure Fuel Pump Cleaning.pdf,544842,5,5676,ok,texts\doc_0268.txt
+doc_0269,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Airless Spray Painting.pdf,312026,6,11430,ok,texts\doc_0269.txt
+doc_0270,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\All Type Gear Inspection Stand.pdf,757351,6,5133,ok,texts\doc_0270.txt
+doc_0271,"4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Assembly Tool for C175 Engine Connecting Rods, Pistons and Liners.pdf",258597,5,4596,ok,texts\doc_0271.txt
+doc_0272,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Barrel Port Plate Revision Tool.pdf,524744,5,6261,ok,texts\doc_0272.txt
+doc_0273,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\C32 Oil Jet Reusability Determination Fixture.pdf,120242,4,4754,ok,texts\doc_0273.txt
+doc_0274,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Connection Bypass on Main Cooling for 3500 Engine Test.pdf,271215,5,6821,ok,texts\doc_0274.txt
+doc_0275,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Cylinder Head Lifting Jib.pdf,138974,4,5569,ok,texts\doc_0275.txt
+doc_0276,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\D11 Series Pivot Shaft Block Tool.pdf,221272,7,8986,ok,texts\doc_0276.txt
+doc_0277,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\D8T-D9T Carrier Shaft Removing Plate.pdf,924267,5,5706,ok,texts\doc_0277.txt
+doc_0278,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Disassemble & Assemble Tool for 793 Hub Brake.pdf,243972,4,4009,ok,texts\doc_0278.txt
+doc_0279,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Engine Cylinder Head Group Installation – Intake Flange Alignment Gauge.pdf,248193,5,4957,ok,texts\doc_0279.txt
+doc_0280,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Fabricated Tool to Remove and Install OHT Wheel Studs.pdf,490057,4,4433,ok,texts\doc_0280.txt
+doc_0281,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Fixture for Grinding 3500 Rocker Arm Bushings.pdf,399759,6,5355,ok,texts\doc_0281.txt
+doc_0282,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Floor Mounted Cooler Assembly Fixtures.pdf,251149,4,4440,ok,texts\doc_0282.txt
+doc_0283,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Gauge for Measuring Duo Cone Seal Ramp Wear.pdf,100999,4,4531,ok,texts\doc_0283.txt
+doc_0284,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Gauge to Align 3500 Engine Camshaft Bearings During Installation.pdf,282143,5,5769,ok,texts\doc_0284.txt
+doc_0285,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Hydraulic Stand For Disassembly of Rear Suspension Cylinder.pdf,433966,8,6830,ok,texts\doc_0285.txt
+doc_0286,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Hydraulic Test Bench Reflector.pdf,231781,4,4185,ok,texts\doc_0286.txt
+doc_0287,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Improved Painting Process of 777 Final Drives.pdf,672583,4,4996,ok,texts\doc_0287.txt
+doc_0288,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Improving the Protection Of Parts Using VCI Stretch Film.pdf,208299,6,6656,ok,texts\doc_0288.txt
+doc_0289,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\In Ground Silo Rebuild Station for OHT Wheel Groups.pdf,333751,6,6664,ok,texts\doc_0289.txt
+doc_0290,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Installation Valve Guides C175.pdf,277460,5,4493,ok,texts\doc_0290.txt
+doc_0291,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Jig to Assist in Modifying C175 373-5448 Rocker Stand to 525-1901.pdf,500784,6,5419,ok,texts\doc_0291.txt
+doc_0292,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Lug Nut Disassembly and Assembly Support Apparatus.pdf,1068440,8,7378,ok,texts\doc_0292.txt
+doc_0293,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Managing CRC Supplies.pdf,634855,6,6914,ok,texts\doc_0293.txt
+doc_0294,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Multi Purpose Tool for Assembly Pump GP Water Auxiliary.pdf,611266,7,6360,ok,texts\doc_0294.txt
+doc_0295,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Oil Leakage Prevention for 385C FS Engine.pdf,1107029,4,5480,ok,texts\doc_0295.txt
+doc_0296,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Parts Blasting Enhancement.pdf,96253,4,8851,ok,texts\doc_0296.txt
+doc_0297,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Parts Buffer Enhancement.pdf,96390,4,8779,ok,texts\doc_0297.txt
+doc_0298,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Plate Ear Control Tool.pdf,1075504,5,5236,ok,texts\doc_0298.txt
+doc_0299,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Protection of the Brake Pack During Washing.pdf,306694,8,9129,ok,texts\doc_0299.txt
+doc_0300,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Protective Materials for Workbench Table Tops.pdf,285945,5,4209,ok,texts\doc_0300.txt
+doc_0301,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\R1300G Final Drive Bolt Spinning Prevention Fixture.pdf,603031,5,5869,ok,texts\doc_0301.txt
+doc_0302,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Sealed storage staging cabinets and short block kits reduce costs.pdf,460384,8,8217,ok,texts\doc_0302.txt
+doc_0303,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Simple & Efficient Tool for Cleaning Piston Pins.pdf,156060,4,4235,ok,texts\doc_0303.txt
+doc_0304,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Stands for Painting on Cylindrical Components.pdf,1496583,6,8839,ok,texts\doc_0304.txt
+doc_0305,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Tool for Assembling Camshaft Gears.pdf,826961,7,5021,ok,texts\doc_0305.txt
+doc_0306,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Tool For Easy Measurement of Backlash Between Bevel Gear and Pinion.pdf,225945,5,5121,ok,texts\doc_0306.txt
+doc_0307,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Tool for Installing 3412 & 3408 Engines Injection Pumps.pdf,416219,5,6950,ok,texts\doc_0307.txt
+doc_0308,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Tool for Installing Transmission Bolt Damper.pdf,149580,4,4438,ok,texts\doc_0308.txt
+doc_0309,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Tool for Lifting Piston and Connecting Rod - 3500 Engines.pdf,245937,6,6219,ok,texts\doc_0309.txt
+doc_0310,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Tooling for Deburring Cylinder Block Top Deck after Machining.pdf,129021,5,5328,ok,texts\doc_0310.txt
+doc_0311,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Upgraded C175 Connecting Rod Measurement Method.pdf,12444506,8,6236,ok,texts\doc_0311.txt
+doc_0312,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Valve GP-Modulating Test Tool.pdf,12451670,5,5865,ok,texts\doc_0312.txt
+doc_0313,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Wheel Station Upender Equipment.pdf,283167,5,5589,ok,texts\doc_0313.txt
+doc_0314,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Wireless SIS Web Workstation.pdf,1361394,4,6156,ok,texts\doc_0314.txt
+doc_0315,4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Workshop Daily Planning Board .pdf,349340,5,9675,ok,texts\doc_0315.txt
+doc_0316,"4.0 Component Rebuild (CRC)\4.04 CRC Management\1. Strategic\Component Repair, Rebuild, Reman Strategy.pdf",93492,7,13995,ok,texts\doc_0316.txt
+doc_0317,4.0 Component Rebuild (CRC)\4.04 CRC Management\1. Strategic\CRC Certification Promotes Continuous Improvement.pdf,282599,7,11697,ok,texts\doc_0317.txt
+doc_0318,4.0 Component Rebuild (CRC)\4.04 CRC Management\1. Strategic\CRC Investment Analysis Process - Measuring Return on Investment.pdf,54637,4,10068,ok,texts\doc_0318.txt
+doc_0319,4.0 Component Rebuild (CRC)\4.04 CRC Management\1. Strategic\Forecasting CRC Component Rebuild Volume and Capacity.pdf,3552799,7,12776,ok,texts\doc_0319.txt
+doc_0320,4.0 Component Rebuild (CRC)\4.04 CRC Management\1. Strategic\Improving CRC Component Turnaround Time.pdf,717707,7,10784,ok,texts\doc_0320.txt
+doc_0321,4.0 Component Rebuild (CRC)\4.04 CRC Management\1. Strategic\Managing CRC Operations in Legacy SAP ERP.pdf,513317,18,22280,ok,texts\doc_0321.txt
+doc_0322,4.0 Component Rebuild (CRC)\4.04 CRC Management\1. Strategic\Standard Parts Usage Policy for Component Rebuilds.pdf,212567,7,11308,ok,texts\doc_0322.txt
+doc_0323,4.0 Component Rebuild (CRC)\4.04 CRC Management\1. Strategic\Tool and Supplies Tracking - Software Solution.pdf,12253072,7,9778,ok,texts\doc_0323.txt
+doc_0324,4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Cell-Specific Service Reports.pdf,2507283,6,16585,ok,texts\doc_0324.txt
+doc_0325,4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Component Life Tracking a Valuable CRC Performance Indicator.pdf,176585,5,7920,ok,texts\doc_0325.txt
+doc_0326,4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Component Rebuild Customer Reports.pdf,71636,4,7245,ok,texts\doc_0326.txt
+doc_0327,4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\CRC Expert TV.pdf,325052,9,11142,ok,texts\doc_0327.txt
+doc_0328,"4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\CRC Housekeeping Policy Improves Quality, Efficiency, and Image.pdf",145363,3,4277,ok,texts\doc_0328.txt
+doc_0329,4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\CRC Planning & Scheduling Systems.pdf,635043,7,10077,ok,texts\doc_0329.txt
+doc_0330,4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Durability Analysis - Component Rebuild Parts Cost.pdf,240730,6,14913,ok,texts\doc_0330.txt
+doc_0331,4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Fabricated Track Stand for Weld Repairs of D10R Frames.pdf,227295,5,5122,ok,texts\doc_0331.txt
+doc_0332,4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Fixture for 3500 Cylinder Head Machining.pdf,309645,7,5845,ok,texts\doc_0332.txt
+doc_0333,4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Improving the Last Labor to Work Order Invoicing (LLI) Process.pdf,148159,7,14075,ok,texts\doc_0333.txt
+doc_0334,4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Managing and Adjusting Major Component Flat Rates.pdf,164592,7,12678,ok,texts\doc_0334.txt
+doc_0335,4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Managing Exchange Component Inventory Reduces Costs.pdf,210487,8,17255,ok,texts\doc_0335.txt
+doc_0336,4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Utilizing exchange program for slow-turn salvaged parts to improve CRC TAT.pdf,100967,3,5659,ok,texts\doc_0336.txt
+doc_0337,4.0 Component Rebuild (CRC)\4.04 CRC Management\3. Quick Win\AFA Guidelines for Analyzing Duo-cone Seal Failures.pdf,3136769,4,4162,ok,texts\doc_0337.txt
+doc_0338,4.0 Component Rebuild (CRC)\4.04 CRC Management\3. Quick Win\Component Rebuild History Tracking and Tagging.pdf,167607,4,5514,ok,texts\doc_0338.txt
+doc_0339,4.0 Component Rebuild (CRC)\4.04 CRC Management\3. Quick Win\E-PSSR.pdf,142687,5,7217,ok,texts\doc_0339.txt
+doc_0340,4.0 Component Rebuild (CRC)\4.04 CRC Management\3. Quick Win\Effective Employee Suggestion Program.pdf,96564,7,5745,ok,texts\doc_0340.txt
+doc_0341,4.0 Component Rebuild (CRC)\4.04 CRC Management\3. Quick Win\Hydraulic Shop Stand for Lubrication of Suspension Cylinders During Assembly.pdf,391945,12,8516,ok,texts\doc_0341.txt
+doc_0342,4.0 Component Rebuild (CRC)\4.04 CRC Management\3. Quick Win\Recommended Shipping and Storage Stands for Major Components.pdf,353798,6,8661,ok,texts\doc_0342.txt
+doc_0343,4.0 Component Rebuild (CRC)\4.05 HSEC - CRC\2. Tactical\CRC Safety Inspection Checklist.pdf,124806,3,6074,ok,texts\doc_0343.txt
+doc_0344,4.0 Component Rebuild (CRC)\4.05 HSEC - CRC\2. Tactical\HMS Bucket Repair Jig.pdf,240083,6,7699,ok,texts\doc_0344.txt
+doc_0345,4.0 Component Rebuild (CRC)\4.05 HSEC - CRC\3. Quick Win\3500 Oil Pumps Lifting Tool.pdf,900351,6,6446,ok,texts\doc_0345.txt
+doc_0346,4.0 Component Rebuild (CRC)\4.05 HSEC - CRC\3. Quick Win\Connecting Rod Lifting Tool (Various Engines).pdf,824533,5,7111,ok,texts\doc_0346.txt
+doc_0347,"4.0 Component Rebuild (CRC)\4.05 HSEC - CRC\3. Quick Win\Engine Piston Pin Extractor - 3500,3400, C32, C27, C18.pdf",1154293,6,6963,ok,texts\doc_0347.txt
+doc_0348,4.0 Component Rebuild (CRC)\4.05 HSEC - CRC\3. Quick Win\Proper Lighting Provides Effective Working Environment.pdf,219176,5,12646,ok,texts\doc_0348.txt
+doc_0349,4.0 Component Rebuild (CRC)\4.05 HSEC - CRC\3. Quick Win\Protection Cage for Hydraulic Press.pdf,256980,4,4435,ok,texts\doc_0349.txt
+doc_0350,4.0 Component Rebuild (CRC)\4.05 HSEC - CRC\3. Quick Win\Remote Control Cameras in Dyno Room Improve Safety.pdf,223155,4,4103,ok,texts\doc_0350.txt
+doc_0351,4.0 Component Rebuild (CRC)\4.05 HSEC - CRC\3. Quick Win\Safe Fuel Delivery at Engine Dyno.pdf,748518,4,4715,ok,texts\doc_0351.txt
+doc_0352,5.0 MARC Management\5.01 MARC Market Strategy and Rate Development\1. Strategic\MARC Rate Development.pdf,462953,14,24263,ok,texts\doc_0352.txt
+doc_0353,5.0 MARC Management\5.01 MARC Market Strategy and Rate Development\2. Tactical\Building Operational Budgets.pdf,957845,5,10548,ok,texts\doc_0353.txt
+doc_0354,5.0 MARC Management\5.01 MARC Market Strategy and Rate Development\2. Tactical\Ensuring MARC Profitability.pdf,56080,4,6223,ok,texts\doc_0354.txt
+doc_0355,5.0 MARC Management\5.01 MARC Market Strategy and Rate Development\3. Quick Win\Localizing a Centerline File for MARC Rate Development.pdf,3280322,6,15806,ok,texts\doc_0355.txt
+doc_0356,5.0 MARC Management\5.01 MARC Market Strategy and Rate Development\3. Quick Win\Updating BUILDER files with Current Parts.pdf,122173,4,8027,ok,texts\doc_0356.txt
+doc_0357,5.0 MARC Management\5.02 Contract Development and Implementation\1. Strategic\Developing a MARC Management Plan.pdf,183579,11,12615,ok,texts\doc_0357.txt
+doc_0358,5.0 MARC Management\5.02 Contract Development and Implementation\2. Tactical\Considerations When Extending a MARC.pdf,1044968,3,5741,ok,texts\doc_0358.txt
+doc_0359,5.0 MARC Management\5.02 Contract Development and Implementation\2. Tactical\Contract Language Reference.pdf,1816418,8,25828,ok,texts\doc_0359.txt
+doc_0360,5.0 MARC Management\5.02 Contract Development and Implementation\3. Quick Win\Escalating MARCs Based on Forecasted Parts Consumption.pdf,2966116,4,8329,ok,texts\doc_0360.txt
+doc_0361,5.0 MARC Management\5.03 Contract Management\2. Tactical\Managing Contract Health Utilizing Metrics.pdf,1320932,12,22659,ok,texts\doc_0361.txt
+doc_0362,5.0 MARC Management\5.03 Contract Management\2. Tactical\MCTS used to Manage & Monitor Component Life.pdf,1638215,10,16234,ok,texts\doc_0362.txt
+doc_0363,5.0 MARC Management\5.03 Contract Management\2. Tactical\Technical Labor Requirements for Mine Sites.pdf,2739931,4,8658,ok,texts\doc_0363.txt
+doc_0364,5.0 MARC Management\5.03 Contract Management\2. Tactical\Using BUILDER™ to Generate the Most Comprehensive PM Checklist.pdf,876762,6,7116,ok,texts\doc_0364.txt
+doc_0365,5.0 MARC Management\5.04 Financial Management\1. Strategic\Accrual Accounting for Maintenance & Repair Contracts.pdf,80288,6,13816,ok,texts\doc_0365.txt
+doc_0366,5.0 MARC Management\5.04 Financial Management\1. Strategic\Developing a Cost Management Software Tool.pdf,563197,13,21710,ok,texts\doc_0366.txt
+doc_0367,5.0 MARC Management\5.04 Financial Management\1. Strategic\Understanding the Sarbanes-Oxley Act of 2002.pdf,177841,5,12106,ok,texts\doc_0367.txt
+doc_0368,5.0 MARC Management\5.04 Financial Management\2. Tactical\ANALYZER - Data Validation.pdf,4876788,4,7131,ok,texts\doc_0368.txt
+doc_0369,5.0 MARC Management\5.04 Financial Management\2. Tactical\ANALYZER - Managing Uncleansed Work Orders.pdf,82823,4,8000,ok,texts\doc_0369.txt
+doc_0370,5.0 MARC Management\5.04 Financial Management\2. Tactical\MARC Financial Audit Procedure.pdf,239788,4,7169,ok,texts\doc_0370.txt
+doc_0371,5.0 MARC Management\5.04 Financial Management\3. Quick Win\ANALYZER - Recalculation Process Improves Projection Accuracy.pdf,100906,5,9543,ok,texts\doc_0371.txt
+doc_0372,7495 HD Roller Collars Handling Tool.pdf,543752,4,3930,ok,texts\doc_0372.txt
+doc_0373,"7495 Shovels – Testing and Assessing Condition of the IGBT Skid DC Bus Capacitor Bank, as well as Discharge and Ground Tie Resistors.pdf",6758715,21,24819,ok,texts\doc_0373.txt
+doc_0374,A Lean Strategy for Reducing Major Component R&I Downtime through Planning and Implementation.pdf,621733,11,22791,ok,texts\doc_0374.txt
+doc_0375,A Method for Chassis Center Tube Alignment on 793D Mining Trucks.pdf,1004065,8,9716,ok,texts\doc_0375.txt
+doc_0376,A Method for Failure Analysis for the 994K Pre-Lubrication System.pdf,683195,9,13391,ok,texts\doc_0376.txt
+doc_0377,A PM Model to Deliver Higher Availability for 794AC Trucks.pdf,2413405,11,18867,ok,texts\doc_0377.txt
+doc_0378,A Roadmap to Planning and Perform a “NMI - New Marketing Introduction” for CAT Electric Drive Trucks.pdf,3568287,23,38259,ok,texts\doc_0378.txt
+doc_0379,Adjusting the LED Lamps Intensity on the 794 Truck's Dash Panel for Nighttime Operation.pdf,398930,5,6099,ok,texts\doc_0379.txt
+doc_0380,Auxiliary DriveShaft Bolt Tightening Tool for Engine Auxiliary Drive Shaft C175.pdf,1751658,7,5594,ok,texts\doc_0380.txt
+doc_0381,Backlog Runtime Optimization for Mining Equipments.pdf,517399,6,8745,ok,texts\doc_0381.txt
+doc_0382,Basket to Storage Caps C175-16 and C175-20.pdf,1196545,6,4600,ok,texts\doc_0382.txt
+doc_0383,Blade Edge Wear Levels Monitoring Using a Color Gauge on 16H16M16 Motor Grader.pdf,522737,6,7578,ok,texts\doc_0383.txt
+doc_0384,Bucket Stop Measuring Device for 994H Wheel Loader.pdf,484396,7,8214,ok,texts\doc_0384.txt
+doc_0385,C175 Cylinder Block Flushing.pdf,778577,6,8210,ok,texts\doc_0385.txt
+doc_0386,CAT 988H - Cooling System Temperature Measurement Optimization.pdf,379301,5,6532,ok,texts\doc_0386.txt
+doc_0387,Change Assembly Superbolts Hoist Pedestal - CAT 7495.pdf,951766,6,6313,ok,texts\doc_0387.txt
+doc_0388,Chassis Stands Guidelines for Effective Assembly for 794AC Electric Mining Trucks.pdf,5475559,12,15237,ok,texts\doc_0388.txt
+doc_0389,Component Management.pdf,1895658,20,49127,ok,texts\doc_0389.txt
+doc_0390,Cylinder Liner Projection Tool for 3500 Engine Block.pdf,1912249,17,11738,ok,texts\doc_0390.txt
+doc_0391,Disassembly Tool for Servo Piston of 320 and 324D Hydraulic Pumps.pdf,859208,5,5860,ok,texts\doc_0391.txt
+doc_0392,Drawbar Inspection and Adjustment Procedure for Motor Grader 16M3-16.pdf,511413,4,5479,ok,texts\doc_0392.txt
+doc_0393,Drilling Deck Platform MD6420.pdf,1642277,8,8242,ok,texts\doc_0393.txt
+doc_0394,Eliminating Live Work When Purging Air from the Brake System on 785C Trucks.pdf,748037,11,11778,ok,texts\doc_0394.txt
+doc_0395,Elimination of Live Work - Checking HMS Slew Ring Tilting Play.pdf,2692805,16,13356,ok,texts\doc_0395.txt
+doc_0396,Final Drive Gear-Coupling Assembly Tool for Multiple HEX.pdf,559996,4,5181,ok,texts\doc_0396.txt
+doc_0397,Front Spindle Salvage on Vertical Lathe.pdf,2226820,20,14041,ok,texts\doc_0397.txt
+doc_0398,Front Wheels Oil Drain Optimization for 777G OHT.pdf,717331,12,10524,ok,texts\doc_0398.txt
+doc_0399,HMS 6030 Engine and Pump Drive PCR Stand.pdf,1234454,6,6412,ok,texts\doc_0399.txt
+doc_0400,Hydraulic Wrench for CAT 330 Excavator Final Drive.pdf,1046090,13,10236,ok,texts\doc_0400.txt
+doc_0401,Identifying Availability Loss Factors through Downtime Stratification by CPI and PN.pdf,1815399,11,25411,ok,texts\doc_0401.txt
+doc_0402,Illumination in the PLC Cabinet - MD6640.pdf,331317,4,5702,ok,texts\doc_0402.txt
+doc_0403,Improved Assembly Process of the 793D-F XL Front Brake.pdf,410707,7,9916,ok,texts\doc_0403.txt
+doc_0404,Improved GPS Antenna Harness Routing in 794AC Commend Trucks.pdf,1510905,12,12500,ok,texts\doc_0404.txt
+doc_0405,Improved Procedure for Removing the Camshaft from D11 Fusion Tractors.pdf,709064,8,9713,ok,texts\doc_0405.txt
+doc_0406,Improvement in the Refrigerant Dryer Replacement Process of the Air Conditioner System for 793F Fleet.pdf,387314,5,6479,ok,texts\doc_0406.txt
+doc_0407,Improving Ripper Cylinder Performance thru D11.pdf,463504,6,6769,ok,texts\doc_0407.txt
+doc_0408,Improving Safety During Repair Management of the 994K.pdf,2139872,5,6344,ok,texts\doc_0408.txt
+doc_0409,Improving the Fluid Cleanliness through 16M Motor Graders.pdf,471462,6,7159,ok,texts\doc_0409.txt
+doc_0410,Improving the Shutdown Switch Positioning on 793D Mining Trucks.pdf,2049187,10,9029,ok,texts\doc_0410.txt
+doc_0411,Increasing MTBF by Installing a Second Primary Fuel Filter at 994K Wheel Loader.pdf,1336530,8,10657,ok,texts\doc_0411.txt
+doc_0412,Inversion of 793D A-Frame Pin.pdf,705045,7,8921,ok,texts\doc_0412.txt
+doc_0413,Management of Structures.pdf,1061728,11,21911,ok,texts\doc_0413.txt
+doc_0414,Managing Haul Road Defects with MineStarTM Edge and HEI.pdf,933484,10,17589,ok,texts\doc_0414.txt
+doc_0415,Manual Spray Booth for Thermal Arc Spraying Small Parts.pdf,878341,6,8613,ok,texts\doc_0415.txt
+doc_0416,Mounting Fixture for Metal Spray Gun.pdf,380413,8,6096,ok,texts\doc_0416.txt
+doc_0417,Off-Highway Trucks - Quick Diagnostic Tool for AC Failure.pdf,907281,8,9123,ok,texts\doc_0417.txt
+doc_0418,Oil Patch Analysis During Engine Dyno Test.pdf,1934162,9,12976,ok,texts\doc_0418.txt
+doc_0419,Operator Induced Event Reporting.pdf,921773,6,8324,ok,texts\doc_0419.txt
+doc_0420,Optimized Components Replacing Process of the 793D-F Fleet.pdf,1506608,8,11548,ok,texts\doc_0420.txt
+doc_0421,Performing Condition Monitoring Management Process to Save Component Life in Lift Cylinders.pdf,1223403,8,12568,ok,texts\doc_0421.txt
+doc_0422,"Pipe Rack Interlock Switch on MD6290, MD6240 and MD6420 Models.pdf",562108,6,7917,ok,texts\doc_0422.txt
+doc_0423,Piston (Pump) Clearance Measuring Tool.pdf,18959952,6,6446,ok,texts\doc_0423.txt
+doc_0424,Plateau Honing Recovery of C175 and 3500 Liners.pdf,636032,8,7680,ok,texts\doc_0424.txt
+doc_0425,Power Wedge Improvement Adapter Retention System GET 7495.pdf,3857534,10,11002,ok,texts\doc_0425.txt
+doc_0426,Primary Air Filters Removal Tool for 789D OHT’s.pdf,6742244,7,7571,ok,texts\doc_0426.txt
+doc_0427,Procedure to Measure End Play for the Fan Drive on 785C-D Engines.pdf,810301,7,7930,ok,texts\doc_0427.txt
+doc_0428,Pump Transport Apparatus.pdf,923981,5,5312,ok,texts\doc_0428.txt
+doc_0429,Repositioning of the Connection Box - CAT 7495.pdf,618422,7,8243,ok,texts\doc_0429.txt
+doc_0430,Rolling Maintenance Parts for Reducing PM Time 794 and 798 AC.pdf,1052438,7,8147,ok,texts\doc_0430.txt
+doc_0431,Salvage C175 Engine Block Coolant Passage Using Metal Spray.pdf,1100302,6,6956,ok,texts\doc_0431.txt
+doc_0432,Salvage C175 Engine Cylinder Block Upper and Lower Liner Bores Using Metal Spray.pdf,1305846,6,7024,ok,texts\doc_0432.txt
+doc_0433,Setting Up the Metal Spray Robot Using a Cone Tool.pdf,397328,5,6134,ok,texts\doc_0433.txt
+doc_0434,"Sprocket Segments Tool for Bolts Installation - D10R, D10N and D10T.pdf",743403,6,6860,ok,texts\doc_0434.txt
+doc_0435,Steering Cylinder Sensor Centering Tool - 794AC.pdf,1148486,8,5512,ok,texts\doc_0435.txt
+doc_0436,Swing Motor Sensors Position Change on HMS 6060AC.pdf,996592,7,8193,ok,texts\doc_0436.txt
+doc_0437,TIR - Technical Information Release Process.pdf,1089386,7,11453,ok,texts\doc_0437.txt
+doc_0438,Tool and Process to Purge the 794AC Hydraulic System to Prevent Pump Damage after Draining Fluid.pdf,511167,6,7984,ok,texts\doc_0438.txt
+doc_0439,Tool for Bolts Installation in the D11R D11N D11T Sprocket Segments.pdf,255903,6,7416,ok,texts\doc_0439.txt
+doc_0440,Tool to Isolate Air Intake Lines for Pre-Cleaner Washing Process.pdf,1043204,6,8027,ok,texts\doc_0440.txt
+doc_0441,Track Removal Tool D11-D11T.pdf,8133692,7,7857,ok,texts\doc_0441.txt
+doc_0442,Transmission Carrier Disassembly Tool.pdf,16185100,6,7851,ok,texts\doc_0442.txt
+doc_0443,Upgrade Pulley Carrier MD6420-16.pdf,1490112,9,10483,ok,texts\doc_0443.txt
+doc_0444,Using Magnetic Plug to Monitor the Pump Drive Wear on Certain 785C-D and 789C-D.pdf,469924,5,5977,ok,texts\doc_0444.txt
+doc_0445,Using Video Overlay for Communication of Mine Site Opportunities.pdf,5361625,13,22986,ok,texts\doc_0445.txt
+doc_0446,Utilizing Downtime Analysis to Improve Availability.pdf,1234431,14,28345,ok,texts\doc_0446.txt
+doc_0447,Wear Cap Installation Tool for ERS 7495.pdf,594438,5,6224,ok,texts\doc_0447.txt

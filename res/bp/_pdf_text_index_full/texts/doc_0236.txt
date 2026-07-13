@@ -1,0 +1,252 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Crankshaft and Camshaft Washing Stand for Turntable Washer.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2015 
+1506-4.03-1382 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Crankshaft/ Camshaft 
+Washing Rack for 
+Turntable Washer 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Crankshaft/ Camshaft Washing Rack for Turntable 
+Washer ...................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Crankshaft/Camshaft Washing Stand for Turntable 
+Washer 
+DATE 
+10/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1506-4.03-1382 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction  
+ 
+Borusan Makina Kazakhstan has designed a washing rack to wash crankshafts and camshafts 
+safely and efficiently in the turntable washer. The rack, as built, is applicable for all engine models 
+up to 3508 length (with appropriately fabricated retainers and adapters). 
+ 
+Previously it was tiresome to wash crankshafts and camshafts in the turntable washer. 
+Crankshafts and camshafts were put onto pallets and fastened to them. These components might 
+fall during washing in the washer and be damaged.  Besides, they were not washed well. 
+ 
+According to the washing standard procedure, components should be washed in baskets or on 
+stands/racks. Thus, this washing rack allows safe and efficient washing of the crankshafts and 
+camshafts and following the procedure required. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The washing rack for crankshafts and camshafts is designed in a convenient way. It has the 
+following main elements: 
+• S creen bottom to allow the better washing of the components(1),  
+• R eliable supports to provide the rigidity of the structure (2),  
+• 2 x Camshaft Plate to hang camshafts in the stand. There are two widths of the slot for 
+camshafts. It was designed to use the wider slot to wash camshafts with gears installed (3); 
+• 2 x Camshaft Retainer Plate prevents the camshafts from banging into each other and sliding 
+from the rack during the lifting (4); 
+• Crankshaft Adapter removable that securely keeps the crankshaft in the rack (5); 
+• 4 x Lifting eyes to lift the rack by the crane and put/remove it into/from the turntable washer 
+(6).  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1 
+1 2 
+3 
+3 
+4 
+5 
+6 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Crankshaft/Camshaft Washing Stand for Turntable 
+Washer 
+DATE 
+10/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1506-4.03-1382 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+Crankshaft & Camshaft Washing Rack 
+The washer work height is 1830mm (6 feet) and the turntable diameter is 1575mm (5.17 feet). 
+ 
+This rack enables you to wash several components simultaneously (1 x Crankshaft, 2 x 
+Camshafts and Valve Mechanism) in the turntable washer that allows to utilize the washer 
+efficiently. 
+   
+ 
+3.0 Implementation Steps 
+ 
+The Crankshaft and Camshaft Washing Rack is in use.  
+ 
+It is simple to use this rack.  
+ 
+1. Hang 1 x Crankshaft and 2 x Camshafts in the rack. 
+2. Lift the rack by the crane, carry it to the washer and put it on the turntable. 
+3. Wash the components. The inhibitor is already in the aqueous solution of the washer.  
+4. Then take the rack out from the washer and leave the components to get cold. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Crankshaft & Camshaft Washing Rack in use 
+ 
+  
+4.0 Benefits 
+ 
+• Components to be washed are safely fastened. 
+• Efficient utilization of the washer (several components) are washed at the same time. 
+• Components are washed better. 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Crankshaft/Camshaft Washing Stand for Turntable 
+Washer 
+DATE 
+10/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1506-4.03-1382 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+ 
+ 
+5.0 Resources Required 
+ 
+• Machine Shop. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+The washing rack’s detail and assembly drawings are attached. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A. 
+ 
+ 
+8.0 Acknowledgements 
+ 
+The idea of creating & implementing this Best Practice belongs to: 
+ 
+Chokan AIBATYROV   Bauyrzhan AKHANOV 
+CRC Process Engineer  Designer 
+Borusan Makina Kazakhstan LLP  Borusan Makina Kazakhstan LLP 
+caibatyrov@borusan.com     bakhanov@borusan.com
+   
+ 
+ 
+      This Best Practice was written by:  
+Denis KORNIYENKO   Gulnaz MANSUROVA 
+Machine Shop Welder   CRC Process Engineer 
+Borusan Makina Kazakhstan LLP  Borusan Makina Kazakhstan LLP 
+DKorniyenko@borusan.com   gmansurova@borusan.com 
++7 (701) 951 98 14

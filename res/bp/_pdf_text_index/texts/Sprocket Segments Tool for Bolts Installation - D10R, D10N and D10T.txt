@@ -1,0 +1,304 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+March 2023 
+1.04-230301-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ Caterpillar: Confidential Yellow 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Sprocket Segments Tool 
+for Bolts Installation - 
+D10R, D10N and D10T      
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Sprocket Segments Tool for Bolts Installation - D10R, 
+D10N and D10T  ........................................................ 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 3 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits ............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Sprocket Segments Tool for Bolts Installation - D10R, 
+D10N and D10T  
+DATE 
+3/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230301-1 
+Caterpillar: Confidential Yellow          Page 2 of 6 
+1.0 Introduction  
+ 
+The Installation of the sprocket segments on TTT is a task in which we must be especially careful 
+when tightening the nuts because of the potential safety risks to the technical personnel performing 
+the task. Technicians are exposed to pinch points, arm fatigue, and potential tool slippage. 
+ 
+Currently for the torque procedure of the bolts a lever resting on the final drive is used in order to hold 
+the nuts and ensure correct torque is applied.  This exposes the technician to a possible safety issues 
+should the lever slip Fig.1.   
+ 
+ 
+ 
+Fig. 1. Former old bolt torque process 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Sprocket Segments Tool for Bolts Installation - D10R, 
+D10N and D10T  
+DATE 
+3/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230301-1 
+Caterpillar: Confidential Yellow          Page 3 of 6 
+2.0 Best Practice Description 
+ 
+This BP coves the fabrication and use of a simple tool to hold the sprocket segment bolts (D10N, 
+D10R & D10T) replacing the typically used lever, simplifying the process, and reducing the 
+associated risks of sprocket segment changes. 
+ 
+Geometrically, the tool has a “U” shape, in one of its ends, it has a 1 ¼ " and 4 1/2" diameter bar 
+in length and in the other end it has a diameter of 2.4" and a length of 1.4" bored concentrically 
+with the silhouette of the head of the bolt to be installed. The two ends are joined by a 1" plate 
+triangle shaped having rounded edges due to the difference in diameters of the two ends. Made 
+entirely of ASTM A36 steel, this tool also has a handle so that the technician can comfortably hold 
+it with his hand when installing or transporting. 
+ 
+In Fig. 4. We can see the way it holds the head of the bolt, and it takes advantage of the 
+segments teeth in order to lock itself and thus it reduces the exposure of the technicians to 
+possible accidents, and it improves the torque of the bolts reducing the installation time by up to 
+40 %. 
+ 
+ 
+ 
+Figure 2. Design drawings, a
+ll measurement by inches 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Sprocket Segments Tool for Bolts Installation - D10R, 
+D10N and D10T  
+DATE 
+3/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230301-1 
+Caterpillar: Confidential Yellow          Page 4 of 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 3. Sprocket segments bolts holding tool 
+ 
+ 
+3.0 Implementation Steps 
+ 
+•   Manufacturing of the tool. 
+• 
+ Operation of the tool for applying torque to the screw’s segments sprocket (see Figure 4) 
+ 
+1. From the inside of the sprocket, place the largest diameter end of the tool in order to hold the 
+bolt head with the bored silhouette. 
+2. Make sure the opposite end of the tool (1 ¼ " bar) is placed in one of the spaces between the 
+sprocket teeth. 
+3. install the torque meter along with the adapters required to tighten the nut on the outside of the 
+sprocket, make sure when rotating the tool that it is locked with one of the sprocket teeth 
+thereby preventing the rotation of the bolt. 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Sprocket Segments Tool for Bolts Installation - D10R, 
+D10N and D10T  
+DATE 
+3/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230301-1 
+Caterpillar: Confidential Yellow          Page 5 of 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 4. Operation of the tool for applying torque the screws segments sprocket 
+ 
+4.0 Benefits 
+ 
+• It improves the safety of the task.  
+• It reduces the installation time of the sprocket segments up to 40%. 
+• It improves the torque application. 
+• There is higher availability of the equipment. 
+ 
+5.0 Resources Required 
+ 
+• Design drawings (see Figure 2) 
+ 
+6.0 Supporting Attachments / References 
+ 
+• SIS: Sprocket Segment - Remove and Install (RENR8166-13) 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Sprocket Segments Tool for Bolts Installation - D10R, 
+D10N and D10T  
+DATE 
+3/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230301-1 
+Caterpillar: Confidential Yellow          Page 6 of 6 
+7.0 Related Best Practices 
+ 
+• Tool for Bolts Installation in the D11R D11N D11T Sprocket Segments 
+ 
+8.0 Acknowledgements 
+ 
+Aly Ahmed El Nagar 
+Condition Monitoring Specialist 
+Email: aelnagar@mantracegypt.com 
+ 
+ 
+Ahmed Samir Shaaban  
+Mining Technical Communicator Supervisor 
+Email:  Ashaaban@mantracegypt.com 
+ 
+ 
+Hafez Kamal Ramadan 
+Service Engineer 
+Email: HRamadan@mantracegypt.com

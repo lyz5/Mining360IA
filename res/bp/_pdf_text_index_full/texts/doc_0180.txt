@@ -1,0 +1,331 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\1. Strategic\In-Process Staging Strategy.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+November 2006  
+1106-4.4-1038  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+In-Process Staging 
+Strategy 
+ 
+Application  Maintenance  Site 
+Management  
+Component 
+Rebuild Safety MARC 
+Management  
+ 
+ 
+ 
+ 
+In-Process Staging Strategy ...................................... 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 4 
+4.0  Benefits ............................................................. 4 
+5.0  Resources Required .......................................... 5 
+6.0  Supporting Attachments / References ............... 5 
+7.0  Related Best Practices ...................................... 6 
+8.0  Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER :  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+In-Process Staging Strategy 
+DATE 
+11/28/06 
+CHG 
+NO 
+01 
+NUMBER 
+1106-4.4-1038 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+ 
+1.0 Introduction  
+ 
+Component Rebuild Center (CRC) parts and component staging is critical to several facets of 
+CRC operations.  Staging is non-value adding and is typically unplanned or not maintained.  
+Rebuild product should be staged between processing steps in a manner that consumes minimal 
+resources (space, labor, equipment).  Staging begins with major component receipt and ends 
+with major component release to the customer, parts department, etc. Effective part/component 
+staging reduces staging space requirements and technician rebuild labor with simpler storage 
+equipment and product accessibility. 
+ 
+An effective staging strategy enables consistency and minimizes “lost” in-process product. Last-
+minute customer changes are less costly to re-schedule due to greater process flexibility. 
+Properly used, an enhanced staging strategy provides increased capacity, efficient parts flow, 
+and better space utilization. 
+ 
+2.0 Best Practice Description 
+ 
+For the scope of this Best Practice, parts/components staging begins after the major component is 
+processed in the general disassembly/cleaning area(s).   
+ 
+• Current practice is typically ineffective and inco nsistent. 
+o Once cleaned the product often stays in the cleani ng area, (or wherever there is space) 
+until it is sent to one of several component rebuild areas (CRA).  The CRA may be 
+specific to shafts, pumps & drives, front/rear covers, turbochargers, fuel systems, etc. 
+o Once the CRA has completed processing the product it may be sent to wait in the 
+general assembly bay until all of the parts/components are available for the assembly 
+process. 
+o Parts/components are often in one of several place s, depending on who processed 
+them and where the shop has space to park them.  They may end up in an aisle traffic 
+lane, close to a shop access door, or in any number of open places vulnerable to dirt, 
+debris, water, and contact damage. 
+ 
+• An enhanced Staging Strategy is efficient and part s-friendly. 
+o Once disassembled and cleaned, the parts/component s must leave the cleaning area 
+and move to the part/component rebuild area.  The sooner the clean parts leave this 
+area, the cleaner they stay. 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+In-Process Staging Strategy 
+DATE 
+11/28/06 
+CHG 
+NO 
+01 
+NUMBER 
+1106-4.4-1038 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+Eliminating the General Cleaning Area  and 
+intermediate salvage area’s outgoing staging 
+areas reduces parts contamination and parts wait 
+time. 
+It is easier to protect the parts/components with 
+specialized staging equipment. 
+ 
+Establishing the Final Subcomponent Rebuild 
+Bay  incoming and outgoing staging areas 
+provides like-component staging/handling 
+equipment and: 
+• Reduces staging space overall because, for 
+example, many crankshafts can be stored 
+efficiently with specialized equipment. 
+• Uses less costly space than is used in the 
+major component assembly areas (smaller 
+cranes, lower ceilings, etc.)  
+ 
+Delaying the Major Component Assembly Bay 
+incoming staging until assembly occurs:  
+• Maintains assembly job flexibility.  The bays 
+are available for any job until one actually 
+begins (since no parts are delivered until 
+needed).   
+• Allows a minimally sized assembly bay to be 
+more productive if the parts and 
+subassemblies can be delivered as needed 
+instead of all-at-once (congesting the bay). 
+ 
+ 
+ 
+• Intermediate Salvage Area 
+Includes machine shop, head 
+disassembly/cleaning bay etc. Once processed, 
+the parts are immediately sent to the incoming 
+staging area of the next processing bay (such as 
+water pump rebuild, head, or turbo rebuild bays).  
+Do not stage completed work in an out-going 
+staging area. 
+ 
+ 
+ 
+• Final Subcomponent Rebuild Bay  
+Includes cooler assembly bay, head rebuild bay, 
+etc. Once processed, the parts are staged in an 
+outgoing staging area.  This staging area is best 
+located close to the incoming staging area, but it 
+would be acceptable to locate it in a protected 
+satellite area. 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+In-Process Staging Strategy 
+DATE 
+11/28/06 
+CHG 
+NO 
+01 
+NUMBER 
+1106-4.4-1038 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+• Major Component (General) Assembly Bays 
+o Do not stage parts/components in the bay until the  major component is being 
+assembled.  
+o Do not stage assembled major components in an asse mbly bay out-going staging area. 
+Eliminating the general assembly area’s outgoing staging areas reduces transfer wait 
+time for the test area and shop component storage area. 
+ 
+• Test Cells 
+Includes dynamometer or hydraulic test bench cell areas. Once processed, the parts are 
+staged in an out-going staging area.  This staging area is best located close to the incoming 
+staging area, but it would be acceptable to locate it in a protected satellite area. 
+ 
+3.0 Implementation Steps 
+ 
+1. Document as-is staging methods and performance. 
+2. Define future staging strategy based on expected  product type, volume, size, etc. 
+a. Plan for typical rebuild volumes as well as expe cted peak production business cycles. 
+b. Investigate specialized product storage (shelves , carts, racks, etc.) and handling 
+(cranes, carts, lift trucks, tugs, etc) equipment. 
+c. Use Cat Facility Development and shop equipment supplier expertise as needed. 
+3. Apply future strategy to shop layout plans. 
+a. Consider staging location’s effects on product p rotection and flow paths. 
+b. Add changes to shop layout drawing. 
+c. Include shop technician teams in the review/appl ication stages. 
+d. Use Cat Facility Development and shop equipment supplier expertise as required. 
+4. Develop/document the new staging strategy/proced ure, with new roles and responsibilities. 
+5. Establish new/adjusted repair/rebuild time requi rement targets as needed. 
+6. Present strategy to shop employees. 
+7. Install the staging processes, layout, and equip ment changes into the shop. 
+a. This may occur in phases (as needed). 
+8. Train employees to use the new procedures/equipm ent.  Follow-up/enforce immediately. 
+9. Review process/equipment performance once establ ished. 
+10. Establish and install any adjustments as needed. 
+ 
+4.0 Benefits 
+ 
+• Increased capacity - These concepts reduced space requirements allowing the dealer to 
+increase the number and size of general assembly bays. 
+• Reduced cost – Pans/covers/sub-assemblies are stag ed in protected areas instead of 
+assembly bays.  Assembly bays are rescheduled with minimal parts moves, saving set-
+up/tear-down time/costs. 
+• The dealer’s technicians work more effectively wit h more space to organize their activity.  
+Rebuild times and target times dropped, raising standard (flat-rate) job profits. 
+• Increasing quality – the rebuilt components incur less incidental damage and contamination. 
+• Improved Operator/Technician Safety 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+In-Process Staging Strategy 
+DATE 
+11/28/06 
+CHG 
+NO 
+01 
+NUMBER 
+1106-4.4-1038 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+5.0 Resources Required 
+ 
+• Investment Costs Vary 
+o Well-built, protected rack for pumps cost $1000 US  while heavy-duty rollout shelves 
+cost considerably more, depending on size, weight requirements, and supplier. 
+• Facility 
+o Staging space (re-organized) to locate it in CRA o r protected area. 
+• Support Equipment 
+o Staging racks, carts, stands for incoming componen ts. 
+o Staging racks, carts, stands with contamination pr otection for out-going components. 
+o Heavy duty roll-out head rack/shelves (providing c rane access) can be used for larger 
+components, or standard racks and pallet can be used with lift truck storage and 
+retrieval 
+o Standard and custom designed carts are used for sh afts, pistons, rods, liners, etc.  
+These are used for staging as well as transport. 
+o Floor pallets typically consume lots of space and their use is discouraged. 
+• People 
+o Establish current staging concerns with team. 
+o Establish process, layout, and equipment improveme nts through team. 
+• Training 
+o Define, establish, and enforce the new process and  duties with the production team. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Shown below are examples of proper parts staging. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Crankshaft rebuild area - Shafts are 
+protected and aisle accessible for retrieval. 
+Fuel system rebuild area - Incoming groups on bottom shelf, outgoing groups 
+on top shelf (protected). 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+In-Process Staging Strategy 
+DATE 
+11/28/06 
+CHG 
+NO 
+01 
+NUMBER 
+1106-4.4-1038 
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+ 
+ 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Russ Young 
+6 Sigma Black Belt 
+CGM 
+General assembly area - General parts are easily moved (wheels on rack) and located in a specific parking area.

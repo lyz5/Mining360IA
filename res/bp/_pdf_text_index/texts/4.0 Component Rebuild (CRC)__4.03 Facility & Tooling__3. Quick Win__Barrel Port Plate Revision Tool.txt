@@ -1,0 +1,235 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2021 
+4.03-210623-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Barrel Port Plate Revision 
+Tool 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Barrel Port Plate Revision Tool ................................... 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description.................................... 2 
+3.0 Implementation Steps ......................................... 3 
+4.0 Benefits ................................................................ 4 
+5.0 Resources Required ........................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices........................................ 5 
+8.0 Acknowledgements ............................................. 5 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Barrel Port Plate Revision Tool 
+DATE 
+6/23/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210623-1 
+Caterpillar: Confidential  Yellow          Page 2 of 5 
+1.0 Introduction  
+ 
+Currently at Borusan Makina ve Güç Sistemleri we are obliged to outsource for existing barrel port 
+plate revision operations. However, when the components go to the external supplier, both the offer 
+period and the deadline are experiencing major disruptions. This has been and continues to be an 
+ongoing issue with the external supplier, and we believe it could apply to other parts of the world as 
+well. This outsourcing also increases the cost of the value-added business reflected to the customer. 
+And, due to the lack of tools, as external procurement is not under our control, we cannot follow the 
+quality processes, meaning appropriate equipment and workforce adjustment cannot be performed 
+correctly. 
+   
+Due to this situation, we will utilize common shop materials and establish a tool to perform these 
+operations ourselves, rather than outsourcing. This will increase efficiency and profitability, as well as 
+adherence to quality processes. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+This tool consists of assembled parts from different shop equipment attached to a drill. It can be used 
+to revise the working surfaces of barrel and port plates and make them compatible with each other. 
+   
+There was a drill sitting idle in the shop and a technician pulled it out to make it usable and turn it into 
+a lathe. The parts shown below in the implementation steps are mounted onto the drill. The lathe 
+chuck was made to 250 mm dimensions with 3 legs. The spring on the tool is approximately equal to 
+the pressure applied by hand. The barrel and port plate are adjusted to the circular center with the 
+interchangeable center. Any necessary modifications can be performed to revise the barrel port plate. 
+The drill converted to a lathe by the mounted parts is shown below. 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Barrel Port Plate Revision Tool 
+DATE 
+6/23/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210623-1 
+Caterpillar: Confidential  Yellow          Page 3 of 5 
+3.0 Implementation Steps 
+ 
+1. Setup the drill. 
+2. Make the lathe chuck to the dimensions specified. 
+ 
+ 
+Lathe chuck with specified dimensions. 
+ 
+3. Attach the lathe chuck to the drill press. 
+4.        Place the barrel on the drill by assembling it with the spring, which can be closed with hand  
+           pressure, and changing the lower center if needed. 
+ 
+ 
+ 
+5.          Mount the port plate to the drill bit with the apparatus. 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Barrel Port Plate Revision Tool 
+DATE 
+6/23/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210623-1 
+Caterpillar: Confidential  Yellow          Page 4 of 5 
+ 
+                                                                
+                Interchangeable centers for the lathe. 
+ 
+ 
+ 
+      Barrel port plate with an interchangeable center and mounting apparatus. 
+ 
+6.             Use paste for proper labbing at low speeds. 
+ 
+ 
+4.0 Benefits 
+ 
+• Standardizes and adheres to quality processes; 
+• Increases profitability by reducing outsourcing; 
+• Reduces cost to the customer; 
+• Improves efficiency by decreasing lost time during the supply waiting period and increasing 
+quality; 
+• Prevents disruptions in the offer period and deadline. 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Barrel Port Plate Revision Tool 
+DATE 
+6/23/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210623-1 
+Caterpillar: Confidential  Yellow          Page 5 of 5 
+5.0 Resources Required 
+ 
+ 
+Item Cost 
+Material $200 
+Labor $100 
+Total $300 
+ 
+6.0 Supporting Attachments / References 
+ 
+       N/A 
+ 
+7.0 Related Best Practices 
+ 
+       N/A 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+ 
+Hümeyra Buğçe Bali  
+CRC Intern  
+Borusan Makina ve Güç Sistemleri  
+ 
+ 
+This Best Practice was designed by:  
+ 
+Cihan Vural  
+Technician  
+Borusan Makina ve Güç Sistemleri  
+ 
+ 
+This Best Practice and project were supported by:  
+ 
+Serdar Gürler  
+CRS Workshop Engineer  
+Borusan Makina ve Güç Sistemleri  
+ 
+Ömer Emre Demirkale  
+CRC Manager  
+Borusan Makina ve Güç Sistemleri

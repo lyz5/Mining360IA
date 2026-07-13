@@ -1,0 +1,595 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Managing Contract Health 
+Utilizing Metrics 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+ 
+Managing Contract Health Utilizing Metrics ............... 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 7 
+4.0 Benefits ............................................................ 11 
+5.0 Resources Required ........................................ 11 
+6.0 Supporting Attachments & References ............ 12 
+7.0 Related Best Practices .................................... 12 
+8.0 Acknowledgements .......................................... 12 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+January 2007 
+0107-3.3-1056 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+The two critical success factors to contract profitability are the Project Manager and effective 
+measurement of contract performance. The Project Manager is the primary decision maker and 
+represents the dealer’s best interests on the mine site. Measuring contract performance will be 
+the gauge of contract profitability but will also provide a process to indicate how well the project 
+manager is making decisions. The ultimate objective in measuring contract performance is to 
+provide early warnings of potential contract shortfalls to the dealer management group. If an 
+operation is projecting an unfavorable trend, Dealers and Caterpillar can partner together to apply 
+resources to turn the trend around before it is too late. Time is the key advantage to turning 
+around a negative trend. The earlier the measuring process is initiated, the earlier dealer 
+management will realize a project needs help. The best-case scenario initiates the measurement 
+process as soon as the project becomes operational. The Preventive Maintenance service routine 
+can be measured against standard job variance or a time requirement guide right from the very 
+first PM service performed. This practice can set the standard for the entire project and start from 
+day one. 
+ 
+2.0 Best Practice Description 
+ 
+Using 6 Sigma and input from dealers, Cat Global Mining 
+determined the top five metrics to measure contract profitability 
+in conjunction with dealer support. They are: revenue/expense 
+variance, contractual availability, payload compliance, 
+component management, and budget/cost variance. These 
+metrics are most important in providing the “early warnings” 
+required to prevent a potentially unprofitable contract.  
+ 
+Two time frames are considered for measurement: “to-date” and 
+“projected”. The “to-date” time frame indicates how the project is 
+currently performing with the existing management, resources, 
+and operating principals. The “projected” time frame looks into 
+the future and projects how well the project will be performing at 
+the end of the contract. Looking at the five metrics from these 
+two points of view will deliver a clear indication of contract 
+profitability. 
+ 
+Revenue/ Expense Variance: This variance is the difference between the currency collected 
+from a customer through billings based on the service meter readings and the costs applied to 
+deliver those obligated services.  
+ 
+Contractual Availability: Contractual Availability is defined as the ratio of time a machine is 
+capable of functioning in the intended operation (available hours) to the total calendar hours in 
+the period under consideration, expressed as a percentage.  
+ 
+ 
+ 
+REVENUE/ EXPENSE VARIANCE: 
+billings – costs 
+ 
+CONTRACTUAL AVAILABLILITY: 
+%uptime contracted
+uptime actual =  
+ 
+PAYLOAD COMPLIANCE: 
+% of loads > 110% of target 
+% of loads > 120% of target 
+mean average payload/month 
+ 
+BUDGET/COST VARIANCE: 
+  
+operation 
+budget 
+actual 
+cost – 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Contract Health Utilizing Metrics 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-3.3-1056 
+Caterpillar Confidential:  GREEN         Page 2 of 12 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+The calculation of available hours is not a pure calculation since the result is amended by 
+downtime hours that are specifically excluded or limited by the terms of the contracts. If there is 
+an availability obligation with a penalty, the penalty paid to the customer for non-performance will 
+impact contract profitability. The ideal time-period for contractual availability is a rolling 12 month 
+average.  
+ 
+Payload Compliance: Adhering to the 10/10/20 payload policy is important in maintaining high 
+operational performance for trucks and loaders. Monitoring and reporting payload a dealer can 
+partner with a customer to maximize return on equipment investment. The elements tracked in 
+payload compliance are: % of loads greater than 110% of target, % of loads greater than 120% 
+of target, and mean average payload carried per month.  
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Contract Health Utilizing Metrics 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-3.3-1056 
+Caterpillar Confidential:  GREEN         Page 3 of 12 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Component Management: A thorough understanding of the site conditions and component life 
+will be a catalyst to continuous process improvement. Understanding component life (actual life 
+being realized vs. budgeted life) and reasons for each component removal are extremely 
+important. The number of components required for a year must also be determined through 
+proper tracking and planning. A project manager will directly impact contract profitability by 
+maximizing the life a component will deliver. 
+ 
+ 
+ 
+This planning spreadsheet shows both short -term and long -term component 
+consumption. The Year -To-Date area tracks components, by type, as they are used. 
+The Contract Life- To-Date area compares actual component life against budgeted 
+hours, and Removal Tracking specifies the reason for each component removal. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Contract Health Utilizing Metrics 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-3.3-1056 
+Caterpillar Confidential:  GREEN         Page 4 of 12 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Budget/Cost Variance: This variance is the difference between the billing rate per hour charged 
+to the customer and the actual budget created to deliver the parts and service as agreed in the 
+contractual obligation. 
+ 
+The illustration below shows the relationship between revenue (blue line) and expenses (solid 
+colors, PM’s & Repairs) over an 8,000 hr term. If the contract is operating as intended, the 
+expenses should never be greater than revenue on a cumulative basis. If expenses do achieve a 
+higher level than revenue, further evaluation will be required to determine the root cause. 
+ 
+  
+ 
+Budget/cost variance is simply the difference between the dollars spent for a specific budget item 
+and the target cost.  
+ 
+Ex:1000 Hr PM: Budget = $1200, Cost = $1050, ⇒ Variance = $150 
+ 
+ 
+ 
+ 
+The above table includes terms introduced from the  
+ANALYZER™ software tool: projected cost variance,  
+ escalation variance, and budget variance.  
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Contract Health Utilizing Metrics 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-3.3-1056 
+Caterpillar Confidential:  GREEN         Page 5 of 12 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Additional elements tracked in this report: 
+MTBS: Mean Time Between Stops 
+MTTR: Mean Time To Repair 
+ 
+The following table illustrates the format for the data collection process that will generate the 
+793C OHT Performance Trend. The supplemental document Performance metric.pdf contains 
+additional information on MTBS and MTTR. 
+ 
+ 
+Additional metrics: 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Contract Health Utilizing Metrics 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-3.3-1056 
+Caterpillar Confidential:  GREEN         Page 6 of 12 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Projected Cost Variance (PCV): The contract budget created to build the rate per hour is used 
+as a baseline. As expenses are applied to the contract through the work order system, these 
+expenses are continually compared to the original baseline. The PCV is an indicator of financial 
+performance compared to the original budget from a total contract perspective. If this indicator is 
+negative, further analysis will be required to understand the source of the trend and action plans 
+put into place to resolve. 
+ 
+Escalation Variance: Escalation variance is defined as the relationship between parts price 
+increases to cost of goods sold and the ability to raise the billing rate to the customer. Analyzer 
+has the ability to calculate this ratio and display in the dollar format. 
+ 
+3.0 Implementation Steps 
+ 
+Contract Health implementation will require the cooperation of several functional areas within the 
+dealership, especially without the use of ANALZYER or AMT. These software tools are capable 
+of creating projections through contract end of revenue and contract expenses directly from input 
+financial information or reports. If dealers do not use projection software, the department 
+responsible for customer billings will provide the “to-date” and  “anticipated” contract revenue 
+values. The dealership department responsible for tracking contract cost will provide the to-date 
+expenses and the anticipated expenses through the end of the contracts. A dealer operational 
+area will provide contractual availability and payload compliance data.  
+ 
+Contractual Availability is defined as the ratio of time a machine is capable of functioning in the 
+intended operation (available hours) to the total calendar hours in the period under consideration, 
+expressed as a percentage. The calculation of available hours is not a pure calculation since the 
+result is amended by downtime hours that are specifically excluded or limited by the terms of the 
+contracts. Contractual availability data will be created in the operational area responsible for 
+tracking and reconciling downtime directly with customers. The tracking elements are: date/time 
+down, reason for unit being declared down, length of down period, reason for down term (i.e. 
+waiting on parts, service technicians, waiting on a service bay), the party accountable for the 
+reason (customer, dealer, or product), and date/time returned to service. This information ideally 
+is reconciled on a daily or weekly basis. For further detail, please refer to the attached document 
+Performance metric.pdf. This document provides specific detail for implementing a delay code 
+management process, which will facilitate prioritizing the reasons for down time with a generic 
+Pareto analysis.  
+ 
+The following table shows the data format required to establish the contractual availability trend. 
+To display the date value as a number, refer to the attached file Date Format.doc. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Contract Health Utilizing Metrics 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-3.3-1056 
+Caterpillar Confidential:  GREEN         Page 7 of 12 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+Implementing payload management will require support from the operational department. 
+Payload management is defined as an analysis of payload distribution for a fleet of off highway 
+trucks expressed in terms of Caterpillar 10/10/20 truck overload policy. The sources of data for 
+measuring payload start with the gross machine weights. These can be obtained from the 
+Caterpillar performance handbook, machine specifications sheets and information contained in 
+the factory documentation for the 10/10/20 payload policy. Ideally, the data is obtained once the 
+machine has been assembled and commissioned using an actual scale truck study. The actual 
+gross machine weight is an important element for determining the actual payload the machine 
+may haul while staying within the payload policy. Factors such as body design, tires, optional 
+equipment, carry-back, or other debris accumulation can have a significant effect on the 
+accuracy of published estimates. Actual payload data is obtained from the truck payload 
+management system (TPMS) or VIMS™ -TPMS reports. For further detail into payload 
+management, please refer to the Performance Metric.pdf attachment.  The following table 
+illustrates the data format required to develop the reports that will illustrate contract performance 
+and establish analysis trends. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Contract Health Utilizing Metrics 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-3.3-1056 
+Caterpillar Confidential:  GREEN         Page 8 of 12 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+Implementing component management will require cooperation between the operational, 
+financial, planning and technical departments. Each dealer may be slightly different in functional 
+responsibilities, however the elements to be tracked and reviewed will be the same. Each dealer 
+will decide where the responsibility resides.  
+ 
+The process implementation starts with planning. Questions to answer include: how many of 
+each major component will be required this year and when?, What is the contract budget PCR, 
+and how will the dealer track actual life realized? How will actual life realized be improved? The 
+operations or financial group will determine when components were removed, SMU, and the 
+reason for removal. This group will be the closest to the root cause analysis for the component. 
+The technical department will need to know why the components are removed in order to track 
+and identify emerging component removal trends. If a trend is emerging, the technical 
+department will be in the best position to monitor and consolidate the territory experience.  
+ 
+The trend information can be used in discussions for continuous improvement meetings with the 
+customer or product health meetings at the dealership. This will be an integral part of 
+understanding the root cause for achieving, or not achieving, desired PCR and the management 
+process for improving current trends. This same process will be replicated for each major 
+component in the contract. Implementing a “to-date” and “projected” budget cost variance 
+analysis will require cooperation between planning, financial, and operations groups. The 
+financial planning, or rate development group, will establish the target budgets for the site 
+operations groups.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Contract Health Utilizing Metrics 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-3.3-1056 
+Caterpillar Confidential:  GREEN         Page 9 of 12 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+This information is also 
+analyzed for performance 
+reporting, highlighting areas 
+that can be used for a site 
+continuous improvement or 
+product health effort. Tracking 
+actual component installs and 
+removals is an essential 
+element in understanding actual 
+life realized. The Major 
+Component Tracking System 
+(MCTS) is an outstanding tool 
+to accomplish this task for the 
+dealership. MCTS is a web-
+based system making the 
+information available to each 
+person in the dealership. MCTS has several reports to make tracking and managing actual 
+component life a reasonable task for a dealer to complete. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Implementing a “to-date” and “projected” Budget Cost Variance analysis will require support from 
+several departments and will also benefit other departments. Support will be required (if an 
+Analyzer or AMT tool is not available) to determine the “to-date” operational budgets. Operational 
+budgets will establish the limits the site coordinators will be required to achieve when executing 
+repair options and deploying resources. “To-date” actual data is used in analysis to monitor 
+contract financial performance against each budget. Unfavorable budget performance can be 
+reviewed for performance, training, site, and facility issues, which can be corrected to lead to 
+contract profitability. The table below shows sample data to perform a budget cost variance 
+analysis from a to-date perspective. A projection tool such as Analyzer or AMT can be used to 
+develop a projection as well. Budget cost analysis trends can be used for dealer and customer 
+continuous improvement projects as they are established. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Contract Health Utilizing Metrics 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-3.3-1056 
+Caterpillar Confidential:  GREEN         Page 10 of 12 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Component Budget Repair Cost Vs Actual Repair Cost August-2006 
+        Labour Hours  Component  
+Notes 
+Job Model Part SOS and On-site  Repair Cost  
+Number Fleet No Number Description Budget Actual  Budget   Actual  
+Site 1                 
+KM18803 793C-215 1470797X 503-engine 190.00 127.75      239,049.00      260,722.06    
+KM24136 793C-227 8X0222X 503-front brake 21.00 22.50        16,975.00        19,657.98    
+KM24985 793C-219 1503468 445-brake c/pump 4.00 9.00          7,816.00          2,784.32    
+KM22629 793C-217 1063722X 503-rear s/cyl 14.00 15.00          8,871.00        13,280.10    
+KM22628 793C-217 1063722X 503-rear s/cyl 14.00 15.50          8,871.00        13,094.91    
+KM14786 D10R-303 1102656X 501-final drive 24.00 31.00        17,447.00        27,428.86  BER….reman used to repair  
+KM22641 854G-340 1539939X 501-lift cylinder 6.00 0.00          3,054.00          4,940.79    
+KM24598 793C-214 9T8912X 503-steering cyl 14.00 11.00          5,872.00          6,343.99    
+KM25820 D10R-303 4T5112 445-ripper lift cyl 6.00 41.75          4,105.00          9,196.12    
+KM18648 793C-222 1590038X 503-rear wheel gp 30.00 49.25        86,768.00        97,054.07    
+KM25549 793C-227 8X0222X 503-front brake 21.00 37.50        16,975.00        22,323.79    
+KM25821 D10R-303 4T9977 445-ripper tilt cyl 6.00 26.00          3,548.00        10,599.64    
+KM25444 793C-222 9U9822 445-transmission 20.00 33.00        34,282.00        30,806.37    
+                  
+Site 2                 
+BH16396 789B-T145 3T0034X 501-transmission 24.00 36.00        35,971.00        37,705.22  
+$6,000 service fee contributes to cost 
+over-run 
+BH10255 793B-T268 1165808X 503-torque convt   56.00                     -          16,392.07  
+Note: there are not any F/D events 
+budgeted for this truck 
+BH14248 789B-T147 1062616X 501-wheel group 35.00 38.30        61,644.00        79,147.95    
+BH14441 789B-T140 1062616X 501-wheel group 35.00 71.00        61,644.00        92,110.99    
+BH16790 793B-T268 9T8912X 501-steering cyl 10.00 11.50          6,077.00          7,148.57    
+BH16157 789B-T144 3T0034X 501-transmission 24.00 38.50        35,971.00        38,825.40    
+BH17193 789B-T143 1062616X 503-wheel group 35.00 51.50        61,644.00        79,435.08    
+ 
+4.0 Benefits 
+ 
+The benefits to implementing the Contract Health Best Practice are: 
+ 
+• Early indication to contract health 
+• Thorough understanding of contract profitability 
+• Resource management 
+• Asset management 
+• Measurements for the project manager performance 
+ 
+5.0 Resources Required 
+ 
+This Best Practice needs a dedicated resource accountable for understanding, tracking and 
+managing contract profitability. Once trends and issues have been identified, the dealership, 
+customers, and Caterpillar can partner together to establish action plans to mitigate contract risk. 
+ 
+ 
+Access to MCTS is free to dealers and can be obtained by contacting: 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Contract Health Utilizing Metrics 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-3.3-1056 
+Caterpillar Confidential:  GREEN         Page 11 of 12 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Shari Weber  
+MCTS System Administrator  
+Weber_Shari_Aat.com  
++1 309 675 8115  
+ 
+6.0 Supporting Attachments & References  
+ 
+Attachments: 
+ 
+Performance Metric.pdf  CGM whitepaper detailing the importance of mining 
+performance metrics, also includes development of a Delay 
+Code system. 
+ 
+Contract Health Template.xls  A sample contract health report ready for actual numbers to 
+be input. 
+ 
+Date Format.doc   Instructions for switching date number formats in Excel. 
+ 
+Budget Cost Analysis.xls  Spreadsheet to compare budget and actual costs in repairs. 
+ 
+7.0 Related Best Practices 
+ 
+MCTS Used to Monitor & Manage Component Life  0906-3.1-1020 
+ 
+8.0 Acknowledgements 
+ 
+This Best practice was written by:  
+ 
+Don O’Neill 
+MARC Manager 
+Caterpillar Global Mining  
+Oneill_don_g@cat.com 
+309.675.4861 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Contract Health Utilizing Metrics 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-3.3-1056 
+Caterpillar Confidential:  GREEN         Page 12 of 12

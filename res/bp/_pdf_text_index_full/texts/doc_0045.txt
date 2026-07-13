@@ -1,0 +1,403 @@
+SOURCE: 1.0 Maintenance & Repair\1.02 Condition Monitoring\3. Quick Win\Prediction of Failure of Starting Motors on D11R Machines.pdf
+PAGES: 9
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+March 2014 
+1401-1.02-1330 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      
+ 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Prediction of Failure of 
+Starting Motors on D11R 
+Machines 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Prediction of Failure of Starting Motors on D11R 
+Machines.................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 7 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 8 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Prediction of Failure of Starting Motors on D11R 
+Machines 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1401-1.02-1330 
+Caterpillar Confidential:  GREEN          Page 1 of 8 
+1.0 Introduction 
+ 
+This Best Practice provides an overview of one strategy in order to predict failures in starting motors of 
+3508B engines used on D11R machines. These faults widely impact the reliability and availability of the 
+machine. 
+ 
+These failures are related to internal problems of the component or external problems in the electrical 
+starting system. In both cases, these events require maintenance intervention not programmed, 
+increasing the operating costs due to unexpected down of the machine, and the maintenance costs due 
+to investment of resources, manpower, spares, etc. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+One of most important issues in the maintenance of electrical systems is the preventive maintenance of 
+the starting system. This is managed only through corrective approach, which can have negative effects 
+in electrical starting system performance and can cause electrical components to not achieve the 
+expected life, especially the starting motors (pre-lube and electrical motor). This preventive maintenance 
+process includes several tasks to provide a reliable way to predict future failures in the starting motors. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Due to repetitive reports of starting problems which had root cause in the starting motors and there was 
+no information how to predict this failure, an improvement program was conceived in order to identify a 
+mode before failure to avoid unexpected machine downtime. 
+ 
+As a result of this program, a procedure was generated in which it was possible to establish a range of 
+energy consumption (in Amps) during the ignition process.  
+ 
+The first step was to develop a form of the procedure in which one may take the information in a logical 
+sequence of execution.  As a result, the attached procedure (see 6.0 supporting attachments) was 
+generated. 
+ 
+After we developed the procedure, the second step was based on the data collection to establish a safe 
+range according to the trends in each case. Thus, these data were plotted and analyzed finding the 
+trends and safe operating ranges for the pre-lube motor and electrical motor consumption in starting 
+cycle, and Pre-lubrication consumption. The following graphs show these trends and values. 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Prediction of Failure of Starting Motors on D11R 
+Machines 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1401-1.02-1330 
+Caterpillar Confidential:  GREEN          Page 2 of 8 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Prediction of Failure of Starting Motors on D11R 
+Machines 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1401-1.02-1330 
+Caterpillar Confidential:  GREEN          Page 3 of 8 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Prediction of Failure of Starting Motors on D11R 
+Machines 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1401-1.02-1330 
+Caterpillar Confidential:  GREEN          Page 4 of 8 
+ 
+ 
+As result of the analysis, we stated: 
+• The Consumption of pre-lubrication cycle should be between 130 and 160A. 
+• The Consumption of both starters in starting cycle should be up to 450A. 
+• The test was included in all Preventive Maintenance service work, every 280 hrs. 
+ 
+ 
+SUMMARY CHART 
+Description Condition Consumption 
+(Amp) Action Required 
+Starting Motors 
+(each one) 
+Starting 
+Cycle 
+Up to 450 No action Required. Execute 
+Preventive Maintenance 
+450 - 550 Follow Up. Check Starting system 
+components for anomalies 
+550 - Up Change 
+Pre-Lube 
+Motor 
+Pre-
+Lubrication 
+Cycle 
+130-160 No action Required. Execute 
+Preventive Maintenance 
+160 - Up Change 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Prediction of Failure of Starting Motors on D11R 
+Machines 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1401-1.02-1330 
+Caterpillar Confidential:  GREEN          Page 5 of 8 
+ 
+ 
+ 
+ 
+ 
+This Best Practice is applied to the following starter motors in engine 3508B 
+ 
+ENGINE STARTING 
+MOTOR  
+STARTING 
+MOTOR 
+PRELUBRICATION 
+3508B 
+6V-0889 123-8689 
+6V-0513  123-8686 
+338-3455   
+338-3456   
+ 
+ 
+4.0 Benefits 
+ 
+The benefits acquired of the implementation of this practice are: 
+• Improvements in the maintenance process of electrical system in general. 
+• Prediction of failures in the starter motors thus avoiding an unscheduled stop in the machine improving 
+the reliability and availability of the fleet. This is reflected in lower operation and maintenance costs. 
+ 
+ 
+ 
+ 
+• Saving in man power (technicians and tools transporting costs to field are not included) and saving 
+in reduction of machine down time in field equivalent to 54%; total Saving $91,490 USD/year. (see 
+chart) 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Prediction of Failure of Starting Motors on D11R 
+Machines 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1401-1.02-1330 
+Caterpillar Confidential:  GREEN          Page 6 of 8 
+ 
+Benefits in Manpower Savings and Reliability 
+Description  Failures in Field 
+Failures detected at 
+Shop  
+% Reduction 
+Machine Down time    
+(Average per Call) 36 12 67% 
+Man Power per Call                 
+(2 Technicians) 72 24 67% 
+Cost of 1 Drummond 
+Technician Hour (USD)  $9.5   $9.5    
+Cost Man Power per Call 
+(USD)  $684   $228  67% 
+Calls in 2009 13 15 100 % of Reduction of 
+Failures in Filed (2009 
+vs 2010) Calls in 2010 0 25* 
+Overall Cost Man power in 
+2009 (USD)  $12,278  
+54% Overall Cost Man power in 
+2010 (USD)  $5,700  
+Savings in Man Power (USD)  $6,578  
+ 
+  * These failures were detected simultaneously to PM jobs and not represent a call 
+ 
+Benefits in Costs of Machine Operation 
+Description  Failures in Field 
+Failures detected at 
+Shop  
+Machine Down time (Average per 
+Call) 36 12 
+Calls in 2009 13 15 
+Calls in 2010 0 25 
+Total Machine Down Time in 2009 648 
+Total Machine Down Time in 2010 300 
+Machine Hours Reduction 348 
+Cost/Operation Hrs of Machine 
+(USD/Hr)  $244  
+Savings in Machine Operation (USD)  $84,912  
+ 
+ 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Prediction of Failure of Starting Motors on D11R 
+Machines 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1401-1.02-1330 
+Caterpillar Confidential:  GREEN          Page 7 of 8 
+5.0 Resources Required 
+ 
+The estimated investment related to this project is approximately US $1,255. This is the cost of a Clamp-On 
+Multimeter P/N 329-9303 which will be invested only once. Besides 2 man hrs per machine of preventive 
+maintenance that can be executed in parallel to others major tasks to avoid additional downtime. 
+ 
+6.0 Supporting Attachments / References 
+ 
+• P rocedure of measurement 
+ 
+ 
+ 
+7.0 Related Best Practices 
+ 
+• None. 
+ 
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Prediction of Failure of Starting Motors on D11R 
+Machines 
+DATE 
+1/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1401-1.02-1330 
+Caterpillar Confidential:  GREEN          Page 8 of 8 
+8.0 Acknowledgements 
+ 
+This Best Practice was described and prepared by: 
+ 
+ Orlando Puello Cera 
+Track & Excavator Fleet Senior Supervisor 
+Mobile Equipment Maintenance 
+Mine Pribbenow – Drummond Ltd 
+opuello@drummondltd.com 
+  
+ Roberto Bula Parody 
+ Track & Excavator Fleet Leader 
+ Mobile Equipment Maintenance 
+Mine Pribbenow – Drummond Ltd 
+rbula@drummondltd.com 
+ 
+William Lopez                   
+Technical Communicator 
+Mine Pribbenow – GECOLSA 
+ 
+Checked by:  
+ 
+Luis Alberto Fernandez Chica. 
+Development Engineer - Coordinator Best Practices 
+GECOLSA 
+luisalberto_fernandez @gecolsa.com.co 
+ 
+Johan Navarro de la Hoz 
+Process analyst.

@@ -1,0 +1,285 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Assembly Tool for C175 
+Engine Connecting Rods, 
+Pistons, and Liners 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Assembly Tool for C175 Engine Connecting 
+Rods, Pistons, and Liners ................................. 0 
+1.0 Introduction ............................................ 1 
+2.0 Best Practice Description .......................... 1 
+3.0 Implementation Steps ............................... 3 
+4.0 Benefits .................................................. 3 
+5.0 Resources Required ................................. 3 
+6.0 Supporting Attachments / References ......... 3 
+7.0 Related Best Practices .............................. 3 
+8.0 Acknowledgements .................................. 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information 
+provided by one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no 
+representation or warranty about the information contained in this document or the products referenced herein. 
+Caterpillar welcomes additional “Best Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+June 2012 
+1206-4.03-1278 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction 
+ 
+In order to assemble C175 engine connecting rod, piston, and liner, Ferreyros has developed a 
+tool to make the process easier and faster.   Reference assembly procedure KENR6052. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Since tool prints are not currently available, the following photos show the fixture and 
+process. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Lifting bolts to handle the connecting rod. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Assembly Tool for C175 Engine Connecting Rods, 
+Pistons and Liners 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1206-4.03-1278 
+Caterpillar Confidential:  GREEN                     Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Use lifting bolts to lift connecting rod and piston into position over the liner. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The spacer shown below is fitted inside the liner to limit the movement of the piston inside 
+the liner during assembly. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Assembly Tool for C175 Engine Connecting Rods, 
+Pistons and Liners 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1206-4.03-1278 
+Caterpillar Confidential:  GREEN                     Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Handle is in the space is for easy removal.  Once removed, the 322-3564 puller group is 
+attached and the liner pack is ready to install in the cylinder block.        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+Design a tool. 
+ 
+4.0 Benefits 
+ 
+• More efficient 
+• Improved technician comfort  
+ 
+5.0 Resources Required 
+ 
+Minimal expense to fabricate the tool 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Assembly procedure KENR6052 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Assembly Tool for C175 Engine Connecting Rods, 
+Pistons and Liners 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1206-4.03-1278 
+Caterpillar Confidential:  GREEN                     Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+The idea for this Best Practice belongs to: 
+Franklin Llanos Hinostroza 
+Ferreyros SAA 
+ 
+This Best practice was written by 
+Pablo Alcántara Michuy  
+Ferreyros S.A.A.  
+p
+ablo.alcantara@ferreyros.com.pe 
+ 
+This Best practice was revised by: 
+Aninu Mitacc Vizcardo  
+Ferreyros S.A.A.  
+aninu,mitacc
+@ferreyros.com.pe 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Assembly Tool for C175 Engine Connecting Rods, 
+Pistons and Liners 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1206-4.03-1278 
+Caterpillar Confidential:  GREEN                     Page 4 of 4

@@ -1,0 +1,406 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+April 2007  
+0407-4.5-1073  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Managing and Adjusting 
+Major Component Flat 
+Rates 
+ 
+Application  Maintenance  Site 
+Management  
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety MARC 
+Management  
+ 
+ 
+ 
+Managing and Adjusting Major Component Flat Rates 
+ .................................................................................. 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits ............................................................. 6 
+5.0  Resources Required .......................................... 6 
+6.0  Supporting Attachments / References ............... 6 
+7.0  Related Best Practices ...................................... 6 
+8.0  Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information  provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practice s”. Caterpillar makes no representation or warranty 
+about the information contained in this document or t he products referenced herein. Caterpillar welcomes add itional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Managing and Adjusting Major Component Flat Rates 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0407-4.5-1073  
+Caterpillar Confidential:  GREEN         Page 1 of 6 
+1.0 Introduction  
+ 
+The majority of large mining customers around the world rely on major component exchange to 
+keep their fleets running at high availability.  Supporting a major component exchange program 
+requires that component rebuilds be performed on a flat rate basis. 
+ 
+Establishing component rebuild flat rates and keeping them current is a challenge that is 
+important to CRC financial performance.  Component rebuild costs change over time due to 
+factors such as parts prices, labor costs, product design updates, age and hours of machines, 
+parts reuse and salvage, and application changes. 
+ 
+This Best Practice discusses an annual work order analysis process to adjust major component 
+rebuild flat rate pricing. 
+ 
+2.0 Best Practice Description 
+ 
+There are a number of factors that determine component rebuild costs.  No two component 
+rebuilds cost exactly the same amount.  While it is easy to determine an average cost for a 
+specific component, there is always variation from one work order to the next.  While establishing 
+a flat rate price, it is important to look at cost variations and manage them as much as possible. 
+ 
+Factors causing rebuild cost variations: 
+• Parts reusability 
+o Total life cycles/ number of prior rebuilds on the  component. (Age variable) 
+o  Maintenance/ fluid cleanliness practices  (Custom er variable) 
+o Severity of application – fuel burn rate (Customer  variable) 
+o Before versus after failure rebuild contingent dam age (Condition variable) 
+o Major casting fatigue life (Age variable) 
+o Design changes/ product updates (Design variable) 
+o Reuse practices – risk avoidance (Shop variable) 
+• Parts and labor price changes (Price Inflation var iables) 
+• Labor usage 
+o Parts salvage requirements (machine shop or outsid e) (Age/ Condition variable) 
+o Before versus after failure. (Condition variable) 
+o Work process efficiencies (Shop variable) 
+o Use of Reman piece parts (Shop variable) 
+        
+       Note:  Excel Pivot Charts or Minitab are useful tools for this analysis. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Managing and Adjusting Major Component Flat Rates 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0407-4.5-1073  
+Caterpillar Confidential:  GREEN         Page 2 of 6 
+3.0 Implementation Steps 
+ 
+The process to analyze and adjust component rebuild flat rates involves the following steps; 
+• Collect all recent component rebuild work orders f or the component being reviewed. 
+• Determine the average and median component rebuild  costs. 
+• Measure the variation in the data  
+o By customer (maintenance and application factors) 
+o By component age (number of prior rebuilds) 
+o By component condition (before or after failure) 
+o By product updates (design changes) 
+• Determine reasons for variation. 
+• Modify component exchange pricing and terms to min imize the variations. 
+ 
+The following is an example of using the process to review a dealer 793C rear wheel group flat 
+rate.  The analysis is for 51 component rebuilds over a 6 month period. 
+ 
+Work Order Data Summary Spreadsheet 
+  
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Managing and Adjusting Major Component Flat Rates 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0407-4.5-1073  
+Caterpillar Confidential:  GREEN         Page 3 of 6 
+ 
+Minitab Histogram Graph of the work order data 
+ 
+$56,000$48,000$40,000$32,000
+Median
+Mean
+$38,000$37,000$36,000$35,000$34,000$33,000
+1st Quartile 31737
+Median 34412
+3rd Quartile 38503
+Maximum 61528
+34313 38530
+33073 36898
+6273 9320
+A-Squared 2.39
+P-Value < 0.005
+Mean 36422
+StDev 7497
+Variance 56212354
+Skewness 1.69563
+Kurtosis 3.20080
+N 51
+Minimum 27305
+Anderson-Darling Normality Test
+95% Confidence Interval for Mean
+95% Confidence Interval for Median
+95% Confidence Interval for StDev
+95% Confidence Intervals
+Summary for W/O Parts D/N
+ 
+Note:  The average D/N (dealer net) parts for all the work orders was $36,422.  The median is 
+normally higher or lower than the average if the curve is skewed and not a symmetrical bell curve.  
+In this case, the median D/N is lower, so it is better to use the average price point and not the 
+median as a pricing target. 
+ 
+It was determined that the data contained rebuilds for a number of components that were in a 
+failed condition when they were received in the shop.  The data was then sorted without the 
+failures included. The variance between the minimum and maximum cost was reduced by 50%, 
+but was still excessive for pricing the component rebuild flat rate. The median rebuild cost was 
+also reduced. 
+ 
+Sample Size  
+Mean. D/N Parts 
+$ Variation 
+(Min. to Max.)  
+$34,223  
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Managing and Adjusting Major Component Flat Rates 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0407-4.5-1073  
+Caterpillar Confidential:  GREEN         Page 4 of 6 
+$42,500$40,000$37,500$35,000$32,500$30,000$27,500
+Median
+Mean
+$36,000$35,000$34,000$33,000$32,000
+1st Quartile 31485
+Median 33159
+3rd Quartile 36899
+Maximum 43233
+32733 35107
+32322 35633
+3181 4903
+A-Squared 0.35
+P-Value 0.454
+Mean 33920
+StDev 3858
+Variance 14880743
+Skewness 0.206611
+Kurtosis -0.278367
+N 43
+Minimum 27305
+Anderson-Darling N ormality Test
+95% Confidence Interval for Mean
+95% Confidence Interval for Median
+95% Confidence Interval for StDev
+95% Confidence Intervals
+Summary for W/O Parts D/N
+ 
+ 
+ 
+Note: Average D/N parts for the work orders with failure work orders excluded was $33,920.  
+Note that the median is still lower than the average due to the skewed data curve.  
+ 
+ 
+The next step in the process was to review the work orders, especially high-dollar work orders, to 
+determine cost drivers. 
+ 
+ 
+Cost Drivers 
+ 
+                             
+ 
+ 
+ 
+ 
+ 
+Mean. D/N Parts 
+$ Variation 
+Min to Max.  
+$15,928 
+Sample Size 
+(reduced from 51)  
+WORK ORDER VARIATION 
+REDUCED 50% 
+BY EXCLUDING FAILURES 
+Replace Spindle with 
+Reman 
+Spindle and Carrier 
+Salvage 
+Replace Gears  
+Generally 1st or 2nd 
+Rebuilds 
+Low Hours  
+Generally 2 nd  or 3 rd  Rebuild  
+Higher Hours  
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Managing and Adjusting Major Component Flat Rates 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0407-4.5-1073  
+Caterpillar Confidential:  GREEN         Page 5 of 6 
+The analysis came to the following conclusions: 
+• No significant difference in rebuild costs was ide ntified from one customer to the next. 
+• The major rebuild cost drivers were determined as failures and the aging machine fleets. 
+ 
+The following actions were taken: 
+• Flat rate for the 793C Final Drive rebuild was def ined as a “before-failure” flat rate. 
+• After-failure rebuilds included a core charge if t he spindle, carriers, or hub needed to be 
+replaced. 
+• Since territory machine fleets were aging, the fla t rate would be based on the 3 rd  quartile 
+D/N cost of $36,899 instead of the average of $33,920.  This action was to adjust for future 
+years expecting higher hour component rebuilds. 
+• Average labor was 49 hours for a cost after direct  of $3400. 
+• Total D/N parts and labor set at $42,299 flat rate . 
+• There were no product updates affecting Wheel Grou p rebuilds. 
+• Crosscheck Reman price: Reman Wheel Group with ful l core credit D/N $49,959. 
+ 
+Requirements for using this or a similar analysis process: 
+• Work order records with sufficient detail to ident ify the needed data and information. 
+• A component life tracking system to track the prev ious rebuilds and total hours. Caterpillar 
+provides the Major Component Tracking System free to dealers: 
+MCTS.cat.com 
+• Sufficient machine population and rebuild volume f or an adequate sample size of work 
+orders to review.  Fewer than 10 rebuilds on a particular component will lower data 
+confidence. 
+ 
+Analysis Tips 
+• Understand the difference between “average” (mean)  and “median”.  Average is simply the 
+sum of all the rebuild costs divided by the number of rebuilds.  The median is the cost point 
+at which the number of rebuilds below that point equals the number above it.  Always 
+compute both the average and the median for comparison.  
+• Many dealers take the simple approach in averaging  a number of rebuilds and set a price 
+at that average.  This method does not explain or take into account the variation in rebuild 
+costs from one work order to another.  Understanding the variation leads to better 
+decisions. 
+• There is no rule that says you need to price at th e average or the median.  In the example 
+above, the price was set at the 3 rd  quartile (75 th  percentile) price.  This means that ¾ of the 
+rebuilds performed cost less than the price and ¼ of them cost more. 
+• Crosscheck your flat rate price against Caterpilla r Reman.  You may also want to compare 
+to “full core credit” versus “partial core credit” Reman prices. 
+• Make sure that the work order data reflects curren t parts pricing and not out of date pricing.  
+Also build in forecast part pricing changes for the upcoming year. 
+• Be sure to incorporate product updates due to desi gn changes.  For most components, 
+design changes may not be a cost driver. However, be sure to review changes, especially 
+for engine rebuilds. 
+ 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Managing and Adjusting Major Component Flat Rates 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0407-4.5-1073  
+Caterpillar Confidential:  GREEN         Page 6 of 6 
+4.0 Benefits 
+ 
+• Flat rates are adjusted with changes in costs and market conditions. 
+• There is a consistent process and data behind the price changes actions. 
+• CRC financial performance is maintained. 
+ 
+5.0 Resources Required 
+ 
+• Management time to collect data and perform analys is. 
+• Process can make a good 6Sigma project. 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice Process is combined from the flat rate management procedures at several 
+dealers. 
+ 
+This Best Practice was written by: 
+ 
+Dale Brehm  
+6 Sigma Black Belt  
+Cat Global Mining Product Support

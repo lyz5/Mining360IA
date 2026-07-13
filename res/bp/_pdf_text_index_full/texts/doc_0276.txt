@@ -1,0 +1,355 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\D11 Series Pivot Shaft Block Tool.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+D11 Series Pivot Shaft 
+Block Tool 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+D11 Series Pivot Shaft Block Tool ............................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+November 2013 
+1306-4.03-1318 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+During the D11 Track roller frame removal and installation process, it is necessary to use some 
+tools in order to ensure a safe procedure. This process is referenced in the document 
+SENR1782-08 or RENR8226-03 for one frame and it should be applied in the same way for the 
+second one. However, the document does not mention another component that should be 
+blocked during the removal of the two track roller frames which is the pivot shaft. 
+ 
+This Best Practice describes the tool which allows to block the pivot shaft and keep its centered 
+position on the main frame during the removal and installation process of the two track roller 
+frames. 
+ 
+2.0 Best Practice Description 
+During the two track rollers frames removal and installation process, it is necessary to block the 
+pivot shaft to keep it from moving freely alongside the hole in the main frame. When removing a 
+singer roller frame, it is not necessary to do this because the other track roller frame restricts the 
+pivot shaft movement (See figure 1). 
+ 
+ 
+Figure . Pivot shaft blocking by the Track Roller Frame. 
+ 
+ 
+Pivot Shaft 
+Frame Track 
+Roller 
+Final 
+Drives Blocking 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D11 Series Pivot Shaft Block Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-4.03-1318 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+The same process should be applied when a track roller frame is installed while the other one is 
+in place; it is not necessary to block the pivot shaft and the described procedure on SIS Web is 
+applied just the way it shows.   
+ 
+  
+ 
+Figure 2. Pivot Shaft block tool 
+ 
+ 
+The tool is installed at the opposite side of the roller frame to be removed. The pivot shaft is 
+secured by 2 bolts, using neoprene to protect the component surface. The support plates block 
+the shaft movement resting on the closest final drive (See Figure 2 and 3) 
+ 
+ 
+             
+ 
+ 
+ 
+ 
+ 
+ 
+Pivot Shaft 
+Block Tool 
+Final Drives 
+Wooden 
+block 
+Figure 3. Pivot Shaft blocking with the 
+tool 
+Figure 4. Tool Location on pivot shaft 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D11 Series Pivot Shaft Block Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-4.03-1318 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.0 Implementation Steps 
+ 
+Steps for track roller frame Removal: 
+1. Refer to disassembly document SENR1782-08 (D11R Track Roller Frame Removal) or 
+RENR8226-03 (D11T Track Roller Frame Removal) and follow the steps to remove one track 
+roller frame. 
+2. Place neoprene piece on pivot shaft face. 
+3. Locate the tool securing it with two bolts and washers to the pivot shaft. The bolts used 
+depend on the pivot shaft (see Table 2), which minimum torque is 25 N • m. The closest final 
+drive should be between the two support plates, place a wooden block to adjust it to the tool 
+(See Figure 3 and 4) 
+4. Once the pivot shaft is secured; continue with the removal of the other track roller frame as 
+indicated on SENR1782-08 or RENR8226-03 
+ 
+Steps for the track roller frames Installation: 
+Follow the steps above using the installation document SENR1782-08 or RENR8226-03. 
+The tool can be used for the following pivot shaft (D11N, D11R & D11T Tractors): 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+• Improved safety during pivot shaft removal and installation process to prevent it from going 
+out and cause damage or harm to the technicians. 
+• It maintains the horizontal position (centered) the component must have. 
+• It decreases time and component handling complexity.   
+ 
+5.0 Resources Required 
+ 
+• Hardware list  (see table 2) 
+• Neoprene piece (dimensions: 26 x 8 x 1/16 inch) 
+• Wooden block 
+• Technical Personnel (at least two)  
+• Material and equipment required to make the tool 
+ 
+Table 2. Hardware Required 
+Part Number Description Qty 
+1D-4625 7/8-9 x 2.50 inch Bolt (for 7T-5713 pivot shaft) 2 
+1D-4637 1-8 x 3.25 inch Bolt (for 134-2202 pivot shaft) 2 
+5P-8250 1 inch Washer 2 
+Table 1. Pivot Shafts 
+Part Number Series 
+7T-5713 4HK, 74Z, 8ZR 
+134-2202 7PZ, 9TR, 9XR, AAF, AMA, GEB, 
+JEL, JNS, MDG, TPB 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D11 Series Pivot Shaft Block Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-4.03-1318 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+6.0 Supporting Attachments / References 
+• SIS document: SENR1782-08  (Track Roller Frame  Remove SMCS: 4151-011) 
+• SIS document: SENR1782-08  (Track Roller Frame  Install SMCS: 4151-012) 
+• SIS document: RENR8226-03  (Track Roller Frame  Remove SMCS: 4151-011) 
+• SIS document: RENR8226-03  (Track Roller Frame  Install SMCS: 4151-012) 
+• D 11 Series Pivot Shaft Tool Plane 
+ 
+ 
+Figure 5. Tool Drawing. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D11 Series Pivot Shaft Block Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-4.03-1318 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+• Finite Element Analysis for block Tool 
+ 
+Figure 6. Safety Factor analysis 
+ 
+ 
+Physical Properties 
+Material ASTM A36 Steel 
+Mass 12.82 Kg 
+Density 7850 Kg/m3 
+Yield Strength 250 MPa 
+Tensile Strength 400 MPa 
+Shear Modulus 79.3 Gpa 
+Study Properties 
+Analysis type Static 
+Mesh type Solid mesh 
+Mesh Quality Second order tetrahedral elements 
+Model type Lineal elastic isotropic 
+Failure criteria Von Mises Stress Maximum 
+Fixtures 
+Type Fixtures details 
+Bolt 
+Quantity 2 
+Nominal Diameter 1 inch 
+Pre-load (Torque) 25 N·m 
+ Quantity 2 
+Virtual 
+Wall 
+Entities Support plate inside faces 
+Wall type 
+Friction coefficient 
+Bonded 
+0.15 
+Faces 
+Cylindrical 
+Entities  
+Restriction 
+Frame bearing support  
+Radial and circumferential 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D11 Series Pivot Shaft Block Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-4.03-1318 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+Loads 
+Gravity 9.81 m/s2 
+Horizontal Force 1960 N (200 kg.) 
+Study Results 
+Von Mises Maximum Stress  96.1 Mpa 
+Minimum Safety Factor 7.38 
+ 
+ 
+Based on the finite element analysis, the tool is subjected to a thrust force of 200 kg (pivot 
+shaft trying to come out) has a factor of safety 7.38. 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Name Jorge Monterroza  
+Title Undercarriage Shop manager  
+Email jorge_monterroza@gecolsa.com.co 
+Phone +57-317 454-5357 
+ 
+Name José Rodriguez 
+Title Tool Room Specialist 
+Email jose_rodriguez@drummondltd.com 
+Phone +57 315 684-7050 
+ 
+Checked and written by: 
+ 
+Name Ricardo Chegwin 
+Title Technical manager 
+Email ricardo_chegwin@ gecolsa.com.co 
+ 
+Special thanks to: 
+The Development and Engineering Area Team 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D11 Series Pivot Shaft Block Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-4.03-1318 
+Caterpillar Confidential:  GREEN          Page 6 of 6

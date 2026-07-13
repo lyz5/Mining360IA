@@ -1,0 +1,316 @@
+SOURCE: Tool to Isolate Air Intake Lines for Pre-Cleaner Washing Process.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+January 2023 
+1.01-230127-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Tool to Isolate Air Intake 
+Lines for Pre-Cleaner 
+Washing Process 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Tool to Isolate Air Intake Lines for Pre-Cleaner 
+Washing Process ....................................................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Isolate Air Intake Lines for Pre-Cleaner 
+Washing Process 
+ 
+DATE 
+1/27/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230127-1 
+Caterpillar: Confidential Yellow          Page 2 of 6 
+1.0 Introduction  
+ 
+The Operation and Maintenance Manual, SEBU8242, “789D and 789D XQ Off -Highway Trucks”, 
+Engine Air Pre-Cleaner – Clean, recommends cleaning the pre-cleaner bowl with compressed air 
+pressure and only when required. This compressed air cleaning process disperses dust i n the 
+environment and is not very efficient for cleaning the pre- cleaner: it contributes to the air filter 
+clogging more quickly, increasing the changes of air filters that are changed by condition. 
+ 
+Due to these conditions and  the risk of contamination by dust in the intake lines , a tool was 
+developed with parts of the primary filter and parts of the secondary filter of the truck to isolate the 
+intake lines, which prevents dust and water ingres s during the preventive maintenanc e washing 
+process. This condition leads to better cleaning of the pre -cleaner, thus increasing the estimated 
+life of the primary and secondary air filters. 
+ 
+2.0 Best Practice Description 
+ 
+Tool made with parts of the secondary filter and the handle of the primary air filter of the 789D off-
+highway truck by cutting the parts that fit in the air intake line  and creating the tool to isolate the 
+line and seal the entrance of impurities and water from the air intake lines  when cleaning the pre-
+cleaner. 
+ 
+ 
+Picture 1: Tool to isolate air intake lines for pre-cleaner washing process. 
+ 
+The truck used as example in this Best Practice is a 789D SPD prefix, but  the idea can be 
+implemented in every machine that has similar pattern of air filters and pre-cleaner. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Isolate Air Intake Lines for Pre-Cleaner 
+Washing Process 
+ 
+DATE 
+1/27/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230127-1 
+Caterpillar: Confidential Yellow          Page 3 of 6 
+3.0 Implementation Steps 
+ 
+• Select two pairs of primary and secondary air filters from the 789D truck that will be discarded. 
+ 
+ 
+Picture 2: Air Filter, Primary and Secondary. 
+ 
+• Clean, mark each side in a length of 50mm (indicated in blue) and cut the primary filter. 
+ 
+ 
+ 
+Picture 3: Cut the filter paper parts. 
+ 
+Secondary Air Filter 
+Used part 
+Used part Used part 
+Primary Air Filter 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Isolate Air Intake Lines for Pre-Cleaner 
+Washing Process 
+ 
+DATE 
+1/27/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230127-1 
+Caterpillar: Confidential Yellow          Page 4 of 6 
+• Using the cut parts of the secondary air filter, join  the upper part to the lower part of the filter. 
+Use silicone (wait until it dries) and waterproof tape (both sides, inside and outside of the tool). 
+ 
+ 
+ 
+Picture 4: Joining and sealing the parts. 
+ 
+• Remove the primary air filter handle. Using a drill with a 6mm drill bit, mark the distance from 
+the handle, drill the plastic part, and install the handle with two 6mm screws in the tool made. 
+ 
+ 
+ 
+Picture 5: Handle installation. 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Isolate Air Intake Lines for Pre-Cleaner 
+Washing Process 
+ 
+DATE 
+1/27/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230127-1 
+Caterpillar: Confidential Yellow          Page 5 of 6 
+• Install tool in the air intake line;  
+ 
+ 
+Picture 6: Tool created installed in the air intake line. 
+ 
+• Wash the air pre-cleaner with water at low pressure. Dry it with compressed air According to the 
+procedure written in Operation and Maintenance Manual, SEBU8242, “789D and 789D XQ Off-
+Highway Trucks”, Engine Air Pre-Cleaner – Clean. 
+ 
+For 789Ds, fabricate two tools, one for the right side and one for the left side.  For other machines in 
+which this Best Practice can be implemented, fabricate a number of tools that requires the shortest time 
+to complete the washing process. 
+ 
+4.0 Benefits 
+ 
+• Pre-Cleaner is cleaned in window of opportunity during the machine-washing process, 
+eliminating downtime in this specific task (saving of 2 labor hours every 250 hours PM). 
+• Contamination control in air intake lines. 
+• Less contaminant accumulation on pre-cleaner inner walls with consequent. 
+I. Longer service life of air filters; and 
+II. Less probability of air filter restriction events. 
+• Less dispersion of dust in the working environment. 
+ 
+5.0 Resources Required 
+ 
+• Two used primary air filters 
+• Two used secondary air filters 
+• .Measuring tape 
+• Silicone 
+• Waterproof tape 
+• Drill, 6mm drill bit. 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool to Isolate Air Intake Lines for Pre-Cleaner 
+Washing Process 
+ 
+DATE 
+1/27/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-230127-1 
+Caterpillar: Confidential Yellow          Page 6 of 6 
+6.0 Supporting Attachments / References 
+ 
+None.  
+ 
+7.0 Related Best Practices 
+ 
+None.  
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Júlio César Duarte 
+julio.duarte@sotreq.com.br 
+55-31-99392-2032 
+ 
+ 
+This Best Practice was written and implemented by: 
+ 
+Almir Oliveira 
+almir.oliveira@sotreq.com.br 
+55-31-98717-8631 
+ 
+Tharik Gonçalves 
+tkarik.goncalves@sotreq.com.br 
+55-31-98717-8631 
+ 
+Jonas Aparecido 
+Jonas.aparecido@sotreq.com.br
+ 
+55-31-98426-0402 
+ 
+Wanderley Costa 
+wanderley.costa@sotreq.com.br 
+55-31- 99963-6320 
+ 
+         Sandro do Carmo 
+sandro.carmo@sotreq.com.br 
+55-31-98717-8631 
+ 
+Aluízio Carvalho 
+aluizio.carvalho@sotreq.com.br
+ 
++55 31 99194-3541 
+Best Practice Champion: 
+ 
+ 
+Fellipe Viana 
+Fellipe.Viana@sotreq.com.br 
++55-31-991943974 
+ 
+ 
+Special thanks in development to: 
+ 
+Jeferson Ronaro Gleiser Oliveira Anderson Silva 
+Elias Miranda Rogério Pinto Edirlei Carvalho 
+Jorge Silva Paulo Vieira Belimar Costa 
+Claudinei Ataíde Vinicio Anjos

@@ -1,0 +1,242 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Component Life Tracking a Valuable CRC Performance Indicator.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+November 2006  
+1106-4.5-1044  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Component Life Tracking a 
+Valuable CRC Performance 
+Indicator  
+ 
+Application  Maintenance  Site 
+Management  
+Component 
+Rebuild Safety MARC 
+Management  
+ 
+ 
+ 
+Component Life Tracking a Valuable CRC 
+Performance Indicator ............................................... 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 4 
+5.0  Resources Required .......................................... 4 
+6.0  Supporting Attachments/ References ................ 4 
+7.0  Related Best Practices ...................................... 4 
+8.0  Acknowledgements ........................................... 4 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Component Life Tracking a Valuable CRC 
+Performance Indicator 
+DATE 
+6/9/2017 
+CHG 
+NO 
+02 
+NUMBER 
+1106-4.5-1044  
+Caterpillar Confidential:  YELLOW          Page 1 of 4 
+1.0 Introduction  
+ 
+Virtually all dealer Component Rebuild Centers have a set of key performance metrics that are 
+monitored as performance measures and indicators.   This data is used to make management 
+decisions needed to achieve business goals. 
+ 
+Dealers who have active MARC contracts supporting Mining customers understand the 
+importance of achieving target component life.  Meeting component life objectives is vital to the 
+financial health of a MARC. Most CRC management teams would consider the key measure of 
+rebuild quality from the CRC to be “Service Re-Do” or “Service Warranty”.  While this an 
+important indicator to monitor and manage, it is only a part of the component life issue. In the 
+eyes of the Mining customer, cost per ton is a top critical success requirement. Mechanical cost 
+per ton is driven by component life more than by any other factor. A process to track component 
+life after rebuild is a valuable tool for managing CRC rebuild processes and MARC component life 
+objectives. 
+ 
+2.0 Best Practice Description 
+ 
+It can be argued that “Service Re-Do” is a measure of CRC rebuild reliability, while “component 
+life” is a measure of CRC rebuild durability.  In a mining business environment where customer 
+buying decisions are based on cost per hour (and often involve MARC contracts), delivering 
+target component life is a critical success factor to the business.  Tracking component life 
+becomes a high priority in this environment. 
+ 
+Which customer fleets should be tracked? 
+• Component life cycles of all machines covered unde r MARC contracts. 
+• Component life cycles for any customer who sends a ll component rebuilds to the CRC. 
+ 
+What information should be tracked? 
+• Life cycle information for all drive train major c omponents. 
+• Component serial number or tracking code. 
+• Life cycle - number of times component has been re built 
+• Hours since last rebuild (current life) and fuel b urn information for engines 
+• Total hours on component (all rebuilds) 
+• Work order number 
+• Reason for rebuild (PCR / Failure) 
+• For failures – Root cause of failure  
+ 
+Management Reports (sample reports below)  
+• Average component life cycle - by component / mine site  
+• Before / After failure ratio - by component/ mines ite  
+• Component History 
+• Special analysis – histogram and Weibull 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Component Life Tracking a Valuable CRC 
+Performance Indicator 
+DATE 
+6/9/2017 
+CHG 
+NO 
+02 
+NUMBER 
+1106-4.5-1044  
+Caterpillar Confidential:  YELLOW          Page 2 of 4 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Component Life Tracking a Valuable CRC 
+Performance Indicator 
+DATE 
+6/9/2017 
+CHG 
+NO 
+02 
+NUMBER 
+1106-4.5-1044  
+Caterpillar Confidential:  YELLOW          Page 3 of 4 
+ 
+ 
+Benchmarks 
+ 
+The commonly accepted benchmark for rebuild life is that it should be greater than 80% of 
+the original new component life. The world-class performance benchmark is over 90% of 
+new component life. 
+ 
+Machine major component life is affected by many variables, including design life, rebuild 
+processes, application load and operator practices, and maintenance factors.  The combined 
+impact of all these variables determine component life.  By tracking component life, especially for 
+machines under maintenance contracts, we are able to better identify potential concerns and 
+manage component life.   
+ 
+3.0 Implementation Steps 
+ 
+Utilize the Caterpillar Major Component Tracking System  (MCTS) 
+ 
+• Provides a consistent worldwide method for dealers  to track major components from cradle-to-
+grave through all life cycles. 
+• Provides one safe source for component life data f or dealers and Caterpillar.   
+• Acts as a durability database by providing a compl ete list of all component lives from new to 
+present.  
+• Provides actual and complete component life data, which is essential to accurately forecast 
+component life and rebuild frequency when MARC contract costs are being calculated. 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Component Life Tracking a Valuable CRC 
+Performance Indicator 
+DATE 
+6/9/2017 
+CHG 
+NO 
+02 
+NUMBER 
+1106-4.5-1044  
+Caterpillar Confidential:  YELLOW          Page 4 of 4 
+• Assists in daily fleet management decisions by pro ving instant, complete and accurate 
+component history. 
+• Permits participating dealers to share component l ife data in the same format. 
+• Provides numerous, powerful, and user-friendly dat a analysis tools and reports. 
+• Use is free of charge to participating dealers. Ca terpillar pays for system maintenance and the 
+cost of tools and enhancements. 
+ 
+Dealers interested in using MCTS should contact: 
+Colin Olsen 
+Olsen_Colin_B@cat.com  
++1 309 636-5366 
+ 
+MCTS.cat.com 
+ 
+4.0 Benefits 
+ 
+• MARC contract management is improved by managing c omponent life. 
+• MARC contract development has lower risk when actu al component life data is available. 
+• CRC parts reuse and other rebuild processes are dr iven by a component life target 
+benchmark 
+• CRC rebuild life can be a marketing tool to sell s ervice, MARCs, and new machines. 
+• Component life data forms the basis for CRC contin uous improvement initiatives. 
+ 
+5.0 Resources Required 
+  
+• Time required to load historical component life da ta into the system. 
+• Manpower to enter data and keep current. 
+ 
+6.0 Supporting Attachments/ References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Dale Brehm 
+Six Sigma Black Belt - Global Mining Product Support

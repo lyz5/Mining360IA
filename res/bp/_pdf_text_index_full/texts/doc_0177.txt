@@ -1,0 +1,278 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\1. Strategic\Creating Standard Component Rebuild Parts Kits.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2007  
+0607-4.4-1082  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Creating Standard 
+Component Rebuild Parts 
+Kits 
+ 
+Application  Maintenance  Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety MARC 
+Management 
+ 
+ 
+Creating Standard Component Rebuild Parts Kits ..... 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 6 
+5.0  Resources Required .......................................... 6 
+6.0  Supporting Attachments / References ............... 6 
+7.0  Related Best Practices ...................................... 7 
+8.0  Acknowledgements ........................................... 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR . 
+Creating Standard Component Rebuild Parts Kits 
+DATE 
+4/6/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0607-4.4-1082  
+Caterpillar Confidential:  GREEN         Page 2 of 7 
+1.0 Introduction  
+ 
+Developing and using a standard “must do” parts lists for common CRC component rebuilds is an 
+important step in the rebuild process. Rebuild kits standardize the rebuild process by reducing 
+mechanic time spent ordering parts, reducing ordering errors, and allowing rebuild parts to be 
+pre-ordered. These effects overall reduce the work in process turnaround time. 
+ 
+This “Best Practice” describes how Finning Chile develops, manages, and uses standard major 
+component rebuild kits. 
+ 
+      
+  
+ 
+Rebuild kits for 992G and 793C final drives 
+ 
+2.0 Best Practice Description 
+ 
+Dealer uses two sources of information to create “must do” parts lists for component rebuilds. 
+The list becomes an “electronic” kit” which is set up in their DBS Standard Jobs. 
+ 
+The must do parts lists come first from Builder files on DBS.  The 100% parts usage file becomes 
+the first source of information. The second source is the technicians / supervisors.  Both the parts 
+list from Builder and a list from the CRC technicians are independently developed, and then 
+merged into one list. 
+ 
+The objective is to create standard parts list for all component rebuilds machine models and 
+components that are performed in the shop.  Developing the kits is prioritized.  High volume 
+components that go through the shop are developed first, followed by lower volume rebuilds. 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR . 
+Creating Standard Component Rebuild Parts Kits 
+DATE 
+4/6/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0607-4.4-1082  
+Caterpillar Confidential:  GREEN         Page 3 of 7 
+3.0 Implementation Steps 
+ 
+Steps to implement “Standard Rebuild Kits” are as follows: 
+ 
+• Determine priorities.  Decide which machine model components represent the highest rebuild   
+volume.  Identify the machine model, serial number prefix, and major component part 
+number.  In some cases, the dealer uses a Reman (OR) major component part number 
+instead of a new part number. 
+ 
+               
+ 
+        
+• Build the Must-Do parts list – parts that are alwa ys replaced during a rebuild.  First, have the 
+CRC technicians or area supervisors create a parts list for a specific component.  This can be 
+done electronically or on paper. Finning creates a parts list from SIS and it is printed for the 
+technician.  Specialized technicians from the shop select Must Do parts from the paper copy.  
+To maintain the standardized “Must Do” List electronically and make it available in DBS, an 
+electronic list is made from the parts selected by the mechanic. Standardized parts are then 
+already highlighted on the SIS printout. During component disassembly, technicians need 
+only to order additional parts required to rebuild the component, such as those missing, worn, 
+or damaged. 
+ 
+  
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR . 
+Creating Standard Component Rebuild Parts Kits 
+DATE 
+4/6/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0607-4.4-1082  
+Caterpillar Confidential:  GREEN         Page 4 of 7 
+Parts order list for technician with Must Do parts highlighted 
+                      
+  
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR . 
+Creating Standard Component Rebuild Parts Kits 
+DATE 
+4/6/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0607-4.4-1082  
+Caterpillar Confidential:  GREEN         Page 5 of 7 
+The technicians mark the parts that should be in the standard rebuild kit.  Part numbers that 
+are part of a Caterpillar kit, such as gasket kit or bearing kit, are indicated with a “K”.  
+ 
+Next, the Builder program files are downloaded from DBS.  The 100% replace parts list is 
+downloaded. 
+ 
+ 
+The list from Builder and the electronic list created from the shop are merged into a single 
+"Must Do" kit. 
+ 
+An electronic parts list is created and entered into DBS as a Standard Job.   
+ 
+                             
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR . 
+Creating Standard Component Rebuild Parts Kits 
+DATE 
+4/6/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0607-4.4-1082  
+Caterpillar Confidential:  GREEN         Page 6 of 7 
+ 
+ 
+A standard job parts list has now been created and available in DBS.  After that, when a work 
+order is opened, the specific prefix and model enables the parts list to be ordered without a 
+typing process. Administration is able to order all must do parts under one standard kit part list 
+for overhaul. 
+ 
+4.0 Benefits 
+ 
+• Creates a standardized rebuild – does not depend o n technician. 
+• Eliminates mistakes in the parts order, wrong part  numbers, omissions, typing errors, etc. 
+• Automatically updates part number changes. 
+• Enables shop to pre-order parts for a scheduled re build – improves WIP turnaround. 
+ 
+5.0 Resources Required 
+ 
+• Each component Must Do kit requires 4 – 6 hours of  administrative time to create and set up. 
+  
+6.0 Supporting Attachments / References 
+ 
+      None. 
+ 
+ ` 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR . 
+Creating Standard Component Rebuild Parts Kits 
+DATE 
+4/6/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0607-4.4-1082  
+Caterpillar Confidential:  GREEN         Page 7 of 7 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+ 
+Omar Nef 
+CRC Planning Manager 
+Finning Chile 
+Antofagasta, Chile 
+Omar.nef@finning.cl  
+ 
+Dale Brehm  
+6 Sigma Black Belt  
+Cat Global Mining Product Support

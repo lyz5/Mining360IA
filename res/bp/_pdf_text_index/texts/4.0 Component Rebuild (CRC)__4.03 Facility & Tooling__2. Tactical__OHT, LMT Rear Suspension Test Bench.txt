@@ -1,0 +1,247 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+September 2011  
+1108-4.03-1257  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+OHT, LMT Rear Suspension 
+Test Bench 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+Rear Suspension Test Bench .................................... 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 4 
+4.0  Benefits ............................................................. 4 
+5.0  Resources required ........................................... 4 
+6.0  Supporting Attachments / References ............... 4 
+7.0  Related Best Practices ...................................... 4 
+8.0  Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+  
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHE RS WITHOUT CATERPILLAR’S WRITTEN PERMISSION,  
+Rear Suspension Test Bench 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1108-4.03-1257 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+1.0 Introduction  
+ 
+This best practice is dealing with Component life management.  The current process was inefficient 
+and resulted in high levels of variability.  By implementing this Best Practice, there will be fewer 
+repairs after failure and longer component life.  This is important to both the dealer and customer, as 
+it will improve customer satisfaction and profitability through reduced down time. 
+ 
+The key benefit from this Best Practice is improved quality.  This Best Practice is not available for 
+front suspension testing.  
+ 
+ 
+2.0 Best Practice Description 
+ 
+The current process at our CRC is that rear suspensions are not being tested for leaks after rebuild. 
+Components are stripped cleaned and inspected and then stored until approval is received for 
+assembly. 
+ 
+We found that we required a test bench in order to ensure that the cylinders would hold pressure, 
+were rebuilt correctly, and would meet projected life. 
+ 
+                                                              BEFORE 
+ 
+  
+  
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHE RS WITHOUT CATERPILLAR’S WRITTEN PERMISSION,  
+Rear Suspension Test Bench 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1108-4.03-1257 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+  
+  
+ 
+ 
+ 
+Requirement was to design and fabricate a multi-purpose test bench for various OHT suspensions. 
+This would also have the capability to test the suspension cylinders under pressure to ensure they 
+have no internal leaks 
+. 
+ 
+                                                                        AFTER 
+TOOLING REQUIRED 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHE RS WITHOUT CATERPILLAR’S WRITTEN PERMISSION,  
+Rear Suspension Test Bench 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1108-4.03-1257 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+  
+TESTING REPORT 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHE RS WITHOUT CATERPILLAR’S WRITTEN PERMISSION,  
+Rear Suspension Test Bench 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1108-4.03-1257 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+Editor’s note:  Trakindo is currently using the bench for all rear suspension cylinders they produce 
+(773, 775, 777, 785, 789) and has indicated it is capable to test 793 cylinders.   
+ 
+3.0 Implementation Steps 
+ 
+- Determine area in shop to be designated for the c ylinder testing bench 
+- Assure the area has adequate space and access for  equipment to move the component 
+- Confirm the layout for equipment and make changes  to the shop to install 
+- Promote change feedback as new operation problems  may surface with the procedure 
+- Train employees to use the new procedures/equipme nt 
+- Review process/equipment performance once establi sh 
+- Make any adjustment(s) as needed 
+- Drawings are attached in this best practice 
+ 
+4.0 Benefits 
+ 
+Dealer benefits observed: 
+ 
+- Saved time 
+- Improved quality 
+- Improved technician safety 
+ 
+ 
+ 
+5.0 Resources required 
+ 
+Facility- 
+ 
+      - Machine shop or outside contractor to build test bench 
+      - Oil used on test will be charged to the customer under miscellaneous  
+  
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+CAD Drawing Rear Suspension Test Bench 
+ 
+ 
+7.0 Related Best Practices 
+- 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHE RS WITHOUT CATERPILLAR’S WRITTEN PERMISSION,  
+Rear Suspension Test Bench 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1108-4.03-1257 
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+ 
+8.0 Acknowledgements   
+ This Best Practice was written by: 
+o David J. Wilde 
+o Corporate Best Practice 
+o Product Support Standard and Development 
+o PT. Trakindo Utama - Head Office 
+o Email: djwilde@trakindo.co.id 
+o Office: 62217822373 ext: 1120 
+ 
+ Drawing by : 
+o Pramudya Ananda 
+o Specialist Facility Development 
+o Product Support Standard & Development 
+o PT. Trakindo Utama - Head Office 
+o Email: pramudya.ananda@trakindo.co.id 
+o Office: 6221782 2373 ext: 1126  
+ 
+ Samarinda CRC staff

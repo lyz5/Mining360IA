@@ -1,0 +1,444 @@
+SOURCE: 3.0 Component Life Management\3.02 Component Life Tracking\2. Tactical\Using Weibull To Determine Optimal Component Life Cycle Analysis.pdf
+PAGES: 8
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Using Weibull To Determine 
+Optimal Component Life 
+Cycle Analysis  
+ 
+Maintenance 
+and Repair Application 
+Component 
+Life  
+Management 
+Component 
+Renewal  MARC 
+Management     
+ 
+  
+ 
+ 
+ 
+Using Weibull To Determine Optimal Component Life 
+Cycle Analysis ............................................................ 0
+ 
+1.0 Introduction ......................................................... 1 
+2.0 Best Practice Description ....................................... 1 
+3.0 Implementation Steps ............................................ 5 
+4.0 Benefits ............................................................... 6 
+5.0 Resources Required .............................................. 6 
+6.0 Supporting Attachments / References ...................... 6 
+7.0 Related Best Practices ........................................... 7 
+8.0 Acknowledgements ............................................... 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+  
+January 2014 
+1108-7.1-1131 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+Component Life Cycle Analysis (CLCA) is a process developed with the intent of analyzing component lives, 
+with specific focus on the following objectives: 
+Determining realistic component replacement intervals in order to project prudent Parts Cost Variables 
+(PCV) forecasts for commercial purposes.  
+ 
+To identify which components failed prematurely in order to assist in the identification of technical 
+issues and life determining factors. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+2.1 Period of analysis 
+Information gathered is actual component life performance data for the last three (3) years to date 
+and / or contract term to date, with analysis frequency recorded quarterly.  
+2.2 Analysis Procedure 
+ 
+2.2.1 Weibull analysis -  (Median Rank Regression X on Y – RRY Method)  
+This method is used to depict the component projection life for commercial purposes with 
+consideration to both types of data, being change-out and suspend data.  
+The limitation of this method is that it is not able to generate results from a small amount of data 
+(less than 10 change-out data), In this case, use the current projection as the result. 
+The result from this RRY analysis will be B50 (Probability time to change -out for 50% population 
+*See Note Below). Each result will be plotted on a trending graph on quarterly basis (See Figure 1) 
+B50
+0.00
+1,000.00
+2,000.00
+3,000.00
+4,000.00
+5,000.00
+6,000.00
+7,000.00
+8,000.00
+9,000.00
+10,000.00
+11,000.00
+12,000.00
+13,000.00
+14,000.00
+15,000.00
+16,000.00
+17,000.00
+18,000.00
+19,000.00
+20,000.00
+21,000.00
+22,000.00
+23,000.00
+24,000.00
+25,000.00
+Q1 2004 Q2 2004 Q3 2004 Q4 2004 Q1 2005 Q2 2005 Q3 2005 Q4 2005 2003 - 2005
+B50
+ 
+(Figure 1)  
+*Note: CAT Global Mining recommends B20 (Probability time to change-out for 20% population) 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Weibull To Determine Optimal Component Life 
+Cycle Analysis 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1108-7.1-1131 
+Caterpillar Confidential:  GREEN          Page 1 of 7 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.2.2 Rolling Average 
+This methods calculates the average of ten (10) rolling occurrences and the average of thirty (30) 
+rolling occurrences to identify the actual performance of the components and plot onto a trending 
+graph. This is then used as trending and supporting data to validate and compare the projection 
+values produced by the Weibull from t he primary analysis. The source and outline criteria shall be 
+filtered as required producing trend comparisons (see figure 2 below) 
+The Results for the projection life calculations use an average of the last 10 occurrences and the average 
+of the last 30 occurrences (if applicable).  
+TRANSMISSION ROLLING AVERAGE
+PLAN TO DATE
+0
+1,000
+2,000
+3,000
+4,000
+5,000
+6,000
+7,000
+8,000
+9,000
+10,000
+11,000
+12,000
+13,000
+14,000
+15,000
+16,000
+17,000
+18,000
+19,000
+20,000
+21,000
+22,000
+23,000
+24,000
+0 20 40 60 80 100 120
+OCCURRENCES
+HOURS
+Actual Life 10 per. Mov. Avg. (Actual Life) 30 per. Mov. Avg. (Actual Life)
+ 
+ 
+ 
+ 
+2.3 Recommendation 
+ 
+2.3.1 Component Interval Projection 
+Upon analysis of this data, the recommended projection will then be calculated using the average of 
+all calculated results and then rounded to the next lowest multiple of 500 hours 
+The projection life spreadsheet will be containing the complete formula for this policy. 
+2.4 Occurrences Projection – Simulation 
+The purpose of this action is to calculate the next future occurrence that will impact from applying 
+the current and recommended projection.  
+2.5 Best Performing Source 
+Should particular components from a particular source indicate abnormally high or low trends, 
+option to obtain optimum component live. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Weibull To Determine Optimal Component Life 
+Cycle Analysis 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1108-7.1-1131 
+Caterpillar Confidential:  GREEN          Page 2 of 7 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.6 Analysis Report 
+The result of the above analysis will be compiled into report called “Component Life Cycle Analysis 
+Report”. 
+2.7 Supporting Analysis 
+Depending on site capabilities and resources, each site is encouraged to generate other supporting 
+analysis to give more realistic recommendation. The suggested analysis is: Failure mode analysi s, 
+Condition monitoring analysis, Distribution chart for yearly component life performance, and 
+weighting analysis. 
+2.8 Document Structure 
+Each report should include: 
+2.8.1 Executive Summary 
+Summary of all analysis results and details recommended projections. 
+2.8.2 Raw Data 
+Source data sheet with date/detail of origin 
+2.8.3 Report section 1 – Last 3 Years data 
+Each major component will include the following: 
+ Weibull with highlighted result summary.  
+ Weibull graph 
+ B50* quarterly trending result graph 
+2.8.4 Report section 2 – Contract to Date data  
+Each major component will include the following: 
+     Weibull outcome with highlighted result summary 
+                 Weibull graph B50* quarterly trending result graph 
+2.8.5 Report section 3 – Contract to Date data 
+Each major component will include copies of the graph showing rolling averages and trend lines. 
+2.8.6 Action 
+Calculate for future occurrences and net risk identification. 
+ 
+2.8.7 Component Summary 
+Each major component will include: 
+                   Recommended component projection table 
+                   B50* quarterly trending result graph 
+                   Graph showing rolling averages and trend line 
+2.8.8 Best Performing Sources 
+Average life of each components, source and number of events 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Weibull To Determine Optimal Component Life 
+Cycle Analysis 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1108-7.1-1131 
+Caterpillar Confidential:  GREEN          Page 3 of 7 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.8.9 Document Formats 
+The report format will be distributed in PDF but the analysis will be done on an Excel spreadsheet  
+2.9 Process Flow and Example the Result 
+ 
+Current Process Flow 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Weibull To Determine Optimal Component Life 
+Cycle Analysis 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1108-7.1-1131 
+Caterpillar Confidential:  GREEN          Page 4 of 7 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Example of result calculation 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+3.1   CLCA  
+CLCA is a periodic analysis, requiring accurate data for use as a reference for future strategy 
+implementation and financial reporting. Therefore it may be necessary that the raw data supplied 
+should be validated from site management prior to distribution. 
+3.2   Data Cleansing 
+The initial data cleansing (removal of data where double ups of Work Order (WO) number & other 
+common data errors), and loading of accurate component history is a one-time exercise, but is 
+absolutely essential. The amount of labor required to cleanse (remove errors) from the data, is 
+dependent on the number of components being tracked and the quality of component history records 
+itself.  
+3.3   Maintenance Strategy Reference (MSR)   
+ In conjunction with the MSR, the result of this analysis will be used as input for next MSR review. 
+AMT life cycle projection hours will be updated once a year in conjunction with the budget & MSR 
+(If the quarterly data shows an exceptional differential then the forecast may be reviewed 
+immediately in a controlled manner if authorized by the relevant manager) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Weibull To Determine Optimal Component Life 
+Cycle Analysis 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1108-7.1-1131 
+Caterpillar Confidential:  GREEN          Page 5 of 7 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4.0 Benefits 
+ 
+4.1 Prudent Parts Cost Variable (PCV) Forecast 
+Availability of a standard process used to determine component change out intervals 
+Ability to identify occurrences and financial impact on component change out interval  
+4.2 Component early failure indicators 
+This factor can be analyzed utilizing rolling average data and beta # (trend) of Weibull analysis 
+4.3 Maintenance Practice Indicators 
+This factor can be analyzed utilizing rolling average data and beta # (trend) of Weibull analysis 
+4.4 Application and Operations Indicators  
+This factor can be analyzed utilizing rolling average data and beta # (trend) of Weibull analysis 
+4.5 Strategy Input 
+By CLCA report information, it will help equipment management planning across sites to allow 
+improved decision making in terms of stra tegy improvement (i.e. Interval replacement changes, 
+repair option selection and also component’s source) 
+ 
+ 
+5.0 Resources Required 
+ 
+The main engine of this analysis is the understanding of using Weibull statistics method and able to 
+used as Life Data Analysis Tools. For this reason, it is important to install related application as our 
+main tools to produce analysis (i.e. Reliasoft Weibull++, Minitab, etc). Joint the training session 
+from software vendor it is gives more values for Component Analyst to enhance his/her ability to 
+optimize Weibull analysis on Reliability engineering. 
+ 
+The report is produced using Microsoft Excel, with development looking to be completed to make 
+all calculations automatically integrated within available Weibull software. 
+ 
+The Main source of raw data is in AMT system, and there are web-based tools to import data based 
+on specific filter and cleansing, thus reducing errors caused by human data entry. 
+ 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+CLCA Intro.pdf 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Weibull To Determine Optimal Component Life 
+Cycle Analysis 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1108-7.1-1131 
+Caterpillar Confidential:  GREEN          Page 6 of 7 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+7.0 Related Best Practices 
+ 
+ 0906-5.05-1009 - MARC Rate Development 
+ 0906-3.1-1020 - MCTS Used to Monitor & Manage Component Life 
+ 1106-4.5-1044 - Utilizing Component Life as a Valuable CRC KPI 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was authored by: 
+Rusty McNew 
+Corporate Mining Manager 
+Caterpillar Global Mining 
+McNew_Rusty@cat.com 
+ 
+This Best Practice was co-authored by: 
+Risang Wijanarko 
+PT Trakino Utama - Indonesia 
+EM Strategy Manager – HO Mining 
+rwijanarko@trakindo.co.id 
+ 
+Shaun Brown 
+PT Trakindo Utama - Indonesia 
+EM Commercial Manager – HO Mining 
+shaun.brown@trakindo.co.id 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Weibull To Determine Optimal Component Life 
+Cycle Analysis 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1108-7.1-1131 
+Caterpillar Confidential:  GREEN          Page 7 of 7

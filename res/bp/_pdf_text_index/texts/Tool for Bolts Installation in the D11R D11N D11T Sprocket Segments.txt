@@ -1,0 +1,306 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2015 
+1504-1.01-1371 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Tool for Bolts Installation 
+in the D11R D11N D11T 
+Sprocket Segments 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Tool for Bolts Installation in the D11R D11N D11T 
+Sprocket Segments .................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Bolts Installation in the D11R D11N D11T 
+Sprocket Segments 
+DATE 
+9/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.01-1371 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+1.0 Introduction  
+ 
+The Installation of the sprocket segments on TTT is a task in which we must be especially careful 
+when tightening the bolts since such failure could cause an unscheduled shutdown of the machine 
+and risks the safety of the technical personnel performing the task.  Technicians are exposed to pinch 
+points and arm fatigue. 
+ 
+Currently for the torque procedure of the bolts a lever resting on the final drive is used in order to hold 
+the nuts exposing the technician to a possible accident and it ensures the correct torque on the bolts 
+is used. Fig.1.  
+ 
+ 
+ 
+ 
+     
+ 
+ 
+Fig. 1. Former old bolt torque process. 
+ 
+ 
+The figure above shows the way the technicians are exposed when seizing the wrench holding the 
+nuts. 
+ 
+This Best Practice provides the design and manufacture of a tool for fastening the nuts when 
+performing the bolts torque procedure. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Bolts Installation in the D11R D11N D11T 
+Sprocket Segments 
+DATE 
+9/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.01-1371 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+              
+2.0 Best Practice Description 
+ 
+This applies when changing the sprocket segments in D11N, D11R and D11T Tractors where 
+there have been delays in the proper installation of the bolts because there is no tool to hold the 
+nut while tightening the bolts. 
+ 
+Geometrically, the tool has a “U” shape, in one of its end, it has a 1 ¼ " and 4 ¼" diameter bar in 
+length and in the other end it has a diameter of 2 ¼ " and a length of 1 3/8" bored concentrically 
+with the silhouette of the head of the bolt to be installed. The two ends are joined by a 1" plate 
+triangle shaped having rounded edges due to the difference in diameters of the two ends. 
+Made entirely of ASTM A36 steel, this tool also has a handle so that the technician can 
+comfortably hold it with his hand when installing or transporting. 
+ 
+In Fig. 3. We can see the way it holds the head of the bolt and it takes advantage of the segments 
+teeth in order to lock itself and thus it reduces the exposure of the technicians to possible 
+accidents and it improves the torque of the bolts reducing the installation time by up to 40 %. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2. Sprocket segments bolts holding tool. 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Bolts Installation in the D11R D11N D11T 
+Sprocket Segments 
+DATE 
+9/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.01-1371 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+ 
+3.0 Implementation Steps 
+ 
+ 
+o Design of the tool. 
+ EDITOR’S NOTE:  Caterpillar recommends considering making this tool with a 1” square 
+drive so it can work on smaller tractors. 
+ 
+o Manufacturing of the tool. 
+ 
+o Operation of the tool (see Figure 3) 
+o From the inside of the sprocket, place the largest diameter end of the tool in order to 
+hold the bolt head with the bored silhouette. 
+o Make sure the opposite end of the tool (1 ¼ " bar) is placed in one of the spaces 
+between the sprocket teeth. 
+o Install the torque meter along with the adapters required to tighten the nut on the 
+outside of the sprocket, make sure when rotating the tool that it is locked with one of the 
+sprocket teeth thereby preventing the rotation of the bolt. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 3. Operation of the tool for applying torque the screws segments sprocket 
+ 
+4.0 Benefits 
+ 
+ It improves the safety of the task. 
+ It reduces the installation time of the sprocket segments. 
+ I t improves the torque application. 
+ There is higher availability of the equipment. 
+ 
+5.0 Resources Required 
+ 
+ Design drawings (see Figure 2) 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Bolts Installation in the D11R D11N D11T 
+Sprocket Segments 
+DATE 
+9/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.01-1371 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+Figure 4. Analysis of resistance; load = 1 ton; FS = 1.27 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Bolts Installation in the D11R D11N D11T 
+Sprocket Segments 
+DATE 
+9/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-1.01-1371 
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+8.0 Acknowledgements 
+ 
+Jorge Monterroza  
+Drummond Ltd Projects Undercarriage Shop Foreman. 
+RELIZAN_CAT Mining Division 
+Email: Jorge.monterroza@relianz.com.co 
+ 
+Martin Gonzales 
+DRUMMOND Ltd Tractors fleet Planner. 
+Email: mgonzalez@drummonddltd.com 
+ 
+Marcos Mendoza 
+DRUMMOND Ltd Tractors Technical. 
+Email: mmendozamart@gmail.com
+ 
+ 
+Juan Valets 
+DIMANTEC Project Line Supervisor 
+ 
+Samuel Vellojin 
+RELIANZ Quality Engineer . 
+Email: samuel.vellojin@relianz.com.co
+ 
+ 
+Checking by: 
+ 
+Luis Alberto Fernandez Chica | BPs Coordinator and Development Engineer 
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 5347 | Cellphone: 3013724303 | 
+luisalberto.fernandez@relianz.com.co
+ 
+ 
+Edgard E. Romero Avena | Translator 
+edgard.romero@relianz.com.co

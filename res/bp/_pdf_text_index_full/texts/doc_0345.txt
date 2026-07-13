@@ -1,0 +1,268 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.05 HSEC - CRC\3. Quick Win\3500 Oil Pumps Lifting Tool.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+August 18 
+4.05-170112-02 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      mining.cat.com 
+ 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+3500 Oil Pump Lifting Tool 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+3500 Oil Pump Lifting Tool. ........................................ 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Oil Pumps Lifting Tool 
+DATE 
+8/7/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.05-170112-02 
+Caterpillar Confidential:  YELLOW          Page 1 of 5 
+1.0 Introduction  
+ 
+During the assembly process of a 3500 engine rebuild, proper installation of major components is 
+critical. It is essential to take care  of the  components such as  the oil pump to ensure optimal 
+system operation. 
+ 
+Currently, there is no assigned tool to lift the oil pump during installation. This introduces various 
+risk factors and makes the process dependent on each specific technician and their experience 
+level. Therefore,  a lifting tool  was design ed to facilitate  this process, as well as help with the 
+alignment of the pump with the drive in the front housing of the engine.  
+ 
+This best practice  aims to improve the manipulation of oil  pumps during their installation , while 
+decreasing the probability of safety injuries such as blows and scratches to technicians’ hands.  
+ 
+2.0 Best Practice Description 
+ 
+Information on the oil pump lifting tool designed is as follows:  
+ 
+• Geometry: Diagonally bent plate 
+• Appearance: Similar to an engine lifting eyebolt 
+• Dimensions: 120mm depth, 120mm width, 245mm height 
+• Weight: 1.67kgs 
+• Materials: ASTM A36 ¼“steel sheet 
+• Structure: A lifting eyebolt plate welded to a similar plate of equal thickness with a 3/8" 
+clearance hole 
+• Personnel Involved (Roles): One welder for the entire manufacturing process 
+ 
+  
+  
+ 
+Before       After 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Oil Pumps Lifting Tool 
+DATE 
+8/7/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.05-170112-02 
+Caterpillar Confidential:  YELLOW          Page 2 of 5 
+3.0 Implementation Steps 
+Step 1: Safe transportation of the oil pump to the engine has to be taken into account 
+  
+  
+ 
+Step 2: Design on lifting tool has special angles to keep the center of gravity leveled toward the 
+pinion-drive teeth 
+ 
+  
+ 
+   
+   
+  
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Oil Pumps Lifting Tool 
+DATE 
+8/7/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.05-170112-02 
+Caterpillar Confidential:  YELLOW          Page 3 of 5 
+4.0 Benefits 
+ 
+The benefits offered by this improvement are as follows: 
+ 
+• Improved grip of the component during transportation; thus, reducing safety risks for the 
+technician carrying the 45-kg oil pump 
+• Improved pump maneuverability during installation when having to align with the drive in 
+the front of the engine housing 
+ 
+   
+ 
+ 
+5.0 Resources Required 
+ 
+To implement this best practice, the following resources are required: 
+  
+• Materials as outlined in the Best Practice Description section 
+• One welder technician 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Oil Pumps Lifting Tool 
+DATE 
+8/7/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.05-170112-02 
+Caterpillar Confidential:  YELLOW          Page 4 of 5 
+6.0 Supporting Attachments / References 
+ 
+Below are the required manufacturing drawings and the stress analysis conducted on the lifting 
+tool. 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Oil Pumps Lifting Tool 
+DATE 
+8/7/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.05-170112-02 
+Caterpillar Confidential:  YELLOW          Page 5 of 5 
+ 
+FEA analysis, FS = 5.9  
+ 
+7.0 Related Best Practices 
+ 
+No specific lifting tool is provided on SISWeb. Refer to SENR1126 for information on the Oil 
+Pump installation.  
+ 
+8.0 Acknowledgements 
+ 
+Wilson Arias, Service Supervisor II  
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 5122 | Mobile: 310-6324189 | 
+wilson.arias@relianz.com.co  
+ 
+Manuel Hurtado, Specialist Technician III 
+Dimantec 
+ 
+Carlos Polo, Shop Supervisor III  
+Dimantec 
+ 
+David A. Gonzalez F., CRC Service Engineer 
+RELIANZ Mining Solutions| Tel: (5) 3361200, Ext: 35257 | Mobile: 300-8004910 | 
+antonio.gonzalez@relianz.com.co 
+ 
+Luis Alberto Fernandez Chica, Development Engineer & Best Practices Coordinator 
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 5347 | Mobile: 301-3724303 | 
+luisalberto.fernandez@relianz.com.co | www.relianzcat.com  
+ 
+Translated by:  
+Edgard Romero Avena, Learning Solutions Specialist  
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 35186 | Mobile: 3103688012 |   
+edgard.romero@relianz.com.co | www.relianzcat.com

@@ -1,0 +1,267 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\3500 Filter Base Stud Installation Tool.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2015  
+1501-4.03-1359  
+  
+ 
+    
+MINING DEALER BEST PRACTICE 
+ 
+ 
+3500 Filter Base Stud 
+Installation Tool  
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC)  
+ 
+MARC  
+Management 
+ 
+ 
+ 
+3500 Filter Base Stud Installation Tool ...................... 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits ............................................................. 3 
+5.0  Resources Required .......................................... 3 
+6.0  Supporting Attachments / References ............... 4 
+7.0  Related Best Practices ...................................... 4 
+8.0 Acknowledgements ........................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Filters Base Stud Installation Tool 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1359  
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+ 
+1.0 Introduction  
+ 
+The Studs (hollow studs) of base oil filters and fuel in 3500 Series engines are installed with difficulty using 
+pipe wrenches, not applying the required torque; running the risk of being lazy and in the worst case damage 
+the threads of these, causing rework and wasted time (see Figure 1a, 1b, 1c.) 
+ 
+  
+Figure 1.a. Missing Stud in base oil filter. Figure 1.b. The stud came off with the filter after 
+improper installation.  
+ 
+Figure 1.c. Stud installation with pipe wrench, with this tool is most likely to damage the threads.  
+ 
+ 
+This Best Practice aims to facilitate the development of this task to design a user-friendly, safe and quick 
+use. 
+ 
+2.0 Best Practice Description 
+ 
+The required torque without the risk of damaging the threads: a toolkit for proper installation of the studs of the 
+base oil filters and fuel, which allows installing properly designed. 
+Several tools were manufactured according to the length and diameter of each stud. The tool consists of two 
+main parts, the top and both steel socket adapter ASTM4140. 
+The cover surrounds the socket adapter to join the two symmetrical parts of this eventually forming the 
+hexagonal head 9/16 overhanging a superior hole in the lid and where the torque meter is installed. It is 
+bringing threaded stud inside it will be installed. 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Filters Base Stud Installation Tool 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1359  
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+On the other hand the lid is fitted with two forcing screws on each side of the socket adapter, once these allow 
+the stud installed easily remove the cover. (See Figure 2.) 
+ 
+Figure 2. Architecture Tool. 
+ 
+3.0 Implementation Steps 
+ 
+Then the use of the tool is detailed. 
+The tool is assembled by joining the two halves of the socket adapter and placing the lid on top. The screws 
+are tightened only to touch the upper surface of the socket adapter. 
+ 
+ 
+Figure 3. 
+ 
+The stud is screwed into the socket adapter to take him to stop. 
+ 
+ 
+Figure 4. 
+ 
+Loctite 271 is applied at the end of the thread, as indicated in the SIS manual and the stud is installed in the 
+base. Finally torque required by this applies. 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Filters Base Stud Installation Tool 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1359  
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+ 
+ 
+Figure 5. Example of installation of filter base stud (2P-4304) using tooling as per specifications within 
+SENR1122. 
+ 
+The cap is removed by inserting the tool extractor screws, once a loose socket adapter halves are separated 
+and thus the tool is fully removed and installed with the exact torque stud. 
+ 
+ 
+4.0 Benefits 
+ 
+• Easy fabrication 
+• Easy operation 
+• Prevents damage to the threads of the stud 
+• Lightweight for easy transport (with maximum weigh t of 0.5kg) 
+ 
+5.0 Resources Required 
+ 
+Plans and sheet materials of the tool (see attached map) 
+Approximate cost of 110USD tool. c / u 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Filters Base Stud Installation Tool 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1359  
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+6.0 Supporting Attachments / References 
+ 
+Tool Stud P/N Application   Torque (lb ft)  Media 
+Number 
+I 2W-8225 Oil 60+-10 SENR9936 
+II 2P-4304 Oil 60+-10 SENR1122 
+III 8N-3653 Fuel 52+- 11 KENR9885 
+IV 9S-4167 Fuel 52+- 11 KENR9885 
+ 
+The yellow cap and the extractor screws are common for all the tools. 
+The socket adapters are different for each tool and they depend on the studs dimensions. The dimensions for 
+each socket adapter are specified in the drawing. 
+ 
+ 
+7.0 Related Best Practices 
+None 
+ 
+  
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Filters Base Stud Installation Tool 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.03-1359  
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+8.0 Acknowledgements 
+ 
+Enrique Urbina  
+CRC Development Projects Chief, Relianz 
+Email: 
+enrique.urbina@relianz.com.co  
+ 
+Wilson Arias 
+Supervisor Técnico, Relianz. 
+Email: 
+Wilson.arias@relianz.com.co  
+ 
+ 
+Checked and written by: 
+ 
+David Antonio Gonzalez Fernandez 
+Ingeniero de Servicio CRC, Relianz 
+Email: 
+antonio.gonzalez@relianz.com.co  
+ 
+Melissa Chimá B. 
+Ingeniera de Servicio CRC, Relianz. 
+Email: 
+melissa.chima@relianz.com.co  
+ 
+Luis Alberto Fernández Ch. 
+Ingeniero de Desarrollo  
+Relianz  CAT División Minería 
+Departamento Técnico, área Ingeniería y Desarrollo. 
+Email:
+ luisalberto.fernandez@relianz.com.co

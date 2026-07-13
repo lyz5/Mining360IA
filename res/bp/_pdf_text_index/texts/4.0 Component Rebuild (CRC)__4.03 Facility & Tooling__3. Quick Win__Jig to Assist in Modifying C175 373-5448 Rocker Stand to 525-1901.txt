@@ -1,0 +1,310 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+January 19 
+4.03-171229-04 
+  
+Caterpillar Confidential:  YELLOW   mining.cat.com  
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Jig to Assist in Modifying 
+C175 373-5448 Rocker 
+Stand to 525-1901  
+ 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Jig to Assist in Modifying C175 373-5448 Rocker Stand 
+to 525-1901 Rocker Stand 
+DATE 
+2/4/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-171229-04 
+Caterpillar Confidential:  YELLOW          Page 1 of 5 
+1.0 Introduction  
+This document describes how to modify 373-5448 Rocker Stand to 525-1901 Rocker Stand in 
+quick and simple three steps. Using One Point Lesson describes the steps for drilling a hole with 
+a jig made for the task. 
+ 
+2.0 Best Practice Description 
+The improvement consists of the use of a simple procedure OPL to modify 373-5448 into 525-
+1901   Rocker Stand. 
+ 
+For machining the oil hole, it is necessary to follow these three steps: 
+ 
+Step 1: Prepare a jig and locate it on a vertical milling machine. 
+ 
+Step 2: Install the 373-5448 Rocker Stand on the jig 
+ 
+Step 3: Drill the oil hole 
+ 
+3.0 Implementation Steps 
+Manufacture a simple jig, like the figure show below: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 1: Jig for drilling 0.063 inch hole 
+Own design 
+ 
+ 
+Note:  
+ 
+Use two 3/8"NC x 60mm bolts and grade 5 
+two 8mm washers 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Jig to Assist in Modifying C175 373-5448 Rocker Stand 
+to 525-1901 Rocker Stand 
+DATE 
+2/4/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-171229-04 
+Caterpillar Confidential:  YELLOW          Page 2 of 5 
+ 
+Then follow the One Point Lesson: 
+OPL SOP009: Apply M0082927 in n/p 373-5448 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Use the device below in a 
+milling machine 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Jig to Assist in Modifying C175 373-5448 Rocker Stand 
+to 525-1901 Rocker Stand 
+DATE 
+2/4/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-171229-04 
+Caterpillar Confidential:  YELLOW          Page 3 of 5 
+4.0 Benefits 
+ 
+• Reduce the machine time from 01hour to 15minutes. 
+• The time improvement is about 75% for each 373-5448 Rocker Stand. 
+ 
+5.0 Resources Required 
+ 
+• Resources to manufacture the jig 
+• Drill Ø1.5mm x 2" 
+6.0 Supporting Attachments / References 
+ 
+M0082927 – Procedure to Modify 867-0491 Rocker Stand and the 373-5448 Rocker Stand to the 
+525-1901 Rocker Stand   
+ 
+(if the above hyperlink does not work, please copy the following link on your browser: 
+https://sis.cat.com/sisweb/servlet/cat.dcs.sis.controller.integration.CSSISIntegrationServlet?operation
+=fromsplashscreen) 
+ 
+ 
+ 
+  
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Jig to Assist in Modifying C175 373-5448 Rocker Stand 
+to 525-1901 Rocker Stand 
+DATE 
+2/4/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-171229-04 
+Caterpillar Confidential:  YELLOW          Page 4 of 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Jig to Assist in Modifying C175 373-5448 Rocker Stand 
+to 525-1901 Rocker Stand 
+DATE 
+2/4/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-171229-04 
+Caterpillar Confidential:  YELLOW          Page 5 of 5 
+ 
+7.0 Related Best Practices 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+César Inga Schemiel 
+Cesar.inga@ferreyros.com.pe 
+ 
+This Best Practice was revised by: 
+Aninu Mitacc Vizcardo 
+aninu.mitacc@ferreyros.com.pe 
+ 
+ 
+This Best Practice procedure was developed by: 
+Rómulo Olarte Vargas 
+Julio Quito Aguayo 
+César Inga Schemiel

@@ -1,0 +1,391 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Durability Analysis - Component Rebuild Parts Cost.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+August 19 
+4.04-171214-01 
+  
+  
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Durability Analysis - Component 
+Rebuild Parts Cost 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Component Rebuild Parts Cost Analysis ................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information pro vided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Durability Analysis - Component Rebuild Parts Cost 
+DATE 
+8/19/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.04-171214-01 
+Caterpillar Confidential:  YELLOW          Page 2 of 6 
+1.0 Introduction  
+ 
+Customers in the mining industry focus on lowering  their O&O (Owning and Operating) or TCO 
+(Total Cost of Ownership) to maximize profit margin from the commodity they produce. Often when 
+selecting equipment, one of the key criteria is lowest TCO for that class of equipment . Dealers 
+would often develop the TCO estimation by  ‘localized’ Caterpillar Global LCC (Life Cycle Cost) 
+Centreline files based on customer’s specific application needs. The Global Centreline files were 
+developed during the NPI process when the model was r eleased. Depending on the application 
+and site maintenance strategy, the estimated component lives in the files might not line up with the 
+actual components hours achieved in the field. The actual hours achieved by the components might 
+deviate from target life estimated by the original localized file and at the same time well outside of 
+the warranty period  so customers would usually treat  them as early PCR (Planned Com ponent 
+Replacement). When the rebuilder (Dealer CRC or 3 rd Party) receives the component for rebuild, 
+SIMS tickets might not be submitted. Hence, Caterpillar is not made aware of the life limiting part(s) 
+for component(s). The purpose of this Best Practice is to demonstrate how Dealers can conduct 
+piece parts consumption during rebuild and compare that against the localized builder file. Through 
+the analysis, dealer can identify the piece parts that contribute to TCO misalignment  and take 
+appropriate actions accordingly. 
+ 
+2.0 Best Practice Description 
+ 
+The objectives of this Best Practice are:  
+• Conduct component rebuild parts cost analysis and its impact to TCO  
+• Provide feedback loop on component actual achieved life vs. estimated component life for 
+Global LCC Centreline 
+• Provide feedback loop on component actual achieved life vs. estimated component life for 
+Dealer ‘localized’ LCC Centreline 
+• Comparison of actual rebuild costs vs. estimated rebuild cost 
+• Identify misaligned parts consumption during PCR and initiate further investigation 
+ 
+This document provides process guidelines to establish a framework that allow the review of 
+parts costs during each individual rebuild done by Dealers’ Component Rebuild Centers.  
+ 
+3.0 Implementation Steps 
+ 
+• Capture Parts Consumption Data for Every Rebuild Work Order - The following data 
+would need to be captured for every component rebuild by the Dealer Component Rebuild 
+Center 
+o Invoice/service call number 
+o Part numbers and Group number – the part number and group number needs to be 
+captured because there are some parts can be used on different components and 
+different machines. Using both part number and group number to identify a part will 
+provide the part with unique identity. 
+o Parts quantity 
+o Component number 
+o Serial number  
+o Component life achieved 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Durability Analysis - Component Rebuild Parts Cost 
+DATE 
+8/19/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.04-171214-01 
+Caterpillar Confidential:  YELLOW          Page 3 of 6 
+ 
+• Construction of Component Analysis – Dealers can conduct the analysis based on their 
+business operation system and resource available to them. The steps below were based on 
+using MS Excel as analysis tool and manual entering each analysis.  
+ 
+o Identify Relevant Piece Parts within Rebuild Component - Obtain the electronics 
+Parts Manual for the model to be analyzed. Filter out the piece parts related to the 
+component being rebuild and analyzed. There two different ways to filter piece parts 
+that belong to a component.  
+▪ Components that do not have a unique serial number prefix such as differential 
+and wheel ends on LMT. The analyst will need to identify all the parent/group 
+number up to the piece part level in the component 
+▪ Components that do have a unique serial number prefix such as engine and 
+transmission on LMT, the analyst can filter it down by their respective serial 
+number prefix from the parts manual 
+ 
+o Consideration for Machine Serial Number Break – The parts consist can be filtered 
+into different machine serial number breaks. It is important ensure the machine serial 
+number break are selected with the corresponding machine serial number being 
+analyzed 
+ 
+o Consideration for Part Number Change – As improvements are made to the 
+machine, new part numbers would be assigned to reflect the improvement. To take this 
+into consideration, the analysis must include part number replacement dataset from the 
+Dealer Parts System. It is a snapshot in time that shows prior, current and future piece 
+part number at the time the file is obtained. The file can be sourced from Caterpillar 
+Numerical Parts Record (NPR) 
+ 
+o Consideration for Part Numbers within Kits – Kits are often used in rebuilds. The 
+part numbers within a kit must be broken down to understand the piece parts 
+consumption in rebuilds 
+ 
+o Create Component Consist for a Particular Machine Serial Number – Once the 
+above steps are completed, you would end up with the component parts consist that is 
+reflective of a particular machine serial number. 
+ 
+o Obtain Component Rebuild Consist – In this step you will need to obtain the actual 
+rebuild consist that composed of the parts consumed for the rebuild for the same serial 
+number as the prior step  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Durability Analysis - Component Rebuild Parts Cost 
+DATE 
+8/19/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.04-171214-01 
+Caterpillar Confidential:  YELLOW          Page 4 of 6 
+o Conduct Component Analysis – To conduct the component analysis, you will need to 
+merge the data in the Component Consist with the Rebuild Consist in the following 
+additional columns. If you are using MS Excel, merging the two consists would involve 
+using of the Vlookup function.  
+▪ Alternative Part Number   
+▪ Previous Part Number  
+▪ Replacing Part Number  
+▪ Part Number Purchased in a Kit 
+▪ Work Order Quantity – This is the average quantity of a particular part number 
+replaced per rebuild work order 
+▪ Work Order Average Replacement % - This is the work order quantity divide by 
+the quantity needed in the component.  
+▪ Dealer Standard Job Replacement % – Dealer would use the standard job 
+replacement % to estimate and quote the rebuild job 
+▪ Builder file replacement % - This information can be extracted from the Builder 
+file 
+▪ Delta % – This delta is the % difference between work order average 
+replacement % vs. Builder file replacement %. 
+▪ Dealer Net (D/N) Cost  
+▪ Actual Cost – The product of D/N cost, Quantity and Work Order Average 
+Replacement % 
+▪ Builder Cost - The product of D/N cost, Quantity and Builder File Replacement 
+% 
+▪ Delta Cost – This delta is the cost difference between Actual Cost vs. Builder 
+Cost 
+ 
+The table below is a simplified example of the above implementation steps 
+ 
+ 
+Case 1 – The rebuild used less quantity of 111-1111 than Builder File's estimate. This is 
+a favorable position for part number 111-1111. The localized Builder File can be 
+adjusted for this part number. Lowering the cost of the rebuild would lower the TCO 
+ 
+Case 2 – Actual replacement rate of 222-2222 match with Builder File’s estimate. 
+Dealer can continue to use the Builder File replacement % in forecasting TCO 
+ 
+Case 3 – The rebuild used more quantity of 333-3333 than Builder File's estimate. This 
+is not a favorable position for the part number as the actual repair consumed 60% more 
+in quantity for this particular part number. This contributes $60 more towards the TCO.  
+ 
+ 
+Case Component # Part # Quantity
+Average Work 
+Order Qty
+Work order 
+Average 
+Replacement 
+%
+Builder File 
+Replacement 
+% Delta % D/N
+Actual 
+Cost
+Builder 
+Cost
+Delta 
+Cost
+1 1111 111-1111 2 1 50% 100% 50%  $       20  $       20  $       40  $       20 
+2 1111 222-2222 10 5 50% 50% 0%  $       10  $       50  $       50  $        -   
+3 1111 333-3333 5 4 80% 20% -60%  $       20  $       80  $       20 -$       60 
+ $     150  $     110 -$       40 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Durability Analysis - Component Rebuild Parts Cost 
+DATE 
+8/19/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.04-171214-01 
+Caterpillar Confidential:  YELLOW          Page 5 of 6 
+The variance warrants further investigation and here are the areas to review: 
+ 
+- Confirm reusability guideline compliance during the rebuild process 
+- Customer’s operational and maintenance strategy could influence the reusability 
+of certain part numbers. For example: higher than usual engine speed 
+distribution can reduce the reusability of certain part numbers in components 
+- Product Support Program is a mean for Caterpillar to address product issues in 
+the field by providing commercial support to the customers. If the parts are 
+replaced under such programs at rebuild then customer do not bear the cost. 
+Hence it has a limited impact to the TCO and should be excluded from the 
+analysis 
+- When parts did not meet the reusability guideline and needed to be replaced at 
+PCR, and these parts were not forecasted by the Builder File then SIMS tickets 
+should be raised to inform Caterpillar of the higher than usually parts 
+consumption and Caterpillar can address it through the CPI process. However, 
+sometimes SIMS tickets might not be raised at the time of component rebuild and 
+hence the parts consumption analysis is another mean to identify the 
+discrepancy. 
+- Furthermore, it is recommended Dealers’ CRC to be involved to provide failed 
+iron of the parts in question for further analysis and provide background why they 
+were replaced 
+ 
+o Accumulate Sufficient Samples and Repeat the Analysis – To have reliable and 
+representative data, a sufficient number of samples must be collected. The Dealer that 
+assisted with the development of this Best Practice have over 100 rebuilds for certain 
+LMT components.  
+ 
+o Bottom-up approach vs. Top-down approach – The example above is a bottom-up 
+approach whereby the analysis was done on an individual truck basis and then the data 
+will be consolidated in an aggregate format. The advantage of this method is that it 
+allows the analyst to drill down into individual truck level. However, as the machine 
+population increases, the method might be time consuming to complete. An alternate 
+method is to the top-down approach, whereby Dealers collect component rebuilds 
+information for a large population and conduct the analysis in a macro level. The 
+average replacement rate for a part piece is calculated based on the total number of 
+the piece parts replaced divided the machine population. While this method is time 
+efficient, it could overlook the effect of consist difference and serial number break. But 
+based on previous experience the difference between to two methods would be within 
+5%, which is considered acceptable as we are trying to identify the variance of over 
+20% in the component analysis. 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Durability Analysis - Component Rebuild Parts Cost 
+DATE 
+8/19/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.04-171214-01 
+Caterpillar Confidential:  YELLOW          Page 6 of 6 
+4.0 Benefits 
+ 
+The benefits of the component analysis, particularly for mining machines, are:  
+• Understand impact of certain higher than usual part consumptions at rebuild have on the 
+TCO and how TCO can be optimized 
+• Optimize parts consumption for rebuild and improve competitiveness in the rebuild market 
+• Enable further investigation into the root cause of the parts consumption variance between 
+Builder File Estimate vs. Actual Parts Consumption for rebuild 
+• Provide feedback to Product Groups to initiate CPI projects to address certain part 
+number(s) consumption that drive up TCO 
+ 
+5.0 Resources Required 
+ 
+• Management time to collect data, analyze, and review finding 
+• MS Excel or other analysis tool 
+ 
+6.0 Supporting Attachments / References 
+ 
+N/A 
+ 
+7.0 Related Best Practices 
+ 
+0608-4.3-1122 Forecasting CRC Component Rebuild Volume and Capacity 
+0907-3.3-1086 Localizing a Centerline File for MARC Development 
+0307-4.5-1068 Failure Analysis Process  
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was developed based on the data captured by Hastings Deering. For further 
+information, please contact:  
+ 
+Doug Eady 
+Hastings Deering (Australia) Limited 
+Lifecycle Management Service Manager 
+Doug.Eady@hastingsdeering.com.au  
++617 3365 9522 
+ 
+This Best Practice was written by: 
+ 
+Rex Cheung 
+Caterpillar of Australia Ltd. Pty. 
+Service Technical Representative 
+Cheung_Rex@cat.com

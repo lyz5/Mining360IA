@@ -1,0 +1,1735 @@
+{
+  "generated_at_utc": "2026-07-04T09:45:11.794115+00:00",
+  "workspace_id": "a378c518-bfc4-4cd7-a49d-ba40394db80f",
+  "powerbi_root": "https://api.powerbi.com/v1.0/myorg",
+  "effective_identity": {
+    "username": "mining360ia@neemba.local",
+    "default_roles": [
+      "Global"
+    ]
+  },
+  "ui_role_options": [
+    "Global",
+    "Fekola",
+    "Sangaredi/CBG",
+    "Seguela",
+    "Siguiri",
+    "Simandou/Mota",
+    "SNIM",
+    "Tongon",
+    "Bonikro/Mota",
+    "Agbaou/Mota",
+    "Essakane",
+    "Kiaka",
+    "Kouroussa",
+    "Goulamina/CORICA",
+    "Boto/Mota",
+    "Sadiola/Mota",
+    "SMB",
+    "SNIM-Guelb",
+    "SNTP"
+  ],
+  "reports": [
+    {
+      "name": "FPR Global DB + RLS",
+      "display_name": "Fleet Perormance Report",
+      "report_id": "6468f0ea-a64d-44b0-8c13-78597ec44bb9",
+      "report_type": "PowerBIReport",
+      "web_url": "https://app.powerbi.com/groups/a378c518-bfc4-4cd7-a49d-ba40394db80f/reports/6468f0ea-a64d-44b0-8c13-78597ec44bb9",
+      "embed_url": "https://app.powerbi.com/reportEmbed?reportId=6468f0ea-a64d-44b0-8c13-78597ec44bb9&groupId=a378c518-bfc4-4cd7-a49d-ba40394db80f&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJ1c2FnZU1ldHJpY3NWTmV4dCI6dHJ1ZX19",
+      "primary_dataset_id": "364edd69-532c-4e10-867f-3b3d4dfdb6c7",
+      "dataset_ids": [
+        "364edd69-532c-4e10-867f-3b3d4dfdb6c7"
+      ],
+      "datasets": [
+        {
+          "id": "364edd69-532c-4e10-867f-3b3d4dfdb6c7",
+          "name": "FPR Global DB + RLS",
+          "configured_by": "primary",
+          "is_effective_identity_required": true,
+          "is_effective_identity_roles_required": true,
+          "target_storage_mode": "Abf",
+          "role_aliases": {
+            "global user": "Global",
+            "fekola user": "Fekola",
+            "sangaredi": "Sangaredi/CBG",
+            "sangaredi/cbg": "Sangaredi/CBG"
+          },
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        }
+      ],
+      "embed": {
+        "requires_effective_identity": true,
+        "requires_roles": true,
+        "default_roles": [
+          "Global"
+        ],
+        "effective_username": "mining360ia@neemba.local",
+        "xmla_permissions": "ReadOnly",
+        "target_workspace_id": "a378c518-bfc4-4cd7-a49d-ba40394db80f",
+        "token_test": {
+          "status": "success",
+          "token_received": true
+        }
+      }
+    },
+    {
+      "name": "Fuel Monitoring Report V1",
+      "display_name": "Fuel Monitoring Report",
+      "report_id": "728358ed-a53c-4b1f-9af9-41ef8d5fb060",
+      "report_type": "PowerBIReport",
+      "web_url": "https://app.powerbi.com/groups/a378c518-bfc4-4cd7-a49d-ba40394db80f/reports/728358ed-a53c-4b1f-9af9-41ef8d5fb060",
+      "embed_url": "https://app.powerbi.com/reportEmbed?reportId=728358ed-a53c-4b1f-9af9-41ef8d5fb060&groupId=a378c518-bfc4-4cd7-a49d-ba40394db80f&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJ1c2FnZU1ldHJpY3NWTmV4dCI6dHJ1ZX19",
+      "primary_dataset_id": "a3ef48cf-b827-4b2d-89f0-12ec9ab7ad7a",
+      "dataset_ids": [
+        "a3ef48cf-b827-4b2d-89f0-12ec9ab7ad7a"
+      ],
+      "datasets": [
+        {
+          "id": "a3ef48cf-b827-4b2d-89f0-12ec9ab7ad7a",
+          "name": "Fuel Monitoring Report V1",
+          "configured_by": "primary",
+          "is_effective_identity_required": true,
+          "is_effective_identity_roles_required": true,
+          "target_storage_mode": "Abf",
+          "role_aliases": {
+            "global": [
+              "Agbaou/Mota",
+              "Bonikro/Mota",
+              "Essakane",
+              "Fekola",
+              "Goulamina/CORICA",
+              "Kouroussa",
+              "Sadiola/Mota",
+              "Sangaredi/CBG",
+              "Seguela",
+              "Siguiri",
+              "Simandou/Mota",
+              "SMB",
+              "SNIM-Guelb",
+              "SNTP",
+              "Tongon"
+            ]
+          },
+          "role_options": {
+            "Global": [
+              "Agbaou/Mota",
+              "Bonikro/Mota",
+              "Essakane",
+              "Fekola",
+              "Goulamina/CORICA",
+              "Kouroussa",
+              "Sadiola/Mota",
+              "Sangaredi/CBG",
+              "Seguela",
+              "Siguiri",
+              "Simandou/Mota",
+              "SMB",
+              "SNIM-Guelb",
+              "SNTP",
+              "Tongon"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        }
+      ],
+      "embed": {
+        "requires_effective_identity": true,
+        "requires_roles": true,
+        "default_roles": [
+          "Global"
+        ],
+        "effective_username": "mining360ia@neemba.local",
+        "xmla_permissions": "ReadOnly",
+        "target_workspace_id": "a378c518-bfc4-4cd7-a49d-ba40394db80f",
+        "token_test": {
+          "status": "success",
+          "token_received": true
+        }
+      }
+    },
+    {
+      "name": "LCC Dashboard",
+      "display_name": "LCC Dashboard",
+      "report_id": "d511e98d-b2bf-4853-865b-4356b5486f3e",
+      "report_type": "PowerBIReport",
+      "web_url": "https://app.powerbi.com/groups/a378c518-bfc4-4cd7-a49d-ba40394db80f/reports/d511e98d-b2bf-4853-865b-4356b5486f3e",
+      "embed_url": "https://app.powerbi.com/reportEmbed?reportId=d511e98d-b2bf-4853-865b-4356b5486f3e&groupId=a378c518-bfc4-4cd7-a49d-ba40394db80f&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJ1c2FnZU1ldHJpY3NWTmV4dCI6dHJ1ZX19",
+      "primary_dataset_id": "a3c4cbfc-e63f-4c1c-af4e-a0e465e6ae87",
+      "dataset_ids": [
+        "a3c4cbfc-e63f-4c1c-af4e-a0e465e6ae87"
+      ],
+      "datasets": [
+        {
+          "id": "a3c4cbfc-e63f-4c1c-af4e-a0e465e6ae87",
+          "name": "LCC Dashboard",
+          "configured_by": "primary",
+          "is_effective_identity_required": false,
+          "is_effective_identity_roles_required": false,
+          "target_storage_mode": "Abf",
+          "role_aliases": {},
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        }
+      ],
+      "embed": {
+        "requires_effective_identity": false,
+        "requires_roles": false,
+        "default_roles": [
+          "Global"
+        ],
+        "effective_username": "",
+        "xmla_permissions": "ReadOnly",
+        "target_workspace_id": "a378c518-bfc4-4cd7-a49d-ba40394db80f",
+        "token_test": {
+          "status": "success",
+          "token_received": true
+        }
+      }
+    },
+    {
+      "name": "Mine Logistics & AfterMarket",
+      "display_name": "Mining AfterMarket Perormance - Parts",
+      "report_id": "b4d0babf-c942-4517-bb9e-9e08f59e37ed",
+      "report_type": "PowerBIReport",
+      "web_url": "https://app.powerbi.com/groups/a378c518-bfc4-4cd7-a49d-ba40394db80f/reports/b4d0babf-c942-4517-bb9e-9e08f59e37ed",
+      "embed_url": "https://app.powerbi.com/reportEmbed?reportId=b4d0babf-c942-4517-bb9e-9e08f59e37ed&groupId=a378c518-bfc4-4cd7-a49d-ba40394db80f&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJ1c2FnZU1ldHJpY3NWTmV4dCI6dHJ1ZX19",
+      "primary_dataset_id": "59dba3f4-1661-460a-9d6a-c07440eaf383",
+      "dataset_ids": [
+        "59dba3f4-1661-460a-9d6a-c07440eaf383",
+        "364edd69-532c-4e10-867f-3b3d4dfdb6c7"
+      ],
+      "datasets": [
+        {
+          "id": "59dba3f4-1661-460a-9d6a-c07440eaf383",
+          "name": "Mine Logistics & AfterMarket",
+          "configured_by": "primary",
+          "is_effective_identity_required": false,
+          "is_effective_identity_roles_required": false,
+          "target_storage_mode": "Abf",
+          "role_aliases": {},
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        },
+        {
+          "id": "364edd69-532c-4e10-867f-3b3d4dfdb6c7",
+          "name": "FPR Global DB + RLS",
+          "configured_by": "linked_or_hint",
+          "is_effective_identity_required": true,
+          "is_effective_identity_roles_required": true,
+          "target_storage_mode": "Abf",
+          "role_aliases": {
+            "global user": "Global",
+            "fekola user": "Fekola",
+            "sangaredi": "Sangaredi/CBG",
+            "sangaredi/cbg": "Sangaredi/CBG"
+          },
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        }
+      ],
+      "embed": {
+        "requires_effective_identity": true,
+        "requires_roles": true,
+        "default_roles": [
+          "Global"
+        ],
+        "effective_username": "mining360ia@neemba.local",
+        "xmla_permissions": "ReadOnly",
+        "target_workspace_id": "a378c518-bfc4-4cd7-a49d-ba40394db80f",
+        "token_test": {
+          "status": "success",
+          "token_received": true
+        }
+      }
+    },
+    {
+      "name": "Mine Logistics Report",
+      "display_name": "Mine Logistics Report",
+      "report_id": "e195601b-b576-4f3e-abae-f60629e2dc62",
+      "report_type": "PowerBIReport",
+      "web_url": "https://app.powerbi.com/groups/a378c518-bfc4-4cd7-a49d-ba40394db80f/reports/e195601b-b576-4f3e-abae-f60629e2dc62",
+      "embed_url": "https://app.powerbi.com/reportEmbed?reportId=e195601b-b576-4f3e-abae-f60629e2dc62&groupId=a378c518-bfc4-4cd7-a49d-ba40394db80f&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJ1c2FnZU1ldHJpY3NWTmV4dCI6dHJ1ZX19",
+      "primary_dataset_id": "9db59281-164a-4992-b0a2-0c51837d1579",
+      "dataset_ids": [
+        "9db59281-164a-4992-b0a2-0c51837d1579",
+        "364edd69-532c-4e10-867f-3b3d4dfdb6c7"
+      ],
+      "datasets": [
+        {
+          "id": "9db59281-164a-4992-b0a2-0c51837d1579",
+          "name": "Mine Logistics Report",
+          "configured_by": "primary",
+          "is_effective_identity_required": false,
+          "is_effective_identity_roles_required": false,
+          "target_storage_mode": "Abf",
+          "role_aliases": {},
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        },
+        {
+          "id": "364edd69-532c-4e10-867f-3b3d4dfdb6c7",
+          "name": "FPR Global DB + RLS",
+          "configured_by": "linked_or_hint",
+          "is_effective_identity_required": true,
+          "is_effective_identity_roles_required": true,
+          "target_storage_mode": "Abf",
+          "role_aliases": {
+            "global user": "Global",
+            "fekola user": "Fekola",
+            "sangaredi": "Sangaredi/CBG",
+            "sangaredi/cbg": "Sangaredi/CBG"
+          },
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        }
+      ],
+      "embed": {
+        "requires_effective_identity": true,
+        "requires_roles": true,
+        "default_roles": [
+          "Global"
+        ],
+        "effective_username": "mining360ia@neemba.local",
+        "xmla_permissions": "ReadOnly",
+        "target_workspace_id": "a378c518-bfc4-4cd7-a49d-ba40394db80f",
+        "token_test": {
+          "status": "success",
+          "token_received": true
+        }
+      }
+    },
+    {
+      "name": "Mine Operator Induced Report",
+      "display_name": "Mine Operator Induced Report",
+      "report_id": "1fd720ef-38ca-4704-9bf8-cff2857fac4c",
+      "report_type": "PowerBIReport",
+      "web_url": "https://app.powerbi.com/groups/a378c518-bfc4-4cd7-a49d-ba40394db80f/reports/1fd720ef-38ca-4704-9bf8-cff2857fac4c",
+      "embed_url": "https://app.powerbi.com/reportEmbed?reportId=1fd720ef-38ca-4704-9bf8-cff2857fac4c&groupId=a378c518-bfc4-4cd7-a49d-ba40394db80f&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJ1c2FnZU1ldHJpY3NWTmV4dCI6dHJ1ZX19",
+      "primary_dataset_id": "ac489618-23c8-4016-ad8c-e81589f06e1a",
+      "dataset_ids": [
+        "ac489618-23c8-4016-ad8c-e81589f06e1a",
+        "364edd69-532c-4e10-867f-3b3d4dfdb6c7"
+      ],
+      "datasets": [
+        {
+          "id": "ac489618-23c8-4016-ad8c-e81589f06e1a",
+          "name": "Mine Operator Induced Report",
+          "configured_by": "primary",
+          "is_effective_identity_required": false,
+          "is_effective_identity_roles_required": false,
+          "target_storage_mode": "Abf",
+          "role_aliases": {},
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        },
+        {
+          "id": "364edd69-532c-4e10-867f-3b3d4dfdb6c7",
+          "name": "FPR Global DB + RLS",
+          "configured_by": "linked_or_hint",
+          "is_effective_identity_required": true,
+          "is_effective_identity_roles_required": true,
+          "target_storage_mode": "Abf",
+          "role_aliases": {
+            "global user": "Global",
+            "fekola user": "Fekola",
+            "sangaredi": "Sangaredi/CBG",
+            "sangaredi/cbg": "Sangaredi/CBG"
+          },
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        }
+      ],
+      "embed": {
+        "requires_effective_identity": true,
+        "requires_roles": true,
+        "default_roles": [
+          "Global"
+        ],
+        "effective_username": "mining360ia@neemba.local",
+        "xmla_permissions": "ReadOnly",
+        "target_workspace_id": "a378c518-bfc4-4cd7-a49d-ba40394db80f",
+        "token_test": {
+          "status": "success",
+          "token_received": true
+        }
+      }
+    },
+    {
+      "name": "Neemba Monthly Report Ext",
+      "display_name": "Mine Monthly Report - Customer",
+      "report_id": "7e81ed35-8db9-4abc-9f46-20c09950c3c9",
+      "report_type": "PowerBIReport",
+      "web_url": "https://app.powerbi.com/groups/a378c518-bfc4-4cd7-a49d-ba40394db80f/reports/7e81ed35-8db9-4abc-9f46-20c09950c3c9",
+      "embed_url": "https://app.powerbi.com/reportEmbed?reportId=7e81ed35-8db9-4abc-9f46-20c09950c3c9&groupId=a378c518-bfc4-4cd7-a49d-ba40394db80f&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJ1c2FnZU1ldHJpY3NWTmV4dCI6dHJ1ZX19",
+      "primary_dataset_id": "480c3412-8f82-458c-be0c-7639c58bd55c",
+      "dataset_ids": [
+        "480c3412-8f82-458c-be0c-7639c58bd55c",
+        "364edd69-532c-4e10-867f-3b3d4dfdb6c7",
+        "9db59281-164a-4992-b0a2-0c51837d1579"
+      ],
+      "datasets": [
+        {
+          "id": "480c3412-8f82-458c-be0c-7639c58bd55c",
+          "name": "Neemba Monthly Report Ext",
+          "configured_by": "primary",
+          "is_effective_identity_required": true,
+          "is_effective_identity_roles_required": true,
+          "target_storage_mode": "Abf",
+          "role_aliases": {},
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        },
+        {
+          "id": "364edd69-532c-4e10-867f-3b3d4dfdb6c7",
+          "name": "FPR Global DB + RLS",
+          "configured_by": "linked_or_hint",
+          "is_effective_identity_required": true,
+          "is_effective_identity_roles_required": true,
+          "target_storage_mode": "Abf",
+          "role_aliases": {
+            "global user": "Global",
+            "fekola user": "Fekola",
+            "sangaredi": "Sangaredi/CBG",
+            "sangaredi/cbg": "Sangaredi/CBG"
+          },
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        },
+        {
+          "id": "9db59281-164a-4992-b0a2-0c51837d1579",
+          "name": "Mine Logistics Report",
+          "configured_by": "linked_or_hint",
+          "is_effective_identity_required": false,
+          "is_effective_identity_roles_required": false,
+          "target_storage_mode": "Abf",
+          "role_aliases": {},
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        }
+      ],
+      "embed": {
+        "requires_effective_identity": true,
+        "requires_roles": true,
+        "default_roles": [
+          "Global"
+        ],
+        "effective_username": "mining360ia@neemba.local",
+        "xmla_permissions": "ReadOnly",
+        "target_workspace_id": "a378c518-bfc4-4cd7-a49d-ba40394db80f",
+        "token_test": {
+          "status": "success",
+          "token_received": true
+        }
+      }
+    },
+    {
+      "name": "Neemba Monthly Report_New",
+      "display_name": "Mine Monthly Report - Neembers",
+      "report_id": "09299ab4-ba53-4765-8332-20310934b71b",
+      "report_type": "PowerBIReport",
+      "web_url": "https://app.powerbi.com/groups/a378c518-bfc4-4cd7-a49d-ba40394db80f/reports/09299ab4-ba53-4765-8332-20310934b71b",
+      "embed_url": "https://app.powerbi.com/reportEmbed?reportId=09299ab4-ba53-4765-8332-20310934b71b&groupId=a378c518-bfc4-4cd7-a49d-ba40394db80f&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJ1c2FnZU1ldHJpY3NWTmV4dCI6dHJ1ZX19",
+      "primary_dataset_id": "8098941a-3552-4503-a53c-6452d1e653f0",
+      "dataset_ids": [
+        "8098941a-3552-4503-a53c-6452d1e653f0",
+        "364edd69-532c-4e10-867f-3b3d4dfdb6c7",
+        "9db59281-164a-4992-b0a2-0c51837d1579"
+      ],
+      "datasets": [
+        {
+          "id": "8098941a-3552-4503-a53c-6452d1e653f0",
+          "name": "Neemba Monthly Report_New",
+          "configured_by": "primary",
+          "is_effective_identity_required": true,
+          "is_effective_identity_roles_required": true,
+          "target_storage_mode": "Abf",
+          "role_aliases": {
+            "global": "Global User",
+            "fekola": "Fekola User",
+            "sangaredi/cbg": "Sangaredi"
+          },
+          "role_options": {
+            "Global": [
+              "Global User"
+            ],
+            "Fekola": [
+              "Fekola User"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        },
+        {
+          "id": "364edd69-532c-4e10-867f-3b3d4dfdb6c7",
+          "name": "FPR Global DB + RLS",
+          "configured_by": "linked_or_hint",
+          "is_effective_identity_required": true,
+          "is_effective_identity_roles_required": true,
+          "target_storage_mode": "Abf",
+          "role_aliases": {
+            "global user": "Global",
+            "fekola user": "Fekola",
+            "sangaredi": "Sangaredi/CBG",
+            "sangaredi/cbg": "Sangaredi/CBG"
+          },
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        },
+        {
+          "id": "9db59281-164a-4992-b0a2-0c51837d1579",
+          "name": "Mine Logistics Report",
+          "configured_by": "linked_or_hint",
+          "is_effective_identity_required": false,
+          "is_effective_identity_roles_required": false,
+          "target_storage_mode": "Abf",
+          "role_aliases": {},
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        }
+      ],
+      "embed": {
+        "requires_effective_identity": true,
+        "requires_roles": true,
+        "default_roles": [
+          "Global"
+        ],
+        "effective_username": "mining360ia@neemba.local",
+        "xmla_permissions": "ReadOnly",
+        "target_workspace_id": "a378c518-bfc4-4cd7-a49d-ba40394db80f",
+        "token_test": {
+          "status": "success",
+          "token_received": true
+        }
+      }
+    },
+    {
+      "name": "Neemba SOS Analysis Report",
+      "display_name": "Neemba SOS Analysis Report",
+      "report_id": "b106be9f-54a2-4659-a7e8-5fc936adb719",
+      "report_type": "PowerBIReport",
+      "web_url": "https://app.powerbi.com/groups/a378c518-bfc4-4cd7-a49d-ba40394db80f/reports/b106be9f-54a2-4659-a7e8-5fc936adb719",
+      "embed_url": "https://app.powerbi.com/reportEmbed?reportId=b106be9f-54a2-4659-a7e8-5fc936adb719&groupId=a378c518-bfc4-4cd7-a49d-ba40394db80f&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJ1c2FnZU1ldHJpY3NWTmV4dCI6dHJ1ZX19",
+      "primary_dataset_id": "719b0c65-9ed0-4671-b42a-21bc19aa16ad",
+      "dataset_ids": [
+        "719b0c65-9ed0-4671-b42a-21bc19aa16ad"
+      ],
+      "datasets": [
+        {
+          "id": "719b0c65-9ed0-4671-b42a-21bc19aa16ad",
+          "name": "Neemba SOS Analysis Report",
+          "configured_by": "primary",
+          "is_effective_identity_required": true,
+          "is_effective_identity_roles_required": true,
+          "target_storage_mode": "Abf",
+          "role_aliases": {},
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        }
+      ],
+      "embed": {
+        "requires_effective_identity": true,
+        "requires_roles": true,
+        "default_roles": [
+          "Global"
+        ],
+        "effective_username": "mining360ia@neemba.local",
+        "xmla_permissions": "ReadOnly",
+        "target_workspace_id": "a378c518-bfc4-4cd7-a49d-ba40394db80f",
+        "token_test": {
+          "status": "success",
+          "token_received": true
+        }
+      }
+    },
+    {
+      "name": "POCA Report",
+      "display_name": "Percentage Of Connected Assets Report",
+      "report_id": "4af34d14-71fd-4d0c-9e56-8421cfd810ce",
+      "report_type": "PowerBIReport",
+      "web_url": "https://app.powerbi.com/groups/a378c518-bfc4-4cd7-a49d-ba40394db80f/reports/4af34d14-71fd-4d0c-9e56-8421cfd810ce",
+      "embed_url": "https://app.powerbi.com/reportEmbed?reportId=4af34d14-71fd-4d0c-9e56-8421cfd810ce&groupId=a378c518-bfc4-4cd7-a49d-ba40394db80f&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJ1c2FnZU1ldHJpY3NWTmV4dCI6dHJ1ZX19",
+      "primary_dataset_id": "21847eda-da14-429a-abdd-59540eaaff6e",
+      "dataset_ids": [
+        "21847eda-da14-429a-abdd-59540eaaff6e"
+      ],
+      "datasets": [
+        {
+          "id": "21847eda-da14-429a-abdd-59540eaaff6e",
+          "name": "POCA Report",
+          "configured_by": "primary",
+          "is_effective_identity_required": false,
+          "is_effective_identity_roles_required": false,
+          "target_storage_mode": "Abf",
+          "role_aliases": {},
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        }
+      ],
+      "embed": {
+        "requires_effective_identity": false,
+        "requires_roles": false,
+        "default_roles": [
+          "Global"
+        ],
+        "effective_username": "",
+        "xmla_permissions": "ReadOnly",
+        "target_workspace_id": "a378c518-bfc4-4cd7-a49d-ba40394db80f",
+        "token_test": {
+          "status": "success",
+          "token_received": true
+        }
+      }
+    },
+    {
+      "name": "Prime Movers Operational Status",
+      "display_name": "Prime Movers Operational Status",
+      "report_id": "7965812a-e2d7-4950-9651-a148d8fdd235",
+      "report_type": "PowerBIReport",
+      "web_url": "https://app.powerbi.com/groups/a378c518-bfc4-4cd7-a49d-ba40394db80f/reports/7965812a-e2d7-4950-9651-a148d8fdd235",
+      "embed_url": "https://app.powerbi.com/reportEmbed?reportId=7965812a-e2d7-4950-9651-a148d8fdd235&groupId=a378c518-bfc4-4cd7-a49d-ba40394db80f&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJ1c2FnZU1ldHJpY3NWTmV4dCI6dHJ1ZX19",
+      "primary_dataset_id": "78f2e175-881d-42d7-8d64-fce27908e3c1",
+      "dataset_ids": [
+        "78f2e175-881d-42d7-8d64-fce27908e3c1"
+      ],
+      "datasets": [
+        {
+          "id": "78f2e175-881d-42d7-8d64-fce27908e3c1",
+          "name": "Prime Movers Operational Status",
+          "configured_by": "primary",
+          "is_effective_identity_required": false,
+          "is_effective_identity_roles_required": false,
+          "target_storage_mode": "Abf",
+          "role_aliases": {},
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        }
+      ],
+      "embed": {
+        "requires_effective_identity": false,
+        "requires_roles": false,
+        "default_roles": [
+          "Global"
+        ],
+        "effective_username": "",
+        "xmla_permissions": "ReadOnly",
+        "target_workspace_id": "a378c518-bfc4-4cd7-a49d-ba40394db80f",
+        "token_test": {
+          "status": "success",
+          "token_received": true
+        }
+      }
+    },
+    {
+      "name": "Prime Movers Operational Status v2",
+      "display_name": "Prime Movers Operational Status V2",
+      "report_id": "2fb4cc34-5dab-49d6-8667-0e5e29a6aedd",
+      "report_type": "PowerBIReport",
+      "web_url": "https://app.powerbi.com/groups/a378c518-bfc4-4cd7-a49d-ba40394db80f/reports/2fb4cc34-5dab-49d6-8667-0e5e29a6aedd",
+      "embed_url": "https://app.powerbi.com/reportEmbed?reportId=2fb4cc34-5dab-49d6-8667-0e5e29a6aedd&groupId=a378c518-bfc4-4cd7-a49d-ba40394db80f&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJ1c2FnZU1ldHJpY3NWTmV4dCI6dHJ1ZX19",
+      "primary_dataset_id": "24cb32b9-08d5-4c6d-9697-df74db90271b",
+      "dataset_ids": [
+        "24cb32b9-08d5-4c6d-9697-df74db90271b"
+      ],
+      "datasets": [
+        {
+          "id": "24cb32b9-08d5-4c6d-9697-df74db90271b",
+          "name": "Prime Movers Operational Status v2",
+          "configured_by": "primary",
+          "is_effective_identity_required": false,
+          "is_effective_identity_roles_required": false,
+          "target_storage_mode": "Abf",
+          "role_aliases": {},
+          "role_options": {
+            "Global": [
+              "Global"
+            ],
+            "Fekola": [
+              "Fekola"
+            ],
+            "Sangaredi/CBG": [
+              "Sangaredi/CBG"
+            ],
+            "Seguela": [
+              "Seguela"
+            ],
+            "Siguiri": [
+              "Siguiri"
+            ],
+            "Simandou/Mota": [
+              "Simandou/Mota"
+            ],
+            "SNIM": [
+              "SNIM"
+            ],
+            "Tongon": [
+              "Tongon"
+            ],
+            "Bonikro/Mota": [
+              "Bonikro/Mota"
+            ],
+            "Agbaou/Mota": [
+              "Agbaou/Mota"
+            ],
+            "Essakane": [
+              "Essakane"
+            ],
+            "Kiaka": [
+              "Kiaka"
+            ],
+            "Kouroussa": [
+              "Kouroussa"
+            ],
+            "Goulamina/CORICA": [
+              "Goulamina/CORICA"
+            ],
+            "Boto/Mota": [
+              "Boto/Mota"
+            ],
+            "Sadiola/Mota": [
+              "Sadiola/Mota"
+            ],
+            "SMB": [
+              "SMB"
+            ],
+            "SNIM-Guelb": [
+              "SNIM-Guelb"
+            ],
+            "SNTP": [
+              "SNTP"
+            ]
+          }
+        }
+      ],
+      "embed": {
+        "requires_effective_identity": false,
+        "requires_roles": false,
+        "default_roles": [
+          "Global"
+        ],
+        "effective_username": "",
+        "xmla_permissions": "ReadOnly",
+        "target_workspace_id": "a378c518-bfc4-4cd7-a49d-ba40394db80f",
+        "token_test": {
+          "status": "success",
+          "token_received": true
+        }
+      }
+    }
+  ]
+}

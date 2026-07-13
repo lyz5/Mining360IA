@@ -1,0 +1,269 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.04 CRC Management\3. Quick Win\Recommended Shipping and Storage Stands for Major Components.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2006  
+0107-4.4-1053  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Recommended Shipping 
+and Storage Stands for 
+Major Components 
+ 
+Application  Maintenance  Site 
+Management  
+Component 
+Rebuild Safety MARC 
+Management  
+ 
+ 
+ 
+Recommended Shipping and Storage Stands for 
+Major Components .................................................... 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 4 
+4.0  Benefits ............................................................. 5 
+5.0  Resources Required .......................................... 5 
+6.0  Supporting Attachments / References ............... 5 
+7.0  Related Best Practices ...................................... 5 
+8.0  Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Recommended Shipping and Storage Stands for Major 
+Components 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.4-1053  
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+1.0 Introduction  
+ 
+From the time a major component is rebuilt and leaves the CRC until it is installed in a machine, 
+the component is handled several times and exposed to risk of damage each time it is handled. 
+Typically, the component moves from the CRC shipping area on to a flatbed truck for transport to 
+the customer, from the truck to a receiving and storage location, and from that location to a 
+customer shop for installation. 
+ 
+A well designed, sturdy shipping and storage stand can protect the component from shipping 
+damage and make the handling of the component from one place to another much easier and 
+more efficient to perform. 
+ 
+Some dealers CRCs require that all components rebuilt in the shop be transported / stored on a 
+dealer supplied shipping stand. These dealers often sell, rent, or lease the component shipping 
+stands to their customers. 
+ 
+2.0 Best Practice Description 
+ 
+The methods and practices used to transport and store a major component vary widely. It is not 
+uncommon to see a major component on a flat bed truck supported by a pallet or wooden blocks, 
+and tied down with a few ropes and chains. Makeshift shipping and storage practices expose the 
+component to potential shipping damage. 
+ 
+Caterpillar ships Remanufactured major components on custom shipping stands, providing a 
+secure mount for the component and built-in channels to facilitate forklift handling. A shipping 
+stand core charge is assessed with the sale of the Reman component and credited when the core 
+is returned. The same stand that was used to transport the Reman component is used to return 
+the core to Caterpillar. Some dealers have developed a similar practice between their CRC and 
+customers. Many dealers use their own weld and fabrication shops to design and manufacture 
+component shipping and storage stands. 
+ 
+Design features of the stands often include base channels to allow transport by forklift and a 
+secure method to mount the component to the stand. Components such as engines are usually 
+bolted to the stand using the same mounting locations used to install the engine in a machine. 
+Round components, such as final drives and transmissions, are usually chained to a stand and 
+supported by cradles sized to securely hold the component. 
+ 
+For engines, there are “universal” designs to fit several engine sizes by using different mounting 
+adapters. 
+ 
+While shipping and storage stands are important to the transport and protection of major 
+components, the stands cost time and money to manufacture. Some dealers have difficulty in 
+getting stands returned in a timely manner or not getting stands returned at all. The solution is to 
+sell, rent, or lease shipping stands. In this way, the cost of the stands can be recovered and the 
+shop can afford to invest in a sufficient quantity of stands to assure that all components are 
+properly shipped and stored on stands. 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Recommended Shipping and Storage Stands for Major 
+Components 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.4-1053  
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+For cases where the customer requires a permanent set of component stands for an inventory of 
+components, stands can either be purchased or leased from the dealer. 
+ 
+For situations where the stand is only required for shipping and temporary storage, there can be a 
+refundable deposit on the shipping stand when the component rebuild is invoiced. If the 
+component stand is returned within a specified period, the customer receives a full refund of the 
+deposit. If the return of the stand goes beyond a set time period, a rental fee is applied. 
+ 
+Examples of shipping and storage stands: 
+ 
+  
+  
+ 
+  
+  
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Recommended Shipping and Storage Stands for Major 
+Components 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.4-1053  
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+  
+  
+ 
+  
+  
+ 
+3.0 Implementation Steps 
+ 
+• Purchase finished component stands or design and f abricate stands to meet market needs. 
+Designs are often similar to shipping stands used by Caterpillar Remanufactured Products or 
+various assembly stands contained in Service Tool Guides. 
+o Determine the numbers of stands required by lookin g at monthly CRC component 
+rebuild volumes and average cycle time between shipping a component and receiving 
+the stand back. 
+o Designate serial or tracking numbers for each stan d. 
+o Warning decals to designate weight, lifting, and t ie down instructions. 
+o Keep engineering drawings for any fabricated stand s so they can be replicated if 
+needed. 
+• Create a tracking and invoicing system. 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Recommended Shipping and Storage Stands for Major 
+Components 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.4-1053  
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+• Implement a policy requiring all components leavin g the CRC to be mounted on shipping and 
+storage stands. 
+• Communicate policy to customers and explain benefi ts. 
+• Create pricing and marketing program for purchase,  rental, or leasing options of stands. 
+ 
+4.0 Benefits 
+ 
+• Stands prevent damage to components during shippin g and handling. 
+• Improved material handling - safety and efficiency . 
+• Creates a standard, consistent process for the tra nsport and handling of components. 
+• Conveys an image of quality from the CRC and deale r. 
+• Enables recovery of the cost of shipping and stora ge stands.  
+ 
+5.0 Resources Required 
+ 
+• Weld/fabrication shop 
+• Capital for materials and labor 
+• Tracking and invoicing system 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+     
+ 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Recommended Shipping and Storage Stands for Major 
+Components 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.4-1053  
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+Caterpillar Global Mining 
+6 Sigma Black Belt 
+ 
+Photos courtesy of Finning Chile, Gecolsa, and Venequip.

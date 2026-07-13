@@ -1,0 +1,217 @@
+SOURCE: 5.0 MARC Management\5.04 Financial Management\2. Tactical\MARC Financial Audit Procedure.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+BEST PRACTICE SERIES
+MARC Financial Audit 
+Procedure 
+Application Maintenance Site 
+Management
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management
+ 
+ 
+ 
+MARC Financial Audit Procedure ..............................1  
+1.0 Introduction........................................................2  
+2.0 Best Practice Description ..................................2  
+3.0 Implementation Steps........................................3  
+4.0 Benefits .............................................................3  
+5.0 Resources Required..........................................3  
+6.0 Supporting Attachments ....................................4  
+7.0 Related Best Practices ......................................4  
+8.0 Acknowledgments .............................................4  
+ 
+ 
+ 
+ 
+ 
+  
+March 2008
+0906-3.3-1011
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      catminer.com 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+MARC Financial Audit Procedure 
+DATE 
+3/19/2008 
+CHG 
+NO 
+02 
+NUMBER 
+0906-3.3-1011
+ 
+1.0 Introduction  
+ 
+An audit is a formal examination, correction, and endorsing of financial accounts, specifically 
+those of a mining dealer, usually untaken by an accountant. In relation to audits of MARC 
+contracts this usually covers 5 main objectives: 
+1. To verify historical contract revenues and co sts are directly related to the signed customer 
+contract, including amendments.  
+2. To verify revenues and costs projections  are reasonable, based upon past performance.    
+3. To verify contract end profitability is calcul ated upon accurate revenues, cost of sales, and 
+direct expenses. 
+4. To verify acceptable cost calculations are be ing used (“cost at cost”) for parts, on-site labor, 
+rebuild center labor, and 3rd party costs. 
+5. In conjunction with the Mining Contract Tech nical Audit Procedure, use to determine amount 
+of Caterpillar/dealer settlements. 
+ 
+2.0 Best Practice Description 
+ 
+2.1 Timing: 
+Recommended audit schedule is at:  
+1. The mid-point of the contract,  
+2. Upon completion (before settlement), and  
+3. On an as-needed basis if resu lts are extremely unfavorable. 
+ 
+2.2 Audit Materials: 
+Material available for review and audit should be: 
+1. Original contract budget in Calculat or (or an Accounting Template format) 
+2. Complete Analyzer files (and/or A ccounting Template format spreadsheets) 
+3. Copy of the complete contract with addendums 
+4. Recent monthly site reports (including technical information) 
+5. Recent application severity (ASA) reports 
+6. If availability information is not kept wit hin Analyzer, recent availability reports 
+7. Process/accounting map of how parts and rebuilt/exchange components are charged to the            
+contract (from dealer net to contract charge) 
+8. Organization charts of on-site and  dealer contracts department personnel 
+9. Recent VIMS summary reports 
+10. On-site parts statistics: inventory dollars, inventory turns, fill percentage, spoilage and 
+obsolescence, copies of recent parts inventory audits 
+11.  HME2003 contracts only - Cost and availability reconciliations. 
+12.  HME2003 contracts only - Signed enrollment forms with budget. 
+13.  Process flow chart of contract currency transactions. 
+ 
+2.2.1 Internal Controls 
+ 
+General Dealer Administration Practices / Philosophies 
+1. Organization structure 
+2. Personnel performance incentives 
+3. Customer practices (i.e. customer meetings, ov erloading, documentation). 
+Caterpillar: Confidential Yellow
+-Reproduction Constitutes an Uncontrolled Document-
+Page 1 of 3
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+MARC Financial Audit Procedure 
+DATE 
+3/19/2008 
+CHG 
+NO 
+02 
+NUMBER 
+0906-3.3-1011
+ 
+4. Reliance on Analyzer, Calculator, Builder, Manager  
+ 
+General Contract Administration Practices / Philosophies 
+1. Contract background information 
+2. Review initial budget/plan 
+• Basis for parts pricing, labor costs (manpower), and miscellaneous 
+• Component life / costs estimates 
+• Service hour estimates for R&I, D&A, other labor items 
+• Budgeted direct costs (as %, or detailed line items) 
+• Dealer gross margin for parts/labor, and final projected PAD 
+• Determine if original budget balanced 
+ 
+2.2.2 Testing of Transactions 
+ 
+Review/Validate Revenues / Invoices 
+• Review actual customer invoices for comparison to “Invoiced Amount” 
+• Ensure all of machine serial numbers in contract are invoiced. 
+• Review escalation calculations – customer summaries, comparison to inflation 
+factors/indices 
+• Review machine hours, contract rate, escalation factors, and bill dates to verify match to 
+actual invoices. 
+• Verify separation of responsibilities between invoice calculation, billing, receipt, recording, 
+and deposit 
+• Check for additional invoices for customer penalties 
+• HME2003 contracts only - Verify parts charged to all periods were attached to enrolled 
+machine only. 
+• If the customer agreement contains a minimum usage / billing clause then review actual 
+hours billed to contract for compliance. 
+• Verify goodwill benefits are applied consistently to financial contract activity. 
+• Verify contract margin is not affected by currency translation gains or losses. 
+ 
+3.0 Implementation Steps 
+ 
+4.0 Benefits 
+ 
+Due to the complicated nature of mining contracts along with the risk of financial exposure a 
+rigorous audit procedure must be followed in order to minimize Caterpillars exposure to non-
+contract expenditures. 
+ 
+5.0 Resources Required 
+ 
+The resources needed for an audit requires labor and travel costs. On site audits are usually is 
+done by the MARC accountant, regional MARC consultant, the MARC Manager and any other 
+SME needed fulfill knowledge requirements 
+ 
+Caterpillar: Confidential Yellow
+-Reproduction Constitutes an Uncontrolled Document-
+Page 2 of 3
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+MARC Financial Audit Procedure 
+DATE 
+3/19/2008 
+CHG 
+NO 
+02 
+NUMBER 
+0906-3.3-1011
+ 
+6.0 Supporting Attachments  
+ 
+None applicable. 
+ 
+7.0 Related Best Practices 
+ 
+None applicable. 
+ 
+8.0 Acknowledgments 
+ 
+This Best Practice was written by: 
+ 
+Tim Shaw 
+Caterpillar Global Mining 
+MARC Analyst 
+Shaw_Timothy_E@cat.com
++1 309 361 4025 
+ 
+Caterpillar: Confidential Yellow
+-Reproduction Constitutes an Uncontrolled Document-
+Page 3 of 3

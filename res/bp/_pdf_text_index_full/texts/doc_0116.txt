@@ -1,0 +1,257 @@
+SOURCE: 1.0 Maintenance & Repair\1.11 HSEC - M&R\3. Quick Win\Wheel Chock Mobility.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Wheel Chock Mobility 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+Wheel Chock Mobility ................................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+The following document is provided as a resource for Caterpillar dealers and customer mine sites. Content was provided 
+by one mine site to be shared with others as a suggested practice. Caterpillar shares it with you as a reference, not a 
+requirement, and has not written, edited, validated, or specifically endorsed the content. Caterpillar reserves the right to 
+add to, delete from, or remove this document entirely at any time in the future. 
+ 
+ 
+ 
+ 
+  
+August 2012 
+1206-1.11-1281 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Wheel chocks used in mining workshops generally weigh more than 20kg (45lbs.).  They normally 
+have a handle to lift or drag along the floor with.  In most instances, they are carried, manually 
+slid along the floor or transported by a wheeled trolley.  The last option of using wheeled trolley 
+involves lifting the wheel chocks on and off. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Utilizing a wheeled trolley to mobilize wheel chocks involves manually lifting the wheel chocks on 
+and off the trolley.  Dragging the wheel chocks involves strain in the back and knees while 
+bending over.  An improved method of mobilizing wheel chocks is the use of wheeled bogeys that 
+are dedicated to the wheel chocks.  Figure 1 shows one such example.  The bogey hooks onto 
+the handle of the wheel chock and picks it up.  It is then wheeled straight to the wheel and placed 
+at the desired spot without any manual handling.  The bogey is then unhooked by pivoting up the 
+push handle and wheeled out of the way. 
+ 
+The handle should be approximately 0.9m to 1.2m (3-4ft) high when in the stationary position.  
+The height will depend on the average height of the personnel on site.  It should be such that an 
+average person can push it along comfortably.  It should be noted that the handle will be pushed 
+down to lift the chock when pushing it along.  Make sure to check that the handle will not contact 
+the machine tire when the handle is pivoted up to release the chock. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Handle height 
+approximately 
+0.9m to 1.2m 
+(3ft to 4ft) 
+Fig 1: Completed wheeled bogey (yellow band under chock is the wear 
+plate of the chock) 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Wheel Chock Mobility 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1206-1.11-1281 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Figure 2 shows a general cut-away drawing (not to scale) to indicate the relationship between the 
+chock handle and the hook-up of the bogey.  The dimensions of the wheeled bogey will depend 
+on the wheel chock being used.  Figures 3 and 4 show the two items unhooked. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig 2: Hook up method 
+ 
+Fig 3: The two items separated 
+ 
+Fig 4: Chock about to be hooked up 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Wheel Chock Mobility 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1206-1.11-1281 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Implementation Steps 
+ 
+The implementation steps should follow a similar order as listed below. 
+i. Locate sample of wheel chock being used on site.  There may be more than one type of 
+wheel chock being used. 
+ii. Make enquiries to wheel chock supplier if they have ready-made transportation bogeys.  If 
+there are, skip to step (v). 
+iii. Research for a local supplier who specialises in light engineering fabrication. 
+iv. Design the dimensions of the wheeled bogey with the supplier. 
+v. Decide on quantity required. 
+vi. Obtain quotations and order. 
+vii. Mark out location in the workshop for the storage/parking of the bogeys. 
+viii. Set out instructions on their use for all workshop personnel. 
+ix. Notify workshop personnel when the product arrives. 
+x. Ensure the wheeled bogeys are used. 
+ 
+ 
+4.0 Benefits 
+ 
+The benefit of using such a tool is mainly for personnel health in reducing bending and twisting 
+injuries caused by manual handling of heavy objects.  A secondary benefit is the increase in labor 
+efficiency while moving wheel chocks to and from parked machines. 
+ 
+ 
+5.0 Resources Required 
+ 
+Minimal resources are required to implement this best practice.  It will require clearly appointed 
+person(s) in the workshop on site to ensure its implementation.  The person(s) in charge of the 
+workshop may be the Maintenance Superintendent or Dealer Project Manager on a MARC site. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+The information for this BP and pictures were obtained from: 
+ 
+WesTrac MARC 
+Boddington Gold Mine 
+ 
+Written by:  Victor Lai 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Wheel Chock Mobility 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1206-1.11-1281 
+Caterpillar Confidential:  GREEN          Page 3 of 3

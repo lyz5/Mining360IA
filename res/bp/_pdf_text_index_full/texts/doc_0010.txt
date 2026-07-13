@@ -1,0 +1,530 @@
+SOURCE: 1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\HMS Mobile Elevated Workshop.pdf
+PAGES: 9
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+August 19 
+1.01-190320-01 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.     
+ Mining.cat.com 
+  
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+HMS Mobile Elevated 
+Workshop 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+HMS Mobile Elevated Workshop ............................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 8 
+6.0 Supporting Attachments / References ............... 8 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ............................................ 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+
+===== PAGE 2 =====
+  
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS Mobile Elevated Workshop 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-190320-01 
+Caterpillar Confidential:  YELLOW          Page 2 of 9 
+ 
+1.0 Introduction  
+ 
+Due to the large size of hydraulic mining shovels, technicians are forced to complete repairs while 
+working at heights. To mitigate this hazard, work platforms can be implemented; however, they 
+require a lot of manual handling before/after the job. A quicker alternative is to bring in a mobile 
+lifting work platform. 
+ 
+This Best Practice describes the introduction of a mobile workshop that can be raised to the 
+working level for technicians to freely walk back and forth between the HMS and the workshop 
+with safety barriers in place. Tools and parts can also be raised with the mobile workshop safely 
+and technicians can move back and forth to the elevated workshop reasonably quickly (faster 
+than climbing back and forth to ground level). 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The mobile elevated workshop described in this document was inspired by the airline industry – 
+Elevated workshops are used to service aircrafts parked at their gates. This solution is used to 
+safely and efficiently transport goods such as: food, drinks, and luggage. 
+ 
+With that in mind, a mobile workshop can be built onto a truck chassis of appropriate size and 
+carrying capacity. A lifting device is also built in to raise and lower the workshop to the appropriate 
+height. There are many companies that will built such a facility according to specifications or 
+modify standard containers to suit. Standard containers are good starting points because of their 
+standard size (8ft x 20ft and 8ft x 40ft), which is standard for a large range of trucks already in 
+existence. Special build companies also build such facilities to the standard container width of 8ft 
+in most instances. 
+ 
+When specifying for such a facility, there are some minimum requirements in relation to 
+regulations and hygiene that must be considered. For example, local legislation must be 
+considered – Therefore, it is important to involve a specialist company for building such a facility. 
+ 
+Minimum requirements to consider when developing this solution: 
+• Truck sized appropriately. 
+• Lifting mechanism must have anti-drop device as per legislation, generally of a hydraulic 
+nature. 
+• Stabilizers fitted at four corners of the truck and has anti-drift devices. 
+• Roller door at the rear or side for parts delivery.  A rising tailgate is also desirable. 
+• Roller door at the front for mechanics entry and exit while working. 
+• Side door for mechanics entry when the mobile workshop is lowered to the bottom. 
+• An extending floor with side safety rails to extend over the truck cab to support against the 
+machine to be worked on.  There should be a provision for this extending floor to rotate a 
+certain amount to allow it to support against the machine snugly without unacceptable 
+gaps. 
+  
+
+===== PAGE 3 =====
+  
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS Mobile Elevated Workshop 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-190320-01 
+Caterpillar Confidential:  YELLOW          Page 3 of 9 
+ 
+• Generator set for electric power supply for lighting any power tools. 
+• Air compressor for pressurized air supply. 
+• Water tank and pump to deliver water to the workshop for washing. 
+• Workbenches with vise. 
+• Parts wash. 
+• Hand wash with soap. 
+• First aid kit. 
+• Lighting. 
+• Power points. 
+• Tools for M&R activities:  PM + other 
+• Tools for troubleshooting, diagnostics, and performance testing.  
+• Cutting stand for filters & screens with method to collect small quantities of waste oil. 
+• Storage / transport locations for backlogs and other maintenance parts 
+• Deliberate considerations for the type of Maintenance & Repair (M&R) work that is 
+expected to be performed in the mobile workshop.  Depending on the M&R activities, this 
+would influence additional tooling considerations fitted in the workshop. 
+  
+ 
+Figures 1 to 8 show an existing setup already in use. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig 1: Front view of the mobile workshop. 
+ 
+Fig 2: Rear view of the mobile workshop.  Note the 
+tailgate, rear roller door and side door. 
+
+===== PAGE 4 =====
+  
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS Mobile Elevated Workshop 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-190320-01 
+Caterpillar Confidential:  YELLOW          Page 4 of 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+Fig 3: Raised workshop.  Note stabilizers at four 
+corners. 
+ 
+Fig 4: Walkway extends out and over the truck cab.  
+Side barrier (yellow) extends out at the same 
+time.  Floor angle is hydraulically adjusted. 
+ 
+Fig 5: Interior rear view of mobile workshop. 
+ 
+Fig 6: Interior front view of mobile workshop. 
+
+===== PAGE 5 =====
+  
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS Mobile Elevated Workshop 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-190320-01 
+Caterpillar Confidential:  YELLOW          Page 5 of 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+For each mine site, their own specific process should be followed with regards to introducing a 
+new tool. However, general implementation steps should be as follows: 
+ 
+a. Review the need of such a tool for the site. 
+b. Develop a business case to justify the expense of such a case.  Make some estimates of 
+the costs or contact some manufacturers for more accurate costs.  Factor in the benefits of 
+saving labor time and downtime. 
+c. Review the concept with all stakeholders and develop an initial specification list. 
+d. Conduct a site-specific risk assessment of using such a mobile workshop on site.  Develop 
+a plan to mitigate any discovered risks. 
+e. Research for a suitable supplier to provide such a mobile workshop.  Request for a quote 
+and specifications. 
+f. Determine if such a truck-based workshop can be registered for traveling on public roads.  
+If possible, determine if registration is required and desired. 
+g. Select suitable base truck in terms of size, capacity and age. 
+h. Finalize the specifications and authorize supplier to build. 
+i. Organize delivery of the completed package to site. 
+j. Conduct a risk assessment on the use of the mobile workshop.  Action on any additional 
+items of concern. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig 7: Generator set in the truck. 
+ 
+Fig 8: Mobile workshop in use. 
+
+===== PAGE 6 =====
+  
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS Mobile Elevated Workshop 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-190320-01 
+Caterpillar Confidential:  YELLOW          Page 6 of 9 
+ 
+k. Develop a set of instructions on the use of the mobile workshop.  These should also 
+include but not limited to: 
+i. When a technician is allowed and not allowed to be inside the workshop. 
+ii. Precautions required to be undertaken before raising and lowering the workshop. 
+iii. Conditions on site that will render the workshop unsafe for use. 
+iv. Method and documents to be used for reporting any malfunctions. 
+v. Safety with accidental opening of doors when the workshop is in a raised position. 
+vi. Safe working load of the workshop. 
+vii. Maximum number of technicians allowed in a raised workshop at any one time. 
+l. Develop a plan for training users and carry out training on the utilization of the workshop.  
+The developed instructions will form part of the training. 
+m. Commission the mobile workshop for work. 
+ 
+ 
+4.0 Benefits 
+ 
+Benefits should include but not limited to the following. 
+ 
+a. Safety in performing service and repair work.  Technicians are less exposed to trips and 
+falls when travelling up and down the stairs of the machine. 
+b. Cost of hiring a mobile work platform. 
+c. Cost of transporting the mobile work platform to and from site and then to and from the 
+machine. 
+d. Mobile work platforms generally do not have side walls and a ceiling.  Tools and toolboxes 
+present a risk when placed on work platforms. 
+e. Additional technicians’ labor in performing a job when they have to carry tools and parts up 
+and down the machine. 
+f. Savings in labor when having to carry components up and down for simpler jobs such as 
+resealing a pump or motor.  These can be performed in the mobile workshop. 
+g. With savings in labor, there is a subsequent reduction in downtime.  This will equate to 
+more production potential. 
+  
+
+===== PAGE 7 =====
+  
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS Mobile Elevated Workshop 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-190320-01 
+Caterpillar Confidential:  YELLOW          Page 7 of 9 
+ 
+ 
+As an example with arbitrary assumptions: 
+ 
+Pick 10 common jobs and develop an average.  An assumption is given below. 
+Assume no mobile work platform is hired. 
+ 
+  Duration of a job = 6 hours 
+  Number of technicians on the job = 2 
+  Times traveled up and down the machine per job = 10 
+  Times traveling up and down saved with mobile workshop = 5 
+  Time taken to travel up and down the machine = 5 minutes 
+  Savings in labor per job (man-hours) = 5 x 5 x 2 = 50 min = 0.83 hr. 
+  Savings in downtime of the machine per job = 5 x 5 = 25 min = 0.42 hr. 
+ 
+  Labor savings for 20 jobs @ $150 per hour = 0.83 x 20 x $150 =  $2,490 
+  Operating hours per year = 6000 hours 
+  Utilization = 80% 
+  Number of major jobs per year per shovel = 20 
+  Savings in downtime per year per shovel = 20 x 0.42 = 8.4 hours 
+  With utilization of 80%, addition production = 12 x 80% = 6.7 hours 
+  Tonnes moved if production is 4000 tonnes per hour = 4,000 x 6.7 = 26,880 tonnes 
+  Assume gold mine with 1:4 strip ratio = 26,880 ÷ 5  = 5,376 tonnes ore 
+  Assume 10 grams of mineral per tonne of ore = 5,376  x 10 ÷ 31 = 1,734 oz gold 
+  Benefit of addition gold with 90% recovery @ $1200/oz = 1,734 x 90% x $1200 = $1.87M 
+   
+The above calculation is only used as an example to show the steps in calculating the benefits of 
+saving any downtime.  Any introduction of the mobile workshop will be subject to its own 
+individual benefits calculation with a different set of assumptions and data.  This shows how the 
+production opportunities far outweighs the savings in labor. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 8 =====
+  
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS Mobile Elevated Workshop 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-190320-01 
+Caterpillar Confidential:  YELLOW          Page 8 of 9 
+ 
+5.0 Resources Required 
+ 
+Such a project will require a champion to develop the specifications for build.  Factors to consider 
+when developing the specifications will consist of at least the following. 
+• Maximum height required, determined by machines to be worked on. 
+• Desired size of workshop. 
+• Equipment to be carried in the workshop. 
+• Capacity of the setup. 
+• Requirements for road use registration. 
+• Size of base truck. 
+• Electrical appliances to be used. 
+• Lighting required. 
+• Additional external lighting for night shift. 
+• Quantity of water for washing. 
+• Interlocks for exit doors when workshop is in elevated position. 
+• Method of extending the platform floor over the truck cab. 
+• Method of extending the guard rails when platform floor is extended. 
+• Method of angling the platform to butt against machine. 
+• Location of safety items such as first aid kit, eye wash, ear plugs, etc. 
+• Speed of raising and lowering. 
+• Any required heating or cooling. 
+• Location of control station. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 9 =====
+  
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS Mobile Elevated Workshop 
+DATE 
+8/1/2019 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-190320-01 
+Caterpillar Confidential:  YELLOW          Page 9 of 9 
+ 
+8.0 Acknowledgements 
+ 
+Existing unit built for site. 
+Maintenance Superintendent:   
+Newcrest Telfer 
+Western Australia, Australia 
+ 
+WesTrac MARC Team 
+Telfer site 
+Western Australia, Australia 
+ 
+Written by: 
+Victor Lai 
+Equipment Management Consultant 
+Lai_victor_k@cat.com

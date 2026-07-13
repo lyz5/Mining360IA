@@ -1,0 +1,258 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\R1300G Final Drive Bolt Spinning Prevention Fixture.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2016  
+1511-4.03-1402  
+  
+ 
+    
+    
+ 
+ 
+MINING DEALER BEST PRACTICE 
+R1300G Final Drive Bolt 
+Spinning Prevention 
+Fixture 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC)  
+ 
+MARC  
+Management 
+ 
+ 
+ 
+R1300G Final Drive Bolt Spinning Prevention Fixture 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 3 
+5.0  Resources Required .......................................... 3 
+6.0  Supporting Attachments / References ............... 4 
+7.0  Related Best Practices ...................................... 4 
+8.0  Acknowledgements ........................................... 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits i ncluded in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practice s.” Caterpillar makes no representation or warranty 
+about the information contained in this document or t he products referenced herein. Caterpillar welcomes add itional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+R1300G Final Drive Bolt Spinning Prevention Fixture 
+DATE 
+6/7/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1511-4.03-1402  
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+1.0 Introduction  
+ 
+Borusan Makina Kazakhstan (BMK) has designed a fixture that prevents the bolts from spinning 
+in R1300G final drives during their multiple tightening. 
+ 
+Previously the BMK mining project teams constantly faced the problem of the bolts spinning in 
+R1300G final drives during tightening. To remedy this, they welded those bolts to the surface of 
+the final drive. When this final drive came to the CRC for overhaul, the CRC technicians had to 
+clean the surface of the final drive from welding. Thus, the spinning bolts have become the 
+common challenge both for the mining and for the CRC people. 
+ 
+That’s why the CRC has created the fixture that allows everybody to forget about this concern. 
+The application of this fixture enables the mining technicians to easily tighten those bolts during 
+the operation and has saved the CRC people from cleaning the surface of the final drive from 
+welding during the overhaul. 
+ 
+At time of publishing, Borusan Makina Kazakhstan has reworked 16 hubs and have not 
+experienced any failures in the fields for nearly a year. 
+ 
+  
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+R1300G Final Drive Bolt Spinning Prevention Fixture 
+DATE 
+6/7/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1511-4.03-1402  
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+2.0 Best Practice Description 
+ 
+This fixture consists of 2 x Locking semi-rings. These semi-rings have the holes for the bolt heads 
+that lock the bolts. They are bolted to the final drive surface with smaller bolts (10 pcs).  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Semi-rings with locking holes for R1300G Final Drive Bolts (P/N 308-9259). 
+  
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+R1300G Final Drive Bolt Spinning Prevention Fixture 
+DATE 
+6/7/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1511-4.03-1402  
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+3.0 Implementation Steps 
+ 
+R1300G Final Drive Bolt Spinning Prevention Fixture is in use . 
+ 
+1) Bolt 2 x Locking Semi-rings to the surface of th e final drive.  
+2) Install CAT Bolts into to the final drive. 
+Note: Loctite 640 is applied to the smaller bolts.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+R1300G Final Drive Bolt Spinning Prevention Fixture is in use 
+ 
+  
+4.0 Benefits 
+ 
+• Prevention of the final drive bolts from spinning during their tightening. 
+• There is no need to clean the surface of the final  drive from welding during the overhaul in 
+the CRC. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Machine Shop. 
+• Cat Bolts – P/N 308-9259 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+R1300G Final Drive Bolt Spinning Prevention Fixture 
+DATE 
+6/7/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1511-4.03-1402  
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+Editor’s note:  308-9259 bolt was a service replacement bolt with an anti-corrosion coating that was 
+considered to be the cause of the slipping/spinning.  It has been reverted back to use the original 1V-
+3323 bolts. 
+ 
+6.0 Supporting Attachments / References 
+ 
+The semi-ring’s drawing is attached. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A. 
+ 
+ 
+8.0 Acknowledgements 
+ 
+The idea of creating & implementing this Best Practice belongs to: 
+ 
+Yevgeniy MARSHAL   Bekzat SULEIMENOV 
+Machine Shop Team Leader  Machine Shop Designer 
+Borusan Makina Kazakhstan LLP  Borusan Makina Kazak hstan LLP 
+Ymarshal@borusan.com      bsuleimenov@borusan.com    
+ 
+ 
+      This Best Practice was written by:  
+Sergey KOSSENOK   Gulnaz MANSUROVA 
+Milling Machine Operator  CRC Process Engineer 
+Borusan Makina Kazakhstan LLP  Borusan Makina Kazak hstan LLP 
+skossenok@borusan.com    gmansurova@borusan.com  
++7 (701) 951 98 14

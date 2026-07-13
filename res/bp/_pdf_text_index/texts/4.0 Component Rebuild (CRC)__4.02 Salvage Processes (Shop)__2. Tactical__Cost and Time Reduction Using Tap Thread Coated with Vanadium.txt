@@ -1,0 +1,172 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Costs and Time Reduction 
+Using Tap Thread Coated 
+with Vanadium 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Costs and Time Reduction Using Tap Thread Coated 
+with Vanadium ........................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+April 2015 
+1501-4.02-1365 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+ 
+Improved threading tool allows a considerable reduction of time and costs in cleaning blocks, 
+implemented in the machine shop of Ferreyros. 
+ 
+2.0 Best Practice Description 
+ 
+The focus of this Best Practice is to reduce the time and costs for cleaning waste such as grease, 
+oxides, Lock-tite. This improvement occurs as a result of the high cost that generated use 
+manuals HSS Taps Thread, increasing the cleaning time of blocks (See picture 1 and 2). 
+ 
+ 
+ 
+Picture 1. Cleaning thread 
+ 
+ 
+Picture 2. Tap identification 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Costs and time reduction using tap thread coated with 
+Vanadium 
+DATE 
+5/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1365 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+               
+ 
+Picture 3. Summary of results. 
+ 
+3.0 Implementation Steps 
+ 
+Before implementing this type of threading taps, cleaning time was almost twice that obtained with 
+this implementation. (See picture 5) 
+We obtained a cost reduction of 34.83%. 
+ 
+           
+                         Picture 4. Reduction of time                                 Picture 5. Cost reduction 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Costs and time reduction using tap thread coated with 
+Vanadium 
+DATE 
+5/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1365 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+4.0 Benefits 
+ 
+• Reduced time in cleaning Block's by 50%. 
+• Cost reduction by 34.83% 
+ 
+5.0 Resources Required 
+ 
+• Threading OGS – EDP Number: 2832408 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Name     Sandro Falcon D. 
+E mail     sandro.falcon@ferreyros.com.pe 
+ 
+Recognition: 
+ 
+Team:                  Miguel Mauriola / Operations Support Chief 
+                        Rafael Volta / Machine Chief 
+               Romulo Olarte / Machine Supervisor 
+Sponsor:              Luis Aguilar / Manager Machine Shop 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Costs and time reduction using tap thread coated with 
+Vanadium 
+DATE 
+5/12/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1365 
+Caterpillar Confidential:  GREEN          Page 3 of 3

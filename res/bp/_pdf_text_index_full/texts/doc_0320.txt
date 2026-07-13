@@ -1,0 +1,377 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.04 CRC Management\1. Strategic\Improving CRC Component Turnaround Time.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+September 2006  
+0906-4.5-1013  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Improving CRC Rebuild 
+Turnaround Time 
+ 
+Application  Maintenance  Site 
+Management  
+Component 
+Rebuild Safety MARC 
+Management  
+ 
+ 
+ 
+ 
+Improving CRC Rebuild Turnaround Time ................ 1
+ 
+1.0  Introduction ....................................................... 3 
+2.0  Best Practice Description .................................. 3 
+3.0  Implementation Steps ........................................ 6 
+4.0  Benefits ............................................................. 6 
+5.0  Resources Required .......................................... 6 
+6.0  Supporting Attachments .................................... 7 
+7.0  Related Best Practices ...................................... 7 
+8.0  Acknowledgements ........................................... 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Improving CRC Rebuild Turnaround Time 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0906-4.5-1013  
+Caterpillar Confidential:  YELLOW          Page 2 of 6 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Improving CRC Rebuild Turnaround Time 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0906-4.5-1013  
+Caterpillar Confidential:  YELLOW          Page 3 of 6 
+1.0 Introduction  
+ 
+The time required by a Component Rebuild Center to complete a major component rebuild in 
+support of Mining fleets is a key performance metric that has substantial impact on CRC 
+financials.  The turnaround time is defined as the time a component enters a shop for rebuild to 
+the time it is ready to ship.  Managing and reducing turnaround time requires high efficiency, 
+proper tooling and equipment, solid processes, and smooth coordination and planning.  Since 
+there are many variables to consider and possibly many root causes of delays to consider, efforts 
+to improve turnaround time are best addressed as a 6Sigma project.  This Best Practice contains 
+information and key findings gathered from several dealers who have used 6Sigma to reduce 
+CRC component turnaround time. 
+ 
+Benchmarks for a turnaround time target goals contained in 
+(archived)  CRC Develop Guide 
+(SEBF8813),  was 20 days for 3500 series engines, and 10 days for all other components.  These 
+goals can vary depending on regional factors such as time to order and receive parts, machine 
+shop capability and cycle time, number of shifts, and other factors. 
+ 
+2.0 Best Practice Description 
+ 
+Improving Component Turnaround Time makes an excellent 6Sigma project (DMAIC). 
+ 
+The first step in improving CRC component turnaround time is to define the "as is" baseline.  This 
+means mapping the current process from the time a component enters the CRC to the time the 
+component is ready to ship.  Time spent in each major step is documented. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Improving CRC Rebuild Turnaround Time 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0906-4.5-1013  
+Caterpillar Confidential:  YELLOW          Page 4 of 6 
+(Process-Mapping contd.) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Typically, the component processes documented and measured include engines, transmissions, 
+wheel stations, torque converters, and differentials.  Other components may be also included and 
+engine turnaround time is often measured by engine family. 
+ 
+The major steps in the process include:  
+• Planning & Scheduling 
+• Build Kits 
+• Receiving 
+• Pre-Wash 
+• Disassemble 
+• Evaluate 
+• Quote (if required) 
+• Machine Shop Evaluation and Salvage 
+• Assemble 
+• Test 
+• Dispatch  
+ 
+Once the process is mapped and time spent in each step is documented, the Define  and 
+Measure  steps of the 6Sigma process are essentially complete. 
+ 
+ 
+The next step is Analyze . 
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Improving CRC Rebuild Turnaround Time 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0906-4.5-1013  
+Caterpillar Confidential:  YELLOW          Page 5 of 6 
+ 
+The purpose of the Analyze  phase is to identify delays and interruptions in the rebuild process. 
+Root causes of the delays are then identified and solution options are evaluated .  
+ 
+Here are examples of some of the delays and solutions dealers have identified. 
+ 
+• Waiting for the machine shop to complete salvage w ork can take 10 or more days for major 
+parts such as engine blocks, wheel station spindles, crankshafts, etc.  
+o Solution 1:  The machine shop purchased an invento ry of exchange piece parts. If a key 
+part, such as an engine block, took more than 5 days to salvage and turned more than 
+10 times a year, an "exchange" part was stocked. 
+o Solution 2: A machine shop parts inspector/evaluat or was assigned to the CRC 
+disassembly and evaluation area to inspect and assess any needed machine shop work 
+as the component was being disassembled. He would schedule and coordinate the 
+work. 
+ 
+• The "quotation" process and getting customer work order approval can cause substantial 
+delays. 
+o Solution 1: As much as possible, develop flat rate s with pre-approved work orders. 
+o Solution 2: Establish processes with the customer to accelerate the approval processes 
+when required to a limit of no more than 3 days. 
+ 
+• Common "waiting" time lost. 
+• Waiting for information.   
+o Solution:  Install wireless SIS terminals in the s hop.  One terminal per every 2 adjacent 
+bays minimum. 
+• Waiting for parts.   
+o Solution:  Establish must do parts kits for common  jobs. For planned component 
+rebuilds, schedule and pre-open a work order so that must do parts are pre-positioned 
+in the shop. Parts are delivered directly to the work stations. Mechanics do not have to 
+run for parts. 
+• Looking for parts or tools. 
+o Solution: Organized parts storage racks / carts wi th assigned spots. Required special 
+tools permanently at the work station. 
+ 
+Other common issues and solutions include more efficient tooling, such as cleaning equipment or 
+component rebuild/ rollover stands and improved material handling. 
+ 
+Improving and managing component turnaround time requires high standards of efficiency and 
+well-designed processes. It has substantial impact on the financial performance of a service 
+operation and the optimum utilization of assets.  See attached PowerPoint presentation of dealer 
+6Sigma project summary. 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Improving CRC Rebuild Turnaround Time 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0906-4.5-1013  
+Caterpillar Confidential:  YELLOW          Page 6 of 6 
+3.0 Implementation Steps 
+ 
+Due to the potential of multiple root causes for component rebuild process bottlenecks, the issue 
+makes a good 6Sigma project (DMAIC).  The key steps are: 
+• Define:  Create a CRC process map. 
+• Measure:  Determines the days spent in each major step of the rebuild process. 
+• Analyze:  Identify unnecessary bottlenecks and cau ses for delays. 
+• Improve:  Change / modify processes 
+• Control:  Deploy and measure improvement. 
+ 
+4.0 Benefits 
+ 
+Major component rebuild turnaround time has substantial impact on a service operation financial 
+performance.  The experiences of several dealers who have successfully improved turnaround 
+time show lowered costs, better use of assets, better quality, improved capacity, lower exchange 
+component inventory requirements, and improved cash flow.  The following are examples of 
+reported benefits: 
+• Average labor hours spent per component reduced 20 % - 35%, thus reducing expenses. 
+• By reducing turnaround time, one dealer cancelled plans for a $1.5M shop expansion.  
+Capacity improvement was able to handle workloads without the need to add shop floor 
+space and equipment. 
+• Another dealer was able to reduce the size of thei r exchange component inventory 
+supporting 793 fleets by 20% due to improved shop turnaround. 
+• Time from first work to invoice improved along wit h turnaround time, creating a cash flow 
+improvement. 
+• Several dealers report lower re-do costs when rebu ilds flow smoothly without interruptions 
+and delays. 
+ 
+5.0 Resources Required 
+ 
+Improvements to CRC component turnaround time may be impacted by any facet of service 
+operations including tooling, facility size, layout, material salvage, part inventories, technician 
+availability, etc. Solutions to improve turn around times, which may require an investment should 
+best be considered on a cost versus benefit basis. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Improving CRC Rebuild Turnaround Time 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0906-4.5-1013  
+Caterpillar Confidential:  YELLOW          Page 7 of 6 
+6.0 Supporting Attachments  
+ 
+Refer to 
+Component Turnaround Time, MS- Powerpoint presentation included in the 
+“Attachments”  section of this file. (Click on “Attachments” in this pdf file) 
+ 
+ Slides are from an actual 6Sigma project, launched  to improve CRC Component 
+Turnaround Time. 
+ 
+CRC Component Turnaround Time 
+ 
+ 
+Component Turnaround Time.ppt 
+ 
+7.0 Related Best Practices 
+ 
+Utilizing Exchange Program for Slow-Turn Salvaged Parts to Improve CRC TAT     1006-4.2-1030 
+Labor Efficiency Lowers CRC Costs  0207-4.5-1062 
+Using Cameras to Conduct CRC Process Reviews  0408- 4.1-1117 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was authored by: 
+ 
+Dale Brehm 
+Caterpillar Global Mining 
+6 Sigma Black Belt

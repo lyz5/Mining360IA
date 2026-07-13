@@ -1,0 +1,693 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Kits for Dynamometer Test 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Kits for Dynamometer Test ........................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 9 
+5.0 Resources Required ........................................ 10 
+6.0 Supporting Attachments / References ............. 10 
+7.0 Related Best Practices .................................... 10 
+8.0 Acknowledgements .......................................... 11 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+July 2014 
+1408-4.01-1353 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+The Product Support Division of Ferreyros is continuously searching for ways to optimize the cycle 
+time of component rebuilds in the CRC using CPS processes.  Improving component turnaround 
+time increases efficiencies, capacity, and lowers cost resulting in higher levels of customer 
+satisfaction.  
+ 
+In the dyno test process, there was an opportunity to improve the set-up times, ordering process, 
+and developing standardized set up kits, thus avoid unnecessary time lost looking for these 
+materials. 
+ 
+2.0 Best Practice Description 
+ 
+CRC Dynamometer had their hoses and accessories storage in one place but without 
+identification. That process generates excessive search times to find connecting tooling required.  
+According to the measurement performed in December, the time to look for and hook up 
+accessories was out of standards. 
+ 
+To remove the waste mentioned in this area, accessory parts kits were created for each model of 
+engine in order to install the engine to the dyno, color-coded for identification, and stored 
+organized by engine model. 
+  
+3.0 Implementation Steps 
+ 
+I. The Kickoff Meeting and formation team. 
+ 
+ 
+ 
+Figure 1: Team work 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Kits for Dynamometer Test 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1408-4.01-1353 
+Caterpillar Confidential:  YELLOW         Page 1 of 11 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+II. Determine frequency of engine models tested in dynamometers (Pareto).  
+• Historical data was used to determine the most frequent engine models.  
+• Then, an engine classification was performed to identify subclasses of engine.  
+• Finally, a Pareto analysis was made to focus on the 80% most common engines. 
+ 
+ 
+Figure 2 – Pareto of engines. 
+ 
+ 
+III. Quality circle to determine the list of kits to develop.  
+Quality circle was made with the team to determine the list of kits required: hoses, exhaust 
+pipes, thermocouples and connectors. 
+ 
+a. Water hoses: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 3 –Kits of water hoses. 
+ 
+Engines entering dyno - 2013 
+Sala means “Dyno Room” 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Kits for Dynamometer Test 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1408-4.01-1353 
+Caterpillar Confidential:  YELLOW         Page 2 of 11 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+b. Exhaust Pipes: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 4 –Kits of exhaust pipes. 
+ 
+c. Hoses:: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 5 –Kits of dialysate and Fuel hoses 
+ 
+ 
+d. Thermocouples and connectors (make sure thermocouples are properly calibrated): 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 6 –Kits of thermocouples and connectors  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Kits for Dynamometer Test 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1408-4.01-1353 
+Caterpillar Confidential:  YELLOW         Page 3 of 11 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+IV. Implementation: 
+ Creating kits.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 8 –Hose Kit  N°3 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 9 –Exhaust Pipes Kit 3500 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Kits for Dynamometer Test 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1408-4.01-1353 
+Caterpillar Confidential:  YELLOW         Page 4 of 11 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                        Figure 10 – Thermocouple Kit 3412-3176                         Figure 11 – Kit of dynamometer 3 
+ 
+ 
+ 
+ Identification.  Parts color coded. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 12 – Identification of hoses 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Code 
+Color kit 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Kits for Dynamometer Test 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1408-4.01-1353 
+Caterpillar Confidential:  YELLOW         Page 5 of 11 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ Fabricated kit baskets.  
+Baskets that were designed with the help of technicians for proper storage of hoses and 
+accessories for each type of engine were manufactured. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 13 – Baskets were designed by technicians  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Kits for Dynamometer Test 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1408-4.01-1353 
+Caterpillar Confidential:  YELLOW         Page 6 of 11 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 14 – Identification and location of Kits in warehouse 
+ 
+ 
+ 
+ 
+ 
+ 
+Identification 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Kits for Dynamometer Test 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1408-4.01-1353 
+Caterpillar Confidential:  YELLOW         Page 7 of 11 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ Content list / Inventory of each kits. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 15 – Kits inventory 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Kits for Dynamometer Test 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1408-4.01-1353 
+Caterpillar Confidential:  YELLOW         Page 8 of 11 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+V. Closing.  
+Employees were recognized by the company in the journal "Image".  
+In an exclusive page is described the great work done and the benefits generated for the 
+company. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 16 – Journal “Image” 
+ 
+ 
+4.0 Benefits 
+♦ Excess and duplication of accessories and hoses were removed.  
+♦ Search time and installing component for testing was reduced.  
+♦ Excessive time to look for and installation of accessories (about 20% of the complete test) 
+were removed. 
+♦ Work areas are neat and clean 
+♦ Appropriate storage of hoses and accessories, keeping them and avoid being 
+contaminated.  
+♦ Using ergonomics principles, ways of working were improved 
+♦ Reduced test time by WO. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Kits for Dynamometer Test 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1408-4.01-1353 
+Caterpillar Confidential:  YELLOW         Page 9 of 11 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+5.0 Resources Required 
+• Project sponsor 
+• Project owner 
+• CPS team 
+• Dynamometer technician  
+• Dealer involvement for contamination control, special tooling and procedures advice. 
+• Shelving, racking, labeling, paint etc…  
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 17 – Protection of baskets 
+EDITOR’S NOTE:  Make sure the stretch film used is highly durable to resist tears and allow debris 
+into the container.  Installing caps on the hoses is a good idea for extra protection. 
+ 
+ 
+ 
+7.0 Related Best Practices 
+N/A 
+ 
+ 
+ 
+ 
+ 
+Baskets protected with 
+stretch film 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Kits for Dynamometer Test 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1408-4.01-1353 
+Caterpillar Confidential:  YELLOW         Page 10 of 11 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+Victor Espinosa 
+ 
+ 
+ 
+ 
+ 
+Recognition: 
+ 
+Sponsor:             Carlos Dongo / CRC Manager 
+Owner:                Carlos Silva/CRC Manager  
+Team:                   
+Patricia Eguchi/CPS BB 
+Victor Espinosa / CPS BB 
+                   Miguel Rosado / CPS GB 
+                   Daniela Zuzunaga / CPS GB 
+                   Carlos Cossio / Production Monitor 
+                   Fernando Moreno / Supervisor 
+                   Jorge Yacolca / Supervisor 
+                   Alberto Infante / Technical Communicator  
+                   Marco Palacios / Technician 
+                   Pedro Chirinos / Technician  
+                   Abel Ramirez / Technician 
+                   Adolfo Huamaní / Technician  
+                   Jorge Rojas / Technician 
+                   Alex Expinoza / Technician 
+        
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Kits for Dynamometer Test 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1408-4.01-1353 
+Caterpillar Confidential:  YELLOW         Page 11 of 11

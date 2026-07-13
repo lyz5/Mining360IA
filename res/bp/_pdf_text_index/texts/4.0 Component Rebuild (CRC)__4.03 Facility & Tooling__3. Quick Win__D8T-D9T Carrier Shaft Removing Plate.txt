@@ -1,0 +1,138 @@
+===== PAGE 1 =====
+March 2021 
+4.03-210316-2
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+MINING DEALER BEST PRACTICE 
+D8T-D9T Carrier Shaft 
+Removing Plate 
+Maintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+D8T-D9T Carrier Shaft Removing Plate .................... 1 
+1.0 Introduction ....................................................... 2 
+2.0 Best Practice Description .................................. 3 
+3.0 Implementation Steps ....................................... 3 
+4.0 Benefits ............................................................. 4 
+5.0 Resources Required ......................................... 5 
+6.0 Supporting Attachments / References .............. 5 
+7.0 Related Best Practices...................................... 5  
+8.0 Acknowledgements ........................................... 5 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+D8T-D9T Carrier Shaft Removing Plate
+DATE 
+3/16/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210316-2 
+Caterpillar: Confidential Yellow Page 2 of 5 
+1.0 Introduction  
+The final drive disassembly process includes disassembly of the planetary carrier. In the 
+illustration below, which provides information from CAT Service Information System, the fifth 
+step of the process says the shaft should be removed from the planetary carrier. The shaft 
+should be removed from the planetary carrier by using tool B and a suitable press.  
+However, the underside of the planetary carrier, which is just below the planetary gears, is very 
+thin and might get scratched and damaged when the press is applied. The planetary carrier 
+doesn’t stay stable on the ground and kicks back when the press is applied. This might not 
+sound like an important issue at first glance, but it can be very harmful for the technician. 
+To find a solution for this problem, one of the Powertrain and Hydraulic Service Engineers at 
+Borusan Makina ve Güç Sistemleri has designed a plate that gives support to the underside of the 
+planetary carrier. Thanks to this plate, the planetary carrier doesn’t kick back and is protected from 
+any kind of damage. 
+There is a video in the attachments in which you can see the kick back of the planetary carrier 
+when the plate is not used. Please watch it with sound on and give special attention to seconds 
+four through six. The name of the attachment is “Planetary Carrier_Kicking Back”. 
+
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+D8T-D9T Carrier Shaft Removing Plate
+DATE 
+3/16/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210316-2 
+Caterpillar: Confidential Yellow Page 3 of 5 
+2.0 Best Practice Description  
+The plate is functional and has holes in it just under the planetary gears, so that it doesn’t 
+receive any force from the press when the press is applied to the shaft. The plate is almost twice 
+as thick as the underside of the planetary carrier, so that it keeps the planetary carrier from 
+kicking back. Steel (St-52) was used to fabricate the plates.  
+Below is the manufactured plate. In the attachments you can find engineering prints for both a 
+three hole plate, for the D9T, and the four hole plate, for the D8T. Implementation of the plate 
+into the disassembly process is very easy. 
+3.0 Implementation Steps 
+1. Place the plate under the planetary carrier and apply the suitable press. Pay special
+attention to the hole alignment; the holes should be located just under the planetary
+gears.
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+D8T-D9T Carrier Shaft Removing Plate
+DATE 
+3/16/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210316-2 
+Caterpillar: Confidential Yellow Page 4 of 5 
+4.0 Benefits  
+ Protects planetary carrier from damages such as scratching and breaks;
+ Increases customer satisfaction;
+ Reduces the risk of occupational-work accident for the technician.
+
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+D8T-D9T Carrier Shaft Removing Plate
+DATE 
+3/16/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210316-2 
+Caterpillar: Confidential Yellow Page 5 of 5 
+5.0 Resources Required  
+Item Cost 
+Material $60 
+Labor $250 
+Total $310 
+6.0 Supporting Attachments / References  
+Planetary Carrier_Kicking Back.mp4 
+D8T-D9T Carrier Shaft Removing Plate_Engineering Print_3hole.pdf 
+D8T-D9T Carrier Shaft Removing Plate_Engineering Print_4hole.pdf 
+7.0 Related Best Practices  
+N/A. 
+8.0 Acknowledgements  
+This Best Practice was written by: 
+Mustafa Tuzcu 
+CRC Engineer Intern 
+Borusan Makina ve Güç Sistemleri 
+This Best Practice was designed by: 
+Aycan Ulu 
+CRS Workshop Engineer 
+Borusan Makina ve Güç Sistemleri 
+This Best Practice and project were supported by: 
+Ömer Emre Demirkale 
+CRC Manager 
+Borusan Makina ve Güç Sistemleri

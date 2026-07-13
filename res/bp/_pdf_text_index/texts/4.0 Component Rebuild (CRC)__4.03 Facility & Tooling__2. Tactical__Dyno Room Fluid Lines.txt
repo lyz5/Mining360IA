@@ -1,0 +1,227 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+September 2006  
+0906-4.4-1014  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Dyno Room Fluid Lines 
+ 
+Application  Maintenance  Site 
+Management  
+Component 
+Rebuild Safety MARC 
+Management  
+ 
+ 
+ 
+ 
+Dyno Room Fluid Lines ............................................. 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 4 
+5.0  Resources Required .......................................... 4 
+6.0  Supporting Attachments & References ............. 4 
+7.0  Related Best Practices ...................................... 4 
+8.0  Acknowledgements ........................................... 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION,  
+Dyno Room Fluid Lines 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0906-4.4-1014  
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+1.0 Introduction  
+ 
+Many engine dynamometer test cells are cluttered with an array of fluid hoses routed to/from the 
+cell wall, the cooling column(s), and across the floor to the engine.  Large hoses lying across the 
+floor interfere with mechanics and other test cell personnel activities and hamper access to the 
+engine during and after test.  An effective solution is to install fluid supply lines under the dyno 
+room floor to terminate at a central fluid station next to tested engine.   
+ 
+2.0 Best Practice Description 
+ 
+ 
+ 
+An engine dynamometer test cell with hoses routed under the floor 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Floor 
+Plate 
+Central 
+Fluid 
+Stations  
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION,  
+Dyno Room Fluid Lines 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0906-4.4-1014  
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+ 
+3.0 Implementation Steps 
+ 
+Note: Reference Caterpillar publication, 
+(archived) SEBD0642-02,  Engine Dynamometer 
+Facilities , and/or the Dyno Supplier, for specific test cell utility requirements before changing 
+facility arrangements. 
+ 
+This practice is relatively simple and inexpensive to implement. 
+ 
+1. The first step would be to identify the ideal sp ot along side the typical test engines to locate 
+a central fluid station. Some dealers have installed several central fluid stations to match 
+the size of different engine models. 
+ 
+2. Identify the ideal spot to mount the cooling col umn against the test cell wall.   
+ 
+3. Next, design the best trough routing for the flu id supply lines from the source to the central 
+fluid station. Measure the distance and fabricate the fluid lines to be installed in the floor.  
+Insure routing plan will not cause air pockets in the lines. 
+ 
+4. Construct a shallow channel in the floor deep en ough to contain the fluid lines and still be 
+easy to access for maintenance or repair. Install a waste drain in the trough if possible.  
+Design the channel so that a removable steel plate or grate can be installed to cover the 
+channel and fluid lines.  Grate or plate should sit flush with the shop floor so that it does 
+not protrude or recess from the floor level. 
+ 
+5. Construct the cooling column support.  If it mus t be mounted on the floor, use the stand for 
+storage that will not collect floor dirt and need to be cleaned underneath.  Install the 
+hoses/lines that will lead to the cool water source/discharge and to the engine connections. 
+ 
+6. Design and fabricate a central fluid station.  T he fluid station is usually a simple metal box 
+with permanent fluid supply lines entering the box and attached to quick connect fittings.  It 
+is also advisable to install a shut off valve for each fluid supply line.   
+ 
+7. Fabricate fluid hoses with quick connect couplin gs to provide fluid from the central fluid 
+station(s) to the engine.  Length/size needed, will vary by engine model. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION,  
+Dyno Room Fluid Lines 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0906-4.4-1014  
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+4.0 Benefits 
+ 
+1. Security .  With fluid hoses under the floor, there is less chance of worker injury from a trip 
+and fall incident.  Paths around the dyno/engine are unobstructed for quick personnel 
+movement during standard duties and for emergency response/evacuation. 
+ 
+2. Efficiency.    With the fluid supply line under the floor, technicians have easy access to the 
+engine for installation, test and adjustment, and removal.  The process is more efficient when 
+there are no large hoses or cooling columns in the way to hamper movement.  The cooling 
+tower to cooling column hoses would be permanently attached, and only the engine to cooling 
+column hoses need adapter connections.  This would reduce cooling system connection 
+adapters.   
+ 
+3. Clean up.  With central fluid stations and lines routed under the floor, the chance of spillage is 
+lower and clean up time significantly reduced.  Connection spillage is often contained/drained 
+through the trough if drains are installed.  Wall mounted cooling columns eliminate some 
+connections and do not have to be moved to clean under them. 
+ 
+5.0 Resources Required 
+ 
+The investments required would involve constructing an in-floor trough to route fluid supply/return 
+lines from the cooling column and fuel supply to a central fluid station adjacent to the tested 
+engine. The trough in the floor would require a metal grate or plate cover. The fluid station is a 
+simple panel of quick connect fittings for the fuel and coolant supply lines.  Cooling columns 
+would be wall-mounted in the engine front end of the test cell.  Total investment is usually under 
+$10,000 US. 
+ 
+6.0 Supporting Attachments & References  
+ 
+See also: 
+Caterpillar publication  
+(archived) SEBD0642-02  Engine Dynamometer Facilities 
+ 
+7.0 Related Best Practices 
+ 
+Remote Control Cameras in Dyno Room Improve Safety  
+0408-5.1-1118 
+Plug and Play System for Engine Readiness in the Dynomometer 1605-4.03-1435 
+Connection Bypass on Main Cooling for 3500 Engine Test   1605-4.03-1434 
+Kits for Dynamometer Test       1408-4.01-1353 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was authored by: 
+ 
+Dale Brehm 
+Caterpillar Global Mining 
+6 Sigma Black Belt

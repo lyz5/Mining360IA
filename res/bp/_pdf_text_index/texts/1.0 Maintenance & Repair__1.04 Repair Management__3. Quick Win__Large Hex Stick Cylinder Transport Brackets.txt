@@ -1,0 +1,260 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2014 
+1311-1.04-1328 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Large Hex Stick Cylinder 
+Transport Brackets 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Large Hex Stick Cylinder Transport Brackets ............ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Large Hex Stick Cylinder Transport Brackets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.04-1328 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction  
+ 
+When the large mining excavators are being assembled and disassembled during build-up and 
+dismantled transportation, the stick cylinders are generally left to hang loose by the barrel end 
+being pinned to the boom.  They tend to rest on the hydraulic and grease lines.  This can create a 
+situation for damage to the hydraulic and grease lines on the top of the boom when bounced 
+around.  The transport brackets described in this Best Practice helps in preventing the cylinders 
+from hitting the lines and thus avoid damage to the hydraulic lines and grease lines. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+During assembly of the new machine, the boom and stick cylinders are generally attached to the 
+boom first before the whole unit is lifted up to be attached to the upper structure.  This reduces the 
+working height if the cylinders were to be fitted after the boom alone was fitted first.  The boom has 
+lugs welded on the side for attaching the boom cylinders.  The stick cylinders do not have any 
+securing mechanisms.  Figure 1 shows the boom assembled and ready for attaching to the upper 
+structure.  The boom is also removed in this manner when certain repairs are performed.  Such 
+repairs would include boom pin/bush replacements and boom repairs.  The boom can also be 
+removed in this manner for transportation due to weight restrictions.  Figure 2 shows the top 
+surface of the boom where hydraulic lines and grease lines are subject to crushing potential if the 
+stick cylinders are not restrained. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+A dealer had made brackets to restrain the stick cylinders after installing into the boom.  The stick 
+cylinders are then ready for connection to the stick after installation of the boom but will not be 
+loose during assembly.  Figure 3 shows a clearer view of the bracket in use on the left hand side of 
+the boom.  The brackets rest on the boom by the cylinder weight and the cylinders are restrained 
+from sideway movements by the cylinder pins at the barrel ends.   
+ 
+Fig 1: Boom with assembled boom and stick cylinders 
+and ready for attaching to upper structure. 
+ 
+Fig 2: Potential crushing incidents of hydraulic and 
+grease lines by unrestrained stick cylinders. 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Large Hex Stick Cylinder Transport Brackets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.04-1328 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 4 shows a table of approximate weights and outside diameter of the stick cylinders for three 
+different models.  These figures are for reference when fabricating the brackets.  Figure 5 is a 
+drawing with indicative dimensions for a 6060 Hex. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig 3: Bracket in use Fig 4: Tabulated stick information. 
+Stick Cylinders 
+Hex Model Approx 
+Weight 
+(kg) 
+Approx OD 
+(mm) 
+6060 3900 420 
+6040 3000 390 
+6030 3000 370 
+ 
+ 
+Fig 5: General drawing for 6060 Hex bracket as an indication 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Large Hex Stick Cylinder Transport Brackets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-1.04-1328 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+ 
+3.0 Implementation Steps 
+ 
+1. Review delivery orders and available machines in territory or site. 
+2. Determine models required. 
+3. Investigate local legislations and regulations for supporting tools.  Follow requirements if any. 
+4. Determine final dimensions from existing machines on site. 
+5. If there are no existing machines, make final dimensions when components arrive. 
+6. Fabrication brackets. 
+ 
+ 
+4.0 Benefits 
+ 
+1. Safety with more secure stick cylinders. 
+2. Cost savings in parts and labor by preventing accidental damage to hydraulic and grease 
+lines, and mounting brackets on the top of boom. 
+3. Applies anytime the boom is removed or installed during new machine assembly, or during 
+repairs. 
+ 
+ 
+5.0 Resources Required 
+ 
+Labor is required to investigate, obtain final measurements and fabricate. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+8.0 Acknowledgements 
+ 
+WesTrac Equipment 
+Western Australia 
+Australia

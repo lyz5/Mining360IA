@@ -1,0 +1,333 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+DEALER MINING DEALER BEST PRACTICE 
+Excessive Idling: How to 
+Determine Idle Times and 
+Associated Fuel Costs  
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Excessive Idling: How to Determine Idle Times and 
+Associated Fuel Costs ............................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+September 2014 
+1308-2.04-1322 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+ 
+One of the most important focus areas for mine site operations teams is to maximize haul truck 
+“Traveling Loaded Time” while minimizing inefficient time spent idling and stopped loaded.  Not only 
+is this time not spent producing, the unnecessary fuel consumption is costly. 
+ 
+Pit depth, haul distance, ore type, and other variables will govern the percentages that a mining haul 
+truck would spend in each segment of the haul cycle.  Flatter or downhill hauls would alter the % time 
+spent traveling loaded or unloaded.  Length of haul and price of ore might increase the loading % 
+time as shovels put half loaded buckets on trucks in order to hit target payload on long hauls.  With 
+some variation for the above factors, below would be an example of an acceptable breakdown by 
+haul segment type per industry norms.   
+ 
+Example of Haul Cycle Segments 
+ 
+ 
+As mines focus more and more on reducing fuel consumption for both cost and environmental 
+purposes, we are forced to optimize our haul cycles and cut out any waste.  Excessive idling is an 
+excellent place to start. 
+ 
+Excessive idling is often times merely an operational inefficiency.  Trucks are left idling during lunch 
+breaks, mid-shift breaks, refueling, blasting, shift change, and other necessary mine activities.  There 
+can also be environmental reasons.  Those working in extreme climates are most familiar with 
+excessive idling often times corresponding to seasons.  During the winter time, trucks are left idling 
+longer so that engines don’t require a cold restart and cabs stay warm.  Conversely, in the warm 
+summer months, trucks stand idling so that air conditioners can be left running.  While these 
+problems are real, more practical, cost effective measures can be taken to keep operators 
+comfortable.  
+ 
+Properly identifying, tracking, and putting in place a system to limit machine idling has been elusive 
+on many sites.  VIMS data and MineStar Health reporting offers an effective solution for decreasing 
+idling and site fuel consumption. 
+23% 
+15% 
+38% 
+8% 
+16% 
+Traveling Empty 
+Idling  
+Traveling Loaded 
+Stopped Loaded 
+Loading 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Excessive Idling: Reducing Fuel Consumption with 
+VIMS and MineStar Health 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1308-2.04-1322 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+Given the above, the importance of following proper shutdown and start-up procedures cannot be 
+stressed enough.  Shutting down the machine while the engine is still hot, not allowing it sufficient 
+time to cool can lead catastrophic failure or reduced life.  Likewise, cold engine starts without the use 
+of engine preheating can also lead to reduced engine life.  Incremental fuel savings should not be 
+substituted for reduced engine life.  Proper procedures from machine OMMs and industry best 
+practice should be followed relative to machine shutdown and start-up procedures.  There may be 
+good common sense to allowing machines to idle in certain conditions and situations.  The objective 
+of this Best Practice is to limit inefficient, lengthy, and unnecessary idling when it occurs. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Using VIMS data and MineStar Health software, the user will be able to trend as much historical data 
+that is available, separating out fleet idling time as a percentage of total operating time.  If desired, 
+this can then be broken down further: 
+ 
+• Seasonally 
+• By Shift 
+• By Crew 
+• By Operator 
+ 
+Once fleet idle times have been tracked and any excessive areas (certain crews or operators, for 
+example) have been identified, site can set about eliminating abusive idling.  Strategies will vary by 
+site and climate.  Solutions to excessive idling could include one or a combination of the following: 
+ 
+• Employing the automatic shutdown timer switch or lowering the time to shutdown setting. 
+• The mine changing operator Standard Work Procedures (SWPs) to include maximum idling 
+time. 
+• Utilizing pit supervisors to enforce obligatory engine shutdowns during long truck stop periods.  
+ 
+ 
+3.0 Implementation Steps 
+ 
+ 
+To implement this download the report (available via the MineStar Reporting KN site). 
+ 
+1. Open the report in Web Intelligence and modify the object _FuelCost to give the correct 
+price of fuel for the site.  
+2. Ensure that the correct machines are assigned to the correct Fleet. This is done in 
+MineStar Client>Machine Finder 
+3. Run the report over a period of at least 6 months and save as PDF. 
+ 
+For any questions, please contact MineStar Support 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Excessive Idling: Reducing Fuel Consumption with 
+VIMS and MineStar Health 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1308-2.04-1322 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+4.0 Benefits 
+ 
+Whether the reasons are purely operational inefficiency, environmental, or a combination of both, 
+giving the operations department access to this information empowers them to: 
+ 
+• Decrease fuel consumption by controlling machine operators idling times 
+• Optimize their fleet if the idling is a result of being over-trucked 
+• Increase production by reallocating trucks that may be underutilized. 
+ 
+ 
+ 
+As the below example shows, this mine saw increased idling and fuel consumption during the cooler 
+months as operators kept trucks running to avoid cold starts and to keep the cab warm.  Idling as a 
+percentage of total operating time was still too high when they reached the summer months.  This we 
+were able to trend and benchmark against during the following year. 
+ 
+ 
+ 
+  
+A 15% target idling time was used to benchmark against the site’s average. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+   Industry Long 
+ Haul Benchmark  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Excessive Idling: Reducing Fuel Consumption with 
+VIMS and MineStar Health 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1308-2.04-1322 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+We had similar findings on another site.  Here an evenly split fleet of 50 x793Ds and 785Cs were 
+found to be idling an average of 27% over an 18 month period.   
+ 
+ 
+ 
+ 
+       
+MineStar report showing average fleet idle time as a percentage of total operating time 
+ 
+Using Health reporting, we can show the customer the cost of idling over an accepted amount.  With 
+a target of 12%, this site was spending roughly $138,000 and $304,000 on excessive idling for its 
+785C and 793C fleets, respectively. 
+ 
+ 
+ 
+ 
+ 
+It is also possible to break down idle time even further.  With the use of Minestar Fleet or another fleet 
+management software, we can track idle times by: 
+ 
+• I dle time after machine starts 
+• Idle time at shovel or loading tool waiting to load 
+• Stopped and idling during haul to dump (intersection, weigh scales, etc.) 
+• Idling at the dump 
+• Idling during break and shift change (no operator in the cab) 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Excessive Idling: Reducing Fuel Consumption with 
+VIMS and MineStar Health 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1308-2.04-1322 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+Customers and dealers can most effectively take action to limit excessive idle fuel burn firstly by 
+tracking and documenting of % idle time.  Areas where the inefficiencies are most apparent (shift 
+change, the dump, operational downtime like blasting, etc.) must be reviewed and a policy 
+implemented to limit idling in these areas.  Local conditions, specifically ambient temperatures, must 
+be taken into account.  Site must then reexamine idle times once new idling policies have been 
+implemented to gauge improvements.   
+ 
+While a certain level of idling is unavoidable, between 5%-15% depending on site conditions, 
+customer, dealer, and Caterpillar teams can focus on decreasing idling above these industry 
+benchmarks.  By showing the % fuel consumption above these norms, and the financial impact of this 
+excessive idling, we can demonstrate the value of tracking and acting on data gathered through VIMS 
+and MineStar.    
+ 
+ 
+ 
+5.0 Resources Required 
+ 
+• VIMS enabled Caterpillar Off-Highway Trucks 
+• MineStar Health Software (or in the event that this is not on site, VIMS Supervisor can be 
+used) 
+• Computer 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+Thank you to Joe Atkinson for his assistance with MineStar reporting. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Excessive Idling: Reducing Fuel Consumption with 
+VIMS and MineStar Health 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1308-2.04-1322 
+Caterpillar Confidential:  GREEN          Page 5 of 5

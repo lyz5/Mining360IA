@@ -1,0 +1,141 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mining360IA</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Power BI service</p>
+                <h1>Reporting</h1>
+            </div>
+            <div class="summary">
+                <span class="summary-value">{{ report_count }}</span>
+                <span class="summary-label">reports</span>
+            </div>
+        </header>
+
+        {% if error %}
+            <section class="alert">
+                <strong>Power BI connection unavailable</strong>
+                <p>{{ error }}</p>
+            </section>
+        {% endif %}
+
+        <section class="report-card-section" data-reporting-app>
+            <div class="report-toolbar">
+                <label class="report-search">
+                    <span>Search reports</span>
+                    <input type="search" data-report-search placeholder="Search by report, status, or refresh date">
+                </label>
+                <div class="report-filter-tabs" aria-label="Refresh status filters">
+                    <button type="button" class="active" data-report-filter="all">All</button>
+                    <button type="button" data-report-filter="completed">Completed</button>
+                    <button type="button" data-report-filter="failed">Failed</button>
+                    <button type="button" data-report-filter="no-refresh">No refresh</button>
+                </div>
+            </div>
+
+            <div class="report-card-grid" data-report-grid>
+                {% for report in reports %}
+                    <article
+                        class="report-card"
+                        data-report-card
+                        data-status="{% if report.refresh_status %}{{ report.refresh_status|lower }}{% else %}no-refresh{% endif %}"
+                        data-search="{{ report.display_name|lower }} {{ report.refresh_status|default:'no refresh'|lower }} {{ report.last_refresh|default:'no refresh'|lower }}">
+                        <div class="report-card__header">
+                            <div>
+                                <p class="eyebrow">Power BI report</p>
+                                <h2>{{ report.display_name }}</h2>
+                            </div>
+                            <span class="status-badge {% if report.refresh_status == 'Completed' %}success{% elif report.refresh_status == 'Failed' %}failed{% else %}neutral{% endif %}">
+                                {{ report.refresh_status|default:"No refresh" }}
+                            </span>
+                        </div>
+                        <div class="report-card__meta">
+                            <span>Last refresh</span>
+                            <strong>{{ report.last_refresh|default:"No refresh" }}</strong>
+                        </div>
+                        <div class="report-card__actions">
+                            <a class="button secondary" href="{% url 'report-detail' report.id %}">Open in app</a>
+                            {% if report.web_url %}
+                                <a class="button" href="{{ report.web_url }}" target="_blank" rel="noreferrer">Power BI</a>
+                            {% else %}
+                                <span class="button disabled" aria-disabled="true">Power BI</span>
+                            {% endif %}
+                        </div>
+                    </article>
+                {% empty %}
+                    <div class="empty report-empty">No reports available.</div>
+                {% endfor %}
+            </div>
+            <p class="empty report-empty" data-report-empty hidden>No matching reports.</p>
+        </section>
+    </main>
+    <script>
+        (function () {
+            const root = document.querySelector("[data-reporting-app]");
+            if (!root) return;
+            const search = root.querySelector("[data-report-search]");
+            const cards = Array.from(root.querySelectorAll("[data-report-card]"));
+            const empty = root.querySelector("[data-report-empty]");
+            let activeFilter = "all";
+
+            function normalizeSearch(value) {
+                return String(value || "")
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, " ")
+                    .trim();
+            }
+
+            function matchesFilter(card) {
+                const status = (card.dataset.status || "no-refresh").toLowerCase().replace(/\s+/g, "-");
+                if (activeFilter === "all") return true;
+                if (activeFilter === "no-refresh") return !status || status === "no-refresh" || status === "-" || status === "none";
+                return status === activeFilter;
+            }
+
+            function applyFilters() {
+                const query = normalizeSearch(search ? search.value : "");
+                const terms = query ? query.split(/\s+/).filter(Boolean) : [];
+                let visible = 0;
+                for (const card of cards) {
+                    const searchable = normalizeSearch(card.dataset.search || "");
+                    const matchesSearch = !terms.length || terms.every((term) => searchable.includes(term));
+                    const show = matchesSearch && matchesFilter(card);
+                    card.classList.toggle("is-hidden", !show);
+                    card.setAttribute("aria-hidden", show ? "false" : "true");
+                    if (show) visible++;
+                }
+                if (empty) empty.hidden = visible !== 0;
+            }
+
+            if (search) {
+                ["input", "keyup", "search", "change", "compositionend"].forEach((eventName) => {
+                    search.addEventListener(eventName, applyFilters);
+                });
+                search.addEventListener("paste", () => window.requestAnimationFrame(applyFilters));
+                search.addEventListener("keydown", (event) => {
+                    if (event.key === "Enter") {
+                        event.preventDefault();
+                    }
+                });
+            }
+            root.querySelectorAll("[data-report-filter]").forEach((button) => {
+                button.addEventListener("click", () => {
+                    activeFilter = button.dataset.reportFilter || "all";
+                    root.querySelectorAll("[data-report-filter]").forEach((item) => item.classList.toggle("active", item === button));
+                    applyFilters();
+                });
+            });
+            applyFilters();
+        }());
+    </script>
+</body>
+</html>

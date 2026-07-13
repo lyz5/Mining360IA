@@ -1,0 +1,262 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.02 Salvage Processes (Shop)\3. Quick Win\Hydraulic Cylinder Head Salvage by Installing Bronze Bushing.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2016 
+1511-4.02-1404 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Hydraulic Cylinder Head 
+Salvage by Installing 
+Bronze Bushing 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Hydraulic Cylinder Head Salvage by Installing Bronze 
+Bushing ...................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Cylinder Head Salvage by Installing Bronze 
+Bushing 
+DATE 
+2/10/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1511-4.02-1404 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction  
+ 
+During the operation of hydraulic cylinders, burr scratches may appear in heads of hydraulic 
+cylinders. Previously, those heads were replaced with the new ones. Now Borusan Makina 
+Kazakhstan salvages hydraulic cylinder heads by installing bronze bushings. It enables to 
+significantly reduce the repair cost of hydraulic cylinders. 
+ 
+This method of hydraulic cylinder head salvage is applicable for any big hydraulic cylinders on 
+condition that the place where the bronze bushing is installed should not have any grooves for 
+seals, because the bronze bushing serves as the guide there. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+In order to salvage hydraulic cylinder heads, bronze bushings are purchased from local suppliers. 
+Then those bushings are installed to the heads and bored to the necessary sizes according to 
+drawings. Thus, hydraulic cylinder heads are salvaged but not replaced that allows saving money 
+on overhauls of hydraulic cylinders because the salvaged cylinder head provides a 31.5% cost 
+saving compared to the new one. 
+   
+ 
+3.0 Implementation Steps 
+ 
+As an example, 777F Truck Body Lift/ Hoist Cylinder Head salvage by installing the bronze 
+bushing is shown below.  
+1) The damaged area in the hydraulic cylinder head is bored. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2) The bronze bushing is installed into the cylinder head. In the edge of the joint it needs to 
+drill 3 x holes with the depth of 12-15 mm and at the distance of 120
+0 from each other. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Cylinder Head Salvage by Installing Bronze 
+Bushing 
+DATE 
+2/10/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1511-4.02-1404 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+3) The thread is tapped in those holes. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4) 3 x toggle bolts with Loctite 640 are installed in the holes. The remaining parts of the bolts 
+a
+r
+e
+ 
+c
+u
+t
+ 
+d
+o
+w
+n
+. 
+ 
+ 
+5) Then the internal part of the bronze bushing is bored to the necessary size as per the 
+technical drawing. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Cylinder Head Salvage by Installing Bronze 
+Bushing 
+DATE 
+2/10/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1511-4.02-1404 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+4.0 Benefits 
+ 
+• Hydraulic cylinder overhaul cost has been reduced (the salvaged cylinder head gives a 
+31.5% cost saving compared to the new one). 
+ 
+ 
+5.0 Resources Required 
+ 
+• Machine Shop’s equipment (milling machine, etc.); 
+• Bronze bushings purchased from local suppliers; 
+• Toggle Bolts; 
+• Loctite 640. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Bushing information – The diameter is 224.15 -0.05mm. The tension is about 0.1mm. 
+Before pressing, the bushing is cooled down to -50 degrees. 
+• Highest hours of cylinders operating in the field with this rework. – It works up to the next 
+overhaul (12,000 hrs.) 
+• No failures to date.  We started to use this procedure a long time ago (more than 1 year). 
+Now this procedure has become the standard job. 
+• At the time of the next rebuild, do you need to replace the bushing due to wear? – If the 
+burrs are revealed in the bushing during inspection, it is replaced. If not, it’s not replaced. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A. 
+ 
+ 
+8.0 Acknowledgements 
+ 
+The idea of creating & implementing this Best Practice belongs to: 
+ 
+Almaz KENZHETAYEV  Yevgeniy MARSHAL 
+Machine Shop Supervisor  Machine Shop Team Leader 
+Borusan Makina Kazakhstan LLP  Borusan Makina Kazakhstan LLP 
+akenzhetayev@borusan.com    Ymarshal@borusan.com
+  
+ 
+ 
+      This Best Practice was written by:  
+Rafail FOLMAN    Gulnaz MANSUROVA 
+Machine Shop Turner   CRC Process Engineer 
+Borusan Makina Kazakhstan LLP  Borusan Makina Kazakhstan LLP 
+RFolman@borusan.com  gmansurova@borusan.com 
++7 (701) 951 98 14

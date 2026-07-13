@@ -1,0 +1,278 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Piston, Rod, & Liner Staging Equipment.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Piston, Rod, and Liner 
+Staging Equipment 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+ 
+Piston, Rod, and Liner Staging Equipment ................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+October 2006 
+1006-4.4-1032 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Effective staging equipment for pistons, rods, & liners (PR&L) is a cost effective way to quickly 
+improve engine repair/rebuild operations.  Parts staging is typically a non-value adding step in the 
+rebuild process and this Best Practice reduces staging associated costs and technician efforts at 
+several task levels.   
+ 
+Special staging cabinets allows product to “pass through” them with little effort.  They provide an 
+efficient way to stage PR&L after they’ve been rebuilt.  They also protect the components from 
+contamination and handling damage, and automatically transfer the component out of the rebuild 
+bay.  Well-protected components incur less incidental damage and provide higher quality to the 
+customer. 
+ 
+In summary the enhanced staging methods/equipment: 
+• Allows technician to spend minimal effort in staging rebuilt PR&L. 
+• Provides contamination and handling damage protection to the product. 
+• Automatically moves the rebuilt component from inside the rebuild area to outside the 
+area.  
+ 
+2.0 Best Practice Description 
+ 
+PR&L are often delivered to the rebuild area on carts or other transport device.  These carts, and 
+other miscellaneous baskets area typically not very space efficient.  Once rebuilt, the components 
+should stay at rebuild area staged until needed.  When the assembly job calls for the 
+components, the pieces are loaded and transported to the necessary assembly bay.  Incoming 
+and outgoing staging consumes excessive floor space, and uses lots of resources to get 
+protected product to the assembly bay. 
+ 
+Enhanced piston, rod, and liner staging equipment has several features: 
+ 
+• The cabinet provides high-density component staging.  PR&L are stored at several levels 
+in the cabinets, providing storage for several jobs of components. 
+• Liners are protected by in tracks they can be rolled through.  Assembled pistons and rods 
+are hug in multi-level racks, which saddle the pistons and allow the rod to hang from the 
+piston pin.  These tracks and racks protect the parts from storage damage. 
+• The cabinets are enclosed with Plexiglas doors, allowing for job parts identification, and 
+protecting against contamination. 
+• The cabinet doors are on opposite sides of the staging cabinet.  This allows the piston, 
+rod, and liner rebuild technician to transfer rebuilt parts out of the working area, into the 
+transport aisle, by simply loading the cabinet through the work bay cabinet door. 
+• If the PR&L rebuild bay is located next to the short-block assembly bay, the parts would 
+automatically be delivered to the general assembly activity.  The assembly technician 
+would just pull the current job’s PR&L from behind the assembly bay cabinet door. 
+  
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Piston, Rod, and Liner Staging Equipment 
+DATE 
+10/31/2006 
+CHG 
+NO 
+01 
+NUMBER 
+1006-4.4-1032 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+The staging cabinets: 
+• Are sized for the dealer’s common product.   
+• Have smooth painted interior/exterior designed with few areas to catch dust/dirt/crime for 
+fast/easy cleaning and professional image. 
+• Use Plexiglas (clear) doors to identify what product is rebuilt. 
+• For liners, include rolling tracks that are sloped towards the outgoing door.  
+ 
+These cabinets provide the most efficiency if located between the PR&L rebuild area and the 
+general short block or general engine assembly bays. This placement eliminates one stage of 
+handling and greatly reduces incidental handling damage exposure. 
+ 
+  
+  
+ 
+3.0 Implementation Steps 
+ 
+1. Determine area in shop to be designated for PR&L rebuilding. 
+a. Review the rebuild area in relation to downstream processes, such as PR&L installation.  
+b. Locating the rebuild area next to the bay where they are installed can eliminate one 
+parts move. 
+c. Establish PR&L cabinet location within the PR&L rebuild area. 
+ 
+2. Determine most common PR&L sizes, and typical volumes in staging. 
+a. Design staging cabinets to accommodate largest parts/components. 
+b. Establish cabinet usability/finish to assure easy cleaning/maintenance and professional 
+appearance. 
+c. If PR&L rebuild area is not next to the installation bay(s): 
+d. Establish equipment needed to transfer/stage PR&L in the installation bay(s). 
+e. Plan for transfer/staging equipment storage between uses (close to rebuild area is 
+better). 
+ 
+3. Develop/adjust and document PR&L rebuild procedure as needed. 
+ 
+4. Establish new/adjusted repair/rebuild time requirement targets as needed. 
+ 
+5. Present strategy to shop and other related employees. 
+a. Eliminate the current processes/tooling/equipment strategy (one best way). 
+b. Include inter-department use issues as needed. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Piston, Rod, and Liner Staging Equipment 
+DATE 
+10/31/2006 
+CHG 
+NO 
+01 
+NUMBER 
+1006-4.4-1032 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+6. Install the layout/equipment changes into the shop 
+a. This may occur in phases, as needed, such as shop arrangement, then equipment final 
+design/fabrication. 
+b. Promote change feedback as installation may reveal new problems. 
+ 
+7. Train employees to use the new procedures/equipment.  Follow-up/enforce immediately. 
+ 
+8. Establish equipment maintenance responsibility. 
+ 
+9. Review process/equipment performance once established. 
+ 
+10. Establish and install any adjustments as needed. 
+ 
+4.0 Benefits 
+ 
+Improved Efficiency  
+• Well designed/organized staging equipment reduces technician staging efforts setup and 
+teardown time. Smooth and orderly product flow simplifies process and reduces 
+administrative/rebuild labor.   
+• Product staged with like-product reduces space needed. 
+• Assembly delays are minimized with fewer misplaced/damaged PR&L.  PRL are seldom 
+replaced at the last minute due to unexpected handling damage.  Technicians are not 
+searching the shop for missing PR&L pieces.  
+ 
+Improved job flexibility  
+• PR&L are not used/delivered until needed.  This makes it easier to change jobs in a bay 
+without lots of staged parts to move. 
+ 
+Increases Quality 
+• Effective staging equipment reduces handling related damage, increasing component 
+service life, and promoting professionalism with technicians. 
+• Parts incur less contamination and handling damage, providing more component service 
+life.   
+ 
+5.0 Resources Required 
+ 
+Facility 
+• Re-organize workstation to allow for basin placement, incoming and outgoing staging, and 
+a workbench as needed. 
+ 
+Support Equipment 
+• Well-built cabinet costs will vary since they are typically custom-built at the dealer. 
+ 
+People 
+• Establish change concerns with team 
+• Establish process, layout, and equipment improvements through team 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Piston, Rod, and Liner Staging Equipment 
+DATE 
+10/31/2006 
+CHG 
+NO 
+01 
+NUMBER 
+1006-4.4-1032 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+Training 
+• Define/establish/enforce new processes, roles and responsibilities with production teams 
+• Remove replaced items (staging equipment) from operations to sustain change 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+• This Best Practice was written by: 
+ 
+Russ Young 
+Black Belt 
+young_russell_k@cat.com 
+(309) 675-4583 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Piston, Rod, and Liner Staging Equipment 
+DATE 
+10/31/2006 
+CHG 
+NO 
+01 
+NUMBER 
+1006-4.4-1032 
+Caterpillar Confidential:  GREEN          Page 4 of 4

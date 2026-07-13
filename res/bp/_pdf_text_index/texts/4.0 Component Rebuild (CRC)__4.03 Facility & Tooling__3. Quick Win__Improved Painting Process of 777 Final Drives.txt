@@ -1,0 +1,230 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2016 
+1604-4.03-1424 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Improved Painting Process 
+of 777D/F Final Drives 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Improved Painting Process of 777D/F Final Drives .... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 2 
+7.0 Related Best Practices ...................................... 2 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Painting Process of 777D/F Final Drives 
+DATE 
+6/17/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1604-4.03-1424 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction  
+ 
+The preparation of one final drive for painting takes 45 minutes, and one roll of the packing tape 
+is used for it. Borusan Makina Kazakhstan has fabricated multi-use covers to protect the places 
+on the final drive that should not be painted.  
+ 
+For example, 40 covers were made for 2 x 777D/F Final Drives. The use of those covers has 
+considerably reduced the component paint preparation time (from 45 minutes to 1 minute per 1 x 
+Final Drive).   
+ 
+ 
+2.0 Best Practice Description 
+ 
+The multi-use cover is made from the pipe welded to the tin-plate pattern. The pipe is selected as 
+per the diameter of the final drive bolt (see attached drawings for 777D/F pipe and plate 
+specifications). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The cover (front view)           The cover (bottom view) 
+ 
+The pictures below show the ease of paint preparation due to the use of the covers. 
+ 
+BEFORE       AFTER 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The old way of preparing the final drive for 
+painting. It took 45 minutes per one final 
+drive. 
+The new way of preparing the final drive for 
+painting. Now it takes 1 min. per one final 
+drive. 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Painting Process of 777D/F Final Drives 
+DATE 
+6/17/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1604-4.03-1424 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+3.0 Implementation Steps 
+ 
+ 
+• Obtain necessary material and fabricate the covers 
+• Install covers and your final drive is ready to be painted!  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Improved painting process with the use of the multi-use covers. 
+ 
+ 
+4.0 Benefits 
+ 
+• The use of multi-use covers considerably saves time when the component is prepared for 
+painting (from 45 minutes to 1 minute per 1 x Final Drive), and that expedites the painting 
+process accordingly. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Machine shop (lathe & milling machine). 
+• Time and material to fabricate 
+ 
+6.0 Supporting Attachments / References 
+ 
+The drawing of 777D/F Final Drive Cover is attached. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+ 
+  
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Painting Process of 777D/F Final Drives 
+DATE 
+6/17/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1604-4.03-1424 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+8.0 Acknowledgements 
+ 
+The idea of creating & implementing this Best Practice belongs to: 
+ 
+Sergey INYUTIN    Daniil PONAMOREV 
+Painter       Technician 
+Equipment Rebuild Shop (ERS)  Component Rebuild Shop (CRS)   
+Borusan Makina Kazakhstan LLP   Borusan Makina Kazakhstan LLP 
+ 
+        
+Vyacheslav KLYKOV    Yernar NARGELOV 
+Turner       Design Engineer 
+Machine Shop     Mining Product Support Department 
+Borusan Makina Kazakhstan LLP  Borusan Makina Kazakhstan LLP    
+       ynargelov@borusan.com
+ 
+ 
+This Best Practice was written by:  
+Gulnaz MANSUROVA 
+CRC Process Engineer 
+Borusan Makina Kazakhstan LLP 
+gmansurova@borusan.com 
++7 (701) 951 98 14

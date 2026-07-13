@@ -1,0 +1,240 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Work Order Photos 
+Administration System 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+Work Order Photos Administration System ................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+June 2008 
+0907-4.01-1174 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+When a component needs to be rebuilt it is  sent directly from the mine site to  the Component 
+Rebuild Center (CRC).  It is important that the CRC  keep photographic records of the condition of 
+the component as it  was received from the courier company.   The main purpose  of this 
+documentation is to permit technicians, supervisors, shop chiefs, engineers and all interested 
+parties to have photographic record of reception and dispatching of components.   
+ 
+Sometimes the assembly area needs to know how the component was received.  For instance, 
+parts were not sent or parts were missing upon receipt.  They have access to this information by 
+consulting work order photos. 
+ 
+This Best Practice is designed to support CRC Shops with managing photos taken upon reception 
+and dispatching of components.  
+ 
+ 
+2.0 Best Practice Description 
+In the past, the CRC would use 35mm film cameras to document the reception and dispatching of 
+components.  T hese photos were stored in a filing cabinet , which limited a ccess to them to only  
+one person or group at the same time.   This also incurred costs such as, film developing, storage 
+and a dedicated person for administration. 
+ 
+Later, digital cameras were used for documentation and the photos were stored in folders on a 
+network drive.  This enabled the photos to be more readily available and eliminated some of the 
+before costs.  However, some photos were misplaced or accidentally deleted. 
+ 
+In order to manage the digital photos in a more efficient manner, the Work Order Photos 
+Administration S ystem software was implemented.   Technicians have this software available in 
+the SIS WEB Workstations located in the CRC.  This software helps manage photos of 
+components taken in the reception and dispatch area .  P hotos are uploaded to the software, 
+classified by work order and type of photo (reception or dispatch) .  T he software shows detailed 
+information of the work order  alongside each photo and multiple users can view the same photo 
+simultaneously.  Additionally, the software lists all work orders that do not have photos associated 
+with them.  This greatly reduces the audit time in the reception and dispatch area.  
+ 
+The process begins when the reception and dispatch clerk takes photos of the components 
+(Figure 1).  
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Work Order Photos Administration System 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0907-4.01-1174 
+Caterpillar Confidential:  YELLOW          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Figure 1:  Reception and dispatch clerk taking photos of a component. 
+ 
+ 
+The r eception and dispatch clerk downloads photos from the  camera and uploads them to the 
+system (Figure 2).  The photos can then be viewed (Figures 3&4).  
+ 
+ 
+ 
+ 
+ 
+Figure 2:  Reception and dispatch clerk uploading photos to the system. 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Work Order Photos Administration System 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0907-4.01-1174 
+Caterpillar Confidential:  YELLOW          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Figure 3:  Service Engineer consulting work order photos. 
+ 
+ 
+ 
+ 
+ 
+Figure 4:  Technician consulting work order photos 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Work Order Photos Administration System 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0907-4.01-1174 
+Caterpillar Confidential:  YELLOW          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Implementation Steps 
+ 
+• Gather information on the volume of the photos taken each day to establish picture format and 
+maximum size. 
+• Create the database and the folders to save the data. 
+• Install the Work Order Photos Administration System Software. 
+• Conduct training for the reception and dispatch clerk and other users (Service Engineers, Shop 
+Chiefs, etc.). 
+  
+The Work Order Photos Administration System can also be implemented in the Service Shops.  
+ 
+4.0 Benefits 
+ 
+• Minimize the time required to access work order photos. 
+• Provide a more effective way to search for specific component photos. 
+• Avoid the loss or handling of photographic records by the users. 
+• Online report of the work orders without photos allowing better control of the process by  
+reducing audit time. 
+• Allows simultaneous users to view the same picture. 
+ 
+5.0 Resources Required 
+ 
+• A digital camera. 
+• Work Order Photos Administration System Software. 
+• Contact Dayana Saavedra to obtain a free copy (see section 8.0). 
+• A web server with IIS running to host the application, disk space and a database manager 
+(Example: SQL Server).  
+• Time for training. 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+7.0 Related Best Practices 
+ 
+1007-4.5-1087 - Wireless SIS WEB Workstation 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+ 
+Dayana Saavedra 
+GECOLSA Mining Division  
+Programming Analyst 
+Dayana_saavedra@gecolsa.com.co 
+575-3361200 Ext 5329 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Work Order Photos Administration System 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0907-4.01-1174 
+Caterpillar Confidential:  YELLOW          Page 4 of 4

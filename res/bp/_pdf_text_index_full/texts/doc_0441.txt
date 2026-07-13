@@ -1,0 +1,221 @@
+SOURCE: Track Removal Tool D11-D11T.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+May 2024 
+3.04-240507-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+M
+INING DEALER BEST PRACTICE 
+Track Removal Tool 
+D11/D11T 
+Maintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+Track Removal Tool D11/D11T.................................. 1 
+1
+.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits ............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ........................................... 7 
+D
+ISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of "Best Practices". Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein.  Caterpillar welcomes additional "Best 
+Practice" recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Track Removal Tool for D11/D11T 
+DATE 
+5/7/2024 
+CHG 
+IN 
+00 
+NUMBER 
+3.04-240507-1 
+Caterpillar: Confidential Yellow P age 2 of 8 
+1.0 Introduction 
+W
+ith the increased use of our infrastructure  equipment, including the D11 and D11T track  tractor, 
+which operate in the S11D mine, there was a need to improve productivity in the activity of changing 
+tracks, mitigating risks of accidents, and reducing the exposure of people during the replacement 
+and interaction with the equipment. 
+In addition, this tool makes the process of maintaining and replacing the conveyor more practical, 
+as it eliminates the use of chains or cables using the component itself used for the replacement of 
+the new component. 
+2
+.0 Best Practice Description 
+T
+he tool was developed aiming at greater safety of those involved in the activity , since the 
+technicians are no longer exposed to involuntary movements of the tractor, the movement of lifting 
+equipment and projection of materials. 
+Another important gain is in productivity, with this tool we can change the track  with a time gain of 
+approximately 42%, due to greater agility in removal. 
+3
+.0 Implementation Steps 
+F
+or questions regarding the replacement of the tra ck, refer to the Operation and Maintenance 
+Manual, "Track - Check/Adjust" (i03983108). 
+1º S
+tep: Build and develop the track removal aid tool. Please refer to the attached technical 
+drawing and video or consult the dealer for further information. 
+Fi
+gure 1: Auxiliary conveyor removal tool. 
+
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Track Removal Tool for D11/D11T 
+DATE 
+5/7/2024 
+CHG 
+IN 
+00 
+NUMBER 
+3.04-240507-1 
+Caterpillar: Confidential Yellow P age 3 of 8 
+Figure 2: Side view of the auxiliary conveyor removal tool. 
+Fi
+gure 3: Technical drawing of the auxiliary conveyor removal tool. Measurements in 
+millimeters (mm). 
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Track Removal Tool for D11/D11T 
+DATE 
+5/7/2024 
+CHG 
+IN 
+00 
+NUMBER 
+3.04-240507-1 
+Caterpillar: Confidential Yellow P age 4 of 8 
+2º Step: The tool (10) is designed to make the conveyor to be replaced slide onto the new conveyor, 
+facilitating the maneuver of removing and installing the conveyor. This maneuver eliminates the 
+need for forklifts to pull and/or lift the damaged conveyor, as well as eliminates the use of 
+accessories such as cables and/or chains to secure it. As a result, the conveyor remains within the 
+track of the rollers, reducing the risk of material projection. 
+Figure 4: Fitting the ends of the auxiliary conveyor removal tool. 
+10
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Track Removal Tool for D11/D11T 
+DATE 
+5/7/2024 
+CHG 
+IN 
+00 
+NUMBER 
+3.04-240507-1 
+Caterpillar: Confidential Yellow P age 5 of 8 
+3º Step: With both ends fitted and the movement of the final control, the damaged conveyor pulls 
+the new conveyor, already positioning it in the ideal position to complete the installation. 
+Figure 5: Positioning and use of the auxiliary conveyor removal tool. 
+4º
+ Step: In the movement of removing the damaged track, the track already positioned on the truck 
+and guide wheel, we can position the cradle of the track under the segmented link, positioning to 
+connect the links. 
+Fi
+gure 6: Moving the conveyor along the track. 
+
+
+===== PAGE 6 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Track Removal Tool for D11/D11T 
+DATE 
+5/7/2024 
+CHG 
+IN 
+00 
+NUMBER 
+3.04-240507-1 
+Caterpillar: Confidential Yellow P age 6 of 8 
+4.0 Benefits 
+• M
+itigation between human-machine interaction.
+• There is no need to use a forklift and/or crane to reposition the conveyor.
+• No exposure of people in the line of fire.
+• With the elimination of cables and/or chains to remove the conveyor, the risk of material
+projection and whipping was eliminated.
+• Agility in the replacement of the conveyors.
+• With the improvement to remove the conveyor, we gain in time, because the movement of the
+conveyor with auxiliary feature is no longer necessary. With this the removal becomes a
+continuous and agile activity.
+• Increased productivity.
+• Before the tool, we changed a track with approximately 6 hours, meeting all safety requirements.
+With the new tool, this same activity can be performed in 3.5 hours and with a higher safety
+factor.
+5
+.0 Resources Required 
+F
+or the manufacturing of the tool, a project was developed in collaboration with the engineering team, 
+and materials found in the client's area were used. We also utilized internal welders for the fabrication 
+of the device, which facilitated and lowered the costs involved in this project. Considering the 
+materials used and the allocated labor, we estimate around $1,550.00 for manufacturing. 
+C
+onsult the dealer for further details. 
+6
+.0 Supporting Attachments / References 
+• F
+orklift 15 tons to position the track in line with the equipment.
+• T
+ool for sliding the track.
+• H
+and and pneumatic torque tools.
+• D
+rawing and a video can be found in the appendix.
+
+
+===== PAGE 7 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Track Removal Tool for D11/D11T 
+DATE 
+5/7/2024 
+CHG 
+IN 
+00 
+NUMBER 
+3.04-240507-1 
+Caterpillar: Confidential Yellow Page  7 of 8 
+7.0 Related Best Practices 
+N/A 
+8.0 A
+cknowledgements 
+SO
+TREQ (Northern Brazil) would like to express its deep admiration for the professionals involved in 
+improving the maintenance and repair processes developed by Mining Engineering. 
+SO
+TREQ would also like to thank the indispensable technical contribution of Doug Friedrich of 
+Caterpillar Inc. 
+Thi
+s Best Practice was written by: 
+Dani
+el Barcelos 
+Performance Engineer – SOTREQ S/A 
+daniel.barcelos@sotreq.com.br 
++ 55 31 98587-0935
+Rei
+naldo Angelo 
+Engineering Coordinator - SOTREQ S/A 
+reinaldo.angelo@sotreq.com.br 
++ 55 31 9996-5562

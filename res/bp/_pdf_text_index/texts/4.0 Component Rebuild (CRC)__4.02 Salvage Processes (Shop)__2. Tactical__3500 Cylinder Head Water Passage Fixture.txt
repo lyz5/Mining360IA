@@ -1,0 +1,323 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+April 2015  
+1501-4.02-1367  
+  
+ 
+    
+    
+ 
+ 
+MINING DEALER BEST PRACTICE 
+3500 Cylinder Head Water 
+Passage Insert Fixture 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC)  
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Insert Enabled with Inclined Holes for Heads 3500 
+ ................................... Error! Bookmark not defined. 
+ 
+1.0  Introduction ....................................................... 0 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 1 
+4.0  Benefits ............................................................. 7 
+5.0  Resources Required .......................................... 7 
+6.0  Supporting Attachments / References ............... 7 
+7.0  Related Best Practices ...................................... 7 
+8.0  Acknowledgements ........................................... 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+1.0 Introduction  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Insert Enabled with Inclined Holes for Heads 3500 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1367  
+Caterpillar Confidential:  GREEN          Page 1 of 7 
+A new fixture for machining water passage inserts has been implemented at Ferreyros Machine 
+Shop, reducing labor time . 
+ 
+2.0 Best Practice Description 
+ 
+In the lateral water passages, where the hole is angled, erosion around the passage has been 
+seen.   
+ 
+ 
+  
+ 
+Picture 2: Detachment in cleaning metallic 
+ 
+3.0 Implementation Steps 
+ 
+Blank inserts are initially machined on a CNC machi ne to the following specifications (see picture 
+2). 
+ 
+Erosion 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Insert Enabled with Inclined Holes for Heads 3500 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1367  
+Caterpillar Confidential:  GREEN          Page 2 of 7 
+ 
+Picture 3: Dimensions of the insert pass water 
+ 
+For this procedure a device was prepared (See Pictu re 4) in which the inserts were drilled for the 
+17° as the technical information requested. 
+ 
+ 
+Picture 4: Device for head’s inserts 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Insert Enabled with Inclined Holes for Heads 3500 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1367  
+Caterpillar Confidential:  GREEN          Page 3 of 7 
+                
+                                      Isometric View                       Sectional View  
+• Mounting device 
+The device is mounted on the mill table. (See Picture 5) 
+ 
+ 
+ 
+ 
+           . 
+Picture 5 
+• Fixing of device 
+Fix device to the workbench. (See Picture 6) 
+ 
+ 
+Picture 6 
+ 
+ 
+ 
+CHANNEL MOUNT AND 
+BALANCE OF DEVICE 
+FIXING FLANGES 
+OR FIXING FOR 
+DEVICE 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Insert Enabled with Inclined Holes for Heads 3500 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1367  
+Caterpillar Confidential:  GREEN          Page 4 of 7 
+• Mounting of insert  
+Mounting the blank inserts on the device. (See Picture 7) 
+ 
+ 
+Picture 7 
+• Assembly 
+Assembly or mounting of centering device. (See Picture 8) 
+ 
+ 
+Picture 8 
+• Drilling 
+Perform drilling of the inserts. (See Picture 9) 
+ 
+ 
+Picture 9 
+ 
+MOUNTING OF 
+BL ANK  INSERT  
+COVER AND 
+CENTERING 
+FOR DRILL 
+ROCK DRILL 
+INSERT  
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Insert Enabled with Inclined Holes for Heads 3500 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1367  
+Caterpillar Confidential:  GREEN          Page 5 of 7 
+ 
+• Disassembly 
+Removing cap. (See Picture 10) 
+ 
+ 
+Picture 10 
+• Product 
+Insert finished and ready to be installed is obtained, which are sent to the store to have them 
+as stock. 
+                                               
+Picture 11 
+ 
+ 
+ 
+ 
+ 
+ 
+FINISHED 
+INSERT AFTER 
+BEING DRILLED 
+ 
+Top View. Insert 
+ 
+Bottom View. Insert 
+ 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Insert Enabled with Inclined Holes for Heads 3500 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1367  
+Caterpillar Confidential:  GREEN          Page 6 of 7 
+• Installation of insert in Head 3500 
+ 
+Picture 12 
+ 
+Picture 13 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Insert Enabled with Inclined Holes for Heads 3500 
+DATE 
+6/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1367  
+Caterpillar Confidential:  GREEN          Page 7 of 7 
+4.0 Benefits 
+ 
+• The drilling of the cylinder head was removed on t he drill, transport, assembly and 
+disassembly. Total time reduction is 39.29% 
+ 
+ 
+ 
+• Standardization of inserts inventory to be applica ble to heads 3500. (See picture 3) 
+ 
+ 
+5.0 Resources Required 
+ 
+Machine for head’s inserts 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Name     Sandro Falcon D. 
+E mail     sandro.falcon@ferreyros.com.pe 
+ 
+Recognition: 
+ 
+Team:  Miguel Mauriola / Operations Support Chief 
+                      Rafael Volta / Machine Chief 
+             Romulo Olarte / Machine Supervisor 
+ 
+Sponsor:           Luis Aguilar / Manager Machine Shop

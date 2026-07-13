@@ -1,0 +1,268 @@
+SOURCE: 1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\Service Card System.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2011 
+1104-1.04-1223 
+  
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+Service Card System 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+1.0
+ Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Service Card System 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1104-1.04-1223 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+1.0 Introduction  
+ 
+This Best Practice assists in the visually tracking of activities (repairs) that are performed 
+when working with equipment due to: 
+ 
+a. Equipment planned repairs  
+b. Equipment unplanned repairs  
+c. Inspections 
+ 
+Visual controls allow: 
+ 
+a. The Supervisor to have a real time monitoring of the work’s progress  
+b. Work quality verifications in an organized manner 
+c. Visual machine transfer of the in processes and pending work  
+ 
+Generally, the staff is focused on their tasks and they do not update logs or Gantt charts until 
+their shift is ending in order to deliver it to the supervisor for the shift change.  
+ 
+Machine transfers are usually performed orally and come with an achieved progress log and 
+pending repairs (usually performed among Supervisors).  This log is then reviewed after the shift 
+ends, losing the machine’s progress real control.     
+ 
+Following one of the CPS’s principles of “Make it Visual”, the card system allows everyone to 
+quickly see the jobs that have been performed on a machine and those that have not. 
+ 
+It is important for the dealer processes because it: 
+ 
+a. Give the supervisor a real time monitoring of the repairs progress. 
+b. Allows work quality verification in an organized manner: when finishing each repair, the 
+technician will handle the card to the Supervisor and this is a warning to verify the 
+performed work quality.    
+c. Allows a visual machine transfer of the in progress and pending work. The progress is 
+visual for supervisors, but also for the machine’s technicians.    
+d. Allows technical staff to continue performing other activities without waiting for the 
+supervisors’ indication. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Service Card System 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1104-1.04-1223 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+2.0 Best Practice Description 
+ 
+Below the card process and their relation to M&R processes is shown: 
+ 
+ 
+ 
+ 
+ 
+This Best Practice is intended to achieve:  
+ 
+• Improved work transfer system (quality)  
+• Formalized job completion quality control process (quality) 
+• R eal time progress on machine visual inspection (management control)  
+• Visual control of the job’s progress to all staff including the assigned technicians to the 
+machine (management control) 
+ 
+This Best Practice can be applied by any dealer because it is a method which complements the 
+M&R repair process.
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Service Card System 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1104-1.04-1223 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+This improvement emerged from the component cannibalization process.  When removing a part 
+from a component, the logistic area used to hang cards to indicate that some parts had been 
+removed. 
+ 
+In order to implement this Best Practice, the following steps must be considered: 
+ 
+1. Card manufacturing:  Create design and determine quantity according to the historical 
+data for work orders 
+2. Buy plastic bags, pull-tight seals and magnets in order to fix the cards on the machine 
+3. Explain procedure and how to fill out the cards to Planning and Maintenance staff 
+4. I mplementation the process on the machines 
+ 
+This method is based on the CPS principle - “Make it Visual.” It was implemented on March 10, 
+2011. 
+ 
+During the implementation stage, Supervisors and Maintenance technicians took part, apart from 
+Planning Staff in the initial deployment. 
+ 
+In order to distribute this process to a wider audience it was documented as a Best Practice. 
+ 
+The greatest challenge is the cultural change of the involved staff.   
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Service Card System 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1104-1.04-1223 
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+4.0 Benefits 
+ 
+The greatest benefits are improving the transfer process quality and the performed tasks quality 
+by formalizing the jobs’ inspection supervisor function for each received card.    
+ 
+ 
+5.0 Resources Required 
+ 
+Investment:
+ 
+  Manufacture cards and buy plastic bags, pull-tight seals and magnets.  Quantity 
+depends on the orders history per working day. 
+Time:
+ 
+   Time to train and follow-up with the involved staff. 
+ 
+6.0 Supporting Attachments / References 
+ 
+• View Card Process  
+ 
+• Card Model 
+ 
+ 
+7.0 Related Best Practices 
+ 
+Repair Management 1007-2.0-1107 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Alexander Campos Vásquez 
+Operations Coordinator 
+acamposv@ferreyros.com.pe 
+ 
+Prepared by: 
+Luciana Cardoza Getar 
+Ferreyros CI & BP  
+lcardoza@ferreyros.com.pe

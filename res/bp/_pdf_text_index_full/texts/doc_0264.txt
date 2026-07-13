@@ -1,0 +1,303 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\789-793 Final Drive Lifting Tool.pdf
+PAGES: 8
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+February 19 
+4.03-161006-03 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      Mining.cat.com 
+ 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+789 – 793 FINAL DRIVE 
+LIFTING TOOL 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information pro vided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+789-793 Final Drive Lifting Tool 
+DATE 
+2/11/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-161006-03 
+Caterpillar Confidential:  YELLOW          Page 1 of 7 
+ 
+1.0 Introduction  
+ 
+Part of the process of assembly and disassembly is based on handling components before and 
+after passing through the CRC. This state makes for complex handling while in its original form, 
+thus making it an important and critical task performed in workshops. 
+ 
+Based on the above premise arises the need to perform this task more efficiently. This best 
+practice provides the technician a more efficient process by using a tool that provides security 
+when performing the movement of the final drive.  
+ 
+This improvement is aims to prevent and provide security when moving the component. 
+ 
+ 
+ 
+This Best Practice aims to facilitate and expedite the movement of the 789 – 793D final drives by 
+outlining a process for the manufacturing, use and implementation of an easy tool. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Each group consists of two triangular lifting plates – a rear (larger diameter) and a front (smaller 
+diameter), both are ASTM A36 steel with a thickness of 1-inch. The lower arch molding with 
+different diameters increases the stability of lifting the component. The main features of each are: 
+ 
+•  Lifting Tool Final Drive 793-1 
+Dimension: 25.4mm x 248mm x 150mm (D x W x H) 
+Total weight: 4.26 Kg 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+789-793 Final Drive Lifting Tool 
+DATE 
+2/11/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-161006-03 
+Caterpillar Confidential:  YELLOW          Page 2 of 7 
+ 
+ 
+• Lifting Tool Final Drive 793-2 
+Dimension: 25.4mm x 223mm x 155mm (D x W x H) 
+Total weight: 4.05 Kg 
+ 
+ 
+ 
+• Lifting Tool Command Final 789-1 
+Dimension: 25.4mm x 223.5mm x 150mm (D x W x H) 
+Total weight: 3.79 Kg 
+ 
+ 
+• Lifting Tool Command Final 789-2 
+Dimension: 25.4mm x 200mm x 150mm (D x W x H) 
+Total weight: 3.56 Kg 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+789-793 Final Drive Lifting Tool 
+DATE 
+2/11/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-161006-03 
+Caterpillar Confidential:  YELLOW          Page 3 of 7 
+ 
+3.0 Implementation Steps 
+ 
+Step 1: Select appropriate tools the task. (Final Drive 789 or 793) 
+Step 2: Review the state of the tool to verify its integrity before use. 
+Step 3: After finishing the final drive assembly, place the lifting tool on the outer ring of the wheel, 
+attaching it to the appropriate screws (see Figures 1 and 2). 
+Step 4: Using the Jib crane, lift the Final Drive to the desired height (see Figure 3). 
+Step 5: Place the component in its final housing (stowage basket, box) and remove the tools. 
+ 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+789-793 Final Drive Lifting Tool 
+DATE 
+2/11/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-161006-03 
+Caterpillar Confidential:  YELLOW          Page 4 of 7 
+ 
+4.0 Benefits 
+ 
+The main benefits provided by this implementation are: 
+• Security when hoisting the final drive 
+• Reduced ergonomic risks for technicians 
+• Easy to perform the work 
+ 
+5.0 Resources Required 
+ 
+• Materials and manufacturing equipment according to plan  
+• 1 welder 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+789-793 Final Drive Lifting Tool 
+DATE 
+2/11/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-161006-03 
+Caterpillar Confidential:  YELLOW          Page 5 of 7 
+ 
+ 
+ 
+ 
+The minimum safety factor is 8, being g reater than 5.0 FS, it is considered  a safe tool for use.  (Load 
+2419 Kg / 23719 N, applied to face contact holes tool holder with final drive.) 
+ 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+789-793 Final Drive Lifting Tool 
+DATE 
+2/11/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-161006-03 
+Caterpillar Confidential:  YELLOW          Page 6 of 7 
+ 
+ 
+The minimum safety factor is 11.7, being greater than 5.0 FS, resulting in a safe tool for use. (Load 
+2419 Kg / 23719 N, applied to face contact holes tool holder with final drive.) 
+ 
+ 
+The minimum safety factor is 15.3, being greater than 5.0 FS, resulting in a safe tool for use. (Load 
+1778 Kg / 17433 N, applied to face contact holes tool holder with final drive.) 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+789-793 Final Drive Lifting Tool 
+DATE 
+2/11/2019 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-161006-03 
+Caterpillar Confidential:  YELLOW          Page 7 of 7 
+ 
+ 
+The minimum safety factor is 5, as a FS equal to 5.0, resulting in a safe tool to u se. (Load 1778 Kg / 
+17433 N, applied to face contact holes tool holder with final drive.) 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+David A. Gonzalez F. | Ingeniero de Servicio CRC 
+RELIANZ Mining Solutions| Tel: (5) 3361200, Ext: 35257 | Cell: 3008004910 | 
+antonio.gonzalez@relianz.com.co | www.relianzcat.com 
+ 
+Carlos Velilla M. | Ingeniero de Servicios | Soluciones de Ingenieria 
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 35237 | Cell: 3205491444 | 
+carlos.velilla@relianz.com.co | www.relianzcat.com 
+ 
+Luis Alberto Fernandez Chica | Ingeniero de Desarrollo y Coordinador de Best Practices  
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 5347 | Cell: 3013724303 | 
+luisalberto.fernandez@relianz.com.co | www.relianzcat.com

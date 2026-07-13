@@ -1,0 +1,178 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+May 2007  
+0607-4.4-1083  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+CRC Safety Inspection 
+Checklist  
+ 
+Application  Maintenance  Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety MARC 
+Management 
+ 
+ 
+ 
+CRC Safety Inspection Checklist ............................... 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 3 
+5.0  Resources Required .......................................... 3 
+6.0  Supporting Attachments / References ............... 3 
+7.0  Related Best Practices ...................................... 3 
+8.0  Acknowledgements ........................................... 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The following document is provided as a resource for Caterpillar dealers and customer mine sites. Content was provided 
+by one mine site to be shared with others as a suggested practice. Caterpillar shares it with you as a reference, not a 
+requirement, and has not written, edited, validated, or specifically endorsed the content. Caterpillar reserves the right to 
+add to, delete from, or remove this document entirely at any time in the future. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+CRC Safety Inspection Checklist 
+DATE 
+4/12/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0607-4.4-1083  
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+ 
+ 
+1.0 Introduction  
+ 
+Safety is a top priority. Often, company safety programs are based around monitoring and 
+reporting safety incidents and responding to and monitoring the frequency of safety incidents.  
+Local safety laws usually require this minimal practice. As a reactive process, such a program 
+has limited ability to prevent safety incidents from occurring.  
+ 
+Some dealers have developed CRC and shop safety inspection checklists based around known 
+requirements and collective safety knowledge. Making periodic inspections using a well-
+developed, exhaustive checklist is a proactive practice to improve safety. 
+ 
+This Best Practice shares an example of a safety inspection checklist used by one dealer. Due to 
+regional differences in occupational health laws and regulations, the calculation methods, the 
+frequency of checks, and the requirements listed in the checklist must be reviewed and modified 
+as appropriate for your local area. 
+ 
+2.0 Best Practice Description 
+ 
+This is a process by which safety inspections of the CRC are made on a periodic basis, 
+weaknesses are identified, and corrective measures are taken to improve working safety 
+conditions.  
+ 
+A company safety specialist who is familiar with safety requirements and laws should perform the 
+inspections.   
+ 
+To assist with the inspection process, a checklist should be developed and utilized. The 
+recommended categories of items include: 
+• Administration: Includes policy, records, and other administration-level items 
+• Training: Defines the breadth and depth of safety training for employees  
+• Risk Management: Performing risk assessments  
+• Emergency Contingencies:  Preparedness for evacuation emergencies  
+• Communication:  Existence of various safety meetings  
+• Management:  Tracking and recording, Safety Act Observations  
+• Suppliers: Safety efforts on part of dealer suppliers (i.e., require proper licensing)  
+• General Facilities:  Inspection for safety efforts and practices in all dealer facilities  
+• Risk Assessment:  Practice of planning activities safely before performing them  
+• General Attributes: Addressing various specific risks  
+• Maintenance Department:  Safety concerns for maintenance workers  
+• Tool Store & Shop Tooling:  Addresses various safety risks in the shop  
+• Parts:  Safe practices in parts warehouse including fork trucks and rack storage  
+• Laboratory:  Use of protective equipment and chemical storage in dealer lab  
+• Contract Mining:  Ensuring the safety practices of the dealer are followed at contract sites  
+• Office Administration:  Addresses safety concerns in an indoor office environment 
+• Paint Shop: Protective equipment and ventilation  
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+CRC Safety Inspection Checklist 
+DATE 
+4/12/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0607-4.4-1083  
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+• Machine Shop:  Minimizing common risks found in the machine shop  
+• Fabrication:  Safety of welding metal structures  
+• Dyno Cell:  Ventilation, noise issues  
+• Field Service & Pit Work: Minimizing risk to those person who work alone in field service  
+ 
+The checklist is formatted in an Item/Evidence format. The checklist items are in the left 
+column with indicating examples in the right. It is recommended to modify these items to suit 
+your dealer. 
+ 
+3.0 Implementation Steps 
+ 
+An example of an actual CRC safety inspection checklist is attached to this Best Practice. 
+ 
+If this checklist is utilized, it should be customized to meet any special local requirements.  The 
+Excel file can be edited as necessary. 
+ 
+4.0 Benefits 
+ 
+• Supports a proactive safety program. 
+• Creates standards and consistency in a periodic in spection process. 
+   
+5.0 Resources Required 
+ 
+A Qualified Safety Inspector. 
+  
+6.0 Supporting Attachments / References 
+ 
+Safety Checklist.xls  – the sample safety checklist  
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+ 
+Colin Ruddle – Westrac 
+colin.ruddle@westrac.com.au  
+ 
+Dale Brehm 
+Six Sigma Black Belt 
+Cat Global Mining

@@ -1,0 +1,619 @@
+SOURCE: 5.0 MARC Management\5.02 Contract Development and Implementation\1. Strategic\Developing a MARC Management Plan.pdf
+PAGES: 11
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Developing a MARC 
+Management Plan 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+ 
+Developing a MARC Management Plan .................... 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits ............................................................ 10 
+5.0 Resources Required ........................................ 10 
+6.0 Supporting Attachments / References ............. 10 
+7.0 Related Best Practices .................................... 10 
+8.0 Acknowledgements .......................................... 11 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+September 2006 
+0906-3.3-1021 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction 
+The MARC Management Plan Best Practice provides a template that guides a dealer through, 
+planning, documenting and communicating the roles, responsibilities and expectations to execute 
+the dealer obligation to the customer. 
+ 
+2.0 Best Practice Description 
+ 
+The Dealer MARC Management Plan requires participation from every department of the 
+business. Each department will be affected when building a realistic MARC rate the dealership 
+can quote to a customer, execute, and deliver the financial goals and targets. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MARC’s transcend all departments at the dealer. 
+ 
+P 
+A 
+R 
+T 
+S 
+S 
+E 
+R 
+V 
+I 
+C 
+E 
+S 
+A 
+L 
+E 
+S 
+A 
+D 
+M 
+I 
+N 
+ 
+ 
+ Maintenance and Repair Contracts (MARC’s) 
+AA  ssuucccceessssffuull  MMAARRCC  SSttrraatteeggyy  
+iiss  CCrroossss  FFuunnccttiioonnaall  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a MARC Management Plan 
+DATE 
+27 Sept 06 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.3-1021 
+Caterpillar Confidential:  GREEN         Page 2 of 11 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Service Department 
+• Labor Hours 
+• Types of Repairs 
+• Repair Process  
+Sales Department 
+• Models 
+• Sales Strategy 
+• Customer Needs 
+• Sales/ 
+• Marketing 
+Strategy 
+Parts Department 
+• Parts Inventories 
+• Parts Exchange 
+CSA Strategy INPUT 
+Administration 
+• Financial Tracking 
+• Reporting Structures 
+• Structure of Job  
+• Component codes 
+• Misc. Charges 
+I 
+N 
+P 
+U 
+T 
+INPUT 
+I 
+N 
+P 
+U 
+T 
+MMAARRCC  OOrrggaanniizzaattiioonn  AApppprrooaacchh  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a MARC Management Plan 
+DATE 
+27 Sept 06 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.3-1021 
+Caterpillar Confidential:  GREEN         Page 3 of 11 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+MARC’s involve inherent risks, and the sophistication of any business agreement will dictate the 
+impact on each department, and therefore each department’s involvement. Based on the Dealer 
+MARC infrastructure, this Best Practice should be performed for major contracts with 
+considerable risk elements. 
+ 
+3.1 Critical Assumptions 
+At this point in the MARC planning process, the following 2 elements should be available: 
+ 
+1. Validated, finalized signed MARC 
+2. Validated life cycle costs 
+ 
+Tasks that need to be defined and accountability assigned: 
+Dealer MARC Team 
+MARC 
+Sponsor 
+MARC 
+Manager 
+MARC 
+Support 
+1 
+MARC 
+Support 
+2 
+MARC 
+Support 
+3 
+Administrati
+on SPOC 
+Warranty 
+ SPOC 
+Sales/ 
+Marketing 
+SPOC 
+Condition 
+Monitoring 
+SPOC 
+Service 
+SPOC 
+Finance  
+SPOC 
+SPOC = Single Point of Contact 
+Info. 
+System 
+SPOC 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a MARC Management Plan 
+DATE 
+27 Sept 06 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.3-1021 
+Caterpillar Confidential:  GREEN         Page 4 of 11 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+1. Identify required parts 
+2. Implement the MARC in the Dealer Business System (DBS and non DBS) 
+3. Develop financial structure 
+4. Identify key contacts responsible for completing the tasks 
+5. Establish the date the task should be initiated 
+6. Estimate date the task should be completed 
+7. The actual date the task should be completed (?) 
+ 
+3.2 A documented Dealer Management plan should contain the following sections: 
+1. Organization / Communication Structure  
+2. Financial Structure  
+3. Parts Planning  
+4. Set Up Dealer Service System  
+ 
+See the sample Dealer Management Plan template below. 
+ 
+ 
+ 
+3.2.1 Organization / Communication Structure 
+ 
+• The communication plan creates a strategy that eliminates departmental boundaries and 
+facilitates any required culture change. 
+• Clear, timely and consistent messages will contribute to an informed workforce that is 
+aware of the goals and how the team will work toward them. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a MARC Management Plan 
+DATE 
+27 Sept 06 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.3-1021 
+Caterpillar Confidential:  GREEN         Page 5 of 11 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.2.2 Communication Plan  
+ 
+Single point of contact communication structure: 
+ 
+ 
+ 
+ 
+ 
+3.2.3 Financial Structure 
+ 
+The dealership must determine what items need to be tracked and reported to verify contract 
+performance. Although this information will be used in the analyze phase, it is essential to 
+setup the systems to ensure accurate reporting. A dealership may approach this in several 
+ways depending on how it wants to measure a MARC. The recommended reporting for 
+contract health contains five financial, and two mechanical metrics. 
+Financial Metrics 
+Specific 
+CSA 
+Leader 
+Administration 
+SPOC Warranty 
+ SPOC 
+Sales/ 
+Marketing 
+SPOC 
+Condition 
+Monitoring 
+SPOC 
+Service 
+SPOC 
+Finance  
+SPOC 
+CSA Contract 
+Manager 
+*SPOC = Single Point of Contact 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a MARC Management Plan 
+DATE 
+27 Sept 06 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.3-1021 
+Caterpillar Confidential:  GREEN         Page 6 of 11 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Revenue Expense Variance   Contractual Availability 
+Payload Compliance   Component Management 
+Budget Cost Variance 
+ 
+Mechanical Metrics 
+Mean Time Before Failure (MTBF) Mean Time to Repair (MTTR) 
+ 
+The level of detail these should be measured; 
+ 
+ 
+Customer Class The dealership must define a customer class. The customer can be 
+classified as a Revenue, Interdepartmental, Expense, or Other. The codes are used to identify 
+the classification of the work on work orders and how the dealership will charge parts, labor 
+and miscellaneous expenses. The customer class will affect pricing, taxing and accounting 
+routines based on the dealership financial principals. 
+ 
+Entry Code The dealership Financial Controller must supply an entry code. The entry code is 
+used specifically for accounting purposes and can be located in the sell rate file, the tax file or 
+in the parts, labor or miscellaneous detail maintenance functions in DBS. 
+ 
+Customer Number The dealership must create a customer number. This number can be 
+assigned in the customer information in DBS and acts as a unique reference number to a 
+specific customer 
+ 
+Store number The dealership must define a store number. The store number will identify 
+where work will be performed. Each dealer will use different methods of tracking parts, labor 
+and miscellaneous costs. Creating a store number will make tracking detailed cost information 
+less complicated and more effective. The store number utilized in the sell rate files for 
+differentiating pricing, accounting, and tax procedures is based on the detailed items in a work 
+order. The decision to create a store number for a MARC is based on the dealership’s 
+requirements to account for a MARC based on areas of business while continuing to manage 
+within the traditional parts and service operations. 
+ 
+3.2.4 Parts 
+ 
+The dealer must create and distribute a list of parts exchange components and the group 
+arrangement numbers to be stocked to support the contract. Included in this list should be the 
+PEX fees that apply to the MARC as well as the new components that have not been stocked 
+to support previous contracts. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a MARC Management Plan 
+DATE 
+27 Sept 06 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.3-1021 
+Caterpillar Confidential:  GREEN         Page 7 of 11 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+3.2.5 Setup Service in DBS 
+ 
+Set Up Service Parameters in DBS & Contract Tracker 
+• Preventive Maintenance 
+• Prototype Work order 
+• Contract Tracking and planning 
+ 
+The plan can be set up using the Dealer Management Plan template (continuing below). 
+Details required will be dictated by the type of contract (full MARC, Parts only, or partial 
+MARC) and the roles and responsibilities desired by the dealer. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a MARC Management Plan 
+DATE 
+27 Sept 06 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.3-1021 
+Caterpillar Confidential:  GREEN         Page 8 of 11 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a MARC Management Plan 
+DATE 
+27 Sept 06 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.3-1021 
+Caterpillar Confidential:  GREEN         Page 9 of 11 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+The benefits to establishing a MARC management include: 
+• Predictable revenue stream to dealer 
+• Enterprise approach to the Mining MARC opportunity.  
+• Employee satisfaction will result from participating in the rate development process and clearly 
+communicated goals and expectations.  
+• Customer satisfaction resulting from proper dealer execution and communication. Ensuring 
+MARC team members understand their roles and expectations, management is a simply a 
+function of extending authority and allowing staff members to be responsible for their own 
+areas. 
+ 
+5.0 Resources Required 
+ 
+• A dedicated person in each department to support the project sponsor and MARC manager. 
+ 
+• Top down MARC management direction. Top down directives ensure the staff is empowered 
+to make business decisions has the authority and management support required to be 
+successful. 
+ 
+6.0 Supporting Attachments / References  
+None 
+ 
+ 
+7.0 Related Best Practices 
+0906-3.3-1009  - MARC Rate Development 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a MARC Management Plan 
+DATE 
+27 Sept 06 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.3-1021 
+Caterpillar Confidential:  GREEN         Page 10 of 11 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Don O’Neill 
+Caterpillar Global Mining 
+Product Support - MARC Manager 
+ONeill_Don_G@cat.com 
++1 309 675 4861 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Developing a MARC Management Plan 
+DATE 
+27 Sept 06 
+CHG 
+NO 
+00 
+NUMBER 
+0906-3.3-1021 
+Caterpillar Confidential:  GREEN         Page 11 of 11

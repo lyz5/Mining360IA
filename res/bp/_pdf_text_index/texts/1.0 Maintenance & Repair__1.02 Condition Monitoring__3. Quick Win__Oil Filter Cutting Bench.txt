@@ -1,0 +1,337 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+January 15 
+1106-2.14-1036 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Filter Inspection Process 
+Using Special Filter-
+Cutting Bench 
+ 
+Maintenance 
+and Repair Application  Component 
+Rebuild 
+MARC 
+Management 
+ 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Component Life 
+Management 
+Component 
+Rebuild 
+MARC 
+Management 
+ 
+Maintenance Application Component Life 
+Management 
+Component 
+Rebuild 
+MARC 
+Management 
+ 
+Maintenance Application Component Life 
+Management 
+Component 
+Rebuild 
+MARC 
+Management 
+ 
+Maintenance Application Component Life 
+Management 
+Component 
+Rebuild 
+MARC 
+Management 
+ 
+Maintenance Application Component Life 
+Management 
+Component 
+Rebuild 
+MARC 
+Management 
+ 
+ 
+ 
+ 
+Filter Inspection Process Using Special Filter-Cutting 
+Bench ......................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Filter Inspection Process Using Special Filter-Cutting 
+Bench 
+DATE 
+1/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1106-2.14-1036 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+1.0 Introduction  
+ 
+Oil filters should be inspected at each planned maintenance period. Typically, oil filters are cut 
+open and inspected using a standard shop bench and workshop vice. The problem with this 
+approach is that it is difficult to properly secure the filter in order to cut the cap off of the filter. In 
+addition, oil contained in the filter can spill on the workbench or floor.  
+ 
+This Best Practice utilizes a simple, low cost filter cutting and inspection workbench as an integral 
+part of the filter inspection process. It has a built-in retainer to securely hold the filter while cutting 
+off the cap, an oil collection tank to contain all spills, and a shop vice to squeeze oil out of the 
+filter paper. It can be a fixed workbench stationed in a PM area or made portable by adding 
+wheels. 
+ 
+2.0 Best Practice Description 
+ 
+A filter inspection Best Practice uses the following procedure: (the boxed items require the filter-
+cutting bench and are detailed below) 
+ 
+1. During a standard service (or after 50 hours after an engine change), the technician will 
+remove the filters from the engine and place them in a drain tray for the oil to drain from 
+them.  
+2. The oil filter is then placed in the filter-cutting bench and the top is removed from the filter.  
+3. A section of paper is cut from the filter.  
+4. Oil from the section of paper is squeezed from the filter.  
+5. The filter paper is inspected for abnormal material.  
+6. If no abnormal material is found, the filter is discarded.  
+7. If abnormal material is found, another section of filter paper is cut to obtain more material 
+for inspection.  
+8. The technician, Workshop Fitter and Workshop Foreman should attempt to identify the 
+source of the material. The filter paper is bagged and tagged for safekeeping.  
+a. If the abnormal material is identified and is not of a serious nature, the machine will 
+be sent back to work and another filter will be cut after 50 hours for monitoring 
+purposes.  
+b. If the abnormal material can be identified and it is of a serious nature, then 
+inspection of the engine will start. A typical example: brass material from the pump 
+drive thrust washer. 
+ 
+If the abnormal material cannot be identified, then a sample should be sent to SOS for a 
+Filtergram. The results of the Filtergram will determine further action. 
+ 
+The filter-cutting bench provides a safe, simple, and consistent way to inspect filters. Basic bench 
+design includes a cylinder with clamp screws as a filter holding fixture, a waste oil collection tank, 
+and a mounted vise. Modifications can be made to suit individual needs, including wheels, 
+alternate filter securing methods, or a smaller press for removing oil from the filter paper. The 
+bench can be placed in the PM bay so technicians can immediately cut and inspect filters while 
+the machine is still in the shop for the PM.   
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Filter Inspection Process Using Special Filter-Cutting 
+Bench 
+DATE 
+1/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1106-2.14-1036 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+ 
+ 
+Basic directions for using the bench: 
+ 
+1. Install the filter and tighten the 
+setscrews.  Remove the filter cap with 
+the filter-cutting tool. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Vice to remove oil 
+from filter paper 
+Oil storage 
+tank 
+Tube and setscrews to 
+hold filter for cutting 
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Filter Inspection Process Using Special Filter-Cutting 
+Bench 
+DATE 
+1/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1106-2.14-1036 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+2. Place the filter on the bench in 
+preparation for cutting out a section of 
+paper to be inspected. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3. Remove a section of filter paper from 
+the filter. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4. Place the filter paper in the vice and 
+remove the oil from the filter paper. 
+Inspect the filter for abnormal material. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Note: Users may wish 
+to install a mechanism 
+for holding the filter 
+while cutting the paper. 
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Filter Inspection Process Using Special Filter-Cutting 
+Bench 
+DATE 
+1/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1106-2.14-1036 
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+3.0 Implementation Steps 
+ 
+1. Must have and follow a standard practice of filter inspections as part of a condition monitoring 
+process. 
+2. Personnel must be trained on the filter inspection process and interpretation of findings. 
+3. Design and fabricate test bench to meet needs. 
+4. Add, “Filter cut and inspected” to the PM checklist and sign off. 
+5. Ensure adequate lighting and magnifying glasses are available for proper filter paper 
+inspection. 
+ 
+4.0 Benefits 
+ 
+• Provides a safe and secure method of holding the filter while cutting it. 
+• Captures all oil released from the filter - prevents oil spills and environmental issues. 
+• All oil from the filter cutting process is captured in an oil storage tank. 
+• Cutting bench serves as a physical reminder for technicians to cut filters, ease of use 
+promotes good practice. 
+• The cutting of filters becomes an integral part of condition monitoring. 
+ 
+5.0 Resources Required 
+ 
+• Fabrication costs are approximately US $620 per bench. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Filter Inspection Bench Details.pdf 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+ 
+Ron Bucholz 
+Maintenance Planner 
+Hastings Deering (Australia) 
+ronbu@hastdeer.com.au 
+ 
+Additional assistance from: 
+Dale Brehm 
+Caterpillar Global Mining 
+6 Sigma Black Belt 
+Brehm_Dale_E@cat.com 
++1 309 675 6325

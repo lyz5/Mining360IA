@@ -1,0 +1,288 @@
+SOURCE: Piston (Pump) Clearance Measuring Tool.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+September 2021 
+4.03-210917-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Piston (Pump) Clearance 
+Measuring Tool 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Piston (Pump) Clearance Measuring Tool .................. 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description.................................... 2 
+3.0 Implementation Steps ......................................... 2 
+4.0 Benefits ................................................................ 5 
+5.0 Resources Required ........................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices........................................ 5 
+8.0 Acknowledgements ............................................. 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Piston (Pump) Clearance Measuring Tool 
+DATE 
+9/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210917-1 
+Caterpillar: Confidential  Yellow          Page 2 of 6 
+1.0 Introduction  
+ 
+The CAT V-Tool offered by Caterpillar is unable to measure the piston end clearance on all 
+different sizes of pistons (from Hydraulic Piston Pumps). Hence, Borusan technicians have been 
+unable to serve a measurement to support their decision on the reusability of these pistons. This 
+resulted in them spending unnecessary time, effort, and money to replace pistons with new ones, 
+when the original ones may have been able to be reused. Utilizing a piston clearance 
+measurement tool prevents these kinds of problems. The device enables technicians to check 
+and confirm that the end play meets Caterpillar’s specifications and enables them to make 
+informed decisions. Also, technicians can easily evaluate piston clearance percentage in their 
+own working area and decide whether they can continue to work with the piston or not. This 
+device saves time and reduces unnecessary piston waste while increasing sustainability.  
+ 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Firstly, a surface-grinded plate was designed and manufactured by the technicians. This plate’s 
+purpose is to hold the tool together and making carrying the entire device easier. The aluminum 
+material was put on top of the plate. Aluminum was selected because it is harmless to pistons and 
+in addition it is light, making it easy to maneuver. After that, two wedges were set up to tighten the 
+pistons which are plugged in. O-rings are also used for tightening purpose. In the end, the 
+comparator indicator is used for getting results.  
+ 
+3.0 Implementation Steps 
+ 
+1- PLATE  
+           A surface-grinded plate is produced. The plate should be underneath the tool. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Piston (Pump) Clearance Measuring Tool 
+DATE 
+9/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210917-1 
+Caterpillar: Confidential  Yellow          Page 3 of 6 
+2 - ALUMINUM MATERIAL 
+     The aluminum material must be fixed to the plate.  
+  
+       
+       
+                   
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Piston (Pump) Clearance Measuring Tool 
+DATE 
+9/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210917-1 
+Caterpillar: Confidential  Yellow          Page 4 of 6 
+3- WEDGES  
+    The wedges should be set up into two sides of aluminum material. 
+ 
+             
+  
+4- MEASUREMENT with COMPARATOR INDICATOR  
+    Measurements can be done with the usage of comparator indicator. 
+ 
+         
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Piston (Pump) Clearance Measuring Tool 
+DATE 
+9/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210917-1 
+Caterpillar: Confidential  Yellow          Page 5 of 6 
+4.0 Benefits 
+ 
+ Technicians can easily use this tool in their own work area. This creates a time saving. 
+ The tool is portable and easy to use. 
+ Preventing unnecessary piston waste due to wrong measurements of piston clearance 
+percentage. 
+ 
+5.0 Resources Required 
+ 
+Item Unit Size Cost (TL) 
+Aluminum 
+Material 
+1 $14 
+Wedges 2 $7 
+Plate 1 $10 
+Comparator  
+Indicator 
+1 $16 
+ 
+TOTAL 
+ 
+5 
+ 
+$54 
+ 
+6.0 Supporting Attachments / References 
+ 
+     There are six drawings and one Application Video attached: 
+ 
+1. Adjustment Bolt 
+2. Fixture 
+3. Hook 
+4. Special Bolt 
+5. Table 
+6. Tool 
+7. Application Video 
+ 
+7.0 Related Best Practices 
+ 
+8.0 Acknowledgments 
+ 
+This Best Practice is written by: 
+   
+Can Özcan 
+CRC Engineer Alpha Intern  
+Borusan Makina ve Güç Sistemleri   
+  
+This Best Practice designed and Implemented by: 
+   
+Mustafa Gümüş                                                  
+Machine Shop Technician 
+Borusan Makina ve Güç Sistemleri 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Piston (Pump) Clearance Measuring Tool 
+DATE 
+9/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210917-1 
+Caterpillar: Confidential  Yellow          Page 6 of 6 
+ 
+Serdar Bicer 
+Hydraulic Technician 
+Borusan Makina ve Güç Sistemleri 
+ 
+Project and Best practice supported by 
+Emre Karahan 
+Gebze CRC Leader  
+Borusan Makina ve Güç Sistemleri   
+ 
+Ömer Emre Demirkale   
+CRC Leader 
+Borusan Makina ve Güç Sistemleri   
+ 
+Rafet Kaymakci   
+Mining Customer Support Manager   
+Borusan Makina ve Güç Sistemleri

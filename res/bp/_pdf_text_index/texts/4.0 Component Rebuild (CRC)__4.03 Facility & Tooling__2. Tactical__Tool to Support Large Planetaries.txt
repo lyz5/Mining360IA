@@ -1,0 +1,344 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Lifting Tool to Support 
+Large Planetaries 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Lifting Tool to Support Large Planetaries ................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+October 2013 
+1307-4.03-1321 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+1.0 Introduction  
+The assembly of the large planetaries (992) involves the manipulation of heavy gears. These 
+gears create a danger for the technician during the lifting and placement of the gear and the 
+process is time consuming. 
+ 
+A lifting  tool was designed  to support the gear during installation and alignment with the pin 
+bores. This tool reduces the safety risk, parts damage, and decreases the assembly time. 
+ 
+2.0 Best Practice Description 
+ 
+• Easy transportation 
+• Easy handling 
+• Easy storage 
+• Reliant and adjustable for different gears sizes. 
+• High adhesive paint to eliminate contamination from the painted support surface 
+• Minimum maintenance 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool to Support Large Planetaries 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-4.03-1321 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.0 Implementation Steps 
+ 
+Install the planetary carrier on the support stand (see illustrations). Support stand has adjustable 
+carrier supports (6 inches in height) that have lip stops that prevent movement of the planetary 
+carrier. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool to Support Large Planetaries 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-4.03-1321 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+Adjustable for balancing  the 
+weight of the different planetary 
+gears 
+ 
+The majority of large planetary gears (992) have one orifice. This orifice is used with the lifting tool to 
+help secure the planetary gear to the tool. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool to Support Large Planetaries 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-4.03-1321 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+With the gear secured on the lifting tool. The repair area crane is used to lift and manipulate the gear 
+while installing the gear in to the carrier. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+When the gear is in the planetary carrier the thrust washers or spacers are installed before removing 
+the lifting tool. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool to Support Large Planetaries 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-4.03-1321 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+When the gear and the thrust washers or spacers are installed, release the tension on the adjusting 
+screw and remove the lifting tool. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Once the lifting tool is removed you can align and install the carrier gear pin. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool to Support Large Planetaries 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-4.03-1321 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+4.0 Benefits 
+-The installation of the large planetary gears is safer for the technician and the assembly is faster. 
+-With this tool the technician does not have to do any lifting of planetary gears. 
+-This tool can also be used when a hydraulic press is needed to install the planetary gears that          
+require pressing the pin in to the carrier. 
+ 
+5.0 Resources Required 
+Fabrication shop 
+ 8-10 labor hours. 
+Material cost, less than $1000.00 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Maqsa 
+Carlos E Cano Cano – 
+carlos_cano@maqsa.com.mx 
+Aidee Frias - aidee_frias@maqsa.com.mx 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Lifting Tool to Support Large Planetaries 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-4.03-1321 
+Caterpillar Confidential:  GREEN          Page 6 of 6

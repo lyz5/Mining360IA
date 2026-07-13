@@ -1,0 +1,529 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACT ICE SERIES  
+Contract Language 
+ 
+Maintenance 
+and Repair Application Component Life 
+Management 
+Component 
+Rebuild 
+MARC 
+Management 
+ 
+      
+ 
+ 
+ 
+Contract Language .................................................... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description .................................. 1 
+3.0 Implementation Steps ........................................... 6 
+4.0 Benefits ............................................................... 7 
+5.0 Resources Required ............................................. 7 
+6.0 Supporting Attachments / References .................... 7 
+7.0 Related Best Practices .......................................... 7 
+8.0 Acknowledgements .............................................. 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+  
+ 
+ 
+ 
+ 
+  
+December 2008 
+0407-3.3-1075 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Mining MARC contracts represent legally binding agreements between customers and dealers, however 
+many customers remain unaware of (or consciously disregard) their obligations under these contracts. 
+This negligence places pressure on the financial health of mining MARC contracts, resulting in reduced 
+dealer profitability and potential risk to Caterpillar when supporting poor dealer margins through CGM Risk 
+Partnering (or “MARC Hardship” processes).  
+ 
+Mining MARCs represent significant Parts and Service business to Cat and dealers that is effectively 
+protected against competitive threat. Conversely, MARCs also represent a significant risk to dealers 
+through reduced dealer profitability. A sizeable proportion of contract cost over-runs (estimated at 20%) 
+are caused by customers not fulfilling their obligations (as stated or implied) in the contract. These 
+unfulfilled obligations can result from a customer not completely understanding their contractual 
+obligations or their unwillingness (or inability) to fulfill them.  
+ 
+Up until now, CGM has used informal contract language guidelines. With increased mining MARC 
+business, there is a strong need to develop and deploy a formal set of recommended clauses/ language to 
+ensure customers fulfill their contract obligations and do not adversely affect dealer profitability.  
+ 
+This Best Practice contains the top ten clauses to be negotiated into contracts between dealers and 
+customers. If a contract clause is removed, dealers will be in a position to explain the commercial reason 
+for the removal, which satisfies the contract due diligence process.  This Best Practice supports CGM 
+Critical Success Factors 4, “Deploy globally consistent product support processes” and 8, “Profitably 
+expand our mining value proposition”. 
+ 
+2.0 Best Practice Description 
+The objective for this Contract Language Best Practice is to outline those items in Dealer/ Customer 
+MARCs that should be managed by each party. Contract language/ verbiage used in contract 
+documentation must be sufficient to ensure these obligations are upheld. A set of suggested contract 
+language templates have been developed with the intention of closing loopholes that allow customers to 
+accidentally or willingly disregard (or poorly manage) their contractual obligations.  
+ 
+Proper contract language will ensure that changes in machine application throughout the life of the 
+contract are understood with regard to potential cost increases. Improved contract language will also 
+ensure our dealers and Caterpillar are not exposed to liabilities for which they are not or should not be 
+held responsible. 
+ 
+ 
+2.1 Application Changes            
+     
+The rates shown in Schedule A.1.b are provided based on machines operating on the mine design as 
+understood at date here, and especially within the following limits.  
+• Model  
+• Maximum Grade: (i.e. 8%) 
+• Maximum Average Fuel Burn: (i.e. 125 liters per hour) 
+• Maximum One Way Haul Distance: (i.e. 5km) 
+• Primary Application: Haulage of ore and waste to crusher, stock piles and dumps 
+• If any of the maximum limits are exceeded for more than 2 consecutive months, the rates shown in 
+Schedule A. 1.b no longer valid and are subject to adjustment as required to reflect a more extreme / 
+less extreme application 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contract Language 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-3.3-1075 
+Caterpillar Confidential:  GREEN          Page 1 of 7 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+2.2 Availability           
+Dealer guarantees the minimum mechanical availability of the Fleet of Number new Caterpillar Model 
+trucks at the Customer Mine. The reasons for downtime will be tracked and reconciled on a monthly 
+basis at the site level. The availability formula shall be calculated monthly and reconciled at the end of 
+each calendar year.   
+ 
+The formula for calculation shall be  
+ 
+( ) ( ) ( )
+( ) Time Total
+sAdjustmentDowntime-Time Total  +=tyAvailabili  
+ 
+In the event the fleet average per year falls below the yearly guarantee <Dealer name here> will pay 
+$XX.00 per deficit hour as a Parts Credit.  In the event the Fleet Average exceeds the guarantee by 2% 
+then <Customer name here> will allow all bonus hours to be banked and carried forward for the following 
+year. Monthly reporting will be a customer obligation. Mean time to repair, mean time to stops, fleet 
+availability are required on a regular monthly basis. 
+ 
+2.3 Betterment 
+Settlement 
+In order to make sure that all parties in the agreement remain free from large or unusual liabilities 
+throughout the life of the agreement, a Betterment calculation will be made at each site every month.   
+ 
+Betterment is simply defined as: 
+ 
+ 
+ 
+ 
+ 
+Remaining Life is the value of the unused hours of any component currently installed in a CPH 
+agreement truck.  It can be determined by multiplying the remaining life in hours by the current CPH for 
+that component.  Further, the remaining life in hours is found by taking the expected life for that 
+component type and location and subtracting the actual life on that component to date.  Note that as a 
+component is removed from a CPH agreement truck, that component is removed from the Betterment 
+calculation.  The value of remaining life for that component is set to zero, and then replaced by the value 
+of remaining life for the newly installed component. 
+ 
+Customer Pre-Paid is the money customer paid on a CPH basis before the component was replaced 
+under the CPH agreement.  There is a separate customer pre-paid value for every component on every 
+truck that was enrolled into the NAOM Component Agreement though they all start at zero. Pre-paid 
+dollars start accumulating after day one in the contract.  The value of the customer pre-paid for a 
+particular component is simply the money paid on a CPH basis before that component was removed and 
+replaced by the contract.  Taking the hours paid to the contract and multiplying by the CPH for the 
+different adjustment periods before the first removal under contract can determine this. 
+ 
+When the Betterment balance becomes significantly large, it will be reduced by payments made from 
+either Dealer to Customer or vice versa.  A balance greater than $500,000 at customer site A, $200,000 
+at customer site B, and $200,000 at customer site C will trigger these payments. 
+ 
+2.4 Escalation 
+The variable Equipment Maintenance Rates in Schedule A Item 1 are subject to indexation calculated on 
+1 January and 1 July in each year or as parts price increases are implemented by Caterpillar. The 
+Betterment = (Remaining Life) – (Customer Pre-Paid) 
+ 
+positive = Owed Dealer  negative = Owed Customer 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contract Language 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-3.3-1075 
+Caterpillar Confidential:  GREEN          Page 2 of 7 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+correction is then applied to subsequent Equipment Maintenance Rates.  The Rates are split into the 
+following components: 
+1) Parts - Imported 
+The imported parts component is indexed in line with the increase in the total value of the parts list 
+shown as Schedule B.1.a  
+2) Parts and services - Local Supply 
+Schedule B.1.a Indexation of Parts prices  
+Calculation of “A” parts price increase factor determined by the indexation of the following basket of 
+parts values, each increased with the Caterpillar US consumer list price at each date of price change.  
+ 
+<Basket of Parts Listed here (Part Number, Description, Part Price Retail)> 
+ 
+Currency Exposure 
+When customers purchase equipment they require replacement parts and components to perform 
+repairs. Dealers purchase parts from OEM suppliers and re-sell those parts to customers taking into 
+account their cost to deliver this service. In the event a dealer purchases parts in one currency and re-sell 
+in another, the currency exchange rate is considered as a dealer cost and is passed along to the end 
+user customer. This is a standard business operation when a currency discrepancy exists. In the case of 
+a MARC, dealers need a mechanism to pass along the risk involved with currency growth / decline that 
+may occur over the term a dealer is providing a service to the customer. 
+ 
+Currency:  The customer-billing rate will increase and decrease based on a “Basis Point” relationship 
+with currency. The relationship between percentage changes and basis points will be summarized as 
+follows: 1% change = 100 basis points and 0.01% = 1 basis point. The customer-billing rate will 
+increase/decrease after a 100-basis point change in currency. The benchmark will be the exchange 
+rate as of <Date here> 
+ 
+2.5 Gain/Loss Sharing 
+Savings incurred that reduce the combined total targeted running repairs and rebuild costs will be split 
+equally between <Customer name here> and <Dealer name here>. All costs that exceed the combined 
+total targeted running repair and targeted rebuild costs will be split equally between <Customer name 
+here> and <Dealer name here> up to the CAP of $XX.XX USD. The CAP will be adjusted for inflation by 
+the agreed upon process between <Customer name here> and <Dealer name here> as outlined by 
+contract clause here and/or <Exhibit number here>. 
+ 
+2.6 Inclusions/Exclusions 
+"Clearly" defined and enforced roles and responsibilities. 
+ 
+Customer’s Responsibilities and Obligations: 
+ 
+• Routine Maintenance.  <Customer name here> agrees to perform all Routine Preventive 
+Maintenance and follow the operation procedure and the specifications as described in the latest 
+revision of the applicable Operation and Maintenance manuals provided by <Dealer name here>for 
+the <Model #> trucks. 
+ 
+• Bed Repairs.  <Customer name here> will provide welding labor and materials for bed repairs. 
+ 
+• Fuel, Grease, Lubes, and Oils.  <Customer name here> will provide fuel, grease, and lubricating oils 
+that will meet the specifications published in the latest applicable Caterpillar Operation/Maintenance 
+manual for the serial number range of the trucks in this Contract. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contract Language 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-3.3-1075 
+Caterpillar Confidential:  GREEN          Page 3 of 7 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Location of Trucks.  These trucks will initially be located at the __________ Mine; however, 
+<Customer name here> may utilize the haul trucks in the conduct of its business at either 
+________________ or ____________________ Mine.  The haul trucks identified in this Contract 
+may not be split between mine locations unless the aggregate number of all <Model #> model 
+Caterpillar trucks at such location is _______ or greater.  If, at any time, the aggregate number of 
+<Model #> model trucks falls below _______ at the designated mine location, or if these haul trucks 
+are transferred to another <Customer name here> property, the SMU rate included in this Contract is 
+subject to renegotiation.  If these trucks are transferred outside <Dealer name here> service territory, 
+this Contract will be terminated. 
+ 
+• Miscellaneous Parts, Labor and Supplies.  To further define and clarify <Customer name here> 
+responsibility under this Contract, <Customer name here> is responsible for parts and labor, 
+operating supplies, and some parts (described below), but not limited to, the following list: 
+ 
+o Bed repairs (except for hinge pin brackets on Caterpillar beds) 
+o Coolant and conditioner 
+o Engine, hydraulic, and transmission fluids 
+o Fire suppression system and labor 
+o Glass, mirrors, and operator seat 
+o Grease, grease fittings, and grease lines 
+o Lights, light bulbs, and turn lights 
+o Lubrication fluids and coolant associated with all component removal and installation 
+o Radios and antennas 
+o Steps, handrails, ladders, sheet metal, and rock knockers 
+o Tires, tire hardware, and tire maintenance 
+o Wiper blades 
+o Welding – routine frame repairs  
+ 
+• Facilities, Cranes and Storage.  To implement this Contract, <Customer name here> will provide 
+<Dealer name here> a facility of adequate size with overhead crane capacity or equivalent mobile 
+crane capacity for the equipment under this Contract.  <Customer name here> agrees to make 
+storage available for those tools and parts <Dealer name here> needs to fulfill this Contract, plus 
+office space for <Dealer name here>’s on-site contract supervisor and lead man. 
+ 
+• Supplemental Labor.  <Customer name here> may furnish helpers to <Dealer name here> , when 
+requested and available.  In such event, <Customer name here> is entitled to charge <Dealer name 
+here> the rate of $_______ per hour, the rate being adjusted for inflation using the process outlined 
+in subsection 7.3 of paragraph 7. 
+ 
+• Disabled Trucks.  If the trucks are disabled in the pit or on a haul road, it will be the responsibility of 
+<Customer name here> to provide and place appropriate safety barriers and warning signs prior to 
+removal there from. The <Customer name here> will be responsible to move a disabled machine out 
+of the operations area and to the shop for repairs. <Dealer name here> will provide technical and 
+mechanical assistance as necessary. 
+ 
+2.7 Inspections 
+The Dealer shall assist and fully co-operate with the Customers Representative to conduct fair and 
+reasonable periodic audits of the Works and of compliance with the Contract. 
+The Dealer shall develop and implement corrective actions for all non-compliances identified by the 
+audits in accordance with a time scale to be mutually agreed. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contract Language 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-3.3-1075 
+Caterpillar Confidential:  GREEN          Page 4 of 7 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+The customer shall provide the dealers’ representative and/or its nominee access to the Site and the 
+customer establishment, records and data and the opportunity to inspect the work being carried out by 
+the Contractor. The Principal’s Representative may issue directions in respect of any work which in its 
+opinion is being carried out or has been carried out incorrectly or in an unsafe manner, or in respect of 
+any work or part that is defective. Such direction so given by the Principal’s Representative shall be 
+evidenced or substantiated by supporting information or documentation that clearly illustrates why the 
+current practice is undesirable. 
+ 
+2.8 Payload Compliance 
+Payload Compliance 
+ 
+• VIMS Payload Monitoring System.  Each haul truck will have a VIMS payload monitoring system 
+along with gear restricting software.  <Dealer name here> will maintain the VIMS system and gear 
+restricting software and will ensure that the system and the software are accurate, reliable and 
+operational. In the event <Dealer name here> cannot maintain the accuracy of the VIMS payload 
+monitoring system and gear restricting software, <Dealer name here> and <Customer name here> 
+will mutually agree upon action to correct the inaccuracies or software failures.  If the VIMS payload 
+monitoring system and gear restricting software fail or are inaccurate, unreliable or un-repairable for 
+a time period of greater than six consecutive months, then the obligations of <Customer name here> 
+concerning Caterpillar’s overload policy shall have no force or effect during that time period. 
+ 
+• Payload Overload Policy.  Attached hereto as <Exhibit Here> is Caterpillar’s “10/10/20 Policy” 
+developed by Caterpillar to minimize overloads and potential truck damage.  The parties agree to 
+manage the payloads on the haul trucks to be consistent with Caterpillar’s 10/10/20 Policy by 
+reviewing each truck’s VIMS payload monitoring system data monthly and taking corrective action, if 
+necessary, to keep the payloads within the stated Policy parameters. 
+ 
+• Payload Target Modifications. <Dealer name here> has defined an initial payload target for the haul 
+trucks of _______ tons.  This payload target is based on truck and body configuration at time of truck 
+commissioning. The payload target may increase or decrease if modifications are made to a haul 
+truck or if an alternate bed is installed at a later date.  In the event of a truck modification, a new 
+payload target may be determined by subtracting any weight added to the truck’s original GVW from 
+the former target payload.  In the event an alternate bed is installed, subtracting the weight of the 
+new bed from _ lbs and adding the result to the former payload will determine a new target payload.  
+ 
+• Not to Exceed Target. <Customer name here> agrees to manage the mean payload to not exceed 
+the target payload – calculated for each monthly review and for life-to-date—except as otherwise set 
+out in <Exhibit Here>. 
+ 
+• Payload Distribution Curve.  <Customer name here> agrees to manage a payload distribution to 
+have no more than 10% of the payloads exceeding 1.1 times the target payload (<XXX Tons>) for 
+each monthly review and for life-to-date of each truck.  At the end of this Contract, for every payload 
+that exceeded 1.1 times the targeted payload more than 10% of total payloads, <Customer name 
+here> will pay a $_______ per payload charge.  As per <Exhibit Here>, annual reconciliation will be 
+implemented to reduce effect of payload banking.   
+ 
+• Payload Distribution.  The Caterpillar chassis and bed are designed as a unit.  This design is 
+engineered to accomplish axle weight splits of 33% to the front and 67% to the rear.  <Customer 
+name here> agrees to make all reasonable attempts to achieve these axle targets by balancing the 
+load.  In the event imbalanced loading results in confirmed damage to truck components, <Dealer 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contract Language 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-3.3-1075 
+Caterpillar Confidential:  GREEN          Page 5 of 7 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+name here> reserves the right to negotiate with <Customer name here> a fair restitution for such 
+damage. 
+ 
+• Event Target Payload Exceeds, <Customer name here> agrees to dump all loads exceeding 1.2 
+times the target payload within a ½ mile-working radius of the loading area.   
+ 
+• Scale Studies.  Scale studies will be performed semi-annually beginning as of the date on which the 
+_______ truck fleet has been commissioned and accepted to ascertain and ensure the accuracy of 
+the VIMS payload monitoring system and gear restricting software. <Dealer name here> will assume 
+responsibility for scheduling the first scale study and the cost thereof. <Customer name here> will be 
+responsible for the cost and schedule of the second scale study.  Thereafter, the responsibility for 
+scheduling a scale study and the cost thereof will alternate between the two parties. 
+ 
+2.9 Performance Reviews: Contract: 
+The Customer and the Dealer shall meet at quarterly intervals to: 
+• Review the performance of the Equipment during the period 
+• Review the Dealer’s Maintenance performance during the period, as determined by the Key 
+Performance Indicators agreed to by the Customer and the Dealer 
+• Review the Dealer’s management performance for the period, as measured by compliance with the 
+Management Plans as otherwise agreed to between the Customer and the Dealer, 
+• Review Labor levels. 
+• Assess the operation of the Dealer and ensure its smooth operation. 
+• Identify and develop improvement opportunities. 
+• In recognition of the desire of the Customer and the Dealer to continually improve the performance 
+and costs of the Equipment, and the operation of the Contract, other items relevant to this objective 
+may from time to time be included in the review. 
+The exact timing of Contract Review Group meetings shall be agreed between the Customer and the 
+Dealer or as otherwise directed by the Customer’s Representative. 
+ 
+2.10 Reporting Requirements 
+The Contractor shall provide to the Principal a report each month containing the following sections: 
+• Safety: This section of the report shall contain a list of all incidents occurring during the week and any 
+other safety issues arising; 
+• Environment: This section of the report shall contain all environmental incidents occurring during the 
+week and any other environmental issues arising; 
+• Repair and Maintenance of Equipment: This section of the report shall contain details of all repair and 
+maintenance activities associated with the Equipment; and 
+• Issues Arising: A list of all issues arising including any matters requiring direction from the Principal 
+shall be included in this section of the report. 
+This report shall be completed by the Contractor and made available to the Principal by 0900 hours on 
+the day of the week to be agreed between the Principal and the Contractor. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The attachment provided has examples of the clauses implemented into an actual dealer contract. 
+Application – Page 2 of 10 Section 7.3 Subsection (b) 
+Availability – Page 6 of 10, Exhibit B 
+Betterment – Page 3 or 10 Section10 & Exhibit C 
+Escalation – Page 2 of 10 Section 7.1, Section 7.2, Section 7.3 
+Gain / Loss Share – Page  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contract Language 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-3.3-1075 
+Caterpillar Confidential:  GREEN          Page 6 of 7 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Inclusion & Exclusions – Page 5 of 10 Section 13, Section 14 
+Inspections – Page 7 of 10 Sections 14.8 
+Payload Compliance – Page 3 or 10 Section 11, Exhibit E, Exhibit G, Exhibit H 
+Performance Reviews – Page 3 or 10 Section 8 /  
+Reporting Requirements – Page 5 of 10 Section12.4, Exhibit A 
+ 
+4.0 Benefits 
+ 
+Reduce the risk of mining MARC contract cost over-runs due to customers not fulfilling their obligations or 
+changing machine application without suitable contract rate adjustments.   
+Contract Language changes to: 
+• Clearly define the customer’s responsibilities under the MARC contract. 
+• Define the potential for contract rate rises if machine application moves outside agreed-to/ 
+acceptable operating criteria. 
+• Ensure timely resolution of contract/ contractual disputes. 
+• Ensure fair reconciliation of contracts in the event of Termination, Extension, etc. 
+• Ensure the responsibilities of the Cat Dealer are clearly defined 
+ 
+5.0 Resources Required 
+ 
+The resources required to exercise this Best Practice is the desire to change the dealer’s existing contract 
+structure and contract negotiation process. This Contract Language Best Practice can effectively change 
+the operating relationship dealers have with customers. In some cases, there may be a higher degree of 
+strain introduced when dealers attempt to enforce these contract clauses. Historically, customers may 
+have become accustomed to ignoring their obligations that they now have a contractual obligation to 
+honor.  
+ 
+6.0 Supporting Attachments / References 
+• Contract Language - Example_v2.doc Sample contract utilizing these top 10 clauses 
+ 
+7.0 Related Best Practices 
+None. 
+ 
+8.0 Acknowledgements 
+ 
+Jim Davey – APD Regional MARC Consultant, performed the bulk of the research and development on 
+this Best Practice. 
+This Best Practice was written by: 
+Don O’Neill 
+Cat Global Mining  
+Product Support Group – MARC Manager 
+ONeill_Don_G@cat.com  +1 309 675 4861 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Contract Language 
+DATE 
+2/20/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-3.3-1075 
+Caterpillar Confidential:  GREEN          Page 7 of 7

@@ -1,0 +1,188 @@
+SOURCE: 3.0 Component Life Management\3.04 Removal & Installation\2. Tactical\Change Hydraulic Hoses During Major Component R&I.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Replace Fluid Hoses 
+During Component R & I 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+ 
+Replace Fluid Hoses During Component R & I .......... 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments & References .............. 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+September 2006 
+0906-2.3-1015 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+When a major component is removed for a PCR rebuild, this is an ideal time to change all fluid 
+line hoses in the major component compartment area.  This is especially true for engine Removal 
+and Installation (R&I) where hoses are very difficult to access with the engine in chassis.  
+ 
+This practice prevents:  
+- Hose failures,  
+- Contamination, and 
+- Loss of fluid and machine downtime to replace failed hoses. 
+ 
+2.0 Best Practice Description 
+This Best Practice is to replace all fluid hoses in a major component compartment area while the 
+component is out of chassis for a PCR rebuild.  Access to the compartment is greatly improved, 
+and thus labor required is a fraction of the labor necessary to change a hose with the component 
+in chassis. In addition, this practices provides a planned before-failure replacement schedule for 
+the machine hoses and fluid lines. 
+ 
+3.0 Implementation Steps 
+ Required process changes include: 
+1. Add "Replace Fluid Hoses" to the R&I checklist  
+2. Add hoses and clamps to the R&I parts kit and checklist,  
+3. Add OHT hose routing diagrams to the R&I forms kit.  Hose routing diagrams are contained 
+in the machine parts manual. 
+Example: Parts Book Hose Part Numbers and Routing Example 
+Component Shipped
+for
+Installation
+Information Packet
+Installation Checklist
+Special Instructions
+Control Forms
+Add Hose Routing
+Diagrams
+Installation
+Scheduled
+Install Parts Kit
+Ordered
+Add Hoses and
+Clamps
+Install Component
+Complete
+Checklists
+Install New Hoses
+and
+Clamps
+Test Machine
+Check for Leaks
+Oil Sample
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Replace Fluid Hoses During Component R & I 
+DATE 
+9/13/2006 
+CHG 
+NO 
+02 
+NUMBER 
+0906-2.3-1015 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ Add OHT hose routing diagrams to the R&I forms kit. 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+• Prevent unplanned hose failures 
+• Better machine availability 
+• Increased production 
+ 
+ 
+5.0 Resources Required 
+ 
+Time to identify parts and information required to perform the hose replacements. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Replace Fluid Hoses During Component R & I 
+DATE 
+9/13/2006 
+CHG 
+NO 
+02 
+NUMBER 
+0906-2.3-1015 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+6.0 Supporting Attachments & References  
+None Applicable 
+ 
+7.0 Related Best Practices 
+None applicable. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was authored by: 
+ 
+Dale Brehm 
+Caterpillar Global Mining 
+6 Sigma Black Belt 
+Brehm_Dale_E@cat.com 
++1 309 675 6325 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Replace Fluid Hoses During Component R & I 
+DATE 
+9/13/2006 
+CHG 
+NO 
+02 
+NUMBER 
+0906-2.3-1015 
+Caterpillar Confidential:  GREEN          Page 4 of 4

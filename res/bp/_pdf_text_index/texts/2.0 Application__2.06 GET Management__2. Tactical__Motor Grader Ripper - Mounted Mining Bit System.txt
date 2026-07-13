@@ -1,0 +1,288 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Motor Grader Ripper - 
+Mounted Mining Bit System 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Motor Grader Ripper - Mounted Mining Bit System ... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+December 2011 
+1110-2.06-1262 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+Given the importance of haul road maintenance to a mine site’s production, motor graders are a 
+critical support tool to a site’s operation. Some of the key tasks these machines perform include: 
+maintaining haul roads to the original design (i.e. grade, cross-fall or crown, super-elevation, etc.), 
+keeping rolling resistance to a minimum, and ensuring road defects such as rock spillage are 
+removed.  
+ 
+To perform these tasks, the moldboard cutting edge is the primary Ground Engaging Tool (GET) 
+utilized. However, for haul roads with harder, drier, and more compact running surfaces, such as 
+those typically seen at sites in arid climates like Arizona and Nevada (USA), GET penetration can 
+be more difficult when performing haul road maintenance. 
+ 
+ 
+2.0 Best Practice Description 
+This Best Practice provides an alternative use for the ripper arrangement on a motor grader. 
+Regarding GET on a motor grader, there is typically a cutting edge bolted to the moldboard under 
+the front frame for cutting and grading purposes. On the rear of the machine, ripper (or scarifier) 
+tips are typically attached to the ripper shanks in the ripper arrangement to perform some lighter 
+or less aggressive ripping tasks. However some sites, especially those located in more arid and 
+drier climates and with harder, more compact running surfaces, may not utilize the ripper 
+arrangement to a great degree. 
+ 
+For these sites and possibly others, an opportunity may exist to modify the ripper arrangement in 
+a manner similar to that outlined below. The modification allows for a mining bit system to be 
+installed on the ripper arrangement in place of the ripper tips. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Motor Grader Ripper-Mounted Mining Bit System 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-2.06-1262 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Implementation Steps 
+The recommended steps to follow when making this modification to the ripper arrangement are 
+(assume 16-size grader): 
+• Fabricate (4) 2” flame cut shanks with 2 ¼” holes, 3” from the top of the shank. Material 
+used for the shanks is A572 grade steel. Top corners of the shank should be rounded for 
+easier insertion into the ripper arrangement pockets. 
+o Only (3) flame cut shanks are needed when modifying a 12-size grader. 
+• Fabricate the 1” by 1’ by 12’ base plate (also A572 grade material), with one corner 
+beveled to facilitate bit removal. Holes for bolt-on adapter plates should be made 3 ½” from 
+the bottom of the edge. 
+o One solid support plate (A36 grade material) runs the length of the base plate 
+directly under the shanks and above the bolt holes; this support plate can be 
+gusseted to the base plate to provide additional strength to the box section. 
+o Another solid support plate is welded between the shanks at the top of the base 
+plate. The support plates and gussets are made from A36 grade material. 
+o A 20’ piece of 1” by 6” flat bar is typically used for the support gussets; a 20’ piece 
+of 1” by 8” is used for the support plates and to also cap the ends of the box section. 
+• Weld the shanks to the base plate and upper and lower support plates, as well as weld in 
+the gussets (if used) to provide additional support to the box section. The weld wire used is 
+flux-cored gas-shielded 71M wire (.052” (1.3mm) diameter). 
+o Reference the following pictures for further clarity. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Motor Grader Ripper-Mounted Mining Bit System 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-2.06-1262 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Motor Grader Ripper-Mounted Mining Bit System 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-2.06-1262 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+It is important to remember the following when using the rotating bit system: 
+• Bit penetration should not exceed the carbide; therefore bit depth should be approximately 
+1.0” to 2.0” (25mm to 51mm). 
+• Operators should keep the bits perpendicular to the ground surface, with a cast angle 
+between 0° and 10°. 
+• Operating speed should be between 4 to 6 mph (not exceeding 6 mph). 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Motor Grader Ripper-Mounted Mining Bit System 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-2.06-1262 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+The benefits of this modification are the following: 
+• Increased effectiveness of grading capability for hard-to-penetrate haul roads, as the road 
+surface is turned over and can then be easily graded. 
+• Cutting edge remains attached to machine for grading, road maintenance, and ditching 
+work, saving removal & install time of changing out different GET systems on the grader. 
+• Reduction in number of cutting edges consumed as the rotating bit system is used for 
+breaking up the hardened road surface before finishing with the cutting edge. 
+• Longer-wearing carbide on bits withstands severe haul road conditions. 
+• Easy and fast change-out of mining bits when replacement interval occurs. 
+• Narrow and wide gaps on mining bit system provide more flexibility on road aggregate 
+sizing. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Motor Grader Ripper-Mounted Mining Bit System 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-2.06-1262 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+5.0 Resources Required 
+• Access to steel flat stock for shanks, base plates, support plates, and gusset fabrication. 
+• Fabrication and weld shop to cut shanks and plates to length and weld base plate box 
+section to shanks. 
+• Parts ordering system for rotating bit system. The GET Parts Sales Kit (PSK), 10th Edition 
+(PECP3001 - https://dealer.cat.com/cda/components/fullArticle?m=20031&x=7&id=3048901) can also 
+be referenced for part number information. Section 10 – Motor Graders contains the 
+applicable information regarding Cat rotating bit systems. 
+• Assembly of rotating bit system on ripper arrangement. 
+ 
+ 
+6.0 Supporting Attachments / References 
+• GET Parts Sales Kit (10th Edition) - Section 10 for additional information regarding the 
+mining bit system.   PECJ0025-03.pdf 
+ 
+ 
+7.0 Related Best Practices 
+None. 
+ 
+ 
+8.0 Acknowledgements 
+The Caterpillar dealer Empire Southwest is specially acknowledged for contributing information 
+related to this Best Practice. Caterpillar Global Mining extends its appreciation to Empire 
+(specifically Andy Brown, Tom Haugen, George McKeon, and Steve Soto) for sharing this idea 
+with the extended Cat mining team. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Motor Grader Ripper-Mounted Mining Bit System 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-2.06-1262 
+Caterpillar Confidential:  GREEN          Page 6 of 6

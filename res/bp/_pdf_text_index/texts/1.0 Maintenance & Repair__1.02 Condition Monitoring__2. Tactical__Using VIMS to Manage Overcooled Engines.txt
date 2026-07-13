@@ -1,0 +1,423 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+0907-1.02-1177 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Using VIMS to Manage 
+Overcooled Engines 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+Using VIMS to Manage Overcooled Engines ............. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using VIMS to Manage Overcooled Engines 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0907-1.02-1177 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+1.0 Introduction  
+Overcooled engines can lead to sludge formation in the crankcase. Sludge can gum up valve 
+lifters and stems, as well as piston and piston ring. It can also cause corrosive wear and carbon 
+buildup. Catastrophic failure could occur if these conditions went unnoticed.  
+ 
+The most common way engine overcooling can occur is for one or more of the jacket water 
+thermostats to be stuck open. Other possible causes of engine overcooling are hydraulic fans 
+remaining locked in the fully engaged condition, damage to the vent valve in the thermostat 
+housing and extreme ambient temperatures.  
+ 
+A thermostat can become stuck open as a result of a cooling system that has been poorly 
+maintained, through the use of raw water or inadequate levels of inhibitor/antifreeze. Raw water 
+or poorly maintained coolant will allow the cast iron cylinder block to oxidize and deposit small 
+iron particles into the coolant. These iron particles may lodge into the moving parts of the 
+thermostats and cause them to stick open.  
+ 
+The recommended interval for thermostats to be changed is every 6,000 hours. However, there is 
+a chance that a thermostat would fail between change-out intervals. Hence the situation must be 
+frequently monitored in order to prevent catastrophic failure.  
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice describes how to use VIMS to identify an overcooled engine. Plotting a 
+histogram of coolant temperature is a great way to identify whether the truck is overcooled but the 
+sample size must be big enough to get an accurate diagnosis. Additionally, datalogger can also 
+assist in determining if the engine is overcooled.  
+ 
+Stuck open regulator 
+ 
+An engine temperature histogram can be used to identify overcooled engines. A normal histogram 
+will show a tight temperature range with the majority falling within the target temperature range. 
+Figure 2.1 shows a histogram of a 789B truck with normal engine coolant temperature. It indicates 
+that 84% of samples have the temperature remaining between 80
+oC (176oF) and 85oC (185oF). 
+There is only 7.65% below 80oC(176oF).  
+ 
+NOTE: Depending on the condition of the mine site, some trucks may have a thermostat set point 
+of 90
+oC (194oF), but for demonstration purposes, the standard 80oC (176oF) thermostat is used.  
+ 
+Figure 2.2 shows the histogram of a 785B truck with irregular engine coolant temperature. There 
+is no control of temperature (shown by the flat bell curve), and more than 20% of samples are 
+below 80
+oC (176oF). This one has 91% of samples below 80oC (176oF). As a rule of thumb, a 
+machine with any more than 20% samples below the thermostat’s rating should be investigated 
+for incorrect operation.  
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using VIMS to Manage Overcooled Engines 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0907-1.02-1177 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2.1: Histogram of the test 789B truck with normal engine coolant temperature  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2.2: Histogram of the test 785B truck with irregular engine coolant temperature  
+ 
+Looking at the coolant temperature and Engine Load data from the datalogger can also identify an 
+overcooled engine. A properly cooled engine will show coolant temperature near the set point 
+when the engine is not under load, and higher coolant temperature when the engine is under load.  
+ 
+More than 91% of the 
+time engine coolant is 
+lower than 80 °C 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using VIMS to Manage Overcooled Engines 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0907-1.02-1177 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+Figure 2.3 shows the datalogger of a 789C truck with engine coolant temperature, payload status 
+and load factor. Using normal conditions, the engine coolant temperature should remain at 80 – 
+82oC (176 – 179.6oF) when no load is applied. This is showed by the temperature “flat-lines” at the 
+bottom graph.  
+ 
+Figure 2.4 shows the datalogger of a 785C truck. The temperature is below 80
+oC (176oF) all the 
+time, even when the engine load factor is high. This, along with the engine temperature histogram 
+(Figure 2.2) suggests the engine is being overcooled, which could be caused by the thermostat 
+being stuck open. Action should be taken to investigate the cause of this situation.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2.3: Datalog of the test 789C truck with normal engine coolant temperature  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2.4: Datalog of the test 785B truck with irregular engine coolant temperature 
+ 
+ 
+Normal Thermostat 
+Temperature lower 
+than 80oC (176oF) even 
+when the engine load 
+factor is high 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using VIMS to Manage Overcooled Engines 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0907-1.02-1177 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+Sample Count for Histogram 
+Sample size is critical in the diagnosis process. If the sample size consists of the half a day of 
+data, there is a possibility the truck spent most of its time idling. Data therefore won’t present an 
+accurate picture of machine health. A good sample size should include a large portion of time in 
+normal operation. Usually, a week of data should give an accurate indication of whether the truck 
+is overcooled or operating normally 
+ 
+Damaged Vent Valve in Thermostat Housing 
+ 
+Another possible cause for low coolant temperature is a damaged check valve in the thermostat 
+housing. A damaged valve can cause an alternate path for coolant to transfer back to the 
+radiator. This coolant transfer is more prevalent in extremely cold conditions and can cause low 
+coolant temperature.  Operation in hot environments typically do not show significant effect on 
+coolant temperatures when the vent valve is damaged.  
+ 
+When replacing thermostats the check valve should also be replaced to insure it is working 
+properly.  
+ 
+Locked up Hydraulic Fan 
+ 
+Engine fan speed and coolant temperature can be used together to determine if the engine fan 
+control and cooling circuit are working properly and not over cooling the engine. If the steering 
+cycle blips can be seen in the engine fan speed graph or the engine coolant temperature drops 
+below 88
+oC (190oF), the fan has likely remained fully engaged and is over cooling the engine.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2.5: Datalogger data showing engine speed and fan speed data 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using VIMS to Manage Overcooled Engines 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0907-1.02-1177 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+Extreme Ambient Air Temperature 
+ 
+If an application has significant periods of idle time and the ambient temperature is well below 0oC 
+(32oF), even with a correctly operating thermostat, the engine jacket water temperature may drop 
+below 79oC (175oF). Given enough time at cold enough temperature, the engine jacket water 
+temperature may drop to 59oC (130oF) or lower. In these cases, fan clutches should be used to 
+help keep the jacket water temperatures at or above 79oC (175oF). To minimize corrosive wear, 
+Engine oil must be changed so the oil’s TBN does not drop below 50% of new oil TBN (as per 
+ASTM D2896). If the oil TBN gets too low it will not neutralize the acids that form during 
+combustion. If these acids are not neutralized, corrosive wear will occur.  
+ 
+3.0 Implementation Steps 
+• Develop a process to regularly monitor engine temperature using VIMS data  
+• Assign personnel to monitor and track engine coolant temperatures, especially during cold 
+seasons  
+• If low engine temperature is detected, the steps listed in this Best Practice should be used to 
+identify and fix the problem 
+  
+4.0 Benefits 
+The main benefits identified are:  
+• Prevent engine overcooling that might lead to catastrophic failure 
+• Reduced time in problem diagnosis 
+• Increased availability due to early diagnosis and prevention 
+ 
+5.0 Resources Required 
+• Fleet Analysis or Planner to analyze VIMS histogram, datalogger download and SOS 
+sample at PM 
+ 
+6.0 Supporting Attachments / References 
+The Cause of Worn and Broken Piston Rings (SEPD0429-00) 
+Standard Test Method for Base Number of Petroleum Products (ASTM D2896) 
+VIMS Application Guide (SELD7003-03) 
+ 
+7.0 Related Best Practices 
+Using VIMS for Pre-PM Analysis (0409-1.01-1166) 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using VIMS to Manage Overcooled Engines 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0907-1.02-1177 
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by:  
+ 
+ Rex Cheung 
+ Equipment Management Consultant 
+ Caterpillar Global Mining 
+ Cheung_Rex@cat.com 
+ Ph:  + 613 9953 9962 
+ 
+Our acknowledge to the personnel of Westrac for their willingness to share their idea and 
+achievement that certainly will contribute to the success of other Mobile Equipment Maintenance 
+Operation 
+ 
+Our special recognition to:  
+  
+ Adrian Clement, Westrac Equipment Support Group Manager 
+ 
+Adrian.Clement@westrac.com.au 
+ Ph + 61 8 9377 9545 
+ 
+ Steve De Boer, Westrac Reliability Engineer,  
+steve.deboer@westrac.com.au 
+ Ph + 61 8 9377 9575 
+ 
+For further details and information regarding this Best Practice, please contact the author.

@@ -1,0 +1,269 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Engine Cylinder Head Group Installation – Intake Flange Alignment Gauge.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+3500 Engine Cylinder Head 
+Group Installation – Intake 
+Flange Alignment Gauge 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+3500 Engine Cylinder Head Group Installation – 
+Intake Flange Alignment Gauge ................................. 0 
+1.0 Introduction ......................................................... 1 
+2.0 Best Practice Description ....................................... 1 
+3.0 Implementation Steps ............................................ 3 
+4.0 Benefits ............................................................... 3 
+5.0 Resources Required .............................................. 3 
+6.0 Supporting Attachments / References ...................... 3 
+7.0 Related Best Practices ........................................... 3 
+8.0 Acknowledgements ............................................... 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by one or 
+more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty about the 
+information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best Practice” 
+recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+June 2012 
+1206-4.03-1279 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction 
+ 
+Many dealers today use a process to assemble and install the 3500 engine cylinder heads along with intake 
+and exhaust manifolds as one complete group - the entire group on the block in one step.   The process of 
+installing the cylinder head group to the engine needs to be done with precision. Often, aligning the bolt’s 
+holes to the intake manifold with the aftercooler requires time and effort.    
+ 
+ 
+ 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Ferreyros has developed a simple gauge to check the alignment of the intake flange bolt holes to assure that 
+the flanges are mounted level at 180 degrees before installation begins.  This check saves time spent 
+adjusting the alignment while the group is installed on the engine block. 
+ 
+Since tool prints are not currently available, the following photos show the fixture and the process. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Engine Cylinder Head Group Installation – Intake 
+Flange Alignment Gauge 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1206-4.03-1279 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Intake flange bolt holes are checked with the alignment gauge to make sure the flanges are mounted level.  
+The check is performed while the cylinder head group is still mounted on the assembly stand. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The check has significantly reduced time spent adjusting alignment during cylinder head group installation. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Engine Cylinder Head Group Installation – Intake 
+Flange Alignment Gauge 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1206-4.03-1279 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+Design a tool similar to photos. 
+ 
+4.0 Benefits 
+ 
+• More efficient – reduce time of assembly. 
+• Reduce effort 
+ 
+5.0 Resources Required 
+ 
+Minimal expense to fabricate the tool 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Engine Cylinder Head Group Installation – Intake 
+Flange Alignment Gauge 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1206-4.03-1279 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+ 
+The idea for this Best Practice belongs to: 
+Franklin Llanos 
+Ferreyros SAA 
+ 
+This Best Practice was revised by: 
+Aninu Mitacc Vizcardo 
+Ferreyros S.A.A.  
+Aninu.mitacc@ferreyros.com.pe 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Engine Cylinder Head Group Installation – Intake 
+Flange Alignment Gauge 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1206-4.03-1279 
+Caterpillar Confidential:  GREEN          Page 4 of 4

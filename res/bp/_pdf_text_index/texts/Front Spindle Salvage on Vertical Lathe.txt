@@ -1,0 +1,933 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2023 
+4.03-230607-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Front Spindle Salvage on 
+Vertical Lathe 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Front Spindle Salvage on Vertical Lathe..................... 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description.................................... 2 
+3.0 Implementation Steps ......................................... 3 
+4.0 Benefits .............................................................. 17 
+5.0 Resources Required ......................................... 18 
+6.0 Supporting Attachments / References ............. 19 
+7.0 Related Best Practices...................................... 19 
+8.0 Acknowledgements ........................................... 20 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 2 of 20 
+1.0 Introduction  
+ 
+This Best Practice was developed with the purpose of making an optimal, effective, and reliable 
+salvage in the front wheel spindle of trucks, guaranteeing its specification according to the criteria 
+CAT Inspection and Salvage of Front Wheel Spindles for Certain Off -Highway Trucks (SEBF9309- 
+10). 
+ 
+ 
+ 
+ 
+ 
+ 
+Illustration # 01 and 02, The critical areas of the bearing’s journals observed when they present wear 
+spec out measure, they must be rebuilt with arc spray processes according (SEBF9309- 10). 
+ 
+ 
+2.0 Best Practice Description 
+ 
+In the machinery workshop of Barloworld Mongolia, we developed a device which allows vertical 
+clamping of different front spindles Off -Highway trucks models 773 to 797, achieving an easy, 
+efficient, and reliable salvage process in vertical lathes. 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 3 of 20 
+3.0 Implementation Steps 
+ 
+3.1 Manufacture stand for mounting spindle front in vertical lathe, according to the image and 
+drawings developed by the machine shop Barloworld Mongolia, they will be able to make this device 
+that allows machining in vertical lathe in a more efficient, and reliable way. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Illustration # 01,02,03 and 04 fabrication device according to the blueprint for positioning the spindle 
+vertically. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 4 of 20 
+Material's list 
+ 
+The list of materials must be taken for manufacturing, the type of material is ASTM A-36. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 5 of 20 
+Support Blueprint for Spindle Front Models CAT 785, 789 and 
+793 
+ 
+ 
+ 
+01 of 09  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 6 of 20 
+ 
+ 
+ 
+ 
+02 of 09 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 7 of 20 
+ 
+ 
+ 
+ 
+03 of 09 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 8 of 20 
+ 
+ 
+ 
+ 
+ 
+04 of 09 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 9 of 20 
+ 
+ 
+ 
+ 
+ 
+05 of 09 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 10 of 20 
+ 
+ 
+ 
+ 
+06 of 09 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 11 of 20 
+Weld Details 
+ 
+ 
+ 
+ 
+07 of 09 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 12 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 12 of 20 
+Weld Details 
+ 
+ 
+ 
+ 
+08 of 09 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 13 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 13 of 20 
+Weld Details 
+ 
+ 
+ 
+ 
+09 of 09 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 14 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 14 of 20 
+Stand material: ASTM A36 Steel 
+ 
+ 
+Total weight of Stand 405,9Kg or 894.86Lb 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+3.2 Pre-machining of the journal bearings -1mm of 
+the nominal diameter with a rapid advance that 
+obtains high roughness for the arc spray. 
+ 
+ 
+Illustration # 05 and 06 Perform 1mm diameter pre-machining on both journals bearing. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.3 Grit Blasting After pre-machining, all the area must be protected, to apply Grit blasting in the pre-
+machine area, a roughness greater than 250µinch must be achieved. 
+ 
+VARIABLE  OPERATION RANGE 
+Velocity 50rpm 
+Flat 0.35 mm 
+Cutting Depth 0.5mm 
+Cutting Tool MDJNR4040P15 
+Program Name cylindrical machining  
+Insert DNMG150612MP KCU10 
+
+
+===== PAGE 15 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 15 of 20 
+ 
+ 
+ 
+3.4 Apply Arc Spray, SM 8400 or 
+Tafa 75B wire base at a distance of 5“with a rotation speed of SMPM 40.00, the arc must be 
+projected directly into the area to be recovered with a 45° angle then apply the coating, SM 8222 or 
+Tafa 90MX wire at a distance of 4 “with a rotation speed SMPM 40.00, the arc must be projected 
+directly into the area to be recovered with a 45° angle. 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Illustration #09 Apply a coat of SM8400 or 75b Tafa base wire, then apply SM8222 or 90mx to ensure 
+journal bearing hardness. 
+ 
+3.5 5 Final Machining, is done on vertical lathe machine or a similar one using the cylindrical 
+machining program, cutting speed 50rpm advance 0.15mm int VNMG160404FF KCU10 Kennametal     
+To carry out the final machining, it must be anchored to the work plate, center, and flange. 
+GRIT BLASTING 
+PARAMETERS 
+Pressure 100 PSI 
+Distance 7-8” 
+Material Metcolite C 400 
+  VARIABLE  OPERATION RANGE 
+Wire  75b or 8400 8222 or 90mx 
+Voltage 30V 32V 
+Current 130Amp 140Amp 
+Pressure 60 PSI 60PSI 
+Distance 
+between gun 
+and workpiece 5” 
+   
+ 
+4” 
+Spray 
+Rate/Bond Pass 
+0.038mm- 
+(0.0015”) 
+0.038mm- 
+(0.0015”) 
+Traverse Rate of 
+Gun  
+11.0 
+SMPM (40.00 
+SFPM) 
+11.0 
+SMPM (40.00 
+SFPM) 
+Rotation Speed 
+of Part  
+92.0 
+SMPM (300.00 
+SFPM) 
+92.0 
+SMPM (300.00 
+SFPM) 
+Temperature 100-130°C 100-130°C 
+
+
+===== PAGE 16 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 16 of 20 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Illustration # 10 and 11 the final machining process under the CAT standard is observed. 
+ 
+ 
+ 
+3.5 Final delivery process, you must remove all the overspray, polish, clean and double check the 
+measures for delivery. 
+ 
+VARIABLE  OPERATION RANGE 
+Velocity 45rpm 
+Flat 0.15 mm 
+Cutting Depth 0.5mm 
+Cutting Tool MVJNR-4040 NG8 
+Program Name Cylindrical Machining  
+Insert VNMG160404FF KCU10 
+
+
+===== PAGE 17 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 17 of 20 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+Illustration #12 and 13, Spindle delivery is observed. 
+ 
+ 
+ 
+ 
+    
+ 
+ 
+Initial Evaluation              Arc Spray Process               Machining Finish                   Polish Finish 
+ 
+ 
+4.0 Benefits 
+ 
+4.1 Improve component handling 
+4.2 Avoid ova ling in the machine 
+4.3    Greater efficiency in the process 
+
+
+===== PAGE 18 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 18 of 20 
+5.0 Resources Required 
+ 
+5.1 Fully integrated, self-contained coating facility with a Smart Arc Advanced Electric Wire Arc 
+Thermal Spray System. The leading-edge gun head is integrated to a Robot - Arm and a Workpiece 
+Manipulator (Turntable). The system produces highly reliable electric wire arc spray coatings for wear 
+protection, restoration of component dimension and corrosion protection 
+ 
+ 
+ 
+ 
+ 
+ 
+5.2 Vertical lathe with a minimum capacity of 
+Swing Ø: 1800mm 
+Cutting Ø: 1800mm 
+height: 1600mm 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 19 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 19 of 20 
+5.3 Sand blasting equipment, applied for cleaning and anchoring pattern before metallization 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5.4 Stand manufacturing cost 
+ 
+ 
+Workstation Time 
+Welding  22h  
+Drill 04h 
+Estimated Costs 670.0 $USD 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+6.1 Inspection and Salvage of Front Wheel Spindles for Certain Off -Highway Trucks (OHT) {0679, 
+4006, 4201, 4205} (SEBF9309-11) 
+6.2 Fundamentals of Arc Spray for Reconditioning Components {0679, 1000, 7000} (SEBF9238-18 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 20 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Spindle Salvage on Vertical Lathe 
+DATE 
+6/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230607-1 
+Caterpillar: Confidential  Yellow                 Page 20 of 20 
+8.0 Acknowledgements 
+ 
+This Best Practice was written and developed by: 
+ 
+Name: Mario Lucena / Machine Shop Superintendent 
+E-mail: mario@Barloworld.mn 
+Company: Barloworld Mongolia LLC 
+ 
+Team: 
+Support Drawings made by: 
+Orgilbold Ganchimeg /Supervisor Machine shop 
+  
+Recognition: 
+Mauricio Guiza/ General Manager Workshops 
+Pablo Salazar  / Machine Shop Manager

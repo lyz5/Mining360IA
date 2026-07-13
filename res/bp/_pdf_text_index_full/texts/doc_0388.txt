@@ -1,0 +1,564 @@
+SOURCE: Chassis Stands Guidelines for Effective Assembly for 794AC Electric Mining Trucks.pdf
+PAGES: 12
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2023 
+1.10-220728-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Chassis Stands Guidelines 
+for Effective Assembly on 
+794AC Electric Mining 
+Trucks 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+                                                                           Chassis Stands Guidelines for Effective Assembly.…1  
+1.0
+ Introduction .......................................................... 2 
+2.0 Best Practice Description .................................... 2 
+3.0 Implementation Steps.......................................... 7 
+4.0 Benefits ................................................................ 9 
+5.0 Resources Required.......................................... 10 
+6.0 Supporting Attachments / References.............. 11 
+7.0 Related Best Practices ...................................... 11 
+8.0 Acknowledgements ........................................... 12 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer  network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Chassis Stands Guidelines for Effective Assembly for 
+794AC Electric Mining Trucks 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-1 
+Caterpillar: Confidential  Yellow                 Page 2 of 12 
+1.0 Introduction  
+ 
+During the NPI (New Product Introduction) process of the 794AC truck in Brazil, one of the challenges 
+encountered was the lack of clear guidelines regarding the specifications and positioning of Chassis 
+Stands for use as support points for the truck during the assembly process. 
+ 
+The Customer safety guidelines recommend the positioning of the chassis must be done on fixed 
+Stands and without the use of wood parts, thus requiring the manufacture of Chassis Stands in the 
+correct size for each stage of the assembly process. 
+ 
+After some information received from the experiences of other Dealers and some initial studies, the 
+Chassis Stands for the trucks were made and utilized on the first assembly of 794AC Trucks. 
+ 
+Some Chassis Stands size and placement details needed to be changed and adjusted during the first 
+assembly. Based on the experience acquired, it is possible to determine the specifications of the 
+Chassis Stands, which were used and validated in a new assembly at the same client, but at another 
+site/mine. 
+ 
+Based on the difficulties encountered and because it is a critical item related to cargo handling, the 
+objective of this Best Practice is to present the sequencing of use and specifications of the Chassis 
+Stands, to use as information reference about assembly. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+With the introduction of new equipment by the engineering team, the planning of each stage of the 
+execution and assembly process needed to be defined. The teams did not have previous experience 
+in the assembly of 794AC model. 
+ 
+We searched SIS2.0 for information and recommendations for the Chassis Stands (height, 
+dimensions of the upper base and other specifications) and we did not find them.  
+ 
+We also research Jacking Locations (SEBU9099-08) on the dimensions of the mainframe support 
+surfaces and did not find the information easily. Items illustrated below (1), (2) and (3). 
+ 
+             
+ 
+With the information provided from other dealers, about the assembly process, we got the dimensions 
+of the main chassis support bases and some examples of Chassis Stands. But these models were 
+not in line with our goal of prioritizing safety and productivity during the assembly process. 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Chassis Stands Guidelines for Effective Assembly for 
+794AC Electric Mining Trucks 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-1 
+Caterpillar: Confidential  Yellow                 Page 3 of 12 
+The objective was to work with the mainframe as close to the ground as possible and on the front 
+axle, to simplify the technicians work and minimize risks according to Customer Safety guidelines. 
+ 
+Unlike the assembly procedure (M0090261) which mentions the movement of the main frame about 
+the front axle to install the fixing links, we choose to leave the main chassis static on the Chassis 
+Stands and move the axle front about the main chassis during the link installation step. (Safety 
+Reasons) 
+ 
+With the Activity, we managed to minimize the risks and exposure of our technicians to the load 
+suspended by cranes. 
+ 
+ 
+ 
+Site Layout 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Chassis Stands Guidelines for Effective Assembly for 
+794AC Electric Mining Trucks 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-1 
+Caterpillar: Confidential  Yellow                 Page 4 of 12 
+ 
+ 
+            
+ 
+ 
+            
+ 
+An important factor was to keep the chassis close to ground level during the assembly of the 
+components, thus increasing the safety of the technicians. We positioned the main chassis on 900 
+mm stands, ensuring that the front axle, rear axle, and other components could be moved and 
+installed without difficulty. 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Chassis Stands Guidelines for Effective Assembly for 
+794AC Electric Mining Trucks 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-1 
+Caterpillar: Confidential  Yellow                 Page 5 of 12 
+                                
+ 
+After installing the Front Axle, we use a 500 mm support only to support the center of the front 
+axle. 
+             
+ 
+After installing the Rear Axle, we use 700 mm Chassis Stands. To support the Axle at a height 
+compatible with the installation of the rear suspensions. Thus, avoiding unnecessary load movements 
+and the use of support equipment reduces costs and increases the safety of the activity. 
+ 
+                   
+ 
+Superstructure positioned on 1600 mm Chassis Stands. 
+    Attention to the upper base: Measures 2”x15”x11”.  
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Chassis Stands Guidelines for Effective Assembly for 
+794AC Electric Mining Trucks 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-1 
+Caterpillar: Confidential  Yellow                 Page 6 of 12 
+Instructions for positioning the Chassis Stands can be found in the assembly instruction: Assembly 
+Procedure for the Off-Highway Truck - 794AC (M0090261) 
+ 
+ 
+          
+ 
+          
+ 
+Our strategy was to work installing as many parts and components as possible with the truck 
+supported by four 900 mm Chassis Stands height and load capacity of 80 Metric Tons. 
+ 
+After installing the superstructure, we leave the equipment ready for the installation of the front 
+and rear wheels. With the support of two cranes, we lift the equipment and position it on the  
+1600 mm Chassis Stands, thus providing the standard height for the tire handler to install the 
+equipment wheels and tires. 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Chassis Stands Guidelines for Effective Assembly for 
+794AC Electric Mining Trucks 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-1 
+Caterpillar: Confidential  Yellow                 Page 7 of 12 
+NOTE: 
+ 
+Before lifting the equipment to check on the 1600 mm Chassis Stands, it is necessary to apply oil 
+and nitrogen to the suspensions. The Chassis Stands are positioned under the Front Axle support 
+base and Rear Axle base: Servicing the Suspension Cylinders for 794 AC, 796 AC, and 798 
+AC Off-Highway Trucks - (M0092742-05). 
+ 
+ 
+         
+  
+ 
+                
+  
+ 
+ 
+3.0 Implementation Steps 
+ 
+After defining the strategy for the assembly process, we defined the technical specifications and 
+developed the supplier to manufacture the Chassis Stands Kits.  
+ 
+The design with the isometric view was validated by our Mining Engineering and the calculation 
+memorial was performed by the supplier's engineering. 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Chassis Stands Guidelines for Effective Assembly for 
+794AC Electric Mining Trucks 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-1 
+Caterpillar: Confidential  Yellow                 Page 8 of 12 
+              
+ 
+                     
+ 
+ 
+       
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Chassis Stands Guidelines for Effective Assembly for 
+794AC Electric Mining Trucks 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-1 
+Caterpillar: Confidential  Yellow                 Page 9 of 12 
+ 
+ 
+4.0 Benefits 
+ 
+• Standardization of Chassis Stands for assembly of 794AC trucks. 
+ 
+• These Supports are manufactured according to technical specifications, with approved 
+structural calculation. 
+ 
+• Chassis Stands with rubber top base to prevent metal-to-metal contact. 
+ 
+• Kits are available in the assembly area before equipment arrival. 
+Position Qty Specification Project Illustration
+Front of chassi 2
+Height: 900 mm
+Upper Base: 2" x 400 x 400 mm
+Minimum capacity : 80 ton
+front Axle 1
+Height:  500 mm
+Upper Base: 2" x 500 x 500 mm
+Minimum capacity:  50 ton
+Frame (Rear) 2
+Height: 900 mm
+Upper Base: 2" x 400 x 400 mm
+Minimum capacity : 80 ton
+Same project line 07
+Rear of the 
+Machine 2
+Height: 700 mm
+Upper Base: 2"x 300 x 300 mm
+Minimum capacity:  40 ton
+Superestrutura 4
+Height: 1600 mm
+Upper Base: 2" x 15" x 11"
+Minimum capacity:  20 Ton
+PN 455-8054
+Note: Ensure the measurement of 
+the upper base.  
+Front of the 
+Machine 2
+Height: 1600 mm
+Upper Base: 2" x 400 x 400 mm
+Minimum capacity: 80 ton
+Rear of the 
+Machine 2
+Height: 1600 mm
+Upper Base: 2" x 400 x 400 mm
+Minimum capacity: 80 ton
+Same project line 13
+CHASSIS STANDS - 794AC
+Jacking Locations (SEBU9099-08)
+M0090261 - Assembly Procedure for the Off-Highway Truck - 794 AC
+CLOSE THE GROUND - 900 MM
+TIRE AND RIM - INSTALL - (M0155539-02)
+
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Chassis Stands Guidelines for Effective Assembly for 
+794AC Electric Mining Trucks 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-1 
+Caterpillar: Confidential  Yellow                 Page 10 of 12 
+• Cost reduction with cargo handling, as the main chassis was unloaded according to the 
+layout and on the front axle. 
+ 
+5.0 Resources Required 
+ 
+900 mm  
+Capacity: 80 Metric Tons.  
+                   
+ 
+1600 mm.  
+Capacity: 80 Metric Tons.  
+               
+ 
+500 mm.  
+Capacity: 50 Metric Tons.  
+                      
+ITEM DESCRIPTION MAT ERIAL Qty
+1 Plate 1/2"  800x800mm ASTM A36 1
+2 Tube 4" Sch 40 872,5mm ASTM A106 Gr.B 4
+3 Tube 4" Sch 40 434mm ASTM A106 Gr.B 4
+4 plate 2" 400x400mm ASTM A36 1
+5 Plate 1/2" 482x400x200mm ASTM A36 4
+ITEM DESCRIPTION MATERIAL Qty
+1 Plate 1/2"  1000x1000mm ASTM A36 1
+2 Tube 4" Sch 40  1587mm ASTM A106 Gr.B 4
+3 Tube 4" Sch 40  636mm ASTM A106 Gr.B 4
+4 Tube 4" Sch 40  455mm ASTM A106 Gr.B 4
+5 Plate 2"  400x400mm ASTM A36 1
+6 Plate 1/2"  490x400x250mm ASTM A36 4
+ITEM DESCRIPTION MATERIAL Qty
+1 Plate 1/2"  400x400mm ASTM A36 1
+2 Angle bracket  125mm x 3/4" ASTM A36 4
+3 Plate 2"  400x400mm ASTM A36 1
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Chassis Stands Guidelines for Effective Assembly for 
+794AC Electric Mining Trucks 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-1 
+Caterpillar: Confidential  Yellow                 Page 11 of 12 
+1600 mm, (Superstructure) 
+Capacity: 20 Metric Tons 
+ 
+                
+ 
+ 
+ 
+5.1 Related costs. 
+ 
+The investment for manufacturing 1 set of stands in Brazil was approximately 50 thousand 
+dollars. 
+ 
+All the stands meet the client's internal safety standards rules. The project was design by 
+engineer and registered at the Regional Council of Engineering - CREA Brazil. 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+794AC Service Manual. 
+Dealer & Product Group.  
+Customer Safety Requirements. RAC’s. (Requisitos de atividades críticas).  
+NDT – Engineering.  
+Customer Feedback Survey. 
+Drawing attached for chassis stands 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+ 
+ 
+ 
+ 
+ITEM DESCRIPTION MATERIAL Qty
+1 Plate 1/2"  1000x1000mm ASTM A36 1
+2 Tube 4" Sch 40  1599mm ASTM A106 Gr.B 4
+3 Tube 4" Sch 40  598mm ASTM A106 Gr.B 2
+4 Tube 4" Sch 40  378mm ASTM A106 Gr.B 2
+5 Tube 4" Sch 40  630mm ASTM A106 Gr.B 2
+6 Tube 4" Sch 40  443mm ASTM A106 Gr.B 2
+7 Plate 2"  15"x11" ASTM A36 1
+8 Plate 1/2"  472x381x250mm ASTM A36 2
+9 Plate 1/2" 361x279,4x250mm ASTM A36 2
+
+===== PAGE 12 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Chassis Stands Guidelines for Effective Assembly for 
+794AC Electric Mining Trucks 
+DATE 
+7/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-230728-1 
+Caterpillar: Confidential  Yellow                 Page 12 of 12 
+8.0 Acknowledgements 
+ 
+SOTREQ (Northern Brazil) would like to express its deep admiration for the professionals involved in 
+improving the maintenance and repair processes developed by Mining Engineering. 
+ 
+SOTREQ would also like to thank the indispensable technical contribution of Doug Friedrich of 
+Caterpillar Inc. 
+ 
+ 
+This Best Practice Was Written by: 
+ 
+Chuquerth Oliveira.  
+Technical Communicator – SOTREQ S/A  
+chuquerth.oliveira@sotreq.com.br
+ 
++ 55 94 98803-1158 
+ 
+Fábio Cota 
+Product Performance Consultant – SOTREQ S/A 
+fabio.cota@sotreq.com.br
+ 
++ 55 94 88078155 
+ 
+Reinaldo Angelo.  
+Engineering Coordinator - SOTREQ S/A 
+reinaldo.angelo@sotreq.com.br
+ 
++ 55 31 9996-5562 
+ 
+George Costa  
+Engineering intern - SOTREQ S/A  
+george.costa@sotreq.com.br
+ 
+ 
+Douglas Friedrich  
+Manager, Site Performance – CATERPILLAR  
+friedrich_douglas_w@cat.com
+  
++1.305.807.9542

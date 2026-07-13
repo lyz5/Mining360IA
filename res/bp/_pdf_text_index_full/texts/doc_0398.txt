@@ -1,0 +1,431 @@
+SOURCE: Front Wheels Oil Drain Optimization for 777G OHT.pdf
+PAGES: 12
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+May 2023 
+1.04-230510-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Front Wheels Oil Drain 
+Optimization for 777G OHT 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+                                                                   Front Wheels Oil Drain Optimization for 777 OHT .…1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description .................................... 4 
+3.0 Implementation Steps.......................................... 6 
+4.0 Benefits .............................................................. 11 
+5.0 Resources Required.......................................... 11 
+6.0 Supporting Attachments / References.............. 11 
+7.0 Related Best Practices ...................................... 11 
+8.0 Acknowledgements ........................................... 11 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Wheels Oil Drain Optimization for 777G OHT 
+DATE 
+5/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230510-1 
+Caterpillar: Confidential  Yellow                 Page 2 of 12 
+1.0 Introduction  
+ 
+Maintenance efficiency is frequently optimized due to its importance. Thus, maintenance schedules, 
+special tools, and several artifices are used to improve the physical availability of equipment and meet 
+customer expectations, regarding product quality, workmanship, and environmental policies. 
+ 
+Considering this scenario, it was observed that, during the activity of draining the hydraulic oil from the 
+front wheels, part of the oil was spilled on the wheel or even on the ground, contaminating the ground 
+and leaving marks on the wheel during the operation of the equipment, once there was no suitable tool 
+for such activity. 
+ 
+To carry out the task of draining the front wheels  of the 777G fleet, field technicians used to place a 
+bucket below the drain plug as Picture 1 illustrates. It does not stabilize on the wheel and eventually 
+falls or moves out of position, causing oil to spill over the wheel and onto the ground. This entails, in 
+addition to soil contamination, time loss during the preventive procedure, as the technician team needs 
+to clean up the area affected by the oil in the equipment and on the floor. 
+In addition, the technician often needs  to hold the bucket during the entire oil drain period to avoid 
+spillage and contamination. 
+ 
+ 
+ 
+ 
+Picture 1 - Conventional oil collection. 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Wheels Oil Drain Optimization for 777G OHT 
+DATE 
+5/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230510-1 
+Caterpillar: Confidential  Yellow                 Page 3 of 12 
+                                           
+ 
+Picture 2 - The technician holding the bucket throughout the oil drain. 
+ 
+When the technician must hold the bucket to collect the oil, he loses about 40 minutes which he could 
+be doing other tasks. 
+ 
+                                             
+ 
+Picture 3 - Oil spillage on the wheel and on the workshop floor caused by the bucket falling during collection. 
+ 
+ 
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Front Wheels Oil Drain Optimization for 777G OHT 
+DATE 
+5/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230510-1 
+Caterpillar: Confidential  Yellow      Page 4 of 12 
+2.0 Best Practice Description 
+Considering this circumstance, a tool capable to optimize the activity was developed, enabling effective 
+oil draining, and avoiding time wasting and contamination on the equipment and the floor. 
+Pictures 2 to 5 show the tool schematic and its implementation on equipment. 
+This tool is focused on Off-Highway Trucks (OHT) 770-777. 
+P
+icture 4 - Tool drawing. 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Wheels Oil Drain Optimization for 777G OHT 
+DATE 
+5/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230510-1 
+Caterpillar: Confidential  Yellow                 Page 5 of 12 
+ 
+       
+Picture 5 - Drain tool. 
+ 
+  
+ 
+Pictures 6 and 7 - Tool implementation. 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Wheels Oil Drain Optimization for 777G OHT 
+DATE 
+5/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230510-1 
+Caterpillar: Confidential  Yellow                 Page 6 of 12 
+3.0 Implementation Steps 
+ 
+To implement this tool it is required to follow the next steps: 
+ 
+1. Measure the exact time when an oil spill occurs during collection; 
+ 
+We observed that the technician spends about two hours cleaning the contaminated area of 
+the equipment and the floor. 
+ 
+2. Design the tool; 
+ 
+ 
+ 
+Picture 8 - Tool design. 
+ 
+3. Choose the right material for tool building; 
+ 
+Picture 9 - Selection of materials needed to build the tool. 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Wheels Oil Drain Optimization for 777G OHT 
+DATE 
+5/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230510-1 
+Caterpillar: Confidential  Yellow                 Page 7 of 12 
+ 
+ 
+ 
+ 
+4. Construct drainage tool; 
+ 
+ 
+ 
+Picture 10 and 11 - Cut one end of the tube at the correct angle. 
+ 
+ 
+ 
+Picture 12 - Drill a hole in the tube to the size of 8,49” (215,64 mm). 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Wheels Oil Drain Optimization for 777G OHT 
+DATE 
+5/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230510-1 
+Caterpillar: Confidential  Yellow                 Page 8 of 12 
+ 
+ 
+ 
+ 
+Picture 13, 14, and 15 - Drill a hole in both ends of the rod to 0,34” (8,63 mm). 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Wheels Oil Drain Optimization for 777G OHT 
+DATE 
+5/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230510-1 
+Caterpillar: Confidential  Yellow                 Page 9 of 12 
+ 
+ 
+Picture 16 - Using the screw, nut, and washers, attach the magnet to one end of the rod. 
+ 
+ 
+ 
+Picture 17 - Position the screw with the head into the tube hole. 
+
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Wheels Oil Drain Optimization for 777G OHT 
+DATE 
+5/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230510-1 
+Caterpillar: Confidential  Yellow                 Page 10 of 12 
+ 
+ 
+Picture 18 - Bend the rod at the correct angle and attach it to the tube screw using the remaining nut and washer. 
+ 
+ 
+Picture 19 - Paint tool. 
+ 
+ 
+5. Test the tool in preventive activities. 
+ 
+
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Wheels Oil Drain Optimization for 777G OHT 
+DATE 
+5/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230510-1 
+Caterpillar: Confidential  Yellow                 Page 11 of 12 
+4.0 Benefits 
+ 
+• R eduction of preventive time; 
+ 
+In the event of an oil spill during collection, it was observed that the technician spent about two 
+hours providing resources and cleaning the floor and wheels. With the tool, we started to avoid 
+this type of event. in this way, we reduce preventive maintenance time by approximately two 
+hours per piece of equipment.  
+In addition, the technician can carry out tasks while the oil is drained, without needing to hold 
+buckets.  
+He gains about 40 minutes doing other preventive activities. 
+ 
+• Reduction of soil contamination. 
+ 
+ 
+5.0 Resources Required 
+ 
+• 1 PVC tube 49,78 ø x 482,1 - MM (1,96 ø X 18,98 inches) = US$ 2,30. 
+• 1 Magnet 50,8 ø x 5 - MM (2 X 0,19 inches) = US$ 3,56. 
+• 2 bolts (M10X1.5X20-MM) Part number 8T-4137 = US$ 1,09. 
+• 3 washer (11X21X2.5-MM) Part number 8T-4121= US$ 0,63. 
+• 2 nuts (M10X1.5-THD) Part number 344-5675 = US$ 1,09. 
+• 1 Paint aerosol yellow Caterpillar = US$ 11,46. 
+• 1 Metal rod 364,49 X 32 X 2- MM (14,35 X 1,26 X 0,08 inches) = US$ 2,55. 
+ 
+The cost of the material may vary depending on the country where the tool is developed. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+See drawings. 
+ 
+7.0 Related Best Practices 
+ 
+NA. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Maxuel Teixeira 
+Mining Performance Engineer / PE 
+maxuel.teixeira@sotreq.com.br
+ 
++55 31 99946-7652 
+ 
+ 
+ 
+
+===== PAGE 12 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Wheels Oil Drain Optimization for 777G OHT 
+DATE 
+5/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230510-1 
+Caterpillar: Confidential  Yellow                 Page 12 of 12 
+This Best Practice was created and implemented by: 
+ 
+Isaac Silva 
+Service Technician 1 
+isaac.silva@sotreq.com.br 
+ 
+Emerson Moura 
+Service Technician 1 
+            emerson.moura@sotreq.com.br
+ 
+ 
+            Varley Vitor 
+            Area supervisor 
+            Varley.vitor@sotreq.com.br
+ 
+ 
+            Valtencir Ambrósio 
+            Area supervisor  
+            valtencir.ambrosio@sotreq.com.br
+ 
+ 
+            Douglas Jonatan Costa 
+            Service Technician 4 
+            douglas.costa@sotreq.com.br

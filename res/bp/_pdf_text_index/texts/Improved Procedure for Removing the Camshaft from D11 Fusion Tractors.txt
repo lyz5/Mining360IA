@@ -1,0 +1,348 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 
+1.10-241218-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Improved Procedure for 
+Removing the Camshaft 
+from D11 Fusion Tractors
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Improved Procedure for Removing the Camshaft from 
+D11 Fusion Tractors .................................................. 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 7 
+4.0 Benefits ............................................................. 7 
+5.0 Resources Required .......................................... 7 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ........................................... 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Procedure for Removing the Camshaft from 
+D11 Fusion Tractors 
+DATE 
+12/18/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-241218-1 
+Caterpillar: Confidential Yellow          Page 2 of 8 
+1.0 Introduction  
+ 
+Removing the camshaft from the C32 engines of D11 fusion tractors has always been a time-
+consuming and high-risk activity due to the movement of heavy parts, making it costly and 
+dangerous. To replace the camshaft, it is necessary to remove the implement pumps or the fan 
+and front mask of the equipment. 
+ 
+The need to remove or tilt the front mask with the engine radiator further increases the complexity 
+and dangers associated with this activity. By exploring new strategies and techniques for 
+camshaft removal, we aim to not only increase operational efficiency but also ensure the safety of 
+technicians, minimize costs associated with the activity, and eliminate the need to move the 
+radiator. 
+ 
+After the maintenance and repair of D11 fusion tractors through the implementation of this 
+procedure, it was found that there was not only a reduction in risks but also costs with labor and 
+machine downtime. 
+ 
+This procedure will present the removal of the camshaft, identifying its points and associated 
+challenges. Finally, the expected benefits of this approach include increased safety for the 
+technicians involved, a significant reduction in maintenance costs, and a significant increase in 
+the efficiency of maintenance operations for tractors of the D11 KSN series. 
+ 
+2.0 Best Practice Description 
+ 
+Current procedure for removing the LD valve camshaft. 
+ 
+Tools: 
+ 
+     
+ 
+Steps: 
+ 
+1. Prepare the equipment for maintenance using the procedure Prepare the Machine for 
+Maintenance (M0082082-10) 
+2. Use the procedure System Pressure Release (M0082082-10) to depressurize all systems of 
+the machine.  
+ 
+Note:  
+For safety reasons, this following process should only be carried out when the machine is 
+cold condition. 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Procedure for Removing the Camshaft from 
+D11 Fusion Tractors 
+DATE 
+12/18/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-241218-1 
+Caterpillar: Confidential Yellow          Page 3 of 8 
+3. Remove the bolts (2) and (3) from the protection of the basement below the cabin carpet. 
+ 
+ 
+ 
+4. Remove the bolts (4) and (7), then remove the protections (5) and (6). 
+ 
+ 
+ 
+5. Remove the valve cover. 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Procedure for Removing the Camshaft from 
+D11 Fusion Tractors 
+DATE 
+12/18/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-241218-1 
+Caterpillar: Confidential Yellow          Page 4 of 8 
+6. Remove the bolts (2) to remove the rocker arm assemblies. 
+ 
+ 
+7. Drain the hydraulic oil using the procedure Hydraulic System Oil - Change (M0082082-10) and 
+the ELC using the procedure Cooling System Coolant (ELC) - Change (M0082082-10). 
+8. Remove the implement pump using the procedure Piston Pump (Implement) - Remove and 
+Install (M0095201-06) 
+9. Remove the fan pump using the procedure Hydraulic System Oil - Change (M0082082-10). 
+10. Remove the transmission pump using the procedure Gear Pump (Power Train) - Remove and 
+Install (M0095202-07) if the shaft to be removed is the left one. 
+11. Remove the bolts 1 to remove the pump flange. 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Procedure for Removing the Camshaft from 
+D11 Fusion Tractors 
+DATE 
+12/18/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-241218-1 
+Caterpillar: Confidential Yellow          Page 5 of 8 
+12. Put the engine at the point and check the alignment of the marks on the rear gear and lock the 
+assembly. Remove the bolts (3) and the gear (4). 
+ 
+ 
+ 
+13. Remove the bolts (5) and the adapter (7) to remove the plate (6). Use the bolt (5) to help 
+remove the plate and the sealing rings. 
+ 
+ 
+14. Remove the cover and the tubing. 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Procedure for Removing the Camshaft from 
+D11 Fusion Tractors 
+DATE 
+12/18/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-241218-1 
+Caterpillar: Confidential Yellow          Page 6 of 8 
+15. Remove the bolts from the front gear (it is not necessary to remove the front gear from the 
+housing). It is also not necessary to remove the thrust washer. 
+ 
+ 
+ 
+16. Use tool B to move the shaft, install two bolts on the shaft to help move it. 
+ 
+ 
+ 
+17. Using tool B to carefully slide the camshaft out of the cylinder head. This will prevent the 
+camshaft from binding in the camshaft bearings. 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Procedure for Removing the Camshaft from 
+D11 Fusion Tractors 
+DATE 
+12/18/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-241218-1 
+Caterpillar: Confidential Yellow          Page 7 of 8 
+3.0 Implementation Steps 
+ 
+After the release of service letter PS47495 for the D11 KSN, it was identified that there was an urgent 
+need to optimize the repair process in order to minimize equipment downtime. In June 2023, 
+measurements, and evaluations of the new configuration of the machine's basement components 
+were carried out. This included the relocation of groups and pumps in the new series, ensuring 
+enough space for the shaft removal through the rear of the engine. In order to speed up the process 
+and ensure quick availability of the equipment, the procedure was implemented as planned, resulting 
+in a 2/3 reduction in repair time. The collaboration between engineering and field technicians was 
+fundamental to develop and implement this improvement. Due to the nature of the adaptation of the 
+procedures, this implementation can be easily replicated in other dealerships, as it is a process re-
+adaptation that does not require additional tools. 
+ 
+4.0 Benefits 
+ 
+1. Increased Safety: 
+• Eliminates the step of tilting or removing the radiator guard, reducing the risk of accidents 
+and injuries for technicians. 
+ 
+2. Reduced Machine Downtime: 
+• Repair time for camshaft removal is reduced by 2/3, from 80 to 24 hours. 
+• This means that the machine is available for operation more quickly, increasing 
+productivity and efficiency. 
+ 
+3. Reduced Labor Costs: 
+• The reduction in repair time leads to a 2/3 reduction in labor costs. 
+• This means that the company saves money on each repair, which can lead to significant 
+savings over time. 
+ 
+5.0 Resources Required 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+RENR9217-61_i02319602 
+RENR9217-61_i02319611 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Procedure for Removing the Camshaft from 
+D11 Fusion Tractors 
+DATE 
+12/18/2024 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-241218-1 
+Caterpillar: Confidential Yellow          Page 8 of 8 
+7.0 Related Best Practices 
+ 
+N/A 
+8.0 Acknowledgements 
+ 
+This Best Practice was written and implemented by: 
+ 
+Arthur Almeida 
+Consultor Técnico 
+Arthur.almeida@sotreq.com.br 
++55 31 99785-9765 
+ 
+Douglas Fiorese 
+Mecanico de mineracao v 
+douglas.fiorese@sotreq.com.br 
++55 91 9245-3465 
+ 
+Ligriarno Souza 
+Engenheiro de performance 
+Ligriarno.souza@sotreq.com.br 
++55 94 9276-3071 
+ 
+Also, an acknowledgment the following individual that assisted in developing this Best Practice: 
+ 
+Cleberson Silva 
+Supervisor de area mineracao 
+cleberson.silva@sotreq.com.br 
++55 91 8359-0910

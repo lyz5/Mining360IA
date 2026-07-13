@@ -1,0 +1,448 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\1. Strategic\Failure Analysis Process – A Key Tool to Managing Quality.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2007  
+0307-4.5-1068  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Failure Analysis Process – A Key 
+Tool to Managing Quality 
+Application Maintenance Component 
+Rebuild 
+Component Life 
+Management MARC 
+Management 
+ 
+ 
+Failure Analysis Process – A Key Tool to Managing 
+Quality ....................................................................... 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 6 
+5.0  Resources Required .......................................... 6 
+6.0  Supporting Attachments / References ............... 6 
+7.0  Related Best Practices ...................................... 7 
+8.0  Acknowledgements ........................................... 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREI N MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Failure Analysis Process – A Key Tool to Managing 
+Quality 
+DATE 
+4/7/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.5-1068  
+Caterpillar Confidential:  GREEN  Page 2 of 7 
+1.0 Introduction  
+ 
+Nearly every Caterpillar dealership has the capability to perform failure analysis, but not many 
+have a formalized standard process to analyze every failure that comes into the shop, identify the 
+root causes, and communicate the findings and corrective recommendations to Caterpillar, to 
+customers, and within their own organizations. 
+ 
+Root causes for most component failures come from three sources: 
+1. Factory defects - including parts quality, workm anship, or design weaknesses.   
+2. Customer actions - such as operator error, impro per maintenance and monitoring, 
+application factors, or improper removal and installation.   
+3. Dealer - in the form of workmanship defects or i mproper parts reuse. 
+ 
+Accurate failure analysis can:  
+1. Provide Caterpillar the capability to identify a nd correct factory problems quickly, and more 
+effectively.  
+2. Cause or assist customers to modify their operat ion or maintenance practices, which will 
+prevent or minimize future failures. 
+3. Cause or assist the CRC to modify rebuild proces ses to deliver higher rebuild quality. 
+ 
+This Best Practice is does not describe how to conduct a failure analysis.  It does describe how to 
+establish and use a formalized Failure Analysis program as a valuable tool to improve quality and 
+customer satisfaction. 
+ 
+2.0 Best Practice Description 
+ 
+Several dealers have a formal failure analysis process and a standard practice to analyze every 
+component failure that comes into the shop.  The program requires a Failure Analysis staff of 3 to 
+6 trained, full time failure analysis specialists.  These dealers prepare over 1000 failure analysis 
+reports a year. 
+ 
+The key elements of an Applied Failure Analysis program include: 
+• Staff.   Specialists who have completed Caterpillar AFA I, II, and III classes. 
+• Laboratory.   Equipped with stereo microscope, digital camera with macro capability, 
+micrometers, hardness tester, dye crack detection, cleaning equipment, hand tools, 
+workbenches, good lighting, storage racks and cabinets.  Ideally, the lab should be located 
+in or near the component disassembly area. 
+• Database.   A record keeping system ideally should be able to store failure analysis reports 
+and sort records by multiple factors, such as by model, by component, by customer, by 
+serial number, etc.  It also needs to utilize standard report forms and documentation, 
+document communications and feedback.  Several dealers use a Lotus Notes system for 
+this purpose. 
+• Process.   All failures are analyzed for root cause.  Personnel job descriptions and 
+responsibilities are clearly defined.  Communication procedures are established for 
+providing analysis results and recommendations.  A process to track feedback and 
+corrective actions is established. 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREI N MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Failure Analysis Process – A Key Tool to Managing 
+Quality 
+DATE 
+4/7/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.5-1068  
+Caterpillar Confidential:  GREEN  Page 3 of 7 
+       Some of the benefits experienced from a standardized AFA program are significant: 
+• Warranty and Policy.  Failure analysis reports are  provided to warranty clerk to facilitate 
+claim preparation and SIMS data entry.  The reports improve warranty claim submission 
+with better cost recovery. 
+• Product Problem Identification and Reporting.  Reo ccurring problems are summarized and 
+reported to Caterpillar with detailed failure analysis information.  Early identification leads to 
+faster Caterpillar response in support programs, interim measures, and engineering 
+solutions. 
+• Improve Customer Fleet Availability and Operation Costs.  Identification the root causes of 
+failures allows corrective measures to be taken to eliminate or reduce future repeat 
+occurrences.  Improvements in maintenance, machine monitoring, and operation can often 
+result from AFA. 
+• Customer Relations.  Failure Analysis that helps t he customer obtain better performance 
+results from his fleet builds confidence in dealer service support and in Caterpillar 
+equipment.  Long term, this leads to customer satisfaction and loyalty. 
+• CRC Rebuild Processes.  Failure Analysis informati on provided to CRC Supervisors allow 
+corrective measure to be implemented in the rebuild process, leading to higher rebuild 
+quality and lower re-do rates. 
+                                                              
+ 
+3.0 Implementation Steps 
+ 
+1. Define staff requirements and job descriptions t o include roles and responsibilities. 
+      AFA Technicians: Perform professional failure analysis to determine root cause. 
+      AFA Supervisor: Use AFA to take corrective actions to prevent failures and increase     
+                                 customer machine availability and reduce costs 
+       
+2. Establish a Failure Analysis workstation located  in or near the component disassembly 
+area.  It is important to that the Failure Analysis process does not slow down or interrupt 
+the rebuild process.  Failure Analysis lab equipment costs are approximately $15,000. 
+ 
+                           
+ 
+          
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+90x Stereo Microscope  
+with photo attachment 
+Digital Camera & Micrometers 
+ Storage Rack & Tool Cabinet 
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREI N MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Failure Analysis Process – A Key Tool to Managing 
+Quality 
+DATE 
+4/7/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.5-1068  
+Caterpillar Confidential:  GREEN  Page 4 of 7 
+ 
+ 
+ 
+                               
+ 
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                   
+ 
+                     
+ 
+                                       
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Workbench  Lab Layout (12’x16’)  
+See Attachments for Details  
+Parts Cleaning Tank 
+ Lighted Magnification 
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREI N MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Failure Analysis Process – A Key Tool to Managing 
+Quality 
+DATE 
+4/7/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.5-1068  
+Caterpillar Confidential:  GREEN  Page 5 of 7 
+3. Develop a database able to document failure anal ysis reports and sort information by  
+machine model, serial number, component, customer, and other variables. System should 
+also track all communications and feedback. Many dealers use a Lotus Notes system for 
+this purpose.     
+                                         
+                 
+         
+     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                 
+ 
+ 
+ 
+  
+                  
+         
+ 
+      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                     
+4. Communication Process.  It is important to devel op a standard communication process to    
+collect needed information for the failure analysis, share the results and recommendations, 
+and document preventative measures taken to avoid future failures.  This communications 
+process ideally should be defined with a detailed process map.  Key communications 
+include: 
+ 
+ 
+Sample of S tandard Report 
+Data Fields  
+Lotus Format  
+Sort by Fields  
+Document, Track, Edit  
+Failure reports  
+Communicate  
+Standard Address Lists  
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREI N MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Failure Analysis Process – A Key Tool to Managing 
+Quality 
+DATE 
+4/7/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.5-1068  
+Caterpillar Confidential:  GREEN  Page 6 of 7 
+• Collecting information for analysis. 
+i. Mine records including PM history, operator repo rts, fluid consumption, 
+machine inspection reports and backlog, hours on component since last 
+rebuild and total life hours, R & I checklist, VIMS data, and operator report. 
+ii. Dealer records.  Service history, delivery reco rds, SOS and ISO information, 
+and Caterpillar technical communication. 
+• Communicating results and recommendations; 
+i. To the minesite may include Maintenance manageme nt, Planning department, 
+operations department, and admin department. 
+ii. To dealer personnel may include warranty admini stration, technical 
+communicator, and CRC supervisors. 
+• Documenting corrective measures taken.  It is impo rtant to have a feedback process 
+that documents corrective measures taken to prevent future failures.  This is vital and 
+is the main purpose of a Failure Analysis program. 
+ 
+5. Standardized Failure Analysis Report.  (See Atta chments below for an example)   
+• Component identification information, serial numbe r, hours, etc. 
+• Supporting data and information – service history,  VIMS data, etc. 
+• Failed parts analysis with photos. 
+• Conclusions – root cause identification. 
+• Recommendations 
+ 
+4.0 Benefits 
+• Improves warranty claim process and payment. 
+• Provides basis for policy or goodwill claims. 
+• Help Caterpillar to identify and resolve technical  problems. 
+• Improves CRC rebuild process and quality. 
+• Gives customer better machine availability. 
+• Gives customer lower machine repair costs. 
+• Builds customer relations and loyalty. 
+   
+ 
+5.0 Resources Required 
+• Staff requirement (3-6 full time failure analysis specialists) 
+• Failure Analysis lab and equipment - $15,000. 
+• Record Keeping System 
+• Office and furniture 
+ 
+ 
+6.0 Supporting Attachments / References 
+Cr 13558 translation.pdf   - A Sample AFA Report   
+AFA Lab.jpg   - AFA Bay Design layout 
+AFA presentation 2007.pdf  - 6Sigma Project PowerPoint describing the project & process 
+  (in Spanish only) 
+ 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREI N MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Failure Analysis Process – A Key Tool to Managing 
+Quality 
+DATE 
+4/7/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0307-4.5-1068  
+Caterpillar Confidential:  GREEN  Page 7 of 7 
+ 
+ 
+7.0 Related Best Practices 
+None at this time. 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+6 Sigma Black Belt 
+Global Mining Product Support 
+ 
+Special thanks for information provided by: 
+ 
+Jose Lopez Rey Sanchez 
+Product Support Manager - Ferreryros 
+josel@ferreyros.com.pe    
+ 
+ 
+Hector Yoza  AFA Manager  
+AFA Manager - Ferreryros 
+hyoza@ferreyros.com.pe   
+ 
+Rafael Paloma 
+Latin America Regional Product Support Representative 
+Caterpillar Global Mining – LACD Region 
+Paloma_Rafael@cat.com

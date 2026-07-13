@@ -1,0 +1,494 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2011 
+1107-1.07-1244 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      mining.cat.com 
+ 
+ 
+ 
+ 
+B E S T  P R A C T I C E  S E R I E S 
+Ordering Parts with 
+PartStore™ 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Ordering Parts with PartStore™ ................................. 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits ............................................................ 10 
+5.0 Resources Required ........................................ 11 
+6.0 Supporting Attachments / References ............. 11 
+7.0 Related Best Practices .................................... 11 
+8.0 Acknowledgements .......................................... 11 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Caterpillar dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or 
+warranty about the information contained in this document or the products referenced herein. Caterpillar welcomes 
+additional “Best Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ordering Parts with PartStore 
+DATE 
+11/11/2011 
+CHG 
+NO 
+00 
+NUMBER 
+1107-1.07-1244 
+Caterpillar Confidential:  GREEN                Page 1 of 11 
+1.0 Introduction  
+ 
+Many customers are automating their procurement processes and integrating with supplier 
+systems to streamline their operations and reduce transaction costs. Since 2001, Caterpillar has been 
+an industry leader in the integrated procurement of parts by facilitating hundreds of connections 
+between customer business systems and their Cat® dealer’s business systems. Customers who 
+procure parts and receive electronic invoices through these connections experience transaction cost 
+savings of as much as 50% or more, depending on their current processes. One customer’s process 
+assessment showed that over half of the customer’s manual process steps were eliminated during 
+the following processes: 
+• Ordering 
+• Shipping/Receiving 
+• Invoice Reconciliation 
+• Accounts Payable 
+ 
+2.0 Best Practice Description 
+ 
+The PartStore™ IP Deployment Program will enable a dealer’s largest parts customers to 
+automate their parts ordering process.  There are two approaches to this automation:  PartStore Web 
+and PartStore IP.   
+  
+“PartStore Web” is an internet application that is accessed through the dealer’s web site that 
+allows Customers to check for parts availability and pricing and place accurate parts orders on-line.   
+ 
+“PartStore IP” allows us to integrate our customers’ enterprise systems with our Dealer’s 
+business system to enable the following transactions to be completed electronically: direct orders, 
+stock orders, planned orders, order responses, pay-upon-receipt transactions, invoice updates and 
+electronic funds transfers. 
+ 
+3.0 Implementation Steps 
+ 
+You have 2 options when it comes to connecting to PartStore:  PartStore Web and PartStore 
+Integrated Procurement 
+ 
+3.1 PartStore Web 
+ 
+To access PartStore Web, you must locate the Caterpillar Dealer’s web site or Dealer StoreFront, 
+register and log in successfully, and be granted access to PartStore Web.  This section details the 
+following topics: 
+• Locate the Caterpillar Dealer’s Web site or Dealer StoreFront 
+• Register at Dealer’s web site  
+• Request PartStore Web Access 
+• Access PartStore Web 
+• Print Screens in PartStore Web 
+• Required Fields in PartStore Web 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ordering Parts with PartStore 
+DATE 
+11/11/2011 
+CHG 
+NO 
+00 
+NUMBER 
+1107-1.07-1244 
+Caterpillar Confidential:  GREEN                Page 2 of 11 
+Locate the Dealer’s Web Site or Dealer StoreFront 
+ 
+You can access to your Cat Dealer’s web site in one of two ways: use the Dealer’s URL or use 
+the 'Dealer Locator' on the Caterpillar Inc. web site (http://www.cat.com). 
+ 
+The Dealer’s URL or web address is found through communication with a representative of the 
+Dealer, printed on an invoice from a previous purchase, or advertised inside or outside the 
+dealership.  Type the URL into the 'Address' box of a web browser and the Dealer web site is 
+displayed. 
+ 
+To use the 'Dealer Locator' on the Caterpillar, Inc website: 
+• Open a web browser. 
+The browser window is displayed. 
+• In the 'Address' text box type: http://www.cat.com 
+The Caterpillar corporate web site is displayed in the browser window. 
+• In the main navigation, upper right, click 'Find a Dealer.' 
+The 'Find a Dealer' search screen is displayed. 
+• Enter the information for the dealer or location information and click 'Find.' 
+The search results are displayed. 
+• For a selected dealer, in the 'Links' column, if the link exists, click 'Go to Website.' 
+The specified dealer's web site is displayed in a new window. 
+ 
+Register at Dealer’s Web Site 
+As a new customer you must be registered at the dealer’s web site or Dealer StoreFront in order 
+to use PartStore Web.  You must also request PartStore Web access.  
+ 
+Complete the following steps to register at the Dealer StoreFront: 
+• From the 'Dealer StoreFront Home' screen, click 'Join.' (F i g u r e  1) 
+The 'Privacy Statement' screen is displayed. (F igu re 2) 
+• At the bottom of the 'Privacy Statement' screen, click 'Accept.' (F i g u r e  2) 
+The 'Registration/Profile Information' screen is displayed. (F i g u r e  3) 
+• Complete the required fields of the 'Registration/Profile Information' screen. 
+• At the bottom of the 'Registration/Profile Information' screen click 'Submit.'  (F i g u r e  3) 
+• A message is displayed at the top of the 'Registration/Profile Information' screen that 
+indicates registration is successful.  The message is in green font.  (F i g u r e  4) 
+ 
+ 
+N O T E:  I f  y o u r  C a t  d e a l e r s h i p  u s e s  t h e  D e a l e r  S t o r e F r o n t ,  i t s  
+U R L  i s  i n  t h e  f o r m a t :  ' h t t p :/ /de a l e r. ca t. c om/' ,  whe re  ' de a l e r'  i s 
+r e p l a c e d  w i t h  a  d e a l e r  s p e c i f i c  w o r d .   F o r  m o s t d e a l e r s ,  ' d e a l e r '  i s  
+r e p l a c e d  w i t h  t h e  n a m e  o f  t h e  d e a l e r . 
+If the re  i s unc e rta i nty  a bout the  U R L,  pl ea se  c onta c t y our 
+C a t e r p i l l a r  D e a l e r . 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ordering Parts with PartStore 
+DATE 
+11/11/2011 
+CHG 
+NO 
+00 
+NUMBER 
+1107-1.07-1244 
+Caterpillar Confidential:  GREEN                Page 3 of 11 
+ 
+ 
+F igu re 1:  D e a l e r  S t o r e F r o n t  H o m e  S c r e e n 
+ 
+F igu re 2 :  P r i v a c y  S t a t e m e n t  S c r e e n 
+           N O T E : A l l  f i e l d s m a r k e d  w i t h  a n  a s t e r i s k  a r e  r e q u i r e d .  
+Join Button 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ordering Parts with PartStore 
+DATE 
+11/11/2011 
+CHG 
+NO 
+00 
+NUMBER 
+1107-1.07-1244 
+Caterpillar Confidential:  GREEN                Page 4 of 11 
+ 
+F igu re 3:  P e r s o n a l  I n f o r m a t i o n  S c r e e n 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ordering Parts with PartStore 
+DATE 
+11/11/2011 
+CHG 
+NO 
+00 
+NUMBER 
+1107-1.07-1244 
+Caterpillar Confidential:  GREEN                Page 5 of 11 
+ 
+F igu re 4 :  R e g i s t r a t i o n  S u c c e s s f u l  M e s s a g e 
+At this point, the dealer Site Administrator receives an email requesting a reply to your request 
+(F i g u r e  5). You receive a copy of the same email message.  
+ 
+F igu re 5:  C u s t o m e r  R e g i s t r a t i o n  w i t h  D e a l e r  S t o r e F r o n t  E m a i l 
+Request PartStore Web Access 
+After you successfully register with Dealer StoreFront, you must request access to Dealer 
+StoreFront applications, including PartStore Web.   
+ 
+Complete the following steps to request PartStore Web Access: 
+ 
+• From the Dealer StoreFront left navigation, click 'My Applications.' 
+The 'My Applications' screen is displayed. (F i g u r e  6) 
+• From the 'My Applications' screen, select 'PartStore.' 
+• Click 'Submit Changes.' 
+• An e-mail is sent to your dealer requesting access to PartStore Web.  Once the dealer 
+gives your privileges to access PartStore Web, you will receive an e-mail or phone call.  
+Continue with ' 
+• Access ' below. 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ordering Parts with PartStore 
+DATE 
+11/11/2011 
+CHG 
+NO 
+00 
+NUMBER 
+1107-1.07-1244 
+Caterpillar Confidential:  GREEN                Page 6 of 11 
+ 
+F igu re 6 :  M y  A p p l i c a t i o n s  S c r e e n 
+ 
+Access PartStore Web 
+ 
+Once you locate the Dealer StoreFront, register and log in successfully, and granted access to 
+PartStore Web, you can navigate from the Dealer StoreFront to PartStore Web in one of two ways: 
+• The 'Quick Access' dropdown menu. (F i g u r e  7) 
+• The 'Parts and Service' tab. (F i g u r e  8) 
+ 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ordering Parts with PartStore 
+DATE 
+11/11/2011 
+CHG 
+NO 
+00 
+NUMBER 
+1107-1.07-1244 
+Caterpillar Confidential:  GREEN                Page 7 of 11 
+ 
+F igu re 7 :  D e a l e r  S t o r e F r o n t  Q u i c k  A c c e s s  D r o p d o w n  M e n u 
+ 
+F igu re 8 :  D e al e r  S t o r e F r o n t  P a r t s  a n d  S e r v i c e  S c r e e n 
+Quick Access 
+Dropdown Menu 
+PartStore Link 
+Parts and Service Tab 
+PartStore Button 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ordering Parts with PartStore 
+DATE 
+11/11/2011 
+CHG 
+NO 
+00 
+NUMBER 
+1107-1.07-1244 
+Caterpillar Confidential:  GREEN                Page 8 of 11 
+Print Screens from PartStore Web 
+Most screens viewable in PartStore Web can be printed.  If the print screen option is available 
+on a screen it appears as a hyperlink titled: 'Print This Page' located to the right of the screen title.   
+ 
+F igu re 9 :  P r i n t  T h i s  P a g e  L i n k 
+Required Fields in PartStore Web 
+In PartStore Web screens, any field marked with an asterisk (*) is required to continue to the 
+next screen or proceed to the next step in the process. 
+ 
+ 
+3.2 PartStore Integrated Procurement (IP) 
+Connecting to PartStore Integrated Procurement is a much more involved process.  The 
+customer should first contact the dealer and request a project be started to connect   PartStore 
+Integrated Procurement is quite flexible, and has only two key requirements:  Be able to send 
+data via XML, and that data must be sent via a HTTPS secure post.  See attached White Paper 
+for more details on implementing an IP connection. 
+ 
+ PartStore Integrated Procurement can be customized based on the customer’s needs.  
+Business rules are set at the PartStore eHub level, which can be set around: 
+• Backordered parts 
+• Price discrepancies 
+• Invalid Part numbers 
+• Replaced Parts 
+• Virtually any other customized need the customer may have 
+ 
+There are 2 main integration options available to the customer who wishes to use PartStore 
+Integrated Procurement:  Direct or via third party. 
+Print This Page Link 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ordering Parts with PartStore 
+DATE 
+11/11/2011 
+CHG 
+NO 
+00 
+NUMBER 
+1107-1.07-1244 
+Caterpillar Confidential:  GREEN                Page 9 of 11 
+Direct Connection 
+ 
+Advantages with Direct Connection to the Caterpillar E-hub 
+• High availability, currently over 99%, due to a single connection point 
+• No transaction fees to a third party 
+• All Caterpillar e-hub services and connections are available without 
+waiting for a third party to provide this access 
+• Management is potentially easier with two parties instead of three 
+ 
+Third Party Connection 
+ 
+ 
+Advantages with Connection through a Vendor Hub or Marketplace Partner 
+• Customer can utilize the same technical connection for multiple suppliers 
+• Less reliance on the customer’s IS department to establish and maintain 
+the connection 
+• Agreements can include other services or even full hardware and services 
+outsourcing. 
+ 
+Note: In the majority of cases if an organization is capable of connecting to a 
+vendor hub or marketplace partner they will also be capable of a direct 
+connection. 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ordering Parts with PartStore 
+DATE 
+11/11/2011 
+CHG 
+NO 
+00 
+NUMBER 
+1107-1.07-1244 
+Caterpillar Confidential:  GREEN                Page 10 of 11 
+4.0 Benefits 
+ 
+Automating the parts ordering process creates benefits for both our customers and for the dealer.  
+For our customers, the benefits include: 
+ 
+• Improved parts availability and reduced equipment down-time due to instant availability 
+on emergency orders, reduced order-delivery times, and improved order accuracy; and  
+ 
+• Reduced internal costs through automation of stock replenishment transactions, 
+elimination of manual steps and duplicate data entry in all transactions, and reduced invoiced 
+discrepancies. 
+ 
+For the dealer, the benefits include:  
+ 
+• Increased customer satisfaction & loyalty, with the potential for increased market share 
+and sales; 
+ 
+• Reduced transaction costs through the elimination of manual steps and duplicate data 
+entry, fewer returned spare parts, and reduced invoice discrepancies; 
+ 
+• Faster payment through automation of invoicing and payments; and  
+ 
+• Migration of our eBusiness activity to the most cost-effective platform (Cat eHub, 
+Seamless migration to future releases of Cat’s DBSi). 
+ 
+<Dealer>  Integrated Parts Procurement Project - 
+Net Cashflow (not discounted)
+($1,000,000)
+$0
+$1,000,000
+$2,000,000
+$3,000,000
+$4,000,000
+$5,000,000
+$6,000,000
+Benefits  611,917  984,336  1,356,755  1,729,174  1,489,675 
+Cos ts  836,600  -    -    -    -   
+Net Benefits  (224,683)  984,336  1,356,755  1,729,174  1,489,675 
+Cumulative Net Benefits  (224,683)  759,653  2,116,408  3,845,582  5,335,257 
+Year 1 Year 2 Year 3 Year 4 Year 5
+ 
+ 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ordering Parts with PartStore 
+DATE 
+11/11/2011 
+CHG 
+NO 
+00 
+NUMBER 
+1107-1.07-1244 
+Caterpillar Confidential:  GREEN                Page 11 of 11 
+5.0 Resources Required 
+For connecting to PartStore Web, the buyer is typically the only one needed to get access.  For 
+PartStore IP projects, it is a bit more involved.  Typically, weekly conference calls are required to 
+keep the project moving.  As part of the project, the following people should be involved: 
+ 
+• Caterpillar Project Leader (can be requested via eparts@cat.com) 
+• Caterpillar PartStore Developer 
+• Dealer PartStore Admin 
+• Dealer PartStore sales rep/manager (optional) 
+• Customer Procurement manager 
+• Customer Buyer 
+• Customer IT representative 
+• 3rd Party representative (optional) 
+ 
+6.0 Supporting Attachments / References 
+ 
+Cat PartStore IP White Paper V5.pdf 
+ 
+7.0 Related Best Practices 
+ 
+8.0 A c k nowledgements 
+This Best Practice was written by: 
+ 
+Kevin Hoffman 
+PartStore Project Manager – Mining 
+Hoffman_kevin_p@cat.com 
++1 (309) 636-1305

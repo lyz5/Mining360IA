@@ -1,0 +1,189 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2011  
+1107-4.03-1251  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Tool for Installing 
+Transmission Bolt 
+Dampers 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC)  
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Efficient Tool for Installing Transmission Bolt 
+Dampers ..................... Error! Bookmark not defined. 
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Benefit ............................................................... 3 
+4.0  Resources Required .......................................... 3 
+5.0  Supporting Attachments / References ............... 3 
+6.0  Related Best Practices ...................................... 3 
+7.0  Acknowledgements ........................................... 3 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Efficient Tool for Installing Transmission Damper 
+Bolts   
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1107-4.03-1251 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction  
+ 
+It is a difficult task to install the 6I-9790 bolt dampers into the clutch housings of transmissions, 
+such as in the 793C.   
+ 
+  
+The bolt damper must be compressed with a vise grip in order to install in the bore of the housing.  
+It is difficult to grip the bolt damper with the vise grip. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Ferreyros has developed a very simple tool (collet)  to compress the damper bolt.  The collet is 
+sized for the damper bolt that has a tapered bore. 
+  
+ 
+ 
+The collet holds and compresses the bolt damper while it is being installed.   
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Efficient Tool for Installing Transmission Damper 
+Bolts   
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1107-4.03-1251 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+ 
+                 
+ 
+The upper diameter of the collet is slightly larger  than the bolt damper diameter.  The taper of the 
+collet compresses the bolt damper.   The bottom dia meter is 0.3mm smaller than the clutch 
+housing bore.     
+ 
+Process: 
+ 
+Lightly tap the bolt damper into the collet with a rubber mallet. 
+ 
+Place the collet and compressed bolt damper over th e clutch housing bore.  Tap in the bolt 
+damper with a mallet. 
+ 
+Remove the collet.  Finish installation by tapping the bolt damper in position with the rubber 
+mallet.                                                    
+  
+  
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Efficient Tool for Installing Transmission Damper 
+Bolts   
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1107-4.03-1251 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+3.0 Benefit 
+ 
+• Allows quicker and easier installation of bolt dam pers. More efficient. 
+• Less chance of damaging the bolt damper. 
+• Decreases risk of injury while inserting the bolt damper. 
+ 
+ 
+4.0 Resources Required 
+ 
+• Fabrication of collet. 
+• Minimal expense to fabricate the tool. 
+ 
+ 
+5.0 Supporting Attachments / References 
+ 
+None. 
+ 
+ 
+6.0 Related Best Practices 
+ 
+None. 
+ 
+ 
+7.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+Caterpillar Global Mining 
+ 
+The idea for this Best Practice, belongs to: 
+ 
+Alexander Lazaro Enciso 
+Ferreyros SAA 
+ 
+This Best Practice was revised by: 
+ 
+ Aninu Mitacc Vizcardo 
+Ferreyros SAA 
+ 
+amitacc@ferreyros.com.pe

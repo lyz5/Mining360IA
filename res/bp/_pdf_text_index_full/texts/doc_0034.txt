@@ -1,0 +1,400 @@
+SOURCE: 1.0 Maintenance & Repair\1.02 Condition Monitoring\2. Tactical\Use of a Hot Sheet for Component Management.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+June 2011 
+0508-2.15-1120 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Use of a “Hot Sheet” for 
+Component Management 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Use of a “Hot Sheet” for Component Management .... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Use of a "Hot Sheet" for Component Management 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0508-2.15-1120 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+1.0 Introduction  
+ 
+Condition Monitoring (CM) is the critical element to any successful repair-before-failure 
+maintenance and repair (M&R) program. The only way to plan and execute repairs prior to failure 
+is to have robust processes in place to detect and communicate the impending failures. Once the 
+defects are detected there must be documentation and communication within the Planning 
+department that allows them to adjust and define their short, medium and long-term M&R plans. 
+ 
+The Hot Sheet is a Condition Monitoring documentation and communication tool used specifically 
+for major components and systems. Unscheduled component failures are often the costliest 
+M&R events during the machine life cycle. They generally cause increased downtime, lost 
+production, expediting costs, and additional collateral damage. The Hot Sheet is used to track the 
+changes in component health in order to avoid these unexpected component failures.  
+ 
+2.0 Best Practice Description 
+ 
+2.1 Purpose: 
+ 
+In simplest terms the Hot Sheet is a tracking and communication tool for machine component 
+status. It is a Condition Monitoring tool used by the Planning group to monitor component usage 
+and watch for indications of developing failures. Typically spreadsheet based, it is a visual quick 
+reference indicator of component health.  
+ 
+For a new machine, one of Planning’s initial tasks is to develop the long-term M&R plan. By 
+comparing historical component life data to planned machine usage, the Planner will estimate 
+when the components will reach their useful life and therefore need replacement. This 
+replacement schedule is the long-term plan. Usage is measured by fuel consumption for the 
+engine and hour accumulation for all other components. As the machine matures, the Hot Sheet 
+serves as the means to track and communicate the fuel consumption and hour accumulation 
+within the Planning department. The Planner compares actual consumption and accumulation to 
+the original estimated usage and makes the appropriate adjustments to the long-term plan. For 
+example, if a particular machine is underutilized over time, then its component replacements can 
+be delayed in the schedule. 
+ 
+Component health is also dependent on other Condition Monitoring routines. The Hot Sheet will 
+also document Fluid Management results, (i.e. SOS, electronic machine data such as VIMS 
+events). Any Condition Monitoring routine that indicates a change in component health can be 
+included. Overall the intent of the Hot Sheet is to capture and communicate to the Planner any 
+indications of major component or system health changes that may require adjustments to the 
+long-term plan. 
+ 
+2.2 Owner: 
+ 
+Within the M&R Process model, the Fleet Analyst (FA) has responsibility for the definition of the 
+Condition Monitoring routines and the subsequent data collection, analysis and technical 
+interpretation. He is the on-site Condition Monitoring expert with the technical knowledge to 
+translate the CM data into recommended M&R activities. The Fleet Analyst resides within the 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Use of a "Hot Sheet" for Component Management 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0508-2.15-1120 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+Planning group and works closely with the Planner to create action items based on Condition 
+Monitoring results. Therefore it is the Fleet Analyst that will define and maintain the content of the 
+Hot Sheet and collaborate with the Planner to define required adjustments to the long-term plan. 
+ 
+It is possible that a dealer structure consists of an on-site Fleet Analyst sharing responsibility with 
+a central Fleet Analyst located at an off-site dealer office. The central FA may process VIMS and 
+SOS results while the on-site FA handles all other Condition Monitoring data. Regardless, the on-
+site Fleet Analyst should own the Hot Sheet. 
+ 
+2.3 Data Sources, Content & Interpretations: 
+ 
+2.3.1 Fuel Consumption  
+ 
+Total fuel consumption during the period can be obtained from VIMS, the ECM or, on machines 
+not equipped with VIMS, from fuel addition records.  
+ 
+Fuel consumption  can be thought of as “engine life consumption”. By tracking actual fuel 
+consumption versus total fuel consumed at engine rebuild, the Hot Sheet shows the percentage 
+of engine life consumed to date (conversely remaining life). For machine ATY00744, Table 1  
+(page 4) shows that the engine has burned 161,760 gallons. 800,000 gallons are expected before 
+a rebuild is required. Therefore the engine has used 20.22% of its expected life. 
+ 
+2.3.2 Machine Operating Hours  
+ 
+Operating hours are obtained from machine service meter readings. Note, hours obtained from 
+dispatch systems frequently do not agree with machine SMU due to coding of production delays, 
+etc. Note that hours taken from machine SMU will be higher than those taken from dispatch, often 
+by as much as 10 percent. 
+ 
+Using a concept similar to fuel consumption to track utilized life for engines, all other components 
+are tracked by their accumulated hours. In Table 1, the total accumulated hours are shown as a 
+percentage of total expected hours before rebuild or replacement (benchmark hours). 
+ 
+If fuel or hours are accumulating at a different rate than the original estimate, the long-term plan 
+for component rebuilds or replacements must be adjusted. 
+ 
+2.3.3 Fluids Management & Analyses  
+ 
+• SOS / particle count 
+• Kidney looping / fluid dialysis 
+• Magnetic plug inspections 
+• Filter / breather / strainer / screen inspections 
+• Misc. Fluid consumption … oil, coolant, grease 
+ 
+Findings from Fluid Management CM routings may indicate that the component will not reach the 
+original life defined by the long-term plan. For example, the transmission and torque converter 
+SOS results for machine XYZ00744 show high particle count at only 56% of total expected life. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Use of a "Hot Sheet" for Component Management 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0508-2.15-1120 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+The Fleet Analyst must determine if the component needs to be removed earlier than expected 
+and therefore change Planning’s medium or term plans. 
+ 
+2.3.4 On-board Electronic Data Monitoring 
+ 
+VIMS events of components operating out of recommended range or specification may indicate 
+component deterioration. 
+ 
+Machine electronic data is used in the same manner as Fluid Management results to detect 
+premature component deterioration. For machine XYZ00744, the VIMS events show transmission 
+and torque converter slip times are higher than spec. This may indicate a faulty valve or worn 
+clutch plates. In this case, the high particle count detected by SOS should also be considered 
+during diagnosis. 
+ 
+2.3.5 Machine Systems Performance Tests 
+ 
+Pressure and cycle time tests may indicate component deterioration and should be documented 
+and analyzed similar to VIMS data. 
+ 
+2.3.6 Application Analyses 
+ 
+Changes in application severity need to be reviewed periodically to determine any effect on 
+component life expectations. For example, as the pit matures and deepens, the resulting increase 
+in duty cycle severity on the drive train components may require reduced life estimates 
+(benchmark hours). 
+ 
+2.3.7 Learning from Failures 
+ 
+Component failure analysis reports may yield failure modes unknown when the original life 
+estimates were made and therefore require adjustments to expected life (benchmark hours). 
+ 
+ 
+Note: Areas of concern are color coded according to increasing risk. Refer to Table 1. Life 
+accumulation of 75% and above is broken down into three escalating categories represented in 
+yellow, red and black. Similarly Fluid Management and VIMS results are represented in the same 
+manner of escalating risk. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+793D Fleet Component Hot Sheet 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Use of a "Hot Sheet" for Component Management 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0508-2.15-1120 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+ 
+ 
+ 
+ 
+Table 1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Use of a "Hot Sheet" for Component Management 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0508-2.15-1120 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+ 
+3.0 Implementation Steps 
+ 
+1. Create the Hot Sheet spreadsheet listing all on-site machines and their respective 
+components that need to be tracked.  
+ 
+2. Leverage the Condition Monitoring infrastructure and processes to collect the Data Sources 
+described above and in the Condition Monitoring BP 1007-2.0-1102. 
+ 
+3. Assign responsibility within the Planning department to collect, analyze and populate the Hot 
+Sheet with the Data Sources section 2.3 described above. 
+ 
+4. Define the communication channel or routing list for the Hot Sheet publication. 
+ 
+5. Establish the Hot Sheet master copy location and provide access to the members on the 
+routing list. If possible, keep the master on a share drive with read/write access to the Fleet 
+Analyst and read-only rights to everyone else. 
+ 
+4.0 Benefits 
+ 
+The on-time detection of potential problems is the key requisite to achieve the ultimate goal of 
+"Repair Before Failure". 
+ 
+The communication of potential problems and deviations to expected hour accumulation allows 
+Planning to: 
+ 
+1. Better coordinate upcoming component requirements with the Parts Department. 
+2. Schedule the necessary repairs at the right time (At the right window of opportunity and 
+Before Failure) 
+ 
+ 
+4.1 Measurable Benefits 
+ 
+4.1.1 Time and Cost 
+ 
+The difference in downtime and cost between a repair executed before failure and one after 
+failure has been established in the range of 5 to 8 times. 
+ 
+MTBS, a measure of machine health and repair quality, along with MTTR, a measure of repair 
+efficiency, will both benefit from anticipated and planned component replacements that the Hot 
+Sheet will facilitate. Otherwise, unexpected component failures are some of the most costly due 
+to extensive machine downtime and potential collateral system damage and contamination. 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Use of a "Hot Sheet" for Component Management 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0508-2.15-1120 
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+5.0 Resources Required 
+ 
+1. The most significant resource requirement will be having the Condition Monitoring systems, 
+equipment and processes in place to provide the information described in the Data Sources 
+section 2.3 and also covered in the Condition Monitoring BP 1007-2.0-1102. 
+ 
+2. A Fleet Analyst or Planner (for small fleets) responsible for the Hot Sheet ownership. 
+ 
+3. Computer with spreadsheet capability and means to route the spreadsheet to the recipients 
+either manually or electronically. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Component Hot Sheet example.xls  (Click on “Attachments” tab within this document to view).  
+ 
+7.0 Related Best Practices 
+ 
+Condition Monitoring      BP 1007-2.0-1102 
+Planning & Scheduling      BP 1007-2.0-1104 
+Getting Started with MCTS     BP 0906-4.5-1013 
+MCTS used to Manage & Monitor Component Life  BP 0906-3.1-1020 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Matt Maziarz 
+Sr. Site Performance Consultant 
+Caterpillar Global Mining 
+Maziarz_Matthew_J@cat.com 
+Ph: 309-675-5208 
+ 
+Special thanks to Sean Donnelly, Wyoming Machinery, and Dale Milton, CGM NACD, for 
+providing the Hot Sheet example. 
+ 
+For further details and information regarding this Best Practice, please contact the author.

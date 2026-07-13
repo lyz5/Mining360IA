@@ -1,0 +1,361 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+September 2023 
+4.03-230928-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+A Method for Chassis 
+Center Tube Alignment on 
+793D Mining Trucks 
+ 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+A Method for Chassis Center Tube Alignment on 
+793D Mining Trucks ................................................... 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Method for Chassis Center Support Alignment on 
+793D Mining Trucks 
+DATE 
+9/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230928-1 
+Caterpillar: Confidential Yellow          Page 2 of 8 
+1.0 Introduction  
+ 
+Structural repairs on large mining equipment are critical activities, due to the large size of the 
+parts and the need to release the equipment with high reliability and Low Repair  Time. 
+ 
+One of the critical items, when thinking about 793D  truck fleets, is  the chassis repairs, which 
+present several points of cracks, aggravated mainly by the severity of the operation, and 
+overload, besides the low reliability of Maintenance in items such as suspension and initial crack 
+repairs. 
+ 
+In the 793D, the region in the Center Tube usually has cracks that can be repaired, in some 
+situations total replacement of the part is required. 
+ 
+The repair instruction "M0086585: Procedure to Repair the Frame on Certain 793 through 793D 
+Off-Highway Trucks" shows the replacement of the Center Tube, performing the alignment using 
+the chassis as reference,  however, due to the removal of the old Center Tube, the alignment 
+needs attention to verify the measurements, and the need to perform this adjustment with the 
+part lifted. 
+ 
+ 
+ 
+Image 01. Alignment of the Center Tube according to procedure M0086585 
+ 
+ 
+To improve the alignment of the Center Tube, this Best Practice presents tooling designed to perform 
+the activity, making the alignment more precise and reducing the effort to perform the activity. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+To improve the alignment of the C enter Support during replacement, a tool ing that uses the 
+equipment's central pin clamping bearings has been developed, see the images below: 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Method for Chassis Center Support Alignment on 
+793D Mining Trucks 
+DATE 
+9/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230928-1 
+Caterpillar: Confidential Yellow          Page 3 of 8 
+ 
+ 
+Image 02. Tooling Support made before the removal of the Center Tube (open image) 
+ 
+ 
+ 
+Image 03. Tooling Support made before the removal of the Center Tube (More focused image) 
+ 
+The Tooling Support is made with the central pin fixing bearings (PN 8X-2944), which must be fixed 
+on the Center  Tube by bolt 9X-6151 and then the fixing structure is made, (picture example) but 
+another profile can be used. The Center Support must be made before removing the damaged tube 
+and fixed to the chassis, so it is possible to obtain the installation reference for the new tube. The 
+sequence of execution of the central pipe replacement using the tool ing and the sketch with 
+reference dimensions is presented below. 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The Tooling Support is made with the Center Tube that will be removed. The bearings are fixed on 
+the Center Tube and then a support is made so that the bearings are fixed in relation to the chassis. 
+The image below shows the bearing and support: 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Method for Chassis Center Support Alignment on 
+793D Mining Trucks 
+DATE 
+9/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230928-1 
+Caterpillar: Confidential Yellow          Page 4 of 8 
+ 
+ 
+Image 04. Making the Tooling Support before removing the Center Tube (more focused image) 
+ 
+After the tool is installed, the bearing retaining bolts are removed and the process of removing the 
+damaged Center Tube is started. The picture below shows the removal of the Center Tube. 
+ 
+ 
+ 
+Image 05: Removal of the damaged Center Tube 
+ 
+The images below show the damaged C enter Support removed and the template installed, thus 
+maintaining the positioning reference for the new Center Tube to be installed. 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Method for Chassis Center Support Alignment on 
+793D Mining Trucks 
+DATE 
+9/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230928-1 
+Caterpillar: Confidential Yellow          Page 5 of 8 
+ 
+ 
+Image 06. Tooling positioned after removal of the Center Tube 
+ 
+ 
+ 
+Image 07: Tool positioned during preparation for installation of the new Center Tube 
+ 
+After preparation for the new part, installation is made using the Tooling Support as reference. 
+The images below show the installation and alignment of the new Center Support. 
+ 
+ 
+ 
+Image 08: Alignment of the Center Tube in the Chassis 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Method for Chassis Center Support Alignment on 
+793D Mining Trucks 
+DATE 
+9/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230928-1 
+Caterpillar: Confidential Yellow          Page 6 of 8 
+ 
+ 
+ 
+Image 09. New Center Tube fixed to the Chassis 
+ 
+After alignment and fixing the Tooling Support on the new part, the welding process of the Center 
+Tube on the chassis is started, and after this process the removal of the tooling is performed. 
+ 
+ 
+4.0 Benefits 
+ 
+The main benefits related to this improvement are related is: 
+ 
+• L ess labor effort to perform the alignment. 
+• L ess exposure of the technicians during the installation process. 
+• Better part alignment. 
+ 
+ 
+5.0 Resources Required 
+ 
+The main items and PN has shown below: 
+ 
+Qty PN Description 
+02 8X-2944 Bearing 
+08 9X-6151 Bolt 
+6,0 m - Metalon ¼ (Dimensions: 80 x 80) cm 
+ 
+The dimensions for the tie rods may vary. Their main function is to keep the bearings fixed to the 
+chassis. The dimensions provided meet the technical design, however field adjustments may be 
+necessary and should be considered during tooling manufacturing and use. 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Method for Chassis Center Support Alignment on 
+793D Mining Trucks 
+DATE 
+9/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230928-1 
+Caterpillar: Confidential Yellow          Page 7 of 8 
+6.0 Supporting Attachments / References 
+ 
+M0086585: Procedure to Repair the Frame on Certain 793 through 793D Off-Highway Trucks 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice Was Written By: 
+ 
+Fábio Cota  
+Consultant, Product Performance (Project Leader by Dealer) – SOTREQ S/A 
+fabio.cota@sotreq.com.br  
++ 55 94 98807-8155 
+ 
+Júlio César Corrêa 
+Manager, Product Performance and Engineering – SOTREQ S/A 
+Julio.correa@sotreq.com.br
+ 
++ 55 94 98111-6441 
+ 
+Donato Reis 
+Coordinator, Product Performance and Engineering – SOTREQ S/A 
+donato.reis@sotreq.com.br
+ 
++ 55 31 99194-3956 
+ 
+Joaquim Jesus 
+Consultant, Product – SOTREQ S/A 
+Joaquim.jesus@sotreq.com.br
+ 
++ 55 94 98123-0522 
+ 
+ 
+SOTREQ thanks the product support and supplier partner teams. 
+ 
+Vagner Leles 
+Vagner.leles@sotreq.com.br 
+Product Support Manager – SOTREQ S/A 
++ 55 94 99973-3513 
+ 
+Vanderlênio Guimarães 
+Vanderlenio.guimaraes@sotreq.com.br 
+Product Support Supervisor – SOTREQ S/A 
++ 55 94 98803-6174 
+ 
+ 
+ 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+A Method for Chassis Center Support Alignment on 
+793D Mining Trucks 
+DATE 
+9/28/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-230928-1 
+Caterpillar: Confidential Yellow          Page 8 of 8 
+Gabriel Lima 
+Mechanical Engineer - NDT 
+gabriel.lima@ndtengenharia.com 
++ 55 73 9833-4116 
+ 
+Kennedy 
+Supervisor – NDT 
++55 94 9171-6551 
+ 
+Doug Friedrich 
+Caterpillar Inc. – Site Performance Manager - Resource Industries Sales, Services & 
+Technology 
+friedrich_douglas_w@cat.com

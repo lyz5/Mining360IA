@@ -1,0 +1,310 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\3500, 3400, and C175 Crankshaft Turn Tool for Shortblock.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2012  
+1107-4.03-1243  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+3500, 3400, C175 
+Crankshaft Turn Tool for 
+Short Block Assembly 
+Application Maintenance Component 
+Rebuild 
+Component 
+Life 
+Management 
+MARC 
+Management 
+ 
+ 
+ 
+3500, 3400, C175 Crankshaft Turn Tool for Short 
+Block Assembly  ....................................................... 0
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 5 
+4.0  Benefits ............................................................. 5 
+5.0  Resources Required .......................................... 5 
+6.0  Supporting Attachments / References ............... 5 
+7.0  Related Best Practices ...................................... 6 
+8.0  Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by one or 
+more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty about the 
+information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best Practice” 
+recommendations from our dealer network.  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WI THOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Camshaft BEARING Installation Tool 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1107-4.03-1243 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+1.0 Introduction  
+ 
+There is no Caterpillar tool to rotate a 3500 series engine crankshaft in a short block when the 
+engine front and rear covers are no installed.  It is necessary to turn the crankshaft in order to 
+install the connecting rods.  This Best Practice is a dealer fabricated tool to rotate the crankshaft.  
+The tool also locks into position so the crankshaft does not move while the connecting rod bolts 
+are torqued. 
+ 
+2.0 Best Practice Description    
+                                   
+This Best Practice has been implemented by Ferreyros.     
+ 
+                                 
+ 
+ 
+This tool makes it easy to rotate the crankshaft to any desired position and then lock the 
+crankshaft in place.  This makes the installation of connecting rods easier and assures that the 
+crankshaft will not slip during the connecting rod bolt torque process. 
+ 
+ 
+                                
+ 
+ 
+Mounting Plate 
+Lock Pins  
+Plate Mount  
+Slots for 
+adjustment 
+and bolts 
+ 
+Turn Gear 
+Gear shaft / 
+Bearing 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WI THOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Camshaft BEARING Installation Tool 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1107-4.03-1243 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+ 
+Since no print drawings are available at this time, the following photos show the tool construction. 
+ 
+                                                       Back View 
+ 
+                           
+ 
+ 
+          
+                                                        Side View 
+ 
+                       
+ 
+ 
+ 
+ 
+ 
+Mount 
+Plate 
+Shaft/ 
+bushing 
+Slots for 
+mounting 
+and 
+adjustments 
+Lock Pin 
+bushings 
+Gear lock pin 
+bores 
+Lock pin 
+bushings 
+Shaft 
+mount 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WI THOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Camshaft BEARING Installation Tool 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1107-4.03-1243 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+                      Top View                                                             Side View 
+  
+    
+  
+ 
+ 
+Turning tool for a 3400 series engine is similar in concept.   Photo below. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WI THOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Camshaft BEARING Installation Tool 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1107-4.03-1243 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+Turning tool for C175 engine consists of the following parts: 
+ 
+     
+ 
+ 
+  
+ 
+ 
+    
+ 
+ 
+Gear shaft / Bearing  
+Mounting Plate 
+Turn Gear 
+Lock Pin Bushings 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WI THOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Camshaft BEARING Installation Tool 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1107-4.03-1243 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+  
+  
+ 
+ 
+This tool is installed in the block next to the crankshaft gear and allows a turn clockwise and 
+counterclockwise to the desired location by the mechanic. 
+ 
+ 
+Reference Picture 
+ 
+3.0 Implementation Steps 
+ 
+• Design tool with desired features 
+• Fabricate tool 
+                                              
+ 
+4.0 Benefits 
+ 
+• Easy for technician to rotate crankshaft. 
+• Improves the quality of the connecting rod bolt to rque process 
+• Improves short block assembly efficiency 
+ 
+ 
+5.0 Resources Required 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Shaft / Bushing 
+Lock Pins 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WI THOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Camshaft BEARING Installation Tool 
+DATE 
+6/9/2017 
+CHG 
+NO 
+01 
+NUMBER 
+1107-4.03-1243 
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+ 
+ 
+7.0 Related Best Practices 
+ 
+8.0 Acknowledgements 
+ 
+CGM – Dale Brehm 
+ 
+The idea this Best Practice, belongs to: 
+ 
+Franklin Llanos Hinostroza 
+Ferreyros SAA 
+ 
+This Best Practice was revised by: 
+ 
+ Aninu Mitacc Vizcardo 
+Ferreyros SAA 
+ 
+amitacc@ferreyros.com.pe  
+ 
+May 29, 2012 – Document updated to include tool for C175 engine.

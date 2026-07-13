@@ -1,0 +1,275 @@
+SOURCE: Manual Spray Booth for Thermal Arc Spraying Small Parts.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+November 2023 
+4.02-231110-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Manual Spray Booth for 
+Thermal Arc Spraying 
+Small Parts 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Manual Spray Booth for Thermal Arc Spraying Small 
+Parts .......................................................................... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 3 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits ............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Manual Spray Booth for Thermal Arc Spraying Small Parts 
+DATE 
+11/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231110-1 
+Caterpillar: Confidential Yellow          Page 2 of 6 
+1.0 Introduction  
+ 
+Information contained in this document is intended for all dealers globally when utilizing thermal 
+spray arc technologies as a primary method for component salvage. This document provides and 
+overview of the tooling requirements for this manual thermal spray cabinet.  
+ 
+This inexpensive system was developed to allow small components (exhaust manifolds journals, 
+powertrain yokes, etc.). It is a cost -effective solution as it improves the thermal spray capabilities 
+and capacities of the shop with a minimal investment.  
+ 
+ 
+ 
+                                                Image 1. Manual Spray Booth 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Manual Spray Booth for Thermal Arc Spraying Small Parts 
+DATE 
+11/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231110-1 
+Caterpillar: Confidential Yellow          Page 3 of 6 
+2.0 Best Practice Description 
+ 
+Complex robotic spraying booths are commonly needed for major component salvage (cylinder 
+blocks, spindles, wheels, housings, etc.) MATCO’s demand for smaller components exceeded the 
+capacity of the current enclosed spray booth. The addition of a second large spray booth would 
+have required significant capital investment. To optimize the resources of the shop and improve 
+production output the MATCO Engineering team decided to implement a handheld thermal spray 
+booth.  This solution eliminated the congestion caused by the smaller components. 
+ 
+3.0 Implementation Steps 
+ 
+3.1 Defining the scope: The two important variables Matco took into consideration when deciding 
+on the capacity of the cabinet, was the size and weight of the components Matco would manually 
+thermal spray weld. They elected to convert an existing grit blast cabinet that was sufficient in size.  
+ 
+3.2 Preparing the cabinet:  A rotating table with a variable frequency drive was installed inside the 
+cabinet so that part rotation speed could be made adjustable. The table can include T -slots that 
+would allow a variety of part holding solutions to be use d. The cabinet should allow for dust and 
+fumes extraction hoses to be mounted. Allows for flexible positioning of the spray gun.  
+ 
+3.3 Turntable details:  The assembly consist of an electric motor, gearbox, mounting surface (Table 
+with T-slots) and a variable frequency drive (VFD). The VFD permits the operator to adjust the 
+desired rotation speed of the table, which is essential when spraying components of varying 
+diameter and shape.  
+ 
+                                                    
+      
+       Image 2. Turntable with VFD  
+    
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Manual Spray Booth for Thermal Arc Spraying Small Parts 
+DATE 
+11/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231110-1 
+Caterpillar: Confidential Yellow          Page 4 of 6 
+3.4 Work holding: It is necessary to clamp and position a variety of components of varying sizes 
+and shapes. In addition, the part must be held rigid during the process.  Matco uses a T -slot 
+clamping kit to allow the operator flexibility in mounting the co mponents to the table. It may be 
+necessary for the end user to develop specialized fixtures or jigs for the various components they 
+will be spraying.  
+ 
+                                   
+ 
+    Image 5.  T-slot Clamping Kit and Fixtures 
+ 
+ 
+3.3 Selecting Thermal Arc spray equipment: 
+Matco elected to use TAFA 8830 for their application, although other equipment could be selected 
+based on the needs. The power control unit was installed at the rear of the cabinet. 
+ 
+ 
+     
+     
+Image 6. Power control unit behind Cabinet       Image 7. Spray Gun 
+  
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Manual Spray Booth for Thermal Arc Spraying Small Parts 
+DATE 
+11/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231110-1 
+Caterpillar: Confidential Yellow          Page 5 of 6 
+3.5 Debris and Fumes Extraction:  
+Since the arc spray process generates a considerable amount of fumes and debris it was necessary 
+to incorporate a means to extract these from the cabinet. MATCO selected a Donaldson system 
+for this requirement. It was mounted outside and adjacent to the machine shop wall.  
+ 
+  
+ 
+                            Image 8.  Debris and fumes extraction unit 
+(As for reference only) 
+ 
+3.6   Spraying Process: 
+Since the process has been placed in service the following photos show that it’s capable of 
+salvaging small components via the arc spray welding process. Control parameters must be 
+maintained to achieve acceptable results. Standoff distance, table rotation speed, voltage, current, 
+temperature, and operator experience can all effect the results. Further technical information on 
+spray welding can be referenced in SEBF2125 Thermal spray procedures for exhaust manifolds.  
+ 
+                                                  
+ 
+      Image 7. Thermal spray in process             Image 8. Exhaust manifold after process 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Manual Spray Booth for Thermal Arc Spraying Small Parts 
+DATE 
+11/10/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.02-231110-1 
+Caterpillar: Confidential Yellow          Page 6 of 6 
+4.0 Benefits 
+ 
+4.1 When properly applied the thermal arc spray process is an excellent process to salvage 
+components and in turn reduce owning and operating cost for the customer.  
+4.2 Minimal floor space requirements. 
+4.3 Versatility for spraying applications. 
+4.4 Low-cost solution. No robot or complex systems required. 
+ 
+5.0 Resources Required 
+ 
+5.1 Thermal Spray Equipment (TAFA 8830 or similar) 
+5.2 Turntable with variable frequency drive and gearbox 
+5.3 Debris and Fumes extraction system (Donaldson or similar) 
+5.4 Grit Blast Cabinet (Econoline or similar) 
+ 
+6.0 Supporting Attachments / References 
+ 
+6.1 SEBF2125 Thermal Spray Procedures for Exhaust Manifolds 
+6.2 SEBF8048 Procedure to Machine Damaged Transmission and Differential Yokes 
+6.3 SEBF9238 Fundamentals of Arc Spray for Reconditioning Components. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+7.1 3500 Exhaust Manifold Salvage 2009-0601-1974 
+ 
+8.0 Acknowledgements 
+ 
+This Best practice was submitted by:  
+ 
+Oscar J. De La O / Technical Consultant 
+E-mail odelao@matco.com.mx
+ 
+Company: Empresas MATCO S.A. de C.V.

@@ -1,0 +1,234 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2015 
+1509-4.03-1393 
+  
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Installation Tool Sun Gear 
+– Final Drive 793 - 797 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Installation Tool Sun Gear – Final Drive 793 - 797 .......... 0
+ 
+1. Introduction ........................................................... 1 
+2. Best Practice Description ........................................ 1 
+3. Implementation Steps ............................................. 3 
+4. Benefits ................................................................. 3 
+5. Resources Required ................................................ 4 
+6. Supporting Attachments / References. ...................... 4 
+7. Related Best Practices ............................................. 4 
+8. Acknowledgements ................................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Installation Tool Sun Gear – Final Drive 793 - 797 
+DATE 
+12/7/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1509-4.03-1393 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+ 
+ 
+1. Introduction  
+ 
+Ferreyros has developed a tool to improve the assembly process of the final drive truck 793 - 
+797. The tool is designed to install sun gear for the technical component does not manipulate 
+with their hands, also prevents damage to the sun gear to move its base. Caterpillar does not 
+have a special tool for this process. 
+ 
+2. Best Practice Description 
+ 
+The installation of the sun gear in the Planetary was very manual, making the technician use their 
+hands on the sun gear to align with the planetary of the final drive.  The technician then releases 
+the sun gear, moving towards its base. 
+ 
+ 
+ 
+  
+This procedure does not allow the technician to quickly and safely install the sun gear. The 
+alignment of the sun gear with the planetary is difficult and endangers the hands of technician. 
+ 
+MANUAL INSTALLATION 
+PLANETARY 
+SUN GEAR 
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Installation Tool Sun Gear – Final Drive 793 - 797 
+DATE 
+12/7/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1509-4.03-1393 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+ 
+ 
+Since tool prints are not currently available, the following photos show the fixture and process. 
+ 
+ 
+ 
+ 
+Next, install the tool on the sun gear to lift the component with a chain; the tool aligns the sun 
+gear towards the planetary.  
+ 
+ 
+ 
+INSTALLER SUN GEAR 
+INSTALL TOOL 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Installation Tool Sun Gear – Final Drive 793 - 797 
+DATE 
+12/7/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1509-4.03-1393 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+ 
+ 
+At time of installation, the technician does not use their hands on the sun gear until tool is 
+removed. 
+ 
+ 
+ 
+ 
+Remove the tool once installed safely in the sun gear. This same tool should be used for the 
+removal process, because it minimizes risks during the operation for the sun gear and the 
+people around. 
+ 
+3. Implementation Steps 
+ 
+Design a tool. 
+   
+4. Benefits 
+ 
+• Improve operator safety. 
+• Improve process efficiency. 
+• Prevents damage to the sun gear during remove or install. 
+ 
+REMOVE TOOL INSTALL SUN GEAR 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Installation Tool Sun Gear – Final Drive 793 - 797 
+DATE 
+12/7/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1509-4.03-1393 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+5. Resources Required 
+ 
+• Minimal expense to fabricate the tool. 
+ 
+6. Supporting Attachments / References.  
+ 
+ 
+ 
+7. Related Best Practices 
+ 
+None 
+ 
+  
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Installation Tool Sun Gear – Final Drive 793 - 797 
+DATE 
+12/7/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1509-4.03-1393 
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+8. Acknowledgements 
+ 
+This Best Practice was written by: 
+ Jhon Meneses Cuzcano 
+ Ferreyros S.A. 
+  
+ 
+The idea for this Best Practice belongs to: 
+Castillo Garro Stuart 
+Ferreyros S.A. 
+ 
+ 
+This Best Practice was revised by: 
+ Aninu Mitacc Vizcardo 
+ Ferreyros S.A. 
+ aninu.mitacc@ferreyros.com.pe

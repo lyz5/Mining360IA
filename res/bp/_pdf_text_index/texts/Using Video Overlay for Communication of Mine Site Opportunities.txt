@@ -1,0 +1,600 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Using Video Overlay for 
+Communication of Mine 
+Site Opportunities 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Using Video Overlay for Communication of Mine Site 
+Opportunities .............................................................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Resources Required ........................................ 11 
+5.0 Supporting Attachments / References ............. 12 
+6.0 Related Best Practices .................................... 12 
+7.0 Acknowledgements .......................................... 12 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+October 2013 
+1307-2.05-1320 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+1.0 Introduction  
+ 
+Haul road design and maintenance is an important part of a mine site’s overall performance. Not only 
+does it impact cycle times and productivity, but also has a bearing on the life of truck components 
+such as the transmission, duo-cone seals and most costly, the machine frame. It is often difficult to 
+explain the long-term effects of haul road conditions with pictures, FELA numbers or R.A.C. data 
+alone. This Best Practice outlines a method to produce videos overlaid with gauges and graphs 
+showing live data as experienced directly by a truck travelling on the haul road or dump area.   
+It should be used in conjunction with other haul road improvement analysis tools by mine site 
+reliability engineers, dealer MARC managers and application engineers to provide mine site 
+managers with a visual “as is” picture of what a machine is experiencing on a day to day basis on 
+their own haul roads.   
+Videos produced with this Best Practice can also be produced and included in the Application section 
+of a mine site assessment when reviewing haul roads with mine management.  Videos can then 
+easily be shared with the enterprise to sensitize people to specific haul road issues such as slope 
+consistency, speed on grade, overloading, drainage or even truck-shovel placement. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+ 
+  
+Site 
+Assessment 
+Online Training 
+Shared Media Service 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Video Overlay for Communication of Mine Site 
+Opportunities 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-2.05-1320 
+Caterpillar Confidential:  GREEN         Page 1 of 12 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+The key Elements of an effective video involve: 
+• Defining the Purpose of the Video for the selected minesite 
+• Acquiring the right hardware for onsite filming and data collection 
+• Planning the video filming and data acquisition with the minesite 
+• Setting up on the machine and collecting the data 
+• Using overlay and editing software to produce a quality video 
+• Distributing the message  
+ 
+ 
+3.0 Implementation Steps 
+ 
+3.1 Defining the Purpose of the Video for the selected minesite 
+ 
+This is the most important step in the process of delivering an effective message to the audience.  
+Regardless of the quality of the data and footage achieved, the purpose of the video must be defined 
+and understood.  Agreeing on a set purpose the mine management will also help securing access to 
+machines and other resources during filming.  Haulroad maintenance may not be the only priority 
+issue and this tool can help explain many other situations 
+The following are some questions to begin with: 
+1. Is there a clear burning platform? 
+• We need to communicate to operators to slow down during the fall in order to reduce 
+tire cuts. 
+• There is a lot traffic on the haul road, other vehicles are not yielding to production 
+trucks, causing longer cycle times. 
+• We are reporting many RAC events and we believe the haul road in the ‘C’ pit is 
+poorly maintained. 
+2. Are there known situations that have been reported? 
+• Overspills, large boulders left in the road 
+• Water, ineffective drainage, puddles 
+• Operator discomfort due to dips and harsh turns 
+• Truck Bunching, long wait times at the loading areas 
+• Unequal loads, bailing of material 
+• Contact with the berm 
+• Tire cuts, tire wear or delamination 
+• Incidents, collisions, or close calls in some areas of the haul road 
+3. Are there two conditions to compare? 
+• Good haul road versus poorly maintained haul road 
+• Good use of the retarder versus improper use of the retarder 
+• Speed on grade of different operators, different truck models 
+Answering these questions will allow better planning when selecting the correct framing of 
+the videos and the limited number of data channels to sample.  Don’t assume that all you 
+will need is a shot from the front of the machine.  A camera tucked under the truck can 
+capture the stress a strut goes under running on a poorly maintained road. Another camera 
+facing an operator’s seat can capture how much bouncing around the operator goes 
+through during a cycle.  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Video Overlay for Communication of Mine Site 
+Opportunities 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-2.05-1320 
+Caterpillar Confidential:  GREEN         Page 2 of 12 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+3.2 Acquiring the right hardware for onsite filming and data acquisition 
+3.2.1 Video Cameras 
+ 
+Figure 1 GoPro Hero 2 
+ 
+The most popular heavy duty camera platform at the time of writing this Best Practice is 
+the GoPro series of cameras.  All our videos to date have been filmed with several GoPro 
+cameras. These are designed for extreme sports and the motorsports mounts are a good 
+fit for mining and truck mounting. If GoPro cameras are not available, look for cameras 
+with the following features: 
+ 
+• C ompatibility with versatile mounting systems 
+• Availability of accessories (online, local store) 
+• Battery life 
+• Picture Quality 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Video Overlay for Communication of Mine Site 
+Opportunities 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-2.05-1320 
+Caterpillar Confidential:  GREEN         Page 3 of 12 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+3.2.2 Mounting hardware 
+ 
+Figure 2: Motorsports Accessory and Handlebar Accessory 
+Within the GoPro series of mounts is the motorsports accessory which uses a strong 
+vacuum cup and works well when mounting on flat parts of the machine such as windows 
+and smooth painted surfaces. The length of the arm included with the accessory allows 
+the user to position the camera easily.   You can also use the handlebar accessory shown 
+on the left of Figure 2.  This mount secures to piping such as Catwalks.  Make sure to 
+secure the mount to the lower parts of the catwalk to avoid excessive vibration.  You will 
+also need to use extension arms in order to pivot the camera correctly.  The GoPro sliding 
+mount can also be adapted to fit to common ¼” threaded camera mounts as shown in 
+Figure 3 where a ¼” nut is stuck onto the back of a standard Gopro camera receptacle 
+This mount is useful when trying to reach out to an area clear of the mounting point, such 
+as over the top of the canopy. 
+ 
+Figure 3: Standard ¼” threaded Camera Accessories and adaptor 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Video Overlay for Communication of Mine Site 
+Opportunities 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-2.05-1320 
+Caterpillar Confidential:  GREEN         Page 4 of 12 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.2.3 Useful accessories 
+• Extra Batteries 
+ While one battery will only last little more than one 
+hour, the battery extensions will prolong the 
+footage for up to 3 hours 
+  
+  
+  
+  
+  
+  
+  
+  
+• Wi-Fi pack 
+ 
+• The above batteries for the Hero 2 allow to connect the camera either to a remote 
+dongle to trigger the camera and monitor its memory space and battery or to a 
+smartphone which will additionally provide a preview of the shot.  Note that the recent 
+Hero 3 Black edition has this feature built in. 
+ 
+• Fog inserts 
+In humid conditions, the front lens will fog up and blur the image.  Regardless of how 
+dry you keep the equipment, any residual moisture will condense on the front lens.  
+This can easily be avoided with fog inserts, these are white powdery strips that are 
+inserted in the sides of the camera housing and absorb the humidity before it 
+condenses on the front lens.  They can be reused after drying in a warm oven for a 
+few minutes.  You can also make your own fog inserts by folding up a paper towel six 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Video Overlay for Communication of Mine Site 
+Opportunities 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-2.05-1320 
+Caterpillar Confidential:  GREEN         Page 5 of 12 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+times over, placing the folded strip in a warm oven to dry and placing in the camera 
+housing 
+  
+• Camera bag 
+The GoPro cameras have a tendency to turn on when they bounce around.  This 
+means when you’re ready to take a video, the battery is often drained out.  A small 
+padded camera bag will prevent this from happening as well as protect the gear. 
+ 
+• Memory cards 
+Often overlooked, plan for at least 16GB cards in each camera, hi-resolution files will 
+fill the cards up very quickly. At 1080P, the camera will record a succession of 2GB 
+files with about 8 minutes of recording. Use a sharpie and some masking tape to note 
+the time and machine identification information on each 
+ 
+3.2.4 Data acquisition hardware 
+ 
+The hardware below will allow you to gather the data in raw form to be used with the overlay 
+software.  We have typically used Caterpillar Electronic Technician with a Comm adapter to 
+link to the machine’s ECM’s.  The software used to overlay the data is also capable of plotting 
+the position of the machine as well as graphing acceleration forces captured by another 
+device.  There are inexpensive phone applications that are easy to use that can gather this 
+data if needed.  We have successfully used GPS Tracks App for iPhone by DMorneault to 
+gather GPS position and combine in RaceRender 2 to map out the course where the machine 
+is located. 
+• Laptop with Electronic Technician and an active license, Power Inverter, Comm 
+Adapter 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Video Overlay for Communication of Mine Site 
+Opportunities 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-2.05-1320 
+Caterpillar Confidential:  GREEN         Page 6 of 12 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+• GPS Tracks app for Iphone by DMorneault 
+  
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Video Overlay for Communication of Mine Site 
+Opportunities 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-2.05-1320 
+Caterpillar Confidential:  GREEN         Page 7 of 12 
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.3 Planning each task with the minesite 
+Planning is also a very important part of this process, a minesite is a large complex operation 
+and a careful plan will mitigate the effect of the study on production.   A single truck out of 
+normal production represents a large investment therefor setup time should be kept at a 
+minimum. Below is an example of a typical schedule. 
+  
+8:00 or Shift Change Meet with foreman and operators that will be affected 
+8:30 Travel to machine meet point 
+9:45 Install camera gear, setup datalogger 
+10:00 Begin first take 
+11:00 End first take , Check data 
+11:15 Begin Second take 
+12:00 End Second take 
+    
+When meeting with the foreman, take note of any exceptions that are made to regular 
+operating practices such as maximum speed, maximum gear, target payload.  The mine may 
+choose to exceptionally raise or lower machine speeds or request the operator perform his 
+task differently than usual.  They may also remove all traffic from the selected route to 
+measure the effect of a clear road or remove unwanted stoppages. 
+You will need about fifteen minutes to mount the camera gear on the machine as well as to 
+setup the laptop, choose the datalog channels and setup the sampling rate and duration. If 
+you are onsite for a few days for a site assessment, try selecting a day with no rain/snow as 
+mud will cover the camera and snow may obstruct the view.  Try to take into account the sun’s 
+position at that time to avoid glare that could make the picture unusable.  It is important to 
+know what ECM data channels you will be sampling ahead of time as it can take much time to 
+go through the list.  Machines today have over one hundred channels to choose from and you 
+will need to select the right channels that will provide valuable information.  For a list of 
+available ECM channels, you can look them up for your selected machine in CMS at 
+https://catcms.cat.com  under Manual Analysis and Datalog/SS, or contact the DSN or 
+technical communicator for a list.  You can also check with the mine if a similar machine is 
+available in the shop for you to setup on prior to the study day. 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Video Overlay for Communication of Mine Site 
+Opportunities 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-2.05-1320 
+Caterpillar Confidential:  GREEN         Page 8 of 12 
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.4 Setting up on the machine and collecting the data 
+ 
+The day before filming, make sure that you charge all the batteries for the cameras and store 
+them where they are unlikely of being inadvertently turned on. Check that Caterpillar Electronic 
+Technician loads up well and that your license is active. Fully charge your laptop and your phone. 
+Put the cameras, mounts, comm adaptor and laptop a in a bag with shoulder straps. 
+Taking the video and datalog 
+This is the easiest part, but first use every precaution when working around a machine: 
+• Always use three points of contact 
+• Carry all your gear in a shoulder bag, you will not have any free hands as you climb on 
+the machine 
+• Make sure the operator acknowledges your presence and is aware of what you are 
+doing, request a radio if possible 
+• Follow the machine lock-out processes for the areas of the machine you are 
+addressing 
+ 
+4. Mount the camera according to the type of mounting hardware selected, do not start the 
+camera.  Consider weather mud will reach the camera. If the area surrounding the 
+mounting location looks clean, chances are the camera will be clean for a while  
+5. Preview the shot (optional).  If you have connected a phone with the preview app, position 
+the camera for the optimal framing.  Figure 4 shows a typical setup 
+6. Remove the camera from the housing.  In order to start the datalogger and the camera at 
+the same time, you should take the camera in the cab with you.  Make sure you don’t 
+move the housing so as not to change the framing 
+7. Setup Electronic Technician. Figure 5 shows a screenshot of a typical setup,  
+• Set sample rate to 240 per minute 
+• Set Duration to 60 minutes or more, this must be long enough to allow the time for a 
+full cycle plus the time to get to the start of the cycle 
+• Set the Pre-Trigger to 0, we will be starting the datalog in sync with the camera; a 
+pre-trigger will insert a delay and must be removed. 
+• Note the location of the datalogger file and name for later  
+8. Select the data channels.  Figure 6 shows channels for overlaying haul road information. 
+You can save the list of channels in ET and it will be available when you select the same 
+ECM again on that machine. 
+9. Setup your GPS tracker (optional).  If you’re including a map and the position of the 
+machine in the overlay design, setup the GPS logger according to the instructions in the 
+user manual.  A sample rate of 1 second should be enough, make sure the accuracy is 
+acceptable, within ±10meters is enough for a haul road application. Figure 7 shows the 
+start screen of the app. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Video Overlay for Communication of Mine Site 
+Opportunities 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-2.05-1320 
+Caterpillar Confidential:  GREEN         Page 9 of 12 
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+10. Critical: Start all three processes at the same time, press start on the phone, start on the 
+ET screen, and press down on the top camera button all at once.  You can sync up the 
+timing of the video and the data (GPS and ET) later within RaceRender, however starting 
+all three at once will save much time.  Have the machine operator help you and 
+countdown.  If this is not possible for you, take careful note of the time difference between 
+the start of the video and the start of the datalog.   
+11. Place your phone and laptop in a secure location, with the phone facing the window and 
+preferably clipped to the visor or cab liner. Be careful not to close the laptop lid or pull the 
+USB cable out. 
+12. Place the camera back into the housing  
+13. Start moving the machine.  At this point you can let the operator go alone, or accompany 
+him/her to make sure the devices don’t fall or stop.  Keep track of time, as the datalogger 
+will stop recording once its time has run out. 
+14. At the end of the cycle, you can stop the datalogger, GPS recording and camera.  You do 
+not have to stop every device at the same time. 
+15. Check that the files have saved successfully.  Check that the files open properly, you may 
+need to do another take, 
+16. Travel to your drop point and collect all your gear 
+ 
+Figure 4 
+ 
+Figure 5      Figure 6 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Video Overlay for Communication of Mine Site 
+Opportunities 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-2.05-1320 
+Caterpillar Confidential:  GREEN         Page 10 of 12 
+
+===== PAGE 12 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+Figure 7 
+  
+3.5 Using overlay and editing software to produce a quality video 
+Refer to the PowerPoint Document Titled: Using RaceRender to Overlay machine data 
+ 
+3.6 Distributing the message within the proper medium 
+ 
+When carefully planned, the filming and data acquisition should not take longer than half a 
+day, leaving enough time to create at least a draft of the video within a full day for presenting 
+at an approval meeting the next day.  The mine management may want to make some 
+changes to the displayed information to better suit their audience.  Take this feedback into 
+consideration when preparing the final version of the video. 
+Caterpillar uses 
+https://videoatwork.cat.com, a media sharing website to securely share media 
+such as these videos with internal Caterpillar and dealer personnel. The file will likely be larger 
+than 500MB and can be sent with Caterpillar’s Secure Internet File Transfer tool at 
+https://SIFT.cat.com for internal Caterpillar and dealer transfers.  For sharing the video with 
+customers, leave a copy of the video with the customer in order for them to share within the 
+organization.  Respect the customer’s data privacy protocols. 
+ 
+4.0 Resources Required 
+• Time: 
+o Half a day prior the shooting to plan, meet with the mine site, charge batteries and 
+gather equipment 
+o Depending on the length of time for a cycle, plan on at least two takes, plus 20 minutes 
+to mount the hardware, log into Caterpillar Electronic Technician and setup the 
+datalogger.  Usually no more than 3 hours total per segment. 
+o Setting up of the overlay design can take up to 8 hours, but a draft can be provided 
+within 2 hours 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Video Overlay for Communication of Mine Site 
+Opportunities 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-2.05-1320 
+Caterpillar Confidential:  GREEN         Page 11 of 12 
+
+===== PAGE 13 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+o Depending on the speed of the computer used, the overlay process is done frame by 
+frame once launched and can take from 20 minutes to several hours on an older laptop 
+• Personnel 
+o Machine Operator 
+o Camera/Datalogger operator - This person should ideally remain in the machine to 
+ensure connections are working and datalogger is collecting data without interruption 
+• Cameras and accessories – 2 or more 
+• Camera mounting hardware 
+• GPS position tracking tool (either VIMS GPS, separate GPS, or phone app such as GPS 
+Tracks for iPhone) 
+• Lock and key for machine lockout 
+ 
+ 
+5.0 Supporting Attachments / References 
+• Using RaceRender to overlay machine data.ppt 
+• Many videos posted on 
+https://videoatwork.cat.com 
+o https://videoatwork.cat.com/viewerportal/cat/home.vp?programId=esc_program%3A
+31713&contentAssociationId=association%3A143021&clipTimeIn=10094&clipDurati
+on=238169 
+o https://videoatwork.cat.com/viewerportal/cat/home.vp?programId=esc_program%3A
+23984&contentAssociationId=association%3A90718&clipTimeIn=8333&clipDuration
+=484100 
+• Haul Template 1.rtt 
+• Model comparison Template 1.rtt 
+• RaceRender software can be purchased at http://racerender.com/Products/index.html 
+ 
+6.0 Related Best Practices 
+ 
+ 
+7.0 Acknowledgements 
+• This Best Practice was written by Francis Molloy 
+Contact Information:  
+Phone – 514-792-6886 
+email – 
+molloy_francis@cat.com 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using Video Overlay for Communication of Mine Site 
+Opportunities 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1307-2.05-1320 
+Caterpillar Confidential:  GREEN         Page 12 of 12

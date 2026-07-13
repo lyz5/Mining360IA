@@ -1,0 +1,480 @@
+===== PAGE 1 =====
+July 2023 
+1.04-230724-1
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining  
+M
+INING DEALER BEST PRACTICE 
+Off-Highway Trucks - Quick 
+Diagnostic Tool for A/C 
+Failure
+M
+aintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+Of
+f-Highway Trucks - Quick Diagnostic Tool for A/C 
+Failure................................................................................1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description .................................... 3 
+3.0 Implementation Steps.......................................... 4 
+4.0 Benefits ................................................................ 7 
+5.0 Resources Required............................................ 7 
+6.0 Supporting Attachments / References................ 7 
+7.0 Related Best Practices ........................................ 7 
+8.0 Acknowledgements ............................................. 7 
+D
+ISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Off-Highway Trucks - Quick Diagnostic Tool for A/C 
+Failure 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230724-1 
+Caterpillar: Confidential  Yellow          Page 2 of 8 
+1.0 Introduction  
+ 
+The optimization of maintenance activities is often enhanced due to their importance and impact on 
+asset performance. Therefore, the search for special tools or aids to increase equipment physical 
+availability, accuracy, and speed in fault diagnosis is necessary to meet customer expectations. In this 
+scenario, this Best Practice will present a tool option that provides easy and quick diagnostics 
+(approximately within 5 minutes). 
+ 
+This tool improves fault diagnosis in the air conditioning system, guiding the technician to the damaged 
+circuit: 
+ 
+• Electrical Supply (White LED 24V Description). 
+• Grounding (Green LED with GN Description). 
+• Thermostat circuit - high and low circuit (Yellow LED with SW Description). 
+• Compressor Clutch Energy Supply (Red LED with CLU Description). 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                          
+ 
+ 
+ 
+ 
+Picture 1 - device and connection cable. 
+System power supply 
+Grounding 
+High, low, and thermostat circuits 
+Compressor solenoid power supply 
+Front View 
+Back View 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Off-Highway Trucks - Quick Diagnostic Tool for A/C 
+Failure 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230724-1 
+Caterpillar: Confidential  Yellow          Page 3 of 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Picture 2 - cables and connections present in the device. 
+ 
+2.0 Best Practice Description 
+ 
+Significant delays occur daily in diagnosing air conditioning and electrical systems, due to the numerous 
+checkpoints required to identify the fault. Lack of accuracy and delays in the diagnostic process are 
+recurring issues. The time can range from 2 to 3 hours depending on who is responsible for operating 
+it or the available resources. 
+ 
+The Main Problems Are: 
+ 
+• Insufficient technical resources and equipment to carry out the activities. 
+• Limited technical knowledge of the teams involved. 
+• Numerous checkpoints in the air conditioning system. 
+ 
+The charts demonstrate the number of breakdown stops (Chart 1) and the duration of the downtime in 
+hours (Chart 2) for corrective maintenance, highlighting the impact on asset availability and MTBF 
+throughout 2021 related to the air conditioning system: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Chart 1 - Number of breakdowns due to corrective maintenance in 2021.  
+6th in corrective maintenance 
+stops in 2021. 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Off-Highway Trucks - Quick Diagnostic Tool for A/C 
+Failure 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230724-1 
+Caterpillar: Confidential  Yellow          Page 4 of 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Chart 2 - Total duration of corrective maintenance in 2021. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Next, presentation of the typical compressor protection subsystem schematic: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Picture 3 - Refrigerant Compressor Protection System (SENR5664-35) - i01439520 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Off-Highway Trucks - Quick Diagnostic Tool for A/C 
+Failure 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230724-1 
+Caterpillar: Confidential  Yellow          Page 5 of 8 
+3.1 Position the device in a place where the LED lights are visible: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Picture 4 - Connection position. 
+ 
+ 
+3.2 Connect the Simulator to the Air-Conditioning compressor through the connectors as below: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   Picture 5 - Compressor connection with cable. 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Off-Highway Trucks - Quick Diagnostic Tool for A/C 
+Failure 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230724-1 
+Caterpillar: Confidential  Yellow          Page 6 of 8 
+3.3 Turn on the first stage by the Ignition Key. After power on, the LED lights will turn on (the red LED 
+will turn on after approximately 18 seconds) as below: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   Picture 6 - Device in operation. 
+ 
+ 
+3.4 If the lights do not turn on, the technician has an indication that there is a problem with the 
+compressor or high/low switch or activation switch, or harness.  The picture 7 shows a failure 
+simulation where the high switch circuit was opened (yellow LED with the description SW) 
+indicating a possible failure of the A/C compressor. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Picture 7 - Yellow LED (SW) off. 
+YELLOW LED 
+OFF 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Off-Highway Trucks - Quick Diagnostic Tool for A/C 
+Failure 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230724-1 
+Caterpillar: Confidential  Yellow          Page 7 of 8 
+4.0 Benefits 
+ 
+• Reduction in the time required to perform air conditioning system fault diagnosis. 
+• 35% reduction in total corrective maintenance time. 
+• Easy and cost-effective construction tool. 
+• The simplicity of use allows technicians with any level of experience or knowledge to use the 
+device. 
+ 
+ 
+5.0 Resources Required 
+        
+QTY Unity. Description 
+01 Unity. Assembly Case/Box - 40 x 81 x 121 mm. 
+01 Unity Nautical Mesh 8mm x 1 (Isolation Cables) 
+01 Unity DB9 Connector (Female) 
+01 Unity DB9 Connector (Male) 
+04 Unity 6mm LEDs (Different Colors) 
+04 Unity 2K2 Resistor 
+04 Unity 1N4007 diode 
+02 Unity LM2904N Integrated Circuit 
+01 L Resin for encapsulation 
+01 Unity. DNI 0413 Timer Relay 
+06 Unity. 3/5 x 1'' Bolts 
+01 m 3,0 mm Wire 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+SIS 2.0 - Refrigerant Compressor Protection System (SENR5664-35) - i01439520. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+Thank you to the mining engineering team at Sotreq S/A. 
+ 
+Special Thanks To: Doug Friedrich (Caterpillar Inc.) 
+ 
+Paulo Antônio 
+Sotreq S/A 
+Mobile: + 55 94 99113-6959 
+E-mail: paulo.antonio@sotreq.com.br 
+ 
+ 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Off-Highway Trucks - Quick Diagnostic Tool for A/C 
+Failure 
+DATE 
+7/24/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.04-230724-1 
+Caterpillar: Confidential  Yellow          Page 8 of 8 
+Giesi Nascimento 
+Sotreq S/A  
+Mobile: + 55 94 98803-0040 
+E-mail: giesi.nascimento@sotreq.com.br 
+ 
+Tulio Gomes 
+Sotreq S/A 
+Mobile: + 55 94 99973-7309 
+E-mail: tulio.gomes@sotreq.com.br 
+ 
+Erick Leão 
+Sotreq S/A 
+Mobile: + 55 94 98808-0205 
+E-mail: erick.leao@sotreq.com.br 
+ 
+Chuquerth Oliveira 
+Sotreq S/A 
+       Mobile: + 55 94 98803-1158 
+       E-mail: chuquerth.oliveira@sotreq.com.br 
+ 
+Ana Spader 
+Sotreq S/A 
+       Mobile: + 55 94 99231-4185 
+       E-mail: ana.spader@sotreq.com.br

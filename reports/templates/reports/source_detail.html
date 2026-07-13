@@ -1,0 +1,377 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ source.name }} | Sources | Mining360IA</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell source-detail-shell" data-source-key="{{ source.key }}">
+        <div id="source-flash" class="flash" hidden role="status" aria-live="polite"></div>
+        {% if messages %}
+            <div class="source-message-stack">
+                {% for message in messages %}
+                    <section class="alert {% if message.tags %}{{ message.tags }}{% endif %}">
+                        <p>{{ message }}</p>
+                    </section>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <aside class="source-catalog-pane" data-catalog-pane>
+            <div class="source-catalog-head">
+                <div>
+                    <p class="eyebrow">Catalog</p>
+                    <h2>Tables, views, custom views</h2>
+                </div>
+                <button type="button" class="icon-button catalog-toggle js-toggle-catalog" aria-label="Toggle catalog pane" title="Toggle catalog pane"></button>
+            </div>
+            <div class="source-catalog-body" data-source-catalog-body>
+                <details class="catalog-section" data-catalog-section="tables" open>
+                    <summary class="catalog-section-head">
+                        <span>Tables</span>
+                        <div class="catalog-section-actions">
+                            <strong data-catalog-count="tables">{{ catalog.tables|length }}</strong>
+                            <span class="catalog-section-chevron" aria-hidden="true"></span>
+                        </div>
+                    </summary>
+                    <div class="catalog-section-body">
+                        <div class="catalog-list">
+                        {% for item in catalog.tables %}
+                            <button
+                                type="button"
+                                class="catalog-item catalog-item-button js-object-preview{% if item.qualified_name == selected_table %} active{% endif %}"
+                                data-preview-url="{% url 'source-object-preview' source.key 'table' item.qualified_name %}"
+                                data-qualified-name="{{ item.qualified_name }}"
+                            >
+                                <span>{{ item.schema }}.</span>
+                                <strong>{{ item.name }}</strong>
+                            </button>
+                        {% empty %}
+                            <div class="empty compact">No tables available.</div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </details>
+
+                <details class="catalog-section" data-catalog-section="views" open>
+                    <summary class="catalog-section-head">
+                        <span>Views</span>
+                        <div class="catalog-section-actions">
+                            <strong data-catalog-count="views">{{ catalog.views|length }}</strong>
+                            <span class="catalog-section-chevron" aria-hidden="true"></span>
+                        </div>
+                    </summary>
+                    <div class="catalog-section-body">
+                        <div class="catalog-list">
+                        {% for item in catalog.views %}
+                            <button
+                                type="button"
+                                class="catalog-item catalog-item-button js-object-preview"
+                                data-preview-url="{% url 'source-object-preview' source.key 'view' item.qualified_name %}"
+                                data-qualified-name="{{ item.qualified_name }}"
+                            >
+                                <span>{{ item.schema }}.</span>
+                                <strong>{{ item.name }}</strong>
+                            </button>
+                        {% empty %}
+                            <div class="empty compact">No views available.</div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </details>
+
+                <details class="catalog-section" data-catalog-section="custom_views" open>
+                    <summary class="catalog-section-head">
+                        <span>Custom views</span>
+                        <div class="catalog-section-actions">
+                            <strong data-catalog-count="custom_views">{{ catalog.custom_views|length }}</strong>
+                            <span class="catalog-section-chevron" aria-hidden="true"></span>
+                        </div>
+                    </summary>
+                    <div class="catalog-section-body">
+                        <div class="catalog-list">
+                        {% for item in catalog.custom_views %}
+                            <div class="catalog-item catalog-custom-row">
+                                <button
+                                    type="button"
+                                    class="catalog-item-button catalog-item-stack js-object-preview"
+                                    data-preview-url="{% url 'source-object-preview' source.key 'custom' item.key %}"
+                                    data-qualified-name="{{ item.name }}"
+                                >
+                                    <strong>{{ item.name }}</strong>
+                                    <span>{{ item.description|default:"Custom SQL view" }}</span>
+                                </button>
+                                <div class="catalog-custom-actions">
+                                    <button type="button" class="icon-action js-edit-custom-view" data-edit-url="{% url 'source-custom-view-edit' source.key item.key %}" aria-label="Edit custom view" title="Edit custom view"></button>
+                                    <button type="button" class="icon-action delete-action js-delete-custom-view" data-delete-url="{% url 'source-custom-view-delete' source.key item.key %}" data-view-name="{{ item.name }}" aria-label="Delete custom view" title="Delete custom view"></button>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <div class="empty compact">No custom views configured.</div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </aside>
+
+        <section class="source-detail-main">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">{{ source.engine }}</p>
+                    <h1>{{ source.name }}</h1>
+                    <p class="page-intro">{{ source.description }}</p>
+                </div>
+                <div class="actions">
+                    <a class="button secondary" href="{% url 'data-sources' %}">Back</a>
+                    <a class="icon-action" href="{% url 'source-edit' source.key %}" aria-label="Edit source" title="Edit source"></a>
+                    <button type="button" class="icon-action refresh-action js-verify-source" data-verify-url="{% url 'source-verify' source.key %}" aria-label="Verify source" title="Verify source"></button>
+                    <button type="button" class="icon-action delete-action js-delete-source" data-delete-url="{% url 'source-delete' source.key %}" data-delete-redirect="{% url 'data-sources' %}" aria-label="Delete source" title="Delete source"></button>
+                </div>
+            </header>
+
+            <section class="table-section">
+                <div class="preview-overlay" data-preview-overlay hidden style="display:none;" aria-hidden="true">
+                    <div class="preview-spinner" aria-hidden="true"></div>
+                    <div class="preview-overlay-text">Loading preview...</div>
+                </div>
+                <div class="section-head">
+                    <div>
+                        <h2>Object preview</h2>
+                        <span class="table-subtext" data-table-preview-count>{% if table_preview %}{{ table_preview.row_count }} rows{% else %}No object selected{% endif %}</span>
+                    </div>
+                    <div class="preview-top-actions">
+                        <button type="button" class="button secondary preview-filter-toggle js-toggle-preview-filters" data-preview-filter-toggle aria-expanded="false">Filters</button>
+                        <button type="button" class="button secondary preview-dq-toggle js-open-data-quality" data-dq-run-url="{% url 'data-quality-run' %}" data-dq-center-url="{% url 'data-quality-center' %}" aria-label="Open data quality checks" title="Open data quality checks">Data Checks</button>
+                        <button type="button" class="button secondary js-export-preview" data-preview-export-url="{% url 'source-preview-export' source.key %}" aria-label="Export selected data to Excel" title="Export selected data to Excel">Export</button>
+                        <label class="preview-limit-control">
+                            <span>Limit</span>
+                            <select data-preview-limit>
+                                <option value="100">100</option>
+                                <option value="1000" selected>1000</option>
+                                <option value="all">All</option>
+                            </select>
+                        </label>
+                        <button type="button" class="icon-button fullscreen-toggle js-toggle-preview-fullscreen" aria-label="Fullscreen preview" title="Fullscreen preview"></button>
+                    </div>
+                </div>
+                <div class="table-preview-panel" data-table-preview>
+                    {% if table_preview and not table_preview.error %}
+                        <div class="table-preview-meta">
+                            <div>
+                                <span class="eyebrow">Selected object</span>
+                                <strong data-table-preview-name>{{ table_preview.qualified_name }}</strong>
+                            </div>
+                            <div class="table-subtext">Query: <code data-table-preview-sql>{{ table_preview.sql }}</code></div>
+                        </div>
+                        <div class="table-wrap live-table-wrap">
+                            <table>
+                                <thead>
+                                    <tr data-table-preview-head>
+                                        {% for column in table_preview.columns %}
+                                            <th>{{ column }}</th>
+                                        {% endfor %}
+                                    </tr>
+                                </thead>
+                                <tbody data-table-preview-body>
+                                    {% for row in table_preview.row_values %}
+                                        <tr>
+                                            {% for value in row %}
+                                                <td>{{ value }}</td>
+                                            {% endfor %}
+                                        </tr>
+                                    {% empty %}
+                                        <tr><td colspan="{{ table_preview.columns|length|default:1 }}">No rows returned.</td></tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <div class="empty">Click a table, view, or custom view in the left pane to load a preview.</div>
+                    {% endif %}
+                </div>
+            </section>
+
+            <section class="workspace-band" data-source-key="{{ source.key }}">
+                <div class="placeholder-panel">
+                    <p class="eyebrow">Connection</p>
+                    <h2 data-source-server>{{ source.server }}</h2>
+                    <p data-source-database-line>{% if source.engine == "Snowflake" %}Database{% else %}Default database{% endif %}: <span data-source-database-value>{{ source.database|default:"-" }}</span></p>
+                    <p class="table-subtext">User: {{ source.user|default:"-" }}</p>
+                    {% if source.connection_details %}
+                        <p class="table-subtext">
+                            {% if source.connection_details.account %}Account: {{ source.connection_details.account }}<br>{% endif %}
+                            {% if source.connection_details.warehouse %}Warehouse: {{ source.connection_details.warehouse }}<br>{% endif %}
+                            {% if source.connection_details.role %}Role: {{ source.connection_details.role }}<br>{% endif %}
+                            {% if source.connection_details.default_schema %}Default schema: {{ source.connection_details.default_schema }}{% endif %}
+                        </p>
+                    {% endif %}
+                </div>
+                <div class="placeholder-panel">
+                    <p class="eyebrow">Database</p>
+                    <h2>Change database</h2>
+                    {% if source.engine == "SQL Server" %}
+                        <form method="post" class="inline-panel-form" data-source-database-form data-source-database-url="{% url 'source-database-update' source.key %}">
+                            {% csrf_token %}
+                            <label for="database">Select a database</label>
+                            {% if available_databases %}
+                                <select id="database" name="database">
+                                    {% for database in available_databases %}
+                                        <option value="{{ database }}" {% if database == source.database %}selected{% endif %}>{{ database }}</option>
+                                    {% endfor %}
+                                </select>
+                            {% else %}
+                                <input id="database" name="database" type="text" value="{{ source.database|default:'' }}" placeholder="Database name">
+                            {% endif %}
+                            <button type="submit" class="button secondary">Update database</button>
+                        </form>
+                    {% else %}
+                        <p class="table-subtext">Database selection is managed from the source connection settings.</p>
+                        <p class="table-subtext">Current database: {{ source.database|default:"-" }}</p>
+                    {% endif %}
+                </div>
+                <div class="placeholder-panel">
+                    <p class="eyebrow" data-source-inventory-label>{{ inventory.label }}</p>
+                    <h2 data-source-inventory-count>{% if inventory.count is not None %}{{ inventory.count }}{% else %}N/A{% endif %}</h2>
+                    <p>Connection-level inventory for this source.</p>
+                    <p class="table-subtext">Status: <span data-source-status class="status-badge {{ source.status_class }}">{{ source.verification_status|default:source.status }}</span></p>
+                    <p class="table-subtext" data-source-custom-views>Custom views: {{ inventory.custom_views }}</p>
+                    {% if source.last_verified %}
+                        <p class="table-subtext" data-source-last-verified>Last verified: {{ source.last_verified }}</p>
+                    {% endif %}
+                    {% if source.verification_message %}
+                        <p class="table-subtext">{{ source.verification_message }}</p>
+                    {% endif %}
+                </div>
+                <div class="placeholder-panel">
+                    <p class="eyebrow">Custom views</p>
+                    <h2>Create view</h2>
+                    <form method="post" class="inline-panel-form" data-custom-view-form data-custom-view-url="{% url 'source-custom-view-add' source.key %}">
+                        {% csrf_token %}
+                        <label for="custom-view-name">View name</label>
+                        <input id="custom-view-name" name="name" type="text" placeholder="Availability Summary" required>
+                        <label for="custom-view-description">Description</label>
+                        <input id="custom-view-description" name="description" type="text" placeholder="Optional description">
+                        <label for="custom-view-sql">SQL query</label>
+                        <textarea id="custom-view-sql" name="sql" rows="6" placeholder="SELECT ... FROM ..." required></textarea>
+                        <p class="table-subtext">The SQL is saved as a custom view and appears in the left catalog once created.</p>
+                        <button type="submit" class="button secondary">Create custom view</button>
+                    </form>
+                </div>
+            </section>
+
+            <div class="browser-modal" data-custom-view-modal hidden aria-hidden="true">
+                <div class="browser-modal__backdrop" data-custom-view-modal-close></div>
+                <div class="browser-modal__panel browser-modal__panel--wide" role="dialog" aria-modal="true" aria-labelledby="custom-view-modal-title">
+                    <div class="browser-modal__header">
+                        <div>
+                            <p class="eyebrow">Custom views</p>
+                            <h2 id="custom-view-modal-title">Edit custom view</h2>
+                        </div>
+                        <button type="button" class="icon-button" data-custom-view-modal-close aria-label="Close custom view editor">×</button>
+                    </div>
+                    <form class="inline-panel-form" data-custom-view-edit-form>
+                        {% csrf_token %}
+                        <label for="edit-custom-view-name">View name</label>
+                        <input id="edit-custom-view-name" name="name" type="text" required>
+                        <label for="edit-custom-view-description">Description</label>
+                        <input id="edit-custom-view-description" name="description" type="text">
+                        <label for="edit-custom-view-sql">SQL query</label>
+                        <textarea id="edit-custom-view-sql" name="sql" rows="14" required></textarea>
+                        <div class="form-actions">
+                            <button type="button" class="button secondary" data-custom-view-modal-close>Cancel</button>
+                            <button type="submit" class="button secondary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="dq-modal" data-dq-modal hidden aria-hidden="true">
+                <div class="dq-modal-backdrop" data-dq-close></div>
+                <div class="dq-modal-panel" role="dialog" aria-modal="true" aria-label="Data quality checks">
+                    <div class="dq-modal-head">
+                        <div>
+                            <p class="eyebrow">Data Quality Center</p>
+                            <h2 data-dq-title>Data Checks</h2>
+                            <p class="table-subtext" data-dq-context>Select a table or view, then run the controls.</p>
+                        </div>
+                        <button type="button" class="icon-button dq-close" data-dq-close aria-label="Close data quality checks" title="Close data quality checks"></button>
+                    </div>
+                    <div class="dq-kpi-row">
+                        <div class="dq-kpi"><span class="dq-kpi-label">Score</span><strong data-dq-score>100%</strong></div>
+                        <div class="dq-kpi"><span class="dq-kpi-label">Status</span><strong data-dq-status>Idle</strong></div>
+                        <div class="dq-kpi"><span class="dq-kpi-label">Last run</span><strong data-dq-last-run>-</strong></div>
+                        <div class="dq-kpi"><span class="dq-kpi-label">Controls</span><strong data-dq-control-count>0</strong></div>
+                    </div>
+                    <div class="dq-toolbar">
+                        <input type="search" class="dq-search" data-dq-search placeholder="Search checks">
+                        <select class="dq-select" data-dq-category>
+                            <option value="">All categories</option>
+                        </select>
+                        <button type="button" class="button secondary" data-dq-run-all>Run All Checks</button>
+                        <a class="button secondary" data-dq-center-link href="{% url 'data-quality-center' %}">Open Center</a>
+                    </div>
+                    <div class="dq-result-table-wrap">
+                        <table class="dq-table">
+                            <thead>
+                                <tr>
+                                    <th>Control</th>
+                                    <th>Category</th>
+                                    <th>Status</th>
+                                    <th>Impacted</th>
+                                    <th>Error %</th>
+                                    <th>Description</th>
+                                    <th>Exec ms</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody data-dq-body>
+                                {% for control in dq_available_controls %}
+                                    <tr data-dq-control-key="{{ control.key }}">
+                                        <td>{{ control.name }}</td>
+                                        <td>{{ control.category }}</td>
+                                        <td><span class="status-badge neutral">Not run</span></td>
+                                        <td>0</td>
+                                        <td>0%</td>
+                                        <td>{{ control.description }}</td>
+                                        <td>0</td>
+                                        <td class="dq-actions">
+                                            <button type="button" class="button secondary" data-dq-run-control data-dq-control-key="{{ control.key }}">Run</button>
+                                            <button type="button" class="button secondary" disabled>View Records</button>
+                                            <button type="button" class="button secondary" disabled>Export</button>
+                                        </td>
+                                    </tr>
+                                {% empty %}
+                                    <tr><td colspan="8" class="empty compact">No data quality checks available.</td></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="dq-records-panel" data-dq-records-panel hidden>
+                        <div class="dq-records-head">
+                            <h3 data-dq-records-title>View Records</h3>
+                            <button type="button" class="icon-button dq-close" data-dq-close aria-label="Close records" title="Close records"></button>
+                        </div>
+                        <div class="dq-records-actions">
+                            <a class="button secondary" data-dq-records-export href="#">Export to Excel</a>
+                        </div>
+                        <div class="dq-records-wrap">
+                            <table class="dq-table">
+                                <thead data-dq-records-head></thead>
+                                <tbody data-dq-records-body></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="dq-spinner" data-dq-spinner hidden>
+                        <div class="preview-spinner" aria-hidden="true"></div>
+                        <div class="preview-overlay-text">Running data quality checks...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,246 @@
+SOURCE: 1.0 Maintenance & Repair\1.10 Continuous Improvement\3. Quick Win\Install Protector GP-Edge 994K.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2021 
+1.10-211202-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Install Protector GP-Edge 
+994K 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Install Protector GP-Edge 994K .................................. 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description.................................... 2 
+3.0 Implementation Steps ......................................... 3 
+4.0 Benefits ................................................................ 4 
+5.0 Resources Required ........................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices........................................ 4 
+8.0 Acknowledgements ............................................. 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Install Protector GP-Edge 994K 
+DATE 
+12/2/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-211202-1 
+Caterpillar: Confidential  Yellow          Page 2 of 4 
+1.0 Introduction  
+ 
+Site has experienced some instances of missing 994K bucket shrouds CapSure system returning 
+to the “unlock” position. 
+To prevent these occurrences the Technical Team is using a section of Seal-O-Ring (PN 6G-
+1546) in the CapSure slot. This prevents material from accumulating in the CapSure slot ensuring 
+the locking system is fully actuated and remains in the “locked” position thereby preventing 
+shroud loss. 
+Additionally, by preventing the accumulation and packing of material in the CapSure slot, 
+downtime associated with shroud changes is reduced.   
+ 
+2.0 Best Practice Description 
+ 
+Site has experienced some instances of missing 994K bucket shrouds CapSure system returning 
+to the “unlock” position, see the example below showing the CapSure system near the unlock 
+position. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+To prevent these occurrences the Technical Team is using a section of Seal-O-Ring (PN 6G-
+1546) in the CapSure slot. This prevents material from accumulating in the CapSure slot ensuring 
+the locking system is fully actuated and remains in the “locked” position thereby preventing 
+shroud loss. 
+Lock
+ 
+ Unlock
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Install Protector GP-Edge 994K 
+DATE 
+12/2/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-211202-1 
+Caterpillar: Confidential  Yellow          Page 3 of 4 
+As pictured below, place a 95 mm section of Seal-O-Ring PN 6G-1546 (Cross Section Diameter 
+12.7 mm) into the CapSure slot after locking the system and shroud in place. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+1) Cut a 95 mm long section of Seal-O-Ring PN 6G-1546 or similar with cross section diameter 
+of 12.7 mm. 
+2) Use screwdriver to install Seal-O-Ring into slot. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+95 mm 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Install Protector GP-Edge 994K 
+DATE 
+12/2/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-211202-1 
+Caterpillar: Confidential  Yellow          Page 4 of 4 
+4.0 Benefits 
+ 
+• Ensures CapSure system is placed and remains in “Lock” position. 
+• Prevents the accumulation of material in the CapSure slot. 
+• Easy slot cleaning when maintaining shrouds.  
+• Reduces shrouds change time. 
+ 
+5.0 Resources Required 
+ 
+• Seal-O-Ring 6G-1546 or similar with cross section diameter of 12.7 mm. 
+ 
+6.0 Supporting Attachments / References 
+ 
+       N/A 
+ 
+7.0 Related Best Practices 
+ 
+• Improving GET Replacement Process 
+ 
+8.0 Acknowledgements 
+ 
+This best practice was written by: 
+ 
+Francisco Sales 
+Technical Communicator 
++ 55 94 9 3327-9900 
++ 55 94 9 8123-0552 
+francisco.sales@sotreq.com.br 
+ 
+ 
+Also, special thanks to the Product Support Team, Infrastructure equipment Engineering Team, our 
+commercial partners and Joaquim Jesus, technical communicator to LOHT.

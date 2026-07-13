@@ -1,0 +1,385 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2022 
+1.01-221212-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Repositioning of the 
+Connection Box - CAT 7495 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Repositioning of the Connection Box - CAT 7495 ...... 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 4 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repositioning of the Connection Box - CAT 7495 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-221212-1 
+Caterpillar: Confidential Yellow          Page 2 of 7 
+1.0 Introduction  
+ 
+The purpose of this Best Practice is to facilitate inspections on the PN 514-3177 speed sensors of 
+the two (02) trolley engines of 7495 Rope Shovel. On Caterpillar 7495 Robe Shovels, the trolley 
+motor gear has come into contact with one of the faces of the speed sensor causing it to fail.  
+ 
+With guidance from Caterpillar, through the Service r equest profile (CRM-1710616-C1B0). The 
+Sotreq Team inserted shims on the base of the locomotion stick to regulate the speed reading 
+distance and avoid physical contact with the locomotion gear.  
+ 
+The technicians make inspections to verify the physical conditions of the club, to verify that it is not 
+in contact with the gear of the locomotion engine. However, for the inspection of the locomotion 
+stick, it is necessary to remove the Box AS PN 466- 0445  to access the locomotion sensor PN 
+514-3177, this action takes time, which can impact the Physical A vailability of the equipment. It is 
+worth noting that this Box AS   works as a protection against material impacts on the locomotion 
+sensor. 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 1: Location of “Box AS” PN 466-0445 and “Speed Sensor” PN 514-3177 on the Locomotion Engine. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Box AS (PN 466-0445) 
+Speed Sensor (PN514-3177) 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repositioning of the Connection Box - CAT 7495 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-221212-1 
+Caterpillar: Confidential Yellow          Page 3 of 7 
+To  access the speed sensor, it is necessary to remove the PN 460- 9444 plate (06), PN 1H-3337 
+screws (16), PN 3B-4504 washers, and PN 466-0444 plate (30). See the pic below: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Figure 2: Location of “Box AS” PN 466-0445 on the Locomotion Engine. 
+ 
+Figure 3: Location of the “Speed Sensor” PN 514-3177 on the Locomotion Engine. 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repositioning of the Connection Box - CAT 7495 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-221212-1 
+Caterpillar: Confidential Yellow          Page 4 of 7 
+2.0 Best Practice Description 
+ 
+This Best Practice facilitates access to the Locomotion Engine Speed Sensor, protects against rock 
+impact, and reduces maintenance and inspection time, through a h inged cover positioned above 
+the locomotion stick. 
+ 
+This Best Practice consists of reposition ing the Box AS from point (A) to point (B) and installing a 
+plate with joints in the place where the Box was previously positioned. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+          Figure 4 – 5: Perspective Demonstration of the hinged plate. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                
+              Figure 6: Point (A) and Point (B). 
+ 
+ 
+ 
+ 
+(A) 
+(B) 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repositioning of the Connection Box - CAT 7495 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-221212-1 
+Caterpillar: Confidential Yellow          Page 5 of 7 
+3.0 Implementation Steps 
+ 
+To implement this Best Practice, follow the steps below: 
+ 
+1-   Remove Bolts PN 1H-3337 from the Box fixing base. 
+2-   Remove Washers PN 3B-4504 from the housing fixing base. 
+3-   Remove Plates PN 466-044 and 460-9444. 
+4-   Remove Box PN 466-0445. 
+5-   Fix the articulated Plate specified in Figure 7. 
+6-   Fix the Plate with the PN 1H-3337 Bolts. 
+7-   Reposition Box PN 466-0445 in position (B) indicated in Figure 6. 
+8-   Fix the Box with the same set mentioned to remove it. 
+ 
+All the measurements are determined for the manufacture of the hinged plate. 
+ The plate was made of ASTM A36 steel. See the pic below: 
+ 
+  Figure 7: 3D Drawing of the plate. 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repositioning of the Connection Box - CAT 7495 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-221212-1 
+Caterpillar: Confidential Yellow          Page 6 of 7 
+ For the installation of the plate, the same adjustments of the base of PN 1H-337 were used. 
+  
+Figure 8: Plate Fixing. 
+ 
+4.0 Benefits 
+ 
+• Decreased speed sensor inspection and maintenance time by 60% of the time. 
+• Facilitates the visual inspection process during maintenance. 
+• Improved accessibility. 
+ 
+5.0 Resources Required 
+ 
+The software “AutoCAD” (Autodesk) was used for the 3D drawing of the plate. 
+ 
+In the development of this project, original Caterpillar parts were used as a way to guarantee the 
+reliability and effectiveness of the project. The quantities presented below were calculated for 
+application in the two locomotion engines. 
+ 
+Item Qty (Unity/Length)  PN  
+Speed Sensor 02  514-3177 
+Plate 02 460-9444 
+Bolt 16 1H-3337 
+Lockwasher 32 3B-4504 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Figure 03 - https://sis2.cat.com/#/detail?keyword=460-
+9438&serialNumber=ER6&ieSystemControlNumber=NIS000731075&componentId=00002201&ta
+b=parts. 
+ 
+Figure 04- https://sis2.cat.com/#/detail?keyword=514-
+3177&tab=parts&serialNumber=ER6&ieSystemControlNumber=NIS000701972&componentId=00
+00032. 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Repositioning of the Connection Box - CAT 7495 
+DATE 
+12/12/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-221212-1 
+Caterpillar: Confidential Yellow          Page 7 of 7 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+I thank all the effort and dedication of the engineering team of the expanded mining Products of 
+the dealer Sotreq. 
+ 
+Thiago Dillion 
+ 
+Expanded Mining Products 
+ 
+thiago.dillon@sotreq.com.br 
++55 94 99203-2615  
+Anderson Lima  
+ 
+Expanded Mining Products  
+ 
+anderson.lima@sotreq.com.br 
++55 94 99302-8607 
+Glauber Nogueira 
+ 
+Expanded Mining Products 
+ 
+glauber.nogueira@sotreq.com.br 
++55 31 99571-4598 
+Webert Lopes 
+ 
+Expanded Mining Products 
+ 
+webert.lopes@sotreq.com.br  
++55 94 99164-2127 
+Thiago Rezende 
+ 
+Expanded Mining Products 
+ 
+thiago.rezende@sotreq.com.br 
++55 31 21221129

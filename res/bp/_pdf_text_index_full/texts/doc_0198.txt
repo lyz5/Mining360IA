@@ -1,0 +1,157 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\C175 Main Oil Gallery - D&A Debris Protection.pdf
+PAGES: 3
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+May 2016 
+1605-4.01-1432 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+C175 Main Oil Gallery - 
+D&A Debris Protection 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+C175 Main Oil Gallery - D&A Debris Protection ......... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 2 
+7.0 Related Best Practices ...................................... 2 
+8.0 Acknowledgements ............................................ 2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C175 Main Oil Gallery - D&A Debris Protection 
+DATE 
+5/12/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-4.01-1432 
+Caterpillar Confidential:  YELLOW          Page 1 of 2 
+1.0 Introduction  
+ 
+Removing cylinder head(s) when doing a partial repair in the CRC can allow debris to fall into the 
+main oil gallery through the oil supply port.  Likewise, camshaft bearing installation during an engine 
+overhaul will generate small metal shavings that will fall into the main oil gallery.  This Best Practice 
+illustrates a simple method of catching any contaminants so they can be removed.  
+ 
+ 
+2.0 Best Practice Description 
+ 
+In this example, 75mm PVC tubing has been cut in half lengthwise, and cut to block length, and 
+inserted into the main oil gallery of a C175 engine.  As the camshaft bearings are pressed into the 
+block, any small metal shavings that are generated during installation will fall into the main gallery and 
+be caught by the tube (tube has been slid out partly for illustration purposes). 
+ 
+ 
+ 
+Here is a close-up of bearing filings that were caught in the tube from one bearing.  
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C175 Main Oil Gallery - D&A Debris Protection 
+DATE 
+5/12/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1605-4.01-1432 
+Caterpillar Confidential:  YELLOW          Page 2 of 2 
+The tube can also be used during a partial repair during cylinder head(s) removal and installation by 
+installing it into the oil gallery through the engine front housing (tube would need to be longer to take 
+into account the width of the front housing).  
+ 
+The tube should be thoroughly cleaned before and after each use, and stored in a protected manner.  
+ 
+3.0 Implementation Steps 
+ 
+Obtain, cut, and de-burr the proper diameter PVC tubing, and implement a storage method. 
+ 
+4.0 Benefits 
+ 
+Maintains a clean main oil gallery prior to engine start-up.  
+ 
+5.0 Resources Required 
+ 
+Very minimal as described above.  
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was developed at Finning CRC in Antofagasta – Hector Fuentes. 
+ 
+The photos were taken during an engine rebuild at Matco CRC in Hermosillo.  
+ 
+This Best practice was written by: 
+ 
+Bill Gallagher – Cat Global Mining 
+GALLAGHER_WILLIAM_L@cat.com

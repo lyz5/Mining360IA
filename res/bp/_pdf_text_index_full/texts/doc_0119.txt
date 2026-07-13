@@ -1,0 +1,435 @@
+SOURCE: 2.0 Application\2.02 Haul Road Management\1. Strategic\Road Analysis Control (RAC) .pdf
+PAGES: 9
+ENCRYPTED: True
+DECRYPT: 1
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+  
+February 21 
+2.02-210211-1 
+875 W Cushing St., Tucson, AZ 85745 cat.com/minin g 
+ 
+ 
+ 
+ 
+ 
+MINING BEST PRACTICES 
+Road Analysis Control 
+(RAC) 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Road Analysis Control (RAC) .................................................. 1
+ 
+1.0  Introduction ................................................ 2 
+2.0  Opportunity Recognition ............................ 2 
+3.0  Benefits ...................................................... 2 
+4.0  Resources Required .................................. 3 
+5.0  Setup ......................................................... 3 
+6.0  Haul Road Maintenance ............................ 4 
+7.0  Tire Management ....................................... 6 
+8.0  Follow-up and Sustaining .......................... 8 
+9.0  Supporting Attachments / References ....... 8 
+10.0  Related Best Practices .............................. 8 
+11.0  Acknowledgements .................................... 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+  
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Road Analysis Control (RAC) 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-210211-1 
+Caterpillar: Confidential Yellow                                                                                                                          Page 2 of 9 
+1.0 Introduction  
+ 
+This Best Practice provides an overview of the Road Analysis Control (RAC) tool and best practices 
+for a successful implementation of RAC as a haul road management and productivity tool.   
+ 
+RAC is an on-board information technology product designed to measure and benchmark haul road 
+quality. Integrated with the Vital Information Management System (VIMS), RAC measures component 
+loading and impact shock, communicates that data to the operator and to the mine office in real time. 
+Trucks equipped with GPS can export a RAC event location so the events can be plotted on the mine 
+map and proactively creating a work plan for the mine’s road maintenance team. RAC provides data 
+and reports through Technician Toolbox and enables mine managers to quantify, monitor and 
+manage haul roads.  
+ 
+2.0 Opportunity Recognition 
+ 
+The best opportunities for RAC implementation can be found in mines with: 
+ Poor tire life 
+ Frame, lower powertrain, and strut quality issues – especially frame downtime 
+ Operator complaints of poor ride and haul road quality 
+ Inconsistent cycle times day-to-day 
+ Underfoot prone to pits 
+ Haul road maintenance repair is determined by operator feedback 
+ 
+3.0 Benefits 
+ 
+Road Analysis Control (RAC), is a haul road management tool providing feedback to help manage 
+operator technique, haul road and loading conditions. 
+ 
+This feedback enables the site to, quantify the severity of the condition and allows mine management 
+to make more informed decisions to reduce overall haulage costs.  
+ 
+The long-term benefits of using RAC can include tire life improvements as well as the same benefits 
+mine’s receive from good haul road maintenance – haul trucks move faster and have less issues 
+when they travel along smooth, well maintained haul roads. Faster trucks increase mine production, 
+having less maintenance issues on trucks reduces haulage costs so incorporating RAC into mine 
+operations improves mine cost-per-ton. 
+ 
+When used properly RAC can be a significant productivity tool to: 
+ Improve haulage cycle times and raise truck productivity. 
+ Contribute to longer tire and rim life. 
+ Identify haul road problem areas to avoid and correct. 
+ Lower operating costs. Help achieve intended component life cycle. 
+ Identify haulers with poorly charged suspension 
+ Improve repair before failure processes. 
+ Reduce stress on drive components, frame and suspension. 
+ Reduce fuel consumption. 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Road Analysis Control (RAC) 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-210211-1 
+Caterpillar: Confidential Yellow                                                                                                                          Page 3 of 9 
+ Provide component life and repair indicator information. 
+ Give haul road support equipment team specific locations for road repairs. 
+ Eliminate the human error where operators may not report road quality issues. 
+ 
+ 
+4.0 Resources Required 
+ 
+ Haul road maintenance supervisor and team 
+ Truck maintenance supervisor 
+ Dealer support – collect data, work through implementation, and follow up on progress. 
+ 
+ 
+5.0 Setup 
+  
+Installation: 
+ 
+RAC is a Software Control Application (SCA) within Caterpillar Electronic Technician (ET) that can be 
+activated by authorized dealer personnel. Machines must be equipped with GPS to pin-point locations 
+on the haul roads that triggered RAC events. The mapping of this events can be reviewed within 
+Health Equipment Insights (HEI).  
+ 
+RAC has 3x  severity levels: 
+ Level 3 – 170% of target level 1  (least sensitive) 
+ Level 2 – 135% of target level 2 
+ Level 1 – baseline    (most sensitive) 
+ 
+Recommendation is to start a mine site at Level 3 (least sensitive). If they’re not getting events, they 
+should move down to level 2 (more sensitive) and then onto level 1 (most sensitive). The mine does 
+not start at Level 3, the number of events is likely to be difficult to handle. 
+ 
+At this point, it’s also important to make sure the strut pressures are maintained properly and 
+reference SEHS9411 document; otherwise, you’d get poor results from RAC. 
+ 
+It’s recommended that all trucks activate RAC to monitor to collect the most data.  
+ 
+  
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Road Analysis Control (RAC) 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-210211-1 
+Caterpillar: Confidential Yellow                                                                                                                          Page 4 of 9 
+6.0 Haul Road Maintenance 
+ 
+Events can be collected during shifts or for multiple days, a recommended length of time to collect is 
+one week, in order to get enough data to overlapping in the critical areas.  
+ 
+After collecting the data for one reporting cycle, the team should overlay the events on a map of the 
+entire mine. Because the RAC data is tagged with GPS location, the mine can use the latest mine 
+maps to overlay the events to their exact location. Ideally, there’s a dispatch / production 
+management system which could be MineStar Edge or another system. When the events come off 
+the truck, they go to this system. From there they can do an event plot which takes all the events and 
+plot them on a mine map. 
+ 
+After overlying the events, because the size of a mine can be quite significant, it’s recommended that 
+the events be grouped different zones (see figure 1) to help focus in on those areas. This example 
+shows the bias type events in orange and rack type events in green. 
+ 
+ 
+Figure 1 – Event entire mine overlay 
+  
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Road Analysis Control (RAC) 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-210211-1 
+Caterpillar: Confidential Yellow                                                                                                                          Page 5 of 9 
+Once separated into zones, the team can create a plan for road maintenance. Using the example 
+shown, here is an example of focused in on zone 2 (see Figure 2). The maintenance team can clearly 
+see that there are events on and off the haul roads that need repaired first. 
+ 
+ 
+ 
+Figure 2 - Zone 2 zoom-in 
+Events greater than (+/-) 3700 (unitless) should also be addressed first by the road maintenance 
+team, as those could lead to frame and suspension durability issues. Events of that magnitude are 
+generally mean that tires came off the ground and frame, suspension, drivetrain inspections must be 
+performed at the next PM.  
+  
+  
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Road Analysis Control (RAC) 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-210211-1 
+Caterpillar: Confidential Yellow                                                                                                                          Page 6 of 9 
+7.0 Tire Management 
+ 
+  
+There are several common areas where RAC can help support a good tire management program.  
+The operators need to be trained on each of the unique RAC events and the conditions that create 
+the event.   
+ 
+7.1 Common Bias Events - Cornering 
+ 
+The most common bias event is observed where the operator is steering a truck through a corner.  If 
+the cornering speed is too high the load of the truck will transfer to the outer tires and the tires will 
+experience a lateral loading at the same time.  The combination of these loads can be extremely 
+stressful on the tire construction and often lead to shoulder separation issues on the tire. 
+ 
+  
+ 
+7.2 Common Bias Events – Bias Tire Loading 
+ 
+Another common bias event often seen is where the truck is approaching the dump.  In this example 
+the operator is applying the brakes (transferring load to the front tires) and simultaneously turning the 
+truck.  These examples have observed tire loads to reach over 180% of equivalent static loads while 
+corning.  These events often result in a simultaneous rack event.   
+Coaching the operators to remove most of the speeds in a straight line and then cornering at a 
+constant speed will under normal circumstances reduce the loads on the front tires by around 30 to 
+40%.  Also, the team can instructor the motor grader to increase the cross fall angle or supper 
+elevation on this turn to handle additional speed. 
+ 
+  
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Road Analysis Control (RAC) 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-210211-1 
+Caterpillar: Confidential Yellow                                                                                                                          Page 7 of 9 
+7.3 Common Rack Events – Bias Tire Loading 
+Rack events are very common while under the loading equipment and are effectively an indication of 
+how significantly the loads are being applied to ‘twist’ the frame.   
+ 
+The following sequence of events is commonly seen on many operations during the loading phase: 
+  
+Prior to reversing in to the loading tool,  The suspension pressures are 
+very  consistent left to right suggesting that they are well charged.  Rack 
+values are close to zero at this time.   
+ 
+ 
+ 
+ 
+ 
+ 
+As the truck approaches the loading position it is possible to observe 
+when one of the duals is on the rilled material of the bench.  This could be a 
+single rock that could be a significant point loading on the tire or 
+alternatively or the toe which will create frame stresses.   
+In this position while empty it will not create a Rack event and is not 
+creating significant harm to the tires/frame 
+ 
+ 
+ 
+As subsequent passes from the loading tool are added to the truck the 
+weight will increase and subsequently thee stresses across the machine 
+can increase to the level that a Rack event will be induced.   
+ 
+It is worth noting that if there is a single rock underneath one of the duals 
+that is inducing this situation it is reasonable to consider that 2/3 of the 
+Gross vehicle mass (rear of truck with load) is largely being point loaded 
+on the tire.   
+ 
+Rack events under the loading tool can easily be avoided by moving 
+forward by a few meters between the first and second loading tool pass with negligible production 
+implications but very signficiant benefits. Another best pracice is when the truck is posititioned under 
+the shovel, instruct the operator to place the truck in Neutral, release the foot brake, and let the truck 
+settle into a flat location before applying the brake again. 
+ 
+ 
+  
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Road Analysis Control (RAC) 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-210211-1 
+Caterpillar: Confidential Yellow                                                                                                                          Page 8 of 9 
+8.0 Follow-up and Sustaining 
+ 
+Once the RAC and haul road maintenance plan has been implemented, the dealer and customer 
+should schedule a follow-up to review the progress and improvements. The teams should keep track 
+of the events logged over time and see a reduction in events over time if the road maintenance team 
+is following the reports. It’s important that the data and recommendations made to the haul road team 
+be confirmed as completed and the process be implemented permanently, as to not go back to haul 
+road conditions as before. 
+ 
+ 
+9.0 Supporting Attachments / References 
+ 
+ECM requirements: 
+ VIMS™ ABL or later must be present on the machine.  
+ Machines equipped with VIMS™ ABL required an additional ECM installed.  
+o Reference document (SEHS0394) 
+ Machines equipped with VIMS™ 3G and PLE do not require an additional ECM. 
+ Installation of RAC on a Large Mining Truck with VIMS™ 
+o Reference document (REHS0875) 
+ 
+Enabling RAC: 
+ Authorization to enable the Software Control Application (SCA) within Caterpillar Electronic 
+Technician (ET). Within CAT ET, authorized personnel can activate the SCA for RAC and will 
+be invoiced for each machine. 
+o Reference document (REHS7342) 
+ 
+ 
+10.0 Related Best Practices 
+ 
+1106-1.1-1035   Cost Reduction Through Haul Road Management Process 
+1107-1.2-1094   Road Defect Management Training Exercise 
+0409-2.02-1165  Haul Road Optimization 
+ 
+  
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Road Analysis Control (RAC) 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-210211-1 
+Caterpillar: Confidential Yellow                                                                                                                          Page 9 of 9 
+11.0 Acknowledgements 
+ 
+This Best practice was written by and/or had contributions from: 
+ 
+Trenton Lauer 
+Consultant, Mining Equipment Management – Caterpillar Inc. 
+Lauer_Trenton_W@cat.com 
+ 
+Hayden Jones 
+Product Performance Manager – Caterpillar Inc. 
+ 
+Jimmy McCarty 
+Market Professional – Caterpillar Inc. 
+ 
+Ricardo Suazo Solis 
+Caterpillar Truck Product Specialist – Finning South America

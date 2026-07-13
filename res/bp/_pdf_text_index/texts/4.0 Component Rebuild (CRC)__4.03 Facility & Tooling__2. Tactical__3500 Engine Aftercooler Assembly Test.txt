@@ -1,0 +1,226 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2015 
+1504-4.03-1374 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+3500 Engine Aftercooler 
+Assembly Test 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+3500 Engine Aftercooler Assembly Test .................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Aftercooler Assembly Test 
+DATE 
+6/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-4.03-1374 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction 
+ 
+ 
+The operation of the after-cooler system is critical for proper engine operation, and if there are 
+any errors in the assembly of the system, it can lead to future leaks.  At Finning Chile (CRC 
+Antofagasta), we have created a test to detect any assembly errors to avoid any future redo and 
+machine downtime in the field. 
+ 
+To seal the after-cooler group, we have fabricated tooling to permit the simulation of air pressure 
+in the after-cooler group, and to check for any potential leakage. 
+ 
+ 
+ 
+2.0 Best Practice Description 
+ 
+ 
+2.1 Install the fabricated covers to the lower manifold and upper housing (some models) will require 
+a hose connection at the upper housing utilizing a fabricated blocking plug in the hose. 
+ 
+ 
+ 
+2.2 Set the primary and secondary pressure gauges to 30 PSI. 
+      Main gauge air line                  Secondary gauge air line 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Aftercooler Assembly Test 
+DATE 
+6/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-4.03-1374 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+      2.3 After setting the pressure gauges to 30 PSI, connect the air supply hose to the front of the 
+lower manifold and open the valve and allow the air pressure to stablize in the after-cooler 
+group to 30 PSI. 
+         Power line   Gauge pressure connected to the supply line 30 PSI 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.4 Once the air pressure has stabilized at 30 PSI, turn the valve off and wait for five minutes for 
+any pressure decrease from 30 PSI and if no pressure decrease is observed after five minutes 
+the assembled after-cooler group is good. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.5 Release the air pressure and remove the tooling. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Items required for performing the aftecooler test: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  1.- Upper hoses and plugs.    3.- Hose. 
+  2.- Pressure gauge.     4.- Lower covers. 
+ 
+1 
+2 
+3 4 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Aftercooler Assembly Test 
+DATE 
+6/11/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1504-4.03-1374 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+4.0 Benefits 
+ 
+• Detect potential leaks quickly. 
+• Ensures quality assembly. 
+• Avoid unnecessary field repairs and machine downtime. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Fabricate the elements. 
+• Staff training. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+• None so far. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+• None so far. 
+ 
+ 
+8.0 Acknowledgements 
+ 
+ 
+Best practice written by: 
+Name: Jorge Jouanne Navarrete  Mail: jorge.jouanne@finning.com 
+ 
+Best practice reviewed by: 
+Name: Daniel Zapata Deluccio  Mail: daniel.deluccio@finning.com 
+Name: Héctor Fuentes Quitral   Mail: hector.fuentes@finning.com

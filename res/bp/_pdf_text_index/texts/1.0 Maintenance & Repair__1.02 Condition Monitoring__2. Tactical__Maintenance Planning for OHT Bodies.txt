@@ -1,0 +1,321 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+0507-2.15-1078 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Maintenance Planning for 
+OHT Bodies 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Maintenance Planning for OHT Bodies ...................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 5 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+  
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Maintenance Planning for OHT Bodies 
+DATE 
+5/27/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0507-2.15-1078 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+1.0 Introduction  
+The maintenance of truck bodies is a vitally important function of the mine maintenance 
+department and, if managed poorly, can have a significant negative impact upon owning & 
+operating costs and machine availability. 
+ 
+This Best Practice describes a process and method for monitoring and trending wear in OHT 
+bodies.  Cracks and other body defects are recoded on a plan view of the body and included in a 
+comprehensive report. 
+ 
+The Best Practice incorporates both: 
+• The condition monitoring procedure and discipline 
+• The OHT tray/body checklist and data collection matrix. 
+ 
+For various reasons, the bodies at this site had originally been installed with additional armour to 
+control deterioration in high wear areas.  When this armour was removed the tray condition 
+deteriorated rapidly over all trucks, increasing workload and making body maintenance 
+unmanageable without a central register.
+   
+ 
+2.0 Best Practice Description 
+An Excel database has been developed to capture truck body wear.  Today, recording of cracks 
+and other defects is done on a separate template and incorporated into the body condition 
+reports.  An Access database version is currently being developed that will include all functions in 
+one and have even greater flexibility. 
+ 
+The database allows the user to select between dual slope and MSD bodies (refer figure 1) and 
+will provide the appropriate inspection point map for the selected body type (refer to Figure 2a) 
+ 
+ 
+Figure 1:  Header page of Tray Inspection Access Database 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Maintenance Planning for OHT Bodies 
+DATE 
+5/27/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0507-2.15-1078 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+Ultrasonic thickness measurements are then collected against all of these points and entered into 
+the database. 
+ 
+The database allows easy monitoring of the following: 
+• Tray wear rates for individual bodies (refer Figures 2a & 2b) 
+• Color coded Tray wear inspection dashboards (hot-sheets) showing wear life remaining in 
+mm and % terms (refer Figure 3) 
+• Monthly Reporting capability for repairs scheduled and completed (refer Figure 4). 
+ 
+ 
+  
+ 
+Figure 2a:  Wear measurement input screen 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Maintenance Planning for OHT Bodies 
+DATE 
+5/27/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0507-2.15-1078 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+ 
+ 
+Figure 2b:  Data from Table 2a is stored in the tray database 
+ 
+ 
+ 
+ 
+Figure 3:  Tray wear hot-sheet indicates life remaining in mm and /or % remaining 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Maintenance Planning for OHT Bodies 
+DATE 
+5/27/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0507-2.15-1078 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+ 
+ 
+Figure 4:  Body Maintenance reports can be generated 
+ 
+Importantly, the tool was developed together by WesTrac’s on-site Fleet Analyst and Boilermaker 
+Leading Hand.  The tool recognizes which of the inspection locations (eg. D2, D3 & D4 in Figure 
+2a) are on the same liner plate and colour codes the hot-sheets accordingly (eg. Figure 3).  This 
+means that the hot-sheets report on the overall condition of a full line plate section rather than an 
+individual point location. 
+ 
+The Tray Inspection dashboard is a very effective tool for tray backlog management.  Bodies with 
+locations coloured orange allow the maintenance planner/scheduler to order required materials in 
+advance and schedule labor resources so that when the dashboard turns red for that location, the 
+repairs can be completed with minimized downtime. 
+ 
+For sites that collect the number of cycles completed per truck via VIMS, this can also allow for 
+accurate estimation of body life remaining in terms of time. For example, by knowing the wear 
+rate per 100 cycles (note: a high percentage of the abrasive body wear will occur during the 
+dumping of material on each cycle), then estimating the number of shifts until wear-out should be 
+possible, to a high degree of accuracy, in all inspection locations. 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Maintenance Planning for OHT Bodies 
+DATE 
+5/27/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0507-2.15-1078 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+ 
+3.0 Implementation Steps 
+ 
+• Develop the Tray Wear Database to suit your site’s needs 
+• Incorporate Tray Wear Inspections into your site’s condition monitoring program with 
+appropriate sign-off process to ensure that inspections always take place.  The dealer who 
+developed these check sheets completes the inspections every 250, 500 & 3000 hours. 
+• The on site Fleet Analyst monitors the wear trends for all bodies 
+• The planner/schedulers will order required resources as wear trending indicates that 
+sections are reaching the end of their wear life. 
+• Scheduler updates Backlog Management system 
+• Project Manager uses database-reporting capabilities to update on the body maintenance 
+program. 
+• All role descriptions and process maps should be updated to reflect all the above steps 
+ 
+ 
+4.0 Benefits 
+ 
+Tony Blake is a Leading Hand boilermaker with WesTrac 
+in Western Australia and is a primary user of this tool.   
+ 
+Benefits realized through this Best Practice include: 
+• No unscheduled delays due to material shortages 
+- material is ordered and delivered in advance    
+• Reduced risk of machine downtime due to 
+unscheduled body repair 
+• Reduced chassis maintenance costs due to 
+maximizing remaining body life 
+• Improved scheduling accuracy to enable 
+manpower efficiency 
+• Use of chassis crack data to better understand crack initiation points and propagation rates 
+• Improved data collection for maintenance budgeting 
+• Improved communication between maintenance and production departments relative to 
+chassis management and scheduled chassis repairs 
+ 
+5.0 Resources Required 
+ 
+• Caterpillar part no. 168-7720 Gauge Grp (for ultrasonic thickness testing) 
+• Excel database as described 
+• Checklist for use by technicians 
+ “The tool is good for long term planning.  It 
+identifies trays that require major rebuilds.   It 
+is also very good for short-term minor in-
+service repairs, which can be assessed at a 
+glance from the colour coded summary page. 
+We have found it very useful for tracking tray 
+location for cost per hour and repair history. 
+The trays have their own plant number with 
+their own cost centre etc - the program tracks 
+location and SMU a report can be printed” 
+ 
+Tony Blake, Leading Hand Boilermaker  
+WesTrac – Western Australia  
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Maintenance Planning for OHT Bodies 
+DATE 
+5/27/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0507-2.15-1078 
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Caterpillar Mining Bodies Operation and Maintenance Guide (AEDK0627) 
+• Tray Inspection Excel Database – TrayProgram.xls 
+ 
+7.0 Related Best Practices 
+ 
+0806-2.70-1007   Condition Monitoring - Field Inspections 
+0806-2.70-1008   Backlog Management 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice written by: 
+Tim Mansfield 
+Equipment Management Consultant 
+Caterpillar Global Mining  
+Australia 
+tmansfield@cat.com
+ 
++61 3 9953 9230 
+ 
+Please contact the author for further details or information regarding this Best Practice. 
+ 
+Special mention must be made of WesTrac Pty Ltd for their willingness to share this Best 
+Practice. 
+ 
+In particular, we wish to recognize 
+ 
+Rob Ivaldi (Fleet Analyst) & Tony Blake (Boiler-Maker Leading Hand) 
+WesTrac Pty Ltd 
+Maintenance Department – KCGM Operation 
+Western Australia

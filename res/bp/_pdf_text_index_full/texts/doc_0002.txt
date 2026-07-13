@@ -1,0 +1,438 @@
+SOURCE: 1.0 Maintenance & Repair\1.01 Preventive Maintenance\1. Strategic\8 Step Preventive Maintenance Process.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 11 
+1011-1.01-1219 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      mining.cat.com 
+ 
+ 
+ 
+ 
+B E S T  P R A C T I C E  S E R I E S 
+8 Step Preventive 
+Maintenance Process 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+8 Step Preventive Maintenance Process ................... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+8 Step Preventive Maintenance Process 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+1011-1.01-1219 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+ 
+1.0 Introduction  
+ 
+Preventive Maintenance (PM) is critical to the success of any maintenance and repair strategy. It 
+is one of the foundation elements and should be considered one of the focal points in the overall 
+equipment maintenance management strategy. The goals of PM  are to maintain equipment in a  
+productive and safe operating condition, to reduce the risk of failure and subsequent unscheduled 
+equipment repairs, and to optimize equipment owning and operating costs.  
+ 
+This Best Practice describes the 8 Step Preventive Maintenance Methodology. It supports the 
+Preventive Maintenance Best Practice (1007 -2.0-1101) and is an alternative to what is known as 
+the 4 Step or Traditional PM Methodology.   
+ 
+Inside of Global Mining’s “mainten ance and repair model”, the direction is for a maintenance 
+model of “condition based maintenance”. In other words Caterpillar would like to see a “repair 
+before failure” methodology. To support this, an  overall maintenance and repair strategy should 
+include the processes of condition monitoring, backlog management, and planning and 
+scheduling.  
+ 
+The 8 Step PM Methodology enables opportunity for the execution of planned and scheduled 
+backlogs at every PM service. From experience, the authors  have seen that t he smallest and 
+longest duration PM services do not always have backlogs scheduled at those times due to a 
+desire to keep an acceptable level of availability. What has been found in a “repair before failure” 
+model is by ensuring an opportunity to schedule and complet e backlogs at every PM service 
+provides the best opportunity to maximize availability and reliability while minimizing costs. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+A Traditional PM service schedule (PM 1, 2, 3 & 4 methodology – 250, 500, 1000 and 2000 
+hours) results in service durations that vary based on the number of tasks that are required to be 
+undertaken. As an example, a 250 h our PM with a small amount of tasks can have a  downtime 
+duration of 4 hours. Conversely, a 2000 h our PM where every maintenan ce task, oil and filters 
+change is carried out, the downtime can be as much as 24  hours (or more) depending on the 
+machine type, labor, and resources available.  
+ 
+An 8 Step PM Methodology distributes all of the Preventive Maintenance tasks across the service 
+intervals in a 2000 hour period in order to achieve PM services of equal downtime duration.  
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+8 Step Preventive Maintenance Process 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+1011-1.01-1219 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+The 8 Step vs. 4 Step Methodology is summarized in Figure 2.1 below: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2.1: Traditional and 8 Step PM Process 
+ 
+ 
+No tasks or t heir int ervals differ in the 8 S tep Process from those of the traditional ( 4 Step ) 
+services. An explanation of this will be shown in the implementation steps below. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Downtime
+Downtime2,000 hrs 2,000 hrs 2,000 hrs
+Traditional PM 1,2,3 & 4 System
+8 Step PM System
+2,000 hrs 2,000 hrs 2,000 hrs
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+8 Step Preventive Maintenance Process 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+1011-1.01-1219 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+ 
+3.0 Implementation Steps 
+ 
+There may be various methods of implementing the 8 Step PM Process. Execution of the process 
+may best be carried out from new or in conjunction with the next 2,000 hour PM. 
+ 
+ 
+3.1 Time and Task Redistribution  (Example) 
+ 
+8 Step Blend
+Fixed 250 hr interval - Wash on every service
+Traditional Blend 250 / 500 / 1000 / 2000 hr service items.
+250 500 1000 2000 250 500 750 1000 1250 1500 1750 2000
+Interval PM 1 PM 2 PM 3 PM 4 PM 1 PM 2 PM 3 PM 4 PM 5 PM 6 PM 7 PM 8
+Oils
+Engine Oil - Change (ORS?) 500 x x x x x x x
+Front Wheel Oil - Change 500 x x x x x x x
+Torque Converter and Trans Oil - Change 1000 x x x x
+Engine Coupling Oil - Change 2000 x x
+Hydraulic Tank Oil - Change 2000 x x
+Steering System Oil - Change 2000 x x
+Differential and Final Drive Oil - Change 2000 x x
+Filters
+Brake Actuation Oil Filter - Replace 500 x x x x x x x
+Brake Cooling Oil Filter - Replace 500 x x x x x x x
+Differential and Final Drive Oil Filter - Replace 500 x x x x x x x
+Engine Coupling Oil Filter - Replace 500 x x x x x x x
+Engine Oil Filter - Change 500 x x x x x x x
+Fuel System Priming Filter - Replace 500 x x x x x x x
+Fuel System Secondary Filter - Replace 500 x x x x x x x
+Pump and Motor Case Drain Oil Filter - Replace 500 x x x x x x x
+Steering System Oil Filter - Replace 500 x x x x x x x
+Torque Converter Oil Filter - Replace 500 x x x x x x x
+Transmission Oil Filter - Replace 500 x x x x x x x
+Engine Air Filter Primary Element - Clean/Replace 2000 Based on Condition  
+ 
+Figure 3.1: This is a demonstration of a set of scheduled oil and filter change tasks. It consists of 
+both the traditional system and the 8 Step Process from which the scheduled oil tasks will be 
+transferred to. 
+ 
+ 
+Figure 3.1 demonstrates task redistribution from the Traditional  4 Step  System to the 8 Step 
+Methodology for oil and filter changes. The service regime in this example is based on a 250-hour 
+interval over 2000 hours for a fleet of 797B trucks. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+8 Step Preventive Maintenance Process 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+1011-1.01-1219 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+8 Step Blend
+Fixed 250 hr interval - Wash on every service
+Traditional Blend 250 / 500 / 1000 / 2000 hr service items.
+250 500 1000 2000 250 500 750 1000 1250 1500 1750 2000
+Interval PM 1 PM 2 PM 3 PM 4 PM 1 PM 2 PM 3 PM 4 PM 5 PM 6 PM 7 PM 8
+Oils
+Engine Oil - Change (ORS?) 500 x x x 20 20 20 20
+Front Wheel Oil - Change 500 x x x 15 15 15 15
+Torque Converter and Trans Oil - Change 1000 x x 20 20
+Engine Coupling Oil - Change 2000 x 15
+Hydraulic Tank Oil - Change 2000 x 35
+Steering System Oil - Change 2000 x 10
+Differential and Final Drive Oil - Change 2000 x 40
+Filters
+Brake Actuation Oil Filter - Replace 500 x x x 10 10 10 10
+Brake Cooling Oil Filter - Replace 500 x x x 15 15 15 15
+Differential and Final Drive Oil Filter - Replace 500 x x x 10 10 10 10
+Engine Coupling Oil Filter - Replace 500 x x x 10 10 10 10
+Engine Oil Filter - Change 500 x x x 10 10 10 10
+Fuel System Priming Filter - Replace 500 x x x 5 5 5 5
+Fuel System Secondary Filter - Replace 500 x x x 5 5 5 5
+Pump and Motor Case Drain Oil Filter - Replace 500 x x x 5 5 5 5
+Steering System Oil Filter - Replace 500 x x x 5 5 5 5
+Torque Converter Oil Filter - Replace 500 x x x 10 10 10 10
+Transmission Oil Filter - Replace 500 x x x 15 15 15 15
+Engine Air Filter Primary Element - Clean/Replace 2000
+Totals 60 90 95 95 70 75 100 95
+Average
+Based on Condition
+85  
+ 
+Figure 3.2: This is the same example as Figure 3.1 but with the distribution of tasks being 
+allocated with their approximate amount of minutes for completion. 
+ 
+The crosses (x) in the Traditional System columns represent the tasks to be completed for eac h 
+service. The numbers in the 8 Step Process columns represent the approximate time (minutes) 
+taken to complete the task.  
+ 
+The key is to re distribute the tasks without affecting the task interval and equalizing the overall 
+time taken for each service in 8 Step Process. The exercise should be repeated for all lube, 
+maintenance and mechanical inspection (preventive maintenance) tasks. Once all tasks have 
+been redistributed, sum up the total time taken and ensure the duration for each Step of service is 
+roughly the same. An example is shown Figure 3.2 above. 
+ 
+The 8 Step Process can also be applied to 500 -hour interval over 4000 hours for any flee t of 
+machines. However, the maintenance organization should consider the following factors when 
+determining service interval:   
+ 
+• OEM maintenance recommendations 
+• Overall maintenance strategy 
+• The size and number of machines in the fleet  
+• Labor requirements 
+• On-site tooling and infrastructure 
+• Site conditions 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+8 Step Preventive Maintenance Process 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+1011-1.01-1219 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+3.2 Change Management 
+ 
+The role of a process owner is critical to a successful transition. He/she should be assigned with 
+the authority and budget to facilitate the implementation of the program. Their responsibilities 
+should include the education and communication to the relevant stakeholders t o ensure their 
+support in the 8 Step Process implementation. Stakeholders include positions such as; 
+Maintenance Superintendent, Planner, Scheduler, Maintenance Supervisor, PM Supervisor, Fleet 
+Analyst, Technicians, Technical Communicator and the Production Department.  
+ 
+What has been  found from previous experience is to engage key stakeholders early in the 
+process so that everyone within the organization understands the r easons and benefits. To 
+ensure buy-in and ownership from all affected parties it is best to  utilize team members from all 
+levels of the organization when defining the process and building the checklists. 
+ 
+ 
+4.0 Benefits 
+ 
+The purpose and benefits of the 8 Step Preventive Maintenance (PM) Process are as follows: 
+ 
+• Improve PM efficiency. 
+• Opportunity to plan and schedule efficient and effective backlog completion at every PM. 
+• Reduce machine down time through improved machine and fleet reliability. 
+• Improved planning and scheduling of the PM plan.  
+• Improved production planning for scheduled PM downtime. 
+• One crew in one shift can complete the PM service, improving accountability and loss of 
+time over shift changes etc. 
+• Dedicated and consistent number of people required for each service. 
+• Ability to schedule consistent number of PM’s per shift 
+o i.e. Two PM’s per day, one each shift 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+8 Step Preventive Maintenance Process 
+DATE 
+6/17/2011 
+CHG 
+NO 
+01 
+NUMBER 
+1011-1.01-1219 
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+5.0 Resources Required 
+ 
+Please refer to Best Practice “1007-2.0-1101 – Preventive Maintenance Strategy” for basic 
+resources requirement 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+• 8-Step vs 4-Step PM Calculator.xls 
+• 8-Steps PM Program.ppt 
+• 785C 8 Step info.xls 
+• PM Schedule test.xls 
+• 8 Step Master.xls 
+ 
+ 
+ 
+ 
+7.0 Related Best Practices 
+ 
+Best Practice 1007-2.0-1101 – Preventive Maintenance Strategy 
+Best Practice 1007-2.0-1100 – Maintenance and Repair Processes 
+Best Practice 0607-2.9-1081 – Improved PM Operations Using Specialized Bay 
+ 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This 8 Step PM Process Best Practice was created by:  
+ Rex Cheung  
+ Development Engineer 
+ Caterpillar Global Mining 
+ +613 9953 9962 
+ Cheung_Rex@cat.com 
+ 
+Please Contact the author for further details or information regarding this Best Practice.  
+ 
+Special mention must be made of Caterpillar Global Mining, WesTrac and Hastings Deering for 
+their willingness to share this Best Practice.

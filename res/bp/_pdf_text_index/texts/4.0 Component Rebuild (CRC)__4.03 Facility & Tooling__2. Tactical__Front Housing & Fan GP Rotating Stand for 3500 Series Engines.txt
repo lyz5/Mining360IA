@@ -1,0 +1,245 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Front Housing & Fan GP 
+Rotating Stand for 3500 
+Series Engines  
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Front Housing & Fan GP Rotating Stand for 3500 
+Series Engines ........................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+March 2014 
+1401-4.03-1334 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+ 
+Borusan Makina Kazakhstan designed the adapter to the original CAT revolver for assembling C 
+series and smaller engines that has improved the disassembly/assembly process of 3500 series 
+engine front housings. Also the plate has been developed to this adapter that allows 
+disassembling/assembling 3500 series and C32 engines fan group as well.  
+ 
+Without using the revolver with the adapter, the front housing was disassembled/ assembled on 
+the table involving two technicians. It was inconvenient and required more efforts and man-hours.  
+ 
+Thus, the new tool is easier and safer to assemble front housings and fan group with one 
+technician. 
+ 
+EDITOR’S NOTE:  Given the cantilever load, proper safety precautions should be taken to 
+prevent accidental falling of the loads. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+It is a mobile tool with a 360
+0 revolving forklift puller and 4 x fastening screws, and an additional 
+plate for fan group. 
+ 
+ The revolver with the forklift puller           The revolver with the plate  
+         for front housings                   for fan group 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The Front Housing Revolver in use.  
+ 
+The Front Housing Assembly Process as an example. 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Housing & Fan GP Rotating Stand for 3500 
+Series Engines 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1401-4.03-1334 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1. The forklift puller is bolted to the revolver. 
+ 
+ 
+ 
+2. Use 4 x fastening screws to install the front housing onto the revolver. 
+ 
+ 
+ 
+3. The assembly has been started.  This tool allows revolving the front housing to  any position 
+you need to do the job conveniently.  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Housing & Fan GP Rotating Stand for 3500 
+Series Engines 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1401-4.03-1334 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+The Front Housing Revolver with the plate in use.  
+ 
+The Fan GP Assembly Process as an example. 
+ 
+1. The plate is bolted to the forklift puller. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2. Use 4 x fastening screws to install the fan group onto the revolver. 
+            
+ 
+3. The assembly has been started. This tool allows revolving the front housing to  any position 
+you need to do the job conveniently. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Housing & Fan GP Rotating Stand for 3500 
+Series Engines 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1401-4.03-1334 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+4.0 Benefits 
+ 
+• Makes the work on disassembling/assembling front housings and fan group easier, more 
+convenient & safer. 
+• Reduces significantly man-hours (now only one technician can handle this job). 
+ 
+ 
+5.0 Resources Required 
+ 
+• The CAT revolver consisting of Stand (Part No 1U5750) & 2 x Adapters (Part Nos: 1U-
+5749, 1U-7508); 
+• All required parts (name, size, number & material) to fabricate the adapter and the plate 
+are indicated in the drawings attached.  
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+The adapter and the plate fabrication drawings are attached to this Best Practice. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+ 
+8.0 Acknowledgements 
+ 
+The idea of creating & implementing this Best Practice belongs to: 
+ 
+Ali CEKIC     Almaz KENZHETAYEV 
+Engine Team Leader     Machine Shop Supervisor 
+Borusan Makina Kazakhstan LLP   Borusan Makina Kazakhstan LLP 
+acekic@borusan.com      akenzhetayev@borusan.com 
++7 (701) 951 97 97     +7 (701) 803 04 87 
+ 
+ 
+Vassiliy FISSINETS    Andrey ASMUS 
+Machine Shop Welder     Machine Shop Welder 
+Borusan Makina Kazakhstan LLP    Borusan Makina Kazakhstan LLP 
++7 (705) 831 37 38     +7 (700) 929 35 93 
+ 
+This Best Practice was written by: 
+Bauyrzhan AKHANOV    Gulnaz MANSUROVA 
+Designer      CRC Process Engineer  
+Borusan Makina Kazakhstan LLP   Borusan Makina Kazakhstan LLP  
+bakhanov@borusan.com    gmansurova@borusan.com    
++7 (700) 383 08 58     +7 (701) 951 98 14 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Front Housing & Fan GP Rotating Stand for 3500 
+Series Engines 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1401-4.03-1334 
+Caterpillar Confidential:  GREEN          Page 4 of 4

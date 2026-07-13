@@ -1,0 +1,248 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Improved Method of 
+Shimming and Replacing 
+OHT Tray Pads 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+Improved Method of Shimming and Replacing OHT 
+Tray Pads................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+The following document is provided as a resource for Caterpillar dealers and customer mine sites. Content was provided 
+by one mine site to be shared with others as a suggested practice. Caterpillar shares it with you as a reference, not a 
+requirement, and has not written, edited, validated, or specifically endorsed the content. Caterpillar reserves the right to 
+add to, delete from, or remove this document entirely at any time in the future. 
+ 
+ 
+ 
+ 
+  
+June 2012 
+1204-1.11-1272 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+The clearance between the OHT tray and the truck chassis has to be adjusted to ensure that 
+there are no gaps between the two.  The adjustment is made with the tray empty, and according 
+to the instructions per the maintenance manual. 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice describes the use of a fabricated stand installed on both sides of the chassis 
+rails.  The fabricated stand is roughly 350mm in height for a 793 truck, but the exact height will 
+vary depending on the OHT model.  When used, the stands are securely clamped to the chassis 
+rails with the tray resting on them.  With the use of these stands the mechanic/ technician does 
+not have to work with their arms raised and the risk of dropping of shims and bolts is lessened.  
+Furthermore, the mechanic/ technician can work on a platform that is lower to the ground reducing 
+working at height risks/ injuries. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 1 shows a typical tray with the pad locations.  The idea is to slip a stand between the 
+chassis and the tray at the rear of the pads.  The pads can therefore be shimmed without 
+obstructions.   
+ 
+Figure 2 shows one fabricated stand.  The stands are always used as a pair with one stand on 
+either side.  The height and shape of the stand will depend on the machine model.  The one in 
+figure 2 was used on a 793 OHT and is roughly 350mm in height.  The stands should be high 
+enough to allow the rearmost pad to be adjusted while not putting the front most pad too high.  
+The model and the desired height of the stand also determine the angle of the top plate of the 
+ 
+Figure 1:  Location of pads on tray 
+ 
+Figure 2:  Fabricated stand 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Method Of Shimming & Replacing OHT Tray 
+Pads 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1204-1.11-1272 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+stand.  The bottom edge of the stand has nuts welded on both sides to secure the stand onto the 
+chassis with bolts performing a clamping effect. 
+ 
+The stand shown in figure 2 is an actual stand that had been made for a 793D truck.  The picture 
+also shows the manufacturer’s certification and testing plates.  These are support stands and 
+must therefore be fabricated by accredited manufacturers of stands to the appropriate 
+certified carrying capacities.  Figure 3 shows some general details of the stands in a simplified 
+drawing. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Once the benefits of using these stands are recognized, an accredited supplier needs to be 
+selected and the stands built. 
+1. Provide instructions on the use of such stands. 
+2. Select an accredited manufacturer / fabricator. 
+3. Measure appropriate machine models. 
+4. Have the stands built according to any local legislations, regulations, and safety standards.  
+5. Draft procedures on the use of the stands. 
+6. Provide instructions on the use of the stands. 
+7. Locate proper storage area for stands. 
+8. Include the stands on the standard periodic testing list of lifting gear and support stands. 
+ 
+4.0 Benefits 
+ 
+1. Ability to perform the task in a more comfortable position. 
+2. There is less risk of injury if a shim or bolt is accidentally dropped when performing the 
+task. 
+3. The job is performed at a lower position in relation to the ground. 
+4. The job is potentially done in a shorter time. 
+ 
+Provision for 
+forklift tyne 
+Welded nuts on both sides for 
+bolts to clamp onto chassis 
+Lifting eyes 
+front and back 
+Angle on top plate 
+depends on model 
+Height to 
+suit model 
+Width to 
+suit model 
+Important Note: 
+Stand must be fabricated by accredited 
+manufacturer for supporting structures. 
+Fig 3:  General details of the fabricated stand 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Method Of Shimming & Replacing OHT Tray 
+Pads 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1204-1.11-1272 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+5.0 Resources Required 
+ 
+A competent individual, structural engineer or organization to design and manufacturer the stands 
+to meet appropriate load bearing capacity for the OHT tray. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Service Information System: 
+Body pads adjustment procedure 
+Body pads installation 
+ 
+7.0 Related Best Practices 
+ 
+No related Best Practices 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice is written with information collated at: 
+ 
+WesTrac Pty Ltd 
+Boddington MARC Site 
+Newmont Boddington Gold Mine 
+Western Australia, Australia 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Improved Method Of Shimming & Replacing OHT Tray 
+Pads 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1204-1.11-1272 
+Caterpillar Confidential:  GREEN          Page 3 of 3

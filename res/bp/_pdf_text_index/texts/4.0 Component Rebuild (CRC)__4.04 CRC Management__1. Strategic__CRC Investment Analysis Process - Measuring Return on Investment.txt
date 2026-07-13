@@ -1,0 +1,232 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+CRC Investment Analysis 
+Process – Measuring 
+Return on Investment 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+CRC Investment Analysis .......................................... 0
+ 
+Process – Measuring Return on Investment .............. 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+September 2006 
+0906-4.5-1013 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Most dealerships require a formal return on investment analysis be performed to measure the 
+expected return on any proposed significant investment. This process is necessary to assure that 
+company funds are used wisely and create a satisfactory return on the investment. 
+ 
+It is important, especially in the case of investments made in the Component Rebuild Center 
+(CRC) or other service area, to be sure that the full impact of the investment is properly measured 
+and analyzed. Important benefits of service shop investments are easily overlooked and thus 
+decisions are sometimes made on incomplete data. 
+ 
+This Best Practice compiles a list of potential benefits to consider when evaluating a CRC 
+investment. The ideas have been combined from the practices of several dealerships. 
+ 
+2.0 Best Practice Description 
+ 
+CRC Investments are typically made to achieve a performance result leading to a profit 
+improvement. Here are the most common reasons for shop investments: 
+ 
+• Improved Labor Efficiency. This is a process change to reduce the labor required to 
+perform a service. It is important to recognize that a labor efficiency improvement also has 
+impact on profit margins, shop capacity, and work order turnaround time (velocity). An 
+example of this type of investment is tooling improvements, which reduce the time a 
+mechanic takes to perform a task. 
+• Improved Rebuild Quality. A rebuild quality improvement lowers warranty costs and 
+creates a cost-avoidance benefit. If a dealer has MARC contracts, a quality improvement 
+also increases rebuild reliability and component life. Component life improvement reduces 
+cost per hour and can mean substantial financial benefit. A good example is 
+testing/inspection equipment or contamination control equipment. 
+• Cost Reduction. This is an improved process or technology that lowers shop operating 
+costs.  
+• Revenue Creation. Investments made to increase sales.  
+• Add Capability. An investment made to provide a service or shop support capability not 
+currently available. This can create new revenue or lower cost. A good example is 
+investing in spray weld or machine shop technology. 
+• Increase Capacity. Such investments improve processes and efficiency, resulting in lower 
+work order turnaround time. Examples include adding additional facility space or 
+technicians. 
+• Support Marketing. Service capability is often important in supporting the marketing 
+efforts of new machine sales, parts sales, MARC contracts, etc. 
+• Enhance Image. An investment to improve both internal and external image. Internal 
+image is an environment that serves to motivate technicians/ staff towards higher 
+performance at many levels, while external image projects quality and professionalism to 
+the customer. 
+ 
+Many of the above improvements (investments) result in a direct, or indirect, financial benefit. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Investment Analysis Process - Measuring Return 
+on Investment 
+DATE 
+2/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0107-4.5-1054 
+Caterpillar Confidential:  YELLOW          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+The typical investment analysis is a basic cash flow forecast.  It may or may not capture the full 
+impact of an investment on the bottom line.  It is important that any investment under 
+consideration be fully explored to capture both the obvious and the “hidden” value. 
+ 
+3.0 Implementation Steps 
+ 
+The following is a collection of investment analysis process “tips” successfully used by a number 
+of dealers. 
+ 
+• Flat rates are vital. It is critical to apply flat rated standard segments, at least for the 
+labor portion, to all work orders. For example, a certain repair may require10 hours 
+labor to perform. Tooling improvements may allow the job to be performed in eight 
+hours labor in the future. If the charge to the customer is reduced to eight hours, you 
+actually end up selling fewer hours and will never pay for the tooling. If you charge the 
+10-hour flat rate and do the work in eight hours, you have significantly increased the 
+profit margin on the job. 
+Note: You may also be able to build a financial case for charging only the 8 hours if this 
+lower price to your customers creates more business and you can sell the 2 hours that 
+you saved on another job. 
+• CRC or shop investments may be assessed at the shop and/or the enterprise 
+impact level. Labor revenue alone may not be sufficient to justify a significant 
+investment, but there may be influence on parts sales as well as machine sales. A poor 
+investment from the shop perspective may be a good investment from the company 
+perspective. 
+• Be very thorough with capturing the benefits of efficiency improvements. Labor 
+efficiency improvements have a compounded impact on profits. In the above-mentioned 
+example of a 10-hour job, you invest in tooling to do the job in 8 hours and charge a flat 
+rate equal to 10 hours. The 2 hours that you saved becomes pure profit at your full 
+selling rate and substantially changes your profit margin for that job. Be sure that your 
+investment analysis spreadsheet reflects the higher margin. Now, the 2 hours saved 
+effectively increase your shop capacity and can be sold on other jobs. This additional 
+revenue should also be captured in your analysis. 
+• Measure cost-avoidance benefits. Reduced costs and cost avoidance goes directly to 
+your bottom line as increased profit. Cost avoidances are hard to capture, but are very 
+real. Improved quality lowers warranty costs and increases average component life. 
+Lower warranty cost improves your profits, and if you have CSAs, better average 
+component life reduces your contract expenses.  
+• Utilization of assets benefit. Better use of assets can be a major benefit. If you 
+improve efficiencies and processes to reduce component turnaround time, you have 
+added capacity to your shop using the same resources. This enables your shop to 
+handle more workload. One dealer cancelled plans for a $1.5 million dollar shop 
+expansion when they were able to improve shop turnaround time 25%. The capacity 
+improvement made the investment unnecessary at present and forecast workloads. 
+Another dealer reduced their major component exchange inventory by several million 
+dollars due to improved component rebuild turnaround time in the shop. The exchange 
+components were to support a fleet of 793’s. Better utilization of assets represents a 
+benefit that needs to be part of your analysis. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Investment Analysis Process - Measuring Return 
+on Investment 
+DATE 
+2/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0107-4.5-1054 
+Caterpillar Confidential:  YELLOW          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Future machine population. Most investment analysis spreadsheets look at a 10-year 
+return on investment. Looking out ten years, your analysis should reflect shop business 
+volume considering present and forecast machine populations.  
+ 
+Improvement investments should always be carefully considered. Cash flow forecasts typically 
+have assumptions built into the calculations such as margins, volume of sales, etc. When 
+investment impacts efficiency, capacity, turnaround time, quality, cost reductions, or any other 
+etc, it is important to ensure that the financial forecast, used to calculate return on investment, 
+reflects the improvement created by the investment. 
+ 
+4.0 Benefits 
+ 
+• Investment analysis is performed capturing all costs and benefits. 
+• Shop as well as enterprise impact is considered. 
+ 
+5.0 Resources Required 
+ 
+ N/A 
+ 
+6.0 Supporting Attachments / References 
+ 
+N/A 
+ 
+7.0 Related Best Practices 
+ 
+Improving CRC Rebuild Turnaround Time  0906-4.5-1013 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Dale Bream 
+6 Sigma Black Belt 
+Global Mining Product Support 
+brehm_dale_e@cat.com 
+309 –675-6325 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Investment Analysis Process - Measuring Return 
+on Investment 
+DATE 
+2/19/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0107-4.5-1054 
+Caterpillar Confidential:  YELLOW          Page 3 of 3

@@ -1,0 +1,208 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+March 2013 
+1301-1.04-1301 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Portable In-Pit Welding 
+Shop for Shovel Bucket 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Portable In-Pit Welding Shop for Shovel Bucket ........ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 1 
+5.0 Resources Required .......................................... 1 
+6.0 Supporting Attachments / References ............... 2 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Portable In-Pit Welding Shop For Shovel Buckets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-1.04-1301 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+ 
+1.0 Introduction 
+ 
+Each time a bucket intervention is required on a shovel’s bucket, the mine needs to erect a portable 
+shelter made of plywood around the bucket. It has been decided to have a long term vision for these 
+frequent interventions. As the mine gets sub-zero temperatures 5 ½ months per year, provision needs 
+to be made for shelter and heating for Workers. This shelter needs to be quickly commissioned to 
+reduce downtime and gain efficiency.  
+ 
+ 
+2.0 Best Practice Description 
+ 
+A day or two prior to a service on the shovel, the portable welding shop is towed to a suitable site 
+near the shovel. The compressor, generator and heating systems are hooked up along with the roll-
+off container containing the gases, welders and rods.  
+On the service day the roof and access doors are opened. The shovel walks a short distance to place 
+its bucket on the 4 support legs and the shelter is then closed over the stick and bucket.  
+700000 BTU (5000 CFM) heating is made through holes in the floor that are connected through the 
+under floor heat plenum.  Three fan with 3000 CFM each are install at the top to evacuate welding 
+fume and gas. 
+Powerful 12 volts LED lighting is permanently installed in the roof.  
+ 
+3.0 Implementation Steps 
+ 
+Axles and steel were purchased to fabricate the trailer and the sub-floor for the heating plenum. The 
+building itself had to be dimensioned to accommodate the loading tool configuration. Different shaped 
+wood panels for different shovels can be fabricated to wrap around the stick. The moveable roof 
+section glides on rollers to open and close.  The dimension for the welding shop is 26' large x28' long 
+x16' high 
+ 
+4.0 Benefits 
+ 
+• 4-5 days time gains on every intervention compared to the former building of a wooden shed.  
+• Dramatic improvement on welder’s efficiency.  
+• Work quality improvement linked to the more efficient set-up and elimination of wind drafts.  
+• Gains on employee’s safety.  
+ 
+5.0 Resources Required 
+ 
+• Welder’s team interviews to identify needs  
+• Engineer to draw the plans  
+• Welding team to build the structure  
+• Electricians  
+• Plumbers. 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Portable In-Pit Welding Shop For Shovel Buckets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-1.04-1301 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+6.0 Supporting Attachments / References 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Portable In-Pit Welding Shop For Shovel Buckets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-1.04-1301 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+ 
+Gooseneck to hook on tow truck 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Portable In-Pit Welding Shop For Shovel Buckets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-1.04-1301 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Portable In-Pit Welding Shop For Shovel Buckets 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1301-1.04-1301 
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+ 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+Cliffs Natural Resources 
+BLOOM LAKE IRON ORE MINE 
+Fermont, Quebec, Canada

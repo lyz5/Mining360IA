@@ -1,0 +1,252 @@
+SOURCE: 1.0 Maintenance & Repair\1.10 Continuous Improvement\3. Quick Win\Truck 793D - Hinge installation on the hydraulic tank cover.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2021 
+1.10-210217-1 
+  
+ Caterpillar: Confidential Yellow 
+ 
+ 
+ 
+ 
+CATERPILLAR DEALER BEST PRACTICE 
+Truck 793D Hinge 
+installation on the 
+hydraulic tank cover 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+Truck 793D Hinge installation on the hydraulic tank 
+cover ............................................................................. 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best practice description. .................................... 3 
+3.0 Implementation steps. ......................................... 4 
+4.0 Benefits. ............................................................... 4 
+5.0 Resources required. ............................................ 5 
+6.0 Supporting attachments / References. ............... 5 
+7.0 Related best practices......................................... 5 
+8.0 Acknowledgments. .............................................. 5 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+CATERPILLAR DEALER BEST PRACTICE  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Truck 793D Hinge installation on the hydraulic tank 
+cover 
+DATE 
+2/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-210217-1 
+Caterpillar Confidential:  Yellow           Page 2 of 5 
+1.0 Introduction 
+  
+We have in the routine of preventive maintenance to remove the cover of the hydraulic tank, to make 
+cleaning inside the hydraulic tank; we evaluate and observe a risk in this activity. 
+We then decided to develop a best practices, installing a hinge on the hydraulic tank cover has an 
+ergonomic criterion and safety action. 
+ 
+ 
+ 
+ 
+ 
+View of the open tank, without removing the cover. View of the installation location of the hinges. 
+  
+                                                                                                         
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+CATERPILLAR DEALER BEST PRACTICE  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Truck 793D Hinge installation on the hydraulic tank 
+cover 
+DATE 
+2/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-210217-1 
+Caterpillar Confidential:  Yellow           Page 3 of 5 
+2.0 Best practice description.     
+                                                                                                                                                                                                                     
+The purpose of installing a hinge on the cover of the hydraulic tank; It has the objective of reducing 
+the risk, during the removal of the cover, to clean the internal part of the hydraulic tank, due to the 
+weight (42kg), with difficult lifting point, time gain and simplifying the activity, being necessary only to 
+be only one person is needed to do the job. 
+ 
+ 
+  
+ 
+ 
+View of the open tank, with the aid of hinges and facility to open and close the hydraulic tank. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+CATERPILLAR DEALER BEST PRACTICE  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Truck 793D Hinge installation on the hydraulic tank 
+cover 
+DATE 
+2/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-210217-1 
+Caterpillar Confidential:  Yellow           Page 4 of 5 
+3.0 Implementation steps. 
+ 
+This step is very simple; With the hydraulic tank empty, the cover in place, with the specific torque 
+applied to the screws 30 lb / ft; weld two hinges (328-6156) one at each end of the cover so that the 
+space for the cover fixing screws is free to be installed and removed.. 
+ 
+ 
+Hinges installation location.  
+ 
+ 
+ 
+4.0 Benefits. 
+ 
+       • Reduces  the risk of injury when removing the cover from the hydraulic tank. 
+ 
+       • Time savings during the cleaning activity of the inside of the hydraulic tank. 
+         
+       • Reduces  the number of people to do the internal cleaning of the hydraulic tank.       
+        
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+CATERPILLAR DEALER BEST PRACTICE  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Truck 793D Hinge installation on the hydraulic tank 
+cover 
+DATE 
+2/17/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-210217-1 
+Caterpillar Confidential:  Yellow           Page 5 of 5 
+5.0 Resources required. 
+ 
+We can use the PM 4000 opportunity window where the hydraulic system oil is drained or repairs 
+to the system, replacing the brake cooling pump, cleaning the tank, to apply the improvement. 
+ 
+One hour of the welder's labor, two hour of the mechanic and Parts total cost (~$200.00). 
+ 
+       
+6.0 Supporting attachments / References. 
+ 
+It is essential that all applicable safety measures and procedures are carried out. For more 
+information refer to the operation, maintenance, service manual and general welding procedures 
+as well as those measures outlined by the executing parties, mine regulations and associated 
+agencies. 
+ 
+REHS1841 – General Welding Procedures: Welding on Fuel Tanks and Hydraulic Tanks 
+ 
+ 
+7.0 Related best practices. 
+ 
+Installed in a large part of the iron mine's 793D truck fleet, with excellent acceptance by the 
+preventive maintenance team. 
+ 
+ 
+8.0 Acknowledgments. 
+ 
+Thanks to the engineering team and customer, for accepting the Project. 
+ 
+ 
+ 
+Joaquim Natividade Jesus. 
+ 
+Technical analyst. 
+ 
++55 94 8123 0522 
+Joaquim.jesus@sotreq.com.br 
+ 
+Corporate Mining Engineering Sotreq.

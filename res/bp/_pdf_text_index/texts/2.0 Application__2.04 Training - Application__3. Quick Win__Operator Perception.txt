@@ -1,0 +1,261 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2022 
+2.04-220218-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Operator Perception 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Operator Perception ..................................................... 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description.................................... 2 
+3.0 Implementation Steps ......................................... 3 
+4.0 Benefits ................................................................ 3 
+5.0 Resources Required ........................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices........................................ 4 
+8.0 Acknowledgements ............................................. 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Operator Perception 
+DATE 
+2/18/2022 
+CHG 
+NO 
+00 
+NUMBER 
+2.04-220218-1 
+Caterpillar: Confidential  Yellow          Page 2 of 4 
+1.0 Introduction  
+ 
+Tire expenses on large mining trucks is often a very significant portion 8-15% of the hourly 
+operating costs of the hauling fleet.  “A rock the size of a fist is large enough to cause damage to 
+equipment tires” is a common statement that is used to help educate operators as to what size 
+spillage and rocks should be avoided along the haul road.   
+ 
+When the operator returns to the cab of a mining truck however, a rock that could damage the 
+tires can now appear extremely small and insignificant.  The perception of the rocks spilt onto the 
+haul road changes significantly and the operator may elect to drive over these sections without 
+full recognition of the potential consequences. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.0 Best Practice Description 
+ 
+To improve these operator perception issues Bulga Coal Mine site has initiated a tire awareness 
+campaign utilizing Wiffleballs. These wiffleballs are highly visible and of an equivalent size to the 
+rocks that the pit supervisors would like operators to avoid however if hit will not cause damage to 
+the tires.  Details as to how this campaign is managed is listed within the implementation steps 
+below.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Wiffleball Campaign 
+Softball Diameter – 8.9 cm 
+Baseball Diameter – 7.6cm  
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Operator Perception 
+DATE 
+2/18/2022 
+CHG 
+NO 
+00 
+NUMBER 
+2.04-220218-1 
+Caterpillar: Confidential  Yellow          Page 3 of 4 
+3.0 Implementation Steps 
+ 
+1. During Pre-shift meeting, pit supervisor raises the issue of damaging tires and quotes 
+statistics on the costs to their site due to rock cuts.  
+ 
+2. The whiffle balls are passed around to operators as an example of the size of rocks that can 
+cause damage. 
+ 
+3. During the shift, the pit-supervisor is to distribute the brightly colored wiffleballs within the load 
+areas, along the haul roads and dump areas where spillage is often found. 
+ 
+4. Operators are then able to identify the wiffleball along the road and understand what a rock of 
+that size would look like from the cab of a truck.   
+(The intent of the campaign is not to treat the wiffleballs as if they were a rock.  
+Operators can elect to run over / straddle / drive around the balls during the shift.  The 
+intent is to ensure that they improve the understanding of what rocks should be avoided 
+in future.) 
+ 
+5. Upon the completion of shift, a debrief is conducted to discuss how the operator perception 
+campaign has affected operators and to hear their thoughts on the exercises. 
+ 
+6. Ongoing monitoring of tire average life will establish the value of this program on your site. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+There are many benefits that were observed throughout the campaign.   
+In addition to the direct perception improvements and corresponding average tire life 
+improvements, the wiffleballs were seen in many areas throughout the site.  
+They were on display within the prestart and operator lunchrooms.  Most managers had a 
+wiffleball on their desks all highlighting their support for a common goal to improve tire life and 
+reduce costs on site.   
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Operator Perception 
+DATE 
+2/18/2022 
+CHG 
+NO 
+00 
+NUMBER 
+2.04-220218-1 
+Caterpillar: Confidential  Yellow          Page 4 of 4 
+ 
+ 
+ 
+5.0 Resources Required 
+ 
+The costs of the wiffleball campaign are relatively low.  Bulk purchases of the wiffleballs will 
+reduce the per unit cost and should be well under $1 per ball. With the above projections and site 
+history of rock related tire damage it is very easy to justify a campaign of this nature. 
+  
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+ Greg Crabb 
+ Equipment Management Supervisor  
+ Westrac NSW 
+ Greg.Crabb@WesTrac.com.au 
+ 
+ James Apel 
+        Caterpillar Global Mining  
+        Product  Support Specialist Rep 
+        Apel_James@cat.com
+  
+        +61 3 9953 9034 
+ 
+         Hayden Jones 
+         Caterpillar Global Mining  
+         Product Performance Manager 
+         Jones_Hayden_L@cat.com  
+        +61 3 9953 9414 
+ 
+ 
+As Is 2% Tire Life Increase
+Avg tire cost ($) 30,000$             30,000$                      
+Avg tire life (hrs) 5000 5100
+Tires/Truck 6 6
+Operating Cost ($/hr) 36.00$               35.29$                        
+Avg Operating hrs/Annum 6000 6000
+Truck Operating Costs (Tires) 216,000.00$     211,764.71$              
+Truck fleet size 10 10
+Tire Cost/Hr (Fleet) 360.00$            352.94$                      
+Tire Cost/Year (Fleet) 2,160,000.00$ 2,117,647.06$           
+42,353$                      
+Per Truck Estimates
+Per Fleet Estimates
+Annual Value

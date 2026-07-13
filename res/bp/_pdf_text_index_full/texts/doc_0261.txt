@@ -1,0 +1,201 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\3600 & C280 Cam Follower Holding Tools.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+August 2015 
+1508-4.03-1386 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+3600 / C280 Cam Follower 
+Holding Tools 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+3600 / C280 Cam Follower Holding Tools ................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3600 / C280 Cam Follower Holding Tools 
+DATE 
+8/25/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1508-4.03-1386 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction  
+ 
+When completing any work on 3600 / C280 engine camshafts, cam bearings, or timing gears you 
+need to traditionally take the time to remove the rocker gear, push rods and cam followers. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice outlines the use of a hand-crafted tool that eliminates the need to remove all 
+rocker gear, push rods and followers when completing work on 3600 / C280 camshafts, cam 
+bearings and timing gears as stated in the D&A manual. 
+ 
+By connecting a key ring (or some other durable, highly visible tag) to a standard split pin you 
+have a tool that can save lots of disassembly and assembly time. The 3600 Disassembly & 
+Assembly manual states that you must first remove the valve mechanism and valve lifter groups 
+before camshaft work. However by using this tool and procedure you only need to loosen off the 
+valve mechanism on the cam that you are working on. By lifting and inserting the tool into the cam 
+follower oil hole it holds up the weight of the valve mechanism and valve lifter groups.  
+ 
+ 
+ 
+      
+Cam Follower Holding Tool             Tools x3 installed into Cam Followers 
+ 
+ 
+The photo above on the left shows a simple tool that can be manufactured. The photo on the right 
+shows three (3) of the tools holding up the followers on one cylinder. Note in these photos the 
+rocker gear and push rods have been removed (for other reasons) but this is not necessary when 
+using this tool during camshaft work. 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3600 / C280 Cam Follower Holding Tools 
+DATE 
+8/25/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1508-4.03-1386 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+    
+Cam Follower Holding Tools being used             Cam Followers being held up clear of Camshaft 
+ 
+ 
+The split pin does all the work but it’s critical to have a highly visible tag attached to avoid the tool 
+being overlooked and missed on reassembly. The tags also stop the pins falling and getting lost 
+in the cam area or sump if they are accidently dropped. In the photo above right, you can see the 
+followers are held up high and clear of the camshaft lobes allowing uninterrupted work on the 
+camshaft, cam bearings and timing gears. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+1. Manufacture enough cam follower holding pins to hold each follower on the camshaft. This 
+is dependent on the engine configuration. 
+2. Loosen off rocker gear, lift and pin all followers on the camshaft. 
+3. Complete camshaft and/or timing gear work. 
+4. Remove all pins and double check. 
+5. Tighten rocker gear and complete adjustment procedure. 
+ 
+ 
+4.0 Benefits 
+ 
+1. Significantly reduces the time to remove rocker gear, push rods and cam followers. 
+2. Reduces the contamination risks by not removing and cleaning disassembled components. 
+3. Safer working on camshaft and timing gear with all load removed from camshaft. 
+4. Eliminates the risk of mixing push rod and follower locations. 
+5. Faster job completion time. 
+ 
+ 
+5.0 Resources Required 
+ 
+1. 
+9/32 x 11/2” split pins 
+2. Tags that are durable and highly visible. 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3600 / C280 Cam Follower Holding Tools 
+DATE 
+8/25/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1508-4.03-1386 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+N/A 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+ 
+8.0 Acknowledgements 
+ 
+BP produced by  
+Andy Reid – Caterpillar Global Mining, Melbourne 
++61 3 99539136 
+Reid_Andrew_J@cat.com

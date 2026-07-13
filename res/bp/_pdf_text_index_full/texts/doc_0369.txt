@@ -1,0 +1,226 @@
+SOURCE: 5.0 MARC Management\5.04 Financial Management\2. Tactical\ANALYZER - Managing Uncleansed Work Orders.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Managing Historical “Un-Cleansed” 
+Work Orders in Analyzer 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+Managing Historical “Un-Cleansed” Work Orders in 
+Analyzer ..................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+September 2006 
+1006-3.3-1031 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+One of the most important factors when utilizing Analyzer to manage a Maintenance and Repair 
+Contract (MARC) is to ensure that work order data representing repair events is formatted 
+properly and accurately. This document describes the Best Practice for cleaning the data and 
+subsequently managing a backlog of “uncleansed” work-orders. This practice will ultimately 
+reduce resource time required to perform this process, in cases where a MARC becomes active 
+before set-up in Analyzer. 
+ 
+Any work order not meeting Analyzer’s data formatting requirements and/or not accurately 
+representing the actual repair event is considered an un-cleansed work order. 
+ 
+In some cases, MARCS, which are to be managed using Analyzer, become active prior to the 
+implementation or proper set-up in Analyzer. This situation creates a backlog of un-cleansed work 
+orders that must be imported into Analyzer for projection purposes. The longer a  MARC is active 
+prior to the use of Analyzer, the larger this backlog of work orders becomes. Managing a small 
+backlog (≤ 4 months of work orders and/or work orders for ≤ 6 machines) is less complicated and 
+does not consume the amount of worker hours and resources of a large backlog (>4 months of 
+work orders and/or work orders for >6 machines).  
+  
+2.0 Best Practice Description 
+ 
+Currently, the process used to manage a backlog of un-cleansed work orders (large or small) for 
+use in Analyzer has been to review each work order for formatting and repair event accuracy. Any 
+discrepancy must then be corrected prior to Analyzer import.  
+ 
+The process outlined below, provides the user with recommended steps for managing a large 
+backlog of work orders and eliminates the need to review each un-cleansed work order in order to 
+achieve an accurate Analyzer projection. This process does not eliminate the need to provide 
+Analyzer with the required component change-out information in the event a change-out has 
+occurred.  
+ 
+1. Import backlogged work order data into Excel. 
+2. Group work order data by machine. 
+3. Sort each machine’s work order grouping by SMU. 
+4. Sum each machine’s work order grouping amounts. 
+5. In analyzer, create a component code of 9999 Legacy. 
+6. A dd this 9999 Legacy component to each of the existing budgets. 
+7. Create separate maintenance budgets for each machine by using the copy/paste function in 
+Analyzer. 
+8. The 9999 Legacy component in the newly created maintenance budgets for each machine 
+should have the following information entered: 
+ Modifier Code = 00 
+ Quantity Code = 0 
+ System = √ 
+ First Change = The earliest SMU reading of the corresponding machine’s work orders. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Historical Uncleansed Work-orders in 
+Analyzer 
+DATE 
+2/23/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1006-3.3-1031 
+Caterpillar Confidential:  GREEN         Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ Interval = Any hour amount greater than the total expected machine hours (Contract 
+End Hours: i.e. 999,999). 
+ Last Done = 0 
+ Budget Costs = Enter total work order amounts from corresponding machine’s work 
+order grouping. 
+ Duration = 0 
+ Field Hours = 0 
+ Shop Hours = 0 
+ Standard Job No. = Leave Blank 
+9. In each budget, all other components should have the following revision made: 
+ First Change = This will be the sum of the budgeted interval for the component and the 
+SMU when the most recent component change-out occurred. 
+ Last Done = The SMU when the most recent component change-out occurred. 
+ 
+Note: It is imperative that work order coding issues are resolved to match the Analyzer budget as 
+soon as possible, as this process should only be used as a one-time-only resolution. 
+ 
+3.0 Implementation Steps 
+ 
+This process should only be used when a MARC intended to be managed using Analyzer 
+projections becomes active prior to the implementation and/or proper set up of Analyzer and a 
+large backlog of un-cleansed work orders is created.  
+ 
+It should not be used to manage small work order backlogs. It may also result in the inability to 
+utilize Analyzer’s component performance averaging calculations. 
+ 
+4.0 Benefits 
+ 
+• Reduction in worker hours and resources required when cleansing individual backlogged work 
+orders for Analyzer import resulting from a MARC becoming active prior to Analyzer 
+implementation or proper set up. 
+• In addition, the dealer will be able to deploy Analyzer for management of the MARC in a 
+timelier manner. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Full implementation of Analyzer 1.6W is required.  MS Access 2000 (full version), MS Excel 
+• Operations and Financial resources within the Dealership must be accessible to the user. 
+• Trained Analyzer users are critical to the success of this process. Users should have received 
+some form of basic Analyzer training either internally or through Caterpillar. 
+• In addition, users should have a basic understanding of Microsoft Access (MS Access 2000 
+Level 1 & 2).  
+ 
+** Analyzer users should have a full understanding of this best practice prior to its use as it does 
+impact the users ability to use Analyzer’s component performance averaging calculations. 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Historical Uncleansed Work-orders in 
+Analyzer 
+DATE 
+2/23/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1006-3.3-1031 
+Caterpillar Confidential:  GREEN         Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+6.0 Supporting Attachments / References 
+Importing Historical Uncleansed WO in Analyzer.doc – MS-Word document can be found in the 
+Attachments Tab of the pdf file. 
+ 
+7.0 Related Best Practices 
+ 
+0906-3.3-1010 - Analyzer Validation Process 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Jeremy Middleton 
+Caterpillar Global Mining  
+Contract & Controls Analyst 
+Middleton_Jeremy_R@cat.com  
++1-309-675-4531 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Historical Uncleansed Work-orders in 
+Analyzer 
+DATE 
+2/23/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1006-3.3-1031 
+Caterpillar Confidential:  GREEN         Page 3 of 3

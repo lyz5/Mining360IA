@@ -1,0 +1,430 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+777, 785, 789 and 793 OHT 
+Disc Frictions Protection 
+during Pre-washing 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+777, 785, 789 and 793 OHT Disc Frictions Protection 
+during Pre-washing .................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+October 2013 
+1306-4.03-1317 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+A common practice in the repair process of a component is to reuse the component part where 
+possible.   
+ 
+Friction discs, which are part of the brake packs, can be reused under the conditions that are 
+referenced in the guide of reusability SEBF8095-06 Service Brakes for Off-Highway Trucks and 
+Tractors. The guide notes that friction discs that are exposed to water can be damaged and 
+must be replaced, so it is necessary to protect them from water in the pre-wash area. 
+ 
+This Best Practice suggests the use of a brake group protection tool for trucks during the pre-
+wash process.  
+ 
+ 
+ 
+Figure 1.  Brake group exposed. 
+ 
+2.0 Best Practice Description 
+Friction discs are made of different materials depending on the application and equipment (see 
+Figure 2 and Table 1). 
+ 
+Figure 2. Caterpillar friction disc materials 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Protection of the Brake Pack During Washing 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-4.03-1317 
+Caterpillar Confidential:  GREEN          Page 1 of 7 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+The paper disc is made of a chain cellulose (paper) and, for that reason, exposure to water 
+causes the disc to expand thus damaging its adhesive layer.  In addition, the friction material 
+may easily come off during handling and/or installation. 
+ 
+Caterpillar prohibits the use of water, steam, water based solutions, freon, thinner, or ketones to 
+clean the friction discs.  It is recommended to clean with a chlorinated solvent cleaner, diesel 
+fuel, kerosene or petroleum based distillates. 
+ 
+ 
+Table 1. Uses of Friction Material 
+ 
+ 
+Given the damage to the paper disc that is caused by exposure to water, we developed a cover 
+that protects the component during the prewash (Figure 3). 
+ 
+The protective cover includes a circular sheet, steel ring, duo-cone seal and O-ring. The plate is 
+jointed to the circular sheet by welding points and sealed using epoxy (Figures 4 and 5). 
+Between the seal and plate, it is also epoxyed. The O-ring ensures the cover is sealed (See 
+Figure 7). 
+ 
+For a quick setup the cover has a couple of grab handles. 
+ 
+There are three sizes currently in operation (depending on the brake package to be washed) but 
+the design can be adapted to other components using the duo-cone seal respective (Figure 6). 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Protection of the Brake Pack During Washing 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-4.03-1317 
+Caterpillar Confidential:  GREEN          Page 2 of 7 
+
+===== PAGE 4 =====
+ 
+ 
+Figure 3. Protective Cover Installed. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 5. Duo-cone sealed lid by welding. 
+ 
+ 
+Figure 4.  Reinforced duo-cone seal. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 6. Different size protective covers. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Brake 
+System 
+Protective 
+Cover 
+O-Ring 
+Welds 
+Steel Ring 
+ 
+ 
+ 
+ 
+  
+October 2013 
+1306-4.03-1317 
+  
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+   
+Figure 7.  Assembly of protective cover. 
+ 
+ 
+ 
+3.0 Implementation Steps 
+1. Identify the model of the machine to determine the brake pack. 
+2. Select the correct protective cover and O-ring according to Table 2. 
+3. Place the protective cover using the handles. 
+4. Adjust for a tight fit to prevent water from entering the brake housing. 
+ 
+Note: The tool should be washed before and after use. 
+ 
+ 
+4.0 Benefits 
+• The discs are fully protected from water. 
+• Increases the reusability rate of the paper discs. 
+• Protect the other internal components of the brake pack. 
+ 
+ 
+ 
+ 
+ 
+O-Ring 
+Cover 
+Steel Ring 
+Duo-cone seal 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Protection of the Brake Pack During Washing 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-4.03-1317 
+Caterpillar Confidential:  GREEN          Page 4 of 7 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+5.0 Resources Required 
+Construction of the protective cover: 
+• Duo-Cone seal, dimensions: Outside Diameter (see figure 7 and table 2). 
+• Circular steel cover, dimensions: Outside Diameter x 
+   inch. 
+• Steel Ring, dimensions:  
+  x 
+  inches, inner circumference equal to seal. 
+• Steel Rod (grab handles), dimensions:  
+  x 7 inches.  
+• O- ring. Selected according to duo-cone seal.   
+• Epoxy. 
+• Equipment and personnel required to construct protective cover. 
+ 
+ 
+ 
+. 
+  
+Figure 7. Profile view of protective cover. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 8. Detail A. 
+ 
+ 
+ 
+ 
+ 
+O-Ring 
+Duo-cone seal 
+Weld 
+Circular Cover 
+Steel Ring 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Protection of the Brake Pack During Washing 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-4.03-1317 
+Caterpillar Confidential:  GREEN          Page 5 of 7 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+MODEL POSITION 
+BRAKE 
+SERVICE & 
+PARKING GP  
+SEAL DUO 
+CONE GP O-RING PROTECTOR 
+COVER 
+OUTSIDE 
+DIAMETER 
+(mm) 
+777D 
+FRONT 8X-3810 
+297-9546 297-9545 C1-∅21 533.40 247-0066 
+REAR 119-9014 
+247-0064 
+777F 
+FRONT 243-5550 297-9546 297-9545 C1-∅21 533.40 261-2357 
+REAR 
+243-5545 
+365-4920 317-6440 C2-∅22 567.94 
+261-2355 
+261-5545 
+308-3208 
+355-9680 
+777G 
+FRONT 379-1089 
+365-4920 317-6440 C2-∅22 567.94 383-1183 
+REAR 379-1088 
+383-1182 
+785C, 
+785D 
+FRONT 
+5T-3280 
+297-9546 297-9545 C1-∅21 533.40 
+240-4052 
+250-4052 
+257-6302 
+311-0517 
+REAR 
+6G-9385 
+314-4130 314-4129 C3-∅27 700.00 
+240-4051 
+245-6467 
+257-6300 
+311-0516 
+789B, 
+789C, 
+789D 
+FRONT 
+5T-5070 
+297-9546 297-9545 C1-∅21 533.40 106-9885 
+250-4049 
+257-6301 
+REAR 
+5T-4489 
+314-4130 314-4129 C3-∅27 700.00 
+164-6607 
+198-1911 
+250-4048 
+257-6298 
+793B, 
+793C, 
+793D, 793F 
+FRONT 
+8X-0222 
+314-4130 314-4129 C3-∅27 700.00 
+219-0325 
+245-6466 
+250-3938 
+252-8709 
+334-5020 
+REAR 
+8X-0241 
+197-9554 
+250-3940 
+334-5019 
+793D XLP, 
+793F XLP 
+FRONT 188-5020  378-0592  314-4135  C4-∅32 806.70 REAR 188-5019 
+ 
+Table 2. Part numbers and dimensions 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Protection of the Brake Pack During Washing 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-4.03-1317 
+Caterpillar Confidential:  GREEN          Page 6 of 7 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+6.0 Supporting Attachments / References 
+• SIS document: SEBF8095-06 (Service Brakes for Off-Highway Trucks and Tractors) 
+• Cat Friction Material PEHJ0031-01 
+• SIS document: SEHS8484-17 (Tool and Specification Chart for Duo-Cone Seal) 
+ 
+ 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+Name Enrique Urbina 
+Title CRC Development Engineer 
+Email Enrique_urbina@gecolsa.com.co 
+Phone + 57 310 627-1859 
+ 
+Name Manuel Delgado 
+Title CRC Technical supervisor  
+Email Manuel_delgado@gecolsa.com.co 
+ 
+Checked and written by: 
+ 
+Name Ricardo Chegwin 
+Title Technical manager 
+Email ricardo_chegwin@ gecolsa.com.co 
+ 
+Special thanks to: 
+The GECOLSA Development and Engineering Area Team 
+Luis Fernández (Coordinator Best Practices) 
+Johan Navarro (Analista de proceso). 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Protection of the Brake Pack During Washing 
+DATE 
+2/19/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-4.03-1317 
+Caterpillar Confidential:  GREEN          Page 7 of 7

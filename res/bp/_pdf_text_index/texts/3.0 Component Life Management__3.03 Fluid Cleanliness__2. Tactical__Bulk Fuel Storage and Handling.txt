@@ -1,0 +1,275 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Bulk Fuel Storage & 
+Handling 
+ 
+Application Maintenance 
+Component 
+Life 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+Bulk Fuel Storage & Handling .................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+  
+ 
+ 
+ 
+ 
+  
+November 2006 
+1106-2.10-1037 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Mine sites purchase, store, and consume millions of gallons of fuel each year. The quality of fuel 
+is a major factor in machine performance economy and durability. Proper handling and storage 
+can reduce fuel contaminants and contamination related failures. Increasingly complex and 
+sophisticated fuel injection systems require much cleaner fuel than in the past. The use of 
+contaminated fuel in modern fuel systems can cause an unacceptable rate of injector failure and 
+unnecessary repair costs. Proper handling and storage can remove a good portion of fuel 
+contaminants and help improve machine performance. 
+ 
+Since most fuel injector failures or premature wear-outs are the result of contaminated fuel, 
+understanding a few important principles of fuel handling, storage, and tank design will help to 
+reduce unnecessary failures, prolong injector life, maintain fuel economy, and increase machine 
+availability.  
+ 
+2.0 Best Practice Description 
+ 
+The two most common contaminants in the fuel are dirt and water. Excessive dirt causes 
+premature injector wear-out. Excessive water reduces fuel lubricity and can cause injector seizure 
+and contingent engine damage. The two critical factors in fuel quality are: 
+• The cleanliness of fuel delivered to the site 
+• The storage and handling practices used after the fuel arrives  
+ 
+Clean fuel delivered to the machine fuel tank is defined by Caterpillar as ISO 18/16/13 or cleaner 
+with a maximum water content of 500 ppm. 
+ 
+In some geographic areas, fuel suppliers to mines have the infrastructure and discipline to deliver 
+relatively clean fuel. However, in the majority of mining applications that is not the case. Fuel 
+leaving the refinery is transported to remote locations through ships, pipelines, barges and trucks 
+and is often stored in intermediate storage tanks. Each time the fuel is stored or moved, it has the 
+opportunity to attract contaminants. In some cases, gross amounts of water and/or dirt can 
+contaminate the fuel. Much of this can be removed through proper storage and handling. 
+ 
+Fuel Storage Capacity 
+Given adequate storage time, much of the dirt and water in fuel will settle to the bottom of the 
+storage tank if the fuel is left undisturbed. Fuel storage capacity on the site should adequate to let 
+new fuel deliveries settle for 2-3 days before drawing supply fuel from the tank. New fuel should 
+never be added to the tank while the tank is being used for supply. This only serves to stir up 
+settled contaminants on the bottom of the tank and put them back in suspension, contaminating 
+the supply fuel. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Fuel Storage & Handling 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1106-2.10-1037 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Storage Tank Design 
+Regardless of size or shape, fuel storage tanks should have the following key design features: 
+• Sloped tank floor 
+• Well located suction pipe 
+• Desiccant vent filters 
+• Non-corrosive tank lining 
+ 
+Sloped Tank Floor 
+The tank floor should be sloped with a drain at the lowest point. Since water is heavier than fuel, 
+water which settles out of the fuel will flow to the lowest spot in the tank. It can then be easily 
+drained and disposed of. Tanks should be drained frequently to minimize the presence of water 
+on the tank floor. Water provides a breeding ground for bacterial growth, which can cause severe 
+filter plugging on machines and corrosion damage to the storage tank. The frequency of drain 
+intervals depends on ambient temperature and humidity, as well as, the contamination of the fuel 
+being delivered.  
+ 
+Suction Pipe Location 
+The suction pipe on the tank should be well above floor level in order to ensure that only clean 
+fuel is drawn in, and water and dirt have that have settled to the bottom of the tank remain 
+undisturbed. Older design storage tanks often had suction pipes located at or near the bottom of 
+the tank. This kept the tank floor clean by allowing contaminants to flow out with the supply fuel. 
+Most newer design tanks use an elevated suction pipe. Some high quality tanks use a floating 
+suction pipe that rises and falls with the fuel level in the tank. This feature always draws fuel from 
+the highest and cleanest level. 
+ 
+Desiccant Vent Filters 
+Daily temperature changes along with air drawn into the tank as fuel is withdrawn can cause 
+condensation. Desiccant vent filters should be used on the tank vent in order to remove any 
+moisture from air entering the tank. These filters have a finite capacity and must be replaced 
+when the desiccant is exhausted. 
+ 
+Tank Lining 
+Tanks should be epoxy coated on the inside to prevent corrosion. At a minimum, the tank floor 
+and the bottom three feet of the tank sides should be epoxy coated to resist corrosion from 
+trapped water. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Fuel Storage & Handling 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1106-2.10-1037 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+3.0 Implementation Steps 
+Major fuel suppliers have the technical expertise to provide guidance on tank design and sizing. 
+The most common problem on most mine sites is lack of tank capacity. The mine capacity and 
+haulage fleet often grows faster than the fuel storage facility. This usually results in fuel being 
+added to tanks while it is being consumed. This practice stirs up contaminants and keeps them in 
+suspension in the delivery fuel. There are three key steps to proper fuel storage and handling. 
+• Adequate capacity to allow fuel to settle 
+• Proper tank design 
+• Fuel handling maintenance 
+ 
+Fuel Handling Maintenance 
+It is important to have an adequate number of trained personnel responsible for making sure fuel 
+is handled properly. This includes: 
+• Using particle counters and water detection tests to measure fuel cleanliness. 
+• Sampling incoming shipments 
+• Assuring proper settling time and draining tanks to remove water 
+• Maintaining desiccant filters and any supplemental bulk fuel filtration equipment 
+• Sampling outgoing fuel going into machine tanks. 
+• Assuring fuel quality in remote day tanks and mobile fuel trucks 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Fuel Storage & Handling 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1106-2.10-1037 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4.0 Benefits 
+Maintaining ISO 18/16/13 or better fuel cleanliness with a 
+maximum of 1,000 ppm water should allow most 3500 Series 
+injectors to last to engine overhaul.  
+ 
+• If 18/16/13 cannot be achieved with proper tank capacity 
+and fuel handling, the use of bulk fuel filtration is 
+recommended to achieve needed fuel cleanliness. Bulk 
+filtration equipment is available through Caterpillar.  
+ 
+5.0 Resources Required 
+ 
+Cost information can be obtained from the tank constructor prior 
+to construction of new tanks. 
+ 
+6.0 Supporting Attachments / References 
+ 
+For more information on bulk fuel filtration equipment, refer to Caterpillar publication: 
+ 
+Caterpillar Bulk Fuel Filtration Equipment      PEHJ0156  
+ 
+For more information on the effects of water and dirt on fuel injector life, bulk fuel filtration, and 
+fuel storage and handling, refer to the following publications (available in print form only): 
+ 
+Improving Component Durability – Fuel Systems    SENR9620  
+Improving Component Durability – Managing Fluid Cleanliness  SEBF1020 
+ 
+7.0 Related Best Practices 
+ 
+0806-2.1-1000  Fluid Cleanliness Management     
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Richard Douglas  
+Market Consultant  
+Douglas_Richard_d@cat.com 
+(309) 675-5699 
+IF INJECTORS USUALLY RUN 
+TO ENGINE OVERHAUL 
+HIGH EFFICIENCY FUEL 
+FILTERS ARE USED AND DO 
+NOT PLUG BETWEEN PM 
+INTERVALS 
+FUEL IS ADEQUATELY 
+CLEAN 
+& 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Bulk Fuel Storage & Handling 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1106-2.10-1037 
+Caterpillar Confidential:  GREEN          Page 4 of 4

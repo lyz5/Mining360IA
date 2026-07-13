@@ -1,0 +1,525 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE SERIES  
+3500 Engine Series 
+Water Lines Group Parts 
+Salvage 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+                                                                      
+3500 Engine Series Water Lines Group Parts 
+Salvage ...................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 9 
+5.0 Resources Required .......................................... 9 
+6.0 Supporting Attachments / References ............... 9 
+7.0 Related Best Practices ...................................... 9 
+8.0 Acknowledgements .......................................... 10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information 
+provided by one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no 
+representation or warranty about the information contained in this document or the products referenced herein. 
+Caterpillar welcomes additional “Best Practice” recommendations from our dealer network. 
+ 
+  
+ 
+ 
+ 
+ 
+  
+March 2013 
+1210-4.02.1294 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+ 
+This Best Practice contains information about salvaging water line group parts of 3500 
+series engines, such as elbows, bonnets and flanges. Salvaging these parts can achieve 
+significant cost savings. 
+ 
+2.0 Best Practice Description 
+ 
+The parts of water line groups, such as flanges, bonnets and elbow tubes, usually have 
+damaged connecting areas.  The damaged areas are machined down and fabricated 
+sleeves are installed to enable reusing the parts.  
+  
+ 
+ 
+                                   
+ 
+ 
+Damage component –Flange 146-7383 
+ 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Series Water Lines Group Parts Salvage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.02.1294 
+Caterpillar Confidential:  GREEN               Page 1 of 10 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.0 Implementation Steps  
+ 
+CAUTION: SAFETY PROCEDURES FOR THE SHOP EQUIPMENT INVOLVED MUST BE 
+FOLLOWED.  
+Implementation steps are defined for salvaging a 146-7383 flange. Similar steps may be to the 
+other parts listed below.   
+ 
+• Make sure the part has been properly cleaned before beginning of the repair 
+• Inspect the part for cracks. If there is a crack, salvage of the component is not 
+recommended. 
+• Machine the bore of the flange 146-7383 to 111.2 mm ID; and depth of 48 mm. 
+ 
+ 
+ 
+ 
+Machining the Flange 146-7383 
+ 
+ 
+ 
+• Fabricate a sleeve using ASTM A48 -30B (Gray Iron). Detailed dimensions are given 
+below. 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Series Water Lines Group Parts Salvage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.02.1294 
+Caterpillar Confidential:  GREEN               Page 2 of 10 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+The dimensions are: 
+ 
+ 
+ 
+ A fabricated sleeve 
+ 
+ 
+• Cool down the sleeve to -45 degrees C (-50 degrees F) for 2 hours.  
+ 
+• Apply LOCTITE 640 on the machined surface of the part.  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Series Water Lines Group Parts Salvage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.02.1294 
+Caterpillar Confidential:  GREEN               Page 3 of 10 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+Application of the retaining compound 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Series Water Lines Group Parts Salvage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.02.1294 
+Caterpillar Confidential:  GREEN               Page 4 of 10 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+• Install the cooled sleeve into the machined bore using proper driver adapter.  
+ 
+ 
+Installation of the sleeve 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Series Water Lines Group Parts Salvage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.02.1294 
+Caterpillar Confidential:  GREEN               Page 5 of 10 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+After salvage 
+ 
+ 
+Sleeve dimensions for the parts which can be repaired by applying same method are given on 
+the following table; 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Series Water Lines Group Parts Salvage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.02.1294 
+Caterpillar Confidential:  GREEN               Page 6 of 10 
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+ 
+ 
+ 
+Parts 
+ 
+Dimensions 
+ 
+ 
+Sleeve 
+Material 
+Sleeve 
+ID (mm) 
+Sleeve 
+OD 
+(mm) 
+Part 
+Counter-
+bore  
+ID (mm) 
+Sleeve 
+L (mm) 
+Sleeve 
+A (mm) 
+Sleeve 
+B (mm) 
+4W-
+6077 
+Elbow 
+ 
+ 
+ 
+84.45 88.04 ± .02 88 25 3X300 2.5X100 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ASTM 
+A48 -
+30B 
+7E-
+9584 
+Elbow 
+ 
+ 
+ 
+ 
+97.5 101.04 ± .02 101 30 3X300 2.5X100 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ASTM 
+A48 -
+30B 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Series Water Lines Group Parts Salvage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.02.1294 
+Caterpillar Confidential:  GREEN               Page 7 of 10 
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+4W-
+9625 
+Bonnet 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1) 
+84.45 
+ 
+2) 
+85.90 
+1) 88.04 ± 
+.02 
+ 
+2) 90.04 ± 
+.02 
+1) 88 
+ 
+2) 90 
+25 3X300 2.5X100 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ASTM 
+A48 -
+30B 
+2W-
+1055 
+Elbow 
+ 
+ 
+ 
+ 
+65.40 69.04 ± .02 69 30 2.5X300 2 X100 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ASTM 
+A48 -
+30B 
+1 
+2 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Series Water Lines Group Parts Salvage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.02.1294 
+Caterpillar Confidential:  GREEN               Page 8 of 10 
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+4P-
+5752 
+Elbow 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+97.15 101.04 ± .02 101 30 3X300 2.5X100 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ASTM 
+A48 -
+30B 
+4.0 Benefits 
+ 
+• Cost saving on engine overhauls 
+• O verhaul turnaround time can be reduced for an engine rebuild, salvaged parts can be 
+inventoried. 
+ 
+5.0 Resources Required 
+ 
+• Machining Center or similar tool to machine part counterbore 
+• Lathe machine to machine sleeve 
+• Band saw 
+• Parts Freezer  
+• Retaining compound (recommend Loctite 640) 
+• Sleeve installation driver adapters 
+ 
+6.0 Supporting Attachments / References 
+ 
+EDITOR’S NOTE:  While the procedure noted in this Best Practice may work well for some 
+dealers, Caterpillar’s preference is to salvage the bore with flame spray and machine to size. 
+The inserts can come loose during service and or leak, however, dealers with no flame spray 
+capabilities will typically install sleeves.  See attached SEBF-8148 document for more 
+information. 
+ 
+7.0 Related Best Practices 
+ 
+N/A  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Series Water Lines Group Parts Salvage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.02.1294 
+Caterpillar Confidential:  GREEN               Page 9 of 10 
+
+===== PAGE 11 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+8.0 Acknowledgements 
+ 
+The idea of creating and implementing this practice belongs to: 
+ 
+Almaz KENZHETAYEV 
+Utility Workshop Team Leader 
+Borusan Makina Kazakhstan LLP 
+akenzhetayev@borusan.com 
++7(701) 803 04 87 
+ 
+Yenlik MIRZABEKOVA  
+Utility Workshop Engineer 
+Borusan Makina Kazakhstan LLP 
+ymirzabekova@borusan.com 
++7(700) 324 08 99 
+ 
+Eser APAYDIN  
+Service Development Supervisor 
+Borusan Makina Kazakhstan LLP 
+eapaydin@borusan.com 
++7(701) 951 98 04 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Engine Series Water Lines Group Parts Salvage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.02.1294 
+Caterpillar Confidential:  GREEN               Page 10 of 10

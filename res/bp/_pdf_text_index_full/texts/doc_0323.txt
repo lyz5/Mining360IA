@@ -1,0 +1,352 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.04 CRC Management\1. Strategic\Tool and Supplies Tracking - Software Solution.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+May 2016  
+1603-4.04-1420  
+  
+ 
+    
+    
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Tools and Supplies 
+Tracking – Software 
+Solution 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Rebuild (CRC)  
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Tools and Supplies Tracking – Software Solution 
+ ................................... Error! Bookmark not defined. 
+ 
+1.0  Introduction ....................................................... 1 
+2.0  Best Practice Description .................................. 1 
+3.0  Implementation Steps ........................................ 5 
+4.0  Benefits ............................................................. 5 
+5.0  Resources Required .......................................... 5 
+6.0  Supporting Attachments / References ............... 5 
+7.0  Related Best Practices ...................................... 1 
+8.0  Acknowledgements ........................................... 1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Although Caterpillar does not endorse this particular supplier, BORUSAN MAKINA KAZAKHSTAN has experience with 
+the following products or companies. We welcome additional supplier recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Material, consumable and tool management strategy 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER  
+1603-4.04-1420 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+DISCLAIMER: The information and potential benefits i ncluded in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practice s.” Caterpillar makes no representation or warranty 
+about the information contained in this document or t he products referenced herein. Caterpillar welcomes add itional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+1.0 Introduction  
+ 
+Material, consumable and tool management strategy is critical to CRC operations. In order to 
+achieve high and consistent productivity in a shop, the tools, materials and consumables must be 
+handled in an efficient way. The effective management can be achieved by using ToolWatch 
+software. ToolWatch Enterprise software is one of the most comprehensive systems available 
+today for managing tools, equipment, materials and consumables more efficiently across the 
+company. 
+The key success factors in CRC are to minimize unplanned failures of tools and equipment and 
+efficient management of consumables and materials. Proper control and monitoring saves time, 
+reduces lost and failures of the tools and equipment. When components are repaired or rebuilt at 
+the dealer CRC, dealers must be able to assess the current inventory level of consumables and 
+materials, condition of the equipment and tools. These assessments can be performed with 
+ToolWatch, which can generate over one hundred reports such as: consumable usage report, 
+material and consumable low level report, lost/broken tools report, calibration schedules, tools by 
+employee and etc., instantly. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice contains several standard reports from ToolWatch used in Borusan Makina 
+Kazakhstan Company in order to achieve efficient control and monitoring of tools, equipment, 
+materials and consumables. 
+ 
+Consumable usage report  
+ 
+ToolWatch generates a report which shows the quantity and the price of consumables and 
+materials for the selected or all work order for a selected period. The report includes:  
+• Description of consumables/materials 
+• Price for consumables/materials 
+• Quantity of used consumables/materials 
+• Item number consumables/materials 
+• Work Order/location/employee (of consumed material ) 
+          A sample report is attached. This report was generated using ToolWatch software. 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Material, consumable and tool management strategy 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER  
+1603-4.04-1420 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+ 
+ 
+Broken/Lost tools report  
+This report generates a report with broken/lost tools of any selected employee. Also a quantity 
+and price of broken/lost tools in entire company can be assessed. 
+ 
+Current inventory report   
+ 
+This report shows the quantity and the price of consumables and materials in any selected stock. 
+The report includes: 
+• Description of consumables/materials 
+• Price for consumables/materials 
+• Quantity of consumables/materials 
+• Item number consumables/materials 
+• Place where the consumables/materials can be found  
+ 
+ 
+Low level report   
+This report shows a list of consumables which are below of defined low level. A sample report is 
+attached. This report was generated using ToolWatch software. 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Material, consumable and tool management strategy 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER  
+1603-4.04-1420 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+ 
+ 
+Tools by employee/location   
+This report generates a report with all tools of any selected employee or location. 
+ 
+Purchase order report  
+This report shows the purchase order that was created. 
+ 
+Consumable usage report by employee  
+This report shows the quantity and the price of consumables consumed by the selected employee 
+for the selected work order 
+ 
+Service and Calibration schedule   
+This report, provides a schedule for service and calibration of tools and equipment. 
+ 
+Key Performance Indicators 
+ 
+The Key Performance Indicators pane (see images) shows financial information about tool and 
+material values, where resources are concentrated and distributed, etc. It allows you to compare 
+current data with data from other periods of time. KPI’s are pre-set and not customizable. Charts 
+and Graphs (see images) can chronicle data patterns over time and identify daily, monthly or 
+seasonal trends that help you forecast for future needs. 
+Samples of some KPI’s and Graphs are attached below. 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Material, consumable and tool management strategy 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER  
+1603-4.04-1420 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Material, consumable and tool management strategy 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER  
+1603-4.04-1420 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+3.0 Implementation Steps 
+ 
+1. Determine level of dealer interest in using such  management strategy and software 
+2. Purchase ToolWatch Enterprise software 
+3. Train Tool Keepers for using ToolWatch 
+4. Implement materials, consumables and tools into ToolWatch 
+5. Decide what kind of reports will be used 
+6. Efficient control and monitor the tools equipmen t, consumables and materials 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+• Saving Time (Purchase Order, stock, used) 
+• Efficient Control and Monitoring of tools (Calibr ation, Service) 
+• Efficient Control and Monitoring of materials (in  stock, used, low, target and high levels) 
+• Excellent tracking system (reduced loss, status c ontrol)  
+• Over 100 Reports can be generated instantly 
+• Maintains updated Tools and Materials Inventory 
+• Effective management of the inventory 
+ 
+ 
+5.0 Resources Required 
+ 
+Personnel time to create and manage report system and process. 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Dealers interested in using ToolWatch Enterprise software should contact: 
+ 
+Casi Portlock 
+ToolWatch Corporation 
+400 Inverness Pkwy, Ste. 450 
+Englewood, CO 80112 
+Direct: 720-210-1066 
+Email: 
+cportlock@toolwatch.com  
+Denise Shelton 
+VP Professional Services 
+ToolWatch  
+303-799-3822 direct 
+dshelton@toolwatch.com 
+ 
+      If dealers have questions in implementing ToolWatch in CRC, they should contact: 
+Nurgissa DUISEMBIYEV 
+CRC Process Engineer 
+Borusan Makina Kazakhstan LLP 
+nduisembiyev@borusan.com  
++7 (707) 123 58 42 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Material, consumable and tool management strategy 
+ 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1603-4.04-1420  
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+7.0 Related Best Practices 
+ 
+N/A. 
+ 
+8.0 Acknowledgements 
+ 
+ 
+The idea of creating & implementing this Best Practice belongs to: 
+ 
+Andrey UMAROV              
+Quality Supervisor              
+Borusan Makina Kazakhstan LLP 
+aumarov@borusan.com  
+Alina KASHAPOVA 
+Quality Engineer 
+Borusan Makina Kazakhstan LLP 
+akashapova@borusan.com      
+ 
+ 
+Zhanna ZINYAEVA 
+Tool Keeper 
+Borusan Makina Kazakhstan LLP 
+   
+      Artykay IBADULAYEVA 
+Tool Keeper 
+Borusan Makina Kazakhstan LLP 
+ 
+ 
+Anastassiya GARTUNG 
+Tool Keeper 
+Borusan Makina Kazakhstan LLP 
+ 
+Anton POLUYAKTOV 
+Mechanic 
+Borusan Makina Kazakhstan LLP 
+ 
+This Best Practice was written by:  
+Nurgissa DUISEMBIYEV 
+CRC Process Engineer 
+Borusan Makina Kazakhstan LLP 
+nduisembiyev@borusan.com  
++7 (707) 123 58 42

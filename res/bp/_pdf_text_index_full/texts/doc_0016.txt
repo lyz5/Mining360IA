@@ -1,0 +1,376 @@
+SOURCE: 1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Using BUILDER™ to Generate the Most Comprehensive PM Checklist.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES
+Using BUILDER™ to Generate the Most 
+Comprehensive PM Checklist 
+ 
+Application Maintenance Site 
+Management
+Component 
+Rebuild Safety MARC 
+Management
+ 
+ 
+ 
+Using BUILDER™ to Generate the Most 
+Comprehensive PM Checklist....................................0  
+1.0 Introduction........................................................1  
+2.0 Best Practice Description ..................................1  
+3.0 Implementation Steps........................................4  
+4.0 Benefits .............................................................4  
+5.0 Resources Required..........................................5  
+6.0 Supporting Attachments / References...............5 
+7.0 Related Best Practices ......................................5  
+8.0 Acknowledgements ...........................................5  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+  
+February 07
+1106-3.3-1042
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      catminer.com
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+1.0 Introduction  
+  
+Accurate and proper Preventative Maintenance is crucial to maximizing machine life.  
+ 
+Currently, there is no way to generate a Preventative Maintenance (PM) checklist from the PM 
+Checklist Website that displays each PM task, along with the associated parts list for each PM 
+task, displayed together within the same document. Using the BUILDER Checklist Utility, a PM 
+Checklist that shows the parts needed for each task can be generated. 
+ 
+The most efficient and comprehensive checklist is available in the BUILDER Checklist Utility 
+using available CGM BUILDER files posted to CatMiner since 1/01/2006 (and all future CGM 
+BUILDER files) or the dealer’s own localized versions of these files.  These files use a ‘Job 
+Operation’ PM structure, which is necessary for the PM Checklist Utility to function. 
+ 
+Note:  PM Checklists for Mining equipment posted to the CatMiner 'BUILDER Downloads' 
+webpage prior to 1/1/06 can be downloaded from the CatMiner 'Legacy PM Checklist' webpage at 
+https://catminer.cat.com/cda/layout?m=117964&x=7
+ 
+ 
+2.0 Best Practice Description 
+ 
+ 
+Have the desired BUILDER file in your 
+BUILDER application.  From the start m
+access the Checklist. 
+enu, 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Select ‘BUILDER Data’ from the lower right hand corner.  
+Highlight the desired BUILDER file and choose ‘Copy’. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Using BUILDER to Generate the Most Comprehensive 
+PM Checklist 
+DATE 
+2/14/2007 
+CHG 
+NO 
+02 
+NUMBER 
+1106-3.3-1042
+ 
+Caterpillar: Confidential Yellow
+-Reproduction Constitutes an Uncontrolled Document-
+Page 1 of 5
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+ 
+ 
+Using BUILDER to Generate the Most Comprehensive 
+PM Checklist 
+DATE 
+2/14/2007 
+CHG 
+NO 
+02 
+NUMBER 
+1106-3.3-1042
+ 
+own 
+e 
+ 
+A list of Repair Options is displayed.  Scroll d
+to the PM’s and highlight the PM (or multipl
+PM’s) you wish to generate a checklist for.  
+Select ‘Finish’.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Select ‘OK’ when this Checklist 
+message is displayed. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Select ‘OK’ again. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Caterpillar: Confidential Yellow
+-Reproduction Constitutes an Uncontrolled Document-
+Page 2 of 5
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+Select ‘Close’. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Use the navigation arrow to scroll into the Checklist file. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Select ‘Report’ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Select the type of report desired, then select ‘OK’. ‘Parts with 
+Each Step’ provides the most detailed report. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Using BUILDER to Generate the Most Comprehensive 
+PM Checklist 
+DATE 
+2/14/2007 
+CHG 
+NO 
+02 
+NUMBER 
+1106-3.3-1042
+ 
+Caterpillar: Confidential Yellow
+-Reproduction Constitutes an Uncontrolled Document-
+Page 3 of 5
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+The checklist file is displayed.  
+The file can be viewed, 
+printed, and/or exported. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+• To obtain a subscription of BUILDER 1.8 software, contact:   
+ 
+Kathryn T Flores 
+Dealer Distribution Systems 
+Systems & Processes Division 
+Flores_Kathryn_T@cat.com  
+ 
+• For access to the CGM BUILDER Downloads webpage in order to view and download posted 
+CGM BUILDER files, contact:  
+ 
+Bill Gallagher 
+Global Mining Division 
+Product Support 
+Gallagher_William_L@Cat.com
+ 
+4.0 Benefits 
+ 
+1. Dealers that currently us e their own localized CGM BUILDER files can generate a PM 
+checklist that reflects any changes they have made to the PM Repair Options within their 
+BUILDER files.   
+2. Elimination of the need for a dealer to make these same changes to a PM checklist 
+downloaded from the PM Checklist Website. 
+3. Both PM tasks and associated parts lists ar e displayed together within the same document. 
+This provides a simpler, clearer format to follow for conducting PM routines.  
+ 
+ 
+Using BUILDER to Generate the Most Comprehensive 
+PM Checklist 
+DATE 
+2/14/2007 
+CHG 
+NO 
+02 
+NUMBER 
+1106-3.3-1042
+ 
+Caterpillar: Confidential Yellow
+-Reproduction Constitutes an Uncontrolled Document-
+Page 4 of 5
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+Using BUILDER to Generate the Most Comprehensive 
+PM Checklist 
+DATE 
+2/14/2007 
+CHG 
+NO 
+02 
+NUMBER 
+1106-3.3-1042
+ 
+5.0 Resources Required 
+ 
+• BUILDER Software: US $3250 for license and US $1450 for the yearly subscription. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Builder Checklist Instructions.ppt  The instructions from this document in PowerPoint 
+format 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+William L. Gallagher   
+CGM Core 14 BUILDER Developer  
+Ph. 309-675-8085 
+Gallagher_William_L@Cat.com
+Caterpillar: Confidential Yellow
+-Reproduction Constitutes an Uncontrolled Document-
+Page 5 of 5

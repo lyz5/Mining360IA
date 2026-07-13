@@ -1,0 +1,140 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Proper Gear Reminder for 
+Trucks Ascending Grades 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+ 
+Proper Gear Reminder for Trucks Ascending Grades 1
+ 
+1.0 Best Practice Description ................................... 2 
+2.0 Implementation Steps ........................................ 2 
+3.0 Benefits .............................................................. 2 
+4.0 Resources Required .......................................... 3 
+5.0 Supporting Attachments .................................... 3 
+6.0 Related Best Practices ...................................... 3 
+7.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+September 2006 
+0906-1.2-1017 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Best Practice Description  
+ 
+This Best Practice deals with reminding truck operators to engage and lock the proper 
+transmission gear for ascending grades with a loaded truck. This will allow the truck to ascend the 
+grade without downshifting on the grade. To remind truck operators of this practice, mines have 
+placed proper gear signs in locations prior to beginning of the uphill grades. The sign indicates to 
+the operator which gear should be engaged and locked prior to ascending the grade. 
+ 
+3
+793
+ 
+A suggested proper gear sign for a 793: 
+ 
+2.0 Implementation Steps 
+ 
+• Establish the proper gear to be selected and engaged for each grade in the mine for each 
+truck model. This can be accomplished by first ascending the grade with a loaded truck and 
+allowing the transmission to downshift to the lowest gear it needs to ascend the grade. This 
+lowest gear is the “proper” gear for ascending the grade. 
+ 
+• Train the operators. 
+ 
+• Place correct gear indicator signs prior to each of the uphill grades. Signs should be placed at 
+distance great enough to allow the operator to slow, engage and lock the proper gear. 
+ 
+3.0 Benefits 
+ 
+Depending upon the grade and payload, there is a particular gear in which the truck will ascend 
+the grade the fastest without downshifting. Benefits of eliminating unnecessary downshifts on the 
+grade are:  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Correct Gear Reminder for Trucks Ascending Grades 
+DATE 
+21 SEP 2006 
+CHG 
+NO 
+02 
+NUMBER 
+0906-1.2-1017 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1) Preventing material spillage on the haul road that leads to tire cuts or other tire damage, 
+2) Extending power train component life by reducing the number of full power downshifts, 
+3) Preventing ruts from forming on the grade caused by the abrupt tire slippage occurring during 
+a downshift. 
+ 
+4.0 Resources Required 
+ 
+All that is required are signs appropriately placed before uphill grades that inform the operator of 
+the proper gear to use while ascending the grade. The sign may be a simple as a symbol of a 
+gear with a number at the center. The number indicates the correct gear to be selected and 
+engaged before ascending the grade. Such a pictograph avoids any language problems. In 
+situations where different truck models require different gears to be selected and engaged, the 
+sign may indicate the particular truck model: 793, 797, etc. 
+ 
+5.0 Supporting Attachments  
+None applicable. 
+ 
+6.0 Related Best Practices 
+None applicable 
+ 
+7.0 Acknowledgements 
+This Best Practice was authored by: 
+Fred Ringness 
+Caterpillar Global Mining  
+Product Support Manager – Site Capabilities 
+Ringness_Fred@cat.com 
+309-675-4882 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Correct Gear Reminder for Trucks Ascending Grades 
+DATE 
+21 SEP 2006 
+CHG 
+NO 
+02 
+NUMBER 
+0906-1.2-1017 
+Caterpillar Confidential:  GREEN          Page 3 of 3

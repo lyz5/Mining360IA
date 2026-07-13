@@ -1,0 +1,231 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\Tool for Lifting Piston and Connecting Rod - 3500 Engines.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2015 
+1508-4.03-1388 
+  
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Tool for Lifting Piston and 
+Connecting Rod - 3500 
+Engines 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Tool for Lifting Piston and Connecting Rod - 3500 
+Engines ...................................................................... 0
+ 
+1. Introduction .......................................................... 1 
+2. Best Practice Description ..................................... 1 
+3. Implementation Steps .......................................... 3 
+4. Benefits ................................................................ 3 
+5. Resources Required ............................................ 3 
+6. Supporting Attachments / References ................. 4 
+7. Related Best Practices ........................................ 5 
+8. Acknowledgements .............................................. 5 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+The use of this tool and the processes discussed within this Best Practice is not a substitute for applicable laws, 
+standards and regulations and does not alter or limit the obligation of individuals who utilize the tool to fully comply with 
+federal, state and local law and prudent safety measures relating to the use of lifting devices
+.  
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Lifting Piston and Connecting Rod - 3500 Engines 
+DATE 
+12/7/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1508-4.03-1388 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+1. Introduction  
+ 
+Ferreyros has developed a tool to improve the assembly process in 3500 engines, by installing 
+the piston and connecting rod. The tool lifts the piston and connecting rod, reducing the stress 
+applied by the technician to lift the component, and places the piston and connecting rod directly 
+into the cylinder block. Caterpillar does not have a tool to lift the piston and connecting rod in 
+3500 engines. 
+ 
+ 
+2. Best Practice Description 
+         
+The lifting of the piston and connecting rod for installation in 3500 engines was very manual by 
+the technician. It involved loading the piston and connecting rod from his car to block cylinder. 
+ 
+The safety of this procedure could be improved, and it also introduces back fatigue for the 
+technician.  
+ 
+ 
+  
+LIFTING PISTON AND CONNECTING ROD 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Lifting Piston and Connecting Rod - 3500 Engines 
+DATE 
+12/7/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1508-4.03-1388 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+Since tool prints are not currently available, the following photos show the fixture and process. 
+ 
+Proceed to install the tool on the piston and connecting rod and lift the component with a chain. 
+The tool allows transport of the piston and the connecting rod forms safely to the cylinder block. 
+ 
+ 
+ 
+LIFTING PISTON AND CONNECTING ROD 
+NEW LIFTING PISTON AND 
+CONNECTING ROD 
+CHAIN 
+TOOL 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Lifting Piston and Connecting Rod - 3500 Engines 
+DATE 
+12/7/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1508-4.03-1388 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+The piston and connecting rod are safely installed in the cylinder block without losing its stability. 
+This tool minimizes risks during the operation for the piston and connecting rod and the 
+technician. 
+ 
+3. Implementation Steps 
+ 
+• Design a tool. 
+• EDITOR’S NOTE:  The side of the tooling will make contact with the piston rings and create 
+potential stress on the piston ring when you move the piston / rod from the vertical into the 
+horizontal position to install the group into the cylinder liner. Stops could be incorporated in 
+this tooling to eliminate tooling / ring contact. 
+• Caterpillar also recommends developing a locking mechanism to lock grip when holding 
+piston. 
+   
+4. Benefits 
+ 
+• Improve operator safety. 
+• I mprove process efficiency. 
+• Prevents damage to the piston and connecting rod during install. 
+ 
+5. Resources Required 
+ 
+• Minimal expense to fabricate the tool. 
+INSTALL PISTON AND CONNECTING ROD 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Lifting Piston and Connecting Rod - 3500 Engines 
+DATE 
+12/7/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1508-4.03-1388 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+ 
+6. Supporting Attachments / References 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Lifting Piston and Connecting Rod - 3500 Engines 
+DATE 
+12/7/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1508-4.03-1388 
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+ 
+7. Related Best Practices 
+ 
+None 
+ 
+8. Acknowledgements 
+ 
+This Best Practice was written by: 
+ Jhon Meneses Cuzcano 
+ Ferreyros S.A. 
+  
+ 
+The idea for this Best Practice belongs to: 
+Maldonado Velasquez Joel 
+Ferreyros S.A. 
+ 
+ 
+This Best Practice was revised by: 
+ Aninu Mitacc Vizcardo 
+ Ferreyros S.A. 
+ aninu.mitacc@ferreyros.com.pe

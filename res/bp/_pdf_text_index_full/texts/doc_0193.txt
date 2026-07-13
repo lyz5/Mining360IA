@@ -1,0 +1,339 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\2. Tactical\Transmission Control Valve Test Bench.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+September 2010  
+1009-4.01-1211  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Transmission Control 
+Valve Test Bench 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+Transmission Control Valve Test Bench .................... 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 4 
+5.0  Resources Required .......................................... 5 
+6.0  Supporting Attachments / References ............... 5 
+7.0  Related Best Practices ...................................... 5 
+8.0  Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER :  
+The information and potential benefits included in this document are based upon information 
+provided by one or more Caterpillar dealers, and such dealer(s) opinion of "Best Practices". Caterpillar makes 
+no representation or warranty about the information contained in this document or the products referenced 
+herein. Caterpillar welcomes additional "Best Practice" recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR  
+Transmission Control Valve Test Bench 
+DATE 
+4/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1009-4.01-1211  
+Caterpillar Confidential:  YELLOW          Page 2 of 6 
+1.0 Introduction  
+ 
+Transmission control valve testing is typically conducted on the transmission test bench or while 
+the valve is installed on the machine.  The valve is tested for appropriate clutch pressures and 
+clutch modulation characteristics. 
+ 
+Efficient and accurate valve testing is an important part of the component repair/rebuild process.  
+A valve that performs inaccurately can result in poor truck cycle times, reduced transmission 
+clutch life, and high fuel consumption.  Other drive train components may see higher stresses and 
+reduced life due to inaccurate transmission shift points and poor clutch pressure modulation.  
+Additional component failures, increased repair cost, and reduced machine availability. 
+ 
+A control valve test bench improves testing efficiency and quality.  Quick, in-shop testing 
+capabilities provide rebuild quality and diagnostic feedback that reduces customer machine 
+downtime, dealer repair and/or warranty labor. 
+ 
+Control valve test benches provide dealer and customer value by allowing the dealer to test and 
+adjust valves rather than just replace parts when troubleshooting the valve/transmission. It also 
+reduces transmission-related warranty costs with enhanced valve performance information. 
+ 
+This Best Practice describes the test equipment, test area organization and process for efficient 
+and effective control valve testing. 
+ 
+2.0 Best Practice Description 
+ 
+The common rebuild practice for ICM and other control valves includes: 
+- Disassembly and cleaning 
+- Standard replacement and worn parts replacement 
+- Spring/electrical parts tests for reuse 
+- Assemble with original shim packs 
+ 
+The next steps involve installing the control valve on the rebuilt transmission, and testing/adjusting 
+the individual pressure regulating/modulating valves to factory specifications.  This process is very 
+tedious and time consuming, providing opportunities for dropping shims and other small parts into the 
+transmission main case and planetary/clutch groups.  
+ 
+The Best Practice for this procedure would include using a control valve test bench to quickly 
+test/adjust valves, independent of the planetary group, prior to installing the valve on the 
+transmission.  The bench provides a consistent clutch-fill exercise for the control valve.  It measures 
+leakage, determines clutch pressures, and can “trace” the clutch modulation/sequence - functionally 
+testing individual valves in the control valve package.  It reduces set-up/test variables before installing 
+the valve on the transmission for minor adjustments (if any).  If a shim or other small part is dropped 
+during adjustment, it falls on the test bench’s drain pan for easy retrieval. 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR  
+Transmission Control Valve Test Bench 
+DATE 
+4/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1009-4.01-1211  
+Caterpillar Confidential:  YELLOW          Page 3 of 6 
+Vehicular transmission shift controls may be added to the test bench  for efficient test processing.  
+Control valves may be removed from machines in the field and tested to establish valve performance 
+or to troubleshoot poor transmission performance.  It allows for quick control testing, separate from 
+the clutch groups.  Test specifications for valve inputs (oil pressure/flow and valve output results) are 
+retrieved from Caterpillar references and also established through dealer testing experience and 
+dealer-to-dealer networking/sharing. 
+ 
+Transmissions that would typically benefit from this enhanced test bench process include: 
+• ICM type transmission 
+• Track Type Tractor (N through T Series) 
+• Wheel Loader (E through H Series) 
+• Motor Grader (G through M Series 
+Please contact GLENCO, LLC, to establish complete list of applications. 
+ 
+3.0 Implementation Steps 
+ 
+-  Determine area in shop to be designated for testing. 
+• Assure testing area has supporting utilities (solvent washer and compressed air for 
+cleaning/clearing, lighting, and electricity as needed). 
+• Assure area has adequate space and access for equipment/tools, valve test adapters, and 
+parts staging/protection/transfer. 
+• Assure area has appropriate environmental contaminations control, similar to the hydraulic 
+test bench cell or “clean room” rebuild areas. 
+• Oil flow and pressure may be supplied by 1.) The hydraulic test bench, or 2.) An 
+independent oil pump/reservoir (optional add-on for the control valve test bench). 
+ 
+-  Determine how current rebuild process would be effected by this capability 
+• Adjust product flow through rebuild center through:   
+o Specialized control valve rebuild processing 
+o Increased testing of valves coming from field 
+o “Exchange” valve strategy for instant uptime 
+• Determine how valves may be protected for transfer within shops to/from field. 
+• Consider the most effective way test specifications would be established, organized, 
+stored, retrieved. 
+ 
+-  Establish new/adjusted repair/rebuild time requirement targets as needed. 
+• Eliminate the current processes/tooling/equipment strategy. 
+• Reduce test cell labor hours and turnaround time. 
+• Establish new valve rebuild/test/adjust standard job segments/operations. 
+ 
+-  Install the layout/equipment changes into the shop 
+• This may occur in phases, as needed, such as shop arrangement for only valve testing, 
+then possibly valve rebuild specialization. 
+• Establish valve staging/protection/transport areas for effective product handling/flow. 
+• Promote change feedback as installation may show new problems. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR  
+Transmission Control Valve Test Bench 
+DATE 
+4/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1009-4.01-1211  
+Caterpillar Confidential:  YELLOW          Page 4 of 6 
+ 
+- Train employees to use the new procedures/equipment.   
+ 
+• Suggest limiting the number of valve-test bench  operators/technicians.  Transmission 
+rebuilders typically may not test their transmission valves.  Possibly combine valve and 
+transmission test functions, valve/pump rebuild and test functions, etc. 
+• Develop input/output test spec development process through technical support group. 
+ 
+-  Establish equipment maintenance schedule/responsibility. 
+ 
+• Test bench operator is typically responsible for PM’s and calibrations as needed. 
+• PM program is documented/directed through tool management program such as Tool 
+Watch.  The same program used to manage other tool calibration processes. 
+• Proactive PM program would include: 
+o Future maintenance schedule based on time, bench h our-meter, or valve count. 
+o Maintenance activity performed and signed off per control document (QC checklist). 
+o Maintenance/repair history effectively stored/orga nized for retrieval/review. 
+ 
+-  Review process/equipment performance once established. 
+ 
+• Establish and track related rebuild/test and field troubleshooting labor variance, control 
+valve and “unexplained” transmission clutch failure rates, and transmission life.  Acquire 
+base levels and compare to performance once the valve test bench is established. 
+• Process change may occur in phases.  Initiate valve testing/set-up first, then possibly valve 
+rebuild specialization, then Pressure-Time (PT) pump rebuild specialization, etc. 
+• Establish valve staging/protected areas, and transport methods, for effective product 
+handling/flow. 
+ 
+-  Establish and install any adjustments as needed. 
+ 
+• Promote staff feedback since process changes may develop unique problems for shop. 
+• Monitor field diagnostic’s to assure appropriate test bench utilization – non-traditional. 
+ 
+4.0 Benefits 
+• Saves Labor  – Valve set-up and test process reduces rebuild/test labor.  Valves are 
+processed in a controlled area where loose parts are easier to install and hard to lose.  
+Test cycles are faster without transmission spin-ups. 
+• Saves Time   – Valve rebuild may be rebuilt/tested simultaneously with the transmission 
+clutch and planetary groups.  Final transmission test/troubleshooting occurs faster in the 
+test cell, increasing cell capacity. 
+• Increases job flexibility  – Testing is performed independent of the planetary/clutch group, 
+simplifying transmission diagnostic for the rebuild and repair shops, and field service. 
+• Increases quality  – Less activity on test bench sump pan reduces test oil contamination.  
+Valve tests also provide greater quality control to major component.  Field diagnostics and 
+root cause identification are more accurate when supported by an independent valve test, 
+resulting in the right repair the first time. 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR  
+Transmission Control Valve Test Bench 
+DATE 
+4/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1009-4.01-1211  
+Caterpillar Confidential:  YELLOW          Page 5 of 6 
+• Increases profits  – Valve set-up labor reductions, test cell utilization increases, and 
+enhanced/simplified diagnostics reduce cost.  Increased quality provides greater machine 
+availability, resulting greater product/service price realization from customer.  
+ 
+5.0 Resources Required 
+ 
+-  Facility 
+• Re-organize work area to accommodate valve test bench, incoming/outgoing valve 
+staging/protection, solvent washer, workbench (as needed).  Provide clean room 
+environment, electrical and hydraulic utilities as needed.  
+ 
+-  Support Equipment 
+• Test bench and hydraulic pump/reservoir as needed. 
+• Cabinet for tools/misc parts/supplies. 
+• Workbench/vise and general/specific task lighting as needed. 
+• Solvent washer and compressed air filter, regulator, and blowgun. 
+• Staging racks/enclosures. 
+ 
+-  People 
+• Review current valve processing concerns with rebuild team. 
+• Establish process, layout, and equipment improvements through team. 
+ 
+-  Training 
+• Define/establish/enforce new processes, roles and responsibilities with production teams. 
+• Train valve rebuild and testing technicians as needed. 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Glenco_Test_Bench.pdf 
+ 
+7.0 Related Best Practices 
+ 
+• 1006-4.2-1029 – Power Train Valve Rebuild Strategy 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT WRITTEN PERMISSION OF CATERPILLAR  
+Transmission Control Valve Test Bench 
+DATE 
+4/7/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1009-4.01-1211  
+Caterpillar Confidential:  YELLOW          Page 6 of 6 
+ 
+8.0 Acknowledgements 
+ 
+Special thanks to:  
+Glen Rogers 
+Cashman Equipment 
+ 
+Test Bench is fabricated by: 
+GLENCO, LLC 
+1815 King Lane 
+Reno, Nevada  89521 
+Phone: +1 775 853 6539 
+Email: info@glenshop.com 
+Website: 
+www.glenshop.com  
+ 
+Written by:  
+Russ Young 
+6 Sigma Black Belt  
+Cat Global Mining Product Support

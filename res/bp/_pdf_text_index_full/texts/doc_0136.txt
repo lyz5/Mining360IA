@@ -1,0 +1,291 @@
+SOURCE: 2.0 Application\2.06 GET Management\2. Tactical\Tool for Removing the Teeth Ripper in 16 (G,H,M) & 24 (H,M) Motorgraders.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Tool for Removing the Teeth 
+Ripper in 16 (G,H,M) & 24 
+(H,M) Motorgraders 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+1.0
+ Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+September 2014 
+1407-2.06-1348 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+ 
+The ground engaging tool in the Motorgraders must withstand high speeds and high work 
+abrasion on very compacted surfaces. The tips are made of high strength metals and abrasion 
+resistance to provide long service life under tough conditions. However, these undergo wear and 
+should be replaced approximately every 400 to 450 hours.  The minimal amount of tip-rippers 
+from motor graders range from 6 to 12 through the 16 to 24 series in all the models, with an 
+approximate weight per tooth up to 10.9 kg. The tips are secured to the shank-ripper through a 
+pin and a retainer; they must fit in well so that the tip does not slip out during operation; These 
+conditions during the disassembly of the tip require a lot of time and also physical effort from the 
+technician by using a pin puller and a hammer to remove them (see Fig. 1).  The time length 
+varies depending on the strength of each technician because they need to take rest intervals 
+during the disassembly of each tooth, Moreover, the constant risk due to accidents by blows, 
+bruises, back pain, sore hands, excessive noise, etc. remains because of hammering and poor 
+working postures during the extended working time. (See Figure 1) 
+ 
+ 
+ 
+ 
+Figure 1. Parts Identification & disassembly process of the tip-rippers 
+ 
+ 
+This Best practice proposes using a hydraulic tool that facilitates and streamlines the task of 
+disassembly of the tip ripper regarding the series and aforementioned models, significantly 
+reducing the work time, the physical exhaustion, and accident risk of the personnel. 
+ 
+2.0 Best Practice Description 
+ 
+The tool consists of a steel pyramidal liner A572 GR 50 thickness which is inserted into the tip to 
+be disassembled embracing and adjusting it perfectly to its geometry; this is supported through a 
+spring-operated lock that is hooked over the edge of the tip-ripper. It is welded to the liner and it 
+has a ½" thickness reinforced metal armor secured from end to end with 4 bolts (9mm x 140mm) 
+and their nuts and washers. Inside contains a double-acting hydraulic cylinder, 140mm long. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Removing the Teeth Ripper in 16 (G,H,M) & 24 
+(H,M) Motorgraders 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1407-2.06-1348 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+The 1" diameter shaft is collinear to the pin axis that secures the tip-ripper being disassembled. 
+The cylinder consists of a quick coupling system for the hose connections to electrohydraulic 
+pump capacity. This creates enough hydraulic pressure to get the rod out of the cylinder and 
+simultaneously displace and remove the pin that secures the tip-ripper to the shank ripper (See 
+Figure 2). 
+ 
+ 
+ 
+Figure 2. 
+ 
+3.0 Implementation Steps 
+ 
+• Make the tool according to the description and attached drawings.  
+• Operation (See figure 3) 
+ 
+1. Lock the equipment using the locking tool on the lift cylinder (either of the two).  
+2. Check the status of the pump, then proceed to install the electrohydraulic pump and the two 
+hoses (Check the oil level). 
+3. Attach the hoses and the pump to the tool, make sure the joints are secured and the fittings 
+are working well.  
+4. Install the tool to the tooth. Place the latch to lock the tool to the tooth. Consider the 
+component weight and the body position to work comfortably and safely.  
+5. After pulling the pin, hold the tool with both hands to remove it. Remove the tool, clean it and 
+place it in a safe place.  CAUTION:  If the pin is tight, it can "twang" out of the hole when being 
+pushed out by a hydraulic cylinder.  The pin can hit the next shank and bounce back. 
+ 
+ 
+ 
+.  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Removing the Teeth Ripper in 16 (G,H,M) & 24 
+(H,M) Motorgraders 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1407-2.06-1348 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+Figure 3. Top ripper disassembly operation with the new tool. 
+ 
+4.0 Benefits 
+ 
+• Easy manufacturing and operation tool. 
+• Reduction of accidents due to bruises, back pain, sore hands, excessive noise, etc... due 
+to the elimination of hammering and poor working postures during the extended working 
+time. 
+• Reduction of the technical personnel for the development of the activity (it is required just 
+one person, previously 2 were required). 
+• C onsiderable saving of time in the development of a task (From 4 hours min to 1 hour  min 
+approximately) nearly reduce 75%. Thus, it increases the machine availability. 
+ 
+5.0 Resources Required 
+ 
+• Components mentioned in the description: 
+ 
+Hydraulic Pump  
+Hydraulic Cylinder (140mm long. The 1" diameter) 
+Quick coupling and hoses sets  
+Cylinder Plates and Liner for the tip-ripper  
+ 
+• Liner manufacturing drawings and Cylinder plates for the cylinder assembly 
+• Welder. 8 H/H 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Removing the Teeth Ripper in 16 (G,H,M) & 24 
+(H,M) Motorgraders 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1407-2.06-1348 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Manufacturing drawings. 
+ 
+ 
+ 
+ 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Removing the Teeth Ripper in 16 (G,H,M) & 24 
+(H,M) Motorgraders 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1407-2.06-1348 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Carlos Mario Herrera Peñaranda  
+Project Engineer - CPS & 6 Sigma Black Belt 
+GECOLSA - Drummond Ltd Project. - Mina El Descanso  
+Email: 
+carlos_herrera@gecolsa.com.co 
+ 
+Special thanks: 
+ 
+Jair Barrios (DRUMMOND); Freddy Trespalacios (DRUMMOND); Juan Ávila (DIMANTEC) 
+Alcides Rocha (DIMANTEC); Julio Manga (DIMANTEC). 
+ 
+Luis Alberto Fernández Ch. 
+Development Engineer & BPs Coordinator 
+GECOLSA_CAT Mining Division 
+Email: 
+luisalberto_fernandez@gecolsa.com.co 
+ 
+Translated by: 
+Edgard Romero (GECOLSA, English-Spanish Instructor) 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Removing the Teeth Ripper in 16 (G,H,M) & 24 
+(H,M) Motorgraders 
+DATE 
+2/16/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1407-2.06-1348 
+Caterpillar Confidential:  GREEN          Page 5 of 5

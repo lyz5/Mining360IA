@@ -1,0 +1,256 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+August 18 
+4.05-170504-03 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      mining.cat.com 
+ 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Connecting Rod Lifting 
+Tool (Various Engines) 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Connecting Rod Lifting Tool (Various Engines) ......... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Connecting Rod Lifting Tool 
+DATE 
+8/7/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.05-170504-03 
+Caterpillar Confidential:  YELLOW          Page 1 of 5 
+ 
+1.0 Introduction  
+ 
+The assembly and attachment process for the connecting rod is a critical part of an engine rebuild. 
+Appropriate care and handling of this  major component  is critical for operation; therefore, it is 
+important to give it the utmost care when completing an engine assembly or disassembly.   
+ 
+During the process, the connecting rods are stored in baskets and must be manually extracted by 
+the technician to carry out the final assembly process. The technician must lean over the basket 
+and pull th e rods, as seen in the  figure below.  This repetitive process for each engine will 
+eventually lead to discomfort for the technician and may even lead to injury down the road. 
+ 
+Implementation of this change is geared towards improving the handling of the engine connecting 
+rods by improving the storage and packing process. 
+ 
+  
+  
+Before        After 
+ 
+This lifting tool aims to prevent hip and/or lower back pain for technicians, as well as minimize the 
+amount of time spent operating lifting machines. Overall, the implementation of this tool will lead to 
+an improvement in safety standards and improve production time.  
+ 
+2.0 Best Practice Description 
+ 
+Information on the oil pump lifting tool designed is as follows: 
+ 
+• Geometry: Curved cylindrical bar 
+• Appearance: Sickle-shaped 
+• Dimensions: 
+o Bar thickness: 1-1/ 4" diameter 
+o Bar + Cone Length: 32" 
+o Weight: 5 kg 
+• Materials: Steel, aluminum, and Teflon 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Connecting Rod Lifting Tool 
+DATE 
+8/7/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.05-170504-03 
+Caterpillar Confidential:  YELLOW          Page 2 of 5 
+ 
+• Structure (Parts or Stages): 
+o Solid, cylindrical bar made of steel 
+o Teflon roller covering the straight side of the bar 
+o Conical aluminum tip 
+o 5/16" diameter pin securing the cone 
+• Personnel involved: Metal-mechanical technicians 
+ 
+More information on the dimensions and specifications can be found in the attachments section. 
+  
+3.0 Implementation Steps 
+ 
+• Before using the developed lifting tool, be sure to check its condition (1) 
+• Place the lifting tool on the hook of the crane/lifting device being used. This will allow it to 
+be moved to the storage area for the connecting rods 
+• Align the connecting rods in such a way that the tool can pass through  the upper bore of 
+the connecting rod. For this application, 3,500 motors were being used on the crane, which 
+allowed for four connecting rods to be lifted at once (2) 
+• Raise the connecting rods and move them to the desired area . The repetitive motion for 
+the technician is no longer required (3) 
+ 
+  
+  
+ 
+ 
+  
+  
+1 
+2 
+3 
+3 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Connecting Rod Lifting Tool 
+DATE 
+8/7/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.05-170504-03 
+Caterpillar Confidential:  YELLOW          Page 3 of 5 
+ 
+4.0 Benefits 
+ 
+The benefits offered by this improvement are as follows: 
+ 
+• Improved safety standards, primarily regarding lower back injuries and/or hernias 
+• Quicker fastening of the engine connecting rods without resorting to human force 
+• Improved production and energy consumed during the assembly process. From 
+implementation, four engine connecting rods can be transported using the lifting tool 
+instead of having to be carried one by one 
+• Improved maneuverability of the connecting rods is seen as they are placed on the work 
+bench 
+ 
+5.0 Resources Required 
+ 
+To implement this best practice, the following resources are required: 
+ 
+• Materials as outlined in the Best Practice Description section. Total material investment 
+totals USD $240 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+Manufacturing Drawing 
+ 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Connecting Rod Lifting Tool 
+DATE 
+8/7/2018 
+CHG 
+NO 
+00 
+NUMBER 
+4.05-170504-03 
+Caterpillar Confidential:  YELLOW          Page 4 of 5 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+Wilson Arias, Service Supervisor II  
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 5122 | Mobile: 310-6324189 | 
+wilson.arias@relianz.com.co  
+ 
+David Gonzalez, Service Engineer III - Relianz 
+RELIANZ Mining Solutions  
+antonio.gonzales@relianz.com.co   
+ 
+Bairon Surizo, Engine Specialist Technician 
+Dimantec 
+ 
+Carlos Barrera, Engine Specialist Technician 
+Dimantec 
+ 
+Leiner Pacheco, Engine Specialist Technician 
+Dimantec 
+Oscar Valera, Engine Specialist Technician 
+Dimantec  
+ 
+Checked by: 
+Luis Alberto Fernandez Chica, Development Engineer & Best Practices Coordinator 
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 5347 | Mobile: 301-3724303 | 
+luisalberto.fernandez@relianz.com.co | www.relianzcat.com  
+ 
+Translated by:  
+Edgard Romero Avena, Learning Solutions Specialist  
+RELIANZ Mining Solutions | Tel: (5) 3361200, Ext: 35186 | Mobile: 310-3688012 |   
+edgard.romero@relianz.com.co | www.relianzcat.com

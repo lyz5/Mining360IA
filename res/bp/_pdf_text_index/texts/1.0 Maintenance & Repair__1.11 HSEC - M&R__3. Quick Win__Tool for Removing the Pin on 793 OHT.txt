@@ -1,0 +1,256 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Tool for Removing the Pin 
+/ Cable (body retaining) 
+on 793 OHT 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+    
+ 
+  
+0.0    
+Tool for Removing the Pin / Cable (body retaining) on 
+793 OHT ........................................................... 0 
+1.0 Introduction ....................................................... 1 
+2.0 Best Practice Description.................................. 1 
+3.0 Implementation Steps ....................................... 4 
+4.0 Benefits............................................................. 4 
+5.0 Resources Required ......................................... 4 
+6.0 Supporting Attachments / References .............. 4 
+7.0 Related Best Practices ..................................... 4 
+8.0 Acknowledgements .......................................... 5 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+ 
+ 
+ 
+ 
+  
+May 2013 
+1212-1.11-1302 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+The manipulation of the mining equipment components becomes a challenge because of its 
+weight and volume, which can lead to accidents during the installation and removal process.  A 
+device is needed to reduce the risk and accident probability. 
+ 
+The process of removing the pin that holds the cable (while the body is up) has generated 
+accidents caused by beatings and/or smashes due to the manipulation of these elements. 
+ 
+2.0 Best Practice Description 
+ 
+The solution consists of designing a device that reduces accidents to hands, which keeps the 
+hands away from the danger zone;  allowing the mechanic to carry out this activity  safely and 
+quickly.       (Figure 1) 
+ 
+ 
+ 
+Figure 1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+Pin 
+Steel cable 
+Tool for 
+removing the 
+pin 
+Support to 
+hold the tool 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Removing the Pin / Cable (body retaining) on 793 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.11-1302 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Process: 
+ 
+1. Set in the tool. 
+ 
+ 
+ 
+ 
+2. Turn the handle clockwise until the desired height is reached. 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Removing the Pin / Cable (body retaining) on 793 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.11-1302 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3. Secure pin on top. 
+ 
+ 
+ 
+4. Turn the handle counterclockwise until it reaches its lowest position and remove the 
+steel cable. 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Removing the Pin / Cable (body retaining) on 793 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.11-1302 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Implementation Steps 
+ 
+• Design and manufacture the tool shown. 
+ 
+ 
+4.0 Benefits 
+ 
+• Reduce the accident risks while the 793 trucks are under maintenance. 
+• Maintenance process standards improvements. 
+• Improving the conditions of workers exposed to ergonomically incorrect working positions. 
+• Improved customer´s perception. 
+ 
+ 
+5.0 Resources Required 
+ 
+The necessary elements to implement the Best Practice are: 
+• Workforce 
+• Materials (according to the drawings) 
+• Tools  
+ 
+6.0 Supporting Attachments / References 
+ 
+• Design drawings available upon request. 
+ 
+• EDITOR’S NOTE:  Caterpillar will soon have a tool similar to this available and will be 
+available to dealers.  You may request plans from Gecolsa to fabricate your own, or order one 
+from Caterpillar when it becomes available.  This should be available sometime late 2013. 
+ 
+• Tool.mov 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Removing the Pin / Cable (body retaining) on 793 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.11-1302 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+o Name : Jean Castro 
+o Title : Project Engineer 
+o E-mail : jean_castro@gecolsa.com.co 
+o Phone : +57 317-361-8818 
+ 
+o Name :Jose Alberto Roa 
+o Title : GECOLSA Technician 
+o E-mail : técnicos_descansa@gecolsa.com.co 
+ 
+ 
+o Name : Edinson Pantoja 
+o Title : Drummond Technician 
+ 
+Checked and written by: 
+ 
+o Name : Ricardo Chegwin 
+o Title : Technical manage  
+o E-mail : ricardo_chegwin@ gecolsa.com.co 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool for Removing the Pin / Cable (body retaining) on 793 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1212-1.11-1302 
+Caterpillar Confidential:  GREEN          Page 5 of 5

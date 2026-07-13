@@ -1,0 +1,408 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+November 2023 
+1.01-231106-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Optimized Large 
+Components Replacement 
+Process of LMT/OHT 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Optimized Large Components Replacement Process 
+of LMT/OHT ............................................................... 1
+ 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 7 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Optimized Large Components Replacement Process of 
+LMT/OHT 
+DATE 
+11/6/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-231106-1 
+Caterpillar: Confidential Yellow          Page 2 of 8 
+1.0 Introduction  
+ 
+The timing of the PCR of the powertrain components is one of the main factors that impact the 
+availability and performance of the equipment, due to the high downtime required for execution. Smaller 
+components can also significantly impact performance indicators and should be taken into account to 
+meet site maintenance strategies. 
+Therefore, all possibilities for mitigating the impact on the replacement process of these components 
+must be considered. 
+ 
+2.0 Best Practice Description 
+ 
+This BP describes the strategy adopted by this customer to optimize the components' replacement time 
+through the pre- assembly of component peripherals in a prepared maintenance box with dedicated 
+people to carry out the activity. So, the new components will be ready for installation as soon as the 
+previous one is removed, using the pit stop methodology to perform these activities. 
+ 
+3.0 Implementation Steps 
+ 
+3.1 Area and layout definition of the component box: 
+ 
+The defined area must be strategically located close to the PCR execution box of the components in 
+order to facilitate the load handling logistics and optimization of the performers' travel time. It is 
+necessary that the layout allows for the best arrangement of components for pre- assembly of 
+peripherals. This can be standardized with the preparation and demarcation of the layout of the work 
+area in a clean, safe environment, with enough favorable space for the movement of people and 
+equipment and without interference between maintenance teams, as well a good contamination control. 
+ 
+   
+Figure 1, 2. Components Pre-assembly Boxes 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Optimized Large Components Replacement Process of 
+LMT/OHT 
+DATE 
+11/6/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-231106-1 
+Caterpillar: Confidential Yellow          Page 3 of 8 
+3.2 Manufacture of specific supports (Stands) for each component: 
+ 
+In order to carry out the activities safely in a timely manner, suitable devices (brackets, benches, stands 
+etc) must be built in order to support  the peripherals for the assembly of these components in a safe 
+and reliable way. They must be made according to the needs of each component and equipment. 
+ 
+   
+Figure 3, 4. Engine stands 
+ 
+    
+Figure 5,6. Radiator stands 
+ 
+   
+Figure 7, 8. Bench and Support for Front Suspension Assembly and Lift 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Optimized Large Components Replacement Process of 
+LMT/OHT 
+DATE 
+11/6/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-231106-1 
+Caterpillar: Confidential Yellow          Page 4 of 8 
+3.3 Acquisition of resources and tools: 
+ 
+A list of all the basic and special tools necessary for the assembly and installation of the peripherals for 
+each major component is carried out. Lift devices and hand tools listed must meet the specific demand 
+for preparing these components, without including unnecessary tools in the process. 
+ 
+    
+Figure 9. Hand Tools Board Figure                                   Figure 10. Special Tools 
+ 
+3.4 Listing/purchasing peripheral kits to install on the engine and radiator: 
+ 
+A list of all the parts and materials necessary for the installation of the components to be prepared must 
+be made. These parts must be available and prepared for installation in the components, reducing 
+downtime for maintenance technicians in the search for these parts and necessary resources
+. 
+ 
+    
+Figure 11, 12. Parts needed for preassembly process 
+ 
+3.5 Alignment between execution and planning areas: 
+ 
+All resources, parts, labor must be available according to prior planning in order to optimize the 
+execution time similar to a pit stop when replacing components during scheduled maintenance of 
+equipment. 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Optimized Large Components Replacement Process of 
+LMT/OHT 
+DATE 
+11/6/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-231106-1 
+Caterpillar: Confidential Yellow          Page 5 of 8 
+4.0 Benefits 
+ 
+4.1 Services quality improvement (provide efficient utilization of man hour and resource): 
+ 
+With all the necessary resources available, it is possible to perform a quality service applying all the 
+recommendations specified by the manufacturer, such as adequate torques, layouts and proper routing 
+of hydraulic hoses and electrical harnesses, correct positioning of clamps, among others. 
+ 
+4.2 Contamination control improvement: 
+ 
+Working in a planned and organized way, there is enough time to carry out an effective cleaning, good 
+preparation of the parts, as well as the use of appropriate chemical compounds during the assembly of 
+these in the engine. 
+ 
+4.3 Safety: 
+ 
+Eliminates the risks of injuries, working in an appropriate place, on a flat floor, without obstructions and 
+properly demarcated, eliminating the technician's exposure to the inherent risks of other activities. 
+ 
+4.4 Time reduction of major R&I components: 
+ 
+This methodology significantly optimizes the time required between the removal and subsequent 
+installation of larger components such as the engine/ converter, radiator, suspension and front wheel 
+assembly, with a consequent reduction in machine downtime. 
+ 
+Optimized R&I Components Before (Hours) After  (Hours) Gain  (Hours) 
+Engine/Torque Converter 96 54 42 
+Radiator 27 18 9 
+Front  Wheel, Brake and Suspension Assembly 128 48 80 
+Table – 01: Time reduction of major R&I components 
+ 
+ 
+Graphic – 01: Time reduction of major R&I components 
+96
+27
+128
+54
+18
+48
+Engine/Torque Converter Radiator Front  Wheel, Brake and
+Suspension Assembly
+Before (Hours)
+After  (Hours)
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Optimized Large Components Replacement Process of 
+LMT/OHT 
+DATE 
+11/6/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-231106-1 
+Caterpillar: Confidential Yellow          Page 6 of 8 
+4.4.1 Engine/Torque Converter: 
+ 
+Engine replacement time on an LMT is reduced by 42 hours (table / graphic 01) as the components 
+are pre-assembled by performing: 
+• Torque converter installation; 
+• Installation of the front bar with its subcomponents; 
+• Installation of front and rear mounts; 
+• Installation of cooling lines; 
+ 
+    
+Figure 13, 14. Engine/ TC ready to Install on the truck 
+ 
+4.4.2 Radiator: 
+ 
+Radiator replacement time on an LMT is reduced by 9 hours (table / graphic 01) as the component 
+will be ready to install it by performing: 
+• Full flushing; 
+• Core and seals replacement; 
+• Installation of fan hydraulic motor; 
+• Installation of fan and all guards; 
+• Installation of handrails and stairway; 
+ 
+    
+Figure 15, 16. Radiator ready to Install on the truck 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Optimized Large Components Replacement Process of 
+LMT/OHT 
+DATE 
+11/6/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-231106-1 
+Caterpillar: Confidential Yellow          Page 7 of 8 
+4.4.3 Front  Wheel, Brake and Suspension Assembly: 
+ 
+Front Wheel, Brake and Suspension Assembly replacement time on an LMT is reduced by 80 hours 
+(table / graphic 01) as the front suspension will be ready to install it by performing: 
+• Brake and Bearings replacement; 
+• Front wheel and duo cone seals installation; 
+• Bearing pre-load procedure with more reliability (Due to spindle shaft is on vertical position); 
+ 
+   
+Figure 17, 18. Front Wheel, Brake and Suspension ready to Install on the truck 
+ 
+ 
+5.0 Resources Required 
+ 
+Hand tools, Lift devices, Benches, Stands, Suitable reservoirs, Special tooling, Torquemeters, Parts 
+needed, Spare components and Kits for repairs. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Engine and Torque Converter - Separate and Connect (RENR8334-04) 
+Fan - Remove and Install (RENR8334-04) 
+Radiator - Disassemble (RENR8334-04) 
+Front Wheel Bearings - Install - Standard Wheel (KENR8579-14) 
+ 
+7.0 Related Best Practices 
+ 
+0107-2.3-1052 - Major Component Installation Kits Improve R&I Process 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Optimized Large Components Replacement Process of 
+LMT/OHT 
+DATE 
+11/6/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-231106-1 
+Caterpillar: Confidential Yellow          Page 8 of 8 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Thiago Assis 
+      thiago.assis@sotreq.com.br 
++55-31-98887-4301 
+ 
+Cleidiney Silva 
+cleidiney.silva@sotreq.com.br 
++55-31-98989-4550 
+ 
+Special thanks in development and implementation to: 
+ 
+Belimar Costa 
+      belimar.costa@sotreq.com.br 
++55-31-99967-0731 
+ 
+Claudio Cunha 
+claudio.cunha@sotreq.com.br 
++55-31-99929-3361 
+ 
+Paulo Vieira 
+paulo.vieira@sotreq.com.br 
++55-31-97166-3280 
+ 
+Claudinei Ataide 
+claudinei.ataide@sotreq.com.br 
++55-31-97188-7413 
+ 
+Gustavo Lage 
+gustavo.lage@sotreq.com.br 
++55-31-98675-8296 
+ 
+Nivaldo Almeida 
+nivaldo.almeida@vale.com 
++55-31-99440-0319 
+ 
+Anderson Silva 
+anderson.silva@sotreq.com.br 
++55-31-996957094 
+ 
+ 
+Best Practice Champion: 
+ 
+Fellipe Viana 
+fellipe.Viana@sotreq.com.br 
++55-31-991943974

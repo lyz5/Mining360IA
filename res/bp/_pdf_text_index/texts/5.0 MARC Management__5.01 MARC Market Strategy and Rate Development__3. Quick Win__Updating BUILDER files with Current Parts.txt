@@ -1,0 +1,238 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Updating BUILDER™ Files 
+with Current Parts 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Updating BUILDER™ Files with Current Parts  .......... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+July 2007 
+0807-3.3-1085 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+Accurate, up-to-date parts lists within Dealers’ BUILDER files are crucial in developing and 
+maintaining MARCs, Standard Jobs, and PM Checklists. 
+ 
+Currently, there is no automated process within the BUILDER software to update the BUILDER 
+parts lists with ‘Cancelled - Replaced By’ (CRB) parts. A tool in the form of an Excel macro was 
+developed by the MPSD Equipment Management Services group that automatically replaces 
+and/or identifies the CRB parts in BUILDER from DBS or DBSi. 
+ 
+There are three different scenarios in which CRB parts are addressed: 
+1) When one part is cancelled and replaced by one part (‘one-for-one’), 
+2) When many parts are replaced by one part (‘many-for-one’), or 
+3) When one part is replaced with many parts (‘one-for-many’). 
+ 
+This tool automatically replaces the CRB parts in a ‘one-for-one’ or a ‘many-for-one’ scenario in 
+the selected BUILDER database. It creates a grief report to address each ‘one-for-many’ 
+scenario. In this situation, the macro will automatically add the new parts (the ‘for-many’ parts) to 
+the Master Parts Table in BUILDER, but the user will have to manually add the ‘for-many’ parts in 
+each applicable job parts list and delete the cancelled part. Before replacing the part numbers in 
+BUILDER, the spreadsheet has an option to view the dealer on-hand quantities of the cancelled 
+parts. 
+ 
+2.0 Best Practice Description 
+ 
+To Set-Up Client Access ODBC:  
+ 
+1. Click Windows 'Start' button.  
+2. Click 'Settings'.  
+3. Click 'Control Panel'.  
+4. Click 'Administrative Tools'.  
+5. Click 'Data Sources (ODBC).  
+6. On the 'User DSN' tab, click the 'Add' button. 
+7. Select 'Client Access ODBC' driver and click 'Finish' (Note: If the Client Access ODBC driver is  
+missing, it can be loaded from the dealer’s CD labeled “AS400 Client Access Family for  
+Windows" or install Client Access Express).  
+8. Type in a Data Source Name (i.e. CATS6R).  
+9. Enter your AS/400 System Name (i.e. CATS6R.SC.CAT.COM).  
+10. Click 'OK' to save connection. 
+ 
+To perform the update: 
+ 
+1. Copy the spreadsheet into the folder where the BUILDER database is stored.  
+Note: see attachment in Section 6.0 in this document to download the spreadsheet. 
+2. Enter the ODBC name that points to the AS/400.  
+3. Enter the data library that contains the PIC Store (PCPPIST0) file, which contains store on-
+hand  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Updating Builder Files with Current Parts 
+DATE 
+2/20/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0807-3.3-1085 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+quantities.  
+4. Enter the LIBCOM library that contains the Replacing Part (PCPPRRP0) file.  
+5. Enter the name of the BUILDER database that you want to update (include the .mdb suffix). 
+6. Enter 'Y' to grief all parts that have on-hand quantities. These parts will not be automatically  
+replaced. Enter 'N' to automatically replace these parts. (It is recommended to first enter 'Y'  
+and save the report. Then enter 'N' and re-run to automatically replace parts). 
+7. Save your changes to the spreadsheet.  
+8. Click the 'Update BUILDER Parts' button. The process will run and generate a worksheet with 
+a  
+summary of the automatically replaced parts, as well as a grief report. 
+.  
+*** To re-run this process, click on the 'Replace Part Input' worksheet and re-run. ***  
+ 
+Recommendations: 
+ 
+1. Import current parts pricing after performing ‘Engineering Design Change Part Update’. (The 
+newly  
+added parts will have a price of zero.)  
+2. Print the worksheet of the part numbers on hand quantities to determine stock disposition.  
+3. Print the worksheet to help manually reconcile the ‘one-for-many’ parts. In BUILDER, select  
+‘Tables > Parts’. For each ‘BUILDER Parts with Grief’, select ‘Where Used’. This will generate 
+a list of repair options in which the user needs to manually add the ‘Replacing Parts’ in each 
+job parts list and delete each ‘BUILDER Parts with Grief’. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+To obtain a subscription of BUILDER 1.8.1 software, contact:   
+ 
+ Caterpillar Media Logistics Subscriptions 
+ 1- 800-566-7782 (U.S. and Canada) or (309) 266-0942 
+ Fax: (309) 266-4647 
+ Media_logistics@cat.com 
+ 
+ 
+or 
+ 
+  
+• To determine the latest version of CSA software, reference:  
+https://dealersoftware.cat.com/sofTrack/searchInput.do 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Updating Builder Files with Current Parts 
+DATE 
+2/20/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0807-3.3-1085 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+• For access to the CGM BUILDER Downloads webpage in order to view and download 
+posted CGM BUILDER files, contact Bill Gallagher at Gallagher_William_L@Cat.com 
+ 
+To keep up-to-date of any additional utilities or changes to the CSA tools join the CSA Toolkit 
+User Group: https://kn.cat.com/cat.cfm?id=7308 
+ 
+4.0 Benefits 
+ 
+Dealers can quickly and easily update their own localized CGM BUILDER files periodically in 
+order to develop and maintain MARCs, Standard Jobs, and PM Checklists. 
+ 
+5.0 Resources Required 
+• BUILDER Software 
+• Microsoft Excel 
+• AS400 Client Access Family for Windows or Client Access Express 
+• DBS or DBSi 
+ 
+6.0 Supporting Attachments / References 
+ 
+Engineering Design Change Part Update.xls 
+Note:  this spreadsheet will be part of the next release of BUILDER (1.8.2). 
+ 
+7.0 Related Best Practices 
+ 
+0807-3.3-1084  Escalating MARCs Based on Forecasted Parts Consumption 
+ 
+8.0 Acknowledgements 
+ 
+The Excel spreadsheet containing the Macro in this Best Practice was developed by: 
+ 
+ Lori Button & Floyd Green 
+ Equipment Management Services Implementation 
+ Marketing & Product Support Division 
+  
+This Best Practice was written by: 
+ 
+ William L. Gallagher 
+ CGM Core 14 BUILDER Developer 
+Gallagher_William_L@Cat.com 
++1 309-675-8085 
+  
+Some information obtained from the referenced ‘CSA Toolkit User Group’ Knowledge Entry. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Updating Builder Files with Current Parts 
+DATE 
+2/20/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0807-3.3-1085 
+Caterpillar Confidential:  GREEN          Page 3 of 3

@@ -1,0 +1,378 @@
+===== PAGE 1 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Proceso de Mantenimiento Preventivo de 8 Etapas 
+ 
+ 
+Fecha: 
+Junio-2011 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1011-1.01-1219 
+Caterpillar Confidential GREEN   1 de 6 
+__________________________________________________  
+Serie de “Mejores Prácticas” 
+ 
+Proceso de Mantenimiento Preventivo de 8 
+Etapas (M&R- Estratégico) 
+ 
+Mantenimiento Preventivo de 8 Etapas  1 
+1.0 Introducción  2 
+2.0 Descripción de las mejores prácticas  2 
+3.0 Pasos para la implementación  3 
+4.0 Beneficios  5 
+5.0 Requerimiento de recursos  5 
+6.0 Soporte adicional/ Referencias  5 
+7.0 Otras mejores prácticas relacionadas  6 
+8.0 Agradecimientos  6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+EXENCIÓN DE RESPONSABILIDAD: La información y los p osibles beneficios 
+sugeridos en este documento están basados en la inf ormación proporcionada por 
+uno o más distribuidores Cat®, y basados en la opin ión de dichos distribuidores es 
+que se les considera como "Mejores Prácticas". Cate rpillar no se responsabiliza ni 
+da garantía sobre la información contenida en este documento o en los productos 
+mencionados en este documento. Caterpillar agradece  y acoge recomendaciones 
+adicionales sobre "Mejores Prácticas" de nuestra red de distribuidores. 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Proceso de Mantenimiento Preventivo de 8 Etapas 
+ 
+ 
+Fecha: 
+Junio-2011 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1011-1.01-1219 
+Caterpillar Confidential GREEN   2 de 6 
+ 
+1.0  
+Introducción:  
+ 
+El Mantenimiento Preventivo (MP) es fundamental para el éxito de cualquier sistema 
+de mantenimiento y reparación (M&R). Es uno de los pilares, y como tal, debe ser 
+considerado como uno de los puntos focales en la es trategia general de gestión del 
+mantenimiento de los equipos. Los objetivos del MP se enfocan para mantener al 
+equipo en condiciones óptimas de funcionamiento y seguridad, para reducir el riesgo 
+de fallas y las posteriores reparaciones no program adas, y para optimizar los costos 
+de posesión y operación de los equipos. 
+ 
+Esta “Mejor Práctica” describe la metodología de Ma ntenimiento Preventivo (MP) de 
+8 etapas. Es un soporte complementario para la “Mej or Práctica” de Mantenimiento 
+Preventivo (Estratégico- 1007-2.0-1101) y es una al ternativa a la metodología que 
+se le conoce como el MP tradicional o de 4 etapas. 
+ 
+Como parte del "modelo de mantenimiento y reparació n" de “Caterpillar Global 
+Mining”, la orientación es hacia un modelo de mante nimiento de "mantenimiento 
+basado en la condición del equipo" . En otras palabras, a Caterpillar le gustaría 
+ver una metodología "de reparación antes de la fall a". Para soportar esto, una 
+estrategia general de mantenimiento y reparación (M &R) debe incluir los procesos 
+de monitoreo de condiciones, gestión de trabajos diferidos (backlogs), planificación y 
+programación. 
+ 
+La metodología de MP en 8 etapas abre la oportunida d para la ejecución de los 
+backlogs previstos y programados en cada uno de los  servicios MP. Por 
+experiencia, los autores de esta metodología han ob servado que la duración de los 
+servicios MP más cortos y más largos no siempre tie nen backlogs programados en 
+esos momentos debido al deseo de mantener un nivel aceptable de disponibilidad. 
+Lo que se ha encontrado en el modelo de "reparación  antes de la falla" es que 
+asegurando la oportunidad de programar y ejecutar l a totalidad de los backlogs en 
+cada servicio MP proporciona la mejor oportunidad para maximizar la confiabilidad y 
+la disponibilidad, reduciendo al mismo tiempo los costos totales al mínimo. 
+ 
+ 
+2.0  Descripción de las mejores prácticas 
+ 
+Un programa de servicio MP tradicional (metodología  de MP 1, 2, 3 y 4 - 250, 500, 
+1.000 y 2.000 horas) resulta en duraciones de servicios que varían según el número 
+de tareas que se requieren llevar a cabo. Como un e jemplo, un PM 250 horas con 
+una pequeña cantidad de tareas puede requerir un ti empo de detención de 4 horas. 
+Por lo contrario, un MP de 2.000 horas, en el que se lleva a cabo todas las tareas de 
+mantenimiento, los cambios de aceite y filtros; el tiempo de detención puede ser 
+tanto como 24 horas (o más), dependiendo del tipo de máquina, el trabajo necesario 
+y los recursos disponibles. 
+ 
+La metodología de MP de 8 etapas vs. la de 4 etapas  se resume en la figura 2.1 a 
+continuación: 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Proceso de Mantenimiento Preventivo de 8 Etapas 
+ 
+ 
+Fecha: 
+Junio-2011 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1011-1.01-1219 
+Caterpillar Confidential GREEN   3 de 6 
+ 
+ 
+Figura 2.1: Proceso de las metodologías de MP 4 y 8 etapas 
+ 
+Entre ambas metodologías no existe diferencia en cu anto a las tareas o en sus 
+intervalos de ejecución. Esto se explicará en los “ Pasos para la Implementación” a 
+continuación. 
+ 
+ 
+3.0 Pasos para la Implementación 
+ 
+Puede haber varios métodos de implementación para e l MP de 8 etapas. La mejor 
+manera de ejecutar este proceso es empezando con el equipo nuevo, o a partir y en 
+conjunto con el siguiente MP de 2.000 hrs. 
+ 
+3.1 Redistribución de las Tareas y del Programa Servicio (Ejemplo) 
+Intervalo fijo de 250 hrs- Lavado en cada servicio 
+Mezcla de los servicios de 250/ 500/ 1000/ 2000 
+250 500 1000 2000 250 500 750 1000 1250 1500 1750 2000 
+PM1 PM2 PM3 PM4 PM1 PM2 PM3 PM4 PM5 PM6 PM7 PM8 
+Aceites 
+Aceite de motor- Cambio (ORS') 500 X X X X X X X
+Aceite de rueda delantera- Cambio 500 X X X X X X X
+Aceite del Convertidor y transmisión- Cambio 1000 X X X X
+Aceite del tanque hidraulico- Cambiar 2000 X X
+Aceite del sistema de dirección- Cambiar 2000 X X
+Aceite del diferencial y mandos finales- Cambiar 200 0 X X
+Filtros 
+Filtro de aceite de activación de frenos- Reemplaza r 500 X X X X X X X
+Filtro de aceite de enfriamiento de frenos- Reempla zar 500 X X X X X X X
+Filtros de aceite de diferencial y mandos finales- Reemplazar 500 X X X X X X X
+Filtro de aceite de motor- Reemplazar 500 X X X X X X X
+Filtro de combustible primario- Reemplazar 500 X X X X X X X
+Filtro de combustible secundario- Reemplazar 500 X X X X X X X
+Filtro del sistema de direccion- Reemplazar 500 X X X X X X X
+Filtro de aceite del convertidor- Reemplazar 500 X X X X X X X
+Filtro de aceite de la transmisión- Reemplazar 500 X X X X X X X
+Filtro de aire primario del motor- Limpiar/ Reempla zar 2000 
+Intervalo Actividad 
+Tradicional 
+8 Etapas 
+Basado en las condiciones 
+ 
+ 
+Figura 3.1: Esta es una demostración de un conjunto  de tareas de cambio de aceite 
+y filtros programado. Muestra tanto el sistema trad icional como el Proceso de 8 
+etapas a la que se migraron las actividades conservando los intervalos de servicio.  
+
+===== PAGE 4 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Proceso de Mantenimiento Preventivo de 8 Etapas 
+ 
+ 
+Fecha: 
+Junio-2011 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1011-1.01-1219 
+Caterpillar Confidential GREEN   4 de 6 
+Intervalo fijo de 250 hrs- Lavado en cada servicio 
+Mezcla de los servicios de 250/ 500/ 1000/ 2000 
+250 500 1000 2000 250 500 750 1000 1250 1500 1750 2000 
+PM1 PM2 PM3 PM4 PM1 PM2 PM3 PM4 PM5 PM6 PM7 PM8 
+Aceites 
+Aceite de motor- Cambio (ORS') 500 20 20 20 20 20 20 20 
+Aceite de rueda delantera- Cambio 500 15 15 15 15 15 15 15 
+Aceite del Convertidor y transmisión- Cambio 1000 20 20 20 20 
+Aceite del tanque hidraulico- Cambiar 2000 35 35 
+Aceite del sistema de dirección- Cambiar 2000 10 10 
+Aceite del diferencial y mandos finales- Cambiar 200 0 40 40 
+Filtros 
+Filtro de aceite de activación de frenos- Reemplaza r 500 10 10 10 10 10 10 10 
+Filtro de aceite de enfriamiento de frenos- Reempla zar 500 15 15 15 15 15 15 15 
+Filtros de aceite de diferencial y mandos finales- Reemplazar 500 10 10 10 10 10 10 10 
+Filtro de aceite de motor- Reemplazar 500 10 10 10 10 10 10 10 
+Filtro de combustible primario- Reemplazar 500 5 5 5 5 5 5 5
+Filtro de combustible secundario- Reemplazar 500 5 5 5 5 5 5 5
+Filtro del sistema de direccion- Reemplazar 500 5 5 5 5 5 5 5
+Filtro de aceite del convertidor- Reemplazar 500 10 10 10 10 10 10 10 
+Filtro de aceite de la transmisión- Reemplazar 500 15 15 15 15 15 15 15 
+Filtro de aire primario del motor- Limpiar/ Reempla zar 2000 
+Totales 120 140 225 85 70 85 55 95 75 85 55 
+Promedio 
+Basado en las condiciones 
+162 76 
+Actividad Intervalo 
+Tradicional 
+8 Etapas  
+ 
+Figura 3.2: Este es el mismo ejemplo de la figura 3 .1 pero considerando los tiempos 
+aproximados en minutos que toma completar cada tarea.  
+ 
+La clave está en redistribuir las tareas sin afecta r el intervalo de la tarea y buscar 
+que el tiempo total necesario para cada una de las 8 etapas sea lo más parejo 
+posible. Este ejercicio se debe repetir para todos todas las tareas de lubricación, 
+mantenimiento e inspección mecánica (mantenimiento preventivo). Una vez que 
+todas las tareas se han redistribuido, resumir el t iempo total y asegurar la duración 
+de cada etapa del servicio es más o menos el mismo.  Un ejemplo se muestra la 
+Figura 3.2. 
+ 
+El Proceso de 8 etapas también se puede aplicar a intervalos de 500 horas sobre un 
+periodo de 4000 horas para cualquier flota de máqui nas. Sin embargo, la 
+organización de mantenimiento debe considerar los s iguientes factores al 
+determinar el intervalo de servicio: 
+ 
+• Las recomendaciones de mantenimiento del fabricante 
+• La estrategia general de mantenimiento 
+• El tamaño y el número de máquinas en la flota 
+• Los requerimientos Laborales 
+• Las herramientas disponibles en sitio y la infraestructura 
+• Condiciones del del lugar de trabajo 
+ 
+3.2 Gestión del Cambio 
+ 
+El papel del dueño de un proceso es fundamental par a una transición exitosa. Él/ 
+ella debe ser asignado con la autoridad y el presup uesto para facilitar la aplicación 
+del programa. Sus responsabilidades deberían inclui r la educación y la 
+comunicación a las partes interesadas clave para obtener y asegurar su apoyo en la 
+implementación del proceso de 8 etapas. Estas parte s interesadas incluyen cargos 
+como; Superintendente de Mantenimiento, Planificador, Programador, Supervisor de 
+
+===== PAGE 5 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Proceso de Mantenimiento Preventivo de 8 Etapas 
+ 
+ 
+Fecha: 
+Junio-2011 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1011-1.01-1219 
+Caterpillar Confidential GREEN   5 de 6 
+Mantenimiento, Supervisor MP, Analista de Flota, Té cnicos, Comunicador Técnico y 
+el Supervisor del Departamento de Producción. 
+ 
+La experiencia nos ha enseñado que al involucrar a los principales interesados 
+desde el inicio del proceso nos ayuda a que todos d entro de la organización 
+entiendan las razones y beneficios de este cambio. Para asegurarse que de todas 
+las partes afectadas compren la idea y la propiedad  del proyecto, lo mejor es formar 
+equipos de trabajo cuyos miembros sean de todos los  niveles de la organización, 
+tanto al definir el proceso como en la construcción de las listas de verificación. 
+ 
+ 
+4.0  Beneficios  
+ 
+El propósito y los beneficios del Mantenimiento Pre ventivo (MP) de 8 etapas son los 
+siguientes: 
+• Mejorar la eficiencia PM. 
+• Brinda la oportunidad para planificar y programar  la ejecución completa de 
+backlogs, de manera eficiente y eficaz en cada PM. 
+• Reducir el tiempo de detención de la máquina a tr avés de la mejora de las 
+condiciones de la máquina y de la confiabilidad de la flota. 
+• Mejora de la planificación y programación de las actividades del MP. 
+• Mejora de la planificación de la producción consi derando los tiempos de 
+detención programados para los MP. 
+• Una sola tripulación puede completar el servicio de MP durante el turno, 
+mejora el compromiso y la responsabilidad, se elimi na la pérdida de tiempo 
+durante los cambios de turno, etc. 
+• Número dedicado y constante de personas necesaria s para cada servicio. 
+• Capacidad para programar número consistente de PM  para cada turno, por 
+ejemplo dos MPs por día, uno por turno. 
+ 
+ 
+5.0  Requerimientos de Recursos 
+ 
+Por favor, consulte la Mejor Práctica "1007-2.0-110 1 - Mantenimiento Preventivo 
+(MP- Estratégico)” para información sobre el requerimiento de recursos básicos. 
+ 
+ 
+6.0  Soporte adicional/ Referencias 
+ 
+• 8-Step vs 4-Step PM Calculator.xls 
+• 8-Steps PM Program.ppt 
+• 785C 8 Step info.xls 
+• PM Schedule test.xls 
+• 8 Step Master.xls 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+La información acá contenida no debe ser copiada o transmitida a otros sin la autorización escrita de Caterpillar 
+ 
+Proceso de Mantenimiento Preventivo de 8 Etapas 
+ 
+ 
+Fecha: 
+Junio-2011 
+ 
+Rev. N° 
+01 
+ 
+NUMERO 
+1011-1.01-1219 
+Caterpillar Confidential GREEN   6 de 6 
+7.0  Otras “Mejores Prácticas” Relacionadas 
+ 
+1007-2.0-1101 - Mantenimiento Preventivo (MP- Estratégico) 
+1007-2.0-1100 - Procesos de Mantenimiento y Reparación 
+0607-2.9-1081 - Mejora de las operaciones de MP utilizando una bahia 
+especializada 
+ 
+ 
+8.0  Reconocimientos 
+ 
+Esta Mejor Practica del proceso de MP en 8 Etapas fué elaborado por:  
+ 
+Rex Cheung 
+Development Engineer 
+Caterpillar Global Mining 
++613 9953 9962 
+Cheung_Rex@cat.com  
+ 
+Por favor, contactar al autor para cualquier detalle o información adicional 
+relacionado a esta Mejor Práctica  
+ 
+Caterpillar Global Mining desea hacer una mención especial a WesTrac and 
+Hastings Deering por su Buena disposición para compartir esta Mejor Práctica. 
+ 
+ 
+Traducido y revisado por Carlos R. Molina.

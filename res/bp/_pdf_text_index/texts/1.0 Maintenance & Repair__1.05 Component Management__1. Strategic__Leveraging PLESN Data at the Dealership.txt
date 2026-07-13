@@ -1,0 +1,448 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+May 2016 
+1604-1.05-1427 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Leveraging PLESN Data at 
+the Dealership 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Leveraging PLESN Data at the Dealership ................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Leveraging PLESN Data at the Dealership 
+DATE 
+5/13/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1604-1.05-1427 
+Caterpillar Confidential:  YELLOW          Page 1 of 6 
+1.0 Introduction  
+Demand planning for key replacement parts & components is critically important as the Cat 
+dealer works with the local mine site to achieve machine availability targets as well as other key 
+mining metrics. In order to properly plan for upcoming parts needs at the site, many dealers have 
+been using elements of the Planned Component Replacement (PCR) process, a process in place 
+since approximately 2005, to understand what, when, and how many major components will be 
+required for the Traditional Mining machines operating on sites in their territory. And given the 
+parts commonality typically inherent with traditional Cat machines, the PCR process has worked 
+well in preparing the enterprise supply chain (both the dealer and Caterpillar) to ensure the right 
+mining parts are available at the right time and delivered to the right location to enable machine 
+uptime. 
+ 
+However, with the introduction of Expanded Mining machines into the Cat mining product 
+portfolio, it was observed the PCR process may not be sufficient in providing an accurate 
+depiction of what key replacement parts & components are required. One of the primary drivers 
+for this is due to the lack of parts commonality that typically exists in the Expanded Mining 
+machine models, as these machines can be more custom in nature and have parts lists that are 
+not widely shared even within the same product line. Therefore, in order to ensure the correct 
+parts are being planned for by the site, dealer, and Cat, the Plan for Every Serial Number 
+(PLESN) initiative was launched at the beginning of 2015. Not only does PLESN provide greater 
+insight into the correct key replacement parts & components that will be needed for an upcoming 
+rebuild or replacement event, but PLESN also helps drive:  
+ 
+• I ncreased communication between the site, dealer, and Cat on the current & desired repair 
+strategy for a specific mining machine 
+• Accurate identification of future parts & service sales opportunities 
+• B etter understanding of the required parts, labor, and tooling that will be required to 
+service the machine and maximize uptime 
+• I mproved mining parts and machine availability to achieve customer satisfaction & 
+expectations 
+• E nablement of the Seed / Grow / Harvest model to achieve POPS-C and OPACC targets.  
+ 
+2.0 Best Practice Description 
+This Best Practice describes the internal processes that Finning Canada is implementing to better 
+leverage and take action on PLESN data. The primary areas of focus for this Best Practice are: 
+roles & responsibilities; process used by Finning’s mining parts supply chain team; and the 
+process used by Finning’s mining parts commercial team. 
+ 
+3.0 Implementation Steps 
+Before beginning on a successful journey with the Plan for Every Serial Number, it is imperative 
+the dealer’s senior leadership team are committed and engaged, and are supportive of the effort 
+at the outset. The PLESN initiative crosses functional areas at the dealership, is resource-
+intensive, and does require much hard work in order to develop and stabilize the necessary 
+processes. Without this level of engagement and commitment, it is not likely to be successful. 
+Similarly, Cat region leadership (both in the Global Aftermarket Solutions Division [GASD] and 
+Cat Global Mining [CGM] must also fully support and proactively engage in the PLESN initiative 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Leveraging PLESN Data at the Dealership 
+DATE 
+5/13/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1604-1.05-1427 
+Caterpillar Confidential:  YELLOW          Page 2 of 6 
+to ensure its success. Through the collective commitment from the dealer and Cat, PLESN can 
+withstand the challenges that will be faced as the hard work begins. 
+ 
+After commitment to the initiative has been given, a process map for how PLESN will functionally 
+and tactically work should be developed. Cat has a high-level demand planning process map that 
+can be leveraged, but the dealer should then customize the details within that high-level map to 
+ensure local considerations are taken into account. Please see the attached file ‘PLESN Process-
+V2-Final-April 8 2016.pdf’. The file represents the current process in place at Finning Canada to 
+action the data. To reiterate, however, each dealer should localize the process map to 
+incorporate any relevant local nuances. 
+ 
+Once the process map has been established, a Roles & Responsibilities (R&R) document can be 
+created to ensure key departments, and individuals within those departments, are identified for 
+the process. This helps ensure each understands his or her responsibility in the PLESN process, 
+and how his or her work contributes to the success of the PLESN initiative in order to fully 
+maximize its potential. An example of the R&R can be found in the supporting attachment titled 
+‘PLESN Required Data and R&R (April 2016).pptx’ for reference. 
+ 
+As these implementation steps are completed, communication throughout the organization is 
+critical to ensure people are aware of what is happening, what the change means to them, who 
+they can turn to for questions and clarity, and how they can support the endeavor. For example, 
+Finning developed both an internal dealer document, as well as an external customer document, 
+to ensure the initiative was fully communicated and understood by those who would be impacted. 
+By more thoroughly communicating with key individuals and groups, Finning was able to gain 
+better engagement both inside and outside the dealership. 
+ 
+Additionally as part of the internal communication strategy, Finning developed an internal site that 
+can be accessed by dealer employees to not only learn more about the PLESN initiative, but 
+access important documents such as PLESN FAQ’s, presentations, templates, status updates, 
+etc. A screen print of this internal site can be found below (see Exhibit A). 
+ 
+Exhibit A: 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Leveraging PLESN Data at the Dealership 
+DATE 
+5/13/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1604-1.05-1427 
+Caterpillar Confidential:  YELLOW          Page 3 of 6 
+Also, Finning leveraged the Tableau software to be able to effectively and efficiently summarize 
+and share completed PLESN data results received from the account representatives. To explain 
+the Tableau screen (see Exhibit B below), Finning customized the report to include the following 
+areas: 
+ 
+• Upper right quadrant: provides a high-level, consolidated view of SKU (Stock Keeping Unit, or 
+line item) and the associated extended dealer net opportunity by the probability of sale % 
+o This gives the dealer a quick view of the total dealer net opportunity from the completed 
+plans submitted by the account representatives, and the associated probability of 
+closing those opportunities as won. 
+• Upper left and middle quadrants: provides an understanding of what machines are active 
+compared to the total population by region (left quadrant) and how many PLESN’s have been 
+completed compared to the total active population by region (middle quadrant) 
+o This provides the dealer a quick glance at how many machines are active in a given 
+region, and also how many of those active machines in the region have a completed 
+PLESN 
+• Lower left quadrant: is a high-level consolidation of SKU and the associated extended dealer 
+net opportunity by % to PCR category; those within the 0% to 74% to PCR range are 
+considered “On Time”; those within the range of 75% to 99% are considered “Close to 
+Replace”; those over 100% are considered “Overdue” 
+o This quantifies for the dealer the various opportunities coming due and the value of the 
+opportunities that need immediate or near-term attention 
+• Lower right quadrant: shows how many SKU are coming due for order and when the order 
+should be placed (based on operational hours being forecasted as well as the Cat lead time to 
+ship the part to Finning (from order to arrival)), as well as the current stock levels for Finning & 
+Cat 
+o This provides Finning a quick snapshot of the volume of orders that will need to be 
+placed on Cat to ensure the necessary parts are in the correct location when needed to 
+support the rebuild / replace / repair event 
+ 
+Exhibit B: 
+ 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Leveraging PLESN Data at the Dealership 
+DATE 
+5/13/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1604-1.05-1427 
+Caterpillar Confidential:  YELLOW          Page 4 of 6 
+4.0 Benefits 
+There are multiple benefits, both for the customer and the dealer, that result from a robust Plan 
+for Every Serial Number process. First, concerning the customer, the following benefits should be 
+realized:  
+• Higher machine availability and therefore productivity due to understanding the what part is 
+needed, when it is needed, and where it is needed 
+• Thorough understanding by the dealer and Cat of the customer’s mining machine, its 
+current condition, and the repair strategy 
+• Improved parts availability and therefore a reduction in emergency freight and fees due to 
+future demand signals being provided to the dealer & Cat, and associated action being 
+taken when and where necessary 
+• Unavailability metric due to parts delays for component replacement should be minimized 
+as proper planning & scheduling takes place between the site, dealer, and Cat 
+• PCR compliance metric should be maximized through the coordination and 
+synchronization between the site, dealer, and Cat of what replace / rebuild / repair events 
+are expected to occur and when they are expected to occur 
+ 
+Similarly, there are also many benefits to the dealer that flow from a solid PLESN process in 
+place. Some of these include: 
+• Improved visibility and understanding of parts & service opportunities coming due with key 
+mining customers & sites  
+• Potential to grow parts & labor sales and POPS-C (Percentage of Parts Sales – Caterpillar 
+(equipment)) with mining customer base 
+o As an example, Finning was able to develop an effective proposal / quote and then 
+close a ~$4 million opportunity for Expanded Mining ERS (Electric Rope Shovel) 
+undercarriage through an opportunity highlighted by the PLESN effort 
+• Improved parts margin & OPACC (Operating Profit After Capital Charge) by lowering 
+emergency / expediting freight and fees through improved demand planning 
+• Improved coordination of planning across departments (Parts, Product Support Marketing / 
+Sales, Service, CRC (Component Rebuild Center)) at the dealership regarding future 
+product support business 
+• Change from reactive position responding to the customer’s demands to a proactive 
+position 
+o Dealer is able to engage the customer early to discuss options rather than after 
+failure or after the customer has decided on a competitive alternative 
+• Opportunity to further the Seed / Grow / Harvest model and strengthen the dealer’s PINS 
+(Percentage of Industry Sales) position through customer product support satisfaction 
+• Better position of PSSR (Parts & Service Sales Representative) / Account Representative 
+as proactive consultant to the customer  
+o By leveraging the Tableau software, Account Representatives can drill down to a 
+specific machine serial number / part number to understand what is coming due and 
+when; this allows the Account Representative to better plan for the next visit to the 
+site, understanding what opportunities need to be quoted and/or closed to allow for 
+the necessary order processing and lead time to have the part ready when required 
+by the customer 
+ 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Leveraging PLESN Data at the Dealership 
+DATE 
+5/13/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1604-1.05-1427 
+Caterpillar Confidential:  YELLOW          Page 5 of 6 
+5.0 Resources Required 
+In order to develop an effective PLESN process at the dealership, resources are required, 
+primarily in the area of personnel. Although Finning has invested in electronic resources / 
+systems to better facilitate the aggregation, summarization, and communication of PLESN, this is 
+not a requirement. However, active engagement from key personnel is critical to PLESN’s 
+success. 
+ 
+The roles & responsibilities of the dealership and Cat are found in Exhibit C below. These roles & 
+responsibilities should consistently be part of the PLESN process if the initiative is to be 
+successful and achieve the aforementioned benefits. These roles & responsibilities can also be 
+found on the Mining Demand Management site at: 
+https://dealer.cat.com/miningdemandmanagement
+. 
+  
+Exhibit C: 
+ 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+• PLESN Process-V2-Final-April 8 2016.pdf 
+• PLESN Required Data and R&R (March 2016).pptx 
+ 
+  
+Dealer
+Function Primary Activity
+Marketing • Update machine population status by serial number
+• Update SMU and utilization by serial number
+• Qualify & develop parts & service sales leads from PLESN
+Mining 
+Operations
+• Conduct MSR with site to understand / set M&R strategy 
+for machine
+• Customize dealer repair option file from Cat centerline 
+(Builder)
+PSSR or Account 
+Rep
+• Complete template & PLESN for site / machine serial 
+number
+• Validate PLESN data to ensure accuracy
+• Refresh PLESN every cycle (quarterly)
+Parts Dept. • Collect & analyze the PLESN data
+• Analyze current inventory position (on-hand & on-order)
+• Communicate PLESN results
+• Place parts order(s) based on analysis / need
+Service Dept.
+and/or CRC
+• Analyze labor and tooling planned vs. required based on 
+PLESN data
+• Support development of dealer repair option file
+Dealer Site 
+Manager
+• Ensure localized dealer repair option exists for site’s mining 
+serial numbers
+• Ensure validated updates communicated back through 
+dealer & Cat channels
+• Ensure unavailability metric minimized from parts delays
+Cat
+Function Primary Activity
+Aftermarket Solutions 
+Rep
+• Support dealer PLESN completion
+• Analyze merchandising support requests based on 
+lead development, if needed
+GASD Mining Demand 
+Planner
+• Coordinate PLESN effort / completion in region
+Mining Product Support 
+Rep
+• Support MSR with dealer & site
+• Support PLESN completion
+Field Sales Support 
+Engineer 
+• Support template pre-population
+• Support PLESN completion
+Mining Parts & Product 
+Support Team
+• Administer PLESN program
+• Aggregate dealer PLESN files
+• Share dealer PLESN files with internal business 
+partners (CLS; MBD)
+• Communicate PLESN aggregation results
+Cat Logistics Team (CLS) • Compare on-hand & on-order vs. PLESN signal
+• Take material requirement action as needed based on 
+analysis
+Mining Machine 
+Business Division (MBD)
+• Provide part number interpretation as needed
+• Take action on PLESN signal as needed for ETO / DTO 
+items (qualify & scope requirements; analyze for 
+upgrade or retrofit potential)
+• Analyze site-specific life cycle data from PLESN
+• Analyze probability of sale from PLESN
+Site Performance 
+Manager
+• Ensure localized dealer repair option exists for site’s 
+mining serial numbers
+• Ensure validated updates communicated back 
+through dealer & Cat channels
+• Ensure unavailability metric minimized from parts 
+delays
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Leveraging PLESN Data at the Dealership 
+DATE 
+5/13/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1604-1.05-1427 
+Caterpillar Confidential:  YELLOW          Page 6 of 6 
+7.0 Related Best Practices 
+Planning & Scheduling –  1007.2.0-1104 
+Parts Management –   1007-2.0-1105 
+Component Management –  1007.2.0-1106 
+ 
+8.0 Acknowledgements 
+Cat Global Mining would like to thank personnel at Finning Canada for the many contributions to 
+this Best Practice.  
+ 
+Special thanks goes to the following Finning Canada employees:  
+• Jorge Infanta (Supply Chain Supervisor) 
+• Michael Fradgley (Supply Chain Manager) 
+• Carolina Sola (Expanded Mining Parts Commercial Supervisor) 
+• Craig Curran-Morton (PLESN Project Manager) 
+• Rob Hodgson (Director - Expanded Mining Products) 
+ 
+If a Cat dealer would like to discuss Finning’s PLESN process further, they are welcome to 
+contact: 
+ 
+Rob Hodgson, Director - Expanded Mining Products 
+Finning (Canada) 
+Email:  rhodgson@finning.com 
+ 
+ 
+Without Finning’s strong engagement and focus on the PLESN initiative, this Best Practice would 
+not have been possible.

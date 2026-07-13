@@ -1,0 +1,443 @@
+SOURCE: 1.0 Maintenance & Repair\1.05 Component Management\3. Quick Win\Ripper Guard Installation Tool.pdf
+PAGES: 10
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+August 2012 
+1203-1.05-1270 
+  
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Ripper Guard Remove & 
+Install Tool 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Ripper Guard Remove & Install Tool ......................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 8 
+4.0 Benefits .............................................................. 9 
+5.0 Resources Required .......................................... 9 
+6.0 Supporting Attachments / References ............... 9 
+7.0 Related Best Practices ...................................... 9 
+8.0 Acknowledgements ............................................ 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ripper Guard Installation Tool 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1203-1.05-1270 
+Caterpillar Confidential:  GREEN          Page 1 of 9 
+1.0 Introduction  
+ 
+This Best Practice provides instruction for an easier way to replace ripper shank guards through 
+the use of a purpose built lifting jig.  
+ 
+Changing a ripper shank protector is currently a difficult task.  The single shank protector (9N-
+4621) on the D11T weighs 74kg and requires multiple technicians to maneuver the heavy guard 
+onto the ripper tooth before it is positioned in order to install the retaining pins.   
+ 
+This maneuvering is often performed in an awkward position due to the ripper carriage overhead.  
+This can result in unsafe lifting practices and potential injuries. 
+ 
+Use of this tool reduces the need for multiple technicians required to complete this task while 
+removing many of the risks associated with ripper protection replacement methods. 
+  
+2.0 Best Practice Description 
+ 
+ 
+Tool Design: 
+Tool is required to be installed in the lower ripper pin mounts.   
+ 
+Key dimensions for D11R/D11T single shank ripper assembly: 
+ 
+ Distance between outer pin faces (assembled) = 847mm 
+ Hole depth (each pin) = 63mm 
+ Hole diameter = 36mm 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ripper Guard Installation Tool 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1203-1.05-1270 
+Caterpillar Confidential:  GREEN          Page 2 of 9 
+ 
+Swivel End of Tool: 
+Key Design Requirements: 
+ 
+1. Pin rotate / locking plate  
+2. Rotating assembly 
+3. Spring loaded locking pin  
+ 
+ 
+ 
+ 
+Fixed End of Tool: 
+Key Design Requirements: 
+ 
+1. Manual locking pin 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ripper Guard Installation Tool 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1203-1.05-1270 
+Caterpillar Confidential:  GREEN          Page 3 of 9 
+ 
+Rail Assembly: 
+ 
+Key Design Requirements: 
+ 
+1. Lipped C Channel – Heavy Duty 
+2. Rail hook & roller 
+ 
+ 
+ 
+ 
+NOTE: For US users, any lifting tool must be MSHA certified for 
+weight carrying capacity. In all countries, make sure you get 
+lifting devices certified to adhere to local requirements.
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ripper Guard Installation Tool 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1203-1.05-1270 
+Caterpillar Confidential:  GREEN          Page 4 of 9 
+ 
+Shank Protector Ratchet Assembly: 
+ 
+Key Design Requirements: 
+ 
+1. Side mounted belt tensioner 
+2. Twin carabineers  
+3. Hooked ratchet strap ends 
+ 
+ 
+ 
+Ripper Protector Replacement Procedure: 
+ 
+Step 1. Ripper set-up 
+Ripper pin puller to be used to extend out ripper shank to allow approximately 1.5 meters of shank 
+to be extended below the ripper frame. 
+ 
+Step 2. Isolate Machine 
+Make sure that the machine is parked on a flat level surface, all implements are lowered, engine 
+has been stopped and engine has been isolated (and tagged as appropriate). 
+ 
+Step 3. Prepare Lifting Frame 
+The spring loaded locking pin must be in the unlocked position and the Swivel pin opened out. 
+The manual latch on the other end should also be in the unlatched position. 
+ 
+
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ripper Guard Installation Tool 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1203-1.05-1270 
+Caterpillar Confidential:  GREEN          Page 5 of 9 
+   
+  
+ 
+Step 4. Fit Swivel end of Lifting Frame to Ripper bed 
+Insert the swivel end pin into the the ripper tilt pin. Lift up the lifting frame from opposite side 
+(manual latch side) until the locking pin has clicked into the locked postion. A distinct “click” should 
+be heard when the pin is locked. Be sure that the swivel pin stays in position while lifting from the 
+other end. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ripper Guard Installation Tool 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1203-1.05-1270 
+Caterpillar Confidential:  GREEN          Page 6 of 9 
+Step 5. Fit manual pin end of Lifting Frame to Ripper bed 
+ 
+Once the swivel pin end is locked into position, push the manual gun barrel style pin into postion 
+and lock it into place. The lifting frame should now be secure, test it by moving the frame side to 
+side and back and forth to ensure it is safe. 
+ 
+   
+ 
+ 
+  
+  
+  
+ 
+Step 6. Attach ratchet chain block to lifting frame 
+Place the ratchet chain block onto the rail of the lifting 
+frame. Make sure hook is secure and cannot fall off the 
+rail or come lose. 
+ 
+Step 7. Ripper guard set-up 
+The ripper shin guard should be placed so the ripper 
+side is facing down. This allows the ratchet strap to be 
+attached in the correct position. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ripper Guard Installation Tool 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1203-1.05-1270 
+Caterpillar Confidential:  GREEN          Page 7 of 9 
+Step 8. Fit ratchet strap to ripper guard 
+Position the ratchet strap, so when tightened, the lifting point will be just below the top of the 
+shank. The correct location of the ratchet strap will make the guard positioning easier. 
+ 
+ 
+ 
+Step 9. Lift ripper guard. 
+Attach the chain and block hook onto the lifting rings of the ratchet strap. Ensure that it is attached 
+securely and cannot fall. Lift up the guard and slide along the lifting frame rail until the guard is 
+positioned above the ripper shank. 
+   
+  
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ripper Guard Installation Tool 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1203-1.05-1270 
+Caterpillar Confidential:  GREEN          Page 8 of 9 
+Step 10. Lower ripper guard 
+Carefully lower the ripper guard onto the shank. Ensure that the retainers are in the correct 
+position. When the shin guard is aligned, the retaining pins can be knocked into place using a soft 
+face hammer. 
+ 
+ 
+ 
+Step 11. Remove ratchet strap and chain. 
+After the ripper shin guard is secure, release the tension from the chain block and un-hook the 
+ratchet strap. Remove the chain block from the lifting frame rail. 
+ 
+Step 12. Unlock Swivel  
+Pull back the locking pin on the swivel end of the lifting frame. The pin should be moved around to 
+the unlocked position. 
+ 
+Step 13. Remove lifting frame 
+Holding the frame from the manual pin end, slowly pull the frame away from the machine so the 
+manual pin is clear of the machine. Once the manual pin is free, lower the bar slightly and push 
+the bar so the swivel end releases from the machine. 
+ 
+3.0 Implementation Steps 
+1. Design and fabricate the fixture  
+Ensure fixture is certified to local standards as required. 
+ 
+2. Document the removal and installation procedure  
+Provide easy to follow instructions, use clear pictures and detailed instructions. Safety 
+warnings and helpful tips should also be included. 
+ 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ripper Guard Installation Tool 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1203-1.05-1270 
+Caterpillar Confidential:  GREEN          Page 9 of 9 
+3. Train technicians 
+Teach technicians how to set up the machine properly including how to position the ripper, 
+how to isolate and immobilise the machine. 
+  
+4. Follow up and document changes or improvements 
+ 
+ 
+4.0 Benefits 
+• Improved safety – not lifting heavy objects 
+                           – less chance of injuring fingers 
+• Reduced labour – only one person required for R&I  
+• Reduced time to complete job 
+ 
+ 
+5.0 Resources Required 
+• C osts to design and fabricate fixture 
+• Costs to certify fixture 
+• Ratchet strap to hold ripper guard – rated to suitable limit 
+ 
+ 
+6.0 Supporting Attachments / References 
+• Ripper Guard Installation Tool.wmv 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+o Name: Brent Mekis 
+o Title:  CGM Marketing Representative 
+o Email: 
+mekis_brent@cat.com 
+o Phone: +61 03 9953 9121 
+ 
+o Name: Hayden Jones 
+o Title:  Product Performance Engineer 
+o Email: hljones@cat.com 
+o Phone: +61 03 9953 9414 
+ 
+ 
+Special thanks in preparation of this Best Practice to Craig Glanville from Rio Tinto.

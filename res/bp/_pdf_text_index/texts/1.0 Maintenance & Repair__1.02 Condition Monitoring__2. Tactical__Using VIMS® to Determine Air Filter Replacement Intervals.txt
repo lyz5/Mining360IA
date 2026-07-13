@@ -1,0 +1,282 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+0107-2.15-1059 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Using VIMS® to Determine Air 
+Filter Replacement Intervals 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Renewal 
+(CRC) 
+Component 
+Life 
+Management 
+ MARC 
+Management 
+ 
+ 
+ 
+Using VIMS
+® to Determine Air Filter Replacement 
+Intervals ..................................................................... 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using VIMS® to Determine Air Filter Replacement 
+Intervals 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-2.15-1059 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+1.0 Introduction  
+ 
+Typically, a site replaces filters at a fixed number of hours or PM interval. Using VIMS®, however, 
+it may be possible to manage and optimize air filter service based on condition rather than a 
+predetermined hour interval. This Best Practice discusses the process of Trending Air Filter 
+Restriction using VIMS® data and managing change out routines to maximize air filter life based 
+on their condition rather than elapsed time. While some particularly dusty sites may require filter 
+replacement before PM’s, many can benefit from the economy of servicing filters only once used 
+up. Implementation of this practice coincides directly with the steps outlined in the Best Practice 
+Utilizing VIMS®  Data for Effective Planned Maintenance.  That Best Practice contains the steps 
+for obtaining the necessary VIMS®  data to make filter replacement decisions.  
+ 
+2.0 Best Practice Description 
+ 
+A new air filter typically causes a restriction of about 2 – 2.5 kPa (8-10 in. H20). As the machine is 
+run, dust collects in the filter and increases the restriction pressure. Engine performance begins 
+to decline at a restriction of 6 kPa (24 in. H2O). Rather than waiting for a predetermined time 
+period to pass, use the air filter restriction data in VIMS®  to determine a need for filter 
+replacement. For instance, filters could be serviced when restriction pressure reaches 5 kPa (20 
+in. H
+2O).  
+ 
+SMH/Date-Time 
+ 
+Air Cleaner Replacement Policy: 
+Review Trend at PM, and if 5 kPa or less 
+Run to next PM service; 500 hours 
+This graph shows air filter restriction growing with time. Filter replacement is seen at each drop in pressure after 
+maximizing at 6 kPa. Note that the filter change intervals are not exactly the same – filters were changed on 
+condition rather than time. 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using VIMS® to Determine Air Filter Replacement 
+Intervals 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-2.15-1059 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+ 
+ 
+Knowledge of air filter life under particular site conditions will need to be developed to determine 
+whether air filter extensions are possible on the site. 
+ 
+While VIMS
+®  reports air filter restriction at less then 5.0 kPa (24 in. H2O), no action is required.  
+ 
+When restriction surpasses 5.0 kPa (24 in. H2O), or if filters cannot wait until the next PM, filters 
+should be serviced. 
+ 
+The Recommended Trend Analysis Period is several days before PM service is due, using the 
+last 250 hours of recorded data.  Analyze the rate of change in air filter restriction to serve as a 
+guide to how fast the restriction is occurring. 
+ 
+If air filters will last only one PM service and are expected to plug to the point of engine derate 
+before the next PM service, then their life cannot be extended unless efficient changing of air 
+filters in the field is possible. However, if the filters will run successfully to at least the next PM 
+service, plan to resample several days prior to the PM and again assess whether they can be 
+extended. Repeat this analysis until a point is reached where the filters will not reach the next PM 
+without engine derating.    
+ 
+2.1 Management 
+ 
+An appropriate system for marking filters and recording when filters are changed in the work 
+order must be implemented in order to avoid the cost of unnecessarily changing good filters and 
+to help extend filter life.  A Condition Monitoring (CM) analyst or field mechanic should be able to 
+quickly identify when the filter was last serviced in order to avoid servicing new filters should an 
+event arise in the field.  Tracking filter changes may also lead to increased inner filter life when 
+one set of inner filters is used with three sets of outer filters.  
+ 
+Air filters actually become more efficient as they begin to become plugged.  As they trap 
+particles, some of the smaller holes naturally found in filter media become plugged, preventing 
+other particles from passing through.  Extending filter life extends the period that the filter is used 
+when it is more efficient.  One of the goals of filter management is to extend filter life, and then to 
+replace the filter before there is any decline in engine performance. 
+ 
+The air filter management process should begin when all new filters have been installed in a 
+machine.  When the filters are installed, the inner and outer filter should be marked with the date 
+and SMH, and the information should be recorded in a log available to the onsite CM analyst.   
+This information needs to be accurate and visible to all parties involved in managing air filter life 
+(Planning, Field Repairs, PM techs, Reliability Engineer, CM Analyst, etc.). 
+ 
+When restriction data shows the need to replace a filter, the outer filter should be replaced.   The 
+outer filter should again be marked with the date SMH and the inner filter should have an X 
+placed on it.  The goal should be to use 3 outer filters to every inner filter, so first change = 1"X", 
+second change = 2"X's", third time = new inner filter. 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using VIMS® to Determine Air Filter Replacement 
+Intervals 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-2.15-1059 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+ 
+3.0 Implementation Steps 
+ 
+Guidelines for Implementing a CM Based Filter Management Process: 
+ 
+• The process should be implemented on 3-5 trucks. The Best Practice value can be 
+measured before the process is applied to the entire fleet. 
+ 
+• Start the management process with all new filters (inner and outer).  Starting the process 
+on a machine with a new or rebuilt engine is also beneficial. 
+ 
+• Gather the VIMS®  data prior to the PM.  Collecting data at pre-determined intervals will 
+provide consistent results. 
+ 
+• Analyze the VIMS®  data.  A record should be kept of how much the air restriction drops 
+when a new outer filter is replaced.  It should drop to almost the same level as all new 
+filters (slightly higher).  If the drop isn’t this large it may indicate a need to replace the inner 
+filter as well. 
+ 
+• Make decision based on the data VIMS
+®  provides. The onsite CM analyst should be able 
+to use the log determine if air filter restriction is a possible cause of a low power complaint.  
+This will help avoid changing a good air filter when there is a different root cause. 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+• Saves time and resources by making maintenance decisions based on the VIMS
+®  data 
+instead of performing maintenance at standard time intervals. 
+• For an actual fleet of ten 793’s over 6 months: 
+o Changing air filters based on time: 268 outer filters (67 sets) at $800 per set 
+ Total parts cost: $ 53,600 
+o Changing air filters based on VIMS®  data: 112 outer filters (28 sets) 
+ Total Parts cost $22,400 
+o Using VIMS®  saved $31,200 
+ 
+ 
+5.0 Resources Required 
+ 
+The major resource required to implement this Best Practice will be the people and the time 
+dedicated to gathering and analyzing the data collected from the machine.  The VIMS
+®  data will 
+be collected from the machine using the VIMSpc®  software.  VIMS®  Application training may 
+also be required if the users are not familiar with the analysis of VIMS®  data. 
+  
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Using VIMS® to Determine Air Filter Replacement 
+Intervals 
+DATE 
+1/12/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-2.15-1059 
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+ 
+6.0 Supporting Attachments / References 
+ 
+References: 
+VIMSpc®  subscription numbers:  JERD2137 (Dealer Site License) 
+                                                  JERD2138 (Dealer Annual Subscription) 
+                                                   JERD2175 (Customer Annual Subscription) 
+ 
+  VIMS®  Application Guide   SELD7001 
+ 
+Attachments: 
+VIMS®  PM Planner.doc Template for recording VIMS®  data before PM’s 
+ 
+ 
+7.0 Related Best Practices 
+ 
+1006-2.3-1027  Utilizing VIMS® Data for Effective Planned Maintenance 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+VIMS®  Product Support 
+Caterpillar Global Mining 
+1-800-290-1808 US and Canada 
+309-675-6229 International

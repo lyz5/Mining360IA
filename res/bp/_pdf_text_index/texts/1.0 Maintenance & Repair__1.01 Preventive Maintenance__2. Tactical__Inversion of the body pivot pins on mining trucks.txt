@@ -1,0 +1,156 @@
+===== PAGE 1 =====
+Feb 2021 
+1.01-210211-1
+ Caterpillar: Confidential Green 
+CATERPILLAR DEALER BEST PRACTICE 
+Inversion of the body pivot 
+pins on mining trucks 
+Maintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+Repositioning of the dump anchor pins ...................... 0 
+1.0  Introduction ........................................................ 1 
+2.0 Best Practice Description ................................ 1-2 
+3.0  Implementation stages ....................................... 3 
+4.0  Benefits. ............................................................. 3 
+5.0 Necessary resources. ........................................ 4 
+6.0 attachments, references and suports. ................ 4 
+7.0  Recommended uses .......................................... 4 
+8.0  Acknowledgement. ............................................ 4 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+CATE
+RPILLAR DEALER BEST PRACTICE  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Inversion of the body pivot pins on mining trucks 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210211-1 
+Caterpillar Confidential:  YELLOW               Page 1 of 4 
+1.0 Introduction 
+The removal and installation services of truck body assembly is considered a highly critical activity, due 
+to the inherent risks, from the load motion activities and the high weight of the parts involved.  
+One of the task stages is the removal and installation of the pivot pin from the body. The project of the 
+Off-highway truck 793D has the pin fixation positioned to the external part of the equipment, as can 
+be seen in the Figures below. 
+Figure 01: picture from SIS relative to the 
+positioning of the body pivot pins, acooring to 
+factory assembly 793D. 
+Figure 02: picture from the positioning of the 
+body pivot pins, acooring to factory assembly. 
+If there is no working at heights package installed, this best practice has as objective show an 
+alternative of repositioning of the pin from the body, reducing the technician exhibition in the work at 
+height and improving the ergonomics.  
+2.0 Best Practices Description 
+The locking pin for the pivot pins of the body 793D is on the outside of the chassis, during the removal 
+or installation of the pin, the technician needs on the tire, in order to support himself, he cannot use a 
+seat belt to work in height to have access to the pin, bringing a high risk to the activity due to inadequate 
+ergonomics, knowing that the weight of the pin is 40kg 
+In order to reduce the risks inherent in the activity, the body pivot pins were reversed, where we 
+started to install the body pivot pins from the inside of the chassis, as shown in figures 03 and 04. It is 
+recommended to position the square blocks exactly where the exterior ones are located with respect 
+to the pivot pin access.  
+
+
+===== PAGE 3 =====
+CA
+TERPILLAR DEALER BEST PRACTICE  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Inversion of the body pivot pins on mining trucks 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210211-1 
+Caterpillar Confidential:  YELLOW  Page 2 of 4 
+Fi
+gure 03: Picture of the pin lock in the internal part 
+of the  stringer rail body. 
+Figure 04: Picture of the pin positioning 
+without lock to the external part of the  
+stringer rail body. 
+With this new positioning of the pivot pins of the body, the technician gains access to the pin with the 
+platform utilization, without the need of neither wearing a working at heights harness or leaning on the 
+tire. The figure 05shows the platform model used to execute the activity, allowing the pins removal 
+and installation without necessity of seat belt utilization and with adequate ergonomic. 
+Figure 05: Platform to realize the activity pivot pins of the body 
+installation and removal. 
+
+
+===== PAGE 4 =====
+CA
+TERPILLAR DEALER BEST PRACTICE  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Inversion of the body pivot pins on mining trucks 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210211-1 
+Caterpillar Confidential:  YELLOW               Page 3 of 4 
+3.0 Implementation Steps 
+The improvement, inversion of the pivot pins body, can be realized during the gap in the preventive 
+maintenance of body and canopy replacement. According to the figure 06, install the pins in an inverted 
+Weld two boss (PN 8X-3097) to fix the plate 8W-8677, to lock the pivot pin. follow this step to both two 
+of the stringer rail body. 
+This figure shows the blocks welded higher than desired. It’s important that the welds are at least 50mm 
+away from the edge of the top welds. For best fitment, the blocks should be mirrored from the outside 
+facing blocks. 
+Figure 06: positioning the boos to the pin lock. 
+4.0 Benefits 
+ Could reduce the risk accidents during assembly and disassembly, while also reducing
+technicians' effort to install and remove the pins.
+ Better ergonomics and mobility to realize the assignment, without the need of wear the seat
+belt.
+ Reduce the activity time of dump removal or installation.
+
+
+===== PAGE 5 =====
+CA
+TERPILLAR DEALER BEST PRACTICE  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Inversion of the body pivot pins on mining trucks 
+DATE 
+2/11/2021 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-210211-1 
+Caterpillar Confidential:  YELLOW             Page 4 of 4   
+5.0 Resources Required 
+To performance the activity during the body replacement, it is necessary add the following resources 
+bellow in the schedule:   
+ 04 supports PN 8X-3097.
+ 01 working hour of the welder.
+If the activity be done out of the body replacement activity, it will be necessary to add the resources to 
+remove the pin. 
+6.0 Supporting Attachments / References 
+Illustrations and references cited in best practice. 
+7.0 Related Best Practices 
+N/A 
+8.0 Acknowledgements 
+Thanks to the engineering team and the customer for the acceptance and implementation of best 
+practice in the fleet. 
+Joaquim Natividade Jesus. 
+Technical analyst. 
++55 94 8123 0522
+Joaquim.jesus@sotreq.com.br
+Corporate mining
+ engineering Sotreq.

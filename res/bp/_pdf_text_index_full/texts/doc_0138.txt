@@ -1,0 +1,760 @@
+SOURCE: 2.0 Application\2.07 HSEC - Application\1. Strategic\Safety Processes for a Mine Site.pdf
+PAGES: 13
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Safety Processes For A 
+Mine Site 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Safety Processes For A Mine Site ............................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 5 
+3.0 Implementation Steps ...................................... 11 
+4.0 Benefits ............................................................ 11 
+5.0 Resources Required ........................................ 11 
+6.0 Supporting Attachments / References ............. 11 
+7.0 Related Best Practices .................................... 11 
+8.0 Acknowledgements .......................................... 12 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+ 
+  
+April 2007 
+0407-5.1-1074 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+Safety is an extremely important topic to companies that operate in and around the mining industry.  There are a 
+variety of safety procedures and policies in use around the world at mining companies and mining dealers. The 
+procedures documented here were taken from a mining customer site that had reported success in reducing the 
+number of reportable incidents. It is advised to the reader that there are extensive variations to the procedures 
+documented here in use around the world and that this summary is offered as one particular example that has 
+worked for a mining company. As additional examples of procedures are documented from other mining companies, 
+it is anticipated they will be added here.  
+ 
+Reviewing current fatality and incident data clearly establishes the need for a sound safety policy at a mine site. 
+Readily available data comes from the U.S. government’s Mine Safety and Health Administration (MSHA) website.  
+MSHA collects and publishes incident related data from mine sites throughout the U.S. The data revealed here is 
+from 2005. 
+ 
+ 
+Figure 11 
+ 
+Figure 1 shows the trend in US mine site fatalities from 1995 to 2005. Although the trend is down, the ultimate goal is 
+zero fatalities.   
+ 
+Figure 2 delineates the 1995 to 2005 fatality data. The chart shows percentages of each fatality in a particular 
+classification. Leading by far, powered haulage ranked highest with 46% of all associated fatalities.  Machinery was 
+associated with 29% of all fatalities. Then following machinery, two classification groups were tied both with 8%; 
+falling objects and falling persons.  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Safety Processes for a Mine Site 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-5.1-1074 
+Caterpillar Confidential:  GREEN         Page 1 of 12 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+ 
+Figure 21 
+ 
+ 
+Figure 31 
+ 
+Figure 3 classifies the same fatalities by size of mining operation. By far, the majority with 34% of all fatalities was 
+mining sites that have more than 100 employees on site.   
+ 
+Figures 4 and 5 provide age and experience demographics associated with fatalities.  Figure 3 shows that age is not 
+clearly correlated to the root cause of a fatality. However, years of experience, shown in Figure 4, does show a 
+correlation to the percentage of fatalities.  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Safety Processes for a Mine Site 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-5.1-1074 
+Caterpillar Confidential:  GREEN         Page 2 of 12 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+ 
+Figure 41 
+ 
+ 
+Figure 51 
+ 
+Root causes of fatalities as shown in Figure 6 demonstrate that inadequate procedures and personal protective 
+equipment (PPE) accounted for the highest percentage of fatalities. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Safety Processes for a Mine Site 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-5.1-1074 
+Caterpillar Confidential:  GREEN         Page 3 of 12 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+ 
+Figure 61 
+ 
+Summarizing the fatality data from 1995 to 2005 provided by MSHA, there are some clear areas where extra 
+attention should be considered, that would include powered haulage units, inexperienced miners, and properly 
+documented and followed safety procedures.  
+ 
+MSHA also reported there were 8,322 nonfatal lost-time injuries reported in the U.S. in 2003. These occurred at a 
+rate of 3.2 injuries per 100 full time equivalent (FTE) workers and resulted in a total of 467,432 days lost from work.
+2 
+Additional abstracts from that data set include:3 
+ 
+• The underground injury rate was greater than the surface injury rate (6.3 vs. 2.6 per 100 FTE workers).  
+• The nonfatal lost-time injury rate for mine operator employees was higher than the rate for contractor 
+employees (3.4 vs. 2.0 per 100 FTE workers).  
+• Coal operator employees had the highest nonfatal lost-time injury rate (4.4 per 100 FTE workers).  
+• The highest percentage of nonfatal lost-time injuries was due to handling materials (35.4%; n = 2,943) 
+followed by slips or falls (24.9%; n = 2,074).  
+• The back continued to be the most frequently reported part of the body injured.3 It accounted for 1,755 
+injuries, 105,510 days lost from work, and 22.6% of all days lost.  
+ 
+Reviewing the fatality data from MSHA for 2005 and non-fatal incidents from 2003, it is clear that additional work is 
+needed to improve safety at mine sites. One method of achieving the objective of zero incidents is the development 
+of well established, followed, and managed safety procedures. This Best Practice  will focus on concepts to achieve 
+effective safety procedures.
+4 
+ 
+This Best Practice deals with mine site safety practices and processes that can be used to reduce and minimize 
+safety incidents. Safety incident reporting is sometimes considered taboo and is often the result of a miss 
+understanding of mine management’s intent and philosophy. A properly developed safety culture at a mine site would 
+include full support, full reporting, and a vigorous attitude towards implementing and using good safety practices and 
+processes.  
+ 
+This Best Practice will outline high level practices and processes seen in use at a mine sites around the world. It will 
+not provide target metrics or site-specific implementation recommendations as that is entirely up to the reader to 
+consider and implement as needed This Best Practice is meant to make the reader aware of what practices and 
+processes should be in place at a mine site. Ultimately, the key benefit of implementing processes outlined in this 
+Best Practice is for enhancing operator and technician safety. 
+ 
+1 Does not include underground mining or surface coal mining and MNM – metals/non metals mining. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Safety Processes for a Mine Site 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-5.1-1074 
+Caterpillar Confidential:  GREEN         Page 4 of 12 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+2 Includes actual days away from work and/or days of restricted work activity. For permanently disabling injuries only, 
+statutory days charged by MSHA were used if they exceeded the total lost workdays.  
+3 MSHA only reports the most severely injured part of body for accidents involving injury to multiple body parts.  
+4 Data is only shown for the U.S. due to ease of gathering the date, however, empirical evidence supports similar 
+issues throughout the world. All analyses exclude office employees, except for the total number of mining operations, 
+from Mine Safety and Health Administration (MSHA) website, www.msha.gov. 
+ 
+2.0 Best Practice Description 
+ 
+2.1 Philosophy 
+ 
+2.1.1 Safety Vision 
+A safety vision can be a simple phrase or statement used to summarize an organization’s entire underlying safety 
+philosophy. It serves as a daily visual and verbal reminder to all employees that safety is first in everything they 
+do. It helps employees understand that everything done will use will focus on achieving safety. A successful 
+safety program has engagement and true participation from all levels of the mine site. A particular mine’s actual 
+safety vision may differ slightly, but the underlying intent is the same. The vision should be written and well 
+communicated throughout the mine site. 
+ 
+2.1.2 Without Harm to People, Property, Environment or Reputation 
+In support of a safety vision, it must understand that actions to achieve this philosophy must also protect people, 
+property, environment, and reputation.  
+ 
+2.2 Individual Pre-Site Access: 
+ 
+2.2.1 Drug and Alcohol Testing 
+Drug and alcohol testing is used as part of the employee selection process by assi sting in the determination if the 
+potential employee is fit for duty. Drug and alcohol testing is also used post-incident is support of an investigation. 
+An off site, independent lab is used to ensure confidentiality and unbiased results.  
+ 
+2.2.2 Medical Fitness Assessment 
+A medical physical is given as part of pre-employment analysis to determine if the potential candidate is fit for 
+duty and to provide benchmark data for the employee. 
+ 
+2.3 Personal Commitment 
+Personal ownership of an employee’s responsibility for safety is important. The mine has reported the use of a 
+large poster that outlines the basic safety requirements and is posted in the shop or operations area for all to see. 
+The following statements are included on the poster that all employees voluntarily sign.  
+• Working safely is a condition of employment when working at the mine 
+• I believe all accidents are preventable 
+• I am responsible for my own individual safety performance 
+• I am responsible for my co-workers safety performance 
+• I am responsible for the environment, property and reputation of our workplace 
+• I am responsible to stop unsafe acts noticed 
+ 
+2.4 Orientations and Training 
+ 
+2.4.1 Regulatory Required General Safety Training 
+Many federal regulations and local governments require the completion of government sponsored mining safety 
+training. In the United States, that includes Mine Safety and Health Administration (MSHA) training, in Alberta, 
+Canada, this includes Construction Safety Training System (CSTS), and in South Australia, that includes M ining 
+and Quarrying Occupational Health and Safety Committee (MAQOHSC) training. This training is conducted prior 
+to arriving on site. All employees would have this training completed on the periodic basis required by the local 
+regulation. Other examples of regulatory required training is occupational health and safety (OH&S).  
+ 
+2.4.2 Regional Orientation 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Safety Processes for a Mine Site 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-5.1-1074 
+Caterpillar Confidential:  GREEN         Page 5 of 12 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+Due to extremely unique regional hazards and regional safety requirements, a mine site will conduct a regional 
+orientation for all employees. This is a general orientation that focuses on the safety philosophy and general 
+requirements that are unique to that area. Regional orientation would include awareness of culture and climate, 
+fauna, plants and vegetation, and endangered species as examples. 
+ 
+2.4.3 Site Specific Orientation 
+Prior to admittance of any employee or visitor to a mine site, a mine will provide a site- specific safety orientation 
+course. The training outlines the expectations of all employees and visitors. The site- specific training will include 
+emergency evacuation procedures, emergency contact numbers, emergency alarm types, driving requirements, 
+personal protective equipment requirements, mine property and pit limits, signage in use, hazardous areas of the 
+mine, any regional or governmental training requirements, and local site conditions, as examples.  
+ 
+2.4.4 Area Specific Orientation 
+Once on site, area specific training is also provided for employees and visitors to the very specific requirements 
+for a particular part of the mine. This may include reporting or permission requirements to conduct work, confined 
+space and welding requirements, or working at heights requirements as examples.  
+ 
+2.4.4.1 Health & Safety, Security, Environmental & Industrial Hygiene 
+Each department trains their team members in the rules, procedures, standards and risks related 
+specifically to their department. Also included is a review of previous incidents, a department tour, and 
+appropriate personal protective equipment etc. 
+ 
+2.4.4.2 Equipment Operation 
+In order to operate equipment or vehicles, team members must be trained and certified on each specific 
+vehicle or equipment they need to operate. Training can consist of Computer Based Learning (CBL) 
+specific to the make and model of the equipment, and then checked via evaluation by a specified trainer. 
+This training is required prior to operating all light vehicles, forklifts, skid steers, man lifts, overhead 
+cranes, heavy equipment, etc. 
+ 
+2.4.5 Task Specific Training 
+This is very similar in scope to Area Specific Training, however it is focused on the very specific tasks used on the 
+job. It is expected that team members be trained to complete all tasks – whether it be how to use the wash bay, 
+how to change oil, how to apply degreaser, or how to remove an engine. This expectation is meet by providing 
+experienced workers to train new employees, and using specific procedures established on site involving 
+equipment operation and maintenance. 
+ 
+2.4.6 Hazard Assessment and Recognition Training 
+Employees are given a course that teaches workers to identify hazards of each job they are doing, and how to 
+control them. There is a tool (Job Safety Analysis) that is used to document this assessment. These assessments 
+are done for all work where there are hazards or when a Field Level Risk Assessment (FLRA) would not be 
+effective. 
+ 
+2.4.6.1 Field Level Risk Assessments (FLRA) 
+Workers are trained to stop and evaluate each task, or each part of a task, to identify safety hazards. This 
+assessment is not documented. As an example, an FLRA would be used when a field mechanic was 
+called to diagnose a hydraulic leak on a dozer. A field level risk assessment includes stopping prior to 
+initiating work, looking around and identifying hazards, assess the risks, control the risks, and then 
+resume work.  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Safety Processes for a Mine Site 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-5.1-1074 
+Caterpillar Confidential:  GREEN         Page 6 of 12 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+Questions to ask before & while doing a task:
+Identify
+Do I clearly understand my task?
+Am I physically & mentally prepared to do the task?
+What could go wrong?
+Is there a risk to others or myself?
+What can change that could create a new risk?
+Could other crews, workers, or conditions pose risks to me?
+Assess
+How bad could this be?
+How likely is it to happen?
+Control
+Who should I contact for help?
+Are permits, written practices, procedures etc. required?
+What can I do to control the risk?
+Will the control affect another part of the task being done?
+Do I need to tell anyone else?
+Are emergency response plans required?
+IF IN DOUBT, CONTACT YOUR TEAM LEADER
+Questions to ask before & while doing a task:
+Identify
+Do I clearly understand my task?
+Am I physically & mentally prepared to do the task?
+What could go wrong?
+Is there a risk to others or myself?
+What can change that could create a new risk?
+Could other crews, workers, or conditions pose risks to me?
+Assess
+How bad could this be?
+How likely is it to happen?
+Control
+Who should I contact for help?
+Are permits, written practices, procedures etc. required?
+What can I do to control the risk?
+Will the control affect another part of the task being done?
+Do I need to tell anyone else?
+Are emergency response plans required?
+IF IN DOUBT, CONTACT YOUR TEAM LEADER
+ 
+ 
+2.4.6.2 Job Safety Analysis (JSA) 
+A formal, documented process used to identify the steps of a job, the potential hazards, and how they will 
+be controlled. This must be done for all work where there is a medium or above risk, and all workers 
+involved in the job must be involved in the JSA and sign it off. For example, a JSA would be required 
+when a worker(s) are assigned to remove and install a front strut on an off-highway truck. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Safety Processes for a Mine Site 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-5.1-1074 
+Caterpillar Confidential:  GREEN         Page 7 of 12 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+COMPANY: XYZ JSA Title: Removing 797 body @ 9800 hrs 
+JOB BEING ANALYZED: REMOVE DUMP BODY 8-104 JSA REVIEW TEAM 
+JSA LEADER (NAME): Lead technician  
+DATE OF JSA: June 5, 2004  
+Nearest Emergency Meeting Point:  “D”  
+PPE REQUIRED  STANDARD PPE 
+ 
+SEQUENCE OF JOB TASKS 
+POTENTIAL HAZARDS & 
+EFFECTS 
+RECOMMENDED 
+ PROCEDURES OR CONTROLS  
+ENSURE CHOCK BLOCKS ROLLING OF TRUCK INSTALL BLOCKS 
+ENSURE ADEQUATE RIGGING FALLING LOAD PROPER RIGGING 
+KEEP WORK AREA CLEAN TRIPPING HAZARDS SWEEP UP AS REQUIRED 
+ENSURE CONNECTED/LOWER EYES PROPER SHACKLES EQUIPMENT CLEARANCE 
+ENSURE WIRING/GREASE LINES ETC REMOVE DAMAGE TO EQUIPMENT 
+ENSURE SAFETY’S ARE ON PINS  DROPPING PINS 
+ENSURE ADEQUATE VISIBILITY   
+   
+Figure 1 Example of a Job Safety Analysis 
+ 
+ 
+2.4.6.3 Permit to Work 
+For high risk tasks (confined space entry, two crane lifts, critical lifts, hot work on tanks, etc) an actual 
+permit is required. This is an extensive document that identifies all possible hazards and how they will be 
+documented. This is developed with the workers involved, the supervisors, a safety person, a member of 
+the emergency response team, and the department manager. The permit is issued by date and time, and 
+cannot run past the end of the shift. All workers participating in the task must review and sign it, an d when 
+the work is complete all people involved in the development must close and sign the permit.  
+ 
+2.4.6.4 Planned Inspections/Behavior Based Safety Observations 
+Hazard recognition training as listed above is required to participate in planned inspections  of the work 
+area. This mine site adopted the BEST Behavior Based Safety concept. BEST stands for Building 
+Everyone Safe Tomorrows. All employees without exception are required to be trained in the BEST 
+principles. Additional information on the BEST Behavior Based Safety concept can be found at 
+http://www.y12.doe.gov/news/report/toc.php?vn=1_2 
+ 
+ 
+ 
+2.4.6.5 Energy Isolation 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Safety Processes for a Mine Site 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-5.1-1074 
+Caterpillar Confidential:  GREEN         Page 8 of 12 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+Stored energy must be identified and controlled prior to working on a job. This can include electrical, 
+hydraulic, gravitational, pressure, etc. This training and standard ensures workers are able to identify a 
+stored energy source, are able to eliminate the possibility of stored energy release, and are able to test to 
+ensure all stored energy is released. 
+ 
+2.4.7 Due Diligence Training 
+This course teaches the definition of Due Diligence and also stresses the importance of diligent compliance to 
+rules and procedures.  The course focuses on ACTION, that is taking a proactive approach to having due 
+diligence in everything you do. 
+ 
+2.4.8 Hazardous Material Training 
+Many governments require hazardous material training and would be provided to all employees that work with or 
+have access to hazardous materials. 
+ 
+2.4.9 New Worker Education 
+This is a short course that identifies some of the safety risks that new workers face, and stresses the importance 
+of asking questions. 
+ 
+2.4.10 Back Injury Prevention 
+This is a short course focusing on maintaining a health back, awareness, and proper lifting techniques.  
+ 
+2.4.11 Waste Management Guidelines 
+This training this program focuses on the waste management requirements on site, including waste segregation, 
+storage and disposal. 
+ 
+2.4.12 ISO 14001 Awareness 
+This program provides a general overview of the ISO 14001 if the mine site has received, and how individuals are 
+accountable for the environmental performance. 
+ 
+2.4.13 Team Leader Training 
+ 
+2.4.14.1 Mine Safety Supervisor Education Program 
+Training program for supervisors. 
+ 
+2.4.14.2 Risk Assessment Matrix Training 
+This training provides an in-depth look at how to use a risk assessment matrix and how incidents are 
+rated for actual and potential consequences. 
+ 
+2.4.14.3 Incident Investigation Training 
+This provides basic investigation tools, focusing on determining immediate and basic causes, and 
+determining corrective actions that are “Action Based.” 
+ 
+2.4.14.4 Incident Reporting System Training 
+All incidents are reported in an electronic incident reporting system. The initial facts must be identified, 
+reported and communicated electronically throughout the site within the shift the incident occurred using a 
+“Flash” report. The investigation must be complete and all action plans completed and documented within 
+30 days. Only the team leader who initiates the incident report can update, so they own it from start to 
+finish. 
+ 
+2.5 Communications 
+ 
+2.5.1 Asses Meeting Each Shift 
+At the start of each shift, all employees must attend a safety meeting to determine if their previous shift was safe, 
+and if there are any safety concerns to be raised. This occurs 100% of the time, day, night and weekends – no 
+exceptions. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Safety Processes for a Mine Site 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-5.1-1074 
+Caterpillar Confidential:  GREEN         Page 9 of 12 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+2.5.2 Weekly and/or Monthly Safety Meetings 
+Regular meetings are held for each crew to provide safety education and feedback. Note this is not the time to 
+bring up safety issues – these are to be dealt with immediately. 
+ 
+2.5.3 Daily Statistical Reports 
+Daily site wide safety report for all incident classifications is provided and posted in common areas for all 
+employees to see. Attached is also a daily learning session/communication related to safety to share with the 
+employees. 
+ 
+2.5.4 Incident Learning Reports 
+The generic information from all incidents throughout the site is distributed site wide, to communicate incidents 
+and immediate corrective actions taken. The complete details of all significant incidents is circulated in an Incident 
+Learning Package to be reviewed with all teams. 
+ 
+2.6 Injury Management 
+ 
+2.6.1 Focus on First Aid/Near Miss Level 
+A first aid injury is significant and treated as serious – a worker has been injured and the only thing that has kept 
+this from becoming a more significant injury is luck. That thought process drives the first aid focus. Near miss 
+reporting and investigation is always encouraged through the normal incident reporting system, and through Near 
+Miss Reporting Cards that anonymously report near misses for trending. 
+ 
+2.6.2 Medical Aids 
+A team leader accompanies a injured worker to medical aid and must remain with the worker until they are 
+released. All medical aids require a conference that involves the most senior site management and involvement 
+from the person involved and their team leader. This formal inquiry is to determine causes and ensure corrective 
+action is firmly in place. There is a time requirement for all medical aid conferences to occur within the time or 
+injury. Typically this time period is within 8 hours of the incident. 
+ 
+2.6.3 Lost Time Incident Reporting Process 
+A process for how all incidents are reported, responded to, and reviewed after.  
+ 
+2.7 Metric Definitions 
+ 
+The following definitions are provided from a global perspective. Due to the various regulatory agencies around 
+the world that have various reporting requirements, all definitions are provided to assist the reader in gaining a 
+better understanding of the metrics involved in a well managed safety program. A mine site will have to select 
+those metrics that are relevant to that region of the world. 
+ 
+Fatal Injury (F) – An injury that results in death. 
+ 
+Lost Time Injury (LTI) – An injury that results in absence from work. The length of absence required to qualify for 
+an LTI varies from country to country (eg Australia one day, UK three days, South Africa 14 Days)  
+ 
+Severe Injury (SI) – An injury that results in a minimum of two weeks off work. This definition is used by South 
+Africa as the lost time injury measurement. 
+ 
+Fatality Incidence Rate (FIR) – The number of fatalities per set number of employees. This is per 1,000 
+employees in Australia (sometimes per 100,000 employees is also used). In the US it can refer to fatalities per 
+200,000 hours worked. 
+ 
+Disabling Injury Frequency Rate (DIFR) – The number of disabling injuries per 200,000 hours worked 
+(US/Canada) or one million hours worked (rest of world). Includes all disabling injuries, whether or not they 
+caused employees to be off work.  
+ 
+Fatal Injury Frequency Rate (FIFR) – The number of fatal injuries per hours worked, normally one per million 
+hours. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Safety Processes for a Mine Site 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-5.1-1074 
+Caterpillar Confidential:  GREEN         Page 10 of 12 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+ 
+Lost Time Injury Frequency Rate (LTIFR) – The number of lost time injuries per 200,000 hours worked 
+(US/Canada) or one million hours worked (rest of world) – again comparability depends on the LTI definition. 
+Replaced in some country statistics by DIFR. 
+ 
+Duration Rate (DR) – The average time lost for every lost time injury. This is a measure of the severity of the 
+injuries occurring. Calculated by dividing the total number of days lost by the number of lost time injuries.  
+ 
+Severity Rate (SR) – Calendar days lost per 200,000 hours worked (US/Canada) or one million hours worked 
+(rest of world). 
+ 
+No Days Lost (NDL) – Used in US, and refers to all injuries not resulting in a lost work day.  
+ 
+Non Fatal Days Lost (NFDL) – Used in US, and refers to the number of days lost from non fatal injuries. 
+ 
+Reportable/recordable Injury – Used in the US, and includes all incidents that require medical treatment, or 
+result in death, or loss of consciousness, or inability to perform all job duties on any workday after the injury, or 
+temporary assignment or transfer to another job Injuries involving “first aid only” are not reportable. Other 
+countries define it similarly.  
+ 
+NFDL incidence rate: Use in the US, and is based on NFDL injuries per 200,000 hours worked, MSHA replaced 
+this with an all injury incidence rate in 2003. 
+ 
+All injury incidence rate: Used in the US, and combines disabling injuries, medical – aid injuries and fatalities 
+per 200,000 hours worked. Similar to reportable/recordable frequency rate.  
+ 
+Mining Journal, July 2006, Volume 195 No 1 
+www.miningjournal.com 
+ 
+ 
+3.0 Implementation Steps 
+Implementation steps are highly dependant on what facets of this Best Practice are desired. Implementation would 
+require identifying what policy or practice is desired, what documentation is needed, what training is required, what 
+communication must be made, and what the follow up and metrics are going to be to ensure proper adaptation of the 
+new policy. 
+ 
+4.0 Benefits 
+Benefits of a well documented and well accepted/followed safety policy includes reduced number of incidents.  
+ 
+5.0 Resources Required 
+The resources required to implement this Best Practice are dependant on which part is adopted. The resource list is 
+extensive and not provided in this example. 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Safety Processes for a Mine Site 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-5.1-1074 
+Caterpillar Confidential:  GREEN         Page 11 of 12 
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+The submitting mining company wishes to remain anonymous. 
+ 
+This Best Practice was written by: 
+Sean Gladieux 
+Health, Safety, Environment & Community 
+Six Sigma Black Belt 
+Cat Global Mining 
++1 (309) 675-4522 
+gladieux_sean_m@cat.com 
+ 
+ 
+ 
+ 
+The following document is provided as a resource for Caterpillar's customer mine sites.  Content was provided by a 
+few mine sites to be shared with other mine sites as a suggested practice.  Caterpillar shares it with you as a 
+reference, not a requirement, and has not written, edited or specifically endorsed the content.  It is not meant to be 
+an exhaustive list of every safety issue you may face at your mine site.  Finally, Caterpillar reserves the right to add 
+to, delete from or remove this document entirely at any time in the future.
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Safety Processes for a Mine Site 
+DATE 
+2/16/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0407-5.1-1074 
+Caterpillar Confidential:  GREEN         Page 12 of 12

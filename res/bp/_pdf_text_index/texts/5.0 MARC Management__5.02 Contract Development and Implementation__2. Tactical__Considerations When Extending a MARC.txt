@@ -1,0 +1,175 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Considerations When 
+Extending a MARC 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Considerations When Extending a MARC ................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 2 
+7.0 Related Best Practices ...................................... 2 
+8.0 Acknowledgements ............................................ 2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+February 2008 
+1008-3.3-1130 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+There are many reasons a dealer and customer would want to extend a Maintenance and Repair 
+Contract (MARC) on an existing machine or fleet of machines.  There are also a number of 
+considerations when developing the contract extension.  It is important to understand how the 
+current contract is performing financially as well as the customer’s motivation for seeking an 
+extension.  In the end, Proper financial modeling and a solid understanding of the customer’s 
+mine strategy are critical to developing a contract that will provide value for both parties and keep 
+the customer looking to the Caterpillar dealer to help manage their fleets for a long time to come. 
+ 
+2.0 Best Practice Description 
+ 
+This Best Practice discusses the following: 
+1. Why extend a MARC? 
+2. Terms and Conditions of an extension 
+3. Financial Modeling and Rate Development of an extension 
+4. Risk Mitigation  
+ 
+The information presented in this Best Practice was developed from the experience of those 
+considered to be the premier Caterpillar MARC dealers worldwide. 
+ 
+3.0 Implementation Steps 
+ 
+Review the attached presentation and proceed with the following: 
+ 
+1. Determine the main reasons (motivations) for extending the contract 
+a. Both customer and dealer motivations 
+2. Engage the customer to understand their long-term strategy 
+a. Both the contract fleet and the entire mine-site 
+3. Establish the Terms and Conditions of the contract extension 
+a. Based on the mine plan and above motivations 
+4. Develop the new contract rates based off of the original contract performance and financial 
+modeling 
+a. Review the existing contract data and financial performance 
+b. Take into account customer’s long-term objectives 
+5. Include a risk mitigation strategy when developing both the Terms (3) and the Rates (4) 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Considerations when extending a MARC 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1008-3.3-1130 
+Caterpillar Confidential:  YELLOW          Page 1 of 2 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+4.0 Benefits 
+ 
+Considering these factors when extending a Maintenance and Repair Contract can help a dealer 
+to mitigate much of the contract risk up front resulting in fewer unexpected and unbudgeted costs.  
+In addition, appropriate financial modeling of the current contract when developing the extension 
+will likely result in higher contract profitability.  Finally, understanding the customer’s needs and 
+objectives when building a contract extension will increase customer satisfaction and can result in 
+future business. 
+ 
+5.0 Resources Required 
+ 
+1. Existing contract documentation 
+2. Existing contract “to date” actual data in order to assess the current financial performance 
+3. Financial Modeling Software (Analyzer or equivalent) 
+4. Understanding of the customer expectations, plans for and economic life of the mine 
+ 
+6.0 Supporting Attachments / References 
+ 
+Accompanying document: Contract Extension Strategies: Considerations when extending a 
+MARC.ppt 
+ 
+Note: The information contained within the attached presentation are not rules, rather 
+considerations that can be applied to a dealer’s / customer’s specific circumstances. 
+ 
+7.0 Related Best Practices 
+ 
+0407-3.3-1075 Contract Language 
+0906-3.3-1009 MARC Rate Development 
+0906-3.3-1021 Developing a MARC Management Plan 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+Greg Fett 
+Regional MARC Consultant (North America)  
+ph. 309-494-4469  
+Fett_Greg_C@cat.com 
+ 
+       Content was developed with assistance from the following: 
+ Sh aun Brown - Trakindo 
+ Walter Burls - Barloworld 
+Rolando Carrasco – Finning S.A. 
+Jim Davey – Caterpillar Inc. 
+ Doug Eady – Hastings Deering 
+ David Griffin – Cashman Equipment 
+Peter Scheppel - Barloworld 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Considerations when extending a MARC 
+DATE 
+2/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1008-3.3-1130 
+Caterpillar Confidential:  YELLOW          Page 2 of 2

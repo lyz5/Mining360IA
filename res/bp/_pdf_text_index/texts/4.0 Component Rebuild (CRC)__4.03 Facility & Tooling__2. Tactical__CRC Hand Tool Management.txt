@@ -1,0 +1,260 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+CRC Hand Tool 
+Management 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+CRC Hand Tool Management .................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+December 2006 
+0107-4.4-1057 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Easy access to the correct tools is vital to shop efficiency. The majority of hand tools in most 
+shops are owned by the technician and stored in his own personal toolbox. Mechanics owning 
+their tools and toolboxes has been a common practice for many years. 
+ 
+As more dealers focus on high efficiency, workflow, and optimum use of facility space, the culture 
+of oversized personal toolboxes in the shop may no longer be acceptable. As shops have gone to 
+second and even third shifts, some dealers have noticed that 20% or more of the available floor 
+space in a work bay is occupied by personal toolboxes. 
+ 
+ A Component Rebuild Center has several types of tools: 
+• Generic hand tools: frequently used by a single technician, typically stored in a technician’s 
+toolbox, and located in their work area when in use. 
+• Area specific, community tools: frequently used tools by a group of technicians in a specific 
+area of the shop (i.e. engine assembly bays). They are typically stored in an on-floor 
+“community” storage cabinet. 
+• Supplies, hardware, chemicals, etc., are stored in several areas of the shop, with both 
+personal and community storage methods. 
+• Tool crib stored tools. They are less frequently used tools.  
+ 
+The key to effective tool (and tool cost) management is to place required tools in the work areas 
+where they are used, and to minimize the requirements for a mechanic to own and store his own 
+tools. Oversized toolboxes congest the shop floor, are difficult to move, and increase tool costs. 
+Second and third shift requirements multiply the number of toolboxes present per work bay. Good 
+tool management programs result in standard, smaller toolboxes and lower tool costs. 
+ 
+2.0 Best Practice Description 
+ 
+Toolbox sizes tend to grow over time, often unnoticed because it occurs gradually. Many 
+technicians own the toolboxes they use and eventually upgrade to larger and larger capacity 
+toolboxes because: 
+• Seldom used but critical community tools are not readily available or consistently 
+maintained.  Technicians end up buying too many of these tools for convenience. 
+• The technician owns the toolbox and shop management does not regulate its size. 
+• Generic supplies are not provided in a convenient, on-floor location for technician use. 
+Technicians often collect and store a “parts stash” in their toolbox. 
+• Technicians take pride in their tool collection, and take pride in displaying bigger, more 
+extravagant toolboxes. 
+ 
+Effective tool management provides the right tools at the right place.  Effective tool management 
+includes many of these attributes: 
+• All personal toolboxes are a standard size. 
+• Shops provide the toolboxes, buying them in bulk to reduce costs.  Some shops only 
+provide the lower roller cabinet (20” deep, 30” wide, and 38” tall), and the technician can 
+add the upper tool chest as needed. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Hand Tool Management 
+DATE 
+2/18/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.4-1057 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Shops provide wall-mounted foldout toolboxes that store required work bay tools with peg-
+board arrangements.   
+• Community tool cabinets are located on-floor for technicians to quickly retrieve locally 
+needed special tools. 
+• Community hardware and chemical supply cabinets are located on the shop floor for easy 
+retrieval. Quick inventory order sheets are often provided at the cabinet for easy re-supply 
+charge-outs by technicians as needed.  The parts department inventories the cabinets. 
+• Portable workbenches are located in each work bay for mid-bay workstations. This helps 
+eliminate the large toolbox/workbench combinations. 
+ 
+   
+  
+ 
+Examples of common area tool and supply storage.  
+ 
+3.0 Implementation Steps 
+ 
+1)  Determine the anticipated type/quantity of tools needed in the shop for each technician and/or 
+work bay. Include: 
+a) Standard hand-tools for each technician. 
+b) Community tools for specific regions of the shop (example; engine disassembly bays). 
+c) Chemicals needed to process the product (examples; gasket adhesive, anti-seize, etc). 
+2)  Establish the types and number of toolboxes needed to store the tools.  
+a) Personal, or personally assigned, roll-around toolboxes 
+b) Wall-mounted foldout toolboxes for a specific work bay. 
+c) Community tool cabinets for high cost, special, or seldom used tools. 
+d) Community tool racks for items not applicable to a cabinet enclosure, such as straps, 
+chains, pry bars, cribbing, etc. 
+e) Community reference centers - identically organized for universal retrieval methods. 
+f) Arrange for off-shift toolbox parking areas.  Areas in the path between the workshop and 
+the washroom work well. 
+3)  Determine the anticipated type/quantity of hardware/chemicals/consumables needed. 
+4)  Establish the types and quantity of community cabinets needed to store the needed 
+hardware/chemicals/consumables/references: 
+a) Include charge-out sheets as needed. 
+b) Anticipate the frequency of use when locating the centers. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Hand Tool Management 
+DATE 
+2/18/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.4-1057 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+5)  Identify other workbench/other storage drawers that may become personal stashes for tools, 
+literature, parts, etc.  Determine which will be eliminated. 
+6)  Develop a toolbox/storage transition plan.  Include: 
+a) Temporary storage accommodations as needed for eliminated toolboxes. 
+b) Time frames for strategic changes for each shop/area. 
+c) Changes of responsibility for community tools/supply inventories. 
+7)  Present strategy to shop employees. For many mechanics, realize that this is a culture 
+change and has some emotional factors. Some mechanics have made a large personal 
+investment in their tools and toolbox. 
+8)  Install the equipment/layout changes into the shop (may occur in phases as needed). 
+9)  Train employees to use the new procedures/equipment. 
+10)  Review process performance once established. 
+11)  Establish and install any adjustments as needed. 
+ 
+4.0 Benefits 
+ 
+• Increased service capacity – Less space is consumed by smaller toolboxes.  Fewer tools are 
+duplicated with community tool centers.  Off-shift toolboxes may be stored outside of the 
+production area. 
+• Reduced labor: 
+o The work bays are less congested with smaller/fewer toolboxes. 
+ There are clearer paths around the product and subassembly work.. 
+ There is more room to store, and have access to staged parts. 
+ There is less to move, and fewer hard-to-reach corners when cleaning bays. 
+o Technicians quickly move from bay to bay with smaller toolboxes and less congestion. 
+o Supplies are more quickly available through organized supply centers. 
+• Job flexibility – Bay to bay moves are easier with smaller toolboxes 
+•  Reduced cost – Fewer tools are needed with organized community tool centers.  Fewer 
+seldom-used tools are purchased when they are inventoried in the centers. 
+ 
+5.0 Resources Required 
+ 
+• Investment costs vary depending on what program is chosen: 
+o Roller cabinets provided with top chests ($750- $1,000 US each). 
+o Roller cabinets only provided ($500- $700 US each). 
+o Wall-mounted fold-out tool boxes (cost varies with size/quality) 
+• Support Equipment/Efforts 
+o Shared tool cabinets and inventories for on-floor tool centers. 
+o Supply cabinets and inventory for on-floor community centers. 
+o Labor in transferring tools/cabinets in and out of shop. 
+• People 
+o Establish current tool/equipment/cost concerns with team. 
+o Establish process, layout, and equipment improvements through team. 
+• Training 
+o Establish the improvement benefits with the production team. 
+o Define, establish, and enforce the new process and duties with the production team. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Hand Tool Management 
+DATE 
+2/18/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.4-1057 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+None. 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Russ Young 
+6 Sigma Black Belt 
+young_russell_k@cat.com 
+(309) 675-4583 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+CRC Hand Tool Management 
+DATE 
+2/18/2015 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.4-1057 
+Caterpillar Confidential:  GREEN          Page 4 of 4

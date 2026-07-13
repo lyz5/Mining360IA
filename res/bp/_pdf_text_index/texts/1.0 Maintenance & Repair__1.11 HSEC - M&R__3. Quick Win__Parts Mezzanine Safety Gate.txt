@@ -1,0 +1,190 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Parts Mezzanine Gate 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Parts Mezzanine Gate ............................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 2 
+7.0 Related Best Practices ...................................... 2 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+0108-2.14-1113 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Where space for parts inventory is limited, onsite parts stores often have to make use of a 
+mezzanine level. Typically, parts pallets are elevated up onto the edge of the mezzanine floor by 
+forklift, where parts personnel can unpack it from. This requires there to be an area where there is 
+no safety guard railing, creating a significant falling risk for the people unpacking the parts.  
+ 
+This Best Practice describes the use of a pivoting gate to allow parts to be stored on a mezzanine 
+level while avoiding the risk of working at heights without constant protection.  
+ 
+2.0 Best Practice Description 
+ 
+A two-way pivoting safety gate was implemented on the parts warehouse mezzanine level, in 
+order to take away the risk of falling for anyone standing in the vicinity.  
+  
+   
+  
+ 
+The gate is normally in the position shown on the left above. When parts need to be lifted up onto 
+the edge of the mezzanine level, the guard is pivoted to the position on the right above. Anybody 
+standing on the mezzanine level is then never exposed to a falling risk. When the forklift moves 
+away, the guard is pivoted back to the position on the left above. The parts person is now able to 
+unpack the parts safely.  
+ 
+The safety gate pivots on two side stands, which are bolted to the mezzanine floor, as seen in the 
+pictures above. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Parts Mezzanine Gate 
+DATE 
+2/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0108-2.14-1113 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Implementation Steps 
+ 
+Note: Although Caterpillar does not endorse this particular supplier, Westrac has experience with 
+the following products or companies. We welcome additional supplier recommendations from our 
+dealer network. 
+ 
+The safety gate used at this particular site was commercially procured through a company called 
+Dexion. They only have offices worldwide, but this type of safety gate is custom made only in 
+Perth, Australia.  
+ 
+Dexion Canning Vale 
+57 Catalano Circuit  
+Canning Vale WA 6155  
+Australia 
+T: +61 8 9455 7480 
+F: +61 8 9455 7411 
+dexioncanningvale.com.au 
+dexion.com.au 
+ 
+There is no patent on this safety gate, as many companies offer similar products. Outside 
+Australia, it is possible that another supplier may be able to produce a similar gate. It may also be 
+possible to fabricate a similar gate onsite. 
+ 
+4.0 Benefits 
+ 
+• Falling hazard has been reduced thanks to the constant protection offered by the gate. 
+ 
+5.0 Resources Required 
+ 
+• Cost of materials (for fabrication) – approx. AUD $500 (steel, consumables, etc.) 
+• Labour to fabricate (if necessary) – approx. 24hrs 
+• Labour to install – approx. 2hrs 
+• Training 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+None at this time. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Parts Mezzanine Gate 
+DATE 
+2/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0108-2.14-1113 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+Paul Darrah 
+Ravensthorpe Project Manager 
+Paul.Darrah@westrac.com.au 
++61 418 909 332 
+ 
+ 
+Stuart Wheeler 
+Equipment Management Consultant – CGM APD 
+wheeler_stuart_g@cat.com 
++61 418 320 142 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Parts Mezzanine Gate 
+DATE 
+2/13/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0108-2.14-1113 
+Caterpillar Confidential:  GREEN          Page 3 of 3

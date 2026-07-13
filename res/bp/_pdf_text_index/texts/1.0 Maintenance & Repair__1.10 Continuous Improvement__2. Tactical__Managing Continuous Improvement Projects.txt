@@ -1,0 +1,331 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Managing Continuous 
+Improvement Projects 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+ 
+Managing Continuous Improvement Projects ............ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+1207-4.2-1112 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Almost every dealer has an annual Continuous Improvement plan with goals and objectives.  
+Many of these goals and objectives center on adding new service capability, expanding facilities 
+or level of technicians, adding tooling, or improving on existing tools, facilities, or processes. The 
+end objective is to achieve higher performance in terms of revenue, efficiency, quality, lower 
+costs, and customer satisfaction. 
+ 
+Often, there is no organized or formal process to manage Continuous Improvement. This Best 
+Practice discusses a formal process to identify ideas for improvement, evaluate those ideas, 
+develop an implementation plan, and document the benefits. 
+ 
+2.0 Best Practice Description 
+ 
+Why create a formalized Continuous Improvement process? 
+• Identify good ideas 
+• Research the best ideas from other dealers and Caterpillar 
+• Improve internal communications in the development of annual improvement plans 
+• Document costs versus benefit of improvements 
+ 
+The key elements of a Continuous Improvements process include: 
+• Ownership.  Appoint a person to be responsible for managing Continuous Improvement 
+• Idea search/replication.   A process to identify new opportunities and ideas.   
+• Review team.  Evaluate new ideas, prioritize, and select for implementation. 
+ 
+      Additional important elements include upper management support, budget where required, and  
+      employee involvement. 
+            
+3.0 Implementation Steps 
+ 
+Ownership 
+Appoint a Continuous Improvement Champion and define roles and responsibilities.  This person 
+would be responsible for the search and collection of ideas for improvement and lead a team in 
+the evaluation of ideas.  Typically, the CI Champion role is a 6 Sigma Black Belt or Master Black 
+Belt. 
+ 
+Search for new ideas. 
+There are many sources for new ideas.  Some example sources are listed below. These sources 
+should be checked on a regular basis for new ideas that may be applicable to your organization. 
+Often ideas, such as those posted on the Global Mining Best Practices website, have already 
+been developed elsewhere. They represent “replication” opportunities. 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Continuous Improvement 
+DATE 
+2/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1207-4.2-1112 
+Caterpillar Confidential:  GREEN         Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Sources for Ideas 
+• Caterpillar Global Mining Best Practices website contains an archive of shared ideas from 
+other dealers and minesites.   
+• Dealer Black Belt Knowledge Network contains 6Sigma project summaries from other 
+dealers. 
+o Link:   https://kn.cat.com/cat.cfm?id=6139&ke=1&kefolder=7632#currentKE 
+• Dealer CRC Best Practices Knowledge Network is a communication tool with other 
+dealers. 
+o Link:   https://kn.cat.com/cat.cfm?id=14304&pur=1#currentPUR 
+• Employee Suggestion programs 
+• Visits to other Dealers. 
+• Caterpillar Conferences and Events. 
+• Customer Feedback 
+ 
+Review and Evaluation 
+A team consisting of members who would be affected should review each idea under evaluation.  
+The team would include management, supervisors, and subject matter experts as required.  
+The team would determine: 
+• Does the idea apply? Is it needed? 
+• What is the cost and time required to implement? 
+• What is the expected benefit? 
+• Implementation recommendation and priority. 
+ 
+The following is a process for the review and evaluation of Best Practices published on the Global 
+Mining website developed and utilized at Gecolsa, the Caterpillar dealer in Colombia.  Review is 
+on a monthly basis.  (Also see attachment for detail) 
+ 
+                          
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Continuous Improvement 
+DATE 
+2/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1207-4.2-1112 
+Caterpillar Confidential:  GREEN         Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Review Process:  CGM Best Practices 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+(see attachment “BestPracticeProcess – Gecolsa.ppt”) 
+ 
+ 
+Tracking Process 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+ 
+ 
+ 
+ 
+Global CAT 
+generated 
+BP's
+GECOLSA 
+Applicability
+ BP Applicability 
+Review for 
+Department (Monthly)
+Update 
+Decline Status 
+in BP File
+Manager
+review
+APPROVE
+Assign Resources, Work 
+Team, Project Sponsor, 
+Project Owner
+DECLINE
+Update In hold Status 
+until next review
+BP 
+Implementation
+Website 
+Global BP 
+List
+Following BP 
+Implementation 
+Process 
+Verify BP 
+Results
+Document 
+Benefits 
+Obtained
+BP exists in 
+Department
+Y
+N
+N
+Y
+Y
+N
+Manager
+BP Champion
+Work Team
+MS Excel File
+MS Excel File
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Continuous Improvement 
+DATE 
+2/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1207-4.2-1112 
+Caterpillar Confidential:  GREEN         Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Velocity - Implement proven ideas through replication 
+• Knowledge management – share / use ideas from other dealers 
+• Improve costs, efficiency, quality, customer satisfaction 
+ 
+5.0 Resources Required 
+ 
+Staff and time requirements 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+7.0 Related Best Practices 
+ 
+1207-4.5-1111  Effective Employee Suggestion Programs 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Ricardo Chegwin 
+Mining Technical Manager 
+Gecolsa CAT 
+ricardo_chegwin@gecolsa.com.co 
+ 
+Special thanks to:                                  
+• Luis Jimenez – Operations and Projects Manager   
+        luis_jimenez@gelcolsa.com.co           
+• Libardo Mendoza – Operations and Major Project Manager  
+        libardo_mendoza@gelcosa.com.co                                                          
+ 
+• Mauricio Güiza – CRC Manager 
+mauricio_guizaviscaino@gecolsa.com.co 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Continuous Improvement 
+DATE 
+2/13/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1207-4.2-1112 
+Caterpillar Confidential:  GREEN         Page 4 of 4

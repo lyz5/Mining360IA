@@ -1,0 +1,213 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+August 2022 
+1.10-220825-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Illumination in the PLC 
+Cabinet - MD6640 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Illumination in  the PLC Cabinet – MD6640 ............... 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits ............................................................. 3 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ........................................... 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Illumination in the PLC Cabinet - MD6640 
+DATE 
+8/24/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-220825-1 
+Caterpillar: Confidential Yellow          Page 2 of 4 
+1.0 Introduction  
+ 
+It is difficult to carry out maintenance/repairs in the PLC cabinet room due to the confined space, 
+lack of access to sufficient lighting and trying to do repair while holding flashlights.  Currently PLC 
+cabinets do not have an internal light source; the PLC cabinet having its own light source would 
+help mitigate the last two of three difficulties and would allow for more efficient and effective 
+maintenance/repairs and inspections. 
+  
+ 
+2.0 Best Practice Description 
+ 
+The Best Practice is the simple but effective illumination of the PLC cabinet using a 24V Headlight 
+to provide sufficient lighting supporting more efficient and effective maintenance/repair work and 
+inspections. 
+ 
+With commonly available parts and a little manpower, sufficient lighting can be provided for the 
+PLC cabinet.   Implementation of the Best Practice can be done easily during a PM to minimize 
+additional downtime of the machine. 
+ 
+3.0 Implementation Steps 
+ 
+A. Install the 24V Headlight 
+The 24V Headlight – PN 487-7586 - was chosen as it was a part commonly used on site.  
+Each dealer can choose the appropriate option/part number for their site.  The cable should 
+be appropriately routed and tied down. 
+ 
+ 
+ 
+B. Install the switch in the cabinet door. 
+The switch – PN 530-6765 - was chosen as it was a part commonly used on site.  Each 
+dealer can choose the appropriate option/part number for their site.   
+  
+C. Direct power from PS1 (24V source). 
+Power can be taken direction from the PS1 (24V source).   
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Illumination in the PLC Cabinet - MD6640 
+DATE 
+8/24/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-220825-1 
+Caterpillar: Confidential Yellow          Page 3 of 4 
+4.0 Benefits 
+ 
+This best practice results in the following: 
+• A source of sufficient lighting in the PLC cabinet that is available with “the flip of a switch”. 
+• More efficient and effective maintenance/repair work and inspections as the 
+technicians/inspectors can focus on the actual work/inspections instead of trying to provide 
+sufficient lighting to be able to work/inspect. 
+ 
+Before:                                                               After:  
+   
+ 
+ 
+Lamp installation location: 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Illumination in the PLC Cabinet - MD6640 
+DATE 
+8/24/2022 
+CHG 
+NO 
+00 
+NUMBER 
+1.10-220825-1 
+Caterpillar: Confidential Yellow          Page 4 of 4 
+5.0 Resources Required 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Electrical schematic drill MD6640. 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+8.0 Acknowledgements 
+ 
+Special thanks to the efforts of the engineering team at Sotreq Salobo, always willing to offer 
+support in the development of solutions for partners and customers, and other participants involved in 
+this project. 
+ 
+Responsible for implementation: 
+ 
+ 
+Josinei Valentim                                 Diego Ferreira                                                                  
+Fleet Performance Engineer              Inspector 
+Sotreq S/A                                         Sotreq S/A 
+ 
+Rodrigo Barros                                    Franciné Silva 
+Mechanic                                             Mechanic 
+Sotreq S/A                                          Sotreq S/A 
+ 
+Raissa Nascimento                             Isaac Pedrosa 
+Fleet Performance Engineer               Engineer Coordinator 
+Sotreq S/A                                          Sotreq S/A 
+ 
+ 
+ITEM DESCRIPTION PN QUANT. 
+1 Reflector de 24V 487-7586 01 
+2 Switch 530-6765 01 
+3 Cabo 486-8751 01 
+MANPOWER   1 
+REPAIR TIME   4 
+SUPPLY  4

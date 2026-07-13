@@ -1,0 +1,284 @@
+SOURCE: 1.0 Maintenance & Repair\1.02 Condition Monitoring\2. Tactical\Utilizing VIMS Data for Effective Planned Maintenance.pdf
+PAGES: 5
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+1006-2.15-1027 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Utilizing VIMS Data for Effective 
+Planned Maintenance 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+Utilizing VIMS Data for Effective Planned 
+Maintenance .............................................................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Utilizing VIMS Data for Effective Planned Maintenance 
+DATE 
+1/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1006-2.15-1027 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+1.0 Introduction  
+ 
+This Best Practice illustrates how to use Vital Information Management System (VIMS) data for 
+effective and cost-efficient Planned Maintenance (PM). PM events will better contribute to 
+optimum machine productivity when the actual downtime associated with the PM is curtailed.  
+ 
+Downtime (associated with PM events) must be minimized, and all necessary work completed, to 
+effectively increase machine productivity. Successful PM events also require reviewing VIMS 
+data shortly after the machine leaves the shop. Reviewing the data afterward will ensure the 
+proper maintenance issues were corrected, and further help to reduce unscheduled downtime.   
+ 
+2.0 Best Practice Description 
+ 
+1. Three days prior to PM 
+a. Download VIMS data, using VIMSpc, 
+b. Take oil samples 
+c. Review backlog 
+d. Mechanical inspection 
+e. Analyze the VIMS data and complete the VIMS PM Planner (see Figure 1 on next 
+page)  
+f. Schedule the proper number of people required to complete the PM 
+g. Order and receive the required parts to fix any mechanical issues discovered. 
+h. Establish an overall plan to complete the PM in the most effective manner 
+ 
+ 
+2. One day after PM. 
+a. Download the VIMS data and fill out the PM Planner again 
+b. Ensure all maintenance completed was accurate. (This can also serve as a training 
+opportunity for newer technicians.)     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Utilizing VIMS Data for Effective Planned Maintenance 
+DATE 
+1/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1006-2.15-1027 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 1: 
+ 
+VIMS Data transferred into VIMS PM Planner 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Utilizing VIMS Data for Effective Planned Maintenance 
+DATE 
+1/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1006-2.15-1027 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Three P’s are the key steps to getting started: 
+ 
+1. People – Having the proper people dedicated to gathering, analyzing, and reporting the finding 
+of the VIMS data to the maintenance manager. 
+2. Parts – Ordering and having the needed parts on hand when the machine enters the shop. 
+3. Plan – Having an over all plan to schedule enough people and time to complete the PM in the 
+most efficient manner. 
+   
+4.0 Benefits 
+ 
+The benefits of utilizing the VIMS PM planner are: 
+ 
+• The ability to complete maintenance needs during a scheduled downtime. 
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Utilizing VIMS Data for Effective Planned Maintenance 
+DATE 
+1/12/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1006-2.15-1027 
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+• The ability to save time and resources by having a plan prior to the PM. 
+• Taking a proactive maintenance approach to help improve machine availability. 
+• Can serve as a training opportunity for newer technicians to ensure quality maintenance. 
+ 
+ 
+5.0 Resources Required 
+ 
+People dedicated to gathering and analyzing VIMS data, are the primary resource.  
+ 
+VIMS Application training may also be required to assist with the data collection step of the 
+process, using the VIMSpc software. 
+  
+6.0 Supporting Attachments / References 
+ 
+Attachments: 
+a) VIMS PM Planner.doc (Electronic Microsoft-Word Document can be found within the 
+“Attachments” tab of electronic Adobe file.)  
+b) VIMS PM Planner.ppt (Electronic Microsoft-PowerPoint file can be found within the 
+“Attachments” tab of electronic Adobe file.) 
+i) Provides an overview of how to utilize the PM Planner Template 
+c) VIMS Process & Daily Inspection Flowdem.vsd (Electronic Microsoft-Visio file can be found 
+within the “Attachments” tab of electronic Adobe file.) 
+ 
+References: 
+a) VIMSpc Subscription numbers:  
+i) JERD2137 (Dealer Site License) 
+ii) JERD2138 (Dealer Annual Subscription) 
+iii) JERD2175 (Customer Annual Subscription) 
+ 
+b) VIMS Application Guide (SELD7001) 
+ 
+ 
+7.0 Related Best Practices 
+None applicable at this time. 
+ 
+8.0 Acknowledgements 
+ 
+This Best practice was written by: 
+ 
+Justin C. Swisher 
+Caterpillar Global Mining  
+Product Evaluation Engineer 
+swisher_justin_c @cat.com 
+1-309-494-4169

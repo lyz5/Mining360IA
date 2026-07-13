@@ -1,0 +1,360 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+D11R/T Converter Removal 
+& Installation Tool 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+D11R/T Converter Removal & Installation Tool ......... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+November 2013 
+1306-3.04-1319 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+The lifting devices used for the removal and installation of components in the equipment must 
+provide protection to the personnel and machine. The technicians in a shop don´t always have a 
+specific tool and use some general methods for the removal of components. The Converter for 
+the D11R is an example of this. Such a component is removed by using two ratchet pullers, link 
+brackets, and slings (Figure 1).   
+ 
+This Best Practice describes the design of a tool to remove the D11R/T torque converter in a 
+more secure and fast for technicians. 
+ 
+                 
+ 
+ 
+ 
+  
+ 
+2.0 Best Practice Description  
+The tool consists of a curved plate to be adjusted to the converter geometry. The dimensions can 
+be found attached to the drawings (See Figure 4). 
+ 
+Figure 2.  Converter Removal & Installation Tool 
+ 
+  
+Link 
+Brackets 
+Converter 
+Ratchet 
+Puller 
+Fan-Pilot 
+Pump 
+Sling Converter 
+Tool 
+Figure 1. Converter removal according 
+to the Disassembly and Assembly 
+Manual (SENR 1782-08) 
+ 
+Figure 2.  Converter removal according 
+to proposal 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D11 Series Pivot Shaft Block Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-3.04-1319 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.0 Implementation Steps 
+ 
+Steps for removal 
+1. Refer to the SENR 1782-08 Manual (D11R Torque Converter Removal) or the Manual KENR 
+5620-00 (D11T Torque Converter Removal), and follow the steps before installing the tool. 
+2. Locate the tool to the converter using two 5/8” bolts – 11 x 1.75” UNC (grade 8) with their 
+washers. The minimum torque value for the bolts is 30 N·m. 
+3. The converter is removed with a lifting device with a minimum lifting capacity of 550 kg. The 
+weight of the torque converter is approximately 366 kg. 
+Steps for the Installation 
+1. Install converter tool with bolts and washers listed above (minimum torque value 30 N·m ) 
+2. Refer to the Installation Manual SENR 1782-08 (D11R Torque Converter Installation) or to the 
+Manual KENR 5620-00 (D11T Torque Converter Installation). 
+ 
+ 
+The tool can be used in the followings converters (D11R and D11T series) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1 Some  D11T models use this converter 
+ 
+4.0 Benefits 
+The tool has the following advantages: 
+• Reduced assembly time. 
+• A faster converter removal process when reducing the possibilities of contacting the fan pilot 
+pump, not using slings (See Figure 1). 
+• Lower cost of the tool. See Comparative table 2 and 3. 
+  
+ 
+Table 1. Converter that apply 
+Model Part Number Description 
+D11R 121-00301 Torque Converter Group 
+129-4041 Torque Converter Group 
+D11T 
+ 
+343-9846 Torque Converter & Housing Group 
+375-2685 Torque Converter & Housing Group 
+177-9790 Torque Converter Group 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D11 Series Pivot Shaft Block Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-3.04-1319 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+                                            
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+ 
+Table 2. Required Tools (SIS Cat ) 
+Tool Part 
+Number 
+Item  
+Weight (Kg) Qty Price (USD) 
+Ratchet Puller 8S-9906 3.1745 2  $     640.25  
+Link Bracket 138-7574 0.975 3  $     198.41  
+5/8 – 11 x 1.50 inch Bolt 0S-1566 0.0907 2  $         3.34  
+Nylon Lifting Sling 1U-8234 0.1769 2  $       39.33  
+Total   9.6278    $     881.33 
+ 
+ 
+ 
+Table 3. Required Tools (Proposal) 
+Tool Part 
+Number 
+Item  Weight 
+(Kg) Qty Price (USD) 
+Lifting Tool 138-7574 3.68 1  $     437.91  
+Shackle (2 Ton) 189-0408 0.3175 1  $       21.27  
+5/8 – 11 x 1.75 inch Bolt 0S-1589 0.0998 2  $         3.93  
+5/8 inch Washer 5P-8247 0.0136 2  $         2.30  
+Total   3.9975    $     463.10  
+ 
+ 
+5.0 Resources Required 
+• 2 5/8 Bolts - 11 x 1.25 inch UNC (P/N:  0S-1592). 
+• 2 5/8 Washers (P/N: 5P-8247). 
+• Material for making the tool (See Figure 4 for dimensions) 
+• Technicians. 
+ 
+ 
+6.0 Supporting Attachments / References 
+• SIS document: SENR 1782-08 (Torque Converter Remove – SMCS: 3101-011) 
+• SIS document: SENR 1782-08 (Torque Converter Install – SMCS: 3101-012) 
+• SIS document: KENR 5620-00 (Torque Converter Remove – SMCS: 3101-011) 
+• SIS document: KENR 5620-00 (Torque Converter Install – SMCS: 3101-012) 
+• D11R Converter R&I Tool Drawing 
+• Finite Element Analysis for R&I Tool 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D11 Series Pivot Shaft Block Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-3.04-1319 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+Figure 4. Tool Drawing. 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D11 Series Pivot Shaft Block Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-3.04-1319 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+Figure 5. Safety Factor Analysis 
+ 
+Physical Properties 
+Material AISI 1045 Steel, cold drawn 
+Mass 3.675 Kg 
+Density 7850 Kg/m3 
+Yield Strength 530 MPa 
+Tensile Strength 625 MPa 
+Shear Modulus 80 Gpa 
+Study Properties 
+Analysis type Static 
+Mesh type Solid mesh 
+Mesh Quality Second order tetrahedral elements 
+Model type Lineal elastic isotropic 
+Failure criteria Von Mises Stress Maximum 
+Fixtures 
+Type Fixtures details 
+Foundation 
+Bolt  
+Quantity 2 
+Nominal Diameter 5/8 inch 
+Pre-load (Torque) 30 N·m 
+Virtual 
+Wall 
+Entities 2 faces (below faces) 
+Wall type 
+Friction coefficient 
+Bonded 
+0.15 
+Loads 
+Gravity 9.81 m/s2 
+Vertical Force 4000 N (400 kg approx.) 
+Study Results 
+Von Mises Stress Maximum 115.9  Mpa 
+Minimum Safety Factor 4.57 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D11 Series Pivot Shaft Block Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-3.04-1319 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+ 
+Based on finite element analysis and considering the minimum safety factor given by the ASME 
+B30.20-2003 standard: Below-the-Hook lifting device, the tool loading capacity is 600 Kg. 
+ 
+ 
+7.0 Related Best Practices 
+  
+ 
+8.0 Acknowledgements 
+ 
+ 
+Name Juan Aguirre 
+Title Tool Room Specialist. 
+ 
+Name Francisco Ferrer 
+Title Senior Technical consultant 
+Email franciscoj_ferrer@gecolsa.com.co 
+Phone  +57 315 636-6934 
+ 
+Checked and written by: 
+ 
+Name Ricardo Chegwin 
+Title Technical manager 
+Email ricardo_chegwin@ gecolsa.com.co 
+ 
+Special thanks to: 
+The Development and Engineering Area Team 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+D11 Series Pivot Shaft Block Tool 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1306-3.04-1319 
+Caterpillar Confidential:  GREEN          Page 6 of 6

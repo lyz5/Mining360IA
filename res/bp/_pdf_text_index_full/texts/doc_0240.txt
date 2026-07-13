@@ -1,0 +1,218 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Electric Pallet Trucks Reduce Material Handling Costs.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+July 2008  
+0808-4.4-1128  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Electric Pallet Trucks 
+Reduce Material Handling 
+Costs 
+ 
+Application  Maintenance  Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety MARC 
+Management 
+ 
+ 
+ 
+Electric Pallet Trucks Reduce Material Handling Costs 
+ .................................................................................. 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 2 
+4.0  Benefits ............................................................. 4 
+5.0  Resources Required .......................................... 4 
+6.0  Supporting Attachments / References ............... 4 
+7.0  Related Best Practices ...................................... 4 
+8.0  Acknowledgements ........................................... 4 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Electric Pallet Trucks Reduce Material Handling Costs 
+DATE 
+4/11/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0808-4.4-1128  
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+1.0 Introduction  
+ 
+Many dealers still transport parts and materials delivered to the Component Rebuild Centers 
+(CRC) manually using hand pallet trucks.  Some dealers have replaced the manual pallet 
+handlers with electric pallet trucks.   
+This Best Practice is an economic comparison of “manual” versus “electric” material handling 
+equipment.  This Best Practice comes from Ferreyros – Lima, Peru. 
+ 
+                                      
+ 
+ 
+ 
+ 
+ 
+ 
+                                        
+ 
+                            
+ 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Tests were conducted over a controlled period to measure the speed of delivery of parts baskets 
+to the CRC (average distance 50 Meters) using electric pallet trucks versus manual pallet 
+handlers.  The results showed that the electric pallet trucks were 2.3 times faster than manual 
+transport.   
+There were other advantages including: 
+• Less parts handling staff fatigue. 
+• Reduced / eliminated back pain incidents. 
+• Quick delivery means fewer parts need to be staged  in the bay – delivered when needed 
+(just in time). 
+• Reduced technician “wait times”. 
+• Handlers were small and maneuverable – able to wor k in narrow spaces. 
+Investment analysis was based on “time recovered” in transporting materials from the CRC parts 
+receiving area to the work bays and back to receiving.  
+Dealer realized a 44% NPV return on investment and cost recovery period of 2 years 11 months. 
+ 
+3.0 Implementation Steps 
+ 
+The key elements of the analysis includes quantifying the “time saved” versus the pallet truck 
+purchase and operating / maintenance cost of the equipment. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Electric Pallet Trucks Reduce Material Handling Costs 
+DATE 
+4/11/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0808-4.4-1128  
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+Time savings: 
+ 
+ 
+The electric pallet trucks were 2.35 times faster than the manual pallet handlers.  This information 
+can be converted to a “man hours” saved benefit to be used in the investment analysis. 
+ 
+Savings are then compared to purchase, owning and operating costs, taxes, depreciation, etc. to 
+determine a return on investment. 
+ 
+To determine the number of electric pallet trucks required to handle the workload, the average 
+daily number of parts baskets moved to the work bays was examined. 
+ 
+Before: 
+ 
+After: 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Electric Pallet Trucks Reduce Material Handling Costs 
+DATE 
+4/11/2017 
+CHG 
+NO 
+01 
+NUMBER 
+0808-4.4-1128  
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+There are many types of electric pallet trucks available.  Models include riding trucks or walk 
+behind trucks.  There are also models with a forklift for handling pallets staged in vertical racks or 
+for stacking. 
+ 
+Caterpillar offers several electric pallet trucks such as the NPV20 / 25. 
+ 
+4.0 Benefits 
+ 
+• Reduced time required to deliver parts to work bay s. 
+• Reduced technician “waiting time” for parts. 
+• Reduced use of bay space to stage parts – just in time delivery process. 
+• Reduced fatigue and back pain for parts handling s taff. 
+• Possible reduced manpower required. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Purchase of equipment 
+• Maintenance and repairs of equipment. 
+• Operational, Safety, and Maintenance Training 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Special Thanks To: 
+Aninu Mitacc 
+Ferreyros S.A. 
+Aninu.mitacc@ferreyros.com.pe 
+ 
+Written by: 
+ 
+Dale Brehm 
+6 Sigma Black Belt 
+Cat Global Mining Product Support

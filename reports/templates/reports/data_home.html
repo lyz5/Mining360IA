@@ -1,0 +1,417 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data | Mining360IA</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260706-7">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell data-browser-page">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Data workspace</p>
+                <h1>Data Browsers</h1>
+            </div>
+            <div class="actions">
+                <a class="button secondary" href="{% url 'data-quality-center' %}">Data Quality Center</a>
+                <button class="button" type="button" data-browser-definition-open>Definition</button>
+            </div>
+        </header>
+
+        <section class="data-browser-layout" data-browser-app>
+            <aside class="data-browser-list-panel" data-browser-pane>
+                <div class="section-heading">
+                    <div class="browser-pane-title">
+                        <p class="eyebrow">Configured tables</p>
+                        <h2>Browsers</h2>
+                    </div>
+                    <div class="browser-pane-actions">
+                        <button class="icon-button browser-order-save" type="button" data-browser-order-save disabled aria-label="Save Browser order" title="Save order"></button>
+                        <button class="icon-button browser-pane-toggle" type="button" data-browser-pane-toggle aria-label="Collapse Browser panel" title="Collapse panel"></button>
+                    </div>
+                </div>
+                <div class="browser-pane-content">
+                    <div class="browser-list-tools">
+                        <input type="search" data-browser-search placeholder="Search Browsers..." autocomplete="off">
+                        <select data-browser-status-filter aria-label="Filter Browsers by status">
+                            <option value="all">All</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                        <button class="button" type="button" data-browser-new>Create Browser</button>
+                    </div>
+                <div class="data-browser-list" data-browser-list>
+                    {% if browsers %}
+                        {% for browser in browsers %}
+                            <button type="button" class="browser-list-item" data-browser-select="{{ browser.id }}">
+                                <strong>{{ browser.name }}</strong>
+                                <span>{{ browser.table_name|default:"-" }}</span>
+                                <em>{% if browser.is_active %}Active{% else %}Inactive{% endif %}</em>
+                            </button>
+                        {% endfor %}
+                    {% else %}
+                        <div class="empty compact">No Browser configured yet.</div>
+                    {% endif %}
+                </div>
+                </div>
+            </aside>
+
+            <section class="browser-preview-section data-browser-preview-panel" data-preview-section hidden>
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Generated table</p>
+                        <h2>Integrated Data</h2>
+                    </div>
+                </div>
+                <div class="legacy-browser-bar">
+                    <div class="legacy-browser-title-row">
+                        <div class="legacy-browser-title" data-runtime-title>Browser</div>
+                        <div class="legacy-browser-count" data-browser-row-count>0 rows loaded</div>
+                    </div>
+                    <div class="legacy-toolbar">
+                        <div class="legacy-pager">
+                            <button type="button">First</button>
+                            <button type="button">Prev</button>
+                            <span>of 0</span>
+                            <button type="button">Next</button>
+                            <button type="button">Last</button>
+                        </div>
+                        <div class="legacy-actions browser-option-actions">
+                            <button type="button" class="icon-button action-export" data-browser-export aria-label="Export Excel" title="Export Excel"></button>
+                            <button type="button" class="icon-button action-add-data" data-record-open aria-label="Add Data" title="Add Data"></button>
+                            <button type="button" class="icon-button action-edit" data-record-edit disabled aria-label="Edit selected" title="Edit selected"></button>
+                            <button type="button" class="icon-button action-delete" data-record-delete disabled aria-label="Delete selected" title="Delete selected"></button>
+                            <button type="button" class="icon-button action-import" data-import-trigger aria-label="Data Import" title="Data Import"></button>
+                            <button type="button" class="button secondary preview-filter-toggle" data-preview-filter-toggle aria-expanded="false">Filters</button>
+                            <label class="preview-limit-control" title="Limit rows">
+                                <span>Rows</span>
+                                <select data-browser-preview-limit aria-label="Limit rows">
+                                    <option value="100">100</option>
+                                    <option value="1000" selected>1000</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </label>
+                            <button type="button" class="icon-button action-refresh" data-browser-preview aria-label="Refresh preview" title="Refresh preview"></button>
+                            <button type="button" class="icon-button action-sync" data-browser-sync aria-label="Sync with SQL Server" title="Sync with SQL Server"></button>
+                            <button type="button" class="icon-button fullscreen-toggle" data-browser-fullscreen aria-label="Fullscreen preview" title="Fullscreen preview"></button>
+                            <input type="file" accept=".csv,.xlsx" data-import-file hidden>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-scroll">
+                    <table class="data-table">
+                        <thead data-preview-head></thead>
+                        <tbody data-preview-body></tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </main>
+    <div class="preview-filter-modal" data-preview-filter-modal hidden aria-hidden="true">
+        <div class="preview-filter-modal-backdrop" data-preview-filter-close></div>
+        <div class="preview-filter-bar" data-preview-filter-panel role="dialog" aria-modal="true" aria-label="Preview filters">
+            <div class="preview-filter-head">
+                <div>
+                    <p class="eyebrow">Filters</p>
+                    <h3>Preview filters</h3>
+                </div>
+                <button type="button" class="icon-button preview-filter-close" data-preview-filter-close aria-label="Close filters" title="Close filters"></button>
+            </div>
+            <div class="preview-filter-stack" data-preview-filter-stack></div>
+            <div class="preview-filter-actions">
+                <button type="button" class="button secondary preview-filter-add" data-preview-filter-add>Add filter</button>
+                <button type="button" class="button preview-filter-apply" data-preview-filter-apply>Apply</button>
+                <button type="button" class="button secondary preview-filter-reset" data-preview-filter-reset>Reset</button>
+            </div>
+        </div>
+    </div>
+    <div class="browser-modal" data-definition-modal hidden aria-hidden="true">
+        <div class="browser-modal__backdrop" data-modal-close></div>
+        <div class="browser-modal__panel browser-modal__panel--wide browser-modal__panel--fullscreen" role="dialog" aria-modal="true" aria-labelledby="definition-modal-title">
+            <div class="browser-modal__header">
+                <div>
+                    <p class="eyebrow">Definition</p>
+                    <h2 id="definition-modal-title" data-browser-form-title>New Browser</h2>
+                </div>
+                <button class="icon-button" type="button" data-modal-close aria-label="Close definition">×</button>
+            </div>
+            <form class="data-browser-form" data-browser-form>
+                {% csrf_token %}
+                <input type="hidden" name="id" data-browser-id>
+                <div class="section-heading">
+                    <label class="inline-check">
+                        <input type="checkbox" name="is_active" checked>
+                        Active
+                    </label>
+                    <div class="browser-identifier-options">
+                        <label class="inline-check">
+                            <input type="checkbox" name="show_browser_record_id" checked>
+                            Show BrowserRecordId
+                        </label>
+                        <label class="inline-check">
+                            <input type="checkbox" name="show_eventchain_id" checked>
+                            Show EventChainID
+                        </label>
+                    </div>
+                </div>
+
+                <div class="browser-form-grid">
+                    <label>
+                        <span>Browser name</span>
+                        <input type="text" name="name" placeholder="Equipment Browser" required>
+                    </label>
+                    <label>
+                        <span>SQL table name</span>
+                        <input type="text" name="table_name" placeholder="dbo.Browser_Equipment" required>
+                    </label>
+                    <label>
+                        <span>Source SQL view</span>
+                        <input type="text" name="source_view_name" placeholder="dbo.vw_EquipmentAnalysis" required>
+                    </label>
+                    <label>
+                        <span>Description</span>
+                        <input type="text" name="description" placeholder="Optional business description">
+                    </label>
+                </div>
+
+                <div class="browser-action-row">
+                    <button class="button" type="submit">Save Browser</button>
+                    <button class="button secondary" type="button" data-browser-preview disabled>Preview Data</button>
+                    <button class="button secondary danger-soft" type="button" data-browser-delete disabled>Delete</button>
+                </div>
+                <p class="browser-status" data-browser-status></p>
+            </form>
+
+            <section class="browser-columns-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Structure</p>
+                        <h2>Columns</h2>
+                    </div>
+                    <button class="button secondary small" type="button" data-column-order-save disabled>
+                        Save order
+                    </button>
+                </div>
+
+                <form class="browser-column-form" data-column-form>
+                    <input type="hidden" name="id" data-column-id>
+                    <label>
+                        <span>Display name</span>
+                        <input type="text" name="display_name" placeholder="Equipment" required>
+                    </label>
+                    <label>
+                        <span>SQL name</span>
+                        <input type="text" name="sql_name" placeholder="Equipment" required>
+                    </label>
+                    <label>
+                        <span>Type</span>
+                        <select name="data_type">
+                            <option>Text</option>
+                            <option>Integer</option>
+                            <option>Decimal</option>
+                            <option>Date</option>
+                            <option>DateTime</option>
+                            <option>Boolean</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Length</span>
+                        <input type="number" name="length" min="1" max="4000" placeholder="255">
+                    </label>
+                    <label>
+                        <span>Default</span>
+                        <input type="text" name="default_value" placeholder="Optional">
+                    </label>
+                    <label>
+                        <span>Order</span>
+                        <input type="number" name="display_order" min="0" value="0">
+                    </label>
+                    <label class="inline-check stacked">
+                        <input type="checkbox" name="allow_null" checked>
+                        Allow null
+                    </label>
+                    <label class="inline-check stacked">
+                        <input type="checkbox" name="is_unique">
+                        Unique
+                    </label>
+                    <label class="inline-check stacked">
+                        <input type="checkbox" name="is_visible" checked>
+                        Visible
+                    </label>
+                    <label class="inline-check stacked">
+                        <input type="checkbox" name="is_lookup" data-lookup-toggle>
+                        Lookup
+                    </label>
+                    <label class="lookup-field" data-lookup-field>
+                        <span>Lookup Browser</span>
+                        <select name="lookup_source_name" data-lookup-source data-searchable-select data-searchable-placeholder="Search browsers...">
+                            <option value="">Select Browser</option>
+                        </select>
+                    </label>
+                    <label class="lookup-field" data-lookup-field>
+                        <span>Value column</span>
+                        <select name="lookup_value_column" data-lookup-value-column data-searchable-select data-searchable-placeholder="Search columns...">
+                            <option value="">Select column</option>
+                        </select>
+                    </label>
+                    <label class="lookup-field" data-lookup-field>
+                        <span>Label column</span>
+                        <select name="lookup_label_column" data-lookup-label-column data-searchable-select data-searchable-placeholder="Search columns...">
+                            <option value="">Select column</option>
+                        </select>
+                    </label>
+                    <label class="lookup-field" data-lookup-field>
+                        <span>Active filter column</span>
+                        <select name="lookup_filter" data-lookup-filter-column data-searchable-select data-searchable-placeholder="Search columns...">
+                            <option value="">No filter</option>
+                        </select>
+                    </label>
+                    <button class="button secondary" type="submit" data-column-submit disabled>Add Column</button>
+                </form>
+
+                <div class="table-scroll browser-column-table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th class="drag-column"><span class="sr-only">Reorder</span></th>
+                                <th>Display</th>
+                                <th>SQL</th>
+                                <th>Type</th>
+                                <th>Allow null</th>
+                                <th>Unique</th>
+                                <th>Visible</th>
+                                <th>Lookup</th>
+                                <th>Order</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody data-column-table>
+                            <tr><td colspan="10">Save or select a Browser to manage columns.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="browser-modal" data-record-modal hidden aria-hidden="true">
+        <div class="browser-modal__backdrop" data-modal-close></div>
+        <div class="browser-modal__panel browser-modal__panel--fullscreen" role="dialog" aria-modal="true" aria-labelledby="record-modal-title">
+            <div class="browser-modal__header">
+                <div>
+                    <p class="eyebrow">Data</p>
+                    <h2 id="record-modal-title">Add or edit record</h2>
+                </div>
+                <button class="icon-button" type="button" data-modal-close aria-label="Close data form">×</button>
+            </div>
+            <form class="browser-record-form" data-record-form hidden></form>
+        </div>
+    </div>
+    <div class="browser-center-message" data-browser-center-message hidden aria-live="polite" aria-atomic="true">
+        <div class="browser-center-message__card">
+            <span class="browser-center-message__text" data-browser-center-message-text></span>
+            <div class="browser-center-message__actions" data-browser-center-message-actions hidden>
+                <button class="button" type="button" data-browser-center-message-ok>OK</button>
+            </div>
+        </div>
+    </div>
+    <div class="browser-modal" data-import-modal hidden aria-hidden="true">
+        <div class="browser-modal__backdrop" data-import-close></div>
+        <div class="browser-modal__panel browser-modal__panel--wide" role="dialog" aria-modal="true" aria-labelledby="import-modal-title">
+            <div class="browser-modal__header">
+                <div>
+                    <p class="eyebrow">Import Data</p>
+                    <h2 id="import-modal-title">Match fields</h2>
+                    <p class="page-intro" data-import-summary>Select the file columns that should populate each browser column.</p>
+                </div>
+                <button class="icon-button" type="button" data-import-close aria-label="Close import mapping">×</button>
+            </div>
+
+            <div class="import-steps">
+                <span class="active">Target Form</span>
+                <span class="active">Data Source</span>
+                <span class="active">Match Fields</span>
+                <span>Preview</span>
+                <span>Complete</span>
+            </div>
+
+            <div class="import-toolbar">
+                <div>
+                    <span class="eyebrow">Browser</span>
+                    <strong data-import-browser-name>-</strong>
+                </div>
+                <div>
+                    <span class="eyebrow">File</span>
+                    <strong data-import-file-name>-</strong>
+                </div>
+                <div>
+                    <span class="eyebrow">Rows</span>
+                    <strong data-import-row-count>0</strong>
+                </div>
+                <label>
+                    <span>Duplicate handling</span>
+                    <select data-import-duplicate-mode>
+                        <option value="skip">Skip duplicates</option>
+                        <option value="replace">Replace existing</option>
+                    </select>
+                </label>
+                <label class="inline-check stacked">
+                    <input type="checkbox" data-import-commit-rows checked>
+                    Commit individual rows
+                </label>
+            </div>
+            <div class="import-progress">
+                <div class="import-progress-bar" data-import-progress-bar></div>
+            </div>
+            <div class="import-progress-text" data-import-progress-text>0 / 0</div>
+
+            <div class="import-preview-grid">
+                <div class="import-preview-panel">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">File preview</p>
+                            <h3>Source columns</h3>
+                        </div>
+                    </div>
+                    <div class="table-scroll import-table-scroll">
+                        <table class="data-table">
+                            <thead data-import-file-head></thead>
+                            <tbody data-import-file-body></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="import-preview-panel">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">Browser mapping</p>
+                            <h3>Match browser columns</h3>
+                        </div>
+                    </div>
+                    <div class="table-scroll import-table-scroll">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Browser column</th>
+                                    <th>File column</th>
+                                    <th>Default value</th>
+                                </tr>
+                            </thead>
+                            <tbody data-import-map-body></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="browser-action-row">
+                <button class="button secondary" type="button" data-import-close>Cancel</button>
+                <button class="button secondary" type="button" data-import-back>Back</button>
+                <button class="button" type="button" data-import-commit>Import</button>
+            </div>
+        </div>
+    </div>
+    {{ browser_state|json_script:"browser-state-data" }}
+    <script src="{% static 'reports/data_browsers.js' %}?v=20260712-3"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Measuring Empty Machine 
+Weight (EMW) 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+Measuring Empty Machine Weight (EMW) ................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+  
+February 2011 
+1103-2.03-1221 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+Off Highway truck payload management – “10/10/20” is a fundamental requirement for proper 
+equipment management and productivity management. To comply with the Truck Payload Policy, 
+the customer, dealer and Caterpillar will need to know the empty weight of the truck. Due to the 
+many optional attachments offered to the customer, there might be a discrepancy between the 
+actual delivered Empty Machine Weight (EMW) and the EMW supplied by the factory. In some 
+instance, it can be as high as 5 - 7% of target payload. Such discrepancies may lead to potential 
+problem when the EMW is measured via production study scale down the track.   
+ 
+The Best Practice is to introduce Empty Machine Weight (EMW) measurement as part of the new 
+machine delivery process. It will eliminate the potential ramification, allow us to meet our 
+customer’s expectation and allow the customer to accurately comply with the “10/10/20” payload 
+policy.  
+ 
+2.0 Best Practice Description 
+It is important for the dealer sales representative to use the tools available to estimated EMW of 
+the truck prior to taking an order from the customer. The best tool for this is the Mass Configurator 
+and you can obtain this from your Caterpillar mining sales representative. This document will 
+establish the target payload as defined by the stated configuration such that any changes in 
+configuration during or after the sales process can be taken into account and the target payload 
+can be adjusted accordingly. There are a few tools available for dealers to measure EMW. 
+ 
+Caterpillar Jack Stand   
+In some countries, Caterpillar Global Mining has a set of jack stands (see figure 2.1) for dealer to 
+use, charges vary by region. Please check with your local Cat product support representative for 
+further details and asset availability.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2.1: Caterpillar jack stand with load cell to measure machine empty weight  
+ 
+The jack stands are Caterpillar hydraulic lift with load cell for empty weight measurement. A 
+trained and certified operator should operate the asset. Training and certification is available via 
+your local Caterpillar Representative. Alternatively, Caterpillar will be able to run the empty weight 
+study at a cost.  
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Measuring Empty Machine Weight (EMW) 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1103-2.03-1221 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Transcale Tare Weight Certification System  
+There are other empty weight measurement systems available in the market. For instance, 
+Transcale Pty Ltd, Australia, can supply an empty weight certification system (See figure 2.2).  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figure 2.2: Transcale Empty Weight Certification System 
+ 
+The Transcale “Tare Weight Certification System” (TWCS) is basically a triangular shaped load 
+cell unit that can be installed under the hydraulic lift device as showed in figure 2.2.  
+ 
+It is dealer’s discretion to purchase the TWCS and the cost can be justified by the elimination of 
+potential ramifications down the track when the EMW is measured via a production study scale. 
+Ideally, every truck delivered to the customer should have EMW measured.  
+ 
+Regardless of the tool chosen, it is important to formally document the empty weight. A certificate 
+can be issued to the customer for each truck measured. Please refer to the attached document 
+for certificate template and associate documents. 
+ 
+Note Target Payload is the difference between Gross Machine Weight (GMW) and EMW. 
+EMW includes body, body liner, attachments, tires and etc that are installed on 
+the machines.   
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Measuring Empty Machine Weight (EMW) 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1103-2.03-1221 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Implementation Steps 
+1. Organize the jack stands or TWCS  
+2. Organize a certificated operator for the study 
+3. Park the truck on a flat and level concrete floor suited for the weighing procedure 
+4. Capture optional attachment and relevant truck information (see attached documents) 
+5. Measure machine empty weight  
+6. Establish target payload based on EMW 
+7. Setup target payload and overload limits in VIMS 
+8. Generate and issue certificate for each truck being measured to the customer. The certificate 
+should includes the following information (see attached documents): 
+a. Truck body sales diagram detailing body and liner specification with associated weight 
+estimate 
+b. Tires information including manufacturer, size, model and % tread depth 
+c. Percentage of fuel in the fuel tank 
+d. VIMS target payload based on the measured empty truck weight 
+9. Hand over the machine with the certificate 
+10. Send the copies of the certificates to Caterpillar 
+11. Caterpillar will verify measured machine weight with the “Mass Configuration Calculator” 
+a. This would allow Caterpillar to refine the mass configuration calculator and hence 
+allowing us to provide more accurate EMW estimate to dealers 
+12. Keep record of all certificates to prevent potential problem down the track 
+ 
+4.0 Benefits 
+ 
+There have been multiple instances in the past where a fleet that has been in use for some time 
+and has been found via a scale study to weigh more than expected. As the EMW becomes 
+known, Caterpillar and the dealer are obliged to inform the customer of their true target payload, 
+which is often less than their expectations. This can often degrade into an argument about how 
+much the truck weighed at commissioning versus how much weight has since been added by the 
+customer. Implementation of this Best Practice will nullify this argument. Typical weight additions 
+include additional body liners, body reinforcements, debris/silt inside body rails, tire changes, rim 
+changes, larger fuel tanks, etc. All of which are often not accounted for by the customer over the 
+life of the truck. And if the VIMS target payload is not adjusted to account for the additional EMW 
+then payload history indicating 10/10/20 compliance may in fact constitute significant overloading 
+of the truck including possible breach of steering and braking certification limits.  
+ 
+It is also critically important to ensure machine EMW is kept under the certified ROPS limit. 
+Without an EMW certificate at time of delivery the “growth” in EMW of a truck over time is likely to 
+degrade into an argument with the customer over whether the truck was overweight at the time of 
+commissioning.  
+ 
+5.0 Resources Required 
+ A Trained Operator 
+ Jack stands or TWCS 
+ Empty weight certificate template 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Measuring Empty Machine Weight (EMW) 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1103-2.03-1221 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Generic_797F MSDII Body 252 m3.pdf 
+• Tare Weight Certificate Generic.doc 
+ 
+7.0 Related Best Practices 
+ 
+• 0707-1.1-1089  Payload Management 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:   For more information contact: 
+Rex Cheung     Kent Clifton 
+Caterpillar Global Mining   Caterpillar Global Mining 
+Cheung_Rex@cat.com   Clifton_Kent_H@cat.com 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Measuring Empty Machine Weight (EMW) 
+DATE 
+2/16/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1103-2.03-1221 
+Caterpillar Confidential:  GREEN          Page 4 of 4

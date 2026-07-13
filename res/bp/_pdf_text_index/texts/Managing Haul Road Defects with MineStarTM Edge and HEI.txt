@@ -1,0 +1,603 @@
+===== PAGE 1 =====
+January 2025 
+2.02-250131-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+M
+INING DEALER BEST PRACTICE 
+Managing Haul Road 
+Defects with MineStarTM 
+Edge & HEI  
+Maintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+M
+anaging Haul Road Defects with MineStarTM Edge 
+and HEI ..................................................................................1
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 8 
+5.0 Resources Required ........................................ 10 
+6.0 Supporting Attachments / References ............. 10 
+7.0 Related Best Practices .................................... 10 
+8.0 Acknowledgements .......................................... 10 
+D
+ISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Haul Road Defects with MineStarTM Edge 
+and HEI        
+DATE 
+1/31/2025 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-250131-1 
+Caterpillar: Confidential Yellow                  Page 2 of 10 
+1.0 Introduction  
+ 
+This best practice article serves as a guide on how to utilize Road Analysis Control (RAC) in 
+conjunction with MineStar Health Equipment Insights (HEI) to improve haul road quality. This article 
+also identifies haul road maintenance KPI’s that can be utilized to monitor road management 
+effectiveness. An operations ability monitor and improve haul road conditions will directly affect their 
+haul trucks performance by decreasing stress on major components, in turn increasing fleet reliability. 
+Smooth haul roads also allow trucks to increase cycle time, upping material movement.        
+ 
+2.0 Best Practice Description 
+ 
+By utilizing the Road Analysis Control (RAC) system on Caterpillar large OHTs paired with MineStar 
+Health Equipment Insights (HEI), mine operations and maintenance teams can identify the influx, 
+severity, and location of the haul road area that the truck flags as problematic. Both technologies are 
+covered in depth below.    
+ 
+2.1 RAC Overview 
+Road Analysis Control is an onboard technology used to record and benchmark haul road 
+quality. RAC is integrated with the Vital Information Management System (VIMS™) and 
+measures key data such as impact and shock to the suspension system. This information 
+is communicated to the operator through RAC event codes and to external asset 
+monitoring software such as Health Equipment Insights (HEI) using a radio network. 
+ 
+RAC collects each strut pressure data, utilizing the same sensors that determine payload 
+and cycle time information, to measure frame movement. These sensors are set to 
+measure frame Pitch (front-to-rear shift in weight), Rack (The lateral twisting motion), and 
+Bias (side-to-side movement). If strut pressures exceed a specified threshold for Pitch, 
+Rack, or Bias an event code will be generated.   
+ 
+Haul road conditions must be monitored closely as over time, the stress of rough roads 
+can lead to premature wear to haul truck suspension, steering, frames, and damage to 
+tires and wheels. Poor haul roads also introduce unnecessary stress and strain to 
+operators.  
+ 
+2.2 MineStar Health Equipment Insights (HEI) 
+MineStar Health Equipment Insights (HEI) is a cloud-based, internet-accessible 
+application that visualizes machine electronic data (VIMS and Product Link), fluid 
+samples, and inspections when CAT inspect is used. HEI allows maintenance staff to 
+diagnose equipment events, monitor machine parameters, and analyze trends. HEI also 
+provides a variety of production data to assist operational personnel in tracking key 
+performance indicators (KPI).   
+ 
+HEI comes equipped with a pre-loaded report that displays the information captured from 
+the RAC system. This report, labeled “Haul Road Condition” allows users to quickly 
+reference the following information:  
+• RAC event Map & Counts 
+• Payload Overload Map 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Haul Road Defects with MineStarTM Edge 
+and HEI        
+DATE 
+1/31/2025 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-250131-1 
+Caterpillar: Confidential Yellow                  Page 3 of 10 
+• Severity Index KPI 
+• FELA Trends  
+• CAT 10-10-20 Payload Summary  
+ 
+3.0 Implementation Steps 
+ 
+3.1 Action Planning 
+The following section outlines how to utilize HEI’s RAC event map to develop a work 
+scope for haul road maintenance teams.  
+ 
+3.1.1 Identifying Problem Areas 
+The first step to managing haul road conditions is to identify and rank problem areas. HEI 
+comes equipped with a Haul Road Condition report that allows users to identify where 
+RAC events are being triggered on a map. Under the “Machine Conditions” tab, users can 
+view the number of RAC events and trigger locations on a per-unit basis. When observing 
+RAC event data, it is important to ensure that each unit in the fleet has been set to the 
+same severity level. RAC severity levels adjust sensitivity thresholds for RAC codes, level 
+1 being the most sensitive, and level 3 being the least. 
+ 
+RAC severity level can be altered directly through a machines Advisor Display:  
+ 
+ 
+  
+ 
+1. Select the settings menu 
+2. Chose the “VIMS” sub-menu 
+3. Navigate to “RAC Severity” 
+4. Select a value of 1, 2, or 3  
+ 
+ 
+ 
+ 
+With the Haul Road Map, users can pinpoint the location of all RAC codes in a set date 
+range. In mine sites where there is a large influx of RAC codes, a road maintenance 
+planner may consider shortening the date ranges and filtering the event map to show only 
+medium-level event codes. This will help pinpoint the areas of greatest concern. As haul 
+road quality increases and RAC events frequency decrease, event code levels and date 
+ranges can be extended. In the event that a single haul truck is experiencing significantly 
+more or less RAC codes then the rest of the fleet, the trucks strut pressures and pressure 
+sensors outputs are to be investigated for potential faults.   
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Haul Road Defects with MineStarTM Edge 
+and HEI        
+DATE 
+1/31/2025 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-250131-1 
+Caterpillar: Confidential Yellow                  Page 4 of 10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.1.2 Planning repairs 
+With the use of the RAC event code map, the road maintenance planner can utilize 
+coordinates related to each event to develop and distribute a repair strategy. For mines 
+with a larger footprint, areas of the site can be broken up into sections as seen in Figure 
+2.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+It is recommended that repair maps are generated weekly in order to keep up with 
+constantly changing haul road conditions. It is also necessary for road maintenance 
+teams to communicate repair statuses back to the planning team, this data can be stored 
+and used to identify any areas that require constant attention. Additional information on 
+Figure 2 RAC Event Map 
+Figure 1 RAC Event Map 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Haul Road Defects with MineStarTM Edge 
+and HEI        
+DATE 
+1/31/2025 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-250131-1 
+Caterpillar: Confidential Yellow                  Page 5 of 10 
+performing RAC analysis is available in the “2.02-210211-1 Road Analysis Control (RAC)” 
+best practice article.  
+ 
+3.1.3 Prioritizing repairs 
+In mines with troubled haul roads, an influx of RAC codes may make it difficult to decide 
+what routes to prioritize. By utilizing the “Truck Cycles” report generated through Minstar 
+EDGE, a summary can be created that displays what haul roads moved the most 
+material over a given time period:     
+ 
+Dump Area Tonnage  Tonnage % % of RAC Events 
+CRUSHER "A" 181,187 38% 20% 
+CRUSHER "B" 119,323 25% 24% 
+WRSA "C" 109,537 23% 44% 
+STKP "B" 26,588 6% 6% 
+WRSA "B" 18,822 4% 6% 
+535-110 17,552 4% 4% 
+ 
+ 
+In the example above, the two Dump Areas for “Crusher “A” and “B” show the most 
+tonnage moved, however 44% of the RAC events were triggered on the road to “WRSA 
+“C”. With this information a maintenance team is able to decide to prioritize haul road 
+maintenance based on usage for martial movement or the number of RAC events 
+triggered.    
+   
+3.2 Monitoring Improvements 
+To track haul road conditions, there are multiple KPIs that can be generated using HEI. 
+These KPIs will help a mine site trend haul road condition and understand if site 
+conditions are improving. 
+ 
+3.2.1 Severity Index 
+Severity index is a feature that helps in detecting fluctuation in productivity levels. It does 
+this by taking the number of RAC events (Rack, Pitch, Bias) and dividing this by the 
+number of haul cycles in a day.  
+ 
+This information can be quickly referenced using the “Severity Index” tab. The graph on 
+this tab displays the daily severity index for the selected date range, along with the 
+average over the last 30 days. To trend this data, the road maintenance planner can 
+extract the average severity index and plot it weekly. This information can be trended over 
+time to monitor the effect of haul road maintenance practices. Figure 3 shows a severity 
+index graph of a mine whose haul roads show consistent improvement. When monitoring 
+the severity index, it is important to note that external factors such as a week of bad 
+weather can result in an increased severity index. When reporting haul road KPIs, include 
+a section that notes any factors that may affect haul road data.  
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Haul Road Defects with MineStarTM Edge 
+and HEI        
+DATE 
+1/31/2025 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-250131-1 
+Caterpillar: Confidential Yellow                  Page 6 of 10 
+   
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.2.2 Fatigue Equivalent Road Analysis (FELA) 
+RAC uses FELA to calculate the average Rack and Pitch, producing an index that is used 
+to establish the severity of each cycle. Using the FELA Trend tab in HEI, the user can 
+view the Max Rack and Pitch FELA value along with a trend chart for each unit in the 
+fleet.  
+ 
+Through the dashboard function, users can create a “Trends Beta – Fleet Summary” 
+widget, to view the FELA trends for the entire fleet. This widget also creates a table on the 
+main dashboard screen that displays the MAX and MIN trend values on a per unit basis.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+These FELA “Max” and “Min” values can be used to plot a FELA Rack and Pitch range on 
+Caterpillars FELA Curve (KWNE9023) as seen in Figure 4.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+8
+9
+10
+11
+12
+4 5 6 7 8 9 10 11 12 13 14
+RAC Events / Haul Cycles
+Week # (2023)
+Severity Index Weekly Trend
+Figure 3 Severity Index Example 
+1150.00 
+1450.00 
+1400.00 
+1600.00 
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Haul Road Defects with MineStarTM Edge 
+and HEI        
+DATE 
+1/31/2025 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-250131-1 
+Caterpillar: Confidential Yellow                  Page 7 of 10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The purpose of the FELA graph is to help RAC users better understand the relationship 
+between the haul road conditions and the intended design life cycle (machine life). This 
+range can be plotted on a monthly basis in order to track progress of haul road condition 
+and its impacts on equipment life.     
+ 
+3.2.3 Time Series Beta – Datalogger 
+Minstar HEI allows for the continuous collection of trend data on all subscribed assets. 
+There are multiple data channels that can be used before and after haul road 
+improvements to help gauge the effect on equipment efficiency and productivity. 
+ 
+Some useful data channels include:  
+  
+• Actual Gear-81 Trans Ctrl 
+o Displays gear shift patterns and number of gear shifts in a given cycle 
+• OHT Payload State 161 
+o Displays the current payload state (Traveling Loaded, Traveling Empty, 
+Dumping etc…) to help understand where a truck is in its cycle 
+• Fuel Consumption Rate 
+o Displays the momentary fuel consumption rate of each truck  
+• Ground speed 
+o Displays ground speed of truck 
+ 
+ 
+Figure 4 FELA Curve 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Haul Road Defects with MineStarTM Edge 
+and HEI        
+DATE 
+1/31/2025 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-250131-1 
+Caterpillar: Confidential Yellow                  Page 8 of 10 
+ 
+ 
+Figure 5 displays a Datalogger graph for a complete haul cycle of a 793F, with all channels above 
+being displayed. HEI stores all Datalogger information, allowing the user to compare truck 
+performance before and after haul road improvements have been made. The “4.0 Benefits” 
+section displays an example where Datalogger information was used to validate 793F haul cycle 
+improvements.  
+ 
+ 
+4.0 Benefits 
+ 
+Combining RAC with HEI allows mine sites to efficiently identify problem areas and repair haul 
+roads. If a site is able to utilize these programs to reduce the severity level of their haul fleet from 
+11 to 7, the fleets reliability will be significantly improved. The graphs below (Fig. 6) show an 
+actual example of a 793F as it approaches a rough area in the haul road. During this snapshot 
+the haul truck undergoes three gear changes, decelerates from 48KM/H to 35KM/H, and 
+accelerating again from 35KM/H to 45KM/H. Three “Level 1” and One “Level 2” RAC events are 
+triggered over this area of road.  
+ 
+ 
+  
+ 
+ 
+ 
+ 
+Figure 5 Timeseries Beta - Datalogger 
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Haul Road Defects with MineStarTM Edge 
+and HEI        
+DATE 
+1/31/2025 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-250131-1 
+Caterpillar: Confidential Yellow                  Page 9 of 10 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The snapshot below “Fig. 7”, demonstrates the same area of haul road after repairs. During this 
+event the truck underwent no gear changes, and its speed remained constant.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+In the event that an operations team is able to repair and maintain four haul road areas, yielding 
+similar results, the 793F will experience a reduction in:  
+  
+•  Haul Cycle Time 
+o Speeds remained constant, no time loss undergoing acceleration and 
+deceleration 
+o Haul cycle time reduces by 5% 
+• Fuel Burn 
+o Fig. 5 displays spikes in fuel consumption from 100 L/HR to 450 L/HR, while Fig. 
+6 fuel burn rates stay between 100 L/HR to 250 L/HR    
+• Level 2 RAC Event   • Level 1 RAC Event 
+ 
+Figure 6 RAC Data Log 1 
+Figure 7 RAC Data Log 2 
+
+===== PAGE 10 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Haul Road Defects with MineStarTM Edge 
+and HEI        
+DATE 
+1/31/2025 
+CHG 
+NO 
+00 
+NUMBER 
+2.02-250131-1 
+Caterpillar: Confidential Yellow                  Page 10 of 10 
+o T he elimination of these spikes will reduce the Avg. fuel burn rates by up to 5% 
+per cycle 
+• Major Component Wear 
+o Lower FELA values will result in suspension strut longevity 
+o ∼12 Less gear changes per cycle reduces wear on transmission and powertrain 
+• Tire Consumption 
+o Elimination of four haul road areas with increased risk to tire damage 
+• Operator Stress 
+o Reduced operator fatigue 
+o Increased haul road safety 
+ 
+5.0 Resources Required 
+ 
+• VIMS ABL or Later 
+• RAC Installed on all Large Off-Highway Trucks (REHS0875) 
+• MineStar Health Equipment Insights – Subscription and Activation on all OHTs 
+• Update Haul Road Maps 
+• Haul Road Maintenance Personnel & Equipment 
+ 
+6.0 Supporting Attachments / References 
+ 
+• FELA Graph 
+o Doc. KENR9023 
+• RAC Additional Information  
+o Doc. RENR2639, RENR2636  
+ 
+7.0 Related Best Practices 
+ 
+0409-2.02-1165   Haul Road Optimization 
+1106-1.1-1035   Cost Reduction Through Haul Road Management Process 
+2.02-210211-1   Road Analysis Control (RAC) 
+307-2.05-1320   Using Video Overlay for Communication of Mine Site Opportunities 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by:  
+ 
+Riley Yetman 
+Mining Performance Solutions Analyst – Toromont CAT 
+Ryetman@toromont.com

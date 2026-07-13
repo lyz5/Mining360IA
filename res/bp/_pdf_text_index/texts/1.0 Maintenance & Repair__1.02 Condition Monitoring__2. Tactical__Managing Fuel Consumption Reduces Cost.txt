@@ -1,0 +1,253 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2011 
+0808-2.15-1129 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+BEST PRACTICE SERIES  
+Managing Fuel 
+Consumption Reduces 
+Cost 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Managing Fuel Consumption Reduces Cost .............. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 4 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Fuel Consumption Reduces Costs 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0808-2.15-1129 
+Caterpillar Confidential:  GREEN          Page 1 of 4 
+1.0 Introduction  
+ 
+Fuel consumption has become one of the highest costs of owning and operating a machine.  
+Monitoring fuel burn rates and performing a mid-life fuel injector change can save thousands of 
+gallons of fuel. 
+This Best Practice discusses a fuel consumption monitoring process from a coalmine using 793C 
+machines and illustrates the benefits of changing fuel injectors at engine mid-life. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+As fuel injectors wear, fuel efficiency is affected and increase in average fuel consumption 
+occurs.  The leading cause of fuel injector wear is dirty fuel (water and dirt).  There are several 
+published Best Practices at this website that discuss fuel cleanliness and ways to achieve 
+improved cleanliness.  Clean fuel extends injector life and performance. 
+However, not every mine operation is able to maintain a consistent or acceptable fuel cleanliness  
+level to prevent premature injector wear.  An option for this situation is to monitor the machine 
+rate of fuel consumption on a monthly basis, to change fuel injectors if a growth in fuel 
+consumption is observed, and then to monitor the change.   
+It is not necessary to monitor every machine in a fleet.  Begin by monitoring a few selected 
+machines with a range of different hours on the engines.  This monitoring will provide data on fuel 
+efficiency and any changes over time.  Note: If there is a fuel cleanliness issue, it will likely affect 
+all of the machines in operation. 
+It is also necessary to monitor distance traveled.  Distance traveled data is needed to determine if 
+a change in fuel consumption rate is due to an operational change or an engine efficiency 
+change. 
+Fuel consumption, distance, and cycle time data can be downloaded from the machine VIMS 
+Payload Summary Report. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The graph below is data from a coalmine 793C.   In this study, rate of fuel burn, distance traveled, 
+and load cycles times were tracked monthly.  The trend was then graphed. 
+This study is several years old, but with the increase in fuel costs over the past few years, the 
+benefit of managing fuel consumption today has far more importance and impact. 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Fuel Consumption Reduces Costs 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0808-2.15-1129 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+                          
+  
+ 
+Data Table 
+ 
+ 
+ 
+Note that beginning fuel consumption averaged 39 – 43 gallons per hour.  Growth from June to 
+August took fuel consumption up to 50 gallons per hour with little change in haul distances.  
+Injectors were changed in September, and fuel consumption dropped to an average 40 gallons 
+per hour.  This represents a 10-gallon per hour savings.  When a 3500 engine starts burning 
+more fuel, a noticeable increase in exhaust temperatures will occur.  Increased exhaust 
+temperatures may cause engine de-rate events, which can also lead to premature exhaust valve 
+failures. The engine monitored had close to 8000 hours when the fuel injectors were changed. 
+ 
+Assuming that the new fuel injectors performed the same as the original injectors, the savings 
+over the next 8000 hours (engine rebuild PCR is 16,000 hours) would average 5 gallons an hour 
+for a total 40,000 gallons. This can also reduce exhaust temperatures and prevent premature 
+valve failures. 
+ 
+Steps to replicate this project are: 
+ 
+Simple test: 
+• Select an OHT with an engine that has approximately 8000 hours (mid-life).  Measure fuel 
+burn rate and distance traveled for thirty days and compare it to other trucks in the fleet.  If 
+the test truck is burning more fuel than the fleet average, then change injectors or 
+investigate turbocharger operation which may be causing low boost.  Monitor change in 
+fuel burn. 
+  Extensive test – validation. 
+• Select a fleet of machines for monitoring. 
+• Track fuel burn rate and distance traveled (monthly) for each machine and graph results. 
+• Identify any growth in fuel burn rate or difference in fuel burn rates between machines. 
+Fuel Injector 
+Change 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Fuel Consumption Reduces Costs 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0808-2.15-1129 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+• If an engine shows higher than average fuel consumption, check boost pressure and 
+injectors.  If no mechanical problem is found, change the injectors and monitor fuel 
+consumption results. 
+• Determine an “Average Injector Efficient Life”  
+• Measure cost (approx $19,000) to change injectors versus fuel savings. 
+• Determine a standard Preventative Maintenance policy for fuel injector replacement. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Note:  Caterpillar has always recommended an injector and turbocharger change at engine mid-
+life.  This recommendation is largely based on poor average fuel cleanliness at many locations 
+around the world.  Locations that have excellent fuel cleanliness typically would see little change 
+in fuel injector efficiency over the full life of the engine. 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Managing Fuel Consumption Reduces Costs 
+DATE 
+1/12/2015 
+CHG 
+NO 
+01 
+NUMBER 
+0808-2.15-1129 
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+ 
+4.0 Benefits 
+ 
+• 10% plus fuel savings 
+ 
+ 
+5.0 Resources Required 
+ 
+• Process to collect and analyze data. 
+• Monitor VIMS Payload Summary Reports. 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+None at this time. 
+ 
+ 
+7.0 Related Best Practices 
+ 
+See Best Practices listed under “Component Life Management” category: 
+o “Bulk Fuel Storage and Handling” 
+o “Bulk Fuel Filtration” 
+o “Series High Efficiency Filters” 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Bill Hasty 
+Product Support Consultant 
+Condition Monitoring 
+HASTY_BILL_T@cat.com 
+ 
+James McCarty 
+Product Support Consultant 
+Maintenance and Repair  
+Mccarty_James_T@cat.com 
+ 
+Dale Brehm 
+Six Sigma Black Belt  
+Global Mining Product Support 
+ 
+brehm_dale_e@cat.com

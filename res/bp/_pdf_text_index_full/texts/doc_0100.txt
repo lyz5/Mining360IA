@@ -1,0 +1,280 @@
+SOURCE: 1.0 Maintenance & Repair\1.11 HSEC - M&R\2. Tactical\HMS Bucket Repair Jig.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+March 2014 
+1401-1.11-1333 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+HMS Bucket Repair Jig 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+ 
+ 
+1.0
+ Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 4 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+  
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS Bucket Repair Jig 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1401-1.11-1333 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+1.0 Introduction  
+ 
+The objective of this Best Practice is to increase the safety of personnel performing maintenance 
+work on Hydraulic Mining Shovel (HMS) buckets. Due to the nature of the bucket being a clam 
+shell design, there is only hydraulic power, or to a less controllable degree, gravity, to force it 
+open or closed. During maintenance, when the engine is disconnected and there is no hydraulic 
+power available, a means to secure the bucket so that the clam function doesn’t inadvertently 
+open/close should be implemented. The HMS Bucket Repair Jig is a fabricated structure that 
+mechanically restrains the bucket in a set open position to allow service staff to safely perform 
+maintenance work. 
+ 
+2.0 Best Practice Description 
+ 
+A support frame / jig has been designed and fabricated for the purpose of mechanically 
+restraining HMS clam shell style buckets in the open position during services. This is to prevent it 
+from inadvertently closing or moving during a service while the engine is turned off, potentially 
+causing serious injury or death to anyone in the vicinity of the bucket. This Best Practice outlines 
+the key features and benefits of the jig, and how it is transported and implemented on site. 
+ 
+3.0 Implementation Steps 
+ 
+3.1 Design 
+ 
+A) As Seen On Site 
+ 
+Design and fabricate a jig as shown in Figure 1. Going a step further, the bucket mount supports 
+could be designed to be adjustable along dimension C (ie. dimension C on both left and right 
+sides could be shortened or lengthened) to accommodate different bucket mounting positions or 
+bucket sizes. This would be especially useful if the site has various sized HMS models as part of 
+their fleet. 
+ 
+ 
+Figure 1: HMS bucket repair jig with example dimensions: A = 440 cm, B = 395 cm, C = 210 cm, 
+D = 72 cm, E = 25 cm. 
+E C 
+D B 
+A 
+Machine direction 
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS Bucket Repair Jig 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1401-1.11-1333 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+ 
+Figure 2: Close up of one of the  
+four bucket mounts. 
+ 
+ 
+Figure 3: HMS bucket secured on the jig. 
+ 
+ 
+  
+Stopper 
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS Bucket Repair Jig 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1401-1.11-1333 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+B) Proposed Additional Design Feature for Improved Bucket Retention 
+ 
+The current design shown above does not secure the bucket in both directions along the bucket 
+edge on the vertical support stands. It provides a physical means via the protruding stopper to 
+retard movement of the bucket in the closing direction, but nothing, apart from friction, to secure 
+the bucket from opening further. 
+ 
+An improved design feature would be to revise the retaining groove to prevent the bucket from 
+opening further as well as closing. A proposed way of doing this is to include a similar stopper on 
+the other side of where the bucket edge rests on the vertical support stands. The proposed 
+design is illustrated in Figure 4. 
+ 
+ 
+Figure 4: Revised vertical support stand designed to better secure the bucket from any forwards 
+or backwards movement. 
+ 
+ 
+3.2    Implementation 
+ 
+When a HMS is down for maintenance or repair work, the HMS bucket repair jig is transported to 
+the machine. This can be done using a wheel loader fitted with a fork attachment to enter the 
+slots that have been cut out. Alternatively, a crane can be used to pick up the jig using the lifting 
+lugs. Refer to Figures 5 & 6 below. Once the jig is in place, the bucket is lowered and positioned 
+in to the four vertical support stands located on the jig, as shown in Figures 2 & 3. Finally, when 
+the bucket is secured safely on the jig and all other maintenance setup procedures have been 
+carried out, the machine can be shut down and tagged out for maintenance work to begin. 
+ 
+Machine Direction 
+Revised bucket 
+retaining groove 
+Support 
+gussets 
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS Bucket Repair Jig 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1401-1.11-1333 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+   
+Figures 5 & 6: Showing the location of a) the left hand side lifting lug for the crane and b) the left 
+hand side slot for a wheel loader fork, both used for transportation of the jig. 
+ 
+4.0 Benefits 
+ 
+The key benefit of using this jig is safety to maintenance staff. The bucket is mechanically 
+restrained whilst repair or maintenance work is performed, thus eliminating the potential for the 
+bucket to move. An additional benefit is that the platform, as well as support stands which raise 
+the clam shell edges off the ground, allows for easier inspection and access around the bucket. 
+ 
+5.0 Resources Required 
+ 
+• Fabrication of the jig.  
+• A wheel loader with fork attachment or crane to transport the jig. 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+7.0 Related Best Practices 
+ 
+None.  
+ 
+  
+Lifting lug 
+Slot for wheel 
+loader forks 
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS Bucket Repair Jig 
+DATE 
+4/20/2016 
+CHG 
+NO 
+01 
+NUMBER 
+1401-1.11-1333 
+Caterpillar Confidential:  GREEN          Page 5 of 5 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Adam Rieck 
+Equipment Management Consultant 
+Caterpillar Global Mining 
+ 
+Acknowledgement: 
+ 
+Luke Seaton 
+Product Support Representative – Commercial Engines 
+Hastings Deering (Aust) Ltd. 
+ 
+Gabriel Aia 
+Product Support Representative 
+Hastings Deering (PNG) Ltd.

@@ -1,0 +1,151 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.01 Rebuild Processes (CRC)\3. Quick Win\Computerized Torques Wrenches Used to Improve Quality Control.pdf
+PAGES: 3
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Computerized Torques 
+Wrenches Used to Improve 
+Quality Control 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Computerized Torques Wrenches Used to Improve 
+Quality Control ........................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 2 
+7.0 Related Best Practices ...................................... 2 
+8.0 Acknowledgements ............................................ 2 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+March 2011 
+1103-4.01-1222 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Computerized torque wrenches electronically record final torque readings and enable those readings 
+to be stored in a computer file.  This information is especially useful when tightening critical bolts 
+using a torque-turn method.  This includes cylinder head bolts, connecting rod bolts, counterweight 
+bolts, as well as other applications. 
+ 
+Conventional torque wrenches do not typically measure the final torque after the turn is applied and 
+do not record those values.  With a computerized wrench, a technician can easy review the final 
+torque values on all the bolts to ensure the final torques are consistent.    
+ 
+ 
+2.0 Best Practice Description 
+ 
+Digital computerized torque wrenches in various sizes are available from a number of different 
+suppliers.   
+ 
+Example is the CDI Computorq (Snap On) ¾ in wrench pictured below.   
+ 
+A recent example of how this tool can improve quality comes from Ferreyros, the Caterpillar 
+dealer in Peru. 
+ 
+When Caterpillar changed the recommended connecting rod bolt lubrication from a 6V4876 lube 
+to Loctite Molypaste 51049, Ferreyros immediately noticed a change in final torque.  Using the 
+6V4876 lube, with 65 ft-lbs followed by a 90 degrees torque turn, the final torque was 150 ft-lbs. 
+With the Molypaste, the final torque was 135 ft-lbs.  The Caterpillar recommended lube was 
+changed to a Bel Ray 6770 lubricant as result. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Computerized Torques Wrenches Used to Improve 
+Quality Control 
+DATE 
+2/18/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1103-4.01-1222 
+Caterpillar Confidential:  GREEN          Page 1 of 2 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Implementation Steps 
+ 
+1. Research market for best digital torque wrench that meet dealer requirements.  Purchase 
+wrench 
+2. Establish standard process to record critical torques and check for bolt consistency. 
+ 
+ 
+4.0 Benefits 
+ 
+1.  Critical torques are documented and checked for consistency as a quality control process. 
+ 
+ 
+5.0 Resources Required 
+ 
+1. Cost of a ¾ inch wrench ranges from US $1,500.00 to $2,500.00. 
+2. Establish a file to retain records. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+ 
+Thanks to Ferreyros for photos and “success story”. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Computerized Torques Wrenches Used to Improve 
+Quality Control 
+DATE 
+2/18/2015 
+CHG 
+NO 
+01 
+NUMBER 
+1103-4.01-1222 
+Caterpillar Confidential:  GREEN          Page 2 of 2

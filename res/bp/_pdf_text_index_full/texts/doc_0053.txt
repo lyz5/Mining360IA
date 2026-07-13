@@ -1,0 +1,359 @@
+SOURCE: 1.0 Maintenance & Repair\1.04 Repair Management\2. Tactical\793B Workshop Test.pdf
+PAGES: 9
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2014 
+1404-1.04-1336 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.      
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+793B Workshop Test 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+793B Workshop Test ................................................. 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 3 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ............................................ 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided 
+by one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or 
+warranty about the information contained in this document or the products referenced herein. Caterpillar welcomes 
+additional “Best Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793B Workshop Test 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1404-1.04-1336 
+Caterpillar Confidential:  GREEN         Page 1 of 8 
+ 
+1.0 Introduction  
+ 
+Our client asked us to overhaul 9 793B trucks for its fleet. The process included 
+disassembling trucks in the Cajamarca, Peru mine site and assembling the repaired in the 
+Arequipa, Peru mine site.  Additionally, the client requested conditions such as: Cab and 
+chassis change, enclosed shop, scheduled delivery dates, and conditioning of some 
+accessories as per the client’s standard, among others. For this purpose it was also decided to 
+repair the components, perform the preassembly and testing in the Ferreyros main shop at 
+Lima. Finally, the assembly was performed in Arequipa. 
+ 
+The main concern is to meet the repair delivery date and quality.  According to our 
+experience, problems are normally found during the commissioning due to defects in repaired 
+trucks from other dealers. 
+ 
+ Quality control is needed to ensure the quality of the repair, thus we decided to perform the 
+evaluation of most systems by testing without load in the workshop before delivery to mine site 
+in Arequipa. 
+ 
+For the first truck, the differential assembly was installed only partially because the crane is 
+limited to 10 ton max.  Since the supply of oil needed to lubricate the differential is 
+approximately 235 gallons, it was decided to remove the final drives, disconnect the shaft 
+transmission, bypass the cooling lines, brake, and parking line in order to test without oil in the 
+differential. Due to this, additional equipment and (man hours) were contracted to finish on 
+time. 
+ 
+ For this reason it was proposed fabricate a transmission stand, and to test without the 
+differential assembly. Finally we designed and fabricated an adapter for the transmission test 
+purposes. 
+ 
+This procedure is accomplished by testing the truck in the workshop with most of 
+components connected.  This procedure also eliminated the differential assembly rework, 
+redos, common repair failover, and assured proper operating of the equipment. Therefore 
+equipment delivery was improved with the best delivery date. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+In order to test the truck, a locally fabricated support group is used. It allows support of the 
+transmission assembly while connected to the engine, which is mounted to the truck frame.  
+Brake cooling lines are bypassed and brake oil lines are blocked. 
+ 
+The support group was designed and manufactured in the dealership facilities. It consists of 
+two adapter plates, an adapter cover assembly, and a pipe bypass. 
+ 
+  
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793B Workshop Test 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1404-1.04-1336 
+Caterpillar Confidential:  GREEN         Page 2 of 8 
+Image of the truck test with the transmission mounted in the device.  
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793B Workshop Test 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1404-1.04-1336 
+Caterpillar Confidential:  GREEN         Page 3 of 8 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Blue print details for housing reconstruction were used, and support group dimensions were 
+designed by shop supervisor. 
+ 
+ 
+Adapter plate 
+ 
+Adapter cover 
+ 
+Coupling 
+ 
+
+
+===== PAGE 5 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793B Workshop Test 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1404-1.04-1336 
+Caterpillar Confidential:  GREEN         Page 4 of 8 
+Adapter cover assembly 
+ 
+Adapter pipe 
+ 
+Installation verification 
+ 
+ 
+ 
+ 
+4.0 Benefits 
+ 
+• Reduce total delivery time. 
+• Eliminate crane & labor costs to remove/install the differential for testing purposes 
+• The pre-assembled truck is tested and calibrated in the shop, and corrections are made 
+before delivery to mine site 
+• D ynamic test can be made 
+• Test mode (without final drives) can be made 
+• Avoid using 235 gal of SAE 50W oil only for power train testing & adjuster 
+  
+
+
+===== PAGE 6 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793B Workshop Test 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1404-1.04-1336 
+Caterpillar Confidential:  GREEN         Page 5 of 8 
+Image of ET after test. 
+          
+ 
+5.0 Resources Required 
+ 
+• Weld/fabrication shop  
+• E stimated investment (material, labor and parts) US $5,500.00. 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Attached manufacturing drawings.  
+• 16036 rigid ball bearing  
+• 280 mm Øin Seeger lock  
+• 180 mm Øext Seeger lock 
+• (01) Seal 5D5428 (for adapter cover assembly) 
+• (24) bolt 7X2564  (for adapter cover assembly) 
+• (24) Washer hard 8T3282  (for adapter cover assembly) 
+• (16) Bolt 9X6152 (for adapter plate) 
+• (16) Washer hard 3S6162 (For adapter plate) 
+ 
+ADAPTER COVER. 
+ 
+
+
+===== PAGE 7 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793B Workshop Test 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1404-1.04-1336 
+Caterpillar Confidential:  GREEN         Page 6 of 8 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793B Workshop Test 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1404-1.04-1336 
+Caterpillar Confidential:  GREEN         Page 7 of 8 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 9 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+793B Workshop Test 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1404-1.04-1336 
+Caterpillar Confidential:  GREEN         Page 8 of 8 
+ 
+ 
+7.0 Related Best Practices 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was writing by:  
+Freddy Walde Reyes 
+Workshop Supervisor. 
++051 995952975 
+freddy.walde@ferreyros.com.pe 
+authorized by 
+Juan Montoya Guzman 
+Workshop Manager. 
+juan.montoya@ferreyros.com.pe 
++51 995952936 
+ 
+Alberto Acosta Moscoso 
+Project Manager TRP 793B CCR 
++51 999982625 
+alberto.acosta@ferreyros.com.pe 
+ 
+Blue Print drawing 
+Sandro Falcon Diaz 
+Programmer Weld / fabrication shop  
+sandro.falcon@ferreyros.com.pe

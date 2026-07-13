@@ -1,0 +1,944 @@
+SOURCE: 1.0 Maintenance & Repair\1.01 Preventive Maintenance\2. Tactical\Electrical System Preventive Maintenance.pdf
+PAGES: 17
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+CAT GLOBAL MINING 
+ 
+BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 1 of 17 
+ 
+ 
+ 
+ 
+ 
+B E ST P R A C T I CE S E R I E S 
+ 
+Best Practice Electrical System  
+Preventive Maintenance 
+ 
+ 
+ 
+Application Maintenance Site 
+         Management 
+ 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+ 
+ MARC Management 
+ 
+ 
+Disclaimer ...................................................................................................... 2 
+1.0 Introduction ............................................................................................. 3 
+2.0 Best Practice Description ........................................................................ 3 
+3.0 Implementation Steps.............................................................................. 4 
+4.0 Benefits ................................................................................................. 17 
+5.0 Resources Required .............................................................................. 17 
+6.0 Supporting Attachments / References ................................................... 17 
+7.0 Related Best Practices ........................................................................... 17 
+8.0 Acknowledgements ............................................................................... 17 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by one or more 
+Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty about the informatio n 
+contained in this document or the products referenced herein. Caterpillar welcomes additional “Best Practice” recommendations from our 
+dealer network. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Aug 09 
+0910-1.01-1179 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A. catminer.com 
+
+===== PAGE 2 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 2 of 17 
+ 
+Disclaimer 
+ 
+Unless otherwise specifically stated, the information contained herein is made available to Caterpillar dealers and 
+their customers by Caterpillar, Global Mining division for use as an example of a Best Practice.  The intent of the 
+Best Practice is to assist in improving the processes of a mine site. 
+ 
+Caterpillar does not assume any legal liability or responsibility for the accuracy, completeness, or usefulness of 
+any information, product or process disclosed in this Best Practice. 
+ 
+Reference herein to any specific commercial product, process, service by trade name, trademark, manufacturer, or 
+otherwise, does not constitute or imply its endorsement, recommendation, or favoring by Caterpillar or any 
+entities thereof. 
+
+===== PAGE 3 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 3 of 17 
+ 
+1.0 Introduction 
+ 
+This Best Practice provides an overview of one strategy for managing electrical systems  on Caterpillar minin g 
+equipment operating in an environment with extreme conditions that impact the reliability of electrical systems.  
+ 
+The previously mentioned extreme conditions consist of factors which  may permit water to enter into electrical 
+systems, mainly at electrical connectors or connections. These factors may include extreme rainfall or  humidity, 
+substandard maintenance practices  or machine wash process es that use  high pressure, high pH water. These 
+factors can result in water entering into electrical connectors and components which causes  both immediate and 
+future issues. Immediate prob lems are due to the presence of water resulting in short c ircuit faults. Future 
+problems are due to the presence of corrosive residues resu lting in open c ircuit faults. In both case s the basic 
+cause is the same being that water has been allowed to enter in to the electrical connectors. In both failure modes 
+the result is unscheduled equipment downtime and production loss. These events require maintenance intervention 
+which if not executed to an acceptable standard can impact future diagnostics, increase oper ating costs and impact 
+the reliability and availability of equipment. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+ 
+Generally electrical systems are managed through corrective maintenance and occasionally through periodic 
+maintenance strategies.  Corrective maintenance a ctivities, random failure rate patterns , and substandard 
+maintenance practices can negatively effect electrical system performance and can cause electrical components to 
+not achieve their expected life (PCR). The implementation of preventative maintenance practices can improve the 
+electrical system reliability and improves the probability that components will achieve or exceed their expected 
+life or PCR. This preventative maintenance process includes various tasks to provide protection to electrical 
+components. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 4 of 17 
+3.0 Implementation Steps 
+ 
+This Continuous Improvement initiative began with the identification of repetitive electrical problems and high 
+cost per hour related to electrical systems. The proposed solution was presented based on positive experienc es 
+from other mines and applications. 
+ 
+This program was not managed as a 6 Sigma project because the solution was known and validated in other 
+organizations. The implementation took approximately six months and was lead by Reliability Engineering. 
+Change was managed through communication and socialization at all operational levels with positive results and 
+“buy-in”. 
+All organizational culture and process changes provide challenges related to acceptance and must be managed 
+through a collaborative and constant communication. 
+ 
+ In regards to electrical connectors the process begins with the cleaning or removal of contamination or corrosion 
+from the connectors. The second step involves applying specialized grease which contains Vapor Phase Corrosion 
+Inhibitors ( VPC I) to the connector . This grease provides two benefits. The first benefit is a physical barrier 
+preventing any water that enters the connector from making contact with the metal pins & sockets. The second 
+benefit of the grease is its VPCI action which p revents oxidation of the metallic parts if water does make contact 
+with the metallic parts. The final step of the process for protecting electrical connectors involves covering the 
+connector with a self vulcanizing tape which provides an external physical barrier to prevent water from entering 
+the connectors.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Senson Kit 
+
+===== PAGE 5 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 5 of 17 
+ 
+Free the Connector 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Clean the Connector 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 6 of 17 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Apply the Senson Grease 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Use contact cleaner to eliminate 
+contamination & corrosion. 
+ 
+  Allow the solvent evaporate. 
+Use sufficient grease to cover the 
+connector pins. 
+ 
+Avoid hydraulic lock. Too much grease 
+could crack the connector. 
+
+
+===== PAGE 7 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 7 of 17 
+Internal Protection 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 8 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 8 of 17 
+Re-connect  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Ensure that each connector is correctly coupled 
+
+===== PAGE 9 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 9 of 17 
+Cut Vulcanizing Tape 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+External Protection 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Approximately 200mm 
+Clean the outside of the connector before 
+applying the vulcanizing tape. 
+
+===== PAGE 10 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 10 of 17 
+ 
+External Protection 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Always cover the connector with vulcanizing tape 
+where practical 
+
+===== PAGE 11 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 11 of 17 
+Secure Connector 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+793D Engine: ECM Protection 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Always secure connectors in their bracket or with 
+a zip tie to avoid harness chaffing or other 
+physical damage. 
+Apply Electroguard Grease in connectors J1 & J2 . Secure 
+rubber boots with zip ties 
+
+===== PAGE 12 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 12 of 17 
+Battery Protection 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Clean Battery post and clamp with a wire brush, 
+tighten the clamp bolt, cover the battery terminal 
+with Electroguard Grease. 
+
+===== PAGE 13 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 13 of 17 
+ 
+A third part of the process consists of protecting electrical components in closed c ompartments, such as electronic 
+control modules. Humidity in closed compartments can cause oxidation of exposed surfaces. In these applications 
+Vapaguard pads or capsules are installed according to the cubic capacity of the compartment. These products also  
+utilize VPCI technology which emits a non -toxic anti -corrosive vapo r preventing  the oxidation of exposed 
+surfaces. These products have an installed life of twelve months. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 14 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 14 of 17 
+ 
+Corrosion Protection for Electronic & Electrical Units 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Three Vapaguard pads installed in the 
+compartment at the rear  
+of a 793C Cab.  
+ 
+
+===== PAGE 15 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 15 of 17 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+One Vapaguard pad installed in the gear-
+shift console in a 793C Cab 
+One Vapaguard capsule installed in the 
+closed compartment in the roof 
+of a 793C Cab 
+
+===== PAGE 16 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 16 of 17 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Standard procedures are attached. 
+
+===== PAGE 17 =====
+C A T GLOBAL MINING BEST PRACTICE SERIES 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLA R 
+Electrical System Preventative Maintenance 
+DATE 
+6/17/2011 
+C HG 
+NO 
+01 
+NUMBER 
+0910-1.01-1179  
+Caterpillar Confidential:  GREEN                Page 17 of 17 
+4.0 Benefits 
+ 
+The perceived benefit of this process is the elimination of electrical failures due to water entering the system via 
+the connectors. This will result in less unscheduled downtime due to electrical failures which will in turn lower 
+overall O&O costs. 
+ 
+ 
+5.0 Resources Required 
+ 
+The estimated investment assoc iated to this project is approximately  US$200 per OHT i n materials and 48 man 
+hrs. per year of preventative maintenance which can be planned and executed in parallel with other major tasks to 
+avoid additional downtime.  
+ 
+For specific information on the kit  used in this Best Practice please refer to the files attached. Materials similar to 
+those used in this kit may be available for purchase locally.  
+ 
+6.0 Supporting Attachments / References 
+ 
+• None 
+ 
+7.0 Related Best Practices 
+ 
+• None 
+ 
+8.0 A c k n owledgements 
+ 
+This Best Practice was described by:  
+ 
+  David Hogg 
+  Yanacocha Reliability Engineer 
+Strategy and Planning 
+Mine Maintenance 
+  David.Hogg@newmont.com 
+   
+Prepared by: 
+ 
+  Alberto Franco D’Alfonso 
+  CI & BP Champion – Ferreyros 
+  afrancod@ferreyros.com.pe

@@ -1,0 +1,171 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2016 
+1606-4.01-1439 
+  
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+C175 - Identification Tags 
+for Engines that Require 
+Thicker Integral Seals 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+C175 - Identification Tags for Engines that Require 
+Thicker Integral Seals ................................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 3 
+6.0 Supporting Attachments / References ............... 3 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C175 ID Tags for Engines that Require Thicker Integral 
+Seals 
+DATE 
+6/16/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1606-4.01-1439 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+1.0 Introduction 
+ 
+C175 Engines that have the top deck milled at overhaul may require a thicker cylinder head 
+integral seal than the standard seal (reference Reuse and Salvage Guideline SEBF9185 for this 
+specification).  This Best Practice describes a method to call attention to a field service person, or 
+a CRC partial repair bay, to an engine requiring the thicker seal. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+This Dealer has implemented a practice of affixing a stamped aluminum plate to each valve cover 
+using epoxy on an engine that was milled under the specification.  An additional plate is put next 
+to the Component ID tag on the engine.  
+In this example, the plate reads: 
+ 
+ENGINE BLOCK REQUIRES 
+THICKER HEAD GASKETS 
+USE P/N 394-0295 
+ 
+RENO CRC  
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C175 ID Tags for Engines that Require Thicker Integral 
+Seals 
+DATE 
+6/16/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1606-4.01-1439 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+ 
+ 
+Another example of a Dealer using decals for placement on the valve covers: 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Have these plates made up, and add necessary processes to control documents as required.  
+ 
+4.0 Benefits 
+ 
+This practice ensures the correct seal is installed during a repair that involves removing the cylinder 
+head, to eliminate oil leakage and potential engine damage.  
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C175 ID Tags for Engines that Require Thicker Integral 
+Seals 
+DATE 
+6/16/2016 
+CHG 
+NO 
+00 
+NUMBER 
+1606-4.01-1439 
+Caterpillar Confidential:  GREEN          Page 3 of 3 
+5.0 Resources Required 
+ 
+Minimal, as described above 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was developed at, and photos submitted, by: 
+Cashman CRC in Reno, NV 
+Matco CRC in Hermosillo, MX (decal) 
+ 
+This Best Practice was written by: 
+Bill Gallagher – Cat Global Mining 
+Gallagher_William_L@cat.com

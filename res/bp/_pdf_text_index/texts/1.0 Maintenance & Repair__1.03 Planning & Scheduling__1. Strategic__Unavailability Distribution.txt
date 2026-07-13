@@ -1,0 +1,1148 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+October 2011 
+1110-1.03-1261 
+300 Hamilton Blvd., Ste. 300, Peoria, IL 61629-3810, U.S.A.       
+ 
+ 
+ 
+ 
+ DEALER BEST PRACTICE SERIES  
+Unavailability Distribution 
+– Effectively Manage the 
+Unavailability of your Fleet 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Unavailability Distribution – Effectively Manage the 
+Unavailability of your Fleet ......................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 2 
+3.0 Implementation Steps ...................................... 13 
+4.0 Benefits ............................................................ 13 
+5.0 Resources Required ........................................ 14 
+6.0 Supporting Attachments / References ............. 15 
+7.0 Related Best Practices .................................... 15 
+8.0 Acknowledgements .......................................... 15 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Unavailability Distribution 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-1.03-1261 
+Caterpillar Confidential:  GREEN         Page 1 of 15 
+Downtime 
+Reas ons
+PCR * X
+…
+1 Life Cycle
+Total Equipment Life Cycle
+Detection Detection 
+RoutinesRoutines
+UnscheduledUnscheduled
+RepairsRepairs
+PeriodicPeriodic
+ServicesServices
+Scheduled Scheduled 
+RepairsRepairs
+(Major & Minor)(Major & Minor)
+PCRPCR
+Planned Planned 
+Component Component 
+ReplacementReplacement
+1.0 Introduction  
+ 
+Availability is the most common metric currently use in the mining industry to measure equipment 
+fleet performance. The main reason is that the production plan is based on a specific amount of 
+equipment hours. The mine production department determines the required hours for the 
+production and ancillary equipment, defining the utilization and availability targets.  
+ 
+The difference between the calendar hours and the availability target is the unavailable time.  The 
+maintenance department has to use this time efficiently to perform all maintenance and repair 
+events needed to maintain the equipment running. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+This diagram illustrates the various types of maintenance events that will be considered in the 
+maintenance plan. These events take time away from the asset being utilized. Our objective as 
+the maintenance organization is to manage the unavailable time effectively to meet and support 
+the production plan requirements. 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Unavailability Distribution 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-1.03-1261 
+Caterpillar Confidential:  GREEN         Page 2 of 15 
+Unavailability Distribution 
+Preventive Maintenance 3.0 %
+PCR's 1.5 %
+Major & Minor Repairs 1.0 %
+Detection Routines 0.0 %
+Tires or Other Repair Centers 1.5 %
+Unscheduled Events 5.0 %
+Total 12.0 %
+DowntimeDowntime
+ReasonsReasons
+Machine Life C ycl e
+(Based on PCR)
+First PCR
+cycle 
+First PCR
+cycle 
+PCR * X
+Equipment 
+Disposal
+Equipment 
+Disposal
+…
+Detection Detection 
+RoutinesRoutines
+UnscheduledUnscheduled
+RepairsRepairs
+Periodic Periodic 
+ServicesServices
+PCRPCR
+(Planned (Planned 
+ComponentComponent
+Replacement)Replacement)
+Scheduled Scheduled 
+RepairsRepairs
+(Major & Minor)(Major & Minor)
+M&R DowntimeM&R Downtime
+UnavailabilityUnavailability
+2.0 Best Practice Description 
+ 
+The Maintenance Organization as part of the production chain of the mine takes the availability 
+target as one of their primary performance indicator. The availability not only defines the needed 
+hours to support the production plan, but also the amount of hours that can be dedicated to 
+Maintenance & Repair (M&R) activities.  The goal is to effectively distribute these available hours 
+for M&R activities to execute the monthly scheduled and unscheduled events. 
+ 
+As another way to understand the concept, the maintenance personnel manage the time of the 
+equipment when they are “down” and the production department does  the same with the “up” 
+time. 
+ 
+There are some maintenance operations that daily track time used for M&R activities and this 
+compared with the available time for maintenance. In that way they are able to make adjustments 
+to prevent availability shortfalls at the end of the period.  It is the first step to start getting control 
+of the M&R time. This basic approach can be improved and made more effective by separating 
+the available time into the various event categories, and start tracking the time for each category 
+of events. We call this unavailable time categorization the, “Unavailability Distribution”. 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The diagram above illustrates the sequence of transforming each of the M&R events into downtime, unavailability and 
+finally represented in the unavailability distribution. 
+ 
+ 
+ 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Unavailability Distribution 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-1.03-1261 
+Caterpillar Confidential:  GREEN         Page 3 of 15 
+ 
+ 
+Building the Unavailability Distribution 
+We will use a calculation example to explain the steps to follow when building the unavailability 
+distribution.  
+ 
+1. - The first step is to acquire the equipment fleet characteristics, the availability, and utilization 
+goals.  
+ 
+Case-scenario for our calculations: 
+ 
+ 
+ Equipment Type   793 OHT 
+ Number of Machines  30 
+ Physical Availability Goal 87% 
+ Utilization of Asset  81% 
+ Month    January 
+ 
+ 
+2. – With the information provided we analyze and determine the hours distribution in the period.  
+ 
+Calendar hours = Number of machines x days in the period x 24  (h) 
+ 
+Available hours (Physical) = Calendar hours x Physical availability   (h) 
+ 
+Operating hours = Calendar hours x Utilization of Asset    (h). 
+ 
+It is convenient to remember at this point the formula for physical availability: 
+ 
+ 
+Physical Availability = 
+Total Calendar Hours – Maintenance & Repair Hours 
+               Total Calendar Hours 
+   x 100% 
+ 
+Note: care must be taken when dealing with utilization of asset or utilization of availability. In some 
+countries when you refer to utilization it is always utilization of availability.  
+ 
+Calculations for our case scenario 
+ 
+Calendar hours = 30 x 31x 24 = 22,320 (h) 
+ 
+Available hours = 22,320 x 87% = 19,418 (h) 
+ 
+Operating hours = 22,320 x 81% = 18,079 (h) 
+ 
+Now the difference between the calendar hours and the available hours is the amount of hours 
+available to do all maintenance and repair activities. 
+ 
+Hours for M&R = 22,320 – 19,418 = 2,902 (h) 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Unavailability Distribution 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-1.03-1261 
+Caterpillar Confidential:  GREEN         Page 4 of 15 
+Unavailability Distribution Percentage Hours
+Preventive Maintenance
+Planned Component Replacement (PCR)
+Major / Minor Scheduled Repairs
+Detection Routines
+Tires 
+Other Repair Centers
+Unscheduled Repairs
+TOTAL UNAVAILABILITY 0.00% 0
+ESTIMATED AVAILABILITY 100.00%
+TOTAL HOURS TO EXECUTE M&R EVENTS 2902
+AVAILABILITY GOAL 87.00% 19418
+ 
+And the stand by hours, or hours that the equipment is available but not being utilized is 
+ 
+Stand By hours = Available hours – Operating hours = 1,339  (h) 
+ 
+It is important to know the stand by hours to understand the window of opportunities that the 
+production department may provide the maintenance department to do short type of maintenance 
+activities, such as inspections. 
+ 
+3. – Building the Unavailability Distribution 
+ 
+We will use the following template to present our results 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+For each of the 7 categories, listed above, we have to determine the percentage and hours that 
+we will dedicate to them. 
+ 
+In the template we have already recorded information and calculations from Step 2.  With this 
+information the planner can start his or her projection analysis for each of the event categories. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Unavailability Distribution 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-1.03-1261 
+Caterpillar Confidential:  GREEN         Page 5 of 15 
+Unavailability Distribution Percentage Hours
+Preventive Maintenance 3.24% 723
+Planned Component Replacement (PCR)
+Major / Minor Scheduled Repairs
+Detection Routines
+Tires 
+Other Repair Centers
+Unscheduled Repairs
+TOTAL UNAVAILABILITY 3.24% 723
+ESTIMATED AVAILABILITY 96.76% 21597
+TOTAL HOURS TO EXECUTE M&R EVENTS 2902
+AVAILABILITY GOAL 87.00% 19418
+ 
+Preventive Maintenance (PM) Services 
+The PM services in this scenario will follow the 8 Step strategy with an interval of 250 hours and a 
+target duration for each step of 10 hours. 
+ 
+First, determine the number of PM services to execute in the month: 
+ 
+Number of PMs to execute = Operating hours (Fleet) / PM Interval  
+ 
+PMs to execute = 18,079 h / 250 h = 72.3 
+ 
+ The total duration that we will have to dedicate to PM this month will be: 
+ 
+PM total duration   = Number of PMs x PM duration 
+      =  72.3 x 10 h = 723 (h) 
+ 
+Now the unavailability due to the PM services will be: 
+ 
+PM unavailability = 1-(Calendar hours – PM total duration time)/Calendar hours = ( % )  
+ 
+Or a simpler formula: 
+ 
+PM unavailability = PM time total duration time / Calendar hours = ( % ) 
+ 
+PM unavailability = 723 (h) / 22,320 (h) = 3.24  ( % ) 
+ 
+These are our first results to enter into our distribution table: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Unavailability Distribution 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-1.03-1261 
+Caterpillar Confidential:  GREEN         Page 6 of 15 
+ 
+Planned Component Replacement (PCR) 
+For the PCR’s, the planner builds the Long and Medium Term Plan confirming the machines 
+selected to be scheduled for PCR’s. After the pre-PCR inspection the planner builds the final 
+repair plan(s) defining the duration and resources required. Please refer to BP 1110-1.03-1260. 
+ 
+In our case study we will use the following information. 
+ 
+Three machines have been selected to perform the PCR. The duration decided by Planning is: 
+ 
+Truck 1                      6.5    days 
+Truck 2                    10.0    days   
+Truck 3         4.75  days 
+ 
+The total duration in days is:   21.25 
+ 
+And expressed in hours (machine downtime):  21.25 days x 24 hrs = 510 h 
+ 
+PCR’s unavailability =  Total PCR duration (h) / Calendar hours (h)   [%] 
+  
+PCR’s unavailability =  510 (h) / 22,320 (h) ( % ) = 2.28  ( % ) 
+  
+And the unavailability distribution will look like: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+So far we have committed 1233 hours or 5.52% of availability for PM services and PCR’s. We still 
+have 1668 hours remaining to plan the rest of the maintenance and repair activities without 
+compromising the availability target. 
+ 
+Unavailability Distribution Percentage Hours
+Preventive Maintenance 3.24% 723
+Planned Component Replacement (PCR) 2.28% 510
+Major / Minor Scheduled Repairs
+Detection Routines
+Tires 
+Other Repair Centers
+Unscheduled Repairs
+TOTAL UNAVAILABILITY 5.52% 1233
+ESTIMATED AVAILABILITY 94.48% 21087
+TOTAL HOURS TO EXECUTE M&R EVENTS 2902
+REMAINING HOURS FOR M&R EVENTS 1668
+AVAILABILITY GOAL 87.00% 19418
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Unavailability Distribution 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-1.03-1261 
+Caterpillar Confidential:  GREEN         Page 7 of 15 
+ 
+Detection Routines 
+In the case of the detection or condition monitoring, these type of activities may or may not take 
+away available hours of the equipment. Most of these activities are done in parallel with another 
+maintenance activity, such as PM services, and others are completed in a window of opportunity 
+that the operation characteristic may offer. In this last case the use of operational window of 
+opportunity must be agreed with the production department. 
+ 
+In our case study we will use the following scenario. 
+ 
+Field inspections duration                        = 17 min 
+Frequency of field inspections                 =   3 days 
+Field inspections to perform in  
+Window of opportunity                             =  70% 
+Inspection program compliance target    = 90% 
+ 
+Pre-PM services inspections duration      =  30 min 
+Pre-PM inspections performed in  
+Window of opportunity                              =   0% 
+Pre-PM inspections compliance target     =  95% 
+ 
+For the Field Inspections: 
+ 
+Inspections to perform in the month = 30 (machines) x 31 (days)/ 3 (frequency) x 90% (comp. 
+Target) 
+Inspections to perform in the month = 279   
+ 
+Total duration of Field Inspections = 279 (number of Insp.) x 17/60  (time in h format) 
+Total duration of Field Inspections =   79.05 h 
+ 
+Total duration that will affect the availability = 79.05 x 30% (Inspections to perform outside a 
+window of opportunity) 
+Total duration affecting availability = 24 h 
+ 
+For the Pre-PM Inspections: 
+ 
+Pre-PM inspections to perform = PM services to perform = 72.3 
+Target based on compliance goal = 72.3 x 95% = 69 
+ 
+Total duration of Pre-PM inspections = 69 (Pre-PM Inspections) X 0.5h (Inspection duration             
+= 34.35 h 
+ 
+For the Pre-PCR Inspections: 
+ 
+At this stage we have to also consider the Pre-PCR inspections that will have to be performed in 
+the month. The duration of each Pre-PCR inspections will have to be determine based on the 
+performance of the machine and in the amount of unidentified problems that the machine may be 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Unavailability Distribution 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-1.03-1261 
+Caterpillar Confidential:  GREEN         Page 8 of 15 
+experimenting. Some operations schedule the Pre-PCR inspections for a shift, but this is not a 
+mandatory rule. It can be any time that must be determine by the Fleet Analyst and the Planner. In 
+this case for our example we will consider a duration of 8 hours for each Pre-PCR inspection. 
+ 
+In our case scenario we have 3 PCR scheduled for the month, so we will have same number of 
+Pre-PCR inspections. 
+ 
+Total duration for the Pre-PCR inspections = 24 h 
+ 
+The total downtime to consider for the detection routines = 24 h + 34.35 h + 24 h 
+                  = 82.07 h 
+ 
+Unavailability to consider for the Detection Routines = 0.37 % 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Major and / or Minor Scheduled Repairs 
+The information for our case scenario indicates: 
+ 
+M&M scheduled repairs to be performed every 500 hours with duration of 4 hours. This is a 
+decision of the planning department that is normally based on the Backlog workload. We will 
+discuss this subject (defining the BL execution targets) in another Best Practice. 
+ 
+The information provided also call for 2 repairs to be done because of the critical nature of the 
+repairs needed.  These 2 two repairs are planned for a duration of one shift of 12 h each. 
+ 
+Unavailability Distribution Percentage Hours
+Preventive Maintenance 3.24% 723
+Planned Component Replacement (PCR) 2.28% 510
+Major / Minor Scheduled Repairs
+Detection Routines 0.37% 82
+Tires 
+Other Repair Centers
+Unscheduled Repairs
+TOTAL UNAVAILABILITY 5.89% 1315
+ESTIMATED AVAILABILITY 94.11% 21005
+TOTAL HOURS TO EXECUTE M&R EVENTS 2902
+REMAINING HOURS FOR M&R EVENTS 1586
+AVAILABILITY GOAL 87.00% 19418
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Unavailability Distribution 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-1.03-1261 
+Caterpillar Confidential:  GREEN         Page 9 of 15 
+Duration for the M&M by frequency =  (Operating hours / Frequency) x Duration  [h]  
+ 
+Duration M&M freq = (18,079 / 500) x 4 = 144.6 h 
+ 
+Duration for the repairs by exception = Repair Duration 1 + Repair Duration 2  [h] 
+ 
+Duration for the repairs by exception = 24 h 
+ 
+Total Duration for the M & M scheduled repairs = 144.6+24 = 168.6 h 
+ 
+Unavailability due to M&M repairs = Total Duration M&M / Calendar hours   [%] 
+ 
+Unavailability due to M&M repairs = 168.6 / 22,320 = 0.76 % 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+This is how the distribution looks like after including the M&M scheduled repairs. 
+ 
+ 
+Tires 
+Tires are a sensitive issue for the success of the mining operation in regards to cost and downtime 
+allocation. A dedicated department that works in parallel with the maintenance and repair shop 
+normally takes the tire maintenance and repair activities. Coordination between the two entities is 
+vital.  The planning department of the equipment has to work together with the tire shop to 
+determine and understand the time that will be needed for tire maintenance. 
+ 
+In our scenario we have the following situation: 
+ 
+Unavailability Distribution Percentage Hours
+Preventive Maintenance 3.24% 723
+Planned Component Replacement (PCR) 2.28% 510
+Major / Minor Scheduled Repairs 0.76% 169
+Detection Routines 0.37% 82
+Tires 
+Other Repair Centers
+Unscheduled Repairs
+TOTAL UNAVAILABILITY 6.65% 1484
+ESTIMATED AVAILABILITY 93.35% 20836
+TOTAL HOURS TO EXECUTE M&R EVENTS 2902
+REMAINING HOURS FOR M&R EVENTS 1418
+AVAILABILITY GOAL 87.00% 19418
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Unavailability Distribution 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-1.03-1261 
+Caterpillar Confidential:  GREEN         Page 10 of 15 
+Daily tire inspection = 15 minutes per machine  
+Program compliance target = 90% 
+Tire checks within Window of Opportunity = 80% 
+ 
+Tire shop monthly activities = 255 hours 
+ 
+Inspections to perform monthly = Number of Machines x 31 x Compliance Target 
+       = 30 X 31X 90% = 837 
+ 
+Inspection time to affect availability = 837 x 20% x 15 / 60 
+             =  41.85 h   
+  
+Total unavailable hours due to Tires = Tire checks + in shop time = 41.85 + 255  h 
+               = 296.85 h 
+ 
+Unavailability due to Tires = Tires unavailable hours / Calendar hours = 296.85 / 22,320 
+        = 1.33% 
+ 
+ 
+Other Repair Centers 
+Welding repair shop, radio communications, special attachments are some examples of other 
+repair centers that at some time may take away time from the machines available hours. In our 
+example we will use the requirement of 1 body exchange that will be scheduled for 2 shifts of 12 
+hours. 
+ 
+Total time to use will be = 24 h 
+ 
+The unavailability due to this work will be = 0.11 % 
+ 
+The unavailability distribution including these last two categories will look like, 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Unavailability Distribution Percentage Hours
+Preventive Maintenance 3.24% 723
+Planned Component Replacement (PCR) 2.28% 510
+Major / Minor Scheduled Repairs 0.76% 169
+Detection Routines 0.37% 82
+Tires 1.33% 297
+Other Repair Centers 0.11% 24
+Unscheduled Repairs
+TOTAL UNAVAILABILITY 8.09% 1805
+ESTIMATED AVAILABILITY 91.91% 20515
+TOTAL HOURS TO EXECUTE M&R EVENTS 2902
+REMAINING HOURS FOR M&R EVENTS 1097
+AVAILABILITY GOAL 87.00% 19418
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Unavailability Distribution 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-1.03-1261 
+Caterpillar Confidential:  GREEN         Page 11 of 15 
+ 
+So far we defined and included in the Unavailability Distribution planned events with the exception 
+of the tire estimated time in where there is an amount of hours / repairs that will have to be done 
+under an unscheduled scenario.  
+ 
+The last item to consider is the time provision to be made for the unscheduled repairs.  
+ 
+ 
+Unscheduled Repairs 
+To determine the amount of hours to include in this unavailability distribution we have to analyze 
+the repair history, and the results of the past 2 – 3 months. We cannot predict the future, but we 
+can make our best estimate based on past performance. 
+ 
+In our case study we will work with a fleet that has been down because of unscheduled events for 
+1545 hours. This is the average of the last 3 months. 
+ 
+The unavailability due to the unscheduled repairs will be, 
+ 
+ Unscheduled downtime / Calendar hours = 1545 / 22,320 [%] = 6.92 % 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+At this time, after including our estimate for the unscheduled repairs, we end up in a situation in 
+which the forecasted unavailability is greater than the allowed (15.01% > 13%) to meet the 
+availability goal. 
+Unavailability Distribution Percentage Hours
+Preventive Maintenance 3.24% 723
+Planned Component Replacement (PCR) 2.28% 510
+Major / Minor Scheduled Repairs 0.76% 169
+Detection Routines 0.37% 82
+Tires 1.33% 297
+Other Repair Centers 0.11% 24
+Unscheduled Repairs 6.92% 1545
+TOTAL UNAVAILABILITY 15.01% 3350
+ESTIMATED AVAILABILITY 84.99% 18970
+TOTAL HOURS TO EXECUTE M&R EVENTS 2902
+REMAINING HOURS FOR M&R EVENTS -448
+AVAILABILITY GOAL 87.00% 19418
+
+===== PAGE 13 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Unavailability Distribution 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-1.03-1261 
+Caterpillar Confidential:  GREEN         Page 12 of 15 
+Unavailability Distribution Percentage Hours
+Preventive Maintenance 3.24% 723
+Planned Component Replacement (PCR) 1.21% 270
+Major / Minor Scheduled Repairs 0.43% 96
+Detection Routines 0.33% 74
+Tires 1.33% 297
+Other Repair Centers 0.11% 24
+Unscheduled Repairs 6.92% 1545
+TOTAL UNAVAILABILITY 13.57% 3029
+ESTIMATED AVAILABILITY 86.43% 19291
+TOTAL HOURS TO EXECUTE M&R EVENTS 2902
+REMAINING HOURS FOR M&R EVENTS -128
+AVAILABILITY GOAL 87.00% 19418
+ 
+The first action to take is to try to adjust the allocated M&R time to reduce the total unavailable 
+hours. In this scenario we could review the following options: 
+ 
+ Increase the Backlog execution in PM services and reduce the M&M duration of the repairs to 
+be done by frequency. 
+ 
+ If we are in a very demanding situation in regards to production we could also stop one of the 
+PCR work and postpone it for the next month or scheduling period. This decision has to be based 
+on an accurate analysis of the conditions of the component. 
+ 
+ Increase the amount of detection routines that are performed within a window of opportunity.  
+ 
+ Try to reduce the PM service duration by working on the efficiency of its execution. This action 
+is not an immediate action that can be taken; it is a medium term effort. 
+ 
+ Other actions may be taken based on the particular situation that we may be confronted with.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The above chart is the representation where we applied some of the adjustment ideas. We 
+eliminated 1 PCR, reduced the M&M time by reducing the allocated time for M&M by frequency 
+with the agreement to execute more backlogs in parallel with the PM services, and increase the 
+target for using the Windows of Opportunity for inspections. Reduction of the estimated time for 
+the unscheduled repairs is not suggested; it would be just a mathematical adjustment. What we 
+can do with the unscheduled repairs is to ensure that the unscheduled hours doesn’t increase and 
+
+===== PAGE 14 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Unavailability Distribution 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-1.03-1261 
+Caterpillar Confidential:  GREEN         Page 13 of 15 
+to set effective machine performance targets for the scheduled repairs to be performed. This will 
+give better control of the future unscheduled repairs reduction. 
+ 
+At the end when maintenance planning cannot adjust any further without getting in an 
+uncontrollable risk it comes a time to present the situation with the production department of the 
+customer. The production department can  adjust their operation plan and also try to increase the 
+utilization of the available machines.  
+ 
+ 
+3.0 Implementation Steps 
+ 
+The implementation of this concept is relatively simple. This concept and procedure has to be the 
+responsibility of the on-site planner; it is a strategic task. 
+ 
+The steps to follow in the implementation are as follows: 
+ 
+ Evaluate your planning process. Determine with the “As Is” situation if your current process. 
+Consider the use of the proposed procedure in this BP. 
+ Design a spreadsheet  with the various categories to be included. Create your Unavailability 
+Distribution template. You can use the format suggested in this BP. 
+ Determine the equipment fleet operating parameters (utilization, availability target, …).  
+ Investigate and gather all needed information. 
+ Populate your Unavailability Distribution. 
+ Present the concept and tool to your organization. This step is very important to get the “buy 
+in” of your organization. The success of this procedure depends on the collective work of the 
+on-site organization. 
+ Incorporate the Unavailability Distribution in all your planning meetings.  
+ Link the Long, Medium and Short-Term plans to the Unavailability Distribution process. 
+ Follow up. Closely monitor the used of the remaining hours for performing the maintenance 
+and repair activities. 
+ Revise and update as necessary. 
+ 
+4.0 Benefits 
+ 
+The use of the Unavailability Distribution concept described in this BP will give your maintenance 
+organization a better understanding of their particular roles and responsibilities in meeting the 
+expected fleet performance goals.  It will also provide an effective way to work with specific goals 
+linked to each functional area of your operation. 
+ 
+For Planning, who is responsible of building and leading this effort, the benefits are: 
+ 
+ Clear goals and targets for following up and controlling the execution of the scheduled tasks. 
+ Better management of the adjustments that may be necessary. 
+ Gain control. 
+ Moving from expecting “good” things to occur to a controlled and decision making situation 
+ 
+ 
+
+===== PAGE 15 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Unavailability Distribution 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-1.03-1261 
+Caterpillar Confidential:  GREEN         Page 14 of 15 
+For the Work Shop crews (PM services, unscheduled, PCR’s, etc.) 
+ 
+ Clear set of goals to guide and meet the required fleet available time. 
+ Better information to make better decision (When and when not to extend or do extra repairs). 
+ Clear identification of opportunities. 
+ Better management of maintenance activities. 
+ Integration of the efforts with the rest of the areas of the maintenance organization.   
+ 
+For the Operation Management 
+ 
+ Improve the control and management of the operation with effective and updated information. 
+ Make the appropriate adjustments to the right areas. 
+ Manage the unavailable time by clear targets. 
+ Better fleet equipment management. 
+ 
+For the Production Department 
+ 
+ Better understanding of the tasks and targets of the maintenance department. 
+ Better integration. Increase the team effort. 
+ Better planning of the production plan with better information. 
+ 
+ 
+It is convenient to mention at this stage that this procedure has been implemented in the various 
+operations as part of the M&R process implementation. I would like to highlight the operations of: 
+ 
+ Trakindo, Indonesia in Batu Hijau, Newmont operation. 
+ TIL, India in SEB, Tata Steel operation. 
+   
+The results are very encouraging and benefits in better control and management of the equipment 
+fleet are very solid. 
+ 
+Trakindo at Batu Hijau has extended this procedure to incorporate additional information to the 
+tool that can even increase its effectiveness. 
+ 
+5.0 Resources Required 
+ 
+The implementation of this BP will not require any extra manpower or infrastructure; however, 
+depending on your particular situation it will be necessary to redefine the function, role, and 
+responsibility of the planner. Special attention must be dedicated to the planner who gets 
+primarily focused in building and structuring the Short -Term Plan. Building the Short -Plan is a 
+scheduling function. In this situation we recommend separating the functions of planning and 
+scheduling, and redistributing both functions. 
+ 
+The procedure presented in this BP is a responsibility of the planner. It is part of building strategic 
+guidelines for the organization to follow. 
+ 
+
+===== PAGE 16 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Unavailability Distribution 
+DATE 
+1/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1110-1.03-1261 
+Caterpillar Confidential:  GREEN         Page 15 of 15 
+6.0 Supporting Attachments / References 
+ 
+No attachments. 
+ 
+7.0 Related Best Practices 
+ 
+- BP 1110-1.03-1260, “Moving the Maintenance Strategy into an actionable plan” 
+ 
+- BP 1007-2.0-1104  “Strategic Planning & Scheduling BP” 
+ 
+ 
+ 
+8.0 Acknowledgements 
+ 
+This best practice was written by: 
+ 
+Abelardo A. Flores 
+Product Performance Manager  
+Caterpillar Global Mining Chile SA. 
+flores_abelardo@cat.com 
+ 
+For further details and information regarding this Best Practice, please contact the author.

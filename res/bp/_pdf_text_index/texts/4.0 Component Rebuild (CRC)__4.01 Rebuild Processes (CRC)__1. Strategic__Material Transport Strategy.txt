@@ -1,0 +1,330 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2006  
+0207-4.5-1063  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Material Transport 
+Strategy 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management  
+Safety 
+ 
+ 
+ 
+Material Transport Strategy ....................................... 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 4 
+4.0  Benefits ............................................................. 5 
+5.0  Resources Required .......................................... 5 
+6.0  Supporting Attachments / References ............... 5 
+7.0  Related Best Practices ...................................... 5 
+8.0  Acknowledgements ........................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT  THE WRITTEN PERMISSION OF CATERPILLAR  
+Material Transport Strategy 
+DATE 
+2/23/07 
+CHG 
+NO 
+02 
+NUMBER 
+0207-4.5-1063  
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+1.0 Introduction  
+ 
+A parts/component transport strategy is critical to several facets of CRC operations.  Transport 
+begins with major component receipt and ends with major component release to the customer, 
+parts department, etc. These activities are non-value adding and are typically unplanned and ad-
+hoc in nature. Rebuild materials should be moved between processing steps in a manner that 
+consumes minimal resources (time, labor, equipment). Effective part/component moving reduces 
+equipment and staging space requirements and technician rebuild labor. 
+ 
+An effective transport strategy stresses consistency and minimizes “lost” in-process product.  
+Production peaks are less costly and easier to manage due to greater process realization.  
+Properly used, an enhanced material handling strategy provides increased capacity, efficient 
+parts flow, and better labor utilization. 
+ 
+2.0 Best Practice Description 
+ 
+For the scope of this Best Practice, CRC material handling begins with component receipt from 
+the customer at the dealer store. It ends with the component’s release to the customer at the 
+dealer store.  The “customer” may also include dealer pick-up and delivery trucks, or dealer field 
+service trucks that transport components. 
+ 
+Current practice is typically ineffective and inconsistent. 
+• Once the customer arrives with the component, it i s often unloaded by rebuild (production) 
+technicians while supervisors “meet and greet” the customer.  Unloading and customer 
+communications is often inefficient since many employees (the closest ones to the customer’s 
+component) perform these tasks. These inefficiencies are similar to those occurring when the 
+rebuilt components are loaded-out to the customer.  
+• Once the components are received, the production e mployee must move the component from 
+staging, to washing, to disassembly/cleaning, etc., until the rebuilt component is packaged to 
+ship-out. 
+• During each component move, the employee typically  must: 
+o Find a lift truck (often in use, or left in random  parking places). 
+o Find lifting brackets, chains, and straps (often i n use, or left in random locations). 
+o Find component stands for components brought in, p ropped-up on cribbing. 
+o Interrupt their core duties and resume them later (at the expense of efficiency and 
+quality). 
+An enhanced material transport strategy is customer friendly and efficient. Generally, the parts 
+department (properly trained and equipped material handlers) must be responsible for almost all 
+heavy material transfers. They are responsible for operating and maintaining transport equipment. 
+Skilled material handlers are trained to use the most effective transport equipment and already 
+transport new, Reman, and exchange/core items. These parts runners continuously travel 
+throughout the dealer’s branch. In fact, “empty” return trips are an efficiency opportunity. All heavy 
+material transfers should be restricted to these material handlers.  Allowing the parts department 
+to focus on effective material movement frees the CRC to focus on rebuilding components. The 
+remainder of this description will describe each significant type of material movement and its 
+considerations. 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT  THE WRITTEN PERMISSION OF CATERPILLAR  
+Material Transport Strategy 
+DATE 
+2/23/07 
+CHG 
+NO 
+02 
+NUMBER 
+0207-4.5-1063  
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+Delivery from 
+customer 
+Component 
+Transfer 
+Appropriate 
+staging location 
+Service Dept. 
+wash bay 
+Other bays as 
+needed 
+Parts Dept. and Material Handlers 
+ 
+ 
+• All customer receipt and ship 
+functions are handled by the parts 
+department. To receive 
+components: they meet/greet, 
+unload, and stage components. 
+They then transfer components to 
+the proper area per the situation. 
+For example, Reman and 
+exchange cores would have 
+different destinations. Once the 
+component is needed, the parts 
+department transfers it from 
+(protected and organized) staging 
+to the service department wash 
+bay, and then to the disassembly 
+bay. Once the component is rebuilt 
+and sealed, the parts department 
+transfers it to staging and eventually to the customer’s vehicle. 
+• New, Reman, and core items are received between th e parts warehouse and specific CRC 
+work bays. This delivery is performed by the material handlers. Technicians do not transfer 
+parts from a central “will-call” or drop area to their work bays.   
+• Components are moved between work bays as needed f or processing. The majority of 
+component moves are performed by material handlers. For example: The handler would 
+transfer sub-components from rebuild bay staging to general assembly bays per a component 
+consist list. Each CRC should be equipped with generic, low-platform push carts (stored under 
+a work bench) for incidental parts moves. This allows for process flexibility with minimal lift 
+truck requirements. 
+• Miscellaneous items (such as salvage, warranty, or  customer hold parts, tools, stands, 
+baskets) are moved from work bay “out” areas, to other storage/ processing areas. These 
+moves may be within a shop, between buildings, or from one branch to another. 
+• These processes should be utilized for the majorit y of transports. While minimizing incidental 
+transfers/handling by service technicians, such incidents cannot be prevented entirely. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT  THE WRITTEN PERMISSION OF CATERPILLAR  
+Material Transport Strategy 
+DATE 
+2/23/07 
+CHG 
+NO 
+02 
+NUMBER 
+0207-4.5-1063  
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+• Effective communication is critical for this strat egy’s success. Technicians and administration 
+must have work bay and office access to call on material handlers.  Systems such as in- and 
+out-staging areas, tags, etc., provide for efficient material hand-offs. Tags are also used to 
+organize and direct transport for down-stream processes, such as salvage directions and 
+priorities. One dealer installed “help” lights at bay pick-up/drop-off locations. The lights 
+provided directives to material handlers in the area and were even more effective than first 
+anticipated.  
+ 
+3.0 Implementation Steps 
+ 
+The suggested implementation is as follows: 
+ 
+1. Document as-is material moves, participants, and  resources required. 
+2. Define future transport strategy based on expect ed product type, volume, size, etc. 
+a. Plan for typical rebuild volumes as well as expe cted peak production business cycles. 
+b. Investigate specialized transport/handling equip ment (radios, intercom, cranes, lift truck 
+attachments, tugs, carts, shelves, chains, racks, etc.). 
+c. Utilize Cat Operations Development and shop equi pment supplier expertise as needed. 
+d. Focus on the typical requirements, covering 80-9 0% of transport circumstances.       
+Add-in flexible capabilities (such as assigned push carts) for minority requirements. 
+3. Apply future strategy to shop and staging area l ayout plans. 
+a. Consider the effects of staging location on prod uct protection and flow paths. 
+b. Add changes to shop layout drawing. 
+c. Include shop technician teams in the review/appl ication stages. 
+d. Use Cat Facility Development and Service Operati ons expertise as required. 
+4. Develop/document the new material transport stra tegy/procedure, with new roles and 
+responsibilities. 
+5. AdjustF 
+a. Repair/rebuild time requirement targets as neede d (capture resultant efficiencies). 
+b. Service labor charge-out rates to reflect time a nd material repair efficiency gains. 
+c. Administrative duties to reflect new system requ irements and efficiency gains. 
+6. Present strategy to shop employees. 
+7. Implement transport processes, layout, and 
+equipment changes into the shop/storage areas. 
+a. This may occur in phases (as needed). 
+8. Train employees/customers to use the new 
+procedures/equipment.  Follow-up and enforce 
+immediately. 
+9. Review process/equipment performance once 
+established. 
+10. Establish and install any adjustments as needed. 
+ 
+ 
+ 
+ 
+ 
+Help light installed at a pick-up location indicating 
+material ready to be picked up 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT  THE WRITTEN PERMISSION OF CATERPILLAR  
+Material Transport Strategy 
+DATE 
+2/23/07 
+CHG 
+NO 
+02 
+NUMBER 
+0207-4.5-1063  
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+4.0 Benefits 
+ 
+• Increased capacity: Reduced task interruptions, re duced rebuild turnaround times, increased 
+component rebuilds per year. Administration has more time available (with less customer 
+contact) to plan and organize. 
+• Reduced cost: Fewer moving tools (lift trucks) are  needed less often. Related equipment 
+maintenance and repairs are reduced. 
+• Increase efficiencies: Service technicians focus o n core duties reducing labor variances.  
+Rebuild and target times drop, raising standard (flat-rate) job profits. 
+• Increasing quality: Rebuilt components incur less incidental damage and contamination, while 
+technicians focused on core duties reducing rework. 
+• Improved Operator/Technician Safety: Trained mater ial handlers increase professionalism 
+and technician-handling problems are eliminated.  
+ 
+5.0 Resources Required 
+ 
+• Equipment Requirement Gaps Vary 
+o Most dealers already have more transport equipment  than is needed for this strategy. 
+o Bay-specific staging racks/equipment are often cus tom made by the dealer shop. 
+• Facility 
+o Staging space (protected) is located in parts depa rtment and each CRC work bay. 
+• Support Equipment - Cost vary greatly per region 
+o Effective cranes provide highest efficiency and sh ipping/receiving professionalism but 
+lift truck are often the economic choice. 
+o Staging racks, carts, stands, and protection for i ncoming components. 
+o Staging racks and protection for out-going compone nts. 
+o Protective staging areas for incoming/out-going co mponents. 
+o Standard and custom designed carts for bay-to-bay material movement. 
+o Communication equipment (radios, intercoms, “help”  lights) is low cost but critical. 
+o Floor pallets typically consume lots of space and their use is discouraged. 
+• People 
+o Establish current staging concerns with team. 
+o Establish process, layout, and equipment improveme nts through team. 
+• Training 
+o Define, implement, and enforce the new process and  duties with the production team. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Component Rebuild Service Operations Development & Assessment (SODA) 
+ 
+7.0 Related Best Practices 
+ 
+In-Process Staging Strategy   1106-4.4-1038  
+Recommended Shipping and Storage Stands for Major Components   0107-4.4-1053  
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT  THE WRITTEN PERMISSION OF CATERPILLAR  
+Material Transport Strategy 
+DATE 
+2/23/07 
+CHG 
+NO 
+02 
+NUMBER 
+0207-4.5-1063  
+Caterpillar Confidential:  GREEN          Page 6 of 6 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Russ Young 
+6 Sigma Black Belt 
+Cat Global Mining

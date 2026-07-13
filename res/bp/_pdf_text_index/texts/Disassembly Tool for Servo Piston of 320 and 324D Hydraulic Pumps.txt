@@ -1,0 +1,237 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+August 2023 
+4.01-230814-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining  
+ 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Disassembly Tool for Servo 
+Piston of 320 and 324D 
+Hydraulic Pumps  
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Disassembly Tool for Servo Piston of 320 and 324D 
+Hydraulic Pumps .......................................................... 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description.................................... 2 
+3.0 Implementation Steps ......................................... 3 
+4.0 Benefits ................................................................ 5 
+5.0 Resources Required ........................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices........................................ 5 
+8.0 Acknowledgements ............................................. 5 
+ 
+ 
+  
+ 
+  
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Disassembly Tool for Servo Piston of 320 and 324D 
+Hydraulic Pumps  
+DATE 
+8/14/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-230814-1 
+Caterpillar: Confidential Yellow           Page 2 of 5 
+1.0 Introduction  
+ 
+This tool facilitates the disassembly of the servo piston that controls the angle of the main hydraulic 
+pumps of the 320-324D models and ensures disassembly without damage. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The servo piston needs to be removed for rebuild. The servo piston is not a fixed part. Therefore, it 
+moves left and right during the removal. These movements can cause the servo piston pin to break 
+during removal. 
+ 
+In addition, it was difficult to tighten according to the test procedures SIS 2.0 (cat.com)
+ during the 
+assembly phase. The breakage of the servo piston pin is a high additional cost because the broken 
+pin does not have a single sale. If the pin breaks, the piston, and pins must be purchased and 
+replaced. 
+  
+A tool has been designed to prevent the pin from breaking and to facilitate the removal of the servo 
+piston. The tool is placed around the servo piston during removal and prevents the piston from 
+moving in either direction. The tool allows removal without breaking the pin. The piston that can be 
+removed without damage is shown in the figure below. 
+ 
+ 
+ 
+                         Disassembly support pin assembly without damage the fixing pin. 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Disassembly Tool for Servo Piston of 320 and 324D 
+Hydraulic Pumps  
+DATE 
+8/14/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-230814-1 
+Caterpillar: Confidential Yellow           Page 3 of 5 
+3.0 Implementation Steps 
+ 
+Step 1:  
+The piston in the image must be fixed because it is unstable and moves to its right-left directions. 
+The pin under the servo piston engages in the fixing slot. The pin is connected to the servo piston. 
+When the servo piston moves, it forces the pin to move and begins to operate in the fixing split. 
+Because the fixing split is stronger than the pin, it breaks the pin during assembly and disassembly. 
+The tool holds the head of the servo piston in place and prevents movement during 
+assembly/disassembly. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Disassembly Tool for Servo Piston of 320 and 324D 
+Hydraulic Pumps  
+DATE 
+8/14/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-230814-1 
+Caterpillar: Confidential Yellow           Page 4 of 5 
+Step 2:  
+The tool is fixed around the piston. 
+ 
+                
+ 
+Step 3:  
+The piston is fixed, and assembly processes can start. 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Disassembly Tool for Servo Piston of 320 and 324D 
+Hydraulic Pumps  
+DATE 
+8/14/2023 
+CHG 
+NO 
+00 
+NUMBER 
+4.01-230814-1 
+Caterpillar: Confidential Yellow P age 5 of 5 
+4.0 Benefits 
+• F
+ast operation
+• Removing the replacement part without damaging it
+• Prevention extra costs
+• Customer satisfaction
+5.
+0 Resources Required 
+T
+he attachment tool was produced in our own workshop. Our existing materials are used for 
+production. A person working in the welding room finished production after 4 hours of work. 
+Item  Requirements 
+Material ~100 € 
+Labor 1 worker x 4 hours 
+6.
+0 Supporting Attachments / References 
+• Drawing in the appendix 
+• i05916114 Disassembly and Assembly SIS 2.0 (cat.com)
+7.
+0 Related Best Practices 
+N
+one 
+8.
+0 Acknowledgements  
+This Best Practice was written by: 
+E
+sra Ulubay  
+CRC Planning Officer  
+Borusan Makina ve Güç Sistemleri 
+T
+his Best Practice designed by: 
+A
+bdullah Akbenli  
+Expert Technician  
+Borusan Makina ve Güç Sistemleri 
+P
+roject and Best practice supported by : 
+H
+.Yağız Vural
+Workshop Engineer
+B
+orusan Makina ve Güç Sistemleri

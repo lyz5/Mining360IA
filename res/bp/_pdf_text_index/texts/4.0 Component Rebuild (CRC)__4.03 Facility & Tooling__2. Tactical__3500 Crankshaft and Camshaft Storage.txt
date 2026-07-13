@@ -1,0 +1,430 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+3500 Crankshaft and 
+Camshaft Storage 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+3500 Crankshaft and Camshaft Storage .................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Step .......................................... 8 
+4.0 Benefits .............................................................. 8 
+5.0 Resources Required .......................................... 8 
+6.0 Supporting Attachment/Reference ....................... 8 
+7.0 Related Best Practices ...................................... 8 
+8.0 Acknowledgements ............................................ 9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+ 
+  
+July 2011 
+0905-4.03-1231 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Trakindo’s Component Rebuild Centers (CRCs) have a large amount of Work in Process (WIP) when 
+providing Component Rebuild engines. Two of the larger components in the CRCs are crankshaf ts 
+and camshafts waiting to be installed. The current storage method for these specific components is 
+inefficient, which affects the turnaround time. The CRCs end up with valuable space being taken up 
+by WIP, resulting in the area looking congested, and exposing the components to potential damage.   
+ 
+When considering contamination control and 5S, the components (3500 series crankshaft and 
+camshafts or smaller) when placed on the floor using the current method take up valuable space and 
+creates a potential safety hazard. In some instances when the parts are small enough they are placed 
+on desk space in the CRCs.  The current method makes it difficult for the technicians to retrieve the 
+component when needed.  As a result, Trakindo needed to implement a new method to allow 
+crankshafts and camshafts to be stored efficiently in a clean and tidy environment, which makes 
+possible safe and easy staging and transport. 
+ 
+ 
+2.0 Best Practice Description  
+ 
+This Best Practice is for storage and staging management of the 3500 S eries Crankshafts and 
+Camshafts.  It can be also applied to other models. The focus should be on the staging of the shafts 
+for contamination control, easy access, maximum floor space utilization, component quality (shafts 
+not bending), and technician safety.  Examples from Trakindo have been presented as well as some 
+of the best in class storage methods gathered from around the world. 
+ 
+Trakindo Crankshaft Storage 
+The new method that has been implemented is to store the crankshafts in the vertical position using 
+racks and a lifting bracket that is bolted onto the flywheel bolt holes in the crankshaft.  Plastic wrap is 
+applied to the components to provide protection while in storage.  This provides a safe and efficient 
+method of storing, lifting, and moving the crankshafts. 
+ 
+The lifting bracket is vital so the shaft can be removed vertically without moving the other shafts in the 
+rack.  The rack gage dimension must be wide enough to allow clearance for vertical lifting of the 
+shaft. 
+ 
+Trakindo created dedicated stands that can store 10 crankshafts each. A step, ladder, or crane hook 
+guiding pole is required for access to the stand to lift the crankshaft into place.      
+ 
+At least two standing rack s are needed - one for the crankshafts that have been just remove f rom 
+engine and waiting for rebuild, and another one for the crankshafts that have been recondition and 
+waiting to be installed. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Crankshaft and Camshaft Storage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0905-4.03-1231 
+Caterpillar Confidential:  GREEN          Page 1 of 9 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+  
+  
+Figures 1 and 2:  Trakindo’s crankshaft storage and staging process before implementation of 
+storage racks. 
+ 
+ 
+    
+  
+Figures 3 and 4:  Trakindo’s crankshaft storage and staging process after implementation of storage 
+racks. 
+ 
+ 
+ 
+AFTER AFTER 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Crankshaft and Camshaft Storage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0905-4.03-1231 
+Caterpillar Confidential:  GREEN          Page 2 of 9 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Figure 5:  Trakindo crankshaft rack drawing.   
+ 
+ 
+Trakindo Camshaft Storage 
+The new method that has been implemented to store the camshafts is to develop racks to hold the 
+components in a vertical position.  Plastic wrap is applied to the components to provide protection 
+while in storage. 
+ 
+At least two standing rack are needed - one for the camshafts that have been just remove from 
+engine and waiting  for rebuild, and another one for the camshafts that have been recondition and 
+waiting to be installed. 
+ 
+For 3500 engine series camshaft or bigger, Trakindo uses a webbing sling to lift the camshaft to avoid 
+the scratching and other damage when transporting. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Crankshaft and Camshaft Storage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0905-4.03-1231 
+Caterpillar Confidential:  GREEN          Page 3 of 9 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+  
+  
+Figure 6 and 7:  Trakindo’s camshaft storage and staging process before implementation of storage 
+racks. 
+ 
+                                               
+ 
+  
+   
+  
+Figures 8 and 9:  Trakindo’s camshaft storage and staging process after implementation of storage 
+racks. 
+ 
+BEFORE 
+BEFORE 
+AFTER 
+AFTER 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Crankshaft and Camshaft Storage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0905-4.03-1231 
+Caterpillar Confidential:  GREEN          Page 4 of 9 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Figure 10:  Trakindo camshaft rack drawing. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Crankshaft and Camshaft Storage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0905-4.03-1231 
+Caterpillar Confidential:  GREEN          Page 5 of 9 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Additional Best in Class Examples for Crankshaft and Camshaft Storage 
+ 
+Ferreyros has implemented a reusable canvas cloth with Velcro straps to protect their camshaf ts 
+while in vertical rack storage instead of traditional plastic shrink wrap.  This provides an easy  method 
+to remove and reuse protection for the components.   
+ 
+ 
+Figure 11: Ferreyos camshaft storage using canvas cloth with Velcro straps. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Crankshaft and Camshaft Storage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0905-4.03-1231 
+Caterpillar Confidential:  GREEN          Page 6 of 9 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Gecolsa and Finning Chile have also implemented racks to provide easy access to the components 
+both vertically and horizontally. 
+ 
+     
+Figure 12 and 13:  Gecolsa crankshaft storage and staging racks. 
+ 
+ 
+  
+  
+Figure 14 and 15:  Finning Chile crankshaft storage and staging racks. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Crankshaft and Camshaft Storage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0905-4.03-1231 
+Caterpillar Confidential:  GREEN          Page 7 of 9 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Implementation Step 
+ 
+- Determine area in shop to be designated for storage and staging rack. 
+- Designate Incoming and Outgoing racks in rebuild/processing work bay. 
+- Assure the area has adequate space and access for equipment to move the component with a 
+crane – no lift trucks.  Best to be able to move components vertically and horizontally. 
+- Install the layout/equipment changes on the shop floor. 
+- Promote change feedback as installation may make new problems surface. 
+- Train employees to use the new procedures/equipment. 
+- Review process/equipment performance once established. 
+- Establish and install any adjustments as needed. 
+ 
+ 
+4.0 Benefits 
+ 
+Safety  
+Well designed/organized standing rack will provide a safer and cleaner working environment. 
+ 
+Organization  
+Components are consistently staged for incoming and outgoing status.  Floor space is maximized by 
+the components taking up minimal storage space. 
+ 
+Quality  
+Simplified staging and tidy WIP areas promotes technician professionalism and higher standards, 
+while providing shaft protection, contamination control, and shaft cleanliness resulting in increased 
+brand image. 
+ 
+ 
+5.0 Resources Required 
+ 
+Facility 
+Fabrication material. 
+Reorganized work area to allow for vertical storage area with incoming and outgoing staging. 
+ 
+People 
+Establish the new process, layout, and equipment improvement through the team. 
+Remove replaced items from operation to prevent less effective storage system. 
+ 
+6.0 Supporting Attachment/Reference 
+ 
+None 
+ 
+7.0 Related Best Practices 
+ 
+• 1106-4.4-1038 -  In-Process Staging Strategy 
+• 1006-4.4-1032  - Piston, Rod, and Liner Staging Equipment 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Crankshaft and Camshaft Storage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0905-4.03-1231 
+Caterpillar Confidential:  GREEN          Page 8 of 9 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+David J. Wilde  
+Corporate Best Practice 
+Product Support and Standard Development 
+djwilde@trakindo.co.id  
+Phone:  62217822373 ext 1120 
+ 
+Djati Waloejo 
+Corporate Best Practice 
+Product Support Standard & Development 
+PT. Trakindo Utama-Jakarta 
+dwaloejo@trakindo.co.id 
+6221782 2373 ext: 1121 
+ 
+Drawing by : 
+Pramudya Ananda 
+Product Support Standard & Development 
+pramudya.ananda@trakindo.co.id 
+6221782 2373 ext: 1126  
+ 
+Additional pictures from Ferreyos, Gecolsa, and Finning Chile provided by: 
+ 
+Dale Brehm 
+Major Components Product Support 
+Caterpillar Global Mining Division 
+Brehm_Dale_E@cat.com 
+309-675-6325 
+ 
+ 
+   
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+3500 Crankshaft and Camshaft Storage 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0905-4.03-1231 
+Caterpillar Confidential:  GREEN          Page 9 of 9

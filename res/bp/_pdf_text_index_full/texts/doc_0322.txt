@@ -1,0 +1,359 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.04 CRC Management\1. Strategic\Standard Parts Usage Policy for Component Rebuilds.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+January 2009  
+0109-4.3-1135  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Standard Parts Usage 
+Policy for Component 
+Rebuilds 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Renewal 
+(CRC) 
+Component 
+Life 
+Management  
+ MARC 
+Management 
+ 
+ 
+ 
+Standard Parts Usage Policy for Component Rebuilds 
+ .................................................................................. 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 3 
+3.0  Implementation Steps ........................................ 3 
+4.0  Benefits ............................................................. 7 
+5.0  Resources Required .......................................... 7 
+6.0  Supporting Attachments / References ............... 7 
+7.0  Related Best Practices ...................................... 7 
+8.0  Acknowledgements ........................................... 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information  provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practice s”. Caterpillar makes no representation or warranty 
+about the information contained in this document or t he products referenced herein. Caterpillar welcomes add itional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFOR MATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Standard Parts Usage Policy for Component Rebuilds 
+DATE 
+4/12/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0109-4.3-1135  
+Caterpillar Confidential:  GREEN         Page 2 of 7 
+1.0 Introduction  
+ 
+Every component rebuild requires choices to be made regarding parts consumption during the 
+rebuild process.  The choices are basically: 
+• Reuse part. 
+• Replace part with a new part. 
+• Salvage part in house. 
+• Salvage part using outsourced provider. 
+• Replace part with Cat Reman.  
+ 
+Many times, part usage decisions are made by the technician doing the work.  Often these 
+decisions are based on past experience rather than on a formalized company policy and clear 
+guidelines.  When technicians make their own decisions without formal CRC policy guidelines, 
+there is often wide variation in parts usage criteria. 
+ 
+Parts consumption is the major cost driver of rebuild components.  On average this is equal to 
+75% or more of overall component rebuild costs. 
+ 
+It is vital to manage parts replacement decisions in a manner which minimizes rebuild costs, 
+standardizes rebuild practices, and delivers the quality and component life expected by the 
+customer. 
+ 
+This Best Practice provides a recommended process to analyze and develop a policy to manage 
+part replacement practices in the CRC based on the cost impact, quality, and turnaround time. 
+ 
+This Best Practice was developed from the conclusions of a worldwide survey conducted with 33 
+dealers on parts reuse, salvage, and replacement practices.  
+ 
+ 
+     
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFOR MATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Standard Parts Usage Policy for Component Rebuilds 
+DATE 
+4/12/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0109-4.3-1135  
+Caterpillar Confidential:  GREEN         Page 3 of 7 
+2.0 Best Practice Description 
+ 
+Parts utilized during a major component rebuild will basically fall into three categories: 
+• Certain parts are always replaced.  These typicall y include gaskets, seals, wear items such 
+as bearings, etc.  These parts should become part of a standard rebuild kit.  A Best 
+Practice is published on creating standard rebuild kits using the Repair Option Builder 
+program that provides parts lists and replacement percentage for most major components.  
+Defining these kits becomes a CRC “always replace” policy. (See 7.0 Related Best 
+Practices)   
+• Certain parts are almost always inspected and reus ed when meeting reuse criteria.  These 
+would include such items as bolts, tubes, housings, etc. 
+• Certain parts must be either salvaged or replaced.   
+ 
+ 
+This Best Practice focuses on those parts that require salvage or replacement, analysis of the 
+options, and choosing the best option. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+The recommended process to analyze and develop a rebuild parts usage policy by major 
+component category follows five basic steps.  
+• List parts or assemblies that require salvage or r eplacement during a rebuild.  As example, 
+for a 3516 engine the list could include block, crankshaft, cylinder packs, turbos, coolers, 
+manifolds, starter, alternator, water pump, fan drive, etc. 
+• Does the CRC have the capability to perform the ne eded salvage?  Facility, tooling, 
+processes. 
+• Does the CRC have the capacity to perform needed s alvage?  Technicians, facility, 
+resources. 
+• Compare a cost analysis of the options.  Salvage c osts versus other options, such as 
+outsource or Reman. 
+• Determine customer preferences and acceptance.  Wh at will the customer accept and be 
+willing to pay for?  What rebuild warranty does the customer expect? 
+ 
+ 
+ 
+      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Process Map 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFOR MATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Standard Parts Usage Policy for Component Rebuilds 
+DATE 
+4/12/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0109-4.3-1135  
+Caterpillar Confidential:  GREEN         Page 4 of 7 
+ 
+ 
+ 
+The above process map illustrates the thought process behind creating a parts usage policy. 
+ 
+Capability to salvage is determined by having the right tooling, technicians, and processes in 
+place to perform a required salvage.  If a CRC does not have capability to do the work, then the 
+options become: 
+• Replace with Reman  
+• Replace with a new part 
+• Outsource the salvage work 
+• Invest in developing the capability (long term). 
+ 
+Capacity to salvage is determined by having available technicians, tooling, and facility.  If the 
+CRC is already working at full capacity, then the part usage policy becomes a peaking shaving 
+strategy. 
+ 
+Where the CRC has both the capability and the capacity to do salvage work, the decisions move 
+to a “Make vs Buy” economic comparison. 
+ 
+Cost Analysis of the Options 
+ 
+If the CRC has both the capability and the capacity to perform salvage on a specific 
+subcomponent or part, then the CRC will need to decide which repair practice alternative makes 
+the most economic sense.  Typically if the CRC performs the salvage, a dealer would compare 
+costs in terms of parts, labor, and other miscellaneous expenses to the Reman or new parts 
+option. Other considerations would include the impact on rebuild turnaround time, the component 
+quality and life expected from the chosen option, core credit if Reman is used, warranty, and 
+customer acceptance. 
+ 
+: 
+ 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFOR MATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Standard Parts Usage Policy for Component Rebuilds 
+DATE 
+4/12/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0109-4.3-1135  
+Caterpillar Confidential:  GREEN         Page 5 of 7 
+Below is an example of a cost comparison between Reman, new, and rebuild options.  This is an 
+example only.  Costs for an actual analysis should be based on local landed costs of parts and 
+fully burdened labor rates. 
+ 
+ 
+ 
+ 
+ 
+ 
+In the above example, CRC salvage was approximately equal to Reman due to the $60.00 per hour 
+labor cost rate.  The dealer could then select an option based on other factors, such as workload, 
+turnaround time, warranty, etc. 
+ 
+Once the options and costs are known and compared, the CRC can develop a preferred usage 
+policy.   
+ 
+Most dealers discuss standard rebuild practice with their customers and come to an agreement on 
+how the component rebuilds are performed.  Customers may not always agree with the ‘lowest cost” 
+option and may express preference for different options at an additional cost. 
+ 
+ 
+ 
+ 
+ 
+Reman New CRC Rebuild 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFOR MATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Standard Parts Usage Policy for Component Rebuilds 
+DATE 
+4/12/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0109-4.3-1135  
+Caterpillar Confidential:  GREEN         Page 6 of 7 
+Example of customer preferences: (customer names excluded) 
+ 
+ 
+At the end of this process, the dealer will be able to set clear shop polices on parts usage that 
+manage rebuild cost and quality in a consistent manner.   
+ 
+The policy then becomes part of the work order and part of the “Standard Rebuild Kits”. 
+ 
+Example  - Dealer Policy   
+• Standard engine rebuild includes Reman alternator,  starters, water pumps, coolers, injectors, 
+and turbo cartridges.   
+• Rebuild Cylinder Heads first rebuild, Reman on sec ond. 
+• Rebuild Liner Pack first rebuild, Reman on second.  
+• Camshafts and crankshafts replaced with Reman if f ull core credit applies to core. 
+                                                       
+Example – Customer Policy  
+• Always accept Reman except for injectors - replace  with new. 
+• Always buy new parts if full core credit does not apply. 
+ 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFOR MATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Standard Parts Usage Policy for Component Rebuilds 
+DATE 
+4/12/2017 
+CHG 
+NO 
+00 
+NUMBER 
+0109-4.3-1135  
+Caterpillar Confidential:  GREEN         Page 7 of 7 
+4.0 Benefits 
+ 
+• Parts reuse decisions are based on a consistent po licy, not individual preferences. 
+• Manage rebuild cost. 
+• Manage rebuild quality and consistency. 
+• Support customer cost per hour and availability ne eds. 
+• Provides CRC policy guidance for technicians and p rocess consistency. 
+ 
+5.0 Resources Required 
+ 
+• Management time to analyze / develop / implement a  policy. 
+• The policy needs to be re-evaluated on a periodic basis for possible adjustments when 
+parts prices and labor rates change, when new or improved Reman product is introduced, 
+or when CRC workloads create capacity concerns. 
+ 
+6.0 Supporting Attachments / References 
+ 
+N/A 
+ 
+7.0 Related Best Practices 
+ 
+(0607-4.4-1082) Creating Standard Component Rebuild Parts Kits 
+(1006-4.2-1030) Improving CRC Turnaround through Machine Shop Subcomponent  
+Exchange Program 
+(1006-4.5-1028) Managing Parts Reuse/Replace Decisions with Dedicated Resource 
+ 
+8.0 Acknowledgements 
+ 
+This BP was created from the result of a 2008 dealer survey and input from several dealers on 
+parts usage policies. 
+ 
+Photos are from Ferreyros, Lima Peru 
+ 
+This Best Practice Authored By: 
+Dale Brehm 
+6 Sigma Black Belt  
+Caterpillar Global Mining - Product Support

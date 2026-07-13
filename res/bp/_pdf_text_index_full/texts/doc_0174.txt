@@ -1,0 +1,432 @@
+SOURCE: 3.0 Component Life Management\3.04 Removal & Installation\3. Quick Win\Selective Cleaning Using Dry Ice.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PR ACTICE SERIES  
+Selective Cleaning Using 
+Dry Ice 
+ 
+ Maintenance 
+and Repair Application 
+Component 
+Life 
+Management 
+ 
+Component 
+Renewal 
+(CRC) 
+ 
+ MARC 
+Management 
+ 
+ 
+ 
+Selective Cleaning Using Dry Ice ............................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 5 
+5.0 Resources Required .......................................... 6 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+February 2009 
+0209-3.1-1137 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+The importance of clean machines and components when performing maintenance and repair 
+tasks has been understood and promoted for a long time.  Traditional cleaning methods with high 
+pressure water cannons and steam clean units will continue to play a vital role, though in certain 
+circumstances and applications, it is difficult to achieve the desired cleanliness standards. 
+ 
+This document describes the trial and results of Cryogenic or Dry Ice Cleaning at an Australian 
+coal mine.  The focus was the engine and pump rooms of a Cat 5230 excavator.  The mine 
+operation intends to continue the use of this method for select cleaning jobs such as in-frame 
+component overhauls when it is critical to have a clean working environment.  The process is also 
+extremely effective when cleaning electrical connectors and components as well as hydraulic and 
+pneumatic hoses and connectors. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The trial of this cleaning process was conducted in the engine and pump rooms of a 5230 
+excavator.  The purpose was to deliver a cleaner working environment for fitters.  This allows for 
+improved identification of mechanical and electrical faults.  A local dry ice cleaning contractor 
+performed the cleaning.   
+ 
+The work may be conducted in any safe location at the mine.  The process does not require 
+machine cool down (other than for any safety related reasons for those performing the cleaning).  
+The process generates a moderate level of noise, so it is recommended that the cleaning 
+operation be conducted within an area requiring hearing protection. 
+  
+Cryogenic cleaning uses dry ice pellets (CO
+2 in solid form) as the cleaning media. The dry ice 
+pellets are directed at high speed at the surface to be cleaned.  The intended surfaces are 
+cleaned very effectively and quickly via a combination of 1) Kinetic energy, 2) Low temperature 
+thermal energy, and 3) sublimation (instantaneous conversion of the pellets from a solid to vapor 
+state).   
+ 
+The following illustrations describe the physical processes that take place during the cleaning 
+operation. 
+   
+ 
+1) Kinetic. When dry ice pellets are accelerated in a jet of compressed air and strike a 
+surface at the speed of sound, they crack and loosen the coating on the surface being 
+treated.  
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+Selective Cleaning Using Dry Ice 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0209-3.1-1137 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+     
+ 
+  
+ 
+2) Low temperature thermal. The low temperature of dry ice pellets (-79C) makes the coating 
+brittle, cracks it and loosens it. This allows dry ice to permeate the coating. 
+ 
+ 
+ 
+ 
+ 
+ 
+3) Sublimation. Dry ice penetrates the coating and immediately sublimes (passes direct from 
+solid to vapor state). This results in a 700– fold increase in volume, an explosive effect that 
+lifts the coating off the surface.  
+ 
+The process uses compressed air and a variety of nozzle configurations to deliver and direct the 
+dry ice. The velocity and distribution of the media can be controlled to remove only the desired 
+contaminants and will not disturb paint, decals, labels, registration marks, etc.  Since the dry ice 
+pellets convert into a vaporous state, there is little to no residual material left (mainly dirt and grit 
+that is cleaned from the machine or components).  Chemicals or solvents are not used so 
+contaminated water treatment is not required.  Clean up and disposal time is minimal and drying 
+time is eliminated. 
+ 
+There are a number of mine operations in the region currently using this method for select 
+cleaning jobs.  The process is extremely effective when used for in-frame component overhauls, 
+major PCR work, cleaning of draglines, cleaning of electrical components and cabinets, or any 
+application where it is critical to have a clean, dry working environment. 
+ 
+The following pictures were taken during the trial:  
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+Selective Cleaning Using Dry Ice 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0209-3.1-1137 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+                                        Before          After 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+Selective Cleaning Using Dry Ice 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0209-3.1-1137 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+                                        Before          After 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3.0 Implementation Steps 
+ 
+Few mine operations are likely to invest in dry ice cleaning facilities or equipment.  Therefore, if 
+there are dry ice cleaning contractors within the mine vicinity, implementing this process is as 
+simple as engaging the services of local suppliers.  The cleaning operations can be performed in 
+any location allowed by the mine operation management. No special preparations are required.   
+ 
+ 
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+Selective Cleaning Using Dry Ice 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0209-3.1-1137 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+For the job described above, it took 1 hour to set up, two dry-ice units for 5 hours and another 
+hour to pack up. Based upon this:  
+ 
+Set up/Pack up:  AUD$150.00 per hour x 2 = AUD$ 300.00  
+Labor:    AUD$240 per hour x 5 = AUD$1,200 
+Air:    AUD$ 130.00 per hour x 5 = AUD$650 
+Dry Ice Consumption:  AUD$300.00 per hour x 5 = $ 1,500  
+Travel:   May be applicable  
+Total:   AUD$3,650 
+ 
+(These results are for comparative purposes.  Actual costs may differ depending on location.) 
+ 
+ 
+4.0 Benefits 
+ 
+The list of benefits is significant.  Here are a few of the major advantages delivered and realized 
+as a result of the trial: 
+• Fast and efficient  
+o During the above trial the equipment was completely decontaminated in 5 hours.  It 
+was estimated that it would have taken at least 10 hours with normal ‘wet’ methods 
+to achieve a significantly lesser result. 
+• Many time consuming and labor intensive steps are no longer required, including: 
+o Cool down, disassembly, transport of equipment and reassembly. 
+• Improve electrical equipment reliability 
+o As with so many sites, electrical issues due to damaged harnesses and connectors 
+are a major cause of machine stoppages.  The local dealer recognizes that 
+introducing high-pressure water into harnesses and connectors creates many of 
+these problems.  Further, in many cases, the mine water used for cleaning is highly 
+saline so the development of corrosion on electrical contacts develops over time.  
+Dry Ice cleaning removes the possibility of water being introduced into critical areas. 
+• A very clean result.  The photos above show how dramatic the results are, even in hard to 
+reach areas.  Technicians can easily identify faults and defects on thoroughly cleaned 
+components. 
+• High resistance paths in electrical connections caused by build up of dust and dirt over 
+time is believed to be the cause of many electrical faults.  This dust and dirt can be 
+effectively cleaned using dry ice. 
+• Due to the sublimation of the dry ice (turning to vapor) there are no secondary wastes left 
+behind.  This reduces costs for disposal, containment and collection of wastes and 
+significantly reduces clean-up time. 
+• Will not damage hydraulic/pneumatic hoses, electrical cable insulation or electronic 
+components.  
+• No chemicals required. 
+ 
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+Selective Cleaning Using Dry Ice 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0209-3.1-1137 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+5.0 Resources Required 
+ 
+A dry ice cleaning contractor in the mine operation area may conduct the cleaning.  
+ 
+Purchase of the dry ice cleaning equipment and operation training may also be an option. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+Dry Ice Solutions – Presentation Dec 08.ppt   (attached to this document) 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None at this time. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice written by: 
+ 
+Tim Mansfield 
+Equipment Management Consultant 
+Caterpillar Global Mining  
+Australia 
+tmansfield@cat.com 
++61 3 9953 9230 
+ 
+For further details or information regarding this Best Practice please contact the following: 
+ 
+Rafael Castrillon  
+Development Engineer  
+Caterpillar Global Mining Division   
+castrillon_rafael@cat.com 
++61 3 9953 9121 
+ 
+ 
+Special mention must be made of the following two organizations for their willingness to share 
+this information: 
+Hastings Deering Australia  
+CQ Dry Ice Solutions  (
+www.cqdis.com.au) 
+ 
+THE INFORMATION HERON IS THE PROPERTY OF CATERPILLAR INC. AND/OR ITS SUBSIDIARIES. WITHOUT WRITTEN 
+PERMISSION, ANY COPYING, TRANSMITTAL TO OTHERS, AND ANY USE EXCEPT THAT FOR WHICH IT IS LOANED, IS PROHIBITED. 
+Selective Cleaning Using Dry Ice 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+0209-3.1-1137 
+Caterpillar Confidential:  GREEN          Page 6 of 6

@@ -1,0 +1,700 @@
+SOURCE: 3.0 Component Life Management\3.04 Removal & Installation\2. Tactical\Mining Trucks Dump Body Removal & Install System.pdf
+PAGES: 12
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Mining Trucks Dump Body 
+Removal & Install System 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Mining Trucks Dump Body Removal & Install System 0 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 3 
+3.0 Implementation Steps ........................................ 7 
+4.0 Benefits .............................................................. 9 
+5.0 Resources Required ........................................ 10 
+6.0 Supporting Attachments / References ............. 10 
+7.0 Related Best Practices .................................... 10 
+8.0 Acknowledgements .......................................... 11 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+The following document is provided as a resource for Caterpillar dealers and customer mine sites. Content was provided 
+by one mine site to be shared with others as a suggested practice. Caterpillar shares it with you as a reference,  not a 
+requirement. Caterpillar reserves the right to add to, delete from, or remove this document entirely at any time in the 
+future. 
+ 
+ 
+ 
+ 
+ 
+  
+April 2014 
+1311-3.04-1325 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+The demand for productivity and cost optimization has pushed the OHT manufacturers to address 
+bigger hauling capacity, which subsequently has increased the size of the equipment and 
+components.  These bigger equipment and components has to be maintained representing a 
+significant challenge to the maintenance & repair operation in terms of facilities, special tooling, 
+people skills and safety. In this scenario the removal and installation of the dump body of a 
+mining truck represent a task that requires special care because of its size and weight. This task 
+requires extensive coordination of resources and observation of safety procedures to minimize 
+the inherent risk of working with a suspended load of such weight and dimensions. 
+ 
+Historically the dump body removal and installation has been executed by the use of two high 
+capacity portable cranes that are operated in precise coordination guided by a crew of normally a 
+minimum of 5 skilled people per crane plus 2 low boy truck operators for the transportation of the 
+dump body. In some specific cases it has been noticed that as much as 7 to 14 persons are being 
+assigned to this operation. 
+ 
+ 
+Illustration 1: Pictures of a typical dump body removal / installation operation executed with the assistance of two portable cranes. 
+ 
+This operation has to be done in an open and leveled area and in some cases can last more than 
+30 hours. Therefore, the service crew has to pay special attention to all safety procedures to 
+minimize the inherent risks of working with a “suspended” load that in some cases can be over 50 
+metric tons. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mining Trucks Dump Body Removal & Install System 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-3.04-1325 
+Caterpillar Confidential:  GREEN         Page 1 of 11 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+It is a risky and unpredictable operation, because of being performed in an open area can be 
+adversely affected by the weather conditions, especially wind conditions that can delay or stop 
+the execution of it for as long as it is necessary to operate within the safety recommendations. 
+Normally a wind speed of 35 km/h (21.7mph) is accepted as the maximum limit for maneuvering 
+this type of loads with a portable crane.  
+ 
+The following bullets summarize the main concerns or disadvantages of the traditional 
+“suspended load” dump body removal and install procedure: 
+ 
+• Method or concept used. Suspended load of as much as 52 plus tons (797 Dump Body 
+case) 
+• Accessories. Use of lifting devices such as cables/chain/rope that represent a high risk if 
+not maintained, inspected and installed / used carefully.  
+• Service crew is forced to execute the task of removing the dump body and hoist cylinder 
+pins under a suspended load. 
+• Availability of suitable portable crane to handle the dump body weight. This normally 
+requires extensive coordination to ensure the availability of the cranes when they are 
+needed. A perfect coordination won’t ensure 100% crane availability when for example a 
+plant emergency arises. 
+• Weather conditions. It can adversely affect the dump body R&I operation, delaying or 
+cancelling completely the task. This in fact can ruin any possible coordination done in 
+advance. As a consequence, the maintenance planning cannot be achieved. 
+• Manpower. Significant manpower is required to complete the operation. Normally the 
+people involved in this operation can be as much as 7(using one crane) to 14 persons 
+(using two cranes). 1 lead supervisor, 1 safety expert, 2 or 4 mechanics to control the 
+position cables (“wind control” cables), 2 or 4 Riggers to assist the crane operator by 
+signals, 1 or 2 skilled crane operators and 2 low boy truck operators. 
+• Execution time. Because of all the concerns and uncontrolled events that could be present 
+at the time of the operation, the dump body execution time can be as high as 24 hours, 
+and in some cases higher. Normally the planning department schedules the dump body 
+change for 2 eight hours shift, but this estimate can be easily affected as explained before 
+by many external factors. 
+• Pin removal. The pins removal operation can be also a challenge for the service crew 
+when using the two cranes method, because of the inability of controlling the dump body 
+position in the four (4) lifting points separately. The pin removal can be in some cases a 
+bottle neck in terms of execution time. 
+• Dump body transportation costs. The uncontrolled factors already mentioned may in some 
+cases increase the transportation costs when dump body repairs are done outside the 
+mine site, e.g. parking costs 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mining Trucks Dump Body Removal & Install System 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-3.04-1325 
+Caterpillar Confidential:  GREEN         Page 2 of 11 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+The Best Practice herein presented represents a significant improvement, an innovative solution 
+to minimize or eliminate the risks and disadvantages of the traditional dump body removal & 
+install operation. 
+ 
+Illustration 2: Picture of the OHT Dump Body Removal & Installation System 
+ 
+ 
+ 
+The OHT Dump Body Removal & Install System eliminates the risks and disadvantages of 
+working with a suspended load by the use of an hydraulically operated system that consist mainly 
+in four (4) support arms located in 4 respective columns (single zone configuration) that lift, 
+maneuver and position the dump body as needed by remote control. This approach changes the 
+operation from a “suspended load” to a “supported load” scenario eliminating or minimizing the 
+disadvantages mentioned previously. 
+ 
+The OHT Dump Body R&I System is a solution created and manufactured by Novamine SpA. 
+(Patents involved: CL20080002638 and CL20080002637; Patent Pending: CL20070001876), a 
+specialized company in the field of development and manufacturing of innovative mining solutions 
+located in Antofagasta Chile. 
+ 
+2.0 Best Practice Description 
+ 
+The OHT Dump Body Removal & Install System consist of an adjustable structure of 6 columns 
+(full configuration) operated hydraulically that are positioned to form 2 work zones dedicated to 
+perform the operation of dismounting and mounting the truck dump body.  
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mining Trucks Dump Body Removal & Install System 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-3.04-1325 
+Caterpillar Confidential:  GREEN         Page 3 of 11 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Illustration 3: Dump Body R&I System diagram 
+ 
+ 
+The system operates basically with 4 support arms installed in 4 respective columns that 
+combined provides tridimensional adjustment (x, y, z). The sideway or horizontal adjustment of 
+the columns is designed to facilitate the positioning (entry and exit) of the truck. And the vertical 
+adjustment of the support arms are dedicated to lift and maneuver the body to remove it from the 
+truck and to positioning the dump body in 4 support fixtures or directly onto a low boy 
+transportation on highway truck.   
+ 
+The horizontal movement of the columns is handle by the operator from the low part of each 
+column and the vertical movement of the arms is operated either through wireless remote control 
+or panel control located in the OTH Dump Body R&I System. 
+ 
+Note: The central columns rotate in 180 degrees to allow the operation in both work zones. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mining Trucks Dump Body Removal & Install System 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-3.04-1325 
+Caterpillar Confidential:  GREEN         Page 4 of 11 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+ 
+Illustration 4: Columns and support arms schematic 
+ 
+ 
+The operation starts with the positioning of the truck in the center of the work zone. To facilitate 
+the proper location of the truck positioning marks are being added to the work zone floor. Once 
+the truck has been positioned the columns and support arms are adjusted to support the body. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Illustration 5: The truck is located in the center of the work zone. Support arms and columns adjusted to support the dump body.
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mining Trucks Dump Body Removal & Install System 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-3.04-1325 
+Caterpillar Confidential:  GREEN         Page 5 of 11 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+After the dump body is supported by the arms, the dump body gets lifted enough to remove the 
+load from the pins and ensure the easy removal of them. To facilitate the pins removal the 4 
+support arms can be adjusted independently.  
+ 
+ 
+Once the pins are removed the dump body can be lifted and the truck can be released. 
+ 
+ 
+ 
+Illustration 7: Dump Body removed and the truck released. The system is operated through a wireless remote control. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mining Trucks Dump Body Removal & Install System 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-3.04-1325 
+Caterpillar Confidential:  GREEN         Page 6 of 11 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+Next the dump body can be loaded into a low boy truck or mounted on supports to perform a local 
+repair. 
+ 
+The general technical specifications of the system are the following: 
+ 
+• Columns hoist capacity (per column): 20 Tons. 
+• Total hoist capacity: 80 Tons. 
+• Distance between columns (width): 6 meters. 
+• Truck models capable of servicing: from Cat 785 to Cat 797 size range. 
+• Hoist displacement: 5.25 meters  
+• Lift time: 8 minutes. 
+• Maximum Hydraulic Pressure: 3.000 Psi. 
+• Electrical power supply: 380 V, 50 – 60 Hz. 
+• Electric Motor Power: 10 HP. 
+• Fully functional wireless remote control. 
+• Support fixtures (support dump body). 
+• Dump body download from low boy truck System. 
+ 
+3.0 Implementation Steps 
+ 
+The implementation steps to follow are related to the preparation of the work zones, building the 
+work zones platforms (concrete floor) and to follow the recommendations of the manufacturer. 
+ 
+The details for the implementation of the system can be obtained directly by contacting the 
+manufacturer or the mining operations listed below that are currently operating the system. 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mining Trucks Dump Body Removal & Install System 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-3.04-1325 
+Caterpillar Confidential:  GREEN         Page 7 of 11 
+
+===== PAGE 9 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+The manufacturer contact information is: 
+ 
+NOVAMINE SPA. 
+Street: Av. Antonio Rendic 6904  
+Postal Code 1265823 
+Antofagasta – Chile 
+Phone: +56-55-2566234 / +56-55-2566229 
+Website: www.nova-mine.com 
+Contact email: contacto@novamine.cl 
+Contact person: María Alejandra Giménez 
+International Sales Manager 
+Alejandra.gimenez@novamine.cl 
+Mobile: +56-9-62492110 
+ 
+EDITOR’S NOTE:  Although Caterpillar does not endorse this particular supplier, Finning Chile 
+has experience with the following products or companies. We welcome additional supplier 
+recommendations from our dealer network. 
+  
+ 
+Mining Operations that are currently operating the system: 
+  
+Mining Operation Parental 
+Company Location Since Website 
+ 
+Mantos Blancos 
+ 
+Anglo American  
+ 
+Antofagasta 
+II Region – 
+Chile 
+ 
+2003 
+ 
+http://www.angloamerican-
+chile.cl  
+ 
+Codelco - Radomiro 
+Tomic 
+ 
+Codelco  
+ 
+Calama 
+II Region – 
+Chile 
+ 
+2004 
+ 
+http://www.codelco.com 
+ 
+El Abra  
+ 
+Freeport-McMoRan  
+Copper & Gold 
+ 
+Calama 
+II Region – 
+Chile 
+ 
+2006 
+ 
+http://www.fcx.com 
+ 
+El Tesoro  
+ 
+Antofagasta 
+Minerals SA. 
+ 
+Antofagasta 
+II Region – 
+Chile 
+ 
+2009 
+ 
+http://www.tesoro.cl 
+ 
+Candelaria 
+ 
+Freeport-McMoRan  
+Copper & Gold 
+ 
+Antofagasta 
+II Region – 
+Chile 
+ 
+2009 
+ 
+http://www.fcx.com 
+ 
+Codelco – 
+Chuquicamata 
+ 
+Codelco  
+ 
+Calama 
+II Region – 
+Chile 
+ 
+2012 
+ 
+http://www.codelco.com 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mining Trucks Dump Body Removal & Install System 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-3.04-1325 
+Caterpillar Confidential:  GREEN         Page 8 of 11 
+
+===== PAGE 10 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+Codelco - Andina 
+ 
+ 
+ 
+Codelco  
+ 
+Los Andes  
+V Region -  
+Chile 
+ 
+2013 
+ 
+http://www.codelco.com 
+ 
+Los Pelambres 
+ 
+ 
+ 
+Antofagasta 
+Minerals SA. 
+ 
+Salamanca 
+IV Region - 
+Chile 
+ 
+2013 
+ 
+http://www.pelambres.com 
+ 
+Escondida 
+ 
+ 
+ 
+BHP Billiton Ltd. 
+ 
+Antofagasta
+II Region -  
+Chile 
+ 
+2013 
+ 
+http://www.bhpbilliton.com 
+ 
+Codelco – Ministro 
+Hales 
+ 
+Codelco  
+ 
+Calama 
+II Region – 
+Chile 
+ 
+2013 
+ 
+http://www.codelco.com 
+ 
+ 
+4.0 Benefits 
+ 
+The main benefits aimed by the designer / manufacturer and documented by the customers 
+currently using the system are: 
+ 
+• Significant improvement in safety by moving from a “suspended load” to a “supported load” 
+operation. The risk reduction using the body R&I system can be observed in many 
+locations: 
+o Working conditions under a heavy suspended load eliminated. 
+o No need for operating mobile cranes eliminating the risk of potential erroneous 
+coordination between both lifting machines. 
+o No need for lifting devices (Cables, slings,…), eliminating the risk of faulty material 
+and inadequate installation of these devices. 
+o Improved visibility for the person in charge of the operation. 
+o Risk associated to the pins removal mitigated. 
+o Mechanical locks prevent /minimize the risk of a dump body falling in the case of a 
+malfunction of the hydraulic hoist system. 
+o Unexpected weather changes influences eliminated. 
+• In terms of the Maintenance & Repair Processes, the benefits are also significant in terms 
+of efficiency, resources, and effectiveness. The following are the main benefits 
+documented: 
+o Dump Body R&I time reduce significantly. Execution time reduction of as much as 
+10 times has been documented. 
+o Positive influence in MR (Maintenance Ratio) by a significant reduction of the 
+personnel needed to complete the dump body R&I operation. Normally 3 to 4 
+trained people is sufficient to perform the task. 
+o No need for the use of cranes eliminating the cost and coordination of highly 
+demanded equipment. 
+o Unexpected weather related delays eliminated contributing effectively to comply 
+with maintenance event planning. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mining Trucks Dump Body Removal & Install System 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-3.04-1325 
+Caterpillar Confidential:  GREEN         Page 9 of 11 
+
+===== PAGE 11 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+o No additional specialized equipment needed for a different truck model or size. The 
+system is capable of handling various dump body sizes and configurations.  
+o Eliminate extra costs associated with the dump body transportation system by 
+reducing the unexpected delays. 
+o Improved certain maintenance and repair tasks efficiency and effectiveness by 
+removing the dump body to expedite the execution of the tasks such as R&I of 
+transmissions, torque converters, final drives, etc. The need for special support 
+equipment is minimized and the use of the shop overhead crane maximized. 
+ 
+ 
+5.0 Resources Required 
+ 
+Apart from the acquisition of dump body R&I system the main resources needed are related to 
+the assignment and preparation of the area in where this equipment will be installed. 
+ 
+All technical specifications, such as the ones for the concrete floor of the work areas, need to be 
+discussed with the manufacturer of the equipment. 
+ 
+The manufacturer contact information is: 
+ 
+NOVAMINE SPA. 
+Street: Av. Antonio Rendic 6904  
+Postal Code 1265823 
+Antofagasta – Chile 
+Phone: +56-55-2566234/ +56-55-2566229 
+Website: 
+www.nova-mine.com 
+Contact email: contacto@novamine.cl 
+Contact person: María Alejandra Giménez 
+International Sales Manager 
+Alejandra.gimenez@novamine.cl 
+Mobile: +56-9-62492110 
+ 
+6.0 Supporting Attachments / References 
+ 
+Explanatory videos from NOVAMINE SPA. The first video is in Spanish with English subtitles and 
+it shows the customer’s opinion regarding the benefits of the Dump Body R&I System. The 
+second video is in English and it explains very effectively the basic operation of the Dump Body 
+R&I System.  
+ 
+• https://vimeo.com/80365293  
+• https://www.youtube.com/watch?v=24pYDsIPRcY 
+ 
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mining Trucks Dump Body Removal & Install System 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-3.04-1325 
+Caterpillar Confidential:  GREEN         Page 10 of 11 
+
+===== PAGE 12 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Abelardo A. Flores 
+Product Performance Manager 
+Caterpillar Mining Chile Servicios Ltda.  
+Flores_Abelardo@cat.com 
+Phone: 1-309-675-8874 
+ 
+Pablo E. Cordero A. 
+Product Support Consultant 
+Caterpillar Global Mining LLC 
+Pablo.cordero@cat.com 
+Phone: +56-2-2366-5166 
+ 
+Ivan Parra Coloma 
+Process Improvement Manager 
+Finning SA 
+Ivan.parra@finning.cl 
+Phone: +56-55-591038 
+ 
+Special thanks to Novamine SpA. for the willingness and interest of sharing the concept and main 
+characteristics of the Dump Body Removal & Install System and to Mar ía Alejandra Gim énez 
+from Novamine who provided the necessary information to structure and support the write up of 
+this Best Practice. 
+  
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Mining Trucks Dump Body Removal & Install System 
+DATE 
+2/18/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1311-3.04-1325 
+Caterpillar Confidential:  GREEN         Page 11 of 11

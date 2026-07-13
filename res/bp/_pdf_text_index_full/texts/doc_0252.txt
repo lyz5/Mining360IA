@@ -1,0 +1,316 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\2. Tactical\Tool Calibration Lab.pdf
+PAGES: 6
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Tool Calibration Lab 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild 
+Component 
+Life 
+Management 
+Safety MARC 
+Management 
+ 
+ 
+ 
+Tool Calibration Lab ................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 3 
+5.0 Resources Required .......................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices ...................................... 5 
+8.0 Acknowledgements ............................................ 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+April 2007 
+0507-4.3-1077 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction 
+ 
+Proper quality control requires that precision measurement tooling be well maintained and go 
+through periodic calibration checks to ensure accuracy. These precision tools include calipers, 
+micrometers, torque wrenches, pressure gauges, and many other tools. Additionally, certification 
+programs such as ISO 9000 require a complete tool calibration program and documentation. 
+ 
+Typically, the tools are sent out to a supplier who has the specialized equipment to perform 
+calibration checks and adjustments.  This means that for the CRC must either have spare tools or 
+do without them for the time required to complete the calibration. 
+ 
+An alternative to outsourced tool calibration is to acquire the equipment to perform tool 
+calibrations and do the work in-house. Some dealers also sell this calibration service to 
+customers and other industries as an additional source of revenue. 
+ 
+2.0 Best Practice Description 
+ 
+One dealer began their own internal tool calibration operation 
+with a 20 square-meter facility and two technicians. An initial 
+equipment cost of $12,000 provided capability to calibrate 
+length, pressure, and torque-measuring devices. Later 
+expanded to 150 square-meters, the lab now employees seven 
+people (one coordinator, four technicians, one apprentice, and 
+one assistant) and serves 120 customers in the automobile, 
+mining, and metallurgy industries.  
+ 
+ 
+3.0 Implementation Steps 
+ 
+Analyze the business opportunity. 
+• Current cost of tooling calibration 
+• Pricing charged by outside calibration 
+      services. 
+• Potential customers of the service. 
+• Time lost or spare tool costs. 
+• Equipment costs 
+• Staff requirements 
+• Training. 
+• Return on investment calculation. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Tooling requirements: 
+Item Cost (USD) 
+Building $19,000 
+Air conditioning, etc. $11,400 
+Calibration tools (torque, 
+temperature, pressure, 
+length, mass) 
+$79,400 
+Furniture 
+Multifunctional equipment 
+and phones 
+$7,000 
+Total $116,800 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool Calibration Lab 
+DATE 
+2/19/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0507-4.3-1077 
+Caterpillar Confidential:  GREEN          Page 1 of 5 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+                                                                                     
+  
+   
+ 
+ 
+                                                                                    
+ 
+ 
+                                                                                   
+  
+ 
+ 
+ 
+Dimensional Lab 
+Micrometers 
+Analog and Digital Dial Indicators 
+Depth Gauges 
+Calibers 
+ 
+Torque Lab 
+Torque wrenches 
+Torque multipliers 
+Torque drives 
+ 
+Pressure Lab 
+Vacuum and pressure gauges 
+Valves and pressure switches 
+Transmitters and transducers 
+Differential pressure gauges 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool Calibration Lab 
+DATE 
+2/19/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0507-4.3-1077 
+Caterpillar Confidential:  GREEN          Page 2 of 5 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+                                                                              
+  
+ 
+ 
+                                                                       
+  
+ 
+ 
+4.0 Benefits 
+ 
+Having an in-house calibration lab allows the CRC and other dealer-owned shops to use a highly 
+specific and tightly controlled tools program. The lab also provides measuring tool training (proper 
+use and maintenance) and professional calibration services to outside customers. Commercial 
+benefits from service sales are significant. In 2006, 4651 tools were calibrated, with 1140 from 
+external customers.  
+ 
+Dealer is ISO 17025 certified to calibrate dimension, torque, temperature, and pressure tooling. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Temperature Lab 
+Thermometers 
+Temperature controllers 
+Thermocouples 
+Transmitters 
+ 
+ 
+Electrical Lab 
+Current and Voltage 
+Tachometer 
+Test Bench Gauges 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool Calibration Lab 
+DATE 
+2/19/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0507-4.3-1077 
+Caterpillar Confidential:  GREEN          Page 3 of 5 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+5.0 Resources Required 
+ 
+Total cost of investments: Approximately $120,000 
+                                          Staffing costs 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+• A complete listing of all calibration tools and costs is attached. 
+ 
+Additional photos: 
+ 
+ 
+  
+ 
+  
+ 
+  
+  
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool Calibration Lab 
+DATE 
+2/19/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0507-4.3-1077 
+Caterpillar Confidential:  GREEN          Page 4 of 5 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+6 Sigma Black Belt 
+Global Mining Product Support 
+brehm_dale_e@cat.com  
++1-309-675-6325 
+ 
+Ricardo Chegwin 
+Technical Manager 
+ricardo_chegwin@gecolsa.com 
+ 
+Wilson Rodriguez 
+Metrology lab Coordinator 
+wilson_rodriguez@gecolsa.com 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Tool Calibration Lab 
+DATE 
+2/19/2015 
+CHG 
+NO 
+03 
+NUMBER 
+0507-4.3-1077 
+Caterpillar Confidential:  GREEN          Page 5 of 5

@@ -1,0 +1,182 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+April 2021 
+4.03-210413-1 
+875 W Cushing St., Tucson, AZ 85745  cat.com/mining 
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+Hydraulic Test Bench 
+Reflector 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Hydraulic Test Bench Reflector ................................... 1 
+1.0 Introduction .......................................................... 2 
+2.0 Best Practice Description.................................... 3 
+3.0 Implementation Steps ......................................... 4 
+4.0 Benefits ................................................................ 4 
+5.0 Resources Required ........................................... 4 
+6.0 Supporting Attachments / References ............... 4 
+7.0 Related Best Practices........................................ 4 
+8.0 Acknowledgements ............................................. 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Test Bench Reflector 
+DATE 
+04/13/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210413-1 
+Caterpillar: Confidential  Yellow          Page 2 of 4 
+1.0 Introduction  
+ 
+Whilst carrying out a Hydraulic Test process, the recommended oil leak detection method is to use 
+a dye that glows bright green under ultraviolet light. The dye will show the specific leak path of the 
+oil when a black light is used. The dye is not visible in the oil under normal light. After normal 
+testing is completed, an oil leakage inspection is carried out in the dark while the component is on 
+the test unit but not working. 
+Since the oil leakage testing is carried out in darkness, work area around the component is not 
+clear and can create a trip and collision hazard. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Test Bench Reflector 
+DATE 
+04/13/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210413-1 
+Caterpillar: Confidential  Yellow          Page 3 of 4 
+2.0 Best Practice Description 
+ 
+In order to clearly identify the work area during darkness, the te st b ench area is covered in 
+phosphorus tape with increased c aution symbols at ou r test area. By this way even in darkness 
+the warning bands can be seen. The work area most likely to become oily is covered with non-slip 
+floor paint. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Hydraulic Test Bench Reflector 
+DATE 
+04/13/2021 
+CHG 
+NO 
+00 
+NUMBER 
+4.03-210413-1 
+Caterpillar: Confidential  Yellow          Page 4 of 4 
+3.0 Implementation Steps 
+ 
+- Outline work area with phosphorus band. 
+- Cover work area with non-slip paint. 
+ 
+4.0 Benefits 
+ 
+1. Work area as walkway more visible 
+2. Removes slip hazard 
+ 
+5.0 Resources Required 
+ 
+- Non-slip Floor paint :150 Euro 
+- Phosphorous reflective tape 
+- Labor: 8 hours 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Mustafa Tuzcu 
+CRC Engineer Intern 
+Borusan Makina ve Güç Sistemleri 
+ 
+This Best Practice designed by: 
+Aycan Ulu 
+CRS Workshop Engineer 
+Borusan Makina ve Güç Sistemleri 
+ 
+Project and Best practice supported by: 
+Ömer Emre Demirkale 
+CRC Manager 
+Borusan Makina ve Güç Sistemleri

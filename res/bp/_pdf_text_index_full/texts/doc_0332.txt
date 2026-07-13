@@ -1,0 +1,275 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Fixture for 3500 Cylinder Head Machining.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+May 2013  
+1210-4.04-1288  
+  
+ 
+    
+    
+DEALER BEST PRACTICE SERIES  
+Fixture for 3500 Cylinder 
+Head Machining   
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC)  
+ 
+MARC  
+Management 
+ 
+Centering Device In Order To Improve Machining Of 
+Cylinder Head Series 3500 Error! Bookmark not defined. 
+ 
+1.0  Introduction....................................................... 0 
+2.0  Best Practice Description ................................. 1 
+3.0  Implementation Steps ....................................... 2 
+4.0  Benefits ............................................................ 4 
+5.0  Resources Required ......................................... 4 
+6.0  Supporting Attachments / References .............. 5 
+7.0  Related Best Practices ..................................... 5 
+8.0  Acknowledgements .......................................... 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided 
+by one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices”.  Caterpillar makes no representation or 
+warranty about the information contained in this docu ment or the products referenced herein. Caterpillar welc omes 
+additional “Best Practice” recommendations from our dealer network. 
+ 
+ 
+1.0 Introduction  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Centering Device In Order To Improve Machining Of 
+Cylinder Head Series 3500 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1288  
+Caterpillar Confidential:  GREEN         Page 1 of 6 
+A new device in order to improve machining of head as cylinder series 3500 has been 
+implemented at the Machining Workshop in Ferreyros S.A. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The focus of this Best Practice is reduce the centering time during the rebuilding of cylinder 
+head at the Milling Machine. This kind of device is mounted on the table of the milling machine 
+and tightened by four fixation devices. The adjustment fixation device must be tightened very 
+slowly and accurate
+ (See the picture 1). 
+ 
+ 
+ 
+Picture 1.  Centering Device 
+ 
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Centering Device In Order To Improve Machining Of 
+Cylinder Head Series 3500 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1288  
+Caterpillar Confidential:  GREEN         Page 2 of 6 
+Before the implementation of this Best Practice, the average time of centering was 20 min, but 
+now using this kind of device the new time of centering is 5 min. So, there is a 75% reduction of 
+centering time. 
+ 
+3.0 Implementation Steps 
+ 
+• Put and Tighten  the device on the table of milling machine (See the picture 2) 
+ 
+ 
+ 
+Picture 2.  Adjusted device   
+ 
+• Mount the head of cylinder on the device using a s tud, which it goes through the part (See 
+the picture 3). 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Centering Device In Order To Improve Machining Of 
+Cylinder Head Series 3500 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1288  
+Caterpillar Confidential:  GREEN         Page 3 of 6 
+ 
+ 
+               
+ 
+      Picture 3.  Steps to Tighten the head as cylinder  
+ 
+ 
+ 
+  
+
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Centering Device In Order To Improve Machining Of 
+Cylinder Head Series 3500 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1288  
+Caterpillar Confidential:  GREEN         Page 4 of 6 
+• Machine the top surface of the part (See the pictu re 4). 
+ 
+ 
+ 
+ 
+ 
+Picture 4.  Steps to Tighten  
+ 
+ 
+4.0 Benefits 
+ 
+• Reduce centering time of cylinder head on the mill ing machine by 75%. 
+• Machining accuracy of top surface head as cylinder . 
+ 
+ 
+5.0 Resources Required 
+ 
+• Fabrication shop 
+• Device specification are showed in the picture 5. 
+ 
+ 
+ 
+Top surface  
+Cutting tool  
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Centering Device In Order To Improve Machining Of 
+Cylinder Head Series 3500 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1288  
+Caterpillar Confidential:  GREEN         Page 5 of 6 
+ 
+ 
+ 
+Picture 5.  Device Specification 
+ 
+ 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+  
+
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Centering Device In Order To Improve Machining Of 
+Cylinder Head Series 3500 
+DATE 
+6/9/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1210-4.04-1288  
+Caterpillar Confidential:  GREEN         Page 6 of 6 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Name     Frank Córdova R. 
+E mail     
+frank.cordova@ferreyros.com.pe  
+ 
+Recognition: 
+ 
+Team:                  Miguel Mauriola / Operations Support Chief 
+                        Rafael Volta / Machine Chief 
+               Romulo Olarte / Machine Supervisor 
+Sponsor:              Rodolfo Gerstein / Manager Machine Shop

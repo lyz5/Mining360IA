@@ -1,0 +1,444 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.04 CRC Management\2. Tactical\Managing Exchange Component Inventory Reduces Costs.pdf
+PAGES: 8
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+December 2006  
+0107-4.5-1055  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Managing Exchange 
+Component Inventory 
+Reduces Costs 
+ 
+Application  Maintenance  Site 
+Management  
+Component 
+Rebuild Safety MARC 
+Management  
+ 
+ 
+ 
+Managing Exchange Component Inventory Reduces 
+Costs ......................................................................... 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 6 
+4.0  Benefits ............................................................. 7 
+5.0  Resources Required .......................................... 7 
+6.0  Supporting Attachments / References ............... 7 
+7.0  Related Best Practices ...................................... 8 
+8.0  Acknowledgements ........................................... 8 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat ® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.  
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Component Exchange – Economical Inventory 
+Management 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.5-1055  
+Caterpillar Confidential:  GREEN          Page 2 of 8 
+1.0 Introduction  
+ 
+Most Mining customers require an inventory of exchange major components to support their 
+production machines, primarily haul trucks and shovels.  The inventory of exchange components 
+can be owned by the customer, common for small fleets of equipment, or owned by the dealer as 
+part of a major component exchange program, a common practice for large fleets of equipment. 
+ 
+While the purpose of a component exchange inventory is to minimize machine downtime, the 
+costs to carry quantities of spare components can be significant. A typical set of components to 
+support a fleet of Off Highway Trucks would include the engine, torque converter, transmission, 
+differential, front and rear wheel groups, front and rear suspension cylinders, and hoist cylinders. 
+For a 793, the seed cost of a set of new components for an exchange program exceeds 
+$900,000. 
+ 
+Determining how many exchange components are required to support a fleet of machines can 
+depend on several key variables, but an accurate assessment considering all the factors 
+impacting component demand can help to minimize and manage inventory costs. 
+ 
+This Best Practice summarizes factors to consider in the evaluation of component exchange 
+inventory levels. Due to the complexity of factors to consider and the costs involved, component 
+exchange inventory management makes a good 6Sigma project. 
+ 
+2.0 Best Practice Description 
+ 
+Many dealers supporting large mining customers use a “rule of thumb” guide to determine how 
+many major components to stock in an exchange program based on the number of machines to 
+be supported. The “rule of thumb” guidelines vary from one dealer to the next, but the most 
+common practice is to stock one set of major components for every 10 machines. A few dealers 
+follow a practice up to one set of components for every 15 - 18 machines.  
+ 
+While a “rule of thumb” guideline maybe easy to 
+manage, there is a high cost to stock exchange 
+components. Few dealers have actually 
+quantified the “ideal” number of components 
+“required” to meet expected consumption and 
+provide backup for unplanned component 
+repairs. 
+ 
+Most dealers think in terms of a “set” of 
+components for machine, and not in terms of 
+individual components.  For example, a fleet 
+may not consume as many fronts wheel groups 
+as rear wheel groups due to the life of the 
+components, therefore the same quantities of 
+each component may not be required. Another 
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Component Exchange – Economical Inventory 
+Management 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.5-1055  
+Caterpillar Confidential:  GREEN          Page 3 of 8 
+example is that it may take a CRC twenty five days to rebuild an engine and only five days to 
+rebuild a transmission. Perhaps an exchange inventory would not need as many transmissions as 
+engines due to the shorter turnaround time from the CRC. 
+ 
+The above concepts could impact an exchange inventory management plan by adjusting the 
+quantities stocked based on component life and CRC turnaround time.  An inventory plan could 
+look like the following: 
+ 
+Engine One in stock for every 10 machines 
+Transmissions One in stock for every 15 machines 
+Rear Wheel Group Two (set) in stock for every 12 ma chines 
+Front Wheel Group Two in stock for every 18 machine s 
+Rear Suspensions Two in stock for every 15 machines  
+Front Suspensions Two in stock for every 20 machine s 
+ 
+Evaluating requirements and adjusting quantities in inventory based on the requirement and key 
+driving factors can save substantial investment costs, better utilize assets, all the while meeting 
+the availability needs of the customer. 
+ 
+  
+  
+ 
+Managing an exchange component inventory becomes fairly simple once a process is 
+established which determines quantities of components and which components are required to 
+support a mining fleet of a given size.  Establishing a component exchange management plan is 
+best performed as a 6Sigma project due to the multiple variables, cost, and risk involved. 
+Important to the process is establishing a process owner, someone responsible for the 
+management of component exchange inventory. 
+ 
+Key factors to consider: 
+ 
+• Customer Availability Requirements and Guarantees  
+Guarantees with financial penalties involved pose a risk that may justify higher exchange 
+inventory investment. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Component Exchange – Economical Inventory 
+Management 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.5-1055  
+Caterpillar Confidential:  GREEN          Page 4 of 8 
+ 
+• Machine Population  
+It is important to define how many machines of a given model and arrangement are being 
+supported by major component exchange components. As populations change, stock 
+quantities may need to be adjusted. 
+ 
+• Component Life  
+What is the local experience as to average life of each component? Components with 
+shorter average component life may require more spare components than components 
+with a long component life. 
+Customer fluid cleanliness and maintenance practices, along with application severity, 
+have significant impact on component life. 
+ 
+• Equipment Monitoring and Maintenance Practices  
+A big factor is “planned” rebuilds versus “unplanned” rebuilds. Planned rebuilds can be 
+scheduled with some flexibility and are easier to manage.  Unplanned rebuilds are difficult 
+to manage. In general, if less than 80% of the component rebuild activity is planned, there 
+will be a requirement to increase inventories to protect against surprises.  
+ 
+Customer monitoring practices such as machine inspections, VIMS monitoring, particle 
+count and SOS monitoring, and magnetic plug inspections impact the ability to plan before-
+failure rebuilds. 
+ 
+• Component Reliability  
+Components that have a history of high reliability pose less risk of an unplanned 
+breakdown and therefore may require less protective inventory. 
+ 
+• CRC Component Rebuild Turnaround Time  
+This is the amount of time it takes a CRC to rebuild a component. For smaller components, 
+which may only require 4 to 6 days to rebuild, the risk of machine downtime is lower and 
+fewer components would be required for stock. If a spare exchange component is 
+consumed, it can be replaced within a few days by the CRC. 
+ 
+Components with a long rebuild time, such as engines, carry increased risk and may 
+dictate a higher stock level. 
+ 
+Shop turnaround time is defined as the number of days it takes to complete the rebuild of a 
+component. This measurement takes all shop delays into account, such as ordering and 
+receiving parts, single versus multiple shifts, machining /salvage delays, etc. 
+ 
+Note : Delays in the CRC should be reviewed for opportunities to improve the turnaround 
+time. If engine block salvage is a major rebuild delay, it may be more economical to stock 
+a spare block rather than a spare engine. The same may be true for other key parts, such 
+as spindles. 
+ 
+• Timing of Planned Rebuilds 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Component Exchange – Economical Inventory 
+Management 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.5-1055  
+Caterpillar Confidential:  GREEN          Page 5 of 8 
+When a new fleet of machines is sold, the initial stock of spare components is primarily 
+needed to protect machine availability against the risk of an unplanned component 
+breakdown.  This “protective” stock can be a minimal stock. 
+ 
+The machines will not enter a planned component rebuild cycle until approximately two 
+years after initial machine delivery.  During a rebuild cycle, more exchange component 
+stock may be required depending on how many components will be rebuilt, over what time 
+frame, and how long it takes to rebuild and turnaround a component in the CRC. 
+ 
+• Cat Reman  
+If Caterpillar Remanufactured components are considered as a back up to CRC peak 
+component rebuild cycles or unplanned rebuilds, then the time to order and receive a 
+Reman component is a factor.  Short lead-time can reduce inventory requirements by 
+covering any temporary shortfalls.  Long lead time would mean Reman components could 
+be a back up plan for peak CRC workloads, but not for unplanned rebuilds. 
+ 
+• Advance Scheduling  
+The ability of a customer and dealer team to communicate and schedule rebuilds in 
+advance can be an important critical success factor.  This enables inventory assets to be 
+assigned to a scheduled activity, and provides an advance warning if there is a coming 
+shortage situation. 
+ 
+• CRC Capacity and Volume   
+Based on machine population and scheduled component rebuild activity, what is the normal 
+number of any given component that would be in process at the same time?  Is exchange 
+component inventory level matched to a monthly in process volume? 
+ 
+• Days at Risk  
+How often does the inventory of a particular exchange component fall to zero in stock and 
+how many days is the inventory at zero?  This represents “days at risk” when if there is an 
+unplanned breakdown, no spare component is available.  Measuring the days at risk and 
+establishing an “acceptable” level makes for an important part of the analysis. 
+ 
+Analyzing the above factors, an optimum inventory level can be determined which both 
+supports the planned demand for exchange components and protects against the risk of 
+unplanned breakdowns. 
+ 
+The following is a very simplified analysis meant to illustrate the basic principles. 
+ 
+A large mining customer orders a fleet of twenty five (25) 785C trucks. These are the first 785s 
+in the territory and the dealer has no exchange components in stock. The machines will 
+operate 7000 hours per year. The application is moderate. The customer uses the dealer for all 
+component rebuilds and expects an exchange component program to support his fleet. 
+ 
+The machines will be delivered over a 12-month period, therefore the planned component 
+rebuilds would be expected to occur over a 12-month period. 
+ 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Component Exchange – Economical Inventory 
+Management 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.5-1055  
+Caterpillar Confidential:  GREEN          Page 6 of 8 
+The dealer needs to plan for an exchange component inventory, initially to protect against 
+unplanned breakdowns and then to support the planned component rebuilds. 
+The factors impacting the analysis are contained in the following table. 
+ 
+ 
+ 
+The stock to support the rebuild cycle was determined by the number of components to be 
+rebuilt over the 12-month rebuild cycle and the CRC capacity and turnaround time. During the 
+rebuild cycle, the CRC must complete two engine rebuilds per month. It takes 25 days to 
+rebuild an engine, therefore two engines must be in process at the same time and thus two 
+exchange components are required. 
+ 
+Two transmissions must also be rebuilt each month, however, a rebuilt only takes 8 days, so 
+each transmission can be rebuild one after another. Only one exchange component is required 
+to meet this schedule. 
+ 
+Some components are rebuilt as a set, such as both final drives and the differential. This may 
+impact the number of exchange components required. 
+ 
+The most important aspect of managing exchange component inventory is to have a defined 
+ownership and a defined process. The owner is someone responsible for inventory 
+management and the process is the analysis steps and approval procedure to adjust inventory 
+levels. 
+ 
+3.0 Implementation Steps 
+ 
+Due to the complexity of analyzing exchange inventory stocking requirements and the costs 
+associated with carrying the inventory, it is highly recommended to use 6Sigma to conduct the 
+analysis and establish a process for keeping it current. It is important up front to establish an 
+owner for managing the exchange component inventory. 
+ 
+The goal is to support customer planned and unplanned exchange component requirements at a 
+minimum carrying cost and acceptable inventory turnover. 
+ 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Component Exchange – Economical Inventory 
+Management 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.5-1055  
+Caterpillar Confidential:  GREEN          Page 7 of 8 
+6Sigma steps include: 
+ 
+Define 
+Create a team, set goals and objectives of the team, look at any existing inventory management 
+process, and determine customer requirements. 
+ 
+Measure 
+Collect data on mining machine populations, annual volume of planned and unplanned rebuilds, 
+CRC component rebuild turnaround time, inventory levels and turnover, rebuild schedules, CRC 
+capacity, and the data supporting the factors addressed in the above “Description” section. 
+Analyze the risk for both the customers and the dealership. 
+ 
+Analyze 
+Develop solutions that match planned and unplanned component demand to inventory and CRC 
+capacity using data collected in “Measure”. Identify all factors impacting demand and supply. 
+ 
+Implement 
+Establish the process, determine optimum stocking inventory, and adjust inventory over time to 
+the target levels.  
+ 
+Control 
+Ensure that new process meets customer needs. Monitor and adjust inventories as machine 
+population and other factors change. 
+ 
+4.0 Benefits 
+ 
+• Protect Mining customer machine availability and p roduction. 
+• Create preference and loyalty for dealer CRC suppo rt. 
+• Manage CRC workflow. 
+• Minimize component exchange inventory investment a nd carrying costs. 
+• Support flat rate repair options. 
+• Grow rebuild business and revenue. 
+• Utilize dealer CRC and investment assets efficient ly. 
+• Minimizes cost impact of product design changes on  inventory components 
+• Improves inventory turnover ratio. 
+ 
+5.0 Resources Required 
+ 
+Exchange Component Inventory Management makes an excellent 6Sigma project that is 
+relatively quick to complete and has immediate results.  A key step to creating the process is to 
+determine ownership, someone who is responsible for managing dealer component inventory 
+practices. 
+ 
+6.0 Supporting Attachments / References 
+ 
+None. 
+ 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Component Exchange – Economical Inventory 
+Management 
+DATE 
+4/12/2017 
+CHG 
+NO 
+02 
+NUMBER 
+0107-4.5-1055  
+Caterpillar Confidential:  GREEN          Page 8 of 8 
+7.0 Related Best Practices 
+ 
+Improving CRC Rebuild Turnaround Time   0906-4.5-10 13c 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Dale Bream 
+6 Sigma Black Belt 
+Global Mining Product Support

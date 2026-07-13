@@ -1,0 +1,175 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+June 2011  
+1107-4.03-1141  
+  
+ 
+    
+    
+    
+DEALER BEST PRACTICE SERIES  
+Simple / Efficient Tool for 
+Cleaning Piston Pins   
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC)  
+ 
+MARC  
+Management 
+ 
+ 
+ 
+Simple / Efficient Tool for Cleaning Piston Pins ......... 1
+ 
+1.0  Introduction ....................................................... 2 
+2.0  Best Practice Description .................................. 2 
+3.0  Implementation Steps ........................................ 4 
+4.0  Benefit ............................................................... 4 
+5.0  Resources Required .......................................... 4 
+6.0  Supporting Attachments / References ............... 4 
+7.0  Related Best Practices ...................................... 4 
+8.0  Acknowledgements ........................................... 4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat 
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE  COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Simple / Efficient Tool for Cleaning Piston Pins 
+DATE 
+4/11/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1107-4.03-1141 
+Caterpillar Confidential:  GREEN          Page 2 of 4 
+1.0 Introduction  
+ 
+For dealers that rebuild their own cylinder packs, piston pins often meet reuse criteria and only 
+require a surface buff to clean the pin.  Ferreyros uses a simple tool to hold the pin along with a 
+bench grinder and 8T-7748 buffing wheel to clean piston pins. 
+ 
+ 
+ 
+ 
+ 
+2.0 Best Practice Description 
+ 
+The dealer fabricated tool to hold the piston pin w hile buffing the surface consists of two plastic 
+handles and a threaded metal rod. 
+ 
+                         
+ 
+ 
+                                                    Assembled view 
+ 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE  COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Simple / Efficient Tool for Cleaning Piston Pins 
+DATE 
+4/11/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1107-4.03-1141 
+Caterpillar Confidential:  GREEN          Page 3 of 4 
+ 
+ 
+ Metal rod sized in diameter to fit the piston pin center bore.  The length sized to match the piston 
+pin length and allow handles to grip and hold the piston pin securely. 
+ 
+ 
+ 
+Plastic handles are threaded to assemble to the metal rod holding the piston pin. 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES  
+ 
+THE INFORMATION HEREIN MAY NOT BE  COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR  
+Simple / Efficient Tool for Cleaning Piston Pins 
+DATE 
+4/11/2017 
+CHG 
+NO 
+00 
+NUMBER 
+1107-4.03-1141 
+Caterpillar Confidential:  GREEN          Page 4 of 4 
+3.0 Implementation Steps 
+ 
+Fabricate tools sized for the engine models required.  See SEBF8051 for reuse criteria, 
+dimensions, and cleaning procedure. 
+ 
+4.0 Benefit 
+ 
+• Allows smooth and even polishing – better quality 
+• Easier to handle pin in the polishing process- bet ter efficiency 
+• Technicians’ hands are away from the polishing whe el 
+ 
+5.0 Resources Required 
+ 
+Minimal expense to fabricate the tool. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+ 
+7.0 Related Best Practices 
+ 
+ 
+8.0 Acknowledgements 
+This Best Practice was written by: 
+ 
+Dale Brehm 
+Caterpillar Global Mining 
+Brehm_Dale_E@cat.com 
+ 
+ 
+The idea for this Best Practice, belongs to: 
+ 
+Alexander Pino Sarmiento 
+Fabian Farias Roque 
+Ferreyros SAA 
+ 
+This Best Practice was revised by: 
+ 
+ Aninu Mitacc Vizcardo 
+Ferreyros SAA 
+ 
+amitacc@ferreyros.com.pe

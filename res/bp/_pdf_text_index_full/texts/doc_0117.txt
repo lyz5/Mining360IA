@@ -1,0 +1,368 @@
+SOURCE: 2.0 Application\2.02 Haul Road Management\1. Strategic\Cost Reduction Through Haul Road Management Process.pdf
+PAGES: 7
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Cost Reduction Through 
+Haul Road Management 
+Process 
+ 
+Application Maintenance Site 
+Management 
+Component 
+Rebuild Safety MARC 
+Management 
+ 
+ 
+ 
+Cost Reduction Through Haul Road Management 
+Process ...................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 4 
+4.0 Benefits .............................................................. 4 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 6 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ............................................ 6 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+November 2006 
+1106-1.1-1035 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+Poor haul road conditions are a commonly cited cause of accelerated machine wear, operator 
+fatigue, and mine inefficiency. These factors can increase risk in MARC contracts and severely 
+effect profitability if not kept in check. 
+ 
+MARC stakeholders frequently begin haul road defect management initiatives in response to 
+adverse operating conditions and poor operator skill. Aiming to correlate the severity of machine 
+application to component life, these studies usually investigate data from strut cylinders, 
+transmissions, differentials, and final drives. Factors like tire life and frame life are also analyzed.  
+ 
+A proper road defect management process uses several tools, including: 
+• Fleet Productivity Optimization (FPO) software:  A software tool designed to identify and 
+localize potential problems in roads by using on-board electronic information from hauling 
+trucks. 
+• Fleet, Productivity and Cost analysis (FPC) software:  A software tool designed to assess 
+changes in road design with productivity improvements and fuel savings. 
+• Road Defect Management (RDM) methodology:  A methodology exclusive to Caterpillar 
+(Patent Pending) that describes a preventative approach to maintain haul roads, comprising of 
+the following elements: 
+o Condition Monitoring 
+o Road Repair processes 
+o Plan and scheduling  
+o Assessment of benefits 
+ 
+This process provides tangible benefits to both customers and dealers. Improving productivity and 
+reducing overall operating costs can lower cost per ton, while minimizing haul road hazards will 
+help safety. Additionally, dealers can benefit from reduced risk in MARCs and lower overall repair 
+and maintenance costs. 
+ 
+2.0 Best Practice Description 
+ 
+The basis of a Road Defect Management process involves Condition Monitoring, operator training, 
+road repair, and all associated follow-up. A dedicated Machine Application and Operations crew 
+has the goal to capture, analyze, and assess allocation and operating activities to identify potential 
+improvements in component life and productivity.  
+ 
+Current “as-is” processes mainly focus on the use of FPO as the main tool. A better process 
+expands into other areas and utilizes other tools. In addition to FPO, the Dealer uses VIMS and its 
+interface with their local Mine Controller software, which provides the following reports (see 
+attached files, Courtesy of Freeport mine site): 
+ 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cost Reduction Through Haul Road Management 
+Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1106-1.1-1035 
+Caterpillar Confidential:  GREEN          Page 1 of 6 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+• Dispatch Cycle Time Report:  showing detailed cycle time information for specific roads. 
+ 
+ 
+ 
+• Daily Production Report:  showing Payload and Truck traffics for specific roads. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cost Reduction Through Haul Road Management 
+Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1106-1.1-1035 
+Caterpillar Confidential:  GREEN          Page 2 of 6 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Pit Graph reports:  showing VIMS events located in a mine map, including Brake temperature 
+events and RAC events. 
+ 
+ 
+ 
+FPC is also used to assess the benefits of the proposed road repairs in terms of Fuel Savings 
+and Productivity. 
+ 
+The impact of machine application in component life is assessed by detailed documentation of 
+application and operation parameters to each component type (see attached file, Component 
+Life health – parameters and thresholds.xls).   
+ 
+The attached file, Application & Operation Process Flow.xls, has a current “as is” process and 
+then shows the possible “to be” processes, broken down into 100-and 200-level overviews. 
+The 200-level process has the sub-processes: 
+ 
+1. Road Selection: objective is to select a haul road with the highest productivity and 
+associate truck traffic for analysis. 
+2. Truck Selection: objective is to select Trucks with the representative strut pressures and 
+assign these trucks to the selected road. 
+3. Daily Data Analysis: objective is to identify and document outstanding road defects and 
+Operational Conditions (Road Condition Monitoring). 
+4. Daily Reports: objective is to explain Road and Operational Conditions in the last seven 
+days and show associated benefits for the improvement action. 
+5. Weekly Reports: objective is to assess benefits of recommended repair actions. 
+6. Road Repair: objective is to eliminate identified road defects and communicate for follow 
+up action status 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cost Reduction Through Haul Road Management 
+Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1106-1.1-1035 
+Caterpillar Confidential:  GREEN          Page 3 of 6 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+7. Operator Training: objective is to improve operational practices according to 
+recommended actions (weekly report). 
+8. Action Follow-up: objective is to review the weekly report and generate an action plan 
+according to recommendations.  
+ 
+3.0 Implementation Steps  
+1. Develop a process map of  “As-Is” activities associated with Road Management 
+2. Draft a process map of  “To-Be” activities that the Dealer wants to achieve in collaboration 
+with the Customer.  This is where the RDM methodology will suggest areas to improve the 
+process of road management. 
+3. Develop individual objectives for each of the sub-processes. 
+4. Develop the “To-Be” process map with the proposed objectives. 
+5. Identify which tools would be required to perform the desired process, such as: 
+a. FPO: current version 1.5 
+b. VIMS 
+c. MineStar, Wenco or Modular:  Any mine controller tool 
+6. Assign specific process and sub-processes to personnel in the operation (vertical axis in the 
+“To-Be” process shown before) 
+ 
+Things to consider: 
+• Different departments involved 
+• On-site Equipment Maintenance 
+• Off-site Component Rebuilt Center 
+• Mine Operations 
+• Mine Production 
+• Mine Controller (Dispatcher) 
+• Training 
+• Operator Training 
+• Continuous Improvement: Road Defect Management assesses road condition and benefits of 
+proposed repairs.  There should be a structured and documented CI process in place to 
+ensure that recommendations are acted upon and road defects are repaired.   
+ 
+4.0 Benefits 
+• This Best Practice focuses on the management of existing Haul Roads.  A well managed haul 
+road can deliver the following benefits to the Customer: 
+o Better ride quality for operators and associated decrease in operator fatigue. 
+o Improved productivity through better cycle times – gains of 10% are typical 
+o Cost reduction through decreased tire wear and decreased fuel burn. 
+o More efficient use of haul road support equipment (graders, wheel dozers etc) 
+ 
+• It also delivers the following benefits to the Dealer: 
+o Reduced risk on impact in machine application with MARC rates and overall repair and 
+maintenance costs. 
+o Increased frame, suspension and power train component life due to lower stress being 
+transferred to the truck and its components 
+o Lower rolling resistance leading to improved powertrain and engine life. 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cost Reduction Through Haul Road Management 
+Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1106-1.1-1035 
+Caterpillar Confidential:  GREEN          Page 4 of 6 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Additional benefits: 
+o Improved safety through minimizing identified hazards on the road, such as excessive 
+machine speed limits and road slippery conditions. 
+o Improving Customer Satisfaction, through developing a better communication channel 
+to discuss and analyze road defects and associated benefits if repaired 
+o Profitability associated with increased productivity (Customer) with less stress to the 
+machine (Dealer) 
+o Improved perception of machine performance, through an improved machine reliability 
+and durability.  
+ 
+• Lower Cost/Ton: obtained by reducing overall operating cost (fuel consumption and better use 
+of support equipment) and improving overall productivity (reduced cycle times and better 
+payload management) 
+• Operator/Technician Safety: obtained by minimizing road hazards and improving riding quality. 
+ 
+5.0 Resources Required 
+ 
+• Tools 
+o Digital Still Camera 
+o Inclinometer  
+o Laptop (Field work) + Desktop (Office work) 
+o VIMS download cable 
+o FPC software 
+• Support equipment 
+o Field utility truck (pickup truck) 
+o Motor grader 
+o Wheel dozer 
+o Small wheel loader 
+o Articulated truck (optional) 
+o Water truck 
+• People 
+o From Dealer: A dedicated person (or group of people) to analyze machine health and 
+application. This can be achieved with the implementation of an Application and 
+Operations crew (such as the one in Batu Hijau and Freeport), or by the Fleet Analyst. 
+o From Customer: “Road Crew” or “Road Maintenance” crew to receive, execute and 
+report back to the Dealer road repair and recommended actions. 
+o On-site Equipment Maintenance 
+ Application and Operations Department 
+ Fleet Analyst 
+o Off-site Component Rebuilt Center 
+ Failure Analysis team 
+o Mine Operations 
+ Pit Supervisor 
+o Mine Production 
+ Production Supervisor 
+o Mine Controller (Dispatcher) 
+ Mine Controller 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cost Reduction Through Haul Road Management 
+Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1106-1.1-1035 
+Caterpillar Confidential:  GREEN          Page 5 of 6 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+• Additional resources: 
+o Regional Caterpillar Equipment Management Consultant for information regarding FPO. 
+o A detailed Road Defect Management process is about to be released.  It is currently 
+applying for Intellectual Property rights.  Once that is cleared, the detailed process map 
+and associated software tool will be released and available to Caterpillar Dealers.  
+o The “Mining Project Manager’s Toolkit” KN is also a good source of information: 
+https://kn.cat.com/cat.cfm?id=6232 
+o FPO End User Forum provides good examples of Road analysis using FPO amongst 
+other tools: 
+https://kn.cat.com/know.cfm?id=130516 (restricted access) 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+• Application & Operation Process Flow Final R1.xls  
+• Component Life health - parameters and thresholds.xls 
+ 
+7.0 Related Best Practices 
+ 
+None at this time. 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+ 
+Oscar Villalobos 
+Regional Equipment Management Consultant 
+Villalobos_Oscar_E@cat.com 
+Phone: +61 3 9953 9121 
+Cell: +61 0409165847 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Cost Reduction Through Haul Road Management 
+Process 
+DATE 
+2/16/2015 
+CHG 
+NO 
+03 
+NUMBER 
+1106-1.1-1035 
+Caterpillar Confidential:  GREEN          Page 6 of 6

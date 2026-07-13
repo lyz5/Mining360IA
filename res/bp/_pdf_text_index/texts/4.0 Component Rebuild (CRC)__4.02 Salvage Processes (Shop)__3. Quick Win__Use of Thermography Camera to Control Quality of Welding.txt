@@ -1,0 +1,279 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+  
+February 2015
+1501-4.02-1364
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES
+Use of Thermal Imaging to 
+Inspect / Control Weld Quality 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+1.0
+  Introduction ...................................................... 1 
+2.0  Best Practice Description ................................. 1 
+3.0  Implementation Steps ...................................... 3 
+4.0  Benefits ............................................................ 4 
+5.0  Resources Required ........................................ 4 
+6.0  Supporting Attachments / References ............. 4 
+7.0  Related Best Practices .................................... 4 
+8.0  Acknowledgements .......................................... 5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits includ ed in this document are based upon information provided 
+by one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or 
+warranty about the information contained in this document or the products referenced herein. Caterpillar welcomes 
+additional “Best Practice” recommendations from our dealer network. 
+ 
+ 
+  
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Use of Thermography Camera to Control Welding 
+Process 
+DATE 
+2/10/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1364
+Caterpillar Confidential:  GREEN         Page 1 of 5 
+1.0 Introduction  
+ 
+Thermal Imaging Cameras have been used many years on some industries to inspect welds 
+and control quality.  Dealer Ferreyros is now using the technology in our welding operations. 
+ 
+It is known that temperature control is very impor tant in welding process in order to obtain a 
+quality product (welded joint). Because of this, Ferreyros use a thermography camera which 
+helps us to control the temperature of preheating, post-heating and between passes in a 
+versatile manner. 
+ 
+Furthermore, the use of the camera can detect def ects in the weld joint; for example, surface 
+porosity, slag inclusions and lack of penetration. 
+ 
+ 
+2.0 Best Practice Description 
+ 
+Previously, the temperature control in the welding process was performed using a pyrometer. 
+Currently, the temperature control and the quality of the welding are performed using a thermal 
+imaging camera. 
+ 
+The use of the camera helps us monitor temperatures in different processes, such as: Preheat, 
+postheat and temperature between passes in a simple way.   Also, by using the thermal 
+imaging camera, we can detect defects present in the welded joints due to the difference of 
+thermal gradients. 
+ 
+ 
+Figure 1 
+ 
+
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Use of Thermography Camera to Control Welding 
+Process 
+DATE 
+2/10/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1364
+Caterpillar Confidential:  GREEN         Page 2 of 5 
+ 
+Figure 2 
+ 
+In the below picture we can see the temperature control in a heating process and a defect 
+found in a welded joint. 
+ 
+ 
+                                                                 Figure 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Use of Thermography Camera to Control Welding 
+Process 
+DATE 
+2/10/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1364
+Caterpillar Confidential:  GREEN         Page 3 of 5 
+ 
+3.0 Implementation Steps 
+ 
+Before starting the process of measuring temperature, should note the following 
+considerations: 
+ 
+ Type of material to be inspected. 
+ Lighting conditions, according to the inspection site. 
+ Technical information or locati on maps of the areas measured. 
+ Areas of measuremen t properly identified. 
+ 
+i. Temperature control 
+ 
+a) Set the following parameters: 
+ 
+ Emissivity depends on the material to be heated. 
+ Temperature range depends on the temper ature at which the component is 
+going to be preheated, post-heating. 
+ 
+b) Approximate the thermogr aphy camera and proceed to take data for temperature 
+control. 
+ 
+ 
+ 
+ 
+ 
+ii. Determination of defects in welds 
+ 
+The technique is applied during the cooling of the part, immediately after application of 
+the weld and this depends on the temperature gradients present in the weld bead. 
+ 
+In the thermogram shown in figure 4, we can see a yellow elongated indication on the 
+right side of the end, indicating that these points or areas are colder than the weld cord. 
+ 
+This area, to be at a cooler temperature than the rest of the cord gives an indication of 
+heat dissipation at these points, that is, there is an interruption in the thermal 
+conductivity of the material. This area coincides with the lack of weld penetration.  That 
+empty space or loss of continuity of metal, explains why in the thermogram is seen as a 
+cold spot. 
+ 
+ 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Use of Thermography Camera to Control Welding 
+Process 
+DATE 
+2/10/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1364
+Caterpillar Confidential:  GREEN         Page 4 of 5 
+ 
+Figure 4 
+ 
+4.0 Benefits 
+ 
+ Have a better temperature control in the welding process (dynamic control). 
+ Find  welding defects  – prevent failures  
+ Quick and easy method of inspection. 
+ 
+ 
+5.0 Resources Required 
+ 
+ Thermal Imaging camera equipment.  
+ This technology is well documented on uses of thermal imaging camera s.  Search on the 
+internet for “Thermal Imaging Weld Inspection” and you will find guidelines 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+None 
+ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+ 
+ 
+
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR
+Use of Thermography Camera to Control Welding 
+Process 
+DATE 
+2/10/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1501-4.02-1364
+Caterpillar Confidential:  GREEN         Page 5 of 5 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practice was written by: 
+Name     Roger Rodriguez  
+E mail     roger.rodriguez@ferreyros.com.pe 
+ 
+Recognition: 
+ 
+Team:   Miguel Mauriola / Operations Support Chief 
+              Roger Rodriguez / Operations Support Assistance 
+ 
+Sponsor:        Luis Agu ilar / Manager Machine Shop

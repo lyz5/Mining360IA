@@ -1,0 +1,228 @@
+SOURCE: 4.0 Component Rebuild (CRC)\4.03 Facility & Tooling\3. Quick Win\C32 Oil Jet Reusability Determination Fixture.pdf
+PAGES: 4
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE 
+C32 Oil Jet Reusability 
+Determination Fixture 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC  
+Management 
+ 
+ 
+ 
+C32 Oil Jet Reusability Determination Fixture............ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 2 
+7.0 Related Best Practices ...................................... 3 
+8.0 Acknowledgements ............................................ 3 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat
+® dealers, and such dealer(s) opinion of “Best Practices.” Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+ 
+ 
+ 
+ 
+  
+March 2015 
+1502-4.03-1369 
+  
+ 
+
+===== PAGE 2 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+1.0 Introduction  
+ 
+Borusan Makina Kazakhstan has made the fixture to easily check oil jets  and make the right 
+decision if it reusable or it should be replaced.  
+ 
+The wrong decision about the reusability of oil jets may lead to the incorrect angle of supplying 
+the grease and cooling the piston head, excessive wear of the liner wall and piston skirt,  the 
+piston head overheating and finally to the emergency shutdown of the engine.  That’s why it is 
+very important to prevent the reuse of the damaged oil jets.  
+ 
+During the visual inspection of the injectors it is almost impossible to determine the bent or 
+damaged oil jets  with the naked eye. This fixture helps us to see if the oil jet  is OK or it is 
+damaged.  
+ 
+ 
+2.0 Best Practice Description 
+ 
+This fixture is made of the polyester resin. A new injector has been used to mold the correct form 
+of the jet. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+C32 Oil Jet Reusability Determination Fixture 
+ 
+ 
+  
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C32 Oil Jet Reusability Determination Fixture 
+DATE 
+3/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1502-4.03-1369 
+Caterpillar Confidential:  GREEN          Page 1 of 3 
+
+
+===== PAGE 3 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+3.0 Implementation Steps 
+ 
+The fixture is in use.  
+ 
+It is simple  to use this fixture. If the  oil jet  inspected does not match the pattern, it cannot be 
+reused and should be replaced. If it matches the pattern, this oil jet can be reused. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The oil jet matches the fixture 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+The oil jet does not match the fixture  
+ 
+ 
+4.0 Benefits 
+ 
+• Increased defect list quality. 
+• Reduced defect list preparation time. 
+• Prevention of the troubles that occur if the overlooked damaged oil jet has been reused. 
+ 
+ 
+5.0 Resources Required 
+ 
+• Polyester resin and the new injector in order to make the pattern. 
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+N/A 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C32 Oil Jet Reusability Determination Fixture 
+DATE 
+3/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1502-4.03-1369 
+Caterpillar Confidential:  GREEN          Page 2 of 3 
+
+
+===== PAGE 4 =====
+ 
+ 
+ 
+MINING DEALER BEST PRACTICE  
+ 
+7.0 Related Best Practices 
+ 
+N/A 
+ 
+ 
+8.0 Acknowledgements 
+ 
+The idea of creating & implementing this Best Practice belongs to: 
+ 
+Ali CEKIC    Yerbol AITPAYEV 
+Engine Team Leader    Service Engineer 
+Borusan Makina Kazakhstan LLP  Borusan Makina Kazakhstan LLP 
+acekic@borusan.com     yaitpayev@borusan.com
+   
++7 (701) 951 97 97   + 7 (771) 050 69 69 
+ 
+      This Best Practice was written by:  
+Sergey KOROTKIKH   Gulnaz MANSUROVA 
+Maintenance personnel  CRC Process Engineer 
+Borusan Makina Kazakhstan LLP  Borusan Makina Kazakhstan LLP 
+      gmansurova@borusan.com 
++7 (701) 951 98 14 
+ 
+       
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+C32 Oil Jet Reusability Determination Fixture 
+DATE 
+3/20/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1502-4.03-1369 
+Caterpillar Confidential:  GREEN          Page 3 of 3

@@ -1,0 +1,176 @@
+SOURCE: 3.0 Component Life Management\3.03 Fluid Cleanliness\3. Quick Win\Ensuring Proper Lube with Quick Disconnect Fittings.pdf
+PAGES: 3
+ENCRYPTED: False
+DECRYPT: 
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRACTICE SERIES  
+Ensuring Proper Lube Service With 
+Quick Disconnect Fittings 
+ 
+Application Maintenance Component 
+Rebuild 
+Component 
+Life 
+MARC 
+Management 
+ 
+ 
+ 
+Ensuring Proper Lube Service With Quick Disconnect 
+Fittings ....................................................................... 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 1 
+4.0 Benefits .............................................................. 2 
+5.0 Resources Required .......................................... 2 
+6.0 Supporting Attachments / References ............... 2 
+7.0 Related Best Practices ...................................... 2 
+8.0 Acknowledgements ............................................ 2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER:  The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network.
+ 
+ 
+ 
+ 
+ 
+  
+October 2006 
+1006-2.10-1034 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+During daily lube service and preventative maintenance services it is critical to refill fluid 
+compartments with the correct type of fluid.  Further, it is also recommended to refill in a manner 
+that minimizes open compartments and fluid contamination.   
+ 
+Daily lube services are performed either at the fuel island or by the mobile lube truck.  It is very 
+easy for a serviceman to put the wrong type of oil into a given reservoir.  The same is true for PM 
+services in the workshop.  This practice was put into place to minimize the probability of this 
+happening. 
+ 
+This practice can be easily replicated at any mine site and involves minimal effort and cost to 
+proactively prevent incorrect fluid handling. 
+ 
+2.0 Best Practice Description 
+ 
+Simply, quick connections are installed on all oil fill ports.  Each type of oil has a different size 
+connector.  Each connection is labeled to ensure proper filling.   
+ 
+When the technician recognizes a need to fill an oil reservoir he/she identifies the proper oil type 
+and connects the dispensing port in the workshop/fuel bay/lube truck to the fill port on the 
+machine.  Only the correct connections will fit together to guarantee proper filling of the reservoir. 
+ 
+ 
+3.0 Implementation Steps 
+ 
+1. Identify all fittings needed for all machines on site 
+2. Purchase fittings for machines, service lube truck, fuel bay, and work shop 
+3. Install all fittings 
+4. Train service personnel to use the proper fittings 
+ 
+ 
+ 
+Connection ports on a 16H motor grader Close up of connection ports. Notice that each port is a different 
+size and labeled. 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ensuring Proper Lube Service With Quick Disconnect 
+Fittings 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1006-2.10-1034 
+Caterpillar Confidential:  GREEN          Page 1 of 2 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4.0 Benefits 
+ 
+• Improvement of service accuracy - avoidance of compartments being filled with the wrong 
+fluid, resulting in extended life and/or performance of a part or component. 
+• Increased service quality and consistency. 
+• Time savings during maintenance operations. 
+• Oil spills are more easily avoided, increasing operator/technician safety. 
+ 
+5.0 Resources Required 
+ 
+List of fittings for machines in fleet (see attached worksheet). A local supplier can supply standard 
+fittings. 
+ 
+Costs include the cost of parts and cost of installation. Total is approximately 
+$930 to $1300 per 
+machine. 
+ 
+6.0 Supporting Attachments / References 
+ 
+Service truck fittings.xls 
+The parts list from a purchase order for fittings on certain mining trucks, loaders, dozers, and 
+service equipment. 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Maintenance Best Practice was written by: 
+ 
+Jeff Wolffe 
+EAME Global Mining Service Rep 
+Wolffe_Jeffrey_S@cat.com 
++41-22-849-4423 
+ 
+Andrew Broadbent  
+Unatrac Technical Manager  
+abroadbent@unatrac.com 
+ 
+Rian Gouws  
+Unatrac Site Project Manager 
+RIGouws@tractorequip.com 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+Ensuring Proper Lube Service With Quick Disconnect 
+Fittings 
+DATE 
+2/17/2015 
+CHG 
+NO 
+02 
+NUMBER 
+1006-2.10-1034 
+Caterpillar Confidential:  GREEN          Page 2 of 2

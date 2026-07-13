@@ -1,0 +1,321 @@
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+DEALER BEST PRAC TICE SERIES  
+Machine Lockout Device 
+ 
+Maintenance and 
+Repair Application Component Life 
+Management 
+ 
+Component 
+Renewal (CRC) 
+ 
+MARC 
+Management 
+ 
+ 
+ 
+Machine Lockout Device ............................................ 0
+ 
+1.0 Introduction ........................................................ 1 
+2.0 Best Practice Description ................................... 1 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits .............................................................. 6 
+5.0 Resources Required .......................................... 7 
+6.0 Supporting Attachments / References ............... 7 
+7.0 Related Best Practices ...................................... 7 
+8.0 Acknowledgements ............................................ 7 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER 
+ 
+The following document is provided as a resource for Caterpillar dealers and customer mine sites. Content was provided 
+by a dealer or mine site to be shared with others as a suggested practice. Caterpillar shares it with you as a reference 
+only, and in no event does the content of this document supersede any applicable local, state or federal statutes or 
+regulations.  This information has not been validated or endorsed by Caterpillar.  Caterpillar assumes no responsibility for 
+the accuracy or currency of this information and encourages you to consult experts in this area for more information.   
+Caterpillar reserves the right to add to, delete from, or remove this document entirely at any time in the future.  
+  
+ 
+ 
+ 
+ 
+  
+April 2010 
+1004-1.11-1182 
+  
+ 
+
+===== PAGE 2 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+1.0 Introduction  
+ 
+This Best Practice provides awareness of the ‘9G-2758 switch-lockout’ that can be used in 
+conjunction with the machine’s battery disconnect switch. This document provides a guideline to 
+install a switch-lockout and label for the battery disconnect system. Note, this action may not be 
+needed if the machine is already equipped with a switch-lockout. 
+ 
+2.0 Best Practice Description 
+ 
+This switch-lockout is installed on the machine at the battery disconnect point so that lockout 
+devices, such as lockout padlocks and safety clamps can be used. Please refer to Figure 1.0, 
+below, which demonstrates the battery disconnect switch being locked out. 
+ 
+ 
+ 
+Figure 1.0 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Machine Lockout Device 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1004-1.11-1182 
+Caterpillar Confidential:  YELLOW         Page 1 of 7 
+
+===== PAGE 3 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.0 Implementation Steps 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Machine Lockout Device 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1004-1.11-1182 
+Caterpillar Confidential:  YELLOW         Page 2 of 7 
+
+===== PAGE 4 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+3.1 Process 
+ 
+ 
+1. Identify a battery disconnect 
+point on the equipment, de-
+energize it and ensure that the 
+electrical system has been de-
+energized.  
+Note:  Refer to service magazine 
+SEPD1003 Improved Procedure 
+for Verifying the Operation of the 
+Battery Disconnect System. 
+ 
+ 
+ 
+ 
+2.  Remove the switch’s safety 
+nut using the ½” ratchet and 
+the 1” x ½” socket. 
+ 
+ 
+ 
+ 
+3. After the nut and the lock 
+washer has  been removed, 
+remove the old information 
+plate. 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Machine Lockout Device 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1004-1.11-1182 
+Caterpillar Confidential:  YELLOW         Page 3 of 7 
+
+===== PAGE 5 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+4. Install the new 9G -2758 
+switch-lockout. 
+ 
+Note: Verify the locating 
+position of the new pa rt in 
+reference to the position of 
+the removed plate. 
+ 
+ 
+ 
+ 
+5. Afte r installing the 9G -
+2758 switch- lockout, i nstall 
+the lock washer and the nut. 
+ 
+Note: Torque specification 
+for the nut of a 7N -0718 
+switch is 23+/-4 Nm. 
+ 
+ 
+ 
+ 
+6. This shows the 9G -2758 
+switch-lockout installed.  
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Machine Lockout Device 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1004-1.11-1182 
+Caterpillar Confidential:  YELLOW         Page 4 of 7 
+
+===== PAGE 6 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+7. Now the machine ’s 
+electrical system  can be 
+safely guarded by using 
+lockout padlock(s) and other 
+relating lockout tags 
+(documentation). 
+ 
+ 
+ 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Machine Lockout Device 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1004-1.11-1182 
+Caterpillar Confidential:  YELLOW         Page 5 of 7 
+
+===== PAGE 7 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+4.0 Benefits 
+ 
+ 
+• By using this switch lockout, drilling and welding plates to install safety boxes is eliminated.  
+• Note, welding in certain areas may damage the equipment’s chassis, as well as the 
+machine’s electrical system.  
+ 
+ 
+When drilling to install the metal box, 
+there is a risk of damaging the electrical 
+cables and hoses.  
+ 
+When welding the metal box to the base 
+and/or chassis, the electrical system and 
+internal parts of the motor may be 
+damaged. Weld splatter may cause 
+damage to hydraulic lines.  
+ 
+. 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Machine Lockout Device 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1004-1.11-1182 
+Caterpillar Confidential:  YELLOW         Page 6 of 7 
+
+===== PAGE 8 =====
+ 
+CAT GLOBAL MINING 
+ 
+DEALER BEST PRACTICE SERIES 
+ 
+ 
+5.0 Resources Required 
+ 
+• One trained and authorized worker can install the spare part on the equipment.  
+• Carrying out a Safe Work Analysis to identify exposure to risk.  
+• De-energizing the equipment from any potentially harmful power source.  
+• The worker in charge will inform the Supervisor that the installation of the 9G2758 switch 
+lockout has been completed.  
+• The worker will only lock out the equipment pursuant to specific lockout procedures.  
+ 
+ 
+6.0 Supporting Attachments / References 
+ 
+SEPD1003
+ ‘Improved Procedure for Verifying the Operation of the Battery Disconnect System’ 
+ 
+7.0 Related Best Practices 
+ 
+None 
+ 
+8.0 Acknowledgements 
+ 
+This Best Practices was authored by: 
+ 
+  Bruno Bazaes Baldovino 
+  Industrial Safety Supervisor - Ferreyros 
+  bbazaes@ferreyros.com.pe 
+  
+Prepared by: 
+ 
+  Alberto Franco D’Alfonso 
+  CI & BP Champion – Ferreyros 
+  afrancod@ferreyros.com.pe 
+ 
+ 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT CATERPILLAR’S WRITTEN PERMISSION, 
+Machine Lockout Device 
+DATE 
+2/13/2015 
+CHG 
+NO 
+00 
+NUMBER 
+1004-1.11-1182 
+Caterpillar Confidential:  YELLOW         Page 7 of 7

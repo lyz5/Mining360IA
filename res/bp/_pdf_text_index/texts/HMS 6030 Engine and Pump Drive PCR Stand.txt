@@ -1,0 +1,182 @@
+===== PAGE 1 =====
+November 2023 
+1.01-231107-1
+875 W Cushing St., Tucson, AZ 85745 cat.com/mining 
+M
+INING DEALER BEST PRACTICE 
+HMS 6030 Engine and 
+Pump Drive PCR Stand 
+M
+aintenance and 
+Repair Application Component Life 
+Management 
+Component 
+Renewal (CRC) 
+MARC  
+Management 
+H
+MS 6030 Engine and Pump Drive PCR Stand ........ 1 
+1.0 Introduction ........................................................ 2 
+2.0 Best Practice Description .................................. 2 
+3.0 Implementation Steps ........................................ 2 
+4.0 Benefits ............................................................. 5 
+5.0 Resources Required .......................................... 5 
+6.0 Supporting Attachments / References ............... 5 
+7.0 Related Best Practices ...................................... 6 
+8.0 Acknowledgements ........................................... 6 
+D
+ISCLAIMER: The information and potential benefits included in this document are based upon information provided by 
+one or more Cat® dealers, and such dealer(s) opinion of “Best Practices”. Caterpillar makes no representation or warranty 
+about the information contained in this document or the products referenced herein. Caterpillar welcomes additional “Best 
+Practice” recommendations from our dealer network. 
+
+===== PAGE 2 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS 6030 Engine and Pump Drive PCR Stand 
+DATE 
+11/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-231107-1 
+Caterpillar: Confidential Yellow P age 2 of 6 
+1.0 Introduction 
+P
+lanned component replacement is an event which occurs several times over the life of a mining 
+machine such as the 6030 or similarly sized mining shovels. These machines seldom enter a 
+workshop environment; hence the work is very demanding on those executing the shut-down. There 
+are multiple sources of contamination and various inefficiencies associated with this type of work.  
+2
+.0 Best Practice Description 
+S
+upporting a fleet of 10 x 6030 with similar hours on a MARC, our dealership looked at options to 
+take some of the work from the field into the workshop and reduce the time required for the planned 
+replacement of engine, pump drive and pumps. Our maintenance strategy has these components, as 
+well as some hoses around them, listed for replacement at roughly the same time.  
+W
+e designed special stands which will allow us to join engine and pump drive (with coupling) in the 
+workshop and then add the remaining power train / pumps onto the PTO. Through spare harnesses 
+and new hoses, we can complete most of the power pack in the workshop and ship it to site as one 
+unit, before the machine has even been parked up.  
+T
+he removed power pack can then be shipped back to the workshop / branch and dismantled for 
+overhaul in the workshop. 
+3
+.0 Implementation Steps 
+K
+ey measurements of engine and pump drive were taken and a stand for each side power unit 
+designed. This stand can also be used to ship just the engine on it’s own, should this be required. 
+A
+ few weeks before the machine is due to shut down, the spare engines and pump drives are 
+installed to the stands. The team then proceed to install new/reman pumps into the position where 
+pumps are due for replacement. In some instances, a field swap may still be necessary, e.g., if pump 
+#3 has not yet achieved life due to an earlier replacement, the workshop power unit will not receive a 
+new pump in this place.  
+
+
+===== PAGE 3 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS 6030 Engine and Pump Drive PCR Stand 
+DATE 
+11/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-231107-1 
+Caterpillar: Confidential Yellow Page  3 of 6 
+Onc
+e pumps have been installed the team can proceed installing harnesses and hoses. Once all is 
+complete the power unit is adequately packaged / covered and prepared for shipping.  
+
+
+===== PAGE 4 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS 6030 Engine and Pump Drive PCR Stand 
+DATE 
+11/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-231107-1 
+Caterpillar: Confidential Yellow P age 4 of 6 
+On site, during the PCR shutdown, the old Left-hand and Right-hand power units are removed within 
+1 shift. After some clean-up and rubber mount replacement, the new power unit can be lifted into 
+place and torqued down. All harness and hose connections can then be made.  
+
+
+===== PAGE 5 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS 6030 Engine and Pump Drive PCR Stand 
+DATE 
+11/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-231107-1 
+Caterpillar: Confidential Yellow P age 5 of 6 
+4.0 Benefits 
+• T
+ime savings – less downtime for machine, ~24 hours per engine and pump combination
+• Critical processes done in workshop.
+• Better contamination control
+• Shop labor is cheaper.
+• Timing – build up of the power unit can be done in times of lower priority activities.
+• Less waste – 1-time packaging only
+5
+.0 Resources Required 
+• S
+pare components and harnesses for the exchange
+• Hose supply / hose shop
+• Stands – cost around USD $2,500, per stand.
+• Overhead crane
+• Suitable shop transport / large forklift
+• Standard hand tools
+6
+.0 Supporting Attachments / References 
+
+
+===== PAGE 6 =====
+MINING DEALER BEST PRACTICE 
+THE INFORMATION HEREIN MAY NOT BE COPIED OR TRANSMITTED TO OTHERS WITHOUT THE WRITTEN PERMISSION OF CATERPILLAR 
+HMS 6030 Engine and Pump Drive PCR Stand 
+DATE 
+11/7/2023 
+CHG 
+NO 
+00 
+NUMBER 
+1.01-231107-1 
+Caterpillar: Confidential Yellow P age 6 of 6 
+• D
+rawings can be made available upon request (see Trakindo contact details below)
+7
+.0 Related Best Practices 
+N/
+A 
+8
+.0 Acknowledgements 
+Fa
+bian Schulz 
+Technical Support Manager 
+Customer Solutions 
+P
+T Trakindo Utama  
+TMT 1 Building, 11th Floor  
+Jalan Cilandak KKO No.1, Jakarta 12560, Indonesia 
+Mob: (+62) 811 596 6113 
+fabian.schulz@trakindo.co.id 
+www.trakindo.co.id 
+Call Center 1500 228 
+Facebook • Linkedin: PT Trakindo Utama 
+ADV
+ANCING YOU FORWARD® 
+A
+ member of Tiara Marga Trakindo Group
