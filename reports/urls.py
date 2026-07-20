@@ -2,6 +2,7 @@ from django.urls import path
 
 from . import views
 from . import powerbi_interaction_views
+from . import openai_usage_views
 
 
 urlpatterns = [
@@ -73,6 +74,17 @@ urlpatterns = [
     path("knowledge-base/api/overview/", views.knowledge_base_overview_api, name="knowledge-base-overview-api"),
     path("knowledge-base/api/generate/", views.knowledge_base_generate_api, name="knowledge-base-generate-api"),
     path("knowledge-base/api/coverage-test/", views.knowledge_base_coverage_test_api, name="knowledge-base-coverage-test-api"),
+    path("knowledge-base/synonyms/export/", views.knowledge_base_synonyms_export, name="knowledge-base-synonyms-export"),
+    path("knowledge-base/synonyms/export/<str:file_type>/", views.knowledge_base_synonyms_export, name="knowledge-base-synonyms-export-format"),
+    path("knowledge-base/synonyms/template/", views.knowledge_base_synonyms_template, name="knowledge-base-synonyms-template"),
+    path("knowledge-base/synonyms/import/", views.knowledge_base_synonyms_import, name="knowledge-base-synonyms-import"),
+    path("knowledge-base/api/synonym-analytics/", views.synonym_analytics_api, name="synonym-analytics-api"),
+    path("knowledge-base/api/synonym-resolution-test/", views.synonym_resolution_test_api, name="synonym-resolution-test-api"),
+    path("knowledge-base/api/synonym-settings/<str:section_code>/", views.synonym_resolution_settings_api, name="synonym-resolution-settings-api"),
+    path("knowledge-base/api/resolution/", views.knowledge_resolution_api, name="knowledge-resolution-api"),
+    path("knowledge-base/api/resolution/<str:trace_id>/export/<str:file_type>/", views.knowledge_resolution_export, name="knowledge-resolution-export"),
+    path("knowledge-base/api/kpi-dictionary/<int:item_id>/duplicate/", views.knowledge_base_kpi_duplicate_api, name="knowledge-base-kpi-duplicate-api"),
+    path("knowledge-base/api/kpi-dictionary/<int:item_id>/test/", views.knowledge_base_kpi_test_api, name="knowledge-base-kpi-test-api"),
     path("knowledge-base/api/<str:resource_type>/", views.knowledge_base_collection_api, name="knowledge-base-collection-api"),
     path("knowledge-base/api/<str:resource_type>/<int:item_id>/", views.knowledge_base_item_api, name="knowledge-base-item-api"),
     path("knowledge-base/powerbi-interaction/api/import-reports/", powerbi_interaction_views.interaction_import_reports_api, name="powerbi-interaction-import-reports"),
@@ -87,6 +99,11 @@ urlpatterns = [
     path("system-config/api/database-configs/<int:config_id>/", views.system_database_config_item_api, name="system-database-config-item-api"),
     path("system-config/api/database-configs/<int:config_id>/verify/", views.system_database_config_verify_api, name="system-database-config-verify-api"),
     path("system-config/api/managed-tables/", views.system_managed_tables_api, name="system-managed-tables-api"),
+    path("config/openai-usage/", openai_usage_views.openai_usage_home, name="openai-usage-home"),
+    path("api/admin/openai-usage/dashboard/", openai_usage_views.openai_usage_dashboard_api, name="openai-usage-dashboard-api"),
+    path("api/admin/openai-usage/settings/", openai_usage_views.openai_usage_settings_api, name="openai-usage-settings-api"),
+    path("api/admin/openai-usage/synchronize/", openai_usage_views.openai_usage_synchronize_api, name="openai-usage-synchronize-api"),
+    path("api/admin/openai-usage/export/<str:file_type>/", openai_usage_views.openai_usage_export, name="openai-usage-export"),
     path("resources/", views.resources, name="resources"),
     path("resources/upload/", views.resource_upload, name="resource-upload"),
     path("resources/files/<str:resource_id>/", views.resource_file, name="resource-file"),

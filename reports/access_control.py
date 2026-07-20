@@ -25,6 +25,8 @@ ADMIN_ONLY_PREFIXES = (
     "/ia-config/",
     "/knowledge-base/",
     "/system-config/",
+    "/config/openai-usage/",
+    "/api/admin/openai-usage/",
     "/business-performance/config/",
 )
 
@@ -34,6 +36,8 @@ ADMIN_WRITE_PREFIXES = (
     "/ia-config/",
     "/knowledge-base/",
     "/system-config/",
+    "/config/openai-usage/",
+    "/api/admin/openai-usage/",
     "/users/",
     "/resources/upload/",
 )

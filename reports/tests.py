@@ -4,6 +4,7 @@ import os
 os.environ["MINING360_SQL_CONFIG_STORE"] = "0"
 
 from django.contrib.auth.models import User
+from django.core.cache import cache
 from django.test import TestCase
 from django.urls import reverse
 
@@ -14,12 +15,166 @@ from .models import (
     AIMetricMapping,
     BusinessPerformanceConfig,
     BusinessPerformanceMapping,
+    KnowledgeKPIDictionary,
     KPIPageMapping,
     PlatformUser,
     PowerBIPage,
     PowerBIReport,
+    PowerBISlicer,
 )
 from .powerbi_interaction_service import resolve_navigation, validate_interaction_intent
+from .knowledge_resolution_service import _safe
+
+
+class KPIDictionaryValidationTests(TestCase):
+    def setUp(self):
+        self.section = AIConfigSection.objects.create(
+            name="KPI Test", code="kpi_test"
+        )
+        self.defaults = {
+            "section": self.section,
+            "kpi_code": "availability",
+            "kpi_name": "Availability",
+            "business_definition": "Equipment availability.",
+            "formula_description": "Available time divided by scheduled time.",
+            "powerbi_measure_name": "[Availability]",
+            "unit": "%",
+            "aggregation_rule": "Use the semantic model measure.",
+            "default_time_grain": "Monthly",
+            "higher_is_better": True,
+            "threshold_direction": "Higher Is Better",
+            "target": 90,
+            "warning_threshold": 85,
+            "critical_threshold": 80,
+        }
+
+    def test_lowercase_snake_case_is_required(self):
+        item = KnowledgeKPIDictionary(**{**self.defaults, "kpi_code": "Availability KPI"})
+        with self.assertRaises(Exception):
+            item.full_clean()
+
+    def test_higher_is_better_threshold_order_is_validated(self):
+        item = KnowledgeKPIDictionary(**{**self.defaults, "warning_threshold": 95})
+        with self.assertRaises(Exception):
+            item.full_clean()
+
+    def test_direction_flags_are_mutually_exclusive(self):
+        item = KnowledgeKPIDictionary(
+            **{**self.defaults, "higher_is_better": True, "lower_is_better": True}
+        )
+        with self.assertRaises(Exception):
+            item.full_clean()
+
+    def test_powerbi_measure_is_required_for_validated_kpi(self):
+        item = KnowledgeKPIDictionary(
+            **{
+                **self.defaults,
+                "powerbi_measure_name": "",
+                "validation_status": "Validated",
+            }
+        )
+        with self.assertRaises(Exception):
+            item.full_clean()
+
+
+class KnowledgeCoverageModeTests(TestCase):
+    def setUp(self):
+        self.admin = User.objects.create_superuser(
+            "coverage-admin", "coverage@example.com", "password"
+        )
+        self.standard = User.objects.create_user(
+            "coverage-user", password="password"
+        )
+        self.section = AIConfigSection.objects.create(
+            name="Coverage Test", code="coverage_test"
+        )
+        self.kpi = KnowledgeKPIDictionary.objects.create(
+            section=self.section,
+            kpi_code="availability",
+            kpi_name="Availability",
+            business_definition="Equipment availability.",
+            business_purpose="Reliability monitoring.",
+            formula_description="Available time divided by scheduled time.",
+            powerbi_measure_name="[Availability]",
+            powerbi_semantic_model_id="dataset-id",
+            unit="%",
+            aggregation_rule="Use the semantic model measure.",
+            default_time_grain="Monthly",
+            validation_status="Draft",
+            is_active=True,
+        )
+        self.url = reverse("knowledge-base-coverage-test-api")
+
+    def post_coverage(self, user, mode):
+        self.client.force_login(user)
+        return self.client.post(
+            self.url,
+            data=json.dumps({
+                "section": self.section.code,
+                "kpi": self.kpi.kpi_code,
+                "mode": mode,
+            }),
+            content_type="application/json",
+            HTTP_ACCEPT="application/json",
+        )
+
+    def test_production_rejects_draft_kpi(self):
+        payload = self.post_coverage(self.admin, "Production").json()
+        self.assertFalse(payload["checks"]["kpi_defined"])
+        self.assertEqual(payload["debug"]["candidate_kpi_id"], self.kpi.id)
+        self.assertIn("Draft", payload["debug"]["rejection_reason"])
+
+    def test_debug_uses_draft_kpi_and_measure_mapping(self):
+        payload = self.post_coverage(self.admin, "Debug").json()
+        self.assertTrue(payload["checks"]["kpi_defined"])
+        self.assertTrue(payload["checks"]["measure_mapped"])
+        self.assertEqual(payload["debug"]["matched_kpi_id"], self.kpi.id)
+        self.assertTrue(payload["warnings"])
+
+    def test_debug_is_restricted_to_administrators(self):
+        response = self.post_coverage(self.standard, "Debug")
+        self.assertEqual(response.status_code, 403)
+
+    def test_knowledge_resolution_is_restricted_to_administrators(self):
+        self.client.force_login(self.standard)
+        response = self.client.post(
+            reverse("knowledge-resolution-api"),
+            data=json.dumps({"question": "Give me availability", "mode": "Debug"}),
+            content_type="application/json",
+            HTTP_ACCEPT="application/json",
+        )
+        self.assertEqual(response.status_code, 403)
+
+    def test_resolution_redacts_sensitive_keys(self):
+        safe = _safe({
+            "access_token": "secret-token",
+            "nested": {"client_secret": "secret", "value": "visible"},
+        })
+        self.assertEqual(safe["access_token"], "[REDACTED]")
+        self.assertEqual(safe["nested"]["client_secret"], "[REDACTED]")
+        self.assertEqual(safe["nested"]["value"], "visible")
+
+    def test_resolution_exports_are_scoped_to_current_admin(self):
+        trace_id = "test-trace"
+        cache.set(
+            f"knowledge-resolution:{self.admin.pk}:{trace_id}",
+            {"question_analysis": {"original_question": "Availability"}},
+            60,
+        )
+        self.client.force_login(self.admin)
+        for file_type, content_type in [
+            ("json", "application/json"),
+            ("md", "text/markdown; charset=utf-8"),
+            ("pdf", "application/pdf"),
+        ]:
+            response = self.client.get(
+                reverse(
+                    "knowledge-resolution-export",
+                    args=[trace_id, file_type],
+                )
+            )
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(response["Content-Type"], content_type)
 
 
 class BusinessPerformanceTests(TestCase):
@@ -153,3 +308,89 @@ class PowerBIInteractionTests(TestCase):
         valid, errors, _ = validate_interaction_intent(self.intent())
         self.assertFalse(valid)
         self.assertTrue(any("validated Power BI report" in error for error in errors))
+
+    def test_report_slicer_maps_canonical_filter_value(self):
+        PowerBISlicer.objects.create(
+            page=self.page,
+            slicer_internal_name="configured-sitegroup-filter",
+            slicer_title="SiteGroup",
+            powerbi_table_name="DIM - Sites",
+            powerbi_column_name="SiteGroup",
+            filter_code="minesite",
+            value_mapping={"Fekola": "B2Gold Fekola"},
+            validation_status="Validated",
+        )
+        navigation = resolve_navigation(self.intent())
+        site_filter = navigation["filters"][0]
+        self.assertEqual(site_filter["table"], "DIM - Sites")
+        self.assertEqual(site_filter["column"], "SiteGroup")
+        self.assertEqual(site_filter["values"], ["B2Gold Fekola"])
+        self.assertEqual(site_filter["scope"], "slicer")
+
+    def test_slicer_value_mapping_is_case_insensitive(self):
+        PowerBISlicer.objects.create(
+            page=self.page,
+            slicer_internal_name="configured-sitegroup-filter",
+            slicer_title="SiteGroup",
+            powerbi_table_name="DIM - Sites",
+            powerbi_column_name="SiteGroup",
+            filter_code="minesite",
+            value_mapping={"Fekola": "B2Gold Fekola"},
+            validation_status="Validated",
+        )
+        intent = self.intent()
+        intent["filters"]["minesite"] = "fekola"
+        navigation = resolve_navigation(intent)
+        self.assertEqual(navigation["filters"][0]["values"], ["B2Gold Fekola"])
+
+    def test_fleet_year_month_filter_uses_powerbi_display_value(self):
+        AIFilterMapping.objects.create(
+            section=self.section, filter_code="period", filter_label="Period",
+            powerbi_table_name="Date", powerbi_column_name="Year Month",
+            data_type="Text",
+        )
+        PowerBISlicer.objects.create(
+            page=self.page,
+            slicer_internal_name="configured-fleet-year-month-filter",
+            slicer_title="Year Month",
+            powerbi_table_name="Date",
+            powerbi_column_name="Year Month",
+            filter_code="period",
+            supports_multiple_values=True,
+            validation_status="Validated",
+        )
+        intent = self.intent()
+        intent["filters"]["period"] = "2026-05"
+        navigation = resolve_navigation(intent)
+        period_filter = next(
+            item for item in navigation["filters"]
+            if item["filter_code"] == "period"
+        )
+        self.assertEqual(period_filter["column"], "Year Month")
+        self.assertEqual(period_filter["values"], ["May 2026"])
+        self.assertNotIn("filter_type", period_filter)
+
+    def test_fleet_last_12_months_resolves_to_12_categories(self):
+        AIFilterMapping.objects.create(
+            section=self.section, filter_code="period", filter_label="Period",
+            powerbi_table_name="Date", powerbi_column_name="Year Month",
+            data_type="Text",
+        )
+        PowerBISlicer.objects.create(
+            page=self.page,
+            slicer_internal_name="configured-fleet-year-month-filter",
+            slicer_title="Year Month",
+            powerbi_table_name="Date",
+            powerbi_column_name="Year Month",
+            filter_code="period",
+            supports_multiple_values=True,
+            validation_status="Validated",
+        )
+        intent = self.intent()
+        intent["filters"]["period"] = "last 12 months"
+        navigation = resolve_navigation(intent)
+        period_filter = next(
+            item for item in navigation["filters"]
+            if item["filter_code"] == "period"
+        )
+        self.assertEqual(len(period_filter["values"]), 12)

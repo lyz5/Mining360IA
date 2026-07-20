@@ -4,20 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mining360IA</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+    <title>Reporting | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260717-reporting-5">
 </head>
 <body>
     {% include "reports/includes/app_nav.html" %}
-    <main class="app-shell">
-        <header class="topbar">
+    <main class="app-shell reporting-shell">
+        <header class="topbar reporting-header">
             <div>
                 <p class="eyebrow">Power BI service</p>
                 <h1>Reporting</h1>
+                <p class="reporting-subtitle">Access and monitor your analytical reports in one place.</p>
             </div>
-            <div class="summary">
+            <div class="summary reporting-total">
                 <span class="summary-value">{{ report_count }}</span>
-                <span class="summary-label">reports</span>
+                <span class="summary-label">Total reports</span>
             </div>
         </header>
 
@@ -32,15 +33,36 @@
             <div class="report-toolbar">
                 <label class="report-search">
                     <span>Search reports</span>
-                    <input type="search" data-report-search placeholder="Search by report, status, or refresh date">
+                    <span class="report-search-control">
+                        <input type="search" data-report-search placeholder="Search by report name, status, or last refresh date...">
+                    </span>
                 </label>
                 <div class="report-filter-tabs" aria-label="Refresh status filters">
-                    <button type="button" class="active" data-report-filter="all">All</button>
-                    <button type="button" data-report-filter="completed">Completed</button>
-                    <button type="button" data-report-filter="failed">Failed</button>
-                    <button type="button" data-report-filter="no-refresh">No refresh</button>
+                    <button type="button" class="active filter-all" data-report-filter="all">All</button>
+                    <button type="button" class="filter-completed" data-report-filter="completed">Completed</button>
+                    <button type="button" class="filter-failed" data-report-filter="failed">Failed</button>
+                    <button type="button" class="filter-empty" data-report-filter="no-refresh">No refresh</button>
                 </div>
             </div>
+
+            <section class="reporting-kpis" aria-label="Report refresh summary">
+                <article class="reporting-kpi total">
+                    <span class="reporting-kpi__icon" aria-hidden="true"></span>
+                    <div><span>Total Reports</span><strong>{{ report_count }}</strong><small>Available in this workspace</small></div>
+                </article>
+                <article class="reporting-kpi completed">
+                    <span class="reporting-kpi__icon" aria-hidden="true"></span>
+                    <div><span>Completed</span><strong>{{ completed_count }}</strong><small>Latest refresh succeeded</small></div>
+                </article>
+                <article class="reporting-kpi failed">
+                    <span class="reporting-kpi__icon" aria-hidden="true"></span>
+                    <div><span>Failed</span><strong>{{ failed_count }}</strong><small>{% if failed_count %}Needs attention{% else %}No failed refresh{% endif %}</small></div>
+                </article>
+                <article class="reporting-kpi empty">
+                    <span class="reporting-kpi__icon" aria-hidden="true"></span>
+                    <div><span>No Refresh</span><strong>{{ no_refresh_count }}</strong><small>No refresh history available</small></div>
+                </article>
+            </section>
 
             <div class="report-card-grid" data-report-grid>
                 {% for report in reports %}
@@ -50,8 +72,13 @@
                         data-status="{% if report.refresh_status %}{{ report.refresh_status|lower }}{% else %}no-refresh{% endif %}"
                         data-search="{{ report.display_name|lower }} {{ report.refresh_status|default:'no refresh'|lower }} {{ report.last_refresh|default:'no refresh'|lower }}">
                         <div class="report-card__header">
-                            <div>
-                                <p class="eyebrow">Power BI report</p>
+                            <span class="report-card__icon {{ report.visual_class }}" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M3 3v18h18"></path>
+                                    <path d="m7 16 4-5 3 3 5-7"></path>
+                                </svg>
+                            </span>
+                            <div class="report-card__title">
                                 <h2>{{ report.display_name }}</h2>
                             </div>
                             <span class="status-badge {% if report.refresh_status == 'Completed' %}success{% elif report.refresh_status == 'Failed' %}failed{% else %}neutral{% endif %}">
@@ -60,12 +87,31 @@
                         </div>
                         <div class="report-card__meta">
                             <span>Last refresh</span>
-                            <strong>{{ report.last_refresh|default:"No refresh" }}</strong>
+                            <strong>
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                                    <path d="M16 3v4M8 3v4M3 11h18"></path>
+                                </svg>
+                                {{ report.last_refresh|default:"No refresh" }}
+                            </strong>
                         </div>
                         <div class="report-card__actions">
-                            <a class="button secondary" href="{% url 'report-detail' report.id %}">Open in app</a>
+                            <a class="button secondary report-open-app" href="{% url 'report-detail' report.id %}">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                    <path d="M9 3v18M9 9h12"></path>
+                                </svg>
+                                Open in app
+                            </a>
                             {% if report.web_url %}
-                                <a class="button" href="{{ report.web_url }}" target="_blank" rel="noreferrer">Power BI</a>
+                                <a class="button report-open-powerbi" href="{{ report.web_url }}" target="_blank" rel="noreferrer">
+                                    Power BI
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M15 3h6v6"></path>
+                                        <path d="M10 14 21 3"></path>
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    </svg>
+                                </a>
                             {% else %}
                                 <span class="button disabled" aria-disabled="true">Power BI</span>
                             {% endif %}

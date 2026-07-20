@@ -5,7 +5,9 @@ import time
 from urllib.parse import unquote, urlparse
 
 from django.db import models, transaction
+from django.db.models.deletion import ProtectedError, RestrictedError
 from django.core.cache import cache
+from django.core.exceptions import ValidationError
 from django.apps import apps
 from django.http import FileResponse, Http404, HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, render, redirect
@@ -19,6 +21,8 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.decorators.http import require_http_methods
 from datetime import date, datetime
 from django.utils import timezone
+from django.utils.dateparse import parse_date, parse_datetime
+from django.db.models.functions import TruncDate
 
 try:  # pragma: no cover - optional dependency
     import snowflake.connector as snowflake_connector
@@ -61,7 +65,7 @@ from .resource_library import (
     save_uploaded_resource,
 )
 from .semantic_engine import build_availability_matrix_question, build_availability_question
-from .power_automate import execute_dax_via_flow
+from .power_automate import execute_dax_via_flow, get_flow_url
 from .openai_assistant import (
     chat_semantic_response_with_openai,
     interpret_semantic_answer_with_openai,
@@ -71,6 +75,14 @@ from .openai_assistant import (
 from .openai_service import generate_chat_response, extract_intent as openai_extract_intent
 from .intent_extractor_service import extract_intent
 from .dax_generator_service import generate_dax_from_intent, validate_intent, IntentValidationError
+from .knowledge_resolution_service import (
+    get_cached_trace,
+    resolve_knowledge_question,
+    trace_as_basic_pdf,
+    trace_as_markdown,
+)
+from .synonym_resolution_service import resolve_synonyms
+from .synonym_utils import default_match_type, normalize_synonym_key
 from .ai_config_service import (
     build_section_catalog,
     get_active_section_objects,
@@ -126,6 +138,7 @@ from .models import (
     KnowledgeRecommendedAction,
     KnowledgeSynonym,
     KnowledgeUserFeedback,
+    KPIPageMapping,
     PowerBIReport,
     SystemDatabaseConfig,
     SystemManagedTable,
@@ -1410,6 +1423,7 @@ def data_browser_import_batch_api(request, browser_id):
         mapping = json.loads(mapping_raw) if isinstance(mapping_raw, str) else (mapping_raw if isinstance(mapping_raw, dict) else {})
     except Exception:
         mapping = {}
+    mapping["_audit_user"] = request.user.get_username() if request.user.is_authenticated else "System"
     try:
         result = import_browser_records_batch(
             browser,
@@ -1433,6 +1447,7 @@ def data_browser_import_start_api(request, browser_id):
     try:
         mapping_raw = payload.get("mapping", {})
         mapping = json.loads(mapping_raw) if isinstance(mapping_raw, str) else (mapping_raw if isinstance(mapping_raw, dict) else {})
+        mapping["_audit_user"] = request.user.get_username() if request.user.is_authenticated else "System"
         result = start_import_job(browser, token, mapping=mapping)
     except Exception as exc:
         return _json_error(str(exc))
@@ -1507,7 +1522,8 @@ def data_browser_export_api(request, browser_id):
 def data_browser_records_api(request, browser_id):
     browser = get_object_or_404(DataBrowser.objects.prefetch_related("columns"), id=browser_id)
     try:
-        result = insert_browser_record(browser, _request_payload(request))
+        actor = request.user.get_username() if request.user.is_authenticated else "System"
+        result = insert_browser_record(browser, _request_payload(request), actor=actor)
     except Exception as exc:
         return _json_error(str(exc))
     return JsonResponse({"ok": True, "record": result}, status=201)
@@ -1518,7 +1534,8 @@ def data_browser_record_api(request, browser_id, record_id):
     browser = get_object_or_404(DataBrowser.objects.prefetch_related("columns"), id=browser_id)
     try:
         if request.method == "PUT":
-            result = update_browser_record(browser, record_id, _request_payload(request))
+            actor = request.user.get_username() if request.user.is_authenticated else "System"
+            result = update_browser_record(browser, record_id, _request_payload(request), actor=actor)
         else:
             result = delete_browser_records(browser, [record_id])
     except Exception as exc:
@@ -1615,6 +1632,49 @@ def reporting_home(request):
         reports = list_workspace_reports_with_refresh()
     except Exception as exc:
         error = str(exc)
+    completed_count = sum(
+        1 for report in reports
+        if str(getattr(report, "refresh_status", "") or "").lower() == "completed"
+    )
+    failed_count = sum(
+        1 for report in reports
+        if str(getattr(report, "refresh_status", "") or "").lower() == "failed"
+    )
+    no_refresh_count = len(reports) - completed_count - failed_count
+    report_cards = []
+    for report in reports:
+        name = str(report.display_name or "").lower()
+        if "fuel" in name:
+            visual_class = "fuel"
+        elif "logistic" in name or "aftermarket" in name or "parts" in name:
+            visual_class = "logistics"
+        elif "operator" in name:
+            visual_class = "operator"
+        elif "sos" in name:
+            visual_class = "sos"
+        elif "connected" in name:
+            visual_class = "connected"
+        elif "prime mover" in name:
+            visual_class = "prime"
+        elif "monthly" in name or "customer" in name:
+            visual_class = "customer"
+        elif "lcc" in name or "poca" in name:
+            visual_class = "financial"
+        else:
+            visual_class = "performance"
+        report_cards.append({
+            "id": report.id,
+            "name": report.name,
+            "display_name": report.display_name,
+            "dataset_id": report.dataset_id,
+            "web_url": report.web_url,
+            "embed_url": report.embed_url,
+            "report_type": report.report_type,
+            "last_refresh": report.last_refresh,
+            "refresh_status": report.refresh_status,
+            "visual_class": visual_class,
+        })
+    reports = report_cards
 
     return render(
         request,
@@ -1622,6 +1682,9 @@ def reporting_home(request):
         {
             "reports": reports,
             "report_count": len(reports),
+            "completed_count": completed_count,
+            "failed_count": failed_count,
+            "no_refresh_count": no_refresh_count,
             "error": error,
             "workspace_name": "Efficience Mine Workspace",
             "active_section": "reporting",
@@ -2689,38 +2752,79 @@ def ai_ask(request):
     if not question:
         return JsonResponse({"ok": False, "error": "Question is required."}, status=400)
 
-    if PowerBIReport.objects.filter(is_active=True, validation_status="Validated").exists():
-        try:
-            orchestrated = process_user_question(
-                question,
-                user_context={
-                    "user": request.user,
-                    "section_code": section_code,
-                    "dataset_name": (payload.get("dataset_name") or "FPR Global DB + RLS").strip(),
-                    "open_report": True,
-                    "debug_mode": _user_is_platform_admin(request.user),
-                },
-                conversation_context={
-                    "conversation_id": str(payload.get("conversation_id") or "").strip(),
-                    "messages": conversation,
-                },
-            )
-            if not orchestrated.get("ok"):
-                return JsonResponse(orchestrated, status=400)
-            return JsonResponse({
-                **orchestrated,
-                "chat_message": orchestrated.get("answer"),
-                "answer": {
-                    "answer": orchestrated.get("answer"),
-                    "interpretation": orchestrated.get("answer"),
-                    "rows": orchestrated.get("rows") or [],
-                    "summary": orchestrated.get("rows") or [],
-                },
-            })
-        except Exception:
-            # Preserve the existing semantic path while interaction metadata is
-            # under review or a report mapping is temporarily stale.
-            pass
+    from .chat_routing_service import (
+        answer_without_semantic_model,
+        classify_chat_question,
+    )
+
+    routing = classify_chat_question(question, section_code=section_code)
+    if not routing["requires_semantic_model"]:
+        chat_message = answer_without_semantic_model(question, routing)
+        return JsonResponse({
+            "ok": True,
+            "chat_message": chat_message,
+            "answer": {
+                "answer": chat_message,
+                "interpretation": chat_message,
+                "rows": [],
+                "summary": [],
+            },
+            "route": routing["route"],
+            "routing_reason": routing["reason"],
+            "semantic_model_queried": False,
+        })
+
+    has_validated_report = PowerBIReport.objects.filter(
+        is_active=True,
+        validation_status="Validated",
+    ).exists()
+    try:
+        orchestrated = process_user_question(
+            question,
+            user_context={
+                "user": request.user,
+                "section_code": section_code,
+                "dataset_name": (payload.get("dataset_name") or "FPR Global DB + RLS").strip(),
+                "open_report": has_validated_report,
+                "debug_mode": _user_is_platform_admin(request.user),
+            },
+            conversation_context={
+                "conversation_id": str(payload.get("conversation_id") or "").strip(),
+                "messages": conversation,
+            },
+        )
+        if not orchestrated.get("ok"):
+            clarification = orchestrated.get("clarification_question")
+            if clarification:
+                return JsonResponse({
+                    **orchestrated,
+                    "ok": True,
+                    "chat_message": clarification,
+                    "answer": {
+                        "answer": clarification,
+                        "interpretation": clarification,
+                        "rows": [],
+                        "summary": [],
+                    },
+                })
+            return JsonResponse(orchestrated, status=400)
+        return JsonResponse({
+            **orchestrated,
+            "chat_message": orchestrated.get("answer"),
+            "route": routing["route"],
+            "routing_reason": routing["reason"],
+            "semantic_model_queried": True,
+            "answer": {
+                "answer": orchestrated.get("answer"),
+                "interpretation": orchestrated.get("answer"),
+                "rows": orchestrated.get("rows") or [],
+                "summary": orchestrated.get("rows") or [],
+            },
+        })
+    except Exception:
+        # Keep the legacy semantic path available while the controlled
+        # orchestrator is being completed for a new intent family.
+        pass
 
     intent = extract_intent(question, section_code)
     valid, validation_errors = validate_intent(intent)
@@ -3797,6 +3901,35 @@ def ia_config_import_semantic_model_api(request, section_code):
     )
 
 
+KPI_DICTIONARY_FIELDS = [
+    "kpi_code", "kpi_name", "business_definition", "formula_description",
+    "powerbi_measure_name", "unit", "target", "warning_threshold",
+    "critical_threshold", "aggregation_rule", "default_time_grain", "owner",
+    "validation_status", "is_active", "business_purpose", "business_category",
+    "business_interpretation", "higher_is_better", "lower_is_better",
+    "numerator_description", "denominator_description", "calculation_type",
+    "null_handling_rule", "zero_denominator_behavior", "decimal_precision",
+    "display_format", "powerbi_workspace_id", "powerbi_report_id",
+    "powerbi_semantic_model_id", "powerbi_measure_table",
+    "powerbi_measure_full_reference", "source_report_name", "source_page_name",
+    "source_page_internal_name", "primary_visual_name",
+    "primary_visual_internal_name", "default_comparison_type",
+    "default_comparison_period", "default_ranking_direction", "default_top_n",
+    "trend_supported", "comparison_supported", "ranking_supported",
+    "root_cause_supported", "forecast_supported", "supported_dimensions",
+    "default_drill_down_dimension", "required_filters", "optional_filters",
+    "related_kpis", "diagnostic_kpis", "parent_kpi", "child_kpis",
+    "default_answer_template", "business_explanation_template",
+    "clarification_message", "ai_usage_instructions", "threshold_direction",
+    "target_source", "target_measure_name", "threshold_evaluation_rule",
+    "minimum_data_completeness", "minimum_equipment_count",
+    "freshness_requirement", "data_quality_warning_message", "business_owner",
+    "technical_owner", "approved_by", "approved_at", "version",
+    "effective_from", "effective_to", "review_frequency", "last_reviewed_at",
+    "review_notes",
+]
+
+
 KB_RESOURCE_TYPES = {
     "business-glossary": {
         "model": KnowledgeBusinessGlossary,
@@ -3807,8 +3940,11 @@ KB_RESOURCE_TYPES = {
     "kpi-dictionary": {
         "model": KnowledgeKPIDictionary,
         "columns": ["kpi_code", "kpi_name", "powerbi_measure_name", "unit", "validation_status", "is_active"],
-        "search_fields": ["kpi_code", "kpi_name", "business_definition", "powerbi_measure_name"],
-        "fields": ["kpi_code", "kpi_name", "business_definition", "formula_description", "powerbi_measure_name", "unit", "target", "warning_threshold", "critical_threshold", "aggregation_rule", "default_time_grain", "owner", "validation_status", "is_active"],
+        "search_fields": [
+            "kpi_code", "kpi_name", "business_definition", "business_purpose",
+            "business_category", "powerbi_measure_name", "business_owner",
+        ],
+        "fields": KPI_DICTIONARY_FIELDS,
     },
     "mining-terminology": {
         "model": KnowledgeMiningTerminology,
@@ -3824,9 +3960,17 @@ KB_RESOURCE_TYPES = {
     },
     "synonym-library": {
         "model": KnowledgeSynonym,
-        "columns": ["canonical_term", "synonym", "entity_type", "language", "confidence", "validation_status", "is_active"],
-        "search_fields": ["canonical_term", "synonym", "entity_type"],
-        "fields": ["canonical_term", "synonym", "entity_type", "language", "confidence", "owner", "validation_status", "is_active"],
+        "columns": [
+            "canonical_term", "synonym", "normalized_value", "entity_type", "language",
+            "confidence", "match_type", "synonym_source", "usage_count", "is_ambiguous",
+            "validation_status", "is_active", "updated_at",
+        ],
+        "search_fields": ["canonical_term", "synonym", "normalized_value", "ambiguity_notes"],
+        "fields": [
+            "canonical_term", "synonym", "normalized_value", "entity_type", "language",
+            "confidence", "match_type", "resolution_priority", "is_ambiguous",
+            "ambiguity_notes", "synonym_source", "owner", "validation_status", "is_active",
+        ],
     },
     "business-rules": {
         "model": KnowledgeBusinessRule,
@@ -3869,6 +4013,8 @@ def _kb_value(value):
         return value.isoformat()
     if hasattr(value, "quantize"):
         return str(value)
+    if isinstance(value, User):
+        return value.get_full_name() or value.username
     return value
 
 
@@ -3905,29 +4051,162 @@ def _kb_filter_queryset(queryset, model, request, search_fields):
         for field in search_fields:
             q_filter |= models.Q(**{f"{field}__icontains": query})
         queryset = queryset.filter(q_filter)
+    if model is KnowledgeSynonym:
+        mapping = {
+            "entity_type": "entity_type",
+            "language": "language",
+            "source": "synonym_source",
+            "match_type": "match_type",
+            "owner": "owner",
+        }
+        for parameter, field in mapping.items():
+            value = request.GET.get(parameter, "").strip()
+            if value:
+                queryset = queryset.filter(**{field: value})
+        ambiguous = request.GET.get("ambiguous", "").strip().lower()
+        if ambiguous in {"1", "true", "yes"}:
+            queryset = queryset.filter(is_ambiguous=True)
+        elif ambiguous in {"0", "false", "no"}:
+            queryset = queryset.filter(is_ambiguous=False)
+        quick = request.GET.get("quick", "").strip().lower()
+        if quick == "unused":
+            queryset = queryset.filter(usage_count=0)
+        elif quick == "most-used":
+            queryset = queryset.order_by("-usage_count", "-last_used_at")
+        elif quick == "ai-generated":
+            queryset = queryset.filter(synonym_source="AI Generated")
+        elif quick == "validated":
+            queryset = queryset.filter(validation_status="Validated")
+        elif quick == "draft":
+            queryset = queryset.filter(validation_status="Draft")
+        elif quick == "to-review":
+            queryset = queryset.filter(validation_status="To Review")
+        elif quick == "ambiguous":
+            queryset = queryset.filter(is_ambiguous=True)
+        elif quick == "inactive":
+            queryset = queryset.filter(is_active=False)
+        min_usage = request.GET.get("min_usage", "").strip()
+        max_usage = request.GET.get("max_usage", "").strip()
+        min_confidence = request.GET.get("min_confidence", "").strip()
+        max_confidence = request.GET.get("max_confidence", "").strip()
+        if min_usage.isdigit():
+            queryset = queryset.filter(usage_count__gte=int(min_usage))
+        if max_usage.isdigit():
+            queryset = queryset.filter(usage_count__lte=int(max_usage))
+        if min_confidence:
+            queryset = queryset.filter(confidence__gte=min_confidence)
+        if max_confidence:
+            queryset = queryset.filter(confidence__lte=max_confidence)
     return queryset
 
 
+def _validation_error_message(exc: ValidationError) -> str:
+    if hasattr(exc, "message_dict"):
+        return "; ".join(
+            f"{field}: {', '.join(messages)}"
+            for field, messages in exc.message_dict.items()
+        )
+    return "; ".join(exc.messages)
+
+
+def _kpi_dictionary_form_metadata(section_code: str = "") -> dict:
+    filters = AIFilterMapping.objects.filter(is_active=True).select_related("section")
+    kpis = KnowledgeKPIDictionary.objects.all().select_related("section")
+    if section_code:
+        filters = filters.filter(section__code=section_code)
+        kpis = kpis.filter(section__code=section_code)
+    return {
+        "filters": [
+            {
+                "value": item.filter_code,
+                "label": item.filter_label,
+                "section": item.section.code,
+            }
+            for item in filters.order_by("filter_label")
+        ],
+        "kpis": [
+            {
+                "value": item.kpi_code,
+                "label": item.kpi_name,
+                "section": item.section.code,
+            }
+            for item in kpis.order_by("kpi_name")
+        ],
+    }
+
+
 def _kb_apply_payload(item, payload: dict, fields: list[str], section=None):
-    if section is not None and hasattr(item, "section"):
+    model_field_names = {field.name for field in item._meta.fields}
+    if section is not None and "section" in model_field_names:
         item.section = section
     for field in fields:
         if field in {"created_at", "updated_at"}:
             continue
-        if field == "is_active":
-            setattr(item, field, _ia_normalize_bool(payload.get(field), getattr(item, field, True)))
+        try:
+            model_field = item._meta.get_field(field)
+        except Exception:
+            model_field = None
+        if isinstance(model_field, models.BooleanField):
+            setattr(
+                item, field,
+                _ia_normalize_bool(payload.get(field), getattr(item, field, False)),
+            )
             continue
-        if field in {"expected_json_intent", "corrected_intent", "extracted_intent", "powerbi_result", "token_usage"}:
-            setattr(item, field, _ia_json_object(payload, item, field))
+        if isinstance(model_field, models.JSONField):
+            raw_value = payload.get(field, getattr(item, field, []))
+            if isinstance(raw_value, str):
+                try:
+                    raw_value = json.loads(raw_value) if raw_value.strip() else []
+                except json.JSONDecodeError as exc:
+                    raise ValueError(f"{model_field.verbose_name} must be valid JSON.") from exc
+            setattr(item, field, raw_value)
             continue
         value = payload.get(field, getattr(item, field, ""))
-        if field in {"target", "warning_threshold", "critical_threshold", "confidence"}:
+        if isinstance(model_field, models.DecimalField):
             value = None if value in ("", None) else value
-        if field in {"priority", "rating", "execution_time_ms"}:
+        if isinstance(model_field, models.IntegerField) and not isinstance(model_field, models.BooleanField):
+            if value in ("", None) and getattr(model_field, "null", False):
+                value = None
+            else:
+                value = int(value or 0)
+        if isinstance(model_field, models.DateTimeField):
+            value = None if value in ("", None) else parse_datetime(str(value))
+            if payload.get(field) not in ("", None) and value is None:
+                raise ValueError(f"{model_field.verbose_name} must be a valid datetime.")
+        elif isinstance(model_field, models.DateField):
+            value = None if value in ("", None) else parse_date(str(value))
+            if payload.get(field) not in ("", None) and value is None:
+                raise ValueError(f"{model_field.verbose_name} must be a valid date.")
+        if field in {"priority", "rating", "execution_time_ms"} and model_field is None:
             value = _ia_int(payload, item, field, 0)
-        if field == "was_answer_useful":
-            value = _ia_normalize_bool(payload.get(field), getattr(item, field, False))
         setattr(item, field, value)
+    return item
+
+
+def _save_knowledge_synonym(item, user, *, previous=None):
+    critical_changed = False
+    if previous and previous.validation_status == "Validated":
+        critical_changed = any(
+            getattr(previous, field) != getattr(item, field)
+            for field in KnowledgeSynonym.CRITICAL_FIELDS
+        )
+    if item.pk:
+        item.updated_by = user if getattr(user, "is_authenticated", False) else None
+    else:
+        item.created_by = user if getattr(user, "is_authenticated", False) else None
+        item.updated_by = item.created_by
+    if critical_changed:
+        item.validation_status = "To Review"
+        item.validated_at = None
+        item.validated_by = None
+    elif item.validation_status == "Validated":
+        if not previous or previous.validation_status != "Validated":
+            item.validated_at = timezone.now()
+            item.validated_by = user if getattr(user, "is_authenticated", False) else None
+    elif item.validation_status != "Validated":
+        item.validated_at = None
+        item.validated_by = None
+    item.save()
     return item
 
 
@@ -4035,6 +4314,486 @@ def knowledge_base_overview_api(request):
     return JsonResponse({"ok": True, "overview": _kb_overview_payload()})
 
 
+@require_http_methods(["GET"])
+def synonym_analytics_api(request):
+    if not is_platform_admin(request.user):
+        return _json_error("Administrator access required.", status=403)
+    queryset = _kb_filter_queryset(
+        KnowledgeSynonym.objects.select_related("section"),
+        KnowledgeSynonym,
+        request,
+        KB_RESOURCE_TYPES["synonym-library"]["search_fields"],
+    )
+    total = queryset.count()
+    by = lambda field: list(
+        queryset.values(field).annotate(count=models.Count("id")).order_by("-count", field)
+    )
+    serialize = lambda item: {
+        "id": item.id,
+        "synonym": item.synonym,
+        "canonical_term": item.canonical_term,
+        "usage_count": item.usage_count,
+        "last_used_at": _kb_value(item.last_used_at),
+        "created_at": _kb_value(item.created_at),
+        "entity_type": item.entity_type,
+        "source": item.synonym_source,
+        "validation_status": item.validation_status,
+        "confidence": float(item.confidence),
+        "ambiguity_notes": item.ambiguity_notes,
+    }
+    return JsonResponse({"ok": True, "analytics": {
+        "summary": {
+            "total": total,
+            "active": queryset.filter(is_active=True).count(),
+            "validated": queryset.filter(validation_status="Validated").count(),
+            "draft": queryset.filter(validation_status="Draft").count(),
+            "ambiguous": queryset.filter(is_ambiguous=True).count(),
+            "unused": queryset.filter(usage_count=0).count(),
+            "ai_generated": queryset.filter(synonym_source="AI Generated").count(),
+            "total_usages": queryset.aggregate(value=models.Sum("usage_count"))["value"] or 0,
+        },
+        "by_entity_type": by("entity_type"),
+        "by_language": by("language"),
+        "by_source": by("synonym_source"),
+        "by_status": by("validation_status"),
+        "most_used": [
+            serialize(item) for item in queryset.order_by("-usage_count", "-last_used_at")[:20]
+        ],
+        "never_used": [
+            serialize(item) for item in queryset.filter(usage_count=0).order_by("-created_at")[:20]
+        ],
+        "ambiguous": [
+            serialize(item) for item in queryset.filter(is_ambiguous=True).order_by("synonym")[:100]
+        ],
+        "usage_trend": list(
+            queryset.filter(last_used_at__isnull=False)
+            .annotate(day=TruncDate("last_used_at"))
+            .values("day")
+            .annotate(count=models.Sum("usage_count"))
+            .order_by("day")
+        ),
+    }})
+
+
+@require_http_methods(["POST"])
+def synonym_resolution_test_api(request):
+    if not is_platform_admin(request.user):
+        return _json_error("Administrator access required.", status=403)
+    payload = _ia_payload(request)
+    question = str(payload.get("question") or "").strip()
+    if not question:
+        return _json_error("Question is required.")
+    mode = str(payload.get("mode") or "Production").title()
+    if mode not in {"Production", "Debug"}:
+        return _json_error("Execution mode must be Production or Debug.")
+    result = resolve_synonyms(
+        question,
+        section_code=str(payload.get("section") or "").strip() or None,
+        mode=mode,
+        count_usage=_ia_normalize_bool(payload.get("count_usage"), False),
+    )
+    return JsonResponse({"ok": True, "result": result})
+
+
+@require_http_methods(["GET", "PUT"])
+def synonym_resolution_settings_api(request, section_code):
+    if not is_platform_admin(request.user):
+        return _json_error("Administrator access required.", status=403)
+    section = get_object_or_404(AIConfigSection, code=section_code)
+    if request.method == "PUT":
+        payload = _ia_payload(request)
+        try:
+            threshold = int(payload.get("ambiguity_threshold"))
+        except (TypeError, ValueError):
+            return _json_error("Ambiguity threshold must be an integer between 1 and 100.")
+        if not 1 <= threshold <= 100:
+            return _json_error("Ambiguity threshold must be between 1 and 100.")
+        section.synonym_ambiguity_threshold = threshold
+        section.save(update_fields=["synonym_ambiguity_threshold", "updated_at"])
+    return JsonResponse({"ok": True, "settings": {
+        "section": section.code,
+        "ambiguity_threshold": section.synonym_ambiguity_threshold,
+    }})
+
+
+@require_http_methods(["POST"])
+def knowledge_resolution_api(request):
+    if not is_platform_admin(request.user):
+        return _json_error("Administrator access required.", status=403)
+    payload = _ia_payload(request)
+    question = str(payload.get("question") or "").strip()
+    mode = str(payload.get("mode") or "Production").strip().title()
+    if not question:
+        return _json_error("User Question is required.")
+    if mode not in {"Production", "Debug"}:
+        return _json_error("Execution mode must be Production or Debug.")
+    try:
+        trace = resolve_knowledge_question(question, mode, request.user)
+    except Exception as exc:
+        return _json_error(str(exc), status=500)
+    return JsonResponse({"ok": True, "trace": trace})
+
+
+@require_http_methods(["GET"])
+def knowledge_resolution_export(request, trace_id, file_type):
+    if not is_platform_admin(request.user):
+        return _json_error("Administrator access required.", status=403)
+    trace = get_cached_trace(trace_id, request.user)
+    if not trace:
+        return _json_error("Resolution trace expired or was not found.", status=404)
+    file_type = file_type.lower()
+    if file_type == "json":
+        content = json.dumps(trace, ensure_ascii=False, indent=2).encode("utf-8")
+        content_type = "application/json"
+    elif file_type in {"md", "markdown"}:
+        content = trace_as_markdown(trace).encode("utf-8")
+        content_type = "text/markdown; charset=utf-8"
+        file_type = "md"
+    elif file_type == "pdf":
+        content = trace_as_basic_pdf(trace)
+        content_type = "application/pdf"
+    else:
+        return _json_error("Export format must be JSON, Markdown or PDF.")
+    response = HttpResponse(content, content_type=content_type)
+    response["Content-Disposition"] = (
+        f'attachment; filename="Mining360_Knowledge_Resolution_{trace_id[:8]}.{file_type}"'
+    )
+    return response
+
+
+@require_http_methods(["GET"])
+def knowledge_base_synonyms_export(request, file_type="xlsx"):
+    queryset = _kb_filter_queryset(
+        KnowledgeSynonym.objects.select_related("section").all(),
+        KnowledgeSynonym,
+        request,
+        KB_RESOURCE_TYPES["synonym-library"]["search_fields"],
+    ).order_by("section__name", "canonical_term", "synonym")
+    export_rows = [{
+        "section": item.section.code,
+        "canonical_term": item.canonical_term,
+        "synonym": item.synonym,
+        "normalized_value": item.normalized_value,
+        "entity_type": item.entity_type,
+        "language": item.language,
+        "confidence": float(item.confidence),
+        "match_type": item.match_type,
+        "synonym_source": item.synonym_source,
+        "resolution_priority": item.resolution_priority,
+        "is_ambiguous": item.is_ambiguous,
+        "ambiguity_notes": item.ambiguity_notes,
+        "usage_count": item.usage_count,
+        "owner": item.owner,
+        "validation_status": item.validation_status,
+        "active": item.is_active,
+        "updated_at": item.updated_at.isoformat(),
+    } for item in queryset]
+    file_type = str(file_type or "xlsx").lower()
+    if file_type == "json":
+        response = JsonResponse(export_rows, safe=False, json_dumps_params={"ensure_ascii": False, "indent": 2})
+        response["Content-Disposition"] = 'attachment; filename="Mining360_Synonyms.json"'
+        return response
+    if file_type == "csv":
+        response = HttpResponse(content_type="text/csv; charset=utf-8")
+        response["Content-Disposition"] = 'attachment; filename="Mining360_Synonyms.csv"'
+        response.write("\ufeff")
+        writer = csv.DictWriter(response, fieldnames=list(export_rows[0].keys()) if export_rows else [
+            "section", "canonical_term", "synonym", "normalized_value", "entity_type",
+            "language", "confidence", "match_type", "synonym_source",
+        ])
+        writer.writeheader()
+        writer.writerows(export_rows)
+        return response
+    if file_type != "xlsx":
+        return _json_error("Export format must be xlsx, csv or json.")
+    try:
+        from openpyxl import Workbook
+        from openpyxl.styles import Font, PatternFill
+    except ImportError:
+        return _json_error("Excel export requires openpyxl.", status=500)
+
+    workbook = Workbook()
+    worksheet = workbook.active
+    worksheet.title = "Synonyms"
+    headers = [
+        "Section", "Canonical Term", "Synonym", "Normalized Value", "Entity Type",
+        "Language", "Confidence", "Match Type", "Synonym Source", "Resolution Priority",
+        "Is Ambiguous", "Ambiguity Notes", "Usage Count", "Owner",
+        "Validation Status", "Active", "Created At", "Updated At",
+    ]
+    worksheet.append(headers)
+    for cell in worksheet[1]:
+        cell.font = Font(bold=True, color="000000")
+        cell.fill = PatternFill("solid", fgColor="FFCD11")
+    for item in queryset:
+        worksheet.append([
+            item.section.name,
+            item.canonical_term,
+            item.synonym,
+            item.normalized_value,
+            item.entity_type,
+            item.language,
+            float(item.confidence),
+            item.match_type,
+            item.synonym_source,
+            item.resolution_priority,
+            "Yes" if item.is_ambiguous else "No",
+            item.ambiguity_notes,
+            item.usage_count,
+            item.owner,
+            item.validation_status,
+            "Yes" if item.is_active else "No",
+            item.created_at.astimezone(timezone.get_current_timezone()).replace(tzinfo=None),
+            item.updated_at.astimezone(timezone.get_current_timezone()).replace(tzinfo=None),
+        ])
+    widths = [20, 26, 30, 26, 18, 10, 12, 16, 18, 16, 14, 34, 12, 20, 16, 10, 20, 20]
+    for index, width in enumerate(widths, start=1):
+        worksheet.column_dimensions[chr(64 + index)].width = width
+    worksheet.freeze_panes = "A2"
+    worksheet.auto_filter.ref = worksheet.dimensions
+
+    from io import BytesIO
+    output = BytesIO()
+    workbook.save(output)
+    output.seek(0)
+    response = HttpResponse(
+        output.getvalue(),
+        content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    )
+    response["Content-Disposition"] = 'attachment; filename="Mining360_AI_Knowledge_Synonyms.xlsx"'
+    return response
+
+
+@require_http_methods(["GET"])
+def knowledge_base_synonyms_template(request):
+    try:
+        from openpyxl import Workbook
+        from openpyxl.styles import Font, PatternFill
+        from openpyxl.worksheet.datavalidation import DataValidation
+    except ImportError:
+        return _json_error("Excel template requires openpyxl.", status=500)
+
+    workbook = Workbook()
+    worksheet = workbook.active
+    worksheet.title = "Synonyms Import"
+    headers = [
+        "Section Code", "Canonical Term", "Synonym", "Normalized Value", "Entity Type",
+        "Language", "Confidence", "Synonym Source", "Match Type",
+        "Resolution Priority", "Is Ambiguous", "Ambiguity Notes", "Owner",
+        "Validation Status", "Active",
+    ]
+    worksheet.append(headers)
+    for cell in worksheet[1]:
+        cell.font = Font(bold=True, color="000000")
+        cell.fill = PatternFill("solid", fgColor="FFCD11")
+    worksheet.append([
+        "performance", "availability", "physical availability", "availability", "KPI",
+        "en", 100, "Business", "Phrase", 80, "No", "",
+        "Reliability Team", "To Review", "Yes",
+    ])
+    widths = [20, 28, 32, 28, 20, 12, 14, 20, 18, 18, 14, 36, 24, 20, 12]
+    for index, width in enumerate(widths, start=1):
+        worksheet.column_dimensions[chr(64 + index)].width = width
+    worksheet.freeze_panes = "A2"
+    worksheet.auto_filter.ref = f"A1:O5000"
+
+    entity_values = ",".join(value for value, _ in KnowledgeSynonym.ENTITY_TYPES)
+    status_values = ",".join(value for value, _ in KnowledgeSynonym.VALIDATION_STATUSES)
+    source_values = ",".join(value for value, _ in KnowledgeSynonym.SOURCES)
+    match_values = ",".join(value for value, _ in KnowledgeSynonym.MATCH_TYPES)
+    validations = [
+        (DataValidation(type="list", formula1=f'"{entity_values}"', allow_blank=False), "E2:E5000"),
+        (DataValidation(type="list", formula1=f'"{source_values}"', allow_blank=False), "H2:H5000"),
+        (DataValidation(type="list", formula1=f'"{match_values}"', allow_blank=False), "I2:I5000"),
+        (DataValidation(type="list", formula1=f'"{status_values}"', allow_blank=False), "N2:N5000"),
+        (DataValidation(type="list", formula1='"Yes,No"', allow_blank=False), "K2:K5000"),
+        (DataValidation(type="list", formula1='"Yes,No"', allow_blank=False), "O2:O5000"),
+        (DataValidation(type="decimal", operator="between", formula1="0", formula2="100"), "G2:G5000"),
+        (DataValidation(type="whole", operator="between", formula1="1", formula2="100"), "J2:J5000"),
+    ]
+    for validation, cells in validations:
+        worksheet.add_data_validation(validation)
+        validation.add(cells)
+
+    instructions = workbook.create_sheet("Instructions")
+    instructions.append(["Field", "Requirement"])
+    instructions.append(["Section Code", "Required. Must match an active IA Config section code, for example performance."])
+    instructions.append(["Canonical Term", "Required. The normalized business term used by Mining360 AI."])
+    instructions.append(["Synonym", "Required. A real language variation of the canonical term."])
+    instructions.append(["Normalized Value", "Optional. Defaults to Canonical Term."])
+    instructions.append(["Entity Type", "Required. Select a value from the dropdown."])
+    instructions.append(["Language", "ISO language code such as en or fr. Default: en."])
+    instructions.append(["Confidence", "Number between 0 and 100. Default: 100."])
+    instructions.append(["Synonym Source", "Manual, Business, Imported, System Generated or AI Generated."])
+    instructions.append(["Match Type", "Exact, Phrase, Contains, Abbreviation, Fuzzy or Semantic."])
+    instructions.append(["Resolution Priority", "Integer between 1 and 100."])
+    instructions.append(["Is Ambiguous", "Yes or No."])
+    instructions.append(["Validation Status", "Draft, To Review, Validated, Rejected or Deprecated."])
+    instructions.append(["Active", "Yes or No."])
+    for cell in instructions[1]:
+        cell.font = Font(bold=True)
+        cell.fill = PatternFill("solid", fgColor="FFCD11")
+    instructions.column_dimensions["A"].width = 24
+    instructions.column_dimensions["B"].width = 100
+
+    from io import BytesIO
+    output = BytesIO()
+    workbook.save(output)
+    response = HttpResponse(
+        output.getvalue(),
+        content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    )
+    response["Content-Disposition"] = 'attachment; filename="Mining360_Synonyms_Import_Template.xlsx"'
+    return response
+
+
+def _import_boolean(value, default=True):
+    if value is None or str(value).strip() == "":
+        return default
+    normalized = str(value).strip().lower()
+    if normalized in {"yes", "y", "true", "1", "active", "oui"}:
+        return True
+    if normalized in {"no", "n", "false", "0", "inactive", "non"}:
+        return False
+    raise ValueError("Active must be Yes or No.")
+
+
+@require_http_methods(["POST"])
+def knowledge_base_synonyms_import(request):
+    upload = request.FILES.get("file")
+    if not upload:
+        return _json_error("Select an Excel file to import.")
+    extension = upload.name.lower().rsplit(".", 1)[-1]
+    if extension not in {"xlsx", "csv"}:
+        return _json_error("The synonym import file must use the .xlsx or .csv format.")
+    try:
+        if extension == "xlsx":
+            from openpyxl import load_workbook
+            workbook = load_workbook(upload, read_only=True, data_only=True)
+            worksheet = workbook["Synonyms Import"] if "Synonyms Import" in workbook.sheetnames else workbook.active
+            rows = worksheet.iter_rows(values_only=True)
+        else:
+            content = upload.read().decode("utf-8-sig")
+            rows = iter(csv.reader(content.splitlines()))
+        headers = next(rows, None)
+    except Exception as exc:
+        return _json_error(f"Unable to read the import file: {exc}")
+    expected = [
+        "Section Code", "Canonical Term", "Synonym", "Normalized Value", "Entity Type",
+        "Language", "Confidence", "Synonym Source", "Match Type",
+        "Resolution Priority", "Is Ambiguous", "Ambiguity Notes", "Owner",
+        "Validation Status", "Active",
+    ]
+    normalized_headers = [str(value or "").strip() for value in (headers or [])]
+    if normalized_headers[:len(expected)] != expected:
+        return _json_error(
+            "Invalid template. Download and use the current Mining360 synonym import template."
+        )
+
+    section_map = {
+        item.code.lower(): item
+        for item in AIConfigSection.objects.filter(is_active=True)
+    }
+    entity_types = {value for value, _ in KnowledgeSynonym.ENTITY_TYPES}
+    statuses = {value for value, _ in KnowledgeSynonym.VALIDATION_STATUSES}
+    sources = {value for value, _ in KnowledgeSynonym.SOURCES}
+    match_types = {value for value, _ in KnowledgeSynonym.MATCH_TYPES}
+    summary = {"total_rows": 0, "created": 0, "updated": 0, "skipped": 0, "errors": []}
+    imported_keys = set()
+    for excel_row, values in enumerate(rows, start=2):
+        if not any(value not in (None, "") for value in values):
+            continue
+        summary["total_rows"] += 1
+        try:
+            padded = list(values) + [None] * (len(expected) - len(values))
+            (
+                section_code, canonical, synonym, normalized_value, entity_type,
+                language, confidence, source, match_type, priority, ambiguous,
+                ambiguity_notes, owner, status, active,
+            ) = padded[:15]
+            section = section_map.get(str(section_code or "").strip().lower())
+            if not section:
+                raise ValueError(f"Unknown or inactive section code: {section_code}")
+            canonical = str(canonical or "").strip()
+            synonym = str(synonym or "").strip()
+            entity_type = str(entity_type or "").strip()
+            if not canonical or not synonym:
+                raise ValueError("Canonical Term and Synonym are required.")
+            if entity_type not in entity_types:
+                raise ValueError(f"Invalid Entity Type: {entity_type}")
+            source = str(source or "Imported").strip()
+            if source not in sources:
+                raise ValueError(f"Invalid Synonym Source: {source}")
+            match_type = str(match_type or default_match_type(synonym)).strip()
+            if match_type not in match_types:
+                raise ValueError(f"Invalid Match Type: {match_type}")
+            status = str(status or "To Review").strip()
+            if status not in statuses:
+                raise ValueError(f"Invalid Validation Status: {status}")
+            if source == "AI Generated":
+                status = "Draft"
+            try:
+                confidence = float(confidence if confidence not in (None, "") else 100)
+            except (TypeError, ValueError):
+                raise ValueError("Confidence must be a number between 0 and 100.")
+            if not 0 <= confidence <= 100:
+                raise ValueError("Confidence must be between 0 and 100.")
+            priority = int(priority or 50)
+            if not 1 <= priority <= 100:
+                raise ValueError("Resolution Priority must be between 1 and 100.")
+            normalized_key = normalize_synonym_key(synonym)
+            duplicate_key = (
+                section.id,
+                entity_type.casefold(),
+                str(language or "en").strip().lower(),
+                normalized_key,
+            )
+            if duplicate_key in imported_keys:
+                raise ValueError("Duplicate synonym in the import file.")
+            imported_keys.add(duplicate_key)
+            item = KnowledgeSynonym.objects.filter(
+                section=section,
+                entity_type=entity_type,
+                language=str(language or "en").strip().lower(),
+                normalized_synonym_key=normalized_key,
+            ).first()
+            defaults = {
+                "canonical_term": canonical,
+                "synonym": synonym,
+                "normalized_value": str(normalized_value or canonical).strip(),
+                "language": str(language or "en").strip().lower(),
+                "confidence": confidence,
+                "synonym_source": source,
+                "match_type": match_type,
+                "resolution_priority": priority,
+                "is_ambiguous": _import_boolean(ambiguous, False),
+                "ambiguity_notes": str(ambiguity_notes or "").strip(),
+                "owner": str(owner or "").strip(),
+                "validation_status": status,
+                "is_active": _import_boolean(active),
+            }
+            if item:
+                raise ValueError(
+                    f"Duplicate synonym already exists (record ID {item.id})."
+                )
+            else:
+                imported = KnowledgeSynonym(
+                    section=section,
+                    entity_type=entity_type,
+                    created_by=request.user if request.user.is_authenticated else None,
+                    updated_by=request.user if request.user.is_authenticated else None,
+                    **defaults,
+                )
+                imported.full_clean()
+                _save_knowledge_synonym(imported, request.user)
+                summary["created"] += 1
+        except Exception as exc:
+            if len(summary["errors"]) < 20:
+                summary["errors"].append({"row": excel_row, "message": str(exc)})
+    summary["error_count"] = summary["total_rows"] - summary["created"] - summary["updated"] - summary["skipped"]
+    return JsonResponse({"ok": True, "summary": summary})
+
+
 @require_http_methods(["GET", "POST"])
 def knowledge_base_collection_api(request, resource_type):
     if resource_type == "powerbi-metadata":
@@ -4046,16 +4805,37 @@ def knowledge_base_collection_api(request, resource_type):
     if request.method == "GET":
         queryset = _kb_filter_queryset(model.objects.all(), model, request, config.get("search_fields", []))
         order_field = "-created_at" if resource_type in {"ai-logs", "user-feedback"} else "-updated_at"
-        items = [_kb_item_payload(item) for item in queryset.order_by(order_field)[:500]]
-        return JsonResponse({"ok": True, "items": items})
+        if resource_type == "synonym-library" and request.GET.get("quick") == "most-used":
+            queryset = queryset.order_by("-usage_count", "-last_used_at", "synonym")
+        else:
+            queryset = queryset.order_by(order_field)
+        limit = 2000 if resource_type == "synonym-library" else 500
+        items = [_kb_item_payload(item) for item in queryset[:limit]]
+        response = {"ok": True, "items": items}
+        if resource_type == "kpi-dictionary":
+            response["form_metadata"] = _kpi_dictionary_form_metadata(
+                request.GET.get("section", "").strip()
+            )
+        return JsonResponse(response)
 
     if config.get("readonly"):
         return _json_error("This Knowledge Base resource is read-only.", status=405)
     payload = _ia_payload(request)
-    section = _ia_get_section_or_404(str(payload.get("section") or request.GET.get("section") or "performance"))
+    section_value = payload.get("section") or payload.get("section_code") or request.GET.get("section")
+    if not section_value and payload.get("section_id"):
+        section = get_object_or_404(AIConfigSection, id=payload["section_id"])
+    else:
+        section = _ia_get_section_or_404(str(section_value or "performance"))
     try:
         item = _kb_apply_payload(model(), payload, config["fields"], section=section)
-        item.save()
+        if isinstance(item, (KnowledgeKPIDictionary, KnowledgeSynonym)):
+            item.full_clean()
+        if isinstance(item, KnowledgeSynonym):
+            _save_knowledge_synonym(item, request.user)
+        else:
+            item.save()
+    except ValidationError as exc:
+        return _json_error(_validation_error_message(exc))
     except Exception as exc:
         return _json_error(str(exc))
     return JsonResponse({"ok": True, "item": _kb_item_payload(item)}, status=201)
@@ -4071,20 +4851,268 @@ def knowledge_base_item_api(request, resource_type, item_id):
     model = config["model"]
     item = get_object_or_404(model, id=item_id)
     if request.method == "DELETE":
+        hard_delete = (
+            resource_type in {"business-glossary", "kpi-dictionary"}
+            and request.GET.get("hard", "").strip().lower() in {"1", "true", "yes"}
+        )
+        if hard_delete:
+            if not is_platform_admin(request.user):
+                return _json_error(
+                    "Administrator access is required to permanently delete this item.",
+                    status=403,
+                )
+            try:
+                item.delete()
+            except (ProtectedError, RestrictedError):
+                return _json_error(
+                    "This item cannot be deleted because it is referenced by another configuration.",
+                    status=409,
+                )
+            return JsonResponse({"ok": True, "deleted": True})
         if hasattr(item, "is_active"):
+            previous = KnowledgeSynonym.objects.get(pk=item.pk) if isinstance(item, KnowledgeSynonym) else None
             item.is_active = False
-            item.save(update_fields=["is_active", "updated_at"] if hasattr(item, "updated_at") else ["is_active"])
+            if isinstance(item, KnowledgeSynonym):
+                _save_knowledge_synonym(item, request.user, previous=previous)
+            else:
+                item.save(update_fields=["is_active", "updated_at"] if hasattr(item, "updated_at") else ["is_active"])
             return JsonResponse({"ok": True, "deactivated": True})
         item.delete()
         return JsonResponse({"ok": True, "deleted": True})
     payload = _ia_payload(request)
-    section = _ia_get_section_or_404(str(payload.get("section") or item.section.code)) if hasattr(item, "section") else None
+    if any(field.name == "section" for field in item._meta.fields):
+        section_value = payload.get("section") or payload.get("section_code")
+        if not section_value and payload.get("section_id"):
+            section = get_object_or_404(AIConfigSection, id=payload["section_id"])
+        else:
+            section = _ia_get_section_or_404(str(section_value or item.section.code))
+    else:
+        section = None
+    previous = None
+    if isinstance(item, KnowledgeSynonym):
+        previous = KnowledgeSynonym.objects.get(pk=item.pk)
     try:
         item = _kb_apply_payload(item, payload, config["fields"], section=section)
-        item.save()
+        if isinstance(item, (KnowledgeKPIDictionary, KnowledgeSynonym)):
+            item.full_clean()
+        if isinstance(item, KnowledgeSynonym):
+            _save_knowledge_synonym(item, request.user, previous=previous)
+        else:
+            item.save()
+    except ValidationError as exc:
+        return _json_error(_validation_error_message(exc))
     except Exception as exc:
         return _json_error(str(exc))
     return JsonResponse({"ok": True, "item": _kb_item_payload(item)})
+
+
+@require_http_methods(["POST"])
+def knowledge_base_kpi_duplicate_api(request, item_id):
+    source = get_object_or_404(KnowledgeKPIDictionary, id=item_id)
+    base_code = f"{source.kpi_code}_copy"
+    code = base_code
+    suffix = 2
+    while KnowledgeKPIDictionary.objects.filter(section=source.section, kpi_code=code).exists():
+        code = f"{base_code}_{suffix}"
+        suffix += 1
+    values = {}
+    for field in source._meta.fields:
+        if field.primary_key or field.name in {"created_at", "updated_at"}:
+            continue
+        values[field.attname] = getattr(source, field.attname)
+    values.update({
+        "kpi_code": code,
+        "kpi_name": f"{source.kpi_name} Copy",
+        "validation_status": "Draft",
+        "approved_by": "",
+        "approved_at": None,
+    })
+    item = KnowledgeKPIDictionary(**values)
+    try:
+        item.full_clean()
+        item.save()
+    except ValidationError as exc:
+        return _json_error(_validation_error_message(exc))
+    return JsonResponse(
+        {"ok": True, "item": _kb_item_payload(item, KPI_DICTIONARY_FIELDS)},
+        status=201,
+    )
+
+
+def _kpi_threshold_interpretation(item: KnowledgeKPIDictionary, value) -> str:
+    if value in (None, ""):
+        return "No Power BI value is available for threshold evaluation."
+    try:
+        numeric_value = float(value)
+    except (TypeError, ValueError):
+        return "The Power BI result is not numeric; thresholds were not evaluated."
+    target = float(item.target) if item.target is not None else None
+    warning = float(item.warning_threshold) if item.warning_threshold is not None else None
+    critical = float(item.critical_threshold) if item.critical_threshold is not None else None
+    lower_is_better = item.lower_is_better or item.threshold_direction == "Lower Is Better"
+    if lower_is_better:
+        if critical is not None and numeric_value >= critical:
+            return "Critical"
+        if warning is not None and numeric_value >= warning:
+            return "Warning"
+        if target is not None and numeric_value <= target:
+            return "On Target"
+    else:
+        if critical is not None and numeric_value <= critical:
+            return "Critical"
+        if warning is not None and numeric_value <= warning:
+            return "Warning"
+        if target is not None and numeric_value >= target:
+            return "On Target"
+    return "Within configured range"
+
+
+def _format_kpi_display_value(item: KnowledgeKPIDictionary, value) -> str:
+    if value in (None, ""):
+        return "<value>"
+    try:
+        numeric_value = float(value)
+    except (TypeError, ValueError):
+        return str(value)
+    precision = max(0, int(item.decimal_precision or 0))
+    is_percentage = item.unit.strip() == "%" or "%" in (item.display_format or "")
+    if is_percentage:
+        numeric_value *= 100
+    return f"{numeric_value:,.{precision}f}"
+
+
+@require_http_methods(["POST"])
+def knowledge_base_kpi_test_api(request, item_id):
+    item = get_object_or_404(
+        KnowledgeKPIDictionary.objects.select_related("section"), id=item_id
+    )
+    payload = _request_payload(request)
+    warnings = []
+    validation_errors = []
+    try:
+        item.full_clean()
+    except ValidationError as exc:
+        validation_errors = exc.messages
+
+    required_configuration = [
+        "kpi_code", "kpi_name", "business_definition", "formula_description",
+        "powerbi_measure_name", "unit", "aggregation_rule", "default_time_grain",
+        "business_purpose", "calculation_type",
+    ]
+    configured = [
+        field for field in required_configuration
+        if getattr(item, field, None) not in (None, "", [])
+    ]
+    completeness = round(len(configured) / len(required_configuration) * 100)
+    filters = list(
+        AIFilterMapping.objects.filter(section=item.section, is_active=True)
+        .values("filter_code", "filter_label", "powerbi_table_name", "powerbi_column_name")
+    )
+    dax_template = (
+        AIDaxTemplate.objects.filter(section=item.section, is_active=True)
+        .order_by("template_code").first()
+    )
+    measure_reference = (
+        item.powerbi_measure_full_reference
+        or (f"[{item.powerbi_measure_name.strip('[]')}]" if item.powerbi_measure_name else "")
+    )
+    generated_dax = (
+        f'EVALUATE\nROW("{item.kpi_name.replace(chr(34), chr(34) * 2)}", '
+        f"{measure_reference})"
+        if measure_reference else ""
+    )
+    generated_intent = {
+        "section": item.section.code,
+        "intent_type": "single_kpi",
+        "metric": item.kpi_code,
+        "filters": {code: None for code in (item.required_filters or [])},
+    }
+    powerbi_result = None
+    powerbi_error = ""
+    if _ia_normalize_bool(payload.get("execute_powerbi"), False):
+        if not item.powerbi_semantic_model_id:
+            powerbi_error = "Power BI Semantic Model ID is not configured."
+        elif not generated_dax:
+            powerbi_error = "Power BI Measure Name is not configured."
+        else:
+            try:
+                if get_flow_url():
+                    flow_result = execute_dax_via_flow({
+                        "datasetId": item.powerbi_semantic_model_id,
+                        "datasetName": item.source_report_name or item.section.name,
+                        "query": generated_dax,
+                        "question": f"Test KPI {item.kpi_name}",
+                        "metric": item.kpi_code,
+                        "measure": item.powerbi_measure_name,
+                        "filters": {},
+                        "period": {},
+                        "rlsRole": "",
+                        "roles": [],
+                    })
+                    powerbi_result = _extract_flow_rows(flow_result)
+                else:
+                    powerbi_result = execute_dataset_dax(
+                        item.powerbi_semantic_model_id, generated_dax
+                    )
+            except Exception as exc:
+                powerbi_error = str(exc)
+        if powerbi_error:
+            warnings.append(powerbi_error)
+
+    result_value = None
+    if isinstance(powerbi_result, list) and powerbi_result:
+        first_row = powerbi_result[0]
+        if isinstance(first_row, dict) and first_row:
+            result_value = next(iter(first_row.values()))
+    interpretation = _kpi_threshold_interpretation(item, result_value)
+    formatted_value = _format_kpi_display_value(item, result_value)
+    formatted_target = _format_kpi_display_value(item, item.target)
+    answer_template = item.default_answer_template or (
+        f"The {item.kpi_name} value is {{value}} {item.unit}."
+    )
+    example_answer = (
+        answer_template
+        .replace("{value}", formatted_value)
+        .replace("{target}", formatted_target if item.target is not None else "<target>")
+        .replace("{minesite}", "<minesite>")
+        .replace("{period}", "<period>")
+        .replace("{status}", interpretation)
+    )
+    return JsonResponse({
+        "ok": True,
+        "test": {
+            "configuration_completeness": {
+                "score": completeness,
+                "configured": configured,
+                "missing": [
+                    field for field in required_configuration if field not in configured
+                ],
+            },
+            "powerbi_measure_mapping": {
+                "measure_name": item.powerbi_measure_name,
+                "measure_table": item.powerbi_measure_table,
+                "full_reference": measure_reference,
+                "semantic_model_id": item.powerbi_semantic_model_id,
+            },
+            "supported_filters": filters,
+            "required_filters": item.required_filters,
+            "generated_json_intent": generated_intent,
+            "selected_dax_template": {
+                "code": dax_template.template_code if dax_template else "",
+                "name": dax_template.template_name if dax_template else "",
+            },
+            "generated_dax": generated_dax,
+            "powerbi_result": powerbi_result,
+            "formatted_value": (
+                f"{formatted_value}{item.unit}"
+                if result_value is not None and item.unit else formatted_value
+            ),
+            "threshold_interpretation": interpretation,
+            "example_ai_answer": example_answer,
+            "validation_status": "Valid" if not validation_errors else "Invalid",
+            "validation_warnings": validation_errors + warnings,
+        },
+    })
 
 
 @require_http_methods(["POST"])
@@ -4213,28 +5241,304 @@ def knowledge_base_generate_api(request):
 @require_http_methods(["POST"])
 def knowledge_base_coverage_test_api(request):
     payload = _ia_payload(request)
-    section_code = str(payload.get("section") or "").strip() or "performance"
-    kpi = str(payload.get("kpi") or "").strip()
+    mode = str(payload.get("mode") or "Production").strip().title()
+    if mode not in {"Production", "Debug"}:
+        return _json_error("Execution mode must be Production or Debug.")
+    if mode == "Debug" and not is_platform_admin(request.user):
+        return _json_error(
+            "Debug mode is restricted to administrators.",
+            status=403,
+        )
+    allowed_statuses = (
+        ["Validated"]
+        if mode == "Production"
+        else ["Validated", "Draft", "To Review"]
+    )
+    section_code = str(payload.get("section") or "").strip().lower() or "performance"
+    kpi = str(payload.get("kpi") or "").strip().lower()
     question = str(payload.get("question") or "").strip()
     intent = {}
     if question:
         try:
             intent = extract_intent(question, section_code)
-            kpi = kpi or str(intent.get("metric") or "")
+            kpi = kpi or str(intent.get("metric") or "").strip().lower()
         except Exception:
             intent = {}
     section = get_section_by_code(section_code) or _ia_get_section_or_404(section_code)
+    kpi_candidate = (
+        KnowledgeKPIDictionary.objects.filter(
+            section__code=section_code,
+            kpi_code=kpi,
+        )
+        .order_by(
+            models.Case(
+                models.When(validation_status="Validated", then=0),
+                models.When(validation_status="To Review", then=1),
+                models.When(validation_status="Draft", then=2),
+                default=3,
+                output_field=models.IntegerField(),
+            ),
+            "id",
+        )
+        .first()
+        if kpi else None
+    )
+    matched_kpi = (
+        kpi_candidate
+        if (
+            kpi_candidate
+            and kpi_candidate.is_active
+            and kpi_candidate.validation_status in allowed_statuses
+        )
+        else None
+    )
+    rejection_reason = ""
+    if not kpi:
+        rejection_reason = "No KPI code was extracted or provided."
+    elif not kpi_candidate:
+        rejection_reason = (
+            f"No KPI Dictionary entry matches section '{section_code}' "
+            f"and KPI code '{kpi}'."
+        )
+    elif not kpi_candidate.is_active:
+        rejection_reason = f"KPI Dictionary entry {kpi_candidate.id} is inactive."
+    elif kpi_candidate.validation_status not in allowed_statuses:
+        rejection_reason = (
+            f"KPI Dictionary entry {kpi_candidate.id} has validation status "
+            f"'{kpi_candidate.validation_status}'; allowed statuses in {mode} "
+            f"mode are {', '.join(allowed_statuses)}."
+        )
+
+    measure_mapped = bool(
+        matched_kpi
+        and str(matched_kpi.powerbi_measure_name or "").strip()
+        and str(matched_kpi.powerbi_semantic_model_id or "").strip()
+    )
+
+    evidence = []
+
+    def add_evidence(repository, item, status, used, item_id=None, reason=""):
+        evidence.append({
+            "repository": repository,
+            "item": item or "Not configured",
+            "status": status or "Not Found",
+            "used": bool(used),
+            "mode": mode,
+            "item_id": item_id,
+            "reason": reason,
+        })
+
+    add_evidence(
+        "KPI Dictionary",
+        kpi_candidate.kpi_name if kpi_candidate else kpi,
+        kpi_candidate.validation_status if kpi_candidate else "Not Found",
+        bool(matched_kpi),
+        kpi_candidate.id if kpi_candidate else None,
+        rejection_reason,
+    )
+    add_evidence(
+        "Power BI Mapping",
+        (
+            matched_kpi.powerbi_measure_full_reference
+            or matched_kpi.powerbi_measure_name
+            if matched_kpi else kpi
+        ),
+        matched_kpi.validation_status if matched_kpi else (
+            kpi_candidate.validation_status if kpi_candidate else "Not Found"
+        ),
+        measure_mapped,
+        matched_kpi.id if matched_kpi else None,
+        "" if measure_mapped else (
+            rejection_reason
+            or "Power BI Measure Name and Semantic Model ID are required."
+        ),
+    )
+
+    repository_queries = [
+        (
+            "Synonym Library",
+            KnowledgeSynonym.objects.filter(
+                section=section,
+                canonical_term__iexact=kpi,
+            ),
+            lambda item: f"{item.canonical_term} = {item.synonym}",
+        ),
+        (
+            "Business Rules",
+            KnowledgeBusinessRule.objects.filter(section=section).filter(
+                models.Q(kpi__iexact=kpi) | models.Q(kpi="")
+            ),
+            lambda item: item.rule_name,
+        ),
+        (
+            "Prompt Library",
+            KnowledgePrompt.objects.filter(section=section),
+            lambda item: item.prompt_name,
+        ),
+        (
+            "Question Library",
+            KnowledgeQuestion.objects.filter(section=section),
+            lambda item: item.question_text[:100],
+        ),
+        (
+            "Recommended Actions",
+            KnowledgeRecommendedAction.objects.filter(
+                section=section,
+                kpi__iexact=kpi,
+            ),
+            lambda item: item.recommended_action[:100],
+        ),
+    ]
+    repository_usage = {}
+    for repository, queryset, label_getter in repository_queries:
+        candidates = list(queryset.order_by("-updated_at")[:100])
+        usable = [
+            item for item in candidates
+            if item.is_active and item.validation_status in allowed_statuses
+        ]
+        repository_usage[repository] = bool(usable)
+        if usable:
+            for item in usable:
+                add_evidence(
+                    repository,
+                    label_getter(item),
+                    item.validation_status,
+                    True,
+                    item.id,
+                )
+        elif candidates:
+            candidate = candidates[0]
+            reason = (
+                "Item is inactive."
+                if not candidate.is_active
+                else (
+                    f"Status '{candidate.validation_status}' is not allowed "
+                    f"in {mode} mode."
+                )
+            )
+            add_evidence(
+                repository,
+                label_getter(candidate),
+                candidate.validation_status,
+                False,
+                candidate.id,
+                reason,
+            )
+        else:
+            add_evidence(
+                repository,
+                kpi,
+                "Not Found",
+                False,
+                reason=f"No matching {repository} item was found.",
+            )
+
+    interaction_candidates = list(
+        KPIPageMapping.objects.filter(
+            section=section,
+            metric_code__iexact=kpi,
+        )
+        .select_related("report", "page")
+        .order_by("priority", "id")
+    )
+    usable_interactions = [
+        item for item in interaction_candidates
+        if (
+            item.is_active
+            and item.report.is_active
+            and item.page.is_active
+            and item.report.validation_status in allowed_statuses
+            and item.page.validation_status in allowed_statuses
+        )
+    ]
+    repository_usage["Power BI Interaction"] = bool(usable_interactions)
+    if usable_interactions:
+        for item in usable_interactions:
+            add_evidence(
+                "Power BI Interaction",
+                f"{item.report.display_name} / {item.page.page_display_name}",
+                item.page.validation_status,
+                True,
+                item.id,
+            )
+    elif interaction_candidates:
+        item = interaction_candidates[0]
+        add_evidence(
+            "Power BI Interaction",
+            f"{item.report.display_name} / {item.page.page_display_name}",
+            item.page.validation_status,
+            False,
+            item.id,
+            "Mapping, report and page must be active with an allowed validation status.",
+        )
+    else:
+        add_evidence(
+            "Power BI Interaction",
+            kpi,
+            "Not Found",
+            False,
+            reason="No KPI-to-page mapping was found.",
+        )
+
     checks = {
-        "kpi_defined": bool(kpi and (KnowledgeKPIDictionary.objects.filter(section=section, kpi_code=kpi, validation_status="Validated", is_active=True).exists() or AIMetricMapping.objects.filter(section=section, metric_code=kpi, is_active=True).exists())),
-        "measure_mapped": bool(kpi and AIMetricMapping.objects.filter(section=section, metric_code=kpi, is_active=True).exists()),
+        "kpi_defined": bool(matched_kpi),
+        "measure_mapped": measure_mapped,
         "filters_mapped": AIFilterMapping.objects.filter(section=section, is_active=True).exists(),
-        "synonyms_available": KnowledgeSynonym.objects.filter(section=section, is_active=True).exists() or AISynonym.objects.filter(section=section, is_active=True).exists(),
+        "synonyms_available": repository_usage["Synonym Library"],
         "dax_template": AIDaxTemplate.objects.filter(section=section, is_active=True).exists(),
-        "business_rules": KnowledgeBusinessRule.objects.filter(section=section, is_active=True).exists() or AIBusinessRule.objects.filter(section=section, is_active=True).exists(),
-        "recommended_actions": KnowledgeRecommendedAction.objects.filter(section=section, is_active=True).exists() or AIRecommendedAction.objects.filter(section=section, is_active=True).exists(),
+        "business_rules": repository_usage["Business Rules"],
+        "prompt_library": repository_usage["Prompt Library"],
+        "question_library": repository_usage["Question Library"],
+        "powerbi_interaction": repository_usage["Power BI Interaction"],
+        "recommended_actions": repository_usage["Recommended Actions"],
     }
     score = round(sum(1 for value in checks.values() if value) / len(checks) * 100)
-    return JsonResponse({"ok": True, "intent": intent, "checks": checks, "coverage_score": score})
+    debug_items_used = [
+        item for item in evidence
+        if item["used"] and item["status"] in {"Draft", "To Review"}
+    ]
+    warnings = []
+    if mode == "Debug" and debug_items_used:
+        warnings.append(
+            "This test uses non-validated knowledge. Results may differ from Production."
+        )
+    return JsonResponse({
+        "ok": True,
+        "mode": mode,
+        "test_type": "Knowledge Readiness",
+        "business_result_executed": False,
+        "message": (
+            "This score measures Knowledge Base readiness. "
+            "It is not the KPI value and does not execute Power BI."
+        ),
+        "intent": intent,
+        "checks": checks,
+        "repositories": evidence,
+        "coverage_score": score,
+        "warnings": warnings,
+        "debug": {
+            "searched_section_code": section_code,
+            "searched_kpi_code": kpi,
+            "allowed_validation_statuses": allowed_statuses,
+            "candidate_kpi_id": kpi_candidate.id if kpi_candidate else None,
+            "matched_kpi_id": matched_kpi.id if matched_kpi else None,
+            "rejection_reason": rejection_reason,
+            "candidate_active": (
+                kpi_candidate.is_active if kpi_candidate else None
+            ),
+            "candidate_validation_status": (
+                kpi_candidate.validation_status if kpi_candidate else None
+            ),
+            "measure_name_configured": bool(
+                matched_kpi
+                and str(matched_kpi.powerbi_measure_name or "").strip()
+            ),
+            "semantic_model_id_configured": bool(
+                matched_kpi
+                and str(matched_kpi.powerbi_semantic_model_id or "").strip()
+            ),
+        },
+    })
 
 
 def _mask_secret(value: str) -> str:

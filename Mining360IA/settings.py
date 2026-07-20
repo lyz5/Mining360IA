@@ -46,6 +46,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'reports.openai_usage_context.OpenAIUsageContextMiddleware',
     'reports.middleware.PlatformLoginRequiredMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'reports.sqlserver_config_middleware.SQLServerConfigSyncMiddleware',

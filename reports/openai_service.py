@@ -12,6 +12,7 @@ except Exception:  # pragma: no cover
     OpenAI = None
 
 from .ai_config_service import build_section_catalog, get_prompt_template
+from .openai_client_service import create_tracked_response
 
 
 DEFAULT_OPENAI_MODEL = "gpt-4.1-mini"
@@ -121,8 +122,11 @@ def extract_intent(question_text: str, section_code: str | None = None) -> dict:
         },
     }
     rendered_prompt = _render_configured_prompt(section_code or fallback["section"], "intent_extraction", prompt)
-    response = _client().responses.create(
+    response = create_tracked_response(
+        _client(),
         model=get_openai_model(),
+        section=section_code or fallback["section"],
+        feature="Intent Extraction",
         input=[
             {
                 "role": "system",
@@ -178,8 +182,11 @@ def generate_chat_response(
     if not is_openai_configured():
         return answer.get("interpretation", "")
     rendered_prompt = _render_configured_prompt(section_code, "response_generation", prompt)
-    response = _client().responses.create(
+    response = create_tracked_response(
+        _client(),
         model=get_openai_model(),
+        section=section_code,
+        feature="Business Response",
         input=[
             {
                 "role": "system",

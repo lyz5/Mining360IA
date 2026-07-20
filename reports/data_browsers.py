@@ -3,6 +3,7 @@ import csv
 import json
 import tempfile
 import threading
+from datetime import date, datetime
 from io import StringIO
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
@@ -24,7 +25,9 @@ DATA_TYPE_SQL = {
     "Boolean": "BIT",
 }
 BROWSER_DATABASE = "Mining360"
-SYSTEM_SQL_COLUMNS = {"browserrecordid", "eventchainid", "createdat", "updatedat"}
+SYSTEM_SQL_COLUMNS = {
+    "browserrecordid", "eventchainid", "createdat", "createdby", "updatedat", "updatedby",
+}
 IMPORT_SESSION_DIR = Path(tempfile.gettempdir()) / "mining360_import_sessions"
 IMPORT_JOB_DIR = Path(tempfile.gettempdir()) / "mining360_import_jobs"
 IMPORT_JOB_LOCKS: dict[str, threading.RLock] = {}
@@ -63,6 +66,11 @@ def quote_identifier(value: str) -> str:
 def quote_object_name(value: str, label: str = "SQL object") -> str:
     schema, name = parse_sql_object_name(value, label)
     return f"{quote_identifier(schema)}.{quote_identifier(name)}"
+
+
+def audit_user_sql_literal(value: str | None) -> str:
+    text = str(value or "System").strip() or "System"
+    return "N'" + text[:150].replace("'", "''") + "'"
 
 
 def sql_type_for_column(column: DataBrowserColumn) -> str:
@@ -126,8 +134,43 @@ def value_sql_literal(column: DataBrowserColumn, value) -> str:
             return "0"
         raise DataBrowserValidationError(f"{column.display_name} must be boolean.")
     if column.data_type in {"Date", "DateTime"}:
-        return "'" + value.replace("'", "''") + "'"
+        temporal_value = _parse_temporal_value(column, value)
+        return "'" + temporal_value.isoformat(sep=" ") + "'" if isinstance(temporal_value, datetime) else "'" + temporal_value.isoformat() + "'"
     raise DataBrowserValidationError(f"Unsupported data type: {column.data_type}")
+
+
+def _parse_temporal_value(column: DataBrowserColumn, value):
+    if isinstance(value, datetime):
+        return value if column.data_type == "DateTime" else value.date()
+    if isinstance(value, date):
+        return datetime.combine(value, datetime.min.time()) if column.data_type == "DateTime" else value
+    text = str(value or "").strip()
+    if not text:
+        return None
+    if column.data_type == "Date" and re.fullmatch(r"\d{4}-\d{2}", text):
+        text += "-01"
+    normalized = text.replace("Z", "+00:00")
+    try:
+        parsed = datetime.fromisoformat(normalized)
+        return parsed if column.data_type == "DateTime" else parsed.date()
+    except ValueError:
+        pass
+    formats = (
+        "%d/%m/%Y %H:%M:%S",
+        "%d/%m/%Y %H:%M",
+        "%d/%m/%Y",
+        "%Y/%m/%d %H:%M:%S",
+        "%Y/%m/%d",
+    )
+    for date_format in formats:
+        try:
+            parsed = datetime.strptime(text, date_format)
+            return parsed if column.data_type == "DateTime" else parsed.date()
+        except ValueError:
+            continue
+    raise DataBrowserValidationError(
+        f"{column.display_name}: '{value}' is not a valid {column.data_type} value."
+    )
 
 
 def import_parameter_value(column: DataBrowserColumn, value):
@@ -154,7 +197,7 @@ def import_parameter_value(column: DataBrowserColumn, value):
             return 0
         raise DataBrowserValidationError(f"{column.display_name} must be boolean.")
     if column.data_type in {"Date", "DateTime"}:
-        return value
+        return _parse_temporal_value(column, value)
     raise DataBrowserValidationError(f"Unsupported data type: {column.data_type}")
 
 
@@ -260,7 +303,9 @@ def create_table_statement(browser: DataBrowser) -> str:
         "[BrowserRecordId] BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY",
         "[EventChainID] INT NOT NULL",
         "[CreatedAt] DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME()",
+        "[CreatedBy] NVARCHAR(150) NOT NULL DEFAULT N'System'",
         "[UpdatedAt] DATETIME2 NULL",
+        "[UpdatedBy] NVARCHAR(150) NULL",
     ]
     all_columns = base_columns + configured_columns
     return f"CREATE TABLE {table} (\n    " + ",\n    ".join(all_columns) + "\n)"
@@ -324,6 +369,23 @@ def sync_browser_sql(browser: DataBrowser) -> dict:
                 cursor.execute(statement)
                 executed.append({"action": "add_eventchainid", "sql": statement})
                 log_sync(browser, "add_eventchainid", "Success", "EventChainID column added.", statement)
+            system_columns = {
+                "createdat": "[CreatedAt] DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME()",
+                "createdby": "[CreatedBy] NVARCHAR(150) NOT NULL DEFAULT N'System'",
+                "updatedat": "[UpdatedAt] DATETIME2 NULL",
+                "updatedby": "[UpdatedBy] NVARCHAR(150) NULL",
+            }
+            for column_key, definition in system_columns.items():
+                if column_key in existing:
+                    continue
+                statement = (
+                    f"ALTER TABLE {quote_object_name(browser.table_name, 'Table name')} "
+                    f"ADD {definition}"
+                )
+                cursor.execute(statement)
+                existing.add(column_key)
+                executed.append({"action": "add_audit_column", "column": column_key, "sql": statement})
+                log_sync(browser, "add_audit_column", "Success", f"Audit column {column_key} added.", statement)
             for column in _effective_browser_columns(browser):
                 if column.sql_name.lower() in SYSTEM_SQL_COLUMNS:
                     continue
@@ -493,11 +555,35 @@ def preview_browser_data(browser: DataBrowser, limit: int | str = 100, filters=N
     validate_browser_definition(browser)
     limit_value = _normalize_preview_limit(limit)
     visible_columns = [column for column in _effective_browser_columns(browser) if column.is_visible]
+    column_definitions = [
+        {"id": None, "sql_name": "BrowserRecordId", "display_name": "BrowserRecordId", "data_type": "Integer", "is_lookup": False},
+        {"id": None, "sql_name": "EventChainID", "display_name": "EventChainID", "data_type": "Integer", "is_lookup": False},
+    ] + [
+        {
+            "id": column.id,
+            "sql_name": column.sql_name,
+            "display_name": column.display_name,
+            "data_type": column.data_type,
+            "is_lookup": column.is_lookup,
+        }
+        for column in visible_columns
+    ] + [
+        {"id": None, "sql_name": "CreatedAt", "display_name": "Created On", "data_type": "DateTime", "is_lookup": False},
+        {"id": None, "sql_name": "CreatedBy", "display_name": "Created By", "data_type": "Text", "is_lookup": False},
+        {"id": None, "sql_name": "UpdatedAt", "display_name": "Modified On", "data_type": "DateTime", "is_lookup": False},
+        {"id": None, "sql_name": "UpdatedBy", "display_name": "Modified By", "data_type": "Text", "is_lookup": False},
+    ]
+    preview_column_types = (
+        ["number", "number"]
+        + [_normalize_preview_type(column.data_type) for column in visible_columns]
+        + ["date", "text", "date", "text"]
+    )
     preview_filters = _parse_preview_filters(filters)
     if not browser_table_exists(browser):
         return {
-            "columns": [column.display_name for column in visible_columns],
-            "column_types": ["text", "text"] + [_normalize_preview_type(column.data_type) for column in visible_columns],
+            "columns": [item["display_name"] for item in column_definitions],
+            "column_types": preview_column_types,
+            "column_definitions": column_definitions,
             "rows": [],
             "row_values": [],
             "row_count": 0,
@@ -507,8 +593,12 @@ def preview_browser_data(browser: DataBrowser, limit: int | str = 100, filters=N
             "message": "SQL table does not exist yet. Click Sync with SQL Server first.",
         }
     if visible_columns:
-        select_list = "[BrowserRecordId], [EventChainID], " + ", ".join(quote_identifier(column.sql_name) for column in visible_columns)
-        display_columns = ["BrowserRecordId", "EventChainID"] + [column.display_name for column in visible_columns]
+        data_select = ", ".join(quote_identifier(column.sql_name) for column in visible_columns)
+        select_list = "[BrowserRecordId], [EventChainID]"
+        if data_select:
+            select_list += ", " + data_select
+        select_list += ", [CreatedAt], [CreatedBy], [UpdatedAt], [UpdatedBy]"
+        display_columns = [item["display_name"] for item in column_definitions]
     else:
         select_list = "*"
         display_columns = []
@@ -525,7 +615,8 @@ def preview_browser_data(browser: DataBrowser, limit: int | str = 100, filters=N
     records = [dict(zip(columns, row)) for row in values]
     return {
         "columns": columns,
-        "column_types": ["text", "text"] + [_normalize_preview_type(column.data_type) for column in visible_columns],
+        "column_types": preview_column_types,
+        "column_definitions": column_definitions,
         "rows": records,
         "row_values": values,
         "row_count": len(values),
@@ -535,28 +626,32 @@ def preview_browser_data(browser: DataBrowser, limit: int | str = 100, filters=N
     }
 
 
-def update_browser_record(browser: DataBrowser, record_id: int, values: dict) -> dict:
+def update_browser_record(browser: DataBrowser, record_id: int, values: dict, actor: str = "System") -> dict:
     validate_browser_definition(browser)
     if not browser_table_exists(browser):
         raise DataBrowserValidationError("SQL table does not exist yet. Click Sync with SQL Server first.")
     record_id = int(record_id)
     assignments = []
-    for column in _effective_browser_columns(browser):
-        if column.sql_name.lower() in {"browserrecordid", "createdat", "updatedat"}:
-            continue
-        if column.sql_name in values or column.display_name in values:
-            value = values.get(column.sql_name, values.get(column.display_name))
-            assignments.append(f"{quote_identifier(column.sql_name)} = {value_sql_literal(column, value)}")
-    if not assignments:
-        raise DataBrowserValidationError("No editable value was provided.")
-    assignments.append("[UpdatedAt] = SYSUTCDATETIME()")
-    statement = (
-        f"UPDATE {quote_object_name(browser.table_name, 'Table name')} "
-        f"SET {', '.join(assignments)} "
-        f"WHERE [BrowserRecordId] = {record_id}"
-    )
+    columns = _effective_browser_columns(browser)
     with connect(database=BROWSER_DATABASE) as connection:
         cursor = connection.cursor()
+        _validate_lookup_values(values, columns, cursor)
+        _validate_protected_update(browser, record_id, values, cursor)
+        for column in columns:
+            if column.sql_name.lower() in {"browserrecordid", "createdat", "updatedat"}:
+                continue
+            if column.sql_name in values or column.display_name in values:
+                value = values.get(column.sql_name, values.get(column.display_name))
+                assignments.append(f"{quote_identifier(column.sql_name)} = {value_sql_literal(column, value)}")
+        if not assignments:
+            raise DataBrowserValidationError("No editable value was provided.")
+        assignments.append("[UpdatedAt] = SYSUTCDATETIME()")
+        assignments.append(f"[UpdatedBy] = {audit_user_sql_literal(actor)}")
+        statement = (
+            f"UPDATE {quote_object_name(browser.table_name, 'Table name')} "
+            f"SET {', '.join(assignments)} "
+            f"WHERE [BrowserRecordId] = {record_id}"
+        )
         cursor.execute(statement)
     return {"record_id": record_id, "message": "Record updated."}
 
@@ -571,6 +666,17 @@ def delete_browser_records(browser: DataBrowser, record_ids: list[int]) -> dict:
     id_list = ", ".join(str(item) for item in ids)
     with connect(database=BROWSER_DATABASE) as connection:
         cursor = connection.cursor()
+        dependencies = _record_dependencies(browser, ids, cursor)
+        if dependencies:
+            details = "; ".join(
+                f"{item['browser']}.{item['column']} uses '{item['value']}' "
+                f"in {item['count']} record(s)"
+                for item in dependencies[:10]
+            )
+            raise DataBrowserValidationError(
+                f"Deletion blocked because the selected record(s) are referenced: {details}. "
+                "Update or remove the dependent records first."
+            )
         cursor.execute(
             f"SELECT EventChainID FROM {quote_object_name(browser.table_name, 'Table name')} "
             f"WHERE [BrowserRecordId] IN ({id_list})"
@@ -622,6 +728,194 @@ def lookup_options(column: DataBrowserColumn, limit: int | None = 500) -> dict:
         "sql": sql,
         "limit": "all" if limit is None else limit,
     }
+
+
+def _configured_column(browser: DataBrowser, sql_name: str) -> DataBrowserColumn | None:
+    expected = str(sql_name or "").strip().lower()
+    return next(
+        (column for column in browser.columns.all() if str(column.sql_name).strip().lower() == expected),
+        None,
+    )
+
+
+def _same_sql_object(left: str, right: str) -> bool:
+    try:
+        return tuple(part.lower() for part in parse_sql_object_name(left)) == tuple(
+            part.lower() for part in parse_sql_object_name(right)
+        )
+    except DataBrowserValidationError:
+        return False
+
+
+def _incoming_lookup_columns(browser: DataBrowser) -> list[DataBrowserColumn]:
+    return [
+        column
+        for column in DataBrowserColumn.objects.select_related("browser").filter(is_lookup=True)
+        if _same_sql_object(column.lookup_source_name, browser.table_name)
+    ]
+
+
+def _lookup_validation_cache(
+    columns: list[DataBrowserColumn], cursor
+) -> dict[int, set[str]]:
+    cache: dict[int, set[str]] = {}
+    for column in columns:
+        if not column.is_lookup:
+            continue
+        source_browser = DataBrowser.objects.prefetch_related("columns").filter(
+            table_name=column.lookup_source_name
+        ).first()
+        if not source_browser:
+            raise DataBrowserValidationError(
+                f"Lookup source {column.lookup_source_name} for {column.display_name} was not found."
+            )
+        target_column = _configured_column(source_browser, column.lookup_value_column)
+        if not target_column:
+            raise DataBrowserValidationError(
+                f"Lookup column {column.lookup_value_column} for {column.display_name} was not found."
+            )
+        predicates = [f"{quote_identifier(target_column.sql_name)} IS NOT NULL"]
+        if column.lookup_filter.strip():
+            predicates.append(f"{quote_identifier(column.lookup_filter.strip())} = 1")
+        cursor.execute(
+            f"SELECT DISTINCT {quote_identifier(target_column.sql_name)} "
+            f"FROM {quote_object_name(source_browser.table_name, 'Lookup source')} "
+            f"WHERE {' AND '.join(predicates)}"
+        )
+        cache[column.id] = {
+            normalized
+            for row in cursor.fetchall()
+            if (normalized := _normalize_import_key(row[0]))
+        }
+    return cache
+
+
+def _validate_lookup_values(
+    values: dict,
+    columns: list[DataBrowserColumn],
+    cursor,
+    cache: dict[int, set[str]] | None = None,
+) -> None:
+    lookup_columns = [column for column in columns if column.is_lookup]
+    if not lookup_columns:
+        return
+    cache = cache if cache is not None else _lookup_validation_cache(lookup_columns, cursor)
+    for column in lookup_columns:
+        value = values.get(column.sql_name, values.get(column.display_name))
+        if value in (None, ""):
+            continue
+        if _normalize_import_key(value) not in cache.get(column.id, set()):
+            source_browser = DataBrowser.objects.filter(table_name=column.lookup_source_name).first()
+            source_label = source_browser.name if source_browser else column.lookup_source_name
+            raise DataBrowserValidationError(
+                f"{column.display_name}: value '{value}' does not exist in "
+                f"{source_label}.{column.lookup_value_column}. Select an existing value."
+            )
+
+
+def _dependent_record_count(
+    relation: DataBrowserColumn,
+    value,
+    cursor,
+    excluded_record_ids: list[int] | None = None,
+) -> int:
+    predicate = (
+        f"{quote_identifier(relation.sql_name)} = {value_sql_literal(relation, value)}"
+    )
+    if excluded_record_ids:
+        ids = ", ".join(str(int(item)) for item in excluded_record_ids)
+        predicate += f" AND [BrowserRecordId] NOT IN ({ids})"
+    cursor.execute(
+        f"SELECT COUNT(*) FROM {quote_object_name(relation.browser.table_name, 'Dependent Browser')} "
+        f"WHERE {predicate}"
+    )
+    return int((cursor.fetchone() or [0])[0])
+
+
+def _remaining_source_value_count(
+    browser: DataBrowser,
+    target_column: DataBrowserColumn,
+    value,
+    excluded_record_ids: list[int],
+    cursor,
+) -> int:
+    ids = ", ".join(str(int(item)) for item in excluded_record_ids)
+    cursor.execute(
+        f"SELECT COUNT(*) FROM {quote_object_name(browser.table_name, 'Browser table')} "
+        f"WHERE {quote_identifier(target_column.sql_name)} = "
+        f"{value_sql_literal(target_column, value)} AND [BrowserRecordId] NOT IN ({ids})"
+    )
+    return int((cursor.fetchone() or [0])[0])
+
+
+def _record_dependencies(
+    browser: DataBrowser, record_ids: list[int], cursor
+) -> list[dict]:
+    dependencies = []
+    for relation in _incoming_lookup_columns(browser):
+        target_column = _configured_column(browser, relation.lookup_value_column)
+        if not target_column:
+            continue
+        ids = ", ".join(str(int(item)) for item in record_ids)
+        cursor.execute(
+            f"SELECT DISTINCT {quote_identifier(target_column.sql_name)} "
+            f"FROM {quote_object_name(browser.table_name, 'Browser table')} "
+            f"WHERE [BrowserRecordId] IN ({ids}) AND "
+            f"{quote_identifier(target_column.sql_name)} IS NOT NULL"
+        )
+        for row in cursor.fetchall():
+            value = row[0]
+            if _remaining_source_value_count(browser, target_column, value, record_ids, cursor):
+                continue
+            excluded_ids = record_ids if _same_sql_object(relation.browser.table_name, browser.table_name) else None
+            count = _dependent_record_count(relation, value, cursor, excluded_ids)
+            if count:
+                dependencies.append({
+                    "browser": relation.browser.name,
+                    "column": relation.display_name,
+                    "value": _json_safe(value),
+                    "count": count,
+                })
+    return dependencies
+
+
+def _validate_protected_update(
+    browser: DataBrowser,
+    record_id: int,
+    values: dict,
+    cursor,
+) -> None:
+    relations = _incoming_lookup_columns(browser)
+    if not relations:
+        return
+    for relation in relations:
+        target_column = _configured_column(browser, relation.lookup_value_column)
+        if not target_column:
+            continue
+        supplied = target_column.sql_name in values or target_column.display_name in values
+        if not supplied:
+            continue
+        new_value = values.get(target_column.sql_name, values.get(target_column.display_name))
+        cursor.execute(
+            f"SELECT {quote_identifier(target_column.sql_name)} "
+            f"FROM {quote_object_name(browser.table_name, 'Browser table')} "
+            f"WHERE [BrowserRecordId] = {int(record_id)}"
+        )
+        row = cursor.fetchone()
+        if not row or _normalize_import_key(row[0]) == _normalize_import_key(new_value):
+            continue
+        old_value = row[0]
+        if old_value in (None, ""):
+            continue
+        if _remaining_source_value_count(browser, target_column, old_value, [record_id], cursor):
+            continue
+        excluded_ids = [record_id] if _same_sql_object(relation.browser.table_name, browser.table_name) else None
+        count = _dependent_record_count(relation, old_value, cursor, excluded_ids)
+        if count:
+            raise DataBrowserValidationError(
+                f"Modification blocked: value '{old_value}' is used by {count} record(s) in "
+                f"{relation.browser.name}.{relation.display_name}. Update those records first."
+            )
 
 
 def _json_safe(value):
@@ -813,18 +1107,27 @@ def _build_existing_record_index(browser: DataBrowser, columns: list[DataBrowser
     return index
 
 
-def insert_browser_record(browser: DataBrowser, values: dict) -> dict:
+def insert_browser_record(browser: DataBrowser, values: dict, actor: str = "System") -> dict:
     validate_browser_definition(browser)
     if not browser_table_exists(browser):
         sync_browser_sql(browser)
     with connect(database=BROWSER_DATABASE) as connection:
         cursor = connection.cursor()
-        eventchain_id = _insert_browser_record_with_cursor(browser, values, cursor)
+        eventchain_id = _insert_browser_record_with_cursor(browser, values, cursor, actor=actor)
     return {"eventchain_id": eventchain_id, "message": "Record inserted."}
 
 
-def _insert_browser_record_with_cursor(browser: DataBrowser, values: dict, cursor, columns: list[DataBrowserColumn] | None = None, next_eventchain_id: int | None = None) -> int:
+def _insert_browser_record_with_cursor(
+    browser: DataBrowser,
+    values: dict,
+    cursor,
+    columns: list[DataBrowserColumn] | None = None,
+    next_eventchain_id: int | None = None,
+    actor: str = "System",
+    lookup_cache: dict[int, set[str]] | None = None,
+) -> int:
     columns = columns or _effective_browser_columns(browser)
+    _validate_lookup_values(values, columns, cursor, cache=lookup_cache)
     eventchain_id_value = values.get("EventChainID", values.get("eventchainid"))
     explicit_eventchain = eventchain_id_value not in (None, "")
     if explicit_eventchain:
@@ -843,8 +1146,8 @@ def _insert_browser_record_with_cursor(browser: DataBrowser, values: dict, curso
             "INSERT INTO dbo.EventChain (EventChainID, EventChainTypeID, Created_By, User_ID) "
             f"VALUES ({eventchain_id}, 1, 0, 0)"
         )
-    sql_columns = ["EventChainID"]
-    sql_values = [str(eventchain_id)]
+    sql_columns = ["EventChainID", "CreatedBy"]
+    sql_values = [str(eventchain_id), audit_user_sql_literal(actor)]
     for column in columns:
         if column.sql_name.lower() in {"browserrecordid", "createdat", "updatedat", "eventchainid"}:
             continue
@@ -920,7 +1223,11 @@ def _update_import_record_with_cursor(
     values: dict,
     cursor,
     columns: list[DataBrowserColumn],
+    actor: str = "System",
+    lookup_cache: dict[int, set[str]] | None = None,
 ) -> None:
+    _validate_lookup_values(values, columns, cursor, cache=lookup_cache)
+    _validate_protected_update(browser, record_id, values, cursor)
     assignments = []
     for column in columns:
         if column.sql_name.lower() in {"browserrecordid", "createdat", "updatedat", "eventchainid"}:
@@ -930,13 +1237,38 @@ def _update_import_record_with_cursor(
             f"{quote_identifier(column.sql_name)} = {value_sql_literal(column, value)}"
         )
     assignments.append("[UpdatedAt] = SYSUTCDATETIME()")
+    assignments.append(f"[UpdatedBy] = {audit_user_sql_literal(actor)}")
     cursor.execute(
         f"UPDATE {quote_object_name(browser.table_name, 'Table name')} "
         f"SET {', '.join(assignments)} WHERE [BrowserRecordId] = {int(record_id)}"
     )
 
 
-def _bulk_insert_import_rows(browser, prepared_rows, cursor, columns) -> None:
+def _execute_import_rows(cursor, insert_sql: str, rows: list[tuple], placeholder: str) -> None:
+    if not rows:
+        return
+    if not cursor.__class__.__module__.startswith("pytds"):
+        cursor.executemany(
+            f"{insert_sql} VALUES ({', '.join([placeholder] * len(rows[0]))})",
+            rows,
+        )
+        return
+
+    # python-tds implements executemany as one network round-trip per row.
+    # Multi-row VALUES keeps each statement below SQL Server's 2,100 parameter limit.
+    column_count = len(rows[0])
+    batch_size = max(1, 2000 // column_count)
+    row_placeholder = f"({', '.join([placeholder] * column_count)})"
+    for offset in range(0, len(rows), batch_size):
+        batch = rows[offset:offset + batch_size]
+        parameters = tuple(value for row in batch for value in row)
+        cursor.execute(
+            f"{insert_sql} VALUES {', '.join([row_placeholder] * len(batch))}",
+            parameters,
+        )
+
+
+def _bulk_insert_import_rows(browser, prepared_rows, connection, columns) -> None:
     if not prepared_rows:
         return
     data_columns = [
@@ -945,7 +1277,7 @@ def _bulk_insert_import_rows(browser, prepared_rows, cursor, columns) -> None:
     ]
     eventchain_rows = [(row["eventchain_id"], 1, 0, 0) for row in prepared_rows]
     value_rows = [
-        tuple([row["eventchain_id"]] + [
+        tuple([row["eventchain_id"], str(row.get("actor") or "System")[:150]] + [
             import_parameter_value(
                 column,
                 row["values"].get(column.sql_name, row["values"].get(column.display_name)),
@@ -954,21 +1286,25 @@ def _bulk_insert_import_rows(browser, prepared_rows, cursor, columns) -> None:
         ])
         for row in prepared_rows
     ]
-    event_cursor = cursor.connection.cursor()
-    data_cursor = cursor.connection.cursor()
-    if hasattr(data_cursor, "fast_executemany"):
-        data_cursor.fast_executemany = True
-    event_cursor.execute(
+    batch_cursor = connection.cursor()
+    parameter_placeholder = (
+        "%s" if batch_cursor.__class__.__module__.startswith("pytds") else "?"
+    )
+    if hasattr(batch_cursor, "fast_executemany"):
+        batch_cursor.fast_executemany = True
+    batch_cursor.execute(
         "CREATE TABLE #Mining360ImportEventChain ("
         "EventChainID INT NOT NULL, EventChainTypeID INT NOT NULL, "
         "Created_By INT NOT NULL, User_ID INT NOT NULL)"
     )
-    event_cursor.executemany(
+    _execute_import_rows(
+        batch_cursor,
         "INSERT INTO #Mining360ImportEventChain "
-        "(EventChainID, EventChainTypeID, Created_By, User_ID) VALUES (?, ?, ?, ?)",
+        "(EventChainID, EventChainTypeID, Created_By, User_ID)",
         eventchain_rows,
+        parameter_placeholder,
     )
-    event_cursor.execute(
+    batch_cursor.execute(
         "INSERT INTO dbo.EventChain (EventChainID, EventChainTypeID, Created_By, User_ID) "
         "SELECT source.EventChainID, MAX(source.EventChainTypeID), "
         "MAX(source.Created_By), MAX(source.User_ID) "
@@ -976,13 +1312,14 @@ def _bulk_insert_import_rows(browser, prepared_rows, cursor, columns) -> None:
         "LEFT JOIN dbo.EventChain target ON target.EventChainID = source.EventChainID "
         "WHERE target.EventChainID IS NULL GROUP BY source.EventChainID"
     )
-    event_cursor.execute("DROP TABLE #Mining360ImportEventChain")
-    sql_columns = ["[EventChainID]"] + [quote_identifier(column.sql_name) for column in data_columns]
-    placeholders = ", ".join("?" for _ in sql_columns)
-    data_cursor.executemany(
+    batch_cursor.execute("DROP TABLE #Mining360ImportEventChain")
+    sql_columns = ["[EventChainID]", "[CreatedBy]"] + [quote_identifier(column.sql_name) for column in data_columns]
+    _execute_import_rows(
+        batch_cursor,
         f"INSERT INTO {quote_object_name(browser.table_name, 'Table name')} "
-        f"({', '.join(sql_columns)}) VALUES ({placeholders})",
+        f"({', '.join(sql_columns)})",
         value_rows,
+        parameter_placeholder,
     )
 
 
@@ -990,6 +1327,7 @@ def import_browser_records(browser: DataBrowser, uploaded_file, mapping: dict | 
     headers, rows = _read_import_rows(uploaded_file)
     mapping = mapping if isinstance(mapping, dict) else {}
     column_map = mapping.get("column_map") if isinstance(mapping.get("column_map"), dict) else {}
+    actor = str(mapping.get("_audit_user") or "System")[:150]
 
     inserted = 0
     updated = 0
@@ -1002,6 +1340,7 @@ def import_browser_records(browser: DataBrowser, uploaded_file, mapping: dict | 
         duplicate_mode = "skip"
     with connect(database=BROWSER_DATABASE) as connection:
         cursor = connection.cursor()
+        lookup_cache = _lookup_validation_cache(columns, cursor)
         existing_index = _build_existing_record_index(browser, columns, cursor)
         next_eventchain_id = _next_eventchain_id(cursor)
         for index, row in enumerate(rows, start=2):
@@ -1011,7 +1350,10 @@ def import_browser_records(browser: DataBrowser, uploaded_file, mapping: dict | 
                 if existing_record_id is not None and duplicate_mode == "skip":
                     skipped += 1
                 elif existing_record_id is not None:
-                    _update_import_record_with_cursor(browser, existing_record_id, values, cursor, columns)
+                    _update_import_record_with_cursor(
+                        browser, existing_record_id, values, cursor, columns,
+                        actor=actor, lookup_cache=lookup_cache,
+                    )
                     updated += 1
                 else:
                     inserted_eventchain_id = _insert_browser_record_with_cursor(
@@ -1020,6 +1362,8 @@ def import_browser_records(browser: DataBrowser, uploaded_file, mapping: dict | 
                         cursor,
                         columns=columns,
                         next_eventchain_id=next_eventchain_id,
+                        actor=actor,
+                        lookup_cache=lookup_cache,
                     )
                     next_eventchain_id = int(inserted_eventchain_id) + 1
                     inserted += 1
@@ -1045,6 +1389,7 @@ def import_browser_records_batch(browser: DataBrowser, token: str, mapping: dict
     headers = session.get("headers") if isinstance(session.get("headers"), list) else []
     mapping = mapping if isinstance(mapping, dict) else {}
     column_map = mapping.get("column_map") if isinstance(mapping.get("column_map"), dict) else {}
+    actor = str(mapping.get("_audit_user") or "System")[:150]
     start = max(0, int(start or 0))
     batch_size = max(1, min(int(batch_size or 50), 250))
     end = min(len(rows), start + batch_size)
@@ -1057,6 +1402,7 @@ def import_browser_records_batch(browser: DataBrowser, token: str, mapping: dict
     columns = _effective_browser_columns(browser)
     with connect(database=BROWSER_DATABASE) as connection:
         cursor = connection.cursor()
+        lookup_cache = _lookup_validation_cache(columns, cursor)
         existing_index = _build_existing_record_index(browser, columns, cursor)
         next_eventchain_id = _next_eventchain_id(cursor)
         for index, row in enumerate(rows[start:end], start=start + 2):
@@ -1066,7 +1412,10 @@ def import_browser_records_batch(browser: DataBrowser, token: str, mapping: dict
                 if existing_record_id is not None and str(mapping.get("duplicate_mode") or "skip").strip().lower() == "skip":
                     skipped += 1
                 elif existing_record_id is not None:
-                    _update_import_record_with_cursor(browser, existing_record_id, values, cursor, columns)
+                    _update_import_record_with_cursor(
+                        browser, existing_record_id, values, cursor, columns,
+                        actor=actor, lookup_cache=lookup_cache,
+                    )
                     updated += 1
                 else:
                     inserted_eventchain_id = _insert_browser_record_with_cursor(
@@ -1075,6 +1424,8 @@ def import_browser_records_batch(browser: DataBrowser, token: str, mapping: dict
                         cursor,
                         columns=columns,
                         next_eventchain_id=next_eventchain_id,
+                        actor=actor,
+                        lookup_cache=lookup_cache,
                     )
                     next_eventchain_id = int(inserted_eventchain_id) + 1
                     inserted += 1
@@ -1124,6 +1475,7 @@ def _run_import_job(job_token: str, browser_id: int, import_token: str, mapping:
         total_rows = len(rows)
         column_map = mapping.get("column_map") if isinstance(mapping.get("column_map"), dict) else {}
         duplicate_mode = str(mapping.get("duplicate_mode") or "skip").strip().lower()
+        actor = str(mapping.get("_audit_user") or "System")[:150]
         if duplicate_mode not in {"skip", "replace"}:
             duplicate_mode = "skip"
         columns = _effective_browser_columns(browser)
@@ -1131,27 +1483,32 @@ def _run_import_job(job_token: str, browser_id: int, import_token: str, mapping:
         _write_import_job(job_token, status)
         with connect(database=BROWSER_DATABASE) as connection:
             cursor = connection.cursor()
+            lookup_cache = _lookup_validation_cache(columns, cursor)
             existing_index = _build_existing_record_index(browser, columns, cursor)
             next_eventchain_id = _next_eventchain_id(cursor)
             pending_inserts = []
 
             def flush_pending_inserts():
-                nonlocal pending_inserts
+                nonlocal pending_inserts, cursor
                 if not pending_inserts:
                     return
                 try:
-                    _bulk_insert_import_rows(browser, pending_inserts, cursor, columns)
+                    _bulk_insert_import_rows(browser, pending_inserts, connection, columns)
                     connection.commit()
+                    cursor = connection.cursor()
                     status["inserted"] = int(status["inserted"]) + len(pending_inserts)
                 except Exception:
                     connection.rollback()
+                    cursor = connection.cursor()
                     for prepared in pending_inserts:
                         try:
-                            _bulk_insert_import_rows(browser, [prepared], cursor, columns)
+                            _bulk_insert_import_rows(browser, [prepared], connection, columns)
                             connection.commit()
+                            cursor = connection.cursor()
                             status["inserted"] = int(status["inserted"]) + 1
                         except Exception as row_exc:
                             connection.rollback()
+                            cursor = connection.cursor()
                             error_list = status.get("errors") if isinstance(status.get("errors"), list) else []
                             error_list.append({"row": prepared["row"], "error": str(row_exc)})
                             status["errors"] = error_list[:50]
@@ -1171,10 +1528,13 @@ def _run_import_job(job_token: str, browser_id: int, import_token: str, mapping:
                             values,
                             cursor,
                             columns,
+                            actor=actor,
+                            lookup_cache=lookup_cache,
                         )
                         status["updated"] = int(status["updated"]) + 1
                     else:
                         # Validate before queuing so malformed rows do not poison a batch.
+                        _validate_lookup_values(values, columns, cursor, cache=lookup_cache)
                         for column in columns:
                             if column.sql_name.lower() not in SYSTEM_SQL_COLUMNS:
                                 import_parameter_value(
@@ -1191,6 +1551,7 @@ def _run_import_job(job_token: str, browser_id: int, import_token: str, mapping:
                             "row": index + 1,
                             "eventchain_id": import_eventchain_id,
                             "values": values,
+                            "actor": actor,
                         })
                         if supplied_eventchain_id in (None, ""):
                             next_eventchain_id += 1
@@ -1202,7 +1563,7 @@ def _run_import_job(job_token: str, browser_id: int, import_token: str, mapping:
                             )
                             if normalized:
                                 existing_index.setdefault(column.sql_name, {})[normalized] = -1
-                        if len(pending_inserts) >= 500:
+                        if len(pending_inserts) >= 200:
                             flush_pending_inserts()
                 except Exception as exc:
                     error_list = status.get("errors") if isinstance(status.get("errors"), list) else []

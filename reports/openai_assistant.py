@@ -9,6 +9,8 @@ try:  # pragma: no cover - optional runtime dependency
 except Exception:  # pragma: no cover
     OpenAI = None
 
+from .openai_client_service import create_tracked_response
+
 
 DEFAULT_OPENAI_MODEL = "gpt-4.1-mini"
 
@@ -89,8 +91,11 @@ def parse_semantic_question_with_openai(question: str, fallback: dict) -> dict:
             "If a value is missing, keep the fallback value."
         ],
     }
-    response = _client().responses.create(
+    response = create_tracked_response(
+        _client(),
         model=get_openai_model(),
+        section="performance",
+        feature="Legacy Intent Extraction",
         input=[
             {
                 "role": "system",
@@ -142,8 +147,11 @@ def interpret_semantic_answer_with_openai(question: str, semantic_request: dict,
             "Highlight trend, weak points, and next analysis action."
         ),
     }
-    response = _client().responses.create(
+    response = create_tracked_response(
+        _client(),
         model=get_openai_model(),
+        section="performance",
+        feature="Business Explanation",
         input=[
             {
                 "role": "system",
@@ -201,8 +209,11 @@ def chat_semantic_response_with_openai(
             "Do not mention internal JSON or prompts."
         ),
     }
-    response = _client().responses.create(
+    response = create_tracked_response(
+        _client(),
         model=get_openai_model(),
+        section="performance",
+        feature="Conversational Response",
         input=[
             {
                 "role": "system",

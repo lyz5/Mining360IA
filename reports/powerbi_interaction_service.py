@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import calendar
 import re
 from datetime import date, datetime
 
@@ -29,6 +30,12 @@ SAFE_INTENT_TYPES = {
     "follow_up_navigation",
 }
 
+MONTH_ABBREVIATIONS = (
+    "",
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+)
+
 
 def _sanitize_filter_value(value):
     if value is None:
@@ -45,8 +52,119 @@ def _sanitize_filter_value(value):
     return text
 
 
-def merge_conversation_intent(intent: dict, previous_intent: dict | None) -> dict:
-    previous = previous_intent if isinstance(previous_intent, dict) else {}
+def _subtract_months(value: date, months: int) -> date:
+    month_index = value.year * 12 + value.month - 1 - months
+    year, month_zero_based = divmod(month_index, 12)
+    month = month_zero_based + 1
+    return date(year, month, min(value.day, calendar.monthrange(year, month)[1]))
+
+
+def _period_navigation_range(value) -> tuple[date, date] | None:
+    text = str(value or "").strip().lower()
+    today = date.today()
+    if text == "year to date":
+        return date(today.year, 1, 1), today
+    if text == "month to date":
+        return date(today.year, today.month, 1), today
+    if text == "last 12 months":
+        return _subtract_months(today, 12), today
+    if text in {"current month", "ce mois", "mois courant"}:
+        return date(today.year, today.month, 1), date(
+            today.year,
+            today.month,
+            calendar.monthrange(today.year, today.month)[1],
+        )
+    if text in {"previous month", "last month", "mois précédent", "mois precedent"}:
+        previous = _subtract_months(date(today.year, today.month, 1), 1)
+        return previous, date(
+            previous.year,
+            previous.month,
+            calendar.monthrange(previous.year, previous.month)[1],
+        )
+    match = re.fullmatch(r"(20\d{2})", text)
+    if match:
+        year = int(match.group(1))
+        return date(year, 1, 1), date(year, 12, 31)
+    match = re.fullmatch(r"(20\d{2})-(\d{2})", text)
+    if match:
+        year, month = int(match.group(1)), int(match.group(2))
+        return date(year, month, 1), date(
+            year,
+            month,
+            calendar.monthrange(year, month)[1],
+        )
+    return None
+
+
+def _year_month_filter_values(value) -> list[str] | None:
+    text = str(value or "").strip()
+    period_range = _period_navigation_range(value)
+    if not period_range:
+        return [text] if text else None
+    start, end = period_range
+    if text.casefold() == "last 12 months":
+        start = _subtract_months(date(end.year, end.month, 1), 11)
+    cursor = date(start.year, start.month, 1)
+    final_month = date(end.year, end.month, 1)
+    values = []
+    while cursor <= final_month:
+        values.append(f"{MONTH_ABBREVIATIONS[cursor.month]} {cursor.year}")
+        next_month = cursor.month + 1
+        next_year = cursor.year
+        if next_month == 13:
+            next_month = 1
+            next_year += 1
+        cursor = date(next_year, next_month, 1)
+    return values
+
+
+def is_follow_up_question(question_text: str) -> bool:
+    text = re.sub(r"\s+", " ", str(question_text or "").strip().lower())
+    if not text:
+        return False
+    confirmation_terms = (
+        "are you sure", "can you confirm", "please confirm", "confirm that",
+        "tu es sûr", "tu es sur", "êtes-vous sûr", "etes-vous sur",
+        "peux-tu confirmer", "pouvez-vous confirmer", "confirme",
+        "c'est bien", "est-ce bien", "est ce bien",
+    )
+    if any(term in text for term in confirmation_terms):
+        return True
+    explicit_follow_up = (
+        "and ", "and for ", "what about ", "how about ", "same for ",
+        "show me the details", "show details", "more details",
+        "et ", "et pour ", "qu'en est-il", "même chose pour",
+        "meme chose pour", "montre les détails", "plus de détails",
+    )
+    if any(text.startswith(prefix) for prefix in explicit_follow_up):
+        return True
+    explicit_request = (
+        "give me ", "what is ", "what's ", "show me ",
+        "donne-moi ", "donne moi ", "quelle est ", "quel est ",
+        "affiche ", "montre-moi ", "montre moi ",
+    )
+    if any(text.startswith(prefix) for prefix in explicit_request):
+        return False
+    metric_terms = (
+        "availability", "physical availability",
+        "disponibilité", "disponibilite", "dispo",
+    )
+    if any(term in text for term in metric_terms):
+        return False
+    return len(text.split()) <= 5
+
+
+def merge_conversation_intent(
+    intent: dict,
+    previous_intent: dict | None,
+    *,
+    inherit_previous: bool = True,
+) -> dict:
+    previous = (
+        previous_intent
+        if inherit_previous and isinstance(previous_intent, dict)
+        else {}
+    )
     merged = {
         "section": intent.get("section") or previous.get("section"),
         "intent_type": intent.get("intent_type") or "single_kpi",
@@ -113,7 +231,78 @@ def validate_interaction_intent(intent: dict, debug_mode: bool = False) -> tuple
 
 
 def _allowed_statuses(debug_mode: bool) -> list[str]:
-    return ["Validated", "To Review", "Imported"] if debug_mode else ["Validated"]
+    return ["Validated", "Draft", "To Review", "Imported"] if debug_mode else ["Validated"]
+
+
+def _mapped_slicer_values(slicer: PowerBISlicer | None, values: list) -> list:
+    if not slicer or not isinstance(slicer.value_mapping, dict):
+        return values
+    normalized_mapping = {
+        str(source).strip().casefold(): target
+        for source, target in slicer.value_mapping.items()
+    }
+    return [
+        normalized_mapping.get(str(value).strip().casefold(), value)
+        for value in values
+    ]
+
+
+def _resolve_page_filters(
+    *,
+    page: PowerBIPage | None,
+    raw_filters: dict,
+    filter_config: dict,
+    statuses: list[str],
+) -> list[dict]:
+    slicers = {
+        item.filter_code: item
+        for item in PowerBISlicer.objects.filter(
+            page=page,
+            is_active=True,
+            validation_status__in=statuses,
+        )
+    } if page else {}
+    resolved_filters = []
+    for code, raw_value in raw_filters.items():
+        mapping = filter_config.get(code)
+        if not mapping or raw_value in (None, "", []):
+            continue
+        value = _sanitize_filter_value(raw_value)
+        values = value if isinstance(value, list) else [value]
+        slicer = slicers.get(code)
+        values = _mapped_slicer_values(slicer, values)
+        period_range = _period_navigation_range(value) if code == "period" else None
+        is_year_month_slicer = bool(
+            slicer
+            and re.sub(r"[^a-z0-9]", "", slicer.powerbi_column_name.casefold())
+            == "yearmonth"
+        )
+        if code == "period" and is_year_month_slicer:
+            values = _year_month_filter_values(value) or values
+            period_range = None
+        instruction = {
+            "filter_code": code,
+            "table": slicer.powerbi_table_name if slicer else mapping["powerbi_table_name"],
+            "column": slicer.powerbi_column_name if slicer else mapping["powerbi_column_name"],
+            "data_type": slicer.data_type if slicer else mapping.get("data_type", "Text"),
+            "operator": "In",
+            "values": values,
+            "scope": "slicer" if slicer else "page",
+            "slicer_internal_name": slicer.slicer_internal_name if slicer else "",
+        }
+        if period_range:
+            instruction.update({
+                "column": "Date",
+                "filter_type": "advanced",
+                "conditions": [
+                    {"operator": "GreaterThanOrEqual", "value": period_range[0].isoformat()},
+                    {"operator": "LessThanOrEqual", "value": period_range[1].isoformat()},
+                ],
+                "scope": "page",
+                "slicer_internal_name": "",
+            })
+        resolved_filters.append(instruction)
+    return resolved_filters
 
 
 def resolve_navigation(intent: dict, debug_mode: bool = False) -> dict:
@@ -198,38 +387,54 @@ def resolve_navigation(intent: dict, debug_mode: bool = False) -> dict:
         item["filter_code"]: item for item in get_filter_mapping(section.code)
         if item.get("is_active")
     }
-    slicers = {
-        item.filter_code: item
-        for item in PowerBISlicer.objects.filter(
-            page=page,
-            is_active=True,
-            validation_status__in=statuses,
-        )
-    } if page else {}
-    resolved_filters = []
-    for code, raw_value in (intent.get("filters") or {}).items():
-        mapping = filter_config.get(code)
-        if not mapping or raw_value in (None, "", []):
-            continue
-        value = _sanitize_filter_value(raw_value)
-        values = value if isinstance(value, list) else [value]
-        slicer = slicers.get(code)
-        resolved_filters.append({
-            "filter_code": code,
-            "table": slicer.powerbi_table_name if slicer else mapping["powerbi_table_name"],
-            "column": slicer.powerbi_column_name if slicer else mapping["powerbi_column_name"],
-            "data_type": slicer.data_type if slicer else mapping.get("data_type", "Text"),
-            "operator": "In",
-            "values": values,
-            "scope": "slicer" if slicer else "page",
-            "slicer_internal_name": slicer.slicer_internal_name if slicer else "",
-        })
+    raw_filters = intent.get("filters") or {}
+    resolved_filters = _resolve_page_filters(
+        page=page,
+        raw_filters=raw_filters,
+        filter_config=filter_config,
+        statuses=statuses,
+    )
 
     warnings = []
     if requested_navigation.get("open_page") and not page:
         warnings.append("No validated page mapping was found; the report default page will be used.")
     if requested_navigation.get("focus_visual") and not visual:
         warnings.append("No validated visual mapping was found; the page will open without visual focus.")
+    alternative_reports = []
+    alternative_mappings = (
+        KPIPageMapping.objects
+        .select_related("report", "page")
+        .filter(
+            section=section,
+            metric_code=metric_code,
+            is_active=True,
+            report__is_active=True,
+            report__validation_status__in=statuses,
+            page__is_active=True,
+            page__validation_status__in=statuses,
+        )
+        .exclude(report=report, page=page)
+        .order_by("priority", "-is_default")
+    )
+    for mapping in alternative_mappings:
+        alternative_reports.append({
+            "report_id": mapping.report.report_id,
+            "report_name": mapping.report.report_name,
+            "display_name": mapping.report.display_name,
+            "semantic_model_id": mapping.report.semantic_model_id,
+            "embed_url": mapping.report.embed_url,
+            "page_internal_name": mapping.page.page_internal_name,
+            "page_display_name": mapping.page.page_display_name,
+            "filters": _resolve_page_filters(
+                page=mapping.page,
+                raw_filters=raw_filters,
+                filter_config=filter_config,
+                statuses=statuses,
+            ),
+            "visual_internal_name": "",
+            "visual_action": "",
+            "warnings": ["No validated visual mapping was found; the page will open without visual focus."],
+        })
     return {
         "report_id": report.report_id,
         "report_name": report.report_name,
@@ -242,6 +447,7 @@ def resolve_navigation(intent: dict, debug_mode: bool = False) -> dict:
         "visual_internal_name": visual.visual_internal_name if visual else "",
         "visual_action": visual_action if visual else "",
         "warnings": warnings,
+        "alternative_reports": alternative_reports,
         "_objects": {"report": report, "page": page, "visual": visual},
     }
 

@@ -18,6 +18,7 @@
         previewLimit: "1000",
         browserSearch: "",
         browserStatusFilter: "all",
+        previewLookupOptions: {},
     };
 
     const initialBrowsersScript = document.getElementById("browser-state-data");
@@ -266,6 +267,11 @@
         return types[clampPreviewIndex(filter.columnIndex, preview)] || "text";
     }
 
+    function getPreviewColumnDefinition(preview, filter) {
+        const definitions = Array.isArray(preview?.column_definitions) ? preview.column_definitions : [];
+        return definitions[clampPreviewIndex(filter.columnIndex, preview)] || null;
+    }
+
     function setPreviewFilterPanelOpen(isOpen) {
         state.previewFilterPanelOpen = Boolean(isOpen);
         document.body.classList.toggle("preview-filter-modal-open", state.previewFilterPanelOpen);
@@ -414,8 +420,8 @@
         return getSortedPreviewRows(preview, getFilteredPreviewRows(preview));
     }
 
-    function renderFilterOperatorOptions(type, currentOperator) {
-        const operators = type === "date"
+    function renderFilterOperatorOptions(type, currentOperator, isLookup = false) {
+        const operators = type === "date" || isLookup
             ? [{ value: "equal", label: "=" }]
             : [{ value: "equal", label: "=" }, { value: "like", label: "LIKE" }];
         return operators.map((operator) => {
@@ -428,6 +434,8 @@
         const columns = preview?.columns || [];
         const columnIndex = clampPreviewIndex(filter.columnIndex, preview);
         const type = columnTypes[columnIndex] || "text";
+        const columnDefinition = getPreviewColumnDefinition(preview, filter);
+        const isLookup = Boolean(columnDefinition?.is_lookup && columnDefinition?.id);
         const joinerHtml = index > 0
             ? `
                 <label class="preview-filter-joiner">
@@ -444,7 +452,9 @@
             return `<option value="${idx}"${selected}>${escapeHtml(column)}</option>`;
         }).join("");
         const valueType = type === "date" ? "date" : "text";
-        const valueInput = valueType === "date"
+        const valueInput = isLookup
+            ? `<select class="preview-filter-input" data-preview-filter-value="${index}" data-preview-filter-lookup="${columnDefinition.id}" data-searchable-select data-searchable-placeholder="Search values..."><option value="">Loading...</option></select>`
+            : valueType === "date"
             ? `<input type="date" class="preview-filter-input" data-preview-filter-value="${index}" value="${escapeHtml(String(filter.value || "").slice(0, 10))}" aria-label="Filter value">`
             : `<input type="text" class="preview-filter-input" data-preview-filter-value="${index}" value="${escapeHtml(filter.value || "")}" placeholder="Value" aria-label="Filter value">`;
         return `
@@ -459,7 +469,7 @@
                 <label class="preview-filter-control preview-filter-operator">
                     <span>Operator</span>
                     <select data-preview-filter-operator="${index}">
-                        ${renderFilterOperatorOptions(type, filter.operator)}
+                        ${renderFilterOperatorOptions(type, filter.operator, isLookup)}
                     </select>
                 </label>
                 <label class="preview-filter-control preview-filter-value">
@@ -480,29 +490,62 @@
         if (!filter) return;
         const columnTypes = inferPreviewColumnTypes(preview);
         const type = columnTypes[clampPreviewIndex(filter.columnIndex, preview)] || "text";
+        const columnDefinition = getPreviewColumnDefinition(preview, filter);
+        const isLookup = Boolean(columnDefinition?.is_lookup && columnDefinition?.id);
         const operatorSelect = row.querySelector("[data-preview-filter-operator]");
         const valueField = row.querySelector(".preview-filter-field");
         const value = String(filter.value || "");
         if (operatorSelect) {
-            const currentOperator = type === "date" ? "equal" : (filter.operator || "equal");
+            const currentOperator = type === "date" || isLookup ? "equal" : (filter.operator || "equal");
             filter.operator = currentOperator;
-            operatorSelect.innerHTML = renderFilterOperatorOptions(type, currentOperator);
+            operatorSelect.innerHTML = renderFilterOperatorOptions(type, currentOperator, isLookup);
             operatorSelect.value = currentOperator;
         }
         if (valueField) {
             const valueType = type === "date" ? "date" : "text";
-            valueField.innerHTML = valueType === "date"
+            valueField.innerHTML = isLookup
+                ? `<select class="preview-filter-input" data-preview-filter-value="${index}" data-preview-filter-lookup="${columnDefinition.id}" data-searchable-select data-searchable-placeholder="Search values..."><option value="">Loading...</option></select>`
+                : valueType === "date"
                 ? `<input type="date" class="preview-filter-input" data-preview-filter-value="${index}" value="${escapeHtml(value.slice(0, 10))}" aria-label="Filter value">`
                 : `<input type="text" class="preview-filter-input" data-preview-filter-value="${index}" value="${escapeHtml(value)}" placeholder="Value" aria-label="Filter value">`;
             const input = valueField.querySelector("[data-preview-filter-value]");
             if (input) {
-                input.addEventListener("input", () => {
+                const updateValue = () => {
                     const idx = Number(input.dataset.previewFilterValue);
                     if (state.previewFilters[idx]) {
                         state.previewFilters[idx].value = input.value || "";
                     }
-                });
+                };
+                input.addEventListener("input", updateValue);
+                input.addEventListener("change", updateValue);
             }
+            initSearchableSelects(valueField);
+            if (isLookup) hydratePreviewFilterLookup(preview, index);
+        }
+    }
+
+    async function hydratePreviewFilterLookup(preview, index) {
+        const filter = state.previewFilters[index];
+        if (!filter || !state.activeBrowser) return;
+        const column = getPreviewColumnDefinition(preview, filter);
+        if (!column?.is_lookup || !column.id) return;
+        const select = els.previewFilterStack?.querySelector(`[data-preview-filter-value="${index}"][data-preview-filter-lookup="${column.id}"]`);
+        if (!select) return;
+        try {
+            let options = state.previewLookupOptions[column.id];
+            if (!Array.isArray(options)) {
+                const payload = await api(`/data-browsers/${state.activeBrowser.id}/columns/${column.id}/lookup-options?limit=all`);
+                options = payload.lookup?.options || [];
+                state.previewLookupOptions[column.id] = options;
+            }
+            setHtml(select, '<option value=""></option>' + options.map((option) => (
+                `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}</option>`
+            )).join(""));
+            select.value = String(filter.value || "");
+            refreshSearchableSelect(select);
+        } catch (error) {
+            setHtml(select, `<option value="">${escapeHtml(error.message)}</option>`);
+            refreshSearchableSelect(select);
         }
     }
 
@@ -521,12 +564,19 @@
     }
 
     function bindPreviewFilters(preview) {
+        initSearchableSelects(els.previewFilterStack || document);
+        state.previewFilters.forEach((filter, index) => {
+            if (getPreviewColumnDefinition(preview, filter)?.is_lookup) {
+                hydratePreviewFilterLookup(preview, index);
+            }
+        });
         document.querySelectorAll("[data-preview-filter-column]").forEach((element) => {
             element.addEventListener("change", () => {
                 const index = Number(element.dataset.previewFilterColumn);
                 if (!state.previewFilters[index]) return;
                 state.previewFilters[index].columnIndex = Number(element.value) || 0;
                 state.previewFilters[index].operator = "equal";
+                state.previewFilters[index].value = "";
                 syncPreviewFilterRow(els.previewFilterStack || document, preview, index);
             });
         });
@@ -538,11 +588,13 @@
             });
         });
         document.querySelectorAll("[data-preview-filter-value]").forEach((element) => {
-            element.addEventListener("input", () => {
+            const updateValue = () => {
                 const index = Number(element.dataset.previewFilterValue);
                 if (!state.previewFilters[index]) return;
                 state.previewFilters[index].value = element.value || "";
-            });
+            };
+            element.addEventListener("input", updateValue);
+            element.addEventListener("change", updateValue);
         });
         document.querySelectorAll("[data-preview-filter-joiner]").forEach((element) => {
             element.addEventListener("change", () => {

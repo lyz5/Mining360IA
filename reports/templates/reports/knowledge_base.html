@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Knowledge Base | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260719-kb-overview-only-2">
 </head>
 <body>
     {% include "reports/includes/app_nav.html" %}
@@ -38,10 +38,21 @@
                         <span>User question</span>
                         <textarea id="kb-test-question" rows="5" placeholder="Give me availability for Fekola 777 in May 2025"></textarea>
                     </label>
+                    <fieldset class="kb-mode-selector">
+                        <legend>Execution Mode</legend>
+                        <label>
+                            <input type="radio" name="kb-execution-mode" value="Production" checked>
+                            <span>Production</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="kb-execution-mode" value="Debug">
+                            <span>Debug</span>
+                        </label>
+                    </fieldset>
                     <div class="ia-inline-actions">
                         <button type="button" class="button secondary" id="kb-run-coverage">Test Coverage</button>
                     </div>
-                    <pre id="kb-coverage-result" class="ia-code-block"></pre>
+                    <div id="kb-coverage-result" class="kb-coverage-result" aria-live="polite"></div>
                 </div>
 
                 <div class="placeholder-panel">
@@ -99,12 +110,15 @@
 
                 <div class="ia-tabs" id="kb-tabs">
                     <button type="button" class="ia-tab active" data-resource-type="overview">Overview</button>
+                    <button type="button" class="ia-tab" data-resource-type="knowledge-resolution">Knowledge Resolution</button>
                     <button type="button" class="ia-tab" data-resource-type="powerbi-metadata">Power BI Metadata</button>
                     <button type="button" class="ia-tab" data-resource-type="business-glossary">Business Glossary</button>
                     <button type="button" class="ia-tab" data-resource-type="kpi-dictionary">KPI Dictionary</button>
                     <button type="button" class="ia-tab" data-resource-type="mining-terminology">Mining Terminology</button>
                     <button type="button" class="ia-tab" data-resource-type="question-library">Question Library</button>
                     <button type="button" class="ia-tab" data-resource-type="synonym-library">Synonym Library</button>
+                    <button type="button" class="ia-tab" data-resource-type="synonym-analytics">Synonym Analytics</button>
+                    <button type="button" class="ia-tab" data-resource-type="synonym-resolution-test">Test Synonym Resolution</button>
                     <button type="button" class="ia-tab" data-resource-type="business-rules">Business Rules</button>
                     <button type="button" class="ia-tab" data-resource-type="prompt-library">Prompt Library</button>
                     <button type="button" class="ia-tab" data-resource-type="recommended-actions">Recommended Actions</button>
@@ -113,7 +127,82 @@
                     <button type="button" class="ia-tab" data-resource-type="powerbi-interaction">Power BI Interaction</button>
                 </div>
 
+                <div class="kb-synonym-actions" id="kb-synonym-actions" hidden>
+                    <div>
+                        <p class="eyebrow">Excel management</p>
+                        <strong>Synonym Library</strong>
+                    </div>
+                    <div class="ia-inline-actions">
+                        <a class="button secondary" id="kb-synonyms-template" href="{% url 'knowledge-base-synonyms-template' %}">
+                            Download Import Template
+                        </a>
+                        <button class="button secondary" id="kb-import-synonyms" type="button">
+                            Import Excel
+                        </button>
+                        <a class="button" id="kb-export-synonyms" href="{% url 'knowledge-base-synonyms-export' %}">
+                            Export Excel
+                        </a>
+                        <a class="button secondary kb-synonym-export-format" href="{% url 'knowledge-base-synonyms-export-format' 'csv' %}">CSV</a>
+                        <a class="button secondary kb-synonym-export-format" href="{% url 'knowledge-base-synonyms-export-format' 'json' %}">JSON</a>
+                    </div>
+                    <input id="kb-import-synonyms-file" type="file" accept=".xlsx,.csv" hidden>
+                    <div class="ia-toolbar kb-synonym-filters">
+                        <label class="ia-filter"><span>Entity Type</span><select id="kb-synonym-entity"><option value="">All</option><option>KPI</option><option>Filter</option><option>Mine Site</option><option>Model</option><option>Component</option><option>Customer</option><option>Period</option><option>Business Term</option></select></label>
+                        <label class="ia-filter"><span>Language</span><input id="kb-synonym-language" placeholder="en"></label>
+                        <label class="ia-filter"><span>Source</span><select id="kb-synonym-source"><option value="">All</option><option>Manual</option><option>Business</option><option>Imported</option><option>System Generated</option><option>AI Generated</option></select></label>
+                        <label class="ia-filter"><span>Match Type</span><select id="kb-synonym-match"><option value="">All</option><option>Exact</option><option>Phrase</option><option>Contains</option><option>Abbreviation</option><option>Fuzzy</option><option>Semantic</option></select></label>
+                        <label class="ia-filter"><span>Quick Filter</span><select id="kb-synonym-quick"><option value="">All</option><option value="validated">Validated</option><option value="draft">Draft</option><option value="to-review">To Review</option><option value="ambiguous">Ambiguous</option><option value="unused">Unused</option><option value="most-used">Most Used</option><option value="ai-generated">AI Generated</option><option value="inactive">Inactive</option></select></label>
+                        <label class="ia-filter"><span>Ambiguity</span><select id="kb-synonym-ambiguous"><option value="">All</option><option value="1">Ambiguous</option><option value="0">Unambiguous</option></select></label>
+                        <label class="ia-filter"><span>Owner</span><input id="kb-synonym-owner" placeholder="Owner"></label>
+                        <label class="ia-filter"><span>Min Usage</span><input id="kb-synonym-min-usage" type="number" min="0"></label>
+                        <label class="ia-filter"><span>Min Confidence</span><input id="kb-synonym-min-confidence" type="number" min="0" max="100"></label>
+                    </div>
+                </div>
+
                 <section id="kb-overview-panel" class="kb-overview-panel"></section>
+                <section id="kb-synonym-analytics-panel" class="kb-overview-panel" hidden></section>
+                <section id="kb-synonym-test-panel" class="kb-resolution-panel" hidden>
+                    <div class="kb-resolution-input">
+                        <label class="ia-field full-width">
+                            <span>User Question</span>
+                            <textarea id="kb-synonym-test-question" rows="4" placeholder="Give me PA for Fekola Mine"></textarea>
+                        </label>
+                        <label class="ia-field"><span>Section</span><select id="kb-synonym-test-section"></select></label>
+                        <label class="ia-field"><span>Ambiguity Threshold (%)</span><input id="kb-synonym-threshold" type="number" min="1" max="100" value="90"></label>
+                        <button type="button" class="button secondary" id="kb-save-synonym-threshold">Save Threshold</button>
+                        <fieldset class="kb-mode-selector">
+                            <legend>Execution Mode</legend>
+                            <label><input type="radio" name="kb-synonym-test-mode" value="Production" checked><span>Production</span></label>
+                            <label><input type="radio" name="kb-synonym-test-mode" value="Debug"><span>Debug</span></label>
+                        </fieldset>
+                        <label class="inline-check"><input id="kb-count-test-usage" type="checkbox"> Count test as usage</label>
+                        <button type="button" class="button" id="kb-run-synonym-test">Resolve</button>
+                    </div>
+                    <div id="kb-synonym-test-result"></div>
+                </section>
+                <section id="kb-resolution-panel" class="kb-resolution-panel" hidden>
+                    <div class="kb-resolution-input">
+                        <label class="ia-field full-width">
+                            <span>User Question</span>
+                            <textarea id="kb-resolution-question" rows="4" placeholder="Give me availability for Fekola 777 in May 2025"></textarea>
+                        </label>
+                        <fieldset class="kb-mode-selector">
+                            <legend>Execution Mode</legend>
+                            <label><input type="radio" name="kb-resolution-mode" value="Production" checked><span>Production</span></label>
+                            <label><input type="radio" name="kb-resolution-mode" value="Debug"><span>Debug</span></label>
+                        </fieldset>
+                        <button type="button" class="button" id="kb-resolve-question">Resolve Question</button>
+                    </div>
+                    <div id="kb-resolution-status" class="kb-resolution-status"></div>
+                    <div id="kb-resolution-exports" class="ia-inline-actions" hidden>
+                        <a class="button secondary" data-resolution-export="json">Export JSON</a>
+                        <a class="button secondary" data-resolution-export="md">Export Markdown</a>
+                        <a class="button secondary" data-resolution-export="pdf">Export PDF</a>
+                    </div>
+                    <div id="kb-resolution-tree" class="kb-decision-tree"></div>
+                    <div id="kb-resolution-details" class="kb-resolution-details"></div>
+                    <pre id="kb-resolution-node-detail" class="ia-code-block" hidden></pre>
+                </section>
                 <div class="table-scroll ia-config-table-wrap" id="kb-table-wrap" hidden>
                     <table class="data-table" id="kb-table"></table>
                 </div>
@@ -181,8 +270,13 @@
             </div>
             <form id="kb-form" class="ia-config-form">
                 <div id="kb-form-fields" class="form-grid"></div>
-                <div class="form-actions">
+                <div class="form-actions kb-form-actions">
                     <button type="button" class="button secondary" data-kb-modal-close>Cancel</button>
+                    <button type="button" class="button secondary" data-kpi-action="duplicate" hidden>Duplicate KPI</button>
+                    <button type="button" class="button secondary" data-kpi-action="test" hidden>Test KPI</button>
+                    <button type="button" class="button secondary" data-kpi-action="preview" hidden>Preview AI Answer</button>
+                    <button type="button" class="button secondary" data-kpi-action="draft" hidden>Save as Draft</button>
+                    <button type="button" class="button" data-kpi-action="validate" hidden>Validate</button>
                     <button type="submit" class="button secondary" id="kb-save">Save</button>
                 </div>
             </form>
@@ -208,7 +302,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/powerbi-client@2.23.7/dist/powerbi.min.js"></script>
     <script src="{% static 'reports/powerbi_embed.js' %}?v=20260712-1"></script>
-    <script src="{% static 'reports/knowledge_base.js' %}?v=20260707-1"></script>
+    <script src="{% static 'reports/knowledge_base.js' %}?v=20260719-kpi-delete-4"></script>
     <script src="{% static 'reports/powerbi_interaction.js' %}?v=20260712-1"></script>
 </body>
 </html>

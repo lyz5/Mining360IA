@@ -74,7 +74,7 @@
             </a>
         {% endif %}
         {% if request.user.is_staff or request.user.is_superuser or request.user.platformuser.is_platform_admin %}
-        <div class="nav-group collapsed {% if active_section == 'ia-config' or active_section == 'knowledge-base' or active_section == 'system-config' %}active{% endif %}" data-nav-group="config">
+        <div class="nav-group collapsed {% if active_section == 'ia-config' or active_section == 'knowledge-base' or active_section == 'system-config' or active_section == 'openai-usage' %}active{% endif %}" data-nav-group="config">
             <button type="button" class="nav-group-label js-toggle-config-menu" aria-expanded="false" aria-controls="config-submenu">
                 <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
                     <circle cx="12" cy="12" r="3.5" />
@@ -94,6 +94,9 @@
                 </a>
                 <a href="{% url 'ia-config-home' %}" class="{% if active_section == 'ia-config' %}active{% endif %}">
                     <span>AI Config</span>
+                </a>
+                <a href="{% url 'openai-usage-home' %}" class="{% if active_section == 'openai-usage' %}active{% endif %}">
+                    <span>OpenAI API Usage</span>
                 </a>
             </div>
         </div>

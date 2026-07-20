@@ -74,10 +74,11 @@ def _dax_literal(value, data_type: str | None = None) -> str:
 
 
 def _build_filter_clause(mapping: dict, value) -> str:
-    literal = _dax_literal(value, mapping.get("data_type"))
+    values = value if isinstance(value, list) else [value]
+    literals = ", ".join(_dax_literal(item, mapping.get("data_type")) for item in values)
     table = mapping["powerbi_table_name"]
     column = mapping["powerbi_column_name"]
-    return f"TREATAS({{{literal}}}, '{table}'[{column}])"
+    return f"TREATAS({{{literals}}}, '{table}'[{column}])"
 
 
 def _dax_column(table: str, column: str) -> str:
@@ -91,9 +92,32 @@ def _build_period_clause(value, mapping: dict) -> str | None:
         return None
     text = str(value).strip().lower()
     date_column = _dax_column(mapping["powerbi_table_name"], "Date")
+    if text == "year to date":
+        return (
+            f"DATESBETWEEN({date_column}, "
+            "DATE(YEAR(TODAY()), 1, 1), TODAY())"
+        )
+    if text == "month to date":
+        return (
+            f"DATESBETWEEN({date_column}, "
+            "DATE(YEAR(TODAY()), MONTH(TODAY()), 1), TODAY())"
+        )
     if text in {"last 12 months", "douze derniers mois", "12 derniers mois"}:
+        return f"DATESINPERIOD({date_column}, TODAY(), -12, MONTH)"
+    if text in {"current month", "ce mois", "mois courant"}:
         today = date.today()
-        return f"DATESINPERIOD({date_column}, DATE({today.year}, {today.month}, {today.day}), -12, MONTH)"
+        return f"DATESBETWEEN({date_column}, DATE({today.year}, {today.month}, 1), EOMONTH(DATE({today.year}, {today.month}, 1), 0))"
+    if text in {"previous month", "last month", "mois précédent", "mois precedent"}:
+        today = date.today()
+        return (
+            f"DATESBETWEEN({date_column}, "
+            f"EOMONTH(DATE({today.year}, {today.month}, 1), -2) + 1, "
+            f"EOMONTH(DATE({today.year}, {today.month}, 1), -1))"
+        )
+    match = re.fullmatch(r"(20\d{2})", text)
+    if match:
+        year = int(match.group(1))
+        return f"DATESBETWEEN({date_column}, DATE({year}, 1, 1), DATE({year}, 12, 31))"
     match = re.fullmatch(r"(20\d{2})-(\d{2})", text)
     if match:
         year = int(match.group(1))
@@ -130,6 +154,17 @@ def _is_last_12_months(value) -> bool:
     return text in {"last 12 months", "douze derniers mois", "12 derniers mois"}
 
 
+def _summarize_dax(group_columns: list[str], filter_clauses: list[str], metric: dict) -> str:
+    args = group_columns + filter_clauses + [
+        f'"{metric["metric_label"]}", {metric["powerbi_measure_name"]}'
+    ]
+    return (
+        "SUMMARIZECOLUMNS(\n"
+        f"    {',\n    '.join(args)}\n"
+        ")"
+    )
+
+
 def generate_dax_from_intent(intent: dict) -> dict:
     valid, errors = validate_intent(intent)
     if not valid:
@@ -143,35 +178,61 @@ def generate_dax_from_intent(intent: dict) -> dict:
     filter_clauses = _filter_clauses(filters, filters_config)
 
     template = get_dax_template(section_code, "single_metric_by_filters") or get_dax_template(section_code)
-    model_value = filters.get("model")
-    period_value = filters.get("period")
-    should_group_by_model = section_code == "performance" and _is_last_12_months(period_value) and not model_value
-    if should_group_by_model:
-        model_mapping = filters_config.get("model")
+    intent_type = str(intent.get("intent_type") or "single_kpi")
+    comparison = intent.get("comparison") if isinstance(intent.get("comparison"), dict) else {}
+    if intent_type == "trend":
         period_mapping = filters_config.get("period")
-        group_columns = []
-        if model_mapping:
-            group_columns.append(_dax_column(model_mapping["powerbi_table_name"], model_mapping["powerbi_column_name"]))
-        if period_mapping:
-            group_columns.append(_dax_column(period_mapping["powerbi_table_name"], "Year Month Number"))
-            group_columns.append(_dax_column(period_mapping["powerbi_table_name"], "Year Month"))
-        summarize_args = group_columns + filter_clauses + [f'"{metric["metric_label"]}", {metric["powerbi_measure_name"]}']
+        if not period_mapping:
+            raise IntentValidationError("Period mapping is required for an Availability trend.")
+        group_columns = [
+            _dax_column(period_mapping["powerbi_table_name"], "Year Month Number"),
+            _dax_column(period_mapping["powerbi_table_name"], "Year Month"),
+        ]
+        dax = "EVALUATE\n" + _summarize_dax(group_columns, filter_clauses, metric)
+        dax += f"\nORDER BY {_dax_column(period_mapping['powerbi_table_name'], 'Year Month Number')}"
+    elif intent_type == "comparison":
+        comparison_code = next(
+            (
+                code for code, values in comparison.items()
+                if code in filters_config and isinstance(values, list) and values
+            ),
+            "",
+        )
+        if not comparison_code:
+            raise IntentValidationError("A comparison requires at least two configured values.")
+        comparison_values = comparison[comparison_code]
+        if len(comparison_values) < 2:
+            raise IntentValidationError("A comparison requires at least two values.")
+        mapping = filters_config[comparison_code]
+        comparison_filter = _build_filter_clause(mapping, comparison_values)
+        group_column = _dax_column(mapping["powerbi_table_name"], mapping["powerbi_column_name"])
+        dax = "EVALUATE\n" + _summarize_dax(
+            [group_column],
+            filter_clauses + [comparison_filter],
+            metric,
+        )
+        dax += f"\nORDER BY {group_column}"
+    elif intent_type == "ranking":
+        dimension_code = str(comparison.get("dimension") or "model")
+        mapping = filters_config.get(dimension_code)
+        if not mapping:
+            raise IntentValidationError(f"Ranking dimension '{dimension_code}' is not configured.")
+        try:
+            top_n = max(1, min(int(comparison.get("top_n") or 10), 50))
+        except (TypeError, ValueError):
+            top_n = 10
+        direction = "DESC" if str(comparison.get("direction") or "").lower() == "desc" else "ASC"
+        group_column = _dax_column(mapping["powerbi_table_name"], mapping["powerbi_column_name"])
+        summarized = _summarize_dax([group_column], filter_clauses, metric)
         dax = (
             "EVALUATE\n"
-            "SUMMARIZECOLUMNS(\n"
-            f"    {',\n    '.join(summarize_args)}\n"
+            f"TOPN(\n    {top_n},\n    {summarized},\n"
+            f"    [{metric['metric_label']}], {direction}\n"
             ")\n"
+            f"ORDER BY [{metric['metric_label']}] {direction}"
         )
-        if model_mapping and period_mapping:
-            dax += f"ORDER BY {_dax_column(model_mapping['powerbi_table_name'], model_mapping['powerbi_column_name'])}, {_dax_column(period_mapping['powerbi_table_name'], 'Year Month Number')}"
     else:
         if filter_clauses:
-            dax = (
-                "EVALUATE\n"
-                "ROW(\n"
-                f"    \"{metric['metric_label']}\", {metric['powerbi_measure_name']}\n"
-                ")\n"
-            )
             dax = (
                 "EVALUATE\n"
                 "ROW(\n"

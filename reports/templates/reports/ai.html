@@ -5,92 +5,98 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AI | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260720-downtime-section-1">
 </head>
-<body>
+<body class="ai-page-body">
     {% include "reports/includes/app_nav.html" %}
     <main class="app-shell ai-workspace" data-ai-ask-url="{% url 'ai-ask' %}"
           data-embed-config-url="/powerbi-interaction/embed-config/__REPORT_ID__/"
           data-interaction-events-url="/powerbi-interaction/logs/__LOG_ID__/events/">
-        <header class="topbar">
+        <header class="topbar ai-minimal-header">
             <div>
-                <p class="eyebrow">Semantic model assistant</p>
-                <h1>AI</h1>
+                <p class="eyebrow">Mining Intelligence</p>
+                <h1>AI Assistant</h1>
             </div>
-            <div class="summary">
-                <span class="summary-value">{% if openai_enabled %}OpenAI{% else %}Rules{% endif %}</span>
-                <span class="summary-label">Power BI semantic model</span>
-            </div>
+            <span class="ai-model-badge">{% if openai_enabled %}OpenAI + Power BI{% else %}Semantic fallback{% endif %}</span>
         </header>
 
         <section class="ai-chat-shell">
             <div class="ai-chat-panel">
-                <div class="ai-chat-head">
-                    <div>
-                        <p class="eyebrow">Ask Mining360</p>
-                        <h2>Chat</h2>
-                    </div>
-                    <span class="ai-model-badge">{% if openai_enabled %}OpenAI + Power BI{% else %}Semantic fallback{% endif %}</span>
-                </div>
-
                 <div id="ai-chat-thread" class="ai-chat-thread" aria-live="polite"></div>
 
-                <div class="ai-chat-composer">
-                    <textarea id="ai-question" rows="3" placeholder="Ask about availability, downtime, models or sites..."></textarea>
-                    <div class="ai-actions">
-                        <button type="button" id="ai-run-question" class="button">Send</button>
-                        <button type="button" class="button secondary js-ai-example" data-question="Minesite: Fekola, Date: Mai 2026, Model: 6020">6020 Fekola May</button>
-                        <button type="button" class="button secondary js-ai-example" data-question="Minesite: Fekola, tous les models sur les douzes derniers mois">All models last 12 months</button>
-                    </div>
-                </div>
-            </div>
-
-            <aside class="ai-side-panel">
-                <section class="ai-context-panel">
-                    <p class="eyebrow">Intent context</p>
-                    <dl id="ai-context-list"></dl>
+                <section id="ai-loading" class="ai-loading" hidden aria-live="polite">
+                    <span class="ai-loading-avatar">AI</span>
+                    <span class="loading-spinner" aria-hidden="true"></span>
+                    <span>Mining360 analyse votre question...</span>
                 </section>
 
-                <section id="ai-loading" class="ai-loading" hidden>
-                    <span class="loading-spinner"></span>
-                    <span>Querying semantic model...</span>
+                <section id="ai-powerbi-section" class="ai-inline-report" hidden>
+                    <div class="section-heading ai-report-heading">
+                        <div>
+                            <p class="eyebrow">Power BI</p>
+                            <h2 id="ai-powerbi-title">Relevant report</h2>
+                        </div>
+                        <div class="ai-report-heading-actions">
+                            <span id="ai-powerbi-status" class="summary-label"></span>
+                            <button type="button" id="ai-report-fullscreen" class="icon-button ai-fullscreen-button"
+                                    title="View report in full screen" aria-label="View report in full screen">&#x26F6;</button>
+                        </div>
+                    </div>
+                    <div id="ai-powerbi-report-tabs" class="ai-report-tabs" role="tablist" aria-label="Associated Power BI reports"></div>
+                    <div id="ai-powerbi-report" class="report-frame"></div>
+                </section>
+
+                <section id="ai-downtime-section" class="ai-inline-report ai-downtime-section" hidden>
+                    <div class="section-heading ai-report-heading">
+                        <div>
+                            <p class="eyebrow">Availability diagnostics</p>
+                            <h2>Downtime Drivers</h2>
+                        </div>
+                        <div class="ai-report-heading-actions">
+                            <span class="summary-label">Top drivers and cumulative Pareto</span>
+                            <button type="button" id="ai-downtime-fullscreen"
+                                    class="icon-button ai-fullscreen-button"
+                                    title="View Downtime Drivers in full screen"
+                                    aria-label="View Downtime Drivers in full screen">&#x26F6;</button>
+                        </div>
+                    </div>
+                    <div id="ai-downtime-content"></div>
                 </section>
 
                 <section id="ai-error" class="alert" hidden>
                     <strong>AI query failed</strong>
                     <p id="ai-error-text"></p>
                 </section>
-            </aside>
-        </section>
 
-        <section id="ai-table-section" class="ai-table-section" hidden>
-            <div class="section-heading">
-                <div>
-                    <p class="eyebrow">Result set</p>
-                    <h2>Returned data</h2>
+                <div class="ai-chat-composer">
+                    <textarea id="ai-question" rows="1" placeholder="Message Mining360 AI"></textarea>
+                    <div class="ai-actions">
+                        <button type="button" id="ai-run-question" class="button">Send</button>
+                    </div>
                 </div>
-            </div>
-            <div class="table-scroll">
-                <table id="ai-result-table" class="data-table"></table>
+
+                <details class="ai-context-panel ai-bottom-panel">
+                    <summary>Intent context</summary>
+                    <dl id="ai-context-list"></dl>
+                </details>
+
+                <details id="ai-table-section" class="ai-table-section ai-bottom-panel" hidden>
+                    <summary>Returned data</summary>
+                    <div class="table-scroll">
+                        <table id="ai-result-table" class="data-table"></table>
+                    </div>
+                </details>
             </div>
         </section>
 
-        <section id="ai-powerbi-section" class="ai-table-section" hidden>
-            <div class="section-heading">
-                <div><p class="eyebrow">Power BI interaction</p><h2 id="ai-powerbi-title">Relevant report</h2></div>
-                <div id="ai-powerbi-status" class="summary-label"></div>
-            </div>
-            <div id="ai-powerbi-report" class="report-frame" style="min-height:720px"></div>
-        </section>
-
-        <section id="ai-dax-section" class="ai-dax-section" hidden>
+        <section id="ai-dax-section" class="ai-dax-section ai-technical-panel" hidden>
             <details>
                 <summary>DAX query</summary>
                 <pre id="ai-dax"></pre>
             </details>
         </section>
 
-        <section id="ai-debug-section" class="ai-dax-section" hidden>
+        <section id="ai-debug-section" class="ai-dax-section ai-technical-panel" hidden>
             <details>
                 <summary>Debug payload</summary>
                 <pre id="ai-debug"></pre>
@@ -98,7 +104,7 @@
         </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/powerbi-client@2.23.7/dist/powerbi.min.js"></script>
-    <script src="{% static 'reports/powerbi_embed.js' %}?v=20260712-1"></script>
-    <script src="{% static 'reports/ai.js' %}?v=20260712-1"></script>
+    <script src="{% static 'reports/powerbi_embed.js' %}?v=20260720-report-slicers-2"></script>
+<script src="{% static 'reports/ai.js' %}?v=20260720-downtime-section-3"></script>
 </body>
 </html>

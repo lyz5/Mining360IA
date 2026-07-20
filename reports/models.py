@@ -155,6 +155,7 @@ class AIConfigSection(models.Model):
     name = models.CharField(max_length=120)
     code = models.SlugField(max_length=120, unique=True)
     description = models.TextField(blank=True)
+    synonym_ambiguity_threshold = models.PositiveSmallIntegerField(default=90)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -615,6 +616,7 @@ class PowerBISlicer(models.Model):
     powerbi_table_name = models.CharField(max_length=255)
     powerbi_column_name = models.CharField(max_length=255)
     filter_code = models.CharField(max_length=120)
+    value_mapping = models.JSONField(default=dict, blank=True)
     data_type = models.CharField(max_length=50, default="Text")
     supports_multiple_values = models.BooleanField(default=False)
     is_required = models.BooleanField(default=False)
@@ -865,6 +867,54 @@ class KnowledgeBusinessGlossary(KnowledgeBaseMixin):
 
 
 class KnowledgeKPIDictionary(KnowledgeBaseMixin):
+    BUSINESS_CATEGORIES = [
+        ("Reliability", "Reliability"),
+        ("Maintenance", "Maintenance"),
+        ("Operations", "Operations"),
+        ("Productivity", "Productivity"),
+        ("Fuel", "Fuel"),
+        ("Parts Sales", "Parts Sales"),
+        ("Component Rebuild", "Component Rebuild"),
+        ("Financial", "Financial"),
+        ("Other", "Other"),
+    ]
+    CALCULATION_TYPES = [
+        (value, value) for value in [
+            "Ratio", "Percentage", "Sum", "Average", "Weighted Average",
+            "Count", "Duration", "Rate", "Index", "Custom",
+        ]
+    ]
+    NULL_HANDLING_RULES = [
+        (value, value) for value in [
+            "Ignore Nulls", "Treat as Zero", "Return Blank",
+            "Use Previous Value", "Custom",
+        ]
+    ]
+    ZERO_DENOMINATOR_BEHAVIORS = [
+        (value, value) for value in ["Return Blank", "Return Zero", "Return Error", "Custom"]
+    ]
+    COMPARISON_TYPES = [
+        (value, value) for value in [
+            "None", "Previous Period", "Previous Month", "Previous Year",
+            "Target", "Budget", "Benchmark", "Custom",
+        ]
+    ]
+    RANKING_DIRECTIONS = [
+        (value, value) for value in ["Highest First", "Lowest First", "Not Applicable"]
+    ]
+    THRESHOLD_DIRECTIONS = [
+        (value, value) for value in ["Higher Is Better", "Lower Is Better"]
+    ]
+    TARGET_SOURCES = [
+        (value, value) for value in [
+            "Fixed Value", "Power BI Measure", "Site Target", "Customer Target",
+            "Model Target", "External Benchmark",
+        ]
+    ]
+    REVIEW_FREQUENCIES = [
+        (value, value) for value in ["Monthly", "Quarterly", "Semi-Annual", "Annual", "On Change"]
+    ]
+
     kpi_code = models.CharField(max_length=120)
     kpi_name = models.CharField(max_length=255)
     business_definition = models.TextField()
@@ -876,6 +926,79 @@ class KnowledgeKPIDictionary(KnowledgeBaseMixin):
     critical_threshold = models.DecimalField(max_digits=18, decimal_places=4, null=True, blank=True)
     aggregation_rule = models.CharField(max_length=255, blank=True)
     default_time_grain = models.CharField(max_length=80, blank=True)
+    business_purpose = models.TextField(blank=True)
+    business_category = models.CharField(max_length=80, choices=BUSINESS_CATEGORIES, default="Other")
+    business_interpretation = models.TextField(blank=True)
+    higher_is_better = models.BooleanField(default=False)
+    lower_is_better = models.BooleanField(default=False)
+    numerator_description = models.TextField(blank=True)
+    denominator_description = models.TextField(blank=True)
+    calculation_type = models.CharField(max_length=80, choices=CALCULATION_TYPES, default="Custom")
+    null_handling_rule = models.CharField(max_length=80, choices=NULL_HANDLING_RULES, default="Ignore Nulls")
+    zero_denominator_behavior = models.CharField(
+        max_length=80, choices=ZERO_DENOMINATOR_BEHAVIORS, default="Return Blank"
+    )
+    decimal_precision = models.PositiveSmallIntegerField(default=2)
+    display_format = models.CharField(max_length=80, blank=True)
+    powerbi_workspace_id = models.CharField(max_length=120, blank=True)
+    powerbi_report_id = models.CharField(max_length=120, blank=True)
+    powerbi_semantic_model_id = models.CharField(max_length=120, blank=True)
+    powerbi_measure_table = models.CharField(max_length=255, blank=True)
+    powerbi_measure_full_reference = models.CharField(max_length=520, blank=True)
+    source_report_name = models.CharField(max_length=255, blank=True)
+    source_page_name = models.CharField(max_length=255, blank=True)
+    source_page_internal_name = models.CharField(max_length=255, blank=True)
+    primary_visual_name = models.CharField(max_length=255, blank=True)
+    primary_visual_internal_name = models.CharField(max_length=255, blank=True)
+    default_comparison_type = models.CharField(
+        max_length=80, choices=COMPARISON_TYPES, default="None"
+    )
+    default_comparison_period = models.CharField(max_length=120, blank=True)
+    default_ranking_direction = models.CharField(
+        max_length=80, choices=RANKING_DIRECTIONS, default="Not Applicable"
+    )
+    default_top_n = models.PositiveIntegerField(default=10)
+    trend_supported = models.BooleanField(default=False)
+    comparison_supported = models.BooleanField(default=False)
+    ranking_supported = models.BooleanField(default=False)
+    root_cause_supported = models.BooleanField(default=False)
+    forecast_supported = models.BooleanField(default=False)
+    supported_dimensions = models.JSONField(default=list, blank=True)
+    default_drill_down_dimension = models.CharField(max_length=120, blank=True)
+    required_filters = models.JSONField(default=list, blank=True)
+    optional_filters = models.JSONField(default=list, blank=True)
+    related_kpis = models.JSONField(default=list, blank=True)
+    diagnostic_kpis = models.JSONField(default=list, blank=True)
+    parent_kpi = models.CharField(max_length=120, blank=True)
+    child_kpis = models.JSONField(default=list, blank=True)
+    default_answer_template = models.TextField(blank=True)
+    business_explanation_template = models.TextField(blank=True)
+    clarification_message = models.TextField(blank=True)
+    ai_usage_instructions = models.TextField(blank=True)
+    threshold_direction = models.CharField(
+        max_length=80, choices=THRESHOLD_DIRECTIONS, default="Higher Is Better"
+    )
+    target_source = models.CharField(max_length=80, choices=TARGET_SOURCES, default="Fixed Value")
+    target_measure_name = models.CharField(max_length=255, blank=True)
+    threshold_evaluation_rule = models.TextField(blank=True)
+    minimum_data_completeness = models.DecimalField(
+        max_digits=5, decimal_places=2, null=True, blank=True
+    )
+    minimum_equipment_count = models.PositiveIntegerField(null=True, blank=True)
+    freshness_requirement = models.CharField(max_length=255, blank=True)
+    data_quality_warning_message = models.TextField(blank=True)
+    business_owner = models.CharField(max_length=255, blank=True)
+    technical_owner = models.CharField(max_length=255, blank=True)
+    approved_by = models.CharField(max_length=255, blank=True)
+    approved_at = models.DateTimeField(null=True, blank=True)
+    version = models.CharField(max_length=40, default="1.0")
+    effective_from = models.DateField(null=True, blank=True)
+    effective_to = models.DateField(null=True, blank=True)
+    review_frequency = models.CharField(
+        max_length=40, choices=REVIEW_FREQUENCIES, default="On Change"
+    )
+    last_reviewed_at = models.DateTimeField(null=True, blank=True)
+    review_notes = models.TextField(blank=True)
 
     class Meta:
         ordering = ["kpi_code"]
@@ -886,6 +1009,96 @@ class KnowledgeKPIDictionary(KnowledgeBaseMixin):
 
     def __str__(self) -> str:
         return self.kpi_code
+
+    def clean(self):
+        from django.core.exceptions import ValidationError
+        import re
+
+        errors = {}
+        self.kpi_code = str(self.kpi_code or "").strip()
+        if not re.fullmatch(r"[a-z][a-z0-9]*(?:_[a-z0-9]+)*", self.kpi_code):
+            errors["kpi_code"] = "KPI Code must use lowercase snake_case."
+        required_fields = {
+            "business_definition": "Business Definition is required.",
+            "formula_description": "Formula Description is required.",
+            "unit": "Unit is required.",
+            "aggregation_rule": "Aggregation Rule is required.",
+            "default_time_grain": "Default Time Grain is required.",
+        }
+        for field_name, message in required_fields.items():
+            if not str(getattr(self, field_name, "") or "").strip():
+                errors[field_name] = message
+        if self.validation_status == "Validated" and not str(self.powerbi_measure_name or "").strip():
+            errors["powerbi_measure_name"] = (
+                "Power BI Measure Name is required before a KPI can be Validated."
+            )
+        if self.higher_is_better and self.lower_is_better:
+            errors["higher_is_better"] = (
+                "Higher Is Better and Lower Is Better cannot both be selected."
+            )
+        higher = self.higher_is_better or (
+            not self.lower_is_better and self.threshold_direction == "Higher Is Better"
+        )
+        lower = self.lower_is_better or self.threshold_direction == "Lower Is Better"
+        if all(value is not None for value in [self.target, self.warning_threshold]):
+            if higher and self.target <= self.warning_threshold:
+                errors["target"] = "Target must be greater than Warning Threshold."
+            if lower and self.target >= self.warning_threshold:
+                errors["target"] = "Target must be lower than Warning Threshold."
+        if all(value is not None for value in [self.warning_threshold, self.critical_threshold]):
+            if higher and self.warning_threshold <= self.critical_threshold:
+                errors["warning_threshold"] = (
+                    "Warning Threshold must be greater than Critical Threshold."
+                )
+            if lower and self.warning_threshold >= self.critical_threshold:
+                errors["warning_threshold"] = (
+                    "Warning Threshold must be lower than Critical Threshold."
+                )
+        if self.target_source == "Power BI Measure" and not self.target_measure_name.strip():
+            errors["target_measure_name"] = (
+                "Target Measure Name is required when Target Source is Power BI Measure."
+            )
+        if self.default_drill_down_dimension and (
+            self.default_drill_down_dimension not in (self.supported_dimensions or [])
+        ):
+            errors["default_drill_down_dimension"] = (
+                "Default Drill-Down Dimension must belong to Supported Dimensions."
+            )
+        if self.effective_from and self.effective_to and self.effective_to < self.effective_from:
+            errors["effective_to"] = "Effective To must be on or after Effective From."
+        if errors:
+            raise ValidationError(errors)
+
+    def save(self, *args, **kwargs):
+        if self.powerbi_measure_table and self.powerbi_measure_name:
+            table = self.powerbi_measure_table.replace("'", "''").strip()
+            measure = self.powerbi_measure_name.strip().strip("[]")
+            self.powerbi_measure_full_reference = f"'{table}'[{measure}]"
+        super().save(*args, **kwargs)
+
+
+class SQLConfigSyncQueue(models.Model):
+    STATUS_CHOICES = [
+        ("Pending", "Pending"),
+        ("Syncing", "Syncing"),
+        ("Failed", "Failed"),
+    ]
+
+    model_name = models.CharField(max_length=160, unique=True)
+    table_name = models.CharField(max_length=255)
+    status = models.CharField(max_length=30, choices=STATUS_CHOICES, default="Pending")
+    attempts = models.PositiveIntegerField(default=0)
+    last_error = models.TextField(blank=True)
+    last_attempt_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["updated_at", "model_name"]
+        db_table = "system_sql_config_sync_queue"
+
+    def __str__(self) -> str:
+        return f"{self.model_name} - {self.status}"
 
 
 class KnowledgeMiningTerminology(KnowledgeBaseMixin):
@@ -936,21 +1149,129 @@ class KnowledgeSynonym(KnowledgeBaseMixin):
         ("Filter", "Filter"),
         ("Mine Site", "Mine Site"),
         ("Model", "Model"),
+        ("Equipment Family", "Equipment Family"),
+        ("Serial Number", "Serial Number"),
         ("Component", "Component"),
         ("Customer", "Customer"),
         ("Period", "Period"),
         ("Business Term", "Business Term"),
     ]
+    SOURCES = [
+        ("Manual", "Manual"),
+        ("Business", "Business"),
+        ("Imported", "Imported"),
+        ("System Generated", "System Generated"),
+        ("AI Generated", "AI Generated"),
+    ]
+    MATCH_TYPES = [
+        ("Exact", "Exact"),
+        ("Phrase", "Phrase"),
+        ("Contains", "Contains"),
+        ("Abbreviation", "Abbreviation"),
+        ("Fuzzy", "Fuzzy"),
+        ("Semantic", "Semantic"),
+    ]
 
     canonical_term = models.CharField(max_length=255)
     synonym = models.CharField(max_length=255)
+    normalized_value = models.CharField(max_length=255, default="", blank=True)
+    normalized_synonym_key = models.CharField(max_length=255, default="", blank=True, db_index=True, editable=False)
     entity_type = models.CharField(max_length=80, choices=ENTITY_TYPES)
     language = models.CharField(max_length=16, default="en")
-    confidence = models.DecimalField(max_digits=5, decimal_places=2, default=1)
+    confidence = models.DecimalField(max_digits=5, decimal_places=2, default=100)
+    synonym_source = models.CharField(max_length=40, choices=SOURCES, default="Manual")
+    match_type = models.CharField(max_length=30, choices=MATCH_TYPES, default="Exact")
+    resolution_priority = models.PositiveSmallIntegerField(default=50)
+    is_ambiguous = models.BooleanField(default=False)
+    ambiguity_notes = models.TextField(blank=True)
+    usage_count = models.PositiveIntegerField(default=0, editable=False)
+    last_used_at = models.DateTimeField(null=True, blank=True, editable=False)
+    last_used_question = models.TextField(blank=True, editable=False)
+    created_by = models.ForeignKey(
+        User, null=True, blank=True, related_name="created_knowledge_synonyms",
+        on_delete=models.SET_NULL, editable=False,
+    )
+    updated_by = models.ForeignKey(
+        User, null=True, blank=True, related_name="updated_knowledge_synonyms",
+        on_delete=models.SET_NULL, editable=False,
+    )
+    validated_at = models.DateTimeField(null=True, blank=True, editable=False)
+    validated_by = models.ForeignKey(
+        User, null=True, blank=True, related_name="validated_knowledge_synonyms",
+        on_delete=models.SET_NULL, editable=False,
+    )
 
     class Meta:
         ordering = ["entity_type", "canonical_term", "synonym"]
         db_table = "kb_synonym_library"
+        indexes = [
+            models.Index(fields=["section", "entity_type", "language", "normalized_synonym_key"], name="kb_syn_resolve_idx"),
+            models.Index(fields=["section", "validation_status", "is_active"], name="kb_syn_status_idx"),
+            models.Index(fields=["canonical_term"], name="kb_syn_canonical_idx"),
+            models.Index(fields=["normalized_value"], name="kb_syn_value_idx"),
+        ]
+        constraints = [
+            models.CheckConstraint(condition=models.Q(usage_count__gte=0), name="kb_syn_usage_nonnegative"),
+            models.CheckConstraint(condition=models.Q(confidence__gte=0, confidence__lte=100), name="kb_syn_confidence_range"),
+            models.CheckConstraint(condition=models.Q(resolution_priority__gte=1, resolution_priority__lte=100), name="kb_syn_priority_range"),
+        ]
+
+    CRITICAL_FIELDS = {
+        "section_id", "canonical_term", "synonym", "normalized_value", "entity_type",
+        "language", "confidence", "match_type", "is_ambiguous", "is_active",
+    }
+
+    def clean(self):
+        from django.core.exceptions import ValidationError
+        from .synonym_utils import normalize_synonym_key
+
+        self.canonical_term = str(self.canonical_term or "").strip()
+        self.synonym = str(self.synonym or "").strip()
+        self.language = str(self.language or "en").strip().lower()
+        self.normalized_value = str(self.normalized_value or self.canonical_term).strip()
+        self.normalized_synonym_key = normalize_synonym_key(self.synonym)
+        errors = {}
+        if not self.normalized_value:
+            errors["normalized_value"] = "Normalized Value is required."
+        if not self.normalized_synonym_key:
+            errors["synonym"] = "Synonym must contain searchable characters."
+        if not 0 <= float(self.confidence) <= 100:
+            errors["confidence"] = "Confidence must be between 0 and 100."
+        if not 1 <= int(self.resolution_priority) <= 100:
+            errors["resolution_priority"] = "Resolution Priority must be between 1 and 100."
+        duplicate = type(self).objects.filter(
+            section_id=self.section_id,
+            entity_type=self.entity_type,
+            language=self.language,
+            normalized_synonym_key=self.normalized_synonym_key,
+        ).exclude(pk=self.pk)
+        if duplicate.exists():
+            same_canonical = duplicate.filter(canonical_term__iexact=self.canonical_term).first()
+            if same_canonical:
+                errors["synonym"] = (
+                    "This synonym already exists for the selected section, entity type and language."
+                )
+            elif not self.is_ambiguous:
+                conflict = duplicate.first()
+                errors["synonym"] = (
+                    f'Synonym "{self.synonym}" is already mapped to another canonical term '
+                    f'"{conflict.canonical_term}" (record ID {conflict.id}). '
+                    "Mark the new synonym as ambiguous only when this mapping is legitimate."
+                )
+        if errors:
+            raise ValidationError(errors)
+
+    def save(self, *args, **kwargs):
+        from .synonym_utils import default_match_type, normalize_synonym_key
+
+        self.normalized_value = str(self.normalized_value or self.canonical_term).strip()
+        self.normalized_synonym_key = normalize_synonym_key(self.synonym)
+        if not self.pk and (not self.match_type or self.match_type == "Exact"):
+            self.match_type = default_match_type(self.synonym)
+        if self.synonym_source == "AI Generated" and not self.pk:
+            self.validation_status = "Draft"
+        self.full_clean()
+        return super().save(*args, **kwargs)
 
     def __str__(self) -> str:
         return f"{self.canonical_term} = {self.synonym}"
@@ -1054,6 +1375,152 @@ class KnowledgeUserFeedback(models.Model):
         return f"Feedback {self.rating}"
 
 
+class OpenAIModelPricing(models.Model):
+    model_name = models.CharField(max_length=160, db_index=True)
+    effective_from = models.DateTimeField()
+    effective_to = models.DateTimeField(null=True, blank=True)
+    input_cost_per_million_tokens = models.DecimalField(max_digits=18, decimal_places=8, default=0)
+    cached_input_cost_per_million_tokens = models.DecimalField(max_digits=18, decimal_places=8, default=0)
+    output_cost_per_million_tokens = models.DecimalField(max_digits=18, decimal_places=8, default=0)
+    currency = models.CharField(max_length=12, default="USD")
+    source = models.CharField(max_length=255, blank=True)
+    active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["model_name", "-effective_from"]
+        db_table = "OpenAIModelPricing"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["model_name", "effective_from"],
+                name="unique_openai_model_price_period",
+            ),
+        ]
+
+
+class OpenAIUsageLog(models.Model):
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    section = models.CharField(max_length=120, blank=True, db_index=True)
+    feature = models.CharField(max_length=160, blank=True, db_index=True)
+    model = models.CharField(max_length=160, blank=True, db_index=True)
+    endpoint = models.CharField(max_length=255, blank=True)
+    request_id = models.CharField(max_length=255, blank=True, db_index=True)
+    conversation_id = models.CharField(max_length=255, blank=True, db_index=True)
+    project_id = models.CharField(max_length=255, blank=True, db_index=True)
+    api_key_id = models.CharField(max_length=255, blank=True)
+    input_tokens = models.PositiveBigIntegerField(default=0)
+    cached_input_tokens = models.PositiveBigIntegerField(default=0)
+    output_tokens = models.PositiveBigIntegerField(default=0)
+    reasoning_tokens = models.PositiveBigIntegerField(default=0)
+    total_tokens = models.PositiveBigIntegerField(default=0)
+    estimated_cost = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
+    official_cost = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
+    latency_ms = models.PositiveIntegerField(default=0)
+    status = models.CharField(max_length=40, default="Successful", db_index=True)
+    error_code = models.CharField(max_length=160, blank=True)
+    environment = models.CharField(max_length=80, default="development", db_index=True)
+    usage_timestamp = models.DateTimeField(db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-usage_timestamp"]
+        db_table = "OpenAIUsageLog"
+        indexes = [
+            models.Index(fields=["usage_timestamp", "model"], name="openai_usage_time_model"),
+            models.Index(fields=["usage_timestamp", "section"], name="openai_usage_time_section"),
+        ]
+
+
+class OpenAICostSnapshot(models.Model):
+    organization_id = models.CharField(max_length=255, blank=True, db_index=True)
+    project_id = models.CharField(max_length=255, blank=True, db_index=True)
+    start_time = models.DateTimeField(db_index=True)
+    end_time = models.DateTimeField()
+    amount = models.DecimalField(max_digits=18, decimal_places=8, default=0)
+    currency = models.CharField(max_length=12, default="USD")
+    line_item = models.CharField(max_length=255, blank=True)
+    source_payload = models.JSONField(default=dict, blank=True)
+    synchronized_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-start_time"]
+        db_table = "OpenAICostSnapshot"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["organization_id", "project_id", "start_time", "end_time", "line_item", "currency"],
+                name="unique_openai_cost_snapshot",
+            ),
+        ]
+
+
+class OpenAIUsageSnapshot(models.Model):
+    organization_id = models.CharField(max_length=255, blank=True, db_index=True)
+    project_id = models.CharField(max_length=255, blank=True, db_index=True)
+    model = models.CharField(max_length=160, blank=True, db_index=True)
+    start_time = models.DateTimeField(db_index=True)
+    end_time = models.DateTimeField()
+    input_tokens = models.PositiveBigIntegerField(default=0)
+    cached_input_tokens = models.PositiveBigIntegerField(default=0)
+    output_tokens = models.PositiveBigIntegerField(default=0)
+    requests = models.PositiveBigIntegerField(default=0)
+    source_payload = models.JSONField(default=dict, blank=True)
+    synchronized_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-start_time"]
+        db_table = "OpenAIUsageSnapshot"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["organization_id", "project_id", "model", "start_time", "end_time"],
+                name="unique_openai_usage_snapshot",
+            ),
+        ]
+
+
+class OpenAIBudget(models.Model):
+    name = models.CharField(max_length=160, default="Mining360 Monthly Budget")
+    organization_id = models.CharField(max_length=255, blank=True)
+    project_id = models.CharField(max_length=255, blank=True)
+    monthly_budget = models.DecimalField(max_digits=18, decimal_places=2, default=0)
+    currency = models.CharField(max_length=12, default="USD")
+    warning_percentage = models.DecimalField(max_digits=5, decimal_places=2, default=70)
+    critical_percentage = models.DecimalField(max_digits=5, decimal_places=2, default=90)
+    active = models.BooleanField(default=True)
+    effective_from = models.DateField()
+    effective_to = models.DateField(null=True, blank=True)
+    billing_url = models.URLField(blank=True, default="https://platform.openai.com/settings/organization/billing/credit-grants")
+    timezone_name = models.CharField(max_length=80, default="UTC")
+    enable_cost_synchronization = models.BooleanField(default=True)
+    enable_internal_usage_logging = models.BooleanField(default=True)
+    enable_credit_synchronization = models.BooleanField(default=False)
+    usage_sync_frequency_minutes = models.PositiveIntegerField(default=60)
+    cost_sync_frequency_minutes = models.PositiveIntegerField(default=360)
+    data_retention_days = models.PositiveIntegerField(default=730)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-effective_from", "name"]
+        db_table = "OpenAIBudget"
+
+
+class OpenAICreditSnapshot(models.Model):
+    credit_type = models.CharField(max_length=120, blank=True)
+    original_amount = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
+    remaining_amount = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
+    currency = models.CharField(max_length=12, default="USD")
+    expires_at = models.DateTimeField(null=True, blank=True)
+    source = models.CharField(max_length=255, blank=True)
+    synchronized_at = models.DateTimeField(auto_now=True)
+    availability_status = models.CharField(max_length=120, default="Unavailable from API")
+    raw_payload = models.JSONField(default=dict, blank=True)
+
+    class Meta:
+        ordering = ["-synchronized_at"]
+        db_table = "OpenAICreditSnapshot"
+
+
 class SystemDatabaseConfig(models.Model):
     ENGINE_CHOICES = [
         ("SQL Server", "SQL Server"),
@@ -1099,6 +1566,7 @@ class SystemManagedTable(models.Model):
         ("Resources", "Resources"),
         ("Power BI", "Power BI"),
         ("Business Performance", "Business Performance"),
+        ("OpenAI Usage", "OpenAI Usage"),
         ("Logs", "Logs"),
         ("Other", "Other"),
     ]

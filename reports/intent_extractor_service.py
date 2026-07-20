@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import date
 import re
 
 from .ai_config_service import build_section_catalog, get_active_sections, get_section_by_code
@@ -94,16 +95,51 @@ def _detect_metric(question_text: str, section_code: str) -> str | None:
 
 def _extract_period(question_text: str) -> str | None:
     text = _normalize(question_text)
+    relative_periods = (
+        (
+            "year to date",
+            (
+                "year to date", "year-to-date", "ytd",
+                "cumul annuel", "depuis le début de l'année",
+                "depuis le debut de l'annee", "année à date", "annee a date",
+            ),
+        ),
+        (
+            "month to date",
+            (
+                "month to date", "month-to-date", "mtd",
+                "cumul mensuel", "depuis le début du mois",
+                "depuis le debut du mois", "mois à date", "mois a date",
+            ),
+        ),
+        (
+            "last 12 months",
+            (
+                "last 12 months", "last twelve months", "l12m",
+                "rolling 12 months", "trailing 12 months",
+                "douze derniers mois", "12 derniers mois",
+                "12 mois glissants", "douze mois glissants",
+            ),
+        ),
+    )
+    for canonical_value, aliases in relative_periods:
+        if any(re.search(rf"(?<!\w){re.escape(alias)}(?!\w)", text) for alias in aliases):
+            return canonical_value
     match = re.search(r"\b(20\d{2})[-/](\d{1,2})\b", text)
     if match:
         return f"{match.group(1)}-{int(match.group(2)):02d}"
     for month_name, month_number in MONTH_ALIASES.items():
         if re.search(rf"\b{re.escape(month_name)}\b", text):
             year_match = re.search(r"\b(20\d{2})\b", text)
-            if year_match:
-                return f"{year_match.group(1)}-{month_number}"
-    if "last 12 months" in text or "douze derniers mois" in text or "12 derniers mois" in text:
-        return "last 12 months"
+            year = year_match.group(1) if year_match else str(date.today().year)
+            return f"{year}-{month_number}"
+    if "current month" in text or "ce mois" in text or "mois courant" in text:
+        return "current month"
+    if "previous month" in text or "last month" in text or "mois précédent" in text or "mois precedent" in text:
+        return "previous month"
+    year_match = re.search(r"\b(20\d{2})\b", text)
+    if year_match:
+        return year_match.group(1)
     return None
 
 
@@ -115,7 +151,11 @@ def _extract_value(question_text: str, entity_type: str) -> str | None:
         if match:
             return match.group(1).strip()
     if entity_type == "model":
-        match = re.search(r"(?:model|mod[eè]le)\s*[:=]?\s*([a-z0-9. -]+)", text, re.I)
+        match = re.search(
+            r"(?:model\b|mod[eè]le\b)\s*[:=]?\s*([a-z0-9][a-z0-9./_-]*)",
+            text,
+            re.I,
+        )
         if match:
             return match.group(1).strip().upper()
         match = re.search(r"\b(6015|6020|6030|6040|6050|777 wt|777|785|789|d10|d9|992|390|395|980|988|844)\b", lowered, re.I)
@@ -132,14 +172,59 @@ def _extract_value(question_text: str, entity_type: str) -> str | None:
         if match:
             return match.group(1).strip()
     if entity_type == "family":
-        match = re.search(r"(?:family|famille)\s*[:=]\s*([a-z0-9 /_-]+)", text, re.I)
+        match = re.search(
+            r"(?:family|famille)\s*[:=]?\s*([a-z0-9][a-z0-9 /_-]*?)"
+            r"(?=\s*(?:,|;|\?|$|\b(?:at|in|for|pour|au|à|site|minesite|model|mod[eè]le|period|p[eé]riode|serial|sn)\b))",
+            text,
+            re.I,
+        )
         if match:
             return match.group(1).strip()
+    if entity_type == "serial_number":
+        match = re.search(
+            r"(?:serial(?:\s+number)?|num[eé]ro\s+de\s+s[eé]rie|\bsn\b)"
+            r"\s*[:=]?\s*([a-z0-9][a-z0-9./_-]*)",
+            text,
+            re.I,
+        )
+        if match:
+            return match.group(1).strip().upper()
     if entity_type == "field":
         match = re.search(r"(?:field|champ)\s*[:=]\s*([a-z0-9 /_-]+)", text, re.I)
         if match:
             return match.group(1).strip()
     return None
+
+
+def _detect_intent_type(question_text: str) -> str:
+    text = _normalize(question_text)
+    if any(token in text for token in ("compare", "comparison", "versus", " vs ", "comparaison", "comparez")):
+        return "comparison"
+    if any(token in text for token in ("trend", "tendance", "evolution", "évolution", "monthly", "mensuel", "par mois")):
+        return "trend"
+    if any(token in text for token in (
+        "highest", "lowest", "top ", "bottom ", "ranking", "classement",
+        "meilleur", "plus faible", "plus élevé", "plus eleve",
+        "by model", "par modèle", "par modele", "all models", "tous les modèles",
+        "tous les modeles",
+    )):
+        return "ranking"
+    return "single_kpi"
+
+
+def _ranking_payload(question_text: str) -> dict | None:
+    if _detect_intent_type(question_text) != "ranking":
+        return None
+    text = _normalize(question_text)
+    dimension = "model"
+    if any(token in text for token in ("site", "minesite", "mine site")):
+        dimension = "minesite"
+    top_match = re.search(r"\b(?:top|bottom)\s+(\d{1,2})\b", text)
+    return {
+        "dimension": dimension,
+        "direction": "desc" if any(token in text for token in ("highest", "top ", "meilleur", "plus élevé", "plus eleve")) else "asc",
+        "top_n": min(int(top_match.group(1)), 50) if top_match else 10,
+    }
 
 
 def _build_fallback_intent(question_text: str, section_code: str | None = None) -> dict:
@@ -161,29 +246,49 @@ def _build_fallback_intent(question_text: str, section_code: str | None = None) 
         metric = "availability"
     return {
         "section": section,
-        "intent_type": "single_kpi",
+        "intent_type": _detect_intent_type(question_text),
         "metric": metric,
         "filters": filters,
-        "comparison": None,
+        "comparison": _ranking_payload(question_text),
         "navigation": {"open_report": True, "open_page": True, "focus_visual": True},
     }
 
 
 def extract_intent(question_text: str, section_code: str | None = None) -> dict:
     fallback = _build_fallback_intent(question_text, section_code)
+    # Availability is fully controlled by configured synonyms, filters and DAX
+    # templates. Avoid a slow and less deterministic LLM extraction when the
+    # business intent is already resolved locally.
+    if fallback.get("metric") == "availability":
+        return fallback
     try:
         extracted = openai_extract_intent(question_text, section_code or fallback["section"])
         if extracted.get("section"):
             fallback["section"] = extracted["section"]
         if extracted.get("metric") is not None:
             fallback["metric"] = extracted["metric"]
-        if extracted.get("intent_type"):
+        if extracted.get("intent_type") and fallback["intent_type"] == "single_kpi":
             fallback["intent_type"] = extracted["intent_type"]
         if isinstance(extracted.get("filters"), dict):
-            fallback["filters"].update(extracted["filters"])
+            ai_filters = {
+                key: value
+                for key, value in extracted["filters"].items()
+                if value not in (None, "", [])
+            }
+            deterministic_filters = dict(fallback["filters"])
+            fallback["filters"] = ai_filters
+            fallback["filters"].update(deterministic_filters)
         if isinstance(extracted.get("navigation"), dict):
             fallback["navigation"].update(extracted["navigation"])
-        fallback["comparison"] = extracted.get("comparison", fallback.get("comparison"))
+        if fallback.get("comparison") is None:
+            fallback["comparison"] = extracted.get("comparison")
     except Exception:
         pass
+    fallback["filters"] = {
+        key: value
+        for key, value in fallback["filters"].items()
+        if value not in (None, "", [])
+    }
+    if fallback.get("metric") == "physical_availability":
+        fallback["metric"] = "availability"
     return fallback

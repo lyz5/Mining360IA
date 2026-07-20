@@ -466,18 +466,21 @@ def _load_adomd_types():
 
 def _open_xmla_connection(workspace_name: str, dataset_name: str):
     token = get_access_token()
-    _, AdomdConnection, _ = _load_adomd_types()
+    System, AdomdConnection, AccessToken = _load_adomd_types()
 
     connection = AdomdConnection(
         "Data Source=powerbi://api.powerbi.com/v1.0/myorg/{workspace};"
         "Initial Catalog={dataset};"
-        "User ID={token};"
         "Persist Security Info=True;"
         .format(
             workspace=workspace_name,
             dataset=dataset_name,
-            token=token,
         )
+    )
+    connection.AccessToken = AccessToken(
+        token,
+        System.DateTimeOffset.UtcNow.AddMinutes(50),
+        None,
     )
     connection.Open()
     return connection
@@ -570,7 +573,14 @@ def get_dataset_schema_catalog(workspace_name: str, dataset_name: str) -> dict:
             table_id = str(table_id_value) if table_id_value is not None else ""
             columns_with_table.append(
                 {
-                    "name": _row_value(row, "Name", "ColumnName", "DisplayName") or "",
+                    "name": _row_value(
+                        row,
+                        "Name",
+                        "ExplicitName",
+                        "InferredName",
+                        "ColumnName",
+                        "DisplayName",
+                    ) or "",
                     "table": table_lookup.get(table_id, ""),
                 }
             )

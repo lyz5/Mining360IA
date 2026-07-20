@@ -82,6 +82,15 @@
         }
 
         basicFilter(instruction) {
+            if (instruction.filter_type === "advanced") {
+                return {
+                    $schema: "http://powerbi.com/product/schema#advanced",
+                    target: { table: instruction.table, column: instruction.column },
+                    logicalOperator: "And",
+                    conditions: instruction.conditions || [],
+                    filterType: window["powerbi-client"].models.FilterType.AdvancedFilter,
+                };
+            }
             return {
                 $schema: "http://powerbi.com/product/schema#basic",
                 target: { table: instruction.table, column: instruction.column },
@@ -91,30 +100,152 @@
             };
         }
 
+        normalizeSemanticName(value) {
+            return String(value || "")
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, " ")
+                .trim();
+        }
+
+        filterAliases(filterCode) {
+            const aliases = {
+                minesite: ["minesite", "mine site", "site", "site name"],
+                model: ["model", "equipment model", "machine model", "modele"],
+                family: ["family", "equipment family", "product group", "parent product group"],
+                serial_number: ["serial number", "serial", "sn"],
+                customer: ["customer", "customer code", "client"],
+                period: ["period", "date", "year month", "month", "calendar"],
+            };
+            return aliases[filterCode] || [filterCode];
+        }
+
+        async describeSlicer(slicer) {
+            let state = null;
+            try {
+                state = await slicer.getSlicerState();
+            } catch (error) {
+                this.emit("slicer_state_warning", { visual: slicer.name, message: error.message });
+            }
+            const filter = state?.filters?.[0] || {};
+            const target = filter.target || state?.targets?.[0] || {};
+            return {
+                slicer,
+                target,
+                names: [
+                    slicer.name,
+                    slicer.title,
+                    target.table,
+                    target.column,
+                    `${target.table || ""} ${target.column || ""}`,
+                ].map((value) => this.normalizeSemanticName(value)).filter(Boolean),
+            };
+        }
+
+        slicerMatchScore(description, instruction) {
+            if (
+                instruction.slicer_internal_name
+                && description.slicer.name === instruction.slicer_internal_name
+            ) return 1000;
+
+            const aliases = this.filterAliases(instruction.filter_code)
+                .map((value) => this.normalizeSemanticName(value));
+            let score = 0;
+            for (const name of description.names) {
+                for (const alias of aliases) {
+                    if (!alias) continue;
+                    if (name === alias) score = Math.max(score, 300);
+                    else if (name.endsWith(` ${alias}`) || name.startsWith(`${alias} `)) {
+                        score = Math.max(score, 220);
+                    } else if (name.includes(alias) && alias.length >= 4) {
+                        score = Math.max(score, 140);
+                    }
+                }
+            }
+            return score;
+        }
+
+        async resolveSlicer(instruction, slicerDescriptions) {
+            const candidates = slicerDescriptions
+                .map((description) => ({
+                    description,
+                    score: this.slicerMatchScore(description, instruction),
+                }))
+                .filter((candidate) => candidate.score > 0)
+                .sort((left, right) => right.score - left.score);
+            return candidates[0]?.description || null;
+        }
+
         async applyFilters(page, instructions) {
             const models = window["powerbi-client"].models;
             const pageFilters = [];
             const slicers = page ? await page.getSlicers() : [];
+            const slicerDescriptions = await Promise.all(
+                slicers.map((slicer) => this.describeSlicer(slicer))
+            );
             for (const instruction of instructions || []) {
-                const filter = this.basicFilter(instruction);
                 let applied = false;
-                if (instruction.scope === "slicer" && instruction.slicer_internal_name) {
-                    const slicer = slicers.find((item) => item.name === instruction.slicer_internal_name);
-                    if (slicer && typeof slicer.setSlicerState === "function") {
-                        try {
-                            await slicer.setSlicerState({ filters: [filter] });
-                            applied = true;
-                            this.emit("slicer_applied", { filterCode: instruction.filter_code, visual: slicer.name });
-                        } catch (error) {
-                            this.emit("slicer_failed", { filterCode: instruction.filter_code, message: error.message });
-                        }
+                const matched = await this.resolveSlicer(instruction, slicerDescriptions);
+                if (matched && typeof matched.slicer.setSlicerState === "function") {
+                    const target = matched.target || {};
+                    const slicerInstruction = Object.assign({}, instruction, {
+                        table: target.table || instruction.table,
+                        column: target.column || instruction.column,
+                    });
+                    try {
+                        await matched.slicer.setSlicerState({
+                            filters: [this.basicFilter(slicerInstruction)],
+                        });
+                        applied = true;
+                        this.emit("slicer_applied", {
+                            filterCode: instruction.filter_code,
+                            visual: matched.slicer.name,
+                            table: slicerInstruction.table,
+                            column: slicerInstruction.column,
+                        });
+                    } catch (error) {
+                        this.emit("slicer_failed", {
+                            filterCode: instruction.filter_code,
+                            visual: matched.slicer.name,
+                            message: error.message,
+                        });
                     }
                 }
-                if (!applied) pageFilters.push(filter);
+                if (!applied) pageFilters.push({
+                    instruction,
+                    filter: this.basicFilter(instruction),
+                });
             }
             if (pageFilters.length && page) {
-                await page.updateFilters(models.FiltersOperations.Replace, pageFilters);
-                this.emit("page_filters_applied", { count: pageFilters.length });
+                try {
+                    await page.updateFilters(models.FiltersOperations.RemoveAll);
+                } catch (error) {
+                    this.emit("page_filters_clear_warning", { message: error.message });
+                }
+                let appliedCount = 0;
+                for (const item of pageFilters) {
+                    try {
+                        await page.updateFilters(models.FiltersOperations.Add, [item.filter]);
+                        appliedCount += 1;
+                        this.emit("page_filter_applied", {
+                            filterCode: item.instruction.filter_code,
+                            table: item.instruction.table,
+                            column: item.instruction.column,
+                        });
+                    } catch (error) {
+                        this.emit("page_filter_failed", {
+                            filterCode: item.instruction.filter_code,
+                            table: item.instruction.table,
+                            column: item.instruction.column,
+                            message: error.message,
+                        });
+                    }
+                }
+                this.emit("page_filters_applied", {
+                    count: appliedCount,
+                    requested: pageFilters.length,
+                });
             }
         }
 
