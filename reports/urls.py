@@ -3,6 +3,9 @@ from django.urls import path
 from . import views
 from . import powerbi_interaction_views
 from . import openai_usage_views
+from . import downtime_explorer_views
+from . import resource_knowledge_views
+from . import voice_input_views
 
 
 urlpatterns = [
@@ -63,6 +66,24 @@ urlpatterns = [
     path("business-performance/config/import-model/", views.business_performance_import_model_api, name="business-performance-import-model-api"),
     path("ai/", views.ai_home, name="ai-home"),
     path("ai/ask/", views.ai_ask, name="ai-ask"),
+    path("api/ai/audio/config/", voice_input_views.voice_input_config_api, name="voice-input-config"),
+    path("api/ai/audio/transcribe/", voice_input_views.transcribe_audio_api, name="voice-input-transcribe"),
+    path("ai/availability-diagnostics/", downtime_explorer_views.availability_diagnostics_api, name="availability-diagnostics"),
+    path("ai/downtime-explorer/open/", downtime_explorer_views.open_api, name="downtime-explorer-open"),
+    path("ai/downtime-explorer/<uuid:session_id>/summary/", downtime_explorer_views.summary_api, name="downtime-explorer-summary"),
+    path("ai/downtime-explorer/<uuid:session_id>/breakdown/", downtime_explorer_views.breakdown_api, name="downtime-explorer-breakdown"),
+    path("ai/downtime-explorer/<uuid:session_id>/equipment/", downtime_explorer_views.equipment_api, name="downtime-explorer-equipment"),
+    path("ai/downtime-explorer/<uuid:session_id>/events/", downtime_explorer_views.events_api, name="downtime-explorer-events"),
+    path("ai/downtime-explorer/<uuid:session_id>/comments/", downtime_explorer_views.comments_api, name="downtime-explorer-comments"),
+    path("ai/downtime-explorer/<uuid:session_id>/analyze-comments/", downtime_explorer_views.analyze_comments_api, name="downtime-explorer-analyze-comments"),
+    path("ai/downtime-explorer/<uuid:session_id>/repeated-failures/", downtime_explorer_views.repeated_failures_api, name="downtime-explorer-repeated-failures"),
+    path("ai/downtime-explorer/<uuid:session_id>/smcs/", downtime_explorer_views.smcs_breakdown_api, name="downtime-explorer-smcs"),
+    path("ai/downtime-explorer/<uuid:session_id>/smcs-classification/preview/", downtime_explorer_views.smcs_classification_preview_api, name="downtime-explorer-smcs-preview"),
+    path("ai/downtime-explorer/<uuid:session_id>/smcs-classification/jobs/<uuid:job_id>/", downtime_explorer_views.smcs_classification_job_api, name="downtime-explorer-smcs-job"),
+    path("ai/downtime-explorer/<uuid:session_id>/select/", downtime_explorer_views.select_api, name="downtime-explorer-select"),
+    path("ai/downtime-explorer/<uuid:session_id>/navigate/", downtime_explorer_views.navigate_api, name="downtime-explorer-navigate"),
+    path("ai/downtime-explorer/<uuid:session_id>/reset/", downtime_explorer_views.reset_api, name="downtime-explorer-reset"),
+    path("ai/downtime-explorer/<uuid:session_id>/back/", downtime_explorer_views.back_api, name="downtime-explorer-back"),
     path("ai/semantic-test/", views.ai_semantic_test, name="ai-semantic-test"),
     path("ia-config/", views.ia_config_home, name="ia-config-home"),
     path("ia-config/api/sections/", views.ia_config_sections_api, name="ia-config-sections-api"),
@@ -70,6 +91,7 @@ urlpatterns = [
     path("ia-config/api/<str:section_code>/<str:resource_type>/", views.ia_config_collection_api, name="ia-config-collection-api"),
     path("ia-config/api/<str:section_code>/<str:resource_type>/<int:item_id>/", views.ia_config_item_api, name="ia-config-item-api"),
     path("ia-config/api/test-intent/", views.ia_config_test_intent_api, name="ia-config-test-intent-api"),
+    path("ia-config/api/voice-input/", voice_input_views.voice_input_admin_config_api, name="voice-input-admin-config"),
     path("knowledge-base/", views.knowledge_base_home, name="knowledge-base-home"),
     path("knowledge-base/api/overview/", views.knowledge_base_overview_api, name="knowledge-base-overview-api"),
     path("knowledge-base/api/generate/", views.knowledge_base_generate_api, name="knowledge-base-generate-api"),
@@ -95,6 +117,13 @@ urlpatterns = [
     path("powerbi-interaction/embed-config/<str:report_id>/", powerbi_interaction_views.interaction_embed_config_api, name="powerbi-interaction-embed-config"),
     path("powerbi-interaction/logs/<int:log_id>/events/", powerbi_interaction_views.interaction_events_api, name="powerbi-interaction-events"),
     path("system-config/", views.system_config_home, name="system-config-home"),
+    path("system-config/api/overview/", views.system_configuration_overview_api, name="system-config-overview-api"),
+    path("system-config/api/integration-schemas/", views.system_integration_schemas_api, name="system-integration-schemas-api"),
+    path("system-config/api/integrations/", views.system_integrations_api, name="system-integrations-api"),
+    path("system-config/api/integrations/<int:integration_id>/", views.system_integration_item_api, name="system-integration-item-api"),
+    path("system-config/api/integrations/<int:integration_id>/verify/", views.system_integration_verify_api, name="system-integration-verify-api"),
+    path("system-config/api/parameters/", views.system_parameters_api, name="system-parameters-api"),
+    path("system-config/api/parameters/<int:parameter_id>/", views.system_parameter_item_api, name="system-parameter-item-api"),
     path("system-config/api/database-configs/", views.system_database_configs_api, name="system-database-configs-api"),
     path("system-config/api/database-configs/<int:config_id>/", views.system_database_config_item_api, name="system-database-config-item-api"),
     path("system-config/api/database-configs/<int:config_id>/verify/", views.system_database_config_verify_api, name="system-database-config-verify-api"),
@@ -106,6 +135,12 @@ urlpatterns = [
     path("api/admin/openai-usage/export/<str:file_type>/", openai_usage_views.openai_usage_export, name="openai-usage-export"),
     path("resources/", views.resources, name="resources"),
     path("resources/upload/", views.resource_upload, name="resource-upload"),
+    path("resources/knowledge/", resource_knowledge_views.knowledge_admin, name="resource-knowledge-admin"),
+    path("resources/knowledge/api/preview/", resource_knowledge_views.knowledge_preview_api, name="resource-knowledge-preview"),
+    path("resources/knowledge/api/rebuild/", resource_knowledge_views.knowledge_rebuild_api, name="resource-knowledge-rebuild"),
+    path("resources/knowledge/api/runs/<uuid:run_id>/", resource_knowledge_views.knowledge_run_api, name="resource-knowledge-run"),
+    path("resources/knowledge/api/items/<uuid:item_id>/", resource_knowledge_views.knowledge_item_api, name="resource-knowledge-item"),
+    path("resources/knowledge/api/search/", resource_knowledge_views.knowledge_search_api, name="resource-knowledge-search"),
     path("resources/files/<str:resource_id>/", views.resource_file, name="resource-file"),
     path("resources/<str:resource_id>/", views.resource_detail, name="resource-detail"),
     path("reporting/reports/<uuid:report_id>/", views.report_detail, name="report-detail"),

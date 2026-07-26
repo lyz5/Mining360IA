@@ -172,6 +172,10 @@ def merge_conversation_intent(
         "filters": dict(previous.get("filters") or {}),
         "comparison": intent.get("comparison", previous.get("comparison")),
         "navigation": dict(intent.get("navigation") or {}),
+        "root_cause_context": (
+            intent.get("root_cause_context")
+            or previous.get("root_cause_context")
+        ),
     }
     merged["filters"].update({
         key: value for key, value in (intent.get("filters") or {}).items()

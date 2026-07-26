@@ -14,10 +14,10 @@ except ImportError:  # pragma: no cover
     pytds = None
 
 
-DEFAULT_SERVER = "172.17.0.111"
-DEFAULT_DATABASE = "MiningProd"
+DEFAULT_SERVER = ""
+DEFAULT_DATABASE = ""
 DEFAULT_PORT = 1433
-DEFAULT_USER = "djibril"
+DEFAULT_USER = ""
 DEFAULT_TIMEOUT_SECONDS = 300
 DEFAULT_DRIVER_CANDIDATES = [
     "ODBC Driver 18 for SQL Server",
@@ -38,23 +38,53 @@ def _local_sqlserver_credentials() -> dict:
 
 
 def sql_config_value(name: str, default: str = "") -> str:
-    return os.getenv(name) or _local_sqlserver_credentials().get(name, default)
+    value = os.getenv(name)
+    if not value:
+        field_map = {
+            "MINING360_SQL_SERVER": ("host", False),
+            "MINING360_SQL_PORT": ("port", False),
+            "MINING360_SQL_DATABASE": ("database", False),
+            "MINING360_SQL_USER": ("username", False),
+            "MINING360_SQL_PASSWORD": ("password", True),
+            "MINING360_SQL_DRIVER": ("driver", False),
+        }
+        mapping = field_map.get(name)
+        if mapping:
+            try:
+                from .system_configuration_service import integration_value
+
+                value = integration_value("Database", mapping[0], "", secret=mapping[1])
+            except Exception:
+                value = ""
+    return value or _local_sqlserver_credentials().get(name, default)
+
+
+def sql_timeout_seconds() -> int:
+    try:
+        from .system_configuration_service import integration_value, parameter_value
+
+        value = integration_value("Database", "connection_timeout", None)
+        if value in (None, ""):
+            value = parameter_value("default-query-timeout", DEFAULT_TIMEOUT_SECONDS)
+        return int(value or DEFAULT_TIMEOUT_SECONDS)
+    except Exception:
+        return DEFAULT_TIMEOUT_SECONDS
 
 
 def detect_sql_server_driver() -> str:
     if pyodbc is None:
-        raise RuntimeError("Module pyodbc manquant. Installe-le avec: pip install pyodbc")
+        raise RuntimeError("The pyodbc module is missing. Install it with: pip install pyodbc")
 
     installed_drivers = set(pyodbc.drivers())
     for driver in DEFAULT_DRIVER_CANDIDATES:
         if driver in installed_drivers:
             return driver
 
-    installed = ", ".join(sorted(installed_drivers)) or "aucun driver detecte"
+    installed = ", ".join(sorted(installed_drivers)) or "no driver detected"
     expected = ", ".join(DEFAULT_DRIVER_CANDIDATES)
     raise RuntimeError(
-        "Aucun driver ODBC SQL Server compatible trouve. "
-        f"Drivers attendus: {expected}. Drivers installes: {installed}."
+        "No compatible SQL Server ODBC driver was found. "
+        f"Expected drivers: {expected}. Installed drivers: {installed}."
     )
 
 
@@ -94,7 +124,7 @@ def _build_connection_strings() -> list[str]:
             if driver.startswith("ODBC Driver"):
                 for extra in encrypt_variants:
                     parts = list(base) + list(extra)
-                    parts.append(f"Connection Timeout={DEFAULT_TIMEOUT_SECONDS}")
+                    parts.append(f"Connection Timeout={sql_timeout_seconds()}")
                     if user and password:
                         parts.extend([f"UID={user}", f"PWD={password}"])
                     else:
@@ -102,7 +132,7 @@ def _build_connection_strings() -> list[str]:
                     connection_strings.append(";".join(parts) + ";")
             else:
                 parts = list(base)
-                parts.append(f"Connection Timeout={DEFAULT_TIMEOUT_SECONDS}")
+                parts.append(f"Connection Timeout={sql_timeout_seconds()}")
                 if user and password:
                     parts.extend([f"UID={user}", f"PWD={password}"])
                 else:
@@ -131,8 +161,8 @@ def _build_pytds_kwargs(
     kwargs = {
         "server": server,
         "database": database,
-        "login_timeout": DEFAULT_TIMEOUT_SECONDS,
-        "timeout": DEFAULT_TIMEOUT_SECONDS,
+        "login_timeout": sql_timeout_seconds(),
+        "timeout": sql_timeout_seconds(),
         "autocommit": False,
         "validate_host": False,
         "enc_login_only": True,
@@ -178,7 +208,7 @@ def connect(
 
     if pyodbc is None:
         raise RuntimeError(
-            "Aucun client SQL Server disponible. Installe python-tds ou pyodbc."
+            "No SQL Server client is available. Install python-tds or pyodbc."
         )
 
     errors = []

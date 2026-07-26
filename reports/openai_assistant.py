@@ -16,16 +16,30 @@ DEFAULT_OPENAI_MODEL = "gpt-4.1-mini"
 
 
 def get_openai_api_key() -> str:
+    try:
+        from .system_configuration_service import integration_value
+
+        configured_key = integration_value("OpenAI", "api_key", "", secret=True)
+    except Exception:
+        configured_key = ""
     value = (
         os.getenv("OPENAI_API_KEY")
+        or configured_key
         or _local_powerbi_credentials().get("OPENAI_API_KEY", "")
     ).strip()
     return re.sub(r"\s+", "", value)
 
 
 def get_openai_model() -> str:
+    try:
+        from .system_configuration_service import integration_value
+
+        configured_model = integration_value("OpenAI", "default_model", "")
+    except Exception:
+        configured_model = ""
     return (
         os.getenv("OPENAI_MODEL")
+        or configured_model
         or _local_powerbi_credentials().get("OPENAI_MODEL", "")
         or DEFAULT_OPENAI_MODEL
     ).strip()
@@ -41,7 +55,13 @@ def _client():
     api_key = get_openai_api_key()
     if not api_key:
         raise RuntimeError("OPENAI_API_KEY is not configured.")
-    return OpenAI(api_key=api_key)
+    try:
+        from .system_configuration_service import integration_value
+
+        base_url = os.getenv("OPENAI_API_BASE") or integration_value("OpenAI", "api_base", "")
+    except Exception:
+        base_url = os.getenv("OPENAI_API_BASE", "")
+    return OpenAI(api_key=api_key, **({"base_url": base_url} if base_url else {}))
 
 
 def _json_from_response(response) -> dict:

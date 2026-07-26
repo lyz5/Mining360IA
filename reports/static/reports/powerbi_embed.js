@@ -71,11 +71,29 @@
             return this.report.getPages();
         }
 
-        async setActivePage(pageInternalName) {
-            if (!pageInternalName) return null;
+        async setActivePage(pageInternalName, pageDisplayName) {
+            if (!pageInternalName && !pageDisplayName) return null;
             const pages = await this.getPages();
-            const page = pages.find((item) => item.name === pageInternalName);
-            if (!page) throw new Error(`Power BI page '${pageInternalName}' was not found.`);
+            let page = pages.find((item) => item.name === pageInternalName);
+            if (!page && pageDisplayName) {
+                const expected = this.normalizeSemanticName(pageDisplayName);
+                page = pages.find(
+                    (item) => this.normalizeSemanticName(item.displayName) === expected,
+                ) || pages.find((item) => {
+                    const candidate = this.normalizeSemanticName(item.displayName);
+                    return candidate.includes(expected) || expected.includes(candidate);
+                });
+                if (page) {
+                    this.emit("page_resolved_by_display_name", {
+                        requestedInternalName: pageInternalName,
+                        requestedDisplayName: pageDisplayName,
+                        resolvedInternalName: page.name,
+                    });
+                }
+            }
+            if (!page) {
+                throw new Error(`Power BI page '${pageDisplayName || pageInternalName}' was not found.`);
+            }
             await page.setActive();
             this.emit("page_activated", { name: page.name, displayName: page.displayName });
             return page;
@@ -268,7 +286,12 @@
                 await this.embed(instructions.report_id);
             }
             let page = null;
-            if (instructions.page_internal_name) page = await this.setActivePage(instructions.page_internal_name);
+            if (instructions.page_internal_name || instructions.page_display_name) {
+                page = await this.setActivePage(
+                    instructions.page_internal_name,
+                    instructions.page_display_name,
+                );
+            }
             if (!page) {
                 const pages = await this.getPages();
                 page = pages.find((item) => item.isActive) || pages[0];
@@ -311,6 +334,19 @@
 
         async clearFilters() {
             if (this.report) await this.report.removeFilters();
+        }
+
+        reset() {
+            window.clearTimeout(this.refreshTimer);
+            this.refreshTimer = null;
+            this.loaded = false;
+            this.report = null;
+            this.options.currentReportId = null;
+            if (window.powerbi && this.container) {
+                window.powerbi.reset(this.container);
+            } else if (this.container) {
+                this.container.replaceChildren();
+            }
         }
 
         async refreshReport() {

@@ -73,13 +73,7 @@ SELECT
     END AS AvailabilityPct
 FROM Downtimes;
 """
-        with connect(
-            server="172.17.0.111",
-            database="MiningProd",
-            user="djibril",
-            password="Djimen.12345",
-            port=1433,
-        ) as connection:
+        with connect() as connection:
             cursor = connection.cursor()
             cursor.execute(query, (start_date, end_date, start_date, end_date, start_date, end_date))
             row = cursor.fetchone()

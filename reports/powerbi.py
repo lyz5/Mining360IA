@@ -22,9 +22,9 @@ for _proxy_var in (
     os.environ.pop(_proxy_var, None)
 
 
-DEFAULT_TENANT_ID = "7a1b77be-dbd5-45cb-8e11-b01cbec06667"
-DEFAULT_CLIENT_ID = "f89997a9-d02d-4d03-9aea-0189f631af09"
-DEFAULT_WORKSPACE_ID = "a378c518-bfc4-4cd7-a49d-ba40394db80f"
+DEFAULT_TENANT_ID = ""
+DEFAULT_CLIENT_ID = ""
+DEFAULT_WORKSPACE_ID = ""
 POWERBI_SCOPE = "https://analysis.windows.net/powerbi/api/.default"
 POWERBI_ROOT = "https://api.powerbi.com/v1.0/myorg"
 DISPLAY_TIMEZONE = ZoneInfo("Atlantic/Reykjavik")
@@ -183,12 +183,61 @@ def get_report_connection_options(report: "PowerBIReport") -> dict:
 def env_value(name: str, default: str | None = None) -> str:
     value = os.getenv(name)
     if not value and name.startswith("POWERBI_"):
+        field_map = {
+            "POWERBI_WORKSPACE_ID": ("workspace_id", False),
+            "POWERBI_WORKSPACE_NAME": ("workspace_name", False),
+            "POWERBI_TENANT_ID": ("tenant_id", False),
+            "POWERBI_CLIENT_ID": ("client_id", False),
+            "POWERBI_CLIENT_SECRET": ("client_secret", True),
+            "POWERBI_API_ROOT": ("api_root", False),
+            "POWERBI_SCOPE": ("scope", False),
+            "POWERBI_EFFECTIVE_ROLES": ("effective_roles", False),
+            "POWERBI_EFFECTIVE_USERNAME": ("effective_username", False),
+        }
+        mapping = field_map.get(name)
+        if mapping:
+            try:
+                from .system_configuration_service import integration_value
+
+                value = integration_value("Power BI", mapping[0], "", secret=mapping[1])
+            except Exception:
+                value = ""
+    if not value and name.startswith("POWERBI_"):
         value = _local_powerbi_credentials().get(name)
     if not value:
         value = default
     if not value:
         raise RuntimeError(f"Variable d'environnement manquante: {name}")
     return value
+
+
+def powerbi_root() -> str:
+    return env_value("POWERBI_API_ROOT", POWERBI_ROOT).rstrip("/")
+
+
+def powerbi_scope() -> str:
+    return env_value("POWERBI_SCOPE", POWERBI_SCOPE)
+
+
+def _configured_integer(integration_key: str, parameter_key: str, default: int) -> int:
+    try:
+        from .system_configuration_service import integration_value, parameter_value
+
+        value = integration_value("Power BI", integration_key, None)
+        if value in (None, ""):
+            value = parameter_value(parameter_key, default)
+        return int(value or default)
+    except Exception:
+        return default
+
+
+def _display_timezone():
+    try:
+        from .system_configuration_service import parameter_value
+
+        return ZoneInfo(str(parameter_value("default-timezone", "UTC") or "UTC"))
+    except Exception:
+        return DISPLAY_TIMEZONE
 
 
 def normalize_name(value: str) -> str:
@@ -223,13 +272,13 @@ def get_access_token() -> str:
             "grant_type": "client_credentials",
             "client_id": client_id,
             "client_secret": client_secret,
-            "scope": POWERBI_SCOPE,
+            "scope": powerbi_scope(),
         },
         timeout=30,
     )
     if response.status_code != 200:
         raise RuntimeError(
-            f"Authentification Power BI impossible ({response.status_code}): {response.text}"
+            f"Power BI authentication failed ({response.status_code}): {response.text}"
         )
     token = response.json()["access_token"]
     _ACCESS_TOKEN_CACHE = (now, token)
@@ -239,20 +288,21 @@ def get_access_token() -> str:
 def list_workspace_reports() -> list[PowerBIReport]:
     global _REPORT_LIST_CACHE
     now = time.monotonic()
-    if _REPORT_LIST_CACHE and now - _REPORT_LIST_CACHE[0] < REPORT_LIST_CACHE_SECONDS:
+    cache_seconds = _configured_integer("report_cache_seconds", "default-cache-duration", REPORT_LIST_CACHE_SECONDS)
+    if _REPORT_LIST_CACHE and now - _REPORT_LIST_CACHE[0] < cache_seconds:
         return list(_REPORT_LIST_CACHE[1])
 
     workspace_id = env_value("POWERBI_WORKSPACE_ID", DEFAULT_WORKSPACE_ID)
     token = get_access_token()
     display_aliases = get_report_display_aliases()
     response = HTTP.get(
-        f"{POWERBI_ROOT}/groups/{workspace_id}/reports",
+        f"{powerbi_root()}/groups/{workspace_id}/reports",
         headers={"Authorization": f"Bearer {token}"},
         timeout=30,
     )
     if response.status_code != 200:
         raise RuntimeError(
-            f"Lecture des rapports impossible ({response.status_code}): {response.text}"
+            f"Unable to retrieve Power BI reports ({response.status_code}): {response.text}"
         )
 
     reports = []
@@ -268,26 +318,22 @@ def list_workspace_reports() -> list[PowerBIReport]:
                 report_type=item.get("reportType", ""),
             )
         )
-    focused_reports = [
-        report for report in reports
-        if report.name in FOCUSED_REPORT_NAMES
-    ]
-    focused_reports = sorted(focused_reports, key=lambda report: report.name.lower())
-    _REPORT_LIST_CACHE = (now, focused_reports)
-    return list(focused_reports)
+    reports = sorted(reports, key=lambda report: report.name.lower())
+    _REPORT_LIST_CACHE = (now, reports)
+    return list(reports)
 
 
 def list_report_pages(report_id: str, token: str | None = None, workspace_id: str | None = None) -> list[dict]:
     token = token or get_access_token()
     workspace_id = workspace_id or env_value("POWERBI_WORKSPACE_ID", DEFAULT_WORKSPACE_ID)
     response = HTTP.get(
-        f"{POWERBI_ROOT}/groups/{workspace_id}/reports/{report_id}/pages",
+        f"{powerbi_root()}/groups/{workspace_id}/reports/{report_id}/pages",
         headers={"Authorization": f"Bearer {token}"},
         timeout=30,
     )
     if response.status_code != 200:
         raise RuntimeError(
-            f"Lecture des pages Power BI impossible ({response.status_code}): {response.text}"
+            f"Unable to retrieve Power BI pages ({response.status_code}): {response.text}"
         )
     return [item for item in response.json().get("value", []) if isinstance(item, dict)]
 
@@ -296,7 +342,7 @@ def get_latest_refresh(token: str, workspace_id: str, dataset_id: str) -> tuple[
     if not dataset_id:
         return "", ""
     response = HTTP.get(
-        f"{POWERBI_ROOT}/groups/{workspace_id}/datasets/{dataset_id}/refreshes?$top=1",
+        f"{powerbi_root()}/groups/{workspace_id}/datasets/{dataset_id}/refreshes?$top=1",
         headers={"Authorization": f"Bearer {token}"},
         timeout=30,
     )
@@ -323,7 +369,7 @@ def format_refresh_datetime(value: str) -> str:
         parsed = datetime.fromisoformat(normalized)
     except ValueError:
         return value
-    return parsed.astimezone(DISPLAY_TIMEZONE).strftime("%Y-%m-%d %I:%M %p")
+    return parsed.astimezone(_display_timezone()).strftime("%Y-%m-%d %I:%M %p")
 
 
 def list_workspace_reports_with_refresh() -> list[PowerBIReport]:
@@ -351,26 +397,26 @@ def list_workspace_reports_with_refresh() -> list[PowerBIReport]:
 
 def list_workspace_datasets(token: str, workspace_id: str) -> list[dict]:
     response = HTTP.get(
-        f"{POWERBI_ROOT}/groups/{workspace_id}/datasets",
+        f"{powerbi_root()}/groups/{workspace_id}/datasets",
         headers={"Authorization": f"Bearer {token}"},
         timeout=30,
     )
     if response.status_code != 200:
         raise RuntimeError(
-            f"Lecture des datasets impossible ({response.status_code}): {response.text}"
+            f"Unable to retrieve semantic models ({response.status_code}): {response.text}"
         )
     return response.json().get("value", [])
 
 
 def get_dataset_metadata(token: str, workspace_id: str, dataset_id: str) -> dict:
     response = HTTP.get(
-        f"{POWERBI_ROOT}/groups/{workspace_id}/datasets/{dataset_id}",
+        f"{powerbi_root()}/groups/{workspace_id}/datasets/{dataset_id}",
         headers={"Authorization": f"Bearer {token}"},
         timeout=30,
     )
     if response.status_code != 200:
         raise RuntimeError(
-            f"Lecture du dataset impossible ({response.status_code}): {response.text}"
+            f"Unable to retrieve the semantic model ({response.status_code}): {response.text}"
         )
     return response.json()
 
@@ -393,7 +439,7 @@ def execute_dataset_dax(dataset_id: str, dax_query: str) -> list[dict]:
     workspace_id = env_value("POWERBI_WORKSPACE_ID", DEFAULT_WORKSPACE_ID)
     token = get_access_token()
     response = HTTP.post(
-        f"{POWERBI_ROOT}/groups/{workspace_id}/datasets/{dataset_id}/executeQueries",
+        f"{powerbi_root()}/groups/{workspace_id}/datasets/{dataset_id}/executeQueries",
         headers={
             "Authorization": f"Bearer {token}",
             "Content-Type": "application/json",
@@ -402,11 +448,11 @@ def execute_dataset_dax(dataset_id: str, dax_query: str) -> list[dict]:
             "queries": [{"query": dax_query}],
             "serializerSettings": {"includeNulls": True},
         },
-        timeout=300,
+        timeout=_configured_integer("query_timeout_seconds", "default-query-timeout", 300),
     )
     if response.status_code != 200:
         raise RuntimeError(
-            f"Execution DAX impossible ({response.status_code}): {response.text}"
+            f"DAX execution failed ({response.status_code}): {response.text}"
         )
     results = response.json().get("results", [])
     if not results:
@@ -435,13 +481,13 @@ ORDER BY [Table], [Name]
 
 def get_workspace_details(token: str, workspace_id: str) -> dict:
     response = HTTP.get(
-        f"{POWERBI_ROOT}/groups/{workspace_id}",
+        f"{powerbi_root()}/groups/{workspace_id}",
         headers={"Authorization": f"Bearer {token}"},
         timeout=30,
     )
     if response.status_code != 200:
         raise RuntimeError(
-            f"Lecture du workspace impossible ({response.status_code}): {response.text}"
+            f"Unable to retrieve the workspace ({response.status_code}): {response.text}"
         )
     return response.json()
 
@@ -760,7 +806,7 @@ def resolve_dataset_roles(dataset_name: str, roles: list[str]) -> list[str]:
 
 def get_linked_powerbi_dataset_ids(token: str, workspace_id: str, dataset_id: str) -> list[str]:
     response = HTTP.get(
-        f"{POWERBI_ROOT}/groups/{workspace_id}/datasets/{dataset_id}/datasources",
+        f"{powerbi_root()}/groups/{workspace_id}/datasets/{dataset_id}/datasources",
         headers={"Authorization": f"Bearer {token}"},
         timeout=30,
     )
@@ -817,7 +863,7 @@ def get_workspace_report(report_id: str, reports: list[PowerBIReport] | None = N
     for report in reports:
         if report.id == report_id:
             return report
-    raise RuntimeError(f"Rapport introuvable: {report_id}")
+    raise RuntimeError(f"Report not found: {report_id}")
 
 
 def generate_report_embed_token(report: PowerBIReport, selected_roles: list[str] | None = None) -> str:
@@ -877,7 +923,7 @@ def generate_report_embed_token(report: PowerBIReport, selected_roles: list[str]
         payload["identities"] = identities
 
     response = HTTP.post(
-        f"{POWERBI_ROOT}/GenerateToken",
+        f"{powerbi_root()}/GenerateToken",
         headers={
             "Authorization": f"Bearer {token}",
             "Content-Type": "application/json",
@@ -887,6 +933,6 @@ def generate_report_embed_token(report: PowerBIReport, selected_roles: list[str]
     )
     if response.status_code != 200:
         raise RuntimeError(
-            f"Generation du token embed impossible ({response.status_code}): {response.text}"
+            f"Embed token generation failed ({response.status_code}): {response.text}"
         )
     return response.json()["token"]

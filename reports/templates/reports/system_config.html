@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>System Config | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260722-2">
 </head>
 <body>
     {% include "reports/includes/app_nav.html" %}
@@ -14,6 +14,7 @@
             <div>
                 <p class="eyebrow">Platform administration</p>
                 <h1>System Config</h1>
+                <p class="system-config-subtitle">Configure connections and runtime behavior without changing application code.</p>
             </div>
             <div class="summary">
                 <span class="summary-value" id="system-config-count">0</span>
@@ -24,26 +25,34 @@
         <section class="ia-config-main">
             <div class="section-heading">
                 <div>
-                    <p class="eyebrow">SQL Server orientation</p>
-                    <h2 id="system-config-title">Database Servers</h2>
+                    <p class="eyebrow">Portable configuration</p>
+                    <h2 id="system-config-title">Overview</h2>
                 </div>
                 <div class="ia-toolbar">
                     <label class="ia-filter">
                         <span>Search</span>
                         <input type="search" id="system-search" placeholder="Search configuration...">
                     </label>
-                    <button type="button" class="button secondary" id="system-add">Add Server</button>
+                    <label class="ia-filter" id="system-type-filter-wrap" hidden>
+                        <span>Type</span>
+                        <select id="system-type-filter"><option value="">All types</option></select>
+                    </label>
+                    <button type="button" class="button secondary" id="system-add" hidden>Add Connection</button>
                     <button type="button" class="button secondary" id="system-refresh-tables" hidden>Refresh Tables</button>
                     <button type="button" class="button secondary" id="system-refresh">Refresh</button>
                 </div>
             </div>
 
             <div class="ia-tabs" id="system-tabs">
-                <button type="button" class="ia-tab active" data-tab="database-configs">Database Servers</button>
+                <button type="button" class="ia-tab active" data-tab="overview">Overview</button>
+                <button type="button" class="ia-tab" data-tab="integrations">Connections</button>
+                <button type="button" class="ia-tab" data-tab="parameters">Parameters</button>
+                <button type="button" class="ia-tab" data-tab="database-configs">Database Servers</button>
                 <button type="button" class="ia-tab" data-tab="managed-tables">Managed Tables</button>
             </div>
 
-            <div class="table-scroll ia-config-table-wrap">
+            <div id="system-content" class="system-config-content" aria-live="polite"></div>
+            <div class="table-scroll ia-config-table-wrap" id="system-table-wrap" hidden>
                 <table class="data-table" id="system-table"></table>
             </div>
         </section>
@@ -51,11 +60,11 @@
 
     <div class="browser-modal" id="system-modal" hidden aria-hidden="true">
         <div class="browser-modal__backdrop" data-system-modal-close></div>
-        <div class="browser-modal__panel browser-modal__panel--fullscreen" role="dialog" aria-modal="true" aria-labelledby="system-modal-title">
+        <div class="browser-modal__panel system-config-modal-panel" role="dialog" aria-modal="true" aria-labelledby="system-modal-title">
             <div class="browser-modal__header">
                 <div>
-                    <p class="eyebrow">System Config</p>
-                    <h2 id="system-modal-title">Database Server</h2>
+                    <p class="eyebrow">Secure system configuration</p>
+                    <h2 id="system-modal-title">Connection</h2>
                 </div>
                 <button class="icon-button" type="button" data-system-modal-close aria-label="Close">×</button>
             </div>
@@ -63,7 +72,7 @@
                 <div id="system-form-fields" class="form-grid"></div>
                 <div class="form-actions">
                     <button type="button" class="button secondary" data-system-modal-close>Cancel</button>
-                    <button type="submit" class="button secondary">Save</button>
+                    <button type="submit" class="button secondary" id="system-save">Save</button>
                 </div>
             </form>
         </div>
@@ -78,6 +87,6 @@
         </div>
     </div>
 
-    <script src="{% static 'reports/system_config.js' %}?v=20260708-1"></script>
+    <script src="{% static 'reports/system_config.js' %}?v=20260722-2"></script>
 </body>
 </html>

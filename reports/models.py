@@ -1,3 +1,5 @@
+import uuid
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -745,6 +747,529 @@ class PowerBIInteractionLog(models.Model):
         db_table = "ai_powerbi_interaction_logs"
 
 
+class RootCauseDimension(models.Model):
+    VALIDATION_STATUSES = [
+        ("Draft", "Draft"),
+        ("To Review", "To Review"),
+        ("Validated", "Validated"),
+        ("Rejected", "Rejected"),
+        ("Deprecated", "Deprecated"),
+    ]
+
+    section = models.ForeignKey(
+        AIConfigSection,
+        related_name="root_cause_dimensions",
+        on_delete=models.CASCADE,
+    )
+    code = models.SlugField(max_length=120)
+    display_name = models.CharField(max_length=255)
+    semantic_table = models.CharField(max_length=255)
+    semantic_column = models.CharField(max_length=255)
+    parent_dimension = models.ForeignKey(
+        "self",
+        related_name="child_dimensions",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    hierarchy_level = models.PositiveSmallIntegerField(default=0)
+    sort_order = models.PositiveIntegerField(default=100)
+    entity_type = models.CharField(max_length=120, default="Downtime")
+    is_filterable = models.BooleanField(default=True)
+    is_clickable = models.BooleanField(default=True)
+    available_for_breakdown = models.BooleanField(default=True)
+    available_for_comments = models.BooleanField(default=True)
+    available_for_repetition_analysis = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
+    validation_status = models.CharField(
+        max_length=40,
+        choices=VALIDATION_STATUSES,
+        default="To Review",
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["section", "sort_order", "display_name"]
+        db_table = "ai_root_cause_dimensions"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["section", "code"],
+                name="unique_root_cause_dimension_code",
+            ),
+        ]
+
+
+class RootCauseTheme(models.Model):
+    section = models.ForeignKey(
+        AIConfigSection,
+        related_name="root_cause_themes",
+        on_delete=models.CASCADE,
+    )
+    code = models.SlugField(max_length=120)
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+    synonyms = models.JSONField(default=list, blank=True)
+    examples = models.JSONField(default=list, blank=True)
+    is_active = models.BooleanField(default=True)
+    validation_status = models.CharField(
+        max_length=40,
+        choices=RootCauseDimension.VALIDATION_STATUSES,
+        default="To Review",
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["section", "name"]
+        db_table = "ai_root_cause_themes"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["section", "code"],
+                name="unique_root_cause_theme_code",
+            ),
+        ]
+
+
+class CommentQualityRule(models.Model):
+    code = models.SlugField(max_length=120, unique=True)
+    name = models.CharField(max_length=255)
+    classification = models.CharField(max_length=80)
+    minimum_length = models.PositiveIntegerField(default=0)
+    generic_phrases = models.JSONField(default=list, blank=True)
+    priority = models.PositiveIntegerField(default=100)
+    is_active = models.BooleanField(default=True)
+    validation_status = models.CharField(
+        max_length=40,
+        choices=RootCauseDimension.VALIDATION_STATUSES,
+        default="To Review",
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["priority", "name"]
+        db_table = "ai_comment_quality_rules"
+
+
+class RepeatFailureRule(models.Model):
+    name = models.CharField(max_length=255)
+    dimension_codes = models.JSONField(default=list)
+    window_days = models.PositiveIntegerField(default=90)
+    minimum_occurrences = models.PositiveIntegerField(default=2)
+    description = models.TextField(blank=True)
+    is_active = models.BooleanField(default=True)
+    validation_status = models.CharField(
+        max_length=40,
+        choices=RootCauseDimension.VALIDATION_STATUSES,
+        default="To Review",
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["window_days", "name"]
+        db_table = "ai_repeat_failure_rules"
+
+
+class SMCSCode(models.Model):
+    code = models.CharField(max_length=20, unique=True, db_index=True)
+    description = models.CharField(max_length=500, db_index=True)
+    display_name = models.CharField(max_length=500, blank=True)
+    system = models.CharField(max_length=255, blank=True, db_index=True)
+    component = models.CharField(max_length=255, blank=True, db_index=True)
+    subcomponent = models.CharField(max_length=255, blank=True)
+    parent = models.ForeignKey(
+        "self",
+        related_name="children",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    hierarchy_level = models.PositiveSmallIntegerField(default=0)
+    equipment_family = models.CharField(max_length=255, blank=True)
+    applicable_models_json = models.JSONField(default=list, blank=True)
+    keywords_json = models.JSONField(default=list, blank=True)
+    synonyms_json = models.JSONField(default=list, blank=True)
+    common_field_expressions_json = models.JSONField(default=list, blank=True)
+    exclusion_terms_json = models.JSONField(default=list, blank=True)
+    reference_version = models.CharField(max_length=40, default="1.0")
+    source = models.CharField(max_length=120, default="CAT SMCS Codes")
+    source_file = models.CharField(max_length=500, blank=True)
+    validation_status = models.CharField(
+        max_length=40,
+        choices=RootCauseDimension.VALIDATION_STATUSES,
+        default="To Review",
+    )
+    is_active = models.BooleanField(default=True, db_index=True)
+    imported_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["code"]
+        db_table = "ai_smcs_codes"
+        indexes = [
+            models.Index(
+                fields=["is_active", "validation_status"],
+                name="smcs_active_status_idx",
+            ),
+        ]
+
+    def __str__(self):
+        return f"{self.code} - {self.description}"
+
+
+class SMCSSynonym(models.Model):
+    SYNONYM_TYPES = [
+        ("Official Alias", "Official Alias"),
+        ("Field Expression", "Field Expression"),
+        ("Abbreviation", "Abbreviation"),
+        ("Spelling Variant", "Spelling Variant"),
+        ("Imported", "Imported"),
+        ("AI Suggested", "AI Suggested"),
+        ("Manual", "Manual"),
+    ]
+
+    smcs_reference = models.ForeignKey(
+        SMCSCode,
+        related_name="smcs_synonyms",
+        on_delete=models.CASCADE,
+    )
+    synonym = models.CharField(max_length=500)
+    normalized_synonym = models.CharField(max_length=500, db_index=True)
+    language = models.CharField(max_length=12, default="en")
+    synonym_type = models.CharField(
+        max_length=40,
+        choices=SYNONYM_TYPES,
+        default="Manual",
+    )
+    source = models.CharField(max_length=120, default="Manual")
+    confidence = models.DecimalField(max_digits=5, decimal_places=2, default=100)
+    validation_status = models.CharField(
+        max_length=40,
+        choices=RootCauseDimension.VALIDATION_STATUSES,
+        default="To Review",
+    )
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["smcs_reference__code", "synonym"]
+        db_table = "ai_smcs_synonyms"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["smcs_reference", "language", "normalized_synonym"],
+                name="unique_smcs_synonym_key",
+            ),
+        ]
+
+
+class SMCSClassificationConfig(models.Model):
+    EXECUTION_MODES = [
+        ("Disabled", "Disabled"),
+        ("Preview", "Preview"),
+        ("Admin Only", "Admin Only"),
+        ("Production", "Production"),
+    ]
+
+    name = models.CharField(max_length=120, unique=True, default="Default")
+    execution_mode = models.CharField(
+        max_length=20,
+        choices=EXECUTION_MODES,
+        default="Preview",
+    )
+    auto_accept_threshold = models.PositiveSmallIntegerField(default=85)
+    review_threshold = models.PositiveSmallIntegerField(default=70)
+    candidate_score_gap = models.PositiveSmallIntegerField(default=10)
+    max_candidates = models.PositiveSmallIntegerField(default=12)
+    default_batch_size = models.PositiveSmallIntegerField(default=12)
+    prompt_code = models.CharField(
+        max_length=120,
+        default="SMCS_COMMENT_CLASSIFICATION_V1",
+    )
+    prompt_version = models.CharField(max_length=40, default="1.0")
+    config_version = models.CharField(max_length=40, default="1.0")
+    generic_comments_json = models.JSONField(default=list, blank=True)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["name"]
+        db_table = "ai_smcs_classification_config"
+
+
+class DowntimeSMCSClassification(models.Model):
+    CLASSIFICATION_STATUSES = [
+        ("matched", "Matched"),
+        ("probable", "Probable"),
+        ("unresolved", "Unresolved"),
+        ("failed_validation", "Failed Validation"),
+    ]
+    MATCH_METHODS = [
+        ("Explicit SMCS Code", "Explicit SMCS Code"),
+        ("Exact Description", "Exact Description"),
+        ("Synonym Match", "Synonym Match"),
+        ("AI Semantic Classification", "AI Semantic Classification"),
+        ("Manual Validation", "Manual Validation"),
+        ("Unresolved", "Unresolved"),
+    ]
+
+    idempotency_key = models.CharField(max_length=64, unique=True, db_index=True)
+    event_external_id = models.CharField(max_length=160, db_index=True)
+    semantic_model = models.CharField(max_length=255, blank=True)
+    source_system = models.CharField(max_length=120, default="Power BI")
+    comment_hash = models.CharField(max_length=64, db_index=True)
+    comment_snapshot = models.TextField(blank=True)
+    normalized_comment = models.TextField(blank=True)
+    minesite = models.CharField(max_length=255, blank=True)
+    equipment_id = models.CharField(max_length=160, blank=True)
+    serial_number = models.CharField(max_length=160, blank=True)
+    model = models.CharField(max_length=160, blank=True)
+    equipment_family = models.CharField(max_length=255, blank=True)
+    downtime_driver = models.CharField(max_length=255, blank=True)
+    event_start = models.DateTimeField(null=True, blank=True)
+    event_end = models.DateTimeField(null=True, blank=True)
+    downtime_hours = models.DecimalField(max_digits=18, decimal_places=4, default=0)
+    smcs_reference = models.ForeignKey(
+        SMCSCode,
+        related_name="downtime_classifications",
+        null=True,
+        blank=True,
+        on_delete=models.PROTECT,
+    )
+    smcs_code_snapshot = models.CharField(max_length=20, blank=True)
+    smcs_description_snapshot = models.CharField(max_length=500, blank=True)
+    system = models.CharField(max_length=255, blank=True)
+    component = models.CharField(max_length=255, blank=True)
+    subcomponent = models.CharField(max_length=255, blank=True)
+    classification_status = models.CharField(
+        max_length=30,
+        choices=CLASSIFICATION_STATUSES,
+        default="unresolved",
+    )
+    match_method = models.CharField(
+        max_length=40,
+        choices=MATCH_METHODS,
+        default="Unresolved",
+    )
+    confidence = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    requires_review = models.BooleanField(default=True)
+    review_reason = models.TextField(blank=True)
+    reason = models.TextField(blank=True)
+    evidence_phrases_json = models.JSONField(default=list, blank=True)
+    secondary_mentions_json = models.JSONField(default=list, blank=True)
+    alternative_candidates_json = models.JSONField(default=list, blank=True)
+    detected_symptoms_json = models.JSONField(default=list, blank=True)
+    detected_causes_json = models.JSONField(default=list, blank=True)
+    detected_actions_json = models.JSONField(default=list, blank=True)
+    detected_delays_json = models.JSONField(default=list, blank=True)
+    candidate_list_json = models.JSONField(default=list, blank=True)
+    prompt_code = models.CharField(max_length=120, blank=True)
+    prompt_version = models.CharField(max_length=40, blank=True)
+    config_version = models.CharField(max_length=40, blank=True)
+    openai_model = models.CharField(max_length=120, blank=True)
+    openai_request_id = models.CharField(max_length=160, blank=True)
+    input_tokens = models.PositiveIntegerField(default=0)
+    output_tokens = models.PositiveIntegerField(default=0)
+    estimated_cost = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
+    processing_duration_ms = models.PositiveIntegerField(default=0)
+    validation_status = models.CharField(
+        max_length=40,
+        choices=RootCauseDimension.VALIDATION_STATUSES,
+        default="To Review",
+    )
+    validated_by = models.ForeignKey(
+        User,
+        related_name="validated_smcs_classifications",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    validated_at = models.DateTimeField(null=True, blank=True)
+    manual_override = models.BooleanField(default=False)
+    manual_notes = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-updated_at"]
+        db_table = "ai_downtime_smcs_classifications"
+        indexes = [
+            models.Index(
+                fields=["classification_status", "requires_review"],
+                name="smcs_class_review_idx",
+            ),
+        ]
+
+
+class SMCSClassificationJob(models.Model):
+    STATUS_CHOICES = [
+        ("Pending", "Pending"),
+        ("Processing", "Processing"),
+        ("Partially Completed", "Partially Completed"),
+        ("Completed", "Completed"),
+        ("Failed", "Failed"),
+        ("Cancelled", "Cancelled"),
+    ]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(
+        User,
+        related_name="smcs_classification_jobs",
+        on_delete=models.CASCADE,
+    )
+    explorer_session = models.ForeignKey(
+        "DowntimeExplorerSession",
+        related_name="smcs_classification_jobs",
+        on_delete=models.CASCADE,
+    )
+    mode = models.CharField(max_length=20, default="Preview")
+    scope = models.CharField(max_length=40, default="unmatched")
+    status = models.CharField(max_length=30, choices=STATUS_CHOICES, default="Pending")
+    total_events = models.PositiveIntegerField(default=0)
+    processed_events = models.PositiveIntegerField(default=0)
+    matched_events = models.PositiveIntegerField(default=0)
+    probable_events = models.PositiveIntegerField(default=0)
+    unresolved_events = models.PositiveIntegerField(default=0)
+    failed_events = models.PositiveIntegerField(default=0)
+    deterministic_matches = models.PositiveIntegerField(default=0)
+    ai_matches = models.PositiveIntegerField(default=0)
+    estimated_cost = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
+    actual_cost = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
+    result_json = models.JSONField(default=dict, blank=True)
+    error_message = models.TextField(blank=True)
+    started_at = models.DateTimeField(null=True, blank=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "ai_smcs_classification_jobs"
+
+
+class DowntimeExplorerSession(models.Model):
+    STATUS_CHOICES = [
+        ("Active", "Active"),
+        ("Completed", "Completed"),
+        ("Expired", "Expired"),
+        ("Failed", "Failed"),
+    ]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(
+        User,
+        related_name="downtime_explorer_sessions",
+        on_delete=models.CASCADE,
+    )
+    conversation = models.ForeignKey(
+        AIConversationContext,
+        related_name="downtime_explorer_sessions",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    semantic_model_name = models.CharField(
+        max_length=255,
+        default="FPR Global DB + RLS",
+    )
+    semantic_model_id = models.CharField(max_length=128, blank=True)
+    report = models.ForeignKey(
+        PowerBIReport,
+        related_name="downtime_explorer_sessions",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    source_question = models.TextField(blank=True)
+    kpi = models.CharField(max_length=120, default="availability")
+    context_json = models.JSONField(default=dict)
+    context_hash = models.CharField(max_length=64, db_index=True)
+    selected_driver = models.CharField(max_length=255)
+    selected_subcategory = models.CharField(max_length=255, blank=True)
+    selected_component = models.CharField(max_length=255, blank=True)
+    selected_subcomponent = models.CharField(max_length=255, blank=True)
+    selected_cause = models.CharField(max_length=255, blank=True)
+    current_level = models.CharField(max_length=80, default="overview")
+    navigation_stack = models.JSONField(default=list, blank=True)
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default="Active",
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    expires_at = models.DateTimeField()
+
+    class Meta:
+        ordering = ["-updated_at"]
+        db_table = "ai_downtime_explorer_sessions"
+        indexes = [
+            models.Index(
+                fields=["user", "context_hash", "status"],
+                name="dt_explorer_context_idx",
+            ),
+        ]
+
+
+class DowntimeExplorerInteraction(models.Model):
+    session = models.ForeignKey(
+        DowntimeExplorerSession,
+        related_name="interactions",
+        on_delete=models.CASCADE,
+    )
+    interaction_type = models.CharField(max_length=80)
+    selected_entity_type = models.CharField(max_length=120, blank=True)
+    selected_value = models.CharField(max_length=500, blank=True)
+    previous_context = models.JSONField(default=dict, blank=True)
+    new_context = models.JSONField(default=dict, blank=True)
+    query_execution_id = models.CharField(max_length=128, blank=True)
+    execution_time_ms = models.PositiveIntegerField(default=0)
+    result_count = models.PositiveIntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "ai_downtime_explorer_interactions"
+
+
+class DowntimeExplorerAIAnalysis(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    session = models.ForeignKey(
+        DowntimeExplorerSession,
+        related_name="ai_analyses",
+        on_delete=models.CASCADE,
+    )
+    context_json = models.JSONField(default=dict)
+    event_ids = models.JSONField(default=list, blank=True)
+    model_name = models.CharField(max_length=120, blank=True)
+    prompt_version = models.CharField(max_length=40, default="1.0")
+    result_json = models.JSONField(default=dict, blank=True)
+    input_tokens = models.PositiveIntegerField(default=0)
+    output_tokens = models.PositiveIntegerField(default=0)
+    estimated_cost = models.DecimalField(
+        max_digits=18,
+        decimal_places=8,
+        null=True,
+        blank=True,
+    )
+    coverage_percentage = models.DecimalField(
+        max_digits=5,
+        decimal_places=2,
+        default=0,
+    )
+    status = models.CharField(max_length=40, default="Completed")
+    error_message = models.TextField(blank=True)
+    execution_time_ms = models.PositiveIntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "ai_downtime_explorer_ai_analyses"
+
+
 class AIVisualMapping(models.Model):
     section = models.ForeignKey(AIConfigSection, related_name="visual_mappings", on_delete=models.CASCADE)
     metric_code = models.CharField(max_length=120)
@@ -1432,6 +1957,105 @@ class OpenAIUsageLog(models.Model):
         ]
 
 
+class VoiceInputConfiguration(models.Model):
+    FEATURE_MODES = [
+        ("Disabled", "Disabled"),
+        ("Admin Only", "Admin Only"),
+        ("Pilot Users", "Pilot Users"),
+        ("Production", "Production"),
+    ]
+    LANGUAGE_CHOICES = [
+        ("auto", "Auto Detect"),
+        ("fr", "French"),
+        ("en", "English"),
+    ]
+
+    name = models.CharField(max_length=120, unique=True, default="Default")
+    enabled = models.BooleanField(default=True)
+    provider = models.CharField(max_length=80, default="OpenAI")
+    model = models.CharField(max_length=160, default="gpt-4o-mini-transcribe")
+    default_language = models.CharField(max_length=12, choices=LANGUAGE_CHOICES, default="auto")
+    auto_detect_language = models.BooleanField(default=True)
+    maximum_duration_seconds = models.PositiveIntegerField(default=120)
+    maximum_file_size_mb = models.PositiveIntegerField(default=20)
+    allowed_audio_formats = models.JSONField(
+        default=list,
+        blank=True,
+    )
+    auto_send = models.BooleanField(default=False)
+    store_audio = models.BooleanField(default=False)
+    retention_duration_days = models.PositiveIntegerField(default=0)
+    daily_user_limit_minutes = models.PositiveIntegerField(default=30)
+    request_rate_limit_per_minute = models.PositiveIntegerField(default=10)
+    maximum_concurrent_transcriptions = models.PositiveSmallIntegerField(default=1)
+    timeout_seconds = models.PositiveIntegerField(default=120)
+    retry_count = models.PositiveSmallIntegerField(default=1)
+    privacy_message_fr = models.TextField(
+        default=(
+            "Votre audio sera utilisé uniquement pour transcrire votre question. "
+            "Il ne sera pas conservé par Mining 360 AI après traitement."
+        )
+    )
+    privacy_message_en = models.TextField(
+        default=(
+            "Your audio will only be used to transcribe your question. "
+            "Mining 360 AI will not retain it after processing."
+        )
+    )
+    feature_mode = models.CharField(max_length=20, choices=FEATURE_MODES, default="Production")
+    stop_recording_after_silence = models.BooleanField(default=False)
+    pilot_users = models.ManyToManyField(User, related_name="voice_input_pilot_configs", blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["name"]
+        db_table = "VoiceInputConfiguration"
+
+
+class VoiceTranscriptionLog(models.Model):
+    STATUS_CHOICES = [
+        ("Processing", "Processing"),
+        ("Completed", "Completed"),
+        ("Failed", "Failed"),
+        ("Cancelled", "Cancelled"),
+    ]
+
+    request_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    conversation_id = models.CharField(max_length=255, blank=True, db_index=True)
+    provider = models.CharField(max_length=80, blank=True)
+    model = models.CharField(max_length=160, blank=True, db_index=True)
+    detected_language = models.CharField(max_length=16, blank=True)
+    duration_seconds = models.DecimalField(max_digits=10, decimal_places=3, default=0)
+    file_size = models.PositiveBigIntegerField(default=0)
+    mime_type = models.CharField(max_length=120, blank=True)
+    processing_time_ms = models.PositiveIntegerField(default=0)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="Processing", db_index=True)
+    error_code = models.CharField(max_length=160, blank=True)
+    input_tokens = models.PositiveBigIntegerField(default=0)
+    output_tokens = models.PositiveBigIntegerField(default=0)
+    total_tokens = models.PositiveBigIntegerField(default=0)
+    estimated_cost = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
+    openai_usage_log = models.OneToOneField(
+        OpenAIUsageLog,
+        null=True,
+        blank=True,
+        related_name="voice_transcription",
+        on_delete=models.SET_NULL,
+    )
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "VoiceTranscriptionLog"
+        indexes = [
+            models.Index(fields=["user", "created_at"], name="voice_usage_user_time"),
+            models.Index(fields=["status", "created_at"], name="voice_usage_status_time"),
+        ]
+
+
 class OpenAICostSnapshot(models.Model):
     organization_id = models.CharField(max_length=255, blank=True, db_index=True)
     project_id = models.CharField(max_length=255, blank=True, db_index=True)
@@ -1521,6 +2145,401 @@ class OpenAICreditSnapshot(models.Model):
         db_table = "OpenAICreditSnapshot"
 
 
+class ResourceKnowledgeDocument(models.Model):
+    STATUS_CHOICES = [
+        ("Pending", "Pending"),
+        ("Processing", "Processing"),
+        ("Indexed", "Indexed"),
+        ("Partial", "Partial"),
+        ("Failed", "Failed"),
+        ("Stale", "Stale"),
+    ]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    resource_id = models.CharField(max_length=1000, unique=True)
+    relative_path = models.CharField(max_length=1500, unique=True)
+    title = models.CharField(max_length=1000)
+    filename = models.CharField(max_length=1000)
+    section = models.CharField(max_length=255, blank=True, db_index=True)
+    category = models.CharField(max_length=255, blank=True, db_index=True)
+    level = models.CharField(max_length=120, blank=True)
+    file_hash = models.CharField(max_length=64, db_index=True)
+    file_size = models.PositiveBigIntegerField(default=0)
+    document_version = models.CharField(max_length=80, blank=True)
+    language = models.CharField(max_length=12, default="en", db_index=True)
+    mime_type = models.CharField(max_length=255, blank=True)
+    page_count = models.PositiveIntegerField(default=0)
+    section_count = models.PositiveIntegerField(default=0)
+    chunk_count = models.PositiveIntegerField(default=0)
+    knowledge_count = models.PositiveIntegerField(default=0)
+    table_count = models.PositiveIntegerField(default=0)
+    image_count = models.PositiveIntegerField(default=0)
+    parser_name = models.CharField(max_length=120, blank=True)
+    parser_version = models.CharField(max_length=40, blank=True)
+    processing_config_version = models.CharField(max_length=40, default="1")
+    validation_status = models.CharField(
+        max_length=20,
+        choices=[
+            ("Draft", "Draft"),
+            ("To Review", "To Review"),
+            ("Validated", "Validated"),
+            ("Rejected", "Rejected"),
+            ("Superseded", "Superseded"),
+        ],
+        default="To Review",
+        db_index=True,
+    )
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="Pending", db_index=True)
+    source_updated_at = models.DateTimeField(null=True, blank=True)
+    indexed_at = models.DateTimeField(null=True, blank=True)
+    last_error = models.TextField(blank=True)
+    metadata_json = models.JSONField(default=dict, blank=True)
+    is_active = models.BooleanField(default=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["section", "category", "title"]
+        db_table = "ResourceKnowledgeDocument"
+        indexes = [
+            models.Index(fields=["status", "is_active"], name="resource_kb_doc_status_idx"),
+        ]
+
+    def __str__(self):
+        return self.title
+
+
+class ResourceKnowledgeSection(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    document = models.ForeignKey(
+        ResourceKnowledgeDocument,
+        related_name="sections",
+        on_delete=models.CASCADE,
+    )
+    parent = models.ForeignKey(
+        "self",
+        related_name="children",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    title = models.CharField(max_length=1000, blank=True)
+    section_number = models.CharField(max_length=80, blank=True)
+    level = models.PositiveSmallIntegerField(default=1)
+    page_start = models.PositiveIntegerField(null=True, blank=True)
+    page_end = models.PositiveIntegerField(null=True, blank=True)
+    sort_order = models.PositiveIntegerField(default=0)
+    content = models.TextField(blank=True)
+    normalized_content = models.TextField(blank=True)
+    validation_status = models.CharField(max_length=20, default="To Review", db_index=True)
+    is_active = models.BooleanField(default=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["document", "sort_order"]
+        db_table = "ResourceKnowledgeSection"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["document", "sort_order"],
+                name="unique_resource_kb_section_order",
+            ),
+        ]
+
+
+class ResourceKnowledgeChunk(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    document = models.ForeignKey(
+        ResourceKnowledgeDocument,
+        related_name="chunks",
+        on_delete=models.CASCADE,
+    )
+    section = models.ForeignKey(
+        ResourceKnowledgeSection,
+        related_name="chunks",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    chunk_index = models.PositiveIntegerField()
+    page_start = models.PositiveIntegerField(null=True, blank=True)
+    page_end = models.PositiveIntegerField(null=True, blank=True)
+    heading = models.CharField(max_length=1000, blank=True)
+    heading_path = models.JSONField(default=list, blank=True)
+    chunk_type = models.CharField(max_length=30, default="Text", db_index=True)
+    content = models.TextField()
+    normalized_content = models.TextField(blank=True)
+    source_reference = models.CharField(max_length=1500, blank=True)
+    language = models.CharField(max_length=12, default="en", db_index=True)
+    content_hash = models.CharField(max_length=64, db_index=True)
+    character_count = models.PositiveIntegerField(default=0)
+    token_count = models.PositiveIntegerField(default=0)
+    embedding = models.JSONField(default=list, blank=True)
+    embedding_model = models.CharField(max_length=120, blank=True)
+    embedding_status = models.CharField(max_length=30, default="Disabled", db_index=True)
+    validation_status = models.CharField(max_length=20, default="To Review", db_index=True)
+    extraction_metadata = models.JSONField(default=dict, blank=True)
+    is_active = models.BooleanField(default=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["document", "chunk_index"]
+        db_table = "ResourceKnowledgeChunk"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["document", "chunk_index"],
+                name="unique_resource_kb_chunk_index",
+            ),
+        ]
+        indexes = [
+            models.Index(fields=["document", "is_active"], name="resource_kb_chunk_doc_idx"),
+        ]
+
+    def __str__(self):
+        return f"{self.document.title} #{self.chunk_index}"
+
+
+class ResourceKnowledgeItem(models.Model):
+    VALIDATION_STATUSES = [
+        ("Draft", "Draft"),
+        ("To Review", "To Review"),
+        ("Validated", "Validated"),
+        ("Rejected", "Rejected"),
+    ]
+    CRITICALITY_CHOICES = [
+        ("", "Not specified"),
+        ("Low", "Low"),
+        ("Medium", "Medium"),
+        ("High", "High"),
+        ("Critical", "Critical"),
+    ]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    document = models.ForeignKey(
+        ResourceKnowledgeDocument,
+        related_name="knowledge_items",
+        on_delete=models.CASCADE,
+    )
+    chunk = models.ForeignKey(
+        ResourceKnowledgeChunk,
+        related_name="knowledge_items",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    knowledge_key = models.CharField(max_length=64, unique=True)
+    title = models.CharField(max_length=1000)
+    business_domain = models.CharField(max_length=255, blank=True, db_index=True)
+    equipment = models.CharField(max_length=500, blank=True, db_index=True)
+    equipment_model = models.CharField(max_length=255, blank=True, db_index=True)
+    system = models.CharField(max_length=500, blank=True, db_index=True)
+    component = models.CharField(max_length=500, blank=True, db_index=True)
+    subcomponent = models.CharField(max_length=500, blank=True)
+    symptom = models.TextField(blank=True)
+    failure_mode = models.TextField(blank=True)
+    fault_codes = models.JSONField(default=list, blank=True)
+    probable_causes = models.JSONField(default=list, blank=True)
+    occurrence_conditions = models.TextField(blank=True)
+    possible_impacts = models.TextField(blank=True)
+    inspection_procedure = models.TextField(blank=True)
+    troubleshooting_procedure = models.TextField(blank=True)
+    best_practices = models.JSONField(default=list, blank=True)
+    recommendations = models.JSONField(default=list, blank=True)
+    safety_instructions = models.JSONField(default=list, blank=True)
+    criticality = models.CharField(max_length=20, choices=CRITICALITY_CHOICES, blank=True)
+    source_excerpt = models.TextField(blank=True)
+    source_page = models.PositiveIntegerField(null=True, blank=True)
+    confidence = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    extraction_source = models.CharField(max_length=40, default="AI Generated")
+    validation_status = models.CharField(
+        max_length=20,
+        choices=VALIDATION_STATUSES,
+        default="To Review",
+        db_index=True,
+    )
+    validation_notes = models.TextField(blank=True)
+    validated_by = models.ForeignKey(
+        User,
+        related_name="validated_resource_knowledge",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    validated_at = models.DateTimeField(null=True, blank=True)
+    is_active = models.BooleanField(default=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["document", "source_page", "title"]
+        db_table = "ResourceKnowledgeItem"
+        indexes = [
+            models.Index(
+                fields=["validation_status", "is_active"],
+                name="resource_kb_item_status_idx",
+            ),
+            models.Index(fields=["component", "equipment_model"], name="resource_kb_component_idx"),
+        ]
+
+    def __str__(self):
+        return self.title
+
+
+class ResourceKnowledgeIndexRun(models.Model):
+    STATUS_CHOICES = [
+        ("Pending", "Pending"),
+        ("Processing", "Processing"),
+        ("Completed", "Completed"),
+        ("Partially Completed", "Partially Completed"),
+        ("Failed", "Failed"),
+        ("Cancelled", "Cancelled"),
+    ]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    mode = models.CharField(max_length=20, default="Apply")
+    scope = models.CharField(max_length=40, default="Library")
+    resource_id = models.CharField(max_length=1000, blank=True)
+    status = models.CharField(max_length=30, choices=STATUS_CHOICES, default="Pending", db_index=True)
+    total_documents = models.PositiveIntegerField(default=0)
+    processed_documents = models.PositiveIntegerField(default=0)
+    indexed_documents = models.PositiveIntegerField(default=0)
+    skipped_documents = models.PositiveIntegerField(default=0)
+    failed_documents = models.PositiveIntegerField(default=0)
+    chunks_created = models.PositiveIntegerField(default=0)
+    knowledge_created = models.PositiveIntegerField(default=0)
+    embeddings_created = models.PositiveIntegerField(default=0)
+    estimated_openai_calls = models.PositiveIntegerField(default=0)
+    error_message = models.TextField(blank=True)
+    result_json = models.JSONField(default=dict, blank=True)
+    started_at = models.DateTimeField(null=True, blank=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "ResourceKnowledgeIndexRun"
+
+
+class ResourceKnowledgeRetrievalLog(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    conversation_id = models.CharField(max_length=255, blank=True)
+    query_text = models.TextField()
+    filters_json = models.JSONField(default=dict, blank=True)
+    result_item_ids = models.JSONField(default=list, blank=True)
+    result_scores = models.JSONField(default=list, blank=True)
+    result_count = models.PositiveIntegerField(default=0)
+    execution_time_ms = models.PositiveIntegerField(default=0)
+    mode = models.CharField(max_length=20, default="Production")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "ResourceKnowledgeRetrievalLog"
+
+
+class ResourceKnowledgeConflict(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    topic = models.CharField(max_length=1000, db_index=True)
+    source_a = models.ForeignKey(
+        ResourceKnowledgeItem,
+        related_name="conflicts_as_source_a",
+        on_delete=models.CASCADE,
+    )
+    source_b = models.ForeignKey(
+        ResourceKnowledgeItem,
+        related_name="conflicts_as_source_b",
+        on_delete=models.CASCADE,
+    )
+    conflict_description = models.TextField()
+    status = models.CharField(max_length=30, default="Open", db_index=True)
+    resolution = models.TextField(blank=True)
+    resolved_by = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    resolved_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "ResourceKnowledgeConflict"
+
+
+class KnowledgeEnrichmentQueue(models.Model):
+    ENRICHMENT_TYPES = [
+        ("Document Summary", "Document Summary"),
+        ("Glossary Extraction", "Glossary Extraction"),
+        ("Business Rule Extraction", "Business Rule Extraction"),
+        ("Recommended Action Extraction", "Recommended Action Extraction"),
+        ("Question Generation", "Question Generation"),
+        ("Few Shot Generation", "Few Shot Generation"),
+        ("Embedding Generation", "Embedding Generation"),
+        ("Image Analysis", "Image Analysis"),
+        ("OCR", "OCR"),
+    ]
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    document = models.ForeignKey(
+        ResourceKnowledgeDocument,
+        related_name="enrichment_requests",
+        on_delete=models.CASCADE,
+    )
+    target_section = models.CharField(max_length=255, blank=True)
+    enrichment_type = models.CharField(max_length=80, choices=ENRICHMENT_TYPES)
+    status = models.CharField(max_length=30, default="Pending Approval", db_index=True)
+    priority = models.PositiveSmallIntegerField(default=50)
+    estimated_tokens = models.PositiveIntegerField(default=0)
+    estimated_cost = models.DecimalField(max_digits=18, decimal_places=8, default=0)
+    actual_tokens = models.PositiveIntegerField(default=0)
+    actual_cost = models.DecimalField(max_digits=18, decimal_places=8, default=0)
+    requested_by = models.ForeignKey(
+        User,
+        related_name="requested_knowledge_enrichments",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    reviewed_by = models.ForeignKey(
+        User,
+        related_name="reviewed_knowledge_enrichments",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    processed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["-priority", "created_at"]
+        db_table = "KnowledgeEnrichmentQueue"
+
+
+class ResourceKnowledgeConfiguration(models.Model):
+    EMBEDDING_MODES = [
+        ("Disabled", "Disabled"),
+        ("Local", "Local"),
+        ("On Demand", "On Demand"),
+        ("Batch Controlled", "Batch Controlled"),
+    ]
+    name = models.CharField(max_length=120, unique=True, default="Best Practices Bootstrap")
+    maximum_chunk_tokens = models.PositiveIntegerField(default=1500)
+    minimum_chunk_tokens = models.PositiveIntegerField(default=150)
+    chunk_overlap_tokens = models.PositiveIntegerField(default=150)
+    preserve_tables = models.BooleanField(default=True)
+    preserve_lists = models.BooleanField(default=True)
+    preserve_heading_context = models.BooleanField(default=True)
+    enable_resource_ocr = models.BooleanField(default=False)
+    embedding_mode = models.CharField(max_length=30, choices=EMBEDDING_MODES, default="Disabled")
+    parser_config_version = models.CharField(max_length=40, default="1")
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "ResourceKnowledgeConfiguration"
+
+
 class SystemDatabaseConfig(models.Model):
     ENGINE_CHOICES = [
         ("SQL Server", "SQL Server"),
@@ -1592,6 +2611,100 @@ class SystemManagedTable(models.Model):
 
     def __str__(self) -> str:
         return f"{self.schema_name}.{self.table_name}"
+
+
+class SystemIntegrationConfig(models.Model):
+    TYPE_CHOICES = [
+        ("Power BI", "Power BI"),
+        ("Power Automate", "Power Automate"),
+        ("OpenAI", "OpenAI"),
+        ("Database", "Database"),
+        ("Data Source", "Data Source"),
+        ("Storage", "Storage"),
+        ("Authentication", "Authentication"),
+        ("Notification", "Notification"),
+        ("Other", "Other"),
+    ]
+    STATUS_CHOICES = [
+        ("Not Configured", "Not Configured"),
+        ("Configured", "Configured"),
+        ("Connected", "Connected"),
+        ("Failed", "Failed"),
+        ("Disabled", "Disabled"),
+    ]
+
+    code = models.SlugField(max_length=120, unique=True)
+    name = models.CharField(max_length=255)
+    integration_type = models.CharField(max_length=40, choices=TYPE_CHOICES)
+    provider = models.CharField(max_length=120, blank=True)
+    description = models.TextField(blank=True)
+    settings_json = models.JSONField(default=dict, blank=True)
+    encrypted_secrets = models.TextField(blank=True)
+    configured_secret_keys = models.JSONField(default=list, blank=True)
+    is_default = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    status = models.CharField(max_length=30, choices=STATUS_CHOICES, default="Not Configured")
+    last_verified_at = models.DateTimeField(null=True, blank=True)
+    last_message = models.TextField(blank=True)
+    created_by = models.ForeignKey(
+        User, null=True, blank=True, related_name="created_system_integrations", on_delete=models.SET_NULL
+    )
+    updated_by = models.ForeignKey(
+        User, null=True, blank=True, related_name="updated_system_integrations", on_delete=models.SET_NULL
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["integration_type", "name"]
+        db_table = "SystemIntegrationConfig"
+        indexes = [
+            models.Index(fields=["integration_type", "is_active"], name="system_integration_type_idx"),
+        ]
+
+    def __str__(self):
+        return f"{self.name} ({self.integration_type})"
+
+
+class SystemParameter(models.Model):
+    VALUE_TYPES = [
+        ("Text", "Text"),
+        ("Integer", "Integer"),
+        ("Decimal", "Decimal"),
+        ("Boolean", "Boolean"),
+        ("JSON", "JSON"),
+        ("URL", "URL"),
+        ("Duration", "Duration"),
+    ]
+
+    key = models.SlugField(max_length=160, unique=True)
+    category = models.CharField(max_length=80, db_index=True)
+    label = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+    value_type = models.CharField(max_length=20, choices=VALUE_TYPES, default="Text")
+    value_json = models.JSONField(null=True, blank=True)
+    default_value_json = models.JSONField(null=True, blank=True)
+    options_json = models.JSONField(default=list, blank=True)
+    is_required = models.BooleanField(default=False)
+    is_runtime_editable = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
+    validation_pattern = models.CharField(max_length=500, blank=True)
+    created_by = models.ForeignKey(
+        User, null=True, blank=True, related_name="created_system_parameters", on_delete=models.SET_NULL
+    )
+    updated_by = models.ForeignKey(
+        User, null=True, blank=True, related_name="updated_system_parameters", on_delete=models.SET_NULL
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["category", "label"]
+        db_table = "SystemParameter"
+        indexes = [models.Index(fields=["category", "is_active"], name="system_parameter_cat_idx")]
+
+    def __str__(self):
+        return f"{self.category} / {self.label}"
 
 
 class BusinessPerformanceConfig(models.Model):

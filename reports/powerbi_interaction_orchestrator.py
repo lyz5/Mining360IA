@@ -7,7 +7,6 @@ from uuid import uuid4
 from .availability_diagnostics_service import (
     AvailabilityDiagnosticsConfigurationError,
     build_availability_diagnostics_dax,
-    enrich_availability_answer,
     parse_availability_diagnostics_rows,
 )
 from .availability_reference_service import resolve_availability_references
@@ -24,6 +23,7 @@ from .powerbi_interaction_service import (
     resolve_navigation,
     validate_interaction_intent,
 )
+from .resource_knowledge_search_service import search_resource_knowledge
 from .synonym_resolution_service import resolve_synonyms
 from .synonym_utils import normalize_synonym_key
 
@@ -104,7 +104,45 @@ def _format_availability(value) -> str:
     try:
         return f"{float(value) * 100:.2f}%"
     except (TypeError, ValueError):
-        return "indisponible"
+        return "unavailable"
+
+
+def _question_language(question_text: str) -> str:
+    return "en"
+
+
+def _natural_period(value, language: str) -> str:
+    period = str(value or "").strip()
+    aliases = {
+        "fr": {
+            "last 12 months": "sur les 12 derniers mois",
+            "year to date": "depuis le début de l'année",
+            "month to date": "depuis le début du mois",
+        },
+        "en": {
+            "last 12 months": "over the last 12 months",
+            "year to date": "year to date",
+            "month to date": "month to date",
+        },
+    }
+    if period.casefold() in aliases[language]:
+        return aliases[language][period.casefold()]
+    return ("pour " if language == "fr" else "for ") + period if period else ""
+
+
+def _natural_availability_answer(intent: dict, value: float, question_text: str) -> str:
+    language = _question_language(question_text)
+    filters = intent.get("filters") or {}
+    site = filters.get("minesite") or filters.get("site")
+    model = filters.get("model")
+    period = _natural_period(filters.get("period"), language)
+    percentage = float(value) * 100
+    subject = "The physical availability"
+    if model:
+        subject += f" of the {model} fleet"
+    if site:
+        subject += f" at {site}"
+    return f"{subject} is {percentage:.2f}%{f' {period}' if period else ''}."
 
 
 def _confirmation_claim(question_text: str) -> float | None:
@@ -132,28 +170,27 @@ def _availability_confirmation_answer(question_text: str, rows: list[dict]) -> s
     )
     if measured is None:
         return (
-            "Je ne peux pas confirmer cette valeur : la réexécution Power BI "
-            "n’a retourné aucune disponibilité mesurable pour le contexte précédent."
+            "I cannot confirm that value because the Power BI rerun returned no "
+            "measurable availability for the previous context."
         )
     actual = measured * 100
     claimed = _confirmation_claim(question_text)
     if claimed is None:
         return (
-            f"Après vérification dans Power BI, la disponibilité physique est de "
-            f"{actual:.2f}%."
+            f"After verification in Power BI, physical availability is {actual:.2f}%."
         )
     if abs(actual - claimed) <= 0.011:
         return (
-            f"Oui. Après réexécution de la requête Power BI avec les mêmes filtres, "
-            f"la disponibilité physique est bien de {actual:.2f}%."
+            "Yes. After rerunning the Power BI query with the same filters, "
+            f"physical availability is {actual:.2f}%."
         )
     return (
-        f"Non. Après réexécution de la requête Power BI avec les mêmes filtres, "
-        f"la disponibilité physique est de {actual:.2f}%, et non {claimed:.2f}%."
+        "No. After rerunning the Power BI query with the same filters, "
+        f"physical availability is {actual:.2f}%, not {claimed:.2f}%."
     )
 
 
-def _answer_payload(intent: dict, rows: list[dict]) -> dict:
+def _answer_payload(intent: dict, rows: list[dict], question_text: str = "") -> dict:
     intent_type = intent.get("intent_type") or "single_kpi"
     filters = intent.get("filters") or {}
     context = ", ".join(
@@ -161,8 +198,8 @@ def _answer_payload(intent: dict, rows: list[dict]) -> dict:
     )
     if not rows:
         return {
-            "answer": "Aucune donnée Availability n’a été retournée pour ce contexte.",
-            "interpretation": "Vérifiez les filtres demandés ou la disponibilité des données dans le modèle sémantique.",
+            "answer": "No availability data was returned for this context.",
+            "interpretation": "Check the requested filters and data availability in the semantic model.",
             "rows": [],
             "summary": [],
         }
@@ -178,7 +215,7 @@ def _answer_payload(intent: dict, rows: list[dict]) -> dict:
         formatted_rows.append(formatted)
     if intent_type == "single_kpi" and measured_rows:
         value = measured_rows[0][1]
-        answer = f"La disponibilité physique{f' pour {context}' if context else ''} est de {_format_availability(value)}."
+        answer = _natural_availability_answer(intent, value, question_text)
         return {
             "answer": answer,
             "interpretation": answer,
@@ -193,15 +230,15 @@ def _answer_payload(intent: dict, rows: list[dict]) -> dict:
                     item for key, item in row.items()
                     if "availability" not in str(key).lower()
                 ),
-                "Valeur",
+                "Value",
             )
             values.append(f"{dimension}: {_format_availability(value)}")
-        answer = "Comparaison de la disponibilité physique : " + "; ".join(values) + "."
+        answer = "Physical availability comparison: " + "; ".join(values) + "."
     elif intent_type == "trend" and measured_rows:
         lowest = min(measured_rows, key=lambda item: item[1])
         highest = max(measured_rows, key=lambda item: item[1])
         answer = (
-            f"La tendance contient {len(measured_rows)} périodes. "
+            f"The trend contains {len(measured_rows)} periods. "
             f"Minimum: {_format_availability(lowest[1])}; "
             f"maximum: {_format_availability(highest[1])}."
         )
@@ -213,16 +250,16 @@ def _answer_payload(intent: dict, rows: list[dict]) -> dict:
                     item for key, item in row.items()
                     if "availability" not in str(key).lower()
                 ),
-                "Valeur",
+                "Value",
             )
             values.append(f"{dimension} ({_format_availability(value)})")
-        answer = "Classement Availability : " + ", ".join(values) + "."
+        answer = "Availability ranking: " + ", ".join(values) + "."
     elif not measured_rows:
         answer = (
-            "Aucune valeur de disponibilité physique n’est disponible pour les filtres demandés."
+            "No physical availability value is available for the requested filters."
         )
     else:
-        answer = f"{len(rows)} lignes Availability ont été retournées."
+        answer = f"{len(rows)} availability rows were returned."
     return {
         "answer": answer,
         "interpretation": answer,
@@ -393,13 +430,13 @@ def process_user_question(question_text, user_context=None, conversation_context
                 "conversation_id": conversation_id,
                 "intent": extracted,
                 "clarification_question": (
-                    f"La valeur « {unresolved['value']} » n’est pas configurée pour le filtre "
-                    f"{unresolved['filter_code']}. Pouvez-vous préciser une valeur existante ?"
+                    f"The value \"{unresolved['value']}\" is not configured for the "
+                    f"{unresolved['filter_code']} filter. Please specify an existing value."
                 ),
                 "validation": {
                     "status": "clarification_required",
                     "errors": [],
-                    "warnings": ["Un filtre demandé ne correspond à aucune valeur validée."],
+                    "warnings": ["A requested filter does not match any validated value."],
                 },
             }
     intent = merge_conversation_intent(
@@ -444,6 +481,7 @@ def process_user_question(question_text, user_context=None, conversation_context
     powerbi_result = {}
     rows = []
     diagnostics = {}
+    resource_knowledge = {"results": [], "count": 0, "mode": "Production"}
     diagnostics_result = {}
     diagnostics_warning = ""
     intent_type = intent.get("intent_type") or "single_kpi"
@@ -497,11 +535,36 @@ def process_user_question(question_text, user_context=None, conversation_context
                 RuntimeError,
             ) as exc:
                 diagnostics_warning = (
-                    "Le diagnostic Downtime n'a pas pu être chargé : "
+                    "Downtime diagnostics could not be loaded: "
                     f"{exc}"
                 )
 
-    answer = _answer_payload(intent, rows)
+            if diagnostics:
+                try:
+                    driver_names = [
+                        str(item.get("driver") or "")
+                        for item in (diagnostics.get("drivers") or [])[:5]
+                        if item.get("driver")
+                    ]
+                    resource_knowledge = search_resource_knowledge(
+                        " ".join([
+                            question_text,
+                            "downtime root cause inspection troubleshooting best practice",
+                            *driver_names,
+                        ]),
+                        filters={"model": (intent.get("filters") or {}).get("model", "")},
+                        limit=5,
+                        mode="Production",
+                        user=user,
+                        conversation_id=conversation_id,
+                    )
+                except Exception as exc:
+                    diagnostics_warning = " ".join(filter(None, [
+                        diagnostics_warning,
+                        f"The Resources Knowledge Base is unavailable: {exc}",
+                    ]))
+
+    answer = _answer_payload(intent, rows, question_text)
     confirmation_answer = _availability_confirmation_answer(question_text, rows)
     if confirmation_answer:
         answer = {
@@ -513,11 +576,6 @@ def process_user_question(question_text, user_context=None, conversation_context
         # Availability answers are formatted from the validated Power BI result.
         # Do not let response generation alter or invent a numeric KPI value.
         final_answer = answer["answer"]
-        if diagnostics:
-            final_answer = enrich_availability_answer(
-                final_answer,
-                diagnostics,
-            )
     else:
         try:
             final_answer = generate_chat_response(
@@ -572,6 +630,7 @@ def process_user_question(question_text, user_context=None, conversation_context
         "intent": intent,
         "powerbi_result": powerbi_result,
         "availability_diagnostics": diagnostics,
+        "resource_knowledge": resource_knowledge,
         "rows": rows,
         "dax": dax_payload["dax"] if dax_payload else "",
         "metric": dax_payload["metric"] if dax_payload else intent.get("metric"),

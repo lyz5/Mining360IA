@@ -5,13 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AI | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260720-downtime-section-1">
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260726-voice-compact-1">
 </head>
 <body class="ai-page-body">
     {% include "reports/includes/app_nav.html" %}
     <main class="app-shell ai-workspace" data-ai-ask-url="{% url 'ai-ask' %}"
+          data-voice-config-url="{% url 'voice-input-config' %}"
+          data-voice-transcribe-url="{% url 'voice-input-transcribe' %}"
           data-embed-config-url="/powerbi-interaction/embed-config/__REPORT_ID__/"
-          data-interaction-events-url="/powerbi-interaction/logs/__LOG_ID__/events/">
+          data-interaction-events-url="/powerbi-interaction/logs/__LOG_ID__/events/"
+          data-availability-diagnostics-url="{% url 'availability-diagnostics' %}"
+          data-is-platform-admin="{% if is_platform_admin %}true{% else %}false{% endif %}"
+          data-downtime-explorer-base-url="/ai/downtime-explorer/">
         <header class="topbar ai-minimal-header">
             <div>
                 <p class="eyebrow">Mining Intelligence</p>
@@ -27,40 +32,106 @@
                 <section id="ai-loading" class="ai-loading" hidden aria-live="polite">
                     <span class="ai-loading-avatar">AI</span>
                     <span class="loading-spinner" aria-hidden="true"></span>
-                    <span>Mining360 analyse votre question...</span>
+                    <span>Mining360 is analyzing your question...</span>
                 </section>
 
-                <section id="ai-powerbi-section" class="ai-inline-report" hidden>
-                    <div class="section-heading ai-report-heading">
-                        <div>
-                            <p class="eyebrow">Power BI</p>
-                            <h2 id="ai-powerbi-title">Relevant report</h2>
-                        </div>
-                        <div class="ai-report-heading-actions">
-                            <span id="ai-powerbi-status" class="summary-label"></span>
-                            <button type="button" id="ai-report-fullscreen" class="icon-button ai-fullscreen-button"
-                                    title="View report in full screen" aria-label="View report in full screen">&#x26F6;</button>
-                        </div>
-                    </div>
-                    <div id="ai-powerbi-report-tabs" class="ai-report-tabs" role="tablist" aria-label="Associated Power BI reports"></div>
-                    <div id="ai-powerbi-report" class="report-frame"></div>
-                </section>
+                <section id="ai-availability-overview-section"
+                         class="ai-analytical-response" hidden
+                         aria-label="Analytical response">
+                    <div id="ai-availability-overview-content"></div>
 
-                <section id="ai-downtime-section" class="ai-inline-report ai-downtime-section" hidden>
-                    <div class="section-heading ai-report-heading">
+                    <div id="ai-analytical-content-area" class="ai-analytical-content-area">
+                        <section id="ai-drivers-view" class="ai-analytical-view" data-analytical-view="summary">
+                            <div id="ai-drivers-content"></div>
+                        </section>
+
+                        <section id="ai-downtime-section"
+                                 class="ai-analytical-view ai-downtime-section" hidden
+                                 data-analytical-view="pareto">
+                            <div class="ai-view-toolbar">
+                                <button type="button" class="ai-back-button" data-ai-view="summary">&#x2190; Back to drivers</button>
+                                <div>
+                                    <strong>Downtime Pareto</strong>
+                                    <span>Driver contribution and cumulative impact</span>
+                                </div>
+                                <button type="button" id="ai-downtime-fullscreen"
+                                        class="icon-button ai-fullscreen-button"
+                                        title="View Downtime Pareto in full screen"
+                                        aria-label="View Downtime Pareto in full screen">&#x26F6;</button>
+                            </div>
+                            <div id="ai-downtime-content"></div>
+                        </section>
+
+                        <section id="downtime-root-cause-explorer"
+                                 class="downtime-explorer ai-analytical-view"
+                                 hidden
+                                 data-analytical-view="root_cause_explorer"
+                                 aria-label="Downtime Root Cause Explorer">
+                    <header class="downtime-explorer__header">
                         <div>
-                            <p class="eyebrow">Availability diagnostics</p>
-                            <h2>Downtime Drivers</h2>
+                            <p class="eyebrow">Interactive analysis</p>
+                            <h2>Downtime Root Cause Explorer</h2>
+                            <p id="dt-explorer-subtitle">Select a downtime driver to begin.</p>
                         </div>
-                        <div class="ai-report-heading-actions">
-                            <span class="summary-label">Top drivers and cumulative Pareto</span>
-                            <button type="button" id="ai-downtime-fullscreen"
-                                    class="icon-button ai-fullscreen-button"
-                                    title="View Downtime Drivers in full screen"
-                                    aria-label="View Downtime Drivers in full screen">&#x26F6;</button>
+                        <div class="downtime-explorer__header-actions">
+                            <button type="button" class="ai-back-button" id="dt-explorer-back"
+                                    title="Back to drivers" aria-label="Back to drivers">&#x2190; Back to drivers</button>
+                            <button type="button" class="icon-button" id="dt-explorer-reset"
+                                    title="Reset Deep Dive" aria-label="Reset Deep Dive">&#x21BB;</button>
+                            <button type="button" class="icon-button" id="dt-explorer-powerbi"
+                                    title="Open Power BI Deep Dive" aria-label="Open Power BI Deep Dive">&#x25A3;</button>
+                            <button type="button" class="icon-button" id="dt-explorer-fullscreen"
+                                    title="Full screen" aria-label="Full screen">&#x26F6;</button>
                         </div>
+                    </header>
+                    <div id="dt-explorer-filters" class="downtime-explorer__filters"></div>
+                    <nav id="dt-explorer-breadcrumb" class="downtime-explorer__breadcrumb"
+                         aria-label="Root cause breadcrumb"></nav>
+                    <div id="dt-explorer-status" class="downtime-explorer__status" hidden></div>
+                    <div id="dt-explorer-kpis" class="downtime-explorer__kpis"></div>
+                    <div class="downtime-explorer__tabs" role="tablist">
+                        <button type="button" class="is-active" data-dt-tab="overview">Overview</button>
+                        <button type="button" data-dt-tab="root-causes">SMCS Components</button>
+                        <button type="button" data-dt-tab="equipment">Equipment</button>
+                        <button type="button" data-dt-tab="events">Events</button>
+                        <button type="button" data-dt-tab="comments">Comments</button>
+                        <button type="button" data-dt-tab="repeated">Repeated Failures</button>
+                        <button type="button" data-dt-tab="ai-insights">AI Insights</button>
                     </div>
-                    <div id="ai-downtime-content"></div>
+                    <div id="dt-explorer-content" class="downtime-explorer__content"></div>
+                    <footer class="downtime-explorer__footer">
+                        <div>
+                            <strong>Suggested next actions</strong>
+                            <span>Results remain subject to business validation.</span>
+                        </div>
+                        <div class="downtime-explorer__quick-actions">
+                            <button type="button" data-dt-action="equipment">View Equipment</button>
+                            <button type="button" data-dt-action="events">View Events</button>
+                            <button type="button" data-dt-action="comments">Analyze Comments</button>
+                            <button type="button" data-dt-action="repeated">Repeated Failures</button>
+                        </div>
+                    </footer>
+                        </section>
+
+                        <section id="ai-powerbi-section"
+                                 class="ai-analytical-view ai-powerbi-preview" hidden
+                                 data-analytical-view="powerbi_preview">
+                            <div class="ai-view-toolbar">
+                                <button type="button" class="ai-back-button" data-ai-view="summary">&#x2190; Back to analysis</button>
+                                <div>
+                                    <strong id="ai-powerbi-title">Relevant report</strong>
+                                    <span id="ai-powerbi-status" aria-live="polite"></span>
+                                </div>
+                                <button type="button" id="ai-report-fullscreen" class="icon-button ai-fullscreen-button"
+                                        title="View report in full screen" aria-label="View report in full screen">&#x26F6;</button>
+                            </div>
+                            <div id="ai-powerbi-report-tabs" class="ai-report-tabs" role="tablist" aria-label="Associated Power BI reports"></div>
+                            <div id="ai-powerbi-report" class="report-frame"></div>
+                        </section>
+                    </div>
+
+                    <div id="ai-analytical-quick-actions" class="ai-analytical-quick-actions"></div>
+                    <section id="ai-powerbi-launcher" class="ai-powerbi-launcher" hidden></section>
                 </section>
 
                 <section id="ai-error" class="alert" hidden>
@@ -68,35 +139,68 @@
                     <p id="ai-error-text"></p>
                 </section>
 
-                <div class="ai-chat-composer">
+                <div class="ai-chat-composer" data-voice-input-root>
                     <textarea id="ai-question" rows="1" placeholder="Message Mining360 AI"></textarea>
                     <div class="ai-actions">
+                        <button type="button" id="ai-voice-button" class="icon-button ai-voice-button"
+                                title="Speak instead of typing" aria-label="Start voice input" hidden>
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 1 0-8 0v5a4 4 0 0 0 4 4Z"></path>
+                                <path d="M19 11a7 7 0 0 1-14 0"></path>
+                                <path d="M12 18v4"></path>
+                            </svg>
+                        </button>
                         <button type="button" id="ai-run-question" class="button">Send</button>
+                    </div>
+                    <div id="ai-voice-panel" class="ai-voice-panel" hidden>
+                        <div id="ai-voice-level" class="ai-voice-level" aria-label="Microphone level" hidden>
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div id="ai-voice-status" class="ai-voice-status" aria-live="polite"></div>
+                        <span id="ai-voice-duration" class="ai-voice-duration"></span>
+                        <button type="button" id="ai-voice-cancel" class="icon-button ai-voice-cancel"
+                                title="Cancel voice input" aria-label="Cancel voice input" hidden>×</button>
+                    </div>
+                    <div id="ai-voice-privacy" class="ai-voice-privacy" hidden>
+                        <p id="ai-voice-privacy-text"></p>
+                        <div>
+                            <button type="button" id="ai-voice-privacy-cancel" class="button secondary">Cancel</button>
+                            <button type="button" id="ai-voice-privacy-continue" class="button secondary">Continue</button>
+                        </div>
                     </div>
                 </div>
 
-                <details class="ai-context-panel ai-bottom-panel">
-                    <summary>Intent context</summary>
-                    <dl id="ai-context-list"></dl>
-                </details>
-
-                <details id="ai-table-section" class="ai-table-section ai-bottom-panel" hidden>
-                    <summary>Returned data</summary>
-                    <div class="table-scroll">
-                        <table id="ai-result-table" class="data-table"></table>
-                    </div>
-                </details>
+                {% if is_platform_admin %}
+                    <details class="ai-context-panel ai-bottom-panel ai-technical-details">
+                        <summary>Technical details</summary>
+                        <div class="ai-technical-details__content">
+                            <section>
+                                <h3>Intent context</h3>
+                                <dl id="ai-context-list"></dl>
+                            </section>
+                            <details id="ai-table-section" class="ai-table-section" hidden>
+                                <summary>Returned data</summary>
+                                <div class="table-scroll">
+                                    <table id="ai-result-table" class="data-table"></table>
+                                </div>
+                            </details>
+                        </div>
+                    </details>
+                {% else %}
+                    <dl id="ai-context-list" hidden></dl>
+                    <section id="ai-table-section" hidden><table id="ai-result-table"></table></section>
+                {% endif %}
             </div>
         </section>
 
-        <section id="ai-dax-section" class="ai-dax-section ai-technical-panel" hidden>
+        <section id="ai-dax-section" class="ai-dax-section ai-technical-panel" hidden {% if not is_platform_admin %}aria-hidden="true"{% endif %}>
             <details>
                 <summary>DAX query</summary>
                 <pre id="ai-dax"></pre>
             </details>
         </section>
 
-        <section id="ai-debug-section" class="ai-dax-section ai-technical-panel" hidden>
+        <section id="ai-debug-section" class="ai-dax-section ai-technical-panel" hidden {% if not is_platform_admin %}aria-hidden="true"{% endif %}>
             <details>
                 <summary>Debug payload</summary>
                 <pre id="ai-debug"></pre>
@@ -104,7 +208,9 @@
         </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/powerbi-client@2.23.7/dist/powerbi.min.js"></script>
-    <script src="{% static 'reports/powerbi_embed.js' %}?v=20260720-report-slicers-2"></script>
-<script src="{% static 'reports/ai.js' %}?v=20260720-downtime-section-3"></script>
+    <script src="{% static 'reports/powerbi_embed.js' %}?v=20260721-monthly-page-1"></script>
+    <script src="{% static 'reports/downtime_explorer.js' %}?v=20260721-embedded-explorer-1"></script>
+    <script src="{% static 'reports/ai.js' %}?v=20260726-english-1"></script>
+    <script src="{% static 'reports/voice_input.js' %}?v=20260726-voice-compact-1"></script>
 </body>
 </html>

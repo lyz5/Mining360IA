@@ -10,7 +10,8 @@ from django.urls import reverse
 
 RESOURCE_ROOT = settings.BASE_DIR / "res" / "bp"
 TEXT_EXTENSIONS = {".txt", ".csv", ".log", ".md"}
-INLINE_EXTENSIONS = {".pdf", *TEXT_EXTENSIONS}
+DOCUMENT_EXTENSIONS = {".pdf", ".docx", ".pptx", ".xlsx", *TEXT_EXTENSIONS}
+INLINE_EXTENSIONS = DOCUMENT_EXTENSIONS
 SKIPPED_RESOURCE_DIR_PREFIXES = ("_pdf_text_index",)
 
 
@@ -232,6 +233,11 @@ def list_resources(
         resources,
         key=lambda item: (item.section.lower(), item.category.lower(), item.level.lower(), item.title.lower()),
     )
+
+
+def list_best_practice_resources() -> list[ResourceFile]:
+    """Return the active Resources library used as the Best Practices source."""
+    return list_resources()
 
 
 def list_resource_facets() -> dict:

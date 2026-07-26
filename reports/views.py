@@ -141,7 +141,16 @@ from .models import (
     KPIPageMapping,
     PowerBIReport,
     SystemDatabaseConfig,
+    SystemIntegrationConfig,
     SystemManagedTable,
+    SystemParameter,
+)
+from .system_configuration_service import (
+    ensure_portable_configuration,
+    integration_payload,
+    save_integration,
+    schema_payload,
+    test_integration,
 )
 from .business_performance_service import (
     BusinessPerformanceError,
@@ -803,32 +812,6 @@ def login_page(request):
     if request.method == "POST":
         username = request.POST.get("username", "").strip()
         password = request.POST.get("password", "")
-        if username == "djibril" and password == "djibril" and not User.objects.filter(username="djibril").exists():
-            user, _ = User.objects.get_or_create(username="djibril")
-            user.set_password("djibril")
-            user.email = "djibril@local.mining360ia"
-            user.first_name = "Djibril"
-            user.is_active = True
-            user.is_staff = True
-            user.is_superuser = True
-            user.save()
-            PlatformUser.objects.update_or_create(
-                user_principal_name="djibril@local.mining360ia",
-                defaults={
-                    "azure_ad_id": "local-djibril",
-                    "email": "djibril@local.mining360ia",
-                    "display_name": "Djibril",
-                    "job_title": "Super Admin",
-                    "is_active": True,
-                    "is_platform_admin": True,
-                    "can_access_reporting": True,
-                    "can_access_ai": True,
-                    "can_access_data": True,
-                    "can_access_sources": True,
-                    "business_performance_role": "Administrator",
-                    "django_user": user,
-                },
-            )
         authenticated_user = authenticate(request, username=username, password=password)
         if authenticated_user and authenticated_user.is_active:
             platform_user = getattr(authenticated_user, "platformuser", None)
@@ -2603,17 +2586,17 @@ def _build_single_answer(semantic_request: dict, rows: list[dict]) -> dict:
     value = row.get("[Value]")
     answer = f"{semantic_request['measure']} = {_format_pct(value)}"
     if value is None:
-        interpretation = "Aucune valeur n'est retournée pour ce contexte dans le modèle sémantique."
+        interpretation = "No value was returned for this context by the semantic model."
     else:
         pct = float(value) * 100
         if pct >= 90:
-            interpretation = "La disponibilité est élevée sur ce contexte."
+            interpretation = "Availability is high for this context."
         elif pct >= 80:
-            interpretation = "La disponibilité est correcte, mais mérite un suivi opérationnel."
+            interpretation = "Availability is acceptable but requires operational monitoring."
         elif pct >= 70:
-            interpretation = "La disponibilité est faible et doit être analysée."
+            interpretation = "Availability is low and requires analysis."
         else:
-            interpretation = "La disponibilité est critique; il faut investiguer les downtimes et les événements majeurs."
+            interpretation = "Availability is critical; investigate downtime and major events."
     return {
         "answer": answer,
         "interpretation": interpretation,
@@ -2657,15 +2640,15 @@ def _build_matrix_answer(semantic_request: dict, rows: list[dict]) -> dict:
     summary.sort(key=lambda item: item["average"])
     weak_models = [item for item in summary if item["average"] < 0.8]
     interpretation = (
-        f"{len(summary)} modèles ont des valeurs sur la période. "
-        f"{len(weak_models)} modèles ont une moyenne sous 80%. "
+        f"{len(summary)} models have values for the period. "
+        f"{len(weak_models)} models average below 80%. "
     )
     if weak_models:
-        interpretation += "Les priorités d'analyse sont: " + ", ".join(item["model"] for item in weak_models[:6]) + "."
+        interpretation += "Analysis priorities are: " + ", ".join(item["model"] for item in weak_models[:6]) + "."
     else:
-        interpretation += "La disponibilité moyenne est globalement maîtrisée."
+        interpretation += "Average availability is generally under control."
     return {
-        "answer": f"{semantic_request['measure']} par modèle pour {semantic_request['filters'].get('MineSiteList_MiningProd[MineSite]', '')}",
+        "answer": f"{semantic_request['measure']} by model for {semantic_request['filters'].get('MineSiteList_MiningProd[MineSite]', '')}",
         "interpretation": interpretation,
         "summary": summary,
         "rows": rows,
@@ -2681,6 +2664,7 @@ def ai_home(request):
         {
             "active_section": "ai",
             "openai_enabled": openai_enabled,
+            "is_platform_admin": _user_is_platform_admin(request.user),
             "sidebar_stats": [
                 {"label": "Mode", "value": "AI" if openai_enabled else "Rules"},
                 {"label": "Model", "value": "OpenAI" if openai_enabled else "Semantic"},
@@ -2914,7 +2898,7 @@ def ai_ask(request):
             best = max(numeric_rows, key=lambda item: item["numeric_value"])
             answer["answer"] = f"{dax_payload['metric_label']} average = {_format_pct(avg)}"
             answer["interpretation"] = (
-                f"{len(numeric_rows)} points retournés. "
+                f"{len(numeric_rows)} data points returned. "
                 f"Moyenne: {_format_pct(avg)}. "
                 f"Plus faible: {_format_pct(worst['numeric_value'])}. "
                 f"Meilleur: {_format_pct(best['numeric_value'])}."
@@ -2935,19 +2919,19 @@ def ai_ask(request):
             except Exception:
                 pct = None
             if pct is None:
-                answer["interpretation"] = "Résultat retourné avec succès."
+                answer["interpretation"] = "The result was returned successfully."
             elif pct >= 90:
-                answer["interpretation"] = "La valeur est élevée sur ce contexte."
+                answer["interpretation"] = "The value is high for this context."
             elif pct >= 80:
-                answer["interpretation"] = "La valeur est correcte, mais mérite un suivi."
+                answer["interpretation"] = "The value is acceptable but requires monitoring."
             elif pct >= 70:
-                answer["interpretation"] = "La valeur est faible et doit être analysée."
+                answer["interpretation"] = "The value is low and requires analysis."
             else:
-                answer["interpretation"] = "La valeur est critique et nécessite une investigation."
+                answer["interpretation"] = "The value is critical and requires investigation."
         else:
-            answer["interpretation"] = "Le modèle n'a pas retourné de valeur exploitable pour ce contexte."
+            answer["interpretation"] = "The model returned no usable value for this context."
     else:
-        answer["interpretation"] = "Aucune donnée n'a été retournée par le modèle."
+        answer["interpretation"] = "The model returned no data."
 
     try:
         metric_code_for_target = dax_payload["metric"]
@@ -2991,7 +2975,7 @@ def ai_ask(request):
             answer["kpi_target"] = target_payload
             answer["kpi_status"] = target_status
             answer["recommended_actions"] = actions
-            answer["interpretation"] = f"{answer['interpretation']} Statut KPI: {target_status}."
+            answer["interpretation"] = f"{answer['interpretation']} KPI status: {target_status}."
     except Exception:
         pass
 
@@ -3770,7 +3754,7 @@ def ia_config_import_semantic_model_api(request, section_code):
         dataset_id = str(payload.get("dataset_id") or "").strip() or resolve_workspace_dataset_id(dataset_name)
     except Exception as exc:
         return _json_error(str(exc), status=400)
-    workspace_id = env_value("POWERBI_WORKSPACE_ID", "a378c518-bfc4-4cd7-a49d-ba40394db80f")
+    workspace_id = env_value("POWERBI_WORKSPACE_ID")
     imported_at = timezone.now()
 
     imported = {"tables": 0, "columns": 0, "measures": 0, "relationships": 0}
@@ -5585,22 +5569,26 @@ def _system_table_payload(item: SystemManagedTable) -> dict:
 
 
 def _ensure_default_system_config() -> SystemDatabaseConfig:
-    config, _ = SystemDatabaseConfig.objects.update_or_create(
-        name="Mining360 SQL Server",
-        defaults={
-            "engine": "SQL Server",
-            "purpose": "Primary Mining360 configuration database",
-            "host": "172.17.0.111",
-            "port": 1433,
-            "database_name": "Mining360",
-            "schema_name": "dbo",
-            "username": "djibril",
-            "password": "Djimen.12345",
-            "driver": "pytds / ODBC Driver 18 for SQL Server",
-            "connection_options": {"validate_host": False, "enc_login_only": True},
-            "is_default": True,
-            "is_active": True,
-        },
+    ensure_portable_configuration()
+    config = SystemDatabaseConfig.objects.filter(is_default=True).first()
+    if config:
+        return config
+    integration = SystemIntegrationConfig.objects.filter(
+        integration_type="Database", is_default=True, is_active=True,
+    ).first()
+    values = integration.settings_json if integration else {}
+    config = SystemDatabaseConfig.objects.create(
+        name="Mining360 Database",
+        engine=str(values.get("engine") or "SQL Server"),
+        purpose="Primary Mining360 configuration database",
+        host=str(values.get("host") or "not-configured"),
+        port=values.get("port") or None,
+        database_name=str(values.get("database") or ""),
+        schema_name=str(values.get("schema") or "dbo"),
+        username=str(values.get("username") or ""),
+        driver=str(values.get("driver") or ""),
+        is_default=True,
+        is_active=bool(values.get("host")),
     )
     return config
 
@@ -5672,9 +5660,12 @@ def _refresh_system_table_registry() -> int:
     return updated
 
 
+@login_required
 @require_http_methods(["GET"])
 def system_config_home(request):
-    _ensure_default_system_config()
+    if not _user_is_platform_admin(request.user):
+        return redirect("dashboard")
+    ensure_portable_configuration()
     return render(
         request,
         "reports/system_config.html",
@@ -5682,10 +5673,200 @@ def system_config_home(request):
             "active_section": "system-config",
             "sidebar_stats": [
                 {"label": "Config", "value": SystemDatabaseConfig.objects.count()},
+                {"label": "Connections", "value": SystemIntegrationConfig.objects.count()},
+                {"label": "Parameters", "value": SystemParameter.objects.count()},
                 {"label": "Tables", "value": SystemManagedTable.objects.count()},
             ],
         },
     )
+
+
+@require_http_methods(["GET"])
+def system_configuration_overview_api(request):
+    if not _user_is_platform_admin(request.user):
+        return _json_error("Administrator access is required.", status=403)
+    ensure_portable_configuration()
+    integrations = SystemIntegrationConfig.objects.all()
+    parameters = SystemParameter.objects.filter(is_active=True)
+    return JsonResponse({
+        "ok": True,
+        "summary": {
+            "connections": integrations.count(),
+            "connected": integrations.filter(status="Connected").count(),
+            "configured": integrations.filter(status__in=["Configured", "Connected"]).count(),
+            "failed": integrations.filter(status="Failed").count(),
+            "parameters": parameters.count(),
+            "database_servers": SystemDatabaseConfig.objects.count(),
+            "managed_tables": SystemManagedTable.objects.count(),
+        },
+        "connections": [integration_payload(item, include_schema=False) for item in integrations],
+        "categories": list(parameters.values_list("category", flat=True).distinct()),
+    })
+
+
+@require_http_methods(["GET"])
+def system_integration_schemas_api(request):
+    if not _user_is_platform_admin(request.user):
+        return _json_error("Administrator access is required.", status=403)
+    return JsonResponse({"ok": True, "items": schema_payload()})
+
+
+@require_http_methods(["GET", "POST"])
+def system_integrations_api(request):
+    if not _user_is_platform_admin(request.user):
+        return _json_error("Administrator access is required.", status=403)
+    ensure_portable_configuration()
+    if request.method == "GET":
+        queryset = SystemIntegrationConfig.objects.all()
+        integration_type = request.GET.get("type", "").strip()
+        query = request.GET.get("q", "").strip()
+        if integration_type:
+            queryset = queryset.filter(integration_type=integration_type)
+        if query:
+            queryset = queryset.filter(
+                models.Q(name__icontains=query)
+                | models.Q(code__icontains=query)
+                | models.Q(provider__icontains=query)
+                | models.Q(description__icontains=query)
+            )
+        return JsonResponse({"ok": True, "items": [integration_payload(item) for item in queryset]})
+    try:
+        item = save_integration(SystemIntegrationConfig(), _request_payload(request), request.user)
+        return JsonResponse({"ok": True, "item": integration_payload(item)}, status=201)
+    except Exception as exc:
+        return _json_error(str(exc))
+
+
+@require_http_methods(["PUT", "DELETE"])
+def system_integration_item_api(request, integration_id):
+    if not _user_is_platform_admin(request.user):
+        return _json_error("Administrator access is required.", status=403)
+    item = get_object_or_404(SystemIntegrationConfig, pk=integration_id)
+    if request.method == "DELETE":
+        item.is_active = False
+        item.status = "Disabled"
+        item.updated_by = request.user if request.user.is_authenticated else None
+        item.save(update_fields=["is_active", "status", "updated_by", "updated_at"])
+        return JsonResponse({"ok": True, "deactivated": True})
+    try:
+        item = save_integration(item, _request_payload(request), request.user)
+        return JsonResponse({"ok": True, "item": integration_payload(item)})
+    except Exception as exc:
+        return _json_error(str(exc))
+
+
+@require_http_methods(["POST"])
+def system_integration_verify_api(request, integration_id):
+    if not _user_is_platform_admin(request.user):
+        return _json_error("Administrator access is required.", status=403)
+    item = get_object_or_404(SystemIntegrationConfig, pk=integration_id)
+    connected, message = test_integration(item)
+    return JsonResponse({
+        "ok": connected,
+        "status": item.status,
+        "message": message,
+    }, status=200 if connected else 400)
+
+
+def _parameter_payload(item):
+    return {
+        "id": item.pk,
+        "key": item.key,
+        "category": item.category,
+        "label": item.label,
+        "description": item.description,
+        "value_type": item.value_type,
+        "value": item.value_json,
+        "default_value": item.default_value_json,
+        "options": item.options_json or [],
+        "is_required": item.is_required,
+        "is_runtime_editable": item.is_runtime_editable,
+        "is_active": item.is_active,
+        "updated_at": item.updated_at.isoformat() if item.updated_at else "",
+    }
+
+
+def _coerce_system_parameter_value(value_type, value):
+    if value in (None, ""):
+        return None
+    if value_type in {"Integer", "Duration"}:
+        return int(value)
+    if value_type == "Decimal":
+        return float(value)
+    if value_type == "Boolean":
+        return _ia_normalize_bool(value, False)
+    if value_type == "JSON" and isinstance(value, str):
+        return json.loads(value)
+    return value
+
+
+@require_http_methods(["GET", "POST"])
+def system_parameters_api(request):
+    if not _user_is_platform_admin(request.user):
+        return _json_error("Administrator access is required.", status=403)
+    ensure_portable_configuration()
+    if request.method == "POST":
+        try:
+            payload = _request_payload(request)
+            key = str(payload.get("key") or "").strip().lower()
+            label = str(payload.get("label") or "").strip()
+            category = str(payload.get("category") or "General").strip()
+            value_type = str(payload.get("value_type") or "Text").strip()
+            if not key or not label:
+                raise ValueError("Key and label are required.")
+            if value_type not in dict(SystemParameter.VALUE_TYPES):
+                raise ValueError("Unsupported parameter value type.")
+            item = SystemParameter.objects.create(
+                key=key,
+                label=label,
+                category=category,
+                description=str(payload.get("description") or "").strip(),
+                value_type=value_type,
+                value_json=_coerce_system_parameter_value(value_type, payload.get("value")),
+                default_value_json=_coerce_system_parameter_value(value_type, payload.get("default_value")),
+                options_json=payload.get("options") if isinstance(payload.get("options"), list) else [],
+                is_required=_ia_normalize_bool(payload.get("is_required"), False),
+                is_runtime_editable=_ia_normalize_bool(payload.get("is_runtime_editable"), True),
+                is_active=_ia_normalize_bool(payload.get("is_active"), True),
+                created_by=request.user,
+                updated_by=request.user,
+            )
+            return JsonResponse({"ok": True, "item": _parameter_payload(item)}, status=201)
+        except Exception as exc:
+            return _json_error(str(exc))
+    queryset = SystemParameter.objects.all()
+    category = request.GET.get("category", "").strip()
+    query = request.GET.get("q", "").strip()
+    if category:
+        queryset = queryset.filter(category=category)
+    if query:
+        queryset = queryset.filter(
+            models.Q(key__icontains=query)
+            | models.Q(label__icontains=query)
+            | models.Q(description__icontains=query)
+        )
+    return JsonResponse({"ok": True, "items": [_parameter_payload(item) for item in queryset]})
+
+
+@require_http_methods(["PUT", "DELETE"])
+def system_parameter_item_api(request, parameter_id):
+    if not _user_is_platform_admin(request.user):
+        return _json_error("Administrator access is required.", status=403)
+    item = get_object_or_404(SystemParameter, pk=parameter_id, is_runtime_editable=True)
+    if request.method == "DELETE":
+        item.is_active = False
+        item.updated_by = request.user
+        item.save(update_fields=["is_active", "updated_by", "updated_at"])
+        return JsonResponse({"ok": True, "deactivated": True})
+    payload = _request_payload(request)
+    value = payload.get("value")
+    try:
+        item.value_json = _coerce_system_parameter_value(item.value_type, value)
+        item.updated_by = request.user if request.user.is_authenticated else None
+        item.save(update_fields=["value_json", "updated_by", "updated_at"])
+        return JsonResponse({"ok": True, "item": _parameter_payload(item)})
+    except Exception as exc:
+        return _json_error(str(exc))
 
 
 @require_http_methods(["GET", "POST"])
@@ -5825,6 +6006,7 @@ def resources(request):
             "levels": facets["levels"],
             "section_cards": facets["section_cards"],
             "resource_source": resource_source,
+            "is_platform_admin": _user_is_platform_admin(request.user),
             "sidebar_stats": [
                 {"label": "Files", "value": len(resource_items)},
                 {"label": "Source", "value": resource_source},
@@ -5866,7 +6048,25 @@ def resource_upload(request):
         except Exception as exc:
             messages.warning(request, f"Document uploaded, but SQL Server sync failed: {exc}")
         else:
-            messages.success(request, f"Document uploaded and indexed: {resource.title}.")
+            messages.success(request, f"Document uploaded: {resource.title}.")
+        try:
+            from .resource_knowledge_index_service import start_index_job
+
+            run = start_index_job(
+                user=request.user,
+                resource_id=resource.id,
+                with_ai=True,
+                with_embeddings=True,
+            )
+            messages.success(
+                request,
+                f"Knowledge indexing started automatically (run {run.id}).",
+            )
+        except Exception as exc:
+            messages.warning(
+                request,
+                f"Document uploaded, but knowledge indexing could not start: {exc}",
+            )
     except Exception as exc:
         messages.error(request, str(exc))
     return redirect("resources")

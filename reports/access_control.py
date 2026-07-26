@@ -15,7 +15,7 @@ MODULES = {
 MODULE_PATH_PREFIXES = (
     ("reporting", ("/business-performance/",)),
     ("reporting", ("/reporting/", "/reports/")),
-    ("ai", ("/ai/",)),
+    ("ai", ("/ai/", "/api/ai/")),
     ("data", ("/data/", "/data-browsers", "/data-quality/")),
     ("sources", ("/data-sources/",)),
 )

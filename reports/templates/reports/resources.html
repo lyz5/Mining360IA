@@ -20,6 +20,9 @@
                 <span class="summary-label">files</span>
             </div>
             <div class="actions">
+                {% if is_platform_admin %}
+                    <a class="button secondary" href="{% url 'resource-knowledge-admin' %}">Knowledge Base</a>
+                {% endif %}
                 <button class="button" type="button" data-resource-upload-open>Add Document</button>
             </div>
         </header>

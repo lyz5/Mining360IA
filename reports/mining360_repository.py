@@ -3,6 +3,7 @@ import time
 from collections import Counter
 from datetime import date, datetime
 from decimal import Decimal
+from uuid import UUID
 
 from django.apps import apps
 from django.db import models
@@ -50,6 +51,18 @@ CONFIG_MODEL_NAMES = [
     "SupportedPowerBIAction",
     "AIConversationContext",
     "PowerBIInteractionLog",
+    "RootCauseDimension",
+    "RootCauseTheme",
+    "CommentQualityRule",
+    "RepeatFailureRule",
+    "SMCSCode",
+    "SMCSSynonym",
+    "SMCSClassificationConfig",
+    "DowntimeSMCSClassification",
+    "SMCSClassificationJob",
+    "DowntimeExplorerSession",
+    "DowntimeExplorerInteraction",
+    "DowntimeExplorerAIAnalysis",
     "AIVisualMapping",
     "AIKPITarget",
     "AIRecommendedAction",
@@ -65,10 +78,22 @@ CONFIG_MODEL_NAMES = [
     "KnowledgeAILog",
     "KnowledgeUserFeedback",
     "OpenAIModelPricing",
+    "VoiceInputConfiguration",
     "OpenAIBudget",
     "OpenAICreditSnapshot",
+    "ResourceKnowledgeDocument",
+    "ResourceKnowledgeSection",
+    "ResourceKnowledgeChunk",
+    "ResourceKnowledgeItem",
+    "ResourceKnowledgeConflict",
+    "KnowledgeEnrichmentQueue",
+    "ResourceKnowledgeConfiguration",
+    "ResourceKnowledgeIndexRun",
+    "ResourceKnowledgeRetrievalLog",
     "SystemDatabaseConfig",
     "SystemManagedTable",
+    "SystemIntegrationConfig",
+    "SystemParameter",
     "BusinessPerformanceConfig",
     "BusinessPerformanceMapping",
     "BusinessPerformanceQueryLog",
@@ -112,7 +137,11 @@ def _field_column_name(field) -> str:
 def _sql_type_for_field(field) -> str:
     if isinstance(field, (models.AutoField, models.BigAutoField)):
         return "INT"
+    if isinstance(field, models.UUIDField):
+        return "NVARCHAR(36)"
     if isinstance(field, (models.ForeignKey, models.OneToOneField)):
+        if isinstance(field.target_field, models.UUIDField):
+            return "NVARCHAR(36)"
         return "INT"
     if isinstance(field, models.BooleanField):
         return "BIT"
@@ -134,12 +163,14 @@ def _sql_type_for_field(field) -> str:
 
 
 def _json_value(value):
+    if isinstance(value, UUID):
+        return str(value)
     if isinstance(value, datetime):
         return value.replace(tzinfo=None).isoformat(timespec="seconds")
     if isinstance(value, date):
         return value.isoformat()
     if isinstance(value, Decimal):
-        return str(value)
+        return float(value)
     if isinstance(value, (dict, list)):
         return json.dumps(value, ensure_ascii=False)
     return value
@@ -174,6 +205,20 @@ def _ensure_model_mirror_table(connection, model) -> None:
         END
         """
     )
+    for field in _model_fields(model):
+        is_uuid_reference = (
+            isinstance(field, (models.ForeignKey, models.OneToOneField))
+            and isinstance(field.target_field, models.UUIDField)
+        )
+        if not is_uuid_reference:
+            continue
+        column_name = _field_column_name(field)
+        null_sql = "NOT NULL" if field.primary_key else "NULL"
+        cursor.execute(
+            f"IF COL_LENGTH(N'{table_name}', N'{column_name}') IS NOT NULL "
+            f"ALTER TABLE {qualified} ALTER COLUMN "
+            f"{_quote_name(column_name)} NVARCHAR(36) {null_sql}"
+        )
     for field in _model_fields(model):
         if field.primary_key:
             continue
