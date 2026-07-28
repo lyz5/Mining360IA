@@ -486,7 +486,10 @@
         container.innerHTML = messages.map((message) => `
             <div class="ai-message ${message.role === "user" ? "user" : "assistant"}">
                 <div class="ai-message__avatar">${message.role === "user" ? "You" : "AI"}</div>
-                <div class="ai-message__body">${escapeHtml(message.content).replaceAll("\n", "<br>")}</div>
+                <div class="ai-message__content">
+                    ${message.agent ? `<span class="ai-agent-badge">${escapeHtml(message.agent)}</span>` : ""}
+                    <div class="ai-message__body">${escapeHtml(message.content).replaceAll("\n", "<br>")}</div>
+                </div>
             </div>
         `).join("");
     }
@@ -692,6 +695,7 @@
                     conversation: state.messages,
                     conversation_id: state.conversationId,
                     input_metadata: inputMetadata,
+                    agent_selection: document.getElementById("ai-agent-selection")?.value || "auto",
                 }),
             });
             const payload = await response.json();
@@ -704,6 +708,7 @@
                 role: "assistant",
                 content: assistantMessage,
                 diagnostics: payload.availability_diagnostics || null,
+                agent: payload.agent?.name || "",
             });
             renderMessages(chatThread, state.messages);
             saveHistory(state.messages);

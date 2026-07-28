@@ -6,13 +6,10 @@ import re
 
 from .powerbi import _local_powerbi_credentials
 
-try:  # pragma: no cover - optional runtime dependency
-    from openai import OpenAI
-except Exception:  # pragma: no cover
-    OpenAI = None
-
 from .ai_config_service import build_section_catalog, get_prompt_template
-from .openai_client_service import create_tracked_response
+from .ai_provider_credential_service import credential_configured
+from .ai_provider_gateway_service import ai_gateway
+from .models import AIProvider
 
 
 DEFAULT_OPENAI_MODEL = "gpt-4.1-mini"
@@ -49,22 +46,13 @@ def get_openai_model() -> str:
 
 
 def is_openai_configured() -> bool:
-    return bool(OpenAI and get_openai_api_key())
-
-
-def _client():
-    if OpenAI is None:
-        raise RuntimeError("OpenAI package is not installed.")
-    api_key = get_openai_api_key()
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY is not configured.")
     try:
-        from .system_configuration_service import integration_value
-
-        base_url = os.getenv("OPENAI_API_BASE") or integration_value("OpenAI", "api_base", "")
+        return any(
+            credential_configured(provider)
+            for provider in AIProvider.objects.filter(active=True)
+        )
     except Exception:
-        base_url = os.getenv("OPENAI_API_BASE", "")
-    return OpenAI(api_key=api_key, **({"base_url": base_url} if base_url else {}))
+        return bool(get_openai_api_key())
 
 
 def _json_from_response(response) -> dict:
@@ -142,12 +130,9 @@ def extract_intent(question_text: str, section_code: str | None = None) -> dict:
         },
     }
     rendered_prompt = _render_configured_prompt(section_code or fallback["section"], "intent_extraction", prompt)
-    response = create_tracked_response(
-        _client(),
-        model=get_openai_model(),
-        section=section_code or fallback["section"],
-        feature="Intent Extraction",
-        input=[
+    response = ai_gateway.generate_structured_output(
+        use_case="intent_classification",
+        messages=[
             {
                 "role": "system",
                 "content": rendered_prompt,
@@ -157,9 +142,29 @@ def extract_intent(question_text: str, section_code: str | None = None) -> dict:
                 "content": json.dumps(prompt, ensure_ascii=False),
             },
         ],
-        temperature=0,
+        output_schema={
+            "type": "object",
+            "properties": {
+                "section": {"type": "string"},
+                "intent_type": {"type": "string"},
+                "metric": {"type": ["string", "null"]},
+                "filters": {"type": "object"},
+                "comparison": {"type": ["object", "null"]},
+                "navigation": {
+                    "type": "object",
+                    "properties": {
+                        "open_report": {"type": "boolean"},
+                        "open_page": {"type": "boolean"},
+                        "focus_visual": {"type": "boolean"},
+                    },
+                    "required": ["open_report", "open_page", "focus_visual"],
+                },
+            },
+            "required": ["section", "intent_type", "metric", "filters", "comparison", "navigation"],
+        },
+        options={"temperature": 0},
     )
-    parsed = _json_from_response(response)
+    parsed = response.structured_output or {}
     if not parsed:
         return fallback
     intent = {
@@ -202,12 +207,9 @@ def generate_chat_response(
     if not is_openai_configured():
         return answer.get("interpretation", "")
     rendered_prompt = _render_configured_prompt(section_code, "response_generation", prompt)
-    response = create_tracked_response(
-        _client(),
-        model=get_openai_model(),
-        section=section_code,
-        feature="Business Response",
-        input=[
+    response = ai_gateway.generate_text(
+        use_case="machine_performance_response",
+        messages=[
             {
                 "role": "system",
                 "content": rendered_prompt,
@@ -217,7 +219,7 @@ def generate_chat_response(
                 "content": json.dumps(prompt, ensure_ascii=False),
             },
         ],
-        temperature=0.3,
+        options={"temperature": 0.3},
     )
-    text = getattr(response, "output_text", "") or ""
+    text = response.content
     return text.strip() or answer.get("interpretation", "")

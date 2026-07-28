@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.urls import reverse
 
@@ -22,6 +23,18 @@ class PlatformLoginRequiredMiddleware:
         if path.startswith(exempt_prefixes):
             return self.get_response(request)
         if not request.user.is_authenticated:
+            if (
+                path.startswith("/ai/downtime-explorer/")
+                or "application/json" in request.headers.get("Accept", "")
+            ):
+                return JsonResponse(
+                    {
+                        "ok": False,
+                        "error": "Your session has expired. Sign in again and retry.",
+                        "error_code": "AUTHENTICATION_REQUIRED",
+                    },
+                    status=401,
+                )
             login_url = f"{reverse('login')}?next={request.get_full_path()}"
             return redirect(login_url)
         access_response = enforce_request_access(request)

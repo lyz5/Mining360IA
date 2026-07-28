@@ -1,7 +1,7 @@
 import uuid
 
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import Group, User
 
 
 class DataQualityRun(models.Model):
@@ -559,6 +559,30 @@ class PowerBIReport(models.Model):
         return self.display_name
 
 
+class ReportingReportPreference(models.Model):
+    report_id = models.CharField(max_length=128, unique=True)
+    report_name = models.CharField(max_length=255, blank=True)
+    display_name = models.CharField(max_length=255, blank=True)
+    is_visible = models.BooleanField(default=True)
+    display_order = models.PositiveIntegerField(default=0)
+    updated_by = models.ForeignKey(
+        User,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="updated_reporting_report_preferences",
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["display_order", "display_name", "report_name"]
+        db_table = "reporting_report_preferences"
+
+    def __str__(self) -> str:
+        return self.display_name or self.report_name or self.report_id
+
+
 class PowerBIPage(models.Model):
     report = models.ForeignKey(PowerBIReport, related_name="pages", on_delete=models.CASCADE)
     page_internal_name = models.CharField(max_length=255)
@@ -711,6 +735,11 @@ class AIConversationContext(models.Model):
     conversation_id = models.CharField(max_length=128, db_index=True)
     user = models.ForeignKey(User, related_name="ai_conversation_contexts", null=True, blank=True, on_delete=models.SET_NULL)
     validated_intent = models.JSONField(default=dict, blank=True)
+    active_agent = models.CharField(max_length=100, blank=True, db_index=True)
+    last_agent = models.CharField(max_length=100, blank=True)
+    active_intent = models.CharField(max_length=120, blank=True)
+    performance_context = models.JSONField(default=dict, blank=True)
+    knowledge_context = models.JSONField(default=dict, blank=True)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -721,6 +750,651 @@ class AIConversationContext(models.Model):
         constraints = [
             models.UniqueConstraint(fields=["conversation_id", "user"], name="unique_ai_context_per_user"),
         ]
+
+
+AI_AGENT_VALIDATION_STATUSES = [
+    ("Draft", "Draft"),
+    ("To Review", "To Review"),
+    ("Validated", "Validated"),
+    ("Rejected", "Rejected"),
+]
+
+
+class AIAgent(models.Model):
+    AGENT_TYPES = [
+        ("machine_performance", "Machine Performance"),
+        ("mining_knowledge", "Mining Knowledge"),
+    ]
+    ROUTING_MODES = [
+        ("automatic", "Automatic"),
+        ("manual", "Manual"),
+        ("disabled", "Disabled"),
+    ]
+
+    code = models.SlugField(max_length=100, unique=True)
+    name = models.CharField(max_length=150)
+    description = models.TextField(blank=True)
+    agent_type = models.CharField(max_length=50, choices=AGENT_TYPES)
+    system_instructions = models.TextField(blank=True)
+    response_instructions = models.TextField(blank=True)
+    clarification_instructions = models.TextField(blank=True)
+    combined_execution_instructions = models.TextField(blank=True)
+    default_language = models.CharField(max_length=10, default="auto")
+    routing_mode = models.CharField(max_length=20, choices=ROUTING_MODES, default="automatic")
+    routing_keywords = models.JSONField(default=list, blank=True)
+    exclusion_keywords = models.JSONField(default=list, blank=True)
+    clarification_message = models.TextField(blank=True)
+    priority = models.PositiveIntegerField(default=50)
+    minimum_confidence = models.DecimalField(max_digits=5, decimal_places=2, default=85)
+    active = models.BooleanField(default=True, db_index=True)
+    is_default = models.BooleanField(default=False)
+    allow_combined_execution = models.BooleanField(default=True)
+    validation_status = models.CharField(
+        max_length=20,
+        choices=AI_AGENT_VALIDATION_STATUSES,
+        default="To Review",
+        db_index=True,
+    )
+    version = models.CharField(max_length=50, default="1.0")
+    owner = models.CharField(max_length=150, blank=True)
+    created_by = models.ForeignKey(
+        User, null=True, blank=True, related_name="created_ai_agents", on_delete=models.SET_NULL
+    )
+    updated_by = models.ForeignKey(
+        User, null=True, blank=True, related_name="updated_ai_agents", on_delete=models.SET_NULL
+    )
+    validated_by = models.ForeignKey(
+        User, null=True, blank=True, related_name="validated_ai_agents", on_delete=models.SET_NULL
+    )
+    validated_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-priority", "name"]
+        db_table = "AIAgent"
+        permissions = [
+            ("validate_ai_agent", "Can validate AI agents"),
+            ("test_ai_agent", "Can test AI agents"),
+            ("view_agent_logs", "Can view AI agent logs"),
+            ("view_agent_costs", "Can view AI agent costs"),
+            ("manage_agent_router", "Can manage the AI agent router"),
+        ]
+
+    def __str__(self):
+        return self.name
+
+
+class AIAgentCapability(models.Model):
+    agent = models.ForeignKey(AIAgent, related_name="capabilities", on_delete=models.CASCADE)
+    capability_code = models.SlugField(max_length=120)
+    display_name = models.CharField(max_length=180)
+    description = models.TextField(blank=True)
+    enabled = models.BooleanField(default=True)
+    configuration_json = models.JSONField(default=dict, blank=True)
+    priority = models.PositiveIntegerField(default=50)
+    validation_status = models.CharField(
+        max_length=20, choices=AI_AGENT_VALIDATION_STATUSES, default="To Review"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-priority", "display_name"]
+        db_table = "AIAgentCapability"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["agent", "capability_code"], name="unique_ai_agent_capability"
+            ),
+        ]
+
+
+class AIAgentDataSource(models.Model):
+    agent = models.ForeignKey(AIAgent, related_name="data_sources", on_delete=models.CASCADE)
+    source_type = models.CharField(max_length=80, db_index=True)
+    source_reference = models.CharField(max_length=500)
+    source_name = models.CharField(max_length=255)
+    enabled = models.BooleanField(default=True)
+    read_only = models.BooleanField(default=True)
+    priority = models.PositiveIntegerField(default=50)
+    filters_json = models.JSONField(default=dict, blank=True)
+    validation_status = models.CharField(
+        max_length=20, choices=AI_AGENT_VALIDATION_STATUSES, default="To Review"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-priority", "source_name"]
+        db_table = "AIAgentDataSource"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["agent", "source_type", "source_reference"],
+                name="unique_ai_agent_data_source",
+            ),
+        ]
+
+
+class AIAgentIntent(models.Model):
+    agent = models.ForeignKey(AIAgent, related_name="intents", on_delete=models.CASCADE)
+    intent_code = models.SlugField(max_length=120)
+    display_name = models.CharField(max_length=180)
+    description = models.TextField(blank=True)
+    examples_json = models.JSONField(default=list, blank=True)
+    required_entities_json = models.JSONField(default=list, blank=True)
+    optional_entities_json = models.JSONField(default=list, blank=True)
+    priority = models.PositiveIntegerField(default=50)
+    enabled = models.BooleanField(default=True)
+    validation_status = models.CharField(
+        max_length=20, choices=AI_AGENT_VALIDATION_STATUSES, default="To Review"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-priority", "display_name"]
+        db_table = "AIAgentIntent"
+        constraints = [
+            models.UniqueConstraint(fields=["agent", "intent_code"], name="unique_ai_agent_intent"),
+        ]
+
+
+class AIAgentTool(models.Model):
+    agent = models.ForeignKey(AIAgent, related_name="tools", on_delete=models.CASCADE)
+    tool_code = models.SlugField(max_length=120)
+    display_name = models.CharField(max_length=180)
+    description = models.TextField(blank=True)
+    service_path = models.CharField(max_length=500)
+    enabled = models.BooleanField(default=True)
+    requires_confirmation = models.BooleanField(default=False)
+    timeout_seconds = models.PositiveIntegerField(default=120)
+    priority = models.PositiveIntegerField(default=50)
+    configuration_json = models.JSONField(default=dict, blank=True)
+    validation_status = models.CharField(
+        max_length=20, choices=AI_AGENT_VALIDATION_STATUSES, default="To Review"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-priority", "display_name"]
+        db_table = "AIAgentTool"
+        constraints = [
+            models.UniqueConstraint(fields=["agent", "tool_code"], name="unique_ai_agent_tool"),
+        ]
+
+
+class AIAgentPrompt(models.Model):
+    PROMPT_TYPES = [
+        ("system", "System"),
+        ("intent", "Intent"),
+        ("response", "Response"),
+        ("clarification", "Clarification"),
+        ("combined", "Combined"),
+    ]
+    agent = models.ForeignKey(AIAgent, related_name="prompts", on_delete=models.CASCADE)
+    prompt_code = models.SlugField(max_length=120)
+    prompt_type = models.CharField(max_length=30, choices=PROMPT_TYPES)
+    name = models.CharField(max_length=180)
+    content = models.TextField()
+    version = models.CharField(max_length=50, default="1.0")
+    enabled = models.BooleanField(default=True)
+    validation_status = models.CharField(
+        max_length=20, choices=AI_AGENT_VALIDATION_STATUSES, default="To Review"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["prompt_type", "name"]
+        db_table = "AIAgentPrompt"
+        constraints = [
+            models.UniqueConstraint(fields=["agent", "prompt_code"], name="unique_ai_agent_prompt"),
+        ]
+
+
+class AIAgentPermission(models.Model):
+    agent = models.OneToOneField(AIAgent, related_name="permission_config", on_delete=models.CASCADE)
+    allowed_roles = models.ManyToManyField(Group, related_name="permitted_ai_agents", blank=True)
+    allowed_users = models.ManyToManyField(User, related_name="permitted_ai_agents", blank=True)
+    allowed_minesites = models.JSONField(default=list, blank=True)
+    allowed_customers = models.JSONField(default=list, blank=True)
+    can_export = models.BooleanField(default=False)
+    can_access_comments = models.BooleanField(default=False)
+    can_access_debug = models.BooleanField(default=False)
+    configuration_json = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "AIAgentPermission"
+
+
+class AIAgentRoutingConfiguration(models.Model):
+    FEATURE_MODES = [
+        ("Disabled", "Disabled"),
+        ("Admin Only", "Admin Only"),
+        ("Pilot Users", "Pilot Users"),
+        ("Production", "Production"),
+    ]
+    name = models.CharField(max_length=120, unique=True, default="Default")
+    feature_mode = models.CharField(max_length=20, choices=FEATURE_MODES, default="Admin Only")
+    routing_enabled = models.BooleanField(default=True)
+    deterministic_routing_enabled = models.BooleanField(default=True)
+    ai_fallback_enabled = models.BooleanField(default=False)
+    default_agent = models.ForeignKey(
+        AIAgent, null=True, blank=True, related_name="default_router_configs", on_delete=models.SET_NULL
+    )
+    minimum_confidence = models.DecimalField(max_digits=5, decimal_places=2, default=85)
+    combined_execution_enabled = models.BooleanField(default=True)
+    manual_selection_enabled = models.BooleanField(default=True)
+    clarification_behavior = models.TextField(blank=True)
+    routing_timeout_seconds = models.PositiveIntegerField(default=30)
+    routing_prompt = models.TextField(blank=True)
+    pilot_users = models.ManyToManyField(User, related_name="pilot_agent_router_configs", blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "AIAgentRoutingConfiguration"
+
+
+class AIAgentRoutingRule(models.Model):
+    SELECTED_AGENT_CHOICES = [
+        ("machine_performance", "Machine Performance"),
+        ("mining_knowledge", "Mining Knowledge"),
+        ("combined", "Combined"),
+        ("clarification_required", "Clarification Required"),
+    ]
+    rule_code = models.SlugField(max_length=120, unique=True)
+    name = models.CharField(max_length=180)
+    description = models.TextField(blank=True)
+    condition_json = models.JSONField(default=dict, blank=True)
+    selected_agent = models.CharField(max_length=50, choices=SELECTED_AGENT_CHOICES)
+    priority = models.PositiveIntegerField(default=50)
+    active = models.BooleanField(default=True)
+    validation_status = models.CharField(
+        max_length=20, choices=AI_AGENT_VALIDATION_STATUSES, default="To Review"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-priority", "name"]
+        db_table = "AIAgentRoutingRule"
+
+
+class AIAgentExecutionLog(models.Model):
+    STATUS_CHOICES = [
+        ("Completed", "Completed"),
+        ("Partial", "Partial"),
+        ("Clarification Required", "Clarification Required"),
+        ("Failed", "Failed"),
+    ]
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    conversation_id = models.CharField(max_length=255, blank=True, db_index=True)
+    question = models.TextField()
+    selected_agent = models.ForeignKey(
+        AIAgent, null=True, blank=True, related_name="execution_logs", on_delete=models.SET_NULL
+    )
+    selected_agent_code = models.CharField(max_length=100, blank=True, db_index=True)
+    routing_method = models.CharField(max_length=40, blank=True)
+    routing_confidence = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    routing_reason = models.TextField(blank=True)
+    matched_rules_json = models.JSONField(default=list, blank=True)
+    intent = models.CharField(max_length=120, blank=True, db_index=True)
+    entities_json = models.JSONField(default=dict, blank=True)
+    tools_used_json = models.JSONField(default=list, blank=True)
+    sources_used_json = models.JSONField(default=list, blank=True)
+    execution_status = models.CharField(max_length=30, choices=STATUS_CHOICES, default="Completed")
+    response_time_ms = models.PositiveIntegerField(default=0)
+    input_tokens = models.PositiveBigIntegerField(default=0)
+    output_tokens = models.PositiveBigIntegerField(default=0)
+    estimated_cost = models.DecimalField(max_digits=18, decimal_places=8, default=0)
+    error_code = models.CharField(max_length=160, blank=True)
+    error_message = models.TextField(blank=True)
+    parent_execution = models.ForeignKey(
+        "self", null=True, blank=True, related_name="child_executions", on_delete=models.SET_NULL
+    )
+    execution_order = models.PositiveSmallIntegerField(default=1)
+    is_test = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "AIAgentExecutionLog"
+
+
+AI_PROVIDER_CAPABILITIES = [
+    "text_generation",
+    "structured_output",
+    "tool_calling",
+    "embeddings",
+    "audio_transcription",
+    "text_to_speech",
+    "vision",
+    "document_analysis",
+    "streaming",
+    "long_context",
+    "json_mode",
+    "function_calling",
+]
+
+
+class AIProvider(models.Model):
+    PROVIDER_TYPES = [
+        ("openai", "OpenAI"),
+        ("anthropic_claude", "Claude AI"),
+        ("google_gemini", "Google Gemini"),
+        ("glm_5", "GLM-5"),
+        ("custom", "Custom Provider"),
+    ]
+    AUTH_TYPES = [
+        ("api_key", "API Key"),
+        ("bearer_token", "Bearer Token"),
+        ("oauth2", "OAuth 2.0"),
+        ("custom_header", "Custom Header"),
+    ]
+    STATUS_CHOICES = [
+        ("not_configured", "Not Configured"),
+        ("active", "Healthy"),
+        ("inactive", "Inactive"),
+        ("degraded", "Degraded"),
+        ("unavailable", "Unavailable"),
+        ("invalid_credentials", "Invalid Credentials"),
+    ]
+    SELECTION_MODES = [
+        ("fixed", "Fixed"),
+        ("priority", "Priority Based"),
+        ("cost", "Cost Optimized"),
+        ("performance", "Performance Optimized"),
+        ("manual", "Manual"),
+    ]
+
+    code = models.SlugField(max_length=100, unique=True)
+    name = models.CharField(max_length=150)
+    provider_type = models.CharField(max_length=50, choices=PROVIDER_TYPES)
+    description = models.TextField(blank=True)
+    base_url = models.URLField(blank=True)
+    api_version = models.CharField(max_length=100, blank=True)
+    auth_type = models.CharField(max_length=30, choices=AUTH_TYPES, default="api_key")
+    priority = models.PositiveIntegerField(default=50, db_index=True)
+    selection_mode = models.CharField(max_length=20, choices=SELECTION_MODES, default="priority")
+    is_default = models.BooleanField(default=False, db_index=True)
+    active = models.BooleanField(default=False, db_index=True)
+    allow_fallback = models.BooleanField(default=True)
+    status = models.CharField(max_length=30, choices=STATUS_CHOICES, default="not_configured", db_index=True)
+    timeout_seconds = models.PositiveIntegerField(default=60)
+    retry_count = models.PositiveIntegerField(default=2)
+    retry_backoff_seconds = models.PositiveIntegerField(default=2)
+    requests_per_minute = models.PositiveIntegerField(null=True, blank=True)
+    tokens_per_minute = models.PositiveIntegerField(null=True, blank=True)
+    maximum_concurrent_requests = models.PositiveIntegerField(default=5)
+    daily_budget = models.DecimalField(max_digits=12, decimal_places=4, null=True, blank=True)
+    monthly_budget = models.DecimalField(max_digits=12, decimal_places=4, null=True, blank=True)
+    budget_warning_percentage = models.DecimalField(max_digits=5, decimal_places=2, default=80)
+    budget_critical_percentage = models.DecimalField(max_digits=5, decimal_places=2, default=95)
+    block_when_budget_exceeded = models.BooleanField(default=False)
+    currency = models.CharField(max_length=10, default="USD")
+    capabilities_json = models.JSONField(default=list, blank=True)
+    configuration_json = models.JSONField(default=dict, blank=True)
+    last_health_check_at = models.DateTimeField(null=True, blank=True)
+    last_success_at = models.DateTimeField(null=True, blank=True)
+    last_failure_at = models.DateTimeField(null=True, blank=True)
+    last_error_code = models.CharField(max_length=150, blank=True)
+    last_error_message = models.TextField(blank=True)
+    created_by = models.ForeignKey(
+        User, null=True, blank=True, on_delete=models.SET_NULL, related_name="created_ai_providers"
+    )
+    updated_by = models.ForeignKey(
+        User, null=True, blank=True, on_delete=models.SET_NULL, related_name="updated_ai_providers"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-priority", "name"]
+        db_table = "AIProvider"
+        permissions = [
+            ("set_default_ai_provider", "Can set the default AI provider"),
+            ("manage_ai_provider_credentials", "Can manage AI provider credentials"),
+            ("test_ai_provider", "Can test AI providers"),
+            ("view_ai_provider_usage", "Can view AI provider usage"),
+            ("view_ai_provider_costs", "Can view AI provider costs"),
+            ("manage_ai_use_case_routing", "Can manage AI use case routing"),
+            ("manage_ai_provider_budgets", "Can manage AI provider budgets"),
+        ]
+
+    def __str__(self):
+        return self.name
+
+
+class AIProviderCredential(models.Model):
+    provider = models.ForeignKey(AIProvider, related_name="credentials", on_delete=models.CASCADE)
+    credential_type = models.CharField(max_length=60, default="api_key")
+    encrypted_value = models.TextField(blank=True)
+    secret_reference = models.CharField(max_length=500, blank=True)
+    key_identifier = models.CharField(max_length=160, blank=True)
+    last_four_characters = models.CharField(max_length=4, blank=True)
+    active = models.BooleanField(default=True)
+    rotated_at = models.DateTimeField(null=True, blank=True)
+    expires_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["provider", "credential_type"]
+        db_table = "AIProviderCredential"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["provider", "credential_type"], name="unique_ai_provider_credential_type"
+            ),
+        ]
+
+
+class AIProviderModel(models.Model):
+    VALIDATION_STATUSES = [
+        ("Draft", "Draft"),
+        ("To Review", "To Review"),
+        ("Validated", "Validated"),
+        ("Deprecated", "Deprecated"),
+    ]
+
+    provider = models.ForeignKey(AIProvider, related_name="models", on_delete=models.CASCADE)
+    model_code = models.CharField(max_length=180)
+    display_name = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    model_family = models.CharField(max_length=120, blank=True)
+    context_window = models.PositiveBigIntegerField(null=True, blank=True)
+    maximum_output_tokens = models.PositiveIntegerField(null=True, blank=True)
+    capabilities_json = models.JSONField(default=list, blank=True)
+    supports_streaming = models.BooleanField(default=False)
+    supports_structured_output = models.BooleanField(default=False)
+    supports_tool_calling = models.BooleanField(default=False)
+    supports_vision = models.BooleanField(default=False)
+    supports_embeddings = models.BooleanField(default=False)
+    supports_audio_transcription = models.BooleanField(default=False)
+    supports_text_to_speech = models.BooleanField(default=False)
+    input_cost_per_million = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
+    output_cost_per_million = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
+    cached_input_cost_per_million = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
+    currency = models.CharField(max_length=10, default="USD")
+    pricing_notes = models.TextField(blank=True)
+    active = models.BooleanField(default=True, db_index=True)
+    is_default_for_provider = models.BooleanField(default=False)
+    validation_status = models.CharField(
+        max_length=20, choices=VALIDATION_STATUSES, default="To Review"
+    )
+    configuration_json = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["provider", "-is_default_for_provider", "display_name"]
+        db_table = "AIProviderModel"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["provider", "model_code"], name="unique_ai_provider_model"
+            ),
+        ]
+
+    def __str__(self):
+        return f"{self.provider.name} / {self.display_name}"
+
+
+class AIUseCaseConfiguration(models.Model):
+    VALIDATION_STATUSES = [
+        ("Draft", "Draft"),
+        ("To Review", "To Review"),
+        ("Validated", "Validated"),
+        ("Rejected", "Rejected"),
+    ]
+
+    use_case_code = models.SlugField(max_length=140, unique=True)
+    display_name = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    primary_provider = models.ForeignKey(
+        AIProvider, null=True, blank=True, related_name="primary_use_cases", on_delete=models.SET_NULL
+    )
+    primary_model = models.ForeignKey(
+        AIProviderModel, null=True, blank=True, related_name="primary_use_cases", on_delete=models.SET_NULL
+    )
+    selection_mode = models.CharField(
+        max_length=20, choices=AIProvider.SELECTION_MODES, default="priority"
+    )
+    fallback_enabled = models.BooleanField(default=True)
+    fallback_providers_json = models.JSONField(default=list, blank=True)
+    required_capabilities_json = models.JSONField(default=list, blank=True)
+    temperature = models.DecimalField(max_digits=4, decimal_places=2, default=0)
+    maximum_output_tokens = models.PositiveIntegerField(default=2048)
+    timeout_seconds = models.PositiveIntegerField(default=60)
+    retry_count = models.PositiveIntegerField(default=1)
+    structured_output_required = models.BooleanField(default=False)
+    streaming_enabled = models.BooleanField(default=False)
+    active = models.BooleanField(default=True, db_index=True)
+    validation_status = models.CharField(
+        max_length=20, choices=VALIDATION_STATUSES, default="To Review"
+    )
+    configuration_json = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["display_name"]
+        db_table = "AIUseCaseConfiguration"
+
+    def __str__(self):
+        return self.display_name
+
+
+class AIAgentProviderConfiguration(models.Model):
+    agent = models.ForeignKey(AIAgent, related_name="provider_configurations", on_delete=models.CASCADE)
+    use_case = models.ForeignKey(
+        AIUseCaseConfiguration, related_name="agent_configurations", on_delete=models.CASCADE
+    )
+    provider = models.ForeignKey(AIProvider, related_name="agent_configurations", on_delete=models.CASCADE)
+    model = models.ForeignKey(
+        AIProviderModel, null=True, blank=True, related_name="agent_configurations", on_delete=models.SET_NULL
+    )
+    priority = models.PositiveIntegerField(default=100)
+    fallback_enabled = models.BooleanField(default=True)
+    active = models.BooleanField(default=True)
+    configuration_json = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["agent", "use_case", "-priority"]
+        db_table = "AIAgentProviderConfiguration"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["agent", "use_case", "provider"],
+                name="unique_ai_agent_use_case_provider",
+            ),
+        ]
+
+
+class AIProviderUsageLog(models.Model):
+    request_id = models.CharField(max_length=255, default=uuid.uuid4, db_index=True)
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    conversation_id = models.CharField(max_length=255, blank=True, db_index=True)
+    agent = models.ForeignKey(
+        AIAgent, null=True, blank=True, related_name="provider_usage_logs", on_delete=models.SET_NULL
+    )
+    use_case = models.CharField(max_length=140, db_index=True)
+    provider = models.ForeignKey(
+        AIProvider, null=True, blank=True, related_name="usage_logs", on_delete=models.SET_NULL
+    )
+    provider_code = models.CharField(max_length=100, db_index=True)
+    model = models.CharField(max_length=180, blank=True, db_index=True)
+    primary_provider_code = models.CharField(max_length=100, blank=True)
+    fallback_used = models.BooleanField(default=False, db_index=True)
+    fallback_reason = models.CharField(max_length=160, blank=True)
+    status = models.CharField(max_length=40, default="completed", db_index=True)
+    input_tokens = models.PositiveBigIntegerField(default=0)
+    output_tokens = models.PositiveBigIntegerField(default=0)
+    cached_tokens = models.PositiveBigIntegerField(default=0)
+    total_tokens = models.PositiveBigIntegerField(default=0)
+    audio_seconds = models.DecimalField(max_digits=12, decimal_places=3, default=0)
+    image_count = models.PositiveIntegerField(default=0)
+    estimated_cost = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
+    currency = models.CharField(max_length=10, default="USD")
+    latency_ms = models.PositiveIntegerField(default=0)
+    retry_count = models.PositiveIntegerField(default=0)
+    error_code = models.CharField(max_length=160, blank=True)
+    error_message = models.TextField(blank=True)
+    metadata_json = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "AIProviderUsageLog"
+        indexes = [
+            models.Index(fields=["provider_code", "created_at"], name="ai_provider_usage_time"),
+            models.Index(fields=["use_case", "created_at"], name="ai_use_case_usage_time"),
+        ]
+
+
+class AIProviderHealthLog(models.Model):
+    provider = models.ForeignKey(AIProvider, related_name="health_logs", on_delete=models.CASCADE)
+    status = models.CharField(max_length=30)
+    latency_ms = models.PositiveIntegerField(default=0)
+    model = models.CharField(max_length=180, blank=True)
+    error_code = models.CharField(max_length=160, blank=True)
+    error_message = models.TextField(blank=True)
+    checked_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ["-checked_at"]
+        db_table = "AIProviderHealthLog"
+
+
+class AIProviderCircuitState(models.Model):
+    provider = models.OneToOneField(AIProvider, related_name="circuit_state", on_delete=models.CASCADE)
+    failure_count = models.PositiveIntegerField(default=0)
+    window_started_at = models.DateTimeField(null=True, blank=True)
+    opened_at = models.DateTimeField(null=True, blank=True)
+    open_until = models.DateTimeField(null=True, blank=True)
+    last_failure_code = models.CharField(max_length=160, blank=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "AIProviderCircuitState"
+
+
+class AIProviderAuditLog(models.Model):
+    provider = models.ForeignKey(
+        AIProvider, null=True, blank=True, related_name="audit_logs", on_delete=models.SET_NULL
+    )
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    action = models.CharField(max_length=100, db_index=True)
+    changes_json = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "AIProviderAuditLog"
 
 
 class PowerBIInteractionLog(models.Model):

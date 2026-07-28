@@ -74,8 +74,8 @@
             </a>
         {% endif %}
         {% if request.user.is_staff or request.user.is_superuser or request.user.platformuser.is_platform_admin %}
-        <div class="nav-group collapsed {% if active_section == 'ia-config' or active_section == 'knowledge-base' or active_section == 'system-config' or active_section == 'openai-usage' %}active{% endif %}" data-nav-group="config">
-            <button type="button" class="nav-group-label js-toggle-config-menu" aria-expanded="false" aria-controls="config-submenu">
+        <div class="nav-group {% if active_section == 'ia-config' or active_section == 'ai-agents' or active_section == 'api-management' or active_section == 'knowledge-base' or active_section == 'system-config' or active_section == 'openai-usage' or active_section == 'reporting-config' %}active{% else %}collapsed{% endif %}" data-nav-group="config">
+            <button type="button" class="nav-group-label js-toggle-config-menu" aria-expanded="{% if active_section == 'ia-config' or active_section == 'ai-agents' or active_section == 'api-management' or active_section == 'knowledge-base' or active_section == 'system-config' or active_section == 'openai-usage' or active_section == 'reporting-config' %}true{% else %}false{% endif %}" aria-controls="config-submenu">
                 <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
                     <circle cx="12" cy="12" r="3.5" />
                     <path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.5-2.4 1a7 7 0 0 0-1.7-1L14.5 3h-5L9 6a7 7 0 0 0-1.7 1l-2.4-1-2 3.5 2 1.5A7 7 0 0 0 5 12a7 7 0 0 0 .1 1l-2 1.5 2 3.5 2.4-1a7 7 0 0 0 1.7 1L9.5 21h5l.5-3a7 7 0 0 0 1.7-1l2.4 1 2-3.5-2-1.5A7 7 0 0 0 19 12z" />
@@ -94,6 +94,15 @@
                 </a>
                 <a href="{% url 'ia-config-home' %}" class="{% if active_section == 'ia-config' %}active{% endif %}">
                     <span>AI Config</span>
+                </a>
+                <a href="{% url 'ai-agents-home' %}" class="{% if active_section == 'ai-agents' %}active{% endif %}">
+                    <span>AI Agents</span>
+                </a>
+                <a href="{% url 'api-management-home' %}" class="{% if active_section == 'api-management' %}active{% endif %}">
+                    <span>API Management</span>
+                </a>
+                <a href="{% url 'reporting-config-home' %}" class="{% if active_section == 'reporting-config' %}active{% endif %}">
+                    <span>Reporting</span>
                 </a>
                 <a href="{% url 'openai-usage-home' %}" class="{% if active_section == 'openai-usage' %}active{% endif %}">
                     <span>OpenAI API Usage</span>
@@ -123,4 +132,4 @@
         </div>
     {% endif %}
 </nav>
-<script src="{% static 'reports/source_actions.js' %}" defer></script>
+<script src="{% static 'reports/source_actions.js' %}?v=20260727-config-menu-1" defer></script>

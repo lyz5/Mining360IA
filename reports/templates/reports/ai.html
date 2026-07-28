@@ -22,7 +22,20 @@
                 <p class="eyebrow">Mining Intelligence</p>
                 <h1>AI Assistant</h1>
             </div>
-            <span class="ai-model-badge">{% if openai_enabled %}OpenAI + Power BI{% else %}Semantic fallback{% endif %}</span>
+            <div class="ai-header-controls">
+                {% if multi_agent_enabled %}
+                <label class="ai-agent-selector">
+                    <span class="sr-only">Agent</span>
+                    <select id="ai-agent-selection" aria-label="Select AI agent">
+                        <option value="auto">Auto</option>
+                        {% for agent in available_agents %}
+                        <option value="{{ agent.code }}">{{ agent.name }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+                {% endif %}
+                <span class="ai-model-badge">{% if multi_agent_enabled %}Multi-Agent{% elif openai_enabled %}OpenAI + Power BI{% else %}Semantic fallback{% endif %}</span>
+            </div>
         </header>
 
         <section class="ai-chat-shell">
@@ -209,7 +222,7 @@
     </main>
     <script src="https://cdn.jsdelivr.net/npm/powerbi-client@2.23.7/dist/powerbi.min.js"></script>
     <script src="{% static 'reports/powerbi_embed.js' %}?v=20260721-monthly-page-1"></script>
-    <script src="{% static 'reports/downtime_explorer.js' %}?v=20260721-embedded-explorer-1"></script>
+    <script src="{% static 'reports/downtime_explorer.js' %}?v=20260728-json-response-fix-1"></script>
     <script src="{% static 'reports/ai.js' %}?v=20260726-english-1"></script>
     <script src="{% static 'reports/voice_input.js' %}?v=20260726-voice-compact-1"></script>
 </body>

@@ -68,7 +68,8 @@
         });
     }
 
-    applyConfigMenuState(localStorage.getItem(configMenuStateKey) === "1");
+    const activeConfigGroup = document.querySelector("[data-nav-group='config'].active");
+    applyConfigMenuState(Boolean(activeConfigGroup) || localStorage.getItem(configMenuStateKey) === "1");
 
     document.querySelectorAll(".js-toggle-nav").forEach((button) => {
         button.addEventListener("click", () => {

@@ -140,6 +140,7 @@ from .models import (
     KnowledgeUserFeedback,
     KPIPageMapping,
     PowerBIReport,
+    ReportingReportPreference,
     SystemDatabaseConfig,
     SystemIntegrationConfig,
     SystemManagedTable,
@@ -1615,6 +1616,26 @@ def reporting_home(request):
         reports = list_workspace_reports_with_refresh()
     except Exception as exc:
         error = str(exc)
+    preferences = {
+        item.report_id: item
+        for item in ReportingReportPreference.objects.filter(
+            report_id__in=[str(getattr(report, "id", "") or "") for report in reports]
+        )
+    }
+    reports = [
+        report
+        for report in reports
+        if preferences.get(str(getattr(report, "id", "") or "")) is None
+        or preferences[str(getattr(report, "id", "") or "")].is_visible
+    ]
+    reports.sort(
+        key=lambda report: (
+            preferences.get(str(getattr(report, "id", "") or "")).display_order
+            if preferences.get(str(getattr(report, "id", "") or ""))
+            else 100000,
+            str(getattr(report, "display_name", "") or "").lower(),
+        )
+    )
     completed_count = sum(
         1 for report in reports
         if str(getattr(report, "refresh_status", "") or "").lower() == "completed"
@@ -2658,6 +2679,10 @@ def _build_matrix_answer(semantic_request: dict, rows: list[dict]) -> dict:
 @ensure_csrf_cookie
 def ai_home(request):
     openai_enabled = is_openai_configured()
+    from .agent_router_service import multi_agent_enabled
+    from .models import AIAgent
+
+    agents_enabled = multi_agent_enabled(request.user)
     return render(
         request,
         "reports/ai.html",
@@ -2665,6 +2690,12 @@ def ai_home(request):
             "active_section": "ai",
             "openai_enabled": openai_enabled,
             "is_platform_admin": _user_is_platform_admin(request.user),
+            "multi_agent_enabled": agents_enabled,
+            "available_agents": (
+                AIAgent.objects.filter(active=True).order_by("-priority", "name")
+                if agents_enabled
+                else []
+            ),
             "sidebar_stats": [
                 {"label": "Mode", "value": "AI" if openai_enabled else "Rules"},
                 {"label": "Model", "value": "OpenAI" if openai_enabled else "Semantic"},
@@ -2735,6 +2766,39 @@ def ai_ask(request):
     conversation = _sanitize_conversation(payload.get("conversation"))
     if not question:
         return JsonResponse({"ok": False, "error": "Question is required."}, status=400)
+
+    from .agent_router_service import multi_agent_enabled
+    if multi_agent_enabled(request.user):
+        try:
+            from .ai_agent_execution_service import execute_agent_question
+
+            agent_result = execute_agent_question(
+                question,
+                user=request.user,
+                conversation_id=str(payload.get("conversation_id") or "").strip(),
+                messages=conversation,
+                manual_agent=str(payload.get("agent_selection") or "auto"),
+                section_code=section_code,
+                dataset_name=(payload.get("dataset_name") or "FPR Global DB + RLS").strip(),
+                debug_mode=_user_is_platform_admin(request.user),
+            )
+            if agent_result.get("ok"):
+                answer_text = agent_result.get("chat_message") or agent_result.get("answer") or ""
+                if isinstance(answer_text, dict):
+                    answer_text = answer_text.get("answer") or answer_text.get("interpretation") or ""
+                return JsonResponse({
+                    **agent_result,
+                    "chat_message": answer_text,
+                    "answer": {
+                        "answer": answer_text,
+                        "interpretation": answer_text,
+                        "rows": agent_result.get("rows") or [],
+                        "summary": agent_result.get("rows") or [],
+                    },
+                })
+        except Exception:
+            # The existing single-pipeline chatbot remains the compatibility fallback.
+            pass
 
     from .chat_routing_service import (
         answer_without_semantic_model,

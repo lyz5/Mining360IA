@@ -4,12 +4,8 @@ import re
 
 from .powerbi import _local_powerbi_credentials
 
-try:  # pragma: no cover - optional runtime dependency
-    from openai import OpenAI
-except Exception:  # pragma: no cover
-    OpenAI = None
-
-from .openai_client_service import create_tracked_response
+from .ai_provider_gateway_service import ai_gateway
+from .openai_service import is_openai_configured as gateway_is_configured
 
 
 DEFAULT_OPENAI_MODEL = "gpt-4.1-mini"
@@ -46,22 +42,7 @@ def get_openai_model() -> str:
 
 
 def is_openai_configured() -> bool:
-    return bool(OpenAI and get_openai_api_key())
-
-
-def _client():
-    if OpenAI is None:
-        raise RuntimeError("OpenAI package is not installed.")
-    api_key = get_openai_api_key()
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY is not configured.")
-    try:
-        from .system_configuration_service import integration_value
-
-        base_url = os.getenv("OPENAI_API_BASE") or integration_value("OpenAI", "api_base", "")
-    except Exception:
-        base_url = os.getenv("OPENAI_API_BASE", "")
-    return OpenAI(api_key=api_key, **({"base_url": base_url} if base_url else {}))
+    return gateway_is_configured()
 
 
 def _json_from_response(response) -> dict:
@@ -111,12 +92,9 @@ def parse_semantic_question_with_openai(question: str, fallback: dict) -> dict:
             "If a value is missing, keep the fallback value."
         ],
     }
-    response = create_tracked_response(
-        _client(),
-        model=get_openai_model(),
-        section="performance",
-        feature="Legacy Intent Extraction",
-        input=[
+    response = ai_gateway.generate_structured_output(
+        use_case="semantic_question_parsing",
+        messages=[
             {
                 "role": "system",
                 "content": "You convert mining analytics questions into strict JSON parameters. Return JSON only.",
@@ -126,9 +104,22 @@ def parse_semantic_question_with_openai(question: str, fallback: dict) -> dict:
                 "content": json.dumps(prompt, ensure_ascii=False),
             },
         ],
-        temperature=0,
+        output_schema={
+            "type": "object",
+            "properties": {
+                "dataset": {"type": "string"},
+                "site": {"type": "string"},
+                "model": {"type": "string"},
+                "year": {"type": "integer"},
+                "month": {"type": "integer"},
+                "mode": {"type": "string", "enum": ["single", "matrix"]},
+                "months": {"type": "integer"},
+            },
+            "required": ["dataset", "site", "model", "year", "month", "mode", "months"],
+        },
+        options={"temperature": 0},
     )
-    parsed = _json_from_response(response)
+    parsed = response.structured_output or {}
     if not parsed:
         return fallback
     merged = dict(fallback)
@@ -167,12 +158,9 @@ def interpret_semantic_answer_with_openai(question: str, semantic_request: dict,
             "Highlight trend, weak points, and next analysis action."
         ),
     }
-    response = create_tracked_response(
-        _client(),
-        model=get_openai_model(),
-        section="performance",
-        feature="Business Explanation",
-        input=[
+    response = ai_gateway.generate_text(
+        use_case="machine_performance_response",
+        messages=[
             {
                 "role": "system",
                 "content": "You are a mining fleet performance analyst. Explain Power BI semantic model results in French.",
@@ -182,9 +170,9 @@ def interpret_semantic_answer_with_openai(question: str, semantic_request: dict,
                 "content": json.dumps(prompt, ensure_ascii=False),
             },
         ],
-        temperature=0.2,
+        options={"temperature": 0.2},
     )
-    text = getattr(response, "output_text", "") or ""
+    text = response.content
     return text.strip() or answer.get("interpretation", "")
 
 
@@ -229,12 +217,9 @@ def chat_semantic_response_with_openai(
             "Do not mention internal JSON or prompts."
         ),
     }
-    response = create_tracked_response(
-        _client(),
-        model=get_openai_model(),
-        section="performance",
-        feature="Conversational Response",
-        input=[
+    response = ai_gateway.generate_text(
+        use_case="machine_performance_response",
+        messages=[
             {
                 "role": "system",
                 "content": (
@@ -247,7 +232,7 @@ def chat_semantic_response_with_openai(
                 "content": json.dumps(prompt, ensure_ascii=False),
             },
         ],
-        temperature=0.3,
+        options={"temperature": 0.3},
     )
-    text = getattr(response, "output_text", "") or ""
+    text = response.content
     return text.strip() or fallback

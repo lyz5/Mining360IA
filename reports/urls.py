@@ -6,6 +6,9 @@ from . import openai_usage_views
 from . import downtime_explorer_views
 from . import resource_knowledge_views
 from . import voice_input_views
+from . import ai_agents_views
+from . import reporting_config_views
+from . import ai_provider_views
 
 
 urlpatterns = [
@@ -56,6 +59,7 @@ urlpatterns = [
     path("data-quality/runs/<int:run_id>/records/<str:control_key>/", views.data_quality_records, name="data-quality-records"),
     path("data-quality/runs/<int:run_id>/export/<str:control_key>/", views.data_quality_export, name="data-quality-export"),
     path("reporting/", views.reporting_home, name="reporting"),
+    path("config/reporting/", reporting_config_views.reporting_config_home, name="reporting-config-home"),
     path("business-performance/", views.business_performance_home, name="business-performance"),
     path("business-performance/page/<slug:page>/", views.business_performance_home, name="business-performance-page"),
     path("business-performance/customers/<path:customer>/", views.business_performance_customer, name="business-performance-customer"),
@@ -86,6 +90,34 @@ urlpatterns = [
     path("ai/downtime-explorer/<uuid:session_id>/back/", downtime_explorer_views.back_api, name="downtime-explorer-back"),
     path("ai/semantic-test/", views.ai_semantic_test, name="ai-semantic-test"),
     path("ia-config/", views.ia_config_home, name="ia-config-home"),
+    path("ia-config/agents/", ai_agents_views.ai_agents_home, name="ai-agents-home"),
+    path("ai-config/api-management/", ai_provider_views.api_management_home, name="api-management-home"),
+    path("ai-config/api-management/providers/<int:provider_id>/credential/", ai_provider_views.provider_credential_page, name="ai-provider-credential-page"),
+    path("ai-config/api-management/providers/<int:provider_id>/test/", ai_provider_views.provider_test_page, name="ai-provider-test-page"),
+    path("ai-config/api-management/providers/<int:provider_id>/models/add/", ai_provider_views.provider_model_create_page, name="ai-provider-model-create-page"),
+    path("ai-config/api-management/providers/<int:provider_id>/status/", ai_provider_views.provider_status_page, name="ai-provider-status-page"),
+    path("api/ai/providers/dashboard/", ai_provider_views.api_management_dashboard, name="api-management-dashboard"),
+    path("api/ai/providers/", ai_provider_views.providers_collection_api, name="ai-providers-api"),
+    path("api/ai/providers/<int:provider_id>/", ai_provider_views.provider_item_api, name="ai-provider-item-api"),
+    path("api/ai/providers/<int:provider_id>/credentials/", ai_provider_views.provider_credential_api, name="ai-provider-credential-api"),
+    path("api/ai/providers/<int:provider_id>/test/", ai_provider_views.provider_test_api, name="ai-provider-test-api"),
+    path("api/ai/providers/<int:provider_id>/set-default/", ai_provider_views.provider_set_default_api, name="ai-provider-set-default-api"),
+    path("api/ai/provider-models/", ai_provider_views.provider_models_api, name="ai-provider-models-api"),
+    path("api/ai/provider-models/<int:model_id>/", ai_provider_views.provider_model_item_api, name="ai-provider-model-item-api"),
+    path("api/ai/use-case-routing/", ai_provider_views.use_case_routing_api, name="ai-use-case-routing-api"),
+    path("api/ai/use-case-routing/<int:use_case_id>/", ai_provider_views.use_case_routing_api, name="ai-use-case-routing-item-api"),
+    path("api/ai/provider-playground/test/", ai_provider_views.provider_playground_api, name="ai-provider-playground-api"),
+    path("api/ai/provider-health/check-all/", ai_provider_views.provider_health_all_api, name="ai-provider-health-all-api"),
+    path("api/ai/provider-usage/", ai_provider_views.provider_usage_api, name="ai-provider-usage-api"),
+    path("ia-config/agents/api/", ai_agents_views.agents_collection_api, name="ai-agents-collection-api"),
+    path("ia-config/agents/api/router/", ai_agents_views.router_configuration_api, name="ai-agent-router-config-api"),
+    path("ia-config/agents/api/router/test/", ai_agents_views.router_test_api, name="ai-agent-router-test-api"),
+    path("ia-config/agents/api/logs/", ai_agents_views.agent_logs_api, name="ai-agent-logs-api"),
+    path("ia-config/agents/api/<int:agent_id>/", ai_agents_views.agent_item_api, name="ai-agent-item-api"),
+    path("ia-config/agents/api/<int:agent_id>/test/", ai_agents_views.agent_test_api, name="ai-agent-test-api"),
+    path("ia-config/agents/api/<int:agent_id>/providers/", ai_agents_views.agent_provider_configurations_api, name="ai-agent-provider-configurations-api"),
+    path("ia-config/agents/api/<int:agent_id>/<str:resource_type>/", ai_agents_views.agent_components_api, name="ai-agent-components-api"),
+    path("ia-config/agents/api/<int:agent_id>/<str:resource_type>/<int:item_id>/", ai_agents_views.agent_component_item_api, name="ai-agent-component-item-api"),
     path("ia-config/api/sections/", views.ia_config_sections_api, name="ia-config-sections-api"),
     path("ia-config/api/<str:section_code>/import-semantic-model/", views.ia_config_import_semantic_model_api, name="ia-config-import-semantic-model-api"),
     path("ia-config/api/<str:section_code>/<str:resource_type>/", views.ia_config_collection_api, name="ia-config-collection-api"),

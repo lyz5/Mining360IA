@@ -83,6 +83,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'OPTIONS': {
+            # The SQL Server mirror worker reads configuration tables in a
+            # background thread. WAL keeps those reads from blocking runtime
+            # writes such as Downtime Explorer session creation.
+            'timeout': 30,
+            'init_command': 'PRAGMA journal_mode=WAL; PRAGMA synchronous=NORMAL',
+        },
     }
 }
 
