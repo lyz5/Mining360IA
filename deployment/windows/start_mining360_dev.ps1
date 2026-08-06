@@ -15,6 +15,13 @@ $env:MINING360_CSRF_TRUSTED_ORIGINS = "http://$HostName"
 $env:MINING360_SQL_CONFIG_STORE = "0"
 $env:PYTHONUNBUFFERED = "1"
 
+foreach ($name in @("ALL_PROXY", "GIT_HTTP_PROXY", "GIT_HTTPS_PROXY", "HTTP_PROXY", "HTTPS_PROXY")) {
+    $value = [Environment]::GetEnvironmentVariable($name)
+    if ($value -match '^https?://127\.0\.0\.1:9/?$') {
+        Remove-Item "Env:$name" -ErrorAction SilentlyContinue
+    }
+}
+
 Set-Location $root
 $ErrorActionPreference = "Continue"
 & $python -m waitress --listen=$Listen --threads=8 Mining360IA.wsgi:application `

@@ -1,4 +1,4 @@
-from subprocess import CompletedProcess
+from subprocess import CalledProcessError, CompletedProcess
 from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
@@ -121,6 +121,17 @@ class DeploymentReleaseSourceTests(TestCase):
         self.assertEqual(release.git_commit, "b" * 40)
         self.assertEqual(release.status, "Validated")
         self.assertEqual(DeploymentReleaseSourceService().sync_latest().pk, release.pk)
+
+    @patch("deployment.services.releases.Path.is_file", return_value=True)
+    @patch("deployment.services.releases.subprocess.run")
+    def test_git_error_returns_provider_diagnostic(self, run, _is_file):
+        run.side_effect = CalledProcessError(
+            128,
+            ["git", "ls-remote"],
+            stderr="fatal: unable to access the configured repository",
+        )
+        with self.assertRaisesRegex(ValueError, "unable to access the configured repository"):
+            DeploymentReleaseSourceService().sync_latest()
 
 
 class OneClickDeploymentTests(TestCase):

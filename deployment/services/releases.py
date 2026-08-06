@@ -46,20 +46,27 @@ class DeploymentReleaseSourceService:
 
     def sync_latest(self, *, user=None) -> ApplicationRelease:
         config = self.configuration()
-        result = subprocess.run(
-            [
-                config["git_executable"],
-                "ls-remote",
-                "--heads",
-                config["repository"],
-                f"refs/heads/{config['branch']}",
-            ],
-            check=True,
-            capture_output=True,
-            text=True,
-            timeout=45,
-            env={**os.environ, "GIT_TERMINAL_PROMPT": "0"},
-        )
+        try:
+            result = subprocess.run(
+                [
+                    config["git_executable"],
+                    "ls-remote",
+                    "--heads",
+                    config["repository"],
+                    f"refs/heads/{config['branch']}",
+                ],
+                check=True,
+                capture_output=True,
+                text=True,
+                timeout=45,
+                env={**os.environ, "GIT_TERMINAL_PROMPT": "0"},
+            )
+        except subprocess.CalledProcessError as exc:
+            detail = str(exc.stderr or exc.stdout or "Git returned no diagnostic output.").strip().splitlines()
+            message = detail[-1][:500] if detail else "Git returned no diagnostic output."
+            raise ValueError(f"Unable to read the deployment branch: {message}") from exc
+        except subprocess.TimeoutExpired as exc:
+            raise ValueError("The GitHub deployment branch check timed out.") from exc
         commit = (result.stdout.strip().split() or [""])[0].lower()
         if not COMMIT_PATTERN.fullmatch(commit):
             raise ValueError(f"No immutable commit was found for branch {config['branch']}.")
