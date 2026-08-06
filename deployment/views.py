@@ -1,8 +1,12 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
+import sys
+from pathlib import Path
 
+from django.conf import settings
 from django.db import connection
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
@@ -31,6 +35,38 @@ def _payload(request):
         return json.loads(request.body or b"{}")
     except (TypeError, ValueError, json.JSONDecodeError):
         raise ValueError("Invalid JSON payload.")
+
+
+def _kick_deployment_worker():
+    try:
+        scheduled = subprocess.run(
+            ["schtasks.exe", "/Run", "/TN", "Mining360DeploymentWorker"],
+            check=False,
+            capture_output=True,
+            timeout=10,
+        )
+        if scheduled.returncode == 0:
+            return "scheduled_task"
+    except (OSError, subprocess.SubprocessError):
+        pass
+
+    command = [
+        sys.executable,
+        str(Path(settings.BASE_DIR) / "manage.py"),
+        "run_deployment_worker",
+        "--once",
+    ]
+    options = {
+        "cwd": str(settings.BASE_DIR),
+        "stdin": subprocess.DEVNULL,
+        "stdout": subprocess.DEVNULL,
+        "stderr": subprocess.DEVNULL,
+        "close_fds": True,
+    }
+    if os.name == "nt":
+        options["creationflags"] = subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP
+    subprocess.Popen(command, **options)
+    return "local_process"
 
 
 def _target_payload(item):
@@ -362,17 +398,15 @@ def quick_deploy_api(request):
             action="QUEUE_DEPLOYMENT",
             details_json={"job_id": str(job.pk), "commit": release.git_commit},
         )
-        try:
-            subprocess.run(
-                ["schtasks.exe", "/Run", "/TN", "Mining360DeploymentWorker"],
-                check=False,
-                capture_output=True,
-                timeout=10,
-            )
-        except (OSError, subprocess.SubprocessError):
-            pass
+        worker_launcher = _kick_deployment_worker()
         return JsonResponse(
-            {"ok": True, "job": _job_payload(job), "release": release.version, "commit": release.git_commit},
+            {
+                "ok": True,
+                "job": _job_payload(job),
+                "release": release.version,
+                "commit": release.git_commit,
+                "worker_launcher": worker_launcher,
+            },
             status=202,
         )
     except (ValueError, subprocess.SubprocessError) as exc:

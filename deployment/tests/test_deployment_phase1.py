@@ -139,12 +139,14 @@ class OneClickDeploymentTests(TestCase):
             version="main-test-release", name="Main", git_commit="c" * 40, git_branch="main", status="Validated"
         )
 
+    @patch("deployment.views.subprocess.Popen")
     @patch("deployment.views.subprocess.run")
     @patch("deployment.views.DeploymentPlanService.dry_run")
     @patch("deployment.views.DeploymentReleaseSourceService.sync_latest")
-    def test_quick_deploy_queues_job(self, sync_latest, dry_run, _run):
+    def test_quick_deploy_queues_job(self, sync_latest, dry_run, run, popen):
         sync_latest.return_value = self.release
         dry_run.return_value = {"ready": True, "status": "Ready"}
+        run.return_value.returncode = 0
         response = self.client.post(
             reverse("deployment-quick-deploy-api"),
             data={"target_id": self.target.pk, "confirmation": "DEPLOY"},
@@ -152,6 +154,17 @@ class OneClickDeploymentTests(TestCase):
         )
         self.assertEqual(response.status_code, 202)
         self.assertEqual(DeploymentJob.objects.get().status, "Queued")
+        self.assertEqual(response.json()["worker_launcher"], "scheduled_task")
+        popen.assert_not_called()
+
+    @patch("deployment.views.subprocess.Popen")
+    @patch("deployment.views.subprocess.run")
+    def test_local_worker_is_started_when_scheduled_task_is_missing(self, run, popen):
+        from deployment.views import _kick_deployment_worker
+
+        run.return_value.returncode = 1
+        self.assertEqual(_kick_deployment_worker(), "local_process")
+        popen.assert_called_once()
 
     def test_quick_deploy_requires_explicit_confirmation(self):
         response = self.client.post(
