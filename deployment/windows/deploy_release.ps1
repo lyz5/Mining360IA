@@ -98,7 +98,7 @@ try {
         $sqlcmd = (Get-Command sqlcmd.exe -ErrorAction SilentlyContinue).Source
         if ($sqlcmd) {
             $sqlBackup = "Mining360App_PreDeploy_{0}_{1}.bak" -f (Get-Date -Format 'yyyyMMdd-HHmmss'), $Commit.Substring(0, 8)
-            $query = "DECLARE @f nvarchar(4000)=CAST(SERVERPROPERTY('InstanceDefaultBackupPath') AS nvarchar(4000))+N'$sqlBackup'; BACKUP DATABASE [Mining360App] TO DISK=@f WITH COPY_ONLY, COMPRESSION, CHECKSUM;"
+            $query = "DECLARE @p nvarchar(4000)=CAST(SERVERPROPERTY('InstanceDefaultBackupPath') AS nvarchar(4000)); DECLARE @f nvarchar(4000)=@p+CASE WHEN RIGHT(@p,1) IN (N'\',N'/') THEN N'' ELSE N'\' END+N'$sqlBackup'; BACKUP DATABASE [Mining360App] TO DISK=@f WITH COPY_ONLY, COMPRESSION, CHECKSUM;"
             Invoke-Native 'SQL Server backup' { & $sqlcmd -S localhost -d master -E -b -Q $query }
         } else {
             throw 'sqlcmd is required to create the pre-deployment database backup.'
