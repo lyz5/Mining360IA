@@ -5128,6 +5128,15 @@ body.data-browser-fullscreen .data-browser-layout {
     margin-top: 14px;
 }
 
+.browser-section-label {
+    margin-top: 8px;
+    padding: 8px 4px 2px;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 850;
+    text-transform: uppercase;
+}
+
 .browser-list-row {
     display: grid;
     grid-template-columns: 34px minmax(0, 1fr);
@@ -9563,5 +9572,111 @@ body.data-browser-fullscreen .data-browser-layout {
     }
     .ai-agent-selector select {
         max-width: 170px;
+    }
+}
+.browser-write-preview-result {
+    margin: 0 24px 24px;
+    padding: 16px;
+    border: 1px solid #d7deea;
+    border-radius: 6px;
+    background: #f7f9fc;
+}
+
+.browser-write-preview-result__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.browser-write-preview-result__header span {
+    color: #667085;
+    font-size: 12px;
+}
+
+.browser-write-preview-result__blockers {
+    margin: 12px 0;
+    padding: 10px 12px;
+    border-left: 3px solid #d92d20;
+    background: #fff1f0;
+    color: #912018;
+}
+
+.browser-write-preview-result ol {
+    margin: 12px 0 0;
+    padding-left: 22px;
+}
+
+.browser-write-preview-result li {
+    padding: 4px 0;
+}
+
+.browser-write-preview-result li span {
+    margin-left: 8px;
+    color: #475467;
+}
+
+.miningprod-user-mapping {
+    margin: 0 24px 16px;
+    padding: 14px 16px;
+    border: 1px solid #d7deea;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.miningprod-user-mapping > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.miningprod-user-mapping > div:first-child span {
+    color: #667085;
+}
+
+.miningprod-user-mapping__search {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.miningprod-user-candidates {
+    display: grid;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+[data-miningprod-rollback-test] {
+    margin-top: 12px;
+}
+
+.miningprod-user-candidate {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d7deea;
+    background: #f8fafc;
+    color: #101828;
+    text-align: left;
+    cursor: pointer;
+}
+
+.miningprod-user-candidate:hover,
+.miningprod-user-candidate:focus-visible {
+    border-color: #667085;
+    background: #fff;
+}
+
+@media (max-width: 640px) {
+    .miningprod-user-mapping__search {
+        grid-template-columns: 1fr;
+    }
+
+    .miningprod-user-candidate,
+    .miningprod-user-mapping > div:first-child {
+        flex-direction: column;
     }
 }

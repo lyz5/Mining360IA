@@ -1,0 +1,149 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OpenAI API Usage | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260721-nav-config-1">
+</head>
+<body>
+{% include "reports/includes/app_nav.html" %}
+<main class="app-shell openai-usage-shell"
+      data-openai-usage-root
+      data-dashboard-url="{% url 'openai-usage-dashboard-api' %}"
+      data-settings-url="{% url 'openai-usage-settings-api' %}"
+      data-sync-url="{% url 'openai-usage-synchronize-api' %}"
+      data-export-csv="{% url 'openai-usage-export' 'csv' %}"
+      data-export-json="{% url 'openai-usage-export' 'json' %}">
+    <header class="usage-header">
+        <div>
+            <p class="eyebrow">Platform administration</p>
+            <h1>OpenAI API Usage</h1>
+            <p>Monitor API consumption, costs, token usage and budget for Mining 360.</p>
+        </div>
+        <div class="usage-header__actions">
+            <button class="button secondary" type="button" data-usage-settings>Settings</button>
+            <button class="button" type="button" data-usage-sync>Synchronize OpenAI Usage</button>
+        </div>
+    </header>
+
+    <section class="usage-filter-panel" aria-label="Usage filters">
+        <label>Period
+            <select data-filter="preset">
+                <option value="current_month">Current month</option>
+                <option value="last_7_days">Last 7 days</option>
+                <option value="last_30_days">Last 30 days</option>
+                <option value="previous_month">Previous month</option>
+            </select>
+        </label>
+        <label>Model<select data-filter="model"><option value="">All models</option></select></label>
+        <label>Section<select data-filter="section"><option value="">All sections</option></select></label>
+        <label>Feature<select data-filter="feature"><option value="">All features</option></select></label>
+        <label>Status<select data-filter="status"><option value="">All statuses</option></select></label>
+        <label>Timezone
+            <select data-filter="timezone"><option value="UTC">UTC</option><option value="local">User local</option></select>
+        </label>
+    </section>
+
+    <div class="usage-state" data-usage-state>Loading OpenAI usage...</div>
+
+    <section class="usage-kpi-grid" data-usage-kpis></section>
+
+    <section class="usage-budget-panel">
+        <div class="usage-panel-heading">
+            <div><p class="eyebrow">Budget control</p><h2>Monthly consumption</h2></div>
+            <span data-budget-source></span>
+        </div>
+        <div class="usage-budget-values">
+            <strong data-budget-copy>--</strong>
+            <span data-budget-percentage>--</span>
+        </div>
+        <div class="usage-progress"><span data-budget-progress></span></div>
+        <p data-budget-remaining>--</p>
+    </section>
+
+    <section class="usage-chart-grid">
+        <article class="usage-panel usage-panel--wide">
+            <div class="usage-panel-heading"><div><p class="eyebrow">Financial trend</p><h2>Daily Spend</h2></div></div>
+            <div class="usage-chart" data-chart="daily_spend"></div>
+        </article>
+        <article class="usage-panel">
+            <div class="usage-panel-heading"><div><p class="eyebrow">Consumption</p><h2>Daily Tokens</h2></div></div>
+            <div class="usage-chart" data-chart="daily_tokens"></div>
+        </article>
+        <article class="usage-panel">
+            <div class="usage-panel-heading"><div><p class="eyebrow">Models</p><h2>Cost by Model</h2></div></div>
+            <div class="usage-ranking" data-ranking="usage_by_model"></div>
+        </article>
+        <article class="usage-panel">
+            <div class="usage-panel-heading"><div><p class="eyebrow">Mining 360</p><h2>Usage by Section</h2></div></div>
+            <div class="usage-ranking" data-ranking="usage_by_section"></div>
+        </article>
+        <article class="usage-panel">
+            <div class="usage-panel-heading"><div><p class="eyebrow">Workflows</p><h2>Cost by Feature</h2></div></div>
+            <div class="usage-ranking" data-ranking="usage_by_feature"></div>
+        </article>
+    </section>
+
+    <section class="usage-alerts" data-usage-alerts></section>
+
+    <section class="usage-panel usage-table-panel">
+        <div class="usage-panel-heading">
+            <div><p class="eyebrow">Audit detail</p><h2>Usage Log</h2></div>
+            <div class="usage-table-actions">
+                <input type="search" placeholder="Search usage..." data-usage-search>
+                <a class="button secondary" data-export="csv">CSV</a>
+                <a class="button secondary" data-export="json">JSON</a>
+            </div>
+        </div>
+        <div class="table-scroll"><table class="data-table usage-table" data-usage-table></table></div>
+        <div class="usage-pagination">
+            <span data-page-summary></span>
+            <button class="icon-button" type="button" data-page-previous aria-label="Previous page">‹</button>
+            <button class="icon-button" type="button" data-page-next aria-label="Next page">›</button>
+        </div>
+    </section>
+</main>
+
+<div class="browser-modal" data-settings-modal hidden aria-hidden="true">
+    <div class="browser-modal__backdrop" data-settings-close></div>
+    <div class="browser-modal__panel browser-modal__panel--wide" role="dialog" aria-modal="true" aria-labelledby="usage-settings-title">
+        <div class="browser-modal__header">
+            <div><p class="eyebrow">Administration</p><h2 id="usage-settings-title">OpenAI Usage Settings</h2></div>
+            <button class="icon-button" type="button" data-settings-close aria-label="Close">×</button>
+        </div>
+        <form class="usage-settings-form" data-settings-form>
+            <div class="form-grid">
+                <label>Organization ID<input name="organization_id"></label>
+                <label>Default Project ID<input name="project_id"></label>
+                <label>Monthly Budget<input name="monthly_budget" type="number" min="0" step="0.01"></label>
+                <label>Currency<input name="currency" maxlength="12"></label>
+                <label>Warning Threshold (%)<input name="warning_percentage" type="number" min="0" max="100" step="0.1"></label>
+                <label>Critical Threshold (%)<input name="critical_percentage" type="number" min="0" max="100" step="0.1"></label>
+                <label>Usage Sync (minutes)<input name="usage_sync_frequency_minutes" type="number" min="15"></label>
+                <label>Cost Sync (minutes)<input name="cost_sync_frequency_minutes" type="number" min="60"></label>
+                <label>Timezone<input name="timezone_name"></label>
+                <label>Retention (days)<input name="data_retention_days" type="number" min="30"></label>
+                <label>Billing URL<input name="billing_url" type="url"></label>
+                <label class="checkbox-field"><input name="enable_internal_usage_logging" type="checkbox"> Internal Usage Logging</label>
+                <label class="checkbox-field"><input name="enable_cost_synchronization" type="checkbox"> Cost Synchronization</label>
+                <label class="checkbox-field"><input name="enable_credit_synchronization" type="checkbox"> Credit Synchronization</label>
+            </div>
+            <p class="usage-secret-state" data-admin-key-state></p>
+            <div class="form-actions">
+                <button class="button secondary" type="button" data-settings-close>Cancel</button>
+                <button class="button" type="submit">Save Settings</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="browser-center-message" data-usage-message hidden aria-hidden="true">
+    <div class="browser-center-message__card">
+        <strong class="browser-center-message__text" data-usage-message-text></strong>
+        <div class="browser-center-message__actions"><button class="button" type="button" data-usage-message-ok>OK</button></div>
+    </div>
+</div>
+<script src="{% static 'reports/openai_usage.js' %}?v=20260717-1"></script>
+</body>
+</html>

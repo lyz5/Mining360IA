@@ -78,11 +78,56 @@ class PlatformUser(models.Model):
 
 
 class DataBrowser(models.Model):
+    SOURCE_MODES = [
+        ("managed_table", "Mining 360 Managed Table"),
+        ("external_view", "External Database View"),
+        ("miningprod_metaform", "MiningProd MetaForm"),
+    ]
+    WRITE_STRATEGIES = [
+        ("managed_table", "Mining 360 Managed Table"),
+        ("read_only", "Read Only"),
+        ("miningprod_metaform", "MiningProd MetaForm Service"),
+    ]
+    MIGRATION_STATUSES = [
+        ("not_started", "Not Started"),
+        ("read_only", "Read Only Validation"),
+        ("write_validation", "Write Validation"),
+        ("ready", "Ready for Cutover"),
+        ("migrated", "Migrated"),
+        ("blocked", "Blocked"),
+    ]
+
     name = models.CharField(max_length=255)
     display_order = models.PositiveIntegerField(default=0)
+    section = models.CharField(max_length=120, blank=True)
     description = models.TextField(blank=True)
     table_name = models.CharField(max_length=255, unique=True)
     source_view_name = models.CharField(max_length=255)
+    source_mode = models.CharField(max_length=30, choices=SOURCE_MODES, default="managed_table")
+    source_connection = models.ForeignKey(
+        "SystemIntegrationConfig",
+        related_name="data_browsers",
+        null=True,
+        blank=True,
+        on_delete=models.PROTECT,
+    )
+    external_form_id = models.PositiveIntegerField(null=True, blank=True, unique=True)
+    primary_key_column = models.CharField(max_length=128, default="BrowserRecordId")
+    write_strategy = models.CharField(max_length=30, choices=WRITE_STRATEGIES, default="managed_table")
+    allow_create = models.BooleanField(default=True)
+    allow_edit = models.BooleanField(default=True)
+    allow_delete = models.BooleanField(default=True)
+    allow_import = models.BooleanField(default=True)
+    allow_export = models.BooleanField(default=True)
+    default_page_size = models.PositiveIntegerField(default=50)
+    maximum_page_size = models.PositiveIntegerField(default=500)
+    default_sort_json = models.JSONField(default=list, blank=True)
+    source_metadata_json = models.JSONField(default=dict, blank=True)
+    migration_status = models.CharField(
+        max_length=30,
+        choices=MIGRATION_STATUSES,
+        default="not_started",
+    )
     is_active = models.BooleanField(default=True)
     show_browser_record_id = models.BooleanField(default=True)
     show_eventchain_id = models.BooleanField(default=True)
@@ -113,6 +158,8 @@ class DataBrowserColumn(models.Model):
     browser = models.ForeignKey(DataBrowser, related_name="columns", on_delete=models.CASCADE)
     display_name = models.CharField(max_length=255)
     sql_name = models.CharField(max_length=128)
+    source_column_name = models.CharField(max_length=128, blank=True)
+    source_field_id = models.PositiveIntegerField(null=True, blank=True)
     data_type = models.CharField(max_length=20, choices=DATA_TYPES)
     length = models.PositiveIntegerField(null=True, blank=True)
     is_required = models.BooleanField(default=False)
@@ -120,11 +167,17 @@ class DataBrowserColumn(models.Model):
     default_value = models.CharField(max_length=255, blank=True)
     display_order = models.PositiveIntegerField(default=0)
     is_visible = models.BooleanField(default=True)
+    is_editable = models.BooleanField(default=True)
+    is_filterable = models.BooleanField(default=True)
+    is_sortable = models.BooleanField(default=True)
+    is_searchable = models.BooleanField(default=True)
+    is_exportable = models.BooleanField(default=True)
     is_lookup = models.BooleanField(default=False)
     lookup_source_name = models.CharField(max_length=255, blank=True)
     lookup_value_column = models.CharField(max_length=128, blank=True)
     lookup_label_column = models.CharField(max_length=128, blank=True)
     lookup_filter = models.CharField(max_length=255, blank=True)
+    source_metadata_json = models.JSONField(default=dict, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -151,6 +204,162 @@ class DataBrowserSyncLog(models.Model):
 
     def __str__(self) -> str:
         return f"{self.browser.name} - {self.action} - {self.status}"
+
+
+class DataBrowserWriteMapping(models.Model):
+    STRATEGIES = [
+        ("direct_table", "Direct Table"),
+        ("eventchain_eav", "EventChain EAV"),
+        ("metaform_adapter", "MetaForm Adapter"),
+    ]
+    VALIDATION_STATUSES = [
+        ("draft", "Draft"),
+        ("preview_validated", "Preview Validated"),
+        ("write_validated", "Write Validated"),
+        ("active", "Active"),
+        ("blocked", "Blocked"),
+    ]
+
+    browser = models.OneToOneField(
+        DataBrowser,
+        related_name="write_mapping",
+        on_delete=models.CASCADE,
+    )
+    strategy = models.CharField(max_length=30, choices=STRATEGIES)
+    root_table = models.CharField(max_length=128)
+    root_primary_key = models.CharField(max_length=128)
+    configuration_json = models.JSONField(default=dict, blank=True)
+    mapping_version = models.CharField(max_length=30, default="1.0")
+    validation_status = models.CharField(
+        max_length=30,
+        choices=VALIDATION_STATUSES,
+        default="draft",
+    )
+    allow_create = models.BooleanField(default=False)
+    allow_edit = models.BooleanField(default=False)
+    allow_delete = models.BooleanField(default=False)
+    active = models.BooleanField(default=False)
+    preview_validated_at = models.DateTimeField(null=True, blank=True)
+    preview_validated_by = models.ForeignKey(
+        User,
+        related_name="preview_validated_browser_mappings",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    activated_at = models.DateTimeField(null=True, blank=True)
+    activated_by = models.ForeignKey(
+        User,
+        related_name="activated_browser_mappings",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["browser__display_order", "browser__name"]
+        db_table = "DataBrowserWriteMapping"
+
+    def __str__(self) -> str:
+        return f"{self.browser.name} ({self.strategy})"
+
+
+class MiningProdUserMapping(models.Model):
+    VALIDATION_STATUSES = [
+        ("draft", "Draft"),
+        ("validated", "Validated"),
+        ("rejected", "Rejected"),
+    ]
+
+    user = models.OneToOneField(
+        User,
+        related_name="miningprod_user_mapping",
+        on_delete=models.CASCADE,
+    )
+    external_employee_id = models.PositiveIntegerField(null=True, blank=True, unique=True)
+    external_user_id = models.PositiveIntegerField()
+    external_username = models.CharField(max_length=150, unique=True)
+    validation_status = models.CharField(
+        max_length=20,
+        choices=VALIDATION_STATUSES,
+        default="draft",
+    )
+    active = models.BooleanField(default=True)
+    validated_by = models.ForeignKey(
+        User,
+        related_name="validated_miningprod_user_mappings",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    validated_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["external_username"]
+        db_table = "MiningProdUserMapping"
+
+    def __str__(self) -> str:
+        return f"{self.user.get_username()} -> {self.external_username}"
+
+
+class DataBrowserWriteAuditLog(models.Model):
+    OPERATIONS = [
+        ("create", "Create"),
+        ("edit", "Edit"),
+        ("delete", "Delete"),
+        ("rollback_test", "Rollback Test"),
+    ]
+    STATUSES = [
+        ("previewed", "Previewed"),
+        ("validated", "Validated"),
+        ("completed", "Completed"),
+        ("failed", "Failed"),
+        ("rejected", "Rejected"),
+    ]
+
+    request_id = models.UUIDField(unique=True)
+    browser = models.ForeignKey(
+        DataBrowser,
+        related_name="write_audit_logs",
+        on_delete=models.PROTECT,
+    )
+    mapping = models.ForeignKey(
+        DataBrowserWriteMapping,
+        related_name="audit_logs",
+        on_delete=models.PROTECT,
+    )
+    user = models.ForeignKey(
+        User,
+        related_name="data_browser_write_audit_logs",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    operation = models.CharField(max_length=20, choices=OPERATIONS)
+    dry_run = models.BooleanField(default=True)
+    record_key = models.CharField(max_length=255, blank=True)
+    input_hash = models.CharField(max_length=64)
+    before_json = models.JSONField(default=dict, blank=True)
+    after_json = models.JSONField(default=dict, blank=True)
+    execution_plan_json = models.JSONField(default=dict, blank=True)
+    status = models.CharField(max_length=20, choices=STATUSES, default="previewed")
+    error_message = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "DataBrowserWriteAuditLog"
+        indexes = [
+            models.Index(fields=["browser", "operation", "created_at"], name="browser_write_audit_idx"),
+        ]
+
+    def __str__(self) -> str:
+        return f"{self.browser.name} {self.operation} {self.request_id}"
 
 
 class AIConfigSection(models.Model):

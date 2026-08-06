@@ -97,12 +97,24 @@ def _normalize_server(server: str) -> list[str]:
     return list(dict.fromkeys(variants))
 
 
-def _build_connection_strings() -> list[str]:
-    server = sql_config_value("MINING360_SQL_SERVER", DEFAULT_SERVER)
-    database = sql_config_value("MINING360_SQL_DATABASE", DEFAULT_DATABASE)
-    password = sql_config_value("MINING360_SQL_PASSWORD") or sql_config_value("SQLSERVER_PASSWORD")
-    user = sql_config_value("MINING360_SQL_USER") or (DEFAULT_USER if password else None)
-    selected_driver = sql_config_value("MINING360_SQL_DRIVER")
+def _build_connection_strings(
+    server: str | None = None,
+    database: str | None = None,
+    user: str | None = None,
+    password: str | None = None,
+    port: int | None = None,
+    driver: str | None = None,
+    timeout_seconds: int | None = None,
+) -> list[str]:
+    server = server or sql_config_value("MINING360_SQL_SERVER", DEFAULT_SERVER)
+    database = database or sql_config_value("MINING360_SQL_DATABASE", DEFAULT_DATABASE)
+    password = password if password is not None else (
+        sql_config_value("MINING360_SQL_PASSWORD") or sql_config_value("SQLSERVER_PASSWORD")
+    )
+    user = user if user is not None else (sql_config_value("MINING360_SQL_USER") or (DEFAULT_USER if password else None))
+    port = int(port or sql_config_value("MINING360_SQL_PORT", str(DEFAULT_PORT)))
+    selected_driver = driver or sql_config_value("MINING360_SQL_DRIVER")
+    timeout_seconds = int(timeout_seconds or sql_timeout_seconds())
     drivers = [selected_driver] if selected_driver else DEFAULT_DRIVER_CANDIDATES
     connection_strings: list[str] = []
     encrypt_variants = [
@@ -115,7 +127,8 @@ def _build_connection_strings() -> list[str]:
         if not driver:
             continue
         driver = driver.strip()
-        for server_variant in _normalize_server(server):
+        server_with_port = server if "\\" in server or "," in server else f"{server},{port}"
+        for server_variant in _normalize_server(server_with_port):
             base = [
                 f"DRIVER={{{driver}}}",
                 f"SERVER={server_variant}",
@@ -124,7 +137,7 @@ def _build_connection_strings() -> list[str]:
             if driver.startswith("ODBC Driver"):
                 for extra in encrypt_variants:
                     parts = list(base) + list(extra)
-                    parts.append(f"Connection Timeout={sql_timeout_seconds()}")
+                    parts.append(f"Connection Timeout={timeout_seconds}")
                     if user and password:
                         parts.extend([f"UID={user}", f"PWD={password}"])
                     else:
@@ -132,7 +145,7 @@ def _build_connection_strings() -> list[str]:
                     connection_strings.append(";".join(parts) + ";")
             else:
                 parts = list(base)
-                parts.append(f"Connection Timeout={sql_timeout_seconds()}")
+                parts.append(f"Connection Timeout={timeout_seconds}")
                 if user and password:
                     parts.extend([f"UID={user}", f"PWD={password}"])
                 else:
@@ -185,8 +198,10 @@ def connect(
     user: str | None = None,
     password: str | None = None,
     port: int | None = None,
+    driver: str | None = None,
+    timeout_seconds: int | None = None,
 ):
-    if pytds is not None:
+    if pytds is not None and not driver:
         connection = pytds.connect(
             **_build_pytds_kwargs(
                 server=server,
@@ -212,21 +227,30 @@ def connect(
         )
 
     errors = []
-    for candidate in _build_connection_strings():
+    for candidate in _build_connection_strings(
+        server=server,
+        database=database,
+        user=user,
+        password=password,
+        port=port,
+        driver=driver,
+        timeout_seconds=timeout_seconds,
+    ):
         try:
             connection = pyodbc.connect(candidate)
-            try:
-                yield connection
-                connection.commit()
-            except Exception:
-                connection.rollback()
-                raise
-            finally:
-                connection.close()
-            return
         except Exception as exc:
-            errors.append((candidate, exc))
+            errors.append(exc)
+            continue
+        try:
+            yield connection
+            connection.commit()
+        except Exception:
+            connection.rollback()
+            raise
+        finally:
+            connection.close()
+        return
     raise RuntimeError(
         "Impossible d'etablir la connexion SQL Server avec les variantes essayees. "
-        + " | ".join(f"{candidate} => {error}" for candidate, error in errors)
+        + " | ".join(str(error) for error in errors)
     )

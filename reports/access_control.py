@@ -21,6 +21,8 @@ MODULE_PATH_PREFIXES = (
 )
 
 ADMIN_ONLY_PREFIXES = (
+    "/config/deployment/",
+    "/api/deployment/",
     "/users/",
     "/ia-config/",
     "/ia-config/agents/",
@@ -39,6 +41,8 @@ ADMIN_ONLY_PREFIXES = (
 )
 
 ADMIN_WRITE_PREFIXES = (
+    "/config/deployment/",
+    "/api/deployment/",
     "/data-browsers",
     "/data-sources/",
     "/ia-config/",

@@ -1,0 +1,72 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test {{ provider.name }} | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260728-api-management-3">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell api-management-shell">
+        <header class="topbar api-management-header">
+            <div>
+                <p class="eyebrow">API Management</p>
+                <h1>Test {{ provider.name }}</h1>
+                <p>Run a minimal request against the configured provider and default model.</p>
+            </div>
+            <a class="button secondary" href="{% url 'api-management-home' %}">Back to providers</a>
+        </header>
+
+        <section class="api-management-view">
+            <div class="api-credential-form">
+                <div class="api-credential-summary">
+                    <div><span>Credential</span><strong>{{ credential_status }}</strong></div>
+                    <div><span>Active model</span><strong>{% if active_model %}{{ active_model.model_code }}{% else %}Not configured{% endif %}</strong></div>
+                    <div><span>Provider status</span><strong>{{ provider.status }}</strong></div>
+                </div>
+
+                {% if not active_model %}
+                    <div class="api-management-status error" role="alert">
+                        No active model is configured for {{ provider.name }}. Add the model code supplied by your provider before testing.
+                    </div>
+                    <a class="button" href="{% url 'ai-provider-model-create-page' provider.id %}">Add Provider Model</a>
+                {% else %}
+                    {% if error %}
+                        <div class="api-management-status error" role="alert">{{ error }}</div>
+                    {% endif %}
+                    {% if result %}
+                        <div class="api-management-status {% if result.ok %}success{% else %}error{% endif %}" role="status">
+                            {% if result.ok %}
+                                Connection successful.
+                            {% else %}
+                                Connection failed: {{ result.error_code|default:"PROVIDER_ERROR" }}.
+                                {{ result.error_message }}
+                            {% endif %}
+                        </div>
+                        {% if result.error_code == "RATE_LIMIT" %}
+                            <div class="api-management-status error">
+                                Z.AI returned HTTP 429. Check the API account balance, request quota,
+                                model entitlement and whether this key is valid for the general API endpoint.
+                            </div>
+                        {% endif %}
+                        <dl class="api-credential-summary">
+                            <div><span>Model</span><strong>{{ result.model }}</strong></div>
+                            <div><span>Latency</span><strong>{{ result.latency_ms }} ms</strong></div>
+                            <div><span>Status</span><strong>{{ result.status }}</strong></div>
+                        </dl>
+                    {% endif %}
+                    <div class="api-management-actions">
+                        <a class="button secondary" href="{% url 'ai-provider-model-create-page' provider.id %}">Change Model</a>
+                        <form method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="button">Run Connection Test</button>
+                        </form>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+    </main>
+</body>
+</html>

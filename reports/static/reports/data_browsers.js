@@ -16,9 +16,11 @@
         importFile: null,
         importPreview: null,
         previewLimit: "1000",
+        previewPage: 1,
         browserSearch: "",
         browserStatusFilter: "all",
         previewLookupOptions: {},
+        miningProdUserMapping: null,
     };
 
     const initialBrowsersScript = document.getElementById("browser-state-data");
@@ -58,6 +60,8 @@
         previewHead: root.querySelector("[data-preview-head]"),
         previewBody: root.querySelector("[data-preview-body]"),
         previewRowCount: root.querySelector("[data-browser-row-count]"),
+        previewPageStatus: root.querySelector("[data-browser-page-status]"),
+        previewPageButtons: root.querySelectorAll("[data-browser-page]"),
         previewLimit: root.querySelector("[data-browser-preview-limit]"),
         previewFilterToggle: root.querySelector("[data-preview-filter-toggle]"),
         previewFilterModal: document.querySelector("[data-preview-filter-modal]"),
@@ -67,6 +71,7 @@
         previewFilterApply: document.querySelector("[data-preview-filter-apply]"),
         previewFilterReset: document.querySelector("[data-preview-filter-reset]"),
         exportButton: root.querySelector("[data-browser-export]"),
+        syncButton: root.querySelector("[data-browser-sync]"),
         previewFullscreen: root.querySelector("[data-browser-fullscreen]"),
         runtimeTitle: root.querySelector("[data-runtime-title]"),
         recordNew: root.querySelector("[data-record-new]"),
@@ -74,6 +79,13 @@
         recordDelete: root.querySelector("[data-record-delete]"),
         recordOpen: root.querySelector("[data-record-open]"),
         recordForm: document.querySelector("[data-record-form]"),
+        writePreviewResult: document.querySelector("[data-write-preview-result]"),
+        miningProdUserMapping: document.querySelector("[data-miningprod-user-mapping]"),
+        miningProdUserCurrent: document.querySelector("[data-miningprod-user-current]"),
+        miningProdUserSearch: document.querySelector("[data-miningprod-user-search]"),
+        miningProdUserSearchButton: document.querySelector("[data-miningprod-user-search-button]"),
+        miningProdUserResults: document.querySelector("[data-miningprod-user-results]"),
+        miningProdRollbackTest: document.querySelector("[data-miningprod-rollback-test]"),
         importTrigger: root.querySelector("[data-import-trigger]"),
         importFile: root.querySelector("[data-import-file]"),
         columnTable: document.querySelector("[data-column-table]"),
@@ -841,6 +853,7 @@
 
     function resetBrowserForm() {
         state.activeBrowser = null;
+        state.previewPage = 1;
         els.form.reset();
         els.browserId.value = "";
         els.form.querySelector("[name='is_active']").checked = true;
@@ -863,6 +876,7 @@
 
     function fillBrowserForm(browser) {
         state.activeBrowser = browser;
+        state.previewPage = 1;
         els.browserId.value = browser.id;
         els.formTitle.textContent = browser.name;
         els.form.elements.name.value = browser.name || "";
@@ -880,6 +894,23 @@
         renderLookupSources();
         els.previewSection.hidden = false;
         if (els.runtimeTitle) els.runtimeTitle.textContent = browser.name;
+        if (els.exportButton) els.exportButton.hidden = browser.allow_export === false;
+        const writePreviewAvailable = Boolean(browser.write_mapping?.preview_available);
+        if (els.recordOpen) {
+            els.recordOpen.hidden = browser.allow_create === false && !writePreviewAvailable;
+            els.recordOpen.title = browser.allow_create === false && writePreviewAvailable
+                ? "Preview MiningProd create plan"
+                : "Add Data";
+            els.recordOpen.setAttribute("aria-label", els.recordOpen.title);
+        }
+        if (els.recordEdit) els.recordEdit.hidden = browser.allow_edit === false;
+        if (els.recordDelete) els.recordDelete.hidden = browser.allow_delete === false;
+        if (els.importTrigger) els.importTrigger.hidden = browser.allow_import === false;
+        if (els.syncButton) {
+            const isExternal = browser.source_mode && browser.source_mode !== "managed_table";
+            els.syncButton.title = isExternal ? "Validate external source" : "Sync with SQL Server";
+            els.syncButton.setAttribute("aria-label", els.syncButton.title);
+        }
         if (els.previewRowCount) els.previewRowCount.textContent = "0 rows loaded";
         renderPreview(null);
         setStatus(browser.last_sync_message || "");
@@ -899,18 +930,28 @@
             const searchable = normalizeDropdownSearch(`${browser.name || ""} ${browser.table_name || ""}`);
             return statusMatches && terms.every((term) => searchable.includes(term));
         });
-        setHtml(els.list, visibleBrowsers.length ? visibleBrowsers.map((browser) => `
+        let currentSection = null;
+        const listHtml = [];
+        visibleBrowsers.forEach((browser) => {
+            const section = browser.section || "Mining 360";
+            if (section !== currentSection) {
+                currentSection = section;
+                listHtml.push(`<div class="browser-section-label">${escapeHtml(section)}</div>`);
+            }
+            listHtml.push(`
             <div class="browser-list-row" draggable="false" data-browser-row="${browser.id}">
                 <button type="button" class="browser-list-drag" aria-label="Move ${escapeHtml(browser.name)}" title="Drag to reorder">
                     <span aria-hidden="true"></span>
                 </button>
                 <button type="button" class="browser-list-item ${state.activeBrowser && state.activeBrowser.id === browser.id ? "active" : ""}" data-browser-select="${browser.id}">
                     <strong>${escapeHtml(browser.name)}</strong>
-                    <span>${escapeHtml(browser.table_name || "-")}</span>
-                    <em>${browser.is_active ? "Active" : "Inactive"}</em>
+                    <span>${escapeHtml(browser.source_mode === "miningprod_metaform" ? `MiningProd MetaForm ${browser.external_form_id}` : (browser.table_name || "-"))}</span>
+                    <em>${escapeHtml(browser.migration_status === "read_only" ? "Read only validation" : (browser.is_active ? "Active" : "Inactive"))}</em>
                 </button>
             </div>
-        `).join("") : '<div class="empty compact">No Browser matches these filters.</div>');
+        `);
+        });
+        setHtml(els.list, visibleBrowsers.length ? listHtml.join("") : '<div class="empty compact">No Browser matches these filters.</div>');
         if (els.browserOrderSave) els.browserOrderSave.disabled = true;
     }
 
@@ -1128,6 +1169,10 @@
         if (!data) {
             els.previewSection.hidden = true;
             if (els.previewRowCount) els.previewRowCount.textContent = "0 rows loaded";
+            if (els.previewPageStatus) els.previewPageStatus.textContent = "Page 0 of 0";
+            els.previewPageButtons.forEach((button) => {
+                button.disabled = true;
+            });
             setHtml(els.previewHead, "");
             setHtml(els.previewBody, "");
             if (els.previewFilterToggle) {
@@ -1145,8 +1190,22 @@
         }
         els.previewSection.hidden = false;
         if (els.previewRowCount) {
-            const total = Number(data.row_count || 0);
-            els.previewRowCount.textContent = `${total} row${total === 1 ? "" : "s"} loaded`;
+            const loaded = Number(data.row_count || 0);
+            const total = Number(data.total_count ?? loaded);
+            els.previewRowCount.textContent = total === loaded
+                ? `${loaded} row${loaded === 1 ? "" : "s"} loaded`
+                : `${loaded} of ${total.toLocaleString()} rows loaded`;
+        }
+        if (els.previewPageStatus) {
+            const pageNumber = Number(data.page || 1);
+            const pageCount = Number(data.page_count || (data.row_count ? 1 : 0));
+            els.previewPageStatus.textContent = `Page ${pageCount ? pageNumber : 0} of ${pageCount}`;
+            els.previewPageButtons.forEach((button) => {
+                const action = button.dataset.browserPage;
+                button.disabled = !pageCount
+                    || ((action === "first" || action === "previous") && pageNumber <= 1)
+                    || ((action === "next" || action === "last") && pageNumber >= pageCount);
+            });
         }
         if (!preserveState) {
             state.previewFilters = (data.columns || []).length ? [createPreviewFilter(0)] : [];
@@ -1197,7 +1256,13 @@
 
     async function renderRecordForm(record = null) {
         if (!state.activeBrowser || !els.recordForm) return;
-        const columns = state.activeBrowser.columns || [];
+        const previewOnly = Boolean(
+            state.activeBrowser.write_mapping?.preview_available
+            && state.activeBrowser.allow_create === false
+        );
+        const columns = (state.activeBrowser.columns || []).filter((column) => (
+            !previewOnly || column.is_editable
+        ));
         if (!columns.length) {
             els.recordForm.hidden = true;
             setHtml(els.recordForm, "");
@@ -1208,14 +1273,28 @@
         state.editingRecordId = record ? record.BrowserRecordId : null;
         const title = document.getElementById("record-modal-title");
         if (title) {
-            title.textContent = record ? "Edit record" : "Add record";
+            title.textContent = previewOnly
+                ? "Preview MiningProd create"
+                : (record ? "Edit record" : "Add record");
+        }
+        if (els.writePreviewResult) {
+            els.writePreviewResult.hidden = true;
+            setHtml(els.writePreviewResult, "");
+        }
+        if (els.miningProdUserMapping) {
+            els.miningProdUserMapping.hidden = !previewOnly;
+        }
+        if (previewOnly) {
+            await loadMiningProdUserMapping();
         }
         setHtml(els.recordForm, `
             <div class="browser-record-grid">
                 ${columns.map((column) => recordFieldHtml(column)).join("")}
             </div>
             <div class="browser-action-row">
-                <button class="button" type="submit">${record ? "Update Record" : "Save Record"}</button>
+                <button class="button" type="submit">${
+                    previewOnly ? "Generate Preview" : (record ? "Update Record" : "Save Record")
+                }</button>
                 <button class="button secondary" type="button" data-record-cancel>Cancel</button>
             </div>
         `);
@@ -1236,6 +1315,109 @@
                     input.value = value;
                 }
             });
+        }
+    }
+
+    function renderMiningProdUserMapping(mapping, candidates = []) {
+        state.miningProdUserMapping = mapping || null;
+        if (els.miningProdUserCurrent) {
+            els.miningProdUserCurrent.textContent = mapping
+                ? `${mapping.username} · audit ID ${mapping.audit_user_id} · ${mapping.validation_status}`
+                : "No validated mapping";
+        }
+        if (!els.miningProdUserResults) return;
+        if (els.miningProdRollbackTest) {
+            els.miningProdRollbackTest.hidden = !(
+                mapping?.validation_status === "validated"
+                && state.activeBrowser?.external_form_id === 36
+            );
+        }
+        if (!candidates.length) {
+            setHtml(els.miningProdUserResults, "");
+            return;
+        }
+        setHtml(els.miningProdUserResults, `
+            <div class="miningprod-user-candidates">
+                ${candidates.map((candidate) => `
+                    <button type="button" class="miningprod-user-candidate"
+                        data-miningprod-employee-id="${escapeHtml(candidate.employee_id)}"
+                        data-miningprod-username="${escapeHtml(candidate.username)}">
+                        <strong>${escapeHtml(candidate.username)}</strong>
+                        <span>${escapeHtml(`${candidate.first_name || ""} ${candidate.last_name || ""}`.trim())}</span>
+                    </button>
+                `).join("")}
+            </div>
+        `);
+    }
+
+    async function loadMiningProdUserMapping(search = "") {
+        if (!state.activeBrowser?.write_mapping?.preview_available) return;
+        try {
+            const suffix = search ? `?search=${encodeURIComponent(search)}` : "";
+            const payload = await api(`/data-browsers/miningprod-users${suffix}`);
+            renderMiningProdUserMapping(payload.mapping || null, payload.candidates || []);
+        } catch (error) {
+            if (els.miningProdUserCurrent) {
+                els.miningProdUserCurrent.textContent = error.message;
+            }
+        }
+    }
+
+    async function selectMiningProdUser(candidateButton) {
+        const employeeId = candidateButton.dataset.miningprodEmployeeId;
+        const username = candidateButton.dataset.miningprodUsername;
+        if (!employeeId || !username) return;
+        if (!confirm(`Use ${username} as your MiningProd audit user?`)) return;
+        try {
+            candidateButton.disabled = true;
+            const payload = await api("/data-browsers/miningprod-user-mapping", {
+                method: "POST",
+                body: JSON.stringify({
+                    employee_id: employeeId,
+                    username,
+                }),
+            });
+            renderMiningProdUserMapping(payload.mapping || null, []);
+            setStatus(`MiningProd audit user ${username} validated.`);
+        } catch (error) {
+            candidateButton.disabled = false;
+            setStatus(error.message, true, true);
+        }
+    }
+
+    async function runMiningProdRollbackTest() {
+        if (!state.activeBrowser || state.activeBrowser.external_form_id !== 36) return;
+        const accepted = confirm(
+            "This test will insert two temporary MiningProd rows inside a transaction, "
+            + "roll the transaction back, then verify that no row remains. Continue?"
+        );
+        if (!accepted) return;
+        try {
+            els.miningProdRollbackTest.disabled = true;
+            setStatus("Running the controlled MiningProd rollback test...");
+            const payload = await api(`/data-browsers/${state.activeBrowser.id}/rollback-test`, {
+                method: "POST",
+                body: JSON.stringify({ confirmation: "RUN ROLLBACK TEST" }),
+            });
+            const result = payload.rollback_test || {};
+            if (els.writePreviewResult) {
+                els.writePreviewResult.hidden = false;
+                setHtml(els.writePreviewResult, `
+                    <div class="browser-write-preview-result__header">
+                        <strong>Rollback verified</strong>
+                        <span>${escapeHtml(result.request_id || "")}</span>
+                    </div>
+                    <p>${escapeHtml(result.notice || "")}</p>
+                    <div>Transaction rows verified: ${result.transaction_insert_verified ? "Yes" : "No"}</div>
+                    <div>Persisted root rows: ${escapeHtml(result.persisted_root_rows ?? "")}</div>
+                    <div>Persisted CMT rows: ${escapeHtml(result.persisted_cmt_rows ?? "")}</div>
+                `);
+            }
+            setStatus("Rollback test passed. No test data remains in MiningProd.");
+        } catch (error) {
+            setStatus(error.message, true, true);
+        } finally {
+            els.miningProdRollbackTest.disabled = false;
         }
     }
 
@@ -1402,7 +1584,7 @@
             setStatus("Loading preview...");
             const limit = String(state.previewLimit || "1000");
             const filters = encodeURIComponent(JSON.stringify(state.previewFilters || []));
-            const payload = await api(`/data-browsers/${state.activeBrowser.id}/data?limit=${encodeURIComponent(limit)}&filters=${filters}`);
+            const payload = await api(`/data-browsers/${state.activeBrowser.id}/data?limit=${encodeURIComponent(limit)}&page=${encodeURIComponent(state.previewPage)}&filters=${filters}`);
             renderPreview(payload.data, true);
             if (payload.data && payload.data.needs_sync) {
                 await syncBrowser(true);
@@ -1806,6 +1988,47 @@
         event.preventDefault();
         if (!state.activeBrowser) return;
         try {
+            const previewOnly = Boolean(
+                state.activeBrowser.write_mapping?.preview_available
+                && state.activeBrowser.allow_create === false
+            );
+            if (previewOnly) {
+                setStatus("Generating the MiningProd write preview...");
+                const payload = await api(`/data-browsers/${state.activeBrowser.id}/write-preview`, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        operation: "create",
+                        values: formData(els.recordForm),
+                    }),
+                });
+                const preview = payload.preview || {};
+                const steps = preview.plan?.steps || [];
+                if (els.writePreviewResult) {
+                    els.writePreviewResult.hidden = false;
+                    setHtml(els.writePreviewResult, `
+                        <div class="browser-write-preview-result__header">
+                            <strong>Preview only</strong>
+                            <span>${escapeHtml(preview.request_id || "")}</span>
+                        </div>
+                        <p>No statement was executed against MiningProd.</p>
+                        ${preview.blockers?.length ? `
+                            <div class="browser-write-preview-result__blockers">
+                                ${preview.blockers.map((item) => `<div>${escapeHtml(item)}</div>`).join("")}
+                            </div>
+                        ` : ""}
+                        <ol>
+                            ${steps.map((step) => `
+                                <li>
+                                    <strong>${escapeHtml(String(step.action || "").replaceAll("_", " "))}</strong>
+                                    <span>${escapeHtml(step.table || "")}</span>
+                                </li>
+                            `).join("")}
+                        </ol>
+                    `);
+                }
+                setStatus(`Preview generated: ${steps.length} planned operation(s).`);
+                return;
+            }
             setStatus("Saving record...");
             const url = state.editingRecordId
                 ? `/data-browsers/${state.activeBrowser.id}/records/${state.editingRecordId}`
@@ -1898,6 +2121,27 @@
             }
         });
     }
+    if (els.miningProdUserSearchButton) {
+        els.miningProdUserSearchButton.addEventListener("click", () => {
+            loadMiningProdUserMapping(els.miningProdUserSearch?.value || "");
+        });
+    }
+    if (els.miningProdUserSearch) {
+        els.miningProdUserSearch.addEventListener("keydown", (event) => {
+            if (event.key !== "Enter") return;
+            event.preventDefault();
+            loadMiningProdUserMapping(els.miningProdUserSearch.value || "");
+        });
+    }
+    if (els.miningProdUserResults) {
+        els.miningProdUserResults.addEventListener("click", (event) => {
+            const candidate = event.target.closest("[data-miningprod-employee-id]");
+            if (candidate) selectMiningProdUser(candidate);
+        });
+    }
+    if (els.miningProdRollbackTest) {
+        els.miningProdRollbackTest.addEventListener("click", runMiningProdRollbackTest);
+    }
     if (els.importTrigger && els.importFile) {
         els.importTrigger.addEventListener("click", () => els.importFile.click());
         els.importFile.addEventListener("change", () => prepareImport(els.importFile.files[0]));
@@ -1909,6 +2153,7 @@
         state.previewLimit = els.previewLimit.value || "1000";
         els.previewLimit.addEventListener("change", () => {
             state.previewLimit = els.previewLimit.value || "1000";
+            state.previewPage = 1;
             if (state.activeBrowser) {
                 previewData().catch((error) => setStatus(error.message, true));
             }
@@ -1951,11 +2196,25 @@
     if (els.previewFilterApply) {
         els.previewFilterApply.addEventListener("click", () => {
             setPreviewFilterPanelOpen(false);
+            state.previewPage = 1;
             if (state.activeBrowser) {
                 previewData().catch((error) => setStatus(error.message, true));
             }
         });
     }
+    els.previewPageButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            if (!state.previewData) return;
+            const current = Number(state.previewData.page || state.previewPage || 1);
+            const last = Number(state.previewData.page_count || 1);
+            const action = button.dataset.browserPage;
+            if (action === "first") state.previewPage = 1;
+            if (action === "previous") state.previewPage = Math.max(1, current - 1);
+            if (action === "next") state.previewPage = Math.min(last, current + 1);
+            if (action === "last") state.previewPage = last;
+            previewData().catch((error) => setStatus(error.message, true));
+        });
+    });
     document.querySelectorAll("[data-preview-filter-close]").forEach((button) => {
         button.addEventListener("click", () => setPreviewFilterPanelOpen(false));
     });

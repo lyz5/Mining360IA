@@ -1,0 +1,121 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Deployment Process | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260803-deployment-1">
+    <link rel="stylesheet" href="{% static 'deployment/deployment.css' %}?v=20260803-1">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell deployment-shell" data-deployment-root data-dashboard-url="{% url 'deployment-dashboard-api' %}" data-targets-url="{% url 'deployment-targets-api' %}" data-plans-url="{% url 'deployment-plans-api' %}" data-quick-deploy-url="{% url 'deployment-quick-deploy-api' %}">
+        <header class="topbar deployment-header">
+            <div>
+                <p class="eyebrow">Platform Administration</p>
+                <h1>Deployment Process</h1>
+                <p>Deploy validated Mining360 Git releases to approved servers with backup, migration and health validation.</p>
+            </div>
+            <div class="deployment-header-actions">
+                <button type="button" class="button secondary" data-refresh>Refresh</button>
+                <button type="button" class="button" data-add-target>Add target</button>
+            </div>
+        </header>
+
+        <div class="deployment-status" data-status role="status" aria-live="polite"></div>
+
+        <section class="deployment-kpis" aria-label="Deployment overview">
+            <article><span>Target Servers</span><strong data-kpi="total_targets">0</strong></article>
+            <article><span>Online</span><strong data-kpi="online_targets">0</strong></article>
+            <article><span>Offline</span><strong data-kpi="offline_targets">0</strong></article>
+            <article><span>Active Jobs</span><strong data-kpi="active_jobs">0</strong></article>
+            <article><span>Successful</span><strong data-kpi="successful_deployments">0</strong></article>
+            <article><span>Failed</span><strong data-kpi="failed_deployments">0</strong></article>
+        </section>
+
+        <nav class="deployment-tabs" aria-label="Deployment sections">
+            <button type="button" class="is-active" data-tab="targets">Target Servers</button>
+            <button type="button" data-tab="plans">Deployment Plans</button>
+            <button type="button" data-tab="releases">Application Versions</button>
+            <button type="button" data-tab="readiness">Readiness</button>
+        </nav>
+
+        <section class="deployment-view" data-view="targets">
+            <div class="deployment-section-head">
+                <div><h2>Target Servers</h2><p>Deploy the latest committed version to an approved Test target in one controlled action.</p></div>
+            </div>
+            <div class="deployment-target-list" data-target-list></div>
+        </section>
+
+        <section class="deployment-view" data-view="plans" hidden>
+            <div class="deployment-section-head">
+                <div><h2>Deployment Plans</h2><p>Dry Run validates readiness without changing the target.</p></div>
+                <button type="button" class="button" data-create-plan>Create plan</button>
+            </div>
+            <div class="deployment-table-wrap"><table class="deployment-table"><thead><tr><th>Plan</th><th>Target</th><th>Version</th><th>Status</th><th>Created</th><th></th></tr></thead><tbody data-plan-list></tbody></table></div>
+        </section>
+
+        <section class="deployment-view" data-view="releases" hidden>
+            <div class="deployment-section-head"><div><h2>Application Versions</h2><p>A release must reference an immutable Git commit and be validated before Dry Run.</p></div></div>
+            <div class="deployment-table-wrap"><table class="deployment-table"><thead><tr><th>Version</th><th>Branch</th><th>Commit</th><th>Status</th><th></th></tr></thead><tbody data-release-list></tbody></table></div>
+        </section>
+
+        <section class="deployment-view" data-view="readiness" hidden>
+            <div class="deployment-section-head"><div><h2>Deployment Readiness</h2><p>Windows Test execution is enabled. Production remains blocked pending security approval.</p></div></div>
+            <div class="deployment-readiness" data-readiness></div>
+        </section>
+
+        <dialog class="deployment-dialog" data-target-dialog>
+            <form data-target-form>
+                <div class="deployment-dialog-head"><h2>Add Target Server</h2><button type="button" class="icon-button" data-close-dialog aria-label="Close">×</button></div>
+                <div class="deployment-form-grid">
+                    <label><span>Name</span><input name="name" required></label>
+                    <label><span>Environment</span><select name="environment"><option>Test</option><option>Staging</option><option>Preproduction</option><option>Production</option></select></label>
+                    <label><span>DNS name</span><input name="dns_name" placeholder="server.neemba.local" required></label>
+                    <label><span>SSH port</span><input name="port" type="number" min="1" max="65535" value="22" required></label>
+                    <label><span>Operating system</span><select name="os_family"><option value="debian">Ubuntu / Debian</option><option value="redhat">Red Hat / Rocky / AlmaLinux</option><option value="windows">Windows Server (inventory only)</option></select></label>
+                    <label><span>SSH user</span><input name="ssh_username" autocomplete="off"></label>
+                    <label class="deployment-form-wide"><span>Deployment base path</span><input name="deployment_base_path" value="/opt/mining360" required></label>
+                </div>
+                <footer><button type="button" class="button secondary" data-close-dialog>Cancel</button><button class="button" type="submit">Register target</button></footer>
+            </form>
+        </dialog>
+
+        <dialog class="deployment-dialog" data-plan-dialog>
+            <form data-plan-form>
+                <div class="deployment-dialog-head"><h2>Create Deployment Plan</h2><button type="button" class="icon-button" data-close-dialog aria-label="Close">×</button></div>
+                <div class="deployment-form-grid">
+                    <label class="deployment-form-wide"><span>Plan name</span><input name="name" required></label>
+                    <label><span>Target</span><select name="target_id" data-plan-target required></select></label>
+                    <label><span>Release</span><select name="release_id" data-plan-release required></select></label>
+                </div>
+                <footer><button type="button" class="button secondary" data-close-dialog>Cancel</button><button class="button" type="submit">Create plan</button></footer>
+            </form>
+        </dialog>
+
+        <dialog class="deployment-dialog" data-credential-dialog>
+            <form data-credential-form>
+                <input type="hidden" name="target_id">
+                <div class="deployment-dialog-head"><h2>Configure Deployment Credential</h2><button type="button" class="icon-button" data-close-dialog aria-label="Close">×</button></div>
+                <p>The existing secret is never returned to this form. Prefer an environment or Vault reference.</p>
+                <div class="deployment-form-grid">
+                    <label><span>Credential name</span><input name="name" required></label>
+                    <label><span>Type</span><select name="credential_type"><option value="ssh_private_key">SSH Private Key</option><option value="ssh_password">SSH Password</option><option value="vault_reference">Vault Secret Reference</option></select></label>
+                    <label class="deployment-form-wide"><span>Remote username</span><input name="username" autocomplete="off" required></label>
+                    <label class="deployment-form-wide"><span>Secret reference</span><input name="secret_reference" placeholder="env:MINING360_BODEFM_SSH_KEY"></label>
+                    <label class="deployment-form-wide"><span>New secret or private key</span><textarea name="secret" rows="7" autocomplete="new-password" placeholder="Leave empty when a secret reference is provided"></textarea></label>
+                </div>
+                <footer><button type="button" class="button secondary" data-close-dialog>Cancel</button><button class="button" type="submit">Set credential</button></footer>
+            </form>
+        </dialog>
+
+        <dialog class="deployment-dialog deployment-result-dialog" data-result-dialog>
+            <div class="deployment-dialog-head"><h2 data-result-title>Result</h2><button type="button" class="icon-button" data-close-dialog aria-label="Close">×</button></div>
+            <div data-result-content></div>
+            <footer><button type="button" class="button secondary" data-close-dialog>Close</button></footer>
+        </dialog>
+    </main>
+    <script src="{% static 'deployment/deployment.js' %}?v=20260806-1" defer></script>
+</body>
+</html>

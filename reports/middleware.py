@@ -19,6 +19,8 @@ class PlatformLoginRequiredMiddleware:
             reverse("logout"),
             "/admin/",
             settings.STATIC_URL,
+            "/health/",
+            "/api/health/",
         )
         if path.startswith(exempt_prefixes):
             return self.get_response(request)

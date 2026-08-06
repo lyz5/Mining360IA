@@ -230,6 +230,14 @@ def log_sync(browser: DataBrowser, action: str, status: str, message: str = "", 
 
 
 def validate_browser_definition(browser: DataBrowser) -> None:
+    if browser.source_mode != "managed_table":
+        from .external_data_browsers import validate_external_browser
+
+        try:
+            validate_external_browser(browser)
+        except ValueError as exc:
+            raise DataBrowserValidationError(str(exc)) from exc
+        return
     parse_sql_object_name(browser.table_name, "Table name")
     parse_sql_object_name(browser.source_view_name, "Source view name")
     for column in browser.columns.all():
@@ -285,6 +293,8 @@ def existing_column_nullability_sql(browser: DataBrowser) -> str:
 
 
 def browser_table_exists(browser: DataBrowser) -> bool:
+    if browser.source_mode != "managed_table":
+        return True
     validate_browser_definition(browser)
     with connect(database=BROWSER_DATABASE) as connection:
         cursor = connection.cursor()
@@ -345,6 +355,20 @@ def create_unique_index_statement(browser: DataBrowser, column: DataBrowserColum
 
 def sync_browser_sql(browser: DataBrowser) -> dict:
     validate_browser_definition(browser)
+    if browser.source_mode != "managed_table":
+        browser.last_synced_at = timezone.now()
+        browser.last_sync_status = "Success"
+        browser.last_sync_message = "External browser configuration validated; no table was created."
+        browser.save(
+            update_fields=[
+                "last_synced_at",
+                "last_sync_status",
+                "last_sync_message",
+                "updated_at",
+            ]
+        )
+        log_sync(browser, "validate_external_source", "Success", browser.last_sync_message)
+        return {"executed": [], "message": browser.last_sync_message}
     executed = []
     with connect(database=BROWSER_DATABASE) as connection:
         cursor = connection.cursor()
@@ -551,7 +575,26 @@ def _build_preview_where_clause(browser: DataBrowser, visible_columns: list[Data
     return " WHERE " + " ".join(clauses)
 
 
-def preview_browser_data(browser: DataBrowser, limit: int | str = 100, filters=None) -> dict:
+def preview_browser_data(
+    browser: DataBrowser,
+    limit: int | str = 100,
+    filters=None,
+    page: int | str = 1,
+    sort=None,
+) -> dict:
+    if browser.source_mode != "managed_table":
+        from .external_data_browsers import preview_external_browser_data
+
+        try:
+            return preview_external_browser_data(
+                browser,
+                limit=limit,
+                filters=filters,
+                page=page,
+                sort=sort,
+            )
+        except ValueError as exc:
+            raise DataBrowserValidationError(str(exc)) from exc
     validate_browser_definition(browser)
     limit_value = _normalize_preview_limit(limit)
     visible_columns = [column for column in _effective_browser_columns(browser) if column.is_visible]
@@ -627,6 +670,13 @@ def preview_browser_data(browser: DataBrowser, limit: int | str = 100, filters=N
 
 
 def update_browser_record(browser: DataBrowser, record_id: int, values: dict, actor: str = "System") -> dict:
+    if browser.source_mode != "managed_table":
+        from .external_data_browsers import ensure_external_write_allowed
+
+        try:
+            ensure_external_write_allowed(browser, "edit")
+        except ValueError as exc:
+            raise DataBrowserValidationError(str(exc)) from exc
     validate_browser_definition(browser)
     if not browser_table_exists(browser):
         raise DataBrowserValidationError("SQL table does not exist yet. Click Sync with SQL Server first.")
@@ -657,6 +707,13 @@ def update_browser_record(browser: DataBrowser, record_id: int, values: dict, ac
 
 
 def delete_browser_records(browser: DataBrowser, record_ids: list[int]) -> dict:
+    if browser.source_mode != "managed_table":
+        from .external_data_browsers import ensure_external_write_allowed
+
+        try:
+            ensure_external_write_allowed(browser, "delete")
+        except ValueError as exc:
+            raise DataBrowserValidationError(str(exc)) from exc
     validate_browser_definition(browser)
     if not browser_table_exists(browser):
         raise DataBrowserValidationError("SQL table does not exist yet.")
@@ -1108,6 +1165,13 @@ def _build_existing_record_index(browser: DataBrowser, columns: list[DataBrowser
 
 
 def insert_browser_record(browser: DataBrowser, values: dict, actor: str = "System") -> dict:
+    if browser.source_mode != "managed_table":
+        from .external_data_browsers import ensure_external_write_allowed
+
+        try:
+            ensure_external_write_allowed(browser, "create")
+        except ValueError as exc:
+            raise DataBrowserValidationError(str(exc)) from exc
     validate_browser_definition(browser)
     if not browser_table_exists(browser):
         sync_browser_sql(browser)

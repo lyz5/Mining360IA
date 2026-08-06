@@ -1,0 +1,144 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Agents | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260727-agents-menu-1">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell agent-admin"
+          data-agent-admin
+          data-agents-url="{% url 'ai-agents-collection-api' %}"
+          data-router-url="{% url 'ai-agent-router-config-api' %}"
+          data-router-test-url="{% url 'ai-agent-router-test-api' %}"
+          data-logs-url="{% url 'ai-agent-logs-api' %}">
+        <header class="topbar agent-admin__header">
+            <div>
+                <p class="eyebrow">AI administration</p>
+                <h1>AI Agents</h1>
+                <p>Configure routing, responsibilities, tools and sources for Mining 360 AI.</p>
+            </div>
+            <button type="button" class="button" id="agent-create">Create Agent</button>
+        </header>
+
+        <section id="agent-flash" class="alert" hidden aria-live="polite"></section>
+        <section id="agent-kpis" class="agent-kpis" aria-label="Agent summary"></section>
+
+        <nav class="agent-admin__tabs" aria-label="AI agent administration views">
+            <button type="button" class="is-active" data-agent-view="agents">Agents</button>
+            <button type="button" data-agent-view="router">Agent Router</button>
+            <button type="button" data-agent-view="logs">Execution Logs</button>
+        </nav>
+
+        <section class="agent-view is-active" data-agent-panel="agents">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Specialized agents</p>
+                    <h2>Configured Agents</h2>
+                </div>
+                <button type="button" class="icon-button" id="agent-refresh"
+                        title="Refresh agents" aria-label="Refresh agents">&#x21BB;</button>
+            </div>
+            <div id="agent-card-grid" class="agent-card-grid"></div>
+        </section>
+
+        <section class="agent-view" data-agent-panel="router" hidden>
+            <div class="agent-router-layout">
+                <form id="agent-router-form" class="agent-panel">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">Central routing</p>
+                            <h2>Agent Router</h2>
+                        </div>
+                        <button type="submit" class="button">Save Router</button>
+                    </div>
+                    <div class="form-grid agent-form-grid">
+                        <label><span>Feature Mode</span>
+                            <select name="feature_mode">
+                                <option>Disabled</option>
+                                <option>Admin Only</option>
+                                <option>Pilot Users</option>
+                                <option>Production</option>
+                            </select>
+                        </label>
+                        <label><span>Minimum Confidence</span><input type="number" min="0" max="100" step="0.1" name="minimum_confidence"></label>
+                        <label class="agent-toggle"><input type="checkbox" name="routing_enabled"><span>Routing enabled</span></label>
+                        <label class="agent-toggle"><input type="checkbox" name="deterministic_routing_enabled"><span>Deterministic routing</span></label>
+                        <label class="agent-toggle"><input type="checkbox" name="ai_fallback_enabled"><span>AI fallback</span></label>
+                        <label class="agent-toggle"><input type="checkbox" name="combined_execution_enabled"><span>Combined execution</span></label>
+                        <label class="agent-toggle"><input type="checkbox" name="manual_selection_enabled"><span>Manual agent selection</span></label>
+                    </div>
+                    <div id="agent-router-rules" class="agent-rule-list"></div>
+                </form>
+
+                <form id="agent-router-test" class="agent-panel agent-test-panel">
+                    <p class="eyebrow">Diagnostic</p>
+                    <h2>Test Router</h2>
+                    <label>
+                        <span>User Question</span>
+                        <textarea name="question" rows="5" placeholder="Ask an operational or Best Practice question..." required></textarea>
+                    </label>
+                    <button type="submit" class="button">Resolve Agent</button>
+                    <div id="agent-router-result" class="agent-router-result" hidden></div>
+                </form>
+            </div>
+        </section>
+
+        <section class="agent-view" data-agent-panel="logs" hidden>
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Audit and usage</p>
+                    <h2>Execution Logs</h2>
+                </div>
+            </div>
+            <div class="table-scroll">
+                <table class="data-table" id="agent-logs-table"></table>
+            </div>
+        </section>
+    </main>
+
+    <div class="browser-modal agent-modal" id="agent-modal" hidden aria-hidden="true">
+        <div class="browser-modal__backdrop" data-agent-close></div>
+        <div class="browser-modal__panel browser-modal__panel--fullscreen" role="dialog"
+             aria-modal="true" aria-labelledby="agent-modal-title">
+            <header class="browser-modal__header">
+                <div>
+                    <p class="eyebrow">AI Agent</p>
+                    <h2 id="agent-modal-title">Edit Agent</h2>
+                </div>
+                <button type="button" class="icon-button" data-agent-close aria-label="Close">×</button>
+            </header>
+            <nav id="agent-form-tabs" class="agent-form-tabs" aria-label="Agent configuration sections"></nav>
+            <form id="agent-form" class="agent-form">
+                <div id="agent-form-content"></div>
+                <footer class="form-actions agent-form-actions">
+                    <button type="button" class="button secondary" id="agent-test-current">Test Agent</button>
+                    <span class="agent-form-actions__spacer"></span>
+                    <button type="button" class="button secondary" data-agent-close>Cancel</button>
+                    <button type="submit" class="button">Save Agent</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+    <dialog id="agent-test-dialog" class="agent-test-dialog">
+        <form method="dialog">
+            <header>
+                <h2>Test Agent</h2>
+                <button value="cancel" class="icon-button" aria-label="Close">×</button>
+            </header>
+            <label><span>Question</span><textarea id="agent-test-question" rows="5"></textarea></label>
+            <div id="agent-test-result" class="agent-router-result" hidden></div>
+            <footer>
+                <button value="cancel" class="button secondary">Cancel</button>
+                <button value="default" type="button" class="button" id="agent-run-test">Run Test</button>
+            </footer>
+        </form>
+    </dialog>
+
+    <script src="{% static 'reports/ai_agents.js' %}?v=20260726-agents-1"></script>
+</body>
+</html>

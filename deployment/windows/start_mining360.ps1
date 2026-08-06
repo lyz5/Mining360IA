@@ -1,0 +1,58 @@
+param(
+    [string]$Root = "C:\Mining360",
+    [string]$Listen = "0.0.0.0:8000"
+)
+
+$ErrorActionPreference = "Stop"
+$appPath = Join-Path $Root "app"
+$pythonPath = Join-Path $Root "venv\Scripts\python.exe"
+$waitressPath = Join-Path $Root "venv\Scripts\waitress-serve.exe"
+$logPath = Join-Path $Root "logs"
+
+function Get-Mining360Setting {
+    param([string]$Name, [string]$Default = "")
+    $value = [Environment]::GetEnvironmentVariable($Name, "Process")
+    if (-not $value) { $value = [Environment]::GetEnvironmentVariable($Name, "User") }
+    if (-not $value) { $value = [Environment]::GetEnvironmentVariable($Name, "Machine") }
+    if ($value) { return $value }
+    return $Default
+}
+
+if (-not (Test-Path $pythonPath)) {
+    throw "Mining360 virtual environment was not found at $pythonPath."
+}
+if (-not (Test-Path $waitressPath)) {
+    throw "Waitress was not found at $waitressPath."
+}
+
+New-Item -ItemType Directory -Force -Path $logPath | Out-Null
+Set-Location $appPath
+
+$env:MINING360_DATABASE_ENGINE = "mssql"
+$env:MINING360_APP_SQL_SERVER = Get-Mining360Setting "MINING360_APP_SQL_SERVER" "172.17.0.111"
+$env:MINING360_APP_SQL_DATABASE = Get-Mining360Setting "MINING360_APP_SQL_DATABASE" "Mining360App"
+$env:MINING360_APP_SQL_PORT = Get-Mining360Setting "MINING360_APP_SQL_PORT" "1433"
+$env:MINING360_APP_SQL_DRIVER = "ODBC Driver 18 for SQL Server"
+$env:MINING360_APP_SQL_EXTRA_PARAMS = Get-Mining360Setting "MINING360_APP_SQL_EXTRA_PARAMS" "Encrypt=optional;TrustServerCertificate=yes;Connection Timeout=15"
+$env:MINING360_SECRET_KEY = Get-Mining360Setting "MINING360_SECRET_KEY"
+$env:MINING360_CONFIG_ENCRYPTION_KEY = Get-Mining360Setting "MINING360_CONFIG_ENCRYPTION_KEY"
+$env:MINING360_DEPLOYMENT_ENCRYPTION_KEY = Get-Mining360Setting "MINING360_DEPLOYMENT_ENCRYPTION_KEY"
+$env:MINING360_DEBUG = Get-Mining360Setting "MINING360_DEBUG" "0"
+$env:MINING360_ALLOWED_HOSTS = Get-Mining360Setting "MINING360_ALLOWED_HOSTS" "bodefm,172.17.0.111,localhost,127.0.0.1"
+$env:MINING360_STATIC_ROOT = Join-Path $Root "shared\static"
+
+if (-not $env:MINING360_SECRET_KEY) {
+    throw "MINING360_SECRET_KEY is not configured for the runtime account."
+}
+
+# Windows PowerShell 5.1 converts native stderr output into error records.
+# Waitress writes its normal startup message to stderr, so keep native output
+# redirected to the service logs without treating that message as terminating.
+$ErrorActionPreference = "Continue"
+& $waitressPath `
+    --listen=$Listen `
+    --threads=8 `
+    --channel-timeout=180 `
+    Mining360IA.wsgi:application `
+    1>> (Join-Path $logPath "waitress.out.log") `
+    2>> (Join-Path $logPath "waitress.err.log")

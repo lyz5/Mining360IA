@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mining 360 - Dossier technique IT et authentification Windows</title>
+  <style>
+    :root {
+      --ink: #101828;
+      --navy: #14213d;
+      --blue: #175cd3;
+      --cyan: #0e7490;
+      --yellow: #ffd400;
+      --green: #067647;
+      --red: #b42318;
+      --amber: #b54708;
+      --muted: #667085;
+      --line: #d0d5dd;
+      --soft: #f2f4f7;
+      --paper: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html { font-family: "Segoe UI", Arial, sans-serif; color: var(--ink); font-size: 9pt; line-height: 1.28; }
+    body { margin: 0; background: #e9edf3; }
+    .document { width: 210mm; margin: 0 auto; background: var(--paper); box-shadow: 0 12px 40px rgba(16,24,40,.16); }
+    .page { min-height: 297mm; height: 297mm; padding: 13mm 15mm 15mm; position: relative; overflow: hidden; page-break-after: always; }
+    .page:last-child { page-break-after: auto; }
+    .footer { position: absolute; left: 15mm; right: 15mm; bottom: 6mm; padding-top: 2mm; border-top: 1px solid var(--line); color: var(--muted); font-size: 7.2pt; display: flex; justify-content: space-between; }
+    .cover { min-height: 297mm; color: white; background: var(--navy); overflow: hidden; padding: 0; }
+    .cover-band { height: 16mm; background: var(--yellow); }
+    .cover-main { padding: 35mm 22mm 20mm; }
+    .brand { font-weight: 800; font-size: 18pt; letter-spacing: .4px; }
+    .brand span { color: var(--yellow); }
+    .cover h1 { color: white; font-size: 34pt; line-height: 1.08; margin: 27mm 0 8mm; max-width: 160mm; letter-spacing: 0; }
+    .cover .subtitle { font-size: 16pt; color: #dbe7ff; max-width: 160mm; }
+    .cover-grid { margin-top: 26mm; display: grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+    .cover-card { border: 1px solid rgba(255,255,255,.24); padding: 6mm; min-height: 35mm; background: rgba(255,255,255,.05); }
+    .cover-label { color: var(--yellow); font-weight: 700; text-transform: uppercase; font-size: 8pt; }
+    .cover-value { margin-top: 2mm; font-size: 11pt; }
+    h1, h2, h3, h4 { color: var(--navy); letter-spacing: 0; page-break-after: avoid; }
+    h1 { font-size: 22pt; margin: 0 0 4.5mm; }
+    h2 { font-size: 14.5pt; margin: 5mm 0 2.5mm; padding-bottom: 1.4mm; border-bottom: 2px solid var(--yellow); }
+    h3 { font-size: 11pt; margin: 3.5mm 0 1.7mm; }
+    h4 { font-size: 9.5pt; margin: 3mm 0 1mm; }
+    p { margin: 0 0 2mm; }
+    ul, ol { margin: 1mm 0 2.4mm 4mm; padding-left: 3.5mm; }
+    li { margin-bottom: .8mm; }
+    a { color: var(--blue); text-decoration: none; }
+    .eyebrow { color: var(--blue); font-size: 8pt; font-weight: 800; text-transform: uppercase; letter-spacing: .7px; margin-bottom: 2mm; }
+    .lead { font-size: 10.5pt; color: #344054; }
+    .callout { border-left: 4px solid var(--blue); background: #eff4ff; padding: 2.8mm 4mm; margin: 2.8mm 0; page-break-inside: avoid; }
+    .callout.critical { border-color: var(--red); background: #fff1f0; }
+    .callout.warning { border-color: var(--amber); background: #fffaeb; }
+    .callout.success { border-color: var(--green); background: #ecfdf3; }
+    .callout-title { font-weight: 800; margin-bottom: 1mm; }
+    .status { display: inline-block; border-radius: 12px; padding: 1mm 2.7mm; font-size: 7.5pt; font-weight: 800; white-space: nowrap; }
+    .done { color: var(--green); background: #dcfae6; }
+    .todo { color: var(--amber); background: #fef0c7; }
+    .critical-status { color: var(--red); background: #fee4e2; }
+    .future { color: #363f72; background: #e0e7ff; }
+    table { width: 100%; border-collapse: collapse; margin: 2mm 0 3mm; font-size: 7.7pt; page-break-inside: auto; }
+    th { background: var(--navy); color: white; text-align: left; padding: 1.8mm 2mm; vertical-align: top; }
+    td { border-bottom: 1px solid var(--line); padding: 1.5mm 2mm; vertical-align: top; }
+    tr { page-break-inside: avoid; }
+    tr:nth-child(even) td { background: #f9fafb; }
+    code { font-family: Consolas, monospace; font-size: 8.6pt; background: #f2f4f7; padding: .3mm 1mm; border-radius: 2px; }
+    pre { font-family: Consolas, monospace; font-size: 7.1pt; line-height: 1.25; white-space: pre-wrap; word-break: break-word; color: #e6edf3; background: #0d1117; padding: 3mm; border-radius: 4px; page-break-inside: avoid; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
+    .card { border: 1px solid var(--line); padding: 3mm; page-break-inside: avoid; }
+    .card h3 { margin-top: 0; }
+    .metric { font-size: 19pt; font-weight: 800; color: var(--navy); }
+    .small { font-size: 8pt; color: var(--muted); }
+    .toc { list-style: none; padding: 0; margin: 4mm 0; }
+    .toc li { display: flex; border-bottom: 1px dotted #98a2b3; padding: 2.2mm 0; margin: 0; }
+    .toc b { min-width: 14mm; color: var(--blue); }
+    .diagram { padding: 3.5mm; background: var(--soft); border: 1px solid var(--line); margin: 2.5mm 0 3mm; page-break-inside: avoid; }
+    .flow { display: flex; align-items: stretch; justify-content: space-between; gap: 2mm; }
+    .node { flex: 1; text-align: center; background: white; border: 1px solid #98a2b3; padding: 2.5mm 1.5mm; font-weight: 700; min-height: 14mm; display: flex; align-items: center; justify-content: center; }
+    .node.primary { background: var(--navy); color: white; border-color: var(--navy); }
+    .node.accent { border-top: 4px solid var(--yellow); }
+    .arrow { align-self: center; color: var(--blue); font-size: 18pt; font-weight: 800; }
+    .sequence { counter-reset: step; margin: 4mm 0; }
+    .sequence-item { counter-increment: step; display: grid; grid-template-columns: 10mm 1fr; gap: 2mm; margin-bottom: 1.8mm; page-break-inside: avoid; }
+    .sequence-item:before { content: counter(step); width: 9mm; height: 9mm; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--yellow); color: var(--navy); font-weight: 900; }
+    .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+    .checklist li { position: relative; padding-left: 8mm; margin-bottom: 2.2mm; }
+    .checklist li:before { content: ""; position: absolute; left: 0; top: .2mm; width: 4mm; height: 4mm; border: 1.5px solid #667085; background: white; }
+    .signature { height: 16mm; border-bottom: 1px solid #667085; margin-top: 6mm; }
+    .page-number:after { content: counter(page); }
+    @page { size: A4; margin: 0; }
+    @media print {
+      body { background: white; }
+      .document { width: auto; margin: 0; box-shadow: none; }
+      .page { min-height: 297mm; height: 297mm; }
+      a { color: var(--blue); }
+    }
+  </style>
+</head>
+<body>
+<main class="document">
+
+  <section class="page cover">
+    <div class="cover-band"></div>
+    <div class="cover-main">
+      <div class="brand">MINING <span>360</span></div>
+      <h1>Dossier technique IT et intégration de l’authentification Windows</h1>
+      <div class="subtitle">Architecture on-premise, Microsoft Entra ID, Microsoft Graph, SQL Server et préparation du serveur BODEFM</div>
+      <div class="cover-grid">
+        <div class="cover-card"><div class="cover-label">Document</div><div class="cover-value">Guide de provisionnement et d’acceptation technique</div></div>
+        <div class="cover-card"><div class="cover-label">Cible</div><div class="cover-value">BODEFM · Windows Server 2022 · Environnement Test</div></div>
+        <div class="cover-card"><div class="cover-label">Version</div><div class="cover-value">1.0 · 3 août 2026 · Commit e78b929</div></div>
+        <div class="cover-card"><div class="cover-label">Classification</div><div class="cover-value">Usage interne · Ne contient aucun secret</div></div>
+      </div>
+    </div>
+    <div class="footer" style="color:#cbd5e1;border-color:#475467"><span>Mining 360 · Architecture & Identity</span><span>CONFIDENTIEL INTERNE</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">Contrôle documentaire</div>
+    <h1>Objet et portée</h1>
+    <p class="lead">Ce dossier fournit à l’équipe IT les informations nécessaires pour héberger Mining 360 sur BODEFM et intégrer l’authentification des utilisateurs avec leur compte Windows d’entreprise via Microsoft Entra ID.</p>
+    <div class="callout success">
+      <div class="callout-title">Décision d’architecture</div>
+      L’authentification web recommandée est Microsoft Entra ID avec OpenID Connect / OAuth 2.0 Authorization Code. Elle fonctionne sur Windows, macOS, iOS, Android et les navigateurs modernes. Elle ne dépend pas d’un poste Windows et ne transmet jamais le mot de passe du domaine à Django.
+    </div>
+    <h2>Destinataires</h2>
+    <div class="grid-3">
+      <div class="card"><h3>Identity & Security</h3><p>Entra ID, permissions Graph, Conditional Access, secret/certificat, comptes de service.</p></div>
+      <div class="card"><h3>Infrastructure</h3><p>BODEFM, DNS, TLS, IIS, service applicatif, pare-feu, supervision et sauvegarde.</p></div>
+      <div class="card"><h3>Database</h3><p>SQL Server, base Mining360App, identité de service, chiffrement et droits minimaux.</p></div>
+    </div>
+    <h2>Statuts utilisés</h2>
+    <table>
+      <tr><th>Statut</th><th>Signification</th></tr>
+      <tr><td><span class="status done">IMPLÉMENTÉ</span></td><td>Présent et vérifié dans le code ou sur BODEFM.</td></tr>
+      <tr><td><span class="status todo">À PROVISIONNER</span></td><td>Action requise de l’IT avant validation de l’environnement.</td></tr>
+      <tr><td><span class="status critical-status">BLOQUANT PROD</span></td><td>Doit être corrigé avant une mise en production.</td></tr>
+      <tr><td><span class="status future">DURCISSEMENT</span></td><td>Évolution recommandée après la mise en service initiale.</td></tr>
+    </table>
+    <h2>Gestion du document</h2>
+    <table>
+      <tr><th>Propriétaire</th><th>Approbateur IT</th><th>Révision</th><th>Prochaine revue</th></tr>
+      <tr><td>Mining 360 Product Owner</td><td>À compléter</td><td>1.0</td><td>Après recette BODEFM</td></tr>
+    </table>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>2</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">Navigation</div>
+    <h1>Sommaire</h1>
+    <ol class="toc">
+      <li><b>01</b> Résumé exécutif et décisions requises</li>
+      <li><b>02</b> Architecture applicative actuelle et cible</li>
+      <li><b>03</b> Inventaire technique de BODEFM</li>
+      <li><b>04</b> Architecture de l’authentification Windows</li>
+      <li><b>05</b> Création de l’application Microsoft Entra ID</li>
+      <li><b>06</b> Permissions Microsoft Graph et gouvernance des accès</li>
+      <li><b>07</b> Comptes de service, SQL Server et droits fichiers</li>
+      <li><b>08</b> Réseau, DNS, TLS, IIS et flux firewall</li>
+      <li><b>09</b> Variables d’environnement et gestion des secrets</li>
+      <li><b>10</b> Installation et séquence de déploiement BODEFM</li>
+      <li><b>11</b> Tests d’acceptation et exploitation</li>
+      <li><b>12</b> Sécurité, risques et plan de remédiation</li>
+      <li><b>13</b> Fiche de demande IT et checklist de livraison</li>
+      <li><b>A</b> Annexe PowerShell</li>
+      <li><b>B</b> Références officielles</li>
+    </ol>
+    <h2>Résumé des décisions attendues</h2>
+    <table>
+      <tr><th>#</th><th>Décision IT</th><th>Recommandation</th></tr>
+      <tr><td>1</td><td>Nom DNS final</td><td><code>mining360.neemba.local</code> ou nom conforme au standard interne.</td></tr>
+      <tr><td>2</td><td>Identité du service</td><td>gMSA dédié, sans ouverture de session interactive.</td></tr>
+      <tr><td>3</td><td>Hébergement web</td><td>IIS en reverse proxy TLS vers un serveur WSGI Windows local.</td></tr>
+      <tr><td>4</td><td>Credential Entra</td><td>Secret pour la recette; certificat/secret manager pour la production après adaptation du code.</td></tr>
+      <tr><td>5</td><td>Accès utilisateurs</td><td>Application assignée uniquement à un groupe Entra autorisé.</td></tr>
+      <tr><td>6</td><td>Accès SQL</td><td>Authentification Windows avec droits minimaux sur <code>Mining360App</code>.</td></tr>
+    </table>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>3</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">01 · Résumé exécutif</div>
+    <h1>Ce que l’IT doit créer</h1>
+    <div class="grid-2">
+      <div class="card"><h3>Identité</h3><ul><li>Une App Registration Microsoft Entra ID mono-tenant.</li><li>Un Enterprise Application limité aux groupes autorisés.</li><li>Les permissions Graph minimales avec consentement administrateur lorsque requis.</li><li>Un credential applicatif protégé et rotatif.</li></ul></div>
+      <div class="card"><h3>Hébergement</h3><ul><li>Un DNS interne et un certificat TLS.</li><li>IIS + ARR/URL Rewrite, ou reverse proxy équivalent validé.</li><li>Un service Windows pour le runtime Django.</li><li>Un répertoire applicatif et des ACL dédiées.</li></ul></div>
+      <div class="card"><h3>Données</h3><ul><li>Base <code>Mining360App</code> sur SQL Server.</li><li>Login Windows de l’identité de service.</li><li>Droits DDL temporaires pour les migrations et droits DML à l’exécution.</li><li>Backups, supervision et rétention.</li></ul></div>
+      <div class="card"><h3>Réseau</h3><ul><li>HTTPS utilisateurs vers BODEFM.</li><li>BODEFM vers Entra, Graph et fournisseurs autorisés.</li><li>BODEFM vers SQL Server et Power BI.</li><li>SSH 22 limité aux contrôleurs de déploiement approuvés.</li></ul></div>
+    </div>
+    <h2>État réel au 3 août 2026</h2>
+    <table>
+      <tr><th>Élément</th><th>État</th><th>Commentaire</th></tr>
+      <tr><td>Django + SQL Server</td><td><span class="status done">IMPLÉMENTÉ</span></td><td>Production forcée vers SQL Server lorsque <code>DEBUG=0</code>.</td></tr>
+      <tr><td>Connexion Entra ID</td><td><span class="status done">IMPLÉMENTÉ</span></td><td>Authorization Code, Graph <code>/me</code>, contrôle d’état anti-CSRF.</td></tr>
+      <tr><td>Gestion des rôles</td><td><span class="status done">IMPLÉMENTÉ</span></td><td>Profils <code>PlatformUser</code> et permissions par module.</td></tr>
+      <tr><td>BODEFM OpenSSH</td><td><span class="status done">VALIDÉ</span></td><td>Authentification par clé publique et exécution distante confirmées.</td></tr>
+      <tr><td>ODBC Driver 18</td><td><span class="status critical-status">MANQUANT</span></td><td>Bloquant pour la connexion SQL Server depuis BODEFM.</td></tr>
+      <tr><td>Runtime web production</td><td><span class="status critical-status">À INSTALLER</span></td><td><code>runserver</code> est réservé au développement.</td></tr>
+      <tr><td>DNS/TLS/IIS</td><td><span class="status todo">À PROVISIONNER</span></td><td>FQDN, certificat, reverse proxy et headers HTTPS.</td></tr>
+      <tr><td>Compte de service</td><td><span class="status critical-status">À CRÉER</span></td><td>Le compte personnel actuel sert uniquement aux tests.</td></tr>
+    </table>
+    <div class="callout critical"><div class="callout-title">Risque de bootstrap administrateur</div>Dans l’implémentation actuelle, si aucun <code>PlatformUser</code> n’existe, le premier utilisateur Entra accepté devient administrateur de la plateforme. Avant l’ouverture de la production, pré-provisionner l’administrateur désigné et tester sur une base contrôlée.</div>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>4</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">02 · Architecture</div>
+    <h1>Architecture applicative</h1>
+    <div class="diagram">
+      <div class="flow">
+        <div class="node accent">Navigateurs utilisateurs</div><div class="arrow">›</div>
+        <div class="node primary">IIS / TLS<br>BODEFM</div><div class="arrow">›</div>
+        <div class="node accent">Django / WSGI<br>Mining 360</div><div class="arrow">›</div>
+        <div class="node">SQL Server<br>Mining360App</div>
+      </div>
+      <div class="flow" style="margin-top:4mm">
+        <div class="node">Microsoft Entra ID<br>Microsoft Graph</div>
+        <div class="node">Power BI<br>Semantic Models</div>
+        <div class="node">AI Providers<br>via AI Gateway</div>
+        <div class="node">MiningProd<br>source opérationnelle</div>
+      </div>
+    </div>
+    <h2>Composants et responsabilités</h2>
+    <table>
+      <tr><th>Composant</th><th>Technologie</th><th>Responsabilité</th><th>Propriétaire</th></tr>
+      <tr><td>Web application</td><td>Django 6.0.6 / Python</td><td>UI, API, autorisation, orchestration métier.</td><td>Mining 360</td></tr>
+      <tr><td>Application DB</td><td>SQL Server + mssql-django + pyodbc</td><td>Configuration, connaissances, utilisateurs, logs, sessions et administration.</td><td>DBA / IT</td></tr>
+      <tr><td>Operational data</td><td>MiningProd / Power BI</td><td>Données équipements, downtimes, heures et KPI.</td><td>Data / BI</td></tr>
+      <tr><td>Identity</td><td>Microsoft Entra ID + Graph</td><td>Authentification du compte entreprise et lecture du profil.</td><td>Identity IT</td></tr>
+      <tr><td>Reverse proxy</td><td>IIS + ARR + URL Rewrite</td><td>TLS, hostname public interne, proxy vers WSGI, limites et journaux HTTP.</td><td>Infrastructure</td></tr>
+      <tr><td>Application service</td><td>Serveur WSGI Windows</td><td>Processus Python persistant; redémarrage automatique et logs.</td><td>Infrastructure</td></tr>
+    </table>
+    <div class="callout warning"><div class="callout-title">Séparation des bases</div><code>Mining360App</code> est la base applicative Django. <code>MiningProd</code> reste une source opérationnelle externe et ne doit pas devenir la base interne de Django. SQLite est limité au développement/migration et n’est pas un mécanisme de production ni de rollback.</div>
+    <h2>Prérequis runtime</h2>
+    <p>Django ne fournit pas de serveur de production. L’IT doit valider et exploiter un serveur WSGI Windows, par exemple Waitress, lancé comme service Windows sous l’identité de service. IIS termine TLS et transmet uniquement vers l’écoute locale du WSGI.</p>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>5</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">03 · Inventaire BODEFM</div>
+    <h1>État du serveur de test</h1>
+    <div class="grid-3">
+      <div class="card"><div class="small">Système</div><div class="metric">2022</div><p>Windows Server Standard<br>Build 20348</p></div>
+      <div class="card"><div class="small">Mémoire</div><div class="metric">16 GB</div><p>3 processeurs logiques<br>Architecture AMD64</p></div>
+      <div class="card"><div class="small">Disque libre C:</div><div class="metric">29.13 GB</div><p>199.66 GB capacité</p></div>
+    </div>
+    <table>
+      <tr><th>Contrôle</th><th>Résultat observé</th><th>Action</th></tr>
+      <tr><td>OpenSSH Server</td><td>Installé, service <code>sshd</code> actif, port 22 accessible.</td><td><span class="status done">AUCUNE</span></td></tr>
+      <tr><td>Authentification SSH</td><td>Clé ED25519 acceptée pour <code>papa.diagne@neemba.com</code>.</td><td>Remplacer par compte de déploiement dédié.</td></tr>
+      <tr><td>Python</td><td>3.12.1</td><td>Compatible; créer un environnement virtuel dédié.</td></tr>
+      <tr><td>PowerShell</td><td>5.1.20348.2849</td><td>Compatible avec les scripts IT de base.</td></tr>
+      <tr><td>SQL Server TCP</td><td>Port 1433 accessible.</td><td>Valider le serveur SQL exact et le chiffrement.</td></tr>
+      <tr><td>ODBC Driver</td><td>ODBC Driver 18 non installé.</td><td><span class="status critical-status">INSTALLER X64</span></td></tr>
+      <tr><td>Git</td><td>Non installé.</td><td>Installer ou utiliser un package offline signé.</td></tr>
+      <tr><td>Répertoire</td><td><code>C:\Mining360</code> absent.</td><td>Créer la structure et appliquer les ACL.</td></tr>
+      <tr><td>Compte actuel</td><td>Administrateur local.</td><td>Ne pas utiliser ce niveau pour le service runtime.</td></tr>
+    </table>
+    <h2>Empreintes validées pour la recette</h2>
+    <table>
+      <tr><th>Objet</th><th>Empreinte</th><th>Règle</th></tr>
+      <tr><td>Clé hôte SSH BODEFM</td><td><code>SHA256:kfmGwjv+cmHBNzs+GN1OZyq4PaC1j56SzvyOsFPJdkA</code></td><td>Bloquer si elle change sans changement IT approuvé.</td></tr>
+      <tr><td>Clé client de test</td><td><code>SHA256:7loz2OQj4dDf0mQgLMfygfbgLT+NUl8c9KcH6G7JX6E</code></td><td>Recette uniquement; ne pas copier la clé privée dans le dépôt.</td></tr>
+    </table>
+    <div class="callout"><div class="callout-title">Identité SSH confirmée</div>Sur OpenSSH Windows, le format UPN <code>papa.diagne@neemba.com</code> ouvre correctement la session et est résolu côté serveur comme <code>RESDELMAS\diagnepa</code>. Le format domaine\utilisateur a authentifié la clé mais n’a pas ouvert le canal de commande dans les essais.</div>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>6</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">04 · Authentification</div>
+    <h1>Authentification Windows web</h1>
+    <p class="lead">Dans ce dossier, “authentification Windows” signifie que l’utilisateur se connecte avec son identité Microsoft d’entreprise. Mining 360 ne reçoit et ne stocke jamais son mot de passe Active Directory.</p>
+    <div class="diagram">
+      <div class="flow">
+        <div class="node accent">1. Utilisateur<br>compte entreprise</div><div class="arrow">›</div>
+        <div class="node primary">2. Microsoft Entra ID<br>authentification + MFA</div><div class="arrow">›</div>
+        <div class="node accent">3. Callback Mining 360<br>code d’autorisation</div><div class="arrow">›</div>
+        <div class="node">4. Graph /me<br>profil vérifié</div>
+      </div>
+    </div>
+    <div class="sequence">
+      <div class="sequence-item"><div><b>Demande de connexion.</b> Mining 360 génère un état aléatoire et redirige le navigateur vers l’endpoint du tenant Entra.</div></div>
+      <div class="sequence-item"><div><b>Authentification Microsoft.</b> Entra applique mot de passe, MFA, appareil conforme et Conditional Access selon les politiques IT.</div></div>
+      <div class="sequence-item"><div><b>Retour contrôlé.</b> Entra redirige vers <code>/auth/callback/</code>. L’URI doit correspondre exactement à celle enregistrée.</div></div>
+      <div class="sequence-item"><div><b>Échange serveur à serveur.</b> Django échange le code avec le client ID et le credential applicatif.</div></div>
+      <div class="sequence-item"><div><b>Profil.</b> L’application appelle Graph <code>/me</code> et récupère id, displayName, UPN, mail et jobTitle.</div></div>
+      <div class="sequence-item"><div><b>Autorisation Mining 360.</b> Le profil doit exister et être actif dans <code>PlatformUser</code>; ses modules et rôles déterminent ce qu’il peut utiliser.</div></div>
+    </div>
+    <h2>Ce mécanisme n’est pas</h2>
+    <ul>
+      <li>une transmission du mot de passe Windows à Mining 360;</li>
+      <li>une authentification LDAP directe;</li>
+      <li>une délégation Kerberos IIS vers Django;</li>
+      <li>une autorisation automatique basée uniquement sur l’appartenance au domaine.</li>
+    </ul>
+    <div class="callout warning"><div class="callout-title">Expérience SSO actuelle</div>Le code ajoute actuellement <code>prompt=select_account</code>. L’utilisateur bénéficie de sa session Microsoft, mais voit le sélecteur de compte. Une connexion réellement silencieuse nécessite une évolution applicative contrôlée (suppression de ce paramètre ou utilisation d’une bibliothèque Microsoft supportée), puis des tests Conditional Access.</div>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>7</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">05 · Microsoft Entra ID</div>
+    <h1>Création de l’App Registration</h1>
+    <h2>Paramètres demandés</h2>
+    <table>
+      <tr><th>Champ Entra</th><th>Valeur demandée</th><th>Notes</th></tr>
+      <tr><td>Display name</td><td><code>Mining 360 - Test</code> puis <code>Mining 360 - Production</code></td><td>Séparer au minimum Test et Production.</td></tr>
+      <tr><td>Supported account types</td><td>Accounts in this organizational directory only</td><td>Application mono-tenant.</td></tr>
+      <tr><td>Platform</td><td>Web</td><td>Application web confidentielle côté serveur.</td></tr>
+      <tr><td>Redirect URI Test</td><td><code>https://&lt;FQDN-TEST&gt;/auth/callback/</code></td><td>Valeur exacte, slash final inclus.</td></tr>
+      <tr><td>Redirect URI Production</td><td><code>https://&lt;FQDN-PROD&gt;/auth/callback/</code></td><td>À enregistrer dans l’application Production.</td></tr>
+      <tr><td>Front-channel logout</td><td>Non requis par le code actuel</td><td>Le logout Mining 360 est local; fédération complète à prévoir.</td></tr>
+      <tr><td>Assignment required</td><td>Yes</td><td>Limiter l’Enterprise Application aux groupes autorisés.</td></tr>
+    </table>
+    <h2>Credential applicatif</h2>
+    <div class="grid-2">
+      <div class="card"><h3>Recette immédiate</h3><p>Créer un client secret de courte durée selon la politique IT. Transmettre la valeur une seule fois via le coffre-fort approuvé. Configurer une alerte d’expiration et une rotation avec chevauchement.</p></div>
+      <div class="card"><h3>Production cible</h3><p>Microsoft recommande un certificat plutôt qu’un secret. L’implémentation actuelle attend un client secret; le support certificat nécessite une évolution du service d’authentification avant activation.</p></div>
+    </div>
+    <h2>Valeurs à remettre à l’équipe Mining 360</h2>
+    <ul class="checklist">
+      <li>Tenant ID de l’annuaire.</li>
+      <li>Application (client) ID de Test et de Production.</li>
+      <li>Object ID de l’Enterprise Application.</li>
+      <li>URI de redirection validées.</li>
+      <li>Référence sécurisée du credential, sans l’inscrire dans un ticket en clair.</li>
+      <li>Groupes assignés et propriétaires de l’application.</li>
+      <li>Date d’expiration et processus de rotation.</li>
+    </ul>
+    <div class="callout critical"><div class="callout-title">Ne pas réutiliser l’App Registration Power BI en production</div>Le code tolère actuellement un fallback vers <code>POWERBI_TENANT_ID</code>, <code>POWERBI_CLIENT_ID</code> et <code>POWERBI_CLIENT_SECRET</code>. Pour la séparation des responsabilités et des permissions, créer des identifiants Entra propres à l’authentification Mining 360.</div>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>8</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">06 · Microsoft Graph</div>
+    <h1>Permissions minimales</h1>
+    <table>
+      <tr><th>Fonction</th><th>Permission</th><th>Type</th><th>Consentement</th><th>Justification</th></tr>
+      <tr><td>Connexion utilisateur</td><td><code>openid</code>, <code>profile</code>, <code>email</code></td><td>OIDC scopes</td><td>Selon tenant</td><td>Identification et claims standards.</td></tr>
+      <tr><td>Lecture du profil connecté</td><td><code>User.Read</code></td><td>Delegated</td><td>Standard</td><td>Appel Graph <code>/me</code>.</td></tr>
+      <tr><td>Recherche d’utilisateurs par l’admin</td><td><code>User.Read.All</code></td><td>Application</td><td>Admin required</td><td>Appel Graph <code>/users</code> en client credentials.</td></tr>
+    </table>
+    <div class="callout"><div class="callout-title">Principe du moindre privilège</div>Ne pas accorder <code>Directory.Read.All</code> si <code>User.Read.All</code> suffit. L’application ne modifie aucun utilisateur Entra et n’a pas besoin de permission Graph en écriture.</div>
+    <h2>Gouvernance recommandée</h2>
+    <ul>
+      <li>Consentement administrateur documenté pour les permissions Application.</li>
+      <li>Au moins deux propriétaires nommés sur l’App Registration.</li>
+      <li>Enterprise Application avec “Assignment required = Yes”.</li>
+      <li>Groupe Test séparé du groupe Production.</li>
+      <li>Conditional Access conforme aux règles de l’entreprise : MFA, risque, localisation et appareil.</li>
+      <li>Revue périodique des utilisateurs assignés et des administrateurs Mining 360.</li>
+      <li>Surveillance des journaux Entra Sign-in et Service Principal Sign-in.</li>
+    </ul>
+    <h2>Authentification vs autorisation</h2>
+    <table>
+      <tr><th>Niveau</th><th>Contrôle</th><th>Source</th></tr>
+      <tr><td>Identité</td><td>L’utilisateur est bien celui qu’il prétend être.</td><td>Microsoft Entra ID.</td></tr>
+      <tr><td>Accès à l’application</td><td>L’utilisateur est assigné à Mining 360.</td><td>Enterprise Application / groupes Entra.</td></tr>
+      <tr><td>Accès aux modules</td><td>Reporting, AI, Data, Sources et administration.</td><td><code>PlatformUser</code> dans <code>Mining360App</code>.</td></tr>
+      <tr><td>Accès aux données</td><td>Site, client, rapport, commentaires et périmètre.</td><td>Rôles Mining 360 + RLS Power BI.</td></tr>
+    </table>
+    <div class="callout warning"><div class="callout-title">Provisionnement utilisateur</div>Le groupe Entra autorise la connexion à l’application, mais les rôles détaillés restent administrés dans Mining 360. Un utilisateur non présent ou inactif dans <code>PlatformUser</code> est refusé, à l’exception du bootstrap initial décrit plus haut.</div>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>9</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">07 · Identités de service</div>
+    <h1>Compte runtime et SQL Server</h1>
+    <h2>Compte de service recommandé</h2>
+    <p>Créer une identité dédiée, de préférence un gMSA si l’infrastructure AD le permet. Le compte personnel <code>papa.diagne@neemba.com</code> reste limité aux opérations de recette et d’administration explicitement approuvées.</p>
+    <table>
+      <tr><th>Droit</th><th>Runtime Mining 360</th><th>Déploiement</th></tr>
+      <tr><td>Log on as a service</td><td>Oui</td><td>Selon mécanisme de déploiement.</td></tr>
+      <tr><td>Interactive logon</td><td>Non</td><td>Non pour le compte dédié.</td></tr>
+      <tr><td>Administrateur local</td><td>Non</td><td>Éviter; déléguer seulement les actions nécessaires.</td></tr>
+      <tr><td><code>C:\Mining360\app</code></td><td>Read & Execute</td><td>Modify pendant un déploiement contrôlé.</td></tr>
+      <tr><td><code>C:\Mining360\logs</code></td><td>Modify</td><td>Read/Archive.</td></tr>
+      <tr><td><code>C:\Mining360\secrets</code></td><td>Read ciblé</td><td>Écriture réservée à l’IT/secret manager.</td></tr>
+      <tr><td>SQL Server</td><td>DML et exécution applicative</td><td>DDL temporaire pour <code>migrate</code>.</td></tr>
+    </table>
+    <h2>Base SQL Server</h2>
+    <table>
+      <tr><th>Paramètre</th><th>Valeur</th></tr>
+      <tr><td>Base applicative</td><td><code>Mining360App</code></td></tr>
+      <tr><td>Driver client</td><td>Microsoft ODBC Driver 18 for SQL Server x64</td></tr>
+      <tr><td>Port par défaut</td><td>TCP 1433, ou port validé par le DBA</td></tr>
+      <tr><td>Authentification cible</td><td>Windows Integrated Authentication sous l’identité du service</td></tr>
+      <tr><td>Chiffrement cible</td><td><code>Encrypt=yes;TrustServerCertificate=no</code> avec chaîne de confiance valide</td></tr>
+      <tr><td>Connexion persistante</td><td><code>CONN_MAX_AGE=60</code> actuellement</td></tr>
+    </table>
+    <div class="callout warning"><div class="callout-title">Configuration transitoire</div>La valeur actuelle par défaut <code>Encrypt=optional;TrustServerCertificate=yes</code> facilite la recette mais n’est pas la cible de sécurité. Le DBA doit fournir un certificat SQL approuvé avant le passage en production.</div>
+    <h2>Séparation des droits de migration</h2>
+    <p>La pratique recommandée consiste à exécuter les migrations avec une identité de déploiement autorisée, puis à lancer l’application avec une identité runtime plus restrictive. Si une identité unique est utilisée au départ, documenter et réévaluer ses droits après chaque migration.</p>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>10</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">08 · Réseau</div>
+    <h1>Flux, DNS, TLS et IIS</h1>
+    <h2>Matrice des flux</h2>
+    <table>
+      <tr><th>Source</th><th>Destination</th><th>Port</th><th>Usage</th><th>Sens</th></tr>
+      <tr><td>Postes utilisateurs</td><td>FQDN Mining 360 / BODEFM</td><td>443/TCP</td><td>Application web</td><td>Entrant</td></tr>
+      <tr><td>IIS BODEFM</td><td>WSGI local</td><td>8000/TCP local uniquement</td><td>Reverse proxy</td><td>Loopback</td></tr>
+      <tr><td>BODEFM</td><td>SQL Server</td><td>1433/TCP</td><td>Mining360App et sources autorisées</td><td>Sortant</td></tr>
+      <tr><td>BODEFM</td><td><code>login.microsoftonline.com</code></td><td>443/TCP</td><td>OIDC / tokens</td><td>Sortant</td></tr>
+      <tr><td>BODEFM</td><td><code>graph.microsoft.com</code></td><td>443/TCP</td><td>Profil et recherche annuaire</td><td>Sortant</td></tr>
+      <tr><td>BODEFM</td><td>Power BI endpoints autorisés</td><td>443/TCP</td><td>Rapports, modèles et API</td><td>Sortant</td></tr>
+      <tr><td>Contrôleur approuvé</td><td>BODEFM</td><td>22/TCP</td><td>Déploiement SSH</td><td>Entrant restreint</td></tr>
+    </table>
+    <h2>DNS et certificat</h2>
+    <ul>
+      <li>Créer un enregistrement DNS interne stable vers BODEFM ou vers le load balancer.</li>
+      <li>Émettre un certificat TLS dont le SAN contient exactement le FQDN.</li>
+      <li>Installer la chaîne complète dans le magasin de certificats Local Computer.</li>
+      <li>Configurer le binding IIS 443 et interdire HTTP ou rediriger proprement vers HTTPS.</li>
+      <li>Enregistrer ce même FQDN dans <code>MINING360_ALLOWED_HOSTS</code>, <code>CSRF_TRUSTED_ORIGINS</code> et dans l’URI Entra.</li>
+    </ul>
+    <h2>Reverse proxy IIS</h2>
+    <p>IIS termine TLS. ARR + URL Rewrite transmettent les requêtes à <code>http://127.0.0.1:8000</code>. Le port applicatif ne doit pas être exposé sur le réseau. Conserver les headers <code>Host</code> et <code>X-Forwarded-Proto=https</code>, définir des timeouts compatibles avec Power BI et limiter les uploads.</p>
+    <div class="callout critical"><div class="callout-title">Configuration Django derrière proxy</div>Avant production, activer dans les settings le traitement sécurisé du proxy : <code>SECURE_PROXY_SSL_HEADER</code>, cookies Secure/HttpOnly/SameSite, HSTS après validation, redirection HTTPS et origines CSRF explicites. Ces paramètres ne sont pas encore complètement configurés dans le fichier actuel.</div>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>11</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">09 · Configuration</div>
+    <h1>Variables et secrets</h1>
+    <p>Configurer les variables au niveau du service Windows ou via le mécanisme de secrets approuvé. Ne pas dépendre du profil utilisateur d’un administrateur et ne jamais enregistrer les valeurs secrètes dans Git.</p>
+    <table>
+      <tr><th>Variable</th><th>Type</th><th>Valeur / propriétaire</th></tr>
+      <tr><td><code>MINING360_DATABASE_ENGINE</code></td><td>Configuration</td><td><code>mssql</code></td></tr>
+      <tr><td><code>MINING360_APP_SQL_SERVER</code></td><td>Configuration</td><td>Nom SQL fourni par DBA</td></tr>
+      <tr><td><code>MINING360_APP_SQL_DATABASE</code></td><td>Configuration</td><td><code>Mining360App</code></td></tr>
+      <tr><td><code>MINING360_APP_SQL_DRIVER</code></td><td>Configuration</td><td><code>ODBC Driver 18 for SQL Server</code></td></tr>
+      <tr><td><code>MINING360_APP_SQL_EXTRA_PARAMS</code></td><td>Sécurité</td><td>Chiffrement validé par DBA</td></tr>
+      <tr><td><code>MINING360_SECRET_KEY</code></td><td><b>Secret</b></td><td>Valeur stable, aléatoire, propre à l’environnement</td></tr>
+      <tr><td><code>MINING360_DEBUG</code></td><td>Configuration</td><td><code>0</code> en Test contrôlé et Production</td></tr>
+      <tr><td><code>MINING360_ALLOWED_HOSTS</code></td><td>Configuration</td><td>FQDN et hostname autorisés</td></tr>
+      <tr><td><code>AZURE_AD_TENANT_ID</code></td><td>Configuration</td><td>Tenant Entra</td></tr>
+      <tr><td><code>AZURE_AD_CLIENT_ID</code></td><td>Configuration</td><td>Client ID App Registration</td></tr>
+      <tr><td><code>AZURE_AD_CLIENT_SECRET</code></td><td><b>Secret</b></td><td>Secret de recette; rotation obligatoire</td></tr>
+      <tr><td><code>MINING360_CONFIG_ENCRYPTION_KEY</code></td><td><b>Secret</b></td><td>Chiffrement des configurations sensibles</td></tr>
+      <tr><td><code>MINING360_DEPLOYMENT_ENCRYPTION_KEY</code></td><td><b>Secret</b></td><td>Chiffrement des credentials de déploiement</td></tr>
+      <tr><td><code>MINING360_STATIC_ROOT</code></td><td>Configuration</td><td><code>C:\Mining360\shared\static</code></td></tr>
+    </table>
+    <h2>Règles de gestion</h2>
+    <ul>
+      <li>Les secrets ne sont visibles ni dans l’interface ni dans les journaux.</li>
+      <li>Chaque environnement possède ses propres secrets et identifiants Entra.</li>
+      <li>Les accès au secret manager sont attribués à l’identité du service, pas aux utilisateurs.</li>
+      <li>La rotation doit supporter une période de chevauchement et un retour arrière.</li>
+      <li>Les valeurs sont restaurables avec le plan de continuité, sans être exportées en clair.</li>
+    </ul>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>12</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">10 · Déploiement</div>
+    <h1>Installation BODEFM</h1>
+    <div class="sequence">
+      <div class="sequence-item"><div><b>Préparer l’OS.</b> Patches, antivirus, NTP, DNS, certificat, IIS, ARR/URL Rewrite, ODBC Driver 18 et Git ou package offline.</div></div>
+      <div class="sequence-item"><div><b>Créer l’identité.</b> gMSA/service account, droits service, SQL et ACL minimaux.</div></div>
+      <div class="sequence-item"><div><b>Créer les répertoires.</b> <code>C:\Mining360\app</code>, <code>venv</code>, <code>logs</code>, <code>shared\static</code>, <code>backups</code> et <code>secrets</code>.</div></div>
+      <div class="sequence-item"><div><b>Installer la release.</b> Checkout d’un tag/commit approuvé ou extraction d’un package contrôlé par checksum.</div></div>
+      <div class="sequence-item"><div><b>Créer l’environnement Python.</b> Installer les dépendances verrouillées dans le virtualenv.</div></div>
+      <div class="sequence-item"><div><b>Configurer.</b> Variables au niveau service, secrets par référence, SQL et Entra séparés.</div></div>
+      <div class="sequence-item"><div><b>Valider avant changement.</b> Connexion SQL, <code>manage.py check --deploy</code>, migrations en attente et backup.</div></div>
+      <div class="sequence-item"><div><b>Appliquer.</b> <code>migrate --noinput</code>, <code>collectstatic --noinput</code>, puis démarrer/recycler le service WSGI.</div></div>
+      <div class="sequence-item"><div><b>Publier.</b> Configurer IIS, tester la règle de proxy, le certificat et le hostname.</div></div>
+      <div class="sequence-item"><div><b>Accepter.</b> Health checks, connexion Entra, rôles, SQL, Power BI et journalisation.</div></div>
+    </div>
+    <h2>Commandes applicatives contrôlées</h2>
+    <pre>cd C:\Mining360\app
+C:\Mining360\venv\Scripts\python.exe -m pip install -r requirements.txt
+C:\Mining360\venv\Scripts\python.exe manage.py check --deploy
+C:\Mining360\venv\Scripts\python.exe manage.py migrate --noinput
+C:\Mining360\venv\Scripts\python.exe manage.py collectstatic --noinput</pre>
+    <div class="callout critical"><div class="callout-title">Aucun lancement production avec runserver</div><code>python manage.py runserver</code> n’est pas conçu pour la production. Le service Windows doit exécuter un serveur WSGI adapté et être supervisé avec redémarrage, compte dédié et rotation des logs.</div>
+    <h2>Rollback minimum</h2>
+    <ol><li>Arrêter le service applicatif.</li><li>Conserver les logs et la base défaillante pour diagnostic.</li><li>Restaurer le backup SQL validé si la migration l’exige.</li><li>Remettre la release précédente.</li><li>Réappliquer les migrations compatibles, redémarrer et exécuter les tests de santé.</li></ol>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>13</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">11 · Recette</div>
+    <h1>Plan de tests d’acceptation</h1>
+    <table>
+      <tr><th>ID</th><th>Test</th><th>Résultat attendu</th><th>Responsable</th></tr>
+      <tr><td>INF-01</td><td>Résolution DNS et certificat</td><td>FQDN résolu, chaîne TLS valide, aucun warning navigateur.</td><td>Infrastructure</td></tr>
+      <tr><td>APP-01</td><td><code>/health/</code></td><td>HTTP 200, application=Mining360, database=ok.</td><td>App/Infra</td></tr>
+      <tr><td>DB-01</td><td>SQL Server</td><td>Connexion sous l’identité service, migrations à jour.</td><td>DBA</td></tr>
+      <tr><td>ID-01</td><td>Utilisateur autorisé</td><td>Connexion Entra, profil Graph, création de session Django.</td><td>Identity</td></tr>
+      <tr><td>ID-02</td><td>Utilisateur non assigné</td><td>Refus Entra ou refus Mining 360, événement journalisé.</td><td>Identity/App</td></tr>
+      <tr><td>ID-03</td><td>Profil Mining 360 inactif</td><td>Message “not authorized”; aucune session applicative.</td><td>App</td></tr>
+      <tr><td>ID-04</td><td>MFA/Conditional Access</td><td>Politique appliquée et visible dans les Sign-in logs.</td><td>Security</td></tr>
+      <tr><td>AUTHZ-01</td><td>Utilisateur Reporting</td><td>Reporting accessible; administration interdite.</td><td>Product Owner</td></tr>
+      <tr><td>AUTHZ-02</td><td>Administrateur</td><td>Accès configuration conforme et audité.</td><td>Product Owner</td></tr>
+      <tr><td>SEC-01</td><td>Inspection navigateur/API</td><td>Aucun secret, token serveur ou credential exposé.</td><td>Security</td></tr>
+      <tr><td>OPS-01</td><td>Redémarrage serveur/service</td><td>Démarrage automatique et santé rétablie.</td><td>Infrastructure</td></tr>
+      <tr><td>OPS-02</td><td>Rotation credential</td><td>Nouveau credential validé avant retrait de l’ancien.</td><td>Identity</td></tr>
+    </table>
+    <h2>Critères Go / No-Go</h2>
+    <div class="grid-2">
+      <div class="card"><h3 style="color:var(--green)">GO</h3><ul><li>TLS et DNS validés.</li><li>Compte de service non administrateur.</li><li>Backup restaurable.</li><li>Health checks et auth réussis.</li><li>Logs et supervision actifs.</li></ul></div>
+      <div class="card"><h3 style="color:var(--red)">NO-GO</h3><ul><li>ODBC absent.</li><li><code>DEBUG=1</code>.</li><li>Usage de <code>runserver</code>.</li><li>Secret dans Git ou ticket.</li><li>Premier utilisateur admin non contrôlé.</li><li>Certificat invalide.</li></ul></div>
+    </div>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>14</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">12 · Sécurité</div>
+    <h1>Risques et remédiations</h1>
+    <table>
+      <tr><th>Risque</th><th>Niveau</th><th>Remédiation</th></tr>
+      <tr><td>Compte personnel utilisé comme runtime</td><td><span class="status critical-status">ÉLEVÉ</span></td><td>Créer gMSA/compte dédié; interdire logon interactif.</td></tr>
+      <tr><td>Premier compte Entra devient admin</td><td><span class="status critical-status">ÉLEVÉ</span></td><td>Pré-provisionner <code>PlatformUser</code>; ouvrir l’app à un groupe test contrôlé.</td></tr>
+      <tr><td>Client secret long terme</td><td><span class="status todo">MOYEN</span></td><td>Rotation courte puis support certificat/secret manager.</td></tr>
+      <tr><td>App Registration partagée avec Power BI</td><td><span class="status todo">MOYEN</span></td><td>Créer une App Registration dédiée à Mining 360 Auth.</td></tr>
+      <tr><td>Local login encore disponible</td><td><span class="status todo">MOYEN</span></td><td>Conserver seulement un break-glass maîtrisé ou désactiver le formulaire standard.</td></tr>
+      <tr><td>SQL TrustServerCertificate=yes</td><td><span class="status todo">MOYEN</span></td><td>Certificat SQL approuvé, Encrypt=yes et validation de chaîne.</td></tr>
+      <tr><td>Headers HTTPS incomplets</td><td><span class="status critical-status">ÉLEVÉ</span></td><td>Configurer proxy SSL, cookies secure, HSTS et CSRF trusted origins.</td></tr>
+      <tr><td>OpenSSH accessible trop largement</td><td><span class="status todo">MOYEN</span></td><td>Allowlist source, clé dédiée, fingerprint, logs et rotation.</td></tr>
+      <tr><td>Runtime non industrialisé</td><td><span class="status critical-status">ÉLEVÉ</span></td><td>WSGI production, service Windows, supervision et log rotation.</td></tr>
+    </table>
+    <h2>Journalisation attendue</h2>
+    <ul>
+      <li>Microsoft Entra Sign-in Logs pour utilisateurs et service principal.</li>
+      <li>IIS access/error logs avec corrélation temporelle.</li>
+      <li>Windows Event Log du service applicatif et OpenSSH.</li>
+      <li>Logs Django sans token, mot de passe, client secret ni chaîne complète de connexion.</li>
+      <li>Audit Mining 360 : utilisateurs, rôles, configuration, providers IA et déploiements.</li>
+      <li>SQL Server audit/monitoring selon les standards DBA.</li>
+    </ul>
+    <h2>Rétention et sauvegarde</h2>
+    <p>La politique IT doit définir la fréquence de sauvegarde de <code>Mining360App</code>, la rétention des fichiers Resources, la restauration testée, les logs de sécurité et la protection des clés de chiffrement. Une sauvegarde sans les clés stables de chiffrement et <code>MINING360_SECRET_KEY</code> peut rendre des données applicatives inutilisables.</p>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>15</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">13 · Fiche de demande</div>
+    <h1>Bon de provisionnement IT</h1>
+    <p>Cette page peut être jointe directement à la demande de service interne.</p>
+    <table>
+      <tr><th>Lot</th><th>Livrable demandé</th><th>Valeur / confirmation IT</th></tr>
+      <tr><td>DNS</td><td>FQDN Test puis Production</td><td></td></tr>
+      <tr><td>TLS</td><td>Certificat, chaîne, expiration, propriétaire</td><td></td></tr>
+      <tr><td>Entra</td><td>Tenant ID, Client ID, Enterprise App Object ID</td><td></td></tr>
+      <tr><td>Redirect URI</td><td><code>https://&lt;FQDN&gt;/auth/callback/</code></td><td></td></tr>
+      <tr><td>Graph</td><td>User.Read Delegated + User.Read.All Application</td><td></td></tr>
+      <tr><td>Credential</td><td>Secret reference / expiration / rotation owner</td><td></td></tr>
+      <tr><td>Groups</td><td>Mining360-Test-Users / Mining360-Prod-Users</td><td></td></tr>
+      <tr><td>Service</td><td>gMSA ou compte de service runtime</td><td></td></tr>
+      <tr><td>SQL</td><td>Accès Windows à Mining360App</td><td></td></tr>
+      <tr><td>BODEFM</td><td>ODBC Driver 18 x64, IIS, ARR, URL Rewrite, WSGI service</td><td></td></tr>
+      <tr><td>Firewall</td><td>Flux de la matrice réseau validés</td><td></td></tr>
+      <tr><td>Backup</td><td>Job, rétention, RPO/RTO, test de restauration</td><td></td></tr>
+      <tr><td>Monitoring</td><td>URL health, service Windows, disque, certificat</td><td></td></tr>
+    </table>
+    <h2>Checklist de livraison</h2>
+    <div class="grid-2">
+      <ul class="checklist"><li>App Registration créée.</li><li>Consentement admin accordé.</li><li>Groupes assignés.</li><li>Credential stocké au coffre.</li><li>DNS et TLS validés.</li><li>Compte service opérationnel.</li></ul>
+      <ul class="checklist"><li>ODBC 18 installé.</li><li>SQL accessible.</li><li>IIS/reverse proxy validé.</li><li>Service WSGI installé.</li><li>Backup et supervision actifs.</li><li>Recette signée.</li></ul>
+    </div>
+    <div class="grid-2" style="margin-top:10mm">
+      <div><b>Préparé par</b><div class="signature"></div><div class="small">Nom, date, signature</div></div>
+      <div><b>Approuvé par IT</b><div class="signature"></div><div class="small">Nom, date, signature</div></div>
+    </div>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>16</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">Annexe A</div>
+    <h1>Commandes PowerShell de contrôle</h1>
+    <p>À exécuter par un administrateur autorisé. Adapter les valeurs entre chevrons. Les commandes ne contiennent aucun secret.</p>
+    <h3>Inventaire serveur</h3>
+    <pre>Get-ComputerInfo | Select-Object WindowsProductName, WindowsVersion, OsBuildNumber, OsArchitecture
+Get-CimInstance Win32_ComputerSystem | Select-Object TotalPhysicalMemory, NumberOfLogicalProcessors
+Get-Volume -DriveLetter C | Select-Object Size, SizeRemaining
+Get-Service sshd,W32Time | Select-Object Name, Status, StartType</pre>
+    <h3>ODBC et réseau SQL</h3>
+    <pre>Get-OdbcDriver | Where-Object Name -Like '*ODBC Driver 18 for SQL Server*'
+Test-NetConnection -ComputerName &lt;SQL-SERVER&gt; -Port 1433</pre>
+    <h3>DNS, HTTPS et endpoints</h3>
+    <pre>Resolve-DnsName &lt;FQDN-MINING360&gt;
+Test-NetConnection &lt;FQDN-MINING360&gt; -Port 443
+Invoke-RestMethod https://&lt;FQDN-MINING360&gt;/health/
+Invoke-WebRequest https://&lt;FQDN-MINING360&gt;/login/ -UseBasicParsing</pre>
+    <h3>Structure de répertoires</h3>
+    <pre>New-Item -ItemType Directory -Force -Path `
+  C:\Mining360\app, `
+  C:\Mining360\venv, `
+  C:\Mining360\logs, `
+  C:\Mining360\shared\static, `
+  C:\Mining360\backups, `
+  C:\Mining360\secrets</pre>
+    <h3>Validation Django</h3>
+    <pre>Set-Location C:\Mining360\app
+C:\Mining360\venv\Scripts\python.exe manage.py check --deploy
+C:\Mining360\venv\Scripts\python.exe manage.py showmigrations
+C:\Mining360\venv\Scripts\python.exe manage.py migrate --plan</pre>
+    <div class="callout warning"><div class="callout-title">Secrets</div>Ne jamais placer un client secret ou mot de passe dans l’historique PowerShell. Utiliser le secret manager ou les variables injectées dans le contexte du service Windows avec ACL restrictives.</div>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>17</span></div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">Annexe B</div>
+    <h1>Références officielles</h1>
+    <p>Sources utilisées pour les choix d’identité, de sécurité et d’hébergement. Les liens ont été vérifiés le 3 août 2026.</p>
+    <h2>Microsoft Entra ID et Graph</h2>
+    <ul>
+      <li><a href="https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow">Microsoft identity platform and OAuth 2.0 authorization code flow</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-redirect-uri">How to add a redirect URI to your application</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/graph/permissions-overview">Overview of Microsoft Graph permissions</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/graph/permissions-reference">Microsoft Graph permissions reference</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/entra/identity-platform/security-best-practices-for-app-registration">Security best practices for app registrations</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/entra/msidweb/authentication/certificates">Use certificates with Microsoft.Identity.Web</a></li>
+    </ul>
+    <h2>Windows Server et hébergement</h2>
+    <ul>
+      <li><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-service-accounts">Service Accounts in Windows Server</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/group-managed-service-accounts/group-managed-service-accounts/manage-group-managed-service-accounts">Manage Group Managed Service Accounts</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/iis/extensions/url-rewrite-module/reverse-proxy-with-url-rewrite-v2-and-application-request-routing">IIS reverse proxy with URL Rewrite and ARR</a></li>
+      <li><a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">Get started with OpenSSH for Windows</a></li>
+    </ul>
+    <h2>SQL Server et Django</h2>
+    <ul>
+      <li><a href="https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server">Download Microsoft ODBC Driver for SQL Server</a></li>
+      <li><a href="https://docs.djangoproject.com/en/dev/howto/deployment/checklist/">Django deployment checklist</a></li>
+      <li><a href="https://docs.djangoproject.com/en/dev/howto/deployment/">How to deploy Django</a></li>
+    </ul>
+    <h2>Contact technique</h2>
+    <table><tr><th>Fonction</th><th>Nom</th><th>Contact</th></tr><tr><td>Mining 360 Product Owner</td><td>Papa Diagne</td><td>À compléter selon l’annuaire interne</td></tr><tr><td>Identity / Entra ID</td><td>À compléter</td><td></td></tr><tr><td>Infrastructure BODEFM</td><td>À compléter</td><td></td></tr><tr><td>SQL Server DBA</td><td>À compléter</td><td></td></tr></table>
+    <div class="callout success"><div class="callout-title">Conclusion</div>L’intégration Windows de Mining 360 repose sur une identité moderne Entra ID et une autorisation applicative séparée. Une fois l’App Registration, le compte de service, SQL Server, IIS/TLS et les flux réseau provisionnés, la recette peut être exécutée sans exposer de mot de passe utilisateur ni de secret dans le navigateur.</div>
+    <div class="footer"><span>Mining 360 · Dossier technique IT</span><span>18</span></div>
+  </section>
+
+</main>
+</body>
+</html>

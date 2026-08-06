@@ -1,0 +1,183 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API Management | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260728-api-management-1">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell api-management-shell"
+          data-api-management
+          data-dashboard-url="{% url 'api-management-dashboard' %}"
+          data-providers-url="{% url 'ai-providers-api' %}"
+          data-models-url="{% url 'ai-provider-models-api' %}"
+          data-routing-url="{% url 'ai-use-case-routing-api' %}"
+          data-playground-url="{% url 'ai-provider-playground-api' %}"
+          data-health-url="{% url 'ai-provider-health-all-api' %}"
+          data-usage-url="{% url 'ai-provider-usage-api' %}">
+        <header class="topbar api-management-header">
+            <div>
+                <p class="eyebrow">AI platform administration</p>
+                <h1>API Management</h1>
+                <p>Configure AI providers, models, routing, fallback, security and usage monitoring.</p>
+            </div>
+            <div class="api-management-actions">
+                <button type="button" class="button secondary" data-health-all>Test All Providers</button>
+                <button type="button" class="button" data-add-provider>Add Custom Provider</button>
+            </div>
+        </header>
+
+        <div class="api-management-status" data-api-status role="status" hidden></div>
+        {% if credential_saved %}
+            <div class="api-management-status success" role="status">Provider credential saved securely.</div>
+        {% endif %}
+        <section class="api-management-kpis" data-api-kpis aria-label="AI provider summary"></section>
+
+        <nav class="api-management-tabs" aria-label="API Management sections">
+            <button type="button" class="is-active" data-api-tab="providers">Providers</button>
+            <button type="button" data-api-tab="models">Provider Models</button>
+            <button type="button" data-api-tab="routing">Use Case Routing</button>
+            <button type="button" data-api-tab="playground">Playground</button>
+            <button type="button" data-api-tab="health">Health & Usage</button>
+        </nav>
+
+        <section class="api-management-view" data-api-view="providers">
+            <div class="section-heading">
+                <div><p class="eyebrow">Provider registry</p><h2>AI Providers</h2></div>
+            </div>
+            <div class="api-provider-grid" data-provider-grid>
+                {% for provider in initial_providers %}
+                    <article class="api-provider-card">
+                        <header>
+                            <div>
+                                <p class="eyebrow">{{ provider.provider_type }}</p>
+                                <h2>{{ provider.name }}</h2>
+                            </div>
+                            <span class="api-status-badge {% if provider.active %}{{ provider.status }}{% else %}inactive{% endif %}">
+                                {% if provider.active %}{{ provider.status }}{% else %}inactive{% endif %}
+                            </span>
+                        </header>
+                        <p>{{ provider.description|default:"No provider description." }}</p>
+                        <dl>
+                            <div><dt>Priority</dt><dd>{{ provider.priority }}</dd></div>
+                            <div><dt>Credential</dt><dd>{{ provider.credential_status }}</dd></div>
+                            <div><dt>Models</dt><dd>{{ provider.model_count }}</dd></div>
+                            <div><dt>Status</dt><dd>{{ provider.status }}</dd></div>
+                        </dl>
+                        <footer>
+                            <button type="button" class="button secondary" data-provider-edit="{{ provider.id }}">Configure</button>
+                            <a class="button secondary" href="{% url 'ai-provider-credential-page' provider.id %}">
+                                {% if provider.credential_status == "Not Configured" %}Set Credential{% else %}Replace Credential{% endif %}
+                            </a>
+                            <a class="button secondary" href="{% url 'ai-provider-test-page' provider.id %}">Test</a>
+                            <a class="button secondary" href="{% url 'ai-provider-status-page' provider.id %}">
+                                {% if provider.active %}Deactivate{% else %}Activate{% endif %}
+                            </a>
+                        </footer>
+                    </article>
+                {% empty %}
+                    <div class="empty-state">No AI provider is configured.</div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="api-management-view" data-api-view="models" hidden>
+            <div class="section-heading">
+                <div><p class="eyebrow">Model catalog</p><h2>Provider Models</h2></div>
+                <button type="button" class="button" data-add-model>Add Model</button>
+            </div>
+            <div class="table-scroll"><table class="data-table api-model-table" data-model-table></table></div>
+        </section>
+
+        <section class="api-management-view" data-api-view="routing" hidden>
+            <div class="section-heading">
+                <div><p class="eyebrow">Controlled selection</p><h2>AI Use Case Routing</h2></div>
+            </div>
+            <div class="api-routing-list" data-routing-list></div>
+        </section>
+
+        <section class="api-management-view" data-api-view="playground" hidden>
+            <div class="api-playground-layout">
+                <form class="api-playground-form" data-playground-form>
+                    <p class="eyebrow">Administrative test</p>
+                    <h2>API Provider Playground</h2>
+                    <div class="api-form-grid">
+                        <label><span>Use Case</span><select name="use_case" data-playground-use-case></select></label>
+                        <label><span>Provider</span><select name="provider" data-playground-provider></select></label>
+                        <label><span>Model</span><select name="model" data-playground-model></select></label>
+                        <label><span>Temperature</span><input name="temperature" type="number" min="0" max="2" step="0.1" value="0"></label>
+                        <label><span>Maximum Tokens</span><input name="maximum_output_tokens" type="number" min="1" value="256"></label>
+                    </div>
+                    <label><span>Prompt</span><textarea name="prompt" rows="7" required placeholder="Enter a short provider test prompt..."></textarea></label>
+                    <button type="submit" class="button">Run Test</button>
+                </form>
+                <pre class="api-playground-result" data-playground-result>Run a test to inspect the normalized response.</pre>
+            </div>
+        </section>
+
+        <section class="api-management-view" data-api-view="health" hidden>
+            <div class="section-heading">
+                <div><p class="eyebrow">Operations</p><h2>Provider Health & Usage</h2></div>
+            </div>
+            <div class="table-scroll"><table class="data-table" data-usage-table></table></div>
+        </section>
+    </main>
+
+    <dialog class="api-dialog" data-provider-dialog>
+        <form method="dialog" data-provider-form>
+            <header><div><p class="eyebrow">AI Provider</p><h2 data-provider-form-title>Configure Provider</h2></div><button value="cancel" class="icon-button" aria-label="Close">×</button></header>
+            <input type="hidden" name="id">
+            <div class="api-form-grid">
+                <label><span>Provider Code</span><input name="code" required></label>
+                <label><span>Provider Name</span><input name="name" required></label>
+                <label><span>Provider Type</span><select name="provider_type"><option value="openai">OpenAI</option><option value="anthropic_claude">Claude AI</option><option value="google_gemini">Google Gemini</option><option value="glm_5">GLM-5</option><option value="custom">Custom</option></select></label>
+                <label><span>Priority</span><input name="priority" type="number" min="0" value="50"></label>
+                <label><span>Base URL</span><input name="base_url" type="url"></label>
+                <label><span>API Version</span><input name="api_version"></label>
+                <label><span>Selection Mode</span><select name="selection_mode"><option value="priority">Priority Based</option><option value="fixed">Fixed</option><option value="manual">Manual</option><option value="cost">Cost Optimized</option><option value="performance">Performance Optimized</option></select></label>
+                <label><span>Timeout Seconds</span><input name="timeout_seconds" type="number" min="1" value="60"></label>
+                <label><span>Retry Count</span><input name="retry_count" type="number" min="0" value="2"></label>
+                <label><span>Monthly Budget</span><input name="monthly_budget" type="number" min="0" step="0.01"></label>
+            </div>
+            <label><span>Description</span><textarea name="description" rows="3"></textarea></label>
+            <fieldset class="api-capabilities"><legend>Capabilities</legend><div data-provider-capabilities></div></fieldset>
+            <div class="api-form-toggles">
+                <label><input name="active" type="checkbox"> Active</label>
+                <label><input name="is_default" type="checkbox"> Default Provider</label>
+                <label><input name="allow_fallback" type="checkbox" checked> Allow Fallback</label>
+            </div>
+            <label><span>Set or replace credential</span><input name="credential" type="password" autocomplete="new-password" placeholder="Leave blank to keep the current credential"></label>
+            <footer><button value="cancel" class="button secondary">Cancel</button><button type="submit" value="default" class="button">Save Provider</button></footer>
+        </form>
+    </dialog>
+
+    <dialog class="api-dialog" data-model-dialog>
+        <form method="dialog" data-model-form>
+            <header><div><p class="eyebrow">Model catalog</p><h2>Add Provider Model</h2></div><button value="cancel" class="icon-button" aria-label="Close">×</button></header>
+            <div class="api-form-grid">
+                <label><span>Provider</span><select name="provider_id" required data-model-provider></select></label>
+                <label><span>Model Code</span><input name="model_code" required></label>
+                <label><span>Display Name</span><input name="display_name"></label>
+                <label><span>Model Family</span><input name="model_family"></label>
+                <label><span>Context Window</span><input name="context_window" type="number" min="0"></label>
+                <label><span>Maximum Output Tokens</span><input name="maximum_output_tokens" type="number" min="0"></label>
+                <label><span>Input Cost / Million</span><input name="input_cost_per_million" type="number" min="0" step="0.000001"></label>
+                <label><span>Output Cost / Million</span><input name="output_cost_per_million" type="number" min="0" step="0.000001"></label>
+            </div>
+            <div class="api-form-toggles">
+                <label><input name="active" type="checkbox" checked> Active</label>
+                <label><input name="is_default_for_provider" type="checkbox"> Default Model</label>
+                <label><input name="supports_structured_output" type="checkbox"> Structured Output</label>
+                <label><input name="supports_embeddings" type="checkbox"> Embeddings</label>
+                <label><input name="supports_audio_transcription" type="checkbox"> Audio Transcription</label>
+            </div>
+            <footer><button value="cancel" class="button secondary">Cancel</button><button type="submit" value="default" class="button">Add Model</button></footer>
+        </form>
+    </dialog>
+
+    <script src="{% static 'reports/api_management.js' %}?v=20260728-api-management-2"></script>
+</body>
+</html>

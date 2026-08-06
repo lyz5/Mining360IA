@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add {{ provider.name }} Model | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260728-api-management-3">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell api-management-shell">
+        <header class="topbar api-management-header">
+            <div>
+                <p class="eyebrow">Provider Models</p>
+                <h1>Add {{ provider.name }} Model</h1>
+                <p>Use the exact API model code published by the provider.</p>
+            </div>
+            <a class="button secondary" href="{% url 'ai-provider-test-page' provider.id %}">Back to test</a>
+        </header>
+        <section class="api-management-view">
+            <form method="post" class="api-credential-form">
+                {% csrf_token %}
+                {% if error %}<div class="api-management-status error" role="alert">{{ error }}</div>{% endif %}
+                <label><span>Model code</span><input name="model_code" value="{{ suggested_code }}" required></label>
+                <label><span>Display name</span><input name="display_name" placeholder="Defaults to model code"></label>
+                <label><span>Model family</span><input name="model_family" value="{{ provider.name }}"></label>
+                <label><span>Maximum output tokens</span><input name="maximum_output_tokens" type="number" min="1" value="4096"></label>
+                <p class="agent-form-note">Confirm the model code in your provider account. Mining 360 will not invent or translate model identifiers.</p>
+                <div class="api-management-actions">
+                    <a class="button secondary" href="{% url 'ai-provider-test-page' provider.id %}">Cancel</a>
+                    <button type="submit" class="button">Save Model</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Data | Mining360IA</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260706-7">
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260730-rollback-test-1">
 </head>
 <body>
     {% include "reports/includes/app_nav.html" %}
@@ -73,11 +73,11 @@
                     </div>
                     <div class="legacy-toolbar">
                         <div class="legacy-pager">
-                            <button type="button">First</button>
-                            <button type="button">Prev</button>
-                            <span>of 0</span>
-                            <button type="button">Next</button>
-                            <button type="button">Last</button>
+                            <button type="button" data-browser-page="first">First</button>
+                            <button type="button" data-browser-page="previous">Prev</button>
+                            <span data-browser-page-status>Page 0 of 0</span>
+                            <button type="button" data-browser-page="next">Next</button>
+                            <button type="button" data-browser-page="last">Last</button>
                         </div>
                         <div class="legacy-actions browser-option-actions">
                             <button type="button" class="icon-button action-export" data-browser-export aria-label="Export Excel" title="Export Excel"></button>
@@ -307,6 +307,21 @@
                 <button class="icon-button" type="button" data-modal-close aria-label="Close data form">×</button>
             </div>
             <form class="browser-record-form" data-record-form hidden></form>
+            <section class="miningprod-user-mapping" data-miningprod-user-mapping hidden>
+                <div>
+                    <strong>MiningProd audit user</strong>
+                    <span data-miningprod-user-current>No validated mapping</span>
+                </div>
+                <div class="miningprod-user-mapping__search">
+                    <input type="search" data-miningprod-user-search placeholder="Search MiningProd username or name">
+                    <button class="button secondary" type="button" data-miningprod-user-search-button>Search</button>
+                </div>
+                <div data-miningprod-user-results></div>
+                <button class="button secondary" type="button" data-miningprod-rollback-test hidden>
+                    Run rollback test
+                </button>
+            </section>
+            <div class="browser-write-preview-result" data-write-preview-result hidden aria-live="polite"></div>
         </div>
     </div>
     <div class="browser-center-message" data-browser-center-message hidden aria-live="polite" aria-atomic="true">
@@ -412,6 +427,6 @@
         </div>
     </div>
     {{ browser_state|json_script:"browser-state-data" }}
-    <script src="{% static 'reports/data_browsers.js' %}?v=20260714-1"></script>
+    <script src="{% static 'reports/data_browsers.js' %}?v=20260730-rollback-test-1"></script>
 </body>
 </html>

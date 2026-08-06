@@ -1068,6 +1068,7 @@ def dashboard(request):
     )
 
 
+@login_required
 def data_home(request):
     cards = [
         {
@@ -1114,6 +1115,8 @@ def _browser_column_payload(column: DataBrowserColumn) -> dict:
         "id": column.id,
         "display_name": column.display_name,
         "sql_name": column.sql_name,
+        "source_column_name": column.source_column_name,
+        "source_field_id": column.source_field_id,
         "data_type": column.data_type,
         "length": column.length,
         "is_required": column.is_required,
@@ -1121,28 +1124,75 @@ def _browser_column_payload(column: DataBrowserColumn) -> dict:
         "default_value": column.default_value,
         "display_order": column.display_order,
         "is_visible": column.is_visible,
+        "is_editable": column.is_editable,
+        "is_filterable": column.is_filterable,
+        "is_sortable": column.is_sortable,
+        "is_searchable": column.is_searchable,
+        "is_exportable": column.is_exportable,
         "is_lookup": column.is_lookup,
         "lookup_source_name": column.lookup_source_name,
         "lookup_value_column": column.lookup_value_column,
         "lookup_label_column": column.lookup_label_column,
         "lookup_filter": column.lookup_filter,
+        "source_metadata": column.source_metadata_json,
     }
 
 
 def _browser_payload(browser: DataBrowser, include_columns: bool = True) -> dict:
+    try:
+        write_mapping = browser.write_mapping
+        write_mapping_payload = {
+            "configured": True,
+            "strategy": write_mapping.strategy,
+            "version": write_mapping.mapping_version,
+            "validation_status": write_mapping.validation_status,
+            "active": write_mapping.active,
+            "preview_available": True,
+            "execution_enabled": (
+                write_mapping.active
+                and write_mapping.validation_status == "active"
+                and any([
+                    write_mapping.allow_create,
+                    write_mapping.allow_edit,
+                    write_mapping.allow_delete,
+                ])
+            ),
+        }
+    except Exception:
+        write_mapping_payload = {
+            "configured": False,
+            "preview_available": False,
+            "execution_enabled": False,
+        }
     payload = {
         "id": browser.id,
         "name": browser.name,
         "display_order": browser.display_order,
+        "section": browser.section,
         "description": browser.description,
         "table_name": browser.table_name,
         "source_view_name": browser.source_view_name,
+        "source_mode": browser.source_mode,
+        "source_connection_id": browser.source_connection_id,
+        "external_form_id": browser.external_form_id,
+        "primary_key_column": browser.primary_key_column,
+        "write_strategy": browser.write_strategy,
+        "allow_create": browser.allow_create,
+        "allow_edit": browser.allow_edit,
+        "allow_delete": browser.allow_delete,
+        "allow_import": browser.allow_import,
+        "allow_export": browser.allow_export,
+        "default_page_size": browser.default_page_size,
+        "maximum_page_size": browser.maximum_page_size,
+        "default_sort": browser.default_sort_json,
+        "migration_status": browser.migration_status,
         "is_active": browser.is_active,
         "show_browser_record_id": browser.show_browser_record_id,
         "show_eventchain_id": browser.show_eventchain_id,
         "last_synced_at": browser.last_synced_at.isoformat() if browser.last_synced_at else "",
         "last_sync_status": browser.last_sync_status,
         "last_sync_message": browser.last_sync_message,
+        "write_mapping": write_mapping_payload,
         "created_at": browser.created_at.isoformat() if browser.created_at else "",
         "updated_at": browser.updated_at.isoformat() if browser.updated_at else "",
     }
@@ -1167,9 +1217,31 @@ def _int_payload(payload: dict, key: str, default: int | None = None) -> int | N
 
 def _apply_browser_payload(browser: DataBrowser, payload: dict) -> DataBrowser:
     browser.name = str(payload.get("name", browser.name or "")).strip()
+    browser.section = str(payload.get("section", browser.section or "")).strip()
     browser.description = str(payload.get("description", browser.description or "")).strip()
     browser.table_name = str(payload.get("table_name", browser.table_name or "")).strip()
     browser.source_view_name = str(payload.get("source_view_name", browser.source_view_name or "")).strip()
+    browser.source_mode = str(payload.get("source_mode", browser.source_mode or "managed_table")).strip()
+    browser.external_form_id = _int_payload(payload, "external_form_id", browser.external_form_id)
+    browser.primary_key_column = str(
+        payload.get("primary_key_column", browser.primary_key_column or "BrowserRecordId")
+    ).strip()
+    browser.write_strategy = str(
+        payload.get("write_strategy", browser.write_strategy or "managed_table")
+    ).strip()
+    browser.allow_create = _bool_payload(payload, "allow_create", browser.allow_create)
+    browser.allow_edit = _bool_payload(payload, "allow_edit", browser.allow_edit)
+    browser.allow_delete = _bool_payload(payload, "allow_delete", browser.allow_delete)
+    browser.allow_import = _bool_payload(payload, "allow_import", browser.allow_import)
+    browser.allow_export = _bool_payload(payload, "allow_export", browser.allow_export)
+    browser.default_page_size = _int_payload(
+        payload, "default_page_size", browser.default_page_size
+    ) or 50
+    browser.maximum_page_size = _int_payload(
+        payload, "maximum_page_size", browser.maximum_page_size
+    ) or 500
+    if "source_connection_id" in payload:
+        browser.source_connection_id = _int_payload(payload, "source_connection_id")
     browser.is_active = _bool_payload(payload, "is_active", browser.is_active)
     browser.show_browser_record_id = _bool_payload(
         payload, "show_browser_record_id", browser.show_browser_record_id
@@ -1189,6 +1261,10 @@ def _apply_browser_payload(browser: DataBrowser, payload: dict) -> DataBrowser:
 def _apply_column_payload(column: DataBrowserColumn, payload: dict) -> DataBrowserColumn:
     column.display_name = str(payload.get("display_name", column.display_name or "")).strip()
     column.sql_name = str(payload.get("sql_name", column.sql_name or "")).strip()
+    column.source_column_name = str(
+        payload.get("source_column_name", column.source_column_name or "")
+    ).strip()
+    column.source_field_id = _int_payload(payload, "source_field_id", column.source_field_id)
     column.data_type = str(payload.get("data_type", column.data_type or "Text")).strip()
     column.length = _int_payload(payload, "length", column.length)
     if "allow_null" in payload:
@@ -1199,6 +1275,11 @@ def _apply_column_payload(column: DataBrowserColumn, payload: dict) -> DataBrows
     column.default_value = str(payload.get("default_value", column.default_value or "")).strip()
     column.display_order = _int_payload(payload, "display_order", column.display_order or 0) or 0
     column.is_visible = _bool_payload(payload, "is_visible", column.is_visible)
+    column.is_editable = _bool_payload(payload, "is_editable", column.is_editable)
+    column.is_filterable = _bool_payload(payload, "is_filterable", column.is_filterable)
+    column.is_sortable = _bool_payload(payload, "is_sortable", column.is_sortable)
+    column.is_searchable = _bool_payload(payload, "is_searchable", column.is_searchable)
+    column.is_exportable = _bool_payload(payload, "is_exportable", column.is_exportable)
     column.is_lookup = _bool_payload(payload, "is_lookup", column.is_lookup)
     column.lookup_source_name = str(payload.get("lookup_source_name", column.lookup_source_name or "")).strip()
     column.lookup_value_column = str(payload.get("lookup_value_column", column.lookup_value_column or "")).strip()
@@ -1217,6 +1298,7 @@ def _json_error(message: str, status: int = 400):
     return JsonResponse({"ok": False, "error": message}, status=status)
 
 
+@login_required
 @require_http_methods(["GET", "POST"])
 def data_browsers_api(request):
     if request.method == "GET":
@@ -1237,6 +1319,7 @@ def data_browsers_api(request):
     return JsonResponse({"ok": True, "browser": _browser_payload(browser)}, status=201)
 
 
+@login_required
 @require_http_methods(["POST"])
 def data_browsers_reorder_api(request):
     payload = _request_payload(request)
@@ -1269,6 +1352,7 @@ def data_browsers_reorder_api(request):
     })
 
 
+@login_required
 @require_http_methods(["GET", "PUT", "DELETE"])
 def data_browser_api(request, browser_id):
     browser = get_object_or_404(DataBrowser.objects.prefetch_related("columns"), id=browser_id)
@@ -1287,6 +1371,7 @@ def data_browser_api(request, browser_id):
     return JsonResponse({"ok": True, "browser": _browser_payload(browser)})
 
 
+@login_required
 @require_http_methods(["POST"])
 def data_browser_columns_api(request, browser_id):
     browser = get_object_or_404(DataBrowser, id=browser_id)
@@ -1302,6 +1387,7 @@ def data_browser_columns_api(request, browser_id):
     return JsonResponse({"ok": True, "column": _browser_column_payload(column)}, status=201)
 
 
+@login_required
 @require_http_methods(["POST"])
 def data_browser_columns_reorder_api(request, browser_id):
     browser = get_object_or_404(DataBrowser, id=browser_id)
@@ -1337,6 +1423,7 @@ def data_browser_columns_reorder_api(request, browser_id):
     })
 
 
+@login_required
 @require_http_methods(["PUT", "DELETE"])
 def data_browser_column_api(request, browser_id, column_id):
     browser = get_object_or_404(DataBrowser, id=browser_id)
@@ -1354,6 +1441,7 @@ def data_browser_column_api(request, browser_id, column_id):
     return JsonResponse({"ok": True, "column": _browser_column_payload(column)})
 
 
+@login_required
 @require_http_methods(["POST"])
 def data_browser_sync_sql_api(request, browser_id):
     browser = get_object_or_404(DataBrowser.objects.prefetch_related("columns"), id=browser_id)
@@ -1368,9 +1456,12 @@ def data_browser_sync_sql_api(request, browser_id):
     return JsonResponse({"ok": True, "result": result, "browser": _browser_payload(browser)})
 
 
+@login_required
 @require_http_methods(["POST"])
 def data_browser_import_preview_api(request, browser_id):
     browser = get_object_or_404(DataBrowser.objects.prefetch_related("columns"), id=browser_id)
+    if not browser.allow_import:
+        return _json_error("Import is disabled for this browser.", status=403)
     uploaded_file = request.FILES.get("file")
     if not uploaded_file:
         return _json_error("Import file is required.")
@@ -1395,9 +1486,12 @@ def data_browser_import_preview_api(request, browser_id):
     return JsonResponse({"ok": True, "import_preview": result, "browser": browser_payload})
 
 
+@login_required
 @require_http_methods(["POST"])
 def data_browser_import_batch_api(request, browser_id):
     browser = get_object_or_404(DataBrowser.objects.prefetch_related("columns"), id=browser_id)
+    if not browser.allow_import:
+        return _json_error("Import is disabled for this browser.", status=403)
     payload = _request_payload(request)
     token = str(payload.get("token") or "").strip()
     if not token:
@@ -1421,9 +1515,12 @@ def data_browser_import_batch_api(request, browser_id):
     return JsonResponse({"ok": True, "import": result})
 
 
+@login_required
 @require_http_methods(["POST"])
 def data_browser_import_start_api(request, browser_id):
     browser = get_object_or_404(DataBrowser.objects.prefetch_related("columns"), id=browser_id)
+    if not browser.allow_import:
+        return _json_error("Import is disabled for this browser.", status=403)
     payload = _request_payload(request)
     token = str(payload.get("token") or "").strip()
     if not token:
@@ -1438,6 +1535,7 @@ def data_browser_import_start_api(request, browser_id):
     return JsonResponse({"ok": True, "import": result})
 
 
+@login_required
 @require_http_methods(["GET"])
 def data_browser_import_status_api(request, job_token):
     try:
@@ -1447,6 +1545,7 @@ def data_browser_import_status_api(request, job_token):
     return JsonResponse({"ok": True, "status": result})
 
 
+@login_required
 @require_http_methods(["GET"])
 def data_browser_data_api(request, browser_id):
     browser = get_object_or_404(DataBrowser.objects.prefetch_related("columns"), id=browser_id)
@@ -1455,20 +1554,27 @@ def data_browser_data_api(request, browser_id):
             browser,
             limit=request.GET.get("limit", "100"),
             filters=request.GET.get("filters", "[]"),
+            page=request.GET.get("page", "1"),
+            sort=request.GET.get("sort", "[]"),
         )
     except Exception as exc:
         return _json_error(str(exc))
     return JsonResponse({"ok": True, "data": result})
 
 
+@login_required
 @require_http_methods(["GET"])
 def data_browser_export_api(request, browser_id):
     browser = get_object_or_404(DataBrowser.objects.prefetch_related("columns"), id=browser_id)
+    if not browser.allow_export:
+        return JsonResponse({"ok": False, "error": "Export is disabled for this browser."}, status=403)
     try:
         payload = preview_browser_data(
             browser,
             limit=request.GET.get("limit", "1000"),
             filters=request.GET.get("filters", "[]"),
+            page=request.GET.get("page", "1"),
+            sort=request.GET.get("sort", "[]"),
         )
     except Exception as exc:
         return JsonResponse({"ok": False, "error": str(exc)}, status=400)
@@ -1502,6 +1608,95 @@ def data_browser_export_api(request, browser_id):
     return response
 
 
+@login_required
+@require_http_methods(["POST"])
+def data_browser_write_preview_api(request, browser_id):
+    if not (request.user.is_superuser or request.user.is_staff):
+        return _json_error("Admin access required.", status=403)
+    browser = get_object_or_404(
+        DataBrowser.objects.prefetch_related("columns").select_related("write_mapping"),
+        id=browser_id,
+    )
+    payload = _request_payload(request)
+    try:
+        from .miningprod_browser_write_service import preview_miningprod_browser_write
+
+        result = preview_miningprod_browser_write(
+            browser=browser,
+            operation=payload.get("operation"),
+            record_id=payload.get("record_id"),
+            values=payload.get("values") or {},
+            user=request.user,
+        )
+    except Exception as exc:
+        return _json_error(str(exc))
+    return JsonResponse({"ok": True, "preview": result})
+
+
+@login_required
+@require_http_methods(["GET"])
+def miningprod_users_api(request):
+    if not (request.user.is_superuser or request.user.is_staff):
+        return _json_error("Admin access required.", status=403)
+    try:
+        from .miningprod_browser_write_service import (
+            get_miningprod_user_mapping,
+            search_miningprod_users,
+        )
+
+        search = str(request.GET.get("search") or "").strip()
+        candidates = search_miningprod_users(search) if search else []
+        mapping = get_miningprod_user_mapping(request.user)
+    except Exception as exc:
+        return _json_error(str(exc))
+    return JsonResponse({"ok": True, "mapping": mapping, "candidates": candidates})
+
+
+@login_required
+@require_http_methods(["POST"])
+def miningprod_user_mapping_api(request):
+    if not (request.user.is_superuser or request.user.is_staff):
+        return _json_error("Admin access required.", status=403)
+    payload = _request_payload(request)
+    try:
+        from .miningprod_browser_write_service import validate_miningprod_user_mapping
+
+        mapping = validate_miningprod_user_mapping(
+            user=request.user,
+            employee_id=payload.get("employee_id"),
+            username=payload.get("username"),
+            validated_by=request.user,
+        )
+    except Exception as exc:
+        return _json_error(str(exc))
+    return JsonResponse({"ok": True, "mapping": mapping})
+
+
+@login_required
+@require_http_methods(["POST"])
+def data_browser_rollback_test_api(request, browser_id):
+    if not (request.user.is_superuser or request.user.is_staff):
+        return _json_error("Admin access required.", status=403)
+    browser = get_object_or_404(DataBrowser, id=browser_id)
+    if browser.external_form_id != 36:
+        return _json_error(
+            "The rollback test is currently restricted to the Equipment Models pilot.",
+            status=400,
+        )
+    payload = _request_payload(request)
+    try:
+        from .miningprod_browser_write_service import run_equipment_models_rollback_test
+
+        result = run_equipment_models_rollback_test(
+            user=request.user,
+            confirmation=str(payload.get("confirmation") or ""),
+        )
+    except Exception as exc:
+        return _json_error(str(exc))
+    return JsonResponse({"ok": True, "rollback_test": result})
+
+
+@login_required
 @require_http_methods(["POST"])
 def data_browser_records_api(request, browser_id):
     browser = get_object_or_404(DataBrowser.objects.prefetch_related("columns"), id=browser_id)
@@ -1513,6 +1708,7 @@ def data_browser_records_api(request, browser_id):
     return JsonResponse({"ok": True, "record": result}, status=201)
 
 
+@login_required
 @require_http_methods(["PUT", "DELETE"])
 def data_browser_record_api(request, browser_id, record_id):
     browser = get_object_or_404(DataBrowser.objects.prefetch_related("columns"), id=browser_id)
@@ -1527,6 +1723,7 @@ def data_browser_record_api(request, browser_id, record_id):
     return JsonResponse({"ok": True, "record": result})
 
 
+@login_required
 @require_http_methods(["DELETE", "POST"])
 def data_browser_records_bulk_delete_api(request, browser_id):
     browser = get_object_or_404(DataBrowser.objects.prefetch_related("columns"), id=browser_id)
@@ -1538,9 +1735,12 @@ def data_browser_records_bulk_delete_api(request, browser_id):
     return JsonResponse({"ok": True, "result": result})
 
 
+@login_required
 @require_http_methods(["POST"])
 def data_browser_import_api(request, browser_id):
     browser = get_object_or_404(DataBrowser.objects.prefetch_related("columns"), id=browser_id)
+    if not browser.allow_import:
+        return _json_error("Import is disabled for this browser.", status=403)
     uploaded_file = request.FILES.get("file")
     if not uploaded_file:
         return _json_error("Import file is required.")
@@ -1556,6 +1756,7 @@ def data_browser_import_api(request, browser_id):
     return JsonResponse({"ok": True, "import": result})
 
 
+@login_required
 @require_http_methods(["GET"])
 def data_browser_lookup_options_api(request, browser_id, column_id):
     browser = get_object_or_404(DataBrowser, id=browser_id)

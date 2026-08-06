@@ -10,7 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
+
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,17 +23,42 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(*etlk@3g+09mk4!52367h16lxq(a8b#*i)s2w-t_-vjm4u!-z'
+DEVELOPMENT_SECRET_KEY = 'django-insecure-(*etlk@3g+09mk4!52367h16lxq(a8b#*i)s2w-t_-vjm4u!-z'
+SECRET_KEY = os.getenv('MINING360_SECRET_KEY', DEVELOPMENT_SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('MINING360_DEBUG', '1').strip().lower() in {'1', 'true', 'yes', 'on'}
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "testserver"]
+if not DEBUG and SECRET_KEY == DEVELOPMENT_SECRET_KEY:
+    raise ImproperlyConfigured('MINING360_SECRET_KEY is required outside development.')
+
+ALLOWED_HOSTS = [
+    value.strip()
+    for value in os.getenv(
+        'MINING360_ALLOWED_HOSTS',
+        '127.0.0.1,localhost,testserver,bodefm',
+    ).split(',')
+    if value.strip()
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    value.strip()
+    for value in os.getenv('MINING360_CSRF_TRUSTED_ORIGINS', '').split(',')
+    if value.strip()
+]
+
+# IIS terminates HTTP/S and forwards the original request metadata to Waitress.
+USE_X_FORWARDED_HOST = os.getenv(
+    'MINING360_USE_X_FORWARDED_HOST',
+    '0',
+).strip().lower() in {'1', 'true', 'yes', 'on'}
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'deployment',
     'reports',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,6 +70,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -74,24 +103,100 @@ WSGI_APPLICATION = 'Mining360IA.wsgi.application'
 
 
 # Database
-# Django keeps its local operational cache in SQLite because the SQL Server Django
-# backend is not installed in this environment. Mining360 application
-# configuration is persisted in SQL Server Mining360 through reports.sqlserver_config_store.
-# https://docs.djangoproject.com/en/6.0/ref/settings/#databases
+# Production uses SQL Server as the single application database. SQLite is kept
+# only behind an explicit development/migration switch so the existing database
+# can be transferred safely before it is archived.
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'OPTIONS': {
-            # The SQL Server mirror worker reads configuration tables in a
-            # background thread. WAL keeps those reads from blocking runtime
-            # writes such as Downtime Explorer session creation.
-            'timeout': 30,
-            'init_command': 'PRAGMA journal_mode=WAL; PRAGMA synchronous=NORMAL',
+DATABASE_ENGINE = os.getenv('MINING360_DATABASE_ENGINE', 'sqlite').strip().lower()
+
+if not DEBUG and DATABASE_ENGINE not in {'mssql', 'sqlserver', 'sql_server'}:
+    raise ImproperlyConfigured(
+        'Production requires MINING360_DATABASE_ENGINE=mssql; SQLite is development-only.'
+    )
+
+
+def _required_environment(name: str, fallback: str = '') -> str:
+    value = os.getenv(name, fallback).strip()
+    if not value:
+        raise ImproperlyConfigured(f'{name} is required for the SQL Server database.')
+    return value
+
+
+if DATABASE_ENGINE in {'mssql', 'sqlserver', 'sql_server'}:
+    database_name = os.getenv('MINING360_APP_SQL_DATABASE', 'Mining360App').strip()
+    database_host = _required_environment(
+        'MINING360_APP_SQL_SERVER',
+        os.getenv('MINING360_SQL_SERVER', ''),
+    )
+    database_user = os.getenv(
+        'MINING360_APP_SQL_USER',
+        os.getenv('MINING360_SQL_USER', ''),
+    ).strip()
+    database_password = os.getenv(
+        'MINING360_APP_SQL_PASSWORD',
+        os.getenv('MINING360_SQL_PASSWORD', ''),
+    )
+    database_options = {
+        'driver': os.getenv(
+            'MINING360_APP_SQL_DRIVER',
+            os.getenv('MINING360_SQL_DRIVER', 'ODBC Driver 18 for SQL Server'),
+        ),
+        'extra_params': os.getenv(
+            'MINING360_APP_SQL_EXTRA_PARAMS',
+            'Encrypt=optional;TrustServerCertificate=yes;Connection Timeout=15',
+        ),
+    }
+    if not database_user:
+        database_options['trusted_connection'] = 'yes'
+    elif not database_password:
+        raise ImproperlyConfigured(
+            'MINING360_APP_SQL_PASSWORD is required when SQL authentication is used.'
+        )
+    DATABASES = {
+        'default': {
+            'ENGINE': 'mssql',
+            'NAME': database_name,
+            'HOST': database_host,
+            'PORT': os.getenv(
+                'MINING360_APP_SQL_PORT',
+                os.getenv('MINING360_SQL_PORT', '1433'),
+            ),
+            'USER': database_user,
+            'PASSWORD': database_password,
+            'OPTIONS': database_options,
+            'CONN_MAX_AGE': int(os.getenv('MINING360_DB_CONN_MAX_AGE', '60')),
         },
     }
-}
+    DATABASE_CONNECTION_POOLING = False
+    os.environ.setdefault('MINING360_SQL_CONFIG_STORE', '0')
+    MIDDLEWARE = [
+        item
+        for item in MIDDLEWARE
+        if item != 'reports.sqlserver_config_middleware.SQLServerConfigSyncMiddleware'
+    ]
+else:
+    if DATABASE_ENGINE != 'sqlite':
+        raise ImproperlyConfigured(
+            'MINING360_DATABASE_ENGINE must be mssql or sqlite.'
+        )
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': Path(os.getenv('MINING360_SQLITE_PATH', BASE_DIR / 'db.sqlite3')),
+            'OPTIONS': {
+                'timeout': 30,
+                'init_command': 'PRAGMA journal_mode=WAL; PRAGMA synchronous=NORMAL',
+            },
+        },
+    }
+
+legacy_sqlite_path = os.getenv('MINING360_LEGACY_SQLITE_PATH', '').strip()
+if legacy_sqlite_path:
+    DATABASES['legacy_sqlite'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': Path(legacy_sqlite_path),
+        'OPTIONS': {'timeout': 30},
+    }
 
 
 # Password validation
@@ -129,6 +234,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = Path(os.getenv('MINING360_STATIC_ROOT', BASE_DIR / 'staticfiles'))
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    'staticfiles': {
+        'BACKEND': (
+            'django.contrib.staticfiles.storage.StaticFilesStorage'
+            if DEBUG
+            else 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+        ),
+    },
+}
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
