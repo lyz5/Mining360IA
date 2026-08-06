@@ -97,9 +97,10 @@
         const dialog = root.querySelector("[data-result-dialog]");
         dialog.querySelector("[data-result-title]").textContent = "Mining360 Deployment";
         const logs = job.logs || [];
+        const isActive = ["Preparing", "Queued", "Running", "Waiting for Manual Action"].includes(job.status);
         dialog.querySelector("[data-result-content]").innerHTML = `
             <div class="deployment-job-summary">
-                ${badge(job.status)}
+                <span class="deployment-job-state">${isActive ? '<i class="deployment-spinner" aria-hidden="true"></i>' : ""}${badge(job.status)}</span>
                 <strong>${esc(job.progress_percentage)}%</strong>
             </div>
             <div class="deployment-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${esc(job.progress_percentage)}"><i style="width:${Math.max(0, Math.min(100, Number(job.progress_percentage) || 0))}%"></i></div>
@@ -108,6 +109,37 @@
             <div class="deployment-job-logs">${logs.map((log) => `<p><time>${new Date(log.created_at).toLocaleTimeString()}</time><strong>${esc(log.level)}</strong>${esc(log.message)}</p>`).join("")}</div>
         `;
         if (!dialog.open) dialog.showModal();
+    }
+
+    function showDeploymentPending() {
+        showJob({
+            status: "Preparing",
+            progress_percentage: 5,
+            current_step: "Synchronizing the latest Git release and running readiness checks...",
+            logs: [],
+        });
+        const content = root.querySelector("[data-result-content]");
+        content.setAttribute("aria-busy", "true");
+    }
+
+    function showDeploymentError(message) {
+        const dialog = root.querySelector("[data-result-dialog]");
+        dialog.querySelector("[data-result-title]").textContent = "Deployment could not start";
+        dialog.querySelector("[data-result-content]").innerHTML = `
+            <div class="deployment-inline-error" role="alert">
+                <strong>Deployment failed</strong>
+                <p>${esc(message)}</p>
+            </div>
+        `;
+        dialog.querySelector("[data-result-content]").removeAttribute("aria-busy");
+        if (!dialog.open) dialog.showModal();
+    }
+
+    function setDeployButtonLoading(button, loading) {
+        if (!button.dataset.defaultLabel) button.dataset.defaultLabel = button.textContent.trim();
+        button.disabled = loading;
+        button.setAttribute("aria-busy", String(loading));
+        button.textContent = loading ? "Deploying..." : button.dataset.defaultLabel;
     }
 
     const sleep = (milliseconds) => new Promise((resolve) => window.setTimeout(resolve, milliseconds));
@@ -204,18 +236,22 @@
             return;
         }
         if (quickDeploy) {
-            if (!window.confirm("Deploy the latest committed main branch to this Test server? A backup and health check will run automatically.")) return;
-            quickDeploy.disabled = true;
+            setDeployButtonLoading(quickDeploy, true);
+            showDeploymentPending();
             status("Synchronizing the latest Git release and running readiness checks...");
             try {
                 const payload = await api(root.dataset.quickDeployUrl, {
                     method: "POST",
                     body: JSON.stringify({target_id: Number(quickDeploy.dataset.quickDeploy), confirmation: "DEPLOY"}),
                 });
+                root.querySelector("[data-result-content]").removeAttribute("aria-busy");
                 showJob(payload.job);
                 await trackJob(payload.job.id);
-            } catch (error) { status(error.message, true); }
-            finally { quickDeploy.disabled = false; }
+            } catch (error) {
+                showDeploymentError(error.message);
+                status(error.message, true);
+            }
+            finally { setDeployButtonLoading(quickDeploy, false); }
             return;
         }
         const action = test || precheck || approve || dryRun || validate;

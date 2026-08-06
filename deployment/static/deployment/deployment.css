@@ -48,6 +48,12 @@
 .deployment-readiness { display: grid; gap: 12px; }
 .deployment-flag { display: flex; justify-content: space-between; padding: 13px; border: 1px solid #dbe2ea; border-radius: 6px; }
 .deployment-job-summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.deployment-job-state { display: inline-flex; align-items: center; gap: 9px; }
+.deployment-spinner { width: 16px; height: 16px; flex: 0 0 16px; border: 2px solid #cbd5e1; border-top-color: #111827; border-radius: 50%; animation: deployment-spin .75s linear infinite; }
+.deployment-inline-error { padding: 16px; border: 1px solid #fecaca; border-radius: 7px; background: #fef2f2; color: #991b1b; }
+.deployment-inline-error p { margin: 7px 0 0; overflow-wrap: anywhere; }
+.deployment-actions button[aria-busy="true"] { cursor: wait; opacity: .72; }
+@keyframes deployment-spin { to { transform: rotate(360deg); } }
 .deployment-progress { height: 8px; margin: 14px 0; overflow: hidden; background: #e5e7eb; border-radius: 4px; }
 .deployment-progress i { display: block; height: 100%; background: #f5cc00; transition: width .25s ease; }
 .deployment-job-logs { max-height: 260px; overflow-y: auto; border-top: 1px solid #e5eaf0; }

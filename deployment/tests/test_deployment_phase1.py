@@ -1,9 +1,11 @@
+from pathlib import Path
 from subprocess import CalledProcessError, CompletedProcess
 from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
 from django.core.management import call_command
-from django.test import TestCase
+from django.conf import settings
+from django.test import SimpleTestCase, TestCase
 from django.urls import reverse
 
 from deployment.models import ApplicationRelease, DeploymentCredential, DeploymentJob, DeploymentPlan, DeploymentTarget
@@ -201,3 +203,17 @@ class OneClickDeploymentTests(TestCase):
         self.assertEqual(job.status, "Succeeded")
         self.assertEqual(plan.status, "Succeeded")
         self.assertEqual(job.progress_percentage, 100)
+
+
+class DeploymentFrontendContractTests(SimpleTestCase):
+    def test_one_click_deployment_shows_immediate_progress(self):
+        root = Path(settings.BASE_DIR) / "deployment"
+        javascript = (root / "static" / "deployment" / "deployment.js").read_text(encoding="utf-8")
+        stylesheet = (root / "static" / "deployment" / "deployment.css").read_text(encoding="utf-8")
+        template = (root / "templates" / "deployment" / "home.html").read_text(encoding="utf-8")
+
+        self.assertIn("showDeploymentPending()", javascript)
+        self.assertIn("showDeploymentError(error.message)", javascript)
+        self.assertIn("deployment-spinner", stylesheet)
+        self.assertNotIn("window.confirm", javascript)
+        self.assertIn("deployment.js' %}?v=20260806-2", template)
