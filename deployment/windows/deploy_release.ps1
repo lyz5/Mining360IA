@@ -35,8 +35,16 @@ function Write-DeploymentLog([string]$Message) {
 
 function Invoke-Native([string]$Name, [scriptblock]$Action) {
     Write-DeploymentLog "START $Name"
-    & $Action *>> $log
-    if ($LASTEXITCODE -ne 0) { throw "$Name failed with exit code $LASTEXITCODE." }
+    $previousErrorAction = $ErrorActionPreference
+    try {
+        # Native tools such as Git use stderr for normal progress output.
+        $ErrorActionPreference = 'Continue'
+        & $Action *>> $log
+        $exitCode = $LASTEXITCODE
+    } finally {
+        $ErrorActionPreference = $previousErrorAction
+    }
+    if ($exitCode -ne 0) { throw "$Name failed with exit code $exitCode." }
     Write-DeploymentLog "DONE $Name"
 }
 
