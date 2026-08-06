@@ -60,14 +60,21 @@ body::before {
     position: fixed;
     inset: 0 auto 0 0;
     z-index: 30;
+    display: flex;
+    flex-direction: column;
     width: var(--sidebar-width);
+    height: 100vh;
+    height: 100dvh;
     padding: 18px 14px;
+    box-sizing: border-box;
+    overflow: hidden;
     border-right: 1px solid rgba(255, 255, 255, 0.08);
     background: linear-gradient(180deg, #111c2b 0%, #162334 100%);
     box-shadow: 18px 0 34px rgba(15, 23, 42, 0.12);
 }
 
 .app-nav-head {
+    flex: 0 0 auto;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -104,10 +111,29 @@ body::before {
 }
 
 .nav-links {
+    flex: 1 1 auto;
+    min-height: 0;
     display: flex;
     flex-direction: column;
     gap: 6px;
-    padding: 0 6px;
+    padding: 0 6px 12px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+}
+
+.nav-links::-webkit-scrollbar {
+    width: 6px;
+}
+
+.nav-links::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.24);
+}
+
+.nav-links::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 .nav-links a {
@@ -2313,6 +2339,7 @@ a:hover {
         width: auto;
         height: auto;
         padding: 14px 12px;
+        overflow: visible;
     }
 
     .app-nav-head {
@@ -2329,10 +2356,14 @@ a:hover {
     }
 
     .nav-links {
+        flex: none;
+        min-height: auto;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 6px;
         padding: 0;
+        overflow: visible;
+        scrollbar-gutter: auto;
     }
 
     .nav-links a {

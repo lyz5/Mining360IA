@@ -43,3 +43,9 @@ class AnalyticalResponseFrontendContractTests(SimpleTestCase):
         self.assertIn("@media (max-width: 600px)", self.styles)
         self.assertIn(".ai-driver-card-list", self.styles)
         self.assertIn(".ai-downtime-drivers-table__scroll", self.styles)
+
+    def test_main_sidebar_navigation_is_vertically_scrollable(self):
+        self.assertIn("height: 100dvh", self.styles)
+        self.assertIn("overflow-y: auto", self.styles)
+        self.assertIn("overscroll-behavior: contain", self.styles)
+        self.assertIn("scrollbar-gutter: stable", self.styles)
