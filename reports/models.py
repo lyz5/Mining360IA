@@ -1,6 +1,7 @@
 import uuid
 
 from django.db import models
+from django.db.models import Q
 from django.contrib.auth.models import Group, User
 
 
@@ -958,6 +959,146 @@ class AIConversationContext(models.Model):
         db_table = "ai_conversation_contexts"
         constraints = [
             models.UniqueConstraint(fields=["conversation_id", "user"], name="unique_ai_context_per_user"),
+        ]
+
+
+class AIConversation(models.Model):
+    STATUS_CHOICES = [
+        ("active", "Active"),
+        ("archived", "Archived"),
+        ("deleted", "Deleted"),
+    ]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(User, related_name="ai_conversations", on_delete=models.CASCADE)
+    title = models.CharField(max_length=200, default="New conversation")
+    title_is_manual = models.BooleanField(default=False)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="active", db_index=True)
+    active_agent_code = models.CharField(max_length=100, blank=True)
+    last_agent_code = models.CharField(max_length=100, blank=True)
+    conversation_context_json = models.JSONField(default=dict, blank=True)
+    performance_context_json = models.JSONField(default=dict, blank=True)
+    knowledge_context_json = models.JSONField(default=dict, blank=True)
+    active_analysis_json = models.JSONField(default=dict, blank=True)
+    message_count = models.PositiveIntegerField(default=0)
+    last_message_at = models.DateTimeField(null=True, blank=True, db_index=True)
+    archived_at = models.DateTimeField(null=True, blank=True)
+    deleted_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "ai_conversations"
+        ordering = ["-last_message_at", "-updated_at"]
+        indexes = [
+            models.Index(
+                fields=["user", "status", "-last_message_at"],
+                name="ai_conv_user_status_activity",
+            ),
+        ]
+
+
+class AIConversationMessage(models.Model):
+    ROLE_CHOICES = [
+        ("user", "User"),
+        ("assistant", "Assistant"),
+        ("system", "System"),
+        ("tool", "Tool"),
+    ]
+    STATUS_CHOICES = [
+        ("pending", "Pending"),
+        ("processing", "Processing"),
+        ("completed", "Completed"),
+        ("failed", "Failed"),
+        ("cancelled", "Cancelled"),
+    ]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    conversation = models.ForeignKey(
+        AIConversation,
+        related_name="messages",
+        on_delete=models.CASCADE,
+    )
+    role = models.CharField(max_length=30, choices=ROLE_CHOICES)
+    message_type = models.CharField(max_length=50, default="text")
+    content = models.TextField(blank=True)
+    language = models.CharField(max_length=10, blank=True)
+    agent_code = models.CharField(max_length=100, blank=True)
+    intent_code = models.CharField(max_length=100, blank=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="completed", db_index=True)
+    client_message_id = models.CharField(max_length=128, null=True, blank=True)
+    request_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
+    metadata_json = models.JSONField(default=dict, blank=True)
+    parent_message = models.ForeignKey(
+        "self",
+        related_name="response_versions",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    version_number = models.PositiveIntegerField(default=1)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "ai_conversation_messages"
+        ordering = ["created_at", "id"]
+        indexes = [
+            models.Index(fields=["conversation", "-created_at"], name="ai_msg_conv_created"),
+        ]
+        constraints = [
+            models.UniqueConstraint(
+                fields=["conversation", "client_message_id"],
+                condition=Q(client_message_id__isnull=False),
+                name="unique_ai_client_message_per_conversation",
+            ),
+        ]
+
+
+class AIConversationArtifact(models.Model):
+    STATUS_CHOICES = [
+        ("active", "Active"),
+        ("superseded", "Superseded"),
+        ("failed", "Failed"),
+    ]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    conversation = models.ForeignKey(
+        AIConversation,
+        related_name="artifacts",
+        on_delete=models.CASCADE,
+    )
+    message = models.ForeignKey(
+        AIConversationMessage,
+        related_name="artifacts",
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+    )
+    artifact_type = models.CharField(max_length=80, db_index=True)
+    title = models.CharField(max_length=255, blank=True)
+    payload_json = models.JSONField(default=dict, blank=True)
+    source_type = models.CharField(max_length=80, blank=True)
+    source_reference = models.CharField(max_length=255, blank=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="active")
+    artifact_version = models.PositiveIntegerField(default=1)
+    refreshed_at = models.DateTimeField(null=True, blank=True)
+    supersedes_artifact = models.ForeignKey(
+        "self",
+        related_name="newer_versions",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "ai_conversation_artifacts"
+        ordering = ["created_at", "id"]
+        indexes = [
+            models.Index(fields=["conversation", "message"], name="ai_art_conv_message"),
+            models.Index(fields=["conversation", "artifact_type"], name="ai_art_conv_type"),
         ]
 
 

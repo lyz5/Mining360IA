@@ -9,6 +9,7 @@ from . import voice_input_views
 from . import ai_agents_views
 from . import reporting_config_views
 from . import ai_provider_views
+from . import ai_conversation_views
 
 
 urlpatterns = [
@@ -73,7 +74,17 @@ urlpatterns = [
     path("business-performance/config/save/", views.business_performance_config_api, name="business-performance-config-api"),
     path("business-performance/config/import-model/", views.business_performance_import_model_api, name="business-performance-import-model-api"),
     path("ai/", views.ai_home, name="ai-home"),
+    path("ai/new/", views.ai_home, name="ai-new"),
+    path("ai/c/<uuid:conversation_id>/", views.ai_home, name="ai-conversation-page"),
     path("ai/ask/", views.ai_ask, name="ai-ask"),
+    path("api/ai/conversations/", ai_conversation_views.conversations_api, name="ai-conversations-api"),
+    path("api/ai/conversations/<uuid:conversation_id>/", ai_conversation_views.conversation_api, name="ai-conversation-api"),
+    path("api/ai/conversations/<uuid:conversation_id>/archive/", ai_conversation_views.conversation_archive_api, name="ai-conversation-archive-api"),
+    path("api/ai/conversations/<uuid:conversation_id>/restore/", ai_conversation_views.conversation_restore_api, name="ai-conversation-restore-api"),
+    path("api/ai/conversations/<uuid:conversation_id>/messages/", ai_conversation_views.conversation_messages_api, name="ai-conversation-messages-api"),
+    path("api/ai/conversations/<uuid:conversation_id>/artifacts/", ai_conversation_views.conversation_artifacts_api, name="ai-conversation-artifacts-api"),
+    path("api/ai/conversations/<uuid:conversation_id>/context/", ai_conversation_views.conversation_context_api, name="ai-conversation-context-api"),
+    path("api/ai/conversations/<uuid:conversation_id>/messages/<uuid:message_id>/retry/", ai_conversation_views.conversation_retry_api, name="ai-conversation-retry-api"),
     path("api/ai/audio/config/", voice_input_views.voice_input_config_api, name="voice-input-config"),
     path("api/ai/audio/transcribe/", voice_input_views.transcribe_audio_api, name="voice-input-transcribe"),
     path("ai/availability-diagnostics/", downtime_explorer_views.availability_diagnostics_api, name="availability-diagnostics"),

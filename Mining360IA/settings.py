@@ -251,3 +251,9 @@ STORAGES = {
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
+
+ENABLE_PERSISTENT_CONVERSATIONS = os.getenv('ENABLE_PERSISTENT_CONVERSATIONS', 'true').lower() in {'1', 'true', 'yes', 'on'}
+ENABLE_CONVERSATION_ARCHIVE = os.getenv('ENABLE_CONVERSATION_ARCHIVE', 'true').lower() in {'1', 'true', 'yes', 'on'}
+ENABLE_CONVERSATION_RENAME = os.getenv('ENABLE_CONVERSATION_RENAME', 'true').lower() in {'1', 'true', 'yes', 'on'}
+ENABLE_CONVERSATION_ARTIFACTS = os.getenv('ENABLE_CONVERSATION_ARTIFACTS', 'true').lower() in {'1', 'true', 'yes', 'on'}
+MAX_ACTIVE_CONVERSATIONS_PER_USER = int(os.getenv('MAX_ACTIVE_CONVERSATIONS_PER_USER', '10'))

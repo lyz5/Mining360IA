@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AI | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260726-voice-compact-1">
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260808-chat-workspace-1">
 </head>
 <body class="ai-page-body">
     {% include "reports/includes/app_nav.html" %}
     <main class="app-shell ai-workspace" data-ai-ask-url="{% url 'ai-ask' %}"
+          data-conversations-url="{% url 'ai-conversations-api' %}"
           data-voice-config-url="{% url 'voice-input-config' %}"
           data-voice-transcribe-url="{% url 'voice-input-transcribe' %}"
           data-embed-config-url="/powerbi-interaction/embed-config/__REPORT_ID__/"
@@ -17,30 +18,64 @@
           data-availability-diagnostics-url="{% url 'availability-diagnostics' %}"
           data-is-platform-admin="{% if is_platform_admin %}true{% else %}false{% endif %}"
           data-downtime-explorer-base-url="/ai/downtime-explorer/">
-        <header class="topbar ai-minimal-header">
-            <div>
-                <p class="eyebrow">Mining Intelligence</p>
-                <h1>AI Assistant</h1>
-            </div>
-            <div class="ai-header-controls">
-                {% if multi_agent_enabled %}
-                <label class="ai-agent-selector">
-                    <span class="sr-only">Agent</span>
-                    <select id="ai-agent-selection" aria-label="Select AI agent">
-                        <option value="auto">Auto</option>
-                        {% for agent in available_agents %}
-                        <option value="{{ agent.code }}">{{ agent.name }}</option>
-                        {% endfor %}
-                    </select>
+        <section class="ai-chat-shell ai-persistent-chat">
+            <aside id="ai-conversation-sidebar" class="ai-conversation-sidebar" aria-label="Conversations">
+                <div class="ai-conversation-sidebar__header">
+                    <div>
+                        <span>Mining 360</span>
+                        <strong>AI conversations</strong>
+                    </div>
+                    <button type="button" id="ai-close-conversations" class="icon-button" aria-label="Close conversations">&times;</button>
+                </div>
+                <button type="button" id="ai-new-conversation" class="button ai-new-conversation" title="New chat">
+                    <span aria-hidden="true">+</span><span>New chat</span>
+                </button>
+                <label class="ai-conversation-search">
+                    <span class="sr-only">Search conversations</span>
+                    <input id="ai-conversation-search" type="search" placeholder="Search conversations">
                 </label>
-                {% endif %}
-                <span class="ai-model-badge">{% if multi_agent_enabled %}Multi-Agent{% elif openai_enabled %}OpenAI + Power BI{% else %}Semantic fallback{% endif %}</span>
-            </div>
-        </header>
-
-        <section class="ai-chat-shell">
+                <div class="ai-conversation-count"><span id="ai-conversation-count">0</span> / <span id="ai-conversation-limit">10</span> active</div>
+                <div id="ai-conversation-list" class="ai-conversation-list" aria-live="polite"></div>
+            </aside>
             <div class="ai-chat-panel">
+                <header class="ai-conversation-header">
+                    <button type="button" id="ai-open-conversations" class="icon-button" aria-label="Open conversations">&#9776;</button>
+                    <button type="button" id="ai-toggle-conversations" class="icon-button ai-desktop-only" aria-label="Collapse conversations" title="Collapse conversations">&#9776;</button>
+                    <div class="ai-conversation-heading">
+                        <h2 id="ai-conversation-title">New conversation</h2>
+                        <form id="ai-conversation-rename-form" class="ai-inline-rename" hidden>
+                            <label class="sr-only" for="ai-conversation-title-input">Conversation title</label>
+                            <input id="ai-conversation-title-input" maxlength="200" autocomplete="off">
+                            <button type="submit" class="icon-button" aria-label="Save title">&#10003;</button>
+                            <button type="button" id="ai-cancel-rename" class="icon-button" aria-label="Cancel rename">&times;</button>
+                        </form>
+                        <span id="ai-conversation-meta">Mining 360 AI</span>
+                    </div>
+                    {% if multi_agent_enabled %}
+                    <label class="ai-agent-selector">
+                        <span>Agent:</span>
+                        <select id="ai-agent-selection" aria-label="Select AI agent">
+                            <option value="auto">Auto</option>
+                            {% for agent in available_agents %}
+                            <option value="{{ agent.code }}">{{ agent.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+                    {% endif %}
+                    <details class="ai-conversation-menu">
+                        <summary class="icon-button" aria-label="Conversation actions" title="Conversation actions">&#8943;</summary>
+                        <div>
+                            <button type="button" id="ai-rename-conversation">Rename</button>
+                            <button type="button" id="ai-archive-conversation">Archive</button>
+                            <button type="button" id="ai-delete-conversation" class="danger">Delete</button>
+                            {% if is_platform_admin %}<button type="button" id="ai-show-technical-details">Technical details</button>{% endif %}
+                        </div>
+                    </details>
+                    <button type="button" id="ai-focus-toggle" class="icon-button" aria-label="Enter full focus" title="Enter full focus">&#x26F6;</button>
+                </header>
+                <div class="ai-message-scroll" id="ai-message-scroll">
                 <div id="ai-chat-thread" class="ai-chat-thread" aria-live="polite"></div>
+                <button type="button" id="ai-jump-latest" class="ai-jump-latest" hidden>&darr; Jump to latest</button>
 
                 <section id="ai-loading" class="ai-loading" hidden aria-live="polite">
                     <span class="ai-loading-avatar">AI</span>
@@ -152,6 +187,28 @@
                     <p id="ai-error-text"></p>
                 </section>
 
+                {% if is_platform_admin %}
+                    <details class="ai-context-panel ai-bottom-panel ai-technical-details" hidden>
+                        <summary>Technical details</summary>
+                        <div class="ai-technical-details__content">
+                            <section>
+                                <h3>Intent context</h3>
+                                <dl id="ai-context-list"></dl>
+                            </section>
+                            <details id="ai-table-section" class="ai-table-section" hidden>
+                                <summary>Returned data</summary>
+                                <div class="table-scroll">
+                                    <table id="ai-result-table" class="data-table"></table>
+                                </div>
+                            </details>
+                        </div>
+                    </details>
+                {% else %}
+                    <dl id="ai-context-list" hidden></dl>
+                    <section id="ai-table-section" hidden><table id="ai-result-table"></table></section>
+                {% endif %}
+                </div>
+
                 <div class="ai-chat-composer" data-voice-input-root>
                     <textarea id="ai-question" rows="1" placeholder="Message Mining360 AI"></textarea>
                     <div class="ai-actions">
@@ -163,7 +220,9 @@
                                 <path d="M12 18v4"></path>
                             </svg>
                         </button>
-                        <button type="button" id="ai-run-question" class="button">Send</button>
+                        <button type="button" id="ai-run-question" class="button" title="Send message" aria-label="Send message">
+                            <span class="ai-send-label">Send</span><span class="ai-send-icon" aria-hidden="true">&#8593;</span>
+                        </button>
                     </div>
                     <div id="ai-voice-panel" class="ai-voice-panel" hidden>
                         <div id="ai-voice-level" class="ai-voice-level" aria-label="Microphone level" hidden>
@@ -183,26 +242,6 @@
                     </div>
                 </div>
 
-                {% if is_platform_admin %}
-                    <details class="ai-context-panel ai-bottom-panel ai-technical-details">
-                        <summary>Technical details</summary>
-                        <div class="ai-technical-details__content">
-                            <section>
-                                <h3>Intent context</h3>
-                                <dl id="ai-context-list"></dl>
-                            </section>
-                            <details id="ai-table-section" class="ai-table-section" hidden>
-                                <summary>Returned data</summary>
-                                <div class="table-scroll">
-                                    <table id="ai-result-table" class="data-table"></table>
-                                </div>
-                            </details>
-                        </div>
-                    </details>
-                {% else %}
-                    <dl id="ai-context-list" hidden></dl>
-                    <section id="ai-table-section" hidden><table id="ai-result-table"></table></section>
-                {% endif %}
             </div>
         </section>
 
@@ -223,7 +262,7 @@
     <script src="https://cdn.jsdelivr.net/npm/powerbi-client@2.23.7/dist/powerbi.min.js"></script>
     <script src="{% static 'reports/powerbi_embed.js' %}?v=20260721-monthly-page-1"></script>
     <script src="{% static 'reports/downtime_explorer.js' %}?v=20260728-json-response-fix-1"></script>
-    <script src="{% static 'reports/ai.js' %}?v=20260726-english-1"></script>
+    <script src="{% static 'reports/ai.js' %}?v=20260808-chat-workspace-1"></script>
     <script src="{% static 'reports/voice_input.js' %}?v=20260726-voice-compact-1"></script>
 </body>
 </html>

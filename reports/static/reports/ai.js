@@ -1,6 +1,13 @@
 (function () {
     const storageKey = "mining360-ai-chat";
     const conversationKey = "mining360-ai-conversation-id";
+    const conversationSidebarKey = "mining360-ai-conversations-collapsed";
+    const focusModeKey = "mining360-ai-focus-mode";
+    const allowedAgentBadges = {
+        machine_performance: "Machine Performance",
+        mining_knowledge: "Mining Knowledge",
+        combined: "Combined",
+    };
 
     function csrfToken() {
         const match = document.cookie.match(/(?:^|; )csrftoken=([^;]+)/);
@@ -24,10 +31,8 @@
     }
 
     function updateComposerClearance() {
-        const composer = document.querySelector(".ai-chat-composer");
-        if (!composer) return;
-        const clearance = Math.ceil(composer.getBoundingClientRect().height + 54);
-        document.body.style.setProperty("--ai-composer-clearance", `${clearance}px`);
+        // The composer is a normal flex child. No artificial message padding is required.
+        document.body.style.removeProperty("--ai-composer-clearance");
     }
 
     function afterNextPaint() {
@@ -201,6 +206,14 @@
     function displayFilterValue(key, value, language) {
         const raw = Array.isArray(value) ? value.join(", ") : String(value ?? "");
         if (key === "period") {
+            const monthly = raw.match(/^(20\d{2})-(0[1-9]|1[0-2])$/);
+            if (monthly) {
+                return new Intl.DateTimeFormat(language === "fr" ? "fr-FR" : "en-US", {
+                    month: "long",
+                    year: "numeric",
+                    timeZone: "UTC",
+                }).format(new Date(`${raw}-01T00:00:00Z`));
+            }
             return analyticalText[language].periodValues[raw.toLowerCase()] || raw;
         }
         return raw;
@@ -481,17 +494,535 @@
         body.appendChild(card);
     }
 
-    function renderMessages(container, messages) {
+    function renderMessages(container, messages, state) {
         if (!container) return;
-        container.innerHTML = messages.map((message) => `
-            <div class="ai-message ${message.role === "user" ? "user" : "assistant"}">
+        const analyticalParking = document.getElementById("ai-analytical-content-area");
+        ["downtime-root-cause-explorer", "ai-powerbi-section"].forEach((id) => {
+            const view = document.getElementById(id);
+            if (view && analyticalParking && view.parentElement !== analyticalParking) {
+                view.hidden = true;
+                analyticalParking.appendChild(view);
+            }
+        });
+        if (!messages.length) {
+            container.innerHTML = `
+                <div class="ai-chat-empty-state">
+                    <strong>Mining 360 AI</strong>
+                    <p>Ask about machine performance, availability, downtime, affected equipment or mining best practices.</p>
+                    <div class="ai-empty-prompts">
+                        <button type="button" data-suggested-prompt="What is the availability at Essakane?">Availability at Essakane</button>
+                        <button type="button" data-suggested-prompt="Show me the top downtime drivers.">Top downtime drivers</button>
+                        <button type="button" data-suggested-prompt="Analyze repeated failures.">Analyze repeated failures</button>
+                        <button type="button" data-suggested-prompt="What are the preventive maintenance best practices?">Preventive maintenance best practices</button>
+                    </div>
+                </div>
+            `;
+            container.querySelectorAll("[data-suggested-prompt]").forEach((button) => {
+                button.addEventListener("click", () => {
+                    const input = document.getElementById("ai-question");
+                    if (!input) return;
+                    input.value = button.dataset.suggestedPrompt || "";
+                    input.dispatchEvent(new Event("input", { bubbles: true }));
+                    input.focus();
+                });
+            });
+            return;
+        }
+        container.innerHTML = messages.map((message) => {
+            const agentCode = String(message.agent_code || message.agent || "").toLowerCase().replaceAll(" ", "_");
+            const agentLabel = allowedAgentBadges[agentCode] || "";
+            return `
+            <div class="ai-message ${message.role === "user" ? "user" : "assistant"} ${message.status === "failed" ? "is-failed" : ""}" data-message-id="${escapeHtml(message.id || "")}">
                 <div class="ai-message__avatar">${message.role === "user" ? "You" : "AI"}</div>
                 <div class="ai-message__content">
-                    ${message.agent ? `<span class="ai-agent-badge">${escapeHtml(message.agent)}</span>` : ""}
-                    <div class="ai-message__body">${escapeHtml(message.content).replaceAll("\n", "<br>")}</div>
+                    ${agentLabel ? `<span class="ai-agent-badge">${escapeHtml(agentLabel)}</span>` : ""}
+                    <div class="ai-message__body">${message.status === "processing" ? "Processing..." : escapeHtml(message.content).replaceAll("\n", "<br>")}</div>
+                    ${message.role === "assistant" ? `<div class="ai-message__artifacts" data-message-artifacts></div>` : ""}
+                    ${message.role === "assistant" && message.message_type === "analytical_result" ? `<small class="ai-saved-result">Saved result · Calculated ${escapeHtml(new Date(message.created_at).toLocaleString())}</small>` : ""}
+                    ${message.role === "assistant" && message.status !== "processing" ? `<div class="ai-message__actions"><button type="button" data-copy-message>Copy</button>${message.message_type === "analytical_result" ? `<button type="button" data-refresh-message>Refresh analysis</button>` : ""}${message.status === "failed" ? `<button type="button" data-retry-message>Retry</button>` : ""}</div>` : ""}
                 </div>
             </div>
-        `).join("");
+        `; }).join("");
+        container.querySelectorAll("[data-copy-message]").forEach((button) => {
+            button.addEventListener("click", () => {
+                const item = messages.find((message) => message.id === button.closest("[data-message-id]")?.dataset.messageId);
+                if (item) navigator.clipboard?.writeText(item.content || "");
+            });
+        });
+        container.querySelectorAll("[data-retry-message]").forEach((button) => {
+            button.addEventListener("click", () => retryMessage(state, button.closest("[data-message-id]")?.dataset.messageId));
+        });
+        container.querySelectorAll("[data-refresh-message]").forEach((button) => {
+            button.addEventListener("click", () => {
+                const response = messages.find((message) => message.id === button.closest("[data-message-id]")?.dataset.messageId);
+                const question = messages.find((message) => message.id === response?.parent_message_id);
+                const input = document.getElementById("ai-question");
+                if (!input || !question) return;
+                input.value = question.content;
+                const snapshot = (response.artifacts || []).find((item) => item.artifact_type === "response_snapshot");
+                state.pendingInputMetadata = {
+                    refresh_of_artifact_id: snapshot?.id || "",
+                    refresh_of_message_id: response.id,
+                };
+                runQuestion(state.root, state);
+            });
+        });
+        container.querySelectorAll(".ai-message").forEach((element, index) => {
+            const message = messages[index];
+            const host = element.querySelector("[data-message-artifacts]");
+            if (host && message?.role === "assistant") {
+                renderMessageArtifacts(state.root, state, message, host);
+            }
+        });
+    }
+
+    function responseSnapshotForMessage(message) {
+        return (message.artifacts || []).find((item) => item.artifact_type === "response_snapshot") || null;
+    }
+
+    function renderMessageArtifacts(root, state, message, host) {
+        const snapshotArtifact = responseSnapshotForMessage(message);
+        const payload = snapshotArtifact?.payload;
+        const diagnostics = payload?.availability_diagnostics;
+        if (!payload || diagnostics?.total_downtime_hours === undefined) return;
+
+        const intent = payload.intent || payload.semantic_request || {};
+        const question = state.conversationHistory.find((item) => item.id === message.parent_message_id)?.content || "";
+        const language = detectedLanguage(question);
+        host.classList.add("ai-message-analytical-result");
+        const overview = document.createElement("div");
+        const drivers = document.createElement("div");
+        const secondary = document.createElement("div");
+        secondary.className = "ai-message-artifact-actions";
+        host.append(overview, drivers, secondary);
+        renderAvailabilityOverview(overview, diagnostics, {
+            intent,
+            rows: payload.rows,
+            language,
+            resourceKnowledge: payload.resource_knowledge,
+        });
+
+        let expanded = false;
+        const openDriver = async (driver) => {
+            if (!driver || !window.Mining360DowntimeExplorer) return;
+            state.activeInteractiveView = {
+                type: "root_cause_explorer",
+                sourceMessageId: message.id,
+                intent: JSON.parse(JSON.stringify(intent)),
+                navigation: JSON.parse(JSON.stringify(payload.navigation || {})),
+                driver: driver.driver,
+            };
+            const explorer = document.getElementById("downtime-root-cause-explorer");
+            host.appendChild(explorer);
+            explorer.hidden = false;
+            await window.Mining360DowntimeExplorer.open({
+                action: "open_root_cause_explorer",
+                selected_dimension: "downtime_driver",
+                selected_value: driver.driver,
+                current_context: {
+                    kpi: intent.metric || "availability",
+                    filters: JSON.parse(JSON.stringify(intent.filters || {})),
+                },
+                source_question: question,
+                conversation_id: state.conversationId,
+                report_id: payload.navigation?.report_id || "",
+                source_message_id: message.id,
+                source_artifact_id: snapshotArtifact.id,
+            });
+        };
+        const drawDrivers = () => renderDriversTable(drivers, diagnostics, {
+            language,
+            expanded,
+            onSelectDriver: openDriver,
+            onToggleExpanded: (value) => { expanded = value; drawDrivers(); },
+            onShowPareto: () => {
+                const pareto = document.createElement("div");
+                pareto.className = "ai-inline-historical-pareto";
+                drivers.after(pareto);
+                renderDowntimeDiagnostics(pareto, diagnostics, { intent, onSelectDriver: openDriver });
+            },
+        });
+        drawDrivers();
+
+        if (payload.navigation?.report_id) {
+            const powerbi = document.createElement("button");
+            powerbi.type = "button";
+            powerbi.textContent = "Open saved context in Power BI";
+            powerbi.addEventListener("click", async () => {
+                state.activeInteractiveView = {
+                    type: "powerbi_preview",
+                    sourceMessageId: message.id,
+                    intent: JSON.parse(JSON.stringify(intent)),
+                    navigation: JSON.parse(JSON.stringify(payload.navigation)),
+                };
+                state.currentIntent = state.activeInteractiveView.intent;
+                state.currentNavigation = state.activeInteractiveView.navigation;
+                const view = document.getElementById("ai-powerbi-section");
+                host.appendChild(view);
+                await openPowerBI(root, state, state.currentNavigation);
+            });
+            secondary.appendChild(powerbi);
+        }
+    }
+
+    async function apiRequest(url, options = {}) {
+        const response = await fetch(url, {
+            ...options,
+            headers: {
+                ...(options.body ? { "Content-Type": "application/json" } : {}),
+                "X-CSRFToken": csrfToken(),
+                ...(options.headers || {}),
+            },
+        });
+        const payload = await response.json().catch(() => ({ ok: false, error: "Invalid server response." }));
+        if (!response.ok || payload.ok === false) throw new Error(payload.error || "Request failed.");
+        return payload;
+    }
+
+    function conversationUrl(root, id, suffix = "") {
+        return `${root.dataset.conversationsUrl}${id}/${suffix}`;
+    }
+
+    function relativeActivity(value) {
+        if (!value) return "No messages yet";
+        const date = new Date(value);
+        const minutes = Math.max(0, Math.floor((Date.now() - date.getTime()) / 60000));
+        if (minutes < 1) return "Just now";
+        if (minutes < 60) return `${minutes} min ago`;
+        if (minutes < 1440) return `${Math.floor(minutes / 60)} h ago`;
+        return date.toLocaleDateString();
+    }
+
+    function conversationPath(conversationId) {
+        return conversationId ? `/ai/c/${conversationId}/` : "/ai/new/";
+    }
+
+    function conversationIdFromPath() {
+        const match = window.location.pathname.match(/^\/ai\/c\/([0-9a-f-]+)\/?$/i);
+        return match ? match[1] : "";
+    }
+
+    function updateConversationRoute(conversationId, { replace = false } = {}) {
+        const method = replace ? "replaceState" : "pushState";
+        const nextPath = conversationPath(conversationId);
+        if (window.location.pathname !== nextPath) {
+            window.history[method]({ conversationId: conversationId || "" }, "", nextPath);
+        }
+    }
+
+    function closeConversationMenus() {
+        document.querySelectorAll(".ai-conversation-item-menu[open], .ai-conversation-menu[open]").forEach((menu) => {
+            menu.removeAttribute("open");
+        });
+    }
+
+    function conversationGroup(value) {
+        if (!value) return "Older";
+        const activity = new Date(value);
+        const today = new Date();
+        const startToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        const startActivity = new Date(activity.getFullYear(), activity.getMonth(), activity.getDate());
+        const days = Math.floor((startToday - startActivity) / 86400000);
+        if (days <= 0) return "Today";
+        if (days <= 7) return "Previous 7 days";
+        return "Older";
+    }
+
+    function renderConversationList(root, state) {
+        const list = document.getElementById("ai-conversation-list");
+        const query = (document.getElementById("ai-conversation-search")?.value || "").trim().toLowerCase();
+        const conversations = state.conversations.filter((item) => item.title.toLowerCase().includes(query));
+        let lastGroup = "";
+        list.innerHTML = conversations.length ? conversations.map((item) => {
+            const group = conversationGroup(item.last_message_at || item.updated_at);
+            const heading = group !== lastGroup ? `<div class="ai-conversation-group">${escapeHtml(group)}</div>` : "";
+            lastGroup = group;
+            return `${heading}
+            <div class="ai-conversation-list-row ${item.id === state.conversationId ? "is-active" : ""}">
+                <button type="button" class="ai-conversation-item" data-conversation-id="${item.id}" aria-current="${item.id === state.conversationId ? "page" : "false"}">
+                    <span>${escapeHtml(item.title)}</span>
+                    <small>${escapeHtml(relativeActivity(item.last_message_at))}</small>
+                </button>
+                <details class="ai-conversation-item-menu">
+                    <summary aria-label="Actions for ${escapeHtml(item.title)}" title="Conversation actions">&#8943;</summary>
+                    <div>
+                        <button type="button" data-rename-conversation="${item.id}">Rename</button>
+                        <button type="button" data-archive-conversation="${item.id}">Archive</button>
+                        <button type="button" class="danger" data-delete-conversation="${item.id}">Delete</button>
+                    </div>
+                </details>
+            </div>
+        `; }).join("") : `<div class="ai-conversation-empty">No conversations found.</div>`;
+        list.querySelectorAll("[data-conversation-id]").forEach((button) => {
+            button.addEventListener("click", () => openConversation(root, state, button.dataset.conversationId));
+        });
+        list.querySelectorAll("[data-rename-conversation]").forEach((button) => {
+            button.addEventListener("click", () => startInlineRename(state, button.dataset.renameConversation));
+        });
+        list.querySelectorAll("[data-delete-conversation]").forEach((button) => {
+            button.addEventListener("click", () => deleteConversation(root, state, button.dataset.deleteConversation));
+        });
+        list.querySelectorAll("[data-archive-conversation]").forEach((button) => {
+            button.addEventListener("click", () => archiveConversation(root, state, button.dataset.archiveConversation));
+        });
+        document.getElementById("ai-conversation-count").textContent = state.conversationCount;
+        document.getElementById("ai-conversation-limit").textContent = state.conversationLimit;
+        const newChat = document.getElementById("ai-new-conversation");
+        if (newChat) {
+            const atLimit = state.conversationCount >= state.conversationLimit;
+            newChat.disabled = atLimit;
+            newChat.title = atLimit
+                ? `You have reached the limit of ${state.conversationLimit} active conversations. Delete or archive a conversation to create a new one.`
+                : "New chat";
+        }
+    }
+
+    async function loadConversationList(root, state) {
+        const payload = await apiRequest(root.dataset.conversationsUrl);
+        state.conversations = payload.results || [];
+        state.conversationCount = payload.count || 0;
+        state.conversationLimit = payload.max_active_conversations || 10;
+        renderConversationList(root, state);
+        return state.conversations;
+    }
+
+    function latestResponseSnapshot(messages) {
+        for (let index = messages.length - 1; index >= 0; index -= 1) {
+            const artifact = (messages[index].artifacts || []).find((item) => item.artifact_type === "response_snapshot");
+            if (artifact?.payload) return { payload: artifact.payload, question: messages[index - 1]?.content || "" };
+        }
+        return null;
+    }
+
+    function clearAnalyticalResult(state) {
+        window.Mining360DowntimeExplorer?.resetForNewPrompt();
+        ["ai-availability-overview-content", "ai-drivers-content", "ai-downtime-content", "ai-powerbi-report-tabs"].forEach((id) => document.getElementById(id)?.replaceChildren());
+        setHidden(document.getElementById("ai-availability-overview-section"), true);
+        state.currentIntent = null;
+        state.currentNavigation = null;
+        state.currentDiagnostics = null;
+        state.selectedDriver = "";
+    }
+
+    function restoreAnalyticalSnapshot(root, state, snapshot) {
+        clearAnalyticalResult(state);
+        if (!snapshot?.payload?.availability_diagnostics) return;
+        const payload = snapshot.payload;
+        const diagnostics = payload.availability_diagnostics;
+        const intent = payload.intent || payload.semantic_request || {};
+        const language = detectedLanguage(snapshot.question || "");
+        const overview = document.getElementById("ai-availability-overview-content");
+        const drivers = document.getElementById("ai-drivers-content");
+        state.currentIntent = intent;
+        state.currentNavigation = payload.navigation || null;
+        state.currentDiagnostics = diagnostics;
+        state.currentQuestion = snapshot.question;
+        state.language = language;
+        state.openDriver = async (driver) => {
+            if (!driver || !window.Mining360DowntimeExplorer) return;
+            state.selectedDriver = driver.driver;
+            setAnalyticalView(state, "root_cause_explorer", { scroll: true });
+            await window.Mining360DowntimeExplorer.open({
+                action: "open_root_cause_explorer",
+                selected_dimension: "downtime_driver",
+                selected_value: driver.driver,
+                current_context: { kpi: intent.metric || "availability", filters: intent.filters || {} },
+                source_question: snapshot.question,
+                conversation_id: state.conversationId,
+                report_id: payload.navigation?.report_id || "",
+            });
+        };
+        renderAvailabilityOverview(overview, diagnostics, { intent, rows: payload.rows, language, resourceKnowledge: payload.resource_knowledge });
+        renderDriversTable(drivers, diagnostics, {
+            language,
+            expanded: false,
+            onSelectDriver: state.openDriver,
+            onToggleExpanded: (expanded) => {
+                state.driversExpanded = expanded;
+                renderDriversTable(drivers, diagnostics, { language, expanded, onSelectDriver: state.openDriver });
+            },
+            onShowPareto: () => {
+                const host = document.getElementById("ai-downtime-content");
+                host.replaceChildren();
+                renderDowntimeDiagnostics(host, diagnostics, { intent, onSelectDriver: state.openDriver });
+                setAnalyticalView(state, "pareto", { scroll: true });
+            },
+        });
+        renderQuickActions(root, state, diagnostics, language);
+        renderPowerBILauncher(root, state, language);
+        setHidden(document.getElementById("ai-availability-overview-section"), false);
+        setAnalyticalView(state, "summary");
+    }
+
+    async function openConversation(root, state, conversationId, { updateRoute = true, restoreScroll = true } = {}) {
+        if (!conversationId) return;
+        const thread = document.getElementById("ai-chat-thread");
+        const scrollHost = document.getElementById("ai-message-scroll");
+        if (state.conversationId && scrollHost) {
+            state.scrollPositions[state.conversationId] = scrollHost.scrollTop;
+        }
+        thread.innerHTML = `<div class="ai-conversation-loading">Loading conversation...</div>`;
+        const payload = await apiRequest(conversationUrl(root, conversationId, "messages/?page_size=50"));
+        state.conversationId = conversationId;
+        state.conversationHistory = payload.results || [];
+        state.hasOlderMessages = Boolean(payload.has_more);
+        state.nextBefore = payload.next_before;
+        sessionStorage.setItem(conversationKey, conversationId);
+        const composerInput = document.getElementById("ai-question");
+        if (composerInput) {
+            try { composerInput.value = localStorage.getItem(`mining360-ai-draft:${conversationId}`) || ""; } catch (error) { composerInput.value = ""; }
+        }
+        const conversation = payload.conversation;
+        document.getElementById("ai-conversation-title").textContent = conversation.title;
+        document.getElementById("ai-conversation-meta").textContent = `${conversation.last_agent_code ? conversation.last_agent_code.replaceAll("_", " ") + " · " : ""}${relativeActivity(conversation.last_message_at)}`;
+        renderMessages(thread, state.conversationHistory, state);
+        renderConversationList(root, state);
+        if (updateRoute) updateConversationRoute(conversationId);
+        if (scrollHost) {
+            const savedPosition = restoreScroll ? state.scrollPositions[conversationId] : null;
+            scrollHost.scrollTop = Number.isFinite(savedPosition) ? savedPosition : scrollHost.scrollHeight;
+        }
+        document.getElementById("ai-conversation-sidebar")?.classList.remove("is-open");
+    }
+
+    async function loadOlderMessages(root, state) {
+        if (!state.conversationId || !state.hasOlderMessages || state.loadingOlder || !state.nextBefore) return;
+        const thread = document.getElementById("ai-chat-thread");
+        const scrollHost = document.getElementById("ai-message-scroll") || thread;
+        state.loadingOlder = true;
+        const previousHeight = scrollHost.scrollHeight;
+        try {
+            const payload = await apiRequest(conversationUrl(
+                root,
+                state.conversationId,
+                `messages/?page_size=50&before=${encodeURIComponent(state.nextBefore)}`,
+            ));
+            state.conversationHistory = [...(payload.results || []), ...state.conversationHistory];
+            state.hasOlderMessages = Boolean(payload.has_more);
+            state.nextBefore = payload.next_before;
+            renderMessages(thread, state.conversationHistory, state);
+            scrollHost.scrollTop += scrollHost.scrollHeight - previousHeight;
+        } finally {
+            state.loadingOlder = false;
+        }
+    }
+
+    function beginNewConversation(state, { updateRoute = true } = {}) {
+        const input = document.getElementById("ai-question");
+        const scrollHost = document.getElementById("ai-message-scroll");
+        if (state.conversationId && scrollHost) state.scrollPositions[state.conversationId] = scrollHost.scrollTop;
+        state.conversationId = "";
+        state.conversationHistory = [];
+        state.hasOlderMessages = false;
+        state.nextBefore = null;
+        sessionStorage.removeItem(conversationKey);
+        document.getElementById("ai-conversation-title").textContent = "New conversation";
+        document.getElementById("ai-conversation-meta").textContent = "Mining 360 AI";
+        renderMessages(document.getElementById("ai-chat-thread"), [], state);
+        renderConversationList(state.root, state);
+        if (input) {
+            try { input.value = localStorage.getItem("mining360-ai-draft:new") || ""; } catch (error) { input.value = ""; }
+            input.dispatchEvent(new Event("input", { bubbles: true }));
+            input.focus();
+        }
+        if (updateRoute) updateConversationRoute("");
+        document.getElementById("ai-conversation-sidebar")?.classList.remove("is-open");
+    }
+
+    function startInlineRename(state, conversationId = state.conversationId) {
+        const conversation = state.conversations.find((item) => item.id === conversationId);
+        if (!conversation) return;
+        if (conversationId !== state.conversationId) {
+            openConversation(state.root, state, conversationId).then(() => startInlineRename(state, conversationId));
+            return;
+        }
+        closeConversationMenus();
+        const title = document.getElementById("ai-conversation-title");
+        const form = document.getElementById("ai-conversation-rename-form");
+        const input = document.getElementById("ai-conversation-title-input");
+        if (!title || !form || !input) return;
+        title.hidden = true;
+        form.hidden = false;
+        input.value = conversation.title;
+        input.focus();
+        input.select();
+    }
+
+    function cancelInlineRename() {
+        document.getElementById("ai-conversation-title")?.removeAttribute("hidden");
+        const form = document.getElementById("ai-conversation-rename-form");
+        if (form) form.hidden = true;
+    }
+
+    async function saveInlineRename(root, state) {
+        if (!state.conversationId) return;
+        const input = document.getElementById("ai-conversation-title-input");
+        const title = (input?.value || "").replace(/\s+/g, " ").trim();
+        if (!title) {
+            input?.setCustomValidity("Conversation title is required.");
+            input?.reportValidity();
+            return;
+        }
+        input?.setCustomValidity("");
+        await apiRequest(conversationUrl(root, state.conversationId), {
+            method: "PATCH",
+            body: JSON.stringify({ title }),
+        });
+        cancelInlineRename();
+        await loadConversationList(root, state);
+        document.getElementById("ai-conversation-title").textContent = title;
+    }
+
+    async function deleteConversation(root, state, conversationId = state.conversationId) {
+        if (!conversationId || !window.confirm("Delete this conversation?\n\nThis will remove the conversation from your chat history.")) return;
+        try {
+            await apiRequest(conversationUrl(root, conversationId), { method: "DELETE" });
+            if (state.conversationId === conversationId) {
+                sessionStorage.removeItem(conversationKey);
+                state.conversationId = "";
+            }
+            const remaining = await loadConversationList(root, state);
+            if (state.conversationId) {
+                renderConversationList(root, state);
+            } else if (remaining[0]) {
+                await openConversation(root, state, remaining[0].id);
+            } else {
+                beginNewConversation(state);
+            }
+        } catch (error) {
+            window.alert(error.message);
+        }
+    }
+
+    async function archiveConversation(root, state, conversationId = state.conversationId) {
+        if (!conversationId) return;
+        try {
+            await apiRequest(conversationUrl(root, conversationId, "archive/"), { method: "POST", body: "{}" });
+            if (state.conversationId === conversationId) {
+                sessionStorage.removeItem(conversationKey);
+                state.conversationId = "";
+            }
+            const remaining = await loadConversationList(root, state);
+            if (state.conversationId) renderConversationList(root, state);
+            else if (remaining[0]) await openConversation(root, state, remaining[0].id);
+            else beginNewConversation(state);
+        } catch (error) {
+            window.alert(error.message);
+        }
+    }
+
+    async function retryMessage(state, messageId) {
+        if (!state?.root || !state.conversationId || !messageId || state.activeExecution.isLoading) return;
+        state.activeExecution.isLoading = true;
+        try {
+            await apiRequest(conversationUrl(state.root, state.conversationId, `messages/${messageId}/retry/`), { method: "POST", body: "{}" });
+            await openConversation(state.root, state, state.conversationId);
+            await loadConversationList(state.root, state);
+        } catch (error) {
+            window.alert(error.message);
+        } finally {
+            state.activeExecution.isLoading = false;
+        }
     }
 
     function setAnalyticalView(state, view, { scroll = false } = {}) {
@@ -617,7 +1148,7 @@
     }
 
     async function runQuestion(root, state) {
-        if (state.isLoading) return;
+        if (state.activeExecution.isLoading) return;
         const input = document.getElementById("ai-question");
         const question = input.value.trim();
         const inputMetadata = state.pendingInputMetadata || null;
@@ -643,7 +1174,7 @@
         if (!question) {
             return;
         }
-        state.isLoading = true;
+        state.activeExecution = { isLoading: true, clientMessageId: "", question };
         const sendButton = document.getElementById("ai-run-question");
         if (sendButton) {
             sendButton.disabled = true;
@@ -651,10 +1182,12 @@
             sendButton.setAttribute("aria-label", "Question en cours d’analyse");
         }
 
-        state.messages.push({ role: "user", content: question });
-        renderMessages(chatThread, state.messages);
-        saveHistory(state.messages);
+        const clientMessageId = window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random()}`;
+        state.activeExecution.clientMessageId = clientMessageId;
+        state.conversationHistory.push({ id: clientMessageId, role: "user", content: question, status: "completed" });
+        renderMessages(chatThread, state.conversationHistory, state);
         input.value = "";
+        try { localStorage.removeItem(`mining360-ai-draft:${state.conversationId || "new"}`); } catch (error) { /* optional */ }
         input.style.height = "auto";
         updateComposerClearance();
 
@@ -692,8 +1225,8 @@
                 },
                 body: JSON.stringify({
                     question,
-                    conversation: state.messages,
                     conversation_id: state.conversationId,
+                    client_message_id: clientMessageId,
                     input_metadata: inputMetadata,
                     agent_selection: document.getElementById("ai-agent-selection")?.value || "auto",
                 }),
@@ -703,16 +1236,9 @@
                 throw new Error(payload.error || "Query failed.");
             }
 
-            const assistantMessage = payload.chat_message || payload.answer?.interpretation || payload.answer?.answer || "Done.";
-            state.messages.push({
-                role: "assistant",
-                content: assistantMessage,
-                diagnostics: payload.availability_diagnostics || null,
-                agent: payload.agent?.name || "",
-            });
-            renderMessages(chatThread, state.messages);
-            saveHistory(state.messages);
-            scrollIntoConversationView(chatThread.lastElementChild);
+            await openConversation(root, state, payload.conversation_id || state.conversationId);
+            await loadConversationList(root, state);
+            return;
 
             const intent = payload.intent || payload.semantic_request || {};
             const language = detectedLanguage(question);
@@ -816,12 +1342,18 @@
         } catch (err) {
             errorText.textContent = err.message;
             setHidden(error, false);
-            state.messages.push({ role: "assistant", content: `I could not process the question: ${err.message}` });
-            renderMessages(chatThread, state.messages);
-            saveHistory(state.messages);
+            if (state.conversationId) {
+                try {
+                    await openConversation(root, state, state.conversationId);
+                    await loadConversationList(root, state);
+                } catch (reloadError) {
+                    state.conversationHistory.push({ role: "assistant", content: `I could not process the question: ${err.message}`, status: "failed" });
+                    renderMessages(chatThread, state.conversationHistory, state);
+                }
+            }
             scrollIntoConversationView(chatThread.lastElementChild);
         } finally {
-            state.isLoading = false;
+            state.activeExecution = { isLoading: false, clientMessageId: "", question: "" };
             if (sendButton) {
                 sendButton.disabled = false;
                 sendButton.classList.remove("is-loading");
@@ -832,7 +1364,7 @@
         }
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", async function () {
         const root = document.querySelector("[data-ai-ask-url]");
         if (!root) {
             return;
@@ -841,11 +1373,16 @@
         const input = document.getElementById("ai-question");
         const chatThread = document.getElementById("ai-chat-thread");
         const state = {
-            messages: loadHistory(),
-            conversationId: sessionStorage.getItem(conversationKey) || (window.crypto?.randomUUID?.() || String(Date.now())),
+            root,
+            conversationHistory: [],
+            conversations: [],
+            conversationCount: 0,
+            conversationLimit: 10,
+            conversationId: conversationIdFromPath() || sessionStorage.getItem(conversationKey) || "",
             powerbi: null,
             powerbiEvents: [],
-            isLoading: false,
+            activeExecution: { isLoading: false, clientMessageId: "", question: "" },
+            activeInteractiveView: null,
             activeAnalyticalView: "summary",
             currentIntent: null,
             currentNavigation: null,
@@ -856,18 +1393,112 @@
             language: "en",
             openDriver: async () => {},
             pendingInputMetadata: null,
+            hasOlderMessages: false,
+            nextBefore: null,
+            loadingOlder: false,
+            scrollPositions: {},
         };
 
-        if (!state.messages.length) {
-            state.messages = [
-                {
-                    role: "assistant",
-                    content: "Hello. Ask me a question about availability, downtime, models, or sites.",
-                },
-            ];
+        const storedFocusMode = localStorage.getItem(focusModeKey) || "compact";
+        if (storedFocusMode !== "expanded") {
+            document.body.classList.add("nav-collapsed");
+            localStorage.setItem("mining360ia.navCollapsed", "1");
         }
-        renderMessages(chatThread, state.messages);
+        document.body.classList.toggle("ai-full-focus", storedFocusMode === "full");
+        document.body.classList.toggle("ai-conversations-collapsed", localStorage.getItem(conversationSidebarKey) === "1");
+
+        try {
+            const conversations = await loadConversationList(root, state);
+            const isNewRoute = window.location.pathname.replace(/\/$/, "") === "/ai/new";
+            const selected = !isNewRoute && (conversations.find((item) => item.id === state.conversationId) || conversations[0]);
+            if (selected) {
+                await openConversation(root, state, selected.id, { updateRoute: true, restoreScroll: false });
+            } else {
+                beginNewConversation(state, { updateRoute: window.location.pathname !== "/ai/" });
+            }
+        } catch (error) {
+            chatThread.innerHTML = `<div class="alert">${escapeHtml(error.message || "Unable to load conversations.")}</div>`;
+        }
         updateComposerClearance();
+
+        document.getElementById("ai-new-conversation")?.addEventListener("click", async () => {
+            if (state.conversationCount >= state.conversationLimit) return;
+            beginNewConversation(state);
+        });
+        let searchTimer = null;
+        document.getElementById("ai-conversation-search")?.addEventListener("input", () => {
+            window.clearTimeout(searchTimer);
+            searchTimer = window.setTimeout(() => renderConversationList(root, state), 120);
+        });
+        document.getElementById("ai-open-conversations")?.addEventListener("click", () => document.getElementById("ai-conversation-sidebar")?.classList.add("is-open"));
+        document.getElementById("ai-close-conversations")?.addEventListener("click", () => document.getElementById("ai-conversation-sidebar")?.classList.remove("is-open"));
+        document.getElementById("ai-toggle-conversations")?.addEventListener("click", () => {
+            const collapsed = !document.body.classList.contains("ai-conversations-collapsed");
+            document.body.classList.toggle("ai-conversations-collapsed", collapsed);
+            localStorage.setItem(conversationSidebarKey, collapsed ? "1" : "0");
+            const button = document.getElementById("ai-toggle-conversations");
+            button?.setAttribute("aria-label", collapsed ? "Show conversations" : "Collapse conversations");
+            button?.setAttribute("title", collapsed ? "Show conversations" : "Collapse conversations");
+        });
+        document.getElementById("ai-focus-toggle")?.addEventListener("click", () => {
+            const full = !document.body.classList.contains("ai-full-focus");
+            document.body.classList.toggle("ai-full-focus", full);
+            localStorage.setItem(focusModeKey, full ? "full" : "compact");
+            const button = document.getElementById("ai-focus-toggle");
+            button?.setAttribute("aria-label", full ? "Exit full focus" : "Enter full focus");
+            button?.setAttribute("title", full ? "Exit full focus" : "Enter full focus");
+        });
+        document.getElementById("ai-rename-conversation")?.addEventListener("click", () => startInlineRename(state));
+        document.getElementById("ai-archive-conversation")?.addEventListener("click", () => archiveConversation(root, state));
+        document.getElementById("ai-delete-conversation")?.addEventListener("click", () => deleteConversation(root, state));
+        document.getElementById("ai-conversation-rename-form")?.addEventListener("submit", (event) => {
+            event.preventDefault();
+            saveInlineRename(root, state).catch((error) => window.alert(error.message));
+        });
+        document.getElementById("ai-cancel-rename")?.addEventListener("click", cancelInlineRename);
+        document.getElementById("ai-conversation-title-input")?.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") cancelInlineRename();
+        });
+        document.getElementById("ai-show-technical-details")?.addEventListener("click", () => {
+            closeConversationMenus();
+            const details = document.querySelector(".ai-technical-details");
+            if (!details) return;
+            details.hidden = false;
+            details.open = true;
+            details.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        });
+        const chatScrollHost = document.getElementById("ai-message-scroll") || chatThread;
+        chatScrollHost?.addEventListener("scroll", () => {
+            if (chatScrollHost.scrollTop < 80) loadOlderMessages(root, state).catch(() => {});
+            const awayFromLatest = chatScrollHost.scrollHeight - chatScrollHost.scrollTop - chatScrollHost.clientHeight > 220;
+            setHidden(document.getElementById("ai-jump-latest"), !awayFromLatest);
+        });
+        document.getElementById("ai-jump-latest")?.addEventListener("click", () => {
+            chatScrollHost?.scrollTo({ top: chatScrollHost.scrollHeight, behavior: "smooth" });
+        });
+        window.addEventListener("popstate", () => {
+            const routeConversationId = conversationIdFromPath();
+            if (routeConversationId) {
+                openConversation(root, state, routeConversationId, { updateRoute: false }).catch(() => beginNewConversation(state, { updateRoute: false }));
+            } else {
+                beginNewConversation(state, { updateRoute: false });
+            }
+        });
+        let contextSaveTimer = null;
+        window.addEventListener("mining360:analytical-context", (event) => {
+            if (!state.conversationId) return;
+            window.clearTimeout(contextSaveTimer);
+            contextSaveTimer = window.setTimeout(() => {
+                apiRequest(conversationUrl(root, state.conversationId, "context/"), {
+                    method: "PATCH",
+                    body: JSON.stringify({ active_analysis: event.detail?.active_analysis || {} }),
+                }).catch(() => {});
+            }, 250);
+        });
+        const draftKey = () => `mining360-ai-draft:${state.conversationId || "new"}`;
+        input?.addEventListener("input", () => {
+            try { localStorage.setItem(draftKey(), input.value); } catch (error) { /* optional */ }
+        });
         const composer = document.querySelector(".ai-chat-composer");
         if (composer && window.ResizeObserver) {
             const composerObserver = new ResizeObserver(updateComposerClearance);
@@ -888,6 +1519,17 @@
             if (event.key === "Enter" && !event.shiftKey && !event.isComposing) {
                 event.preventDefault();
                 runQuestion(root, state);
+            }
+        });
+        document.addEventListener("keydown", (event) => {
+            if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+                event.preventDefault();
+                document.getElementById("ai-conversation-sidebar")?.classList.add("is-open");
+                document.getElementById("ai-conversation-search")?.focus();
+            }
+            if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key.toLowerCase() === "o") {
+                event.preventDefault();
+                if (state.conversationCount < state.conversationLimit) beginNewConversation(state);
             }
         });
         input?.addEventListener("input", function () {

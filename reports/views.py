@@ -4,10 +4,11 @@ import re
 import time
 from urllib.parse import unquote, urlparse
 
+from django.conf import settings
 from django.db import models, transaction
 from django.db.models.deletion import ProtectedError, RestrictedError
 from django.core.cache import cache
-from django.core.exceptions import ValidationError
+from django.core.exceptions import PermissionDenied, ValidationError
 from django.apps import apps
 from django.http import FileResponse, Http404, HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, render, redirect
@@ -1809,14 +1810,7 @@ def _data_quality_controls_state(source_key: str | None = None, object_name: str
     return latest_run, controls, history[:12]
 
 
-def reporting_home(request):
-    reports = []
-    error = None
-
-    try:
-        reports = list_workspace_reports_with_refresh()
-    except Exception as exc:
-        error = str(exc)
+def _visible_reporting_reports(reports):
     preferences = {
         item.report_id: item
         for item in ReportingReportPreference.objects.filter(
@@ -1837,6 +1831,18 @@ def reporting_home(request):
             str(getattr(report, "display_name", "") or "").lower(),
         )
     )
+    return reports
+
+
+def reporting_home(request):
+    reports = []
+    error = None
+
+    try:
+        reports = list_workspace_reports_with_refresh()
+    except Exception as exc:
+        error = str(exc)
+    reports = _visible_reporting_reports(reports)
     completed_count = sum(
         1 for report in reports
         if str(getattr(report, "refresh_status", "") or "").lower() == "completed"
@@ -2878,7 +2884,7 @@ def _build_matrix_answer(semantic_request: dict, rows: list[dict]) -> dict:
 
 
 @ensure_csrf_cookie
-def ai_home(request):
+def ai_home(request, conversation_id=None):
     openai_enabled = is_openai_configured()
     from .agent_router_service import multi_agent_enabled
     from .models import AIAgent
@@ -2953,20 +2959,32 @@ def ai_semantic_test(request):
         )
 
 
-def ai_ask(request):
+def _execute_ai_ask(request, payload_override=None):
     started_at = time.monotonic()
     if request.method != "POST":
         return JsonResponse({"ok": False, "error": "POST required."}, status=405)
-    try:
-        payload = json.loads(request.body.decode("utf-8") or "{}")
-    except json.JSONDecodeError:
-        return JsonResponse({"ok": False, "error": "Invalid JSON payload."}, status=400)
+    if payload_override is None:
+        try:
+            payload = json.loads(request.body.decode("utf-8") or "{}")
+        except json.JSONDecodeError:
+            return JsonResponse({"ok": False, "error": "Invalid JSON payload."}, status=400)
+    else:
+        payload = payload_override
 
     question = (payload.get("question") or "").strip()
     section_code = (payload.get("section_code") or payload.get("section") or "").strip() or None
     conversation = _sanitize_conversation(payload.get("conversation"))
     if not question:
         return JsonResponse({"ok": False, "error": "Question is required."}, status=400)
+
+    from .conversation_intent_service import handle_conversational_message
+    conversational = handle_conversational_message(
+        question,
+        conversation_id=str(payload.get("conversation_id") or "").strip(),
+        user=request.user,
+    )
+    if conversational:
+        return JsonResponse(conversational)
 
     from .agent_router_service import multi_agent_enabled
     if multi_agent_enabled(request.user):
@@ -3310,6 +3328,127 @@ def ai_ask(request):
             },
         }
     )
+
+
+@login_required
+def ai_ask(request):
+    if request.method != "POST":
+        return JsonResponse({"ok": False, "error": "POST required."}, status=405)
+    if not getattr(settings, "ENABLE_PERSISTENT_CONVERSATIONS", True):
+        return _execute_ai_ask(request)
+
+    try:
+        payload = json.loads(request.body.decode("utf-8") or "{}")
+    except json.JSONDecodeError:
+        return JsonResponse({"ok": False, "error": "Invalid JSON payload."}, status=400)
+
+    question = str(payload.get("question") or "").strip()
+    if not question:
+        return JsonResponse({"ok": False, "error": "Question is required."}, status=400)
+
+    from .ai_conversation_message_service import (
+        create_assistant_placeholder,
+        create_user_message,
+        fail_assistant_message,
+        finalize_assistant_message,
+        previous_persisted_response,
+    )
+    from .ai_conversation_service import (
+        ConversationLimitReached,
+        create_conversation,
+        owned_conversation,
+        serialize_conversation,
+    )
+
+    try:
+        conversation_id = str(payload.get("conversation_id") or "").strip()
+        conversation_record = (
+            owned_conversation(request.user, conversation_id)
+            if conversation_id
+            else create_conversation(request.user)
+        )
+        if conversation_record.status != "active":
+            return JsonResponse(
+                {"ok": False, "error": "This conversation is not active."},
+                status=409,
+            )
+        user_message, created = create_user_message(
+            conversation_record,
+            content=question,
+            client_message_id=str(payload.get("client_message_id") or "").strip() or None,
+            metadata=payload.get("input_metadata") if isinstance(payload.get("input_metadata"), dict) else {},
+        )
+        if not created:
+            persisted = previous_persisted_response(user_message)
+            if persisted:
+                response_payload = dict(persisted.metadata_json.get("response_payload") or {})
+                response_payload.update({
+                    "conversation_id": str(conversation_record.id),
+                    "conversation": serialize_conversation(conversation_record),
+                    "user_message_id": str(user_message.id),
+                    "assistant_message_id": str(persisted.id),
+                    "persisted": True,
+                    "idempotent_replay": True,
+                })
+                return JsonResponse(response_payload)
+            existing_response = user_message.response_versions.order_by("-version_number").first()
+            if existing_response:
+                return JsonResponse(
+                    {
+                        "ok": existing_response.status == "processing",
+                        "conversation_id": str(conversation_record.id),
+                        "user_message_id": str(user_message.id),
+                        "assistant_message_id": str(existing_response.id),
+                        "assistant_message_status": existing_response.status,
+                        "error": existing_response.content if existing_response.status == "failed" else "",
+                        "persisted": True,
+                        "idempotent_replay": True,
+                    },
+                    status=202 if existing_response.status == "processing" else 409,
+                )
+
+        assistant_message = create_assistant_placeholder(user_message)
+        history = list(
+            conversation_record.messages.filter(status="completed", role__in=["user", "assistant"])
+            .exclude(pk=user_message.pk)
+            .order_by("-created_at")
+            .values("role", "content")[:20]
+        )
+        history.reverse()
+        payload["conversation_id"] = str(conversation_record.id)
+        payload["conversation"] = history
+        response = _execute_ai_ask(request, payload_override=payload)
+
+        try:
+            response_payload = json.loads(response.content.decode("utf-8") or "{}")
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            response_payload = {"ok": False, "error": "The AI pipeline returned an invalid response."}
+
+        if response.status_code < 400 and response_payload.get("ok"):
+            finalized = finalize_assistant_message(assistant_message, response_payload)
+        else:
+            finalized = fail_assistant_message(
+                assistant_message,
+                response_payload.get("error") or "Response generation failed.",
+            )
+        conversation_record.refresh_from_db()
+        response_payload.update({
+            "conversation_id": str(conversation_record.id),
+            "conversation_record": serialize_conversation(conversation_record),
+            "user_message_id": str(user_message.id),
+            "assistant_message_id": str(finalized.id),
+            "assistant_message_status": finalized.status,
+            "persisted": True,
+        })
+        return JsonResponse(response_payload, status=response.status_code)
+    except ConversationLimitReached as exc:
+        return JsonResponse({"ok": False, "error": exc.messages[0]}, status=409)
+    except (PermissionError, PermissionDenied):
+        return JsonResponse({"ok": False, "error": "Conversation not found or not authorized."}, status=404)
+    except Exception as exc:
+        if "assistant_message" in locals():
+            fail_assistant_message(assistant_message, str(exc))
+        return JsonResponse({"ok": False, "error": str(exc)}, status=500)
 
 
 IA_RESOURCE_TYPES = {
@@ -6649,8 +6788,9 @@ def report_detail(request, report_id):
     selected_role = request.GET.get("role") or "Global"
 
     try:
-        reports = list_workspace_reports()
-        report = get_workspace_report(str(report_id), reports)
+        workspace_reports = list_workspace_reports()
+        report = get_workspace_report(str(report_id), workspace_reports)
+        reports = _visible_reporting_reports(workspace_reports)
         embed_token = generate_report_embed_token(report, [selected_role])
     except Exception as exc:
         error = str(exc)

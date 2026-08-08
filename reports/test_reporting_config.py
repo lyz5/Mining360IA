@@ -73,3 +73,28 @@ class ReportingConfigurationTests(TestCase):
         self.assertEqual(response.status_code, 200)
         reports = response.context["reports"]
         self.assertEqual([report["display_name"] for report in reports], [self.first_report.display_name])
+
+    @patch("reports.views.generate_report_embed_token", return_value="embed-token")
+    @patch("reports.views.list_workspace_reports")
+    def test_hidden_report_is_removed_from_report_viewer_dropdown(
+        self,
+        list_reports,
+        generate_embed_token,
+    ):
+        list_reports.return_value = [self.first_report, self.second_report]
+        self.client.force_login(self.admin)
+        ReportingReportPreference.objects.create(
+            report_id=str(self.second_report.id),
+            report_name=self.second_report.name,
+            display_name=self.second_report.display_name,
+            is_visible=False,
+        )
+
+        response = self.client.get(reverse("report-detail", args=[self.first_report.id]))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            [str(report.id) for report in response.context["reports"]],
+            [str(self.first_report.id)],
+        )
+        generate_embed_token.assert_called_once_with(self.first_report, ["Global"])

@@ -7,6 +7,9 @@ $ErrorActionPreference = "Stop"
 $root = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot "..\.."))
 $python = (Get-Command python.exe -ErrorAction Stop).Source
 $logDirectory = Join-Path $root ".runlogs"
+$runId = Get-Date -Format "yyyyMMdd-HHmmss"
+$outLog = Join-Path $logDirectory "development-$runId.out.log"
+$errLog = Join-Path $logDirectory "development-$runId.err.log"
 
 New-Item -ItemType Directory -Path $logDirectory -Force | Out-Null
 $env:MINING360_DEBUG = "1"
@@ -25,6 +28,6 @@ foreach ($name in @("ALL_PROXY", "GIT_HTTP_PROXY", "GIT_HTTPS_PROXY", "HTTP_PROX
 Set-Location $root
 $ErrorActionPreference = "Continue"
 & $python -m waitress --listen=$Listen --threads=8 Mining360IA.wsgi:application `
-    1>> (Join-Path $logDirectory "development.out.log") `
-    2>> (Join-Path $logDirectory "development.err.log")
+    1>> $outLog `
+    2>> $errLog
 exit $LASTEXITCODE

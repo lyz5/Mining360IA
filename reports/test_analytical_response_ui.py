@@ -49,3 +49,33 @@ class AnalyticalResponseFrontendContractTests(SimpleTestCase):
         self.assertIn("overflow-y: auto", self.styles)
         self.assertIn("overscroll-behavior: contain", self.styles)
         self.assertIn("scrollbar-gutter: stable", self.styles)
+
+    def test_chat_workspace_reserves_space_for_composer(self):
+        panel_start = self.template.index('<div class="ai-chat-panel">')
+        scroll_start = self.template.index('class="ai-message-scroll"', panel_start)
+        scroll_end = self.template.index('class="ai-chat-composer"', scroll_start)
+        self.assertLess(scroll_start, scroll_end)
+        self.assertIn(".ai-page-body .ai-chat-panel", self.styles)
+        self.assertIn("flex-direction: column", self.styles)
+        self.assertIn("position: relative !important", self.styles)
+        self.assertIn("bottom: auto !important", self.styles)
+
+    def test_chat_uses_only_designated_vertical_scroll_areas(self):
+        self.assertIn(".ai-page-body .ai-message-scroll", self.styles)
+        self.assertIn("overflow-y: auto", self.styles)
+        self.assertIn("overflow: hidden !important", self.styles)
+        self.assertIn(".ai-page-body .ai-conversation-list", self.styles)
+
+    def test_new_chat_is_a_local_draft_until_first_message(self):
+        self.assertIn("function beginNewConversation", self.javascript)
+        self.assertIn('state.conversationId = ""', self.javascript)
+        self.assertNotIn(
+            'document.getElementById("ai-new-conversation")?.addEventListener("click", async () => {\n            try { await createConversation',
+            self.javascript,
+        )
+
+    def test_conversation_routes_and_focus_controls_exist(self):
+        self.assertIn('id="ai-toggle-conversations"', self.template)
+        self.assertIn('id="ai-focus-toggle"', self.template)
+        self.assertIn("function conversationIdFromPath", self.javascript)
+        self.assertIn("window.addEventListener(\"popstate\"", self.javascript)

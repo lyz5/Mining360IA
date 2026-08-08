@@ -194,14 +194,14 @@ def route_question(
         selected, confidence = "mining_knowledge", 96
         matched_rules = ["BEST_PRACTICE_OR_DOCUMENT"]
         reason = "A Best Practice, procedure, definition, or documentary request was detected."
-    elif signals["ambiguous_concept"]:
-        selected, confidence = "clarification_required", 60
-        matched_rules = ["AMBIGUOUS_BUSINESS_CONCEPT"]
-        reason = "The question does not specify an operational value or documentary explanation."
     elif context and context.active_agent in {"machine_performance", "mining_knowledge"}:
         selected, confidence = context.active_agent, 90
         matched_rules = ["ACTIVE_CONVERSATION_CONTEXT"]
         reason = f"The active {context.active_agent} conversation context was retained."
+    elif signals["ambiguous_concept"]:
+        selected, confidence = "clarification_required", 60
+        matched_rules = ["AMBIGUOUS_BUSINESS_CONCEPT"]
+        reason = "The question does not specify an operational value or documentary explanation."
     else:
         selected, confidence = "clarification_required", 50
         reason = "No sufficiently specific agent signal was detected."

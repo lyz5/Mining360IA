@@ -861,7 +861,7 @@ def get_report_hint_dataset_ids(token: str, workspace_id: str, report_name: str)
 def get_workspace_report(report_id: str, reports: list[PowerBIReport] | None = None) -> PowerBIReport:
     reports = reports or list_workspace_reports()
     for report in reports:
-        if report.id == report_id:
+        if str(report.id) == str(report_id):
             return report
     raise RuntimeError(f"Report not found: {report_id}")
 

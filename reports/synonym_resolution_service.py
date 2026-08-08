@@ -49,6 +49,17 @@ class SynonymResolutionService:
         if item.match_type in {"Exact", "Phrase", "Abbreviation"}:
             if re.search(boundary, normalized_question):
                 return 100
+            if item.entity_type == "Mine Site" and len(synonym) >= 5:
+                best = max(
+                    (
+                        SequenceMatcher(None, synonym, word).ratio() * 100
+                        for word in normalized_question.split()
+                        if len(word) >= 5
+                    ),
+                    default=0,
+                )
+                if best >= 88:
+                    return 94
             return None
         if item.match_type == "Contains":
             return 92 if synonym in normalized_question else None
@@ -64,6 +75,21 @@ class SynonymResolutionService:
             return best if best >= 82 else None
         # Semantic entries remain configuration-only until an AI fallback is explicitly invoked.
         return 90 if synonym in normalized_question else None
+
+    @staticmethod
+    def _original_value(item, question, exact_score):
+        if item.entity_type != "Mine Site" or exact_score == 100:
+            return item.synonym
+        words = re.findall(r"[\w-]+", str(question or ""), re.UNICODE)
+        return max(
+            words,
+            key=lambda word: SequenceMatcher(
+                None,
+                item.normalized_synonym_key,
+                normalize_synonym_key(word),
+            ).ratio(),
+            default=item.synonym,
+        )
 
     def resolve(self, question, *, count_usage=False):
         normalized_question = normalize_synonym_key(question)
@@ -127,6 +153,7 @@ class SynonymResolutionService:
             resolved.append({
                 "id": item.id,
                 "matched_text": item.synonym,
+                "original_value": self._original_value(item, question, _exact_score),
                 "canonical_term": item.canonical_term,
                 "normalized_value": item.normalized_value,
                 "entity_type": (

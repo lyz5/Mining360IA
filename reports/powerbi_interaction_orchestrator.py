@@ -108,7 +108,12 @@ def _format_availability(value) -> str:
 
 
 def _question_language(question_text: str) -> str:
-    return "en"
+    normalized = re.sub(r"[^a-zà-ÿ0-9]+", " ", str(question_text or "").casefold())
+    french_markers = {
+        "quelle", "quel", "donne", "montre", "disponibilité", "disponibilite",
+        "pour", "mois", "site", "équipements", "equipements",
+    }
+    return "fr" if french_markers.intersection(normalized.split()) else "en"
 
 
 def _natural_period(value, language: str) -> str:
@@ -127,6 +132,15 @@ def _natural_period(value, language: str) -> str:
     }
     if period.casefold() in aliases[language]:
         return aliases[language][period.casefold()]
+    month_match = re.fullmatch(r"(20\d{2})-(0[1-9]|1[0-2])", period)
+    if month_match:
+        month_names = {
+            "en": ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"),
+            "fr": ("janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"),
+        }
+        year, month = month_match.groups()
+        label = f"{month_names[language][int(month) - 1]} {year}"
+        return ("pour " if language == "fr" else "for ") + label
     return ("pour " if language == "fr" else "for ") + period if period else ""
 
 
@@ -636,6 +650,21 @@ def process_user_question(question_text, user_context=None, conversation_context
         "metric": dax_payload["metric"] if dax_payload else intent.get("metric"),
         "measure": dax_payload["measure"] if dax_payload else "",
         "navigation": public_navigation_payload(navigation),
+        "synonym_resolution": synonym_resolution or {
+            "original_text": question_text,
+            "resolved_entities": [],
+            "requires_clarification": False,
+        },
+        "filter_resolution_snapshot": [
+            {
+                "entity_type": entity.get("entity_type"),
+                "original_value": entity.get("original_value") or entity.get("matched_text"),
+                "normalized_value": entity.get("normalized_value"),
+                "confidence": entity.get("confidence"),
+            }
+            for entity in (synonym_resolution or {}).get("resolved_entities", [])
+            if entity.get("entity_type") == "Filter Value"
+        ],
         "validation": {
             "status": "valid",
             "errors": [],
