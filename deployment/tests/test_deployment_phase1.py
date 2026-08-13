@@ -305,3 +305,5 @@ class DeploymentFrontendContractTests(SimpleTestCase):
         self.assertIn("function Stop-Mining360Runtime", script)
         self.assertIn("Get-NetTCPConnection -LocalPort 8000", script)
         self.assertIn("Stop-Process -Id $listener.OwningProcess", script)
+        self.assertIn("Get-CimInstance Win32_Process", script)
+        self.assertIn("taskkill.exe /PID $process.ProcessId /T /F", script)

@@ -56,6 +56,18 @@ function Start-Mining360Runtime {
 function Stop-Mining360Runtime {
     & schtasks.exe /End /TN $runtimeTask *>> $log
     Start-Sleep -Seconds 2
+    # schtasks /End stops the PowerShell task host, but its Waitress/Python
+    # descendants can remain alive. Terminate only processes whose command
+    # lines belong to the controlled Mining360 runtime tree.
+    $runtimeProcesses = @(
+        Get-CimInstance Win32_Process | Where-Object {
+            ($_.CommandLine -like '*C:\Mining360\app\deployment\windows\start_mining360.ps1*') -or
+            ($_.CommandLine -like '*C:\Mining360\venv\Scripts\waitress-serve.exe*')
+        }
+    )
+    foreach ($process in $runtimeProcesses) {
+        & taskkill.exe /PID $process.ProcessId /T /F *>> $log
+    }
     $deadline = (Get-Date).AddSeconds(30)
     do {
         $listeners = @(Get-NetTCPConnection -LocalPort 8000 -State Listen -ErrorAction SilentlyContinue)
