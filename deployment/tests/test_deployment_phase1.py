@@ -295,3 +295,10 @@ class DeploymentFrontendContractTests(SimpleTestCase):
         self.assertIn("deployment-spinner", stylesheet)
         self.assertNotIn("window.confirm", javascript)
         self.assertIn("deployment.js' %}?v=20260806-2", template)
+
+    def test_windows_release_health_check_preserves_public_https_scheme(self):
+        script = (
+            Path(settings.BASE_DIR) / "deployment" / "windows" / "deploy_release.ps1"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("'X-Forwarded-Proto' = 'https'", script)

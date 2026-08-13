@@ -58,7 +58,14 @@ function Wait-Mining360Health([int]$Seconds = 90) {
     do {
         Start-Sleep -Seconds 3
         try {
-            $health = Invoke-RestMethod -Uri 'http://127.0.0.1:8000/health/' -TimeoutSec 5
+            # Waitress is reached over HTTP locally, while the public request is
+            # HTTPS terminated by IIS. Forward the original scheme so Django's
+            # production SSL redirect does not turn the health probe into an
+            # unreachable https://127.0.0.1:8000 request.
+            $health = Invoke-RestMethod `
+                -Uri 'http://127.0.0.1:8000/health/' `
+                -Headers @{ 'X-Forwarded-Proto' = 'https' } `
+                -TimeoutSec 5
             if ($health.status -eq 'ok' -and $health.database -eq 'ok') { return $true }
         } catch { }
     } while ((Get-Date) -lt $deadline)
