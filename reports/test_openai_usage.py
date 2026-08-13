@@ -73,6 +73,7 @@ class OpenAIUsageDashboardTests(TestCase):
             code="performance",
             defaults={"name": "Performance"},
         )
+        initial_count = KnowledgeSynonym.objects.count()
         self.client.force_login(self.admin)
         template = self.client.get("/knowledge-base/synonyms/template/")
         self.assertEqual(template.status_code, 200)
@@ -94,7 +95,11 @@ class OpenAIUsageDashboardTests(TestCase):
         )
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["summary"]["created"], 1)
-        self.assertEqual(KnowledgeSynonym.objects.count(), 1)
+        self.assertEqual(KnowledgeSynonym.objects.count(), initial_count + 1)
+        self.assertTrue(KnowledgeSynonym.objects.filter(
+            canonical_term="availability",
+            synonym="physical availability",
+        ).exists())
         duplicate_upload = SimpleUploadedFile(
             "synonyms.xlsx",
             workbook_bytes,
@@ -107,4 +112,4 @@ class OpenAIUsageDashboardTests(TestCase):
         self.assertEqual(duplicate_response.status_code, 200)
         self.assertEqual(duplicate_response.json()["summary"]["created"], 0)
         self.assertEqual(duplicate_response.json()["summary"]["error_count"], 1)
-        self.assertEqual(KnowledgeSynonym.objects.count(), 1)
+        self.assertEqual(KnowledgeSynonym.objects.count(), initial_count + 1)

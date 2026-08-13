@@ -36,7 +36,7 @@ ALLOWED_HOSTS = [
     value.strip()
     for value in os.getenv(
         'MINING360_ALLOWED_HOSTS',
-        '127.0.0.1,localhost,testserver,bodefm',
+        '127.0.0.1,localhost,testserver,bodefm,mining360-dev.neemba.local',
     ).split(',')
     if value.strip()
 ]
@@ -53,6 +53,32 @@ USE_X_FORWARDED_HOST = os.getenv(
     '0',
 ).strip().lower() in {'1', 'true', 'yes', 'on'}
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
+def _environment_boolean(name: str, default: bool) -> bool:
+    fallback = '1' if default else '0'
+    return os.getenv(name, fallback).strip().lower() in {'1', 'true', 'yes', 'on'}
+
+
+# Production is served through the corporate HTTPS reverse proxy. Keep every
+# setting environment-controlled so a staged rollout can lower HSTS or disable
+# Django's redirect only when the proxy owns that responsibility explicitly.
+SECURE_SSL_REDIRECT = _environment_boolean('MINING360_SECURE_SSL_REDIRECT', not DEBUG)
+SESSION_COOKIE_SECURE = _environment_boolean('MINING360_SESSION_COOKIE_SECURE', not DEBUG)
+CSRF_COOKIE_SECURE = _environment_boolean('MINING360_CSRF_COOKIE_SECURE', not DEBUG)
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_SAMESITE = 'Lax'
+MINING360_REMEMBER_SESSION_SECONDS = int(
+    os.getenv('MINING360_REMEMBER_SESSION_SECONDS', str(14 * 24 * 60 * 60))
+)
+ENABLE_USERS_PAGE_REDESIGN = os.getenv('ENABLE_USERS_PAGE_REDESIGN', 'Production')
+SECURE_HSTS_SECONDS = int(os.getenv('MINING360_SECURE_HSTS_SECONDS', '3600' if not DEBUG else '0'))
+SECURE_HSTS_INCLUDE_SUBDOMAINS = _environment_boolean(
+    'MINING360_SECURE_HSTS_INCLUDE_SUBDOMAINS', False
+)
+SECURE_HSTS_PRELOAD = _environment_boolean('MINING360_SECURE_HSTS_PRELOAD', False)
+SECURE_REFERRER_POLICY = 'same-origin'
 
 
 # Application definition
@@ -217,6 +243,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'reports.active_directory_backend.ActiveDirectoryBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
@@ -251,9 +282,40 @@ STORAGES = {
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
+AZURE_AD_REDIRECT_URI = os.getenv('AZURE_AD_REDIRECT_URI', '').strip()
 
 ENABLE_PERSISTENT_CONVERSATIONS = os.getenv('ENABLE_PERSISTENT_CONVERSATIONS', 'true').lower() in {'1', 'true', 'yes', 'on'}
 ENABLE_CONVERSATION_ARCHIVE = os.getenv('ENABLE_CONVERSATION_ARCHIVE', 'true').lower() in {'1', 'true', 'yes', 'on'}
 ENABLE_CONVERSATION_RENAME = os.getenv('ENABLE_CONVERSATION_RENAME', 'true').lower() in {'1', 'true', 'yes', 'on'}
 ENABLE_CONVERSATION_ARTIFACTS = os.getenv('ENABLE_CONVERSATION_ARTIFACTS', 'true').lower() in {'1', 'true', 'yes', 'on'}
+ENABLE_ADAPTIVE_PERFORMANCE_RESPONSES = os.getenv('ENABLE_ADAPTIVE_PERFORMANCE_RESPONSES', 'Production').strip()
+ENABLE_CONVERSATIONAL_FOLLOW_UP_RESOLUTION = os.getenv(
+    'ENABLE_CONVERSATIONAL_FOLLOW_UP_RESOLUTION', 'Production'
+).strip()
+ENABLE_USER_OWNS_DATA_EMBEDDING = os.getenv(
+    'ENABLE_USER_OWNS_DATA_EMBEDDING', 'Production'
+).strip()
+ENABLE_PRIME_MOVERS_POWERAPPS_EMBEDDING = os.getenv(
+    'ENABLE_PRIME_MOVERS_POWERAPPS_EMBEDDING', 'Production'
+).strip()
+ENABLE_ENTRA_ACCOUNT_LINKING = os.getenv(
+    'ENABLE_ENTRA_ACCOUNT_LINKING', 'Production'
+).strip()
+ENABLE_DELEGATED_TOKEN_REFRESH = os.getenv(
+    'ENABLE_DELEGATED_TOKEN_REFRESH', 'Production'
+).strip()
+FOLLOW_UP_MINIMUM_CONFIDENCE = int(os.getenv('FOLLOW_UP_MINIMUM_CONFIDENCE', '85'))
 MAX_ACTIVE_CONVERSATIONS_PER_USER = int(os.getenv('MAX_ACTIVE_CONVERSATIONS_PER_USER', '10'))
+
+ENABLE_DOWNTIME_MAPPING_CHECK = os.getenv('ENABLE_DOWNTIME_MAPPING_CHECK', 'Admin Only').strip()
+ENABLE_FULL_AI_DOWNTIME_AUDIT = os.getenv('ENABLE_FULL_AI_DOWNTIME_AUDIT', 'Pilot').strip()
+ENABLE_DOWNTIME_MAPPING_WRITEBACK = os.getenv('ENABLE_DOWNTIME_MAPPING_WRITEBACK', 'Disabled').strip()
+ENABLE_DOWNTIME_MAPPING_BATCH_PROCESSING = os.getenv('ENABLE_DOWNTIME_MAPPING_BATCH_PROCESSING', 'Pilot').strip()
+ENABLE_DOWNTIME_MAPPING_KNOWLEDGE_LEARNING = os.getenv('ENABLE_DOWNTIME_MAPPING_KNOWLEDGE_LEARNING', 'Admin Only').strip()
+DOWNTIME_MAPPING_VERIFIED_THRESHOLD = int(os.getenv('DOWNTIME_MAPPING_VERIFIED_THRESHOLD', '90'))
+DOWNTIME_MAPPING_MISMATCH_THRESHOLD = int(os.getenv('DOWNTIME_MAPPING_MISMATCH_THRESHOLD', '85'))
+DOWNTIME_MAPPING_REVIEW_THRESHOLD = int(os.getenv('DOWNTIME_MAPPING_REVIEW_THRESHOLD', '70'))
+DOWNTIME_MAPPING_MAX_DATE_RANGE_DAYS = int(os.getenv('DOWNTIME_MAPPING_MAX_DATE_RANGE_DAYS', '92'))
+DOWNTIME_MAPPING_MAX_ROWS_PER_RUN = int(os.getenv('DOWNTIME_MAPPING_MAX_ROWS_PER_RUN', '5000'))
+DOWNTIME_MAPPING_MAX_ESTIMATED_COST = float(os.getenv('DOWNTIME_MAPPING_MAX_ESTIMATED_COST', '20'))
+DOWNTIME_MAPPING_DEV_THREAD_WORKER = os.getenv('DOWNTIME_MAPPING_DEV_THREAD_WORKER', 'true').lower() in {'1', 'true', 'yes', 'on'}

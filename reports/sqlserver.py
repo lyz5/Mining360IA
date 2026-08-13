@@ -250,6 +250,34 @@ def connect(
         finally:
             connection.close()
         return
+
+    # A configured ODBC driver is preferred, but it must not make every Data
+    # Browser unavailable when the workstation TLS/ODBC stack is incompatible
+    # with the SQL Server. python-tds uses the same explicit SQL credentials and
+    # provides a deterministic fallback without changing browser configuration.
+    if pytds is not None:
+        try:
+            connection = pytds.connect(
+                **_build_pytds_kwargs(
+                    server=server,
+                    database=database,
+                    user=user,
+                    password=password,
+                    port=port,
+                )
+            )
+        except Exception as exc:
+            errors.append(exc)
+        else:
+            try:
+                yield connection
+                connection.commit()
+            except Exception:
+                connection.rollback()
+                raise
+            finally:
+                connection.close()
+            return
     raise RuntimeError(
         "Impossible d'etablir la connexion SQL Server avec les variantes essayees. "
         + " | ".join(str(error) for error in errors)

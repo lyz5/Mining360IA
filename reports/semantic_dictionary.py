@@ -28,6 +28,24 @@ def get_measure_semantics(dataset_name: str, metric_key: str) -> dict:
 
 
 def get_primary_measure(dataset_name: str, metric_key: str, fallback: str = "") -> str:
+    # AI Config is the executable source of truth. The JSON dictionary remains
+    # a compatibility fallback for datasets that have no configured mapping.
+    try:
+        from .models import AIMetricMapping
+
+        configured = (
+            AIMetricMapping.objects.filter(
+                section__code="performance",
+                metric_code=metric_key,
+                is_active=True,
+            )
+            .values_list("powerbi_measure_name", flat=True)
+            .first()
+        )
+        if configured:
+            return str(configured).strip().strip("[]")
+    except Exception:
+        pass
     measure = get_measure_semantics(dataset_name, metric_key)
     return measure.get("primary_measure") or fallback
 

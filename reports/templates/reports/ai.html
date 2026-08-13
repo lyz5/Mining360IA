@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AI | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260808-chat-workspace-1">
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260808-adaptive-responses-1">
 </head>
 <body class="ai-page-body">
     {% include "reports/includes/app_nav.html" %}
@@ -259,10 +259,10 @@
             </details>
         </section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/powerbi-client@2.23.7/dist/powerbi.min.js"></script>
+    <script src="{% static 'reports/vendor/powerbi-client-2.23.7.min.js' %}"></script>
     <script src="{% static 'reports/powerbi_embed.js' %}?v=20260721-monthly-page-1"></script>
     <script src="{% static 'reports/downtime_explorer.js' %}?v=20260728-json-response-fix-1"></script>
-    <script src="{% static 'reports/ai.js' %}?v=20260808-chat-workspace-1"></script>
+    <script src="{% static 'reports/ai.js' %}?v=20260808-adaptive-responses-1"></script>
     <script src="{% static 'reports/voice_input.js' %}?v=20260726-voice-compact-1"></script>
 </body>
 </html>

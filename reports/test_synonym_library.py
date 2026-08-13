@@ -111,6 +111,36 @@ class SynonymResolutionTests(TestCase):
         self.assertIn("availability", values)
         self.assertIn("physical_availability", values)
 
+    def test_short_synonym_nested_in_complete_entity_is_suppressed(self):
+        customer = self.synonym(
+            canonical_term="SNIM",
+            normalized_value="SNIM",
+            synonym="SNIM",
+            entity_type="Customer",
+            match_type="Exact",
+        )
+        site = self.synonym(
+            canonical_term="SNIM-Guelb",
+            normalized_value="SNIM-Guelb",
+            synonym="SNIM-Guelb",
+            entity_type="Mine Site",
+            match_type="Exact",
+        )
+        nested = resolve_synonyms(
+            "availability for SNIM-Guelb",
+            section_code=self.section.code,
+        )
+        self.assertEqual({item["id"] for item in nested["resolved_entities"]}, {site.id})
+
+        separate = resolve_synonyms(
+            "compare SNIM and SNIM-Guelb",
+            section_code=self.section.code,
+        )
+        self.assertEqual(
+            {item["id"] for item in separate["resolved_entities"]},
+            {customer.id, site.id},
+        )
+
     def test_ambiguous_low_score_requests_clarification(self):
         self.synonym(is_ambiguous=True, resolution_priority=50, confidence=80)
         result = resolve_synonyms("Show me PA", section_code=self.section.code)

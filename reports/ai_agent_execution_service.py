@@ -3,9 +3,12 @@ from __future__ import annotations
 import time
 from decimal import Decimal
 
-from .agent_context_service import update_agent_context
 from .agent_router_service import route_question
 from .ai_agent_permission_service import agent_allowed
+from .conversation_follow_up_resolution_service import (
+    follow_up_resolution_enabled,
+    resolve_conversation_follow_up,
+)
 from .models import AIAgent, AIAgentExecutionLog
 from .powerbi_interaction_orchestrator import process_user_question
 from .resource_knowledge_search_service import search_resource_knowledge
@@ -88,20 +91,48 @@ def execute_agent_question(
     is_test: bool = False,
 ) -> dict:
     started = time.monotonic()
-    routing = route_question(
-        question,
-        user=user,
-        conversation_id=conversation_id,
-        manual_agent=manual_agent,
-    )
+    follow_up_resolution = None
+    if follow_up_resolution_enabled(user) and str(manual_agent or "auto").casefold() in {"", "auto"}:
+        follow_up_resolution = resolve_conversation_follow_up(
+            question,
+            conversation_id=conversation_id,
+            user=user,
+        )
+    if follow_up_resolution and follow_up_resolution.get("is_follow_up"):
+        needs_clarification = bool(follow_up_resolution.get("requires_clarification"))
+        selected_code = "clarification_required" if needs_clarification else "machine_performance"
+        routing = {
+            "selected_agent": selected_code,
+            "selected_agent_name": "" if needs_clarification else "Machine Performance",
+            "confidence": follow_up_resolution.get("confidence", 0),
+            "method": "conversation_follow_up",
+            "matched_rules": ["LAST_SUCCESSFUL_COMPATIBLE_CONTEXT"],
+            "alternative_agent": "",
+            "intent": (follow_up_resolution.get("merged_intent") or {}).get("intent_type", "follow_up"),
+            "entities": follow_up_resolution.get("updated") or {},
+            "requires_clarification": needs_clarification,
+            "reason": follow_up_resolution.get("routing_reason") or "Conversation context was resolved before agent routing.",
+            "execution_time_ms": int((time.monotonic() - started) * 1000),
+        }
+    else:
+        routing = route_question(
+            question,
+            user=user,
+            conversation_id=conversation_id,
+            manual_agent=manual_agent,
+        )
     selected = routing["selected_agent"]
     if routing["requires_clarification"]:
+        clarification_message = (
+            (follow_up_resolution or {}).get("clarification_question")
+            or CLARIFICATION_MESSAGE
+        )
         response = {
             "ok": True,
-            "chat_message": CLARIFICATION_MESSAGE,
+            "chat_message": clarification_message,
             "answer": {
-                "answer": CLARIFICATION_MESSAGE,
-                "interpretation": CLARIFICATION_MESSAGE,
+                "answer": clarification_message,
+                "interpretation": clarification_message,
                 "rows": [],
                 "summary": [],
             },
@@ -142,6 +173,12 @@ def execute_agent_question(
                     "dataset_name": dataset_name,
                     "debug_mode": debug_mode,
                     "open_report": True,
+                    "pre_extracted_intent": (
+                        follow_up_resolution.get("merged_intent")
+                        if follow_up_resolution and follow_up_resolution.get("is_follow_up")
+                        else None
+                    ),
+                    "follow_up_resolution": follow_up_resolution,
                 },
                 conversation_context={
                     "conversation_id": conversation_id,
@@ -204,23 +241,6 @@ def execute_agent_question(
         sources = [
             item.get("source", {}) for item in ((knowledge or {}).get("sources", []) if knowledge else [])
         ]
-        update_agent_context(
-            conversation_id=conversation_id,
-            user=user,
-            agent_code=selected,
-            intent=routing.get("intent", ""),
-            payload={
-                "performance": (performance or {}).get("intent", {}),
-                "knowledge": {
-                    "topics": [question],
-                    "last_citations": sources,
-                },
-            } if selected == "combined" else (
-                (performance or {}).get("intent", {})
-                if selected == "machine_performance"
-                else {"topics": [question], "last_citations": sources}
-            ),
-        )
         agent = agents.get(selected)
 
     elapsed = int((time.monotonic() - started) * 1000)
@@ -243,6 +263,8 @@ def execute_agent_question(
         is_test=is_test,
     )
     response["routing"] = routing
+    if follow_up_resolution and follow_up_resolution.get("is_follow_up"):
+        response["follow_up_resolution"] = follow_up_resolution
     response["agent_execution_log_id"] = str(log.id)
     response["requires_clarification"] = routing["requires_clarification"]
     response.setdefault("conversation_id", conversation_id)

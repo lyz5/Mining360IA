@@ -24,6 +24,7 @@ ADMIN_ONLY_PREFIXES = (
     "/config/deployment/",
     "/api/deployment/",
     "/users/",
+    "/api/access-control/",
     "/ia-config/",
     "/ia-config/agents/",
     "/ai-config/api-management/",
@@ -57,6 +58,7 @@ ADMIN_WRITE_PREFIXES = (
     "/config/openai-usage/",
     "/api/admin/openai-usage/",
     "/users/",
+    "/api/access-control/",
     "/resources/upload/",
 )
 

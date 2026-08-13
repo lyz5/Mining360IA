@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reporting Configuration | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260727-reporting-config-1">
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260812-reporting-alias-1">
+    <script src="{% static 'reports/reporting_config.js' %}?v=20260812-reporting-alias-1" defer></script>
 </head>
 <body>
     {% include "reports/includes/app_nav.html" %}
@@ -14,7 +15,7 @@
             <div>
                 <p class="eyebrow">Config / Reporting</p>
                 <h1>Reporting Configuration</h1>
-                <p>Choose which Power BI reports are visible in the Reporting gallery.</p>
+                <p>Manage the Power BI source name, Mining 360 display name and gallery visibility.</p>
             </div>
             <a class="button secondary" href="{% url 'reporting' %}">Open Reporting</a>
         </header>
@@ -43,7 +44,7 @@
             <div class="reporting-config-toolbar">
                 <label>
                     <span>Search reports</span>
-                    <input type="search" placeholder="Search by report name..." data-report-config-search>
+                    <input type="search" placeholder="Search by Power BI or display name..." data-report-config-search>
                 </label>
                 <div class="reporting-config-toolbar__actions">
                     <button class="button secondary" type="button" data-report-config-select="all">Show all</button>
@@ -54,15 +55,31 @@
 
             <div class="reporting-config-list">
                 {% for report in reports %}
-                    <label class="reporting-config-row" data-report-config-row data-search="{{ report.name|lower }}">
+                    <div
+                        class="reporting-config-row"
+                        data-report-config-row
+                        data-search="{{ report.report_name|lower }} {{ report.display_name|lower }}"
+                        data-report-id="{{ report.id }}"
+                        data-report-name="{{ report.report_name }}"
+                        data-display-name-url="{% url 'reporting-config-display-name-api' report.id %}">
                         <span class="reporting-config-row__identity">
                             <span class="reporting-config-row__icon" aria-hidden="true"></span>
                             <span>
-                                <strong>{{ report.name }}</strong>
+                                <strong data-report-display-title>{{ report.display_name }}</strong>
+                                <small><b>Power BI name</b> {{ report.report_name }}</small>
                                 <small>{{ report.refresh_status }}</small>
                             </span>
                         </span>
-                        <span class="reporting-config-row__control">
+                        <label class="reporting-config-row__display-name">
+                            <span>Mining 360 display name</span>
+                            <span class="reporting-config-row__editor">
+                                <input type="text" value="{{ report.display_name }}" maxlength="255" data-report-display-input aria-label="Display name for {{ report.report_name }}">
+                                <button class="button secondary" type="button" data-report-display-reset title="Restore the Power BI name">Reset</button>
+                                <button class="button" type="button" data-report-display-save>Save name</button>
+                            </span>
+                            <small data-report-display-status role="status" aria-live="polite"></small>
+                        </label>
+                        <label class="reporting-config-row__control">
                             <span data-visibility-label>{% if report.is_visible %}Visible{% else %}Hidden{% endif %}</span>
                             <input
                                 type="checkbox"
@@ -70,8 +87,8 @@
                                 value="{{ report.id }}"
                                 {% if report.is_visible %}checked{% endif %}>
                             <span class="reporting-switch" aria-hidden="true"></span>
-                        </span>
-                    </label>
+                        </label>
+                    </div>
                 {% empty %}
                     <div class="empty">No Power BI reports were found.</div>
                 {% endfor %}
@@ -79,50 +96,5 @@
             <p class="empty" data-report-config-empty hidden>No matching reports.</p>
         </form>
     </main>
-    <script>
-        (() => {
-            const root = document.querySelector("[data-reporting-config]");
-            if (!root) return;
-            const rows = Array.from(root.querySelectorAll("[data-report-config-row]"));
-            const search = root.querySelector("[data-report-config-search]");
-            const empty = root.querySelector("[data-report-config-empty]");
-
-            function updateLabel(input) {
-                const row = input.closest("[data-report-config-row]");
-                const label = row ? row.querySelector("[data-visibility-label]") : null;
-                if (label) label.textContent = input.checked ? "Visible" : "Hidden";
-            }
-
-            root.querySelectorAll("input[type='checkbox']").forEach((input) => {
-                input.addEventListener("change", () => updateLabel(input));
-            });
-
-            root.querySelectorAll("[data-report-config-select]").forEach((button) => {
-                button.addEventListener("click", () => {
-                    const checked = button.dataset.reportConfigSelect === "all";
-                    rows.forEach((row) => {
-                        if (row.hidden) return;
-                        const input = row.querySelector("input[type='checkbox']");
-                        if (input) {
-                            input.checked = checked;
-                            updateLabel(input);
-                        }
-                    });
-                });
-            });
-
-            if (search) {
-                search.addEventListener("input", () => {
-                    const query = search.value.trim().toLowerCase();
-                    let visibleRows = 0;
-                    rows.forEach((row) => {
-                        row.hidden = Boolean(query) && !row.dataset.search.includes(query);
-                        if (!row.hidden) visibleRows += 1;
-                    });
-                    if (empty) empty.hidden = visibleRows !== 0;
-                });
-            }
-        })();
-    </script>
 </body>
 </html>

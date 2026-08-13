@@ -41,6 +41,32 @@
     };
 
     const resourceConfig = {
+        "response-templates": {
+            title: "Response Templates",
+            columns: ["code", "name", "primary_component", "version", "validation_status", "active"],
+            fields: [
+                ["code", "Code", "text"], ["name", "Name", "text"],
+                ["description", "Description", "textarea"], ["domain", "Domain", "text"],
+                ["primary_component", "Primary component", "text"],
+                ["component_order_json", "Component order", "json"],
+                ["required_data_fields_json", "Required data fields", "json"],
+                ["fallback_template_code", "Fallback template", "text"],
+                ["version", "Version", "text"],
+                ["validation_status", "Validation", "select", ["Draft", "To Review", "Validated", "Rejected"]],
+                ["active", "Active", "checkbox"],
+            ],
+        },
+        "intent-template-mappings": {
+            title: "Intent-to-Template Mapping",
+            columns: ["intent_type", "scope_type", "metric_code", "response_template", "priority", "validation_status", "active"],
+            fields: [
+                ["domain", "Domain", "text"], ["intent_type", "Intent type", "text"],
+                ["scope_type", "Scope type", "text"], ["metric_code", "Metric code", "text"],
+                ["response_template", "Response template code", "text"], ["priority", "Priority", "number"],
+                ["validation_status", "Validation", "select", ["Draft", "To Review", "Validated", "Rejected"]],
+                ["active", "Active", "checkbox"],
+            ],
+        },
         "question-examples": {
             title: "Question Examples",
             columns: ["question_text", "language", "is_active"],

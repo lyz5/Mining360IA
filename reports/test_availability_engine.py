@@ -8,6 +8,7 @@ from .availability_diagnostics_service import (
     build_availability_diagnostics_dax,
     parse_availability_diagnostics_rows,
 )
+from .availability_reference_service import resolve_availability_references
 from .dax_generator_service import generate_dax_from_intent
 from .intent_extractor_service import extract_intent
 from .powerbi_interaction_orchestrator import (
@@ -21,7 +22,7 @@ from .powerbi_interaction_service import is_follow_up_question, merge_conversati
 METRIC = {
     "metric_code": "availability",
     "metric_label": "Physical Availability",
-    "powerbi_measure_name": "[Availability New]",
+    "powerbi_measure_name": "[Avail Per Equip]",
     "is_active": True,
 }
 
@@ -38,6 +39,14 @@ FILTERS = [
         "filter_code": "model",
         "powerbi_table_name": "EquipmentList_MiningProd",
         "powerbi_column_name": "Model",
+        "data_type": "Text",
+        "is_required": False,
+        "is_active": True,
+    },
+    {
+        "filter_code": "serial_number",
+        "powerbi_table_name": "EquipmentList_MiningProd",
+        "powerbi_column_name": "SN",
         "data_type": "Text",
         "is_required": False,
         "is_active": True,
@@ -100,9 +109,19 @@ class AvailabilityIntentTests(SimpleTestCase):
         self.assertEqual(intent["filters"]["serial_number"], "A1B2345")
         self.assertEqual(intent["filters"]["period"], "2025-05")
 
+    def test_availability_for_serial_number_remains_a_single_kpi(self):
+        intent = self._extract(
+            "Quelle est la disponibilité du serial number A1B2345 en juin 2026 ?"
+        )
+
+        self.assertEqual(intent["intent_type"], "single_kpi")
+        self.assertEqual(intent["scope_type"], "serial_number")
+        self.assertEqual(intent["filters"]["serial_number"], "A1B2345")
+        self.assertEqual(intent["filters"]["period"], "2026-06")
+
     def test_trend_and_year_are_detected_locally(self):
         intent = self._extract("Show the monthly availability trend for Fekola in 2025")
-        self.assertEqual(intent["intent_type"], "trend")
+        self.assertEqual(intent["intent_type"], "trend_analysis")
         self.assertEqual(intent["filters"]["period"], "2025")
 
     def test_lowest_models_is_a_ranking(self):
@@ -166,10 +185,26 @@ class AvailabilityDaxTests(SimpleTestCase):
                 "period": "2025-05",
             },
         })
-        self.assertIn('[Availability New]', dax)
+        self.assertIn('[Avail Per Equip]', dax)
         self.assertIn('TREATAS({"Fekola"}', dax)
         self.assertIn('TREATAS({"777"}', dax)
         self.assertIn("DATE(2025, 5, 1)", dax)
+
+    def test_single_machine_availability_filters_the_serial_number(self):
+        dax = self._generate({
+            "section": "performance",
+            "intent_type": "single_kpi",
+            "metric": "availability",
+            "filters": {
+                "serial_number": "A1B2345",
+                "period": "2026-06",
+            },
+        })
+
+        self.assertIn("[Avail Per Equip]", dax)
+        self.assertIn('TREATAS({"A1B2345"}, \'EquipmentList_MiningProd\'[SN])', dax)
+        self.assertIn("DATE(2026, 6, 1)", dax)
+
 
     def test_comparison_uses_multiple_site_values(self):
         dax = self._generate({
@@ -209,6 +244,43 @@ class AvailabilityDaxTests(SimpleTestCase):
                 })
                 self.assertIn(expected, dax)
                 self.assertIn("ROW(", dax)
+
+
+class AvailabilityReferenceTests(SimpleTestCase):
+    @patch(
+        "reports.availability_reference_service._serial_catalog",
+        return_value={},
+    )
+    @patch(
+        "reports.availability_reference_service._family_catalog",
+        return_value={},
+    )
+    def test_explicit_serial_is_preserved_when_reference_database_is_unavailable(
+        self, _families, _serials
+    ):
+        filters, unresolved = resolve_availability_references(
+            "availability serial number a1b2345",
+            {"serial_number": "a1b2345"},
+        )
+
+        self.assertEqual(filters["serial_number"], "A1B2345")
+        self.assertEqual(unresolved, [])
+
+    def test_single_machine_answer_names_the_serial_number(self):
+        answer = _answer_payload(
+            {
+                "intent_type": "single_kpi",
+                "metric": "availability",
+                "metric_label": "Physical Availability",
+                "filters": {"serial_number": "A1B2345", "period": "2026-06"},
+            },
+            [{"Physical Availability": 0.8532}],
+            "Quelle est la disponibilité du serial number A1B2345 en juin 2026 ?",
+        )
+
+        self.assertIn("machine A1B2345", answer["answer"])
+        self.assertIn("85,32 %", answer["answer"])
+        self.assertIn("juin 2026", answer["answer"])
 
 
 class AvailabilityDiagnosticsTests(SimpleTestCase):
@@ -310,7 +382,7 @@ class AvailabilityConversationTests(SimpleTestCase):
         )
         self.assertEqual(
             payload["answer"],
-            "The physical availability of the 785 fleet at Essakane is 82.82% over the last 12 months.",
+            "La disponibilité physique du parc 785 à Essakane est de 82,82 % sur les 12 derniers mois.",
         )
 
     def test_canonical_period_does_not_require_a_synonym_record(self):

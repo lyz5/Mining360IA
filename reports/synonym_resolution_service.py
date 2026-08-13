@@ -91,6 +91,31 @@ class SynonymResolutionService:
             default=item.synonym,
         )
 
+    @staticmethod
+    def _exact_spans(value, normalized_question):
+        normalized_value = normalize_synonym_key(value)
+        if not normalized_value:
+            return []
+        boundary = rf"(?<!\w){re.escape(normalized_value)}(?!\w)"
+        return [match.span() for match in re.finditer(boundary, normalized_question)]
+
+    @classmethod
+    def _is_fully_nested_match(cls, item, normalized_question, winners):
+        spans = cls._exact_spans(item.synonym, normalized_question)
+        if not spans:
+            return False
+        longer_spans = []
+        item_key = normalize_synonym_key(item.synonym)
+        for _, _, other in winners:
+            other_key = normalize_synonym_key(other.synonym)
+            if len(other_key) <= len(item_key):
+                continue
+            longer_spans.extend(cls._exact_spans(other.synonym, normalized_question))
+        return bool(longer_spans) and all(
+            any(long_start <= start and end <= long_end for long_start, long_end in longer_spans)
+            for start, end in spans
+        )
+
     def resolve(self, question, *, count_usage=False):
         normalized_question = normalize_synonym_key(question)
         language = self.detect_language(question)
@@ -130,12 +155,24 @@ class SynonymResolutionService:
             group_key = (item.normalized_synonym_key, item.entity_type)
             grouped.setdefault(group_key, []).append((score, exact_score, item))
 
+        winners = []
+        for candidates in grouped.values():
+            candidates.sort(key=lambda row: (row[0], row[1], row[2].resolution_priority), reverse=True)
+            winners.append(candidates[0])
+
+        # If a short synonym appears only inside a longer matched synonym,
+        # keep the complete business entity. Example: SNIM in SNIM-Guelb must
+        # not add a Customer filter next to the Mine Site filter.
+        winners = [
+            winner for winner in winners
+            if not self._is_fully_nested_match(winner[2], normalized_question, winners)
+        ]
+
         resolved = []
         clarification = []
         used_ids = []
-        for candidates in grouped.values():
-            candidates.sort(key=lambda row: (row[0], row[1], row[2].resolution_priority), reverse=True)
-            score, _exact_score, item = candidates[0]
+        for score, _exact_score, item in winners:
+            candidates = grouped[(item.normalized_synonym_key, item.entity_type)]
             competing_terms = {
                 candidate.canonical_term
                 for candidate_score, _, candidate in candidates

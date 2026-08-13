@@ -178,7 +178,12 @@ def generate_dax_from_intent(intent: dict) -> dict:
     filter_clauses = _filter_clauses(filters, filters_config)
 
     template = get_dax_template(section_code, "single_metric_by_filters") or get_dax_template(section_code)
-    intent_type = str(intent.get("intent_type") or "single_kpi")
+    raw_intent_type = str(intent.get("intent_type") or "single_kpi")
+    intent_type = {
+        "trend_analysis": "trend",
+        "entity_comparison": "comparison",
+        "period_comparison": "comparison",
+    }.get(raw_intent_type, raw_intent_type)
     comparison = intent.get("comparison") if isinstance(intent.get("comparison"), dict) else {}
     if intent_type == "trend":
         period_mapping = filters_config.get("period")
@@ -263,4 +268,38 @@ def generate_dax_from_intent(intent: dict) -> dict:
             "valid": True,
             "errors": [],
         },
+    }
+
+
+def generate_performance_overview_dax(intent: dict) -> dict:
+    section_code = str(intent.get("section") or "performance")
+    metrics = [
+        item for item in get_metric_mapping(section_code)
+        if item.get("is_active") and item.get("metric_code") in {
+            "availability", "mtbf", "mttr", "mtbs", "operating_hours", "downtime_hours"
+        }
+    ]
+    if not metrics:
+        raise IntentValidationError("No performance overview metrics are configured.")
+    filters_config = {
+        item["filter_code"]: item for item in get_filter_mapping(section_code)
+        if item.get("is_active")
+    }
+    filters = intent.get("filters") or {}
+    clauses = _filter_clauses(filters, filters_config)
+    values = []
+    for metric in metrics:
+        expression = metric["powerbi_measure_name"]
+        if clauses:
+            expression = f"CALCULATE({expression}, {', '.join(clauses)})"
+        values.extend((f'"{metric["metric_label"]}"', expression))
+    dax = "EVALUATE\nROW(\n    " + ",\n    ".join(values) + "\n)"
+    return {
+        "section": section_code,
+        "metric": "performance_overview",
+        "metric_label": "Performance Overview",
+        "measure": ", ".join(item["powerbi_measure_name"] for item in metrics),
+        "filters": filters,
+        "dax": dax,
+        "template_code": "performance_overview",
     }

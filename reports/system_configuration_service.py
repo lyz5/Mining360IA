@@ -113,6 +113,41 @@ INTEGRATION_SCHEMAS = {
             {"key": "allowed_domains", "label": "Allowed Email Domains", "type": "text"},
         ],
     },
+    "Active Directory": {
+        "provider": "Microsoft Active Directory LDAP",
+        "fields": [
+            {"key": "host", "label": "Domain Controller Host / IP", "type": "text", "required": True, "group": "Server connection", "placeholder": "ad01.neemba.local or 10.0.0.10", "help": "DNS name or IP address of the Active Directory domain controller supplied by IT."},
+            {"key": "port", "label": "Port", "type": "number", "default": 636, "required": True, "group": "Server connection", "help": "636 for LDAPS. Use 389 only with StartTLS or in an approved trusted network configuration."},
+            {"key": "use_ssl", "label": "Use LDAPS", "type": "boolean", "default": True, "group": "Server connection", "help": "Encrypts the LDAP connection from the start. Recommended for production."},
+            {"key": "start_tls", "label": "Use StartTLS", "type": "boolean", "default": False, "group": "Server connection", "help": "Alternative to LDAPS on port 389. Do not enable together with LDAPS unless required by IT."},
+            {"key": "validate_certificate", "label": "Validate Server Certificate", "type": "boolean", "default": True, "group": "Server connection", "help": "Verifies that the domain controller certificate is trusted and valid."},
+            {"key": "ca_certificate_file", "label": "CA Certificate File", "type": "text", "group": "Server connection", "placeholder": "C:\\certificates\\neemba-root-ca.pem", "help": "Optional path to the corporate CA certificate when it is not already trusted by the server."},
+            {"key": "connect_timeout", "label": "Connection Timeout (seconds)", "type": "number", "default": 10, "group": "Server connection", "help": "Maximum time allowed to establish the directory connection."},
+            {"key": "base_dn", "label": "Base DN", "type": "text", "required": True, "group": "Directory scope", "placeholder": "DC=neemba,DC=local", "help": "Root of the directory search. This is not a user account."},
+            {"key": "netbios_domain", "label": "Windows / NetBIOS Domain", "type": "text", "required": True, "group": "Directory scope", "placeholder": "NEEMBA", "help": "Short Windows domain displayed before usernames, for example NEEMBA\\abass."},
+            {"key": "user_search_base", "label": "User Search Base", "type": "text", "required": True, "group": "Directory scope", "placeholder": "OU=Users,DC=neemba,DC=local", "help": "Organizational unit in which Mining 360 searches for user accounts."},
+            {"key": "bind_dn", "label": "Technical Account / Bind DN", "type": "text", "required": True, "group": "Technical account", "placeholder": "NEEMBA\\svc-mining360", "help": "Read-only service account supplied by IT and used to search users and groups."},
+            {"key": "bind_password", "label": "Technical Account Password", "type": "password", "secret": True, "required": True, "group": "Technical account", "help": "Password of the technical account. It is encrypted by Mining 360 and is never the end user's password."},
+            {"key": "user_filter", "label": "User LDAP Filter", "type": "text", "default": "(&(objectCategory=person)(objectClass=user))", "required": True, "group": "LDAP attributes", "help": "Standard filter used to return Active Directory user objects."},
+            {"key": "username_attribute", "label": "Login Attribute", "type": "select", "options": ["sAMAccountName", "userPrincipalName"], "default": "sAMAccountName", "group": "LDAP attributes", "help": "sAMAccountName supports Windows logins such as NEEMBA\\abass."},
+            {"key": "upn_attribute", "label": "UPN Attribute", "type": "text", "default": "userPrincipalName", "group": "LDAP attributes"},
+            {"key": "email_attribute", "label": "Email Attribute", "type": "text", "default": "mail", "group": "LDAP attributes"},
+            {"key": "display_name_attribute", "label": "Display Name Attribute", "type": "text", "default": "displayName", "group": "LDAP attributes"},
+            {"key": "object_id_attribute", "label": "Immutable Object Attribute", "type": "select", "options": ["objectGUID", "objectSid"], "default": "objectGUID", "group": "LDAP attributes"},
+            {"key": "group_membership_attribute", "label": "Group Membership Attribute", "type": "text", "default": "memberOf", "group": "LDAP attributes"},
+            {"key": "allowed_groups", "label": "AD Group Filter", "type": "text", "group": "Access and roles", "placeholder": "Optional: Mining360-Users", "help": "Leave empty to search the global company directory and authorize users manually in Users & Roles. When configured, only direct group members are shown and may be provisioned."},
+            {"key": "admin_groups", "label": "Mining 360 Administrator Groups", "type": "text", "group": "Access and roles", "help": "Members receive the Mining 360 Administrator role during group-managed synchronization."},
+            {"key": "reporting_groups", "label": "Reporting Groups", "type": "text", "group": "Access and roles"},
+            {"key": "ai_groups", "label": "AI Groups", "type": "text", "group": "Access and roles"},
+            {"key": "data_groups", "label": "Data Groups", "type": "text", "group": "Access and roles"},
+            {"key": "sources_groups", "label": "Data Sources Groups", "type": "text", "group": "Access and roles"},
+            {"key": "default_business_performance_role", "label": "Default Business Performance Role", "type": "select", "options": ["", "Executive", "Business Manager", "Country Manager", "Account Manager", "Viewer", "Administrator"], "default": "Viewer", "group": "Access and roles"},
+            {"key": "authentication_enabled", "label": "Enable AD Authentication", "type": "boolean", "default": False, "group": "Synchronization behavior", "help": "Enable only after the connection test succeeds and the allowed groups are validated."},
+            {"key": "create_users_on_login", "label": "Create Authorized Users on First Login", "type": "boolean", "default": True, "group": "Synchronization behavior"},
+            {"key": "disable_missing_users", "label": "Disable Users Missing from Directory", "type": "boolean", "default": False, "group": "Synchronization behavior"},
+            {"key": "maximum_sync_users", "label": "Maximum Users per Synchronization", "type": "number", "default": 5000, "group": "Synchronization behavior"},
+        ],
+    },
     "Notification": {
         "provider": "Notification Provider",
         "fields": [
@@ -276,6 +311,23 @@ def ensure_portable_configuration():
             },
             "secrets": {},
         },
+        {
+            "code": "active-directory-default", "name": "Corporate Active Directory", "integration_type": "Active Directory",
+            "settings": {
+                "host": "", "port": 636, "use_ssl": True, "start_tls": False,
+                "validate_certificate": True, "ca_certificate_file": "", "connect_timeout": 10,
+                "base_dn": "", "netbios_domain": "", "bind_dn": "", "user_search_base": "",
+                "user_filter": "(&(objectCategory=person)(objectClass=user))",
+                "username_attribute": "sAMAccountName", "upn_attribute": "userPrincipalName",
+                "email_attribute": "mail", "display_name_attribute": "displayName",
+                "object_id_attribute": "objectGUID", "group_membership_attribute": "memberOf",
+                "allowed_groups": "", "admin_groups": "", "reporting_groups": "", "ai_groups": "",
+                "data_groups": "", "sources_groups": "", "default_business_performance_role": "Viewer",
+                "authentication_enabled": False, "create_users_on_login": True,
+                "disable_missing_users": False, "maximum_sync_users": 5000,
+            },
+            "secrets": {},
+        },
     ]
 
     for seed in connector_seeds:
@@ -339,6 +391,32 @@ def save_integration(item, payload, user=None):
     for field in schema["fields"]:
         if field.get("secret") and field.get("required") and not secret_values.get(field["key"]):
             raise ValueError(f"{field['label']} is required.")
+
+    if integration_type == "Active Directory":
+        for key in (
+            "host", "base_dn", "netbios_domain", "bind_dn", "user_search_base",
+            "user_filter", "allowed_groups", "ca_certificate_file",
+        ):
+            clean_settings[key] = str(clean_settings.get(key) or "").strip()
+        for key, label in (
+            ("host", "Domain Controller Host / IP"), ("base_dn", "Base DN"),
+            ("netbios_domain", "Windows / NetBIOS Domain"),
+            ("bind_dn", "Technical Account / Bind DN"),
+            ("user_search_base", "User Search Base"),
+            ("user_filter", "User LDAP Filter"),
+        ):
+            if not clean_settings[key]:
+                raise ValueError(f"{label} is required.")
+        if not (clean_settings.get("use_ssl") or clean_settings.get("start_tls")):
+            raise ValueError("Active Directory credentials must use LDAPS or StartTLS.")
+        if clean_settings.get("use_ssl") and clean_settings.get("start_tls"):
+            raise ValueError("Use either LDAPS or StartTLS, not both.")
+        port = int(clean_settings.get("port") or 0)
+        if not 1 <= port <= 65535:
+            raise ValueError("Active Directory port must be between 1 and 65535.")
+        maximum_sync_users = int(clean_settings.get("maximum_sync_users") or 0)
+        if not 1 <= maximum_sync_users <= 100000:
+            raise ValueError("Maximum Users per Synchronization must be between 1 and 100000.")
 
     item.code = str(payload.get("code") or item.code or "").strip().lower()
     item.name = str(payload.get("name") or item.name or "").strip()
@@ -436,6 +514,20 @@ def test_integration(item):
             ) as connection:
                 row = connection.cursor().execute("SELECT @@SERVERNAME, DB_NAME()").fetchone()
             message = f"Connected to {row[0]} / {row[1]}"
+        elif item.integration_type == "Active Directory":
+            from .active_directory_service import test_active_directory_connection
+            details = test_active_directory_connection(item)
+            transport = "LDAPS" if settings_values.get("use_ssl", True) else "LDAP with StartTLS"
+            if details.get("access_mode") == "manual":
+                message = (
+                    f"{transport} connection successful. Global directory search is enabled; users must be "
+                    "authorized manually in Users & Roles."
+                )
+            else:
+                message = (
+                    f"{transport} connection successful. {details['groups_found']} authorized group(s) resolved "
+                    f"and {details['users_found']} direct member(s) found in the configured search base."
+                )
         else:
             endpoint = str(settings_values.get("endpoint") or "")
             if endpoint.startswith("http"):

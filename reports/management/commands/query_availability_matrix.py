@@ -26,7 +26,7 @@ class Command(BaseCommand):
         site = options["site"]
         end_year, end_month, end_day = (int(part) for part in options["end_date"].split("-"))
         months = options["months"]
-        measure = get_primary_measure(dataset_name, "availability", "Availability New")
+        measure = get_primary_measure(dataset_name, "availability", "Avail Per Equip")
 
         dax = f"""
 EVALUATE

@@ -80,6 +80,9 @@
                             </span>
                             <div class="report-card__title">
                                 <h2>{{ report.display_name }}</h2>
+                                {% if report.authentication_mode == "user_owns_data" %}
+                                    <small class="report-identity-badge">User identity required</small>
+                                {% endif %}
                             </div>
                             <span class="status-badge {% if report.refresh_status == 'Completed' %}success{% elif report.refresh_status == 'Failed' %}failed{% else %}neutral{% endif %}">
                                 {{ report.refresh_status|default:"No refresh" }}

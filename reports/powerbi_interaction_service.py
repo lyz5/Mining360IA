@@ -28,6 +28,29 @@ SAFE_INTENT_TYPES = {
     "ranking",
     "navigation",
     "follow_up_navigation",
+    "performance_overview",
+    "equipment_detail",
+    "downtime_drivers",
+    "trend_analysis",
+    "entity_comparison",
+    "period_comparison",
+    "affected_equipment",
+    "downtime_events",
+    "root_cause_analysis",
+    "repeated_failures",
+    "comment_analysis",
+    "smcs_breakdown",
+    "powerbi_navigation",
+    "follow_up",
+    "clarification_required",
+}
+
+METRIC_OPTIONAL_INTENT_TYPES = {
+    "navigation", "follow_up_navigation", "powerbi_navigation",
+    "performance_overview", "equipment_detail", "downtime_drivers",
+    "affected_equipment", "downtime_events", "root_cause_analysis",
+    "repeated_failures", "comment_analysis", "smcs_breakdown",
+    "clarification_required",
 }
 
 MONTH_ABBREVIATIONS = (
@@ -177,6 +200,14 @@ def merge_conversation_intent(
             or previous.get("root_cause_context")
         ),
     }
+    for field in (
+        "domain", "scope_type", "primary_metric", "secondary_metrics", "group_by",
+        "ranking", "diagnostic_request", "root_cause_request", "navigation_request",
+        "requires_clarification", "clarification_question", "query_intent_type",
+    ):
+        value = intent.get(field, previous.get(field))
+        if value is not None:
+            merged[field] = value
     merged["filters"].update({
         key: value for key, value in (intent.get("filters") or {}).items()
         if value not in (None, "", [])
@@ -197,13 +228,15 @@ def validate_interaction_intent(intent: dict, debug_mode: bool = False) -> tuple
     intent_type = str(intent.get("intent_type") or "single_kpi").strip()
     if intent_type not in SAFE_INTENT_TYPES:
         errors.append(f"Intent type '{intent_type}' is not supported.")
-    if intent_type not in {"navigation", "follow_up_navigation"} or metric_code:
+    if intent_type not in METRIC_OPTIONAL_INTENT_TYPES or metric_code:
         metrics = {
             item["metric_code"] for item in get_metric_mapping(section.code)
             if item.get("is_active")
         }
-        if not metric_code or metric_code not in metrics:
+        if metric_code and metric_code not in metrics:
             errors.append(f"Metric '{metric_code or '(missing)'}' is not configured for section '{section.code}'.")
+        elif not metric_code and intent_type not in METRIC_OPTIONAL_INTENT_TYPES:
+            errors.append(f"Metric '(missing)' is not configured for section '{section.code}'.")
 
     configured_filters = {
         item["filter_code"]: item for item in get_filter_mapping(section.code)

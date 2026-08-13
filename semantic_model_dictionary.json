@@ -34,6 +34,15 @@
                 "ModelName",
                 "Equipment Model"
               ]
+            },
+            "serial_number": {
+              "primary": "SN",
+              "candidates": [
+                "SN",
+                "Serial Number",
+                "SerialNumber",
+                "Equipment Serial Number"
+              ]
             }
           }
         },
@@ -77,13 +86,13 @@
             "physical availability",
             "pa"
           ],
-          "primary_measure": "Availability New",
+          "primary_measure": "Avail Per Equip",
           "candidate_measures": [
+            "Avail Per Equip",
             "Availability New",
             "Availability Trucks",
             "Availability HMS",
             "Avail 2",
-            "Avail Per Equip",
             "Availability New Hours"
           ],
           "response_format": "percentage",

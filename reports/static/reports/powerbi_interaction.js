@@ -12,7 +12,7 @@
     const caches = { reports: [], pages: [], visuals: [] };
 
     const configs = {
-        reports: { columns: ["display_name", "report_name", "semantic_model_id", "validation_status", "is_active"], fields: [["section", "Section", "section"], ["workspace_id", "Workspace ID"], ["report_id", "Report ID"], ["report_name", "Report Name"], ["display_name", "Display Name"], ["semantic_model_id", "Semantic Model ID"], ["embed_url", "Embed URL", "textarea"], ["description", "Description", "textarea"], ["is_default", "Default", "checkbox"], ["validation_status", "Validation", "status"], ["is_active", "Active", "checkbox"]] },
+        reports: { columns: ["display_name", "authentication_mode", "contains_powerapps_visual", "validation_status", "is_active"], fields: [["section", "Section", "section"], ["workspace_id", "Workspace ID"], ["report_id", "Report ID"], ["report_name", "Report Name"], ["display_name", "Display Name"], ["semantic_model_id", "Semantic Model ID"], ["embed_url", "Embed URL", "textarea"], ["description", "Description", "textarea"], ["authentication_mode", "Authentication Mode", "authentication_mode"], ["contains_powerapps_visual", "Contains Power Apps Visual", "checkbox"], ["requires_user_identity", "Requires User Entra Identity", "checkbox"], ["allow_service_principal_metadata_access", "Service Principal Allowed for Metadata", "checkbox"], ["required_entra_tenant_id", "Required Tenant ID"], ["powerapps_app_name", "Power Apps App Name"], ["powerapps_environment", "Power Apps Environment"], ["access_instructions", "Access Instructions", "textarea"], ["is_default", "Default", "checkbox"], ["validation_status", "Validation", "status"], ["is_active", "Active", "checkbox"]] },
         pages: { columns: ["page_display_name", "page_internal_name", "report_display_name", "validation_status", "is_active"], fields: [["report", "Report", "report"], ["section", "Section", "section"], ["page_internal_name", "Internal Name"], ["page_display_name", "Display Name"], ["description", "Description", "textarea"], ["page_order", "Order", "number"], ["is_default", "Default", "checkbox"], ["validation_status", "Validation", "status"], ["is_active", "Active", "checkbox"]] },
         visuals: { columns: ["visual_title", "visual_internal_name", "visual_type", "page_display_name", "related_metric_code", "validation_status"], fields: [["page", "Page", "page"], ["section", "Section", "section"], ["visual_internal_name", "Internal Name"], ["visual_title", "Title"], ["visual_type", "Type"], ["description", "Description", "textarea"], ["supported_actions", "Supported Actions JSON", "json"], ["related_metric_code", "Metric Code"], ["is_primary_visual", "Primary", "checkbox"], ["validation_status", "Validation", "status"], ["is_active", "Active", "checkbox"]] },
         slicers: { columns: ["slicer_title", "slicer_internal_name", "filter_code", "powerbi_table_name", "powerbi_column_name", "validation_status"], fields: [["page", "Page", "page"], ["visual", "Visual", "visual", true], ["slicer_internal_name", "Internal Name"], ["slicer_title", "Title"], ["powerbi_table_name", "Table"], ["powerbi_column_name", "Column"], ["filter_code", "Filter Code"], ["value_mapping", "Value Mapping (JSON)", "json"], ["data_type", "Data Type"], ["supports_multiple_values", "Multiple Values", "checkbox"], ["is_required", "Required", "checkbox"], ["validation_status", "Validation", "status"], ["is_active", "Active", "checkbox"]] },
@@ -51,10 +51,23 @@
 
     function render() {
         const config = configs[state.resource]; const columns = config.columns;
-        table.innerHTML = `<thead><tr>${columns.map((column) => `<th>${esc(column.replaceAll("_", " "))}</th>`).join("")}<th>Actions</th></tr></thead><tbody>${state.items.map((item) => `<tr>${columns.map((column) => `<td>${esc(display(column, item[column]))}</td>`).join("")}<td class="row-actions"><button class="icon-action js-pbi-edit" data-id="${item.id}" title="${config.readonly ? "View" : "Edit"}"></button>${config.readonly ? "" : `<button class="icon-action delete-action js-pbi-delete" data-id="${item.id}" title="Deactivate"></button>`}${state.resource === "reports" ? `<button class="button secondary js-pbi-discover" data-report-id="${esc(item.report_id)}">Discover</button>` : ""}</td></tr>`).join("") || `<tr><td colspan="${columns.length + 1}">No records.</td></tr>`}</tbody>`;
+        table.innerHTML = `<thead><tr>${columns.map((column) => `<th>${esc(column.replaceAll("_", " "))}</th>`).join("")}<th>Actions</th></tr></thead><tbody>${state.items.map((item) => `<tr>${columns.map((column) => `<td>${esc(display(column, item[column]))}</td>`).join("")}<td class="row-actions"><button class="icon-action js-pbi-edit" data-id="${item.id}" title="${config.readonly ? "View" : "Edit"}"></button>${config.readonly ? "" : `<button class="icon-action delete-action js-pbi-delete" data-id="${item.id}" title="Deactivate"></button>`}${state.resource === "reports" ? `<button class="button secondary js-pbi-discover" data-report-id="${esc(item.report_id)}">Discover</button><button class="button secondary js-pbi-auth-test" data-report-id="${esc(item.report_id)}">Test auth</button>` : ""}</td></tr>`).join("") || `<tr><td colspan="${columns.length + 1}">No records.</td></tr>`}</tbody>`;
         table.querySelectorAll(".js-pbi-edit").forEach((button) => button.onclick = () => openModal(state.items.find((item) => String(item.id) === button.dataset.id)));
         table.querySelectorAll(".js-pbi-delete").forEach((button) => button.onclick = async () => { if (!confirm("Deactivate this mapping?")) return; await jsonFetch(`${apiBase}/${state.resource}/${button.dataset.id}/`, { method: "DELETE", headers: { "X-CSRFToken": csrf() } }); await load(); });
         table.querySelectorAll(".js-pbi-discover").forEach((button) => button.onclick = () => previewForDiscovery(button.dataset.reportId));
+        table.querySelectorAll(".js-pbi-auth-test").forEach((button) => button.onclick = async () => {
+            try {
+                const payload = await jsonFetch(`/powerbi-interaction/preflight/${encodeURIComponent(button.dataset.reportId)}/`);
+                const result = payload.preflight || {};
+                if (result.connect_url) {
+                    window.location.href = result.connect_url;
+                    return;
+                }
+                window.alert(result.ready_to_embed ? `Authentication ready for ${result.user?.upn || "the connected user"}.` : (result.error || "Authentication is not ready."));
+            } catch (error) {
+                window.alert(error.message);
+            }
+        });
     }
 
     function selectOptions(type, value, optional) {
@@ -63,13 +76,14 @@
         else if (type === "status") options = ["Imported", "To Review", "Validated", "Deprecated"].map((item) => [item, item]);
         else if (type === "intent") options = ["single_kpi", "trend", "comparison", "ranking", "navigation", "follow_up_navigation"].map((item) => [item, item]);
         else if (type === "action") options = ["focus", "show", "apply_filter", "read_filters", "export_data"].map((item) => [item, item]);
+        else if (type === "authentication_mode") options = [["app_owns_data", "App owns data"], ["user_owns_data", "User owns data"]];
         else options = (caches[`${type}s`] || []).map((item) => [item.id, item.display_name || item.page_display_name || item.visual_title || item.visual_internal_name]);
         return `${optional ? '<option value="">None</option>' : ""}${options.map(([id, label]) => `<option value="${esc(id)}" ${String(id) === String(value ?? "") ? "selected" : ""}>${esc(label)}</option>`).join("")}`;
     }
 
     function fieldHtml(field, item) {
         const [name, label, type = "text", optional] = field; const value = item?.[name];
-        if (["section", "status", "intent", "action", "report", "page", "visual"].includes(type)) return `<label>${esc(label)}<select name="${name}">${selectOptions(type, value, optional)}</select></label>`;
+        if (["section", "status", "intent", "action", "report", "page", "visual", "authentication_mode"].includes(type)) return `<label>${esc(label)}<select name="${name}">${selectOptions(type, value, optional)}</select></label>`;
         if (type === "checkbox") return `<label class="inline-check stacked"><input type="checkbox" name="${name}" ${value === undefined || value ? "checked" : ""}> ${esc(label)}</label>`;
         if (type === "textarea" || type === "json") return `<label class="full-width">${esc(label)}<textarea name="${name}" rows="6">${esc(type === "json" && value && typeof value === "object" ? JSON.stringify(value, null, 2) : value || "")}</textarea></label>`;
         return `<label>${esc(label)}<input name="${name}" type="${type}" value="${esc(value ?? "")}"></label>`;

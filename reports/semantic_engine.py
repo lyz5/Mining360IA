@@ -97,7 +97,7 @@ def build_availability_matrix_question(
 ) -> dict:
     semantics = get_dataset_semantics(dataset_name)
     dataset_id = semantics.get("dataset_id", "")
-    measure = get_primary_measure(dataset_name, "availability", "Availability New")
+    measure = get_primary_measure(dataset_name, "availability", "Avail Per Equip")
     rls_role = resolve_dataset_roles(dataset_name, [site])[0] if resolve_dataset_roles(dataset_name, [site]) else site
 
     dax_query = f"""

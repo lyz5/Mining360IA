@@ -20,7 +20,14 @@ from .models import (
     PowerBIVisual,
     SupportedPowerBIAction,
 )
-from .powerbi import env_value, generate_report_embed_token, get_access_token, get_workspace_report, list_report_pages, list_workspace_reports
+from .microsoft_delegated_auth import EntraAuthenticationError, InteractiveAuthenticationRequired
+from .powerbi import env_value, get_access_token, list_report_pages, list_workspace_reports
+from .powerbi_embed_strategy import (
+    PowerBIEmbedError,
+    PrimeMoversAccessPreflightService,
+    build_embed_configuration,
+    corporate_connect_url,
+)
 from .powerbi_interaction_service import public_navigation_payload, resolve_navigation, validate_interaction_intent
 
 
@@ -306,20 +313,52 @@ def interaction_embed_config_api(request, report_id):
     if configured.validation_status != "Validated" and not is_platform_admin(request.user):
         return JsonResponse({"ok": False, "error": "This report mapping is not validated."}, status=403)
     try:
-        runtime_report = get_workspace_report(report_id, list_workspace_reports())
-        token = generate_report_embed_token(runtime_report, [request.GET.get("role") or "Global"])
+        config = build_embed_configuration(
+            request,
+            configured,
+            role=request.GET.get("role") or "Global",
+        )
         return JsonResponse({
             "ok": True,
-            "config": {
-                "type": "report",
-                "id": runtime_report.id,
-                "embedUrl": runtime_report.embed_url,
-                "accessToken": token,
-                "tokenType": "Embed",
-            },
+            "config": config,
         })
+    except InteractiveAuthenticationRequired:
+        return JsonResponse({
+            "ok": False,
+            "authentication_required": True,
+            "authentication_mode": "user_owns_data",
+            "error_code": "interaction_required",
+            "error": "This report contains an interactive Power Apps form and requires your corporate Microsoft account.",
+            "connect_url": corporate_connect_url(request, configured),
+        }, status=409)
+    except (EntraAuthenticationError, PowerBIEmbedError) as exc:
+        return JsonResponse({
+            "ok": False,
+            "authentication_mode": configured.authentication_mode,
+            "error_code": getattr(exc, "code", "embed_configuration_failed"),
+            "error": str(exc),
+        }, status=getattr(exc, "status", 503))
     except Exception as exc:
-        return JsonResponse({"ok": False, "error": str(exc)}, status=503)
+        return JsonResponse({
+            "ok": False,
+            "error_code": "embed_configuration_failed",
+            "error": "The report embed configuration is temporarily unavailable.",
+        }, status=503)
+
+
+@require_http_methods(["GET"])
+def interaction_preflight_api(request, report_id):
+    if not request.user.is_authenticated:
+        return JsonResponse({"ok": False, "error": "Authentication required."}, status=401)
+    configured = get_object_or_404(PowerBIReport, report_id=report_id, is_active=True)
+    try:
+        return JsonResponse({"ok": True, "preflight": PrimeMoversAccessPreflightService.run(request, configured)})
+    except (EntraAuthenticationError, PowerBIEmbedError) as exc:
+        return JsonResponse({
+            "ok": False,
+            "error_code": getattr(exc, "code", "preflight_failed"),
+            "error": str(exc),
+        }, status=getattr(exc, "status", 503))
 
 
 @require_http_methods(["POST"])

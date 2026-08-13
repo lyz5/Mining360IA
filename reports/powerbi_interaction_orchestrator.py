@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import time
 import re
+from types import SimpleNamespace
 from uuid import uuid4
 
 from .availability_diagnostics_service import (
@@ -10,8 +11,15 @@ from .availability_diagnostics_service import (
     parse_availability_diagnostics_rows,
 )
 from .availability_reference_service import resolve_availability_references
-from .dax_generator_service import generate_dax_from_intent
+from .dax_generator_service import generate_dax_from_intent, generate_performance_overview_dax
+from .downtime_event_service import comment_coverage, detect_repeated_failures, normalize_events
+from .downtime_query_service import build_equipment_dax, build_events_dax
 from .intent_extractor_service import extract_intent
+from .machine_performance_intent_service import enrich_machine_performance_intent
+from .machine_performance_response_service import (
+    MachinePerformanceResponsePlanningService,
+    adaptive_performance_responses_enabled,
+)
 from .models import AIConversationContext, KnowledgeSynonym, PowerBIInteractionLog
 from .openai_service import generate_chat_response
 from .power_automate import execute_dax_via_flow
@@ -26,6 +34,7 @@ from .powerbi_interaction_service import (
 from .resource_knowledge_search_service import search_resource_knowledge
 from .synonym_resolution_service import resolve_synonyms
 from .synonym_utils import normalize_synonym_key
+from .smcs_service import resolve_event_smcs
 
 
 def _conversation_context(conversation_id: str, user=None) -> dict:
@@ -149,10 +158,23 @@ def _natural_availability_answer(intent: dict, value: float, question_text: str)
     filters = intent.get("filters") or {}
     site = filters.get("minesite") or filters.get("site")
     model = filters.get("model")
+    serial_number = filters.get("serial_number")
     period = _natural_period(filters.get("period"), language)
     percentage = float(value) * 100
+    if language == "fr":
+        subject = "La disponibilité physique"
+        if serial_number:
+            subject += f" de la machine {serial_number}"
+        elif model:
+            subject += f" du parc {model}"
+        if site:
+            subject += f" à {site}"
+        formatted = f"{percentage:.2f}".replace(".", ",")
+        return f"{subject} est de {formatted} %{f' {period}' if period else ''}."
     subject = "The physical availability"
-    if model:
+    if serial_number:
+        subject += f" of machine {serial_number}"
+    elif model:
         subject += f" of the {model} fleet"
     if site:
         subject += f" at {site}"
@@ -206,55 +228,83 @@ def _availability_confirmation_answer(question_text: str, rows: list[dict]) -> s
 
 def _answer_payload(intent: dict, rows: list[dict], question_text: str = "") -> dict:
     intent_type = intent.get("intent_type") or "single_kpi"
+    inferred_availability = any(
+        "availability" in str(key).casefold()
+        for row in (rows or []) for key in (row or {}).keys()
+    )
+    metric_code = str(
+        intent.get("primary_metric") or intent.get("metric")
+        or ("availability" if inferred_availability else "metric")
+    )
+    metric_label = str(intent.get("metric_label") or metric_code.replace("_", " ").title())
     filters = intent.get("filters") or {}
     context = ", ".join(
         f"{code}={value}" for code, value in filters.items() if value not in (None, "", [])
     )
     if not rows:
         return {
-            "answer": "No availability data was returned for this context.",
+            "answer": f"No {metric_label} data was returned for this context.",
             "interpretation": "Check the requested filters and data availability in the semantic model.",
             "rows": [],
             "summary": [],
         }
-    measured_rows = [
-        (row, _availability_value(row))
-        for row in rows
-        if _availability_value(row) is not None
-    ]
+    def row_metric_value(row):
+        if metric_code == "availability":
+            return _availability_value(row)
+        normalized_metric = re.sub(r"[^a-z0-9]+", "", metric_code.casefold())
+        candidates = [
+            value for key, value in row.items()
+            if normalized_metric in re.sub(r"[^a-z0-9]+", "", str(key).casefold())
+        ]
+        candidates.extend(value for value in row.values() if isinstance(value, (int, float)))
+        for candidate in candidates:
+            try:
+                return float(candidate)
+            except (TypeError, ValueError):
+                continue
+        return None
+
+    def format_metric(value):
+        return _format_availability(value) if metric_code == "availability" else f"{float(value):,.2f}"
+
+    measured_rows = [(row, row_metric_value(row)) for row in rows if row_metric_value(row) is not None]
     formatted_rows = []
     for row, value in measured_rows:
         formatted = dict(row)
-        formatted["Availability Display"] = _format_availability(value)
+        formatted[f"{metric_label} Display"] = format_metric(value)
         formatted_rows.append(formatted)
     if intent_type == "single_kpi" and measured_rows:
         value = measured_rows[0][1]
-        answer = _natural_availability_answer(intent, value, question_text)
+        answer = (
+            _natural_availability_answer(intent, value, question_text)
+            if metric_code == "availability"
+            else f"{metric_label} is {format_metric(value)}{f' for {context}' if context else ''}."
+        )
         return {
             "answer": answer,
             "interpretation": answer,
             "rows": rows,
             "summary": formatted_rows,
         }
-    if intent_type == "comparison" and measured_rows:
+    if intent_type in {"comparison", "entity_comparison", "period_comparison"} and measured_rows:
         values = []
         for row, value in measured_rows:
             dimension = next(
                 (
                     item for key, item in row.items()
-                    if "availability" not in str(key).lower()
+                    if metric_code not in str(key).lower()
                 ),
                 "Value",
             )
-            values.append(f"{dimension}: {_format_availability(value)}")
-        answer = "Physical availability comparison: " + "; ".join(values) + "."
-    elif intent_type == "trend" and measured_rows:
+            values.append(f"{dimension}: {format_metric(value)}")
+        answer = f"{metric_label} comparison: " + "; ".join(values) + "."
+    elif intent_type in {"trend", "trend_analysis"} and measured_rows:
         lowest = min(measured_rows, key=lambda item: item[1])
         highest = max(measured_rows, key=lambda item: item[1])
         answer = (
             f"The trend contains {len(measured_rows)} periods. "
-            f"Minimum: {_format_availability(lowest[1])}; "
-            f"maximum: {_format_availability(highest[1])}."
+            f"Minimum: {format_metric(lowest[1])}; "
+            f"maximum: {format_metric(highest[1])}."
         )
     elif intent_type == "ranking" and measured_rows:
         values = []
@@ -262,24 +312,43 @@ def _answer_payload(intent: dict, rows: list[dict], question_text: str = "") -> 
             dimension = next(
                 (
                     item for key, item in row.items()
-                    if "availability" not in str(key).lower()
+                    if metric_code not in str(key).lower()
                 ),
                 "Value",
             )
-            values.append(f"{dimension} ({_format_availability(value)})")
-        answer = "Availability ranking: " + ", ".join(values) + "."
+            values.append(f"{dimension} ({format_metric(value)})")
+        answer = f"{metric_label} ranking: " + ", ".join(values) + "."
     elif not measured_rows:
         answer = (
-            "No physical availability value is available for the requested filters."
+            f"No {metric_label} value is available for the requested filters."
         )
     else:
-        answer = f"{len(rows)} availability rows were returned."
+        answer = f"{len(rows)} {metric_label} rows were returned."
     return {
         "answer": answer,
         "interpretation": answer,
         "rows": rows,
         "summary": formatted_rows,
     }
+
+
+def _adaptive_answer_payload(intent: dict, rows: list[dict], diagnostics: dict, question_text: str) -> dict:
+    intent_type = intent.get("intent_type") or "single_kpi"
+    if intent_type in {"downtime_drivers", "root_cause_analysis"}:
+        drivers = diagnostics.get("drivers") or []
+        total = diagnostics.get("total_downtime_hours")
+        if drivers:
+            names = ", ".join(str(item.get("driver") or "") for item in drivers[:3])
+            prefix = "The main diagnostic findings" if intent_type == "root_cause_analysis" else "The top downtime drivers"
+            total_text = f" across {float(total):,.2f} downtime hours" if total is not None else ""
+            answer = f"{prefix}{total_text} are {names}."
+        else:
+            answer = "No downtime-driver data was returned for the requested context."
+        return {"answer": answer, "interpretation": answer, "rows": rows, "summary": drivers}
+    if intent_type == "powerbi_navigation":
+        answer = "The requested Power BI view is ready to open."
+        return {"answer": answer, "interpretation": answer, "rows": rows, "summary": []}
+    return _answer_payload(intent, rows, question_text)
 
 
 def _apply_resolved_entities(extracted: dict, synonym_resolution: dict) -> dict:
@@ -310,7 +379,7 @@ def _apply_resolved_entities(extracted: dict, synonym_resolution: dict) -> dict:
             if entity["normalized_value"] not in values:
                 values.append(entity["normalized_value"])
     for filter_code, values in resolved_values.items():
-        if extracted.get("intent_type") == "comparison" and len(values) > 1:
+        if extracted.get("intent_type") in {"comparison", "entity_comparison", "period_comparison"} and len(values) > 1:
             comparison = extracted.get("comparison")
             if not isinstance(comparison, dict):
                 comparison = {}
@@ -397,7 +466,10 @@ def process_user_question(question_text, user_context=None, conversation_context
         or uuid4().hex
     )
     previous_intent = conversation_context.get("validated_intent") or _conversation_context(conversation_id, user)
-    follow_up = bool(previous_intent) and is_follow_up_question(question_text)
+    follow_up_resolution = user_context.get("follow_up_resolution") or {}
+    follow_up = bool(follow_up_resolution.get("is_follow_up")) or (
+        bool(previous_intent) and is_follow_up_question(question_text)
+    )
     extracted = user_context.get("pre_extracted_intent")
     synonym_resolution = None
     if not isinstance(extracted, dict):
@@ -458,6 +530,9 @@ def process_user_question(question_text, user_context=None, conversation_context
         previous_intent,
         inherit_previous=follow_up,
     )
+    if intent.get("section") == "performance":
+        intent = enrich_machine_performance_intent(intent, question_text)
+        intent["_adaptive_responses_enabled"] = adaptive_performance_responses_enabled(user)
     navigation_request = intent.setdefault("navigation", {})
     open_report = bool(user_context.get("open_report", True))
     navigation_request["open_report"] = open_report
@@ -485,7 +560,6 @@ def process_user_question(question_text, user_context=None, conversation_context
             context={"metric": intent.get("metric")},
         )
 
-    _store_context(conversation_id, intent, user)
     navigation = (
         resolve_navigation(intent, debug_mode=bool(user_context.get("debug_mode")))
         if navigation_request.get("open_report")
@@ -497,88 +571,122 @@ def process_user_question(question_text, user_context=None, conversation_context
     diagnostics = {}
     resource_knowledge = {"results": [], "count": 0, "mode": "Production"}
     diagnostics_result = {}
+    diagnostics_payload = None
+    specialized_analysis = {}
     diagnostics_warning = ""
     intent_type = intent.get("intent_type") or "single_kpi"
-    if intent_type not in {"navigation", "follow_up_navigation"}:
-        dax_payload = generate_dax_from_intent(intent)
-        dataset_id = (
-            navigation.get("semantic_model_id")
-            or user_context.get("dataset_id")
-            or resolve_workspace_dataset_id(user_context.get("dataset_name") or "FPR Global DB + RLS")
+    response_planner = MachinePerformanceResponsePlanningService()
+    query_plan = response_planner.build_query_plan(intent)
+    dataset_id = (
+        navigation.get("semantic_model_id")
+        or user_context.get("dataset_id")
+        or resolve_workspace_dataset_id(user_context.get("dataset_name") or "FPR Global DB + RLS")
+    )
+    dataset_name = user_context.get("dataset_name") or "FPR Global DB + RLS"
+    rls_role = user_context.get("rls_role") or ""
+    if not rls_role:
+        site = (intent.get("filters") or {}).get("minesite") or (intent.get("filters") or {}).get("site")
+        if site:
+            resolved_roles = resolve_dataset_roles(dataset_name, [str(site)])
+            rls_role = resolved_roles[0] if resolved_roles else str(site)
+    flow_base = {
+        "datasetId": dataset_id,
+        "datasetName": dataset_name,
+        "question": question_text,
+        "section": intent.get("section"),
+        "intent": intent,
+        "rlsRole": rls_role,
+        "roles": user_context.get("roles") or ([rls_role] if rls_role else []),
+    }
+    if query_plan["execute_primary_metric"]:
+        query_intent = {**intent, "intent_type": intent.get("query_intent_type") or intent_type}
+        dax_payload = (
+            generate_performance_overview_dax(query_intent)
+            if intent_type in {"performance_overview", "equipment_detail"} and not intent.get("metric")
+            else generate_dax_from_intent(query_intent)
         )
-        dataset_name = user_context.get("dataset_name") or "FPR Global DB + RLS"
-        rls_role = user_context.get("rls_role") or ""
-        if not rls_role:
-            site = (intent.get("filters") or {}).get("minesite") or (intent.get("filters") or {}).get("site")
-            if site:
-                resolved_roles = resolve_dataset_roles(dataset_name, [str(site)])
-                rls_role = resolved_roles[0] if resolved_roles else str(site)
+        intent["metric_label"] = dax_payload.get("metric_label") or intent.get("metric_label")
         flow_payload = {
-            "datasetId": dataset_id,
-            "datasetName": dataset_name,
+            **flow_base,
             "query": dax_payload["dax"],
-            "question": question_text,
             "metric": dax_payload["metric"],
             "measure": dax_payload["measure"],
             "filters": dax_payload["filters"],
-            "section": dax_payload["section"],
-            "intent": intent,
-            "rlsRole": rls_role,
-            "roles": user_context.get("roles") or ([rls_role] if rls_role else []),
         }
         powerbi_result = execute_dax_via_flow(flow_payload)
         rows = _extract_rows(powerbi_result)
-        if intent.get("metric") == "availability" and intent_type == "single_kpi":
+    if intent_type in {"affected_equipment", "downtime_events", "repeated_failures", "comment_analysis", "smcs_breakdown"}:
+        query_context = SimpleNamespace(context_json={
+            "filters": dict(intent.get("filters") or {}),
+            "selections": {},
+        })
+        special_dax = (
+            build_equipment_dax(query_context)
+            if intent_type == "affected_equipment"
+            else build_events_dax(query_context, limit=500 if intent_type in {"repeated_failures", "smcs_breakdown"} else 300)
+        )
+        dax_payload = {
+            "dax": special_dax, "metric": intent_type, "metric_label": intent_type.replace("_", " ").title(),
+            "measure": "", "filters": dict(intent.get("filters") or {}), "section": intent.get("section"),
+        }
+        flow_payload = {
+            **flow_base, "query": special_dax, "metric": intent_type,
+            "measure": "", "filters": dax_payload["filters"],
+        }
+        powerbi_result = execute_dax_via_flow(flow_payload)
+        raw_rows = _extract_rows(powerbi_result)
+        if intent_type == "affected_equipment":
+            rows = raw_rows
+        else:
+            events = normalize_events(raw_rows)
+            if intent_type == "repeated_failures":
+                specialized_analysis = detect_repeated_failures(events)
+                rows = specialized_analysis.get("patterns") or []
+            elif intent_type == "comment_analysis":
+                specialized_analysis = {"coverage": comment_coverage(events)}
+                rows = [item for item in events if item.get("Comment")]
+            elif intent_type == "smcs_breakdown":
+                specialized_analysis = resolve_event_smcs(events)
+                rows = specialized_analysis.get("rows") or []
+            else:
+                rows = events
+    if query_plan["execute_downtime_diagnostics"]:
+        try:
+            diagnostics_payload = build_availability_diagnostics_dax(intent)
+            diagnostics_flow_payload = {
+                **flow_base,
+                "query": diagnostics_payload["dax"],
+                "metric": diagnostics_payload["metric"],
+                "measure": diagnostics_payload["measure"],
+                "filters": diagnostics_payload["filters"],
+            }
+            diagnostics_result = execute_dax_via_flow(diagnostics_flow_payload)
+            diagnostics = parse_availability_diagnostics_rows(_extract_rows(diagnostics_result))
+        except (AvailabilityDiagnosticsConfigurationError, RuntimeError) as exc:
+            diagnostics_warning = f"Downtime diagnostics could not be loaded: {exc}"
+
+        if diagnostics and intent_type == "root_cause_analysis":
             try:
-                diagnostics_payload = build_availability_diagnostics_dax(intent)
-                diagnostics_flow_payload = {
-                    **flow_payload,
-                    "query": diagnostics_payload["dax"],
-                    "metric": diagnostics_payload["metric"],
-                    "measure": diagnostics_payload["measure"],
-                    "filters": diagnostics_payload["filters"],
-                }
-                diagnostics_result = execute_dax_via_flow(
-                    diagnostics_flow_payload
+                driver_names = [
+                    str(item.get("driver") or "")
+                    for item in (diagnostics.get("drivers") or [])[:5]
+                    if item.get("driver")
+                ]
+                resource_knowledge = search_resource_knowledge(
+                    " ".join([question_text, "downtime root cause inspection troubleshooting best practice", *driver_names]),
+                    filters={"model": (intent.get("filters") or {}).get("model", "")},
+                    limit=5,
+                    mode="Production",
+                    user=user,
+                    conversation_id=conversation_id,
                 )
-                diagnostics = parse_availability_diagnostics_rows(
-                    _extract_rows(diagnostics_result)
-                )
-            except (
-                AvailabilityDiagnosticsConfigurationError,
-                RuntimeError,
-            ) as exc:
-                diagnostics_warning = (
-                    "Downtime diagnostics could not be loaded: "
-                    f"{exc}"
-                )
+            except Exception as exc:
+                diagnostics_warning = " ".join(filter(None, [
+                    diagnostics_warning,
+                    f"The Resources Knowledge Base is unavailable: {exc}",
+                ]))
 
-            if diagnostics:
-                try:
-                    driver_names = [
-                        str(item.get("driver") or "")
-                        for item in (diagnostics.get("drivers") or [])[:5]
-                        if item.get("driver")
-                    ]
-                    resource_knowledge = search_resource_knowledge(
-                        " ".join([
-                            question_text,
-                            "downtime root cause inspection troubleshooting best practice",
-                            *driver_names,
-                        ]),
-                        filters={"model": (intent.get("filters") or {}).get("model", "")},
-                        limit=5,
-                        mode="Production",
-                        user=user,
-                        conversation_id=conversation_id,
-                    )
-                except Exception as exc:
-                    diagnostics_warning = " ".join(filter(None, [
-                        diagnostics_warning,
-                        f"The Resources Knowledge Base is unavailable: {exc}",
-                    ]))
-
-    answer = _answer_payload(intent, rows, question_text)
+    answer = _adaptive_answer_payload(intent, rows, diagnostics, question_text)
     confirmation_answer = _availability_confirmation_answer(question_text, rows)
     if confirmation_answer:
         answer = {
@@ -586,7 +694,9 @@ def process_user_question(question_text, user_context=None, conversation_context
             "answer": confirmation_answer,
             "interpretation": confirmation_answer,
         }
-    if intent.get("metric") == "availability":
+    response_fallback_used = False
+    response_generation_warning = ""
+    if intent.get("metric") == "availability" or intent_type in {"downtime_drivers", "root_cause_analysis", "powerbi_navigation"}:
         # Availability answers are formatted from the validated Power BI result.
         # Do not let response generation alter or invent a numeric KPI value.
         final_answer = answer["answer"]
@@ -598,9 +708,22 @@ def process_user_question(question_text, user_context=None, conversation_context
                 answer,
                 conversation_context.get("messages") or [],
             )
-        except Exception:
+        except Exception as exc:
             final_answer = answer["interpretation"]
+            response_fallback_used = True
+            response_generation_warning = str(exc)
 
+    result_payload = {
+        "rows": rows,
+        "availability_diagnostics": diagnostics,
+        "downtime_diagnostics": diagnostics,
+        "specialized_analysis": specialized_analysis,
+    }
+    response_envelope = response_planner.build_response_envelope(
+        intent=intent,
+        result=result_payload,
+        answer_text=final_answer,
+    )
     elapsed = int((time.monotonic() - started_at) * 1000)
     objects = navigation.get("_objects") or {}
     log = PowerBIInteractionLog.objects.create(
@@ -613,7 +736,7 @@ def process_user_question(question_text, user_context=None, conversation_context
             + (
                 "\n\n-- Availability downtime diagnostics\n"
                 + diagnostics_payload["dax"]
-                if diagnostics
+                if diagnostics_payload
                 else ""
             )
         ),
@@ -644,7 +767,16 @@ def process_user_question(question_text, user_context=None, conversation_context
         "intent": intent,
         "powerbi_result": powerbi_result,
         "availability_diagnostics": diagnostics,
+        "downtime_diagnostics": diagnostics,
+        "presentation": response_envelope["presentation"],
+        "response_envelope": response_envelope,
+        "actions": response_envelope["actions"],
+        "warnings": response_envelope["warnings"],
+        "follow_up_resolution": follow_up_resolution if follow_up_resolution.get("is_follow_up") else None,
+        "response_fallback_used": response_fallback_used,
+        "query_plan": query_plan,
         "resource_knowledge": resource_knowledge,
+        "specialized_analysis": specialized_analysis,
         "rows": rows,
         "dax": dax_payload["dax"] if dax_payload else "",
         "metric": dax_payload["metric"] if dax_payload else intent.get("metric"),
@@ -672,7 +804,21 @@ def process_user_question(question_text, user_context=None, conversation_context
                 warnings
                 + navigation.get("warnings", [])
                 + ([diagnostics_warning] if diagnostics_warning else [])
+                + (["Natural-language generation failed; a deterministic response was used."] if response_fallback_used else [])
             ),
         },
-        "debug": {"interaction_log_id": log.id, "execution_time_ms": elapsed},
+        "debug": {
+            "interaction_log_id": log.id,
+            "execution_time_ms": elapsed,
+            "response_planning": {
+                "detected_intent": intent_type,
+                "scope": intent.get("scope_type"),
+                "primary_metric": intent.get("primary_metric") or intent.get("metric"),
+                "selected_template": response_envelope["presentation"]["template_code"],
+                "required_data": query_plan["required_data"],
+                "rendered_components": response_envelope["presentation"]["components"],
+            },
+            "follow_up_resolution": follow_up_resolution if follow_up_resolution.get("is_follow_up") else None,
+            "response_generation_warning": response_generation_warning,
+        },
     }

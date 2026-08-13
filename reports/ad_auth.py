@@ -14,10 +14,26 @@ HTTP.trust_env = False
 
 
 def ad_config() -> dict:
+    from .system_configuration_service import integration_value
+
     credentials = _local_powerbi_credentials()
-    tenant_id = credentials.get("AZURE_AD_TENANT_ID") or credentials.get("POWERBI_TENANT_ID") or DEFAULT_TENANT_ID
-    client_id = credentials.get("AZURE_AD_CLIENT_ID") or credentials.get("POWERBI_CLIENT_ID") or DEFAULT_CLIENT_ID
-    client_secret = credentials.get("AZURE_AD_CLIENT_SECRET") or credentials.get("POWERBI_CLIENT_SECRET")
+    tenant_id = (
+        integration_value("Authentication", "tenant_id", "")
+        or credentials.get("AZURE_AD_TENANT_ID")
+        or credentials.get("POWERBI_TENANT_ID")
+        or DEFAULT_TENANT_ID
+    )
+    client_id = (
+        integration_value("Authentication", "client_id", "")
+        or credentials.get("AZURE_AD_CLIENT_ID")
+        or credentials.get("POWERBI_CLIENT_ID")
+        or DEFAULT_CLIENT_ID
+    )
+    client_secret = (
+        integration_value("Authentication", "client_secret", "", secret=True)
+        or credentials.get("AZURE_AD_CLIENT_SECRET")
+        or credentials.get("POWERBI_CLIENT_SECRET")
+    )
     return {
         "tenant_id": tenant_id,
         "client_id": client_id,

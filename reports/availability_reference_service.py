@@ -79,10 +79,15 @@ def _serial_catalog() -> dict[str, str]:
     if cached is not None:
         return cached
     values = {}
-    for row in _browser_values("Equipment Browser", ["serial_number"]):
-        serial = str(row[0] or "").strip().upper()
-        if serial:
-            values[normalize_synonym_key(serial)] = serial
+    try:
+        for row in _browser_values("Equipment Browser", ["serial_number"]):
+            serial = str(row[0] or "").strip().upper()
+            if serial:
+                values[normalize_synonym_key(serial)] = serial
+    except Exception:
+        # Power BI remains authoritative for the analytical query. A temporary
+        # MiningProd outage must not prevent a safely quoted serial filter.
+        return {}
     cache.set(cache_key, values, REFERENCE_CACHE_SECONDS)
     return values
 
@@ -116,11 +121,14 @@ def resolve_availability_references(question: str, filters: dict) -> tuple[dict,
     serials = _serial_catalog()
     serial_candidate = resolved.get("serial_number")
     if serial_candidate:
-        canonical = serials.get(normalize_synonym_key(serial_candidate))
-        if canonical:
-            resolved["serial_number"] = canonical
+        if serials:
+            canonical = serials.get(normalize_synonym_key(serial_candidate))
+            if canonical:
+                resolved["serial_number"] = canonical
+            else:
+                unresolved.append({"filter_code": "serial_number", "value": serial_candidate})
+                resolved.pop("serial_number", None)
         else:
-            unresolved.append({"filter_code": "serial_number", "value": serial_candidate})
-            resolved.pop("serial_number", None)
+            resolved["serial_number"] = str(serial_candidate).strip().upper()
 
     return resolved, unresolved

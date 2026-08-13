@@ -1,5 +1,6 @@
 import csv
 import json
+import logging
 import re
 import time
 from urllib.parse import unquote, urlparse
@@ -24,6 +25,9 @@ from datetime import date, datetime
 from django.utils import timezone
 from django.utils.dateparse import parse_date, parse_datetime
 from django.db.models.functions import TruncDate
+
+
+logger = logging.getLogger(__name__)
 
 try:  # pragma: no cover - optional dependency
     import snowflake.connector as snowflake_connector
@@ -66,7 +70,7 @@ from .resource_library import (
     save_uploaded_resource,
 )
 from .semantic_engine import build_availability_matrix_question, build_availability_question
-from .power_automate import execute_dax_via_flow, get_flow_url
+from .power_automate import PowerAutomateTransientError, execute_dax_via_flow, get_flow_url
 from .openai_assistant import (
     chat_semantic_response_with_openai,
     interpret_semantic_answer_with_openai,
@@ -107,6 +111,8 @@ from .data_quality import (
 from .models import (
     AIConfigSection,
     AIDaxTemplate,
+    AIResponseTemplate,
+    AIIntentResponseTemplateMapping,
     AIFilterMapping,
     AIBusinessRule,
     AIBusinessVocabulary,
@@ -141,6 +147,7 @@ from .models import (
     KnowledgeUserFeedback,
     KPIPageMapping,
     PowerBIReport,
+    PowerBIAuthenticationAuditLog,
     ReportingReportPreference,
     SystemDatabaseConfig,
     SystemIntegrationConfig,
@@ -160,9 +167,26 @@ from .business_performance_service import (
     MappingNotConfigured,
 )
 from .models import PlatformUser
+from .active_directory_service import (
+    active_directory_integration,
+    active_directory_login_enabled,
+    find_directory_identity,
+    identity_is_allowed,
+    search_directory_identities,
+    synchronize_directory,
+    synchronize_identity,
+)
 from .access_control import has_module_access, is_platform_admin, user_module_access, wants_json
 from .powerbi_interaction_orchestrator import process_user_question
 from .ad_auth import exchange_code, fetch_me, login_url, search_directory_users
+from .microsoft_delegated_auth import (
+    EntraAuthenticationError,
+    begin_powerbi_authorization,
+    clear_delegated_token_cache,
+    complete_powerbi_authorization,
+    has_pending_powerbi_flow,
+)
+from .powerbi_embed_strategy import feature_enabled
 from .data_browsers import (
     DataBrowserValidationError,
     delete_browser_records,
@@ -817,16 +841,47 @@ def login_page(request):
         authenticated_user = authenticate(request, username=username, password=password)
         if authenticated_user and authenticated_user.is_active:
             platform_user = getattr(authenticated_user, "platformuser", None)
+            if active_directory_login_enabled() and not (authenticated_user.is_staff or authenticated_user.is_superuser) and getattr(platform_user, "auth_source", "local") != "active_directory":
+                messages.error(request, "This account must sign in through Active Directory.")
+                return render(request, "reports/login.html", {
+                    "next": next_url, "username": username, "active_directory_enabled": True,
+                    "keep_signed_in": request.POST.get("keep_signed_in") == "on",
+                })
             if platform_user and platform_user.is_active:
                 django_login(request, authenticated_user)
+                request.session.set_expiry(
+                    settings.MINING360_REMEMBER_SESSION_SECONDS
+                    if request.POST.get("keep_signed_in") == "on"
+                    else 0
+                )
                 return redirect(next_url or "dashboard")
             if authenticated_user.is_superuser or authenticated_user.is_staff:
                 django_login(request, authenticated_user)
+                request.session.set_expiry(
+                    settings.MINING360_REMEMBER_SESSION_SECONDS
+                    if request.POST.get("keep_signed_in") == "on"
+                    else 0
+                )
                 return redirect(next_url or "dashboard")
             messages.error(request, "Your Mining360 profile is inactive or not authorized.")
-            return render(request, "reports/login.html", {"next": next_url, "username": username})
-        messages.error(request, "Invalid local username or password.")
-    return render(request, "reports/login.html", {"next": next_url, "username": request.POST.get("username", "")})
+            return render(request, "reports/login.html", {
+                "next": next_url, "username": username,
+                "active_directory_enabled": active_directory_login_enabled(),
+                "keep_signed_in": request.POST.get("keep_signed_in") == "on",
+            })
+        messages.error(request, "Invalid username or password.")
+    return render(request, "reports/login.html", {
+        "next": next_url,
+        "username": request.POST.get("username", ""),
+        "keep_signed_in": request.POST.get("keep_signed_in") == "on",
+        "windows_username_hint": str(
+            request.META.get("REMOTE_USER")
+            or request.META.get("AUTH_USER")
+            or request.META.get("HTTP_X_REMOTE_USER")
+            or ""
+        ).strip(),
+        "active_directory_enabled": active_directory_login_enabled(),
+    })
 
 
 def auth_start(request):
@@ -835,6 +890,60 @@ def auth_start(request):
 
 
 def auth_callback(request):
+    if has_pending_powerbi_flow(request):
+        flow = request.session.get("microsoft_delegated_auth_flow") or {}
+        return_to = flow.get("mining360_return_to") or reverse("reporting")
+        report_id = flow.get("mining360_report_id") or ""
+        try:
+            account, return_to, report_id = complete_powerbi_authorization(request)
+            if not request.user.is_authenticated:
+                raise EntraAuthenticationError(
+                    "Your Mining 360 session expired during Microsoft authentication.",
+                    code="mining360_session_expired",
+                )
+            platform_user = getattr(request.user, "platformuser", None)
+            if not platform_user:
+                raise EntraAuthenticationError(
+                    "Your Mining 360 account is not linked to a corporate identity.",
+                    code="identity_mapping_missing",
+                )
+            account_upn = str(account.get("username") or "").strip().casefold()
+            if account_upn and platform_user.user_principal_name.casefold() != account_upn:
+                raise EntraAuthenticationError(
+                    "The connected Microsoft account does not match your Mining 360 account.",
+                    code="identity_upn_mismatch",
+                )
+            account_oid = str(account.get("object_id") or "").strip()
+            if platform_user.azure_ad_id and account_oid and platform_user.azure_ad_id != account_oid:
+                raise EntraAuthenticationError(
+                    "The connected Microsoft account does not match your Mining 360 identity.",
+                    code="identity_object_mismatch",
+                )
+            platform_user.entra_tenant_id = str(account.get("tenant_id") or "")
+            platform_user.last_entra_authenticated_at = timezone.now()
+            platform_user.save(update_fields=["entra_tenant_id", "last_entra_authenticated_at", "updated_at"])
+            configured_report = PowerBIReport.objects.filter(report_id=report_id).first()
+            PowerBIAuthenticationAuditLog.objects.create(
+                user=request.user,
+                report=configured_report,
+                event_type="connect_succeeded",
+                metadata_json={"tenant_id": platform_user.entra_tenant_id},
+            )
+            messages.success(request, "Corporate Microsoft account connected.")
+            return redirect(return_to)
+        except EntraAuthenticationError as exc:
+            configured_report = PowerBIReport.objects.filter(report_id=report_id).first()
+            PowerBIAuthenticationAuditLog.objects.create(
+                user=request.user if request.user.is_authenticated else None,
+                report=configured_report,
+                event_type="connect_failed",
+                status="failed",
+                error_code=exc.code,
+                message=str(exc),
+            )
+            messages.error(request, str(exc))
+            return redirect(return_to)
+
     expected_state = request.session.get("azure_ad_state")
     received_state = request.GET.get("state")
     if not expected_state or received_state != expected_state:
@@ -909,22 +1018,92 @@ def auth_callback(request):
 
 
 def logout_page(request):
+    clear_delegated_token_cache(request)
     django_logout(request)
     return redirect("login")
+
+
+@login_required
+def powerbi_auth_start(request):
+    if not feature_enabled("ENABLE_ENTRA_ACCOUNT_LINKING", request.user):
+        messages.error(request, "Corporate Microsoft account linking is not enabled for this user.")
+        return redirect("reporting")
+    report_id = str(request.GET.get("report_id") or "").strip()
+    report = get_object_or_404(
+        PowerBIReport,
+        report_id=report_id,
+        is_active=True,
+        authentication_mode="user_owns_data",
+    )
+    return_to = request.GET.get("next") or reverse("report-detail", args=[report_id])
+    PowerBIAuthenticationAuditLog.objects.create(
+        user=request.user,
+        report=report,
+        event_type="connect_started",
+    )
+    try:
+        return redirect(begin_powerbi_authorization(request, return_to=return_to, report_id=report_id))
+    except EntraAuthenticationError as exc:
+        PowerBIAuthenticationAuditLog.objects.create(
+            user=request.user,
+            report=report,
+            event_type="connect_failed",
+            status="failed",
+            error_code=exc.code,
+            message=str(exc),
+        )
+        messages.error(request, str(exc))
+        return redirect(return_to)
+
+
+@login_required
+@require_http_methods(["POST"])
+def powerbi_auth_disconnect(request):
+    clear_delegated_token_cache(request)
+    PowerBIAuthenticationAuditLog.objects.create(
+        user=request.user,
+        event_type="disconnected",
+    )
+    return JsonResponse({"ok": True})
 
 
 @login_required
 def users_manage(request):
     if not _user_is_platform_admin(request.user):
         return JsonResponse({"ok": False, "error": "Admin access required."}, status=403)
+    if feature_enabled("ENABLE_USERS_PAGE_REDESIGN", request.user):
+        return render(request, "reports/users_access.html", {
+            "active_section": "users",
+            "sidebar_stats": [
+                {"label": "Users", "value": PlatformUser.objects.count()},
+                {"label": "Active", "value": PlatformUser.objects.filter(is_active=True).count()},
+            ],
+        })
     query = request.GET.get("q", "").strip()
     directory_results = []
     search_error = ""
     if query:
         try:
-            directory_results = search_directory_users(query)
-            for person in directory_results:
-                person["primary_email"] = person.get("mail") or person.get("userPrincipalName") or ""
+            ad_integration = active_directory_integration()
+            if ad_integration:
+                domain = str((ad_integration.settings_json or {}).get("netbios_domain") or "").upper()
+                directory_results = [{
+                    "id": person.object_id,
+                    "displayName": person.display_name,
+                    "userPrincipalName": person.upn,
+                    "primary_email": person.email,
+                    "jobTitle": "",
+                    "directory_username": person.username,
+                    "account_name": f"{domain}\\{person.username}" if domain else person.username,
+                    "source": "active_directory",
+                    "groups": person.groups,
+                } for person in search_directory_identities(ad_integration, query)]
+            else:
+                directory_results = search_directory_users(query)
+                for person in directory_results:
+                    person["primary_email"] = person.get("mail") or person.get("userPrincipalName") or ""
+                    person["account_name"] = person.get("userPrincipalName") or ""
+                    person["source"] = "microsoft_entra"
         except Exception as exc:
             search_error = str(exc)
     return render(
@@ -961,17 +1140,44 @@ def users_add(request):
     if not azure_id or not upn:
         messages.error(request, "Missing Azure AD user id or user principal name.")
         return redirect("users-manage")
-    platform_user, _ = PlatformUser.objects.update_or_create(
-        azure_ad_id=azure_id,
-        defaults={
-            "user_principal_name": upn,
-            "email": email,
-            "display_name": display_name,
-            "job_title": job_title,
-            "is_active": True,
-            **role_payload,
-        },
-    )
+    if request.POST.get("directory_source") == "active_directory":
+        integration = active_directory_integration()
+        if not integration:
+            messages.error(request, "Active Directory is not configured.")
+            return redirect("users-manage")
+        try:
+            identity = find_directory_identity(integration, request.POST.get("directory_username") or upn)
+            if identity.object_id != azure_id:
+                raise ValueError("The selected directory identity changed. Search and select it again.")
+            if not identity_is_allowed(integration, identity):
+                raise ValueError("This account is disabled or excluded by the configured Active Directory group filter.")
+            synchronize_identity(identity, integration)
+            platform_user = PlatformUser.objects.get(directory_object_id=identity.object_id)
+            for field, value in role_payload.items():
+                setattr(platform_user, field, value)
+            platform_user.directory_roles_managed = False
+            platform_user.is_active = True
+            platform_user.save()
+            if platform_user.django_user:
+                platform_user.django_user.is_active = True
+                platform_user.django_user.is_staff = platform_user.is_platform_admin
+                platform_user.django_user.is_superuser = platform_user.is_platform_admin
+                platform_user.django_user.save(update_fields=["is_active", "is_staff", "is_superuser"])
+        except Exception as exc:
+            messages.error(request, str(exc))
+            return redirect("users-manage")
+    else:
+        platform_user, _ = PlatformUser.objects.update_or_create(
+            azure_ad_id=azure_id,
+            defaults={
+                "user_principal_name": upn,
+                "email": email,
+                "display_name": display_name,
+                "job_title": job_title,
+                "is_active": True,
+                **role_payload,
+            },
+        )
     messages.success(request, f"{platform_user.display_name} added to Mining360.")
     return redirect("users-manage")
 
@@ -997,6 +1203,8 @@ def users_roles_update(request, user_id):
     platform_user = get_object_or_404(PlatformUser, id=user_id)
     for field, value in _platform_role_payload(request.POST).items():
         setattr(platform_user, field, value)
+    if platform_user.auth_source == "active_directory":
+        platform_user.directory_roles_managed = request.POST.get("directory_roles_managed") == "on"
     platform_user.save()
     if platform_user.django_user_id:
         platform_user.django_user.is_staff = platform_user.is_platform_admin
@@ -1072,6 +1280,11 @@ def dashboard(request):
 @login_required
 def data_home(request):
     cards = [
+        {
+            "name": "Downtime Mapping Check",
+            "description": "Audit Labour Type to Description CAT mappings from row-level downtime comments.",
+            "url_name": "downtime-mapping-check",
+        },
         {
             "name": "Data Quality Center",
             "description": "Run quality controls, inspect failed records and export impacted rows.",
@@ -1558,8 +1771,16 @@ def data_browser_data_api(request, browser_id):
             page=request.GET.get("page", "1"),
             sort=request.GET.get("sort", "[]"),
         )
-    except Exception as exc:
-        return _json_error(str(exc))
+    except Exception:
+        logger.exception("Data Browser preview failed for browser_id=%s", browser_id)
+        return JsonResponse(
+            {
+                "ok": False,
+                "error_code": "data_source_unavailable",
+                "error": "The data source is temporarily unavailable. Retry or contact an administrator.",
+            },
+            status=503,
+        )
     return JsonResponse({"ok": True, "data": result})
 
 
@@ -1577,8 +1798,16 @@ def data_browser_export_api(request, browser_id):
             page=request.GET.get("page", "1"),
             sort=request.GET.get("sort", "[]"),
         )
-    except Exception as exc:
-        return JsonResponse({"ok": False, "error": str(exc)}, status=400)
+    except Exception:
+        logger.exception("Data Browser export failed for browser_id=%s", browser_id)
+        return JsonResponse(
+            {
+                "ok": False,
+                "error_code": "data_source_unavailable",
+                "error": "The data source is temporarily unavailable. Retry or contact an administrator.",
+            },
+            status=503,
+        )
 
     try:
         from io import BytesIO
@@ -1811,18 +2040,28 @@ def _data_quality_controls_state(source_key: str | None = None, object_name: str
 
 
 def _visible_reporting_reports(reports):
+    from copy import copy
+    from dataclasses import replace
+
     preferences = {
         item.report_id: item
         for item in ReportingReportPreference.objects.filter(
             report_id__in=[str(getattr(report, "id", "") or "") for report in reports]
         )
     }
-    reports = [
-        report
-        for report in reports
-        if preferences.get(str(getattr(report, "id", "") or "")) is None
-        or preferences[str(getattr(report, "id", "") or "")].is_visible
-    ]
+    visible_reports = []
+    for report in reports:
+        preference = preferences.get(str(getattr(report, "id", "") or ""))
+        if preference is not None and not preference.is_visible:
+            continue
+        if preference is not None and preference.display_name:
+            try:
+                report = replace(report, display_name=preference.display_name)
+            except TypeError:
+                report = copy(report)
+                report.display_name = preference.display_name
+        visible_reports.append(report)
+    reports = visible_reports
     reports.sort(
         key=lambda report: (
             preferences.get(str(getattr(report, "id", "") or "")).display_order
@@ -1852,6 +2091,13 @@ def reporting_home(request):
         if str(getattr(report, "refresh_status", "") or "").lower() == "failed"
     )
     no_refresh_count = len(reports) - completed_count - failed_count
+    authentication_modes = {
+        item.report_id: item.authentication_mode
+        for item in PowerBIReport.objects.filter(
+            report_id__in=[str(report.id) for report in reports],
+            is_active=True,
+        )
+    }
     report_cards = []
     for report in reports:
         name = str(report.display_name or "").lower()
@@ -1884,6 +2130,7 @@ def reporting_home(request):
             "last_refresh": report.last_refresh,
             "refresh_status": report.refresh_status,
             "visual_class": visual_class,
+            "authentication_mode": authentication_modes.get(str(report.id), "app_owns_data"),
         })
     reports = report_cards
 
@@ -3015,9 +3262,20 @@ def _execute_ai_ask(request, payload_override=None):
                         "summary": agent_result.get("rows") or [],
                     },
                 })
+        except PowerAutomateTransientError:
+            logger.exception("Power Automate execution failed after controlled retries.")
+            return JsonResponse(
+                {
+                    "ok": False,
+                    "error": "Power BI is temporarily unavailable. Your conversation and filters were preserved.",
+                    "error_code": "powerbi_temporarily_unavailable",
+                    "retryable": True,
+                    "retry_after_seconds": 5,
+                },
+                status=503,
+            )
         except Exception:
-            # The existing single-pipeline chatbot remains the compatibility fallback.
-            pass
+            logger.exception("Multi-agent execution failed; trying the controlled analytical orchestrator.")
 
     from .chat_routing_service import (
         answer_without_semantic_model,
@@ -3088,10 +3346,23 @@ def _execute_ai_ask(request, payload_override=None):
                 "summary": orchestrated.get("rows") or [],
             },
         })
-    except Exception:
-        # Keep the legacy semantic path available while the controlled
-        # orchestrator is being completed for a new intent family.
-        pass
+    except Exception as exc:
+        logger.exception("Controlled analytical orchestration failed.")
+        from .machine_performance_response_service import adaptive_performance_responses_enabled
+
+        if adaptive_performance_responses_enabled(request.user):
+            return JsonResponse(
+                {
+                    "ok": False,
+                    "error": "The analysis could not be completed. Your conversation and filters were preserved.",
+                    "error_code": "adaptive_analysis_failed",
+                    "retryable": True,
+                    "technical_error": str(exc) if _user_is_platform_admin(request.user) else "",
+                },
+                status=500,
+            )
+        # The legacy pipeline remains available only when adaptive responses
+        # are explicitly disabled as a rollback strategy.
 
     intent = extract_intent(question, section_code)
     valid, validation_errors = validate_intent(intent)
@@ -3452,6 +3723,33 @@ def ai_ask(request):
 
 
 IA_RESOURCE_TYPES = {
+    "response-templates": {
+        "model": AIResponseTemplate,
+        "global_resource": True,
+        "search_fields": ["code", "name", "description", "domain", "primary_component"],
+        "serializer": lambda item: {
+            "id": item.id, "code": item.code, "name": item.name,
+            "description": item.description, "domain": item.domain,
+            "primary_component": item.primary_component,
+            "component_order_json": item.component_order_json,
+            "required_data_fields_json": item.required_data_fields_json,
+            "fallback_template_code": item.fallback_template_code,
+            "version": item.version, "validation_status": item.validation_status,
+            "active": item.active,
+        },
+    },
+    "intent-template-mappings": {
+        "model": AIIntentResponseTemplateMapping,
+        "global_resource": True,
+        "search_fields": ["domain", "intent_type", "scope_type", "metric_code", "response_template__code"],
+        "serializer": lambda item: {
+            "id": item.id, "domain": item.domain, "intent_type": item.intent_type,
+            "scope_type": item.scope_type, "metric_code": item.metric_code,
+            "response_template": item.response_template.code,
+            "priority": item.priority, "validation_status": item.validation_status,
+            "active": item.active,
+        },
+    },
     "question-examples": {
         "model": AIQuestionExample,
         "serializer": lambda item: {
@@ -3718,7 +4016,7 @@ def _ia_get_section_or_404(section_code: str) -> AIConfigSection:
 
 def _ia_resource_queryset(section: AIConfigSection | None, resource_type: str):
     model = IA_RESOURCE_TYPES[resource_type]["model"]
-    if IA_RESOURCE_TYPES[resource_type].get("admin_only"):
+    if IA_RESOURCE_TYPES[resource_type].get("admin_only") or IA_RESOURCE_TYPES[resource_type].get("global_resource"):
         return model.objects.all()
     return model.objects.filter(section=section)
 
@@ -3765,6 +4063,44 @@ def _ia_json_object(payload: dict, item, field: str) -> dict:
 
 
 def _ia_apply_resource_payload(resource_type: str, item, payload: dict, section: AIConfigSection):
+    if resource_type == "response-templates":
+        item.code = _ia_text(payload, item, "code")
+        item.name = _ia_text(payload, item, "name")
+        item.description = _ia_text(payload, item, "description")
+        item.domain = _ia_text(payload, item, "domain", "machine_performance")
+        item.primary_component = _ia_text(payload, item, "primary_component", "generic_result")
+        for field in ("component_order_json", "required_data_fields_json"):
+            value = payload.get(field, getattr(item, field, []) or [])
+            if isinstance(value, str):
+                try:
+                    value = json.loads(value) if value.strip() else []
+                except Exception as exc:
+                    raise ValueError(f"{field} must be valid JSON.") from exc
+            if not isinstance(value, list):
+                raise ValueError(f"{field} must be a JSON array.")
+            setattr(item, field, value)
+        item.fallback_template_code = _ia_text(payload, item, "fallback_template_code")
+        item.version = _ia_text(payload, item, "version", "1.0")
+        item.validation_status = _ia_text(payload, item, "validation_status", "To Review")
+        item.active = _ia_normalize_bool(payload.get("active"), item.active)
+        if not item.code or not item.name or not item.component_order_json:
+            raise ValueError("Code, name and component order are required.")
+        return item
+
+    if resource_type == "intent-template-mappings":
+        item.domain = _ia_text(payload, item, "domain", "machine_performance")
+        item.intent_type = _ia_text(payload, item, "intent_type")
+        item.scope_type = _ia_text(payload, item, "scope_type")
+        item.metric_code = _ia_text(payload, item, "metric_code")
+        template_code = str(payload.get("response_template") or getattr(getattr(item, "response_template", None), "code", "")).strip()
+        item.response_template = get_object_or_404(AIResponseTemplate, code=template_code)
+        item.priority = _ia_int(payload, item, "priority")
+        item.validation_status = _ia_text(payload, item, "validation_status", "To Review")
+        item.active = _ia_normalize_bool(payload.get("active"), item.active)
+        if not item.intent_type or not template_code:
+            raise ValueError("Intent type and response template are required.")
+        return item
+
     if resource_type == "question-examples":
         item.question_text = str(payload.get("question_text", item.question_text or "")).strip()
         item.language = str(payload.get("language", item.language or "fr")).strip() or "fr"
@@ -4001,9 +4337,9 @@ def ia_config_collection_api(request, section_code, resource_type):
     if resource_type not in IA_RESOURCE_TYPES:
         return _json_error("Unsupported IA Config resource type.", status=404)
     config = IA_RESOURCE_TYPES[resource_type]
-    if config.get("admin_only") and not (request.user.is_staff or request.user.is_superuser):
+    if (config.get("admin_only") or config.get("global_resource")) and not (request.user.is_staff or request.user.is_superuser):
         return _json_error("Administrator access required.", status=403)
-    section = None if config.get("admin_only") else _ia_get_section_or_404(section_code)
+    section = None if (config.get("admin_only") or config.get("global_resource")) else _ia_get_section_or_404(section_code)
     model = IA_RESOURCE_TYPES[resource_type]["model"]
     serializer = IA_RESOURCE_TYPES[resource_type]["serializer"]
     queryset = _ia_resource_queryset(section, resource_type)
@@ -4059,7 +4395,7 @@ def ia_config_collection_api(request, section_code, resource_type):
         return _json_error("This resource is read-only.", status=405)
     payload = _ia_payload(request)
     try:
-        item = model(section=section)
+        item = model() if config.get("global_resource") else model(section=section)
         item = _ia_apply_resource_payload(resource_type, item, payload, section)
         item.save()
     except Exception as exc:
@@ -4072,12 +4408,12 @@ def ia_config_item_api(request, section_code, resource_type, item_id):
     if resource_type not in IA_RESOURCE_TYPES:
         return _json_error("Unsupported IA Config resource type.", status=404)
     config = IA_RESOURCE_TYPES[resource_type]
-    if config.get("admin_only") and not (request.user.is_staff or request.user.is_superuser):
+    if (config.get("admin_only") or config.get("global_resource")) and not (request.user.is_staff or request.user.is_superuser):
         return _json_error("Administrator access required.", status=403)
-    section = None if config.get("admin_only") else _ia_get_section_or_404(section_code)
+    section = None if (config.get("admin_only") or config.get("global_resource")) else _ia_get_section_or_404(section_code)
     model = config["model"]
     serializer = config["serializer"]
-    item = get_object_or_404(model, id=item_id) if config.get("admin_only") else get_object_or_404(model, section=section, id=item_id)
+    item = get_object_or_404(model, id=item_id) if (config.get("admin_only") or config.get("global_resource")) else get_object_or_404(model, section=section, id=item_id)
 
     if request.method == "DELETE":
         if config.get("admin_only"):
@@ -6172,6 +6508,26 @@ def system_integration_verify_api(request, integration_id):
     }, status=200 if connected else 400)
 
 
+@require_http_methods(["POST"])
+def system_active_directory_sync_api(request, integration_id):
+    if not _user_is_platform_admin(request.user):
+        return _json_error("Administrator access is required.", status=403)
+    item = get_object_or_404(SystemIntegrationConfig, pk=integration_id, integration_type="Active Directory", is_active=True)
+    run = synchronize_directory(item, user=request.user)
+    payload = {
+        "id": run.pk,
+        "status": run.status,
+        "discovered_users": run.discovered_users,
+        "created_users": run.created_users,
+        "updated_users": run.updated_users,
+        "disabled_users": run.disabled_users,
+        "skipped_users": run.skipped_users,
+        "failed_users": run.failed_users,
+        "error": run.error_message,
+    }
+    return JsonResponse({"ok": run.status in {"Completed", "Partially Completed"}, "run": payload, "message": f"AD synchronization {run.status.lower()}: {run.created_users} created, {run.updated_users} updated, {run.failed_users} failed."}, status=200 if run.status != "Failed" else 400)
+
+
 def _parameter_payload(item):
     return {
         "id": item.pk,
@@ -6783,15 +7139,21 @@ def business_performance_import_model_api(request):
 def report_detail(request, report_id):
     report = None
     reports = []
-    embed_token = None
     error = None
     selected_role = request.GET.get("role") or "Global"
+    configured_report = None
 
     try:
         workspace_reports = list_workspace_reports()
         report = get_workspace_report(str(report_id), workspace_reports)
         reports = _visible_reporting_reports(workspace_reports)
-        embed_token = generate_report_embed_token(report, [selected_role])
+        report = next(
+            (item for item in reports if str(getattr(item, "id", "")) == str(report_id)),
+            report,
+        )
+        configured_report = PowerBIReport.objects.filter(report_id=str(report_id), is_active=True).first()
+        if not configured_report:
+            raise RuntimeError("This report has not been configured for Mining 360 embedding.")
     except Exception as exc:
         error = str(exc)
 
@@ -6801,7 +7163,8 @@ def report_detail(request, report_id):
         {
             "report": report,
             "reports": reports,
-            "embed_token": embed_token,
+            "configured_report": configured_report,
+            "embed_config_url": reverse("powerbi-interaction-embed-config", args=[report_id]),
             "error": error,
             "workspace_name": "Efficience Mine Workspace",
             "active_section": "reporting",

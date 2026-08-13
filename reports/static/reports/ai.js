@@ -580,27 +580,90 @@
         return (message.artifacts || []).find((item) => item.artifact_type === "response_snapshot") || null;
     }
 
+    function responseTemplateCode(payload) {
+        return payload?.presentation?.template_code
+            || payload?.response_envelope?.presentation?.template_code
+            || (payload?.availability_diagnostics?.total_downtime_hours !== undefined
+                ? "legacy_availability_response"
+                : "generic_analytical");
+    }
+
+    function adaptiveContextMarkup(intent, language) {
+        return Object.entries(intent?.filters || {})
+            .filter(([, value]) => value !== null && value !== "" && (!Array.isArray(value) || value.length))
+            .map(([key, value]) => `<span class="ai-analysis-chip"><small>${escapeHtml(contextLabel(key, language))}</small><strong>${escapeHtml(displayFilterValue(key, value, language))}</strong></span>`)
+            .join("");
+    }
+
+    function analyticalRowsTable(rows, templateCode) {
+        const values = Array.isArray(rows) ? rows : [];
+        if (!values.length) return '<p class="ai-analytical-empty">No data returned for this analytical scope.</p>';
+        const columns = [...new Set(values.flatMap((row) => Object.keys(row || {})))].slice(0, 8);
+        return `<div class="ai-adaptive-table-wrap"><table class="ai-adaptive-table"><thead><tr>${templateCode === "ranking" ? "<th>Rank</th>" : ""}${columns.map((key) => `<th>${escapeHtml(key.replaceAll("_", " "))}</th>`).join("")}</tr></thead><tbody>${values.slice(0, 50).map((row, index) => `<tr>${templateCode === "ranking" ? `<td>${index + 1}</td>` : ""}${columns.map((key) => `<td>${escapeHtml(row[key] ?? "-")}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+    }
+
+    function renderAdaptivePrimary(host, payload, intent, language) {
+        const value = availabilityValue(payload.rows);
+        const metric = intent.primary_metric || intent.metric || payload.metric || "KPI";
+        const row = Array.isArray(payload.rows) ? payload.rows[0] : null;
+        const rawValue = value === null && row ? Object.values(row).find((item) => Number.isFinite(Number(item))) : null;
+        const displayValue = value !== null ? `${localNumber(value, language)}%` : (rawValue ?? "N/A");
+        host.innerHTML = `<section class="ai-adaptive-response ai-adaptive-response--kpi"><div class="ai-analytical-result-card"><div><span>${escapeHtml(String(metric).replaceAll("_", " "))}</span><strong>${escapeHtml(displayValue)}</strong></div></div><div class="ai-analysis-context__chips">${adaptiveContextMarkup(intent, language)}</div></section>`;
+    }
+
+    function renderAdaptiveDiagnostics(host, payload, intent, language, options) {
+        const diagnostics = payload.downtime_diagnostics || payload.availability_diagnostics || {};
+        const drivers = Array.isArray(diagnostics.drivers) ? diagnostics.drivers : [];
+        const events = drivers.reduce((total, item) => total + Number(item.event_count || 0), 0);
+        const equipment = drivers.reduce((total, item) => Math.max(total, Number(item.affected_equipment || 0)), 0);
+        host.innerHTML = `<section class="ai-adaptive-response"><div class="ai-analysis-context__chips">${adaptiveContextMarkup(intent, language)}</div><div class="ai-secondary-metrics"><article><span>Total Downtime</span><strong>${localNumber(diagnostics.total_downtime_hours || 0, language)} h</strong></article><article><span>Event Count</span><strong>${localNumber(events, language, 0)}</strong></article><article><span>Affected Equipment</span><strong>${localNumber(equipment, language, 0)}</strong></article></div><section class="ai-key-takeaway"><strong>${responseTemplateCode(payload) === "root_cause_analysis" ? "Diagnostic findings" : "Key takeaway"}</strong><p>${drivers.length ? `${drivers.slice(0, 3).map((item) => item.driver).join(", ")} are the leading contributors in this scope.` : "No downtime drivers were returned."}</p></section><div data-adaptive-drivers></div></section>`;
+        renderDriversTable(host.querySelector("[data-adaptive-drivers]"), diagnostics, options);
+    }
+
+    function renderAdaptiveRows(host, payload, intent, language, templateCode) {
+        const titles = {
+            performance_overview: "Performance overview", equipment_detail: "Equipment detail",
+            entity_comparison: "Entity comparison", period_comparison: "Period comparison",
+            trend_analysis: "Trend analysis", ranking: "Ranking", affected_equipment: "Affected equipment",
+            downtime_events: "Downtime events", repeated_failures: "Repeated failures",
+            comment_analysis: "Comment analysis", smcs_breakdown: "SMCS breakdown",
+            generic_analytical: "Analytical result",
+        };
+        host.innerHTML = `<section class="ai-adaptive-response ai-adaptive-response--wide"><header><strong>${escapeHtml(titles[templateCode] || "Analytical result")}</strong></header><div class="ai-analysis-context__chips">${adaptiveContextMarkup(intent, language)}</div>${analyticalRowsTable(payload.rows, templateCode)}</section>`;
+    }
+
+    const adaptiveResponseRenderers = {
+        single_kpi: renderAdaptivePrimary,
+        downtime_drivers: renderAdaptiveDiagnostics,
+        root_cause_analysis: renderAdaptiveDiagnostics,
+        performance_overview: renderAdaptiveRows,
+        equipment_detail: renderAdaptiveRows,
+        entity_comparison: renderAdaptiveRows,
+        period_comparison: renderAdaptiveRows,
+        trend_analysis: renderAdaptiveRows,
+        ranking: renderAdaptiveRows,
+        affected_equipment: renderAdaptiveRows,
+        downtime_events: renderAdaptiveRows,
+        repeated_failures: renderAdaptiveRows,
+        comment_analysis: renderAdaptiveRows,
+        smcs_breakdown: renderAdaptiveRows,
+        generic_analytical: renderAdaptiveRows,
+    };
+
     function renderMessageArtifacts(root, state, message, host) {
         const snapshotArtifact = responseSnapshotForMessage(message);
         const payload = snapshotArtifact?.payload;
-        const diagnostics = payload?.availability_diagnostics;
-        if (!payload || diagnostics?.total_downtime_hours === undefined) return;
+        if (!payload) return;
 
         const intent = payload.intent || payload.semantic_request || {};
         const question = state.conversationHistory.find((item) => item.id === message.parent_message_id)?.content || "";
         const language = detectedLanguage(question);
         host.classList.add("ai-message-analytical-result");
-        const overview = document.createElement("div");
-        const drivers = document.createElement("div");
+        host.replaceChildren();
+        const content = document.createElement("div");
         const secondary = document.createElement("div");
         secondary.className = "ai-message-artifact-actions";
-        host.append(overview, drivers, secondary);
-        renderAvailabilityOverview(overview, diagnostics, {
-            intent,
-            rows: payload.rows,
-            language,
-            resourceKnowledge: payload.resource_knowledge,
-        });
+        host.append(content, secondary);
 
         let expanded = false;
         const openDriver = async (driver) => {
@@ -630,19 +693,50 @@
                 source_artifact_id: snapshotArtifact.id,
             });
         };
-        const drawDrivers = () => renderDriversTable(drivers, diagnostics, {
+        const diagnosticsOptions = {
             language,
             expanded,
             onSelectDriver: openDriver,
-            onToggleExpanded: (value) => { expanded = value; drawDrivers(); },
+            onToggleExpanded: (value) => {
+                expanded = value;
+                renderAdaptiveDiagnostics(content, payload, intent, language, { ...diagnosticsOptions, expanded });
+            },
             onShowPareto: () => {
                 const pareto = document.createElement("div");
                 pareto.className = "ai-inline-historical-pareto";
-                drivers.after(pareto);
-                renderDowntimeDiagnostics(pareto, diagnostics, { intent, onSelectDriver: openDriver });
+                content.after(pareto);
+                renderDowntimeDiagnostics(pareto, payload.downtime_diagnostics || payload.availability_diagnostics, { intent, onSelectDriver: openDriver });
             },
+        };
+        const templateCode = responseTemplateCode(payload);
+        if (templateCode === "legacy_availability_response") {
+            const overview = document.createElement("div");
+            const drivers = document.createElement("div");
+            content.append(overview, drivers);
+            renderAvailabilityOverview(overview, payload.availability_diagnostics, { intent, rows: payload.rows, language, resourceKnowledge: payload.resource_knowledge });
+            renderDriversTable(drivers, payload.availability_diagnostics, diagnosticsOptions);
+        } else if (templateCode === "powerbi_navigation") {
+            content.innerHTML = '<section class="ai-adaptive-response"><strong>Power BI view ready</strong><p>Open the saved report context to continue.</p></section>';
+        } else {
+            const renderer = adaptiveResponseRenderers[templateCode] || adaptiveResponseRenderers.generic_analytical;
+            renderer(content, payload, intent, language, templateCode === "downtime_drivers" || templateCode === "root_cause_analysis" ? diagnosticsOptions : templateCode);
+        }
+
+        const actions = payload.actions || payload.response_envelope?.actions || [];
+        actions.filter((action) => action.code !== "open_powerbi").forEach((action) => {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "ai-text-action";
+            button.textContent = action.label || String(action.code || "").replaceAll("_", " ");
+            button.addEventListener("click", () => {
+                const input = document.getElementById("ai-question");
+                if (!input) return;
+                input.value = button.textContent;
+                input.dispatchEvent(new Event("input", { bubbles: true }));
+                input.focus();
+            });
+            secondary.appendChild(button);
         });
-        drawDrivers();
 
         if (payload.navigation?.report_id) {
             const powerbi = document.createElement("button");
@@ -1098,6 +1192,13 @@
             status.textContent = (navigation.warnings || []).join(" ") || "Report synchronized.";
         } catch (error) {
             status.textContent = error.message || "The Power BI report could not be loaded.";
+            if (error.authenticationRequired && error.connectUrl) {
+                const connect = document.createElement("a");
+                connect.className = "button secondary ai-powerbi-connect";
+                connect.href = error.connectUrl;
+                connect.textContent = "Connect corporate account";
+                status.append(document.createTextNode(" "), connect);
+            }
         }
     }
 

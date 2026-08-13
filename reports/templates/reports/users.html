@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Users | Mining360IA</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260812-3">
 </head>
 <body>
     {% include "reports/includes/app_nav.html" %}
@@ -33,11 +33,11 @@
                 <div class="section-heading">
                     <div>
                         <p class="eyebrow">Active Directory</p>
-                        <h2>Search person</h2>
+                        <h2>Search company directory</h2>
                     </div>
                 </div>
                 <form method="get" class="user-search-form">
-                    <input type="search" name="q" value="{{ query }}" placeholder="Name, email, or UPN" autocomplete="off">
+                    <input type="search" name="q" value="{{ query }}" placeholder="Name, Windows account, email, or UPN" autocomplete="off">
                     <button class="button" type="submit">Search</button>
                 </form>
                 {% if search_error %}
@@ -55,32 +55,35 @@
                             <input type="hidden" name="user_principal_name" value="{{ person.userPrincipalName }}">
                             <input type="hidden" name="email" value="{{ person.primary_email }}">
                             <input type="hidden" name="job_title" value="{{ person.jobTitle }}">
-                            <div>
+                            <input type="hidden" name="directory_source" value="{{ person.source }}">
+                            <input type="hidden" name="directory_username" value="{{ person.directory_username }}">
+                            <div class="directory-person__identity">
                                 <strong>{{ person.displayName|default:person.userPrincipalName }}</strong>
-                                <span>{{ person.userPrincipalName }}</span>
+                                <span>{{ person.account_name|default:person.userPrincipalName }}</span>
+                                {% if person.account_name != person.userPrincipalName %}<small>{{ person.userPrincipalName }}</small>{% endif %}
                                 {% if person.jobTitle %}<small>{{ person.jobTitle }}</small>{% endif %}
                             </div>
-                            <label class="inline-check">
-                                <input type="checkbox" name="is_platform_admin">
-                                Admin
-                            </label>
                             <div class="role-checks compact">
-                                <label><input type="checkbox" name="can_access_reporting"> Reporting</label>
-                                <label><input type="checkbox" name="can_access_ai"> IA</label>
-                                <label><input type="checkbox" name="can_access_data"> Data</label>
-                                <label><input type="checkbox" name="can_access_sources"> Data Source</label>
-                                <label>Business Performance
+                                <label class="role-toggle"><input type="checkbox" name="is_platform_admin"> Admin</label>
+                                <label class="role-toggle"><input type="checkbox" name="can_access_reporting"> Reporting</label>
+                                <label class="role-toggle"><input type="checkbox" name="can_access_ai"> IA</label>
+                                <label class="role-toggle"><input type="checkbox" name="can_access_data"> Data</label>
+                                <label class="role-toggle"><input type="checkbox" name="can_access_sources"> Data Source</label>
+                                <label class="role-field">Business Performance
                                     <select name="business_performance_role">
                                         <option value="">No access</option>
                                         <option>Executive</option><option>Business Manager</option><option>Country Manager</option>
                                         <option>Account Manager</option><option>Viewer</option><option>Administrator</option>
                                     </select>
                                 </label>
-                                <label>BP countries<input name="bp_scope_countries" placeholder="Mali, Guinea"></label>
-                                <label>BP customers<input name="bp_scope_customers" placeholder="Fekola, SNIM"></label>
-                                <label>Power BI RLS role<input name="bp_rls_role" placeholder="Optional"></label>
+                                <label class="role-field">BP countries<input name="bp_scope_countries" placeholder="Mali, Guinea"></label>
+                                <label class="role-field">BP customers<input name="bp_scope_customers" placeholder="Fekola, SNIM"></label>
+                                <label class="role-field">Power BI RLS role<input name="bp_rls_role" placeholder="Optional"></label>
                             </div>
-                            <button class="button secondary" type="submit">Add</button>
+                            <button class="button directory-person__submit" type="submit">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                                Add user
+                            </button>
                         </form>
                     {% empty %}
                         {% if query %}
@@ -121,6 +124,7 @@
                                             <label><input type="checkbox" name="can_access_ai" {% if user_item.can_access_ai %}checked{% endif %}> IA</label>
                                             <label><input type="checkbox" name="can_access_data" {% if user_item.can_access_data %}checked{% endif %}> Data</label>
                                             <label><input type="checkbox" name="can_access_sources" {% if user_item.can_access_sources %}checked{% endif %}> Data Source</label>
+                                            {% if user_item.auth_source == "active_directory" %}<label title="When enabled, the next AD synchronization may replace the manually selected module roles."><input type="checkbox" name="directory_roles_managed" {% if user_item.directory_roles_managed %}checked{% endif %}> Roles managed by AD groups</label>{% endif %}
                                             <label>Business Performance
                                                 <select name="business_performance_role">
                                                     <option value="">No access</option>
@@ -132,8 +136,9 @@
                                             <label>BP countries<input name="bp_scope_countries" value="{% if user_item.business_performance_scope.country %}{{ user_item.business_performance_scope.country|join:', ' }}{% endif %}" placeholder="Mali, Guinea"></label>
                                             <label>BP customers<input name="bp_scope_customers" value="{% if user_item.business_performance_scope.customer %}{{ user_item.business_performance_scope.customer|join:', ' }}{% endif %}" placeholder="Fekola, SNIM"></label>
                                             <label>Power BI RLS role<input name="bp_rls_role" value="{{ user_item.business_performance_scope.rls_role|default:'' }}" placeholder="Optional"></label>
-                                            <button class="button icon-only secondary" type="submit" title="Save roles" aria-label="Save roles">
+                                            <button class="button secondary user-role-save" type="submit" title="Save roles">
                                                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8"/><path d="M7 3v5h8"/></svg>
+                                                Save roles
                                             </button>
                                         </form>
                                     </td>

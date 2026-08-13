@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from functools import lru_cache
 from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from zoneinfo import ZoneInfo
 
 import requests
@@ -145,6 +146,18 @@ class PowerBIReport:
     report_type: str
     last_refresh: str = ""
     refresh_status: str = ""
+
+
+def secure_report_embed_url(report: "PowerBIReport") -> str:
+    if not report.embed_url:
+        return ""
+    parts = urlsplit(report.embed_url)
+    query = dict(parse_qsl(parts.query, keep_blank_values=True))
+    query["autoAuth"] = "true"
+    tenant_id = env_value("POWERBI_TENANT_ID", DEFAULT_TENANT_ID)
+    if tenant_id:
+        query["ctid"] = tenant_id
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(query), parts.fragment))
 
 
 def _local_powerbi_credentials() -> dict:
@@ -877,12 +890,18 @@ def generate_report_embed_token(report: PowerBIReport, selected_roles: list[str]
     ]
     if not dataset_ids:
         dataset_ids = [report.dataset_id]
-        for hinted_id in get_report_hint_dataset_ids(token, workspace_id, report.name):
-            if hinted_id not in dataset_ids:
-                dataset_ids.append(hinted_id)
-        for linked_id in get_linked_powerbi_dataset_ids(token, workspace_id, report.dataset_id):
-            if linked_id not in dataset_ids:
-                dataset_ids.append(linked_id)
+    elif report.dataset_id not in dataset_ids:
+        dataset_ids.insert(0, report.dataset_id)
+
+    # A saved report connection is only a cache of known dependencies. Composite
+    # and proxy models can acquire or change their core model after that file was
+    # generated, so live dependencies must always be merged before token creation.
+    for hinted_id in get_report_hint_dataset_ids(token, workspace_id, report.name):
+        if hinted_id not in dataset_ids:
+            dataset_ids.append(hinted_id)
+    for linked_id in get_linked_powerbi_dataset_ids(token, workspace_id, report.dataset_id):
+        if linked_id not in dataset_ids:
+            dataset_ids.append(linked_id)
 
     payload = {
         "reports": [{"id": report.id}],

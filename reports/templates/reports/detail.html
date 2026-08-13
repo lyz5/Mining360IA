@@ -77,15 +77,27 @@
                 </div>
                 <p id="filter-status" class="filter-status" aria-live="polite"></p>
             </section>
-            {% if report.embed_url and embed_token %}
+            {% if report.embed_url and configured_report %}
                 <section class="report-frame-wrap">
                     <div
                         id="powerbi-report"
                         class="report-frame"
                         data-report-id="{{ report.id }}"
-                        data-embed-url="{{ report.embed_url }}"
-                        data-embed-token="{{ embed_token }}">
+                        data-embed-config-url="{{ embed_config_url }}">
                     </div>
+                </section>
+                <section id="powerbi-connect-panel" class="alert" hidden role="status">
+                    <strong>Corporate Microsoft account required</strong>
+                    <p id="powerbi-connect-message">This report contains an interactive Power Apps form and requires your corporate Microsoft account.</p>
+                    <a id="powerbi-connect-action" class="button" href="#">Connect corporate account</a>
+                </section>
+                <p id="powerbi-connected-user" class="filter-status" hidden></p>
+                <section id="report-runtime-error" class="alert" hidden role="alert">
+                    <strong>The report could not be displayed</strong>
+                    <p id="report-runtime-error-message">Power BI returned an unexpected rendering error.</p>
+                    {% if report.web_url %}
+                        <a class="button secondary" href="{{ report.web_url }}" target="_blank" rel="noreferrer">Open in Power BI</a>
+                    {% endif %}
                 </section>
             {% else %}
                 <section class="alert">
@@ -106,8 +118,8 @@
         <div id="slicer-diagnostics-content" class="diagnostics-content"></div>
     </aside>
     <div id="diagnostics-backdrop" class="diagnostics-backdrop" hidden></div>
-    {% if report.embed_url and embed_token %}
-        <script src="https://cdn.jsdelivr.net/npm/powerbi-client@2.23.7/dist/powerbi.min.js"></script>
+    {% if report.embed_url and configured_report %}
+        <script src="{% static 'reports/vendor/powerbi-client-2.23.7.min.js' %}"></script>
         <script>
             const reportSelect = document.getElementById("report-select");
             const rlsRoleSelect = document.getElementById("rls-role-select");
@@ -137,23 +149,107 @@
             }
 
             const container = document.getElementById("powerbi-report");
+            const runtimeError = document.getElementById("report-runtime-error");
+            const runtimeErrorMessage = document.getElementById("report-runtime-error-message");
+            const connectPanel = document.getElementById("powerbi-connect-panel");
+            const connectMessage = document.getElementById("powerbi-connect-message");
+            const connectAction = document.getElementById("powerbi-connect-action");
+            const connectedUser = document.getElementById("powerbi-connected-user");
+
+            function showRuntimeError(message) {
+                const safeMessage = String(message || "Power BI returned an unexpected rendering error.");
+                if (runtimeErrorMessage) runtimeErrorMessage.textContent = safeMessage;
+                if (runtimeError) runtimeError.hidden = false;
+                if (container) container.setAttribute("aria-hidden", "true");
+            }
+
+            function showConnectPanel(payload) {
+                if (connectMessage) connectMessage.textContent = payload.error || "Connect your corporate Microsoft account to continue.";
+                if (connectAction) connectAction.href = payload.connect_url || "#";
+                if (connectPanel) connectPanel.hidden = false;
+                if (container) container.hidden = true;
+            }
+
+            if (!window.powerbi || !window["powerbi-client"]) {
+                showRuntimeError("The local Power BI client library could not be loaded. Contact the Mining 360 administrator.");
+                throw new Error("Power BI JavaScript API is unavailable.");
+            }
             const models = window["powerbi-client"].models;
-            const config = {
-                type: "report",
-                tokenType: models.TokenType.Embed,
-                accessToken: container.dataset.embedToken,
-                embedUrl: container.dataset.embedUrl,
-                id: container.dataset.reportId,
-                permissions: models.Permissions.Read,
-                settings: {
-                    panes: {
-                        filters: { visible: false },
-                        pageNavigation: { visible: true }
-                    },
-                    background: models.BackgroundType.Default
+            let embeddedReport = null;
+            let tokenRefreshTimer = null;
+
+            async function requestEmbedConfig() {
+                const url = new URL(container.dataset.embedConfigUrl, window.location.origin);
+                if (rlsRoleSelect && rlsRoleSelect.value) url.searchParams.set("role", rlsRoleSelect.value);
+                const response = await fetch(url, { credentials: "same-origin" });
+                const payload = await response.json();
+                if (!response.ok || !payload.ok) {
+                    if (payload.authentication_required) {
+                        showConnectPanel(payload);
+                        return null;
+                    }
+                    throw new Error(payload.error || "Power BI embed configuration is unavailable.");
                 }
-            };
-            const embeddedReport = powerbi.embed(container, config);
+                return payload.config;
+            }
+
+            async function refreshAccessToken() {
+                try {
+                    const refreshed = await requestEmbedConfig();
+                    if (!refreshed || !embeddedReport) return null;
+                    await embeddedReport.setAccessToken(refreshed.accessToken);
+                    scheduleTokenRefresh(refreshed);
+                    return refreshed.accessToken;
+                } catch (error) {
+                    showRuntimeError(error.message);
+                    return null;
+                }
+            }
+
+            function scheduleTokenRefresh(config) {
+                window.clearTimeout(tokenRefreshTimer);
+                if (!config.expiresAt) return;
+                const delay = Math.max(30000, (Number(config.expiresAt) * 1000) - Date.now() - 5 * 60 * 1000);
+                tokenRefreshTimer = window.setTimeout(refreshAccessToken, delay);
+            }
+
+            async function initializeReport() {
+                try {
+                    const serverConfig = await requestEmbedConfig();
+                    if (!serverConfig) return;
+                    const isAad = String(serverConfig.tokenType).toLowerCase() === "aad";
+                    const config = Object.assign({}, serverConfig, {
+                        tokenType: isAad ? models.TokenType.Aad : models.TokenType.Embed,
+                        permissions: models.Permissions.Read,
+                        settings: Object.assign({
+                            panes: { filters: { visible: false }, pageNavigation: { visible: true } },
+                            background: models.BackgroundType.Default
+                        }, serverConfig.settings || {})
+                    });
+                    if (isAad) {
+                        config.eventHooks = { accessTokenProvider: async () => refreshAccessToken() };
+                    }
+                    if (connectPanel) connectPanel.hidden = true;
+                    container.hidden = false;
+                    embeddedReport = powerbi.embed(container, config);
+                    embeddedReport.on("error", function (event) {
+                        const detail = event && event.detail ? event.detail : {};
+                        showRuntimeError(detail.message || "Power BI could not render this report.");
+                    });
+                    embeddedReport.on("rendered", function () {
+                        if (runtimeError) runtimeError.hidden = true;
+                        container.removeAttribute("aria-hidden");
+                    });
+                    if (serverConfig.user && serverConfig.user.upn && connectedUser) {
+                        connectedUser.textContent = `Connected as: ${serverConfig.user.upn}`;
+                        connectedUser.hidden = false;
+                    }
+                    scheduleTokenRefresh(serverConfig);
+                } catch (error) {
+                    showRuntimeError(error.message);
+                }
+            }
+            initializeReport();
             const filterStatus = document.getElementById("filter-status");
             const applyDateFilter = document.getElementById("apply-date-filter");
             const resetReportFilters = document.getElementById("reset-report-filters");

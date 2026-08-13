@@ -20,7 +20,14 @@
             const url = this.options.embedConfigUrl.replace("__REPORT_ID__", encodeURIComponent(reportId));
             const response = await fetch(url, { credentials: "same-origin" });
             const payload = await response.json();
-            if (!response.ok || !payload.ok) throw new Error(payload.error || "Embed configuration unavailable.");
+            if (!response.ok || !payload.ok) {
+                const error = new Error(payload.error || "Embed configuration unavailable.");
+                error.code = payload.error_code || "embed_configuration_failed";
+                error.authenticationRequired = Boolean(payload.authentication_required);
+                error.connectUrl = payload.connect_url || "";
+                error.authenticationMode = payload.authentication_mode || "";
+                throw error;
+            }
             return payload.config;
         }
 
@@ -28,9 +35,23 @@
             if (!window.powerbi || !window["powerbi-client"]) throw new Error("Power BI JavaScript API is unavailable.");
             const models = window["powerbi-client"].models;
             const config = await this.requestConfig(reportId);
-            config.tokenType = models.TokenType.Embed;
+            const isAad = String(config.tokenType || "").toLowerCase() === "aad";
+            config.tokenType = isAad ? models.TokenType.Aad : models.TokenType.Embed;
             config.permissions = models.Permissions.Read;
             config.settings = Object.assign({ panes: { filters: { visible: false }, pageNavigation: { visible: false } } }, config.settings || {});
+            if (isAad) {
+                config.eventHooks = Object.assign({}, config.eventHooks || {}, {
+                    accessTokenProvider: async () => {
+                        try {
+                            const refreshed = await this.requestConfig(reportId);
+                            return refreshed.accessToken || null;
+                        } catch (error) {
+                            this.emit("token_refresh_failed", { message: error.message, code: error.code || "" });
+                            return null;
+                        }
+                    },
+                });
+            }
             window.powerbi.reset(this.container);
             this.report = window.powerbi.embed(this.container, config);
             await new Promise((resolve, reject) => {
@@ -48,22 +69,30 @@
                     reject(new Error(details.message || "Power BI reported an error."));
                 });
             });
-            this.scheduleTokenRefresh(reportId);
+            this.scheduleTokenRefresh(reportId, config.expiresAt);
             return this.report;
         }
 
-        scheduleTokenRefresh(reportId) {
+        scheduleTokenRefresh(reportId, expiresAt) {
             window.clearTimeout(this.refreshTimer);
+            const delay = expiresAt
+                ? Math.max(30000, (Number(expiresAt) * 1000) - Date.now() - (5 * 60 * 1000))
+                : 45 * 60 * 1000;
             this.refreshTimer = window.setTimeout(async () => {
                 try {
                     const config = await this.requestConfig(reportId);
                     await this.report.setAccessToken(config.accessToken);
                     this.emit("token_refreshed", { reportId });
-                    this.scheduleTokenRefresh(reportId);
+                    this.scheduleTokenRefresh(reportId, config.expiresAt);
                 } catch (error) {
-                    this.emit("token_refresh_failed", { message: error.message });
+                    this.emit("token_refresh_failed", {
+                        message: error.message,
+                        code: error.code || "",
+                        authenticationRequired: Boolean(error.authenticationRequired),
+                        connectUrl: error.connectUrl || "",
+                    });
                 }
-            }, 45 * 60 * 1000);
+            }, delay);
         }
 
         async getPages() {

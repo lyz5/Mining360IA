@@ -164,10 +164,11 @@
                 <p>${escapeHtml(item.description || item.provider || "No description")}</p>
                 <dl><div><dt>Provider</dt><dd>${escapeHtml(item.provider || "Not set")}</dd></div><div><dt>Secrets</dt><dd>${item.configured_secret_keys.length ? `${item.configured_secret_keys.length} configured` : "None"}</dd></div><div><dt>Last test</dt><dd>${escapeHtml(item.last_verified_at ? new Date(item.last_verified_at).toLocaleString() : "Never")}</dd></div></dl>
                 ${item.last_message ? `<p class="system-connection-message">${escapeHtml(item.last_message)}</p>` : ""}
-                <div class="system-card-actions"><button type="button" class="button secondary js-edit" data-id="${item.id}">Edit</button><button type="button" class="button secondary js-test" data-id="${item.id}">Test</button><button type="button" class="button tertiary js-deactivate" data-id="${item.id}">${item.is_active ? "Deactivate" : "Disabled"}</button></div>
+                <div class="system-card-actions"><button type="button" class="button secondary js-edit" data-id="${item.id}">Edit</button><button type="button" class="button secondary js-test" data-id="${item.id}">Test</button>${item.integration_type === "Active Directory" ? `<button type="button" class="button js-ad-sync" data-id="${item.id}" ${item.status === "Connected" ? "" : "disabled"}>Sync users</button>` : ""}<button type="button" class="button tertiary js-deactivate" data-id="${item.id}">${item.is_active ? "Deactivate" : "Disabled"}</button></div>
             </article>`).join("") || '<div class="empty">No connections found.</div>'}</div>`;
         content.querySelectorAll(".js-edit").forEach((button) => button.addEventListener("click", () => openIntegrationForm(state.items.find((item) => String(item.id) === button.dataset.id))));
         content.querySelectorAll(".js-test").forEach((button) => button.addEventListener("click", () => verifyIntegration(button)));
+        content.querySelectorAll(".js-ad-sync").forEach((button) => button.addEventListener("click", () => synchronizeActiveDirectory(button)));
         content.querySelectorAll(".js-deactivate").forEach((button) => button.addEventListener("click", () => deactivateIntegration(button)));
     }
 
@@ -240,11 +241,14 @@
 
     function fieldHtml(field, value) {
         const required = field.required ? "required" : "";
-        if (field.type === "boolean") return `<label class="inline-check stacked"><input name="${field.key}" type="checkbox" ${value ? "checked" : ""}> ${escapeHtml(field.label)}</label>`;
-        if (field.type === "select") return `<label>${escapeHtml(field.label)}<select name="${field.key}" ${required}>${(field.options || []).map((option) => `<option value="${escapeHtml(option)}" ${String(value ?? field.default ?? "") === String(option) ? "selected" : ""}>${escapeHtml(option)}</option>`).join("")}</select></label>`;
-        if (field.type === "json") return `<label class="full-width">${escapeHtml(field.label)}<textarea name="${field.key}" rows="5">${escapeHtml(value && typeof value === "object" ? JSON.stringify(value, null, 2) : value || "{}")}</textarea></label>`;
-        const placeholder = field.secret && value === "********" ? "Configured - enter a value only to replace it" : "";
-        return `<label>${escapeHtml(field.label)}${field.secret && value === "********" ? '<small class="field-secret-note">Secret is configured</small>' : ""}<input name="${field.key}" type="${field.type === "url" ? "url" : field.type}" value="${field.secret ? "" : escapeHtml(value ?? field.default ?? "")}" placeholder="${escapeHtml(placeholder)}" ${required && value !== "********" ? "required" : ""}></label>`;
+        const badges = `<span class="field-statuses"><span class="field-status ${field.required ? "is-required" : "is-optional"}">${field.required ? "Required" : "Optional"}</span>${Object.prototype.hasOwnProperty.call(field, "default") ? '<span class="field-status is-prefilled">Prefilled</span>' : ""}</span>`;
+        const heading = `<span class="field-label-row"><span>${escapeHtml(field.label)}</span>${badges}</span>`;
+        const help = field.help ? `<small class="field-help">${escapeHtml(field.help)}</small>` : "";
+        if (field.type === "boolean") return `<label class="inline-check stacked system-config-check"><span class="field-label-row"><span><input name="${field.key}" type="checkbox" ${value ?? field.default ? "checked" : ""}> ${escapeHtml(field.label)}</span>${badges}</span>${help}</label>`;
+        if (field.type === "select") return `<label>${heading}<select name="${field.key}" ${required}>${(field.options || []).map((option) => `<option value="${escapeHtml(option)}" ${String(value ?? field.default ?? "") === String(option) ? "selected" : ""}>${escapeHtml(option)}</option>`).join("")}</select>${help}</label>`;
+        if (field.type === "json") return `<label class="full-width">${heading}<textarea name="${field.key}" rows="5">${escapeHtml(value && typeof value === "object" ? JSON.stringify(value, null, 2) : value || "{}")}</textarea>${help}</label>`;
+        const placeholder = field.secret && value === "********" ? "Configured - enter a value only to replace it" : (field.placeholder || "");
+        return `<label>${heading}${field.secret && value === "********" ? '<small class="field-secret-note">Secret is configured</small>' : ""}<input name="${field.key}" type="${field.type === "url" ? "url" : field.type}" value="${field.secret ? "" : escapeHtml(value ?? field.default ?? "")}" placeholder="${escapeHtml(placeholder)}" ${required && value !== "********" ? "required" : ""}>${help}</label>`;
     }
 
     function integrationBaseFields(item) {
@@ -254,7 +258,16 @@
     function renderIntegrationFields(item, type) {
         const schema = state.schemas.find((candidate) => candidate.type === type) || {fields: []};
         const settings = item?.settings || {};
-        formFields.innerHTML = integrationBaseFields(item) + schema.fields.map((field) => fieldHtml(field, settings[field.key])).join("");
+        let previousGroup = "";
+        const connectionFields = schema.fields.map((field) => {
+            const group = field.group || "";
+            const divider = group && group !== previousGroup ? `<div class="full-width system-form-divider system-field-group"><span>${escapeHtml(group)}</span></div>` : "";
+            previousGroup = group;
+            return divider + fieldHtml(field, settings[field.key]);
+        }).join("");
+        const legend = `<div class="full-width field-status-legend"><span><strong>Required</strong> must be supplied</span><span><strong>Optional</strong> may be left empty</span><span><strong>Prefilled</strong> has a safe default to verify</span></div>`;
+        const adChecklist = type === "Active Directory" ? `<div class="full-width ad-live-checklist"><strong>Live test order</strong><span>1. Save with AD authentication disabled</span><span>2. Test the encrypted connection and authorized group</span><span>3. Sync users</span><span>4. Validate one standard account, then enable AD authentication</span></div>` : "";
+        formFields.innerHTML = integrationBaseFields(item) + legend + adChecklist + connectionFields;
         form.querySelector("[name=integration_type]")?.addEventListener("change", (event) => renderIntegrationFields(null, event.target.value));
     }
 
@@ -303,6 +316,16 @@
         const original = button.textContent; button.disabled = true; button.textContent = "Testing...";
         try { const payload = await fetchJson(`/system-config/api/integrations/${button.dataset.id}/verify/`, {method: "POST", headers: {"X-CSRFToken": csrfToken()}}); showMessage(payload.message || "Connection successful.", false); }
         catch (error) { showMessage(error.message, true); }
+        finally { button.disabled = false; button.textContent = original; await loadIntegrations(); }
+    }
+
+    async function synchronizeActiveDirectory(button) {
+        if (!confirm("Synchronize authorized Active Directory users and groups now?")) return;
+        const original = button.textContent; button.disabled = true; button.textContent = "Synchronizing...";
+        try {
+            const payload = await fetchJson(`/system-config/api/integrations/${button.dataset.id}/sync-active-directory/`, {method: "POST", headers: {"X-CSRFToken": csrfToken()}});
+            showMessage(payload.message || "Active Directory synchronization completed.", false);
+        } catch (error) { showMessage(error.message, true); }
         finally { button.disabled = false; button.textContent = original; await loadIntegrations(); }
     }
 

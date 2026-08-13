@@ -14,7 +14,9 @@ $errLog = Join-Path $logDirectory "development-$runId.err.log"
 New-Item -ItemType Directory -Path $logDirectory -Force | Out-Null
 $env:MINING360_DEBUG = "1"
 $env:MINING360_ALLOWED_HOSTS = "127.0.0.1,localhost,$HostName"
-$env:MINING360_CSRF_TRUSTED_ORIGINS = "http://$HostName"
+$env:MINING360_CSRF_TRUSTED_ORIGINS = "http://$HostName,https://$HostName"
+$env:MINING360_USE_X_FORWARDED_HOST = "1"
+$env:AZURE_AD_REDIRECT_URI = "https://$HostName/auth/callback/"
 $env:MINING360_SQL_CONFIG_STORE = "0"
 $env:PYTHONUNBUFFERED = "1"
 

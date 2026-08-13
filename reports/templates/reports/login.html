@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sign in | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260812-5">
+    {% if active_directory_enabled %}<script src="{% static 'reports/windows_login.js' %}?v=20260812-2" defer></script>{% endif %}
 </head>
 <body class="login-body">
     <main class="login-shell">
@@ -20,7 +21,7 @@
 
             <div class="login-panel-head">
                 <h1>Welcome back</h1>
-                <p class="login-copy">Sign in with your Mining360 account or Microsoft identity.</p>
+                <p class="login-copy">{% if active_directory_enabled %}Sign in with your corporate Windows account.{% else %}Sign in with your Mining360 account or Microsoft identity.{% endif %}</p>
             </div>
 
             {% if messages %}
@@ -31,11 +32,48 @@
                 </div>
             {% endif %}
 
+            {% if active_directory_enabled %}
+            <div class="windows-login" data-windows-login data-server-username="{{ windows_username_hint|default:'' }}">
+                <button class="button login-button windows-login__start" type="button" data-windows-start aria-expanded="false" aria-controls="windows-credentials">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4.5 11 3.4v8.1H3V4.5Zm9.2-1.3L21 2v9.5h-8.8V3.2ZM3 12.7h8v8.1l-8-1.1v-7Zm9.2 0H21V22l-8.8-1.2v-8.1Z"/></svg>
+                    Sign in with Windows
+                </button>
+                <form method="post" class="local-login-form windows-login__credentials" id="windows-credentials" data-windows-form hidden>
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}">
+                    <div class="windows-account" data-windows-account-summary hidden>
+                        <span class="windows-account__icon" aria-hidden="true">W</span>
+                        <span><strong data-windows-account-name></strong><small>Corporate Windows account</small></span>
+                        <button type="button" class="windows-account__change" data-windows-change>Change</button>
+                    </div>
+                    <label data-windows-username-field>
+                        <span>Windows username</span>
+                        <input type="text" name="username" value="{{ username|default:'' }}" placeholder="NEEMBA\username" autocomplete="username" required>
+                    </label>
+                    <label>
+                        <span>Password</span>
+                        <span class="password-field">
+                            <input type="password" name="password" autocomplete="current-password" required>
+                            <button type="button" class="password-toggle" data-password-toggle aria-label="Show password" aria-pressed="false" title="Show password">
+                                <svg class="password-toggle__show" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+                                <svg class="password-toggle__hide" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 3 18 18"/><path d="M10.6 6.2A11 11 0 0 1 12 6c6.5 0 10 6 10 6a17 17 0 0 1-2 2.7M6.7 6.7C3.6 8.5 2 12 2 12s3.5 6 10 6a10.7 10.7 0 0 0 4.1-.8M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+                            </button>
+                        </span>
+                    </label>
+                    <label class="keep-signed-in">
+                        <input type="checkbox" name="keep_signed_in" {% if keep_signed_in %}checked{% endif %}>
+                        <span><strong>Keep me signed in on this device</strong><small>Stay connected to Mining 360 for 14 days. Do not use on a shared computer.</small></span>
+                    </label>
+                    <button class="button login-button" type="submit">Continue</button>
+                    <p class="windows-login__privacy">Your Windows password is verified by Active Directory and is never stored by Mining 360.</p>
+                </form>
+            </div>
+            {% else %}
             <form method="post" class="local-login-form">
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ next }}">
                 <label>
-                    <span>User</span>
+                    <span>{% if active_directory_enabled %}Windows username or corporate email{% else %}User{% endif %}</span>
                     <input type="text" name="username" value="{{ username|default:'' }}" autocomplete="username" required autofocus>
                 </label>
                 <label>
@@ -44,7 +82,9 @@
                 </label>
                 <button class="button login-button" type="submit">Continue</button>
             </form>
+            {% endif %}
 
+            {% if not active_directory_enabled %}
             <div class="login-divider">
                 <span>or</span>
             </div>
@@ -52,6 +92,7 @@
             <a class="button secondary login-button" href="{% url 'auth-start' %}{% if next %}?next={{ next|urlencode }}{% endif %}">
                 Continue with Microsoft
             </a>
+            {% endif %}
         </section>
     </main>
 </body>

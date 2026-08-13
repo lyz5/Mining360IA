@@ -4,6 +4,10 @@ from datetime import date
 import re
 
 from .ai_config_service import build_section_catalog, get_active_sections, get_section_by_code
+from .machine_performance_intent_service import (
+    detect_machine_performance_intent,
+    enrich_machine_performance_intent,
+)
 from .openai_service import extract_intent as openai_extract_intent
 
 
@@ -60,6 +64,11 @@ def _detect_metric(question_text: str, section_code: str) -> str | None:
         return None
     section = catalog[0]
     candidates = section.get("metrics", [])
+    if section_code == "performance" and any(token in text for token in ("downtime", "down time", "arrêt", "arret")) and any(
+        token in text for token in ("hour", "hours", "heure", "heures", "nombre d heure", "nombre d'heures")
+    ):
+        if any(item.get("metric_code") == "downtime_hours" for item in candidates):
+            return "downtime_hours"
     metric_tokens = []
     for metric in candidates:
         metric_tokens.append((metric.get("metric_code", ""), metric.get("metric_label", "")))
@@ -197,19 +206,7 @@ def _extract_value(question_text: str, entity_type: str) -> str | None:
 
 
 def _detect_intent_type(question_text: str) -> str:
-    text = _normalize(question_text)
-    if any(token in text for token in ("compare", "comparison", "versus", " vs ", "comparaison", "comparez")):
-        return "comparison"
-    if any(token in text for token in ("trend", "tendance", "evolution", "évolution", "monthly", "mensuel", "par mois")):
-        return "trend"
-    if any(token in text for token in (
-        "highest", "lowest", "top ", "bottom ", "ranking", "classement",
-        "meilleur", "plus faible", "plus élevé", "plus eleve",
-        "by model", "par modèle", "par modele", "all models", "tous les modèles",
-        "tous les modeles",
-    )):
-        return "ranking"
-    return "single_kpi"
+    return detect_machine_performance_intent(question_text)
 
 
 def _ranking_payload(question_text: str) -> dict | None:
@@ -219,6 +216,8 @@ def _ranking_payload(question_text: str) -> dict | None:
     dimension = "model"
     if any(token in text for token in ("site", "minesite", "mine site")):
         dimension = "minesite"
+    elif any(token in text for token in ("machine", "equipment", "serial", "équipement", "equipement")):
+        dimension = "serial_number"
     top_match = re.search(r"\b(?:top|bottom)\s+(\d{1,2})\b", text)
     return {
         "dimension": dimension,
@@ -242,9 +241,7 @@ def _build_fallback_intent(question_text: str, section_code: str | None = None) 
         period_value = _extract_period(question_text)
         if period_value:
             filters["period"] = period_value
-    if section == "performance" and not metric and any(filters.get(key) for key in ("minesite", "model", "family", "serial_number", "period", "customer")):
-        metric = "availability"
-    return {
+    intent = {
         "section": section,
         "intent_type": _detect_intent_type(question_text),
         "metric": metric,
@@ -252,6 +249,7 @@ def _build_fallback_intent(question_text: str, section_code: str | None = None) 
         "comparison": _ranking_payload(question_text),
         "navigation": {"open_report": True, "open_page": True, "focus_visual": True},
     }
+    return enrich_machine_performance_intent(intent, question_text) if section == "performance" else intent
 
 
 def extract_intent(question_text: str, section_code: str | None = None) -> dict:
@@ -260,7 +258,7 @@ def extract_intent(question_text: str, section_code: str | None = None) -> dict:
     # templates. Avoid a slow and less deterministic LLM extraction when the
     # business intent is already resolved locally.
     if fallback.get("metric") == "availability":
-        return fallback
+        return enrich_machine_performance_intent(fallback, question_text)
     try:
         extracted = openai_extract_intent(question_text, section_code or fallback["section"])
         if extracted.get("section"):
@@ -291,4 +289,4 @@ def extract_intent(question_text: str, section_code: str | None = None) -> dict:
     }
     if fallback.get("metric") == "physical_availability":
         fallback["metric"] = "availability"
-    return fallback
+    return enrich_machine_performance_intent(fallback, question_text) if fallback.get("section") == "performance" else fallback

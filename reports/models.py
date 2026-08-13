@@ -1,5 +1,6 @@
 import uuid
 
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import Q
 from django.contrib.auth.models import Group, User
@@ -37,6 +38,7 @@ class PlatformUser(models.Model):
     ]
 
     azure_ad_id = models.CharField(max_length=128, unique=True)
+    entra_tenant_id = models.CharField(max_length=128, blank=True)
     user_principal_name = models.EmailField(unique=True)
     email = models.EmailField(blank=True)
     display_name = models.CharField(max_length=255)
@@ -63,6 +65,20 @@ class PlatformUser(models.Model):
     django_user = models.OneToOneField(User, null=True, blank=True, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    last_entra_authenticated_at = models.DateTimeField(null=True, blank=True)
+    AUTH_SOURCES = [
+        ("local", "Local"),
+        ("microsoft_entra", "Microsoft Entra"),
+        ("active_directory", "Active Directory"),
+    ]
+    auth_source = models.CharField(max_length=30, choices=AUTH_SOURCES, default="local", db_index=True)
+    directory_object_id = models.CharField(max_length=255, blank=True, db_index=True)
+    directory_username = models.CharField(max_length=255, blank=True, db_index=True)
+    directory_distinguished_name = models.TextField(blank=True)
+    directory_groups_json = models.JSONField(default=list, blank=True)
+    directory_roles_managed = models.BooleanField(default=True)
+    last_directory_sync_at = models.DateTimeField(null=True, blank=True)
+    last_directory_authenticated_at = models.DateTimeField(null=True, blank=True)
 
     class Meta:
         ordering = ["display_name", "user_principal_name"]
@@ -76,6 +92,70 @@ class PlatformUser(models.Model):
         if self.is_platform_admin:
             return True
         return bool(getattr(self, f"can_access_{module_code}", False))
+
+
+class ActiveDirectorySyncRun(models.Model):
+    STATUSES = [(value, value) for value in ("Running", "Completed", "Partially Completed", "Failed")]
+
+    integration = models.ForeignKey("SystemIntegrationConfig", null=True, blank=True, on_delete=models.SET_NULL)
+    created_by = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    status = models.CharField(max_length=30, choices=STATUSES, default="Running", db_index=True)
+    discovered_users = models.PositiveIntegerField(default=0)
+    created_users = models.PositiveIntegerField(default=0)
+    updated_users = models.PositiveIntegerField(default=0)
+    disabled_users = models.PositiveIntegerField(default=0)
+    skipped_users = models.PositiveIntegerField(default=0)
+    failed_users = models.PositiveIntegerField(default=0)
+    error_message = models.TextField(blank=True)
+    started_at = models.DateTimeField(auto_now_add=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["-started_at"]
+        db_table = "ActiveDirectorySyncRun"
+        permissions = [("synchronize_active_directory", "Can synchronize Active Directory")]
+
+
+class ActiveDirectoryAuthenticationAuditLog(models.Model):
+    STATUSES = [("success", "Success"), ("failed", "Failed"), ("blocked", "Blocked")]
+
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    username = models.CharField(max_length=255, blank=True, db_index=True)
+    status = models.CharField(max_length=20, choices=STATUSES, db_index=True)
+    reason_code = models.CharField(max_length=80, blank=True, db_index=True)
+    source_ip = models.GenericIPAddressField(null=True, blank=True)
+    user_agent = models.CharField(max_length=500, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "ActiveDirectoryAuthenticationAuditLog"
+
+
+class UserAccessAuditLog(models.Model):
+    ACTIONS = [
+        ("user_added", "User added"),
+        ("access_changed", "Access changed"),
+        ("user_enabled", "User enabled"),
+        ("user_disabled", "User disabled"),
+    ]
+
+    platform_user = models.ForeignKey(
+        PlatformUser, on_delete=models.CASCADE, related_name="access_audit_logs"
+    )
+    actor = models.ForeignKey(
+        User, null=True, blank=True, on_delete=models.SET_NULL, related_name="user_access_changes"
+    )
+    action = models.CharField(max_length=40, choices=ACTIONS, db_index=True)
+    before_json = models.JSONField(default=dict, blank=True)
+    after_json = models.JSONField(default=dict, blank=True)
+    metadata_json = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "UserAccessAuditLog"
+        permissions = [("view_user_access_audit", "Can view user access audit history")]
 
 
 class DataBrowser(models.Model):
@@ -498,6 +578,80 @@ class AIDaxTemplate(models.Model):
         return f"{self.section.code} - {self.template_code}"
 
 
+class AIResponseTemplate(models.Model):
+    VALIDATION_STATUSES = [
+        ("Draft", "Draft"),
+        ("To Review", "To Review"),
+        ("Validated", "Validated"),
+        ("Rejected", "Rejected"),
+    ]
+
+    code = models.SlugField(max_length=120, unique=True)
+    name = models.CharField(max_length=180)
+    description = models.TextField(blank=True)
+    domain = models.CharField(max_length=80, default="machine_performance", db_index=True)
+    supported_intent_types = models.JSONField(default=list, blank=True)
+    supported_scope_types = models.JSONField(default=list, blank=True)
+    primary_component = models.CharField(max_length=120, default="generic_result")
+    component_order_json = models.JSONField(default=list, blank=True)
+    required_data_fields_json = models.JSONField(default=list, blank=True)
+    optional_data_fields_json = models.JSONField(default=list, blank=True)
+    fallback_template_code = models.CharField(max_length=120, blank=True)
+    active = models.BooleanField(default=True)
+    validation_status = models.CharField(
+        max_length=30,
+        choices=VALIDATION_STATUSES,
+        default="To Review",
+    )
+    version = models.CharField(max_length=30, default="1.0")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["domain", "name", "code"]
+        db_table = "ai_response_template"
+
+    def __str__(self) -> str:
+        return f"{self.domain} - {self.code}"
+
+
+class AIIntentResponseTemplateMapping(models.Model):
+    VALIDATION_STATUSES = AIResponseTemplate.VALIDATION_STATUSES
+
+    domain = models.CharField(max_length=80, default="machine_performance", db_index=True)
+    intent_type = models.CharField(max_length=100, db_index=True)
+    scope_type = models.CharField(max_length=100, blank=True, db_index=True)
+    metric_code = models.CharField(max_length=120, blank=True, db_index=True)
+    response_template = models.ForeignKey(
+        AIResponseTemplate,
+        related_name="intent_mappings",
+        on_delete=models.PROTECT,
+    )
+    priority = models.PositiveIntegerField(default=100)
+    active = models.BooleanField(default=True)
+    validation_status = models.CharField(
+        max_length=30,
+        choices=VALIDATION_STATUSES,
+        default="To Review",
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-priority", "domain", "intent_type", "scope_type", "metric_code"]
+        db_table = "ai_intent_response_template_mapping"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["domain", "intent_type", "scope_type", "metric_code", "response_template"],
+                name="unique_ai_intent_response_template_mapping",
+            ),
+        ]
+
+    def __str__(self) -> str:
+        scope = self.scope_type or "any scope"
+        return f"{self.intent_type} / {scope} -> {self.response_template.code}"
+
+
 class AISemanticTable(models.Model):
     VALIDATION_STATUSES = [
         ("Draft", "Draft"),
@@ -745,6 +899,11 @@ POWERBI_VALIDATION_STATUSES = [
 
 
 class PowerBIReport(models.Model):
+    AUTHENTICATION_MODES = [
+        ("app_owns_data", "App owns data"),
+        ("user_owns_data", "User owns data"),
+    ]
+
     section = models.ForeignKey(AIConfigSection, related_name="interaction_reports", on_delete=models.CASCADE)
     workspace_id = models.CharField(max_length=128)
     report_id = models.CharField(max_length=128, unique=True)
@@ -753,6 +912,18 @@ class PowerBIReport(models.Model):
     semantic_model_id = models.CharField(max_length=128, blank=True)
     embed_url = models.TextField(blank=True)
     description = models.TextField(blank=True)
+    authentication_mode = models.CharField(
+        max_length=30,
+        choices=AUTHENTICATION_MODES,
+        default="app_owns_data",
+    )
+    contains_powerapps_visual = models.BooleanField(default=False)
+    requires_user_identity = models.BooleanField(default=False)
+    allow_service_principal_metadata_access = models.BooleanField(default=True)
+    required_entra_tenant_id = models.CharField(max_length=128, blank=True)
+    powerapps_app_name = models.CharField(max_length=255, blank=True)
+    powerapps_environment = models.CharField(max_length=255, blank=True)
+    access_instructions = models.TextField(blank=True)
     is_default = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     imported_at = models.DateTimeField(null=True, blank=True)
@@ -767,6 +938,58 @@ class PowerBIReport(models.Model):
 
     def __str__(self) -> str:
         return self.display_name
+
+    def clean(self):
+        super().clean()
+        if self.requires_user_identity and self.authentication_mode != "user_owns_data":
+            raise ValidationError({
+                "authentication_mode": "Reports requiring a user identity must use User owns data."
+            })
+        if self.contains_powerapps_visual and self.authentication_mode != "user_owns_data":
+            raise ValidationError({
+                "authentication_mode": "Power Apps visuals require User owns data embedding."
+            })
+
+
+class PowerBIAuthenticationAuditLog(models.Model):
+    EVENT_TYPES = [
+        ("connect_started", "Connect started"),
+        ("connect_succeeded", "Connect succeeded"),
+        ("connect_failed", "Connect failed"),
+        ("token_refreshed", "Token refreshed"),
+        ("embed_requested", "Embed requested"),
+        ("embed_denied", "Embed denied"),
+        ("disconnected", "Disconnected"),
+    ]
+
+    user = models.ForeignKey(
+        User,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="powerbi_authentication_events",
+    )
+    report = models.ForeignKey(
+        PowerBIReport,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="authentication_events",
+    )
+    event_type = models.CharField(max_length=40, choices=EVENT_TYPES)
+    status = models.CharField(max_length=30, default="success")
+    error_code = models.CharField(max_length=120, blank=True)
+    message = models.TextField(blank=True)
+    metadata_json = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "PowerBIAuthenticationAuditLog"
+        indexes = [
+            models.Index(fields=["user", "created_at"], name="pbi_auth_user_time_idx"),
+            models.Index(fields=["report", "created_at"], name="pbi_auth_report_time_idx"),
+        ]
 
 
 class ReportingReportPreference(models.Model):
@@ -3646,6 +3869,7 @@ class SystemIntegrationConfig(models.Model):
         ("Data Source", "Data Source"),
         ("Storage", "Storage"),
         ("Authentication", "Authentication"),
+        ("Active Directory", "Active Directory"),
         ("Notification", "Notification"),
         ("Other", "Other"),
     ]
@@ -3826,3 +4050,205 @@ class BusinessPerformanceQueryLog(models.Model):
 
     def __str__(self) -> str:
         return f"{self.page} - {self.status}"
+
+
+class DescriptionCATReference(models.Model):
+    VALIDATION_STATUSES = [(value, value) for value in ("Draft", "To Review", "Validated", "Rejected", "Deprecated")]
+
+    code = models.SlugField(max_length=140, unique=True)
+    name = models.CharField(max_length=255, unique=True)
+    display_name = models.CharField(max_length=255)
+    definition = models.TextField(blank=True)
+    category = models.CharField(max_length=120, blank=True)
+    parent_category = models.ForeignKey("self", null=True, blank=True, related_name="children", on_delete=models.SET_NULL)
+    classification_type = models.CharField(max_length=80, default="technical")
+    examples_json = models.JSONField(default=list, blank=True)
+    keywords_json = models.JSONField(default=list, blank=True)
+    synonyms_json = models.JSONField(default=list, blank=True)
+    exclusion_terms_json = models.JSONField(default=list, blank=True)
+    applicable_work_types_json = models.JSONField(default=list, blank=True)
+    applicable_families_json = models.JSONField(default=list, blank=True)
+    applicable_models_json = models.JSONField(default=list, blank=True)
+    active = models.BooleanField(default=True, db_index=True)
+    validation_status = models.CharField(max_length=20, choices=VALIDATION_STATUSES, default="To Review", db_index=True)
+    version = models.CharField(max_length=40, default="1.0")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["display_name"]
+        db_table = "DescriptionCATReference"
+        permissions = [("manage_description_cat_reference", "Can manage Description CAT reference")]
+
+    def __str__(self):
+        return self.display_name
+
+
+class DescriptionCATClassificationRule(models.Model):
+    VALIDATION_STATUSES = DescriptionCATReference.VALIDATION_STATUSES
+
+    rule_code = models.SlugField(max_length=140, unique=True)
+    name = models.CharField(max_length=255)
+    condition_json = models.JSONField(default=dict, blank=True)
+    priority = models.PositiveIntegerField(default=100)
+    expected_description_cat = models.ForeignKey(DescriptionCATReference, related_name="classification_rules", on_delete=models.PROTECT)
+    explanation = models.TextField(blank=True)
+    active = models.BooleanField(default=True)
+    validation_status = models.CharField(max_length=20, choices=VALIDATION_STATUSES, default="To Review")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["priority", "name"]
+        db_table = "DescriptionCATClassificationRule"
+
+
+class GenericDowntimeCommentRule(models.Model):
+    MATCH_TYPES = [(value, value) for value in ("Exact", "Contains", "Regex")]
+
+    expression = models.CharField(max_length=500)
+    language = models.CharField(max_length=10, default="all")
+    match_type = models.CharField(max_length=20, choices=MATCH_TYPES, default="Exact")
+    active = models.BooleanField(default=True)
+    validation_status = models.CharField(max_length=20, choices=DescriptionCATReference.VALIDATION_STATUSES, default="Validated")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["expression"]
+        db_table = "GenericDowntimeCommentRule"
+
+
+class DowntimeMappingCheckRun(models.Model):
+    STATUSES = [(value, value) for value in (
+        "Draft", "Previewed", "Queued", "Running", "Partially Completed", "Completed", "Failed", "Cancelled",
+    )]
+    MODES = [("full", "Full AI Audit"), ("smart", "Smart Audit")]
+    PROCESSING_METHODS = [("standard", "Real-time / standard"), ("batch", "Provider batch")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    created_by = models.ForeignKey(User, null=True, related_name="downtime_mapping_runs", on_delete=models.SET_NULL)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    filters_json = models.JSONField(default=dict, blank=True)
+    execution_mode = models.CharField(max_length=20, choices=MODES, default="full")
+    provider = models.CharField(max_length=100, blank=True)
+    model_name = models.CharField(max_length=180, blank=True)
+    processing_method = models.CharField(max_length=20, choices=PROCESSING_METHODS, default="standard")
+    taxonomy_version = models.CharField(max_length=40, default="1.0")
+    mapping_rule_version = models.CharField(max_length=40, default="1.0")
+    prompt_version = models.CharField(max_length=80, default="DOWNTIME_DESCRIPTION_CAT_CLASSIFICATION_V1")
+    total_rows = models.PositiveIntegerField(default=0)
+    cached_rows = models.PositiveIntegerField(default=0)
+    ai_rows = models.PositiveIntegerField(default=0)
+    processed_rows = models.PositiveIntegerField(default=0)
+    verified_rows = models.PositiveIntegerField(default=0)
+    likely_correct_rows = models.PositiveIntegerField(default=0)
+    mismatch_rows = models.PositiveIntegerField(default=0)
+    ambiguous_rows = models.PositiveIntegerField(default=0)
+    insufficient_evidence_rows = models.PositiveIntegerField(default=0)
+    unmapped_rows = models.PositiveIntegerField(default=0)
+    taxonomy_gap_rows = models.PositiveIntegerField(default=0)
+    failed_rows = models.PositiveIntegerField(default=0)
+    estimated_tokens = models.PositiveBigIntegerField(default=0)
+    actual_input_tokens = models.PositiveBigIntegerField(default=0)
+    actual_output_tokens = models.PositiveBigIntegerField(default=0)
+    estimated_cost = models.DecimalField(max_digits=18, decimal_places=8, default=0)
+    actual_cost = models.DecimalField(max_digits=18, decimal_places=8, default=0)
+    comment_coverage = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    status = models.CharField(max_length=30, choices=STATUSES, default="Draft", db_index=True)
+    error_message = models.TextField(blank=True)
+    cancellation_requested = models.BooleanField(default=False)
+    started_at = models.DateTimeField(null=True, blank=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "DowntimeMappingCheckRun"
+        permissions = [
+            ("view_downtime_mapping_checks", "Can view downtime mapping checks"),
+            ("create_downtime_mapping_check", "Can create downtime mapping checks"),
+            ("cancel_downtime_mapping_check", "Can cancel downtime mapping checks"),
+            ("view_downtime_mapping_costs", "Can view downtime mapping costs"),
+            ("export_downtime_mapping_results", "Can export downtime mapping results"),
+        ]
+
+
+class DowntimeMappingCheckItem(models.Model):
+    MAPPING_STATUSES = [(value, value) for value in (
+        "VERIFIED", "LIKELY_CORRECT", "MISMATCH", "AMBIGUOUS", "INSUFFICIENT_EVIDENCE", "UNMAPPED", "TAXONOMY_GAP", "AI_ERROR",
+    )]
+    REVIEW_STATUSES = [(value, value) for value in ("Unreviewed", "Approved Current", "Approved Recommendation", "Alternative Selected", "Rejected", "Ambiguous", "Insufficient Evidence")]
+
+    run = models.ForeignKey(DowntimeMappingCheckRun, related_name="items", on_delete=models.CASCADE)
+    downtime_event_id = models.CharField(max_length=120)
+    source_system = models.CharField(max_length=120, default="MiningProd")
+    minesite = models.CharField(max_length=255, blank=True)
+    customer = models.CharField(max_length=255, blank=True)
+    model = models.CharField(max_length=120, blank=True)
+    family = models.CharField(max_length=255, blank=True)
+    serial_number = models.CharField(max_length=120, blank=True)
+    event_start = models.DateTimeField(null=True, blank=True)
+    event_end = models.DateTimeField(null=True, blank=True)
+    downtime_hours = models.DecimalField(max_digits=18, decimal_places=4, null=True, blank=True)
+    labour_type = models.CharField(max_length=500, blank=True)
+    current_description_cat = models.CharField(max_length=500, blank=True)
+    comment_snapshot = models.TextField(blank=True)
+    sanitized_comment = models.TextField(blank=True)
+    sanitization_status = models.CharField(max_length=30, default="unchanged")
+    component_snapshot = models.CharField(max_length=500, blank=True)
+    cause_snapshot = models.CharField(max_length=500, blank=True)
+    work_type_snapshot = models.CharField(max_length=255, blank=True)
+    down_type_snapshot = models.CharField(max_length=255, blank=True)
+    comment_quality = models.CharField(max_length=30, default="Empty", db_index=True)
+    recommended_description_cat = models.ForeignKey(DescriptionCATReference, null=True, blank=True, related_name="check_items", on_delete=models.SET_NULL)
+    mapping_status = models.CharField(max_length=30, choices=MAPPING_STATUSES, db_index=True)
+    confidence = models.PositiveSmallIntegerField(default=0)
+    reason = models.TextField(blank=True)
+    evidence_phrases_json = models.JSONField(default=list, blank=True)
+    detected_information_json = models.JSONField(default=dict, blank=True)
+    alternative_candidates_json = models.JSONField(default=list, blank=True)
+    candidate_list_json = models.JSONField(default=list, blank=True)
+    requires_review = models.BooleanField(default=False, db_index=True)
+    review_status = models.CharField(max_length=30, choices=REVIEW_STATUSES, default="Unreviewed", db_index=True)
+    reviewed_by = models.ForeignKey(User, null=True, blank=True, related_name="reviewed_downtime_mappings", on_delete=models.SET_NULL)
+    reviewed_at = models.DateTimeField(null=True, blank=True)
+    review_notes = models.TextField(blank=True)
+    approved_description_cat = models.ForeignKey(DescriptionCATReference, null=True, blank=True, related_name="approved_check_items", on_delete=models.SET_NULL)
+    applied = models.BooleanField(default=False)
+    classification_signature = models.CharField(max_length=64, db_index=True)
+    comparison_signature = models.CharField(max_length=64, db_index=True)
+    request_id = models.CharField(max_length=255, blank=True)
+    classification_payload_json = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-confidence", "downtime_event_id"]
+        db_table = "DowntimeMappingCheckItem"
+        constraints = [models.UniqueConstraint(fields=["run", "downtime_event_id"], name="unique_mapping_check_event")]
+        indexes = [models.Index(fields=["run", "mapping_status"], name="mapping_run_status_idx")]
+        permissions = [
+            ("review_downtime_mapping", "Can review downtime mapping results"),
+            ("apply_downtime_mapping_corrections", "Can apply approved downtime mapping corrections"),
+        ]
+
+
+class DowntimeMappingReviewDecision(models.Model):
+    DECISIONS = [(value, value) for value in (
+        "Approve Current", "Approve AI Recommendation", "Select Another Description CAT", "Mark Ambiguous", "Mark Insufficient Evidence", "Reject AI Result",
+    )]
+
+    check_item = models.ForeignKey(DowntimeMappingCheckItem, related_name="review_decisions", on_delete=models.CASCADE)
+    original_current_description_cat = models.CharField(max_length=500, blank=True)
+    ai_recommended_description_cat = models.CharField(max_length=500, blank=True)
+    reviewer_selected_description_cat = models.ForeignKey(DescriptionCATReference, null=True, blank=True, on_delete=models.SET_NULL)
+    decision = models.CharField(max_length=60, choices=DECISIONS)
+    notes = models.TextField(blank=True)
+    reviewer = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "DowntimeMappingReviewDecision"
