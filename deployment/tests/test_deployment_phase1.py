@@ -302,3 +302,6 @@ class DeploymentFrontendContractTests(SimpleTestCase):
         ).read_text(encoding="utf-8")
 
         self.assertIn("'X-Forwarded-Proto' = 'https'", script)
+        self.assertIn("function Stop-Mining360Runtime", script)
+        self.assertIn("Get-NetTCPConnection -LocalPort 8000", script)
+        self.assertIn("Stop-Process -Id $listener.OwningProcess", script)

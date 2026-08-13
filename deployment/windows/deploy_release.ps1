@@ -53,8 +53,26 @@ function Start-Mining360Runtime {
     if ($LASTEXITCODE -ne 0) { throw "Unable to start $runtimeTask." }
 }
 
-function Wait-Mining360Health([int]$Seconds = 90) {
+function Stop-Mining360Runtime {
+    & schtasks.exe /End /TN $runtimeTask *>> $log
+    Start-Sleep -Seconds 2
+    $deadline = (Get-Date).AddSeconds(30)
+    do {
+        $listeners = @(Get-NetTCPConnection -LocalPort 8000 -State Listen -ErrorAction SilentlyContinue)
+        foreach ($listener in $listeners) {
+            Stop-Process -Id $listener.OwningProcess -Force -ErrorAction SilentlyContinue
+        }
+        if (-not $listeners) { return }
+        Start-Sleep -Seconds 1
+    } while ((Get-Date) -lt $deadline)
+    if (Get-NetTCPConnection -LocalPort 8000 -State Listen -ErrorAction SilentlyContinue) {
+        throw 'Waitress did not release port 8000 after the runtime task stopped.'
+    }
+}
+
+function Wait-Mining360Health([int]$Seconds = 120) {
     $deadline = (Get-Date).AddSeconds($Seconds)
+    $lastError = 'No response received.'
     do {
         Start-Sleep -Seconds 3
         try {
@@ -67,8 +85,12 @@ function Wait-Mining360Health([int]$Seconds = 90) {
                 -Headers @{ 'X-Forwarded-Proto' = 'https' } `
                 -TimeoutSec 5
             if ($health.status -eq 'ok' -and $health.database -eq 'ok') { return $true }
-        } catch { }
+            $lastError = "Unexpected health payload: $($health | ConvertTo-Json -Compress)"
+        } catch {
+            $lastError = $_.Exception.Message
+        }
     } while ((Get-Date) -lt $deadline)
+    Write-DeploymentLog "Health check timeout: $lastError"
     return $false
 }
 
@@ -111,8 +133,7 @@ try {
             throw 'sqlcmd is required to create the pre-deployment database backup.'
         }
 
-        & schtasks.exe /End /TN $runtimeTask *>> $log
-        Start-Sleep -Seconds 3
+        Stop-Mining360Runtime
         $runtimeStopped = $true
         Invoke-Native 'Database migrations' { & $python manage.py migrate --noinput }
         Invoke-Native 'Static files' { & $python manage.py collectstatic --noinput }
@@ -138,14 +159,14 @@ try {
     $message = $_.Exception.Message
     Write-DeploymentLog "FAILED $message"
     try {
-        if ($runtimeStopped) { Start-Mining360Runtime }
         if ($backup -and (Test-Path $backup)) {
-            & schtasks.exe /End /TN $runtimeTask *>> $log
-            Start-Sleep -Seconds 2
+            Stop-Mining360Runtime
             if (Test-Path $app) { Move-Item -LiteralPath $app -Destination $failedRelease -Force }
             Move-Item -LiteralPath $backup -Destination $app
             Start-Mining360Runtime
             [void](Wait-Mining360Health 60)
+        } elseif ($runtimeStopped) {
+            Start-Mining360Runtime
         }
     } catch {
         Write-DeploymentLog "ROLLBACK FAILED $($_.Exception.Message)"
