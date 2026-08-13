@@ -21,7 +21,7 @@ from deployment.models import (
     DeploymentPlan,
     DeploymentTarget,
 )
-from deployment.permissions import deployment_permission
+from deployment.permissions import can, deployment_permission
 from deployment.services.connection import DeploymentConnectionService
 from deployment.services.credentials import masked_credential, set_credential_secret
 from deployment.services.plans import DeploymentPlanService, feature_flags
@@ -183,7 +183,7 @@ def dashboard_api(request):
 def targets_api(request):
     if request.method == "GET":
         return JsonResponse({"ok": True, "items": [_target_payload(item) for item in DeploymentTarget.objects.select_related("credential")]})
-    if not request.user.has_perm("deployment.add_deploymenttarget") and not request.user.is_superuser:
+    if not can(request.user, "add_deploymenttarget"):
         return JsonResponse({"ok": False, "error": "Permission required to add a deployment target."}, status=403)
     try:
         data = _payload(request)
@@ -299,7 +299,7 @@ def plans_api(request):
     if request.method == "GET":
         items = DeploymentPlan.objects.select_related("target", "release")
         return JsonResponse({"ok": True, "items": [_plan_payload(item) for item in items]})
-    if not request.user.has_perm("deployment.add_deploymentplan") and not request.user.is_superuser:
+    if not can(request.user, "add_deploymentplan"):
         return JsonResponse({"ok": False, "error": "Permission required to create a deployment plan."}, status=403)
     try:
         data = _payload(request)

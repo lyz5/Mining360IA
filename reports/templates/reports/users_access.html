@@ -1,0 +1,149 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Users | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260812-users1">
+    <script src="{% static 'reports/users_access.js' %}?v=20260812-users1" defer></script>
+</head>
+<body class="users-access-body">
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell users-access-page" data-users-access>
+        <form hidden>{% csrf_token %}</form>
+        <header class="users-access-header">
+            <div>
+                <p class="users-breadcrumb">Access Control <span aria-hidden="true">/</span> Users</p>
+                <h1>Users</h1>
+                <p>Manage Mining 360 access, roles, business scopes and Power BI security.</p>
+            </div>
+            <div class="users-summary" aria-label="User access summary">
+                <span><strong data-summary-total>0</strong> Total</span>
+                <span><strong data-summary-active>0</strong> Active</span>
+                <span><strong data-summary-admins>0</strong> Administrators</span>
+                <span><strong data-summary-ad>0</strong> AD-managed</span>
+            </div>
+        </header>
+
+        <section class="users-workspace" aria-labelledby="authorized-users-title">
+            <div class="users-toolbar">
+                <label class="users-search">
+                    <span class="sr-only">Search authorized users</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+                    <input type="search" data-users-search placeholder="Search authorized users..." autocomplete="off">
+                </label>
+                <label><span class="sr-only">Status</span><select data-filter-status><option value="">All statuses</option><option value="active">Active</option><option value="disabled">Disabled</option></select></label>
+                <label><span class="sr-only">Platform role</span><select data-filter-role><option value="">All roles</option><option value="admin">Admin</option><option value="reporting">Reporting</option><option value="ai">AI</option><option value="data">Data</option><option value="sources">Data Source</option></select></label>
+                <label class="users-toolbar__secondary"><span class="sr-only">Access source</span><select data-filter-source><option value="">All sources</option><option value="manual">Manual</option><option value="ad_groups">AD Groups</option></select></label>
+                <label class="users-toolbar__secondary"><span class="sr-only">Business Performance</span><select data-filter-bp><option value="">All BP access</option><option value="none">No access</option><option value="Viewer">Viewer</option><option value="Account Manager">Account Manager</option><option value="Country Manager">Country Manager</option><option value="Business Manager">Business Manager</option><option value="Executive">Executive</option><option value="Administrator">Administrator</option></select></label>
+                <button class="button users-add-button" type="button" data-open-add>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                    Add user
+                </button>
+            </div>
+            <div class="users-active-filters" data-active-filters hidden></div>
+
+            <div class="users-section-heading">
+                <div><h2 id="authorized-users-title">Authorized users</h2><p data-result-count>Loading users...</p></div>
+                <label>Sort <select data-ordering><option value="display_name">Name A-Z</option><option value="-display_name">Name Z-A</option><option value="-updated_at">Recently updated</option><option value="-is_active">Status</option></select></label>
+            </div>
+
+            <div class="users-loading" data-users-loading aria-live="polite">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="users-error" data-users-error hidden><p>Authorized users could not be loaded.</p><button class="button secondary" type="button" data-users-retry>Retry</button></div>
+            <div class="authorized-users-table-wrap" data-users-table-wrap hidden>
+                <table class="authorized-users-table">
+                    <thead><tr><th>User</th><th>Platform roles</th><th>Business Performance</th><th>Data scope</th><th>Power BI RLS</th><th>Source</th><th>Status</th><th><span class="sr-only">Actions</span></th></tr></thead>
+                    <tbody data-users-tbody></tbody>
+                </table>
+            </div>
+            <div class="authorized-users-mobile" data-users-mobile hidden></div>
+            <div class="users-empty" data-users-empty hidden>
+                <h3>No authorized users found</h3><p>No users match the current search and filters.</p><button class="button" type="button" data-open-add>Add user</button>
+            </div>
+            <footer class="users-pagination" data-pagination hidden>
+                <span data-page-summary></span>
+                <div><button class="button secondary" type="button" data-page-prev>Previous</button><span data-page-label></span><button class="button secondary" type="button" data-page-next>Next</button></div>
+            </footer>
+        </section>
+
+        <div class="access-drawer-layer" data-drawer-layer hidden>
+            <button class="access-drawer-backdrop" type="button" data-drawer-close aria-label="Close user access panel"></button>
+            <aside class="access-drawer" role="dialog" aria-modal="true" aria-labelledby="access-drawer-title" data-drawer>
+                <header class="access-drawer__header">
+                    <div><p class="eyebrow" data-drawer-eyebrow>Access Control</p><h2 id="access-drawer-title" data-drawer-title>User access</h2></div>
+                    <button class="access-icon-button" type="button" data-drawer-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+                </header>
+                <div class="access-drawer__body" data-drawer-body>
+                    <section data-directory-step hidden>
+                        <div class="drawer-step"><span>1</span><div><strong>Find user</strong><small>Search the company Active Directory.</small></div></div>
+                        <label class="directory-ajax-search">
+                            <span class="sr-only">Search company directory</span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+                            <input type="search" data-directory-query placeholder="Search by name, Windows account, email or UPN..." autocomplete="off" aria-controls="directory-search-results">
+                        </label>
+                        <div class="directory-search-state" data-directory-state aria-live="polite">Start typing at least two characters.</div>
+                        <div class="directory-ajax-results" id="directory-search-results" data-directory-results role="listbox"></div>
+                    </section>
+
+                    <form data-access-form hidden novalidate>
+                        <input type="hidden" data-user-id>
+                        <input type="hidden" data-directory-object-id>
+                        <input type="hidden" data-directory-username>
+                        <section class="access-section">
+                            <div class="user-identity-summary">
+                                <span class="user-avatar" data-form-avatar></span>
+                                <div><strong data-form-name></strong><span data-form-upn></span><small data-form-source></small></div>
+                            </div>
+                        </section>
+                        <section class="access-section">
+                            <div class="access-section__heading"><h3>Platform access</h3><p>Select the Mining 360 modules this user can access.</p></div>
+                            <label class="ad-managed-toggle" data-ad-managed-row hidden><input type="checkbox" data-directory-managed> <span><strong>Roles managed by AD groups</strong><small>Effective platform roles are synchronized from Active Directory.</small></span></label>
+                            <div class="platform-role-grid" data-role-options></div>
+                            <p class="field-error" data-error-platform_roles hidden></p>
+                        </section>
+                        <section class="access-section">
+                            <div class="access-section__heading"><h3>Business Performance</h3><p>Configure the business access level and governed data scope.</p></div>
+                            <label class="access-field"><span>Access level</span><select data-bp-role></select><small data-bp-description></small></label>
+                            <div class="scope-fields" data-scope-fields>
+                                <div class="access-field"><span>Countries</span><div class="access-multiselect" data-multiselect="countries"></div></div>
+                                <div class="access-field"><span>Customers</span><div class="access-multiselect" data-multiselect="customers"></div></div>
+                            </div>
+                            <p class="field-error" data-error-business_performance_access hidden></p>
+                        </section>
+                        <section class="access-section">
+                            <div class="access-section__heading"><h3>Power BI security</h3><p>Apply a configured RLS role when required.</p></div>
+                            <label class="access-field"><span>Power BI RLS role</span><select data-rls-role></select></label>
+                            <p class="field-error" data-error-powerbi_rls_role hidden></p>
+                        </section>
+                        <section class="access-section effective-access">
+                            <div class="access-section__heading"><h3>Effective access</h3><p>Review the final access before saving.</p></div>
+                            <dl data-effective-summary></dl>
+                        </section>
+                        <section class="access-section" data-history-section hidden>
+                            <div class="access-section__heading"><h3>Access history</h3></div>
+                            <div class="access-history" data-access-history></div>
+                        </section>
+                        <div class="drawer-form-error" data-form-error hidden></div>
+                    </form>
+                </div>
+                <footer class="access-drawer__footer" data-drawer-footer hidden>
+                    <button class="button secondary" type="button" data-drawer-cancel>Cancel</button>
+                    <button class="button access-status-action" type="button" data-status-action hidden></button>
+                    <button class="button" type="button" data-save-access>Save changes</button>
+                </footer>
+            </aside>
+        </div>
+
+        <div class="access-confirm-layer" data-confirm-layer hidden>
+            <div class="access-confirm" role="alertdialog" aria-modal="true" aria-labelledby="confirm-title">
+                <h2 id="confirm-title" data-confirm-title>Confirm change</h2><p data-confirm-message></p>
+                <div><button class="button secondary" type="button" data-confirm-cancel>Cancel</button><button class="button" type="button" data-confirm-accept>Confirm</button></div>
+            </div>
+        </div>
+        <div class="users-toast" data-toast role="status" aria-live="polite" hidden></div>
+    </main>
+</body>
+</html>

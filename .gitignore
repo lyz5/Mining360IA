@@ -10,9 +10,11 @@ db.sqlite3
 reports/live_sources_state.json
 reports/live_sources_custom.json
 .runlogs/
+.test-runtime/
 reports/.test-runtime/
 reports/tmp*/
 staticfiles/
+~$*
 knowledge_population_inventory.json
 knowledge_population_reports/
 resource_library/

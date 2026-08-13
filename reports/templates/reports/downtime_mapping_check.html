@@ -1,0 +1,118 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Downtime Mapping Check | Mining360IA</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260811-downtime-mapping-1">
+</head>
+<body>
+{% include "reports/includes/app_nav.html" %}
+<main class="app-shell dmc-shell" data-dmc-app
+      data-preview-url="{% url 'downtime-mapping-preview-api' %}"
+      data-runs-url="{% url 'downtime-mapping-runs-api' %}"
+      data-taxonomy-url="{% url 'downtime-mapping-taxonomy-api' %}">
+    <header class="topbar dmc-topbar">
+        <div>
+            <p class="eyebrow">Data quality</p>
+            <h1>Downtime Mapping Check</h1>
+            <p class="summary">Verify Labour Type to Description CAT mappings from downtime comments and validated business rules.</p>
+        </div>
+        <div class="actions">
+            <a class="button secondary" href="{% url 'data-home' %}">Back to Data</a>
+            <button class="button dmc-check-button" type="button" data-dmc-check>Check data</button>
+        </div>
+    </header>
+
+    {% if not validated_taxonomy_count %}
+    <div class="dmc-notice" role="status">
+        No validated Description CAT reference is available. Import the source taxonomy, validate it in administration, then start an AI audit.
+    </div>
+    {% endif %}
+
+    <section class="dmc-filter-band" aria-labelledby="dmc-filter-title">
+        <div class="dmc-section-head">
+            <div><p class="eyebrow">Scope</p><h2 id="dmc-filter-title">Select downtime events</h2></div>
+            <button class="button secondary small" type="button" data-dmc-clear>Clear filters</button>
+        </div>
+        <div class="dmc-filter-grid">
+            <label><span>Start Date</span><input type="date" data-dmc-filter="start_date" required></label>
+            <label><span>End Date</span><input type="date" data-dmc-filter="end_date" required></label>
+            <label><span>MineSite</span><input type="text" data-dmc-filter="minesite" placeholder="All sites"></label>
+            <label><span>Model</span><input type="text" data-dmc-filter="model" placeholder="All models"></label>
+            <label><span>Serial Number</span><input type="text" data-dmc-filter="serial_number" placeholder="All equipment"></label>
+            <label><span>Labour Type</span><input type="text" data-dmc-filter="labour_type" placeholder="All Labour Types"></label>
+            <label><span>Current Description CAT</span><input type="text" data-dmc-filter="current_description_cat" placeholder="All categories"></label>
+            <label><span>Work Type</span><input type="text" data-dmc-filter="work_type" placeholder="All work types"></label>
+            <label><span>Comment Availability</span>
+                <select data-dmc-filter="comment_availability">
+                    <option value="all">All</option><option value="with_comment">With Comment</option><option value="without_comment">Without Comment</option>
+                </select>
+            </label>
+            <label><span>Check Mode</span>
+                <select data-dmc-filter="mode"><option value="full">Full AI Audit</option><option value="smart">Smart Audit</option></select>
+            </label>
+        </div>
+        <p class="dmc-source-note">Available filters reflect the governed row-level source. Customer, Family, Component, Cause and Down Type are not exposed by the current downtime view.</p>
+    </section>
+
+    <section class="dmc-progress" data-dmc-progress hidden aria-live="polite">
+        <div class="dmc-section-head"><div><p class="eyebrow">Background processing</p><h2 data-dmc-progress-title>Analyzing downtime mappings</h2></div><button class="button secondary small" type="button" data-dmc-cancel>Cancel</button></div>
+        <div class="dmc-progress-track"><span data-dmc-progress-bar></span></div>
+        <p data-dmc-progress-copy>Preparing the run...</p>
+    </section>
+
+    <section class="dmc-summary-grid" data-dmc-summary hidden aria-label="Run summary">
+        <article><span>Total Rows</span><strong data-dmc-kpi="total_rows">0</strong></article>
+        <article class="verified"><span>Verified</span><strong data-dmc-kpi="verified">0</strong></article>
+        <article class="likely"><span>Likely Correct</span><strong data-dmc-kpi="likely_correct">0</strong></article>
+        <article class="mismatch"><span>Mismatches</span><strong data-dmc-kpi="mismatches">0</strong></article>
+        <article class="review"><span>Ambiguous</span><strong data-dmc-kpi="ambiguous">0</strong></article>
+        <article><span>Insufficient Evidence</span><strong data-dmc-kpi="insufficient_evidence">0</strong></article>
+        <article class="taxonomy"><span>Unmapped / Gaps</span><strong data-dmc-kpi="taxonomy">0</strong></article>
+        <article><span>Estimated Cost</span><strong data-dmc-kpi="estimated_cost">$0.00</strong></article>
+    </section>
+
+    <section class="dmc-results" data-dmc-results hidden>
+        <div class="dmc-section-head">
+            <div><p class="eyebrow">Audit results</p><h2>Row-level review</h2></div>
+            <div class="actions"><a class="button secondary small" data-dmc-export href="#">Export CSV</a></div>
+        </div>
+        <div class="dmc-results-tools">
+            <input type="search" data-dmc-search placeholder="Search event, Labour Type, comment or serial number">
+            <select data-dmc-status aria-label="Filter result status">
+                <option value="">All statuses</option><option>VERIFIED</option><option>LIKELY_CORRECT</option><option>MISMATCH</option><option>AMBIGUOUS</option><option>INSUFFICIENT_EVIDENCE</option><option>UNMAPPED</option><option>TAXONOMY_GAP</option><option>AI_ERROR</option>
+            </select>
+        </div>
+        <div class="dmc-table-wrap">
+            <table class="dmc-table"><thead><tr><th>Status</th><th>Event</th><th>MineSite</th><th>Serial</th><th>Labour Type</th><th>Current CAT</th><th>Recommended CAT</th><th>Confidence</th><th>Comment</th><th></th></tr></thead><tbody data-dmc-rows></tbody></table>
+        </div>
+        <div class="dmc-pagination"><button type="button" class="button secondary small" data-dmc-previous>Previous</button><span data-dmc-page>Page 1</span><button type="button" class="button secondary small" data-dmc-next>Next</button></div>
+    </section>
+
+    <section class="dmc-history">
+        <div class="dmc-section-head"><div><p class="eyebrow">Audit trail</p><h2>Run history</h2></div></div>
+        <div class="dmc-history-list" data-dmc-history><p class="empty compact">Loading history...</p></div>
+    </section>
+</main>
+
+<div class="dmc-modal" data-dmc-confirm hidden aria-hidden="true">
+    <div class="dmc-modal-backdrop" data-dmc-confirm-close></div>
+    <section class="dmc-modal-panel" role="dialog" aria-modal="true" aria-labelledby="dmc-confirm-title">
+        <p class="eyebrow">Cost preview</p><h2 id="dmc-confirm-title">Downtime Mapping Check</h2>
+        <dl class="dmc-preview-list" data-dmc-preview-list></dl>
+        <div class="dmc-modal-actions"><button class="button secondary" type="button" data-dmc-confirm-close>Cancel</button><button class="button" type="button" data-dmc-start>Start Check</button></div>
+    </section>
+</div>
+
+<aside class="dmc-drawer" data-dmc-drawer hidden aria-hidden="true">
+    <div class="dmc-drawer-backdrop" data-dmc-drawer-close></div>
+    <section class="dmc-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="dmc-detail-title">
+        <header><div><p class="eyebrow">Independent classification</p><h2 id="dmc-detail-title" data-dmc-detail-title>Event</h2></div><button class="icon-button" type="button" data-dmc-drawer-close aria-label="Close detail">×</button></header>
+        <div data-dmc-detail></div>
+    </section>
+</aside>
+<script src="{% static 'reports/downtime_mapping_check.js' %}?v=20260811-1"></script>
+</body>
+</html>

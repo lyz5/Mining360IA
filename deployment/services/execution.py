@@ -55,9 +55,16 @@ class WindowsDeploymentExecutionService:
             result = remote._execute(transport, "deploy_release", command, 3600)
         finally:
             transport.close()
+        payload = self._last_json_object(result.get("stdout", ""), required=False)
         if not result["success"]:
-            raise RuntimeError(result.get("stderr") or result.get("stdout") or "Remote deployment failed.")
-        payload = self._last_json_object(result.get("stdout", ""))
+            if payload:
+                raise RuntimeError(payload.get("message") or "Remote deployment failed.")
+            raise RuntimeError(
+                self._useful_error(result.get("stderr"), result.get("stdout"))
+                or "Remote deployment failed."
+            )
+        if not payload:
+            raise RuntimeError("The deployment script returned no valid result.")
         if payload.get("status") != "Succeeded":
             raise RuntimeError(payload.get("message") or "The deployment did not complete successfully.")
         return payload
@@ -68,7 +75,7 @@ class WindowsDeploymentExecutionService:
         return f"powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -EncodedCommand {encoded}"
 
     @staticmethod
-    def _last_json_object(output: str) -> dict:
+    def _last_json_object(output: str, *, required=True) -> dict:
         for line in reversed(str(output or "").splitlines()):
             try:
                 value = json.loads(line.strip())
@@ -76,4 +83,15 @@ class WindowsDeploymentExecutionService:
                 continue
             if isinstance(value, dict):
                 return value
-        raise RuntimeError(sanitize_log_message("The deployment script returned no valid result."))
+        if required:
+            raise RuntimeError(sanitize_log_message("The deployment script returned no valid result."))
+        return {}
+
+    @staticmethod
+    def _useful_error(*outputs: str) -> str:
+        for output in outputs:
+            text = str(output or "").strip()
+            if not text or text.startswith("#< CLIXML"):
+                continue
+            return sanitize_log_message(text)
+        return ""

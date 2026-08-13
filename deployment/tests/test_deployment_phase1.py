@@ -14,6 +14,8 @@ from deployment.services.releases import DeploymentReleaseSourceService
 from deployment.services.worker import DeploymentWorkerService
 from deployment.services.credentials import credential_secret
 from deployment.services.security import DeploymentNetworkSecurityService, sanitize_log_message
+from deployment.services.execution import WindowsDeploymentExecutionService
+from reports.models import PlatformUser
 
 
 class DeploymentSecurityTests(TestCase):
@@ -42,6 +44,16 @@ class DeploymentSecurityTests(TestCase):
             name="Unsafe", credential_type="ssh_private_key", secret_reference="file:C:/Windows/win.ini"
         )
         self.assertEqual(credential_secret(credential), "")
+
+    def test_failed_deployment_prefers_structured_script_error_over_clixml(self):
+        output = '{"status":"Failed","message":"Django validation failed with exit code 1."}'
+        payload = WindowsDeploymentExecutionService._last_json_object(output, required=False)
+
+        self.assertEqual(payload["message"], "Django validation failed with exit code 1.")
+        self.assertEqual(
+            WindowsDeploymentExecutionService._useful_error("#< CLIXML\n<Objs />", "Useful fallback"),
+            "Useful fallback",
+        )
 
 
 class DeploymentBootstrapTests(TestCase):
@@ -81,6 +93,72 @@ class DeploymentViewTests(TestCase):
         )
         self.assertEqual(response.status_code, 400)
         self.assertFalse(DeploymentTarget.objects.filter(name="External").exists())
+
+    def test_active_platform_admin_can_use_deployment_actions_without_hidden_django_permissions(self):
+        platform_admin = get_user_model().objects.create_user(
+            "platform-admin", "platform-admin@example.com", "test-password"
+        )
+        PlatformUser.objects.create(
+            django_user=platform_admin,
+            azure_ad_id="platform-admin-object-id",
+            user_principal_name="platform-admin@example.com",
+            email="platform-admin@example.com",
+            display_name="Platform Administrator",
+            is_platform_admin=True,
+            is_active=True,
+        )
+        target = DeploymentTarget.objects.create(
+            name="Platform Admin Target",
+            environment="Test",
+            ip_address="10.1.1.20",
+            os_family="windows",
+        )
+        self.client.force_login(platform_admin)
+
+        dashboard = self.client.get(reverse("deployment-dashboard-api"), HTTP_ACCEPT="application/json")
+        approval = self.client.post(
+            reverse("deployment-target-approve-api", args=[target.pk]),
+            data={},
+            content_type="application/json",
+            HTTP_ACCEPT="application/json",
+        )
+
+        self.assertEqual(dashboard.status_code, 200)
+        self.assertEqual(approval.status_code, 200)
+        target.refresh_from_db()
+        self.assertTrue(target.is_approved)
+
+    def test_non_admin_cannot_use_deployment_actions(self):
+        standard_user = get_user_model().objects.create_user(
+            "standard-user", "standard@example.com", "test-password"
+        )
+        PlatformUser.objects.create(
+            django_user=standard_user,
+            azure_ad_id="standard-user-object-id",
+            user_principal_name="standard@example.com",
+            email="standard@example.com",
+            display_name="Standard User",
+            is_platform_admin=False,
+            is_active=True,
+        )
+        target = DeploymentTarget.objects.create(
+            name="Protected Target",
+            environment="Test",
+            ip_address="10.1.1.21",
+            os_family="windows",
+        )
+        self.client.force_login(standard_user)
+
+        response = self.client.post(
+            reverse("deployment-target-approve-api", args=[target.pk]),
+            data={},
+            content_type="application/json",
+            HTTP_ACCEPT="application/json",
+        )
+
+        self.assertEqual(response.status_code, 403)
+        target.refresh_from_db()
+        self.assertFalse(target.is_approved)
 
 
 class DeploymentDryRunTests(TestCase):

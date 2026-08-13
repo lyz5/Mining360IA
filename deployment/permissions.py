@@ -16,11 +16,14 @@ def is_platform_admin(user):
 
 
 def can(user, permission: str, *, view_only=False):
-    if user.is_superuser:
+    # Mining 360 exposes one platform-level Admin role. Deployment must honor
+    # that role consistently instead of requiring a second, hidden set of
+    # Django permissions that cannot be managed from Access Control.
+    if is_platform_admin(user):
         return True
     if user.has_perm(f"deployment.{permission}"):
         return True
-    return view_only and is_platform_admin(user)
+    return False
 
 
 def deployment_permission(permission: str, *, view_only=False):
