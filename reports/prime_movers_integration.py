@@ -264,6 +264,7 @@ class PrimeMoversDiagnosticsService:
             },
             "browser": {
                 "https": request.is_secure(),
+                "web_crypto": "runtime_check_required" if request.is_secure() else "unavailable_without_https",
                 "user_agent": str(request.META.get("HTTP_USER_AGENT") or "")[:255],
                 "iframe_support": "runtime_check_required",
                 "third_party_cookie_status": "runtime_check_required",

@@ -20,6 +20,7 @@
   let launchUrl = "";
   let reportRendered = false;
   let reportLoadTimer = null;
+  const secureCryptoAvailable = Boolean(window.isSecureContext && window.crypto && window.crypto.subtle);
 
   const initial = new URLSearchParams(window.location.search);
   serialInput.value = initial.get("serial_number") || "";
@@ -157,10 +158,12 @@
     try {
       const payload = await post(root.dataset.launchContextUrl, context);
       launchUrl = payload.launch_url;
-      if (root.dataset.iframeEnabled === "true") {
+      if (root.dataset.iframeEnabled === "true" && secureCryptoAvailable) {
         frame.src = launchUrl;
         frame.hidden = false;
         appState.textContent = "Loading Power Apps... If Microsoft sign-in is blocked, use the secure new-tab action.";
+      } else if (!secureCryptoAvailable) {
+        appState.textContent = "Embedded Microsoft sign-in requires Mining 360 to use HTTPS. Open Power Apps securely in a new tab for this session.";
       } else {
         appState.textContent = "Power Apps will open securely with your corporate Microsoft identity.";
       }
@@ -197,5 +200,12 @@
     status.textContent = "Report refreshed after the operational status update.";
   });
   document.addEventListener("keydown", function (event) { if (event.key === "Escape" && drawer.classList.contains("open")) closeDrawer(); });
+  if (!secureCryptoAvailable && window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
+    status.textContent = "Power Apps embedded authentication requires HTTPS. Secure new-tab mode will be used until HTTPS is configured.";
+    logEvent("powerapps_error", {
+      error_code: "SECURE_CONTEXT_REQUIRED",
+      error_message: "Web Crypto is unavailable because Mining 360 is not running in a secure browser context."
+    });
+  }
   loadReport();
 })();

@@ -43,6 +43,8 @@ ENABLE_PRIME_MOVERS_USER_OWNS_DATA=Disabled
 
 The `ENTRA_REDIRECT_URI` value is authoritative and must exactly match a Web redirect URI in the Entra App Registration. Production must use a trusted HTTPS DNS name. BODEFM currently has only an HTTP Mining 360 binding and no verified production DNS/certificate, so a production callback cannot be declared complete yet.
 
+An HTTP network origin also makes an embedded `apps.powerapps.com` document an insecure context because its ancestor is insecure. MSAL-PKCE then cannot use `crypto.subtle` and returns `crypto_nonexistent`. Mining 360 detects this state and disables iframe login, offering the secure Power Apps new-tab fallback. HTTPS on the approved Mining 360 DNS remains the permanent fix.
+
 ## Microsoft Entra administrator action
 
 In **Entra ID > App registrations > Mining 360 > Authentication**:
