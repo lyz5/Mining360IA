@@ -17,6 +17,7 @@ from .system_configuration_service import _fernet, integration_value
 POWERBI_DELEGATED_SCOPES = [
     "https://analysis.windows.net/powerbi/api/Report.Read.All",
 ]
+ENTRA_IDENTITY_SCOPES = ["User.Read"]
 TOKEN_CACHE_SESSION_KEY = "microsoft_delegated_token_cache"
 AUTH_FLOW_SESSION_KEY = "microsoft_delegated_auth_flow"
 ACCOUNT_SESSION_KEY = "microsoft_delegated_account"
@@ -49,10 +50,16 @@ class DelegatedToken:
 
 def _configured_redirect_uri(request) -> str:
     configured = (
-        integration_value("Authentication", "redirect_uri", "")
+        getattr(settings, "ENTRA_REDIRECT_URI", "")
+        or integration_value("Authentication", "redirect_uri", "")
         or getattr(settings, "AZURE_AD_REDIRECT_URI", "")
     )
-    redirect_uri = configured.strip() or request.build_absolute_uri(reverse("auth-callback"))
+    public_base_url = str(getattr(settings, "MINING360_PUBLIC_BASE_URL", "") or "").rstrip("/")
+    redirect_uri = configured.strip() or (
+        f"{public_base_url}{reverse('auth-callback')}"
+        if public_base_url
+        else request.build_absolute_uri(reverse("auth-callback"))
+    )
     parsed = urlparse(redirect_uri)
     if parsed.scheme != "https" and parsed.hostname not in {"localhost", "127.0.0.1", "::1"}:
         raise EntraConfigurationError(
@@ -100,7 +107,13 @@ def _application(request):
     return app, cache, config
 
 
-def begin_powerbi_authorization(request, *, return_to: str, report_id: str = "") -> str:
+def begin_powerbi_authorization(
+    request,
+    *,
+    return_to: str,
+    report_id: str = "",
+    identity_only: bool = False,
+) -> str:
     app, cache, _ = _application(request)
     redirect_uri = _configured_redirect_uri(request)
     safe_return = return_to if url_has_allowed_host_and_scheme(
@@ -109,9 +122,9 @@ def begin_powerbi_authorization(request, *, return_to: str, report_id: str = "")
         require_https=request.is_secure(),
     ) else reverse("reporting")
     flow = app.initiate_auth_code_flow(
-        scopes=POWERBI_DELEGATED_SCOPES,
+        scopes=ENTRA_IDENTITY_SCOPES if identity_only else POWERBI_DELEGATED_SCOPES,
         redirect_uri=redirect_uri,
-        prompt="select_account",
+        login_hint=getattr(getattr(request.user, "platformuser", None), "user_principal_name", ""),
     )
     if "auth_uri" not in flow:
         raise EntraAuthenticationError(
@@ -121,6 +134,7 @@ def begin_powerbi_authorization(request, *, return_to: str, report_id: str = "")
     flow["mining360_purpose"] = "powerbi"
     flow["mining360_return_to"] = safe_return
     flow["mining360_report_id"] = report_id
+    flow["mining360_identity_only"] = identity_only
     request.session[AUTH_FLOW_SESSION_KEY] = flow
     _save_cache(request, cache)
     return flow["auth_uri"]

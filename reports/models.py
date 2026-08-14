@@ -903,6 +903,10 @@ class PowerBIReport(models.Model):
         ("app_owns_data", "App owns data"),
         ("user_owns_data", "User owns data"),
     ]
+    LAUNCH_MODES = [
+        ("generic_powerbi", "Generic Power BI viewer"),
+        ("prime_movers_workspace", "Prime Movers workspace"),
+    ]
 
     section = models.ForeignKey(AIConfigSection, related_name="interaction_reports", on_delete=models.CASCADE)
     workspace_id = models.CharField(max_length=128)
@@ -924,6 +928,7 @@ class PowerBIReport(models.Model):
     powerapps_app_name = models.CharField(max_length=255, blank=True)
     powerapps_environment = models.CharField(max_length=255, blank=True)
     access_instructions = models.TextField(blank=True)
+    launch_mode = models.CharField(max_length=40, choices=LAUNCH_MODES, default="generic_powerbi")
     is_default = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     imported_at = models.DateTimeField(null=True, blank=True)
@@ -945,9 +950,16 @@ class PowerBIReport(models.Model):
             raise ValidationError({
                 "authentication_mode": "Reports requiring a user identity must use User owns data."
             })
-        if self.contains_powerapps_visual and self.authentication_mode != "user_owns_data":
+        if (
+            self.contains_powerapps_visual
+            and self.authentication_mode != "user_owns_data"
+            and self.launch_mode != "prime_movers_workspace"
+        ):
             raise ValidationError({
-                "authentication_mode": "Power Apps visuals require User owns data embedding."
+                "authentication_mode": (
+                    "Power Apps visuals require User owns data embedding, unless the report uses the "
+                    "Prime Movers workspace where the unsupported visual is hidden and Power Apps is launched separately."
+                )
             })
 
 
@@ -990,6 +1002,130 @@ class PowerBIAuthenticationAuditLog(models.Model):
             models.Index(fields=["user", "created_at"], name="pbi_auth_user_time_idx"),
             models.Index(fields=["report", "created_at"], name="pbi_auth_report_time_idx"),
         ]
+
+
+class UserExternalIdentity(models.Model):
+    PROVIDERS = [("microsoft_entra", "Microsoft Entra")]
+    MAPPING_STATUSES = [
+        ("pending", "Pending"),
+        ("validated", "Validated"),
+        ("conflict", "Conflict"),
+        ("disabled", "Disabled"),
+    ]
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="external_identities")
+    provider = models.CharField(max_length=40, choices=PROVIDERS, default="microsoft_entra")
+    tenant_id = models.CharField(max_length=128)
+    external_object_id = models.CharField(max_length=128)
+    upn = models.EmailField(blank=True)
+    windows_identity = models.CharField(max_length=255, blank=True)
+    display_name = models.CharField(max_length=255, blank=True)
+    mapping_status = models.CharField(max_length=20, choices=MAPPING_STATUSES, default="pending")
+    last_verified_at = models.DateTimeField(null=True, blank=True)
+    active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "UserExternalIdentity"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["provider", "tenant_id", "external_object_id"],
+                name="unique_external_identity_object",
+            ),
+        ]
+        indexes = [models.Index(fields=["user", "provider", "active"], name="ext_identity_user_idx")]
+
+
+class PrimeMoversIntegrationConfiguration(models.Model):
+    VALIDATION_STATUSES = [(value, value) for value in ("To Review", "Validated", "Invalid", "Disabled")]
+
+    report = models.OneToOneField(
+        PowerBIReport,
+        on_delete=models.CASCADE,
+        related_name="prime_movers_configuration",
+    )
+    code = models.SlugField(max_length=100, unique=True)
+    powerbi_page_internal_name = models.CharField(max_length=255, blank=True)
+    powerapps_visual_internal_name = models.CharField(max_length=255, blank=True)
+    powerapps_visual_type = models.CharField(max_length=255, blank=True)
+    powerapps_app_id = models.CharField(max_length=128, blank=True)
+    powerapps_tenant_id = models.CharField(max_length=128, blank=True)
+    powerapps_environment_id = models.CharField(max_length=255, blank=True)
+    powerapps_launch_url = models.URLField(max_length=2000, blank=True)
+    iframe_enabled = models.BooleanField(default=False)
+    new_tab_fallback = models.BooleanField(default=True)
+    context_transfer_mode = models.CharField(max_length=40, default="context_session")
+    context_expiration_minutes = models.PositiveSmallIntegerField(default=15)
+    active = models.BooleanField(default=True)
+    validation_status = models.CharField(max_length=30, choices=VALIDATION_STATUSES, default="To Review")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "PrimeMoversIntegrationConfiguration"
+
+    def clean(self):
+        super().clean()
+        if self.powerapps_launch_url and "apps.powerapps.com" not in self.powerapps_launch_url.casefold():
+            raise ValidationError({"powerapps_launch_url": "Use the official apps.powerapps.com launch URL."})
+
+
+class PowerAppsLaunchContext(models.Model):
+    STATUSES = [(value, value) for value in ("active", "consumed", "expired", "revoked")]
+
+    opaque_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="powerapps_launch_contexts")
+    external_identity = models.ForeignKey(
+        UserExternalIdentity,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="launch_contexts",
+    )
+    configuration = models.ForeignKey(
+        PrimeMoversIntegrationConfiguration,
+        on_delete=models.CASCADE,
+        related_name="launch_contexts",
+    )
+    equipment_id = models.CharField(max_length=255, blank=True)
+    serial_number = models.CharField(max_length=255, blank=True)
+    mine_site = models.CharField(max_length=255, blank=True)
+    customer = models.CharField(max_length=255, blank=True)
+    model = models.CharField(max_length=255, blank=True)
+    selected_status = models.CharField(max_length=255, blank=True)
+    report_context_json = models.JSONField(default=dict, blank=True)
+    status = models.CharField(max_length=20, choices=STATUSES, default="active", db_index=True)
+    expires_at = models.DateTimeField(db_index=True)
+    consumed_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "PowerAppsLaunchContext"
+        indexes = [models.Index(fields=["user", "status", "expires_at"], name="pa_context_user_idx")]
+
+
+class PrimeMoversIntegrationExecutionLog(models.Model):
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    report = models.ForeignKey(PowerBIReport, null=True, blank=True, on_delete=models.SET_NULL)
+    context = models.ForeignKey(PowerAppsLaunchContext, null=True, blank=True, on_delete=models.SET_NULL)
+    windows_identity = models.CharField(max_length=255, blank=True)
+    entra_object_id = models.CharField(max_length=128, blank=True)
+    selected_strategy = models.CharField(max_length=40, default="dual_workspace")
+    powerbi_status = models.CharField(max_length=40, blank=True)
+    powerapps_status = models.CharField(max_length=40, blank=True)
+    selected_machine = models.CharField(max_length=255, blank=True)
+    browser = models.CharField(max_length=255, blank=True)
+    load_duration_ms = models.PositiveIntegerField(null=True, blank=True)
+    error_code = models.CharField(max_length=120, blank=True)
+    error_message = models.TextField(blank=True)
+    metadata_json = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "PrimeMoversIntegrationExecutionLog"
+        ordering = ["-created_at"]
+        indexes = [models.Index(fields=["report", "created_at"], name="pm_exec_report_time_idx")]
 
 
 class ReportingReportPreference(models.Model):

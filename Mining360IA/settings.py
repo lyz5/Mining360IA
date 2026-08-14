@@ -96,6 +96,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'reports.security_headers.Mining360ContentSecurityPolicyMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -301,6 +302,17 @@ ENABLE_PRIME_MOVERS_POWERAPPS_EMBEDDING = os.getenv(
 ENABLE_ENTRA_ACCOUNT_LINKING = os.getenv(
     'ENABLE_ENTRA_ACCOUNT_LINKING', 'Production'
 ).strip()
+ENABLE_PRIME_MOVERS_INTEGRATION_RECOVERY = os.getenv(
+    'ENABLE_PRIME_MOVERS_INTEGRATION_RECOVERY', 'Admin Only'
+).strip()
+ENABLE_PRIME_MOVERS_USER_OWNS_DATA = os.getenv('ENABLE_PRIME_MOVERS_USER_OWNS_DATA', 'Disabled').strip()
+ENABLE_PRIME_MOVERS_DUAL_WORKSPACE = os.getenv('ENABLE_PRIME_MOVERS_DUAL_WORKSPACE', 'Admin Only').strip()
+ENABLE_PRIME_MOVERS_POWERAPPS_IFRAME = os.getenv('ENABLE_PRIME_MOVERS_POWERAPPS_IFRAME', 'Admin Only').strip()
+ENABLE_PRIME_MOVERS_POWERAPPS_NEW_TAB = os.getenv('ENABLE_PRIME_MOVERS_POWERAPPS_NEW_TAB', 'Admin Only').strip()
+ENABLE_PRIME_MOVERS_AUTH_DIAGNOSTICS = os.getenv('ENABLE_PRIME_MOVERS_AUTH_DIAGNOSTICS', 'Admin Only').strip()
+MINING360_PUBLIC_BASE_URL = os.getenv('MINING360_PUBLIC_BASE_URL', '').strip()
+ENTRA_REDIRECT_URI = os.getenv('ENTRA_REDIRECT_URI', '').strip()
+ENTRA_POST_LOGOUT_REDIRECT_URI = os.getenv('ENTRA_POST_LOGOUT_REDIRECT_URI', '').strip()
 ENABLE_DELEGATED_TOKEN_REFRESH = os.getenv(
     'ENABLE_DELEGATED_TOKEN_REFRESH', 'Production'
 ).strip()

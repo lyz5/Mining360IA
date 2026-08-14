@@ -10,6 +10,10 @@ from .models import (
     DowntimeMappingCheckRun,
     DowntimeMappingReviewDecision,
     GenericDowntimeCommentRule,
+    PowerAppsLaunchContext,
+    PrimeMoversIntegrationConfiguration,
+    PrimeMoversIntegrationExecutionLog,
+    UserExternalIdentity,
 )
 
 
@@ -72,3 +76,31 @@ class UserAccessAuditLogAdmin(admin.ModelAdmin):
     list_filter = ("action", "created_at")
     search_fields = ("platform_user__display_name", "platform_user__user_principal_name", "actor__username")
     readonly_fields = tuple(field.name for field in UserAccessAuditLog._meta.fields)
+
+
+@admin.register(PrimeMoversIntegrationConfiguration)
+class PrimeMoversIntegrationConfigurationAdmin(admin.ModelAdmin):
+    list_display = ("code", "report", "powerapps_app_id", "iframe_enabled", "new_tab_fallback", "validation_status", "active")
+    list_filter = ("validation_status", "iframe_enabled", "new_tab_fallback", "active")
+    search_fields = ("code", "report__display_name", "powerapps_app_id")
+
+
+@admin.register(UserExternalIdentity)
+class UserExternalIdentityAdmin(admin.ModelAdmin):
+    list_display = ("user", "provider", "upn", "tenant_id", "mapping_status", "active", "last_verified_at")
+    list_filter = ("provider", "mapping_status", "active")
+    search_fields = ("user__username", "upn", "external_object_id", "windows_identity")
+
+
+@admin.register(PowerAppsLaunchContext)
+class PowerAppsLaunchContextAdmin(admin.ModelAdmin):
+    list_display = ("opaque_id", "user", "serial_number", "mine_site", "status", "expires_at", "created_at")
+    list_filter = ("status", "created_at")
+    readonly_fields = tuple(field.name for field in PowerAppsLaunchContext._meta.fields)
+
+
+@admin.register(PrimeMoversIntegrationExecutionLog)
+class PrimeMoversIntegrationExecutionLogAdmin(admin.ModelAdmin):
+    list_display = ("created_at", "user", "report", "selected_strategy", "powerbi_status", "powerapps_status", "error_code")
+    list_filter = ("selected_strategy", "powerbi_status", "powerapps_status", "error_code")
+    readonly_fields = tuple(field.name for field in PrimeMoversIntegrationExecutionLog._meta.fields)

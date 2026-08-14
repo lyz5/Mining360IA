@@ -187,6 +187,7 @@ from .microsoft_delegated_auth import (
     has_pending_powerbi_flow,
 )
 from .powerbi_embed_strategy import feature_enabled
+from .prime_movers_integration import CorporateIdentityMappingService, PrimeMoversIntegrationError
 from .data_browsers import (
     DataBrowserValidationError,
     delete_browser_records,
@@ -901,27 +902,11 @@ def auth_callback(request):
                     "Your Mining 360 session expired during Microsoft authentication.",
                     code="mining360_session_expired",
                 )
-            platform_user = getattr(request.user, "platformuser", None)
-            if not platform_user:
-                raise EntraAuthenticationError(
-                    "Your Mining 360 account is not linked to a corporate identity.",
-                    code="identity_mapping_missing",
-                )
-            account_upn = str(account.get("username") or "").strip().casefold()
-            if account_upn and platform_user.user_principal_name.casefold() != account_upn:
-                raise EntraAuthenticationError(
-                    "The connected Microsoft account does not match your Mining 360 account.",
-                    code="identity_upn_mismatch",
-                )
-            account_oid = str(account.get("object_id") or "").strip()
-            if platform_user.azure_ad_id and account_oid and platform_user.azure_ad_id != account_oid:
-                raise EntraAuthenticationError(
-                    "The connected Microsoft account does not match your Mining 360 identity.",
-                    code="identity_object_mismatch",
-                )
-            platform_user.entra_tenant_id = str(account.get("tenant_id") or "")
-            platform_user.last_entra_authenticated_at = timezone.now()
-            platform_user.save(update_fields=["entra_tenant_id", "last_entra_authenticated_at", "updated_at"])
+            try:
+                CorporateIdentityMappingService.validate_from_microsoft_account(request.user, account)
+            except PrimeMoversIntegrationError as exc:
+                raise EntraAuthenticationError(str(exc), code=exc.code) from exc
+            platform_user = request.user.platformuser
             configured_report = PowerBIReport.objects.filter(report_id=report_id).first()
             PowerBIAuthenticationAuditLog.objects.create(
                 user=request.user,
@@ -1029,20 +1014,32 @@ def powerbi_auth_start(request):
         messages.error(request, "Corporate Microsoft account linking is not enabled for this user.")
         return redirect("reporting")
     report_id = str(request.GET.get("report_id") or "").strip()
-    report = get_object_or_404(
-        PowerBIReport,
-        report_id=report_id,
-        is_active=True,
-        authentication_mode="user_owns_data",
+    report = get_object_or_404(PowerBIReport, report_id=report_id, is_active=True)
+    supports_identity_link = (
+        report.authentication_mode == "user_owns_data"
+        or report.launch_mode == "prime_movers_workspace"
     )
-    return_to = request.GET.get("next") or reverse("report-detail", args=[report_id])
+    if not supports_identity_link:
+        messages.error(request, "This report does not require a corporate Microsoft identity.")
+        return redirect("reporting")
+    default_return = (
+        reverse("prime-movers-workspace", args=[report_id])
+        if report.launch_mode == "prime_movers_workspace"
+        else reverse("report-detail", args=[report_id])
+    )
+    return_to = request.GET.get("next") or default_return
     PowerBIAuthenticationAuditLog.objects.create(
         user=request.user,
         report=report,
         event_type="connect_started",
     )
     try:
-        return redirect(begin_powerbi_authorization(request, return_to=return_to, report_id=report_id))
+        return redirect(begin_powerbi_authorization(
+            request,
+            return_to=return_to,
+            report_id=report_id,
+            identity_only=report.authentication_mode == "app_owns_data",
+        ))
     except EntraAuthenticationError as exc:
         PowerBIAuthenticationAuditLog.objects.create(
             user=request.user,
@@ -2091,8 +2088,8 @@ def reporting_home(request):
         if str(getattr(report, "refresh_status", "") or "").lower() == "failed"
     )
     no_refresh_count = len(reports) - completed_count - failed_count
-    authentication_modes = {
-        item.report_id: item.authentication_mode
+    configured_reports = {
+        item.report_id: item
         for item in PowerBIReport.objects.filter(
             report_id__in=[str(report.id) for report in reports],
             is_active=True,
@@ -2119,6 +2116,13 @@ def reporting_home(request):
             visual_class = "financial"
         else:
             visual_class = "performance"
+        configured = configured_reports.get(str(report.id))
+        launch_mode = configured.launch_mode if configured else "generic_powerbi"
+        launch_url = (
+            reverse("prime-movers-workspace", args=[report.id])
+            if launch_mode == "prime_movers_workspace"
+            else reverse("report-detail", args=[report.id])
+        )
         report_cards.append({
             "id": report.id,
             "name": report.name,
@@ -2130,7 +2134,9 @@ def reporting_home(request):
             "last_refresh": report.last_refresh,
             "refresh_status": report.refresh_status,
             "visual_class": visual_class,
-            "authentication_mode": authentication_modes.get(str(report.id), "app_owns_data"),
+            "authentication_mode": configured.authentication_mode if configured else "app_owns_data",
+            "launch_mode": launch_mode,
+            "launch_url": launch_url,
         })
     reports = report_cards
 
@@ -7154,6 +7160,12 @@ def report_detail(request, report_id):
         configured_report = PowerBIReport.objects.filter(report_id=str(report_id), is_active=True).first()
         if not configured_report:
             raise RuntimeError("This report has not been configured for Mining 360 embedding.")
+        if (
+            configured_report.launch_mode == "prime_movers_workspace"
+            and feature_enabled("ENABLE_PRIME_MOVERS_INTEGRATION_RECOVERY", request.user)
+            and feature_enabled("ENABLE_PRIME_MOVERS_DUAL_WORKSPACE", request.user)
+        ):
+            return redirect("prime-movers-workspace", report_id=report_id)
     except Exception as exc:
         error = str(exc)
 

@@ -12,6 +12,7 @@ from . import ai_provider_views
 from . import ai_conversation_views
 from . import downtime_mapping_views
 from . import user_access_views
+from . import prime_movers_views
 
 
 urlpatterns = [
@@ -215,6 +216,11 @@ urlpatterns = [
     path("resources/knowledge/api/search/", resource_knowledge_views.knowledge_search_api, name="resource-knowledge-search"),
     path("resources/files/<str:resource_id>/", views.resource_file, name="resource-file"),
     path("resources/<str:resource_id>/", views.resource_detail, name="resource-detail"),
+    path("reporting/prime-movers/<uuid:report_id>/", prime_movers_views.workspace, name="prime-movers-workspace"),
+    path("api/prime-movers/<uuid:report_id>/powerapps/launch-context/", prime_movers_views.launch_context, name="prime-movers-launch-context"),
+    path("api/prime-movers/powerapps/context/<uuid:context_id>/", prime_movers_views.context_status, name="prime-movers-context-status"),
+    path("api/prime-movers/<uuid:report_id>/events/", prime_movers_views.integration_event, name="prime-movers-event"),
+    path("admin/prime-movers/<uuid:report_id>/diagnostics/", prime_movers_views.diagnostics, name="prime-movers-diagnostics"),
     path("reporting/reports/<uuid:report_id>/", views.report_detail, name="report-detail"),
     path("reports/<uuid:report_id>/", views.report_detail, name="report-detail"),
 ]

@@ -5,6 +5,8 @@ import re
 from datetime import date, datetime
 
 from django.db.models import Q
+from django.urls import reverse
+from django.urls.exceptions import NoReverseMatch
 
 from .ai_config_service import get_filter_mapping, get_metric_mapping, get_section_by_code
 from .models import (
@@ -471,6 +473,8 @@ def resolve_navigation(intent: dict, debug_mode: bool = False) -> dict:
             "visual_internal_name": "",
             "visual_action": "",
             "warnings": ["No validated visual mapping was found; the page will open without visual focus."],
+            "launch_mode": mapping.report.launch_mode,
+            "launch_url": _report_launch_url(mapping.report),
         })
     return {
         "report_id": report.report_id,
@@ -484,6 +488,8 @@ def resolve_navigation(intent: dict, debug_mode: bool = False) -> dict:
         "visual_internal_name": visual.visual_internal_name if visual else "",
         "visual_action": visual_action if visual else "",
         "warnings": warnings,
+        "launch_mode": report.launch_mode,
+        "launch_url": _report_launch_url(report),
         "alternative_reports": alternative_reports,
         "_objects": {"report": report, "page": page, "visual": visual},
     }
@@ -491,3 +497,12 @@ def resolve_navigation(intent: dict, debug_mode: bool = False) -> dict:
 
 def public_navigation_payload(payload: dict) -> dict:
     return {key: value for key, value in payload.items() if key != "_objects"}
+
+
+def _report_launch_url(report) -> str:
+    route = "prime-movers-workspace" if report.launch_mode == "prime_movers_workspace" else "report-detail"
+    try:
+        return reverse(route, args=[report.report_id])
+    except NoReverseMatch:
+        # Imported legacy/test configurations may not yet contain a Power BI UUID.
+        return ""
