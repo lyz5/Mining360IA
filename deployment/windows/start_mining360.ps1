@@ -47,6 +47,7 @@ $env:MINING360_SESSION_COOKIE_SECURE = Get-Mining360Setting "MINING360_SESSION_C
 $env:MINING360_CSRF_COOKIE_SECURE = Get-Mining360Setting "MINING360_CSRF_COOKIE_SECURE" "1"
 $env:MINING360_SECURE_HSTS_SECONDS = Get-Mining360Setting "MINING360_SECURE_HSTS_SECONDS" "3600"
 $env:MINING360_STATIC_ROOT = Join-Path $Root "shared\static"
+$trustedProxy = Get-Mining360Setting "MINING360_TRUSTED_PROXY" "127.0.0.1"
 
 if (-not $env:MINING360_SECRET_KEY) {
     throw "MINING360_SECRET_KEY is not configured for the runtime account."
@@ -60,6 +61,8 @@ $ErrorActionPreference = "Continue"
     --listen=$Listen `
     --threads=8 `
     --channel-timeout=180 `
+    --trusted-proxy=$trustedProxy `
+    --trusted-proxy-headers="x-forwarded-proto x-forwarded-host" `
     Mining360IA.wsgi:application `
     1>> (Join-Path $logPath "waitress.out.log") `
     2>> (Join-Path $logPath "waitress.err.log")

@@ -307,3 +307,18 @@ class DeploymentFrontendContractTests(SimpleTestCase):
         self.assertIn("Stop-Process -Id $listener.OwningProcess", script)
         self.assertIn("Get-CimInstance Win32_Process", script)
         self.assertIn("taskkill.exe /PID $process.ProcessId /T /F", script)
+
+    def test_windows_runtime_trusts_only_required_proxy_headers(self):
+        script = (
+            Path(settings.BASE_DIR)
+            / "deployment"
+            / "windows"
+            / "start_mining360.ps1"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn('MINING360_TRUSTED_PROXY" "127.0.0.1"', script)
+        self.assertIn("--trusted-proxy=$trustedProxy", script)
+        self.assertIn(
+            '--trusted-proxy-headers="x-forwarded-proto x-forwarded-host"',
+            script,
+        )
