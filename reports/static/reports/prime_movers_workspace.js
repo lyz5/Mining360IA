@@ -19,6 +19,7 @@
   let report = null;
   let launchUrl = "";
   let reportRendered = false;
+  let operationalPageActivated = false;
   let reportLoadTimer = null;
   const secureCryptoAvailable = Boolean(window.isSecureContext && window.crypto && window.crypto.subtle);
 
@@ -29,7 +30,8 @@
 
   function csrfToken() {
     const item = document.cookie.split(";").map(v => v.trim()).find(v => v.startsWith("csrftoken="));
-    return item ? decodeURIComponent(item.split("=").slice(1).join("=")) : "";
+    if (item) return decodeURIComponent(item.split("=").slice(1).join("="));
+    return document.querySelector('meta[name="csrf-token"]')?.content || "";
   }
 
   async function post(url, payload) {
@@ -75,26 +77,32 @@
     document.getElementById("prime-open-form").focus();
   }
 
-  async function hideUnsupportedPowerAppsVisual() {
+  async function prepareOperationalPage() {
     const visualName = root.dataset.hiddenVisual;
-    if (!report || !visualName) return;
+    const targetPageName = root.dataset.targetPage;
+    if (!report || !visualName || !targetPageName) return false;
     try {
       const pages = await report.getPages();
-      for (const page of pages) {
-        const visuals = await page.getVisuals();
-        const visual = visuals.find(item => item.name === visualName);
-        if (visual && visual.setVisualDisplayState && window["powerbi-client"].models.VisualContainerDisplayMode) {
-          await visual.setVisualDisplayState(window["powerbi-client"].models.VisualContainerDisplayMode.Hidden);
-        }
+      const targetPage = pages.find(page => page.name === targetPageName);
+      if (!targetPage) throw new Error("The configured Prime Movers report page was not found.");
+      const visuals = await targetPage.getVisuals();
+      const visual = visuals.find(item => item.name === visualName);
+      if (!visual) throw new Error("The configured Power Apps visual was not found on the Prime Movers page.");
+      if (visual.setVisualDisplayState && window["powerbi-client"].models.VisualContainerDisplayMode) {
+        await visual.setVisualDisplayState(window["powerbi-client"].models.VisualContainerDisplayMode.Hidden);
       }
+      await targetPage.setActive();
+      return true;
     } catch (error) {
       logEvent("powerbi_error", { error_code: "POWERAPPS_VISUAL_HIDE_FAILED", error_message: error.message });
+      throw error;
     }
   }
 
   async function loadReport() {
     try {
       if (!window.powerbi || !window["powerbi-client"]) throw new Error("Power BI client is unavailable.");
+      loading.textContent = "Connecting to Power BI...";
       const response = await fetch(root.dataset.embedConfigUrl, { credentials: "same-origin" });
       const payload = await response.json();
       if (!response.ok || !payload.ok) throw new Error(payload.error || "Power BI embed configuration is unavailable.");
@@ -104,23 +112,40 @@
         permissions: models.Permissions.Read,
         settings: Object.assign({ panes: { filters: { visible: false }, pageNavigation: { visible: true } } }, payload.config.settings || {})
       });
+      if (root.dataset.safeInitialPage) config.pageName = root.dataset.safeInitialPage;
+      loading.textContent = "Loading Power BI report...";
       report = powerbi.embed(container, config);
       reportLoadTimer = window.setTimeout(function () {
         if (reportRendered) return;
         loading.hidden = true;
         reportError.hidden = false;
-        reportErrorMessage.textContent = "Power BI is taking too long to respond. Retry the page or contact the Reporting administrator.";
-        logEvent("powerbi_error", { error_code: "POWERBI_LOAD_TIMEOUT", error_message: "Report was not rendered within 45 seconds." });
-      }, 45000);
-      report.on("loaded", async function () {
-        await hideUnsupportedPowerAppsVisual();
+        reportErrorMessage.textContent = "Power BI did not finish loading within four minutes. Reload the report or contact the Reporting administrator.";
+        logEvent("powerbi_error", { error_code: "POWERBI_LOAD_TIMEOUT", error_message: "Report was not rendered within 240 seconds." });
+      }, 240000);
+      report.on("loaded", function () {
+        loading.textContent = "Preparing the report visuals...";
         logEvent("powerbi_loaded");
       });
       report.on("rendered", async function () {
+        if (root.dataset.safeInitialPage && root.dataset.targetPage && !operationalPageActivated) {
+          operationalPageActivated = true;
+          loading.textContent = "Opening Prime Movers Operational Status...";
+          try {
+            await prepareOperationalPage();
+            return;
+          } catch (error) {
+            window.clearTimeout(reportLoadTimer);
+            loading.hidden = true;
+            reportError.hidden = false;
+            reportErrorMessage.textContent = error.message || "Power BI could not prepare the operational page.";
+            return;
+          }
+        }
         reportRendered = true;
         window.clearTimeout(reportLoadTimer);
         loading.hidden = true;
-        await hideUnsupportedPowerAppsVisual();
+        reportError.hidden = true;
+        reportErrorMessage.textContent = "";
         logEvent("powerbi_rendered");
       });
       report.on("dataSelected", function (event) {
@@ -132,6 +157,7 @@
       report.on("error", function (event) {
         window.clearTimeout(reportLoadTimer);
         const detail = event && event.detail || {};
+        loading.hidden = true;
         reportError.hidden = false;
         reportErrorMessage.textContent = detail.message || "Power BI rendering failed.";
         logEvent("powerbi_error", { error_code: detail.errorCode || "POWERBI_EMBED_FAILED", error_message: detail.message || "" });

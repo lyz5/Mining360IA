@@ -1047,6 +1047,7 @@ class PrimeMoversIntegrationConfiguration(models.Model):
     )
     code = models.SlugField(max_length=100, unique=True)
     powerbi_page_internal_name = models.CharField(max_length=255, blank=True)
+    powerbi_safe_initial_page_internal_name = models.CharField(max_length=255, blank=True)
     powerapps_visual_internal_name = models.CharField(max_length=255, blank=True)
     powerapps_visual_type = models.CharField(max_length=255, blank=True)
     powerapps_app_id = models.CharField(max_length=128, blank=True)

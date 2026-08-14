@@ -1,10 +1,11 @@
 from __future__ import annotations
 
+import json
 from datetime import timedelta
 from unittest.mock import patch
 
 from django.contrib.auth.models import User
-from django.test import RequestFactory, TestCase, override_settings
+from django.test import Client, RequestFactory, TestCase, override_settings
 from django.urls import reverse
 from django.utils import timezone
 
@@ -157,10 +158,29 @@ class PrimeMoversIntegrationTests(TestCase):
         self.assertEqual(context.status, "expired")
 
     def test_workspace_renders_dual_identity_labels(self):
+        self.config.powerbi_safe_initial_page_internal_name = "safe-page"
+        self.config.save(update_fields=["powerbi_safe_initial_page_internal_name"])
         response = self.client.get(reverse("prime-movers-workspace", args=[self.report.report_id]))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Mining 360 API")
         self.assertContains(response, "papa.diagne@neemba.com")
+        self.assertContains(response, 'meta name="csrf-token"')
+        self.assertContains(response, 'data-safe-initial-page="safe-page"')
+        self.assertContains(response, f'data-target-page="{self.config.powerbi_page_internal_name}"')
+
+    def test_workspace_supplies_csrf_token_for_integration_events(self):
+        csrf_client = Client(enforce_csrf_checks=True)
+        csrf_client.force_login(self.user)
+        response = csrf_client.get(reverse("prime-movers-workspace", args=[self.report.report_id]))
+        self.assertEqual(response.status_code, 200)
+        token = response.cookies["csrftoken"].value
+        event_response = csrf_client.post(
+            reverse("prime-movers-event", args=[self.report.report_id]),
+            data=json.dumps({"event": "powerbi_loaded"}),
+            content_type="application/json",
+            HTTP_X_CSRFTOKEN=token,
+        )
+        self.assertEqual(event_response.status_code, 200)
 
     def test_diagnostics_never_return_tokens(self):
         response = self.client.get(
