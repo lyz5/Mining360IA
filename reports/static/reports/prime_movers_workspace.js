@@ -21,6 +21,10 @@
   let reportRendered = false;
   let operationalPageActivated = false;
   let reportLoadTimer = null;
+  let powerAppsContextId = "";
+  let powerAppsReady = false;
+  let powerAppsPreloadPromise = null;
+  let selectionRequestVersion = 0;
   const secureCryptoAvailable = Boolean(window.isSecureContext && window.crypto && window.crypto.subtle);
 
   const initial = new URLSearchParams(window.location.search);
@@ -107,6 +111,33 @@
     document.getElementById("prime-open-form").focus();
   }
 
+  function preloadPowerApps() {
+    if (powerAppsPreloadPromise) return powerAppsPreloadPromise;
+    appState.hidden = false;
+    appState.textContent = "Loading Power Apps. Select a machine in the report when it is ready.";
+    powerAppsPreloadPromise = post(root.dataset.launchContextUrl, { preload: true }).then(function (payload) {
+      powerAppsContextId = payload.context_id;
+      launchUrl = payload.launch_url;
+      if (root.dataset.iframeEnabled === "true" && secureCryptoAvailable) {
+        frame.src = launchUrl;
+        frame.hidden = false;
+      } else if (!secureCryptoAvailable) {
+        appState.textContent = "Embedded Microsoft sign-in requires HTTPS. Use the secure new-tab action.";
+      } else {
+        appState.textContent = "Power Apps is ready to open with your corporate Microsoft identity.";
+      }
+      newTabButton.hidden = root.dataset.newTabEnabled !== "true";
+      logEvent("powerapps_opened", { preload: true });
+      return payload;
+    }).catch(function (error) {
+      powerAppsPreloadPromise = null;
+      appState.textContent = error.message;
+      logEvent("powerapps_error", { error_code: error.code, error_message: error.message });
+      throw error;
+    });
+    return powerAppsPreloadPromise;
+  }
+
   async function prepareOperationalPage() {
     const visualName = root.dataset.hiddenVisual;
     const targetPageName = root.dataset.targetPage;
@@ -177,6 +208,7 @@
         reportError.hidden = true;
         reportErrorMessage.textContent = "";
         logEvent("powerbi_rendered");
+        preloadPowerApps().catch(function () {});
       });
       report.on("dataSelected", function (event) {
         const context = selectedTableRow(event);
@@ -212,22 +244,14 @@
     }
     openDrawer();
     appState.hidden = false;
-    appState.textContent = "Connecting corporate identity and preparing the selected machine...";
-    frame.hidden = true;
-    newTabButton.hidden = true;
+    appState.textContent = `Updating the operational status form for ${context.serial_number}...`;
+    const requestVersion = ++selectionRequestVersion;
     try {
-      const payload = await post(root.dataset.launchContextUrl, context);
-      launchUrl = payload.launch_url;
-      if (root.dataset.iframeEnabled === "true" && secureCryptoAvailable) {
-        frame.src = launchUrl;
-        frame.hidden = false;
-        appState.textContent = "Loading Power Apps... If Microsoft sign-in is blocked, use the secure new-tab action.";
-      } else if (!secureCryptoAvailable) {
-        appState.textContent = "Embedded Microsoft sign-in requires Mining 360 to use HTTPS. Open Power Apps securely in a new tab for this session.";
-      } else {
-        appState.textContent = "Power Apps will open securely with your corporate Microsoft identity.";
-      }
-      newTabButton.hidden = root.dataset.newTabEnabled !== "true";
+      await preloadPowerApps();
+      const payload = await post(root.dataset.launchContextUrl, Object.assign({}, context, { context_id: powerAppsContextId }));
+      if (requestVersion !== selectionRequestVersion) return;
+      if (powerAppsReady) appState.hidden = true;
+      else appState.textContent = "Power Apps is still loading. The selected machine context is ready.";
       logEvent("powerapps_opened", context);
     } catch (error) {
       appState.textContent = error.message;
@@ -245,8 +269,9 @@
   document.getElementById("prime-open-form").addEventListener("click", function () { openPowerApps(); });
   frame.addEventListener("load", function () {
     if (!frame.src || frame.hidden) return;
+    powerAppsReady = true;
     appState.hidden = true;
-    logEvent("powerapps_loaded", selectedContext());
+    logEvent("powerapps_loaded", { context_id: powerAppsContextId });
   });
   document.getElementById("prime-close-drawer").addEventListener("click", closeDrawer);
   backdrop.addEventListener("click", closeDrawer);

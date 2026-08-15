@@ -108,7 +108,7 @@ class PrimeMoversIntegrationTests(TestCase):
             })
         self.assertEqual(captured.exception.code, "ENTRA_IDENTITY_CONFLICT")
 
-    def test_launch_context_contains_opaque_id_and_non_sensitive_machine_parameters(self):
+    def test_launch_context_uses_a_stable_opaque_identifier(self):
         request = RequestFactory().post("/")
         request.user = self.user
         request.META["HTTP_USER_AGENT"] = "Test Browser"
@@ -118,10 +118,55 @@ class PrimeMoversIntegrationTests(TestCase):
             payload={"serial_number": "XYZ123", "minesite": "Essakane", "model": "785"},
         )
         self.assertIn(f"contextId={context.opaque_id}", launch_url)
-        self.assertIn("serialNumber=XYZ123", launch_url)
-        self.assertIn("mineSite=Essakane", launch_url)
-        self.assertIn("model=785", launch_url)
+        self.assertNotIn("serialNumber", launch_url)
+        self.assertNotIn("mineSite", launch_url)
+        self.assertNotIn("model=785", launch_url)
         self.assertEqual(context.external_identity, self.identity)
+
+    def test_preloaded_context_is_reused_for_machine_selections(self):
+        request = RequestFactory().post("/")
+        request.user = self.user
+        request.META["HTTP_USER_AGENT"] = "Test Browser"
+        context, initial_url = PrimeMoversContextService.create_launch_context(
+            request=request,
+            report=self.report,
+            payload={"preload": True},
+        )
+        updated, updated_url = PrimeMoversContextService.create_launch_context(
+            request=request,
+            report=self.report,
+            payload={
+                "context_id": str(context.opaque_id),
+                "equipment_id": "EX011",
+                "serial_number": "DNR00153",
+                "minesite": "Fekola",
+                "model": "6020",
+                "selected_status": "Down",
+            },
+        )
+        self.assertEqual(updated.pk, context.pk)
+        self.assertEqual(updated_url, initial_url)
+        self.assertEqual(updated.serial_number, "DNR00153")
+        self.assertEqual(updated.mine_site, "Fekola")
+        self.assertEqual(updated.model, "6020")
+        self.assertEqual(updated.report_context_json["selection_version"], 1)
+
+        second, second_url = PrimeMoversContextService.create_launch_context(
+            request=request,
+            report=self.report,
+            payload={
+                "context_id": str(context.opaque_id),
+                "equipment_id": "WL034",
+                "serial_number": "L8X00510",
+                "minesite": "Siguiri",
+                "model": "988",
+                "selected_status": "At Risk",
+            },
+        )
+        self.assertEqual(second.pk, context.pk)
+        self.assertEqual(second_url, initial_url)
+        self.assertEqual(second.serial_number, "L8X00510")
+        self.assertEqual(second.report_context_json["selection_version"], 2)
 
     def test_pending_entra_mapping_does_not_block_direct_canvas_app_login(self):
         self.identity.delete()

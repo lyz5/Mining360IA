@@ -5,6 +5,7 @@ from datetime import timedelta
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.db import transaction
 from django.urls import reverse
 from django.utils import timezone
@@ -132,7 +133,6 @@ class PrimeMoversContextService:
     }
 
     @classmethod
-    @transaction.atomic
     def create_launch_context(cls, *, request, report: PowerBIReport, payload: dict) -> tuple[PowerAppsLaunchContext, str]:
         if not (
             feature_enabled("ENABLE_PRIME_MOVERS_INTEGRATION_RECOVERY", request.user)
@@ -166,7 +166,8 @@ class PrimeMoversContextService:
         identity = CorporateIdentityMappingService.resolve(request.user)
         equipment_id = str(payload.get("equipment_id") or "").strip()
         serial_number = str(payload.get("serial_number") or "").strip()
-        if not equipment_id and not serial_number:
+        preload = payload.get("preload") is True
+        if not equipment_id and not serial_number and not preload:
             raise PrimeMoversIntegrationError(
                 "Select one machine before opening the operational status form.",
                 code="EQUIPMENT_CONTEXT_REQUIRED",
@@ -181,22 +182,54 @@ class PrimeMoversContextService:
         # browser. A pending Mining 360 identity mapping must not be treated as
         # Power Apps authentication proof, but it also must not block launch.
         expires_at = timezone.now() + timedelta(minutes=configuration.context_expiration_minutes)
-        context = PowerAppsLaunchContext.objects.create(
-            user=request.user,
-            external_identity=external,
-            configuration=configuration,
-            equipment_id=equipment_id,
-            serial_number=serial_number,
-            mine_site=str(payload.get("minesite") or "").strip(),
-            customer=str(payload.get("customer") or "").strip(),
-            model=str(payload.get("model") or "").strip(),
-            selected_status=str(payload.get("selected_status") or "").strip(),
-            report_context_json={
-                "page_name": str(payload.get("page_name") or "").strip(),
-                "filters": payload.get("filters") if isinstance(payload.get("filters"), list) else [],
-            },
-            expires_at=expires_at,
-        )
+        context_id = str(payload.get("context_id") or "").strip()
+        context = None
+        if context_id:
+            try:
+                context = PowerAppsLaunchContext.objects.select_for_update().filter(
+                    opaque_id=context_id,
+                    user=request.user,
+                    configuration=configuration,
+                    status="active",
+                    expires_at__gt=timezone.now(),
+                ).first()
+            except (ValidationError, ValueError):
+                context = None
+            if not context:
+                raise PrimeMoversIntegrationError(
+                    "The Power Apps session has expired. Reload Prime Movers to continue.",
+                    code="POWERAPPS_CONTEXT_EXPIRED",
+                    status=410,
+                )
+
+        report_context = dict(context.report_context_json) if context else {}
+        report_context.update({
+            "page_name": str(payload.get("page_name") or "").strip(),
+            "filters": payload.get("filters") if isinstance(payload.get("filters"), list) else [],
+            "selection_version": int(report_context.get("selection_version") or 0) + (0 if preload else 1),
+            "selection_updated_at": timezone.now().isoformat(),
+        })
+        context_values = {
+            "external_identity": external,
+            "equipment_id": equipment_id,
+            "serial_number": serial_number,
+            "mine_site": str(payload.get("minesite") or "").strip(),
+            "customer": str(payload.get("customer") or "").strip(),
+            "model": str(payload.get("model") or "").strip(),
+            "selected_status": str(payload.get("selected_status") or "").strip(),
+            "report_context_json": report_context,
+            "expires_at": expires_at,
+        }
+        if context:
+            for field, value in context_values.items():
+                setattr(context, field, value)
+            context.save(update_fields=[*context_values.keys()])
+        else:
+            context = PowerAppsLaunchContext.objects.create(
+                user=request.user,
+                configuration=configuration,
+                **context_values,
+            )
         launch_url = cls.build_launch_url(configuration, context)
         PrimeMoversIntegrationExecutionLog.objects.create(
             user=request.user,
@@ -216,14 +249,6 @@ class PrimeMoversContextService:
         parts = urlsplit(configuration.powerapps_launch_url)
         query = dict(parse_qsl(parts.query, keep_blank_values=True))
         query.update({"source": "Mining360", "contextId": str(context.opaque_id)})
-        launch_parameters = {
-            "equipmentId": context.equipment_id,
-            "serialNumber": context.serial_number,
-            "mineSite": context.mine_site,
-            "model": context.model,
-            "selectedStatus": context.selected_status,
-        }
-        query.update({key: value for key, value in launch_parameters.items() if value})
         if configuration.powerapps_tenant_id:
             query["tenantId"] = configuration.powerapps_tenant_id
         return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(query), parts.fragment))

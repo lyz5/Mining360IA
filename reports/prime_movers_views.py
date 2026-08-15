@@ -95,8 +95,10 @@ def launch_context(request, report_id):
         "launch_url": launch_url,
         "expires_at": context.expires_at.isoformat(),
         "authentication_mode": "microsoft_entra_user",
+        "selection_version": int(context.report_context_json.get("selection_version") or 0),
+        "context_reused": bool(payload.get("context_id")),
         "connected_user": {"display_name": identity.display_name, "upn": identity.normalized_upn},
-    }, status=201)
+    }, status=200 if payload.get("context_id") else 201)
 
 
 @login_required
@@ -113,6 +115,15 @@ def context_status(request, context_id):
         "context_id": str(context.opaque_id),
         "status": context.status,
         "expires_at": context.expires_at.isoformat(),
+        "selection_version": int(context.report_context_json.get("selection_version") or 0),
+        "selection": {
+            "equipment_id": context.equipment_id,
+            "serial_number": context.serial_number,
+            "minesite": context.mine_site,
+            "customer": context.customer,
+            "model": context.model,
+            "selected_status": context.selected_status,
+        },
     })
 
 

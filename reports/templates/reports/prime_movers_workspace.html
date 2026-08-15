@@ -67,10 +67,12 @@
             </div>
             <button id="prime-close-drawer" type="button" class="icon-button" aria-label="Close Power Apps panel">&#215;</button>
         </header>
-        <div id="prime-powerapps-state" class="prime-app-state" aria-live="polite">
-            Select one machine before opening the operational status form.
+        <div class="prime-app-body">
+            <div id="prime-powerapps-state" class="prime-app-state" aria-live="polite">
+                Preparing Power Apps. Select a machine in the report when it is ready.
+            </div>
+            <iframe id="prime-powerapps-frame" title="Prime Movers Operational Status Form" loading="eager" hidden></iframe>
         </div>
-        <iframe id="prime-powerapps-frame" title="Prime Movers Operational Status Form" loading="lazy" hidden></iframe>
         <footer>
             <button id="prime-open-new-tab" type="button" class="button secondary" hidden>Open Power Apps securely</button>
             <button id="prime-form-done" type="button" class="button">Done and refresh</button>
