@@ -216,6 +216,14 @@ class PrimeMoversContextService:
         parts = urlsplit(configuration.powerapps_launch_url)
         query = dict(parse_qsl(parts.query, keep_blank_values=True))
         query.update({"source": "Mining360", "contextId": str(context.opaque_id)})
+        launch_parameters = {
+            "equipmentId": context.equipment_id,
+            "serialNumber": context.serial_number,
+            "mineSite": context.mine_site,
+            "model": context.model,
+            "selectedStatus": context.selected_status,
+        }
+        query.update({key: value for key, value in launch_parameters.items() if value})
         if configuration.powerapps_tenant_id:
             query["tenantId"] = configuration.powerapps_tenant_id
         return urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(query), parts.fragment))

@@ -63,6 +63,36 @@
     };
   }
 
+  function selectedTableRow(event) {
+    const detail = event && event.detail || {};
+    if (!detail.visual || detail.visual.type !== "tableEx") return null;
+    const point = detail.dataPoints && detail.dataPoints[0];
+    if (!point) return null;
+    const fields = {};
+    (point.identity || []).forEach(function (item) {
+      const target = item.target || {};
+      const key = String(target.column || target.measure || "").trim();
+      if (key) fields[key] = item.equals ?? item.value ?? "";
+    });
+    const value = function () {
+      for (let index = 0; index < arguments.length; index += 1) {
+        const candidate = fields[arguments[index]];
+        if (candidate !== undefined && candidate !== null && String(candidate).trim()) return String(candidate).trim();
+      }
+      return "";
+    };
+    const context = {
+      equipment_id: value("Equipment", "Equipment ID"),
+      serial_number: value("SN", "Serial Number", "SerialNumber"),
+      minesite: value("Site", "MineSite", "Mine Site"),
+      model: value("Model"),
+      selected_status: value("Connectivity Status Real", "Status"),
+      page_name: detail.page && detail.page.name || root.dataset.targetPage || "",
+      filters: []
+    };
+    return context.serial_number && context.minesite && context.model ? context : null;
+  }
+
   function openDrawer() {
     drawer.classList.add("open");
     drawer.setAttribute("aria-hidden", "false");
@@ -149,10 +179,14 @@
         logEvent("powerbi_rendered");
       });
       report.on("dataSelected", function (event) {
-        const points = event && event.detail && event.detail.dataPoints || [];
-        const values = points.flatMap(point => (point.identity || []).map(item => item.equals || item.value).filter(Boolean));
-        if (values.length === 1 && !serialInput.value) serialInput.value = String(values[0]);
-        status.textContent = values.length ? "Report selection captured. Confirm the machine before opening the form." : "";
+        const context = selectedTableRow(event);
+        if (!context) return;
+        serialInput.value = context.serial_number;
+        siteInput.value = context.minesite;
+        modelInput.value = context.model;
+        status.textContent = `Opening operational status for ${context.serial_number}...`;
+        logEvent("machine_selected", context);
+        openPowerApps(context);
       });
       report.on("error", function (event) {
         window.clearTimeout(reportLoadTimer);
@@ -169,8 +203,8 @@
     }
   }
 
-  async function openPowerApps() {
-    const context = selectedContext();
+  async function openPowerApps(contextOverride) {
+    const context = Object.assign({}, selectedContext(), contextOverride || {});
     if (!context.serial_number) {
       status.textContent = "Select one machine before opening the operational status form.";
       serialInput.focus();
@@ -208,7 +242,7 @@
     }
   }
 
-  document.getElementById("prime-open-form").addEventListener("click", openPowerApps);
+  document.getElementById("prime-open-form").addEventListener("click", function () { openPowerApps(); });
   frame.addEventListener("load", function () {
     if (!frame.src || frame.hidden) return;
     appState.hidden = true;

@@ -108,7 +108,7 @@ class PrimeMoversIntegrationTests(TestCase):
             })
         self.assertEqual(captured.exception.code, "ENTRA_IDENTITY_CONFLICT")
 
-    def test_launch_context_uses_opaque_identifier_only(self):
+    def test_launch_context_contains_opaque_id_and_non_sensitive_machine_parameters(self):
         request = RequestFactory().post("/")
         request.user = self.user
         request.META["HTTP_USER_AGENT"] = "Test Browser"
@@ -118,8 +118,9 @@ class PrimeMoversIntegrationTests(TestCase):
             payload={"serial_number": "XYZ123", "minesite": "Essakane", "model": "785"},
         )
         self.assertIn(f"contextId={context.opaque_id}", launch_url)
-        self.assertNotIn("XYZ123", launch_url)
-        self.assertNotIn("Essakane", launch_url)
+        self.assertIn("serialNumber=XYZ123", launch_url)
+        self.assertIn("mineSite=Essakane", launch_url)
+        self.assertIn("model=785", launch_url)
         self.assertEqual(context.external_identity, self.identity)
 
     def test_pending_entra_mapping_does_not_block_direct_canvas_app_login(self):
