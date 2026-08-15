@@ -122,6 +122,20 @@ class PrimeMoversIntegrationTests(TestCase):
         self.assertNotIn("Essakane", launch_url)
         self.assertEqual(context.external_identity, self.identity)
 
+    def test_pending_entra_mapping_does_not_block_direct_canvas_app_login(self):
+        self.identity.delete()
+        request = RequestFactory().post("/")
+        request.user = self.user
+        request.META["HTTP_USER_AGENT"] = "Test Browser"
+        context, launch_url = PrimeMoversContextService.create_launch_context(
+            request=request,
+            report=self.report,
+            payload={"serial_number": "XYZ123"},
+        )
+        self.assertIsNone(context.external_identity)
+        self.assertIn("apps.powerapps.com", launch_url)
+        self.assertNotIn("papa.diagne@neemba.com", launch_url)
+
     def test_launch_requires_one_equipment(self):
         response = self.client.post(
             reverse("prime-movers-launch-context", args=[self.report.report_id]),
@@ -181,6 +195,14 @@ class PrimeMoversIntegrationTests(TestCase):
             HTTP_X_CSRFTOKEN=token,
         )
         self.assertEqual(event_response.status_code, 200)
+
+    def test_powerapps_loaded_event_is_audited(self):
+        response = self.client.post(
+            reverse("prime-movers-event", args=[self.report.report_id]),
+            data=json.dumps({"event": "powerapps_loaded", "serial_number": "XYZ123"}),
+            content_type="application/json",
+        )
+        self.assertEqual(response.status_code, 200)
 
     def test_diagnostics_never_return_tokens(self):
         response = self.client.get(

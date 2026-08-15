@@ -209,6 +209,11 @@
   }
 
   document.getElementById("prime-open-form").addEventListener("click", openPowerApps);
+  frame.addEventListener("load", function () {
+    if (!frame.src || frame.hidden) return;
+    appState.hidden = true;
+    logEvent("powerapps_loaded", selectedContext());
+  });
   document.getElementById("prime-close-drawer").addEventListener("click", closeDrawer);
   backdrop.addEventListener("click", closeDrawer);
   document.getElementById("prime-open-new-tab").addEventListener("click", function () {

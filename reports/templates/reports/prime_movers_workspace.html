@@ -33,7 +33,7 @@
             </div>
             <div class="prime-identities" aria-label="Authentication identities">
                 <span><strong>Power BI</strong> Mining 360 API</span>
-                <span><strong>Power Apps</strong> {% if identity.mapping_status == 'validated' %}{{ identity.normalized_upn }}{% else %}Corporate account not connected{% endif %}</span>
+                <span><strong>Power Apps</strong> {% if identity.mapping_status == 'validated' %}{{ identity.normalized_upn }}{% else %}Microsoft sign-in in Power Apps{% endif %}</span>
             </div>
         </header>
 
@@ -63,7 +63,7 @@
             <div>
                 <p class="prime-eyebrow">Power Apps</p>
                 <h2 id="prime-drawer-title">Update operational status</h2>
-                <p id="prime-connected-user">{% if identity.mapping_status == 'validated' %}Connected as {{ identity.display_name }} · {{ identity.normalized_upn }}{% else %}Corporate Microsoft connection required{% endif %}</p>
+                <p id="prime-connected-user">{% if identity.mapping_status == 'validated' %}Connected as {{ identity.display_name }} · {{ identity.normalized_upn }}{% else %}Microsoft will verify your corporate account{% endif %}</p>
             </div>
             <button id="prime-close-drawer" type="button" class="icon-button" aria-label="Close Power Apps panel">&#215;</button>
         </header>

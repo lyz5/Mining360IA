@@ -126,7 +126,7 @@ def integration_event(request, report_id):
         return JsonResponse({"ok": False, "error": "Invalid request payload."}, status=400)
     allowed_events = {
         "powerbi_loaded", "powerbi_rendered", "powerbi_error", "machine_selected",
-        "powerapps_opened", "powerapps_new_tab", "powerapps_error", "report_refreshed",
+        "powerapps_opened", "powerapps_loaded", "powerapps_new_tab", "powerapps_error", "report_refreshed",
     }
     event = str(payload.get("event") or "")
     if event not in allowed_events:

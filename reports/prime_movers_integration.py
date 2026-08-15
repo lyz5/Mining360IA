@@ -164,12 +164,6 @@ class PrimeMoversContextService:
                 status=503,
             )
         identity = CorporateIdentityMappingService.resolve(request.user)
-        if identity.mapping_status != "validated":
-            raise PrimeMoversIntegrationError(
-                "Connect your corporate Microsoft account to open the operational status form.",
-                code="ENTRA_SESSION_MISSING",
-                status=401,
-            )
         equipment_id = str(payload.get("equipment_id") or "").strip()
         serial_number = str(payload.get("serial_number") or "").strip()
         if not equipment_id and not serial_number:
@@ -183,6 +177,9 @@ class PrimeMoversContextService:
             active=True,
             mapping_status="validated",
         ).first()
+        # The direct Canvas App authenticates the actual Microsoft user in the
+        # browser. A pending Mining 360 identity mapping must not be treated as
+        # Power Apps authentication proof, but it also must not block launch.
         expires_at = timezone.now() + timedelta(minutes=configuration.context_expiration_minutes)
         context = PowerAppsLaunchContext.objects.create(
             user=request.user,
