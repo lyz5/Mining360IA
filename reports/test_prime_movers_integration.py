@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 from datetime import timedelta
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 from django.contrib.auth.models import User
 from django.test import Client, RequestFactory, TestCase, override_settings
@@ -18,7 +18,11 @@ from .models import (
     UserExternalIdentity,
 )
 from .powerbi_embed_strategy import PowerBIEmbedStrategyResolver
-from .prime_movers_integration import CorporateIdentityMappingService, PrimeMoversContextService
+from .prime_movers_integration import (
+    CorporateIdentityMappingService,
+    PrimeMoversContextService,
+    PrimeMoversDataverseContextService,
+)
 from .prime_movers_integration import PrimeMoversIntegrationError
 
 
@@ -167,6 +171,69 @@ class PrimeMoversIntegrationTests(TestCase):
         self.assertEqual(second_url, initial_url)
         self.assertEqual(second.serial_number, "L8X00510")
         self.assertEqual(second.report_context_json["selection_version"], 2)
+
+    @patch("reports.prime_movers_integration.PrimeMoversDataverseContextService.publish")
+    def test_successful_dataverse_transfer_is_persisted(self, publish):
+        request = RequestFactory().post("/")
+        request.user = self.user
+        request.META["HTTP_USER_AGENT"] = "Test Browser"
+        context, _ = PrimeMoversContextService.create_launch_context(
+            request=request,
+            report=self.report,
+            payload={"serial_number": "DNR00153", "minesite": "Fekola", "model": "6020"},
+        )
+        publish.assert_called_once()
+        self.assertEqual(context.transfer_status, "transferred")
+        self.assertIsNotNone(context.transferred_at)
+
+    @patch("reports.prime_movers_integration.PrimeMoversDataverseContextService.publish")
+    def test_dataverse_failure_keeps_context_and_exposes_normalized_status(self, publish):
+        publish.side_effect = PrimeMoversIntegrationError(
+            "Mining 360 is not authorized to publish the selected machine to Power Apps.",
+            code="DATAVERSE_APPLICATION_USER_MISSING",
+            status=503,
+        )
+        response = self.client.post(
+            reverse("prime-movers-launch-context", args=[self.report.report_id]),
+            data=json.dumps({"serial_number": "DNR00153", "minesite": "Fekola", "model": "6020"}),
+            content_type="application/json",
+        )
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.json()["context_transfer"]["status"], "failed")
+        self.assertEqual(
+            response.json()["context_transfer"]["error_code"],
+            "DATAVERSE_APPLICATION_USER_MISSING",
+        )
+
+    @patch.object(PrimeMoversDataverseContextService, "_access_token", return_value="server-token")
+    @patch("reports.prime_movers_integration.requests.get")
+    @patch("reports.prime_movers_integration.requests.post")
+    def test_dataverse_payload_contains_selected_machine_and_not_credentials(self, post, get, _token):
+        self.config.dataverse_environment_url = "https://example.crm.dynamics.com"
+        self.config.save(update_fields=["dataverse_environment_url"])
+        context = PowerAppsLaunchContext.objects.create(
+            user=self.user,
+            external_identity=self.identity,
+            configuration=self.config,
+            serial_number="DNR00153",
+            mine_site="Fekola",
+            model="6020",
+            report_context_json={"selection_version": 3},
+            expires_at=timezone.now() + timedelta(minutes=5),
+        )
+        get.return_value = Mock(status_code=200)
+        get.return_value.json.return_value = {"value": []}
+        post.return_value = Mock(status_code=204)
+        PrimeMoversDataverseContextService.publish(
+            context,
+            CorporateIdentityMappingService.resolve(self.user),
+        )
+        payload = post.call_args.kwargs["json"]
+        self.assertEqual(payload["pbi_serialnumber"], "DNR00153")
+        self.assertEqual(payload["pbi_minesite"], "Fekola")
+        self.assertEqual(payload["pbi_selectionversion"], 3)
+        self.assertNotIn("access_token", payload)
+        self.assertNotIn("client_secret", payload)
 
     def test_pending_entra_mapping_does_not_block_direct_canvas_app_login(self):
         self.identity.delete()

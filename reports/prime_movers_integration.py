@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from datetime import timedelta
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
+import requests
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import transaction
@@ -19,6 +20,7 @@ from .models import (
     UserExternalIdentity,
 )
 from .powerbi_embed_strategy import feature_enabled
+from .powerbi import env_value
 
 
 class PrimeMoversIntegrationError(RuntimeError):
@@ -118,6 +120,123 @@ class CorporateIdentityMappingService:
         platform_user.last_entra_authenticated_at = timezone.now()
         platform_user.save(update_fields=["entra_tenant_id", "last_entra_authenticated_at", "updated_at"])
         return identity
+
+
+class PrimeMoversDataverseContextService:
+    """Publishes the selected machine to the shared Canvas App context table."""
+
+    API_VERSION = "v9.2"
+    TIMEOUT_SECONDS = 20
+
+    @classmethod
+    def _access_token(cls, environment_url: str) -> str:
+        tenant_id = env_value("POWERBI_TENANT_ID")
+        client_id = env_value("POWERBI_CLIENT_ID")
+        client_secret = env_value("POWERBI_CLIENT_SECRET")
+        response = requests.post(
+            f"https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token",
+            data={
+                "grant_type": "client_credentials",
+                "client_id": client_id,
+                "client_secret": client_secret,
+                "scope": f"{environment_url.rstrip('/')}/.default",
+            },
+            timeout=cls.TIMEOUT_SECONDS,
+        )
+        if response.status_code != 200:
+            raise PrimeMoversIntegrationError(
+                "Mining 360 could not authenticate with the Power Apps data environment.",
+                code="DATAVERSE_APP_AUTH_FAILED",
+                status=503,
+            )
+        return str(response.json().get("access_token") or "")
+
+    @classmethod
+    def publish(cls, context: PowerAppsLaunchContext, identity: CorporateIdentity) -> None:
+        configuration = context.configuration
+        environment_url = configuration.dataverse_environment_url.rstrip("/")
+        if not environment_url:
+            raise PrimeMoversIntegrationError(
+                "The Power Apps context channel is not configured.",
+                code="DATAVERSE_CONTEXT_NOT_CONFIGURED",
+                status=503,
+            )
+        entity_set = configuration.dataverse_context_entity_set.strip()
+        if not entity_set:
+            raise PrimeMoversIntegrationError(
+                "The Dataverse context table is not configured.",
+                code="DATAVERSE_CONTEXT_NOT_CONFIGURED",
+                status=503,
+            )
+
+        token = cls._access_token(environment_url)
+        headers = {
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/json",
+            "Content-Type": "application/json; charset=utf-8",
+            "OData-MaxVersion": "4.0",
+            "OData-Version": "4.0",
+        }
+        endpoint = f"{environment_url}/api/data/{cls.API_VERSION}/{entity_set}"
+        context_id = str(context.opaque_id)
+        lookup = requests.get(
+            endpoint,
+            headers=headers,
+            params={
+                "$select": "pbi_mining360primemoverscontextid",
+                "$filter": f"pbi_contextid eq '{context_id}'",
+                "$top": "1",
+            },
+            timeout=cls.TIMEOUT_SECONDS,
+        )
+        cls._raise_for_dataverse_error(lookup)
+        rows = lookup.json().get("value") or []
+        version = int(context.report_context_json.get("selection_version") or 0)
+        payload = {
+            "pbi_name": f"Mining360 {context_id}",
+            "pbi_contextid": context_id,
+            "pbi_selectionversion": version,
+            "pbi_equipmentid": context.equipment_id,
+            "pbi_serialnumber": context.serial_number,
+            "pbi_minesite": context.mine_site,
+            "pbi_customer": context.customer,
+            "pbi_model": context.model,
+            "pbi_selectedstatus": context.selected_status,
+            "pbi_userupn": identity.normalized_upn,
+            "pbi_entraobjectid": identity.object_id,
+            "pbi_expiresat": context.expires_at.isoformat(),
+        }
+        if rows:
+            row_id = rows[0]["pbi_mining360primemoverscontextid"]
+            response = requests.patch(
+                f"{endpoint}({row_id})",
+                headers=headers,
+                json=payload,
+                timeout=cls.TIMEOUT_SECONDS,
+            )
+        else:
+            response = requests.post(
+                endpoint,
+                headers=headers,
+                json=payload,
+                timeout=cls.TIMEOUT_SECONDS,
+            )
+        cls._raise_for_dataverse_error(response)
+
+    @staticmethod
+    def _raise_for_dataverse_error(response) -> None:
+        if response.status_code < 400:
+            return
+        if response.status_code in {401, 403}:
+            code = "DATAVERSE_APPLICATION_USER_MISSING"
+            message = "Mining 360 is not authorized to publish the selected machine to Power Apps."
+        elif response.status_code == 404:
+            code = "DATAVERSE_CONTEXT_TABLE_MISSING"
+            message = "The Power Apps context table is not available in Dataverse."
+        else:
+            code = "DATAVERSE_CONTEXT_SYNC_FAILED"
+            message = "The selected machine could not be transmitted to Power Apps."
+        raise PrimeMoversIntegrationError(message, code=code, status=503)
 
 
 class PrimeMoversContextService:
@@ -230,6 +349,21 @@ class PrimeMoversContextService:
                 configuration=configuration,
                 **context_values,
             )
+        try:
+            PrimeMoversDataverseContextService.publish(context, identity)
+        except PrimeMoversIntegrationError as exc:
+            context.transfer_status = "failed"
+            context.transfer_error_code = exc.code
+            context.transfer_error_message = str(exc)
+            context.transferred_at = None
+        else:
+            context.transfer_status = "transferred"
+            context.transfer_error_code = ""
+            context.transfer_error_message = ""
+            context.transferred_at = timezone.now()
+        context.save(update_fields=[
+            "transfer_status", "transfer_error_code", "transfer_error_message", "transferred_at",
+        ])
         launch_url = cls.build_launch_url(configuration, context)
         PrimeMoversIntegrationExecutionLog.objects.create(
             user=request.user,
@@ -259,6 +393,12 @@ class PrimeMoversDiagnosticsService:
     def inspect(request, report: PowerBIReport) -> dict:
         identity = CorporateIdentityMappingService.resolve(request.user)
         configuration = getattr(report, "prime_movers_configuration", None)
+        latest_context = (
+            PowerAppsLaunchContext.objects.filter(user=request.user, configuration=configuration)
+            .order_by("-created_at")
+            .first()
+            if configuration else None
+        )
         blockers = []
         if identity.mapping_status != "validated":
             blockers.append("Microsoft Entra identity mapping is not validated.")
@@ -266,6 +406,10 @@ class PrimeMoversDiagnosticsService:
             blockers.append("Prime Movers integration configuration is missing.")
         elif not configuration.powerapps_launch_url:
             blockers.append("Official Power Apps launch URL and Environment ID are required.")
+        if configuration and not configuration.dataverse_environment_url:
+            blockers.append("The Dataverse context environment URL is not configured.")
+        if latest_context and latest_context.transfer_status == "failed":
+            blockers.append(latest_context.transfer_error_message or "The last Dataverse context transfer failed.")
         public_base_url = str(getattr(settings, "MINING360_PUBLIC_BASE_URL", "") or "")
         if public_base_url and not public_base_url.startswith("https://"):
             blockers.append("The public Mining 360 URL must use HTTPS outside development.")
@@ -291,6 +435,11 @@ class PrimeMoversDiagnosticsService:
                 "launch_url_configured": bool(configuration and configuration.powerapps_launch_url),
                 "iframe_enabled": bool(configuration and configuration.iframe_enabled),
                 "new_tab_fallback": bool(configuration and configuration.new_tab_fallback),
+                "context_transfer_mode": configuration.context_transfer_mode if configuration else "",
+                "dataverse_environment_url": configuration.dataverse_environment_url if configuration else "",
+                "dataverse_context_entity_set": configuration.dataverse_context_entity_set if configuration else "",
+                "last_context_transfer_status": latest_context.transfer_status if latest_context else "not_tested",
+                "last_context_transfer_error_code": latest_context.transfer_error_code if latest_context else "",
             },
             "browser": {
                 "https": request.is_secure(),

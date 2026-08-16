@@ -1054,6 +1054,11 @@ class PrimeMoversIntegrationConfiguration(models.Model):
     powerapps_tenant_id = models.CharField(max_length=128, blank=True)
     powerapps_environment_id = models.CharField(max_length=255, blank=True)
     powerapps_launch_url = models.URLField(max_length=2000, blank=True)
+    dataverse_environment_url = models.URLField(max_length=1000, blank=True)
+    dataverse_context_entity_set = models.CharField(
+        max_length=255,
+        default="pbi_mining360primemoverscontexts",
+    )
     iframe_enabled = models.BooleanField(default=False)
     new_tab_fallback = models.BooleanField(default=True)
     context_transfer_mode = models.CharField(max_length=40, default="context_session")
@@ -1096,6 +1101,10 @@ class PowerAppsLaunchContext(models.Model):
     model = models.CharField(max_length=255, blank=True)
     selected_status = models.CharField(max_length=255, blank=True)
     report_context_json = models.JSONField(default=dict, blank=True)
+    transfer_status = models.CharField(max_length=30, default="pending", db_index=True)
+    transfer_error_code = models.CharField(max_length=120, blank=True)
+    transfer_error_message = models.TextField(blank=True)
+    transferred_at = models.DateTimeField(null=True, blank=True)
     status = models.CharField(max_length=20, choices=STATUSES, default="active", db_index=True)
     expires_at = models.DateTimeField(db_index=True)
     consumed_at = models.DateTimeField(null=True, blank=True)

@@ -83,6 +83,21 @@ class PrimeMoversIntegrationConfigurationAdmin(admin.ModelAdmin):
     list_display = ("code", "report", "powerapps_app_id", "iframe_enabled", "new_tab_fallback", "validation_status", "active")
     list_filter = ("validation_status", "iframe_enabled", "new_tab_fallback", "active")
     search_fields = ("code", "report__display_name", "powerapps_app_id")
+    fieldsets = (
+        (None, {"fields": ("code", "report", "active", "validation_status")}),
+        ("Power BI", {"fields": (
+            "powerbi_page_internal_name", "powerbi_safe_initial_page_internal_name",
+            "powerapps_visual_internal_name", "powerapps_visual_type",
+        )}),
+        ("Power Apps", {"fields": (
+            "powerapps_app_id", "powerapps_tenant_id", "powerapps_environment_id",
+            "powerapps_launch_url", "iframe_enabled", "new_tab_fallback",
+        )}),
+        ("Dataverse context transfer", {"fields": (
+            "context_transfer_mode", "context_expiration_minutes",
+            "dataverse_environment_url", "dataverse_context_entity_set",
+        )}),
+    )
 
 
 @admin.register(UserExternalIdentity)

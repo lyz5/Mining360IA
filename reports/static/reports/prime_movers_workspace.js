@@ -250,6 +250,11 @@
       await preloadPowerApps();
       const payload = await post(root.dataset.launchContextUrl, Object.assign({}, context, { context_id: powerAppsContextId }));
       if (requestVersion !== selectionRequestVersion) return;
+      if (payload.context_transfer && payload.context_transfer.status !== "transferred") {
+        const error = new Error(payload.context_transfer.message || "The selected machine could not be transmitted to Power Apps.");
+        error.code = payload.context_transfer.error_code || "DATAVERSE_CONTEXT_SYNC_FAILED";
+        throw error;
+      }
       if (powerAppsReady) appState.hidden = true;
       else appState.textContent = "Power Apps is still loading. The selected machine context is ready.";
       logEvent("powerapps_opened", context);

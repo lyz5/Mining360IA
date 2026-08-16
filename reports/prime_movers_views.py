@@ -97,6 +97,11 @@ def launch_context(request, report_id):
         "authentication_mode": "microsoft_entra_user",
         "selection_version": int(context.report_context_json.get("selection_version") or 0),
         "context_reused": bool(payload.get("context_id")),
+        "context_transfer": {
+            "status": context.transfer_status,
+            "error_code": context.transfer_error_code,
+            "message": context.transfer_error_message,
+        },
         "connected_user": {"display_name": identity.display_name, "upn": identity.normalized_upn},
     }, status=200 if payload.get("context_id") else 201)
 
@@ -116,6 +121,12 @@ def context_status(request, context_id):
         "status": context.status,
         "expires_at": context.expires_at.isoformat(),
         "selection_version": int(context.report_context_json.get("selection_version") or 0),
+        "context_transfer": {
+            "status": context.transfer_status,
+            "error_code": context.transfer_error_code,
+            "message": context.transfer_error_message,
+            "transferred_at": context.transferred_at.isoformat() if context.transferred_at else None,
+        },
         "selection": {
             "equipment_id": context.equipment_id,
             "serial_number": context.serial_number,
