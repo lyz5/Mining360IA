@@ -16,4 +16,4 @@ class ResourcesLayoutTests(TestCase):
         self.assertContains(response, "resource-library-shell")
         self.assertContains(response, 'aria-label="Resource documents"')
         self.assertNotContains(response, 'class="workspace-band"')
-
+        self.assertNotContains(response, 'class="summary-value"')
