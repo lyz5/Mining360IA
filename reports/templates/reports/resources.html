@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Resources | Mining360IA</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260817-resources-fit-1">
 </head>
-<body>
+<body class="resources-page-body">
     {% include "reports/includes/app_nav.html" %}
-    <main class="app-shell">
+    <main class="app-shell resource-library-shell">
         <header class="topbar">
             <div>
                 <p class="eyebrow">CAT knowledge base</p>
@@ -35,22 +35,9 @@
             </section>
         {% endif %}
 
-        <section class="workspace-band">
-            <div class="placeholder-panel">
-                <p class="eyebrow">Library</p>
-                <h2>Best practices</h2>
-                <p>The library is organized by section, category, and practice level so the files read like a catalog.</p>
-            </div>
-            <div class="placeholder-panel">
-                <p class="eyebrow">Source</p>
-                <h2>{{ resource_source }}</h2>
-                <p>The screen can read from SQL Server or fall back to the local indexed files if the database is unavailable.</p>
-            </div>
-        </section>
-
         <section class="resource-toolbar">
             <form class="resource-search" method="get">
-                <label for="resource-query">Search resources</label>
+                <label class="visually-hidden" for="resource-query">Search resources</label>
                 <input
                     id="resource-query"
                     name="q"
@@ -94,7 +81,7 @@
             {% endfor %}
         </section>
 
-        <section class="resource-grid" id="resource-grid">
+        <section class="resource-grid" id="resource-grid" aria-label="Resource documents">
             {% for resource in resources %}
                 <a
                     class="resource-card"
