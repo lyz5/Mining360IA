@@ -284,13 +284,15 @@ class PrimeMoversIntegrationTests(TestCase):
         context.refresh_from_db()
         self.assertEqual(context.status, "expired")
 
-    def test_workspace_renders_dual_identity_labels(self):
+    def test_workspace_renders_report_without_powerapps_panel(self):
         self.config.powerbi_safe_initial_page_internal_name = "safe-page"
         self.config.save(update_fields=["powerbi_safe_initial_page_internal_name"])
         response = self.client.get(reverse("prime-movers-workspace", args=[self.report.report_id]))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Mining 360 API")
-        self.assertContains(response, "papa.diagne@neemba.com")
+        self.assertNotContains(response, "Add comment")
+        self.assertNotContains(response, "prime-powerapps-frame")
+        self.assertContains(response, "prime_movers_report_only.js")
         self.assertContains(response, 'meta name="csrf-token"')
         self.assertContains(response, 'data-safe-initial-page="safe-page"')
         self.assertContains(response, f'data-target-page="{self.config.powerbi_page_internal_name}"')

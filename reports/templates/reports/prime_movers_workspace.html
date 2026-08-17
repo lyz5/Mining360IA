@@ -15,33 +15,24 @@
         id="prime-movers-workspace"
         class="app-shell prime-workspace"
         data-embed-config-url="{{ embed_config_url }}"
-        data-launch-context-url="{{ launch_context_url }}"
         data-event-url="{{ event_url }}"
-        data-connect-url="{{ connect_url }}"
         data-target-page="{% if configuration %}{{ configuration.powerbi_page_internal_name }}{% endif %}"
         data-safe-initial-page="{% if configuration %}{{ configuration.powerbi_safe_initial_page_internal_name }}{% endif %}"
-        data-hidden-visual="{% if configuration %}{{ configuration.powerapps_visual_internal_name }}{% endif %}"
-        data-iframe-enabled="{{ iframe_enabled|yesno:'true,false' }}"
-        data-new-tab-enabled="{{ new_tab_enabled|yesno:'true,false' }}">
+        data-hidden-visual="{% if configuration %}{{ configuration.powerapps_visual_internal_name }}{% endif %}">
         <header class="prime-header">
             <div class="prime-title">
                 <a href="{% url 'reporting' %}" class="prime-back" aria-label="Back to reports">&#8592;</a>
                 <div>
                     <h1>{{ report.display_name }}</h1>
-                    <p>Operational analytics and status updates</p>
+                    <p>Operational analytics</p>
                 </div>
             </div>
             <div class="prime-identities" aria-label="Authentication identities">
                 <span><strong>Power BI</strong> Mining 360 API</span>
-                <span><strong>Power Apps</strong> {% if identity.mapping_status == 'validated' %}{{ identity.normalized_upn }}{% else %}Microsoft sign-in in Power Apps{% endif %}</span>
             </div>
         </header>
 
-        <section class="prime-context-bar" aria-label="Selected equipment context">
-            <label>Serial number<input id="prime-serial" type="text" autocomplete="off" placeholder="Select or enter a machine"></label>
-            <label>MineSite<input id="prime-site" type="text" autocomplete="off" placeholder="MineSite"></label>
-            <label>Model<input id="prime-model" type="text" autocomplete="off" placeholder="Model"></label>
-            <button id="prime-open-form" type="button" class="button">Add comment</button>
+        <section class="prime-context-bar" aria-label="Report actions">
             <button id="prime-refresh-report" type="button" class="button secondary">Refresh report</button>
             {% if request.user.is_staff %}<a class="button secondary" href="{{ diagnostics_url }}">Diagnostics</a>{% endif %}
             <p id="prime-context-status" class="prime-status" aria-live="polite"></p>
@@ -57,29 +48,7 @@
         </section>
     </main>
 
-    <div id="prime-drawer-backdrop" class="prime-drawer-backdrop" hidden></div>
-    <aside id="prime-powerapps-drawer" class="prime-drawer" aria-hidden="true" aria-labelledby="prime-drawer-title">
-        <header>
-            <div>
-                <p class="prime-eyebrow">Power Apps</p>
-                <h2 id="prime-drawer-title">Update operational status</h2>
-                <p id="prime-connected-user">{% if identity.mapping_status == 'validated' %}Connected as {{ identity.display_name }} · {{ identity.normalized_upn }}{% else %}Microsoft will verify your corporate account{% endif %}</p>
-            </div>
-            <button id="prime-close-drawer" type="button" class="icon-button" aria-label="Close Power Apps panel">&#215;</button>
-        </header>
-        <div class="prime-app-body">
-            <div id="prime-powerapps-state" class="prime-app-state" aria-live="polite">
-                Preparing Power Apps. Select a machine in the report when it is ready.
-            </div>
-            <iframe id="prime-powerapps-frame" title="Prime Movers Operational Status Form" loading="eager" hidden></iframe>
-        </div>
-        <footer>
-            <button id="prime-open-new-tab" type="button" class="button secondary" hidden>Open Power Apps securely</button>
-            <button id="prime-form-done" type="button" class="button">Done and refresh</button>
-        </footer>
-    </aside>
-
     <script src="{% static 'reports/vendor/powerbi-client-2.23.7.min.js' %}"></script>
-    <script src="{% static 'reports/prime_movers_workspace.js' %}"></script>
+    <script src="{% static 'reports/prime_movers_report_only.js' %}"></script>
 </body>
 </html>
