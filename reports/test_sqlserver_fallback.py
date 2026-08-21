@@ -1,11 +1,21 @@
+import os
 from unittest.mock import MagicMock, patch
 
 from django.test import SimpleTestCase
 
 from .sqlserver import connect
+from .sqlserver_config_store import is_sqlserver_config_store_enabled
 
 
 class SQLServerFallbackTests(SimpleTestCase):
+    @patch.dict(os.environ, {}, clear=True)
+    def test_config_sync_is_opt_in(self):
+        self.assertFalse(is_sqlserver_config_store_enabled())
+
+    @patch.dict(os.environ, {"MINING360_SQL_CONFIG_STORE": "1"}, clear=True)
+    def test_config_sync_can_be_enabled_explicitly(self):
+        self.assertTrue(is_sqlserver_config_store_enabled())
+
     @patch("reports.sqlserver.pytds.connect")
     @patch("reports.sqlserver.pyodbc.connect", side_effect=RuntimeError("ODBC TLS failure"))
     def test_configured_odbc_driver_falls_back_to_python_tds(self, odbc_connect, tds_connect):

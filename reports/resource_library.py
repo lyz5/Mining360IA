@@ -1,6 +1,8 @@
 import base64
 import mimetypes
 import re
+import threading
+import time
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -13,6 +15,9 @@ TEXT_EXTENSIONS = {".txt", ".csv", ".log", ".md"}
 DOCUMENT_EXTENSIONS = {".pdf", ".docx", ".pptx", ".xlsx", *TEXT_EXTENSIONS}
 INLINE_EXTENSIONS = DOCUMENT_EXTENSIONS
 SKIPPED_RESOURCE_DIR_PREFIXES = ("_pdf_text_index",)
+RESOURCE_INVENTORY_CACHE_SECONDS = 60
+_RESOURCE_INVENTORY_CACHE: tuple[float, tuple["ResourceFile", ...]] | None = None
+_RESOURCE_INVENTORY_LOCK = threading.RLock()
 
 
 @dataclass(frozen=True)
@@ -170,6 +175,7 @@ def build_resource(path: Path) -> ResourceFile:
     mime_type = mimetypes.guess_type(path.name)[0] or "application/octet-stream"
     section, category, level, folder_path = classify_resource(relative_path)
 
+    size = path.stat().st_size
     return ResourceFile(
         id=resource_id,
         title=path.stem,
@@ -180,8 +186,8 @@ def build_resource(path: Path) -> ResourceFile:
         level=level,
         folder_path=folder_path,
         relative_path=relative_path.as_posix(),
-        size=path.stat().st_size,
-        size_label=format_size(path.stat().st_size),
+        size=size,
+        size_label=format_size(size),
         mime_type=mime_type,
         view_url=reverse("resource-detail", args=[resource_id]),
         raw_url=reverse("resource-file", args=[resource_id]),
@@ -201,20 +207,9 @@ def list_resources(
     category: str = "",
     level: str = "",
 ) -> list[ResourceFile]:
-    if not RESOURCE_ROOT.exists():
-        return []
-
     normalized_query = query.strip().lower()
     resources = []
-    for path in RESOURCE_ROOT.rglob("*"):
-        if not path.is_file():
-            continue
-        if is_skipped_resource_path(path):
-            continue
-        if path.suffix.lower() not in INLINE_EXTENSIONS:
-            continue
-
-        resource = build_resource(path)
+    for resource in resource_inventory():
         if section and resource.section != section:
             continue
         if category and resource.category != category:
@@ -233,6 +228,33 @@ def list_resources(
         resources,
         key=lambda item: (item.section.lower(), item.category.lower(), item.level.lower(), item.title.lower()),
     )
+
+
+def invalidate_resource_inventory() -> None:
+    global _RESOURCE_INVENTORY_CACHE
+    with _RESOURCE_INVENTORY_LOCK:
+        _RESOURCE_INVENTORY_CACHE = None
+
+
+def resource_inventory() -> tuple[ResourceFile, ...]:
+    global _RESOURCE_INVENTORY_CACHE
+    now = time.monotonic()
+    with _RESOURCE_INVENTORY_LOCK:
+        cached = _RESOURCE_INVENTORY_CACHE
+        if cached and now - cached[0] < RESOURCE_INVENTORY_CACHE_SECONDS:
+            return cached[1]
+        if not RESOURCE_ROOT.exists():
+            inventory: tuple[ResourceFile, ...] = ()
+        else:
+            inventory = tuple(
+                build_resource(path)
+                for path in RESOURCE_ROOT.rglob("*")
+                if path.is_file()
+                and not is_skipped_resource_path(path)
+                and path.suffix.lower() in INLINE_EXTENSIONS
+            )
+        _RESOURCE_INVENTORY_CACHE = (now, inventory)
+        return inventory
 
 
 def list_best_practice_resources() -> list[ResourceFile]:
@@ -289,5 +311,5 @@ def save_uploaded_resource(uploaded_file, *, title: str, section: str, category:
     with target.open("wb") as handle:
         for chunk in uploaded_file.chunks():
             handle.write(chunk)
-
+    invalidate_resource_inventory()
     return build_resource(target)

@@ -10,6 +10,7 @@ from django.db import models, transaction
 from django.db.models.deletion import ProtectedError, RestrictedError
 from django.core.cache import cache
 from django.core.exceptions import PermissionDenied, ValidationError
+from django.core.paginator import Paginator
 from django.apps import apps
 from django.http import FileResponse, Http404, HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, render, redirect
@@ -55,7 +56,10 @@ from .powerbi import (
     get_access_token,
     generate_report_embed_token,
     get_workspace_report,
+    get_latest_refresh,
     env_value,
+    powerbi_root,
+    trigger_dataset_refresh,
     list_workspace_reports_with_refresh,
     list_workspace_reports,
     resolve_workspace_dataset_id,
@@ -149,6 +153,8 @@ from .models import (
     PowerBIReport,
     PowerBIAuthenticationAuditLog,
     ReportingReportPreference,
+    UserReportActivity,
+    UserReportFavorite,
     SystemDatabaseConfig,
     SystemIntegrationConfig,
     SystemManagedTable,
@@ -187,6 +193,7 @@ from .microsoft_delegated_auth import (
     has_pending_powerbi_flow,
 )
 from .powerbi_embed_strategy import feature_enabled
+from .reporting_hub_service import ReportingHubService, ensure_catalog_preferences
 from .prime_movers_integration import CorporateIdentityMappingService, PrimeMoversIntegrationError
 from .data_browsers import (
     DataBrowserValidationError,
@@ -1211,8 +1218,13 @@ def users_roles_update(request, user_id):
     return redirect("users-manage")
 
 
+@login_required
 def dashboard(request):
     module_access = user_module_access(request.user)
+    availability_command_center_enabled = bool(
+        feature_enabled("ENABLE_AVAILABILITY_COMMAND_CENTER_HOME", request.user)
+        and (module_access.get("reporting") or _user_is_platform_admin(request.user))
+    )
     modules = [
         {
             "name": "Reporting",
@@ -1265,6 +1277,8 @@ def dashboard(request):
         "reports/dashboard.html",
         {
             "modules": modules,
+            "availability_command_center_enabled": availability_command_center_enabled,
+            "homepage_language": str(getattr(request, "LANGUAGE_CODE", "en") or "en"),
             "active_section": "dashboard",
             "sidebar_stats": [
                 {"label": "Modules", "value": len(modules)},
@@ -1293,14 +1307,14 @@ def data_home(request):
             "url_name": "data-sources",
         },
     ]
-    browsers = DataBrowser.objects.prefetch_related("columns").all()
+    browsers = list(DataBrowser.objects.select_related("write_mapping").all())
     return render(
         request,
         "reports/data_home.html",
         {
             "cards": cards,
             "browsers": [_browser_payload(browser, include_columns=False) for browser in browsers],
-            "browser_state": [_browser_payload(browser, include_columns=True) for browser in browsers],
+            "browser_state": [_browser_payload(browser, include_columns=False) for browser in browsers],
             "active_section": "data",
             "sidebar_stats": [
                 {"label": "Workflows", "value": len(cards)},
@@ -1513,7 +1527,7 @@ def _json_error(message: str, status: int = 400):
 @require_http_methods(["GET", "POST"])
 def data_browsers_api(request):
     if request.method == "GET":
-        browsers = DataBrowser.objects.prefetch_related("columns").all()
+        browsers = DataBrowser.objects.select_related("write_mapping").all()
         return JsonResponse({"ok": True, "browsers": [_browser_payload(browser, include_columns=False) for browser in browsers]})
     try:
         browser = _apply_browser_payload(DataBrowser(), _request_payload(request))
@@ -1566,7 +1580,10 @@ def data_browsers_reorder_api(request):
 @login_required
 @require_http_methods(["GET", "PUT", "DELETE"])
 def data_browser_api(request, browser_id):
-    browser = get_object_or_404(DataBrowser.objects.prefetch_related("columns"), id=browser_id)
+    browser = get_object_or_404(
+        DataBrowser.objects.select_related("write_mapping").prefetch_related("columns"),
+        id=browser_id,
+    )
     if request.method == "GET":
         return JsonResponse({"ok": True, "browser": _browser_payload(browser)})
     if request.method == "DELETE":
@@ -2070,6 +2087,7 @@ def _visible_reporting_reports(reports):
     return reports
 
 
+@ensure_csrf_cookie
 def reporting_home(request):
     reports = []
     error = None
@@ -2079,10 +2097,30 @@ def reporting_home(request):
     except Exception as exc:
         error = str(exc)
     reports = _visible_reporting_reports(reports)
+    if feature_enabled("ENABLE_PREMIUM_REPORTING_HUB", request.user):
+        hub = ReportingHubService(request.user, reports).build(request.GET)
+        return render(
+            request,
+            "reports/home_premium.html",
+            {
+                "hub": hub,
+                "reports": hub["all_reports"],
+                "error": error,
+                "workspace_name": "Efficience Mine Workspace",
+                "active_section": "reporting",
+                "reporting_hub_api_url": reverse("reporting-hub-api"),
+                "sidebar_stats": [
+                    {"label": "Reports", "value": hub["summary"]["total"]},
+                    {"label": "Healthy", "value": hub["summary"]["healthy"]},
+                ],
+            },
+        )
     completed_count = sum(
         1 for report in reports
         if str(getattr(report, "refresh_status", "") or "").lower() == "completed"
     )
+
+
     failed_count = sum(
         1 for report in reports
         if str(getattr(report, "refresh_status", "") or "").lower() == "failed"
@@ -2133,6 +2171,9 @@ def reporting_home(request):
             "report_type": report.report_type,
             "last_refresh": report.last_refresh,
             "refresh_status": report.refresh_status,
+            "is_refreshing": str(report.refresh_status or "").lower() in {
+                "unknown", "inprogress", "running", "notstarted"
+            },
             "visual_class": visual_class,
             "authentication_mode": configured.authentication_mode if configured else "app_owns_data",
             "launch_mode": launch_mode,
@@ -2158,6 +2199,74 @@ def reporting_home(request):
             ],
         },
     )
+
+
+@login_required
+@require_http_methods(["GET"])
+def reporting_hub_api(request):
+    if not has_module_access(request.user, "reporting"):
+        return JsonResponse({"ok": False, "error": "Reporting access required."}, status=403)
+    try:
+        reports = _visible_reporting_reports(list_workspace_reports_with_refresh())
+        hub = ReportingHubService(request.user, reports).build(request.GET)
+        return JsonResponse({"ok": True, **_json_safe(hub)})
+    except Exception as exc:
+        logger.warning("Reporting Hub data could not be loaded: %s", exc)
+        return JsonResponse({"ok": False, "error": "Reports could not be loaded."}, status=502)
+
+
+@login_required
+@require_http_methods(["POST", "DELETE"])
+def reporting_report_favorite_api(request, report_id):
+    if not has_module_access(request.user, "reporting"):
+        return JsonResponse({"ok": False, "error": "Reporting access required."}, status=403)
+    report_id = str(report_id)
+    try:
+        reports = _visible_reporting_reports(list_workspace_reports())
+        visible_report = next((item for item in reports if str(item.id) == report_id), None)
+        if visible_report is None:
+            return JsonResponse({"ok": False, "error": "Report not found."}, status=404)
+        preferences = ensure_catalog_preferences(reports, user=request.user)
+        preference = preferences.get(report_id)
+        if preference is None or not preference.is_visible:
+            return JsonResponse({"ok": False, "error": "Report not found."}, status=404)
+        if request.method == "POST":
+            UserReportFavorite.objects.get_or_create(user=request.user, report=preference)
+            is_favorite = True
+        else:
+            UserReportFavorite.objects.filter(user=request.user, report=preference).delete()
+            is_favorite = False
+        return JsonResponse({"ok": True, "report_id": report_id, "is_favorite": is_favorite})
+    except Exception as exc:
+        logger.warning("Reporting favorite update failed for report_id=%s: %s", report_id, exc)
+        return JsonResponse({"ok": False, "error": "Favorite could not be updated."}, status=502)
+
+
+@login_required
+@require_http_methods(["GET"])
+def reporting_report_launch(request, report_id):
+    if not has_module_access(request.user, "reporting"):
+        raise PermissionDenied("Reporting access required.")
+    report_id = str(report_id)
+    reports = _visible_reporting_reports(list_workspace_reports())
+    visible_report = next((item for item in reports if str(item.id) == report_id), None)
+    if visible_report is None:
+        raise Http404("Report not found")
+    preferences = ensure_catalog_preferences(reports, user=request.user)
+    preference = preferences.get(report_id)
+    if preference is None or not preference.is_visible:
+        raise Http404("Report not found")
+    configured = PowerBIReport.objects.filter(report_id=report_id, is_active=True).first()
+    launch_mode = configured.launch_mode if configured else "generic_powerbi"
+    UserReportActivity.objects.create(
+        user=request.user,
+        report=preference,
+        launch_mode=launch_mode,
+        source="reporting_hub",
+    )
+    if launch_mode == "prime_movers_workspace":
+        return redirect("prime-movers-workspace", report_id=report_id)
+    return redirect("report-detail", report_id=report_id)
 
 
 @ensure_csrf_cookie
@@ -2408,6 +2517,73 @@ def source_edit(request, source_key):
             ],
         },
     )
+
+
+@login_required
+@require_http_methods(["GET", "POST"])
+def reporting_report_refresh_api(request, report_id):
+    if not has_module_access(request.user, "reporting"):
+        return JsonResponse({"ok": False, "error": "Reporting access required."}, status=403)
+
+    report_id = str(report_id)
+    try:
+        reports = _visible_reporting_reports(list_workspace_reports())
+        report = next((item for item in reports if str(item.id) == report_id), None)
+        if report is None:
+            return JsonResponse({"ok": False, "error": "Report not found."}, status=404)
+        if not report.dataset_id:
+            return JsonResponse(
+                {"ok": False, "error": "This report does not have a refreshable semantic model."},
+                status=400,
+            )
+
+        workspace_id = env_value("POWERBI_WORKSPACE_ID", "")
+        token = get_access_token()
+        if request.method == "POST":
+            trigger_dataset_refresh(token, workspace_id, report.dataset_id)
+            logger.info(
+                "Power BI refresh requested by user_id=%s report_id=%s dataset_id=%s",
+                request.user.pk,
+                report_id,
+                report.dataset_id,
+            )
+            return JsonResponse({
+                "ok": True,
+                "report_id": report_id,
+                "dataset_id": report.dataset_id,
+                "status": "Refreshing",
+                "is_refreshing": True,
+                "last_refresh": report.last_refresh or "",
+            }, status=202)
+
+        last_refresh, status = get_latest_refresh(
+            token,
+            workspace_id,
+            report.dataset_id,
+            api_root=powerbi_root(),
+        )
+        normalized = str(status or "").lower()
+        is_refreshing = normalized in {"unknown", "inprogress", "running", "notstarted"}
+        return JsonResponse({
+            "ok": True,
+            "report_id": report_id,
+            "dataset_id": report.dataset_id,
+            "status": "Refreshing" if is_refreshing else (status or "No refresh"),
+            "is_refreshing": is_refreshing,
+            "last_refresh": last_refresh or "",
+        })
+    except Exception as exc:
+        logger.warning("Power BI report refresh failed for report_id=%s: %s", report_id, exc)
+        return JsonResponse(
+            {
+                "ok": False,
+                "error": (
+                    "The report refresh could not be started. Verify the semantic model refresh "
+                    "configuration or try again later."
+                ),
+            },
+            status=502,
+        )
 
 
 @ensure_csrf_cookie
@@ -6749,12 +6925,15 @@ def resources(request):
     selected_category = request.GET.get("category", "")
     selected_level = request.GET.get("level", "")
     resource_source = "Local files"
-    resource_items = list_resources(
+    all_resource_items = list_resources(
         query,
         section=selected_section,
         category=selected_category,
         level=selected_level,
     )
+    resource_paginator = Paginator(all_resource_items, 48)
+    resource_page = resource_paginator.get_page(request.GET.get("page"))
+    resource_items = list(resource_page.object_list)
     facets = list_resource_facets()
     return render(
         request,
@@ -6762,7 +6941,8 @@ def resources(request):
         {
             "active_section": "resources",
             "resources": resource_items,
-            "resource_count": len(resource_items),
+            "resource_count": resource_paginator.count,
+            "resource_page": resource_page,
             "query": query,
             "selected_section": selected_section,
             "selected_category": selected_category,

@@ -38,7 +38,14 @@
                 method: "PATCH",
                 credentials: "same-origin",
                 headers: { "Content-Type": "application/json", Accept: "application/json", "X-CSRFToken": csrf, "X-Requested-With": "XMLHttpRequest" },
-                body: JSON.stringify({ display_name: value }),
+                body: JSON.stringify({
+                    display_name: value,
+                    category: row.querySelector("[data-report-category]")?.value || "other",
+                    description: row.querySelector("[data-report-description]")?.value || "",
+                    tags: (row.querySelector("[data-report-tags]")?.value || "").split(",").map(item => item.trim()).filter(Boolean),
+                    business_owner: row.querySelector("[data-report-owner]")?.value || "",
+                    freshness_threshold_hours: row.querySelector("[data-report-freshness]")?.value || null,
+                }),
             });
             const payload = await response.json().catch(() => ({}));
             if (!response.ok) throw new Error(payload.error || "Display name could not be saved.");

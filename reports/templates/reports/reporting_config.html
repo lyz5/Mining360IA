@@ -75,10 +75,20 @@
                             <span class="reporting-config-row__editor">
                                 <input type="text" value="{{ report.display_name }}" maxlength="255" data-report-display-input aria-label="Display name for {{ report.report_name }}">
                                 <button class="button secondary" type="button" data-report-display-reset title="Restore the Power BI name">Reset</button>
-                                <button class="button" type="button" data-report-display-save>Save name</button>
+                                <button class="button" type="button" data-report-display-save>Save details</button>
                             </span>
                             <small data-report-display-status role="status" aria-live="polite"></small>
                         </label>
+                        <details class="reporting-config-row__catalog">
+                            <summary>Catalog details</summary>
+                            <div class="reporting-config-catalog-fields">
+                                <label><span>Category</span><select data-report-category>{% for code, label in report_categories %}<option value="{{ code }}"{% if report.category == code %} selected{% endif %}>{{ label }}</option>{% endfor %}</select></label>
+                                <label><span>Business owner</span><input type="text" value="{{ report.business_owner }}" maxlength="255" data-report-owner></label>
+                                <label class="wide"><span>Business description</span><textarea rows="2" maxlength="600" data-report-description>{{ report.description }}</textarea></label>
+                                <label><span>Tags</span><input type="text" value="{{ report.tags }}" placeholder="Availability, Downtime" data-report-tags></label>
+                                <label><span>Freshness threshold (hours)</span><input type="number" value="{{ report.freshness_threshold_hours }}" min="1" max="8760" data-report-freshness></label>
+                            </div>
+                        </details>
                         <label class="reporting-config-row__control">
                             <span data-visibility-label>{% if report.is_visible %}Visible{% else %}Hidden{% endif %}</span>
                             <input

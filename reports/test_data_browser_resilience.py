@@ -1,7 +1,9 @@
 from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
+from django.db import connection
 from django.test import TestCase
+from django.test.utils import CaptureQueriesContext
 from django.urls import reverse
 
 from .models import DataBrowser
@@ -36,3 +38,21 @@ class DataBrowserResilienceTests(TestCase):
         self.assertEqual(response.status_code, 503)
         self.assertEqual(response.json()["error_code"], "data_source_unavailable")
         self.assertNotContains(response, "secret database detail", status_code=503)
+
+    def test_data_home_avoids_mapping_n_plus_one_and_defers_columns(self):
+        DataBrowser.objects.bulk_create([
+            DataBrowser(
+                name=f"Browser {index}",
+                table_name=f"Browser{index}",
+                source_view_name=f"dbo.Browser{index}",
+            )
+            for index in range(4)
+        ])
+        with CaptureQueriesContext(connection) as queries:
+            response = self.client.get(reverse("data-home"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertLessEqual(len(queries), 5)
+        browser_state = response.context["browser_state"]
+        self.assertTrue(browser_state)
+        self.assertTrue(all("columns" not in item for item in browser_state))

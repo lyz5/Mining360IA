@@ -1533,6 +1533,12 @@
         } catch (error) {
             chatThread.innerHTML = `<div class="alert">${escapeHtml(error.message || "Unable to load conversations.")}</div>`;
         }
+        const contextualDraft = new URLSearchParams(window.location.search).get("draft") || "";
+        if (contextualDraft && input) {
+            input.value = contextualDraft.slice(0, 2000);
+            input.dispatchEvent(new Event("input", { bubbles: true }));
+            input.focus({ preventScroll: true });
+        }
         updateComposerClearance();
 
         document.getElementById("ai-new-conversation")?.addEventListener("click", async () => {

@@ -99,6 +99,11 @@ def reporting_config_home(request):
                 "workspace_name": str(getattr(report, "workspace_name", "") or ""),
                 "is_visible": preference.is_visible if preference else True,
                 "refresh_status": str(getattr(report, "refresh_status", "") or "No refresh"),
+                "description": preference.description if preference else "",
+                "category": preference.category if preference else "other",
+                "tags": ", ".join(preference.tags_json or []) if preference else "",
+                "business_owner": preference.business_owner if preference else "",
+                "freshness_threshold_hours": preference.freshness_threshold_hours if preference else "",
             }
         )
 
@@ -111,6 +116,7 @@ def reporting_config_home(request):
             "report_count": len(report_items),
             "visible_count": sum(1 for item in report_items if item["is_visible"]),
             "hidden_count": sum(1 for item in report_items if not item["is_visible"]),
+            "report_categories": ReportingReportPreference.CATEGORIES,
             "error": error,
         },
     )
@@ -131,6 +137,29 @@ def reporting_report_display_name_api(request, report_id):
         return JsonResponse({"ok": False, "error": "Display name is required."}, status=400)
     if len(display_name) > 255:
         return JsonResponse({"ok": False, "error": "Display name must contain 255 characters or fewer."}, status=400)
+    category = str(payload.get("category") or "other").strip()
+    allowed_categories = {code for code, _label in ReportingReportPreference.CATEGORIES}
+    if category not in allowed_categories:
+        return JsonResponse({"ok": False, "error": "Select a valid report category."}, status=400)
+    description = " ".join(str(payload.get("description") or "").split())
+    if len(description) > 600:
+        return JsonResponse({"ok": False, "error": "Description must contain 600 characters or fewer."}, status=400)
+    business_owner = " ".join(str(payload.get("business_owner") or "").split())
+    if len(business_owner) > 255:
+        return JsonResponse({"ok": False, "error": "Business owner must contain 255 characters or fewer."}, status=400)
+    raw_tags = payload.get("tags") or []
+    if isinstance(raw_tags, str):
+        raw_tags = raw_tags.split(",")
+    tags = list(dict.fromkeys(" ".join(str(tag).split()) for tag in raw_tags if str(tag).strip()))
+    if len(tags) > 6 or any(len(tag) > 40 for tag in tags):
+        return JsonResponse({"ok": False, "error": "Use up to 6 tags of 40 characters or fewer."}, status=400)
+    raw_threshold = payload.get("freshness_threshold_hours")
+    try:
+        threshold = int(raw_threshold) if str(raw_threshold or "").strip() else None
+    except (TypeError, ValueError):
+        return JsonResponse({"ok": False, "error": "Freshness threshold must be a number of hours."}, status=400)
+    if threshold is not None and not 1 <= threshold <= 8760:
+        return JsonResponse({"ok": False, "error": "Freshness threshold must be between 1 and 8760 hours."}, status=400)
 
     try:
         reports = list(list_workspace_reports())
@@ -141,12 +170,27 @@ def reporting_report_display_name_api(request, report_id):
         return JsonResponse({"ok": False, "error": "The Power BI report could not be found."}, status=404)
 
     preference = _save_preference(report, user=request.user, display_name=display_name)
+    preference.description = description
+    preference.category = category
+    preference.tags_json = tags
+    preference.business_owner = business_owner
+    preference.freshness_threshold_hours = threshold
+    preference.updated_by = request.user
+    preference.save(update_fields=[
+        "description", "category", "tags_json", "business_owner",
+        "freshness_threshold_hours", "updated_by", "updated_at",
+    ])
     return JsonResponse({
         "ok": True,
         "report": {
             "id": preference.report_id,
             "report_name": preference.report_name,
             "display_name": preference.display_name,
+            "description": preference.description,
+            "category": preference.category,
+            "tags": preference.tags_json,
+            "business_owner": preference.business_owner,
+            "freshness_threshold_hours": preference.freshness_threshold_hours,
             "updated_at": preference.updated_at.isoformat(),
         },
     })

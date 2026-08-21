@@ -129,6 +129,30 @@ class ReportingConfigurationTests(TestCase):
         self.assertEqual(preference.display_name, "Fleet Operations")
 
     @patch("reports.reporting_config_views.list_workspace_reports")
+    def test_administrator_can_govern_premium_catalog_metadata(self, list_reports):
+        list_reports.return_value = [self.first_report]
+        self.client.force_login(self.admin)
+
+        response = self.client.patch(
+            reverse("reporting-config-display-name-api", args=[self.first_report.id]),
+            data=json.dumps({
+                "display_name": "Fleet Operations",
+                "description": "Monitor fleet availability and downtime.",
+                "category": "fleet_performance",
+                "tags": ["Availability", "Downtime"],
+                "business_owner": "Fleet Performance",
+                "freshness_threshold_hours": 24,
+            }),
+            content_type="application/json",
+        )
+
+        self.assertEqual(response.status_code, 200)
+        preference = ReportingReportPreference.objects.get(report_id=str(self.first_report.id))
+        self.assertEqual(preference.category, "fleet_performance")
+        self.assertEqual(preference.tags_json, ["Availability", "Downtime"])
+        self.assertEqual(preference.freshness_threshold_hours, 24)
+
+    @patch("reports.reporting_config_views.list_workspace_reports")
     def test_display_name_ajax_rejects_empty_name(self, list_reports):
         list_reports.return_value = [self.first_report]
         self.client.force_login(self.admin)

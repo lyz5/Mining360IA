@@ -13,6 +13,7 @@ from . import ai_conversation_views
 from . import downtime_mapping_views
 from . import user_access_views
 from . import prime_movers_views
+from . import homepage_views
 
 
 urlpatterns = [
@@ -35,6 +36,8 @@ urlpatterns = [
     path("api/access-control/directory/search/", user_access_views.directory_search_api, name="access-control-directory-search-api"),
     path("api/access-control/options/", user_access_views.options_api, name="access-control-options-api"),
     path("", views.dashboard, name="dashboard"),
+    path("api/home/availability-command-center/", homepage_views.availability_command_center_api, name="homepage-availability-api"),
+    path("api/home/interactions/", homepage_views.homepage_interaction_api, name="homepage-interaction-api"),
     path("data/", views.data_home, name="data-home"),
     path("data/downtime-mapping-check/", downtime_mapping_views.page, name="downtime-mapping-check"),
     path("api/data/downtime-mapping-check/preview/", downtime_mapping_views.preview_api, name="downtime-mapping-preview-api"),
@@ -87,6 +90,10 @@ urlpatterns = [
     path("data-quality/runs/<int:run_id>/records/<str:control_key>/", views.data_quality_records, name="data-quality-records"),
     path("data-quality/runs/<int:run_id>/export/<str:control_key>/", views.data_quality_export, name="data-quality-export"),
     path("reporting/", views.reporting_home, name="reporting"),
+    path("api/reporting/hub/", views.reporting_hub_api, name="reporting-hub-api"),
+    path("api/reporting/reports/<uuid:report_id>/favorite/", views.reporting_report_favorite_api, name="reporting-report-favorite-api"),
+    path("reporting/reports/<uuid:report_id>/launch/", views.reporting_report_launch, name="reporting-report-launch"),
+    path("reporting/reports/<uuid:report_id>/refresh/", views.reporting_report_refresh_api, name="reporting-report-refresh-api"),
     path("config/reporting/", reporting_config_views.reporting_config_home, name="reporting-config-home"),
     path("config/reporting/reports/<str:report_id>/display-name/", reporting_config_views.reporting_report_display_name_api, name="reporting-config-display-name-api"),
     path("business-performance/", views.business_performance_home, name="business-performance"),

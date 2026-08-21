@@ -1,8 +1,11 @@
 import json
+import logging
 import os
 import time
 import re
+import threading
 from dataclasses import dataclass
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 from functools import lru_cache
 from pathlib import Path
@@ -10,6 +13,9 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from zoneinfo import ZoneInfo
 
 import requests
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 for _proxy_var in (
@@ -30,8 +36,11 @@ POWERBI_SCOPE = "https://analysis.windows.net/powerbi/api/.default"
 POWERBI_ROOT = "https://api.powerbi.com/v1.0/myorg"
 DISPLAY_TIMEZONE = ZoneInfo("Atlantic/Reykjavik")
 REPORT_LIST_CACHE_SECONDS = 300
+REPORT_REFRESH_CACHE_SECONDS = 120
 ACCESS_TOKEN_CACHE_SECONDS = 45 * 60
 _REPORT_LIST_CACHE: tuple[float, list["PowerBIReport"]] | None = None
+_REPORT_REFRESH_CACHE: dict[str, tuple[float, str, str]] = {}
+_REPORT_REFRESH_CACHE_LOCK = threading.Lock()
 _ACCESS_TOKEN_CACHE: tuple[float, str] | None = None
 HTTP = requests.Session()
 HTTP.trust_env = False
@@ -351,11 +360,18 @@ def list_report_pages(report_id: str, token: str | None = None, workspace_id: st
     return [item for item in response.json().get("value", []) if isinstance(item, dict)]
 
 
-def get_latest_refresh(token: str, workspace_id: str, dataset_id: str) -> tuple[str, str]:
+def get_latest_refresh(
+    token: str,
+    workspace_id: str,
+    dataset_id: str,
+    *,
+    api_root: str | None = None,
+    display_timezone=None,
+) -> tuple[str, str]:
     if not dataset_id:
         return "", ""
     response = HTTP.get(
-        f"{powerbi_root()}/groups/{workspace_id}/datasets/{dataset_id}/refreshes?$top=1",
+        f"{api_root or powerbi_root()}/groups/{workspace_id}/datasets/{dataset_id}/refreshes?$top=1",
         headers={"Authorization": f"Bearer {token}"},
         timeout=30,
     )
@@ -371,10 +387,10 @@ def get_latest_refresh(token: str, workspace_id: str, dataset_id: str) -> tuple[
         or latest.get("refreshStartTime")
         or ""
     )
-    return format_refresh_datetime(refresh_time), latest.get("status", "")
+    return format_refresh_datetime(refresh_time, display_timezone=display_timezone), latest.get("status", "")
 
 
-def format_refresh_datetime(value: str) -> str:
+def format_refresh_datetime(value: str, *, display_timezone=None) -> str:
     if not value:
         return ""
     normalized = value.replace("Z", "+00:00")
@@ -382,16 +398,46 @@ def format_refresh_datetime(value: str) -> str:
         parsed = datetime.fromisoformat(normalized)
     except ValueError:
         return value
-    return parsed.astimezone(_display_timezone()).strftime("%Y-%m-%d %I:%M %p")
+    return parsed.astimezone(display_timezone or _display_timezone()).strftime("%Y-%m-%d %I:%M %p")
 
 
 def list_workspace_reports_with_refresh() -> list[PowerBIReport]:
     workspace_id = env_value("POWERBI_WORKSPACE_ID", DEFAULT_WORKSPACE_ID)
     token = get_access_token()
     reports = list_workspace_reports()
+    api_root = powerbi_root()
+    display_timezone = _display_timezone()
+    dataset_ids = sorted({report.dataset_id for report in reports if report.dataset_id})
     enriched = []
+    cache_seconds = max(0, int(os.getenv("POWERBI_REFRESH_CACHE_SECONDS", REPORT_REFRESH_CACHE_SECONDS)))
+    refresh_by_dataset = {}
+    if dataset_ids:
+        worker_count = min(6, len(dataset_ids))
+        with ThreadPoolExecutor(max_workers=worker_count, thread_name_prefix="powerbi-refresh") as executor:
+            futures = {
+                dataset_id: executor.submit(
+                    get_latest_refresh_cached,
+                    token,
+                    workspace_id,
+                    dataset_id,
+                    cache_seconds=cache_seconds,
+                    api_root=api_root,
+                    display_timezone=display_timezone,
+                )
+                for dataset_id in dataset_ids
+            }
+            for dataset_id, future in futures.items():
+                try:
+                    refresh_by_dataset[dataset_id] = future.result()
+                except Exception as exc:
+                    LOGGER.warning(
+                        "Power BI refresh history unavailable for dataset %s: %s",
+                        dataset_id,
+                        exc,
+                    )
+                    refresh_by_dataset[dataset_id] = ("", "Unavailable")
     for report in reports:
-        last_refresh, refresh_status = get_latest_refresh(token, workspace_id, report.dataset_id)
+        last_refresh, refresh_status = refresh_by_dataset.get(report.dataset_id, ("", ""))
         enriched.append(
             PowerBIReport(
                 id=report.id,
@@ -406,6 +452,75 @@ def list_workspace_reports_with_refresh() -> list[PowerBIReport]:
             )
         )
     return enriched
+
+
+def get_latest_refresh_cached(
+    token: str,
+    workspace_id: str,
+    dataset_id: str,
+    *,
+    cache_seconds: int = REPORT_REFRESH_CACHE_SECONDS,
+    api_root: str | None = None,
+    display_timezone=None,
+) -> tuple[str, str]:
+    if not dataset_id:
+        return "", ""
+    now = time.monotonic()
+    cache_key = f"{workspace_id}:{dataset_id}"
+    with _REPORT_REFRESH_CACHE_LOCK:
+        cached = _REPORT_REFRESH_CACHE.get(cache_key)
+        if cached and now - cached[0] < cache_seconds:
+            return cached[1], cached[2]
+    result = get_latest_refresh(
+        token,
+        workspace_id,
+        dataset_id,
+        api_root=api_root,
+        display_timezone=display_timezone,
+    )
+    with _REPORT_REFRESH_CACHE_LOCK:
+        _REPORT_REFRESH_CACHE[cache_key] = (now, result[0], result[1])
+    return result
+
+
+def invalidate_refresh_cache(workspace_id: str, dataset_id: str) -> None:
+    """Remove one semantic model's cached refresh status."""
+    cache_key = f"{workspace_id}:{dataset_id}"
+    with _REPORT_REFRESH_CACHE_LOCK:
+        _REPORT_REFRESH_CACHE.pop(cache_key, None)
+
+
+def trigger_dataset_refresh(
+    token: str,
+    workspace_id: str,
+    dataset_id: str,
+    *,
+    api_root: str | None = None,
+) -> None:
+    """Request an asynchronous Power BI semantic-model refresh."""
+    if not dataset_id:
+        raise ValueError("This report does not have a refreshable semantic model.")
+    response = HTTP.post(
+        f"{api_root or powerbi_root()}/groups/{workspace_id}/datasets/{dataset_id}/refreshes",
+        headers={"Authorization": f"Bearer {token}"},
+        json={"notifyOption": "NoNotification"},
+        timeout=30,
+    )
+    if response.status_code != 202:
+        try:
+            payload = response.json()
+        except ValueError:
+            payload = {}
+        error = payload.get("error") if isinstance(payload, dict) else {}
+        detail = error.get("message") if isinstance(error, dict) else ""
+        if response.status_code in {401, 403}:
+            detail = "The Mining 360 Power BI identity cannot refresh this semantic model."
+        elif response.status_code == 429:
+            detail = "Power BI is rate limiting refresh requests. Try again shortly."
+        elif not detail:
+            detail = "Power BI rejected the refresh request."
+        raise RuntimeError(detail)
+    invalidate_refresh_cache(workspace_id, dataset_id)
 
 
 def list_workspace_datasets(token: str, workspace_id: str) -> list[dict]:

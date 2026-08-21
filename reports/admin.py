@@ -10,11 +10,40 @@ from .models import (
     DowntimeMappingCheckRun,
     DowntimeMappingReviewDecision,
     GenericDowntimeCommentRule,
+    HomepageConfiguration,
+    HomepageInteractionEvent,
     PowerAppsLaunchContext,
     PrimeMoversIntegrationConfiguration,
     PrimeMoversIntegrationExecutionLog,
     UserExternalIdentity,
 )
+
+
+@admin.register(HomepageConfiguration)
+class HomepageConfigurationAdmin(admin.ModelAdmin):
+    list_display = (
+        "code", "default_kpi", "default_period", "default_breakdown",
+        "animation_enabled", "cache_duration_seconds", "active",
+    )
+    list_filter = ("default_period", "default_breakdown", "animation_enabled", "active")
+    fieldsets = (
+        (None, {"fields": ("code", "active", "default_kpi", "default_period", "default_breakdown")}),
+        ("Content", {"fields": (
+            "show_target", "show_comparison", "show_top_performers",
+            "show_bottom_performers", "show_ai_insight", "maximum_cards",
+            "equipment_page_size",
+        )}),
+        ("Experience", {"fields": ("animation_enabled", "animation_intensity")}),
+        ("Performance", {"fields": ("cache_duration_seconds", "freshness_threshold_hours")}),
+    )
+
+
+@admin.register(HomepageInteractionEvent)
+class HomepageInteractionEventAdmin(admin.ModelAdmin):
+    list_display = ("created_at", "user", "event_type")
+    list_filter = ("event_type", "created_at")
+    search_fields = ("user__username", "user__email")
+    readonly_fields = tuple(field.name for field in HomepageInteractionEvent._meta.fields)
 
 
 @admin.register(DescriptionCATReference)

@@ -1496,9 +1496,16 @@
         try {
             markBrowserSelection(id);
             setStatus("Loading browser...");
-            const browser = state.browsers.find((item) => String(item.id) === String(id));
+            let browser = state.browsers.find((item) => String(item.id) === String(id));
             if (!browser) {
                 throw new Error("Browser not found in current page state.");
+            }
+            if (!Array.isArray(browser.columns)) {
+                const payload = await api(`/data-browsers/${id}`);
+                browser = payload.browser;
+                state.browsers = state.browsers.map((item) => (
+                    String(item.id) === String(id) ? browser : item
+                ));
             }
             fillBrowserForm(browser);
             if (els.previewSection) {

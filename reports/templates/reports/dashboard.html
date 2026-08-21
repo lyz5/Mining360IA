@@ -1,48 +1,231 @@
 {% load static %}
 <!doctype html>
-<html lang="en">
+<html lang="{{ homepage_language|default:'en' }}">
 <head>
+    <link rel="icon" href="data:,">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token }}">
     <title>Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+    {% if availability_command_center_enabled %}
+    <link rel="stylesheet" href="{% static 'reports/homepage_command_center.css' %}?v=20260821-3">
+    {% endif %}
 </head>
-<body>
+<body{% if availability_command_center_enabled %} class="availability-home-body"{% endif %}>
     {% include "reports/includes/app_nav.html" %}
-    <main class="app-shell">
-        <header class="topbar">
-            <div>
-                <p class="eyebrow">Mining Intelligence</p>
-                <h1>Mining360</h1>
-                
+    {% if availability_command_center_enabled %}
+        <main
+            class="app-shell availability-home"
+            id="availability-command-center"
+            data-api-url="{% url 'homepage-availability-api' %}"
+            data-events-url="{% url 'homepage-interaction-api' %}"
+            data-ai-url="{% url 'ai-new' %}"
+            data-report-url="{% url 'reporting' %}"
+            data-downtime-url="{% url 'ai-new' %}"
+        >
+            <div class="homepage-brand-loader" data-brand-loader role="status" aria-live="polite" aria-label="Loading Mining 360 fleet intelligence">
+                <div class="homepage-brand-loader__content">
+                    <img src="{% static 'reports/images/neemba-cat-logo.jpg' %}" alt="Neemba CAT">
+                    <div class="neemba-loader-mark" aria-hidden="true">
+                        <i style="--blade-angle: -54deg; --blade-delay: 0ms"></i>
+                        <i style="--blade-angle: -18deg; --blade-delay: 110ms"></i>
+                        <i style="--blade-angle: 18deg; --blade-delay: 220ms"></i>
+                        <i style="--blade-angle: 54deg; --blade-delay: 330ms"></i>
+                    </div>
+                    <strong>Preparing your command center</strong>
+                    <span>Synchronizing fleet intelligence</span>
+                </div>
             </div>
-            <div class="summary">
-                <span class="summary-value">{{ modules|length }}</span>
-                <span class="summary-label">modules</span>
-            </div>
-        </header>
+            <header class="command-header">
+                <div class="command-header__identity">
+                    <p class="command-kicker">Mining 360</p>
+                    <h1>Fleet Availability Command Center</h1>
+                    <p>Immediate, intelligent insight into fleet performance.</p>
+                </div>
+                <div class="command-header__status" aria-label="Data connection status">
+                    <span class="connection-status" data-connection-status>
+                        <i aria-hidden="true"></i>
+                        <span>Connecting to the semantic model...</span>
+                    </span>
+                    <span class="refresh-status" data-refresh-status>Refresh pending</span>
+                    <button class="command-primary-action" type="button" data-action="ask-ai">Ask Mining 360 AI</button>
+                </div>
+            </header>
 
-        <section class="workspace-band">
-            <div class="placeholder-panel">
-                <p class="eyebrow">Workspace</p>
-                <h2>Operational console</h2>
-                <p>Navigation, reporting, AI, sources, data workflows, and knowledge resources are grouped in one dashboard shell.</p>
-            </div>
-            <div class="placeholder-panel">
-                <p class="eyebrow">Status</p>
-                <h2>Ready for use</h2>
-                <p>The application is connected to Power BI and SQL Server and is structured for incremental expansion.</p>
-            </div>
-        </section>
+            <nav class="analysis-controls availability-control-grid" aria-label="Availability filters">
+                <div class="control-group period-group" role="group" aria-labelledby="period-control-label">
+                    <span class="control-label" id="period-control-label">Period</span>
+                    <div class="segmented-control" data-period-control>
+                        <button type="button" data-period="ytd" aria-pressed="true">YTD</button>
+                        <button type="button" data-period="last_12_months" aria-pressed="false">Last 12 Months</button>
+                    </div>
+                </div>
+                <div class="context-controls" data-context-controls>
+                    <label class="control-group minesite-group" data-filter-field="minesite">
+                        <span>MineSite</span>
+                        <select data-filter="minesite" aria-label="MineSite"><option value="">All MineSites</option></select>
+                    </label>
+                    <label class="control-group model-group" data-filter-field="model">
+                        <span>Model</span>
+                        <select data-filter="model" aria-label="Model"><option value="">All models</option></select>
+                    </label>
+                    <label class="control-group equipment-group" data-filter-field="equipment">
+                        <span>Equipment</span>
+                        <select data-filter="equipment" aria-label="Equipment"><option value="">All equipment</option></select>
+                    </label>
+                    <button type="button" class="reset-filters reset-group" data-reset-filters>Reset filters</button>
+                </div>
+            </nav>
 
-        <section class="module-grid">
-            {% for module in modules %}
-                <a class="module-card" href="{% url module.url_name %}">
-                    <span class="module-name">{{ module.name }}</span>
-                    <span class="module-description">{{ module.description }}</span>
-                </a>
-            {% endfor %}
-        </section>
-    </main>
+            <div class="analysis-breadcrumb" data-breadcrumb aria-label="Analysis path"></div>
+
+            <section class="availability-stage" aria-labelledby="availability-title">
+                <div class="availability-hero" aria-live="polite">
+                    <div class="availability-hero__heading">
+                        <div>
+                            <p class="command-kicker" id="availability-title">Physical Availability</p>
+                            <span data-period-label>Year to Date</span>
+                        </div>
+                        <span class="availability-status" data-availability-status hidden></span>
+                    </div>
+                    <div class="availability-ring" data-ring role="img" aria-label="Physical Availability loading">
+                        <div class="availability-ring__inner">
+                            <strong data-availability-value>--</strong>
+                            <span>Physical Availability</span>
+                        </div>
+                    </div>
+                    <div class="availability-context">
+                        <div data-target-summary hidden>
+                            <span>Target</span>
+                            <strong data-target-value>--</strong>
+                        </div>
+                        <div data-comparison-summary hidden>
+                            <span data-comparison-label>Previous period</span>
+                            <strong data-comparison-value>--</strong>
+                        </div>
+                    </div>
+                    <p class="data-through" data-data-through>Finding the latest available data date...</p>
+                </div>
+
+                <div class="trend-panel">
+                    <div class="section-heading-row">
+                        <div>
+                            <p class="command-kicker">Trend</p>
+                            <h2>Availability Trend</h2>
+                        </div>
+                        <span class="updating-indicator" data-updating hidden>Updating...</span>
+                    </div>
+                    <div class="trend-chart" data-trend-chart role="img" aria-label="Availability trend loading">
+                        <div class="trend-skeleton" aria-hidden="true"></div>
+                    </div>
+                    <div class="trend-statistics" data-trend-statistics></div>
+                </div>
+            </section>
+
+            <section class="summary-strip" data-summary-strip aria-label="Availability summary">
+                <div><span>MineSites</span><strong data-summary="minesite_count">--</strong></div>
+                <div><span>Equipment</span><strong data-summary="equipment_count">--</strong></div>
+                <div><span>Downtime Hours</span><strong data-summary="downtime_hours">--</strong></div>
+                <div><span>Selected scope</span><strong data-summary="scope">Overall</strong></div>
+            </section>
+
+            <section class="breakdown-section" data-breakdown-section aria-labelledby="breakdown-title" hidden>
+                <div class="section-heading-row breakdown-heading">
+                    <div>
+                        <h2 id="breakdown-title" data-breakdown-title>Availability by Mine Site</h2>
+                    </div>
+                    <label class="breakdown-order" data-order-field hidden>
+                        <span>Sort by</span>
+                        <select data-ordering>
+                            <option value="availability_desc">Best performing</option>
+                            <option value="availability_asc">Lowest performing</option>
+                            <option value="downtime_desc">Highest downtime</option>
+                            <option value="name_asc">Alphabetical</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="breakdown-content" data-breakdown-content>
+                    <div class="breakdown-skeleton" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+                <div class="equipment-pagination" data-equipment-pagination hidden>
+                    <button type="button" data-page-direction="previous">Previous</button>
+                    <span data-page-summary></span>
+                    <button type="button" data-page-direction="next">Next</button>
+                </div>
+            </section>
+
+            <section class="performance-highlights" aria-labelledby="highlights-title">
+                <div class="section-heading-row">
+                    <div>
+                        <p class="command-kicker">Decision support</p>
+                        <h2 id="highlights-title">Performance Highlights</h2>
+                    </div>
+                </div>
+                <div class="highlights-grid">
+                    <div class="highlight-column">
+                        <h3>Top performers</h3>
+                        <div data-top-performers></div>
+                    </div>
+                    <div class="highlight-column highlight-column--attention">
+                        <h3>Requires attention</h3>
+                        <div data-bottom-performers></div>
+                    </div>
+                    <aside class="key-takeaway">
+                        <p class="command-kicker">Key Takeaway</p>
+                        <p data-key-takeaway>Analyzing performance...</p>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="homepage-actions" aria-label="Contextual actions">
+                <button type="button" class="command-primary-action" data-action="ask-ai">Ask Mining 360 AI</button>
+                <button type="button" data-action="view-downtime">View Downtime Drivers</button>
+                <button type="button" data-action="open-report">Open Fleet Performance Report</button>
+            </section>
+
+            <section class="homepage-error" data-homepage-error hidden role="alert">
+                <strong>Fleet performance data is temporarily unavailable.</strong>
+                <span data-error-message></span>
+                <button type="button" data-retry>Retry</button>
+            </section>
+        </main>
+        <script src="{% static 'reports/homepage_command_center.js' %}?v=20260821-3" defer></script>
+    {% else %}
+        <main class="app-shell">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">Mining Intelligence</p>
+                    <h1>Mining360</h1>
+                </div>
+                <div class="summary">
+                    <span class="summary-value">{{ modules|length }}</span>
+                    <span class="summary-label">modules</span>
+                </div>
+            </header>
+            <section class="workspace-band">
+                <div class="placeholder-panel">
+                    <p class="eyebrow">Workspace</p>
+                    <h2>Operational console</h2>
+                    <p>Navigation, reporting, AI, sources, data workflows, and knowledge resources are grouped in one dashboard shell.</p>
+                </div>
+                <div class="placeholder-panel">
+                    <p class="eyebrow">Status</p>
+                    <h2>Ready for use</h2>
+                    <p>The application is connected to Power BI and SQL Server and is structured for incremental expansion.</p>
+                </div>
+            </section>
+            <section class="module-grid">
+                {% for module in modules %}
+                    <a class="module-card" href="{% url module.url_name %}">
+                        <span class="module-name">{{ module.name }}</span>
+                        <span class="module-description">{{ module.description }}</span>
+                    </a>
+                {% endfor %}
+            </section>
+        </main>
+    {% endif %}
 </body>
 </html>

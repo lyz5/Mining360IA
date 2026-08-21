@@ -94,6 +94,81 @@ class PlatformUser(models.Model):
         return bool(getattr(self, f"can_access_{module_code}", False))
 
 
+class HomepageConfiguration(models.Model):
+    PERIOD_CHOICES = [
+        ("ytd", "Year to Date"),
+        ("last_12_months", "Last 12 Months"),
+    ]
+    BREAKDOWN_CHOICES = [
+        ("overall", "Overall"),
+        ("minesite", "Mine Site"),
+        ("model", "Model"),
+        ("equipment", "Equipment"),
+    ]
+    ANIMATION_CHOICES = [
+        ("subtle", "Subtle"),
+        ("standard", "Standard"),
+        ("reduced", "Reduced"),
+    ]
+
+    code = models.SlugField(max_length=120, unique=True, default="availability-command-center")
+    default_kpi = models.CharField(max_length=120, default="availability")
+    default_period = models.CharField(max_length=30, choices=PERIOD_CHOICES, default="ytd")
+    default_breakdown = models.CharField(max_length=30, choices=BREAKDOWN_CHOICES, default="overall")
+    show_target = models.BooleanField(default=True)
+    show_comparison = models.BooleanField(default=True)
+    show_top_performers = models.BooleanField(default=True)
+    show_bottom_performers = models.BooleanField(default=True)
+    show_ai_insight = models.BooleanField(default=False)
+    maximum_cards = models.PositiveSmallIntegerField(default=5)
+    equipment_page_size = models.PositiveSmallIntegerField(default=25)
+    animation_enabled = models.BooleanField(default=True)
+    animation_intensity = models.CharField(max_length=20, choices=ANIMATION_CHOICES, default="standard")
+    cache_duration_seconds = models.PositiveIntegerField(default=300)
+    freshness_threshold_hours = models.PositiveIntegerField(default=24)
+    active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["code"]
+        db_table = "homepage_configuration"
+
+    def __str__(self) -> str:
+        return "Availability Command Center"
+
+
+class HomepageInteractionEvent(models.Model):
+    EVENT_TYPES = [
+        ("page_view", "Page view"),
+        ("period_change", "Period change"),
+        ("breakdown_change", "Breakdown change"),
+        ("filter_change", "Filter change"),
+        ("drill_down", "Drill down"),
+        ("ask_ai", "Ask AI"),
+        ("open_report", "Open report"),
+        ("open_downtime", "Open downtime drivers"),
+    ]
+
+    user = models.ForeignKey(
+        User,
+        related_name="homepage_interaction_events",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    event_type = models.CharField(max_length=40, choices=EVENT_TYPES, db_index=True)
+    context_json = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "homepage_interaction_event"
+
+    def __str__(self) -> str:
+        return f"{self.event_type} at {self.created_at:%Y-%m-%d %H:%M}"
+
+
 class ActiveDirectorySyncRun(models.Model):
     STATUSES = [(value, value) for value in ("Running", "Completed", "Partially Completed", "Failed")]
 
@@ -1139,9 +1214,42 @@ class PrimeMoversIntegrationExecutionLog(models.Model):
 
 
 class ReportingReportPreference(models.Model):
+    CATEGORIES = [
+        ("fleet_performance", "Fleet Performance"),
+        ("maintenance_reliability", "Maintenance & Reliability"),
+        ("operations", "Operations"),
+        ("fuel_connectivity", "Fuel & Connectivity"),
+        ("parts_aftermarket", "Parts & Aftermarket"),
+        ("management_reports", "Management Reports"),
+        ("other", "Other"),
+    ]
+    THUMBNAIL_STATUSES = [
+        ("fallback", "Category fallback"),
+        ("configured", "Configured"),
+        ("pending", "Pending"),
+        ("failed", "Failed"),
+    ]
+
     report_id = models.CharField(max_length=128, unique=True)
     report_name = models.CharField(max_length=255, blank=True)
     display_name = models.CharField(max_length=255, blank=True)
+    description = models.TextField(blank=True)
+    category = models.CharField(max_length=64, choices=CATEGORIES, default="other")
+    tags_json = models.JSONField(default=list, blank=True)
+    business_owner = models.CharField(max_length=255, blank=True)
+    thumbnail_url = models.URLField(blank=True)
+    thumbnail_status = models.CharField(
+        max_length=20,
+        choices=THUMBNAIL_STATUSES,
+        default="fallback",
+    )
+    featured = models.BooleanField(default=False)
+    freshness_threshold_hours = models.PositiveIntegerField(null=True, blank=True)
+    validation_status = models.CharField(
+        max_length=30,
+        choices=POWERBI_VALIDATION_STATUSES,
+        default="To Review",
+    )
     is_visible = models.BooleanField(default=True)
     display_order = models.PositiveIntegerField(default=0)
     updated_by = models.ForeignKey(
@@ -1160,6 +1268,51 @@ class ReportingReportPreference(models.Model):
 
     def __str__(self) -> str:
         return self.display_name or self.report_name or self.report_id
+
+
+class UserReportFavorite(models.Model):
+    user = models.ForeignKey(User, related_name="report_favorites", on_delete=models.CASCADE)
+    report = models.ForeignKey(
+        ReportingReportPreference,
+        related_name="user_favorites",
+        on_delete=models.CASCADE,
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "reporting_user_favorites"
+        ordering = ["-created_at"]
+        constraints = [
+            models.UniqueConstraint(fields=["user", "report"], name="unique_user_report_favorite"),
+        ]
+
+
+class UserReportActivity(models.Model):
+    SOURCES = [
+        ("reporting_hub", "Reporting Hub"),
+        ("chatbot", "Chatbot"),
+        ("homepage", "Homepage"),
+        ("direct", "Direct"),
+    ]
+
+    user = models.ForeignKey(User, related_name="report_activities", on_delete=models.CASCADE)
+    report = models.ForeignKey(
+        ReportingReportPreference,
+        related_name="user_activities",
+        on_delete=models.CASCADE,
+    )
+    opened_at = models.DateTimeField(auto_now_add=True)
+    launch_mode = models.CharField(max_length=40, blank=True)
+    source = models.CharField(max_length=30, choices=SOURCES, default="reporting_hub")
+    context_json = models.JSONField(default=dict, blank=True)
+
+    class Meta:
+        db_table = "reporting_user_activity"
+        ordering = ["-opened_at"]
+        indexes = [
+            models.Index(fields=["user", "-opened_at"], name="report_activity_user_time_idx"),
+            models.Index(fields=["report", "-opened_at"], name="report_act_report_time_idx"),
+        ]
 
 
 class PowerBIPage(models.Model):

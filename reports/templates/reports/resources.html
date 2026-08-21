@@ -101,6 +101,18 @@
             {% endfor %}
         </section>
 
+        {% if resource_page.paginator.num_pages > 1 %}
+            <nav class="resource-pagination" aria-label="Resource pages">
+                {% if resource_page.has_previous %}
+                    <a class="button secondary" href="?q={{ query|urlencode }}&section={{ selected_section|urlencode }}&category={{ selected_category|urlencode }}&level={{ selected_level|urlencode }}&page={{ resource_page.previous_page_number }}">Previous</a>
+                {% endif %}
+                <span>Page {{ resource_page.number }} of {{ resource_page.paginator.num_pages }}</span>
+                {% if resource_page.has_next %}
+                    <a class="button secondary" href="?q={{ query|urlencode }}&section={{ selected_section|urlencode }}&category={{ selected_category|urlencode }}&level={{ selected_level|urlencode }}&page={{ resource_page.next_page_number }}">Next</a>
+                {% endif %}
+            </nav>
+        {% endif %}
+
         <p id="resource-filter-empty" class="empty resource-empty" hidden>No matching resources.</p>
     </main>
 
@@ -212,11 +224,6 @@
                 resourceQuery.addEventListener(eventName, applyResourceSearch);
             });
             resourceQuery.addEventListener("paste", () => window.requestAnimationFrame(applyResourceSearch));
-            resourceQuery.addEventListener("keydown", (event) => {
-                if (event.key === "Enter") {
-                    event.preventDefault();
-                }
-            });
             applyResourceSearch();
         }
     </script>

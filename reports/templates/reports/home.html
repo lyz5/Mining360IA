@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token }}">
     <title>Reporting | Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260721-nav-config-1">
 </head>
@@ -40,6 +41,7 @@
                 <div class="report-filter-tabs" aria-label="Refresh status filters">
                     <button type="button" class="active filter-all" data-report-filter="all">All</button>
                     <button type="button" class="filter-completed" data-report-filter="completed">Completed</button>
+                    <button type="button" class="filter-refreshing" data-report-filter="refreshing">Refreshing</button>
                     <button type="button" class="filter-failed" data-report-filter="failed">Failed</button>
                     <button type="button" class="filter-empty" data-report-filter="no-refresh">No refresh</button>
                 </div>
@@ -69,7 +71,10 @@
                     <article
                         class="report-card"
                         data-report-card
-                        data-status="{% if report.refresh_status %}{{ report.refresh_status|lower }}{% else %}no-refresh{% endif %}"
+                        data-report-id="{{ report.id }}"
+                        data-dataset-id="{{ report.dataset_id }}"
+                        data-refresh-url="{% url 'reporting-report-refresh-api' report.id %}"
+                        data-status="{% if report.is_refreshing %}refreshing{% elif report.refresh_status %}{{ report.refresh_status|lower }}{% else %}no-refresh{% endif %}"
                         data-search="{{ report.display_name|lower }} {{ report.refresh_status|default:'no refresh'|lower }} {{ report.last_refresh|default:'no refresh'|lower }}">
                         <div class="report-card__header">
                             <span class="report-card__icon {{ report.visual_class }}" aria-hidden="true">
@@ -84,9 +89,23 @@
                                     <small class="report-identity-badge">User identity required</small>
                                 {% endif %}
                             </div>
-                            <span class="status-badge {% if report.refresh_status == 'Completed' %}success{% elif report.refresh_status == 'Failed' %}failed{% else %}neutral{% endif %}">
-                                {{ report.refresh_status|default:"No refresh" }}
-                            </span>
+                            <div class="report-card__header-actions">
+                                <button
+                                    type="button"
+                                    class="report-refresh-button{% if report.is_refreshing %} is-refreshing{% endif %}"
+                                    data-report-refresh
+                                    aria-label="Refresh {{ report.display_name }}"
+                                    title="Refresh report data"
+                                    {% if not report.dataset_id or report.is_refreshing %}disabled{% endif %}>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M20 11a8.1 8.1 0 0 0-15.5-2M4 4v5h5"></path>
+                                        <path d="M4 13a8.1 8.1 0 0 0 15.5 2M20 20v-5h-5"></path>
+                                    </svg>
+                                </button>
+                                <span class="status-badge {% if report.is_refreshing %}refreshing{% elif report.refresh_status == 'Completed' %}success{% elif report.refresh_status == 'Failed' %}failed{% else %}neutral{% endif %}" data-refresh-status>
+                                    {% if report.is_refreshing %}Refreshing{% else %}{{ report.refresh_status|default:"No refresh" }}{% endif %}
+                                </span>
+                            </div>
                         </div>
                         <div class="report-card__meta">
                             <span>Last refresh</span>
@@ -95,8 +114,9 @@
                                     <rect x="3" y="5" width="18" height="16" rx="2"></rect>
                                     <path d="M16 3v4M8 3v4M3 11h18"></path>
                                 </svg>
-                                {{ report.last_refresh|default:"No refresh" }}
+                                <span data-last-refresh-value>{{ report.last_refresh|default:"No refresh" }}</span>
                             </strong>
+                            <small class="report-refresh-feedback" data-refresh-feedback role="status" aria-live="polite"></small>
                         </div>
                         <div class="report-card__actions">
                             <a class="button secondary report-open-app" href="{{ report.launch_url }}">
@@ -134,6 +154,8 @@
             const search = root.querySelector("[data-report-search]");
             const cards = Array.from(root.querySelectorAll("[data-report-card]"));
             const empty = root.querySelector("[data-report-empty]");
+            const csrfToken = document.querySelector('meta[name="csrf-token"]')?.content || "";
+            const polling = new Map();
             let activeFilter = "all";
 
             function normalizeSearch(value) {
@@ -164,6 +186,114 @@
                 }
                 if (empty) empty.hidden = visible !== 0;
             }
+
+            function normalizeStatus(value) {
+                const status = String(value || "No refresh").toLowerCase().replace(/\s+/g, "-");
+                if (["unknown", "inprogress", "running", "notstarted", "refreshing"].includes(status)) return "refreshing";
+                return status || "no-refresh";
+            }
+
+            function updateDatasetCards(datasetId, payload) {
+                const status = normalizeStatus(payload.status);
+                const refreshing = Boolean(payload.is_refreshing) || status === "refreshing";
+                root.querySelectorAll(`[data-report-card][data-dataset-id="${CSS.escape(datasetId)}"]`).forEach((card) => {
+                    card.dataset.status = refreshing ? "refreshing" : status;
+                    const badge = card.querySelector("[data-refresh-status]");
+                    const button = card.querySelector("[data-report-refresh]");
+                    const lastRefresh = card.querySelector("[data-last-refresh-value]");
+                    const feedback = card.querySelector("[data-refresh-feedback]");
+                    if (badge) {
+                        badge.textContent = refreshing ? "Refreshing" : (payload.status || "No refresh");
+                        badge.className = `status-badge ${refreshing ? "refreshing" : status === "completed" ? "success" : status === "failed" ? "failed" : "neutral"}`;
+                    }
+                    if (button) {
+                        button.disabled = refreshing;
+                        button.classList.toggle("is-refreshing", refreshing);
+                    }
+                    if (lastRefresh && payload.last_refresh) lastRefresh.textContent = payload.last_refresh;
+                    if (feedback) feedback.textContent = refreshing ? "Refresh in progress. You can continue using Mining 360." : "";
+                });
+                applyFilters();
+            }
+
+            function showRefreshError(datasetId, message) {
+                root.querySelectorAll(`[data-report-card][data-dataset-id="${CSS.escape(datasetId)}"]`).forEach((card) => {
+                    const button = card.querySelector("[data-report-refresh]");
+                    const feedback = card.querySelector("[data-refresh-feedback]");
+                    if (button) {
+                        button.disabled = false;
+                        button.classList.remove("is-refreshing");
+                    }
+                    if (feedback) feedback.textContent = message || "The report refresh could not be started.";
+                });
+            }
+
+            async function requestRefreshStatus(url) {
+                const response = await fetch(url, {
+                    headers: { "Accept": "application/json", "X-Requested-With": "XMLHttpRequest" },
+                    credentials: "same-origin",
+                });
+                const payload = await response.json().catch(() => ({}));
+                if (!response.ok || !payload.ok) throw new Error(payload.error || "Refresh status is unavailable.");
+                return payload;
+            }
+
+            function pollRefresh(datasetId, url) {
+                if (!datasetId || polling.has(datasetId)) return;
+                let attempts = 0;
+                const check = async () => {
+                    attempts += 1;
+                    try {
+                        const payload = await requestRefreshStatus(url);
+                        updateDatasetCards(datasetId, payload);
+                        if (!payload.is_refreshing || attempts >= 240) {
+                            window.clearInterval(polling.get(datasetId));
+                            polling.delete(datasetId);
+                        }
+                    } catch (error) {
+                        if (attempts >= 3) {
+                            window.clearInterval(polling.get(datasetId));
+                            polling.delete(datasetId);
+                            showRefreshError(datasetId, error.message);
+                        }
+                    }
+                };
+                polling.set(datasetId, window.setInterval(check, 5000));
+            }
+
+            root.querySelectorAll("[data-report-refresh]").forEach((button) => {
+                button.addEventListener("click", async () => {
+                    const card = button.closest("[data-report-card]");
+                    const datasetId = card?.dataset.datasetId || "";
+                    const url = card?.dataset.refreshUrl || "";
+                    if (!datasetId || !url || button.disabled) return;
+                    updateDatasetCards(datasetId, { status: "Refreshing", is_refreshing: true });
+                    try {
+                        const response = await fetch(url, {
+                            method: "POST",
+                            headers: {
+                                "Accept": "application/json",
+                                "Content-Type": "application/json",
+                                "X-CSRFToken": csrfToken,
+                                "X-Requested-With": "XMLHttpRequest",
+                            },
+                            credentials: "same-origin",
+                            body: "{}",
+                        });
+                        const payload = await response.json().catch(() => ({}));
+                        if (!response.ok || !payload.ok) throw new Error(payload.error || "The report refresh could not be started.");
+                        updateDatasetCards(datasetId, payload);
+                        window.setTimeout(() => pollRefresh(datasetId, url), 3000);
+                    } catch (error) {
+                        showRefreshError(datasetId, error.message);
+                    }
+                });
+            });
+
+            cards.filter((card) => card.dataset.status === "refreshing").forEach((card) => {
+                updateDatasetCards(card.dataset.datasetId, { status: "Refreshing", is_refreshing: true });
+                pollRefresh(card.dataset.datasetId, card.dataset.refreshUrl);
+            });
 
             if (search) {
                 ["input", "keyup", "search", "change", "compositionend"].forEach((eventName) => {

@@ -21,7 +21,7 @@ _WORKER_RUNNING = False
 
 
 def is_sqlserver_config_store_enabled() -> bool:
-    return os.getenv("MINING360_SQL_CONFIG_STORE", "1").strip().lower() not in {"0", "false", "no", "off"}
+    return os.getenv("MINING360_SQL_CONFIG_STORE", "0").strip().lower() in {"1", "true", "yes", "on"}
 
 
 def _schedule_model_sync(model) -> None:

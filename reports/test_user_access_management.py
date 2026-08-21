@@ -4,7 +4,8 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
-from django.test import TestCase, override_settings
+from django.template.loader import render_to_string
+from django.test import RequestFactory, TestCase, override_settings
 from django.urls import reverse
 
 from .active_directory_service import DirectoryIdentity
@@ -24,6 +25,15 @@ class UsersAccessManagementTests(TestCase):
             can_access_data=True, can_access_sources=True,
         )
         self.client.force_login(self.admin)
+
+    def render_navigation(self, user, active_section=""):
+        request = RequestFactory().get("/")
+        request.user = user
+        return render_to_string(
+            "reports/includes/app_nav.html",
+            {"active_section": active_section},
+            request=request,
+        )
 
     def create_profile(self, upn="jane@example.com", **overrides):
         user = get_user_model().objects.create_user(upn, password="secret")
@@ -45,6 +55,34 @@ class UsersAccessManagementTests(TestCase):
         self.assertTemplateUsed(response, "reports/users_access.html")
         self.assertContains(response, "Search by name, Windows account, email or UPN")
         self.assertNotContains(response, "Save roles")
+
+    def test_data_and_sources_are_nested_inside_config_menu(self):
+        html = self.render_navigation(self.admin, active_section="data")
+        submenu_start = html.index('id="config-submenu"')
+        submenu_end = html.index("</div>", submenu_start)
+        data_link = f'href="{reverse("data-home")}"'
+        sources_link = f'href="{reverse("data-sources")}"'
+
+        self.assertGreater(html.index(data_link), submenu_start)
+        self.assertLess(html.index(data_link), submenu_end)
+        self.assertGreater(html.index(sources_link), submenu_start)
+        self.assertLess(html.index(sources_link), submenu_end)
+        self.assertIn('data-nav-group="config"', html)
+        self.assertIn('aria-expanded="true"', html)
+
+    def test_data_role_keeps_menu_access_without_admin_configuration_links(self):
+        profile = self.create_profile(
+            "data-user@example.com",
+            can_access_reporting=False,
+            can_access_data=True,
+            can_access_sources=False,
+        )
+        html = self.render_navigation(profile.django_user, active_section="data")
+
+        self.assertIn(f'href="{reverse("data-home")}"', html)
+        self.assertNotIn(f'href="{reverse("data-sources")}"', html)
+        self.assertNotIn(f'href="{reverse("system-config-home")}"', html)
+        self.assertIn('aria-expanded="true"', html)
 
     def test_authorized_users_api_filters_and_paginates(self):
         jane = self.create_profile()

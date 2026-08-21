@@ -1270,6 +1270,16 @@ h2 {
     flex: 0 0 auto;
 }
 
+.resource-library-shell .resource-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 8px 0 2px;
+    color: #667085;
+    font-size: 13px;
+}
+
 @media (max-width: 900px) {
     .resource-library-shell .resource-search {
         grid-template-columns: minmax(220px, 1fr) repeat(2, minmax(120px, 1fr)) auto;
@@ -8275,6 +8285,61 @@ body.data-browser-fullscreen .data-browser-layout {
     min-width: 0;
 }
 
+.report-card__header-actions {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 7px;
+}
+
+.report-refresh-button {
+    display: inline-grid;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    place-items: center;
+    border: 1px solid #d9e0e8;
+    border-radius: 7px;
+    color: #52617a;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.report-refresh-button:hover:not(:disabled),
+.report-refresh-button:focus-visible {
+    border-color: #d4a100;
+    color: #8a6800;
+    background: #fffaf0;
+}
+
+.report-refresh-button:focus-visible {
+    outline: 2px solid rgba(255, 194, 14, 0.42);
+    outline-offset: 2px;
+}
+
+.report-refresh-button:disabled {
+    cursor: default;
+    opacity: 0.72;
+}
+
+.report-refresh-button svg {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.report-refresh-button.is-refreshing svg {
+    animation: report-refresh-spin 900ms linear infinite;
+}
+
+@keyframes report-refresh-spin {
+    to { transform: rotate(360deg); }
+}
+
 .report-card h2 {
     margin-top: 5px;
     color: #101a36;
@@ -8297,6 +8362,15 @@ body.data-browser-fullscreen .data-browser-layout {
     font-size: 10px;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.report-card .status-badge.refreshing {
+    color: #7a5b00;
+    background: #fff7d6;
+}
+
+.report-card .status-badge.refreshing::before {
+    background: #eab308;
 }
 
 .report-card__meta {
@@ -8330,6 +8404,19 @@ body.data-browser-fullscreen .data-browser-layout {
     stroke-width: 1.8;
     stroke-linecap: round;
     stroke-linejoin: round;
+}
+
+.report-refresh-feedback {
+    min-height: 16px;
+    color: #7a5b00;
+    font-size: 10px;
+    line-height: 1.35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .report-refresh-button.is-refreshing svg {
+        animation: none;
+    }
 }
 
 /* OpenAI API usage administration */
@@ -9436,7 +9523,12 @@ body.data-browser-fullscreen .data-browser-layout {
     }
 
     .report-card .status-badge {
-        margin-left: 56px;
+        margin-left: 0;
+    }
+
+    .report-card__header-actions {
+        width: 100%;
+        justify-content: flex-end;
     }
 
     .report-card__actions .button {
@@ -10116,6 +10208,38 @@ body.data-browser-fullscreen .data-browser-layout {
 .reporting-config-row:hover {
     background: #f8faff;
 }
+
+.reporting-config-row__catalog {
+    grid-column: 1 / -1;
+    min-width: 0;
+    padding-top: 2px;
+}
+
+.reporting-config-row__catalog summary {
+    width: max-content;
+    color: #41516d;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.reporting-config-catalog-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+    padding: 14px;
+    border: 1px solid #dfe5ee;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.reporting-config-catalog-fields label { display: grid; min-width: 0; gap: 5px; color: #52617d; font-size: 12px; font-weight: 800; }
+.reporting-config-catalog-fields label.wide { grid-column: 1 / -1; }
+.reporting-config-catalog-fields input,
+.reporting-config-catalog-fields select,
+.reporting-config-catalog-fields textarea { width: 100%; min-width: 0; padding: 9px 11px; border: 1px solid #cfd7e5; border-radius: 6px; background: #fff; color: #101a36; font: inherit; }
+.reporting-config-catalog-fields textarea { resize: vertical; }
 
 .reporting-config-row__identity {
     display: flex;
