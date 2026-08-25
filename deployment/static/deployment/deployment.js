@@ -17,7 +17,12 @@
             headers: {"Accept":"application/json", "Content-Type":"application/json", "X-CSRFToken":csrf(), ...(options.headers || {})},
         });
         const type = response.headers.get("content-type") || "";
-        if (!type.includes("application/json")) throw new Error(`Invalid server response (${response.status}).`);
+        if (!type.includes("application/json")) {
+            if (response.status === 403) {
+                throw new Error("Your security session expired or the CSRF token is missing. Refresh this page and retry.");
+            }
+            throw new Error(`Invalid server response (${response.status}).`);
+        }
         const payload = await response.json();
         if (!response.ok) throw new Error(payload.error || `Request failed (${response.status}).`);
         return payload;
@@ -42,6 +47,7 @@
                     ${item.is_approved ? actionButton("Deploy latest main", "data-quick-deploy", item.id, false) : ""}
                     ${actionButton("Test connection", "data-test-target", item.id)}
                     ${actionButton("Run pre-check", "data-precheck-target", item.id)}
+                    ${actionButton("Troubleshoot", "data-troubleshoot-target", item.id)}
                     ${actionButton("Credential", "data-credential-target", item.id)}
                     ${!item.is_approved ? actionButton("Approve target", "data-approve-target", item.id, false) : ""}
                 </div>
@@ -81,16 +87,30 @@
     function showResult(title, result) {
         const dialog = root.querySelector("[data-result-dialog]");
         dialog.querySelector("[data-result-title]").textContent = title;
+        dialog.querySelector("[data-result-content]").removeAttribute("aria-busy");
         const checks = result.checks || result.precheck?.checks || [];
         const validations = result.validation_checks || [];
+        const actions = result.actions_taken || [];
+        const manualActions = result.manual_actions || [];
         dialog.querySelector("[data-result-content]").innerHTML = `
             ${result.status ? `<p>${badge(result.status)}</p>` : ""}
             <div class="deployment-check-list">${[...checks, ...validations].map((item) => `<div class="deployment-check"><div><strong>${esc(item.name || item.code)}</strong><small>${esc(item.value || item.message || "")}</small></div>${badge(item.status)}</div>`).join("")}</div>
             ${result.message ? `<p>${esc(result.message)}</p>` : ""}
+            ${actions.length ? `<section class="deployment-remediation"><h3>Automatic actions</h3>${actions.map((item) => `<p>${esc(item)}</p>`).join("")}</section>` : ""}
+            ${manualActions.length ? `<section class="deployment-remediation is-manual"><h3>Administrator action required</h3>${manualActions.map((item) => `<div><strong>${esc(item.title)}</strong><p>${esc(item.detail || "")}</p>${item.command ? `<code>${esc(item.command)}</code>` : ""}</div>`).join("")}</section>` : ""}
             ${result.host_key_fingerprint ? `<p><strong>SSH host key:</strong> <code>${esc(result.host_key_fingerprint)}</code></p>` : ""}
             ${result.changes_applied === 0 ? `<p><strong>No target change was applied.</strong></p>` : ""}
         `;
         dialog.showModal();
+    }
+
+    function showCheckPending(title, message) {
+        const dialog = root.querySelector("[data-result-dialog]");
+        dialog.querySelector("[data-result-title]").textContent = title;
+        const content = dialog.querySelector("[data-result-content]");
+        content.setAttribute("aria-busy", "true");
+        content.innerHTML = `<div class="deployment-check-pending"><i class="deployment-spinner" aria-hidden="true"></i><div><strong>${esc(message)}</strong><p>This can take up to one minute. Do not close the page.</p></div></div>`;
+        if (!dialog.open) dialog.showModal();
     }
 
     function showJob(job) {
@@ -106,6 +126,7 @@
             <div class="deployment-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${esc(job.progress_percentage)}"><i style="width:${Math.max(0, Math.min(100, Number(job.progress_percentage) || 0))}%"></i></div>
             <p>${esc(job.current_step ? `Current step: ${job.current_step}` : "Waiting for deployment worker...")}</p>
             ${job.failure_message ? `<p class="deployment-error">${esc(job.failure_message)}</p>` : ""}
+            ${job.status === "Failed" && job.target_id ? `<button type="button" class="button secondary" data-troubleshoot-target="${esc(job.target_id)}">Troubleshoot failure</button>` : ""}
             <div class="deployment-job-logs">${logs.map((log) => `<p><time>${new Date(log.created_at).toLocaleTimeString()}</time><strong>${esc(log.level)}</strong>${esc(log.message)}</p>`).join("")}</div>
         `;
         if (!dialog.open) dialog.showModal();
@@ -140,6 +161,13 @@
         button.disabled = loading;
         button.setAttribute("aria-busy", String(loading));
         button.textContent = loading ? "Deploying..." : button.dataset.defaultLabel;
+    }
+
+    function setActionButtonLoading(button, loading, label = "Checking...") {
+        if (!button.dataset.defaultLabel) button.dataset.defaultLabel = button.textContent.trim();
+        button.disabled = loading;
+        button.setAttribute("aria-busy", String(loading));
+        button.textContent = loading ? label : button.dataset.defaultLabel;
     }
 
     const sleep = (milliseconds) => new Promise((resolve) => window.setTimeout(resolve, milliseconds));
@@ -220,6 +248,7 @@
     root.addEventListener("click", async (event) => {
         const test = event.target.closest("[data-test-target]");
         const precheck = event.target.closest("[data-precheck-target]");
+        const troubleshoot = event.target.closest("[data-troubleshoot-target]");
         const approve = event.target.closest("[data-approve-target]");
         const dryRun = event.target.closest("[data-dry-run]");
         const validate = event.target.closest("[data-validate-release]");
@@ -254,19 +283,23 @@
             finally { setDeployButtonLoading(quickDeploy, false); }
             return;
         }
-        const action = test || precheck || approve || dryRun || validate;
+        const action = test || precheck || troubleshoot || approve || dryRun || validate;
         if (!action) return;
-        action.disabled = true;
+        const pendingTitle = troubleshoot ? "Deployment Troubleshooting" : test ? "Connection Test" : precheck ? "Server Pre-check" : "Controlled Check";
+        const pendingMessage = troubleshoot ? "Diagnosing the server, deployment runtime and folder permissions..." : test ? "Testing DNS, TCP, SSH and credentials..." : "Checking server readiness...";
+        setActionButtonLoading(action, true, troubleshoot ? "Troubleshooting..." : "Checking...");
+        if (test || precheck || troubleshoot) showCheckPending(pendingTitle, pendingMessage);
         status("Running controlled check...");
         try {
             if (test) { const payload = await api(`/api/deployment/targets/${test.dataset.testTarget}/test-connection/`, {method:"POST", body:"{}"}); showResult("Connection Test", payload.result); }
             if (precheck) { const payload = await api(`/api/deployment/targets/${precheck.dataset.precheckTarget}/precheck/`, {method:"POST", body:"{}"}); showResult("Server Pre-check", payload.result); }
+            if (troubleshoot) { const payload = await api(`/api/deployment/targets/${troubleshoot.dataset.troubleshootTarget}/troubleshoot/`, {method:"POST", body:"{}"}); showResult("Deployment Troubleshooting", payload.result); }
             if (approve) await api(`/api/deployment/targets/${approve.dataset.approveTarget}/approve/`, {method:"POST", body:"{}"});
             if (dryRun) { const payload = await api(`/api/deployment/plans/${dryRun.dataset.dryRun}/dry-run/`, {method:"POST", body:"{}"}); showResult("Deployment Readiness Report", payload.result); }
             if (validate) await api(`/api/deployment/releases/${validate.dataset.validateRelease}/validate/`, {method:"POST", body:"{}"});
             await load();
-        } catch (error) { status(error.message, true); }
-        finally { action.disabled = false; }
+        } catch (error) { showDeploymentError(error.message); status(error.message, true); }
+        finally { setActionButtonLoading(action, false); }
     });
     load();
 })();

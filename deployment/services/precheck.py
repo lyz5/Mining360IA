@@ -77,7 +77,7 @@ class DeploymentPrecheckService:
         return result
 
     def _add_windows_checks(self, remote, add):
-        critical = {"remote_identity", "operating_system", "hostname", "architecture", "memory", "disk", "powershell", "python", "sshd", "odbc_driver", "sql_port"}
+        critical = {"remote_identity", "operating_system", "hostname", "architecture", "memory", "disk", "powershell", "python", "sshd", "odbc_driver", "sql_port", "deployment_path_write"}
 
         def output(code):
             item = remote[code]
@@ -96,6 +96,8 @@ class DeploymentPrecheckService:
             "sshd": ("OpenSSH service", "Software"),
             "odbc_driver": ("ODBC Driver 18 for SQL Server", "Software"),
             "time_service": ("Windows Time service", "System"),
+            "deployment_app_acl": ("Application folder ACL", "Storage"),
+            "deployment_app_processes": ("Processes using the application folder", "Runtime"),
         }
         for code, (label, category) in labels.items():
             item, value = output(code)
@@ -140,3 +142,11 @@ class DeploymentPrecheckService:
         add("sql_port", "SQL Server port 1433", "Passed" if item["success"] and value.lower() == "true" else "Failed", value, "Network")
         item, value = output("deployment_path")
         add("deployment_path", "C:\\Mining360", "Passed" if item["success"] and value.lower() == "true" else "Warning", "Exists" if value.lower() == "true" else "Will be created during deployment", "Storage")
+        item, value = output("deployment_path_write")
+        add(
+            "deployment_path_write",
+            "Deployment folder permissions",
+            "Passed" if item["success"] and value.lower() == "true" else "Failed",
+            "Create, rename and delete permissions verified" if item["success"] else value,
+            "Storage",
+        )

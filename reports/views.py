@@ -3,6 +3,7 @@ import json
 import logging
 import re
 import time
+from types import SimpleNamespace
 from urllib.parse import unquote, urlparse
 
 from django.conf import settings
@@ -62,6 +63,7 @@ from .powerbi import (
     trigger_dataset_refresh,
     list_workspace_reports_with_refresh,
     list_workspace_reports,
+    list_workspace_datasets,
     resolve_workspace_dataset_id,
     resolve_dataset_roles,
 )
@@ -194,7 +196,7 @@ from .microsoft_delegated_auth import (
 )
 from .powerbi_embed_strategy import feature_enabled
 from .reporting_hub_service import ReportingHubService, ensure_catalog_preferences
-from .prime_movers_integration import CorporateIdentityMappingService, PrimeMoversIntegrationError
+from .corporate_identity_service import CorporateIdentityMappingError, CorporateIdentityMappingService
 from .data_browsers import (
     DataBrowserValidationError,
     delete_browser_records,
@@ -911,7 +913,7 @@ def auth_callback(request):
                 )
             try:
                 CorporateIdentityMappingService.validate_from_microsoft_account(request.user, account)
-            except PrimeMoversIntegrationError as exc:
+            except CorporateIdentityMappingError as exc:
                 raise EntraAuthenticationError(str(exc), code=exc.code) from exc
             platform_user = request.user.platformuser
             configured_report = PowerBIReport.objects.filter(report_id=report_id).first()
@@ -1022,18 +1024,11 @@ def powerbi_auth_start(request):
         return redirect("reporting")
     report_id = str(request.GET.get("report_id") or "").strip()
     report = get_object_or_404(PowerBIReport, report_id=report_id, is_active=True)
-    supports_identity_link = (
-        report.authentication_mode == "user_owns_data"
-        or report.launch_mode == "prime_movers_workspace"
-    )
+    supports_identity_link = report.authentication_mode == "user_owns_data"
     if not supports_identity_link:
         messages.error(request, "This report does not require a corporate Microsoft identity.")
         return redirect("reporting")
-    default_return = (
-        reverse("prime-movers-workspace", args=[report_id])
-        if report.launch_mode == "prime_movers_workspace"
-        else reverse("report-detail", args=[report_id])
-    )
+    default_return = reverse("report-detail", args=[report_id])
     return_to = request.GET.get("next") or default_return
     PowerBIAuthenticationAuditLog.objects.create(
         user=request.user,
@@ -2098,7 +2093,11 @@ def reporting_home(request):
         error = str(exc)
     reports = _visible_reporting_reports(reports)
     if feature_enabled("ENABLE_PREMIUM_REPORTING_HUB", request.user):
-        hub = ReportingHubService(request.user, reports).build(request.GET)
+        hub = ReportingHubService(
+            request.user,
+            reports,
+            personalization_enabled=feature_enabled("ENABLE_REPORT_CARD_PERSONALIZATION", request.user),
+        ).build(request.GET)
         return render(
             request,
             "reports/home_premium.html",
@@ -2155,12 +2154,8 @@ def reporting_home(request):
         else:
             visual_class = "performance"
         configured = configured_reports.get(str(report.id))
-        launch_mode = configured.launch_mode if configured else "generic_powerbi"
-        launch_url = (
-            reverse("prime-movers-workspace", args=[report.id])
-            if launch_mode == "prime_movers_workspace"
-            else reverse("report-detail", args=[report.id])
-        )
+        launch_mode = "generic_powerbi"
+        launch_url = reverse("report-detail", args=[report.id])
         report_cards.append({
             "id": report.id,
             "name": report.name,
@@ -2208,7 +2203,11 @@ def reporting_hub_api(request):
         return JsonResponse({"ok": False, "error": "Reporting access required."}, status=403)
     try:
         reports = _visible_reporting_reports(list_workspace_reports_with_refresh())
-        hub = ReportingHubService(request.user, reports).build(request.GET)
+        hub = ReportingHubService(
+            request.user,
+            reports,
+            personalization_enabled=feature_enabled("ENABLE_REPORT_CARD_PERSONALIZATION", request.user),
+        ).build(request.GET)
         return JsonResponse({"ok": True, **_json_safe(hub)})
     except Exception as exc:
         logger.warning("Reporting Hub data could not be loaded: %s", exc)
@@ -2257,15 +2256,13 @@ def reporting_report_launch(request, report_id):
     if preference is None or not preference.is_visible:
         raise Http404("Report not found")
     configured = PowerBIReport.objects.filter(report_id=report_id, is_active=True).first()
-    launch_mode = configured.launch_mode if configured else "generic_powerbi"
+    launch_mode = "generic_powerbi"
     UserReportActivity.objects.create(
         user=request.user,
         report=preference,
         launch_mode=launch_mode,
         source="reporting_hub",
     )
-    if launch_mode == "prime_movers_workspace":
-        return redirect("prime-movers-workspace", report_id=report_id)
     return redirect("report-detail", report_id=report_id)
 
 
@@ -2527,8 +2524,17 @@ def reporting_report_refresh_api(request, report_id):
 
     report_id = str(report_id)
     try:
-        reports = _visible_reporting_reports(list_workspace_reports())
-        report = next((item for item in reports if str(item.id) == report_id), None)
+        configured = PowerBIReport.objects.filter(report_id=report_id, is_active=True).first()
+        preference = ReportingReportPreference.objects.filter(report_id=report_id).first()
+        if configured and (not preference or preference.is_visible or _user_is_platform_admin(request.user)):
+            report = SimpleNamespace(
+                id=report_id,
+                dataset_id=configured.semantic_model_id,
+                last_refresh="",
+            )
+        else:
+            reports = _visible_reporting_reports(list_workspace_reports())
+            report = next((item for item in reports if str(item.id) == report_id), None)
         if report is None:
             return JsonResponse({"ok": False, "error": "Report not found."}, status=404)
         if not report.dataset_id:
@@ -2574,16 +2580,137 @@ def reporting_report_refresh_api(request, report_id):
         })
     except Exception as exc:
         logger.warning("Power BI report refresh failed for report_id=%s: %s", report_id, exc)
+        detail = str(exc or "").lower()
+        if "cannot refresh this semantic model" in detail or "not authorized" in detail:
+            error_code = "POWERBI_REFRESH_PERMISSION_DENIED"
+            error_message = "Mining 360 is not authorized to refresh this semantic model."
+            response_status = 403
+        elif "rate limiting" in detail or "too many requests" in detail:
+            error_code = "POWERBI_REFRESH_RATE_LIMITED"
+            error_message = "Power BI is temporarily limiting refresh requests. Try again shortly."
+            response_status = 429
+        elif ("already" in detail and "refresh" in detail) or "currently in progress" in detail:
+            error_code = "POWERBI_REFRESH_ALREADY_RUNNING"
+            error_message = "A refresh is already running for this semantic model."
+            response_status = 409
+        elif "credential" in detail or "gateway" in detail:
+            error_code = "POWERBI_REFRESH_CONFIGURATION_ERROR"
+            error_message = "The semantic model credentials or gateway configuration requires attention."
+            response_status = 502
+        else:
+            error_code = "POWERBI_REFRESH_FAILED"
+            error_message = (
+                "The report refresh could not be started. Verify the semantic model refresh "
+                "configuration or try again later."
+            )
+            response_status = 502
         return JsonResponse(
             {
                 "ok": False,
-                "error": (
-                    "The report refresh could not be started. Verify the semantic model refresh "
-                    "configuration or try again later."
-                ),
+                "error": error_message,
+                "error_code": error_code,
             },
-            status=502,
+            status=response_status,
         )
+
+
+@login_required
+@require_http_methods(["POST"])
+def reporting_report_troubleshoot_api(request, report_id):
+    if not has_module_access(request.user, "reporting"):
+        return JsonResponse({"ok": False, "error": "Reporting access required."}, status=403)
+
+    report_id = str(report_id)
+    checks = []
+    actions_taken = []
+    manual_actions = []
+    try:
+        reports = _visible_reporting_reports(list_workspace_reports())
+        report = next((item for item in reports if str(item.id) == report_id), None)
+        if report is None:
+            return JsonResponse({"ok": False, "error": "Report not found."}, status=404)
+        if not report.dataset_id:
+            return JsonResponse({"ok": False, "error": "This report has no semantic model."}, status=400)
+
+        workspace_id = env_value("POWERBI_WORKSPACE_ID", "")
+        token = get_access_token()
+        checks.append({"code": "powerbi_identity", "name": "Power BI API identity", "status": "Passed", "value": "Authenticated"})
+
+        datasets = list_workspace_datasets(token, workspace_id)
+        dataset = next((item for item in datasets if str(item.get("id")) == str(report.dataset_id)), None)
+        if dataset is None:
+            checks.append({"code": "semantic_model", "name": "Semantic model", "status": "Failed", "value": "Not found in the configured workspace"})
+            manual_actions.append({
+                "code": "SEMANTIC_MODEL_MAPPING",
+                "title": "Correct the report semantic-model mapping",
+                "detail": "Select the semantic model currently bound to this report in Reporting Configuration.",
+            })
+            return JsonResponse({"ok": True, "result": {"status": "Action Required", "checks": checks, "actions_taken": actions_taken, "manual_actions": manual_actions}})
+
+        refreshable = bool(dataset.get("isRefreshable"))
+        checks.append({
+            "code": "semantic_model",
+            "name": "Semantic model",
+            "status": "Passed" if refreshable else "Failed",
+            "value": dataset.get("name") or report.dataset_id,
+        })
+        if not refreshable:
+            manual_actions.append({
+                "code": "SEMANTIC_MODEL_NOT_REFRESHABLE",
+                "title": "Review the semantic-model connection mode",
+                "detail": "Power BI reports this semantic model as non-refreshable. Check its DirectQuery, live connection or refresh configuration.",
+            })
+            return JsonResponse({"ok": True, "result": {"status": "Action Required", "checks": checks, "actions_taken": actions_taken, "manual_actions": manual_actions}})
+
+        last_refresh, refresh_status = get_latest_refresh(token, workspace_id, report.dataset_id, api_root=powerbi_root())
+        normalized = str(refresh_status or "").lower()
+        running = normalized in {"unknown", "inprogress", "running", "notstarted"}
+        checks.append({
+            "code": "refresh_status",
+            "name": "Latest refresh",
+            "status": "Warning" if running else "Passed" if normalized == "completed" else "Failed",
+            "value": "Refreshing" if running else (refresh_status or "No refresh history"),
+        })
+
+        if running:
+            actions_taken.append("The existing Power BI refresh is being monitored; no duplicate request was sent.")
+            result_status = "Monitoring"
+        elif normalized != "completed":
+            trigger_dataset_refresh(token, workspace_id, report.dataset_id)
+            actions_taken.append("A new semantic-model refresh was started.")
+            running = True
+            refresh_status = "Refreshing"
+            result_status = "Repair Started"
+        else:
+            result_status = "Healthy"
+
+        logger.info("Power BI troubleshooting completed user_id=%s report_id=%s status=%s", request.user.pk, report_id, result_status)
+        return JsonResponse({
+            "ok": True,
+            "result": {
+                "status": result_status,
+                "checks": checks,
+                "actions_taken": actions_taken,
+                "manual_actions": manual_actions,
+            },
+            "refresh": {
+                "status": "Refreshing" if running else (refresh_status or "No refresh"),
+                "is_refreshing": running,
+                "last_refresh": last_refresh or "",
+            },
+        })
+    except Exception as exc:
+        logger.warning("Power BI troubleshooting failed for report_id=%s: %s", report_id, exc)
+        detail = str(exc or "").lower()
+        if "cannot refresh this semantic model" in detail or "not authorized" in detail:
+            code, message = "POWERBI_PERMISSION", "Mining 360 is not authorized to refresh this semantic model."
+        elif "credential" in detail or "gateway" in detail:
+            code, message = "POWERBI_CONFIGURATION", "The Power BI gateway or data-source credentials require attention."
+        elif "rate limiting" in detail or "too many requests" in detail:
+            code, message = "POWERBI_RATE_LIMIT", "Power BI is temporarily limiting requests. Try again shortly."
+        else:
+            code, message = "POWERBI_TROUBLESHOOTING_FAILED", "Power BI diagnostics could not complete."
+        return JsonResponse({"ok": False, "error": message, "error_code": code}, status=502)
 
 
 @ensure_csrf_cookie
@@ -3415,8 +3542,18 @@ def _execute_ai_ask(request, payload_override=None):
     if conversational:
         return JsonResponse(conversational)
 
+    from .chat_routing_service import (
+        answer_without_semantic_model,
+        classify_chat_question,
+    )
+
+    routing = classify_chat_question(question, section_code=section_code)
+
     from .agent_router_service import multi_agent_enabled
-    if multi_agent_enabled(request.user):
+    # Semantic-model questions use the controlled DAX orchestrator. Sending the
+    # same availability question through the optional multi-agent path produced
+    # inconsistent templates and could replace a validated KPI result.
+    if multi_agent_enabled(request.user) and not routing["requires_semantic_model"]:
         try:
             from .ai_agent_execution_service import execute_agent_question
 
@@ -3459,12 +3596,6 @@ def _execute_ai_ask(request, payload_override=None):
         except Exception:
             logger.exception("Multi-agent execution failed; trying the controlled analytical orchestrator.")
 
-    from .chat_routing_service import (
-        answer_without_semantic_model,
-        classify_chat_question,
-    )
-
-    routing = classify_chat_question(question, section_code=section_code)
     if not routing["requires_semantic_model"]:
         chat_message = answer_without_semantic_model(question, routing)
         return JsonResponse({
@@ -4494,9 +4625,14 @@ def _ia_apply_resource_payload(resource_type: str, item, payload: dict, section:
 @require_http_methods(["GET"])
 def ia_config_home(request):
     sections = get_active_sections()
+    template_name = "reports/ia_config.html"
+    if request.GET.get("legacy") != "1" and feature_enabled(
+        "ENABLE_AI_CONFIG_WORKSPACE_REDESIGN", request.user
+    ):
+        template_name = "reports/ia_config_workspace.html"
     return render(
         request,
-        "reports/ia_config.html",
+        template_name,
         {
             "active_section": "ia-config",
             "sections": sections,
@@ -4511,7 +4647,55 @@ def ia_config_home(request):
 
 @require_http_methods(["GET"])
 def ia_config_sections_api(request):
-    return JsonResponse({"ok": True, "sections": get_active_sections()})
+    sections = get_active_sections()
+    coverage_types = [
+        "question-examples", "synonyms", "metrics", "filters", "dax-templates",
+        "semantic-tables", "semantic-columns", "semantic-measures",
+        "business-vocabulary", "few-shot-examples", "prompt-templates",
+        "business-rules", "powerbi-pages", "visual-mapping", "kpi-targets",
+        "recommended-actions",
+    ]
+    section_objects = {
+        item.code: item for item in AIConfigSection.objects.filter(
+            code__in=[section["code"] for section in sections]
+        )
+    }
+    for section in sections:
+        if section["code"] == "powerbi-reporting":
+            section.update({
+                "readiness_score": 100,
+                "status": "external_workspace",
+                "issue_count": 0,
+                "external_workspace_url": reverse("reporting-config-home"),
+            })
+            continue
+        section_object = section_objects.get(section["code"])
+        populated = 0
+        entity_counts = {}
+        for resource_type in coverage_types:
+            queryset = _ia_resource_queryset(section_object, resource_type)
+            count = queryset.count()
+            entity_counts[resource_type] = count
+            populated += int(count > 0)
+        score = round((populated / len(coverage_types)) * 100)
+        issue_count = len(coverage_types) - populated
+        section.update({
+            "readiness_score": score,
+            "status": "ready" if issue_count == 0 else "needs_review",
+            "issue_count": issue_count,
+            "entity_counts": entity_counts,
+        })
+    ready = sum(1 for section in sections if section.get("status") in {"ready", "external_workspace"})
+    return JsonResponse({
+        "ok": True,
+        "sections": sections,
+        "summary": {
+            "total": len(sections),
+            "ready": ready,
+            "needs_review": len(sections) - ready,
+            "critical": 0,
+        },
+    })
 
 
 @require_http_methods(["GET", "POST"])
@@ -4529,10 +4713,14 @@ def ia_config_collection_api(request, section_code, resource_type):
     if request.method == "GET":
         query = request.GET.get("q", "").strip().lower()
         active = request.GET.get("active", "").strip().lower()
-        if active in {"1", "true", "yes"} and hasattr(model, "is_active"):
-            queryset = queryset.filter(is_active=True)
-        elif active in {"0", "false", "no"} and hasattr(model, "is_active"):
-            queryset = queryset.filter(is_active=False)
+        active_field = "is_active" if hasattr(model, "is_active") else ("active" if hasattr(model, "active") else "")
+        if active in {"1", "true", "yes"} and active_field:
+            queryset = queryset.filter(**{active_field: True})
+        elif active in {"0", "false", "no"} and active_field:
+            queryset = queryset.filter(**{active_field: False})
+        validation_status = request.GET.get("status", "").strip()
+        if validation_status and hasattr(model, "validation_status"):
+            queryset = queryset.filter(validation_status=validation_status)
         if query:
             if resource_type == "question-examples":
                 queryset = queryset.filter(question_text__icontains=query)
@@ -4569,9 +4757,29 @@ def ia_config_collection_api(request, section_code, resource_type):
                         q_filter |= models.Q(**{f"{field}__icontains": query})
                     queryset = queryset.filter(q_filter)
         order_field = "-created_at" if resource_type == "debug-runs" else "-updated_at"
-        items = [serializer(item) for item in queryset.order_by(order_field)]
+        queryset = queryset.order_by(order_field)
+        page_number = request.GET.get("page", "").strip()
+        page_size_value = request.GET.get("page_size", "").strip()
+        pagination = None
+        if page_number or page_size_value:
+            try:
+                page_size = max(1, min(int(page_size_value or 50), 100))
+                page = Paginator(queryset, page_size).get_page(int(page_number or 1))
+            except (TypeError, ValueError):
+                return _json_error("Invalid pagination parameters.")
+            items = [serializer(item) for item in page.object_list]
+            pagination = {
+                "page": page.number,
+                "page_size": page_size,
+                "count": page.paginator.count,
+                "pages": page.paginator.num_pages,
+                "has_next": page.has_next(),
+                "has_previous": page.has_previous(),
+            }
+        else:
+            items = [serializer(item) for item in queryset]
         section_payload = _ia_section_payload(section) if section else {"code": section_code}
-        return JsonResponse({"ok": True, "section": section_payload, "items": items})
+        return JsonResponse({"ok": True, "section": section_payload, "items": items, "pagination": pagination})
 
     if config.get("admin_only"):
         return _json_error("This resource is read-only.", status=405)
@@ -7322,45 +7530,83 @@ def business_performance_import_model_api(request):
         return JsonResponse({"ok": False, "error": str(exc)}, status=503)
 
 
+@login_required
+@ensure_csrf_cookie
 def report_detail(request, report_id):
+    if not has_module_access(request.user, "reporting"):
+        raise PermissionDenied("Reporting access required.")
     report = None
     reports = []
     error = None
-    selected_role = request.GET.get("role") or "Global"
+    selected_role = (request.GET.get("role") or "") if _user_is_platform_admin(request.user) else ""
     configured_report = None
 
+    premium_viewer = feature_enabled("ENABLE_PREMIUM_GENERIC_REPORT_VIEWER", request.user)
     try:
-        workspace_reports = list_workspace_reports()
-        report = get_workspace_report(str(report_id), workspace_reports)
-        reports = _visible_reporting_reports(workspace_reports)
-        report = next(
-            (item for item in reports if str(getattr(item, "id", "")) == str(report_id)),
-            report,
-        )
-        configured_report = PowerBIReport.objects.filter(report_id=str(report_id), is_active=True).first()
-        if not configured_report:
-            raise RuntimeError("This report has not been configured for Mining 360 embedding.")
-        if (
-            configured_report.launch_mode == "prime_movers_workspace"
-            and feature_enabled("ENABLE_PRIME_MOVERS_INTEGRATION_RECOVERY", request.user)
-            and feature_enabled("ENABLE_PRIME_MOVERS_DUAL_WORKSPACE", request.user)
-        ):
-            return redirect("prime-movers-workspace", report_id=report_id)
+        if premium_viewer:
+            configured_report = PowerBIReport.objects.filter(report_id=str(report_id), is_active=True).first()
+            preference = ReportingReportPreference.objects.filter(report_id=str(report_id)).first()
+            if not configured_report or (
+                preference and not preference.is_visible and not _user_is_platform_admin(request.user)
+            ):
+                raise RuntimeError("This report has not been configured for Mining 360 embedding.")
+            report = SimpleNamespace(
+                id=report_id,
+                name=configured_report.report_name,
+                display_name=(preference.display_name if preference else "") or configured_report.display_name,
+                dataset_id=configured_report.semantic_model_id,
+                web_url="",
+                embed_url=configured_report.embed_url,
+                report_type="PowerBIReport",
+                last_refresh="",
+                refresh_status="",
+            )
+            hidden_ids = ReportingReportPreference.objects.filter(is_visible=False).values_list("report_id", flat=True)
+            reports = [SimpleNamespace(id=item) for item in PowerBIReport.objects.filter(
+                is_active=True,
+                launch_mode="generic_powerbi",
+            ).exclude(report_id__in=hidden_ids).values_list("report_id", flat=True)]
+        else:
+            workspace_reports = list_workspace_reports()
+            report = get_workspace_report(str(report_id), workspace_reports)
+            reports = _visible_reporting_reports(workspace_reports)
+            report = next(
+                (item for item in reports if str(getattr(item, "id", "")) == str(report_id)),
+                report,
+            )
+            configured_report = PowerBIReport.objects.filter(report_id=str(report_id), is_active=True).first()
+            if not configured_report:
+                raise RuntimeError("This report has not been configured for Mining 360 embedding.")
+        if not selected_role:
+            selected_role = configured_report.default_rls_role or "Global"
     except Exception as exc:
         error = str(exc)
+    if not selected_role:
+        selected_role = "Global"
+    role_options = list(RLS_ROLE_OPTIONS)
+    if selected_role not in role_options:
+        role_options.append(selected_role)
 
     return render(
         request,
-        "reports/detail.html",
+        "reports/detail_premium.html" if premium_viewer else "reports/detail.html",
         {
             "report": report,
+            "report_id": str(report_id),
             "reports": reports,
             "configured_report": configured_report,
             "embed_config_url": reverse("powerbi-interaction-embed-config", args=[report_id]),
+            "embed_config_url_template": reverse("powerbi-interaction-embed-config", args=["__REPORT_ID__"]),
+            "viewer_configuration_url": reverse("report-viewer-configuration-api", args=[report_id]),
+            "refresh_url": reverse("reporting-report-refresh-api", args=[report_id]),
+            "troubleshoot_url": reverse("reporting-report-troubleshoot-api", args=[report_id]),
+            "reporting_hub_url": reverse("reporting"),
+            "premium_viewer": premium_viewer,
+            "is_platform_admin": _user_is_platform_admin(request.user),
             "error": error,
             "workspace_name": "Efficience Mine Workspace",
             "active_section": "reporting",
-            "role_options": RLS_ROLE_OPTIONS,
+            "role_options": role_options,
             "selected_role": selected_role,
             "sidebar_stats": [
                 {"label": "Reports", "value": len(reports)},

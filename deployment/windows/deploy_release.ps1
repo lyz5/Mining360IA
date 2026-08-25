@@ -9,6 +9,8 @@ $ErrorActionPreference = 'Stop'
 $app = [IO.Path]::GetFullPath((Join-Path $Root 'app'))
 $releases = [IO.Path]::GetFullPath((Join-Path $Root 'releases'))
 $backups = [IO.Path]::GetFullPath((Join-Path $Root 'backups'))
+$shared = [IO.Path]::GetFullPath((Join-Path $Root 'shared'))
+$sharedMedia = [IO.Path]::GetFullPath((Join-Path $shared 'media'))
 $repository = [IO.Path]::GetFullPath((Join-Path $Root 'repository\Mining360IA.git'))
 $stage = [IO.Path]::GetFullPath((Join-Path $releases $Commit))
 $failedRelease = [IO.Path]::GetFullPath((Join-Path $releases ("failed-$JobId")))
@@ -19,14 +21,14 @@ $runtimeTask = 'Mining360TestRuntime'
 $backup = $null
 $runtimeStopped = $false
 
-foreach ($path in @($app, $releases, $backups, $repository, $stage)) {
+foreach ($path in @($app, $releases, $backups, $shared, $sharedMedia, $repository, $stage)) {
     if (-not $path.StartsWith(([IO.Path]::GetFullPath($Root) + '\'), [StringComparison]::OrdinalIgnoreCase)) {
         throw "Unsafe deployment path: $path"
     }
 }
 if (-not (Test-Path $git)) { throw "Portable Git is not installed at $git." }
 if (-not (Test-Path $python)) { throw "Mining360 Python environment is missing." }
-New-Item -ItemType Directory -Path $releases, $backups, (Split-Path $repository), (Split-Path $log) -Force | Out-Null
+New-Item -ItemType Directory -Path $releases, $backups, $sharedMedia, (Split-Path $repository), (Split-Path $log) -Force | Out-Null
 
 function Write-DeploymentLog([string]$Message) {
     $line = "{0} {1}" -f (Get-Date -Format o), $Message
@@ -48,12 +50,42 @@ function Invoke-Native([string]$Name, [scriptblock]$Action) {
     Write-DeploymentLog "DONE $Name"
 }
 
+function Test-DeploymentFilesystemAccess {
+    $probe = Join-Path $Root (".deployment-write-test-{0}" -f $JobId)
+    $renamedProbe = "$probe-renamed"
+    try {
+        New-Item -ItemType Directory -Path $probe -Force | Out-Null
+        Set-Content -LiteralPath (Join-Path $probe 'write.test') -Value 'Mining360 deployment write test' -Encoding ASCII
+        Move-Item -LiteralPath $probe -Destination $renamedProbe
+        if (Test-Path $app) {
+            $appProbe = Join-Path $app (".deployment-write-test-{0}" -f $JobId)
+            Set-Content -LiteralPath $appProbe -Value 'Mining360 app write test' -Encoding ASCII
+            Remove-Item -LiteralPath $appProbe -Force
+        }
+    } catch {
+        throw (
+            "The deployment account cannot create, delete, or rename content under $Root. " +
+            "Grant it Modify permission on $Root and all descendants before retrying. " +
+            "Filesystem preflight error: $($_.Exception.Message)"
+        )
+    } finally {
+        Remove-Item -LiteralPath $probe -Recurse -Force -ErrorAction SilentlyContinue
+        Remove-Item -LiteralPath $renamedProbe -Recurse -Force -ErrorAction SilentlyContinue
+    }
+}
+
 function Start-Mining360Runtime {
+    & schtasks.exe /Change /TN $runtimeTask /ENABLE *>> $log
+    if ($LASTEXITCODE -ne 0) { throw "Unable to enable $runtimeTask." }
     & schtasks.exe /Run /TN $runtimeTask *>> $log
     if ($LASTEXITCODE -ne 0) { throw "Unable to start $runtimeTask." }
 }
 
 function Stop-Mining360Runtime {
+    # Prevent Task Scheduler restart policies from recreating the runtime
+    # while the active release directory is being renamed.
+    & schtasks.exe /Change /TN $runtimeTask /DISABLE *>> $log
+    if ($LASTEXITCODE -ne 0) { throw "Unable to temporarily disable $runtimeTask." }
     & schtasks.exe /End /TN $runtimeTask *>> $log
     Start-Sleep -Seconds 2
     # schtasks /End stops the PowerShell task host, but its Waitress/Python
@@ -108,6 +140,8 @@ function Wait-Mining360Health([int]$Seconds = 120) {
 
 try {
     Write-DeploymentLog "Deployment $JobId started for commit $Commit."
+    Test-DeploymentFilesystemAccess
+    Write-DeploymentLog 'Filesystem permissions preflight passed.'
     if (-not (Test-Path $repository)) {
         Invoke-Native 'Repository clone' { & $git clone --mirror $RepositoryUrl $repository }
     } else {
@@ -128,6 +162,15 @@ try {
             Copy-Item -LiteralPath $source -Destination $destination -Force
         }
     }
+    # Uploaded report visuals are runtime data, not release artifacts. Bootstrap
+    # the shared media directory from a legacy deployment once, then keep it
+    # outside the atomic app-directory swaps used by subsequent releases.
+    $legacyMedia = Join-Path $app 'media'
+    if ((Test-Path $legacyMedia) -and -not (Get-ChildItem -LiteralPath $sharedMedia -Force -ErrorAction SilentlyContinue)) {
+        Get-ChildItem -LiteralPath $legacyMedia -Force |
+            Copy-Item -Destination $sharedMedia -Recurse -Force
+        Write-DeploymentLog 'Migrated legacy application media to shared storage.'
+    }
     if (-not (Test-Path (Join-Path $stage 'requirements.txt'))) {
         throw 'The release does not contain requirements.txt. Commit the complete deployment baseline first.'
     }
@@ -145,8 +188,8 @@ try {
             throw 'sqlcmd is required to create the pre-deployment database backup.'
         }
 
-        Stop-Mining360Runtime
         $runtimeStopped = $true
+        Stop-Mining360Runtime
         Invoke-Native 'Database migrations' { & $python manage.py migrate --noinput }
         Invoke-Native 'Static files' { & $python manage.py collectstatic --noinput }
     } finally {
@@ -160,7 +203,6 @@ try {
     $runtimeStopped = $false
     if (-not (Wait-Mining360Health)) { throw 'Mining360 health check failed after the release switch.' }
 
-    New-Item -ItemType Directory -Path (Join-Path $Root 'shared') -Force | Out-Null
     $releaseState = @{commit=$Commit;job_id=$JobId;deployed_at=(Get-Date).ToUniversalTime().ToString('o')} | ConvertTo-Json -Compress
     Set-Content -LiteralPath (Join-Path $Root 'shared\current-release.json') -Value $releaseState -Encoding UTF8
     Get-ChildItem -LiteralPath $backups -Directory -Filter 'app-*' | Sort-Object LastWriteTime -Descending | Select-Object -Skip 3 | Remove-Item -Recurse -Force

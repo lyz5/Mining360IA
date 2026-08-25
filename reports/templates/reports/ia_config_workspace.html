@@ -1,0 +1,242 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Configuration | Mining 360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'reports/ia_config_workspace.css' %}?v=20260825-4">
+</head>
+<body class="ai-workspace-page">
+    {% include "reports/includes/app_nav.html" %}
+    {{ sections|json_script:"ia-config-sections-data" }}
+    <main class="app-shell aiw-shell" data-ia-config-root data-ai-workspace
+          data-api-base="/ia-config/api"
+          data-sections-api="{% url 'ia-config-sections-api' %}"
+          data-reporting-config-url="{% url 'reporting-config-home' %}"
+          data-voice-admin-url="{% url 'voice-input-admin-config' %}"
+          data-is-admin="{% if is_ia_admin %}1{% else %}0{% endif %}">
+        <header class="aiw-page-header">
+            <div class="aiw-page-identity">
+                <p class="aiw-breadcrumb">Config / AI Config</p>
+                <h1>AI Configuration</h1>
+                <p>Manage AI language, semantic models, response behavior and governance.</p>
+            </div>
+            <div class="aiw-header-actions">
+                <button class="button secondary" type="button" data-ai-help-open>How this works</button>
+                <button class="button secondary" type="button" data-ai-import-open>Import Semantic Model</button>
+                <button class="button" type="button" data-ai-test-open>Test AI</button>
+                <button class="icon-button aiw-more-button" type="button" data-ai-more-open aria-label="More configuration actions" title="More">•••</button>
+            </div>
+        </header>
+
+        <section class="aiw-health-strip" aria-label="AI configuration health">
+            <button type="button" data-health-filter="all"><strong data-health-total>{{ sections|length }}</strong><span>Sections</span></button>
+            <button type="button" data-health-filter="ready"><strong data-health-ready>—</strong><span>Ready</span></button>
+            <button type="button" data-health-filter="needs_review"><strong data-health-review>—</strong><span>Need Review</span></button>
+            <button type="button" data-health-filter="critical"><strong data-health-critical>0</strong><span>Critical Issues</span></button>
+            <button class="aiw-health-detail" type="button" data-readiness-open>View AI configuration health</button>
+        </section>
+
+        <section class="aiw-workspace">
+            <aside class="aiw-section-navigator" data-section-navigator>
+                <div class="aiw-navigator-header">
+                    <div><strong>AI Sections</strong><span>{{ sections|length }}</span></div>
+                    <button class="icon-button" type="button" data-section-navigator-toggle aria-label="Collapse AI section navigator" title="Collapse navigator">‹</button>
+                </div>
+                <div class="aiw-section-list" role="listbox" aria-label="AI configuration sections">
+                    {% for section in sections %}
+                    <button type="button" class="aiw-section-item js-ia-section-card{% if forloop.first %} active{% endif %}"
+                            data-section-code="{{ section.code }}" role="option" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">
+                        <span class="aiw-section-icon" aria-hidden="true">{{ section.name|slice:":2"|upper }}</span>
+                        <span class="aiw-section-copy">
+                            <strong>{{ section.name }}</strong>
+                            <small data-section-status>Loading readiness…</small>
+                        </span>
+                        <span class="aiw-section-score" data-section-score>—</span>
+                    </button>
+                    {% endfor %}
+                </div>
+            </aside>
+
+            <section class="aiw-editor">
+                <header class="aiw-section-header">
+                    <button class="button secondary aiw-show-sections" type="button" data-section-navigator-open>Sections</button>
+                    <div class="aiw-selected-copy">
+                        <p class="aiw-kicker">Selected AI section</p>
+                        <h2 id="ia-active-section-title">Performance</h2>
+                        <p data-selected-section-meta>Loading configuration coverage…</p>
+                    </div>
+                    <button class="aiw-readiness-button" type="button" data-readiness-open>
+                        <span data-selected-readiness>—</span>
+                        <small>Readiness</small>
+                    </button>
+                    <div class="aiw-section-actions">
+                        <button class="button secondary" type="button" id="ia-add-item">Add</button>
+                        <button class="button" type="button" data-ai-test-open>Test AI</button>
+                        <button class="icon-button" type="button" data-ai-more-open aria-label="More section actions" title="More">•••</button>
+                    </div>
+                </header>
+
+                <nav class="aiw-primary-nav" aria-label="AI configuration areas" role="tablist">
+                    <button type="button" class="active" data-ai-area="language-training" role="tab" aria-selected="true">Language &amp; Training</button>
+                    <button type="button" data-ai-area="semantic-model" role="tab" aria-selected="false">Semantic Model</button>
+                    <button type="button" data-ai-area="query-response" role="tab" aria-selected="false">Query &amp; Response</button>
+                    <button type="button" data-ai-area="business-governance" role="tab" aria-selected="false">Business Governance</button>
+                    <button type="button" data-ai-area="test-diagnostics" role="tab" aria-selected="false">Test &amp; Diagnostics</button>
+                </nav>
+
+                <div class="aiw-editor-body">
+                    <aside class="aiw-entity-nav" id="ia-resource-tabs" aria-label="Configuration entities">
+                        <div data-entity-group="language-training">
+                            <p>Language &amp; Training</p>
+                            <button type="button" class="ia-tab active" data-resource-type="question-examples">Question Examples</button>
+                            <button type="button" class="ia-tab" data-resource-type="synonyms">Synonyms</button>
+                            <button type="button" class="ia-tab" data-resource-type="business-vocabulary">Business Vocabulary</button>
+                            <button type="button" class="ia-tab" data-resource-type="few-shot-examples">Few Shot Examples</button>
+                        </div>
+                        <div data-entity-group="semantic-model" hidden>
+                            <p>Mappings</p>
+                            <button type="button" class="ia-tab" data-resource-type="metrics">Metrics Mapping</button>
+                            <button type="button" class="ia-tab" data-resource-type="filters">Filters Mapping</button>
+                            <button type="button" class="ia-tab" data-resource-type="visual-mapping">Visual Mapping</button>
+                            <p>Metadata</p>
+                            <button type="button" class="ia-tab" data-resource-type="semantic-tables">Semantic Tables</button>
+                            <button type="button" class="ia-tab" data-resource-type="semantic-columns">Semantic Columns</button>
+                            <button type="button" class="ia-tab" data-resource-type="semantic-measures">Semantic Measures</button>
+                            <button type="button" class="ia-tab" data-resource-type="semantic-relationships">Semantic Relationships</button>
+                            <p>Power BI Experience</p>
+                            <button type="button" class="ia-tab" data-resource-type="powerbi-pages">Power BI Pages</button>
+                        </div>
+                        <div data-entity-group="query-response" hidden>
+                            <p>Query &amp; Response</p>
+                            <button type="button" class="ia-tab" data-resource-type="dax-templates">DAX Templates</button>
+                            <button type="button" class="ia-tab" data-resource-type="response-templates">Response Templates</button>
+                            <button type="button" class="ia-tab" data-resource-type="intent-template-mappings">Intent-to-Template Mapping</button>
+                            <button type="button" class="ia-tab" data-resource-type="prompt-templates">Prompt Templates</button>
+                        </div>
+                        <div data-entity-group="business-governance" hidden>
+                            <p>Business Governance</p>
+                            <button type="button" class="ia-tab" data-resource-type="business-rules">Business Rules</button>
+                            <button type="button" class="ia-tab" data-resource-type="kpi-targets">KPI Targets</button>
+                            <button type="button" class="ia-tab" data-resource-type="recommended-actions">Recommended Actions</button>
+                        </div>
+                        <div data-entity-group="test-diagnostics" hidden>
+                            <p>Test &amp; Diagnostics</p>
+                            {% if is_ia_admin %}<button type="button" class="ia-tab" data-resource-type="debug-runs">Debug Runs</button>{% endif %}
+                            <button type="button" data-ai-test-open>Test Intent</button>
+                            <button type="button" data-readiness-open>Readiness &amp; Coverage</button>
+                        </div>
+                    </aside>
+
+                    <section class="aiw-entity-workspace">
+                        <header class="aiw-entity-toolbar">
+                            <div>
+                                <p class="aiw-kicker" data-area-label>Language &amp; Training</p>
+                                <h3 data-entity-title>Question Examples</h3>
+                                <span data-entity-count>Loading…</span>
+                            </div>
+                            <div class="aiw-list-controls">
+                                <label class="aiw-search"><span class="sr-only">Search</span><input type="search" id="ia-resource-search" placeholder="Search records…"></label>
+                                <label><span class="sr-only">Status</span><select id="ia-resource-active"><option value="">All statuses</option><option value="1">Active</option><option value="0">Inactive</option></select></label>
+                                <button type="button" class="icon-button" id="ia-refresh-items" aria-label="Refresh records" title="Refresh">↻</button>
+                                <button type="button" class="button" data-entity-add>Add</button>
+                            </div>
+                        </header>
+                        <div class="aiw-table-frame ia-config-table-wrap" data-entity-table-frame>
+                            <table class="data-table" id="ia-resource-table"></table>
+                        </div>
+                        <footer class="aiw-pagination" data-pagination hidden>
+                            <span data-page-summary></span>
+                            <div><button type="button" class="button secondary" data-page-previous>Previous</button><button type="button" class="button secondary" data-page-next>Next</button></div>
+                        </footer>
+                    </section>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <div class="aiw-drawer" data-ai-test-drawer hidden aria-hidden="true">
+        <button class="aiw-drawer-backdrop" type="button" data-ai-drawer-close aria-label="Close Test AI"></button>
+        <section class="aiw-drawer-panel aiw-test-panel" role="dialog" aria-modal="true" aria-labelledby="ai-test-title">
+            <header><div><p class="aiw-kicker">Dedicated test experience</p><h2 id="ai-test-title">Test AI Configuration</h2></div><button class="icon-button" type="button" data-ai-drawer-close aria-label="Close">×</button></header>
+            <div class="aiw-drawer-body">
+                <div class="aiw-test-inputs">
+                    <label class="ia-field"><span>Section</span><select id="ia-test-section"></select></label>
+                    <label class="ia-field"><span>User Question</span><textarea id="ia-test-question" rows="5" placeholder="Type a mining question…"></textarea></label>
+                </div>
+                <nav class="aiw-result-tabs" role="tablist">
+                    <button type="button" class="active" data-result-tab="resolution">Resolution</button>
+                    <button type="button" data-result-tab="intent">Intent JSON</button>
+                    <button type="button" data-result-tab="dax">DAX</button>
+                    <button type="button" data-result-tab="powerbi">Power BI Result</button>
+                    <button type="button" data-result-tab="validation">Validation</button>
+                    <button type="button" data-result-tab="trace">Execution Trace</button>
+                </nav>
+                <div class="aiw-test-results">
+                    <section data-result-panel="resolution"><div class="aiw-resolution-empty" data-resolution-summary>Run a test to see the resolved section, intent, KPI, filters and template.</div></section>
+                    <section data-result-panel="intent" hidden><pre id="ia-test-intent" class="ia-code-block"></pre></section>
+                    <section data-result-panel="dax" hidden><pre id="ia-test-dax" class="ia-code-block"></pre></section>
+                    <section data-result-panel="powerbi" hidden><pre data-powerbi-result class="ia-code-block">No Power BI execution result returned by this test.</pre></section>
+                    <section data-result-panel="validation" hidden><pre id="ia-test-validation" class="ia-code-block"></pre></section>
+                    <section data-result-panel="trace" hidden><div id="ia-test-status" class="flash" hidden></div></section>
+                </div>
+            </div>
+            <footer><button type="button" class="button secondary" data-ai-drawer-close>Close</button><button type="button" class="button" id="ia-run-test">Run Test</button></footer>
+        </section>
+    </div>
+
+    <div class="aiw-drawer" data-ai-import-drawer hidden aria-hidden="true">
+        <button class="aiw-drawer-backdrop" type="button" data-import-close aria-label="Close import wizard"></button>
+        <section class="aiw-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="ai-import-title">
+            <header><div><p class="aiw-kicker">Semantic Model</p><h2 id="ai-import-title">Import Semantic Model</h2></div><button class="icon-button" type="button" data-import-close aria-label="Close">×</button></header>
+            <div class="aiw-drawer-body">
+                <ol class="aiw-wizard-steps"><li class="active">Select</li><li>Read metadata</li><li>Preview</li><li>Review</li><li>Apply</li><li>Report</li></ol>
+                <section class="aiw-wizard-card">
+                    <h3>Select Semantic Model</h3>
+                    <p>Existing validated records remain protected by the current import behavior.</p>
+                    <label class="ia-field"><span>Semantic Model Name</span><input id="ia-import-dataset-name" value="FPR Global DB + RLS"></label>
+                    <div class="aiw-import-summary" data-import-summary>Metadata will be read only after you confirm the import.</div>
+                </section>
+            </div>
+            <footer><button type="button" class="button secondary" data-import-close>Cancel</button><button type="button" class="button" id="ia-import-semantic">Review and Import</button></footer>
+        </section>
+    </div>
+
+    <div class="aiw-drawer" data-ai-readiness-drawer hidden aria-hidden="true">
+        <button class="aiw-drawer-backdrop" type="button" data-readiness-close aria-label="Close readiness"></button>
+        <section class="aiw-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="ai-readiness-title">
+            <header><div><p class="aiw-kicker">Configuration coverage</p><h2 id="ai-readiness-title">Section Readiness</h2></div><button class="icon-button" type="button" data-readiness-close aria-label="Close">×</button></header>
+            <div class="aiw-drawer-body"><div class="aiw-readiness-overview" data-readiness-content>Loading readiness…</div></div>
+            <footer><button type="button" class="button secondary" data-readiness-close>Close</button></footer>
+        </section>
+    </div>
+
+    <div class="aiw-drawer" data-ai-help-drawer hidden aria-hidden="true">
+        <button class="aiw-drawer-backdrop" type="button" data-help-close aria-label="Close help"></button>
+        <section class="aiw-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="ai-help-title">
+            <header><div><p class="aiw-kicker">Contextual help</p><h2 id="ai-help-title">How AI Configuration Works</h2></div><button class="icon-button" type="button" data-help-close aria-label="Close">×</button></header>
+            <div class="aiw-drawer-body aiw-help-content">
+                <section><h3>Intent extraction</h3><p>The chatbot resolves a structured intent, then generates governed DAX from validated configuration.</p></section>
+                <section><h3>Source of truth</h3><p>Semantic metadata, mappings, business rules and templates remain the executable source of truth.</p></section>
+                {% if is_ia_admin %}<a class="button secondary" href="{% url 'system-config-home' %}">Open Voice Input Configuration</a>{% endif %}
+            </div>
+            <footer><button type="button" class="button secondary" data-help-close>Close</button></footer>
+        </section>
+    </div>
+
+    <div class="browser-modal aiw-entity-drawer" id="ia-config-modal" hidden aria-hidden="true">
+        <div class="browser-modal__backdrop" data-ia-modal-close></div>
+        <div class="browser-modal__panel" role="dialog" aria-modal="true" aria-labelledby="ia-modal-title">
+            <div class="browser-modal__header"><div><p class="aiw-kicker">Configuration entity</p><h2 id="ia-modal-title">Create item</h2></div><button class="icon-button" type="button" data-ia-modal-close aria-label="Close">×</button></div>
+            <form id="ia-config-form" class="ia-config-form"><div id="ia-config-form-fields" class="form-grid"></div><div class="form-actions"><button type="button" class="button secondary" data-ia-modal-close>Cancel</button><button type="submit" class="button" id="ia-save-item">Save</button></div></form>
+        </div>
+    </div>
+
+    <div class="browser-center-message" id="ia-center-message" hidden aria-hidden="true"><div class="browser-center-message__card"><strong class="browser-center-message__text" id="ia-center-message-text"></strong><div class="browser-center-message__actions"><button type="button" class="button secondary" id="ia-center-message-ok">OK</button></div></div></div>
+
+    <script src="{% static 'reports/ia_config.js' %}?v=20260825-workspace-2"></script>
+    <script src="{% static 'reports/ia_config_workspace.js' %}?v=20260825-5"></script>
+</body>
+</html>

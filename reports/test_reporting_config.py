@@ -53,7 +53,7 @@ class ReportingConfigurationTests(TestCase):
 
     def test_reporting_configuration_requires_administrator(self):
         self.client.force_login(self.user)
-        response = self.client.get(reverse("reporting-config-home"))
+        response = self.client.get(reverse("reporting-config-home") + "?legacy=1")
         self.assertEqual(response.status_code, 403)
 
     @patch("reports.reporting_config_views.list_workspace_reports_with_refresh")
@@ -104,7 +104,7 @@ class ReportingConfigurationTests(TestCase):
         )
         self.client.force_login(self.admin)
 
-        response = self.client.get(reverse("reporting-config-home"))
+        response = self.client.get(reverse("reporting-config-home") + "?legacy=1")
 
         self.assertContains(response, "Fleet Performance Report")
         self.assertContains(response, "Fleet overview")
@@ -176,6 +176,128 @@ class ReportingConfigurationTests(TestCase):
 
         self.assertEqual(response.status_code, 403)
 
+    @patch("reports.reporting_config_views.list_workspace_reports")
+    def test_administrator_can_copy_opening_parameters_from_working_report(self, list_reports):
+        list_reports.return_value = [self.first_report, self.second_report]
+        source = self.configure_report(
+            self.first_report,
+            opening_profile_name="Fleet standard",
+            default_page_internal_name="ReportSectionFleet",
+            display_option="fit_to_width",
+            filter_pane_visible=True,
+            page_navigation_visible=False,
+            background_type="transparent",
+            default_rls_role="SiteManager",
+        )
+        self.client.force_login(self.admin)
+
+        response = self.client.post(
+            reverse("reporting-config-opening-profile-api", args=[self.second_report.id]),
+            data=json.dumps({"source_report_id": source.report_id}),
+            content_type="application/json",
+        )
+
+        self.assertEqual(response.status_code, 200)
+        target = PowerBIReport.objects.get(report_id=str(self.second_report.id))
+        self.assertEqual(target.opening_profile_name, "Fleet standard")
+        self.assertEqual(target.display_option, "fit_to_width")
+        self.assertEqual(target.default_page_internal_name, "ReportSectionFleet")
+        self.assertEqual(target.default_rls_role, "SiteManager")
+        self.assertEqual(target.semantic_model_id, self.second_report.dataset_id)
+        self.assertEqual(target.embed_url, self.second_report.embed_url)
+        self.assertNotEqual(target.report_id, source.report_id)
+
+    def test_administrator_can_edit_opening_parameters(self):
+        target = self.configure_report(self.first_report)
+        self.client.force_login(self.admin)
+
+        response = self.client.patch(
+            reverse("reporting-config-opening-profile-api", args=[target.report_id]),
+            data=json.dumps({
+                "profile_name": "Compact viewer",
+                "authentication_mode": "app_owns_data",
+                "default_page_internal_name": "ReportSectionOverview",
+                "display_option": "fit_to_page",
+                "background_type": "default",
+                "default_rls_role": "Global",
+                "filter_pane_visible": False,
+                "page_navigation_visible": True,
+                "bookmarks_pane_visible": True,
+            }),
+            content_type="application/json",
+        )
+
+        self.assertEqual(response.status_code, 200)
+        target.refresh_from_db()
+        self.assertEqual(target.opening_profile_name, "Compact viewer")
+        self.assertEqual(target.default_page_internal_name, "ReportSectionOverview")
+        self.assertTrue(target.bookmarks_pane_visible)
+
+    @patch("reports.reporting_config_views.generate_report_embed_token", return_value="embed-token")
+    @patch("reports.reporting_config_views.get_latest_refresh", return_value=("22 Aug 2026, 07:40", "Completed"))
+    @patch("reports.reporting_config_views.get_dataset_datasources")
+    @patch("reports.reporting_config_views.get_dataset_metadata")
+    @patch("reports.reporting_config_views.get_access_token", return_value="service-token")
+    @patch("reports.reporting_config_views.list_workspace_reports")
+    def test_msolap_diagnostics_distinguish_model_connection_from_opening_profile(
+        self, list_reports, _token, metadata, datasources, _refresh, _embed
+    ):
+        list_reports.return_value = [self.first_report]
+        self.configure_report(self.first_report)
+        metadata.return_value = {
+            "name": "Fleet Model",
+            "webUrl": "https://app.powerbi.com/model",
+            "isOnPremGatewayRequired": True,
+        }
+        datasources.return_value = [{
+            "datasourceType": "Sql",
+            "connectionDetails": {"server": "bodefm", "database": "miningprod"},
+            "gatewayId": "gateway-id",
+        }]
+        self.client.force_login(self.admin)
+
+        response = self.client.post(
+            reverse("reporting-config-diagnostics-api", args=[self.first_report.id]),
+            data=json.dumps({"error_text": "Failed to open the MSOLAP connection. OpenConnectionError"}),
+            content_type="application/json",
+        )
+
+        self.assertEqual(response.status_code, 200)
+        result = response.json()["result"]
+        self.assertEqual(result["status"], "Review Recommended")
+        self.assertIn("MSOLAP connection failure", result["recommendations"][0]["title"])
+        self.assertEqual(result["datasources"][0]["location"], "bodefm")
+
+    @patch("reports.reporting_config_views.generate_report_embed_token", return_value="embed-token")
+    @patch("reports.reporting_config_views.get_latest_refresh", return_value=("22 Aug 2026", "Completed"))
+    @patch("reports.reporting_config_views.get_dataset_datasources", return_value=[])
+    @patch("reports.reporting_config_views.get_dataset_metadata", return_value={"name": "Current Model", "isOnPremGatewayRequired": False})
+    @patch("reports.reporting_config_views.get_access_token", return_value="service-token")
+    @patch("reports.reporting_config_views.list_workspace_reports")
+    def test_safe_diagnostics_repair_synchronizes_only_runtime_metadata(
+        self, list_reports, _token, _metadata, _sources, _refresh, _embed
+    ):
+        list_reports.return_value = [self.first_report]
+        target = self.configure_report(
+            self.first_report,
+            semantic_model_id="stale-dataset",
+            embed_url="https://old.example/embed",
+            opening_profile_name="Keep this profile",
+        )
+        self.client.force_login(self.admin)
+
+        response = self.client.post(
+            reverse("reporting-config-diagnostics-api", args=[self.first_report.id]),
+            data=json.dumps({"repair": True}),
+            content_type="application/json",
+        )
+
+        self.assertEqual(response.status_code, 200)
+        target.refresh_from_db()
+        self.assertEqual(target.semantic_model_id, self.first_report.dataset_id)
+        self.assertEqual(target.embed_url, self.first_report.embed_url)
+        self.assertEqual(target.opening_profile_name, "Keep this profile")
+
     @patch("reports.views.list_workspace_reports_with_refresh")
     def test_hidden_report_is_removed_from_reporting_gallery(self, list_reports):
         list_reports.return_value = [self.first_report, self.second_report]
@@ -233,6 +355,9 @@ class ReportingConfigurationTests(TestCase):
         )
         self.assertContains(response, reverse("powerbi-interaction-embed-config", args=[self.first_report.id]))
         self.assertContains(response, 'id="powerbi-report"')
+        self.assertNotContains(response, 'id="rls-role-select"')
+        self.assertNotContains(response, "Diagnose slicers")
+        self.assertContains(response, 'data-rls-role="Global"')
 
     @patch("reports.views.list_workspace_reports")
     def test_custom_display_name_is_used_in_report_viewer(self, list_reports):

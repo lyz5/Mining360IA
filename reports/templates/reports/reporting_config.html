@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reporting Configuration | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260812-reporting-alias-1">
-    <script src="{% static 'reports/reporting_config.js' %}?v=20260812-reporting-alias-1" defer></script>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260822-report-diagnostics-1">
+    <script src="{% static 'reports/reporting_config.js' %}?v=20260822-report-diagnostics-1" defer></script>
 </head>
 <body>
     {% include "reports/includes/app_nav.html" %}
@@ -15,7 +15,7 @@
             <div>
                 <p class="eyebrow">Config / Reporting</p>
                 <h1>Reporting Configuration</h1>
-                <p>Manage the Power BI source name, Mining 360 display name and gallery visibility.</p>
+                <p>Manage report identity, catalog visibility and the exact parameters used to open each report.</p>
             </div>
             <a class="button secondary" href="{% url 'reporting' %}">Open Reporting</a>
         </header>
@@ -61,7 +61,11 @@
                         data-search="{{ report.report_name|lower }} {{ report.display_name|lower }}"
                         data-report-id="{{ report.id }}"
                         data-report-name="{{ report.report_name }}"
-                        data-display-name-url="{% url 'reporting-config-display-name-api' report.id %}">
+                        data-display-name-url="{% url 'reporting-config-display-name-api' report.id %}"
+                        data-opening-profile-url="{{ report.opening_profile_url }}"
+                        data-diagnostics-url="{{ report.diagnostics_url }}"
+                        data-refresh-url="{{ report.refresh_url }}"
+                        data-test-url="{{ report.test_url }}">
                         <span class="reporting-config-row__identity">
                             <span class="reporting-config-row__icon" aria-hidden="true"></span>
                             <span>
@@ -87,6 +91,52 @@
                                 <label class="wide"><span>Business description</span><textarea rows="2" maxlength="600" data-report-description>{{ report.description }}</textarea></label>
                                 <label><span>Tags</span><input type="text" value="{{ report.tags }}" placeholder="Availability, Downtime" data-report-tags></label>
                                 <label><span>Freshness threshold (hours)</span><input type="number" value="{{ report.freshness_threshold_hours }}" min="1" max="8760" data-report-freshness></label>
+                            </div>
+                        </details>
+                        <details class="reporting-config-row__catalog reporting-config-diagnostics">
+                            <summary>Troubleshooting <small>Diagnose embed, semantic model, gateway, refresh and RLS</small></summary>
+                            <label class="reporting-config-diagnostics__error">
+                                <span>Power BI error details</span>
+                                <textarea rows="4" placeholder="Paste the complete Power BI error here, including correlation and activity IDs." data-diagnostics-error></textarea>
+                            </label>
+                            <div class="reporting-config-diagnostics__actions">
+                                <button class="button" type="button" data-diagnostics-run>Run diagnostics</button>
+                                <button class="button secondary" type="button" data-diagnostics-repair>Synchronize safe metadata</button>
+                                <button class="button secondary" type="button" data-diagnostics-refresh>Start semantic-model refresh</button>
+                                <a class="button secondary" href="{{ report.test_url }}" target="_blank" rel="noreferrer">Reopen report</a>
+                            </div>
+                            <div class="reporting-config-diagnostics__result" data-diagnostics-result hidden aria-live="polite"></div>
+                        </details>
+                        <details class="reporting-config-row__catalog reporting-config-opening">
+                            <summary>Opening parameters <small data-opening-summary>{% if report.opening_profile.configured %}{{ report.opening_profile.profile_name }} · {{ report.opening_profile.authentication_mode }}{% else %}Not configured{% endif %}</small></summary>
+                            <div class="reporting-config-opening__copy">
+                                <label class="wide">
+                                    <span>Copy parameters from a working report</span>
+                                    <select data-opening-source>
+                                        <option value="">Select a reference report</option>
+                                        {% for source in opening_profile_sources %}
+                                            {% if source.report_id != report.id %}<option value="{{ source.report_id }}">{{ source.display_name }}{% if source.opening_profile_name %} · {{ source.opening_profile_name }}{% endif %}</option>{% endif %}
+                                        {% endfor %}
+                                    </select>
+                                </label>
+                                <button class="button secondary" type="button" data-opening-copy>Copy opening parameters</button>
+                            </div>
+                            <p class="reporting-config-opening__notice">Report, workspace, semantic model and embed URL identifiers are never copied.</p>
+                            <small data-opening-status role="status" aria-live="polite"></small>
+                            <div class="reporting-config-catalog-fields" data-opening-fields {% if not report.opening_profile.configured %}hidden{% endif %}>
+                                <label><span>Profile name</span><input type="text" maxlength="120" value="{{ report.opening_profile.profile_name|default:'Standard Power BI' }}" data-opening-profile-name></label>
+                                <label><span>Authentication</span><select data-opening-auth>{% for code, label in authentication_modes %}<option value="{{ code }}"{% if report.opening_profile.authentication_mode == code %} selected{% endif %}>{{ label }}</option>{% endfor %}</select></label>
+                                <label><span>Initial page internal name</span><input type="text" maxlength="255" value="{{ report.opening_profile.default_page_internal_name }}" placeholder="Optional" data-opening-page></label>
+                                <label><span>Display</span><select data-opening-display>{% for code, label in display_options %}<option value="{{ code }}"{% if report.opening_profile.display_option == code %} selected{% endif %}>{{ label }}</option>{% endfor %}</select></label>
+                                <label><span>Background</span><select data-opening-background>{% for code, label in background_types %}<option value="{{ code }}"{% if report.opening_profile.background_type == code %} selected{% endif %}>{{ label }}</option>{% endfor %}</select></label>
+                                <label><span>Default Power BI RLS role</span><input type="text" maxlength="128" value="{{ report.opening_profile.default_rls_role|default:'Global' }}" data-opening-rls></label>
+                                <label class="reporting-config-check"><input type="checkbox" data-opening-filters{% if report.opening_profile.filter_pane_visible %} checked{% endif %}><span>Show filter pane</span></label>
+                                <label class="reporting-config-check"><input type="checkbox" data-opening-navigation{% if report.opening_profile.page_navigation_visible %} checked{% endif %}><span>Show page navigation</span></label>
+                                <label class="reporting-config-check"><input type="checkbox" data-opening-bookmarks{% if report.opening_profile.bookmarks_pane_visible %} checked{% endif %}><span>Show bookmarks pane</span></label>
+                                <div class="wide reporting-config-opening__actions">
+                                    <button class="button" type="button" data-opening-save>Save opening parameters</button>
+                                    <a class="button secondary" href="{% url 'report-detail' report.id %}" target="_blank" rel="noreferrer">Test opening</a>
+                                </div>
                             </div>
                         </details>
                         <label class="reporting-config-row__control">

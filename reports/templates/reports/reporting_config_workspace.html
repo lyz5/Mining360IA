@@ -1,0 +1,335 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <title>Reporting Configuration | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260822-report-config-workspace-1">
+    <link rel="stylesheet" href="{% static 'reports/reporting_configuration_workspace.css' %}?v=20260823-guided-workspace-2">
+    <script>if (localStorage.getItem("mining360ia.navCollapsed") === null) localStorage.setItem("mining360ia.navCollapsed", "1");</script>
+    <script src="{% static 'reports/reporting_configuration_workspace.js' %}?v=20260823-guided-workspace-2" defer></script>
+</head>
+<body class="report-config-body">
+    {% include "reports/includes/app_nav.html" %}
+    <main
+        class="app-shell report-config-page"
+        data-report-config-workspace
+        data-list-api="{{ list_api_url }}"
+        data-detail-api-template="{{ detail_api_template }}"
+        data-publish-api-template="{{ publish_api_template }}"
+        data-test-api-template="{{ test_api_template }}"
+        data-copy-api-template="{{ copy_api_template }}"
+        data-prompt-preview-api-template="{{ prompt_preview_api_template }}"
+        data-thumbnail-api-template="{{ thumbnail_api_template }}"
+        data-diagnostics-api-template="{{ diagnostics_api_template }}"
+        data-refresh-api-template="{{ refresh_api_template }}"
+        data-sync-api="{{ sync_api_url }}">
+        <header class="report-config-header">
+            <div>
+                <p class="report-config-breadcrumb">Config <span>/</span> Reporting</p>
+                <h1>Reporting Configuration</h1>
+                <p>Configure how reports appear, open and behave inside Mining 360.</p>
+            </div>
+            <div class="report-config-header__actions">
+                <a class="button secondary" href="{% url 'reporting' %}">Open Reporting Hub</a>
+                <button class="button" type="button" data-sync-open>Synchronize Reports</button>
+                <a class="report-config-icon-button" href="?legacy=1" title="Open legacy configuration" aria-label="Open legacy configuration">•••</a>
+            </div>
+        </header>
+
+        <section class="report-config-summary" aria-label="Configuration summary">
+            <button type="button" data-summary-filter="all"><strong data-summary-total>--</strong><span>Reports</span></button>
+            <button type="button" data-summary-filter="visible"><strong data-summary-visible>--</strong><span>Visible</span></button>
+            <button type="button" data-summary-filter="needs_review"><strong data-summary-review>--</strong><span>Need Review</span></button>
+            <button type="button" data-summary-filter="invalid"><strong data-summary-issues>--</strong><span>Issues</span></button>
+            <div class="configuration-health-wrap">
+                <button type="button" class="configuration-health-link" data-health-toggle aria-expanded="false">View configuration health</button>
+                <div class="configuration-health-popover" data-health-popover hidden>
+                    <header><strong>Configuration health</strong><button type="button" data-health-close aria-label="Close configuration health">×</button></header>
+                    <dl>
+                        <div><dt>Hidden</dt><dd data-summary-hidden>--</dd></div>
+                        <div><dt>Errors</dt><dd data-summary-errors>--</dd></div>
+                        <div><dt>Identity complete</dt><dd data-summary-visual-complete>--</dd></div>
+                        <div><dt>Visual review</dt><dd data-summary-visual-review>--</dd></div>
+                        <div><dt>Broken assets</dt><dd data-summary-broken-assets>--</dd></div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <section class="report-config-workspace">
+            <aside class="report-config-sidebar" data-report-sidebar>
+                <header>
+                    <div class="report-navigator-title"><div><h2>Reports</h2><span data-list-count>Loading...</span></div><button type="button" data-navigator-collapse aria-label="Collapse report navigator" title="Collapse report navigator">‹</button></div>
+                    <div class="report-navigator-controls">
+                    <label class="report-config-search">
+                        <span class="visually-hidden">Search reports</span>
+                        <input type="search" placeholder="Search reports..." data-report-search>
+                    </label>
+                    <button class="report-config-filter-toggle" type="button" data-filter-toggle aria-expanded="false">Filters <span data-filter-count></span></button>
+                    </div>
+                    <div class="active-report-filter-chips" data-filter-chips hidden></div>
+                    <div class="report-config-filters" data-filters hidden>
+                        <label><span>Visibility</span><select data-filter="visibility"><option value="all">All</option><option value="visible">Visible</option><option value="hidden">Hidden</option></select></label>
+                        <label><span>Status</span><select data-filter="status"><option value="all">All</option><option value="complete">Complete</option><option value="incomplete">Incomplete</option><option value="needs_review">Needs Review</option><option value="invalid">Invalid</option></select></label>
+                        <label><span>Category</span><select data-filter="category"><option value="all">All Categories</option></select></label>
+                        <label><span>Launch</span><select data-filter="launch_mode"><option value="all">All modes</option><option value="generic_powerbi">Generic Power BI</option></select></label>
+                        <label><span>Authentication</span><select data-filter="authentication_mode"><option value="all">All modes</option><option value="app_owns_data">App Owns Data</option><option value="user_owns_data">User Owns Data</option></select></label>
+                        <label><span>Integration</span><select data-filter="special_integration"><option value="all">All</option><option value="powerapps">Power Apps</option><option value="ai_troubleshooting">AI Troubleshooting</option><option value="custom_parameters">Custom Parameters</option><option value="none">No Special Integration</option></select></label>
+                        <label><span>Visual Identity</span><select data-filter="visual_status"><option value="all">All</option><option value="complete">Complete</option><option value="partial">Partial</option><option value="default">Default</option><option value="needs_review">Needs Review</option><option value="invalid">Invalid</option></select></label>
+                        <button type="button" data-clear-list-filters>Clear filters</button>
+                    </div>
+                </header>
+                <div class="report-config-list" data-report-list aria-live="polite">
+                    {% for unused in "12345678" %}<div class="report-config-list-skeleton"></div>{% endfor %}
+                </div>
+            </aside>
+
+            <section class="report-config-editor">
+                <div class="report-config-empty" data-editor-empty>
+                    <span class="report-config-empty__icon" aria-hidden="true"></span>
+                    <h2>Select a report</h2>
+                    <p>Select a report to view and edit its configuration.</p>
+                </div>
+                <div class="report-config-editor-loading" data-editor-loading hidden><div></div><div></div><div></div></div>
+                <div class="report-config-editor-content selected-report-shell" data-editor-content hidden>
+                    <header class="selected-report-header">
+                        <div class="selected-report-header__title">
+                            <button class="report-config-icon-button mobile-report-list-button" type="button" data-mobile-list aria-label="Choose another report">‹</button>
+                            <button class="report-config-icon-button report-navigator-expand" type="button" data-navigator-expand aria-label="Show reports" title="Show reports">☰</button>
+                            <div><h2 data-selected-name></h2><p>Power BI source: <span data-selected-source></span></p></div>
+                        </div>
+                        <div class="selected-report-header__actions">
+                            <a class="button" data-view-live target="_blank" rel="noreferrer">Preview</a>
+                            <button class="button secondary" type="button" data-test-open>Test</button>
+                            <div class="selected-report-more-wrap"><button class="report-config-icon-button" type="button" data-report-more-toggle aria-expanded="false" title="More actions" aria-label="More report actions">•••</button><div class="selected-report-more" data-report-more hidden><button type="button" data-preview-card>Change card image</button><a data-open-powerbi-service target="_blank" rel="noreferrer" hidden>Open in Power BI Service</a><button type="button" data-copy-open>Copy configuration</button></div></div>
+                        </div>
+                        <div class="selected-report-status">
+                            <span data-selected-visibility></span><span data-selected-category></span><span data-selected-launch></span><span data-selected-status></span>
+                            <button type="button" data-selected-completeness data-checklist-open aria-label="Open configuration checklist"></button>
+                        </div>
+                    </header>
+
+                    <nav class="primary-configuration-navigation" role="tablist" aria-label="Configuration areas">
+                        <button type="button" role="tab" data-area="essentials" aria-selected="true">Essentials</button>
+                        <button type="button" role="tab" data-area="appearance">Appearance</button>
+                        <button type="button" role="tab" data-area="open_navigate">Open &amp; Navigate</button>
+                        <button type="button" role="tab" data-area="help_ai">Help &amp; AI</button>
+                        <button type="button" role="tab" data-area="test_history">Test &amp; History</button>
+                    </nav>
+                    <nav class="secondary-configuration-navigation" data-secondary-nav aria-label="Configuration sections"></nav>
+
+                    <form class="report-config-form" data-config-form>
+                        <section class="report-config-tab-panel" data-panel="general">
+                            <div class="report-config-section-heading"><div><h3>General</h3><p>Source identity and business availability.</p></div></div>
+                            <div class="report-config-form-grid">
+                                <label><span>Mining 360 Display Name</span><input name="display_name" required><small>The name shown to users in the Reporting Hub.</small></label>
+                                <label><span>Business Owner</span><input name="business_owner" placeholder="Team or owner"><small>Accountable team or report owner.</small></label>
+                                <label class="report-config-switch"><input name="visible" type="checkbox"><span>Visible in Reporting Hub</span><small>Users with access can discover this report.</small></label>
+                                <label class="report-config-switch"><input name="active" type="checkbox"><span>Active configuration</span><small>Allows Mining 360 to use this configuration.</small></label>
+                            </div>
+                            <details class="report-config-advanced"><summary>Advanced technical details</summary><dl class="technical-details"><div><dt>Power BI name</dt><dd data-tech-report-name></dd></div><div><dt>Report ID</dt><dd data-tech-report-id></dd></div><div><dt>Workspace ID</dt><dd data-tech-workspace></dd></div><div><dt>Semantic Model ID</dt><dd data-tech-dataset></dd></div><div><dt>Last synchronized</dt><dd data-tech-synced></dd></div></dl></details>
+                        </section>
+
+                        <section class="report-config-tab-panel" data-panel="visual" hidden>
+                            <div class="report-config-section-heading">
+                                <div><h3>Visual Identity</h3><p>Give this report a recognizable, governed business identity.</p></div>
+                                <span class="visual-identity-status" data-visual-status>Needs Review</span>
+                            </div>
+                            <div class="visual-identity-layout">
+                                <div class="report-config-form-grid visual-identity-fields">
+                                    <label><span>Category</span><select name="category"></select></label>
+                                    <label><span>Accent</span><select name="accent_code"></select></label>
+                                    <label><span>Illustration</span><select name="illustration_code"></select></label>
+                                    <label><span>Icon</span><select name="icon_code"></select></label>
+                                    <label><span>Card Badge</span><select name="card_badge"><option value="">No badge</option><option>Interactive</option><option>New</option><option>Featured</option><option>Executive</option><option>AI Enabled</option><option>Writeback</option><option>Power Apps</option><option>Customer View</option></select></label>
+                                    <label><span>Card Style</span><select name="card_style"></select></label>
+                                    <label class="wide"><span>Short Description</span><textarea name="short_description" rows="3" maxlength="180"></textarea><small>80–140 characters recommended. Used on report cards.</small></label>
+                                    <label class="wide"><span>Long Description</span><textarea name="long_description" rows="4" maxlength="1200"></textarea></label>
+                                    <label class="wide"><span>Business Purpose</span><textarea name="business_purpose" rows="3" maxlength="1000"></textarea></label>
+                                    <label><span>Technical Owner</span><input name="technical_owner" maxlength="255"></label>
+                                    <label class="report-config-switch"><input name="featured" type="checkbox"><span>Featured report</span><small>Prioritizes this report in the catalog.</small></label>
+                                    <div class="wide tag-editor"><span>Governed Tags</span><div data-tag-list></div><label><select data-tag-input><option value="">Select a tag</option></select><button type="button" data-tag-add>Add</button></label></div>
+                                    <fieldset class="wide thumbnail-editor">
+                                        <legend>Report Card Image</legend>
+                                        <p class="thumbnail-editor__help">Upload the image displayed on this report's card in the Reporting Hub. Recommended size: 1200 × 450 px. Minimum: 600 × 225 px.</p>
+                                        <label><span>Source</span><select name="thumbnail_source"></select></label>
+                                        <label><span>Approved Asset Library</span><select name="selected_visual_asset_id"><option value="">No library asset</option></select></label>
+                                        <label><span>Approved Thumbnail URL</span><input name="thumbnail_url" type="url" placeholder="https://..."></label>
+                                        <label><span>Power BI Screenshot URL</span><input name="powerbi_screenshot_url" type="url" placeholder="Configured screenshot cache"></label>
+                                        <label><span>Status</span><select name="thumbnail_status"><option value="fallback">Fallback</option><option value="configured">Configured</option><option value="pending">Pending Review</option><option value="failed">Failed</option></select></label>
+                                        <div class="thumbnail-upload-row">
+                                            <label><span>Select a PNG, JPEG or WebP image</span><input type="file" accept="image/png,image/jpeg,image/webp" data-thumbnail-file></label>
+                                            <button type="button" class="button secondary" data-thumbnail-upload>Replace Image</button>
+                                            <button type="button" class="button secondary" data-thumbnail-remove>Remove Image</button>
+                                        </div>
+                                        <label><span>Horizontal focal point</span><input name="thumbnail_focal_x" type="range" min="0" max="100"><output data-focal-x>50%</output></label>
+                                        <label><span>Vertical focal point</span><input name="thumbnail_focal_y" type="range" min="0" max="100"><output data-focal-y>50%</output></label>
+                                    </fieldset>
+                                </div>
+                                <aside class="visual-preview-workspace">
+                                    <header><strong>Live Card Preview</strong><span data-preview-draft>Preview — Saved</span></header>
+                                    <div class="visual-preview-modes" role="group" aria-label="Preview mode"><button type="button" data-preview-mode="desktop" aria-pressed="true">Desktop</button><button type="button" data-preview-mode="laptop">Laptop</button><button type="button" data-preview-mode="mobile">Mobile</button><button type="button" data-preview-mode="list">List</button></div>
+                                    <div class="report-card-preview preview-desktop" data-card-preview>
+                                        <div class="report-card-preview__visual" data-preview-thumbnail><span data-preview-art>FP</span><em data-preview-badge hidden></em></div>
+                                        <div class="report-card-preview__body"><span data-preview-category></span><h4 data-preview-name></h4><p data-preview-description></p><div data-preview-tags></div><footer><span>Healthy</span><button type="button">Open report</button></footer></div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </section>
+
+                        <section class="report-config-tab-panel" data-panel="catalog" hidden>
+                            <div class="report-config-section-heading"><div><h3>Catalog Display</h3><p>Control how the report appears in the Reporting Hub.</p></div></div>
+                            <div class="catalog-editor-layout">
+                                <div class="report-config-form-grid">
+                                    <label><span>Display Order</span><input name="display_order" type="number" min="0"></label>
+                                    <label class="wide"><span>Business Description</span><textarea name="description" rows="4" maxlength="600"></textarea><small>One or two concise lines describing the report's purpose.</small></label>
+                                    <label><span>Freshness threshold</span><div class="input-suffix"><input name="freshness_threshold_hours" type="number" min="1" max="8760"><span>hours</span></div></label>
+                                </div>
+                                <aside class="catalog-display-note"><strong>Visual preview moved</strong><p>Use the Visual Identity tab to configure the report image, accent, icon and card metadata.</p><button type="button" class="button secondary" data-open-visual-tab>Open Visual Identity</button></aside>
+                            </div>
+                        </section>
+
+                        <section class="report-config-tab-panel" data-panel="launch" hidden>
+                            <div class="report-config-section-heading"><div><h3>Launch & Authentication</h3><p>Define the supported identity and opening path.</p></div></div>
+                            <div class="report-config-form-grid">
+                                <label><span>Launch Mode</span><select name="launch_mode"></select><small data-launch-help></small></label>
+                                <label><span>Authentication Mode</span><select name="authentication_mode"></select><small data-auth-help></small></label>
+                                <label><span>Open Behavior</span><select name="open_behavior"></select></label>
+                                <label><span>Required Entra Tenant</span><input name="required_entra_tenant_id" placeholder="Required for user identity"></label>
+                                <label class="report-config-switch"><input name="contains_powerapps_visual" type="checkbox"><span>Contains Power Apps visual</span></label>
+                                <label class="report-config-switch"><input name="requires_user_identity" type="checkbox"><span>Requires user Entra identity</span></label>
+                                <label class="report-config-switch"><input name="supports_chatbot_navigation" type="checkbox"><span>Supports chatbot navigation</span></label>
+                                <label class="report-config-switch"><input name="supports_embedded_filtering" type="checkbox"><span>Supports embedded filtering</span></label>
+                            </div>
+                            <div class="inline-validation" data-launch-validation hidden></div>
+                        </section>
+
+                        <section class="report-config-tab-panel" data-panel="viewer" hidden>
+                            <div class="report-config-section-heading"><div><h3>Viewer Experience</h3><p>Configure the Mining 360 workspace around this report without changing the Power BI content.</p></div></div>
+                            <div class="report-config-form-grid">
+                                <label class="report-config-switch"><input name="viewer_show_filter_bar" type="checkbox"><span>Show Mining 360 filter bar</span><small>Displays only governed filters configured for this report.</small></label>
+                                <label class="report-config-switch"><input name="viewer_auto_apply_presets" type="checkbox"><span>Auto-apply period presets</span><small>YTD and rolling periods apply without reloading the embed.</small></label>
+                                <label><span>Default Period</span><select name="viewer_default_period"></select></label>
+                                <fieldset class="wide viewer-period-options"><legend>Available Periods</legend><div data-viewer-periods></div><small>Custom dates use the approved table and column mapping below.</small></fieldset>
+                                <label class="report-config-switch"><input name="viewer_custom_range_enabled" type="checkbox"><span>Allow custom date range</span></label>
+                                <label><span>Reset Behavior</span><select name="viewer_reset_behavior"></select></label>
+                                <label><span>Power BI Date Table</span><input name="viewer_date_table" maxlength="255" placeholder="Date"></label>
+                                <label><span>Power BI Date Column</span><input name="viewer_date_column" maxlength="255" placeholder="Date"></label>
+                                <label class="report-config-switch"><input name="viewer_external_page_navigation" type="checkbox"><span>Show external report-page navigation</span><small>Uses synchronized Power BI page metadata.</small></label>
+                                <label class="report-config-switch"><input name="viewer_focus_mode_enabled" type="checkbox"><span>Allow Focus Mode</span></label>
+                                <label class="report-config-switch"><input name="viewer_fullscreen_enabled" type="checkbox"><span>Allow Fullscreen</span></label>
+                                <label class="report-config-switch"><input name="viewer_allow_open_powerbi" type="checkbox"><span>Allow Power BI Service link</span><small>The link remains restricted to Mining 360 platform administrators.</small></label>
+                                <label class="wide"><span>Viewer Help Text</span><textarea name="viewer_help_text" rows="4" maxlength="2000" placeholder="Optional guidance shown in the report Help drawer."></textarea></label>
+                            </div>
+                            <div class="inline-validation" data-viewer-validation hidden></div>
+                        </section>
+
+                        <section class="report-config-tab-panel" data-panel="navigation" hidden>
+                            <div class="report-config-section-heading"><div><h3>Power BI Navigation</h3><p>Choose the initial page and embedded viewing controls.</p></div></div>
+                            <div class="report-config-form-grid">
+                                <label><span>Opening Profile</span><input name="opening_profile_name"></label>
+                                <label><span>Default Page</span><select name="default_page_internal_name"><option value="">Power BI default</option></select><small>Uses synchronized page metadata when available.</small></label>
+                                <label><span>Display Option</span><select name="display_option"></select></label>
+                                <label><span>Background</span><select name="background_type"></select></label>
+                                <label><span>Default RLS Role</span><input name="default_rls_role"></label>
+                                <label class="report-config-switch"><input name="filter_pane_visible" type="checkbox"><span>Show filter pane</span></label>
+                                <label class="report-config-switch"><input name="page_navigation_visible" type="checkbox"><span>Show page navigation</span></label>
+                                <label class="report-config-switch"><input name="bookmarks_pane_visible" type="checkbox"><span>Show bookmarks pane</span></label>
+                            </div>
+                        </section>
+
+                        <section class="report-config-tab-panel" data-panel="troubleshooting" hidden>
+                            <div class="report-config-section-heading"><div><h3>Troubleshooting & AI</h3><p>Guide users and diagnose Power BI failures without exposing credentials.</p></div></div>
+                            <div class="help-ai-summary">
+                                <label class="report-config-switch standalone"><input name="troubleshooting_enabled" type="checkbox"><span>AI troubleshooting</span></label>
+                                <div><span>Prompt</span><strong>Configured</strong><small>Central AI Gateway</small></div>
+                                <div><span>Provider</span><strong>API Management</strong><small>reporting_troubleshooting</small></div>
+                            </div>
+                            <details class="progressive-editor" data-prompt-editor-details>
+                                <summary><span><strong>Edit troubleshooting prompt</strong><small>Template, variables and support instructions</small></span></summary>
+                            <div class="prompt-editor">
+                                <header><div><strong>Troubleshooting Prompt Template</strong><small>Use case: reporting_troubleshooting · Central AI Gateway</small></div><button type="button" data-prompt-reset>Reset to default</button></header>
+                                <div class="prompt-variable-chips" data-prompt-variables></div>
+                                <textarea name="troubleshooting_prompt" rows="12" spellcheck="false" placeholder="Explain {{error_message}} for {{report_name}} and provide safe corrective actions."></textarea>
+                                <footer><span data-prompt-validation></span><button class="button secondary" type="button" data-prompt-preview>Preview Prompt</button></footer>
+                            </div>
+                            <label class="report-config-block-field"><span>User and support instructions</span><textarea name="troubleshooting_instructions" rows="4"></textarea></label>
+                            </details>
+                            <details class="progressive-editor">
+                                <summary><span><strong>Power BI diagnostics</strong><small>Analyze an error or safely synchronize metadata</small></span></summary>
+                            <div class="diagnostic-console">
+                                <h4>Power BI Diagnostic Console</h4>
+                                <textarea rows="5" data-diagnostic-error placeholder="Paste a Power BI error including activity and correlation IDs."></textarea>
+                                <div><button class="button secondary" type="button" data-diagnostic-run>Run diagnostics</button><button class="button secondary" type="button" data-diagnostic-repair>Synchronize safe metadata</button><button class="button secondary" type="button" data-model-refresh>Start semantic-model refresh</button></div>
+                                <div data-diagnostic-output hidden></div>
+                            </div>
+                            </details>
+                        </section>
+
+                        <section class="report-config-tab-panel" data-panel="parameters" hidden>
+                            <div class="report-config-section-heading"><div><h3>Context Parameters</h3><p>Map trusted Mining 360 context to Power BI filters.</p></div><button class="button" type="button" data-parameter-add>Add parameter</button></div>
+                            <div class="parameter-table-wrap"><table class="parameter-table"><thead><tr><th>Parameter</th><th>Source</th><th>Type</th><th>Required</th><th>Power BI Mapping</th><th></th></tr></thead><tbody data-parameter-rows></tbody></table></div>
+                            <p class="report-config-inline-empty" data-parameter-empty>No context parameters configured.</p>
+                        </section>
+
+                        <section class="report-config-tab-panel" data-panel="tests" hidden>
+                            <div class="report-config-section-heading"><div><h3>Tests & Diagnostics</h3><p>Validate configuration without changing Power BI content or business data.</p></div><button class="button" type="button" data-run-all-tests>Run All Tests</button></div>
+                            <div class="configuration-readiness"><strong data-readiness-score></strong><span>Configuration Readiness</span><div><i data-readiness-bar></i></div></div>
+                            <div class="test-center-list" data-test-center></div>
+                        </section>
+
+                        <section class="report-config-tab-panel" data-panel="audit" hidden>
+                            <div class="report-config-section-heading"><div><h3>Audit & Versions</h3><p>Review configuration changes, versions and test history.</p></div></div>
+                            <div class="audit-columns"><section><h4>Change History</h4><ol data-audit-list></ol></section><section><h4>Versions</h4><ol data-version-list></ol></section></div>
+                        </section>
+                    </form>
+
+                    <footer class="configuration-action-bar">
+                        <span data-save-state>Saved</span>
+                        <div><button class="button secondary" type="button" data-cancel-changes disabled>Cancel Changes</button><button class="button secondary" type="button" data-save-changes disabled>Save Changes</button><button class="button" type="button" data-publish disabled>Publish</button></div>
+                    </footer>
+                </div>
+            </section>
+        </section>
+
+    <dialog class="report-config-dialog" data-unsaved-dialog><h2>Unsaved changes</h2><p>Save before leaving this report?</p><div><button class="button secondary" value="keep">Keep Editing</button><button class="button secondary" value="discard">Discard Changes</button><button class="button" value="save">Save and Continue</button></div></dialog>
+    <dialog class="report-config-dialog" data-copy-dialog><h2>Copy Settings From Another Report</h2><label><span>Reference report</span><select data-copy-source></select></label><fieldset><legend>Sections to copy</legend><label><input type="checkbox" value="catalog" checked> Catalog Display</label><label><input type="checkbox" value="launch"> Launch Settings</label><label><input type="checkbox" value="viewer" checked> Viewer Experience</label><label><input type="checkbox" value="navigation" checked> Navigation</label><label><input type="checkbox" value="troubleshooting"> Troubleshooting</label><label><input type="checkbox" value="parameters"> Context Parameters</label></fieldset><p>Technical IDs and source names are never copied.</p><div><button class="button secondary" value="cancel">Cancel</button><button class="button" value="copy">Copy selected settings</button></div></dialog>
+    <dialog class="report-config-dialog report-config-sync-dialog" data-sync-dialog><h2>Synchronize Reports</h2><p>Compare Mining 360 configuration with the current Power BI workspace.</p><div data-sync-results></div><div><button class="button secondary" value="cancel">Cancel</button><button class="button secondary" value="preview">Preview</button><button class="button" value="apply" disabled>Apply synchronization</button></div></dialog>
+
+    <aside class="parameter-drawer" data-parameter-drawer aria-hidden="true">
+        <header><div><span>Context Parameter</span><h2 data-parameter-title>Add parameter</h2></div><button type="button" data-parameter-close aria-label="Close">×</button></header>
+        <div class="parameter-drawer__body">
+            <input type="hidden" data-param-field="id">
+            <label><span>Parameter Code</span><input data-param-field="code" placeholder="minesite"></label>
+            <label><span>Display Name</span><input data-param-field="display_name"></label>
+            <label><span>Source</span><select data-param-field="source"></select></label>
+            <label><span>Data Type</span><select data-param-field="data_type"></select></label>
+            <label><span>Default Value</span><input data-param-field="default_value"></label>
+            <label><span>Power BI Table</span><input data-param-field="powerbi_table"></label>
+            <label><span>Power BI Column</span><input data-param-field="powerbi_column"></label>
+            <label><span>Operator</span><select data-param-field="operator"></select></label>
+            <label class="report-config-switch"><input type="checkbox" data-param-field="required"><span>Required</span></label>
+            <label class="report-config-switch"><input type="checkbox" data-param-field="supports_multiple_values"><span>Allow multiple values</span></label>
+        </div>
+        <footer><button class="button secondary" type="button" data-parameter-close>Cancel</button><button class="button" type="button" data-parameter-save>Save parameter</button></footer>
+    </aside>
+    <div class="parameter-drawer-backdrop" data-parameter-backdrop hidden></div>
+
+    <aside class="report-config-side-drawer" data-checklist-drawer aria-hidden="true" aria-labelledby="checklist-title">
+        <header><div><span>Configuration readiness</span><h2 id="checklist-title">Configuration checklist</h2></div><button type="button" data-checklist-close aria-label="Close configuration checklist">×</button></header>
+        <div class="report-config-side-drawer__body"><div class="checklist-score"><strong data-checklist-score>--</strong><span>configured</span></div><div data-checklist-content></div></div>
+    </aside>
+    <div class="report-config-drawer-backdrop" data-checklist-backdrop hidden></div>
+
+    <aside class="report-config-side-drawer" data-test-drawer aria-hidden="true" aria-labelledby="test-drawer-title">
+        <header><div><span>Safe validation</span><h2 id="test-drawer-title">Test Report Configuration</h2></div><button type="button" data-test-close aria-label="Close test drawer">×</button></header>
+        <div class="report-config-side-drawer__body"><div class="test-drawer-actions"><button class="button" type="button" data-test-run-all>Run All</button><button class="button secondary" type="button" data-test-run-failed>Run Failed</button></div><div class="test-center-list" data-test-drawer-list></div></div>
+    </aside>
+    <div class="report-config-drawer-backdrop" data-test-backdrop hidden></div>
+    <div class="report-config-toast" data-toast role="status" aria-live="polite"></div>
+    </main>
+</body>
+</html>

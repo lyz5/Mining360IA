@@ -8,12 +8,13 @@ from . import resource_knowledge_views
 from . import voice_input_views
 from . import ai_agents_views
 from . import reporting_config_views
+from . import reporting_configuration_views
 from . import ai_provider_views
 from . import ai_conversation_views
 from . import downtime_mapping_views
 from . import user_access_views
-from . import prime_movers_views
 from . import homepage_views
+from . import report_viewer_views
 
 
 urlpatterns = [
@@ -94,8 +95,24 @@ urlpatterns = [
     path("api/reporting/reports/<uuid:report_id>/favorite/", views.reporting_report_favorite_api, name="reporting-report-favorite-api"),
     path("reporting/reports/<uuid:report_id>/launch/", views.reporting_report_launch, name="reporting-report-launch"),
     path("reporting/reports/<uuid:report_id>/refresh/", views.reporting_report_refresh_api, name="reporting-report-refresh-api"),
+    path("reporting/reports/<uuid:report_id>/troubleshoot/", views.reporting_report_troubleshoot_api, name="reporting-report-troubleshoot-api"),
     path("config/reporting/", reporting_config_views.reporting_config_home, name="reporting-config-home"),
     path("config/reporting/reports/<str:report_id>/display-name/", reporting_config_views.reporting_report_display_name_api, name="reporting-config-display-name-api"),
+    path("config/reporting/reports/<str:report_id>/opening-profile/", reporting_config_views.reporting_report_opening_profile_api, name="reporting-config-opening-profile-api"),
+    path("config/reporting/reports/<str:report_id>/diagnostics/", reporting_config_views.reporting_report_diagnostics_api, name="reporting-config-diagnostics-api"),
+    path("api/reporting/configurations/", reporting_configuration_views.configuration_list_api, name="reporting-configuration-list-api"),
+    path("api/reporting/configurations/synchronize/", reporting_configuration_views.configuration_sync_api, name="reporting-configuration-sync-api"),
+    path("api/reporting/configurations/<str:report_id>/", reporting_configuration_views.configuration_detail_api, name="reporting-configuration-detail-api"),
+    path("api/reporting/configurations/<str:report_id>/publish/", reporting_configuration_views.configuration_publish_api, name="reporting-configuration-publish-api"),
+    path("api/reporting/configurations/<str:report_id>/test/", reporting_configuration_views.configuration_test_api, name="reporting-configuration-test-api"),
+    path("api/reporting/configurations/<str:report_id>/copy-settings/", reporting_configuration_views.configuration_copy_api, name="reporting-configuration-copy-api"),
+    path("api/reporting/configurations/<str:report_id>/prompt-preview/", reporting_configuration_views.configuration_prompt_preview_api, name="reporting-configuration-prompt-preview-api"),
+    path("api/reporting/configurations/<str:report_id>/thumbnail/", reporting_configuration_views.configuration_thumbnail_api, name="reporting-configuration-thumbnail-api"),
+    path("api/reporting/visual-identity/coverage/", reporting_configuration_views.visual_identity_coverage_api, name="reporting-visual-identity-coverage-api"),
+    path("api/reporting/visual-assets/", reporting_configuration_views.visual_assets_api, name="reporting-visual-assets-api"),
+    path("reporting/visual-assets/<int:asset_id>/file/", reporting_configuration_views.visual_asset_file_api, name="reporting-visual-asset-file"),
+    path("api/reporting/categories/", reporting_configuration_views.visual_categories_api, name="reporting-visual-categories-api"),
+    path("reporting/reports/<str:report_id>/thumbnail/", reporting_configuration_views.report_thumbnail_api, name="reporting-report-thumbnail"),
     path("business-performance/", views.business_performance_home, name="business-performance"),
     path("business-performance/page/<slug:page>/", views.business_performance_home, name="business-performance-page"),
     path("business-performance/customers/<path:customer>/", views.business_performance_customer, name="business-performance-customer"),
@@ -223,11 +240,7 @@ urlpatterns = [
     path("resources/knowledge/api/search/", resource_knowledge_views.knowledge_search_api, name="resource-knowledge-search"),
     path("resources/files/<str:resource_id>/", views.resource_file, name="resource-file"),
     path("resources/<str:resource_id>/", views.resource_detail, name="resource-detail"),
-    path("reporting/prime-movers/<uuid:report_id>/", prime_movers_views.workspace, name="prime-movers-workspace"),
-    path("api/prime-movers/<uuid:report_id>/powerapps/launch-context/", prime_movers_views.launch_context, name="prime-movers-launch-context"),
-    path("api/prime-movers/powerapps/context/<uuid:context_id>/", prime_movers_views.context_status, name="prime-movers-context-status"),
-    path("api/prime-movers/<uuid:report_id>/events/", prime_movers_views.integration_event, name="prime-movers-event"),
-    path("admin/prime-movers/<uuid:report_id>/diagnostics/", prime_movers_views.diagnostics, name="prime-movers-diagnostics"),
+    path("api/reporting/reports/<uuid:report_id>/viewer-configuration/", report_viewer_views.viewer_configuration_api, name="report-viewer-configuration-api"),
     path("reporting/reports/<uuid:report_id>/", views.report_detail, name="report-detail"),
     path("reports/<uuid:report_id>/", views.report_detail, name="report-detail"),
 ]

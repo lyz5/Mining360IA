@@ -41,11 +41,20 @@ ALLOWED_HOSTS = [
     if value.strip()
 ]
 
+MINING360_PUBLIC_BASE_URL = os.getenv('MINING360_PUBLIC_BASE_URL', '').strip().rstrip('/')
 CSRF_TRUSTED_ORIGINS = [
     value.strip()
     for value in os.getenv('MINING360_CSRF_TRUSTED_ORIGINS', '').split(',')
     if value.strip()
 ]
+if MINING360_PUBLIC_BASE_URL.startswith(('https://', 'http://')):
+    CSRF_TRUSTED_ORIGINS.append(MINING360_PUBLIC_BASE_URL)
+CSRF_TRUSTED_ORIGINS.extend(
+    f'https://{host}'
+    for host in ALLOWED_HOSTS
+    if host.endswith('.neemba.local')
+)
+CSRF_TRUSTED_ORIGINS = list(dict.fromkeys(CSRF_TRUSTED_ORIGINS))
 
 # IIS terminates HTTP/S and forwards the original request metadata to Waitress.
 USE_X_FORWARDED_HOST = os.getenv(
@@ -267,6 +276,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = Path(os.getenv('MINING360_STATIC_ROOT', BASE_DIR / 'staticfiles'))
+MEDIA_URL = '/media/'
+MEDIA_ROOT = Path(os.getenv('MINING360_MEDIA_ROOT', BASE_DIR / 'media'))
 STORAGES = {
     'default': {
         'BACKEND': 'django.core.files.storage.FileSystemStorage',
@@ -294,27 +305,27 @@ ENABLE_AVAILABILITY_COMMAND_CENTER_HOME = os.getenv(
     'ENABLE_AVAILABILITY_COMMAND_CENTER_HOME', 'Admin Only'
 ).strip()
 ENABLE_PREMIUM_REPORTING_HUB = os.getenv('ENABLE_PREMIUM_REPORTING_HUB', 'Production').strip()
+ENABLE_REPORTING_CONFIGURATION_WORKSPACE = os.getenv(
+    'ENABLE_REPORTING_CONFIGURATION_WORKSPACE', 'Production'
+).strip()
+ENABLE_AI_CONFIG_WORKSPACE_REDESIGN = os.getenv(
+    'ENABLE_AI_CONFIG_WORKSPACE_REDESIGN', 'Production'
+).strip()
+ENABLE_REPORT_CARD_PERSONALIZATION = os.getenv(
+    'ENABLE_REPORT_CARD_PERSONALIZATION', 'Production'
+).strip()
+ENABLE_PREMIUM_GENERIC_REPORT_VIEWER = os.getenv(
+    'ENABLE_PREMIUM_GENERIC_REPORT_VIEWER', 'Production'
+).strip()
 ENABLE_CONVERSATIONAL_FOLLOW_UP_RESOLUTION = os.getenv(
     'ENABLE_CONVERSATIONAL_FOLLOW_UP_RESOLUTION', 'Production'
 ).strip()
 ENABLE_USER_OWNS_DATA_EMBEDDING = os.getenv(
     'ENABLE_USER_OWNS_DATA_EMBEDDING', 'Production'
 ).strip()
-ENABLE_PRIME_MOVERS_POWERAPPS_EMBEDDING = os.getenv(
-    'ENABLE_PRIME_MOVERS_POWERAPPS_EMBEDDING', 'Production'
-).strip()
 ENABLE_ENTRA_ACCOUNT_LINKING = os.getenv(
     'ENABLE_ENTRA_ACCOUNT_LINKING', 'Production'
 ).strip()
-ENABLE_PRIME_MOVERS_INTEGRATION_RECOVERY = os.getenv(
-    'ENABLE_PRIME_MOVERS_INTEGRATION_RECOVERY', 'Admin Only'
-).strip()
-ENABLE_PRIME_MOVERS_USER_OWNS_DATA = os.getenv('ENABLE_PRIME_MOVERS_USER_OWNS_DATA', 'Disabled').strip()
-ENABLE_PRIME_MOVERS_DUAL_WORKSPACE = os.getenv('ENABLE_PRIME_MOVERS_DUAL_WORKSPACE', 'Admin Only').strip()
-ENABLE_PRIME_MOVERS_POWERAPPS_IFRAME = os.getenv('ENABLE_PRIME_MOVERS_POWERAPPS_IFRAME', 'Admin Only').strip()
-ENABLE_PRIME_MOVERS_POWERAPPS_NEW_TAB = os.getenv('ENABLE_PRIME_MOVERS_POWERAPPS_NEW_TAB', 'Admin Only').strip()
-ENABLE_PRIME_MOVERS_AUTH_DIAGNOSTICS = os.getenv('ENABLE_PRIME_MOVERS_AUTH_DIAGNOSTICS', 'Admin Only').strip()
-MINING360_PUBLIC_BASE_URL = os.getenv('MINING360_PUBLIC_BASE_URL', '').strip()
 ENTRA_REDIRECT_URI = os.getenv('ENTRA_REDIRECT_URI', '').strip()
 ENTRA_POST_LOGOUT_REDIRECT_URI = os.getenv('ENTRA_POST_LOGOUT_REDIRECT_URI', '').strip()
 ENABLE_DELEGATED_TOKEN_REFRESH = os.getenv(

@@ -38,10 +38,18 @@ DISPLAY_TIMEZONE = ZoneInfo("Atlantic/Reykjavik")
 REPORT_LIST_CACHE_SECONDS = 300
 REPORT_REFRESH_CACHE_SECONDS = 120
 ACCESS_TOKEN_CACHE_SECONDS = 45 * 60
+POWERBI_METADATA_CACHE_SECONDS = 10 * 60
+EMBED_TOKEN_CACHE_SECONDS = 15 * 60
 _REPORT_LIST_CACHE: tuple[float, list["PowerBIReport"]] | None = None
 _REPORT_REFRESH_CACHE: dict[str, tuple[float, str, str]] = {}
 _REPORT_REFRESH_CACHE_LOCK = threading.Lock()
 _ACCESS_TOKEN_CACHE: tuple[float, str] | None = None
+_DATASET_LIST_CACHE: dict[str, tuple[float, list[dict]]] = {}
+_DATASET_METADATA_CACHE: dict[tuple[str, str], tuple[float, dict]] = {}
+_LINKED_DATASET_CACHE: dict[tuple[str, str], tuple[float, list[str]]] = {}
+_EMBED_TOKEN_CACHE: dict[tuple[str, str, str], tuple[float, str]] = {}
+_EMBED_TOKEN_INFLIGHT: dict[tuple[str, str, str], threading.Event] = {}
+_POWERBI_RUNTIME_CACHE_LOCK = threading.Lock()
 HTTP = requests.Session()
 HTTP.trust_env = False
 LOCAL_POWERBI_CREDENTIALS = Path(__file__).resolve().parents[1] / "powerbi_credentials.local.json"
@@ -105,6 +113,13 @@ KNOWN_DATASET_NAMES = {
     "mine logistics report": "9db59281-164a-4992-b0a2-0c51837d1579",
 }
 DATASET_ROLE_ALIASES = {
+    "neemba sos analysis report": {
+        "global": "Global User",
+        "global user": "Global User",
+        "boto/mota": "Mota/Boto",
+        "mota/boto": "Mota/Boto",
+        "sangaredi/cbg": "Sangaredi",
+    },
     "neemba monthly report_new": {
         "global": "Global User",
         "fekola": "Fekola User",
@@ -137,9 +152,8 @@ DATASET_ROLE_ALIASES = {
     },
 }
 REPORT_LINKED_DATASET_HINTS = {
-    "neemba sos analysis report": [
+    "neembasosanalysisreport": [
         "FPR Global DB + RLS",
-        "Mine Logistics Report",
     ],
 }
 
@@ -524,6 +538,11 @@ def trigger_dataset_refresh(
 
 
 def list_workspace_datasets(token: str, workspace_id: str) -> list[dict]:
+    now = time.monotonic()
+    with _POWERBI_RUNTIME_CACHE_LOCK:
+        cached = _DATASET_LIST_CACHE.get(workspace_id)
+        if cached and cached[0] > now:
+            return list(cached[1])
     response = HTTP.get(
         f"{powerbi_root()}/groups/{workspace_id}/datasets",
         headers={"Authorization": f"Bearer {token}"},
@@ -533,10 +552,19 @@ def list_workspace_datasets(token: str, workspace_id: str) -> list[dict]:
         raise RuntimeError(
             f"Unable to retrieve semantic models ({response.status_code}): {response.text}"
         )
-    return response.json().get("value", [])
+    datasets = response.json().get("value", [])
+    with _POWERBI_RUNTIME_CACHE_LOCK:
+        _DATASET_LIST_CACHE[workspace_id] = (now + POWERBI_METADATA_CACHE_SECONDS, list(datasets))
+    return datasets
 
 
 def get_dataset_metadata(token: str, workspace_id: str, dataset_id: str) -> dict:
+    cache_key = (workspace_id, dataset_id)
+    now = time.monotonic()
+    with _POWERBI_RUNTIME_CACHE_LOCK:
+        cached = _DATASET_METADATA_CACHE.get(cache_key)
+        if cached and cached[0] > now:
+            return dict(cached[1])
     response = HTTP.get(
         f"{powerbi_root()}/groups/{workspace_id}/datasets/{dataset_id}",
         headers={"Authorization": f"Bearer {token}"},
@@ -546,7 +574,10 @@ def get_dataset_metadata(token: str, workspace_id: str, dataset_id: str) -> dict
         raise RuntimeError(
             f"Unable to retrieve the semantic model ({response.status_code}): {response.text}"
         )
-    return response.json()
+    metadata = response.json()
+    with _POWERBI_RUNTIME_CACHE_LOCK:
+        _DATASET_METADATA_CACHE[cache_key] = (now + POWERBI_METADATA_CACHE_SECONDS, dict(metadata))
+    return metadata
 
 
 def resolve_workspace_dataset_id(dataset_name: str) -> str:
@@ -933,6 +964,12 @@ def resolve_dataset_roles(dataset_name: str, roles: list[str]) -> list[str]:
 
 
 def get_linked_powerbi_dataset_ids(token: str, workspace_id: str, dataset_id: str) -> list[str]:
+    cache_key = (workspace_id, dataset_id)
+    now = time.monotonic()
+    with _POWERBI_RUNTIME_CACHE_LOCK:
+        cached = _LINKED_DATASET_CACHE.get(cache_key)
+        if cached and cached[0] > now:
+            return list(cached[1])
     response = HTTP.get(
         f"{powerbi_root()}/groups/{workspace_id}/datasets/{dataset_id}/datasources",
         headers={"Authorization": f"Bearer {token}"},
@@ -959,7 +996,22 @@ def get_linked_powerbi_dataset_ids(token: str, workspace_id: str, dataset_id: st
         )
         if dataset_id_value and dataset_id_value not in linked_ids:
             linked_ids.append(dataset_id_value)
+    with _POWERBI_RUNTIME_CACHE_LOCK:
+        _LINKED_DATASET_CACHE[cache_key] = (now + POWERBI_METADATA_CACHE_SECONDS, list(linked_ids))
     return linked_ids
+
+
+def get_dataset_datasources(token: str, workspace_id: str, dataset_id: str) -> list[dict]:
+    response = HTTP.get(
+        f"{powerbi_root()}/groups/{workspace_id}/datasets/{dataset_id}/datasources",
+        headers={"Authorization": f"Bearer {token}"},
+        timeout=30,
+    )
+    if response.status_code != 200:
+        raise RuntimeError(
+            f"Unable to retrieve semantic-model data sources ({response.status_code})."
+        )
+    return list(response.json().get("value", []))
 
 
 def get_report_hint_dataset_ids(token: str, workspace_id: str, report_name: str) -> list[str]:
@@ -967,14 +1019,28 @@ def get_report_hint_dataset_ids(token: str, workspace_id: str, report_name: str)
     if not hints:
         return []
 
+    resolved = []
+    unresolved = []
+    for hint in hints:
+        dataset_id_value = (
+            KNOWN_DATASET_NAMES.get(hint.lower())
+            or KNOWN_DATASET_NAMES.get(normalize_name(hint))
+        )
+        if dataset_id_value:
+            if dataset_id_value not in resolved:
+                resolved.append(dataset_id_value)
+        else:
+            unresolved.append(hint)
+    if not unresolved:
+        return resolved
+
     dataset_lookup = {}
     for item in list_workspace_datasets(token, workspace_id):
         name = item.get("name", "")
         dataset_lookup[normalize_name(name)] = item.get("id")
         dataset_lookup[name.lower()] = item.get("id")
 
-    resolved = []
-    for hint in hints:
+    for hint in unresolved:
         dataset_id_value = (
             dataset_lookup.get(normalize_name(hint))
             or dataset_lookup.get(hint.lower())
@@ -1008,15 +1074,15 @@ def generate_report_embed_token(report: PowerBIReport, selected_roles: list[str]
     elif report.dataset_id not in dataset_ids:
         dataset_ids.insert(0, report.dataset_id)
 
-    # A saved report connection is only a cache of known dependencies. Composite
-    # and proxy models can acquire or change their core model after that file was
-    # generated, so live dependencies must always be merged before token creation.
+    # Validated report configuration is authoritative on the request path. Live
+    # discovery is retained for incomplete configurations and explicit diagnostics.
     for hinted_id in get_report_hint_dataset_ids(token, workspace_id, report.name):
         if hinted_id not in dataset_ids:
             dataset_ids.append(hinted_id)
-    for linked_id in get_linked_powerbi_dataset_ids(token, workspace_id, report.dataset_id):
-        if linked_id not in dataset_ids:
-            dataset_ids.append(linked_id)
+    if not connection_options.get("dataset_ids") or connection_options.get("discover_live_dependencies"):
+        for linked_id in get_linked_powerbi_dataset_ids(token, workspace_id, report.dataset_id):
+            if linked_id not in dataset_ids:
+                dataset_ids.append(linked_id)
 
     payload = {
         "reports": [{"id": report.id}],
@@ -1035,9 +1101,19 @@ def generate_report_embed_token(report: PowerBIReport, selected_roles: list[str]
     ]
 
     identities = []
+    configured_metadata = {
+        str(item.get("id")): item
+        for item in connection_options.get("datasets", [])
+        if item.get("id")
+    }
     if effective_username:
         for dataset_id in dataset_ids:
-            metadata = get_dataset_metadata(token, workspace_id, dataset_id)
+            configured = configured_metadata.get(str(dataset_id), {})
+            metadata = {
+                "name": configured.get("name", ""),
+                "isEffectiveIdentityRequired": configured.get("is_effective_identity_required", False),
+                "isEffectiveIdentityRolesRequired": configured.get("is_effective_identity_roles_required", False),
+            } if configured else get_dataset_metadata(token, workspace_id, dataset_id)
             if not metadata.get("isEffectiveIdentityRequired"):
                 continue
             identity = {
@@ -1056,17 +1132,50 @@ def generate_report_embed_token(report: PowerBIReport, selected_roles: list[str]
     if identities:
         payload["identities"] = identities
 
-    response = HTTP.post(
-        f"{powerbi_root()}/GenerateToken",
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Content-Type": "application/json",
-        },
-        json=payload,
-        timeout=30,
-    )
-    if response.status_code != 200:
-        raise RuntimeError(
-            f"Embed token generation failed ({response.status_code}): {response.text}"
+    payload_fingerprint = json.dumps(payload, sort_keys=True, separators=(",", ":"))
+    embed_cache_key = (workspace_id, str(report.id), payload_fingerprint)
+    now = time.monotonic()
+    with _POWERBI_RUNTIME_CACHE_LOCK:
+        cached = _EMBED_TOKEN_CACHE.get(embed_cache_key)
+        if cached and cached[0] > now:
+            return cached[1]
+        inflight = _EMBED_TOKEN_INFLIGHT.get(embed_cache_key)
+        owns_generation = inflight is None
+        if owns_generation:
+            inflight = threading.Event()
+            _EMBED_TOKEN_INFLIGHT[embed_cache_key] = inflight
+
+    if not owns_generation:
+        inflight.wait(timeout=35)
+        with _POWERBI_RUNTIME_CACHE_LOCK:
+            cached = _EMBED_TOKEN_CACHE.get(embed_cache_key)
+            if cached and cached[0] > time.monotonic():
+                return cached[1]
+        raise RuntimeError("Embed token generation did not complete. Please retry.")
+
+    try:
+        response = HTTP.post(
+            f"{powerbi_root()}/GenerateToken",
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Content-Type": "application/json",
+            },
+            json=payload,
+            timeout=30,
         )
-    return response.json()["token"]
+        if response.status_code != 200:
+            raise RuntimeError(
+                f"Embed token generation failed ({response.status_code}): {response.text}"
+            )
+        embed_token = response.json()["token"]
+        with _POWERBI_RUNTIME_CACHE_LOCK:
+            _EMBED_TOKEN_CACHE[embed_cache_key] = (time.monotonic() + EMBED_TOKEN_CACHE_SECONDS, embed_token)
+            expired = [key for key, value in _EMBED_TOKEN_CACHE.items() if value[0] <= time.monotonic()]
+            for key in expired:
+                _EMBED_TOKEN_CACHE.pop(key, None)
+        return embed_token
+    finally:
+        with _POWERBI_RUNTIME_CACHE_LOCK:
+            event = _EMBED_TOKEN_INFLIGHT.pop(embed_cache_key, None)
+            if event:
+                event.set()

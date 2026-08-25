@@ -351,6 +351,37 @@ def resolve_navigation(intent: dict, debug_mode: bool = False) -> dict:
     metric_code = str(intent.get("metric") or "").strip()
     intent_type = str(intent.get("intent_type") or "single_kpi").strip()
     statuses = _allowed_statuses(debug_mode)
+    requested_navigation = intent.get("navigation") or {}
+
+    report = None
+    report_query = re.sub(
+        r"[^a-z0-9]+",
+        " ",
+        str(requested_navigation.get("report_query") or "").casefold(),
+    ).strip()
+    requested_report_id = str(requested_navigation.get("report_id") or "").strip()
+    if requested_report_id:
+        report = PowerBIReport.objects.filter(
+            report_id=requested_report_id,
+            is_active=True,
+            validation_status__in=statuses,
+        ).first()
+    elif report_query:
+        matches = []
+        for candidate in PowerBIReport.objects.filter(
+            is_active=True,
+            validation_status__in=statuses,
+        ):
+            names = {
+                re.sub(r"[^a-z0-9]+", " ", value.casefold()).strip()
+                for value in (candidate.report_name, candidate.display_name)
+                if value
+            }
+            score = max((len(name) for name in names if name and name in report_query), default=0)
+            if score:
+                matches.append((score, candidate))
+        if matches:
+            report = max(matches, key=lambda item: item[0])[1]
 
     intent_mapping = (
         IntentNavigationMapping.objects
@@ -362,9 +393,10 @@ def resolve_navigation(intent: dict, debug_mode: bool = False) -> dict:
         .first()
     )
     page_mapping = None
-    report = intent_mapping.report if intent_mapping else None
-    page = intent_mapping.page if intent_mapping else None
-    visual = intent_mapping.visual if intent_mapping else None
+    report = report or (intent_mapping.report if intent_mapping else None)
+    mapping_matches_report = bool(intent_mapping and intent_mapping.report_id == getattr(report, "pk", None))
+    page = intent_mapping.page if mapping_matches_report else None
+    visual = intent_mapping.visual if mapping_matches_report else None
     visual_action = "focus"
 
     if not report:
@@ -402,7 +434,6 @@ def resolve_navigation(intent: dict, debug_mode: bool = False) -> dict:
             .first()
         )
 
-    requested_navigation = intent.get("navigation") or {}
     if requested_navigation.get("focus_visual") and not visual and page:
         visual_mapping = (
             KPIVisualMapping.objects
@@ -500,9 +531,8 @@ def public_navigation_payload(payload: dict) -> dict:
 
 
 def _report_launch_url(report) -> str:
-    route = "prime-movers-workspace" if report.launch_mode == "prime_movers_workspace" else "report-detail"
     try:
-        return reverse(route, args=[report.report_id])
+        return reverse("report-detail", args=[report.report_id])
     except NoReverseMatch:
         # Imported legacy/test configurations may not yet contain a Power BI UUID.
         return ""

@@ -12,6 +12,7 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.utils import timezone
 from django.views.decorators.http import require_GET, require_http_methods, require_POST
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 from deployment.models import (
     ApplicationRelease,
@@ -27,7 +28,8 @@ from deployment.services.credentials import masked_credential, set_credential_se
 from deployment.services.plans import DeploymentPlanService, feature_flags
 from deployment.services.precheck import DeploymentPrecheckService
 from deployment.services.releases import DeploymentReleaseSourceService
-from deployment.services.security import DeploymentNetworkSecurityService
+from deployment.services.security import DeploymentNetworkSecurityService, sanitize_log_message
+from deployment.services.troubleshooting import DeploymentTroubleshootingService
 
 
 def _payload(request):
@@ -121,6 +123,7 @@ def _job_payload(item):
     return {
         "id": str(item.pk),
         "plan_id": str(item.deployment_plan_id),
+        "target_id": item.deployment_plan.target_id,
         "status": item.status,
         "current_step": item.current_step,
         "progress_percentage": item.progress_percentage,
@@ -135,6 +138,7 @@ def _job_payload(item):
     }
 
 
+@ensure_csrf_cookie
 @deployment_permission("view_deploymenttarget", view_only=True)
 def deployment_home(request):
     return render(request, "deployment/home.html", {"active_section": "deployment"})
@@ -243,6 +247,29 @@ def precheck_api(request, target_id):
     item = get_object_or_404(DeploymentTarget, pk=target_id, is_active=True)
     result = DeploymentPrecheckService().run(item, user=request.user)
     return JsonResponse({"ok": result["status"] != "Failed", "result": result})
+
+
+@require_POST
+@deployment_permission("test_deployment_connection")
+def troubleshoot_api(request, target_id):
+    target = get_object_or_404(DeploymentTarget, pk=target_id, is_active=True)
+    try:
+        result = DeploymentTroubleshootingService().run(
+            target,
+            user=request.user,
+            worker_launcher=_kick_deployment_worker,
+        )
+        return JsonResponse({"ok": True, "result": result})
+    except (ValueError, OSError, subprocess.SubprocessError) as exc:
+        return JsonResponse(
+            {
+                "ok": False,
+                "error": "Server diagnostics could not complete.",
+                "error_code": "DEPLOYMENT_TROUBLESHOOTING_FAILED",
+                "action": sanitize_log_message(str(exc)),
+            },
+            status=502,
+        )
 
 
 @require_POST

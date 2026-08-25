@@ -12,11 +12,24 @@ from .models import (
     GenericDowntimeCommentRule,
     HomepageConfiguration,
     HomepageInteractionEvent,
-    PowerAppsLaunchContext,
-    PrimeMoversIntegrationConfiguration,
-    PrimeMoversIntegrationExecutionLog,
+    ReportCategory,
+    ReportVisualAsset,
     UserExternalIdentity,
 )
+
+
+@admin.register(ReportCategory)
+class ReportCategoryAdmin(admin.ModelAdmin):
+    list_display = ("display_name", "code", "accent_code", "illustration_code", "validation_status", "active")
+    list_filter = ("accent_code", "validation_status", "active")
+    search_fields = ("display_name", "code", "description")
+
+
+@admin.register(ReportVisualAsset)
+class ReportVisualAssetAdmin(admin.ModelAdmin):
+    list_display = ("name", "asset_type", "category", "file_size", "validation_status", "active")
+    list_filter = ("asset_type", "validation_status", "active")
+    search_fields = ("name", "illustration_code")
 
 
 @admin.register(HomepageConfiguration)
@@ -107,44 +120,8 @@ class UserAccessAuditLogAdmin(admin.ModelAdmin):
     readonly_fields = tuple(field.name for field in UserAccessAuditLog._meta.fields)
 
 
-@admin.register(PrimeMoversIntegrationConfiguration)
-class PrimeMoversIntegrationConfigurationAdmin(admin.ModelAdmin):
-    list_display = ("code", "report", "powerapps_app_id", "iframe_enabled", "new_tab_fallback", "validation_status", "active")
-    list_filter = ("validation_status", "iframe_enabled", "new_tab_fallback", "active")
-    search_fields = ("code", "report__display_name", "powerapps_app_id")
-    fieldsets = (
-        (None, {"fields": ("code", "report", "active", "validation_status")}),
-        ("Power BI", {"fields": (
-            "powerbi_page_internal_name", "powerbi_safe_initial_page_internal_name",
-            "powerapps_visual_internal_name", "powerapps_visual_type",
-        )}),
-        ("Power Apps", {"fields": (
-            "powerapps_app_id", "powerapps_tenant_id", "powerapps_environment_id",
-            "powerapps_launch_url", "iframe_enabled", "new_tab_fallback",
-        )}),
-        ("Dataverse context transfer", {"fields": (
-            "context_transfer_mode", "context_expiration_minutes",
-            "dataverse_environment_url", "dataverse_context_entity_set",
-        )}),
-    )
-
-
 @admin.register(UserExternalIdentity)
 class UserExternalIdentityAdmin(admin.ModelAdmin):
     list_display = ("user", "provider", "upn", "tenant_id", "mapping_status", "active", "last_verified_at")
     list_filter = ("provider", "mapping_status", "active")
     search_fields = ("user__username", "upn", "external_object_id", "windows_identity")
-
-
-@admin.register(PowerAppsLaunchContext)
-class PowerAppsLaunchContextAdmin(admin.ModelAdmin):
-    list_display = ("opaque_id", "user", "serial_number", "mine_site", "status", "expires_at", "created_at")
-    list_filter = ("status", "created_at")
-    readonly_fields = tuple(field.name for field in PowerAppsLaunchContext._meta.fields)
-
-
-@admin.register(PrimeMoversIntegrationExecutionLog)
-class PrimeMoversIntegrationExecutionLogAdmin(admin.ModelAdmin):
-    list_display = ("created_at", "user", "report", "selected_strategy", "powerbi_status", "powerapps_status", "error_code")
-    list_filter = ("selected_strategy", "powerbi_status", "powerapps_status", "error_code")
-    readonly_fields = tuple(field.name for field in PrimeMoversIntegrationExecutionLog._meta.fields)

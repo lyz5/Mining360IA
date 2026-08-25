@@ -38,6 +38,9 @@
         items: [],
         editingItem: null,
         isAdmin: root.dataset.isAdmin === "1",
+        page: 1,
+        pageSize: 50,
+        pagination: null,
     };
 
     const resourceConfig = {
@@ -381,6 +384,9 @@
         table.innerHTML = `${head}<tbody>${body}</tbody>`;
         bindRowActions();
         updateToolbarState();
+        document.dispatchEvent(new CustomEvent("ai-config:items-rendered", {
+            detail: {resourceType: state.resourceType, items: state.items, pagination: state.pagination},
+        }));
     }
 
     function renderSections() {
@@ -425,12 +431,15 @@
         if (activeSelect && activeSelect.value) {
             target.searchParams.set("active", activeSelect.value);
         }
+        target.searchParams.set("page", String(state.page));
+        target.searchParams.set("page_size", String(state.pageSize));
         table.innerHTML = `<tbody><tr><td class="empty compact">Loading...</td></tr></tbody>`;
         try {
             const payload = await fetchJson(target.toString(), {
                 headers: {"Accept": "application/json"},
             });
             state.items = payload.items || [];
+            state.pagination = payload.pagination || null;
             renderTable();
         } catch (error) {
             table.innerHTML = `<tbody><tr><td class="empty compact">${escapeHtml(error.message)}</td></tr></tbody>`;
@@ -543,7 +552,10 @@
             showMessage("Select a section first.", true);
             return;
         }
-        const datasetName = window.prompt("Power BI dataset name", "FPR Global DB + RLS");
+        const datasetInput = document.getElementById("ia-import-dataset-name");
+        const datasetName = datasetInput
+            ? datasetInput.value.trim()
+            : window.prompt("Power BI dataset name", "FPR Global DB + RLS");
         if (!datasetName) {
             return;
         }
@@ -565,6 +577,7 @@
                 `Import completed. Tables: ${imported.tables || 0}, Columns: ${imported.columns || 0}, Measures: ${imported.measures || 0}, Relationships: ${imported.relationships || 0}.${errorCount ? ` ${errorCount} Power BI API errors returned.` : ""}`,
                 Boolean(errorCount)
             );
+            document.dispatchEvent(new CustomEvent("ai-config:import-completed", {detail: payload}));
             await loadItems();
         } catch (error) {
             showMessage(error.message, true);
@@ -605,6 +618,7 @@
             if (intentOut) intentOut.textContent = JSON.stringify(payload.intent || {}, null, 2);
             if (daxOut) daxOut.textContent = payload.dax || "";
             if (validationOut) validationOut.textContent = JSON.stringify(payload.validation || {}, null, 2);
+            document.dispatchEvent(new CustomEvent("ai-config:test-completed", {detail: payload}));
             if (status) {
                 status.textContent = payload.validation && payload.validation.valid ? "Validation OK" : "Validation failed";
                 status.classList.toggle("error", !(payload.validation && payload.validation.valid));
@@ -620,7 +634,12 @@
 
     document.querySelectorAll(".js-ia-section-card").forEach((card) => {
         card.addEventListener("click", async () => {
+            if (card.dataset.sectionCode === "powerbi-reporting") {
+                window.location.assign(root.dataset.reportingConfigUrl || "/config/reporting/");
+                return;
+            }
             state.sectionCode = card.dataset.sectionCode || state.sectionCode;
+            state.page = 1;
             renderSections();
             await loadItems();
         });
@@ -629,6 +648,7 @@
     document.querySelectorAll(".ia-tab").forEach((tab) => {
         tab.addEventListener("click", async () => {
             state.resourceType = tab.dataset.resourceType || state.resourceType;
+            state.page = 1;
             document.querySelectorAll(".ia-tab").forEach((item) => item.classList.toggle("active", item === tab));
             updateToolbarState();
             await loadItems();
@@ -643,9 +663,15 @@
     searchInput?.addEventListener("input", () => window.clearTimeout(searchInput._timer));
     searchInput?.addEventListener("keyup", () => {
         window.clearTimeout(searchInput._timer);
-        searchInput._timer = window.setTimeout(loadItems, 250);
+        searchInput._timer = window.setTimeout(() => {
+            state.page = 1;
+            loadItems();
+        }, 300);
     });
-    activeSelect?.addEventListener("change", loadItems);
+    activeSelect?.addEventListener("change", () => {
+        state.page = 1;
+        loadItems();
+    });
     document.querySelectorAll("[data-ia-modal-close]").forEach((button) => {
         button.addEventListener("click", () => setModalOpen(false));
     });
@@ -671,6 +697,14 @@
             showMessage(error.message, true);
         }
     });
+
+    window.Mining360AIConfig = {
+        state,
+        resourceConfig,
+        loadItems,
+        openForm,
+        importSemanticModel,
+    };
 
     renderSections();
     updateToolbarState();

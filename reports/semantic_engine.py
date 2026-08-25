@@ -27,7 +27,7 @@ def dax_measure(measure: str) -> str:
 def build_availability_question(dataset_name: str, year: int, month: int, model: str, site: str) -> dict:
     semantics = get_dataset_semantics(dataset_name)
     dataset_id = semantics.get("dataset_id", "")
-    measure = get_primary_measure(dataset_name, "availability", "Availability Trucks")
+    measure = get_primary_measure(dataset_name, "availability", "Avail Per Equip")
     date_table = semantics.get("date_table", {}).get("table", "bravo")
     date_column = semantics.get("date_table", {}).get("primary_date_column", "Date")
 

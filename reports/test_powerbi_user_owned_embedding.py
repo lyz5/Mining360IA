@@ -8,12 +8,11 @@ from django.urls import reverse
 
 from .microsoft_delegated_auth import InteractiveAuthenticationRequired
 from .models import AIConfigSection, PlatformUser, PowerBIReport
-from .powerbi_embed_strategy import PowerBIEmbedStrategyResolver
+from .powerbi_embed_strategy import PowerBIEmbedStrategyResolver, build_embed_configuration
 
 
 @override_settings(
     ENABLE_USER_OWNS_DATA_EMBEDDING="Production",
-    ENABLE_PRIME_MOVERS_POWERAPPS_EMBEDDING="Production",
     ENABLE_ENTRA_ACCOUNT_LINKING="Production",
 )
 class PowerBIUserOwnedEmbeddingTests(TestCase):
@@ -57,6 +56,27 @@ class PowerBIUserOwnedEmbeddingTests(TestCase):
         self.assertEqual(strategy.strategy, "app_owns_data")
         self.assertEqual(strategy.token_type, "Embed")
 
+    @patch("reports.powerbi_embed_strategy.generate_report_embed_token", return_value="embed-token")
+    def test_opening_profile_is_applied_to_embed_configuration(self, _token):
+        report = self._report(
+            opening_profile_name="Operations viewer",
+            default_page_internal_name="ReportSectionOperations",
+            display_option="fit_to_width",
+            filter_pane_visible=True,
+            page_navigation_visible=False,
+            bookmarks_pane_visible=True,
+            background_type="transparent",
+        )
+
+        config = build_embed_configuration(type("Request", (), {"user": self.user})(), report)
+
+        self.assertEqual(config["pageName"], "ReportSectionOperations")
+        self.assertEqual(config["openingProfile"]["displayOption"], "fit_to_width")
+        self.assertEqual(config["openingProfile"]["backgroundType"], "transparent")
+        self.assertTrue(config["settings"]["panes"]["filters"]["visible"])
+        self.assertFalse(config["settings"]["panes"]["pageNavigation"]["visible"])
+        self.assertTrue(config["settings"]["panes"]["bookmarks"]["visible"])
+
     def test_powerapps_report_uses_user_owned_strategy(self):
         report = self._report(
             authentication_mode="user_owns_data",
@@ -93,6 +113,24 @@ class PowerBIUserOwnedEmbeddingTests(TestCase):
         response = self.client.get(reverse("powerbi-interaction-embed-config", args=[report.report_id]))
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["config"]["tokenType"], "Embed")
+
+    @patch("reports.powerbi_interaction_views.build_embed_configuration")
+    def test_standard_user_cannot_override_configured_rls_role(self, build):
+        report = self._report(default_rls_role="SiteManager")
+        build.return_value = {
+            "type": "report",
+            "id": report.report_id,
+            "accessToken": "not-logged-token",
+            "tokenType": "Embed",
+        }
+
+        response = self.client.get(
+            reverse("powerbi-interaction-embed-config", args=[report.report_id]),
+            {"role": "Administrator"},
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(build.call_args.kwargs["role"], "SiteManager")
 
     @patch("reports.powerbi_interaction_views.build_embed_configuration")
     def test_user_owned_endpoint_requires_interactive_login_without_fallback(self, build):

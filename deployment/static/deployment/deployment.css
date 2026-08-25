@@ -50,6 +50,9 @@
 .deployment-job-summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .deployment-job-state { display: inline-flex; align-items: center; gap: 9px; }
 .deployment-spinner { width: 16px; height: 16px; flex: 0 0 16px; border: 2px solid #cbd5e1; border-top-color: #111827; border-radius: 50%; animation: deployment-spin .75s linear infinite; }
+.deployment-check-pending { display: flex; align-items: center; gap: 14px; min-height: 92px; padding: 16px; border: 1px solid #dbe2ea; border-radius: 7px; background: #f8fafc; }
+.deployment-check-pending .deployment-spinner { width: 24px; height: 24px; flex-basis: 24px; border-width: 3px; border-top-color: #d5a600; }
+.deployment-check-pending p { margin: 5px 0 0; color: #64748b; font-size: 13px; }
 .deployment-inline-error { padding: 16px; border: 1px solid #fecaca; border-radius: 7px; background: #fef2f2; color: #991b1b; }
 .deployment-inline-error p { margin: 7px 0 0; overflow-wrap: anywhere; }
 .deployment-actions button[aria-busy="true"] { cursor: wait; opacity: .72; }
@@ -60,5 +63,11 @@
 .deployment-job-logs p { display: grid; grid-template-columns: 90px 70px 1fr; gap: 8px; margin: 0; padding: 9px 0; border-bottom: 1px solid #eef2f7; font-size: 13px; }
 .deployment-job-logs time { color: #64748b; }
 .deployment-error { color: #b91c1c; }
+.deployment-remediation { margin-top: 16px; padding: 13px; border-left: 3px solid #15805f; background: #eefaf6; }
+.deployment-remediation.is-manual { border-left-color: #d19b00; background: #fff9e7; }
+.deployment-remediation h3 { margin: 0 0 8px; font-size: 15px; }
+.deployment-remediation p { margin: 5px 0; }
+.deployment-remediation > div + div { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(15,23,42,.1); }
+.deployment-remediation code { display: block; margin-top: 8px; padding: 9px; overflow-x: auto; border-radius: 5px; background: #111827; color: #fff; white-space: pre-wrap; overflow-wrap: anywhere; }
 @media (max-width: 1000px) { .deployment-kpis { grid-template-columns: repeat(3, 1fr); } .deployment-target-list { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .deployment-kpis { grid-template-columns: repeat(2, 1fr); } .deployment-header, .deployment-section-head { align-items: stretch; flex-direction: column; } .deployment-header-actions, .deployment-actions { display: grid; grid-template-columns: 1fr; } .deployment-form-grid, .deployment-target-grid { grid-template-columns: 1fr; } .deployment-form-wide { grid-column: auto; } }

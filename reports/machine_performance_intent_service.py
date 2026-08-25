@@ -44,6 +44,11 @@ def detect_machine_performance_intent(question: str, fallback: str = "single_kpi
     ))
     if any(marker in text for marker in ("downtime driver", "downtime breakdown", "causes of downtime", "causing the downtime", "drivers de downtime")):
         return "downtime_drivers"
+    if any(marker in text for marker in (
+        "open the report", "open report", "open power bi", "show the report",
+        "open prime movers", "ouvre le rapport", "ouvrir le rapport", "affiche le rapport",
+    )):
+        return "powerbi_navigation"
     if any(marker in text for marker in ("compare", "comparison", "comparaison")):
         month_matches = re.findall(
             r"\b(?:jan(?:uary|vier)?|feb(?:ruary)?|f[eé]vrier|mar(?:ch|s)?|apr(?:il)?|avril|may|mai|jun(?:e)?|juin|jul(?:y)?|juillet|aug(?:ust)?|ao[uû]t|sep(?:tember)?|septembre|oct(?:ober)?|octobre|nov(?:ember)?|novembre|dec(?:ember)?|d[eé]cembre)\b",
@@ -65,7 +70,6 @@ def detect_machine_performance_intent(question: str, fallback: str = "single_kpi
         ("downtime_events", ("downtime event", "events for", "event list", "incidents", "événements de downtime")),
         ("equipment_detail", ("serial number", "equipment serial", "show me machine", "show equipment", "machine ", "equipment ")),
         ("performance_overview", ("performance overview", "fleet performance", "how is the fleet", "vue d'ensemble", "aperçu de performance")),
-        ("powerbi_navigation", ("open the report", "open power bi", "show the report", "ouvre le rapport")),
     )
     for intent_type, markers in rules:
         if any(marker in text for marker in markers):

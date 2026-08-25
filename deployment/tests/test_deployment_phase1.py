@@ -5,7 +5,7 @@ from unittest.mock import patch
 from django.contrib.auth import get_user_model
 from django.core.management import call_command
 from django.conf import settings
-from django.test import SimpleTestCase, TestCase
+from django.test import Client, SimpleTestCase, TestCase
 from django.urls import reverse
 
 from deployment.models import ApplicationRelease, DeploymentCredential, DeploymentJob, DeploymentPlan, DeploymentTarget
@@ -76,6 +76,15 @@ class DeploymentViewTests(TestCase):
         response = self.client.get(reverse("deployment-home"))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Deployment Process")
+
+    def test_admin_page_creates_csrf_cookie_for_ajax_actions(self):
+        csrf_client = Client(enforce_csrf_checks=True)
+        csrf_client.force_login(self.user)
+
+        response = csrf_client.get(reverse("deployment-home"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("csrftoken", response.cookies)
 
     def test_health_endpoint_does_not_expose_configuration(self):
         self.client.logout()
@@ -159,6 +168,32 @@ class DeploymentViewTests(TestCase):
         self.assertEqual(response.status_code, 403)
         target.refresh_from_db()
         self.assertFalse(target.is_approved)
+
+    @patch("deployment.views.DeploymentTroubleshootingService.run")
+    def test_admin_can_run_target_troubleshooting(self, troubleshoot):
+        target = DeploymentTarget.objects.create(
+            name="Troubleshooting Target",
+            environment="Test",
+            ip_address="10.1.1.22",
+            os_family="windows",
+        )
+        troubleshoot.return_value = {
+            "status": "Action Required",
+            "checks": [],
+            "actions_taken": [],
+            "manual_actions": [{"code": "WINDOWS_DEPLOYMENT_ACL", "title": "Grant access"}],
+        }
+
+        response = self.client.post(
+            reverse("deployment-target-troubleshoot-api", args=[target.pk]),
+            data={},
+            content_type="application/json",
+            HTTP_ACCEPT="application/json",
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["result"]["status"], "Action Required")
+        troubleshoot.assert_called_once()
 
 
 class DeploymentDryRunTests(TestCase):
@@ -292,9 +327,11 @@ class DeploymentFrontendContractTests(SimpleTestCase):
 
         self.assertIn("showDeploymentPending()", javascript)
         self.assertIn("showDeploymentError(error.message)", javascript)
+        self.assertIn("showCheckPending(pendingTitle, pendingMessage)", javascript)
+        self.assertIn("Troubleshooting...", javascript)
         self.assertIn("deployment-spinner", stylesheet)
         self.assertNotIn("window.confirm", javascript)
-        self.assertIn("deployment.js' %}?v=20260806-2", template)
+        self.assertIn("deployment.js' %}?v=20260822-troubleshoot-2", template)
 
     def test_windows_release_health_check_preserves_public_https_scheme(self):
         script = (

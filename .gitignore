@@ -20,3 +20,6 @@ staticfiles/
 knowledge_population_inventory.json
 knowledge_population_reports/
 resource_library/
+.artifacts/
+artifacts/
+media/

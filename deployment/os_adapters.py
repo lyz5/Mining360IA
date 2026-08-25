@@ -53,6 +53,20 @@ class WindowsInventoryAdapter(BaseDeploymentOSAdapter):
             "odbc_driver": _powershell("$d=Get-OdbcDriver -Name 'ODBC Driver 18 for SQL Server' -ErrorAction SilentlyContinue; if($d){$d.Name}else{'Not Installed'; exit 1}"),
             "sql_port": _powershell("if(Test-NetConnection -ComputerName BODEFM -Port 1433 -InformationLevel Quiet){'True'}else{'False';exit 1}"),
             "deployment_path": _powershell("Test-Path -LiteralPath 'C:\\Mining360'"),
+            "deployment_path_write": _powershell(
+                "$root='C:\\Mining360'; $probe=Join-Path $root ('.troubleshoot-'+[guid]::NewGuid()); "
+                "try { New-Item -ItemType Directory -Path $probe -Force | Out-Null; "
+                "Set-Content -LiteralPath (Join-Path $probe 'write.test') -Value 'ok' -Encoding ASCII; "
+                "$renamed=$probe+'-renamed'; Move-Item -LiteralPath $probe -Destination $renamed; "
+                "Remove-Item -LiteralPath $renamed -Recurse -Force; 'True' } "
+                "catch { if(Test-Path $probe){Remove-Item -LiteralPath $probe -Recurse -Force -ErrorAction SilentlyContinue}; "
+                "Write-Error $_.Exception.Message; exit 1 }"
+            ),
+            "deployment_app_acl": _powershell("icacls 'C:\\Mining360\\app'"),
+            "deployment_app_processes": _powershell(
+                "$p=@(Get-CimInstance Win32_Process | Where-Object {$_.CommandLine -like '*C:\\Mining360\\app*'} | "
+                "Select-Object ProcessId,Name,CommandLine); if($p.Count){$p|ConvertTo-Json -Compress}else{'[]'}"
+            ),
         }
 
 

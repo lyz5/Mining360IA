@@ -328,7 +328,10 @@ class PersistentConversationTests(TestCase):
 
     @patch("reports.agent_router_service.multi_agent_enabled", return_value=True)
     @patch("reports.ai_agent_execution_service.execute_agent_question")
-    def test_required_four_turn_scenario_is_append_only(self, execute_agent, _multi_agent):
+    @patch("reports.views.process_user_question")
+    def test_required_four_turn_scenario_is_append_only(
+        self, process_question, execute_agent, _multi_agent
+    ):
         def result(question, **_kwargs):
             site = "Fekola" if "Fekola" in question else "Essakane"
             value = 0.8362 if site == "Fekola" else 0.7542
@@ -344,6 +347,10 @@ class PersistentConversationTests(TestCase):
             }
 
         execute_agent.side_effect = result
+        process_question.side_effect = lambda question, **_kwargs: {
+            **result(question),
+            "answer": result(question)["chat_message"],
+        }
         conversation = create_conversation(self.user)
         questions = (
             "Bonjour",
@@ -379,4 +386,5 @@ class PersistentConversationTests(TestCase):
             for item in analytical
         ]
         self.assertEqual(sites, ["Fekola", "Essakane"])
-        self.assertEqual(execute_agent.call_count, 2)
+        self.assertEqual(process_question.call_count, 2)
+        self.assertEqual(execute_agent.call_count, 0)

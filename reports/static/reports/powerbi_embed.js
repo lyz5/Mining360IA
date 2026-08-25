@@ -17,7 +17,11 @@
         }
 
         async requestConfig(reportId) {
-            const url = this.options.embedConfigUrl.replace("__REPORT_ID__", encodeURIComponent(reportId));
+            const url = new URL(
+                this.options.embedConfigUrl.replace("__REPORT_ID__", encodeURIComponent(reportId)),
+                window.location.origin,
+            );
+            if (this.options.rlsRole) url.searchParams.set("role", this.options.rlsRole);
             const response = await fetch(url, { credentials: "same-origin" });
             const payload = await response.json();
             if (!response.ok || !payload.ok) {
@@ -39,6 +43,20 @@
             config.tokenType = isAad ? models.TokenType.Aad : models.TokenType.Embed;
             config.permissions = models.Permissions.Read;
             config.settings = Object.assign({ panes: { filters: { visible: false }, pageNavigation: { visible: false } } }, config.settings || {});
+            const openingProfile = config.openingProfile || {};
+            const displayOptions = {
+                fit_to_page: models.DisplayOption.FitToPage,
+                fit_to_width: models.DisplayOption.FitToWidth,
+                actual_size: models.DisplayOption.ActualSize,
+            };
+            config.settings.layoutType = models.LayoutType.Custom;
+            config.settings.customLayout = Object.assign({}, config.settings.customLayout || {}, {
+                displayOption: displayOptions[openingProfile.displayOption] ?? models.DisplayOption.FitToPage,
+            });
+            config.settings.background = openingProfile.backgroundType === "transparent"
+                ? models.BackgroundType.Transparent
+                : models.BackgroundType.Default;
+            delete config.openingProfile;
             if (isAad) {
                 config.eventHooks = Object.assign({}, config.eventHooks || {}, {
                     accessTokenProvider: async () => {
@@ -362,7 +380,39 @@
         }
 
         async clearFilters() {
-            if (this.report) await this.report.removeFilters();
+            if (!this.report) return;
+            await this.report.removeFilters();
+            const pages = await this.getPages();
+            for (const page of pages) {
+                try {
+                    await page.updateFilters(window["powerbi-client"].models.FiltersOperations.RemoveAll);
+                    const slicers = await page.getSlicers();
+                    for (const slicer of slicers) {
+                        try { await slicer.setSlicerState({ filters: [] }); } catch (_error) { /* unsupported slicer */ }
+                    }
+                } catch (_error) { /* page may not expose filter APIs */ }
+            }
+        }
+
+        async setFitMode(mode) {
+            if (!this.report) throw new Error("The report is not loaded.");
+            const models = window["powerbi-client"].models;
+            const options = {
+                fit_to_page: models.DisplayOption.FitToPage,
+                fit_to_width: models.DisplayOption.FitToWidth,
+                actual_size: models.DisplayOption.ActualSize,
+            };
+            if (!(mode in options)) throw new Error("Unsupported report fit mode.");
+            await this.report.updateSettings({
+                layoutType: models.LayoutType.Custom,
+                customLayout: { displayOption: options[mode] },
+            });
+            this.emit("fit_mode_changed", { mode });
+        }
+
+        async getActivePage() {
+            const pages = await this.getPages();
+            return pages.find((page) => page.isActive) || pages[0] || null;
         }
 
         reset() {

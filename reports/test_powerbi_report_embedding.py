@@ -9,19 +9,84 @@ from django.urls import reverse
 from . import powerbi
 from .models import PlatformUser
 from .powerbi import PowerBIReport, generate_report_embed_token
+from .models import PowerBIReport as ConfiguredPowerBIReport
+from .powerbi_interaction_service import _report_launch_url
 
 
 class PowerBIReportEmbeddingTests(SimpleTestCase):
     def setUp(self):
         powerbi._REPORT_REFRESH_CACHE.clear()
+        powerbi._DATASET_LIST_CACHE.clear()
+        powerbi._DATASET_METADATA_CACHE.clear()
+        powerbi._LINKED_DATASET_CACHE.clear()
+        powerbi._EMBED_TOKEN_CACHE.clear()
+        powerbi._EMBED_TOKEN_INFLIGHT.clear()
 
     def test_powerbi_client_is_served_locally_in_every_embed_surface(self):
         template_root = settings.BASE_DIR / "reports" / "templates" / "reports"
-        for template_name in ("detail.html", "ai.html", "knowledge_base.html"):
+        for template_name in ("detail.html", "detail_premium.html", "ai.html", "knowledge_base.html"):
             source = (template_root / template_name).read_text(encoding="utf-8")
             with self.subTest(template=template_name):
                 self.assertIn("reports/vendor/powerbi-client-2.23.7.min.js", source)
                 self.assertNotIn("cdn.jsdelivr.net/npm/powerbi-client", source)
+
+    def test_all_configured_reports_use_the_generic_viewer(self):
+        self.assertEqual(
+            ConfiguredPowerBIReport.LAUNCH_MODES,
+            [("generic_powerbi", "Generic Power BI viewer")],
+        )
+        configured = ConfiguredPowerBIReport(report_id=str(uuid4()))
+        self.assertEqual(
+            _report_launch_url(configured),
+            reverse("report-detail", args=[configured.report_id]),
+        )
+
+    @patch("reports.powerbi.list_workspace_datasets")
+    def test_sos_report_resolves_fpr_global_rls_dependency(self, list_datasets):
+        list_datasets.return_value = [
+            {
+                "id": "fpr-global-dataset",
+                "name": "FPR Global DB + RLS",
+            },
+        ]
+
+        dataset_ids = powerbi.get_report_hint_dataset_ids(
+            "token",
+            "workspace-id",
+            "Neemba SOS Analysis Report",
+        )
+
+        self.assertEqual(dataset_ids, ["364edd69-532c-4e10-867f-3b3d4dfdb6c7"])
+        list_datasets.assert_not_called()
+
+    def test_sos_and_fpr_resolve_their_own_rls_role_names(self):
+        self.assertEqual(
+            powerbi.resolve_dataset_roles("Neemba SOS Analysis Report", ["Global"]),
+            ["Global User"],
+        )
+        self.assertEqual(
+            powerbi.resolve_dataset_roles("FPR Global DB + RLS", ["Global"]),
+            ["Global"],
+        )
+        self.assertEqual(
+            powerbi.resolve_dataset_roles(
+                "Neemba SOS Analysis Report",
+                ["Boto/Mota", "Sangaredi/CBG"],
+            ),
+            ["Mota/Boto", "Sangaredi"],
+        )
+
+    def test_prime_movers_connection_includes_its_fpr_core_model(self):
+        powerbi._local_powerbi_report_config.cache_clear()
+        configured = next(
+            item for item in powerbi._local_powerbi_report_config().get("reports", [])
+            if item.get("report_id") == "7965812a-e2d7-4950-9651-a148d8fdd235"
+        )
+
+        self.assertEqual(configured["dataset_ids"], [
+            "78f2e175-881d-42d7-8d64-fce27908e3c1",
+            "364edd69-532c-4e10-867f-3b3d4dfdb6c7",
+        ])
 
     @patch("reports.powerbi.get_dataset_metadata", return_value={})
     @patch("reports.powerbi.get_linked_powerbi_dataset_ids", return_value=["core-dataset"])
@@ -47,6 +112,7 @@ class PowerBIReportEmbeddingTests(SimpleTestCase):
         connection_options.return_value = {
             "dataset_ids": ["proxy-dataset"],
             "embed": {"effective_username": ""},
+            "discover_live_dependencies": True,
         }
         response = Mock(status_code=200)
         response.json.return_value = {"token": "embed-token"}
@@ -66,6 +132,44 @@ class PowerBIReportEmbeddingTests(SimpleTestCase):
         self.assertEqual(token, "embed-token")
         dataset_ids = [item["id"] for item in post.call_args.kwargs["json"]["datasets"]]
         self.assertEqual(dataset_ids, ["proxy-dataset", "core-dataset"])
+
+    @patch("reports.powerbi.get_dataset_metadata", return_value={})
+    @patch("reports.powerbi.get_linked_powerbi_dataset_ids")
+    @patch("reports.powerbi.get_report_hint_dataset_ids", return_value=[])
+    @patch("reports.powerbi.get_report_connection_options")
+    @patch("reports.powerbi.get_access_token", return_value="access-token")
+    @patch("reports.powerbi.env_value", return_value="workspace-id")
+    @patch("reports.powerbi.HTTP.post")
+    def test_validated_dependencies_and_embed_token_are_reused(
+        self, post, _env, _access_token, connection_options, _hints, linked, metadata,
+    ):
+        connection_options.return_value = {
+            "dataset_ids": ["configured-dataset"],
+            "datasets": [{
+                "id": "configured-dataset",
+                "name": "Configured Model",
+                "is_effective_identity_required": False,
+                "is_effective_identity_roles_required": False,
+            }],
+            "embed": {"effective_username": ""},
+        }
+        response = Mock(status_code=200)
+        response.json.return_value = {"token": "cached-embed-token"}
+        post.return_value = response
+        report = PowerBIReport(
+            id="cached-report", name="Cached report", display_name="Cached report",
+            dataset_id="configured-dataset", web_url="", embed_url="https://app.powerbi.com/reportEmbed",
+            report_type="PowerBIReport",
+        )
+
+        first = generate_report_embed_token(report, ["Global"])
+        second = generate_report_embed_token(report, ["Global"])
+
+        self.assertEqual(first, "cached-embed-token")
+        self.assertEqual(second, "cached-embed-token")
+        self.assertEqual(post.call_count, 1)
+        linked.assert_not_called()
+        metadata.assert_not_called()
 
     @patch("reports.powerbi.get_latest_refresh", return_value=("2026-08-19 08:00 AM", "Completed"))
     @patch("reports.powerbi.get_access_token", return_value="token")
@@ -154,7 +258,53 @@ class ReportingRefreshViewTests(TestCase):
         self.assertContains(response, "data-report-refresh")
         self.assertContains(response, 'data-dataset-id="dataset-id"')
         self.assertContains(response, reverse("reporting-report-refresh-api", args=[self.report_id]))
+        self.assertContains(response, reverse("reporting-report-troubleshoot-api", args=[self.report_id]))
         self.assertContains(response, "Refresh report data")
+
+    @patch("reports.views.get_latest_refresh", return_value=("2026-08-20 08:10 AM", "Failed"))
+    @patch("reports.views.list_workspace_datasets", return_value=[{"id": "dataset-id", "name": "Fleet Model", "isRefreshable": True}])
+    @patch("reports.views.trigger_dataset_refresh")
+    @patch("reports.views.get_access_token", return_value="token")
+    @patch("reports.views.env_value", return_value="workspace-id")
+    @patch("reports.views.list_workspace_reports")
+    def test_troubleshooting_restarts_a_failed_refresh(
+        self, list_reports, _env, _token, trigger, _datasets, _latest
+    ):
+        list_reports.return_value = [self.report]
+
+        response = self.client.post(
+            reverse("reporting-report-troubleshoot-api", args=[self.report_id]),
+            data="{}",
+            content_type="application/json",
+            HTTP_ACCEPT="application/json",
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["result"]["status"], "Repair Started")
+        self.assertTrue(response.json()["refresh"]["is_refreshing"])
+        trigger.assert_called_once_with("token", "workspace-id", "dataset-id")
+
+    @patch("reports.views.get_latest_refresh", return_value=("2026-08-20 08:10 AM", "Completed"))
+    @patch("reports.views.list_workspace_datasets", return_value=[{"id": "dataset-id", "name": "Fleet Model", "isRefreshable": True}])
+    @patch("reports.views.trigger_dataset_refresh")
+    @patch("reports.views.get_access_token", return_value="token")
+    @patch("reports.views.env_value", return_value="workspace-id")
+    @patch("reports.views.list_workspace_reports")
+    def test_troubleshooting_does_not_duplicate_a_healthy_refresh(
+        self, list_reports, _env, _token, trigger, _datasets, _latest
+    ):
+        list_reports.return_value = [self.report]
+
+        response = self.client.post(
+            reverse("reporting-report-troubleshoot-api", args=[self.report_id]),
+            data="{}",
+            content_type="application/json",
+            HTTP_ACCEPT="application/json",
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["result"]["status"], "Healthy")
+        trigger.assert_not_called()
 
     @patch("reports.views.trigger_dataset_refresh")
     @patch("reports.views.get_access_token", return_value="token")

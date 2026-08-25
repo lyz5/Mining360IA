@@ -1,0 +1,26 @@
+<svg class="report-identity-art report-art--{{ report.illustration_code|default:'generic_analytics' }}" viewBox="0 0 320 118" aria-hidden="true">
+    <path class="art-grid" d="M18 95h284M18 70h284M18 45h284M70 16v88M132 16v88M194 16v88M256 16v88"/>
+    {% if report.illustration_code == 'fleet_performance' %}
+        <path class="art-primary" d="M28 84 78 58l45 12 53-44 48 22 67-30"/><path class="art-secondary" d="M52 91h112l-9-28h-59L82 77H45zM170 91h42V75h-51"/><circle cx="91" cy="91" r="14"/><circle cx="174" cy="91" r="14"/><circle cx="176" cy="26" r="6"/>
+    {% elif report.illustration_code == 'fuel_monitoring' %}
+        <path class="art-primary" d="M84 22c-25 31-38 45-38 61a38 38 0 0 0 76 0c0-16-13-30-38-61z"/><path class="art-secondary" d="M154 88h132M164 72l24-25 24 17 31-38 34 19"/><circle cx="188" cy="47" r="5"/><circle cx="243" cy="26" r="5"/>
+    {% elif report.illustration_code == 'connectivity' %}
+        <circle class="art-secondary" cx="160" cy="72" r="12"/><path class="art-primary" d="M104 59a79 79 0 0 1 112 0M124 76a51 51 0 0 1 72 0M142 91a25 25 0 0 1 36 0"/><path class="art-secondary" d="M37 88h55l-7-21H57l-9 9H31zM228 88h55l-7-21h-28l-9 9h-17z"/><circle cx="59" cy="89" r="9"/><circle cx="254" cy="89" r="9"/>
+    {% elif report.illustration_code == 'sos_analysis' %}
+        <path class="art-primary" d="M104 18v30L65 98h103l-39-50V18M92 18h49"/><path class="art-fill" d="M82 78h68l15 20H65z"/><path class="art-secondary" d="M194 28h89M194 51h64M194 74h78M194 97h48"/><circle cx="117" cy="68" r="7"/>
+    {% elif report.illustration_code == 'lifecycle_cost' %}
+        <circle class="art-primary" cx="105" cy="59" r="39"/><path class="art-secondary" d="M105 38v42M118 45c-7-9-26-7-26 4 0 14 27 6 27 20 0 11-20 14-30 3M177 92V63h25v29M215 92V46h25v46M253 92V25h25v67"/>
+    {% elif report.illustration_code == 'logistics' or report.illustration_code == 'prime_movers' or report.illustration_code == 'prime_movers_v3' %}
+        <path class="art-primary" d="M37 80h157V43h-92L84 58H51zM194 80h67V58h-67"/><circle cx="79" cy="82" r="17"/><circle cx="218" cy="82" r="17"/><path class="art-secondary" d="M225 34a37 37 0 0 1 51 0M237 47a20 20 0 0 1 27 0"/><circle cx="251" cy="55" r="4"/>
+    {% elif report.illustration_code == 'operator_induced' %}
+        <circle class="art-primary" cx="82" cy="42" r="19"/><path class="art-primary" d="M46 97c3-28 16-42 36-42s33 14 36 42M59 36h46M164 87h119l-13-37h-64l-17 17h-35z"/><circle cx="202" cy="89" r="13"/><circle cx="263" cy="89" r="13"/><path class="art-secondary" d="m157 31 11-18 11 18zM168 20v5"/>
+    {% elif report.illustration_code == 'parts_aftermarket' %}
+        <path class="art-primary" d="m88 27 43 22-43 23-43-23zM45 49v34l43 22 43-22V49M88 72v33"/><circle class="art-secondary" cx="221" cy="65" r="30"/><path class="art-secondary" d="M221 24v15M221 91v15M180 65h15M247 65h15M192 36l11 11M239 83l11 11M250 36l-11 11M203 83l-11 11"/>
+    {% elif report.illustration_code == 'monthly_report' or report.illustration_code == 'monthly_report_customer' or report.illustration_code == 'monthly_report_internal' %}
+        <rect class="art-primary" x="38" y="22" width="112" height="80" rx="8"/><path class="art-secondary" d="M38 45h112M63 15v17M125 15v17M57 63h18M87 63h18M117 63h18M57 82h18M87 82h18"/><path class="art-primary" d="M184 91V65h24v26M220 91V47h24v44M256 91V27h24v64"/>
+    {% elif report.illustration_code == 'customer_performance' %}
+        <circle class="art-primary" cx="92" cy="40" r="20"/><path class="art-primary" d="M48 100c4-29 19-44 44-44s40 15 44 44"/><path class="art-secondary" d="M169 91h118M180 78l29-27 24 15 38-41M271 25v21h-21"/>
+    {% else %}
+        <path class="art-primary" d="M30 91h260M49 82l45-30 39 18 54-48 43 26 48-18"/><circle cx="94" cy="52" r="6"/><circle cx="187" cy="22" r="6"/><rect class="art-secondary" x="57" y="27" width="39" height="13" rx="6"/><rect class="art-secondary" x="210" y="68" width="58" height="13" rx="6"/>
+    {% endif %}
+</svg>

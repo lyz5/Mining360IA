@@ -1146,19 +1146,6 @@
 
     async function openPowerBI(root, state, navigation) {
         if (!navigation?.report_id) return;
-        if (navigation.launch_mode === "prime_movers_workspace" && navigation.launch_url) {
-            const target = new URL(navigation.launch_url, window.location.origin);
-            const filters = state.currentIntent?.filters || {};
-            const first = (value) => Array.isArray(value) ? value[0] : value;
-            const serial = first(filters.serial_number || filters.equipment || "");
-            const site = first(filters.minesite || "");
-            const model = first(filters.model || "");
-            if (serial) target.searchParams.set("serial_number", String(serial));
-            if (site) target.searchParams.set("minesite", String(site));
-            if (model) target.searchParams.set("model", String(model));
-            window.location.href = target.toString();
-            return;
-        }
         const title = document.getElementById("ai-powerbi-title");
         const status = document.getElementById("ai-powerbi-status");
         const tabs = document.getElementById("ai-powerbi-report-tabs");

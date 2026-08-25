@@ -313,10 +313,15 @@ def interaction_embed_config_api(request, report_id):
     if configured.validation_status != "Validated" and not is_platform_admin(request.user):
         return JsonResponse({"ok": False, "error": "This report mapping is not validated."}, status=403)
     try:
+        role = (
+            request.GET.get("role")
+            if is_platform_admin(request.user)
+            else configured.default_rls_role
+        ) or configured.default_rls_role or "Global"
         config = build_embed_configuration(
             request,
             configured,
-            role=request.GET.get("role") or "Global",
+            role=role,
         )
         return JsonResponse({
             "ok": True,

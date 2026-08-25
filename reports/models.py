@@ -980,7 +980,39 @@ class PowerBIReport(models.Model):
     ]
     LAUNCH_MODES = [
         ("generic_powerbi", "Generic Power BI viewer"),
-        ("prime_movers_workspace", "Prime Movers workspace"),
+    ]
+    DISPLAY_OPTIONS = [
+        ("fit_to_page", "Fit to page"),
+        ("fit_to_width", "Fit to width"),
+        ("actual_size", "Actual size"),
+    ]
+    BACKGROUND_TYPES = [
+        ("default", "Default"),
+        ("transparent", "Transparent"),
+    ]
+    OPEN_BEHAVIORS = [
+        ("inside_mining360", "Inside Mining 360"),
+        ("new_mining360_page", "New Mining 360 page"),
+        ("fullscreen", "Full screen"),
+        ("external_powerbi", "External Power BI"),
+    ]
+    CONFIGURATION_STATUSES = [
+        ("incomplete", "Incomplete"),
+        ("needs_review", "Needs Review"),
+        ("complete", "Complete"),
+        ("invalid", "Invalid"),
+    ]
+    VIEWER_PERIODS = [
+        ("ytd", "Year to Date"),
+        ("mtd", "Month to Date"),
+        ("last_month", "Last Month"),
+        ("last_30_days", "Last 30 Days"),
+        ("last_12_months", "Last 12 Months"),
+        ("custom", "Custom"),
+    ]
+    VIEWER_RESET_BEHAVIORS = [
+        ("defaults", "Restore configured defaults"),
+        ("clear", "Clear Mining 360 filters"),
     ]
 
     section = models.ForeignKey(AIConfigSection, related_name="interaction_reports", on_delete=models.CASCADE)
@@ -1004,6 +1036,50 @@ class PowerBIReport(models.Model):
     powerapps_environment = models.CharField(max_length=255, blank=True)
     access_instructions = models.TextField(blank=True)
     launch_mode = models.CharField(max_length=40, choices=LAUNCH_MODES, default="generic_powerbi")
+    opening_profile_name = models.CharField(max_length=120, blank=True, default="Standard Power BI")
+    default_page_internal_name = models.CharField(max_length=255, blank=True)
+    display_option = models.CharField(max_length=30, choices=DISPLAY_OPTIONS, default="fit_to_page")
+    viewer_show_filter_bar = models.BooleanField(default=True)
+    viewer_default_period = models.CharField(max_length=30, choices=VIEWER_PERIODS, default="ytd")
+    viewer_available_periods = models.JSONField(default=list, blank=True)
+    viewer_auto_apply_presets = models.BooleanField(default=True)
+    viewer_custom_range_enabled = models.BooleanField(default=True)
+    viewer_external_page_navigation = models.BooleanField(default=False)
+    viewer_focus_mode_enabled = models.BooleanField(default=True)
+    viewer_fullscreen_enabled = models.BooleanField(default=True)
+    viewer_allow_open_powerbi = models.BooleanField(default=False)
+    viewer_reset_behavior = models.CharField(
+        max_length=20,
+        choices=VIEWER_RESET_BEHAVIORS,
+        default="defaults",
+    )
+    viewer_date_table = models.CharField(max_length=255, blank=True, default="Date")
+    viewer_date_column = models.CharField(max_length=255, blank=True, default="Date")
+    viewer_help_text = models.TextField(blank=True)
+    filter_pane_visible = models.BooleanField(default=False)
+    page_navigation_visible = models.BooleanField(default=True)
+    bookmarks_pane_visible = models.BooleanField(default=False)
+    background_type = models.CharField(max_length=20, choices=BACKGROUND_TYPES, default="default")
+    default_rls_role = models.CharField(max_length=128, blank=True, default="Global")
+    open_behavior = models.CharField(max_length=40, choices=OPEN_BEHAVIORS, default="inside_mining360")
+    troubleshooting_enabled = models.BooleanField(default=True)
+    troubleshooting_prompt = models.TextField(blank=True)
+    troubleshooting_instructions = models.TextField(blank=True)
+    supports_chatbot_navigation = models.BooleanField(default=True)
+    supports_embedded_filtering = models.BooleanField(default=True)
+    configuration_status = models.CharField(max_length=30, choices=CONFIGURATION_STATUSES, default="needs_review")
+    configuration_version = models.PositiveIntegerField(default=1)
+    last_tested_at = models.DateTimeField(null=True, blank=True)
+    last_test_status = models.CharField(max_length=30, blank=True)
+    updated_by = models.ForeignKey(
+        User, null=True, blank=True, on_delete=models.SET_NULL,
+        related_name="updated_powerbi_report_configurations",
+    )
+    published_by = models.ForeignKey(
+        User, null=True, blank=True, on_delete=models.SET_NULL,
+        related_name="published_powerbi_report_configurations",
+    )
+    published_at = models.DateTimeField(null=True, blank=True)
     is_default = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     imported_at = models.DateTimeField(null=True, blank=True)
@@ -1019,23 +1095,145 @@ class PowerBIReport(models.Model):
     def __str__(self) -> str:
         return self.display_name
 
+    @classmethod
+    def opening_parameter_fields(cls):
+        return (
+            "authentication_mode",
+            "contains_powerapps_visual",
+            "requires_user_identity",
+            "allow_service_principal_metadata_access",
+            "required_entra_tenant_id",
+            "launch_mode",
+            "opening_profile_name",
+            "default_page_internal_name",
+            "display_option",
+            "filter_pane_visible",
+            "page_navigation_visible",
+            "bookmarks_pane_visible",
+            "background_type",
+            "default_rls_role",
+            "open_behavior",
+            "supports_chatbot_navigation",
+            "supports_embedded_filtering",
+            "viewer_show_filter_bar",
+            "viewer_default_period",
+            "viewer_available_periods",
+            "viewer_auto_apply_presets",
+            "viewer_custom_range_enabled",
+            "viewer_external_page_navigation",
+            "viewer_focus_mode_enabled",
+            "viewer_fullscreen_enabled",
+            "viewer_allow_open_powerbi",
+            "viewer_reset_behavior",
+            "viewer_date_table",
+            "viewer_date_column",
+            "viewer_help_text",
+        )
+
+    def copy_opening_parameters_from(self, source):
+        for field_name in self.opening_parameter_fields():
+            setattr(self, field_name, getattr(source, field_name))
+
     def clean(self):
         super().clean()
+        allowed_periods = {code for code, _label in self.VIEWER_PERIODS}
+        periods = self.viewer_available_periods or ["ytd", "last_12_months", "custom"]
+        if not isinstance(periods, list) or not periods or any(item not in allowed_periods for item in periods):
+            raise ValidationError({"viewer_available_periods": "Select one or more governed period presets."})
+        if self.viewer_default_period not in periods:
+            raise ValidationError({"viewer_default_period": "The default period must be available in the viewer."})
+        if "custom" in periods and self.viewer_custom_range_enabled and not (
+            self.viewer_date_table and self.viewer_date_column
+        ):
+            raise ValidationError({"viewer_date_column": "Custom date ranges require a configured Power BI date mapping."})
         if self.requires_user_identity and self.authentication_mode != "user_owns_data":
             raise ValidationError({
                 "authentication_mode": "Reports requiring a user identity must use User owns data."
             })
-        if (
-            self.contains_powerapps_visual
-            and self.authentication_mode != "user_owns_data"
-            and self.launch_mode != "prime_movers_workspace"
-        ):
+        if self.contains_powerapps_visual and self.authentication_mode != "user_owns_data":
             raise ValidationError({
-                "authentication_mode": (
-                    "Power Apps visuals require User owns data embedding, unless the report uses the "
-                    "Prime Movers workspace where the unsupported visual is hidden and Power Apps is launched separately."
-                )
+                "authentication_mode": "Power Apps visuals require User owns data embedding."
             })
+
+
+class ReportContextParameter(models.Model):
+    SOURCES = [
+        ("chatbot", "Chatbot context"),
+        ("homepage", "Homepage context"),
+        ("reporting_hub", "Reporting Hub context"),
+        ("query_string", "Query string"),
+        ("user_profile", "User profile"),
+        ("fixed_default", "Fixed default"),
+        ("powerbi_filter", "Power BI filter"),
+        ("powerapps_context", "Power Apps launch context"),
+    ]
+    DATA_TYPES = [("text", "Text"), ("number", "Number"), ("date", "Date"), ("boolean", "Boolean")]
+    OPERATORS = [("In", "In"), ("Equals", "Equals"), ("Contains", "Contains")]
+
+    report = models.ForeignKey(PowerBIReport, related_name="context_parameters", on_delete=models.CASCADE)
+    code = models.SlugField(max_length=120)
+    display_name = models.CharField(max_length=180)
+    source = models.CharField(max_length=40, choices=SOURCES)
+    data_type = models.CharField(max_length=20, choices=DATA_TYPES, default="text")
+    required = models.BooleanField(default=False)
+    default_value = models.CharField(max_length=500, blank=True)
+    powerbi_table = models.CharField(max_length=255, blank=True)
+    powerbi_column = models.CharField(max_length=255, blank=True)
+    operator = models.CharField(max_length=20, choices=OPERATORS, default="In")
+    supports_multiple_values = models.BooleanField(default=False)
+    display_order = models.PositiveIntegerField(default=0)
+    active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "report_context_parameters"
+        ordering = ["display_order", "display_name"]
+        constraints = [models.UniqueConstraint(fields=["report", "code"], name="unique_report_context_parameter")]
+
+
+class ReportConfigurationVersion(models.Model):
+    report = models.ForeignKey(PowerBIReport, related_name="configuration_versions", on_delete=models.CASCADE)
+    version = models.PositiveIntegerField()
+    payload_snapshot = models.JSONField(default=dict)
+    change_summary = models.CharField(max_length=500, blank=True)
+    created_by = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    published = models.BooleanField(default=False)
+    restored_from_version = models.PositiveIntegerField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "report_configuration_versions"
+        ordering = ["-version"]
+        constraints = [models.UniqueConstraint(fields=["report", "version"], name="unique_report_configuration_version")]
+
+
+class ReportConfigurationTestRun(models.Model):
+    STATUSES = [("passed", "Passed"), ("warning", "Warning"), ("failed", "Failed")]
+    report = models.ForeignKey(PowerBIReport, related_name="configuration_test_runs", on_delete=models.CASCADE)
+    test_code = models.CharField(max_length=120)
+    status = models.CharField(max_length=20, choices=STATUSES)
+    duration_ms = models.PositiveIntegerField(default=0)
+    result_json = models.JSONField(default=dict)
+    created_by = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "report_configuration_test_runs"
+        ordering = ["-created_at"]
+
+
+class ReportConfigurationAuditLog(models.Model):
+    report = models.ForeignKey(PowerBIReport, related_name="configuration_audit_logs", on_delete=models.CASCADE)
+    actor = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    action = models.CharField(max_length=80)
+    before_json = models.JSONField(default=dict)
+    after_json = models.JSONField(default=dict)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "report_configuration_audit_logs"
+        ordering = ["-created_at"]
 
 
 class PowerBIAuthenticationAuditLog(models.Model):
@@ -1112,107 +1310,6 @@ class UserExternalIdentity(models.Model):
         indexes = [models.Index(fields=["user", "provider", "active"], name="ext_identity_user_idx")]
 
 
-class PrimeMoversIntegrationConfiguration(models.Model):
-    VALIDATION_STATUSES = [(value, value) for value in ("To Review", "Validated", "Invalid", "Disabled")]
-
-    report = models.OneToOneField(
-        PowerBIReport,
-        on_delete=models.CASCADE,
-        related_name="prime_movers_configuration",
-    )
-    code = models.SlugField(max_length=100, unique=True)
-    powerbi_page_internal_name = models.CharField(max_length=255, blank=True)
-    powerbi_safe_initial_page_internal_name = models.CharField(max_length=255, blank=True)
-    powerapps_visual_internal_name = models.CharField(max_length=255, blank=True)
-    powerapps_visual_type = models.CharField(max_length=255, blank=True)
-    powerapps_app_id = models.CharField(max_length=128, blank=True)
-    powerapps_tenant_id = models.CharField(max_length=128, blank=True)
-    powerapps_environment_id = models.CharField(max_length=255, blank=True)
-    powerapps_launch_url = models.URLField(max_length=2000, blank=True)
-    dataverse_environment_url = models.URLField(max_length=1000, blank=True)
-    dataverse_context_entity_set = models.CharField(
-        max_length=255,
-        default="pbi_mining360primemoverscontexts",
-    )
-    iframe_enabled = models.BooleanField(default=False)
-    new_tab_fallback = models.BooleanField(default=True)
-    context_transfer_mode = models.CharField(max_length=40, default="context_session")
-    context_expiration_minutes = models.PositiveSmallIntegerField(default=15)
-    active = models.BooleanField(default=True)
-    validation_status = models.CharField(max_length=30, choices=VALIDATION_STATUSES, default="To Review")
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        db_table = "PrimeMoversIntegrationConfiguration"
-
-    def clean(self):
-        super().clean()
-        if self.powerapps_launch_url and "apps.powerapps.com" not in self.powerapps_launch_url.casefold():
-            raise ValidationError({"powerapps_launch_url": "Use the official apps.powerapps.com launch URL."})
-
-
-class PowerAppsLaunchContext(models.Model):
-    STATUSES = [(value, value) for value in ("active", "consumed", "expired", "revoked")]
-
-    opaque_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="powerapps_launch_contexts")
-    external_identity = models.ForeignKey(
-        UserExternalIdentity,
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name="launch_contexts",
-    )
-    configuration = models.ForeignKey(
-        PrimeMoversIntegrationConfiguration,
-        on_delete=models.CASCADE,
-        related_name="launch_contexts",
-    )
-    equipment_id = models.CharField(max_length=255, blank=True)
-    serial_number = models.CharField(max_length=255, blank=True)
-    mine_site = models.CharField(max_length=255, blank=True)
-    customer = models.CharField(max_length=255, blank=True)
-    model = models.CharField(max_length=255, blank=True)
-    selected_status = models.CharField(max_length=255, blank=True)
-    report_context_json = models.JSONField(default=dict, blank=True)
-    transfer_status = models.CharField(max_length=30, default="pending", db_index=True)
-    transfer_error_code = models.CharField(max_length=120, blank=True)
-    transfer_error_message = models.TextField(blank=True)
-    transferred_at = models.DateTimeField(null=True, blank=True)
-    status = models.CharField(max_length=20, choices=STATUSES, default="active", db_index=True)
-    expires_at = models.DateTimeField(db_index=True)
-    consumed_at = models.DateTimeField(null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        db_table = "PowerAppsLaunchContext"
-        indexes = [models.Index(fields=["user", "status", "expires_at"], name="pa_context_user_idx")]
-
-
-class PrimeMoversIntegrationExecutionLog(models.Model):
-    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
-    report = models.ForeignKey(PowerBIReport, null=True, blank=True, on_delete=models.SET_NULL)
-    context = models.ForeignKey(PowerAppsLaunchContext, null=True, blank=True, on_delete=models.SET_NULL)
-    windows_identity = models.CharField(max_length=255, blank=True)
-    entra_object_id = models.CharField(max_length=128, blank=True)
-    selected_strategy = models.CharField(max_length=40, default="dual_workspace")
-    powerbi_status = models.CharField(max_length=40, blank=True)
-    powerapps_status = models.CharField(max_length=40, blank=True)
-    selected_machine = models.CharField(max_length=255, blank=True)
-    browser = models.CharField(max_length=255, blank=True)
-    load_duration_ms = models.PositiveIntegerField(null=True, blank=True)
-    error_code = models.CharField(max_length=120, blank=True)
-    error_message = models.TextField(blank=True)
-    metadata_json = models.JSONField(default=dict, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        db_table = "PrimeMoversIntegrationExecutionLog"
-        ordering = ["-created_at"]
-        indexes = [models.Index(fields=["report", "created_at"], name="pm_exec_report_time_idx")]
-
-
 class ReportingReportPreference(models.Model):
     CATEGORIES = [
         ("fleet_performance", "Fleet Performance"),
@@ -1221,6 +1318,8 @@ class ReportingReportPreference(models.Model):
         ("fuel_connectivity", "Fuel & Connectivity"),
         ("parts_aftermarket", "Parts & Aftermarket"),
         ("management_reports", "Management Reports"),
+        ("lifecycle_cost", "Lifecycle Cost"),
+        ("customer_performance", "Customer Performance"),
         ("other", "Other"),
     ]
     THUMBNAIL_STATUSES = [
@@ -1229,19 +1328,72 @@ class ReportingReportPreference(models.Model):
         ("pending", "Pending"),
         ("failed", "Failed"),
     ]
+    THUMBNAIL_SOURCES = [
+        ("automatic", "Automatic fallback"),
+        ("manual_thumbnail", "Manual thumbnail"),
+        ("powerbi_screenshot", "Power BI screenshot"),
+        ("report_illustration", "Report illustration"),
+        ("category_illustration", "Category illustration"),
+    ]
+    ACCENTS = [
+        ("yellow", "Mining 360 Yellow"),
+        ("emerald", "Emerald"),
+        ("blue", "Blue"),
+        ("purple", "Purple"),
+        ("cyan", "Cyan"),
+        ("amber", "Amber"),
+        ("rose", "Rose"),
+        ("slate", "Slate"),
+    ]
+    CARD_STYLES = [("standard", "Standard"), ("compact", "Compact")]
+    VISUAL_IDENTITY_STATUSES = [
+        ("complete", "Complete"),
+        ("partial", "Partial"),
+        ("default", "Default"),
+        ("needs_review", "Needs Review"),
+        ("invalid", "Invalid"),
+    ]
 
     report_id = models.CharField(max_length=128, unique=True)
     report_name = models.CharField(max_length=255, blank=True)
     display_name = models.CharField(max_length=255, blank=True)
     description = models.TextField(blank=True)
+    short_description = models.CharField(max_length=180, blank=True)
+    long_description = models.TextField(blank=True)
+    business_purpose = models.TextField(blank=True)
     category = models.CharField(max_length=64, choices=CATEGORIES, default="other")
+    secondary_categories_json = models.JSONField(default=list, blank=True)
     tags_json = models.JSONField(default=list, blank=True)
     business_owner = models.CharField(max_length=255, blank=True)
+    technical_owner = models.CharField(max_length=255, blank=True)
     thumbnail_url = models.URLField(blank=True)
+    thumbnail = models.FileField(upload_to="report_visuals/thumbnails/%Y/%m/", blank=True)
+    selected_visual_asset = models.ForeignKey(
+        "ReportVisualAsset",
+        related_name="report_preferences",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    powerbi_screenshot_url = models.URLField(blank=True)
+    thumbnail_source = models.CharField(max_length=32, choices=THUMBNAIL_SOURCES, default="automatic")
     thumbnail_status = models.CharField(
         max_length=20,
         choices=THUMBNAIL_STATUSES,
         default="fallback",
+    )
+    thumbnail_updated_at = models.DateTimeField(null=True, blank=True)
+    thumbnail_focal_x = models.PositiveSmallIntegerField(default=50)
+    thumbnail_focal_y = models.PositiveSmallIntegerField(default=50)
+    illustration_code = models.CharField(max_length=64, blank=True)
+    icon_code = models.CharField(max_length=64, blank=True)
+    accent_code = models.CharField(max_length=20, choices=ACCENTS, blank=True)
+    card_badge = models.CharField(max_length=40, blank=True)
+    card_style = models.CharField(max_length=20, choices=CARD_STYLES, default="standard")
+    visual_identity_status = models.CharField(
+        max_length=24,
+        choices=VISUAL_IDENTITY_STATUSES,
+        default="needs_review",
     )
     featured = models.BooleanField(default=False)
     freshness_threshold_hours = models.PositiveIntegerField(null=True, blank=True)
@@ -1268,6 +1420,75 @@ class ReportingReportPreference(models.Model):
 
     def __str__(self) -> str:
         return self.display_name or self.report_name or self.report_id
+
+    def clean(self):
+        super().clean()
+        if not 0 <= self.thumbnail_focal_x <= 100 or not 0 <= self.thumbnail_focal_y <= 100:
+            raise ValidationError("Thumbnail focal position must be between 0 and 100.")
+
+
+class ReportCategory(models.Model):
+    code = models.SlugField(max_length=64, unique=True)
+    display_name = models.CharField(max_length=120)
+    description = models.TextField(blank=True)
+    icon_code = models.CharField(max_length=64, blank=True)
+    illustration_code = models.CharField(max_length=64, blank=True)
+    accent_code = models.CharField(max_length=20, choices=ReportingReportPreference.ACCENTS, default="slate")
+    display_order = models.PositiveIntegerField(default=0)
+    active = models.BooleanField(default=True)
+    validation_status = models.CharField(
+        max_length=30,
+        choices=POWERBI_VALIDATION_STATUSES,
+        default="To Review",
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "report_categories"
+        ordering = ["display_order", "display_name"]
+
+    def __str__(self):
+        return self.display_name
+
+
+class ReportVisualAsset(models.Model):
+    ASSET_TYPES = [
+        ("report_thumbnail", "Report thumbnail"),
+        ("report_illustration", "Report illustration"),
+        ("category_illustration", "Category illustration"),
+        ("category_icon", "Category icon"),
+    ]
+
+    name = models.CharField(max_length=180)
+    asset_type = models.CharField(max_length=32, choices=ASSET_TYPES)
+    file = models.FileField(upload_to="report_visuals/assets/%Y/%m/")
+    category = models.ForeignKey(
+        ReportCategory,
+        related_name="visual_assets",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    illustration_code = models.CharField(max_length=64, blank=True)
+    mime_type = models.CharField(max_length=80, blank=True)
+    file_size = models.PositiveIntegerField(default=0)
+    active = models.BooleanField(default=True)
+    validation_status = models.CharField(
+        max_length=30,
+        choices=POWERBI_VALIDATION_STATUSES,
+        default="To Review",
+    )
+    created_by = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "report_visual_assets"
+        ordering = ["name"]
+
+    def __str__(self):
+        return self.name
 
 
 class UserReportFavorite(models.Model):

@@ -16,7 +16,7 @@ from .microsoft_delegated_auth import (
     delegated_account_summary,
 )
 from .models import PlatformUser, PowerBIAuthenticationAuditLog, PowerBIReport
-from .powerbi import generate_report_embed_token, get_workspace_report, list_workspace_reports
+from .powerbi import PowerBIReport as RuntimePowerBIReport, generate_report_embed_token
 
 
 POWERBI_API_ROOT = "https://api.powerbi.com/v1.0/myorg"
@@ -56,14 +56,6 @@ class PowerBIEmbedStrategyResolver:
                 raise PowerBIEmbedError(
                     "Interactive corporate authentication is not enabled for this user.",
                     code="user_owned_embedding_disabled",
-                    status=403,
-                )
-            if report.contains_powerapps_visual and not feature_enabled(
-                "ENABLE_PRIME_MOVERS_POWERAPPS_EMBEDDING", user
-            ):
-                raise PowerBIEmbedError(
-                    "Interactive Power Apps embedding is not enabled for this user.",
-                    code="powerapps_embedding_disabled",
                     status=403,
                 )
             return PowerBIEmbedStrategy(
@@ -157,10 +149,32 @@ def _verify_delegated_report_access(report: PowerBIReport, access_token: str) ->
 
 def build_embed_configuration(request, report: PowerBIReport, *, role: str = "Global") -> dict:
     strategy = PowerBIEmbedStrategyResolver.resolve(report, request.user)
-    runtime_report = get_workspace_report(report.report_id, list_workspace_reports())
+    if not report.embed_url:
+        raise PowerBIEmbedError("The report embed URL is not configured.", code="embed_url_missing", status=400)
+    runtime_report = RuntimePowerBIReport(
+        id=report.report_id,
+        name=report.report_name,
+        display_name=report.display_name,
+        dataset_id=report.semantic_model_id,
+        web_url="",
+        embed_url=report.embed_url,
+        report_type="PowerBIReport",
+    )
+    opening_profile = {
+        "name": report.opening_profile_name or "Standard Power BI",
+        "displayOption": report.display_option,
+        "backgroundType": report.background_type,
+    }
+    settings = {
+        "panes": {
+            "filters": {"visible": report.filter_pane_visible},
+            "pageNavigation": {"visible": report.page_navigation_visible},
+            "bookmarks": {"visible": report.bookmarks_pane_visible},
+        },
+    }
     if strategy.strategy == "app_owns_data":
         token = generate_report_embed_token(runtime_report, [role])
-        return {
+        config = {
             "type": "report",
             "id": runtime_report.id,
             "embedUrl": runtime_report.embed_url,
@@ -168,8 +182,12 @@ def build_embed_configuration(request, report: PowerBIReport, *, role: str = "Gl
             "tokenType": "Embed",
             "authenticationMode": "app_owns_data",
             "requiresInteractiveUser": False,
-            "settings": {"panes": {"filters": {"visible": False}, "pageNavigation": {"visible": True}}},
+            "settings": settings,
+            "openingProfile": opening_profile,
         }
+        if report.default_page_internal_name:
+            config["pageName"] = report.default_page_internal_name
+        return config
 
     _audit(request, report, "embed_requested", metadata={"authentication_mode": strategy.strategy})
     try:
@@ -189,7 +207,7 @@ def build_embed_configuration(request, report: PowerBIReport, *, role: str = "Gl
             message=str(exc),
         )
         raise
-    return {
+    config = {
         "type": "report",
         "id": runtime_report.id,
         "embedUrl": embed_url or runtime_report.embed_url,
@@ -202,8 +220,12 @@ def build_embed_configuration(request, report: PowerBIReport, *, role: str = "Gl
             "upn": platform_user.user_principal_name,
             "displayName": platform_user.display_name,
         },
-        "settings": {"panes": {"filters": {"visible": False}, "pageNavigation": {"visible": True}}},
+        "settings": settings,
+        "openingProfile": opening_profile,
     }
+    if report.default_page_internal_name:
+        config["pageName"] = report.default_page_internal_name
+    return config
 
 
 class PrimeMoversAccessPreflightService:

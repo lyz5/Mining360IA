@@ -1,0 +1,206 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <title>Reporting Hub | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260822-collapsed-nav-1">
+    <link rel="stylesheet" href="{% static 'reports/reporting_hub.css' %}?v=20260824-category-position-1">
+</head>
+<body class="reporting-hub-body">
+    {% include "reports/includes/app_nav.html" %}
+    <main
+        class="app-shell reporting-hub"
+        data-reporting-hub
+        data-api-url="{{ reporting_hub_api_url }}"
+    >
+        <header class="reporting-hub-header">
+            <div>
+                <p class="reporting-hub-kicker">Power BI analytics</p>
+                <h1>Reporting Hub</h1>
+                <p>Access, monitor and explore all your analytical reports in one place.</p>
+            </div>
+            <div class="reporting-hub-header-meta">
+                <span>{{ workspace_name }}</span>
+                <span>Last synchronized <time data-last-sync datetime="{{ hub.last_synchronized_at|date:'c' }}">just now</time></span>
+                <div class="reporting-view-toggle" role="group" aria-label="Report catalog view">
+                    <button type="button" class="is-active" data-view="grid" aria-pressed="true" title="Grid view">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                        <span>Grid</span>
+                    </button>
+                    <button type="button" data-view="list" aria-pressed="false" title="List view">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>
+                        <span>List</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        {% if error %}
+        <section class="reporting-local-alert" role="status">
+            <strong>Refresh status could not be retrieved.</strong>
+            <span>The report catalog remains available.</span>
+        </section>
+        {% endif %}
+
+        <section class="report-health-summary" aria-label="Report health summary">
+            <button type="button" class="report-health-card total is-active" data-health-filter="all" aria-pressed="true">
+                <span class="health-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M7 16V9M12 16V5M17 16v-4"/></svg></span>
+                <span><strong>{{ hub.summary.total }}</strong><small>Total Reports</small><em>Available to your account</em></span>
+            </button>
+            <button type="button" class="report-health-card healthy" data-health-filter="healthy" aria-pressed="false">
+                <span class="health-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span>
+                <span><strong>{{ hub.summary.healthy }}</strong><small>Healthy</small><em>Ready for analysis</em></span>
+            </button>
+            <button type="button" class="report-health-card refreshing" data-health-filter="refreshing" aria-pressed="false">
+                <span class="health-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 0-15-3M4 4v4h4M4 13a8 8 0 0 0 15 3M20 20v-4h-4"/></svg></span>
+                <span><strong>{{ hub.summary.refreshing }}</strong><small>Refreshing</small><em>Update in progress</em></span>
+            </button>
+            <button type="button" class="report-health-card failed" data-health-filter="failed" aria-pressed="false">
+                <span class="health-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19zM12 9v4M12 17h.01"/></svg></span>
+                <span><strong>{{ hub.summary.failed }}</strong><small>Failed</small><em>Needs attention</em></span>
+            </button>
+            <button type="button" class="report-health-card no-refresh" data-health-filter="no_refresh" aria-pressed="false">
+                <span class="health-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 17h.01"/></svg></span>
+                <span><strong>{{ hub.summary.no_refresh }}</strong><small>No Refresh</small><em>No history available</em></span>
+            </button>
+            {% if hub.summary.stale %}
+            <button type="button" class="report-health-card stale" data-health-filter="stale" aria-pressed="false">
+                <span class="health-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                <span><strong>{{ hub.summary.stale }}</strong><small>Stale</small><em>Outside schedule</em></span>
+            </button>
+            {% endif %}
+        </section>
+
+        <section class="reporting-toolbar" aria-label="Report catalog controls">
+            <label class="reporting-search">
+                <span class="sr-only">Search reports</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+                <input type="search" value="{{ hub.filters.q }}" placeholder="Search reports, topics or keywords..." autocomplete="off" data-hub-search>
+                <span class="reporting-search-state" aria-live="polite" data-search-state></span>
+            </label>
+            <div class="reporting-status-filters" role="group" aria-label="Refresh status">
+                <button type="button" class="is-active" data-status="all" aria-pressed="true">All <span>{{ hub.summary.total }}</span></button>
+                <button type="button" data-status="healthy" aria-pressed="false">Healthy <span>{{ hub.summary.healthy }}</span></button>
+                <button type="button" data-status="refreshing" aria-pressed="false">Refreshing <span>{{ hub.summary.refreshing }}</span></button>
+                <button type="button" data-status="failed" aria-pressed="false">Failed <span>{{ hub.summary.failed }}</span></button>
+                <button type="button" data-status="no_refresh" aria-pressed="false">No Refresh <span>{{ hub.summary.no_refresh }}</span></button>
+            </div>
+            <div class="reporting-toolbar-fields">
+                <label><span>Category</span><select data-category-filter><option value="all">All categories</option>{% for category in hub.categories %}<option value="{{ category.code }}">{{ category.label }} ({{ category.count }})</option>{% endfor %}</select></label>
+                <label><span>Sort by</span><select data-sort-filter><option value="alphabetical">Alphabetical A-Z</option><option value="alphabetical_desc">Alphabetical Z-A</option><option value="recently_refreshed">Recently refreshed</option><option value="status">Status</option></select></label>
+                <button type="button" class="favorites-filter" data-favorites-filter aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9z"/></svg>
+                    Favorites
+                </button>
+            </div>
+        </section>
+
+        <section class="personal-report-section" data-favorites-section{% if not hub.favorites %} hidden{% endif %}>
+            <div class="catalog-section-heading"><div><h2>Favorites</h2><p>Your pinned reports</p></div></div>
+            <div class="compact-report-row" data-favorites-list>
+                {% for report in hub.favorites %}<a href="{{ report.launch_url }}" data-compact-report-id="{{ report.id }}" data-embed-prefetch-url="{% url 'powerbi-interaction-embed-config' report.id %}"><span class="compact-report-mark {{ report.visual_class }}"></span><span><strong>{{ report.name }}</strong><small>{{ report.category_label }}</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>{% endfor %}
+            </div>
+        </section>
+
+        {% if hub.recent %}
+        <section class="personal-report-section" data-recent-section>
+            <div class="catalog-section-heading"><div><h2>Recently Viewed</h2><p>Continue where you left off</p></div></div>
+            <div class="compact-report-row">
+                {% for report in hub.recent %}<a href="{{ report.launch_url }}" data-embed-prefetch-url="{% url 'powerbi-interaction-embed-config' report.id %}"><span class="compact-report-mark {{ report.visual_class }}"></span><span><strong>{{ report.name }}</strong><small>Opened {{ report.opened_at|timesince }} ago</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>{% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        <section class="all-reports-section" id="all-reports">
+            <div class="catalog-section-heading">
+                <div><h2>All Reports</h2><p><span data-result-count>{{ hub.reports|length }}</span> reports match the current view</p></div>
+                <button type="button" class="clear-report-filters" data-clear-filters hidden>Clear filters</button>
+            </div>
+
+            <div class="report-catalog-grid" data-report-catalog aria-live="polite">
+                {% for report in reports %}
+                <article
+                    class="premium-report-card"
+                    data-report-card
+                    data-report-id="{{ report.id }}"
+                    data-status="{{ report.status.code }}"
+                    data-category="{{ report.category }}"
+                    data-favorite="{{ report.is_favorite|yesno:'true,false' }}"
+                    data-search="{{ report.search_text }}"
+                    data-refresh-url="{{ report.refresh_url }}"
+                    data-troubleshoot-url="{% url 'reporting-report-troubleshoot-api' report.id %}"
+                    data-dataset-id="{{ report.dataset_id|default:'' }}"
+                    data-launch-url="{{ report.launch_url }}"
+                    data-embed-prefetch-url="{% url 'powerbi-interaction-embed-config' report.id %}"
+                    role="link"
+                    tabindex="0"
+                    aria-label="Open {{ report.name }}"
+                >
+                    <div class="report-card-visual accent-{{ report.accent_code }} source-{{ report.visual_identity.source }}" data-visual-source="{{ report.visual_identity.source }}" data-report-illustration="{{ report.illustration_code }}">
+                        {% include "reports/includes/report_visual_identity.html" %}
+                        {% if report.thumbnail_url %}<img src="{{ report.thumbnail_url }}" alt="Visual preview for {{ report.name }}" loading="lazy" data-report-thumbnail style="object-position: {{ report.visual_identity.focal_x }}% {{ report.visual_identity.focal_y }}%">{% endif %}
+                        <span class="report-category-label">{{ report.category_label }}</span>
+                        {% if report.card_badge %}<span class="report-card-badge">{{ report.card_badge }}</span>{% endif %}
+                        <button
+                            type="button"
+                            class="report-favorite-button{% if report.is_favorite %} is-favorite{% endif %}"
+                            data-favorite-button
+                            data-url="{{ report.favorite_url }}"
+                            aria-pressed="{{ report.is_favorite|yesno:'true,false' }}"
+                            aria-label="{% if report.is_favorite %}Remove {{ report.name }} from favorites{% else %}Add {{ report.name }} to favorites{% endif %}"
+                            title="{% if report.is_favorite %}Remove from favorites{% else %}Add to favorites{% endif %}"
+                        ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9z"/></svg></button>
+                    </div>
+                    <div class="report-card-content">
+                        <div class="report-card-title-row">
+                            <h3>{{ report.name }}</h3>
+                            <div class="report-more-wrap">
+                                <button type="button" class="report-more-button" data-more-button aria-expanded="false" aria-label="More actions for {{ report.name }}" title="More actions"><span></span><span></span><span></span></button>
+                                <div class="report-actions-menu" data-actions-menu hidden>
+                                    <a href="{{ report.launch_url }}">Open report</a>
+                                    <button type="button" data-menu-favorite>{% if report.is_favorite %}Remove favorite{% else %}Add to favorites{% endif %}</button>
+                                     <button type="button" data-menu-refresh{% if not report.dataset_id %} disabled{% endif %}>Refresh report</button>
+                                    <button type="button" data-report-troubleshoot{% if not report.dataset_id %} disabled{% endif %}>Troubleshoot refresh</button>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="report-card-description">{{ report.description }}</p>
+                        {% if report.tags %}<div class="report-tags">{% for tag in report.tags %}<span>{{ tag }}</span>{% endfor %}</div>{% endif %}
+                        <div class="report-status-line status-{{ report.status.code }}" data-report-status>
+                            <span class="status-dot" aria-hidden="true"></span>
+                            <span><strong data-status-label>{{ report.status.label }}</strong><small data-status-detail>{{ report.status.detail }}</small></span>
+                            <span class="report-status-actions">
+                                {% if report.status.code == 'failed' or report.status.code == 'no_refresh' or report.status.code == 'stale' %}<button type="button" class="report-troubleshoot-button" data-report-troubleshoot aria-label="Troubleshoot {{ report.name }} refresh" title="Troubleshoot refresh"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5-5l2.1 2.1-2.4 2.4-2.1-2.1a4 4 0 0 0 5 5l-7.6 7.6a2 2 0 1 0 2.8 2.8l7.6-7.6a4 4 0 0 0 5-5L18 8.4l-2.4-2.4z"/></svg></button>{% endif %}
+                                <button type="button" class="report-refresh-button{% if report.status.code == 'refreshing' %} is-refreshing{% endif %}" data-report-refresh aria-label="Refresh report data for {{ report.name }}" title="Refresh report data"{% if not report.dataset_id %} disabled{% endif %}>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 0-15-3M4 4v4h4M4 13a8 8 0 0 0 15 3M20 20v-4h-4"/></svg>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <footer class="report-card-actions">
+                        <a href="{{ report.launch_url }}" class="open-report-button">{{ report.launch_label }}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
+                    </footer>
+                </article>
+                {% endfor %}
+            </div>
+
+            <div class="reporting-empty-state" data-report-empty{% if reports %} hidden{% endif %}>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M7 16V9M12 16V5M17 16v-4"/></svg>
+                <h3>No report matches your search.</h3>
+                <p>Try another keyword or clear the filters.</p>
+                <button type="button" data-empty-clear>Clear filters</button>
+            </div>
+        </section>
+        <div class="reporting-toast" role="status" aria-live="polite" data-reporting-toast></div>
+        <dialog class="report-troubleshoot-dialog" data-report-troubleshoot-dialog>
+            <header><div><span>Automated diagnostics</span><h2>Report troubleshooting</h2></div><button type="button" data-troubleshoot-close aria-label="Close">×</button></header>
+            <div class="report-troubleshoot-content" data-troubleshoot-content></div>
+            <footer><button type="button" data-troubleshoot-close>Close</button></footer>
+        </dialog>
+    </main>
+    <script src="{% static 'reports/reporting_hub.js' %}?v=20260823-embed-prefetch-1" defer></script>
+</body>
+</html>

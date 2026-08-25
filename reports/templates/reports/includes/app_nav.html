@@ -8,6 +8,18 @@
         <button type="button" class="icon-button nav-toggle js-toggle-nav" aria-label="Toggle sidebar" title="Toggle sidebar"></button>
     </div>
     <div class="nav-links">
+        <a href="{% url 'dashboard' %}"
+           class="{% if active_section == 'dashboard' %}active{% endif %}"
+           {% if active_section == 'dashboard' %}aria-current="page"{% endif %}
+           title="Command Center">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 13h6V4H4z" />
+                <path d="M14 20h6v-9h-6z" />
+                <path d="M4 20h6v-3H4z" />
+                <path d="M14 7h6V4h-6z" />
+            </svg>
+            <span>Command Center</span>
+        </a>
         {% if request.user.is_staff or request.user.is_superuser or request.user.platformuser.is_platform_admin or request.user.platformuser.can_access_reporting %}
         <a href="{% url 'reporting' %}" class="{% if active_section == 'reporting' %}active{% endif %}">
             <svg class="nav-icon nav-icon-reporting" viewBox="0 0 24 24" aria-hidden="true">

@@ -198,6 +198,13 @@ def _extract_value(question_text: str, entity_type: str) -> str | None:
         )
         if match:
             return match.group(1).strip().upper()
+        match = re.search(
+            r"(?:machine|equipment|[eé]quipement)\s+([a-z0-9][a-z0-9./_-]*\d[a-z0-9./_-]*)",
+            text,
+            re.I,
+        )
+        if match:
+            return match.group(1).strip().upper()
     if entity_type == "field":
         match = re.search(r"(?:field|champ)\s*[:=]\s*([a-z0-9 /_-]+)", text, re.I)
         if match:
@@ -249,6 +256,8 @@ def _build_fallback_intent(question_text: str, section_code: str | None = None) 
         "comparison": _ranking_payload(question_text),
         "navigation": {"open_report": True, "open_page": True, "focus_visual": True},
     }
+    if intent["intent_type"] == "powerbi_navigation":
+        intent["navigation"]["report_query"] = str(question_text or "").strip()
     return enrich_machine_performance_intent(intent, question_text) if section == "performance" else intent
 
 
@@ -257,7 +266,7 @@ def extract_intent(question_text: str, section_code: str | None = None) -> dict:
     # Availability is fully controlled by configured synonyms, filters and DAX
     # templates. Avoid a slow and less deterministic LLM extraction when the
     # business intent is already resolved locally.
-    if fallback.get("metric") == "availability":
+    if fallback.get("metric") == "availability" or fallback.get("intent_type") == "powerbi_navigation":
         return enrich_machine_performance_intent(fallback, question_text)
     try:
         extracted = openai_extract_intent(question_text, section_code or fallback["section"])

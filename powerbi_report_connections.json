@@ -1356,7 +1356,8 @@
       "embed_url": "https://app.powerbi.com/reportEmbed?reportId=b106be9f-54a2-4659-a7e8-5fc936adb719&groupId=a378c518-bfc4-4cd7-a49d-ba40394db80f&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJ1c2FnZU1ldHJpY3NWTmV4dCI6dHJ1ZX19",
       "primary_dataset_id": "719b0c65-9ed0-4671-b42a-21bc19aa16ad",
       "dataset_ids": [
-        "719b0c65-9ed0-4671-b42a-21bc19aa16ad"
+        "719b0c65-9ed0-4671-b42a-21bc19aa16ad",
+        "364edd69-532c-4e10-867f-3b3d4dfdb6c7"
       ],
       "datasets": [
         {
@@ -1548,7 +1549,8 @@
       "embed_url": "https://app.powerbi.com/reportEmbed?reportId=7965812a-e2d7-4950-9651-a148d8fdd235&groupId=a378c518-bfc4-4cd7-a49d-ba40394db80f&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVdFU1QtRVVST1BFLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJ1c2FnZU1ldHJpY3NWTmV4dCI6dHJ1ZX19",
       "primary_dataset_id": "78f2e175-881d-42d7-8d64-fce27908e3c1",
       "dataset_ids": [
-        "78f2e175-881d-42d7-8d64-fce27908e3c1"
+        "78f2e175-881d-42d7-8d64-fce27908e3c1",
+        "364edd69-532c-4e10-867f-3b3d4dfdb6c7"
       ],
       "datasets": [
         {
@@ -1617,6 +1619,20 @@
             "SNTP": [
               "SNTP"
             ]
+          }
+        },
+        {
+          "id": "364edd69-532c-4e10-867f-3b3d4dfdb6c7",
+          "name": "FPR Global DB + RLS",
+          "configured_by": "linked_semantic_model",
+          "is_effective_identity_required": true,
+          "is_effective_identity_roles_required": true,
+          "target_storage_mode": "Abf",
+          "role_aliases": {
+            "global user": "Global",
+            "fekola user": "Fekola",
+            "sangaredi": "Sangaredi/CBG",
+            "sangaredi/cbg": "Sangaredi/CBG"
           }
         }
       ],

@@ -38,15 +38,27 @@ $env:MINING360_SECRET_KEY = Get-Mining360Setting "MINING360_SECRET_KEY"
 $env:MINING360_CONFIG_ENCRYPTION_KEY = Get-Mining360Setting "MINING360_CONFIG_ENCRYPTION_KEY"
 $env:MINING360_DEPLOYMENT_ENCRYPTION_KEY = Get-Mining360Setting "MINING360_DEPLOYMENT_ENCRYPTION_KEY"
 $env:MINING360_DEBUG = Get-Mining360Setting "MINING360_DEBUG" "0"
-$env:MINING360_ALLOWED_HOSTS = Get-Mining360Setting "MINING360_ALLOWED_HOSTS" "bodefm,172.17.0.111,localhost,127.0.0.1"
-$env:MINING360_PUBLIC_BASE_URL = Get-Mining360Setting "MINING360_PUBLIC_BASE_URL" "https://bodefm"
-$env:MINING360_CSRF_TRUSTED_ORIGINS = Get-Mining360Setting "MINING360_CSRF_TRUSTED_ORIGINS" $env:MINING360_PUBLIC_BASE_URL
+$env:MINING360_ALLOWED_HOSTS = Get-Mining360Setting "MINING360_ALLOWED_HOSTS" "mining360.neemba.com,mining360-dev.neemba.local,bodefm,172.17.0.111,localhost,127.0.0.1"
+$env:MINING360_PUBLIC_BASE_URL = Get-Mining360Setting "MINING360_PUBLIC_BASE_URL" "https://mining360-dev.neemba.local"
+$configuredCsrfOrigins = Get-Mining360Setting "MINING360_CSRF_TRUSTED_ORIGINS"
+$env:MINING360_CSRF_TRUSTED_ORIGINS = (@(
+    $configuredCsrfOrigins -split ','
+    $env:MINING360_PUBLIC_BASE_URL
+    "https://mining360.neemba.com"
+    "https://mining360-dev.neemba.local"
+    "https://bodefm"
+) | Where-Object { $_ } | Select-Object -Unique) -join ','
 $env:MINING360_USE_X_FORWARDED_HOST = Get-Mining360Setting "MINING360_USE_X_FORWARDED_HOST" "1"
 $env:MINING360_SECURE_SSL_REDIRECT = Get-Mining360Setting "MINING360_SECURE_SSL_REDIRECT" "1"
 $env:MINING360_SESSION_COOKIE_SECURE = Get-Mining360Setting "MINING360_SESSION_COOKIE_SECURE" "1"
 $env:MINING360_CSRF_COOKIE_SECURE = Get-Mining360Setting "MINING360_CSRF_COOKIE_SECURE" "1"
 $env:MINING360_SECURE_HSTS_SECONDS = Get-Mining360Setting "MINING360_SECURE_HSTS_SECONDS" "3600"
 $env:MINING360_STATIC_ROOT = Join-Path $Root "shared\static"
+$env:MINING360_MEDIA_ROOT = Join-Path $Root "shared\media"
+$defaultEntraRedirect = "$($env:MINING360_PUBLIC_BASE_URL.TrimEnd('/'))/auth/callback/"
+$env:ENTRA_REDIRECT_URI = Get-Mining360Setting "ENTRA_REDIRECT_URI" $defaultEntraRedirect
+$env:AZURE_AD_REDIRECT_URI = Get-Mining360Setting "AZURE_AD_REDIRECT_URI" $env:ENTRA_REDIRECT_URI
+$env:ENTRA_POST_LOGOUT_REDIRECT_URI = Get-Mining360Setting "ENTRA_POST_LOGOUT_REDIRECT_URI" "$($env:MINING360_PUBLIC_BASE_URL.TrimEnd('/'))/login/"
 $trustedProxy = Get-Mining360Setting "MINING360_TRUSTED_PROXY" "127.0.0.1"
 
 if (-not $env:MINING360_SECRET_KEY) {

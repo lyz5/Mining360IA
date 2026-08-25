@@ -26,9 +26,6 @@
                     </select>
                 {% endif %}
                 <a class="button secondary" href="{% url 'reporting' %}">Back</a>
-                {% if report and report.web_url %}
-                    <a class="button" href="{{ report.web_url }}" target="_blank" rel="noreferrer">Open Power BI</a>
-                {% endif %}
                 {% if report %}
                     <button type="button" id="fullscreen-report" class="icon-button fullscreen-toggle" aria-label="Open report in fullscreen" title="Fullscreen"></button>
                 {% endif %}
@@ -64,17 +61,6 @@
                         <option value="last-year">Last Year</option>
                     </select>
                 </div>
-                <div>
-                    <label for="rls-role-select">RLS role</label>
-                    <select id="rls-role-select">
-                        {% for role in role_options %}
-                            <option value="{{ role }}" {% if role == selected_role %}selected{% endif %}>{{ role }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="quick-date-actions">
-                    <button type="button" id="diagnose-slicers" class="button secondary">Diagnose slicers</button>
-                </div>
                 <p id="filter-status" class="filter-status" aria-live="polite"></p>
             </section>
             {% if report.embed_url and configured_report %}
@@ -83,6 +69,7 @@
                         id="powerbi-report"
                         class="report-frame"
                         data-report-id="{{ report.id }}"
+                        data-rls-role="{{ selected_role }}"
                         data-embed-config-url="{{ embed_config_url }}">
                     </div>
                 </section>
@@ -95,56 +82,25 @@
                 <section id="report-runtime-error" class="alert" hidden role="alert">
                     <strong>The report could not be displayed</strong>
                     <p id="report-runtime-error-message">Power BI returned an unexpected rendering error.</p>
-                    {% if report.web_url %}
-                        <a class="button secondary" href="{{ report.web_url }}" target="_blank" rel="noreferrer">Open in Power BI</a>
-                    {% endif %}
                 </section>
             {% else %}
                 <section class="alert">
                     <strong>Embed unavailable</strong>
-                    <p>The report can still be opened in Power BI from the top button.</p>
+                    <p>Contact a Reporting administrator to configure this report.</p>
                 </section>
             {% endif %}
         {% endif %}
     </main>
-    <aside id="slicer-diagnostics" class="diagnostics-pane" aria-hidden="true">
-        <div class="diagnostics-pane-head">
-            <div>
-                <p class="eyebrow">Diagnostic</p>
-                <h2>Detected slicers</h2>
-            </div>
-            <button type="button" id="close-slicer-diagnostics" class="icon-button" aria-label="Close panel">x</button>
-        </div>
-        <div id="slicer-diagnostics-content" class="diagnostics-content"></div>
-    </aside>
-    <div id="diagnostics-backdrop" class="diagnostics-backdrop" hidden></div>
     {% if report.embed_url and configured_report %}
         <script src="{% static 'reports/vendor/powerbi-client-2.23.7.min.js' %}"></script>
         <script>
             const reportSelect = document.getElementById("report-select");
-            const rlsRoleSelect = document.getElementById("rls-role-select");
-
-            function urlWithSelectedRole(targetUrl) {
-                const url = new URL(targetUrl, window.location.origin);
-                if (rlsRoleSelect && rlsRoleSelect.value) {
-                    url.searchParams.set("role", rlsRoleSelect.value);
-                }
-                return url.toString();
-            }
 
             if (reportSelect) {
                 reportSelect.addEventListener("change", function () {
                     if (this.value) {
-                        window.location.href = urlWithSelectedRole(this.value);
+                        window.location.href = this.value;
                     }
-                });
-            }
-
-            if (rlsRoleSelect) {
-                rlsRoleSelect.addEventListener("change", function () {
-                    const url = new URL(window.location.href);
-                    url.searchParams.set("role", this.value);
-                    window.location.href = url.toString();
                 });
             }
 
@@ -180,7 +136,7 @@
 
             async function requestEmbedConfig() {
                 const url = new URL(container.dataset.embedConfigUrl, window.location.origin);
-                if (rlsRoleSelect && rlsRoleSelect.value) url.searchParams.set("role", rlsRoleSelect.value);
+                if (container.dataset.rlsRole) url.searchParams.set("role", container.dataset.rlsRole);
                 const response = await fetch(url, { credentials: "same-origin" });
                 const payload = await response.json();
                 if (!response.ok || !payload.ok) {
@@ -218,6 +174,12 @@
                     const serverConfig = await requestEmbedConfig();
                     if (!serverConfig) return;
                     const isAad = String(serverConfig.tokenType).toLowerCase() === "aad";
+                    const openingProfile = serverConfig.openingProfile || {};
+                    const displayOptions = {
+                        fit_to_page: models.DisplayOption.FitToPage,
+                        fit_to_width: models.DisplayOption.FitToWidth,
+                        actual_size: models.DisplayOption.ActualSize
+                    };
                     const config = Object.assign({}, serverConfig, {
                         tokenType: isAad ? models.TokenType.Aad : models.TokenType.Embed,
                         permissions: models.Permissions.Read,
@@ -226,6 +188,14 @@
                             background: models.BackgroundType.Default
                         }, serverConfig.settings || {})
                     });
+                    config.settings.layoutType = models.LayoutType.Custom;
+                    config.settings.customLayout = Object.assign({}, config.settings.customLayout || {}, {
+                        displayOption: displayOptions[openingProfile.displayOption] ?? models.DisplayOption.FitToPage
+                    });
+                    config.settings.background = openingProfile.backgroundType === "transparent"
+                        ? models.BackgroundType.Transparent
+                        : models.BackgroundType.Default;
+                    delete config.openingProfile;
                     if (isAad) {
                         config.eventHooks = { accessTokenProvider: async () => refreshAccessToken() };
                     }
@@ -254,12 +224,7 @@
             const applyDateFilter = document.getElementById("apply-date-filter");
             const resetReportFilters = document.getElementById("reset-report-filters");
             const fullscreenReport = document.getElementById("fullscreen-report");
-            const diagnoseSlicers = document.getElementById("diagnose-slicers");
             const quickDateRange = document.getElementById("quick-date-range");
-            const closeSlicerDiagnostics = document.getElementById("close-slicer-diagnostics");
-            const slicerDiagnostics = document.getElementById("slicer-diagnostics");
-            const slicerDiagnosticsContent = document.getElementById("slicer-diagnostics-content");
-            const diagnosticsBackdrop = document.getElementById("diagnostics-backdrop");
 
             function setStatus(message, isError = false) {
                 if (!filterStatus) return;
@@ -284,15 +249,6 @@
 
             function addMonths(date, months) {
                 return new Date(date.getFullYear(), date.getMonth() + months, 1);
-            }
-
-            function filterTargetLabel(filter) {
-                const target = filter && filter.target;
-                if (!target) return "unknown target";
-                if (Array.isArray(target)) {
-                    return target.map(item => `${item.table || "?"}[${item.column || item.hierarchy || "?"}]`).join(", ");
-                }
-                return `${target.table || "?"}[${target.column || target.hierarchy || "?"}]`;
             }
 
             function isBravoDateTarget(filter) {
@@ -351,75 +307,6 @@
                 }
 
                 return { synced, skipped };
-            }
-
-            async function renderSlicerDiagnostics() {
-                if (!slicerDiagnostics || !slicerDiagnosticsContent) return;
-                slicerDiagnostics.classList.add("open");
-                slicerDiagnostics.setAttribute("aria-hidden", "false");
-                if (diagnosticsBackdrop) diagnosticsBackdrop.hidden = false;
-                slicerDiagnosticsContent.innerHTML = "<p>Reading slicers...</p>";
-
-                try {
-                    const slicers = await getActivePageSlicers();
-                    if (!slicers.length) {
-                        slicerDiagnosticsContent.innerHTML = "<p>No slicers detected on the active page.</p>";
-                        return;
-                    }
-
-                    const rows = [];
-                    for (const slicer of slicers) {
-                        let state;
-                        try {
-                            state = await slicer.getSlicerState();
-                        } catch (error) {
-                            rows.push(`
-                                <tr>
-                                    <td>${slicer.name}</td>
-                                    <td>${slicer.title || "-"}</td>
-                                    <td colspan="3">State unreadable: ${error.message || error}</td>
-                                </tr>
-                            `);
-                            continue;
-                        }
-
-                        const filters = state.filters || [];
-                        const targets = filters.length
-                            ? filters.map(filterTargetLabel).join("<br>")
-                            : "No filters in current state";
-                        const dateCompatible = canApplyDateRangeToSlicer(state) ? "Yes" : "No";
-                        const bravoDate = filters.some(isBravoDateTarget) ? "Yes" : "No";
-
-                        rows.push(`
-                            <tr>
-                                <td><code>${slicer.name}</code></td>
-                                <td>${slicer.title || "-"}</td>
-                                <td>${targets}</td>
-                                <td>${bravoDate}</td>
-                                <td>${dateCompatible}</td>
-                            </tr>
-                        `);
-                    }
-
-                    slicerDiagnosticsContent.innerHTML = `
-                        <div class="table-wrap compact">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Visual name</th>
-                                        <th>Title</th>
-                                        <th>Target</th>
-                                        <th>Table Date</th>
-                                        <th>Sync Date[Date]</th>
-                                    </tr>
-                                </thead>
-                                <tbody>${rows.join("")}</tbody>
-                            </table>
-                        </div>
-                    `;
-                } catch (error) {
-                    slicerDiagnosticsContent.innerHTML = `<p class="diagnostic-error">Slicer diagnostic error: ${error.message || error}</p>`;
-                }
             }
 
             async function applyDateRange(start, end, label = "Date filter applied") {
@@ -541,24 +428,6 @@
                 });
             }
 
-            if (diagnoseSlicers) {
-                diagnoseSlicers.addEventListener("click", renderSlicerDiagnostics);
-            }
-
-            function closeDiagnosticsPane() {
-                if (!slicerDiagnostics) return;
-                slicerDiagnostics.classList.remove("open");
-                slicerDiagnostics.setAttribute("aria-hidden", "true");
-                if (diagnosticsBackdrop) diagnosticsBackdrop.hidden = true;
-            }
-
-            if (closeSlicerDiagnostics) {
-                closeSlicerDiagnostics.addEventListener("click", closeDiagnosticsPane);
-            }
-            if (diagnosticsBackdrop) {
-                diagnosticsBackdrop.addEventListener("click", closeDiagnosticsPane);
-            }
-
             embeddedReport.on("loaded", async function () {
                 const today = new Date();
                 const startDate = new Date(today.getFullYear(), 0, 1);
@@ -569,28 +438,12 @@
     {% else %}
         <script>
             const reportSelect = document.getElementById("report-select");
-            const rlsRoleSelect = document.getElementById("rls-role-select");
-
-            function urlWithSelectedRole(targetUrl) {
-                const url = new URL(targetUrl, window.location.origin);
-                if (rlsRoleSelect && rlsRoleSelect.value) {
-                    url.searchParams.set("role", rlsRoleSelect.value);
-                }
-                return url.toString();
-            }
 
             if (reportSelect) {
                 reportSelect.addEventListener("change", function () {
                     if (this.value) {
-                        window.location.href = urlWithSelectedRole(this.value);
+                        window.location.href = this.value;
                     }
-                });
-            }
-            if (rlsRoleSelect) {
-                rlsRoleSelect.addEventListener("change", function () {
-                    const url = new URL(window.location.href);
-                    url.searchParams.set("role", this.value);
-                    window.location.href = url.toString();
                 });
             }
         </script>

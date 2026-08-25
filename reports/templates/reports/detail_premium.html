@@ -1,0 +1,146 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if report %}{{ report.display_name }}{% else %}Report{% endif %} | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'reports/report_viewer.css' %}?v=20260823-unified-toolbar-4">
+</head>
+<body class="report-viewer-body">
+    {% include "reports/includes/app_nav.html" %}
+    <main
+        class="app-shell report-viewer-shell"
+        data-report-viewer
+        data-report-id="{{ report.id|default:report_id }}"
+        data-rls-role="{{ selected_role }}"
+        data-viewer-config-url="{{ viewer_configuration_url }}"
+        data-embed-config-url="{{ embed_config_url }}"
+        data-embed-config-template="{{ embed_config_url_template }}"
+        data-refresh-url="{{ refresh_url }}"
+        data-troubleshoot-url="{{ troubleshoot_url }}"
+        data-hub-url="{{ reporting_hub_url }}">
+        <header class="report-workspace-header">
+            <div class="report-workspace-identity">
+                <nav class="report-breadcrumb" aria-label="Breadcrumb">
+                    <a href="{{ reporting_hub_url }}" data-return-hub>Reporting Hub</a>
+                    <span aria-hidden="true">›</span>
+                    <span aria-current="page" data-report-breadcrumb-name>{{ report.display_name|default:"Report" }}</span>
+                </nav>
+                <div class="report-title-line">
+                    <h1 data-report-name>{{ report.display_name|default:"Power BI Report" }}</h1>
+                    <button type="button" class="viewer-button viewer-button--switch" data-switcher-open aria-haspopup="dialog" aria-expanded="false">
+                        Switch report
+                        <span aria-hidden="true">⌄</span>
+                    </button>
+                </div>
+            </div>
+            <div class="report-header-status" data-report-status aria-live="polite">
+                <span class="report-status-dot status-neutral" aria-hidden="true"></span>
+                <span><strong>Checking status</strong><small>Refresh details loading</small></span>
+            </div>
+            <div class="report-workspace-actions">
+                <button type="button" class="viewer-icon-button" data-focus-toggle aria-label="Enter Focus Mode" title="Focus Mode">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
+                </button>
+                <div class="viewer-more-wrap">
+                    <button type="button" class="viewer-icon-button" data-more-toggle aria-label="More report actions" aria-expanded="false" title="More actions"><span>•••</span></button>
+                    <div class="viewer-more-menu" data-more-menu hidden>
+                        <a href="#" data-open-powerbi hidden target="_blank" rel="noopener">Open in Power BI</a>
+                        <button type="button" data-refresh-report>Refresh Report</button>
+                        <button type="button" data-refresh-details>View Refresh Details</button>
+                        <button type="button" data-copy-link>Copy Link</button>
+                        <button type="button" data-report-help>Report Help</button>
+                        <button type="button" data-troubleshoot>Troubleshooting</button>
+                        {% if is_platform_admin %}<button type="button" data-technical-details>Technical Details</button>{% endif %}
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="report-page-navigation" data-page-navigation hidden aria-label="Report pages">
+            <div data-page-tabs></div>
+            <label><span>Page</span><select data-page-select></select></label>
+        </nav>
+
+        <section class="report-canvas-workspace" data-canvas-workspace>
+            <div class="report-canvas-toolbar">
+                <section class="report-command-bar" data-command-bar hidden aria-label="Report filters">
+                    <div class="period-control-group">
+                        <span class="viewer-control-label">Period</span>
+                        <div class="viewer-segmented" data-period-selector role="group" aria-label="Period"></div>
+                    </div>
+                    <div class="custom-date-range" data-custom-range hidden>
+                        <label><span>Start Date</span><input type="date" data-start-date></label>
+                        <span aria-hidden="true">→</span>
+                        <label><span>End Date</span><input type="date" data-end-date></label>
+                    </div>
+                    <div class="report-filter-actions">
+                        <button type="button" class="viewer-button viewer-button--primary" data-apply-filters disabled>Apply</button>
+                        <button type="button" class="viewer-button viewer-button--secondary" data-reset-filters>Reset</button>
+                    </div>
+                    <button type="button" class="viewer-button viewer-mobile-filter-button" data-filter-drawer-open>Filters <span data-filter-count>0</span></button>
+                    <div class="active-filter-row" data-active-filter-row hidden>
+                        <div class="active-filter-chips" data-active-filter-chips></div>
+                        <button type="button" data-clear-all>Clear all</button>
+                    </div>
+                    <p class="viewer-update-status" data-filter-status aria-live="polite"></p>
+                </section>
+                <span class="canvas-toolbar-divider" data-command-divider hidden aria-hidden="true"></span>
+                <div class="viewer-fit-selector" data-fit-selector role="group" aria-label="Report fit mode">
+                    <button type="button" data-fit-mode="fit_to_width">Fit to Width</button>
+                    <button type="button" data-fit-mode="fit_to_page">Fit to Page</button>
+                    <button type="button" data-fit-mode="actual_size">Actual Size</button>
+                </div>
+                <div class="canvas-toolbar-actions">
+                    <span data-canvas-state>Preparing report...</span>
+                    <button type="button" class="viewer-icon-button" data-canvas-refresh aria-label="Refresh report view" title="Refresh report view">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6v6h-6M4 18v-6h6"/><path d="M6.5 8a7 7 0 0 1 12 1.5L20 12M4 12l1.5 2.5A7 7 0 0 0 18 16"/></svg>
+                    </button>
+                    <button type="button" class="viewer-icon-button" data-fullscreen-toggle aria-label="Open report in fullscreen" title="Fullscreen">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="report-canvas-stage">
+                {% if error %}
+                    <div class="report-primary-error" role="alert"><strong>Report unavailable</strong><p>{{ error }}</p><a class="viewer-button viewer-button--secondary" href="{{ reporting_hub_url }}">Return to Reporting Hub</a></div>
+                {% elif report and report.embed_url and configured_report %}
+                    <div id="powerbi-report" class="report-embed-container" data-rls-role="{{ selected_role }}"></div>
+                    <div class="report-loading-state" data-loading-state role="status" aria-live="polite">
+                        <div class="report-loading-header"><span></span><span></span></div>
+                        <div class="report-loading-canvas"><span></span><span></span><span></span></div>
+                        <strong data-loading-message>Preparing report...</strong>
+                    </div>
+                    <div class="report-primary-error" data-runtime-error hidden role="alert">
+                        <strong>The report could not be loaded inside Mining 360.</strong>
+                        <p data-runtime-error-message></p>
+                        {% if configured_report.authentication_mode == "user_owns_data" %}<p class="viewer-authentication-note">Corporate Microsoft account required</p>{% endif %}
+                        <div><a class="viewer-button viewer-button--primary" data-connect-account hidden>Connect your Microsoft account</a><button type="button" class="viewer-button viewer-button--primary" data-retry-embed>Retry</button><a class="viewer-button viewer-button--secondary" href="{{ reporting_hub_url }}">Return to Reporting Hub</a></div>
+                    </div>
+                {% else %}
+                    <div class="report-primary-error" role="alert"><strong>Embed unavailable</strong><p>Contact a Reporting administrator to configure this report.</p></div>
+                {% endif %}
+            </div>
+        </section>
+
+        <div class="viewer-drawer-backdrop" data-drawer-backdrop hidden></div>
+        <aside class="viewer-drawer report-switcher-drawer" data-switcher-drawer aria-hidden="true" aria-labelledby="switcher-title">
+            <header><div><span>Reporting Hub</span><h2 id="switcher-title">Switch report</h2></div><button type="button" class="viewer-icon-button" data-drawer-close aria-label="Close report switcher">×</button></header>
+            <div class="switcher-search"><label for="report-switcher-search">Search reports</label><input id="report-switcher-search" type="search" placeholder="Search by name or category..." data-switcher-search></div>
+            <div class="switcher-filters" role="group" aria-label="Report groups"><button type="button" data-switcher-filter="all" aria-pressed="true">All</button><button type="button" data-switcher-filter="favorites">Favorites</button><button type="button" data-switcher-filter="recent">Recent</button></div>
+            <div class="switcher-results" data-switcher-results aria-live="polite"></div>
+        </aside>
+        <aside class="viewer-drawer viewer-info-drawer" data-info-drawer aria-hidden="true" aria-labelledby="info-title">
+            <header><div><span>Report information</span><h2 id="info-title" data-info-title>Report Help</h2></div><button type="button" class="viewer-icon-button" data-drawer-close aria-label="Close report information">×</button></header>
+            <div class="viewer-info-content" data-info-content></div>
+        </aside>
+    </main>
+    {% if report.embed_url and configured_report %}
+        <script src="{% static 'reports/vendor/powerbi-client-2.23.7.min.js' %}"></script>
+        <script src="{% static 'reports/powerbi_embed.js' %}?v=20260823-viewer-2"></script>
+        <script src="{% static 'reports/report_viewer.js' %}?v=20260823-unified-toolbar-4" defer></script>
+    {% endif %}
+</body>
+</html>
