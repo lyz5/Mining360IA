@@ -30,6 +30,7 @@ from deployment.services.precheck import DeploymentPrecheckService
 from deployment.services.releases import DeploymentReleaseSourceService
 from deployment.services.security import DeploymentNetworkSecurityService, sanitize_log_message
 from deployment.services.troubleshooting import DeploymentTroubleshootingService
+from deployment.services.system_doctor import DeploymentSystemDoctorService
 
 
 def _payload(request):
@@ -266,6 +267,31 @@ def troubleshoot_api(request, target_id):
                 "ok": False,
                 "error": "Server diagnostics could not complete.",
                 "error_code": "DEPLOYMENT_TROUBLESHOOTING_FAILED",
+                "action": sanitize_log_message(str(exc)),
+            },
+            status=502,
+        )
+
+
+@require_POST
+@deployment_permission("test_deployment_connection")
+def system_doctor_api(request, target_id):
+    target = get_object_or_404(DeploymentTarget, pk=target_id, is_active=True)
+    try:
+        data = _payload(request)
+        result = DeploymentSystemDoctorService().run(
+            target,
+            user=request.user,
+            repair=bool(data.get("repair")),
+            worker_launcher=_kick_deployment_worker,
+        )
+        return JsonResponse({"ok": True, "result": result})
+    except (ValueError, OSError, subprocess.SubprocessError) as exc:
+        return JsonResponse(
+            {
+                "ok": False,
+                "error": "System Doctor could not complete.",
+                "error_code": "SYSTEM_DOCTOR_FAILED",
                 "action": sanitize_log_message(str(exc)),
             },
             status=502,

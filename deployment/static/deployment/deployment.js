@@ -48,6 +48,8 @@
                     ${actionButton("Test connection", "data-test-target", item.id)}
                     ${actionButton("Run pre-check", "data-precheck-target", item.id)}
                     ${actionButton("Troubleshoot", "data-troubleshoot-target", item.id)}
+                    ${actionButton("System Doctor", "data-system-doctor-target", item.id)}
+                    ${actionButton("Repair safe issues", "data-system-repair-target", item.id)}
                     ${actionButton("Credential", "data-credential-target", item.id)}
                     ${!item.is_approved ? actionButton("Approve target", "data-approve-target", item.id, false) : ""}
                 </div>
@@ -94,7 +96,7 @@
         const manualActions = result.manual_actions || [];
         dialog.querySelector("[data-result-content]").innerHTML = `
             ${result.status ? `<p>${badge(result.status)}</p>` : ""}
-            <div class="deployment-check-list">${[...checks, ...validations].map((item) => `<div class="deployment-check"><div><strong>${esc(item.name || item.code)}</strong><small>${esc(item.value || item.message || "")}</small></div>${badge(item.status)}</div>`).join("")}</div>
+            <div class="deployment-check-list">${[...checks, ...validations].map((item) => `<div class="deployment-check"><div><strong>${esc(item.name || item.code)}</strong><small>${esc(item.value || item.message || "")}</small>${item.recommendation ? `<small class="deployment-check-action">Recommended: ${esc(item.recommendation)}</small>` : ""}</div>${badge(item.status)}</div>`).join("")}</div>
             ${result.message ? `<p>${esc(result.message)}</p>` : ""}
             ${actions.length ? `<section class="deployment-remediation"><h3>Automatic actions</h3>${actions.map((item) => `<p>${esc(item)}</p>`).join("")}</section>` : ""}
             ${manualActions.length ? `<section class="deployment-remediation is-manual"><h3>Administrator action required</h3>${manualActions.map((item) => `<div><strong>${esc(item.title)}</strong><p>${esc(item.detail || "")}</p>${item.command ? `<code>${esc(item.command)}</code>` : ""}</div>`).join("")}</section>` : ""}
@@ -249,6 +251,8 @@
         const test = event.target.closest("[data-test-target]");
         const precheck = event.target.closest("[data-precheck-target]");
         const troubleshoot = event.target.closest("[data-troubleshoot-target]");
+        const systemDoctor = event.target.closest("[data-system-doctor-target]");
+        const systemRepair = event.target.closest("[data-system-repair-target]");
         const approve = event.target.closest("[data-approve-target]");
         const dryRun = event.target.closest("[data-dry-run]");
         const validate = event.target.closest("[data-validate-release]");
@@ -283,17 +287,19 @@
             finally { setDeployButtonLoading(quickDeploy, false); }
             return;
         }
-        const action = test || precheck || troubleshoot || approve || dryRun || validate;
+        const action = test || precheck || troubleshoot || systemDoctor || systemRepair || approve || dryRun || validate;
         if (!action) return;
-        const pendingTitle = troubleshoot ? "Deployment Troubleshooting" : test ? "Connection Test" : precheck ? "Server Pre-check" : "Controlled Check";
-        const pendingMessage = troubleshoot ? "Diagnosing the server, deployment runtime and folder permissions..." : test ? "Testing DNS, TCP, SSH and credentials..." : "Checking server readiness...";
-        setActionButtonLoading(action, true, troubleshoot ? "Troubleshooting..." : "Checking...");
-        if (test || precheck || troubleshoot) showCheckPending(pendingTitle, pendingMessage);
+        const pendingTitle = systemRepair ? "System Doctor Repair" : systemDoctor ? "Mining360 System Doctor" : troubleshoot ? "Deployment Troubleshooting" : test ? "Connection Test" : precheck ? "Server Pre-check" : "Controlled Check";
+        const pendingMessage = systemDoctor || systemRepair ? "Checking database, migrations, integrations, runtime, release and deployment readiness..." : troubleshoot ? "Diagnosing the server, deployment runtime and folder permissions..." : test ? "Testing DNS, TCP, SSH and credentials..." : "Checking server readiness...";
+        setActionButtonLoading(action, true, systemRepair ? "Repairing..." : systemDoctor ? "Diagnosing..." : troubleshoot ? "Troubleshooting..." : "Checking...");
+        if (test || precheck || troubleshoot || systemDoctor || systemRepair) showCheckPending(pendingTitle, pendingMessage);
         status("Running controlled check...");
         try {
             if (test) { const payload = await api(`/api/deployment/targets/${test.dataset.testTarget}/test-connection/`, {method:"POST", body:"{}"}); showResult("Connection Test", payload.result); }
             if (precheck) { const payload = await api(`/api/deployment/targets/${precheck.dataset.precheckTarget}/precheck/`, {method:"POST", body:"{}"}); showResult("Server Pre-check", payload.result); }
             if (troubleshoot) { const payload = await api(`/api/deployment/targets/${troubleshoot.dataset.troubleshootTarget}/troubleshoot/`, {method:"POST", body:"{}"}); showResult("Deployment Troubleshooting", payload.result); }
+            if (systemDoctor) { const payload = await api(`/api/deployment/targets/${systemDoctor.dataset.systemDoctorTarget}/system-doctor/`, {method:"POST", body:JSON.stringify({repair:false})}); showResult("Mining360 System Doctor", payload.result); }
+            if (systemRepair) { const payload = await api(`/api/deployment/targets/${systemRepair.dataset.systemRepairTarget}/system-doctor/`, {method:"POST", body:JSON.stringify({repair:true})}); showResult("System Doctor · Safe Repair", payload.result); }
             if (approve) await api(`/api/deployment/targets/${approve.dataset.approveTarget}/approve/`, {method:"POST", body:"{}"});
             if (dryRun) { const payload = await api(`/api/deployment/plans/${dryRun.dataset.dryRun}/dry-run/`, {method:"POST", body:"{}"}); showResult("Deployment Readiness Report", payload.result); }
             if (validate) await api(`/api/deployment/releases/${validate.dataset.validateRelease}/validate/`, {method:"POST", body:"{}"});

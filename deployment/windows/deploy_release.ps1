@@ -205,6 +205,16 @@ try {
 
     $releaseState = @{commit=$Commit;job_id=$JobId;deployed_at=(Get-Date).ToUniversalTime().ToString('o')} | ConvertTo-Json -Compress
     Set-Content -LiteralPath (Join-Path $Root 'shared\current-release.json') -Value $releaseState -Encoding UTF8
+    Push-Location $app
+    try {
+        $doctorReport = Join-Path $Root ("logs\system-doctor-{0}.json" -f $JobId)
+        Invoke-Native 'System Doctor post-deployment validation' {
+            & $python manage.py system_doctor --json | Set-Content -LiteralPath $doctorReport -Encoding UTF8
+        }
+        Write-DeploymentLog "System Doctor report: $doctorReport"
+    } finally {
+        Pop-Location
+    }
     Get-ChildItem -LiteralPath $backups -Directory -Filter 'app-*' | Sort-Object LastWriteTime -Descending | Select-Object -Skip 3 | Remove-Item -Recurse -Force
     Write-DeploymentLog 'Deployment completed successfully.'
     @{status='Succeeded';commit=$Commit;backup=$backup;message='Deployment completed and health checks passed.'} | ConvertTo-Json -Compress

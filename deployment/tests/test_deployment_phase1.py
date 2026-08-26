@@ -15,6 +15,8 @@ from deployment.services.worker import DeploymentWorkerService
 from deployment.services.credentials import credential_secret
 from deployment.services.security import DeploymentNetworkSecurityService, sanitize_log_message
 from deployment.services.execution import WindowsDeploymentExecutionService
+from deployment.services.remote import DeploymentRemoteRemediationService
+from deployment.services.system_doctor import DeploymentSystemDoctorService
 from reports.models import PlatformUser
 
 
@@ -44,6 +46,13 @@ class DeploymentSecurityTests(TestCase):
             name="Unsafe", credential_type="ssh_private_key", secret_reference="file:C:/Windows/win.ini"
         )
         self.assertEqual(credential_secret(credential), "")
+
+    @patch("deployment.services.system_doctor.connection.ensure_connection", side_effect=OSError("database offline"))
+    def test_system_doctor_still_reports_when_database_is_unavailable(self, _ensure_connection):
+        result = DeploymentSystemDoctorService().run()
+
+        database = next(item for item in result["checks"] if item["code"] == "database")
+        self.assertEqual(database["status"], "Failed")
 
     def test_failed_deployment_prefers_structured_script_error_over_clixml(self):
         output = '{"status":"Failed","message":"Django validation failed with exit code 1."}'
@@ -195,6 +204,48 @@ class DeploymentViewTests(TestCase):
         self.assertEqual(response.json()["result"]["status"], "Action Required")
         troubleshoot.assert_called_once()
 
+    @patch("deployment.views.DeploymentSystemDoctorService.run")
+    def test_admin_can_run_system_doctor_in_diagnosis_and_repair_modes(self, doctor):
+        target = DeploymentTarget.objects.create(
+            name="System Doctor Target",
+            environment="Test",
+            ip_address="10.1.1.23",
+            os_family="windows",
+        )
+        doctor.return_value = {
+            "status": "Degraded",
+            "checks": [],
+            "actions_taken": [],
+            "manual_actions": [],
+        }
+
+        diagnosis = self.client.post(
+            reverse("deployment-target-system-doctor-api", args=[target.pk]),
+            data={"repair": False},
+            content_type="application/json",
+        )
+        repair = self.client.post(
+            reverse("deployment-target-system-doctor-api", args=[target.pk]),
+            data={"repair": True},
+            content_type="application/json",
+        )
+
+        self.assertEqual(diagnosis.status_code, 200)
+        self.assertEqual(repair.status_code, 200)
+        self.assertFalse(doctor.call_args_list[0].kwargs["repair"])
+        self.assertTrue(doctor.call_args_list[1].kwargs["repair"])
+
+    def test_remote_remediation_rejects_actions_outside_allowlist(self):
+        target = DeploymentTarget.objects.create(
+            name="Allowlist Target",
+            environment="Test",
+            ip_address="10.1.1.24",
+            os_family="windows",
+        )
+
+        with self.assertRaisesMessage(ValueError, "Unsupported safe remediation"):
+            DeploymentRemoteRemediationService().run(target, "run_arbitrary_command")
+
 
 class DeploymentDryRunTests(TestCase):
     def setUp(self):
@@ -329,9 +380,11 @@ class DeploymentFrontendContractTests(SimpleTestCase):
         self.assertIn("showDeploymentError(error.message)", javascript)
         self.assertIn("showCheckPending(pendingTitle, pendingMessage)", javascript)
         self.assertIn("Troubleshooting...", javascript)
+        self.assertIn("System Doctor", javascript)
+        self.assertIn("Repair safe issues", javascript)
         self.assertIn("deployment-spinner", stylesheet)
         self.assertNotIn("window.confirm", javascript)
-        self.assertIn("deployment.js' %}?v=20260822-troubleshoot-2", template)
+        self.assertIn("deployment.js' %}?v=20260826-system-doctor-1", template)
 
     def test_windows_release_health_check_preserves_public_https_scheme(self):
         script = (
@@ -344,6 +397,7 @@ class DeploymentFrontendContractTests(SimpleTestCase):
         self.assertIn("Stop-Process -Id $listener.OwningProcess", script)
         self.assertIn("Get-CimInstance Win32_Process", script)
         self.assertIn("taskkill.exe /PID $process.ProcessId /T /F", script)
+        self.assertIn("system_doctor --json", script)
 
     def test_windows_runtime_trusts_only_required_proxy_headers(self):
         script = (

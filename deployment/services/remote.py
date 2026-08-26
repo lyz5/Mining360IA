@@ -4,6 +4,7 @@ import socket
 import time
 
 from deployment.os_adapters import adapter_for
+from deployment.models import DeploymentAuditLog
 from deployment.services.connection import _fingerprint, _load_private_key
 from deployment.services.credentials import credential_secret
 from deployment.services.security import DeploymentNetworkSecurityService, sanitize_log_message
@@ -104,3 +105,24 @@ class DeploymentRemoteReadService:
             }
         finally:
             channel.close()
+
+
+class DeploymentRemoteRemediationService(DeploymentRemoteReadService):
+    """Runs only explicitly allowlisted, reversible target remediations."""
+
+    def run(self, target, action_code, *, user=None, timeout=30):
+        commands = getattr(adapter_for(target.os_family), "remediation_commands", lambda: {})()
+        if action_code not in commands:
+            raise ValueError(f"Unsupported safe remediation: {action_code}")
+        result = self._run_one(target, action_code, commands[action_code], timeout)
+        DeploymentAuditLog.objects.create(
+            user=user,
+            target=target,
+            action="SYSTEM_DOCTOR_REMEDIATION",
+            details_json={
+                "action_code": action_code,
+                "success": result["success"],
+                "exit_code": result["exit_code"],
+            },
+        )
+        return result

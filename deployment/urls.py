@@ -13,6 +13,7 @@ urlpatterns = [
     path("api/deployment/targets/<int:target_id>/test-connection/", views.test_connection_api, name="deployment-target-test-api"),
     path("api/deployment/targets/<int:target_id>/precheck/", views.precheck_api, name="deployment-target-precheck-api"),
     path("api/deployment/targets/<int:target_id>/troubleshoot/", views.troubleshoot_api, name="deployment-target-troubleshoot-api"),
+    path("api/deployment/targets/<int:target_id>/system-doctor/", views.system_doctor_api, name="deployment-target-system-doctor-api"),
     path("api/deployment/targets/<int:target_id>/credential/", views.credential_api, name="deployment-target-credential-api"),
     path("api/deployment/targets/<int:target_id>/trust-host-key/", views.trust_host_key_api, name="deployment-target-host-key-api"),
     path("api/deployment/plans/", views.plans_api, name="deployment-plans-api"),
