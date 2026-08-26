@@ -75,6 +75,15 @@ class ReportingHubTests(TestCase):
         self.assertEqual(hub["reports"][0]["status"]["code"], "healthy")
         self.assertEqual(hub["reports"][0]["visual_identity"]["source"], "report_illustration")
 
+    def test_catalog_preference_initialization_is_idempotent(self):
+        ReportingHubService(self.user, [self.report]).build()
+        ReportingHubService(self.user, [self.report]).build()
+
+        self.assertEqual(
+            ReportingReportPreference.objects.filter(report_id=self.report_id).count(),
+            1,
+        )
+
     @patch("reports.views.list_workspace_reports_with_refresh")
     def test_hub_api_filters_search_without_exposing_other_results(self, list_reports):
         other = PowerBIReport(

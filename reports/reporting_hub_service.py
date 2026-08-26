@@ -52,30 +52,33 @@ def ensure_catalog_preferences(reports, *, user=None) -> dict[str, ReportingRepo
         item.report_id: item
         for item in ReportingReportPreference.objects.filter(report_id__in=report_ids)
     }
-    missing = []
     for position, report in enumerate(reports):
         report_id = str(report.id)
         if report_id in existing:
             continue
         metadata = _default_metadata(report.display_name or report.name)
-        missing.append(ReportingReportPreference(
+        defaults = {
+            "report_name": report.name,
+            "display_name": report.display_name or report.name,
+            "description": metadata["description"],
+            "short_description": metadata["description"],
+            "category": metadata["category"],
+            "tags_json": metadata["tags"],
+            "illustration_code": metadata["illustration"],
+            "icon_code": metadata["icon"],
+            "accent_code": metadata["accent"],
+            "card_badge": metadata["badge"],
+            "visual_identity_status": "needs_review",
+            "display_order": position,
+        }
+        if getattr(user, "is_authenticated", False):
+            defaults["updated_by"] = user
+        ReportingReportPreference.objects.get_or_create(
             report_id=report_id,
-            report_name=report.name,
-            display_name=report.display_name or report.name,
-            description=metadata["description"],
-            short_description=metadata["description"],
-            category=metadata["category"],
-            tags_json=metadata["tags"],
-            illustration_code=metadata["illustration"],
-            icon_code=metadata["icon"],
-            accent_code=metadata["accent"],
-            card_badge=metadata["badge"],
-            visual_identity_status="needs_review",
-            display_order=position,
-            updated_by=user,
-        ))
-    if missing:
-        ReportingReportPreference.objects.bulk_create(missing, ignore_conflicts=True)
+            defaults=defaults,
+        )
+
+    if len(existing) != len(report_ids):
         existing = {
             item.report_id: item
             for item in ReportingReportPreference.objects.filter(report_id__in=report_ids)
