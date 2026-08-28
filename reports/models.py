@@ -4494,6 +4494,10 @@ class BusinessPerformanceConfig(models.Model):
     default_currency = models.CharField(max_length=16, default="EUR")
     default_date_range = models.CharField(max_length=80, default="Current Year")
     default_lob = models.CharField(max_length=120, blank=True)
+    parts_lob_values = models.CharField(max_length=500, default="PARTS", blank=True)
+    machine_lob_values = models.CharField(max_length=500, default="PRIME", blank=True)
+    services_lob_values = models.CharField(max_length=500, default="SERVICE", blank=True)
+    rental_lob_values = models.CharField(max_length=500, default="RENTAL", blank=True)
     default_division = models.CharField(max_length=120, blank=True)
     cache_duration_seconds = models.PositiveIntegerField(default=300)
     query_timeout_seconds = models.PositiveIntegerField(default=300)
@@ -4525,6 +4529,8 @@ class BusinessPerformanceMapping(models.Model):
         ("customer", "Customer"),
         ("parts", "Parts Sales"),
         ("prime", "Machine Sales"),
+        ("services", "Services Sales"),
+        ("rental", "Rental Sales"),
         ("fleet", "Fleet"),
     ]
 

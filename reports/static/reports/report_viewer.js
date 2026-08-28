@@ -16,11 +16,15 @@
         fitMode: "fit_to_page",
         switcherFilter: "all",
         switcherQuery: "",
+        switcher: [],
         activeDrawer: null,
         previousFocus: null,
         contextFilters: [],
         contextChips: [],
         eventsBound: false,
+        switcherLoaded: false,
+        switcherLoading: null,
+        timings: { navigationStart: performance.now() },
     };
 
     function escapeHtml(value) {
@@ -272,12 +276,30 @@
 
     function renderSwitcher() {
         const query = state.switcherQuery.toLowerCase();
-        const items = (state.config.switcher || []).filter((item) => {
+        const items = state.switcher.filter((item) => {
             if (state.switcherFilter === "favorites" && !item.favorite) return false;
             if (state.switcherFilter === "recent" && !item.recent) return false;
             return !query || `${item.display_name} ${item.category_label}`.toLowerCase().includes(query);
         });
         $("[data-switcher-results]").innerHTML = items.map((item) => `<button type="button" class="switcher-report" data-switch-report="${escapeHtml(item.url)}"><strong>${escapeHtml(item.display_name)}</strong><small>${escapeHtml(item.category_label)} · ${escapeHtml(item.status.label)}</small>${item.favorite ? "<em aria-label=\"Favorite\">★</em>" : ""}</button>`).join("") || "<p>No report matches this view.</p>";
+    }
+
+    async function loadSwitcher() {
+        if (state.switcherLoaded) return;
+        if (state.switcherLoading) return state.switcherLoading;
+        const results = $("[data-switcher-results]");
+        if (results) results.innerHTML = "<p>Loading reports...</p>";
+        state.switcherLoading = request(root.dataset.viewerSwitcherUrl)
+            .then((payload) => {
+                state.switcher = payload.switcher || [];
+                state.switcherLoaded = true;
+                renderSwitcher();
+            })
+            .catch((error) => {
+                if (results) results.innerHTML = `<p>${escapeHtml(error.message || "Reports could not be loaded.")}</p>`;
+            })
+            .finally(() => { state.switcherLoading = null; });
+        return state.switcherLoading;
     }
 
     function openDrawer(drawer) {
@@ -327,7 +349,11 @@
             const page = event.target.closest("[data-page-name]"); if (page) return changePage(page.dataset.pageName);
             if (event.target.closest("[data-apply-filters]")) return applyFilters();
             if (event.target.closest("[data-reset-filters], [data-clear-all]")) return resetFilters();
-            if (event.target.closest("[data-switcher-open]")) { renderSwitcher(); return openDrawer($("[data-switcher-drawer]")); }
+            if (event.target.closest("[data-switcher-open]")) {
+                openDrawer($("[data-switcher-drawer]"));
+                loadSwitcher();
+                return;
+            }
             const report = event.target.closest("[data-switch-report]");
             if (report) { state.embed.reset(); window.location.assign(report.dataset.switchReport); return; }
             if (event.target.closest("[data-drawer-close], [data-drawer-backdrop]")) return closeDrawers();
@@ -408,15 +434,20 @@
                 if (event.type === "token_refresh_failed") setCanvasState("Your report session could not be renewed.", true);
             },
         });
+        state.embed.bootstrap(reportId, root.dataset.embedUrl);
         try {
             const configUrl = new URL(root.dataset.viewerConfigUrl, window.location.origin);
             new URL(window.location.href).searchParams.forEach((value, key) => configUrl.searchParams.append(key, value));
             let embedError = null;
             const embedPromise = (async () => {
                 setLoading("Connecting to Power BI...");
-                try { await state.embed.embed(reportId); } catch (error) { embedError = error; }
+                try {
+                    await state.embed.embed(reportId);
+                    state.timings.powerBILoaded = performance.now();
+                } catch (error) { embedError = error; }
             })();
             const payload = await request(configUrl);
+            state.timings.viewerConfigReady = performance.now();
             state.config = payload;
             state.contextFilters = [...(payload.initial_context.filters || [])];
             state.contextChips = [...(payload.initial_context.chips || [])];
@@ -440,15 +471,25 @@
             }
             await embedPromise;
             if (embedError) throw embedError;
-            const actualPages = await state.embed.getPages(); renderPages(actualPages);
+            const needsPages = payload.viewer.show_page_navigation || payload.initial_context.page || payload.viewer.default_page;
+            const actualPages = needsPages ? await state.embed.getPages() : [];
+            if (actualPages.length) renderPages(actualPages);
             const requestedPage = payload.initial_context.page || payload.viewer.default_page;
             if (requestedPage) await changePage(requestedPage);
-            state.fitMode = localStorage.getItem(`mining360.viewer.fit.${reportId}`) || payload.viewer.default_fit_mode;
-            await setFitMode(state.fitMode);
+            const configuredFitMode = payload.viewer.default_fit_mode;
+            state.fitMode = localStorage.getItem(`mining360.viewer.fit.${reportId}`) || configuredFitMode;
+            if (state.fitMode !== configuredFitMode) await setFitMode(state.fitMode);
+            else $$('[data-fit-mode]').forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.fitMode === state.fitMode)));
             state.applied = null; updateApplyState();
             if (payload.viewer.show_filter_bar && (payload.viewer.auto_apply_presets || payload.initial_context.filters.length)) await applyFilters({ announce: false });
             else { state.applied = draft(); updateApplyState(); }
             $("[data-loading-state]").hidden = true; setCanvasState("Ready");
+            state.timings.ready = performance.now();
+            window.dispatchEvent(new CustomEvent("mining360:report-ready", { detail: {
+                viewerConfigMs: Math.round(state.timings.viewerConfigReady - state.timings.navigationStart),
+                powerBILoadedMs: Math.round(state.timings.powerBILoaded - state.timings.navigationStart),
+                readyMs: Math.round(state.timings.ready - state.timings.navigationStart),
+            } }));
         } catch (error) { showError(error); }
     }
 

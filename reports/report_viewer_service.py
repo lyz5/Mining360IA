@@ -95,7 +95,7 @@ class ReportViewerConfigurationService:
             "chips": chips,
         }
 
-    def _switcher(self):
+    def switcher(self):
         configured = {
             item.report_id: item
             for item in PowerBIReport.objects.filter(is_active=True, launch_mode="generic_powerbi")
@@ -119,7 +119,7 @@ class ReportViewerConfigurationService:
                 continue
             items.append({
                 "id": report_id,
-                "display_name": preference.display_name or getattr(runtime, "display_name", ""),
+                "display_name": preference.display_name or report_config.display_name,
                 "category": preference.category,
                 "category_label": CATEGORY_LABELS.get(preference.category, "Other"),
                 "status": {"code": "neutral", "label": "Available", "detail": "Open in Mining 360"},
@@ -130,7 +130,7 @@ class ReportViewerConfigurationService:
             })
         return sorted(items, key=lambda item: (item["display_name"].casefold(), item["id"]))
 
-    def build(self):
+    def build(self, *, include_switcher=True):
         preference = self._preference()
         runtime = self._runtime()
         periods = self._periods()
@@ -186,7 +186,7 @@ class ReportViewerConfigurationService:
             } for item in self.configured.context_parameters.filter(active=True)],
             "initial_context": self._initial_context(periods, pages),
             "refresh_status": status,
-            "switcher": self._switcher(),
+            "switcher": self.switcher() if include_switcher else [],
             "permissions": {
                 "allow_focus": self.configured.viewer_focus_mode_enabled,
                 "allow_fullscreen": self.configured.viewer_fullscreen_enabled,

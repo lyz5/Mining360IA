@@ -1,9 +1,13 @@
 from __future__ import annotations
 
-import base64
 import json
 import re
+import subprocess
+import tempfile
+import zipfile
 from pathlib import Path
+
+from django.conf import settings
 
 from deployment.services.releases import COMMIT_PATTERN, DeploymentReleaseSourceService
 from deployment.services.remote import DeploymentRemoteReadService
@@ -15,6 +19,10 @@ JOB_PATTERN = re.compile(r"^[0-9a-f-]{36}$")
 
 class WindowsDeploymentExecutionService:
     remote_script = r"C:\Mining360\control\deploy_release.ps1"
+    remote_media_archive_template = r"C:\Mining360\control\report-media-{job_id}.zip"
+    allowed_media_extensions = {".jpg", ".jpeg", ".png", ".webp"}
+    max_media_file_bytes = 10 * 1024 * 1024
+    max_media_archive_source_bytes = 250 * 1024 * 1024
 
     def execute(self, job) -> dict:
         plan = job.deployment_plan
@@ -35,8 +43,9 @@ class WindowsDeploymentExecutionService:
 
         remote = DeploymentRemoteReadService()
         transport = remote._connect(target, timeout=30)
+        media_archive = None
         try:
-            prepare = self._encoded_command(
+            prepare = self._powershell_command(
                 "New-Item -ItemType Directory -Path 'C:\\Mining360\\control' -Force | Out-Null"
             )
             prepared = remote._execute(transport, "prepare_control", prepare, 30)
@@ -46,9 +55,15 @@ class WindowsDeploymentExecutionService:
             try:
                 with local_script.open("rb") as source_file:
                     sftp.putfo(source_file, self.remote_script)
+                media_archive, _media_summary = self._build_report_media_archive()
+                if media_archive is not None:
+                    remote_media_archive = self.remote_media_archive_template.format(job_id=job_id)
+                    sftp.putfo(media_archive, remote_media_archive)
             finally:
+                if media_archive is not None:
+                    media_archive.close()
                 sftp.close()
-            command = self._encoded_command(
+            command = self._powershell_command(
                 "& 'C:\\Mining360\\control\\deploy_release.ps1' "
                 f"-Commit '{commit}' -RepositoryUrl '{source['repository']}' -JobId '{job_id}'"
             )
@@ -69,10 +84,53 @@ class WindowsDeploymentExecutionService:
             raise RuntimeError(payload.get("message") or "The deployment did not complete successfully.")
         return payload
 
+    @classmethod
+    def _build_report_media_archive(cls):
+        media_root = (Path(settings.MEDIA_ROOT) / "report_visuals").resolve()
+        if not media_root.is_dir():
+            return None, {"files": 0, "bytes": 0}
+
+        candidates = []
+        total_bytes = 0
+        for path in sorted(media_root.rglob("*")):
+            if not path.is_file() or path.suffix.casefold() not in cls.allowed_media_extensions:
+                continue
+            resolved = path.resolve()
+            try:
+                relative = resolved.relative_to(media_root)
+            except ValueError as exc:
+                raise RuntimeError("A report media path escapes the configured media directory.") from exc
+            size = resolved.stat().st_size
+            if size > cls.max_media_file_bytes:
+                raise RuntimeError(f"Report media file is too large for deployment: {relative.as_posix()}")
+            total_bytes += size
+            if total_bytes > cls.max_media_archive_source_bytes:
+                raise RuntimeError("Report media exceeds the 250 MB deployment safety limit.")
+            candidates.append((resolved, relative))
+
+        if not candidates:
+            return None, {"files": 0, "bytes": 0}
+
+        archive = tempfile.SpooledTemporaryFile(max_size=32 * 1024 * 1024, mode="w+b")
+        with zipfile.ZipFile(archive, mode="w", compression=zipfile.ZIP_DEFLATED) as bundle:
+            for source, relative in candidates:
+                bundle.write(source, arcname=(Path("report_visuals") / relative).as_posix())
+        archive.seek(0)
+        return archive, {"files": len(candidates), "bytes": total_bytes}
+
     @staticmethod
-    def _encoded_command(script: str) -> str:
-        encoded = base64.b64encode(script.encode("utf-16-le")).decode("ascii")
-        return f"powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -EncodedCommand {encoded}"
+    def _powershell_command(script: str) -> str:
+        """Build a transparent command line; security tools can inspect the script text."""
+        return subprocess.list2cmdline([
+            "powershell.exe",
+            "-NoLogo",
+            "-NoProfile",
+            "-NonInteractive",
+            "-ExecutionPolicy",
+            "RemoteSigned",
+            "-Command",
+            script,
+        ])
 
     @staticmethod
     def _last_json_object(output: str, *, required=True) -> dict:

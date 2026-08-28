@@ -118,7 +118,21 @@ class PremiumReportViewerTests(TestCase):
         self.assertEqual(data["initial_context"]["filters"][0]["values"], ["777"])
         self.assertEqual(data["initial_context"]["page"], "")
         self.assertEqual(data["refresh_status"]["code"], "neutral")
+        self.assertEqual(data["switcher"], [])
+        self.assertIn("viewer_config;dur=", response.headers["Server-Timing"])
         powerbi_reports.assert_not_called()
+
+    def test_report_switcher_is_loaded_from_dedicated_endpoint(self):
+        self.client.force_login(self.user)
+        response = self.client.get(
+            reverse("report-viewer-switcher-api", args=[self.report_id]),
+        )
+
+        self.assertEqual(response.status_code, 200)
+        data = response.json()
+        self.assertEqual(len(data["switcher"]), 1)
+        self.assertEqual(data["switcher"][0]["display_name"], "Fleet Performance Report")
+        self.assertIn("viewer_switcher;dur=", response.headers["Server-Timing"])
 
     @patch("reports.views.list_workspace_reports")
     def test_generic_report_uses_premium_workspace_shell(self, reports):
@@ -130,6 +144,8 @@ class PremiumReportViewerTests(TestCase):
         self.assertTemplateUsed(response, "reports/detail_premium.html")
         self.assertContains(response, "data-report-viewer")
         self.assertContains(response, "data-switcher-open")
+        self.assertContains(response, "data-viewer-switcher-url")
+        self.assertContains(response, "data-embed-url")
         self.assertContains(response, "data-canvas-workspace")
         content = response.content.decode("utf-8")
         toolbar_start = content.index('class="report-canvas-toolbar"')
@@ -179,4 +195,9 @@ class PremiumReportViewerSourceTests(SimpleTestCase):
         self.assertNotIn("height: 700px", css)
         self.assertIn("state.embed.applyFilters", script)
         self.assertIn("state.embed.setFitMode", script)
+        self.assertIn("state.embed.bootstrap", script)
+        self.assertIn("loadSwitcher()", script)
         self.assertNotIn("window.location.reload", script)
+
+        embed_script = (settings.BASE_DIR / "reports" / "static" / "reports" / "powerbi_embed.js").read_text(encoding="utf-8")
+        self.assertIn("window.powerbi.bootstrap", embed_script)

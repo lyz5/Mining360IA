@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import time
 
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
@@ -313,6 +314,7 @@ def interaction_embed_config_api(request, report_id):
     if configured.validation_status != "Validated" and not is_platform_admin(request.user):
         return JsonResponse({"ok": False, "error": "This report mapping is not validated."}, status=403)
     try:
+        started = time.perf_counter()
         role = (
             request.GET.get("role")
             if is_platform_admin(request.user)
@@ -323,10 +325,13 @@ def interaction_embed_config_api(request, report_id):
             configured,
             role=role,
         )
-        return JsonResponse({
+        response = JsonResponse({
             "ok": True,
             "config": config,
         })
+        response["Server-Timing"] = f'embed_config;dur={(time.perf_counter() - started) * 1000:.1f}'
+        response["Cache-Control"] = "private, no-store"
+        return response
     except InteractiveAuthenticationRequired:
         return JsonResponse({
             "ok": False,

@@ -29,6 +29,8 @@
         <a href="{% url 'business-performance-page' 'customers' %}" class="{% if page_code == 'customers' or customer %}active{% endif %}">Customers</a>
         <a href="{% url 'business-performance-page' 'parts-sales' %}" class="{% if page_code == 'parts-sales' %}active{% endif %}">Parts Sales</a>
         <a href="{% url 'business-performance-page' 'machine-sales' %}" class="{% if page_code == 'machine-sales' %}active{% endif %}">Machine Sales</a>
+        <a href="{% url 'business-performance-page' 'services-sales' %}" class="{% if page_code == 'services-sales' %}active{% endif %}">Services Sales</a>
+        <a href="{% url 'business-performance-page' 'rental-sales' %}" class="{% if page_code == 'rental-sales' %}active{% endif %}">Rental Sales</a>
     </nav>
 
     <section class="bp-filter-bar">
@@ -62,6 +64,8 @@
             <a class="button secondary" href="{% url 'business-performance-page' 'customers' %}">Back to Customers</a>
             <a class="button secondary" href="{% url 'business-performance-page' 'parts-sales' %}?customer={{ customer|urlencode }}">View Parts Sales</a>
             <a class="button secondary" href="{% url 'business-performance-page' 'machine-sales' %}?customer={{ customer|urlencode }}">View Machine Sales</a>
+            <a class="button secondary" href="{% url 'business-performance-page' 'services-sales' %}?customer={{ customer|urlencode }}">View Services Sales</a>
+            <a class="button secondary" href="{% url 'business-performance-page' 'rental-sales' %}?customer={{ customer|urlencode }}">View Rental Sales</a>
         </section>
         {% endif %}
 

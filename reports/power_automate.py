@@ -14,6 +14,19 @@ class PowerAutomateTransientError(RuntimeError):
     """The flow or one of its upstream services is temporarily unavailable."""
 
 
+def _diagnostic_reference(response) -> str:
+    if response is None:
+        return ""
+    for header in (
+        "x-ms-request-id", "x-ms-correlation-request-id", "request-id",
+        "client-request-id", "x-azure-ref",
+    ):
+        value = str(response.headers.get(header) or "").strip()
+        if value:
+            return f", reference {value}"
+    return ""
+
+
 def get_flow_url() -> str:
     try:
         from .system_configuration_service import integration_value
@@ -52,7 +65,8 @@ def execute_dax_via_flow(payload: dict) -> dict:
                 break
             last_error = f"HTTP {response.status_code}: {response.text}"
         except requests.RequestException as exc:
-            last_error = str(exc)
+            # Request exception text may contain the signed Flow URL. Keep diagnostics secret-safe.
+            last_error = exc.__class__.__name__
             response = None
         if attempt < retry_count:
             time.sleep(min(2 ** attempt, 4))
@@ -64,8 +78,8 @@ def execute_dax_via_flow(payload: dict) -> dict:
     if response.status_code < 200 or response.status_code >= 300:
         if response.status_code in {429, 502, 503, 504}:
             raise PowerAutomateTransientError(
-                "Power Automate did not return a result after controlled retries. "
-                "Please retry the question in a moment."
+                f"Power Automate returned HTTP {response.status_code} after controlled retries"
+                f"{_diagnostic_reference(response)}. Please retry the question in a moment."
             )
         raise RuntimeError(
             f"Power Automate DAX flow failed ({response.status_code}): {response.text}"

@@ -11,6 +11,8 @@ $releases = [IO.Path]::GetFullPath((Join-Path $Root 'releases'))
 $backups = [IO.Path]::GetFullPath((Join-Path $Root 'backups'))
 $shared = [IO.Path]::GetFullPath((Join-Path $Root 'shared'))
 $sharedMedia = [IO.Path]::GetFullPath((Join-Path $shared 'media'))
+$mediaArchive = [IO.Path]::GetFullPath((Join-Path (Join-Path $Root 'control') ("report-media-{0}.zip" -f $JobId)))
+$mediaImport = [IO.Path]::GetFullPath((Join-Path (Join-Path $Root 'control') ("report-media-{0}" -f $JobId)))
 $repository = [IO.Path]::GetFullPath((Join-Path $Root 'repository\Mining360IA.git'))
 $stage = [IO.Path]::GetFullPath((Join-Path $releases $Commit))
 $failedRelease = [IO.Path]::GetFullPath((Join-Path $releases ("failed-$JobId")))
@@ -21,7 +23,7 @@ $runtimeTask = 'Mining360TestRuntime'
 $backup = $null
 $runtimeStopped = $false
 
-foreach ($path in @($app, $releases, $backups, $shared, $sharedMedia, $repository, $stage)) {
+foreach ($path in @($app, $releases, $backups, $shared, $sharedMedia, $repository, $stage, $mediaArchive, $mediaImport)) {
     if (-not $path.StartsWith(([IO.Path]::GetFullPath($Root) + '\'), [StringComparison]::OrdinalIgnoreCase)) {
         throw "Unsafe deployment path: $path"
     }
@@ -171,6 +173,21 @@ try {
             Copy-Item -Destination $sharedMedia -Recurse -Force
         Write-DeploymentLog 'Migrated legacy application media to shared storage.'
     }
+    if (Test-Path $mediaArchive) {
+        Remove-Item -LiteralPath $mediaImport -Recurse -Force -ErrorAction SilentlyContinue
+        Expand-Archive -LiteralPath $mediaArchive -DestinationPath $mediaImport -Force
+        $reportVisualSource = Join-Path $mediaImport 'report_visuals'
+        if (Test-Path $reportVisualSource) {
+            $reportVisualDestination = Join-Path $sharedMedia 'report_visuals'
+            New-Item -ItemType Directory -Path $reportVisualDestination -Force | Out-Null
+            Get-ChildItem -LiteralPath $reportVisualSource -Force |
+                Copy-Item -Destination $reportVisualDestination -Recurse -Force
+            $mediaCount = @(Get-ChildItem -LiteralPath $reportVisualSource -File -Recurse).Count
+            Write-DeploymentLog "Synchronized $mediaCount report visual media file(s) to shared storage."
+        }
+        Remove-Item -LiteralPath $mediaImport -Recurse -Force -ErrorAction SilentlyContinue
+        Remove-Item -LiteralPath $mediaArchive -Force -ErrorAction SilentlyContinue
+    }
     if (-not (Test-Path (Join-Path $stage 'requirements.txt'))) {
         throw 'The release does not contain requirements.txt. Commit the complete deployment baseline first.'
     }
@@ -222,6 +239,8 @@ try {
 } catch {
     $message = $_.Exception.Message
     Write-DeploymentLog "FAILED $message"
+    Remove-Item -LiteralPath $mediaImport -Recurse -Force -ErrorAction SilentlyContinue
+    Remove-Item -LiteralPath $mediaArchive -Force -ErrorAction SilentlyContinue
     try {
         if ($backup -and (Test-Path $backup)) {
             Stop-Mining360Runtime

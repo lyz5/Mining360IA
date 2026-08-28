@@ -241,6 +241,7 @@ urlpatterns = [
     path("resources/files/<str:resource_id>/", views.resource_file, name="resource-file"),
     path("resources/<str:resource_id>/", views.resource_detail, name="resource-detail"),
     path("api/reporting/reports/<uuid:report_id>/viewer-configuration/", report_viewer_views.viewer_configuration_api, name="report-viewer-configuration-api"),
+    path("api/reporting/reports/<uuid:report_id>/viewer-switcher/", report_viewer_views.viewer_switcher_api, name="report-viewer-switcher-api"),
     path("reporting/reports/<uuid:report_id>/", views.report_detail, name="report-detail"),
     path("reports/<uuid:report_id>/", views.report_detail, name="report-detail"),
 ]

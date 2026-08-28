@@ -190,11 +190,20 @@ class BusinessPerformanceTests(TestCase):
         required = {
             "active_fleet": ("", "Fleet", "measure"),
             "parts_revenue": ("", "CA Parts", "measure"),
+            "global_revenue_ytd": ("", "YTD Parts Sales Dyn", "measure"),
+            "global_revenue_eur": ("", "CA Facture EU", "measure"),
+            "global_revenue_usd": ("", "CA Facture US", "measure"),
+            "global_revenue_cfa": ("", "CA Facture XO", "measure"),
             "prime_revenue": ("", "CA Prime", "measure"),
+            "service_revenue": ("", "CA Services", "measure"),
+            "service_order_count": ("", "Service Orders", "measure"),
+            "rental_revenue": ("", "CA Rental", "measure"),
+            "rental_order_count": ("", "Rental Orders", "measure"),
             "total_revenue": ("", "Total CA", "measure"),
             "parts_revenue_per_fleet": ("", "Parts/Fleet", "measure"),
             "customer": ("Customer", "Customer Name", "column"),
             "year": ("Date", "Year", "column"),
+            "lob": ("GlobalCA", "LOB", "column"),
         }
         for order, (logical_name, values) in enumerate(required.items()):
             table, object_name, object_type = values
@@ -225,10 +234,57 @@ class BusinessPerformanceTests(TestCase):
         self.assertIn('Mota-Engil Côte d’Ivoire', dax)
         self.assertNotIn("EVALUATE EVALUATE", dax)
 
+    def test_global_ytd_uses_official_semantic_measure(self):
+        service = BusinessPerformanceService(self.user)
+        dax = service._summarize([], ["global_revenue_ytd"], {"year": ["2026"]})
+        self.assertIn("[YTD Parts Sales Dyn]", dax)
+        self.assertNotIn("TOTALYTD", dax)
+
+    def test_parts_domain_uses_validated_globalca_lob_filter(self):
+        service = BusinessPerformanceService(self.user)
+        filters = service._domain_filters("parts", {"year": ["2026"]})
+        dax = service._summarize([], ["global_revenue_ytd"], filters)
+        self.assertIn("TREATAS({\"PARTS\"}, 'GlobalCA'[LOB])", dax)
+
+    def test_machine_domain_uses_validated_prime_lob(self):
+        service = BusinessPerformanceService(self.user)
+        self.assertEqual(service._domain_filters("prime", {})["lob"], ["PRIME"])
+
+    def test_services_domain_uses_validated_service_lob(self):
+        service = BusinessPerformanceService(self.user)
+        self.assertEqual(service._domain_filters("services", {})["lob"], ["SERVICE"])
+
+    def test_rental_domain_uses_validated_rental_lob(self):
+        service = BusinessPerformanceService(self.user)
+        self.assertEqual(service._domain_filters("rental", {})["lob"], ["RENTAL"])
+
+    def test_default_currency_uses_official_euro_invoice_measure(self):
+        service = BusinessPerformanceService(self.user)
+        self.assertEqual(service.revenue_metric(), "global_revenue_eur")
+        self.assertEqual(service.object_ref(service.revenue_metric()), "[CA Facture EU]")
+
+    def test_supported_invoice_currency_measures(self):
+        config = BusinessPerformanceConfig.objects.get(name="Business Performance")
+        expected = {"USD": "global_revenue_usd", "XOF": "global_revenue_cfa"}
+        for currency, metric in expected.items():
+            config.default_currency = currency
+            config.save(update_fields=["default_currency"])
+            self.assertEqual(BusinessPerformanceService(self.user).revenue_metric(), metric)
+
     def test_missing_mapping_is_explicit(self):
         BusinessPerformanceMapping.objects.filter(logical_name="customer").update(table_name="", object_name="")
         with self.assertRaises(MappingNotConfigured):
             BusinessPerformanceService(self.user).object_ref("customer")
+
+    def test_services_sales_uses_configured_measures(self):
+        service = BusinessPerformanceService(self.user)
+        dax = service._summarize(
+            ["customer"], ["service_revenue", "service_order_count"],
+            {"year": ["2026"]}, 50, "service_revenue",
+        )
+        self.assertIn("[CA Services]", dax)
+        self.assertIn("[Service Orders]", dax)
+        self.assertIn("'Date'[Year]", dax)
 
     def test_admin_can_update_configuration(self):
         mapping = BusinessPerformanceMapping.objects.get(logical_name="customer")

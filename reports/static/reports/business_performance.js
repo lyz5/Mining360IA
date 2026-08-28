@@ -208,7 +208,15 @@
     root.querySelector("[data-next-page]")?.addEventListener("click", () => { state.page++; render(state.payload || {}); });
     root.querySelectorAll("[data-export]").forEach(button => button.addEventListener("click", () => location.href = exportUrl(button.dataset.export, "xlsx")));
     root.querySelectorAll("[data-export-current]").forEach(button => button.addEventListener("click", () => {
-        const category = page === "parts-sales" ? "parts" : page === "machine-sales" ? "prime" : "customers";
+        const category = page === "parts-sales"
+            ? "parts"
+            : page === "machine-sales"
+                ? "prime"
+                : page === "services-sales"
+                    ? "services"
+                    : page === "rental-sales"
+                        ? "rental"
+                        : "customers";
         location.href = exportUrl(category, button.dataset.exportCurrent);
     }));
     if (customer) { state.filters.customer = [customer]; readFilters(); }

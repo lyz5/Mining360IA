@@ -7,6 +7,8 @@
     <title>{% if report %}{{ report.display_name }}{% else %}Report{% endif %} | Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
     <link rel="stylesheet" href="{% static 'reports/report_viewer.css' %}?v=20260823-unified-toolbar-4">
+    <link rel="preconnect" href="https://app.powerbi.com" crossorigin>
+    <link rel="dns-prefetch" href="//app.powerbi.com">
 </head>
 <body class="report-viewer-body">
     {% include "reports/includes/app_nav.html" %}
@@ -14,8 +16,10 @@
         class="app-shell report-viewer-shell"
         data-report-viewer
         data-report-id="{{ report.id|default:report_id }}"
+        data-embed-url="{{ report.embed_url }}"
         data-rls-role="{{ selected_role }}"
         data-viewer-config-url="{{ viewer_configuration_url }}"
+        data-viewer-switcher-url="{{ viewer_switcher_url }}"
         data-embed-config-url="{{ embed_config_url }}"
         data-embed-config-template="{{ embed_config_url_template }}"
         data-refresh-url="{{ refresh_url }}"
@@ -139,8 +143,8 @@
     </main>
     {% if report.embed_url and configured_report %}
         <script src="{% static 'reports/vendor/powerbi-client-2.23.7.min.js' %}"></script>
-        <script src="{% static 'reports/powerbi_embed.js' %}?v=20260823-viewer-2"></script>
-        <script src="{% static 'reports/report_viewer.js' %}?v=20260823-unified-toolbar-4" defer></script>
+        <script src="{% static 'reports/powerbi_embed.js' %}?v=20260827-fast-embed-1"></script>
+        <script src="{% static 'reports/report_viewer.js' %}?v=20260827-fast-embed-1" defer></script>
     {% endif %}
 </body>
 </html>

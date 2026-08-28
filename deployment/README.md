@@ -27,6 +27,19 @@ System Doctor checks:
 
 Every diagnosis and remediation is written to `DeploymentAuditLog`. A post-deployment JSON report is also stored under `C:\Mining360\logs\system-doctor-<job-id>.json`.
 
+## Security monitoring contract
+
+Remote administration uses the approved SSH target, its pinned host-key fingerprint and an allowlist of named checks and remediations. PowerShell command text is sent transparently with `RemoteSigned`; Mining360 does not use `-EncodedCommand` or `ExecutionPolicy Bypass`.
+
+The deployment channel transfers only these controlled artifacts over SFTP:
+
+- `deployment/windows/deploy_release.ps1`;
+- a bounded archive containing governed Reporting Hub images.
+
+The release script checks out one validated 40-character Git commit, validates Django, backs up SQL Server, runs migrations and static collection, performs an atomic application-directory switch, then runs health checks. Logs are written under `C:\Mining360\logs` and all application-level actions are recorded in `DeploymentAuditLog`.
+
+Do not use ad-hoc `manage.py shell -c` commands for routine diagnosis. Use `system_doctor` or a reviewed management command with sanitized output. Do not allowlist `python.exe`, `powershell.exe`, SSH or `C:\Mining360` globally in endpoint security; any exception must be limited to the reviewed script hash, service account, target path and maintenance window.
+
 ## Command-line recovery
 
 The same engine is available when the web interface is unavailable:

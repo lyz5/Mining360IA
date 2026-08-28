@@ -1,12 +1,20 @@
 from __future__ import annotations
 
-import base64
+import subprocess
 from abc import ABC, abstractmethod
 
 
 def _powershell(script: str) -> str:
-    encoded = base64.b64encode(script.encode("utf-16-le")).decode("ascii")
-    return f"powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -EncodedCommand {encoded}"
+    return subprocess.list2cmdline([
+        "powershell.exe",
+        "-NoLogo",
+        "-NoProfile",
+        "-NonInteractive",
+        "-ExecutionPolicy",
+        "RemoteSigned",
+        "-Command",
+        script,
+    ])
 
 
 class BaseDeploymentOSAdapter(ABC):

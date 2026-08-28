@@ -7271,6 +7271,8 @@ BP_PAGES = {
     "customers": ("Customers", "Customer portfolio, segmentation and contribution."),
     "parts-sales": ("Parts Sales", "Parts revenue analysis and transactions."),
     "machine-sales": ("Machine Sales", "Prime revenue and machine sales analysis."),
+    "services-sales": ("Services Sales", "Services revenue and commercial activity analysis."),
+    "rental-sales": ("Rental Sales", "Rental revenue and commercial activity analysis."),
     "forecast": ("Forecast & Opportunities", "Reserved for predictive scenarios."),
 }
 
@@ -7356,8 +7358,13 @@ def business_performance_api(request, section):
             payload = service.overview(filters, request.GET.get("top_n"))
         elif section == "customers":
             payload = {"customers": service.customers(filters, int(request.GET.get("limit", 500)))}
-        elif section in {"parts-sales", "machine-sales"}:
-            category = {"parts-sales": "parts", "machine-sales": "prime"}[section]
+        elif section in {"parts-sales", "machine-sales", "services-sales", "rental-sales"}:
+            category = {
+                "parts-sales": "parts",
+                "machine-sales": "prime",
+                "services-sales": "services",
+                "rental-sales": "rental",
+            }[section]
             payload = {"rows": service.detail_rows(category, filters, int(request.GET.get("limit", 1000)))}
         elif section == "customer":
             customer = (request.GET.get("customer") or "").strip()
@@ -7384,7 +7391,10 @@ def business_performance_export(request, category, file_type):
         return _business_performance_disabled_response(request)
     if not _business_performance_access(request.user):
         return JsonResponse({"ok": False, "error": "Business Performance access required."}, status=403)
-    category_map = {"parts": "parts", "prime": "prime", "fleet": "fleet", "customers": "customers"}
+    category_map = {
+        "parts": "parts", "prime": "prime", "services": "services", "rental": "rental",
+        "fleet": "fleet", "customers": "customers",
+    }
     if category not in category_map or file_type not in {"csv", "xlsx"}:
         raise Http404
     try:
@@ -7456,6 +7466,7 @@ def business_performance_config_api(request):
         "workspace_id", "semantic_model_name", "semantic_model_id", "report_id", "tenant_id",
         "authentication_mode", "api_endpoint", "xmla_endpoint", "default_currency",
         "default_date_range", "default_lob", "default_division", "cache_duration_seconds",
+        "parts_lob_values", "machine_lob_values", "services_lob_values", "rental_lob_values",
         "query_timeout_seconds", "top_n_default", "active_fleet_status_value",
         "opportunity_threshold_mode", "opportunity_fleet_threshold", "opportunity_revenue_threshold",
     }
@@ -7598,6 +7609,7 @@ def report_detail(request, report_id):
             "embed_config_url": reverse("powerbi-interaction-embed-config", args=[report_id]),
             "embed_config_url_template": reverse("powerbi-interaction-embed-config", args=["__REPORT_ID__"]),
             "viewer_configuration_url": reverse("report-viewer-configuration-api", args=[report_id]),
+            "viewer_switcher_url": reverse("report-viewer-switcher-api", args=[report_id]),
             "refresh_url": reverse("reporting-report-refresh-api", args=[report_id]),
             "troubleshoot_url": reverse("reporting-report-troubleshoot-api", args=[report_id]),
             "reporting_hub_url": reverse("reporting"),

@@ -1,11 +1,13 @@
 from pathlib import Path
 from subprocess import CalledProcessError, CompletedProcess
+import tempfile
+import zipfile
 from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
 from django.core.management import call_command
 from django.conf import settings
-from django.test import Client, SimpleTestCase, TestCase
+from django.test import Client, SimpleTestCase, TestCase, override_settings
 from django.urls import reverse
 
 from deployment.models import ApplicationRelease, DeploymentCredential, DeploymentJob, DeploymentPlan, DeploymentTarget
@@ -21,6 +23,35 @@ from reports.models import PlatformUser
 
 
 class DeploymentSecurityTests(TestCase):
+    def test_remote_powershell_commands_are_transparent_and_not_encoded(self):
+        command = WindowsDeploymentExecutionService._powershell_command("Write-Output 'status-ok'")
+
+        self.assertIn("Write-Output", command)
+        self.assertIn("RemoteSigned", command)
+        self.assertNotIn("EncodedCommand", command)
+        self.assertNotIn("ExecutionPolicy Bypass", command)
+
+    def test_report_media_archive_contains_only_governed_visual_assets(self):
+        with tempfile.TemporaryDirectory() as media_directory:
+            visual_directory = Path(media_directory) / "report_visuals" / "thumbnails" / "2026" / "08"
+            visual_directory.mkdir(parents=True)
+            (visual_directory / "fleet.webp").write_bytes(b"approved-report-image")
+            (visual_directory / "ignore.txt").write_text("not an image", encoding="utf-8")
+
+            with override_settings(MEDIA_ROOT=media_directory):
+                archive, summary = WindowsDeploymentExecutionService._build_report_media_archive()
+
+            self.assertEqual(summary, {"files": 1, "bytes": 21})
+            self.assertIsNotNone(archive)
+            try:
+                with zipfile.ZipFile(archive) as bundle:
+                    self.assertEqual(
+                        bundle.namelist(),
+                        ["report_visuals/thumbnails/2026/08/fleet.webp"],
+                    )
+            finally:
+                archive.close()
+
     def test_private_address_is_allowed(self):
         service = DeploymentNetworkSecurityService("10.0.0.0/8")
         self.assertEqual(service.resolve_and_validate("10.20.30.40"), ["10.20.30.40"])
@@ -398,6 +429,19 @@ class DeploymentFrontendContractTests(SimpleTestCase):
         self.assertIn("Get-CimInstance Win32_Process", script)
         self.assertIn("taskkill.exe /PID $process.ProcessId /T /F", script)
         self.assertIn("system_doctor --json", script)
+        self.assertIn("report-media-{0}.zip", script)
+        self.assertIn("Synchronized $mediaCount report visual media file(s)", script)
+        self.assertIn("Copy-Item -Destination $reportVisualDestination -Recurse -Force", script)
+
+        deployment_root = Path(settings.BASE_DIR) / "deployment"
+        executable_sources = "\n".join(
+            path.read_text(encoding="utf-8")
+            for pattern in ("*.py", "*.ps1")
+            for path in deployment_root.rglob(pattern)
+            if "tests" not in path.parts
+        )
+        self.assertNotIn("EncodedCommand", executable_sources)
+        self.assertNotIn("ExecutionPolicy Bypass", executable_sources)
 
     def test_windows_runtime_trusts_only_required_proxy_headers(self):
         script = (

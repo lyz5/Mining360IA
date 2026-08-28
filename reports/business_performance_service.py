@@ -59,12 +59,23 @@ class QueryResult:
 
 
 class BusinessPerformanceService:
+    REVENUE_MEASURE_BY_CURRENCY = {
+        "EUR": "global_revenue_eur",
+        "EURO": "global_revenue_eur",
+        "USD": "global_revenue_usd",
+        "US": "global_revenue_usd",
+        "CFA": "global_revenue_cfa",
+        "XOF": "global_revenue_cfa",
+        "XO": "global_revenue_cfa",
+    }
     KPI_LOGICAL_NAMES = (
-        "parts_revenue", "prime_revenue", "total_revenue", "top3_contribution",
+        "global_revenue_eur", "global_revenue_usd", "global_revenue_cfa",
+        "total_revenue", "top3_contribution",
         "active_customers",
     )
     CUSTOMER_METRICS = (
-        "parts_revenue", "parts_contribution", "prime_revenue", "total_revenue",
+        "parts_revenue", "parts_contribution", "prime_revenue", "service_revenue", "rental_revenue",
+        "total_revenue",
     )
     FILTER_KEYS = (
         "year", "period", "lob", "division", "company", "branch", "country",
@@ -127,10 +138,43 @@ class BusinessPerformanceService:
             expressions.append(f"TREATAS({{{serialized}}}, {self.object_ref(key)})")
         return expressions
 
+    def _domain_filters(self, category: str, filters: dict | None) -> dict:
+        merged = dict(filters or {})
+        field_name = {
+            "parts": "parts_lob_values",
+            "prime": "machine_lob_values",
+            "services": "services_lob_values",
+            "rental": "rental_lob_values",
+        }.get(category)
+        if not field_name:
+            return merged
+        values = [
+            value.strip()
+            for value in str(getattr(self.config, field_name, "") or "").split(",")
+            if value.strip()
+        ]
+        if not values:
+            raise MappingNotConfigured(
+                f"The validated LOB values for '{category}' are not configured."
+            )
+        self.mapping("lob")
+        merged["lob"] = values
+        return merged
+
     def _dataset_id(self) -> str:
         if self.config.semantic_model_id:
             return self.config.semantic_model_id
         return resolve_workspace_dataset_id(self.config.semantic_model_name)
+
+    def revenue_metric(self) -> str:
+        currency = str(self.config.default_currency or "EUR").strip().upper()
+        metric = self.REVENUE_MEASURE_BY_CURRENCY.get(currency)
+        if not metric:
+            raise MappingNotConfigured(
+                f"No official invoice revenue measure is configured for currency '{currency}'."
+            )
+        self.mapping(metric)
+        return metric
 
     @staticmethod
     def _is_transient_connection_error(exc: Exception) -> bool:
@@ -221,7 +265,9 @@ class BusinessPerformanceService:
         metrics = [name for name in self.KPI_LOGICAL_NAMES if self.mapping(name, False) and self.mapping(name, False).object_name]
         overview_dax = self._summarize([], metrics, filters)
         top_dax = self._summarize(["customer"], self.CUSTOMER_METRICS, filters, top_n, "parts_revenue")
-        trend_dax = self._summarize(["year"], ["parts_revenue", "prime_revenue", "total_revenue"], filters)
+        trend_dax = self._summarize(
+            ["year"], ["parts_revenue", "prime_revenue", "service_revenue", "total_revenue"], filters
+        )
         overview = self.execute(overview_dax, "Overview", "Executive overview", filters)
         top = self.execute(top_dax, "Overview", "Top customers", filters)
         trend = self.execute(trend_dax, "Overview", "Revenue trend", filters)
@@ -252,15 +298,32 @@ class BusinessPerformanceService:
     def customer_details(self, customer: str, filters: dict | None = None) -> dict:
         merged = dict(filters or {})
         merged["customer"] = customer
-        return {
+        payload = {
             "customer": customer,
             "summary": self.overview(merged, 20),
             "parts": self.detail_rows("parts", merged, 200),
-            "prime": self.detail_rows("prime", merged, 200),
         }
+        payload["prime"] = (
+            self.detail_rows("prime", merged, 200)
+            if self.config.machine_lob_values.strip()
+            else []
+        )
+        service_revenue = self.mapping("service_revenue", required=False)
+        payload["services"] = (
+            self.detail_rows("services", merged, 200)
+            if service_revenue and service_revenue.object_name
+            else []
+        )
+        rental_revenue = self.mapping("rental_revenue", required=False)
+        payload["rental"] = (
+            self.detail_rows("rental", merged, 200)
+            if rental_revenue and rental_revenue.object_name and self.config.rental_lob_values.strip()
+            else []
+        )
+        return payload
 
     def detail_rows(self, category: str, filters: dict | None = None, limit: int = 1000) -> list[dict]:
-        filters = dict(filters or {})
+        filters = self._domain_filters(category, filters)
         if category == "fleet" and not filters.get("fleet_status"):
             self.mapping("fleet_status")
             filters["fleet_status"] = self.config.active_fleet_status_value
@@ -270,8 +333,10 @@ class BusinessPerformanceService:
             and (item.category == category or item.logical_name in {"customer", "year", "period"})
         ]
         metrics = {
-            "parts": ["parts_revenue"],
-            "prime": ["prime_revenue", "machine_count"],
+            "parts": [self.revenue_metric()],
+            "prime": [self.revenue_metric(), "machine_count"],
+            "services": [self.revenue_metric(), "service_order_count"],
+            "rental": [self.revenue_metric(), "rental_order_count"],
         }.get(category, [])
         dax = self._summarize(dimensions, metrics, filters, min(max(int(limit), 1), 10000), metrics[0])
         return self.execute(dax, category.title(), f"{category} details", filters).rows
