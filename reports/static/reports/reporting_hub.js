@@ -21,6 +21,7 @@
     let debounceTimer = null;
     let toastTimer = null;
     let allowedReportIds = null;
+    const refreshPinnedReportIds = new Set();
     const escapeHtml = (value) => String(value ?? "").replace(/[&<>'"]/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[char]));
 
     const params = new URLSearchParams(window.location.search);
@@ -103,9 +104,10 @@
     function applyFilters() {
         const terms = normalizedTerms(state.q);
         let visible = cards.filter((card) => {
-            const matchesServer = !allowedReportIds || allowedReportIds.has(card.dataset.reportId);
+            const refreshPinned = refreshPinnedReportIds.has(card.dataset.reportId);
+            const matchesServer = refreshPinned || !allowedReportIds || allowedReportIds.has(card.dataset.reportId);
             const matchesText = terms.every((term) => (card.dataset.search || "").includes(term));
-            const matchesStatus = state.status === "all" || card.dataset.status === state.status;
+            const matchesStatus = refreshPinned || state.status === "all" || card.dataset.status === state.status;
             const matchesCategory = state.category === "all" || card.dataset.category === state.category;
             const matchesFavorite = !state.favorites || card.dataset.favorite === "true";
             return matchesServer && matchesText && matchesStatus && matchesCategory && matchesFavorite;
@@ -181,13 +183,20 @@
         debounceTimer = setTimeout(fetchFilteredReports, 300);
     }
 
+    function releaseRefreshPins() {
+        if (!refreshPinnedReportIds.size) return;
+        refreshPinnedReportIds.clear();
+    }
+
     function setStatus(status, scroll = false) {
+        releaseRefreshPins();
         state.status = state.status === status && status !== "all" ? "all" : status;
         scheduleFetch();
         if (scroll) document.querySelector("#all-reports")?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
     function clearFilters() {
+        releaseRefreshPins();
         Object.assign(state, { q: "", status: "all", category: "all", favorites: false, sort: "alphabetical" });
         scheduleFetch();
         search.focus();
@@ -296,10 +305,13 @@
             });
             const payload = await response.json();
             if (!response.ok || !payload.ok) throw new Error(payload.error || "The refresh could not be started.");
+            refreshPinnedReportIds.add(card.dataset.reportId);
             updateCardStatus(card, payload);
+            applyFilters();
             showToast("Report refresh started.");
             pollRefresh(card);
         } catch (error) {
+            refreshPinnedReportIds.delete(card.dataset.reportId);
             button.disabled = false;
             button.classList.remove("is-refreshing");
             showToast(error.message, true);
@@ -343,10 +355,10 @@
         }
     }
 
-    search.addEventListener("input", () => { state.q = search.value.trim(); scheduleFetch(); });
-    categorySelect.addEventListener("change", () => { state.category = categorySelect.value; scheduleFetch(); });
+    search.addEventListener("input", () => { releaseRefreshPins(); state.q = search.value.trim(); scheduleFetch(); });
+    categorySelect.addEventListener("change", () => { releaseRefreshPins(); state.category = categorySelect.value; scheduleFetch(); });
     sortSelect.addEventListener("change", () => { state.sort = sortSelect.value; scheduleFetch(); });
-    favoritesFilter.addEventListener("click", () => { state.favorites = !state.favorites; scheduleFetch(); });
+    favoritesFilter.addEventListener("click", () => { releaseRefreshPins(); state.favorites = !state.favorites; scheduleFetch(); });
     root.querySelectorAll("[data-status]").forEach((button) => button.addEventListener("click", () => setStatus(button.dataset.status)));
     root.querySelectorAll("[data-health-filter]").forEach((button) => button.addEventListener("click", () => setStatus(button.dataset.healthFilter, true)));
     root.querySelectorAll("[data-view]").forEach((button) => button.addEventListener("click", () => {

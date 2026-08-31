@@ -7,7 +7,6 @@
             this.loaded = false;
             this.events = [];
             this.refreshTimer = null;
-            this.bootstrapped = false;
         }
 
         emit(type, details) {
@@ -34,17 +33,6 @@
                 throw error;
             }
             return payload.config;
-        }
-
-        bootstrap(reportId, embedUrl) {
-            if (!window.powerbi || !embedUrl || this.report || this.bootstrapped) return;
-            window.powerbi.bootstrap(this.container, {
-                type: "report",
-                id: reportId,
-                embedUrl,
-            });
-            this.bootstrapped = true;
-            this.emit("bootstrapped", { reportId });
         }
 
         async embed(reportId) {
@@ -82,7 +70,7 @@
                     },
                 });
             }
-            if (!this.bootstrapped) window.powerbi.reset(this.container);
+            window.powerbi.reset(this.container);
             this.report = window.powerbi.embed(this.container, config);
             await new Promise((resolve, reject) => {
                 const timeout = window.setTimeout(() => reject(new Error("Power BI report loading timed out.")), 120000);
@@ -432,7 +420,6 @@
             this.refreshTimer = null;
             this.loaded = false;
             this.report = null;
-            this.bootstrapped = false;
             this.options.currentReportId = null;
             if (window.powerbi && this.container) {
                 window.powerbi.reset(this.container);

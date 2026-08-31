@@ -12,6 +12,7 @@
         "Business Manager": "Business-level performance management access.",
         "Country Manager": "Access limited to selected countries.",
         "Account Manager": "Access limited to selected customers.",
+        MineSite: "Access strictly limited to one authorized MineSite across Mining 360, AI and Power BI.",
         Viewer: "Read-only access to the configured scope.",
         Administrator: "Full Business Performance administration.",
     };
@@ -94,6 +95,7 @@
         const parts = [];
         if (user.countries.length) parts.push(`${user.countries.length} ${user.countries.length === 1 ? "country" : "countries"}`);
         if (user.customers.length) parts.push(`${user.customers.length} ${user.customers.length === 1 ? "customer" : "customers"}`);
+        if (user.minesites?.length) parts.push(user.minesites[0]);
         return parts.join(" · ") || "No scope";
     }
 
@@ -118,7 +120,7 @@
             <tr tabindex="0" data-user-row="${user.id}" aria-label="Open access for ${escapeHtml(user.display_name)}">
                 <td><div class="user-cell"><span class="user-avatar">${escapeHtml(initials(user.display_name))}</span><span><strong>${escapeHtml(user.display_name)}</strong><small title="${escapeHtml(user.upn)}">${escapeHtml(user.upn)}</small></span></div></td>
                 <td>${roleChips(user)}</td><td>${escapeHtml(user.business_performance_access || "No access")}</td>
-                <td title="${escapeHtml([...user.countries, ...user.customers].join(", "))}">${escapeHtml(scopeText(user))}</td>
+                <td title="${escapeHtml([...user.countries, ...user.customers, ...(user.minesites || [])].join(", "))}">${escapeHtml(scopeText(user))}</td>
                 <td>${escapeHtml(user.powerbi_rls_role || "Not configured")}</td><td><span class="source-badge">${escapeHtml(sourceLabel(user.access_source))}</span></td>
                 <td><span class="status-badge status-badge--${user.status}">${user.status === "active" ? "Active" : "Disabled"}</span></td>
                 <td><button type="button" class="access-icon-button row-more" data-user-open="${user.id}" aria-label="View access for ${escapeHtml(user.display_name)}">•••</button></td>
@@ -231,7 +233,7 @@
             id: null, display_name: user.display_name, upn: user.upn, email: user.email,
             directory_object_id: user.directory_object_id, directory_username: user.directory_username,
             auth_source: "active_directory", platform_roles: [], ad_managed_roles: [], directory_roles_managed: false,
-            business_performance_access: "", countries: [], customers: [], powerbi_rls_role: "", status: "active",
+            business_performance_access: "", countries: [], customers: [], minesites: [], powerbi_rls_role: "", status: "active",
         }, "add");
     }
 
@@ -259,7 +261,7 @@
     function showAccessForm(user, mode) {
         if (!$("[data-form-name]")) restoreAccessFormMarkup();
         state.mode = mode;
-        state.form = { ...user, platform_roles: [...(user.platform_roles || [])], countries: [...(user.countries || [])], customers: [...(user.customers || [])] };
+        state.form = { ...user, platform_roles: [...(user.platform_roles || [])], countries: [...(user.countries || [])], customers: [...(user.customers || [])], minesites: [...(user.minesites || [])] };
         $("[data-directory-step]").hidden = true;
         $("[data-access-form]").hidden = false;
         $("[data-drawer-footer]").hidden = false;
@@ -274,6 +276,7 @@
         renderBusinessOptions();
         renderMultiSelect("countries");
         renderMultiSelect("customers");
+        renderMultiSelect("minesites");
         renderEffectiveSummary();
         $("[data-history-section]").hidden = mode !== "edit";
         $("[data-status-action]").hidden = mode !== "edit";
@@ -299,8 +302,11 @@
         $("[data-bp-role]").value = state.form.business_performance_access || "";
         $("[data-bp-description]").textContent = bpDescriptions[state.form.business_performance_access || ""] || "Configured business access.";
         $("[data-scope-fields]").hidden = !state.form.business_performance_access;
+        $("[data-minesite-scope]").hidden = state.form.business_performance_access !== "MineSite";
+        $$('[data-general-scope]').forEach(node => { node.hidden = state.form.business_performance_access === "MineSite"; });
         $("[data-rls-role]").innerHTML = state.options.powerbi_rls_roles.map(option => `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}</option>`).join("");
         $("[data-rls-role]").value = state.form.powerbi_rls_role || "";
+        $("[data-rls-role]").disabled = state.form.business_performance_access === "MineSite";
     }
 
     function renderMultiSelect(key) {
@@ -327,6 +333,7 @@
             <div><dt>Business Performance</dt><dd>${escapeHtml(state.form.business_performance_access || "No access")}</dd></div>
             <div><dt>Countries</dt><dd>${escapeHtml(state.form.countries.join(", ") || "All permitted / none configured")}</dd></div>
             <div><dt>Customers</dt><dd>${escapeHtml(state.form.customers.join(", ") || "All permitted / none configured")}</dd></div>
+            <div><dt>MineSite</dt><dd>${escapeHtml(state.form.minesites.join(", ") || "Not restricted by MineSite")}</dd></div>
             <div><dt>Power BI RLS</dt><dd>${escapeHtml(state.form.powerbi_rls_role || "Not configured")}</dd></div>
             <div><dt>Managed by AD</dt><dd>${state.form.directory_roles_managed ? escapeHtml(state.form.ad_managed_roles.map(role => roleLabels[role] || role).join(", ") || "Enabled") : "No"}</dd></div>`;
     }
@@ -343,6 +350,7 @@
             business_performance_access: state.form.business_performance_access,
             countries: state.form.countries,
             customers: state.form.customers,
+            minesites: state.form.minesites,
             powerbi_rls_role: state.form.powerbi_rls_role,
         };
     }
@@ -422,9 +430,9 @@
         if (select) return selectDirectoryResult(Number(select.dataset.directorySelect));
         if (event.target.closest("[data-directory-retry]")) return searchDirectory($("[data-directory-query]").value);
         const remove = event.target.closest("[data-remove-scope]");
-        if (remove) { const key = remove.closest("[data-multiselect]").dataset.multiselect; state.form[key] = state.form[key].filter(value => value !== remove.dataset.removeScope); renderMultiSelect(key); return markDirty(); }
+        if (remove) { const key = remove.closest("[data-multiselect]").dataset.multiselect; state.form[key] = state.form[key].filter(value => value !== remove.dataset.removeScope); if (key === "minesites") state.form.powerbi_rls_role = ""; renderBusinessOptions(); renderMultiSelect(key); return markDirty(); }
         const addScope = event.target.closest("[data-add-scope]");
-        if (addScope) { const key = addScope.closest("[data-multiselect]").dataset.multiselect; state.form[key].push(addScope.dataset.addScope); renderMultiSelect(key); return markDirty(); }
+        if (addScope) { const key = addScope.closest("[data-multiselect]").dataset.multiselect; if (key === "minesites") { state.form[key] = [addScope.dataset.addScope]; state.form.powerbi_rls_role = addScope.dataset.addScope; } else state.form[key].push(addScope.dataset.addScope); renderBusinessOptions(); renderMultiSelect(key); return markDirty(); }
         if (event.target.closest("[data-save-access]")) return saveAccess();
         if (event.target.closest("[data-status-action]")) return toggleStatus();
         if (event.target.closest("[data-users-retry]")) return loadUsers();
@@ -451,10 +459,12 @@
         }
         if (event.target.matches("[data-bp-role]")) {
             const previous = state.form.business_performance_access;
-            if (!event.target.value && (state.form.countries.length || state.form.customers.length) && !window.confirm("Remove the existing Business Performance country and customer scopes?")) { event.target.value = previous; return; }
+            if (!event.target.value && (state.form.countries.length || state.form.customers.length || state.form.minesites.length) && !window.confirm("Remove the existing Business Performance scopes?")) { event.target.value = previous; return; }
             state.form.business_performance_access = event.target.value;
-            if (!event.target.value) { state.form.countries = []; state.form.customers = []; }
-            renderBusinessOptions(); renderMultiSelect("countries"); renderMultiSelect("customers"); markDirty();
+            if (!event.target.value) { state.form.countries = []; state.form.customers = []; state.form.minesites = []; }
+            if (event.target.value === "MineSite") { state.form.countries = []; state.form.customers = []; }
+            else { state.form.minesites = []; }
+            renderBusinessOptions(); renderMultiSelect("countries"); renderMultiSelect("customers"); renderMultiSelect("minesites"); markDirty();
         }
         if (event.target.matches("[data-rls-role]")) { state.form.powerbi_rls_role = event.target.value; markDirty(); }
     });

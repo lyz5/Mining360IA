@@ -2,8 +2,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import statistics
 import time
+from datetime import date
 from dataclasses import dataclass
 from typing import Iterable
 
@@ -44,9 +46,12 @@ def _extract_rows(payload: dict) -> list[dict]:
 def _clean_row(row: dict) -> dict:
     cleaned = {}
     for key, value in row.items():
-        label = str(key).strip("[]")
-        if "][" in label:
-            label = label.rsplit("][", 1)[-1].strip("[]")
+        label = str(key).strip()
+        column_match = re.search(r"\[([^\]]+)\]$", label)
+        if column_match:
+            label = column_match.group(1)
+        else:
+            label = label.strip("[]")
         cleaned[label] = value
     return cleaned
 
@@ -80,7 +85,8 @@ class BusinessPerformanceService:
     FILTER_KEYS = (
         "year", "period", "lob", "division", "company", "branch", "country",
         "customer", "minesite", "equipment_type", "model", "fleet_status",
-        "customer_category", "distribution_channel",
+        "customer_category", "distribution_channel", "territory", "manufacturer",
+        "product_detail", "accounting_family", "service_billed", "invoice", "customer_contains",
     )
 
     def __init__(self, user=None):
@@ -110,7 +116,16 @@ class BusinessPerformanceService:
         if not platform_user or platform_user.is_platform_admin:
             return {}
         scope = platform_user.business_performance_scope or {}
-        return {key: value for key, value in scope.items() if key in self.FILTER_KEYS and value}
+        filters = {key: value for key, value in scope.items() if key in self.FILTER_KEYS and value}
+        if filters.get("minesite") and "minesite" not in self.mappings:
+            # GlobalCA represents operational sites through the governed
+            # customer dimension (for example Fekola -> FEKOLA SA).
+            target = "customer_contains" if "customer" in self.mappings else "territory"
+            if target in self.mappings:
+                filters[target] = filters.pop("minesite")
+            elif target == "customer_contains":
+                filters[target] = filters.pop("minesite")
+        return filters
 
     def _rls_role(self) -> str:
         platform_user = getattr(self.user, "platformuser", None)
@@ -130,6 +145,16 @@ class BusinessPerformanceService:
     def filter_expressions(self, filters: dict | None) -> list[str]:
         expressions = []
         for key, values in self.normalized_filters(filters).items():
+            if key == "customer_contains":
+                customer = self.object_ref("customer")
+                items = values if isinstance(values, list) else [values]
+                predicates = " || ".join(
+                    f"CONTAINSSTRING(UPPER({customer}), UPPER({_dax_string(value)}))"
+                    for value in items
+                )
+                if predicates:
+                    expressions.append(f"FILTER(KEEPFILTERS(VALUES({customer})), {predicates})")
+                continue
             mapping = self.mapping(key, required=False)
             if not mapping or not mapping.table_name or not mapping.object_name:
                 continue
@@ -159,6 +184,14 @@ class BusinessPerformanceService:
             )
         self.mapping("lob")
         merged["lob"] = values
+        direct_channels = [
+            value.strip()
+            for value in str(self.config.direct_sales_channel_values or "").split(",")
+            if value.strip()
+        ]
+        if direct_channels:
+            self.mapping("distribution_channel")
+            merged["distribution_channel"] = direct_channels
         return merged
 
     def _dataset_id(self) -> str:
@@ -166,8 +199,8 @@ class BusinessPerformanceService:
             return self.config.semantic_model_id
         return resolve_workspace_dataset_id(self.config.semantic_model_name)
 
-    def revenue_metric(self) -> str:
-        currency = str(self.config.default_currency or "EUR").strip().upper()
+    def revenue_metric(self, currency: str | None = None) -> str:
+        currency = str(currency or self.config.default_currency or "EUR").strip().upper()
         metric = self.REVENUE_MEASURE_BY_CURRENCY.get(currency)
         if not metric:
             raise MappingNotConfigured(
@@ -192,7 +225,7 @@ class BusinessPerformanceService:
         last_error = None
         for attempt in range(1, attempts + 1):
             try:
-                if rls_role:
+                if self.config.authentication_mode == "Power Automate" or rls_role:
                     result = execute_dax_via_flow({
                         "datasetId": dataset_id,
                         "datasetName": self.config.semantic_model_name,
@@ -322,7 +355,76 @@ class BusinessPerformanceService:
         )
         return payload
 
-    def detail_rows(self, category: str, filters: dict | None = None, limit: int = 1000) -> list[dict]:
+    def sales_domain_summary(
+        self,
+        category: str,
+        filters: dict | None = None,
+        top_n: int | None = None,
+        currency: str | None = None,
+        detail_limit: int = 1000,
+    ) -> dict:
+        scoped_filters = self._domain_filters(category, filters)
+        if not scoped_filters.get("year"):
+            scoped_filters["year"] = [str(date.today().year)]
+        metric = self.revenue_metric(currency)
+        top_n = max(1, min(int(top_n or self.config.top_n_default), 100))
+        total = self.execute(
+            self._summarize([], [metric], scoped_filters),
+            category.title(), "Sales YTD", scoped_filters,
+        )
+        customers = self.execute(
+            self._summarize(["customer"], [metric], scoped_filters, top_n, metric),
+            category.title(), "Top customers", scoped_filters,
+        )
+        trend = self.execute(
+            self._summarize(["year", "period"], [metric], scoped_filters),
+            category.title(), "Monthly sales trend", scoped_filters,
+        )
+        return {
+            "domain": category,
+            "currency": str(currency or self.config.default_currency or "EUR").upper(),
+            "measure": self.mapping(metric).object_name,
+            "filters": self.normalized_filters(scoped_filters),
+            "kpis": total.rows[0] if total.rows else {},
+            "top_customers": customers.rows,
+            "trend": trend.rows,
+            "rows": self.detail_rows(category, scoped_filters, detail_limit, currency),
+            "last_refresh": self.config.last_successful_refresh,
+            "cached": total.cached and customers.cached and trend.cached,
+        }
+
+    def sales_domain_query(
+        self,
+        category: str,
+        filters: dict | None = None,
+        *,
+        dimension: str | None = None,
+        currency: str | None = None,
+        limit: int = 500,
+    ) -> QueryResult:
+        """Run one governed sales query for chatbot and lightweight consumers."""
+        scoped_filters = self._domain_filters(category, filters)
+        if not scoped_filters.get("year"):
+            scoped_filters["year"] = [str(date.today().year)]
+        metric = self.revenue_metric(currency)
+        dimensions = [dimension] if dimension else []
+        dax = self._summarize(
+            dimensions,
+            [metric],
+            scoped_filters,
+            min(max(int(limit), 1), 2000) if dimension else None,
+            metric,
+        )
+        action = f"{category.title()} sales by {dimension}" if dimension else f"{category.title()} sales total"
+        return self.execute(dax, "Chatbot", action, scoped_filters)
+
+    def detail_rows(
+        self,
+        category: str,
+        filters: dict | None = None,
+        limit: int = 1000,
+        currency: str | None = None,
+    ) -> list[dict]:
         filters = self._domain_filters(category, filters)
         if category == "fleet" and not filters.get("fleet_status"):
             self.mapping("fleet_status")
@@ -333,10 +435,10 @@ class BusinessPerformanceService:
             and (item.category == category or item.logical_name in {"customer", "year", "period"})
         ]
         metrics = {
-            "parts": [self.revenue_metric()],
-            "prime": [self.revenue_metric(), "machine_count"],
-            "services": [self.revenue_metric(), "service_order_count"],
-            "rental": [self.revenue_metric(), "rental_order_count"],
+            "parts": [self.revenue_metric(currency)],
+            "prime": [self.revenue_metric(currency), "machine_count"],
+            "services": [self.revenue_metric(currency), "service_order_count"],
+            "rental": [self.revenue_metric(currency), "rental_order_count"],
         }.get(category, [])
         dax = self._summarize(dimensions, metrics, filters, min(max(int(limit), 1), 10000), metrics[0])
         return self.execute(dax, category.title(), f"{category} details", filters).rows

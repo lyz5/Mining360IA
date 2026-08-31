@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Users | Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260812-users1">
-    <script src="{% static 'reports/users_access.js' %}?v=20260812-users1" defer></script>
+    <script src="{% static 'reports/users_access.js' %}?v=20260831-sites1" defer></script>
 </head>
 <body class="users-access-body">
     {% include "reports/includes/app_nav.html" %}
@@ -36,7 +36,7 @@
                 <label><span class="sr-only">Status</span><select data-filter-status><option value="">All statuses</option><option value="active">Active</option><option value="disabled">Disabled</option></select></label>
                 <label><span class="sr-only">Platform role</span><select data-filter-role><option value="">All roles</option><option value="admin">Admin</option><option value="reporting">Reporting</option><option value="ai">AI</option><option value="data">Data</option><option value="sources">Data Source</option></select></label>
                 <label class="users-toolbar__secondary"><span class="sr-only">Access source</span><select data-filter-source><option value="">All sources</option><option value="manual">Manual</option><option value="ad_groups">AD Groups</option></select></label>
-                <label class="users-toolbar__secondary"><span class="sr-only">Business Performance</span><select data-filter-bp><option value="">All BP access</option><option value="none">No access</option><option value="Viewer">Viewer</option><option value="Account Manager">Account Manager</option><option value="Country Manager">Country Manager</option><option value="Business Manager">Business Manager</option><option value="Executive">Executive</option><option value="Administrator">Administrator</option></select></label>
+                <label class="users-toolbar__secondary"><span class="sr-only">Business Performance</span><select data-filter-bp><option value="">All BP access</option><option value="none">No access</option><option value="MineSite">MineSite User</option><option value="Viewer">Viewer</option><option value="Account Manager">Account Manager</option><option value="Country Manager">Country Manager</option><option value="Business Manager">Business Manager</option><option value="Executive">Executive</option><option value="Administrator">Administrator</option></select></label>
                 <button class="button users-add-button" type="button" data-open-add>
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                     Add user
@@ -108,8 +108,9 @@
                             <div class="access-section__heading"><h3>Business Performance</h3><p>Configure the business access level and governed data scope.</p></div>
                             <label class="access-field"><span>Access level</span><select data-bp-role></select><small data-bp-description></small></label>
                             <div class="scope-fields" data-scope-fields>
-                                <div class="access-field"><span>Countries</span><div class="access-multiselect" data-multiselect="countries"></div></div>
-                                <div class="access-field"><span>Customers</span><div class="access-multiselect" data-multiselect="customers"></div></div>
+                                <div class="access-field" data-minesite-scope><span>Authorized MineSite</span><div class="access-multiselect" data-multiselect="minesites"></div><p class="field-error" data-error-minesites hidden></p></div>
+                                <div class="access-field" data-general-scope><span>Countries</span><div class="access-multiselect" data-multiselect="countries"></div></div>
+                                <div class="access-field" data-general-scope><span>Customers</span><div class="access-multiselect" data-multiselect="customers"></div></div>
                             </div>
                             <p class="field-error" data-error-business_performance_access hidden></p>
                         </section>

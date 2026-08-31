@@ -1470,31 +1470,90 @@ h2 {
     }
 }
 
-.resource-view-shell {
-    width: min(1500px, calc(100% - 32px));
+.resource-detail-page-body {
     height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+.app-shell.resource-view-shell {
+    width: calc(100vw - var(--sidebar-width));
+    max-width: none;
+    height: 100vh;
+    height: 100dvh;
     min-height: 0;
+    margin-left: var(--sidebar-width);
+    padding: 12px 16px 14px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    transition: margin-left 160ms ease, width 160ms ease;
+}
+
+.resource-detail-header {
+    flex: 0 0 auto;
+    min-width: 0;
+    min-height: 58px;
+    gap: 14px;
+    padding: 0 0 10px;
+}
+
+.resource-detail-header > div:first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.resource-detail-header h1 {
+    margin-top: 2px;
+    overflow: hidden;
+    font-size: 23px;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.resource-detail-header .summary {
+    flex: 0 0 auto;
+    min-width: 92px;
+    padding: 7px 10px;
+    border-radius: 7px;
+    box-shadow: none;
+}
+
+.resource-detail-header .summary-value {
+    font-size: 18px;
+}
+
+.resource-detail-header .actions {
+    flex: 0 0 auto;
 }
 
 .resource-detail-meta {
+    flex: 0 0 auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 8px;
-    margin-bottom: 14px;
+    min-width: 0;
+    margin-bottom: 10px;
+    padding-bottom: 2px;
+    overflow-x: auto;
+    scrollbar-width: thin;
 }
 
 .resource-detail-meta span {
-    padding: 6px 10px;
+    flex: 0 0 auto;
+    max-width: min(320px, 32vw);
+    padding: 5px 9px;
+    overflow: hidden;
     border: 1px solid var(--border);
-    border-radius: 999px;
+    border-radius: 6px;
     background: rgba(255, 255, 255, 0.88);
     color: var(--muted);
     font-size: 12px;
     font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .resource-viewer {
@@ -1503,7 +1562,7 @@ h2 {
     min-height: 0;
     overflow: hidden;
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 9px;
     background: #ffffff;
     box-shadow: var(--shadow);
 }
@@ -1535,7 +1594,7 @@ h2 {
     overflow: auto;
     padding: 18px;
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 9px;
     background: #ffffff;
     box-shadow: var(--shadow);
 }
@@ -1551,6 +1610,40 @@ h2 {
     font: 13px/1.55 Consolas, "Courier New", monospace;
     white-space: pre-wrap;
     word-break: break-word;
+}
+
+@media (max-width: 720px) {
+    .resource-detail-page-body {
+        height: auto;
+        min-height: 100dvh;
+        overflow: auto;
+    }
+
+    .resource-detail-page-body .app-shell.resource-view-shell {
+        width: 100%;
+        height: auto;
+        min-height: calc(100dvh - 72px);
+        margin-left: 0;
+        padding: 12px;
+        overflow: visible;
+    }
+
+    .resource-detail-header {
+        align-items: stretch;
+        gap: 9px;
+    }
+
+    .resource-detail-header .summary {
+        display: none;
+    }
+
+    .resource-detail-header .actions {
+        justify-content: space-between;
+    }
+
+    .resource-detail-meta span {
+        max-width: 76vw;
+    }
 }
 
 .report-switcher {

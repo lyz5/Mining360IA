@@ -55,6 +55,7 @@ class PlatformUser(models.Model):
         ("Business Manager", "Business Manager"),
         ("Country Manager", "Country Manager"),
         ("Account Manager", "Account Manager"),
+        ("MineSite", "MineSite User"),
         ("Viewer", "Viewer"),
         ("Administrator", "Administrator"),
     ]
@@ -4491,13 +4492,14 @@ class BusinessPerformanceConfig(models.Model):
     authentication_mode = models.CharField(max_length=80, choices=AUTH_CHOICES, default="Power Automate")
     api_endpoint = models.CharField(max_length=500, blank=True)
     xmla_endpoint = models.CharField(max_length=500, blank=True)
-    default_currency = models.CharField(max_length=16, default="EUR")
+    default_currency = models.CharField(max_length=16, default="EURO")
     default_date_range = models.CharField(max_length=80, default="Current Year")
     default_lob = models.CharField(max_length=120, blank=True)
     parts_lob_values = models.CharField(max_length=500, default="PARTS", blank=True)
     machine_lob_values = models.CharField(max_length=500, default="PRIME", blank=True)
     services_lob_values = models.CharField(max_length=500, default="SERVICE", blank=True)
     rental_lob_values = models.CharField(max_length=500, default="RENTAL", blank=True)
+    direct_sales_channel_values = models.CharField(max_length=500, default="Onshore,Offshore", blank=True)
     default_division = models.CharField(max_length=120, blank=True)
     cache_duration_seconds = models.PositiveIntegerField(default=300)
     query_timeout_seconds = models.PositiveIntegerField(default=300)

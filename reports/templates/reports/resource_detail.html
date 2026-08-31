@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ resource.title }} | Resources | Mining360IA</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260831-resource-viewer-1">
 </head>
-<body>
+<body class="resource-detail-page-body">
     {% include "reports/includes/app_nav.html" %}
     <main class="app-shell resource-view-shell">
-        <header class="topbar">
+        <header class="topbar resource-detail-header">
             <div>
                 <p class="eyebrow">{{ resource.extension }} resource</p>
                 <h1>{{ resource.title }}</h1>
@@ -25,20 +25,7 @@
             </div>
         </header>
 
-        <section class="workspace-band">
-            <div class="placeholder-panel">
-                <p class="eyebrow">Classification</p>
-                <h2>{{ resource.section }}</h2>
-                <p>{{ resource.category }} / {{ resource.level }}</p>
-            </div>
-            <div class="placeholder-panel">
-                <p class="eyebrow">File</p>
-                <h2>{{ resource.filename }}</h2>
-                <p>{{ resource.size_label }} stored as {{ resource.mime_type }}</p>
-            </div>
-        </section>
-
-        <section class="resource-detail-meta">
+        <section class="resource-detail-meta" aria-label="Resource details">
             <span>{{ resource.filename }}</span>
             <span>{{ resource.section }}</span>
             <span>{{ resource.category }}</span>

@@ -147,7 +147,15 @@ def _verify_delegated_report_access(report: PowerBIReport, access_token: str) ->
     return str(response.json().get("embedUrl") or report.embed_url)
 
 
-def build_embed_configuration(request, report: PowerBIReport, *, role: str = "Global") -> dict:
+def build_embed_configuration(
+    request,
+    report: PowerBIReport,
+    *,
+    role: str = "Global",
+    roles: list[str] | None = None,
+    effective_username: str = "",
+    require_effective_identity: bool = False,
+) -> dict:
     strategy = PowerBIEmbedStrategyResolver.resolve(report, request.user)
     if not report.embed_url:
         raise PowerBIEmbedError("The report embed URL is not configured.", code="embed_url_missing", status=400)
@@ -173,7 +181,18 @@ def build_embed_configuration(request, report: PowerBIReport, *, role: str = "Gl
         },
     }
     if strategy.strategy == "app_owns_data":
-        token = generate_report_embed_token(runtime_report, [role])
+        selected_roles = roles or [role]
+        try:
+            token = generate_report_embed_token(
+                runtime_report,
+                selected_roles,
+                effective_username_override=effective_username,
+                require_effective_identity=require_effective_identity,
+            )
+        except RuntimeError as exc:
+            if require_effective_identity:
+                raise PowerBIEmbedError(str(exc), code="minesite_rls_unavailable", status=403) from exc
+            raise
         config = {
             "type": "report",
             "id": runtime_report.id,

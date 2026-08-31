@@ -50,15 +50,30 @@ def _detect_section(question_text: str, section_code: str | None = None) -> str:
     if section_code and get_section_by_code(section_code):
         return section_code
     text = _normalize(question_text)
-    if any(token in text for token in ("parts sales", "part sales", "sales amount", "part number", "margin")):
+    if any(token in text for token in (
+        "parts sales", "part sales", "sales amount", "part number", "parts revenue",
+        "how much did we sell", "how much have we sold", "how much we sold",
+        "sales since the beginning", "revenue since the beginning",
+        "vente pieces", "ventes pieces", "vente de pieces", "ventes de pieces",
+        "vente pièces", "ventes pièces", "vente de pièces", "ventes de pièces",
+        "combien avons nous vendu", "combien a t on vendu", "combien avons-nous vendu",
+        "ca pieces", "ca pièces", "chiffre d'affaires pieces", "chiffre d'affaires pièces",
+        "chiffre d affaires pieces", "chiffre d affaires pièces",
+    )):
         return "parts_sales"
     if any(token in text for token in ("rebuild", "component", "planned component")):
         return "planned_component_rebuild"
     return "performance"
 
 
+def detect_ai_section(question_text: str, section_code: str | None = None) -> str:
+    return _detect_section(question_text, section_code)
+
+
 def _detect_metric(question_text: str, section_code: str) -> str | None:
     text = _normalize(question_text)
+    if section_code == "parts_sales":
+        return "parts_sales_ytd"
     catalog = build_section_catalog(section_code).get("sections", [])
     if not catalog:
         return None
@@ -109,6 +124,7 @@ def _extract_period(question_text: str) -> str | None:
             "year to date",
             (
                 "year to date", "year-to-date", "ytd",
+                "since the beginning of the year", "since the start of the year",
                 "cumul annuel", "depuis le début de l'année",
                 "depuis le debut de l'annee", "année à date", "annee a date",
             ),
@@ -156,7 +172,12 @@ def _extract_value(question_text: str, entity_type: str) -> str | None:
     text = str(question_text or "")
     lowered = text.lower()
     if entity_type == "minesite":
-        match = re.search(r"(?:minesite|mine ?site|site)\s*[:=]\s*([a-z0-9 /_-]+)", text, re.I)
+        match = re.search(
+            r"(?:minesite|mine ?site|site(?:\s+minier)?)\s*(?:[:=]|de|of)?\s+"
+            r"([a-z0-9][a-z0-9 /_-]*?)(?=\s*(?:,|;|\?|$|\b(?:en|in|pour|for|ytd|year|annee|année)\b))",
+            text,
+            re.I,
+        )
         if match:
             return match.group(1).strip()
     if entity_type == "model":
@@ -173,7 +194,12 @@ def _extract_value(question_text: str, entity_type: str) -> str | None:
     if entity_type == "period":
         return _extract_period(text)
     if entity_type == "customer":
-        match = re.search(r"(?:customer|client)\s*[:=]\s*([a-z0-9 /_-]+)", text, re.I)
+        match = re.search(
+            r"(?:customer|client)\s*(?:[:=]|de|of)?\s+"
+            r"([a-z0-9][a-z0-9 /_-]*?)(?=\s*(?:,|;|\?|$|\b(?:en|in|pour|for|ytd|year|annee|année)\b))",
+            text,
+            re.I,
+        )
         if match:
             return match.group(1).strip()
     if entity_type == "component":
@@ -248,6 +274,23 @@ def _build_fallback_intent(question_text: str, section_code: str | None = None) 
         period_value = _extract_period(question_text)
         if period_value:
             filters["period"] = period_value
+    group_by = None
+    if section == "parts_sales":
+        text = _normalize(question_text)
+        if any(token in text for token in ("by customer", "by client", "par customer", "par client")):
+            group_by = "customer"
+        elif any(token in text for token in ("by minesite", "by mine site", "by site", "par minesite", "par site")):
+            group_by = "minesite"
+        if not filters.get("customer") and not filters.get("minesite"):
+            implicit = re.search(
+                r"(?:\bfor\b|\bpour\b|\bde\b|\bdu\b)\s+([a-z0-9][a-z0-9 /_-]*?)"
+                r"(?=\s*(?:\?|$|\b(?:en|in|ytd|year|annee|année)\b))",
+                str(question_text or ""),
+                re.I,
+            )
+            if implicit and not group_by:
+                filters["customer"] = implicit.group(1).strip()
+        filters.setdefault("period", "year to date")
     intent = {
         "section": section,
         "intent_type": _detect_intent_type(question_text),
@@ -256,6 +299,8 @@ def _build_fallback_intent(question_text: str, section_code: str | None = None) 
         "comparison": _ranking_payload(question_text),
         "navigation": {"open_report": True, "open_page": True, "focus_visual": True},
     }
+    if group_by:
+        intent["group_by"] = [group_by]
     if intent["intent_type"] == "powerbi_navigation":
         intent["navigation"]["report_query"] = str(question_text or "").strip()
     return enrich_machine_performance_intent(intent, question_text) if section == "performance" else intent
@@ -266,6 +311,8 @@ def extract_intent(question_text: str, section_code: str | None = None) -> dict:
     # Availability is fully controlled by configured synonyms, filters and DAX
     # templates. Avoid a slow and less deterministic LLM extraction when the
     # business intent is already resolved locally.
+    if fallback.get("metric") == "parts_sales_ytd":
+        return fallback
     if fallback.get("metric") == "availability" or fallback.get("intent_type") == "powerbi_navigation":
         return enrich_machine_performance_intent(fallback, question_text)
     try:

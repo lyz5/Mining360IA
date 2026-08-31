@@ -30,6 +30,7 @@ from .powerbi_embed_strategy import (
     corporate_connect_url,
 )
 from .powerbi_interaction_service import public_navigation_payload, resolve_navigation, validate_interaction_intent
+from .site_access_service import SiteAccessDenied, effective_report_security
 
 
 RESOURCE_MODELS = {
@@ -320,10 +321,20 @@ def interaction_embed_config_api(request, report_id):
             if is_platform_admin(request.user)
             else configured.default_rls_role
         ) or configured.default_rls_role or "Global"
+        security = effective_report_security(
+            request.user,
+            configured.report_name or configured.display_name or configured.semantic_model_id,
+            role,
+        )
+        if security["restricted"]:
+            role = security["roles"][0]
         config = build_embed_configuration(
             request,
             configured,
             role=role,
+            roles=security["roles"],
+            effective_username=security["effective_username"],
+            require_effective_identity=security["restricted"],
         )
         response = JsonResponse({
             "ok": True,
@@ -341,6 +352,12 @@ def interaction_embed_config_api(request, report_id):
             "error": "This report contains an interactive Power Apps form and requires your corporate Microsoft account.",
             "connect_url": corporate_connect_url(request, configured),
         }, status=409)
+    except SiteAccessDenied as exc:
+        return JsonResponse({
+            "ok": False,
+            "error_code": "minesite_scope_forbidden",
+            "error": str(exc),
+        }, status=403)
     except (EntraAuthenticationError, PowerBIEmbedError) as exc:
         return JsonResponse({
             "ok": False,

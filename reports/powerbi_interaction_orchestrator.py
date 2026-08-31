@@ -14,7 +14,7 @@ from .availability_reference_service import resolve_availability_references
 from .dax_generator_service import generate_dax_from_intent, generate_performance_overview_dax
 from .downtime_event_service import comment_coverage, detect_repeated_failures, normalize_events
 from .downtime_query_service import build_equipment_dax, build_events_dax
-from .intent_extractor_service import extract_intent
+from .intent_extractor_service import detect_ai_section, extract_intent
 from .machine_performance_intent_service import enrich_machine_performance_intent
 from .machine_performance_response_service import (
     MachinePerformanceResponsePlanningService,
@@ -22,6 +22,7 @@ from .machine_performance_response_service import (
 )
 from .models import AIConversationContext, KnowledgeSynonym, PowerBIInteractionLog
 from .openai_service import generate_chat_response
+from .parts_sales_chat_service import execute_parts_sales_intent
 from .power_automate import execute_dax_via_flow
 from .powerbi import resolve_dataset_roles, resolve_workspace_dataset_id
 from .powerbi_interaction_service import (
@@ -35,6 +36,7 @@ from .resource_knowledge_search_service import search_resource_knowledge
 from .synonym_resolution_service import resolve_synonyms
 from .synonym_utils import normalize_synonym_key
 from .smcs_service import resolve_event_smcs
+from .site_access_service import SiteAccessDenied, effective_report_security, enforce_intent_site_scope
 
 
 def _conversation_context(conversation_id: str, user=None) -> dict:
@@ -473,17 +475,26 @@ def process_user_question(question_text, user_context=None, conversation_context
     extracted = user_context.get("pre_extracted_intent")
     synonym_resolution = None
     if not isinstance(extracted, dict):
-        synonym_resolution = resolve_synonyms(
-            question_text,
-            section_code=user_context.get("section_code"),
-            mode="Production",
-            context={
-                "metric": previous_intent.get("metric"),
-                "active_report": user_context.get("active_report"),
-                "active_page": user_context.get("active_page"),
-            },
-        )
-        if synonym_resolution["requires_clarification"]:
+        detected_section = detect_ai_section(question_text, user_context.get("section_code"))
+        if detected_section == "parts_sales":
+            extracted = extract_intent(question_text, detected_section)
+            synonym_resolution = {
+                "original_text": question_text,
+                "resolved_entities": [],
+                "requires_clarification": False,
+            }
+        else:
+            synonym_resolution = resolve_synonyms(
+                question_text,
+                section_code=user_context.get("section_code"),
+                mode="Production",
+                context={
+                    "metric": previous_intent.get("metric"),
+                    "active_report": user_context.get("active_report"),
+                    "active_page": user_context.get("active_page"),
+                },
+            )
+        if detected_section != "parts_sales" and synonym_resolution["requires_clarification"]:
             return {
                 "ok": False,
                 "conversation_id": conversation_id,
@@ -496,11 +507,12 @@ def process_user_question(question_text, user_context=None, conversation_context
                     "warnings": [synonym_resolution["clarification_question"]],
                 },
             }
-        extraction_text = question_text
-        if follow_up and previous_intent.get("metric") == "availability":
-            extraction_text = f"availability {question_text}"
-        extracted = extract_intent(extraction_text, user_context.get("section_code"))
-        extracted = _apply_resolved_entities(extracted, synonym_resolution)
+        if detected_section != "parts_sales":
+            extraction_text = question_text
+            if follow_up and previous_intent.get("metric") == "availability":
+                extraction_text = f"availability {question_text}"
+            extracted = extract_intent(extraction_text, user_context.get("section_code"))
+            extracted = _apply_resolved_entities(extracted, synonym_resolution)
         if extracted.get("metric") == "availability":
             reference_filters, reference_errors = resolve_availability_references(
                 question_text,
@@ -530,11 +542,27 @@ def process_user_question(question_text, user_context=None, conversation_context
         previous_intent,
         inherit_previous=follow_up,
     )
+    try:
+        intent = enforce_intent_site_scope(intent, user)
+    except SiteAccessDenied as exc:
+        return {
+            "ok": False,
+            "status_code": 403,
+            "error": str(exc),
+            "error_code": "minesite_scope_forbidden",
+            "conversation_id": conversation_id,
+            "intent": intent,
+            "validation": {"status": "forbidden", "errors": [str(exc)], "warnings": []},
+        }
     if intent.get("section") == "performance":
         intent = enrich_machine_performance_intent(intent, question_text)
         intent["_adaptive_responses_enabled"] = adaptive_performance_responses_enabled(user)
     navigation_request = intent.setdefault("navigation", {})
-    open_report = bool(user_context.get("open_report", True))
+    is_parts_sales = intent.get("section") == "parts_sales" and intent.get("metric") == "parts_sales_ytd"
+    default_open_report = False if is_parts_sales else True
+    open_report = bool(user_context.get("open_report", default_open_report))
+    if is_parts_sales and intent.get("intent_type") != "powerbi_navigation":
+        open_report = False
     navigation_request["open_report"] = open_report
     navigation_request["open_page"] = open_report and bool(navigation_request.get("open_page", True))
     navigation_request["focus_visual"] = open_report and bool(navigation_request.get("focus_visual", True))
@@ -577,18 +605,39 @@ def process_user_question(question_text, user_context=None, conversation_context
     intent_type = intent.get("intent_type") or "single_kpi"
     response_planner = MachinePerformanceResponsePlanningService()
     query_plan = response_planner.build_query_plan(intent)
-    dataset_id = (
+    dataset_name = (
+        "Mine Logistics & AfterMarket"
+        if is_parts_sales
+        else (user_context.get("dataset_name") or "FPR Global DB + RLS")
+    )
+    dataset_id = "" if is_parts_sales else (
         navigation.get("semantic_model_id")
         or user_context.get("dataset_id")
-        or resolve_workspace_dataset_id(user_context.get("dataset_name") or "FPR Global DB + RLS")
+        or resolve_workspace_dataset_id(dataset_name)
     )
-    dataset_name = user_context.get("dataset_name") or "FPR Global DB + RLS"
     rls_role = user_context.get("rls_role") or ""
+    flow_roles = list(user_context.get("roles") or [])
+    try:
+        site_security = effective_report_security(user, dataset_name, rls_role)
+    except SiteAccessDenied as exc:
+        return {
+            "ok": False,
+            "status_code": 403,
+            "error": str(exc),
+            "error_code": "minesite_scope_forbidden",
+            "conversation_id": conversation_id,
+            "intent": intent,
+            "validation": {"status": "forbidden", "errors": [str(exc)], "warnings": []},
+        }
+    if site_security["restricted"]:
+        flow_roles = site_security["roles"]
+        rls_role = flow_roles[0]
     if not rls_role:
         site = (intent.get("filters") or {}).get("minesite") or (intent.get("filters") or {}).get("site")
         if site:
             resolved_roles = resolve_dataset_roles(dataset_name, [str(site)])
             rls_role = resolved_roles[0] if resolved_roles else str(site)
+            flow_roles = [rls_role]
     flow_base = {
         "datasetId": dataset_id,
         "datasetName": dataset_name,
@@ -596,9 +645,32 @@ def process_user_question(question_text, user_context=None, conversation_context
         "section": intent.get("section"),
         "intent": intent,
         "rlsRole": rls_role,
-        "roles": user_context.get("roles") or ([rls_role] if rls_role else []),
+        "roles": flow_roles or ([rls_role] if rls_role else []),
     }
-    if query_plan["execute_primary_metric"]:
+    parts_sales_result = None
+    if is_parts_sales:
+        parts_sales_result = execute_parts_sales_intent(
+            intent,
+            user=user,
+            question_text=question_text,
+        )
+        rows = parts_sales_result["rows"]
+        dax_payload = {
+            "dax": parts_sales_result["dax"],
+            "metric": parts_sales_result["metric"],
+            "metric_label": "Parts Sales YTD",
+            "measure": parts_sales_result["measure"],
+            "filters": dict(intent.get("filters") or {}),
+            "section": "parts_sales",
+        }
+        intent["metric_label"] = "Parts Sales YTD"
+        powerbi_result = {
+            "firstTableRows": rows,
+            "value": parts_sales_result["value"],
+            "year": parts_sales_result["year"],
+            "cached": parts_sales_result["cached"],
+        }
+    elif query_plan["execute_primary_metric"]:
         query_intent = {**intent, "intent_type": intent.get("query_intent_type") or intent_type}
         dax_payload = (
             generate_performance_overview_dax(query_intent)
@@ -687,6 +759,12 @@ def process_user_question(question_text, user_context=None, conversation_context
                 ]))
 
     answer = _adaptive_answer_payload(intent, rows, diagnostics, question_text)
+    if parts_sales_result:
+        answer = {
+            **answer,
+            "answer": parts_sales_result["answer"],
+            "interpretation": parts_sales_result["answer"],
+        }
     confirmation_answer = _availability_confirmation_answer(question_text, rows)
     if confirmation_answer:
         answer = {
@@ -696,7 +774,7 @@ def process_user_question(question_text, user_context=None, conversation_context
         }
     response_fallback_used = False
     response_generation_warning = ""
-    if intent.get("metric") == "availability" or intent_type in {"downtime_drivers", "root_cause_analysis", "powerbi_navigation"}:
+    if intent.get("metric") in {"availability", "parts_sales_ytd"} or intent_type in {"downtime_drivers", "root_cause_analysis", "powerbi_navigation"}:
         # Availability answers are formatted from the validated Power BI result.
         # Do not let response generation alter or invent a numeric KPI value.
         final_answer = answer["answer"]

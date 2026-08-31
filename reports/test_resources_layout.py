@@ -1,5 +1,6 @@
 import tempfile
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 from django.contrib.auth.models import User
@@ -23,6 +24,32 @@ class ResourcesLayoutTests(TestCase):
         self.assertContains(response, 'aria-label="Resource documents"')
         self.assertNotContains(response, 'class="workspace-band"')
         self.assertNotContains(response, 'class="summary-value"')
+
+    @patch("reports.views.get_resource")
+    def test_resource_detail_uses_sidebar_safe_viewport_shell(self, get_resource):
+        get_resource.return_value = SimpleNamespace(
+            id="resource-1",
+            title="Maintenance Guide",
+            extension="PDF",
+            section="Maintenance",
+            category="Best Practices",
+            level="General",
+            filename="maintenance-guide.pdf",
+            folder_path="Maintenance/Best Practices",
+            size_label="2 MB",
+            mime_type="application/pdf",
+            raw_url="/resources/files/resource-1/",
+            is_pdf=True,
+            is_text=False,
+        )
+
+        response = self.client.get(reverse("resource-detail", args=["resource-1"]))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'class="resource-detail-page-body"')
+        self.assertContains(response, 'class="app-shell resource-view-shell"')
+        self.assertContains(response, 'aria-label="Resource details"')
+        self.assertNotContains(response, 'class="workspace-band"')
 
     def test_resources_are_paginated_and_inventory_is_cached(self):
         with tempfile.TemporaryDirectory() as directory:

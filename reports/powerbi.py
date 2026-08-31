@@ -1060,7 +1060,13 @@ def get_workspace_report(report_id: str, reports: list[PowerBIReport] | None = N
     raise RuntimeError(f"Report not found: {report_id}")
 
 
-def generate_report_embed_token(report: PowerBIReport, selected_roles: list[str] | None = None) -> str:
+def generate_report_embed_token(
+    report: PowerBIReport,
+    selected_roles: list[str] | None = None,
+    *,
+    effective_username_override: str = "",
+    require_effective_identity: bool = False,
+) -> str:
     workspace_id = env_value("POWERBI_WORKSPACE_ID", DEFAULT_WORKSPACE_ID)
     token = get_access_token()
     connection_options = get_report_connection_options(report)
@@ -1089,7 +1095,8 @@ def generate_report_embed_token(report: PowerBIReport, selected_roles: list[str]
         "datasets": [{"id": dataset_id, "xmlaPermissions": "ReadOnly"} for dataset_id in dataset_ids],
         "targetWorkspaces": [{"id": workspace_id}],
     }
-    effective_username = connection_options.get("embed", {}).get("effective_username", "")
+    effective_username = str(effective_username_override or "").strip()
+    effective_username = effective_username or connection_options.get("embed", {}).get("effective_username", "")
     try:
         effective_username = effective_username or env_value("POWERBI_EFFECTIVE_USERNAME")
     except RuntimeError:
@@ -1131,6 +1138,8 @@ def generate_report_embed_token(report: PowerBIReport, selected_roles: list[str]
             identities.append(identity)
     if identities:
         payload["identities"] = identities
+    if require_effective_identity and not identities:
+        raise RuntimeError("The report semantic model does not expose the required MineSite RLS identity.")
 
     payload_fingerprint = json.dumps(payload, sort_keys=True, separators=(",", ":"))
     embed_cache_key = (workspace_id, str(report.id), payload_fingerprint)

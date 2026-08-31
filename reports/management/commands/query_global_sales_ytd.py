@@ -12,6 +12,7 @@ CUSTOMER_TABLE = "GlobalCA"
 CUSTOMER_COLUMN = "Nom client"
 REVENUE_MEASURES = {
     "EUR": "CA Facture EU",
+    "EURO": "CA Facture EU",
     "USD": "CA Facture US",
     "CFA": "CA Facture XO",
     "XOF": "CA Facture XO",
@@ -36,18 +37,17 @@ class Command(BaseCommand):
     help = "Query the official Global Sales YTD measure for matching customer names."
 
     def add_arguments(self, parser):
-        parser.add_argument("--customer", required=True)
+        parser.add_argument("--customer", default="")
         parser.add_argument("--lob", default="")
-        parser.add_argument("--currency", default="EUR")
+        parser.add_argument("--currency", default="EURO")
         parser.add_argument("--year", type=int, default=date.today().year)
+        parser.add_argument("--include-interco", action="store_true")
         parser.add_argument("--json", action="store_true")
 
     def handle(self, *args, **options):
         customer = str(options["customer"] or "").strip()
-        if not customer:
-            raise CommandError("Customer is required.")
         lob = str(options["lob"] or "").strip().upper()
-        currency = str(options["currency"] or "EUR").strip().upper()
+        currency = str(options["currency"] or "EURO").strip().upper()
         measure = REVENUE_MEASURES.get(currency)
         if not measure:
             raise CommandError(f"Unsupported currency: {currency}")
@@ -63,20 +63,36 @@ class Command(BaseCommand):
         )
         if not dataset:
             raise CommandError(f"Semantic model not found: {SEMANTIC_MODEL_NAME}")
-        query = f"""
-EVALUATE
+        customer_dimension = f"'{CUSTOMER_TABLE}'[{CUSTOMER_COLUMN}]," if customer else ""
+        channel_filter = ""
+        if not options["include_interco"]:
+            channel_filter = (
+                f'TREATAS({{"Onshore", "Offshore"}}, '
+                f'\'{CUSTOMER_TABLE}\'[Canal de distribution]),'
+            )
+        summarized = f"""
+SUMMARIZECOLUMNS(
+    {customer_dimension}
+    TREATAS({{{year}}}, '{CUSTOMER_TABLE}'[Année]),
+    {f"TREATAS({{{_dax_string(lob)}}}, '{CUSTOMER_TABLE}'[LOB])," if lob else ""}
+    {channel_filter}
+    "Sales YTD", [{measure}]
+)
+""".strip()
+        result_expression = summarized
+        if customer:
+            result_expression = f"""
 FILTER(
-    SUMMARIZECOLUMNS(
-        '{CUSTOMER_TABLE}'[{CUSTOMER_COLUMN}],
-        TREATAS({{{year}}}, '{CUSTOMER_TABLE}'[Année]),
-        {f"TREATAS({{{_dax_string(lob)}}}, '{CUSTOMER_TABLE}'[LOB])," if lob else ""}
-        "Sales YTD", [{measure}]
-    ),
+    {summarized},
     CONTAINSSTRING(
         UPPER('{CUSTOMER_TABLE}'[{CUSTOMER_COLUMN}]),
         UPPER({_dax_string(customer)})
     )
 )
+""".strip()
+        query = f"""
+EVALUATE
+{result_expression}
 ORDER BY [Sales YTD] DESC
 """.strip()
         try:
@@ -84,9 +100,15 @@ ORDER BY [Sales YTD] DESC
                 "datasetId": str(dataset.get("id") or ""),
                 "datasetName": SEMANTIC_MODEL_NAME,
                 "query": query,
-                "question": f"Sales YTD for customer matching {customer}, LOB {lob or 'ALL'}, {currency}",
+                "question": f"Sales YTD for customer matching {customer or 'ALL'}, LOB {lob or 'ALL'}, {currency}",
                 "section": "business_performance",
-                "filters": {"customer_search": customer, "lob": lob, "year": year, "currency": currency},
+                "filters": {
+                    "customer_search": customer,
+                    "lob": lob,
+                    "year": year,
+                    "currency": currency,
+                    "distribution_channel": [] if options["include_interco"] else ["Direct"],
+                },
                 "roles": [],
             })
         except Exception as exc:
@@ -98,6 +120,8 @@ ORDER BY [Sales YTD] DESC
             "lob": lob,
             "currency": currency,
             "year": year,
+            "interco_included": bool(options["include_interco"]),
+            "distribution_channel": "All" if options["include_interco"] else "Direct",
             "results": _rows(response),
         }
         if options["json"]:

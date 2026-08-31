@@ -228,6 +228,41 @@ class UsersAccessManagementTests(TestCase):
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.json()["field_errors"].keys(), {"powerbi_rls_role"})
 
+    @patch("reports.user_access_service._minesite_options", return_value=["Fekola", "Essakane"])
+    @patch("reports.user_access_service._business_options", return_value=([], [], []))
+    def test_minesite_access_requires_one_site_and_derives_rls(self, _business, _sites):
+        profile = self.create_profile(business_performance_scope={})
+        response = self.client.patch(
+            reverse("access-control-update-api", args=[profile.pk]),
+            data=json.dumps({
+                "platform_roles": ["reporting", "ai"], "directory_roles_managed": False,
+                "business_performance_access": "MineSite", "countries": [], "customers": [],
+                "minesites": ["Fekola"], "powerbi_rls_role": "",
+            }), content_type="application/json",
+        )
+
+        self.assertEqual(response.status_code, 200, response.json())
+        profile.refresh_from_db()
+        self.assertEqual(profile.business_performance_scope["minesite"], ["Fekola"])
+        self.assertEqual(profile.business_performance_scope["rls_role"], "Fekola")
+        self.assertEqual(response.json()["user"]["minesites"], ["Fekola"])
+
+    @patch("reports.user_access_service._minesite_options", return_value=["Fekola"])
+    @patch("reports.user_access_service._business_options", return_value=([], [], []))
+    def test_minesite_access_without_site_is_rejected(self, _business, _sites):
+        profile = self.create_profile(business_performance_scope={})
+        response = self.client.patch(
+            reverse("access-control-update-api", args=[profile.pk]),
+            data=json.dumps({
+                "platform_roles": ["reporting", "ai"], "directory_roles_managed": False,
+                "business_performance_access": "MineSite", "countries": [], "customers": [],
+                "minesites": [], "powerbi_rls_role": "",
+            }), content_type="application/json",
+        )
+
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.json()["field_errors"].keys(), {"minesites"})
+
     def test_frontend_uses_debounce_and_request_cancellation(self):
         source = Path(__file__).with_name("static").joinpath("reports", "users_access.js").read_text(encoding="utf-8")
         self.assertIn("setTimeout(() => searchDirectory(event.target.value), 300)", source)

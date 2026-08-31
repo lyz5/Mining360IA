@@ -12,6 +12,7 @@
     const content = root.querySelector("[data-bp-content]");
     const overviewSection = root.querySelector("[data-overview-only]");
     const detailSection = root.querySelector("[data-detail-only]");
+    const salesSection = root.querySelector("[data-sales-only]");
 
     function formatValue(value, key) {
         if (value === null || value === undefined || value === "") return "—";
@@ -23,7 +24,9 @@
             return `${pct.toLocaleString("en-GB", { maximumFractionDigits: 1 })}%`;
         }
         if (lower.includes("revenue") || lower.includes(" ca") || lower.startsWith("ca ")) {
-            return new Intl.NumberFormat("en-GB", { style: "currency", currency: "EUR", notation: "compact", maximumFractionDigits: 1 }).format(number);
+            const configured = String(state.payload?.currency || "EUR").toUpperCase();
+            const currency = configured === "EURO" ? "EUR" : configured === "CFA" ? "XOF" : configured;
+            return new Intl.NumberFormat("en-GB", { style: "currency", currency, notation: "compact", maximumFractionDigits: 1 }).format(number);
         }
         return number.toLocaleString("en-GB", { maximumFractionDigits: 2 });
     }
@@ -67,22 +70,28 @@
             renderTable("details", allRows);
             overviewSection.hidden = false;
             detailSection.hidden = false;
+            if (salesSection) salesSection.hidden = true;
             return;
         }
         if (page === "overview") {
             renderOverview(data);
             overviewSection.hidden = false;
             detailSection.hidden = true;
+            if (salesSection) salesSection.hidden = true;
         } else if (page === "customers") {
             renderKpis({});
             renderTable("details", data.customers || []);
             overviewSection.hidden = true;
             detailSection.hidden = false;
+            if (salesSection) salesSection.hidden = true;
         } else {
-            renderKpis(deriveKpis(data.rows || []));
+            renderKpis(data.kpis || deriveKpis(data.rows || []));
+            renderTable("sales-customers", data.top_customers || []);
+            renderTrend(data.trend || [], "sales-trend");
             renderTable("details", data.rows || []);
             overviewSection.hidden = true;
             detailSection.hidden = false;
+            if (salesSection) salesSection.hidden = false;
         }
     }
 
@@ -143,8 +152,9 @@
         return key ? row[key] || "" : "";
     }
 
-    function renderTrend(rows) {
-        const holder = root.querySelector('[data-chart="trend"]');
+    function renderTrend(rows, chartName = "trend") {
+        const holder = root.querySelector(`[data-chart="${chartName}"]`);
+        if (!holder) return;
         if (!rows.length) { holder.innerHTML = "<p class=\"bp-no-data\">No trend data.</p>"; return; }
         const numericKeys = Object.keys(rows[0]).filter(key => rows.some(row => Number.isFinite(Number(row[key]))));
         const max = Math.max(1, ...rows.flatMap(row => numericKeys.map(key => Number(row[key]) || 0)));

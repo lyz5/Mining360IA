@@ -27,23 +27,46 @@ def _diagnostic_reference(response) -> str:
     return ""
 
 
-def get_flow_url() -> str:
+AFTERMARKET_DATASET_NAMES = {
+    "mine logistics & aftermarket",
+}
+
+
+def _uses_aftermarket_flow(dataset_name: str) -> bool:
+    return str(dataset_name or "").strip().casefold() in AFTERMARKET_DATASET_NAMES
+
+
+def get_flow_url(dataset_name: str = "") -> str:
+    aftermarket = _uses_aftermarket_flow(dataset_name)
+    config_key = "aftermarket_dax_flow_url" if aftermarket else "dax_flow_url"
+    environment_key = (
+        "POWER_AUTOMATE_AFTERMARKET_DAX_FLOW_URL"
+        if aftermarket
+        else "POWER_AUTOMATE_DAX_FLOW_URL"
+    )
     try:
         from .system_configuration_service import integration_value
 
-        configured_url = integration_value("Power Automate", "dax_flow_url", "", secret=True)
+        configured_url = integration_value("Power Automate", config_key, "", secret=True)
     except Exception:
         configured_url = ""
     return (
-        os.getenv("POWER_AUTOMATE_DAX_FLOW_URL")
+        os.getenv(environment_key)
         or configured_url
-        or _local_powerbi_credentials().get("POWER_AUTOMATE_DAX_FLOW_URL", "")
+        or _local_powerbi_credentials().get(environment_key, "")
     ).strip()
 
 
 def execute_dax_via_flow(payload: dict) -> dict:
-    flow_url = get_flow_url()
+    dataset_name = str(payload.get("datasetName") or "").strip()
+    flow_url = get_flow_url(dataset_name)
     if not flow_url:
+        if _uses_aftermarket_flow(dataset_name):
+            raise RuntimeError(
+                "inspectData2 is not configured for Mine Logistics & AfterMarket. "
+                "Set POWER_AUTOMATE_AFTERMARKET_DAX_FLOW_URL or configure the "
+                "AfterMarket DAX Flow URL in System Configuration."
+            )
         raise RuntimeError(
             "POWER_AUTOMATE_DAX_FLOW_URL is not configured. "
             "Create the HTTP-triggered Flow and store its URL in powerbi_credentials.local.json."

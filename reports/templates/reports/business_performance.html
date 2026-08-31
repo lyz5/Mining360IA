@@ -42,6 +42,7 @@
 
     <section class="bp-filter-panel" data-filter-panel hidden>
         <label>Date<input name="year" type="number" min="2000" max="2100" placeholder="2026" inputmode="numeric"></label>
+        <label>Currency<select name="currency"><option value="EURO">EURO</option><option value="USD">USD</option><option value="XOF">CFA / XOF</option></select></label>
         <label>Customer<input name="customer" value="{{ customer }}" placeholder="Search or enter values"></label>
         <p class="bp-filter-help">Separate multiple values with commas. Access scopes and Power BI RLS remain enforced.</p>
     </section>
@@ -88,6 +89,17 @@
             <article class="bp-panel bp-panel--span2">
                 <div class="bp-panel-head"><div><p class="eyebrow">Rule-based analysis</p><h2>Key Insights</h2></div></div>
                 <ul class="bp-insights" data-insights></ul>
+            </article>
+        </section>
+
+        <section class="bp-grid bp-grid--sales" data-sales-only hidden>
+            <article class="bp-panel">
+                <div class="bp-panel-head"><div><p class="eyebrow">Year to date</p><h2>Monthly Sales Trend</h2></div></div>
+                <div class="bp-chart" data-chart="sales-trend"></div>
+            </article>
+            <article class="bp-panel">
+                <div class="bp-panel-head"><div><p class="eyebrow">Customer contribution</p><h2>Top Customers</h2></div></div>
+                <div class="table-scroll"><table class="data-table bp-data-table" data-table="sales-customers"></table></div>
             </article>
         </section>
 

@@ -133,6 +133,23 @@ class PowerBIUserOwnedEmbeddingTests(TestCase):
         self.assertEqual(build.call_args.kwargs["role"], "SiteManager")
 
     @patch("reports.powerbi_interaction_views.build_embed_configuration")
+    def test_minesite_user_embed_uses_effective_identity_and_site_rls(self, build):
+        profile = self.user.platformuser
+        profile.business_performance_role = "MineSite"
+        profile.business_performance_scope = {"minesite": ["Fekola"], "rls_role": "Fekola"}
+        profile.save(update_fields=["business_performance_role", "business_performance_scope", "updated_at"])
+        report = self._report(report_name="Fleet Performance Report", default_rls_role="Global")
+        build.return_value = {"type": "report", "accessToken": "scoped-token", "tokenType": "Embed"}
+
+        response = self.client.get(reverse("powerbi-interaction-embed-config", args=[report.report_id]))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(build.call_args.kwargs["role"], "Fekola")
+        self.assertEqual(build.call_args.kwargs["roles"], ["Fekola"])
+        self.assertEqual(build.call_args.kwargs["effective_username"], "user@neemba.com")
+        self.assertTrue(build.call_args.kwargs["require_effective_identity"])
+
+    @patch("reports.powerbi_interaction_views.build_embed_configuration")
     def test_user_owned_endpoint_requires_interactive_login_without_fallback(self, build):
         report = self._report(
             authentication_mode="user_owns_data",

@@ -434,7 +434,6 @@
                 if (event.type === "token_refresh_failed") setCanvasState("Your report session could not be renewed.", true);
             },
         });
-        state.embed.bootstrap(reportId, root.dataset.embedUrl);
         try {
             const configUrl = new URL(root.dataset.viewerConfigUrl, window.location.origin);
             new URL(window.location.href).searchParams.forEach((value, key) => configUrl.searchParams.append(key, value));

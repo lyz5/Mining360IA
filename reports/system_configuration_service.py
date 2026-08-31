@@ -50,7 +50,8 @@ INTEGRATION_SCHEMAS = {
     "Power Automate": {
         "provider": "Microsoft Power Automate",
         "fields": [
-            {"key": "dax_flow_url", "label": "DAX Flow URL", "type": "password", "secret": True, "required": True},
+            {"key": "dax_flow_url", "label": "FPR DAX Flow URL (inspectData)", "type": "password", "secret": True, "required": True},
+            {"key": "aftermarket_dax_flow_url", "label": "AfterMarket DAX Flow URL (inspectData2)", "type": "password", "secret": True},
             {"key": "timeout_seconds", "label": "Timeout (seconds)", "type": "number", "default": 300},
             {"key": "retry_count", "label": "Retry Count", "type": "number", "default": 1},
         ],

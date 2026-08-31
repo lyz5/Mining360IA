@@ -3645,7 +3645,7 @@ def _execute_ai_ask(request, payload_override=None):
                         "summary": [],
                     },
                 })
-            return JsonResponse(orchestrated, status=400)
+            return JsonResponse(orchestrated, status=int(orchestrated.get("status_code") or 400))
         return JsonResponse({
             **orchestrated,
             "chat_message": orchestrated.get("answer"),
@@ -7365,7 +7365,13 @@ def business_performance_api(request, section):
                 "services-sales": "services",
                 "rental-sales": "rental",
             }[section]
-            payload = {"rows": service.detail_rows(category, filters, int(request.GET.get("limit", 1000)))}
+            payload = service.sales_domain_summary(
+                category,
+                filters,
+                request.GET.get("top_n"),
+                request.GET.get("currency"),
+                int(request.GET.get("limit", 1000)),
+            )
         elif section == "customer":
             customer = (request.GET.get("customer") or "").strip()
             if not customer:
@@ -7467,6 +7473,7 @@ def business_performance_config_api(request):
         "authentication_mode", "api_endpoint", "xmla_endpoint", "default_currency",
         "default_date_range", "default_lob", "default_division", "cache_duration_seconds",
         "parts_lob_values", "machine_lob_values", "services_lob_values", "rental_lob_values",
+        "direct_sales_channel_values",
         "query_timeout_seconds", "top_n_default", "active_fleet_status_value",
         "opportunity_threshold_mode", "opportunity_fleet_threshold", "opportunity_revenue_threshold",
     }

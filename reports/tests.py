@@ -1,5 +1,6 @@
 import json
 import os
+from unittest.mock import Mock, patch
 
 os.environ["MINING360_SQL_CONFIG_STORE"] = "0"
 
@@ -8,7 +9,7 @@ from django.core.cache import cache
 from django.test import TestCase
 from django.urls import reverse
 
-from .business_performance_service import BusinessPerformanceService, MappingNotConfigured
+from .business_performance_service import BusinessPerformanceService, MappingNotConfigured, QueryResult
 from .models import (
     AIConfigSection,
     AIFilterMapping,
@@ -203,7 +204,9 @@ class BusinessPerformanceTests(TestCase):
             "parts_revenue_per_fleet": ("", "Parts/Fleet", "measure"),
             "customer": ("Customer", "Customer Name", "column"),
             "year": ("Date", "Year", "column"),
+            "period": ("GlobalCA", "Mois", "column"),
             "lob": ("GlobalCA", "LOB", "column"),
+            "distribution_channel": ("GlobalCA", "Canal de distribution", "column"),
         }
         for order, (logical_name, values) in enumerate(required.items()):
             table, object_name, object_type = values
@@ -245,6 +248,10 @@ class BusinessPerformanceTests(TestCase):
         filters = service._domain_filters("parts", {"year": ["2026"]})
         dax = service._summarize([], ["global_revenue_ytd"], filters)
         self.assertIn("TREATAS({\"PARTS\"}, 'GlobalCA'[LOB])", dax)
+        self.assertIn(
+            "TREATAS({\"Onshore\", \"Offshore\"}, 'GlobalCA'[Canal de distribution])",
+            dax,
+        )
 
     def test_machine_domain_uses_validated_prime_lob(self):
         service = BusinessPerformanceService(self.user)
@@ -270,6 +277,41 @@ class BusinessPerformanceTests(TestCase):
             config.default_currency = currency
             config.save(update_fields=["default_currency"])
             self.assertEqual(BusinessPerformanceService(self.user).revenue_metric(), metric)
+
+    def test_parts_summary_uses_official_measure_and_lob(self):
+        service = BusinessPerformanceService(self.user)
+        service.execute = Mock(side_effect=[
+            QueryResult([{"Revenue EUR": 1000}], "total"),
+            QueryResult([{"Customer": "Fekola", "Revenue EUR": 1000}], "customers"),
+            QueryResult([{"Year": 2026, "Month": 1, "Revenue EUR": 1000}], "trend"),
+            QueryResult([{"Customer": "Fekola", "Revenue EUR": 1000}], "details"),
+        ])
+        result = service.sales_domain_summary("parts", {"year": ["2026"]}, currency="EUR")
+        self.assertEqual(result["measure"], "CA Facture EU")
+        self.assertEqual(result["filters"]["lob"], ["PARTS"])
+        self.assertEqual(result["filters"]["distribution_channel"], ["Onshore", "Offshore"])
+        dax_queries = [call.args[0] for call in service.execute.call_args_list]
+        self.assertTrue(all("'GlobalCA'[LOB]" in dax for dax in dax_queries))
+        self.assertTrue(all("'GlobalCA'[Canal de distribution]" in dax for dax in dax_queries))
+        self.assertTrue(all("[CA Facture EU]" in dax for dax in dax_queries))
+
+    @patch("reports.business_performance_service.execute_dataset_dax")
+    @patch("reports.business_performance_service.execute_dax_via_flow")
+    def test_power_automate_mode_routes_sales_to_dataset_specific_flow(self, flow, direct):
+        flow.return_value = {"firstTableRows": [{"[Revenue EUR]": 208000000}]}
+        service = BusinessPerformanceService(self.user)
+        rows = service._execute_remote_query(
+            "aftermarket-dataset-id",
+            'EVALUATE ROW("Revenue EUR", [CA Facture EU])',
+            "Sales YTD",
+            {"lob": ["PARTS"]},
+        )
+        self.assertEqual(rows[0]["[Revenue EUR]"], 208000000)
+        self.assertEqual(
+            flow.call_args.args[0]["datasetName"],
+            "Mine Logistics & AfterMarket",
+        )
+        direct.assert_not_called()
 
     def test_missing_mapping_is_explicit(self):
         BusinessPerformanceMapping.objects.filter(logical_name="customer").update(table_name="", object_name="")

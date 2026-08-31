@@ -66,6 +66,7 @@ def access_snapshot(item: PlatformUser) -> dict:
         "business_performance_access": item.business_performance_role,
         "countries": _scope_values(item, "country"),
         "customers": _scope_values(item, "customer"),
+        "minesites": _scope_values(item, "minesite"),
         "powerbi_rls_role": str((item.business_performance_scope or {}).get("rls_role") or ""),
     }
 
@@ -75,6 +76,7 @@ def serialize_user(item: PlatformUser, *, detail: bool = False) -> dict:
     source = access_source(item)
     countries = _scope_values(item, "country")
     customers = _scope_values(item, "customer")
+    minesites = _scope_values(item, "minesite")
     payload = {
         "id": item.pk,
         "display_name": item.display_name,
@@ -90,6 +92,7 @@ def serialize_user(item: PlatformUser, *, detail: bool = False) -> dict:
         "business_performance_access": item.business_performance_role,
         "countries": countries,
         "customers": customers,
+        "minesites": minesites,
         "powerbi_rls_role": str((item.business_performance_scope or {}).get("rls_role") or ""),
         "access_source": source,
         "updated_at": item.updated_at.isoformat(),
@@ -146,6 +149,12 @@ def _distinct_existing_scope(key: str) -> list[str]:
     return sorted(values, key=str.casefold)
 
 
+def _minesite_options() -> list[str]:
+    configured = set(_distinct_existing_scope("minesite"))
+    configured.update(role for role in RLS_ROLE_OPTIONS if role and role != "Global")
+    return sorted(configured, key=str.casefold)
+
+
 def _business_options(user) -> tuple[list[str], list[str], list[str]]:
     cache_key = "users-access:business-options:v1"
     cached = cache.get(cache_key)
@@ -180,6 +189,7 @@ def access_options(user) -> dict:
         ],
         "countries": [{"value": value, "label": value} for value in countries],
         "customers": [{"value": value, "label": value} for value in customers],
+        "minesites": [{"value": value, "label": value} for value in _minesite_options()],
         "powerbi_rls_roles": [{"value": "", "label": "No RLS role"}] + [
             {"value": value, "label": value} for value in RLS_ROLE_OPTIONS
         ],
@@ -212,6 +222,7 @@ def _validated_access(payload: dict, *, item: PlatformUser | None = None, actor=
         raise UserAccessValidationError("Select a valid Business Performance access level.", field="business_performance_access")
     countries = _clean_list(payload.get("countries"), "countries")
     customers = _clean_list(payload.get("customers"), "customers")
+    minesites = _clean_list(payload.get("minesites"), "minesites")
     if actor is not None:
         allowed_countries, allowed_customers, _ = _business_options(actor)
         invalid_countries = sorted(set(countries) - set(allowed_countries), key=str.casefold)
@@ -220,14 +231,23 @@ def _validated_access(payload: dict, *, item: PlatformUser | None = None, actor=
             raise UserAccessValidationError("Select countries from the governed list.", field="countries")
         if invalid_customers:
             raise UserAccessValidationError("Select customers from the governed list.", field="customers")
+        invalid_minesites = sorted(set(minesites) - set(_minesite_options()), key=str.casefold)
+        if invalid_minesites:
+            raise UserAccessValidationError("Select a MineSite from the governed list.", field="minesites")
     rls = str(payload.get("powerbi_rls_role") or "").strip()
     if rls and rls not in RLS_ROLE_OPTIONS:
         raise UserAccessValidationError("Select a configured Power BI RLS role.", field="powerbi_rls_role")
-    if not bp_role and (countries or customers):
-        raise UserAccessValidationError("Country and customer scopes require Business Performance access.", field="business_performance_access")
+    if not bp_role and (countries or customers or minesites):
+        raise UserAccessValidationError("Data scopes require Business Performance access.", field="business_performance_access")
+    if bp_role == "MineSite":
+        if len(minesites) != 1:
+            raise UserAccessValidationError("MineSite access requires exactly one authorized site.", field="minesites")
+        if countries or customers:
+            raise UserAccessValidationError("MineSite access cannot be combined with country or customer scopes.", field="business_performance_access")
+        rls = minesites[0]
     return {
         "roles": roles, "bp_role": bp_role, "countries": countries,
-        "customers": customers, "rls": rls,
+        "customers": customers, "minesites": minesites, "rls": rls,
         "directory_roles_managed": bool(payload.get("directory_roles_managed", False)),
     }
 
@@ -243,6 +263,8 @@ def _apply_access(item: PlatformUser, values: dict):
         scope["country"] = values["countries"]
     if values["customers"]:
         scope["customer"] = values["customers"]
+    if values["minesites"]:
+        scope["minesite"] = values["minesites"]
     if values["rls"]:
         scope["rls_role"] = values["rls"]
     item.business_performance_scope = scope

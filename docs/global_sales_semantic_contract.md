@@ -39,9 +39,13 @@ The existing Power BI report obtains Parts YTD by applying a global `PARTS` filt
 
 Validated invoice revenue measures:
 
-- EUR: `CA Facture EU` (`global_revenue_eur`)
+- EURO: `CA Facture EU` (`global_revenue_eur`)
 - US dollar: `CA Facture US` (`global_revenue_usd`)
 - CFA/XOF: `CA Facture XO` (`global_revenue_cfa`)
+
+The commercial Sales perimeter uses `Canaux de distribution = Direct` only.
+In `GlobalCA`, the governed Direct components are `Onshore` and `Offshore`, configured
+through `direct_sales_channel_values`. `Interco` and `Undefined` are excluded.
 
 These measures are the official source for displayed revenue. YTD, MTD or custom periods must be obtained through the approved semantic-model date context; Mining 360 must not convert currencies or sum raw debit/credit columns.
 

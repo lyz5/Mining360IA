@@ -185,7 +185,7 @@ class PremiumReportViewerTests(TestCase):
 
 
 class PremiumReportViewerSourceTests(SimpleTestCase):
-    def test_viewer_uses_viewport_layout_and_persistent_embed_api(self):
+    def test_viewer_uses_viewport_layout_and_direct_persistent_embed_api(self):
         from django.conf import settings
 
         css = (settings.BASE_DIR / "reports" / "static" / "reports" / "report_viewer.css").read_text(encoding="utf-8")
@@ -195,9 +195,10 @@ class PremiumReportViewerSourceTests(SimpleTestCase):
         self.assertNotIn("height: 700px", css)
         self.assertIn("state.embed.applyFilters", script)
         self.assertIn("state.embed.setFitMode", script)
-        self.assertIn("state.embed.bootstrap", script)
+        self.assertNotIn("state.embed.bootstrap", script)
         self.assertIn("loadSwitcher()", script)
         self.assertNotIn("window.location.reload", script)
 
         embed_script = (settings.BASE_DIR / "reports" / "static" / "reports" / "powerbi_embed.js").read_text(encoding="utf-8")
-        self.assertIn("window.powerbi.bootstrap", embed_script)
+        self.assertNotIn("window.powerbi.bootstrap", embed_script)
+        self.assertEqual(embed_script.count("window.powerbi.embed("), 1)
