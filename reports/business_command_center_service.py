@@ -143,7 +143,9 @@ class BusinessCommandCenterService:
         if not source_row:
             raise BusinessCommandCenterInputError("No governed Revenue snapshot is available.")
         publication = MappingPublication.objects.filter(status="Published").order_by("-version").first()
-        published_rows = filter_published_rows(list((publication.snapshot_json or {}).get("mappings", [])), self.user) if publication else []
+        snapshot = publication.snapshot_json or {} if publication else {}
+        classification_rows = snapshot.get("accounts") or snapshot.get("mappings", [])
+        published_rows = filter_published_rows(list(classification_rows), self.user) if publication else []
         customers, countries, key_accounts = self._csv("customer_ids"), self._csv("country_ids"), self._csv("key_account_ids")
         selected_rows = published_rows
         if customers:

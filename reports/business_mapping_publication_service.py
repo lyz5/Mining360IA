@@ -3,12 +3,20 @@ from __future__ import annotations
 from decimal import Decimal
 
 from django.db import transaction
-from django.db.models import Max, Sum
+from django.db.models import Max, Prefetch, Sum
 from django.utils import timezone
 
 from .business_mapping_access_service import has_mapping_permission
 from .business_mapping_conflict_service import BusinessMappingConflictService
-from .models import AccountMineSiteMapping, MappingAuditLog, MappingPublication, RevenueSiteAllocationRule
+from .models import (
+    AccountMineSiteMapping,
+    BusinessAccount,
+    KeyAccountMembership,
+    MappingAuditLog,
+    MappingPublication,
+    RevenueSiteAllocationRule,
+    SourceAccountRecord,
+)
 
 
 class MappingPublicationError(RuntimeError):
@@ -54,6 +62,70 @@ def _published_snapshot(queryset=None):
     return rows
 
 
+def _published_account_snapshot():
+    """Freeze canonical, country and Key Account classifications independently of MineSite mappings."""
+    accounts = BusinessAccount.objects.filter(active=True).prefetch_related(
+        Prefetch(
+            "source_records",
+            queryset=SourceAccountRecord.objects.filter(active=True),
+            to_attr="publication_source_records",
+        ),
+        Prefetch(
+            "key_account_memberships",
+            queryset=KeyAccountMembership.objects.filter(active=True, key_account__active=True).select_related("key_account"),
+            to_attr="publication_key_memberships",
+        ),
+        Prefetch(
+            "minesite_mappings",
+            queryset=AccountMineSiteMapping.objects.filter(
+                active=True,
+                relationship_status__in=["Validated", "Published"],
+                minesite__isnull=False,
+            ).select_related("minesite"),
+            to_attr="publication_minesite_mappings",
+        ),
+    )
+    rows = []
+    for account in accounts:
+        source_records = [{
+            "source_system": record.source_system,
+            "source_record_id": record.source_record_id,
+            "code_cic": record.code_cic,
+            "company_code": record.company_code,
+            "branch_code": record.branch_code,
+            "country": record.country,
+            "operating_countries_json": record.operating_countries_json,
+        } for record in account.publication_source_records]
+        if not source_records:
+            continue
+        membership = account.publication_key_memberships[0] if account.publication_key_memberships else None
+        operating_countries = {
+            str(country).strip()
+            for record in source_records for country in (record.get("operating_countries_json") or [])
+            if str(country).strip()
+        }
+        business_country = account.assigned_operating_country or (
+            next(iter(operating_countries)) if len(operating_countries) == 1 else ""
+        )
+        mine_names = sorted({
+            mapping.minesite.canonical_minesite_name
+            for mapping in account.publication_minesite_mappings
+            if mapping.minesite_id
+        })
+        rows.append({
+            "account_id": str(account.id),
+            "account_code": account.canonical_account_code,
+            "account_name": account.canonical_account_name,
+            "business_country": business_country,
+            "key_account_id": str(membership.key_account_id) if membership else None,
+            "key_account_name": membership.key_account.key_account_name if membership else None,
+            "minesite_names": mine_names,
+            "source_records": source_records,
+            "source_account_codes": sorted({record["source_record_id"] for record in source_records}),
+        })
+    return rows
+
+
 class MappingPublicationService:
     def __init__(self, user, source_ip=None):
         self.user = user
@@ -61,12 +133,13 @@ class MappingPublicationService:
 
     def preview(self):
         rows = _published_snapshot()
+        accounts = _published_account_snapshot()
         current = MappingPublication.objects.filter(status="Published").order_by("-version").first()
         old = {item["mapping_id"]: item for item in (current.snapshot_json.get("mappings", []) if current else [])}
         new = {item["mapping_id"]: item for item in rows}
         conflicts = BusinessMappingConflictService.list_conflicts()
         return {
-            "mapping_count": len(rows), "account_count": len({row["account_id"] for row in rows}),
+            "mapping_count": len(rows), "account_count": len(accounts),
             "minesite_count": len({row["minesite_id"] for row in rows if row["minesite_id"]}),
             "changes": {
                 "added": [new[key] for key in new.keys() - old.keys()],
@@ -87,13 +160,14 @@ class MappingPublicationService:
         list(AccountMineSiteMapping.objects.select_for_update().filter(active=True, relationship_status__in=["Validated", "Published"]).values_list("pk", flat=True))
         version = (MappingPublication.objects.aggregate(value=Max("version"))["value"] or 0) + 1
         rows = _published_snapshot()
+        accounts = _published_account_snapshot()
         total_allocated = RevenueSiteAllocationRule.objects.filter(status="Validated").aggregate(value=Sum("allocation_percentage"))["value"] or Decimal("0")
         publication = MappingPublication.objects.create(
             version=version, status="Published", mapping_count=len(rows),
-            account_count=len({row["account_id"] for row in rows}),
+            account_count=len(accounts),
             minesite_count=len({row["minesite_id"] for row in rows if row["minesite_id"]}),
             revenue_coverage=min(Decimal("100"), total_allocated), fleet_coverage=0,
-            snapshot_json={"mappings": rows}, change_summary_json=preview["changes"],
+            snapshot_json={"mappings": rows, "accounts": accounts}, change_summary_json=preview["changes"],
             created_by=self.user, published_by=self.user, published_at=timezone.now(),
         )
         ids = [row["mapping_id"] for row in rows]
@@ -111,7 +185,7 @@ class MappingPublicationService:
         snapshot = publication.snapshot_json or {"mappings": []}
         rolled_back = MappingPublication.objects.create(
             version=version, status="Published", mapping_count=len(snapshot.get("mappings", [])),
-            account_count=len({row["account_id"] for row in snapshot.get("mappings", [])}),
+            account_count=len(snapshot.get("accounts", [])) or len({row["account_id"] for row in snapshot.get("mappings", [])}),
             minesite_count=len({row["minesite_id"] for row in snapshot.get("mappings", []) if row.get("minesite_id")}),
             revenue_coverage=publication.revenue_coverage, fleet_coverage=publication.fleet_coverage,
             snapshot_json=snapshot, change_summary_json={"rollback_of": publication.version},

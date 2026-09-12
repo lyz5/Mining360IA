@@ -24,7 +24,12 @@ def filter_published_rows(rows: list[dict], user) -> list[dict]:
     normalized_sites = None if sites is None else {value.casefold() for value in sites}
     filtered = []
     for row in rows:
-        site_allowed = normalized_sites is None or str(row.get("minesite_name") or "").casefold() in normalized_sites
+        row_sites = {
+            str(value).casefold()
+            for value in [row.get("minesite_name"), *(row.get("minesite_names") or [])]
+            if value
+        }
+        site_allowed = normalized_sites is None or bool(row_sites & normalized_sites)
         source_codes = {str(value).casefold() for value in row.get("source_account_codes", [])}
         account_allowed = accounts is None or bool(source_codes & accounts) or str(row.get("account_code") or "").casefold() in accounts
         if site_allowed and account_allowed:

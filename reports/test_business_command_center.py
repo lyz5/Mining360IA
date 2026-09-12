@@ -104,6 +104,24 @@ class BusinessCommandCenterApiTests(TestCase):
         self.assertEqual(data["sales_review"]["by_country"][0]["name"], "Mali")
         self.assertEqual(data["sales_review"]["by_customer"][0]["name"], "Fekola Canonical")
 
+    def test_published_key_account_classification_does_not_require_a_minesite_mapping(self):
+        MappingPublication.objects.create(
+            version=1, status="Published", mapping_count=0, account_count=1, minesite_count=0,
+            published_by=self.user, published_at=timezone.now(), snapshot_json={
+                "mappings": [],
+                "accounts": [{
+                    "account_id": "A-CORICA", "account_code": "ACC-CORICA",
+                    "account_name": "CORICA GUINEA", "source_account_codes": ["C001"],
+                    "business_country": "Guinea", "key_account_id": "K-CORICA",
+                    "key_account_name": "CORICA", "minesite_names": [],
+                }],
+            },
+        )
+        data = self.client.get(reverse("business-command-center-bootstrap-api"), {"business_line": "parts"}).json()
+        self.assertEqual(data["dimensions"]["key_accounts"][0]["name"], "CORICA")
+        self.assertEqual(data["dimensions"]["key_accounts"][0]["revenue"], 2000.0)
+        self.assertEqual(data["filter_options"]["key_accounts"][0]["name"], "CORICA")
+
     def test_watchlist_is_persisted_per_user(self):
         url = reverse("business-command-center-watchlist-api")
         response = self.client.post(url, data='{"entity_type":"country","entity_id":"ML","display_name":"Mali"}', content_type="application/json")

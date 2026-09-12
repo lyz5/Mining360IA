@@ -419,6 +419,34 @@ class BusinessMappingStudioTests(TestCase):
         self.assertEqual(published["publication_version"], 2)
         self.assertEqual(len(published["results"]), 1)
 
+    def test_publication_freezes_key_account_members_without_minesite_mapping(self):
+        run = MappingSynchronizationRun.objects.create(
+            source="Customer Fleet & Revenue Planning Model", status="Completed",
+            progress_percent=100, completed_at=timezone.now(), initiated_by=self.user,
+        )
+        corica = BusinessAccount.objects.create(
+            canonical_account_code="ACC-CORICA", canonical_account_name="CORICA GUINEA",
+            normalized_account_name="corica guinea", assigned_operating_country="GN",
+            created_by=self.user, updated_by=self.user,
+        )
+        SourceAccountRecord.objects.create(
+            source_system="MiningAccounts", source_record_id="27-25047",
+            source_account_name="CORICA MINING SERVICES", normalized_account_name="corica mining services",
+            canonical_account=corica, source_hash="corica-source", source_last_seen_at=timezone.now(),
+            synchronization_run=run,
+        )
+        key_account = KeyAccount.objects.create(
+            key_account_code="CORICA", key_account_name="CORICA", normalized_key_account_name="corica",
+            created_by=self.user, updated_by=self.user,
+        )
+        KeyAccountMembership.objects.create(key_account=key_account, business_account=corica, created_by=self.user)
+
+        publication = MappingPublicationService(self.user).publish("Publish governed Key Account classifications")
+        account_row = next(row for row in publication.snapshot_json["accounts"] if row["account_id"] == str(corica.id))
+        self.assertEqual(account_row["key_account_name"], "CORICA")
+        self.assertEqual(account_row["source_account_codes"], ["27-25047"])
+        self.assertEqual(account_row["minesite_names"], [])
+
     def test_source_sync_preserves_previous_snapshot(self):
         first_run = MappingSynchronizationRun.objects.create(status="Queued", initiated_by=self.user)
         service = BusinessMappingSourceSynchronizationService(self.user)
