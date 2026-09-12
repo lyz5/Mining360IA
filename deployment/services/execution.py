@@ -39,6 +39,16 @@ class WindowsDeploymentExecutionService:
         if not COMMIT_PATTERN.fullmatch(commit) or not JOB_PATTERN.fullmatch(job_id):
             raise ValueError("The deployment release or job identifier is invalid.")
         source = DeploymentReleaseSourceService().configuration()
+        base_commit = (
+            plan.__class__.objects.filter(
+                target=target,
+                status="Succeeded",
+                release__git_commit__regex=r"^[0-9a-fA-F]{40}$",
+            )
+            .order_by("-updated_at")
+            .values_list("release__git_commit", flat=True)
+            .first()
+        )
         local_script = Path(__file__).resolve().parents[1] / "windows" / "deploy_release.ps1"
         if not local_script.is_file():
             raise RuntimeError("The controlled Windows deployment script is missing.")
@@ -58,7 +68,9 @@ class WindowsDeploymentExecutionService:
             try:
                 with local_script.open("rb") as source_file:
                     sftp.putfo(source_file, self.remote_script)
-                local_bundle = self._build_release_bundle(source["git_executable"], commit, job_id)
+                local_bundle = self._build_release_bundle(
+                    source["git_executable"], commit, job_id, base_commit=base_commit
+                )
                 remote_bundle = self.remote_release_bundle_template.format(job_id=job_id)
                 with local_bundle.open("rb") as bundle_file:
                     sftp.putfo(bundle_file, remote_bundle)
@@ -95,7 +107,13 @@ class WindowsDeploymentExecutionService:
         return payload
 
     @staticmethod
-    def _build_release_bundle(git_executable: str, commit: str, job_id: str) -> Path:
+    def _build_release_bundle(
+        git_executable: str,
+        commit: str,
+        job_id: str,
+        *,
+        base_commit: str | None = None,
+    ) -> Path:
         bundle_directory = Path(settings.BASE_DIR) / ".deployment-cache"
         bundle_directory.mkdir(exist_ok=True)
         bundle_path = bundle_directory / f"release-{job_id}.bundle"
@@ -111,8 +129,20 @@ class WindowsDeploymentExecutionService:
             ).stdout.strip().lower()
             if head != commit:
                 raise RuntimeError("The requested offline release is not the current immutable Git commit.")
+            revisions = ["HEAD"]
+            normalized_base = str(base_commit or "").strip().lower()
+            if COMMIT_PATTERN.fullmatch(normalized_base):
+                ancestor = subprocess.run(
+                    [git_executable, "merge-base", "--is-ancestor", normalized_base, "HEAD"],
+                    cwd=settings.BASE_DIR,
+                    capture_output=True,
+                    timeout=30,
+                    env={**os.environ, "GIT_TERMINAL_PROMPT": "0"},
+                )
+                if ancestor.returncode == 0:
+                    revisions = [f"{normalized_base}..HEAD"]
             subprocess.run(
-                [git_executable, "bundle", "create", str(bundle_path), "HEAD"],
+                [git_executable, "bundle", "create", str(bundle_path), *revisions],
                 cwd=settings.BASE_DIR,
                 check=True,
                 capture_output=True,
