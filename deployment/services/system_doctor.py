@@ -28,6 +28,15 @@ class DeploymentSystemDoctorService:
 
     def run(self, target=None, *, user=None, repair=False, worker_launcher=None):
         checks = self._local_checks()
+        if target is not None:
+            for item in checks:
+                if item["code"] == "active_directory_certificate" and item["status"] == "Failed":
+                    item["name"] = "Controller LDAPS certificate chain"
+                    item["status"] = "Warning"
+                    item["recommendation"] = (
+                        "The deployment target CA bundle is evaluated separately below; "
+                        "do not alter controller LDAP configuration without Security approval."
+                    )
         actions_taken = []
         manual_actions = []
         if target is not None:

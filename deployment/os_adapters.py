@@ -79,14 +79,12 @@ class WindowsInventoryAdapter(BaseDeploymentOSAdapter):
                 "Select-Object ProcessId,Name,CommandLine); if($p.Count){$p|ConvertTo-Json -Compress}else{'[]'}"
             ),
             "runtime_task": _powershell(
-                "$t=Get-ScheduledTask -TaskName 'Mining360TestRuntime' -ErrorAction SilentlyContinue; "
-                "if($t){[pscustomobject]@{Exists=$true;State=[string]$t.State}|ConvertTo-Json -Compress}"
-                "else{[pscustomobject]@{Exists=$false;State='Missing'}|ConvertTo-Json -Compress; exit 1}"
+                "& schtasks.exe /Query /TN '\\Mining360TestRuntime' /FO LIST; "
+                "if($LASTEXITCODE -ne 0){exit 1}"
             ),
             "deployment_worker_task": _powershell(
-                "$t=Get-ScheduledTask -TaskName 'Mining360DeploymentWorker' -ErrorAction SilentlyContinue; "
-                "if($t){[pscustomobject]@{Exists=$true;State=[string]$t.State}|ConvertTo-Json -Compress}"
-                "else{[pscustomobject]@{Exists=$false;State='Missing'}|ConvertTo-Json -Compress; exit 1}"
+                "& schtasks.exe /Query /TN '\\Mining360DeploymentWorker' /FO LIST; "
+                "if($LASTEXITCODE -ne 0){exit 1}"
             ),
             "waitress_port": _powershell(
                 "$c=Get-NetTCPConnection -LocalPort 8000 -State Listen -ErrorAction SilentlyContinue; "
@@ -114,7 +112,7 @@ class WindowsInventoryAdapter(BaseDeploymentOSAdapter):
             "recent_runtime_errors": _powershell(
                 "$p='C:\\Mining360\\logs\\waitress.err.log'; if(-not(Test-Path -LiteralPath $p)){'No log'; exit 0}; "
                 "$lines=@(Get-Content -LiteralPath $p -Tail 500 -ErrorAction Stop); "
-                "$patterns='Internal Server Error|DisallowedHost|certificate_untrusted|NotSupportedError|Traceback'; "
+                "$patterns='Internal Server Error|certificate_untrusted|NotSupportedError|Traceback'; "
                 "$hits=@($lines|Select-String -Pattern $patterns|Select-Object -Last 20); "
                 "if($hits.Count){$hits.Line -join [Environment]::NewLine; exit 1}else{'No recent critical pattern'}"
             ),

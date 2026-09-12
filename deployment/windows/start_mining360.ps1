@@ -26,6 +26,14 @@ if (-not (Test-Path $waitressPath)) {
 }
 
 New-Item -ItemType Directory -Force -Path $logPath | Out-Null
+$logArchiveStamp = Get-Date -Format "yyyyMMdd-HHmmss"
+foreach ($name in @("waitress.out.log", "waitress.err.log")) {
+    $currentLog = Join-Path $logPath $name
+    if (Test-Path -LiteralPath $currentLog) {
+        $archivedLog = Join-Path $logPath ("{0}.{1}.previous.log" -f $name, $logArchiveStamp)
+        Move-Item -LiteralPath $currentLog -Destination $archivedLog -Force -ErrorAction SilentlyContinue
+    }
+}
 Set-Location $appPath
 
 $env:MINING360_DATABASE_ENGINE = "mssql"
