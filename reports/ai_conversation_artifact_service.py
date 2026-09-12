@@ -14,6 +14,13 @@ ARTIFACT_FIELDS = [
     ("sources", "document_citations", "Document citations"),
     ("rows", "table", "Analytical rows"),
     ("summary", "analytical_result", "Analytical summary"),
+    ("fleet_inventory", "fleet_inventory", "Fleet inventory"),
+    ("fleet_table", "fleet_equipment_table", "Fleet details"),
+    ("fleet_model_summary", "fleet_model_summary", "Fleet by model"),
+    ("equipment_detail", "equipment_master_detail", "Equipment details"),
+    ("fleet_performance", "fleet_performance_analysis", "Fleet performance analysis"),
+    ("capability_catalog", "chatbot_capability_catalog", "Available Mining 360 capabilities"),
+    ("answerability_decision", "answerability_decision", "Answerability decision"),
 ]
 
 

@@ -2,6 +2,7 @@ param(
     [Parameter(Mandatory = $true)][ValidatePattern('^[0-9a-f]{40}$')][string]$Commit,
     [Parameter(Mandatory = $true)][ValidatePattern('^https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+\.git$')][string]$RepositoryUrl,
     [Parameter(Mandatory = $true)][ValidatePattern('^[0-9a-f-]{36}$')][string]$JobId,
+    [ValidatePattern('^C:\\Mining360\\control\\release-[0-9a-f-]{36}\.bundle$')][string]$RepositoryBundle = '',
     [string]$Root = 'C:\Mining360'
 )
 
@@ -13,6 +14,7 @@ $shared = [IO.Path]::GetFullPath((Join-Path $Root 'shared'))
 $sharedMedia = [IO.Path]::GetFullPath((Join-Path $shared 'media'))
 $mediaArchive = [IO.Path]::GetFullPath((Join-Path (Join-Path $Root 'control') ("report-media-{0}.zip" -f $JobId)))
 $mediaImport = [IO.Path]::GetFullPath((Join-Path (Join-Path $Root 'control') ("report-media-{0}" -f $JobId)))
+$bundle = if ($RepositoryBundle) { [IO.Path]::GetFullPath($RepositoryBundle) } else { $null }
 $repository = [IO.Path]::GetFullPath((Join-Path $Root 'repository\Mining360IA.git'))
 $stage = [IO.Path]::GetFullPath((Join-Path $releases $Commit))
 $failedRelease = [IO.Path]::GetFullPath((Join-Path $releases ("failed-$JobId")))
@@ -26,6 +28,12 @@ $runtimeStopped = $false
 foreach ($path in @($app, $releases, $backups, $shared, $sharedMedia, $repository, $stage, $mediaArchive, $mediaImport)) {
     if (-not $path.StartsWith(([IO.Path]::GetFullPath($Root) + '\'), [StringComparison]::OrdinalIgnoreCase)) {
         throw "Unsafe deployment path: $path"
+    }
+}
+if ($bundle) {
+    $expectedBundle = [IO.Path]::GetFullPath((Join-Path (Join-Path $Root 'control') ("release-{0}.bundle" -f $JobId)))
+    if ($bundle -ne $expectedBundle -or -not (Test-Path -LiteralPath $bundle)) {
+        throw 'The controlled offline release bundle is missing or has an unsafe path.'
     }
 }
 if (-not (Test-Path $git)) { throw "Portable Git is not installed at $git." }
@@ -144,7 +152,11 @@ try {
     Write-DeploymentLog "Deployment $JobId started for commit $Commit."
     Test-DeploymentFilesystemAccess
     Write-DeploymentLog 'Filesystem permissions preflight passed.'
-    if (-not (Test-Path $repository)) {
+    if ($bundle -and -not (Test-Path $repository)) {
+        Invoke-Native 'Offline repository clone' { & $git clone --mirror $bundle $repository }
+    } elseif ($bundle) {
+        Invoke-Native 'Offline repository import' { & $git --git-dir=$repository fetch $bundle HEAD }
+    } elseif (-not (Test-Path $repository)) {
         Invoke-Native 'Repository clone' { & $git clone --mirror $RepositoryUrl $repository }
     } else {
         Invoke-Native 'Repository URL validation' { & $git --git-dir=$repository remote set-url origin $RepositoryUrl }
@@ -155,6 +167,7 @@ try {
     Invoke-Native 'Release checkout' { & $git clone --no-checkout $repository $stage }
     Invoke-Native 'Release checkout commit' { & $git -C $stage checkout --detach $Commit }
     Remove-Item -LiteralPath (Join-Path $stage '.git') -Recurse -Force
+    if ($bundle) { Remove-Item -LiteralPath $bundle -Force }
 
     foreach ($name in @('powerbi_credentials.local.json', 'mining360_sqlserver.local.json', 'reports\live_sources_custom.json')) {
         $source = Join-Path $app $name
@@ -241,6 +254,7 @@ try {
     Write-DeploymentLog "FAILED $message"
     Remove-Item -LiteralPath $mediaImport -Recurse -Force -ErrorAction SilentlyContinue
     Remove-Item -LiteralPath $mediaArchive -Force -ErrorAction SilentlyContinue
+    if ($bundle) { Remove-Item -LiteralPath $bundle -Force -ErrorAction SilentlyContinue }
     try {
         if ($backup -and (Test-Path $backup)) {
             Stop-Mining360Runtime

@@ -1,0 +1,136 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Business Review | Mining360IA</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260905-business-review-1">
+    <link rel="stylesheet" href="{% static 'reports/business_review.css' %}?v=20260905-3">
+</head>
+<body class="br-page">
+{% include "reports/includes/app_nav.html" %}
+<main class="app-shell br-shell" data-business-review
+      data-overview-url="{% url 'business-review-overview-api' %}"
+      data-portfolio-url="{% url 'business-review-portfolio-api' %}"
+      data-opportunities-url="{% url 'business-review-opportunities-api' %}"
+      data-risks-url="{% url 'business-review-risks-api' %}"
+      data-accounts-url="{% url 'business-review-accounts-api' %}"
+      data-minesites-url="{% url 'business-review-minesites-api' %}"
+      data-actions-url="{% url 'business-review-actions-api' %}"
+      data-confidence-url="{% url 'business-review-confidence-api' %}"
+      data-export-url="{% url 'business-review-export-api' %}"
+      data-can-create-action="{{ can_create_action|yesno:'true,false' }}"
+      data-can-export="{{ can_export|yesno:'true,false' }}"
+      data-portfolio-enabled="{{ feature_flags.portfolio|yesno:'true,false' }}"
+      data-opportunities-enabled="{{ feature_flags.opportunities|yesno:'true,false' }}"
+      data-risks-enabled="{{ feature_flags.risks|yesno:'true,false' }}"
+      data-actions-enabled="{{ feature_flags.actions|yesno:'true,false' }}">
+    {% csrf_token %}
+    <header class="br-header">
+        <div>
+            <p class="eyebrow">Executive Business Control Tower</p>
+            <h1>Business Review</h1>
+            <p>Executive visibility across Accounts, MineSites, Fleet and Revenue.</p>
+        </div>
+        <div class="br-published-context">
+            <span>Published Mapping</span>
+            <strong data-br-version>Checking...</strong>
+            <small data-br-updated>Last update unavailable</small>
+            {% if can_export %}<a class="button secondary small" data-br-export href="{% url 'business-review-export-api' %}">Export Review</a>{% endif %}
+        </div>
+    </header>
+
+    <section class="br-filter-bar" aria-label="Business Review filters">
+        <label><span>Scope</span><select data-br-scope><option value="group" selected>Group</option></select></label>
+        <label><span>Country</span><select data-br-country><option value="">All countries</option></select></label>
+        <label><span>MineSite</span><select data-br-minesite><option value="">All MineSites</option></select></label>
+        <label><span>Account</span><select data-br-account><option value="">All Accounts</option></select></label>
+        <label><span>Period</span><select data-br-period><option value="YTD">YTD</option></select></label>
+        <label><span>Compare</span><select data-br-comparison><option value="previous_year">Previous Year</option><option value="none">No comparison</option></select></label>
+    </section>
+
+    <div class="br-lens" role="group" aria-label="Revenue Lens">
+        <span>Revenue Lens</span>
+        <button type="button" class="active" data-br-lens="ALL" aria-pressed="true">All Mining</button>
+        <button type="button" data-br-lens="PRIME" aria-pressed="false">Machine</button>
+        <button type="button" data-br-lens="PARTS" aria-pressed="false">Parts</button>
+        <button type="button" data-br-lens="SERVICE" aria-pressed="false">Service</button>
+        <button type="button" data-br-lens="RENTAL" aria-pressed="false">Rental</button>
+    </div>
+
+    <nav class="br-tabs" aria-label="Business Review sections">
+        <button type="button" class="active" data-br-tab="overview" aria-selected="true">Executive Overview</button>
+        <button type="button" data-br-tab="portfolio" aria-selected="false">Portfolio & Opportunities</button>
+        <button type="button" data-br-tab="profiles" aria-selected="false">Account & MineSite 360</button>
+        <button type="button" data-br-tab="actions" aria-selected="false">Actions & Decisions</button>
+    </nav>
+
+    <section class="br-not-ready" data-br-not-ready hidden>
+        <p class="eyebrow">Published data required</p>
+        <h2>Business Review is not ready yet.</h2>
+        <p>A Published Mapping version is required before managerial analysis can be generated.</p>
+        {% if can_preview %}<a class="button" href="{% url 'business-mapping-studio' %}">Open Publication Preview</a>{% else %}<p>Contact the Business Mapping Administrator.</p>{% endif %}
+    </section>
+
+    <div data-br-ready hidden>
+        <section class="br-confidence-strip" data-br-confidence-strip>
+            <div><span>Data Confidence</span><strong data-br-confidence>Checking...</strong></div>
+            <p data-br-confidence-summary>Published data coverage is being evaluated.</p>
+            <button type="button" class="button secondary small" data-br-confidence-open>View details</button>
+        </section>
+
+        <section class="br-panel active" data-br-panel="overview">
+            <div class="br-section-heading"><div><p class="eyebrow">Business Pulse</p><h2>Published Business Snapshot</h2></div><small data-br-context-label></small></div>
+            <div class="br-kpi-strip">
+                <div class="primary"><span>Mining Revenue YTD</span><strong data-br-metric="mining_revenue_ytd_eur">--</strong><small data-br-metric="revenue_change_pct">Comparison unavailable</small></div>
+                <div><span>Fleet</span><strong data-br-metric="fleet_count">--</strong><small>linked equipment</small></div>
+                <div><span>Revenue / Equipment</span><strong data-br-metric="revenue_per_equipment_eur">--</strong></div>
+                <div><span>Unallocated Revenue</span><strong data-br-metric="unallocated_revenue_eur">--</strong></div>
+            </div>
+            <div class="br-overview-grid">
+                <section class="br-band"><div class="br-section-heading"><h2>What Changed</h2></div><div data-br-changes class="br-list"></div></section>
+                <section class="br-band"><div class="br-section-heading"><h2>Management Attention</h2></div><div data-br-attention class="br-list"></div></section>
+            </div>
+            <section class="br-band br-revenue-mix"><div class="br-section-heading"><h2>Revenue by Business Line</h2></div><div data-br-revenue-mix></div></section>
+        </section>
+
+        <section class="br-panel" data-br-panel="portfolio" hidden>
+            <div class="br-section-heading"><div><p class="eyebrow">Published portfolio</p><h2>Fleet versus Revenue</h2></div><div><span data-br-threshold-status></span><button type="button" class="button secondary small" data-br-copy-matrix data-export-ignore="true">Copy chart</button></div></div>
+            <div class="br-portfolio-layout" data-br-matrix-export data-export-ready="false">
+                <div class="br-matrix" data-br-matrix role="img" aria-label="Fleet size versus Revenue portfolio matrix">
+                    <span class="axis-y">Fleet Size</span><span class="axis-x">Revenue</span>
+                    <div class="quadrant opportunity">Commercial Opportunity</div><div class="quadrant strategic">Strategic Account</div>
+                    <div class="quadrant low">Low Priority</div><div class="quadrant investigation">Revenue Mix Investigation</div>
+                    <div class="br-matrix-points" data-br-matrix-points></div>
+                </div>
+                <aside class="br-opportunity-summary"><h2>Opportunity Summary</h2><div data-br-opportunity-summary class="br-list"></div></aside>
+            </div>
+            <div class="br-table-wrap"><table><thead><tr><th>Priority</th><th>MineSite</th><th>Classification</th><th>Fleet</th><th>Revenue</th><th>Revenue / Equipment</th></tr></thead><tbody data-br-portfolio-table></tbody></table></div>
+            <div class="br-overview-grid"><section class="br-band"><h2>Top Opportunities</h2><div data-br-opportunities class="br-list"></div></section><section class="br-band"><h2>Top Risks</h2><div data-br-risks class="br-list"></div></section></div>
+        </section>
+
+        <section class="br-panel" data-br-panel="profiles" hidden>
+            <div class="br-section-heading"><div><p class="eyebrow">Published relationships</p><h2>Account & MineSite 360</h2></div></div>
+            <div class="br-profile-grid">
+                <section><div class="br-section-heading"><h2>Accounts</h2></div><input type="search" data-br-account-search placeholder="Search published Accounts"><div class="br-entity-list" data-br-account-list></div></section>
+                <section><div class="br-section-heading"><h2>MineSites</h2></div><input type="search" data-br-site-search placeholder="Search published MineSites"><div class="br-entity-list" data-br-site-list></div></section>
+                <aside class="br-profile-detail" data-br-profile-detail><p>Select an Account or MineSite to open its published business profile.</p></aside>
+            </div>
+        </section>
+
+        <section class="br-panel" data-br-panel="actions" hidden>
+            <div class="br-section-heading"><div><p class="eyebrow">From insight to outcome</p><h2>Actions & Decisions</h2></div>{% if can_create_action %}<button type="button" class="button" data-br-new-action>Create Action</button>{% endif %}</div>
+            <div class="br-action-summary"><div><span>Critical Open</span><strong data-br-action-count="critical">0</strong></div><div><span>Overdue</span><strong data-br-action-count="overdue">0</strong></div><div><span>Due This Week</span><strong data-br-action-count="week">0</strong></div><div><span>Recently Completed</span><strong data-br-action-count="completed">0</strong></div></div>
+            <div class="br-table-wrap"><table><thead><tr><th>Priority</th><th>Action</th><th>Account</th><th>MineSite</th><th>Owner</th><th>Due Date</th><th>Status</th></tr></thead><tbody data-br-actions-table></tbody></table></div>
+        </section>
+    </div>
+</main>
+
+<dialog class="br-dialog" data-br-confidence-dialog><div class="br-dialog-head"><div><p class="eyebrow">Published evidence</p><h2>Data Confidence</h2></div><button type="button" data-br-close aria-label="Close">×</button></div><div data-br-confidence-detail></div></dialog>
+<dialog class="br-dialog" data-br-action-dialog><form data-br-action-form><div class="br-dialog-head"><div><p class="eyebrow">Management follow-up</p><h2>Create Action</h2></div><button type="button" data-br-close aria-label="Close">×</button></div><label>Title<input required data-br-action-title></label><label>Priority<select data-br-action-priority><option>Critical</option><option>High</option><option selected>Medium</option><option>Low</option></select></label><label>Due Date<input type="date" data-br-action-due></label><label>Description<textarea rows="4" data-br-action-description></textarea></label><div class="br-dialog-actions"><button type="button" class="button secondary" data-br-close>Cancel</button><button class="button" type="submit">Create Action</button></div></form></dialog>
+<div class="bm-toast" data-br-toast role="status" aria-live="polite" hidden></div>
+<script src="{% static 'reports/visual_export.js' %}?v=20260901-1" defer></script>
+<script src="{% static 'reports/business_review.js' %}?v=20260905-3" defer></script>
+</body>
+</html>

@@ -5,16 +5,19 @@ from abc import ABC, abstractmethod
 
 
 def _powershell(script: str) -> str:
-    return subprocess.list2cmdline([
+    prefix = subprocess.list2cmdline([
         "powershell.exe",
         "-NoLogo",
         "-NoProfile",
         "-NonInteractive",
         "-ExecutionPolicy",
         "RemoteSigned",
-        "-Command",
-        script,
     ])
+    # OpenSSH passes this through the configured Windows PowerShell shell. A
+    # single-quoted outer argument prevents that shell from expanding the
+    # child script's $variables before the child PowerShell process receives it.
+    protected_script = ("& { " + script + " }").replace("'", "''")
+    return f"{prefix} -Command '{protected_script}'"
 
 
 class BaseDeploymentOSAdapter(ABC):

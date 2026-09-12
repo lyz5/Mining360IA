@@ -124,6 +124,21 @@
         $('[data-filter="minesite"]').value = state.filters.minesite;
         $('[data-filter="model"]').value = state.filters.model;
         $('[data-filter="equipment"]').value = state.filters.equipment;
+        const trendExportContext = [
+            state.period === "ytd" ? "Year to Date" : "Last 12 Months",
+            state.filters.minesite ? `MineSite: ${state.filters.minesite}` : "All MineSites",
+            state.filters.model ? `Model: ${state.filters.model}` : "",
+            state.filters.equipment ? `Equipment: ${state.filters.equipment}` : "",
+        ].filter(Boolean).join(" · ");
+        const availabilityExportContext = [
+            state.filters.minesite ? `MineSite: ${state.filters.minesite}` : "All MineSites",
+            state.filters.model ? `Model: ${state.filters.model}` : "",
+            state.filters.equipment ? `Equipment: ${state.filters.equipment}` : "",
+        ].filter(Boolean).join(" · ");
+        const trendContext = $("[data-trend-export-context]");
+        const availabilityContext = $("[data-availability-export-context]");
+        if (trendContext) trendContext.textContent = trendExportContext;
+        if (availabilityContext) availabilityContext.textContent = availabilityExportContext;
         $("[data-ordering]").value = state.ordering;
         $("[data-order-field]").hidden = state.breakdown === "overall";
         $("[data-breakdown-section]").hidden = state.breakdown === "overall" || state.breakdown === "equipment";
@@ -168,6 +183,14 @@
             if (control.matches("[data-filter='q']")) return;
             control.disabled = active;
         });
+        [
+            ["availability-trend", "[data-copy-availability-trend]"],
+            ["physical-availability", "[data-copy-physical-availability]"],
+        ].forEach(([visual, buttonSelector]) => {
+            const panel = $(`[data-export-visual='${visual}']`);
+            const button = $(buttonSelector);
+            if (panel && button) button.disabled = active || panel.dataset.exportReady !== "true";
+        });
     }
 
     function showError(message) {
@@ -184,11 +207,12 @@
         $("[data-homepage-error]").hidden = true;
     }
 
-    function animateValue(target) {
+    function animateValue(target, onComplete) {
         const holder = $("[data-availability-value]");
         if (target == null) {
             holder.textContent = "--";
             state.renderedValue = null;
+            onComplete?.();
             return;
         }
         const from = state.renderedValue == null ? 0 : state.renderedValue;
@@ -200,7 +224,10 @@
             const current = from + (target - from) * eased;
             holder.textContent = `${(current * 100).toFixed(2)}%`;
             if (progress < 1) window.requestAnimationFrame(draw);
-            else state.renderedValue = target;
+            else {
+                state.renderedValue = target;
+                onComplete?.();
+            }
         };
         window.requestAnimationFrame(draw);
     }
@@ -218,7 +245,14 @@
     function renderHero(payload) {
         const availability = payload.availability || {};
         const value = availability.raw_value;
-        animateValue(value);
+        const availabilityPanel = $("[data-export-visual='physical-availability']");
+        const availabilityCopy = $("[data-copy-physical-availability]");
+        availabilityPanel.dataset.exportReady = "false";
+        availabilityCopy.disabled = true;
+        animateValue(value, () => {
+            availabilityPanel.dataset.exportReady = "true";
+            availabilityCopy.disabled = false;
+        });
         const ring = $("[data-ring]");
         ring.dataset.quality = availability.quality_status || "valid";
         if (availability.quality_status === "out_of_range") {
@@ -274,6 +308,7 @@
             holder.innerHTML = '<div class="command-empty">Not enough monthly data to display a trend.</div>';
             holder.setAttribute("aria-label", "Availability trend unavailable.");
             $("[data-trend-statistics]").innerHTML = "";
+            $("[data-export-visual='availability-trend']").dataset.exportReady = "false";
             return;
         }
         const width = 760;
@@ -312,7 +347,7 @@
             const valueLabel = escapeHtml(point.formatted_value || `${(Number(point.value) * 100).toFixed(1)}%`);
             return `${showLabel ? `<text class="trend-label" text-anchor="middle" x="${px}" y="${height - 12}">${escapeHtml(chartPointLabel(point.period))}</text>` : ""}<text class="trend-value-label" text-anchor="middle" x="${px}" y="${valueLabelY}">${valueLabel}</text><circle class="trend-point" tabindex="0" data-trend-index="${index}" cx="${px}" cy="${py}" r="5"></circle>`;
         }).join("");
-        holder.innerHTML = `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" aria-hidden="true">${grid}${targetLine}<path class="trend-area" d="${area}"></path><path class="trend-line" d="${line}"></path>${pointNodes}</svg><div class="trend-tooltip" data-trend-tooltip hidden></div>`;
+        holder.innerHTML = `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" aria-hidden="true">${grid}${targetLine}<path class="trend-area" d="${area}"></path><path class="trend-line" d="${line}"></path>${pointNodes}</svg><div class="trend-tooltip" data-trend-tooltip data-export-ignore="true" hidden></div>`;
         holder.setAttribute("aria-label", `Physical Availability trend with ${points.length} monthly values.`);
         const path = $(".trend-line", holder);
         if (path && !reducedMotion.matches) {
@@ -345,6 +380,78 @@
             <div><span>Latest</span><strong>${escapeHtml(latest.formatted_value)}</strong></div>
             <div><span>Best period</span><strong>${escapeHtml(best.period)} - ${escapeHtml(best.formatted_value)}</strong></div>
             <div><span>Lowest period</span><strong>${escapeHtml(lowest.period)} - ${escapeHtml(lowest.formatted_value)}</strong></div>`;
+        const trendPanel = $("[data-export-visual='availability-trend']");
+        trendPanel.dataset.exportReady = "true";
+        $("[data-copy-availability-trend]").disabled = false;
+    }
+
+    function setupAvailabilityTrendExport() {
+        const exporter = window.Mining360VisualExport;
+        const target = $("[data-export-visual='availability-trend']");
+        const button = $("[data-copy-availability-trend]");
+        if (!exporter || !target || !button) return;
+        const language = document.documentElement.lang || "en";
+        const french = language.toLowerCase().startsWith("fr");
+        button.setAttribute("aria-label", french ? button.dataset.labelFr : button.dataset.labelEn);
+        button.title = french ? "Copier le graphique" : "Copy chart";
+        exporter.bindCopyAction({
+            button,
+            target,
+            language,
+            scale: 2,
+            background: "#ffffff",
+            fileName: "Mining360_Availability_Trend",
+            prepareClone: (clone) => {
+                const context = clone.querySelector("[data-export-context]");
+                if (context) {
+                    context.hidden = false;
+                    context.style.cssText = "display:block;margin:5px 0 0;color:#667085;font:600 11px Arial,sans-serif;letter-spacing:0;";
+                }
+                const line = clone.querySelector(".trend-line");
+                if (line) {
+                    line.style.strokeDasharray = "none";
+                    line.style.strokeDashoffset = "0";
+                    line.style.transition = "none";
+                }
+            },
+            onSuccess: () => track("chart_copy", { visual: "availability_trend" }),
+            onFallback: () => track("chart_download", { visual: "availability_trend" }),
+        });
+    }
+
+    function setupPhysicalAvailabilityExport() {
+        const exporter = window.Mining360VisualExport;
+        const target = $("[data-export-visual='physical-availability']");
+        const button = $("[data-copy-physical-availability]");
+        if (!exporter || !target || !button) return;
+        const language = document.documentElement.lang || "en";
+        const french = language.toLowerCase().startsWith("fr");
+        button.setAttribute("aria-label", french ? button.dataset.labelFr : button.dataset.labelEn);
+        button.title = french ? "Copier le graphique" : "Copy chart";
+        exporter.bindCopyAction({
+            button,
+            target,
+            language,
+            scale: 2,
+            background: "#fffdf6",
+            fileName: "Mining360_Physical_Availability",
+            prepareClone: (clone) => {
+                const context = clone.querySelector("[data-availability-export-context]");
+                if (context) {
+                    context.hidden = false;
+                    context.style.cssText = "display:block;margin:5px 0 0;color:#667085;font:600 11px Arial,sans-serif;letter-spacing:0;";
+                }
+                const ring = clone.querySelector("[data-ring]");
+                if (ring) {
+                    const center = document.createElement("span");
+                    center.setAttribute("aria-hidden", "true");
+                    center.style.cssText = "position:absolute;inset:14px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 1px #edf0f3;";
+                    ring.prepend(center);
+                }
+            },
+            onSuccess: () => track("chart_copy", { visual: "physical_availability" }),
+            onFallback: () => track("chart_download", { visual: "physical_availability" }),
+        });
     }
 
     function numberLabel(value, decimals = 1) {
@@ -590,6 +697,8 @@
     window.addEventListener("popstate", () => window.location.reload());
 
     syncControls();
+    setupPhysicalAvailabilityExport();
+    setupAvailabilityTrendExport();
     root.setAttribute("aria-busy", "true");
     syncUrl(true);
     track("page_view");

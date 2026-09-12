@@ -30,6 +30,10 @@
         }
     }
 
+    function notifySafeError(messageEn, messageFr) {
+        window.alert(chatLanguage() === "fr" ? messageFr : messageEn);
+    }
+
     function updateComposerClearance() {
         // The composer is a normal flex child. No artificial message padding is required.
         document.body.style.removeProperty("--ai-composer-clearance");
@@ -206,6 +210,16 @@
     function displayFilterValue(key, value, language) {
         const raw = Array.isArray(value) ? value.join(", ") : String(value ?? "");
         if (key === "period") {
+            const rolling = raw.match(/^last (\d{1,3}) months?$/i);
+            if (rolling) return `Last ${rolling[1]} Months`;
+            const range = raw.match(/^(20\d{2})-(0[1-9]|1[0-2])\/(20\d{2})-(0[1-9]|1[0-2])$/);
+            if (range) {
+                const start = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric", timeZone: "UTC" })
+                    .format(new Date(`${range[1]}-${range[2]}-01T00:00:00Z`));
+                const end = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric", timeZone: "UTC" })
+                    .format(new Date(`${range[3]}-${range[4]}-01T00:00:00Z`));
+                return `${start} to ${end}`;
+            }
             const monthly = raw.match(/^(20\d{2})-(0[1-9]|1[0-2])$/);
             if (monthly) {
                 return new Intl.DateTimeFormat(language === "fr" ? "fr-FR" : "en-US", {
@@ -488,10 +502,114 @@
             } catch (error) {
                 select.disabled = false;
                 card.classList.remove("is-loading");
-                window.alert(error.message || "Unable to refresh downtime drivers.");
+                notifySafeError("Downtime drivers are temporarily unavailable. Please retry.", "Les downtime drivers sont momentanément indisponibles. Veuillez réessayer.");
             }
         });
         body.appendChild(card);
+    }
+
+    function chatLanguage() {
+        return String(document.documentElement.lang || navigator.language || "en").toLowerCase().startsWith("fr") ? "fr" : "en";
+    }
+
+    function suggestionQuestion(suggestion, values = {}) {
+        let question = suggestion.question || "";
+        Object.entries(values).forEach(([key, value]) => {
+            question = question.replaceAll(`{${key}}`, String(value || ""));
+        });
+        return question;
+    }
+
+    function recordSuggestionEvent(suggestion, state, eventType, outcome = "") {
+        return apiRequest("/api/ai/chat/suggestions/events/", {
+            method: "POST",
+            body: JSON.stringify({
+                suggestion_code: suggestion.code,
+                conversation_id: state.conversationId || "",
+                event_type: eventType,
+                outcome,
+            }),
+        }).catch(() => {});
+    }
+
+    function submitCertifiedSuggestion(suggestion, state, guidedValues = {}) {
+        const input = document.getElementById("ai-question");
+        if (!input || state.activeExecution.isLoading) return;
+        const question = suggestionQuestion(suggestion, guidedValues).trim();
+        if (!question) return;
+        const requestId = window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random()}`;
+        state.pendingSubmission = {
+            source: "starter_suggestion",
+            suggestion_code: suggestion.code,
+            guided_values: guidedValues,
+            idempotency_key: `suggestion:${suggestion.code}:${requestId}`,
+        };
+        input.value = question;
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+        recordSuggestionEvent(suggestion, state, "suggestion_clicked", "submitted");
+        runQuestion(state.root, state);
+    }
+
+    function openGuidedSuggestion(suggestion, state) {
+        const language = chatLanguage();
+        const dialog = document.createElement("dialog");
+        dialog.className = "ai-guided-suggestion";
+        const fields = (suggestion.guided_inputs || []).map((field) => {
+            const label = field[language === "fr" ? "label_fr" : "label_en"] || field.code;
+            if (field.type === "authorized_entity_select") {
+                return `<label><span>${escapeHtml(label)}</span><select name="${escapeHtml(field.code)}" ${field.required ? "required" : ""}><option value="">${language === "fr" ? "Sélectionner" : "Select"}</option>${(field.options || []).map((option) => `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}</option>`).join("")}</select></label>`;
+            }
+            return `<label><span>${escapeHtml(label)}</span><input name="${escapeHtml(field.code)}" type="text" ${field.required ? "required" : ""} autocomplete="off"></label>`;
+        }).join("");
+        dialog.innerHTML = `<form method="dialog"><header><strong>${escapeHtml(suggestion.label)}</strong><button type="button" data-guided-close aria-label="${language === "fr" ? "Fermer" : "Close"}">×</button></header><div class="ai-guided-suggestion__fields">${fields}</div><footer><button type="button" data-guided-cancel>${language === "fr" ? "Annuler" : "Cancel"}</button><button type="submit">${language === "fr" ? "Lancer" : "Run"}</button></footer></form>`;
+        document.body.appendChild(dialog);
+        const close = () => { dialog.close(); dialog.remove(); };
+        dialog.querySelector("[data-guided-close]")?.addEventListener("click", close);
+        dialog.querySelector("[data-guided-cancel]")?.addEventListener("click", close);
+        dialog.addEventListener("cancel", (event) => { event.preventDefault(); close(); });
+        dialog.querySelector("form")?.addEventListener("submit", (event) => {
+            event.preventDefault();
+            if (!event.currentTarget.reportValidity()) return;
+            const values = Object.fromEntries(new FormData(event.currentTarget).entries());
+            recordSuggestionEvent(suggestion, state, "guided_flow_completed", "submitted");
+            close();
+            submitCertifiedSuggestion(suggestion, state, values);
+        });
+        recordSuggestionEvent(suggestion, state, "guided_flow_opened", "opened");
+        dialog.showModal();
+        dialog.querySelector("select, input")?.focus();
+    }
+
+    async function renderCertifiedEmptyState(container, state) {
+        const requestId = (state.suggestionsRequestId || 0) + 1;
+        state.suggestionsRequestId = requestId;
+        const language = chatLanguage();
+        container.innerHTML = `<div class="ai-chat-empty-state"><strong>Mining 360 AI</strong><p>${language === "fr" ? "Interrogez votre flotte autorisée, vos données de performance, vos rapports et les Best Practices validées." : "Ask about your authorized fleet, performance data, reports and validated Mining Best Practices."}</p><div class="ai-empty-prompts" aria-live="polite"><span>${language === "fr" ? "Chargement des suggestions disponibles…" : "Loading available suggestions…"}</span></div></div>`;
+        try {
+            const params = new URLSearchParams({ language });
+            if (state.conversationId) params.set("conversation_id", state.conversationId);
+            const payload = await apiRequest(`/api/ai/chat/suggestions/?${params}`);
+            if (state.suggestionsRequestId !== requestId || state.conversationHistory.length) return;
+            const host = container.querySelector(".ai-empty-prompts");
+            const suggestions = payload.suggestions || [];
+            if (!suggestions.length) {
+                host.innerHTML = `<p>${language === "fr" ? "Les capacités disponibles sont actuellement limitées. Demandez-moi ce que je peux faire." : "Available capabilities are currently limited. Ask me what I can do."}</p>`;
+                return;
+            }
+            host.innerHTML = suggestions.map((suggestion) => `<button type="button" data-certified-suggestion="${escapeHtml(suggestion.code)}"><strong>${escapeHtml(suggestion.label)}</strong>${suggestion.subtitle ? `<span>${escapeHtml(suggestion.subtitle)}</span>` : ""}</button>`).join("");
+            host.querySelectorAll("[data-certified-suggestion]").forEach((button) => {
+                const suggestion = suggestions.find((item) => item.code === button.dataset.certifiedSuggestion);
+                button.addEventListener("click", () => {
+                    if (!suggestion) return;
+                    if (suggestion.action_type === "GUIDED_QUESTION") openGuidedSuggestion(suggestion, state);
+                    else submitCertifiedSuggestion(suggestion, state);
+                });
+            });
+        } catch (error) {
+            if (state.suggestionsRequestId !== requestId) return;
+            const host = container.querySelector(".ai-empty-prompts");
+            if (host) host.innerHTML = `<p>${language === "fr" ? "Les suggestions ne sont pas disponibles pour le moment. Vous pouvez saisir votre question ci-dessous." : "Suggestions are temporarily unavailable. You can still type your question below."}</p>`;
+        }
     }
 
     function renderMessages(container, messages, state) {
@@ -505,27 +623,7 @@
             }
         });
         if (!messages.length) {
-            container.innerHTML = `
-                <div class="ai-chat-empty-state">
-                    <strong>Mining 360 AI</strong>
-                    <p>Ask about machine performance, availability, downtime, affected equipment or mining best practices.</p>
-                    <div class="ai-empty-prompts">
-                        <button type="button" data-suggested-prompt="What is the availability at Essakane?">Availability at Essakane</button>
-                        <button type="button" data-suggested-prompt="Show me the top downtime drivers.">Top downtime drivers</button>
-                        <button type="button" data-suggested-prompt="Analyze repeated failures.">Analyze repeated failures</button>
-                        <button type="button" data-suggested-prompt="What are the preventive maintenance best practices?">Preventive maintenance best practices</button>
-                    </div>
-                </div>
-            `;
-            container.querySelectorAll("[data-suggested-prompt]").forEach((button) => {
-                button.addEventListener("click", () => {
-                    const input = document.getElementById("ai-question");
-                    if (!input) return;
-                    input.value = button.dataset.suggestedPrompt || "";
-                    input.dispatchEvent(new Event("input", { bubbles: true }));
-                    input.focus();
-                });
-            });
+            renderCertifiedEmptyState(container, state);
             return;
         }
         container.innerHTML = messages.map((message) => {
@@ -632,11 +730,169 @@
         host.innerHTML = `<section class="ai-adaptive-response ai-adaptive-response--wide"><header><strong>${escapeHtml(titles[templateCode] || "Analytical result")}</strong></header><div class="ai-analysis-context__chips">${adaptiveContextMarkup(intent, language)}</div>${analyticalRowsTable(payload.rows, templateCode)}</section>`;
     }
 
+    function renderFleetPerformance(host, payload, intent, language, templateCode, message) {
+        const performance = payload.fleet_performance || {};
+        const metrics = Array.isArray(performance.metrics) ? performance.metrics : (payload.metrics || []);
+        const coverage = performance.coverage || {};
+        const coverageValue = Number(coverage.coverage_percentage);
+        const coverageLabel = Number.isFinite(coverageValue)
+            ? `${localNumber(coverageValue * 100, language)}%`
+            : "Not available";
+        const title = {
+            fleet_performance_overview: "Fleet Performance",
+            reliability_overview: "Reliability",
+            multi_kpi_summary: "Performance KPIs",
+            planned_unplanned_analysis: "Planned / Unplanned Downtime",
+            fleet_performance_comparison: "Fleet Performance Comparison",
+            fleet_performance_period_comparison: "Period Comparison",
+            fleet_performance_trend: "Fleet Performance Trend",
+            fleet_performance_ranking: "Fleet Performance Ranking",
+            equipment_performance_detail: "Equipment Performance",
+            component_analysis: "Component Analysis",
+            pm_analysis: "PM Analysis",
+            smu_tracking: "SMU Tracking",
+            fleet_performance_benchmark: "Fleet Performance Benchmark",
+        }[templateCode] || "Fleet Performance";
+        const cards = metrics.map((metric) => `<article><span>${escapeHtml(metric.label || metric.code)}</span><strong>${escapeHtml(metric.formatted_value || "Not available")}</strong></article>`).join("");
+        const rows = Array.isArray(performance.rows) ? performance.rows : (payload.rows || []);
+        const table = rows.length > 1 ? analyticalRowsTable(rows, templateCode) : "";
+        const performanceArtifact = (message?.artifacts || []).find((item) => item.artifact_type === "fleet_performance_analysis");
+        const downloadEligible = !payload.action_eligibility || (payload.action_eligibility.eligible || []).includes("download_excel");
+        host.innerHTML = `<section class="ai-adaptive-response ai-adaptive-response--wide ai-fleet-performance"><header><div><small>Machine Performance</small><strong>${escapeHtml(title)}</strong></div>${performanceArtifact && downloadEligible ? '<button type="button" class="ai-fleet-download">Download Excel</button>' : ""}</header><div class="ai-analysis-context__chips">${adaptiveContextMarkup(intent, language)}</div><div class="ai-secondary-metrics ai-fleet-performance-metrics">${cards}</div>${coverage.fleet_equipment == null ? "" : `<div class="ai-performance-coverage"><span>Data coverage</span><strong>${escapeHtml(coverageLabel)}</strong><small>${escapeHtml(coverage.equipment_with_data)} / ${escapeHtml(coverage.fleet_equipment)} equipment</small></div>`}${table}</section>`;
+        const download = host.querySelector(".ai-fleet-download");
+        download?.addEventListener("click", async () => {
+            download.disabled = true;
+            try {
+                const result = await apiRequest("/api/performance/exports/", { method: "POST", body: JSON.stringify({ artifact_id: performanceArtifact.id, export_type: "fleet_performance_excel" }) });
+                window.location.assign(result.download_url);
+            } catch (error) {
+                notifySafeError("The export service is temporarily unavailable.", "Le service d’export est momentanément indisponible.");
+            } finally { download.disabled = false; }
+        });
+    }
+
+    function renderFleetInventory(host, payload, message, language) {
+        const fleet = payload.fleet_inventory || {};
+        const allRows = Array.isArray(fleet.rows) ? fleet.rows : [];
+        const fleetArtifact = (message.artifacts || []).find((item) => item.artifact_type === "fleet_equipment_table");
+        const state = { query: "", model: fleet.context?.model || "", page: 1, pageSize: 25 };
+        const downloadEligible = !payload.action_eligibility || (payload.action_eligibility.eligible || []).includes("download_excel");
+        host.innerHTML = `<section class="ai-adaptive-response ai-fleet-inventory"><header><div><small>Machine Performance · Fleet Inventory</small><strong>${escapeHtml(fleet.context?.site || "Fleet")}</strong></div><div class="ai-fleet-metrics"><span><b>${escapeHtml(fleet.summary?.equipment_count ?? allRows.length)}</b> Equipment</span><span><b>${escapeHtml(fleet.summary?.model_count ?? 0)}</b> Models</span></div></header><div class="ai-fleet-models"></div><div class="ai-fleet-toolbar"><label><span class="sr-only">Search fleet</span><input type="search" placeholder="Search equipment or serial number"></label><label><span class="sr-only">Filter by Model</span><select><option value="">All models</option></select></label>${downloadEligible ? '<button type="button" class="ai-fleet-download">Download Excel</button>' : ""}</div><div class="ai-fleet-table-host"></div><footer><span class="ai-fleet-count"></span><label>Rows <select class="ai-fleet-page-size"><option>25</option><option>50</option><option>100</option></select></label><div class="ai-fleet-pager"><button type="button" data-page="previous" aria-label="Previous page">‹</button><span></span><button type="button" data-page="next" aria-label="Next page">›</button></div></footer></section>`;
+        const section = host.querySelector(".ai-fleet-inventory");
+        const modelSelect = section.querySelector(".ai-fleet-toolbar select");
+        (fleet.by_model || []).forEach((item) => {
+            const option = document.createElement("option");
+            option.value = item.model;
+            option.textContent = `${item.model} (${item.equipment_count})`;
+            option.selected = String(item.model) === String(state.model);
+            modelSelect.appendChild(option);
+        });
+        section.querySelector(".ai-fleet-models").innerHTML = (fleet.by_model || []).slice(0, 12).map((item) => `<button type="button" data-model="${escapeHtml(item.model)}"><strong>${escapeHtml(item.model)}</strong><span>${escapeHtml(item.equipment_count)}</span></button>`).join("");
+        const draw = () => {
+            const query = state.query.toLowerCase();
+            const filtered = allRows.filter((row) => (!state.model || String(row.model) === state.model) && (!query || [row.equipment, row.model, row.serial_number].some((value) => String(value || "").toLowerCase().includes(query))));
+            const pages = Math.max(1, Math.ceil(filtered.length / state.pageSize));
+            state.page = Math.min(state.page, pages);
+            const start = (state.page - 1) * state.pageSize;
+            const visible = filtered.slice(start, start + state.pageSize);
+            section.querySelector(".ai-fleet-table-host").innerHTML = `<div class="ai-adaptive-table-wrap"><table class="ai-adaptive-table"><thead><tr><th>Site</th><th>Equipment</th><th>Model</th><th>Serial Number</th></tr></thead><tbody>${visible.map((row) => `<tr><td data-label="Site">${escapeHtml(row.site || "Not available")}</td><td data-label="Equipment">${escapeHtml(row.equipment || "Not available")}</td><td data-label="Model">${escapeHtml(row.model || "Unknown Model")}</td><td data-label="Serial Number">${escapeHtml(row.serial_number || "Not available")}</td></tr>`).join("")}</tbody></table></div>`;
+            section.querySelector(".ai-fleet-count").textContent = `${filtered.length} equipment`;
+            section.querySelector(".ai-fleet-pager span").textContent = `${state.page} / ${pages}`;
+            section.querySelector('[data-page="previous"]').disabled = state.page <= 1;
+            section.querySelector('[data-page="next"]').disabled = state.page >= pages;
+        };
+        section.querySelector('input[type="search"]').addEventListener("input", (event) => { state.query = event.target.value; state.page = 1; draw(); });
+        modelSelect.addEventListener("change", (event) => { state.model = event.target.value; state.page = 1; draw(); });
+        section.querySelectorAll("[data-model]").forEach((button) => button.addEventListener("click", () => { state.model = button.dataset.model; modelSelect.value = state.model; state.page = 1; draw(); }));
+        section.querySelector(".ai-fleet-page-size").addEventListener("change", (event) => { state.pageSize = Number(event.target.value); state.page = 1; draw(); });
+        section.querySelector('[data-page="previous"]').addEventListener("click", () => { state.page -= 1; draw(); });
+        section.querySelector('[data-page="next"]').addEventListener("click", () => { state.page += 1; draw(); });
+        const download = section.querySelector(".ai-fleet-download");
+        if (download) download.disabled = !fleetArtifact;
+        download?.addEventListener("click", async () => {
+            if (!fleetArtifact) return;
+            download.disabled = true;
+            try {
+                const result = await apiRequest("/api/fleet/exports/", { method: "POST", body: JSON.stringify({ artifact_id: fleetArtifact.id, export_type: "fleet_excel" }) });
+                window.location.assign(result.download_url);
+            } catch (error) {
+                notifySafeError("The export service is temporarily unavailable.", "Le service d’export est momentanément indisponible.");
+            } finally { download.disabled = false; }
+        });
+        draw();
+    }
+
+    function renderEquipmentMasterDetail(host, payload) {
+        const machine = payload.equipment_detail?.machine || {};
+        const fields = [["Site", machine.site], ["Equipment", machine.equipment], ["Model", machine.model], ["Serial Number", machine.serial_number], ["Equipment Family", machine.equipment_family], ["Brand", machine.brand], ["Equipment ID", machine.equipment_id], ["Status", machine.status_display], ["SMU", machine.smu ?? "Not available"]];
+        host.innerHTML = `<section class="ai-adaptive-response ai-equipment-detail"><header><small>Machine Performance · Equipment Details</small><strong>${escapeHtml(machine.equipment || machine.serial_number || "Equipment")}</strong></header><dl>${fields.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value || "Not available")}</dd></div>`).join("")}</dl></section>`;
+    }
+
+    function renderCapabilityCatalog(host, payload, state) {
+        const catalog = payload.capability_catalog || {};
+        const categories = Array.isArray(catalog.categories) ? catalog.categories : [];
+        const language = catalog.language || "en";
+        host.innerHTML = `<section class="ai-capability-catalog"><header><small>Mining 360 AI</small><strong>${language === "fr" ? "Capacités disponibles" : "Available capabilities"}</strong></header><div class="ai-capability-catalog__grid">${categories.map((category) => `<section class="ai-capability-category"><h3>${escapeHtml(category.name)}</h3>${(category.capabilities || []).map((capability) => `<article><div><strong>${escapeHtml(capability.name)}</strong>${capability.preview_only ? `<span>${language === "fr" ? "Aperçu admin · certification requise" : "Admin preview · certification required"}</span>` : (capability.readiness_status === "Limited" ? `<span>${language === "fr" ? "Limité" : "Limited"}</span>` : "")}</div><p>${escapeHtml(capability.description)}</p><div class="ai-capability-examples">${(capability.examples || []).map((example) => `<button type="button" data-capability-example="${escapeHtml(example)}" ${capability.preview_only ? "disabled" : ""}>${escapeHtml(example)}</button>`).join("")}</div></article>`).join("")}</section>`).join("")}</div></section>`;
+        host.querySelectorAll("[data-capability-example]").forEach((button) => {
+            button.addEventListener("click", () => {
+                const input = document.getElementById("ai-question");
+                if (!input) return;
+                input.value = button.dataset.capabilityExample || "";
+                input.dispatchEvent(new Event("input", { bubbles: true }));
+                state.pendingSubmission = {
+                    source: "capability_example",
+                    idempotency_key: `capability:${window.crypto?.randomUUID?.() || Date.now()}`,
+                };
+                runQuestion(state.root, state);
+            });
+        });
+    }
+
+    function renderAnswerability(host, payload) {
+        const decision = payload.answerability || {};
+        const language = payload.content?.language || "en";
+        const available = Array.isArray(payload.available_information) ? payload.available_information : [];
+        const statusLabels = {
+            ANSWERABLE: { fr: "Disponible", en: "Available" },
+            NEEDS_CLARIFICATION: { fr: "Précision requise", en: "Clarification required" },
+            INFORMATION_NOT_IN_CONFIGURED_SOURCES: { fr: "Non disponible dans les sources configurées", en: "Not available in configured sources" },
+            FIELD_AVAILABLE_BUT_VALUE_MISSING: { fr: "Valeur non renseignée", en: "Value not recorded" },
+            ENTITY_NOT_FOUND: { fr: "Équipement introuvable", en: "Equipment not found" },
+            ACCESS_RESTRICTED: { fr: "Accès restreint", en: "Access restricted" },
+            CAPABILITY_NOT_CONFIGURED: { fr: "Analyse non configurée", en: "Analysis not configured" },
+            TEMPORARILY_UNAVAILABLE: { fr: "Source momentanément indisponible", en: "Source temporarily unavailable" },
+            INSUFFICIENT_EVIDENCE: { fr: "Éléments insuffisants", en: "Insufficient evidence" },
+            CONFLICTING_SOURCES: { fr: "Sources contradictoires", en: "Conflicting sources" },
+            UNSUPPORTED_ACTION: { fr: "Action non disponible", en: "Action unavailable" },
+            OUT_OF_SCOPE: { fr: "Hors périmètre configuré", en: "Outside configured scope" },
+            LOW_CONFIDENCE: { fr: "Correspondance incertaine", en: "Uncertain match" },
+        };
+        const statusLabel = statusLabels[decision.status]?.[language] || (language === "fr" ? "Couverture non disponible" : "Coverage unavailable");
+        const labels = {
+            site: "Site", equipment: "Equipment", model: "Model", serial_number: "Serial Number",
+            equipment_family: "Equipment Family", brand: "Brand", equipment_id: "Equipment ID", smu: "SMU",
+        };
+        host.innerHTML = `<section class="ai-answerability-card" data-answerability-status="${escapeHtml(decision.status || "")}"><header><strong>${language === "fr" ? "Couverture des données" : "Data coverage"}</strong><span>${escapeHtml(statusLabel)}</span></header>${available.length ? `<div><p>${language === "fr" ? "Informations actuellement disponibles :" : "Information currently available:"}</p><ul>${available.map((field) => `<li>${escapeHtml(labels[field] || field.replaceAll("_", " "))}</li>`).join("")}</ul></div>` : ""}</section>`;
+    }
+
     const adaptiveResponseRenderers = {
         single_kpi: renderAdaptivePrimary,
         downtime_drivers: renderAdaptiveDiagnostics,
         root_cause_analysis: renderAdaptiveDiagnostics,
         performance_overview: renderAdaptiveRows,
+        fleet_performance_overview: renderFleetPerformance,
+        reliability_overview: renderFleetPerformance,
+        multi_kpi_summary: renderFleetPerformance,
+        planned_unplanned_analysis: renderFleetPerformance,
+        fleet_performance_comparison: renderFleetPerformance,
+        fleet_performance_period_comparison: renderFleetPerformance,
+        fleet_performance_trend: renderFleetPerformance,
+        fleet_performance_ranking: renderFleetPerformance,
+        equipment_performance_detail: renderFleetPerformance,
+        component_analysis: renderFleetPerformance,
+        pm_analysis: renderFleetPerformance,
+        smu_tracking: renderFleetPerformance,
+        fleet_performance_benchmark: renderFleetPerformance,
         equipment_detail: renderAdaptiveRows,
         entity_comparison: renderAdaptiveRows,
         period_comparison: renderAdaptiveRows,
@@ -705,11 +961,42 @@
                 const pareto = document.createElement("div");
                 pareto.className = "ai-inline-historical-pareto";
                 content.after(pareto);
-                renderDowntimeDiagnostics(pareto, payload.downtime_diagnostics || payload.availability_diagnostics, { intent, onSelectDriver: openDriver });
+                let activeWorkType = "";
+                const renderPareto = (diagnostics) => {
+                    pareto.replaceChildren();
+                    renderDowntimeDiagnostics(pareto, diagnostics, {
+                        intent,
+                        workType: activeWorkType,
+                        onSelectDriver: openDriver,
+                        onWorkTypeChange: async (workType) => {
+                            const refreshed = await apiRequest(root.dataset.availabilityDiagnosticsUrl, {
+                                method: "POST",
+                                body: JSON.stringify({
+                                    intent,
+                                    work_type: workType,
+                                    dataset_name: "FPR Global DB + RLS",
+                                }),
+                            });
+                            activeWorkType = refreshed.diagnostics?.work_type || workType;
+                            renderPareto(refreshed.diagnostics || {});
+                        },
+                    });
+                };
+                renderPareto(payload.downtime_diagnostics || payload.availability_diagnostics);
             },
         };
         const templateCode = responseTemplateCode(payload);
-        if (templateCode === "legacy_availability_response") {
+        if (payload.capability_catalog) {
+            renderCapabilityCatalog(content, payload, state);
+        } else if (payload.answerability) {
+            renderAnswerability(content, payload);
+        } else if (payload.fleet_inventory) {
+            renderFleetInventory(content, payload, message, language);
+        } else if (payload.equipment_detail) {
+            renderEquipmentMasterDetail(content, payload);
+        } else if (payload.fleet_performance) {
+            renderFleetPerformance(content, payload, intent, language, templateCode, message);
+        } else if (templateCode === "legacy_availability_response") {
             const overview = document.createElement("div");
             const drivers = document.createElement("div");
             content.append(overview, drivers);
@@ -728,17 +1015,46 @@
             button.type = "button";
             button.className = "ai-text-action";
             button.textContent = action.label || String(action.code || "").replaceAll("_", " ");
-            button.addEventListener("click", () => {
+            button.addEventListener("click", async () => {
+                if (action.code === "retry") {
+                    const input = document.getElementById("ai-question");
+                    if (!input || !question) return;
+                    input.value = question;
+                    input.dispatchEvent(new Event("input", { bubbles: true }));
+                    runQuestion(root, state);
+                    return;
+                }
+                if (action.code === "report_data_gap" && action.requirement_id) {
+                    button.disabled = true;
+                    try {
+                        const result = await apiRequest("/api/ai/data-gaps/report/", {
+                            method: "POST",
+                            body: JSON.stringify({ requirement_id: action.requirement_id }),
+                        });
+                        button.textContent = result.message || (payload.content?.language === "fr" ? "Besoin enregistré" : "Requirement recorded");
+                    } catch (error) {
+                        button.disabled = false;
+                        notifySafeError("The data requirement could not be recorded at this time.", "Le besoin de donnée ne peut pas être enregistré pour le moment.");
+                    }
+                    return;
+                }
                 const input = document.getElementById("ai-question");
                 if (!input) return;
-                input.value = button.textContent;
+                input.value = action.prompt || button.textContent;
                 input.dispatchEvent(new Event("input", { bubbles: true }));
-                input.focus();
+                state.pendingSubmission = {
+                    source: "contextual_action",
+                    action_code: action.code,
+                    source_message_id: message.id,
+                    idempotency_key: `action:${action.code}:${message.id}:${window.crypto?.randomUUID?.() || Date.now()}`,
+                };
+                runQuestion(root, state);
             });
             secondary.appendChild(button);
         });
 
-        if (payload.navigation?.report_id) {
+        const navigationEligible = !payload.action_eligibility || (payload.action_eligibility.eligible || []).includes("open_powerbi");
+        if (payload.navigation?.report_id && navigationEligible) {
             const powerbi = document.createElement("button");
             powerbi.type = "button";
             powerbi.textContent = "Open saved context in Power BI";
@@ -1084,7 +1400,7 @@
                 beginNewConversation(state);
             }
         } catch (error) {
-            window.alert(error.message);
+            notifySafeError("The conversation could not be deleted.", "La conversation ne peut pas être supprimée pour le moment.");
         }
     }
 
@@ -1101,7 +1417,7 @@
             else if (remaining[0]) await openConversation(root, state, remaining[0].id);
             else beginNewConversation(state);
         } catch (error) {
-            window.alert(error.message);
+            notifySafeError("The conversation could not be archived.", "La conversation ne peut pas être archivée pour le moment.");
         }
     }
 
@@ -1113,7 +1429,7 @@
             await openConversation(state.root, state, state.conversationId);
             await loadConversationList(state.root, state);
         } catch (error) {
-            window.alert(error.message);
+            notifySafeError("The retry could not be started.", "La nouvelle tentative ne peut pas être lancée pour le moment.");
         } finally {
             state.activeExecution.isLoading = false;
         }
@@ -1191,7 +1507,9 @@
             await state.powerbi.navigate(navigation);
             status.textContent = (navigation.warnings || []).join(" ") || "Report synchronized.";
         } catch (error) {
-            status.textContent = error.message || "The Power BI report could not be loaded.";
+            status.textContent = chatLanguage() === "fr"
+                ? "Le rapport Power BI n'a pas pu etre charge."
+                : "The Power BI report could not be loaded.";
             if (error.authenticationRequired && error.connectUrl) {
                 const connect = document.createElement("a");
                 connect.className = "button secondary ai-powerbi-connect";
@@ -1253,7 +1571,9 @@
         const input = document.getElementById("ai-question");
         const question = input.value.trim();
         const inputMetadata = state.pendingInputMetadata || null;
+        const submission = state.pendingSubmission || {};
         state.pendingInputMetadata = null;
+        state.pendingSubmission = null;
         const loading = document.getElementById("ai-loading");
         const error = document.getElementById("ai-error");
         const errorText = document.getElementById("ai-error-text");
@@ -1275,7 +1595,9 @@
         if (!question) {
             return;
         }
-        state.activeExecution = { isLoading: true, clientMessageId: "", question };
+        const clientExecutionId = window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random()}`;
+        const abortController = new AbortController();
+        state.activeExecution = { isLoading: true, clientMessageId: "", clientExecutionId, question, abortController };
         const sendButton = document.getElementById("ai-run-question");
         if (sendButton) {
             sendButton.disabled = true;
@@ -1307,6 +1629,13 @@
         state.driversExpanded = false;
 
         setHidden(loading, false);
+        const loadingText = document.getElementById("ai-loading-text");
+        if (loadingText) loadingText.textContent = detectedLanguage(question) === "fr" ? "Compréhension de votre question…" : "Understanding your question…";
+        const slowTimer = window.setTimeout(() => {
+            if (loadingText && state.activeExecution.clientExecutionId === clientExecutionId) {
+                loadingText.textContent = detectedLanguage(question) === "fr" ? "Cette analyse prend plus de temps que prévu…" : "This analysis is taking longer than usual…";
+            }
+        }, 10000);
         setHidden(error, true);
         setHidden(tableSection, true);
         setHidden(availabilityOverviewSection, true);
@@ -1320,6 +1649,7 @@
         try {
             const response = await fetch(root.dataset.aiAskUrl, {
                 method: "POST",
+                signal: abortController.signal,
                 headers: {
                     "Content-Type": "application/json",
                     "X-CSRFToken": csrfToken(),
@@ -1328,13 +1658,24 @@
                     question,
                     conversation_id: state.conversationId,
                     client_message_id: clientMessageId,
+                    client_execution_id: clientExecutionId,
+                    idempotency_key: submission.idempotency_key || `manual:${clientMessageId}`,
+                    source: submission.source || "manual",
+                    suggestion_code: submission.suggestion_code || "",
+                    action_code: submission.action_code || "",
+                    source_message_id: submission.source_message_id || "",
+                    guided_values: submission.guided_values || {},
                     input_metadata: inputMetadata,
                     agent_selection: document.getElementById("ai-agent-selection")?.value || "auto",
                 }),
             });
             const payload = await response.json();
             if (!response.ok || !payload.ok) {
-                throw new Error(payload.error || "Query failed.");
+                const requestError = new Error(payload.error || "Query failed.");
+                requestError.status = response.status;
+                requestError.code = payload.error_code || payload.answerability?.reason_code || "";
+                requestError.retryAllowed = payload.retry?.allowed !== false;
+                throw requestError;
             }
 
             await openConversation(root, state, payload.conversation_id || state.conversationId);
@@ -1441,19 +1782,34 @@
                 sessionStorage.setItem(conversationKey, state.conversationId);
             }
         } catch (err) {
-            errorText.textContent = err.message;
-            setHidden(error, false);
+            const cancelled = err?.name === "AbortError";
+            const conversationLimit = err?.code === "CONVERSATION_LIMIT_REACHED" || err?.status === 409;
+            const language = detectedLanguage(question);
+            error.querySelector("strong").textContent = conversationLimit
+                ? (language === "fr" ? "Limite de conversations atteinte" : "Conversation limit reached")
+                : (language === "fr" ? "Requête momentanément indisponible" : "Request temporarily unavailable");
+            errorText.textContent = cancelled
+                ? (language === "fr" ? "Requête annulée." : "Request cancelled.")
+                : conversationLimit
+                    ? (language === "fr"
+                        ? "Archivez ou supprimez une conversation active avant d'en créer une nouvelle."
+                        : "Archive or delete an active conversation before creating a new one.")
+                    : (language === "fr"
+                        ? "La source nécessaire est momentanément indisponible. Vous pouvez réessayer."
+                        : "The required source is temporarily unavailable. You can retry.");
+            setHidden(error, cancelled);
             if (state.conversationId) {
                 try {
                     await openConversation(root, state, state.conversationId);
                     await loadConversationList(root, state);
                 } catch (reloadError) {
-                    state.conversationHistory.push({ role: "assistant", content: `I could not process the question: ${err.message}`, status: "failed" });
+                    state.conversationHistory.push({ role: "assistant", content: errorText.textContent, status: cancelled ? "cancelled" : "failed" });
                     renderMessages(chatThread, state.conversationHistory, state);
                 }
             }
             scrollIntoConversationView(chatThread.lastElementChild);
         } finally {
+            window.clearTimeout(slowTimer);
             state.activeExecution = { isLoading: false, clientMessageId: "", question: "" };
             if (sendButton) {
                 sendButton.disabled = false;
@@ -1482,7 +1838,7 @@
             conversationId: conversationIdFromPath() || sessionStorage.getItem(conversationKey) || "",
             powerbi: null,
             powerbiEvents: [],
-            activeExecution: { isLoading: false, clientMessageId: "", question: "" },
+            activeExecution: { isLoading: false, clientMessageId: "", clientExecutionId: "", question: "", abortController: null },
             activeInteractiveView: null,
             activeAnalyticalView: "summary",
             currentIntent: null,
@@ -1494,6 +1850,8 @@
             language: "en",
             openDriver: async () => {},
             pendingInputMetadata: null,
+            pendingSubmission: null,
+            suggestionsRequestId: 0,
             hasOlderMessages: false,
             nextBefore: null,
             loadingOlder: false,
@@ -1518,7 +1876,9 @@
                 beginNewConversation(state, { updateRoute: window.location.pathname !== "/ai/" });
             }
         } catch (error) {
-            chatThread.innerHTML = `<div class="alert">${escapeHtml(error.message || "Unable to load conversations.")}</div>`;
+            chatThread.innerHTML = `<div class="alert">${escapeHtml(chatLanguage() === "fr"
+                ? "Les conversations n'ont pas pu etre chargees. Vous pouvez reessayer."
+                : "Conversations could not be loaded. You can retry.")}</div>`;
         }
         const contextualDraft = new URLSearchParams(window.location.search).get("draft") || "";
         if (contextualDraft && input) {
@@ -1560,7 +1920,7 @@
         document.getElementById("ai-delete-conversation")?.addEventListener("click", () => deleteConversation(root, state));
         document.getElementById("ai-conversation-rename-form")?.addEventListener("submit", (event) => {
             event.preventDefault();
-            saveInlineRename(root, state).catch((error) => window.alert(error.message));
+            saveInlineRename(root, state).catch(() => notifySafeError("The conversation could not be renamed.", "La conversation ne peut pas être renommée pour le moment."));
         });
         document.getElementById("ai-cancel-rename")?.addEventListener("click", cancelInlineRename);
         document.getElementById("ai-conversation-title-input")?.addEventListener("keydown", (event) => {
@@ -1615,6 +1975,19 @@
 
         button?.addEventListener("click", function () {
             runQuestion(root, state);
+        });
+        document.getElementById("ai-cancel-execution")?.addEventListener("click", async () => {
+            const active = state.activeExecution;
+            if (!active.isLoading || !active.clientExecutionId) return;
+            active.abortController?.abort();
+            try {
+                await apiRequest(`/api/ai/chat/executions/${encodeURIComponent(active.clientExecutionId)}/cancel/`, {
+                    method: "POST",
+                    body: "{}",
+                });
+            } catch (error) {
+                window.setTimeout(() => apiRequest(`/api/ai/chat/executions/${encodeURIComponent(active.clientExecutionId)}/cancel/`, { method: "POST", body: "{}" }).catch(() => {}), 250);
+            }
         });
         window.addEventListener("mining360:voice-transcription-ready", function (event) {
             state.pendingInputMetadata = event.detail || { input_mode: "voice" };

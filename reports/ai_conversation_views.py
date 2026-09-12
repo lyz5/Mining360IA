@@ -15,7 +15,7 @@ from .ai_conversation_context_service import merge_conversation_context, seriali
 from .ai_conversation_message_service import serialize_message
 from .ai_conversation_service import (
     ConversationLimitReached,
-    create_conversation,
+    create_or_reuse_empty_conversation,
     max_active_conversations,
     owned_conversation,
     rename_conversation,
@@ -51,8 +51,11 @@ def conversations_api(request):
     if request.method == "POST":
         try:
             payload = _json_body(request)
-            conversation = create_conversation(request.user, title=payload.get("title"))
-            return JsonResponse({"ok": True, "conversation": serialize_conversation(conversation)}, status=201)
+            conversation, created = create_or_reuse_empty_conversation(request.user, title=payload.get("title"))
+            return JsonResponse(
+                {"ok": True, "conversation": serialize_conversation(conversation), "reused": not created},
+                status=201 if created else 200,
+            )
         except (ValidationError, PermissionDenied) as exc:
             return _error(exc)
 

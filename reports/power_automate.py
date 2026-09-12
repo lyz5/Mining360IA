@@ -30,20 +30,31 @@ def _diagnostic_reference(response) -> str:
 AFTERMARKET_DATASET_NAMES = {
     "mine logistics & aftermarket",
 }
+LOGISTICS_DATASET_NAMES = {
+    "mine logistics report",
+}
 
 
 def _uses_aftermarket_flow(dataset_name: str) -> bool:
     return str(dataset_name or "").strip().casefold() in AFTERMARKET_DATASET_NAMES
 
 
+def _uses_logistics_flow(dataset_name: str) -> bool:
+    return str(dataset_name or "").strip().casefold() in LOGISTICS_DATASET_NAMES
+
+
 def get_flow_url(dataset_name: str = "") -> str:
     aftermarket = _uses_aftermarket_flow(dataset_name)
-    config_key = "aftermarket_dax_flow_url" if aftermarket else "dax_flow_url"
-    environment_key = (
-        "POWER_AUTOMATE_AFTERMARKET_DAX_FLOW_URL"
-        if aftermarket
-        else "POWER_AUTOMATE_DAX_FLOW_URL"
-    )
+    logistics = _uses_logistics_flow(dataset_name)
+    if logistics:
+        config_key = "logistics_dax_flow_url"
+        environment_key = "POWER_AUTOMATE_LOGISTICS_DAX_FLOW_URL"
+    elif aftermarket:
+        config_key = "aftermarket_dax_flow_url"
+        environment_key = "POWER_AUTOMATE_AFTERMARKET_DAX_FLOW_URL"
+    else:
+        config_key = "dax_flow_url"
+        environment_key = "POWER_AUTOMATE_DAX_FLOW_URL"
     try:
         from .system_configuration_service import integration_value
 
@@ -61,6 +72,12 @@ def execute_dax_via_flow(payload: dict) -> dict:
     dataset_name = str(payload.get("datasetName") or "").strip()
     flow_url = get_flow_url(dataset_name)
     if not flow_url:
+        if _uses_logistics_flow(dataset_name):
+            raise RuntimeError(
+                "inspectData3 is not configured for Mine Logistics Report. "
+                "Set POWER_AUTOMATE_LOGISTICS_DAX_FLOW_URL or configure the "
+                "Mine Logistics DAX Flow URL in System Configuration."
+            )
         if _uses_aftermarket_flow(dataset_name):
             raise RuntimeError(
                 "inspectData2 is not configured for Mine Logistics & AfterMarket. "

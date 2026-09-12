@@ -24,6 +24,7 @@
                 <p>Manage AI language, semantic models, response behavior and governance.</p>
             </div>
             <div class="aiw-header-actions">
+                <a class="button secondary" href="{% url 'ai-chat-production-readiness' %}">Chat readiness</a>
                 <button class="button secondary" type="button" data-ai-help-open>How this works</button>
                 <button class="button secondary" type="button" data-ai-import-open>Import Semantic Model</button>
                 <button class="button" type="button" data-ai-test-open>Test AI</button>
@@ -118,12 +119,17 @@
                         </div>
                         <div data-entity-group="business-governance" hidden>
                             <p>Business Governance</p>
+                            <button type="button" class="ia-tab" data-resource-type="capability-registry">Capability Registry</button>
+                            <button type="button" class="ia-tab" data-resource-type="data-field-registry">Data Field Registry</button>
+                            <button type="button" class="ia-tab" data-resource-type="answerability-rules">Answerability Rules</button>
+                            <button type="button" class="ia-tab" data-resource-type="source-precedence">Source Precedence</button>
                             <button type="button" class="ia-tab" data-resource-type="business-rules">Business Rules</button>
                             <button type="button" class="ia-tab" data-resource-type="kpi-targets">KPI Targets</button>
                             <button type="button" class="ia-tab" data-resource-type="recommended-actions">Recommended Actions</button>
                         </div>
                         <div data-entity-group="test-diagnostics" hidden>
                             <p>Test &amp; Diagnostics</p>
+                            {% if is_ia_admin %}<button type="button" class="ia-tab" data-resource-type="data-gaps">Data Gaps</button>{% endif %}
                             {% if is_ia_admin %}<button type="button" class="ia-tab" data-resource-type="debug-runs">Debug Runs</button>{% endif %}
                             <button type="button" data-ai-test-open>Test Intent</button>
                             <button type="button" data-readiness-open>Readiness &amp; Coverage</button>

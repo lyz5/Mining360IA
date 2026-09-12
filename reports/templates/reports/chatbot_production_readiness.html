@@ -1,0 +1,63 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chatbot Production Readiness | Mining 360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+</head>
+<body>
+    {% include "reports/includes/app_nav.html" %}
+    <main class="app-shell chat-readiness-shell">
+        <header class="chat-readiness-header">
+            <div>
+                <p class="eyebrow">AI Config / Chat Experience</p>
+                <h1>Chatbot Production Readiness</h1>
+                <p>Runtime eligibility, certification, dependency health and recent execution telemetry.</p>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                <button class="button" type="submit">Run Production Readiness Suite</button>
+            </form>
+        </header>
+
+        {% for message in messages %}<div class="flash visible">{{ message }}</div>{% endfor %}
+
+        <section class="chat-readiness-metrics" aria-label="Readiness summary">
+            <div><strong>{{ snapshot.certified_count }}</strong><span>Production eligible</span></div>
+            <div><strong>{{ snapshot.failed_count }}</strong><span>Failed or expired</span></div>
+            <div><strong>{{ snapshot.not_ready_count }}</strong><span>Operations not ready</span></div>
+            <div><strong>{% if snapshot.latency_ms.p95 != None %}{{ snapshot.latency_ms.p95 }} ms{% else %}N/A{% endif %}</strong><span>Recent p95 latency</span></div>
+        </section>
+
+        <section class="chat-readiness-section">
+            <header><h2>Suggestions</h2><span>{{ snapshot.environment }}</span></header>
+            <div class="table-scroll">
+                <table class="data-table">
+                    <thead><tr><th>Suggestion</th><th>Operation</th><th>Readiness</th><th>Certification</th><th>Last test</th><th>Production eligible</th></tr></thead>
+                    <tbody>
+                    {% for item in snapshot.suggestions %}
+                        <tr><td>{{ item.code }}</td><td>{{ item.operation }}</td><td>{{ item.readiness }}</td><td>{{ item.certification }}</td><td>{{ item.last_test|default:"Not tested" }}</td><td>{{ item.production_eligible|yesno:"Yes,No" }}</td></tr>
+                    {% empty %}<tr><td colspan="6">No governed suggestion is configured.</td></tr>{% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="chat-readiness-section">
+            <header><h2>Dependency Health</h2><span>Cached snapshots only</span></header>
+            <div class="table-scroll">
+                <table class="data-table">
+                    <thead><tr><th>Dependency</th><th>Status</th><th>Checked</th><th>Expires</th></tr></thead>
+                    <tbody>
+                    {% for item in snapshot.dependency_health %}
+                        <tr><td>{{ item.dependency_code }}</td><td>{{ item.status }}</td><td>{{ item.checked_at }}</td><td>{{ item.expires_at|default:"Not set" }}</td></tr>
+                    {% empty %}<tr><td colspan="4">No dependency snapshot is available.</td></tr>{% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

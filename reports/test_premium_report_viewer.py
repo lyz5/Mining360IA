@@ -147,6 +147,7 @@ class PremiumReportViewerTests(TestCase):
         self.assertContains(response, "data-viewer-switcher-url")
         self.assertContains(response, "data-embed-url")
         self.assertContains(response, "data-canvas-workspace")
+        self.assertContains(response, 'data-stable-runtime="true"')
         content = response.content.decode("utf-8")
         toolbar_start = content.index('class="report-canvas-toolbar"')
         filter_bar = content.index("data-command-bar")
@@ -157,6 +158,17 @@ class PremiumReportViewerTests(TestCase):
         self.assertNotContains(response, "RLS Role")
         self.assertNotContains(response, "Diagnose slicers")
         reports.assert_not_called()
+
+    @override_settings(ENABLE_STABLE_POWERBI_VIEWER_RUNTIME="Disabled")
+    @patch("reports.views.list_workspace_reports")
+    def test_stable_runtime_can_be_disabled_without_changing_viewer_template(self, reports):
+        reports.return_value = [self.runtime]
+        self.client.force_login(self.user)
+
+        response = self.client.get(reverse("report-detail", args=[self.report_id]))
+
+        self.assertTemplateUsed(response, "reports/detail_premium.html")
+        self.assertContains(response, 'data-stable-runtime="false"')
 
     def test_viewer_configuration_is_saved_and_versioned(self):
         saved = save_configuration(self.runtime, {
@@ -202,3 +214,8 @@ class PremiumReportViewerSourceTests(SimpleTestCase):
         embed_script = (settings.BASE_DIR / "reports" / "static" / "reports" / "powerbi_embed.js").read_text(encoding="utf-8")
         self.assertNotIn("window.powerbi.bootstrap", embed_script)
         self.assertEqual(embed_script.count("window.powerbi.embed("), 1)
+        self.assertIn('this.transition("requesting_embed_config"', embed_script)
+        self.assertIn("this.appliedFilterFingerprint", embed_script)
+        self.assertIn("FiltersOperations.ReplaceAll", embed_script)
+        self.assertIn("scheduleSecondaryData()", script)
+        self.assertIn("if (!state.stableRuntime) loadRefreshStatus();", script)

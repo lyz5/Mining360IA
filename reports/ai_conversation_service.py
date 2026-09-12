@@ -68,6 +68,20 @@ def create_conversation(user, *, title="New conversation") -> AIConversation:
 
 
 @transaction.atomic
+def create_or_reuse_empty_conversation(user, *, title="New conversation") -> tuple[AIConversation, bool]:
+    """Reuse the latest empty active thread before consuming another active slot."""
+    User.objects.select_for_update().get(pk=user.pk)
+    empty = (
+        AIConversation.objects.filter(user=user, status="active", messages__isnull=True)
+        .order_by("-created_at")
+        .first()
+    )
+    if empty:
+        return empty, False
+    return create_conversation(user, title=title), True
+
+
+@transaction.atomic
 def rename_conversation(conversation: AIConversation, title: str) -> AIConversation:
     normalized = re.sub(r"\s+", " ", str(title or "").strip())[:200]
     if not normalized:

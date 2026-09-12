@@ -11,10 +11,13 @@ from .availability_diagnostics_service import (
 from .availability_reference_service import resolve_availability_references
 from .dax_generator_service import generate_dax_from_intent
 from .intent_extractor_service import extract_intent
+from .machine_performance_intent_service import infer_scope
 from .powerbi_interaction_orchestrator import (
     _apply_resolved_entities,
     _answer_payload,
     _availability_confirmation_answer,
+    _rows_with_values,
+    _normalize_performance_intent_references,
 )
 from .powerbi_interaction_service import is_follow_up_question, merge_conversation_intent
 
@@ -44,6 +47,14 @@ FILTERS = [
         "is_active": True,
     },
     {
+        "filter_code": "equipment",
+        "powerbi_table_name": "EquipmentList_MiningProd",
+        "powerbi_column_name": "Equipment",
+        "data_type": "Text",
+        "is_required": False,
+        "is_active": True,
+    },
+    {
         "filter_code": "serial_number",
         "powerbi_table_name": "EquipmentList_MiningProd",
         "powerbi_column_name": "SN",
@@ -56,6 +67,14 @@ FILTERS = [
         "powerbi_table_name": "Date",
         "powerbi_column_name": "Year Month",
         "data_type": "Date",
+        "is_required": False,
+        "is_active": True,
+    },
+    {
+        "filter_code": "product_group",
+        "powerbi_table_name": "ModelList_MiningProd",
+        "powerbi_column_name": "PrimeMovers",
+        "data_type": "Text",
         "is_required": False,
         "is_active": True,
     },
@@ -81,6 +100,7 @@ class AvailabilityIntentTests(SimpleTestCase):
                             {"filter_code": "minesite"},
                             {"filter_code": "model"},
                             {"filter_code": "family"},
+                            {"filter_code": "equipment"},
                             {"filter_code": "serial_number"},
                             {"filter_code": "period"},
                         ],
@@ -119,6 +139,59 @@ class AvailabilityIntentTests(SimpleTestCase):
         self.assertEqual(intent["filters"]["serial_number"], "A1B2345")
         self.assertEqual(intent["filters"]["period"], "2026-06")
 
+    def test_implicit_serial_number_is_detected_for_availability(self):
+        intent = self._extract("Give me the physical availability of DNR00153 on YTD")
+
+        self.assertEqual(intent["intent_type"], "single_kpi")
+        self.assertEqual(intent["scope_type"], "serial_number")
+        self.assertEqual(intent["filters"]["serial_number"], "DNR00153")
+        self.assertEqual(intent["filters"]["period"], "year to date")
+
+    def test_digit_prefixed_serial_is_detected_for_availability(self):
+        intent = self._extract("Availability of 6B900140 on YTD")
+
+        self.assertEqual(intent["scope_type"], "serial_number")
+        self.assertEqual(intent["filters"]["serial_number"], "6B900140")
+        self.assertNotIn("minesite", intent["filters"])
+
+    def test_equipment_name_is_detected_for_availability(self):
+        intent = self._extract("Availability of HT005 on YTD")
+
+        self.assertEqual(intent["scope_type"], "equipment")
+        self.assertEqual(intent["filters"]["equipment"], "HT005")
+
+    def test_equipment_name_is_preserved_before_minesite(self):
+        for question in (
+            "Availability of E142 at Bonikro on YTD",
+            "Disponibilité de E142 à Bonikro YTD",
+        ):
+            with self.subTest(question=question):
+                intent = self._extract(question)
+                self.assertEqual(intent["filters"]["equipment"], "E142")
+
+    def test_equipment_after_minesite_is_detected(self):
+        intent = self._extract("Physical availability of Fekola EX009 YTD")
+
+        self.assertEqual(intent["filters"]["equipment"], "EX009")
+
+    def test_single_kpi_without_period_defaults_to_ytd(self):
+        intent = self._extract("Availability for equipment EX009 Fekola")
+
+        self.assertEqual(intent["filters"]["equipment"], "EX009")
+        self.assertEqual(intent["filters"]["period"], "year to date")
+
+    def test_serial_after_minesite_is_detected(self):
+        intent = self._extract("Physical availability of Fekola DNR00134 YTD")
+
+        self.assertEqual(intent["filters"]["serial_number"], "DNR00134")
+
+    def test_implicit_equipment_code_is_detected_for_availability(self):
+        intent = self._extract("Give me the physical availability of EX007 on YTD")
+
+        self.assertEqual(intent["scope_type"], "equipment")
+        self.assertEqual(intent["filters"]["equipment"], "EX007")
+        self.assertNotIn("serial_number", intent["filters"])
+
     def test_trend_and_year_are_detected_locally(self):
         intent = self._extract("Show the monthly availability trend for Fekola in 2025")
         self.assertEqual(intent["intent_type"], "trend_analysis")
@@ -144,6 +217,25 @@ class AvailabilityIntentTests(SimpleTestCase):
             with self.subTest(question=question):
                 intent = self._extract(question)
                 self.assertEqual(intent["filters"]["period"], expected)
+
+    def test_parameterized_rolling_period_is_detected(self):
+        intent = self._extract(
+            "Give me the physical availability for LMT, HMS and OHT for the last 6 months"
+        )
+
+        self.assertEqual(intent["filters"]["period"], "last 6 months")
+
+    def test_month_range_is_detected_before_single_month(self):
+        for question in (
+            "Give me the physical availability for LMT from May to July",
+            "Donne-moi la disponibilité de LMT de mai à juillet",
+        ):
+            with self.subTest(question=question):
+                intent = self._extract(question)
+                self.assertEqual(
+                    intent["filters"]["period"],
+                    f"{date.today().year}-05/{date.today().year}-07",
+                )
 
     def test_month_without_year_uses_current_year(self):
         intent = self._extract(
@@ -217,6 +309,38 @@ class AvailabilityDaxTests(SimpleTestCase):
         self.assertIn('TREATAS({"Fekola", "Siguiri"}', dax)
         self.assertIn("'MineSiteList_MiningProd'[MineSite]", dax)
 
+    def test_single_kpi_uses_all_selected_models_as_one_filter(self):
+        dax = self._generate({
+            "section": "performance",
+            "intent_type": "single_kpi",
+            "metric": "availability",
+            "filters": {
+                "model": ["777", "785", "789"],
+                "period": "year to date",
+            },
+        })
+
+        self.assertIn(
+            'TREATAS({"777", "785", "789"}, \'EquipmentList_MiningProd\'[Model])',
+            dax,
+        )
+
+    def test_single_kpi_uses_all_selected_product_groups_as_one_filter(self):
+        dax = self._generate({
+            "section": "performance",
+            "intent_type": "single_kpi",
+            "metric": "availability",
+            "filters": {
+                "product_group": ["LMT", "HMS", "OHT"],
+                "period": "year to date",
+            },
+        })
+
+        self.assertIn(
+            'TREATAS({"LMT", "HMS", "OHT"}, \'ModelList_MiningProd\'[PrimeMovers])',
+            dax,
+        )
+
     def test_trend_groups_and_orders_by_month(self):
         dax = self._generate({
             "section": "performance",
@@ -230,9 +354,9 @@ class AvailabilityDaxTests(SimpleTestCase):
 
     def test_relative_periods_generate_controlled_dax(self):
         cases = {
-            "year to date": "DATE(YEAR(TODAY()), 1, 1), TODAY()",
-            "month to date": "DATE(YEAR(TODAY()), MONTH(TODAY()), 1), TODAY()",
-            "last 12 months": "DATESINPERIOD('Date'[Date], TODAY(), -12, MONTH)",
+            "year to date": "DATE(YEAR(MIN(TODAY(), CALCULATE(MAX('Date'[Date])",
+            "month to date": "DATE(YEAR(MIN(TODAY(), CALCULATE(MAX('Date'[Date])",
+            "last 12 months": "DATESINPERIOD('Date'[Date], MIN(TODAY(), CALCULATE(MAX('Date'[Date])",
         }
         for period, expected in cases.items():
             with self.subTest(period=period):
@@ -245,8 +369,158 @@ class AvailabilityDaxTests(SimpleTestCase):
                 self.assertIn(expected, dax)
                 self.assertIn("ROW(", dax)
 
+    def test_parameterized_rolling_period_generates_controlled_dax(self):
+        dax = self._generate({
+            "section": "performance",
+            "intent_type": "single_kpi",
+            "metric": "availability",
+            "filters": {
+                "product_group": ["LMT", "HMS", "OHT"],
+                "period": "last 6 months",
+            },
+        })
+
+        self.assertIn("DATESINPERIOD('Date'[Date]", dax)
+        self.assertIn(", -6, MONTH)", dax)
+        self.assertIn('TREATAS({"LMT", "HMS", "OHT"}', dax)
+
+    def test_month_range_generates_inclusive_month_boundaries(self):
+        dax = self._generate({
+            "section": "performance",
+            "intent_type": "single_kpi",
+            "metric": "availability",
+            "filters": {
+                "product_group": "LMT",
+                "period": "2026-05/2026-07",
+            },
+        })
+
+        self.assertIn("DATE(2026, 5, 1)", dax)
+        self.assertIn("EOMONTH(DATE(2026, 7, 1), 0)", dax)
+
+    def test_ytd_availability_uses_report_aligned_weighting(self):
+        dax = self._generate({
+            "section": "performance",
+            "intent_type": "single_kpi",
+            "metric": "availability",
+            "filters": {"serial_number": "DNR00153", "period": "year to date"},
+        })
+
+        self.assertIn("VAR __WeightedAvailability", dax)
+        self.assertIn("DIVIDE(__WeightedAvailability, __AvailableDays)", dax)
+        self.assertIn("EOMONTH('Date'[Date], 0)", dax)
+        self.assertIn('TREATAS({"DNR00153"}', dax)
+
 
 class AvailabilityReferenceTests(SimpleTestCase):
+    @patch("reports.availability_reference_service._serial_catalog", return_value={})
+    @patch("reports.availability_reference_service._family_catalog", return_value={})
+    def test_multiple_prime_mover_aliases_are_preserved_in_question_order(
+        self, _families, _serials
+    ):
+        filters, unresolved = resolve_availability_references(
+            "Give me the physical availability for LMT, HMS and OHT YTD",
+            {"period": "year to date"},
+        )
+
+        self.assertEqual(filters["product_group"], ["LMT", "HMS", "OHT"])
+        self.assertEqual(unresolved, [])
+
+    @patch("reports.availability_reference_service._serial_catalog", return_value={})
+    @patch("reports.availability_reference_service._family_catalog", return_value={})
+    def test_question_aliases_complete_partially_resolved_family_candidates(
+        self, _families, _serials
+    ):
+        filters, unresolved = resolve_availability_references(
+            "Give me the physical availability for LMT, HMS and OHT YTD",
+            {"family": ["Hydraulic Mining Shovels", "OFF-HIGHWAY TRUCK"]},
+        )
+
+        self.assertEqual(filters["product_group"], ["LMT", "HMS", "OHT"])
+        self.assertEqual(unresolved, [])
+
+    @patch("reports.availability_reference_service._serial_catalog", return_value={})
+    @patch("reports.availability_reference_service._family_catalog", return_value={})
+    def test_multiple_prime_mover_comparison_is_normalized_without_duplicate_filter(
+        self, _families, _serials
+    ):
+        intent = _normalize_performance_intent_references(
+            "Compare LMT, HMS and OHT availability YTD",
+            {
+                "section": "performance",
+                "intent_type": "entity_comparison",
+                "metric": "availability",
+                "filters": {"period": "year to date"},
+                "comparison": {"family": ["LMT", "HMS", "OHT"]},
+            },
+        )
+
+        self.assertEqual(intent["comparison"]["product_group"], ["LMT", "HMS", "OHT"])
+        self.assertNotIn("product_group", intent["filters"])
+
+    def test_resolved_multiple_models_are_not_truncated(self):
+        entities = [
+            {"id": index, "entity_type": "Filter Value", "normalized_value": model}
+            for index, model in enumerate(("777", "785", "789"), start=1)
+        ]
+        with patch("reports.powerbi_interaction_orchestrator.KnowledgeSynonym.objects") as objects:
+            objects.filter.return_value.values_list.return_value = [
+                (1, "Model"), (2, "Model"), (3, "Model")
+            ]
+            intent = _apply_resolved_entities(
+                {
+                    "section": "performance",
+                    "intent_type": "single_kpi",
+                    "metric": "availability",
+                    "filters": {"period": "year to date"},
+                },
+                {"resolved_entities": entities},
+            )
+
+        self.assertEqual(intent["filters"]["model"], ["777", "785", "789"])
+        self.assertEqual(infer_scope(intent), "multiple_models")
+
+    @patch("reports.availability_reference_service._serial_catalog", return_value={})
+    @patch("reports.availability_reference_service._family_catalog", return_value={})
+    def test_follow_up_context_normalizes_hms_and_ytd_after_merge(self, _families, _serials):
+        intent = _normalize_performance_intent_references(
+            "Show downtime drivers",
+            {
+                "section": "performance",
+                "intent_type": "downtime_drivers",
+                "metric": "availability",
+                "filters": {
+                    "period": "YTD 2026",
+                    "family": "Hydraulic Mining Shovels",
+                    "minesite": "Fekola",
+                },
+            },
+        )
+
+        self.assertEqual(intent["filters"], {
+            "period": "year to date",
+            "minesite": "Fekola",
+            "product_group": "HMS",
+        })
+
+    @patch(
+        "reports.availability_reference_service._family_catalog",
+        return_value={"hydraulic mining shovels": "Hydraulic Mining Shovels"},
+    )
+    @patch(
+        "reports.availability_reference_service._serial_catalog",
+        return_value={},
+    )
+    def test_prime_mover_alias_uses_model_list_filter(self, _serials, _families):
+        filters, unresolved = resolve_availability_references(
+            "availability of Hydraulic Mining Shovels at Fekola",
+            {"family": "Hydraulic Mining Shovels", "minesite": "Fekola"},
+        )
+
+        self.assertEqual(filters["product_group"], "HMS")
+        self.assertNotIn("family", filters)
+        self.assertEqual(unresolved, [])
+
     @patch(
         "reports.availability_reference_service._serial_catalog",
         return_value={},
@@ -327,6 +601,51 @@ class AvailabilityDiagnosticsTests(SimpleTestCase):
         self.assertIn('TREATAS({"Unplanned"}', payload["dax"])
         self.assertEqual(payload["work_type"], "Unplanned")
 
+    def test_diagnostics_canonicalizes_inherited_hms_ytd_filters(self):
+        diagnostic_metric = {
+            "metric_code": "downtime_hours",
+            "metric_label": "Downtime Hours",
+            "powerbi_measure_name": "[DonwtimeHours]",
+            "is_active": True,
+        }
+        driver_filter = {
+            "filter_code": "downtime_driver",
+            "powerbi_table_name": "DowntimeData_MiningProd",
+            "powerbi_column_name": "DescriptionCat",
+            "data_type": "Text",
+            "is_active": True,
+        }
+        product_group_filter = {
+            "filter_code": "product_group",
+            "powerbi_table_name": "ModelList_MiningProd",
+            "powerbi_column_name": "PrimeMovers",
+            "data_type": "Text",
+            "is_active": True,
+        }
+        with (
+            patch(
+                "reports.availability_diagnostics_service.get_metric_mapping",
+                return_value=[METRIC, diagnostic_metric],
+            ),
+            patch(
+                "reports.availability_diagnostics_service.get_filter_mapping",
+                return_value=[*FILTERS, driver_filter, product_group_filter],
+            ),
+        ):
+            payload = build_availability_diagnostics_dax({
+                "section": "performance",
+                "metric": "availability",
+                "filters": {
+                    "minesite": "Fekola",
+                    "product_group": "HMS",
+                    "period": "YTD 2026",
+                },
+            })
+        self.assertIn("'ModelList_MiningProd'[PrimeMovers]", payload["dax"])
+        self.assertIn('TREATAS({"HMS"}', payload["dax"])
+        self.assertIn("DATE(YEAR(", payload["dax"])
+        self.assertNotIn("Hydraulic Mining Shovels", payload["dax"])
+
     def test_diagnostics_calculates_pareto_percentages(self):
         result = parse_availability_diagnostics_rows([
             {
@@ -346,6 +665,44 @@ class AvailabilityDiagnosticsTests(SimpleTestCase):
 
 
 class AvailabilityConversationTests(SimpleTestCase):
+    def test_blank_semantic_row_is_treated_as_no_data_not_zero(self):
+        self.assertEqual(_rows_with_values([{}]), [])
+        self.assertEqual(_rows_with_values([{"[Physical Availability]": None}]), [])
+        self.assertEqual(_rows_with_values([{"[Physical Availability]": 0}]), [{"[Physical Availability]": 0}])
+
+    def test_multi_model_answer_formats_scope_as_user_facing_text(self):
+        from .fleet_performance_intelligence_service import deterministic_performance_answer
+
+        answer = deterministic_performance_answer(
+            {
+                "intent_type": "single_kpi",
+                "filters": {
+                    "model": ["777", "785", "789"],
+                    "period": "year to date",
+                },
+            },
+            [{"[Physical Availability]": 0.8564}],
+            "en",
+        )
+
+        self.assertIn("Models 777, 785 and 789 performance", answer)
+        self.assertNotIn("['777'", answer)
+
+    def test_month_range_answer_uses_natural_period_label(self):
+        from .fleet_performance_intelligence_service import deterministic_performance_answer
+
+        answer = deterministic_performance_answer(
+            {
+                "intent_type": "single_kpi",
+                "filters": {"product_group": "LMT", "period": "2026-05/2026-07"},
+            },
+            [{"[Physical Availability]": 0.8391}],
+            "en",
+        )
+
+        self.assertIn("May to July 2026", answer)
+        self.assertNotIn("2026-05/2026-07", answer)
+
     def test_single_kpi_answer_uses_natural_english_context(self):
         payload = _answer_payload(
             {

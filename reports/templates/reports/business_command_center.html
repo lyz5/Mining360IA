@@ -1,0 +1,164 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Business Command Center | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260910-command-center">
+    <link rel="stylesheet" href="{% static 'reports/business_command_center.css' %}?v=20260911-sales-review">
+</head>
+<body class="bcc-body">
+{% include "reports/includes/app_nav.html" %}
+<main class="app-shell bcc-shell" data-command-center
+      data-bootstrap-url="{% url 'business-command-center-bootstrap-api' %}"
+      data-watchlist-url="{% url 'business-command-center-watchlist-api' %}"
+      data-saved-views-url="{% url 'business-review-saved-views-api' %}"
+      data-export-url="{% url 'business-command-center-export-api' %}"
+      data-features='{"customers":{{ features.customers|yesno:"true,false" }},"countries":{{ features.countries|yesno:"true,false" }},"key_accounts":{{ features.key_accounts|yesno:"true,false" }},"last_visit":{{ features.last_visit|yesno:"true,false" }},"attention":{{ features.attention|yesno:"true,false" }},"watchlist":{{ features.watchlist|yesno:"true,false" }},"presentation":{{ features.presentation|yesno:"true,false" }}}'>
+    {% csrf_token %}
+    <header class="bcc-header">
+        <div>
+            <p class="bcc-kicker">Business Review</p>
+            <h1>Business Command Center</h1>
+            <p>Executive Revenue Intelligence across Machines, Parts, Service and Rental.</p>
+        </div>
+        <div class="bcc-header-actions">
+            <button class="bcc-icon-btn" type="button" data-refresh title="Refresh view" aria-label="Refresh view">&#8635;</button>
+            <button class="bcc-button secondary" type="button" data-save-view>Save View</button>
+            {% if features.presentation %}<button class="bcc-button secondary" type="button" data-presentation>Presentation</button>{% endif %}
+            {% if can_export %}<button class="bcc-button" type="button" data-export>Export</button>{% endif %}
+        </div>
+    </header>
+
+    <section class="bcc-filters" aria-label="Business filters">
+        <label><span>Period</span><select data-filter="period"><option value="ytd">YTD</option><option value="last_year">Last Year</option><option value="current_month">Current Month</option><option value="custom">Custom Range</option></select></label>
+        <label data-custom-date hidden><span>Start</span><input type="date" data-filter="start_date"></label>
+        <label data-custom-date hidden><span>End</span><input type="date" data-filter="end_date"></label>
+        <label><span>Comparison</span><select data-filter="comparison"><option value="same_period_last_year">Same Period Last Year</option><option value="previous_equivalent_period">Previous Period</option><option value="none">No Comparison</option></select></label>
+        <label><span>Business Line</span><select data-filter="business_line"><option value="all_business">All Business</option><option value="machine">Machine</option><option value="parts">Parts</option><option value="service">Service</option><option value="rental">Rental</option><option value="unclassified">Unclassified</option></select></label>
+        <label><span>Country</span><select data-filter="country_ids"><option value="">All Countries</option></select></label>
+        <label><span>Customer</span><select data-filter="customer_ids"><option value="">All Customers</option></select></label>
+        <label><span>Key Account</span><select data-filter="key_account_ids"><option value="">All Key Accounts</option></select></label>
+        <button class="bcc-reset" type="button" data-reset>Reset</button>
+    </section>
+    <div class="bcc-filter-chips" data-filter-chips aria-live="polite"></div>
+
+    <section class="bcc-ribbon" aria-label="Business snapshot">
+        <div><span>Published Mapping</span><strong data-ribbon="mapping">Checking</strong></div>
+        <div><span>Revenue Data</span><strong data-ribbon="data">Checking</strong></div>
+        <div><span>Snapshot</span><strong data-ribbon="snapshot">Checking</strong></div>
+        <div><span>Currency</span><strong data-ribbon="currency">EUR</strong></div>
+        <button type="button" data-confidence-open><span>Data Confidence</span><strong data-ribbon="confidence">Checking</strong></button>
+    </section>
+
+    <div class="bcc-status" data-status role="status">Preparing your business view...</div>
+    <section class="bcc-error" data-error hidden>
+        <h2>Revenue data is temporarily unavailable</h2><p data-error-message></p><button class="bcc-button" type="button" data-retry>Retry</button>
+    </section>
+
+    <div data-content hidden>
+        <section class="bcc-mode-warning" data-mode-warning hidden>
+            <strong>Unmapped Business-Line View</strong>
+            <span>A Published Mapping is required for Customer, Country and Key Account analysis.</span>
+        </section>
+
+        <section class="bcc-first-view">
+            <article class="bcc-hero" data-export-surface="hero">
+                <div class="bcc-hero-copy">
+                    <p data-hero-label>Total Mining Revenue</p>
+                    <strong data-hero-value>--</strong>
+                    <span data-period-label>--</span>
+                    <div class="bcc-hero-delta"><b data-hero-growth>--</b><span data-hero-absolute>--</span></div>
+                    <small data-hero-contributor>Top contributor unavailable</small>
+                </div>
+                <svg class="bcc-spark" data-hero-chart viewBox="0 0 560 150" role="img" aria-label="Revenue trend"></svg>
+            </article>
+            <section class="bcc-line-grid" data-line-grid aria-label="Revenue by business line"></section>
+        </section>
+        <section class="bcc-two-column bcc-change-row">
+            <article class="bcc-section">
+                <div class="bcc-section-head"><div><p class="bcc-kicker">Movement</p><h2>What Changed</h2></div></div>
+                <div class="bcc-change-list" data-changes></div>
+            </article>
+            <article class="bcc-section" data-last-visit-section>
+                <div class="bcc-section-head"><div><p class="bcc-kicker">Personal view</p><h2>Since Your Last Visit</h2></div><button type="button" class="bcc-text-button" data-mark-reviewed>Mark as reviewed</button></div>
+                <div class="bcc-change-list" data-last-visit></div>
+            </article>
+        </section>
+
+        <section class="bcc-two-column bcc-analytics">
+            <article class="bcc-section bcc-chart-card">
+                <div class="bcc-section-head"><div><p class="bcc-kicker">Revenue intelligence</p><h2>Revenue Trend</h2></div><button class="bcc-icon-btn" type="button" data-copy="trend" title="Copy chart" aria-label="Copy Revenue Trend">&#10697;</button></div>
+                <svg class="bcc-trend-chart" data-trend-chart viewBox="0 0 760 300" role="img" aria-label="Monthly Revenue trend"></svg>
+                <div class="bcc-chart-legend"><span><i class="current"></i>Selected period</span><span><i class="comparison"></i>Comparison</span></div>
+            </article>
+            <article class="bcc-section">
+                <div class="bcc-section-head"><div><p class="bcc-kicker">Composition</p><h2>Revenue Mix</h2></div></div>
+                <div class="bcc-mix-bar" data-mix-bar></div>
+                <div class="bcc-mix-list" data-mix-list></div>
+                <div class="bcc-bridge"><h3>Revenue Change Bridge</h3><div data-bridge></div></div>
+            </article>
+        </section>
+
+        <section class="bcc-section bcc-sales-review" aria-labelledby="bcc-sales-review-title">
+            <div class="bcc-section-head">
+                <div><p class="bcc-kicker">Monthly business review</p><h2 id="bcc-sales-review-title">Sales Performance</h2></div>
+                <div class="bcc-tabs" role="tablist" aria-label="Sales analysis dimension">
+                    <button class="active" type="button" data-sales-tab="lines">Business Lines</button>
+                    <button type="button" data-sales-tab="countries">Countries</button>
+                    <button type="button" data-sales-tab="customers">Customers</button>
+                </div>
+            </div>
+            <div class="bcc-sales-summary" data-sales-summary></div>
+            <div class="bcc-sales-source-note">
+                <span><strong>Actual invoiced Revenue</strong> uses the governed CA Combine snapshot.</span>
+                <span data-sales-budget-status></span>
+                <span data-sales-orders-status></span>
+            </div>
+            <div class="bcc-table-wrap">
+                <table class="bcc-sales-table">
+                    <thead data-sales-head></thead>
+                    <tbody data-sales-body></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="bcc-section bcc-explorer">
+            <div class="bcc-section-head">
+                <div><p class="bcc-kicker">Business dimensions</p><h2>Revenue Leaders</h2></div>
+                <div class="bcc-tabs" role="tablist"><button class="active" data-dimension="customers">Customers</button><button data-dimension="countries">Countries</button><button data-dimension="key_accounts">Key Accounts</button></div>
+            </div>
+            <div class="bcc-table-wrap"><table><thead><tr><th>Rank</th><th>Entity</th><th>Revenue</th><th>Share</th><th>Previous</th><th>Change</th><th>Business Line Mix</th><th></th></tr></thead><tbody data-dimension-table></tbody></table></div>
+            <button class="bcc-text-button" type="button" data-show-all>Show Top 25</button>
+        </section>
+
+        <section class="bcc-two-column bcc-lower">
+            <article class="bcc-section">
+                <div class="bcc-section-head"><div><p class="bcc-kicker">Governed signals</p><h2>Executive Attention</h2></div></div>
+                <div class="bcc-attention-list" data-attention></div>
+            </article>
+            <article class="bcc-section">
+                <div class="bcc-section-head"><div><p class="bcc-kicker">Personal portfolio</p><h2>Watchlist</h2></div></div>
+                <div class="bcc-watchlist" data-watchlist></div>
+            </article>
+        </section>
+
+        <section class="bcc-actions-strip">
+            <div><p class="bcc-kicker">Observation to action</p><h2>Actions &amp; Decisions</h2></div>
+            <div class="bcc-action-metrics"><span><b data-action="critical">0</b> Critical</span><span><b data-action="overdue">0</b> Overdue</span><span><b data-action="open">0</b> Open</span></div>
+            <a class="bcc-button secondary" href="{% url 'business-review-control-tower' %}#actions">Open Actions</a>
+        </section>
+
+        <footer class="bcc-confidence-footer"><strong>Data Confidence</strong><span data-confidence-summary></span><button class="bcc-text-button" type="button" data-confidence-open>View details</button></footer>
+    </div>
+
+    <aside class="bcc-drawer" data-drawer hidden aria-modal="true" role="dialog" aria-labelledby="bcc-drawer-title">
+        <div class="bcc-drawer-head"><div><p class="bcc-kicker" data-drawer-kicker>Business detail</p><h2 id="bcc-drawer-title" data-drawer-title>Detail</h2></div><button class="bcc-icon-btn" type="button" data-drawer-close aria-label="Close">&#10005;</button></div>
+        <div data-drawer-body></div>
+    </aside>
+</main>
+<script src="{% static 'reports/visual_export.js' %}?v=20260910"></script>
+<script src="{% static 'reports/business_command_center.js' %}?v=20260911-sales-review"></script>
+</body>
+</html>

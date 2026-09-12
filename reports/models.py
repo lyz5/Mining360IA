@@ -4,6 +4,7 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import Q
 from django.contrib.auth.models import Group, User
+from django.utils import timezone
 
 
 class DataQualityRun(models.Model):
@@ -1771,6 +1772,7 @@ class AIConversationMessage(models.Model):
     intent_code = models.CharField(max_length=100, blank=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="completed", db_index=True)
     client_message_id = models.CharField(max_length=128, null=True, blank=True)
+    idempotency_key = models.CharField(max_length=128, null=True, blank=True)
     request_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
     metadata_json = models.JSONField(default=dict, blank=True)
     parent_message = models.ForeignKey(
@@ -1795,6 +1797,11 @@ class AIConversationMessage(models.Model):
                 fields=["conversation", "client_message_id"],
                 condition=Q(client_message_id__isnull=False),
                 name="unique_ai_client_message_per_conversation",
+            ),
+            models.UniqueConstraint(
+                fields=["conversation", "idempotency_key"],
+                condition=Q(idempotency_key__isnull=False),
+                name="unique_ai_idempotency_per_conversation",
             ),
         ]
 
@@ -1920,10 +1927,46 @@ class AIAgent(models.Model):
 
 
 class AIAgentCapability(models.Model):
+    READINESS_STATUSES = [
+        ("Ready", "Ready"),
+        ("Limited", "Limited"),
+        ("Needs Configuration", "Needs Configuration"),
+        ("Disabled", "Disabled"),
+        ("Invalid", "Invalid"),
+    ]
+
     agent = models.ForeignKey(AIAgent, related_name="capabilities", on_delete=models.CASCADE)
     capability_code = models.SlugField(max_length=120)
     display_name = models.CharField(max_length=180)
     description = models.TextField(blank=True)
+    domain_code = models.CharField(max_length=100, blank=True, db_index=True)
+    category = models.CharField(max_length=100, blank=True, db_index=True)
+    display_name_en = models.CharField(max_length=180, blank=True)
+    display_name_fr = models.CharField(max_length=180, blank=True)
+    short_description_en = models.TextField(blank=True)
+    short_description_fr = models.TextField(blank=True)
+    detailed_description_en = models.TextField(blank=True)
+    detailed_description_fr = models.TextField(blank=True)
+    supported_intents_json = models.JSONField(default=list, blank=True)
+    supported_metrics_json = models.JSONField(default=list, blank=True)
+    supported_entities_json = models.JSONField(default=list, blank=True)
+    supported_operations_json = models.JSONField(default=list, blank=True)
+    required_data_sources_json = models.JSONField(default=list, blank=True)
+    required_permissions_json = models.JSONField(default=list, blank=True)
+    required_configuration_checks_json = models.JSONField(default=list, blank=True)
+    example_questions_en_json = models.JSONField(default=list, blank=True)
+    example_questions_fr_json = models.JSONField(default=list, blank=True)
+    supports_comparison = models.BooleanField(default=False)
+    supports_trend = models.BooleanField(default=False)
+    supports_ranking = models.BooleanField(default=False)
+    supports_export = models.BooleanField(default=False)
+    supports_navigation = models.BooleanField(default=False)
+    supports_follow_up = models.BooleanField(default=False)
+    readiness_score = models.PositiveSmallIntegerField(default=0)
+    readiness_status = models.CharField(
+        max_length=30, choices=READINESS_STATUSES, default="Needs Configuration", db_index=True
+    )
+    display_order = models.PositiveIntegerField(default=100)
     enabled = models.BooleanField(default=True)
     configuration_json = models.JSONField(default=dict, blank=True)
     priority = models.PositiveIntegerField(default=50)
@@ -1941,6 +1984,483 @@ class AIAgentCapability(models.Model):
                 fields=["agent", "capability_code"], name="unique_ai_agent_capability"
             ),
         ]
+
+
+class AICapabilityOperation(models.Model):
+    READINESS_STATUSES = [
+        ("READY", "Ready"),
+        ("LIMITED", "Limited"),
+        ("NEEDS_CONFIGURATION", "Needs Configuration"),
+        ("DISABLED", "Disabled"),
+        ("INVALID", "Invalid"),
+        ("TEMPORARILY_UNAVAILABLE", "Temporarily Unavailable"),
+    ]
+
+    operation_code = models.SlugField(max_length=120, unique=True)
+    capability = models.ForeignKey(
+        AIAgentCapability,
+        related_name="operations",
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+    )
+    agent_code = models.CharField(max_length=100, blank=True, db_index=True)
+    domain_code = models.CharField(max_length=100, blank=True, db_index=True)
+    display_name_en = models.CharField(max_length=180)
+    display_name_fr = models.CharField(max_length=180)
+    description_en = models.TextField(blank=True)
+    description_fr = models.TextField(blank=True)
+    intent_types_json = models.JSONField(default=list, blank=True)
+    required_entities_json = models.JSONField(default=list, blank=True)
+    optional_entities_json = models.JSONField(default=list, blank=True)
+    required_metrics_json = models.JSONField(default=list, blank=True)
+    required_filters_json = models.JSONField(default=list, blank=True)
+    required_data_sources_json = models.JSONField(default=list, blank=True)
+    required_knowledge_sections_json = models.JSONField(default=list, blank=True)
+    required_dax_templates_json = models.JSONField(default=list, blank=True)
+    required_response_templates_json = models.JSONField(default=list, blank=True)
+    required_feature_flags_json = models.JSONField(default=list, blank=True)
+    required_permissions_json = models.JSONField(default=list, blank=True)
+    expected_artifact_types_json = models.JSONField(default=list, blank=True)
+    supports_zero_context = models.BooleanField(default=False)
+    supports_guided_context = models.BooleanField(default=False)
+    supports_follow_up = models.BooleanField(default=False)
+    supports_retry = models.BooleanField(default=False)
+    supports_export = models.BooleanField(default=False)
+    deterministic_fallback_available = models.BooleanField(default=False)
+    limited_functionality = models.TextField(blank=True)
+    readiness_status = models.CharField(
+        max_length=40,
+        choices=READINESS_STATUSES,
+        default="NEEDS_CONFIGURATION",
+        db_index=True,
+    )
+    readiness_score = models.PositiveSmallIntegerField(default=0)
+    configuration_version = models.CharField(max_length=64, default="1")
+    last_validated_at = models.DateTimeField(null=True, blank=True)
+    active = models.BooleanField(default=True, db_index=True)
+    validation_status = models.CharField(
+        max_length=20,
+        choices=AI_AGENT_VALIDATION_STATUSES,
+        default="To Review",
+        db_index=True,
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "AICapabilityOperation"
+        ordering = ["domain_code", "operation_code"]
+
+
+class AIChatSuggestion(models.Model):
+    ACTION_TYPES = [
+        ("DIRECT_QUESTION", "Direct Question"),
+        ("GUIDED_QUESTION", "Guided Question"),
+        ("CONTEXTUAL_QUESTION", "Contextual Question"),
+        ("NAVIGATION", "Navigation"),
+        ("TOOL", "Tool"),
+    ]
+    RELIABILITY_TIERS = [(value, f"Tier {value}") for value in ("A", "B", "C", "D")]
+    CERTIFICATION_STATUSES = [
+        ("NOT_TESTED", "Not Tested"),
+        ("TESTING", "Testing"),
+        ("CERTIFIED", "Certified"),
+        ("FAILED", "Failed"),
+        ("EXPIRED", "Expired"),
+        ("INVALIDATED", "Invalidated"),
+    ]
+
+    suggestion_code = models.SlugField(max_length=140, unique=True)
+    category = models.CharField(max_length=100, blank=True, db_index=True)
+    capability = models.ForeignKey(
+        AIAgentCapability,
+        related_name="chat_suggestions",
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+    )
+    operation = models.ForeignKey(
+        AICapabilityOperation,
+        related_name="suggestions",
+        on_delete=models.CASCADE,
+    )
+    agent_code = models.CharField(max_length=100, blank=True)
+    label_en = models.CharField(max_length=180)
+    label_fr = models.CharField(max_length=180)
+    subtitle_en = models.TextField(blank=True)
+    subtitle_fr = models.TextField(blank=True)
+    icon_code = models.CharField(max_length=80, default="sparkles")
+    action_type = models.CharField(max_length=30, choices=ACTION_TYPES)
+    question_template_en = models.TextField(blank=True)
+    question_template_fr = models.TextField(blank=True)
+    required_context_json = models.JSONField(default=list, blank=True)
+    optional_context_json = models.JSONField(default=list, blank=True)
+    guided_input_schema_json = models.JSONField(default=list, blank=True)
+    expected_intent_type = models.CharField(max_length=120, blank=True)
+    expected_response_template = models.CharField(max_length=120, blank=True)
+    expected_artifact_types_json = models.JSONField(default=list, blank=True)
+    expected_answerability_status = models.CharField(max_length=60, default="ANSWERABLE")
+    required_feature_flags_json = models.JSONField(default=list, blank=True)
+    required_permissions_json = models.JSONField(default=list, blank=True)
+    minimum_operation_readiness = models.CharField(max_length=40, default="READY")
+    reliability_tier = models.CharField(max_length=1, choices=RELIABILITY_TIERS, default="A")
+    certification_status = models.CharField(
+        max_length=30,
+        choices=CERTIFICATION_STATUSES,
+        default="NOT_TESTED",
+        db_index=True,
+    )
+    certification_environment = models.CharField(max_length=40, default="Development")
+    certification_version = models.CharField(max_length=64, default="1")
+    last_certified_at = models.DateTimeField(null=True, blank=True)
+    certification_expires_at = models.DateTimeField(null=True, blank=True)
+    active = models.BooleanField(default=True, db_index=True)
+    display_order = models.PositiveIntegerField(default=100)
+    validation_status = models.CharField(
+        max_length=20,
+        choices=AI_AGENT_VALIDATION_STATUSES,
+        default="To Review",
+        db_index=True,
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "AIChatSuggestion"
+        ordering = ["display_order", "suggestion_code"]
+
+
+class AISuggestionCertification(models.Model):
+    STATUS_CHOICES = AIChatSuggestion.CERTIFICATION_STATUSES
+
+    suggestion = models.ForeignKey(
+        AIChatSuggestion,
+        related_name="certifications",
+        on_delete=models.CASCADE,
+    )
+    environment = models.CharField(max_length=40, db_index=True)
+    application_version = models.CharField(max_length=64, blank=True)
+    configuration_version = models.CharField(max_length=64, blank=True)
+    semantic_model_version = models.CharField(max_length=128, blank=True)
+    test_case_code = models.CharField(max_length=140)
+    test_user_profile = models.CharField(max_length=120, blank=True)
+    input_payload = models.JSONField(default=dict, blank=True)
+    expected_intent = models.CharField(max_length=120, blank=True)
+    expected_answerability = models.CharField(max_length=60, blank=True)
+    expected_template = models.CharField(max_length=120, blank=True)
+    expected_artifact_types_json = models.JSONField(default=list, blank=True)
+    expected_actions_json = models.JSONField(default=list, blank=True)
+    actual_intent = models.CharField(max_length=120, blank=True)
+    actual_answerability = models.CharField(max_length=60, blank=True)
+    actual_template = models.CharField(max_length=120, blank=True)
+    actual_artifact_types_json = models.JSONField(default=list, blank=True)
+    http_status = models.PositiveSmallIntegerField(default=0)
+    execution_status = models.CharField(max_length=30, default="NOT_TESTED")
+    duration_ms = models.PositiveIntegerField(default=0)
+    grounding_passed = models.BooleanField(default=False)
+    persistence_passed = models.BooleanField(default=False)
+    ui_render_passed = models.BooleanField(default=False)
+    permission_test_passed = models.BooleanField(default=False)
+    passed = models.BooleanField(default=False, db_index=True)
+    certification_status = models.CharField(
+        max_length=30,
+        choices=STATUS_CHOICES,
+        default="NOT_TESTED",
+        db_index=True,
+    )
+    failure_reason = models.TextField(blank=True)
+    tested_at = models.DateTimeField(null=True, blank=True)
+    tested_by = models.ForeignKey(
+        User,
+        related_name="ai_suggestion_certifications",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    automated = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "AISuggestionCertification"
+        ordering = ["-tested_at", "-created_at"]
+        indexes = [models.Index(fields=["suggestion", "environment", "certification_status"], name="ai_sugg_cert_lookup")]
+
+
+class AIActionContract(models.Model):
+    READINESS_STATUSES = AICapabilityOperation.READINESS_STATUSES
+
+    action_code = models.SlugField(max_length=120, unique=True)
+    operation = models.ForeignKey(
+        AICapabilityOperation,
+        related_name="action_contracts",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    label_en = models.CharField(max_length=180)
+    label_fr = models.CharField(max_length=180)
+    required_artifact_types_json = models.JSONField(default=list, blank=True)
+    required_context_json = models.JSONField(default=list, blank=True)
+    required_permissions_json = models.JSONField(default=list, blank=True)
+    required_feature_flags_json = models.JSONField(default=list, blank=True)
+    target_intent = models.CharField(max_length=120, blank=True)
+    target_route = models.CharField(max_length=255, blank=True)
+    expected_template = models.CharField(max_length=120, blank=True)
+    failure_answerability_status = models.CharField(max_length=60, default="UNSUPPORTED_ACTION")
+    readiness_status = models.CharField(max_length=40, choices=READINESS_STATUSES, default="NEEDS_CONFIGURATION")
+    certification_status = models.CharField(max_length=30, choices=AIChatSuggestion.CERTIFICATION_STATUSES, default="NOT_TESTED")
+    active = models.BooleanField(default=True, db_index=True)
+    validation_status = models.CharField(max_length=20, choices=AI_AGENT_VALIDATION_STATUSES, default="To Review")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "AIActionContract"
+        ordering = ["action_code"]
+
+
+class FeaturePilotMembership(models.Model):
+    feature_flag = models.CharField(max_length=160, db_index=True)
+    user = models.ForeignKey(User, related_name="ai_feature_pilots", null=True, blank=True, on_delete=models.CASCADE)
+    group = models.ForeignKey("auth.Group", related_name="ai_feature_pilots", null=True, blank=True, on_delete=models.CASCADE)
+    start_at = models.DateTimeField(null=True, blank=True)
+    end_at = models.DateTimeField(null=True, blank=True)
+    active = models.BooleanField(default=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "FeaturePilotMembership"
+        indexes = [models.Index(fields=["feature_flag", "active"], name="ai_feature_pilot_lookup")]
+
+
+class AIDependencyHealthSnapshot(models.Model):
+    STATUS_CHOICES = [(value, value.title()) for value in ("healthy", "degraded", "unavailable", "unknown")]
+
+    dependency_code = models.SlugField(max_length=120, unique=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="unknown", db_index=True)
+    message = models.TextField(blank=True)
+    response_time_ms = models.PositiveIntegerField(default=0)
+    metadata_json = models.JSONField(default=dict, blank=True)
+    checked_at = models.DateTimeField(null=True, blank=True)
+    expires_at = models.DateTimeField(null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "AIDependencyHealthSnapshot"
+
+
+class AIChatInteractionEvent(models.Model):
+    event_type = models.CharField(max_length=80, db_index=True)
+    user = models.ForeignKey(User, related_name="ai_chat_interaction_events", null=True, blank=True, on_delete=models.SET_NULL)
+    conversation = models.ForeignKey(AIConversation, related_name="interaction_events", null=True, blank=True, on_delete=models.SET_NULL)
+    suggestion = models.ForeignKey(AIChatSuggestion, related_name="interaction_events", null=True, blank=True, on_delete=models.SET_NULL)
+    action_code = models.CharField(max_length=120, blank=True)
+    operation_code = models.CharField(max_length=120, blank=True)
+    outcome = models.CharField(max_length=60, blank=True, db_index=True)
+    duration_ms = models.PositiveIntegerField(default=0)
+    metadata_json = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        db_table = "AIChatInteractionEvent"
+        indexes = [models.Index(fields=["event_type", "created_at"], name="ai_chat_event_type_time")]
+
+
+class AIConversationExecution(models.Model):
+    STATUS_CHOICES = [(value, value.replace("_", " ").title()) for value in (
+        "QUEUED", "ROUTING", "RESOLVING_CONTEXT", "CHECKING_ANSWERABILITY",
+        "EXECUTING_DATA_SOURCE", "RETRIEVING_KNOWLEDGE", "GENERATING_RESPONSE",
+        "VALIDATING_GROUNDING", "RENDERING", "SUCCEEDED", "NEEDS_CLARIFICATION",
+        "ABSTAINED", "RETRYABLE_FAILED", "PERMANENT_FAILED", "CANCELLED",
+    )]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    client_execution_id = models.CharField(max_length=128, unique=True, db_index=True)
+    conversation = models.ForeignKey(AIConversation, related_name="executions", on_delete=models.CASCADE)
+    user_message = models.ForeignKey(AIConversationMessage, related_name="executions", on_delete=models.CASCADE)
+    assistant_message = models.ForeignKey(AIConversationMessage, related_name="response_executions", null=True, blank=True, on_delete=models.SET_NULL)
+    retried_execution = models.ForeignKey("self", related_name="retry_executions", null=True, blank=True, on_delete=models.SET_NULL)
+    status = models.CharField(max_length=40, choices=STATUS_CHOICES, default="QUEUED", db_index=True)
+    suggestion_code = models.CharField(max_length=140, blank=True)
+    action_code = models.CharField(max_length=120, blank=True)
+    retry_count = models.PositiveSmallIntegerField(default=0)
+    failure_category = models.CharField(max_length=80, blank=True)
+    status_history_json = models.JSONField(default=list, blank=True)
+    metadata_json = models.JSONField(default=dict, blank=True)
+    started_at = models.DateTimeField(auto_now_add=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+    cancelled_at = models.DateTimeField(null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "AIConversationExecution"
+        ordering = ["-started_at"]
+        indexes = [models.Index(fields=["conversation", "status", "-started_at"], name="ai_exec_conv_status")]
+
+
+class BusinessDataField(models.Model):
+    CONFIGURATION_STATUSES = [
+        ("Configured", "Configured"),
+        ("Not Configured", "Not Configured"),
+        ("Invalid", "Invalid"),
+        ("Disabled", "Disabled"),
+    ]
+    SOURCE_TYPES = [
+        ("semantic_column", "Semantic Column"),
+        ("semantic_measure", "Semantic Measure"),
+        ("knowledge", "Knowledge Base"),
+        ("business_rule", "Business Rule"),
+        ("none", "Not Configured"),
+    ]
+
+    canonical_field_code = models.SlugField(max_length=120)
+    entity_type = models.CharField(max_length=100, db_index=True)
+    display_name_en = models.CharField(max_length=180)
+    display_name_fr = models.CharField(max_length=180)
+    description = models.TextField(blank=True)
+    synonyms_json = models.JSONField(default=list, blank=True)
+    data_type = models.CharField(max_length=80, default="Text")
+    unit = models.CharField(max_length=80, blank=True)
+    source_type = models.CharField(max_length=40, choices=SOURCE_TYPES, default="none")
+    semantic_model_id = models.CharField(max_length=128, blank=True)
+    table_name = models.CharField(max_length=255, blank=True)
+    column_name = models.CharField(max_length=255, blank=True)
+    measure_name = models.CharField(max_length=255, blank=True)
+    knowledge_section = models.CharField(max_length=255, blank=True)
+    permission_code = models.CharField(max_length=150, blank=True)
+    nullable = models.BooleanField(default=True)
+    configuration_status = models.CharField(
+        max_length=30, choices=CONFIGURATION_STATUSES, default="Not Configured", db_index=True
+    )
+    active = models.BooleanField(default=True, db_index=True)
+    validation_status = models.CharField(
+        max_length=20, choices=AI_AGENT_VALIDATION_STATUSES, default="To Review"
+    )
+    source_priority = models.PositiveIntegerField(default=100)
+    last_validated_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "BusinessDataField"
+        ordering = ["entity_type", "source_priority", "display_name_en"]
+        constraints = [
+            models.UniqueConstraint(
+                fields=["canonical_field_code", "entity_type"], name="unique_business_data_field"
+            ),
+        ]
+
+
+class AIAnswerabilityConfiguration(models.Model):
+    name = models.CharField(max_length=120, unique=True, default="Default")
+    minimum_entity_confidence = models.PositiveSmallIntegerField(default=90)
+    minimum_knowledge_confidence = models.PositiveSmallIntegerField(default=90)
+    require_structured_evidence = models.BooleanField(default=True)
+    require_document_evidence = models.BooleanField(default=True)
+    allow_general_model_knowledge = models.BooleanField(default=False)
+    allow_hypothesis_mode = models.BooleanField(default=False)
+    show_available_alternatives = models.BooleanField(default=True)
+    show_source_summary = models.BooleanField(default=True)
+    log_data_gaps = models.BooleanField(default=True)
+    allow_data_gap_reporting = models.BooleanField(default=True)
+    active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "AIAnswerabilityConfiguration"
+
+
+class SourcePrecedenceRule(models.Model):
+    business_field = models.ForeignKey(
+        BusinessDataField, related_name="precedence_rules", on_delete=models.CASCADE
+    )
+    entity_type = models.CharField(max_length=100)
+    primary_source = models.CharField(max_length=255)
+    secondary_source = models.CharField(max_length=255, blank=True)
+    conditions_json = models.JSONField(default=dict, blank=True)
+    effective_from = models.DateField(null=True, blank=True)
+    effective_to = models.DateField(null=True, blank=True)
+    priority = models.PositiveIntegerField(default=100)
+    validation_status = models.CharField(
+        max_length=20, choices=AI_AGENT_VALIDATION_STATUSES, default="To Review"
+    )
+    owner = models.CharField(max_length=180, blank=True)
+    active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "SourcePrecedenceRule"
+        ordering = ["business_field", "priority"]
+
+
+class UnansweredInformationRequirement(models.Model):
+    RESOLUTION_STATUSES = [
+        ("New", "New"),
+        ("Under Review", "Under Review"),
+        ("Source Identified", "Source Identified"),
+        ("Mapping In Progress", "Mapping In Progress"),
+        ("Resolved", "Resolved"),
+        ("Rejected", "Rejected"),
+        ("Out of Scope", "Out of Scope"),
+    ]
+
+    original_question = models.TextField()
+    normalized_question = models.TextField(blank=True)
+    user = models.ForeignKey(
+        User, related_name="unanswered_information_requirements", null=True, blank=True,
+        on_delete=models.SET_NULL,
+    )
+    conversation = models.ForeignKey(
+        AIConversation, related_name="data_gaps", null=True, blank=True, on_delete=models.SET_NULL
+    )
+    domain = models.CharField(max_length=100, db_index=True)
+    entity_type = models.CharField(max_length=100, db_index=True)
+    entity_identifier = models.CharField(max_length=255, blank=True)
+    requested_field_code = models.CharField(max_length=120, db_index=True)
+    answerability_status = models.CharField(max_length=80)
+    reason_code = models.CharField(max_length=120, blank=True)
+    requested_source_type = models.CharField(max_length=100, blank=True)
+    occurrence_count = models.PositiveIntegerField(default=1)
+    first_requested_at = models.DateTimeField(auto_now_add=True)
+    last_requested_at = models.DateTimeField(auto_now=True)
+    sample_questions_json = models.JSONField(default=list, blank=True)
+    suggested_data_source = models.CharField(max_length=255, blank=True)
+    business_priority = models.CharField(max_length=40, default="Normal")
+    assigned_owner = models.CharField(max_length=180, blank=True)
+    resolution_status = models.CharField(
+        max_length=30, choices=RESOLUTION_STATUSES, default="New", db_index=True
+    )
+    resolution_notes = models.TextField(blank=True)
+    reported_by_user = models.BooleanField(default=False)
+    resolved_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        db_table = "UnansweredInformationRequirement"
+        ordering = ["-last_requested_at"]
+        constraints = [
+            models.UniqueConstraint(
+                fields=["domain", "entity_type", "requested_field_code"],
+                name="unique_unanswered_requirement",
+            ),
+        ]
+
+
+class AIAnswerabilityEvent(models.Model):
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    conversation_id = models.CharField(max_length=128, blank=True, db_index=True)
+    event_type = models.CharField(max_length=80, db_index=True)
+    status = models.CharField(max_length=80, blank=True)
+    reason_code = models.CharField(max_length=120, blank=True)
+    capability_code = models.CharField(max_length=120, blank=True)
+    metadata_json = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "AIAnswerabilityEvent"
+        ordering = ["-created_at"]
 
 
 class AIAgentDataSource(models.Model):
@@ -4780,3 +5300,1136 @@ class DowntimeMappingReviewDecision(models.Model):
     class Meta:
         ordering = ["-created_at"]
         db_table = "DowntimeMappingReviewDecision"
+
+
+class MappingSynchronizationRun(models.Model):
+    STATUSES = [(value, value) for value in ("Queued", "Running", "Completed", "Partial", "Failed", "Cancelled")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    source = models.CharField(max_length=120, default="Customer Fleet & Revenue Planning Model")
+    source_version = models.CharField(max_length=160, blank=True, db_index=True)
+    status = models.CharField(max_length=20, choices=STATUSES, default="Queued", db_index=True)
+    progress_percent = models.PositiveSmallIntegerField(default=0)
+    stage_code = models.CharField(max_length=60, default="queued", blank=True)
+    stage_label = models.CharField(max_length=255, default="Waiting for the synchronization worker", blank=True)
+    heartbeat_at = models.DateTimeField(null=True, blank=True, db_index=True)
+    initiated_by = models.ForeignKey(User, null=True, blank=True, related_name="business_mapping_sync_runs", on_delete=models.SET_NULL)
+    started_at = models.DateTimeField(null=True, blank=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+    records_read = models.PositiveIntegerField(default=0)
+    records_created = models.PositiveIntegerField(default=0)
+    records_updated = models.PositiveIntegerField(default=0)
+    records_unchanged = models.PositiveIntegerField(default=0)
+    records_rejected = models.PositiveIntegerField(default=0)
+    failure_count = models.PositiveIntegerField(default=0)
+    warnings_json = models.JSONField(default=list, blank=True)
+    errors_json = models.JSONField(default=list, blank=True)
+    source_context_json = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "bm_synchronization_run"
+
+
+class BusinessAccount(models.Model):
+    VALIDATION_STATUSES = [(value, value) for value in ("Draft", "To Review", "Validated", "Rejected", "Archived")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    canonical_account_code = models.CharField(max_length=160, unique=True)
+    canonical_account_name = models.CharField(max_length=500, db_index=True)
+    normalized_account_name = models.CharField(max_length=500, db_index=True)
+    parent_account = models.ForeignKey("self", null=True, blank=True, related_name="child_accounts", on_delete=models.SET_NULL)
+    account_group = models.CharField(max_length=255, blank=True, db_index=True)
+    country = models.CharField(max_length=120, blank=True, db_index=True)
+    origin_country = models.CharField(max_length=120, blank=True, db_index=True)
+    operating_countries_json = models.JSONField(default=list, blank=True)
+    assigned_operating_country = models.CharField(max_length=12, blank=True, db_index=True)
+    operating_country_assigned_by = models.ForeignKey(
+        User,
+        null=True,
+        blank=True,
+        related_name="assigned_business_account_operating_countries",
+        on_delete=models.SET_NULL,
+    )
+    operating_country_assigned_at = models.DateTimeField(null=True, blank=True)
+    customer_type = models.CharField(max_length=120, blank=True, db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
+    validation_status = models.CharField(max_length=20, choices=VALIDATION_STATUSES, default="To Review", db_index=True)
+    created_by = models.ForeignKey(User, null=True, blank=True, related_name="created_business_accounts", on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, null=True, blank=True, related_name="updated_business_accounts", on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["canonical_account_name", "canonical_account_code"]
+        db_table = "bm_business_account"
+        permissions = [
+            ("view_business_mapping", "Can view Business Mapping Studio"),
+            ("propose_business_mapping", "Can propose business mappings"),
+            ("edit_business_mapping", "Can edit business mappings"),
+            ("validate_business_mapping", "Can validate business mappings"),
+            ("reject_business_mapping", "Can reject business mappings"),
+            ("bulk_validate_business_mapping", "Can bulk validate business mappings"),
+            ("publish_business_mapping", "Can publish business mappings"),
+            ("rollback_business_mapping", "Can roll back business mapping publications"),
+            ("synchronize_business_mapping_sources", "Can synchronize business mapping sources"),
+            ("manage_business_accounts", "Can manage business accounts"),
+            ("manage_minesites", "Can manage MineSites"),
+            ("manage_revenue_allocations", "Can manage revenue allocations"),
+            ("view_business_mapping_audit", "Can view business mapping audit"),
+            ("export_business_mapping", "Can export business mappings"),
+        ]
+
+    def __str__(self):
+        return self.canonical_account_name
+
+
+class KeyAccount(models.Model):
+    """Governed commercial group containing one or more canonical Accounts."""
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    key_account_code = models.CharField(max_length=160, unique=True)
+    key_account_name = models.CharField(max_length=500, db_index=True)
+    normalized_key_account_name = models.CharField(max_length=500, db_index=True)
+    description = models.TextField(blank=True)
+    active = models.BooleanField(default=True, db_index=True)
+    version = models.PositiveIntegerField(default=1)
+    created_by = models.ForeignKey(User, null=True, blank=True, related_name="created_key_accounts", on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, null=True, blank=True, related_name="updated_key_accounts", on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["key_account_name"]
+        db_table = "bm_key_account"
+        constraints = [
+            models.UniqueConstraint(fields=["normalized_key_account_name"], condition=Q(active=True), name="bm_unique_active_key_account_name"),
+        ]
+
+    def __str__(self):
+        return self.key_account_name
+
+
+class KeyAccountMembership(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    key_account = models.ForeignKey(KeyAccount, related_name="memberships", on_delete=models.PROTECT)
+    business_account = models.ForeignKey(BusinessAccount, related_name="key_account_memberships", on_delete=models.PROTECT)
+    active = models.BooleanField(default=True, db_index=True)
+    created_by = models.ForeignKey(User, null=True, blank=True, related_name="created_key_account_memberships", on_delete=models.SET_NULL)
+    removed_by = models.ForeignKey(User, null=True, blank=True, related_name="removed_key_account_memberships", on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    removed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["key_account", "business_account__canonical_account_name"]
+        db_table = "bm_key_account_membership"
+        constraints = [
+            models.UniqueConstraint(fields=["business_account"], condition=Q(active=True), name="bm_unique_active_key_account_membership"),
+        ]
+        indexes = [models.Index(fields=["key_account", "active"], name="bm_key_account_active_idx")]
+
+
+class CountryAccount(models.Model):
+    """Country-level commercial group containing canonical Accounts from one country."""
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    country_account_code = models.CharField(max_length=160, unique=True)
+    country_account_name = models.CharField(max_length=500, db_index=True)
+    normalized_country_account_name = models.CharField(max_length=500, db_index=True)
+    country = models.CharField(max_length=120, db_index=True)
+    description = models.TextField(blank=True)
+    active = models.BooleanField(default=True, db_index=True)
+    version = models.PositiveIntegerField(default=1)
+    created_by = models.ForeignKey(User, null=True, blank=True, related_name="created_country_accounts", on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, null=True, blank=True, related_name="updated_country_accounts", on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["country", "country_account_name"]
+        db_table = "bm_country_account"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["country", "normalized_country_account_name"],
+                condition=Q(active=True),
+                name="bm_unique_active_country_account_name",
+            ),
+        ]
+
+    def __str__(self):
+        return self.country_account_name
+
+
+class CountryAccountMembership(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    country_account = models.ForeignKey(CountryAccount, related_name="memberships", on_delete=models.PROTECT)
+    business_account = models.ForeignKey(BusinessAccount, related_name="country_account_memberships", on_delete=models.PROTECT)
+    active = models.BooleanField(default=True, db_index=True)
+    created_by = models.ForeignKey(User, null=True, blank=True, related_name="created_country_account_memberships", on_delete=models.SET_NULL)
+    removed_by = models.ForeignKey(User, null=True, blank=True, related_name="removed_country_account_memberships", on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    removed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["country_account", "business_account__canonical_account_name"]
+        db_table = "bm_country_account_membership"
+        constraints = [
+            models.UniqueConstraint(fields=["business_account"], condition=Q(active=True), name="bm_unique_active_country_account_membership"),
+        ]
+        indexes = [models.Index(fields=["country_account", "active"], name="bm_country_account_active_idx")]
+
+
+class KeyAccountCountryMembership(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    key_account = models.ForeignKey(KeyAccount, related_name="country_memberships", on_delete=models.PROTECT)
+    country_account = models.ForeignKey(CountryAccount, related_name="key_memberships", on_delete=models.PROTECT)
+    active = models.BooleanField(default=True, db_index=True)
+    created_by = models.ForeignKey(User, null=True, blank=True, related_name="created_key_account_country_memberships", on_delete=models.SET_NULL)
+    removed_by = models.ForeignKey(User, null=True, blank=True, related_name="removed_key_account_country_memberships", on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    removed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["key_account", "country_account__country", "country_account__country_account_name"]
+        db_table = "bm_key_account_country_membership"
+        constraints = [
+            models.UniqueConstraint(fields=["country_account"], condition=Q(active=True), name="bm_unique_active_key_country_membership"),
+        ]
+        indexes = [models.Index(fields=["key_account", "active"], name="bm_key_country_active_idx")]
+
+
+class BusinessCompanyCodeReference(models.Model):
+    """Governed company-code classification imported from the finance dictionary."""
+
+    company_code = models.CharField(max_length=120, primary_key=True)
+    legal_entity_name = models.CharField(max_length=255, db_index=True)
+    address = models.CharField(max_length=500, blank=True)
+    legal_country_code = models.CharField(max_length=12, blank=True, db_index=True)
+    operating_country_code = models.CharField(max_length=12, blank=True, db_index=True)
+    classification_type = models.CharField(max_length=40, default="Operating Company", db_index=True)
+    source_reference = models.CharField(max_length=255, default="Code Societe.xlsx")
+    validation_status = models.CharField(max_length=20, default="Validated", db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["company_code"]
+        db_table = "bm_company_code_reference"
+
+    def __str__(self):
+        return f"{self.company_code} - {self.legal_entity_name}"
+
+
+class SourceAccountRecord(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    source_system = models.CharField(max_length=120, db_index=True)
+    source_record_id = models.CharField(max_length=255)
+    source_account_name = models.CharField(max_length=500, blank=True, db_index=True)
+    normalized_account_name = models.CharField(max_length=500, blank=True, db_index=True)
+    code_cic = models.CharField(max_length=120, blank=True, db_index=True)
+    company_code = models.CharField(max_length=120, blank=True, db_index=True)
+    branch_code = models.CharField(max_length=120, blank=True, db_index=True)
+    customer_category = models.CharField(max_length=180, blank=True, db_index=True)
+    country = models.CharField(max_length=120, blank=True, db_index=True)
+    origin_country = models.CharField(max_length=120, blank=True, db_index=True)
+    operating_countries_json = models.JSONField(default=list, blank=True)
+    canonical_account = models.ForeignKey(BusinessAccount, null=True, blank=True, related_name="source_records", on_delete=models.SET_NULL)
+    source_payload_json = models.JSONField(default=dict, blank=True)
+    source_hash = models.CharField(max_length=64, db_index=True)
+    source_last_seen_at = models.DateTimeField(db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
+    synchronization_run = models.ForeignKey(MappingSynchronizationRun, related_name="account_records", on_delete=models.PROTECT)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["source_account_name", "source_record_id"]
+        db_table = "bm_source_account_record"
+        constraints = [models.UniqueConstraint(fields=["source_system", "source_record_id"], name="bm_unique_source_account")]
+        indexes = [models.Index(fields=["active", "normalized_account_name"], name="bm_src_account_search")]
+
+
+class SourceAccountFieldOverride(models.Model):
+    """Governed correction applied without modifying the read-only source system."""
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    source_system = models.CharField(max_length=120, db_index=True)
+    source_record_id = models.CharField(max_length=255, db_index=True)
+    field_name = models.CharField(max_length=80, db_index=True)
+    source_value = models.CharField(max_length=500, blank=True)
+    corrected_value = models.CharField(max_length=500)
+    reason = models.TextField()
+    active = models.BooleanField(default=True, db_index=True)
+    validated_by = models.ForeignKey(User, null=True, blank=True, related_name="validated_source_account_overrides", on_delete=models.SET_NULL)
+    validated_at = models.DateTimeField(default=timezone.now)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["source_system", "source_record_id", "field_name"]
+        db_table = "bm_source_account_field_override"
+        constraints = [
+            models.UniqueConstraint(fields=["source_system", "source_record_id", "field_name"], name="bm_unique_source_account_field_override"),
+        ]
+
+
+class BusinessAccountAlias(models.Model):
+    canonical_account = models.ForeignKey(BusinessAccount, related_name="aliases", on_delete=models.CASCADE)
+    alias = models.CharField(max_length=500)
+    normalized_alias = models.CharField(max_length=500, db_index=True)
+    source_system = models.CharField(max_length=120, blank=True)
+    language = models.CharField(max_length=12, blank=True)
+    confidence = models.DecimalField(max_digits=5, decimal_places=2, default=100)
+    validation_status = models.CharField(max_length=20, choices=BusinessAccount.VALIDATION_STATUSES, default="To Review", db_index=True)
+    validated_by = models.ForeignKey(User, null=True, blank=True, related_name="validated_business_account_aliases", on_delete=models.SET_NULL)
+    validated_at = models.DateTimeField(null=True, blank=True)
+    active = models.BooleanField(default=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["normalized_alias"]
+        db_table = "bm_business_account_alias"
+        constraints = [models.UniqueConstraint(fields=["canonical_account", "normalized_alias", "source_system"], name="bm_unique_account_alias")]
+
+
+class MineSite(models.Model):
+    STATUSES = [(value, value) for value in ("Operating", "Development", "Care and Maintenance", "Closed", "Unknown")]
+    VALIDATION_STATUSES = BusinessAccount.VALIDATION_STATUSES
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    minesite_code = models.CharField(max_length=160, unique=True)
+    canonical_minesite_name = models.CharField(max_length=500, db_index=True)
+    normalized_minesite_name = models.CharField(max_length=500, db_index=True)
+    country = models.CharField(max_length=120, blank=True, db_index=True)
+    owner = models.CharField(max_length=500, blank=True)
+    operator = models.CharField(max_length=500, blank=True)
+    customer_group = models.CharField(max_length=255, blank=True)
+    status = models.CharField(max_length=40, choices=STATUSES, default="Unknown", db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
+    validation_status = models.CharField(max_length=20, choices=VALIDATION_STATUSES, default="To Review", db_index=True)
+    source_version = models.CharField(max_length=160, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["canonical_minesite_name"]
+        db_table = "bm_minesite"
+
+    def __str__(self):
+        return self.canonical_minesite_name
+
+
+class FleetSourceSnapshot(models.Model):
+    synchronization_run = models.ForeignKey(MappingSynchronizationRun, related_name="fleet_records", on_delete=models.PROTECT)
+    source_record_id = models.CharField(max_length=255)
+    customer = models.CharField(max_length=500, blank=True, db_index=True)
+    normalized_customer = models.CharField(max_length=500, blank=True, db_index=True)
+    minesite_name = models.CharField(max_length=500, blank=True, db_index=True)
+    normalized_minesite_name = models.CharField(max_length=500, blank=True, db_index=True)
+    equipment = models.CharField(max_length=255, blank=True)
+    equipment_type = models.CharField(max_length=255, blank=True)
+    model = models.CharField(max_length=255, blank=True)
+    serial_number = models.CharField(max_length=255, blank=True, db_index=True)
+    equipment_family = models.CharField(max_length=255, blank=True)
+    brand = models.CharField(max_length=120, blank=True)
+    source_hash = models.CharField(max_length=64, db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
+    source_last_seen_at = models.DateTimeField(db_index=True)
+
+    class Meta:
+        ordering = ["minesite_name", "equipment", "serial_number"]
+        db_table = "bm_fleet_source_snapshot"
+        constraints = [models.UniqueConstraint(fields=["synchronization_run", "source_record_id"], name="bm_unique_fleet_source_run")]
+        indexes = [models.Index(fields=["active", "normalized_customer", "normalized_minesite_name"], name="bm_fleet_match_idx")]
+
+
+class EquipmentFleetAnalysis(models.Model):
+    """Persisted analytical snapshot of EquipmentList_MiningProd."""
+
+    synchronization_run = models.ForeignKey(
+        MappingSynchronizationRun,
+        related_name="equipment_analysis_records",
+        on_delete=models.PROTECT,
+    )
+    source_record_id = models.CharField(max_length=255)
+    source_table = models.CharField(max_length=120, default="EquipmentList_MiningProd")
+    semantic_model_id = models.CharField(max_length=120)
+    equipment_id = models.CharField(max_length=255, blank=True, db_index=True)
+    site = models.CharField(max_length=500, blank=True, db_index=True)
+    normalized_site = models.CharField(max_length=500, blank=True, db_index=True)
+    equipment = models.CharField(max_length=255, blank=True, db_index=True)
+    model = models.CharField(max_length=255, blank=True, db_index=True)
+    serial_number = models.CharField(max_length=255, blank=True, db_index=True)
+    equipment_family = models.CharField(max_length=255, blank=True, db_index=True)
+    brand = models.CharField(max_length=120, blank=True, db_index=True)
+    source_status = models.CharField(max_length=120, blank=True)
+    smu = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    source_hash = models.CharField(max_length=64, db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
+    source_last_seen_at = models.DateTimeField(db_index=True)
+
+    class Meta:
+        ordering = ["site", "model", "equipment", "serial_number"]
+        db_table = "bm_equipment_fleet_analysis"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["synchronization_run", "source_record_id"],
+                name="bm_unique_equipment_analysis_run",
+            ),
+        ]
+        indexes = [
+            models.Index(fields=["active", "normalized_site", "model"], name="bm_equip_analysis_site_model"),
+            models.Index(fields=["active", "equipment_family"], name="bm_equip_analysis_family"),
+        ]
+
+
+class RevenueSourceSnapshot(models.Model):
+    synchronization_run = models.ForeignKey(MappingSynchronizationRun, related_name="revenue_records", on_delete=models.PROTECT)
+    source_record_id = models.CharField(max_length=255)
+    source_account_code = models.CharField(max_length=255, blank=True, db_index=True)
+    source_account_name = models.CharField(max_length=500, blank=True, db_index=True)
+    normalized_account_name = models.CharField(max_length=500, blank=True, db_index=True)
+    code_cic = models.CharField(max_length=120, blank=True, db_index=True)
+    company_code = models.CharField(max_length=120, blank=True, db_index=True)
+    branch_code = models.CharField(max_length=120, blank=True, db_index=True)
+    operating_country = models.CharField(max_length=120, blank=True, db_index=True)
+    business_date = models.DateField(null=True, blank=True, db_index=True)
+    source_lob = models.CharField(max_length=120, blank=True, db_index=True)
+    lob = models.CharField(max_length=120, blank=True, db_index=True)
+    division = models.CharField(max_length=120, blank=True)
+    distribution_channel = models.CharField(max_length=180, blank=True)
+    period_year = models.PositiveSmallIntegerField(null=True, blank=True, db_index=True)
+    revenue_ytd_eur = models.DecimalField(max_digits=20, decimal_places=2, default=0)
+    revenue_previous_year_eur = models.DecimalField(max_digits=20, decimal_places=2, default=0)
+    revenue_eur = models.DecimalField(max_digits=20, decimal_places=2, default=0)
+    invoice_count = models.PositiveIntegerField(default=0)
+    source_hash = models.CharField(max_length=64, db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
+    source_last_seen_at = models.DateTimeField(db_index=True)
+
+    class Meta:
+        ordering = ["source_account_name", "source_account_code", "lob"]
+        db_table = "bm_revenue_source_snapshot"
+        constraints = [models.UniqueConstraint(fields=["synchronization_run", "source_record_id"], name="bm_unique_revenue_source_run")]
+        indexes = [
+            models.Index(fields=["active", "source_account_code", "lob"], name="bm_revenue_lookup_idx"),
+            models.Index(fields=["active", "period_year", "lob"], name="bm_revenue_period_idx"),
+            models.Index(fields=["active", "business_date", "lob"], name="bm_revenue_date_lob_idx"),
+        ]
+
+
+class AccountMineSiteCandidate(models.Model):
+    STATUSES = [(value, value) for value in ("Suggested", "Selected", "Rejected", "Expired", "Superseded")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    source_account = models.ForeignKey(SourceAccountRecord, related_name="minesite_candidates", on_delete=models.CASCADE)
+    business_account = models.ForeignKey(BusinessAccount, null=True, blank=True, related_name="minesite_candidates", on_delete=models.SET_NULL)
+    candidate_minesite = models.ForeignKey(MineSite, related_name="account_candidates", on_delete=models.CASCADE)
+    suggested_role = models.CharField(max_length=60, blank=True)
+    confidence_score = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    suggestion_method = models.CharField(max_length=120)
+    evidence_summary_json = models.JSONField(default=list, blank=True)
+    conflict_summary_json = models.JSONField(default=list, blank=True)
+    generation_version = models.CharField(max_length=40, default="1.0")
+    status = models.CharField(max_length=20, choices=STATUSES, default="Suggested", db_index=True)
+    generated_at = models.DateTimeField(auto_now_add=True)
+    reviewed_by = models.ForeignKey(User, null=True, blank=True, related_name="reviewed_account_minesite_candidates", on_delete=models.SET_NULL)
+    reviewed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["-confidence_score", "candidate_minesite__canonical_minesite_name"]
+        db_table = "bm_account_minesite_candidate"
+        constraints = [models.UniqueConstraint(fields=["source_account", "candidate_minesite", "generation_version"], name="bm_unique_candidate_version")]
+
+
+class AccountMineSiteMapping(models.Model):
+    ACCOUNT_ROLES = [(value, value) for value in (
+        "Mapped Account", "Mine Owner", "Mine Operator", "Mining Contractor", "Billing Account", "Procurement Account",
+        "Parts Account", "Service Account", "Equipment Account", "Parent Group", "Holding Company",
+        "Partner", "Prospect", "Other", "Head Office", "Regional Office", "Internal Account",
+        "Distributor", "Supplier", "Non-Mining Customer", "Government", "No MineSite Required",
+        "Unknown", "To Review",
+    )]
+    STATUSES = [(value, value) for value in ("Draft", "In Review", "Validated", "Published", "Superseded", "Rejected", "Archived", "No MineSite Required")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    business_account = models.ForeignKey(BusinessAccount, related_name="minesite_mappings", on_delete=models.PROTECT)
+    minesite = models.ForeignKey(MineSite, null=True, blank=True, related_name="account_mappings", on_delete=models.PROTECT)
+    account_role = models.CharField(max_length=60, choices=ACCOUNT_ROLES)
+    is_primary_site = models.BooleanField(default=False)
+    relationship_status = models.CharField(max_length=30, choices=STATUSES, default="Draft", db_index=True)
+    revenue_allocation_status = models.CharField(max_length=30, default="Not Defined", db_index=True)
+    no_site_reason = models.CharField(max_length=60, blank=True)
+    valid_from = models.DateField(null=True, blank=True, db_index=True)
+    valid_to = models.DateField(null=True, blank=True, db_index=True)
+    allocation_required = models.BooleanField(default=False)
+    mapping_method = models.CharField(max_length=120, default="Manual")
+    confidence_score = models.DecimalField(max_digits=5, decimal_places=2, default=100)
+    notes = models.TextField(blank=True)
+    current_version = models.PositiveIntegerField(default=1)
+    active = models.BooleanField(default=True, db_index=True)
+    created_by = models.ForeignKey(User, null=True, blank=True, related_name="created_account_minesite_mappings", on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, null=True, blank=True, related_name="updated_account_minesite_mappings", on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["business_account__canonical_account_name", "account_role"]
+        db_table = "bm_account_minesite_mapping"
+        constraints = [
+            models.CheckConstraint(condition=Q(valid_to__isnull=True) | Q(valid_from__isnull=True) | Q(valid_to__gte=models.F("valid_from")), name="bm_mapping_dates_valid"),
+        ]
+        indexes = [models.Index(fields=["business_account", "minesite", "relationship_status", "active"], name="bm_mapping_lookup_idx")]
+
+
+class AccountMineSiteMappingVersion(models.Model):
+    mapping = models.ForeignKey(AccountMineSiteMapping, related_name="versions", on_delete=models.PROTECT)
+    version_number = models.PositiveIntegerField()
+    account_snapshot_json = models.JSONField(default=dict)
+    minesite_snapshot_json = models.JSONField(default=dict, blank=True)
+    role = models.CharField(max_length=60)
+    allocation_snapshot_json = models.JSONField(default=dict, blank=True)
+    evidence_snapshot_json = models.JSONField(default=list, blank=True)
+    status = models.CharField(max_length=30)
+    change_reason = models.TextField(blank=True)
+    created_by = models.ForeignKey(User, null=True, blank=True, related_name="created_business_mapping_versions", on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    validated_by = models.ForeignKey(User, null=True, blank=True, related_name="validated_business_mapping_versions", on_delete=models.SET_NULL)
+    validated_at = models.DateTimeField(null=True, blank=True)
+    published_by = models.ForeignKey(User, null=True, blank=True, related_name="published_business_mapping_versions", on_delete=models.SET_NULL)
+    published_at = models.DateTimeField(null=True, blank=True)
+    supersedes_version = models.ForeignKey("self", null=True, blank=True, related_name="superseded_by", on_delete=models.SET_NULL)
+
+    class Meta:
+        ordering = ["mapping", "-version_number"]
+        db_table = "bm_account_minesite_mapping_version"
+        constraints = [models.UniqueConstraint(fields=["mapping", "version_number"], name="bm_unique_mapping_version")]
+
+
+class MappingEvidence(models.Model):
+    EVIDENCE_TYPES = [(value, value) for value in (
+        "Exact Account code", "Exact CIC code", "Company and Branch code", "Validated alias",
+        "Exact normalized name", "Fleet Customer match", "MineSite name match", "Country match",
+        "Historical mapping", "Business confirmation", "AI text similarity", "Manual note",
+    )]
+
+    mapping = models.ForeignKey(AccountMineSiteMapping, null=True, blank=True, related_name="evidence", on_delete=models.CASCADE)
+    candidate = models.ForeignKey(AccountMineSiteCandidate, null=True, blank=True, related_name="evidence", on_delete=models.CASCADE)
+    evidence_type = models.CharField(max_length=60, choices=EVIDENCE_TYPES)
+    source_system = models.CharField(max_length=120, blank=True)
+    source_record_id = models.CharField(max_length=255, blank=True)
+    description = models.TextField()
+    value = models.TextField(blank=True)
+    weight = models.DecimalField(max_digits=6, decimal_places=2, default=0)
+    supports_mapping = models.BooleanField(default=True)
+    active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-weight", "evidence_type"]
+        db_table = "bm_mapping_evidence"
+        constraints = [models.CheckConstraint(condition=Q(mapping__isnull=False) | Q(candidate__isnull=False), name="bm_evidence_has_parent")]
+
+
+class RevenueSiteAllocationRule(models.Model):
+    METHODS = [(value, value) for value in ("Direct transaction", "Company and Branch", "LOB and Channel", "Fixed percentage", "Manual transaction", "Unallocated")]
+    STATUSES = [(value, value) for value in ("Draft", "In Review", "Validated", "Published", "Superseded", "Rejected")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    business_account = models.ForeignKey(BusinessAccount, related_name="revenue_allocation_rules", on_delete=models.PROTECT)
+    minesite = models.ForeignKey(MineSite, null=True, blank=True, related_name="revenue_allocation_rules", on_delete=models.PROTECT)
+    lob = models.CharField(max_length=120, blank=True, db_index=True)
+    division = models.CharField(max_length=120, blank=True)
+    distribution_channel = models.CharField(max_length=180, blank=True)
+    company_code = models.CharField(max_length=120, blank=True)
+    branch_code = models.CharField(max_length=120, blank=True)
+    allocation_method = models.CharField(max_length=40, choices=METHODS)
+    allocation_percentage = models.DecimalField(max_digits=7, decimal_places=4, null=True, blank=True)
+    valid_from = models.DateField(db_index=True)
+    valid_to = models.DateField(null=True, blank=True, db_index=True)
+    status = models.CharField(max_length=20, choices=STATUSES, default="Draft", db_index=True)
+    version = models.PositiveIntegerField(default=1)
+    validated_by = models.ForeignKey(User, null=True, blank=True, related_name="validated_revenue_site_allocations", on_delete=models.SET_NULL)
+    validated_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["business_account", "lob", "-valid_from"]
+        db_table = "bm_revenue_site_allocation_rule"
+        constraints = [
+            models.CheckConstraint(condition=Q(allocation_percentage__isnull=True) | (Q(allocation_percentage__gte=0) & Q(allocation_percentage__lte=100)), name="bm_allocation_pct_range"),
+            models.CheckConstraint(condition=Q(valid_to__isnull=True) | Q(valid_to__gte=models.F("valid_from")), name="bm_allocation_dates_valid"),
+        ]
+
+
+class MappingPublication(models.Model):
+    STATUSES = [(value, value) for value in ("Preview", "Published", "Superseded", "Rolled Back", "Failed")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    version = models.PositiveIntegerField(unique=True)
+    status = models.CharField(max_length=20, choices=STATUSES, default="Preview", db_index=True)
+    mapping_count = models.PositiveIntegerField(default=0)
+    account_count = models.PositiveIntegerField(default=0)
+    minesite_count = models.PositiveIntegerField(default=0)
+    revenue_coverage = models.DecimalField(max_digits=7, decimal_places=2, default=0)
+    fleet_coverage = models.DecimalField(max_digits=7, decimal_places=2, default=0)
+    snapshot_json = models.JSONField(default=dict)
+    change_summary_json = models.JSONField(default=dict, blank=True)
+    source_synchronization_version = models.CharField(max_length=160, blank=True)
+    created_by = models.ForeignKey(User, null=True, blank=True, related_name="created_mapping_publications", on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    published_by = models.ForeignKey(User, null=True, blank=True, related_name="published_mapping_publications", on_delete=models.SET_NULL)
+    published_at = models.DateTimeField(null=True, blank=True)
+    rollback_of = models.ForeignKey("self", null=True, blank=True, related_name="rollback_publications", on_delete=models.SET_NULL)
+
+    class Meta:
+        ordering = ["-version"]
+        db_table = "bm_mapping_publication"
+
+
+class MappingAuditLog(models.Model):
+    actor = models.ForeignKey(User, null=True, blank=True, related_name="business_mapping_audit_events", on_delete=models.SET_NULL)
+    action = models.CharField(max_length=80, db_index=True)
+    entity_type = models.CharField(max_length=80, db_index=True)
+    entity_id = models.CharField(max_length=255, db_index=True)
+    previous_value_json = models.JSONField(default=dict, blank=True)
+    new_value_json = models.JSONField(default=dict, blank=True)
+    reason = models.TextField(blank=True)
+    request_id = models.CharField(max_length=255, blank=True, db_index=True)
+    source_ip = models.GenericIPAddressField(null=True, blank=True)
+    application_version = models.CharField(max_length=80, blank=True)
+    timestamp = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ["-timestamp"]
+        db_table = "bm_mapping_audit_log"
+
+
+class MappingIdempotencyRecord(models.Model):
+    user = models.ForeignKey(User, related_name="business_mapping_idempotency_records", on_delete=models.CASCADE)
+    idempotency_key = models.CharField(max_length=255)
+    operation = models.CharField(max_length=80)
+    payload_hash = models.CharField(max_length=64)
+    entity_id = models.CharField(max_length=255, blank=True)
+    response_json = models.JSONField(default=dict)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "bm_mapping_idempotency"
+        constraints = [models.UniqueConstraint(fields=["user", "idempotency_key"], name="bm_unique_user_idempotency")]
+
+
+class BusinessReviewSnapshot(models.Model):
+    STATUSES = [(value, value) for value in ("Generating", "Ready", "Limited", "Failed", "Superseded")]
+    CONFIDENCE_STATUSES = [(value, value) for value in ("High", "Moderate", "Low", "Not Ready")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    mapping_publication = models.ForeignKey(MappingPublication, related_name="business_review_snapshots", on_delete=models.PROTECT)
+    source_synchronization = models.ForeignKey(MappingSynchronizationRun, related_name="business_review_snapshots", on_delete=models.PROTECT)
+    business_rule_version = models.CharField(max_length=80, default="1.0", db_index=True)
+    business_line_mapping_version = models.CharField(max_length=80, default="1.0")
+    exchange_rate_version = models.CharField(max_length=80, default="SOURCE_CA_EURO")
+    data_through_date = models.DateField(null=True, blank=True, db_index=True)
+    currency = models.CharField(max_length=12, default="EUR")
+    reconciliation_status = models.CharField(max_length=30, default="Not Evaluated", db_index=True)
+    status = models.CharField(max_length=20, choices=STATUSES, default="Generating", db_index=True)
+    confidence_status = models.CharField(max_length=20, choices=CONFIDENCE_STATUSES, default="Not Ready", db_index=True)
+    context_json = models.JSONField(default=dict)
+    metrics_json = models.JSONField(default=dict)
+    warnings_json = models.JSONField(default=list, blank=True)
+    checksum = models.CharField(max_length=64, db_index=True)
+    generated_by = models.ForeignKey(User, null=True, blank=True, related_name="generated_business_review_snapshots", on_delete=models.SET_NULL)
+    generated_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ["-generated_at"]
+        db_table = "br_snapshot"
+        constraints = [models.UniqueConstraint(fields=["mapping_publication", "source_synchronization", "business_rule_version"], name="br_unique_snapshot_contract")]
+        permissions = [
+            ("view_business_review", "Can view Business Review"),
+            ("view_business_review_financials", "Can view Business Review financials"),
+            ("view_business_review_fleet", "Can view Business Review fleet"),
+            ("compare_business_entities", "Can compare Business Review entities"),
+            ("export_business_review", "Can export Business Review"),
+            ("create_business_review_action", "Can create Business Review actions"),
+            ("assign_business_review_action", "Can assign Business Review actions"),
+            ("complete_business_review_action", "Can complete Business Review actions"),
+            ("create_business_decision", "Can create Business Review decisions"),
+            ("view_business_review_data_confidence", "Can view Business Review data confidence"),
+            ("preview_business_review_draft", "Can preview Business Review with unpublished mappings"),
+            ("view_business_command_center", "Can view Business Command Center"),
+            ("view_group_revenue", "Can view Group Revenue"),
+            ("view_country_revenue", "Can view Country Revenue"),
+            ("view_customer_revenue", "Can view Customer Revenue"),
+            ("view_key_account_revenue", "Can view Key Account Revenue"),
+            ("view_business_line_revenue", "Can view Business Line Revenue"),
+            ("view_business_data_confidence", "Can view Business data confidence"),
+            ("compare_business_periods", "Can compare Business periods"),
+            ("export_business_command_center", "Can export Business Command Center"),
+            ("copy_business_visual", "Can copy Business visuals"),
+            ("manage_business_saved_views", "Can manage Business saved views"),
+            ("view_business_command_center_ai", "Can use AI from Business Command Center"),
+        ]
+
+
+class BusinessPortfolioThresholdRule(models.Model):
+    METHODS = [(value, value) for value in ("Median", "Percentile", "Business Target", "Fixed Governed Threshold", "Peer Group")]
+    LENSES = [(code, label) for code, label in (("ALL", "All Mining"), ("PRIME", "Machine"), ("PARTS", "Parts"), ("SERVICE", "Service"), ("RENTAL", "Rental"))]
+
+    code = models.CharField(max_length=120, unique=True)
+    entity_type = models.CharField(max_length=30, default="MineSite")
+    revenue_lens = models.CharField(max_length=20, choices=LENSES, default="ALL", db_index=True)
+    scope_country = models.CharField(max_length=120, blank=True, db_index=True)
+    method = models.CharField(max_length=40, choices=METHODS, default="Median")
+    revenue_threshold = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    fleet_threshold = models.DecimalField(max_digits=20, decimal_places=2, null=True, blank=True)
+    percentile = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    effective_from = models.DateField()
+    effective_to = models.DateField(null=True, blank=True)
+    rule_version = models.CharField(max_length=80, default="1.0")
+    validation_status = models.CharField(max_length=20, default="To Review", db_index=True)
+    owner = models.ForeignKey(User, null=True, blank=True, related_name="owned_business_portfolio_rules", on_delete=models.SET_NULL)
+    active = models.BooleanField(default=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["revenue_lens", "scope_country", "code"]
+        db_table = "br_portfolio_threshold_rule"
+        constraints = [models.CheckConstraint(condition=Q(effective_to__isnull=True) | Q(effective_to__gte=models.F("effective_from")), name="br_threshold_dates_valid")]
+
+
+class BusinessOpportunity(models.Model):
+    STATUSES = [(value, value) for value in ("Open", "Acknowledged", "Actioned", "Dismissed", "Resolved")]
+    SEVERITIES = [(value, value) for value in ("Critical", "High", "Medium", "Low")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    snapshot = models.ForeignKey(BusinessReviewSnapshot, related_name="opportunities", on_delete=models.CASCADE)
+    opportunity_code = models.CharField(max_length=120, db_index=True)
+    business_account = models.ForeignKey(BusinessAccount, null=True, blank=True, related_name="business_opportunities", on_delete=models.PROTECT)
+    minesite = models.ForeignKey(MineSite, null=True, blank=True, related_name="business_opportunities", on_delete=models.PROTECT)
+    revenue_lens = models.CharField(max_length=20, default="ALL", db_index=True)
+    classification = models.CharField(max_length=80, db_index=True)
+    severity = models.CharField(max_length=20, choices=SEVERITIES, default="Medium", db_index=True)
+    status = models.CharField(max_length=20, choices=STATUSES, default="Open", db_index=True)
+    metric_values_json = models.JSONField(default=dict)
+    threshold_values_json = models.JSONField(default=dict)
+    gap_values_json = models.JSONField(default=dict, blank=True)
+    evidence_json = models.JSONField(default=list)
+    rule_version = models.CharField(max_length=80)
+    detected_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ["severity", "-detected_at"]
+        db_table = "br_opportunity"
+        constraints = [models.UniqueConstraint(fields=["snapshot", "opportunity_code", "business_account", "minesite", "revenue_lens"], name="br_unique_opportunity_scope")]
+
+
+class BusinessRisk(models.Model):
+    STATUSES = BusinessOpportunity.STATUSES
+    SEVERITIES = BusinessOpportunity.SEVERITIES
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    snapshot = models.ForeignKey(BusinessReviewSnapshot, related_name="risks", on_delete=models.CASCADE)
+    risk_code = models.CharField(max_length=120, db_index=True)
+    business_account = models.ForeignKey(BusinessAccount, null=True, blank=True, related_name="business_risks", on_delete=models.PROTECT)
+    minesite = models.ForeignKey(MineSite, null=True, blank=True, related_name="business_risks", on_delete=models.PROTECT)
+    severity = models.CharField(max_length=20, choices=SEVERITIES, default="Medium", db_index=True)
+    status = models.CharField(max_length=20, choices=STATUSES, default="Open", db_index=True)
+    business_impact_json = models.JSONField(default=dict)
+    evidence_json = models.JSONField(default=list)
+    rule_version = models.CharField(max_length=80)
+    detected_at = models.DateTimeField(auto_now_add=True, db_index=True)
+
+    class Meta:
+        ordering = ["severity", "-detected_at"]
+        db_table = "br_risk"
+        constraints = [models.UniqueConstraint(fields=["snapshot", "risk_code", "business_account", "minesite"], name="br_unique_risk_scope")]
+
+
+class BusinessReviewAction(models.Model):
+    STATUSES = [(value, value) for value in ("Open", "Assigned", "In Progress", "Waiting", "Completed", "Cancelled")]
+    PRIORITIES = [(value, value) for value in ("Critical", "High", "Medium", "Low")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+    action_type = models.CharField(max_length=120, blank=True)
+    snapshot = models.ForeignKey(BusinessReviewSnapshot, related_name="management_actions", on_delete=models.PROTECT)
+    business_account = models.ForeignKey(BusinessAccount, null=True, blank=True, related_name="business_review_actions", on_delete=models.PROTECT)
+    minesite = models.ForeignKey(MineSite, null=True, blank=True, related_name="business_review_actions", on_delete=models.PROTECT)
+    opportunity = models.ForeignKey(BusinessOpportunity, null=True, blank=True, related_name="management_actions", on_delete=models.SET_NULL)
+    risk = models.ForeignKey(BusinessRisk, null=True, blank=True, related_name="management_actions", on_delete=models.SET_NULL)
+    business_lens = models.CharField(max_length=20, default="ALL")
+    evidence_snapshot_json = models.JSONField(default=list, blank=True)
+    priority = models.CharField(max_length=20, choices=PRIORITIES, default="Medium", db_index=True)
+    owner = models.ForeignKey(User, null=True, blank=True, related_name="owned_business_review_actions", on_delete=models.SET_NULL)
+    due_date = models.DateField(null=True, blank=True, db_index=True)
+    status = models.CharField(max_length=20, choices=STATUSES, default="Open", db_index=True)
+    expected_impact = models.TextField(blank=True)
+    decision = models.TextField(blank=True)
+    notes = models.TextField(blank=True)
+    created_by = models.ForeignKey(User, null=True, related_name="created_business_review_actions", on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["status", "priority", "due_date", "title"]
+        db_table = "br_action"
+
+
+class BusinessDecision(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = models.CharField(max_length=255)
+    statement = models.TextField()
+    snapshot = models.ForeignKey(BusinessReviewSnapshot, related_name="decisions", on_delete=models.PROTECT)
+    action = models.ForeignKey(BusinessReviewAction, null=True, blank=True, related_name="decisions", on_delete=models.SET_NULL)
+    business_account = models.ForeignKey(BusinessAccount, null=True, blank=True, related_name="business_decisions", on_delete=models.PROTECT)
+    minesite = models.ForeignKey(MineSite, null=True, blank=True, related_name="business_decisions", on_delete=models.PROTECT)
+    evidence_json = models.JSONField(default=list)
+    decided_by = models.ForeignKey(User, null=True, related_name="business_decisions", on_delete=models.SET_NULL)
+    decision_date = models.DateField()
+    effective_date = models.DateField(null=True, blank=True)
+    expected_result = models.TextField(blank=True)
+    review_date = models.DateField(null=True, blank=True)
+    status = models.CharField(max_length=30, default="Active", db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-decision_date", "title"]
+        db_table = "br_decision"
+
+
+class BusinessReviewSavedView(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(User, related_name="business_review_saved_views", on_delete=models.CASCADE)
+    name = models.CharField(max_length=160)
+    filters_json = models.JSONField(default=dict)
+    sorting_json = models.JSONField(default=list, blank=True)
+    visualization = models.CharField(max_length=80, default="executive_overview")
+    is_default = models.BooleanField(default=False, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["name"]
+        db_table = "br_saved_view"
+        constraints = [models.UniqueConstraint(fields=["user", "name"], name="br_unique_user_saved_view")]
+
+
+class BusinessCommandCenterUserVisit(models.Model):
+    user = models.ForeignKey(User, related_name="business_command_center_visits", on_delete=models.CASCADE)
+    snapshot = models.ForeignKey(BusinessReviewSnapshot, null=True, blank=True, related_name="command_center_visits", on_delete=models.PROTECT)
+    source_synchronization = models.ForeignKey(MappingSynchronizationRun, related_name="command_center_visits", on_delete=models.PROTECT)
+    saved_view = models.ForeignKey(BusinessReviewSavedView, null=True, blank=True, related_name="visits", on_delete=models.SET_NULL)
+    filter_hash = models.CharField(max_length=64, db_index=True)
+    first_opened_at = models.DateTimeField(auto_now_add=True)
+    last_opened_at = models.DateTimeField(auto_now=True)
+    marked_reviewed_at = models.DateTimeField(null=True, blank=True)
+    last_seen_metrics_json = models.JSONField(default=dict, blank=True)
+
+    class Meta:
+        ordering = ["-last_opened_at"]
+        db_table = "br_command_center_visit"
+        constraints = [models.UniqueConstraint(fields=["user", "filter_hash"], name="br_unique_user_filter_visit")]
+
+
+class BusinessCommandCenterWatchlist(models.Model):
+    ENTITY_TYPES = [(value, value) for value in ("Customer", "Country", "Key Account", "Business Line")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(User, related_name="business_command_center_watchlist", on_delete=models.CASCADE)
+    entity_type = models.CharField(max_length=30, choices=ENTITY_TYPES, db_index=True)
+    entity_id = models.CharField(max_length=255, db_index=True)
+    display_name = models.CharField(max_length=500)
+    active = models.BooleanField(default=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["entity_type", "display_name"]
+        db_table = "br_command_center_watchlist"
+        constraints = [models.UniqueConstraint(fields=["user", "entity_type", "entity_id"], name="br_unique_user_watch_entity")]
+
+
+class ReconciliationSourceSnapshot(models.Model):
+    SOURCE_KINDS = [(value, value) for value in ("ORDER_HEADERS", "ORDERS", "DELIVERY_INVOICE", "INVOICES", "ACCOUNTING_REVENUE")]
+    STATUSES = [(value, value) for value in ("Loading", "Ready", "Ready with Warnings", "Failed", "Superseded")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    source_kind = models.CharField(max_length=30, choices=SOURCE_KINDS, db_index=True)
+    source_name = models.CharField(max_length=255)
+    source_version = models.CharField(max_length=160, db_index=True)
+    status = models.CharField(max_length=30, choices=STATUSES, default="Loading", db_index=True)
+    extracted_at = models.DateTimeField()
+    row_count = models.PositiveIntegerField(default=0)
+    checksum = models.CharField(max_length=64, blank=True, db_index=True)
+    warnings_json = models.JSONField(default=list, blank=True)
+    metadata_json = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-extracted_at", "source_kind"]
+        db_table = "rec_source_snapshot"
+        constraints = [
+            models.UniqueConstraint(fields=["source_kind", "source_name", "source_version"], name="rec_unique_source_version"),
+        ]
+
+
+class ReconciliationBufferSyncRun(models.Model):
+    STATUSES = [(value, value) for value in ("Queued", "Running", "Completed", "Completed with Warnings", "Failed")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    status = models.CharField(max_length=30, choices=STATUSES, default="Queued", db_index=True)
+    progress_percent = models.PositiveSmallIntegerField(default=0)
+    stage_code = models.CharField(max_length=60, default="queued")
+    stage_label = models.CharField(max_length=255, default="Waiting for semantic-model synchronization")
+    source_status_json = models.JSONField(default=dict, blank=True)
+    warnings_json = models.JSONField(default=list, blank=True)
+    errors_json = models.JSONField(default=list, blank=True)
+    initiated_by = models.ForeignKey(User, null=True, blank=True, related_name="reconciliation_buffer_sync_runs", on_delete=models.SET_NULL)
+    started_at = models.DateTimeField(null=True, blank=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+    heartbeat_at = models.DateTimeField(null=True, blank=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "rec_buffer_sync_run"
+
+
+class ReconciliationOrderLine(models.Model):
+    snapshot = models.ForeignKey(ReconciliationSourceSnapshot, related_name="order_lines", on_delete=models.PROTECT)
+    order_header = models.ForeignKey("ReconciliationOrderHeader", null=True, blank=True, related_name="order_lines", on_delete=models.PROTECT)
+    semantic_order_key = models.CharField(max_length=255, blank=True, db_index=True)
+    source_record_id = models.CharField(max_length=255)
+    company_code = models.CharField(max_length=40, db_index=True)
+    branch_code = models.CharField(max_length=40, db_index=True)
+    order_number = models.CharField(max_length=120, db_index=True)
+    line_number = models.CharField(max_length=80, db_index=True)
+    customer_number = models.CharField(max_length=120, blank=True, db_index=True)
+    customer_name = models.CharField(max_length=255, blank=True, db_index=True)
+    part_number = models.CharField(max_length=160, blank=True, db_index=True)
+    order_date = models.DateField(null=True, blank=True, db_index=True)
+    ordered_quantity = models.DecimalField(max_digits=20, decimal_places=4, null=True, blank=True)
+    current_invoiced_quantity = models.DecimalField(max_digits=20, decimal_places=4, null=True, blank=True)
+    current_delivered_quantity = models.DecimalField(max_digits=20, decimal_places=4, null=True, blank=True)
+    net_amount = models.DecimalField(max_digits=22, decimal_places=4, null=True, blank=True)
+    currency = models.CharField(max_length=12, blank=True)
+    status = models.CharField(max_length=80, blank=True, db_index=True)
+    billing_status = models.CharField(max_length=30, blank=True, db_index=True)
+    ca_combine_present = models.BooleanField(default=False, db_index=True)
+    source_payload_json = models.JSONField(default=dict, blank=True)
+
+    class Meta:
+        ordering = ["company_code", "branch_code", "order_number", "line_number"]
+        db_table = "rec_order_line"
+        constraints = [
+            models.UniqueConstraint(fields=["snapshot", "source_record_id"], name="rec_unique_order_source_row"),
+        ]
+        indexes = [
+            models.Index(fields=["snapshot", "company_code", "branch_code", "order_number", "line_number"], name="rec_order_business_key_idx"),
+            models.Index(fields=["snapshot", "order_header"], name="rec_order_snapshot_header_idx"),
+            models.Index(fields=["snapshot", "semantic_order_key"], name="rec_order_snapshot_semkey_idx"),
+            models.Index(fields=["snapshot", "customer_number"], name="rec_order_snap_customer_idx"),
+        ]
+
+
+class ReconciliationOrderHeader(models.Model):
+    snapshot = models.ForeignKey(ReconciliationSourceSnapshot, related_name="order_headers", on_delete=models.PROTECT)
+    source_record_id = models.CharField(max_length=255)
+    semantic_order_key = models.CharField(max_length=255, blank=True, db_index=True)
+    company_code = models.CharField(max_length=40, db_index=True)
+    branch_code = models.CharField(max_length=40, db_index=True)
+    order_number = models.CharField(max_length=120, db_index=True)
+    customer_number = models.CharField(max_length=120, blank=True, db_index=True)
+    customer_name = models.CharField(max_length=255, blank=True, db_index=True)
+    order_date = models.DateField(null=True, blank=True, db_index=True)
+    eta = models.DateField(null=True, blank=True, db_index=True)
+    order_type = models.CharField(max_length=80, blank=True, db_index=True)
+    urgency = models.CharField(max_length=80, blank=True)
+    line_count = models.IntegerField(null=True, blank=True)
+    currency = models.CharField(max_length=12, blank=True)
+    transport = models.CharField(max_length=120, blank=True)
+    description = models.CharField(max_length=500, blank=True)
+    invoicing_status = models.CharField(max_length=80, blank=True, db_index=True)
+    order_status = models.CharField(max_length=80, blank=True, db_index=True)
+    order_amount = models.DecimalField(max_digits=22, decimal_places=4, null=True, blank=True)
+    amount_eur = models.DecimalField(max_digits=22, decimal_places=4, null=True, blank=True)
+    operation_type = models.CharField(max_length=80, blank=True)
+    subsidiary_reference = models.CharField(max_length=160, blank=True)
+    international_reference = models.CharField(max_length=160, blank=True)
+    source_payload_json = models.JSONField(default=dict, blank=True)
+
+    class Meta:
+        ordering = ["company_code", "branch_code", "order_number"]
+        db_table = "rec_order_header"
+        constraints = [
+            models.UniqueConstraint(fields=["snapshot", "source_record_id"], name="rec_unique_order_header_source_row"),
+        ]
+        indexes = [
+            models.Index(fields=["snapshot", "company_code", "branch_code", "order_number"], name="rec_order_header_key_idx"),
+            models.Index(fields=["snapshot", "semantic_order_key"], name="rec_header_snapshot_semkey_idx"),
+        ]
+
+
+class ReconciliationDeliveryInvoiceLink(models.Model):
+    snapshot = models.ForeignKey(ReconciliationSourceSnapshot, related_name="delivery_invoice_links", on_delete=models.PROTECT)
+    source_record_id = models.CharField(max_length=255)
+    company_code = models.CharField(max_length=40, db_index=True)
+    order_branch_code = models.CharField(max_length=40, db_index=True)
+    order_number = models.CharField(max_length=120, db_index=True)
+    line_number = models.CharField(max_length=80, db_index=True)
+    customer_number = models.CharField(max_length=120, blank=True, db_index=True)
+    delivery_number = models.CharField(max_length=120, blank=True, db_index=True)
+    invoice_number = models.CharField(max_length=120, blank=True, db_index=True)
+    cancellation_invoice_number = models.CharField(max_length=120, blank=True, db_index=True)
+    invoice_branch_code = models.CharField(max_length=40, blank=True, db_index=True)
+    invoice_service_code = models.CharField(max_length=40, blank=True, db_index=True)
+    part_number = models.CharField(max_length=160, blank=True, db_index=True)
+    ordered_quantity = models.DecimalField(max_digits=20, decimal_places=4, null=True, blank=True)
+    invoiced_quantity = models.DecimalField(max_digits=20, decimal_places=4, null=True, blank=True)
+    delivered_quantity = models.DecimalField(max_digits=20, decimal_places=4, null=True, blank=True)
+    net_amount = models.DecimalField(max_digits=22, decimal_places=4, null=True, blank=True)
+    currency = models.CharField(max_length=12, blank=True)
+    line_status = models.CharField(max_length=80, blank=True, db_index=True)
+    operation_nature = models.CharField(max_length=80, blank=True, db_index=True)
+    source_payload_json = models.JSONField(default=dict, blank=True)
+
+    class Meta:
+        ordering = ["company_code", "order_branch_code", "order_number", "line_number", "invoice_number"]
+        db_table = "rec_delivery_invoice_link"
+        constraints = [
+            models.UniqueConstraint(fields=["snapshot", "source_record_id"], name="rec_unique_link_source_row"),
+        ]
+        indexes = [
+            models.Index(fields=["snapshot", "company_code", "order_branch_code", "order_number", "line_number"], name="rec_link_order_key_idx"),
+            models.Index(fields=["snapshot", "company_code", "invoice_branch_code", "invoice_number"], name="rec_link_invoice_key_idx"),
+        ]
+
+
+class ReconciliationInvoiceHeader(models.Model):
+    snapshot = models.ForeignKey(ReconciliationSourceSnapshot, related_name="invoice_headers", on_delete=models.PROTECT)
+    source_record_id = models.CharField(max_length=255)
+    company_code = models.CharField(max_length=40, db_index=True)
+    branch_code = models.CharField(max_length=40, db_index=True)
+    service_code = models.CharField(max_length=40, blank=True, db_index=True)
+    invoice_number = models.CharField(max_length=120, db_index=True)
+    master_invoice_number = models.CharField(max_length=120, blank=True, db_index=True)
+    customer_number = models.CharField(max_length=120, blank=True, db_index=True)
+    invoice_date = models.DateField(null=True, blank=True, db_index=True)
+    transaction_origin = models.CharField(max_length=20, blank=True)
+    invoice_status = models.CharField(max_length=80, blank=True, db_index=True)
+    currency = models.CharField(max_length=12, blank=True)
+    source_payload_json = models.JSONField(default=dict, blank=True)
+
+    class Meta:
+        ordering = ["company_code", "branch_code", "invoice_number"]
+        db_table = "rec_invoice_header"
+        constraints = [
+            models.UniqueConstraint(fields=["snapshot", "source_record_id"], name="rec_unique_invoice_source_row"),
+        ]
+        indexes = [
+            models.Index(fields=["snapshot", "company_code", "branch_code", "invoice_number"], name="rec_invoice_business_key_idx"),
+        ]
+
+
+class ReconciliationAccountingEntry(models.Model):
+    snapshot = models.ForeignKey(ReconciliationSourceSnapshot, related_name="accounting_entries", on_delete=models.PROTECT)
+    source_record_id = models.CharField(max_length=255)
+    company_code = models.CharField(max_length=40, blank=True, db_index=True)
+    branch_code = models.CharField(max_length=40, blank=True, db_index=True)
+    customer_number = models.CharField(max_length=120, blank=True, db_index=True)
+    document_number = models.CharField(max_length=160, blank=True, db_index=True)
+    entry_type = models.CharField(max_length=60, blank=True, db_index=True)
+    accounting_date = models.DateField(null=True, blank=True, db_index=True)
+    currency = models.CharField(max_length=12, blank=True)
+    debit_amount = models.DecimalField(max_digits=22, decimal_places=4, null=True, blank=True)
+    credit_amount = models.DecimalField(max_digits=22, decimal_places=4, null=True, blank=True)
+    consolidated_amount = models.DecimalField(max_digits=22, decimal_places=4, null=True, blank=True)
+    source_payload_json = models.JSONField(default=dict, blank=True)
+
+    class Meta:
+        ordering = ["company_code", "document_number", "accounting_date"]
+        db_table = "rec_accounting_entry"
+        constraints = [
+            models.UniqueConstraint(fields=["snapshot", "source_record_id"], name="rec_unique_accounting_source_row"),
+        ]
+        indexes = [
+            models.Index(fields=["snapshot", "company_code", "document_number"], name="rec_accounting_doc_idx"),
+        ]
+
+
+class ReconciliationRun(models.Model):
+    STATUSES = [(value, value) for value in ("Queued", "Running", "Completed", "Completed with Warnings", "Failed", "Cancelled")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    order_snapshot = models.ForeignKey(ReconciliationSourceSnapshot, related_name="order_reconciliation_runs", on_delete=models.PROTECT)
+    link_snapshot = models.ForeignKey(ReconciliationSourceSnapshot, related_name="link_reconciliation_runs", on_delete=models.PROTECT)
+    invoice_snapshot = models.ForeignKey(ReconciliationSourceSnapshot, related_name="invoice_reconciliation_runs", on_delete=models.PROTECT)
+    accounting_snapshot = models.ForeignKey(ReconciliationSourceSnapshot, related_name="accounting_reconciliation_runs", on_delete=models.PROTECT)
+    rule_version = models.CharField(max_length=80, db_index=True)
+    status = models.CharField(max_length=30, choices=STATUSES, default="Queued", db_index=True)
+    summary_json = models.JSONField(default=dict, blank=True)
+    warnings_json = models.JSONField(default=list, blank=True)
+    started_at = models.DateTimeField(null=True, blank=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+    initiated_by = models.ForeignKey(User, null=True, blank=True, related_name="reconciliation_runs", on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+        db_table = "rec_run"
+        constraints = [
+            models.UniqueConstraint(fields=["order_snapshot", "link_snapshot", "invoice_snapshot", "accounting_snapshot", "rule_version"], name="rec_unique_run_contract"),
+        ]
+        permissions = [
+            ("run_reconciliation", "Can run order and revenue reconciliation"),
+            ("review_reconciliation", "Can review reconciliation exceptions"),
+        ]
+
+
+class ReconciliationMatch(models.Model):
+    STATUSES = [(value, value) for value in (
+        "MATCHED", "PARTIALLY_INVOICED", "CANCELLED", "MISSING_ORDER", "MISSING_INVOICE",
+        "MISSING_ACCOUNTING", "AMBIGUOUS_ORDER", "AMBIGUOUS_INVOICE", "AMBIGUOUS_ACCOUNTING",
+    )]
+
+    run = models.ForeignKey(ReconciliationRun, related_name="matches", on_delete=models.CASCADE)
+    delivery_invoice_link = models.ForeignKey(ReconciliationDeliveryInvoiceLink, related_name="reconciliation_matches", on_delete=models.PROTECT)
+    order_line = models.ForeignKey(ReconciliationOrderLine, null=True, blank=True, related_name="reconciliation_matches", on_delete=models.PROTECT)
+    invoice_header = models.ForeignKey(ReconciliationInvoiceHeader, null=True, blank=True, related_name="reconciliation_matches", on_delete=models.PROTECT)
+    accounting_entries = models.ManyToManyField(ReconciliationAccountingEntry, through="ReconciliationMatchAccountingEntry", related_name="reconciliation_matches")
+    status = models.CharField(max_length=30, choices=STATUSES, db_index=True)
+    confidence_score = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    matched_by_json = models.JSONField(default=list)
+    warnings_json = models.JSONField(default=list, blank=True)
+    order_key = models.CharField(max_length=500, db_index=True)
+    invoice_key = models.CharField(max_length=500, blank=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["order_key", "invoice_key"]
+        db_table = "rec_match"
+        constraints = [
+            models.UniqueConstraint(fields=["run", "delivery_invoice_link"], name="rec_unique_run_link_match"),
+        ]
+        indexes = [models.Index(fields=["run", "status"], name="rec_run_status_idx")]
+
+
+class ReconciliationMatchAccountingEntry(models.Model):
+    match = models.ForeignKey(ReconciliationMatch, related_name="accounting_links", on_delete=models.CASCADE)
+    accounting_entry = models.ForeignKey(ReconciliationAccountingEntry, related_name="match_links", on_delete=models.PROTECT)
+    match_method = models.CharField(max_length=80, default="EXACT_DOCUMENT_COMPANY")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["match", "accounting_entry"]
+        db_table = "rec_match_accounting_entry"
+        constraints = [
+            models.UniqueConstraint(fields=["match", "accounting_entry"], name="rec_unique_match_accounting_entry"),
+        ]

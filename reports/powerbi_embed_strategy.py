@@ -183,12 +183,14 @@ def build_embed_configuration(
     if strategy.strategy == "app_owns_data":
         selected_roles = roles or [role]
         try:
-            token = generate_report_embed_token(
+            generated_token = generate_report_embed_token(
                 runtime_report,
                 selected_roles,
                 effective_username_override=effective_username,
                 require_effective_identity=require_effective_identity,
+                include_expiration=True,
             )
+            token, expires_at = generated_token if isinstance(generated_token, tuple) else (generated_token, 0)
         except RuntimeError as exc:
             if require_effective_identity:
                 raise PowerBIEmbedError(str(exc), code="minesite_rls_unavailable", status=403) from exc
@@ -204,6 +206,8 @@ def build_embed_configuration(
             "settings": settings,
             "openingProfile": opening_profile,
         }
+        if expires_at:
+            config["expiresAt"] = expires_at
         if report.default_page_internal_name:
             config["pageName"] = report.default_page_internal_name
         return config

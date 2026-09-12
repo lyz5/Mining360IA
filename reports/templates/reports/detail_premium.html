@@ -16,6 +16,7 @@
         class="app-shell report-viewer-shell"
         data-report-viewer
         data-report-id="{{ report.id|default:report_id }}"
+        data-stable-runtime="{{ stable_viewer_runtime|yesno:'true,false' }}"
         data-embed-url="{{ report.embed_url }}"
         data-rls-role="{{ selected_role }}"
         data-viewer-config-url="{{ viewer_configuration_url }}"
@@ -52,7 +53,7 @@
                     <button type="button" class="viewer-icon-button" data-more-toggle aria-label="More report actions" aria-expanded="false" title="More actions"><span>•••</span></button>
                     <div class="viewer-more-menu" data-more-menu hidden>
                         <a href="#" data-open-powerbi hidden target="_blank" rel="noopener">Open in Power BI</a>
-                        <button type="button" data-refresh-report>Refresh Report</button>
+                        <button type="button" data-refresh-report>Reload report view</button>
                         <button type="button" data-refresh-details>View Refresh Details</button>
                         <button type="button" data-copy-link>Copy Link</button>
                         <button type="button" data-report-help>Report Help</button>
@@ -143,8 +144,8 @@
     </main>
     {% if report.embed_url and configured_report %}
         <script src="{% static 'reports/vendor/powerbi-client-2.23.7.min.js' %}"></script>
-        <script src="{% static 'reports/powerbi_embed.js' %}?v=20260830-direct-embed-1"></script>
-        <script src="{% static 'reports/report_viewer.js' %}?v=20260830-direct-embed-1" defer></script>
+        <script src="{% static 'reports/powerbi_embed.js' %}?v=20260831-stable-runtime-1"></script>
+        <script src="{% static 'reports/report_viewer.js' %}?v=20260831-stable-runtime-1" defer></script>
     {% endif %}
 </body>
 </html>

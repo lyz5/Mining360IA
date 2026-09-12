@@ -44,10 +44,11 @@ _REPORT_LIST_CACHE: tuple[float, list["PowerBIReport"]] | None = None
 _REPORT_REFRESH_CACHE: dict[str, tuple[float, str, str]] = {}
 _REPORT_REFRESH_CACHE_LOCK = threading.Lock()
 _ACCESS_TOKEN_CACHE: tuple[float, str] | None = None
+_ACCESS_TOKEN_CACHE_LOCK = threading.Lock()
 _DATASET_LIST_CACHE: dict[str, tuple[float, list[dict]]] = {}
 _DATASET_METADATA_CACHE: dict[tuple[str, str], tuple[float, dict]] = {}
 _LINKED_DATASET_CACHE: dict[tuple[str, str], tuple[float, list[str]]] = {}
-_EMBED_TOKEN_CACHE: dict[tuple[str, str, str], tuple[float, str]] = {}
+_EMBED_TOKEN_CACHE: dict[tuple[str, str, str], tuple[float, str, int]] = {}
 _EMBED_TOKEN_INFLIGHT: dict[tuple[str, str, str], threading.Event] = {}
 _POWERBI_RUNTIME_CACHE_LOCK = threading.Lock()
 HTTP = requests.Session()
@@ -295,30 +296,38 @@ def get_report_display_aliases() -> dict[str, str]:
 def get_access_token() -> str:
     global _ACCESS_TOKEN_CACHE
     now = time.monotonic()
-    if _ACCESS_TOKEN_CACHE and now - _ACCESS_TOKEN_CACHE[0] < ACCESS_TOKEN_CACHE_SECONDS:
+    if _ACCESS_TOKEN_CACHE and _ACCESS_TOKEN_CACHE[0] > now:
         return _ACCESS_TOKEN_CACHE[1]
 
-    tenant_id = env_value("POWERBI_TENANT_ID", DEFAULT_TENANT_ID)
-    client_id = env_value("POWERBI_CLIENT_ID", DEFAULT_CLIENT_ID)
-    client_secret = env_value("POWERBI_CLIENT_SECRET")
+    # The embed configuration and refresh-status endpoints can arrive together.
+    # Serialize a cold acquisition so both requests reuse the same Entra token.
+    with _ACCESS_TOKEN_CACHE_LOCK:
+        now = time.monotonic()
+        if _ACCESS_TOKEN_CACHE and _ACCESS_TOKEN_CACHE[0] > now:
+            return _ACCESS_TOKEN_CACHE[1]
 
-    response = HTTP.post(
-        f"https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token",
-        data={
-            "grant_type": "client_credentials",
-            "client_id": client_id,
-            "client_secret": client_secret,
-            "scope": powerbi_scope(),
-        },
-        timeout=30,
-    )
-    if response.status_code != 200:
-        raise RuntimeError(
-            f"Power BI authentication failed ({response.status_code}): {response.text}"
+        tenant_id = env_value("POWERBI_TENANT_ID", DEFAULT_TENANT_ID)
+        client_id = env_value("POWERBI_CLIENT_ID", DEFAULT_CLIENT_ID)
+        client_secret = env_value("POWERBI_CLIENT_SECRET")
+        response = HTTP.post(
+            f"https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token",
+            data={
+                "grant_type": "client_credentials",
+                "client_id": client_id,
+                "client_secret": client_secret,
+                "scope": powerbi_scope(),
+            },
+            timeout=30,
         )
-    token = response.json()["access_token"]
-    _ACCESS_TOKEN_CACHE = (now, token)
-    return token
+        if response.status_code != 200:
+            raise RuntimeError(
+                f"Power BI authentication failed ({response.status_code}): {response.text}"
+            )
+        payload = response.json()
+        token = payload["access_token"]
+        expires_in = max(60, int(payload.get("expires_in") or ACCESS_TOKEN_CACHE_SECONDS) - 300)
+        _ACCESS_TOKEN_CACHE = (time.monotonic() + expires_in, token)
+        return token
 
 
 def list_workspace_reports() -> list[PowerBIReport]:
@@ -1066,7 +1075,8 @@ def generate_report_embed_token(
     *,
     effective_username_override: str = "",
     require_effective_identity: bool = False,
-) -> str:
+    include_expiration: bool = False,
+) -> str | tuple[str, int]:
     workspace_id = env_value("POWERBI_WORKSPACE_ID", DEFAULT_WORKSPACE_ID)
     token = get_access_token()
     connection_options = get_report_connection_options(report)
@@ -1147,7 +1157,7 @@ def generate_report_embed_token(
     with _POWERBI_RUNTIME_CACHE_LOCK:
         cached = _EMBED_TOKEN_CACHE.get(embed_cache_key)
         if cached and cached[0] > now:
-            return cached[1]
+            return (cached[1], cached[2]) if include_expiration else cached[1]
         inflight = _EMBED_TOKEN_INFLIGHT.get(embed_cache_key)
         owns_generation = inflight is None
         if owns_generation:
@@ -1159,7 +1169,7 @@ def generate_report_embed_token(
         with _POWERBI_RUNTIME_CACHE_LOCK:
             cached = _EMBED_TOKEN_CACHE.get(embed_cache_key)
             if cached and cached[0] > time.monotonic():
-                return cached[1]
+                return (cached[1], cached[2]) if include_expiration else cached[1]
         raise RuntimeError("Embed token generation did not complete. Please retry.")
 
     try:
@@ -1176,13 +1186,23 @@ def generate_report_embed_token(
             raise RuntimeError(
                 f"Embed token generation failed ({response.status_code}): {response.text}"
             )
-        embed_token = response.json()["token"]
+        response_payload = response.json()
+        embed_token = response_payload["token"]
+        expiration_value = str(response_payload.get("expiration") or "").replace("Z", "+00:00")
+        try:
+            expiration_epoch = int(datetime.fromisoformat(expiration_value).timestamp())
+        except (TypeError, ValueError):
+            expiration_epoch = int(time.time()) + 3600
         with _POWERBI_RUNTIME_CACHE_LOCK:
-            _EMBED_TOKEN_CACHE[embed_cache_key] = (time.monotonic() + EMBED_TOKEN_CACHE_SECONDS, embed_token)
+            _EMBED_TOKEN_CACHE[embed_cache_key] = (
+                time.monotonic() + EMBED_TOKEN_CACHE_SECONDS,
+                embed_token,
+                expiration_epoch,
+            )
             expired = [key for key, value in _EMBED_TOKEN_CACHE.items() if value[0] <= time.monotonic()]
             for key in expired:
                 _EMBED_TOKEN_CACHE.pop(key, None)
-        return embed_token
+        return (embed_token, expiration_epoch) if include_expiration else embed_token
     finally:
         with _POWERBI_RUNTIME_CACHE_LOCK:
             event = _EMBED_TOKEN_INFLIGHT.pop(embed_cache_key, None)

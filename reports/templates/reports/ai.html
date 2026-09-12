@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AI | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260808-adaptive-responses-1">
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260903-production-hardening-2">
 </head>
 <body class="ai-page-body">
     {% include "reports/includes/app_nav.html" %}
@@ -80,7 +80,8 @@
                 <section id="ai-loading" class="ai-loading" hidden aria-live="polite">
                     <span class="ai-loading-avatar">AI</span>
                     <span class="loading-spinner" aria-hidden="true"></span>
-                    <span>Mining360 is analyzing your question...</span>
+                    <span id="ai-loading-text">Understanding your question...</span>
+                    <button type="button" id="ai-cancel-execution">Cancel</button>
                 </section>
 
                 <section id="ai-availability-overview-section"
@@ -262,7 +263,7 @@
     <script src="{% static 'reports/vendor/powerbi-client-2.23.7.min.js' %}"></script>
     <script src="{% static 'reports/powerbi_embed.js' %}?v=20260721-monthly-page-1"></script>
     <script src="{% static 'reports/downtime_explorer.js' %}?v=20260728-json-response-fix-1"></script>
-    <script src="{% static 'reports/ai.js' %}?v=20260808-adaptive-responses-1"></script>
+    <script src="{% static 'reports/ai.js' %}?v=20260903-month-range-1"></script>
     <script src="{% static 'reports/voice_input.js' %}?v=20260726-voice-compact-1"></script>
 </body>
 </html>

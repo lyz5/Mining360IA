@@ -52,6 +52,7 @@ INTEGRATION_SCHEMAS = {
         "fields": [
             {"key": "dax_flow_url", "label": "FPR DAX Flow URL (inspectData)", "type": "password", "secret": True, "required": True},
             {"key": "aftermarket_dax_flow_url", "label": "AfterMarket DAX Flow URL (inspectData2)", "type": "password", "secret": True},
+            {"key": "logistics_dax_flow_url", "label": "Mine Logistics DAX Flow URL (inspectData3)", "type": "password", "secret": True},
             {"key": "timeout_seconds", "label": "Timeout (seconds)", "type": "number", "default": 300},
             {"key": "retry_count", "label": "Retry Count", "type": "number", "default": 1},
         ],
@@ -270,7 +271,11 @@ def ensure_portable_configuration():
         {
             "code": "power-automate-dax", "name": "Power Automate DAX", "integration_type": "Power Automate",
             "settings": {"timeout_seconds": 300, "retry_count": 1},
-            "secrets": {"dax_flow_url": _environment_or_file("POWER_AUTOMATE_DAX_FLOW_URL", powerbi_file)},
+            "secrets": {
+                "dax_flow_url": _environment_or_file("POWER_AUTOMATE_DAX_FLOW_URL", powerbi_file),
+                "aftermarket_dax_flow_url": _environment_or_file("POWER_AUTOMATE_AFTERMARKET_DAX_FLOW_URL", powerbi_file),
+                "logistics_dax_flow_url": _environment_or_file("POWER_AUTOMATE_LOGISTICS_DAX_FLOW_URL", powerbi_file),
+            },
         },
         {
             "code": "openai-default", "name": "OpenAI", "integration_type": "OpenAI",

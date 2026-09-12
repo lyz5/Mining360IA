@@ -19,6 +19,7 @@ DEFINITION_PATTERNS = (
     r"\bexplique\b",
 )
 SEMANTIC_PATTERNS = (
+    r"\b(?:flotte|fleet|parc de machines|machines sur site|machines du site)\b",
     r"\b(?:ytd|mtd|l12m)\b",
     r"\b(?:year|month) to date\b",
     r"\b(?:last|rolling|trailing)\s+12\s+months\b",

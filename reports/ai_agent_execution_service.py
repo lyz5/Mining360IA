@@ -12,6 +12,7 @@ from .conversation_follow_up_resolution_service import (
 from .models import AIAgent, AIAgentExecutionLog
 from .powerbi_interaction_orchestrator import process_user_question
 from .resource_knowledge_search_service import search_resource_knowledge
+from .answerability_assessment_service import AnswerabilityStatus
 
 
 CLARIFICATION_MESSAGE = (
@@ -39,9 +40,11 @@ def _knowledge_execution(question, *, user, conversation_id, debug_mode=False) -
     )
     sources = result.get("results") or []
     if not sources:
+        french = any(token in question.casefold() for token in ("quelle", "quel", "comment", "pourquoi", "entretien", "maintenance de"))
         answer = (
-            "No validated Best Practice was found for this question. "
-            "Documentary knowledge that is still To Review is not used in Production."
+            "Je ne dispose pas actuellement d’une information validée dans la base de connaissances Mining 360 pour répondre à cette question."
+            if french else
+            "I do not currently have validated information in the Mining 360 Knowledge Base to answer that question."
         )
     else:
         recommendations = []
@@ -62,7 +65,7 @@ def _knowledge_execution(question, *, user, conversation_id, debug_mode=False) -
             "Sources",
             citations,
         ])
-    return {
+    response = {
         "ok": True,
         "answer": answer,
         "chat_message": answer,
@@ -76,6 +79,20 @@ def _knowledge_execution(question, *, user, conversation_id, debug_mode=False) -
         "navigation": {},
         "validation": {"status": "valid", "errors": [], "warnings": []},
     }
+    if not sources:
+        decision = {
+            "status": AnswerabilityStatus.INSUFFICIENT_EVIDENCE,
+            "reason_code": "NO_VALIDATED_KNOWLEDGE_SOURCE",
+            "confidence": 100,
+        }
+        response.update({
+            "message_type": "answerability",
+            "answerability": decision,
+            "answerability_decision": {"decision": decision, "question": question},
+            "source_summary": {"coverage": "not_available"},
+            "actions": [],
+        })
+    return response
 
 
 def execute_agent_question(

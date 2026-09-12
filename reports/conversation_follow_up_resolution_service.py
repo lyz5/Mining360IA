@@ -88,6 +88,9 @@ def get_last_successful_compatible_context(conversation_id: str, user=None) -> d
         ) and bool(intent.get("metric") or intent.get("intent_type") in {
             "downtime_drivers", "affected_equipment", "downtime_events",
             "root_cause_analysis", "equipment_detail", "performance_overview",
+            "fleet_inventory", "get_site_fleet", "get_site_fleet_by_model",
+            "get_site_model_fleet", "get_fleet_count", "lookup_equipment_by_serial",
+            "lookup_equipment_by_code", "export_current_fleet",
         })
         if payload.get("ok") and compatible_intent and agent_code in {"machine_performance", "combined", ""}:
             return {
@@ -173,8 +176,21 @@ def _action(text: str) -> str:
     return ""
 
 
+def _analytical_machine_identifier(text: str) -> str:
+    normalized = _normalize(text)
+    match = re.search(
+        r"(?:physical availability|availability|disponibilite physique|disponibilite)"
+        r"\s+(?:of|for|de|du|pour)\s+"
+        r"((?=[a-z0-9.-]*[a-z])(?=[a-z0-9.-]*\d)[a-z0-9][a-z0-9.-]{3,})",
+        normalized,
+    )
+    return match.group(1).upper() if match else ""
+
+
 def _is_explicit_standalone(text: str) -> bool:
     normalized = _normalize(text)
+    if _metric(text) and _analytical_machine_identifier(text):
+        return True
     has_standalone_prefix = any(normalized.startswith(prefix) for prefix in (
         "what is", "give me", "show me availability", "compare availability",
         "quelle est", "quel est", "donne moi la", "affiche la disponibilite",
@@ -260,6 +276,9 @@ class ConversationFollowUpResolutionService:
         action = fragment_action
         clear_all = normalized in {"start over", "reset", "recommencer", "on recommence"}
         clear_model = any(marker in normalized for marker in ("remove model", "clear model", "all models", "supprime le modele", "tous les modeles"))
+        export_fleet = normalized in {"download it", "export it", "download them", "export them", "telecharge la flotte", "exporte le tableau en excel", "je veux le fichier excel"}
+        equipment_lookup = re.fullmatch(r"(?:show me|show|montre|affiche)?\s*([a-z]{1,4}-?\d{3,5})", normalized)
+        serial_lookup = re.search(r"(?:serial|serial number|numero de serie)\s+([a-z0-9 -]{5,})", normalized)
         clear_site = any(marker in normalized for marker in ("remove site", "clear site", "all sites", "supprime le site", "tous les sites"))
         compare = any(marker in normalized for marker in ("compare", "comparison", "compare les", "compare the two", "compare les deux"))
         append_entity = normalized.startswith(("also ", "add ", "aussi ", "ajoute "))
@@ -334,6 +353,23 @@ class ConversationFollowUpResolutionService:
                 merged["intent_type"] = action
                 operations.append({"path": "intent_type", "operation": "replace", "value": action})
                 updated["intent_type"] = action
+            elif export_fleet:
+                export_intent = (
+                    "export_current_result"
+                    if merged.get("capability") == "fleet_performance"
+                    else "export_current_fleet"
+                )
+                merged["intent_type"] = export_intent
+                operations.append({"path": "intent_type", "operation": "replace", "value": export_intent})
+                updated["intent_type"] = export_intent
+            elif serial_lookup:
+                filters["serial_number"] = serial_lookup.group(1).strip().upper()
+                merged["intent_type"] = "lookup_equipment_by_serial"
+                operations.append({"path": "filters.serial_number", "operation": "set", "value": filters["serial_number"]})
+            elif equipment_lookup:
+                filters["equipment"] = equipment_lookup.group(1).upper()
+                merged["intent_type"] = "lookup_equipment_by_code"
+                operations.append({"path": "filters.equipment", "operation": "set", "value": filters["equipment"]})
             elif compare:
                 if period:
                     merged["intent_type"] = "period_comparison"
@@ -343,9 +379,22 @@ class ConversationFollowUpResolutionService:
                 updated["intent_type"] = merged["intent_type"]
             merged["filters"] = filters
 
-        confidence = 99 if period or entities or metric or action or clear_model or clear_site else 90
+        confidence = 99 if period or entities or metric or action or clear_model or clear_site or export_fleet or equipment_lookup or serial_lookup else 90
+        fleet_intents = {
+            "fleet_inventory", "get_site_fleet", "get_site_fleet_by_model",
+            "get_site_model_fleet", "get_fleet_count", "lookup_equipment_by_serial",
+            "lookup_equipment_by_code", "export_current_fleet",
+        }
+        if merged.get("intent_type") in fleet_intents:
+            if clear_model:
+                merged["intent_type"] = "get_site_fleet"
+            elif entities.get("model"):
+                merged["intent_type"] = "get_site_model_fleet"
+            elif entities.get("minesite"):
+                merged["intent_type"] = "get_site_fleet"
         requires_clarification = clear_all or not (merged.get("metric") or merged.get("intent_type") in {
             "downtime_drivers", "affected_equipment", "downtime_events", "root_cause_analysis",
+            *fleet_intents,
         })
         if confidence < self.minimum_confidence:
             requires_clarification = True

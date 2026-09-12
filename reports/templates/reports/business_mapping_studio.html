@@ -1,0 +1,260 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Business Mapping Studio | Mining360IA</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260904-business-mapping-1">
+    <link rel="stylesheet" href="{% static 'reports/business_mapping_studio.css' %}?v=20260911-publication">
+</head>
+<body class="bm-page">
+{% include "reports/includes/app_nav.html" %}
+<main class="app-shell bm-shell" data-business-mapping-app
+      data-overview-url="{% url 'business-mapping-overview-api' %}"
+      data-accounts-url="{% url 'business-mapping-accounts-api' %}"
+      data-canonical-aliases-url="/api/business-mapping/canonical-accounts/"
+      data-canonical-country-url="/api/business-mapping/canonical-accounts/"
+      data-key-accounts-url="{% url 'business-mapping-key-accounts-api' %}"
+      data-minesites-url="{% url 'business-mapping-minesites-api' %}"
+      data-validate-url="{% url 'business-mapping-validate-new-api' %}"
+      data-no-site-url="{% url 'business-mapping-no-site-new-api' %}"
+      data-draft-url="{% url 'business-mapping-mappings-api' %}"
+      data-can-remove="{{ can_remove|yesno:'true,false' }}"
+      data-candidates-url="{% url 'business-mapping-candidates-generate-api' %}"
+      data-conflicts-url="{% url 'business-mapping-conflicts-api' %}"
+      data-publication-preview-url="{% url 'business-mapping-publication-preview-api' %}"
+      data-publications-url="{% url 'business-mapping-publications-api' %}"
+      data-sync-url="{% url 'business-mapping-synchronization-api' %}"
+      data-can-edit="{{ can_edit|yesno:'true,false' }}"
+      data-can-validate="{{ can_validate|yesno:'true,false' }}"
+      data-can-publish="{{ can_publish|yesno:'true,false' }}"
+      data-can-sync="{{ can_sync|yesno:'true,false' }}">
+    {% csrf_token %}
+    <header class="bm-header">
+        <div>
+            <p class="eyebrow">Account · MineSite · Fleet Governance</p>
+            <h1>Business Mapping Studio</h1>
+            <p class="bm-subtitle">Classify Accounts, validate business relationships and publish governed Mapping versions.</p>
+        </div>
+        <div class="bm-header-actions">
+            <label class="bm-scope-control bm-period-control" for="bm-revenue-period-select">
+                <span>Revenue period</span>
+                <select id="bm-revenue-period-select" data-bm-period-select>
+                    <option value="ytd">YTD</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="all">All periods</option>
+                </select>
+            </label>
+            <label class="bm-scope-control">
+                <span>Business scope</span>
+                <select data-bm-country-scope aria-label="Select Group or Neemba operating country scope">
+                    <option value="">Group</option>
+                </select>
+            </label>
+            {% if can_sync %}<button class="button secondary" type="button" data-bm-sync>Synchronize sources</button>{% endif %}
+            {% if can_publish and feature_flags.publication %}<button class="button" type="button" data-bm-publish>Publication preview</button>{% endif %}
+        </div>
+    </header>
+
+    <section class="bm-revenue-scope" aria-label="Mining revenue by business line">
+        <button type="button" class="active" data-bm-revenue-filter="" aria-pressed="true">
+            <span>Total</span><strong data-bm-revenue="TOTAL">--</strong><small data-bm-revenue-period>YTD period</small>
+        </button>
+        <button type="button" data-bm-revenue-filter="PRIME" aria-pressed="false">
+            <span>Machine</span><strong data-bm-revenue="PRIME">--</strong><small>Mining revenue</small>
+        </button>
+        <button type="button" data-bm-revenue-filter="PARTS" aria-pressed="false">
+            <span>Parts</span><strong data-bm-revenue="PARTS">--</strong><small>Mining revenue</small>
+        </button>
+        <button type="button" data-bm-revenue-filter="SERVICE" aria-pressed="false">
+            <span>Service</span><strong data-bm-revenue="SERVICE">--</strong><small>Mining revenue</small>
+        </button>
+        <button type="button" data-bm-revenue-filter="RENTAL" aria-pressed="false">
+            <span>Rental</span><strong data-bm-revenue="RENTAL">--</strong><small>Mining revenue</small>
+        </button>
+    </section>
+
+    {% if can_sync %}
+    <section class="bm-sync-progress" data-bm-sync-progress aria-live="polite" hidden>
+        <div class="bm-sync-progress-head">
+            <div><span>Source synchronization</span><strong data-bm-sync-status>Preparing...</strong></div>
+            <span data-bm-sync-percent>0%</span>
+        </div>
+        <progress data-bm-sync-bar max="100" value="0">0%</progress>
+        <div class="bm-sync-progress-detail">
+            <span data-bm-sync-stage>Preparing synchronization...</span>
+            <span data-bm-sync-counts></span>
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="bm-data-context" data-bm-data-context aria-label="Current data periods">
+        <div><span>Revenue scope</span><strong data-bm-context="revenue">Loading...</strong></div>
+        <div><span>Fleet snapshot</span><strong data-bm-context="fleet">Loading...</strong></div>
+        <div><span>Mapping state</span><strong data-bm-context="mappings">Current database state</strong></div>
+    </section>
+
+    <nav class="bm-tabs" aria-label="Business Mapping sections">
+        <button type="button" class="active" data-bm-tab="workspace" aria-selected="true">Mapping Workspace</button>
+        <button type="button" data-bm-tab="overview" aria-selected="false">Mapping Health</button>
+        <button type="button" data-bm-tab="conflicts" aria-selected="false">Conflicts <span data-bm-conflict-count></span></button>
+        <button type="button" data-bm-tab="published" aria-selected="false">Publications</button>
+        <button type="button" data-bm-tab="audit" aria-selected="false">Governance</button>
+    </nav>
+
+    <section class="bm-metrics" data-bm-metrics aria-label="Mapping health">
+        <div><span>Accounts Classified</span><strong data-bm-metric="account_coverage_pct">--</strong><small>Current mappings</small></div>
+        <div><span>Revenue Assigned</span><strong data-bm-metric="revenue_coverage_pct">--</strong><small data-bm-period-note>YTD period</small></div>
+        <div><span>Fleet Linked</span><strong data-bm-metric="fleet_coverage_pct">--</strong><small>Latest source snapshot</small></div>
+        <div><span>Need Review</span><strong data-bm-metric="accounts_needing_review">--</strong></div>
+        <div><span>Conflicts</span><strong data-bm-metric="accounts_with_conflicts">--</strong></div>
+        <div><span>Unallocated Revenue</span><strong data-bm-metric="unallocated_revenue_eur">--</strong><small data-bm-period-note>YTD period</small></div>
+    </section>
+
+    <section class="bm-panel active" data-bm-panel="workspace">
+        <div class="bm-workspace">
+            <section class="bm-account-panel" aria-labelledby="bm-account-heading">
+                <div class="bm-panel-head"><div><p class="eyebrow">Review queue</p><h2 id="bm-account-heading">Accounts</h2></div><span data-bm-account-total>0</span></div>
+                <div class="bm-account-tools">
+                    <div class="bm-account-view" role="group" aria-label="Account hierarchy"><span>Hierarchy</span><button type="button" data-bm-account-view="source" aria-pressed="false">Source Records</button><button type="button" class="active" data-bm-account-view="canonical" aria-pressed="true">Canonical Accounts</button><button type="button" data-bm-key-accounts>Key Accounts</button></div>
+                    <input type="search" data-bm-account-search placeholder="Search Account, code or CIC" aria-label="Search Accounts">
+                    <select data-bm-account-status aria-label="Filter mapping status">
+                        <option value="">All statuses</option><option>Unmapped</option><option>Draft</option><option>Validated</option><option>Published</option><option>No MineSite Required</option>
+                    </select>
+                    <select data-bm-key-account-filter aria-label="Filter by Key Account">
+                        <option value="">All Key Accounts</option><option value="unassigned">Unassigned to a Key Account</option>
+                    </select>
+                    <select data-bm-account-sort aria-label="Sort Accounts">
+                        <option value="revenue_desc" selected>Revenue: highest first</option>
+                        <option value="name">Account name</option>
+                        <option value="revenue_asc">Revenue: lowest first</option>
+                    </select>
+                </div>
+                <div class="bm-account-list" data-bm-account-list aria-live="polite"><p class="bm-empty">Loading Accounts...</p></div>
+                <div class="bm-pagination"><button type="button" data-bm-previous aria-label="Previous page">‹</button><span data-bm-page>1 / 1</span><button type="button" data-bm-next aria-label="Next page">›</button></div>
+            </section>
+
+            <section class="bm-candidate-panel" aria-labelledby="bm-candidate-heading">
+                <div class="bm-panel-head"><div><p class="eyebrow">Governed suggestions</p><h2 id="bm-candidate-heading">MineSite Candidates</h2></div>{% if feature_flags.suggestions and can_edit %}<button class="button secondary small" type="button" data-bm-generate disabled>Generate</button>{% endif %}</div>
+                <div class="bm-selected-account" data-bm-selected-summary><p class="bm-empty">Select one Account to review candidates and evidence.</p></div>
+                <section class="bm-country-panel" data-bm-operating-country-panel hidden>
+                    <div class="bm-subsection-heading"><strong>Canonical Account operating country</strong></div>
+                    <p class="bm-country-current" data-bm-operating-country-current></p>
+                    <p class="bm-data-note" data-bm-operating-country-suggestion></p>
+                    {% if can_edit %}<form class="bm-country-form" data-bm-operating-country-form><select data-bm-operating-country-input required aria-label="Canonical Account operating country"><option value="">Select a country</option></select><button type="submit" class="button secondary small">Assign</button><button type="button" class="button tertiary small" data-bm-operating-country-clear hidden>Use source suggestion</button></form>{% endif %}
+                    <p class="bm-form-error" data-bm-operating-country-error role="alert" hidden></p>
+                </section>
+                <section class="bm-alias-panel" data-bm-alias-panel hidden>
+                    <div class="bm-subsection-heading"><strong>Canonical Account name</strong></div>
+                    <p class="bm-data-note">Rename the Canonical Account. Its previous name remains searchable as an alias.</p>
+                    <div data-bm-alias-list></div>
+                    {% if can_edit %}<form class="bm-alias-form" data-bm-alias-form><input type="text" data-bm-alias-input required placeholder="Enter the new Canonical Account name"><button type="submit" class="button secondary small">Rename</button></form>{% endif %}
+                    <p class="bm-form-error" data-bm-alias-error role="alert" hidden></p>
+                </section>
+                <div class="bm-candidate-list" data-bm-candidate-list></div>
+                {% if can_edit %}
+                <div class="bm-manual-site" data-bm-manual-site hidden>
+                    <label for="bm-minesite-search">Choose another MineSite</label>
+                    <input id="bm-minesite-search" type="search" data-bm-minesite-search placeholder="Search authorized MineSites">
+                    <div data-bm-minesite-results class="bm-site-results"></div>
+                </div>
+                {% endif %}
+            </section>
+
+            <aside class="bm-impact-panel" aria-labelledby="bm-impact-heading">
+                <div class="bm-panel-head"><div><p class="eyebrow">Before validation</p><h2 id="bm-impact-heading">Business Impact</h2></div></div>
+                <div data-bm-impact><p class="bm-empty">Revenue, fleet and validation warnings will appear here.</p></div>
+                {% if can_edit %}
+                <form class="bm-decision-form" data-bm-decision-form hidden novalidate>
+                    <p class="bm-form-error" data-bm-form-error role="alert" hidden></p>
+                    <div class="bm-form-actions"><button class="button secondary" type="button" data-bm-save-draft>Save as Draft</button>{% if can_validate %}<button class="button" type="submit">Validate Mapping</button>{% endif %}</div>
+                    {% if can_validate %}<details class="bm-no-site"><summary>No MineSite Required</summary><label>Reason<select data-bm-no-site-reason><option value="">Select reason</option><option>Head Office</option><option>Regional Office</option><option>Internal Account</option><option>Non-Mining Customer</option><option>Supplier</option><option>Distributor</option><option>Other</option></select></label><button class="button secondary" type="button" data-bm-no-site>Record decision</button></details>{% endif %}
+                </form>
+                {% endif %}
+            </aside>
+        </div>
+    </section>
+
+    <section class="bm-panel" data-bm-panel="overview" hidden>
+        <div class="bm-section-head"><div><p class="eyebrow">Administrative readiness</p><h2>Mapping Health</h2></div></div>
+        <div class="bm-opportunity-matrix" role="img" aria-label="Fleet size by revenue opportunity matrix">
+            <span class="bm-axis-y">Fleet Size</span><div>Commercial Opportunity</div><div>Strategic Account</div><div>Low Priority</div><div>Revenue Mix Investigation</div><span class="bm-axis-x">Revenue</span>
+        </div>
+        <p class="bm-data-note">Points are shown only after a published mapping version contains sufficient fleet and revenue coverage.</p>
+    </section>
+    <section class="bm-panel" data-bm-panel="conflicts" hidden><div class="bm-section-head"><div><p class="eyebrow">Data quality</p><h2>Mapping Conflicts</h2></div></div><div data-bm-conflicts><p class="bm-empty">Open this section to load conflicts.</p></div></section>
+    <section class="bm-panel" data-bm-panel="published" hidden>
+        <div class="bm-section-head"><div><p class="eyebrow">Immutable history</p><h2>Publications</h2></div></div>
+        <div class="bm-local-nav"><button type="button" class="active">Publication Preview</button><button type="button">Published Versions</button><button type="button">Compare Changes</button><button type="button">Rollback</button></div>
+        {% if can_publish and feature_flags.publication %}
+        <div class="bm-publication-workspace">
+            <div class="bm-publication-status" data-bm-publication-status>
+                <strong>Publication preview not generated</strong>
+                <span>Review the validated mappings before creating an immutable published version.</span>
+            </div>
+            <div class="bm-publication-metrics" data-bm-publication-metrics hidden></div>
+            <label class="bm-publication-reason"><span>Publication reason</span><textarea rows="3" data-bm-publication-reason placeholder="Describe why this mapping version is being published."></textarea></label>
+            <div class="bm-publication-actions">
+                <button class="button secondary" type="button" data-bm-publication-preview>Refresh Preview</button>
+                <button class="button" type="button" data-bm-publication-confirm disabled>Publish Mapping Version</button>
+            </div>
+        </div>
+        {% else %}
+        <p class="bm-empty">You do not have permission to publish Mapping versions.</p>
+        {% endif %}
+        <div class="bm-publication-history" data-bm-publication-history></div>
+    </section>
+    <section class="bm-panel" data-bm-panel="audit" hidden><div class="bm-section-head"><div><p class="eyebrow">Governed configuration</p><h2>Governance</h2></div></div><div class="bm-local-nav"><button type="button" class="active">Audit</button><button type="button">Account Roles</button><button type="button">Mapping Rules</button><button type="button">Allocation Rules</button><button type="button">Source Synchronization</button><button type="button">Permissions</button><button type="button">Settings</button></div><p>Source model: Customer Fleet & Revenue Planning Model</p><p class="bm-data-note">Source systems are read-only. Permanent decisions are committed to the Mining 360 database.</p></section>
+</main>
+<dialog class="bm-dialog bm-key-account-dialog" data-bm-key-account-dialog aria-labelledby="bm-key-account-title">
+    <div class="bm-dialog-head"><div><p class="eyebrow">Commercial grouping</p><h2 id="bm-key-account-title">Key Accounts</h2></div><button type="button" data-bm-key-close aria-label="Close">×</button></div>
+    <p class="bm-data-note">Combine Canonical Accounts directly into one governed commercial group.</p>
+    <div class="bm-key-filter-bar"><span>Revenue basis: <strong data-bm-key-revenue-basis>All Mining</strong></span><label>Sort groups<select data-bm-key-sort><option value="revenue_desc">Revenue: highest first</option><option value="revenue_asc">Revenue: lowest first</option><option value="name">Key Account name</option></select></label></div>
+    {% if can_edit %}
+    <form class="bm-key-create" data-bm-key-create>
+        <label>New Key Account name<input type="text" data-bm-key-name required placeholder="Example: Corica Group"></label>
+        <button type="submit" class="button">Create</button>
+    </form>
+    {% endif %}
+    <p class="bm-form-error" data-bm-key-error role="alert" hidden></p>
+    <div class="bm-key-workspace">
+        <section><div class="bm-subsection-heading"><strong>Key Account groups</strong><span data-bm-key-count>0</span></div><div class="bm-key-list" data-bm-key-list><p class="bm-empty">Loading Key Accounts...</p></div></section>
+        <section>
+            <div data-bm-key-detail><p class="bm-empty">Select or create a Key Account.</p></div>
+            {% if can_edit %}<label class="bm-key-search">Add Canonical Accounts<input type="search" data-bm-key-search placeholder="Search Canonical Account, code or country"></label>{% endif %}
+            <div class="bm-key-available" data-bm-key-available></div>
+        </section>
+    </div>
+</dialog>
+<dialog class="bm-dialog" data-bm-key-delete-dialog aria-labelledby="bm-key-delete-title">
+    <div class="bm-dialog-head"><div><p class="eyebrow">Governed removal</p><h2 id="bm-key-delete-title">Delete Key Account</h2></div><button type="button" data-bm-key-delete-close aria-label="Close">×</button></div>
+    <p data-bm-key-delete-summary></p>
+    <p class="bm-warning">The group will be archived and its Canonical Accounts will become unassigned. Historical audit records will be preserved.</p>
+    <label>Deletion reason<textarea rows="3" data-bm-key-delete-reason required placeholder="Explain why this Key Account is being deleted"></textarea></label>
+    <p class="bm-form-error" data-bm-key-delete-error role="alert" hidden></p>
+    <div class="bm-dialog-actions"><button type="button" class="button secondary" data-bm-key-delete-close>Cancel</button><button type="button" class="button danger" data-bm-key-delete-confirm>Delete Key Account</button></div>
+</dialog>
+<dialog class="bm-dialog" data-bm-delete-dialog>
+    <div class="bm-dialog-head"><div><p class="eyebrow">Governed removal</p><h2>Remove Mapping</h2></div><button type="button" data-bm-delete-close aria-label="Close">×</button></div>
+    <p data-bm-delete-summary></p>
+    <p class="bm-warning">The mapping will be archived. Published Business Review data remains unchanged until a new Mapping version is published.</p>
+    <label>Removal reason<textarea rows="3" data-bm-delete-reason required placeholder="Explain why this relationship is being removed"></textarea></label>
+    <p class="bm-form-error" data-bm-delete-error role="alert" hidden></p>
+    <div class="bm-dialog-actions"><button type="button" class="button secondary" data-bm-delete-close>Cancel</button><button type="button" class="button danger" data-bm-delete-confirm>Remove mapping</button></div>
+</dialog>
+
+<dialog class="bm-validation-dialog" data-bm-validation-dialog aria-labelledby="bm-validation-title">
+    <form method="dialog">
+        <div class="bm-dialog-head"><div><p class="eyebrow">Database transaction</p><h2 id="bm-validation-title">Validate Account Mapping</h2></div><button type="button" data-bm-close aria-label="Close">×</button></div>
+        <div data-bm-validation-review></div>
+        <p class="bm-dialog-error" data-bm-dialog-error role="alert" hidden></p>
+        <div class="bm-dialog-actions"><button class="button secondary" type="button" data-bm-close>Cancel</button><button class="button" type="button" data-bm-confirm>Validate Mapping</button></div>
+    </form>
+</dialog>
+<div class="bm-toast" data-bm-toast role="status" aria-live="polite" hidden></div>
+<script src="{% static 'reports/business_mapping_studio.js' %}?v=20260911-publication" defer></script>
+</body>
+</html>

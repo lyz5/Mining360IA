@@ -5,8 +5,36 @@
             this.options = options || {};
             this.report = null;
             this.loaded = false;
+            this.rendered = false;
+            this.contextReady = false;
             this.events = [];
             this.refreshTimer = null;
+            this.lifecycle = "idle";
+            this.currentReportId = null;
+            this.operationId = 0;
+            this.embedPromise = null;
+            this.configRequest = null;
+            this.embedAbort = null;
+            this.handlers = null;
+            this.loadTimers = [];
+            this.renderTimer = null;
+            this.filterRevision = 0;
+            this.filterQueue = Promise.resolve();
+            this.appliedFilterFingerprint = "";
+            this.slicerCache = new Map();
+            this.metrics = {
+                embedCallCount: 0,
+                embedConfigRequestCount: 0,
+                filterApplyCount: 0,
+                instanceResetCount: 0,
+                retryCount: 0,
+            };
+        }
+
+        transition(next, details) {
+            const previous = this.lifecycle;
+            this.lifecycle = next;
+            this.emit("lifecycle", Object.assign({ previous, state: next }, details || {}));
         }
 
         emit(type, details) {
@@ -16,29 +44,82 @@
             if (typeof this.options.onEvent === "function") this.options.onEvent(event);
         }
 
-        async requestConfig(reportId) {
+        async requestConfig(reportId, { signal, refresh = false } = {}) {
+            if (!refresh && this.configRequest?.reportId === reportId) return this.configRequest.promise;
             const url = new URL(
                 this.options.embedConfigUrl.replace("__REPORT_ID__", encodeURIComponent(reportId)),
                 window.location.origin,
             );
             if (this.options.rlsRole) url.searchParams.set("role", this.options.rlsRole);
-            const response = await fetch(url, { credentials: "same-origin" });
-            const payload = await response.json();
-            if (!response.ok || !payload.ok) {
-                const error = new Error(payload.error || "Embed configuration unavailable.");
-                error.code = payload.error_code || "embed_configuration_failed";
-                error.authenticationRequired = Boolean(payload.authentication_required);
-                error.connectUrl = payload.connect_url || "";
-                error.authenticationMode = payload.authentication_mode || "";
-                throw error;
-            }
-            return payload.config;
+            url.searchParams.set("open_request_id", this.options.openRequestId || "");
+            const execute = async (attempt = 0) => {
+                this.metrics.embedConfigRequestCount += 1;
+                const response = await fetch(url, {
+                    credentials: "same-origin",
+                    signal,
+                    headers: { "X-Report-Open-ID": this.options.openRequestId || "" },
+                });
+                let payload = {};
+                try { payload = await response.json(); } catch (_error) { /* normalized below */ }
+                if (!response.ok || !payload.ok) {
+                    const error = new Error(payload.error || "Embed configuration unavailable.");
+                    const statusCodes = {
+                        401: "EMBED_TOKEN_FAILED",
+                        403: "REPORT_ACCESS_DENIED",
+                        404: "REPORT_NOT_FOUND",
+                        429: "POWERBI_RATE_LIMIT",
+                    };
+                    error.code = payload.error_code || statusCodes[response.status] || "EMBED_CONFIG_FAILED";
+                    error.status = response.status;
+                    error.retryAfter = Number(response.headers.get("Retry-After") || 0);
+                    error.authenticationRequired = Boolean(payload.authentication_required);
+                    error.connectUrl = payload.connect_url || "";
+                    error.authenticationMode = payload.authentication_mode || "";
+                    const transient = response.status === 429 || response.status >= 500;
+                    if (transient && attempt < 1 && !signal?.aborted) {
+                        this.metrics.retryCount += 1;
+                        const waitMs = error.retryAfter ? error.retryAfter * 1000 : 750 + Math.round(Math.random() * 250);
+                        await new Promise((resolve) => window.setTimeout(resolve, waitMs));
+                        return execute(attempt + 1);
+                    }
+                    throw error;
+                }
+                return payload.config;
+            };
+            const promise = execute().finally(() => {
+                if (this.configRequest?.promise === promise) this.configRequest = null;
+            });
+            if (!refresh) this.configRequest = { reportId, promise };
+            return promise;
         }
 
         async embed(reportId) {
+            if (this.report && this.currentReportId === reportId && this.loaded) return this.report;
+            if (this.embedPromise && this.currentReportId === reportId) return this.embedPromise;
+            if (this.report || this.embedPromise) this.dispose("report_change");
+            this.currentReportId = reportId;
+            const operationId = ++this.operationId;
+            this.embedAbort = new AbortController();
+            this.transition("requesting_embed_config", { reportId, operationId });
+            this.embedPromise = this.initializeEmbed(reportId, operationId);
+            try {
+                return await this.embedPromise;
+            } finally {
+                if (this.operationId === operationId) this.embedPromise = null;
+            }
+        }
+
+        async initializeEmbed(reportId, operationId) {
             if (!window.powerbi || !window["powerbi-client"]) throw new Error("Power BI JavaScript API is unavailable.");
             const models = window["powerbi-client"].models;
-            const config = await this.requestConfig(reportId);
+            const config = await this.requestConfig(reportId, { signal: this.embedAbort.signal });
+            const embedSessionId = config.embedSessionId || this.options.openRequestId || "";
+            delete config.embedSessionId;
+            if (operationId !== this.operationId) {
+                const error = new Error("Stale report request ignored.");
+                error.code = "STALE_REQUEST";
+                throw error;
+            }
             const isAad = String(config.tokenType || "").toLowerCase() === "aad";
             config.tokenType = isAad ? models.TokenType.Aad : models.TokenType.Embed;
             config.permissions = models.Permissions.Read;
@@ -61,7 +142,7 @@
                 config.eventHooks = Object.assign({}, config.eventHooks || {}, {
                     accessTokenProvider: async () => {
                         try {
-                            const refreshed = await this.requestConfig(reportId);
+                            const refreshed = await this.requestConfig(reportId, { refresh: true });
                             return refreshed.accessToken || null;
                         } catch (error) {
                             this.emit("token_refresh_failed", { message: error.message, code: error.code || "" });
@@ -70,24 +151,72 @@
                     },
                 });
             }
-            window.powerbi.reset(this.container);
+            this.transition("embedding", { reportId, operationId, embedSessionId });
+            if (this.options.stableRuntime === false) {
+                window.powerbi.reset(this.container);
+                this.metrics.instanceResetCount += 1;
+            }
+            this.metrics.embedCallCount += 1;
             this.report = window.powerbi.embed(this.container, config);
             await new Promise((resolve, reject) => {
-                const timeout = window.setTimeout(() => reject(new Error("Power BI report loading timed out.")), 120000);
-                this.report.on("loaded", () => {
-                    window.clearTimeout(timeout);
+                let settled = false;
+                const delayed = window.setTimeout(() => {
+                    this.transition("degraded", { reportId, reason: "POWERBI_LOAD_DELAYED" });
+                    this.emit("load_delayed", { reportId });
+                }, Number(this.options.loadedWarningMs || (this.options.stableRuntime === false ? 120000 : 90000)));
+                const fatal = window.setTimeout(() => {
+                    if (settled || operationId !== this.operationId) return;
+                    settled = true;
+                    const error = new Error("The report is taking too long to load from Power BI.");
+                    error.code = "POWERBI_LOAD_FAILED";
+                    reject(error);
+                }, Number(this.options.loadedTimeoutMs || (this.options.stableRuntime === false ? 120000 : 240000)));
+                this.loadTimers = [delayed, fatal];
+                const clearLoadTimers = () => {
+                    this.loadTimers.forEach((timer) => window.clearTimeout(timer));
+                    this.loadTimers = [];
+                };
+                this.handlers = {
+                    loaded: () => {
+                    if (settled || operationId !== this.operationId) return;
+                    settled = true;
+                    clearLoadTimers();
                     this.loaded = true;
+                    this.transition("loaded", { reportId, operationId });
+                    this.renderTimer = window.setTimeout(() => {
+                        if (operationId !== this.operationId || this.lifecycle === "ready") return;
+                        this.transition("degraded", { reportId, reason: "POWERBI_RENDER_DELAYED" });
+                        this.emit("render_delayed", { reportId });
+                    }, Number(this.options.renderedWarningMs || 120000));
                     this.emit("loaded", { reportId });
                     resolve();
-                });
-                this.report.on("rendered", () => this.emit("rendered", { reportId }));
-                this.report.on("error", (event) => {
+                    },
+                    rendered: () => {
+                        if (operationId !== this.operationId) return;
+                        window.clearTimeout(this.renderTimer);
+                        this.renderTimer = null;
+                        this.rendered = true;
+                        this.transition(this.contextReady ? "ready" : "rendered", { reportId, operationId });
+                        this.emit("rendered", { reportId });
+                        if (this.contextReady) this.emit("ready", { reportId });
+                    },
+                    error: (event) => {
                     const details = event?.detail || {};
                     this.emit("error", details);
-                    reject(new Error(details.message || "Power BI reported an error."));
-                });
+                    if (!settled) {
+                        settled = true;
+                        clearLoadTimers();
+                        const error = new Error(details.message || "Power BI reported an error.");
+                        error.code = details.errorCode || "POWERBI_LOAD_FAILED";
+                        reject(error);
+                    }
+                    },
+                    pageChanged: (event) => this.emit("page_changed", event?.detail || {}),
+                    dataSelected: (event) => this.emit("data_selected", event?.detail || {}),
+                };
+                Object.entries(this.handlers).forEach(([name, handler]) => this.report.on(name, handler));
             });
-            this.scheduleTokenRefresh(reportId, config.expiresAt);
+            if (!isAad) this.scheduleTokenRefresh(reportId, config.expiresAt);
             return this.report;
         }
 
@@ -96,21 +225,35 @@
             const delay = expiresAt
                 ? Math.max(30000, (Number(expiresAt) * 1000) - Date.now() - (5 * 60 * 1000))
                 : 45 * 60 * 1000;
-            this.refreshTimer = window.setTimeout(async () => {
-                try {
-                    const config = await this.requestConfig(reportId);
-                    await this.report.setAccessToken(config.accessToken);
-                    this.emit("token_refreshed", { reportId });
-                    this.scheduleTokenRefresh(reportId, config.expiresAt);
-                } catch (error) {
-                    this.emit("token_refresh_failed", {
-                        message: error.message,
-                        code: error.code || "",
-                        authenticationRequired: Boolean(error.authenticationRequired),
-                        connectUrl: error.connectUrl || "",
-                    });
+            this.refreshTimer = window.setTimeout(
+                () => this.refreshAccessToken(reportId, 1),
+                Math.min(delay, 2147483647),
+            );
+        }
+
+        async refreshAccessToken(reportId, retriesRemaining) {
+            try {
+                const config = await this.requestConfig(reportId, { refresh: true });
+                if (!this.report || this.currentReportId !== reportId) return;
+                await this.report.setAccessToken(config.accessToken);
+                this.emit("token_refreshed", { reportId });
+                this.scheduleTokenRefresh(reportId, config.expiresAt);
+            } catch (error) {
+                if (retriesRemaining > 0 && [0, 401, 429, 500, 502, 503, 504].includes(Number(error.status || 0))) {
+                    this.metrics.retryCount += 1;
+                    this.refreshTimer = window.setTimeout(
+                        () => this.refreshAccessToken(reportId, retriesRemaining - 1),
+                        2000,
+                    );
+                    return;
                 }
-            }, delay);
+                this.emit("token_refresh_failed", {
+                    message: error.message,
+                    code: error.code || "TOKEN_REFRESH_FAILED",
+                    authenticationRequired: Boolean(error.authenticationRequired),
+                    connectUrl: error.connectUrl || "",
+                });
+            }
         }
 
         async getPages() {
@@ -197,6 +340,7 @@
             const target = filter.target || state?.targets?.[0] || {};
             return {
                 slicer,
+                state,
                 target,
                 names: [
                     slicer.name,
@@ -242,16 +386,64 @@
             return candidates[0]?.description || null;
         }
 
+        canonicalFilters(instructions) {
+            const normalized = (instructions || []).map((instruction) => ({
+                filter_code: instruction.filter_code || "",
+                table: instruction.table || "",
+                column: instruction.column || "",
+                filter_type: instruction.filter_type || "basic",
+                operator: instruction.operator || "In",
+                values: [...(instruction.values || [])].map(String).sort(),
+                conditions: instruction.conditions || [],
+                slicer_internal_name: instruction.slicer_internal_name || "",
+            }));
+            normalized.sort((left, right) => JSON.stringify(left).localeCompare(JSON.stringify(right)));
+            return JSON.stringify(normalized);
+        }
+
         async applyFilters(page, instructions) {
+            const fingerprint = this.canonicalFilters(instructions);
+            if (fingerprint === this.appliedFilterFingerprint) {
+                this.emit("filters_unchanged", { count: (instructions || []).length });
+                return { applied: false, unchanged: true };
+            }
+            const revision = ++this.filterRevision;
+            const operation = async () => {
+                if (revision !== this.filterRevision) return { applied: false, superseded: true };
+                this.transition("applying_initial_context", { revision });
+                const result = await this.applyFiltersNow(page, instructions, revision);
+                if (revision === this.filterRevision) {
+                    this.appliedFilterFingerprint = fingerprint;
+                    this.metrics.filterApplyCount += 1;
+                    this.transition("ready", { revision });
+                }
+                return result;
+            };
+            this.filterQueue = this.filterQueue.catch(() => {}).then(operation);
+            return this.filterQueue;
+        }
+
+        async applyFiltersNow(page, instructions, revision) {
             const models = window["powerbi-client"].models;
             const pageFilters = [];
-            const slicers = page ? await page.getSlicers() : [];
-            const slicerDescriptions = await Promise.all(
-                slicers.map((slicer) => this.describeSlicer(slicer))
+            const pageKey = page?.name || "active";
+            const needsSlicerResolution = (instructions || []).some(
+                (instruction) => Boolean(instruction.slicer_internal_name),
             );
+            let slicerDescriptions = needsSlicerResolution ? this.slicerCache.get(pageKey) : [];
+            if (needsSlicerResolution && !slicerDescriptions) {
+                const slicers = page ? await page.getSlicers() : [];
+                slicerDescriptions = await Promise.all(
+                    slicers.map((slicer) => this.describeSlicer(slicer))
+                );
+                this.slicerCache.set(pageKey, slicerDescriptions);
+            }
             for (const instruction of instructions || []) {
+                if (revision !== this.filterRevision) return { applied: false, superseded: true };
                 let applied = false;
-                const matched = await this.resolveSlicer(instruction, slicerDescriptions);
+                const matched = instruction.slicer_internal_name
+                    ? await this.resolveSlicer(instruction, slicerDescriptions)
+                    : null;
                 if (matched && typeof matched.slicer.setSlicerState === "function") {
                     const target = matched.target || {};
                     const slicerInstruction = Object.assign({}, instruction, {
@@ -284,34 +476,20 @@
             }
             if (pageFilters.length && page) {
                 try {
-                    await page.updateFilters(models.FiltersOperations.RemoveAll);
+                    await page.updateFilters(
+                        models.FiltersOperations.ReplaceAll,
+                        pageFilters.map((item) => item.filter),
+                    );
                 } catch (error) {
-                    this.emit("page_filters_clear_warning", { message: error.message });
-                }
-                let appliedCount = 0;
-                for (const item of pageFilters) {
-                    try {
-                        await page.updateFilters(models.FiltersOperations.Add, [item.filter]);
-                        appliedCount += 1;
-                        this.emit("page_filter_applied", {
-                            filterCode: item.instruction.filter_code,
-                            table: item.instruction.table,
-                            column: item.instruction.column,
-                        });
-                    } catch (error) {
-                        this.emit("page_filter_failed", {
-                            filterCode: item.instruction.filter_code,
-                            table: item.instruction.table,
-                            column: item.instruction.column,
-                            message: error.message,
-                        });
-                    }
+                    this.emit("page_filters_failed", { message: error.message });
+                    throw error;
                 }
                 this.emit("page_filters_applied", {
-                    count: appliedCount,
+                    count: pageFilters.length,
                     requested: pageFilters.length,
                 });
             }
+            return { applied: true, count: (instructions || []).length };
         }
 
         async focusVisual(page, visualInternalName, action) {
@@ -392,6 +570,7 @@
                     }
                 } catch (_error) { /* page may not expose filter APIs */ }
             }
+            this.appliedFilterFingerprint = "";
         }
 
         async setFitMode(mode) {
@@ -415,21 +594,63 @@
             return pages.find((page) => page.isActive) || pages[0] || null;
         }
 
-        reset() {
+        detachHandlers() {
+            if (!this.report || !this.handlers || typeof this.report.off !== "function") return;
+            Object.entries(this.handlers).forEach(([name, handler]) => {
+                try { this.report.off(name, handler); } catch (_error) { /* already detached */ }
+            });
+            this.handlers = null;
+        }
+
+        dispose(reason = "dispose") {
+            this.transition("disposing", { reason });
+            this.operationId += 1;
             window.clearTimeout(this.refreshTimer);
+            window.clearTimeout(this.renderTimer);
+            this.loadTimers.forEach((timer) => window.clearTimeout(timer));
+            this.loadTimers = [];
             this.refreshTimer = null;
+            this.renderTimer = null;
+            this.detachHandlers();
             this.loaded = false;
-            this.report = null;
-            this.options.currentReportId = null;
-            if (window.powerbi && this.container) {
+            this.rendered = false;
+            this.contextReady = false;
+            this.embedPromise = null;
+            this.configRequest = null;
+            this.embedAbort?.abort();
+            this.embedAbort = null;
+            this.filterRevision += 1;
+            this.filterQueue = Promise.resolve();
+            this.appliedFilterFingerprint = "";
+            this.slicerCache.clear();
+            if (this.report && window.powerbi && this.container) {
+                this.metrics.instanceResetCount += 1;
                 window.powerbi.reset(this.container);
             } else if (this.container) {
                 this.container.replaceChildren();
             }
+            this.report = null;
+            this.currentReportId = null;
+            this.options.currentReportId = null;
+            this.transition("idle", { reason });
+        }
+
+        reset() {
+            this.dispose("reset");
         }
 
         async refreshReport() {
             if (this.report) await this.report.refresh();
+        }
+
+        markReady(details) {
+            this.contextReady = true;
+            if (this.rendered) {
+                this.transition("ready", details || {});
+                this.emit("ready", details || {});
+            } else {
+                this.transition("degraded", Object.assign({ reason: "POWERBI_RENDER_PENDING" }, details || {}));
+            }
         }
     }
 

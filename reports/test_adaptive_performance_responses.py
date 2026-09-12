@@ -23,7 +23,7 @@ class MachinePerformanceIntentTests(SimpleTestCase):
             "Compare availability between Essakane and Fekola in May 2026.": "entity_comparison",
             "Show the monthly availability trend for Essakane over the last 12 months.": "trend_analysis",
             "Which 10 machines have the lowest availability at Essakane?": "ranking",
-            "Show me equipment serial XYZ123.": "equipment_detail",
+            "Show me equipment serial XYZ123.": "lookup_equipment_by_serial",
             "Why did availability decrease at Essakane in May 2026?": "root_cause_analysis",
             "Show downtime events for Power Train at Essakane.": "downtime_events",
             "Summarize maintenance comments for Engine downtime at Essakane.": "comment_analysis",

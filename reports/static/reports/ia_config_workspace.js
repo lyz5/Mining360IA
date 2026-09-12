@@ -7,8 +7,8 @@
         "language-training": ["question-examples", "synonyms", "business-vocabulary", "few-shot-examples"],
         "semantic-model": ["metrics", "filters", "visual-mapping", "semantic-tables", "semantic-columns", "semantic-measures", "semantic-relationships", "powerbi-pages"],
         "query-response": ["dax-templates", "response-templates", "intent-template-mappings", "prompt-templates"],
-        "business-governance": ["business-rules", "kpi-targets", "recommended-actions"],
-        "test-diagnostics": ["debug-runs"],
+        "business-governance": ["capability-registry", "data-field-registry", "answerability-rules", "source-precedence", "business-rules", "kpi-targets", "recommended-actions"],
+        "test-diagnostics": ["data-gaps", "debug-runs"],
     };
     const labels = {
         "language-training": "Language & Training",

@@ -20,6 +20,7 @@ def serialize_message(message: AIConversationMessage, *, include_artifacts=True)
         "intent_code": message.intent_code,
         "status": message.status,
         "client_message_id": message.client_message_id,
+        "idempotency_key": message.idempotency_key,
         "request_id": str(message.request_id),
         "metadata": message.metadata_json,
         "parent_message_id": str(message.parent_message_id) if message.parent_message_id else None,
@@ -38,6 +39,7 @@ def create_user_message(
     *,
     content: str,
     client_message_id: str | None,
+    idempotency_key: str | None = None,
     metadata: dict | None = None,
 ) -> tuple[AIConversationMessage, bool]:
     locked = AIConversation.objects.select_for_update().get(pk=conversation.pk)
@@ -48,12 +50,20 @@ def create_user_message(
         ).first()
         if existing:
             return existing, False
+    if idempotency_key:
+        existing = AIConversationMessage.objects.filter(
+            conversation=locked,
+            idempotency_key=idempotency_key,
+        ).first()
+        if existing:
+            return existing, False
     message = AIConversationMessage.objects.create(
         conversation=locked,
         role="user",
         message_type=("voice_transcription" if (metadata or {}).get("input_mode") == "voice" else "text"),
         content=content,
         client_message_id=client_message_id or None,
+        idempotency_key=idempotency_key or None,
         metadata_json=metadata or {},
         status="completed",
     )
@@ -100,6 +110,10 @@ def response_content(response_payload: dict) -> str:
 
 
 def response_message_type(response_payload: dict) -> str:
+    if response_payload.get("capability_catalog"):
+        return "capability_catalog"
+    if response_payload.get("answerability"):
+        return "answerability"
     if response_payload.get("presentation") or response_payload.get("response_envelope") or response_payload.get("availability_diagnostics"):
         return "analytical_result"
     if response_payload.get("resource_knowledge") or response_payload.get("sources"):

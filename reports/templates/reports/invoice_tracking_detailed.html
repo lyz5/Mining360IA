@@ -1,0 +1,82 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Invoice Tracking Detailed | Mining360IA</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260907-invoice-1">
+    <link rel="stylesheet" href="{% static 'reports/invoice_tracking.css' %}?v=20260909-2">
+</head>
+<body class="it-page">
+{% include "reports/includes/app_nav.html" %}
+<main class="app-shell it-shell" data-invoice-tracking
+      data-overview-url="{% url 'invoice-tracking-overview-api' %}"
+      data-rows-url="{% url 'invoice-tracking-rows-api' %}"
+      data-sync-url="{% url 'invoice-tracking-sync-api' %}"
+      data-export-url="{% url 'invoice-tracking-export-api' %}">
+    {% csrf_token %}
+    <header class="it-header">
+        <div><p class="eyebrow">Revenue and order control</p><h1>Invoice Tracking Detailed</h1><p>Orders, deliveries, commercial invoices and accounting revenue reconciled from governed semantic models.</p></div>
+        <div class="it-header-actions">
+            <a class="button secondary" data-it-export href="{% url 'invoice-tracking-export-api' %}">Export CSV</a>
+            {% if can_run %}<button class="button" type="button" data-it-sync>Synchronize & Reconcile</button>{% endif %}
+        </div>
+    </header>
+
+    <section class="it-source-strip" data-it-source-strip>
+        <div><span>Orders, Headers & Invoices</span><strong>Mine Logistics Report</strong><small>OrderLineItems · OrderHeader · Neg_llf · Neg_FAC</small></div>
+        <div><span>Accounting Revenue</span><strong>Customer Fleet & Revenue Planning Model</strong><small>CA Combine · Mining only</small></div>
+        <div><span>Rule Version</span><strong data-it-rule>Not executed</strong><small data-it-updated>No completed run</small></div>
+    </section>
+
+    <section class="it-sync" data-it-sync-panel hidden aria-live="polite">
+        <div class="it-sync-head"><div><strong data-it-sync-status>Synchronization</strong><span data-it-sync-label>Preparing semantic sources...</span></div><b data-it-progress-label>0%</b></div>
+        <progress data-it-progress max="100" value="0">0%</progress>
+        <div class="it-source-progress" data-it-source-progress></div>
+        <p class="it-error" data-it-sync-error hidden></p>
+    </section>
+
+    <section class="it-kpis" aria-label="Reconciliation summary">
+        <div><span>Lines Processed</span><strong data-it-kpi="processed">--</strong></div>
+        <div><span>Matched</span><strong data-it-kpi="matched">--</strong></div>
+        <div><span>Partially Invoiced</span><strong data-it-kpi="partial">--</strong></div>
+        <div><span>Exceptions</span><strong data-it-kpi="exceptions">--</strong></div>
+        <div><span>Invoices Matched</span><strong data-it-kpi="invoices">--</strong></div>
+        <div><span>CA Entries Matched</span><strong data-it-kpi="accounting">--</strong></div>
+    </section>
+
+    <section class="it-workspace">
+        <div class="it-toolbar">
+            <label><span>View</span><select data-it-view><option value="orders">Order billing status</option><option value="reconciliation">Invoice reconciliation</option></select></label>
+            <label class="it-search"><span class="sr-only">Search</span><input type="search" data-it-search placeholder="Search order, invoice, delivery, customer or part"></label>
+            <label><span>Status</span><select data-it-status><option value="">All statuses</option></select></label>
+            <label><span>Company</span><select data-it-company><option value="">All companies</option></select></label>
+            <label><span>Order date from</span><input type="date" data-it-date-from></label>
+            <label><span>Order date to</span><input type="date" data-it-date-to></label>
+            <label><span>Sort</span><select data-it-sort><option value="invoice">Invoice</option><option value="order">Order</option><option value="status">Status</option><option value="company">Company</option><option value="-amount">Highest CA</option></select></label>
+        </div>
+        <details class="it-header-filters" data-it-header-filters>
+            <summary>OrderHeader details and filters</summary>
+            <div class="it-header-filter-grid">
+                <label><span>Customer name</span><input type="search" data-it-header-customer placeholder="Search customer name"></label>
+                <label><span>Order type</span><select data-it-header-order-type><option value="">All types</option></select></label>
+                <label><span>Order status</span><select data-it-header-order-status><option value="">All order statuses</option></select></label>
+                <label><span>Header invoicing status</span><select data-it-header-invoicing-status><option value="">All invoicing statuses</option></select></label>
+                <label><span>Transport</span><select data-it-header-transport><option value="">All transport modes</option></select></label>
+                <label><span>Urgency</span><select data-it-header-urgency><option value="">All urgency levels</option></select></label>
+                <button class="button secondary" type="button" data-it-clear-header-filters>Clear header filters</button>
+            </div>
+        </details>
+        <div class="it-table-scroll">
+            <table class="it-table">
+                <thead><tr data-it-head></tr></thead>
+                <tbody data-it-rows><tr><td colspan="17" class="it-empty">No reconciliation has been executed.</td></tr></tbody>
+            </table>
+        </div>
+        <footer class="it-pagination"><span data-it-count>0 records</span><div><button type="button" class="icon-button" data-it-prev aria-label="Previous page">←</button><span data-it-page>Page 1 of 1</span><button type="button" class="icon-button" data-it-next aria-label="Next page">→</button></div></footer>
+    </section>
+</main>
+<script src="{% static 'reports/invoice_tracking.js' %}?v=20260910-7" defer></script>
+</body>
+</html>

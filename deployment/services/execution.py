@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import subprocess
 import tempfile
@@ -19,6 +20,7 @@ JOB_PATTERN = re.compile(r"^[0-9a-f-]{36}$")
 
 class WindowsDeploymentExecutionService:
     remote_script = r"C:\Mining360\control\deploy_release.ps1"
+    remote_release_bundle_template = r"C:\Mining360\control\release-{job_id}.bundle"
     remote_media_archive_template = r"C:\Mining360\control\report-media-{job_id}.zip"
     allowed_media_extensions = {".jpg", ".jpeg", ".png", ".webp"}
     max_media_file_bytes = 10 * 1024 * 1024
@@ -44,6 +46,7 @@ class WindowsDeploymentExecutionService:
         remote = DeploymentRemoteReadService()
         transport = remote._connect(target, timeout=30)
         media_archive = None
+        local_bundle = None
         try:
             prepare = self._powershell_command(
                 "New-Item -ItemType Directory -Path 'C:\\Mining360\\control' -Force | Out-Null"
@@ -55,6 +58,10 @@ class WindowsDeploymentExecutionService:
             try:
                 with local_script.open("rb") as source_file:
                     sftp.putfo(source_file, self.remote_script)
+                local_bundle = self._build_release_bundle(source["git_executable"], commit, job_id)
+                remote_bundle = self.remote_release_bundle_template.format(job_id=job_id)
+                with local_bundle.open("rb") as bundle_file:
+                    sftp.putfo(bundle_file, remote_bundle)
                 media_archive, _media_summary = self._build_report_media_archive()
                 if media_archive is not None:
                     remote_media_archive = self.remote_media_archive_template.format(job_id=job_id)
@@ -65,11 +72,14 @@ class WindowsDeploymentExecutionService:
                 sftp.close()
             command = self._powershell_command(
                 "& 'C:\\Mining360\\control\\deploy_release.ps1' "
-                f"-Commit '{commit}' -RepositoryUrl '{source['repository']}' -JobId '{job_id}'"
+                f"-Commit '{commit}' -RepositoryUrl '{source['repository']}' -JobId '{job_id}' "
+                f"-RepositoryBundle '{remote_bundle}'"
             )
             result = remote._execute(transport, "deploy_release", command, 3600)
         finally:
             transport.close()
+            if local_bundle is not None:
+                local_bundle.unlink(missing_ok=True)
         payload = self._last_json_object(result.get("stdout", ""), required=False)
         if not result["success"]:
             if payload:
@@ -83,6 +93,37 @@ class WindowsDeploymentExecutionService:
         if payload.get("status") != "Succeeded":
             raise RuntimeError(payload.get("message") or "The deployment did not complete successfully.")
         return payload
+
+    @staticmethod
+    def _build_release_bundle(git_executable: str, commit: str, job_id: str) -> Path:
+        bundle_directory = Path(settings.BASE_DIR) / ".deployment-cache"
+        bundle_directory.mkdir(exist_ok=True)
+        bundle_path = bundle_directory / f"release-{job_id}.bundle"
+        try:
+            head = subprocess.run(
+                [git_executable, "rev-parse", "HEAD"],
+                cwd=settings.BASE_DIR,
+                check=True,
+                capture_output=True,
+                text=True,
+                timeout=30,
+                env={**os.environ, "GIT_TERMINAL_PROMPT": "0"},
+            ).stdout.strip().lower()
+            if head != commit:
+                raise RuntimeError("The requested offline release is not the current immutable Git commit.")
+            subprocess.run(
+                [git_executable, "bundle", "create", str(bundle_path), "HEAD"],
+                cwd=settings.BASE_DIR,
+                check=True,
+                capture_output=True,
+                text=True,
+                timeout=180,
+                env={**os.environ, "GIT_TERMINAL_PROMPT": "0"},
+            )
+            return bundle_path
+        except Exception:
+            bundle_path.unlink(missing_ok=True)
+            raise
 
     @classmethod
     def _build_report_media_archive(cls):

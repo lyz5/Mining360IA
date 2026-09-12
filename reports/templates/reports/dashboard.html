@@ -81,13 +81,27 @@
             <div class="analysis-breadcrumb" data-breadcrumb aria-label="Analysis path"></div>
 
             <section class="availability-stage" aria-labelledby="availability-title">
-                <div class="availability-hero" aria-live="polite">
+                <div class="availability-hero" data-export-visual="physical-availability" data-export-ready="false" aria-live="polite">
                     <div class="availability-hero__heading">
                         <div>
                             <p class="command-kicker" id="availability-title">Physical Availability</p>
                             <span data-period-label>Year to Date</span>
+                            <p data-export-context data-availability-export-context hidden></p>
                         </div>
-                        <span class="availability-status" data-availability-status hidden></span>
+                        <div class="availability-heading-actions">
+                            <span class="availability-status" data-availability-status hidden></span>
+                            <button
+                                type="button"
+                                class="visual-copy-action"
+                                data-copy-physical-availability
+                                data-export-ignore="true"
+                                title="Copy chart"
+                                aria-label="Copy Physical Availability chart to clipboard"
+                                data-label-en="Copy Physical Availability chart to clipboard"
+                                data-label-fr="Copier le graphique de disponibilité physique dans le presse-papiers"
+                                disabled
+                            ><span class="visual-copy-icon" aria-hidden="true"></span></button>
+                        </div>
                     </div>
                     <div class="availability-ring" data-ring role="img" aria-label="Physical Availability loading">
                         <div class="availability-ring__inner">
@@ -108,13 +122,26 @@
                     <p class="data-through" data-data-through>Finding the latest available data date...</p>
                 </div>
 
-                <div class="trend-panel">
+                <div class="trend-panel" data-export-visual="availability-trend" data-export-ready="false">
                     <div class="section-heading-row">
                         <div>
                             <p class="command-kicker">Trend</p>
                             <h2>Availability Trend</h2>
+                            <p data-export-context data-trend-export-context hidden></p>
                         </div>
-                        <span class="updating-indicator" data-updating hidden>Updating...</span>
+                        <div class="visual-actions" data-export-ignore="true">
+                            <span class="updating-indicator" data-updating hidden>Updating...</span>
+                            <button
+                                type="button"
+                                class="visual-copy-action"
+                                data-copy-availability-trend
+                                title="Copy chart"
+                                aria-label="Copy Availability Trend chart to clipboard"
+                                data-label-en="Copy Availability Trend chart to clipboard"
+                                data-label-fr="Copier le graphique de tendance de disponibilité dans le presse-papiers"
+                                disabled
+                            ><span class="visual-copy-icon" aria-hidden="true"></span></button>
+                        </div>
                     </div>
                     <div class="trend-chart" data-trend-chart role="img" aria-label="Availability trend loading">
                         <div class="trend-skeleton" aria-hidden="true"></div>
@@ -192,7 +219,8 @@
                 <button type="button" data-retry>Retry</button>
             </section>
         </main>
-        <script src="{% static 'reports/homepage_command_center.js' %}?v=20260821-3" defer></script>
+        <script src="{% static 'reports/visual_export.js' %}?v=20260901-1" defer></script>
+        <script src="{% static 'reports/homepage_command_center.js' %}?v=20260901-1" defer></script>
     {% else %}
         <main class="app-shell">
             <header class="topbar">

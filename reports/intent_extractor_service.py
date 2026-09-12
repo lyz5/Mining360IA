@@ -9,6 +9,7 @@ from .machine_performance_intent_service import (
     enrich_machine_performance_intent,
 )
 from .openai_service import extract_intent as openai_extract_intent
+from .temporal_expression_resolution_service import resolve_temporal_expression
 
 
 MONTH_ALIASES = {
@@ -119,6 +120,18 @@ def _detect_metric(question_text: str, section_code: str) -> str | None:
 
 def _extract_period(question_text: str) -> str | None:
     text = _normalize(question_text)
+    rolling_match = re.search(
+        r"\b(?:last|rolling|trailing)\s+(\d{1,3})\s+months?\b"
+        r"|\b(\d{1,3})\s+(?:derniers?\s+mois|mois\s+glissants?)\b",
+        text,
+    )
+    if rolling_match:
+        months = int(rolling_match.group(1) or rolling_match.group(2))
+        if 1 <= months <= 120:
+            return f"last {months} months"
+    temporal = resolve_temporal_expression(question_text)
+    if temporal and temporal.get("type") == "month_range":
+        return temporal["value"]
     relative_periods = (
         (
             "year to date",
@@ -172,6 +185,15 @@ def _extract_value(question_text: str, entity_type: str) -> str | None:
     text = str(question_text or "")
     lowered = text.lower()
     if entity_type == "minesite":
+        fleet_match = re.search(
+            r"(?:flotte|fleet|parc\s+de\s+machines|machines\s+sur\s+site)"
+            r"\s+(?:de\s+la|du|de|of|at|for|pour|[àa])\s+"
+            r"([a-z0-9][a-z0-9 /_-]*?)(?=\s*(?:,|;|\?|$|\b(?:par|by|en|in|model|mod[eè]le)\b))",
+            text,
+            re.I,
+        )
+        if fleet_match:
+            return fleet_match.group(1).strip()
         match = re.search(
             r"(?:minesite|mine ?site|site(?:\s+minier)?)\s*(?:[:=]|de|of)?\s+"
             r"([a-z0-9][a-z0-9 /_-]*?)(?=\s*(?:,|;|\?|$|\b(?:en|in|pour|for|ytd|year|annee|année)\b))",
@@ -224,6 +246,15 @@ def _extract_value(question_text: str, entity_type: str) -> str | None:
         )
         if match:
             return match.group(1).strip().upper()
+        if re.search(r"(?:open|ouvre|ouvrir|affiche).*(?:report|rapport)", text, re.I):
+            match = re.search(
+                r"(?:machine|equipment|[eé]quipement)\s+([a-z0-9][a-z0-9./_-]*\d[a-z0-9./_-]*)",
+                text,
+                re.I,
+            )
+            if match:
+                return match.group(1).strip().upper()
+    if entity_type == "equipment":
         match = re.search(
             r"(?:machine|equipment|[eé]quipement)\s+([a-z0-9][a-z0-9./_-]*\d[a-z0-9./_-]*)",
             text,
@@ -270,6 +301,30 @@ def _build_fallback_intent(question_text: str, section_code: str | None = None) 
         value = _extract_value(question_text, code)
         if value:
             filters[code] = value
+    if _detect_intent_type(question_text) == "powerbi_navigation" and filters.get("serial_number"):
+        filters.pop("equipment", None)
+    if metric == "availability" and not any(filters.get(code) for code in ("equipment", "serial_number", "model")):
+        identifier_match = re.search(
+            r"(?:physical\s+availability|availability|disponibilit[eé]\s+physique|disponibilit[eé])"
+            r"\s+(?:of|for|de|du|pour)\s+"
+            r"((?=[a-z0-9.-]*[a-z])(?=[a-z0-9.-]*\d)[a-z0-9][a-z0-9.-]{3,})"
+            r"(?=\s*(?:\?|$|\b(?:at|on|over|during|in|sur|en|a|à|au|ytd|mtd|year|month|last)\b))",
+            str(question_text or ""),
+            re.I,
+        )
+        identifier = identifier_match.group(1) if identifier_match else ""
+        if not identifier:
+            mixed_tokens = [
+                token for token in re.findall(r"(?<!\w)[a-z0-9][a-z0-9.-]{3,}(?!\w)", str(question_text or ""), re.I)
+                if re.search(r"[a-z]", token, re.I) and re.search(r"\d", token)
+            ]
+            identifier = mixed_tokens[-1] if mixed_tokens else ""
+        if identifier:
+            identifier = identifier.strip(" .?!,;:").upper()
+            if re.fullmatch(r"[A-Z]{1,3}-?\d{2,3}", identifier):
+                filters["equipment"] = identifier
+            else:
+                filters["serial_number"] = identifier
     if "period" in [item.get("filter_code") for item in section_payload.get("filters", [])]:
         period_value = _extract_period(question_text)
         if period_value:
@@ -313,6 +368,17 @@ def extract_intent(question_text: str, section_code: str | None = None) -> dict:
     # business intent is already resolved locally.
     if fallback.get("metric") == "parts_sales_ytd":
         return fallback
+    if fallback.get("intent_type") in {
+        "fleet_inventory", "get_site_fleet", "get_site_fleet_by_model",
+        "get_site_model_fleet", "get_fleet_count", "lookup_equipment_by_serial",
+        "lookup_equipment_by_code", "export_current_fleet",
+    }:
+        return enrich_machine_performance_intent(fallback, question_text)
+    if fallback.get("capability") == "fleet_performance":
+        # Fleet Performance queries have a closed metric and operation grammar.
+        # Keep clear questions deterministic and preserve provider usage for
+        # genuinely ambiguous language only.
+        return enrich_machine_performance_intent(fallback, question_text)
     if fallback.get("metric") == "availability" or fallback.get("intent_type") == "powerbi_navigation":
         return enrich_machine_performance_intent(fallback, question_text)
     try:

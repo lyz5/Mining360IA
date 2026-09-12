@@ -538,6 +538,70 @@
     font-weight: 700;
 }
 
+.availability-heading-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.visual-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.visual-copy-action {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    background: transparent;
+    color: #344054;
+    cursor: pointer;
+}
+
+.visual-copy-action:hover { border-color: #d0d5dd; background: #f7f8fa; color: #172033; }
+.visual-copy-action:focus-visible { outline: 3px solid rgba(255, 194, 14, .38); outline-offset: 2px; }
+.visual-copy-action:disabled { cursor: wait; opacity: .45; }
+.visual-copy-icon { position: relative; width: 16px; height: 16px; }
+.visual-copy-icon::before,
+.visual-copy-icon::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1.7px solid currentColor;
+    border-radius: 2px;
+}
+.visual-copy-icon::before { inset: 1px auto auto 1px; opacity: .65; }
+.visual-copy-icon::after { inset: 5px 1px 1px 5px; background: #fff; }
+
+.visual-export-notice {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: min(460px, calc(100vw - 32px));
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid #b9e4cf;
+    border-radius: 7px;
+    background: #ecfdf3;
+    box-shadow: 0 12px 28px rgba(16, 24, 40, .16);
+    color: #05603a;
+    font-size: 13px;
+    font-weight: 700;
+}
+.visual-export-notice.is-error { border-color: #f5cf9b; background: #fff8e8; color: #7a4b00; }
+.visual-export-notice button { min-height: 36px; white-space: nowrap; }
+
 .trend-chart {
     position: relative;
     min-width: 0;
@@ -887,6 +951,7 @@
     .breakdown-heading { flex-direction: column; }
     .breakdown-order { width: 100%; }
     .summary-strip > div { padding: 11px 12px; }
+    .visual-export-notice { right: 16px; bottom: 88px; left: 16px; align-items: stretch; flex-direction: column; }
 }
 
 @media (max-width: 699px) {

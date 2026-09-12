@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import json
+import re
 import time
+import uuid
 
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
@@ -316,6 +318,11 @@ def interaction_embed_config_api(request, report_id):
         return JsonResponse({"ok": False, "error": "This report mapping is not validated."}, status=403)
     try:
         started = time.perf_counter()
+        open_request_id = re.sub(r"[^A-Za-z0-9._-]", "", str(
+            request.headers.get("X-Report-Open-ID")
+            or request.GET.get("open_request_id")
+            or uuid.uuid4()
+        ))[:100] or str(uuid.uuid4())
         role = (
             request.GET.get("role")
             if is_platform_admin(request.user)
@@ -336,12 +343,14 @@ def interaction_embed_config_api(request, report_id):
             effective_username=security["effective_username"],
             require_effective_identity=security["restricted"],
         )
+        config["embedSessionId"] = open_request_id
         response = JsonResponse({
             "ok": True,
             "config": config,
         })
         response["Server-Timing"] = f'embed_config;dur={(time.perf_counter() - started) * 1000:.1f}'
         response["Cache-Control"] = "private, no-store"
+        response["X-Report-Open-ID"] = open_request_id
         return response
     except InteractiveAuthenticationRequired:
         return JsonResponse({

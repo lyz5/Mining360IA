@@ -11596,6 +11596,82 @@ body.data-browser-fullscreen .data-browser-layout {
     margin: 10px auto;
 }
 
+/* Chatbot production readiness ----------------------------------------- */
+.chat-readiness-shell {
+    display: grid;
+    gap: 20px;
+    max-width: 1500px;
+}
+
+.chat-readiness-header,
+.chat-readiness-section > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.chat-readiness-header h1,
+.chat-readiness-section h2 {
+    margin: 0;
+}
+
+.chat-readiness-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-block: 1px solid var(--border);
+}
+
+.chat-readiness-metrics > div {
+    display: grid;
+    gap: 4px;
+    padding: 18px;
+    border-right: 1px solid var(--border);
+}
+
+.chat-readiness-metrics > div:last-child {
+    border-right: 0;
+}
+
+.chat-readiness-metrics strong {
+    font-size: 24px;
+}
+
+.chat-readiness-metrics span,
+.chat-readiness-section > header span {
+    color: var(--muted);
+}
+
+.chat-readiness-section {
+    display: grid;
+    gap: 10px;
+}
+
+@media (max-width: 760px) {
+    .chat-readiness-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .chat-readiness-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .chat-readiness-metrics > div:nth-child(2) {
+        border-right: 0;
+    }
+}
+
+.ai-page-body #ai-cancel-execution {
+    margin-left: auto;
+    padding: 6px 10px;
+    border: 1px solid var(--ai-border);
+    border-radius: 5px;
+    background: #fff;
+    color: var(--ai-text);
+    cursor: pointer;
+}
+
 .ai-page-body .ai-chat-empty-state {
     min-height: calc(100dvh - 190px);
 }
@@ -11617,6 +11693,8 @@ body.data-browser-fullscreen .data-browser-layout {
 }
 
 .ai-empty-prompts button {
+    display: grid;
+    gap: 4px;
     min-height: 44px;
     padding: 10px 12px;
     border: 1px solid var(--ai-border);
@@ -11631,6 +11709,84 @@ body.data-browser-fullscreen .data-browser-layout {
 .ai-empty-prompts button:focus-visible {
     border-color: #d2af00;
     background: #fffdf2;
+}
+
+.ai-empty-prompts button strong {
+    font-size: 13px !important;
+}
+
+.ai-empty-prompts button span {
+    color: var(--ai-muted);
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.ai-guided-suggestion {
+    width: min(92vw, 520px);
+    padding: 0;
+    border: 1px solid var(--ai-border);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ai-text);
+    box-shadow: 0 18px 60px rgba(17, 24, 39, 0.22);
+}
+
+.ai-guided-suggestion::backdrop {
+    background: rgba(17, 24, 39, 0.45);
+}
+
+.ai-guided-suggestion form,
+.ai-guided-suggestion__fields {
+    display: grid;
+    gap: 14px;
+}
+
+.ai-guided-suggestion header,
+.ai-guided-suggestion footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px 16px;
+}
+
+.ai-guided-suggestion header {
+    border-bottom: 1px solid var(--ai-border);
+}
+
+.ai-guided-suggestion footer {
+    justify-content: flex-end;
+    border-top: 1px solid var(--ai-border);
+}
+
+.ai-guided-suggestion header button {
+    width: 36px;
+    height: 36px;
+    border: 0;
+    background: transparent;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.ai-guided-suggestion__fields {
+    padding: 16px;
+}
+
+.ai-guided-suggestion__fields label {
+    display: grid;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.ai-guided-suggestion__fields select,
+.ai-guided-suggestion__fields input {
+    min-height: 42px;
+    padding: 8px 10px;
+    border: 1px solid var(--ai-border);
+    border-radius: 5px;
+    background: #fff;
+    color: var(--ai-text);
 }
 
 .ai-page-body .downtime-explorer {
@@ -11705,6 +11861,10 @@ body.data-browser-fullscreen .data-browser-layout {
 
 @media (max-width: 720px) {
     .ai-page-body .app-nav {
+        position: fixed;
+        inset: 0 auto 0 0;
+        width: var(--sidebar-width);
+        height: 100dvh;
         transform: translateX(-100%);
     }
 
@@ -11935,6 +12095,47 @@ body.data-browser-fullscreen .data-browser-layout {
     font-size: 16px;
 }
 
+.ai-fleet-performance > header > div {
+    display: grid;
+    gap: 3px;
+}
+
+.ai-fleet-performance > header small {
+    color: #667085;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ai-fleet-performance-metrics {
+    margin-top: 0;
+}
+
+.ai-performance-coverage {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    min-width: 0;
+    padding: 10px 0;
+    border-top: 1px solid #e8ecf2;
+    color: #475467;
+}
+
+.ai-performance-coverage strong {
+    color: #17213a;
+}
+
+.ai-performance-coverage small {
+    color: #667085;
+}
+
+@media (max-width: 640px) {
+    .ai-performance-coverage {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3px;
+    }
+}
+
 .ai-adaptive-response .ai-analysis-context__chips {
     display: flex;
     flex-wrap: wrap;
@@ -12027,4 +12228,202 @@ body.data-browser-fullscreen .data-browser-layout {
 
 .ai-powerbi-connect {
     margin-left: 8px;
+}
+
+.ai-fleet-inventory {
+    display: grid;
+    gap: 14px;
+}
+
+.ai-fleet-inventory > header,
+.ai-fleet-inventory > footer,
+.ai-fleet-toolbar,
+.ai-fleet-metrics,
+.ai-fleet-pager {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ai-fleet-inventory > header,
+.ai-fleet-inventory > footer {
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.ai-fleet-inventory header > div:first-child {
+    display: grid;
+    gap: 3px;
+}
+
+.ai-fleet-inventory header strong {
+    color: #172b3a;
+    font-size: 18px;
+}
+
+.ai-fleet-metrics span {
+    padding: 7px 10px;
+    border: 1px solid #d8dee8;
+    border-radius: 6px;
+    color: #526070;
+    font-size: 12px;
+}
+
+.ai-fleet-models {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+}
+
+.ai-fleet-models button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 40px;
+    padding: 7px 10px;
+    border: 1px solid #d8dee8;
+    border-radius: 6px;
+    background: #fff;
+    color: #243746;
+    white-space: nowrap;
+}
+
+.ai-fleet-models button span {
+    color: #667085;
+}
+
+.ai-fleet-toolbar {
+    flex-wrap: wrap;
+}
+
+.ai-fleet-toolbar label:first-child {
+    flex: 1 1 240px;
+}
+
+.ai-fleet-toolbar input,
+.ai-fleet-toolbar select,
+.ai-fleet-page-size,
+.ai-fleet-download,
+.ai-fleet-pager button {
+    min-height: 42px;
+    border: 1px solid #cfd7e3;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.ai-fleet-toolbar input {
+    width: 100%;
+    padding: 0 12px;
+}
+
+.ai-fleet-toolbar select,
+.ai-fleet-page-size,
+.ai-fleet-download {
+    padding: 0 12px;
+}
+
+.ai-fleet-download {
+    border-color: #d8b400;
+    background: #ffd400;
+    color: #172b3a;
+    font-weight: 700;
+}
+
+.ai-fleet-pager button {
+    width: 42px;
+    padding: 0;
+    font-size: 20px;
+}
+
+.ai-equipment-detail dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    border-top: 1px solid #e3e7ee;
+}
+
+.ai-equipment-detail dl div {
+    padding: 12px 0;
+    border-bottom: 1px solid #e3e7ee;
+}
+
+.ai-equipment-detail dt {
+    color: #667085;
+    font-size: 12px;
+}
+
+.ai-equipment-detail dd {
+    margin: 3px 0 0;
+    color: #172b3a;
+    font-weight: 600;
+}
+
+@media (max-width: 640px) {
+    .ai-fleet-toolbar > *,
+    .ai-fleet-download {
+        width: 100%;
+    }
+
+    .ai-equipment-detail dl {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-fleet-inventory .ai-adaptive-table td {
+        display: grid;
+        grid-template-columns: minmax(104px, 40%) minmax(0, 1fr);
+        gap: 12px;
+        align-items: baseline;
+    }
+
+    .ai-fleet-inventory .ai-adaptive-table td::before {
+        content: attr(data-label);
+        color: #667085;
+        font-size: 12px;
+        font-weight: 700;
+    }
+}
+.ai-capability-catalog,
+.ai-answerability-card {
+    width: min(880px, 100%);
+    margin-top: 12px;
+    border: 1px solid #dce2e8;
+    border-radius: 8px;
+    background: #fff;
+    color: #172033;
+}
+
+.ai-capability-catalog > header,
+.ai-answerability-card > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e7ebf0;
+}
+
+.ai-capability-catalog > header small { color: #8a6a00; font-weight: 800; text-transform: uppercase; }
+.ai-capability-catalog > header strong { font-size: 17px; }
+.ai-capability-catalog__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ai-capability-category { min-width: 0; padding: 16px; border-bottom: 1px solid #edf0f3; }
+.ai-capability-category:nth-child(odd) { border-right: 1px solid #edf0f3; }
+.ai-capability-category h3 { margin: 0 0 12px; font-size: 14px; }
+.ai-capability-category article + article { margin-top: 14px; padding-top: 14px; border-top: 1px solid #edf0f3; }
+.ai-capability-category article > div:first-child { display: flex; align-items: center; gap: 8px; }
+.ai-capability-category article span { padding: 2px 6px; border-radius: 4px; background: #fff6d7; font-size: 10px; }
+.ai-capability-category p { margin: 5px 0 9px; color: #667085; font-size: 13px; }
+.ai-capability-examples { display: flex; flex-wrap: wrap; gap: 6px; }
+.ai-capability-examples button { min-height: 40px; padding: 7px 10px; border: 1px solid #dce2e8; border-radius: 6px; background: #f8fafc; color: #344054; text-align: left; }
+.ai-capability-examples button:hover { border-color: #ffc20e; background: #fffdf5; }
+.ai-capability-examples button:focus-visible { outline: 3px solid rgba(255, 194, 14, .38); outline-offset: 2px; }
+.ai-answerability-card > header span { padding: 4px 7px; border-radius: 4px; background: #f2f4f7; color: #475467; font-size: 10px; font-weight: 800; }
+.ai-answerability-card > div { padding: 14px 16px; }
+.ai-answerability-card p { margin: 0 0 8px; color: #667085; }
+.ai-answerability-card ul { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.ai-answerability-card li { padding: 5px 8px; border-radius: 4px; background: #f2f4f7; font-size: 12px; }
+
+@media (max-width: 700px) {
+    .ai-capability-catalog__grid { grid-template-columns: 1fr; }
+    .ai-capability-category:nth-child(odd) { border-right: 0; }
 }

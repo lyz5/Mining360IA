@@ -9,6 +9,7 @@ from .ai_conversation_artifact_service import artifacts_from_response
 from .ai_conversation_service import create_conversation
 from .conversation_follow_up_resolution_service import (
     ConversationFollowUpResolutionService,
+    _is_explicit_standalone,
     get_last_successful_compatible_context,
 )
 from .models import (
@@ -18,13 +19,17 @@ from .models import (
     AIConversationMessage,
     KnowledgeSynonym,
 )
-from .temporal_expression_resolution_service import resolve_temporal_expression
+from .temporal_expression_resolution_service import normalize_period_value, resolve_temporal_expression
 
 
 User = get_user_model()
 
 
 class TemporalExpressionResolutionTests(SimpleTestCase):
+    def test_machine_availability_request_is_not_treated_as_context_follow_up(self):
+        self.assertTrue(_is_explicit_standalone("Availability of 6B900140 on YTD"))
+        self.assertTrue(_is_explicit_standalone("Availability of HT005 on YTD"))
+
     def test_bilingual_month_is_canonical(self):
         for expression in ("pour le mois de Juin 2026", "for June 2026"):
             with self.subTest(expression=expression):
@@ -37,6 +42,39 @@ class TemporalExpressionResolutionTests(SimpleTestCase):
     def test_relative_month_is_deterministic(self):
         result = resolve_temporal_expression("last month", reference_date=date(2026, 1, 15))
         self.assertEqual(result["value"], "2025-12")
+
+    def test_ytd_at_start_of_message_and_saved_label_are_canonical(self):
+        result = resolve_temporal_expression(
+            "YTD HMS for Fekola",
+            reference_date=date(2026, 9, 2),
+        )
+        self.assertEqual(result["type"], "year_to_date")
+        self.assertEqual(
+            normalize_period_value(result["value"], reference_date=date(2026, 9, 2)),
+            "year to date",
+        )
+
+    def test_parameterized_rolling_months_are_canonical(self):
+        for expression in ("last 6 months", "6 derniers mois", "6 mois glissants"):
+            with self.subTest(expression=expression):
+                result = resolve_temporal_expression(
+                    expression,
+                    reference_date=date(2026, 9, 2),
+                )
+                self.assertEqual(result["value"], "last 6 months")
+                self.assertEqual(result["months"], 6)
+                self.assertEqual(normalize_period_value(result["value"]), "last 6 months")
+
+    def test_month_range_uses_complete_month_boundaries(self):
+        for expression in ("May to July", "de mai à juillet"):
+            with self.subTest(expression=expression):
+                result = resolve_temporal_expression(
+                    expression,
+                    reference_date=date(2026, 9, 3),
+                )
+                self.assertEqual(result["value"], "2026-05/2026-07")
+                self.assertEqual(result["start_date"], "2026-05-01")
+                self.assertEqual(result["end_date"], "2026-07-31")
 
 
 @override_settings(

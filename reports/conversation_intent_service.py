@@ -16,7 +16,11 @@ def _normalize(value: str) -> str:
 
 def _language(question: str) -> str:
     text = _normalize(question)
-    french = {"bonjour", "salut", "merci", "accord", "questions", "disponibilite", "aide", "revoir"}
+    french = {
+        "bonjour", "bonsoir", "salut", "merci", "accord", "questions", "disponibilite",
+        "aide", "revoir", "que", "peux", "faire", "comment", "capacites", "fonctionnalites",
+        "puis", "demander", "connaissance", "equipement",
+    }
     return "fr" if french.intersection(text.split()) else "en"
 
 
@@ -28,7 +32,9 @@ THANKS_PATTERNS = (r"^(?:merci|merci beaucoup|thanks|thank you|many thanks)[!. ]
 ACK_PATTERNS = (r"^(?:ok|okay|d accord|entendu|compris|got it|all right|sounds good)[!. ]*$",)
 FAREWELL_PATTERNS = (r"^(?:au revoir|a bientot|bye|goodbye|see you)[!. ]*$",)
 CAPABILITY_PATTERNS = (
-    r"\b(?:what can you do|how can you help|help me|que peux tu faire|comment peux tu m aider|aide moi)\b",
+    r"^(?:help|aide)[!. ]*$",
+    r"\b(?:what can you do|how can you help|show me your capabilities|what can i ask you|give me example questions|what can you analyze|what features are available)\b",
+    r"\b(?:que peux tu faire|qu est ce que tu peux faire|que sais tu faire|comment peux tu m aider|montre moi tes fonctionnalites|quelles sont tes capacites|donne moi des exemples de questions|aide moi|que puis je te demander|qu est ce que mining 360 peut analyser)\b",
 )
 TOPIC_SETTING_PATTERNS = (
     r"\b(?:i have|i've got|i want to ask|i would like to ask).*(?:question|questions).*(?:availability|downtime|maintenance|reliability)\b",
@@ -70,7 +76,14 @@ def classify_conversation_intent(question: str) -> dict:
     elif _matches(FAREWELL_PATTERNS, normalized):
         intent = "farewell"
     elif _matches(CAPABILITY_PATTERNS, normalized):
-        intent = "capabilities"
+        if any(marker in normalized for marker in ("this machine", "this equipment", "cet equipement", "cette machine", "current context")):
+            intent = "capability_for_current_context"
+        elif any(marker in normalized for marker in ("performance", "machines", "machine performance", "reporting", "knowledge", "connaissance")):
+            intent = "capability_by_domain"
+        elif normalized in {"help", "aide", "aide moi"}:
+            intent = "help_request"
+        else:
+            intent = "capability_overview"
     elif _matches(TOPIC_SETTING_PATTERNS, normalized):
         intent = "small_talk"
     elif _matches(FOLLOW_UP_PATTERNS, normalized):
@@ -83,8 +96,15 @@ def classify_conversation_intent(question: str) -> dict:
         "topic": _topic(normalized),
         "is_conversational": intent in {
             "greeting", "thanks", "acknowledgement", "farewell",
-            "capabilities", "small_talk",
+            "capability_overview", "capability_by_domain",
+            "capability_for_current_context", "help_request", "small_talk",
         },
+        "domain": (
+            "machine_performance" if any(marker in normalized for marker in ("performance", "machine", "equipement"))
+            else "reporting" if "report" in normalized
+            else "mining_knowledge" if any(marker in normalized for marker in ("knowledge", "connaissance"))
+            else ""
+        ),
     }
 
 
@@ -97,21 +117,27 @@ def conversational_response(classification: dict) -> str:
             "greeting": "Bonjour ! Comment puis-je vous aider aujourd'hui ?",
             "thanks": "Avec plaisir.",
             "acknowledgement": "D'accord.",
-            "farewell": "Au revoir !",
-            "capabilities": (
+            "farewell": "À bientôt.",
+            "capability_overview": (
                 "Je peux analyser les performances des équipements, la disponibilité, les downtimes et les causes racines, "
                 "ou rechercher des procédures et Best Practices validées."
             ),
+            "capability_by_domain": "Je peux présenter les capacités actuellement configurées pour ce domaine.",
+            "capability_for_current_context": "Je peux présenter les analyses disponibles pour le contexte sélectionné.",
+            "help_request": "Je peux vous présenter les capacités disponibles dans Mining 360.",
         },
         "en": {
-            "greeting": "Hello! How can I help you today?",
+            "greeting": "Hello! How can I help you with Mining 360 today?",
             "thanks": "You're welcome.",
             "acknowledgement": "Understood.",
-            "farewell": "Goodbye!",
-            "capabilities": (
+            "farewell": "See you soon.",
+            "capability_overview": (
                 "I can analyze equipment performance, availability, downtime and root causes, "
                 "or search validated procedures and Best Practices."
             ),
+            "capability_by_domain": "I can show the capabilities currently configured for this domain.",
+            "capability_for_current_context": "I can show the analyses available for the selected context.",
+            "help_request": "I can show the capabilities available in Mining 360.",
         },
     }
     if intent == "small_talk" and topic == "availability":
@@ -154,6 +180,50 @@ def handle_conversational_message(question: str, *, conversation_id: str, user) 
     if not classification["is_conversational"]:
         return None
     persist_conversation_topic(conversation_id, user, classification)
+    if classification["intent"] in {
+        "capability_overview", "capability_by_domain",
+        "capability_for_current_context", "help_request",
+    }:
+        from .ai_capability_discovery_service import AICapabilityDiscoveryService
+        from .ai_feature_rollout import feature_enabled
+
+        if feature_enabled("ENABLE_CHATBOT_CAPABILITY_DISCOVERY", user):
+            service = AICapabilityDiscoveryService()
+            context = service.active_context(user, conversation_id)
+            domain = classification.get("domain") if classification["intent"] == "capability_by_domain" else ""
+            catalog = service.get_available_capabilities(
+                user,
+                context if classification["intent"] == "capability_for_current_context" else {},
+                language=classification["language"],
+                domain=domain,
+            )
+            service.record_event(user, conversation_id)
+            answer = (
+                "Je peux vous aider à analyser les données et connaissances validées actuellement configurées dans Mining 360 pour votre profil."
+                if classification["language"] == "fr" else
+                "I can help you analyze the Mining 360 data and validated knowledge currently available for your profile."
+            )
+            if not catalog["capability_count"]:
+                answer = (
+                    "Aucune capacité prête n’est actuellement disponible pour votre profil."
+                    if classification["language"] == "fr" else
+                    "No ready capability is currently available for your profile."
+                )
+            return {
+                "ok": True,
+                "chat_message": answer,
+                "content": {"text": answer, "language": classification["language"]},
+                "answer": {"answer": answer, "interpretation": answer, "rows": [], "summary": []},
+                "conversation_intent": classification,
+                "intent": {"intent_type": classification["intent"], "filters": {}},
+                "capability_catalog": catalog,
+                "presentation": {"template_code": "capability_overview", "template_version": "1.0"},
+                "rows": [],
+                "navigation": {},
+                "semantic_model_queried": False,
+                "provider_queried": False,
+                "requires_clarification": False,
+            }
     answer = conversational_response(classification)
     return {
         "ok": True,

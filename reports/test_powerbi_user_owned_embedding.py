@@ -77,6 +77,15 @@ class PowerBIUserOwnedEmbeddingTests(TestCase):
         self.assertFalse(config["settings"]["panes"]["pageNavigation"]["visible"])
         self.assertTrue(config["settings"]["panes"]["bookmarks"]["visible"])
 
+    @patch(
+        "reports.powerbi_embed_strategy.generate_report_embed_token",
+        return_value=("embed-token", 1788134400),
+    )
+    def test_app_owned_configuration_exposes_actual_embed_token_expiration(self, _token):
+        config = build_embed_configuration(type("Request", (), {"user": self.user})(), self._report())
+
+        self.assertEqual(config["expiresAt"], 1788134400)
+
     def test_powerapps_report_uses_user_owned_strategy(self):
         report = self._report(
             authentication_mode="user_owns_data",

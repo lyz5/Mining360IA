@@ -24,6 +24,12 @@
         eventsBound: false,
         switcherLoaded: false,
         switcherLoading: null,
+        initializeGeneration: 0,
+        viewerConfigAbort: null,
+        refreshStatusStarted: false,
+        initialContextApplied: false,
+        openRequestId: window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+        stableRuntime: root.dataset.stableRuntime !== "false",
         timings: { navigationStart: performance.now() },
     };
 
@@ -46,7 +52,8 @@
         try { payload = await response.json(); } catch (_error) { /* normalized below */ }
         if (!response.ok || payload.ok === false) {
             const error = new Error(payload.error || `Request failed (${response.status}).`);
-            error.code = payload.error_code || "request_failed";
+            error.code = payload.error_code || (response.status === 429 ? "POWERBI_RATE_LIMIT" : "request_failed");
+            error.status = response.status;
             throw error;
         }
         return payload;
@@ -71,6 +78,7 @@
     }
 
     function showError(error) {
+        if (["AbortError", "CancelledError"].includes(error?.name) || ["REQUEST_CANCELLED", "STALE_REQUEST"].includes(error?.code)) return;
         const panel = $("[data-runtime-error]");
         const message = $("[data-runtime-error-message]");
         if (message) message.textContent = error?.message || "Power BI returned an unexpected error.";
@@ -167,6 +175,14 @@
 
     async function applyFilters({ announce = true } = {}) {
         const previous = state.applied;
+        if (state.period === "custom" && state.startDate > state.endDate) {
+            const status = $("[data-filter-status]");
+            if (status) {
+                status.textContent = "Start Date must be before or equal to End Date.";
+                status.classList.add("error");
+            }
+            return;
+        }
         const instructions = [...state.contextFilters];
         const date = dateInstruction(state.period);
         if (date) instructions.unshift(date);
@@ -215,6 +231,8 @@
     }
 
     async function loadRefreshStatus() {
+        if (state.refreshStatusStarted) return;
+        state.refreshStatusStarted = true;
         try {
             const payload = await request(root.dataset.refreshUrl);
             const normalized = String(payload.status || "").toLowerCase();
@@ -239,6 +257,12 @@
             };
         }
         renderStatus();
+    }
+
+    function scheduleSecondaryData() {
+        const run = () => loadRefreshStatus();
+        if ("requestIdleCallback" in window) window.requestIdleCallback(run, { timeout: 3000 });
+        else window.setTimeout(run, 750);
     }
 
     function renderPeriods() {
@@ -320,9 +344,9 @@
 
     async function refreshReport() {
         try {
-            setCanvasState("Starting refresh...");
-            const payload = await request(root.dataset.refreshUrl, { method: "POST", headers: { "X-CSRFToken": csrfToken(), "Content-Type": "application/json" }, body: "{}" });
-            setCanvasState(payload.message || "Refresh started.");
+            setCanvasState("Reloading report view...");
+            await state.embed.refreshReport();
+            setCanvasState("Ready");
         } catch (error) { setCanvasState(error.message, true); }
     }
 
@@ -421,6 +445,12 @@
     }
 
     async function initialize() {
+        const generation = ++state.initializeGeneration;
+        state.viewerConfigAbort?.abort();
+        state.viewerConfigAbort = new AbortController();
+        state.refreshStatusStarted = false;
+        state.initialContextApplied = false;
+        state.timings = { navigationStart: performance.now() };
         const navMode = localStorage.getItem("mining360.viewer.navMode") || "compact";
         document.body.classList.toggle("nav-collapsed", navMode !== "expanded");
         if (!state.eventsBound) { bindEvents(); state.eventsBound = true; }
@@ -429,8 +459,17 @@
             embedConfigUrl: root.dataset.embedConfigTemplate,
             currentReportId: reportId,
             rlsRole: root.dataset.rlsRole,
+            openRequestId: state.openRequestId,
+            stableRuntime: state.stableRuntime,
             onEvent(event) {
-                if (event.type === "rendered") { $("[data-loading-state]").hidden = true; setCanvasState("Ready"); }
+                if (generation !== state.initializeGeneration) return;
+                if (event.type === "loaded") {
+                    setLoading("Applying selected context...");
+                    scheduleSecondaryData();
+                }
+                if (event.type === "rendered" && state.embed.lifecycle !== "ready") setCanvasState("Rendering visuals...");
+                if (event.type === "ready") setCanvasState("Ready");
+                if (event.type === "load_delayed") setCanvasState("Power BI is still preparing this report...");
                 if (event.type === "token_refresh_failed") setCanvasState("Your report session could not be renewed.", true);
             },
         });
@@ -445,7 +484,8 @@
                     state.timings.powerBILoaded = performance.now();
                 } catch (error) { embedError = error; }
             })();
-            const payload = await request(configUrl);
+            const payload = await request(configUrl, { signal: state.viewerConfigAbort.signal });
+            if (generation !== state.initializeGeneration) return;
             state.timings.viewerConfigReady = performance.now();
             state.config = payload;
             state.contextFilters = [...(payload.initial_context.filters || [])];
@@ -453,7 +493,7 @@
             $("[data-report-name]").textContent = payload.report.display_name;
             $("[data-report-breadcrumb-name]").textContent = payload.report.display_name;
             renderStatus();
-            loadRefreshStatus();
+            if (!state.stableRuntime) loadRefreshStatus();
             state.period = payload.initial_context.period;
             state.startDate = payload.initial_context.start_date;
             state.endDate = payload.initial_context.end_date;
@@ -469,6 +509,7 @@
                 $("[data-focus-toggle]").setAttribute("aria-label", "Exit Focus Mode");
             }
             await embedPromise;
+            if (generation !== state.initializeGeneration) return;
             if (embedError) throw embedError;
             const needsPages = payload.viewer.show_page_navigation || payload.initial_context.page || payload.viewer.default_page;
             const actualPages = needsPages ? await state.embed.getPages() : [];
@@ -480,18 +521,34 @@
             if (state.fitMode !== configuredFitMode) await setFitMode(state.fitMode);
             else $$('[data-fit-mode]').forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.fitMode === state.fitMode)));
             state.applied = null; updateApplyState();
-            if (payload.viewer.show_filter_bar && (payload.viewer.auto_apply_presets || payload.initial_context.filters.length)) await applyFilters({ announce: false });
+            if (
+                !state.initialContextApplied
+                && payload.viewer.show_filter_bar
+                && (payload.viewer.auto_apply_presets || payload.initial_context.filters.length)
+            ) {
+                state.initialContextApplied = true;
+                await applyFilters({ announce: false });
+            }
             else { state.applied = draft(); updateApplyState(); }
-            $("[data-loading-state]").hidden = true; setCanvasState("Ready");
+            state.embed.markReady({ reportId });
+            $("[data-loading-state]").hidden = true;
+            setCanvasState(state.embed.lifecycle === "ready" ? "Ready" : "Rendering visuals...");
             state.timings.ready = performance.now();
             window.dispatchEvent(new CustomEvent("mining360:report-ready", { detail: {
                 viewerConfigMs: Math.round(state.timings.viewerConfigReady - state.timings.navigationStart),
                 powerBILoadedMs: Math.round(state.timings.powerBILoaded - state.timings.navigationStart),
                 readyMs: Math.round(state.timings.ready - state.timings.navigationStart),
             } }));
-        } catch (error) { showError(error); }
+        } catch (error) {
+            if (generation === state.initializeGeneration) showError(error);
+        }
     }
 
-    $("[data-retry-embed]")?.addEventListener("click", () => { $("[data-runtime-error]").hidden = true; state.embed.reset(); initialize(); });
+    $("[data-retry-embed]")?.addEventListener("click", () => {
+        $("[data-runtime-error]").hidden = true;
+        state.embed?.dispose("retry");
+        state.openRequestId = window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+        initialize();
+    });
     initialize();
 }());

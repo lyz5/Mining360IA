@@ -83,6 +83,7 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
             "serial_number": ("EquipmentList_MiningProd", "SN", "Text"),
             "customer": ("MineSiteList_MiningProd", "CustomerCode", "Text"),
             "family": ("EquipmentList_MiningProd", "ParentProductGroup", "Text"),
+            "product_group": ("ModelList_MiningProd", "PrimeMovers", "Text"),
             "homepage_product_group": ("ModelList_MiningProd", "PrimeMovers", "Text"),
             "homepage_model_reference": ("ModelList_MiningProd", "Model", "Text"),
         }
@@ -360,6 +361,41 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
         self.assertIn('class="trend-target-label"', javascript)
         self.assertIn("`Target ${(Number(target) * 100).toFixed(1)}%`", javascript)
         self.assertIn(".trend-target-label", css)
+
+    def test_availability_trend_exposes_reusable_copy_chart_action(self):
+        self.client.force_login(self.user)
+        response = self.client.get(reverse("dashboard"))
+
+        self.assertContains(response, 'data-export-visual="availability-trend"')
+        self.assertContains(response, "data-copy-availability-trend")
+        self.assertContains(response, 'data-export-ignore="true"')
+        self.assertContains(response, "Copy Availability Trend chart to clipboard")
+        self.assertContains(response, "visual_export.js")
+
+    def test_physical_availability_exposes_reusable_copy_chart_action(self):
+        self.client.force_login(self.user)
+        response = self.client.get(reverse("dashboard"))
+
+        self.assertContains(response, 'data-export-visual="physical-availability"')
+        self.assertContains(response, "data-copy-physical-availability")
+        self.assertContains(response, "Copy Physical Availability chart to clipboard")
+        self.assertContains(response, 'data-export-ignore="true"')
+
+    def test_visual_export_contract_uses_png_clipboard_and_download_fallback(self):
+        exporter = Path(__file__).parent.joinpath(
+            "static/reports/visual_export.js"
+        ).read_text(encoding="utf-8")
+        command_center = Path(__file__).parent.joinpath(
+            "static/reports/homepage_command_center.js"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn('new ClipboardItem({ "image/png": blobOrPromise })', exporter)
+        self.assertIn('canvas.toBlob', exporter)
+        self.assertIn('scale: 2', command_center)
+        self.assertIn('Download PNG', exporter)
+        self.assertIn('Chart copied. Paste it into PowerPoint with Ctrl+V.', exporter)
+        self.assertIn('data-export-ignore', exporter)
+        self.assertNotIn("iframe", exporter.casefold())
 
     def test_homepage_has_branded_initial_loader(self):
         self.client.force_login(self.user)

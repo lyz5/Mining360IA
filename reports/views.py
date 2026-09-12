@@ -136,6 +136,12 @@ from .models import (
     AISemanticTable,
     AISynonym,
     AIVisualMapping,
+    AIAgent,
+    AIAgentCapability,
+    AIAnswerabilityConfiguration,
+    BusinessDataField,
+    SourcePrecedenceRule,
+    UnansweredInformationRequirement,
     BusinessPerformanceConfig,
     BusinessPerformanceMapping,
     DataBrowser,
@@ -3542,12 +3548,38 @@ def _execute_ai_ask(request, payload_override=None):
     if conversational:
         return JsonResponse(conversational)
 
+    from .answerability_assessment_service import handle_answerability_preflight
+    answerability_response = handle_answerability_preflight(
+        question,
+        user=request.user,
+        conversation_id=str(payload.get("conversation_id") or "").strip(),
+    )
+    if answerability_response:
+        return JsonResponse(answerability_response)
+
+    conversation_id = str(payload.get("conversation_id") or "").strip()
+    follow_up_resolution = {"is_follow_up": False, "requires_clarification": False}
+    if conversation_id:
+        from .conversation_follow_up_resolution_service import resolve_conversation_follow_up
+        follow_up_resolution = resolve_conversation_follow_up(
+            question,
+            conversation_id=conversation_id,
+            user=request.user,
+        )
+
     from .chat_routing_service import (
         answer_without_semantic_model,
         classify_chat_question,
     )
 
     routing = classify_chat_question(question, section_code=section_code)
+    if follow_up_resolution.get("is_follow_up") and not follow_up_resolution.get("requires_clarification"):
+        routing = {
+            **routing,
+            "route": "semantic_query",
+            "reason": "Validated conversational follow-up reuses the active analytical context.",
+            "requires_semantic_model": True,
+        }
 
     from .agent_router_service import multi_agent_enabled
     # Semantic-model questions use the controlled DAX orchestrator. Sending the
@@ -3625,6 +3657,12 @@ def _execute_ai_ask(request, payload_override=None):
                 "dataset_name": (payload.get("dataset_name") or "FPR Global DB + RLS").strip(),
                 "open_report": has_validated_report,
                 "debug_mode": _user_is_platform_admin(request.user),
+                "follow_up_resolution": follow_up_resolution,
+                "pre_extracted_intent": (
+                    follow_up_resolution.get("merged_intent")
+                    if follow_up_resolution.get("is_follow_up") and not follow_up_resolution.get("requires_clarification")
+                    else None
+                ),
             },
             conversation_context={
                 "conversation_id": str(payload.get("conversation_id") or "").strip(),
@@ -3939,7 +3977,7 @@ def ai_ask(request):
     )
     from .ai_conversation_service import (
         ConversationLimitReached,
-        create_conversation,
+        create_or_reuse_empty_conversation,
         owned_conversation,
         serialize_conversation,
     )
@@ -3949,7 +3987,7 @@ def ai_ask(request):
         conversation_record = (
             owned_conversation(request.user, conversation_id)
             if conversation_id
-            else create_conversation(request.user)
+            else create_or_reuse_empty_conversation(request.user)[0]
         )
         if conversation_record.status != "active":
             return JsonResponse(
@@ -3960,7 +3998,13 @@ def ai_ask(request):
             conversation_record,
             content=question,
             client_message_id=str(payload.get("client_message_id") or "").strip() or None,
-            metadata=payload.get("input_metadata") if isinstance(payload.get("input_metadata"), dict) else {},
+            idempotency_key=str(payload.get("idempotency_key") or "").strip() or None,
+            metadata={
+                **(payload.get("input_metadata") if isinstance(payload.get("input_metadata"), dict) else {}),
+                "source": str(payload.get("source") or "manual")[:40],
+                "suggestion_code": str(payload.get("suggestion_code") or "")[:140],
+                "guided_values": payload.get("guided_values") if isinstance(payload.get("guided_values"), dict) else {},
+            },
         )
         if not created:
             persisted = previous_persisted_response(user_message)
@@ -3992,6 +4036,164 @@ def ai_ask(request):
                 )
 
         assistant_message = create_assistant_placeholder(user_message)
+        from .ai_conversation_execution_service import create_execution, transition
+        execution = create_execution(
+            conversation=conversation_record,
+            user_message=user_message,
+            assistant_message=assistant_message,
+            payload=payload,
+        )
+        execution = transition(execution, "ROUTING")
+        suggestion_code = str(payload.get("suggestion_code") or "").strip()
+        if suggestion_code:
+            from .chat_production_readiness_service import ChatSuggestionService
+            from .models import AIChatInteractionEvent
+
+            execution = transition(execution, "CHECKING_ANSWERABILITY")
+            suggestion, decision = ChatSuggestionService().validate_execution(
+                request.user,
+                suggestion_code,
+                conversation_id=str(conversation_record.id),
+                guided_values=payload.get("guided_values") if isinstance(payload.get("guided_values"), dict) else {},
+            )
+            AIChatInteractionEvent.objects.create(
+                event_type="suggestion_execution_checked",
+                user=request.user,
+                conversation=conversation_record,
+                suggestion=suggestion,
+                operation_code=suggestion.operation.operation_code if suggestion else "",
+                outcome="eligible" if decision.eligible else str(decision.reason_code or "ineligible"),
+            )
+            if not decision.eligible:
+                language = "fr" if any(token in question.casefold() for token in ("que ", "quel", "flotte", "site", "aide")) else "en"
+                message = (
+                    "Cette suggestion est momentanément indisponible. Les capacités disponibles ont été actualisées."
+                    if language == "fr"
+                    else "This suggestion is temporarily unavailable. The available capabilities have been refreshed."
+                )
+                controlled = {
+                    "ok": True,
+                    "status": "ABSTAINED",
+                    "chat_message": message,
+                    "answer": message,
+                    "answerability": {
+                        "status": "CAPABILITY_NOT_CONFIGURED",
+                        "reason_code": decision.reason_code or "OPERATION_NOT_READY",
+                    },
+                    "intent": {"intent_type": "unsupported_action"},
+                    "actions": [],
+                    "suggestions_refresh_required": True,
+                }
+                finalized = finalize_assistant_message(assistant_message, controlled)
+                execution = transition(execution, "ABSTAINED", failure_category=decision.reason_code or "OPERATION_NOT_READY")
+                AIChatInteractionEvent.objects.create(
+                    event_type="suggestion_execution_completed", user=request.user,
+                    conversation=conversation_record, suggestion=suggestion,
+                    operation_code=suggestion.operation.operation_code if suggestion else "",
+                    outcome="ABSTAINED",
+                )
+                conversation_record.refresh_from_db()
+                controlled.update({
+                    "conversation_id": str(conversation_record.id),
+                    "conversation_record": serialize_conversation(conversation_record),
+                    "user_message_id": str(user_message.id),
+                    "assistant_message_id": str(finalized.id),
+                    "assistant_message_status": finalized.status,
+                    "execution_id": str(execution.id),
+                    "client_execution_id": execution.client_execution_id,
+                    "persisted": True,
+                })
+                return JsonResponse(controlled)
+        action_code = str(payload.get("action_code") or "").strip()
+        if action_code:
+            from .chat_production_readiness_service import ActionEligibilityService
+            from .models import AIChatInteractionEvent, AIConversationMessage
+
+            source_message = AIConversationMessage.objects.filter(
+                pk=payload.get("source_message_id"),
+                conversation=conversation_record,
+                role="assistant",
+                status="completed",
+            ).first()
+            source_payload = dict((source_message.metadata_json or {}).get("response_payload") or {}) if source_message else {}
+            eligible, reason = ActionEligibilityService().evaluate(
+                request.user,
+                action_code,
+                payload=source_payload,
+                conversation=conversation_record,
+            )
+            AIChatInteractionEvent.objects.create(
+                event_type="action_execution_checked",
+                user=request.user,
+                conversation=conversation_record,
+                action_code=action_code,
+                outcome="eligible" if eligible else str(reason or "ineligible"),
+            )
+            if not eligible:
+                message = "Cette action n’est pas encore disponible dans Mining 360." if any(
+                    token in question.casefold() for token in ("afficher", "voir", "ouvrir", "télécharger", "analyser")
+                ) else "This action is not currently available in Mining 360."
+                controlled = {
+                    "ok": True,
+                    "status": "ABSTAINED",
+                    "chat_message": message,
+                    "answer": message,
+                    "answerability": {"status": "UNSUPPORTED_ACTION", "reason_code": reason or "ACTION_NOT_READY"},
+                    "intent": {"intent_type": "unsupported_action"},
+                    "actions": [],
+                }
+                finalized = finalize_assistant_message(assistant_message, controlled)
+                execution = transition(execution, "ABSTAINED", failure_category=reason or "ACTION_NOT_READY")
+                conversation_record.refresh_from_db()
+                controlled.update({
+                    "conversation_id": str(conversation_record.id),
+                    "conversation_record": serialize_conversation(conversation_record),
+                    "user_message_id": str(user_message.id),
+                    "assistant_message_id": str(finalized.id),
+                    "assistant_message_status": finalized.status,
+                    "execution_id": str(execution.id),
+                    "client_execution_id": execution.client_execution_id,
+                    "persisted": True,
+                })
+                return JsonResponse(controlled)
+        if not suggestion_code and not action_code:
+            from .ai_feature_rollout import feature_enabled
+            if feature_enabled("ENABLE_OPERATION_LEVEL_READINESS", request.user):
+                from .chat_production_readiness_service import CapabilityOperationReadinessService
+                intent_type, operation, operation_ready, operation_reason = CapabilityOperationReadinessService().preflight_question(
+                    question,
+                    request.user,
+                )
+                if operation and not operation_ready:
+                    language = "fr" if any(token in question.casefold() for token in ("analyse", "panne", "flotte", "site")) else "en"
+                    message = (
+                        "Cette analyse n’est pas encore complètement configurée dans Mining 360."
+                        if language == "fr"
+                        else "This analysis is not yet fully configured in Mining 360."
+                    )
+                    controlled = {
+                        "ok": True,
+                        "status": "ABSTAINED",
+                        "chat_message": message,
+                        "answer": message,
+                        "answerability": {"status": "CAPABILITY_NOT_CONFIGURED", "reason_code": operation_reason},
+                        "intent": {"intent_type": intent_type},
+                        "actions": [],
+                    }
+                    finalized = finalize_assistant_message(assistant_message, controlled)
+                    execution = transition(execution, "ABSTAINED", failure_category=operation_reason or "OPERATION_NOT_READY")
+                    conversation_record.refresh_from_db()
+                    controlled.update({
+                        "conversation_id": str(conversation_record.id),
+                        "conversation_record": serialize_conversation(conversation_record),
+                        "user_message_id": str(user_message.id),
+                        "assistant_message_id": str(finalized.id),
+                        "assistant_message_status": finalized.status,
+                        "execution_id": str(execution.id),
+                        "client_execution_id": execution.client_execution_id,
+                        "persisted": True,
+                    })
+                    return JsonResponse(controlled)
         history = list(
             conversation_record.messages.filter(status="completed", role__in=["user", "assistant"])
             .exclude(pk=user_message.pk)
@@ -4001,6 +4203,7 @@ def ai_ask(request):
         history.reverse()
         payload["conversation_id"] = str(conversation_record.id)
         payload["conversation"] = history
+        execution = transition(execution, "EXECUTING_DATA_SOURCE")
         response = _execute_ai_ask(request, payload_override=payload)
 
         try:
@@ -4008,12 +4211,56 @@ def ai_ask(request):
         except (json.JSONDecodeError, UnicodeDecodeError):
             response_payload = {"ok": False, "error": "The AI pipeline returned an invalid response."}
 
+        execution = transition(execution, "VALIDATING_GROUNDING")
+        if execution.status == "CANCELLED":
+            return JsonResponse({
+                "ok": True,
+                "status": "CANCELLED",
+                "chat_message": "Request cancelled.",
+                "conversation_id": str(conversation_record.id),
+                "execution_id": str(execution.id),
+                "client_execution_id": execution.client_execution_id,
+                "persisted": True,
+            })
+
+        if response.status_code >= 400 or not response_payload.get("ok"):
+            from .ai_feature_rollout import feature_enabled
+            if feature_enabled("ENABLE_GRACEFUL_ABSTENTION", request.user):
+                from .answerability_assessment_service import graceful_response_for_error
+                response_payload = graceful_response_for_error(
+                    response_payload,
+                    response.status_code,
+                    question=question,
+                )
+                response.status_code = 200
+
+        from .ai_feature_rollout import feature_enabled
+        if response.status_code < 400 and response_payload.get("ok") and feature_enabled("ENABLE_ACTION_ELIGIBILITY", request.user):
+            from .chat_production_readiness_service import ActionEligibilityService
+            response_payload = ActionEligibilityService().filter_actions(
+                request.user,
+                response_payload,
+                conversation=conversation_record,
+            )
+
         if response.status_code < 400 and response_payload.get("ok"):
             finalized = finalize_assistant_message(assistant_message, response_payload)
+            outcome_status = "NEEDS_CLARIFICATION" if response_payload.get("requires_clarification") else (
+                "ABSTAINED" if str((response_payload.get("answerability") or {}).get("status") or "") not in {"", "ANSWERABLE"} else "SUCCEEDED"
+            )
+            execution = transition(execution, outcome_status)
         else:
             finalized = fail_assistant_message(
                 assistant_message,
-                response_payload.get("error") or "Response generation failed.",
+                "The request could not be completed. You can retry."
+                if response.status_code in {429, 500, 502, 503, 504}
+                else "The request could not be completed with the current configuration.",
+            )
+            retryable = response.status_code in {429, 500, 502, 503, 504}
+            execution = transition(
+                execution,
+                "RETRYABLE_FAILED" if retryable else "PERMANENT_FAILED",
+                failure_category=str(response_payload.get("error_code") or "UNKNOWN")[:80],
             )
         conversation_record.refresh_from_db()
         response_payload.update({
@@ -4022,20 +4269,183 @@ def ai_ask(request):
             "user_message_id": str(user_message.id),
             "assistant_message_id": str(finalized.id),
             "assistant_message_status": finalized.status,
+            "execution_id": str(execution.id),
+            "client_execution_id": execution.client_execution_id,
             "persisted": True,
         })
+        if suggestion_code:
+            from django.utils import timezone
+            from .ai_feature_rollout import feature_enabled
+            from .chat_production_readiness_service import ChatbotProductionReadinessService
+            from .models import AIChatInteractionEvent, AIChatSuggestion
+            AIChatInteractionEvent.objects.create(
+                event_type="suggestion_execution_completed",
+                user=request.user,
+                conversation=conversation_record,
+                suggestion=AIChatSuggestion.objects.filter(suggestion_code=suggestion_code).first(),
+                operation_code=str((response_payload.get("intent") or {}).get("intent_type") or ""),
+                outcome=execution.status,
+                duration_ms=max(0, int((timezone.now() - execution.started_at).total_seconds() * 1000)),
+            )
+            if feature_enabled("ENABLE_CHAT_DEAD_SUGGESTION_AUTO_HIDE", request.user):
+                ChatbotProductionReadinessService().auto_hide_dead_suggestions()
         return JsonResponse(response_payload, status=response.status_code)
     except ConversationLimitReached as exc:
-        return JsonResponse({"ok": False, "error": exc.messages[0]}, status=409)
+        return JsonResponse({
+            "ok": False,
+            "error": exc.messages[0],
+            "error_code": "CONVERSATION_LIMIT_REACHED",
+            "answerability": {
+                "status": "UNSUPPORTED_ACTION",
+                "reason_code": "CONVERSATION_LIMIT_REACHED",
+            },
+            "retry": {"allowed": False},
+        }, status=409)
     except (PermissionError, PermissionDenied):
         return JsonResponse({"ok": False, "error": "Conversation not found or not authorized."}, status=404)
-    except Exception as exc:
+    except Exception:
+        safe_error = "The required service is temporarily unavailable. Please retry."
         if "assistant_message" in locals():
-            fail_assistant_message(assistant_message, str(exc))
-        return JsonResponse({"ok": False, "error": str(exc)}, status=500)
+            fail_assistant_message(assistant_message, safe_error)
+        if "execution" in locals():
+            try:
+                transition(execution, "RETRYABLE_FAILED", failure_category="TEMPORARILY_UNAVAILABLE")
+            except Exception:
+                pass
+        return JsonResponse({"ok": False, "error": safe_error, "error_code": "TEMPORARILY_UNAVAILABLE"}, status=503)
+
+
+@login_required
+@require_http_methods(["POST"])
+def ai_report_data_gap(request):
+    try:
+        payload = json.loads(request.body.decode("utf-8") or "{}")
+    except json.JSONDecodeError:
+        return JsonResponse({"ok": False, "error": "Invalid JSON payload."}, status=400)
+    from .ai_feature_rollout import feature_enabled
+    from .models import UnansweredInformationRequirement
+
+    if not feature_enabled("ENABLE_DATA_GAP_REGISTRY", request.user):
+        return JsonResponse({"ok": False, "error": "Data-gap reporting is not enabled."}, status=403)
+    requirement = UnansweredInformationRequirement.objects.filter(
+        pk=payload.get("requirement_id"),
+    ).first()
+    if not requirement:
+        return JsonResponse({"ok": False, "error": "Data requirement not found."}, status=404)
+    owns_requirement = requirement.user_id == request.user.id
+    owns_conversation = (
+        requirement.conversation_id
+        and requirement.conversation.user_id == request.user.id
+    )
+    if not (owns_requirement or owns_conversation or request.user.is_staff or request.user.is_superuser):
+        return JsonResponse({"ok": False, "error": "Data requirement not found."}, status=404)
+    requirement.reported_by_user = True
+    requirement.save(update_fields=["reported_by_user", "last_requested_at"])
+    french = any(token in requirement.normalized_question.split() for token in ("quelle", "quel", "mise", "equipement"))
+    return JsonResponse({
+        "ok": True,
+        "requirement_id": requirement.pk,
+        "message": (
+            "Le besoin de donnée a été enregistré pour revue."
+            if french else "The data requirement has been recorded for review."
+        ),
+    })
 
 
 IA_RESOURCE_TYPES = {
+    "capability-registry": {
+        "model": AIAgentCapability,
+        "global_resource": True,
+        "search_fields": ["capability_code", "display_name_en", "display_name_fr", "domain_code", "category"],
+        "serializer": lambda item: {
+            "id": item.id, "agent_code": item.agent.code,
+            "capability_code": item.capability_code, "domain_code": item.domain_code,
+            "category": item.category, "display_name_en": item.display_name_en,
+            "display_name_fr": item.display_name_fr,
+            "short_description_en": item.short_description_en,
+            "short_description_fr": item.short_description_fr,
+            "supported_intents_json": item.supported_intents_json,
+            "supported_metrics_json": item.supported_metrics_json,
+            "supported_entities_json": item.supported_entities_json,
+            "supported_operations_json": item.supported_operations_json,
+            "required_data_sources_json": item.required_data_sources_json,
+            "required_permissions_json": item.required_permissions_json,
+            "example_questions_en_json": item.example_questions_en_json,
+            "example_questions_fr_json": item.example_questions_fr_json,
+            "readiness_score": item.readiness_score,
+            "readiness_status": item.readiness_status,
+            "display_order": item.display_order, "enabled": item.enabled,
+            "validation_status": item.validation_status,
+        },
+    },
+    "data-field-registry": {
+        "model": BusinessDataField,
+        "global_resource": True,
+        "search_fields": ["canonical_field_code", "entity_type", "display_name_en", "display_name_fr", "table_name", "column_name"],
+        "serializer": lambda item: {
+            "id": item.id, "canonical_field_code": item.canonical_field_code,
+            "entity_type": item.entity_type, "display_name_en": item.display_name_en,
+            "display_name_fr": item.display_name_fr, "description": item.description,
+            "synonyms_json": item.synonyms_json, "data_type": item.data_type,
+            "source_type": item.source_type, "semantic_model_id": item.semantic_model_id,
+            "table_name": item.table_name, "column_name": item.column_name,
+            "measure_name": item.measure_name, "permission_code": item.permission_code,
+            "nullable": item.nullable, "configuration_status": item.configuration_status,
+            "validation_status": item.validation_status, "active": item.active,
+        },
+    },
+    "answerability-rules": {
+        "model": AIAnswerabilityConfiguration,
+        "global_resource": True,
+        "search_fields": ["name"],
+        "serializer": lambda item: {
+            "id": item.id, "name": item.name,
+            "minimum_entity_confidence": item.minimum_entity_confidence,
+            "minimum_knowledge_confidence": item.minimum_knowledge_confidence,
+            "require_structured_evidence": item.require_structured_evidence,
+            "require_document_evidence": item.require_document_evidence,
+            "allow_general_model_knowledge": item.allow_general_model_knowledge,
+            "allow_hypothesis_mode": item.allow_hypothesis_mode,
+            "show_available_alternatives": item.show_available_alternatives,
+            "show_source_summary": item.show_source_summary,
+            "log_data_gaps": item.log_data_gaps,
+            "allow_data_gap_reporting": item.allow_data_gap_reporting,
+            "active": item.active,
+        },
+    },
+    "source-precedence": {
+        "model": SourcePrecedenceRule,
+        "global_resource": True,
+        "search_fields": ["business_field__canonical_field_code", "entity_type", "primary_source", "secondary_source", "owner"],
+        "serializer": lambda item: {
+            "id": item.id, "business_field": item.business_field.canonical_field_code,
+            "entity_type": item.entity_type, "primary_source": item.primary_source,
+            "secondary_source": item.secondary_source,
+            "conditions_json": item.conditions_json,
+            "effective_from": item.effective_from.isoformat() if item.effective_from else "",
+            "effective_to": item.effective_to.isoformat() if item.effective_to else "",
+            "priority": item.priority, "validation_status": item.validation_status,
+            "owner": item.owner, "active": item.active,
+        },
+    },
+    "data-gaps": {
+        "model": UnansweredInformationRequirement,
+        "global_resource": True,
+        "readonly": True,
+        "order_by": "-last_requested_at",
+        "search_fields": ["original_question", "domain", "entity_type", "entity_identifier", "requested_field_code", "resolution_status"],
+        "serializer": lambda item: {
+            "id": item.id, "original_question": item.original_question,
+            "domain": item.domain, "entity_type": item.entity_type,
+            "entity_identifier": item.entity_identifier,
+            "requested_field_code": item.requested_field_code,
+            "answerability_status": item.answerability_status,
+            "reason_code": item.reason_code, "occurrence_count": item.occurrence_count,
+            "resolution_status": item.resolution_status,
+            "reported_by_user": item.reported_by_user,
+            "last_requested_at": item.last_requested_at.isoformat() if item.last_requested_at else "",
+        },
+    },
     "response-templates": {
         "model": AIResponseTemplate,
         "global_resource": True,
@@ -4375,7 +4785,97 @@ def _ia_json_object(payload: dict, item, field: str) -> dict:
     return value
 
 
+def _ia_json_list(payload: dict, item, field: str) -> list:
+    value = payload.get(field, getattr(item, field, []) or [])
+    if isinstance(value, str):
+        try:
+            value = json.loads(value) if value.strip() else []
+        except Exception as exc:
+            raise ValueError(f"{field} must be valid JSON.") from exc
+    if not isinstance(value, list):
+        raise ValueError(f"{field} must be a JSON array.")
+    return value
+
+
 def _ia_apply_resource_payload(resource_type: str, item, payload: dict, section: AIConfigSection):
+    if resource_type == "capability-registry":
+        agent_code = _ia_text(payload, item, "agent_code")
+        item.agent = get_object_or_404(AIAgent, code=agent_code)
+        item.capability_code = _ia_text(payload, item, "capability_code")
+        item.domain_code = _ia_text(payload, item, "domain_code")
+        item.category = _ia_text(payload, item, "category")
+        item.display_name_en = _ia_text(payload, item, "display_name_en")
+        item.display_name_fr = _ia_text(payload, item, "display_name_fr")
+        item.display_name = item.display_name_en or item.display_name_fr
+        item.short_description_en = _ia_text(payload, item, "short_description_en")
+        item.short_description_fr = _ia_text(payload, item, "short_description_fr")
+        item.description = item.short_description_en or item.short_description_fr
+        for field in (
+            "supported_intents_json", "supported_metrics_json", "supported_entities_json",
+            "supported_operations_json", "required_data_sources_json", "required_permissions_json",
+            "example_questions_en_json", "example_questions_fr_json",
+        ):
+            setattr(item, field, _ia_json_list(payload, item, field))
+        item.readiness_score = max(0, min(_ia_int(payload, item, "readiness_score", 0), 100))
+        item.readiness_status = _ia_text(payload, item, "readiness_status", "Needs Configuration")
+        item.display_order = _ia_int(payload, item, "display_order", 100)
+        item.enabled = _ia_normalize_bool(payload.get("enabled"), item.enabled)
+        item.validation_status = _ia_text(payload, item, "validation_status", "To Review")
+        if not item.capability_code or not item.agent_id or not item.display_name:
+            raise ValueError("Agent, capability code and display name are required.")
+        return item
+
+    if resource_type == "data-field-registry":
+        item.canonical_field_code = _ia_text(payload, item, "canonical_field_code")
+        item.entity_type = _ia_text(payload, item, "entity_type")
+        item.display_name_en = _ia_text(payload, item, "display_name_en")
+        item.display_name_fr = _ia_text(payload, item, "display_name_fr")
+        item.description = _ia_text(payload, item, "description")
+        item.synonyms_json = _ia_json_list(payload, item, "synonyms_json")
+        item.data_type = _ia_text(payload, item, "data_type", "Text")
+        item.source_type = _ia_text(payload, item, "source_type", "none")
+        item.semantic_model_id = _ia_text(payload, item, "semantic_model_id")
+        item.table_name = _ia_text(payload, item, "table_name")
+        item.column_name = _ia_text(payload, item, "column_name")
+        item.measure_name = _ia_text(payload, item, "measure_name")
+        item.permission_code = _ia_text(payload, item, "permission_code")
+        item.nullable = _ia_normalize_bool(payload.get("nullable"), item.nullable)
+        item.configuration_status = _ia_text(payload, item, "configuration_status", "Not Configured")
+        item.validation_status = _ia_text(payload, item, "validation_status", "To Review")
+        item.active = _ia_normalize_bool(payload.get("active"), item.active)
+        if not item.canonical_field_code or not item.entity_type or not item.display_name_en:
+            raise ValueError("Field code, entity type and English display name are required.")
+        return item
+
+    if resource_type == "answerability-rules":
+        item.name = _ia_text(payload, item, "name", "Default")
+        for field in ("minimum_entity_confidence", "minimum_knowledge_confidence"):
+            setattr(item, field, max(0, min(_ia_int(payload, item, field, 90), 100)))
+        for field in (
+            "require_structured_evidence", "require_document_evidence", "allow_general_model_knowledge",
+            "allow_hypothesis_mode", "show_available_alternatives", "show_source_summary",
+            "log_data_gaps", "allow_data_gap_reporting", "active",
+        ):
+            setattr(item, field, _ia_normalize_bool(payload.get(field), getattr(item, field)))
+        return item
+
+    if resource_type == "source-precedence":
+        field_code = _ia_text(payload, item, "business_field")
+        item.business_field = get_object_or_404(BusinessDataField, canonical_field_code=field_code)
+        item.entity_type = _ia_text(payload, item, "entity_type", item.business_field.entity_type)
+        item.primary_source = _ia_text(payload, item, "primary_source")
+        item.secondary_source = _ia_text(payload, item, "secondary_source")
+        item.conditions_json = _ia_json_object(payload, item, "conditions_json")
+        item.effective_from = parse_date(_ia_text(payload, item, "effective_from")) or None
+        item.effective_to = parse_date(_ia_text(payload, item, "effective_to")) or None
+        item.priority = _ia_int(payload, item, "priority", 100)
+        item.validation_status = _ia_text(payload, item, "validation_status", "To Review")
+        item.owner = _ia_text(payload, item, "owner")
+        item.active = _ia_normalize_bool(payload.get("active"), item.active)
+        if not item.primary_source:
+            raise ValueError("Business field and primary source are required.")
+        return item
+
     if resource_type == "response-templates":
         item.code = _ia_text(payload, item, "code")
         item.name = _ia_text(payload, item, "name")
@@ -4756,7 +5256,7 @@ def ia_config_collection_api(request, section_code, resource_type):
                     for field in search_fields:
                         q_filter |= models.Q(**{f"{field}__icontains": query})
                     queryset = queryset.filter(q_filter)
-        order_field = "-created_at" if resource_type == "debug-runs" else "-updated_at"
+        order_field = config.get("order_by") or ("-created_at" if resource_type == "debug-runs" else "-updated_at")
         queryset = queryset.order_by(order_field)
         page_number = request.GET.get("page", "").strip()
         page_size_value = request.GET.get("page_size", "").strip()
@@ -4781,7 +5281,7 @@ def ia_config_collection_api(request, section_code, resource_type):
         section_payload = _ia_section_payload(section) if section else {"code": section_code}
         return JsonResponse({"ok": True, "section": section_payload, "items": items, "pagination": pagination})
 
-    if config.get("admin_only"):
+    if config.get("admin_only") or config.get("readonly"):
         return _json_error("This resource is read-only.", status=405)
     payload = _ia_payload(request)
     try:
@@ -4800,6 +5300,8 @@ def ia_config_item_api(request, section_code, resource_type, item_id):
     config = IA_RESOURCE_TYPES[resource_type]
     if (config.get("admin_only") or config.get("global_resource")) and not (request.user.is_staff or request.user.is_superuser):
         return _json_error("Administrator access required.", status=403)
+    if config.get("admin_only") or config.get("readonly"):
+        return _json_error("This resource is read-only.", status=405)
     section = None if (config.get("admin_only") or config.get("global_resource")) else _ia_get_section_or_404(section_code)
     model = config["model"]
     serializer = config["serializer"]
@@ -7621,6 +8123,7 @@ def report_detail(request, report_id):
             "troubleshoot_url": reverse("reporting-report-troubleshoot-api", args=[report_id]),
             "reporting_hub_url": reverse("reporting"),
             "premium_viewer": premium_viewer,
+            "stable_viewer_runtime": feature_enabled("ENABLE_STABLE_POWERBI_VIEWER_RUNTIME", request.user),
             "is_platform_admin": _user_is_platform_admin(request.user),
             "error": error,
             "workspace_name": "Efficience Mine Workspace",

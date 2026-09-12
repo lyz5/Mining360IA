@@ -11,16 +11,35 @@ from .availability_diagnostics_service import (
     parse_availability_diagnostics_rows,
 )
 from .availability_reference_service import resolve_availability_references
-from .dax_generator_service import generate_dax_from_intent, generate_performance_overview_dax
+from .dax_generator_service import (
+    IntentValidationError,
+    generate_dax_from_intent,
+    generate_fleet_performance_dax,
+    generate_performance_overview_dax,
+)
 from .downtime_event_service import comment_coverage, detect_repeated_failures, normalize_events
 from .downtime_query_service import build_equipment_dax, build_events_dax
+from .fleet_inventory_chat_service import FleetInventoryError, execute_fleet_inventory_intent
+from .fleet_performance_intelligence_service import (
+    coverage_from_row,
+    deterministic_performance_answer,
+    normalize_result_metrics,
+)
 from .intent_extractor_service import detect_ai_section, extract_intent
-from .machine_performance_intent_service import enrich_machine_performance_intent
+from .machine_performance_intent_service import detect_machine_performance_intent, enrich_machine_performance_intent
 from .machine_performance_response_service import (
     MachinePerformanceResponsePlanningService,
     adaptive_performance_responses_enabled,
+    complete_fleet_performance_enabled,
+    fleet_performance_operation_enabled,
 )
-from .models import AIConversationContext, KnowledgeSynonym, PowerBIInteractionLog
+from .models import (
+    AIConversationArtifact,
+    AIConversationContext,
+    KnowledgeSynonym,
+    PowerBIInteractionLog,
+    PowerBIReport,
+)
 from .openai_service import generate_chat_response
 from .parts_sales_chat_service import execute_parts_sales_intent
 from .power_automate import execute_dax_via_flow
@@ -37,6 +56,7 @@ from .synonym_resolution_service import resolve_synonyms
 from .synonym_utils import normalize_synonym_key
 from .smcs_service import resolve_event_smcs
 from .site_access_service import SiteAccessDenied, effective_report_security, enforce_intent_site_scope
+from .temporal_expression_resolution_service import normalize_period_value
 
 
 def _conversation_context(conversation_id: str, user=None) -> dict:
@@ -100,6 +120,13 @@ def _extract_rows(value) -> list[dict]:
     return []
 
 
+def _rows_with_values(rows: list[dict]) -> list[dict]:
+    return [
+        row for row in rows
+        if isinstance(row, dict) and any(value not in (None, "") for value in row.values())
+    ]
+
+
 def _availability_value(row: dict):
     for key, value in row.items():
         if "availability" not in str(key).lower():
@@ -122,7 +149,7 @@ def _question_language(question_text: str) -> str:
     normalized = re.sub(r"[^a-zà-ÿ0-9]+", " ", str(question_text or "").casefold())
     french_markers = {
         "quelle", "quel", "donne", "montre", "disponibilité", "disponibilite",
-        "pour", "mois", "site", "équipements", "equipements",
+        "pour", "mois", "équipements", "equipements",
     }
     return "fr" if french_markers.intersection(normalized.split()) else "en"
 
@@ -143,6 +170,24 @@ def _natural_period(value, language: str) -> str:
     }
     if period.casefold() in aliases[language]:
         return aliases[language][period.casefold()]
+    rolling_match = re.fullmatch(r"last (\d{1,3}) months?", period.casefold())
+    if rolling_match:
+        months = rolling_match.group(1)
+        return f"sur les {months} derniers mois" if language == "fr" else f"over the last {months} months"
+    range_match = re.fullmatch(r"(20\d{2})-(0[1-9]|1[0-2])/(20\d{2})-(0[1-9]|1[0-2])", period)
+    if range_match:
+        start_year, start_month, end_year, end_month = range_match.groups()
+        month_names = {
+            "en": ("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"),
+            "fr": ("janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"),
+        }
+        start_label = month_names[language][int(start_month) - 1]
+        end_label = month_names[language][int(end_month) - 1]
+        if start_year == end_year:
+            label = f"{start_label} à {end_label} {end_year}" if language == "fr" else f"{start_label} to {end_label} {end_year}"
+        else:
+            label = f"{start_label} {start_year} à {end_label} {end_year}" if language == "fr" else f"{start_label} {start_year} to {end_label} {end_year}"
+        return ("pour " if language == "fr" else "for ") + label
     month_match = re.fullmatch(r"(20\d{2})-(0[1-9]|1[0-2])", period)
     if month_match:
         month_names = {
@@ -161,12 +206,15 @@ def _natural_availability_answer(intent: dict, value: float, question_text: str)
     site = filters.get("minesite") or filters.get("site")
     model = filters.get("model")
     serial_number = filters.get("serial_number")
+    equipment = filters.get("equipment")
     period = _natural_period(filters.get("period"), language)
     percentage = float(value) * 100
     if language == "fr":
         subject = "La disponibilité physique"
         if serial_number:
             subject += f" de la machine {serial_number}"
+        elif equipment:
+            subject += f" de l’équipement {equipment}"
         elif model:
             subject += f" du parc {model}"
         if site:
@@ -176,6 +224,8 @@ def _natural_availability_answer(intent: dict, value: float, question_text: str)
     subject = "The physical availability"
     if serial_number:
         subject += f" of machine {serial_number}"
+    elif equipment:
+        subject += f" of equipment {equipment}"
     elif model:
         subject += f" of the {model} fleet"
     if site:
@@ -363,6 +413,7 @@ def _apply_resolved_entities(extracted: dict, synonym_resolution: dict) -> dict:
         "Mine Site": "minesite",
         "Model": "model",
         "Equipment Family": "family",
+        "Equipment": "equipment",
         "Serial Number": "serial_number",
         "Customer": "customer",
         "Component": "component",
@@ -389,7 +440,18 @@ def _apply_resolved_entities(extracted: dict, synonym_resolution: dict) -> dict:
             extracted["comparison"] = comparison
             filters.pop(filter_code, None)
         else:
-            filters[filter_code] = values[0]
+            filters[filter_code] = values[0] if len(values) == 1 else values
+
+    resolved_dimension_keys = {
+        normalize_synonym_key(value)
+        for code, values in resolved_values.items()
+        if code not in {"equipment", "serial_number", "period"}
+        for value in values
+    }
+    for machine_code in ("equipment", "serial_number"):
+        candidate = filters.get(machine_code)
+        if candidate and normalize_synonym_key(candidate) in resolved_dimension_keys:
+            filters.pop(machine_code, None)
 
     # Reject values invented by intent extraction when they do not resolve to
     # a configured, validated business synonym.
@@ -401,6 +463,8 @@ def _apply_resolved_entities(extracted: dict, synonym_resolution: dict) -> dict:
             period = str(filters[filter_code] or "").strip().lower()
             if (
                 re.fullmatch(r"20\d{2}(?:-\d{2}(?:-\d{2})?)?", period)
+                or re.fullmatch(r"20\d{2}-(?:0[1-9]|1[0-2])/20\d{2}-(?:0[1-9]|1[0-2])", period)
+                or re.fullmatch(r"last (?:[1-9]|[1-9]\d|1[01]\d|120) months?", period)
                 or period in {
                     "year to date",
                     "month to date",
@@ -410,7 +474,7 @@ def _apply_resolved_entities(extracted: dict, synonym_resolution: dict) -> dict:
                 }
             ):
                 continue
-        if filter_code in {"family", "serial_number"}:
+        if filter_code in {"family", "equipment", "serial_number"}:
             # These high-volume values are validated against the Equipment
             # reference Browsers by resolve_availability_references().
             continue
@@ -457,6 +521,38 @@ def _empty_navigation(warning: str = "") -> dict:
     }
 
 
+def _normalize_performance_intent_references(question_text: str, intent: dict) -> dict:
+    if intent.get("section") != "performance":
+        return intent
+    normalized = dict(intent)
+    reference_filters, reference_errors = resolve_availability_references(
+        question_text,
+        normalized.get("filters") or {},
+    )
+    if "period" in reference_filters:
+        reference_filters["period"] = normalize_period_value(reference_filters["period"])
+    normalized["filters"] = reference_filters
+    comparison = normalized.get("comparison")
+    if isinstance(comparison, dict) and comparison.get("family"):
+        normalized_comparison, comparison_errors = resolve_availability_references(
+            question_text,
+            {"family": comparison["family"]},
+        )
+        comparison = dict(comparison)
+        comparison.pop("family", None)
+        if normalized_comparison.get("product_group"):
+            comparison["product_group"] = normalized_comparison["product_group"]
+            reference_filters.pop("product_group", None)
+        elif normalized_comparison.get("family"):
+            comparison["family"] = normalized_comparison["family"]
+            reference_filters.pop("family", None)
+        normalized["comparison"] = comparison
+        reference_errors.extend(comparison_errors)
+    if reference_errors:
+        normalized.setdefault("_unresolved_filters", []).extend(reference_errors)
+    return normalized
+
+
 def process_user_question(question_text, user_context=None, conversation_context=None) -> dict:
     started_at = time.monotonic()
     user_context = user_context if isinstance(user_context, dict) else {}
@@ -476,7 +572,15 @@ def process_user_question(question_text, user_context=None, conversation_context
     synonym_resolution = None
     if not isinstance(extracted, dict):
         detected_section = detect_ai_section(question_text, user_context.get("section_code"))
-        if detected_section == "parts_sales":
+        deterministic_fleet = (
+            detected_section == "performance"
+            and detect_machine_performance_intent(question_text) in {
+                "fleet_inventory", "get_site_fleet", "get_site_fleet_by_model",
+                "get_site_model_fleet", "get_fleet_count", "lookup_equipment_by_serial",
+                "lookup_equipment_by_code", "export_current_fleet",
+            }
+        )
+        if detected_section == "parts_sales" or deterministic_fleet:
             extracted = extract_intent(question_text, detected_section)
             synonym_resolution = {
                 "original_text": question_text,
@@ -494,7 +598,7 @@ def process_user_question(question_text, user_context=None, conversation_context
                     "active_page": user_context.get("active_page"),
                 },
             )
-        if detected_section != "parts_sales" and synonym_resolution["requires_clarification"]:
+        if detected_section != "parts_sales" and not deterministic_fleet and synonym_resolution["requires_clarification"]:
             return {
                 "ok": False,
                 "conversation_id": conversation_id,
@@ -507,41 +611,34 @@ def process_user_question(question_text, user_context=None, conversation_context
                     "warnings": [synonym_resolution["clarification_question"]],
                 },
             }
-        if detected_section != "parts_sales":
+        if detected_section != "parts_sales" and not deterministic_fleet:
             extraction_text = question_text
             if follow_up and previous_intent.get("metric") == "availability":
                 extraction_text = f"availability {question_text}"
             extracted = extract_intent(extraction_text, user_context.get("section_code"))
             extracted = _apply_resolved_entities(extracted, synonym_resolution)
-        if extracted.get("metric") == "availability":
-            reference_filters, reference_errors = resolve_availability_references(
-                question_text,
-                extracted.get("filters") or {},
-            )
-            extracted["filters"] = reference_filters
-            if reference_errors:
-                extracted.setdefault("_unresolved_filters", []).extend(reference_errors)
-        if extracted.get("_unresolved_filters"):
-            unresolved = extracted["_unresolved_filters"][0]
-            return {
-                "ok": False,
-                "conversation_id": conversation_id,
-                "intent": extracted,
-                "clarification_question": (
-                    f"The value \"{unresolved['value']}\" is not configured for the "
-                    f"{unresolved['filter_code']} filter. Please specify an existing value."
-                ),
-                "validation": {
-                    "status": "clarification_required",
-                    "errors": [],
-                    "warnings": ["A requested filter does not match any validated value."],
-                },
-            }
     intent = merge_conversation_intent(
         extracted,
         previous_intent,
         inherit_previous=follow_up,
     )
+    intent = _normalize_performance_intent_references(question_text, intent)
+    if intent.get("_unresolved_filters"):
+        unresolved = intent["_unresolved_filters"][0]
+        return {
+            "ok": False,
+            "conversation_id": conversation_id,
+            "intent": intent,
+            "clarification_question": (
+                f"The value \"{unresolved['value']}\" is not configured for the "
+                f"{unresolved['filter_code']} filter. Please specify an existing value."
+            ),
+            "validation": {
+                "status": "clarification_required",
+                "errors": [],
+                "warnings": ["A requested filter does not match any validated value."],
+            },
+        }
     try:
         intent = enforce_intent_site_scope(intent, user)
     except SiteAccessDenied as exc:
@@ -556,10 +653,38 @@ def process_user_question(question_text, user_context=None, conversation_context
         }
     if intent.get("section") == "performance":
         intent = enrich_machine_performance_intent(intent, question_text)
+        if (
+            intent.get("intent_type") == "export_current_fleet"
+            and previous_intent.get("capability") == "fleet_performance"
+        ):
+            intent["intent_type"] = "export_current_result"
+            intent["query_intent_type"] = "export_current_result"
+            intent["capability"] = "fleet_performance"
         intent["_adaptive_responses_enabled"] = adaptive_performance_responses_enabled(user)
     navigation_request = intent.setdefault("navigation", {})
     is_parts_sales = intent.get("section") == "parts_sales" and intent.get("metric") == "parts_sales_ytd"
-    default_open_report = False if is_parts_sales else True
+    fleet_intents = {
+        "fleet_inventory", "get_site_fleet", "get_site_fleet_by_model",
+        "get_site_model_fleet", "get_fleet_count", "lookup_equipment_by_serial",
+        "lookup_equipment_by_code", "export_current_fleet", "fleet_follow_up",
+    }
+    is_fleet_inventory = intent.get("intent_type") in fleet_intents
+    needs_site = intent.get("intent_type") not in {
+        "lookup_equipment_by_serial", "lookup_equipment_by_code", "export_current_fleet",
+    }
+    if is_fleet_inventory and needs_site and not (intent.get("filters") or {}).get("minesite"):
+        return {
+            "ok": False,
+            "conversation_id": conversation_id,
+            "intent": intent,
+            "clarification_question": "Pour quel MineSite souhaitez-vous afficher la flotte ?",
+            "validation": {
+                "status": "clarification_required",
+                "errors": [],
+                "warnings": ["A MineSite is required for a fleet inventory request."],
+            },
+        }
+    default_open_report = False if is_parts_sales or is_fleet_inventory or intent.get("intent_type") == "export_current_result" else True
     open_report = bool(user_context.get("open_report", default_open_report))
     if is_parts_sales and intent.get("intent_type") != "powerbi_navigation":
         open_report = False
@@ -588,6 +713,20 @@ def process_user_question(question_text, user_context=None, conversation_context
             context={"metric": intent.get("metric")},
         )
 
+    if (
+        intent.get("capability") == "fleet_performance"
+        and complete_fleet_performance_enabled(user)
+        and not (intent.get("navigation") or {}).get("report_id")
+    ):
+        fleet_report_id = str(
+            PowerBIReport.objects.filter(
+                report_name="FPR Global DB + RLS",
+                is_active=True,
+            ).values_list("report_id", flat=True).first() or ""
+        )
+        if fleet_report_id:
+            intent["navigation"] = {**(intent.get("navigation") or {}), "report_id": fleet_report_id}
+
     navigation = (
         resolve_navigation(intent, debug_mode=bool(user_context.get("debug_mode")))
         if navigation_request.get("open_report")
@@ -603,6 +742,20 @@ def process_user_question(question_text, user_context=None, conversation_context
     specialized_analysis = {}
     diagnostics_warning = ""
     intent_type = intent.get("intent_type") or "single_kpi"
+    complete_fleet_performance = (
+        intent.get("capability") == "fleet_performance"
+        and complete_fleet_performance_enabled(user)
+    )
+    if complete_fleet_performance and not fleet_performance_operation_enabled(intent_type, user):
+        return {
+            "ok": False,
+            "status_code": 403,
+            "error": "This Fleet Performance capability is not enabled for your rollout group.",
+            "error_code": "fleet_performance_operation_disabled",
+            "conversation_id": conversation_id,
+            "intent": intent,
+            "validation": {"status": "disabled", "errors": [], "warnings": ["The requested pilot feature is disabled."]},
+        }
     response_planner = MachinePerformanceResponsePlanningService()
     query_plan = response_planner.build_query_plan(intent)
     dataset_name = (
@@ -610,9 +763,17 @@ def process_user_question(question_text, user_context=None, conversation_context
         if is_parts_sales
         else (user_context.get("dataset_name") or "FPR Global DB + RLS")
     )
+    configured_dataset_id = ""
+    if not is_parts_sales:
+        configured_dataset_id = str(
+            PowerBIReport.objects.filter(
+                report_name=dataset_name, is_active=True,
+            ).values_list("semantic_model_id", flat=True).first() or ""
+        )
     dataset_id = "" if is_parts_sales else (
-        navigation.get("semantic_model_id")
-        or user_context.get("dataset_id")
+        user_context.get("dataset_id")
+        or configured_dataset_id
+        or navigation.get("semantic_model_id")
         or resolve_workspace_dataset_id(dataset_name)
     )
     rls_role = user_context.get("rls_role") or ""
@@ -648,6 +809,8 @@ def process_user_question(question_text, user_context=None, conversation_context
         "roles": flow_roles or ([rls_role] if rls_role else []),
     }
     parts_sales_result = None
+    fleet_inventory_result = None
+    performance_export_result = None
     if is_parts_sales:
         parts_sales_result = execute_parts_sales_intent(
             intent,
@@ -670,13 +833,128 @@ def process_user_question(question_text, user_context=None, conversation_context
             "year": parts_sales_result["year"],
             "cached": parts_sales_result["cached"],
         }
+    elif is_fleet_inventory:
+        fleet_flow_context = {
+            **flow_base,
+            "effectiveUser": site_security.get("effective_username") or "",
+        }
+        try:
+            if intent_type == "export_current_fleet":
+                artifact = AIConversationArtifact.objects.filter(
+                    conversation_id=conversation_id,
+                    conversation__user=user,
+                    artifact_type="fleet_equipment_table",
+                    status="active",
+                ).order_by("-created_at").first()
+                payload = artifact.payload_json if artifact else {}
+                saved = payload.get("value") if isinstance(payload.get("value"), dict) else payload
+                saved_rows = saved.get("rows") if isinstance(saved, dict) else None
+                if not artifact or not isinstance(saved_rows, list) or not saved_rows:
+                    raise FleetInventoryError(
+                        "No compatible Fleet Inventory result is available to export.",
+                        code="fleet_export_context_missing",
+                        status=400,
+                    )
+                models = {}
+                for row in saved_rows:
+                    value = str(row.get("model") or "Unknown Model")
+                    models[value] = models.get(value, 0) + 1
+                fleet_inventory_result = {
+                    "intent": "export_current_fleet",
+                    "answer": "The saved fleet is ready to download in Excel.",
+                    "rows": saved_rows,
+                    "by_model": [{"model": key, "equipment_count": value, "share_of_fleet": value / len(saved_rows)} for key, value in sorted(models.items(), key=lambda item: (-item[1], item[0]))],
+                    "dax": "", "metric": "fleet_inventory", "measure": "",
+                    "site": saved.get("site"), "model": saved.get("model"),
+                    "distinct_equipment_count": len(saved_rows), "duplicate_count": 0,
+                    "is_complete": True, "source": {"table": "EquipmentList_MiningProd"},
+                    "powerbi_result": {"saved_artifact_id": str(artifact.id)},
+                }
+            else:
+                fleet_inventory_result = execute_fleet_inventory_intent(
+                    intent,
+                    fleet_flow_context,
+                    user=user,
+                    question_text=question_text,
+                )
+        except FleetInventoryError as exc:
+            return {
+                "ok": False,
+                "status_code": exc.status,
+                "error": str(exc),
+                "error_code": exc.code,
+                "conversation_id": conversation_id,
+                "intent": intent,
+                "validation": {"status": "unavailable", "errors": [str(exc)], "warnings": []},
+            }
+        if fleet_inventory_result.get("machine"):
+            rows = [fleet_inventory_result["machine"]]
+        else:
+            rows = [
+                {
+                    "site": row.get("site") or "Not available",
+                    "equipment": row.get("equipment") or "Not available",
+                    "model": row.get("model") or "Unknown Model",
+                    "serial_number": row.get("serial_number") or "Not available",
+                }
+                for row in (fleet_inventory_result.get("rows") or [])
+            ]
+            fleet_inventory_result["rows"] = rows
+        dax_payload = {
+            "dax": fleet_inventory_result["dax"],
+            "metric": fleet_inventory_result["metric"],
+            "metric_label": "Fleet Inventory",
+            "measure": fleet_inventory_result["measure"],
+            "filters": dict(intent.get("filters") or {}),
+            "section": "performance",
+        }
+        intent["metric_label"] = "Fleet Inventory"
+        powerbi_result = fleet_inventory_result["powerbi_result"]
+    elif complete_fleet_performance and intent_type == "export_current_result":
+        try:
+            artifact = AIConversationArtifact.objects.filter(
+                conversation_id=conversation_id,
+                conversation__user=user,
+                artifact_type="fleet_performance_analysis",
+                status="active",
+            ).order_by("-created_at").first()
+        except (TypeError, ValueError):
+            artifact = None
+        payload = artifact.payload_json if artifact else {}
+        performance_export_result = payload.get("value") if isinstance(payload.get("value"), dict) else payload
+        if not artifact or not isinstance(performance_export_result, dict) or not performance_export_result.get("rows"):
+            return {
+                "ok": False,
+                "status_code": 400,
+                "error": "No compatible Fleet Performance result is available to export.",
+                "error_code": "fleet_performance_export_context_missing",
+                "conversation_id": conversation_id,
+                "intent": intent,
+                "validation": {"status": "unavailable", "errors": ["No saved Fleet Performance result was found."], "warnings": []},
+            }
+        rows = performance_export_result["rows"]
+        powerbi_result = {"saved_artifact_id": str(artifact.id)}
     elif query_plan["execute_primary_metric"]:
         query_intent = {**intent, "intent_type": intent.get("query_intent_type") or intent_type}
-        dax_payload = (
-            generate_performance_overview_dax(query_intent)
-            if intent_type in {"performance_overview", "equipment_detail"} and not intent.get("metric")
-            else generate_dax_from_intent(query_intent)
-        )
+        try:
+            if complete_fleet_performance:
+                dax_payload = generate_fleet_performance_dax(query_intent)
+            else:
+                dax_payload = (
+                    generate_performance_overview_dax(query_intent)
+                    if intent_type in {"performance_overview", "equipment_detail"} and not intent.get("metric")
+                    else generate_dax_from_intent(query_intent)
+                )
+        except IntentValidationError as exc:
+            return {
+                "ok": False,
+                "status_code": 422,
+                "error": str(exc),
+                "error_code": "fleet_performance_configuration_incomplete",
+                "conversation_id": conversation_id,
+                "intent": intent,
+                "validation": {"status": "incomplete", "errors": [str(exc)], "warnings": []},
+            }
         intent["metric_label"] = dax_payload.get("metric_label") or intent.get("metric_label")
         flow_payload = {
             **flow_base,
@@ -686,7 +964,7 @@ def process_user_question(question_text, user_context=None, conversation_context
             "filters": dax_payload["filters"],
         }
         powerbi_result = execute_dax_via_flow(flow_payload)
-        rows = _extract_rows(powerbi_result)
+        rows = _rows_with_values(_extract_rows(powerbi_result))
     if intent_type in {"affected_equipment", "downtime_events", "repeated_failures", "comment_analysis", "smcs_breakdown"}:
         query_context = SimpleNamespace(context_json={
             "filters": dict(intent.get("filters") or {}),
@@ -759,11 +1037,38 @@ def process_user_question(question_text, user_context=None, conversation_context
                 ]))
 
     answer = _adaptive_answer_payload(intent, rows, diagnostics, question_text)
+    performance_metrics = (
+        performance_export_result.get("metrics", [])
+        if performance_export_result else
+        (normalize_result_metrics(rows[0]) if complete_fleet_performance and rows else [])
+    )
+    performance_coverage = (
+        performance_export_result.get("coverage", {})
+        if performance_export_result else
+        (coverage_from_row(rows[0]) if complete_fleet_performance and rows else {})
+    )
+    if complete_fleet_performance:
+        language = _question_language(question_text)
+        deterministic_answer = deterministic_performance_answer(intent, rows, language)
+        answer = {
+            **answer,
+            "answer": deterministic_answer,
+            "interpretation": deterministic_answer,
+        }
+        if performance_export_result:
+            answer["answer"] = "The saved Fleet Performance result is ready to download in Excel."
+            answer["interpretation"] = answer["answer"]
     if parts_sales_result:
         answer = {
             **answer,
             "answer": parts_sales_result["answer"],
             "interpretation": parts_sales_result["answer"],
+        }
+    if fleet_inventory_result:
+        answer = {
+            **answer,
+            "answer": fleet_inventory_result["answer"],
+            "interpretation": fleet_inventory_result["answer"],
         }
     confirmation_answer = _availability_confirmation_answer(question_text, rows)
     if confirmation_answer:
@@ -774,7 +1079,7 @@ def process_user_question(question_text, user_context=None, conversation_context
         }
     response_fallback_used = False
     response_generation_warning = ""
-    if intent.get("metric") in {"availability", "parts_sales_ytd"} or intent_type in {"downtime_drivers", "root_cause_analysis", "powerbi_navigation"}:
+    if complete_fleet_performance or intent.get("metric") in {"availability", "parts_sales_ytd"} or intent_type in (fleet_intents | {"downtime_drivers", "root_cause_analysis", "powerbi_navigation"}):
         # Availability answers are formatted from the validated Power BI result.
         # Do not let response generation alter or invent a numeric KPI value.
         final_answer = answer["answer"]
@@ -793,10 +1098,18 @@ def process_user_question(question_text, user_context=None, conversation_context
 
     result_payload = {
         "rows": rows,
+        "metrics": performance_metrics,
+        "coverage": performance_coverage,
         "availability_diagnostics": diagnostics,
         "downtime_diagnostics": diagnostics,
         "specialized_analysis": specialized_analysis,
     }
+    if fleet_inventory_result:
+        result_payload.update({
+            "fleet_inventory": fleet_inventory_result,
+            "equipment_identity": fleet_inventory_result.get("machine"),
+            "fleet_model_summary": fleet_inventory_result.get("by_model") or [],
+        })
     response_envelope = response_planner.build_response_envelope(
         intent=intent,
         result=result_payload,
@@ -838,7 +1151,7 @@ def process_user_question(question_text, user_context=None, conversation_context
         final_answer=final_answer,
         execution_time_ms=elapsed,
     )
-    return {
+    response = {
         "ok": True,
         "conversation_id": conversation_id,
         "answer": final_answer,
@@ -856,6 +1169,7 @@ def process_user_question(question_text, user_context=None, conversation_context
         "resource_knowledge": resource_knowledge,
         "specialized_analysis": specialized_analysis,
         "rows": rows,
+        "metrics": performance_metrics,
         "dax": dax_payload["dax"] if dax_payload else "",
         "metric": dax_payload["metric"] if dax_payload else intent.get("metric"),
         "measure": dax_payload["measure"] if dax_payload else "",
@@ -900,3 +1214,52 @@ def process_user_question(question_text, user_context=None, conversation_context
             "response_generation_warning": response_generation_warning,
         },
     }
+    if complete_fleet_performance:
+        response["fleet_performance"] = {
+            **(performance_export_result or {}),
+            "intent_type": intent_type,
+            "metric_bundle": intent.get("metric_bundle"),
+            "metrics": performance_metrics,
+            "coverage": performance_coverage,
+            "rows": rows,
+            "source": {
+                "semantic_model_id": dataset_id,
+                "semantic_model_name": dataset_name,
+            },
+            "template_code": response_envelope["presentation"]["template_code"],
+        }
+    if fleet_inventory_result:
+        machine = fleet_inventory_result.get("machine")
+        if machine:
+            response["equipment_detail"] = {
+                "lookup": fleet_inventory_result.get("lookup") or {},
+                "machine": machine,
+                "source": fleet_inventory_result.get("source") or {},
+            }
+        else:
+            response["fleet_inventory"] = {
+                "intent": fleet_inventory_result.get("intent"),
+                "context": {"site": fleet_inventory_result.get("site"), "model": fleet_inventory_result.get("model")},
+                "summary": {
+                    "equipment_count": fleet_inventory_result.get("distinct_equipment_count", 0),
+                    "model_count": len(fleet_inventory_result.get("by_model") or []),
+                },
+                "by_model": fleet_inventory_result.get("by_model") or [],
+                "rows": fleet_inventory_result.get("rows") or [],
+                "source": fleet_inventory_result.get("source") or {},
+                "completeness": {
+                    "expected_count": fleet_inventory_result.get("distinct_equipment_count", 0),
+                    "returned_count": len(fleet_inventory_result.get("rows") or []),
+                    "is_complete": fleet_inventory_result.get("is_complete", False),
+                    "duplicate_count": fleet_inventory_result.get("duplicate_count", 0),
+                },
+                "export": {"available": True},
+            }
+            response["fleet_table"] = {
+                "columns": ["Site", "Equipment", "Model", "Serial Number"],
+                "rows": fleet_inventory_result.get("rows") or [],
+                "site": fleet_inventory_result.get("site"),
+                "model": fleet_inventory_result.get("model"),
+            }
+            response["fleet_model_summary"] = fleet_inventory_result.get("by_model") or []
+    return response
