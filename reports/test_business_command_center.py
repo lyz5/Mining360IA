@@ -6,7 +6,13 @@ from django.urls import reverse
 from django.utils import timezone
 
 from .business_command_center_service import BusinessRevenuePeriodService
-from .models import MappingPublication, MappingSynchronizationRun, RevenueSourceSnapshot
+from .models import (
+    MachineSaleDetail,
+    MachineSalesSynchronizationRun,
+    MappingPublication,
+    MappingSynchronizationRun,
+    RevenueSourceSnapshot,
+)
 
 
 FEATURES = {
@@ -127,6 +133,109 @@ class BusinessCommandCenterApiTests(TestCase):
         response = self.client.post(url, data='{"entity_type":"country","entity_id":"ML","display_name":"Mali"}', content_type="application/json")
         self.assertEqual(response.status_code, 201)
         self.assertEqual(self.client.get(url).json()["results"][0]["display_name"], "Mali")
+
+    def test_machine_sales_detail_is_period_filtered_and_paginated(self):
+        RevenueSourceSnapshot.objects.filter(
+            active=True,
+            source_account_code="C001",
+            lob="PRIME",
+            business_date=date(2026, 9, 8),
+        ).update(revenue_eur=3940840.10, revenue_ytd_eur=3940840.10)
+        machine_run = MachineSalesSynchronizationRun.objects.create(
+            status="Completed", data_through_date=date(2026, 9, 8), completed_at=timezone.now(), records_read=2,
+        )
+        MachineSaleDetail.objects.create(
+            source_record_id="machine-current", business_date=date(2026, 9, 8), customer_code="C001",
+            customer_name="Fekola Customer", equipment_key="E1", equipment_code="266885",
+            serial_number="6P300144", model_code="6030", model_name="6030", equipment_family="Hydraulic Mining Shovels",
+            family_code="HMS", brand="CAT", product_category="Machine Lourde", invoice_number="80000650",
+            distribution_channel="On", sale_status_code="FA", new_used_code="N", net_revenue_eur=3940740.10,
+            source_hash="machine-current", synchronization_run=machine_run, source_last_seen_at=timezone.now(),
+        )
+        MachineSaleDetail.objects.create(
+            source_record_id="machine-current-misc", business_date=date(2026, 9, 8), customer_code="C001",
+            customer_name="Fekola Customer", equipment_key="E1", equipment_code="266885",
+            serial_number="6P300144", model_code="6030", model_name="6030", equipment_family="Hydraulic Mining Shovels",
+            family_code="HMS", brand="CAT", product_category="MISC", invoice_number="80000650",
+            distribution_channel="On", new_used_code="N", net_revenue_eur=100,
+            source_hash="machine-current-misc", synchronization_run=machine_run, source_last_seen_at=timezone.now(),
+        )
+        MachineSaleDetail.objects.create(
+            source_record_id="machine-old", business_date=date(2025, 9, 8), customer_code="C001",
+            customer_name="Fekola Customer", equipment_key="E2", serial_number="OLD", model_code="785B",
+            invoice_number="OLD-INVOICE", distribution_channel="On", net_revenue_eur=100,
+            source_hash="machine-old", synchronization_run=machine_run, source_last_seen_at=timezone.now(),
+        )
+        response = self.client.get(reverse("business-command-center-machine-sales-api"), {"period": "ytd", "page_size": 1})
+        self.assertEqual(response.status_code, 200)
+        data = response.json()
+        self.assertTrue(data["ready"])
+        self.assertEqual(data["summary"]["equipment_count"], 1)
+        self.assertEqual(data["summary"]["invoice_count"], 1)
+        self.assertEqual(data["results"][0]["serial_number"], "6P300144")
+        self.assertEqual(data["results"][0]["model_name"], "6030")
+        self.assertEqual(data["results"][0]["family_code"], "HMS")
+        self.assertEqual(data["results"][0]["brand"], "CAT")
+        self.assertEqual(data["results"][0]["machine_sale_eur"], 3940740.1)
+        self.assertEqual(data["results"][0]["other_charges_eur"], 100.0)
+        self.assertEqual(data["results"][0]["net_revenue_eur"], 3940840.1)
+        self.assertEqual(data["results"][0]["transaction_count"], 2)
+        self.assertEqual(
+            {entry["classification"] for entry in data["results"][0]["entries"]},
+            {"Machine Sale", "Other Charges & Adjustments"},
+        )
+        self.assertEqual(data["filter_options"]["families"], ["HMS"])
+        self.assertEqual(data["summary"]["net_revenue_eur"], 3940840.1)
+        self.assertEqual(data["summary"]["reconciliation_adjustment_eur"], 0.0)
+
+    def test_machine_sales_reconciles_detail_grain_to_certified_card(self):
+        machine_run = MachineSalesSynchronizationRun.objects.create(
+            status="Completed", data_through_date=date(2026, 9, 8), completed_at=timezone.now(), records_read=1,
+        )
+        MachineSaleDetail.objects.create(
+            source_record_id="machine-variance", business_date=date(2026, 9, 8), customer_code="C001",
+            customer_name="Fekola Customer", equipment_key="E1", serial_number="SERIAL-1",
+            model_name="6020", product_category="Machine Lourde", invoice_number="INVOICE-1",
+            net_revenue_eur=1137.20, source_hash="machine-variance", synchronization_run=machine_run,
+            source_last_seen_at=timezone.now(),
+        )
+        data = self.client.get(reverse("business-command-center-machine-sales-api"), {"period": "ytd"}).json()
+        self.assertEqual(data["summary"]["net_revenue_eur"], 1000.0)
+        self.assertEqual(data["summary"]["reconciliation_adjustment_eur"], -137.2)
+        adjustments = [row for row in data["results"] if row["record_type"] == "reconciliation_adjustment"]
+        self.assertEqual(len(adjustments), 1)
+        self.assertEqual(adjustments[0]["other_charges_eur"], -137.2)
+
+    def test_machine_sales_excel_export_respects_filters(self):
+        machine_run = MachineSalesSynchronizationRun.objects.create(
+            status="Completed", data_through_date=date(2026, 9, 8), completed_at=timezone.now(), records_read=1,
+        )
+        MachineSaleDetail.objects.create(
+            source_record_id="machine-export", business_date=date(2026, 9, 8), customer_code="C001",
+            customer_name="Fekola Customer", equipment_key="E1", serial_number="6P300144",
+            model_name="6030", family_code="HMS", brand="CAT", product_category="Machine Lourde", invoice_number="80000650",
+            net_revenue_eur=10, source_hash="machine-export", synchronization_run=machine_run,
+            source_last_seen_at=timezone.now(),
+        )
+        response = self.client.get(reverse("business-command-center-machine-sales-export-api"), {"brand": "CAT"})
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response["Content-Type"], "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        self.assertGreater(len(response.content), 1000)
+
+    def test_machine_sales_search_is_scoped_to_detail_fields(self):
+        machine_run = MachineSalesSynchronizationRun.objects.create(
+            status="Completed", data_through_date=date(2026, 9, 8), completed_at=timezone.now(), records_read=1,
+        )
+        MachineSaleDetail.objects.create(
+            source_record_id="machine-search", business_date=date(2026, 9, 8), customer_code="C001",
+            customer_name="IAMGOLD ESSAKANE SA SA", equipment_key="E1", serial_number="6P300144",
+            model_code="6030", product_category="Machine Lourde", invoice_number="80000650", distribution_channel="On", net_revenue_eur=1,
+            source_hash="machine-search", synchronization_run=machine_run, source_last_seen_at=timezone.now(),
+        )
+        found = self.client.get(reverse("business-command-center-machine-sales-api"), {"search": "6P300144"}).json()
+        missing = self.client.get(reverse("business-command-center-machine-sales-api"), {"search": "not-found"}).json()
+        self.assertEqual(found["pagination"]["count"], 1)
+        self.assertEqual(missing["pagination"]["count"], 0)
 
     def test_invalid_custom_period_is_field_safe(self):
         response = self.client.get(reverse("business-command-center-bootstrap-api"), {"period": "custom", "start_date": "2026-09-09", "end_date": "2026-09-01"})

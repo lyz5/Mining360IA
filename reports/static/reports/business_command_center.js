@@ -5,7 +5,12 @@
   const $$ = (selector, parent = root) => [...parent.querySelectorAll(selector)];
   const csrf = $('[name=csrfmiddlewaretoken]')?.value || '';
   const colors = { machine: '#ffd400', parts: '#3978d4', service: '#178b7b', rental: '#7657ad', unclassified: '#8b94a7' };
-  const state = { data: null, dimension: 'customers', salesTab: 'lines', limit: 10, controller: null, exportBound: false };
+  const state = {
+    data: null, dimension: 'customers', salesTab: 'lines', limit: 10, controller: null,
+    machineController: null, machinePage: 1, machinePages: 1, scrollToMachines: false,
+    partsController: null, partsPage: 1, partsPages: 1, scrollToParts: false,
+    exportBound: false,
+  };
 
   const money = (value, exact = false) => {
     if (value === null || value === undefined) return 'Not available';
@@ -44,7 +49,12 @@
         <strong>${money(item.revenue)}</strong>
         <footer><span>${item.share === null ? 'Share unavailable' : `${item.share.toFixed(1)}% of Revenue`}</span><b class="${item.absolute_delta < 0 ? 'negative' : 'positive'}">${percent(item.relative_delta)}</b></footer>
       </button>`).join('');
-    $$('[data-line]').forEach(button => button.addEventListener('click', () => { $('[data-filter="business_line"]').value = button.dataset.line; refresh(); }));
+    $$('[data-line]').forEach(button => button.addEventListener('click', () => {
+      state.scrollToMachines = button.dataset.line === 'machine';
+      state.scrollToParts = button.dataset.line === 'parts';
+      $('[data-filter="business_line"]').value = button.dataset.line;
+      refresh();
+    }));
   }
 
   function polyline(rows, width, height, pad) {
@@ -113,6 +123,187 @@
     $('[data-sales-body]').innerHTML = (rows || []).map(row => `<tr><td><span class="bcc-rank">${row.rank}</span></td><td><strong>${escapeHtml(row.name || 'Not available')}</strong></td><td>${money(row.revenue)}</td><td>${money(row.previous_revenue)}</td><td class="${row.absolute_delta < 0 ? 'negative' : 'positive'}">${money(row.absolute_delta)}</td><td class="${row.relative_delta < 0 ? 'negative' : 'positive'}">${percent(row.relative_delta)}</td><td>${row.share === null ? 'Not available' : `${row.share.toFixed(1)}%`}</td></tr>`).join('') || '<tr><td colspan="7">Published Mapping data is not available for this dimension.</td></tr>';
   }
 
+  async function loadMachineSales(resetPage = false) {
+    const section = $('.bcc-machine-sales');
+    if (!section || !state.data) return;
+    const visible = ['all_business', 'machine'].includes(state.data.context.business_line);
+    section.hidden = !visible;
+    if (!visible) return;
+    if (resetPage) state.machinePage = 1;
+    state.machineController?.abort();
+    state.machineController = new AbortController();
+    const query = params();
+    query.set('page', state.machinePage);
+    query.set('page_size', '50');
+    const search = $('[data-machine-search]').value.trim();
+    if (search) query.set('search', search);
+    $$('[data-machine-filter]').forEach(control => {
+      if (control.value) query.set(control.dataset.machineFilter, control.value);
+    });
+    $('[data-machine-status]').hidden = false;
+    $('[data-machine-status]').textContent = 'Loading machines sold...';
+    $('[data-machine-table-wrap]').hidden = true;
+    $('[data-machine-pagination]').hidden = true;
+    try {
+      const response = await fetch(`${root.dataset.machineSalesUrl}?${query}`, {
+        signal: state.machineController.signal, headers: { Accept: 'application/json' },
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.message || 'Machine Sales details are temporarily unavailable.');
+      if (!data.ready) {
+        $('[data-machine-status]').textContent = 'The governed Machine Sales buffer has not been synchronized yet.';
+        $('[data-machine-summary]').innerHTML = '';
+        $('[data-machine-source]').textContent = 'No Machine Sales synchronization is available in Mining 360.';
+        return;
+      }
+      state.machinePages = Math.max(1, data.pagination.pages || 1);
+      const filterLabels = { family: 'All Families', brand: 'All Brands' };
+      $$('[data-machine-filter]').forEach(control => {
+        const current = control.value;
+        const values = data.filter_options?.[`${control.dataset.machineFilter === 'family' ? 'families' : 'brands'}`] || [];
+        control.innerHTML = `<option value="">${filterLabels[control.dataset.machineFilter]}</option>${values.map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join('')}`;
+        control.value = current;
+      });
+      $('[data-machine-source]').textContent = `Actual invoiced Machine Sales · Machine Sale uses classified product categories · Other Charges & Adjustments uses MISC or unclassified entries · data through ${dateLabel(data.freshness.data_through_date)} · ${data.freshness.status}`;
+      const summary = data.summary;
+      const reconciliation = Number(summary.reconciliation_adjustment_eur || 0);
+      $('[data-machine-source]').textContent += reconciliation
+        ? ` · explicit reconciliation adjustment ${money(reconciliation, true)}`
+        : ' · reconciled to the certified Machine Revenue card';
+      $('[data-machine-summary]').innerHTML = [
+        ['Machines', Number(summary.equipment_count).toLocaleString('en-GB')],
+        ['Invoices', Number(summary.invoice_count).toLocaleString('en-GB')],
+        ['Machine Sale', money(summary.machine_sale_eur)],
+        ['Other Charges & Adjustments', money(summary.other_charges_eur)],
+        ['Net Invoiced Revenue', money(summary.net_revenue_eur)],
+        ['Missing serials', Number(summary.missing_serial_count).toLocaleString('en-GB')],
+      ].map(([label, value]) => `<div><span>${label}</span><strong>${value}</strong></div>`).join('');
+      $('[data-machine-body]').innerHTML = data.results.map((item, index) => `<tr class="${item.record_type === 'reconciliation_adjustment' ? 'bcc-reconciliation-row' : ''}">
+        <td>${dateLabel(item.business_date)}</td>
+        <td><strong>${escapeHtml(item.customer_name || 'Not available')}</strong><small>${escapeHtml(item.customer_code || '')}</small></td>
+        <td><strong>${escapeHtml(item.model_name || 'Not available')}</strong><small>${escapeHtml((item.product_categories || []).join(' · '))}</small></td>
+        <td><strong>${escapeHtml(item.family_code || 'Not classified')}</strong><small>${escapeHtml(item.equipment_family || '')}</small></td>
+        <td>${escapeHtml(item.brand || 'Not available')}</td>
+        <td>${item.record_type === 'reconciliation_adjustment' ? 'Not applicable' : item.serial_number ? `<strong>${escapeHtml(item.serial_number)}</strong>` : '<span class="bcc-data-warning">Missing</span>'}</td>
+        <td>${item.record_type === 'reconciliation_adjustment' ? 'Not applicable' : escapeHtml(item.equipment_code || 'Not available')}</td>
+        <td><button class="bcc-entry-toggle" type="button" data-machine-entry-toggle="${index}" aria-expanded="false">${item.invoice_count} invoice${item.invoice_count === 1 ? '' : 's'} · ${item.transaction_count} entries</button></td>
+        <td>${escapeHtml((item.conditions || []).join(' · ') || 'Not available')}</td>
+        <td class="${item.machine_sale_eur < 0 ? 'negative' : 'positive'}">${money(item.machine_sale_eur, true)}</td>
+        <td class="${item.other_charges_eur < 0 ? 'negative' : 'positive'}">${money(item.other_charges_eur, true)}</td>
+        <td class="${item.net_revenue_eur < 0 ? 'negative' : 'positive'}">${money(item.net_revenue_eur, true)}</td>
+      </tr><tr class="bcc-entry-detail" data-machine-entry="${index}" hidden><td colspan="12"><div><strong>Invoice entries</strong><table><thead><tr><th>Date</th><th>Invoice</th><th>Classification</th><th>Source category</th><th>Amount</th></tr></thead><tbody>${(item.entries || []).map(entry => `<tr><td>${dateLabel(entry.business_date)}</td><td>${escapeHtml(entry.invoice_number || 'Not available')}</td><td>${escapeHtml(entry.classification)}</td><td>${escapeHtml(entry.product_category)}</td><td class="${entry.amount_eur < 0 ? 'negative' : 'positive'}">${money(entry.amount_eur, true)}</td></tr>`).join('')}</tbody></table></div></td></tr>`).join('') || '<tr><td colspan="12">No invoiced Machine Sale matches the selected period and filters.</td></tr>';
+      $$('[data-machine-entry-toggle]').forEach(button => button.addEventListener('click', () => {
+        const detail = $(`[data-machine-entry="${button.dataset.machineEntryToggle}"]`);
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!expanded));
+        detail.hidden = expanded;
+      }));
+      $('[data-machine-status]').hidden = true;
+      $('[data-machine-table-wrap]').hidden = false;
+      $('[data-machine-pagination]').hidden = data.pagination.count === 0;
+      $('[data-machine-page]').textContent = `Page ${data.pagination.page} of ${state.machinePages} · ${Number(data.pagination.count).toLocaleString('en-GB')} rows`;
+      $('[data-machine-prev]').disabled = state.machinePage <= 1;
+      $('[data-machine-next]').disabled = state.machinePage >= state.machinePages;
+      if (state.scrollToMachines) {
+        state.scrollToMachines = false;
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (error) {
+      if (error.name === 'AbortError') return;
+      $('[data-machine-status]').hidden = false;
+      $('[data-machine-status]').textContent = error.message;
+      $('[data-machine-summary]').innerHTML = '';
+    }
+  }
+
+  async function loadPartsSales(resetPage = false) {
+    const section = $('.bcc-parts-sales');
+    if (!section || !state.data) return;
+    const visible = ['all_business', 'parts'].includes(state.data.context.business_line);
+    section.hidden = !visible;
+    if (!visible) return;
+    if (resetPage) state.partsPage = 1;
+    state.partsController?.abort();
+    state.partsController = new AbortController();
+    const query = params();
+    query.set('page', state.partsPage);
+    query.set('page_size', '50');
+    query.set('group_by', $('[data-parts-group]').value || 'major');
+    const search = $('[data-parts-search]').value.trim();
+    if (search) query.set('search', search);
+    $$('[data-parts-filter]').forEach(control => {
+      if (control.value) query.set(control.dataset.partsFilter, control.value);
+    });
+    $('[data-parts-status]').hidden = false;
+    $('[data-parts-status]').textContent = 'Loading classified Parts sales...';
+    $('[data-parts-table-wrap]').hidden = true;
+    $('[data-parts-pagination]').hidden = true;
+    try {
+      const response = await fetch(`${root.dataset.partsSalesUrl}?${query}`, {
+        signal: state.partsController.signal, headers: { Accept: 'application/json' },
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.message || 'Parts Sales classification is temporarily unavailable.');
+      if (!data.ready) {
+        $('[data-parts-status]').textContent = 'The governed Parts Sales buffer has not been synchronized yet.';
+        $('[data-parts-summary]').innerHTML = '';
+        $('[data-parts-source]').textContent = 'No Parts Sales synchronization is available in Mining 360.';
+        return;
+      }
+      state.partsPages = Math.max(1, data.pagination.pages || 1);
+      const optionConfig = {
+        major: ['major_classes', 'All Major Classes'],
+        minor: ['minor_classes', 'All Minor Classes'],
+        ppc: ['ppcs', 'All PPC'],
+      };
+      $$('[data-parts-filter]').forEach(control => {
+        const current = control.value;
+        const [key, label] = optionConfig[control.dataset.partsFilter];
+        const values = data.filter_options?.[key] || [];
+        control.innerHTML = `<option value="">${label}</option>${values.map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join('')}`;
+        control.value = current;
+      });
+      const summary = data.summary;
+      $('[data-parts-source]').textContent = `Actual invoiced Parts Revenue allocated to invoice lines and classified from the governed CAT reference · data through ${dateLabel(data.freshness.data_through_date)} · ${data.freshness.status}`;
+      $('[data-parts-summary]').innerHTML = [
+        ['Certified Parts Revenue', money(summary.certified_parts_revenue_eur)],
+        ['Allocated to Parts', money(summary.allocated_invoice_revenue_eur)],
+        ['Classified Revenue', money(summary.classified_revenue_eur)],
+        ['Other Brands', money(summary.other_brands_revenue_eur)],
+        ['Not linked / source lag', money(summary.unlinked_revenue_eur)],
+        ['Invoice Reconciliation', summary.reconciliation_coverage_pct === null ? 'Not available' : `${summary.reconciliation_coverage_pct.toFixed(1)}%`],
+        ['Classification Coverage', summary.classification_coverage_pct === null ? 'Not available' : `${summary.classification_coverage_pct.toFixed(1)}%`],
+        ['Invoice Lines', Number(summary.line_count).toLocaleString('en-GB')],
+      ].map(([label, value]) => `<div><span>${label}</span><strong>${value}</strong></div>`).join('');
+      $('[data-parts-body]').innerHTML = data.results.map(item => `<tr>
+        <td><span class="bcc-rank">${item.rank}</span></td>
+        <td><strong>${escapeHtml(item.brand_group || 'Brand Not Available')}</strong></td>
+        <td><strong>${escapeHtml(item.major_class || 'Not classified')}</strong></td>
+        <td>${escapeHtml(item.major_description || 'Not classified')}</td>
+        <td>${escapeHtml(item.minor_class || 'Not classified')}</td>
+        <td>${escapeHtml(item.ppc || 'Not classified')}</td>
+        <td class="${item.revenue_eur < 0 ? 'negative' : 'positive'}">${money(item.revenue_eur, true)}</td>
+        <td>${Number(item.line_count).toLocaleString('en-GB')}</td>
+        <td>${Number(item.part_count).toLocaleString('en-GB')}</td>
+      </tr>`).join('') || '<tr><td colspan="9">No classified Parts sale matches the selected period and filters.</td></tr>';
+      $('[data-parts-status]').hidden = true;
+      $('[data-parts-table-wrap]').hidden = false;
+      $('[data-parts-pagination]').hidden = data.pagination.count === 0;
+      $('[data-parts-page]').textContent = `Page ${data.pagination.page} of ${state.partsPages} · ${Number(data.pagination.count).toLocaleString('en-GB')} groups`;
+      $('[data-parts-prev]').disabled = state.partsPage <= 1;
+      $('[data-parts-next]').disabled = state.partsPage >= state.partsPages;
+      if (state.scrollToParts) {
+        state.scrollToParts = false;
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (error) {
+      if (error.name === 'AbortError') return;
+      $('[data-parts-status]').hidden = false;
+      $('[data-parts-status]').textContent = error.message;
+      $('[data-parts-summary]').innerHTML = '';
+    }
+  }
+
   function openEntity(id) {
     const item = (state.data.dimensions[state.dimension] || []).find(row => String(row.id) === String(id)); if (!item) return;
     const type = state.dimension === 'customers' ? 'Customer' : state.dimension === 'countries' ? 'Country' : 'Key Account';
@@ -148,7 +339,7 @@
     $$('[data-remove-watch]').forEach(button => button.addEventListener('click', () => removeWatchlist(button.dataset.removeWatch)));
     Object.entries(data.actions_summary).forEach(([key,value]) => { const node = $(`[data-action="${key}"]`); if (node) node.textContent = value; });
     $('[data-confidence-summary]').textContent = data.confidence.warnings.length ? data.confidence.warnings.join(' ') : 'Published Revenue passed the configured confidence checks.';
-    populateOptions(data.filter_options); renderChips();
+    populateOptions(data.filter_options); renderChips(); loadMachineSales(true); loadPartsSales(true);
   }
 
   function populateOptions(options) {
@@ -185,6 +376,40 @@
   $$('[data-filter]').forEach(control => control.addEventListener('change', () => { if ($('[data-filter="period"]').value !== 'custom' || ( $('[data-filter="start_date"]').value && $('[data-filter="end_date"]').value )) refresh(); else toggleCustomDates(); }));
   $('[data-reset]').addEventListener('click', () => { history.replaceState({},'',location.pathname); $$('[data-filter]').forEach(control => control.value = control.dataset.filter === 'period' ? 'ytd' : control.dataset.filter === 'comparison' ? 'same_period_last_year' : control.dataset.filter === 'business_line' ? 'all_business' : ''); refresh(); });
   $('[data-refresh]').addEventListener('click', refresh); $('[data-retry]').addEventListener('click', refresh);
+  $('[data-machine-refresh]')?.addEventListener('click', () => loadMachineSales(true));
+  $$('[data-machine-filter]').forEach(control => control.addEventListener('change', () => loadMachineSales(true)));
+  let machineSearchTimer;
+  $('[data-machine-search]')?.addEventListener('input', () => {
+    window.clearTimeout(machineSearchTimer);
+    machineSearchTimer = window.setTimeout(() => loadMachineSales(true), 300);
+  });
+  $('[data-machine-prev]')?.addEventListener('click', () => { if (state.machinePage > 1) { state.machinePage -= 1; loadMachineSales(); } });
+  $('[data-machine-next]')?.addEventListener('click', () => { if (state.machinePage < state.machinePages) { state.machinePage += 1; loadMachineSales(); } });
+  $('[data-machine-export]')?.addEventListener('click', () => {
+    const query = params();
+    const search = $('[data-machine-search]').value.trim();
+    if (search) query.set('search', search);
+    $$('[data-machine-filter]').forEach(control => { if (control.value) query.set(control.dataset.machineFilter, control.value); });
+    window.location.href = `${root.dataset.machineSalesExportUrl}?${query}`;
+  });
+  $('[data-parts-refresh]')?.addEventListener('click', () => loadPartsSales(true));
+  $('[data-parts-group]')?.addEventListener('change', () => loadPartsSales(true));
+  $$('[data-parts-filter]').forEach(control => control.addEventListener('change', () => loadPartsSales(true)));
+  let partsSearchTimer;
+  $('[data-parts-search]')?.addEventListener('input', () => {
+    window.clearTimeout(partsSearchTimer);
+    partsSearchTimer = window.setTimeout(() => loadPartsSales(true), 300);
+  });
+  $('[data-parts-prev]')?.addEventListener('click', () => { if (state.partsPage > 1) { state.partsPage -= 1; loadPartsSales(); } });
+  $('[data-parts-next]')?.addEventListener('click', () => { if (state.partsPage < state.partsPages) { state.partsPage += 1; loadPartsSales(); } });
+  $('[data-parts-export]')?.addEventListener('click', () => {
+    const query = params();
+    query.set('group_by', $('[data-parts-group]').value || 'major');
+    const search = $('[data-parts-search]').value.trim();
+    if (search) query.set('search', search);
+    $$('[data-parts-filter]').forEach(control => { if (control.value) query.set(control.dataset.partsFilter, control.value); });
+    window.location.href = `${root.dataset.partsSalesExportUrl}?${query}`;
+  });
   $$('[data-dimension]').forEach(button => button.addEventListener('click', () => { state.dimension=button.dataset.dimension; state.limit=10; $$('[data-dimension]').forEach(item=>item.classList.toggle('active',item===button)); renderDimension(); }));
   $$('[data-sales-tab]').forEach(button => button.addEventListener('click', () => { state.salesTab=button.dataset.salesTab; $$('[data-sales-tab]').forEach(item=>item.classList.toggle('active',item===button)); renderSalesReview(); }));
   $('[data-show-all]').addEventListener('click', () => { state.limit = state.limit === 10 ? 25 : 10; $('[data-show-all]').textContent = state.limit === 10 ? 'Show Top 25' : 'Show Top 10'; renderDimension(); });

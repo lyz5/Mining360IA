@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from io import BytesIO
 from decimal import Decimal
 
 from django.contrib.auth import get_user_model
@@ -12,6 +13,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils import timezone
 from django.views.decorators.http import require_http_methods
+from openpyxl import Workbook
+from openpyxl.styles import Font, PatternFill
+from openpyxl.utils import get_column_letter
 
 from .ai_feature_rollout import feature_enabled
 from .business_mapping_normalization_service import normalize_business_name
@@ -22,6 +26,8 @@ from .business_review_confidence_service import BusinessReviewDataConfidenceServ
 from .business_review_export_service import BusinessReviewExportService
 from .business_review_snapshot_service import BusinessReviewSnapshotService
 from .business_command_center_service import BusinessCommandCenterInputError, BusinessCommandCenterService
+from .machine_sales_service import MachineSalesDetailService
+from .parts_sales_service import PartsSalesDetailService
 from .models import (
     BusinessAccount,
     BusinessDecision,
@@ -88,6 +94,167 @@ def command_center_bootstrap_api(request):
             "status": "SOURCE_UNAVAILABLE",
             "message": "Revenue data is temporarily unavailable. Please retry the view.",
         }, status=503)
+
+
+def _machine_sales_params(request):
+    _revenue, _publication, _published_rows, selected_rows, period, _line, _run = BusinessCommandCenterService(
+        request.user, request.GET
+    )._context()
+    params = request.GET.copy()
+    params["start_date"] = period["start_date"].isoformat()
+    params["end_date"] = period["end_date"].isoformat()
+    if any(request.GET.get(key) for key in ("customer_ids", "country_ids", "key_account_ids")):
+        params["customer_codes"] = ",".join(sorted({
+            str(code) for row in selected_rows for code in row.get("source_account_codes", []) if code
+        }))
+    return params, period
+
+
+@login_required
+def command_center_machine_sales_api(request):
+    if not _command_center_allowed(request.user):
+        return JsonResponse({"detail": "Forbidden"}, status=403)
+    try:
+        params, _period = _machine_sales_params(request)
+        return JsonResponse(MachineSalesDetailService(request.user, params).result())
+    except (BusinessCommandCenterInputError, ValueError) as exc:
+        return JsonResponse({"ready": False, "message": str(exc)}, status=400)
+    except Exception:
+        return JsonResponse({
+            "ready": False,
+            "message": "Machine Sales details are temporarily unavailable. Revenue metrics remain available.",
+        }, status=503)
+
+
+@login_required
+def command_center_parts_sales_api(request):
+    if not _command_center_allowed(request.user):
+        return JsonResponse({"detail": "Forbidden"}, status=403)
+    try:
+        params, _period = _machine_sales_params(request)
+        return JsonResponse(PartsSalesDetailService(request.user, params).result())
+    except (BusinessCommandCenterInputError, ValueError) as exc:
+        return JsonResponse({"ready": False, "message": str(exc)}, status=400)
+    except Exception:
+        return JsonResponse({
+            "ready": False,
+            "message": "Parts Sales classification is temporarily unavailable. Revenue metrics remain available.",
+        }, status=503)
+
+
+def _excel_value(value):
+    if isinstance(value, str) and value.startswith(("=", "+", "-", "@")):
+        return "'" + value
+    return value
+
+
+@login_required
+def command_center_machine_sales_export_api(request):
+    if not _command_center_allowed(request.user) or not has_business_review_permission(request.user, "export_business_command_center"):
+        return JsonResponse({"detail": "Forbidden"}, status=403)
+    try:
+        params, period = _machine_sales_params(request)
+        params["page_size"] = str(MachineSalesDetailService.MAX_PAGE_SIZE)
+        params["page"] = "1"
+        first = MachineSalesDetailService(request.user, params).result()
+        rows = list(first["results"])
+        for page in range(2, min(first["pagination"]["pages"], 334) + 1):
+            params["page"] = str(page)
+            rows.extend(MachineSalesDetailService(request.user, params).result()["results"])
+    except (BusinessCommandCenterInputError, ValueError) as exc:
+        return JsonResponse({"detail": str(exc)}, status=400)
+
+    workbook = Workbook()
+    sheet = workbook.active
+    sheet.title = "Machines Sold"
+    headers = ["Latest Invoice Date", "Customer", "Customer Code", "Model", "Family", "Source Family", "Brand", "Serial Number", "Equipment", "Invoices", "Condition", "Machine Sale EUR", "Other Charges & Adjustments EUR", "Net Invoiced Revenue EUR", "Source Entries"]
+    sheet.append(headers)
+    for cell in sheet[1]:
+        cell.font = Font(bold=True, color="FFFFFF")
+        cell.fill = PatternFill("solid", fgColor="11152F")
+    for item in rows:
+        sheet.append([_excel_value(value) for value in (
+            item["business_date"], item["customer_name"], item["customer_code"], item["model_name"],
+            item["family_code"], item["equipment_family"], item["brand"], item["serial_number"],
+            item["equipment_code"], ", ".join(item["invoice_numbers"]), ", ".join(item["conditions"]),
+            item["machine_sale_eur"], item["other_charges_eur"], item["net_revenue_eur"], item["transaction_count"],
+        )])
+    sheet.freeze_panes = "A2"
+    sheet.auto_filter.ref = sheet.dimensions
+    widths = [18, 34, 18, 18, 12, 25, 14, 20, 16, 28, 18, 20, 28, 24, 14]
+    for index, width in enumerate(widths, 1):
+        sheet.column_dimensions[get_column_letter(index)].width = width
+    detail = workbook.create_sheet("Invoice Entries")
+    detail_headers = ["Date", "Customer", "Customer Code", "Model", "Serial Number", "Equipment", "Invoice", "Classification", "Source Category", "Amount EUR"]
+    detail.append(detail_headers)
+    for cell in detail[1]:
+        cell.font = Font(bold=True, color="FFFFFF")
+        cell.fill = PatternFill("solid", fgColor="11152F")
+    for item in rows:
+        for entry in item["entries"]:
+            detail.append([_excel_value(value) for value in (
+                entry["business_date"], item["customer_name"], item["customer_code"], item["model_name"],
+                item["serial_number"], item["equipment_code"], entry["invoice_number"],
+                entry["classification"], entry["product_category"], entry["amount_eur"],
+            )])
+    detail.freeze_panes = "A2"
+    detail.auto_filter.ref = detail.dimensions
+    metadata = workbook.create_sheet("Context")
+    metadata.append(["Period", period["label"]])
+    metadata.append(["Start Date", period["start_date"].isoformat()])
+    metadata.append(["End Date", period["end_date"].isoformat()])
+    metadata.append(["Family", request.GET.get("family") or "All"])
+    metadata.append(["Brand", request.GET.get("brand") or "All"])
+    metadata.append(["Generated At", timezone.now().isoformat()])
+    output = BytesIO()
+    workbook.save(output)
+    response = HttpResponse(output.getvalue(), content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+    response["Content-Disposition"] = 'attachment; filename="Mining360_Machines_Sold.xlsx"'
+    return response
+
+
+@login_required
+def command_center_parts_sales_export_api(request):
+    if not _command_center_allowed(request.user) or not has_business_review_permission(request.user, "export_business_command_center"):
+        return JsonResponse({"detail": "Forbidden"}, status=403)
+    try:
+        params, period = _machine_sales_params(request)
+        params["page_size"] = str(PartsSalesDetailService.MAX_PAGE_SIZE)
+        params["page"] = "1"
+        first = PartsSalesDetailService(request.user, params).result()
+        rows = list(first["results"])
+        for page in range(2, first["pagination"]["pages"] + 1):
+            params["page"] = str(page)
+            rows.extend(PartsSalesDetailService(request.user, params).result()["results"])
+    except (BusinessCommandCenterInputError, ValueError) as exc:
+        return JsonResponse({"detail": str(exc)}, status=400)
+
+    workbook = Workbook()
+    sheet = workbook.active
+    sheet.title = "Parts Classification"
+    headers = ["Rank", "Brand Group", "Major Class", "Major Description", "Minor Class", "PPC", "Revenue EUR", "Invoice Lines", "Distinct Parts"]
+    sheet.append(headers)
+    for cell in sheet[1]:
+        cell.font = Font(bold=True, color="FFFFFF")
+        cell.fill = PatternFill("solid", fgColor="11152F")
+    for item in rows:
+        sheet.append([
+            item["rank"], item["brand_group"], item["major_class"], item["major_description"], item["minor_class"],
+            item["ppc"], item["revenue_eur"], item["line_count"], item["part_count"],
+        ])
+    sheet.freeze_panes = "A2"
+    sheet.auto_filter.ref = sheet.dimensions
+    metadata = workbook.create_sheet("Context")
+    metadata.append(["Period", period["label"]])
+    metadata.append(["Start Date", period["start_date"].isoformat()])
+    metadata.append(["End Date", period["end_date"].isoformat()])
+    metadata.append(["Grouping", request.GET.get("group_by") or "major"])
+    metadata.append(["Generated At", timezone.now().isoformat()])
+    output = BytesIO()
+    workbook.save(output)
+    response = HttpResponse(output.getvalue(), content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+    response["Content-Disposition"] = 'attachment; filename="Mining360_Parts_Classification.xlsx"'
+    return response
 
 
 @login_required

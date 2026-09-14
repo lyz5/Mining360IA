@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Business Command Center | Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260910-command-center">
-    <link rel="stylesheet" href="{% static 'reports/business_command_center.css' %}?v=20260911-sales-review">
+    <link rel="stylesheet" href="{% static 'reports/business_command_center.css' %}?v=20260913-parts-brand-v2">
 </head>
 <body class="bcc-body">
 {% include "reports/includes/app_nav.html" %}
 <main class="app-shell bcc-shell" data-command-center
       data-bootstrap-url="{% url 'business-command-center-bootstrap-api' %}"
+      data-machine-sales-url="{% url 'business-command-center-machine-sales-api' %}"
+      data-machine-sales-export-url="{% url 'business-command-center-machine-sales-export-api' %}"
+      data-parts-sales-url="{% url 'business-command-center-parts-sales-api' %}"
+      data-parts-sales-export-url="{% url 'business-command-center-parts-sales-export-api' %}"
       data-watchlist-url="{% url 'business-command-center-watchlist-api' %}"
       data-saved-views-url="{% url 'business-review-saved-views-api' %}"
       data-export-url="{% url 'business-command-center-export-api' %}"
@@ -76,6 +80,67 @@
             </article>
             <section class="bcc-line-grid" data-line-grid aria-label="Revenue by business line"></section>
         </section>
+
+        <section class="bcc-section bcc-machine-sales" aria-labelledby="bcc-machine-sales-title">
+            <div class="bcc-section-head">
+                <div><p class="bcc-kicker">Machine Sales detail</p><h2 id="bcc-machine-sales-title">Machines Sold</h2></div>
+                <div class="bcc-machine-tools">
+                    <label><span class="sr-only">Filter by family</span><select data-machine-filter="family"><option value="">All Families</option></select></label>
+                    <label><span class="sr-only">Filter by brand</span><select data-machine-filter="brand"><option value="">All Brands</option></select></label>
+                    <label><span class="sr-only">Search sold machines</span><input type="search" data-machine-search placeholder="Customer, serial, model or invoice"></label>
+                    <button class="bcc-button secondary" type="button" data-machine-refresh>Refresh details</button>
+                    {% if can_export %}<button class="bcc-button" type="button" data-machine-export>Export Excel</button>{% endif %}
+                </div>
+            </div>
+            <p class="bcc-sales-source-note" data-machine-source>Loading the governed Machine Sales buffer...</p>
+            <div class="bcc-machine-summary" data-machine-summary></div>
+            <div class="bcc-local-status" data-machine-status role="status">Loading machines sold...</div>
+            <div class="bcc-table-wrap bcc-machine-table-wrap" data-machine-table-wrap hidden>
+                <table class="bcc-sales-table bcc-machine-table">
+                    <thead><tr><th>Latest Invoice</th><th>Customer</th><th>Model</th><th>Family</th><th>Brand</th><th>Serial Number</th><th>Equipment</th><th>Invoices</th><th>Condition</th><th>Machine Sale</th><th>Other Charges &amp; Adjustments</th><th>Net Invoiced Revenue</th></tr></thead>
+                    <tbody data-machine-body></tbody>
+                </table>
+            </div>
+            <div class="bcc-machine-pagination" data-machine-pagination hidden>
+                <button class="bcc-button secondary" type="button" data-machine-prev>Previous</button>
+                <span data-machine-page></span>
+                <button class="bcc-button secondary" type="button" data-machine-next>Next</button>
+            </div>
+        </section>
+
+        <section class="bcc-section bcc-parts-sales" aria-labelledby="bcc-parts-sales-title">
+            <div class="bcc-section-head">
+                <div><p class="bcc-kicker">Parts Sales detail</p><h2 id="bcc-parts-sales-title">Parts Classification</h2></div>
+                <div class="bcc-machine-tools">
+                    <label><span class="sr-only">Classification level</span><select data-parts-group>
+                        <option value="major">Major Class</option>
+                        <option value="minor">Minor Class</option>
+                        <option value="ppc">PPC</option>
+                    </select></label>
+                    <label><span class="sr-only">Major Class</span><select data-parts-filter="major"><option value="">All Major Classes</option></select></label>
+                    <label><span class="sr-only">Minor Class</span><select data-parts-filter="minor"><option value="">All Minor Classes</option></select></label>
+                    <label><span class="sr-only">PPC</span><select data-parts-filter="ppc"><option value="">All PPC</option></select></label>
+                    <label><span class="sr-only">Search part number</span><input type="search" data-parts-search placeholder="Part number"></label>
+                    <button class="bcc-button secondary" type="button" data-parts-refresh>Refresh details</button>
+                    {% if can_export %}<button class="bcc-button" type="button" data-parts-export>Export Excel</button>{% endif %}
+                </div>
+            </div>
+            <p class="bcc-sales-source-note" data-parts-source>Loading the governed Parts classification buffer...</p>
+            <div class="bcc-machine-summary bcc-parts-summary" data-parts-summary></div>
+            <div class="bcc-local-status" data-parts-status role="status">Loading classified Parts sales...</div>
+            <div class="bcc-table-wrap" data-parts-table-wrap hidden>
+                <table class="bcc-sales-table bcc-parts-table">
+                    <thead><tr><th>Rank</th><th>Brand Group</th><th>Major Class</th><th>Major Description</th><th>Minor Class</th><th>PPC</th><th>Revenue</th><th>Invoice Lines</th><th>Distinct Parts</th></tr></thead>
+                    <tbody data-parts-body></tbody>
+                </table>
+            </div>
+            <div class="bcc-machine-pagination bcc-parts-pagination" data-parts-pagination hidden>
+                <button class="bcc-button secondary" type="button" data-parts-prev>Previous</button>
+                <span data-parts-page></span>
+                <button class="bcc-button secondary" type="button" data-parts-next>Next</button>
+            </div>
+        </section>
+
         <section class="bcc-two-column bcc-change-row">
             <article class="bcc-section">
                 <div class="bcc-section-head"><div><p class="bcc-kicker">Movement</p><h2>What Changed</h2></div></div>
@@ -159,6 +224,6 @@
     </aside>
 </main>
 <script src="{% static 'reports/visual_export.js' %}?v=20260910"></script>
-<script src="{% static 'reports/business_command_center.js' %}?v=20260911-sales-review"></script>
+<script src="{% static 'reports/business_command_center.js' %}?v=20260913-parts-brand-v2"></script>
 </body>
 </html>
