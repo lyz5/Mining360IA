@@ -344,6 +344,7 @@ TOPN(
         period_year = available_years[0] if available_years else None
         created = updated = unchanged = rejected = 0
         seen_accounts = set()
+        synchronized_account_ids = set()
         country_overrides = {
             item.source_record_id: item.corrected_value
             for item in SourceAccountFieldOverride.objects.filter(
@@ -389,6 +390,7 @@ TOPN(
                 },
             )
             seen_accounts.add(source_id)
+            synchronized_account_ids.add(account.pk)
             if record_created:
                 created += 1
             elif previous_record and previous_record.source_hash == new_hash:
@@ -396,6 +398,11 @@ TOPN(
             else:
                 updated += 1
         SourceAccountRecord.objects.filter(source_system="MiningAccounts", active=True).exclude(source_record_id__in=seen_accounts).update(active=False)
+        from .business_mapping_country_account_service import CountryAccountService
+        CountryAccountService.ensure_all_accounts_grouped(
+            actor=self.user,
+            account_ids=synchronized_account_ids,
+        )
 
         fleet_objects = []
         site_names = {}

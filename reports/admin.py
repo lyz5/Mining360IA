@@ -31,6 +31,7 @@ from .models import (
     SourceAccountFieldOverride,
     BusinessAccountAlias,
     MineSite,
+    MineSiteAlias,
     AccountMineSiteCandidate,
     AccountMineSiteMapping,
     AccountMineSiteMappingVersion,
@@ -107,6 +108,14 @@ class MineSiteAdmin(admin.ModelAdmin):
     list_display = ("canonical_minesite_name", "minesite_code", "country", "status", "validation_status", "active")
     list_filter = ("status", "validation_status", "active", "country")
     search_fields = ("canonical_minesite_name", "minesite_code")
+
+
+@admin.register(MineSiteAlias)
+class MineSiteAliasAdmin(admin.ModelAdmin):
+    list_display = ("alias", "minesite", "source_system", "validation_status", "active")
+    list_filter = ("validation_status", "active", "source_system")
+    search_fields = ("alias", "normalized_alias", "minesite__canonical_minesite_name")
+    raw_id_fields = ("minesite", "validated_by")
 
 
 @admin.register(AccountMineSiteCandidate)

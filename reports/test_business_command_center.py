@@ -5,7 +5,7 @@ from django.test import Client, TestCase, override_settings
 from django.urls import reverse
 from django.utils import timezone
 
-from .business_command_center_service import BusinessRevenuePeriodService
+from .business_command_center_service import BusinessRevenuePeriodService, _growth
 from .models import (
     MachineSaleDetail,
     MachineSalesSynchronizationRun,
@@ -18,6 +18,7 @@ from .models import (
 FEATURES = {
     "ENABLE_BUSINESS_REVIEW": "Production",
     "ENABLE_BUSINESS_COMMAND_CENTER": "Production",
+    "ENABLE_BUSINESS_COMMAND_CENTER_V2": "Production",
     "ENABLE_BUSINESS_COMMAND_CENTER_CUSTOMERS": "Production",
     "ENABLE_BUSINESS_COMMAND_CENTER_COUNTRIES": "Production",
     "ENABLE_BUSINESS_COMMAND_CENTER_KEY_ACCOUNTS": "Production",
@@ -39,6 +40,12 @@ class BusinessRevenuePeriodTests(TestCase):
         self.assertEqual((current_month["start_date"], current_month["end_date"]), (date(2026, 9, 1), latest))
         custom = BusinessRevenuePeriodService.resolve(latest, "custom", "2026-02-01", "2026-02-28", "previous_equivalent_period")
         self.assertEqual((custom["comparison_start_date"], custom["comparison_end_date"]), (date(2026, 1, 4), date(2026, 1, 31)))
+
+    def test_growth_states_do_not_emit_misleading_percentages(self):
+        self.assertEqual(_growth(100, 0), (None, "new"))
+        self.assertEqual(_growth(0, 0), (None, "no_change"))
+        self.assertEqual(_growth(100, 1), (None, "not_meaningful"))
+        self.assertEqual(_growth(1500, -1000), (None, "not_meaningful"))
 
 
 @override_settings(**FEATURES)
@@ -70,7 +77,11 @@ class BusinessCommandCenterApiTests(TestCase):
         )
 
     def test_page_and_bootstrap_load_without_published_mapping(self):
-        self.assertEqual(self.client.get(reverse("business-command-center")).status_code, 200)
+        page = self.client.get(reverse("business-command-center"))
+        self.assertEqual(page.status_code, 200)
+        self.assertTemplateUsed(page, "reports/business_command_center_v2.html")
+        self.assertContains(page, 'data-workspace="turnover"')
+        self.assertNotContains(page, "Revenue Mix &amp; Movement")
         response = self.client.get(reverse("business-command-center-bootstrap-api"))
         self.assertEqual(response.status_code, 200)
         data = response.json()
@@ -79,10 +90,20 @@ class BusinessCommandCenterApiTests(TestCase):
         self.assertEqual(sum(item["revenue"] for item in data["business_lines"]), 3500.0)
         self.assertEqual(data["reconciliation"]["status"], "RECONCILED")
         self.assertEqual(data["context"]["end_date"], "2026-09-08")
-        self.assertEqual(data["sales_review"]["summary"]["actual_revenue"], 3500.0)
-        self.assertEqual(data["sales_review"]["summary"]["comparison_revenue"], 1750.0)
-        self.assertEqual(data["sales_review"]["budget"]["status"], "NOT_AVAILABLE")
-        self.assertEqual(data["sales_review"]["firm_orders"]["status"], "NOT_AVAILABLE")
+        self.assertNotIn("sales_review", data)
+        self.assertTrue(data["context"]["context_id"])
+        self.assertLessEqual(len(data["dimensions"]["customers"]), 5)
+        self.assertEqual(data["daily_trend"][0]["date"], "2026-09-08")
+        self.assertEqual(data["daily_trend"][0]["value"], 3500.0)
+        self.assertEqual(data["since_yesterday"]["from_date"], "2026-09-07")
+        self.assertEqual(data["since_yesterday"]["through_date"], "2026-09-08")
+        self.assertEqual(sum(item["absolute_delta"] for item in data["since_yesterday"]["items"]), 3500.0)
+
+    def test_admin_can_open_legacy_rollback_view(self):
+        page = self.client.get(reverse("business-command-center"), {"ui": "legacy"})
+        self.assertTemplateUsed(page, "reports/business_command_center_legacy.html")
+        payload = self.client.get(reverse("business-command-center-bootstrap-api"), {"ui": "legacy"}).json()
+        self.assertIn("sales_review", payload)
 
     def test_business_line_and_period_filters_intersect(self):
         data = self.client.get(reverse("business-command-center-bootstrap-api"), {
@@ -99,6 +120,7 @@ class BusinessCommandCenterApiTests(TestCase):
                 "mapping_id": "M1", "account_id": "A1", "account_code": "ACC-1",
                 "account_name": "Fekola Canonical", "minesite_id": "S1", "minesite_name": "Fekola",
                 "source_account_codes": ["C001"], "business_country": "Mali",
+                "customer_country_group_id": "CCG1", "customer_country_group_name": "B2Gold Mali",
                 "key_account_id": "K1", "key_account_name": "B2Gold",
             }]},
         )
@@ -107,8 +129,19 @@ class BusinessCommandCenterApiTests(TestCase):
         self.assertEqual(data["dimensions"]["customers"][0]["revenue"], 2000.0)
         self.assertEqual(data["dimensions"]["countries"][0]["revenue"], 2000.0)
         self.assertEqual(data["dimensions"]["key_accounts"][0]["revenue"], 2000.0)
-        self.assertEqual(data["sales_review"]["by_country"][0]["name"], "Mali")
-        self.assertEqual(data["sales_review"]["by_customer"][0]["name"], "Fekola Canonical")
+        explorer = self.client.get(reverse("business-command-center-revenue-explorer-api"), {
+            "business_line": "parts", "dimension": "customers",
+        }).json()
+        self.assertEqual(explorer["results"][0]["name"], "Fekola Canonical")
+        self.assertEqual(explorer["results"][0]["revenue"], 2000.0)
+        self.assertEqual(explorer["results"][0]["comparison_business_line_mix"]["parts"], 1000.0)
+        customer_groups = self.client.get(reverse("business-command-center-customer-search-api"), {"q": "b2gold"}).json()
+        self.assertEqual(customer_groups["results"], [{"id": "CCG1", "name": "B2Gold Mali", "country": "Mali", "revenue": 3500.0}])
+        filtered = self.client.get(reverse("business-command-center-bootstrap-api"), {
+            "business_line": "parts", "customer_group_ids": "CCG1",
+        }).json()
+        self.assertEqual(filtered["hero"]["revenue"], 2000.0)
+        self.assertEqual(filtered["filter_options"]["customers"][0]["name"], "B2Gold Mali")
 
     def test_published_key_account_classification_does_not_require_a_minesite_mapping(self):
         MappingPublication.objects.create(
@@ -126,7 +159,11 @@ class BusinessCommandCenterApiTests(TestCase):
         data = self.client.get(reverse("business-command-center-bootstrap-api"), {"business_line": "parts"}).json()
         self.assertEqual(data["dimensions"]["key_accounts"][0]["name"], "CORICA")
         self.assertEqual(data["dimensions"]["key_accounts"][0]["revenue"], 2000.0)
-        self.assertEqual(data["filter_options"]["key_accounts"][0]["name"], "CORICA")
+        self.assertEqual(data["filter_options"]["key_accounts"], [])
+        search = self.client.get(reverse("business-command-center-key-account-search-api"), {"q": "cori"}).json()
+        self.assertEqual(search["results"][0]["name"], "CORICA")
+        dropdown = self.client.get(reverse("business-command-center-key-account-search-api")).json()
+        self.assertEqual(dropdown["results"][0]["name"], "CORICA")
 
     def test_watchlist_is_persisted_per_user(self):
         url = reverse("business-command-center-watchlist-api")

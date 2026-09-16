@@ -1,0 +1,77 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codex Chatbot | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260903-production-hardening-2">
+    <link rel="stylesheet" href="{% static 'codex_chatbot/chatbot.css' %}?v=20260914-7">
+</head>
+<body>
+{% include "reports/includes/app_nav.html" %}
+<main class="app-shell codex-chat"
+      data-submit-url="{% url 'codex_chatbot:submit-run' %}"
+      data-run-base="/codex-chatbot/api/runs/"
+      data-conversation-url="{% if selected_conversation %}{% url 'codex_chatbot:conversation-api' selected_conversation.id %}{% endif %}"
+      data-active-run-id="{% if active_run %}{{ active_run.id }}{% endif %}">
+    <aside class="codex-chat__history" aria-label="Conversations Codex">
+        <div class="codex-chat__brand">
+            <span>MINING 360</span>
+            <strong>Codex Chatbot</strong>
+            <small>Pilote</small>
+        </div>
+        <a class="codex-new" href="{% url 'codex_chatbot:home' %}">Nouvelle conversation</a>
+        <nav aria-label="Historique">
+            {% for conversation in conversations %}
+            <a href="{% url 'codex_chatbot:conversation' conversation.id %}"
+               class="codex-history-item{% if selected_conversation.id == conversation.id %} is-active{% endif %}">
+                <strong>{{ conversation.title }}</strong>
+                <span>{{ conversation.updated_at|date:"d M Y H:i" }}</span>
+            </a>
+            {% empty %}
+            <p class="codex-muted">Aucune conversation Codex.</p>
+            {% endfor %}
+        </nav>
+    </aside>
+    <section class="codex-chat__main">
+        <header class="codex-chat__header">
+            <div>
+                <span class="codex-eyebrow">CODEX CHATBOT</span>
+                <h1>{% if selected_conversation %}{{ selected_conversation.title }}{% else %}Nouvelle conversation{% endif %}</h1>
+            </div>
+            <span class="codex-status"><i></i> Outils métier gouvernés</span>
+        </header>
+        <div id="codex-thread" class="codex-thread" data-conversation-id="{% if selected_conversation %}{{ selected_conversation.id }}{% endif %}" aria-live="polite">
+            {% if selected_conversation %}
+                {% for message in selected_conversation.messages.all %}
+                <article class="codex-message codex-message--{{ message.role|lower }}" data-message-id="{{ message.id }}">
+                    <span>{{ message.get_role_display }}</span>
+                    <p>{{ message.content }}</p>
+                    {% if message.answer_status %}<small>{{ message.answer_status }}</small>{% endif %}
+                </article>
+                {% endfor %}
+            {% else %}
+            <div class="codex-empty">
+                <span>FLEET · PARCOURS INITIAL</span>
+                <h2>Interrogez l’inventaire Fleet par MineSite</h2>
+                <p>Exemple : « Combien d’équipements sont enregistrés sur Fekola ? »</p>
+            </div>
+            {% endif %}
+        </div>
+        <form id="codex-composer" class="codex-composer">
+            {% csrf_token %}
+            <label class="sr-only" for="codex-question">Votre question</label>
+            <textarea id="codex-question" rows="2" maxlength="3000" placeholder="Posez une question sur le Fleet d’un MineSite..." required></textarea>
+            <button type="submit">Envoyer</button>
+            <button type="button" id="codex-cancel" class="codex-cancel" hidden>Annuler</button>
+            <div class="codex-run-progress" id="codex-run-progress" hidden>
+                <div class="codex-run-progress__track" aria-hidden="true"><span></span></div>
+                <p id="codex-progress" role="status"></p>
+            </div>
+        </form>
+    </section>
+</main>
+<script src="{% static 'codex_chatbot/chatbot.js' %}?v=20260914-7" defer></script>
+</body>
+</html>

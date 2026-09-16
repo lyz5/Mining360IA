@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Business Mapping Studio | Mining360IA</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260904-business-mapping-1">
-    <link rel="stylesheet" href="{% static 'reports/business_mapping_studio.css' %}?v=20260911-publication">
+    <link rel="stylesheet" href="{% static 'reports/business_mapping_studio.css' %}?v=20260914-country-groups-ajax">
 </head>
 <body class="bm-page">
 {% include "reports/includes/app_nav.html" %}
@@ -15,6 +15,7 @@
       data-accounts-url="{% url 'business-mapping-accounts-api' %}"
       data-canonical-aliases-url="/api/business-mapping/canonical-accounts/"
       data-canonical-country-url="/api/business-mapping/canonical-accounts/"
+      data-country-accounts-url="{% url 'business-mapping-customer-country-groups-api' %}"
       data-key-accounts-url="{% url 'business-mapping-key-accounts-api' %}"
       data-minesites-url="{% url 'business-mapping-minesites-api' %}"
       data-validate-url="{% url 'business-mapping-validate-new-api' %}"
@@ -211,7 +212,7 @@
 </main>
 <dialog class="bm-dialog bm-key-account-dialog" data-bm-key-account-dialog aria-labelledby="bm-key-account-title">
     <div class="bm-dialog-head"><div><p class="eyebrow">Commercial grouping</p><h2 id="bm-key-account-title">Key Accounts</h2></div><button type="button" data-bm-key-close aria-label="Close">×</button></div>
-    <p class="bm-data-note">Combine Canonical Accounts directly into one governed commercial group.</p>
+    <p class="bm-data-note">Build each Key Account from its governed Canonical Accounts. Existing published relationships remain preserved.</p>
     <div class="bm-key-filter-bar"><span>Revenue basis: <strong data-bm-key-revenue-basis>All Mining</strong></span><label>Sort groups<select data-bm-key-sort><option value="revenue_desc">Revenue: highest first</option><option value="revenue_asc">Revenue: lowest first</option><option value="name">Key Account name</option></select></label></div>
     {% if can_edit %}
     <form class="bm-key-create" data-bm-key-create>
@@ -224,7 +225,7 @@
         <section><div class="bm-subsection-heading"><strong>Key Account groups</strong><span data-bm-key-count>0</span></div><div class="bm-key-list" data-bm-key-list><p class="bm-empty">Loading Key Accounts...</p></div></section>
         <section>
             <div data-bm-key-detail><p class="bm-empty">Select or create a Key Account.</p></div>
-            {% if can_edit %}<label class="bm-key-search">Add Canonical Accounts<input type="search" data-bm-key-search placeholder="Search Canonical Account, code or country"></label>{% endif %}
+            {% if can_edit %}<label class="bm-key-search">Add Canonical Accounts<input type="search" data-bm-key-search placeholder="Search Canonical Account or country"></label>{% endif %}
             <div class="bm-key-available" data-bm-key-available></div>
         </section>
     </div>
@@ -255,6 +256,6 @@
     </form>
 </dialog>
 <div class="bm-toast" data-bm-toast role="status" aria-live="polite" hidden></div>
-<script src="{% static 'reports/business_mapping_studio.js' %}?v=20260911-publication" defer></script>
+<script src="{% static 'reports/business_mapping_studio.js' %}?v=20260915-remove-customer-groups" defer></script>
 </body>
 </html>

@@ -11,6 +11,7 @@ from .business_mapping_conflict_service import BusinessMappingConflictService
 from .models import (
     AccountMineSiteMapping,
     BusinessAccount,
+    CountryAccountMembership,
     KeyAccountMembership,
     MappingAuditLog,
     MappingPublication,
@@ -29,13 +30,15 @@ class MappingPublicationError(RuntimeError):
 def _published_snapshot(queryset=None):
     mappings = (queryset or AccountMineSiteMapping.objects.filter(active=True, relationship_status__in=["Validated", "Published"])).select_related(
         "business_account", "minesite"
-    ).prefetch_related("business_account__source_records", "business_account__key_account_memberships__key_account")
+    ).prefetch_related("business_account__source_records", "business_account__key_account_memberships__key_account", "business_account__country_account_memberships__country_account__key_memberships__key_account")
     rows = []
     for item in mappings:
         source_records = list(item.business_account.source_records.filter(active=True).values(
             "source_system", "source_record_id", "code_cic", "company_code", "branch_code", "country", "operating_countries_json",
         ))
-        membership = next((entry for entry in item.business_account.key_account_memberships.all() if entry.active and entry.key_account.active), None)
+        country_group_membership = next((entry for entry in item.business_account.country_account_memberships.all() if entry.active and entry.country_account.active), None)
+        group_key_membership = next((entry for entry in country_group_membership.country_account.key_memberships.all() if entry.active and entry.key_account.active), None) if country_group_membership else None
+        membership = group_key_membership or next((entry for entry in item.business_account.key_account_memberships.all() if entry.active and entry.key_account.active), None)
         operating_countries = {
             str(country).strip()
             for record in source_records for country in (record.get("operating_countries_json") or [])
@@ -49,6 +52,8 @@ def _published_snapshot(queryset=None):
             "account_id": str(item.business_account_id), "account_code": item.business_account.canonical_account_code,
             "account_name": item.business_account.canonical_account_name,
             "business_country": business_country,
+            "customer_country_group_id": str(country_group_membership.country_account_id) if country_group_membership else None,
+            "customer_country_group_name": country_group_membership.country_account.country_account_name if country_group_membership else None,
             "key_account_id": str(membership.key_account_id) if membership else None,
             "key_account_name": membership.key_account.key_account_name if membership else None,
             "minesite_id": str(item.minesite_id) if item.minesite_id else None,
@@ -76,6 +81,11 @@ def _published_account_snapshot():
             to_attr="publication_key_memberships",
         ),
         Prefetch(
+            "country_account_memberships",
+            queryset=CountryAccountMembership.objects.filter(active=True, country_account__active=True).select_related("country_account").prefetch_related("country_account__key_memberships__key_account"),
+            to_attr="publication_country_group_memberships",
+        ),
+        Prefetch(
             "minesite_mappings",
             queryset=AccountMineSiteMapping.objects.filter(
                 active=True,
@@ -98,7 +108,9 @@ def _published_account_snapshot():
         } for record in account.publication_source_records]
         if not source_records:
             continue
-        membership = account.publication_key_memberships[0] if account.publication_key_memberships else None
+        country_group_membership = account.publication_country_group_memberships[0] if account.publication_country_group_memberships else None
+        group_key_membership = next((entry for entry in country_group_membership.country_account.key_memberships.all() if entry.active and entry.key_account.active), None) if country_group_membership else None
+        membership = group_key_membership or (account.publication_key_memberships[0] if account.publication_key_memberships else None)
         operating_countries = {
             str(country).strip()
             for record in source_records for country in (record.get("operating_countries_json") or [])
@@ -117,6 +129,8 @@ def _published_account_snapshot():
             "account_code": account.canonical_account_code,
             "account_name": account.canonical_account_name,
             "business_country": business_country,
+            "customer_country_group_id": str(country_group_membership.country_account_id) if country_group_membership else None,
+            "customer_country_group_name": country_group_membership.country_account.country_account_name if country_group_membership else None,
             "key_account_id": str(membership.key_account_id) if membership else None,
             "key_account_name": membership.key_account.key_account_name if membership else None,
             "minesite_names": mine_names,

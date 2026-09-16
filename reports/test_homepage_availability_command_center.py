@@ -29,19 +29,23 @@ SAMPLE_ROWS = [
         "[EquipmentCount]": 436,
         "[MineSiteCount]": 12,
         "[DowntimeHours]": 1234.5,
+        "[MTBS]": 42.75,
+        "[PreviousMTBS]": 39.25,
+        "[MTBF]": 64.5,
+        "[PreviousMTBF]": 60.25,
         "[LatestDate]": 46234.0,
         "[CustomerType]": "Do It For Me",
     },
-    {"[RowType]": "trend", "[Entity]": "Jan 2026", "[SortKey]": "24312", "[Availability]": 0.83},
-    {"[RowType]": "trend", "[Entity]": "Feb 2026", "[SortKey]": "24313", "[Availability]": 0.8642},
+    {"[RowType]": "trend", "[Entity]": "Jan 2026", "[SortKey]": "24312", "[Availability]": 0.83, "[MTBS]": 40.5, "[MTBF]": 61.0},
+    {"[RowType]": "trend", "[Entity]": "Feb 2026", "[SortKey]": "24313", "[Availability]": 0.8642, "[MTBS]": 42.75, "[MTBF]": 64.5},
     {
         "[RowType]": "breakdown", "[Entity]": "Essakane", "[Availability]": 0.89,
-        "[EquipmentCount]": 35, "[DowntimeHours]": 321.0,
+        "[EquipmentCount]": 35, "[DowntimeHours]": 321.0, "[MTBS]": 48.5, "[MTBF]": 72.5,
         "[CustomerType]": "Do It For Me",
     },
     {
         "[RowType]": "breakdown", "[Entity]": "Siguiri", "[Availability]": 0.78,
-        "[EquipmentCount]": 29, "[DowntimeHours]": 580.0,
+        "[EquipmentCount]": 29, "[DowntimeHours]": 580.0, "[MTBS]": 31.25, "[MTBF]": 53.0,
         "[CustomerType]": "Do It With Me",
     },
     {"[RowType]": "option_minesite", "[Entity]": "Essakane"},
@@ -63,6 +67,24 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
             defaults={
                 "metric_label": "Physical Availability",
                 "powerbi_measure_name": "[Avail Per Equip]",
+                "is_active": True,
+            },
+        )
+        AIMetricMapping.objects.update_or_create(
+            section=self.section,
+            metric_code="mtbs",
+            defaults={
+                "metric_label": "MTBS",
+                "powerbi_measure_name": "[MTBS PER EQUIP]",
+                "is_active": True,
+            },
+        )
+        AIMetricMapping.objects.update_or_create(
+            section=self.section,
+            metric_code="mtbf",
+            defaults={
+                "metric_label": "MTBF",
+                "powerbi_measure_name": "[MTBF Per Equip]",
                 "is_active": True,
             },
         )
@@ -150,6 +172,7 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
 
     def test_default_request_is_ytd_overall(self):
         request = self.service().request_from_params({})
+        self.assertEqual(request.metric, "availability")
         self.assertEqual(request.period, "ytd")
         self.assertEqual(request.breakdown, "overall")
 
@@ -157,6 +180,10 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
         service = self.service()
         dax = service.build_dax(service.request_from_params({}), {})
         self.assertIn("[Avail Per Equip]", dax)
+        self.assertIn('"MTBS", CALCULATE([MTBS PER EQUIP]', dax)
+        self.assertIn('"PreviousMTBS", CALCULATE([MTBS PER EQUIP]', dax)
+        self.assertIn('"MTBF", CALCULATE([MTBF Per Equip]', dax)
+        self.assertIn('"PreviousMTBF", CALCULATE([MTBF Per Equip]', dax)
         self.assertIn("MAXX", dax)
         self.assertIn("NOT ISBLANK", dax)
         self.assertNotIn("TODAY()", dax)
@@ -214,11 +241,43 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
         self.assertEqual(result["availability"]["target_formatted"], "85.00%")
         self.assertEqual(result["availability"]["customer_type"], "Do It For Me")
         self.assertEqual(result["availability"]["comparison"]["delta_points"], 2.4)
+        self.assertEqual(result["summary"]["mtbs"], 42.75)
+        self.assertEqual(result["summary"]["mtbs_formatted"], "42.75 h")
         self.assertEqual(result["context"]["start_date"], "2026-01-01")
         self.assertEqual(len(result["trend"]), 2)
         self.assertEqual(result["top_performers"][0]["entity"], "Essakane")
         self.assertEqual(result["bottom_performers"][0]["entity"], "Siguiri")
         self.assertEqual(result["breakdown"][0]["target_formatted"], "85.00%")
+
+    @patch.object(HomepageAvailabilityService, "_refresh_metadata", return_value=("2026-08-20 04:39 AM", "Completed"))
+    @patch("reports.homepage_availability_service.execute_dax_via_flow")
+    def test_mtbs_mode_drives_global_trend_and_rankings(self, execute, _refresh):
+        execute.return_value = {"firstTableRows": SAMPLE_ROWS}
+        request = self.service().request_from_params({"metric": "mtbs", "breakdown": "minesite"})
+        result = self.service().get(request)
+
+        self.assertEqual(result["context"]["metric_code"], "mtbs")
+        self.assertEqual(result["metric"]["formatted_value"], "42.75 h")
+        self.assertEqual(result["metric"]["comparison"]["delta_formatted"], "+3.50 h")
+        self.assertEqual(result["trend"][0]["formatted_value"], "40.50 h")
+        self.assertEqual(result["top_performers"][0]["entity"], "Essakane")
+        self.assertEqual(result["bottom_performers"][0]["entity"], "Siguiri")
+        self.assertIsNone(result["metric"]["target_raw"])
+
+    @patch.object(HomepageAvailabilityService, "_refresh_metadata", return_value=("2026-08-20 04:39 AM", "Completed"))
+    @patch("reports.homepage_availability_service.execute_dax_via_flow")
+    def test_mtbf_mode_drives_global_trend_and_rankings(self, execute, _refresh):
+        execute.return_value = {"firstTableRows": SAMPLE_ROWS}
+        request = self.service().request_from_params({"metric": "mtbf", "breakdown": "minesite"})
+        result = self.service().get(request)
+
+        self.assertEqual(result["context"]["metric_code"], "mtbf")
+        self.assertEqual(result["metric"]["formatted_value"], "64.50 h")
+        self.assertEqual(result["metric"]["comparison"]["delta_formatted"], "+4.25 h")
+        self.assertEqual(result["trend"][0]["formatted_value"], "61.00 h")
+        self.assertEqual(result["top_performers"][0]["entity"], "Essakane")
+        self.assertEqual(result["bottom_performers"][0]["entity"], "Siguiri")
+        self.assertIsNone(result["metric"]["target_raw"])
 
     def test_customer_type_targets_are_governed_by_business_rule(self):
         service = self.service()
@@ -319,7 +378,7 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
             encoding="utf-8"
         )
         self.assertIn("grid-template-areas", css)
-        self.assertIn('"period minesite model equipment reset"', css)
+        self.assertIn('"metric period minesite model equipment reset"', css)
         self.assertNotIn(".analysis-group", css)
         self.assertIn("@media (max-width: 1599px)", css)
         self.assertIn("@media (max-width: 1099px)", css)

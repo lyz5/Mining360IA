@@ -29,13 +29,19 @@ class Mining360ControllerTests(unittest.TestCase):
         self.controller = Mining360Controller(root=Path.cwd())
 
     def test_redact_hides_credentials_and_tokens(self) -> None:
-        source = "password=secret client_secret:abc Bearer token.value access_token=xyz"
+        source = (
+            "password=secret client_secret:abc Bearer token.value access_token=xyz "
+            "Authorization: Basic dXNlcjpwYXNz "
+            "-----BEGIN PRIVATE KEY-----hidden-----END PRIVATE KEY-----"
+        )
         result = self.controller.redact(source)
         self.assertNotIn("password=secret", result)
         self.assertNotIn("client_secret:abc", result)
         self.assertNotIn("token.value", result)
         self.assertNotIn("=xyz", result)
-        self.assertGreaterEqual(result.count("[REDACTED]"), 3)
+        self.assertNotIn("dXNlcjpwYXNz", result)
+        self.assertNotIn("hidden", result)
+        self.assertGreaterEqual(result.count("[REDACTED]"), 4)
 
     @patch("desktop.control_core.subprocess.run")
     def test_listener_parser_returns_only_requested_ports(self, run: MagicMock) -> None:
@@ -52,8 +58,12 @@ class Mining360ControllerTests(unittest.TestCase):
 
     @patch("desktop.control_core.subprocess.run")
     def test_process_ownership_requires_repo_or_known_marker(self, run: MagicMock) -> None:
-        run.return_value = subprocess.CompletedProcess([], 0, stdout="python https_reverse_proxy.py")
+        run.return_value = subprocess.CompletedProcess(
+            [], 0, stdout=f"python {self.controller.root}\\deployment\\windows\\https_reverse_proxy.py"
+        )
         self.assertTrue(self.controller._owns_process(123))
+        run.return_value = subprocess.CompletedProcess([], 0, stdout="python https_reverse_proxy.py")
+        self.assertFalse(self.controller._owns_process(124))
         run.return_value = subprocess.CompletedProcess([], 0, stdout="C:\\Windows\\System32\\inetsrv\\w3wp.exe")
         self.assertFalse(self.controller._owns_process(456))
 
@@ -64,6 +74,37 @@ class Mining360ControllerTests(unittest.TestCase):
         self.assertTrue(result.healthy)
         self.assertEqual(result.detail_data["database"], "ok")
 
+    @patch.object(Mining360Controller, "_pid_manifest", return_value={})
+    @patch.object(Mining360Controller, "_candidate_process_rows")
+    def test_inventory_ignores_its_own_powershell_query(self, rows, _manifest) -> None:
+        rows.return_value = [{
+            "ProcessId": 700,
+            "ParentProcessId": 1,
+            "Name": "powershell.exe",
+            "ExecutablePath": "powershell.exe",
+            "CommandLine": "Get-CimInstance Win32_Process run_codex_worker ConvertTo-Json -Compress",
+            "CreationTime": "2026-09-15T07:00:00+00:00",
+        }]
+        self.assertEqual(self.controller.managed_processes(), [])
+
+    @patch.object(Mining360Controller, "_pid_manifest")
+    @patch.object(Mining360Controller, "_candidate_process_rows")
+    def test_manifest_proves_pid_and_creation_time(self, rows, manifest) -> None:
+        rows.return_value = [{
+            "ProcessId": 701,
+            "ParentProcessId": 1,
+            "Name": "python.exe",
+            "ExecutablePath": "python.exe",
+            "CommandLine": "python manage.py run_codex_worker",
+            "CreationTime": "2026-09-15T07:00:00+00:00",
+        }]
+        manifest.return_value = {
+            "codex_worker": {"component": "codex_worker", "pid": 701, "started_at": "2026-09-15T07:00:01+00:00"}
+        }
+        processes = self.controller.managed_processes()
+        self.assertEqual(len(processes), 1)
+        self.assertTrue(processes[0].owned)
+
     @patch.object(Mining360Controller, "_http_health")
     @patch.object(Mining360Controller, "_listener_pids", return_value=[999])
     @patch.object(Mining360Controller, "_owns_process", return_value=False)
@@ -71,7 +112,7 @@ class Mining360ControllerTests(unittest.TestCase):
         health.return_value = Mining360Controller._HttpResult("online", "ok", {})
         success, message = self.controller.stop()
         self.assertFalse(success)
-        self.assertIn("pas identifie", message)
+        self.assertIn("non identifie", message)
 
     @patch("desktop.control_core.subprocess.Popen")
     @patch.object(Mining360Controller, "_http_health")

@@ -9,9 +9,14 @@ import threading
 import time
 import urllib.error
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
+from datetime import timedelta
 from pathlib import Path
 from typing import Callable
+
+from desktop.control_center_models import ProcessInfo
+from desktop.secret_redactor import SecretRedactor
 
 
 CREATE_NO_WINDOW = getattr(subprocess, "CREATE_NO_WINDOW", 0)
@@ -38,6 +43,7 @@ class Mining360Controller:
         "database": "Base de donnees",
         "active_directory": "Active Directory",
         "powerbi": "Power BI API",
+        "codex_worker": "Codex Worker",
     }
 
     def __init__(
@@ -51,20 +57,15 @@ class Mining360Controller:
         self.upstream_url = upstream_url.rstrip("/")
         self.script = self.root / "deployment" / "windows" / "start_mining360_dev.ps1"
         self.log_directory = self.root / ".runlogs" / "desktop-control"
+        self.pid_manifest_path = self.log_directory / "runtime-pids.json"
         self.log_directory.mkdir(parents=True, exist_ok=True)
         self._launcher: subprocess.Popen | None = None
         self._log_handles: list[object] = []
-        self._lock = threading.Lock()
+        self._lock = threading.RLock()
 
     @staticmethod
     def redact(value: str) -> str:
-        redacted = re.sub(
-            r"(?i)(client[_ -]?secret|password|access[_ -]?token|refresh[_ -]?token)\s*[:=]\s*\S+",
-            r"\1=[REDACTED]",
-            str(value or ""),
-        )
-        redacted = re.sub(r"(?i)Bearer\s+[A-Za-z0-9._~-]+", "Bearer [REDACTED]", redacted)
-        return redacted
+        return SecretRedactor.redact(value)
 
     def start(self) -> tuple[bool, str]:
         with self._lock:
@@ -106,11 +107,20 @@ class Mining360Controller:
 
     def stop(self) -> tuple[bool, str]:
         with self._lock:
-            candidates = set(self._listener_pids({443, 8001}))
+            inventory = self.managed_processes()
+            owned_inventory = {item.pid for item in inventory if item.owned}
+            listener_pids = set(self._listener_pids({443, 8001}))
+            unknown_listeners = [pid for pid in listener_pids if pid not in owned_inventory]
+            if unknown_listeners:
+                return False, (
+                    "Arret refuse : un processus non identifie occupe un port Mining 360 "
+                    f"(PID {', '.join(str(pid) for pid in sorted(unknown_listeners))})."
+                )
+            candidates = set(owned_inventory)
             if self._launcher and self._launcher.poll() is None:
                 candidates.add(self._launcher.pid)
 
-            owned = [pid for pid in candidates if self._owns_process(pid)]
+            owned = [pid for pid in candidates if pid in owned_inventory or self._owns_process(pid)]
             if not owned:
                 if not self._http_health(self.upstream_url).healthy:
                     self._close_logs()
@@ -149,10 +159,49 @@ class Mining360Controller:
         return [self.redact(line) for line in lines[-limit:]]
 
     def check_local_services(self) -> dict[str, ServiceResult]:
-        upstream = self._http_health(self.upstream_url)
-        public = self._http_health(self.public_url)
+        results = self.check_runtime_services()
+        results.update(self.check_application_services())
+        return results
+
+    def check_runtime_services(self) -> dict[str, ServiceResult]:
+        inventory = self.managed_processes()
+        components = {item.component for item in inventory if item.owned}
+        unmanaged_components = {item.component for item in inventory if not item.owned}
         listener_pids = self._listener_pids({8001})
-        process_online = any(self._owns_process(pid) for pid in listener_pids)
+        process_online = bool(components) or any(self._owns_process(pid) for pid in listener_pids)
+        now = time.time()
+        codex = self._codex_worker_health(inventory, now)
+        component_labels = {
+            "launcher": "launcher",
+            "waitress": "Waitress",
+            "codex_worker": "Codex Worker",
+            "https_gateway": "HTTPS Gateway",
+        }
+        detected = ", ".join(component_labels.get(item, item) for item in sorted(components))
+        unmanaged = ", ".join(component_labels.get(item, item) for item in sorted(unmanaged_components))
+        process_status = "online" if process_online else "degraded" if unmanaged else "offline"
+        return {
+            "process": ServiceResult(
+                "process",
+                self.SERVICE_LABELS["process"],
+                process_status,
+                f"Managed components detected: {detected}" if detected else (
+                    "Managed runtime detected" if process_online else (
+                        f"Mining 360-like process ownership is unverified: {unmanaged}"
+                        if unmanaged else "No Mining 360 runtime detected"
+                    )
+                ),
+                now,
+            ),
+            "codex_worker": codex,
+        }
+
+    def check_application_services(self) -> dict[str, ServiceResult]:
+        with ThreadPoolExecutor(max_workers=2, thread_name_prefix="mining360-http-health") as executor:
+            upstream_future = executor.submit(self._http_health, self.upstream_url)
+            public_future = executor.submit(self._http_health, self.public_url)
+            upstream = upstream_future.result()
+            public = public_future.result()
         now = time.time()
         database_status = "unknown"
         database_detail = "En attente du controle Django"
@@ -161,17 +210,47 @@ class Mining360Controller:
             database_status = "online" if database_value == "ok" else "offline"
             database_detail = "Connexion SQL disponible" if database_value == "ok" else "Echec du controle de la base"
         return {
-            "process": ServiceResult(
-                "process",
-                self.SERVICE_LABELS["process"],
-                "online" if process_online else "offline",
-                "Ecoute sur le port 8001" if process_online else "Aucun processus Mining 360 detecte",
-                now,
-            ),
             "https": ServiceResult("https", self.SERVICE_LABELS["https"], public.status, public.detail, now),
             "django": ServiceResult("django", self.SERVICE_LABELS["django"], upstream.status, upstream.detail, now),
             "database": ServiceResult("database", self.SERVICE_LABELS["database"], database_status, database_detail, now),
         }
+
+    def _codex_worker_health(self, inventory: list[ProcessInfo], now: float) -> ServiceResult:
+        workers = [item for item in inventory if item.component == "codex_worker" and item.owned]
+        if not workers:
+            unmanaged = [item for item in inventory if item.component == "codex_worker" and not item.owned]
+            if unmanaged:
+                return ServiceResult(
+                    "codex_worker", self.SERVICE_LABELS["codex_worker"], "degraded",
+                    f"Worker process detected but ownership is unverified | PID {unmanaged[0].pid}", now,
+                )
+            return ServiceResult(
+                "codex_worker", self.SERVICE_LABELS["codex_worker"], "offline", "Worker Codex non detecte", now
+            )
+        detail = f"Worker actif | PID {workers[0].pid}"
+        status = "online"
+        try:
+            os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Mining360IA.settings")
+            if str(self.root) not in sys.path:
+                sys.path.insert(0, str(self.root))
+            import django
+            from django.utils import timezone
+
+            django.setup()
+            from codex_chatbot.models import CodexRun
+
+            queued = CodexRun.objects.filter(status="QUEUED").count()
+            stale_before = timezone.now() - timedelta(minutes=2)
+            stale = CodexRun.objects.filter(status="RUNNING", heartbeat_at__lt=stale_before).count()
+            if stale:
+                status = "degraded"
+                detail = f"Worker actif | {stale} traitement(s) sans heartbeat"
+            elif queued:
+                detail = f"Worker actif | {queued} demande(s) en attente"
+        except Exception:
+            status = "degraded"
+            detail += " | file non evaluee"
+        return ServiceResult("codex_worker", self.SERVICE_LABELS["codex_worker"], status, detail, now)
 
     def check_external_services(self) -> dict[str, ServiceResult]:
         return {
@@ -258,6 +337,112 @@ class Mining360Controller:
                 found.add(pid)
         return sorted(found)
 
+    def managed_processes(self) -> list[ProcessInfo]:
+        rows = self._candidate_process_rows()
+        root = str(self.root).casefold()
+        manifest = self._pid_manifest()
+        markers = {
+            "start_mining360_dev.ps1": "launcher",
+            "https_reverse_proxy.py": "https_gateway",
+            "mining360ia.wsgi:application": "waitress",
+            "run_codex_worker": "codex_worker",
+        }
+        candidates: dict[int, ProcessInfo] = {}
+        for row in rows:
+            command_line = str(row.get("CommandLine") or "")
+            folded = command_line.casefold()
+            if "get-ciminstance win32_process" in folded or "convertto-json -compress" in folded:
+                continue
+            component = next((value for marker, value in markers.items() if marker in folded), "")
+            if not component:
+                continue
+            try:
+                pid = int(row.get("ProcessId"))
+                parent_pid = int(row.get("ParentProcessId")) if row.get("ParentProcessId") is not None else None
+            except (TypeError, ValueError):
+                continue
+            creation_time = str(row.get("CreationTime") or row.get("CreationDate") or "")
+            manifest_entry = manifest.get(component) or {}
+            manifest_match = (
+                int(manifest_entry.get("pid") or -1) == pid
+                and self._same_process_start(creation_time, str(manifest_entry.get("started_at") or ""))
+            )
+            candidates[pid] = ProcessInfo(
+                pid=pid,
+                parent_pid=parent_pid,
+                component=component,
+                name=str(row.get("Name") or ""),
+                executable_path=str(row.get("ExecutablePath") or ""),
+                command_line=self.redact(command_line),
+                creation_time=creation_time,
+                owned=root in folded or manifest_match or (self._launcher is not None and pid == self._launcher.pid),
+            )
+        owned = {pid for pid, item in candidates.items() if item.owned}
+        changed = True
+        while changed:
+            changed = False
+            for pid, item in candidates.items():
+                if pid not in owned and item.parent_pid in owned:
+                    owned.add(pid)
+                    changed = True
+        return [
+            ProcessInfo(**{**item.__dict__, "owned": item.pid in owned})
+            for item in sorted(candidates.values(), key=lambda value: value.pid)
+        ]
+
+    def _candidate_process_rows(self) -> list[dict]:
+        command = (
+            "$items=Get-CimInstance Win32_Process | Where-Object {$_.CommandLine -and "
+            "($_.CommandLine -match 'start_mining360_dev\\.ps1|https_reverse_proxy\\.py|"
+            "Mining360IA\\.wsgi:application|run_codex_worker')} | "
+            "Select-Object ProcessId,ParentProcessId,Name,ExecutablePath,CommandLine,"
+            "@{Name='CreationTime';Expression={$_.CreationDate.ToUniversalTime().ToString('o')}}; "
+            "$items | ConvertTo-Json -Compress"
+        )
+        result = subprocess.run(
+            ["powershell.exe", "-NoLogo", "-NoProfile", "-Command", command],
+            capture_output=True,
+            text=True,
+            creationflags=CREATE_NO_WINDOW,
+            check=False,
+        )
+        if result.returncode != 0 or not result.stdout.strip():
+            return []
+        try:
+            payload = json.loads(result.stdout)
+        except (TypeError, ValueError):
+            return []
+        return payload if isinstance(payload, list) else [payload]
+
+    def _pid_manifest(self) -> dict[str, dict]:
+        try:
+            payload = json.loads(self.pid_manifest_path.read_text(encoding="utf-8-sig"))
+        except (OSError, TypeError, ValueError):
+            return {}
+        if str(payload.get("root") or "").casefold() != str(self.root).casefold():
+            return {}
+        components = payload.get("components")
+        if not isinstance(components, list):
+            return {}
+        return {
+            str(item.get("component") or ""): item
+            for item in components
+            if isinstance(item, dict) and item.get("component")
+        }
+
+    @staticmethod
+    def _same_process_start(actual: str, expected: str) -> bool:
+        if not actual or not expected:
+            return False
+        try:
+            from datetime import datetime
+
+            actual_time = datetime.fromisoformat(actual.replace("Z", "+00:00"))
+            expected_time = datetime.fromisoformat(expected.replace("Z", "+00:00"))
+            return abs((actual_time - expected_time).total_seconds()) <= 2
+        except (TypeError, ValueError):
+            return False
+
     def _owns_process(self, pid: int) -> bool:
         command = (
             f'$p=Get-CimInstance Win32_Process -Filter "ProcessId={int(pid)}"; '
@@ -272,8 +457,10 @@ class Mining360Controller:
         )
         line = result.stdout.casefold()
         root = str(self.root).casefold()
-        markers = ("https_reverse_proxy.py", "mining360ia.wsgi:application", "start_mining360_dev.ps1")
-        return root in line or any(marker in line for marker in markers)
+        return root in line and any(
+            marker in line
+            for marker in ("https_reverse_proxy.py", "mining360ia.wsgi:application", "start_mining360_dev.ps1", "run_codex_worker")
+        )
 
     def _close_logs(self) -> None:
         for handle in self._log_handles:

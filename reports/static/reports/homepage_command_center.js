@@ -19,10 +19,12 @@
         .replaceAll('"', "&quot;")
         .replaceAll("'", "&#039;");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const validMetrics = new Set(["availability", "mtbs", "mtbf"]);
     const validPeriods = new Set(["ytd", "last_12_months"]);
     const validBreakdowns = new Set(["overall", "minesite", "model", "equipment"]);
     const params = new URLSearchParams(window.location.search);
     const state = {
+        metric: validMetrics.has(params.get("metric")) ? params.get("metric") : "availability",
         period: validPeriods.has(params.get("period")) ? params.get("period") : "ytd",
         breakdown: validBreakdowns.has(params.get("breakdown")) ? params.get("breakdown") : "overall",
         filters: {
@@ -55,6 +57,7 @@
 
     function apiParams() {
         const result = new URLSearchParams({
+            metric: state.metric,
             period: state.period,
             breakdown: state.breakdown,
             ordering: state.ordering,
@@ -70,7 +73,7 @@
 
     function syncUrl(replace = false) {
         const url = new URL(window.location.href);
-        ["period", "breakdown", "ordering", "page", "minesite", "model", "equipment", "serial_number", "customer", "q"]
+        ["metric", "period", "breakdown", "ordering", "page", "minesite", "model", "equipment", "serial_number", "customer", "q"]
             .forEach((key) => url.searchParams.delete(key));
         const current = apiParams();
         current.delete("page_size");
@@ -87,6 +90,7 @@
 
     function track(eventType, extra = {}) {
         const context = {
+            metric: state.metric,
             period: state.period,
             breakdown: state.breakdown,
             ...state.filters,
@@ -108,6 +112,7 @@
     }
 
     function syncControls() {
+        $("[data-metric-selector]").value = state.metric;
         setPressed("[data-period]", "period", state.period);
         setPressed("[data-breakdown]", "breakdown", state.breakdown);
         const context = $("[data-context-controls]");
@@ -125,12 +130,14 @@
         $('[data-filter="model"]').value = state.filters.model;
         $('[data-filter="equipment"]').value = state.filters.equipment;
         const trendExportContext = [
+            metricConfig().label,
             state.period === "ytd" ? "Year to Date" : "Last 12 Months",
             state.filters.minesite ? `MineSite: ${state.filters.minesite}` : "All MineSites",
             state.filters.model ? `Model: ${state.filters.model}` : "",
             state.filters.equipment ? `Equipment: ${state.filters.equipment}` : "",
         ].filter(Boolean).join(" · ");
         const availabilityExportContext = [
+            metricConfig().label,
             state.filters.minesite ? `MineSite: ${state.filters.minesite}` : "All MineSites",
             state.filters.model ? `Model: ${state.filters.model}` : "",
             state.filters.equipment ? `Equipment: ${state.filters.equipment}` : "",
@@ -139,14 +146,18 @@
         const availabilityContext = $("[data-availability-export-context]");
         if (trendContext) trendContext.textContent = trendExportContext;
         if (availabilityContext) availabilityContext.textContent = availabilityExportContext;
+        const metricName = state.metric === "availability" ? "Availability" : state.metric.toUpperCase();
         $("[data-ordering]").value = state.ordering;
+        const orderSelect = $("[data-ordering]");
+        orderSelect.options[0].textContent = state.metric === "availability" ? "Best performing" : `Highest ${metricName}`;
+        orderSelect.options[1].textContent = state.metric === "availability" ? "Lowest performing" : `Lowest ${metricName}`;
         $("[data-order-field]").hidden = state.breakdown === "overall";
         $("[data-breakdown-section]").hidden = state.breakdown === "overall" || state.breakdown === "equipment";
         $("[data-period-label]").textContent = state.period === "ytd" ? "Year to Date" : "Last 12 Months";
         const titles = {
             overall: "Overall fleet performance",
-            minesite: "Availability by Mine Site",
-            model: "Availability by Model",
+            minesite: `${metricName} by Mine Site`,
+            model: `${metricName} by Model`,
             equipment: "Equipment analysis",
         };
         $("[data-breakdown-title]").textContent = titles[state.breakdown];
@@ -207,6 +218,37 @@
         $("[data-homepage-error]").hidden = true;
     }
 
+    function metricConfig() {
+        if (state.metric === "mtbs") {
+            return {
+                code: "mtbs",
+                label: "MTBS",
+                centerTitle: "Fleet MTBS Command Center",
+                subtitle: "Immediate, intelligent insight into time between stoppages.",
+                trendTitle: "MTBS Trend",
+                format: (value) => `${Number(value).toFixed(2)} h`,
+            };
+        }
+        if (state.metric === "mtbf") {
+            return {
+                code: "mtbf",
+                label: "MTBF",
+                centerTitle: "Fleet MTBF Command Center",
+                subtitle: "Immediate, intelligent insight into time between failures.",
+                trendTitle: "MTBF Trend",
+                format: (value) => `${Number(value).toFixed(2)} h`,
+            };
+        }
+        return {
+            code: "availability",
+            label: "Physical Availability",
+            centerTitle: "Fleet Availability Command Center",
+            subtitle: "Immediate, intelligent insight into fleet availability.",
+            trendTitle: "Availability Trend",
+            format: (value) => `${(Number(value) * 100).toFixed(2)}%`,
+        };
+    }
+
     function animateValue(target, onComplete) {
         const holder = $("[data-availability-value]");
         if (target == null) {
@@ -222,7 +264,7 @@
             const progress = duration ? Math.min(1, (now - started) / duration) : 1;
             const eased = 1 - Math.pow(1 - progress, 3);
             const current = from + (target - from) * eased;
-            holder.textContent = `${(current * 100).toFixed(2)}%`;
+            holder.textContent = metricConfig().format(current);
             if (progress < 1) window.requestAnimationFrame(draw);
             else {
                 state.renderedValue = target;
@@ -243,8 +285,20 @@
     }
 
     function renderHero(payload) {
-        const availability = payload.availability || {};
-        const value = availability.raw_value;
+        const metric = payload.metric || payload.availability || {};
+        const config = metricConfig();
+        const value = metric.raw_value;
+        root.classList.toggle("metric-mode-hours", state.metric !== "availability");
+        $("[data-center-title]").textContent = config.centerTitle;
+        $("[data-center-subtitle]").textContent = config.subtitle;
+        $("[data-hero-title]").textContent = config.label;
+        $("[data-hero-metric-label]").textContent = config.label;
+        $("[data-trend-title]").textContent = config.trendTitle;
+        $("[data-highlights-title]").textContent = `${config.label} Highlights`;
+        $("[data-top-title]").textContent = state.metric === "availability" ? "Top performers" : `Highest ${config.label}`;
+        $("[data-bottom-title]").textContent = state.metric === "availability" ? "Requires attention" : `Lowest ${config.label}`;
+        $("[data-copy-physical-availability]").setAttribute("aria-label", `Copy ${config.label} KPI to clipboard`);
+        $("[data-copy-availability-trend]").setAttribute("aria-label", `Copy ${config.label} trend to clipboard`);
         const availabilityPanel = $("[data-export-visual='physical-availability']");
         const availabilityCopy = $("[data-copy-physical-availability]");
         availabilityPanel.dataset.exportReady = "false";
@@ -254,28 +308,30 @@
             availabilityCopy.disabled = false;
         });
         const ring = $("[data-ring]");
-        ring.dataset.quality = availability.quality_status || "valid";
-        if (availability.quality_status === "out_of_range") {
+        ring.dataset.quality = metric.quality_status || "valid";
+        if (metric.quality_status === "out_of_range") {
             $("[data-availability-value]").textContent = "Invalid data";
         }
-        const angle = value == null ? 0 : Math.max(0, Math.min(360, value * 360));
+        const angle = state.metric === "availability" && value != null
+            ? Math.max(0, Math.min(360, value * 360))
+            : 0;
         ring.style.setProperty("--ring-progress", `${angle}deg`);
         ring.setAttribute("aria-label", value == null
-            ? "Physical Availability unavailable."
-            : `Physical Availability: ${(value * 100).toFixed(2)} percent.`);
+            ? `${config.label} unavailable.`
+            : `${config.label}: ${config.format(value)}.`);
         const status = $("[data-availability-status]");
-        status.hidden = !availability.status;
-        status.dataset.status = availability.status || "";
-        status.textContent = statusLabel(availability.status);
+        status.hidden = !metric.status;
+        status.dataset.status = metric.status || "";
+        status.textContent = statusLabel(metric.status);
         const target = $("[data-target-summary]");
-        target.hidden = availability.target_raw == null;
-        $("[data-target-value]").textContent = availability.target_formatted || "--";
+        target.hidden = metric.target_raw == null;
+        $("[data-target-value]").textContent = metric.target_formatted || "--";
         const comparison = $("[data-comparison-summary]");
-        comparison.hidden = !availability.comparison;
-        if (availability.comparison) {
-            $("[data-comparison-label]").textContent = availability.comparison.label;
-            const delta = availability.comparison.delta_points;
-            $("[data-comparison-value]").textContent = `${delta > 0 ? "+" : ""}${delta.toFixed(2)} pts`;
+        comparison.hidden = !metric.comparison;
+        if (metric.comparison) {
+            $("[data-comparison-label]").textContent = metric.comparison.label;
+            $("[data-comparison-value]").textContent = metric.comparison.delta_formatted
+                || `${metric.comparison.delta_points > 0 ? "+" : ""}${metric.comparison.delta_points.toFixed(2)} pts`;
         }
         const quality = payload.data_quality || {};
         $("[data-data-through]").textContent = quality.latest_available_date
@@ -304,9 +360,10 @@
     function renderTrend(payload) {
         const holder = $("[data-trend-chart]");
         const points = payload.trend || [];
+        const config = metricConfig();
         if (points.length < 2) {
             holder.innerHTML = '<div class="command-empty">Not enough monthly data to display a trend.</div>';
-            holder.setAttribute("aria-label", "Availability trend unavailable.");
+            holder.setAttribute("aria-label", `${config.label} trend unavailable.`);
             $("[data-trend-statistics]").innerHTML = "";
             $("[data-export-visual='availability-trend']").dataset.exportReady = "false";
             return;
@@ -315,13 +372,14 @@
         const height = 250;
         const padding = { left: 42, right: 26, top: 25, bottom: 38 };
         const values = points.map((point) => Number(point.value));
-        const target = payload.availability?.target_raw;
+        const target = payload.metric?.target_raw;
         const domainValues = target == null ? values : [...values, Number(target)];
         let min = Math.min(...domainValues);
         let max = Math.max(...domainValues);
-        const range = Math.max(.04, max - min);
+        const minimumRange = state.metric !== "availability" ? Math.max(1, max * .08) : .04;
+        const range = Math.max(minimumRange, max - min);
         min = Math.max(0, min - range * .25);
-        max = Math.min(1, max + range * .25);
+        max = state.metric !== "availability" ? max + range * .25 : Math.min(1, max + range * .25);
         const plotWidth = width - padding.left - padding.right;
         const plotHeight = height - padding.top - padding.bottom;
         const x = (index) => padding.left + (plotWidth * index / Math.max(1, points.length - 1));
@@ -331,8 +389,9 @@
         const area = `${line} L${x(points.length - 1).toFixed(1)},${(padding.top + plotHeight).toFixed(1)} L${padding.left},${(padding.top + plotHeight).toFixed(1)} Z`;
         const grid = [0, .5, 1].map((fraction) => {
             const gy = padding.top + plotHeight * fraction;
-            const label = ((max - (max - min) * fraction) * 100).toFixed(0);
-            return `<line class="trend-grid-line" x1="${padding.left}" y1="${gy}" x2="${width - padding.right}" y2="${gy}"></line><text class="trend-label" x="4" y="${gy + 4}">${label}%</text>`;
+            const gridValue = max - (max - min) * fraction;
+            const label = state.metric !== "availability" ? `${gridValue.toFixed(0)}h` : `${(gridValue * 100).toFixed(0)}%`;
+            return `<line class="trend-grid-line" x1="${padding.left}" y1="${gy}" x2="${width - padding.right}" y2="${gy}"></line><text class="trend-label" x="4" y="${gy + 4}">${label}</text>`;
         }).join("");
         const targetLine = target == null ? "" : (() => {
             const targetY = y(target);
@@ -348,7 +407,7 @@
             return `${showLabel ? `<text class="trend-label" text-anchor="middle" x="${px}" y="${height - 12}">${escapeHtml(chartPointLabel(point.period))}</text>` : ""}<text class="trend-value-label" text-anchor="middle" x="${px}" y="${valueLabelY}">${valueLabel}</text><circle class="trend-point" tabindex="0" data-trend-index="${index}" cx="${px}" cy="${py}" r="5"></circle>`;
         }).join("");
         holder.innerHTML = `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" aria-hidden="true">${grid}${targetLine}<path class="trend-area" d="${area}"></path><path class="trend-line" d="${line}"></path>${pointNodes}</svg><div class="trend-tooltip" data-trend-tooltip data-export-ignore="true" hidden></div>`;
-        holder.setAttribute("aria-label", `Physical Availability trend with ${points.length} monthly values.`);
+        holder.setAttribute("aria-label", `${config.label} trend with ${points.length} monthly values.`);
         const path = $(".trend-line", holder);
         if (path && !reducedMotion.matches) {
             const length = path.getTotalLength();
@@ -400,7 +459,7 @@
             language,
             scale: 2,
             background: "#ffffff",
-            fileName: "Mining360_Availability_Trend",
+            fileName: "Mining360_Fleet_Performance_Trend",
             prepareClone: (clone) => {
                 const context = clone.querySelector("[data-export-context]");
                 if (context) {
@@ -434,7 +493,7 @@
             language,
             scale: 2,
             background: "#fffdf6",
-            fileName: "Mining360_Physical_Availability",
+            fileName: "Mining360_Fleet_Performance_KPI",
             prepareClone: (clone) => {
                 const context = clone.querySelector("[data-availability-export-context]");
                 if (context) {
@@ -483,15 +542,18 @@
         });
     }
 
-    function performanceCard(item, index) {
+    function performanceCard(item, index, maximumValue) {
         const meta = [];
         if (item.customer_type && item.target_formatted) meta.push(`${item.customer_type} - target ${item.target_formatted}`);
         if (item.equipment_count) meta.push(`${numberLabel(item.equipment_count, 0)} equipment`);
         if (item.downtime_hours != null) meta.push(`${numberLabel(item.downtime_hours)} h downtime`);
+        const progress = state.metric !== "availability"
+            ? (maximumValue > 0 ? item.metric_value / maximumValue * 100 : 0)
+            : item.metric_value * 100;
         return `<button type="button" class="breakdown-card command-enter" style="--enter-index:${index}" data-entity="${escapeHtml(item.entity)}">
             <span class="breakdown-card__head"><strong>${escapeHtml(item.entity)}</strong><small>${escapeHtml(statusLabel(item.status))}</small></span>
             <span class="breakdown-card__value">${escapeHtml(item.formatted_value)}</span>
-            <span class="mini-progress"><span style="width:${Math.max(0, Math.min(100, item.availability * 100))}%"></span></span>
+            <span class="mini-progress"><span style="width:${Math.max(0, Math.min(100, progress))}%"></span></span>
             <span class="breakdown-card__meta"><span>${escapeHtml(meta.join(" - ") || "Selected period")}</span><span>${item.gap_points == null ? "" : `${item.gap_points > 0 ? "+" : ""}${item.gap_points.toFixed(2)} pts`}</span></span>
         </button>`;
     }
@@ -509,11 +571,12 @@
             return;
         }
         if (!items.length) {
-            holder.innerHTML = '<div class="command-empty">No Physical Availability data is available for the selected context.</div>';
+            holder.innerHTML = `<div class="command-empty">No ${escapeHtml(metricConfig().label)} data is available for the selected context.</div>`;
             $("[data-equipment-pagination]").hidden = true;
             return;
         }
-        holder.innerHTML = `<div class="breakdown-grid">${items.map(performanceCard).join("")}</div>`;
+        const maximumValue = Math.max(...items.map((item) => Number(item.metric_value) || 0));
+        holder.innerHTML = `<div class="breakdown-grid">${items.map((item, index) => performanceCard(item, index, maximumValue)).join("")}</div>`;
         bindBreakdownClicks(holder);
         $("[data-equipment-pagination]").hidden = true;
     }
@@ -598,7 +661,7 @@
             state.breakdown = "equipment";
         } else {
             state.filters.equipment = entity;
-            openAI(`Show the Physical Availability details for equipment ${entity}.`);
+            openAI(`Show the ${metricConfig().label} details for equipment ${entity}.`);
             return;
         }
         state.page = 1;
@@ -615,14 +678,14 @@
             state.filters.equipment || state.filters.serial_number ? `for equipment ${state.filters.equipment || state.filters.serial_number}` : "",
         ].filter(Boolean).join(" ");
         const period = state.period === "ytd" ? "year to date" : "over the last 12 months";
-        if (kind === "downtime") return `Show the top downtime drivers affecting Physical Availability ${context} ${period}.`.replace(/\s+/g, " ");
-        return `Explain the Physical Availability performance ${context} ${period}.`.replace(/\s+/g, " ");
+        if (kind === "downtime") return `Show the top downtime drivers affecting ${metricConfig().label} ${context} ${period}.`.replace(/\s+/g, " ");
+        return `Explain the ${metricConfig().label} performance ${context} ${period}.`.replace(/\s+/g, " ");
     }
 
     function openAI(question) {
         const url = new URL(root.dataset.aiUrl, window.location.origin);
         url.searchParams.set("draft", question);
-        url.searchParams.set("metric", "availability");
+        url.searchParams.set("metric", state.metric);
         url.searchParams.set("period", state.period);
         url.searchParams.set("breakdown", state.breakdown);
         Object.entries(state.filters).forEach(([key, value]) => { if (value) url.searchParams.set(key, value); });
@@ -638,6 +701,18 @@
         track("filter_change", { action: "reset" });
         loadData();
     }
+
+    $("[data-metric-selector]").addEventListener("change", (event) => {
+        const metric = event.target.value;
+        if (!validMetrics.has(metric) || metric === state.metric) return;
+        state.metric = metric;
+        state.renderedValue = null;
+        state.page = 1;
+        syncControls();
+        syncUrl();
+        track("metric_change");
+        loadData();
+    });
 
     $$('[data-period]').forEach((button) => button.addEventListener("click", () => {
         if (button.dataset.period === state.period) return;

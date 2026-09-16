@@ -3,13 +3,14 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
+import re
 from collections import defaultdict
 from datetime import date, timedelta
 from decimal import Decimal
 
 from django.core.cache import cache
 from django.db.models import Max, Q, Sum
-from django.db.models.functions import TruncMonth
+from django.db.models.functions import TruncDay, TruncMonth
 from django.utils import timezone
 
 from .business_mapping_access_service import authorized_account_codes
@@ -33,6 +34,7 @@ BUSINESS_LINES = {
     "unclassified": (UNCLASSIFIED_REVENUE_LOB, "Unclassified"),
 }
 ALL_LOBS = tuple(value[0] for value in BUSINESS_LINES.values())
+GROWTH_MEANINGFUL_MINIMUM_EUR = Decimal("1000")
 
 
 class BusinessCommandCenterInputError(ValueError):
@@ -52,6 +54,16 @@ def _shift_year(value, years=-1):
         return value.replace(year=value.year + years)
     except ValueError:
         return value.replace(year=value.year + years, day=28)
+
+
+def _growth(current, previous):
+    if previous == 0:
+        if current == 0:
+            return None, "no_change"
+        return None, "new" if current > 0 else "not_meaningful"
+    if previous < 0 or abs(previous) < GROWTH_MEANINGFUL_MINIMUM_EUR:
+        return None, "not_meaningful"
+    return round(_float((current - previous) / abs(previous) * 100), 1), "comparable"
 
 
 class BusinessRevenuePeriodService:
@@ -146,21 +158,30 @@ class BusinessCommandCenterService:
         snapshot = publication.snapshot_json or {} if publication else {}
         classification_rows = snapshot.get("accounts") or snapshot.get("mappings", [])
         published_rows = filter_published_rows(list(classification_rows), self.user) if publication else []
-        customers, countries, key_accounts = self._csv("customer_ids"), self._csv("country_ids"), self._csv("key_account_ids")
+        customers = self._csv("customer_ids")
+        customer_groups = self._csv("customer_group_ids")
+        countries, key_accounts = self._csv("country_ids"), self._csv("key_account_ids")
         selected_rows = published_rows
         if customers:
             selected_rows = [row for row in selected_rows if row.get("account_id") in customers]
+        if customer_groups:
+            selected_rows = [row for row in selected_rows if row.get("customer_country_group_id") in customer_groups]
         if countries:
             selected_rows = [row for row in selected_rows if row.get("business_country") in countries]
         if key_accounts:
             selected_rows = [row for row in selected_rows if row.get("key_account_id") in key_accounts]
-        if customers or countries or key_accounts:
+        if customers or customer_groups or countries or key_accounts:
             selected_codes = {str(code) for row in selected_rows for code in row.get("source_account_codes", []) if code}
             revenue = revenue.filter(source_account_code__in=selected_codes) if selected_codes else revenue.none()
         business_line = str(self.params.get("business_line") or "all_business").strip().lower()
         if business_line not in {"all_business", *BUSINESS_LINES}:
             raise BusinessCommandCenterInputError("The selected Business Line is not supported.")
         return revenue, publication, published_rows, selected_rows, period, business_line, source_row.synchronization_run
+
+    def latest_business_date(self):
+        """Return the authorized Revenue date without recording a Command Center visit."""
+        _revenue, _publication, _published, _selected, period, _line, _run = self._context()
+        return period["end_date"]
 
     @staticmethod
     def _range(queryset, start, end):
@@ -174,7 +195,7 @@ class BusinessCommandCenterService:
         for row in rows:
             codes = {str(value) for value in row.get("source_account_codes", []) if value}
             if row.get("account_id"):
-                item = customers.setdefault(row["account_id"], {"id": row["account_id"], "name": row.get("account_name"), "codes": set(), "country": row.get("business_country"), "key_account": row.get("key_account_name")})
+                item = customers.setdefault(row["account_id"], {"id": row["account_id"], "name": row.get("account_name"), "code": row.get("account_code"), "codes": set(), "country": row.get("business_country"), "key_account": row.get("key_account_name")})
                 item["codes"].update(codes)
             if row.get("business_country"):
                 item = countries.setdefault(row["business_country"], {"id": row["business_country"], "name": row["business_country"], "codes": set()})
@@ -183,6 +204,22 @@ class BusinessCommandCenterService:
                 item = keys.setdefault(row["key_account_id"], {"id": row["key_account_id"], "name": row.get("key_account_name"), "codes": set()})
                 item["codes"].update(codes)
         return customers, countries, keys
+
+    @staticmethod
+    def _customer_country_groups(rows):
+        groups = {}
+        for row in rows:
+            group_id = row.get("customer_country_group_id")
+            if not group_id:
+                continue
+            item = groups.setdefault(group_id, {
+                "id": group_id,
+                "name": row.get("customer_country_group_name"),
+                "country": row.get("business_country"),
+                "codes": set(),
+            })
+            item["codes"].update(str(code) for code in row.get("source_account_codes", []) if code)
+        return groups
 
     @staticmethod
     def _source_totals(queryset):
@@ -198,16 +235,19 @@ class BusinessCommandCenterService:
         results = []
         for item in groups.values():
             by_lob = {lob: sum((current[code][lob] for code in item["codes"]), Decimal("0")) for lob in ALL_LOBS}
+            previous_by_lob = {lob: sum((previous[code][lob] for code in item["codes"]), Decimal("0")) for lob in ALL_LOBS}
             current_value = sum(by_lob.values(), Decimal("0"))
-            previous_value = sum((sum(previous[code].values(), Decimal("0")) for code in item["codes"]), Decimal("0"))
+            previous_value = sum(previous_by_lob.values(), Decimal("0"))
             delta = current_value - previous_value
+            relative_delta, growth_status = _growth(current_value, previous_value)
             results.append({
                 "id": item["id"], "name": item["name"], "revenue": _float(current_value),
                 "previous_revenue": _float(previous_value), "absolute_delta": _float(delta),
-                "relative_delta": round(_float(delta / previous_value * 100), 1) if previous_value else None,
+                "relative_delta": relative_delta, "growth_status": growth_status,
                 "share": round(_float(current_value / total * 100), 1) if total else None,
                 "business_line_mix": {key: _float(by_lob[value[0]]) for key, value in BUSINESS_LINES.items()},
-                "country": item.get("country"), "key_account": item.get("key_account"),
+                "comparison_business_line_mix": {key: _float(previous_by_lob[value[0]]) for key, value in BUSINESS_LINES.items()},
+                "code": item.get("code"), "country": item.get("country"), "key_account": item.get("key_account"),
             })
         results.sort(key=lambda item: (-item["revenue"], str(item["name"] or "")))
         for rank, item in enumerate(results, 1):
@@ -229,10 +269,11 @@ class BusinessCommandCenterService:
         for code, (lob, label) in BUSINESS_LINES.items():
             value, previous = current_by_lob.get(lob, Decimal("0")), previous_by_lob.get(lob, Decimal("0"))
             line_delta = value - previous
+            relative_delta, growth_status = _growth(value, previous)
             line_rows.append({
                 "code": code, "lob": lob, "label": label, "revenue": _float(value),
                 "comparison_revenue": _float(previous), "absolute_delta": _float(line_delta),
-                "relative_delta": round(_float(line_delta / previous * 100), 1) if previous else None,
+                "relative_delta": relative_delta, "growth_status": growth_status,
                 "share": round(_float(value / sum(current_by_lob.values(), Decimal("0")) * 100), 1) if sum(current_by_lob.values(), Decimal("0")) else None,
             })
         ranked = sorted(line_rows, key=lambda item: -item["revenue"])
@@ -247,20 +288,62 @@ class BusinessCommandCenterService:
             {"date": row["month"].isoformat(), "value": _float(row["value"])}
             for row in comparison.annotate(month=TruncMonth("business_date")).values("month").annotate(value=Sum("revenue_eur")).order_by("month")
         ]
+        current_month_start = period["end_date"].replace(day=1)
+        daily_start = max(period["start_date"], current_month_start)
+        daily_trend = [
+            {"date": row["day"].isoformat(), "value": _float(row["value"])}
+            for row in current.filter(business_date__gte=daily_start).annotate(day=TruncDay("business_date")).values("day").annotate(value=Sum("revenue_eur")).order_by("day")
+        ]
+        comparison_daily_trend = []
+        if period["comparison_end_date"]:
+            comparison_month_start = period["comparison_end_date"].replace(day=1)
+            comparison_daily_start = max(period["comparison_start_date"], comparison_month_start)
+            comparison_daily_trend = [
+                {"date": row["day"].isoformat(), "value": _float(row["value"])}
+                for row in comparison.filter(business_date__gte=comparison_daily_start).annotate(day=TruncDay("business_date")).values("day").annotate(value=Sum("revenue_eur")).order_by("day")
+            ]
         changes = sorted(({
             "code": f"{item['code']}_change", "entity_type": "Business Line", "entity_id": item["code"],
             "entity": item["label"], "current_value": item["revenue"], "comparison_value": item["comparison_revenue"],
             "absolute_delta": item["absolute_delta"], "relative_delta": item["relative_delta"],
-            "reason_code": "BUSINESS_LINE_PERIOD_CHANGE",
-        } for item in line_rows), key=lambda item: -abs(item["absolute_delta"] or 0))[:5]
+            "reason_code": "BUSINESS_LINE_PERIOD_CHANGE", "growth_status": item["growth_status"],
+        } for item in line_rows if item["absolute_delta"] or item["revenue"] or item["comparison_revenue"]), key=lambda item: -abs(item["absolute_delta"] or 0))[:5]
+        previous_data_date = period["end_date"] - timedelta(days=1)
+        latest_day_by_lob = {
+            row["lob"]: row["value"] or Decimal("0")
+            for row in current_all.filter(business_date=period["end_date"]).values("lob").annotate(value=Sum("revenue_eur"))
+        }
+        since_yesterday = []
+        for item in line_rows:
+            day_value = latest_day_by_lob.get(item["lob"], Decimal("0"))
+            if selected_lob and item["lob"] != selected_lob:
+                continue
+            if day_value:
+                since_yesterday.append({
+                    "code": f"{item['code']}_since_yesterday",
+                    "entity_type": "Business Line",
+                    "entity_id": item["code"],
+                    "entity": item["label"],
+                    "title": f"{item['label']} Revenue added on the latest data day",
+                    "current_value": item["revenue"],
+                    "comparison_value": item["revenue"] - _float(day_value),
+                    "absolute_delta": _float(day_value),
+                    "relative_delta": None,
+                    "growth_status": "not_meaningful",
+                    "reason_code": "REVENUE_SINCE_PREVIOUS_DATA_DAY",
+                })
+        since_yesterday.sort(key=lambda item: -abs(item["absolute_delta"] or 0))
 
-        customers, countries, keys = self._mapping_groups(selected_rows if (self._csv("customer_ids") or self._csv("country_ids") or self._csv("key_account_ids")) else published_rows)
+        has_filters = any(self._csv(key) for key in ("customer_ids", "customer_group_ids", "country_ids", "key_account_ids"))
+        customers, countries, keys = self._mapping_groups(selected_rows if has_filters else published_rows)
         total_for_dimensions = _amount(current)
-        dimensions = {
+        all_dimensions = {
             "customers": self._rank_dimension(customers, current, comparison, total_for_dimensions),
             "countries": self._rank_dimension(countries, current, comparison, total_for_dimensions),
             "key_accounts": self._rank_dimension(keys, current, comparison, total_for_dimensions),
         }
+        legacy = str(self.params.get("ui") or "").strip().lower() == "legacy"
+        dimensions = all_dimensions if legacy else {key: rows[:5] for key, rows in all_dimensions.items()}
         mapped_codes = {code for row in published_rows for code in row.get("source_account_codes", []) if code}
         mapped_revenue = _amount(current_all.filter(source_account_code__in=mapped_codes)) if mapped_codes else Decimal("0")
         all_scope_revenue = _amount(current_all)
@@ -295,12 +378,12 @@ class BusinessCommandCenterService:
                 "actual_revenue": _float(current_total),
                 "comparison_revenue": _float(comparison_total),
                 "absolute_delta": _float(delta),
-                "relative_delta": round(_float(delta / comparison_total * 100), 1) if comparison_total else None,
+                "relative_delta": _growth(current_total, comparison_total)[0],
             },
             "by_business_line": line_rows,
-            "by_country": dimensions["countries"][:25],
-            "by_customer": dimensions["customers"][:25],
-            "concentration": self._concentration(dimensions["customers"]),
+            "by_country": all_dimensions["countries"][:25],
+            "by_customer": all_dimensions["customers"][:25],
+            "concentration": self._concentration(all_dimensions["customers"]),
             "budget": {
                 "status": "NOT_AVAILABLE",
                 "message": "A certified Mining Sales budget source is not configured yet.",
@@ -310,18 +393,37 @@ class BusinessCommandCenterService:
                 "message": "Firm Orders and Sales Funnel require a governed structured source.",
             },
         }
+        selected_customer_group_ids = self._csv("customer_group_ids")
+        selected_key_ids = self._csv("key_account_ids")
+        customer_groups = self._customer_country_groups(published_rows)
         options = {
-            "customers": [{"id": item["id"], "name": item["name"], "country": item.get("country")} for item in customers.values()],
+            "customers": [{"id": item["id"], "name": item["name"], "country": item.get("country")} for item in customer_groups.values() if legacy or item["id"] in selected_customer_group_ids],
             "countries": [{"id": item["id"], "name": item["name"]} for item in countries.values()],
-            "key_accounts": [{"id": item["id"], "name": item["name"]} for item in keys.values()],
+            "key_accounts": [{"id": item["id"], "name": item["name"]} for item in keys.values() if legacy or item["id"] in selected_key_ids],
         }
         snapshot = BusinessReviewSnapshot.objects.filter(mapping_publication=publication, source_synchronization=source_run).order_by("-generated_at").first() if publication else None
         actions = BusinessReviewAction.objects.filter(snapshot=snapshot).exclude(status__in=["Completed", "Cancelled"]) if snapshot else BusinessReviewAction.objects.none()
-        return {
+        context_signature = {
+            "user": self.user.pk,
+            "source": str(source_run.pk),
+            "publication": publication.version if publication else None,
+            "period": period["code"],
+            "start": period["start_date"].isoformat(),
+            "end": period["end_date"].isoformat(),
+            "comparison": period["comparison"],
+            "business_line": business_line,
+            "customers": sorted(self._csv("customer_ids")),
+            "customer_groups": sorted(self._csv("customer_group_ids")),
+            "countries": sorted(self._csv("country_ids")),
+            "keys": sorted(self._csv("key_account_ids")),
+        }
+        context_id = hashlib.sha256(json.dumps(context_signature, sort_keys=True).encode("utf-8")).hexdigest()[:24]
+        payload = {
             "ready": True,
             "mapping_ready": bool(publication),
             "mode": "published" if publication else "unmapped_business_line",
             "context": {
+                "context_id": context_id,
                 "period": period["code"], "period_label": period["label"],
                 "start_date": period["start_date"].isoformat(), "end_date": period["end_date"].isoformat(),
                 "comparison": period["comparison"], "comparison_label": period["comparison_label"],
@@ -332,22 +434,31 @@ class BusinessCommandCenterService:
             },
             "freshness": {"data_through_date": period["end_date"].isoformat(), "source_snapshot_at": source_run.completed_at, "snapshot_id": str(source_run.id)},
             "confidence": {"status": confidence_status, "customer_coverage": customer_coverage, "country_coverage": country_coverage, "key_account_coverage": key_coverage, "unallocated_revenue": _float(unallocated), "unclassified_revenue": _float(unclassified), "warnings": warnings},
-            "hero": {"revenue": _float(current_total), "comparison_revenue": _float(comparison_total), "absolute_delta": _float(delta), "relative_delta": round(_float(delta / comparison_total * 100), 1) if comparison_total else None, "top_contributor": ranked[0]["label"] if ranked else None},
+            "hero": {"revenue": _float(current_total), "comparison_revenue": _float(comparison_total), "absolute_delta": _float(delta), "relative_delta": _growth(current_total, comparison_total)[0], "growth_status": _growth(current_total, comparison_total)[1], "top_contributor": ranked[0]["label"] if ranked else None},
             "business_lines": line_rows,
             "changes": changes,
             "trend": trend,
             "comparison_trend": comparison_trend,
+            "daily_trend": daily_trend,
+            "comparison_daily_trend": comparison_daily_trend,
+            "since_yesterday": {
+                "from_date": previous_data_date.isoformat(),
+                "through_date": period["end_date"].isoformat(),
+                "items": since_yesterday[:5],
+            },
             "mix": line_rows,
             "bridge": [{"code": item["code"], "label": item["label"], "delta": item["absolute_delta"]} for item in line_rows],
             "dimensions": dimensions,
-            "sales_review": sales_review,
             "filter_options": options,
             "attention_items": sorted(attention, key=lambda item: -item["impact"])[:6],
-            "concentration": self._concentration(dimensions["customers"]),
+            "concentration": self._concentration(all_dimensions["customers"]),
             "reconciliation": {"status": "RECONCILED" if abs(reconciliation_difference) <= Decimal("0.01") else "FAILED", "difference": _float(reconciliation_difference), "tolerance": 0.01},
             "actions_summary": {"open": actions.count(), "critical": actions.filter(priority="Critical").count(), "overdue": actions.filter(due_date__lt=timezone.localdate()).count()},
             "snapshot_id": str(snapshot.id) if snapshot else None,
         }
+        if legacy:
+            payload["sales_review"] = sales_review
+        return payload
 
     @staticmethod
     def _concentration(customers):
@@ -376,7 +487,8 @@ class BusinessCommandCenterService:
         scope_key = {
             "user": self.user.pk, "source": str(source_run.pk), "publication": publication.version if publication else None,
             "period": {key: str(value) for key, value in period.items()}, "business_line": business_line,
-            "customers": sorted(self._csv("customer_ids")), "countries": sorted(self._csv("country_ids")), "keys": sorted(self._csv("key_account_ids")),
+            "customers": sorted(self._csv("customer_ids")), "customer_groups": sorted(self._csv("customer_group_ids")),
+            "countries": sorted(self._csv("country_ids")), "keys": sorted(self._csv("key_account_ids")),
         }
         cache_key = "business-command-center:" + hashlib.sha256(json.dumps(scope_key, sort_keys=True).encode("utf-8")).hexdigest()
         core = cache.get(cache_key)
@@ -388,3 +500,123 @@ class BusinessCommandCenterService:
         watchlist = BusinessCommandCenterWatchlist.objects.filter(user=self.user, active=True)
         result["watchlist"] = [{"id": str(item.id), "entity_type": item.entity_type, "entity_id": item.entity_id, "display_name": item.display_name} for item in watchlist]
         return result
+
+    def revenue_explorer(self):
+        revenue, publication, published_rows, selected_rows, period, business_line, source_run = self._context()
+        current_all = self._range(revenue, period["start_date"], period["end_date"])
+        comparison_all = self._range(revenue, period["comparison_start_date"], period["comparison_end_date"])
+        selected_lob = BUSINESS_LINES[business_line][0] if business_line in BUSINESS_LINES else None
+        current = current_all.filter(lob=selected_lob) if selected_lob else current_all
+        comparison = comparison_all.filter(lob=selected_lob) if selected_lob else comparison_all
+        dimension = str(self.params.get("dimension") or "customers").strip().lower()
+        groups = self._mapping_groups(selected_rows if any(self._csv(key) for key in ("customer_ids", "customer_group_ids", "country_ids", "key_account_ids")) else published_rows)
+        group_map = {"customers": groups[0], "countries": groups[1], "key_accounts": groups[2]}
+        if dimension not in group_map:
+            raise BusinessCommandCenterInputError("The selected Revenue Explorer dimension is not supported.")
+        rows = self._rank_dimension(group_map[dimension], current, comparison, _amount(current))
+        mode = str(self.params.get("ranking") or "revenue").strip().lower()
+        sorters = {
+            "revenue": lambda item: -(item["revenue"] or 0),
+            "growth": lambda item: -(item["absolute_delta"] or 0),
+            "decline": lambda item: item["absolute_delta"] or 0,
+            "absolute_increase": lambda item: -(item["absolute_delta"] or 0),
+            "absolute_decrease": lambda item: item["absolute_delta"] or 0,
+        }
+        if mode not in sorters:
+            raise BusinessCommandCenterInputError("The selected ranking mode is not supported.")
+        rows.sort(key=lambda item: (sorters[mode](item), str(item["name"] or "")))
+        try:
+            limit = min(25, max(5, int(self.params.get("limit") or 10)))
+        except (TypeError, ValueError):
+            limit = 10
+        for rank, item in enumerate(rows, 1):
+            item["rank"] = rank
+        duplicate_names = defaultdict(int)
+        for item in rows:
+            duplicate_names[str(item.get("name") or "").casefold()] += 1
+        for item in rows:
+            duplicate = duplicate_names[str(item.get("name") or "").casefold()] > 1
+            item["display_name"] = f"{item['name']} · {item['code']}" if duplicate and item.get("code") else item.get("name")
+        return {
+            "context_id": self.bootstrap()["context"]["context_id"],
+            "dimension": dimension,
+            "ranking": mode,
+            "count": len(rows),
+            "results": rows[:limit],
+        }
+
+    def search_entities(self, entity_type):
+        revenue, _publication, published_rows, _selected_rows, period, business_line, _run = self._context()
+        groups = self._mapping_groups(published_rows)
+        group_map = {"customers": self._customer_country_groups(published_rows), "key_accounts": groups[2]}
+        if entity_type not in group_map:
+            raise BusinessCommandCenterInputError("The selected search dimension is not supported.")
+        query = str(self.params.get("q") or "").strip().casefold()
+        if len(query) == 1:
+            return {"results": [], "has_more": False}
+        current = self._range(revenue, period["start_date"], period["end_date"])
+        selected_lob = BUSINESS_LINES[business_line][0] if business_line in BUSINESS_LINES else None
+        if selected_lob:
+            current = current.filter(lob=selected_lob)
+        source_totals = self._source_totals(current)
+        matches = []
+        for item in group_map[entity_type].values():
+            haystack = " ".join(str(value or "") for value in (item.get("name"), item.get("id"), item.get("country"))).casefold()
+            if not query or query in haystack:
+                amount = sum((sum(source_totals[code].values(), Decimal("0")) for code in item["codes"]), Decimal("0"))
+                matches.append({"id": item["id"], "name": item.get("name"), "country": item.get("country"), "revenue": _float(amount)})
+        if query:
+            matches.sort(key=lambda item: (
+                not str(item.get("name") or "").casefold().startswith(query),
+                -(item["revenue"] or 0),
+                str(item.get("name") or ""),
+            ))
+        else:
+            matches.sort(key=lambda item: (-(item["revenue"] or 0), str(item.get("name") or "")))
+        limit = 30 if not query else 20
+        return {"results": matches[:limit], "has_more": len(matches) > limit}
+
+    def resolve_filter_mentions(self, text):
+        """Resolve published, authorized executive dimensions mentioned in free text."""
+        _revenue, _publication, published_rows, _selected_rows, _period, _line, _run = self._context()
+        customers, countries, key_accounts = self._mapping_groups(published_rows)
+        groups = {
+            "customer_group_ids": self._customer_country_groups(published_rows),
+            "country_ids": countries,
+            "key_account_ids": key_accounts,
+        }
+        normalized_text = re.sub(r"[^a-z0-9]+", " ", str(text or "").casefold()).strip()
+        padded_text = f" {normalized_text} "
+        resolved = {}
+        ambiguities = {}
+        ignored_words = {
+            "business", "ca", "centre", "center", "command", "courant", "current",
+            "quel", "quelle", "revenue", "revenu", "parts", "pieces", "machine",
+            "service", "rental", "ventes", "vente", "year", "ytd",
+        }
+        query_words = {
+            word for word in normalized_text.split()
+            if len(word) >= 3 and word not in ignored_words and not word.isdigit()
+        }
+        for parameter, options in groups.items():
+            matches = []
+            for item in options.values():
+                name = re.sub(r"[^a-z0-9]+", " ", str(item.get("name") or "").casefold()).strip()
+                if name and f" {name} " in padded_text:
+                    matches.append((len(name), str(item["id"]), item))
+            if matches:
+                resolved[parameter] = max(matches)[1]
+                continue
+            partial = []
+            for item in options.values():
+                name_words = set(re.sub(r"[^a-z0-9]+", " ", str(item.get("name") or "").casefold()).split())
+                if query_words & name_words:
+                    partial.append(item)
+            if len(partial) == 1:
+                resolved[parameter] = str(partial[0]["id"])
+            elif len(partial) > 1:
+                ambiguities[parameter] = [
+                    {"id": str(item["id"]), "name": item.get("name"), "country": item.get("country")}
+                    for item in partial[:10]
+                ]
+        return {"filters": resolved, "ambiguities": ambiguities}

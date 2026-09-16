@@ -9,7 +9,7 @@
     <title>Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
     {% if availability_command_center_enabled %}
-    <link rel="stylesheet" href="{% static 'reports/homepage_command_center.css' %}?v=20260821-3">
+    <link rel="stylesheet" href="{% static 'reports/homepage_command_center.css' %}?v=20260916-metric-center">
     {% endif %}
 </head>
 <body{% if availability_command_center_enabled %} class="availability-home-body"{% endif %}>
@@ -40,8 +40,8 @@
             <header class="command-header">
                 <div class="command-header__identity">
                     <p class="command-kicker">Mining 360</p>
-                    <h1>Fleet Availability Command Center</h1>
-                    <p>Immediate, intelligent insight into fleet performance.</p>
+                    <h1 data-center-title>Fleet Availability Command Center</h1>
+                    <p data-center-subtitle>Immediate, intelligent insight into fleet availability.</p>
                 </div>
                 <div class="command-header__status" aria-label="Data connection status">
                     <span class="connection-status" data-connection-status>
@@ -54,6 +54,14 @@
             </header>
 
             <nav class="analysis-controls availability-control-grid" aria-label="Availability filters">
+                <label class="control-group metric-group">
+                    <span>Metric</span>
+                    <select data-metric-selector aria-label="Fleet performance metric">
+                        <option value="availability">Availability</option>
+                        <option value="mtbs">MTBS</option>
+                        <option value="mtbf">MTBF</option>
+                    </select>
+                </label>
                 <div class="control-group period-group" role="group" aria-labelledby="period-control-label">
                     <span class="control-label" id="period-control-label">Period</span>
                     <div class="segmented-control" data-period-control>
@@ -84,7 +92,7 @@
                 <div class="availability-hero" data-export-visual="physical-availability" data-export-ready="false" aria-live="polite">
                     <div class="availability-hero__heading">
                         <div>
-                            <p class="command-kicker" id="availability-title">Physical Availability</p>
+                            <p class="command-kicker" id="availability-title" data-hero-title>Physical Availability</p>
                             <span data-period-label>Year to Date</span>
                             <p data-export-context data-availability-export-context hidden></p>
                         </div>
@@ -106,7 +114,7 @@
                     <div class="availability-ring" data-ring role="img" aria-label="Physical Availability loading">
                         <div class="availability-ring__inner">
                             <strong data-availability-value>--</strong>
-                            <span>Physical Availability</span>
+                            <span data-hero-metric-label>Physical Availability</span>
                         </div>
                     </div>
                     <div class="availability-context">
@@ -126,7 +134,7 @@
                     <div class="section-heading-row">
                         <div>
                             <p class="command-kicker">Trend</p>
-                            <h2>Availability Trend</h2>
+                            <h2 data-trend-title>Availability Trend</h2>
                             <p data-export-context data-trend-export-context hidden></p>
                         </div>
                         <div class="visual-actions" data-export-ignore="true">
@@ -188,16 +196,16 @@
                 <div class="section-heading-row">
                     <div>
                         <p class="command-kicker">Decision support</p>
-                        <h2 id="highlights-title">Performance Highlights</h2>
+                        <h2 id="highlights-title" data-highlights-title>Availability Highlights</h2>
                     </div>
                 </div>
                 <div class="highlights-grid">
                     <div class="highlight-column">
-                        <h3>Top performers</h3>
+                        <h3 data-top-title>Top performers</h3>
                         <div data-top-performers></div>
                     </div>
                     <div class="highlight-column highlight-column--attention">
-                        <h3>Requires attention</h3>
+                        <h3 data-bottom-title>Requires attention</h3>
                         <div data-bottom-performers></div>
                     </div>
                     <aside class="key-takeaway">
@@ -220,7 +228,7 @@
             </section>
         </main>
         <script src="{% static 'reports/visual_export.js' %}?v=20260901-1" defer></script>
-        <script src="{% static 'reports/homepage_command_center.js' %}?v=20260901-1" defer></script>
+        <script src="{% static 'reports/homepage_command_center.js' %}?v=20260916-metric-center-2" defer></script>
     {% else %}
         <main class="app-shell">
             <header class="topbar">

@@ -18,6 +18,7 @@ os.environ["ENABLE_BUSINESS_COMMAND_CENTER_LAST_VISIT"] = "Production"
 os.environ["ENABLE_BUSINESS_COMMAND_CENTER_ATTENTION"] = "Production"
 os.environ["ENABLE_BUSINESS_COMMAND_CENTER_WATCHLIST"] = "Production"
 os.environ["ENABLE_BUSINESS_COMMAND_CENTER_PRESENTATION_MODE"] = "Production"
+os.environ["ENABLE_BUSINESS_COMMAND_CENTER_V2"] = "Disabled"
 
 import django
 django.setup()

@@ -94,12 +94,23 @@ def main() -> None:
                 "document.querySelector('[data-context-controls]')?.hidden === false",
                 timeout=30_000,
             )
-            page.wait_for_timeout(1_200)
+            page.wait_for_function(
+                "document.querySelector('[data-updating]')?.hidden === true && !['', '--'].includes(document.querySelector('[data-availability-value]')?.textContent.trim())",
+                timeout=90_000,
+            )
+            page.locator("[data-metric-selector]").select_option("mtbf")
+            page.wait_for_function(
+                "document.querySelector('[data-updating]')?.hidden === true && document.querySelector('[data-brand-loader]')?.hidden === true && document.querySelector('[data-export-visual=\"physical-availability\"]')?.dataset.exportReady === 'true' && document.querySelector('[data-center-title]')?.textContent.includes('MTBF') && document.querySelector('[data-availability-value]')?.textContent.trim().endsWith('h')",
+                timeout=90_000,
+            )
+            mtbf_value = page.locator('[data-availability-value]').inner_text().strip()
+            if mtbf_value in {"", "--", "Not mapped"} or not mtbf_value.endswith("h"):
+                raise AssertionError(f"{width}x{height}: MTBF Per Equip is not rendered: {mtbf_value!r}")
             result = page.evaluate("""
                 () => {
                     const toolbar = document.querySelector('.availability-control-grid');
                     const selectors = [
-                        '.period-group', '.minesite-group',
+                        '.metric-group', '.period-group', '.minesite-group',
                         '.model-group', '.equipment-group', '.reset-group'
                     ];
                     const nodes = selectors.map((selector) => document.querySelector(selector))

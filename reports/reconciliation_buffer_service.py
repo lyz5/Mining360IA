@@ -124,6 +124,7 @@ class SemanticReconciliationBufferService:
         Customuer_base[CBSE_NUMCLI], 'OrderLineItems'[NUMEROCLIENT]
     ),
     "nlig_refp", 'OrderLineItems'[REFERENCEP],
+    "nlig_constp", 'OrderLineItems'[Brand],
     "nlig_datecde", 'OrderLineItems'[DATECOMMANDE],
     "nlig_qtecde", 'OrderLineItems'[QUANTITECDE],
     "nlig_qtefac", 'OrderLineItems'[QUANTITEFACTUREE],
@@ -299,6 +300,7 @@ ORDER BY [_cursor] ASC
                     order_number=str(_value(row, "nlig_numcde")), line_number=str(_value(row, "nlig_nolign")),
                     customer_number=str(_value(row, "nlig_numcli")), customer_name=str(_value(row, "customer_name")),
                     part_number=str(_value(row, "nlig_refp", "nlig_ref")),
+                    brand=str(_value(row, "nlig_constp", "Brand")),
                     order_date=_date(_value(row, "nlig_datecde")), ordered_quantity=_decimal(_value(row, "nlig_qtecde")),
                     current_invoiced_quantity=_decimal(_value(row, "nlig_qtefac")), current_delivered_quantity=_decimal(_value(row, "nlig_qteliv")),
                     net_amount=_decimal(_value(row, "nlig_pxvteht")), status=str(_value(row, "StatutGlobal", "nlig_pos")), source_payload_json=row,
@@ -585,6 +587,7 @@ ORDER BY [_cursor] ASC
                 order_number=str(_value(row, "nlig_numcde")), line_number=str(_value(row, "nlig_nolign")),
                 customer_number=str(_value(row, "nlig_numcli")), customer_name=str(_value(row, "customer_name")),
                 part_number=str(_value(row, "nlig_refp", "nlig_ref")),
+                brand=str(_value(row, "nlig_constp", "Brand")),
                 order_date=_date(_value(row, "nlig_datecde")), ordered_quantity=_decimal(_value(row, "nlig_qtecde")),
                 current_invoiced_quantity=_decimal(_value(row, "nlig_qtefac")), current_delivered_quantity=_decimal(_value(row, "nlig_qteliv")),
                 net_amount=_decimal(_value(row, "nlig_pxvteht")), status=str(_value(row, "StatutGlobal", "nlig_pos")), source_payload_json=row,

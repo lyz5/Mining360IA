@@ -8,7 +8,7 @@
         navButton?.setAttribute('aria-label', 'Open navigation');
     }
 
-    const state = { page: 1, pages: 1, selected: null, detail: null, site: null, candidate: null, mapping: null, businessAccountId: null, evidenceIds: [], sourceContext: null, revenueLob: '', revenuePeriod: 'ytd', country: '', countryOptions: [], accountView: 'canonical', keyAccountFilter: '', keyAccountSort: 'revenue_desc', expandedAccounts: new Set(), keyAccounts: [], availableKeyMembers: [], availableKeyMemberCount: 0, selectedKeyAccountId: null };
+    const state = { page: 1, pages: 1, selected: null, detail: null, site: null, candidate: null, mapping: null, businessAccountId: null, evidenceIds: [], sourceContext: null, revenueLob: '', revenuePeriod: 'ytd', country: '', countryOptions: [], accountView: 'canonical', keyAccountFilter: '', keyAccountSort: 'revenue_desc', expandedAccounts: new Set(), keyAccounts: [], availableKeyMembers: [], availableKeyMemberCount: 0, selectedKeyAccountId: null, countryAccounts: [], availableCountryMembers: [], availableCountryMemberCount: 0, countryGroupCount: 0, selectedCountryAccountId: null };
     const csrf = app.querySelector('[name="csrfmiddlewaretoken"]')?.value || '';
     const $ = (selector) => document.querySelector(selector);
     const all = (selector) => [...document.querySelectorAll(selector)];
@@ -62,6 +62,34 @@
         node.hidden = false;
         window.clearTimeout(toast.timer);
         toast.timer = window.setTimeout(() => { node.hidden = true; }, 5000);
+    }
+
+    let countryLoadSequence = 0;
+    let countryMutationActive = false;
+    function setCountryActivity(active, message = '', blocking = false, trigger = null) {
+        const dialog = $('[data-bm-country-account-dialog]');
+        const status = $('[data-bm-country-activity]');
+        if (!dialog || !status) return;
+        status.hidden = !active;
+        if (active) $('[data-bm-country-activity-label]').textContent = message;
+        dialog.setAttribute('aria-busy', active && blocking ? 'true' : 'false');
+        dialog.querySelectorAll('button, input, select').forEach((control) => {
+            if (!control.matches('[data-bm-country-close]')) control.disabled = Boolean(active && blocking);
+        });
+        trigger?.classList.toggle('is-loading', Boolean(active));
+    }
+
+    async function runCountryMutation(message, trigger, operation) {
+        if (countryMutationActive) return;
+        countryMutationActive = true;
+        setCountryActivity(true, message, true, trigger);
+        $('[data-bm-country-error]').hidden = true;
+        try {
+            return await operation();
+        } finally {
+            countryMutationActive = false;
+            setCountryActivity(false, '', false, trigger);
+        }
     }
 
     function openPublicationsPanel() {
@@ -290,79 +318,61 @@
         const list = $('[data-bm-country-list]');
         const detail = $('[data-bm-country-detail]');
         const available = $('[data-bm-country-available]');
-        $('[data-bm-country-count]').textContent = Number(state.countryAccounts.length).toLocaleString();
+        $('[data-bm-country-count]').textContent = Number(state.countryGroupCount).toLocaleString();
         const selected = state.countryAccounts.find((item) => item.id === state.selectedCountryAccountId);
-        list.innerHTML = `<button type="button" class="bm-key-group ${state.selectedCountryAccountId === null ? 'active' : ''}" data-country-account-id=""><strong>Unassigned canonical Accounts</strong><small>${Number(state.availableCountryMemberCount).toLocaleString()} Account(s)</small></button>` + state.countryAccounts.map((item) => `<button type="button" class="bm-key-group ${item.id === state.selectedCountryAccountId ? 'active' : ''}" data-country-account-id="${escapeHtml(item.id)}"><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(countryName(item.country))} · ${Number(item.canonical_account_count).toLocaleString()} canonical Account(s)</small><small>${item.key_account ? `Key Account: ${escapeHtml(item.key_account.name)}` : 'Not assigned to a Key Account'}</small></button>`).join('');
+        list.innerHTML = `<button type="button" class="bm-key-group ${state.selectedCountryAccountId === null ? 'active' : ''}" data-country-account-id=""><strong>Browse all groups</strong><small>Clear the selected group and search every operating country</small></button>` + (state.countryAccounts.length ? state.countryAccounts.map((item) => `<button type="button" class="bm-key-group ${item.id === state.selectedCountryAccountId ? 'active' : ''}" data-country-account-id="${escapeHtml(item.id)}"><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(countryName(item.country))} · ${Number(item.canonical_account_count).toLocaleString()} Canonical Account(s)</small><small>${item.revenue_ytd === null ? 'Revenue not available' : money(item.revenue_ytd)}</small></button>`).join('') : '<p class="bm-empty">No group matches the current search.</p>');
         list.querySelectorAll('[data-country-account-id]').forEach((button) => button.addEventListener('click', async () => {
             state.selectedCountryAccountId = button.dataset.countryAccountId || null;
             await loadCountryAccounts($('[data-bm-country-search]')?.value || '');
         }));
         if (!selected) {
-            detail.innerHTML = '<div class="bm-key-summary"><h3>Unassigned canonical Accounts</h3><p>Create or select a Country Account before adding an Account.</p></div>';
-            available.innerHTML = state.availableCountryMembers.length ? `<div class="bm-key-members">${state.availableCountryMembers.map((member, index) => `<div class="bm-key-candidate"><div><strong>${escapeHtml(member.name)}</strong><small>Origin: ${escapeHtml(countryName(member.origin_country))} · Operating: ${escapeHtml(operatingCountryNames(member.operating_countries))} · ${member.revenue_ytd === null ? 'Revenue not available' : money(member.revenue_ytd)}</small></div>${app.dataset.canEdit === 'true' ? `<div class="bm-key-candidate-actions"><button type="button" class="button secondary small" data-country-create-from="${index}">Add as Country Account</button></div>` : ''}</div>`).join('')}</div>` : '<p class="bm-empty">No unassigned canonical Account matches the current filters.</p>';
-            available.querySelectorAll('[data-country-create-from]').forEach((button) => button.addEventListener('click', () => createCountryAccountFromMember(state.availableCountryMembers[Number(button.dataset.countryCreateFrom)])));
+            detail.innerHTML = '<div class="bm-key-summary"><h3>Select a group</h3><p>Choose a group to review its Canonical Accounts or create a new group.</p></div>';
+            available.innerHTML = '';
             return;
         }
-        detail.innerHTML = `<div class="bm-key-summary"><div class="bm-key-summary-head"><div><h3>${escapeHtml(selected.name)}</h3><p>Operating country: ${escapeHtml(countryName(selected.country))} · ${Number(selected.canonical_account_count).toLocaleString()} canonical Account(s)</p><p>${selected.key_account ? `Key Account: ${escapeHtml(selected.key_account.name)}` : 'Not assigned to a Key Account'}</p></div>${app.dataset.canEdit === 'true' ? '<div class="bm-key-actions"><button type="button" class="button secondary small" data-country-rename-open>Rename</button><button type="button" class="button danger small" data-country-delete-open>Delete</button></div>' : ''}</div>${app.dataset.canEdit === 'true' ? `<form class="bm-key-rename" data-country-rename-form hidden><label>Country Account name<input type="text" data-country-rename-name value="${escapeHtml(selected.name)}" required></label><div><button type="button" class="button secondary small" data-country-rename-cancel>Cancel</button><button type="submit" class="button small">Save name</button></div></form>` : ''}</div><div class="bm-key-members">${selected.members?.length ? selected.members.map((member) => `<div class="bm-key-member"><div><strong>${escapeHtml(member.name)}</strong><small>Origin: ${escapeHtml(countryName(member.origin_country))} · Operating: ${escapeHtml(operatingCountryNames(member.operating_countries))}</small></div>${app.dataset.canEdit === 'true' ? `<button type="button" class="button secondary small" data-country-remove='${escapeHtml(JSON.stringify(member.business_account_ids))}'>Remove</button>` : ''}</div>`).join('') : '<p class="bm-empty">No canonical Account has been added yet.</p>'}</div>`;
-        available.innerHTML = app.dataset.canEdit === 'true' ? (state.availableCountryMembers.length ? `<div class="bm-key-members">${state.availableCountryMembers.map((member, index) => `<div class="bm-key-candidate"><div><strong>${escapeHtml(member.name)}</strong><small>Origin: ${escapeHtml(countryName(member.origin_country))} · Operating: ${escapeHtml(operatingCountryNames(member.operating_countries))} · ${member.revenue_ytd === null ? 'Revenue not available' : money(member.revenue_ytd)}</small></div><div class="bm-key-candidate-actions"><button type="button" class="button secondary small" data-country-add='${escapeHtml(JSON.stringify(member.business_account_ids))}'>Add</button><button type="button" class="button secondary small" data-country-create-from="${index}">Add as Country Account</button></div></div>`).join('')}</div>` : '<p class="bm-empty">No available canonical Account in this operating country matches the search.</p>') : '';
-        detail.querySelectorAll('[data-country-remove]').forEach((button) => button.addEventListener('click', () => updateCountryMembers('DELETE', JSON.parse(button.dataset.countryRemove))));
-        available.querySelectorAll('[data-country-add]').forEach((button) => button.addEventListener('click', () => updateCountryMembers('POST', JSON.parse(button.dataset.countryAdd))));
-        available.querySelectorAll('[data-country-create-from]').forEach((button) => button.addEventListener('click', () => createCountryAccountFromMember(state.availableCountryMembers[Number(button.dataset.countryCreateFrom)])));
+        detail.innerHTML = `<div class="bm-key-summary"><div class="bm-key-summary-head"><div><h3>${escapeHtml(selected.name)}</h3><p>${escapeHtml(countryName(selected.country))} · ${Number(selected.canonical_account_count).toLocaleString()} Canonical Account(s) · ${selected.revenue_ytd === null ? 'Revenue not available' : money(selected.revenue_ytd)}</p></div>${app.dataset.canEdit === 'true' ? '<div class="bm-key-actions"><button type="button" class="button secondary small" data-country-rename-open>Rename</button><button type="button" class="button danger small" data-country-delete-open>Delete</button></div>' : ''}</div>${app.dataset.canEdit === 'true' ? `<form class="bm-key-rename" data-country-rename-form hidden><label>Group name<input type="text" data-country-rename-name value="${escapeHtml(selected.name)}" required></label><div><button type="button" class="button secondary small" data-country-rename-cancel>Cancel</button><button type="submit" class="button small">Save name</button></div></form>` : ''}</div><div class="bm-key-members">${selected.members?.length ? selected.members.map((member) => `<div class="bm-key-member"><div><strong>${escapeHtml(member.name)}</strong><small>${escapeHtml(member.canonical_account_code)} · ${Number(member.source_record_count).toLocaleString()} Source Record(s) · ${member.revenue_ytd === null ? 'Revenue not available' : money(member.revenue_ytd)}</small></div>${app.dataset.canEdit === 'true' && selected.members.length > 1 ? `<button type="button" class="button secondary small" data-country-remove='${escapeHtml(JSON.stringify(member.business_account_ids))}'>Separate</button>` : ''}</div>`).join('') : '<p class="bm-empty">No Canonical Account is assigned.</p>'}</div>`;
+        available.innerHTML = app.dataset.canEdit === 'true' ? (state.availableCountryMembers.length ? `<div class="bm-key-members">${state.availableCountryMembers.map((member) => `<div class="bm-key-candidate"><div><strong>${escapeHtml(member.name)}</strong><small>${escapeHtml(member.canonical_account_code)} · Current group: ${escapeHtml(member.current_group?.name || 'Assignment pending')} · ${member.revenue_ytd === null ? 'Revenue not available' : money(member.revenue_ytd)}</small></div><div class="bm-key-candidate-actions"><button type="button" class="button secondary small" data-country-add='${escapeHtml(JSON.stringify(member.business_account_ids))}'>Move here</button></div></div>`).join('')}</div>` : `<p class="bm-empty">${$('[data-bm-country-search]')?.value ? 'This Canonical Account may already belong to a group. Matching groups are shown in the Groups column.' : 'No other Canonical Account in this operating country matches the search.'}</p>`) : '';
+        detail.querySelectorAll('[data-country-remove]').forEach((button) => button.addEventListener('click', () => updateCountryMembers('DELETE', JSON.parse(button.dataset.countryRemove), button)));
+        available.querySelectorAll('[data-country-add]').forEach((button) => button.addEventListener('click', () => updateCountryMembers('POST', JSON.parse(button.dataset.countryAdd), button)));
         detail.querySelector('[data-country-rename-open]')?.addEventListener('click', () => { detail.querySelector('[data-country-rename-form]').hidden = false; detail.querySelector('[data-country-rename-name]').focus(); });
         detail.querySelector('[data-country-rename-cancel]')?.addEventListener('click', () => { detail.querySelector('[data-country-rename-form]').hidden = true; });
         detail.querySelector('[data-country-rename-form]')?.addEventListener('submit', renameCountryAccount);
         detail.querySelector('[data-country-delete-open]')?.addEventListener('click', () => { $('[data-bm-country-delete-summary]').textContent = `Delete ${selected.name}?`; $('[data-bm-country-delete-reason]').value = ''; $('[data-bm-country-delete-error]').hidden = true; $('[data-bm-country-delete-dialog]').showModal(); });
     }
 
-    async function loadCountryAccounts(accountSearch = '') {
-        const params = new URLSearchParams({ country: state.country, lob: state.revenueLob, period: state.revenuePeriod, account_search: accountSearch, country_account_id: state.selectedCountryAccountId || '' });
+    async function loadCountryAccounts(accountSearch = '', showProgress = true) {
+        const sequence = ++countryLoadSequence;
+        const params = new URLSearchParams({ country: state.country, lob: state.revenueLob, period: state.revenuePeriod, account_search: accountSearch, group_search: $('[data-bm-country-group-search]')?.value || '', country_account_id: state.selectedCountryAccountId || '' });
+        if (showProgress && !countryMutationActive) setCountryActivity(true, 'Refreshing Customer Country Groups...', false);
         try {
             const data = await api(`${app.dataset.countryAccountsUrl}?${params}`);
+            if (sequence !== countryLoadSequence) return;
+            const listScroll = $('[data-bm-country-list]')?.scrollTop || 0;
+            const availableScroll = $('[data-bm-country-available]')?.scrollTop || 0;
             state.countryAccounts = data.country_accounts || [];
             state.availableCountryMembers = data.available_accounts || [];
             state.availableCountryMemberCount = Number(data.available_account_count || 0);
+            state.countryGroupCount = Number(data.group_count || 0);
             if (state.selectedCountryAccountId && !state.countryAccounts.some((item) => item.id === state.selectedCountryAccountId)) state.selectedCountryAccountId = null;
             renderCountryAccounts();
-        } catch (error) { $('[data-bm-country-error]').textContent = error.message; $('[data-bm-country-error]').hidden = false; }
+            if ($('[data-bm-country-list]')) $('[data-bm-country-list]').scrollTop = listScroll;
+            if ($('[data-bm-country-available]')) $('[data-bm-country-available]').scrollTop = availableScroll;
+        } catch (error) {
+            if (sequence === countryLoadSequence) { $('[data-bm-country-error]').textContent = error.message; $('[data-bm-country-error]').hidden = false; }
+        } finally {
+            if (sequence === countryLoadSequence && showProgress && !countryMutationActive) setCountryActivity(false);
+        }
     }
 
-    async function updateCountryMembers(method, ids) {
+    async function updateCountryMembers(method, ids, trigger = null) {
         if (!state.selectedCountryAccountId) return;
         try {
-            await api(`${app.dataset.countryAccountsUrl}${state.selectedCountryAccountId}/members/`, { method, body: JSON.stringify({ business_account_ids: ids }) });
-            await Promise.all([loadCountryAccounts($('[data-bm-country-search]')?.value || ''), loadAccounts()]);
-            toast(method === 'POST' ? 'Canonical Account added to the Country Account.' : 'Canonical Account removed from the Country Account.');
-        } catch (error) { $('[data-bm-country-error]').textContent = error.message; $('[data-bm-country-error]').hidden = false; }
-    }
-
-    async function createCountryAccountFromMember(member) {
-        if (!member?.business_account_ids?.length) return;
-        const countrySelect = $('[data-bm-country-code]');
-        const knownCountries = (member.operating_countries || []).filter((country) =>
-            [...countrySelect.options].some((option) => option.value === country)
-        );
-        const resolvedCountry = state.country && knownCountries.includes(state.country)
-            ? state.country
-            : (knownCountries.length === 1 ? knownCountries[0] : '');
-        if (!resolvedCountry) {
-            state.pendingCountryMemberIds = member.business_account_ids;
-            $('[data-bm-country-name]').value = member.name;
-            countrySelect.value = '';
-            $('[data-bm-country-create-submit]').textContent = 'Create and add';
-            $('[data-bm-country-create]').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            countrySelect.focus();
-            toast('Select the operating country, then create and add this Canonical Account.');
-            return;
-        }
-        try {
-            const data = await api(app.dataset.countryAccountsUrl, {
-                method: 'POST',
-                body: JSON.stringify({ name: member.name, country: resolvedCountry, business_account_ids: member.business_account_ids }),
+            await runCountryMutation(method === 'POST' ? 'Assigning Canonical Customer...' : 'Separating Canonical Customer...', trigger, async () => {
+                await api(`${app.dataset.countryAccountsUrl}${state.selectedCountryAccountId}/members/`, { method, body: JSON.stringify({ business_account_ids: ids }) });
+                await Promise.all([loadCountryAccounts($('[data-bm-country-search]')?.value || '', false), loadAccounts()]);
             });
-            state.selectedCountryAccountId = data.country_account.id;
-            await Promise.all([loadCountryAccounts(), loadAccounts()]);
-            toast(`${member.name} was added as a Country Account.`);
-        } catch (error) { toast(error.message); }
+            toast(method === 'POST' ? 'Canonical Account moved into the Customer Country Group.' : 'Canonical Account separated into its own group.');
+        } catch (error) { $('[data-bm-country-error]').textContent = error.message; $('[data-bm-country-error]').hidden = false; }
     }
 
     async function renameCountryAccount(event) {
@@ -370,9 +380,15 @@
         const selected = state.countryAccounts.find((item) => item.id === state.selectedCountryAccountId);
         if (!selected) return;
         try {
-            await api(`${app.dataset.countryAccountsUrl}${selected.id}/`, { method: 'PATCH', body: JSON.stringify({ name: event.currentTarget.querySelector('[data-country-rename-name]').value, version: selected.version }) });
-            await Promise.all([loadCountryAccounts(), loadKeyAccounts(), loadAccounts()]);
-            toast('Country Account name updated.');
+            const trigger = event.currentTarget.querySelector('[type="submit"]');
+            await runCountryMutation('Renaming Customer Country Group...', trigger, async () => {
+                const data = await api(`${app.dataset.countryAccountsUrl}${selected.id}/`, { method: 'PATCH', body: JSON.stringify({ name: event.currentTarget.querySelector('[data-country-rename-name]').value, version: selected.version }) });
+                selected.name = data.country_account.name;
+                selected.version = data.country_account.version;
+                renderCountryAccounts();
+                await Promise.all([loadCountryAccounts($('[data-bm-country-search]')?.value || '', false), loadKeyAccounts(), loadAccounts()]);
+            });
+            toast('Customer Country Group name updated.');
         } catch (error) { $('[data-bm-country-error]').textContent = error.message; $('[data-bm-country-error]').hidden = false; }
     }
 
@@ -382,11 +398,13 @@
         const reason = $('[data-bm-country-delete-reason]').value.trim();
         if (!reason) { $('[data-bm-country-delete-error]').textContent = 'A deletion reason is required.'; $('[data-bm-country-delete-error]').hidden = false; return; }
         try {
-            await api(`${app.dataset.countryAccountsUrl}${selected.id}/`, { method: 'DELETE', body: JSON.stringify({ reason, version: selected.version }) });
-            state.selectedCountryAccountId = null;
-            $('[data-bm-country-delete-dialog]').close();
-            await Promise.all([loadCountryAccounts(), loadKeyAccounts(), loadAccounts()]);
-            toast('Country Account deleted. Its canonical Accounts are now unassigned.');
+            await runCountryMutation('Deleting Customer Country Group...', $('[data-bm-country-delete-confirm]'), async () => {
+                await api(`${app.dataset.countryAccountsUrl}${selected.id}/`, { method: 'DELETE', body: JSON.stringify({ reason, version: selected.version }) });
+                state.selectedCountryAccountId = null;
+                $('[data-bm-country-delete-dialog]').close();
+                await Promise.all([loadCountryAccounts('', false), loadKeyAccounts(), loadAccounts()]);
+            });
+            toast('Customer Country Group deleted. Its Canonical Accounts now have individual groups.');
         } catch (error) { $('[data-bm-country-delete-error]').textContent = error.message; $('[data-bm-country-delete-error]').hidden = false; }
     }
 
@@ -398,7 +416,7 @@
         const selected = state.keyAccounts.find((item) => item.id === state.selectedKeyAccountId);
         list.innerHTML = `<button type="button" class="bm-key-group ${state.selectedKeyAccountId === null ? 'active' : ''}" data-key-account-id="">
                 <strong>Unassigned Canonical Accounts</strong>
-                <small>${Number(state.availableKeyMemberCount).toLocaleString()} Canonical Account(s) without a Key Account</small>
+                <small>${Number(state.availableKeyMemberCount).toLocaleString()} group(s) without a Key Account</small>
                 <small>Select to review the unassigned queue</small>
             </button>` + (state.keyAccounts.length ? state.keyAccounts.map((item) => `
             <button type="button" class="bm-key-group ${item.id === state.selectedKeyAccountId ? 'active' : ''}" data-key-account-id="${escapeHtml(item.id)}">
@@ -411,16 +429,18 @@
             renderKeyAccounts();
         }));
         if (!selected) {
-            detail.innerHTML = '<div class="bm-key-summary"><h3>Unassigned Canonical Accounts</h3><p>These Canonical Accounts do not currently belong to a Key Account. Select a group before using Add.</p></div>';
-            available.innerHTML = state.availableKeyMembers.length ? `<div class="bm-key-members">${state.availableKeyMembers.map((member) => `<div class="bm-key-candidate"><div><strong>${escapeHtml(member.name)}</strong><small>${Number(member.source_record_count).toLocaleString()} Source Record(s) · ${escapeHtml(countryName(member.country))} · ${member.revenue_ytd === null ? 'Revenue not available' : money(member.revenue_ytd)}</small></div></div>`).join('')}</div>` : '<p class="bm-empty">No unassigned Canonical Account matches the current filters.</p>';
+            detail.innerHTML = '<div class="bm-key-summary"><h3>Unassigned Canonical Accounts</h3><p>These customer relationships do not currently feed a Key Account. Select a Key Account before using Add.</p></div>';
+            available.innerHTML = state.availableKeyMembers.length ? `<div class="bm-key-members">${state.availableKeyMembers.map((member) => `<div class="bm-key-candidate"><div><strong>${escapeHtml(member.name)}</strong><small>${escapeHtml(countryName(member.country))} · ${Number(member.canonical_account_count).toLocaleString()} Canonical Account(s) · ${member.revenue_ytd === null ? 'Revenue not available' : money(member.revenue_ytd)}</small></div></div>`).join('')}</div>` : '<p class="bm-empty">No unassigned Canonical Account matches the current filters.</p>';
             return;
         }
         detail.innerHTML = `<div class="bm-key-summary"><div class="bm-key-summary-head"><div><h3>${escapeHtml(selected.name)}</h3><p>${Number(selected.canonical_account_count).toLocaleString()} canonical Account(s) · ${selected.revenue_ytd === null ? 'Revenue not available' : money(selected.revenue_ytd)}</p><p>${selected.minesites?.length ? `MineSites: ${escapeHtml(selected.minesites.join(', '))}` : 'No mapped MineSite'}</p></div>${app.dataset.canEdit === 'true' ? '<div class="bm-key-actions"><button type="button" class="button secondary small" data-key-rename-open>Rename</button><button type="button" class="button danger small" data-key-delete-open>Delete</button></div>' : ''}</div>
             ${app.dataset.canEdit === 'true' ? `<form class="bm-key-rename" data-key-rename-form hidden><label>Key Account name<input type="text" data-key-rename-name value="${escapeHtml(selected.name)}" required></label><div><button type="button" class="button secondary small" data-key-rename-cancel>Cancel</button><button type="submit" class="button small">Save name</button></div></form>` : ''}</div>
-            <div class="bm-key-members">${selected.members?.length ? selected.members.map((member) => `<div class="bm-key-member"><div><strong>${escapeHtml(member.name)}</strong><small>${escapeHtml(countryName(member.country))} · ${Number(member.source_record_count).toLocaleString()} Source Record(s) · ${member.revenue_ytd === null ? 'Revenue not available' : money(member.revenue_ytd)}</small></div>${app.dataset.canEdit === 'true' ? `<button type="button" class="button secondary small" data-key-remove='${escapeHtml(JSON.stringify(member.business_account_ids))}'>Remove</button>` : ''}</div>`).join('') : '<p class="bm-empty">No Canonical Account has been added yet.</p>'}</div>`;
-        available.innerHTML = app.dataset.canEdit === 'true' ? (state.availableKeyMembers.length ? `<div class="bm-key-members">${state.availableKeyMembers.map((member) => `<div class="bm-key-candidate"><div><strong>${escapeHtml(member.name)}</strong><small>${Number(member.source_record_count).toLocaleString()} Source Record(s) · ${escapeHtml(countryName(member.country))} · ${member.revenue_ytd === null ? 'Revenue not available' : money(member.revenue_ytd)}</small></div><button type="button" class="button secondary small" data-key-add='${escapeHtml(JSON.stringify(member.business_account_ids))}'>Add</button></div>`).join('')}</div>` : '<p class="bm-empty">No available Canonical Account matches the search.</p>') : '';
-        detail.querySelectorAll('[data-key-remove]').forEach((button) => button.addEventListener('click', () => updateKeyMembers('DELETE', JSON.parse(button.dataset.keyRemove))));
-        available.querySelectorAll('[data-key-add]').forEach((button) => button.addEventListener('click', () => updateKeyMembers('POST', JSON.parse(button.dataset.keyAdd))));
+            <div class="bm-subsection-heading"><strong>Canonical Accounts</strong><span>${Number(selected.customer_country_groups?.length || 0)}</span></div>
+            <div class="bm-key-members">${selected.customer_country_groups?.length ? selected.customer_country_groups.map((group) => `<div class="bm-key-member"><div><strong>${escapeHtml(group.name)}</strong><small>${escapeHtml(countryName(group.country))} · ${Number(group.canonical_account_count).toLocaleString()} Canonical Account(s) · ${group.revenue_ytd === null ? 'Revenue not available' : money(group.revenue_ytd)}</small></div>${app.dataset.canEdit === 'true' ? `<button type="button" class="button secondary small" data-key-remove="${escapeHtml(group.id)}">Remove</button>` : ''}</div>`).join('') : '<p class="bm-empty">No Canonical Account has been added yet.</p>'}</div>
+            <details><summary>View ${Number(selected.members?.length || 0)} Canonical Account(s)</summary><div class="bm-key-members">${selected.members?.map((member) => `<div class="bm-key-member"><div><strong>${escapeHtml(member.name)}</strong><small>${escapeHtml(countryName(member.country))} · ${Number(member.source_record_count).toLocaleString()} Source Record(s)</small></div></div>`).join('') || '<p class="bm-empty">No Canonical Account.</p>'}</div></details>`;
+        available.innerHTML = app.dataset.canEdit === 'true' ? (state.availableKeyMembers.length ? `<div class="bm-key-members">${state.availableKeyMembers.map((group) => `<div class="bm-key-candidate"><div><strong>${escapeHtml(group.name)}</strong><small>${escapeHtml(countryName(group.country))} · ${Number(group.canonical_account_count).toLocaleString()} Canonical Account(s) · ${group.revenue_ytd === null ? 'Revenue not available' : money(group.revenue_ytd)}</small></div><button type="button" class="button secondary small" data-key-add="${escapeHtml(group.id)}">Add</button></div>`).join('')}</div>` : '<p class="bm-empty">No available Canonical Account matches the search.</p>') : '';
+        detail.querySelectorAll('[data-key-remove]').forEach((button) => button.addEventListener('click', () => updateKeyMembers('DELETE', [button.dataset.keyRemove])));
+        available.querySelectorAll('[data-key-add]').forEach((button) => button.addEventListener('click', () => updateKeyMembers('POST', [button.dataset.keyAdd])));
         detail.querySelector('[data-key-rename-open]')?.addEventListener('click', () => {
             detail.querySelector('[data-key-rename-form]').hidden = false;
             detail.querySelector('[data-key-rename-name]').focus();
@@ -440,8 +460,8 @@
         try {
             const data = await api(`${app.dataset.keyAccountsUrl}?${params}`);
             state.keyAccounts = data.key_accounts || [];
-            state.availableKeyMembers = data.available_accounts || [];
-            state.availableKeyMemberCount = Number(data.available_account_count || 0);
+            state.availableKeyMembers = data.available_country_groups || [];
+            state.availableKeyMemberCount = Number(data.available_country_group_count || 0);
             $('[data-bm-key-revenue-basis]').textContent = state.revenueLob ? ({ PRIME: 'Machine', PARTS: 'Parts', SERVICE: 'Service', RENTAL: 'Rental' }[state.revenueLob] || state.revenueLob) : 'All Mining';
             if (state.selectedKeyAccountId && !state.keyAccounts.some((item) => item.id === state.selectedKeyAccountId)) state.selectedKeyAccountId = null;
             renderKeyAccounts();
@@ -451,15 +471,15 @@
         }
     }
 
-    async function updateKeyMembers(method, businessAccountIds) {
+    async function updateKeyMembers(method, countryGroupIds) {
         if (!state.selectedKeyAccountId) return;
         const errorNode = $('[data-bm-key-error]');
         errorNode.hidden = true;
         try {
-            await api(`${app.dataset.keyAccountsUrl}${state.selectedKeyAccountId}/members/`, {
-                method, body: JSON.stringify({ business_account_ids: businessAccountIds }),
+            await api(`${app.dataset.keyAccountsUrl}${state.selectedKeyAccountId}/customer-country-groups/`, {
+                method, body: JSON.stringify({ country_account_ids: countryGroupIds }),
             });
-            await loadKeyAccounts($('[data-bm-key-search]')?.value || '');
+            await Promise.all([loadKeyAccounts($('[data-bm-key-search]')?.value || ''), loadAccounts()]);
             toast(method === 'POST' ? 'Canonical Account added to the Key Account.' : 'Canonical Account removed from the Key Account.');
         } catch (error) { errorNode.textContent = error.message; errorNode.hidden = false; }
     }
@@ -960,6 +980,7 @@
         renderImpact();
         const refreshes = [loadOverview(), loadAccounts()];
         if (!$('[data-bm-panel="conflicts"]').hidden) refreshes.push(loadConflicts());
+        if ($('[data-bm-country-account-dialog]')?.open) refreshes.push(loadCountryAccounts($('[data-bm-country-search]')?.value || ''));
         await Promise.all(refreshes);
     });
     $('[data-bm-account-status]').addEventListener('change', () => { state.page = 1; loadAccounts(); });
@@ -971,6 +992,7 @@
         state.page = 1;
         const refreshes = [loadOverview(), loadAccounts()];
         if ($('[data-bm-key-account-dialog]')?.open) refreshes.push(loadKeyAccounts($('[data-bm-key-search]')?.value || ''));
+        if ($('[data-bm-country-account-dialog]')?.open) refreshes.push(loadCountryAccounts($('[data-bm-country-search]')?.value || ''));
         if (state.selected?.source_account_id) refreshes.push(selectAccount(state.selected.source_account_id, true));
         await Promise.all(refreshes);
     });
@@ -992,6 +1014,47 @@
         $('[data-bm-key-error]').hidden = true;
         $('[data-bm-key-account-dialog]').showModal();
         await loadKeyAccounts();
+    });
+    $('[data-bm-country-groups]')?.addEventListener('click', async () => {
+        $('[data-bm-country-error]').hidden = true;
+        const countrySelect = $('[data-bm-country-code]');
+        countrySelect.innerHTML = '<option value="">Select a country</option>' + state.countryOptions
+            .filter((country) => (country.code || country) !== 'UNASSIGNED')
+            .map((country) => `<option value="${escapeHtml(country.code || country)}">${escapeHtml(country.label || countryName(country))}</option>`)
+            .join('');
+        if (state.country && [...countrySelect.options].some((option) => option.value === state.country)) countrySelect.value = state.country;
+        $('[data-bm-country-revenue-basis]').textContent = state.revenueLob ? ({ PRIME: 'Machine', PARTS: 'Parts', SERVICE: 'Service', RENTAL: 'Rental' }[state.revenueLob] || state.revenueLob) : 'All Mining';
+        $('[data-bm-country-account-dialog]').showModal();
+        await loadCountryAccounts();
+    });
+    all('[data-bm-country-close]').forEach((button) => button.addEventListener('click', () => $('[data-bm-country-account-dialog]').close()));
+    all('[data-bm-country-delete-close]').forEach((button) => button.addEventListener('click', () => $('[data-bm-country-delete-dialog]').close()));
+    $('[data-bm-country-delete-confirm]')?.addEventListener('click', deleteCountryAccount);
+    $('[data-bm-country-create]')?.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const errorNode = $('[data-bm-country-error]');
+        errorNode.hidden = true;
+        try {
+            await runCountryMutation('Creating Customer Country Group...', event.currentTarget.querySelector('[type="submit"]'), async () => {
+                const data = await api(app.dataset.countryAccountsUrl, {
+                    method: 'POST',
+                    body: JSON.stringify({ name: $('[data-bm-country-name]').value, country: $('[data-bm-country-code]').value }),
+                });
+                state.selectedCountryAccountId = data.country_account.id;
+                $('[data-bm-country-name]').value = '';
+                await Promise.all([loadCountryAccounts('', false), loadAccounts()]);
+            });
+            toast('Customer Country Group created and saved in Mining 360.');
+        } catch (error) { errorNode.textContent = error.message; errorNode.hidden = false; }
+    });
+    let countrySearchDebounce;
+    $('[data-bm-country-search]')?.addEventListener('input', (event) => {
+        clearTimeout(countrySearchDebounce);
+        countrySearchDebounce = setTimeout(() => loadCountryAccounts(event.target.value), 250);
+    });
+    $('[data-bm-country-group-search]')?.addEventListener('input', () => {
+        clearTimeout(countrySearchDebounce);
+        countrySearchDebounce = setTimeout(() => loadCountryAccounts($('[data-bm-country-search]')?.value || ''), 250);
     });
     all('[data-bm-key-close]').forEach((button) => button.addEventListener('click', () => $('[data-bm-key-account-dialog]').close()));
     all('[data-bm-key-delete-close]').forEach((button) => button.addEventListener('click', () => $('[data-bm-key-delete-dialog]').close()));
@@ -1028,6 +1091,7 @@
         state.page = 1;
         const refreshes = [loadOverview(), loadAccounts()];
         if ($('[data-bm-key-account-dialog]')?.open) refreshes.push(loadKeyAccounts($('[data-bm-key-search]')?.value || ''));
+        if ($('[data-bm-country-account-dialog]')?.open) refreshes.push(loadCountryAccounts($('[data-bm-country-search]')?.value || ''));
         if (state.selected?.source_account_id) refreshes.push(selectAccount(state.selected.source_account_id, true));
         await Promise.all(refreshes);
     }));

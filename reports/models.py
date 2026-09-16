@@ -5621,6 +5621,52 @@ class MineSite(models.Model):
         return self.canonical_minesite_name
 
 
+class MineSiteAlias(models.Model):
+    minesite = models.ForeignKey(MineSite, related_name="aliases", on_delete=models.CASCADE)
+    alias = models.CharField(max_length=500)
+    normalized_alias = models.CharField(max_length=500, db_index=True)
+    source_system = models.CharField(max_length=120, blank=True)
+    language = models.CharField(max_length=12, blank=True)
+    validation_status = models.CharField(
+        max_length=20,
+        choices=BusinessAccount.VALIDATION_STATUSES,
+        default="To Review",
+        db_index=True,
+    )
+    validated_by = models.ForeignKey(
+        User,
+        null=True,
+        blank=True,
+        related_name="validated_minesite_aliases",
+        on_delete=models.SET_NULL,
+    )
+    validated_at = models.DateTimeField(null=True, blank=True)
+    active = models.BooleanField(default=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        from .business_mapping_normalization_service import normalize_business_name
+
+        self.normalized_alias = normalize_business_name(self.alias)
+        super().save(*args, **kwargs)
+
+    class Meta:
+        ordering = ["normalized_alias"]
+        db_table = "bm_minesite_alias"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["minesite", "normalized_alias", "source_system"],
+                name="bm_unique_minesite_alias",
+            ),
+        ]
+        indexes = [
+            models.Index(
+                fields=["active", "validation_status", "normalized_alias"],
+                name="bm_site_alias_lookup",
+            ),
+        ]
+
+
 class FleetSourceSnapshot(models.Model):
     synchronization_run = models.ForeignKey(MappingSynchronizationRun, related_name="fleet_records", on_delete=models.PROTECT)
     source_record_id = models.CharField(max_length=255)
@@ -5717,6 +5763,346 @@ class RevenueSourceSnapshot(models.Model):
             models.Index(fields=["active", "source_account_code", "lob"], name="bm_revenue_lookup_idx"),
             models.Index(fields=["active", "period_year", "lob"], name="bm_revenue_period_idx"),
             models.Index(fields=["active", "business_date", "lob"], name="bm_revenue_date_lob_idx"),
+        ]
+
+
+class MachineSalesSynchronizationRun(models.Model):
+    STATUSES = [(value, value) for value in ("Running", "Completed", "Completed with Warnings", "Failed")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    source = models.CharField(max_length=120, default="Customer Fleet & Revenue Planning Model")
+    status = models.CharField(max_length=30, choices=STATUSES, default="Running", db_index=True)
+    incremental_from = models.DateField(null=True, blank=True)
+    data_through_date = models.DateField(null=True, blank=True, db_index=True)
+    records_read = models.PositiveIntegerField(default=0)
+    records_created = models.PositiveIntegerField(default=0)
+    records_updated = models.PositiveIntegerField(default=0)
+    records_unchanged = models.PositiveIntegerField(default=0)
+    warnings_json = models.JSONField(default=list, blank=True)
+    error_message = models.TextField(blank=True)
+    started_at = models.DateTimeField(auto_now_add=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["-started_at"]
+        db_table = "bcc_machine_sales_sync_run"
+
+
+class MachineSaleDetail(models.Model):
+    """Current read-only Machine Sales detail materialized from NMBEPM."""
+
+    source_record_id = models.CharField(max_length=64, unique=True)
+    source_system = models.CharField(max_length=40, default="NMBEPM")
+    business_date = models.DateField(db_index=True)
+    customer_code = models.CharField(max_length=160, blank=True, db_index=True)
+    customer_name = models.CharField(max_length=500, blank=True, db_index=True)
+    equipment_key = models.CharField(max_length=160, blank=True, db_index=True)
+    equipment_code = models.CharField(max_length=160, blank=True, db_index=True)
+    serial_number = models.CharField(max_length=255, blank=True, db_index=True)
+    model_code = models.CharField(max_length=160, blank=True, db_index=True)
+    model_name = models.CharField(max_length=255, blank=True, db_index=True)
+    product_category = models.CharField(max_length=255, blank=True, db_index=True)
+    equipment_family = models.CharField(max_length=255, blank=True, db_index=True)
+    family_code = models.CharField(max_length=20, blank=True, db_index=True)
+    brand = models.CharField(max_length=120, blank=True, db_index=True)
+    invoice_number = models.CharField(max_length=160, blank=True, db_index=True)
+    distribution_channel = models.CharField(max_length=20, blank=True, db_index=True)
+    sale_status_code = models.CharField(max_length=20, blank=True, db_index=True)
+    new_used_code = models.CharField(max_length=20, blank=True)
+    net_revenue_eur = models.DecimalField(max_digits=20, decimal_places=2, default=0)
+    source_hash = models.CharField(max_length=64, db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
+    synchronization_run = models.ForeignKey(
+        MachineSalesSynchronizationRun,
+        related_name="machine_sales",
+        on_delete=models.PROTECT,
+    )
+    source_last_seen_at = models.DateTimeField(db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-business_date", "-net_revenue_eur", "serial_number"]
+        db_table = "bcc_machine_sale_detail"
+        indexes = [
+            models.Index(fields=["active", "business_date"], name="bcc_machine_sale_date_idx"),
+            models.Index(fields=["active", "customer_code"], name="bcc_machine_sale_customer_idx"),
+            models.Index(fields=["active", "invoice_number"], name="bcc_machine_sale_invoice_idx"),
+        ]
+
+
+class EquipmentReferenceImportRun(models.Model):
+    STATUSES = [(value, value) for value in ("Running", "Completed", "Completed with Warnings", "Failed")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    status = models.CharField(max_length=30, choices=STATUSES, default="Running", db_index=True)
+    asset_source_name = models.CharField(max_length=255)
+    asset_source_hash = models.CharField(max_length=64, blank=True)
+    prefix_source_name = models.CharField(max_length=255)
+    prefix_source_hash = models.CharField(max_length=64, blank=True)
+    product_group_source_name = models.CharField(max_length=255, blank=True)
+    product_group_source_hash = models.CharField(max_length=64, blank=True)
+    model_source_name = models.CharField(max_length=255, blank=True)
+    model_source_hash = models.CharField(max_length=64, blank=True)
+    serial_records_read = models.PositiveIntegerField(default=0)
+    prefix_records_read = models.PositiveIntegerField(default=0)
+    product_group_records_read = models.PositiveIntegerField(default=0)
+    model_records_read = models.PositiveIntegerField(default=0)
+    records_created = models.PositiveIntegerField(default=0)
+    records_updated = models.PositiveIntegerField(default=0)
+    records_unchanged = models.PositiveIntegerField(default=0)
+    records_deactivated = models.PositiveIntegerField(default=0)
+    warnings_json = models.JSONField(default=list, blank=True)
+    error_message = models.TextField(blank=True)
+    imported_by = models.ForeignKey(User, null=True, blank=True, related_name="equipment_reference_imports", on_delete=models.SET_NULL)
+    started_at = models.DateTimeField(auto_now_add=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["-started_at"]
+        db_table = "equipment_reference_import_run"
+
+
+class EquipmentSerialReference(models.Model):
+    serial_number = models.CharField(max_length=255, unique=True)
+    serial_prefix = models.CharField(max_length=20, blank=True, db_index=True)
+    make = models.CharField(max_length=120, blank=True, db_index=True)
+    model = models.CharField(max_length=255, blank=True, db_index=True)
+    product_family = models.CharField(max_length=255, blank=True, db_index=True)
+    dealer_customer_name = models.CharField(max_length=500, blank=True, db_index=True)
+    ownership_status = models.CharField(max_length=80, blank=True)
+    model_year = models.CharField(max_length=20, blank=True)
+    subscription_status = models.CharField(max_length=80, blank=True)
+    source_file_name = models.CharField(max_length=255)
+    source_row_number = models.PositiveIntegerField()
+    source_hash = models.CharField(max_length=64, db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
+    import_run = models.ForeignKey(EquipmentReferenceImportRun, related_name="serial_references", on_delete=models.PROTECT)
+    source_last_seen_at = models.DateTimeField(db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["serial_number"]
+        db_table = "equipment_serial_reference"
+        indexes = [
+            models.Index(fields=["active", "serial_prefix"], name="equip_serial_prefix_idx"),
+            models.Index(fields=["active", "make", "model"], name="equip_serial_model_idx"),
+        ]
+
+
+class EquipmentPrefixModelReference(models.Model):
+    brand = models.CharField(max_length=120, db_index=True)
+    prefix = models.CharField(max_length=20, db_index=True)
+    model = models.CharField(max_length=255, db_index=True)
+    parent_product_family = models.CharField(max_length=255, blank=True, db_index=True)
+    product_family = models.CharField(max_length=255, blank=True)
+    equipment_type = models.CharField(max_length=255, blank=True)
+    source_created_by = models.CharField(max_length=255, blank=True)
+    ambiguous_prefix = models.BooleanField(default=False, db_index=True)
+    source_file_name = models.CharField(max_length=255)
+    source_row_number = models.PositiveIntegerField()
+    source_hash = models.CharField(max_length=64, db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
+    import_run = models.ForeignKey(EquipmentReferenceImportRun, related_name="prefix_references", on_delete=models.PROTECT)
+    source_last_seen_at = models.DateTimeField(db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["prefix", "model"]
+        db_table = "equipment_prefix_model_reference"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["brand", "prefix", "model", "parent_product_family", "product_family"],
+                name="equip_unique_prefix_model",
+            ),
+        ]
+        indexes = [
+            models.Index(fields=["active", "prefix", "ambiguous_prefix"], name="equip_prefix_lookup_idx"),
+        ]
+
+
+class EquipmentProductGroupReference(models.Model):
+    code = models.CharField(max_length=20, unique=True)
+    description = models.CharField(max_length=255)
+    priority = models.PositiveSmallIntegerField(default=0, db_index=True)
+    source_created_by = models.CharField(max_length=255, blank=True)
+    source_file_name = models.CharField(max_length=255)
+    source_row_number = models.PositiveIntegerField()
+    source_hash = models.CharField(max_length=64, db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
+    import_run = models.ForeignKey(EquipmentReferenceImportRun, related_name="product_groups", on_delete=models.PROTECT)
+    source_last_seen_at = models.DateTimeField(db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["priority", "code"]
+        db_table = "equipment_product_group_reference"
+
+
+class EquipmentModelReference(models.Model):
+    source_record_id = models.CharField(max_length=80, unique=True)
+    model = models.CharField(max_length=255, db_index=True)
+    normalized_model = models.CharField(max_length=255, db_index=True)
+    brand = models.CharField(max_length=120, blank=True, db_index=True)
+    family = models.CharField(max_length=255, blank=True, db_index=True)
+    priority = models.PositiveSmallIntegerField(default=0)
+    equipment_type = models.CharField(max_length=255, blank=True)
+    description = models.TextField(blank=True)
+    source_status = models.CharField(max_length=40, blank=True)
+    source_created_by = models.CharField(max_length=255, blank=True)
+    product_group = models.ForeignKey(
+        EquipmentProductGroupReference, null=True, blank=True,
+        related_name="models", on_delete=models.PROTECT,
+    )
+    source_file_name = models.CharField(max_length=255)
+    source_row_number = models.PositiveIntegerField()
+    source_hash = models.CharField(max_length=64, db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
+    import_run = models.ForeignKey(EquipmentReferenceImportRun, related_name="model_references", on_delete=models.PROTECT)
+    source_last_seen_at = models.DateTimeField(db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["priority", "brand", "model"]
+        db_table = "equipment_model_reference"
+        indexes = [
+            models.Index(fields=["active", "brand", "normalized_model"], name="equip_model_lookup_idx"),
+            models.Index(fields=["active", "product_group"], name="equip_model_group_idx"),
+        ]
+
+
+class PartsClassificationImportRun(models.Model):
+    STATUSES = [(value, value) for value in ("Running", "Completed", "Completed with Warnings", "Failed")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    status = models.CharField(max_length=30, choices=STATUSES, default="Running", db_index=True)
+    source_file_name = models.CharField(max_length=255)
+    source_file_hash = models.CharField(max_length=64, blank=True)
+    source_sheets_json = models.JSONField(default=list, blank=True)
+    records_read = models.PositiveIntegerField(default=0)
+    records_created = models.PositiveIntegerField(default=0)
+    records_updated = models.PositiveIntegerField(default=0)
+    records_unchanged = models.PositiveIntegerField(default=0)
+    records_deactivated = models.PositiveIntegerField(default=0)
+    conflict_count = models.PositiveIntegerField(default=0)
+    major_class_counts_json = models.JSONField(default=dict, blank=True)
+    warnings_json = models.JSONField(default=list, blank=True)
+    error_message = models.TextField(blank=True)
+    imported_by = models.ForeignKey(User, null=True, blank=True, related_name="parts_classification_imports", on_delete=models.SET_NULL)
+    started_at = models.DateTimeField(auto_now_add=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["-started_at"]
+        db_table = "parts_classification_import_run"
+
+
+class PartsMajorClassReference(models.Model):
+    code = models.CharField(max_length=4, unique=True)
+    description = models.CharField(max_length=255)
+    display_order = models.PositiveSmallIntegerField(default=0)
+    active = models.BooleanField(default=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["display_order", "code"]
+        db_table = "parts_major_class_reference"
+
+
+class PartClassificationReference(models.Model):
+    STATUSES = [(value, value) for value in ("Classified", "Conflict")]
+
+    part_number = models.CharField(max_length=160)
+    normalized_part_number = models.CharField(max_length=160, unique=True)
+    major_class = models.ForeignKey(
+        PartsMajorClassReference, null=True, blank=True,
+        related_name="parts", on_delete=models.PROTECT,
+    )
+    minor_class = models.CharField(max_length=20, blank=True, db_index=True)
+    ppc = models.CharField(max_length=40, blank=True, db_index=True)
+    classification_status = models.CharField(max_length=20, choices=STATUSES, default="Classified", db_index=True)
+    conflict_variants_json = models.JSONField(default=list, blank=True)
+    source_sheet = models.CharField(max_length=120)
+    source_row_number = models.PositiveIntegerField()
+    source_hash = models.CharField(max_length=64, db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
+    import_run = models.ForeignKey(PartsClassificationImportRun, related_name="parts", on_delete=models.PROTECT)
+    source_last_seen_at = models.DateTimeField(db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["normalized_part_number"]
+        db_table = "part_classification_reference"
+        indexes = [
+            models.Index(fields=["active", "classification_status", "major_class"], name="part_class_major_idx"),
+            models.Index(fields=["active", "minor_class", "ppc"], name="part_minor_ppc_idx"),
+        ]
+
+
+class PartsSalesSynchronizationRun(models.Model):
+    STATUSES = [(value, value) for value in ("Running", "Completed", "Completed with Warnings", "Failed")]
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    reconciliation_run = models.ForeignKey("ReconciliationRun", related_name="parts_sales_runs", on_delete=models.PROTECT)
+    status = models.CharField(max_length=30, choices=STATUSES, default="Running", db_index=True)
+    data_through_date = models.DateField(null=True, blank=True, db_index=True)
+    records_read = models.PositiveIntegerField(default=0)
+    records_created = models.PositiveIntegerField(default=0)
+    records_updated = models.PositiveIntegerField(default=0)
+    records_unchanged = models.PositiveIntegerField(default=0)
+    records_deactivated = models.PositiveIntegerField(default=0)
+    classified_records = models.PositiveIntegerField(default=0)
+    allocated_revenue_eur = models.DecimalField(max_digits=22, decimal_places=4, default=0)
+    warnings_json = models.JSONField(default=list, blank=True)
+    error_message = models.TextField(blank=True)
+    started_at = models.DateTimeField(auto_now_add=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["-started_at"]
+        db_table = "bcc_parts_sales_sync_run"
+
+
+class PartSaleDetail(models.Model):
+    source_record_id = models.CharField(max_length=255, unique=True)
+    business_date = models.DateField(db_index=True)
+    company_code = models.CharField(max_length=40, blank=True, db_index=True)
+    branch_code = models.CharField(max_length=40, blank=True, db_index=True)
+    customer_code = models.CharField(max_length=160, blank=True, db_index=True)
+    customer_name = models.CharField(max_length=500, blank=True, db_index=True)
+    invoice_number = models.CharField(max_length=160, blank=True, db_index=True)
+    part_number = models.CharField(max_length=160, blank=True, db_index=True)
+    normalized_part_number = models.CharField(max_length=160, blank=True, db_index=True)
+    brand = models.CharField(max_length=120, blank=True, db_index=True)
+    brand_group = models.CharField(max_length=40, default="Brand Not Available", db_index=True)
+    major_class_code = models.CharField(max_length=4, blank=True, db_index=True)
+    major_class_description = models.CharField(max_length=255, blank=True)
+    minor_class = models.CharField(max_length=20, blank=True, db_index=True)
+    ppc = models.CharField(max_length=40, blank=True, db_index=True)
+    classification_status = models.CharField(max_length=30, default="Not Classified", db_index=True)
+    invoiced_quantity = models.DecimalField(max_digits=20, decimal_places=4, null=True, blank=True)
+    source_line_amount = models.DecimalField(max_digits=22, decimal_places=4, default=0)
+    allocated_revenue_eur = models.DecimalField(max_digits=22, decimal_places=4, default=0)
+    source_hash = models.CharField(max_length=64, db_index=True)
+    active = models.BooleanField(default=True, db_index=True)
+    synchronization_run = models.ForeignKey(PartsSalesSynchronizationRun, related_name="sales", on_delete=models.PROTECT)
+    source_last_seen_at = models.DateTimeField(db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-business_date", "invoice_number", "part_number"]
+        db_table = "bcc_part_sale_detail"
+        indexes = [
+            models.Index(fields=["active", "business_date"], name="bcc_part_sale_date_idx"),
+            models.Index(fields=["active", "major_class_code"], name="bcc_part_sale_major_idx"),
+            models.Index(fields=["active", "customer_code"], name="bcc_part_sale_customer_idx"),
         ]
 
 
@@ -6214,6 +6600,7 @@ class ReconciliationOrderLine(models.Model):
     customer_number = models.CharField(max_length=120, blank=True, db_index=True)
     customer_name = models.CharField(max_length=255, blank=True, db_index=True)
     part_number = models.CharField(max_length=160, blank=True, db_index=True)
+    brand = models.CharField(max_length=120, blank=True, db_index=True)
     order_date = models.DateField(null=True, blank=True, db_index=True)
     ordered_quantity = models.DecimalField(max_digits=20, decimal_places=4, null=True, blank=True)
     current_invoiced_quantity = models.DecimalField(max_digits=20, decimal_places=4, null=True, blank=True)

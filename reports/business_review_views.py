@@ -18,6 +18,7 @@ from openpyxl.styles import Font, PatternFill
 from openpyxl.utils import get_column_letter
 
 from .ai_feature_rollout import feature_enabled
+from .access_control import is_platform_admin
 from .business_mapping_normalization_service import normalize_business_name
 from .business_mapping_source_service import MINING_DIVISION, MINING_REVENUE_LABELS, MINING_REVENUE_LOBS
 from .business_opportunity_service import BusinessOpportunityRuleEngine, BusinessRiskService
@@ -64,10 +65,14 @@ def business_review_landing(request):
 def business_command_center(request):
     if not _command_center_allowed(request.user):
         return HttpResponseForbidden("You do not have access to Business Command Center.")
-    return render(request, "reports/business_command_center.html", {
+    legacy_requested = request.GET.get("ui") == "legacy" and is_platform_admin(request.user)
+    v2_enabled = feature_enabled("ENABLE_BUSINESS_COMMAND_CENTER_V2", request.user)
+    template_name = "reports/business_command_center_v2.html" if v2_enabled and not legacy_requested else "reports/business_command_center_legacy.html"
+    return render(request, template_name, {
         "active_section": "business-review",
         "can_export": has_business_review_permission(request.user, "export_business_command_center"),
         "can_create_action": has_business_review_permission(request.user, "create_business_review_action"),
+        "v2_enabled": v2_enabled,
         "features": {
             "customers": feature_enabled("ENABLE_BUSINESS_COMMAND_CENTER_CUSTOMERS", request.user),
             "countries": feature_enabled("ENABLE_BUSINESS_COMMAND_CENTER_COUNTRIES", request.user),
@@ -96,6 +101,39 @@ def command_center_bootstrap_api(request):
         }, status=503)
 
 
+@login_required
+def command_center_revenue_explorer_api(request):
+    if not _command_center_allowed(request.user):
+        return JsonResponse({"detail": "Forbidden"}, status=403)
+    try:
+        return JsonResponse(BusinessCommandCenterService(request.user, request.GET).revenue_explorer())
+    except BusinessCommandCenterInputError as exc:
+        return JsonResponse({"ready": False, "message": str(exc)}, status=400)
+    except Exception:
+        return JsonResponse({"ready": False, "message": "Revenue Explorer is temporarily unavailable."}, status=503)
+
+
+def _command_center_entity_search(request, entity_type):
+    if not _command_center_allowed(request.user):
+        return JsonResponse({"detail": "Forbidden"}, status=403)
+    try:
+        return JsonResponse(BusinessCommandCenterService(request.user, request.GET).search_entities(entity_type))
+    except BusinessCommandCenterInputError as exc:
+        return JsonResponse({"results": [], "message": str(exc)}, status=400)
+    except Exception:
+        return JsonResponse({"results": [], "message": "Business search is temporarily unavailable."}, status=503)
+
+
+@login_required
+def command_center_customer_search_api(request):
+    return _command_center_entity_search(request, "customers")
+
+
+@login_required
+def command_center_key_account_search_api(request):
+    return _command_center_entity_search(request, "key_accounts")
+
+
 def _machine_sales_params(request):
     _revenue, _publication, _published_rows, selected_rows, period, _line, _run = BusinessCommandCenterService(
         request.user, request.GET
@@ -103,7 +141,7 @@ def _machine_sales_params(request):
     params = request.GET.copy()
     params["start_date"] = period["start_date"].isoformat()
     params["end_date"] = period["end_date"].isoformat()
-    if any(request.GET.get(key) for key in ("customer_ids", "country_ids", "key_account_ids")):
+    if any(request.GET.get(key) for key in ("customer_ids", "customer_group_ids", "country_ids", "key_account_ids")):
         params["customer_codes"] = ",".join(sorted({
             str(code) for row in selected_rows for code in row.get("source_account_codes", []) if code
         }))

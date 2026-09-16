@@ -152,6 +152,8 @@ class BusinessAccountOperatingCountryService:
             previous_value_json={"assigned_operating_country": previous},
             new_value_json={"assigned_operating_country": country},
         )
+        from .business_mapping_country_account_service import CountryAccountService
+        CountryAccountService.ensure_account_group(account, actor=self.user)
         return account
 
     @transaction.atomic
@@ -175,4 +177,6 @@ class BusinessAccountOperatingCountryService:
             previous_value_json={"assigned_operating_country": previous},
             new_value_json={"assigned_operating_country": ""},
         )
+        from .business_mapping_country_account_service import CountryAccountService
+        CountryAccountService.ensure_account_group(account, actor=self.user)
         return account

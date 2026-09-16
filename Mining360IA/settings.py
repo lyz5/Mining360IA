@@ -95,6 +95,8 @@ SECURE_REFERRER_POLICY = 'same-origin'
 INSTALLED_APPS = [
     'deployment',
     'reports',
+    'codex_chatbot',
+    'codex_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -102,6 +104,24 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+# Independent Codex modules remain unavailable until explicitly enabled.
+ENABLE_CODEX_CHATBOT = os.getenv('ENABLE_CODEX_CHATBOT', 'Disabled')
+ENABLE_CODEX_ADMIN = os.getenv('ENABLE_CODEX_ADMIN', 'Disabled')
+CODEX_CHATBOT_APP_SERVER_ENABLED = _environment_boolean(
+    'CODEX_CHATBOT_APP_SERVER_ENABLED', False
+)
+CODEX_CHATBOT_HOME = os.getenv(
+    'CODEX_CHATBOT_HOME', str(BASE_DIR / '.test-runtime' / 'codex-chatbot-home')
+)
+CODEX_CHATBOT_WORKSPACE = os.getenv(
+    'CODEX_CHATBOT_WORKSPACE', str(BASE_DIR / '.test-runtime' / 'codex-chatbot-workspace')
+)
+CODEX_CHATBOT_TIMEOUT_SECONDS = int(os.getenv('CODEX_CHATBOT_TIMEOUT_SECONDS', '45'))
+CODEX_CHATBOT_GENERAL_TIMEOUT_SECONDS = int(os.getenv('CODEX_CHATBOT_GENERAL_TIMEOUT_SECONDS', '120'))
+CODEX_CHATBOT_ARTIFACT_ROOT = os.getenv(
+    'CODEX_CHATBOT_ARTIFACT_ROOT', str(BASE_DIR / '.test-runtime' / 'codex-chatbot-artifacts')
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -373,6 +393,7 @@ ENABLE_BUSINESS_REVIEW_AI_BRIEFING = os.getenv('ENABLE_BUSINESS_REVIEW_AI_BRIEFI
 ENABLE_BUSINESS_REVIEW_EXPORT = os.getenv('ENABLE_BUSINESS_REVIEW_EXPORT', 'Admin Only').strip()
 ENABLE_BUSINESS_REVIEW_DRAFT_PREVIEW = os.getenv('ENABLE_BUSINESS_REVIEW_DRAFT_PREVIEW', 'Admin Only').strip()
 ENABLE_BUSINESS_COMMAND_CENTER = os.getenv('ENABLE_BUSINESS_COMMAND_CENTER', 'Admin Only').strip()
+ENABLE_BUSINESS_COMMAND_CENTER_V2 = os.getenv('ENABLE_BUSINESS_COMMAND_CENTER_V2', 'Admin Only').strip()
 ENABLE_BUSINESS_COMMAND_CENTER_CUSTOMERS = os.getenv('ENABLE_BUSINESS_COMMAND_CENTER_CUSTOMERS', 'Admin Only').strip()
 ENABLE_BUSINESS_COMMAND_CENTER_COUNTRIES = os.getenv('ENABLE_BUSINESS_COMMAND_CENTER_COUNTRIES', 'Admin Only').strip()
 ENABLE_BUSINESS_COMMAND_CENTER_KEY_ACCOUNTS = os.getenv('ENABLE_BUSINESS_COMMAND_CENTER_KEY_ACCOUNTS', 'Admin Only').strip()

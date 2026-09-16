@@ -589,6 +589,19 @@ def _canonical_account_groups_response(request, authorized_accounts, countries, 
             business_account_id__in={record.canonical_account_id for record in records if record.canonical_account_id},
         ).values_list("business_account_id", "key_account_id", "key_account__key_account_name")
     }
+    country_group_membership = {
+        account_id: (str(group_id), group_name, group_country)
+        for account_id, group_id, group_name, group_country in CountryAccountMembership.objects.filter(
+            active=True,
+            country_account__active=True,
+            business_account_id__in={record.canonical_account_id for record in records if record.canonical_account_id},
+        ).values_list(
+            "business_account_id",
+            "country_account_id",
+            "country_account__country_account_name",
+            "country_account__country",
+        )
+    }
     aliases_by_account = {}
     for account_id, alias in BusinessAccount.objects.filter(
         pk__in={record.canonical_account_id for record in records if record.canonical_account_id},
@@ -611,6 +624,8 @@ def _canonical_account_groups_response(request, authorized_accounts, countries, 
             "statuses": set(),
             "key_accounts": set(),
             "key_account_ids": set(),
+            "customer_country_groups": set(),
+            "customer_country_group_ids": set(),
             "search_values": [],
         })
         group["canonical_ids"].add(str(record.canonical_account_id) if record.canonical_account_id else "")
@@ -622,6 +637,10 @@ def _canonical_account_groups_response(request, authorized_accounts, countries, 
             key_id, key_name = key_account_membership[record.canonical_account_id]
             group["key_account_ids"].add(key_id)
             group["key_accounts"].add(key_name)
+        if country_group_membership.get(record.canonical_account_id):
+            country_group_id, country_group_name, country_group_country = country_group_membership[record.canonical_account_id]
+            group["customer_country_group_ids"].add(country_group_id)
+            group["customer_country_groups"].add((country_group_name, country_group_country))
         group["search_values"].extend([
             record.source_account_name, record.source_record_id, record.code_cic,
             record.company_code, record.branch_code, record.country,
@@ -669,6 +688,11 @@ def _canonical_account_groups_response(request, authorized_accounts, countries, 
             "identity_status": "Canonical" if len(canonical_ids) == 1 else "Needs canonical review",
             "key_accounts": sorted(group["key_accounts"]),
             "key_account_ids": sorted(group["key_account_ids"]),
+            "customer_country_group_ids": sorted(group["customer_country_group_ids"]),
+            "customer_country_groups": [
+                {"name": name, "country": group_country}
+                for name, group_country in sorted(group["customer_country_groups"])
+            ],
             "aliases": sorted({alias for account_id in canonical_ids for alias in aliases_by_account.get(account_id, set())}),
             "source_records": group["records"],
             "mapping_status": sorted(group["statuses"])[0] if group["statuses"] else "Unmapped",
@@ -710,20 +734,28 @@ def _country_account_payload(item, allowed_account_ids, source_codes_by_account,
     source_codes = {code for account_id in member_ids for code in source_codes_by_account.get(account_id, set())}
     revenue_values = [revenue_by_source[code] for code in source_codes if code in revenue_by_source]
     key_membership = next((membership for membership in item.key_memberships.all() if membership.active), None)
-    grouped_members = {}
+    grouped_members = []
     for membership in memberships:
         account = membership.business_account
         origin_country = account.origin_country or account.country
-        key = (account.normalized_account_name, origin_country.casefold())
-        group = grouped_members.setdefault(key, {"name": account.canonical_account_name, "origin_country": origin_country, "operating_countries": account.operating_countries_json or [], "business_account_ids": []})
-        group["business_account_ids"].append(str(account.id))
+        codes = source_codes_by_account.get(account.id, set())
+        values = [revenue_by_source[code] for code in codes if code in revenue_by_source]
+        grouped_members.append({
+            "name": account.canonical_account_name,
+            "canonical_account_code": account.canonical_account_code,
+            "origin_country": origin_country,
+            "operating_countries": account.operating_countries_json or [],
+            "business_account_ids": [str(account.id)],
+            "source_record_count": len(codes),
+            "revenue_ytd": sum(values, Decimal("0")) if values else None,
+        })
     return {
         "id": str(item.id), "code": item.country_account_code, "name": item.country_account_name,
         "country": item.country, "description": item.description, "version": item.version,
         "canonical_account_count": len(member_ids),
         "revenue_ytd": sum(revenue_values, Decimal("0")) if revenue_values else None,
         "key_account": None if not key_membership else {"id": str(key_membership.key_account_id), "name": key_membership.key_account.key_account_name},
-        "members": sorted(grouped_members.values(), key=lambda value: value["name"].casefold()),
+        "members": sorted(grouped_members, key=lambda value: (value["revenue_ytd"] is None, -(value["revenue_ytd"] or Decimal("0")), value["name"].casefold())),
     }
 
 
@@ -765,22 +797,48 @@ def country_accounts_api(request):
         queryset = queryset.filter(country__iexact=selected_country)
     selected_id = request.GET.get("country_account_id", "").strip()
     selected_item = queryset.filter(pk=selected_id).first() if selected_id else None
-    assigned_ids = set(CountryAccountMembership.objects.filter(active=True).values_list("business_account_id", flat=True))
     search = request.GET.get("account_search", "").strip().casefold()
     available = []
     selected_item_country = selected_item.country if selected_item else selected_country
+    selected_member_ids = set()
+    if selected_item:
+        selected_member_ids = set(CountryAccountMembership.objects.filter(
+            country_account=selected_item,
+            active=True,
+        ).values_list("business_account_id", flat=True))
+    active_memberships = {
+        account_id: (group_id, group_name, group_country, group_description)
+        for account_id, group_id, group_name, group_country, group_description in CountryAccountMembership.objects.filter(
+            active=True,
+            country_account__active=True,
+            business_account_id__in=allowed_ids,
+        ).values_list(
+            "business_account_id",
+            "country_account_id",
+            "country_account__country_account_name",
+            "country_account__country",
+            "country_account__description",
+        )
+    }
+    active_group_member_counts = dict(CountryAccountMembership.objects.filter(
+        active=True,
+        country_account__active=True,
+        business_account_id__in=allowed_ids,
+    ).values("country_account_id").annotate(member_count=Count("business_account_id")).values_list("country_account_id", "member_count"))
     grouped = {}
     for record in records:
-        known_operating_countries = set(record.operating_countries_json or [])
-        if record.canonical_account_id in assigned_ids or (selected_item_country and known_operating_countries and selected_item_country not in known_operating_countries):
+        if record.canonical_account_id in selected_member_ids:
             continue
         account = record.canonical_account
+        account_country = CountryAccountService.account_operating_country(account)
+        if selected_item_country and account_country != selected_item_country:
+            continue
         search_text = f"{account.canonical_account_name} {account.canonical_account_code} {record.source_account_name} {record.source_record_id} {record.code_cic}".casefold()
         if search and search not in search_text:
             continue
         origin_country = account.origin_country or account.country
-        key = (account.normalized_account_name, origin_country.casefold())
-        group = grouped.setdefault(key, {"name": account.canonical_account_name, "origin_country": origin_country, "operating_countries": set(), "business_account_ids": set(), "source_codes": set()})
+        key = account.id
+        group = grouped.setdefault(key, {"account_id": account.id, "name": account.canonical_account_name, "canonical_account_code": account.canonical_account_code, "origin_country": origin_country, "operating_countries": set(), "business_account_ids": set(), "source_codes": set(), "operating_country": account_country})
         group["operating_countries"].update(record.operating_countries_json or [])
         group["business_account_ids"].add(str(account.id))
         group["source_codes"].add(record.source_record_id)
@@ -790,11 +848,32 @@ def country_accounts_api(request):
         group["business_account_ids"] = sorted(group["business_account_ids"])
         group["operating_countries"] = sorted(group["operating_countries"])
         group["revenue_ytd"] = sum(values, Decimal("0")) if values else None
+        current_group = active_memberships.get(group.pop("account_id"))
+        if current_group and (
+            current_group[3] != CountryAccountService.AUTOMATIC_GROUP_DESCRIPTION
+            or active_group_member_counts.get(current_group[0], 0) > 1
+        ):
+            continue
+        group["current_group"] = None if not current_group else {
+            "id": str(current_group[0]), "name": current_group[1], "country": current_group[2],
+        }
         available.append(group)
     available.sort(key=lambda value: (-(value["revenue_ytd"] or Decimal("0")), value["name"].casefold()))
-    payloads = [_country_account_payload(item, allowed_ids, source_codes_by_account, revenue_by_source) for item in queryset]
-    payloads.sort(key=lambda value: (value["country"].casefold(), value["name"].casefold()))
-    return JsonResponse({"country_accounts": payloads, "available_account_count": len(available), "available_accounts": available[:50]})
+    group_search = request.GET.get("group_search", "").strip()
+    effective_group_search = group_search or search
+    if effective_group_search:
+        queryset = queryset.filter(
+            Q(country_account_name__icontains=effective_group_search)
+            | Q(country_account_code__icontains=effective_group_search)
+            | Q(memberships__business_account__canonical_account_name__icontains=effective_group_search, memberships__active=True)
+        ).distinct()
+    group_count = queryset.count()
+    listed_groups = list(queryset.order_by("country", "country_account_name")[:200])
+    if selected_item and selected_item not in listed_groups:
+        listed_groups.append(selected_item)
+    payloads = [_country_account_payload(item, allowed_ids, source_codes_by_account, revenue_by_source) for item in listed_groups]
+    payloads.sort(key=lambda value: (value["revenue_ytd"] is None, -(value["revenue_ytd"] or Decimal("0")), value["name"].casefold()))
+    return JsonResponse({"country_accounts": payloads, "group_count": group_count, "available_account_count": len(available), "available_accounts": available[:100]})
 
 
 @login_required
@@ -843,18 +922,46 @@ def assign_operating_country_api(request):
 
 
 def _key_account_payload(item, allowed_account_ids, source_codes_by_account, revenue_by_source, sites_by_account):
+    country_memberships = [
+        membership for membership in item.country_memberships.all()
+        if membership.active and membership.country_account.active
+    ]
+    country_groups = []
+    group_member_ids = set()
+    for membership in country_memberships:
+        member_ids = {
+            entry.business_account_id
+            for entry in membership.country_account.memberships.all()
+            if entry.active and entry.business_account_id in allowed_account_ids
+        }
+        group_member_ids.update(member_ids)
+        group_source_codes = {
+            code for account_id in member_ids for code in source_codes_by_account.get(account_id, set())
+        }
+        group_values = [revenue_by_source[code] for code in group_source_codes if code in revenue_by_source]
+        country_groups.append({
+            "id": str(membership.country_account_id),
+            "name": membership.country_account.country_account_name,
+            "country": membership.country_account.country,
+            "canonical_account_count": len(member_ids),
+            "revenue_ytd": sum(group_values, Decimal("0")) if group_values else None,
+        })
     account_memberships = [
         membership for membership in item.memberships.all()
         if membership.active and membership.business_account_id in allowed_account_ids
     ]
-    member_ids = {membership.business_account_id for membership in account_memberships}
+    member_ids = group_member_ids | {membership.business_account_id for membership in account_memberships}
     source_codes = {code for account_id in member_ids for code in source_codes_by_account.get(account_id, set())}
     revenue_values = [revenue_by_source[code] for code in source_codes if code in revenue_by_source]
     revenue = sum(revenue_values, Decimal("0")) if revenue_values else None
     sites = sorted({site for account_id in member_ids for site in sites_by_account.get(account_id, set())})
     grouped_members = []
-    for membership in account_memberships:
-        account = membership.business_account
+    accounts_by_id = {membership.business_account_id: membership.business_account for membership in account_memberships}
+    for country_membership in country_memberships:
+        for membership in country_membership.country_account.memberships.all():
+            if membership.active and membership.business_account_id in allowed_account_ids:
+                accounts_by_id[membership.business_account_id] = membership.business_account
+    for account in accounts_by_id.values():
         codes = source_codes_by_account.get(account.id, set())
         values = [revenue_by_source[code] for code in codes if code in revenue_by_source]
         grouped_members.append({
@@ -869,6 +976,7 @@ def _key_account_payload(item, allowed_account_ids, source_codes_by_account, rev
         "description": item.description, "version": item.version,
         "canonical_account_count": len(member_ids), "business_account_record_count": len(member_ids),
         "revenue_ytd": revenue, "minesites": sites,
+        "customer_country_groups": sorted(country_groups, key=lambda value: (value["country"], value["name"].casefold())),
         "members": sorted(grouped_members, key=lambda value: (value["revenue_ytd"] is None, -(value["revenue_ytd"] or Decimal("0")), value["name"].casefold())),
     }
 
@@ -913,35 +1021,38 @@ def key_accounts_api(request):
         sites_by_account.setdefault(account_id, set()).add(site_name)
     key_accounts = KeyAccount.objects.filter(active=True).filter(
         Q(memberships__active=True, memberships__business_account_id__in=allowed_ids)
+        | Q(country_memberships__active=True, country_memberships__country_account__memberships__active=True, country_memberships__country_account__memberships__business_account_id__in=allowed_ids)
         | Q(created_by=request.user)
-    ).distinct().prefetch_related("memberships__business_account")
+    ).distinct().prefetch_related("memberships__business_account", "country_memberships__country_account__memberships__business_account")
     account_search = request.GET.get("account_search", "").strip().casefold()
-    assigned_account_ids = set(KeyAccountMembership.objects.filter(active=True).values_list("business_account_id", flat=True))
-    available_accounts = []
-    grouped_available = {}
-    for record in authorized_records:
-        if record.canonical_account_id in assigned_account_ids:
+    assigned_group_ids = set(KeyAccountCountryMembership.objects.filter(active=True).values_list("country_account_id", flat=True))
+    available_groups = []
+    group_queryset = CountryAccount.objects.filter(
+        active=True,
+        memberships__active=True,
+        memberships__business_account_id__in=allowed_ids,
+    ).exclude(pk__in=assigned_group_ids).distinct().prefetch_related("memberships__business_account")
+    if selected_country:
+        group_queryset = group_queryset.filter(country=selected_country)
+    for country_group in group_queryset:
+        member_ids = {
+            membership.business_account_id
+            for membership in country_group.memberships.all()
+            if membership.active and membership.business_account_id in allowed_ids
+        }
+        source_codes = {code for account_id in member_ids for code in source_codes_by_account.get(account_id, set())}
+        if account_search and account_search not in f"{country_group.country_account_name} {country_group.country_account_code} {country_group.country} {' '.join(source_codes)}".casefold():
             continue
-        account = record.canonical_account
-        origin_country = account.origin_country or account.country
-        group_key = (account.normalized_account_name, origin_country.casefold())
-        group = grouped_available.setdefault(group_key, {
-            "name": account.canonical_account_name, "country": origin_country,
-            "business_account_ids": set(), "source_codes": set(),
-        })
-        group["business_account_ids"].add(str(account.id))
-        group["source_codes"].add(record.source_record_id)
-    for group in grouped_available.values():
-        if account_search and account_search not in f"{group['name']} {group['country']} {' '.join(group['source_codes'])}".casefold():
-            continue
-        values = [revenue_by_source[code] for code in group["source_codes"] if code in revenue_by_source]
-        available_accounts.append({
-            "name": group["name"], "country": group["country"],
-            "business_account_ids": sorted(group["business_account_ids"]),
-            "source_record_count": len(group["source_codes"]),
+        values = [revenue_by_source[code] for code in source_codes if code in revenue_by_source]
+        available_groups.append({
+            "id": str(country_group.id),
+            "name": country_group.country_account_name,
+            "country": country_group.country,
+            "canonical_account_count": len(member_ids),
+            "source_record_count": len(source_codes),
             "revenue_ytd": sum(values, Decimal("0")) if values else None,
         })
-    available_accounts.sort(key=lambda value: (-(value["revenue_ytd"] or Decimal("0")), value["name"].casefold()))
+    available_groups.sort(key=lambda value: (value["revenue_ytd"] is None, -(value["revenue_ytd"] or Decimal("0")), value["name"].casefold()))
     key_account_results = [_key_account_payload(item, allowed_ids, source_codes_by_account, revenue_by_source, sites_by_account) for item in key_accounts]
     key_sort = request.GET.get("key_sort", "revenue_desc").strip().casefold()
     if key_sort == "revenue_asc":
@@ -952,8 +1063,8 @@ def key_accounts_api(request):
         key_account_results.sort(key=lambda item: (item["revenue_ytd"] is None, -(item["revenue_ytd"] or Decimal("0")), item["name"].casefold()))
     return JsonResponse({
         "key_accounts": key_account_results,
-        "available_account_count": len(available_accounts),
-        "available_accounts": available_accounts[:50],
+        "available_country_group_count": len(available_groups),
+        "available_country_groups": available_groups[:100],
     })
 
 

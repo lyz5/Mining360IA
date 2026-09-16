@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import queue
+import os
 import threading
 import time
 import tkinter as tk
@@ -347,6 +348,12 @@ class ControlCenter(tk.Tk):
 
 
 def main() -> None:
+    feature_mode = os.getenv("ENABLE_CONTROL_CENTER_V2", "Production").strip().casefold()
+    if feature_mode not in {"0", "false", "off", "disabled", "legacy"}:
+        from desktop.control_center_v2 import main as v2_main
+
+        v2_main()
+        return
     app = ControlCenter()
     default_font = tkfont.nametofont("TkDefaultFont")
     default_font.configure(family="Segoe UI", size=9)

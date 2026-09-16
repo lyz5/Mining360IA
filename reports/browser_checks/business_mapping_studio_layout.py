@@ -175,7 +175,7 @@ def run_browser_checks(cookie, output):
         if country_filter.input_value() != "" or country_filter.locator('option[value="BF"]').inner_text() != "Burkina Faso":
             raise AssertionError("Country filter does not default to Group or expose Burkina Faso.")
         operating_options = country_filter.locator("option").evaluate_all("options => options.map(option => option.value)")
-        expected_operating_options = ["", "SN", "CI", "GN", "ML", "BF", "NE", "BJ", "TG", "MR", "FR", "CM", "GW", "MU"]
+        expected_operating_options = ["", "UNASSIGNED", "SN", "CI", "GN", "ML", "BF", "NE", "BJ", "TG", "MR", "FR", "CM", "GW", "MU"]
         if operating_options != expected_operating_options or "CA" in operating_options or "US" in operating_options:
             raise AssertionError(f"Global filter is not limited to governed Neemba operating countries: {operating_options}")
         with page.expect_response(lambda response: "/api/business-mapping/overview/" in response.url and "country=BF" in response.url) as overview_country_response:
@@ -198,8 +198,8 @@ def run_browser_checks(cookie, output):
             raise AssertionError("Parts revenue filter did not execute successfully.")
         if page.locator('[data-bm-revenue-filter="PARTS"]').get_attribute("aria-pressed") != "true":
             raise AssertionError("Parts revenue filter did not retain its selected state.")
-        if page.locator("[data-bm-country-accounts], [data-bm-country-account-filter], [data-bm-country-account-dialog]").count() != 0:
-            raise AssertionError("The retired Country Account workflow is still visible.")
+        if page.locator("[data-bm-country-groups], [data-bm-country-account-dialog]").count():
+            raise AssertionError("Customer Country Group management is still visible.")
         with page.expect_response(lambda response: "/api/business-mapping/key-accounts/" in response.url) as key_accounts_response:
             page.locator("[data-bm-key-accounts]").click()
         if not key_accounts_response.value.ok or not page.locator("[data-bm-key-account-dialog]").is_visible():

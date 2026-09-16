@@ -10,15 +10,20 @@ from django.utils import timezone
 
 from .business_mapping_publication_service import MappingPublicationService
 from .business_mapping_source_service import BusinessMappingSourceSynchronizationService
+from .business_mapping_country_account_service import CountryAccountService
+from .business_mapping_key_account_service import KeyAccountService
 from .business_mapping_validation_service import AccountMineSiteValidationService, MappingValidationError
 from .models import (
     AccountMineSiteMapping,
     AccountMineSiteMappingVersion,
     BusinessAccount,
     BusinessCompanyCodeReference,
+    CountryAccount,
+    CountryAccountMembership,
     EquipmentFleetAnalysis,
     FleetSourceSnapshot,
     KeyAccount,
+    KeyAccountCountryMembership,
     KeyAccountMembership,
     MappingAuditLog,
     MappingIdempotencyRecord,
@@ -308,9 +313,10 @@ class BusinessMappingStudioTests(TestCase):
         self.assertEqual(removed.status_code, 200)
         self.assertFalse(KeyAccountMembership.objects.get(key_account_id=key_account_id, business_account=second_account).active)
         self.assertEqual(KeyAccount.objects.get(pk=key_account_id).version, 3)
-        unassigned = self.client.get(reverse("business-mapping-key-accounts-api"), {"account_search": "Corica Site Two"}).json()
-        self.assertEqual(unassigned["available_account_count"], 1)
-        self.assertEqual(unassigned["available_accounts"][0]["name"], "Corica Site Two")
+        self.assertFalse(KeyAccountMembership.objects.get(
+            key_account_id=key_account_id,
+            business_account=second_account,
+        ).active)
 
         renamed = self.client.patch(
             reverse("business-mapping-key-account-detail-api", args=[key_account_id]),
@@ -333,6 +339,152 @@ class BusinessMappingStudioTests(TestCase):
         self.assertFalse(KeyAccountMembership.objects.filter(key_account_id=key_account_id, active=True).exists())
         self.assertEqual(MappingAuditLog.objects.filter(entity_id=key_account_id, action="Key Account renamed").count(), 1)
         self.assertEqual(MappingAuditLog.objects.filter(entity_id=key_account_id, action="Key Account archived").count(), 1)
+
+    def test_customer_country_group_moves_same_country_accounts_and_preserves_membership(self):
+        run = MappingSynchronizationRun.objects.create(status="Completed", initiated_by=self.user)
+        self.account.assigned_operating_country = "ML"
+        self.account.save(update_fields=["assigned_operating_country"])
+        second = BusinessAccount.objects.create(
+            canonical_account_code="ACC-ML-002",
+            canonical_account_name="Second Mali Customer",
+            normalized_account_name="second mali customer",
+            assigned_operating_country="ML",
+        )
+        guinea = BusinessAccount.objects.create(
+            canonical_account_code="ACC-GN-001",
+            canonical_account_name="Guinea Customer",
+            normalized_account_name="guinea customer",
+            assigned_operating_country="GN",
+        )
+        for account, code in ((self.account, "ML-001"), (second, "ML-002"), (guinea, "GN-001")):
+            SourceAccountRecord.objects.create(
+                source_system="MiningAccounts",
+                source_record_id=code,
+                source_account_name=account.canonical_account_name,
+                normalized_account_name=account.normalized_account_name,
+                canonical_account=account,
+                source_hash=code,
+                source_last_seen_at=timezone.now(),
+                synchronization_run=run,
+            )
+            CountryAccountService.ensure_account_group(account, actor=self.user)
+
+        created = self.client.post(
+            reverse("business-mapping-customer-country-groups-api"),
+            data=json.dumps({"name": "Mali Shared Customer", "country": "ML"}),
+            content_type="application/json",
+        )
+        self.assertEqual(created.status_code, 201)
+        group_id = created.json()["country_account"]["id"]
+        moved = self.client.post(
+            reverse("business-mapping-customer-country-group-members-api", args=[group_id]),
+            data=json.dumps({"business_account_ids": [str(self.account.id), str(second.id)]}),
+            content_type="application/json",
+        )
+        self.assertEqual(moved.status_code, 200)
+        self.assertTrue(moved.json()["database_commit_confirmed"])
+        self.assertEqual(CountryAccountMembership.objects.filter(country_account_id=group_id, active=True).count(), 2)
+        for account in (self.account, second, guinea):
+            self.assertEqual(CountryAccountMembership.objects.filter(business_account=account, active=True).count(), 1)
+
+        refreshed = self.client.get(
+            reverse("business-mapping-customer-country-groups-api"),
+            {"country_account_id": group_id, "country": "ML"},
+        ).json()
+        available_ids = {
+            account_id
+            for item in refreshed["available_accounts"]
+            for account_id in item["business_account_ids"]
+        }
+        self.assertNotIn(str(self.account.id), available_ids)
+        self.assertNotIn(str(second.id), available_ids)
+        duplicate = self.client.post(
+            reverse("business-mapping-customer-country-group-members-api", args=[group_id]),
+            data=json.dumps({"business_account_ids": [str(self.account.id)]}),
+            content_type="application/json",
+        )
+        self.assertEqual(duplicate.status_code, 409)
+        other_group = self.client.post(
+            reverse("business-mapping-customer-country-groups-api"),
+            data=json.dumps({"name": "Another Mali Group", "country": "ML"}),
+            content_type="application/json",
+        ).json()["country_account"]["id"]
+        reassignment = self.client.post(
+            reverse("business-mapping-customer-country-group-members-api", args=[other_group]),
+            data=json.dumps({"business_account_ids": [str(self.account.id)]}),
+            content_type="application/json",
+        )
+        self.assertEqual(reassignment.status_code, 409)
+
+        rejected = self.client.post(
+            reverse("business-mapping-customer-country-group-members-api", args=[group_id]),
+            data=json.dumps({"business_account_ids": [str(guinea.id)]}),
+            content_type="application/json",
+        )
+        self.assertEqual(rejected.status_code, 409)
+
+        group = CountryAccount.objects.get(pk=group_id)
+        deleted = self.client.delete(
+            reverse("business-mapping-customer-country-group-detail-api", args=[group_id]),
+            data=json.dumps({"reason": "Split the customer structure", "version": group.version}),
+            content_type="application/json",
+        )
+        self.assertEqual(deleted.status_code, 200)
+        self.assertFalse(CountryAccount.objects.get(pk=group_id).active)
+        for account in (self.account, second, guinea):
+            membership = CountryAccountMembership.objects.get(business_account=account, active=True)
+            self.assertTrue(membership.country_account.active)
+        self.assertTrue(MappingAuditLog.objects.filter(action="Customer Country Group members moved").exists())
+        self.assertTrue(MappingAuditLog.objects.filter(action="Customer Country Group archived").exists())
+
+    def test_customer_country_groups_feed_key_account_without_double_counting(self):
+        run = MappingSynchronizationRun.objects.create(status="Completed", initiated_by=self.user)
+        self.account.assigned_operating_country = "ML"
+        self.account.save(update_fields=["assigned_operating_country"])
+        second = BusinessAccount.objects.create(
+            canonical_account_code="ACC-ML-KEY-2",
+            canonical_account_name="Second Key Customer",
+            normalized_account_name="second key customer",
+            assigned_operating_country="ML",
+        )
+        for account, code, revenue in ((self.account, "KEY-1", 120), (second, "KEY-2", 80)):
+            SourceAccountRecord.objects.create(
+                source_system="MiningAccounts", source_record_id=code,
+                source_account_name=account.canonical_account_name,
+                normalized_account_name=account.normalized_account_name,
+                canonical_account=account, source_hash=code,
+                source_last_seen_at=timezone.now(), synchronization_run=run,
+            )
+            RevenueSourceSnapshot.objects.create(
+                synchronization_run=run, source_record_id=f"REV-{code}",
+                source_account_code=code, source_account_name=account.canonical_account_name,
+                division="MI", lob="PARTS", period_year=2026, revenue_ytd_eur=revenue,
+                source_hash=f"REV-{code}", source_last_seen_at=timezone.now(),
+            )
+            CountryAccountService.ensure_account_group(account, actor=self.user)
+        groups = list(CountryAccount.objects.filter(
+            active=True,
+            memberships__active=True,
+            memberships__business_account_id__in=[self.account.id, second.id],
+        ).distinct())
+        key = KeyAccountService(self.user).create("Mali Key Customer")
+        response = self.client.post(
+            reverse("business-mapping-key-account-country-groups-api", args=[key.id]),
+            data=json.dumps({"country_account_ids": [str(group.id) for group in groups]}),
+            content_type="application/json",
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.json()["database_commit_confirmed"])
+        self.assertEqual(KeyAccountCountryMembership.objects.filter(key_account=key, active=True).count(), 2)
+        self.assertEqual(KeyAccountMembership.objects.filter(key_account=key, active=True).count(), 2)
+
+        listing = self.client.get(
+            reverse("business-mapping-key-accounts-api"), {"lob": "PARTS"},
+        ).json()["key_accounts"][0]
+        self.assertEqual(listing["name"], "Mali Key Customer")
+        self.assertEqual(listing["canonical_account_count"], 2)
+        self.assertEqual(len(listing["customer_country_groups"]), 2)
+        self.assertEqual(listing["revenue_ytd"], "200")
 
     def test_remove_mapping_archives_and_preserves_published_history(self):
         validated = AccountMineSiteValidationService(self.user).validate(self.payload(idempotency_key="archive-source"))

@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
+import math
 import re
 import time
 from dataclasses import dataclass
@@ -25,6 +26,7 @@ from .powerbi import get_access_token, get_latest_refresh_cached
 
 LOGGER = logging.getLogger(__name__)
 VALID_PERIODS = {"ytd", "last_12_months"}
+VALID_METRICS = {"availability", "mtbs", "mtbf"}
 VALID_BREAKDOWNS = {"overall", "minesite", "model", "equipment"}
 VALID_ORDERING = {"availability_desc", "availability_asc", "downtime_desc", "name_asc"}
 CUSTOMER_TYPE_TARGETS = {
@@ -45,6 +47,7 @@ class HomepageAvailabilityError(RuntimeError):
 
 @dataclass(frozen=True)
 class HomepageRequest:
+    metric: str
     period: str
     breakdown: str
     filters: dict[str, str]
@@ -164,6 +167,11 @@ def _format_points(value) -> float | None:
     return round(number * 100, 2) if number is not None else None
 
 
+def _format_hours(value) -> str | None:
+    number = _as_float(value)
+    return f"{number:,.2f} h" if number is not None else None
+
+
 class HomepageAvailabilityService:
     DATASET_NAME = "FPR Global DB + RLS"
     SECTION_CODE = "performance"
@@ -175,6 +183,8 @@ class HomepageAvailabilityService:
         if not self.config:
             self.config = HomepageConfiguration(code="availability-command-center")
         self.metric = self._resolve_metric()
+        self.mtbs_metric = self._resolve_mtbs_metric()
+        self.mtbf_metric = self._resolve_mtbf_metric()
         self.kpi = self._resolve_kpi()
         self.filter_mappings = {
             item["filter_code"]: item
@@ -211,6 +221,40 @@ class HomepageAvailabilityService:
             .first()
         )
 
+    def _resolve_mtbs_metric(self) -> dict:
+        metric = next(
+            (
+                item for item in get_metric_mapping(self.SECTION_CODE)
+                if item.get("is_active") and item.get("metric_code") == "mtbs"
+            ),
+            None,
+        )
+        configured_measure = str((metric or {}).get("powerbi_measure_name") or "").strip()
+        if _clean_key(configured_measure) != _clean_key("[MTBS PER EQUIP]"):
+            raise HomepageAvailabilityError(
+                "MTBS PER EQUIP is not configured in Metrics Mapping.",
+                code="mtbs_mapping_missing",
+                status=503,
+            )
+        return {**metric, "powerbi_measure_name": "[MTBS PER EQUIP]"}
+
+    def _resolve_mtbf_metric(self) -> dict:
+        metric = next(
+            (
+                item for item in get_metric_mapping(self.SECTION_CODE)
+                if item.get("is_active") and item.get("metric_code") == "mtbf"
+            ),
+            None,
+        )
+        configured_measure = str((metric or {}).get("powerbi_measure_name") or "").strip()
+        if _clean_key(configured_measure) != _clean_key("[MTBF Per Equip]"):
+            raise HomepageAvailabilityError(
+                "MTBF Per Equip is not configured in Metrics Mapping.",
+                code="mtbf_mapping_missing",
+                status=503,
+            )
+        return {**metric, "powerbi_measure_name": "[MTBF Per Equip]"}
+
     def _resolve_report(self):
         dataset_id = str(getattr(self.kpi, "powerbi_semantic_model_id", "") or "").strip()
         queryset = PowerBIReport.objects.filter(is_active=True)
@@ -226,8 +270,11 @@ class HomepageAvailabilityService:
         return report
 
     def request_from_params(self, params) -> HomepageRequest:
+        metric = str(params.get("metric") or "availability").strip().casefold()
         period = str(params.get("period") or self.config.default_period or "ytd").strip().casefold()
         breakdown = str(params.get("breakdown") or self.config.default_breakdown or "overall").strip().casefold()
+        if metric not in VALID_METRICS:
+            raise HomepageAvailabilityError("Unsupported metric.", code="invalid_metric", status=400)
         if period not in VALID_PERIODS:
             raise HomepageAvailabilityError("Unsupported period.", code="invalid_period", status=400)
         if breakdown not in VALID_BREAKDOWNS:
@@ -250,7 +297,7 @@ class HomepageAvailabilityService:
         if ordering not in VALID_ORDERING:
             ordering = "availability_desc"
         query = str(params.get("q") or "").strip()[:120]
-        return HomepageRequest(period, breakdown, filters, page, page_size, ordering, query)
+        return HomepageRequest(metric, period, breakdown, filters, page, page_size, ordering, query)
 
     def _platform_user(self):
         try:
@@ -326,6 +373,18 @@ class HomepageAvailabilityService:
 
     def build_dax(self, request: HomepageRequest, merged_filters: dict) -> str:
         measure = str(self.metric["powerbi_measure_name"]).strip()
+        mtbs_measure = str(self.mtbs_metric["powerbi_measure_name"]).strip()
+        mtbf_measure = str(self.mtbf_metric["powerbi_measure_name"]).strip()
+        selected_measure = {
+            "availability": measure,
+            "mtbs": mtbs_measure,
+            "mtbf": mtbf_measure,
+        }[request.metric]
+        selected_result_column = {
+            "availability": "Availability",
+            "mtbs": "MTBS",
+            "mtbf": "MTBF",
+        }[request.metric]
         downtime_metric = next(
             (
                 item for item in get_metric_mapping(self.SECTION_CODE)
@@ -452,7 +511,7 @@ VAR __LatestDataDate =
     MAXX(
         FILTER(
             CALCULATETABLE(ALL({date_column}){latest_filter_args}),
-            NOT ISBLANK(CALCULATE({measure}{latest_filter_args}))
+            NOT ISBLANK(CALCULATE({selected_measure}{latest_filter_args}))
         ),
         {date_column}
     )
@@ -472,6 +531,10 @@ VAR __Summary =
         "EquipmentCount", CALCULATE(DISTINCTCOUNT({serial_column}), __CurrentPeriod{filter_args}),
         "MineSiteCount", CALCULATE(DISTINCTCOUNT({site_column}), __CurrentPeriod{filter_args}),
         "DowntimeHours", CALCULATE({downtime_measure}, __CurrentPeriod{filter_args}),
+        "MTBS", CALCULATE({mtbs_measure}, __CurrentPeriod{filter_args}),
+        "PreviousMTBS", CALCULATE({mtbs_measure}, __PreviousPeriod{filter_args}),
+        "MTBF", CALCULATE({mtbf_measure}, __CurrentPeriod{filter_args}),
+        "PreviousMTBF", CALCULATE({mtbf_measure}, __PreviousPeriod{filter_args}),
         "LatestDate", __LatestDate,
         "CustomerType", CALCULATE(SELECTEDVALUE({customer_type_column}), __CurrentPeriod{filter_args}){extra_blank}
     )
@@ -480,7 +543,9 @@ VAR __TrendBase =
         {month_number_column},
         {month_label_column},
         __CurrentPeriod{filter_args},
-        "Availability", {measure}
+        "Availability", {measure},
+        "MTBS", {mtbs_measure},
+        "MTBF", {mtbf_measure}
     )
 VAR __Trend =
     SELECTCOLUMNS(
@@ -493,6 +558,10 @@ VAR __Trend =
         "EquipmentCount", BLANK(),
         "MineSiteCount", BLANK(),
         "DowntimeHours", BLANK(),
+        "MTBS", [MTBS],
+        "PreviousMTBS", BLANK(),
+        "MTBF", [MTBF],
+        "PreviousMTBF", BLANK(),
         "LatestDate", BLANK(),
         "CustomerType", BLANK(){extra_blank}
     )
@@ -501,13 +570,15 @@ VAR __BreakdownBase =
         {group_lines},
         __CurrentPeriod{filter_args},
         "Availability", {measure},
+        "MTBS", {mtbs_measure},
+        "MTBF", {mtbf_measure},
         "DowntimeHours", {downtime_measure},
         "EquipmentCount", DISTINCTCOUNT({serial_column}),
         "CustomerType", SELECTEDVALUE({customer_type_column})
     )
 VAR __Breakdown =
     SELECTCOLUMNS(
-        FILTER(__BreakdownBase, NOT ISBLANK([Availability])),
+        FILTER(__BreakdownBase, NOT ISBLANK([{selected_result_column}])),
         "RowType", "breakdown",
         "Entity", {dimension_column},
         "SortKey", "",
@@ -516,6 +587,10 @@ VAR __Breakdown =
         "EquipmentCount", [EquipmentCount],
         "MineSiteCount", BLANK(),
         "DowntimeHours", [DowntimeHours],
+        "MTBS", [MTBS],
+        "PreviousMTBS", BLANK(),
+        "MTBF", [MTBF],
+        "PreviousMTBF", BLANK(),
         "LatestDate", BLANK(),
         "CustomerType", [CustomerType]{extra_select}
     ){search_filter}
@@ -530,6 +605,10 @@ VAR __MineSiteOptions =
         "EquipmentCount", BLANK(),
         "MineSiteCount", BLANK(),
         "DowntimeHours", BLANK(),
+        "MTBS", BLANK(),
+        "PreviousMTBS", BLANK(),
+        "MTBF", BLANK(),
+        "PreviousMTBF", BLANK(),
         "LatestDate", BLANK(),
         "CustomerType", BLANK(){extra_blank}
     )
@@ -538,7 +617,7 @@ VAR __ModelOptionsBase =
         {model_column},
         __CurrentPeriod{filter_args},
         {allowed_model_filter},
-        "OptionAvailability", {measure}
+        "OptionAvailability", {selected_measure}
     )
 VAR __ModelOptions =
     SELECTCOLUMNS(
@@ -551,6 +630,10 @@ VAR __ModelOptions =
         "EquipmentCount", BLANK(),
         "MineSiteCount", BLANK(),
         "DowntimeHours", BLANK(),
+        "MTBS", BLANK(),
+        "PreviousMTBS", BLANK(),
+        "MTBF", BLANK(),
+        "PreviousMTBF", BLANK(),
         "LatestDate", BLANK(),
         "CustomerType", BLANK(){extra_blank}
     )
@@ -559,7 +642,7 @@ VAR __EquipmentOptionsBase =
         {equipment_column},
         __CurrentPeriod{filter_args},
         {allowed_model_filter},
-        "OptionAvailability", {measure}
+        "OptionAvailability", {selected_measure}
     )
 VAR __EquipmentOptions =
     SELECTCOLUMNS(
@@ -572,6 +655,10 @@ VAR __EquipmentOptions =
         "EquipmentCount", BLANK(),
         "MineSiteCount", BLANK(),
         "DowntimeHours", BLANK(),
+        "MTBS", BLANK(),
+        "PreviousMTBS", BLANK(),
+        "MTBF", BLANK(),
+        "PreviousMTBF", BLANK(),
         "LatestDate", BLANK(),
         "CustomerType", BLANK(){extra_blank}
     )
@@ -602,15 +689,18 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
             "scope": scope,
             "role": rls_role,
             "period": request.period,
+            "selected_metric": request.metric,
             "breakdown": request.breakdown,
             "filters": request.filters,
             "q": request.query,
             "metric": self.metric.get("powerbi_measure_name"),
+            "mtbs_metric": self.mtbs_metric.get("powerbi_measure_name"),
+            "mtbf_metric": self.mtbf_metric.get("powerbi_measure_name"),
             "dataset": self.report.semantic_model_id,
             "config": getattr(self.config, "updated_at", None).isoformat() if getattr(self.config, "updated_at", None) else "default",
         }
         digest = hashlib.sha256(json.dumps(payload, sort_keys=True, default=str).encode("utf-8")).hexdigest()
-        return f"homepage:availability:v2:{digest}"
+        return f"homepage:availability:v5:{digest}"
 
     def _refresh_metadata(self) -> tuple[str, str]:
         try:
@@ -630,10 +720,14 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
             "datasetId": self.report.semantic_model_id,
             "datasetName": self.DATASET_NAME,
             "query": dax,
-            "question": "Mining 360 Availability Command Center",
+            "question": "Mining 360 Fleet Performance Command Center",
             "section": self.SECTION_CODE,
-            "metric": "availability",
-            "measure": self.metric["powerbi_measure_name"],
+            "metric": "availability_mtbs",
+            "measure": (
+                f"{self.metric['powerbi_measure_name']}, "
+                f"{self.mtbs_metric['powerbi_measure_name']}, "
+                f"{self.mtbf_metric['powerbi_measure_name']}"
+            ),
             "filters": merged_filters,
             "rlsRole": rls_role,
             "roles": [rls_role] if rls_role else [],
@@ -672,14 +766,28 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
 
     def _normalize(self, rows: list[dict], request: HomepageRequest, *, cached: bool, elapsed_ms: int) -> dict:
         summary_row = next((row for row in rows if str(_row_value(row, "RowType") or "").casefold() == "summary"), {})
-        source_value = _as_float(_row_value(summary_row, "Availability"))
-        source_previous_value = _as_float(_row_value(summary_row, "PreviousAvailability"))
-        value_is_valid = source_value is None or 0 <= source_value <= 1
-        previous_is_valid = source_previous_value is None or 0 <= source_previous_value <= 1
+        is_hours_metric = request.metric in {"mtbs", "mtbf"}
+        metric_column = {"availability": "Availability", "mtbs": "MTBS", "mtbf": "MTBF"}[request.metric]
+        previous_metric_column = {
+            "availability": "PreviousAvailability",
+            "mtbs": "PreviousMTBS",
+            "mtbf": "PreviousMTBF",
+        }[request.metric]
+        source_value = _as_float(_row_value(summary_row, metric_column))
+        source_previous_value = _as_float(
+            _row_value(summary_row, previous_metric_column)
+        )
+        value_is_valid = source_value is None or (
+            math.isfinite(source_value) and (source_value >= 0 if is_hours_metric else 0 <= source_value <= 1)
+        )
+        previous_is_valid = source_previous_value is None or (
+            math.isfinite(source_previous_value)
+            and (source_previous_value >= 0 if is_hours_metric else 0 <= source_previous_value <= 1)
+        )
         value = source_value if value_is_valid else None
         previous_value = source_previous_value if previous_is_valid else None
         customer_type = str(_row_value(summary_row, "CustomerType") or "").strip()
-        contextual_target = self._customer_type_target(customer_type)
+        contextual_target = None if is_hours_metric else self._customer_type_target(customer_type)
         invalid_breakdown_count = 0
         invalid_trend_count = 0
         latest_date = _date_value(_row_value(summary_row, "LatestDate"))
@@ -687,7 +795,7 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
         if not value_is_valid:
             status = "data_quality_issue"
         comparison_delta = (
-            round((value - previous_value) * 100, 2)
+            round((value - previous_value) * (1 if is_hours_metric else 100), 2)
             if value is not None and previous_value is not None else None
         )
         trend = []
@@ -695,13 +803,16 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
         filter_options = {"minesite": [], "model": [], "equipment": []}
         for row in rows:
             row_type = str(_row_value(row, "RowType") or "").casefold()
-            item_value = _as_float(_row_value(row, "Availability"))
-            if row_type == "trend" and item_value is not None and 0 <= item_value <= 1:
+            item_value = _as_float(_row_value(row, metric_column))
+            item_is_valid = item_value is not None and math.isfinite(item_value) and (
+                item_value >= 0 if is_hours_metric else 0 <= item_value <= 1
+            )
+            if row_type == "trend" and item_is_valid:
                 trend.append({
                     "period": str(_row_value(row, "Entity") or ""),
                     "sort_key": str(_row_value(row, "SortKey") or ""),
                     "value": item_value,
-                    "formatted_value": _format_percent(item_value),
+                    "formatted_value": _format_hours(item_value) if is_hours_metric else _format_percent(item_value),
                 })
             elif row_type == "trend" and item_value is not None:
                 invalid_trend_count += 1
@@ -709,21 +820,23 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
                 entity = str(_row_value(row, "Entity") or "").strip()
                 if not entity:
                     continue
-                item_is_valid = 0 <= item_value <= 1
                 if item_is_valid:
                     item_customer_type = str(_row_value(row, "CustomerType") or "").strip()
-                    item_target = self._customer_type_target(item_customer_type)
+                    item_target = None if is_hours_metric else self._customer_type_target(item_customer_type)
                     item_status, item_gap = self._status(item_value, item_target)
                 else:
                     invalid_breakdown_count += 1
                     item_customer_type = str(_row_value(row, "CustomerType") or "").strip()
-                    item_target = self._customer_type_target(item_customer_type)
+                    item_target = None if is_hours_metric else self._customer_type_target(item_customer_type)
                     item_status, item_gap = "data_quality_issue", None
                 breakdown.append({
                     "entity": entity,
+                    "metric_value": item_value if item_is_valid else None,
                     "availability": item_value if item_is_valid else None,
                     "source_raw_value": item_value,
-                    "formatted_value": _format_percent(item_value) if item_is_valid else "Invalid data",
+                    "formatted_value": (
+                        _format_hours(item_value) if is_hours_metric else _format_percent(item_value)
+                    ) if item_is_valid else "Invalid data",
                     "quality_status": "valid" if item_is_valid else "out_of_range",
                     "customer_type": item_customer_type,
                     "target_raw": item_target,
@@ -744,13 +857,13 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
             values.sort(key=str.casefold)
         trend.sort(key=lambda item: item["sort_key"])
         if request.ordering == "availability_asc":
-            breakdown.sort(key=lambda item: item["availability"] if item["availability"] is not None else float("inf"))
+            breakdown.sort(key=lambda item: item["metric_value"] if item["metric_value"] is not None else float("inf"))
         elif request.ordering == "downtime_desc":
             breakdown.sort(key=lambda item: item["downtime_hours"] or 0, reverse=True)
         elif request.ordering == "name_asc":
             breakdown.sort(key=lambda item: item["entity"].casefold())
         else:
-            breakdown.sort(key=lambda item: item["availability"] if item["availability"] is not None else float("-inf"), reverse=True)
+            breakdown.sort(key=lambda item: item["metric_value"] if item["metric_value"] is not None else float("-inf"), reverse=True)
         total_breakdown = len(breakdown)
         if request.breakdown == "equipment":
             start = (request.page - 1) * request.page_size
@@ -758,25 +871,27 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
         else:
             page_breakdown = breakdown
         ranked = sorted(
-            (item for item in breakdown if item["availability"] is not None),
-            key=lambda item: item["availability"],
+            (item for item in breakdown if item["metric_value"] is not None),
+            key=lambda item: item["metric_value"],
             reverse=True,
         )
         maximum_cards = max(3, min(int(self.config.maximum_cards or 5), 8))
         top = ranked[:maximum_cards] if self.config.show_top_performers else []
         bottom = list(reversed(ranked[-maximum_cards:])) if self.config.show_bottom_performers else []
+        metric_name = {"availability": "Physical Availability", "mtbs": "MTBS", "mtbf": "MTBF"}[request.metric]
+        formatted_value = _format_hours(value) if is_hours_metric else _format_percent(value)
         if not value_is_valid:
-            takeaway = "The Semantic Model returned an out-of-range Physical Availability value. Data-quality review is required."
+            takeaway = f"The Semantic Model returned an invalid {metric_name} value. Data-quality review is required."
         elif value is None:
-            takeaway = "No Physical Availability data is available for the selected context."
+            takeaway = f"No {metric_name} data is available for the selected context."
         elif ranked:
             takeaway = (
-                f"Physical Availability is {_format_percent(value)}. "
+                f"{metric_name} is {formatted_value}. "
                 f"{ranked[0]['entity']} leads the selected scope at {ranked[0]['formatted_value']}, "
-                f"while {ranked[-1]['entity']} requires attention at {ranked[-1]['formatted_value']}."
+                f"while {ranked[-1]['entity']} records the lowest value at {ranked[-1]['formatted_value']}."
             )
         else:
-            takeaway = f"Physical Availability is {_format_percent(value)} for the selected context."
+            takeaway = f"{metric_name} is {formatted_value} for the selected context."
         refresh_display, refresh_status = self._refresh_metadata()
         refresh_dt = None
         try:
@@ -795,14 +910,43 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
         return {
             "ok": True,
             "context": {
-                "metric_code": "availability",
-                "metric_label": self.metric.get("metric_label") or "Physical Availability",
+                "metric_code": request.metric,
+                "metric_label": (
+                    self.mtbs_metric.get("metric_label") or "MTBS"
+                    if request.metric == "mtbs" else
+                    self.mtbf_metric.get("metric_label") or "MTBF"
+                    if request.metric == "mtbf" else
+                    self.metric.get("metric_label") or "Physical Availability"
+                ),
                 "period_code": request.period,
                 "period_label": period_label,
                 "start_date": _period_start(latest_date, request.period).isoformat() if latest_date else None,
                 "end_date": latest_date.isoformat() if latest_date else None,
                 "breakdown": request.breakdown,
                 "filters": request.filters,
+            },
+            "metric": {
+                "code": request.metric,
+                "label": metric_name,
+                "unit": "hours" if is_hours_metric else "percent",
+                "raw_value": value,
+                "source_raw_value": source_value,
+                "formatted_value": formatted_value if value_is_valid else "Invalid data",
+                "quality_status": "valid" if value_is_valid else "out_of_range",
+                "customer_type": customer_type,
+                "target_raw": contextual_target if self.config.show_target else None,
+                "target_formatted": _format_percent(contextual_target) if self.config.show_target else None,
+                "gap_points": gap,
+                "status": status,
+                "comparison": {
+                    "label": "vs same period last year" if request.period == "ytd" else "vs previous rolling 12 months",
+                    "previous_raw": previous_value,
+                    "previous_formatted": _format_hours(previous_value) if is_hours_metric else _format_percent(previous_value),
+                    "delta_value": comparison_delta,
+                    "delta_formatted": (
+                        f"{comparison_delta:+.2f} h" if is_hours_metric else f"{comparison_delta:+.2f} pts"
+                    ),
+                } if self.config.show_comparison and value is not None and previous_value is not None else None,
             },
             "availability": {
                 "raw_value": value,
@@ -828,6 +972,10 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
                 "calendar_hours": None,
                 "available_hours": None,
                 "downtime_hours": _as_float(_row_value(summary_row, "DowntimeHours")),
+                "mtbs": _as_float(_row_value(summary_row, "MTBS")),
+                "mtbs_formatted": _format_hours(_row_value(summary_row, "MTBS")),
+                "mtbf": _as_float(_row_value(summary_row, "MTBF")),
+                "mtbf_formatted": _format_hours(_row_value(summary_row, "MTBF")),
             },
             "breakdown": page_breakdown,
             "filter_options": filter_options,
@@ -855,7 +1003,7 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
             "warnings": [
                 message
                 for message in (
-                    "The Semantic Model returned an out-of-range summary Availability value."
+                    f"The Semantic Model returned an invalid summary {metric_name} value."
                     if not value_is_valid else "",
                     f"{invalid_trend_count} out-of-range trend value(s) were excluded."
                     if invalid_trend_count else "",

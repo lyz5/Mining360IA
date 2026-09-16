@@ -7,7 +7,7 @@ The Mining 360 homepage displays governed Physical Availability from the Power B
 ## Source of truth
 
 - KPI code: `availability`
-- Measure: resolved at runtime from `AIMetricMapping` (currently `[Avail Per Equip]`)
+- Measure: resolved at runtime from `AIMetricMapping` (`[Avail Per Equip]`, displayed as “Availability Per Equip”)
 - Semantic model: resolved from the validated KPI Dictionary entry
 - Target: resolved from active KPI Targets; no target or status is invented
 - Latest date: latest date for which the availability measure is nonblank

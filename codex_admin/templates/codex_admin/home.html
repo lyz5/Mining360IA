@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codex Admin | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260903-production-hardening-2">
+    <link rel="stylesheet" href="{% static 'codex_admin/admin.css' %}?v=20260914-1">
+</head>
+<body>
+{% include "reports/includes/app_nav.html" %}
+<main class="app-shell codex-admin-shell">
+    <header class="codex-admin-header">
+        <div><span>CODEX ADMIN</span><h1>Project Diagnostics</h1><p>Diagnostic borné et en lecture seule du socle Codex.</p></div>
+        <form method="post" action="{% url 'codex_admin:run-diagnostic' %}">{% csrf_token %}<button type="submit">Exécuter le diagnostic</button></form>
+    </header>
+    {% if latest_run %}
+    <section class="codex-admin-strip">
+        <strong>{{ latest_run.status }}</strong><span>{{ latest_run.created_at|date:"d M Y H:i:s" }}</span><span>Mode {{ latest_run.summary_json.mode }}</span>
+    </section>
+    <div class="codex-admin-grid">
+        <section>
+            <h2>Runtime Codex</h2>
+            <dl>
+                <dt>Python</dt><dd>{{ latest_run.summary_json.runtime.python_version }}</dd>
+                <dt>CLI</dt><dd>{{ latest_run.summary_json.runtime.cli_version|default:"Non disponible" }}</dd>
+                <dt>SDK</dt><dd>{{ latest_run.summary_json.runtime.sdk_version|default:"Non installé" }}</dd>
+                <dt>Base applicative</dt><dd>{{ latest_run.summary_json.database_engine }}</dd>
+                <dt>Codex Chatbot</dt><dd>{{ latest_run.summary_json.chatbot_flag }}</dd>
+                <dt>Codex Admin</dt><dd>{{ latest_run.summary_json.admin_flag }}</dd>
+                <dt>Runs en attente</dt><dd>{{ latest_run.summary_json.queue.queued }}</dd>
+                <dt>Runs actifs</dt><dd>{{ latest_run.summary_json.queue.running }}</dd>
+                <dt>Timeouts</dt><dd>{{ latest_run.summary_json.queue.timed_out }}</dd>
+                <dt>Dernier heartbeat</dt><dd>{{ latest_run.summary_json.queue.latest_heartbeat|default:"Aucun" }}</dd>
+            </dl>
+        </section>
+        <section>
+            <h2>Périmètre protégé</h2>
+            <ul>{% for item in latest_run.summary_json.protected_files %}<li><span>{{ item.path }}</span><strong>{% if item.present %}Présent{% else %}Manquant{% endif %}</strong></li>{% endfor %}</ul>
+        </section>
+    </div>
+    {% else %}
+    <section class="codex-admin-empty"><h2>Aucun diagnostic exécuté</h2><p>L’action vérifie le runtime et les fichiers protégés sans lancer de modèle ni modifier le projet.</p></section>
+    {% endif %}
+</main>
+</body>
+</html>

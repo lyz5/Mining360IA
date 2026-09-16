@@ -12,6 +12,7 @@ from .business_mapping_validation_service import MappingValidationError
 from .models import (
     BusinessAccount,
     CountryAccount,
+    CountryAccountMembership,
     KeyAccount,
     KeyAccountCountryMembership,
     KeyAccountMembership,
@@ -32,6 +33,48 @@ class KeyAccountService:
         return set(filter_source_accounts_for_user(
             SourceAccountRecord.objects.filter(active=True), self.user,
         ).exclude(canonical_account_id=None).values_list("canonical_account_id", flat=True))
+
+    @classmethod
+    def synchronize_account_membership(cls, account, actor=None):
+        """Materialize the group-derived Key Account for legacy consumers."""
+        country_membership = CountryAccountMembership.objects.filter(
+            business_account=account,
+            active=True,
+            country_account__active=True,
+        ).select_related("country_account").first()
+        key_membership = None
+        if country_membership:
+            key_membership = KeyAccountCountryMembership.objects.filter(
+                country_account=country_membership.country_account,
+                active=True,
+                key_account__active=True,
+            ).select_related("key_account").first()
+        target_key_id = key_membership.key_account_id if key_membership else None
+        now = timezone.now()
+        KeyAccountMembership.objects.filter(
+            business_account=account,
+            active=True,
+        ).exclude(key_account_id=target_key_id).update(active=False, removed_by=actor, removed_at=now)
+        if not target_key_id:
+            return None
+        direct = KeyAccountMembership.objects.filter(
+            key_account_id=target_key_id,
+            business_account=account,
+        ).first()
+        if direct:
+            if not direct.active:
+                direct.active = True
+                direct.created_by = actor
+                direct.removed_by = None
+                direct.removed_at = None
+                direct.save(update_fields=["active", "created_by", "removed_by", "removed_at"])
+        else:
+            direct = KeyAccountMembership.objects.create(
+                key_account_id=target_key_id,
+                business_account=account,
+                created_by=actor,
+            )
+        return direct
 
     @transaction.atomic
     def create(self, name, description=""):
@@ -130,17 +173,17 @@ class KeyAccountService:
         key_account = self._locked_key_account(key_account_id)
         requested_ids = {str(value) for value in (country_account_ids or []) if value}
         if not requested_ids:
-            raise MappingValidationError("Select at least one Country Account.", code="KEY_ACCOUNT_COUNTRY_MEMBER_REQUIRED")
+            raise MappingValidationError("Select at least one Canonical Account.", code="KEY_ACCOUNT_COUNTRY_MEMBER_REQUIRED")
         country_accounts = list(CountryAccount.objects.filter(pk__in=requested_ids, active=True))
         if len(country_accounts) != len(requested_ids):
-            raise MappingValidationError("One or more Country Accounts were not found.", code="COUNTRY_ACCOUNT_NOT_FOUND", status=404)
+            raise MappingValidationError("One or more Canonical Account selections were not found.", code="COUNTRY_ACCOUNT_NOT_FOUND", status=404)
         authorized_ids = {str(value) for value in self._authorized_account_ids()}
         visible_ids = {
             str(item.pk) for item in country_accounts
             if item.memberships.filter(active=True, business_account_id__in=authorized_ids).exists() or item.created_by_id == getattr(self.user, "pk", None)
         }
         if visible_ids != requested_ids:
-            raise MappingValidationError("One or more Country Accounts are outside your authorized scope.", code="ACCESS_RESTRICTED", status=403)
+            raise MappingValidationError("One or more Canonical Accounts are outside your authorized scope.", code="ACCESS_RESTRICTED", status=403)
         conflict = KeyAccountCountryMembership.objects.filter(country_account_id__in=requested_ids, active=True).exclude(key_account=key_account).select_related("key_account", "country_account").first()
         if conflict:
             raise MappingValidationError(f"{conflict.country_account.country_account_name} already belongs to {conflict.key_account.key_account_name}.", code="KEY_ACCOUNT_COUNTRY_MEMBERSHIP_CONFLICT", status=409)
@@ -158,11 +201,16 @@ class KeyAccountService:
             else:
                 KeyAccountCountryMembership.objects.create(key_account=key_account, country_account=country_account, created_by=self.user)
                 added.append(country_account)
+            for account in BusinessAccount.objects.filter(
+                country_account_memberships__country_account=country_account,
+                country_account_memberships__active=True,
+            ).distinct():
+                self.synchronize_account_membership(account, actor=self.user)
         if added:
             key_account.version += 1
             key_account.updated_by = self.user
             key_account.save(update_fields=["version", "updated_by", "updated_at"])
-            MappingAuditLog.objects.create(actor=self.user, action="Key Account Country Accounts added", entity_type="KeyAccount", entity_id=str(key_account.id), new_value_json={"country_account_ids": [str(item.id) for item in added], "version": key_account.version})
+            MappingAuditLog.objects.create(actor=self.user, action="Customer Country Groups added to Key Account", entity_type="KeyAccount", entity_id=str(key_account.id), new_value_json={"customer_country_group_ids": [str(item.id) for item in added], "version": key_account.version})
         return key_account
 
     @transaction.atomic
@@ -177,11 +225,16 @@ class KeyAccountService:
             membership.removed_by = self.user
             membership.removed_at = now
             membership.save(update_fields=["active", "removed_by", "removed_at"])
+            for account in BusinessAccount.objects.filter(
+                country_account_memberships__country_account=membership.country_account,
+                country_account_memberships__active=True,
+            ).distinct():
+                self.synchronize_account_membership(account, actor=self.user)
         if memberships:
             key_account.version += 1
             key_account.updated_by = self.user
             key_account.save(update_fields=["version", "updated_by", "updated_at"])
-            MappingAuditLog.objects.create(actor=self.user, action="Key Account Country Accounts removed", entity_type="KeyAccount", entity_id=str(key_account.id), previous_value_json={"country_account_ids": [str(item.country_account_id) for item in memberships]}, new_value_json={"version": key_account.version})
+            MappingAuditLog.objects.create(actor=self.user, action="Customer Country Groups removed from Key Account", entity_type="KeyAccount", entity_id=str(key_account.id), previous_value_json={"customer_country_group_ids": [str(item.country_account_id) for item in memberships]}, new_value_json={"version": key_account.version})
         return key_account
 
     @transaction.atomic

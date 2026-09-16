@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
+    path('codex-chatbot/', include('codex_chatbot.urls')),
+    path('codex-admin/', include('codex_admin.urls')),
     path('', include('deployment.urls')),
     path('', include('reports.urls')),
     path('admin/', admin.site.urls),
