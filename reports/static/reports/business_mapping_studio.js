@@ -929,18 +929,20 @@
         }
     }
 
-    async function pollSynchronization(run) {
+    async function pollSynchronization(run, automatic = false) {
         window.clearTimeout(syncPollTimer);
         try {
             const data = await api(run.status_url || `${app.dataset.syncUrl}${run.id}/`);
             const current = data.run || data;
             renderSynchronization(current);
             if (['Queued', 'Running'].includes(current.status)) {
-                syncPollTimer = window.setTimeout(() => pollSynchronization(current), 1500);
+                syncPollTimer = window.setTimeout(() => pollSynchronization(current, automatic), 1500);
                 return;
             }
             if (['Completed', 'Partial'].includes(current.status)) {
-                toast(current.status === 'Completed' ? 'Source synchronization completed.' : 'Synchronization completed with warnings.');
+                toast(current.status === 'Completed'
+                    ? (automatic ? 'Latest Revenue sources loaded.' : 'Source synchronization completed.')
+                    : 'Synchronization completed with warnings.');
                 await Promise.all([loadOverview(), loadAccounts()]);
             } else if (current.status === 'Failed') {
                 toast('The source data is temporarily unavailable. Existing validated mappings remain available.');
@@ -952,13 +954,45 @@
         }
     }
 
+    async function startSynchronization(automatic = false) {
+        const button = $('[data-bm-sync]');
+        if (button) {
+            button.disabled = true;
+            button.textContent = automatic ? 'Updating sources...' : 'Starting...';
+        }
+        try {
+            const data = await api(app.dataset.syncUrl, {
+                method: 'POST',
+                body: JSON.stringify({ automatic }),
+            });
+            if (!data.run || data.fresh) {
+                if (button) { button.disabled = false; button.textContent = 'Synchronize sources'; }
+                return;
+            }
+            renderSynchronization(data.run);
+            if (['Queued', 'Running'].includes(data.run.status)) {
+                pollSynchronization(data.run, automatic);
+            }
+        } catch (error) {
+            if (button) { button.disabled = false; button.textContent = 'Synchronize sources'; }
+            toast(error.message);
+        }
+    }
+
     async function restoreSynchronizationStatus() {
         if (!$('[data-bm-sync-progress]')) return;
         try {
             const data = await api(app.dataset.syncUrl);
-            if (!data.run) return;
-            renderSynchronization(data.run);
-            if (['Queued', 'Running'].includes(data.run.status)) pollSynchronization(data.run);
+            if (data.run) {
+                renderSynchronization(data.run);
+                if (['Queued', 'Running'].includes(data.run.status)) {
+                    pollSynchronization(data.run, true);
+                    return;
+                }
+            }
+            if (app.dataset.autoSyncSources === 'true' && data.auto_sync?.required) {
+                await startSynchronization(true);
+            }
         } catch (_) {
             // Page data remains usable when synchronization status cannot be loaded.
         }
@@ -1111,20 +1145,7 @@
             await selectAccount(state.selected.source_account_id); toast('Deterministic candidates refreshed.');
         } catch (error) { toast(error.message); }
     });
-    $('[data-bm-sync]')?.addEventListener('click', async () => {
-        const button = $('[data-bm-sync]');
-        button.disabled = true;
-        button.textContent = 'Starting...';
-        try {
-            const data = await api(app.dataset.syncUrl, { method: 'POST', body: '{}' });
-            renderSynchronization(data.run);
-            pollSynchronization(data.run);
-        } catch (error) {
-            button.disabled = false;
-            button.textContent = 'Synchronize sources';
-            toast(error.message);
-        }
-    });
+    $('[data-bm-sync]')?.addEventListener('click', () => startSynchronization(false));
     $('[data-bm-publish]')?.addEventListener('click', async () => {
         openPublicationsPanel();
         await previewPublication();

@@ -109,6 +109,11 @@ class ReportingConfigurationTests(TestCase):
         self.assertContains(response, "Fleet Performance Report")
         self.assertContains(response, "Fleet overview")
         self.assertContains(response, "Mining 360 display name")
+        self.assertContains(response, "Healthy")
+        self.assertEqual(response.context["healthy_count"], 1)
+        self.assertEqual(response.context["refreshing_count"], 0)
+        self.assertEqual(response.context["failed_count"], 0)
+        self.assertEqual(response.context["no_refresh_count"], 0)
 
     @patch("reports.reporting_config_views.list_workspace_reports")
     def test_administrator_can_update_display_name_with_ajax(self, list_reports):

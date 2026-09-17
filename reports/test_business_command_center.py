@@ -1,4 +1,5 @@
 from datetime import date
+from pathlib import Path
 
 from django.contrib.auth.models import Permission, User
 from django.test import Client, TestCase, override_settings
@@ -6,6 +7,8 @@ from django.urls import reverse
 from django.utils import timezone
 
 from .business_command_center_service import BusinessRevenuePeriodService, _growth
+from .machine_sales_service import MachineSalesDetailService
+from .business_mapping_country_scope import operating_country_label
 from .models import (
     MachineSaleDetail,
     MachineSalesSynchronizationRun,
@@ -38,6 +41,14 @@ class BusinessRevenuePeriodTests(TestCase):
         self.assertEqual((last_year["start_date"], last_year["end_date"]), (date(2025, 1, 1), date(2025, 12, 31)))
         current_month = BusinessRevenuePeriodService.resolve(latest, "current_month")
         self.assertEqual((current_month["start_date"], current_month["end_date"]), (date(2026, 9, 1), latest))
+        self.assertEqual(current_month["label"], "MTD Sep 2026")
+        year_2024 = BusinessRevenuePeriodService.resolve(latest, "2024")
+        self.assertEqual((year_2024["start_date"], year_2024["end_date"]), (date(2024, 1, 1), date(2024, 12, 31)))
+        self.assertEqual((year_2024["comparison_start_date"], year_2024["comparison_end_date"]), (date(2023, 1, 1), date(2023, 12, 31)))
+        year_2023 = BusinessRevenuePeriodService.resolve(latest, "2023")
+        self.assertEqual((year_2023["start_date"], year_2023["end_date"]), (date(2023, 1, 1), date(2023, 12, 31)))
+        self.assertEqual(year_2023["comparison"], "none")
+        self.assertIsNone(year_2023["comparison_start_date"])
         custom = BusinessRevenuePeriodService.resolve(latest, "custom", "2026-02-01", "2026-02-28", "previous_equivalent_period")
         self.assertEqual((custom["comparison_start_date"], custom["comparison_end_date"]), (date(2026, 1, 4), date(2026, 1, 31)))
 
@@ -46,6 +57,12 @@ class BusinessRevenuePeriodTests(TestCase):
         self.assertEqual(_growth(0, 0), (None, "no_change"))
         self.assertEqual(_growth(100, 1), (None, "not_meaningful"))
         self.assertEqual(_growth(1500, -1000), (None, "not_meaningful"))
+
+    def test_country_codes_use_governed_executive_names(self):
+        self.assertEqual(operating_country_label("BF"), "Burkina Faso")
+        self.assertEqual(operating_country_label("GN"), "Guinea")
+        self.assertEqual(operating_country_label("CI"), "Cote d'Ivoire")
+        self.assertEqual(operating_country_label("Mali"), "Mali")
 
 
 @override_settings(**FEATURES)
@@ -68,11 +85,11 @@ class BusinessCommandCenterApiTests(TestCase):
             self._revenue(f"current-{index}", "C001", lob, date(2026, 9, 8), amount)
             self._revenue(f"previous-{index}", "C001", lob, date(2025, 9, 8), amount / 2)
 
-    def _revenue(self, record_id, account, lob, business_date, amount):
+    def _revenue(self, record_id, account, lob, business_date, amount, division="MI"):
         return RevenueSourceSnapshot.objects.create(
             synchronization_run=self.run, source_record_id=record_id, source_account_code=account,
             source_account_name="Fekola Customer", business_date=business_date, source_lob=lob, lob=lob,
-            division="MI", period_year=business_date.year, revenue_eur=amount, revenue_ytd_eur=amount,
+            division=division, period_year=business_date.year, revenue_eur=amount, revenue_ytd_eur=amount,
             source_hash=record_id, source_last_seen_at=timezone.now(),
         )
 
@@ -80,7 +97,19 @@ class BusinessCommandCenterApiTests(TestCase):
         page = self.client.get(reverse("business-command-center"))
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "reports/business_command_center_v2.html")
+        self.assertContains(page, "Business Overview")
+        self.assertNotContains(page, "Business Command Center")
         self.assertContains(page, 'data-workspace="turnover"')
+        self.assertNotContains(page, 'data-workspace-tab="explore"')
+        self.assertContains(page, "Projects &amp; Tenders", count=2)
+        self.assertContains(page, "Updating Business Overview")
+        self.assertContains(page, "data-update-loader")
+        self.assertContains(page, '<option value="custom">Custom Range</option>', html=True)
+        self.assertContains(page, "Start Date")
+        self.assertContains(page, "End Date")
+        self.assertContains(page, "All Divisions")
+        self.assertContains(page, 'data-division-toggle')
+        self.assertContains(page, 'value="mining" data-filter="division_scope"')
         self.assertNotContains(page, "Revenue Mix &amp; Movement")
         response = self.client.get(reverse("business-command-center-bootstrap-api"))
         self.assertEqual(response.status_code, 200)
@@ -98,6 +127,72 @@ class BusinessCommandCenterApiTests(TestCase):
         self.assertEqual(data["since_yesterday"]["from_date"], "2026-09-07")
         self.assertEqual(data["since_yesterday"]["through_date"], "2026-09-08")
         self.assertEqual(sum(item["absolute_delta"] for item in data["since_yesterday"]["items"]), 3500.0)
+
+    def test_all_divisions_is_explicit_and_preserves_mining_default(self):
+        self._revenue("tp-current", "C002", "PRIME", date(2026, 9, 8), 600, division="TP")
+        self._revenue("tp-previous", "C002", "PRIME", date(2025, 9, 8), 300, division="TP")
+        self._revenue("mo-current", "C003", "SERVICE", date(2026, 9, 8), 400, division="MO")
+        self._revenue("mo-previous", "C003", "SERVICE", date(2025, 9, 8), 200, division="MO")
+        self._revenue("zz-current", "C004", "PARTS", date(2026, 9, 8), 5000, division="ZZ")
+
+        mining = self.client.get(reverse("business-command-center-bootstrap-api")).json()
+        all_divisions = self.client.get(
+            reverse("business-command-center-bootstrap-api"),
+            {"division_scope": "all_divisions"},
+        ).json()
+
+        self.assertEqual(mining["context"]["division_scope"], "mining")
+        self.assertEqual(mining["context"]["division_codes"], ["MI"])
+        self.assertEqual(mining["hero"]["revenue"], 3500.0)
+        self.assertEqual(all_divisions["context"]["division_scope"], "all_divisions")
+        self.assertEqual(all_divisions["context"]["division_codes"], ["MI", "TP", "MO"])
+        self.assertEqual(all_divisions["hero"]["revenue"], 4500.0)
+        self.assertEqual(all_divisions["hero"]["comparison_revenue"], 2250.0)
+        self.assertNotEqual(mining["context"]["context_id"], all_divisions["context"]["context_id"])
+
+    def test_unknown_division_scope_is_rejected(self):
+        response = self.client.get(
+            reverse("business-command-center-bootstrap-api"),
+            {"division_scope": "uncontrolled"},
+        )
+
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.json()["status"], "INVALID_CONTEXT")
+
+    def test_business_overview_is_the_default_home_and_first_menu_item(self):
+        response = self.client.get(reverse("dashboard"))
+        self.assertRedirects(response, reverse("business-command-center"), fetch_redirect_response=False)
+
+        page = self.client.get(reverse("business-command-center"))
+        content = page.content.decode("utf-8")
+        self.assertLess(content.index("Business Overview</span>"), content.index("Excellence Center</span>"))
+
+    def test_excellence_center_remains_available_on_its_own_route(self):
+        response = self.client.get(reverse("excellence-center"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "reports/dashboard.html")
+
+    def test_business_overview_tracks_the_actual_sidebar_width(self):
+        css = Path(__file__).parent.joinpath(
+            "static/reports/business_command_center_v2.css"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn(
+            ".bcc-body:not(.presentation) .bcc-shell{margin-left:var(--sidebar-width);transition:none}",
+            css,
+        )
+        self.assertIn(
+            "@media(max-width:720px){.bcc-body:not(.presentation) .bcc-shell{margin-left:0}}",
+            css,
+        )
+
+    def test_home_falls_back_to_excellence_center_without_revenue_access(self):
+        restricted_user = User.objects.create_user("restricted-home", password="password")
+        self.client.force_login(restricted_user)
+
+        response = self.client.get(reverse("dashboard"))
+
+        self.assertRedirects(response, reverse("excellence-center"), fetch_redirect_response=False)
 
     def test_admin_can_open_legacy_rollback_view(self):
         page = self.client.get(reverse("business-command-center"), {"ui": "legacy"})
@@ -119,7 +214,7 @@ class BusinessCommandCenterApiTests(TestCase):
             published_by=self.user, published_at=timezone.now(), snapshot_json={"mappings": [{
                 "mapping_id": "M1", "account_id": "A1", "account_code": "ACC-1",
                 "account_name": "Fekola Canonical", "minesite_id": "S1", "minesite_name": "Fekola",
-                "source_account_codes": ["C001"], "business_country": "Mali",
+                "source_account_codes": ["C001"], "business_country": "ML",
                 "customer_country_group_id": "CCG1", "customer_country_group_name": "B2Gold Mali",
                 "key_account_id": "K1", "key_account_name": "B2Gold",
             }]},
@@ -128,6 +223,9 @@ class BusinessCommandCenterApiTests(TestCase):
         self.assertTrue(data["mapping_ready"])
         self.assertEqual(data["dimensions"]["customers"][0]["revenue"], 2000.0)
         self.assertEqual(data["dimensions"]["countries"][0]["revenue"], 2000.0)
+        self.assertEqual(data["dimensions"]["countries"][0]["id"], "ML")
+        self.assertEqual(data["dimensions"]["countries"][0]["name"], "Mali")
+        self.assertEqual(data["filter_options"]["countries"], [{"id": "ML", "name": "Mali"}])
         self.assertEqual(data["dimensions"]["key_accounts"][0]["revenue"], 2000.0)
         explorer = self.client.get(reverse("business-command-center-revenue-explorer-api"), {
             "business_line": "parts", "dimension": "customers",
@@ -135,6 +233,10 @@ class BusinessCommandCenterApiTests(TestCase):
         self.assertEqual(explorer["results"][0]["name"], "Fekola Canonical")
         self.assertEqual(explorer["results"][0]["revenue"], 2000.0)
         self.assertEqual(explorer["results"][0]["comparison_business_line_mix"]["parts"], 1000.0)
+        country_explorer = self.client.get(reverse("business-command-center-revenue-explorer-api"), {
+            "business_line": "parts", "dimension": "countries",
+        }).json()
+        self.assertEqual(country_explorer["results"][0]["name"], "Mali")
         customer_groups = self.client.get(reverse("business-command-center-customer-search-api"), {"q": "b2gold"}).json()
         self.assertEqual(customer_groups["results"], [{"id": "CCG1", "name": "B2Gold Mali", "country": "Mali", "revenue": 3500.0}])
         filtered = self.client.get(reverse("business-command-center-bootstrap-api"), {
@@ -222,6 +324,8 @@ class BusinessCommandCenterApiTests(TestCase):
             {"Machine Sale", "Other Charges & Adjustments"},
         )
         self.assertEqual(data["filter_options"]["families"], ["HMS"])
+        self.assertEqual(data["filter_options"]["family_groups"][0]["code"], "HMS")
+        self.assertEqual(data["filter_options"]["family_groups"][0]["equipment_count"], 1)
         self.assertEqual(data["summary"]["net_revenue_eur"], 3940840.1)
         self.assertEqual(data["summary"]["reconciliation_adjustment_eur"], 0.0)
 
@@ -242,6 +346,37 @@ class BusinessCommandCenterApiTests(TestCase):
         adjustments = [row for row in data["results"] if row["record_type"] == "reconciliation_adjustment"]
         self.assertEqual(len(adjustments), 1)
         self.assertEqual(adjustments[0]["other_charges_eur"], -137.2)
+
+    def test_machine_sales_sort_uses_group_priority_then_other_then_reconciliation(self):
+        def group(name, family, amount, record_type="equipment"):
+            return {
+                "record_type": record_type,
+                "family_code": family,
+                "net_revenue_eur": amount,
+                "business_date": date(2026, 9, 8),
+                "customer_name": name,
+            }
+
+        groups = [
+            group("Accounting", "", 9999, "reconciliation_adjustment"),
+            group("Other", "OTHER", 8000),
+            group("Unclassified", "", 7000),
+            group("Lower HMS", "HMS", 100),
+            group("Higher HMS", "HMS", 500),
+            group("OHT", "OHT", 9000),
+        ]
+        catalog = [
+            {"code": "HMS", "priority": 1},
+            {"code": "OHT", "priority": 3},
+            {"code": "OTHER", "priority": 11},
+        ]
+
+        MachineSalesDetailService._sort_groups(groups, catalog)
+
+        self.assertEqual(
+            [item["customer_name"] for item in groups],
+            ["Higher HMS", "Lower HMS", "OHT", "Unclassified", "Other", "Accounting"],
+        )
 
     def test_machine_sales_excel_export_respects_filters(self):
         machine_run = MachineSalesSynchronizationRun.objects.create(

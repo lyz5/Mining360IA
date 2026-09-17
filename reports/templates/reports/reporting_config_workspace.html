@@ -7,9 +7,9 @@
     <meta name="csrf-token" content="{{ csrf_token }}">
     <title>Reporting Configuration | Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260822-report-config-workspace-1">
-    <link rel="stylesheet" href="{% static 'reports/reporting_configuration_workspace.css' %}?v=20260823-guided-workspace-2">
+    <link rel="stylesheet" href="{% static 'reports/reporting_configuration_workspace.css' %}?v=20260917-refresh-health-1">
     <script>if (localStorage.getItem("mining360ia.navCollapsed") === null) localStorage.setItem("mining360ia.navCollapsed", "1");</script>
-    <script src="{% static 'reports/reporting_configuration_workspace.js' %}?v=20260823-guided-workspace-2" defer></script>
+    <script src="{% static 'reports/reporting_configuration_workspace.js' %}?v=20260917-refresh-health-1" defer></script>
 </head>
 <body class="report-config-body">
     {% include "reports/includes/app_nav.html" %}
@@ -57,6 +57,14 @@
                     </dl>
                 </div>
             </div>
+        </section>
+
+        <section class="report-runtime-summary" aria-label="Power BI refresh health">
+            <div><span>Total Reports</span><strong data-summary-runtime-total>--</strong></div>
+            <div class="healthy"><span>Healthy</span><strong data-summary-healthy>--</strong></div>
+            <div class="refreshing"><span>Refreshing</span><strong data-summary-refreshing>--</strong></div>
+            <div class="failed"><span>Failed</span><strong data-summary-failed>--</strong></div>
+            <div><span>No Refresh</span><strong data-summary-no-refresh>--</strong></div>
         </section>
 
         <section class="report-config-workspace">

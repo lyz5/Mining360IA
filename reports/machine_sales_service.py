@@ -8,7 +8,7 @@ from datetime import date, timedelta
 from decimal import Decimal
 
 from django.db import transaction
-from django.db.models import Max, Q, Sum
+from django.db.models import Count, Max, Q, Sum
 from django.utils import timezone
 
 from .business_mapping_access_service import authorized_account_codes
@@ -17,6 +17,7 @@ from .models import (
     EquipmentFleetAnalysis,
     EquipmentModelReference,
     EquipmentPrefixModelReference,
+    EquipmentProductGroupReference,
     EquipmentSerialReference,
     MachineSaleDetail,
     MachineSalesSynchronizationRun,
@@ -267,6 +268,10 @@ class MachineSalesSynchronizationService:
             return "Epiroc"
         return clean
 
+    @classmethod
+    def _is_cat_brand(cls, value):
+        return cls._brand(value) == "CAT"
+
     @staticmethod
     def _family_code(family, model):
         family_key = _text(family).casefold().replace("-", " ")
@@ -318,7 +323,7 @@ class MachineSalesSynchronizationService:
                 candidates = [
                     reference for reference in catalog
                     if normalized_model.startswith(reference.normalized_model)
-                    and len(reference.normalized_model) >= 3
+                    and len(reference.normalized_model) >= 2
                     and (not normalized_brand or reference.brand.casefold() == normalized_brand)
                 ]
                 if candidates:
@@ -359,7 +364,18 @@ class MachineSalesSynchronizationService:
                 item["equipment_family"] = item["equipment_family"] or match.equipment_family
                 item["brand"] = item["brand"] or cls._brand(match.brand)
 
-            prefix_reference = prefix_references.get(normalized_serial[:3])
+            # Prefix references are governed CAT references. A shared-looking serial
+            # prefix must never turn another manufacturer's machine into a CAT model.
+            if item["brand"] and not cls._is_cat_brand(item["brand"]):
+                item["equipment_family"] = "Divers"
+                item["family_code"] = "OTHER"
+                continue
+
+            prefix_reference = (
+                prefix_references.get(normalized_serial[:3])
+                if cls._is_cat_brand(item["brand"])
+                else None
+            )
             if prefix_reference and not item["model_name"]:
                 item["model_name"] = prefix_reference.model
                 item["model_code"] = prefix_reference.model
@@ -388,6 +404,40 @@ class MachineSalesDetailService:
     @classmethod
     def _is_other_charge(cls, category):
         return _text(category).casefold() in cls.OTHER_CHARGE_CATEGORIES
+
+    @staticmethod
+    def _sort_groups(groups, family_catalog):
+        priorities = {
+            str(group["code"]).upper(): int(group["priority"])
+            for group in family_catalog
+            if group.get("code")
+        }
+
+        def sort_key(group):
+            if group["record_type"] == "reconciliation_adjustment":
+                section = 3
+                priority = 0
+            else:
+                family_code = _text(group["family_code"]).upper()
+                if family_code == "OTHER":
+                    section = 2
+                    priority = 0
+                elif not family_code:
+                    section = 1
+                    priority = 0
+                else:
+                    section = 0
+                    priority = priorities.get(family_code, 9999)
+            return (
+                section,
+                priority,
+                -(group["net_revenue_eur"] or Decimal("0")),
+                -group["business_date"].toordinal(),
+                _text(group["customer_name"]).casefold(),
+            )
+
+        groups.sort(key=sort_key)
+        return groups
 
     @classmethod
     def _aggregate_equipment(cls, rows):
@@ -540,8 +590,48 @@ class MachineSalesDetailService:
         customer_ids = {value for value in str(self.params.get("customer_codes") or "").split(",") if value}
         if customer_ids:
             queryset = queryset.filter(customer_code__in=customer_ids)
+        family_totals = {
+            row["family_code"]: row
+            for row in queryset.exclude(family_code="").values("family_code").annotate(
+                revenue_eur=Sum("net_revenue_eur"),
+                detail_rows=Count("id"),
+                equipment_count=Count("equipment_key", distinct=True),
+            )
+        }
+        family_catalog = list(
+            EquipmentProductGroupReference.objects.filter(active=True)
+            .order_by("priority", "code")
+            .values("code", "description", "priority")
+        )
+        if not family_catalog:
+            family_catalog = [
+                {"code": code, "description": code, "priority": index}
+                for index, code in enumerate(sorted(family_totals), start=1)
+            ]
+        family_groups = []
+        for group in family_catalog:
+            totals = family_totals.get(group["code"], {})
+            family_groups.append({
+                "code": group["code"],
+                "description": group["description"],
+                "priority": group["priority"],
+                "revenue_eur": float(totals.get("revenue_eur") or 0),
+                "detail_rows": int(totals.get("detail_rows") or 0),
+                "equipment_count": int(totals.get("equipment_count") or 0),
+            })
+        unclassified = queryset.filter(family_code="").aggregate(
+            revenue_eur=Sum("net_revenue_eur"),
+            detail_rows=Count("id"),
+            equipment_count=Count("equipment_key", distinct=True),
+        )
         filter_options = {
-            "families": list(queryset.exclude(family_code="").order_by("family_code").values_list("family_code", flat=True).distinct()),
+            "families": [group["code"] for group in family_groups],
+            "family_groups": family_groups,
+            "unclassified_family": {
+                "revenue_eur": float(unclassified.get("revenue_eur") or 0),
+                "detail_rows": int(unclassified.get("detail_rows") or 0),
+                "equipment_count": int(unclassified.get("equipment_count") or 0),
+            },
             "brands": list(queryset.exclude(brand="").order_by("brand").values_list("brand", flat=True).distinct()),
         }
         family = _text(self.params.get("family"))
@@ -573,7 +663,7 @@ class MachineSalesDetailService:
                 group["model_name"], group["model_code"], group["equipment_code"],
                 *group["invoice_numbers"], *group["product_categories"],
             ]).casefold()]
-        groups.sort(key=lambda group: (group["business_date"], group["net_revenue_eur"]), reverse=True)
+        self._sort_groups(groups, family_catalog)
         all_entries = [entry for group in groups for entry in group["entries"]]
         invoice_numbers = {entry["invoice_number"] for entry in all_entries if entry["invoice_number"]}
         serial_numbers = {group["serial_number"] for group in groups if group["serial_number"]}
@@ -612,6 +702,9 @@ class MachineSalesDetailService:
                 "model_code": item["model_code"], "model_name": item["model_name"],
                 "product_categories": item["product_categories"],
                 "equipment_family": item["equipment_family"], "family_code": item["family_code"],
+                "product_group_priority": next((
+                    group["priority"] for group in family_catalog if group["code"] == item["family_code"]
+                ), None),
                 "brand": item["brand"], "invoice_numbers": item["invoice_numbers"],
                 "invoice_count": len(item["invoice_numbers"]), "conditions": item["conditions"],
                 "transaction_count": len(item["entries"]), "entries": item["entries"],

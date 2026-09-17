@@ -11,7 +11,7 @@
   const csrf = $('[name=csrfmiddlewaretoken]')?.value || '';
   const features = JSON.parse(root.dataset.features || '{}');
   const colors = { machine: '#ffd400', parts: '#3478c9', service: '#168b79', rental: '#7453a6', unclassified: '#8993a5' };
-  const countryNames = { BF: 'Burkina Faso', BJ: 'Benin', CI: "Côte d’Ivoire", FR: 'France', GN: 'Guinea', ML: 'Mali', MR: 'Mauritania', MU: 'Mauritius', NE: 'Niger', SN: 'Senegal', TG: 'Togo' };
+  const countryNames = { BF: 'Burkina Faso', BJ: 'Benin', CI: "Côte d’Ivoire", CM: 'Cameroon', FR: 'France', GN: 'Guinea', GW: 'Guinea-Bissau', ML: 'Mali', MR: 'Mauritania', MU: 'Mauritius', NE: 'Niger', SN: 'Senegal', TG: 'Togo' };
   const state = {
     data: null, workspace: 'executive', dimension: 'customers', trendMode: 'ytd',
     operation: 'machine', controller: null, explorerController: null, explorerLoaded: false,
@@ -43,7 +43,11 @@
   const monthLabel = value => value ? new Intl.DateTimeFormat('en-GB', { month: 'short' }).format(new Date(`${value}T00:00:00`)) : '';
   const queryParams = () => {
     const query = new URLSearchParams();
-    $$('[data-filter]').forEach(control => control.value ? query.set(control.dataset.filter, control.value) : null);
+    const customRange = $('[data-filter="period"]').value === 'custom';
+    $$('[data-filter]').forEach(control => {
+      if (['start_date', 'end_date'].includes(control.dataset.filter) && !customRange) return;
+      if (control.value) query.set(control.dataset.filter, control.value);
+    });
     query.set('view', state.workspace);
     return query;
   };
@@ -56,11 +60,40 @@
     const query = new URLSearchParams(location.search);
     $$('[data-filter]').forEach(control => { if (query.has(control.dataset.filter)) control.value = query.get(control.dataset.filter); });
     state.workspace = ['executive', 'explore', 'operations', 'actions'].includes(query.get('view')) ? query.get('view') : 'executive';
+    $('[data-division-toggle]').checked = $('[data-filter="division_scope"]').value === 'all_divisions';
     toggleCustomDates();
   };
-  const toggleCustomDates = () => $$('[data-custom-date]').forEach(node => { node.hidden = $('[data-filter="period"]').value !== 'custom'; });
+  const toggleCustomDates = () => {
+    const customRange = $('[data-filter="period"]').value === 'custom';
+    $$('[data-custom-date]').forEach(node => {
+      node.hidden = !customRange;
+      const input = node.querySelector('input');
+      if (input) input.disabled = !customRange;
+    });
+  };
+  const syncCustomDateBounds = data => {
+    const maximum = data?.freshness?.data_through_date || '';
+    const start = $('[data-filter="start_date"]');
+    const end = $('[data-filter="end_date"]');
+    if (!maximum || !start || !end) return;
+    start.max = maximum;
+    end.max = maximum;
+    if (start.value > maximum) start.value = maximum;
+    if (!end.value || end.value > maximum) end.value = maximum;
+  };
+  const initializeCustomRange = () => {
+    if ($('[data-filter="period"]').value !== 'custom' || !state.data) return;
+    const start = $('[data-filter="start_date"]');
+    const end = $('[data-filter="end_date"]');
+    const maximum = state.data.freshness?.data_through_date || state.data.context.end_date;
+    if (!start.value) start.value = state.data.context.start_date;
+    if (!end.value || (maximum && end.value > maximum)) end.value = maximum;
+    syncCustomDateBounds(state.data);
+  };
   const setUpdating = updating => {
     root.classList.toggle('is-updating', updating);
+    root.setAttribute('aria-busy', String(updating));
+    setHidden('[data-update-loader]', !updating);
     const status = setHidden('[data-status]', Boolean(state.data) || !updating);
     if (status && updating && !state.data) status.textContent = 'Preparing your business view...';
   };
@@ -192,13 +225,19 @@
   function render(data) {
     setHidden('[data-content]', false); setHidden('[data-status]', true); setHidden('[data-error]', true);
     setHidden('[data-mode-warning]', data.mapping_ready);
+    syncCustomDateBounds(data);
+    const comparisonControl = $('[data-filter="comparison"]');
+    if (comparisonControl.value !== data.context.comparison) { comparisonControl.value = data.context.comparison; updateUrl(); }
     $('[data-ribbon="mapping"]').textContent = data.context.published_mapping_version ? `Published Mapping v${data.context.published_mapping_version}` : 'Mapping not published';
     $('[data-ribbon="data"]').textContent = `Revenue through ${dateLabel(data.freshness.data_through_date)} · Refreshed ${dateTimeLabel(data.freshness.source_snapshot_at)}`;
     $('[data-ribbon="currency"]').textContent = data.context.currency;
     $('[data-ribbon="confidence"]').textContent = data.confidence.status;
     $('[data-confidence-inline-value]').textContent = data.confidence.status;
     const selectedLine = data.business_lines.find(item => item.code === data.context.business_line);
-    $('[data-hero-label]').textContent = data.context.business_line === 'all_business' ? 'Total Mining Revenue' : `${selectedLine?.label || ''} Revenue`;
+    $('[data-filter="division_scope"]').value = data.context.division_scope;
+    $('[data-division-toggle]').checked = data.context.division_scope === 'all_divisions';
+    $('[data-sales-scope-warning]').hidden = data.context.division_scope !== 'all_divisions';
+    $('[data-hero-label]').textContent = data.context.business_line === 'all_business' ? (data.context.division_scope === 'all_divisions' ? 'Total Revenue · All Divisions' : 'Total Mining Revenue') : `${selectedLine?.label || ''} Revenue`;
     $('[data-hero-value]').textContent = money(data.hero.revenue);
     $('[data-period-label]').textContent = data.context.period_label;
     $('[data-hero-growth]').textContent = `${growth(data.hero)} vs ${data.context.comparison_label}`;
@@ -235,12 +274,13 @@
   function renderChips() {
     const period = $('[data-filter="period"]'); const line = $('[data-filter="business_line"]'); const country = $('[data-filter="country_ids"]');
     const chips = [`<span>${escapeHtml(period.selectedOptions[0]?.textContent || 'YTD')}</span>`, `<span>${escapeHtml($('[data-filter="comparison"]').selectedOptions[0]?.textContent || '')}</span>`];
+    if ($('[data-filter="division_scope"]').value === 'all_divisions') chips.push('<span>All Divisions</span>');
     if (line.value !== 'all_business') chips.push(`<button data-clear-filter="business_line">${escapeHtml(line.selectedOptions[0].textContent)} &times;</button>`);
     if (country.value) chips.push(`<button data-clear-filter="country_ids">${escapeHtml(country.selectedOptions[0].textContent)} &times;</button>`);
     if ($('[data-filter="key_account_ids"]').value) chips.push(`<button data-clear-filter="key_account_ids">${escapeHtml(state.selectedLabels.key_account_ids || 'Selected')} &times;</button>`);
     $('[data-filter-chips]').innerHTML = chips.join('');
     $$('[data-clear-filter]').forEach(button => button.addEventListener('click', () => { const key = button.dataset.clearFilter; $(`[data-filter="${key}"]`).value = key === 'business_line' ? 'all_business' : ''; if (key in state.selectedLabels) state.selectedLabels[key] = ''; refresh(); }));
-    $('[data-filter-count]').textContent = $$('[data-filter]').filter(control => control.value && !['ytd', 'same_period_last_year', 'all_business'].includes(control.value)).length;
+    $('[data-filter-count]').textContent = $$('[data-filter]').filter(control => control.value && !['ytd', 'same_period_last_year', 'all_business', 'mining'].includes(control.value)).length;
   }
 
   async function refresh() {
@@ -290,7 +330,11 @@
     return { label: `${value > 0 ? '+' : ''}${value.toFixed(1)}%`, value, status: value < 0 ? 'negative' : value > 0 ? 'positive' : 'neutral' };
   }
 
-  function turnoverCountryName(item) { return countryNames[String(item.id || '').toUpperCase()] || item.name || item.id || 'Not assigned'; }
+  function turnoverCountryName(item) {
+    const code = String(item.id || '').toUpperCase();
+    const name = String(item.name || '').trim();
+    return name && name.toUpperCase() !== code ? name : countryNames[code] || name || item.id || 'Not assigned';
+  }
 
   function renderTurnover(rows) {
     const data = state.data; const lines = data.business_lines.filter(item => ['machine', 'parts', 'service', 'rental'].includes(item.code));
@@ -360,6 +404,20 @@
   }
   function closeDrawer() { $('[data-drawer]').hidden = true; document.body.style.overflow = ''; }
 
+  function renderMachineFamilyGroups(groups) {
+    const picker = $('[data-machine-family-picker]');
+    const selected = $('[data-machine-filter="family"]').value;
+    picker.innerHTML = groups.map(group => {
+      const code = String(group.code || '').toUpperCase();
+      const imageKey = `image${code.charAt(0)}${code.slice(1).toLowerCase()}`;
+      const image = picker.dataset[imageKey] || '';
+      const media = image
+        ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(group.description || code)}">`
+        : `<div class="bcc-machine-family-placeholder" aria-hidden="true">${escapeHtml(code)}</div>`;
+      return `<button type="button" data-machine-family-card="${escapeHtml(code)}" aria-pressed="${String(selected === code)}">${media}<span><strong>${escapeHtml(code)}</strong><small>${escapeHtml(group.description || code)}</small><em>${money(group.revenue_eur)} · ${Number(group.equipment_count || 0).toLocaleString('en-GB')} machines</em></span></button>`;
+    }).join('');
+  }
+
   async function loadMachineSales(resetPage = false) {
     if (!state.data) return; if (resetPage) state.machinePage = 1;
     state.machineController?.abort(); state.machineController = new AbortController(); const query = apiParams(); query.set('page', state.machinePage); query.set('page_size', '50');
@@ -370,11 +428,16 @@
       if (!data.ready) { $('[data-machine-status]').textContent = 'The governed Machine Sales buffer has not been synchronized yet.'; return; }
       state.machinePages = Math.max(1, data.pagination.pages || 1); state.machineLoaded = true;
       [['family', 'families', 'All Families'], ['brand', 'brands', 'All Brands']].forEach(([filter, key, label]) => { const control = $(`[data-machine-filter="${filter}"]`); const current = control.value; control.innerHTML = `<option value="">${label}</option>${(data.filter_options?.[key] || []).map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join('')}`; control.value = current; });
+      renderMachineFamilyGroups(data.filter_options?.family_groups || []);
+      const unclassified = data.filter_options?.unclassified_family || {};
+      const unclassifiedNotice = $('[data-machine-unclassified]');
+      unclassifiedNotice.hidden = !Number(unclassified.detail_rows || 0);
+      unclassifiedNotice.textContent = `Unclassified Machine detail remains visible: ${money(unclassified.revenue_eur)} across ${Number(unclassified.detail_rows || 0).toLocaleString('en-GB')} invoice lines. A governed model or serial mapping is required before assignment to a product group.`;
       const summary = data.summary; const adjustment = Number(summary.reconciliation_adjustment_eur || 0);
       $('[data-machine-source]').textContent = `Machine details through ${dateLabel(data.freshness.data_through_date)} · ${data.freshness.status}${adjustment ? ` · technical reconciliation adjustment ${money(adjustment, true)}` : ' · reconciled to certified Machine Revenue'}`;
       $('[data-machine-summary]').innerHTML = [['Net Invoiced Revenue', money(summary.net_revenue_eur)], ['Machines', Number(summary.equipment_count).toLocaleString('en-GB')], ['Invoices', Number(summary.invoice_count).toLocaleString('en-GB')], ['Machine Sale', money(summary.machine_sale_eur)], ['Other Charges & Adjustments', money(summary.other_charges_eur)], ['Missing Serials', Number(summary.missing_serial_count).toLocaleString('en-GB')]].map(([label, value]) => `<div><span>${label}</span><strong>${value}</strong></div>`).join('');
-      const rows = data.results.filter(item => item.record_type !== 'reconciliation_adjustment');
-      $('[data-machine-body]').innerHTML = rows.map((item, index) => `<tr><td>${dateLabel(item.business_date)}</td><td><strong>${escapeHtml(item.customer_name || 'Not available')}</strong><small>${escapeHtml(item.customer_code || '')}</small></td><td><strong>${escapeHtml(item.model_name || 'Not available')}</strong></td><td>${escapeHtml(item.family_code || 'Not classified')}</td><td>${escapeHtml(item.brand || 'Not available')}</td><td>${item.serial_number ? escapeHtml(item.serial_number) : '<span class="bcc-data-warning">Missing</span>'}</td><td>${escapeHtml(item.equipment_code || 'Not available')}</td><td><button class="bcc-entry-toggle" type="button" data-machine-entry-toggle="${index}" aria-expanded="false">${item.invoice_count} invoices</button></td><td>${escapeHtml((item.conditions || []).join(' · ') || 'Not available')}</td><td>${money(item.machine_sale_eur, true)}</td><td>${money(item.other_charges_eur, true)}</td><td>${money(item.net_revenue_eur, true)}</td></tr><tr class="bcc-entry-detail" data-machine-entry="${index}" hidden><td colspan="12"><div><strong>Invoice entries</strong><table><tbody>${(item.entries || []).map(entry => `<tr><td>${dateLabel(entry.business_date)}</td><td>${escapeHtml(entry.invoice_number || 'Not available')}</td><td>${escapeHtml(entry.classification)}</td><td>${money(entry.amount_eur, true)}</td></tr>`).join('')}</tbody></table></div></td></tr>`).join('') || '<tr><td colspan="12">No invoiced Machine Sale matches this context.</td></tr>';
+      const rows = data.results;
+      $('[data-machine-body]').innerHTML = rows.map((item, index) => { const reconciliation = item.record_type === 'reconciliation_adjustment'; return `<tr class="${reconciliation ? 'bcc-reconciliation-row' : ''}"><td>${dateLabel(item.business_date)}</td><td><strong>${escapeHtml(item.customer_name || (reconciliation ? 'Accounting reconciliation' : 'Not available'))}</strong><small>${escapeHtml(item.customer_code || (reconciliation ? 'Technical adjustment' : ''))}</small></td><td><strong>${escapeHtml(item.model_name || 'Not available')}</strong></td><td>${reconciliation ? 'Accounting' : escapeHtml(item.family_code || 'Not classified')}</td><td>${reconciliation ? '—' : escapeHtml(item.brand || 'Not available')}</td><td>${reconciliation ? '—' : item.serial_number ? escapeHtml(item.serial_number) : '<span class="bcc-data-warning">Missing</span>'}</td><td>${reconciliation ? '—' : escapeHtml(item.equipment_code || 'Not available')}</td><td><button class="bcc-entry-toggle" type="button" data-machine-entry-toggle="${index}" aria-expanded="false">${item.invoice_count} invoices</button></td><td>${reconciliation ? 'Reconciliation' : escapeHtml((item.conditions || []).join(' · ') || 'Not available')}</td><td>${money(item.machine_sale_eur, true)}</td><td>${money(item.other_charges_eur, true)}</td><td>${money(item.net_revenue_eur, true)}</td></tr><tr class="bcc-entry-detail" data-machine-entry="${index}" hidden><td colspan="12"><div><strong>${reconciliation ? 'Reconciliation entries' : 'Invoice entries'}</strong><table><tbody>${(item.entries || []).map(entry => `<tr><td>${dateLabel(entry.business_date)}</td><td>${escapeHtml(entry.invoice_number || 'Not available')}</td><td>${escapeHtml(entry.classification)}</td><td>${money(entry.amount_eur, true)}</td></tr>`).join('')}</tbody></table></div></td></tr>`; }).join('') || '<tr><td colspan="12">No invoiced Machine Sale matches this context.</td></tr>';
       $$('[data-machine-entry-toggle]').forEach(button => button.addEventListener('click', () => { const detail = $(`[data-machine-entry="${button.dataset.machineEntryToggle}"]`); const expanded = button.getAttribute('aria-expanded') === 'true'; button.setAttribute('aria-expanded', String(!expanded)); detail.hidden = expanded; }));
       $('[data-machine-status]').hidden = true; $('[data-machine-table-wrap]').hidden = false; $('[data-machine-pagination]').hidden = !data.pagination.count; $('[data-machine-page]').textContent = `Page ${data.pagination.page} of ${state.machinePages} · ${Number(data.pagination.count).toLocaleString('en-GB')} records`; $('[data-machine-prev]').disabled = state.machinePage <= 1; $('[data-machine-next]').disabled = state.machinePage >= state.machinePages;
     } catch (error) { if (error.name !== 'AbortError') $('[data-machine-status]').textContent = error.message; }
@@ -442,17 +505,28 @@
   $$('[data-dimension]').forEach(button => button.addEventListener('click', () => { state.dimension = button.dataset.dimension; state.explorerLoaded = false; $$('[data-dimension]').forEach(node => node.classList.toggle('active', node === button)); loadExplorer(); }));
   $('[data-ranking-mode]').addEventListener('change', () => { state.explorerLoaded = false; loadExplorer(); }); $('[data-explorer-limit]').addEventListener('change', () => { state.explorerLoaded = false; loadExplorer(); });
   $$('[data-operation-tab]').forEach(button => button.addEventListener('click', () => loadOperation(button.dataset.operationTab)));
-  $$('[data-machine-family-card]').forEach(card => card.addEventListener('click', () => {
+  $('[data-machine-family-picker]').addEventListener('click', event => {
+    const card = event.target.closest('[data-machine-family-card]');
+    if (!card) return;
     const family = $('[data-machine-filter="family"]');
     const clearSelection = family.value === card.dataset.machineFamilyCard;
     family.value = clearSelection ? '' : card.dataset.machineFamilyCard;
     $$('[data-machine-family-card]').forEach(item => item.setAttribute('aria-pressed', String(!clearSelection && item === card)));
     loadMachineSales(true);
-  }));
+  });
   $('[data-machine-filter="family"]').addEventListener('change', event => {
     $$('[data-machine-family-card]').forEach(card => card.setAttribute('aria-pressed', String(card.dataset.machineFamilyCard === event.target.value)));
   });
-  $$('[data-filter]').filter(control => control.dataset.filter !== 'key_account_ids').forEach(control => control.addEventListener('change', () => { if ($('[data-filter="period"]').value !== 'custom' || ($('[data-filter="start_date"]').value && $('[data-filter="end_date"]').value)) refresh(); else toggleCustomDates(); }));
+  $$('[data-filter]').filter(control => control.dataset.filter !== 'key_account_ids').forEach(control => control.addEventListener('change', event => {
+    toggleCustomDates();
+    if (event.currentTarget.dataset.filter === 'period') initializeCustomRange();
+    if (['start_date', 'end_date'].includes(event.currentTarget.dataset.filter)) syncCustomDateBounds(state.data);
+    if ($('[data-filter="period"]').value !== 'custom' || ($('[data-filter="start_date"]').value && $('[data-filter="end_date"]').value)) refresh();
+  }));
+  $('[data-division-toggle]').addEventListener('change', event => {
+    $('[data-filter="division_scope"]').value = event.currentTarget.checked ? 'all_divisions' : 'mining';
+    refresh();
+  });
   $$('[data-combobox-toggle]').forEach(button => button.addEventListener('click', async () => {
     const combobox = button.closest('[data-combobox]'); const menu = combobox.querySelector('[data-combobox-menu]'); const opening = menu.hidden;
     $$('[data-combobox-menu]').forEach(other => { other.hidden = true; other.closest('[data-combobox]').querySelector('[data-combobox-toggle]').setAttribute('aria-expanded', 'false'); });
@@ -464,7 +538,7 @@
   }));
   $$('[data-entity-search]').forEach(input => input.addEventListener('input', () => { window.clearTimeout(state.searchTimers[input.dataset.entitySearch]); state.searchTimers[input.dataset.entitySearch] = window.setTimeout(async () => { const target = $(`[data-search-results="${input.dataset.entitySearch}"]`); await searchEntities(input.dataset.entitySearch, input.value, target, true); bindComboboxResults(input, target); }, 250); }));
   $('[data-filter-open]').addEventListener('click', () => $('[data-filter-sheet]').classList.add('open')); $('[data-filter-close]').addEventListener('click', () => $('[data-filter-sheet]').classList.remove('open'));
-  $('[data-reset]').addEventListener('click', () => { $$('[data-filter]').forEach(control => { control.value = control.dataset.filter === 'period' ? 'ytd' : control.dataset.filter === 'comparison' ? 'same_period_last_year' : control.dataset.filter === 'business_line' ? 'all_business' : ''; }); state.selectedLabels = { key_account_ids: '' }; $('[data-filter-sheet]').classList.remove('open'); refresh(); });
+  $('[data-reset]').addEventListener('click', () => { $$('[data-filter]').forEach(control => { control.value = control.dataset.filter === 'period' ? 'ytd' : control.dataset.filter === 'comparison' ? 'same_period_last_year' : control.dataset.filter === 'business_line' ? 'all_business' : control.dataset.filter === 'division_scope' ? 'mining' : ''; }); $('[data-division-toggle]').checked = false; state.selectedLabels = { key_account_ids: '' }; $('[data-filter-sheet]').classList.remove('open'); refresh(); });
   $('[data-refresh]').addEventListener('click', refresh); $('[data-retry]').addEventListener('click', refresh);
   $('[data-drawer-close]').addEventListener('click', closeDrawer);
   $$('[data-confidence-open]').forEach(button => button.addEventListener('click', () => { const confidence = state.data?.confidence; if (!confidence) return; $('[data-drawer-kicker]').textContent = 'Data & Freshness'; $('[data-drawer-title]').textContent = `Data Confidence: ${confidence.status}`; $('[data-drawer-body]').innerHTML = `<div class="bcc-detail-grid"><div class="bcc-detail-metric"><span>Revenue through</span><strong>${dateLabel(state.data.freshness.data_through_date)}</strong></div><div class="bcc-detail-metric"><span>Revenue reconciliation</span><strong>${escapeHtml(state.data.reconciliation.status)}</strong></div><div class="bcc-detail-metric"><span>Customer coverage</span><strong>${confidence.customer_coverage === null ? 'Not available' : confidence.customer_coverage.toFixed(1) + '%'}</strong></div><div class="bcc-detail-metric"><span>Country coverage</span><strong>${confidence.country_coverage === null ? 'Not available' : confidence.country_coverage.toFixed(1) + '%'}</strong></div><div class="bcc-detail-metric"><span>Key Account coverage</span><strong>${confidence.key_account_coverage === null ? 'Not available' : confidence.key_account_coverage.toFixed(1) + '%'}</strong></div><div class="bcc-detail-metric"><span>Unallocated Revenue</span><strong>${money(confidence.unallocated_revenue, true)}</strong></div><div class="bcc-detail-metric"><span>Machine Detail</span><strong>${state.machineLoaded ? $('[data-machine-source]').textContent : 'Load on demand'}</strong></div><div class="bcc-detail-metric"><span>Parts Classification</span><strong>${state.partsLoaded ? $('[data-parts-source]').textContent : 'Load on demand'}</strong></div></div><h3>Known limitations</h3>${confidence.warnings.map(warning => `<p>${escapeHtml(warning)}</p>`).join('') || '<p>No governed headline limitation is currently reported.</p>'}`; $('[data-drawer]').hidden = false; document.body.style.overflow = 'hidden'; $('[data-drawer-close]').focus(); }));
@@ -473,7 +547,7 @@
   $('[data-parts-refresh]').addEventListener('click', () => loadPartsSales(true)); $('[data-parts-group]').addEventListener('change', () => loadPartsSales(true)); $$('[data-parts-filter]').forEach(control => control.addEventListener('change', () => loadPartsSales(true))); let partsTimer; $('[data-parts-search]').addEventListener('input', () => { clearTimeout(partsTimer); partsTimer = setTimeout(() => loadPartsSales(true), 300); }); $('[data-parts-prev]').addEventListener('click', () => { if (state.partsPage > 1) { state.partsPage--; loadPartsSales(); } }); $('[data-parts-next]').addEventListener('click', () => { if (state.partsPage < state.partsPages) { state.partsPage++; loadPartsSales(); } });
   $('[data-parts-export]')?.addEventListener('click', () => { const query = apiParams(); query.set('group_by', $('[data-parts-group]').value || 'major'); location.href = `${root.dataset.partsSalesExportUrl}?${query}`; });
   $('[data-presentation]')?.addEventListener('click', () => { document.body.classList.toggle('presentation'); if (document.body.classList.contains('presentation')) document.documentElement.requestFullscreen?.().catch(() => {}); else document.exitFullscreen?.().catch(() => {}); });
-  $('[data-save-view]').addEventListener('click', async () => { const name = window.prompt('Saved view name', 'My Business Command Center'); if (!name) return; await fetch(root.dataset.savedViewsUrl, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrf }, body: JSON.stringify({ name, filters: Object.fromEntries(queryParams()), visualization: 'business_command_center_v2' }) }); $('[data-save-view]').textContent = 'View Saved'; setTimeout(() => $('[data-save-view]').textContent = 'Save View', 1500); });
+  $('[data-save-view]').addEventListener('click', async () => { const name = window.prompt('Saved view name', 'My Business Overview'); if (!name) return; await fetch(root.dataset.savedViewsUrl, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrf }, body: JSON.stringify({ name, filters: Object.fromEntries(queryParams()), visualization: 'business_command_center_v2' }) }); $('[data-save-view]').textContent = 'View Saved'; setTimeout(() => $('[data-save-view]').textContent = 'Save View', 1500); });
   $('[data-export]')?.addEventListener('click', () => { location.href = `${root.dataset.exportUrl}?${apiParams()}`; });
   const searchDialog = $('[data-business-search]'); const openSearch = () => { searchDialog.hidden = false; $('[data-global-search]').focus(); }; const closeSearch = () => { searchDialog.hidden = true; };
   $('[data-business-search-open]').addEventListener('click', openSearch); $('[data-business-search-close]').addEventListener('click', closeSearch); let globalTimer; $('[data-global-search]').addEventListener('input', event => { clearTimeout(globalTimer); globalTimer = setTimeout(async () => { const target = $('[data-global-search-results]'); target.innerHTML = '<p class="bcc-empty">Searching authorized business entities...</p>'; const [customers, keys] = await Promise.all([searchEntities('customers', event.target.value, document.createElement('div')), searchEntities('key_accounts', event.target.value, document.createElement('div'))]); const combined = [...customers.map(item => ({ ...item, type: 'customers' })), ...keys.map(item => ({ ...item, type: 'key_accounts' }))]; target.innerHTML = combined.map(item => `<button class="bcc-search-result" type="button" data-global-id="${escapeHtml(item.id)}" data-global-type="${item.type}"><strong>${escapeHtml(item.name)}</strong><small>${item.type === 'customers' ? 'Customer' : 'Key Account'}</small></button>`).join('') || '<p class="bcc-empty">No authorized result.</p>'; $$('[data-global-id]', target).forEach(button => button.addEventListener('click', () => { closeSearch(); state.dimension = button.dataset.globalType; switchWorkspace('explore'); loadExplorer(); })); }, 250); });

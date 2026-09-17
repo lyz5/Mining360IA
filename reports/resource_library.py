@@ -3,6 +3,7 @@ import mimetypes
 import re
 import threading
 import time
+import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -42,6 +43,12 @@ class ResourceFile:
 
 def clean_label(value: str) -> str:
     return re.sub(r"^\d+(?:\.\d+)*\.?\s+", "", value).strip()
+
+
+def normalize_search(value: str) -> str:
+    normalized = unicodedata.normalize("NFKD", str(value or "")).casefold()
+    without_accents = "".join(char for char in normalized if not unicodedata.combining(char))
+    return re.sub(r"[^a-z0-9]+", " ", without_accents).strip()
 
 
 def safe_path_part(value: str, fallback: str = "General") -> str:
@@ -207,7 +214,7 @@ def list_resources(
     category: str = "",
     level: str = "",
 ) -> list[ResourceFile]:
-    normalized_query = query.strip().lower()
+    query_terms = [term for term in normalize_search(query).split() if term]
     resources = []
     for resource in resource_inventory():
         if section and resource.section != section:
@@ -216,11 +223,11 @@ def list_resources(
             continue
         if level and resource.level != level:
             continue
-        search_blob = (
+        search_blob = normalize_search(
             f"{resource.title} {resource.filename} {resource.section} "
             f"{resource.category} {resource.level} {resource.folder_path} {resource.extension}"
-        ).lower()
-        if normalized_query and normalized_query not in search_blob:
+        )
+        if query_terms and not all(term in search_blob for term in query_terms):
             continue
         resources.append(resource)
 

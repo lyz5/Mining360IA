@@ -137,7 +137,7 @@ class HomepageConfiguration(models.Model):
         db_table = "homepage_configuration"
 
     def __str__(self) -> str:
-        return "Availability Command Center"
+        return "Availability Excellence Center"
 
 
 class HomepageInteractionEvent(models.Model):

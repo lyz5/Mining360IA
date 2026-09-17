@@ -149,6 +149,8 @@ class ReportingConfigurationWorkspaceTests(TestCase):
         self.assertContains(response, "data-test-drawer")
         self.assertContains(response, "data-checklist-drawer")
         self.assertContains(response, "View configuration health")
+        self.assertContains(response, "Power BI refresh health")
+        self.assertContains(response, "data-summary-healthy")
 
         with patch("reports.reporting_config_views.list_workspace_reports_with_refresh", return_value=[]):
             legacy = self.client.get(reverse("reporting-config-home") + "?legacy=1")
@@ -191,6 +193,28 @@ class ReportingConfigurationWorkspaceTests(TestCase):
         self.assertEqual(data["count"], 1)
         self.assertEqual(data["results"][0]["display_name"], "Fleet Overview")
         self.assertEqual(data["summary"]["total"], 2)
+        self.assertEqual(data["summary"]["healthy"], 2)
+        self.assertEqual(data["summary"]["refreshing"], 0)
+        self.assertEqual(data["summary"]["failed"], 0)
+        self.assertEqual(data["summary"]["no_refresh"], 0)
+
+    @patch("reports.reporting_configuration_views.list_workspace_reports_with_refresh")
+    def test_refresh_health_summary_classifies_runtime_statuses(self, list_reports):
+        statuses = ["Completed", "In Progress", "Failed", "No refresh"]
+        reports = [workspace_report(f"Report {index}") for index in range(len(statuses))]
+        for report, status in zip(reports, statuses):
+            report.refresh_status = status
+        list_reports.return_value = reports
+        self.client.force_login(self.admin)
+
+        response = self.client.get(reverse("reporting-configuration-list-api"))
+
+        self.assertEqual(response.status_code, 200)
+        summary = response.json()["summary"]
+        self.assertEqual(summary["healthy"], 1)
+        self.assertEqual(summary["refreshing"], 1)
+        self.assertEqual(summary["failed"], 1)
+        self.assertEqual(summary["no_refresh"], 1)
 
     @patch("reports.reporting_configuration_views.list_workspace_reports")
     def test_first_save_creates_version_audit_and_parameter(self, list_reports):

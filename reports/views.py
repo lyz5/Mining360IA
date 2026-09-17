@@ -1221,6 +1221,15 @@ def users_roles_update(request, user_id):
 
 @login_required
 def dashboard(request):
+    from .business_review_views import _command_center_allowed
+
+    if _command_center_allowed(request.user):
+        return redirect("business-command-center")
+    return redirect("excellence-center")
+
+
+@login_required
+def excellence_center(request):
     module_access = user_module_access(request.user)
     availability_command_center_enabled = bool(
         feature_enabled("ENABLE_AVAILABILITY_COMMAND_CENTER_HOME", request.user)

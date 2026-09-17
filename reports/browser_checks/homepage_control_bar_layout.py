@@ -21,6 +21,8 @@ from playwright.sync_api import sync_playwright
 
 
 VIEWPORTS = (
+    (3840, 2160),
+    (2560, 1440),
     (1920, 1080),
     (1600, 900),
     (1440, 900),
@@ -45,7 +47,7 @@ def main() -> None:
     output_dir = Path(".artifacts/homepage-control-bar")
     output_dir.mkdir(parents=True, exist_ok=True)
     cookie = authenticated_session_cookie()
-    base_url = "https://mining360-dev.neemba.local/"
+    base_url = "https://mining360-dev.neemba.local/excellence-center/"
 
     with sync_playwright() as playwright:
         edge_path = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -98,14 +100,14 @@ def main() -> None:
                 "document.querySelector('[data-updating]')?.hidden === true && !['', '--'].includes(document.querySelector('[data-availability-value]')?.textContent.trim())",
                 timeout=90_000,
             )
-            page.locator("[data-metric-selector]").select_option("mtbf")
+            page.locator("[data-metric-selector]").select_option("mttr")
             page.wait_for_function(
-                "document.querySelector('[data-updating]')?.hidden === true && document.querySelector('[data-brand-loader]')?.hidden === true && document.querySelector('[data-export-visual=\"physical-availability\"]')?.dataset.exportReady === 'true' && document.querySelector('[data-center-title]')?.textContent.includes('MTBF') && document.querySelector('[data-availability-value]')?.textContent.trim().endsWith('h')",
+                "document.querySelector('[data-updating]')?.hidden === true && document.querySelector('[data-brand-loader]')?.hidden === true && document.querySelector('[data-export-visual=\"physical-availability\"]')?.dataset.exportReady === 'true' && document.querySelector('[data-center-title]')?.textContent.includes('MTTR') && document.querySelector('[data-availability-value]')?.textContent.trim().endsWith('h')",
                 timeout=90_000,
             )
-            mtbf_value = page.locator('[data-availability-value]').inner_text().strip()
-            if mtbf_value in {"", "--", "Not mapped"} or not mtbf_value.endswith("h"):
-                raise AssertionError(f"{width}x{height}: MTBF Per Equip is not rendered: {mtbf_value!r}")
+            mttr_value = page.locator('[data-availability-value]').inner_text().strip()
+            if mttr_value in {"", "--", "Not mapped"} or not mttr_value.endswith("h"):
+                raise AssertionError(f"{width}x{height}: MTTR Per Equip is not rendered: {mttr_value!r}")
             result = page.evaluate("""
                 () => {
                     const toolbar = document.querySelector('.availability-control-grid');
@@ -137,12 +139,37 @@ def main() -> None:
                     }).map((node) => node.className);
                     const toolbarRect = toolbar.getBoundingClientRect();
                     const resetRect = document.querySelector('.reset-group').getBoundingClientRect();
+                    const stageRect = document.querySelector('.availability-stage').getBoundingClientRect();
+                    const summaryRect = document.querySelector('.summary-strip').getBoundingClientRect();
+                    const trendPanelRect = document.querySelector('.trend-panel').getBoundingClientRect();
+                    const trendChartRect = document.querySelector('[data-trend-chart]').getBoundingClientRect();
+                    const valueLabels = Array.from(document.querySelectorAll('.trend-value-label'))
+                        .map((node) => node.getBoundingClientRect());
+                    const labelIntersections = [];
+                    if (window.innerWidth >= 1280) {
+                        for (let left = 0; left < valueLabels.length; left += 1) {
+                            for (let right = left + 1; right < valueLabels.length; right += 1) {
+                                const a = valueLabels[left];
+                                const b = valueLabels[right];
+                                if (a.left < b.right - 1 && a.right > b.left + 1
+                                    && a.top < b.bottom - 1 && a.bottom > b.top + 1) {
+                                    labelIntersections.push([left, right]);
+                                }
+                            }
+                        }
+                    }
                     return {
                         pageOverflow: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
                         toolbarOverflow: toolbar.scrollWidth > toolbar.clientWidth + 1,
                         resetClipped: resetRect.left < toolbarRect.left - 1 || resetRect.right > toolbarRect.right + 1,
                         intersections,
                         detachedLabels,
+                        sectionOverlap: stageRect.bottom > summaryRect.top + 1,
+                        chartEscapesPanel: trendChartRect.left < trendPanelRect.left - 1
+                            || trendChartRect.right > trendPanelRect.right + 1
+                            || trendChartRect.top < trendPanelRect.top - 1
+                            || trendChartRect.bottom > trendPanelRect.bottom + 1,
+                        labelIntersections,
                         dimensions: boxes.map((box) => ({
                             name: box.name,
                             left: Math.round(box.rect.left),
@@ -156,7 +183,10 @@ def main() -> None:
                 }
             """)
             failures = [
-                key for key in ("pageOverflow", "toolbarOverflow", "resetClipped", "intersections", "detachedLabels")
+                key for key in (
+                    "pageOverflow", "toolbarOverflow", "resetClipped", "intersections",
+                    "detachedLabels", "sectionOverlap", "chartEscapesPanel", "labelIntersections",
+                )
                 if result[key]
             ]
             if failures:
@@ -166,6 +196,45 @@ def main() -> None:
                 full_page=True,
             )
             print(f"PASS {width}x{height}")
+
+        page.set_viewport_size({"width": 2560, "height": 1440})
+        page.goto(base_url, wait_until="domcontentloaded", timeout=60_000)
+        page.wait_for_selector("[data-metric-selector]", state="visible", timeout=30_000)
+        page.locator("[data-metric-selector]").select_option("fuel")
+        page.wait_for_function(
+            "document.querySelector('[data-brand-loader]')?.hidden === true && document.querySelector('[data-fuel-workspace]')?.hidden === false && document.querySelector('[data-fuel-chart] svg')",
+            timeout=90_000,
+        )
+        fuel_layout = page.evaluate("""
+            () => {
+                const left = document.querySelector('.fuel-kpi-panel').getBoundingClientRect();
+                const right = document.querySelector('.fuel-distribution-panel').getBoundingClientRect();
+                const chart = document.querySelector('[data-fuel-chart]').getBoundingClientRect();
+                const svg = document.querySelector('[data-fuel-chart] svg').getBoundingClientRect();
+                const labels = Array.from(document.querySelectorAll('.fuel-point-label'))
+                    .map((node) => node.getBoundingClientRect());
+                const labelIntersections = [];
+                for (let a = 0; a < labels.length; a += 1) {
+                    for (let b = a + 1; b < labels.length; b += 1) {
+                        if (labels[a].left < labels[b].right - 1 && labels[a].right > labels[b].left + 1
+                            && labels[a].top < labels[b].bottom - 1 && labels[a].bottom > labels[b].top + 1) {
+                            labelIntersections.push([a, b]);
+                        }
+                    }
+                }
+                return {
+                    panelOverlap: left.right > right.left + 1,
+                    chartEscapesPanel: chart.left < right.left - 1 || chart.right > right.right + 1
+                        || svg.left < chart.left - 1 || svg.right > chart.right + 1,
+                    labelIntersections,
+                    pageOverflow: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
+                };
+            }
+        """)
+        if any((fuel_layout["panelOverlap"], fuel_layout["chartEscapesPanel"], fuel_layout["labelIntersections"], fuel_layout["pageOverflow"])):
+            raise AssertionError(f"Fuel large-screen layout failed: {fuel_layout}")
+        page.screenshot(path=str(output_dir / "fuel-layout-2560x1440.png"), full_page=True)
+        print("PASS Fuel chart 2560x1440")
 
         page.set_viewport_size({"width": 1024, "height": 768})
         page.goto(base_url, wait_until="domcontentloaded", timeout=60_000)

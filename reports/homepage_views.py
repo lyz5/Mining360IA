@@ -8,6 +8,7 @@ from django.views.decorators.http import require_GET, require_POST
 
 from .access_control import has_module_access, is_platform_admin
 from .homepage_availability_service import HomepageAvailabilityError, HomepageAvailabilityService
+from .homepage_fuel_service import HomepageFuelService
 from .models import HomepageInteractionEvent
 from .powerbi_embed_strategy import feature_enabled
 
@@ -24,14 +25,15 @@ def _authorized(user) -> bool:
 @require_GET
 def availability_command_center_api(request):
     if not _available(request.user):
-        return JsonResponse({"ok": False, "error": "Availability Command Center is disabled."}, status=404)
+        return JsonResponse({"ok": False, "error": "Availability Excellence Center is disabled."}, status=404)
     if not _authorized(request.user):
         return JsonResponse(
             {"ok": False, "error": "You do not have access to fleet performance data.", "error_code": "permission_denied"},
             status=403,
         )
     try:
-        service = HomepageAvailabilityService(request.user)
+        metric = str(request.GET.get("metric") or "availability").strip().casefold()
+        service = HomepageFuelService(request.user) if metric == "fuel" else HomepageAvailabilityService(request.user)
         analytics_request = service.request_from_params(request.GET)
         return JsonResponse(service.get(analytics_request))
     except HomepageAvailabilityError as exc:
@@ -58,7 +60,7 @@ def homepage_interaction_api(request):
     allowed_context = {
         key: str(value)[:160]
         for key, value in raw_context.items()
-        if key in {"period", "breakdown", "minesite", "model", "serial_number", "customer", "action"}
+        if key in {"metric", "period", "breakdown", "minesite", "model", "serial_number", "customer", "action"}
         and value not in (None, "")
     }
     HomepageInteractionEvent.objects.create(

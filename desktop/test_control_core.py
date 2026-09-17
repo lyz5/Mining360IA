@@ -128,6 +128,15 @@ class Mining360ControllerTests(unittest.TestCase):
         popen.assert_called_once()
         self.controller._close_logs()
 
+    def test_partial_restart_script_persists_verified_waitress_manifest(self) -> None:
+        script = Path("deployment/windows/restart_mining360_dev_runtime.ps1").read_text(encoding="utf-8-sig")
+        self.assertIn("Test-ManagedWaitressProcess", script)
+        self.assertIn("Mining360IA\\.wsgi:application", script)
+        self.assertIn("Write-RuntimeManifest", script)
+        self.assertIn('component = "waitress"', script)
+        self.assertIn("Move-Item -LiteralPath $temporary -Destination $pidManifest -Force", script)
+        self.assertNotIn('if ($process.Name -ne "python.exe")', script)
+
 
 if __name__ == "__main__":
     unittest.main()

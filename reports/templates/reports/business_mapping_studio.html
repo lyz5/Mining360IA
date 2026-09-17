@@ -30,7 +30,8 @@
       data-can-edit="{{ can_edit|yesno:'true,false' }}"
       data-can-validate="{{ can_validate|yesno:'true,false' }}"
       data-can-publish="{{ can_publish|yesno:'true,false' }}"
-      data-can-sync="{{ can_sync|yesno:'true,false' }}">
+      data-can-sync="{{ can_sync|yesno:'true,false' }}"
+      data-auto-sync-sources="{{ auto_sync_sources|yesno:'true,false' }}">
     {% csrf_token %}
     <header class="bm-header">
         <div>
@@ -241,7 +242,7 @@
 <dialog class="bm-dialog" data-bm-delete-dialog>
     <div class="bm-dialog-head"><div><p class="eyebrow">Governed removal</p><h2>Remove Mapping</h2></div><button type="button" data-bm-delete-close aria-label="Close">×</button></div>
     <p data-bm-delete-summary></p>
-    <p class="bm-warning">The mapping will be archived. Published Business Review data remains unchanged until a new Mapping version is published.</p>
+    <p class="bm-warning">The mapping will be archived. Published Business Overview data remains unchanged until a new Mapping version is published.</p>
     <label>Removal reason<textarea rows="3" data-bm-delete-reason required placeholder="Explain why this relationship is being removed"></textarea></label>
     <p class="bm-form-error" data-bm-delete-error role="alert" hidden></p>
     <div class="bm-dialog-actions"><button type="button" class="button secondary" data-bm-delete-close>Cancel</button><button type="button" class="button danger" data-bm-delete-confirm>Remove mapping</button></div>
@@ -256,6 +257,6 @@
     </form>
 </dialog>
 <div class="bm-toast" data-bm-toast role="status" aria-live="polite" hidden></div>
-<script src="{% static 'reports/business_mapping_studio.js' %}?v=20260915-remove-customer-groups" defer></script>
+<script src="{% static 'reports/business_mapping_studio.js' %}?v=20260917-auto-source-sync" defer></script>
 </body>
 </html>

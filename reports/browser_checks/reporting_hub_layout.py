@@ -5,6 +5,7 @@ from __future__ import annotations
 import os
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(PROJECT_ROOT))
@@ -30,6 +31,10 @@ def authenticated_session_cookie() -> str:
 
 
 def main() -> None:
+    base_url = (sys.argv[1] if len(sys.argv) > 1 else os.environ.get(
+        "MINING360_BROWSER_CHECK_BASE_URL", "https://mining360-dev.neemba.local"
+    )).rstrip("/")
+    parsed_url = urlparse(base_url)
     output_dir = Path(".artifacts/reporting-hub")
     output_dir.mkdir(parents=True, exist_ok=True)
     cookie = authenticated_session_cookie()
@@ -50,9 +55,9 @@ def main() -> None:
         context.add_cookies([{
             "name": settings.SESSION_COOKIE_NAME,
             "value": cookie,
-            "domain": "mining360-dev.neemba.local",
+            "domain": parsed_url.hostname,
             "path": "/",
-            "secure": True,
+            "secure": parsed_url.scheme == "https",
             "httpOnly": True,
             "sameSite": "Lax",
         }])
@@ -62,7 +67,7 @@ def main() -> None:
 
         for width, height, expected_columns in sizes:
             page.set_viewport_size({"width": width, "height": height})
-            page.goto("https://mining360-dev.neemba.local/reporting/", wait_until="domcontentloaded")
+            page.goto(f"{base_url}/reporting/", wait_until="domcontentloaded")
             page.wait_for_selector("[data-reporting-hub]", state="visible", timeout=60_000)
             page.wait_for_selector("[data-report-card]", state="visible", timeout=60_000)
             result = page.evaluate("""
@@ -84,6 +89,8 @@ def main() -> None:
                         cards: visibleCards.length,
                         columns: firstRow.length,
                         overlap,
+                        healthSummaryPresent: Boolean(document.querySelector('.report-health-summary')),
+                        statusFiltersPresent: Boolean(document.querySelector('.reporting-status-filters')),
                         pageOverflow: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
                         toolbarOverflow: document.querySelector('.reporting-toolbar').scrollWidth >
                             document.querySelector('.reporting-toolbar').clientWidth + 1,
@@ -101,6 +108,8 @@ def main() -> None:
             """)
             if result["cards"] < 1:
                 raise AssertionError(f"No report cards at {width}x{height}: {result}")
+            if result["healthSummaryPresent"] or result["statusFiltersPresent"]:
+                raise AssertionError(f"Operational health controls remain in the Reporting Hub at {width}x{height}: {result}")
             if result["columns"] != min(expected_columns, result["cards"]):
                 raise AssertionError(f"Unexpected grid at {width}x{height}: {result}")
             if result["overlap"] or result["pageOverflow"] or result["toolbarOverflow"] or result["sidebarOverlap"]:
@@ -115,7 +124,7 @@ def main() -> None:
             print(f"PASS Reporting Hub {width}x{height}: {result['columns']} columns")
 
         page.set_viewport_size({"width": 1440, "height": 900})
-        page.goto("https://mining360-dev.neemba.local/reporting/", wait_until="domcontentloaded")
+        page.goto(f"{base_url}/reporting/", wait_until="domcontentloaded")
         page.wait_for_selector("[data-report-card]", state="visible", timeout=60_000)
         first_name = page.locator("[data-report-card] h3").first.inner_text()
         page.locator("[data-hub-search]").fill(first_name)

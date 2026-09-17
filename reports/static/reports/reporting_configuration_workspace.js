@@ -74,6 +74,7 @@
 
     function updateSummary(summary) {
         $("[data-summary-total]").textContent = summary.total;
+        $("[data-summary-runtime-total]").textContent = summary.total;
         $("[data-summary-visible]").textContent = summary.visible;
         $("[data-summary-hidden]").textContent = summary.hidden;
         $("[data-summary-review]").textContent = summary.needs_review;
@@ -82,6 +83,10 @@
         $("[data-summary-visual-review]").textContent = summary.visual_review;
         $("[data-summary-broken-assets]").textContent = summary.broken_assets;
         $("[data-summary-issues]").textContent = Number(summary.errors || 0) + Number(summary.broken_assets || 0);
+        $("[data-summary-healthy]").textContent = summary.healthy;
+        $("[data-summary-refreshing]").textContent = summary.refreshing;
+        $("[data-summary-failed]").textContent = summary.failed;
+        $("[data-summary-no-refresh]").textContent = summary.no_refresh;
     }
 
     function renderFilterChips() {

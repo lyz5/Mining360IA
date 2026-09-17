@@ -42,6 +42,7 @@ urlpatterns = [
     path("api/access-control/directory/search/", user_access_views.directory_search_api, name="access-control-directory-search-api"),
     path("api/access-control/options/", user_access_views.options_api, name="access-control-options-api"),
     path("", views.dashboard, name="dashboard"),
+    path("excellence-center/", views.excellence_center, name="excellence-center"),
     path("api/home/availability-command-center/", homepage_views.availability_command_center_api, name="homepage-availability-api"),
     path("api/home/interactions/", homepage_views.homepage_interaction_api, name="homepage-interaction-api"),
     path("data/", views.data_home, name="data-home"),

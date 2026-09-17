@@ -12,26 +12,26 @@
         <button type="button" class="icon-button nav-toggle js-toggle-nav" aria-label="Toggle sidebar" title="Toggle sidebar"></button>
     </div>
     <div class="nav-links">
-        <a href="{% url 'dashboard' %}"
+        {% if show_business_review %}
+        <a href="{% url 'business-command-center' %}" class="{% if active_section == 'business-review' %}active{% endif %}" {% if active_section == 'business-review' %}aria-current="page"{% endif %}>
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 18V9M10 18V5M16 18v-7M3 20h18" />
+            </svg>
+            <span>Business Overview</span>
+        </a>
+        {% endif %}
+        <a href="{% url 'excellence-center' %}"
            class="{% if active_section == 'dashboard' %}active{% endif %}"
            {% if active_section == 'dashboard' %}aria-current="page"{% endif %}
-           title="Command Center">
+           title="Excellence Center">
             <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M4 13h6V4H4z" />
                 <path d="M14 20h6v-9h-6z" />
                 <path d="M4 20h6v-3H4z" />
                 <path d="M14 7h6V4h-6z" />
             </svg>
-            <span>Command Center</span>
+            <span>Excellence Center</span>
         </a>
-        {% if show_business_review %}
-        <a href="{% url 'business-command-center' %}" class="{% if active_section == 'business-review' %}active{% endif %}" {% if active_section == 'business-review' %}aria-current="page"{% endif %}>
-            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 18V9M10 18V5M16 18v-7M3 20h18" />
-            </svg>
-            <span>Business Review</span>
-        </a>
-        {% endif %}
         {% if request.user.is_staff or request.user.is_superuser or request.user.platformuser.is_platform_admin or request.user.platformuser.can_access_reporting %}
         <a href="{% url 'reporting' %}" class="{% if active_section == 'reporting' %}active{% endif %}">
             <svg class="nav-icon nav-icon-reporting" viewBox="0 0 24 24" aria-hidden="true">
@@ -58,7 +58,7 @@
                 <path d="M5 5h14v11H9l-4 3z" />
                 <path d="M9 9h6M9 12h4" />
             </svg>
-            <span>Codex Chatbot</span>
+            <span>M360 Chatbot</span>
         </a>
         {% endif %}
         <a href="{% url 'resources' %}" class="{% if active_section == 'resources' %}active{% endif %}">

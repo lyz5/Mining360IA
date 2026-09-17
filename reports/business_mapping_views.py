@@ -5,6 +5,7 @@ import logging
 from datetime import date, timedelta
 from decimal import Decimal, InvalidOperation
 
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.db import transaction
@@ -250,13 +251,15 @@ def _mapping_json(item, source_accounts=None):
 def business_mapping_studio(request):
     if not _require(request.user):
         return HttpResponseForbidden("You do not have access to Business Mapping Studio.")
+    can_sync = _require(request.user, "synchronize_business_mapping_sources")
     return render(request, "reports/business_mapping_studio.html", {
         "active_section": "business-mapping",
         "can_edit": _require(request.user, "edit_business_mapping"),
         "can_remove": _require(request.user, "reject_business_mapping"),
         "can_validate": _require(request.user, "validate_business_mapping"),
         "can_publish": _require(request.user, "publish_business_mapping"),
-        "can_sync": _require(request.user, "synchronize_business_mapping_sources"),
+        "can_sync": can_sync,
+        "auto_sync_sources": can_sync and settings.BUSINESS_MAPPING_AUTO_SYNC_ON_STUDIO_OPEN,
         "feature_flags": {
             "suggestions": feature_enabled("ENABLE_BUSINESS_MAPPING_SUGGESTIONS", request.user),
             "revenue_allocation": feature_enabled("ENABLE_BUSINESS_MAPPING_REVENUE_ALLOCATION", request.user),
@@ -1559,20 +1562,71 @@ def _synchronization_run_json(run):
     }
 
 
+def _automatic_synchronization_state(user):
+    enabled = bool(
+        settings.BUSINESS_MAPPING_AUTO_SYNC_ON_STUDIO_OPEN
+        and _require(user, "synchronize_business_mapping_sources")
+    )
+    max_age_minutes = settings.BUSINESS_MAPPING_AUTO_SYNC_MAX_AGE_MINUTES
+    latest_attempt = MappingSynchronizationRun.objects.order_by("-created_at").first()
+    latest_success = MappingSynchronizationRun.objects.filter(
+        status__in=["Completed", "Partial"],
+    ).order_by("-completed_at", "-created_at").first()
+    active_run = MappingSynchronizationRun.objects.filter(
+        status__in=["Queued", "Running"],
+        created_at__gte=timezone.now() - timedelta(minutes=15),
+    ).order_by("-created_at").first()
+    attempt_at = None
+    if latest_attempt:
+        attempt_at = latest_attempt.completed_at or latest_attempt.started_at or latest_attempt.created_at
+    success_at = None
+    if latest_success:
+        success_at = latest_success.completed_at or latest_success.created_at
+    cutoff = timezone.now() - timedelta(minutes=max_age_minutes)
+    recent_failed_attempt = bool(
+        latest_attempt
+        and latest_attempt.status == "Failed"
+        and attempt_at
+        and attempt_at >= cutoff
+    )
+    required = bool(
+        enabled
+        and active_run is None
+        and (success_at is None or success_at < cutoff)
+        and not recent_failed_attempt
+    )
+    return {
+        "enabled": enabled,
+        "required": required,
+        "max_age_minutes": max_age_minutes,
+        "last_attempt_at": attempt_at.isoformat() if attempt_at else None,
+        "last_success_at": success_at.isoformat() if success_at else None,
+    }
+
+
 @login_required
 @require_http_methods(["GET", "POST"])
 def synchronization_api(request):
     if request.method == "GET":
         if not _require(request.user):
             return JsonResponse({"detail": "Forbidden"}, status=403)
-        run = MappingSynchronizationRun.objects.first()
-        return JsonResponse({"ok": True, "run": _synchronization_run_json(run) if run else None})
+        run = MappingSynchronizationRun.objects.order_by("-created_at").first()
+        return JsonResponse({
+            "ok": True,
+            "run": _synchronization_run_json(run) if run else None,
+            "auto_sync": _automatic_synchronization_state(request.user),
+        })
     if not _require(request.user, "synchronize_business_mapping_sources"):
         return JsonResponse({"detail": "Forbidden"}, status=403)
+    try:
+        payload = json.loads(request.body or "{}")
+    except json.JSONDecodeError:
+        return JsonResponse({"detail": "Invalid JSON payload"}, status=400)
+    automatic = bool(payload.get("automatic"))
     active_run = MappingSynchronizationRun.objects.filter(
         status__in=["Queued", "Running"],
         created_at__gte=timezone.now() - timedelta(minutes=15),
-    ).first()
+    ).order_by("-created_at").first()
     if active_run:
         serialized = _synchronization_run_json(active_run)
         if serialized["status"] == "Queued":
@@ -1580,10 +1634,29 @@ def synchronization_api(request):
         elif serialized["status"] == "Failed":
             active_run = None
         if active_run:
-            return JsonResponse({"ok": True, "run": serialized, "reused": True}, status=200)
+            return JsonResponse({
+                "ok": True, "run": serialized, "reused": True,
+                "automatic": automatic,
+            }, status=200)
+    auto_sync = _automatic_synchronization_state(request.user)
+    if automatic and not auto_sync["required"]:
+        latest_run = MappingSynchronizationRun.objects.order_by("-created_at").first()
+        return JsonResponse({
+            "ok": True,
+            "run": _synchronization_run_json(latest_run) if latest_run else None,
+            "reused": True,
+            "fresh": True,
+            "automatic": True,
+            "auto_sync": auto_sync,
+        }, status=200)
     run = BusinessMappingSourceSynchronizationService(request.user).queue()
     enqueue_business_mapping_sync(run)
-    return JsonResponse({"ok": True, "run": _synchronization_run_json(run), "reused": False}, status=202)
+    return JsonResponse({
+        "ok": True,
+        "run": _synchronization_run_json(run),
+        "reused": False,
+        "automatic": automatic,
+    }, status=202)
 
 
 @login_required

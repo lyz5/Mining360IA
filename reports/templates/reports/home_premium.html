@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token }}">
     <title>Reporting Hub | Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260822-collapsed-nav-1">
-    <link rel="stylesheet" href="{% static 'reports/reporting_hub.css' %}?v=20260824-category-position-1">
+    <link rel="stylesheet" href="{% static 'reports/reporting_hub.css' %}?v=20260917-simple-catalog-1">
 </head>
 <body class="reporting-hub-body">
     {% include "reports/includes/app_nav.html" %}
@@ -20,7 +20,7 @@
             <div>
                 <p class="reporting-hub-kicker">Power BI analytics</p>
                 <h1>Reporting Hub</h1>
-                <p>Access, monitor and explore all your analytical reports in one place.</p>
+                <p>Find and open your analytical reports.</p>
             </div>
             <div class="reporting-hub-header-meta">
                 <span>{{ workspace_name }}</span>
@@ -45,35 +45,6 @@
         </section>
         {% endif %}
 
-        <section class="report-health-summary" aria-label="Report health summary">
-            <button type="button" class="report-health-card total is-active" data-health-filter="all" aria-pressed="true">
-                <span class="health-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M7 16V9M12 16V5M17 16v-4"/></svg></span>
-                <span><strong>{{ hub.summary.total }}</strong><small>Total Reports</small><em>Available to your account</em></span>
-            </button>
-            <button type="button" class="report-health-card healthy" data-health-filter="healthy" aria-pressed="false">
-                <span class="health-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span>
-                <span><strong>{{ hub.summary.healthy }}</strong><small>Healthy</small><em>Ready for analysis</em></span>
-            </button>
-            <button type="button" class="report-health-card refreshing" data-health-filter="refreshing" aria-pressed="false">
-                <span class="health-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 0-15-3M4 4v4h4M4 13a8 8 0 0 0 15 3M20 20v-4h-4"/></svg></span>
-                <span><strong>{{ hub.summary.refreshing }}</strong><small>Refreshing</small><em>Update in progress</em></span>
-            </button>
-            <button type="button" class="report-health-card failed" data-health-filter="failed" aria-pressed="false">
-                <span class="health-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.5 20h19zM12 9v4M12 17h.01"/></svg></span>
-                <span><strong>{{ hub.summary.failed }}</strong><small>Failed</small><em>Needs attention</em></span>
-            </button>
-            <button type="button" class="report-health-card no-refresh" data-health-filter="no_refresh" aria-pressed="false">
-                <span class="health-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 17h.01"/></svg></span>
-                <span><strong>{{ hub.summary.no_refresh }}</strong><small>No Refresh</small><em>No history available</em></span>
-            </button>
-            {% if hub.summary.stale %}
-            <button type="button" class="report-health-card stale" data-health-filter="stale" aria-pressed="false">
-                <span class="health-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-                <span><strong>{{ hub.summary.stale }}</strong><small>Stale</small><em>Outside schedule</em></span>
-            </button>
-            {% endif %}
-        </section>
-
         <section class="reporting-toolbar" aria-label="Report catalog controls">
             <label class="reporting-search">
                 <span class="sr-only">Search reports</span>
@@ -81,13 +52,6 @@
                 <input type="search" value="{{ hub.filters.q }}" placeholder="Search reports, topics or keywords..." autocomplete="off" data-hub-search>
                 <span class="reporting-search-state" aria-live="polite" data-search-state></span>
             </label>
-            <div class="reporting-status-filters" role="group" aria-label="Refresh status">
-                <button type="button" class="is-active" data-status="all" aria-pressed="true">All <span>{{ hub.summary.total }}</span></button>
-                <button type="button" data-status="healthy" aria-pressed="false">Healthy <span>{{ hub.summary.healthy }}</span></button>
-                <button type="button" data-status="refreshing" aria-pressed="false">Refreshing <span>{{ hub.summary.refreshing }}</span></button>
-                <button type="button" data-status="failed" aria-pressed="false">Failed <span>{{ hub.summary.failed }}</span></button>
-                <button type="button" data-status="no_refresh" aria-pressed="false">No Refresh <span>{{ hub.summary.no_refresh }}</span></button>
-            </div>
             <div class="reporting-toolbar-fields">
                 <label><span>Category</span><select data-category-filter><option value="all">All categories</option>{% for category in hub.categories %}<option value="{{ category.code }}">{{ category.label }} ({{ category.count }})</option>{% endfor %}</select></label>
                 <label><span>Sort by</span><select data-sort-filter><option value="alphabetical">Alphabetical A-Z</option><option value="alphabetical_desc">Alphabetical Z-A</option><option value="recently_refreshed">Recently refreshed</option><option value="status">Status</option></select></label>

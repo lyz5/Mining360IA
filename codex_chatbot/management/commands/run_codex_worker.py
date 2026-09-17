@@ -8,7 +8,7 @@ from codex_chatbot.async_service import process_next_run
 
 
 class Command(BaseCommand):
-    help = "Process persisted Codex Chatbot runs."
+    help = "Process persisted M360 Chatbot runs."
 
     def add_arguments(self, parser):
         parser.add_argument("--once", action="store_true")

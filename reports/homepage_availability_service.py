@@ -26,7 +26,7 @@ from .powerbi import get_access_token, get_latest_refresh_cached
 
 LOGGER = logging.getLogger(__name__)
 VALID_PERIODS = {"ytd", "last_12_months"}
-VALID_METRICS = {"availability", "mtbs", "mtbf"}
+VALID_METRICS = {"availability", "mtbs", "mtbf", "mttr"}
 VALID_BREAKDOWNS = {"overall", "minesite", "model", "equipment"}
 VALID_ORDERING = {"availability_desc", "availability_asc", "downtime_desc", "name_asc"}
 CUSTOMER_TYPE_TARGETS = {
@@ -185,6 +185,7 @@ class HomepageAvailabilityService:
         self.metric = self._resolve_metric()
         self.mtbs_metric = self._resolve_mtbs_metric()
         self.mtbf_metric = self._resolve_mtbf_metric()
+        self.mttr_metric = self._resolve_mttr_metric()
         self.kpi = self._resolve_kpi()
         self.filter_mappings = {
             item["filter_code"]: item
@@ -254,6 +255,23 @@ class HomepageAvailabilityService:
                 status=503,
             )
         return {**metric, "powerbi_measure_name": "[MTBF Per Equip]"}
+
+    def _resolve_mttr_metric(self) -> dict:
+        metric = next(
+            (
+                item for item in get_metric_mapping(self.SECTION_CODE)
+                if item.get("is_active") and item.get("metric_code") == "mttr"
+            ),
+            None,
+        )
+        configured_measure = str((metric or {}).get("powerbi_measure_name") or "").strip()
+        if _clean_key(configured_measure) != _clean_key("[MTTR Per Equip]"):
+            raise HomepageAvailabilityError(
+                "MTTR Per Equip is not configured in Metrics Mapping.",
+                code="mttr_mapping_missing",
+                status=503,
+            )
+        return {**metric, "powerbi_measure_name": "[MTTR Per Equip]"}
 
     def _resolve_report(self):
         dataset_id = str(getattr(self.kpi, "powerbi_semantic_model_id", "") or "").strip()
@@ -375,15 +393,18 @@ class HomepageAvailabilityService:
         measure = str(self.metric["powerbi_measure_name"]).strip()
         mtbs_measure = str(self.mtbs_metric["powerbi_measure_name"]).strip()
         mtbf_measure = str(self.mtbf_metric["powerbi_measure_name"]).strip()
+        mttr_measure = str(self.mttr_metric["powerbi_measure_name"]).strip()
         selected_measure = {
             "availability": measure,
             "mtbs": mtbs_measure,
             "mtbf": mtbf_measure,
+            "mttr": mttr_measure,
         }[request.metric]
         selected_result_column = {
             "availability": "Availability",
             "mtbs": "MTBS",
             "mtbf": "MTBF",
+            "mttr": "MTTR",
         }[request.metric]
         downtime_metric = next(
             (
@@ -535,6 +556,8 @@ VAR __Summary =
         "PreviousMTBS", CALCULATE({mtbs_measure}, __PreviousPeriod{filter_args}),
         "MTBF", CALCULATE({mtbf_measure}, __CurrentPeriod{filter_args}),
         "PreviousMTBF", CALCULATE({mtbf_measure}, __PreviousPeriod{filter_args}),
+        "MTTR", CALCULATE({mttr_measure}, __CurrentPeriod{filter_args}),
+        "PreviousMTTR", CALCULATE({mttr_measure}, __PreviousPeriod{filter_args}),
         "LatestDate", __LatestDate,
         "CustomerType", CALCULATE(SELECTEDVALUE({customer_type_column}), __CurrentPeriod{filter_args}){extra_blank}
     )
@@ -545,7 +568,8 @@ VAR __TrendBase =
         __CurrentPeriod{filter_args},
         "Availability", {measure},
         "MTBS", {mtbs_measure},
-        "MTBF", {mtbf_measure}
+        "MTBF", {mtbf_measure},
+        "MTTR", {mttr_measure}
     )
 VAR __Trend =
     SELECTCOLUMNS(
@@ -562,6 +586,8 @@ VAR __Trend =
         "PreviousMTBS", BLANK(),
         "MTBF", [MTBF],
         "PreviousMTBF", BLANK(),
+        "MTTR", [MTTR],
+        "PreviousMTTR", BLANK(),
         "LatestDate", BLANK(),
         "CustomerType", BLANK(){extra_blank}
     )
@@ -572,6 +598,7 @@ VAR __BreakdownBase =
         "Availability", {measure},
         "MTBS", {mtbs_measure},
         "MTBF", {mtbf_measure},
+        "MTTR", {mttr_measure},
         "DowntimeHours", {downtime_measure},
         "EquipmentCount", DISTINCTCOUNT({serial_column}),
         "CustomerType", SELECTEDVALUE({customer_type_column})
@@ -591,6 +618,8 @@ VAR __Breakdown =
         "PreviousMTBS", BLANK(),
         "MTBF", [MTBF],
         "PreviousMTBF", BLANK(),
+        "MTTR", [MTTR],
+        "PreviousMTTR", BLANK(),
         "LatestDate", BLANK(),
         "CustomerType", [CustomerType]{extra_select}
     ){search_filter}
@@ -609,6 +638,8 @@ VAR __MineSiteOptions =
         "PreviousMTBS", BLANK(),
         "MTBF", BLANK(),
         "PreviousMTBF", BLANK(),
+        "MTTR", BLANK(),
+        "PreviousMTTR", BLANK(),
         "LatestDate", BLANK(),
         "CustomerType", BLANK(){extra_blank}
     )
@@ -634,6 +665,8 @@ VAR __ModelOptions =
         "PreviousMTBS", BLANK(),
         "MTBF", BLANK(),
         "PreviousMTBF", BLANK(),
+        "MTTR", BLANK(),
+        "PreviousMTTR", BLANK(),
         "LatestDate", BLANK(),
         "CustomerType", BLANK(){extra_blank}
     )
@@ -659,6 +692,8 @@ VAR __EquipmentOptions =
         "PreviousMTBS", BLANK(),
         "MTBF", BLANK(),
         "PreviousMTBF", BLANK(),
+        "MTTR", BLANK(),
+        "PreviousMTTR", BLANK(),
         "LatestDate", BLANK(),
         "CustomerType", BLANK(){extra_blank}
     )
@@ -696,11 +731,12 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
             "metric": self.metric.get("powerbi_measure_name"),
             "mtbs_metric": self.mtbs_metric.get("powerbi_measure_name"),
             "mtbf_metric": self.mtbf_metric.get("powerbi_measure_name"),
+            "mttr_metric": self.mttr_metric.get("powerbi_measure_name"),
             "dataset": self.report.semantic_model_id,
             "config": getattr(self.config, "updated_at", None).isoformat() if getattr(self.config, "updated_at", None) else "default",
         }
         digest = hashlib.sha256(json.dumps(payload, sort_keys=True, default=str).encode("utf-8")).hexdigest()
-        return f"homepage:availability:v5:{digest}"
+        return f"homepage:availability:v6:{digest}"
 
     def _refresh_metadata(self) -> tuple[str, str]:
         try:
@@ -720,13 +756,14 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
             "datasetId": self.report.semantic_model_id,
             "datasetName": self.DATASET_NAME,
             "query": dax,
-            "question": "Mining 360 Fleet Performance Command Center",
+            "question": "Mining 360 Fleet Performance Excellence Center",
             "section": self.SECTION_CODE,
             "metric": "availability_mtbs",
             "measure": (
                 f"{self.metric['powerbi_measure_name']}, "
                 f"{self.mtbs_metric['powerbi_measure_name']}, "
-                f"{self.mtbf_metric['powerbi_measure_name']}"
+                f"{self.mtbf_metric['powerbi_measure_name']}, "
+                f"{self.mttr_metric['powerbi_measure_name']}"
             ),
             "filters": merged_filters,
             "rlsRole": rls_role,
@@ -766,12 +803,18 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
 
     def _normalize(self, rows: list[dict], request: HomepageRequest, *, cached: bool, elapsed_ms: int) -> dict:
         summary_row = next((row for row in rows if str(_row_value(row, "RowType") or "").casefold() == "summary"), {})
-        is_hours_metric = request.metric in {"mtbs", "mtbf"}
-        metric_column = {"availability": "Availability", "mtbs": "MTBS", "mtbf": "MTBF"}[request.metric]
+        is_hours_metric = request.metric in {"mtbs", "mtbf", "mttr"}
+        metric_column = {
+            "availability": "Availability",
+            "mtbs": "MTBS",
+            "mtbf": "MTBF",
+            "mttr": "MTTR",
+        }[request.metric]
         previous_metric_column = {
             "availability": "PreviousAvailability",
             "mtbs": "PreviousMTBS",
             "mtbf": "PreviousMTBF",
+            "mttr": "PreviousMTTR",
         }[request.metric]
         source_value = _as_float(_row_value(summary_row, metric_column))
         source_previous_value = _as_float(
@@ -873,12 +916,17 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
         ranked = sorted(
             (item for item in breakdown if item["metric_value"] is not None),
             key=lambda item: item["metric_value"],
-            reverse=True,
+            reverse=request.metric != "mttr",
         )
         maximum_cards = max(3, min(int(self.config.maximum_cards or 5), 8))
         top = ranked[:maximum_cards] if self.config.show_top_performers else []
         bottom = list(reversed(ranked[-maximum_cards:])) if self.config.show_bottom_performers else []
-        metric_name = {"availability": "Physical Availability", "mtbs": "MTBS", "mtbf": "MTBF"}[request.metric]
+        metric_name = {
+            "availability": "Physical Availability",
+            "mtbs": "MTBS",
+            "mtbf": "MTBF",
+            "mttr": "MTTR",
+        }[request.metric]
         formatted_value = _format_hours(value) if is_hours_metric else _format_percent(value)
         if not value_is_valid:
             takeaway = f"The Semantic Model returned an invalid {metric_name} value. Data-quality review is required."
@@ -888,7 +936,7 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
             takeaway = (
                 f"{metric_name} is {formatted_value}. "
                 f"{ranked[0]['entity']} leads the selected scope at {ranked[0]['formatted_value']}, "
-                f"while {ranked[-1]['entity']} records the lowest value at {ranked[-1]['formatted_value']}."
+                f"while {ranked[-1]['entity']} requires attention at {ranked[-1]['formatted_value']}."
             )
         else:
             takeaway = f"{metric_name} is {formatted_value} for the selected context."
@@ -916,6 +964,8 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
                     if request.metric == "mtbs" else
                     self.mtbf_metric.get("metric_label") or "MTBF"
                     if request.metric == "mtbf" else
+                    self.mttr_metric.get("metric_label") or "MTTR"
+                    if request.metric == "mttr" else
                     self.metric.get("metric_label") or "Physical Availability"
                 ),
                 "period_code": request.period,
@@ -976,6 +1026,8 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
                 "mtbs_formatted": _format_hours(_row_value(summary_row, "MTBS")),
                 "mtbf": _as_float(_row_value(summary_row, "MTBF")),
                 "mtbf_formatted": _format_hours(_row_value(summary_row, "MTBF")),
+                "mttr": _as_float(_row_value(summary_row, "MTTR")),
+                "mttr_formatted": _format_hours(_row_value(summary_row, "MTTR")),
             },
             "breakdown": page_breakdown,
             "filter_options": filter_options,

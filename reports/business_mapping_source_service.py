@@ -31,6 +31,11 @@ from .powerbi import execute_dataset_dax
 DEFAULT_DATASET_ID = "a67ebcac-97d0-4d46-b84d-8109cd2c804a"
 SOURCE_NAME = "Customer Fleet & Revenue Planning Model"
 MINING_DIVISION = "MI"
+BUSINESS_REVENUE_DIVISIONS = {
+    "MI": "Mining",
+    "TP": "Construction",
+    "MO": "Energy",
+}
 MINING_REVENUE_LOBS = ("PRIME", "PARTS", "SERVICE", "RENTAL")
 UNCLASSIFIED_REVENUE_LOB = "UNCLASSIFIED"
 MINING_REVENUE_LABELS = {"PRIME": "Machine", "PARTS": "Parts", "SERVICE": "Service", "RENTAL": "Rental"}
@@ -135,16 +140,16 @@ SELECTCOLUMNS(
 """
     REVENUE_DAX = """
 EVALUATE
-VAR _MiningRevenue =
+VAR _BusinessRevenue =
     FILTER(
         'ChriffreAffaire',
-        'ChriffreAffaire'[Division] = "MI"
+        'ChriffreAffaire'[Division] = "__DIVISION_CODE__"
             && UPPER('ChriffreAffaire'[Canal de distribution]) <> "INTERCO"
     )
-VAR _LatestYear = MAXX(_MiningRevenue, VALUE('ChriffreAffaire'[Année]))
+VAR _LatestYear = MAXX(_BusinessRevenue, VALUE('ChriffreAffaire'[Année]))
 VAR _RevenueWindow =
     FILTER(
-        _MiningRevenue,
+        _BusinessRevenue,
         VALUE('ChriffreAffaire'[Année]) >= _LatestYear - 3
             && VALUE('ChriffreAffaire'[Année]) <= _LatestYear
     )
@@ -185,6 +190,14 @@ SELECTCOLUMNS(
     "invoice_count", [invoice_count]
 )
 """
+
+    @classmethod
+    def revenue_dax(cls, division_code):
+        code = str(division_code or "").strip().upper()
+        if code not in BUSINESS_REVENUE_DIVISIONS:
+            raise BusinessMappingSourceError("The requested Revenue division is not governed.")
+        return cls.REVENUE_DAX.replace("__DIVISION_CODE__", code)
+
     EQUIPMENT_ANALYSIS_DAX = f"""
 EVALUATE
 TOPN(
@@ -250,8 +263,10 @@ TOPN(
                 "message": str(exc)[:1000],
             })
         if run:
-            self.update_progress(run, 40, "revenue", "Retrieving Mining Revenue")
-        revenue_rows = execute_dataset_dax(self.dataset_id, self.REVENUE_DAX)
+            self.update_progress(run, 40, "revenue", "Retrieving governed Revenue divisions")
+        revenue_rows = []
+        for division_code in BUSINESS_REVENUE_DIVISIONS:
+            revenue_rows.extend(execute_dataset_dax(self.dataset_id, self.revenue_dax(division_code)))
         return account_rows, fleet_rows, revenue_rows
 
     def fetch_equipment_analysis_rows(self):
@@ -331,7 +346,7 @@ TOPN(
         self.update_progress(run, 85, "saving", "Saving synchronized data to Mining 360")
         revenue_rows = [
             row for row in revenue_rows
-            if str(_value(row, "division")).strip().upper() == MINING_DIVISION
+            if str(_value(row, "division")).strip().upper() in BUSINESS_REVENUE_DIVISIONS
             and str(_value(row, "distribution_channel")).strip().upper() not in MINING_EXCLUDED_DISTRIBUTION_CHANNELS
         ]
         available_year_values = set()
@@ -562,8 +577,9 @@ TOPN(
             "revenue_period_year": period_year,
             "previous_year": period_year - 1 if period_year else None,
             "available_revenue_years": available_years,
-            "revenue_scope_code": "MINING",
+            "revenue_scope_code": "GOVERNED_BUSINESS_DIVISIONS",
             "revenue_division": MINING_DIVISION,
+            "revenue_divisions": BUSINESS_REVENUE_DIVISIONS,
             "revenue_lobs": list(MINING_REVENUE_LOBS),
             "unclassified_revenue_lob": UNCLASSIFIED_REVENUE_LOB,
             "revenue_categories": MINING_REVENUE_LABELS,

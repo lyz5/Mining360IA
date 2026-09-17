@@ -176,6 +176,18 @@ def reporting_config_home(request):
             }
         )
 
+    def refresh_health_code(value):
+        code = str(value or "").strip().casefold().replace(" ", "")
+        if code == "completed":
+            return "healthy"
+        if code == "failed":
+            return "failed"
+        if code in {"unknown", "inprogress", "running", "notstarted", "refreshing"}:
+            return "refreshing"
+        return "no_refresh"
+
+    refresh_codes = [refresh_health_code(item["refresh_status"]) for item in report_items]
+
     return render(
         request,
         "reports/reporting_config.html",
@@ -185,6 +197,10 @@ def reporting_config_home(request):
             "report_count": len(report_items),
             "visible_count": sum(1 for item in report_items if item["is_visible"]),
             "hidden_count": sum(1 for item in report_items if not item["is_visible"]),
+            "healthy_count": refresh_codes.count("healthy"),
+            "refreshing_count": refresh_codes.count("refreshing"),
+            "failed_count": refresh_codes.count("failed"),
+            "no_refresh_count": refresh_codes.count("no_refresh"),
             "report_categories": ReportingReportPreference.CATEGORIES,
             "opening_profile_sources": opening_profile_sources,
             "authentication_modes": PowerBIReport.AUTHENTICATION_MODES,

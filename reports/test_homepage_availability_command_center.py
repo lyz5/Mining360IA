@@ -7,6 +7,7 @@ from django.test import TestCase, override_settings
 from django.urls import reverse
 
 from .homepage_availability_service import HomepageAvailabilityError, HomepageAvailabilityService
+from .homepage_fuel_service import HomepageFuelService
 from .models import (
     AIConfigSection,
     AIFilterMapping,
@@ -33,23 +34,45 @@ SAMPLE_ROWS = [
         "[PreviousMTBS]": 39.25,
         "[MTBF]": 64.5,
         "[PreviousMTBF]": 60.25,
+        "[MTTR]": 7.5,
+        "[PreviousMTTR]": 8.0,
         "[LatestDate]": 46234.0,
         "[CustomerType]": "Do It For Me",
     },
-    {"[RowType]": "trend", "[Entity]": "Jan 2026", "[SortKey]": "24312", "[Availability]": 0.83, "[MTBS]": 40.5, "[MTBF]": 61.0},
-    {"[RowType]": "trend", "[Entity]": "Feb 2026", "[SortKey]": "24313", "[Availability]": 0.8642, "[MTBS]": 42.75, "[MTBF]": 64.5},
+    {"[RowType]": "trend", "[Entity]": "Jan 2026", "[SortKey]": "24312", "[Availability]": 0.83, "[MTBS]": 40.5, "[MTBF]": 61.0, "[MTTR]": 8.25},
+    {"[RowType]": "trend", "[Entity]": "Feb 2026", "[SortKey]": "24313", "[Availability]": 0.8642, "[MTBS]": 42.75, "[MTBF]": 64.5, "[MTTR]": 7.5},
     {
         "[RowType]": "breakdown", "[Entity]": "Essakane", "[Availability]": 0.89,
-        "[EquipmentCount]": 35, "[DowntimeHours]": 321.0, "[MTBS]": 48.5, "[MTBF]": 72.5,
+        "[EquipmentCount]": 35, "[DowntimeHours]": 321.0, "[MTBS]": 48.5, "[MTBF]": 72.5, "[MTTR]": 6.0,
         "[CustomerType]": "Do It For Me",
     },
     {
         "[RowType]": "breakdown", "[Entity]": "Siguiri", "[Availability]": 0.78,
-        "[EquipmentCount]": 29, "[DowntimeHours]": 580.0, "[MTBS]": 31.25, "[MTBF]": 53.0,
+        "[EquipmentCount]": 29, "[DowntimeHours]": 580.0, "[MTBS]": 31.25, "[MTBF]": 53.0, "[MTTR]": 10.0,
         "[CustomerType]": "Do It With Me",
     },
     {"[RowType]": "option_minesite", "[Entity]": "Essakane"},
     {"[RowType]": "option_model", "[Entity]": "785"},
+]
+
+SAMPLE_FUEL_ROWS = [
+    {
+        "[RowType]": "summary",
+        "[Entity]": "Overall",
+        "[LPH]": 65.2,
+        "[PreviousLPH]": 72.0,
+        "[BenchmarkLPH]": 58.3,
+        "[EquipmentCount]": 4,
+        "[MineSiteCount]": 1,
+        "[LatestDate]": 46234.0,
+    },
+    {"[RowType]": "equipment", "[Entity]": "EQ-001", "[LPH]": 35.0, "[Extra1]": "785", "[Extra2]": "IAMGOLD Essakane"},
+    {"[RowType]": "equipment", "[Entity]": "EQ-002", "[LPH]": 55.0, "[Extra1]": "785", "[Extra2]": "IAMGOLD Essakane"},
+    {"[RowType]": "equipment", "[Entity]": "EQ-003", "[LPH]": 75.0, "[Extra1]": "777", "[Extra2]": "IAMGOLD Essakane"},
+    {"[RowType]": "equipment", "[Entity]": "EQ-004", "[LPH]": 125.0, "[Extra1]": "777", "[Extra2]": "IAMGOLD Essakane"},
+    {"[RowType]": "option_minesite", "[Entity]": "IAMGOLD Essakane"},
+    {"[RowType]": "option_model", "[Entity]": "785"},
+    {"[RowType]": "option_equipment", "[Entity]": "EQ-001"},
 ]
 
 
@@ -85,6 +108,15 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
             defaults={
                 "metric_label": "MTBF",
                 "powerbi_measure_name": "[MTBF Per Equip]",
+                "is_active": True,
+            },
+        )
+        AIMetricMapping.objects.update_or_create(
+            section=self.section,
+            metric_code="mttr",
+            defaults={
+                "metric_label": "MTTR",
+                "powerbi_measure_name": "[MTTR Per Equip]",
                 "is_active": True,
             },
         )
@@ -151,6 +183,18 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
                 "is_active": True,
             },
         )
+        PowerBIReport.objects.update_or_create(
+            report_id="report-fuel",
+            defaults={
+                "section": self.section,
+                "workspace_id": "workspace-fuel",
+                "report_name": "Fuel Monitoring Report V1",
+                "display_name": "Fuel Monitoring V1",
+                "semantic_model_id": "dataset-fuel",
+                "validation_status": "Validated",
+                "is_active": True,
+            },
+        )
         AIKPITarget.objects.update_or_create(
             section=self.section,
             metric_code="availability",
@@ -170,6 +214,9 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
     def service(self):
         return HomepageAvailabilityService(self.user)
 
+    def fuel_service(self):
+        return HomepageFuelService(self.user)
+
     def test_default_request_is_ytd_overall(self):
         request = self.service().request_from_params({})
         self.assertEqual(request.metric, "availability")
@@ -184,6 +231,8 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
         self.assertIn('"PreviousMTBS", CALCULATE([MTBS PER EQUIP]', dax)
         self.assertIn('"MTBF", CALCULATE([MTBF Per Equip]', dax)
         self.assertIn('"PreviousMTBF", CALCULATE([MTBF Per Equip]', dax)
+        self.assertIn('"MTTR", CALCULATE([MTTR Per Equip]', dax)
+        self.assertIn('"PreviousMTTR", CALCULATE([MTTR Per Equip]', dax)
         self.assertIn("MAXX", dax)
         self.assertIn("NOT ISBLANK", dax)
         self.assertNotIn("TODAY()", dax)
@@ -279,6 +328,21 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
         self.assertEqual(result["bottom_performers"][0]["entity"], "Siguiri")
         self.assertIsNone(result["metric"]["target_raw"])
 
+    @patch.object(HomepageAvailabilityService, "_refresh_metadata", return_value=("2026-08-20 04:39 AM", "Completed"))
+    @patch("reports.homepage_availability_service.execute_dax_via_flow")
+    def test_mttr_mode_treats_lower_values_as_better(self, execute, _refresh):
+        execute.return_value = {"firstTableRows": SAMPLE_ROWS}
+        request = self.service().request_from_params({"metric": "mttr", "breakdown": "minesite"})
+        result = self.service().get(request)
+
+        self.assertEqual(result["context"]["metric_code"], "mttr")
+        self.assertEqual(result["metric"]["formatted_value"], "7.50 h")
+        self.assertEqual(result["metric"]["comparison"]["delta_formatted"], "-0.50 h")
+        self.assertEqual(result["trend"][0]["formatted_value"], "8.25 h")
+        self.assertEqual(result["top_performers"][0]["entity"], "Essakane")
+        self.assertEqual(result["bottom_performers"][0]["entity"], "Siguiri")
+        self.assertIsNone(result["metric"]["target_raw"])
+
     def test_customer_type_targets_are_governed_by_business_rule(self):
         service = self.service()
         self.assertEqual(service._customer_type_target("Do It For Me"), 0.85)
@@ -330,6 +394,50 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
             service._merge_filters(scope, {"minesite": "Fekola"})
         self.assertEqual(raised.exception.status, 403)
 
+    def test_fuel_request_uses_canonical_fuel_site_name(self):
+        request = self.fuel_service().request_from_params({"period": "ytd", "minesite": "Essakane"})
+        self.assertEqual(request.metric, "fuel")
+        self.assertEqual(request.filters["minesite"], "IAMGOLD Essakane")
+
+    def test_fuel_dax_uses_official_measure_and_explicit_scope(self):
+        service = self.fuel_service()
+        request = service.request_from_params({"minesite": "Essakane"})
+        dax = service.build_dax(request, {"minesite": ["IAMGOLD Essakane"]}, {})
+        self.assertIn("[Mean LPH]", dax)
+        self.assertIn("'FuelData'[AssetLocalDate]", dax)
+        self.assertIn("'MineSiteList_MiningProd'[SiteGroup FPR]", dax)
+        self.assertIn('TREATAS({"IAMGOLD Essakane"}', dax)
+        self.assertNotIn("TODAY()", dax)
+
+    @patch.object(HomepageFuelService, "_refresh_metadata", return_value=("2026-09-16 01:30 PM", "Completed"))
+    @patch("reports.homepage_fuel_service.execute_dax_via_flow")
+    def test_fuel_response_contains_governed_kpi_distribution_and_percentiles(self, execute, _refresh):
+        execute.return_value = {"firstTableRows": SAMPLE_FUEL_ROWS}
+        result = self.fuel_service().get(self.fuel_service().request_from_params({"minesite": "Essakane"}))
+        self.assertEqual(result["metric"]["formatted_value"], "65.2 L/h")
+        self.assertEqual(result["metric"]["comparison"]["delta_formatted"], "-6.8 L/h")
+        self.assertEqual(result["metric"]["benchmark_formatted"], "58.3 L/h")
+        self.assertEqual(result["summary"]["equipment_count"], 4)
+        self.assertEqual(result["statistics"]["median"], 65.0)
+        self.assertEqual(sum(item["count"] for item in result["distribution"]), 4)
+        self.assertEqual(result["meta"]["measure"], "[Mean LPH]")
+        self.assertEqual(result["decision_support"]["lowest_observed"][0]["entity"], "EQ-001")
+        self.assertEqual(result["decision_support"]["highest_observed"][0]["entity"], "EQ-004")
+        self.assertEqual(result["decision_support"]["very_high_count"], 1)
+        self.assertIn("above 120 L/h", result["decision_support"]["takeaway"])
+
+    @patch.object(HomepageFuelService, "_refresh_metadata", return_value=("2026-09-16 01:30 PM", "Completed"))
+    @patch("reports.homepage_fuel_service.execute_dax_via_flow")
+    def test_api_dispatches_fuel_to_dedicated_semantic_model(self, execute, _refresh):
+        execute.return_value = {"firstTableRows": SAMPLE_FUEL_ROWS}
+        self.client.force_login(self.user)
+        response = self.client.get(reverse("homepage-availability-api"), {"metric": "fuel", "minesite": "Essakane"})
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertEqual(payload["context"]["metric_code"], "fuel")
+        self.assertEqual(payload["context"]["filters"]["minesite"], "IAMGOLD Essakane")
+        self.assertEqual(execute.call_args.args[0]["datasetId"], "dataset-fuel")
+
     @patch.object(HomepageAvailabilityService, "_refresh_metadata", return_value=("", "Unavailable"))
     @patch("reports.homepage_availability_service.execute_dax_via_flow")
     def test_api_returns_normalized_command_center_contract(self, execute, _refresh):
@@ -356,9 +464,10 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
 
     def test_homepage_renders_command_center_without_powerbi_iframe(self):
         self.client.force_login(self.user)
-        response = self.client.get(reverse("dashboard"))
-        self.assertContains(response, "Fleet Availability Command Center")
-        self.assertContains(response, ">Command Center</span>")
+        response = self.client.get(reverse("excellence-center"))
+        self.assertContains(response, "Fleet Availability Excellence Center")
+        self.assertContains(response, ">Excellence Center</span>")
+        self.assertNotContains(response, ">Command Center</span>")
         self.assertContains(response, 'aria-current="page"')
         self.assertContains(response, "homepage_command_center.js")
         self.assertNotContains(response, "Performance detail")
@@ -372,6 +481,8 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
         self.assertNotContains(response, "Serial Number")
         self.assertNotContains(response, "powerbi.embed")
         self.assertNotContains(response, "<iframe")
+        self.assertContains(response, '<option value="fuel">Fuel</option>')
+        self.assertContains(response, "data-fuel-workspace")
 
     def test_control_bar_uses_named_responsive_grid_without_negative_margins(self):
         css = Path(__file__).parent.joinpath("static/reports/homepage_command_center.css").read_text(
@@ -409,6 +520,20 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
         self.assertIn(".trend-value-label", css)
         self.assertIn("paint-order: stroke fill", css)
 
+    def test_fuel_chart_uses_smoothed_density_without_replacing_exact_band_values(self):
+        javascript = Path(__file__).parent.joinpath(
+            "static/reports/homepage_command_center.js"
+        ).read_text(encoding="utf-8")
+        template = Path(__file__).parent.joinpath(
+            "templates/reports/dashboard.html"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("function fuelDensityCurve", javascript)
+        self.assertIn("payload.equipment", javascript)
+        self.assertIn("const coordinates = points.map", javascript)
+        self.assertIn("Exact 20 L/h band: ${Number(item.percentage).toFixed(1)}%", javascript)
+        self.assertIn("Smoothed equipment density · Exact 20 L/h band share on hover", template)
+
     def test_trend_chart_labels_configured_target(self):
         javascript = Path(__file__).parent.joinpath(
             "static/reports/homepage_command_center.js"
@@ -423,7 +548,7 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
 
     def test_availability_trend_exposes_reusable_copy_chart_action(self):
         self.client.force_login(self.user)
-        response = self.client.get(reverse("dashboard"))
+        response = self.client.get(reverse("excellence-center"))
 
         self.assertContains(response, 'data-export-visual="availability-trend"')
         self.assertContains(response, "data-copy-availability-trend")
@@ -433,7 +558,7 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
 
     def test_physical_availability_exposes_reusable_copy_chart_action(self):
         self.client.force_login(self.user)
-        response = self.client.get(reverse("dashboard"))
+        response = self.client.get(reverse("excellence-center"))
 
         self.assertContains(response, 'data-export-visual="physical-availability"')
         self.assertContains(response, "data-copy-physical-availability")
@@ -458,7 +583,7 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
 
     def test_homepage_has_branded_initial_loader(self):
         self.client.force_login(self.user)
-        response = self.client.get(reverse("dashboard"))
+        response = self.client.get(reverse("excellence-center"))
         javascript = Path(__file__).parent.joinpath(
             "static/reports/homepage_command_center.js"
         ).read_text(encoding="utf-8")
@@ -468,7 +593,7 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
 
         self.assertContains(response, "data-brand-loader")
         self.assertContains(response, "neemba-cat-logo.jpg")
-        self.assertContains(response, "Preparing your command center")
+        self.assertContains(response, "Preparing your Excellence Center")
         self.assertIn("dismissBrandLoader", javascript)
         self.assertIn("@keyframes neemba-loader-fan", css)
         self.assertIn("inset: 0 0 0 var(--sidebar-width)", css)
@@ -500,7 +625,7 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
     @override_settings(ENABLE_AVAILABILITY_COMMAND_CENTER_HOME="Disabled")
     def test_feature_flag_preserves_legacy_dashboard(self):
         self.client.force_login(self.user)
-        response = self.client.get(reverse("dashboard"))
+        response = self.client.get(reverse("excellence-center"))
         self.assertContains(response, "Operational console")
         self.assertNotContains(response, "Availability Command Center")
 

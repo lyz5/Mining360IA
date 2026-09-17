@@ -90,7 +90,7 @@ class EquipmentReferenceImportServiceTests(TestCase):
         self.import_references()
         payloads = [
             {"serial_number": "abc-0001", "equipment_code": "", "model_name": "", "model_code": "", "equipment_family": "", "family_code": "", "brand": ""},
-            {"serial_number": "XYZ9999", "equipment_code": "", "model_name": "", "model_code": "", "equipment_family": "", "family_code": "", "brand": ""},
+            {"serial_number": "XYZ9999", "equipment_code": "", "model_name": "", "model_code": "", "equipment_family": "", "family_code": "", "brand": "CAT"},
             {"serial_number": "ABC9999", "equipment_code": "", "model_name": "", "model_code": "", "equipment_family": "", "family_code": "", "brand": ""},
         ]
 
@@ -101,6 +101,33 @@ class EquipmentReferenceImportServiceTests(TestCase):
         self.assertEqual(payloads[1]["model_name"], "777")
         self.assertEqual(payloads[1]["family_code"], "OHT")
         self.assertEqual(payloads[2]["model_name"], "")
+
+    def test_non_cat_machine_is_divers_and_never_uses_cat_prefix(self):
+        self.import_references()
+        payload = {
+            "serial_number": "XYZ9999", "equipment_code": "", "model_name": "",
+            "model_code": "", "equipment_family": "", "family_code": "", "brand": "Epiroc",
+        }
+
+        MachineSalesSynchronizationService._enrich_equipment_dimensions([payload])
+
+        self.assertEqual(payload["brand"], "Epiroc")
+        self.assertEqual(payload["model_name"], "")
+        self.assertEqual(payload["equipment_family"], "Divers")
+        self.assertEqual(payload["family_code"], "OTHER")
+
+    def test_unknown_brand_is_not_inferred_from_cat_prefix(self):
+        self.import_references()
+        payload = {
+            "serial_number": "XYZ9999", "equipment_code": "", "model_name": "",
+            "model_code": "", "equipment_family": "", "family_code": "", "brand": "",
+        }
+
+        MachineSalesSynchronizationService._enrich_equipment_dimensions([payload])
+
+        self.assertEqual(payload["brand"], "")
+        self.assertEqual(payload["model_name"], "")
+        self.assertEqual(payload["family_code"], "")
 
     def test_governed_model_catalog_overrides_generic_family_heuristic(self):
         run = self.import_references(include_catalog=True)
@@ -115,3 +142,29 @@ class EquipmentReferenceImportServiceTests(TestCase):
         self.assertEqual(run.model_records_read, 1)
         self.assertEqual(payload["family_code"], "OTHER")
         self.assertEqual(payload["equipment_family"], "OFF-HIGHWAY TRUCKS")
+
+    def test_governed_two_character_model_root_classifies_model_variant(self):
+        self.product_group_payloads["MG"] = {
+            "code": "MG", "description": "Motor Graders", "priority": 7,
+            "source_created_by": "Test", "source_file_name": "groups.csv",
+            "source_row_number": 3, "source_hash": "h" * 64, "active": True,
+        }
+        self.model_payloads["16"] = {
+            "source_record_id": "16", "model": "16", "normalized_model": "16",
+            "brand": "CAT", "family": "Motor Graders", "priority": 7,
+            "equipment_type": "Motor Graders", "description": "", "source_status": "-1",
+            "source_created_by": "Test", "product_group_code": "MG",
+            "source_file_name": "models.csv", "source_row_number": 3,
+            "source_hash": "n" * 64, "active": True,
+        }
+        self.import_references(include_catalog=True)
+        payload = {
+            "serial_number": "", "equipment_code": "", "model_name": "16GC",
+            "model_code": "16GC", "equipment_family": "Motor Grader",
+            "family_code": "", "brand": "CAT",
+        }
+
+        MachineSalesSynchronizationService._enrich_equipment_dimensions([payload])
+
+        self.assertEqual(payload["family_code"], "MG")
+        self.assertEqual(payload["equipment_family"], "Motor Graders")

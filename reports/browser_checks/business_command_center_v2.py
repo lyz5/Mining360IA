@@ -81,6 +81,7 @@ def main() -> None:
                 (1920, 1080, "desktop-wide"),
                 (1440, 900, "desktop"),
                 (1366, 768, "laptop"),
+                (1280, 800, "laptop-scaled"),
                 (768, 1024, "tablet"),
                 (390, 844, "mobile"),
             ):
@@ -96,9 +97,16 @@ def main() -> None:
                     cards: document.querySelectorAll('[data-line]').length,
                     machineRows: document.querySelectorAll('[data-machine-body] tr').length,
                     partsRows: document.querySelectorAll('[data-parts-body] tr').length,
+                    sidebarOverlap: (() => {
+                        const nav = document.querySelector('.app-nav');
+                        const shell = document.querySelector('.bcc-shell');
+                        return innerWidth > 720 && nav && shell
+                            ? nav.getBoundingClientRect().right > shell.getBoundingClientRect().left + 1
+                            : false;
+                    })(),
                 })""")
                 initial_business_apis = [url for url in api_urls if "/api/business-review/" in url]
-                if checks["overflow"] or checks["cards"] != 4 or checks["machineRows"] or checks["partsRows"]:
+                if checks["overflow"] or checks["sidebarOverlap"] or checks["cards"] != 4 or checks["machineRows"] or checks["partsRows"]:
                     raise AssertionError(f"{name}: {checks}")
                 if len(initial_business_apis) != 1 or "/bootstrap/" not in initial_business_apis[0]:
                     raise AssertionError(f"{name}: initial APIs {initial_business_apis}")
@@ -108,6 +116,42 @@ def main() -> None:
 
             page.set_viewport_size({"width": 1440, "height": 900})
             page.goto(BASE_URL, wait_until="networkidle", timeout=120_000)
+            if page.locator('[data-division-toggle]').is_checked():
+                raise AssertionError("All Divisions must not replace the default Mining scope.")
+            page.locator('[data-division-toggle]').check()
+            page.wait_for_selector('[data-update-loader]', state="hidden", timeout=120_000)
+            if "division_scope=all_divisions" not in page.url:
+                raise AssertionError(f"All Divisions was not persisted in the URL: {page.url}")
+            if "ALL DIVISIONS" not in page.locator('[data-hero-label]').inner_text().upper():
+                raise AssertionError("The Revenue hero does not identify the All Divisions scope.")
+            page.locator('[data-workspace-tab="operations"]').first.click()
+            if not page.locator('[data-sales-scope-warning]').is_visible():
+                raise AssertionError("Mining-only operational detail limitation is not disclosed.")
+            page.locator('[data-workspace-tab="executive"]').first.click()
+            page.locator('[data-division-toggle]').uncheck()
+            page.wait_for_selector('[data-update-loader]', state="hidden", timeout=120_000)
+            if "division_scope=mining" not in page.url:
+                raise AssertionError(f"Mining scope was not restored in the URL: {page.url}")
+            page.locator('[data-filter="period"]').select_option("custom")
+            if not page.locator('[data-custom-date]').first.is_visible():
+                raise AssertionError("Custom Revenue date range controls are not visible.")
+            latest_revenue_date = page.locator('[data-filter="end_date"]').get_attribute("max")
+            if not latest_revenue_date:
+                raise AssertionError("Custom Revenue dates are not capped by the latest available Revenue date.")
+            page.locator('[data-filter="end_date"]').fill("2099-01-01")
+            page.locator('[data-filter="end_date"]').press("Tab")
+            if page.locator('[data-filter="end_date"]').input_value() != latest_revenue_date:
+                raise AssertionError("A future custom End Date was not clamped to Revenue through date.")
+            page.locator('[data-filter="start_date"]').fill("2024-01-01")
+            page.locator('[data-filter="end_date"]').fill("2024-12-31")
+            page.locator('[data-filter="end_date"]').press("Tab")
+            page.wait_for_selector('[data-update-loader]', state="hidden", timeout=120_000)
+            if "period=custom" not in page.url or "start_date=2024-01-01" not in page.url or "end_date=2024-12-31" not in page.url:
+                raise AssertionError(f"Custom Revenue date range was not persisted in the URL: {page.url}")
+            page.locator('[data-reset]').click()
+            page.wait_for_selector('[data-update-loader]', state="hidden", timeout=120_000)
+            if page.locator('[data-filter="period"]').input_value() != "ytd":
+                raise AssertionError("Reset did not restore the YTD Revenue period.")
             if page.locator('[data-combobox="customers"]').count():
                 raise AssertionError("Customer Country Group must not appear in Command Center filters.")
             page.locator('[data-combobox="key_accounts"] [data-combobox-toggle]').click()
@@ -149,22 +193,26 @@ def main() -> None:
                 raise AssertionError("Mining Turnover has horizontal page overflow on mobile.")
             page.screenshot(path=str(OUTPUT / "09b-mining-turnover-mobile.png"), full_page=True)
             page.set_viewport_size({"width": 1440, "height": 900})
-            page.locator('[data-workspace-tab="explore"]').first.click()
-            page.wait_for_selector('[data-dimension-table] tr')
-            page.screenshot(path=str(OUTPUT / "10-revenue-explorer-customers.png"), full_page=True)
-            page.locator('[data-dimension="countries"]').click()
-            page.wait_for_timeout(500)
-            page.screenshot(path=str(OUTPUT / "11-revenue-explorer-countries.png"), full_page=True)
-            page.locator('[data-dimension="key_accounts"]').click()
-            page.wait_for_timeout(500)
-            page.screenshot(path=str(OUTPUT / "12-revenue-explorer-key-accounts.png"), full_page=True)
+            if page.locator('[data-workspace-tab="explore"]').count():
+                raise AssertionError("The retired Explore workspace is visible again.")
 
             page.locator('[data-workspace-tab="operations"]').first.click()
             page.wait_for_selector('[data-machine-table-wrap]:visible', timeout=120_000)
-            if page.locator('[data-machine-family-card]').count() != 3:
-                raise AssertionError("The three governed Machine family visual filters are not rendered.")
+            if page.locator('[data-machine-family-card]').count() != 11:
+                raise AssertionError("The 11 governed Machine product-group filters are not rendered.")
+            if page.locator('[data-machine-family-card] img').count() != 9:
+                raise AssertionError("The exact-name Machine product-group image set is incomplete.")
+            page.wait_for_function("""() => [...document.querySelectorAll('[data-machine-family-card] img')]
+                .every(image => image.complete && image.naturalWidth > 0)""", timeout=30_000)
             if not page.locator('[data-machine-family-card] img').evaluate_all("images => images.every(image => image.complete && image.naturalWidth > 0)"):
                 raise AssertionError("One or more Machine family images failed to load.")
+            if not page.locator('[data-machine-family-card="OHT"] img').get_attribute("src").endswith("machine-family-oht.jpeg"):
+                raise AssertionError("OHT is not using the governed Off Highway Trucks image.")
+            card_tops = page.locator('[data-machine-family-card]').evaluate_all(
+                "cards => cards.slice(0, 5).map(card => Math.round(card.getBoundingClientRect().top))"
+            )
+            if len(set(card_tops[:4])) != 1 or card_tops[4] <= card_tops[0]:
+                raise AssertionError(f"Machine product groups are not arranged four per row: {card_tops}")
             page.locator('[data-machine-family-card="HMS"]').click()
             page.wait_for_timeout(500)
             if page.locator('[data-machine-filter="family"]').input_value() != "HMS" or page.locator('[data-machine-family-card="HMS"]').get_attribute("aria-pressed") != "true":

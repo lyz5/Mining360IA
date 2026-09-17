@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from datetime import timedelta
 from unittest.mock import patch
 
 from django.contrib.auth.models import User
@@ -9,7 +10,7 @@ from django.urls import reverse
 from django.utils import timezone
 
 from .business_mapping_publication_service import MappingPublicationService
-from .business_mapping_source_service import BusinessMappingSourceSynchronizationService
+from .business_mapping_source_service import BusinessMappingSourceError, BusinessMappingSourceSynchronizationService
 from .business_mapping_country_account_service import CountryAccountService
 from .business_mapping_key_account_service import KeyAccountService
 from .business_mapping_validation_service import AccountMineSiteValidationService, MappingValidationError
@@ -628,16 +629,33 @@ class BusinessMappingStudioTests(TestCase):
         self.assertTrue(SourceAccountRecord.objects.filter(source_system="MiningAccounts", source_record_id="C001", active=True).exists())
         self.assertEqual(first_run.source_context_json["revenue_period_year"], 2026)
         self.assertEqual(first_run.source_context_json["revenue_division"], "MI")
+        self.assertEqual(first_run.source_context_json["revenue_divisions"], {
+            "MI": "Mining", "TP": "Construction", "MO": "Energy",
+        })
         self.assertEqual(first_run.source_context_json["revenue_lobs"], ["PRIME", "PARTS", "SERVICE", "RENTAL"])
-        self.assertEqual(RevenueSourceSnapshot.objects.count(), 1)
-        self.assertEqual(RevenueSourceSnapshot.objects.get().division, "MI")
-        self.assertEqual(RevenueSourceSnapshot.objects.get().revenue_ytd_eur, 1000)
+        self.assertEqual(RevenueSourceSnapshot.objects.count(), 2)
+        self.assertEqual(RevenueSourceSnapshot.objects.get(division="MI").revenue_ytd_eur, 1000)
+        self.assertEqual(RevenueSourceSnapshot.objects.get(division="TP").revenue_ytd_eur, 9000)
         self.assertEqual(EquipmentFleetAnalysis.objects.count(), 2)
         self.assertEqual(EquipmentFleetAnalysis.objects.filter(active=True).count(), 1)
         equipment = EquipmentFleetAnalysis.objects.filter(active=True).get()
         self.assertEqual(equipment.source_table, "EquipmentList_MiningProd")
         self.assertEqual(equipment.equipment_id, "101")
         self.assertEqual(str(equipment.smu), "1234.50")
+
+    def test_revenue_queries_are_partitioned_by_governed_division(self):
+        service = BusinessMappingSourceSynchronizationService(self.user)
+
+        mining_query = service.revenue_dax("MI")
+        construction_query = service.revenue_dax("TP")
+        energy_query = service.revenue_dax("MO")
+
+        self.assertIn("'ChriffreAffaire'[Division] = \"MI\"", mining_query)
+        self.assertIn("'ChriffreAffaire'[Division] = \"TP\"", construction_query)
+        self.assertIn("'ChriffreAffaire'[Division] = \"MO\"", energy_query)
+        self.assertNotIn("__DIVISION_CODE__", mining_query)
+        with self.assertRaises(BusinessMappingSourceError):
+            service.revenue_dax("ZZ")
 
     def test_governed_country_override_survives_source_synchronization(self):
         run = MappingSynchronizationRun.objects.create(status="Running", initiated_by=self.user)
@@ -726,6 +744,71 @@ class BusinessMappingStudioTests(TestCase):
         self.assertEqual(duplicate.status_code, 200)
         self.assertTrue(duplicate.json()["reused"])
         self.assertEqual(duplicate.json()["run"]["id"], run["id"])
+
+    @override_settings(
+        BUSINESS_MAPPING_AUTO_SYNC_ON_STUDIO_OPEN=True,
+        BUSINESS_MAPPING_AUTO_SYNC_MAX_AGE_MINUTES=15,
+    )
+    def test_studio_exposes_automatic_source_synchronization(self):
+        response = self.client.get(reverse("business-mapping-studio"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'data-auto-sync-sources="true"')
+
+    @override_settings(
+        BUSINESS_MAPPING_AUTO_SYNC_ON_STUDIO_OPEN=True,
+        BUSINESS_MAPPING_AUTO_SYNC_MAX_AGE_MINUTES=15,
+    )
+    @patch("reports.business_mapping_views.enqueue_business_mapping_sync")
+    def test_automatic_sync_reuses_a_recent_completed_run(self, enqueue_mock):
+        recent = MappingSynchronizationRun.objects.create(
+            status="Completed",
+            completed_at=timezone.now(),
+            progress_percent=100,
+        )
+
+        status = self.client.get(reverse("business-mapping-synchronization-api"))
+        response = self.client.post(
+            reverse("business-mapping-synchronization-api"),
+            data=json.dumps({"automatic": True}),
+            content_type="application/json",
+        )
+
+        self.assertFalse(status.json()["auto_sync"]["required"])
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.json()["fresh"])
+        self.assertEqual(response.json()["run"]["id"], str(recent.id))
+        self.assertEqual(MappingSynchronizationRun.objects.count(), 1)
+        enqueue_mock.assert_not_called()
+
+    @override_settings(
+        BUSINESS_MAPPING_AUTO_SYNC_ON_STUDIO_OPEN=True,
+        BUSINESS_MAPPING_AUTO_SYNC_MAX_AGE_MINUTES=15,
+    )
+    @patch("reports.business_mapping_views.enqueue_business_mapping_sync")
+    def test_automatic_sync_queues_stale_sources_without_publishing_mapping(self, enqueue_mock):
+        stale = MappingSynchronizationRun.objects.create(
+            status="Completed",
+            completed_at=timezone.now() - timedelta(minutes=30),
+            progress_percent=100,
+        )
+        MappingSynchronizationRun.objects.filter(pk=stale.pk).update(
+            created_at=timezone.now() - timedelta(minutes=30),
+        )
+
+        status = self.client.get(reverse("business-mapping-synchronization-api"))
+        response = self.client.post(
+            reverse("business-mapping-synchronization-api"),
+            data=json.dumps({"automatic": True}),
+            content_type="application/json",
+        )
+
+        self.assertTrue(status.json()["auto_sync"]["required"])
+        self.assertEqual(response.status_code, 202)
+        self.assertTrue(response.json()["automatic"])
+        self.assertEqual(MappingSynchronizationRun.objects.count(), 2)
+        self.assertEqual(MappingPublication.objects.count(), 0)
+        enqueue_mock.assert_called_once()
 
     def test_synchronization_progress_is_persisted_and_exposed(self):
         run = MappingSynchronizationRun.objects.create(

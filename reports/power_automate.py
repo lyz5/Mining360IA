@@ -33,6 +33,10 @@ AFTERMARKET_DATASET_NAMES = {
 LOGISTICS_DATASET_NAMES = {
     "mine logistics report",
 }
+FUEL_DATASET_NAMES = {
+    "fuel monitoring report v1",
+    "fuel monitoring v1",
+}
 
 
 def _uses_aftermarket_flow(dataset_name: str) -> bool:
@@ -43,10 +47,18 @@ def _uses_logistics_flow(dataset_name: str) -> bool:
     return str(dataset_name or "").strip().casefold() in LOGISTICS_DATASET_NAMES
 
 
+def _uses_fuel_flow(dataset_name: str) -> bool:
+    return str(dataset_name or "").strip().casefold() in FUEL_DATASET_NAMES
+
+
 def get_flow_url(dataset_name: str = "") -> str:
     aftermarket = _uses_aftermarket_flow(dataset_name)
     logistics = _uses_logistics_flow(dataset_name)
-    if logistics:
+    fuel = _uses_fuel_flow(dataset_name)
+    if fuel:
+        config_key = "fuel_dax_flow_url"
+        environment_key = "POWER_AUTOMATE_FUEL_DAX_FLOW_URL"
+    elif logistics:
         config_key = "logistics_dax_flow_url"
         environment_key = "POWER_AUTOMATE_LOGISTICS_DAX_FLOW_URL"
     elif aftermarket:
@@ -72,6 +84,12 @@ def execute_dax_via_flow(payload: dict) -> dict:
     dataset_name = str(payload.get("datasetName") or "").strip()
     flow_url = get_flow_url(dataset_name)
     if not flow_url:
+        if _uses_fuel_flow(dataset_name):
+            raise RuntimeError(
+                "inspectData4 is not configured for Fuel Monitoring Report V1. "
+                "Set POWER_AUTOMATE_FUEL_DAX_FLOW_URL or configure the "
+                "Fuel Monitoring DAX Flow URL in System Configuration."
+            )
         if _uses_logistics_flow(dataset_name):
             raise RuntimeError(
                 "inspectData3 is not configured for Mine Logistics Report. "

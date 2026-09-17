@@ -21,7 +21,7 @@ from django.test import Client
 from playwright.sync_api import sync_playwright
 
 
-BASE_URL = os.environ.get("MINING360_BROWSER_BASE_URL", "http://127.0.0.1:8000/")
+BASE_URL = os.environ.get("MINING360_BROWSER_BASE_URL", "http://127.0.0.1:8000/excellence-center/")
 
 
 def authenticated_cookie() -> str:

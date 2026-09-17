@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Business Review | Mining360IA</title>
+    <title>Business Overview | Mining360IA</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260905-business-review-1">
     <link rel="stylesheet" href="{% static 'reports/business_review.css' %}?v=20260905-3">
 </head>
@@ -30,7 +30,7 @@
     <header class="br-header">
         <div>
             <p class="eyebrow">Executive Business Control Tower</p>
-            <h1>Business Review</h1>
+            <h1>Business Overview</h1>
             <p>Executive visibility across Accounts, MineSites, Fleet and Revenue.</p>
         </div>
         <div class="br-published-context">
@@ -41,7 +41,7 @@
         </div>
     </header>
 
-    <section class="br-filter-bar" aria-label="Business Review filters">
+    <section class="br-filter-bar" aria-label="Business Overview filters">
         <label><span>Scope</span><select data-br-scope><option value="group" selected>Group</option></select></label>
         <label><span>Country</span><select data-br-country><option value="">All countries</option></select></label>
         <label><span>MineSite</span><select data-br-minesite><option value="">All MineSites</option></select></label>
@@ -59,7 +59,7 @@
         <button type="button" data-br-lens="RENTAL" aria-pressed="false">Rental</button>
     </div>
 
-    <nav class="br-tabs" aria-label="Business Review sections">
+    <nav class="br-tabs" aria-label="Business Overview sections">
         <button type="button" class="active" data-br-tab="overview" aria-selected="true">Executive Overview</button>
         <button type="button" data-br-tab="portfolio" aria-selected="false">Portfolio & Opportunities</button>
         <button type="button" data-br-tab="profiles" aria-selected="false">Account & MineSite 360</button>
@@ -68,7 +68,7 @@
 
     <section class="br-not-ready" data-br-not-ready hidden>
         <p class="eyebrow">Published data required</p>
-        <h2>Business Review is not ready yet.</h2>
+        <h2>Business Overview is not ready yet.</h2>
         <p>A Published Mapping version is required before managerial analysis can be generated.</p>
         {% if can_preview %}<a class="button" href="{% url 'business-mapping-studio' %}">Open Publication Preview</a>{% else %}<p>Contact the Business Mapping Administrator.</p>{% endif %}
     </section>

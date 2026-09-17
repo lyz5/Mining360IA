@@ -13,8 +13,10 @@ from django.db.models import Max, Q, Sum
 from django.db.models.functions import TruncDay, TruncMonth
 from django.utils import timezone
 
+from .business_mapping_country_scope import operating_country_label
+
 from .business_mapping_access_service import authorized_account_codes
-from .business_mapping_source_service import MINING_DIVISION, MINING_REVENUE_LOBS, UNCLASSIFIED_REVENUE_LOB
+from .business_mapping_source_service import BUSINESS_REVENUE_DIVISIONS, MINING_DIVISION, MINING_REVENUE_LOBS, UNCLASSIFIED_REVENUE_LOB
 from .business_review_access_service import filter_published_rows
 from .models import (
     BusinessCommandCenterUserVisit,
@@ -67,7 +69,7 @@ def _growth(current, previous):
 
 
 class BusinessRevenuePeriodService:
-    PERIODS = {"ytd", "last_year", "current_month", "custom"}
+    PERIODS = {"ytd", "current_month", "last_year", "2024", "2023", "custom"}
     COMPARISONS = {"same_period_last_year", "previous_equivalent_period", "none"}
 
     @classmethod
@@ -80,6 +82,8 @@ class BusinessRevenuePeriodService:
             raise BusinessCommandCenterInputError("The selected Revenue period is not supported.")
         if comparison not in cls.COMPARISONS:
             raise BusinessCommandCenterInputError("The selected comparison period is not supported.")
+        if period == "2023":
+            comparison = "none"
         if period == "ytd":
             start, end = date(latest_date.year, 1, 1), latest_date
             label = f"YTD {latest_date.year}"
@@ -88,7 +92,11 @@ class BusinessRevenuePeriodService:
             label = str(latest_date.year - 1)
         elif period == "current_month":
             start, end = latest_date.replace(day=1), latest_date
-            label = latest_date.strftime("%B %Y")
+            label = latest_date.strftime("MTD %b %Y")
+        elif period in {"2024", "2023"}:
+            selected_year = int(period)
+            start, end = date(selected_year, 1, 1), date(selected_year, 12, 31)
+            label = period
         else:
             try:
                 start = date.fromisoformat(str(start_date or ""))
@@ -137,8 +145,16 @@ class BusinessCommandCenterService:
         values = raw if isinstance(raw, list) else str(raw).split(",")
         return {str(value).strip() for value in values if str(value).strip()}
 
+    def _division_scope(self):
+        scope = str(self.params.get("division_scope") or "mining").strip().lower()
+        if scope not in {"mining", "all_divisions"}:
+            raise BusinessCommandCenterInputError("The selected Division scope is not supported.")
+        return scope
+
     def _context(self):
-        revenue = RevenueSourceSnapshot.objects.filter(active=True, division__iexact=MINING_DIVISION)
+        division_scope = self._division_scope()
+        division_codes = tuple(BUSINESS_REVENUE_DIVISIONS) if division_scope == "all_divisions" else (MINING_DIVISION,)
+        revenue = RevenueSourceSnapshot.objects.filter(active=True, division__in=division_codes)
         account_scope = authorized_account_codes(self.user)
         if account_scope is not None:
             scope_filter = Q()
@@ -195,10 +211,10 @@ class BusinessCommandCenterService:
         for row in rows:
             codes = {str(value) for value in row.get("source_account_codes", []) if value}
             if row.get("account_id"):
-                item = customers.setdefault(row["account_id"], {"id": row["account_id"], "name": row.get("account_name"), "code": row.get("account_code"), "codes": set(), "country": row.get("business_country"), "key_account": row.get("key_account_name")})
+                item = customers.setdefault(row["account_id"], {"id": row["account_id"], "name": row.get("account_name"), "code": row.get("account_code"), "codes": set(), "country": operating_country_label(row.get("business_country")), "key_account": row.get("key_account_name")})
                 item["codes"].update(codes)
             if row.get("business_country"):
-                item = countries.setdefault(row["business_country"], {"id": row["business_country"], "name": row["business_country"], "codes": set()})
+                item = countries.setdefault(row["business_country"], {"id": row["business_country"], "name": operating_country_label(row["business_country"]), "codes": set()})
                 item["codes"].update(codes)
             if row.get("key_account_id"):
                 item = keys.setdefault(row["key_account_id"], {"id": row["key_account_id"], "name": row.get("key_account_name"), "codes": set()})
@@ -215,7 +231,7 @@ class BusinessCommandCenterService:
             item = groups.setdefault(group_id, {
                 "id": group_id,
                 "name": row.get("customer_country_group_name"),
-                "country": row.get("business_country"),
+                "country": operating_country_label(row.get("business_country")),
                 "codes": set(),
             })
             item["codes"].update(str(code) for code in row.get("source_account_codes", []) if code)
@@ -412,6 +428,7 @@ class BusinessCommandCenterService:
             "end": period["end_date"].isoformat(),
             "comparison": period["comparison"],
             "business_line": business_line,
+            "division_scope": self._division_scope(),
             "customers": sorted(self._csv("customer_ids")),
             "customer_groups": sorted(self._csv("customer_group_ids")),
             "countries": sorted(self._csv("country_ids")),
@@ -430,6 +447,8 @@ class BusinessCommandCenterService:
                 "comparison_start_date": period["comparison_start_date"].isoformat() if period["comparison_start_date"] else None,
                 "comparison_end_date": period["comparison_end_date"].isoformat() if period["comparison_end_date"] else None,
                 "business_line": business_line, "currency": "EUR",
+                "division_scope": self._division_scope(),
+                "division_codes": list(BUSINESS_REVENUE_DIVISIONS) if self._division_scope() == "all_divisions" else [MINING_DIVISION],
                 "published_mapping_version": publication.version if publication else None,
             },
             "freshness": {"data_through_date": period["end_date"].isoformat(), "source_snapshot_at": source_run.completed_at, "snapshot_id": str(source_run.id)},
@@ -487,10 +506,11 @@ class BusinessCommandCenterService:
         scope_key = {
             "user": self.user.pk, "source": str(source_run.pk), "publication": publication.version if publication else None,
             "period": {key: str(value) for key, value in period.items()}, "business_line": business_line,
+            "division_scope": self._division_scope(),
             "customers": sorted(self._csv("customer_ids")), "customer_groups": sorted(self._csv("customer_group_ids")),
             "countries": sorted(self._csv("country_ids")), "keys": sorted(self._csv("key_account_ids")),
         }
-        cache_key = "business-command-center:" + hashlib.sha256(json.dumps(scope_key, sort_keys=True).encode("utf-8")).hexdigest()
+        cache_key = "business-command-center:v2:" + hashlib.sha256(json.dumps(scope_key, sort_keys=True).encode("utf-8")).hexdigest()
         core = cache.get(cache_key)
         if core is None:
             core = self._build_core(revenue, publication, published_rows, selected_rows, period, business_line, source_run)

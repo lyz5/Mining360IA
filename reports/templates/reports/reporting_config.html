@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reporting Configuration | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260822-report-diagnostics-1">
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260917-refresh-health-1">
     <script src="{% static 'reports/reporting_config.js' %}?v=20260822-report-diagnostics-1" defer></script>
 </head>
 <body>
@@ -37,6 +37,10 @@
             <article><span>Total reports</span><strong>{{ report_count }}</strong></article>
             <article><span>Visible</span><strong>{{ visible_count }}</strong></article>
             <article><span>Hidden</span><strong>{{ hidden_count }}</strong></article>
+            <article><span>Healthy</span><strong>{{ healthy_count }}</strong></article>
+            <article><span>Refreshing</span><strong>{{ refreshing_count }}</strong></article>
+            <article><span>Failed</span><strong>{{ failed_count }}</strong></article>
+            <article><span>No Refresh</span><strong>{{ no_refresh_count }}</strong></article>
         </section>
 
         <form method="post" class="reporting-config-panel" data-reporting-config>

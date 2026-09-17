@@ -13,6 +13,7 @@ class PowerAutomateDiagnosticsTests(SimpleTestCase):
             "POWER_AUTOMATE_DAX_FLOW_URL": "https://flow.example/fpr",
             "POWER_AUTOMATE_AFTERMARKET_DAX_FLOW_URL": "https://flow.example/aftermarket",
             "POWER_AUTOMATE_LOGISTICS_DAX_FLOW_URL": "https://flow.example/logistics",
+            "POWER_AUTOMATE_FUEL_DAX_FLOW_URL": "https://flow.example/fuel",
         },
     )
     def test_aftermarket_dataset_uses_inspect_data_2(self):
@@ -28,6 +29,14 @@ class PowerAutomateDiagnosticsTests(SimpleTestCase):
             get_flow_url("Mine Logistics Report"),
             "https://flow.example/logistics",
         )
+        self.assertEqual(
+            get_flow_url("Fuel Monitoring Report V1"),
+            "https://flow.example/fuel",
+        )
+        self.assertEqual(
+            get_flow_url("Fuel Monitoring V1"),
+            "https://flow.example/fuel",
+        )
 
     @patch.dict("os.environ", {"POWER_AUTOMATE_AFTERMARKET_DAX_FLOW_URL": ""}, clear=False)
     @patch("reports.system_configuration_service.integration_value", return_value="")
@@ -42,6 +51,13 @@ class PowerAutomateDiagnosticsTests(SimpleTestCase):
     def test_logistics_flow_does_not_fall_back_to_other_flows(self, _credentials, _integration):
         with self.assertRaisesRegex(RuntimeError, "inspectData3 is not configured"):
             execute_dax_via_flow({"datasetName": "Mine Logistics Report", "query": "EVALUATE ROW()"})
+
+    @patch.dict("os.environ", {"POWER_AUTOMATE_FUEL_DAX_FLOW_URL": ""}, clear=False)
+    @patch("reports.system_configuration_service.integration_value", return_value="")
+    @patch("reports.power_automate._local_powerbi_credentials", return_value={})
+    def test_fuel_flow_does_not_fall_back_to_fpr(self, _credentials, _integration):
+        with self.assertRaisesRegex(RuntimeError, "inspectData4 is not configured"):
+            execute_dax_via_flow({"datasetName": "Fuel Monitoring Report V1", "query": "EVALUATE ROW()"})
 
     @patch("reports.power_automate.time.sleep")
     @patch("reports.power_automate.get_flow_url", return_value="https://secret-flow.example/?sig=secret")

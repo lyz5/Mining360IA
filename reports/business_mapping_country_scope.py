@@ -36,6 +36,18 @@ def normalize_operating_country(value):
     return code if code in NEEMBA_OPERATING_COUNTRIES else ""
 
 
+def operating_country_label(value):
+    """Return the governed executive label while preserving unknown source values."""
+    raw = str(value or "").strip()
+    if not raw:
+        return ""
+    code = raw.upper()
+    if code in NEEMBA_OPERATING_COUNTRIES:
+        return NEEMBA_OPERATING_COUNTRIES[code]
+    labels = {label.casefold(): label for label in NEEMBA_OPERATING_COUNTRIES.values()}
+    return labels.get(raw.casefold(), raw)
+
+
 def operating_country_for_company(company_code, branch_code=""):
     del branch_code  # Reserved for future governed branch-level exceptions.
     return NEEMBA_COMPANY_OPERATING_COUNTRY.get(str(company_code or "").strip().upper(), "")

@@ -68,3 +68,25 @@ class ResourcesLayoutTests(TestCase):
                 invalidate_resource_inventory()
                 self.assertEqual(len(list_resources()), 61)
         invalidate_resource_inventory()
+
+    def test_resource_search_covers_full_inventory_and_normalizes_terms(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for index in range(60):
+                (root / f"document-{index:02d}.pdf").write_bytes(b"pdf")
+            target = root / "General" / "Référence Technique"
+            target.mkdir(parents=True)
+            (target / "Caterpillar Performance Handbook.pdf").write_bytes(b"pdf")
+
+            with patch("reports.resource_library.RESOURCE_ROOT", root):
+                invalidate_resource_inventory()
+                results = list_resources("handbook caterpillar reference")
+
+            self.assertEqual([item.title for item in results], ["Caterpillar Performance Handbook"])
+        invalidate_resource_inventory()
+
+    def test_resources_page_uses_server_wide_debounced_search(self):
+        response = self.client.get(reverse("resources"))
+
+        self.assertContains(response, "data-resource-search-form")
+        self.assertContains(response, "resourceSearchForm.requestSubmit()")

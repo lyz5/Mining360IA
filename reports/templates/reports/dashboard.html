@@ -9,7 +9,7 @@
     <title>Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
     {% if availability_command_center_enabled %}
-    <link rel="stylesheet" href="{% static 'reports/homepage_command_center.css' %}?v=20260916-metric-center">
+    <link rel="stylesheet" href="{% static 'reports/homepage_command_center.css' %}?v=20260917-wide-layout-hardening">
     {% endif %}
 </head>
 <body{% if availability_command_center_enabled %} class="availability-home-body"{% endif %}>
@@ -33,14 +33,14 @@
                         <i style="--blade-angle: 18deg; --blade-delay: 220ms"></i>
                         <i style="--blade-angle: 54deg; --blade-delay: 330ms"></i>
                     </div>
-                    <strong>Preparing your command center</strong>
+                    <strong>Preparing your Excellence Center</strong>
                     <span>Synchronizing fleet intelligence</span>
                 </div>
             </div>
             <header class="command-header">
                 <div class="command-header__identity">
                     <p class="command-kicker">Mining 360</p>
-                    <h1 data-center-title>Fleet Availability Command Center</h1>
+                    <h1 data-center-title>Fleet Availability Excellence Center</h1>
                     <p data-center-subtitle>Immediate, intelligent insight into fleet availability.</p>
                 </div>
                 <div class="command-header__status" aria-label="Data connection status">
@@ -60,6 +60,8 @@
                         <option value="availability">Availability</option>
                         <option value="mtbs">MTBS</option>
                         <option value="mtbf">MTBF</option>
+                        <option value="mttr">MTTR</option>
+                        <option value="fuel">Fuel</option>
                     </select>
                 </label>
                 <div class="control-group period-group" role="group" aria-labelledby="period-control-label">
@@ -88,7 +90,65 @@
 
             <div class="analysis-breadcrumb" data-breadcrumb aria-label="Analysis path"></div>
 
-            <section class="availability-stage" aria-labelledby="availability-title">
+            <section class="fuel-workspace" data-fuel-workspace data-export-visual="fuel-consumption" data-export-ready="false" hidden aria-labelledby="fuel-workspace-title">
+                <article class="fuel-kpi-panel">
+                    <header class="fuel-panel-heading">
+                        <span class="fuel-icon" aria-hidden="true">LPH</span>
+                        <div>
+                            <p class="command-kicker">Fuel Consumption</p>
+                            <h2 id="fuel-workspace-title">Average Fuel Rate (LPH)</h2>
+                            <span>Selected Period: <strong data-fuel-period>Year to Date</strong></span>
+                        </div>
+                    </header>
+                    <div class="fuel-gauge" data-fuel-gauge role="img" aria-label="Average Fuel Rate loading">
+                        <div class="fuel-gauge__inner">
+                            <span>Fuel</span>
+                            <strong data-fuel-value>--</strong>
+                            <small>L/h</small>
+                            <em>Average Fuel Rate</em>
+                        </div>
+                    </div>
+                    <div class="fuel-comparison-strip">
+                        <div data-fuel-comparison>
+                            <span data-fuel-delta>--</span>
+                            <small>vs same period last year</small>
+                            <strong data-fuel-delta-percent>--</strong>
+                        </div>
+                        <div>
+                            <span data-fuel-benchmark>--</span>
+                            <small>Fleet Benchmark</small>
+                            <strong>Authorized scope</strong>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="fuel-distribution-panel">
+                    <header class="fuel-distribution-heading">
+                        <div>
+                            <p class="command-kicker">Distribution</p>
+                            <h2>Fuel Consumption Distribution</h2>
+                            <span>Smoothed equipment density · Exact 20 L/h band share on hover</span>
+                        </div>
+                        <strong class="fuel-scope-chip" data-fuel-scope>All MineSites</strong>
+                    </header>
+                    <div class="fuel-zone-labels" aria-hidden="true">
+                        <div class="is-low"><strong>Low</strong><span>&lt; 40 L/h</span><small>Efficient operation</small></div>
+                        <div class="is-normal"><strong>Normal</strong><span>40 - 80 L/h</span><small>Expected range</small></div>
+                        <div class="is-high"><strong>High</strong><span>80 - 120 L/h</span><small>Monitor closely</small></div>
+                        <div class="is-critical"><strong>Very High</strong><span>&gt; 120 L/h</span><small>Investigate</small></div>
+                    </div>
+                    <div class="fuel-chart" data-fuel-chart role="img" aria-label="Fuel consumption distribution loading"></div>
+                    <div class="fuel-statistics" data-fuel-statistics>
+                        <div><span>Lowest LPH</span><strong>--</strong></div>
+                        <div><span>25th Percentile</span><strong>--</strong></div>
+                        <div><span>Median</span><strong>--</strong></div>
+                        <div><span>75th Percentile</span><strong>--</strong></div>
+                        <div><span>Highest LPH</span><strong>--</strong></div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="availability-stage" data-fleet-workspace aria-labelledby="availability-title">
                 <div class="availability-hero" data-export-visual="physical-availability" data-export-ready="false" aria-live="polite">
                     <div class="availability-hero__heading">
                         <div>
@@ -158,14 +218,14 @@
                 </div>
             </section>
 
-            <section class="summary-strip" data-summary-strip aria-label="Availability summary">
+            <section class="summary-strip" data-fleet-workspace data-summary-strip aria-label="Availability summary">
                 <div><span>MineSites</span><strong data-summary="minesite_count">--</strong></div>
                 <div><span>Equipment</span><strong data-summary="equipment_count">--</strong></div>
                 <div><span>Downtime Hours</span><strong data-summary="downtime_hours">--</strong></div>
                 <div><span>Selected scope</span><strong data-summary="scope">Overall</strong></div>
             </section>
 
-            <section class="breakdown-section" data-breakdown-section aria-labelledby="breakdown-title" hidden>
+            <section class="breakdown-section" data-fleet-workspace data-breakdown-section aria-labelledby="breakdown-title" hidden>
                 <div class="section-heading-row breakdown-heading">
                     <div>
                         <h2 id="breakdown-title" data-breakdown-title>Availability by Mine Site</h2>
@@ -228,7 +288,7 @@
             </section>
         </main>
         <script src="{% static 'reports/visual_export.js' %}?v=20260901-1" defer></script>
-        <script src="{% static 'reports/homepage_command_center.js' %}?v=20260916-metric-center-2" defer></script>
+        <script src="{% static 'reports/homepage_command_center.js' %}?v=20260917-excellence-center" defer></script>
     {% else %}
         <main class="app-shell">
             <header class="topbar">

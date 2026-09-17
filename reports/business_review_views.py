@@ -64,7 +64,7 @@ def business_review_landing(request):
 @login_required
 def business_command_center(request):
     if not _command_center_allowed(request.user):
-        return HttpResponseForbidden("You do not have access to Business Command Center.")
+        return HttpResponseForbidden("You do not have access to Business Overview.")
     legacy_requested = request.GET.get("ui") == "legacy" and is_platform_admin(request.user)
     v2_enabled = feature_enabled("ENABLE_BUSINESS_COMMAND_CENTER_V2", request.user)
     template_name = "reports/business_command_center_v2.html" if v2_enabled and not legacy_requested else "reports/business_command_center_legacy.html"
@@ -485,14 +485,14 @@ def _not_ready():
     return JsonResponse({
         "ready": False,
         "status": "NOT_READY",
-        "message": "Business Review is not ready yet. A Published Mapping version is required before managerial analysis can be generated.",
+        "message": "Business Overview is not ready yet. A Published Mapping version is required before managerial analysis can be generated.",
     })
 
 
 @login_required
 def business_review(request):
     if not business_review_enabled(request.user):
-        return HttpResponseForbidden("You do not have access to Business Review.")
+        return HttpResponseForbidden("You do not have access to Business Overview.")
     return render(request, "reports/business_review.html", {
         "active_section": "business-review",
         "can_create_action": has_business_review_permission(request.user, "create_business_review_action") and feature_enabled("ENABLE_BUSINESS_REVIEW_ACTIONS", request.user),
@@ -820,7 +820,7 @@ def saved_views_api(request):
         return JsonResponse({"detail": "Forbidden"}, status=403)
     if request.method == "POST":
         data = _payload(request)
-        view, _ = BusinessReviewSavedView.objects.update_or_create(user=request.user, name=data.get("name", "My Business Review"), defaults={"filters_json": data.get("filters", {}), "sorting_json": data.get("sorting", []), "visualization": data.get("visualization", "executive_overview")})
+        view, _ = BusinessReviewSavedView.objects.update_or_create(user=request.user, name=data.get("name", "My Business Overview"), defaults={"filters_json": data.get("filters", {}), "sorting_json": data.get("sorting", []), "visualization": data.get("visualization", "executive_overview")})
         return JsonResponse({"ok": True, "id": str(view.id)}, status=201)
     return JsonResponse({"results": list(request.user.business_review_saved_views.values("id", "name", "filters_json", "sorting_json", "visualization", "updated_at"))})
 

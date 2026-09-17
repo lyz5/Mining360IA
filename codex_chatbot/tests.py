@@ -62,18 +62,29 @@ class CodexChatbotAccessTests(TestCase):
     def test_superuser_sees_both_codex_menu_entries(self):
         self.client.force_login(self.superuser)
 
-        response = self.client.get(reverse("dashboard"))
+        response = self.client.get(reverse("excellence-center"))
 
         self.assertContains(response, reverse("codex_chatbot:home"), count=1)
-        self.assertContains(response, "Codex Chatbot", count=1)
+        self.assertContains(response, "M360 Chatbot", count=1)
         self.assertContains(response, reverse("codex_admin:home"), count=1)
         self.assertContains(response, "Codex Admin", count=1)
+
+    @override_settings(ENABLE_CODEX_CHATBOT="Admin Only")
+    def test_chatbot_uses_m360_brand_and_exposes_business_review_entrypoint(self):
+        self.client.force_login(self.superuser)
+
+        response = self.client.get(reverse("codex_chatbot:home"))
+
+        self.assertContains(response, "M360 Chatbot")
+        self.assertContains(response, "BUSINESS OVERVIEW")
+        self.assertContains(response, "Revenue Parts YTD")
+        self.assertNotContains(response, "Codex Chatbot")
 
     @override_settings(ENABLE_CODEX_CHATBOT="Admin Only", ENABLE_CODEX_ADMIN="Admin Only")
     def test_platform_administrator_sees_and_opens_both_codex_modules(self):
         self.client.force_login(self.platform_admin)
 
-        dashboard = self.client.get(reverse("dashboard"))
+        dashboard = self.client.get(reverse("excellence-center"))
 
         self.assertContains(dashboard, reverse("codex_chatbot:home"), count=1)
         self.assertContains(dashboard, reverse("codex_admin:home"), count=1)

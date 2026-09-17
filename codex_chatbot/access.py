@@ -30,7 +30,7 @@ def codex_chatbot_access_required(view):
         if not getattr(request.user, "is_authenticated", False):
             return redirect_to_login(request.get_full_path(), settings.LOGIN_URL)
         if not chatbot_access_allowed(request.user):
-            raise PermissionDenied("Codex Chatbot access is not enabled for this user.")
+            raise PermissionDenied("M360 Chatbot access is not enabled for this user.")
         return view(request, *args, **kwargs)
 
     return wrapped

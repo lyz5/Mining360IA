@@ -10340,7 +10340,7 @@ body.data-browser-fullscreen .data-browser-layout {
 
 .reporting-config-kpis {
     display: grid;
-    grid-template-columns: repeat(3, minmax(150px, 220px));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 12px;
     margin: 20px 0;
 }

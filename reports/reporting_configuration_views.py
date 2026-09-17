@@ -62,6 +62,17 @@ def _report_id(runtime):
     return str(getattr(runtime, "id", "") or "")
 
 
+def _refresh_health_code(value):
+    code = str(value or "").strip().casefold().replace(" ", "")
+    if code == "completed":
+        return "healthy"
+    if code == "failed":
+        return "failed"
+    if code in {"unknown", "inprogress", "running", "notstarted", "refreshing"}:
+        return "refreshing"
+    return "no_refresh"
+
+
 def _runtime_report(report_id, *, refresh=False):
     reports = list(list_workspace_reports_with_refresh() if refresh else list_workspace_reports())
     return next((item for item in reports if _report_id(item) == str(report_id)), None), reports
@@ -162,6 +173,7 @@ def configuration_list_api(request):
         page = max(int(request.GET.get("page") or 1), 1)
         start = (page - 1) * page_size
         all_items = [serialize_list_item(item, configurations.get(_report_id(item)), preferences.get(_report_id(item))) for item in reports]
+        refresh_codes = [_refresh_health_code(item["refresh_status"]) for item in all_items]
         summary = {
             "total": len(all_items),
             "visible": sum(item["visible"] for item in all_items),
@@ -171,6 +183,10 @@ def configuration_list_api(request):
             "visual_complete": sum(item["visual_identity_status"] == "complete" for item in all_items),
             "visual_review": sum(item["visual_identity_status"] in {"partial", "default", "needs_review"} for item in all_items),
             "broken_assets": sum(item["visual_identity_status"] == "invalid" for item in all_items),
+            "healthy": refresh_codes.count("healthy"),
+            "refreshing": refresh_codes.count("refreshing"),
+            "failed": refresh_codes.count("failed"),
+            "no_refresh": refresh_codes.count("no_refresh"),
         }
         return JsonResponse({"ok": True, "count": len(items), "page": page, "page_size": page_size, "summary": summary, "results": items[start:start + page_size]})
     except Exception as exc:

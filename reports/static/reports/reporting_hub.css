@@ -313,3 +313,8 @@
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+@media (min-width: 1241px) {
+    .reporting-toolbar { grid-template-columns: minmax(320px, 1fr) minmax(520px, .9fr); }
+    .reporting-toolbar-fields { grid-column: auto; }
+}

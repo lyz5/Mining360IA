@@ -35,7 +35,7 @@ TERMINAL_RUN_STATUSES = {
 def _deterministic_answer(evidence: dict) -> str:
     kind = evidence.get("kind")
     if kind == "revenue_access_restricted":
-        return "Vous n’avez pas l’autorisation de consulter les informations financières du Business Command Center."
+        return "Vous n’avez pas l’autorisation de consulter les informations financières de Business Overview."
     if kind == "revenue_unavailable":
         return "Les données Revenue gouvernées sont temporairement indisponibles pour cette demande."
     if kind == "revenue_scope_ambiguous":
@@ -198,7 +198,7 @@ def _compose_general_with_codex(
         timeout_seconds=float(getattr(settings, "CODEX_CHATBOT_GENERAL_TIMEOUT_SECONDS", 120)),
         cancellation_requested=cancellation_requested,
         base_instructions=(
-            "You are Codex Chatbot inside Mining 360. In general conversation mode, converse naturally "
+            "You are M360 Chatbot inside Mining 360. In general conversation mode, converse naturally "
             "and helpfully using general model knowledge. Do not use shell, files, web search, external tools, "
             "or claim access to current information. Never invent Mining 360 business values or internal facts. "
             "If internal business data is requested without verified evidence, clearly say that a governed "
