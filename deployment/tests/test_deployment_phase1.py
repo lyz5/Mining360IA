@@ -453,6 +453,9 @@ class DeploymentFrontendContractTests(SimpleTestCase):
 
         self.assertIn('MINING360_TRUSTED_PROXY" "127.0.0.1"', script)
         self.assertIn("--trusted-proxy=$trustedProxy", script)
+        self.assertIn('ENABLE_CODEX_CHATBOT" "Admin Only"', script)
+        self.assertIn("manage.py', 'run_codex_worker'", script)
+        self.assertIn("codex-worker.err.log", script)
         self.assertIn(
             '--trusted-proxy-headers="x-forwarded-proto x-forwarded-host"',
             script,

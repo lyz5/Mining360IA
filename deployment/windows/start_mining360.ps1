@@ -63,6 +63,9 @@ $env:MINING360_CSRF_COOKIE_SECURE = Get-Mining360Setting "MINING360_CSRF_COOKIE_
 $env:MINING360_SECURE_HSTS_SECONDS = Get-Mining360Setting "MINING360_SECURE_HSTS_SECONDS" "3600"
 $env:MINING360_STATIC_ROOT = Join-Path $Root "shared\static"
 $env:MINING360_MEDIA_ROOT = Join-Path $Root "shared\media"
+$env:ENABLE_CODEX_CHATBOT = Get-Mining360Setting "ENABLE_CODEX_CHATBOT" "Admin Only"
+$env:ENABLE_CODEX_ADMIN = Get-Mining360Setting "ENABLE_CODEX_ADMIN" "Admin Only"
+$env:CODEX_CHATBOT_APP_SERVER_ENABLED = Get-Mining360Setting "CODEX_CHATBOT_APP_SERVER_ENABLED" "1"
 $defaultEntraRedirect = "$($env:MINING360_PUBLIC_BASE_URL.TrimEnd('/'))/auth/callback/"
 $env:ENTRA_REDIRECT_URI = Get-Mining360Setting "ENTRA_REDIRECT_URI" $defaultEntraRedirect
 $env:AZURE_AD_REDIRECT_URI = Get-Mining360Setting "AZURE_AD_REDIRECT_URI" $env:ENTRA_REDIRECT_URI
@@ -71,6 +74,20 @@ $trustedProxy = Get-Mining360Setting "MINING360_TRUSTED_PROXY" "127.0.0.1"
 
 if (-not $env:MINING360_SECRET_KEY) {
     throw "MINING360_SECRET_KEY is not configured for the runtime account."
+}
+
+$codexWorker = @(
+    Get-CimInstance Win32_Process -ErrorAction SilentlyContinue | Where-Object {
+        $_.CommandLine -like '*C:\Mining360\app\manage.py*run_codex_worker*'
+    }
+)
+if (-not $codexWorker) {
+    Start-Process -FilePath $pythonPath `
+        -ArgumentList @('manage.py', 'run_codex_worker', '--poll-seconds', '0.5') `
+        -WorkingDirectory $appPath `
+        -WindowStyle Hidden `
+        -RedirectStandardOutput (Join-Path $logPath 'codex-worker.out.log') `
+        -RedirectStandardError (Join-Path $logPath 'codex-worker.err.log')
 }
 
 # Windows PowerShell 5.1 converts native stderr output into error records.

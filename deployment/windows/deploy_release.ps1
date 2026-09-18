@@ -104,7 +104,8 @@ function Stop-Mining360Runtime {
     $runtimeProcesses = @(
         Get-CimInstance Win32_Process | Where-Object {
             ($_.CommandLine -like '*C:\Mining360\app\deployment\windows\start_mining360.ps1*') -or
-            ($_.CommandLine -like '*C:\Mining360\venv\Scripts\waitress-serve.exe*')
+            ($_.CommandLine -like '*C:\Mining360\venv\Scripts\waitress-serve.exe*') -or
+            ($_.CommandLine -like '*C:\Mining360\app\manage.py*run_codex_worker*')
         }
     )
     foreach ($process in $runtimeProcesses) {
