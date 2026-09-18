@@ -457,6 +457,8 @@ class DeploymentFrontendContractTests(SimpleTestCase):
         self.assertIn('MINING360_TRUSTED_PROXY" "127.0.0.1"', script)
         self.assertIn("--trusted-proxy=$trustedProxy", script)
         self.assertIn('ENABLE_CODEX_CHATBOT" "Admin Only"', script)
+        self.assertIn('CODEX_CHATBOT_CLI_PATH" $codexCliDefault', script)
+        self.assertIn('AppData\\Roaming\\npm\\codex.cmd', script)
         self.assertIn('CODEX_CHATBOT_HOME" (Join-Path $env:USERPROFILE ".codex")', script)
         self.assertIn('$managePath = Join-Path $appPath "manage.py"', script)
         self.assertIn("-ArgumentList @($managePath, 'run_codex_worker'", script)

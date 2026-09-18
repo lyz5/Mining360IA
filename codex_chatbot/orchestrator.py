@@ -32,6 +32,18 @@ TERMINAL_RUN_STATUSES = {
 }
 
 
+def _resolve_codex_cli_path() -> str:
+    configured_path = str(getattr(settings, "CODEX_CHATBOT_CLI_PATH", "") or "").strip()
+    if configured_path:
+        if Path(configured_path).is_file():
+            return configured_path
+        raise AppServerTurnError("The configured Codex CLI path is not available on the application server.")
+    discovered_path = shutil.which("codex")
+    if discovered_path:
+        return discovered_path
+    raise AppServerTurnError("Codex CLI is not available on the application server.")
+
+
 def _deterministic_answer(evidence: dict) -> str:
     kind = evidence.get("kind")
     if kind == "revenue_access_restricted":
@@ -133,9 +145,7 @@ def _compose_with_codex(
 ) -> tuple[str, str, str]:
     if not getattr(settings, "CODEX_CHATBOT_APP_SERVER_ENABLED", False):
         return _deterministic_answer(evidence), native_thread_id, ""
-    cli_path = shutil.which("codex")
-    if not cli_path:
-        raise AppServerTurnError("Codex CLI is not available on the application server.")
+    cli_path = _resolve_codex_cli_path()
     prompt_evidence = dict(evidence)
     if prompt_evidence.get("kind") == "availability_summary":
         prompt_evidence = {
@@ -174,9 +184,7 @@ def _compose_general_with_codex(
 ) -> tuple[str, str, str]:
     if not getattr(settings, "CODEX_CHATBOT_APP_SERVER_ENABLED", False):
         raise AppServerTurnError("Codex general conversation is not enabled.")
-    cli_path = shutil.which("codex")
-    if not cli_path:
-        raise AppServerTurnError("Codex CLI is not available on the application server.")
+    cli_path = _resolve_codex_cli_path()
     history = ""
     if not conversation.native_thread_id:
         messages = list(conversation.messages.order_by("created_at").values("role", "content")[:20])

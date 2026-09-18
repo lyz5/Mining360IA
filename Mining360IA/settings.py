@@ -111,6 +111,7 @@ ENABLE_CODEX_ADMIN = os.getenv('ENABLE_CODEX_ADMIN', 'Disabled')
 CODEX_CHATBOT_APP_SERVER_ENABLED = _environment_boolean(
     'CODEX_CHATBOT_APP_SERVER_ENABLED', False
 )
+CODEX_CHATBOT_CLI_PATH = os.getenv('CODEX_CHATBOT_CLI_PATH', '').strip()
 CODEX_CHATBOT_HOME = os.getenv(
     'CODEX_CHATBOT_HOME', str(BASE_DIR / '.test-runtime' / 'codex-chatbot-home')
 )
