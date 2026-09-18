@@ -113,7 +113,13 @@ function Stop-Mining360Runtime {
             )
         }
     )
-    foreach ($process in $runtimeProcesses) {
+    $runtimeProcessIds = @($runtimeProcesses | ForEach-Object { $_.ProcessId })
+    $runtimeRoots = @(
+        $runtimeProcesses | Where-Object {
+            $runtimeProcessIds -notcontains $_.ParentProcessId
+        }
+    )
+    foreach ($process in $runtimeRoots) {
         & taskkill.exe /PID $process.ProcessId /T /F *>> $log
     }
     $deadline = (Get-Date).AddSeconds(30)

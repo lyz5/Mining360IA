@@ -430,6 +430,8 @@ class DeploymentFrontendContractTests(SimpleTestCase):
         self.assertIn('$runtimePython = "C:\\Mining360\\venv\\Scripts\\python.exe"', script)
         self.assertIn('$_.ExecutablePath -eq $runtimePython', script)
         self.assertIn("'*manage.py*run_codex_worker*'", script)
+        self.assertIn('$runtimeProcessIds -notcontains $_.ParentProcessId', script)
+        self.assertIn('foreach ($process in $runtimeRoots)', script)
         self.assertIn("taskkill.exe /PID $process.ProcessId /T /F", script)
         self.assertIn("system_doctor --json", script)
         self.assertIn("report-media-{0}.zip", script)
