@@ -101,11 +101,16 @@ function Stop-Mining360Runtime {
     # schtasks /End stops the PowerShell task host, but its Waitress/Python
     # descendants can remain alive. Terminate only processes whose command
     # lines belong to the controlled Mining360 runtime tree.
+    $runtimePython = "C:\Mining360\venv\Scripts\python.exe"
     $runtimeProcesses = @(
         Get-CimInstance Win32_Process | Where-Object {
             ($_.CommandLine -like '*C:\Mining360\app\deployment\windows\start_mining360.ps1*') -or
             ($_.CommandLine -like '*C:\Mining360\venv\Scripts\waitress-serve.exe*') -or
-            ($_.CommandLine -like '*C:\Mining360\app\manage.py*run_codex_worker*')
+            ($_.CommandLine -like '*C:\Mining360\app\manage.py*run_codex_worker*') -or
+            (
+                $_.ExecutablePath -eq $runtimePython -and
+                $_.CommandLine -like '*manage.py*run_codex_worker*'
+            )
         }
     )
     foreach ($process in $runtimeProcesses) {

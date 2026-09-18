@@ -5,6 +5,7 @@ param(
 
 $ErrorActionPreference = "Stop"
 $appPath = Join-Path $Root "app"
+$managePath = Join-Path $appPath "manage.py"
 $pythonPath = Join-Path $Root "venv\Scripts\python.exe"
 $waitressPath = Join-Path $Root "venv\Scripts\waitress-serve.exe"
 $logPath = Join-Path $Root "logs"
@@ -82,12 +83,16 @@ if (-not $env:MINING360_SECRET_KEY) {
 
 $codexWorker = @(
     Get-CimInstance Win32_Process -ErrorAction SilentlyContinue | Where-Object {
-        $_.CommandLine -like '*C:\Mining360\app\manage.py*run_codex_worker*'
+        ($_.CommandLine -like "*$managePath*run_codex_worker*") -or
+        (
+            $_.ExecutablePath -eq $pythonPath -and
+            $_.CommandLine -like '*manage.py*run_codex_worker*'
+        )
     }
 )
 if (-not $codexWorker) {
     Start-Process -FilePath $pythonPath `
-        -ArgumentList @('manage.py', 'run_codex_worker', '--poll-seconds', '0.5') `
+        -ArgumentList @($managePath, 'run_codex_worker', '--poll-seconds', '0.5') `
         -WorkingDirectory $appPath `
         -WindowStyle Hidden `
         -RedirectStandardOutput (Join-Path $logPath 'codex-worker.out.log') `

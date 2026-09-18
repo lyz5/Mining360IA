@@ -427,6 +427,9 @@ class DeploymentFrontendContractTests(SimpleTestCase):
         self.assertIn("Get-NetTCPConnection -LocalPort 8000", script)
         self.assertIn("Stop-Process -Id $listener.OwningProcess", script)
         self.assertIn("Get-CimInstance Win32_Process", script)
+        self.assertIn('$runtimePython = "C:\\Mining360\\venv\\Scripts\\python.exe"', script)
+        self.assertIn('$_.ExecutablePath -eq $runtimePython', script)
+        self.assertIn("'*manage.py*run_codex_worker*'", script)
         self.assertIn("taskkill.exe /PID $process.ProcessId /T /F", script)
         self.assertIn("system_doctor --json", script)
         self.assertIn("report-media-{0}.zip", script)
@@ -455,8 +458,10 @@ class DeploymentFrontendContractTests(SimpleTestCase):
         self.assertIn("--trusted-proxy=$trustedProxy", script)
         self.assertIn('ENABLE_CODEX_CHATBOT" "Admin Only"', script)
         self.assertIn('CODEX_CHATBOT_HOME" (Join-Path $env:USERPROFILE ".codex")', script)
+        self.assertIn('$managePath = Join-Path $appPath "manage.py"', script)
+        self.assertIn("-ArgumentList @($managePath, 'run_codex_worker'", script)
+        self.assertIn('$_.ExecutablePath -eq $pythonPath', script)
         self.assertIn('shared\\codex-chatbot-workspace', script)
-        self.assertIn("manage.py', 'run_codex_worker'", script)
         self.assertIn("codex-worker.err.log", script)
         self.assertIn(
             '--trusted-proxy-headers="x-forwarded-proto x-forwarded-host"',
