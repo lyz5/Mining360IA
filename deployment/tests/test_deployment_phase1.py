@@ -454,6 +454,8 @@ class DeploymentFrontendContractTests(SimpleTestCase):
         self.assertIn('MINING360_TRUSTED_PROXY" "127.0.0.1"', script)
         self.assertIn("--trusted-proxy=$trustedProxy", script)
         self.assertIn('ENABLE_CODEX_CHATBOT" "Admin Only"', script)
+        self.assertIn('CODEX_CHATBOT_HOME" (Join-Path $env:USERPROFILE ".codex")', script)
+        self.assertIn('shared\\codex-chatbot-workspace', script)
         self.assertIn("manage.py', 'run_codex_worker'", script)
         self.assertIn("codex-worker.err.log", script)
         self.assertIn(
