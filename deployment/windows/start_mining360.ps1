@@ -73,6 +73,13 @@ $env:CODEX_CHATBOT_HOME = Get-Mining360Setting "CODEX_CHATBOT_HOME" (Join-Path $
 $env:CODEX_CHATBOT_WORKSPACE = Get-Mining360Setting "CODEX_CHATBOT_WORKSPACE" (Join-Path $Root "shared\codex-chatbot-workspace")
 $env:CODEX_CHATBOT_ARTIFACT_ROOT = Get-Mining360Setting "CODEX_CHATBOT_ARTIFACT_ROOT" (Join-Path $Root "shared\codex-chatbot-artifacts")
 New-Item -ItemType Directory -Force -Path $env:CODEX_CHATBOT_WORKSPACE, $env:CODEX_CHATBOT_ARTIFACT_ROOT | Out-Null
+$codexRuntimeStatus = [pscustomobject]@{
+    CliConfigured = [bool]$env:CODEX_CHATBOT_CLI_PATH
+    CliExists = Test-Path -LiteralPath $env:CODEX_CHATBOT_CLI_PATH -PathType Leaf
+    HomeConfigured = [bool]$env:CODEX_CHATBOT_HOME
+    HomeExists = Test-Path -LiteralPath $env:CODEX_CHATBOT_HOME -PathType Container
+}
+$codexRuntimeStatus | ConvertTo-Json -Compress | Set-Content -LiteralPath (Join-Path $logPath 'codex-runtime-status.json') -Encoding UTF8
 $defaultEntraRedirect = "$($env:MINING360_PUBLIC_BASE_URL.TrimEnd('/'))/auth/callback/"
 $env:ENTRA_REDIRECT_URI = Get-Mining360Setting "ENTRA_REDIRECT_URI" $defaultEntraRedirect
 $env:AZURE_AD_REDIRECT_URI = Get-Mining360Setting "AZURE_AD_REDIRECT_URI" $env:ENTRA_REDIRECT_URI

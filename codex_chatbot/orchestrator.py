@@ -34,14 +34,22 @@ TERMINAL_RUN_STATUSES = {
 
 def _resolve_codex_cli_path() -> str:
     configured_path = str(getattr(settings, "CODEX_CHATBOT_CLI_PATH", "") or "").strip()
-    if configured_path:
-        if Path(configured_path).is_file():
-            return configured_path
-        raise AppServerTurnError("The configured Codex CLI path is not available on the application server.")
     discovered_path = shutil.which("codex")
+    codex_home = Path(settings.CODEX_CHATBOT_HOME).expanduser()
+    profile_cli_path = (
+        codex_home.parent / "AppData" / "Roaming" / "npm" / "codex.cmd"
+        if codex_home.name.lower() == ".codex"
+        else None
+    )
+    if configured_path and Path(configured_path).is_file():
+        return configured_path
     if discovered_path:
         return discovered_path
-    raise AppServerTurnError("Codex CLI is not available on the application server.")
+    if profile_cli_path and profile_cli_path.is_file():
+        return str(profile_cli_path)
+    raise AppServerTurnError(
+        "Codex CLI is not available for the configured Codex application profile."
+    )
 
 
 def _deterministic_answer(evidence: dict) -> str:

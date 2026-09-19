@@ -462,6 +462,7 @@ class DeploymentFrontendContractTests(SimpleTestCase):
         self.assertIn('CODEX_CHATBOT_CLI_PATH" $codexCliDefault', script)
         self.assertIn('AppData\\Roaming\\npm\\codex.cmd', script)
         self.assertIn('CODEX_CHATBOT_HOME" (Join-Path $env:USERPROFILE ".codex")', script)
+        self.assertIn("codex-runtime-status.json", script)
         self.assertIn('$managePath = Join-Path $appPath "manage.py"', script)
         self.assertIn("-ArgumentList @($managePath, 'run_codex_worker'", script)
         self.assertIn('$_.ExecutablePath -eq $pythonPath', script)
