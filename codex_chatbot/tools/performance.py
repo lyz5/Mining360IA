@@ -39,7 +39,7 @@ def availability_analysis_from_question(question: str, *, user) -> dict | None:
     if not (is_platform_admin(user) or has_module_access(user, "reporting")):
         return {"kind": "availability_access_restricted"}
 
-    intent = extract_intent(question, "performance") or {}
+    intent = extract_intent(question, "performance", allow_llm=False) or {}
     metric = str(intent.get("primary_metric") or intent.get("metric") or "").casefold()
     if metric and metric != "availability":
         return None

@@ -1634,7 +1634,7 @@
             status.textContent = run.status || "Completed";
         }
         if (lastRun && run) {
-            lastRun.textContent = run.created_at ? new Date(run.created_at).toLocaleString() : "-";
+            lastRun.textContent = run.created_at ? new Date(run.created_at).toLocaleString("en-GB") : "-";
         }
         if (count && run) {
             count.textContent = String(run.controls_count || 0);

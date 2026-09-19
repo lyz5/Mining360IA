@@ -30,10 +30,8 @@ PAGES = (
     ("04-system-config", "/system-config/", "System Config"),
     ("05-ai-config", "/ia-config/", "AI Config"),
     ("06-ai-agents", "/ia-config/agents/", "AI Agents"),
-    ("07-api-management", "/ai-config/api-management/", "API Management"),
     ("08-reporting-config", "/config/reporting/", "Reporting Configuration"),
     ("09-deployment-process", "/config/deployment/", "Deployment Process"),
-    ("10-openai-api-usage", "/config/openai-usage/", "OpenAI API Usage"),
 )
 
 

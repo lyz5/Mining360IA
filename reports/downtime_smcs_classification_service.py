@@ -15,7 +15,6 @@ from .models import (
     SMCSClassificationConfig,
     SMCSClassificationJob,
 )
-from .models import OpenAIUsageLog
 from .smcs_ai_classification_service import SMCSAIClassificationService
 from .smcs_candidate_retrieval_service import SMCSCandidateRetrievalService
 from .smcs_deterministic_classification_service import SMCSDeterministicClassificationService
@@ -208,16 +207,6 @@ class DowntimeSMCSClassificationService:
                 float(item.get("downtime_hours") or 0)
                 for item in results if item.get("primary_match")
             )
-            usage_logs = OpenAIUsageLog.objects.filter(
-                user=job.user,
-                feature="SMCS Comment Classification",
-                usage_timestamp__gte=job.started_at,
-            )
-            usage_input = sum(item.input_tokens for item in usage_logs)
-            usage_output = sum(item.output_tokens for item in usage_logs)
-            usage_cost = sum(
-                (item.estimated_cost or Decimal("0")) for item in usage_logs
-            )
             job.result_json = {
                 "mode": "Preview",
                 "official_classifications_written": 0,
@@ -242,13 +231,8 @@ class DowntimeSMCSClassificationService:
                         matched_hours / total_hours * 100 if total_hours else 0, 2
                     ),
                     "estimated_ai_calls": sum(bool(item.get("ai_used")) for item in results),
-                    "actual_api_calls": usage_logs.count(),
-                    "input_tokens": usage_input,
-                    "output_tokens": usage_output,
-                    "estimated_cost": round(float(usage_cost), 6),
                 },
             }
-            job.estimated_cost = Decimal(str(job.result_json["comparison"]["estimated_cost"]))
             job.status = "Partially Completed" if job.failed_events else "Completed"
         except Exception as exc:
             job.status = "Failed"

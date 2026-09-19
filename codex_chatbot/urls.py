@@ -6,6 +6,8 @@ from . import views
 app_name = "codex_chatbot"
 
 urlpatterns = [
+    path("api/conversations/<uuid:conversation_id>/status/", views.history_status, name="history-status"),
+    path("api/conversations/<uuid:conversation_id>/download/", views.history_download, name="history-download"),
     path("", views.home, name="home"),
     path("c/<uuid:conversation_id>/", views.home, name="conversation"),
     path("api/ask/", views.ask_api, name="ask"),

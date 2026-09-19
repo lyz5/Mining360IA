@@ -403,7 +403,7 @@
         const date = new Date(`${value}T00:00:00`);
         return Number.isNaN(date.getTime())
             ? value
-            : new Intl.DateTimeFormat(document.documentElement.lang || "fr", { day: "2-digit", month: "long", year: "numeric" }).format(date);
+            : new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "long", year: "numeric" }).format(date);
     }
 
     function chartPointLabel(value) {
@@ -512,10 +512,10 @@
         const target = $("[data-export-visual='availability-trend']");
         const button = $("[data-copy-availability-trend]");
         if (!exporter || !target || !button) return;
-        const language = document.documentElement.lang || "en";
-        const french = language.toLowerCase().startsWith("fr");
-        button.setAttribute("aria-label", french ? button.dataset.labelFr : button.dataset.labelEn);
-        button.title = french ? "Copier le graphique" : "Copy chart";
+        const language = "en";
+
+        button.setAttribute("aria-label", button.dataset.labelEn);
+        button.title = "Copy chart";
         exporter.bindCopyAction({
             button,
             target,
@@ -546,10 +546,10 @@
         const target = $("[data-export-visual='physical-availability']");
         const button = $("[data-copy-physical-availability]");
         if (!exporter || !target || !button) return;
-        const language = document.documentElement.lang || "en";
-        const french = language.toLowerCase().startsWith("fr");
-        button.setAttribute("aria-label", french ? button.dataset.labelFr : button.dataset.labelEn);
-        button.title = french ? "Copier le graphique" : "Copy chart";
+        const language = "en";
+
+        button.setAttribute("aria-label", button.dataset.labelEn);
+        button.title = "Copy chart";
         exporter.bindCopyAction({
             button,
             target,
@@ -578,7 +578,7 @@
 
     function numberLabel(value, decimals = 1) {
         const number = Number(value);
-        return Number.isFinite(number) ? number.toLocaleString(undefined, { maximumFractionDigits: decimals }) : "--";
+        return Number.isFinite(number) ? number.toLocaleString("en-GB", { maximumFractionDigits: decimals }) : "--";
     }
 
     function renderSummary(payload) {

@@ -111,6 +111,7 @@ ENABLE_CODEX_ADMIN = os.getenv('ENABLE_CODEX_ADMIN', 'Disabled')
 CODEX_CHATBOT_APP_SERVER_ENABLED = _environment_boolean(
     'CODEX_CHATBOT_APP_SERVER_ENABLED', False
 )
+CODEX_CHATBOT_WEB_SEARCH_ENABLED = _environment_boolean('CODEX_CHATBOT_WEB_SEARCH_ENABLED', False)
 CODEX_CHATBOT_CLI_PATH = os.getenv('CODEX_CHATBOT_CLI_PATH', '').strip()
 CODEX_CHATBOT_HOME = os.getenv(
     'CODEX_CHATBOT_HOME', str(BASE_DIR / '.test-runtime' / 'codex-chatbot-home')
@@ -132,7 +133,6 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'reports.openai_usage_context.OpenAIUsageContextMiddleware',
     'reports.middleware.PlatformLoginRequiredMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'reports.sqlserver_config_middleware.SQLServerConfigSyncMiddleware',
@@ -283,7 +283,7 @@ AUTHENTICATION_BACKENDS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'fr-fr'
+LANGUAGE_CODE = 'en-gb'
 
 TIME_ZONE = 'Atlantic/Reykjavik'
 

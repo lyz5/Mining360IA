@@ -395,7 +395,7 @@
         node.innerHTML = '<p class="muted-value">Loading access history...</p>';
         try {
             const payload = await api(`/api/access-control/users/${id}/audit/`);
-            node.innerHTML = payload.results.length ? payload.results.map(item => `<div><strong>${escapeHtml(item.action_label)}</strong><span>${escapeHtml(item.actor)}</span><time datetime="${escapeHtml(item.created_at)}">${new Date(item.created_at).toLocaleString()}</time></div>`).join("") : '<p class="muted-value">No access changes recorded yet.</p>';
+            node.innerHTML = payload.results.length ? payload.results.map(item => `<div><strong>${escapeHtml(item.action_label)}</strong><span>${escapeHtml(item.actor)}</span><time datetime="${escapeHtml(item.created_at)}">${new Date(item.created_at).toLocaleString("en-GB")}</time></div>`).join("") : '<p class="muted-value">No access changes recorded yet.</p>';
         } catch { node.innerHTML = '<p class="field-error">Access history could not be loaded.</p>'; }
     }
 

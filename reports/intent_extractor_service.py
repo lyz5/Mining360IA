@@ -361,8 +361,10 @@ def _build_fallback_intent(question_text: str, section_code: str | None = None) 
     return enrich_machine_performance_intent(intent, question_text) if section == "performance" else intent
 
 
-def extract_intent(question_text: str, section_code: str | None = None) -> dict:
+def extract_intent(question_text: str, section_code: str | None = None, *, allow_llm: bool = True) -> dict:
     fallback = _build_fallback_intent(question_text, section_code)
+    if not allow_llm:
+        return enrich_machine_performance_intent(fallback, question_text) if fallback.get("section") == "performance" else fallback
     # Availability is fully controlled by configured synonyms, filters and DAX
     # templates. Avoid a slow and less deterministic LLM extraction when the
     # business intent is already resolved locally.

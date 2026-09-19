@@ -24,6 +24,9 @@ def create_fleet_csv(run: CodexRun) -> CodexArtifact:
     rows = result.get("rows") or []
     columns = EXPORT_COLUMNS
     prefix = "fleet"
+    if result.get("kind") == "governed_answer":
+        columns = ("metric", "period", "formatted_value", "value")
+        prefix = "performance"
     if result.get("kind") == "revenue_summary":
         rows = result.get("business_lines") or []
         columns = ("code", "label", "revenue", "comparison_revenue", "absolute_delta", "relative_delta", "share", "rank")
@@ -49,7 +52,8 @@ def create_fleet_csv(run: CodexRun) -> CodexArtifact:
     with target.open("w", encoding="utf-8-sig", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=columns, extrasaction="ignore")
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows({key: "'" + value if isinstance(value, str) and value.lstrip().startswith(("=", "+", "-", "@")) else value
+                          for key, value in row.items()} for row in rows)
     content = target.read_bytes()
     return CodexArtifact.objects.create(
         run=run,

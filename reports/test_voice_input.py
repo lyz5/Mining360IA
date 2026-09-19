@@ -10,7 +10,6 @@ from django.test import TestCase
 from .audio_security_service import VoiceInputError, validate_audio_upload
 from .audio_transcription_service import TranscriptionResult
 from .models import (
-    OpenAIUsageLog,
     PlatformUser,
     VoiceInputConfiguration,
     VoiceTranscriptionLog,
@@ -96,7 +95,7 @@ class VoiceInputTests(TestCase):
         self.assertEqual(log.status, "Completed")
         self.assertEqual(log.conversation_id, "conversation-test")
         self.assertEqual(log.total_tokens, 135)
-        self.assertEqual(OpenAIUsageLog.objects.get().feature, "Voice Transcription")
+        self.assertNotIn("openai_usage_log", {field.name for field in VoiceTranscriptionLog._meta.fields})
         self.assertNotIn("transcription", {field.name for field in VoiceTranscriptionLog._meta.fields})
 
     def test_duplicate_request_is_not_processed_twice(self):

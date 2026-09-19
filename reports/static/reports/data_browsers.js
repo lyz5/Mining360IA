@@ -1194,7 +1194,7 @@
             const total = Number(data.total_count ?? loaded);
             els.previewRowCount.textContent = total === loaded
                 ? `${loaded} row${loaded === 1 ? "" : "s"} loaded`
-                : `${loaded} of ${total.toLocaleString()} rows loaded`;
+                : `${loaded} of ${total.toLocaleString("en-GB")} rows loaded`;
         }
         if (els.previewPageStatus) {
             const pageNumber = Number(data.page || 1);

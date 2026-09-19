@@ -92,7 +92,7 @@
         {% endif %}
     </main>
     {% if report.embed_url and configured_report %}
-        <script src="{% static 'reports/vendor/powerbi-client-2.23.7.min.js' %}"></script>
+        <script src="{% static 'reports/vendor/powerbi-client-2.23.7.min.js' %}?v=20260919-english-ui"></script>
         <script>
             const reportSelect = document.getElementById("report-select");
 

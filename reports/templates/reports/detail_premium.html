@@ -143,9 +143,9 @@
         </aside>
     </main>
     {% if report.embed_url and configured_report %}
-        <script src="{% static 'reports/vendor/powerbi-client-2.23.7.min.js' %}"></script>
-        <script src="{% static 'reports/powerbi_embed.js' %}?v=20260831-stable-runtime-1"></script>
-        <script src="{% static 'reports/report_viewer.js' %}?v=20260831-stable-runtime-1" defer></script>
+        <script src="{% static 'reports/vendor/powerbi-client-2.23.7.min.js' %}?v=20260919-english-ui"></script>
+        <script src="{% static 'reports/powerbi_embed.js' %}?v=20260919-loading"></script>
+        <script src="{% static 'reports/report_viewer.js' %}?v=20260919-english-ui" defer></script>
     {% endif %}
 </body>
 </html>

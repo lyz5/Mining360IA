@@ -7,8 +7,8 @@
     const initial = new URLSearchParams(location.search);
     const state = { lens: initial.get('lens') || 'ALL', country: initial.get('country') || '', minesite: initial.get('minesite') || '', account: initial.get('account') || '', overview: null, portfolio: [], accounts: [], sites: [], filtersReady: false };
     const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
-    const money = (value) => value === null || value === undefined ? 'Not available' : new Intl.NumberFormat(document.documentElement.lang === 'fr' ? 'fr-FR' : 'en-GB', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(Number(value));
-    const number = (value) => value === null || value === undefined ? 'Not available' : Number(value).toLocaleString();
+    const money = (value) => value === null || value === undefined ? 'Not available' : new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(Number(value));
+    const number = (value) => value === null || value === undefined ? 'Not available' : Number(value).toLocaleString("en-GB");
     const toast = (message) => { const node = $('[data-br-toast]'); node.textContent = message; node.hidden = false; clearTimeout(toast.timer); toast.timer = setTimeout(() => { node.hidden = true; }, 4500); };
     async function api(url, options = {}) { const response = await fetch(url, { credentials: 'same-origin', headers: {'Content-Type':'application/json','X-CSRFToken':csrf}, ...options }); const data = await response.json(); if (!response.ok) throw new Error(data.detail || data.message || 'The request could not be completed.'); return data; }
     const url = (base) => { const target = new URL(base, location.origin); target.searchParams.set('lens', state.lens); ['country','minesite','account'].forEach(key => { if (state[key]) target.searchParams.set(key, state[key]); }); return `${target.pathname}${target.search}`; };
@@ -27,7 +27,7 @@
     function renderOverview(data) {
         state.overview = data;
         $('[data-br-version]').textContent = `Version ${data.context.published_mapping_version}`;
-        $('[data-br-updated]').textContent = data.freshness.review_generated_at ? `Generated ${new Date(data.freshness.review_generated_at).toLocaleString()}` : 'Last update unavailable';
+        $('[data-br-updated]').textContent = data.freshness.review_generated_at ? `Generated ${new Date(data.freshness.review_generated_at).toLocaleString("en-GB")}` : 'Last update unavailable';
         $('[data-br-context-label]').textContent = `${data.context.period || 'YTD'} ${data.context.period_year || ''} · ${state.lens === 'ALL' ? 'All Mining' : state.lens}`;
         const metrics = data.metrics || {};
         $('[data-br-metric="mining_revenue_ytd_eur"]').textContent = money(metrics.mining_revenue_ytd_eur);

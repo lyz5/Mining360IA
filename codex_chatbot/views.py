@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 import json
+from django.conf import settings
 
 from django.http import FileResponse, JsonResponse
-from django.shortcuts import get_object_or_404, render
-from django.views.decorators.http import require_GET, require_POST
+from django.shortcuts import get_object_or_404, render, redirect
+from django.views.decorators.http import require_GET, require_POST, require_http_methods
+from .conversation_service import delete_conversation
 
 from .access import codex_chatbot_access_required
 from .async_service import RunConflictError, enqueue_run, request_cancellation, run_payload
@@ -36,10 +38,11 @@ def _conversation_payload(conversation: CodexConversation) -> dict:
 @require_GET
 @codex_chatbot_access_required
 def home(request, conversation_id=None):
-    conversations = CodexConversation.objects.filter(owner=request.user, status="ACTIVE")[:50]
+    history_status = "ARCHIVED" if request.GET.get("history") == "archived" else "ACTIVE"
+    conversations = CodexConversation.objects.filter(owner=request.user, status=history_status)[:200]
     selected = None
     if conversation_id:
-        selected = get_object_or_404(CodexConversation, id=conversation_id, owner=request.user)
+        selected = get_object_or_404(CodexConversation.objects.exclude(status="DELETED"), id=conversation_id, owner=request.user)
     active_run = None
     if selected:
         active_run = selected.runs.filter(
@@ -53,18 +56,42 @@ def home(request, conversation_id=None):
             "conversations": conversations,
             "selected_conversation": selected,
             "active_run": active_run,
+            "history_status": history_status,
+            "web_search_enabled": getattr(settings, "CODEX_CHATBOT_WEB_SEARCH_ENABLED", False),
         },
     )
 
 
-@require_GET
+@require_http_methods(["GET", "PATCH", "DELETE"])
 @codex_chatbot_access_required
 def conversation_api(request, conversation_id):
     conversation = get_object_or_404(
-        CodexConversation.objects.prefetch_related("messages", "runs__evidence", "runs__artifacts"),
+        CodexConversation.objects.exclude(status="DELETED").prefetch_related("messages", "runs__evidence", "runs__artifacts"),
         id=conversation_id,
         owner=request.user,
     )
+    if request.method == "DELETE":
+        try:
+            delete_conversation(conversation_id=conversation.pk, user=request.user)
+        except RunConflictError as exc:
+            return JsonResponse({"ok": False, "error": str(exc)}, status=409)
+        return JsonResponse({"ok": True})
+    if request.method == "PATCH":
+        try:
+            payload = json.loads(request.body or b"{}")
+            if not isinstance(payload, dict):
+                raise ValueError()
+            title = payload.get("title", conversation.title)
+            status = payload.get("status", conversation.status)
+            if not isinstance(title, str) or not title.strip() or len(title.strip()) > 180:
+                raise ValueError()
+            if status not in {"ACTIVE", "ARCHIVED"}:
+                raise ValueError()
+        except (TypeError, ValueError):
+            return JsonResponse({"ok": False, "error": "Invalid conversation title or status."}, status=400)
+        conversation.title = title.strip()
+        conversation.status = status
+        conversation.save(update_fields=["title", "status", "updated_at"])
     return JsonResponse({"ok": True, "conversation": _conversation_payload(conversation)})
 
 
@@ -81,7 +108,7 @@ def ask_api(request):
     conversation = None
     conversation_id = payload.get("conversation_id")
     if conversation_id:
-        conversation = get_object_or_404(CodexConversation, id=conversation_id, owner=request.user)
+        conversation = get_object_or_404(CodexConversation.objects.exclude(status="DELETED"), id=conversation_id, owner=request.user)
     try:
         result = ask(user=request.user, question=question, conversation=conversation)
     except ValueError as exc:
@@ -99,7 +126,7 @@ def submit_run_api(request):
     conversation = None
     conversation_id = payload.get("conversation_id")
     if conversation_id:
-        conversation = get_object_or_404(CodexConversation, id=conversation_id, owner=request.user)
+        conversation = get_object_or_404(CodexConversation.objects.exclude(status="DELETED"), id=conversation_id, owner=request.user)
     try:
         run, created = enqueue_run(
             user=request.user,
@@ -160,3 +187,32 @@ def download_artifact(request, artifact_id):
     if not path.is_file():
         return JsonResponse({"ok": False, "error": "The export file is unavailable."}, status=404)
     return FileResponse(path.open("rb"), content_type=artifact.content_type, as_attachment=True, filename=artifact.title)
+
+
+@require_POST
+@codex_chatbot_access_required
+def history_status(request, conversation_id):
+    conversation = get_object_or_404(CodexConversation.objects.exclude(status="DELETED"),
+                                    pk=conversation_id, owner=request.user)
+    status = request.POST.get("status")
+    if status not in {"ACTIVE", "ARCHIVED"}:
+        return JsonResponse({"ok": False}, status=400)
+    conversation.status = status
+    conversation.save(update_fields=["status", "updated_at"])
+    return redirect("codex_chatbot:home")
+
+
+@require_GET
+@codex_chatbot_access_required
+def history_download(request, conversation_id):
+    conversation = get_object_or_404(CodexConversation.objects.exclude(status="DELETED"),
+                                    pk=conversation_id, owner=request.user)
+    payload = _conversation_payload(conversation)
+    payload["original_context"] = conversation.legacy_context
+    payload["original_messages"] = [
+        {"id": str(m.legacy_message_id), "details": m.legacy_payload}
+        for m in conversation.messages.all() if m.legacy_message_id
+    ]
+    response = JsonResponse(payload, json_dumps_params={"ensure_ascii": False, "indent": 2})
+    response["Content-Disposition"] = f'attachment; filename="conversation-{conversation.pk}.json"'
+    return response

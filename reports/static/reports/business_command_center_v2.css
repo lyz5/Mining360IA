@@ -58,3 +58,20 @@
 @keyframes bcc-neemba-loader-fan{0%,100%{opacity:.28;transform:rotate(var(--blade-angle)) scaleY(.68)}45%{opacity:1;transform:rotate(var(--blade-angle)) scaleY(1)}}
 @media(max-width:720px){.bcc-update-loader{inset-inline-start:0}}
 @media(prefers-reduced-motion:reduce){.bcc-neemba-loader-mark i{animation:none;opacity:1;transform:rotate(var(--blade-angle)) scaleY(1)}}
+
+/* Keep the portfolio ranking bounded and legible at every result count. */
+.bcc-leaders-panel{min-width:0}
+.bcc-leaders-panel .bcc-panel-head{flex-wrap:wrap;align-items:center;gap:12px}
+.bcc-leaders-controls{display:flex;align-items:center;flex-wrap:wrap;gap:10px 16px;margin-left:auto;max-width:100%}
+.bcc-fleet-section{margin-top:24px;padding-top:12px;border-top:1px solid var(--bcc-border);min-width:0}
+.bcc-fleet-models{display:flex;flex-wrap:wrap;gap:8px}.bcc-fleet-models>span{padding:6px 10px;background:#f2f5f8;border-radius:5px;font-size:12px}
+.bcc-fleet-table{max-width:100%;max-height:350px;overflow:auto}.bcc-fleet-table table{width:100%;border-collapse:collapse;font-size:12px}.bcc-fleet-table th,.bcc-fleet-table td{padding:9px;text-align:left;border-bottom:1px solid var(--bcc-border);overflow-wrap:anywhere}.bcc-fleet-table th{position:sticky;top:0;background:#f2f5f8}
+.bcc-leaders-limit{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;white-space:nowrap}
+.bcc-leaders-limit select{min-width:76px;min-height:36px;padding:6px 10px;border:1px solid var(--bcc-border);border-radius:5px;background:#fff;color:var(--bcc-ink);font:inherit}
+.bcc-leaders-status{margin:0 0 8px;color:var(--bcc-muted);font-size:11px}
+.bcc-leader-list{max-height:390px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-gutter:stable;min-width:0}
+.bcc-leaders-panel .bcc-leader-row{width:100%;grid-template-columns:38px minmax(0,1fr) max-content;gap:5px 10px;padding:9px 4px;min-width:0}
+.bcc-leaders-panel .bcc-leader-row strong{min-width:0;white-space:normal;overflow-wrap:anywhere;line-height:1.4}
+.bcc-leaders-panel .bcc-leader-row b{white-space:nowrap;text-align:right}
+.bcc-leaders-panel .bcc-leader-bar{grid-column:2 / -1;width:100%;min-width:0}
+@media(max-width:600px){.bcc-leader-list{max-height:340px}.bcc-leaders-panel .bcc-leader-row{grid-template-columns:32px minmax(0,1fr) max-content;column-gap:7px}}

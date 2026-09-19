@@ -32,12 +32,19 @@
         }
 
         transition(next, details) {
+            if (next === "requesting_embed_config") {
+                this.finishLoadingSpinner();
+                this.finishSpinner = window.m360AjaxSpinner?.begin();
+            } else if (["ready", "rendered", "degraded", "disposing", "idle"].includes(next)) {
+                this.finishLoadingSpinner();
+            }
             const previous = this.lifecycle;
             this.lifecycle = next;
             this.emit("lifecycle", Object.assign({ previous, state: next }, details || {}));
         }
 
         emit(type, details) {
+            if (type === "error") this.finishLoadingSpinner();
             const event = { type, details: details || {}, at: new Date().toISOString() };
             this.events.push(event);
             if (this.events.length > 100) this.events.shift();
@@ -104,9 +111,17 @@
             this.embedPromise = this.initializeEmbed(reportId, operationId);
             try {
                 return await this.embedPromise;
+            } catch (error) {
+                if (this.operationId === operationId) this.finishLoadingSpinner();
+                throw error;
             } finally {
                 if (this.operationId === operationId) this.embedPromise = null;
             }
+        }
+
+        finishLoadingSpinner() {
+            this.finishSpinner?.();
+            this.finishSpinner = null;
         }
 
         async initializeEmbed(reportId, operationId) {

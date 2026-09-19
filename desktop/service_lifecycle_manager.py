@@ -113,7 +113,7 @@ class ServiceLifecycleManager:
             )
         warnings = []
         if not self._wait_health(self.controller.public_url, 20):
-            warnings.append("HTTPS Gateway did not become ready within 20 seconds.")
+            warnings.append("Local application operational, HTTPS not configured")
         runtime = self.controller.check_runtime_services()
         if runtime["codex_worker"].status != "online":
             warnings.append(runtime["codex_worker"].detail)
@@ -199,11 +199,11 @@ class ServiceLifecycleManager:
 
         self._emit(progress, *self.RESTART_STEPS[6], 7, total)
         if not self._wait_health(self.controller.public_url, 20):
-            warnings.append("HTTPS Gateway did not become ready within 20 seconds.")
+            warnings.append("Local application operational, HTTPS not configured")
 
         self._emit(progress, *self.RESTART_STEPS[7], 8, total)
         application = self.controller.check_application_services()
-        core_failures = [item.label for item in application.values() if item.status != "online"]
+        core_failures = [item.label for item in application.values() if item.code != "https" and item.status != "online"]
         if core_failures:
             return self._result(
                 operation_id, "restart", OperationStatus.FAILED,

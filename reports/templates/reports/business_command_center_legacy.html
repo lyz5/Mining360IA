@@ -17,8 +17,6 @@
       data-parts-sales-url="{% url 'business-command-center-parts-sales-api' %}"
       data-parts-sales-export-url="{% url 'business-command-center-parts-sales-export-api' %}"
       data-watchlist-url="{% url 'business-command-center-watchlist-api' %}"
-      data-saved-views-url="{% url 'business-review-saved-views-api' %}"
-      data-export-url="{% url 'business-command-center-export-api' %}"
       data-features='{"customers":{{ features.customers|yesno:"true,false" }},"countries":{{ features.countries|yesno:"true,false" }},"key_accounts":{{ features.key_accounts|yesno:"true,false" }},"last_visit":{{ features.last_visit|yesno:"true,false" }},"attention":{{ features.attention|yesno:"true,false" }},"watchlist":{{ features.watchlist|yesno:"true,false" }},"presentation":{{ features.presentation|yesno:"true,false" }}}'>
     {% csrf_token %}
     <header class="bcc-header">
@@ -29,9 +27,7 @@
         </div>
         <div class="bcc-header-actions">
             <button class="bcc-icon-btn" type="button" data-refresh title="Refresh view" aria-label="Refresh view">&#8635;</button>
-            <button class="bcc-button secondary" type="button" data-save-view>Save View</button>
             {% if features.presentation %}<button class="bcc-button secondary" type="button" data-presentation>Presentation</button>{% endif %}
-            {% if can_export %}<button class="bcc-button" type="button" data-export>Export</button>{% endif %}
         </div>
     </header>
 
@@ -223,7 +219,7 @@
         <div data-drawer-body></div>
     </aside>
 </main>
-<script src="{% static 'reports/visual_export.js' %}?v=20260910"></script>
-<script src="{% static 'reports/business_command_center_legacy.js' %}?v=20260917-exellence-center"></script>
+<script src="{% static 'reports/visual_export.js' %}?v=20260919-simple-header"></script>
+<script src="{% static 'reports/business_command_center_legacy.js' %}?v=20260919-simple-header"></script>
 </body>
 </html>

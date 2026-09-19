@@ -39,15 +39,15 @@ COLORS = {
 }
 
 STATUS_META = {
-    "online": ("Opérationnel", COLORS["green"]),
-    "degraded": ("Dégradé", COLORS["amber"]),
-    "offline": ("Indisponible", COLORS["red"]),
-    "starting": ("Démarrage", COLORS["blue"]),
-    "stopping": ("Arrêt", COLORS["blue"]),
-    "restarting": ("Redémarrage", COLORS["blue"]),
-    "not_configured": ("Non configuré", COLORS["gray"]),
-    "expired": ("Contrôle expiré", COLORS["amber"]),
-    "unknown": ("Inconnu", COLORS["gray"]),
+    "online": ("Operational", COLORS["green"]),
+    "degraded": ("Degraded", COLORS["amber"]),
+    "offline": ("Unavailable", COLORS["red"]),
+    "starting": ("Starting", COLORS["blue"]),
+    "stopping": ("Stopping", COLORS["blue"]),
+    "restarting": ("Restarting", COLORS["blue"]),
+    "not_configured": ("Not configured", COLORS["gray"]),
+    "expired": ("Check expired", COLORS["amber"]),
+    "unknown": ("Unknown", COLORS["gray"]),
 }
 
 
@@ -210,7 +210,7 @@ class Mining360ControlCenterV2(tk.Tk):
             font=("Segoe UI Semibold", 20),
         ).pack(anchor="w")
         tk.Label(
-            titles, text="Pilotage des services et de la connectivité", bg=COLORS["navy"],
+            titles, text="Service and connectivity management", bg=COLORS["navy"],
             fg=COLORS["muted"], font=("Segoe UI", 9),
         ).pack(anchor="w", pady=(2, 0))
         metadata = tk.Frame(header, bg=COLORS["navy"])
@@ -256,13 +256,13 @@ class Mining360ControlCenterV2(tk.Tk):
     def _build_toolbar(self, parent) -> None:
         bar = tk.Frame(parent, bg=COLORS["background"])
         bar.grid(row=1, column=0, sticky="ew", pady=12)
-        self.start_button = ttk.Button(bar, text="Démarrer", style="Primary.TButton", command=lambda: self._run_lifecycle("start"))
+        self.start_button = ttk.Button(bar, text="Start", style="Primary.TButton", command=lambda: self._run_lifecycle("start"))
         self.start_button.pack(side="left")
-        self.stop_button = ttk.Button(bar, text="Arrêter", style="Danger.TButton", command=lambda: self._run_lifecycle("stop"))
+        self.stop_button = ttk.Button(bar, text="Stop", style="Danger.TButton", command=lambda: self._run_lifecycle("stop"))
         self.stop_button.pack(side="left", padx=(8, 0))
-        self.restart_button = ttk.Button(bar, text="Redémarrer", style="Restart.TButton", command=self._confirm_restart)
+        self.restart_button = ttk.Button(bar, text="Restart", style="Restart.TButton", command=self._confirm_restart)
         self.restart_button.pack(side="left", padx=(8, 0))
-        self.open_button = ttk.Button(bar, text="Ouvrir Mining 360", style="Secondary.TButton", command=self._open_application)
+        self.open_button = ttk.Button(bar, text="Open Mining360", style="Secondary.TButton", command=self._open_application)
         self.open_button.pack(side="left", padx=(16, 0))
         ttk.Button(bar, text="Actualiser", style="Secondary.TButton", command=self.refresh_all).pack(side="left", padx=(8, 0))
         ttk.Button(bar, text="Diagnostics", style="Secondary.TButton", command=self._run_diagnostics).pack(side="right")
@@ -675,6 +675,9 @@ class Mining360ControlCenterV2(tk.Tk):
         )
         if self.lifecycle.operation_running:
             label, color = "Updating", COLORS["blue"]
+        elif (self.results.get("django") and self.results["django"].status == "online"
+              and self.results.get("https") and self.results["https"].status != "online"):
+            label, color = "Local OK / HTTPS not configured", COLORS["amber"]
         elif unavailable_required:
             label, color = "Unavailable", COLORS["red"]
         elif operational == len(required) and not optional_failure:
@@ -690,6 +693,9 @@ class Mining360ControlCenterV2(tk.Tk):
         self.summary_values["incidents"].configure(text=str(incidents) if incidents is not None else "Not Evaluated")
         self.summary_values["checked"].configure(text=time.strftime("%H:%M:%S"))
         self.footer_status.configure(text=f"{label} · {operational}/{len(required)} required services operational")
+
+        if self.results.get("django") and self.results["django"].status == "online" and self.results.get("https") and self.results["https"].status != "online":
+            self.footer_status.configure(text="Local application operational, HTTPS not configured")
 
     def _apply_progress(self, step: OperationStep) -> None:
         value = int(step.index / max(step.total, 1) * 100)
@@ -749,20 +755,24 @@ class Mining360ControlCenterV2(tk.Tk):
         self.stop_button.configure(state="normal" if running and not ownership_unverified else "disabled")
         self.restart_button.configure(state="normal" if running and not ownership_unverified else "disabled")
         https_ready = self.results.get("https") and self.results["https"].status == "online"
-        self.open_button.configure(state="normal" if https_ready else "disabled")
+        local_ready = self.results.get("django") and self.results["django"].status == "online"
+        self.open_button.configure(state="normal" if https_ready or local_ready else "disabled")
 
     def _open_application(self) -> None:
         result = self.results.get("https")
+        if not result or result.status != "online":
+            result = self.results.get("django")
         if not result or result.status != "online" or time.time() - result.checked_at > 35:
             messagebox.showwarning(
                 "Mining 360 is not ready",
-                "The public HTTPS endpoint is not ready or its health check has expired.",
+                "The application is not ready or its health check has expired.",
                 parent=self,
             )
             return
-        webbrowser.open(self.controller.public_url, new=0)
-        self.event_store.append({"type": "open_application", "url": self.controller.public_url})
-        self._append_activity("INFO", f"Opened {self.controller.public_url}")
+        target = self.controller.public_url if self.results.get("https") and self.results["https"].status == "online" else self.controller.upstream_url
+        webbrowser.open(target, new=0)
+        self.event_store.append({"type": "open_application", "url": target})
+        self._append_activity("INFO", f"Opened {target}")
 
     def _open_logs(self) -> None:
         try:

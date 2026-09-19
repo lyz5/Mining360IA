@@ -4,7 +4,7 @@ import re
 
 from .powerbi import _local_powerbi_credentials
 
-from .ai_provider_gateway_service import ai_gateway
+from .legacy_ai_service import legacy_ai
 from .openai_service import is_openai_configured as gateway_is_configured
 
 
@@ -92,7 +92,7 @@ def parse_semantic_question_with_openai(question: str, fallback: dict) -> dict:
             "If a value is missing, keep the fallback value."
         ],
     }
-    response = ai_gateway.generate_structured_output(
+    response = legacy_ai.generate_structured_output(
         use_case="semantic_question_parsing",
         messages=[
             {
@@ -158,7 +158,7 @@ def interpret_semantic_answer_with_openai(question: str, semantic_request: dict,
             "Highlight trend, weak points, and next analysis action."
         ),
     }
-    response = ai_gateway.generate_text(
+    response = legacy_ai.generate_text(
         use_case="machine_performance_response",
         messages=[
             {
@@ -217,7 +217,7 @@ def chat_semantic_response_with_openai(
             "Do not mention internal JSON or prompts."
         ),
     }
-    response = ai_gateway.generate_text(
+    response = legacy_ai.generate_text(
         use_case="machine_performance_response",
         messages=[
             {

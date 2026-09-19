@@ -10,6 +10,7 @@ from .business_command_center_service import BusinessRevenuePeriodService, _grow
 from .machine_sales_service import MachineSalesDetailService
 from .business_mapping_country_scope import operating_country_label
 from .models import (
+    BusinessAccount,
     MachineSaleDetail,
     MachineSalesSynchronizationRun,
     MappingPublication,
@@ -207,6 +208,95 @@ class BusinessCommandCenterApiTests(TestCase):
         self.assertEqual(data["hero"]["revenue"], 2000.0)
         self.assertEqual(data["hero"]["comparison_revenue"], 1000.0)
         self.assertEqual(data["hero"]["relative_delta"], 100.0)
+
+    def test_revenue_leaders_limits_and_all_keep_filtered_rankings(self):
+        accounts = []
+        for index in range(105):
+            code = f"LEADER-{index}"
+            self._revenue(code, code, "PARTS", date(2026, 9, 8), 105-index)
+            accounts.append({"account_id":code, "account_code":code,
+                "account_name":f"Customer {index}", "source_account_codes":[code],
+                "business_country":"ML" if index % 2 == 0 else "SN"})
+        MappingPublication.objects.create(version=1,status="Published",published_by=self.user,
+            published_at=timezone.now(),snapshot_json={"accounts":accounts})
+        url = reverse("business-command-center-revenue-explorer-api")
+        for limit, expected in ((None,10),("10",10),("25",25),("50",50),("100",100),("all",105),("invalid",10)):
+            with self.subTest(limit=limit):
+                params = {"dimension":"customers", "business_line":"parts"}
+                if limit is not None:
+                    params["limit"] = limit
+                response = self.client.get(url, params)
+                self.assertEqual(response.status_code, 200)
+                payload = response.json()
+                self.assertEqual(payload["count"],105)
+                self.assertEqual(len(payload["results"]),expected)
+                self.assertEqual(payload["results"][0]["id"],"LEADER-0")
+                self.assertEqual(payload["results"][-1]["rank"],expected)
+        filtered = self.client.get(url,{"limit":"all","country_ids":"ML","business_line":"parts"}).json()
+        self.assertEqual(len(filtered["results"]),53)
+        self.assertTrue(all(int(item["id"].split("-")[1]) % 2 == 0 for item in filtered["results"]))
+
+    def test_current_canonical_labels_preserve_published_scope_and_amounts(self):
+        from .business_command_center_service import BusinessCommandCenterService
+        account = BusinessAccount.objects.create(canonical_account_code="MININGACCOUNTS:1", canonical_account_name="K1 MINING SA", normalized_account_name="K1 MINING SA")
+        other = BusinessAccount.objects.create(canonical_account_code="MININGACCOUNTS:2", canonical_account_name="K1 MINING SA", normalized_account_name="K1 MINING SA")
+        BusinessAccount.objects.create(canonical_account_code="DRAFT-ONLY", canonical_account_name="Unpublished", normalized_account_name="UNPUBLISHED")
+        rows = [{"account_id": str(a.pk), "account_code": a.canonical_account_code,
+                 "account_name": "MONTAGE", "source_account_codes": [code], "business_country": "ML",
+                 "customer_country_group_id": str(a.pk), "customer_country_group_name": "MONTAGE · " + a.canonical_account_code}
+                for a, code in ((account, "C001"), (other, "C002"))]
+        publication = MappingPublication.objects.create(version=1, status="Published", published_by=self.user, snapshot_json={"accounts": rows})
+        service = BusinessCommandCenterService(self.user)
+        before = service.bootstrap()
+        self.assertEqual(before["hero"]["revenue"], 3500)
+        leaders = service.revenue_explorer()["results"]
+        self.assertEqual(len(leaders), 2)
+        self.assertTrue(all(item["display_name"] == "K1 MINING SA" for item in leaders))
+        self.assertEqual({item["id"] for item in leaders}, {str(account.pk), str(other.pk)})
+        account.canonical_account_name = "K1 MINING SA CURRENT"
+        account.save(update_fields=["canonical_account_name"])
+        after = service.bootstrap()
+        self.assertEqual(after["hero"], before["hero"])
+        self.assertEqual(after["dimensions"]["customers"][0]["name"], account.canonical_account_name)
+        found = BusinessCommandCenterService(self.user, {"q": "K1 MINING SA CURRENT"}).search_entities("customers")
+        self.assertEqual(found["results"][0]["id"], str(account.pk))
+        publication.refresh_from_db()
+        self.assertEqual(publication.snapshot_json, {"accounts": rows})
+
+    def test_entity_fleet_uses_published_links_and_intersects_site_permissions(self):
+        from unittest.mock import patch
+        from .models import EquipmentFleetAnalysis
+        from .business_mapping_normalization_service import normalize_business_name
+        rows = [{"account_id": "A1", "account_name": "Customer", "source_account_codes": ["C001"],
+                 "business_country": "ML", "key_account_id": "K1", "minesite_names": ["Site A", "Site B"]},
+                {"account_id": "A2", "account_name": "No link", "source_account_codes": ["C002"], "business_country": "ML"}]
+        MappingPublication.objects.create(version=1, status="Published", published_by=self.user, snapshot_json={"accounts": rows})
+        for i, site in enumerate(("Site A", "Site B", "Unrelated")):
+            EquipmentFleetAnalysis.objects.create(synchronization_run=self.run, source_record_id=str(i), semantic_model_id="test",
+                site=site, normalized_site=normalize_business_name(site), model="777", equipment=str(i),
+                source_hash=str(i), source_last_seen_at=timezone.now())
+        url = reverse("business-command-center-fleet-api")
+        result = self.client.get(url, {"dimension": "customers", "entity_id": "A1"}).json()
+        self.assertEqual(result["count"], 2)
+        self.assertEqual(self.client.get(url, {"dimension": "key_accounts", "entity_id": "K1"}).json()["count"], 2)
+        with patch('reports.business_command_center_service.authorized_minesite_names', return_value={"Site A"}):
+            result = self.client.get(url, {"dimension": "customers", "entity_id": "A1"}).json()
+            self.assertEqual(result["count"], 1)
+            self.assertEqual(result["equipment"][0]["site"], "Site A")
+        self.assertFalse(self.client.get(url, {"dimension": "customers", "entity_id": "A2"}).json()["linked"])
+        self.assertEqual(self.client.get(url, {"dimension": "customers", "entity_id": "UNPUBLISHED"}).status_code, 400)
+        self.assertEqual(self.client.get(url, {"dimension": "customers", "entity_id": "A1", "country_ids": "SN"}).status_code, 400)
+        publication = MappingPublication.objects.get(version=1)
+        rows[0]["customer_country_group_id"] = "GROUP1"
+        rows[1]["customer_country_group_id"] = "GROUP1"
+        rows[1]["customer_country_group_name"] = "Published group"
+        publication.snapshot_json = {"accounts": rows}
+        publication.save()
+        result = self.client.get(url, {"dimension": "customers", "entity_id": "A2"}).json()
+        self.assertEqual(result["count"], 2)
+        self.assertEqual(result["scope_label"], "Published customer group: Published group")
+        self.client.logout()
+        self.assertEqual(self.client.get(url, {"dimension": "customers", "entity_id": "A1"}).status_code, 302)
 
     def test_published_mapping_enables_canonical_dimensions_without_double_counting(self):
         MappingPublication.objects.create(

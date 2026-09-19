@@ -1,4 +1,5 @@
 import json
+import tempfile
 from unittest.mock import patch
 import uuid
 from django.conf import settings
@@ -65,7 +66,7 @@ class CodexChatbotAccessTests(TestCase):
         response = self.client.get(reverse("excellence-center"))
 
         self.assertContains(response, reverse("codex_chatbot:home"), count=1)
-        self.assertContains(response, "M360 Chatbot", count=1)
+        self.assertContains(response, "<span>M360 Chatbot</span>", count=1, html=True)
         self.assertContains(response, reverse("codex_admin:home"), count=1)
         self.assertContains(response, "Codex Admin", count=1)
 
@@ -103,9 +104,9 @@ class CodexChatbotAccessTests(TestCase):
         self.assertEqual(self.client.get(reverse("codex_chatbot:home")).status_code, 200)
 
     @override_settings(ENABLE_CODEX_CHATBOT="Admin Only")
-    def test_staff_is_not_treated_as_superuser(self):
+    def test_staff_retains_existing_ai_access_after_merge(self):
         self.client.force_login(self.staff)
-        self.assertEqual(self.client.get(reverse("codex_chatbot:home")).status_code, 403)
+        self.assertEqual(self.client.get(reverse("codex_chatbot:home")).status_code, 200)
 
     @override_settings(
         ENABLE_CODEX_CHATBOT="Pilot",
@@ -592,8 +593,8 @@ class CodexChatbotVerticalPathTests(TestCase):
         service_class.assert_not_called()
 
     def test_fleet_export_uses_persisted_evidence_and_is_private(self):
-        with self.settings(
-            CODEX_CHATBOT_ARTIFACT_ROOT=str(settings.BASE_DIR / ".test-runtime" / "codex-test-artifacts")
+        with tempfile.TemporaryDirectory() as artifact_root, self.settings(
+            CODEX_CHATBOT_ARTIFACT_ROOT=artifact_root
         ):
             submitted = self.client.post(
                 reverse("codex_chatbot:submit-run"),
@@ -639,6 +640,36 @@ class CodexChatbotVerticalPathTests(TestCase):
         self.assertEqual(result["request"]["resolved_filters"], {"customer_group_ids": "group-fekola"})
         self.assertEqual(result["hero"]["revenue"], 100.0)
 
+    def test_spoken_french_parts_sales_resolve_customer_year_and_amount(self):
+        publication = MappingPublication.objects.get(status="Published")
+        publication.snapshot_json["accounts"][0]["customer_country_group_name"] = "SNIM"
+        publication.save(update_fields=["snapshot_json"])
+        payload = self.client.post(
+            reverse("codex_chatbot:ask"),
+            data=json.dumps({"question": "Dis moi combien on a vendu en pièce à la SNIM en 2026"}),
+            content_type="application/json",
+        ).json()
+
+        result = payload["evidence"][0]["value"]
+        self.assertEqual(payload["message"]["answer_status"], "ANSWERABLE")
+        self.assertEqual(result["request"]["resolved_filters"], {"customer_group_ids": "group-fekola"})
+        self.assertEqual(result["context"]["business_line"], "parts")
+        self.assertEqual(result["context"]["start_date"], "2026-01-01")
+        self.assertEqual(result["hero"]["revenue"], 100.0)
+        self.assertIn("EUR", payload["message"]["content"])
+
+    def test_english_parts_sales_use_same_governed_measure(self):
+        payload = self.client.post(
+            reverse("codex_chatbot:ask"),
+            data=json.dumps({"question": "What were our parts sales to Fekola in 2025?"}),
+            content_type="application/json",
+        ).json()
+        result = payload["evidence"][0]["value"]
+        self.assertEqual(result["context"]["business_line"], "parts")
+        self.assertEqual(result["context"]["start_date"], "2025-01-01")
+        self.assertEqual(result["context"]["end_date"], "2025-12-31")
+        self.assertEqual(result["hero"]["revenue"], 80.0)
+
     def test_ambiguous_revenue_group_does_not_fall_back_to_group_total(self):
         publication = MappingPublication.objects.get(status="Published")
         publication.snapshot_json["accounts"][0]["customer_country_group_name"] = "B2GOLD Fekola"
@@ -663,9 +694,74 @@ class CodexChatbotVerticalPathTests(TestCase):
         self.assertEqual(CodexEvidence.objects.get().value_json["kind"], "revenue_scope_ambiguous")
         self.assertIn("Fekola SA", payload["message"]["content"])
 
+    def _published_fekola_groups(self, count=13, same_key=True):
+        publication = MappingPublication.objects.get(status="Published")
+        base = publication.snapshot_json["accounts"][0]
+        publication.snapshot_json["accounts"] = [
+            {**base, "account_id":f"account-{i}", "account_name":"FEKOLA SA",
+             "customer_country_group_id":f"group-{i}",
+             "customer_country_group_name":f"FEKOLA SA · MININGACCOUNTS:{i+1}-12515",
+             "key_account_id":"key-b2gold" if same_key else f"key-{i}"}
+            for i in range(count)
+        ]
+        publication.save(update_fields=["snapshot_json"])
+
+    def test_fekola_technical_groups_are_selected_completely_without_double_counting(self):
+        self._published_fekola_groups()
+        payload = self.client.post(reverse("codex_chatbot:ask"),
+            data=json.dumps({"question":"What is the Revenue Parts YTD for Fekola?"}),
+            content_type="application/json").json()
+        evidence = payload["evidence"][0]["value"]
+        self.assertEqual(payload["message"]["answer_status"], "ANSWERABLE")
+        self.assertEqual(set(evidence["request"]["resolved_filters"]["customer_group_ids"].split(",")),
+                         {f"group-{i}" for i in range(13)})
+        self.assertEqual(evidence["hero"]["revenue"], 100.0)
+        self.assertEqual(evidence["request"]["resolved_scope"]["customer_group_ids"]["name"], "FEKOLA SA")
+        self.assertIn("13 published customer groups", payload["message"]["content"])
+        self.assertTrue(payload["message"]["content"].startswith("Parts revenue"))
+
+    def test_same_customer_label_under_different_keys_remains_ambiguous_in_english(self):
+        self._published_fekola_groups(count=2, same_key=False)
+        payload = self.client.post(reverse("codex_chatbot:ask"),
+            data=json.dumps({"question":"What is the Revenue Parts YTD for Fekola?"}),
+            content_type="application/json").json()
+        self.assertEqual(payload["message"]["answer_status"], "NEEDS_CLARIFICATION")
+        self.assertTrue(payload["message"]["content"].startswith("Several published customers"))
+
+    def test_explicit_technical_customer_reference_keeps_its_single_group(self):
+        self._published_fekola_groups(count=2)
+        payload = self.client.post(reverse("codex_chatbot:ask"),
+            data=json.dumps({"question":"Revenue Parts YTD for FEKOLA SA · MININGACCOUNTS:2-12515"}),
+            content_type="application/json").json()
+        self.assertEqual(payload["evidence"][0]["value"]["request"]["resolved_filters"]["customer_group_ids"], "group-1")
+
+    def test_english_question_words_do_not_match_unrelated_customers(self):
+        self._published_fekola_groups(count=2)
+        publication = MappingPublication.objects.get(status="Published")
+        for i, name in enumerate(["THE DEVELOPMENT INITIATIVE LTD", "Z FOR MINING"]):
+            publication.snapshot_json["accounts"].append({
+                **publication.snapshot_json["accounts"][0], "account_id":f"unrelated-{i}",
+                "customer_country_group_id":f"unrelated-group-{i}", "customer_country_group_name":name,
+                "account_name":name, "source_account_codes":[f"UNRELATED-{i}"],
+            })
+        publication.save(update_fields=["snapshot_json"])
+        payload = self.client.post(reverse("codex_chatbot:ask"),
+            data=json.dumps({"question":"What is the Revenue Parts YTD for Fekola?"}),
+            content_type="application/json").json()
+        self.assertEqual(payload["message"]["answer_status"], "ANSWERABLE")
+        self.assertEqual(payload["evidence"][0]["value"]["request"]["resolved_filters"]["customer_group_ids"], "group-0,group-1")
+
+    def test_customer_family_only_contains_authorized_published_rows(self):
+        self._published_fekola_groups(count=3)
+        with patch("reports.business_command_center_service.filter_published_rows", side_effect=lambda rows,user:rows[:2]):
+            payload = self.client.post(reverse("codex_chatbot:ask"),
+                data=json.dumps({"question":"What is the Revenue Parts YTD for Fekola?"}),
+                content_type="application/json").json()
+        self.assertEqual(payload["evidence"][0]["value"]["request"]["resolved_filters"]["customer_group_ids"], "group-0,group-1")
+
     def test_revenue_export_uses_persisted_business_line_values(self):
-        with self.settings(
-            CODEX_CHATBOT_ARTIFACT_ROOT=str(settings.BASE_DIR / ".test-runtime" / "codex-test-artifacts")
+        with tempfile.TemporaryDirectory() as artifact_root, self.settings(
+            CODEX_CHATBOT_ARTIFACT_ROOT=artifact_root
         ):
             payload = self.client.post(
                 reverse("codex_chatbot:ask"),
@@ -713,6 +809,39 @@ class CodexChatbotVerticalPathTests(TestCase):
         self.assertEqual(payload["message"]["answer_status"], "NEEDS_CLARIFICATION")
         self.assertIn("pas encore raccordées", payload["message"]["content"])
         run_turn.assert_not_called()
+
+    @override_settings(CODEX_CHATBOT_APP_SERVER_ENABLED=True, CODEX_CHATBOT_WEB_SEARCH_ENABLED=True)
+    @patch("codex_chatbot.orchestrator.run_grounded_turn")
+    @patch("codex_chatbot.orchestrator.shutil.which", return_value="codex")
+    def test_web_search_is_audited_and_excludes_business_history(self, _which, run_turn):
+        conversation = CodexConversation.objects.create(owner=self.user, native_thread_id="internal-thread")
+        internal = CodexMessage.objects.create(conversation=conversation, role="ASSISTANT", content="PRIVATE_REVENUE_12345")
+        CodexRun.objects.create(conversation=conversation, user=self.user, question="PRIVATE_CUSTOMER_QUERY",
+                               tool_code="business_revenue_summary", result_message=internal)
+        general = CodexMessage.objects.create(conversation=conversation, role="ASSISTANT", content="Gorée is an island.")
+        CodexRun.objects.create(conversation=conversation, user=self.user, question="Tell me about Gorée",
+                               tool_code="general_codex_conversation", result_message=general)
+        run_turn.return_value = CodexTurnResult("public-thread", "public-turn",
+            "See [UNESCO](https://whc.unesco.org/en/list/26/).", web_search_count=2)
+        payload = self.client.post(reverse("codex_chatbot:ask"),
+            data=json.dumps({"question":"Search the Internet for UNESCO's page about that island", "conversation_id":str(conversation.id)}),
+            content_type="application/json").json()
+        call = run_turn.call_args.kwargs
+        self.assertTrue(call["web_search_enabled"])
+        self.assertEqual(call["native_thread_id"], "")
+        self.assertNotIn("PRIVATE_", call["prompt"])
+        self.assertIn("Gorée", call["prompt"])
+        self.assertEqual(payload["message"]["answer_status"], "ANSWERABLE")
+        self.assertEqual(CodexEvidence.objects.get().value_json, {"kind":"web_sources", "search_count":2})
+
+    @override_settings(CODEX_CHATBOT_APP_SERVER_ENABLED=True, CODEX_CHATBOT_WEB_SEARCH_ENABLED=True)
+    @patch("codex_chatbot.orchestrator.run_grounded_turn")
+    @patch("codex_chatbot.orchestrator.shutil.which", return_value="codex")
+    def test_revenue_does_not_enable_web_even_when_general_web_is_enabled(self, _which, run_turn):
+        run_turn.return_value = CodexTurnResult("business-thread", "business-turn", "Verified revenue.")
+        self.client.post(reverse("codex_chatbot:ask"),
+            data=json.dumps({"question":"Revenue Parts YTD"}), content_type="application/json")
+        self.assertFalse(run_turn.call_args.kwargs.get("web_search_enabled", False))
 
     @override_settings(CODEX_CHATBOT_APP_SERVER_ENABLED=True)
     @patch("codex_chatbot.orchestrator.shutil.which", return_value="codex")

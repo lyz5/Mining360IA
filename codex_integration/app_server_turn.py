@@ -21,6 +21,7 @@ class CodexTurnResult:
     thread_id: str
     turn_id: str
     answer: str
+    web_search_count: int = 0
 
 
 class AppServerTurnError(RuntimeError):
@@ -36,11 +37,11 @@ class AppServerTurnTimedOut(AppServerTurnError):
 
 
 class _JsonLineProcess:
-    def __init__(self, cli_path: str, codex_home: Path):
+    def __init__(self, cli_path: str, codex_home: Path, *, web_search_enabled: bool = False):
         environment = os.environ.copy()
         environment["CODEX_HOME"] = str(codex_home)
         self.process = subprocess.Popen(
-            [cli_path, "app-server", "--stdio"],
+            [cli_path, "-c", 'web_search="live"' if web_search_enabled else 'web_search="disabled"', "app-server", "--stdio"],
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -145,6 +146,7 @@ def _request(
 def consume_turn_notification(
     message: dict[str, Any],
     answer_parts: list[str],
+    web_search_ids: set[str] | None = None,
 ) -> bool:
     method = message.get("method")
     params = message.get("params") or {}
@@ -152,6 +154,8 @@ def consume_turn_notification(
         answer_parts.append(str(params.get("delta") or ""))
     elif method == "item/completed":
         item = params.get("item") or {}
+        if item.get("type") == "webSearch" and web_search_ids is not None:
+            web_search_ids.add(str(item.get("id") or "web-search"))
         if item.get("type") == "agentMessage" and not answer_parts:
             answer_parts.append(str(item.get("text") or ""))
     elif method == "turn/completed":
@@ -174,12 +178,13 @@ def run_grounded_turn(
     cancellation_requested: Callable[[], bool] | None = None,
     base_instructions: str | None = None,
     reasoning_effort: str | None = None,
+    web_search_enabled: bool = False,
 ) -> CodexTurnResult:
     codex_home = codex_home.resolve()
     workspace = workspace.resolve()
     codex_home.mkdir(parents=True, exist_ok=True)
     workspace.mkdir(parents=True, exist_ok=True)
-    transport = _JsonLineProcess(cli_path, codex_home)
+    transport = _JsonLineProcess(cli_path, codex_home, web_search_enabled=web_search_enabled)
     deadline = time.monotonic() + timeout_seconds
     try:
         initialize_result, _ = _request(
@@ -193,28 +198,47 @@ def run_grounded_turn(
             raise AppServerTurnError("Codex initialization did not return a runtime home.")
         transport.send(build_initialized_notification())
 
+        thread_settings = {
+            "config": {"web_search": "live" if web_search_enabled else "disabled"},
+            "cwd": str(workspace),
+            "sandbox": "read-only",
+            "approvalPolicy": "never",
+            "baseInstructions": base_instructions or (
+                "Answer only from the verified evidence supplied by Mining 360. "
+                "Do not use shell, files, web search, or external tools."
+            ),
+        }
         if native_thread_id:
-            thread_result, _ = _request(
-                transport,
-                request_id=2,
-                method="thread/resume",
-                params={"threadId": native_thread_id},
-                deadline=deadline,
-            )
+            try:
+                thread_result, _ = _request(
+                    transport,
+                    request_id=2,
+                    method="thread/resume",
+                    params={"threadId": native_thread_id, **thread_settings},
+                    deadline=deadline,
+                )
+            except AppServerTurnError as exc:
+                # Some runtimes retain an active native thread after the stdio
+                # connection closes. No turn has been submitted yet, so create
+                # a fresh isolated thread once. The caller supplies app history.
+                detail = str(exc).casefold()
+                if not all(word in detail for word in ("thread", "already", "active")):
+                    raise
+                thread_result, _ = _request(
+                    transport,
+                    request_id=5,
+                    method="thread/start",
+                    params={**thread_settings, "ephemeral": False},
+                    deadline=deadline,
+                )
         else:
             thread_result, _ = _request(
                 transport,
                 request_id=2,
                 method="thread/start",
                 params={
-                    "cwd": str(workspace),
-                    "sandbox": "read-only",
-                    "approvalPolicy": "never",
+                    **thread_settings,
                     "ephemeral": False,
-                    "baseInstructions": base_instructions or (
-                        "Answer only from the verified evidence supplied by Mining 360. "
-                        "Do not use shell, files, web search, or external tools."
-                    ),
                 },
                 deadline=deadline,
             )
@@ -240,8 +264,9 @@ def run_grounded_turn(
         turn = turn_result.get("turn") or {}
         turn_id = str(turn.get("id") or "")
         answer_parts: list[str] = []
+        web_search_ids: set[str] = set()
         completed = any(
-            consume_turn_notification(message, answer_parts)
+            consume_turn_notification(message, answer_parts, web_search_ids)
             for message in notifications
         )
         interrupt_sent = False
@@ -261,10 +286,11 @@ def run_grounded_turn(
                 continue
             if message.get("id") is not None and message.get("method"):
                 raise AppServerTurnError("Codex requested an approval that this prototype cannot grant.")
-            completed = consume_turn_notification(message, answer_parts)
+            completed = consume_turn_notification(message, answer_parts, web_search_ids)
         answer = "".join(answer_parts).strip()
         if not answer:
             raise AppServerTurnError("Codex completed without an answer.")
-        return CodexTurnResult(thread_id=thread_id, turn_id=turn_id, answer=answer)
+        return CodexTurnResult(thread_id=thread_id, turn_id=turn_id, answer=answer,
+                               web_search_count=len(web_search_ids))
     finally:
         transport.close()

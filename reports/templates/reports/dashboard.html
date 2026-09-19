@@ -1,6 +1,6 @@
 {% load static %}
 <!doctype html>
-<html lang="{{ homepage_language|default:'en' }}">
+<html lang="en">
 <head>
     <link rel="icon" href="data:,">
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
     <title>Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
     {% if availability_command_center_enabled %}
-    <link rel="stylesheet" href="{% static 'reports/homepage_command_center.css' %}?v=20260917-wide-layout-hardening">
+    <link rel="stylesheet" href="{% static 'reports/homepage_command_center.css' %}?v=20260919-overview-spinner">
     {% endif %}
 </head>
 <body{% if availability_command_center_enabled %} class="availability-home-body"{% endif %}>
@@ -26,7 +26,6 @@
         >
             <div class="homepage-brand-loader" data-brand-loader role="status" aria-live="polite" aria-label="Loading Mining 360 fleet intelligence">
                 <div class="homepage-brand-loader__content">
-                    <img src="{% static 'reports/images/neemba-cat-logo.jpg' %}" alt="Neemba CAT">
                     <div class="neemba-loader-mark" aria-hidden="true">
                         <i style="--blade-angle: -54deg; --blade-delay: 0ms"></i>
                         <i style="--blade-angle: -18deg; --blade-delay: 110ms"></i>
@@ -49,7 +48,7 @@
                         <span>Connecting to the semantic model...</span>
                     </span>
                     <span class="refresh-status" data-refresh-status>Refresh pending</span>
-                    <button class="command-primary-action" type="button" data-action="ask-ai">Ask Mining 360 AI</button>
+                    <button class="command-primary-action" type="button" data-action="ask-ai">Ask M360 Chatbot</button>
                 </div>
             </header>
 
@@ -166,7 +165,6 @@
                                 title="Copy chart"
                                 aria-label="Copy Physical Availability chart to clipboard"
                                 data-label-en="Copy Physical Availability chart to clipboard"
-                                data-label-fr="Copier le graphique de disponibilité physique dans le presse-papiers"
                                 disabled
                             ><span class="visual-copy-icon" aria-hidden="true"></span></button>
                         </div>
@@ -206,7 +204,6 @@
                                 title="Copy chart"
                                 aria-label="Copy Availability Trend chart to clipboard"
                                 data-label-en="Copy Availability Trend chart to clipboard"
-                                data-label-fr="Copier le graphique de tendance de disponibilité dans le presse-papiers"
                                 disabled
                             ><span class="visual-copy-icon" aria-hidden="true"></span></button>
                         </div>
@@ -276,7 +273,7 @@
             </section>
 
             <section class="homepage-actions" aria-label="Contextual actions">
-                <button type="button" class="command-primary-action" data-action="ask-ai">Ask Mining 360 AI</button>
+                <button type="button" class="command-primary-action" data-action="ask-ai">Ask M360 Chatbot</button>
                 <button type="button" data-action="view-downtime">View Downtime Drivers</button>
                 <button type="button" data-action="open-report">Open Fleet Performance Report</button>
             </section>
@@ -287,8 +284,8 @@
                 <button type="button" data-retry>Retry</button>
             </section>
         </main>
-        <script src="{% static 'reports/visual_export.js' %}?v=20260901-1" defer></script>
-        <script src="{% static 'reports/homepage_command_center.js' %}?v=20260917-excellence-center" defer></script>
+        <script src="{% static 'reports/visual_export.js' %}?v=20260919-english-ui" defer></script>
+        <script src="{% static 'reports/homepage_command_center.js' %}?v=20260919-english-ui" defer></script>
     {% else %}
         <main class="app-shell">
             <header class="topbar">

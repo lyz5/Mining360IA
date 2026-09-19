@@ -7,18 +7,22 @@ import re
 from collections import defaultdict
 from datetime import date, timedelta
 from decimal import Decimal
+from uuid import UUID
 
 from django.core.cache import cache
-from django.db.models import Max, Q, Sum
+from django.db.models import Count, Max, Q, Sum
 from django.db.models.functions import TruncDay, TruncMonth
 from django.utils import timezone
 
 from .business_mapping_country_scope import operating_country_label
 
-from .business_mapping_access_service import authorized_account_codes
+from .business_mapping_access_service import authorized_account_codes, authorized_minesite_names
+from .business_mapping_normalization_service import normalize_business_name
 from .business_mapping_source_service import BUSINESS_REVENUE_DIVISIONS, MINING_DIVISION, MINING_REVENUE_LOBS, UNCLASSIFIED_REVENUE_LOB
 from .business_review_access_service import filter_published_rows
 from .models import (
+    BusinessAccount,
+    EquipmentFleetAnalysis,
     BusinessCommandCenterUserVisit,
     BusinessCommandCenterWatchlist,
     BusinessReviewAction,
@@ -174,6 +178,7 @@ class BusinessCommandCenterService:
         snapshot = publication.snapshot_json or {} if publication else {}
         classification_rows = snapshot.get("accounts") or snapshot.get("mappings", [])
         published_rows = filter_published_rows(list(classification_rows), self.user) if publication else []
+        published_rows = self._with_canonical_names(published_rows)
         customers = self._csv("customer_ids")
         customer_groups = self._csv("customer_group_ids")
         countries, key_accounts = self._csv("country_ids"), self._csv("key_account_ids")
@@ -194,10 +199,67 @@ class BusinessCommandCenterService:
             raise BusinessCommandCenterInputError("The selected Business Line is not supported.")
         return revenue, publication, published_rows, selected_rows, period, business_line, source_row.synchronization_run
 
+    @staticmethod
+    def _with_canonical_names(rows):
+        """Refresh labels only; identities, scope and allocations stay published."""
+        ids = {}
+        for row in rows:
+            try:
+                ids[row.get("account_id")] = UUID(str(row.get("account_id")))
+            except (ValueError, TypeError, AttributeError):
+                continue
+        names = dict(BusinessAccount.objects.filter(pk__in=ids.values()).values_list("pk", "canonical_account_name"))
+        result = []
+        group_names = defaultdict(set)
+        unresolved_groups = set()
+        for row in rows:
+            item = dict(row)
+            name = names.get(ids.get(row.get("account_id")))
+            if name:
+                item["account_name"] = name
+            result.append(item)
+            if item.get("customer_country_group_id"):
+                group_names[item["customer_country_group_id"]].add(item.get("account_name"))
+                if not name:
+                    unresolved_groups.add(item["customer_country_group_id"])
+        for item in result:
+            labels = group_names.get(item.get("customer_country_group_id"), set())
+            if item.get("customer_country_group_id") not in unresolved_groups and len(labels) == 1 and None not in labels and "" not in labels:
+                item["customer_country_group_name"] = next(iter(labels))
+        return result
+
     def latest_business_date(self):
         """Return the authorized Revenue date without recording a Command Center visit."""
         _revenue, _publication, _published, _selected, period, _line, _run = self._context()
         return period["end_date"]
+
+    def entity_fleet(self, dimension, entity_id):
+        fields = {"customers": "account_id", "key_accounts": "key_account_id", "countries": "business_country"}
+        if dimension not in fields:
+            raise BusinessCommandCenterInputError("Unsupported Fleet dimension.")
+        _revenue, _publication, _published, selected, _period, _line, _run = self._context()
+        rows = [row for row in selected if str(row.get(fields[dimension]) or "") == str(entity_id)]
+        if not rows:
+            raise BusinessCommandCenterInputError("This entity is not available in the selected scope.")
+        sites = {name for row in rows for name in [row.get("minesite_name"), *(row.get("minesite_names") or [])] if name}
+        scope_label = "Selected entity"
+        if not sites and dimension == "customers":
+            group_ids = {row.get("customer_country_group_id") for row in rows if row.get("customer_country_group_id")}
+            peers = [row for row in selected if row.get("customer_country_group_id") in group_ids]
+            sites = {name for row in peers for name in [row.get("minesite_name"), *(row.get("minesite_names") or [])] if name}
+            if sites:
+                scope_label = "Published customer group: " + ", ".join(sorted({row.get("customer_country_group_name") or "Customer group" for row in rows}))
+        allowed = authorized_minesite_names(self.user)
+        if allowed is not None:
+            allowed = {name.casefold() for name in allowed}
+            sites = {name for name in sites if name.casefold() in allowed}
+        fleet = EquipmentFleetAnalysis.objects.filter(active=True, normalized_site__in=[normalize_business_name(name) for name in sites])
+        total = fleet.count()
+        return {"linked": bool(sites), "count": total, "sites": sorted(sites), "scope_label": scope_label,
+                "as_of": fleet.aggregate(value=Max("source_last_seen_at"))["value"],
+                "models": list(fleet.values("model").annotate(count=Count("pk")).order_by("-count", "model")),
+                "equipment": list(fleet.order_by("site", "model", "equipment", "pk").values("site", "model", "equipment", "serial_number", "source_status")[:200]),
+                "limit": 200}
 
     @staticmethod
     def _range(queryset, start, end):
@@ -504,6 +566,7 @@ class BusinessCommandCenterService:
     def bootstrap(self):
         revenue, publication, published_rows, selected_rows, period, business_line, source_run = self._context()
         scope_key = {
+            "canonical_labels": [(row.get("account_id"), row.get("account_name"), row.get("customer_country_group_name")) for row in published_rows],
             "user": self.user.pk, "source": str(source_run.pk), "publication": publication.version if publication else None,
             "period": {key: str(value) for key, value in period.items()}, "business_line": business_line,
             "division_scope": self._division_scope(),
@@ -518,7 +581,9 @@ class BusinessCommandCenterService:
         result = copy.deepcopy(core)
         result["since_last_visit"] = self._visit(result, source_run)
         watchlist = BusinessCommandCenterWatchlist.objects.filter(user=self.user, active=True)
-        result["watchlist"] = [{"id": str(item.id), "entity_type": item.entity_type, "entity_id": item.entity_id, "display_name": item.display_name} for item in watchlist]
+        customer_names = {row.get("account_id"): row.get("account_name") for row in published_rows}
+        result["watchlist"] = [{"id": str(item.id), "entity_type": item.entity_type, "entity_id": item.entity_id,
+                               "display_name": customer_names.get(item.entity_id, item.display_name) if item.entity_type == "customer" else item.display_name} for item in watchlist]
         return result
 
     def revenue_explorer(self):
@@ -546,7 +611,8 @@ class BusinessCommandCenterService:
             raise BusinessCommandCenterInputError("The selected ranking mode is not supported.")
         rows.sort(key=lambda item: (sorters[mode](item), str(item["name"] or "")))
         try:
-            limit = min(25, max(5, int(self.params.get("limit") or 10)))
+            requested_limit = str(self.params.get("limit") or "10").strip().lower()
+            limit = len(rows) if requested_limit == "all" else min(100, max(5, int(requested_limit)))
         except (TypeError, ValueError):
             limit = 10
         for rank, item in enumerate(rows, 1):
@@ -556,7 +622,7 @@ class BusinessCommandCenterService:
             duplicate_names[str(item.get("name") or "").casefold()] += 1
         for item in rows:
             duplicate = duplicate_names[str(item.get("name") or "").casefold()] > 1
-            item["display_name"] = f"{item['name']} · {item['code']}" if duplicate and item.get("code") else item.get("name")
+            item["display_name"] = f"{item['name']} · {item['code']}" if dimension != "customers" and duplicate and item.get("code") else item.get("name")
         return {
             "context_id": self.bootstrap()["context"]["context_id"],
             "dimension": dimension,
@@ -605,14 +671,45 @@ class BusinessCommandCenterService:
             "country_ids": countries,
             "key_account_ids": key_accounts,
         }
+        # Technical account suffixes distinguish published country/source groups,
+        # not the customer requested in a question with no such qualifier.
+        # Select all IDs only when both the published customer label and the
+        # published Key Account agree. Published rows are already access-filtered.
+        if not re.search(r"miningaccounts\s*:", str(text), re.IGNORECASE):
+            customer_groups = groups["customer_group_ids"]
+            families = defaultdict(list)
+            owners = defaultdict(set)
+            for row in published_rows:
+                owners[row.get("customer_country_group_id")].add(row.get("key_account_id"))
+            for item in customer_groups.values():
+                label = re.sub(r"\s+·\s+MININGACCOUNTS:\d+-\d+\s*$", "", str(item.get("name") or ""), flags=re.IGNORECASE).strip()
+                families[label.casefold()].append((label, item))
+            combined = {}
+            for family in families.values():
+                key_ids = set().union(*(owners[item["id"]] for _, item in family))
+                if len(family) > 1 and len(key_ids) == 1 and None not in key_ids and "" not in key_ids:
+                    ids = sorted(str(item["id"]) for _, item in family)
+                    identifier = ",".join(ids)
+                    combined[identifier] = {
+                        "id": identifier, "name": family[0][0],
+                        "country": "", "group_count": len(ids),
+                    }
+                else:
+                    combined.update({item["id"]: item for _, item in family})
+            groups["customer_group_ids"] = combined
         normalized_text = re.sub(r"[^a-z0-9]+", " ", str(text or "").casefold()).strip()
         padded_text = f" {normalized_text} "
         resolved = {}
         ambiguities = {}
+        resolved_scope = {}
         ignored_words = {
             "business", "ca", "centre", "center", "command", "courant", "current",
             "quel", "quelle", "revenue", "revenu", "parts", "pieces", "machine",
             "service", "rental", "ventes", "vente", "year", "ytd",
+            "what", "which", "the", "for", "our", "are", "was", "were", "how",
+            "much", "show", "tell", "give", "please", "about", "total", "sales",
+            "sold", "this", "last", "month", "pour", "les", "des", "est", "sont",
+            "combien", "donne", "moi", "montre", "annee", "vendu", "nous",
         }
         query_words = {
             word for word in normalized_text.split()
@@ -625,7 +722,13 @@ class BusinessCommandCenterService:
                 if name and f" {name} " in padded_text:
                     matches.append((len(name), str(item["id"]), item))
             if matches:
-                resolved[parameter] = max(matches)[1]
+                longest = max(length for length, _, _ in matches)
+                best = [item for length, _, item in matches if length == longest]
+                if len(best) > 1:
+                    ambiguities[parameter] = [{"id":str(item["id"]), "name":item.get("name"), "country":item.get("country")} for item in best[:10]]
+                    continue
+                resolved[parameter] = str(best[0]["id"])
+                resolved_scope[parameter] = {"name":best[0].get("name"), "group_count":best[0].get("group_count", 1)}
                 continue
             partial = []
             for item in options.values():
@@ -634,9 +737,10 @@ class BusinessCommandCenterService:
                     partial.append(item)
             if len(partial) == 1:
                 resolved[parameter] = str(partial[0]["id"])
+                resolved_scope[parameter] = {"name":partial[0].get("name"), "group_count":partial[0].get("group_count", 1)}
             elif len(partial) > 1:
                 ambiguities[parameter] = [
                     {"id": str(item["id"]), "name": item.get("name"), "country": item.get("country")}
                     for item in partial[:10]
                 ]
-        return {"filters": resolved, "ambiguities": ambiguities}
+        return {"filters": resolved, "ambiguities": ambiguities, "scope": resolved_scope}

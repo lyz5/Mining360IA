@@ -34,9 +34,9 @@
       $('[data-dmc-preview-list]').innerHTML = [
         ['Date range', `${filters().start_date} to ${filters().end_date}`], ['Rows selected', p.total_rows],
         ['Rows already checked and unchanged', p.cached_rows], ['Rows requiring analysis', p.ai_rows],
-        ['Rows without comments', p.rows_without_useful_comments], ['Estimated tokens', p.estimated_tokens.toLocaleString()],
+        ['Rows without comments', p.rows_without_useful_comments], ['Estimated tokens', p.estimated_tokens.toLocaleString("en-GB")],
         ['Estimated API cost', `$${Number(p.estimated_cost).toFixed(2)}`], ['Mode', p.mode === 'smart' ? 'Smart Audit' : 'Full AI Audit'],
-        ...(p.limit_exceeded ? [['Run limit', `Narrow the selection to ${p.maximum_rows.toLocaleString()} rows or fewer`]] : [])
+        ...(p.limit_exceeded ? [['Run limit', `Narrow the selection to ${p.maximum_rows.toLocaleString("en-GB")} rows or fewer`]] : [])
       ].map(([term, value]) => `<div><dt>${escapeHtml(term)}</dt><dd>${escapeHtml(value)}</dd></div>`).join('');
       $('[data-dmc-start]').disabled = Boolean(p.limit_exceeded || !p.total_rows);
       setModal(true);
@@ -55,9 +55,9 @@
     $('[data-dmc-summary]').hidden = false; $('[data-dmc-results]').hidden = false;
     const percent = run.total_rows ? Math.round(run.processed_rows / run.total_rows * 100) : 0;
     $('[data-dmc-progress-bar]').style.width = `${Math.min(100, percent)}%`;
-    $('[data-dmc-progress-copy]').textContent = `${run.processed_rows.toLocaleString()} / ${run.total_rows.toLocaleString()} rows completed · ${run.status}`;
+    $('[data-dmc-progress-copy]').textContent = `${run.processed_rows.toLocaleString("en-GB")} / ${run.total_rows.toLocaleString("en-GB")} rows completed · ${run.status}`;
     const values = {...run, taxonomy: run.unmapped + run.taxonomy_gaps, estimated_cost: `$${Number(run.estimated_cost).toFixed(2)}`};
-    $$('[data-dmc-kpi]').forEach(node => node.textContent = values[node.dataset.dmcKpi]?.toLocaleString?.() ?? values[node.dataset.dmcKpi] ?? 0);
+    $$('[data-dmc-kpi]').forEach(node => node.textContent = values[node.dataset.dmcKpi]?.toLocaleString?.("en-GB") ?? values[node.dataset.dmcKpi] ?? 0);
     $('[data-dmc-export]').href = `${root.dataset.runsUrl}${run.id}/export/csv/`;
   }
   async function poll() {
@@ -73,7 +73,7 @@
     const query = new URLSearchParams({page: state.page, page_size: 50, status: $('[data-dmc-status]').value, q: $('[data-dmc-search]').value});
     const payload = await json(`${root.dataset.runsUrl}${state.run.id}/items/?${query}`);
     state.items = payload.results; state.count = payload.count;
-    $('[data-dmc-page]').textContent = `Page ${state.page} · ${payload.count.toLocaleString()} rows`;
+    $('[data-dmc-page]').textContent = `Page ${state.page} · ${payload.count.toLocaleString("en-GB")} rows`;
     $('[data-dmc-previous]').disabled = state.page === 1; $('[data-dmc-next]').disabled = state.page * payload.page_size >= payload.count;
     $('[data-dmc-rows]').innerHTML = state.items.length ? state.items.map(item => `<tr>
       <td data-label="Status">${badge(item.status)}</td><td data-label="Event">${escapeHtml(item.event_id)}</td><td data-label="MineSite">${escapeHtml(item.minesite)}</td>
@@ -119,6 +119,6 @@
   $('[data-dmc-cancel]').addEventListener('click', async () => { if (state.run) { state.run = (await json(`${root.dataset.runsUrl}${state.run.id}/cancel/`, {method:'POST', body:'{}'})).run; renderRun(); } });
   document.addEventListener('click', event => { const open = event.target.closest('[data-dmc-open]'); if (open) openItem(open.dataset.dmcOpen); const run = event.target.closest('[data-dmc-run]'); if (run) { json(`${root.dataset.runsUrl}${run.dataset.dmcRun}/`).then(payload => { state.run = payload.run; state.page = 1; renderRun(); loadItems(); }); } });
   document.addEventListener('submit', event => { if (event.target.matches('[data-dmc-review-form]')) { event.preventDefault(); saveReview(event.target); } });
-  const today = new Date(); const start = new Date(today.getFullYear(), today.getMonth(), 1); $('[data-dmc-filter="start_date"]').value = start.toISOString().slice(0,10); $('[data-dmc-filter="end_date"]').value = today.toISOString().slice(0,10);
+  const today = new Date(); const monthStart = new Date(today.getFullYear(), today.getMonth(), 1); $('[data-dmc-filter="start_date"]').value = monthStart.toISOString().slice(0,10); $('[data-dmc-filter="end_date"]').value = today.toISOString().slice(0,10);
   loadHistory();
 })();

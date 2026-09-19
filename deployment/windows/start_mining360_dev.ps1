@@ -3,84 +3,17 @@ param(
     [int]$HttpsPort = 443,
     [int]$UpstreamPort = 8001
 )
-
 $ErrorActionPreference = "Stop"
+[Console]::OutputEncoding = New-Object System.Text.UTF8Encoding($false)
+$OutputEncoding = [Console]::OutputEncoding
+$env:PYTHONIOENCODING = "utf-8"
+$env:PYTHONUTF8 = "1"
 $root = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot "..\.."))
-$python = (Get-Command python.exe -ErrorAction Stop).Source
-$logDirectory = Join-Path $root ".runlogs"
-$runId = Get-Date -Format "yyyyMMdd-HHmmss"
-$outLog = Join-Path $logDirectory "development-$runId.out.log"
-$errLog = Join-Path $logDirectory "development-$runId.err.log"
-$controlLogDirectory = Join-Path $logDirectory "desktop-control"
-$pidManifest = Join-Path $controlLogDirectory "runtime-pids.json"
-
-New-Item -ItemType Directory -Path $logDirectory -Force | Out-Null
-New-Item -ItemType Directory -Path $controlLogDirectory -Force | Out-Null
-$env:MINING360_DEBUG = "1"
-$env:MINING360_ALLOWED_HOSTS = "127.0.0.1,localhost,$HostName"
-$env:MINING360_CSRF_TRUSTED_ORIGINS = "http://$HostName,https://$HostName"
-$env:MINING360_USE_X_FORWARDED_HOST = "1"
-$env:MINING360_PUBLIC_BASE_URL = "https://$HostName"
-$env:ENTRA_REDIRECT_URI = "https://$HostName/auth/callback/"
-$env:AZURE_AD_REDIRECT_URI = $env:ENTRA_REDIRECT_URI
-$env:MINING360_SQL_CONFIG_STORE = "0"
-$env:PYTHONUNBUFFERED = "1"
-$env:ENABLE_CODEX_CHATBOT = "Admin Only"
-$env:ENABLE_CODEX_ADMIN = "Admin Only"
-$env:CODEX_CHATBOT_APP_SERVER_ENABLED = "1"
-
-foreach ($name in @("ALL_PROXY", "GIT_HTTP_PROXY", "GIT_HTTPS_PROXY", "HTTP_PROXY", "HTTPS_PROXY")) {
-    $value = [Environment]::GetEnvironmentVariable($name)
-    if ($value -match '^https?://127\.0\.0\.1:9/?$') {
-        Remove-Item "Env:$name" -ErrorAction SilentlyContinue
-    }
+$python = Join-Path $root ".venv\Scripts\python.exe"
+if (-not (Test-Path -LiteralPath $python)) {
+    $python = Join-Path (Split-Path $root -Parent) ".venv\Scripts\python.exe"
 }
-
-Set-Location $root
-$certificateOutput = Join-Path $logDirectory "dev-https"
-$certificateResult = & $python (Join-Path $PSScriptRoot "setup_dev_https.py") --host $HostName --output $certificateOutput
-if ($LASTEXITCODE -ne 0) { throw "Unable to configure the Development HTTPS certificate." }
-$certificate, $key = ($certificateResult | Select-Object -Last 1) -split '\|', 2
-
-$waitress = Start-Process -FilePath $python `
-    -ArgumentList @('-m', 'waitress', "--listen=127.0.0.1:$UpstreamPort", '--threads=8', 'Mining360IA.wsgi:application') `
-    -WorkingDirectory $root `
-    -WindowStyle Hidden `
-    -RedirectStandardOutput $outLog `
-    -RedirectStandardError $errLog `
-    -PassThru
-$codexWorker = Start-Process -FilePath $python `
-    -ArgumentList @('manage.py', 'run_codex_worker', '--poll-seconds', '0.5') `
-    -WorkingDirectory $root `
-    -WindowStyle Hidden `
-    -RedirectStandardOutput (Join-Path $logDirectory "codex-worker-$runId.out.log") `
-    -RedirectStandardError (Join-Path $logDirectory "codex-worker-$runId.err.log") `
-    -PassThru
-$launcherProcess = Get-Process -Id $PID
-$manifest = [ordered]@{
-    schema_version = 1
-    run_id = $runId
-    root = $root
-    environment = "Development"
-    created_at = (Get-Date).ToUniversalTime().ToString("o")
-    components = @(
-        [ordered]@{ component = "launcher"; pid = $PID; started_at = $launcherProcess.StartTime.ToUniversalTime().ToString("o") }
-        [ordered]@{ component = "waitress"; pid = $waitress.Id; started_at = $waitress.StartTime.ToUniversalTime().ToString("o") }
-        [ordered]@{ component = "codex_worker"; pid = $codexWorker.Id; started_at = $codexWorker.StartTime.ToUniversalTime().ToString("o") }
-    )
-}
-$manifest | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath $pidManifest -Encoding UTF8
-try {
-    Start-Sleep -Seconds 2
-    & $python (Join-Path $PSScriptRoot "https_reverse_proxy.py") `
-        --host $HostName `
-        --port $HttpsPort `
-        --upstream-port $UpstreamPort `
-        --certificate $certificate `
-        --key $key
-    exit $LASTEXITCODE
-} finally {
-    if ($codexWorker -and -not $codexWorker.HasExited) { Stop-Process -Id $codexWorker.Id -Force }
-    if ($waitress -and -not $waitress.HasExited) { Stop-Process -Id $waitress.Id -Force }
-    Remove-Item -LiteralPath $pidManifest -Force -ErrorAction SilentlyContinue
-}
+if (-not (Test-Path -LiteralPath $python)) { throw "Project .venv Python missing." }
+Set-Location -LiteralPath $root
+& $python -m desktop.dev_runtime --host $HostName --https-port $HttpsPort --upstream-port $UpstreamPort
+exit $LASTEXITCODE

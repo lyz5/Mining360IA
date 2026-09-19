@@ -7,17 +7,22 @@ from django.contrib.auth.views import redirect_to_login
 from django.core.exceptions import PermissionDenied
 
 from codex_integration.django_principal import is_mining360_super_administrator
+from reports.access_control import has_module_access
 
 from .models import CodexChatbotPilot
 
 
 def chatbot_access_allowed(user) -> bool:
-    if not getattr(user, "is_authenticated", False):
+    if not getattr(user, "is_authenticated", False) or not getattr(user, "is_active", False):
         return False
     mode = str(getattr(settings, "ENABLE_CODEX_CHATBOT", "Disabled")).strip().casefold()
     if mode in {"disabled", "false", "0", "off", ""}:
         return False
     if is_mining360_super_administrator(user):
+        return True
+    # Preserve access previously granted to Mining360 AI during consolidation.
+    # Business tools still enforce their own Reporting/financial permissions.
+    if has_module_access(user, "ai"):
         return True
     if mode not in {"pilot", "pilot users", "pilot_users"}:
         return False

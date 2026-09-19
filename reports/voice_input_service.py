@@ -21,8 +21,6 @@ from .audio_transcription_service import (
     build_transcription_prompt,
     transcribe_with_retry,
 )
-from .audio_usage_tracking_service import track_transcription_usage
-from .ai_provider_types import AIProviderResponse
 from .models import VoiceTranscriptionLog
 from .synonym_resolution_service import SynonymResolutionService
 from .voice_input_config_service import (
@@ -120,18 +118,6 @@ class VoiceInputService:
                 if language_hint in {"fr", "en"} and not config.auto_detect_language
                 else SynonymResolutionService.detect_language(result.text)
             )
-            usage_log = None
-            if not isinstance(result.response, AIProviderResponse):
-                # Compatibility for custom/legacy transcription providers.
-                # Gateway-backed production requests are already logged in
-                # AIProviderUsageLog and must not be counted twice.
-                usage_log, _ = track_transcription_usage(
-                    response=result.response,
-                    model=result.model,
-                    user=user,
-                    conversation_id=conversation_id,
-                    started_at=started_at,
-                )
             raw_usage = getattr(result.response, "usage", {}) or {}
             usage = (
                 raw_usage
@@ -150,7 +136,6 @@ class VoiceInputService:
             log.input_tokens = usage.get("input_tokens", 0)
             log.output_tokens = usage.get("output_tokens", 0)
             log.total_tokens = usage.get("total_tokens", 0)
-            log.openai_usage_log = usage_log
             log.estimated_cost = getattr(result.response, "estimated_cost", None)
             log.completed_at = timezone.now()
             log.save()
@@ -169,28 +154,10 @@ class VoiceInputService:
             cache.set(result_cache_key, payload, RESULT_CACHE_SECONDS)
             return payload
         except VoiceInputError as exc:
-            self._track_failure(
-                response=provider_response,
-                model=config.model,
-                user=user,
-                conversation_id=conversation_id,
-                started_at=started_at,
-                error_code=exc.code,
-                log=log,
-            )
             self._fail(log, exc.code, started_at)
             raise
         except Exception as exc:
             code = self._provider_error_code(exc)
-            self._track_failure(
-                response=provider_response,
-                model=config.model,
-                user=user,
-                conversation_id=conversation_id,
-                started_at=started_at,
-                error_code=code,
-                log=log,
-            )
             self._fail(log, code, started_at)
             raise VoiceInputError(code, self._provider_error_message(code), status=self._provider_status(code))
         finally:
@@ -240,10 +207,3 @@ class VoiceInputService:
         if code == "TRANSCRIPTION_TIMEOUT":
             return 504
         return 502
-
-    @staticmethod
-    def _track_failure(*, response, model, user, conversation_id, started_at, error_code, log):
-        # The gateway records failed provider attempts centrally. Keep the
-        # voice-specific row focused on the user interaction and avoid
-        # duplicating provider usage in the legacy OpenAI usage table.
-        return None

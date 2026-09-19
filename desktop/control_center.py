@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import queue
 import os
+import sys
 import threading
 import time
 import tkinter as tk
@@ -49,7 +50,7 @@ class StatusCard(tk.Frame):
         self.title.grid(row=0, column=1, padx=(0, 14), pady=(14, 1), sticky="ew")
         self.detail = tk.Label(
             self,
-            text="En attente du statut",
+            text="Waiting for status",
             bg=COLORS["panel"],
             fg=COLORS["muted"],
             font=("Segoe UI", 9),
@@ -156,14 +157,14 @@ class ControlCenter(tk.Tk):
         ).pack(anchor="w")
         tk.Label(
             title_box,
-            text="Pilotage des services et de la connectivite",
+            text="Service and connectivity management",
             bg=COLORS["navy"],
             fg="#AEB8CC",
             font=("Segoe UI", 9),
         ).pack(anchor="w", pady=(2, 0))
         self.overall = tk.Label(
             header,
-            text="Verification",
+            text="Checking",
             bg=COLORS["navy"],
             fg="#AEB8CC",
             font=("Segoe UI Semibold", 10),
@@ -177,11 +178,11 @@ class ControlCenter(tk.Tk):
 
         action_bar = tk.Frame(content, bg=COLORS["window"])
         action_bar.grid(row=0, column=0, sticky="ew", pady=(0, 16))
-        self.start_button = ttk.Button(action_bar, text="Demarrer", style="Primary.TButton", command=self.start_application)
+        self.start_button = ttk.Button(action_bar, text="Start", style="Primary.TButton", command=self.start_application)
         self.start_button.pack(side="left")
-        self.stop_button = ttk.Button(action_bar, text="Arreter", style="Danger.TButton", command=self.stop_application)
+        self.stop_button = ttk.Button(action_bar, text="Stop", style="Danger.TButton", command=self.stop_application)
         self.stop_button.pack(side="left", padx=9)
-        ttk.Button(action_bar, text="Ouvrir", style="Secondary.TButton", command=self.open_application).pack(side="left")
+        ttk.Button(action_bar, text="Open", style="Secondary.TButton", command=self.open_application).pack(side="left")
         ttk.Button(action_bar, text="Actualiser", style="Secondary.TButton", command=self.refresh_all).pack(side="left", padx=9)
         service_grid = tk.Frame(content, bg=COLORS["window"])
         service_grid.grid(row=1, column=0, sticky="ew")
@@ -205,7 +206,7 @@ class ControlCenter(tk.Tk):
             fg=COLORS["text"],
             font=("Segoe UI Semibold", 11),
         ).pack(side="left")
-        ttk.Button(log_header, text="Ouvrir les journaux", style="Secondary.TButton", command=self.open_logs).pack(side="right")
+        ttk.Button(log_header, text="Open logs", style="Secondary.TButton", command=self.open_logs).pack(side="right")
         self.log_text = tk.Text(
             log_panel,
             bg="#F8FAFC",
@@ -219,14 +220,14 @@ class ControlCenter(tk.Tk):
             wrap="word",
         )
         self.log_text.grid(row=1, column=0, sticky="nsew", padx=15, pady=(0, 14))
-        self._append_log("Centre de controle pret.")
+        self._append_log("Control Center ready.")
 
     def start_application(self) -> None:
         if self.action_running:
             return
         self.action_running = True
         self._set_action_buttons(False)
-        self._append_log("Demarrage de Mining 360...")
+        self._append_log("Starting Mining360...")
         self._submit("action", self.controller.start, "start")
 
     def stop_application(self) -> None:
@@ -234,7 +235,7 @@ class ControlCenter(tk.Tk):
             return
         self.action_running = True
         self._set_action_buttons(False)
-        self._append_log("Arret de Mining 360...")
+        self._append_log("Stopping Mining360...")
         self._submit("action", self.controller.stop, "stop")
 
     def open_application(self) -> None:
@@ -322,11 +323,11 @@ class ControlCenter(tk.Tk):
                 self.cards[code].set_result(result)
         statuses = [result.status for result in self.results.values()]
         if statuses and all(status == "online" for status in statuses) and len(statuses) == len(self.cards):
-            self.overall.configure(text="Operationnel", fg=COLORS["green"])
+            self.overall.configure(text="Operational", fg=COLORS["green"])
         elif any(status == "offline" for status in statuses):
             self.overall.configure(text="Attention", fg=COLORS["red"])
         else:
-            self.overall.configure(text="Verification", fg=COLORS["muted"])
+            self.overall.configure(text="Checking", fg=COLORS["muted"])
 
     def _set_action_buttons(self, enabled: bool) -> None:
         state = "normal" if enabled else "disabled"
@@ -348,6 +349,15 @@ class ControlCenter(tk.Tk):
 
 
 def main() -> None:
+    from desktop.project_environment import configure
+    configure()
+    if sys.stderr is None:
+        from desktop.project_environment import ROOT
+        directory = ROOT / '.runlogs/desktop-control'
+        directory.mkdir(parents=True, exist_ok=True)
+        sys.stderr = (directory / 'control-center.err.log').open('a', encoding='utf-8', buffering=1)
+    if sys.stdout is None:
+        sys.stdout = sys.stderr
     feature_mode = os.getenv("ENABLE_CONTROL_CENTER_V2", "Production").strip().casefold()
     if feature_mode not in {"0", "false", "off", "disabled", "legacy"}:
         from desktop.control_center_v2 import main as v2_main

@@ -130,6 +130,19 @@ def command_center_customer_search_api(request):
 
 
 @login_required
+def command_center_fleet_api(request):
+    if not _command_center_allowed(request.user):
+        return JsonResponse({"detail": "Forbidden"}, status=403)
+    try:
+        return JsonResponse(BusinessCommandCenterService(request.user, request.GET).entity_fleet(
+            request.GET.get("dimension"), request.GET.get("entity_id")))
+    except BusinessCommandCenterInputError as exc:
+        return JsonResponse({"message": str(exc)}, status=400)
+    except Exception:
+        return JsonResponse({"message": "Fleet is temporarily unavailable."}, status=503)
+
+
+@login_required
 def command_center_key_account_search_api(request):
     return _command_center_entity_search(request, "key_accounts")
 

@@ -65,6 +65,7 @@ def trust_for_current_user(certificate_path: Path) -> None:
         ["certutil.exe", "-user", "-addstore", "Root", str(certificate_path)],
         capture_output=True,
         text=True,
+        encoding="oem" if os.name == "nt" else "utf-8",
         timeout=30,
     )
     if result.returncode:
@@ -75,13 +76,15 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--host", required=True)
     parser.add_argument("--output", required=True)
+    parser.add_argument("--install-trust", action="store_true", help="Explicitly install in the current user trust store")
     args = parser.parse_args()
     output = Path(args.output).resolve()
     certificate_path = output / "mining360-dev.crt.pem"
     key_path = output / "mining360-dev.key.pem"
     if not certificate_matches(certificate_path, args.host) or not key_path.exists():
         generate(args.host, certificate_path, key_path)
-    trust_for_current_user(certificate_path)
+    if args.install_trust:
+        trust_for_current_user(certificate_path)
     print(f"{certificate_path}|{key_path}")
 
 

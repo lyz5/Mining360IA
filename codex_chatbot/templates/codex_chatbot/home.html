@@ -1,12 +1,12 @@
 {% load static %}
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>M360 Chatbot | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260903-production-hardening-2">
-    <link rel="stylesheet" href="{% static 'codex_chatbot/chatbot.css' %}?v=20260914-7">
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260919-english-ui">
+    <link rel="stylesheet" href="{% static 'codex_chatbot/chatbot.css' %}?v=20260919-english-ui">
 </head>
 <body>
 {% include "reports/includes/app_nav.html" %}
@@ -15,33 +15,61 @@
       data-run-base="/codex-chatbot/api/runs/"
       data-conversation-url="{% if selected_conversation %}{% url 'codex_chatbot:conversation-api' selected_conversation.id %}{% endif %}"
       data-active-run-id="{% if active_run %}{{ active_run.id }}{% endif %}">
-    <aside class="codex-chat__history" aria-label="Conversations M360 Chatbot">
+    <aside class="codex-chat__history" aria-label="M360 Chatbot conversations">
         <div class="codex-chat__brand">
             <span>MINING 360</span>
             <strong>M360 Chatbot</strong>
-            <small>Pilote</small>
+            <small>Your Mining360 assistant</small>
         </div>
-        <a class="codex-new" href="{% url 'codex_chatbot:home' %}">Nouvelle conversation</a>
-        <nav aria-label="Historique">
+        <a class="codex-new" href="{% url 'codex_chatbot:home' %}">New conversation</a>
+        <label class="sr-only" for="codex-history-search">Search conversations</label>
+        <input type="search" id="codex-history-search" placeholder="Search conversations…">
+        <p><a href="?history=active">Recent</a> · <a href="?history=archived">Archives</a></p>
+        <nav aria-label="History" id="codex-history-list">
             {% for conversation in conversations %}
+            <div class="codex-history-row" data-conversation-id="{{ conversation.id }}" data-title="{{ conversation.title }}" data-status="{{ conversation.status }}">
             <a href="{% url 'codex_chatbot:conversation' conversation.id %}"
                class="codex-history-item{% if selected_conversation.id == conversation.id %} is-active{% endif %}">
                 <strong>{{ conversation.title }}</strong>
+                {% if conversation.legacy_conversation_id %}<small>Imported Mining360 AI history</small>{% endif %}
                 <span>{{ conversation.updated_at|date:"d M Y H:i" }}</span>
             </a>
+            <details class="codex-conversation-menu">
+                <summary aria-label="Actions for {{ conversation.title }}">⋯</summary>
+                <div>
+                    <button type="button" data-conversation-action="rename">Rename</button>
+                    {% if conversation.status == 'ARCHIVED' %}
+                    <button type="button" data-conversation-action="restore">Restore</button>
+                    {% else %}<button type="button" data-conversation-action="archive">Archive</button>{% endif %}
+                    <button type="button" data-conversation-action="delete" class="is-danger">Delete</button>
+                </div>
+            </details>
+            </div>
             {% empty %}
-            <p class="codex-muted">Aucune conversation Codex.</p>
+            <p class="codex-muted">No conversations yet.</p>
             {% endfor %}
         </nav>
     </aside>
-    <section class="codex-chat__main">
+    <section class="codex-chat__main{% if selected_conversation %} has-conversation{% endif %}">
         <header class="codex-chat__header">
+            <button type="button" id="codex-history-toggle" aria-expanded="false" aria-controls="codex-history-list">Conversations</button>
             <div>
             <span class="codex-eyebrow">M360 CHATBOT</span>
-                <h1>{% if selected_conversation %}{{ selected_conversation.title }}{% else %}Nouvelle conversation{% endif %}</h1>
+                <h1>{% if selected_conversation %}{{ selected_conversation.title }}{% else %}New conversation{% endif %}</h1>
             </div>
-            <span class="codex-status"><i></i> Outils métier gouvernés</span>
+            <span class="codex-status"><i></i> Governed business tools{% if web_search_enabled %} · Web search enabled{% endif %}</span>
         </header>
+        {% if selected_conversation %}
+        <div class="codex-history-actions">
+            <a href="{% url 'codex_chatbot:history-download' selected_conversation.id %}">Download conversation and data (JSON)</a>
+            <form method="post" action="{% url 'codex_chatbot:history-status' selected_conversation.id %}">
+                {% csrf_token %}
+                {% if selected_conversation.status == 'ARCHIVED' %}
+                <button name="status" value="ACTIVE">Restore</button>
+                {% else %}<button name="status" value="ARCHIVED">Archive</button>{% endif %}
+            </form>
+        </div>
+        {% endif %}
         <div id="codex-thread" class="codex-thread" data-conversation-id="{% if selected_conversation %}{{ selected_conversation.id }}{% endif %}" aria-live="polite">
             {% if selected_conversation %}
                 {% for message in selected_conversation.messages.all %}
@@ -53,18 +81,29 @@
                 {% endfor %}
             {% else %}
             <div class="codex-empty">
-                <span>BUSINESS OVERVIEW · FLEET · ASSISTANT</span>
-                <h2>Interrogez les données gouvernées de Mining 360</h2>
-                <p>Exemple : « Quel est le Revenue Parts YTD de Fekola ? »</p>
+                <span>BUSINESS OVERVIEW · EXCELLENCE CENTER · DOCUMENTS</span>
+                <h2>Ask about governed Mining360 data</h2>
+                <p>Example: “What is the Revenue Parts YTD for Fekola?”</p>
             </div>
             {% endif %}
         </div>
-        <form id="codex-composer" class="codex-composer">
+        <form id="codex-composer" class="codex-composer" novalidate>
             {% csrf_token %}
-            <label class="sr-only" for="codex-question">Votre question</label>
-            <textarea id="codex-question" rows="2" maxlength="3000" placeholder="Posez une question sur le Revenue, le Fleet ou un MineSite..." required></textarea>
-            <button type="submit">Envoyer</button>
-            <button type="button" id="codex-cancel" class="codex-cancel" hidden>Annuler</button>
+            <label class="sr-only" for="codex-question">Your question</label>
+            <textarea id="codex-question" rows="2" maxlength="3000" placeholder="Ask about your metrics, equipment or documents..." required></textarea>
+            <div class="codex-composer-tools">
+            <button type="button" id="codex-microphone" aria-pressed="false" title="Add text using your voice">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/></svg>
+                <span>Dictate</span>
+            </button>
+            <label class="sr-only" for="codex-voice-language">Dictation language</label>
+            <select id="codex-voice-language" aria-label="Dictation language"><option value="en-US">English</option><option value="fr-FR">French</option></select>
+            <button type="button" id="codex-voice-cancel" hidden>Cancel dictation</button>
+            <span class="codex-composer-hint">Enter to send · Shift+Enter for a new line</span>
+            <button type="submit">Send</button>
+            <button type="button" id="codex-cancel" class="codex-cancel" hidden>Cancel</button>
+            </div>
+            <p id="codex-voice-status" class="codex-voice-status" role="status">Dictation uses your browser’s speech service, which may send audio to its provider. You can edit the text before sending.</p>
             <div class="codex-run-progress" id="codex-run-progress" hidden>
                 <div class="codex-run-progress__track" aria-hidden="true"><span></span></div>
                 <p id="codex-progress" role="status"></p>
@@ -72,6 +111,18 @@
         </form>
     </section>
 </main>
-<script src="{% static 'codex_chatbot/chatbot.js' %}?v=20260914-7" defer></script>
+<dialog id="codex-conversation-dialog">
+    <form method="dialog">
+        <h2 id="codex-dialog-title">Rename conversation</h2>
+        <p id="codex-dialog-description"></p>
+        <label id="codex-title-label" for="codex-conversation-title">Title</label>
+        <input id="codex-conversation-title" maxlength="180" autocomplete="off">
+        <p id="codex-dialog-error" role="alert"></p>
+        <div class="codex-dialog-buttons"><button value="cancel">Cancel</button><button id="codex-dialog-confirm" value="confirm">Save</button></div>
+    </form>
+</dialog>
+<script src="{% static 'codex_chatbot/chatbot.js' %}?v=20260919-web-search" defer></script>
+<script src="{% static 'codex_chatbot/conversations.js' %}?v=20260919-english-ui" defer></script>
+<script src="{% static 'codex_chatbot/voice.js' %}?v=20260919-english-ui" defer></script>
 </body>
 </html>

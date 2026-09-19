@@ -48,7 +48,7 @@ class DowntimeMappingServiceTests(TestCase):
         self.assertEqual(comment_quality("Machine down"), "Generic")
         self.assertIn(comment_quality("Pompe à eau endommagée et remplacée après diagnostic"), {"Medium Quality", "High Quality"})
 
-    @patch("reports.downtime_mapping_check_service.ai_gateway.generate_structured_output")
+    @patch("reports.downtime_mapping_check_service.legacy_ai.generate_structured_output")
     def test_blind_request_excludes_current_description_cat(self, gateway):
         gateway.return_value = SimpleNamespace(
             structured_output={
@@ -63,7 +63,7 @@ class DowntimeMappingServiceTests(TestCase):
         self.assertNotIn("Description CAT currently", gateway.call_args.kwargs["options"]["system_instructions"])
         self.assertEqual(result["recommended_description_cat"]["code"], "electrical-system")
 
-    @patch("reports.downtime_mapping_check_service.ai_gateway.generate_structured_output")
+    @patch("reports.downtime_mapping_check_service.legacy_ai.generate_structured_output")
     def test_unknown_ai_category_is_rejected(self, gateway):
         gateway.return_value = SimpleNamespace(
             structured_output={"classification_status": "matched", "recommended_description_cat": {"code": "invented", "name": "Invented"}, "confidence": 99,

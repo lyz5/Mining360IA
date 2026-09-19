@@ -4,7 +4,7 @@ import time
 from dataclasses import dataclass
 
 from .models import KnowledgeSynonym
-from .ai_provider_gateway_service import ai_gateway
+from .legacy_ai_service import legacy_ai
 
 
 @dataclass
@@ -48,7 +48,7 @@ class GatewaySpeechToTextProvider(SpeechToTextProvider):
         self, *, audio_file, filename, mime_type, model, language, prompt, timeout,
         context=None, provider_code="", **kwargs,
     ):
-        response = ai_gateway.transcribe_audio(
+        response = legacy_ai.transcribe_audio(
             use_case="voice_transcription",
             audio_file=audio_file,
             filename=filename,

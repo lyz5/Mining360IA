@@ -4,7 +4,7 @@ import json
 import os
 import time
 
-from .ai_provider_gateway_service import ai_gateway
+from .legacy_ai_service import legacy_ai
 from .openai_service import is_openai_configured
 
 
@@ -74,7 +74,7 @@ def embedding_model() -> str:
 def create_embedding(text: str, *, user=None, conversation_id: str = "") -> list[float]:
     if not is_openai_configured():
         return []
-    response = ai_gateway.create_embeddings(
+    response = legacy_ai.create_embeddings(
         use_case="embedding_generation",
         inputs=[str(text or "")[:24_000]],
         context={
@@ -121,7 +121,7 @@ def extract_chunk_knowledge(
         instruction = system
         if attempt:
             instruction += " The previous output failed validation. Return corrected JSON only."
-        response = ai_gateway.generate_structured_output(
+        response = legacy_ai.generate_structured_output(
             use_case="knowledge_enrichment",
             messages=[
                 {"role": "system", "content": instruction},

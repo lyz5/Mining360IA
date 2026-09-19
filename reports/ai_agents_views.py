@@ -19,13 +19,9 @@ from .models import (
     AIAgentDataSource,
     AIAgentExecutionLog,
     AIAgentIntent,
-    AIAgentProviderConfiguration,
     AIAgentPrompt,
     AIAgentRoutingConfiguration,
     AIAgentTool,
-    AIProvider,
-    AIProviderModel,
-    AIUseCaseConfiguration,
 )
 
 
@@ -274,78 +270,8 @@ def agent_components_api(request, agent_id, resource_type):
     })
 
 
-def _agent_provider_payload(item):
-    return {
-        "id": item.id,
-        "use_case_id": item.use_case_id,
-        "use_case": item.use_case.use_case_code,
-        "use_case_name": item.use_case.display_name,
-        "provider_id": item.provider_id,
-        "provider": item.provider.name,
-        "model_id": item.model_id,
-        "model": item.model.display_name if item.model else "",
-        "priority": item.priority,
-        "fallback_enabled": item.fallback_enabled,
-        "active": item.active,
-    }
 
 
-@login_required
-@require_http_methods(["GET", "POST"])
-def agent_provider_configurations_api(request, agent_id):
-    denied = _denied(request)
-    if denied:
-        return denied
-    agent = get_object_or_404(AIAgent, pk=agent_id)
-    if request.method == "POST":
-        data = _payload(request)
-        use_case = get_object_or_404(AIUseCaseConfiguration, pk=data.get("use_case_id"))
-        provider = get_object_or_404(AIProvider, pk=data.get("provider_id"))
-        provider_model = None
-        if data.get("model_id"):
-            provider_model = get_object_or_404(
-                AIProviderModel,
-                pk=data["model_id"],
-                provider=provider,
-            )
-        item, _ = AIAgentProviderConfiguration.objects.update_or_create(
-            agent=agent,
-            use_case=use_case,
-            provider=provider,
-            defaults={
-                "model": provider_model,
-                "priority": max(0, int(data.get("priority") or 100)),
-                "fallback_enabled": bool(data.get("fallback_enabled", True)),
-                "active": bool(data.get("active", True)),
-            },
-        )
-        return JsonResponse({"ok": True, "item": _agent_provider_payload(item)})
-    return JsonResponse({
-        "ok": True,
-        "items": [
-            _agent_provider_payload(item)
-            for item in agent.provider_configurations.select_related(
-                "use_case", "provider", "model"
-            )
-        ],
-        "use_cases": [
-            {"id": item.id, "code": item.use_case_code, "name": item.display_name}
-            for item in AIUseCaseConfiguration.objects.filter(active=True)
-        ],
-        "providers": [
-            {"id": item.id, "code": item.code, "name": item.name}
-            for item in AIProvider.objects.all()
-        ],
-        "models": [
-            {
-                "id": item.id,
-                "provider_id": item.provider_id,
-                "code": item.model_code,
-                "name": item.display_name,
-            }
-            for item in AIProviderModel.objects.filter(active=True)
-        ],
-    })
 
 
 @login_required

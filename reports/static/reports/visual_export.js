@@ -132,7 +132,6 @@
     function bindCopyAction(options) {
         const { button, target } = options;
         if (!button || !target) return () => {};
-        const french = String(options.language || document.documentElement.lang || "en").toLowerCase().startsWith("fr");
         const onClick = async () => {
             if (button.disabled || target.dataset.exportReady !== "true") return;
             button.disabled = true;
@@ -144,17 +143,13 @@
                 const blobPromise = createPng(target, options);
                 await writePngToClipboard(blobPromise);
                 blob = await blobPromise;
-                notify(french
-                    ? "Graphique copié. Collez-le dans PowerPoint avec Ctrl+V."
-                    : "Chart copied. Paste it into PowerPoint with Ctrl+V.");
+                notify("Chart copied. Paste it into PowerPoint with Ctrl+V.");
                 options.onSuccess?.({ blob, method: "clipboard" });
             } catch (error) {
-                notify(french
-                    ? "Le presse-papiers image est indisponible. Téléchargez plutôt le PNG."
-                    : "Image clipboard access is unavailable. Download the PNG instead.", {
+                notify("Image clipboard access is unavailable. Download the PNG instead.", {
                     error: true,
                     persistent: true,
-                    actionLabel: french ? "Télécharger le PNG" : "Download PNG",
+                    actionLabel: "Download PNG",
                     onAction: async () => {
                         try {
                             blob ||= await createPng(target, options);

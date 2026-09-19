@@ -416,12 +416,7 @@
   $('[data-drawer-close]').addEventListener('click', closeDrawer); document.addEventListener('keydown', event => { if(event.key==='Escape') closeDrawer(); });
   $$('[data-confidence-open]').forEach(button => button.addEventListener('click', () => { const c=state.data?.confidence;if(!c)return;$('[data-drawer-kicker]').textContent='Trust layer';$('[data-drawer-title]').textContent=`Data Confidence: ${c.status}`;$('[data-drawer-body]').innerHTML=`<div class="bcc-detail-grid"><div class="bcc-detail-metric"><span>Customer coverage</span><strong>${c.customer_coverage===null?'Not available':c.customer_coverage.toFixed(1)+'%'}</strong></div><div class="bcc-detail-metric"><span>Country coverage</span><strong>${c.country_coverage===null?'Not available':c.country_coverage.toFixed(1)+'%'}</strong></div><div class="bcc-detail-metric"><span>Key Account coverage</span><strong>${c.key_account_coverage===null?'Not available':c.key_account_coverage.toFixed(1)+'%'}</strong></div><div class="bcc-detail-metric"><span>Unallocated Revenue</span><strong>${money(c.unallocated_revenue,true)}</strong></div></div><h3>Limitations</h3>${c.warnings.map(w=>`<p>${escapeHtml(w)}</p>`).join('')||'<p>No governed limitation is currently reported.</p>'}`;$('[data-drawer]').hidden=false;document.body.style.overflow='hidden'; }));
   $('[data-presentation]')?.addEventListener('click', () => { document.body.classList.toggle('presentation'); if(document.body.classList.contains('presentation')) document.documentElement.requestFullscreen?.().catch(()=>{}); else document.exitFullscreen?.().catch(()=>{}); });
-  $('[data-save-view]').addEventListener('click', async () => {
-    const name = window.prompt('Saved view name', 'My Business Overview'); if (!name) return;
-    await fetch(root.dataset.savedViewsUrl, { method:'POST', headers:{'Content-Type':'application/json','X-CSRFToken':csrf}, body:JSON.stringify({name,filters:Object.fromEntries(params()),visualization:'business_command_center'}) });
-    $('[data-save-view]').textContent = 'View Saved'; window.setTimeout(() => $('[data-save-view]').textContent='Save View', 1800);
-  });
-  $('[data-export]')?.addEventListener('click', () => { window.location.href = `${root.dataset.exportUrl}?${params()}`; });
+
   $('[data-mark-reviewed]').addEventListener('click', async () => {
     const hash=state.data?.since_last_visit?.filter_hash;if(hash) await fetch(root.dataset.bootstrapUrl.replace('/bootstrap/','/mark-reviewed/'),{method:'POST',headers:{'Content-Type':'application/json','X-CSRFToken':csrf},body:JSON.stringify({filter_hash:hash})});
     $('[data-last-visit]').innerHTML='<p class="bcc-empty">Current changes marked as reviewed.</p>';

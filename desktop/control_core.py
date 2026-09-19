@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import psutil
+from desktop.project_environment import project_python
 import os
 import re
 import subprocess
@@ -37,10 +39,10 @@ class ServiceResult:
 
 class Mining360Controller:
     SERVICE_LABELS = {
-        "process": "Processus Mining 360",
-        "https": "Passerelle HTTPS",
+        "process": "Mining360 processes",
+        "https": "HTTPS gateway",
         "django": "Django / Waitress",
-        "database": "Base de donnees",
+        "database": "Database",
         "active_directory": "Active Directory",
         "powerbi": "Power BI API",
         "codex_worker": "Codex Worker",
@@ -71,25 +73,19 @@ class Mining360Controller:
         with self._lock:
             upstream_healthy = self._http_health(self.upstream_url).healthy
             public_healthy = self._http_health(self.public_url).healthy
-            if upstream_healthy and public_healthy:
-                return True, "Mining 360 est deja en cours d'execution."
+            if upstream_healthy:
+                return True, ("Mining360 is already running." if public_healthy else "Local application operational, HTTPS not configured")
             if not self.script.exists():
                 return False, f"Start script not found: {self.script}"
 
+            if self._listener_pids({8001, 443}) or self.managed_processes():
+                return False, "Existing process or port: use the verified restart."
             timestamp = time.strftime("%Y%m%d-%H%M%S")
             stdout_path = self.log_directory / f"launcher-{timestamp}.out.log"
             stderr_path = self.log_directory / f"launcher-{timestamp}.err.log"
             stdout_handle = stdout_path.open("a", encoding="utf-8")
             stderr_handle = stderr_path.open("a", encoding="utf-8")
-            command = [
-                "powershell.exe",
-                "-NoLogo",
-                "-NoProfile",
-                "-ExecutionPolicy",
-                "Bypass",
-                "-File",
-                str(self.script),
-            ]
+            command = [str(project_python(self.root)), '-m', 'desktop.dev_runtime']
             try:
                 self._launcher = subprocess.Popen(
                     command,
@@ -101,9 +97,9 @@ class Mining360Controller:
             except OSError as exc:
                 stdout_handle.close()
                 stderr_handle.close()
-                return False, f"Impossible de demarrer Mining 360 : {exc}"
+                return False, f"Unable to start Mining360 : {exc}"
             self._log_handles.extend([stdout_handle, stderr_handle])
-            return True, f"Demarrage demande. PID du lanceur : {self._launcher.pid}"
+            return True, f"Start requested. Launcher PID: {self._launcher.pid}"
 
     def stop(self) -> tuple[bool, str]:
         with self._lock:
@@ -113,36 +109,34 @@ class Mining360Controller:
             unknown_listeners = [pid for pid in listener_pids if pid not in owned_inventory]
             if unknown_listeners:
                 return False, (
-                    "Arret refuse : un processus non identifie occupe un port Mining 360 "
+                    "Stop refused: an unidentified process occupies a Mining360 port "
                     f"(PID {', '.join(str(pid) for pid in sorted(unknown_listeners))})."
                 )
-            candidates = set(owned_inventory)
-            if self._launcher and self._launcher.poll() is None:
-                candidates.add(self._launcher.pid)
-
-            owned = [pid for pid in candidates if pid in owned_inventory or self._owns_process(pid)]
-            if not owned:
-                if not self._http_health(self.upstream_url).healthy:
-                    self._close_logs()
-                    return True, "Mining 360 est deja arrete."
-                return False, "Un service ecoute le port, mais il n'est pas identifie comme un processus Mining 360."
-
+            if not owned_inventory:
+                return True, "Mining360 is already stopped."
             failures = []
-            for pid in sorted(owned, reverse=True):
-                result = subprocess.run(
-                    ["taskkill.exe", "/PID", str(pid), "/T", "/F"],
-                    capture_output=True,
-                    text=True,
-                    creationflags=CREATE_NO_WINDOW,
-                    check=False,
-                )
-                if result.returncode not in {0, 128}:
-                    failures.append(f"PID {pid}: {self.redact(result.stderr.strip())}")
+            # psutil retains creation time and checks PID reuse before kill.
+            # Never use taskkill /T: descendants must be individually verified.
+            for item in sorted(inventory, key=lambda p: (p.parent_pid in owned_inventory, p.pid), reverse=True):
+                if not item.owned:
+                    continue
+                try:
+                    process = psutil.Process(item.pid)
+                    if not self._live_identity(item.pid, item.creation_time):
+                        if process.is_running():
+                            failures.append(f"PID {item.pid}: identity changed; preserved")
+                        continue
+                    process.kill()
+                    process.wait(timeout=10)
+                except psutil.NoSuchProcess:
+                    pass
+                except (psutil.AccessDenied, psutil.TimeoutExpired):
+                    failures.append(f"PID {item.pid}: stop not confirmed")
             self._launcher = None
             self._close_logs()
             if failures:
                 return False, "; ".join(failures)
-            return True, "Les services Mining 360 sont arretes."
+            return True, "Mining360 services are stopped."
 
     def open_logs_directory(self) -> None:
         os.startfile(self.log_directory)  # type: ignore[attr-defined]
@@ -204,13 +198,14 @@ class Mining360Controller:
             public = public_future.result()
         now = time.time()
         database_status = "unknown"
-        database_detail = "En attente du controle Django"
+        database_detail = "Waiting for Django health check"
         if upstream.status == "online":
             database_value = upstream.detail_data.get("database")
             database_status = "online" if database_value == "ok" else "offline"
-            database_detail = "Connexion SQL disponible" if database_value == "ok" else "Echec du controle de la base"
+            database_detail = "SQL connection available" if database_value == "ok" else "Database health check failed"
         return {
-            "https": ServiceResult("https", self.SERVICE_LABELS["https"], public.status, public.detail, now),
+            "https": ServiceResult("https", self.SERVICE_LABELS["https"], public.status,
+                "Local application operational, HTTPS not configured" if upstream.healthy and not public.healthy else public.detail, now),
             "django": ServiceResult("django", self.SERVICE_LABELS["django"], upstream.status, upstream.detail, now),
             "database": ServiceResult("database", self.SERVICE_LABELS["database"], database_status, database_detail, now),
         }
@@ -225,9 +220,9 @@ class Mining360Controller:
                     f"Worker process detected but ownership is unverified | PID {unmanaged[0].pid}", now,
                 )
             return ServiceResult(
-                "codex_worker", self.SERVICE_LABELS["codex_worker"], "offline", "Worker Codex non detecte", now
+                "codex_worker", self.SERVICE_LABELS["codex_worker"], "offline", "Codex worker not detected", now
             )
-        detail = f"Worker actif | PID {workers[0].pid}"
+        detail = f"Worker active | PID {workers[0].pid}"
         status = "online"
         try:
             os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Mining360IA.settings")
@@ -244,12 +239,12 @@ class Mining360Controller:
             stale = CodexRun.objects.filter(status="RUNNING", heartbeat_at__lt=stale_before).count()
             if stale:
                 status = "degraded"
-                detail = f"Worker actif | {stale} traitement(s) sans heartbeat"
+                detail = f"Worker active | {stale} request(s) without a heartbeat"
             elif queued:
-                detail = f"Worker actif | {queued} demande(s) en attente"
+                detail = f"Worker active | {queued} queued request(s)"
         except Exception:
             status = "degraded"
-            detail += " | file non evaluee"
+            detail += " | queue not evaluated"
         return ServiceResult("codex_worker", self.SERVICE_LABELS["codex_worker"], status, detail, now)
 
     def check_external_services(self) -> dict[str, ServiceResult]:
@@ -275,17 +270,17 @@ class Mining360Controller:
 
                 integration = active_directory_integration()
                 if not integration:
-                    return ServiceResult(code, self.SERVICE_LABELS[code], "unknown", "Non configure", now)
+                    return ServiceResult(code, self.SERVICE_LABELS[code], "unknown", "Not configured", now)
                 connection = _server_and_connection(integration)
                 connection.unbind()
-                detail = "Connexion LDAP reussie"
+                detail = "LDAP connection successful"
             else:
                 from reports.powerbi import get_access_token
 
                 token = get_access_token()
                 if not token:
                     raise RuntimeError("No Power BI token returned")
-                detail = "Authentification API reussie"
+                detail = "API authentication successful"
             return ServiceResult(code, self.SERVICE_LABELS[code], "online", detail, now)
         except Exception as exc:
             return ServiceResult(code, self.SERVICE_LABELS[code], "offline", self.redact(str(exc))[:180], now)
@@ -308,7 +303,7 @@ class Mining360Controller:
                 healthy = response.status == 200 and payload.get("status") == "ok"
                 return self._HttpResult(
                     "online" if healthy else "offline",
-                    "Controle de sante reussi" if healthy else f"Statut de sante : {payload.get('status', 'unknown')}",
+                    "Health check passed" if healthy else f"Health status : {payload.get('status', 'unknown')}",
                     payload,
                 )
         except (OSError, ValueError, urllib.error.URLError) as exc:
@@ -320,10 +315,13 @@ class Mining360Controller:
             ["netstat.exe", "-ano", "-p", "tcp"],
             capture_output=True,
             text=True,
+            encoding="oem" if os.name == "nt" else "utf-8",
             creationflags=CREATE_NO_WINDOW,
             check=False,
         )
         found = set()
+        if result.returncode:
+            raise RuntimeError('Windows listener inventory unavailable; lifecycle refused.')
         for line in result.stdout.splitlines():
             parts = line.split()
             if len(parts) < 5 or parts[0].upper() != "TCP" or parts[3].upper() != "LISTENING":
@@ -339,8 +337,6 @@ class Mining360Controller:
 
     def managed_processes(self) -> list[ProcessInfo]:
         rows = self._candidate_process_rows()
-        root = str(self.root).casefold()
-        manifest = self._pid_manifest()
         markers = {
             "start_mining360_dev.ps1": "launcher",
             "https_reverse_proxy.py": "https_gateway",
@@ -362,11 +358,6 @@ class Mining360Controller:
             except (TypeError, ValueError):
                 continue
             creation_time = str(row.get("CreationTime") or row.get("CreationDate") or "")
-            manifest_entry = manifest.get(component) or {}
-            manifest_match = (
-                int(manifest_entry.get("pid") or -1) == pid
-                and self._same_process_start(creation_time, str(manifest_entry.get("started_at") or ""))
-            )
             candidates[pid] = ProcessInfo(
                 pid=pid,
                 parent_pid=parent_pid,
@@ -375,20 +366,33 @@ class Mining360Controller:
                 executable_path=str(row.get("ExecutablePath") or ""),
                 command_line=self.redact(command_line),
                 creation_time=creation_time,
-                owned=root in folded or manifest_match or (self._launcher is not None and pid == self._launcher.pid),
+                owned=self._live_identity(pid, creation_time),
             )
-        owned = {pid for pid, item in candidates.items() if item.owned}
-        changed = True
-        while changed:
-            changed = False
-            for pid, item in candidates.items():
-                if pid not in owned and item.parent_pid in owned:
-                    owned.add(pid)
-                    changed = True
-        return [
-            ProcessInfo(**{**item.__dict__, "owned": item.pid in owned})
-            for item in sorted(candidates.values(), key=lambda value: value.pid)
-        ]
+        return sorted(candidates.values(), key=lambda value: value.pid)
+
+    def _live_identity(self, pid: int, creation_time: str) -> bool:
+        """Prove current cwd, interpreter, command and creation time, never a saved PID."""
+        from datetime import datetime, timezone
+        try:
+            process = psutil.Process(pid)
+            python = project_python(self.root)
+            argv = process.cmdline()
+            if not argv or Path(argv[0]).resolve() != python:
+                return False
+            if Path(process.cwd()).resolve() != self.root:
+                return False
+            if Path(process.exe()).resolve() not in {python, (Path(sys.base_prefix) / 'python.exe').resolve()}:
+                return False
+            actual = datetime.fromtimestamp(process.create_time(), timezone.utc).isoformat()
+            if not self._same_process_start(actual, creation_time):
+                return False
+            waitress = len(argv) >= 5 and argv[1:3] == ['-m', 'waitress'] and argv[-1] == 'Mining360IA.wsgi:application'
+            script = (self.root / argv[1]).resolve() if len(argv) > 1 else None
+            worker = script == self.root / 'manage.py' and len(argv) > 2 and argv[2] == 'run_codex_worker'
+            proxy = script == self.root / 'deployment/windows/https_reverse_proxy.py' and '--upstream-port' in argv
+            return process.is_running() and (waitress or worker or proxy)
+        except (psutil.Error, OSError, ValueError, RuntimeError):
+            return False
 
     def _candidate_process_rows(self) -> list[dict]:
         command = (
@@ -399,20 +403,26 @@ class Mining360Controller:
             "@{Name='CreationTime';Expression={$_.CreationDate.ToUniversalTime().ToString('o')}}; "
             "$items | ConvertTo-Json -Compress"
         )
-        result = subprocess.run(
+        result = self._run_powershell(command)
+        if result.returncode != 0:
+            raise RuntimeError('Windows process inventory unavailable; lifecycle refused.')
+        if not result.stdout.strip():
+            return []
+        payload = json.loads(result.stdout)
+        return payload if isinstance(payload, list) else [payload]
+
+    @staticmethod
+    def _run_powershell(command: str):
+        command = "$ErrorActionPreference='Stop'; [Console]::OutputEncoding = New-Object System.Text.UTF8Encoding($false); $OutputEncoding = [Console]::OutputEncoding; " + command
+        return subprocess.run(
             ["powershell.exe", "-NoLogo", "-NoProfile", "-Command", command],
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="strict",
             creationflags=CREATE_NO_WINDOW,
             check=False,
         )
-        if result.returncode != 0 or not result.stdout.strip():
-            return []
-        try:
-            payload = json.loads(result.stdout)
-        except (TypeError, ValueError):
-            return []
-        return payload if isinstance(payload, list) else [payload]
 
     def _pid_manifest(self) -> dict[str, dict]:
         try:
@@ -439,28 +449,12 @@ class Mining360Controller:
 
             actual_time = datetime.fromisoformat(actual.replace("Z", "+00:00"))
             expected_time = datetime.fromisoformat(expected.replace("Z", "+00:00"))
-            return abs((actual_time - expected_time).total_seconds()) <= 2
+            return abs((actual_time - expected_time).total_seconds()) <= 0.01
         except (TypeError, ValueError):
             return False
 
     def _owns_process(self, pid: int) -> bool:
-        command = (
-            f'$p=Get-CimInstance Win32_Process -Filter "ProcessId={int(pid)}"; '
-            "if($p){$p.CommandLine}"
-        )
-        result = subprocess.run(
-            ["powershell.exe", "-NoLogo", "-NoProfile", "-Command", command],
-            capture_output=True,
-            text=True,
-            creationflags=CREATE_NO_WINDOW,
-            check=False,
-        )
-        line = result.stdout.casefold()
-        root = str(self.root).casefold()
-        return root in line and any(
-            marker in line
-            for marker in ("https_reverse_proxy.py", "mining360ia.wsgi:application", "start_mining360_dev.ps1", "run_codex_worker")
-        )
+        return any(item.pid == pid and item.owned for item in self.managed_processes())
 
     def _close_logs(self) -> None:
         for handle in self._log_handles:

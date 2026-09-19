@@ -14,7 +14,7 @@ from django.db import close_old_connections, transaction
 from django.db.models import Count, Q, Sum
 from django.utils import timezone
 
-from .ai_provider_gateway_service import ai_gateway
+from .legacy_ai_service import legacy_ai
 from .external_data_browsers import _parameter_marker, _quote_identifier, _quote_object_name, external_browser_connection
 from .models import (
     DataBrowser,
@@ -252,7 +252,7 @@ class BlindDescriptionCATClassificationService:
             "candidate_description_cats": [{"code": item.code, "name": item.display_name, "definition": item.definition} for item in candidates],
             "classification_rules": rules,
         }
-        response = ai_gateway.generate_structured_output(
+        response = legacy_ai.generate_structured_output(
             use_case="downtime_mapping_check",
             messages=[{"role": "user", "content": json.dumps(provider_input, ensure_ascii=False)}],
             output_schema=OUTPUT_SCHEMA,

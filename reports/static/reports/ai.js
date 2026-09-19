@@ -407,7 +407,7 @@
                     </select>
                 </label>
                 <div class="ai-downtime-pareto__total">
-                    <strong>${Number(diagnostics.total_downtime_hours || 0).toLocaleString(undefined, { maximumFractionDigits: 2 })} h</strong>
+                    <strong>${Number(diagnostics.total_downtime_hours || 0).toLocaleString("en-GB", { maximumFractionDigits: 2 })} h</strong>
                     <span>Total downtime</span>
                 </div>
             </div>
@@ -448,12 +448,12 @@
                 points.push(`${x.toFixed(1)},${pointY.toFixed(1)}`);
                 content.push(`
                     <g class="ai-pareto-bar-group" data-driver-index="${index}" tabindex="0" role="button">
-                        <title>${escapeHtml(item.driver)}: ${hours.toLocaleString(undefined, { maximumFractionDigits: 2 })} h</title>
+                        <title>${escapeHtml(item.driver)}: ${hours.toLocaleString("en-GB", { maximumFractionDigits: 2 })} h</title>
                         <rect x="${(x - barWidth / 2).toFixed(1)}" y="${y.toFixed(1)}"
                               width="${barWidth.toFixed(1)}" height="${barHeight.toFixed(1)}"
                               rx="2" class="ai-pareto-bar"></rect>
                         <text x="${x.toFixed(1)}" y="${Math.max(y - 7, 14).toFixed(1)}"
-                              class="ai-pareto-hours" text-anchor="middle">${hours.toLocaleString(undefined, { maximumFractionDigits: 0 })}</text>
+                              class="ai-pareto-hours" text-anchor="middle">${hours.toLocaleString("en-GB", { maximumFractionDigits: 0 })}</text>
                     </g>
                     <text x="${x.toFixed(1)}" y="${(baseline + 18).toFixed(1)}"
                           transform="rotate(-42 ${x.toFixed(1)} ${(baseline + 18).toFixed(1)})"
@@ -467,7 +467,7 @@
                 const y = baseline - ratio * plotHeight;
                 return `
                     <line x1="${left}" y1="${y}" x2="${width - right}" y2="${y}" class="ai-pareto-grid"></line>
-                    <text x="${left - 9}" y="${y + 4}" text-anchor="end" class="ai-pareto-axis">${(maxHours * ratio).toLocaleString(undefined, { maximumFractionDigits: 0 })}</text>
+                    <text x="${left - 9}" y="${y + 4}" text-anchor="end" class="ai-pareto-axis">${(maxHours * ratio).toLocaleString("en-GB", { maximumFractionDigits: 0 })}</text>
                     <text x="${width - right + 9}" y="${y + 4}" class="ai-pareto-axis">${Math.round(ratio * 100)}%</text>
                 `;
             }).join("");
@@ -636,7 +636,7 @@
                     ${agentLabel ? `<span class="ai-agent-badge">${escapeHtml(agentLabel)}</span>` : ""}
                     <div class="ai-message__body">${message.status === "processing" ? "Processing..." : escapeHtml(message.content).replaceAll("\n", "<br>")}</div>
                     ${message.role === "assistant" ? `<div class="ai-message__artifacts" data-message-artifacts></div>` : ""}
-                    ${message.role === "assistant" && message.message_type === "analytical_result" ? `<small class="ai-saved-result">Saved result · Calculated ${escapeHtml(new Date(message.created_at).toLocaleString())}</small>` : ""}
+                    ${message.role === "assistant" && message.message_type === "analytical_result" ? `<small class="ai-saved-result">Saved result · Calculated ${escapeHtml(new Date(message.created_at).toLocaleString("en-GB"))}</small>` : ""}
                     ${message.role === "assistant" && message.status !== "processing" ? `<div class="ai-message__actions"><button type="button" data-copy-message>Copy</button>${message.message_type === "analytical_result" ? `<button type="button" data-refresh-message>Refresh analysis</button>` : ""}${message.status === "failed" ? `<button type="button" data-retry-message>Retry</button>` : ""}</div>` : ""}
                 </div>
             </div>
@@ -1100,7 +1100,7 @@
         if (minutes < 1) return "Just now";
         if (minutes < 60) return `${minutes} min ago`;
         if (minutes < 1440) return `${Math.floor(minutes / 60)} h ago`;
-        return date.toLocaleDateString();
+        return date.toLocaleDateString("en-GB");
     }
 
     function conversationPath(conversationId) {

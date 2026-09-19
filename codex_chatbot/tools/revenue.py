@@ -3,6 +3,7 @@ from __future__ import annotations
 from datetime import date
 import json
 import re
+import unicodedata
 
 from django.core.serializers.json import DjangoJSONEncoder
 
@@ -16,13 +17,17 @@ from reports.business_review_access_service import has_business_review_permissio
 
 REVENUE_TERMS = re.compile(
     r"\b(revenue|revenu|turnover|chiffre\s+d['’]?affaires?|ca(?:\s+(?:mining|machine|parts|service|rental))?|"
-    r"ventes?|business\s+command\s+center|clients?\s+(?:principaux|top)|top\s+(?:customers?|clients?|countries|pays|key\s+accounts?))\b",
+    r"ventes?|sales?|vendu(?:e?s)?|sold|business\s+command\s+center|clients?\s+(?:principaux|top)|top\s+(?:customers?|clients?|countries|pays|key\s+accounts?))\b",
     re.IGNORECASE,
 )
 
 
 def _normalized(value: str) -> str:
-    return re.sub(r"[^a-z0-9]+", " ", value.casefold()).strip()
+    folded = "".join(
+        char for char in unicodedata.normalize("NFKD", value.casefold())
+        if not unicodedata.combining(char)
+    )
+    return re.sub(r"[^a-z0-9]+", " ", folded).strip()
 
 
 def _business_line(question: str) -> str:
@@ -74,7 +79,23 @@ def _access_profile(user) -> dict:
 
 
 def revenue_analysis_from_question(question: str, *, user) -> dict | None:
+    result = _revenue_analysis(question, user=user)
+    if result is not None:
+        result["language"] = "fr" if re.search(
+            r"\b(quel|quelle|quels|quelles|combien|ventes?|vendu\w*|chiffre|pieces?|donne|montre|pour|annee)\b",
+            _normalized(question),
+        ) else "en"
+    return result
+
+
+def _revenue_analysis(question: str, *, user) -> dict | None:
     if not REVENUE_TERMS.search(question):
+        return None
+    # Revenue is a monetary measure, never a count of parts or machines sold.
+    if re.search(
+        r"\b(combien\s+(?:de|d)|nombre\s+(?:de|d)|how\s+many|quantity|quantite|units?)\b",
+        _normalized(question),
+    ):
         return None
     access = _access_profile(user)
     if not feature_enabled("ENABLE_BUSINESS_COMMAND_CENTER", user) or not all(
@@ -123,6 +144,7 @@ def revenue_analysis_from_question(question: str, *, user) -> dict | None:
         "kind": "revenue_summary",
         "request": {
             "question": question,
+            "resolved_scope": {key:value for key,value in mentions.get("scope", {}).items() if allowed_filter_dimensions[key]},
             "resolved_filters": {
                 key: value for key, value in params.items()
                 if key in {"customer_group_ids", "country_ids", "key_account_ids"}

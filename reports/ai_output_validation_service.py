@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from .ai_provider_types import AIProviderError
+from .legacy_ai_types import LegacyAIError
 
 
 class AIOutputValidationService:
@@ -10,7 +10,7 @@ class AIOutputValidationService:
         errors = []
         self._validate(value, schema, "$", errors)
         if errors:
-            raise AIProviderError(
+            raise LegacyAIError(
                 "INVALID_STRUCTURED_OUTPUT",
                 "; ".join(errors[:8]),
                 status_code=502,

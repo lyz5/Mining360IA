@@ -7,9 +7,7 @@ import re
 from .powerbi import _local_powerbi_credentials
 
 from .ai_config_service import build_section_catalog, get_prompt_template
-from .ai_provider_credential_service import credential_configured
-from .ai_provider_gateway_service import ai_gateway
-from .models import AIProvider
+from .legacy_ai_service import legacy_ai
 
 
 DEFAULT_OPENAI_MODEL = "gpt-4.1-mini"
@@ -46,13 +44,7 @@ def get_openai_model() -> str:
 
 
 def is_openai_configured() -> bool:
-    try:
-        return any(
-            credential_configured(provider)
-            for provider in AIProvider.objects.filter(active=True)
-        )
-    except Exception:
-        return bool(get_openai_api_key())
+    return bool(get_openai_api_key())
 
 
 def _json_from_response(response) -> dict:
@@ -130,7 +122,7 @@ def extract_intent(question_text: str, section_code: str | None = None) -> dict:
         },
     }
     rendered_prompt = _render_configured_prompt(section_code or fallback["section"], "intent_extraction", prompt)
-    response = ai_gateway.generate_structured_output(
+    response = legacy_ai.generate_structured_output(
         use_case="intent_classification",
         messages=[
             {
@@ -207,7 +199,7 @@ def generate_chat_response(
     if not is_openai_configured():
         return answer.get("interpretation", "")
     rendered_prompt = _render_configured_prompt(section_code, "response_generation", prompt)
-    response = ai_gateway.generate_text(
+    response = legacy_ai.generate_text(
         use_case="machine_performance_response",
         messages=[
             {

@@ -77,7 +77,7 @@
     const rec = payload.reconciliation;
     if (!rec) return;
     get("[data-it-rule]").textContent = rec.rule_version;
-    get("[data-it-updated]").textContent = rec.completed_at ? "Completed " + new Date(rec.completed_at).toLocaleString() : rec.status;
+    get("[data-it-updated]").textContent = rec.completed_at ? "Completed " + new Date(rec.completed_at).toLocaleString("en-GB") : rec.status;
     const summary = rec.summary || {};
     const counts = summary.status_counts || {};
     const exceptions = Object.entries(counts).filter(([key]) => !["MATCHED", "PARTIALLY_INVOICED"].includes(key)).reduce((total, [, value]) => total + value, 0);

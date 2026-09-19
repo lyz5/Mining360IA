@@ -10,7 +10,7 @@ from .models import (
     KnowledgePrompt,
     RootCauseTheme,
 )
-from .ai_provider_gateway_service import ai_gateway
+from .legacy_ai_service import legacy_ai
 
 
 REQUIRED_RESULT_KEYS = {
@@ -176,7 +176,7 @@ def analyze_comments(
         conversation_id = (
             session.conversation.conversation_id if session.conversation else ""
         )
-        response = ai_gateway.generate_structured_output(
+        response = legacy_ai.generate_structured_output(
             use_case="root_cause_comment_analysis",
             messages=[
                 {"role": "system", "content": prompt.prompt_content},

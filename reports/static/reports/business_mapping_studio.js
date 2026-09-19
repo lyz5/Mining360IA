@@ -13,14 +13,14 @@
     const $ = (selector) => document.querySelector(selector);
     const all = (selector) => [...document.querySelectorAll(selector)];
     const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
-    const money = (value) => new Intl.NumberFormat(document.documentElement.lang === 'fr' ? 'fr-FR' : 'en-GB', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(Number(value || 0));
+    const money = (value) => new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(Number(value || 0));
     const countryName = (value) => {
         const country = String(value || '').trim();
         if (country.toUpperCase() === 'UNASSIGNED') return 'Country not validated';
         if (!country || country.length !== 2) return country;
         try {
             return new Intl.DisplayNames(
-                [document.documentElement.lang === 'fr' ? 'fr-FR' : 'en-GB'],
+                ['en-GB'],
                 { type: 'region' },
             ).of(country.toUpperCase()) || country;
         } catch (_) {
@@ -112,7 +112,7 @@
         try {
             const data = await api(app.dataset.publicationsUrl);
             const rows = data.results || [];
-            container.innerHTML = rows.length ? `<h3>Published Versions</h3><div class="bm-publication-list">${rows.map((item) => `<div><strong>Version ${item.version}</strong><span>${escapeHtml(item.status)} · ${item.mapping_count} mappings${item.published_at ? ` · ${new Date(item.published_at).toLocaleString()}` : ''}</span></div>`).join('')}</div>` : '<p class="bm-empty">No Mapping version has been published yet.</p>';
+            container.innerHTML = rows.length ? `<h3>Published Versions</h3><div class="bm-publication-list">${rows.map((item) => `<div><strong>Version ${item.version}</strong><span>${escapeHtml(item.status)} · ${item.mapping_count} mappings${item.published_at ? ` · ${new Date(item.published_at).toLocaleString("en-GB")}` : ''}</span></div>`).join('')}</div>` : '<p class="bm-empty">No Mapping version has been published yet.</p>';
         } catch (error) {
             container.innerHTML = `<p class="bm-empty">${escapeHtml(error.message)}</p>`;
         }
@@ -199,7 +199,7 @@
                 const node = $(`[data-bm-metric="${key}"]`);
                 if (!node) return;
                 if (value === null || value === undefined) { node.textContent = 'Not Evaluated'; return; }
-                node.textContent = key.endsWith('_pct') ? `${value}%` : key.includes('revenue') ? money(value) : Number(value || 0).toLocaleString();
+                node.textContent = key.endsWith('_pct') ? `${value}%` : key.includes('revenue') ? money(value) : Number(value || 0).toLocaleString("en-GB");
             });
             $('[data-bm-conflict-count]').textContent = data.summary?.accounts_with_conflicts === null ? '(Not Evaluated)' : data.summary?.accounts_with_conflicts ? `(${data.summary.accounts_with_conflicts})` : '';
         } catch (error) { toast(error.message); }
@@ -242,7 +242,7 @@
             keyAccountSelect.innerHTML = '<option value="">All Key Accounts</option><option value="unassigned">Unassigned to a Key Account</option>' + (data.filters?.key_accounts || []).map((item) => `<option value="${escapeHtml(item.id)}">${escapeHtml(item.key_account_name)}</option>`).join('');
             keyAccountSelect.value = [...keyAccountSelect.options].some((option) => option.value === state.keyAccountFilter) ? state.keyAccountFilter : '';
             state.pages = data.pages || 1;
-            $('[data-bm-account-total]').textContent = Number(data.count || 0).toLocaleString();
+            $('[data-bm-account-total]').textContent = Number(data.count || 0).toLocaleString("en-GB");
             $('[data-bm-page]').textContent = `${data.page || 1} / ${state.pages}`;
             $('[data-bm-previous]').disabled = (data.page || 1) <= 1;
             $('[data-bm-next]').disabled = (data.page || 1) >= state.pages;
@@ -251,15 +251,15 @@
                 const sourceRecords = item.source_records || [];
                 return `<div class="bm-account-entry ${expanded ? 'expanded' : ''}">
                     <button type="button" class="bm-account-row ${state.selected?.source_account_id === item.source_account_id ? 'active' : ''}" data-account-id="${escapeHtml(item.source_account_id)}">
-                        <span class="bm-account-heading"><span class="bm-account-title">${escapeHtml(item.source_account_name)}</span><span class="bm-revenue-rank" title="Revenue rank in the current filtered scope">#${Number(item.revenue_rank || 0).toLocaleString()}</span></span>
+                        <span class="bm-account-heading"><span class="bm-account-title">${escapeHtml(item.source_account_name)}</span><span class="bm-revenue-rank" title="Revenue rank in the current filtered scope">#${Number(item.revenue_rank || 0).toLocaleString("en-GB")}</span></span>
                         <span class="bm-account-identity"><span>${escapeHtml(item.source_account_code)}</span>${item.code_cic ? `<span>CIC ${escapeHtml(item.code_cic)}</span>` : ''}${item.company_code ? `<span>Company ${escapeHtml(item.company_code)}${item.company_name ? ` · ${escapeHtml(item.company_name)}` : ''}</span>` : ''}${item.origin_country ? `<span>Origin: ${escapeHtml(countryName(item.origin_country))}</span>` : ''}</span>
                         <span class="bm-country-assignment ${item.assigned_operating_countries?.length ? 'assigned' : 'inferred'}"><span>${item.assigned_operating_countries?.length ? 'Assigned:' : 'Suggested from revenue:'}</span><strong>${escapeHtml(operatingCountryNames(item.assigned_operating_countries?.length ? item.assigned_operating_countries : item.operating_countries))}</strong></span>
-                        ${item.source_record_count ? `<span class="bm-account-record-summary"><strong>${Number(item.source_record_count).toLocaleString()}</strong> source records${item.identity_status && item.identity_status !== 'Canonical' ? `<span class="bm-review-flag">${escapeHtml(item.identity_status)}</span>` : ''}</span>` : ''}
+                        ${item.source_record_count ? `<span class="bm-account-record-summary"><strong>${Number(item.source_record_count).toLocaleString("en-GB")}</strong> source records${item.identity_status && item.identity_status !== 'Canonical' ? `<span class="bm-review-flag">${escapeHtml(item.identity_status)}</span>` : ''}</span>` : ''}
                         ${item.source_record_count ? `<span class="bm-account-groups"><span><small>Key Account</small><strong>${item.key_accounts?.length ? escapeHtml(item.key_accounts.join(', ')) : 'Not assigned'}</strong></span>${item.aliases?.length ? `<span><small>Aliases</small><strong>${escapeHtml(item.aliases.join(', '))}</strong></span>` : ''}</span>` : ''}
                         <span class="bm-row-meta"><span><small>Mining revenue · ${escapeHtml(state.sourceContext?.revenue?.label || state.revenuePeriod.toUpperCase())}</small><strong>${item.revenue_ytd === null ? 'Not available' : money(item.revenue_ytd)}</strong></span><span class="bm-status">${escapeHtml(item.mapping_status)}</span></span>
                     </button>
                     ${sourceRecords.length ? `<button type="button" class="bm-source-record-toggle" data-source-toggle="${escapeHtml(item.source_account_id)}" aria-expanded="${expanded}" aria-controls="bm-source-records-${escapeHtml(item.source_account_id)}">
-                        <span>${expanded ? 'Hide' : 'View'} ${Number(sourceRecords.length).toLocaleString()} source record${sourceRecords.length === 1 ? '' : 's'}</span><span aria-hidden="true">${expanded ? '▲' : '▼'}</span>
+                        <span>${expanded ? 'Hide' : 'View'} ${Number(sourceRecords.length).toLocaleString("en-GB")} source record${sourceRecords.length === 1 ? '' : 's'}</span><span aria-hidden="true">${expanded ? '▲' : '▼'}</span>
                     </button>
                     <div class="bm-source-records" id="bm-source-records-${escapeHtml(item.source_account_id)}" ${expanded ? '' : 'hidden'}>
                         ${sourceRecords.map((source) => `<div class="bm-source-record">
@@ -277,7 +277,7 @@
                 const records = document.getElementById(button.getAttribute('aria-controls'));
                 const expanded = state.expandedAccounts.has(accountId);
                 button.setAttribute('aria-expanded', String(expanded));
-                button.querySelector('span:first-child').textContent = `${expanded ? 'Hide' : 'View'} ${records.children.length.toLocaleString()} source record${records.children.length === 1 ? '' : 's'}`;
+                button.querySelector('span:first-child').textContent = `${expanded ? 'Hide' : 'View'} ${records.children.length.toLocaleString("en-GB")} source record${records.children.length === 1 ? '' : 's'}`;
                 button.querySelector('span:last-child').textContent = expanded ? '▲' : '▼';
                 records.hidden = !expanded;
                 button.closest('.bm-account-entry')?.classList.toggle('expanded', expanded);
@@ -318,9 +318,9 @@
         const list = $('[data-bm-country-list]');
         const detail = $('[data-bm-country-detail]');
         const available = $('[data-bm-country-available]');
-        $('[data-bm-country-count]').textContent = Number(state.countryGroupCount).toLocaleString();
+        $('[data-bm-country-count]').textContent = Number(state.countryGroupCount).toLocaleString("en-GB");
         const selected = state.countryAccounts.find((item) => item.id === state.selectedCountryAccountId);
-        list.innerHTML = `<button type="button" class="bm-key-group ${state.selectedCountryAccountId === null ? 'active' : ''}" data-country-account-id=""><strong>Browse all groups</strong><small>Clear the selected group and search every operating country</small></button>` + (state.countryAccounts.length ? state.countryAccounts.map((item) => `<button type="button" class="bm-key-group ${item.id === state.selectedCountryAccountId ? 'active' : ''}" data-country-account-id="${escapeHtml(item.id)}"><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(countryName(item.country))} · ${Number(item.canonical_account_count).toLocaleString()} Canonical Account(s)</small><small>${item.revenue_ytd === null ? 'Revenue not available' : money(item.revenue_ytd)}</small></button>`).join('') : '<p class="bm-empty">No group matches the current search.</p>');
+        list.innerHTML = `<button type="button" class="bm-key-group ${state.selectedCountryAccountId === null ? 'active' : ''}" data-country-account-id=""><strong>Browse all groups</strong><small>Clear the selected group and search every operating country</small></button>` + (state.countryAccounts.length ? state.countryAccounts.map((item) => `<button type="button" class="bm-key-group ${item.id === state.selectedCountryAccountId ? 'active' : ''}" data-country-account-id="${escapeHtml(item.id)}"><strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(countryName(item.country))} · ${Number(item.canonical_account_count).toLocaleString("en-GB")} Canonical Account(s)</small><small>${item.revenue_ytd === null ? 'Revenue not available' : money(item.revenue_ytd)}</small></button>`).join('') : '<p class="bm-empty">No group matches the current search.</p>');
         list.querySelectorAll('[data-country-account-id]').forEach((button) => button.addEventListener('click', async () => {
             state.selectedCountryAccountId = button.dataset.countryAccountId || null;
             await loadCountryAccounts($('[data-bm-country-search]')?.value || '');
@@ -330,7 +330,7 @@
             available.innerHTML = '';
             return;
         }
-        detail.innerHTML = `<div class="bm-key-summary"><div class="bm-key-summary-head"><div><h3>${escapeHtml(selected.name)}</h3><p>${escapeHtml(countryName(selected.country))} · ${Number(selected.canonical_account_count).toLocaleString()} Canonical Account(s) · ${selected.revenue_ytd === null ? 'Revenue not available' : money(selected.revenue_ytd)}</p></div>${app.dataset.canEdit === 'true' ? '<div class="bm-key-actions"><button type="button" class="button secondary small" data-country-rename-open>Rename</button><button type="button" class="button danger small" data-country-delete-open>Delete</button></div>' : ''}</div>${app.dataset.canEdit === 'true' ? `<form class="bm-key-rename" data-country-rename-form hidden><label>Group name<input type="text" data-country-rename-name value="${escapeHtml(selected.name)}" required></label><div><button type="button" class="button secondary small" data-country-rename-cancel>Cancel</button><button type="submit" class="button small">Save name</button></div></form>` : ''}</div><div class="bm-key-members">${selected.members?.length ? selected.members.map((member) => `<div class="bm-key-member"><div><strong>${escapeHtml(member.name)}</strong><small>${escapeHtml(member.canonical_account_code)} · ${Number(member.source_record_count).toLocaleString()} Source Record(s) · ${member.revenue_ytd === null ? 'Revenue not available' : money(member.revenue_ytd)}</small></div>${app.dataset.canEdit === 'true' && selected.members.length > 1 ? `<button type="button" class="button secondary small" data-country-remove='${escapeHtml(JSON.stringify(member.business_account_ids))}'>Separate</button>` : ''}</div>`).join('') : '<p class="bm-empty">No Canonical Account is assigned.</p>'}</div>`;
+        detail.innerHTML = `<div class="bm-key-summary"><div class="bm-key-summary-head"><div><h3>${escapeHtml(selected.name)}</h3><p>${escapeHtml(countryName(selected.country))} · ${Number(selected.canonical_account_count).toLocaleString("en-GB")} Canonical Account(s) · ${selected.revenue_ytd === null ? 'Revenue not available' : money(selected.revenue_ytd)}</p></div>${app.dataset.canEdit === 'true' ? '<div class="bm-key-actions"><button type="button" class="button secondary small" data-country-rename-open>Rename</button><button type="button" class="button danger small" data-country-delete-open>Delete</button></div>' : ''}</div>${app.dataset.canEdit === 'true' ? `<form class="bm-key-rename" data-country-rename-form hidden><label>Group name<input type="text" data-country-rename-name value="${escapeHtml(selected.name)}" required></label><div><button type="button" class="button secondary small" data-country-rename-cancel>Cancel</button><button type="submit" class="button small">Save name</button></div></form>` : ''}</div><div class="bm-key-members">${selected.members?.length ? selected.members.map((member) => `<div class="bm-key-member"><div><strong>${escapeHtml(member.name)}</strong><small>${escapeHtml(member.canonical_account_code)} · ${Number(member.source_record_count).toLocaleString("en-GB")} Source Record(s) · ${member.revenue_ytd === null ? 'Revenue not available' : money(member.revenue_ytd)}</small></div>${app.dataset.canEdit === 'true' && selected.members.length > 1 ? `<button type="button" class="button secondary small" data-country-remove='${escapeHtml(JSON.stringify(member.business_account_ids))}'>Separate</button>` : ''}</div>`).join('') : '<p class="bm-empty">No Canonical Account is assigned.</p>'}</div>`;
         available.innerHTML = app.dataset.canEdit === 'true' ? (state.availableCountryMembers.length ? `<div class="bm-key-members">${state.availableCountryMembers.map((member) => `<div class="bm-key-candidate"><div><strong>${escapeHtml(member.name)}</strong><small>${escapeHtml(member.canonical_account_code)} · Current group: ${escapeHtml(member.current_group?.name || 'Assignment pending')} · ${member.revenue_ytd === null ? 'Revenue not available' : money(member.revenue_ytd)}</small></div><div class="bm-key-candidate-actions"><button type="button" class="button secondary small" data-country-add='${escapeHtml(JSON.stringify(member.business_account_ids))}'>Move here</button></div></div>`).join('')}</div>` : `<p class="bm-empty">${$('[data-bm-country-search]')?.value ? 'This Canonical Account may already belong to a group. Matching groups are shown in the Groups column.' : 'No other Canonical Account in this operating country matches the search.'}</p>`) : '';
         detail.querySelectorAll('[data-country-remove]').forEach((button) => button.addEventListener('click', () => updateCountryMembers('DELETE', JSON.parse(button.dataset.countryRemove), button)));
         available.querySelectorAll('[data-country-add]').forEach((button) => button.addEventListener('click', () => updateCountryMembers('POST', JSON.parse(button.dataset.countryAdd), button)));
@@ -412,16 +412,16 @@
         const list = $('[data-bm-key-list]');
         const detail = $('[data-bm-key-detail]');
         const available = $('[data-bm-key-available]');
-        $('[data-bm-key-count]').textContent = Number(state.keyAccounts.length).toLocaleString();
+        $('[data-bm-key-count]').textContent = Number(state.keyAccounts.length).toLocaleString("en-GB");
         const selected = state.keyAccounts.find((item) => item.id === state.selectedKeyAccountId);
         list.innerHTML = `<button type="button" class="bm-key-group ${state.selectedKeyAccountId === null ? 'active' : ''}" data-key-account-id="">
                 <strong>Unassigned Canonical Accounts</strong>
-                <small>${Number(state.availableKeyMemberCount).toLocaleString()} group(s) without a Key Account</small>
+                <small>${Number(state.availableKeyMemberCount).toLocaleString("en-GB")} group(s) without a Key Account</small>
                 <small>Select to review the unassigned queue</small>
             </button>` + (state.keyAccounts.length ? state.keyAccounts.map((item) => `
             <button type="button" class="bm-key-group ${item.id === state.selectedKeyAccountId ? 'active' : ''}" data-key-account-id="${escapeHtml(item.id)}">
                 <strong>${escapeHtml(item.name)}</strong>
-                <small>${Number(item.canonical_account_count).toLocaleString()} Canonical Account(s) · ${item.revenue_ytd === null ? 'Revenue not available' : money(item.revenue_ytd)}</small>
+                <small>${Number(item.canonical_account_count).toLocaleString("en-GB")} Canonical Account(s) · ${item.revenue_ytd === null ? 'Revenue not available' : money(item.revenue_ytd)}</small>
                 <small>${item.minesites?.length ? escapeHtml(item.minesites.join(', ')) : 'No mapped MineSite'}</small>
             </button>`).join('') : '');
         list.querySelectorAll('[data-key-account-id]').forEach((button) => button.addEventListener('click', () => {
@@ -430,15 +430,15 @@
         }));
         if (!selected) {
             detail.innerHTML = '<div class="bm-key-summary"><h3>Unassigned Canonical Accounts</h3><p>These customer relationships do not currently feed a Key Account. Select a Key Account before using Add.</p></div>';
-            available.innerHTML = state.availableKeyMembers.length ? `<div class="bm-key-members">${state.availableKeyMembers.map((member) => `<div class="bm-key-candidate"><div><strong>${escapeHtml(member.name)}</strong><small>${escapeHtml(countryName(member.country))} · ${Number(member.canonical_account_count).toLocaleString()} Canonical Account(s) · ${member.revenue_ytd === null ? 'Revenue not available' : money(member.revenue_ytd)}</small></div></div>`).join('')}</div>` : '<p class="bm-empty">No unassigned Canonical Account matches the current filters.</p>';
+            available.innerHTML = state.availableKeyMembers.length ? `<div class="bm-key-members">${state.availableKeyMembers.map((member) => `<div class="bm-key-candidate"><div><strong>${escapeHtml(member.name)}</strong><small>${escapeHtml(countryName(member.country))} · ${Number(member.canonical_account_count).toLocaleString("en-GB")} Canonical Account(s) · ${member.revenue_ytd === null ? 'Revenue not available' : money(member.revenue_ytd)}</small></div></div>`).join('')}</div>` : '<p class="bm-empty">No unassigned Canonical Account matches the current filters.</p>';
             return;
         }
-        detail.innerHTML = `<div class="bm-key-summary"><div class="bm-key-summary-head"><div><h3>${escapeHtml(selected.name)}</h3><p>${Number(selected.canonical_account_count).toLocaleString()} canonical Account(s) · ${selected.revenue_ytd === null ? 'Revenue not available' : money(selected.revenue_ytd)}</p><p>${selected.minesites?.length ? `MineSites: ${escapeHtml(selected.minesites.join(', '))}` : 'No mapped MineSite'}</p></div>${app.dataset.canEdit === 'true' ? '<div class="bm-key-actions"><button type="button" class="button secondary small" data-key-rename-open>Rename</button><button type="button" class="button danger small" data-key-delete-open>Delete</button></div>' : ''}</div>
+        detail.innerHTML = `<div class="bm-key-summary"><div class="bm-key-summary-head"><div><h3>${escapeHtml(selected.name)}</h3><p>${Number(selected.canonical_account_count).toLocaleString("en-GB")} canonical Account(s) · ${selected.revenue_ytd === null ? 'Revenue not available' : money(selected.revenue_ytd)}</p><p>${selected.minesites?.length ? `MineSites: ${escapeHtml(selected.minesites.join(', '))}` : 'No mapped MineSite'}</p></div>${app.dataset.canEdit === 'true' ? '<div class="bm-key-actions"><button type="button" class="button secondary small" data-key-rename-open>Rename</button><button type="button" class="button danger small" data-key-delete-open>Delete</button></div>' : ''}</div>
             ${app.dataset.canEdit === 'true' ? `<form class="bm-key-rename" data-key-rename-form hidden><label>Key Account name<input type="text" data-key-rename-name value="${escapeHtml(selected.name)}" required></label><div><button type="button" class="button secondary small" data-key-rename-cancel>Cancel</button><button type="submit" class="button small">Save name</button></div></form>` : ''}</div>
             <div class="bm-subsection-heading"><strong>Canonical Accounts</strong><span>${Number(selected.customer_country_groups?.length || 0)}</span></div>
-            <div class="bm-key-members">${selected.customer_country_groups?.length ? selected.customer_country_groups.map((group) => `<div class="bm-key-member"><div><strong>${escapeHtml(group.name)}</strong><small>${escapeHtml(countryName(group.country))} · ${Number(group.canonical_account_count).toLocaleString()} Canonical Account(s) · ${group.revenue_ytd === null ? 'Revenue not available' : money(group.revenue_ytd)}</small></div>${app.dataset.canEdit === 'true' ? `<button type="button" class="button secondary small" data-key-remove="${escapeHtml(group.id)}">Remove</button>` : ''}</div>`).join('') : '<p class="bm-empty">No Canonical Account has been added yet.</p>'}</div>
-            <details><summary>View ${Number(selected.members?.length || 0)} Canonical Account(s)</summary><div class="bm-key-members">${selected.members?.map((member) => `<div class="bm-key-member"><div><strong>${escapeHtml(member.name)}</strong><small>${escapeHtml(countryName(member.country))} · ${Number(member.source_record_count).toLocaleString()} Source Record(s)</small></div></div>`).join('') || '<p class="bm-empty">No Canonical Account.</p>'}</div></details>`;
-        available.innerHTML = app.dataset.canEdit === 'true' ? (state.availableKeyMembers.length ? `<div class="bm-key-members">${state.availableKeyMembers.map((group) => `<div class="bm-key-candidate"><div><strong>${escapeHtml(group.name)}</strong><small>${escapeHtml(countryName(group.country))} · ${Number(group.canonical_account_count).toLocaleString()} Canonical Account(s) · ${group.revenue_ytd === null ? 'Revenue not available' : money(group.revenue_ytd)}</small></div><button type="button" class="button secondary small" data-key-add="${escapeHtml(group.id)}">Add</button></div>`).join('')}</div>` : '<p class="bm-empty">No available Canonical Account matches the search.</p>') : '';
+            <div class="bm-key-members">${selected.customer_country_groups?.length ? selected.customer_country_groups.map((group) => `<div class="bm-key-member"><div><strong>${escapeHtml(group.name)}</strong><small>${escapeHtml(countryName(group.country))} · ${Number(group.canonical_account_count).toLocaleString("en-GB")} Canonical Account(s) · ${group.revenue_ytd === null ? 'Revenue not available' : money(group.revenue_ytd)}</small></div>${app.dataset.canEdit === 'true' ? `<button type="button" class="button secondary small" data-key-remove="${escapeHtml(group.id)}">Remove</button>` : ''}</div>`).join('') : '<p class="bm-empty">No Canonical Account has been added yet.</p>'}</div>
+            <details><summary>View ${Number(selected.members?.length || 0)} Canonical Account(s)</summary><div class="bm-key-members">${selected.members?.map((member) => `<div class="bm-key-member"><div><strong>${escapeHtml(member.name)}</strong><small>${escapeHtml(countryName(member.country))} · ${Number(member.source_record_count).toLocaleString("en-GB")} Source Record(s)</small></div></div>`).join('') || '<p class="bm-empty">No Canonical Account.</p>'}</div></details>`;
+        available.innerHTML = app.dataset.canEdit === 'true' ? (state.availableKeyMembers.length ? `<div class="bm-key-members">${state.availableKeyMembers.map((group) => `<div class="bm-key-candidate"><div><strong>${escapeHtml(group.name)}</strong><small>${escapeHtml(countryName(group.country))} · ${Number(group.canonical_account_count).toLocaleString("en-GB")} Canonical Account(s) · ${group.revenue_ytd === null ? 'Revenue not available' : money(group.revenue_ytd)}</small></div><button type="button" class="button secondary small" data-key-add="${escapeHtml(group.id)}">Add</button></div>`).join('')}</div>` : '<p class="bm-empty">No available Canonical Account matches the search.</p>') : '';
         detail.querySelectorAll('[data-key-remove]').forEach((button) => button.addEventListener('click', () => updateKeyMembers('DELETE', [button.dataset.keyRemove])));
         available.querySelectorAll('[data-key-add]').forEach((button) => button.addEventListener('click', () => updateKeyMembers('POST', [button.dataset.keyAdd])));
         detail.querySelector('[data-key-rename-open]')?.addEventListener('click', () => {
@@ -645,7 +645,7 @@
                             <span><strong>View</strong></span>
                         </button>
                         ${app.dataset.canRemove === 'true' ? `<button type="button" class="bm-remove-mapping" data-remove-mapping="${escapeHtml(mapping.id)}" aria-label="Remove mapping to ${escapeHtml(mapping.minesite?.name || mapping.no_site_reason || 'No MineSite Required')}" title="Remove mapping">×</button>` : ''}
-                        ${mapping.source_accounts?.length ? `<details class="bm-mapping-sources"><summary>View ${Number(mapping.source_accounts.length).toLocaleString()} Source Account${mapping.source_accounts.length === 1 ? '' : 's'}</summary><div>${mapping.source_accounts.map((source) => `<article><strong>${escapeHtml(source.name)}</strong><span>${escapeHtml(source.code)}${source.code_cic ? ` · CIC ${escapeHtml(source.code_cic)}` : ''}${source.company_code ? ` · Company ${escapeHtml(source.company_code)}` : ''}</span>${source.company_name ? `<small>${escapeHtml(source.company_name)}</small>` : ''}</article>`).join('')}</div></details>` : '<p class="bm-mapping-source-empty">No authorized Source Account is attached.</p>'}
+                        ${mapping.source_accounts?.length ? `<details class="bm-mapping-sources"><summary>View ${Number(mapping.source_accounts.length).toLocaleString("en-GB")} Source Account${mapping.source_accounts.length === 1 ? '' : 's'}</summary><div>${mapping.source_accounts.map((source) => `<article><strong>${escapeHtml(source.name)}</strong><span>${escapeHtml(source.code)}${source.code_cic ? ` · CIC ${escapeHtml(source.code_cic)}` : ''}${source.company_code ? ` · Company ${escapeHtml(source.company_code)}` : ''}</span>${source.company_name ? `<small>${escapeHtml(source.company_name)}</small>` : ''}</article>`).join('')}</div></details>` : '<p class="bm-mapping-source-empty">No authorized Source Account is attached.</p>'}
                     </article>`).join('')}
             </section>` : '';
         const candidates = detail.candidate_minesites?.length ? detail.candidate_minesites.map((item) => `
@@ -780,8 +780,8 @@
             <div class="bm-impact-summary">
                 <div><span>${escapeHtml(revenue.scope_label || 'Account Revenue')} · ${escapeHtml(selectedCategory)} ${escapeHtml(revenuePeriod)}</span><strong>${revenue.ytd === null || revenue.ytd === undefined ? 'Not available' : money(revenue.ytd)}</strong></div>
                 <div><span>${showComparison ? `Previous Year ${escapeHtml(previousYear)}` : 'Period comparison'}</span><strong>${showComparison ? (revenue.previous_year === null || revenue.previous_year === undefined ? 'Not available' : money(revenue.previous_year)) : 'Not applicable'}</strong></div>
-                <div><span>Fleet</span><strong>${Number(fleet.count || 0).toLocaleString()}</strong></div>
-                <div><span>Serial Numbers</span><strong>${Number(fleet.serial_count || 0).toLocaleString()}</strong></div>
+                <div><span>Fleet</span><strong>${Number(fleet.count || 0).toLocaleString("en-GB")}</strong></div>
+                <div><span>Serial Numbers</span><strong>${Number(fleet.serial_count || 0).toLocaleString("en-GB")}</strong></div>
             </div>
             <div class="bm-account-revenue-breakdown" aria-label="Mining revenue by business line">
                 <div><span>Machine</span><strong>${money(categories.PRIME)}</strong></div>
@@ -920,7 +920,7 @@
         const warnings = Number(run.warning_count || 0);
         const failures = Number(run.failure_count || 0);
         $('[data-bm-sync-counts]').textContent = processed || created || updated || unchanged || warnings || failures
-            ? `${processed.toLocaleString()} read · ${created.toLocaleString()} created · ${updated.toLocaleString()} updated · ${unchanged.toLocaleString()} unchanged · ${rejected.toLocaleString()} rejected · ${warnings.toLocaleString()} warnings · ${failures.toLocaleString()} failures`
+            ? `${processed.toLocaleString("en-GB")} read · ${created.toLocaleString("en-GB")} created · ${updated.toLocaleString("en-GB")} updated · ${unchanged.toLocaleString("en-GB")} unchanged · ${rejected.toLocaleString("en-GB")} rejected · ${warnings.toLocaleString("en-GB")} warnings · ${failures.toLocaleString("en-GB")} failures`
             : '';
         const button = $('[data-bm-sync]');
         if (button) {

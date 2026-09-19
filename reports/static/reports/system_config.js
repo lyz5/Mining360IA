@@ -162,7 +162,7 @@
                 <p class="eyebrow">${escapeHtml(item.integration_type)}</p>
                 <h3>${escapeHtml(item.name)}</h3>
                 <p>${escapeHtml(item.description || item.provider || "No description")}</p>
-                <dl><div><dt>Provider</dt><dd>${escapeHtml(item.provider || "Not set")}</dd></div><div><dt>Secrets</dt><dd>${item.configured_secret_keys.length ? `${item.configured_secret_keys.length} configured` : "None"}</dd></div><div><dt>Last test</dt><dd>${escapeHtml(item.last_verified_at ? new Date(item.last_verified_at).toLocaleString() : "Never")}</dd></div></dl>
+                <dl><div><dt>Provider</dt><dd>${escapeHtml(item.provider || "Not set")}</dd></div><div><dt>Secrets</dt><dd>${item.configured_secret_keys.length ? `${item.configured_secret_keys.length} configured` : "None"}</dd></div><div><dt>Last test</dt><dd>${escapeHtml(item.last_verified_at ? new Date(item.last_verified_at).toLocaleString("en-GB") : "Never")}</dd></div></dl>
                 ${item.last_message ? `<p class="system-connection-message">${escapeHtml(item.last_message)}</p>` : ""}
                 <div class="system-card-actions"><button type="button" class="button secondary js-edit" data-id="${item.id}">Edit</button><button type="button" class="button secondary js-test" data-id="${item.id}">Test</button>${item.integration_type === "Active Directory" ? `<button type="button" class="button js-ad-sync" data-id="${item.id}" ${item.status === "Connected" ? "" : "disabled"}>Sync users</button>` : ""}<button type="button" class="button tertiary js-deactivate" data-id="${item.id}">${item.is_active ? "Deactivate" : "Disabled"}</button></div>
             </article>`).join("") || '<div class="empty">No connections found.</div>'}</div>`;

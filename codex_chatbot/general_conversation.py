@@ -7,7 +7,7 @@ BUSINESS_DATA_TERMS = re.compile(
     r"\b(availability|disponibilit[eé]|revenue|revenu|chiffre\s+d['’]?affaires?|"
     r"fleet|flotte|mine\s*site|sites?\s+miniers?|[eé]quipements?|serial|num[eé]ro\s+de\s+s[eé]rie|"
     r"machines?|machine\s+sold|vendues?|pi[eè]ces?|parts?|"
-    r"commande|order|facture|invoice|backorder|delivery|livraison|ytd|"
+    r"mtbf|mtbs|mttr|fuel|carburant|downtime|arr?ts?|commande|order|facture|invoice|backorder|delivery|livraison|ytd|"
     r"key\s+account|compte\s+canonique|mapping)\b",
     re.IGNORECASE,
 )

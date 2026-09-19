@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Business Overview | Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260910-command-center">
-    <link rel="stylesheet" href="{% static 'reports/business_command_center_v2.css' %}?v=20260917-all-divisions-1">
+    <link rel="stylesheet" href="{% static 'reports/business_command_center_v2.css' %}?v=20260919-fleet">
 </head>
 <body class="bcc-body">
 {% include "reports/includes/app_nav.html" %}
 <main class="app-shell bcc-shell" data-command-center
       data-bootstrap-url="{% url 'business-command-center-bootstrap-api' %}"
       data-explorer-url="{% url 'business-command-center-revenue-explorer-api' %}"
+      data-fleet-url="{% url 'business-command-center-fleet-api' %}"
       data-customer-search-url="{% url 'business-command-center-customer-search-api' %}"
       data-key-account-search-url="{% url 'business-command-center-key-account-search-api' %}"
       data-machine-sales-url="{% url 'business-command-center-machine-sales-api' %}"
@@ -20,21 +21,15 @@
       data-parts-sales-url="{% url 'business-command-center-parts-sales-api' %}"
       data-parts-sales-export-url="{% url 'business-command-center-parts-sales-export-api' %}"
       data-watchlist-url="{% url 'business-command-center-watchlist-api' %}"
-      data-saved-views-url="{% url 'business-review-saved-views-api' %}"
-      data-export-url="{% url 'business-command-center-export-api' %}"
       data-features='{"customers":{{ features.customers|yesno:"true,false" }},"countries":{{ features.countries|yesno:"true,false" }},"key_accounts":{{ features.key_accounts|yesno:"true,false" }},"last_visit":{{ features.last_visit|yesno:"true,false" }},"attention":{{ features.attention|yesno:"true,false" }},"watchlist":{{ features.watchlist|yesno:"true,false" }},"presentation":{{ features.presentation|yesno:"true,false" }}}'>
     {% csrf_token %}
     <header class="bcc-header">
         <div class="bcc-title-block"><p class="bcc-kicker">Business Overview</p><h1>Business Overview</h1><p>Executive Revenue Intelligence</p></div>
         <div class="bcc-header-actions">
+            <button class="bcc-icon-btn" type="button" data-refresh title="Refresh View" aria-label="Refresh View">&#8635;</button>
+            {% if features.presentation %}<button class="bcc-button secondary" type="button" data-presentation>Presentation</button>{% endif %}
             <label class="bcc-division-toggle"><input type="checkbox" data-division-toggle><span>All Divisions</span></label>
             <input type="hidden" value="mining" data-filter="division_scope">
-            <button class="bcc-search-action" type="button" data-business-search-open><span>Search Business</span><kbd>Ctrl K</kbd></button>
-            <button class="bcc-icon-btn" type="button" data-refresh title="Refresh View" aria-label="Refresh View">&#8635;</button>
-            <button class="bcc-button secondary" type="button" data-save-view>Save View</button>
-            {% if features.presentation %}<button class="bcc-button secondary" type="button" data-presentation>Presentation</button>{% endif %}
-            {% if can_export %}<button class="bcc-button primary" type="button" data-export>Export</button>{% endif %}
-            <a class="bcc-icon-btn bcc-more-link" href="?ui=legacy" title="Open legacy view" aria-label="Open legacy view">&#8943;</a>
         </div>
     </header>
     <section class="bcc-filter-ribbon" aria-label="Business filters" data-filter-sheet>
@@ -71,7 +66,7 @@
                 <article class="bcc-panel bcc-brief-panel"><header class="bcc-panel-head"><div><p class="bcc-kicker">Executive brief</p><h2>Business Movement</h2></div></header><div class="bcc-brief-tabs" role="tablist"><button class="active" type="button" data-brief-tab="changes">What Changed <b data-brief-count="changes">0</b></button><button type="button" data-brief-tab="yesterday">Since Yesterday <b data-brief-count="yesterday">0</b></button><button type="button" data-brief-tab="attention">Attention <b data-brief-count="attention">0</b></button></div><div class="bcc-brief-view active" data-brief-view="changes"><div class="bcc-change-list" data-changes></div></div><div class="bcc-brief-view" data-brief-view="yesterday"><p class="bcc-yesterday-context" data-yesterday-context></p><div class="bcc-change-list" data-since-yesterday></div></div><div class="bcc-brief-view" data-brief-view="attention"><div class="bcc-attention-list" data-attention></div></div></article>
             </section>
             <section class="bcc-overview-row bcc-secondary-analysis">
-                <article class="bcc-panel bcc-leaders-panel"><header class="bcc-panel-head"><div><p class="bcc-kicker">Published portfolio</p><h2>Revenue Leaders</h2></div><button class="bcc-text-button" type="button" data-open-explorer>Open Explorer</button></header><div class="bcc-leader-list" data-leaders-preview></div></article>
+                <article class="bcc-panel bcc-leaders-panel"><header class="bcc-panel-head"><div><p class="bcc-kicker">Published portfolio</p><h2>Revenue Leaders</h2></div><div class="bcc-leaders-controls"><label class="bcc-leaders-limit">View<select data-leaders-dimension aria-label="Revenue Leaders view"><option value="customers" selected>Customers</option><option value="key_accounts">Key Accounts</option></select></label><label class="bcc-leaders-limit">Show<select data-leaders-limit aria-label="Number of Revenue Leaders"><option value="10" selected>10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="all">All</option></select></label></div></header><p class="bcc-leaders-status" data-leaders-status role="status"></p><div class="bcc-leader-list" data-leaders-preview tabindex="0" aria-label="Revenue Leaders ranking"></div></article>
             </section>
             <section class="bcc-actions-strip"><div><p class="bcc-kicker">Observation to action</p><h2>Actions &amp; Decisions</h2></div><div class="bcc-action-metrics"><span><b data-action="critical">0</b> Critical</span><span><b data-action="overdue">0</b> Overdue</span><span><b data-action="open">0</b> Open</span></div><button class="bcc-button secondary" type="button" data-open-actions>Open Actions</button><button class="bcc-confidence-inline" type="button" data-confidence-open><span>Data Confidence</span><b data-confidence-inline-value>--</b></button></section>
         </section>
@@ -102,9 +97,8 @@
     </div>
     <nav class="bcc-mobile-nav" aria-label="Business Overview mobile navigation"><button class="active" data-workspace-tab="executive" type="button">Executive</button><button data-workspace-tab="turnover" type="button">Turnover</button><button data-workspace-tab="operations" type="button">Sales</button><button data-workspace-tab="actions" type="button">Projects &amp; Tenders</button></nav>
     <aside class="bcc-drawer" data-drawer hidden aria-modal="true" role="dialog" aria-labelledby="bcc-drawer-title"><div class="bcc-drawer-head"><div><p class="bcc-kicker" data-drawer-kicker>Business detail</p><h2 id="bcc-drawer-title" data-drawer-title>Detail</h2></div><button class="bcc-icon-btn" type="button" data-drawer-close aria-label="Close">&#10005;</button></div><div data-drawer-body></div></aside>
-    <aside class="bcc-search-dialog" data-business-search hidden aria-modal="true" role="dialog" aria-labelledby="bcc-search-title"><div class="bcc-search-box"><header><h2 id="bcc-search-title">Search Business</h2><button class="bcc-icon-btn" type="button" data-business-search-close aria-label="Close">&#10005;</button></header><input type="search" data-global-search placeholder="Search Customer or Key Account" autocomplete="off"><div data-global-search-results></div><small>Search is restricted to your authorized business scope.</small></div></aside>
 </main>
-<script src="{% static 'reports/visual_export.js' %}?v=20260910"></script>
-<script src="{% static 'reports/business_command_center_v2.js' %}?v=20260917-all-divisions-1"></script>
+<script src="{% static 'reports/visual_export.js' %}?v=20260919-simple-header"></script>
+<script src="{% static 'reports/business_command_center_v2.js' %}?v=20260919-fleet"></script>
 </body>
 </html>

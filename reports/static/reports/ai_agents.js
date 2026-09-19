@@ -17,7 +17,6 @@
         if (!root) return;
         const state = {
             agents: [], summary: {}, selected: null, activeTab: "general",
-            providerConfiguration: null,
         };
         const cards = document.getElementById("agent-card-grid");
         const kpis = document.getElementById("agent-kpis");
@@ -109,7 +108,6 @@
             ["tools", "Tools"],
             ["sources", "Sources"],
             ["prompts", "Prompts"],
-            ["api_provider", "API Provider"],
             ["permissions", "Permissions"],
             ["governance", "Governance"],
         ];
@@ -187,35 +185,6 @@
                 </div>`;
             else if (["capabilities", "intents", "tools", "sources", "prompts"].includes(state.activeTab)) {
                 html = relatedTable(state.activeTab, agent[state.activeTab] || []);
-            } else if (state.activeTab === "api_provider") {
-                const config = state.providerConfiguration;
-                if (!agent.id) {
-                    html = `<p class="empty-state">Save the agent before assigning provider overrides.</p>`;
-                } else if (!config) {
-                    html = `<p class="empty-state"><span class="loading-spinner"></span> Loading provider configuration...</p>`;
-                } else {
-                    const providers = config.providers.map((item) => `<option value="${item.id}">${escapeHtml(item.name)}</option>`).join("");
-                    const useCases = config.use_cases.map((item) => `<option value="${item.id}">${escapeHtml(item.name)}</option>`).join("");
-                    html = `<div class="agent-provider-panel">
-                        <p class="agent-form-note">Global API Management remains the default. Add an override only when this agent needs a different provider or model.</p>
-                        <div class="form-grid agent-form-grid">
-                            <label><span>Use Case</span><select id="agent-provider-use-case">${useCases}</select></label>
-                            <label><span>Provider</span><select id="agent-provider-provider">${providers}</select></label>
-                            <label><span>Model</span><select id="agent-provider-model"><option value="">Provider default</option></select></label>
-                            ${field("agent_provider_priority", "Priority", 100, "number")}
-                            ${field("agent_provider_fallback", "Allow Fallback", true, "checkbox")}
-                            ${field("agent_provider_active", "Active", true, "checkbox")}
-                        </div>
-                        <button type="button" class="button primary" id="agent-provider-save">Add or Update Override</button>
-                        <div class="agent-related-list agent-provider-list">
-                            ${config.items.map((item) => `<article>
-                                <div><strong>${escapeHtml(item.use_case_name)}</strong><span>${escapeHtml(item.provider)}${item.model ? ` · ${escapeHtml(item.model)}` : ""}</span></div>
-                                <span class="status-badge">${item.active ? "Active" : "Inactive"}</span>
-                                <b>Priority ${item.priority}</b>
-                            </article>`).join("") || `<p class="empty-state">This agent uses the global provider configuration.</p>`}
-                        </div>
-                    </div>`;
-                }
             } else if (state.activeTab === "permissions") html = `
                 <div class="form-grid agent-form-grid">
                     ${field("can_export", "Can Export", agent.permissions?.can_export, "checkbox")}
@@ -235,25 +204,9 @@
                     <div><dt>Validated At</dt><dd>${escapeHtml(agent.validated_at || "Not validated")}</dd></div>
                 </dl>`;
             formContent.innerHTML = html;
-            if (state.activeTab === "api_provider" && state.providerConfiguration) refreshAgentProviderModels();
-        }
-        function refreshAgentProviderModels() {
-            const provider = document.getElementById("agent-provider-provider");
-            const model = document.getElementById("agent-provider-model");
-            if (!provider || !model || !state.providerConfiguration) return;
-            const options = state.providerConfiguration.models
-                .filter((item) => String(item.provider_id) === String(provider.value))
-                .map((item) => `<option value="${item.id}">${escapeHtml(item.name)}</option>`).join("");
-            model.innerHTML = `<option value="">Provider default</option>${options}`;
-        }
-        async function loadAgentProviders() {
-            if (!state.selected?.id) return;
-            state.providerConfiguration = await api(`${root.dataset.agentsUrl}${state.selected.id}/providers/`);
-            renderAgentForm();
         }
         async function openAgent(id = null) {
             state.activeTab = "general";
-            state.providerConfiguration = null;
             if (id) {
                 state.selected = (await api(`${root.dataset.agentsUrl}${id}/`)).agent;
             } else {
@@ -295,9 +248,7 @@
             if (!button) return;
             state.activeTab = button.dataset.formTab;
             renderAgentForm();
-            if (state.activeTab === "api_provider") {
-                loadAgentProviders().catch((error) => notify(error.message, true));
-            }
+
         });
         modal.addEventListener("click", async (event) => {
             if (event.target.closest("[data-agent-close]")) closeAgent();
@@ -312,27 +263,8 @@
                     renderAgentForm();
                 } catch (error) { notify(error.message, true); }
             }
-            if (event.target.id === "agent-provider-save" && state.selected) {
-                try {
-                    await api(`${root.dataset.agentsUrl}${state.selected.id}/providers/`, {
-                        method: "POST",
-                        body: JSON.stringify({
-                            use_case_id: Number(document.getElementById("agent-provider-use-case").value),
-                            provider_id: Number(document.getElementById("agent-provider-provider").value),
-                            model_id: Number(document.getElementById("agent-provider-model").value) || null,
-                            priority: Number(form.elements.agent_provider_priority.value || 100),
-                            fallback_enabled: form.elements.agent_provider_fallback.checked,
-                            active: form.elements.agent_provider_active.checked,
-                        }),
-                    });
-                    await loadAgentProviders();
-                    notify("Agent provider override saved.");
-                } catch (error) { notify(error.message, true); }
-            }
         });
-        formContent.addEventListener("change", (event) => {
-            if (event.target.id === "agent-provider-provider") refreshAgentProviderModels();
-        });
+
         cards.addEventListener("click", (event) => {
             const edit = event.target.closest("[data-agent-edit]");
             const test = event.target.closest("[data-agent-test]");
@@ -409,7 +341,7 @@
             table.innerHTML = `
                 <thead><tr><th>Date</th><th>Agent</th><th>Intent</th><th>Confidence</th><th>Status</th><th>Time</th><th>Question</th></tr></thead>
                 <tbody>${logs.map((log) => `<tr>
-                    <td>${escapeHtml(new Date(log.created_at).toLocaleString())}</td>
+                    <td>${escapeHtml(new Date(log.created_at).toLocaleString("en-GB"))}</td>
                     <td>${escapeHtml(log.selected_agent.replaceAll("_", " "))}</td>
                     <td>${escapeHtml(log.intent)}</td><td>${log.routing_confidence}%</td>
                     <td>${escapeHtml(log.status)}</td><td>${log.response_time_ms} ms</td>

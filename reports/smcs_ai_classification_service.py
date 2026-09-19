@@ -4,7 +4,7 @@ import json
 import time
 
 from .models import KnowledgePrompt, SMCSClassificationConfig, SMCSCode
-from .ai_provider_gateway_service import ai_gateway
+from .legacy_ai_service import legacy_ai
 from .openai_service import is_openai_configured
 
 
@@ -110,7 +110,7 @@ class SMCSAIClassificationService:
             instruction = prompt.prompt_content
             if attempt:
                 instruction += "\nThe previous output failed backend validation. Return corrected strict JSON only."
-            response = ai_gateway.generate_structured_output(
+            response = legacy_ai.generate_structured_output(
                 use_case="smcs_comment_classification",
                 messages=[
                     {"role": "system", "content": instruction},

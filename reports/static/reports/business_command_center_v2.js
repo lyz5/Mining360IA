@@ -15,7 +15,7 @@
   const state = {
     data: null, workspace: 'executive', dimension: 'customers', trendMode: 'ytd',
     operation: 'machine', controller: null, explorerController: null, explorerLoaded: false,
-    turnoverController: null, turnoverLoaded: false,
+    turnoverController: null, turnoverLoaded: false, leadersController: null,
     machineController: null, machineLoaded: false, machinePage: 1, machinePages: 1,
     partsController: null, partsLoaded: false, partsPage: 1, partsPages: 1,
     selectedLabels: { key_account_ids: '' }, searchTimers: {}, exportBound: false,
@@ -216,10 +216,34 @@
   }
   const attentionMarkup = rows => rows.map(item => `<button class="bcc-attention-item ${String(item.severity).toLowerCase()}" type="button"><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.entity)} · ${money(item.impact)}</p><small>${escapeHtml(item.severity)} attention · observed change</small></button>`).join('') || '<p class="bcc-empty">No governed attention signal matches this context.</p>';
 
-  function renderLeaders(rows) {
+  function renderLeaders(rows, dimension) {
     const max = Math.max(1, ...rows.map(item => Number(item.revenue || 0)));
-    $('[data-leaders-preview]').innerHTML = rows.map(item => `<button class="bcc-leader-row" type="button" data-preview-entity="${escapeHtml(item.id)}"><span class="rank">#${item.rank}</span><strong>${escapeHtml(item.name || 'Not available')}</strong><span class="bcc-leader-bar"><i style="width:${Math.max(0, item.revenue / max * 100)}%"></i></span><b>${money(item.revenue)}</b></button>`).join('') || '<p class="bcc-empty">Published Customer rankings are not available.</p>';
-    $$('[data-preview-entity]').forEach(button => button.addEventListener('click', () => openEntity(button.dataset.previewEntity, 'customers', rows)));
+    $('[data-leaders-preview]').innerHTML = rows.map(item => `<button class="bcc-leader-row" type="button" data-preview-entity="${escapeHtml(item.id)}"><span class="rank">#${item.rank}</span><strong title="${escapeHtml(item.display_name || item.name || '')}">${escapeHtml(item.display_name || item.name || 'Not available')}</strong><b>${money(item.revenue)}</b><span class="bcc-leader-bar" aria-hidden="true"><i style="width:${Math.max(0, item.revenue / max * 100)}%"></i></span></button>`).join('') || '<p class="bcc-empty">Published Customer rankings are not available.</p>';
+    if (!rows.length) $('[data-leaders-preview]').textContent = `Published ${dimension === 'key_accounts' ? 'Key Account' : 'Customer'} rankings are not available.`;
+    $$('[data-preview-entity]').forEach(button => button.addEventListener('click', () => openEntity(button.dataset.previewEntity, dimension, rows)));
+  }
+
+  async function loadLeaders() {
+    state.leadersController?.abort();
+    const controller = new AbortController(); state.leadersController = controller;
+    const list = $('[data-leaders-preview]'); const status = $('[data-leaders-status]');
+    list.replaceChildren(); list.setAttribute('aria-busy', 'true');
+    status.textContent = 'Loading Revenue Leaders...';
+    const dimension = $('[data-leaders-dimension]').value;
+    const query = apiParams(); query.set('dimension', dimension); query.set('ranking', 'revenue');
+    query.set('limit', $('[data-leaders-limit]').value);
+    try {
+      const response = await fetch(`${root.dataset.explorerUrl}?${query}`, {signal: controller.signal, headers: {Accept: 'application/json'}});
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.message || 'Revenue Leaders are temporarily unavailable.');
+      if (controller.signal.aborted) return;
+      renderLeaders(payload.results, dimension);
+      status.textContent = `${payload.results.length} of ${payload.count} ${dimension === 'key_accounts' ? 'key accounts' : 'customers'}`;
+    } catch (error) {
+      if (error.name !== 'AbortError') status.textContent = error.message;
+    } finally {
+      if (state.leadersController === controller) list.setAttribute('aria-busy', 'false');
+    }
   }
 
   function render(data) {
@@ -253,7 +277,7 @@
     $('[data-brief-count="attention"]').textContent = data.attention_items.length;
     $('[data-attention]').innerHTML = attentionMarkup(data.attention_items);
     $('[data-actions-attention]').innerHTML = attentionMarkup(data.attention_items);
-    renderLeaders(data.dimensions.customers || []);
+    loadLeaders();
     $('[data-watchlist]').innerHTML = data.watchlist.map(item => `<div class="bcc-watch-item"><span>${escapeHtml(item.display_name)}</span><button class="bcc-text-button" data-remove-watch="${item.id}">Remove</button></div>`).join('') || '<p class="bcc-empty">Add Customers, Countries or Key Accounts from a detail drawer.</p>';
     $$('[data-remove-watch]').forEach(button => button.addEventListener('click', () => removeWatchlist(button.dataset.removeWatch)));
     Object.entries(data.actions_summary).forEach(([key, value]) => { const node = $(`[data-action="${key}"]`); if (node) node.textContent = value; });
@@ -284,6 +308,7 @@
   }
 
   async function refresh() {
+    state.leadersController?.abort();
     toggleCustomDates(); updateUrl(); state.controller?.abort(); state.controller = new AbortController(); setUpdating(true); setHidden('[data-error]', true);
     try {
       const response = await fetch(`${root.dataset.bootstrapUrl}?${apiParams()}`, { signal: state.controller.signal, headers: { Accept: 'application/json' } });
@@ -395,14 +420,33 @@
   }
 
   function openEntity(id, dimension, rows) {
+    state.fleetController?.abort();
     const item = (rows || []).find(row => String(row.id) === String(id)); if (!item) return;
     const type = dimension === 'customers' ? 'Customer' : dimension === 'countries' ? 'Country' : dimension === 'key_accounts' ? 'Key Account' : 'Business Line';
     $('[data-drawer-kicker]').textContent = `${type} 360`; $('[data-drawer-title]').textContent = item.name || type;
     $('[data-drawer-body]').innerHTML = `<div class="bcc-detail-grid"><div class="bcc-detail-metric"><span>Revenue</span><strong>${money(item.revenue, true)}</strong></div><div class="bcc-detail-metric"><span>Share</span><strong>${item.share === null || item.share === undefined ? 'Not available' : `${item.share}%`}</strong></div><div class="bcc-detail-metric"><span>Previous period</span><strong>${money(item.previous_revenue, true)}</strong></div><div class="bcc-detail-metric"><span>Change</span><strong>${money(item.absolute_delta, true)} · ${growth(item)}</strong></div></div><h3>Business Line Mix</h3>${Object.entries(item.business_line_mix || {}).map(([key, value]) => `<div class="bcc-watch-item"><span>${escapeHtml(key)}</span><strong>${money(value)}</strong></div>`).join('')}<p class="bcc-empty">Published Mapping v${state.data.context.published_mapping_version || 'not available'} · context ${state.data.context.context_id}</p>${features.watchlist ? '<button class="bcc-button primary" type="button" data-add-watch>Add to Watchlist</button>' : ''}`;
     $('[data-drawer]').hidden = false; document.body.style.overflow = 'hidden'; $('[data-drawer-close]').focus();
+    if (['customers', 'key_accounts', 'countries'].includes(dimension)) {
+      $('[data-drawer-body]').insertAdjacentHTML('beforeend', '<section class="bcc-fleet-section"><h3>Fleet</h3><p class="bcc-empty">Current Mining fleet snapshot for linked sites; independent of the Revenue period.</p><div data-entity-fleet role="status">Loading fleet...</div></section>');
+      loadEntityFleet(id, dimension);
+    }
     $('[data-add-watch]')?.addEventListener('click', () => addWatchlist(type.toLowerCase().replace(' ', '_'), item));
   }
-  function closeDrawer() { $('[data-drawer]').hidden = true; document.body.style.overflow = ''; }
+  async function loadEntityFleet(id, dimension) {
+    const controller = new AbortController(); state.fleetController = controller;
+    const target = $('[data-entity-fleet]');
+    const query = apiParams(); query.set('dimension', dimension); query.set('entity_id', id);
+    try {
+      const response = await fetch(`${root.dataset.fleetUrl}?${query}`, {signal: controller.signal, headers: {Accept: 'application/json'}});
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.message || 'Fleet is temporarily unavailable.');
+      if (controller.signal.aborted) return;
+      if (!data.linked) { target.textContent = 'No published MineSite link is available for this selection.'; return; }
+      if (!data.count) { target.textContent = 'No equipment is available in the current snapshot for the linked sites.'; return; }
+      target.innerHTML = `<p class="bcc-empty">Fleet scope: ${escapeHtml(data.scope_label)}</p><p><strong>${data.count} equipment records</strong> · ${data.sites.length} linked sites</p><p class="bcc-empty">${escapeHtml(data.sites.join(', '))}</p><div class="bcc-fleet-models">${data.models.map(row => `<span>${escapeHtml(row.model || 'Unknown model')} <b>${row.count}</b></span>`).join('')}</div><p class="bcc-empty">Showing ${data.equipment.length} of ${data.count} records${data.as_of ? ` · Updated ${escapeHtml(new Date(data.as_of).toLocaleDateString('en-GB'))}` : ''}</p><div class="bcc-fleet-table" tabindex="0" aria-label="Fleet equipment"><table><thead><tr><th>Equipment</th><th>Model</th><th>Serial number</th><th>Site</th><th>Status</th></tr></thead><tbody>${data.equipment.map(row => `<tr>${[row.equipment, row.model, row.serial_number, row.site, row.source_status].map(value => `<td>${escapeHtml(value || 'Not available')}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    } catch (error) { if (error.name !== 'AbortError') target.textContent = 'Fleet is temporarily unavailable. Close and reopen this panel to retry.'; }
+  }
+  function closeDrawer() { state.fleetController?.abort(); $('[data-drawer]').hidden = true; document.body.style.overflow = ''; }
 
   function renderMachineFamilyGroups(groups) {
     const picker = $('[data-machine-family-picker]');
@@ -492,7 +536,8 @@
   async function removeWatchlist(id) { await fetch(root.dataset.watchlistUrl, { method: 'DELETE', headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrf }, body: JSON.stringify({ id }) }); refresh(); }
 
   $$('[data-workspace-tab]').forEach(button => button.addEventListener('click', () => switchWorkspace(button.dataset.workspaceTab)));
-  $('[data-open-explorer]').addEventListener('click', () => switchWorkspace('explore'));
+  $('[data-leaders-limit]').addEventListener('change', loadLeaders);
+  $('[data-leaders-dimension]').addEventListener('change', loadLeaders);
   $('[data-open-actions]').addEventListener('click', () => switchWorkspace('actions'));
   $$('[data-brief-tab]').forEach(button => button.addEventListener('click', () => { $$('[data-brief-tab]').forEach(node => node.classList.toggle('active', node === button)); $$('[data-brief-view]').forEach(node => node.classList.toggle('active', node.dataset.briefView === button.dataset.briefTab)); }));
   $$('[data-analysis-mode]').forEach(button => button.addEventListener('click', () => { $$('[data-analysis-mode]').forEach(node => node.classList.toggle('active', node === button)); $$('[data-analysis-view]').forEach(node => { node.hidden = node.dataset.analysisView !== button.dataset.analysisMode; }); }));
@@ -547,11 +592,7 @@
   $('[data-parts-refresh]').addEventListener('click', () => loadPartsSales(true)); $('[data-parts-group]').addEventListener('change', () => loadPartsSales(true)); $$('[data-parts-filter]').forEach(control => control.addEventListener('change', () => loadPartsSales(true))); let partsTimer; $('[data-parts-search]').addEventListener('input', () => { clearTimeout(partsTimer); partsTimer = setTimeout(() => loadPartsSales(true), 300); }); $('[data-parts-prev]').addEventListener('click', () => { if (state.partsPage > 1) { state.partsPage--; loadPartsSales(); } }); $('[data-parts-next]').addEventListener('click', () => { if (state.partsPage < state.partsPages) { state.partsPage++; loadPartsSales(); } });
   $('[data-parts-export]')?.addEventListener('click', () => { const query = apiParams(); query.set('group_by', $('[data-parts-group]').value || 'major'); location.href = `${root.dataset.partsSalesExportUrl}?${query}`; });
   $('[data-presentation]')?.addEventListener('click', () => { document.body.classList.toggle('presentation'); if (document.body.classList.contains('presentation')) document.documentElement.requestFullscreen?.().catch(() => {}); else document.exitFullscreen?.().catch(() => {}); });
-  $('[data-save-view]').addEventListener('click', async () => { const name = window.prompt('Saved view name', 'My Business Overview'); if (!name) return; await fetch(root.dataset.savedViewsUrl, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrf }, body: JSON.stringify({ name, filters: Object.fromEntries(queryParams()), visualization: 'business_command_center_v2' }) }); $('[data-save-view]').textContent = 'View Saved'; setTimeout(() => $('[data-save-view]').textContent = 'Save View', 1500); });
-  $('[data-export]')?.addEventListener('click', () => { location.href = `${root.dataset.exportUrl}?${apiParams()}`; });
-  const searchDialog = $('[data-business-search]'); const openSearch = () => { searchDialog.hidden = false; $('[data-global-search]').focus(); }; const closeSearch = () => { searchDialog.hidden = true; };
-  $('[data-business-search-open]').addEventListener('click', openSearch); $('[data-business-search-close]').addEventListener('click', closeSearch); let globalTimer; $('[data-global-search]').addEventListener('input', event => { clearTimeout(globalTimer); globalTimer = setTimeout(async () => { const target = $('[data-global-search-results]'); target.innerHTML = '<p class="bcc-empty">Searching authorized business entities...</p>'; const [customers, keys] = await Promise.all([searchEntities('customers', event.target.value, document.createElement('div')), searchEntities('key_accounts', event.target.value, document.createElement('div'))]); const combined = [...customers.map(item => ({ ...item, type: 'customers' })), ...keys.map(item => ({ ...item, type: 'key_accounts' }))]; target.innerHTML = combined.map(item => `<button class="bcc-search-result" type="button" data-global-id="${escapeHtml(item.id)}" data-global-type="${item.type}"><strong>${escapeHtml(item.name)}</strong><small>${item.type === 'customers' ? 'Customer' : 'Key Account'}</small></button>`).join('') || '<p class="bcc-empty">No authorized result.</p>'; $$('[data-global-id]', target).forEach(button => button.addEventListener('click', () => { closeSearch(); state.dimension = button.dataset.globalType; switchWorkspace('explore'); loadExplorer(); })); }, 250); });
-  document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeDrawer(); closeSearch(); $('[data-filter-sheet]').classList.remove('open'); } if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); openSearch(); } });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeDrawer(); $('[data-filter-sheet]').classList.remove('open'); } });
   window.addEventListener('popstate', () => { syncFromUrl(); switchWorkspace(state.workspace, false); refresh(); });
   syncFromUrl(); refresh();
 })();

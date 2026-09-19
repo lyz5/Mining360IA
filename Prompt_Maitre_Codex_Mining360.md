@@ -61,7 +61,6 @@ Le document **Mining360_Chatbot_Reference_Complete_2026-09-02.docx** est une ré
 
 Pistes documentées à localiser, sans supposer leur présence actuelle :
 
-`AIConfigSection`, `AIMetricMapping`, `AIFilterMapping`, `AIDaxTemplate`, `AIResponseTemplate`, `AIIntentResponseTemplateMapping`, `KnowledgeKPIDictionary`, `KnowledgeSynonym`, `BusinessDataField`, `AIAgentCapability`, `AIAnswerabilityConfiguration`, `UnansweredInformationRequirement`, modèles `AIConversation*`, `AIAgentExecutionLog`, `PowerBIInteractionLog`, `AIProviderUsageLog`, `AIAnswerabilityEvent`, et services métier associés.
 
 Distingue systématiquement : comportement observé dans le code, configuration active, donnée accessible, fonctionnalité effectivement testée, décision métier validée et idée non développée. Une table remplie ou un document qui dit « Ready » ne remplace pas un test d’exécution.
 

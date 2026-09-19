@@ -20,6 +20,8 @@ class CodexChatbotPilot(models.Model):
 
 
 class CodexConversation(models.Model):
+    legacy_context = models.JSONField(default=dict, blank=True, editable=False)
+    legacy_conversation_id = models.UUIDField(null=True, blank=True, unique=True, editable=False)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     owner = models.ForeignKey(
         settings.AUTH_USER_MODEL,
@@ -39,6 +41,8 @@ class CodexConversation(models.Model):
 
 
 class CodexMessage(models.Model):
+    legacy_message_id = models.UUIDField(null=True, blank=True, unique=True, editable=False)
+    legacy_payload = models.JSONField(default=dict, blank=True, editable=False)
     ROLES = (("USER", "User"), ("ASSISTANT", "Assistant"), ("SYSTEM", "System"))
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

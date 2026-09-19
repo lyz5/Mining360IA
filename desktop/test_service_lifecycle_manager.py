@@ -55,6 +55,15 @@ class ServiceLifecycleManagerTests(unittest.TestCase):
         self.assertIn("not identified", result.message)
         self.controller.stop.assert_not_called()
 
+    @patch.object(ServiceLifecycleManager, "_wait_health", side_effect=[True, False])
+    @patch.object(ServiceLifecycleManager, "_wait_ports_released", return_value=True)
+    def test_local_restart_succeeds_with_explicit_https_warning(self, _ports, _health):
+        self.controller.check_application_services.return_value['https'] = ServiceResult(
+            'https', 'HTTPS', 'offline', 'DNS not configured', time.time())
+        result = self.manager.restart()
+        self.assertEqual(result.status, OperationStatus.COMPLETED_WITH_WARNINGS)
+        self.assertIn('Local application operational, HTTPS not configured', result.warnings)
+
     def test_duplicate_operation_is_rejected(self) -> None:
         self.manager._operation_lock.acquire()
         self.manager.active_operation_id = "running-operation"

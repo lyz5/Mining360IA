@@ -2696,319 +2696,22 @@ AI_PROVIDER_CAPABILITIES = [
 ]
 
 
-class AIProvider(models.Model):
-    PROVIDER_TYPES = [
-        ("openai", "OpenAI"),
-        ("anthropic_claude", "Claude AI"),
-        ("google_gemini", "Google Gemini"),
-        ("glm_5", "GLM-5"),
-        ("custom", "Custom Provider"),
-    ]
-    AUTH_TYPES = [
-        ("api_key", "API Key"),
-        ("bearer_token", "Bearer Token"),
-        ("oauth2", "OAuth 2.0"),
-        ("custom_header", "Custom Header"),
-    ]
-    STATUS_CHOICES = [
-        ("not_configured", "Not Configured"),
-        ("active", "Healthy"),
-        ("inactive", "Inactive"),
-        ("degraded", "Degraded"),
-        ("unavailable", "Unavailable"),
-        ("invalid_credentials", "Invalid Credentials"),
-    ]
-    SELECTION_MODES = [
-        ("fixed", "Fixed"),
-        ("priority", "Priority Based"),
-        ("cost", "Cost Optimized"),
-        ("performance", "Performance Optimized"),
-        ("manual", "Manual"),
-    ]
-
-    code = models.SlugField(max_length=100, unique=True)
-    name = models.CharField(max_length=150)
-    provider_type = models.CharField(max_length=50, choices=PROVIDER_TYPES)
-    description = models.TextField(blank=True)
-    base_url = models.URLField(blank=True)
-    api_version = models.CharField(max_length=100, blank=True)
-    auth_type = models.CharField(max_length=30, choices=AUTH_TYPES, default="api_key")
-    priority = models.PositiveIntegerField(default=50, db_index=True)
-    selection_mode = models.CharField(max_length=20, choices=SELECTION_MODES, default="priority")
-    is_default = models.BooleanField(default=False, db_index=True)
-    active = models.BooleanField(default=False, db_index=True)
-    allow_fallback = models.BooleanField(default=True)
-    status = models.CharField(max_length=30, choices=STATUS_CHOICES, default="not_configured", db_index=True)
-    timeout_seconds = models.PositiveIntegerField(default=60)
-    retry_count = models.PositiveIntegerField(default=2)
-    retry_backoff_seconds = models.PositiveIntegerField(default=2)
-    requests_per_minute = models.PositiveIntegerField(null=True, blank=True)
-    tokens_per_minute = models.PositiveIntegerField(null=True, blank=True)
-    maximum_concurrent_requests = models.PositiveIntegerField(default=5)
-    daily_budget = models.DecimalField(max_digits=12, decimal_places=4, null=True, blank=True)
-    monthly_budget = models.DecimalField(max_digits=12, decimal_places=4, null=True, blank=True)
-    budget_warning_percentage = models.DecimalField(max_digits=5, decimal_places=2, default=80)
-    budget_critical_percentage = models.DecimalField(max_digits=5, decimal_places=2, default=95)
-    block_when_budget_exceeded = models.BooleanField(default=False)
-    currency = models.CharField(max_length=10, default="USD")
-    capabilities_json = models.JSONField(default=list, blank=True)
-    configuration_json = models.JSONField(default=dict, blank=True)
-    last_health_check_at = models.DateTimeField(null=True, blank=True)
-    last_success_at = models.DateTimeField(null=True, blank=True)
-    last_failure_at = models.DateTimeField(null=True, blank=True)
-    last_error_code = models.CharField(max_length=150, blank=True)
-    last_error_message = models.TextField(blank=True)
-    created_by = models.ForeignKey(
-        User, null=True, blank=True, on_delete=models.SET_NULL, related_name="created_ai_providers"
-    )
-    updated_by = models.ForeignKey(
-        User, null=True, blank=True, on_delete=models.SET_NULL, related_name="updated_ai_providers"
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ["-priority", "name"]
-        db_table = "AIProvider"
-        permissions = [
-            ("set_default_ai_provider", "Can set the default AI provider"),
-            ("manage_ai_provider_credentials", "Can manage AI provider credentials"),
-            ("test_ai_provider", "Can test AI providers"),
-            ("view_ai_provider_usage", "Can view AI provider usage"),
-            ("view_ai_provider_costs", "Can view AI provider costs"),
-            ("manage_ai_use_case_routing", "Can manage AI use case routing"),
-            ("manage_ai_provider_budgets", "Can manage AI provider budgets"),
-        ]
-
-    def __str__(self):
-        return self.name
 
 
-class AIProviderCredential(models.Model):
-    provider = models.ForeignKey(AIProvider, related_name="credentials", on_delete=models.CASCADE)
-    credential_type = models.CharField(max_length=60, default="api_key")
-    encrypted_value = models.TextField(blank=True)
-    secret_reference = models.CharField(max_length=500, blank=True)
-    key_identifier = models.CharField(max_length=160, blank=True)
-    last_four_characters = models.CharField(max_length=4, blank=True)
-    active = models.BooleanField(default=True)
-    rotated_at = models.DateTimeField(null=True, blank=True)
-    expires_at = models.DateTimeField(null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ["provider", "credential_type"]
-        db_table = "AIProviderCredential"
-        constraints = [
-            models.UniqueConstraint(
-                fields=["provider", "credential_type"], name="unique_ai_provider_credential_type"
-            ),
-        ]
 
 
-class AIProviderModel(models.Model):
-    VALIDATION_STATUSES = [
-        ("Draft", "Draft"),
-        ("To Review", "To Review"),
-        ("Validated", "Validated"),
-        ("Deprecated", "Deprecated"),
-    ]
-
-    provider = models.ForeignKey(AIProvider, related_name="models", on_delete=models.CASCADE)
-    model_code = models.CharField(max_length=180)
-    display_name = models.CharField(max_length=200)
-    description = models.TextField(blank=True)
-    model_family = models.CharField(max_length=120, blank=True)
-    context_window = models.PositiveBigIntegerField(null=True, blank=True)
-    maximum_output_tokens = models.PositiveIntegerField(null=True, blank=True)
-    capabilities_json = models.JSONField(default=list, blank=True)
-    supports_streaming = models.BooleanField(default=False)
-    supports_structured_output = models.BooleanField(default=False)
-    supports_tool_calling = models.BooleanField(default=False)
-    supports_vision = models.BooleanField(default=False)
-    supports_embeddings = models.BooleanField(default=False)
-    supports_audio_transcription = models.BooleanField(default=False)
-    supports_text_to_speech = models.BooleanField(default=False)
-    input_cost_per_million = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
-    output_cost_per_million = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
-    cached_input_cost_per_million = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
-    currency = models.CharField(max_length=10, default="USD")
-    pricing_notes = models.TextField(blank=True)
-    active = models.BooleanField(default=True, db_index=True)
-    is_default_for_provider = models.BooleanField(default=False)
-    validation_status = models.CharField(
-        max_length=20, choices=VALIDATION_STATUSES, default="To Review"
-    )
-    configuration_json = models.JSONField(default=dict, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ["provider", "-is_default_for_provider", "display_name"]
-        db_table = "AIProviderModel"
-        constraints = [
-            models.UniqueConstraint(
-                fields=["provider", "model_code"], name="unique_ai_provider_model"
-            ),
-        ]
-
-    def __str__(self):
-        return f"{self.provider.name} / {self.display_name}"
 
 
-class AIUseCaseConfiguration(models.Model):
-    VALIDATION_STATUSES = [
-        ("Draft", "Draft"),
-        ("To Review", "To Review"),
-        ("Validated", "Validated"),
-        ("Rejected", "Rejected"),
-    ]
-
-    use_case_code = models.SlugField(max_length=140, unique=True)
-    display_name = models.CharField(max_length=200)
-    description = models.TextField(blank=True)
-    primary_provider = models.ForeignKey(
-        AIProvider, null=True, blank=True, related_name="primary_use_cases", on_delete=models.SET_NULL
-    )
-    primary_model = models.ForeignKey(
-        AIProviderModel, null=True, blank=True, related_name="primary_use_cases", on_delete=models.SET_NULL
-    )
-    selection_mode = models.CharField(
-        max_length=20, choices=AIProvider.SELECTION_MODES, default="priority"
-    )
-    fallback_enabled = models.BooleanField(default=True)
-    fallback_providers_json = models.JSONField(default=list, blank=True)
-    required_capabilities_json = models.JSONField(default=list, blank=True)
-    temperature = models.DecimalField(max_digits=4, decimal_places=2, default=0)
-    maximum_output_tokens = models.PositiveIntegerField(default=2048)
-    timeout_seconds = models.PositiveIntegerField(default=60)
-    retry_count = models.PositiveIntegerField(default=1)
-    structured_output_required = models.BooleanField(default=False)
-    streaming_enabled = models.BooleanField(default=False)
-    active = models.BooleanField(default=True, db_index=True)
-    validation_status = models.CharField(
-        max_length=20, choices=VALIDATION_STATUSES, default="To Review"
-    )
-    configuration_json = models.JSONField(default=dict, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ["display_name"]
-        db_table = "AIUseCaseConfiguration"
-
-    def __str__(self):
-        return self.display_name
 
 
-class AIAgentProviderConfiguration(models.Model):
-    agent = models.ForeignKey(AIAgent, related_name="provider_configurations", on_delete=models.CASCADE)
-    use_case = models.ForeignKey(
-        AIUseCaseConfiguration, related_name="agent_configurations", on_delete=models.CASCADE
-    )
-    provider = models.ForeignKey(AIProvider, related_name="agent_configurations", on_delete=models.CASCADE)
-    model = models.ForeignKey(
-        AIProviderModel, null=True, blank=True, related_name="agent_configurations", on_delete=models.SET_NULL
-    )
-    priority = models.PositiveIntegerField(default=100)
-    fallback_enabled = models.BooleanField(default=True)
-    active = models.BooleanField(default=True)
-    configuration_json = models.JSONField(default=dict, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ["agent", "use_case", "-priority"]
-        db_table = "AIAgentProviderConfiguration"
-        constraints = [
-            models.UniqueConstraint(
-                fields=["agent", "use_case", "provider"],
-                name="unique_ai_agent_use_case_provider",
-            ),
-        ]
 
 
-class AIProviderUsageLog(models.Model):
-    request_id = models.CharField(max_length=255, default=uuid.uuid4, db_index=True)
-    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
-    conversation_id = models.CharField(max_length=255, blank=True, db_index=True)
-    agent = models.ForeignKey(
-        AIAgent, null=True, blank=True, related_name="provider_usage_logs", on_delete=models.SET_NULL
-    )
-    use_case = models.CharField(max_length=140, db_index=True)
-    provider = models.ForeignKey(
-        AIProvider, null=True, blank=True, related_name="usage_logs", on_delete=models.SET_NULL
-    )
-    provider_code = models.CharField(max_length=100, db_index=True)
-    model = models.CharField(max_length=180, blank=True, db_index=True)
-    primary_provider_code = models.CharField(max_length=100, blank=True)
-    fallback_used = models.BooleanField(default=False, db_index=True)
-    fallback_reason = models.CharField(max_length=160, blank=True)
-    status = models.CharField(max_length=40, default="completed", db_index=True)
-    input_tokens = models.PositiveBigIntegerField(default=0)
-    output_tokens = models.PositiveBigIntegerField(default=0)
-    cached_tokens = models.PositiveBigIntegerField(default=0)
-    total_tokens = models.PositiveBigIntegerField(default=0)
-    audio_seconds = models.DecimalField(max_digits=12, decimal_places=3, default=0)
-    image_count = models.PositiveIntegerField(default=0)
-    estimated_cost = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
-    currency = models.CharField(max_length=10, default="USD")
-    latency_ms = models.PositiveIntegerField(default=0)
-    retry_count = models.PositiveIntegerField(default=0)
-    error_code = models.CharField(max_length=160, blank=True)
-    error_message = models.TextField(blank=True)
-    metadata_json = models.JSONField(default=dict, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
-
-    class Meta:
-        ordering = ["-created_at"]
-        db_table = "AIProviderUsageLog"
-        indexes = [
-            models.Index(fields=["provider_code", "created_at"], name="ai_provider_usage_time"),
-            models.Index(fields=["use_case", "created_at"], name="ai_use_case_usage_time"),
-        ]
 
 
-class AIProviderHealthLog(models.Model):
-    provider = models.ForeignKey(AIProvider, related_name="health_logs", on_delete=models.CASCADE)
-    status = models.CharField(max_length=30)
-    latency_ms = models.PositiveIntegerField(default=0)
-    model = models.CharField(max_length=180, blank=True)
-    error_code = models.CharField(max_length=160, blank=True)
-    error_message = models.TextField(blank=True)
-    checked_at = models.DateTimeField(auto_now_add=True, db_index=True)
-
-    class Meta:
-        ordering = ["-checked_at"]
-        db_table = "AIProviderHealthLog"
 
 
-class AIProviderCircuitState(models.Model):
-    provider = models.OneToOneField(AIProvider, related_name="circuit_state", on_delete=models.CASCADE)
-    failure_count = models.PositiveIntegerField(default=0)
-    window_started_at = models.DateTimeField(null=True, blank=True)
-    opened_at = models.DateTimeField(null=True, blank=True)
-    open_until = models.DateTimeField(null=True, blank=True)
-    last_failure_code = models.CharField(max_length=160, blank=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        db_table = "AIProviderCircuitState"
 
 
-class AIProviderAuditLog(models.Model):
-    provider = models.ForeignKey(
-        AIProvider, null=True, blank=True, related_name="audit_logs", on_delete=models.SET_NULL
-    )
-    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
-    action = models.CharField(max_length=100, db_index=True)
-    changes_json = models.JSONField(default=dict, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
-
-    class Meta:
-        ordering = ["-created_at"]
-        db_table = "AIProviderAuditLog"
 
 
 class PowerBIInteractionLog(models.Model):
@@ -4188,61 +3891,8 @@ class KnowledgeUserFeedback(models.Model):
         return f"Feedback {self.rating}"
 
 
-class OpenAIModelPricing(models.Model):
-    model_name = models.CharField(max_length=160, db_index=True)
-    effective_from = models.DateTimeField()
-    effective_to = models.DateTimeField(null=True, blank=True)
-    input_cost_per_million_tokens = models.DecimalField(max_digits=18, decimal_places=8, default=0)
-    cached_input_cost_per_million_tokens = models.DecimalField(max_digits=18, decimal_places=8, default=0)
-    output_cost_per_million_tokens = models.DecimalField(max_digits=18, decimal_places=8, default=0)
-    currency = models.CharField(max_length=12, default="USD")
-    source = models.CharField(max_length=255, blank=True)
-    active = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ["model_name", "-effective_from"]
-        db_table = "OpenAIModelPricing"
-        constraints = [
-            models.UniqueConstraint(
-                fields=["model_name", "effective_from"],
-                name="unique_openai_model_price_period",
-            ),
-        ]
 
 
-class OpenAIUsageLog(models.Model):
-    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
-    section = models.CharField(max_length=120, blank=True, db_index=True)
-    feature = models.CharField(max_length=160, blank=True, db_index=True)
-    model = models.CharField(max_length=160, blank=True, db_index=True)
-    endpoint = models.CharField(max_length=255, blank=True)
-    request_id = models.CharField(max_length=255, blank=True, db_index=True)
-    conversation_id = models.CharField(max_length=255, blank=True, db_index=True)
-    project_id = models.CharField(max_length=255, blank=True, db_index=True)
-    api_key_id = models.CharField(max_length=255, blank=True)
-    input_tokens = models.PositiveBigIntegerField(default=0)
-    cached_input_tokens = models.PositiveBigIntegerField(default=0)
-    output_tokens = models.PositiveBigIntegerField(default=0)
-    reasoning_tokens = models.PositiveBigIntegerField(default=0)
-    total_tokens = models.PositiveBigIntegerField(default=0)
-    estimated_cost = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
-    official_cost = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
-    latency_ms = models.PositiveIntegerField(default=0)
-    status = models.CharField(max_length=40, default="Successful", db_index=True)
-    error_code = models.CharField(max_length=160, blank=True)
-    environment = models.CharField(max_length=80, default="development", db_index=True)
-    usage_timestamp = models.DateTimeField(db_index=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        ordering = ["-usage_timestamp"]
-        db_table = "OpenAIUsageLog"
-        indexes = [
-            models.Index(fields=["usage_timestamp", "model"], name="openai_usage_time_model"),
-            models.Index(fields=["usage_timestamp", "section"], name="openai_usage_time_section"),
-        ]
 
 
 class VoiceInputConfiguration(models.Model):
@@ -4325,13 +3975,6 @@ class VoiceTranscriptionLog(models.Model):
     output_tokens = models.PositiveBigIntegerField(default=0)
     total_tokens = models.PositiveBigIntegerField(default=0)
     estimated_cost = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
-    openai_usage_log = models.OneToOneField(
-        OpenAIUsageLog,
-        null=True,
-        blank=True,
-        related_name="voice_transcription",
-        on_delete=models.SET_NULL,
-    )
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
     completed_at = models.DateTimeField(null=True, blank=True)
 
@@ -4344,93 +3987,12 @@ class VoiceTranscriptionLog(models.Model):
         ]
 
 
-class OpenAICostSnapshot(models.Model):
-    organization_id = models.CharField(max_length=255, blank=True, db_index=True)
-    project_id = models.CharField(max_length=255, blank=True, db_index=True)
-    start_time = models.DateTimeField(db_index=True)
-    end_time = models.DateTimeField()
-    amount = models.DecimalField(max_digits=18, decimal_places=8, default=0)
-    currency = models.CharField(max_length=12, default="USD")
-    line_item = models.CharField(max_length=255, blank=True)
-    source_payload = models.JSONField(default=dict, blank=True)
-    synchronized_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ["-start_time"]
-        db_table = "OpenAICostSnapshot"
-        constraints = [
-            models.UniqueConstraint(
-                fields=["organization_id", "project_id", "start_time", "end_time", "line_item", "currency"],
-                name="unique_openai_cost_snapshot",
-            ),
-        ]
 
 
-class OpenAIUsageSnapshot(models.Model):
-    organization_id = models.CharField(max_length=255, blank=True, db_index=True)
-    project_id = models.CharField(max_length=255, blank=True, db_index=True)
-    model = models.CharField(max_length=160, blank=True, db_index=True)
-    start_time = models.DateTimeField(db_index=True)
-    end_time = models.DateTimeField()
-    input_tokens = models.PositiveBigIntegerField(default=0)
-    cached_input_tokens = models.PositiveBigIntegerField(default=0)
-    output_tokens = models.PositiveBigIntegerField(default=0)
-    requests = models.PositiveBigIntegerField(default=0)
-    source_payload = models.JSONField(default=dict, blank=True)
-    synchronized_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ["-start_time"]
-        db_table = "OpenAIUsageSnapshot"
-        constraints = [
-            models.UniqueConstraint(
-                fields=["organization_id", "project_id", "model", "start_time", "end_time"],
-                name="unique_openai_usage_snapshot",
-            ),
-        ]
 
 
-class OpenAIBudget(models.Model):
-    name = models.CharField(max_length=160, default="Mining360 Monthly Budget")
-    organization_id = models.CharField(max_length=255, blank=True)
-    project_id = models.CharField(max_length=255, blank=True)
-    monthly_budget = models.DecimalField(max_digits=18, decimal_places=2, default=0)
-    currency = models.CharField(max_length=12, default="USD")
-    warning_percentage = models.DecimalField(max_digits=5, decimal_places=2, default=70)
-    critical_percentage = models.DecimalField(max_digits=5, decimal_places=2, default=90)
-    active = models.BooleanField(default=True)
-    effective_from = models.DateField()
-    effective_to = models.DateField(null=True, blank=True)
-    billing_url = models.URLField(blank=True, default="https://platform.openai.com/settings/organization/billing/credit-grants")
-    timezone_name = models.CharField(max_length=80, default="UTC")
-    enable_cost_synchronization = models.BooleanField(default=True)
-    enable_internal_usage_logging = models.BooleanField(default=True)
-    enable_credit_synchronization = models.BooleanField(default=False)
-    usage_sync_frequency_minutes = models.PositiveIntegerField(default=60)
-    cost_sync_frequency_minutes = models.PositiveIntegerField(default=360)
-    data_retention_days = models.PositiveIntegerField(default=730)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        ordering = ["-effective_from", "name"]
-        db_table = "OpenAIBudget"
 
 
-class OpenAICreditSnapshot(models.Model):
-    credit_type = models.CharField(max_length=120, blank=True)
-    original_amount = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
-    remaining_amount = models.DecimalField(max_digits=18, decimal_places=8, null=True, blank=True)
-    currency = models.CharField(max_length=12, default="USD")
-    expires_at = models.DateTimeField(null=True, blank=True)
-    source = models.CharField(max_length=255, blank=True)
-    synchronized_at = models.DateTimeField(auto_now=True)
-    availability_status = models.CharField(max_length=120, default="Unavailable from API")
-    raw_payload = models.JSONField(default=dict, blank=True)
-
-    class Meta:
-        ordering = ["-synchronized_at"]
-        db_table = "OpenAICreditSnapshot"
 
 
 class ResourceKnowledgeDocument(models.Model):

@@ -1,3 +1,7 @@
 @echo off
 set "ROOT=%~dp0..\.."
-powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "%~dp0start_control_center.ps1"
+set "PYTHON=%ROOT%\.venv\Scripts\pythonw.exe"
+if not exist "%PYTHON%" set "PYTHON=%ROOT%\..\.venv\Scripts\pythonw.exe"
+if not exist "%PYTHON%" exit /b 1
+cd /d "%ROOT%"
+start "" "%PYTHON%" -m desktop.control_center

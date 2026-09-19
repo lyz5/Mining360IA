@@ -54,7 +54,7 @@ def enqueue_run(*, user, question: str, request_id: str, conversation=None) -> t
             question=question,
             status=RunStatus.QUEUED,
             progress_percent=0,
-            progress_label="Demande enregistrée, en attente du worker Codex.",
+            progress_label="Request saved, waiting for the Codex worker.",
             heartbeat_at=timezone.now(),
         )
     return run, True
@@ -64,7 +64,7 @@ def run_payload(run: CodexRun) -> dict:
     message = run.result_message
     evidence = run.evidence.order_by("retrieved_at").first()
     provisional_message = None
-    if evidence and message is None and run.status in ACTIVE_RUN_STATUSES:
+    if evidence and evidence.value_json.get("kind") != "web_sources" and message is None and run.status in ACTIVE_RUN_STATUSES:
         provisional_message = {
             "role": "ASSISTANT",
             "content": _deterministic_answer(evidence.value_json),
@@ -104,11 +104,11 @@ def request_cancellation(run: CodexRun) -> CodexRun:
         if run.status == RunStatus.QUEUED:
             run.status = RunStatus.CANCELLED
             run.progress_percent = 100
-            run.progress_label = "Traitement annulé."
+            run.progress_label = "Request cancelled."
             run.completed_at = timezone.now()
         elif run.status == RunStatus.RUNNING:
             run.status = RunStatus.CANCEL_REQUESTED
-            run.progress_label = "Annulation demandée..."
+            run.progress_label = "Cancellation requested..."
         run.heartbeat_at = timezone.now()
         run.save()
     return run
@@ -127,7 +127,7 @@ def process_next_run() -> CodexRun | None:
             return None
         run.status = RunStatus.RUNNING
         run.started_at = run.started_at or timezone.now()
-        run.progress_label = "Traitement démarré."
+        run.progress_label = "Processing started."
         run.heartbeat_at = timezone.now()
         run.save(update_fields=["status", "started_at", "progress_label", "heartbeat_at"])
 
@@ -140,7 +140,7 @@ def process_next_run() -> CodexRun | None:
             run.error_code = "CODEX_RUN_FAILED"
             run.error_message = str(exc)
             run.progress_percent = 100
-            run.progress_label = "Le traitement a échoué."
+            run.progress_label = "Processing failed."
             run.completed_at = timezone.now()
             run.heartbeat_at = timezone.now()
             run.save()

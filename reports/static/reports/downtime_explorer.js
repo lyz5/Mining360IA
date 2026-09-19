@@ -16,7 +16,7 @@
     function number(value, digits = 1) {
         const parsed = Number(value);
         return Number.isFinite(parsed)
-            ? parsed.toLocaleString(undefined, { maximumFractionDigits: digits })
+            ? parsed.toLocaleString("en-GB", { maximumFractionDigits: digits })
             : "N/A";
     }
 

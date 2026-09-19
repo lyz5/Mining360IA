@@ -36,11 +36,8 @@ from reports.models import (
     AIFilterMapping,
     AIIntentResponseTemplateMapping,
     AIMetricMapping,
-    AIProvider,
-    AIProviderModel,
     AIQuestionExample,
     AIResponseTemplate,
-    AIUseCaseConfiguration,
     BusinessDataField,
     BusinessPerformanceConfig,
     BusinessPerformanceMapping,
@@ -763,29 +760,11 @@ def security(doc):
     ], widths=[4, 4, 8], font_size=8)
 
 
-def providers(doc):
-    add_heading(doc, "16. Fournisseurs IA, routage et couts")
-    add_p(doc, "Les fournisseurs sont geres dans AI Config. Les credentials sont chiffres ou references par secret; ils ne sont jamais affiches dans ce document ni retournes dans les traces normales.")
-    ps = AIProvider.objects.order_by("-priority", "name")
-    add_table(doc, ["Code", "Type", "Actif", "Defaut", "Sante", "Timeout", "Retries", "Fallback"], [
-        (p.code, p.provider_type, bool_text(p.active), bool_text(p.is_default), p.status, f"{p.timeout_seconds}s", p.retry_count, bool_text(p.allow_fallback)) for p in ps
-    ], widths=[2.5, 2.5, 1.3, 1.3, 2, 1.5, 1.3, 1.5], font_size=6.8)
-    add_heading(doc, "Modeles actifs", 2)
-    models = AIProviderModel.objects.filter(active=True).select_related("provider").order_by("provider__code", "model_code")
-    add_table(doc, ["Provider", "Modele", "Capacites", "Validation"], [
-        (m.provider.code, m.model_code, list_text(m.capabilities_json), m.validation_status) for m in models
-    ], widths=[2.5, 4, 8, 2], font_size=6.7)
-    add_heading(doc, "Use cases", 2)
-    cases = AIUseCaseConfiguration.objects.filter(active=True).select_related("primary_provider", "primary_model").order_by("use_case_code")
-    add_table(doc, ["Use case", "Provider / modele", "Temp.", "Max tokens", "Timeout", "Validation"], [
-        (u.use_case_code, f"{u.primary_provider.code if u.primary_provider else '-'} / {u.primary_model.model_code if u.primary_model else '-'}", u.temperature, u.maximum_output_tokens, f"{u.timeout_seconds}s", u.validation_status) for u in cases
-    ], widths=[4.3, 4, 1.2, 1.7, 1.5, 2], font_size=6.5)
-    add_p(doc, "Etat observe : OpenAI est actif mais marque degraded; GLM-5 est actif et healthy. Les reponses deterministes Fleet, KPI, Parts, aide et abstention reduisent la dependance au provider. Les routages fournisseur par agent ne comportent actuellement aucune configuration active explicite.")
 
 
 def config_admin(doc):
     add_heading(doc, "17. AI Config et gouvernance")
-    add_p(doc, "AI Config centralise les metadonnees qui transforment une question en execution controlee. Les administrateurs peuvent maintenir les sections, mappings, exemples, synonymes, templates, agents, providers, capabilities et regles de confiance.")
+    add_p(doc, "AI Config centralise les metadonnees qui transforment une question en execution controlee. Les administrateurs peuvent maintenir les sections, mappings, exemples, synonymes, templates, agents, capabilities et regles de confiance.")
     add_table(doc, ["Repository", "Usage"], [
         ("AIConfigSection", "Domaines Performance, Parts Sales, Planned Component Rebuild, Power BI Reporting."),
         ("AIMetricMapping", "Code metrique -> mesure Power BI."),
@@ -930,7 +909,6 @@ def errors_observability(doc):
     add_bullets(doc, [
         "AIAgentExecutionLog : agent, routage, confidence, intent, outils, sources, statut et temps.",
         "PowerBIInteractionLog : question, intent extrait/valide, DAX, dataset, statut et latence.",
-        "AIProviderUsageLog : tokens, cout estime, latence, retries, fallback et erreur sanitisee.",
         "AIAnswerabilityEvent : outcome, reason code, capability et metadata non sensible.",
         "UnansweredInformationRequirement : besoin agrege, occurrences et workflow de resolution.",
         "Artefacts : source, template, filtres, timestamp, donnees et version de refresh." ])
@@ -980,7 +958,6 @@ def limitations(doc):
         ("Canal Parts", "Valeurs actives Onshore,Offshore; confirmer la correspondance metier avec le libelle Direct."),
         ("KPI Dictionary", "Les six KPI sont encore To Review. Des directions DB sont incoherentes avec le runtime, notamment MTTR et Unplanned; gouvernance a corriger."),
         ("Planned %", "La direction est target_based dans le runtime; aucun meilleur/moins bon sans cible validee."),
-        ("Provider routing", "Aucune AIAgentProviderConfiguration active explicite observee."),
     ]
     add_table(doc, ["Sujet", "Etat / action"], rows, widths=[4, 12], font_size=7.4)
     add_callout(doc, "Important", "Le document decrit ce qui est code et configure au moment de sa generation. Toute modification AI Config, mapping Power BI, permission ou feature flag peut changer la capacite effective sans redeploiement.", RED)
@@ -1094,7 +1071,6 @@ def main():
     capability_answerability(doc)
     persistence_exports(doc)
     security(doc)
-    providers(doc)
     config_admin(doc)
     production_hardening(doc)
     feature_flag_section(doc)
