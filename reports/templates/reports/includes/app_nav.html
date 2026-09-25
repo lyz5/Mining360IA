@@ -103,7 +103,7 @@
                 {% if request.user.is_staff or request.user.is_superuser or request.user.platformuser.is_platform_admin %}
                 {% if show_codex_admin %}
                 <a href="{% url 'codex_admin:home' %}" class="{% if active_section == 'codex-admin' %}active{% endif %}">
-                    <span>Codex Admin</span>
+                    <span>M360 AI Admin</span>
                 </a>
                 {% endif %}
                 <a href="{% url 'knowledge-base-home' %}" class="{% if active_section == 'knowledge-base' %}active{% endif %}">

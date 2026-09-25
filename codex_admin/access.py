@@ -19,7 +19,7 @@ def codex_admin_access_required(view):
     @wraps(view)
     def wrapped(request, *args, **kwargs):
         if not admin_access_allowed(request.user):
-            raise PermissionDenied("Codex Admin requires superuser access.")
+            raise PermissionDenied("M360 AI Admin requires superuser access.")
         return view(request, *args, **kwargs)
 
     return wrapped

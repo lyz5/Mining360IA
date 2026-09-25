@@ -90,7 +90,8 @@ def command_center_bootstrap_api(request):
     if not _command_center_allowed(request.user):
         return JsonResponse({"detail": "Forbidden"}, status=403)
     try:
-        return JsonResponse(BusinessCommandCenterService(request.user, request.GET).bootstrap())
+        from .dashboard_snapshots import business_snapshot
+        return JsonResponse(business_snapshot(request.user, request.GET))
     except BusinessCommandCenterInputError as exc:
         return JsonResponse({"ready": False, "status": "INVALID_CONTEXT", "message": str(exc)}, status=400)
     except Exception:
@@ -106,7 +107,8 @@ def command_center_revenue_explorer_api(request):
     if not _command_center_allowed(request.user):
         return JsonResponse({"detail": "Forbidden"}, status=403)
     try:
-        return JsonResponse(BusinessCommandCenterService(request.user, request.GET).revenue_explorer())
+        from .dashboard_snapshots import business_snapshot
+        return JsonResponse(business_snapshot(request.user, request.GET, explorer=True))
     except BusinessCommandCenterInputError as exc:
         return JsonResponse({"ready": False, "message": str(exc)}, status=400)
     except Exception:
@@ -127,6 +129,18 @@ def _command_center_entity_search(request, entity_type):
 @login_required
 def command_center_customer_search_api(request):
     return _command_center_entity_search(request, "customers")
+
+
+@login_required
+@require_http_methods(["GET", "POST"])
+def command_center_sync_status_api(request):
+    if not _command_center_allowed(request.user):
+        return JsonResponse({"detail": "Forbidden"}, status=403)
+    from .revenue_auto_sync import synchronization_state, request_manual_synchronization
+    if request.method == "POST":
+        result = request_manual_synchronization(request.user)
+        return JsonResponse(result, status=202 if result["accepted"] else 409)
+    return JsonResponse(synchronization_state())
 
 
 @login_required

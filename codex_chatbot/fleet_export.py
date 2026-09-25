@@ -25,7 +25,12 @@ def create_fleet_csv(run: CodexRun) -> CodexArtifact:
     columns = EXPORT_COLUMNS
     prefix = "fleet"
     if result.get("kind") == "governed_answer":
-        columns = ("metric", "period", "formatted_value", "value")
+        columns = (("dimension", "entity") if any(row.get('entity') for row in rows) else ()) + ("metric", "period", "formatted_value", "value")
+        if result.get('tables'):
+            rows=[{'section':'Verified metrics',**row} for row in rows]
+            for table in result['tables']:
+                rows.extend({'section':table['title'],**row} for row in table.get('rows',[]))
+            columns=tuple(dict.fromkeys(['section',*columns,*[key for row in rows for key in row]]))
         prefix = "performance"
     if result.get("kind") == "revenue_summary":
         rows = result.get("business_lines") or []

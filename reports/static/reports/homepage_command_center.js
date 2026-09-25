@@ -853,13 +853,15 @@
         syncControls();
     }
 
-    async function loadData() {
+    async function loadData(forceRefresh = false) {
         state.controller?.abort();
         state.controller = new AbortController();
         clearError();
         setUpdating(true);
         try {
-            const response = await fetch(`${root.dataset.apiUrl}?${apiParams()}`, {
+            const query = apiParams();
+            if (forceRefresh === true) query.set("refresh", "1");
+            const response = await fetch(`${root.dataset.apiUrl}?${query}`, {
                 credentials: "same-origin",
                 headers: { "Accept": "application/json", "X-Requested-With": "XMLHttpRequest" },
                 signal: state.controller.signal,
@@ -867,6 +869,10 @@
             const payload = await response.json().catch(() => ({}));
             if (!response.ok || !payload.ok) throw new Error(payload.error || "Fleet performance data could not be loaded.");
             render(payload);
+            if (payload.dashboard_snapshot) {
+                const snapshot = payload.dashboard_snapshot;
+                $('[data-refresh-status]').textContent = `BODEFM snapshot: ${new Date(snapshot.generated_at).toLocaleString('en-GB')}${snapshot.offline ? ' · Server unavailable; last received snapshot' : snapshot.stale ? ' · Daily update pending' : ''}`;
+            }
         } catch (error) {
             if (error.name !== "AbortError") showError(error.message);
         } finally {
@@ -874,6 +880,11 @@
             if (!state.controller?.signal.aborted) dismissBrandLoader();
         }
     }
+
+    $("[data-source-refresh]")?.addEventListener("click", async (event) => {
+        const button = event.currentTarget; button.disabled = true;
+        try { await loadData(true); } finally { button.disabled = false; }
+    });
 
     function changeBreakdown(value) {
         if (!validBreakdowns.has(value) || value === state.breakdown) return;

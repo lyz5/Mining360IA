@@ -2,171 +2,67 @@
 <!doctype html>
 <html lang="en">
 <head>
+    {% include "reports/includes/favicon.html" %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Business Knowledge Base | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260721-resource-kb-1">
+    <title>Best Practice Knowledge | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260922">
+    <link rel="stylesheet" href="{% static 'reports/resource_knowledge.css' %}?v=20260922-simple">
 </head>
 <body>
-    {% include "reports/includes/app_nav.html" %}
-    <main class="app-shell resource-kb-shell"
-          data-preview-url="{% url 'resource-knowledge-preview' %}"
-          data-rebuild-url="{% url 'resource-knowledge-rebuild' %}"
-          data-search-url="{% url 'resource-knowledge-search' %}"
-          data-run-url-template="/resources/knowledge/api/runs/__RUN_ID__/"
-          data-item-url-template="/resources/knowledge/api/items/__ITEM_ID__/">
-        <header class="topbar">
-            <div>
-                <p class="eyebrow">Resources · RAG</p>
-                <h1>Business Knowledge Base</h1>
-                <p>Extracted, sourced, and validated Caterpillar knowledge.</p>
-            </div>
-            <div class="actions">
-                <a class="button secondary" href="{% url 'resources' %}">Documents</a>
-                <button class="button secondary" type="button" data-kb-preview>Preview</button>
-                <form method="post" action="{% url 'resource-knowledge-rebuild' %}" data-kb-rebuild-form>
-                    {% csrf_token %}
-                    <input type="hidden" name="with_ai" value="false">
-                    <input type="hidden" name="with_embeddings" value="false">
-                    <button class="button" type="submit" data-kb-rebuild>Build Knowledge</button>
-                </form>
-            </div>
-        </header>
-
-        <section class="resource-kb-stats" aria-label="Knowledge base statistics">
-            <article><span>Tracked Documents</span><strong>{{ stats.documents }}</strong></article>
-            <article><span>Indexed Documents</span><strong>{{ stats.indexed }}</strong></article>
-            <article><span>Chunks</span><strong>{{ stats.chunks }}</strong></article>
-            <article><span>Knowledge Items</span><strong>{{ stats.knowledge }}</strong></article>
-            <article><span>To Review</span><strong>{{ stats.to_review }}</strong></article>
-            <article><span>Validated</span><strong>{{ stats.validated }}</strong></article>
-        </section>
-
-        <section class="resource-kb-controls">
-            <div>
-                <strong>Deterministic Bootstrap</strong>
-                <span>Local parsing and text search · OpenAI calls: 0 · API cost: $0</span>
-            </div>
-            <label><input type="checkbox" data-kb-force> Force Reindexing</label>
-        </section>
-
-        <section id="resource-kb-preview" class="resource-kb-preview" hidden aria-live="polite"></section>
-        <section id="resource-kb-progress" class="resource-kb-progress" hidden aria-live="polite"></section>
-
-        <section class="resource-kb-search-panel">
-            <div>
-                <p class="eyebrow">Test RAG</p>
-                <h2>Search Knowledge</h2>
-            </div>
-            <form data-kb-search-form>
-                <input type="search" name="query" required placeholder="Ex. water pump overheating on 785">
-                <select name="mode" aria-label="Search mode">
-                    <option value="Production">Production · Validated only</option>
-                    <option value="Debug">Debug · include To Review</option>
-                </select>
-                <button class="button" type="submit">Search</button>
-            </form>
-            <div id="resource-kb-search-results" class="resource-kb-search-results"></div>
-        </section>
-
-        <section class="resource-kb-section">
-            <div class="section-heading">
-                <div><p class="eyebrow">Document Index</p><h2>Documents</h2></div>
-                <form method="get" class="resource-kb-filter">
-                    <input type="search" name="q" value="{{ query }}" placeholder="Document, section, or category">
-                    <select name="status">
-                        <option value="">All statuses</option>
-                        <option value="Pending" {% if selected_status == "Pending" %}selected{% endif %}>Pending</option>
-                        <option value="Processing" {% if selected_status == "Processing" %}selected{% endif %}>Processing</option>
-                        <option value="Indexed" {% if selected_status == "Indexed" %}selected{% endif %}>Indexed</option>
-                        <option value="Partial" {% if selected_status == "Partial" %}selected{% endif %}>Partial</option>
-                        <option value="Failed" {% if selected_status == "Failed" %}selected{% endif %}>Failed</option>
-                        <option value="Stale" {% if selected_status == "Stale" %}selected{% endif %}>Stale</option>
-                    </select>
-                    <button class="button secondary" type="submit">Filter</button>
-                </form>
-            </div>
-            <div class="table-scroll">
-                <table class="data-table resource-kb-table">
-                    <thead><tr><th>Document</th><th>Classification</th><th>Status</th><th>Pages</th><th>Chunks</th><th>To Review</th><th>Validated</th><th></th></tr></thead>
-                    <tbody>
-                    {% for document in documents %}
-                        <tr>
-                            <td><a href="{% url 'resource-detail' document.resource_id %}">{{ document.title }}</a><small>{{ document.filename }}</small></td>
-                            <td>{{ document.section }}<small>{{ document.category }}</small></td>
-                            <td><span class="status-pill status-{{ document.status|slugify }}">{{ document.status }}</span></td>
-                            <td>{{ document.page_count }}</td>
-                            <td>{{ document.chunk_count }}</td>
-                            <td>{{ document.review_count }}</td>
-                            <td>{{ document.validated_count }}</td>
-                            <td><button type="button" class="button secondary compact" data-kb-reindex="{{ document.resource_id }}">Reindex</button></td>
-                        </tr>
-                    {% empty %}
-                        <tr><td colspan="8">No document has been indexed yet. Run Preview.</td></tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="resource-kb-section">
-            <div class="section-heading"><div><p class="eyebrow">Validation Workflow</p><h2>Extracted Knowledge</h2></div></div>
-            <div class="table-scroll">
-                <table class="data-table resource-kb-table">
-                    <thead><tr><th>Knowledge</th><th>Context</th><th>Source</th><th>Confidence</th><th>Status</th><th></th></tr></thead>
-                    <tbody>
-                    {% for item in recent_items %}
-                        <tr>
-                            <td><strong>{{ item.title }}</strong><small>{{ item.symptom|truncatechars:120 }}</small></td>
-                            <td>{{ item.component|default:item.system|default:item.equipment }}<small>{{ item.equipment_model }}</small></td>
-                            <td>{{ item.document.title }}<small>{% if item.source_page %}Page {{ item.source_page }}{% endif %}</small></td>
-                            <td>{{ item.confidence }} %</td>
-                            <td><span class="status-pill status-{{ item.validation_status|slugify }}">{{ item.validation_status }}</span></td>
-                            <td><button type="button" class="button secondary compact" data-kb-edit="{{ item.id }}">Review</button></td>
-                        </tr>
-                    {% empty %}
-                        <tr><td colspan="6">No knowledge has been extracted.</td></tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
-
-    <dialog id="resource-kb-item-dialog" class="resource-kb-dialog">
-        <form method="dialog" class="resource-kb-dialog__header">
-            <div><p class="eyebrow">Business Overview</p><h2>Extracted Knowledge</h2></div>
-            <button class="icon-button" aria-label="Close">×</button>
-        </form>
-        <form data-kb-item-form class="resource-kb-item-form">
-            <input type="hidden" name="id">
-            <div class="form-grid">
-                <label class="full-width">Title<input name="title" required></label>
-                <label>Business Domain<input name="business_domain"></label>
-                <label>Equipment<input name="equipment"></label>
-                <label>Model<input name="equipment_model"></label>
-                <label>System<input name="system"></label>
-                <label>Component<input name="component"></label>
-                <label>Subcomponent<input name="subcomponent"></label>
-                <label class="full-width">Symptom<textarea name="symptom"></textarea></label>
-                <label class="full-width">Failure Mode<textarea name="failure_mode"></textarea></label>
-                <label class="full-width">Probable Causes<textarea name="probable_causes" data-list-field></textarea></label>
-                <label class="full-width">Inspection<textarea name="inspection_procedure"></textarea></label>
-                <label class="full-width">Troubleshooting<textarea name="troubleshooting_procedure"></textarea></label>
-                <label class="full-width">Best Practices<textarea name="best_practices" data-list-field></textarea></label>
-                <label class="full-width">Recommendations<textarea name="recommendations" data-list-field></textarea></label>
-                <label class="full-width">Safety Instructions<textarea name="safety_instructions" data-list-field></textarea></label>
-                <label>Criticality<select name="criticality"><option value=""></option><option>Low</option><option>Medium</option><option>High</option><option>Critical</option></select></label>
-                <label>Status<select name="validation_status"><option>Draft</option><option>To Review</option><option>Validated</option><option>Rejected</option></select></label>
-                <label class="full-width">Validation Notes<textarea name="validation_notes"></textarea></label>
-            </div>
-            <section class="resource-kb-source" data-kb-source></section>
-            <div class="form-actions">
-                <button class="button secondary" type="button" data-kb-dialog-close>Cancel</button>
-                <button class="button" type="submit">Save</button>
-            </div>
-        </form>
-    </dialog>
-    <script src="{% static 'reports/resource_knowledge.js' %}?v=20260919-english-ui"></script>
+{% include "reports/includes/app_nav.html" %}
+<main class="app-shell resource-kb-shell kb-review" data-item-url-template="/resources/knowledge/api/items/__ITEM_ID__/" data-status-filter="{{ selected_status }}">
+    <div hidden>{% csrf_token %}</div>
+    <header class="topbar">
+        <div><p class="eyebrow">Resources</p><h1>Best Practice Knowledge</h1><p>Review the knowledge, check its source, then validate or reject it.</p></div>
+        <a class="button secondary" href="{% url 'resources' %}">Back to Resources</a>
+    </header>
+    <form method="get" class="kb-review__filters" role="search">
+        <label><span class="sr-only">Search best practices or knowledge</span><input type="search" name="q" value="{{ query }}" placeholder="Search best practices or knowledge"></label>
+        <label><span class="sr-only">Validation status</span><select name="status">
+            <option value="">All statuses</option>
+            {% for value,label in validation_statuses %}<option value="{{ value }}" {% if selected_status == value %}selected{% endif %}>{{ label }}</option>{% endfor %}
+        </select></label>
+        <button class="button secondary" type="submit">Search</button>
+        {% if query or selected_status %}<a href="{% url 'resource-knowledge-admin' %}">Clear</a>{% endif %}
+    </form>
+    <p class="kb-review__count">{{ knowledge_page.paginator.count }} knowledge item{{ knowledge_page.paginator.count|pluralize }}{% if knowledge_page.paginator.count %} · {{ knowledge_page.start_index }}–{{ knowledge_page.end_index }} shown{% endif %}</p>
+    <p class="kb-review__notice" data-kb-notice role="status" aria-live="polite" hidden></p>
+    <section aria-label="Knowledge to validate">
+        <table class="data-table kb-review__table">
+            <thead><tr><th scope="col">Best Practice</th><th scope="col">Identified Knowledge</th><th scope="col">Page Details</th><th scope="col">Validate / Reject</th></tr></thead>
+            <tbody>
+            {% for item in knowledge_page %}
+                <tr data-kb-row="{{ item.id }}">
+                    <td data-label="Best Practice"><a href="{% url 'resource-detail' item.document.resource_id %}">{{ item.document.title }}</a></td>
+                    <td data-label="Identified Knowledge"><strong>{{ item.title }}</strong><p>{{ item.symptom|default:item.source_excerpt|truncatechars:240 }}</p></td>
+                    <td data-label="Page Details"><button type="button" class="button secondary compact" data-kb-detail="{{ item.id }}" aria-haspopup="dialog">{% if item.source_page %}Page {{ item.source_page }} · Details{% else %}View details{% endif %}</button></td>
+                    <td data-label="Validate / Reject"><span class="status-pill" data-kb-status>{{ item.validation_status }}</span><div class="kb-review__decisions">
+                        <button type="button" class="button compact" data-kb-decision="Validated" data-kb-id="{{ item.id }}" {% if item.validation_status == 'Validated' %}disabled{% endif %}>Validate</button>
+                        <button type="button" class="button secondary compact" data-kb-decision="Rejected" data-kb-id="{{ item.id }}" {% if item.validation_status == 'Rejected' %}disabled{% endif %}>Reject</button>
+                    </div></td>
+                </tr>
+            {% empty %}<tr><td colspan="4" class="kb-review__empty">{% if query or selected_status %}No knowledge found for these filters.{% else %}No reviewed knowledge is available yet. Source documents remain available in Resources.{% endif %}</td></tr>{% endfor %}
+            </tbody>
+        </table>
+    </section>
+    {% if knowledge_page.paginator.num_pages > 1 %}
+    <nav class="kb-review__pagination" aria-label="Knowledge pages">
+        {% if knowledge_page.has_previous %}<a class="button secondary" href="?{{ filter_query }}&page={{ knowledge_page.previous_page_number }}">Previous</a>{% endif %}
+        <span>Page {{ knowledge_page.number }} of {{ knowledge_page.paginator.num_pages }}</span>
+        {% if knowledge_page.has_next %}<a class="button secondary" href="?{{ filter_query }}&page={{ knowledge_page.next_page_number }}">Next</a>{% endif %}
+    </nav>
+    {% endif %}
+</main>
+<dialog id="resource-kb-item-dialog" class="kb-review__dialog" aria-labelledby="kb-detail-title">
+    <header><h2 id="kb-detail-title">Page Details</h2><button type="button" class="button secondary compact" data-kb-close aria-label="Close details">Close</button></header>
+    <p data-kb-detail-status role="status"></p>
+    <div data-kb-detail-content></div>
+    <footer class="kb-review__decisions" hidden>
+        <button type="button" class="button" data-kb-decision="Validated">Validate</button>
+        <button type="button" class="button secondary" data-kb-decision="Rejected">Reject</button>
+    </footer>
+</dialog>
+<script src="{% static 'reports/resource_knowledge.js' %}?v=20260922-simple" defer></script>
 </body>
 </html>

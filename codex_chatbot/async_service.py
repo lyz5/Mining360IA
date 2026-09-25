@@ -54,7 +54,7 @@ def enqueue_run(*, user, question: str, request_id: str, conversation=None) -> t
             question=question,
             status=RunStatus.QUEUED,
             progress_percent=0,
-            progress_label="Request saved, waiting for the Codex worker.",
+            progress_label="Request saved, waiting for M360 AI.",
             heartbeat_at=timezone.now(),
         )
     return run, True

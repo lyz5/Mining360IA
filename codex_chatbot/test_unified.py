@@ -74,8 +74,9 @@ class UnifiedChatTests(TestCase):
         service.return_value.get.return_value={'metric':{'raw_value':None,'formatted_value':None}}
         self.assertEqual(unified_analysis('MTBF YTD',user=self.user)['answer_status'],'PARTIALLY_ANSWERABLE')
 
+    @patch('codex_chatbot.tools.unified.search_document_memory',return_value={'results':[],'status':'no_match'})
     @patch('codex_chatbot.tools.unified.search_resource_knowledge',return_value={'results':[]})
-    def test_document_search_never_calls_embedding_api(self, search):
+    def test_document_search_never_calls_embedding_api(self, search, memory):
         result=unified_analysis('documentation maintenance',user=self.user)
         self.assertEqual(result['answer_status'],'NEEDS_CLARIFICATION')
         self.assertFalse(search.call_args.kwargs['use_embeddings'])

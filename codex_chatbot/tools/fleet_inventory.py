@@ -9,6 +9,7 @@ from reports.models import EquipmentFleetAnalysis
 from reports.business_mapping_access_service import authorized_minesite_names
 
 from .minesite_resolution import resolve_minesite_from_question
+from .metric_intent import requested_metrics
 
 
 @dataclass(frozen=True)
@@ -90,6 +91,15 @@ def _serial_from_question(question: str) -> str | None:
 
 
 def fleet_analysis_from_question(question: str, *, user) -> dict | None:
+    # A site mention identifies scope; it is not an inventory request.
+    if requested_metrics(question):
+        return None
+    inventory_requested = re.search(
+        r"\b(fleet|flotte|inventaire|inventory|equipments?|[eé]quipements?|machines?|models?|mod[eè]les?|serial|s[eé]rie|sn|coverage|couverture)\b",
+        question, re.IGNORECASE,
+    )
+    if not inventory_requested:
+        return None
     normalized = _normalized(question)
     records = _scoped_records(user)
     source_table = "EquipmentList_MiningProd / bm_equipment_fleet_analysis"

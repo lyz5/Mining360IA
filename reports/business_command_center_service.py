@@ -574,11 +574,12 @@ class BusinessCommandCenterService:
             "countries": sorted(self._csv("country_ids")), "keys": sorted(self._csv("key_account_ids")),
         }
         cache_key = "business-command-center:v2:" + hashlib.sha256(json.dumps(scope_key, sort_keys=True).encode("utf-8")).hexdigest()
-        core = cache.get(cache_key)
+        core = None if str(self.params.get("refresh", "")) == "1" else cache.get(cache_key)
         if core is None:
             core = self._build_core(revenue, publication, published_rows, selected_rows, period, business_line, source_run)
             cache.set(cache_key, core, self.CACHE_SECONDS)
         result = copy.deepcopy(core)
+        result['source_sync_id'] = str(source_run.pk)
         result["since_last_visit"] = self._visit(result, source_run)
         watchlist = BusinessCommandCenterWatchlist.objects.filter(user=self.user, active=True)
         customer_names = {row.get("account_id"): row.get("account_name") for row in published_rows}

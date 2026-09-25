@@ -130,8 +130,8 @@ class ResourceKnowledgeAdminTests(TestCase):
         self.client.force_login(self.admin)
         response = self.client.get(reverse("resource-knowledge-admin"))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Business Knowledge Base")
-        self.assertContains(response, "Preview")
+        self.assertContains(response, "Best Practice Knowledge")
+        self.assertContains(response, "Identified Knowledge")
 
     @patch("reports.resource_knowledge_views.start_index_job")
     def test_html_fallback_starts_creation(self, start_index_job):

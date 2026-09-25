@@ -21,6 +21,15 @@ body{background:var(--codex-bg);overflow:hidden}
 .codex-history-actions button{border:1px solid var(--codex-line);padding:6px 12px;border-radius:5px;background:#fff;cursor:pointer}
 
 /* Conversation controls mirror the compact history of Mining360 AI. */
+.codex-chat__main{grid-template-columns:minmax(0,1fr)}
+.codex-thread{min-width:0}
+.codex-message,.codex-result{box-sizing:border-box;overflow-wrap:anywhere}
+.codex-message{max-width:min(780px,100%)}
+.codex-message--user{max-width:min(640px,100%)}
+.codex-result{max-width:min(1000px,100%)}
+.codex-chat__header>div{min-width:0;overflow-wrap:anywhere}
+.codex-chat__header h1{overflow-wrap:anywhere}
+@media(max-width:820px){.codex-chat{grid-template-columns:minmax(0,1fr)}}
 [hidden]{display:none!important}
 #codex-history-search{width:100%;box-sizing:border-box;padding:10px;border:1px solid var(--codex-line);border-radius:7px;font:inherit;font-size:12px}
 .codex-history-row{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 28px;align-items:start;border-radius:8px}

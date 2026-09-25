@@ -32,10 +32,8 @@ def availability_command_center_api(request):
             status=403,
         )
     try:
-        metric = str(request.GET.get("metric") or "availability").strip().casefold()
-        service = HomepageFuelService(request.user) if metric == "fuel" else HomepageAvailabilityService(request.user)
-        analytics_request = service.request_from_params(request.GET)
-        return JsonResponse(service.get(analytics_request))
+        from .dashboard_snapshots import excellence_snapshot
+        return JsonResponse(excellence_snapshot(request.user, request.GET, force=request.GET.get("refresh") == "1"))
     except HomepageAvailabilityError as exc:
         return JsonResponse(
             {"ok": False, "error": str(exc), "error_code": exc.code, "retryable": exc.status >= 500},

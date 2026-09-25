@@ -2,11 +2,12 @@
 <!doctype html>
 <html lang="en">
 <head>
+    {% include "reports/includes/favicon.html" %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Business Overview | Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260910-command-center">
-    <link rel="stylesheet" href="{% static 'reports/business_command_center_v2.css' %}?v=20260919-fleet">
+    <link rel="stylesheet" href="{% static 'reports/business_command_center_v2.css' %}?v=20260921-central-snapshots">
 </head>
 <body class="bcc-body">
 {% include "reports/includes/app_nav.html" %}
@@ -14,6 +15,7 @@
       data-bootstrap-url="{% url 'business-command-center-bootstrap-api' %}"
       data-explorer-url="{% url 'business-command-center-revenue-explorer-api' %}"
       data-fleet-url="{% url 'business-command-center-fleet-api' %}"
+      data-sync-status-url="{% url 'business-command-center-sync-status-api' %}"
       data-customer-search-url="{% url 'business-command-center-customer-search-api' %}"
       data-key-account-search-url="{% url 'business-command-center-key-account-search-api' %}"
       data-machine-sales-url="{% url 'business-command-center-machine-sales-api' %}"
@@ -26,7 +28,7 @@
     <header class="bcc-header">
         <div class="bcc-title-block"><p class="bcc-kicker">Business Overview</p><h1>Business Overview</h1><p>Executive Revenue Intelligence</p></div>
         <div class="bcc-header-actions">
-            <button class="bcc-icon-btn" type="button" data-refresh title="Refresh View" aria-label="Refresh View">&#8635;</button>
+            <button class="bcc-button secondary" type="button" data-refresh title="Refresh source data" aria-label="Refresh source data">Refresh</button>
             {% if features.presentation %}<button class="bcc-button secondary" type="button" data-presentation>Presentation</button>{% endif %}
             <label class="bcc-division-toggle"><input type="checkbox" data-division-toggle><span>All Divisions</span></label>
             <input type="hidden" value="mining" data-filter="division_scope">
@@ -53,6 +55,7 @@
         </div>
     </div>
     <div class="bcc-status" data-status role="status">Preparing your business view...</div>
+    <p class="bcc-empty" data-revenue-sync-status role="status" aria-live="polite"></p>
     <section class="bcc-error" data-error hidden><h2>Revenue data is temporarily unavailable</h2><p data-error-message></p><button class="bcc-button primary" type="button" data-retry>Retry</button></section>
     <div data-content hidden>
         <section class="bcc-mode-warning" data-mode-warning hidden><strong>Unmapped Business-Line View</strong><span>A Published Mapping is required for Customer, Country and Key Account analysis.</span></section>
@@ -99,6 +102,6 @@
     <aside class="bcc-drawer" data-drawer hidden aria-modal="true" role="dialog" aria-labelledby="bcc-drawer-title"><div class="bcc-drawer-head"><div><p class="bcc-kicker" data-drawer-kicker>Business detail</p><h2 id="bcc-drawer-title" data-drawer-title>Detail</h2></div><button class="bcc-icon-btn" type="button" data-drawer-close aria-label="Close">&#10005;</button></div><div data-drawer-body></div></aside>
 </main>
 <script src="{% static 'reports/visual_export.js' %}?v=20260919-simple-header"></script>
-<script src="{% static 'reports/business_command_center_v2.js' %}?v=20260919-fleet"></script>
+<script src="{% static 'reports/business_command_center_v2.js' %}?v=20260922-direct-refresh-20260921-central-snapshots"></script>
 </body>
 </html>

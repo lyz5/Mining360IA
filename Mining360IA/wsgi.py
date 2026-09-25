@@ -14,3 +14,6 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Mining360IA.settings')
 
 application = get_wsgi_application()
+
+from reports.revenue_auto_sync import start_revenue_scheduler
+start_revenue_scheduler()

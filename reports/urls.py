@@ -94,6 +94,7 @@ urlpatterns = [
     path("api/business-review/command-center/bootstrap/", business_review_views.command_center_bootstrap_api, name="business-command-center-bootstrap-api"),
     path("api/business-review/revenue-explorer/", business_review_views.command_center_revenue_explorer_api, name="business-command-center-revenue-explorer-api"),
     path("api/business-review/command-center/fleet/", business_review_views.command_center_fleet_api, name="business-command-center-fleet-api"),
+    path("api/business-review/command-center/sync-status/", business_review_views.command_center_sync_status_api, name="business-command-center-sync-status-api"),
     path("api/business-review/customers/search/", business_review_views.command_center_customer_search_api, name="business-command-center-customer-search-api"),
     path("api/business-review/key-accounts/search/", business_review_views.command_center_key_account_search_api, name="business-command-center-key-account-search-api"),
     path("api/business-review/command-center/machine-sales/", business_review_views.command_center_machine_sales_api, name="business-command-center-machine-sales-api"),

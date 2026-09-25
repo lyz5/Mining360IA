@@ -212,40 +212,8 @@ def _deterministic_recommendations(content: str) -> list[str]:
 
 
 def _save_deterministic_knowledge(document, chunk) -> int:
-    recommendations = _deterministic_recommendations(chunk.content)
-    item = {
-        "title": chunk.heading or f"{document.title} · page {chunk.page_start or 1}",
-        "component": "",
-        "symptom": "",
-        "recommendations": recommendations,
-    }
-    key = _knowledge_key(document, chunk, item)
-    existing = ResourceKnowledgeItem.objects.filter(knowledge_key=key).first()
-    if existing and existing.validation_status == "Validated":
-        return 0
-    defaults = {
-        "document": document,
-        "chunk": chunk,
-        "title": item["title"][:1000],
-        "business_domain": document.section[:255],
-        "best_practices": recommendations,
-        "recommendations": recommendations,
-        "source_excerpt": chunk.content[:4000],
-        "source_page": chunk.page_start,
-        "confidence": 85 if recommendations else 70,
-        "extraction_source": "Best Practice Resource",
-        "validation_status": "To Review",
-        "validation_notes": (
-            "Created by deterministic local parsing. Review the source excerpt "
-            "before validation."
-        ),
-        "is_active": True,
-    }
-    _, created = ResourceKnowledgeItem.objects.update_or_create(
-        knowledge_key=key,
-        defaults=defaults,
-    )
-    return int(created)
+    """Retired: a text fragment is not a reviewed technical knowledge item."""
+    return 0
 
 
 def _save_knowledge(document, chunk, result: dict) -> int:
@@ -300,6 +268,8 @@ def index_resource(
     with_embeddings: bool = False,
     force: bool = False,
 ) -> dict:
+    if not _configuration().is_active:
+        raise RuntimeError("Automatic knowledge generation is disabled. Documents require a complete source review.")
     path = get_resource_path(resource.id)
     source_modified = _source_modified(path)
     digest = file_sha256(path)
@@ -536,6 +506,8 @@ def start_index_job(
     only_new: bool = False,
     limit: int = 0,
 ) -> ResourceKnowledgeIndexRun:
+    if not _configuration().is_active:
+        raise RuntimeError("Automatic knowledge generation is disabled. Documents require a complete source review.")
     run = ResourceKnowledgeIndexRun.objects.create(
         user=user if getattr(user, "is_authenticated", False) else None,
         scope="Document" if resource_id else "Library",

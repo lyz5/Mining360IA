@@ -4,14 +4,17 @@ import json
 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from django.db.models import Count, Q
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
 from django.utils import timezone
 from django.views.decorators.http import require_GET, require_POST, require_http_methods
 
 from .access_control import is_platform_admin
 from .models import (
+    ResourceKnowledgeConfiguration,
     ResourceKnowledgeDocument,
     ResourceKnowledgeIndexRun,
     ResourceKnowledgeItem,
@@ -37,52 +40,32 @@ def knowledge_admin(request):
     denied = _admin_error(request)
     if denied:
         return denied
-    query = request.GET.get("q", "").strip()
+    query = request.GET.get("q", "").strip()[:300]
     status = request.GET.get("status", "").strip()
-    documents = ResourceKnowledgeDocument.objects.annotate(
-        validated_count=Count(
-            "knowledge_items",
-            filter=Q(knowledge_items__validation_status="Validated", knowledge_items__is_active=True),
-        ),
-        review_count=Count(
-            "knowledge_items",
-            filter=Q(knowledge_items__validation_status="To Review", knowledge_items__is_active=True),
-        ),
+    if status not in dict(ResourceKnowledgeItem.VALIDATION_STATUSES):
+        status = ""
+    items = ResourceKnowledgeItem.objects.select_related("document").filter(
+        is_active=True, document__is_active=True,
     )
     if query:
-        documents = documents.filter(
-            Q(title__icontains=query)
-            | Q(filename__icontains=query)
-            | Q(section__icontains=query)
-            | Q(category__icontains=query)
+        items = items.filter(
+            Q(document__title__icontains=query) | Q(title__icontains=query)
+            | Q(symptom__icontains=query) | Q(source_excerpt__icontains=query)
+            | Q(equipment_model__icontains=query) | Q(component__icontains=query)
         )
     if status:
-        documents = documents.filter(status=status)
-    item_counts = {
-        row["validation_status"]: row["count"]
-        for row in ResourceKnowledgeItem.objects.filter(is_active=True)
-        .values("validation_status")
-        .annotate(count=Count("id"))
-    }
+        items = items.filter(validation_status=status)
+    items = items.order_by("document__title", "source_page", "title", "id")
+    page = Paginator(items, 25).get_page(request.GET.get("page"))
+    filters = request.GET.copy()
+    filters.pop("page", None)
+    filters["q"] = query
+    filters["status"] = status
     return render(request, "reports/resource_knowledge.html", {
-        "active_section": "resources",
-        "documents": documents[:250],
-        "runs": ResourceKnowledgeIndexRun.objects.all()[:10],
-        "recent_items": ResourceKnowledgeItem.objects.select_related("document").filter(is_active=True)[:100],
-        "query": query,
-        "selected_status": status,
-        "stats": {
-            "documents": ResourceKnowledgeDocument.objects.count(),
-            "indexed": ResourceKnowledgeDocument.objects.filter(status="Indexed").count(),
-            "chunks": sum(ResourceKnowledgeDocument.objects.values_list("chunk_count", flat=True)),
-            "knowledge": ResourceKnowledgeItem.objects.filter(is_active=True).count(),
-            "validated": item_counts.get("Validated", 0),
-            "to_review": item_counts.get("To Review", 0),
-            "retrievals": ResourceKnowledgeRetrievalLog.objects.count(),
-        },
-        "extraction_model": extraction_model(),
-        "extraction_reasoning_effort": extraction_reasoning_effort(),
-        "embedding_model": embedding_model(),
+        "active_section": "resources", "knowledge_page": page,
+        "query": query, "selected_status": status,
+        "validation_statuses": ResourceKnowledgeItem.VALIDATION_STATUSES,
+        "filter_query": filters.urlencode(),
     })
 
 
@@ -105,6 +88,8 @@ def knowledge_rebuild_api(request):
     denied = _admin_error(request)
     if denied:
         return denied
+    if ResourceKnowledgeConfiguration.objects.filter(name="Best Practices Bootstrap", is_active=False).exists():
+        return JsonResponse({"ok": False, "error": "Automatic knowledge generation is disabled. Documents require a complete source review."}, status=409)
     is_json = "application/json" in request.headers.get("Content-Type", "")
     data = json.loads(request.body or "{}") if is_json else request.POST
     def selected(name, default=True):
@@ -183,6 +168,7 @@ def knowledge_item_api(request, item_id):
             "is_active": item.is_active,
             "source": {
                 "document": item.document.title,
+                "url": reverse("resource-file", args=[item.document.resource_id]) + (f"#page={item.source_page}" if item.source_page else ""),
                 "page": item.source_page,
                 "excerpt": item.source_excerpt,
             },

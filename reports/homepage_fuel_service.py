@@ -24,6 +24,7 @@ from .homepage_availability_service import (
 from .models import HomepageConfiguration, PlatformUser, PowerBIReport
 from .power_automate import PowerAutomateTransientError, execute_dax_via_flow
 from .powerbi import get_access_token, get_latest_refresh_cached
+from .performance_periods import bounds, dax_window, context as period_context
 
 
 FUEL_SITE_ALIASES = {
@@ -67,6 +68,7 @@ class HomepageFuelService:
     SITE_COLUMN = ("MineSiteList_MiningProd", "SiteGroup FPR")
     MODEL_COLUMN = ("ModelList_MiningProd", "Model")
     EQUIPMENT_COLUMN = ("EquipmentList_MiningProd", "Equipment")
+    FAMILY_COLUMN = ("EquipmentList_MiningProd", "ParentProductGroup")
     VALID_PERIODS = {"ytd", "last_12_months"}
 
     def __init__(self, user=None):
@@ -88,14 +90,21 @@ class HomepageFuelService:
 
     def request_from_params(self, params) -> HomepageRequest:
         period = str(params.get("period") or "ytd").strip().casefold()
-        if period not in self.VALID_PERIODS:
-            raise HomepageAvailabilityError("Unsupported period.", code="invalid_period", status=400)
+        try:
+            bounds(period)
+        except ValueError as exc:
+            raise HomepageAvailabilityError(str(exc), code="invalid_period", status=400) from None
+        breakdown = str(params.get('breakdown') or 'overall').casefold()
+        if breakdown not in {'overall','minesite','model','family','equipment'}:
+            raise HomepageAvailabilityError('Unsupported grouping.',code='invalid_breakdown',status=400)
+        if params.get('customer') or params.get('serial_number'):
+            raise HomepageAvailabilityError('For Fuel, select a site, model, family or equipment identifier.',code='unsupported_fuel_filter',status=400)
         filters = {}
-        for key in ("minesite", "model", "equipment"):
+        for key in ("minesite", "model", "family", "equipment"):
             value = str(params.get(key) or "").strip()
             if value:
                 filters[key] = _fuel_site(value) if key == "minesite" else value
-        return HomepageRequest("fuel", period, "overall", filters, 1, 200, "availability_desc", "")
+        return HomepageRequest("fuel", period, breakdown, filters, 1, 200, "availability_desc", "")
 
     def _scope(self) -> tuple[dict, str, str]:
         try:
@@ -134,6 +143,7 @@ class HomepageFuelService:
             "minesite": cls.SITE_COLUMN,
             "model": cls.MODEL_COLUMN,
             "equipment": cls.EQUIPMENT_COLUMN,
+            "family": cls.FAMILY_COLUMN,
         }
         clauses = []
         for code, values in filters.items():
@@ -172,9 +182,18 @@ class HomepageFuelService:
             start_expression = "EOMONTH(__LatestDate, -12) + 1"
             previous_start = "EOMONTH(__LatestDate, -24) + 1"
             previous_end = "EOMONTH(__LatestDate, -12)"
+        custom_window = dax_window(request.period)
+        end_expression = '__LatestDataDate'
+        if custom_window:
+            start_expression, end_expression, previous_start, previous_end = custom_window
+        dimension_column = _dax_column(*{
+            'minesite': self.SITE_COLUMN, 'model': self.MODEL_COLUMN,
+            'family': self.FAMILY_COLUMN, 'equipment': self.EQUIPMENT_COLUMN,
+            'overall': self.SITE_COLUMN,
+        }[request.breakdown])
         return f"""
 DEFINE
-VAR __LatestDate =
+VAR __LatestDataDate =
     MAXX(
         FILTER(
             ALL({date_column}),
@@ -182,6 +201,7 @@ VAR __LatestDate =
         ),
         {date_column}
     )
+VAR __LatestDate = {end_expression}
 VAR __StartDate = {start_expression}
 VAR __PreviousStart = {previous_start}
 VAR __PreviousEnd = {previous_end}
@@ -196,7 +216,7 @@ VAR __Summary =
         "BenchmarkLPH", CALCULATE({self.MEASURE}, __CurrentPeriod{benchmark_args}),
         "EquipmentCount", CALCULATE(DISTINCTCOUNT({equipment_column}), __CurrentPeriod{filter_args}),
         "MineSiteCount", CALCULATE(DISTINCTCOUNT({site_column}), __CurrentPeriod{filter_args}),
-        "LatestDate", __LatestDate,
+        "LatestDate", __LatestDataDate,
         "Extra1", BLANK(),
         "Extra2", BLANK()
     )
@@ -249,8 +269,34 @@ VAR __EquipmentOptions =
         "EquipmentCount", BLANK(), "MineSiteCount", BLANK(), "LatestDate", BLANK(),
         "Extra1", BLANK(), "Extra2", BLANK()
     )
+VAR __Breakdown =
+    SELECTCOLUMNS(
+        FILTER(
+            SUMMARIZECOLUMNS({dimension_column}, __CurrentPeriod{filter_args},
+                "GroupLPH", {self.MEASURE},
+                "GroupCount", DISTINCTCOUNT({equipment_column})),
+            NOT ISBLANK([GroupLPH])
+        ),
+        "RowType", "breakdown", "Entity", {dimension_column}, "LPH", [GroupLPH],
+        "PreviousLPH", BLANK(), "BenchmarkLPH", BLANK(),
+        "EquipmentCount", [GroupCount], "MineSiteCount", BLANK(), "LatestDate", BLANK(),
+        "Extra1", BLANK(), "Extra2", BLANK()
+    )
+VAR __Months =
+    SELECTCOLUMNS(GENERATESERIES(0, MAX(0, DATEDIFF(__StartDate, __LatestDate, MONTH))),
+        "MonthStart", EDATE(DATE(YEAR(__StartDate), MONTH(__StartDate), 1), [Value]))
+VAR __Trend =
+    SELECTCOLUMNS(__Months,
+        "RowType", "trend", "Entity", FORMAT([MonthStart], "yyyy-MM"),
+        "LPH", VAR __Month = [MonthStart]
+            RETURN CALCULATE({self.MEASURE},
+                DATESBETWEEN({date_column}, MAX(__StartDate, __Month), MIN(__LatestDate, EOMONTH(__Month, 0))){filter_args}),
+        "PreviousLPH", BLANK(), "BenchmarkLPH", BLANK(),
+        "EquipmentCount", BLANK(), "MineSiteCount", BLANK(), "LatestDate", BLANK(),
+        "Extra1", BLANK(), "Extra2", BLANK()
+    )
 EVALUATE
-UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, __EquipmentOptions)
+UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, __EquipmentOptions, __Breakdown, __Trend)
 """.strip()
 
     def _execute(self, dax: str, filters: dict, role: str, effective_user: str) -> list[dict]:
@@ -300,6 +346,8 @@ UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, __EquipmentOpti
         benchmark = _as_float(_row_value(summary, "BenchmarkLPH"))
         latest_date = _date_value(_row_value(summary, "LatestDate"))
         equipment_rows = []
+        breakdown_rows = []
+        trend_rows = []
         options = {"minesite": [], "model": [], "equipment": []}
         for row in rows:
             row_type = str(_row_value(row, "RowType") or "").casefold()
@@ -312,6 +360,17 @@ UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, __EquipmentOpti
                         "model": str(_row_value(row, "Extra1") or "").strip(),
                         "minesite": str(_row_value(row, "Extra2") or "").strip(),
                     })
+            elif row_type in {'breakdown','trend'}:
+                lph=_as_float(_row_value(row,'LPH'))
+                if lph is not None and math.isfinite(lph) and lph>=0:
+                    label=str(_row_value(row,'Entity') or '')
+                    item={'entity':label,'metric_value':lph,'raw_value':lph,'value':lph,'formatted_value':_format_lph(lph),
+                          'equipment_count':_as_int(_row_value(row,'EquipmentCount'))}
+                    if row_type=='trend':
+                        item['period']=label
+                        trend_rows.append(item)
+                    else:
+                        breakdown_rows.append(item)
             elif row_type.startswith("option_"):
                 code = row_type.removeprefix("option_")
                 label = str(_row_value(row, "Entity") or "").strip()
@@ -383,6 +442,8 @@ UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, __EquipmentOpti
                 "period_label": "Year to Date" if request.period == "ytd" else "Last 12 Months",
                 "start_date": _period_start(latest_date, request.period).isoformat() if latest_date else None,
                 "end_date": latest_date.isoformat() if latest_date else None,
+                **period_context(request.period,latest_date,_period_start(latest_date,request.period)),
+                "breakdown": request.breakdown,
                 "filters": request.filters,
             },
             "metric": {
@@ -392,7 +453,7 @@ UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, __EquipmentOpti
                 "raw_value": value,
                 "formatted_value": _format_lph(value),
                 "comparison": {
-                    "label": "vs same period last year" if request.period == "ytd" else "vs previous rolling 12 months",
+                    "label": "vs previous rolling 12 months" if request.period == "last_12_months" else "vs same period last year",
                     "previous_raw": previous,
                     "previous_formatted": _format_lph(previous),
                     "delta_value": round(delta, 1) if delta is not None else None,
@@ -415,6 +476,8 @@ UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, __EquipmentOpti
                 "equipment_count": len(values) or _as_int(_row_value(summary, "EquipmentCount")),
             },
             "equipment": equipment_rows,
+            "breakdown": breakdown_rows,
+            "trend": sorted(trend_rows,key=lambda row:row['period']),
             "decision_support": {
                 "lowest_observed": lowest_observed,
                 "highest_observed": highest_observed,
@@ -438,10 +501,12 @@ UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, __EquipmentOpti
             },
         }
 
-    def get(self, request: HomepageRequest) -> dict:
+    def get(self, request: HomepageRequest, *, force_refresh=False) -> dict:
         scope, role, effective_user = self._scope()
         merged = self._merge_filters(scope, request.filters)
         cache_payload = {
+            "page": request.page, "page_size": request.page_size, "ordering": request.ordering,
+            "breakdown": request.breakdown, "query": request.query,
             "user": getattr(self.user, "pk", None),
             "scope": scope,
             "role": role,
@@ -449,10 +514,10 @@ UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, __EquipmentOpti
             "filters": request.filters,
             "dataset": self.report.semantic_model_id,
         }
-        key = "homepage:fuel:v2:" + hashlib.sha256(
+        key = "homepage:fuel:v3:" + hashlib.sha256(
             json.dumps(cache_payload, sort_keys=True, default=str).encode("utf-8")
         ).hexdigest()
-        cached = cache.get(key)
+        cached = None if force_refresh else cache.get(key)
         if cached is not None:
             payload = dict(cached)
             payload["meta"] = {**payload["meta"], "cached": True}

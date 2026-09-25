@@ -15,13 +15,13 @@
   const renderMessage = (element, content) => {
     const value = String(content || '');
     element.replaceChildren();
-    const pattern = /\[([^\]\n]+)\]\((https?:\/\/[^\s<>"')]+)\)|(https?:\/\/[^\s<>"')]+)/g;
+    const pattern = /\[([^\]\n]+)\]\((https?:\/\/[^\s<>"')]+|\/resources\/[^\s<>"')]+)\)|(https?:\/\/[^\s<>"')]+)/g;
     let offset = 0;
     for (const match of value.matchAll(pattern)) {
       element.append(document.createTextNode(value.slice(offset, match.index)));
       const href = match[2] || match[3];
       try {
-        const url = new URL(href);
+        const url = new URL(href, window.location.origin);
         if (!['https:', 'http:'].includes(url.protocol) || url.username || url.password) throw new Error('Invalid link');
         const link = document.createElement('a');
         link.href = url.href;
@@ -100,6 +100,12 @@
   const appendFleetResult = (run) => {
     const result = run.result;
     if (!result || result.kind === 'machine_not_found') return;
+    // History and polling must attach evidence to its own answer, never to
+    // the end of the conversation (which may contain a different question).
+    const answer = run.message?.id
+      ? thread.querySelector(`[data-message-id="${run.message.id}"]`)
+      : thread.querySelector(`[data-provisional-run-id="${run.id}"]`);
+    if (!answer || thread.querySelector(`.codex-result[data-run-id="${run.id}"]`)) return;
     const section = document.createElement('section');
     section.className = 'codex-result';
     section.dataset.runId = run.id;
@@ -107,13 +113,36 @@
       const note = document.createElement('p');
       note.textContent = 'Web research completed. Sources are linked in the answer.';
       section.append(note);
-      thread.append(section);
+      answer.after(section);
       return;
     }
     if (result.kind === 'governed_answer') {
       appendTable(section, 'Verified metrics', result.rows, [
+        ...(result.rows?.some(row => row.entity) ? [['entity', 'Site / Model / Family']] : []),
         ['metric', 'Metric'], ['period', 'Period'], ['formatted_value', 'Value'],
       ]);
+      (result.tables || []).forEach(table => {
+        appendTable(section, table.title, table.rows, table.columns);
+        if (table.truncated) {
+          const note = document.createElement('p');
+          note.textContent = `${table.rows.length} of ${table.total_rows} rows shown. Narrow the scope to see specific equipment.`;
+          section.append(note);
+        }
+      });
+      (result.payloads || []).forEach(payload => {
+        const context = payload.context || {};
+        const quality = payload.data_quality || {};
+        const snapshot = payload.dashboard_snapshot || {};
+        const note = document.createElement('p');
+        note.className = 'codex-result__trust';
+        note.textContent = `${context.metric_label || context.metric_code || 'KPI'} · ${context.period_label || ''} · Data through ${quality.latest_available_date || 'Not available'}${quality.is_stale || snapshot.stale ? ' · Stale data' : ''}${snapshot.offline ? ' · Offline snapshot' : ''}`;
+        section.append(note);
+      });
+      if (result.unavailable_sections?.length) {
+        const note = document.createElement('p');
+        note.textContent = `Unavailable in this snapshot: ${result.unavailable_sections.join(', ')}.`;
+        section.append(note);
+      }
       (result.knowledge || []).forEach((item) => {
         const source = item.source || {};
         const link = document.createElement('a');
@@ -124,8 +153,37 @@
         paragraph.append(link);
         section.append(paragraph);
       });
+      if (result.document_sources?.length) {
+        const sources = document.createElement('details');
+        const summary = document.createElement('summary');
+        summary.textContent = 'Document sources';
+        sources.append(summary);
+        result.document_sources.forEach(source => {
+          const paragraph = document.createElement('p');
+          const title = document.createElement('strong');
+          title.textContent = source.title + ' — PDF pages: ';
+          paragraph.append(title);
+          (source.pages || []).forEach((page, index) => {
+            if (index) paragraph.append(document.createTextNode(', '));
+            const link = document.createElement('a');
+            link.textContent = String(page.page);
+            try {
+              const url = new URL(page.url, window.location.origin);
+              if (url.origin === window.location.origin && url.pathname.startsWith('/resources/files/') &&
+                  ['http:', 'https:'].includes(url.protocol) && !url.username && !url.password) {
+                link.href = url.href;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+              }
+            } catch (_) {}
+            paragraph.append(link);
+          });
+          sources.append(paragraph);
+        });
+        section.append(sources);
+      }
       if (!result.rows?.length) {
-        if (section.childNodes.length) thread.append(section);
+        if (section.childNodes.length) answer.after(section);
         return;
       }
     } else if (result.kind === 'availability_summary') {
@@ -206,7 +264,7 @@
         ['serial_number', 'Serial number'], ['equipment', 'Equipment'], ['model', 'Model'],
         ['equipment_family', 'Family'], ['brand', 'Brand'], ['site', 'MineSite'], ['smu', 'SMU'],
       ]);
-    } else {
+    } else if (['site_inventory', 'fleet_coverage'].includes(result.kind)) {
       const summary = document.createElement('div');
       summary.className = 'codex-result__summary';
       [
@@ -229,6 +287,7 @@
         ['equipment_family', 'Family'], ['brand', 'Brand'], ['site', 'MineSite'],
       ]);
     }
+    if (!section.childNodes.length) return;
     const exportButton = document.createElement('button');
     exportButton.type = 'button';
     exportButton.className = 'codex-result__export';
@@ -250,14 +309,14 @@
       }
     });
     section.append(exportButton);
-    thread.append(section);
+    answer.after(section);
     thread.scrollTop = thread.scrollHeight;
   };
 
   const setRunState = (run) => {
     progressWrap.hidden = false;
     progressBar.style.width = `${run.progress_percent || 0}%`;
-    progress.textContent = run.progress_label || 'Processing...';
+    progress.textContent = (run.progress_label || 'Processing...').replace(/\bcodex\b/gi, 'M360 AI');
     cancelButton.hidden = !run.can_cancel;
     submitButton.disabled = !run.terminal;
     input.disabled = !run.terminal;
@@ -289,7 +348,7 @@
       setRunState(payload.run);
       if (payload.run.provisional_message) {
         const draft = payload.run.provisional_message;
-        appendMessage(draft.role, draft.content, `${draft.answer_status} · Codex summary in progress`, '', payload.run.id);
+        appendMessage(draft.role, draft.content, `${draft.answer_status} · M360 AI summary in progress`, '', payload.run.id);
       }
       if (payload.run.result && !thread.querySelector(`.codex-result[data-run-id="${payload.run.id}"]`)) {
         appendFleetResult(payload.run);

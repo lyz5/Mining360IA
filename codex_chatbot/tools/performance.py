@@ -13,6 +13,7 @@ from reports.homepage_availability_service import (
 from reports.intent_extractor_service import extract_intent
 
 from .minesite_resolution import resolve_minesite_from_question
+from .metric_intent import requested_metrics
 
 
 AVAILABILITY_TERMS = re.compile(
@@ -34,15 +35,12 @@ def _scalar_filter(value):
 
 def availability_analysis_from_question(question: str, *, user) -> dict | None:
     """Resolve an availability question through the governed Performance service."""
-    if not AVAILABILITY_TERMS.search(question):
+    if 'availability' not in requested_metrics(question):
         return None
     if not (is_platform_admin(user) or has_module_access(user, "reporting")):
         return {"kind": "availability_access_restricted"}
 
     intent = extract_intent(question, "performance", allow_llm=False) or {}
-    metric = str(intent.get("primary_metric") or intent.get("metric") or "").casefold()
-    if metric and metric != "availability":
-        return None
 
     extracted_filters = dict(intent.get("filters") or {})
     site_resolution = resolve_minesite_from_question(question, user=user)
@@ -65,9 +63,15 @@ def availability_analysis_from_question(question: str, *, user) -> dict | None:
             params[key] = value
 
     try:
-        service = HomepageAvailabilityService(user)
-        request = service.request_from_params(params)
-        payload = service.get(request)
+        from reports.dashboard_snapshots import enabled, excellence_snapshot
+        if enabled():
+            payload = excellence_snapshot(user, {**params, 'metric': 'availability'})
+            metric_definition = {}
+        else:
+            service = HomepageAvailabilityService(user)
+            request = service.request_from_params(params)
+            payload = service.get(request)
+            metric_definition = service.metric
     except HomepageAvailabilityError as exc:
         return {
             "kind": "availability_access_restricted" if exc.status == 403 else "availability_unavailable",
@@ -90,8 +94,9 @@ def availability_analysis_from_question(question: str, *, user) -> dict | None:
         "meta": payload.get("meta") or {},
         "source_table": "FPR Global DB + RLS semantic model",
         "source_service": "HomepageAvailabilityService",
-        "source_measure": service.metric.get("powerbi_measure_name"),
-        "definition": service.metric.get("description") or service.metric.get("metric_label") or "Physical Availability",
+        "source_measure": metric_definition.get("powerbi_measure_name"),
+        "definition": metric_definition.get("description") or metric_definition.get("metric_label") or "Physical Availability",
+        "dashboard_snapshot": payload.get("dashboard_snapshot"),
         "minesite_resolution": None if not site_resolution else {
             "canonical_name": site_resolution.canonical_name,
             "semantic_name": site_resolution.semantic_name,

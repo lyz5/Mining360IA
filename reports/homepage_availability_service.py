@@ -22,12 +22,13 @@ from .models import (
 )
 from .power_automate import PowerAutomateTransientError, execute_dax_via_flow
 from .powerbi import get_access_token, get_latest_refresh_cached
+from .performance_periods import bounds, dax_window, context as period_context
 
 
 LOGGER = logging.getLogger(__name__)
 VALID_PERIODS = {"ytd", "last_12_months"}
 VALID_METRICS = {"availability", "mtbs", "mtbf", "mttr"}
-VALID_BREAKDOWNS = {"overall", "minesite", "model", "equipment"}
+VALID_BREAKDOWNS = {"overall", "minesite", "model", "family", "equipment"}
 VALID_ORDERING = {"availability_desc", "availability_asc", "downtime_desc", "name_asc"}
 CUSTOMER_TYPE_TARGETS = {
     "do it for me": 0.85,
@@ -293,8 +294,10 @@ class HomepageAvailabilityService:
         breakdown = str(params.get("breakdown") or self.config.default_breakdown or "overall").strip().casefold()
         if metric not in VALID_METRICS:
             raise HomepageAvailabilityError("Unsupported metric.", code="invalid_metric", status=400)
-        if period not in VALID_PERIODS:
-            raise HomepageAvailabilityError("Unsupported period.", code="invalid_period", status=400)
+        try:
+            bounds(period)
+        except ValueError as exc:
+            raise HomepageAvailabilityError(str(exc), code="invalid_period", status=400) from None
         if breakdown not in VALID_BREAKDOWNS:
             raise HomepageAvailabilityError("Unsupported breakdown.", code="invalid_breakdown", status=400)
         filters = {
@@ -302,6 +305,8 @@ class HomepageAvailabilityService:
             for key in self.FILTER_KEYS
             if str(params.get(key) or "").strip()
         }
+        if filters.get('family') and not self.filter_mappings.get('family'):
+            raise HomepageAvailabilityError('Family mapping is missing.',code='dimension_mapping_missing',status=400)
         try:
             page = max(1, int(params.get("page") or 1))
         except (TypeError, ValueError):
@@ -502,6 +507,10 @@ class HomepageAvailabilityService:
             start_expression = "EOMONTH(__LatestDate, -12) + 1"
             previous_start = "EOMONTH(__LatestDate, -24) + 1"
             previous_end = "EOMONTH(__LatestDate, -12)"
+        end_expression = 'EOMONTH(__LatestDataDate, 0)'
+        custom_window = dax_window(request.period)
+        if custom_window:
+            start_expression, end_expression, previous_start, previous_end = custom_window
         dimension_column, extras = self._dimension_columns(request.breakdown)
         grouping = [dimension_column, *[column for _, column in extras]]
         group_lines = ",\n        ".join(grouping)
@@ -536,7 +545,7 @@ VAR __LatestDataDate =
         ),
         {date_column}
     )
-VAR __LatestDate = EOMONTH(__LatestDataDate, 0)
+VAR __LatestDate = {end_expression}
 VAR __StartDate = {start_expression}
 VAR __PreviousStart = {previous_start}
 VAR __PreviousEnd = {previous_end}
@@ -558,7 +567,7 @@ VAR __Summary =
         "PreviousMTBF", CALCULATE({mtbf_measure}, __PreviousPeriod{filter_args}),
         "MTTR", CALCULATE({mttr_measure}, __CurrentPeriod{filter_args}),
         "PreviousMTTR", CALCULATE({mttr_measure}, __PreviousPeriod{filter_args}),
-        "LatestDate", __LatestDate,
+        "LatestDate", {"__LatestDataDate" if custom_window else "__LatestDate"},
         "CustomerType", CALCULATE(SELECTEDVALUE({customer_type_column}), __CurrentPeriod{filter_args}){extra_blank}
     )
 VAR __TrendBase =
@@ -725,6 +734,7 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
             "role": rls_role,
             "period": request.period,
             "selected_metric": request.metric,
+            "page": request.page, "page_size": request.page_size, "ordering": request.ordering,
             "breakdown": request.breakdown,
             "filters": request.filters,
             "q": request.query,
@@ -972,6 +982,7 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
                 "period_label": period_label,
                 "start_date": _period_start(latest_date, request.period).isoformat() if latest_date else None,
                 "end_date": latest_date.isoformat() if latest_date else None,
+                **period_context(request.period, latest_date, _period_start(latest_date, request.period)),
                 "breakdown": request.breakdown,
                 "filters": request.filters,
             },
@@ -989,7 +1000,7 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
                 "gap_points": gap,
                 "status": status,
                 "comparison": {
-                    "label": "vs same period last year" if request.period == "ytd" else "vs previous rolling 12 months",
+                    "label": "vs previous rolling 12 months" if request.period == "last_12_months" else "vs same period last year",
                     "previous_raw": previous_value,
                     "previous_formatted": _format_hours(previous_value) if is_hours_metric else _format_percent(previous_value),
                     "delta_value": comparison_delta,
@@ -1009,7 +1020,7 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
                 "gap_points": gap,
                 "status": status,
                 "comparison": {
-                    "label": "vs same period last year" if request.period == "ytd" else "vs previous rolling 12 months",
+                    "label": "vs previous rolling 12 months" if request.period == "last_12_months" else "vs same period last year",
                     "previous_raw": previous_value,
                     "previous_formatted": _format_percent(previous_value),
                     "delta_points": comparison_delta,
@@ -1078,11 +1089,11 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
             },
         }
 
-    def get(self, request: HomepageRequest) -> dict:
+    def get(self, request: HomepageRequest, *, force_refresh=False) -> dict:
         scope, rls_role, effective_user = self._scope()
         merged_filters = self._merge_filters(scope, request.filters)
         cache_key = self._cache_key(request, scope, rls_role)
-        cached_payload = cache.get(cache_key)
+        cached_payload = None if force_refresh else cache.get(cache_key)
         if cached_payload is not None:
             payload = dict(cached_payload)
             payload["meta"] = {**(payload.get("meta") or {}), "cached": True}

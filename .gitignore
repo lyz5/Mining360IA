@@ -23,3 +23,5 @@ resource_library/
 .artifacts/
 artifacts/
 media/
+
+var/resource-memory/

@@ -23,6 +23,7 @@ def configure(root=ROOT, host='mining360-dev.neemba.local'):
         'MINING360_DATABASE_ENGINE': 'sqlite',
         'MINING360_SQLITE_PATH': str(root / 'db.sqlite3'),
         'MINING360_SQL_CONFIG_STORE': '0',
+        'BUSINESS_REVENUE_AUTO_SYNC': 'true',
         'MINING360_ALLOWED_HOSTS': f'127.0.0.1,localhost,{host}',
         'MINING360_CSRF_TRUSTED_ORIGINS': f'http://{host},https://{host}',
         'MINING360_USE_X_FORWARDED_HOST': '1',

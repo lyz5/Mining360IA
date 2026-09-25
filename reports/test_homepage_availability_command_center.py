@@ -592,12 +592,12 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
         ).read_text(encoding="utf-8")
 
         self.assertContains(response, "data-brand-loader")
-        self.assertContains(response, "neemba-cat-logo.jpg")
+        self.assertNotContains(response, "neemba-cat-logo.jpg")
+        self.assertContains(response, "data-ajax-spinner")
         self.assertContains(response, "Preparing your Excellence Center")
         self.assertIn("dismissBrandLoader", javascript)
         self.assertIn("@keyframes neemba-loader-fan", css)
         self.assertIn("inset: 0 0 0 var(--sidebar-width)", css)
-        self.assertIn("width: min(210px, 70vw)", css)
 
     def test_command_center_ui_copy_is_english_only(self):
         template = Path(__file__).parent.joinpath("templates/reports/dashboard.html").read_text(

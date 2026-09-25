@@ -507,7 +507,7 @@ class CodexChatbotVerticalPathTests(TestCase):
 
         payload = self.client.post(
             reverse("codex_chatbot:ask"),
-            data=json.dumps({"question": "Donne-moi la disponibilité des 777 de Siguiri en 2026"}),
+            data=json.dumps({"question": "Donne-moi la disponibilité des 777 de Siguiri en YTD"}),
             content_type="application/json",
         ).json()
 

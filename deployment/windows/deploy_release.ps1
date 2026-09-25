@@ -179,6 +179,21 @@ try {
     Invoke-Native 'Release checkout' { & $git clone --no-checkout $repository $stage }
     Invoke-Native 'Release checkout commit' { & $git -C $stage checkout --detach $Commit }
     Remove-Item -LiteralPath (Join-Path $stage '.git') -Recurse -Force
+    # Development instructions and documentation stay in the source checkout.
+    $stagePrefix = [IO.Path]::GetFullPath($stage).TrimEnd('\') + '\'
+    foreach ($developmentArtifact in @('AGENTS.md', 'CLAUDE.md', '.agents', '.codex', 'docs')) {
+        $artifactPath = [IO.Path]::GetFullPath((Join-Path $stage $developmentArtifact))
+        if (-not $artifactPath.StartsWith($stagePrefix, [StringComparison]::OrdinalIgnoreCase)) {
+            throw 'Development artifact path escaped the release stage.'
+        }
+        if (Test-Path -LiteralPath $artifactPath) {
+            $artifact = Get-Item -LiteralPath $artifactPath -Force
+            if ($artifact.Attributes -band [IO.FileAttributes]::ReparsePoint) {
+                throw 'Unexpected link in development artifacts.'
+            }
+            Remove-Item -LiteralPath $artifactPath -Recurse -Force
+        }
+    }
     if ($bundle) { Remove-Item -LiteralPath $bundle -Force }
 
     foreach ($name in @('powerbi_credentials.local.json', 'mining360_sqlserver.local.json', 'reports\live_sources_custom.json')) {

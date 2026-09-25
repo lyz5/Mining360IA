@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    {% include "reports/includes/favicon.html" %}
     <link rel="icon" href="data:,">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,6 +49,7 @@
                         <span>Connecting to the semantic model...</span>
                     </span>
                     <span class="refresh-status" data-refresh-status>Refresh pending</span>
+                    <button class="command-primary-action" type="button" data-source-refresh>Refresh</button>
                     <button class="command-primary-action" type="button" data-action="ask-ai">Ask M360 Chatbot</button>
                 </div>
             </header>
@@ -284,8 +286,8 @@
                 <button type="button" data-retry>Retry</button>
             </section>
         </main>
-        <script src="{% static 'reports/visual_export.js' %}?v=20260919-english-ui" defer></script>
-        <script src="{% static 'reports/homepage_command_center.js' %}?v=20260919-english-ui" defer></script>
+        <script src="{% static 'reports/visual_export.js' %}?v=20260922-direct-refresh" defer></script>
+        <script src="{% static 'reports/homepage_command_center.js' %}?v=20260922-direct-refresh" defer></script>
     {% else %}
         <main class="app-shell">
             <header class="topbar">

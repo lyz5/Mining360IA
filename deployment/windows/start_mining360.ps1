@@ -48,6 +48,7 @@ $env:MINING360_CONFIG_ENCRYPTION_KEY = Get-Mining360Setting "MINING360_CONFIG_EN
 $env:MINING360_DEPLOYMENT_ENCRYPTION_KEY = Get-Mining360Setting "MINING360_DEPLOYMENT_ENCRYPTION_KEY"
 $env:MINING360_DEBUG = Get-Mining360Setting "MINING360_DEBUG" "0"
 $env:MINING360_ALLOWED_HOSTS = Get-Mining360Setting "MINING360_ALLOWED_HOSTS" "mining360.neemba.com,mining360-dev.neemba.local,bodefm,172.17.0.111,localhost,127.0.0.1"
+$env:MINING360_ALLOWED_HOSTS = ((@($env:MINING360_ALLOWED_HOSTS -split ',') + @('bodefm.jadelmas.com')) | Where-Object { $_ } | Select-Object -Unique) -join ','
 $env:MINING360_PUBLIC_BASE_URL = Get-Mining360Setting "MINING360_PUBLIC_BASE_URL" "https://mining360-dev.neemba.local"
 $configuredCsrfOrigins = Get-Mining360Setting "MINING360_CSRF_TRUSTED_ORIGINS"
 $env:MINING360_CSRF_TRUSTED_ORIGINS = (@(

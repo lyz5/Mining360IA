@@ -1,6 +1,7 @@
 {% load static %}
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Business Performance Config | Mining360</title><link rel="stylesheet" href="{% static 'reports/styles.css' %}"></head>
+<html lang="en"><head>
+    {% include "reports/includes/favicon.html" %}<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Business Performance Config | Mining360</title><link rel="stylesheet" href="{% static 'reports/styles.css' %}"></head>
 <body>{% include "reports/includes/app_nav.html" %}
 <main class="app-shell bp-shell" data-bp-config data-save-url="{% url 'business-performance-config-api' %}">
     <header class="bp-header"><div><p class="eyebrow">Administration / Semantic Models</p><h1>Business Performance Config</h1><p>Customer Fleet & Revenue Planning Model connection and controlled mappings.</p></div><a class="button secondary" href="{% url 'business-performance' %}">Back to module</a></header>

@@ -247,6 +247,10 @@
   }
 
   function render(data) {
+    if (data.dashboard_snapshot) {
+      const snapshot = data.dashboard_snapshot;
+      $('[data-revenue-sync-status]').textContent = `BODEFM snapshot · ${dateTimeLabel(snapshot.generated_at)}${snapshot.offline ? ' · Server unavailable; showing the last received snapshot' : snapshot.stale ? ' · Daily update pending' : ''}`;
+    }
     setHidden('[data-content]', false); setHidden('[data-status]', true); setHidden('[data-error]', true);
     setHidden('[data-mode-warning]', data.mapping_ready);
     syncCustomDateBounds(data);
@@ -307,11 +311,12 @@
     $('[data-filter-count]').textContent = $$('[data-filter]').filter(control => control.value && !['ytd', 'same_period_last_year', 'all_business', 'mining'].includes(control.value)).length;
   }
 
-  async function refresh() {
+  async function refresh(forceRefresh = false) {
     state.leadersController?.abort();
     toggleCustomDates(); updateUrl(); state.controller?.abort(); state.controller = new AbortController(); setUpdating(true); setHidden('[data-error]', true);
     try {
-      const response = await fetch(`${root.dataset.bootstrapUrl}?${apiParams()}`, { signal: state.controller.signal, headers: { Accept: 'application/json' } });
+      const query = apiParams(); if (forceRefresh === true) query.set("refresh", "1");
+      const response = await fetch(`${root.dataset.bootstrapUrl}?${query}`, { signal: state.controller.signal, headers: { Accept: 'application/json' } });
       const data = await response.json(); if (!response.ok) throw new Error(data.message || 'Revenue data is temporarily unavailable.');
       if (state.data && state.data.context.context_id === data.context.context_id) { state.data = data; render(data); setUpdating(false); return; }
       state.data = data; state.explorerLoaded = false; state.turnoverLoaded = false; state.machineLoaded = false; state.partsLoaded = false; render(data); setUpdating(false);
@@ -584,7 +589,7 @@
   $$('[data-entity-search]').forEach(input => input.addEventListener('input', () => { window.clearTimeout(state.searchTimers[input.dataset.entitySearch]); state.searchTimers[input.dataset.entitySearch] = window.setTimeout(async () => { const target = $(`[data-search-results="${input.dataset.entitySearch}"]`); await searchEntities(input.dataset.entitySearch, input.value, target, true); bindComboboxResults(input, target); }, 250); }));
   $('[data-filter-open]').addEventListener('click', () => $('[data-filter-sheet]').classList.add('open')); $('[data-filter-close]').addEventListener('click', () => $('[data-filter-sheet]').classList.remove('open'));
   $('[data-reset]').addEventListener('click', () => { $$('[data-filter]').forEach(control => { control.value = control.dataset.filter === 'period' ? 'ytd' : control.dataset.filter === 'comparison' ? 'same_period_last_year' : control.dataset.filter === 'business_line' ? 'all_business' : control.dataset.filter === 'division_scope' ? 'mining' : ''; }); $('[data-division-toggle]').checked = false; state.selectedLabels = { key_account_ids: '' }; $('[data-filter-sheet]').classList.remove('open'); refresh(); });
-  $('[data-refresh]').addEventListener('click', refresh); $('[data-retry]').addEventListener('click', refresh);
+  $('[data-refresh]').addEventListener('click', refreshSource); $('[data-retry]').addEventListener('click', refresh);
   $('[data-drawer-close]').addEventListener('click', closeDrawer);
   $$('[data-confidence-open]').forEach(button => button.addEventListener('click', () => { const confidence = state.data?.confidence; if (!confidence) return; $('[data-drawer-kicker]').textContent = 'Data & Freshness'; $('[data-drawer-title]').textContent = `Data Confidence: ${confidence.status}`; $('[data-drawer-body]').innerHTML = `<div class="bcc-detail-grid"><div class="bcc-detail-metric"><span>Revenue through</span><strong>${dateLabel(state.data.freshness.data_through_date)}</strong></div><div class="bcc-detail-metric"><span>Revenue reconciliation</span><strong>${escapeHtml(state.data.reconciliation.status)}</strong></div><div class="bcc-detail-metric"><span>Customer coverage</span><strong>${confidence.customer_coverage === null ? 'Not available' : confidence.customer_coverage.toFixed(1) + '%'}</strong></div><div class="bcc-detail-metric"><span>Country coverage</span><strong>${confidence.country_coverage === null ? 'Not available' : confidence.country_coverage.toFixed(1) + '%'}</strong></div><div class="bcc-detail-metric"><span>Key Account coverage</span><strong>${confidence.key_account_coverage === null ? 'Not available' : confidence.key_account_coverage.toFixed(1) + '%'}</strong></div><div class="bcc-detail-metric"><span>Unallocated Revenue</span><strong>${money(confidence.unallocated_revenue, true)}</strong></div><div class="bcc-detail-metric"><span>Machine Detail</span><strong>${state.machineLoaded ? $('[data-machine-source]').textContent : 'Load on demand'}</strong></div><div class="bcc-detail-metric"><span>Parts Classification</span><strong>${state.partsLoaded ? $('[data-parts-source]').textContent : 'Load on demand'}</strong></div></div><h3>Known limitations</h3>${confidence.warnings.map(warning => `<p>${escapeHtml(warning)}</p>`).join('') || '<p>No governed headline limitation is currently reported.</p>'}`; $('[data-drawer]').hidden = false; document.body.style.overflow = 'hidden'; $('[data-drawer-close]').focus(); }));
   $('[data-machine-refresh]').addEventListener('click', () => loadMachineSales(true)); $$('[data-machine-filter]').forEach(control => control.addEventListener('change', () => loadMachineSales(true))); let machineTimer; $('[data-machine-search]').addEventListener('input', () => { clearTimeout(machineTimer); machineTimer = setTimeout(() => loadMachineSales(true), 300); }); $('[data-machine-prev]').addEventListener('click', () => { if (state.machinePage > 1) { state.machinePage--; loadMachineSales(); } }); $('[data-machine-next]').addEventListener('click', () => { if (state.machinePage < state.machinePages) { state.machinePage++; loadMachineSales(); } });
@@ -594,5 +599,51 @@
   $('[data-presentation]')?.addEventListener('click', () => { document.body.classList.toggle('presentation'); if (document.body.classList.contains('presentation')) document.documentElement.requestFullscreen?.().catch(() => {}); else document.exitFullscreen?.().catch(() => {}); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeDrawer(); $('[data-filter-sheet]').classList.remove('open'); } });
   window.addEventListener('popstate', () => { syncFromUrl(); switchWorkspace(state.workspace, false); refresh(); });
-  syncFromUrl(); refresh();
+  async function refreshSource() {
+    const button = $('[data-refresh]');
+    if (button.disabled) return;
+    button.disabled = true; button.textContent = 'Refreshing...';
+    const status = $('[data-revenue-sync-status]');
+    status.textContent = 'Reading the Revenue source...';
+    try {
+      const token = document.querySelector('[name=csrfmiddlewaretoken]')?.value || document.querySelector('meta[name="csrf-token"]')?.content || decodeURIComponent(document.cookie.split('; ').find(row => row.startsWith('csrftoken='))?.slice(10) || '');
+      const response = await fetch(root.dataset.syncStatusUrl, {method:'POST', headers:{'X-CSRFToken':token, Accept:'application/json'}});
+      const started = await response.json();
+      if (!response.ok || !started.accepted) throw new Error(started.message || 'Revenue refresh could not be started.');
+      for (let attempt=0; attempt<300; attempt++) {
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        const check = await fetch(root.dataset.syncStatusUrl, {headers:{Accept:'application/json'}});
+        if (!check.ok) throw new Error('Unable to check the Revenue refresh.');
+        const sync = await check.json();
+        if (sync.latest_run_id === started.run_id && ['Failed','Cancelled'].includes(sync.latest_run_status)) throw new Error('The source update failed. Previous data is retained.');
+        if (sync.source_sync_id === started.run_id) {
+          await refresh(true);
+          status.textContent = 'Revenue refreshed from the source.';
+          return;
+        }
+      }
+      throw new Error('The source update is still running. The page will update when it completes.');
+    } catch(error) { status.textContent = error.message; }
+    finally { button.disabled = false; button.textContent = 'Refresh'; }
+  }
+  async function checkRevenueSynchronization() {
+    try {
+      if (document.hidden) return;
+      const response = await fetch(root.dataset.syncStatusUrl, {headers: {Accept: 'application/json'}});
+      if (!response.ok) return;
+      const sync = await response.json();
+      const status = $('[data-revenue-sync-status]');
+      if (!sync.enabled) { if (!state.data?.dashboard_snapshot) status.textContent = ''; return; }
+      if (sync.running) status.textContent = 'Updating Revenue automatically. The last available data remains visible.';
+      else if (sync.last_attempt_failed) status.textContent = 'The automatic update could not reach the source. Existing data is retained; another attempt is scheduled.';
+      else if (!sync.source_through_date || sync.source_through_date < sync.target_date) status.textContent = `Latest source transactions: ${sync.source_through_date ? dateLabel(sync.source_through_date) : 'not available'}. Target: ${dateLabel(sync.target_date)}. Source updates are checked automatically.`;
+      else status.textContent = 'Revenue is updated automatically.';
+      if (!sync.running && sync.source_sync_id && state.data?.source_sync_id !== sync.source_sync_id && !document.hidden && root.getAttribute('aria-busy') !== 'true') {
+        await refresh();
+      }
+    } catch (_error) {
+      // Keep the last verified data visible during temporary connection failures.
+    } finally { setTimeout(checkRevenueSynchronization, 30000); }
+  }
+  syncFromUrl(); refresh().finally(checkRevenueSynchronization);
 })();

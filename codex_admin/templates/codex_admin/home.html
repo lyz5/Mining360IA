@@ -1,10 +1,11 @@
-{% load static %}
+{% load static codex_access_tags %}
 <!doctype html>
 <html lang="en">
 <head>
+    {% include "reports/includes/favicon.html" %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Codex Admin | Mining360</title>
+    <title>M360 AI Admin | Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260903-production-hardening-2">
     <link rel="stylesheet" href="{% static 'codex_admin/admin.css' %}?v=20260914-1">
 </head>
@@ -12,7 +13,7 @@
 {% include "reports/includes/app_nav.html" %}
 <main class="app-shell codex-admin-shell">
     <header class="codex-admin-header">
-        <div><span>CODEX ADMIN</span><h1>Project Diagnostics</h1><p>Bounded, read-only diagnostics for the Codex runtime.</p></div>
+        <div><span>M360 AI ADMIN</span><h1>Project Diagnostics</h1><p>Bounded, read-only diagnostics for the M360 AI runtime.</p></div>
         <form method="post" action="{% url 'codex_admin:run-diagnostic' %}">{% csrf_token %}<button type="submit">Run diagnostics</button></form>
     </header>
     {% if latest_run %}
@@ -21,14 +22,14 @@
     </section>
     <div class="codex-admin-grid">
         <section>
-            <h2>Codex runtime</h2>
+            <h2>M360 AI runtime</h2>
             <dl>
                 <dt>Python</dt><dd>{{ latest_run.summary_json.runtime.python_version }}</dd>
-                <dt>CLI</dt><dd>{{ latest_run.summary_json.runtime.cli_version|default:"Unavailable" }}</dd>
-                <dt>SDK</dt><dd>{{ latest_run.summary_json.runtime.sdk_version|default:"Not installed" }}</dd>
+                <dt>CLI</dt><dd>{{ latest_run.summary_json.runtime.cli_version|ai_display_label|default:"Unavailable" }}</dd>
+                <dt>SDK</dt><dd>{{ latest_run.summary_json.runtime.sdk_version|ai_display_label|default:"Not installed" }}</dd>
                 <dt>Application database</dt><dd>{{ latest_run.summary_json.database_engine }}</dd>
                 <dt>M360 Chatbot</dt><dd>{{ latest_run.summary_json.chatbot_flag }}</dd>
-                <dt>Codex Admin</dt><dd>{{ latest_run.summary_json.admin_flag }}</dd>
+                <dt>M360 AI Admin</dt><dd>{{ latest_run.summary_json.admin_flag }}</dd>
                 <dt>Queued runs</dt><dd>{{ latest_run.summary_json.queue.queued }}</dd>
                 <dt>Active runs</dt><dd>{{ latest_run.summary_json.queue.running }}</dd>
                 <dt>Timeouts</dt><dd>{{ latest_run.summary_json.queue.timed_out }}</dd>
