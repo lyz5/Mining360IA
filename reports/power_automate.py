@@ -37,6 +37,7 @@ FUEL_DATASET_NAMES = {
     "fuel monitoring report v1",
     "fuel monitoring v1",
 }
+CONNECTIVITY_DATASET_NAMES = {"neemba monthly report_new", "mine monthly report - neembers"}
 
 
 def _uses_aftermarket_flow(dataset_name: str) -> bool:
@@ -55,7 +56,10 @@ def get_flow_url(dataset_name: str = "") -> str:
     aftermarket = _uses_aftermarket_flow(dataset_name)
     logistics = _uses_logistics_flow(dataset_name)
     fuel = _uses_fuel_flow(dataset_name)
-    if fuel:
+    if str(dataset_name or "").strip().casefold() in CONNECTIVITY_DATASET_NAMES:
+        config_key = "connectivity_dax_flow_url"
+        environment_key = "POWER_AUTOMATE_CONNECTIVITY_DAX_FLOW_URL"
+    elif fuel:
         config_key = "fuel_dax_flow_url"
         environment_key = "POWER_AUTOMATE_FUEL_DAX_FLOW_URL"
     elif logistics:
@@ -84,6 +88,8 @@ def execute_dax_via_flow(payload: dict) -> dict:
     dataset_name = str(payload.get("datasetName") or "").strip()
     flow_url = get_flow_url(dataset_name)
     if not flow_url:
+        if str(dataset_name or "").strip().casefold() in CONNECTIVITY_DATASET_NAMES:
+            raise RuntimeError("inspectData5 is not configured for Mine Monthly Report - Neembers.")
         if _uses_fuel_flow(dataset_name):
             raise RuntimeError(
                 "inspectData4 is not configured for Fuel Monitoring Report V1. "

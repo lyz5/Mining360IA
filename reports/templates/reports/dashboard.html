@@ -1,4 +1,4 @@
-{% load static %}
+{% load static excellence_navigation_tags %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,8 +10,10 @@
     <title>Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
     {% if availability_command_center_enabled %}
-    <link rel="stylesheet" href="{% static 'reports/homepage_command_center.css' %}?v=20260919-overview-spinner">
+    <link rel="stylesheet" href="{% static 'reports/homepage_command_center.css' %}?v=20261001-prefix-1">
+    <link rel="stylesheet" href="{% static 'reports/connectivity_executive.css' %}?v=20261001-executive-prefix-1">
     {% endif %}
+    <link rel="stylesheet" href="{% static 'reports/dashboard_visual_copy.css' %}?v=20261001-copy-all">
 </head>
 <body{% if availability_command_center_enabled %} class="availability-home-body"{% endif %}>
     {% include "reports/includes/app_nav.html" %}
@@ -39,7 +41,7 @@
             </div>
             <header class="command-header">
                 <div class="command-header__identity">
-                    <p class="command-kicker">Mining 360</p>
+                    <p class="command-kicker">Mining 360<span class="connectivity-eyebrow"> / Excellence Center</span></p>
                     <h1 data-center-title>Fleet Availability Excellence Center</h1>
                     <p data-center-subtitle>Immediate, intelligent insight into fleet availability.</p>
                 </div>
@@ -58,11 +60,15 @@
                 <label class="control-group metric-group">
                     <span>Metric</span>
                     <select data-metric-selector aria-label="Fleet performance metric">
+                        <optgroup label="Available now">
                         <option value="availability">Availability</option>
                         <option value="mtbs">MTBS</option>
                         <option value="mtbf">MTBF</option>
                         <option value="mttr">MTTR</option>
                         <option value="fuel">Fuel</option>
+                        <option value="connectivity">Connectivity</option>
+                        </optgroup>
+                        {% excellence_roadmap %}
                     </select>
                 </label>
                 <div class="control-group period-group" role="group" aria-labelledby="period-control-label">
@@ -73,23 +79,17 @@
                     </div>
                 </div>
                 <div class="context-controls" data-context-controls>
-                    <label class="control-group minesite-group" data-filter-field="minesite">
-                        <span>MineSite</span>
-                        <select data-filter="minesite" aria-label="MineSite"><option value="">All MineSites</option></select>
-                    </label>
-                    <label class="control-group model-group" data-filter-field="model">
-                        <span>Model</span>
-                        <select data-filter="model" aria-label="Model"><option value="">All models</option></select>
-                    </label>
-                    <label class="control-group equipment-group" data-filter-field="equipment">
-                        <span>Equipment</span>
-                        <select data-filter="equipment" aria-label="Equipment"><option value="">All equipment</option></select>
-                    </label>
+                    {% include "reports/includes/excellence_multiselect.html" with code="minesite" label="MineSite" all_label="All Focus MineSites" %}
+                    {% include "reports/includes/excellence_multiselect.html" with code="model" label="Model" all_label="All models" %}
+                    {% include "reports/includes/excellence_multiselect.html" with code="prefix" label="Prefix" all_label="All prefixes" %}
+                    {% include "reports/includes/excellence_multiselect.html" with code="equipment" label="Equipment" all_label="All equipment" %}
                     <button type="button" class="reset-filters reset-group" data-reset-filters>Reset filters</button>
                 </div>
             </nav>
 
             <div class="analysis-breadcrumb" data-breadcrumb aria-label="Analysis path"></div>
+
+            {% include "reports/includes/connectivity_overview.html" %}
 
             <section class="fuel-workspace" data-fuel-workspace data-export-visual="fuel-consumption" data-export-ready="false" hidden aria-labelledby="fuel-workspace-title">
                 <article class="fuel-kpi-panel">
@@ -132,11 +132,15 @@
                         </div>
                         <strong class="fuel-scope-chip" data-fuel-scope>All MineSites</strong>
                     </header>
-                    <div class="fuel-zone-labels" aria-hidden="true">
-                        <div class="is-low"><strong>Low</strong><span>&lt; 40 L/h</span><small>Efficient operation</small></div>
-                        <div class="is-normal"><strong>Normal</strong><span>40 - 80 L/h</span><small>Expected range</small></div>
-                        <div class="is-high"><strong>High</strong><span>80 - 120 L/h</span><small>Monitor closely</small></div>
-                        <div class="is-critical"><strong>Very High</strong><span>&gt; 120 L/h</span><small>Investigate</small></div>
+                    <div class="fuel-reference-controls">
+                        <label for="fuel-reference-model">Model reference</label>
+                        <select id="fuel-reference-model" data-fuel-reference-model></select>
+                        <p data-fuel-reference-note>Choose an exact model to show its reference values.</p>
+                    </div>
+                    <div class="fuel-zone-labels">
+                        <div class="is-low"><strong>Low</strong><span data-fuel-reference-low>--</span></div>
+                        <div class="is-normal"><strong>Medium</strong><span data-fuel-reference-medium>--</span></div>
+                        <div class="is-high"><strong>High</strong><span data-fuel-reference-high>--</span></div>
                     </div>
                     <div class="fuel-chart" data-fuel-chart role="img" aria-label="Fuel consumption distribution loading"></div>
                     <div class="fuel-statistics" data-fuel-statistics>
@@ -286,8 +290,8 @@
                 <button type="button" data-retry>Retry</button>
             </section>
         </main>
-        <script src="{% static 'reports/visual_export.js' %}?v=20260922-direct-refresh" defer></script>
-        <script src="{% static 'reports/homepage_command_center.js' %}?v=20260922-direct-refresh" defer></script>
+        <script src="{% static 'reports/visual_export.js' %}?v=20261001-copy-all" defer></script>
+        <script src="{% static 'reports/homepage_command_center.js' %}?v=20261001-prefix-1" defer></script>
     {% else %}
         <main class="app-shell">
             <header class="topbar">
@@ -322,5 +326,6 @@
             </section>
         </main>
     {% endif %}
+<script src="{% static 'reports/dashboard_visual_copy.js' %}?v=20261001-copy-all" defer></script>
 </body>
 </html>

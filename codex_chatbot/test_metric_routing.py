@@ -45,6 +45,6 @@ class MetricRoutingTests(TestCase):
     @patch('reports.dashboard_snapshots.enabled',return_value=True)
     def test_central_analytical_provider_is_used(self,enabled,snapshot):
         from .tools.unified import performance_payload
-        params={'metric':'mtbf','minesite':'Fekola'}
+        params={'metric':'mtbf','minesite':'Fekola','period':'custom:2026-01-01:2026-08-31'}
         self.assertEqual(performance_payload(self.user,params)['metric']['raw_value'],12)
         snapshot.assert_called_once_with(self.user,params)

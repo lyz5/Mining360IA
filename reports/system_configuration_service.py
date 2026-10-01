@@ -54,6 +54,7 @@ INTEGRATION_SCHEMAS = {
             {"key": "aftermarket_dax_flow_url", "label": "AfterMarket DAX Flow URL (inspectData2)", "type": "password", "secret": True},
             {"key": "logistics_dax_flow_url", "label": "Mine Logistics DAX Flow URL (inspectData3)", "type": "password", "secret": True},
             {"key": "fuel_dax_flow_url", "label": "Fuel Monitoring V1 DAX Flow URL (inspectData4)", "type": "password", "secret": True},
+            {"key": "connectivity_dax_flow_url", "label": "Neembers Connectivity DAX Flow URL (inspectData5)", "type": "password", "secret": True},
             {"key": "timeout_seconds", "label": "Timeout (seconds)", "type": "number", "default": 300},
             {"key": "retry_count", "label": "Retry Count", "type": "number", "default": 1},
         ],
@@ -277,6 +278,7 @@ def ensure_portable_configuration():
                 "aftermarket_dax_flow_url": _environment_or_file("POWER_AUTOMATE_AFTERMARKET_DAX_FLOW_URL", powerbi_file),
                 "logistics_dax_flow_url": _environment_or_file("POWER_AUTOMATE_LOGISTICS_DAX_FLOW_URL", powerbi_file),
                 "fuel_dax_flow_url": _environment_or_file("POWER_AUTOMATE_FUEL_DAX_FLOW_URL", powerbi_file),
+                "connectivity_dax_flow_url": _environment_or_file("POWER_AUTOMATE_CONNECTIVITY_DAX_FLOW_URL", powerbi_file),
             },
         },
         {

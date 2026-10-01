@@ -1,4 +1,6 @@
-{% load static business_mapping_tags codex_access_tags %}
+{% load static business_mapping_tags codex_access_tags platform_role_tags %}
+{% platform_module_access request.user as role_access %}
+{% users_management_access request.user as show_users_management %}
 {% business_mapping_visible request.user as show_business_mapping %}
 {% business_review_visible request.user as show_business_review %}
 {% codex_chatbot_visible request.user as show_codex_chatbot %}
@@ -20,6 +22,7 @@
             <span>Business Overview</span>
         </a>
         {% endif %}
+        {% if role_access.excellence_center %}
         <a href="{% url 'excellence-center' %}"
            class="{% if active_section == 'dashboard' %}active{% endif %}"
            {% if active_section == 'dashboard' %}aria-current="page"{% endif %}
@@ -32,7 +35,8 @@
             </svg>
             <span>Excellence Center</span>
         </a>
-        {% if request.user.is_staff or request.user.is_superuser or request.user.platformuser.is_platform_admin or request.user.platformuser.can_access_reporting %}
+        {% endif %}
+        {% if role_access.reporting %}
         <a href="{% url 'reporting' %}" class="{% if active_section == 'reporting' %}active{% endif %}">
             <svg class="nav-icon nav-icon-reporting" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M4 19h16" />
@@ -52,6 +56,7 @@
             <span>M360 Chatbot</span>
         </a>
         {% endif %}
+        {% if role_access.resources %}
         <a href="{% url 'resources' %}" class="{% if active_section == 'resources' %}active{% endif %}">
             <svg class="nav-icon nav-icon-resources" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M6 4.5h10l2 2V19H6z" />
@@ -62,7 +67,8 @@
             </svg>
             <span>Resources</span>
         </a>
-        {% if request.user.is_staff or request.user.is_superuser or request.user.platformuser.is_platform_admin or request.user.platformuser.can_access_data or request.user.platformuser.can_access_sources or perms.reports.review_reconciliation %}
+        {% endif %}
+        {% if show_users_management or role_access.data or role_access.sources or perms.reports.review_reconciliation %}
         <div class="nav-group {% if active_section == 'users' or active_section == 'data' or active_section == 'business-mapping' or active_section == 'invoice-tracking' or active_section == 'sources' or active_section == 'ia-config' or active_section == 'ai-agents' or active_section == 'knowledge-base' or active_section == 'system-config' or active_section == 'reporting-config' or active_section == 'deployment' or active_section == 'codex-admin' %}active{% else %}collapsed{% endif %}" data-nav-group="config">
             <button type="button" class="nav-group-label js-toggle-config-menu" aria-expanded="{% if active_section == 'users' or active_section == 'data' or active_section == 'business-mapping' or active_section == 'invoice-tracking' or active_section == 'sources' or active_section == 'ia-config' or active_section == 'ai-agents' or active_section == 'knowledge-base' or active_section == 'system-config' or active_section == 'reporting-config' or active_section == 'deployment' or active_section == 'codex-admin' %}true{% else %}false{% endif %}" aria-controls="config-submenu">
                 <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -75,7 +81,7 @@
                 </svg>
             </button>
             <div class="nav-submenu" id="config-submenu">
-                {% if request.user.is_staff or request.user.is_superuser or request.user.platformuser.is_platform_admin %}
+                {% if show_users_management %}
                 <a href="{% url 'users-manage' %}" class="{% if active_section == 'users' %}active{% endif %}" {% if active_section == 'users' %}aria-current="page"{% endif %}>
                     <span>Users</span>
                 </a>

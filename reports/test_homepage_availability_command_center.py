@@ -423,8 +423,9 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
         self.assertEqual(result["meta"]["measure"], "[Mean LPH]")
         self.assertEqual(result["decision_support"]["lowest_observed"][0]["entity"], "EQ-001")
         self.assertEqual(result["decision_support"]["highest_observed"][0]["entity"], "EQ-004")
-        self.assertEqual(result["decision_support"]["very_high_count"], 1)
-        self.assertIn("above 120 L/h", result["decision_support"]["takeaway"])
+        self.assertNotIn("very_high_count", result["decision_support"])
+        self.assertIn("not efficiency limits", result["decision_support"]["takeaway"])
+        self.assertEqual(len(result["model_references"]["models"]), 13)
 
     @patch.object(HomepageFuelService, "_refresh_metadata", return_value=("2026-09-16 01:30 PM", "Completed"))
     @patch("reports.homepage_fuel_service.execute_dax_via_flow")
@@ -441,12 +442,15 @@ class HomepageAvailabilityCommandCenterTests(TestCase):
     @patch.object(HomepageAvailabilityService, "_refresh_metadata", return_value=("", "Unavailable"))
     @patch("reports.homepage_availability_service.execute_dax_via_flow")
     def test_api_returns_normalized_command_center_contract(self, execute, _refresh):
+        from datetime import date
         execute.return_value = {"firstTableRows": SAMPLE_ROWS}
         self.client.force_login(self.user)
-        response = self.client.get(reverse("homepage-availability-api"))
+        with patch('reports.performance_periods.timezone.localdate', return_value=date(2026, 10, 1)):
+            response = self.client.get(reverse("homepage-availability-api"))
         self.assertEqual(response.status_code, 200)
         payload = response.json()
-        self.assertEqual(payload["context"]["period_code"], "ytd")
+        self.assertEqual(payload["context"]["period_code"], "custom:2026-01-01:2026-09-30")
+        self.assertTrue(payload['context']['ytd_complete_months'])
         self.assertIn("data_quality", payload)
         self.assertIn("available_actions", payload)
 

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from .excellence_filter_values import read_filters, merge_authorized_filters, option_filters, values, compact, prefix_clause, valid_prefix
+
 import hashlib
 import json
 import logging
@@ -51,7 +53,7 @@ class HomepageRequest:
     metric: str
     period: str
     breakdown: str
-    filters: dict[str, str]
+    filters: dict[str, str | list[str]]
     page: int
     page_size: int
     ordering: str
@@ -176,7 +178,7 @@ def _format_hours(value) -> str | None:
 class HomepageAvailabilityService:
     DATASET_NAME = "FPR Global DB + RLS"
     SECTION_CODE = "performance"
-    FILTER_KEYS = ("customer", "minesite", "model", "family", "equipment", "serial_number")
+    FILTER_KEYS = ("customer", "minesite", "model", "family", "prefix", "equipment", "serial_number")
 
     def __init__(self, user=None):
         self.user = user
@@ -300,11 +302,7 @@ class HomepageAvailabilityService:
             raise HomepageAvailabilityError(str(exc), code="invalid_period", status=400) from None
         if breakdown not in VALID_BREAKDOWNS:
             raise HomepageAvailabilityError("Unsupported breakdown.", code="invalid_breakdown", status=400)
-        filters = {
-            key: str(params.get(key) or "").strip()
-            for key in self.FILTER_KEYS
-            if str(params.get(key) or "").strip()
-        }
+        filters = read_filters(params, self.FILTER_KEYS)
         if filters.get('family') and not self.filter_mappings.get('family'):
             raise HomepageAvailabilityError('Family mapping is missing.',code='dimension_mapping_missing',status=400)
         try:
@@ -344,22 +342,17 @@ class HomepageAvailabilityService:
 
     @staticmethod
     def _merge_filters(scope: dict, requested: dict) -> dict:
-        merged = {key: list(value) if isinstance(value, list) else [value] for key, value in scope.items()}
-        for key, value in requested.items():
-            if key in merged:
-                allowed = {str(item).casefold(): str(item) for item in merged[key]}
-                if str(value).casefold() not in allowed:
-                    raise HomepageAvailabilityError(
-                        "You do not have access to the selected scope.",
-                        code="scope_forbidden",
-                        status=403,
-                    )
-            merged[key] = [value]
-        return merged
+        return merge_authorized_filters(scope, requested)
 
     def _filter_clauses(self, filters: dict) -> list[str]:
         clauses = []
         for code, values in filters.items():
+            if code == 'prefix':
+                serial = self.filter_mappings.get('serial_number')
+                if not serial:
+                    raise HomepageAvailabilityError('Serial number mapping is missing.', code='dimension_mapping_missing', status=400)
+                clauses.append(prefix_clause(_dax_column(serial['powerbi_table_name'], serial['powerbi_column_name']), values))
+                continue
             mapping = self.filter_mappings.get(code)
             if not mapping:
                 continue
@@ -394,7 +387,7 @@ class HomepageAvailabilityService:
             )
         return _dax_column(mapping["powerbi_table_name"], mapping["powerbi_column_name"]), []
 
-    def build_dax(self, request: HomepageRequest, merged_filters: dict) -> str:
+    def build_dax(self, request: HomepageRequest, merged_filters: dict, scope=None) -> str:
         measure = str(self.metric["powerbi_measure_name"]).strip()
         mtbs_measure = str(self.mtbs_metric["powerbi_measure_name"]).strip()
         mtbf_measure = str(self.mtbf_metric["powerbi_measure_name"]).strip()
@@ -498,6 +491,14 @@ class HomepageAvailabilityService:
         if request.breakdown in {"model", "equipment"} or "model" in merged_filters:
             filters.append(allowed_model_filter)
         filter_args = (",\n            " + ",\n            ".join(filters)) if filters else ""
+        option_scope = merged_filters if scope is None else scope
+        def dropdown_args(dimension):
+            clauses = [f'TREATAS({{"Yes"}}, {focus_column})', *self._filter_clauses(option_filters(merged_filters, option_scope, dimension))]
+            return ', ' + ', '.join(clauses)
+        site_option_args = dropdown_args('minesite')
+        model_option_args = dropdown_args('model')
+        equipment_option_args = dropdown_args('equipment')
+        prefix_option_args = dropdown_args('prefix')
         latest_filter_args = (", " + ", ".join(filters)) if filters else ""
         if request.period == "ytd":
             start_expression = "DATE(YEAR(__LatestDate), 1, 1)"
@@ -634,7 +635,7 @@ VAR __Breakdown =
     ){search_filter}
 VAR __MineSiteOptions =
     SELECTCOLUMNS(
-        SUMMARIZECOLUMNS({site_column}, __CurrentPeriod{filter_args}),
+        SUMMARIZECOLUMNS({site_column}, __CurrentPeriod{site_option_args}),
         "RowType", "option_minesite",
         "Entity", {site_column},
         "SortKey", "",
@@ -655,7 +656,7 @@ VAR __MineSiteOptions =
 VAR __ModelOptionsBase =
     SUMMARIZECOLUMNS(
         {model_column},
-        __CurrentPeriod{filter_args},
+        __CurrentPeriod{model_option_args},
         {allowed_model_filter},
         "OptionAvailability", {selected_measure}
     )
@@ -679,10 +680,37 @@ VAR __ModelOptions =
         "LatestDate", BLANK(),
         "CustomerType", BLANK(){extra_blank}
     )
+VAR __PrefixOptionsBase =
+    SUMMARIZECOLUMNS(
+        {serial_column},
+        __CurrentPeriod{prefix_option_args},
+        {allowed_model_filter},
+        "OptionAvailability", {selected_measure}
+    )
+VAR __PrefixOptions =
+    SELECTCOLUMNS(
+        FILTER(__PrefixOptionsBase, NOT ISBLANK([OptionAvailability]) && LEN(TRIM({serial_column})) >= 3),
+        "RowType", "option_prefix",
+        "Entity", LEFT(UPPER(TRIM({serial_column})), 3),
+        "SortKey", "",
+        "Availability", BLANK(),
+        "PreviousAvailability", BLANK(),
+        "EquipmentCount", BLANK(),
+        "MineSiteCount", BLANK(),
+        "DowntimeHours", BLANK(),
+        "MTBS", BLANK(),
+        "PreviousMTBS", BLANK(),
+        "MTBF", BLANK(),
+        "PreviousMTBF", BLANK(),
+        "MTTR", BLANK(),
+        "PreviousMTTR", BLANK(),
+        "LatestDate", BLANK(),
+        "CustomerType", BLANK(){extra_blank}
+    )
 VAR __EquipmentOptionsBase =
     SUMMARIZECOLUMNS(
         {equipment_column},
-        __CurrentPeriod{filter_args},
+        __CurrentPeriod{equipment_option_args},
         {allowed_model_filter},
         "OptionAvailability", {selected_measure}
     )
@@ -707,7 +735,7 @@ VAR __EquipmentOptions =
         "CustomerType", BLANK(){extra_blank}
     )
 EVALUATE
-UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions, __EquipmentOptions)
+UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions, DISTINCT(__PrefixOptions), __EquipmentOptions)
 """.strip()
         template = get_dax_template(self.SECTION_CODE, "HOME_AVAILABILITY_COMMAND_CENTER")
         if not template:
@@ -746,7 +774,7 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
             "config": getattr(self.config, "updated_at", None).isoformat() if getattr(self.config, "updated_at", None) else "default",
         }
         digest = hashlib.sha256(json.dumps(payload, sort_keys=True, default=str).encode("utf-8")).hexdigest()
-        return f"homepage:availability:v6:{digest}"
+        return f"homepage:availability:v8-prefix:{digest}"
 
     def _refresh_metadata(self) -> tuple[str, str]:
         try:
@@ -853,7 +881,7 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
         )
         trend = []
         breakdown = []
-        filter_options = {"minesite": [], "model": [], "equipment": []}
+        filter_options = {"minesite": [], "model": [], "prefix": [], "equipment": []}
         for row in rows:
             row_type = str(_row_value(row, "RowType") or "").casefold()
             item_value = _as_float(_row_value(row, metric_column))
@@ -901,9 +929,11 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
                     "model": str(_row_value(row, "Extra1") or ""),
                     "minesite": str(_row_value(row, "Extra2") or ""),
                 })
-            elif row_type in {"option_minesite", "option_model", "option_equipment"}:
+            elif row_type in {"option_minesite", "option_model", "option_prefix", "option_equipment"}:
                 value_label = str(_row_value(row, "Entity") or "").strip()
                 option_code = row_type.removeprefix("option_")
+                if option_code == "prefix" and not valid_prefix(value_label):
+                    continue
                 if value_label and value_label not in filter_options[option_code]:
                     filter_options[option_code].append(value_label)
         for values in filter_options.values():
@@ -1099,7 +1129,7 @@ UNION(__Summary, __Trend, {breakdown_result}, __MineSiteOptions, __ModelOptions,
             payload["meta"] = {**(payload.get("meta") or {}), "cached": True}
             return payload
         started = time.monotonic()
-        dax = self.build_dax(request, merged_filters)
+        dax = self.build_dax(request, merged_filters, scope)
         rows, _ = self._execute(dax, merged_filters, rls_role, effective_user)
         elapsed_ms = int((time.monotonic() - started) * 1000)
         payload = self._normalize(rows, request, cached=False, elapsed_ms=elapsed_ms)

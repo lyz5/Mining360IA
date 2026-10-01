@@ -57,13 +57,18 @@ class CountryAccountService:
     @classmethod
     def _singleton_name(cls, account, country):
         base = str(account.canonical_account_name or account.canonical_account_code).strip()
-        normalized = normalize_business_name(base)
-        duplicate = CountryAccount.objects.filter(
-            active=True,
-            country=country,
-            normalized_country_account_name=normalized,
-        ).exists()
-        return f"{base} · {account.canonical_account_code}" if duplicate else base
+        name = base[:500]
+        sequence = 0
+        while CountryAccount.objects.filter(
+            active=True, country=country,
+            normalized_country_account_name=normalize_business_name(name),
+        ).exists():
+            sequence += 1
+            suffix = f" · {account.canonical_account_code}"
+            if sequence > 1:
+                suffix += f" · {sequence}"
+            name = base[:max(0, 500 - len(suffix))] + suffix
+        return name
 
     @classmethod
     def ensure_account_group(cls, account, actor=None, inherited_key_account_id=None):

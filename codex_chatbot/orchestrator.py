@@ -22,6 +22,9 @@ from .tools.fleet_inventory import fleet_analysis_from_question
 from .tools.performance import availability_analysis_from_question
 from .tools.revenue import revenue_analysis_from_question
 from .tools.unified import unified_analysis
+from .tools.performance_followup import needs_performance_context, prior_performance_context
+from .tools.quick_kpi import quick_kpi_answer
+from .response_language import run_language, question_language, governed_rows_answer
 
 
 TERMINAL_RUN_STATUSES = {
@@ -57,7 +60,7 @@ def _deterministic_answer(evidence: dict) -> str:
     kind = evidence.get("kind")
     english = evidence.get("language") == "en"
     if kind == "governed_answer":
-        return evidence["text"]
+        return governed_rows_answer(evidence)
     if kind == "revenue_access_restricted":
         if english:
             return "You do not have permission to view Business Overview financial data."
@@ -72,16 +75,31 @@ def _deterministic_answer(evidence: dict) -> str:
             return f"Several published customers match this request. Please specify one: {choices}."
         return f"Le périmètre Revenue est ambigu. Précisez l’un des groupes publiés suivants : {choices}."
     if kind == "availability_access_restricted":
+        if english:
+            return "You do not have permission to view Fleet performance data."
         return "Vous n’avez pas l’autorisation de consulter les données de performance Fleet."
     if kind == "availability_unavailable":
+        if english:
+            return "Verified physical availability data is temporarily unavailable for this request."
         return "Les données gouvernées de disponibilité physique sont temporairement indisponibles pour cette demande."
     if kind == "availability_scope_ambiguous":
         choices = ", ".join(evidence.get("candidates") or [])
+        if english:
+            return f"The MineSite name is ambiguous. Specify one of these sites: {choices}."
         return f"Le nom de MineSite est ambigu. Précisez l’un des sites suivants : {choices}."
     if kind == "availability_summary":
         context = evidence["context"]
         availability = evidence["availability"]
         filters = context.get("filters") or {}
+        if english:
+            scope = ' / '.join(str(v) for v in filters.values()) or 'the selected scope'
+            if availability.get('raw_value') is None:
+                return f"Physical availability is unavailable for {scope} over the selected period."
+            delta = (availability.get('comparison') or {}).get('delta_points')
+            comparison = '' if delta is None else f" Change: {delta:+.2f} points versus " + ('the same period last year.' if context.get('period_code') == 'ytd' else 'the previous rolling 12 months.')
+            return (f"Physical availability for {scope}: {availability.get('formatted_value')} "
+                    f"({context.get('start_date')} / {context.get('end_date')}).{comparison} "
+                    f"Official measure: {evidence.get('source_measure') or 'Physical Availability'}.")
         model = filters.get("model")
         site = filters.get("minesite")
         if model and site:
@@ -171,6 +189,12 @@ def _compose_with_codex(
     native_thread_id: str,
     cancellation_requested=None,
 ) -> tuple[str, str, str]:
+    quick_answer = quick_kpi_answer(question, evidence)
+    if quick_answer is not None:
+        return quick_answer, native_thread_id, ''
+    if evidence.get('fixed_top_downtime_count') == 10:
+        # Keep the user's required ten-row ranking exact, including in fallback.
+        return _deterministic_answer(evidence), native_thread_id, ''
     if not getattr(settings, "CODEX_CHATBOT_APP_SERVER_ENABLED", False):
         return _deterministic_answer(evidence), native_thread_id, ""
     cli_path = _resolve_codex_cli_path()
@@ -191,7 +215,7 @@ def _compose_with_codex(
         f"{question}\n\n"
         "Preuve métier vérifiée (JSON):\n"
         f"{json.dumps(prompt_evidence, ensure_ascii=False)}\n\n"
-        "Reply concisely in the language of the user question; use English by default. Cite the source table and never invent figures."
+        f"Reply entirely in {'French' if question_language(question, evidence.get('language') or 'en') == 'fr' else 'English'}, including headings and caveats. Preserve proper names, official measure identifiers and units. Cite the source table and never invent figures."
         " For KPI requests, answer the requested metric, site/model and period using this turn's evidence."
         " Do not substitute or enumerate a fleet inventory, or reuse figures from an earlier question."
         " Use the requested Excellence tables and scalar evidence; disclose unavailable_sections and truncated tables."
@@ -244,6 +268,10 @@ def _compose_general_with_codex(
     # runtime may need to replace a thread that it can no longer resume.
     messages = list(conversation.messages.exclude(role="SYSTEM").order_by("-created_at").values("role", "content")[:20])
     messages.reverse()
+    response_language = question_language(question, next((
+        question_language(item['content'], None) for item in reversed(messages)
+        if item['role'] == 'USER' and question_language(item['content'], None)
+    ), 'en'))
     history = "\n".join(f"{item['role']}: {item['content']}" for item in messages)[-16000:]
     if web_enabled:
         # Never carry verified internal financial evidence into a web-enabled
@@ -270,7 +298,7 @@ def _compose_general_with_codex(
         f"{history or 'Le thread Codex contient déjà le contexte précédent.'}\n\n"
         "Nouveau message utilisateur:\n"
         f"{question}\n\n"
-        "Reply in the user's language. Do not claim access to internal Mining360 data in this mode."
+        f"Reply entirely in {'French' if response_language == 'fr' else 'English'}. Do not claim access to internal Mining360 data in this mode."
     )
     result = run_grounded_turn(
         cli_path=cli_path,
@@ -331,6 +359,7 @@ def execute_persisted_run(run: CodexRun) -> dict:
     conversation = run.conversation
     user = run.user
     question = run.question
+    language = run_language(run)
     if run.status == RunStatus.CANCEL_REQUESTED:
         run.status = RunStatus.CANCELLED
         run.completed_at = timezone.now()
@@ -343,13 +372,19 @@ def execute_persisted_run(run: CodexRun) -> dict:
         run.started_at = timezone.now()
     run.save(update_fields=["status", "started_at"])
     _set_progress(run, 10, "Resolving the authorized business request...")
-    evidence = unified_analysis(question, user=user)
+    if needs_performance_context(question):
+        evidence = unified_analysis(question, user=user, inherited_context=prior_performance_context(run))
+    else:
+        evidence = unified_analysis(question, user=user)
     if evidence is None:
         evidence = revenue_analysis_from_question(question, user=user)
     if evidence is None:
         evidence = availability_analysis_from_question(question, user=user)
     if evidence is None:
         evidence = fleet_analysis_from_question(question, user=user)
+
+    if evidence is not None:
+        evidence['language'] = language
 
     restricted_kinds = {"revenue_access_restricted", "availability_access_restricted"}
     if evidence is not None and evidence.get("kind") not in restricted_kinds and evidence.get("answer_status") != "ACCESS_RESTRICTED":
@@ -416,14 +451,15 @@ def execute_persisted_run(run: CodexRun) -> dict:
             run.save()
             return _result_payload(run, None, "cancelled")
         except AppServerTurnTimedOut as exc:
-            answer = "M360 AI took too long to respond. Please try again shortly."
+            answer = ("M360 AI a mis trop de temps à répondre. Réessayez dans un instant." if language == 'fr'
+                      else "M360 AI took too long to respond. Please try again shortly.")
             answer_status = AnswerStatus.TEMPORARILY_UNAVAILABLE
             run.status = RunStatus.TIMED_OUT
             run.error_code = "CODEX_GENERAL_TIMEOUT"
             run.error_message = str(exc)
             runtime_mode = "codex_app_server"
         except AppServerTurnError as exc:
-            answer = "M360 AI is temporarily unavailable."
+            answer = "M360 AI est temporairement indisponible." if language == 'fr' else "M360 AI is temporarily unavailable."
             answer_status = AnswerStatus.TEMPORARILY_UNAVAILABLE
             run.status = RunStatus.PARTIALLY_SUCCEEDED
             run.error_code = "CODEX_GENERAL_UNAVAILABLE"
@@ -433,6 +469,9 @@ def execute_persisted_run(run: CodexRun) -> dict:
         answer = (
             "Cette question demande des données Mining 360 qui ne sont pas encore raccordées à un outil "
             "gouverné. Précisez le périmètre ou utilisez une capacité disponible."
+        ) if language == 'fr' else (
+            "This question requires Mining 360 data that is not yet connected to a governed tool. "
+            "Specify the scope or use an available capability."
         )
         answer_status = AnswerStatus.NEEDS_CLARIFICATION
         run.status = RunStatus.SUCCEEDED
@@ -462,7 +501,11 @@ def execute_persisted_run(run: CodexRun) -> dict:
         runtime_mode = "governed_tools"
     else:
         try:
-            _set_progress(run, 55, "Preparing an M360 AI summary from verified evidence...")
+            progress_label = (
+                "Preparing verified KPI values..." if quick_kpi_answer(question, evidence) is not None
+                else "Preparing an M360 AI summary from verified evidence..."
+            )
+            _set_progress(run, 55, progress_label)
             answer, thread_id, turn_id = _compose_with_codex(
                 question,
                 evidence,

@@ -1,5 +1,6 @@
 """Validated date windows shared by governed performance queries."""
-from datetime import date
+from datetime import date, timedelta
+from django.utils import timezone
 
 
 def bounds(period):
@@ -34,3 +35,26 @@ def context(period, latest, default_start):
     return {'period_label': 'Year to Date' if period == 'ytd' else 'Last 12 Months',
             'start_date': default_start.isoformat() if default_start else None,
             'end_date': latest.isoformat() if latest else None}
+
+
+def completed_ytd_period(period, today=None):
+    """Current-year YTD includes only calendar months already ended."""
+    if period != 'ytd':
+        return period
+    today = today or timezone.localdate()
+    end = today.replace(day=1) - timedelta(days=1)
+    if end.year != today.year:
+        raise ValueError('Aucun mois terminé dans l’année en cours. Précisez une autre période.')
+    return f'custom:{today.year}-01-01:{end.isoformat()}'
+
+
+def label_completed_ytd(payload, requested_period, resolved_period):
+    if requested_period != 'ytd':
+        return payload
+    if (payload.get('context') or {}).get('period_code') != resolved_period:
+        from reports.homepage_availability_service import HomepageAvailabilityError
+        raise HomepageAvailabilityError('The source did not return the completed-month YTD range.', code='ytd_period_mismatch')
+    return {**payload, 'context': {**payload['context'],
+        'period_label': 'YTD — mois terminés', 'ytd_complete_months': True}}
+
+

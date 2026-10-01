@@ -71,6 +71,10 @@ class Mining360Controller:
 
     def start(self) -> tuple[bool, str]:
         with self._lock:
+            from desktop.database_preflight import database_start_error
+            database_error = database_start_error(self.root)
+            if database_error:
+                return False, database_error
             upstream_healthy = self._http_health(self.upstream_url).healthy
             public_healthy = self._http_health(self.public_url).healthy
             if upstream_healthy:

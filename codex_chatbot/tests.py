@@ -476,6 +476,7 @@ class CodexChatbotVerticalPathTests(TestCase):
         self.assertEqual(result["coverage_percent"]["serial_number"], 100.0)
         self.assertEqual(result["coverage_percent"]["equipment_family"], 100.0)
 
+    @patch('codex_chatbot.tools.performance_request.timezone.localdate', new=lambda: date(2026,9,29))
     @patch("codex_chatbot.tools.performance.HomepageAvailabilityService")
     def test_availability_question_uses_governed_performance_service(self, service_class):
         service = service_class.return_value
@@ -485,10 +486,10 @@ class CodexChatbotVerticalPathTests(TestCase):
             "context": {
                 "metric_code": "availability",
                 "metric_label": "Physical Availability",
-                "period_code": "ytd",
+                "period_code": "custom:2026-01-01:2026-08-31",
                 "period_label": "Year to Date",
                 "start_date": "2026-01-01",
-                "end_date": "2026-09-30",
+                "end_date": "2026-08-31",
                 "breakdown": "overall",
                 "filters": {"model": "777", "minesite": "Siguiri"},
             },
@@ -514,7 +515,7 @@ class CodexChatbotVerticalPathTests(TestCase):
         result = payload["evidence"][0]["value"]
         self.assertEqual(result["kind"], "availability_summary")
         self.assertEqual(result["context"]["filters"], {"model": "777", "minesite": "Siguiri"})
-        self.assertEqual(result["context"]["period_code"], "ytd")
+        self.assertEqual(result["context"]["period_code"], "custom:2026-01-01:2026-08-31")
         self.assertEqual(result["availability"]["formatted_value"], "84.53%")
         self.assertEqual(result["source_measure"], "[Avail Per Equip]")
         self.assertFalse(result["presentation"]["show_trend"])
@@ -523,10 +524,11 @@ class CodexChatbotVerticalPathTests(TestCase):
         self.assertIn("modèle 777 à Siguiri", payload["message"]["content"])
         self.assertEqual(CodexRun.objects.get().tool_code, "fleet_physical_availability")
         service.request_from_params.assert_called_once_with({
-            "period": "ytd", "breakdown": "overall", "model": "777", "minesite": "Siguiri",
+            "period": "custom:2026-01-01:2026-08-31", "breakdown": "overall", "model": "777", "minesite": "Siguiri",
         })
         service.get.assert_called_once()
 
+    @patch('codex_chatbot.tools.performance_request.timezone.localdate', new=lambda: date(2026,9,29))
     @patch("codex_chatbot.tools.performance.HomepageAvailabilityService")
     def test_validated_minesite_alias_resolves_to_canonical_site(self, service_class):
         site = MineSite.objects.create(
@@ -546,7 +548,7 @@ class CodexChatbotVerticalPathTests(TestCase):
         service.metric = {"powerbi_measure_name": "[Avail Per Equip]"}
         service.request_from_params.side_effect = lambda params: params
         service.get.return_value = {
-            "context": {"period_code": "ytd", "period_label": "Year to Date", "filters": {"minesite": "Sangaredi/CBG"}},
+            "context": {"period_code": "custom:2026-01-01:2026-08-31", "period_label": "Year to Date", "filters": {"minesite": "Sangaredi/CBG"}},
             "availability": {"raw_value": 0.91, "formatted_value": "91.00%"},
             "summary": {},
         }
@@ -561,7 +563,7 @@ class CodexChatbotVerticalPathTests(TestCase):
         self.assertEqual(result["minesite_resolution"]["canonical_name"], "Sangaredi/CBG")
         self.assertEqual(result["minesite_resolution"]["match_method"], "validated_alias")
         service.request_from_params.assert_called_once_with({
-            "period": "ytd", "breakdown": "overall", "minesite": "Sangaredi/CBG",
+            "period": "custom:2026-01-01:2026-08-31", "breakdown": "overall", "minesite": "Sangaredi/CBG",
         })
 
     @patch("codex_chatbot.tools.performance.HomepageAvailabilityService")

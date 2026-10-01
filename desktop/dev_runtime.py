@@ -36,6 +36,10 @@ def main():
 
 
 def start(args):
+    from desktop.database_preflight import database_start_error
+    database_error = database_start_error(ROOT)
+    if database_error:
+        raise SystemExit(database_error)
     from desktop.control_core import Mining360Controller
     controller = Mining360Controller()
     if controller._listener_pids({args.upstream_port}):

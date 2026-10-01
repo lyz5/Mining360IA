@@ -21,7 +21,7 @@
       headers: {'Content-Type': 'application/json', 'X-CSRFToken': csrf},
       body: action === 'delete' ? undefined : JSON.stringify(action === 'rename' ? {title} : {status: action === 'archive' ? 'ARCHIVED' : 'ACTIVE'}),
     });
-    const payload = await response.json();
+    const payload = await window.m360ReadJson(response);
     if (!response.ok) throw new Error(payload.error || 'Unable to update the conversation.');
     if (action === 'rename') {
       row.dataset.title = payload.conversation.title;

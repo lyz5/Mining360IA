@@ -9,6 +9,7 @@ from codex_integration.contracts import RunStatus
 
 from .models import CodexConversation, CodexMessage, CodexRun
 from .orchestrator import TERMINAL_RUN_STATUSES, _deterministic_answer, execute_persisted_run
+from .db_retry import retry_queue_transaction
 
 
 ACTIVE_RUN_STATUSES = {
@@ -22,6 +23,7 @@ class RunConflictError(RuntimeError):
     pass
 
 
+@retry_queue_transaction
 def enqueue_run(*, user, question: str, request_id: str, conversation=None) -> tuple[CodexRun, bool]:
     question = (question or "").strip()
     if not question:
@@ -114,7 +116,8 @@ def request_cancellation(run: CodexRun) -> CodexRun:
     return run
 
 
-def process_next_run() -> CodexRun | None:
+@retry_queue_transaction
+def _claim_next_run() -> CodexRun | None:
     with transaction.atomic():
         run = (
             CodexRun.objects.select_for_update()
@@ -130,6 +133,13 @@ def process_next_run() -> CodexRun | None:
         run.progress_label = "Processing started."
         run.heartbeat_at = timezone.now()
         run.save(update_fields=["status", "started_at", "progress_label", "heartbeat_at"])
+    return run
+
+
+def process_next_run() -> CodexRun | None:
+    run = _claim_next_run()
+    if run is None:
+        return None
 
     try:
         execute_persisted_run(run)

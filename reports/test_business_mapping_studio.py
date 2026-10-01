@@ -623,8 +623,9 @@ class BusinessMappingStudioTests(TestCase):
                 [{"customer": "Fekola Billing", "minesite": "Fekola", "equipment": "DT002", "serial_number": "SN002", "model": "777"}],
                 [],
             )):
-                service.process(second_run)
-        self.assertEqual(FleetSourceSnapshot.objects.count(), 2)
+                with self.assertRaises(BusinessMappingSourceError):
+                    service.process(second_run)
+        self.assertEqual(FleetSourceSnapshot.objects.count(), 1)
         self.assertEqual(FleetSourceSnapshot.objects.filter(active=True).count(), 1)
         self.assertTrue(SourceAccountRecord.objects.filter(source_system="MiningAccounts", source_record_id="C001", active=True).exists())
         self.assertEqual(first_run.source_context_json["revenue_period_year"], 2026)
@@ -636,12 +637,16 @@ class BusinessMappingStudioTests(TestCase):
         self.assertEqual(RevenueSourceSnapshot.objects.count(), 2)
         self.assertEqual(RevenueSourceSnapshot.objects.get(division="MI").revenue_ytd_eur, 1000)
         self.assertEqual(RevenueSourceSnapshot.objects.get(division="TP").revenue_ytd_eur, 9000)
-        self.assertEqual(EquipmentFleetAnalysis.objects.count(), 2)
+        self.assertEqual(EquipmentFleetAnalysis.objects.count(), 1)
         self.assertEqual(EquipmentFleetAnalysis.objects.filter(active=True).count(), 1)
         equipment = EquipmentFleetAnalysis.objects.filter(active=True).get()
         self.assertEqual(equipment.source_table, "EquipmentList_MiningProd")
         self.assertEqual(equipment.equipment_id, "101")
         self.assertEqual(str(equipment.smu), "1234.50")
+
+        self.assertEqual(RevenueSourceSnapshot.objects.filter(active=True).count(), 2)
+        second_run.refresh_from_db()
+        self.assertEqual(second_run.status, "Failed")
 
     def test_revenue_queries_are_partitioned_by_governed_division(self):
         service = BusinessMappingSourceSynchronizationService(self.user)
@@ -668,7 +673,7 @@ class BusinessMappingStudioTests(TestCase):
         service._commit_snapshot(
             run,
             account_rows=[{"source_record_id": "23-12278", "source_account_name": "CBG CONTRAT MARC", "country_code": "US"}],
-            fleet_rows=[], revenue_rows=[], equipment_rows=[], equipment_semantic_model_id="",
+            fleet_rows=[], revenue_rows=[{"source_account_code": "23-12278", "division": "MI", "business_date": 20260925, "period_year": 2026, "lob": "PARTS", "revenue_eur": 100}], equipment_rows=[], equipment_semantic_model_id="",
         )
         record = SourceAccountRecord.objects.get(source_system="MiningAccounts", source_record_id="23-12278")
         self.assertEqual(record.country, "GN")

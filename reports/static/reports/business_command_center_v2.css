@@ -75,3 +75,5 @@
 .bcc-leaders-panel .bcc-leader-row b{white-space:nowrap;text-align:right}
 .bcc-leaders-panel .bcc-leader-bar{grid-column:2 / -1;width:100%;min-width:0}
 @media(max-width:600px){.bcc-leader-list{max-height:340px}.bcc-leaders-panel .bcc-leader-row{grid-template-columns:32px minmax(0,1fr) max-content;column-gap:7px}}
+
+.bcc-approval-tag{display:inline-flex;align-items:center;padding:8px 14px;border:1px solid #e4d598;border-radius:999px;background:#fff8dc;color:#695414;font-size:13px;font-weight:700;line-height:1.4}

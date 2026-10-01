@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from .excellence_filter_values import read_filters, merge_authorized_filters, option_filters, values, compact, prefix_clause, valid_prefix
+
 import hashlib
 import json
 import math
@@ -25,6 +27,7 @@ from .models import HomepageConfiguration, PlatformUser, PowerBIReport
 from .power_automate import PowerAutomateTransientError, execute_dax_via_flow
 from .powerbi import get_access_token, get_latest_refresh_cached
 from .performance_periods import bounds, dax_window, context as period_context
+from .fuel_model_references import reference_catalog, reference_for_model
 
 
 FUEL_SITE_ALIASES = {
@@ -68,6 +71,7 @@ class HomepageFuelService:
     SITE_COLUMN = ("MineSiteList_MiningProd", "SiteGroup FPR")
     MODEL_COLUMN = ("ModelList_MiningProd", "Model")
     EQUIPMENT_COLUMN = ("EquipmentList_MiningProd", "Equipment")
+    SERIAL_COLUMN = ("EquipmentList_MiningProd", "SN")
     FAMILY_COLUMN = ("EquipmentList_MiningProd", "ParentProductGroup")
     VALID_PERIODS = {"ytd", "last_12_months"}
 
@@ -99,11 +103,9 @@ class HomepageFuelService:
             raise HomepageAvailabilityError('Unsupported grouping.',code='invalid_breakdown',status=400)
         if params.get('customer') or params.get('serial_number'):
             raise HomepageAvailabilityError('For Fuel, select a site, model, family or equipment identifier.',code='unsupported_fuel_filter',status=400)
-        filters = {}
-        for key in ("minesite", "model", "family", "equipment"):
-            value = str(params.get(key) or "").strip()
-            if value:
-                filters[key] = _fuel_site(value) if key == "minesite" else value
+        filters = read_filters(params, ('minesite', 'model', 'family', 'prefix', 'equipment'))
+        if filters.get('minesite'):
+            filters['minesite'] = compact([_fuel_site(value) for value in values(filters['minesite'])])
         return HomepageRequest("fuel", period, breakdown, filters, 1, 200, "availability_desc", "")
 
     def _scope(self) -> tuple[dict, str, str]:
@@ -124,18 +126,7 @@ class HomepageFuelService:
 
     @staticmethod
     def _merge_filters(scope: dict, requested: dict) -> dict:
-        merged = {key: list(value) if isinstance(value, list) else [value] for key, value in scope.items()}
-        for key, value in requested.items():
-            if key in merged:
-                allowed = {str(item).casefold() for item in merged[key]}
-                if str(value).casefold() not in allowed:
-                    raise HomepageAvailabilityError(
-                        "You do not have access to the selected Fuel scope.",
-                        code="scope_forbidden",
-                        status=403,
-                    )
-            merged[key] = [value]
-        return merged
+        return merge_authorized_filters(scope, requested)
 
     @classmethod
     def _filter_clauses(cls, filters: dict) -> list[str]:
@@ -145,8 +136,11 @@ class HomepageFuelService:
             "equipment": cls.EQUIPMENT_COLUMN,
             "family": cls.FAMILY_COLUMN,
         }
-        clauses = []
+        clauses = ['TREATAS({"Yes"}, \'MineSiteList_MiningProd\'[Focus])']
         for code, values in filters.items():
+            if code == 'prefix':
+                clauses.append(prefix_clause(_dax_column(*cls.SERIAL_COLUMN), values))
+                continue
             if code not in columns:
                 continue
             items = values if isinstance(values, list) else [values]
@@ -164,6 +158,7 @@ class HomepageFuelService:
         site_column = _dax_column(*self.SITE_COLUMN)
         model_column = _dax_column(*self.MODEL_COLUMN)
         equipment_column = _dax_column(*self.EQUIPMENT_COLUMN)
+        serial_column = _dax_column(*self.SERIAL_COLUMN)
         clauses = self._filter_clauses(merged_filters)
         filter_args = self._args(clauses)
         benchmark_filters = dict(merged_filters)
@@ -173,6 +168,9 @@ class HomepageFuelService:
             else:
                 benchmark_filters.pop("minesite", None)
         benchmark_args = self._args(self._filter_clauses(benchmark_filters))
+        model_option_args = self._args(self._filter_clauses(option_filters(merged_filters, scope, 'model')))
+        equipment_option_args = self._args(self._filter_clauses(option_filters(merged_filters, scope, 'equipment')))
+        prefix_option_args = self._args(self._filter_clauses(option_filters(merged_filters, scope, 'prefix')))
         scope_args = self._args(self._filter_clauses(scope))
         if request.period == "ytd":
             start_expression = "DATE(YEAR(__LatestDate), 1, 1)"
@@ -253,16 +251,25 @@ VAR __MineSiteOptions =
     )
 VAR __ModelOptions =
     SELECTCOLUMNS(
-        FILTER(SUMMARIZECOLUMNS({model_column}, __CurrentPeriod{filter_args}, "OptionLPH", {self.MEASURE}), NOT ISBLANK([OptionLPH])),
+        FILTER(SUMMARIZECOLUMNS({model_column}, __CurrentPeriod{model_option_args}, "OptionLPH", {self.MEASURE}), NOT ISBLANK([OptionLPH])),
         "RowType", "option_model",
         "Entity", {model_column},
         "LPH", BLANK(), "PreviousLPH", BLANK(), "BenchmarkLPH", BLANK(),
         "EquipmentCount", BLANK(), "MineSiteCount", BLANK(), "LatestDate", BLANK(),
         "Extra1", BLANK(), "Extra2", BLANK()
     )
+VAR __PrefixOptions =
+    SELECTCOLUMNS(
+        FILTER(SUMMARIZECOLUMNS({serial_column}, __CurrentPeriod{prefix_option_args}, "OptionLPH", {self.MEASURE}), NOT ISBLANK([OptionLPH]) && LEN(TRIM({serial_column})) >= 3),
+        "RowType", "option_prefix",
+        "Entity", LEFT(UPPER(TRIM({serial_column})), 3),
+        "LPH", BLANK(), "PreviousLPH", BLANK(), "BenchmarkLPH", BLANK(),
+        "EquipmentCount", BLANK(), "MineSiteCount", BLANK(), "LatestDate", BLANK(),
+        "Extra1", BLANK(), "Extra2", BLANK()
+    )
 VAR __EquipmentOptions =
     SELECTCOLUMNS(
-        FILTER(SUMMARIZECOLUMNS({equipment_column}, __CurrentPeriod{filter_args}, "OptionLPH", {self.MEASURE}), NOT ISBLANK([OptionLPH])),
+        FILTER(SUMMARIZECOLUMNS({equipment_column}, __CurrentPeriod{equipment_option_args}, "OptionLPH", {self.MEASURE}), NOT ISBLANK([OptionLPH])),
         "RowType", "option_equipment",
         "Entity", {equipment_column},
         "LPH", BLANK(), "PreviousLPH", BLANK(), "BenchmarkLPH", BLANK(),
@@ -296,7 +303,7 @@ VAR __Trend =
         "Extra1", BLANK(), "Extra2", BLANK()
     )
 EVALUATE
-UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, __EquipmentOptions, __Breakdown, __Trend)
+UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, DISTINCT(__PrefixOptions), __EquipmentOptions, __Breakdown, __Trend)
 """.strip()
 
     def _execute(self, dax: str, filters: dict, role: str, effective_user: str) -> list[dict]:
@@ -348,7 +355,7 @@ UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, __EquipmentOpti
         equipment_rows = []
         breakdown_rows = []
         trend_rows = []
-        options = {"minesite": [], "model": [], "equipment": []}
+        options = {"minesite": [], "model": [], "prefix": [], "equipment": []}
         for row in rows:
             row_type = str(_row_value(row, "RowType") or "").casefold()
             if row_type == "equipment":
@@ -374,6 +381,8 @@ UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, __EquipmentOpti
             elif row_type.startswith("option_"):
                 code = row_type.removeprefix("option_")
                 label = str(_row_value(row, "Entity") or "").strip()
+                if code == "prefix" and not valid_prefix(label):
+                    continue
                 if code in options and label and label not in options[code]:
                     options[code].append(label)
         for values in options.values():
@@ -395,19 +404,14 @@ UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, __EquipmentOpti
 
         lowest_observed = [decision_item(row) for row in ranked_equipment[:5]]
         highest_observed = [decision_item(row) for row in reversed(ranked_equipment[-5:])]
-        very_high_count = sum(1 for row in ranked_equipment if row["lph"] > 120)
-        low_count = sum(1 for row in ranked_equipment if row["lph"] < 40)
+        reference_count = sum(1 for row in ranked_equipment if reference_for_model(row["model"]))
         if not ranked_equipment:
             takeaway = "No equipment-level Fuel rate is available for decision support in this context."
-        elif very_high_count:
-            takeaway = (
-                f"{very_high_count} equipment record an average Fuel rate above 120 L/h. "
-                "Review model, duty cycle and operating conditions before drawing an efficiency conclusion."
-            )
         else:
             takeaway = (
-                f"No equipment records an average Fuel rate above 120 L/h; {low_count} are below 40 L/h. "
-                "Compare equipment within the same model and duty cycle before taking action."
+                f"Model references are available for {reference_count} of {len(ranked_equipment)} equipment. "
+                "Low, Medium and High represent estimated consumption references for each model. "
+                "Compare the same model and duty cycle; these are not efficiency limits."
             )
         bins = list(range(20, 181, 20))
         distribution = []
@@ -476,13 +480,14 @@ UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, __EquipmentOpti
                 "equipment_count": len(values) or _as_int(_row_value(summary, "EquipmentCount")),
             },
             "equipment": equipment_rows,
+            "model_references": reference_catalog(),
+            "selected_model_reference": reference_for_model(request.filters.get("model")) if not isinstance(request.filters.get("model"), list) else None,
             "breakdown": breakdown_rows,
             "trend": sorted(trend_rows,key=lambda row:row['period']),
             "decision_support": {
                 "lowest_observed": lowest_observed,
                 "highest_observed": highest_observed,
-                "very_high_count": very_high_count,
-                "low_count": low_count,
+                "reference_equipment_count": reference_count,
                 "takeaway": takeaway,
             },
             "filter_options": options,
@@ -514,7 +519,7 @@ UNION(__Summary, __Equipment, __MineSiteOptions, __ModelOptions, __EquipmentOpti
             "filters": request.filters,
             "dataset": self.report.semantic_model_id,
         }
-        key = "homepage:fuel:v3:" + hashlib.sha256(
+        key = "homepage:fuel:v8-prefix:" + hashlib.sha256(
             json.dumps(cache_payload, sort_keys=True, default=str).encode("utf-8")
         ).hexdigest()
         cached = None if force_refresh else cache.get(key)

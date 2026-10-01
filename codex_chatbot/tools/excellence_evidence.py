@@ -11,15 +11,22 @@ def requested_views(question):
         'statistics':r'\b(?:statistics|statistiques|median|mediane|percentiles?|quartiles?|p25|p75)\b',
         'ranking':r'\b(?:top|bottom|best|worst|meilleurs?|pires?|classement|ranking|lowest|highest|plus eleve|plus faible|moins performant)\b',
         'details':r'\b(?:details?|detaille|detaillee)\b|\b(?:liste|list|par|by)\s+(?:des?\s+)?(?:machines?|equipments?|equipements?)\b',
-        'summary':r'\b(?:summary|resume|synthese|downtime|heures? d.arret|nombre|count|combien)\b',
-        'downtime':r'\b(?:downtime|heures? d.arret)\b.*\b(?:drivers?|causes?|top|principal|principaux)\b|\b(?:drivers?|causes?|top|principal|principaux)\b.*\b(?:downtime|heures? d.arret)\b',
+        'summary':r'\b(?:summary|resume|synthese|downtimes?|heures? d.arret|nombre|count|combien)\b',
+        'downtime':r'\b(?:downtimes?|heures? d.arret)\b.*\b(?:drivers?|causes?|top|principal|principaux)\b|\b(?:drivers?|causes?|top|principal|principaux)\b.*\b(?:downtimes?|heures? d.arret)\b',
         'target':r'\b(?:target|targets|objectif|objectifs|cible|ecart|gap)\b',
         'quality':r'\b(?:freshness|fraicheur|actualisation|refresh|qualite|quality|updated|mise a jour)\b',
         'comparison':r'\b(?:comparison|comparaison|compare|compared|versus|vs|variation|change|benchmark)\b',
     }
     if re.search(r'\b(?:tout|toutes les informations|all information|full overview|complete overview|bilan complet)\b',text):
         return set(patterns)-{'downtime'}
-    return {key for key,pattern in patterns.items() if re.search(pattern,text)}
+    views={key for key,pattern in patterns.items() if re.search(pattern,text)}
+    explicit_equipment=bool(re.search(r'\b(?:par|by)\s+(?:equipements?|equipments?|machines?)\b',text))
+    if not explicit_equipment and ('downtime' in views or (
+        re.search(r'\b(?:downtimes?|heures? d.arret)\b',text) and
+        re.search(r'\b(?:systemes?|systems?|categories|compartments?|compartiments?)\b',text))):
+        views.discard('downtime');views.discard('ranking')
+        views.add('downtime_systems')
+    return views
 
 
 def unavailable_views(payload,metric,views):
@@ -33,6 +40,7 @@ def unavailable_views(payload,metric,views):
         'details':payload.get('equipment') if metric=='fuel' else payload.get('breakdown'),
         'summary':payload.get('summary'),'quality':payload.get('data_quality'),
         'downtime':metric!='fuel' and any(row.get('downtime_hours') is not None for row in payload.get('breakdown') or []),
+        'downtime_systems':(payload.get('downtime_systems') or {}).get('complete'),
         'target':metric=='availability' and value.get('target_raw') is not None,
         'comparison':value.get('comparison') or value.get('benchmark_formatted'),
     }
@@ -78,6 +86,11 @@ def evidence_sections(payload, metric, views):
     if 'downtime' in views and metric!='fuel':
         add('Equipment by recorded downtime (not root causes)',payload.get('breakdown') or [],
             [['entity','Equipment'],['downtime_hours','Downtime hours'],['model','Model'],['minesite','MineSite']])
+    if 'downtime_systems' in views:
+        systems=payload.get('downtime_systems') or {}
+        add('Downtime by system / category',systems.get('rows') or [],
+            [['system','System / category'],['hours_formatted','Downtime hours'],['share_formatted','Share of total downtime']])
+        scalars('Downtime denominator',{'total_hours':systems.get('total_hours'),'definition':systems.get('percentage_definition')})
     if 'quality' in views:
         scalars('Data freshness',payload.get('data_quality'))
         scalars('Snapshot',payload.get('dashboard_snapshot'))

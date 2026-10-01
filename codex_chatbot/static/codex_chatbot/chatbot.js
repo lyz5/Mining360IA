@@ -117,11 +117,21 @@
       return;
     }
     if (result.kind === 'governed_answer') {
-      appendTable(section, 'Verified metrics', result.rows, [
+      const topSystemDrivers = result.fixed_top_downtime_count === 10
+        || result.requested_views?.includes('downtime_systems');
+      if (!topSystemDrivers) appendTable(section, 'Verified metrics', result.rows, [
         ...(result.rows?.some(row => row.entity) ? [['entity', 'Site / Model / Family']] : []),
         ['metric', 'Metric'], ['period', 'Period'], ['formatted_value', 'Value'],
       ]);
       (result.tables || []).forEach(table => {
+        if (topSystemDrivers && table.columns?.some(column => column[0] === 'system')) {
+          const displayed = (table.rows || []).slice(0, 10);
+          appendTable(section, 'Top 10 downtime drivers', displayed, table.columns);
+          const note = document.createElement('p');
+          note.textContent = `${displayed.length} catégories affichées sur ${table.total_rows ?? table.rows.length}. Les pourcentages utilisent le downtime total du périmètre. L’export CSV conserve le détail complet.`;
+          section.append(note);
+          return;
+        }
         appendTable(section, table.title, table.rows, table.columns);
         if (table.truncated) {
           const note = document.createElement('p');
@@ -298,7 +308,7 @@
         const response = await fetch(`${root.dataset.runBase}${run.id}/export/`, {
           method: 'POST', headers: {'X-CSRFToken': csrf, 'X-Requested-With': 'XMLHttpRequest'},
         });
-        const payload = await response.json();
+        const payload = await window.m360ReadJson(response);
         if (!response.ok || !payload.ok) throw new Error(payload.error || 'Export unavailable.');
         window.location.assign(payload.artifact.download_url);
       } catch (error) {
@@ -343,7 +353,7 @@
       const response = await fetch(`${root.dataset.runBase}${activeRunId}/`, {
         headers: {'X-Requested-With': 'XMLHttpRequest'},
       });
-      const payload = await response.json();
+      const payload = await window.m360ReadJson(response);
       if (!response.ok || !payload.ok) throw new Error(payload.error || 'Status unavailable.');
       setRunState(payload.run);
       if (payload.run.provisional_message) {
@@ -373,22 +383,35 @@
     input.style.height = `${Math.min(input.scrollHeight, 190)}px`;
   });
   let submitting = false;
+  const createRequestId = () => {
+    if (typeof globalThis.crypto?.randomUUID === 'function') return globalThis.crypto.randomUUID();
+    // getRandomValues is also available when randomUUID is not exposed.
+    const bytes = new Uint8Array(16);
+    globalThis.crypto.getRandomValues(bytes);
+    bytes[6] = (bytes[6] & 0x0f) | 0x40;
+    bytes[8] = (bytes[8] & 0x3f) | 0x80;
+    const hex = Array.from(bytes, value => value.toString(16).padStart(2, '0')).join('');
+    return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+  };
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (submitting || activeRunId) return;
     if (root.dataset.voiceActive === '1') { form.dispatchEvent(new Event('codex:voice-send')); return; }
     const question = input.value.trim();
+    if (/\b(donne|montre|quel|quelle|et|le|la|les|des|pour|depuis|moi)\b/i.test(question)) root.dataset.responseLanguage = 'fr';
+    else if (/\b(show|give|what|the|and|for|please)\b/i.test(question)) root.dataset.responseLanguage = 'en';
     if (!question || question.length > 3000) { input.focus(); return; }
     submitting = true;
-    const requestId = crypto.randomUUID();
-    appendMessage('USER', question, '', `pending-${requestId}`);
-    input.value = '';
-    submitButton.disabled = true;
-    input.disabled = true;
-    progressWrap.hidden = false;
-    progressBar.style.width = '0%';
-    progress.textContent = 'Submitting your request...';
+    let requestId = '';
     try {
+      requestId = createRequestId();
+      appendMessage('USER', question, '', `pending-${requestId}`);
+      input.value = '';
+      submitButton.disabled = true;
+      input.disabled = true;
+      progressWrap.hidden = false;
+      progressBar.style.width = '0%';
+      progress.textContent = 'Submitting your request...';
       const response = await fetch(root.dataset.submitUrl, {
         method: 'POST',
         headers: {'Content-Type': 'application/json', 'X-CSRFToken': csrf, 'X-Requested-With': 'XMLHttpRequest'},
@@ -398,7 +421,7 @@
           conversation_id: thread.dataset.conversationId || null,
         }),
       });
-      const payload = await response.json();
+      const payload = await window.m360ReadJson(response);
       if (!response.ok || !payload.ok) throw new Error(payload.error || 'The request failed.');
       activeRunId = payload.run.id;
       root.dataset.activeRunId = activeRunId;
@@ -428,7 +451,7 @@
         method: 'POST',
         headers: {'X-CSRFToken': csrf, 'X-Requested-With': 'XMLHttpRequest'},
       });
-      const payload = await response.json();
+      const payload = await window.m360ReadJson(response);
       if (!response.ok || !payload.ok) throw new Error(payload.error || 'Unable to cancel.');
       setRunState(payload.run);
       if (payload.run.terminal) finishRun(payload.run);
@@ -447,7 +470,7 @@
     pollRun();
   } else if (root.dataset.conversationUrl) {
     fetch(root.dataset.conversationUrl, {headers: {'X-Requested-With': 'XMLHttpRequest'}})
-      .then((response) => response.json())
+      .then((response) => window.m360ReadJson(response))
       .then((payload) => {
         (payload.conversation?.runs || []).reverse().forEach((run) => {
           if (!thread.querySelector(`.codex-result[data-run-id="${run.id}"]`)) appendFleetResult(run);

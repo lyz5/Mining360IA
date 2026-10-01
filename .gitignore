@@ -25,3 +25,11 @@ artifacts/
 media/
 
 var/resource-memory/
+
+# Local migration workspace, private data and audit exports
+.migration-review/
+.venv/
+exports/
+certificates/
+sql-view-backups/
+*.local.json

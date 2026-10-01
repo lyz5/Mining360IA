@@ -1,5 +1,7 @@
 # Mining360 Agent Instructions
 
+For VIMS / MineStar payload investigations and Management coverage statements, read `docs/VIMS_PAYLOAD_MEMORY_2026-09-30.md`. The confirmed VIMSImport subset is not the exhaustive payload coverage of the server or `mshist`; preserve that distinction and reconcile the reported 45/46 truck discrepancy before publishing a count.
+
 Before changing this repository, read `docs/MINING360_HANDOFF_2026-09-18.md`.
 
 Treat the following as protected behavior unless the user explicitly requests a reconciled change:

@@ -133,7 +133,7 @@
         const { button, target } = options;
         if (!button || !target) return () => {};
         const onClick = async () => {
-            if (button.disabled || target.dataset.exportReady !== "true") return;
+            if (button.disabled || target.dataset.exportReady !== "true" || options.canCopy?.() === false) return;
             button.disabled = true;
             button.setAttribute("aria-busy", "true");
             let blob;

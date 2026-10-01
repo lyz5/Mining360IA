@@ -266,7 +266,14 @@ TOPN(
             self.update_progress(run, 40, "revenue", "Retrieving governed Revenue divisions")
         revenue_rows = []
         for division_code in BUSINESS_REVENUE_DIVISIONS:
-            revenue_rows.extend(execute_dataset_dax(self.dataset_id, self.revenue_dax(division_code)))
+            division_rows = execute_dataset_dax(self.dataset_id, self.revenue_dax(division_code))
+            if not division_rows or any(
+                _business_date(_value(row, "business_date")) is None for row in division_rows
+            ):
+                raise BusinessMappingSourceError(
+                    f"Revenue source for {division_code} returned no usable dated data; previous snapshot preserved."
+                )
+            revenue_rows.extend(division_rows)
         return account_rows, fleet_rows, revenue_rows
 
     def fetch_equipment_analysis_rows(self):
@@ -349,6 +356,17 @@ TOPN(
             if str(_value(row, "division")).strip().upper() in BUSINESS_REVENUE_DIVISIONS
             and str(_value(row, "distribution_channel")).strip().upper() not in MINING_EXCLUDED_DISTRIBUTION_CHANNELS
         ]
+        if not revenue_rows:
+            raise BusinessMappingSourceError("Empty Revenue source; previous snapshot preserved.")
+        previous = RevenueSourceSnapshot.objects.filter(active=True)
+        previous_divisions = set(previous.values_list("division", flat=True).distinct())
+        incoming_divisions = {str(_value(row, "division")).strip().upper() for row in revenue_rows}
+        if not previous_divisions.issubset(incoming_divisions):
+            raise BusinessMappingSourceError("Incomplete Revenue divisions; previous snapshot preserved.")
+        if previous.filter(business_date__isnull=False).exists() and any(
+            _business_date(_value(row, "business_date")) is None for row in revenue_rows
+        ):
+            raise BusinessMappingSourceError("Invalid Revenue business dates; previous snapshot preserved.")
         available_year_values = set()
         for row in revenue_rows:
             try:
@@ -413,11 +431,6 @@ TOPN(
             else:
                 updated += 1
         SourceAccountRecord.objects.filter(source_system="MiningAccounts", active=True).exclude(source_record_id__in=seen_accounts).update(active=False)
-        from .business_mapping_country_account_service import CountryAccountService
-        CountryAccountService.ensure_all_accounts_grouped(
-            actor=self.user,
-            account_ids=synchronized_account_ids,
-        )
 
         fleet_objects = []
         site_names = {}
@@ -561,6 +574,12 @@ TOPN(
         for account in canonical_accounts:
             account.operating_countries_json = sorted(canonical_operating_countries[account.id])
         BusinessAccount.objects.bulk_update(canonical_accounts, ["operating_countries_json"], batch_size=500)
+        # Group using countries derived from THIS validated source, not stale values.
+        from .business_mapping_country_account_service import CountryAccountService
+        CountryAccountService.ensure_all_accounts_grouped(
+            actor=self.user,
+            account_ids=synchronized_account_ids,
+        )
         # A non-critical legacy Fleet warning does not make the synchronized
         # Account, Revenue and EquipmentList_MiningProd snapshots partial.
         run.status = "Completed"

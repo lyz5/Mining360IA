@@ -17,22 +17,13 @@ from .active_directory_service import (
 from .business_performance_service import BusinessPerformanceService
 from .models import PlatformUser, UserAccessAuditLog
 from .powerbi import RLS_ROLE_OPTIONS
+from .platform_roles import (
+    ROLE_KEY, ROLE_LABELS, ADMIN_ROLES, explicit_roles, profile_roles,
+    is_super_admin, can_manage_users,
+)
 
 
-PLATFORM_ROLE_FIELDS = {
-    "admin": "is_platform_admin",
-    "reporting": "can_access_reporting",
-    "ai": "can_access_ai",
-    "data": "can_access_data",
-    "sources": "can_access_sources",
-}
-PLATFORM_ROLE_LABELS = {
-    "admin": ("Admin", "Full platform administration."),
-    "reporting": ("Reporting", "Access Power BI reports and reporting features."),
-    "ai": ("AI", "Use Mining 360 AI and agent features."),
-    "data": ("Data", "Access data-quality and analytical data modules."),
-    "sources": ("Data Source", "Manage data sources and integrations."),
-}
+PLATFORM_ROLE_LABELS = ROLE_LABELS
 BP_ROLE_VALUES = {value for value, _ in PlatformUser.BUSINESS_PERFORMANCE_ROLES}
 
 
@@ -43,7 +34,17 @@ class UserAccessValidationError(ValueError):
 
 
 def _roles(item: PlatformUser) -> list[str]:
-    return [code for code, field in PLATFORM_ROLE_FIELDS.items() if bool(getattr(item, field))]
+    return profile_roles(item)
+
+
+def _authorize_actor(actor, item=None, roles=None):
+    if not can_manage_users(actor):
+        raise UserAccessValidationError("Administrator access is required.")
+    if not is_super_admin(actor):
+        if item and set(_roles(item)) & ADMIN_ROLES:
+            raise UserAccessValidationError("Only a Super Admin can manage administrator accounts.")
+        if roles and set(roles) & ADMIN_ROLES:
+            raise UserAccessValidationError("Only a Super Admin can assign administrator roles.", field="platform_roles")
 
 
 def _scope_values(item: PlatformUser, key: str) -> list[str]:
@@ -62,7 +63,7 @@ def access_snapshot(item: PlatformUser) -> dict:
     return {
         "active": item.is_active,
         "platform_roles": _roles(item),
-        "directory_roles_managed": item.directory_roles_managed,
+        "directory_roles_managed": item.auth_source == "active_directory" and item.directory_roles_managed,
         "business_performance_access": item.business_performance_role,
         "countries": _scope_values(item, "country"),
         "customers": _scope_values(item, "customer"),
@@ -88,7 +89,7 @@ def serialize_user(item: PlatformUser, *, detail: bool = False) -> dict:
         "platform_roles": roles,
         "ad_managed_roles": roles if source == "ad_groups" else [],
         "manual_platform_roles": [] if source == "ad_groups" else roles,
-        "directory_roles_managed": item.directory_roles_managed,
+        "directory_roles_managed": item.auth_source == "active_directory" and item.directory_roles_managed,
         "business_performance_access": item.business_performance_role,
         "countries": countries,
         "customers": customers,
@@ -122,8 +123,10 @@ def authorized_users_queryset(params):
     elif status == "disabled":
         queryset = queryset.filter(is_active=False)
     role = str(params.get("role") or "").strip()
-    if role in PLATFORM_ROLE_FIELDS:
-        queryset = queryset.filter(**{PLATFORM_ROLE_FIELDS[role]: True})
+    if role in ROLE_LABELS:
+        # JSON membership support differs across SQLite and SQL Server.
+        ids = [item.pk for item in queryset if role in _roles(item)]
+        queryset = queryset.filter(pk__in=ids)
     source = str(params.get("access_source") or "").strip()
     if source == "ad_groups":
         queryset = queryset.filter(auth_source="active_directory", directory_roles_managed=True)
@@ -180,7 +183,8 @@ def access_options(user) -> dict:
     countries, customers, warnings = _business_options(user)
     return {
         "platform_roles": [
-            {"code": code, "label": label, "description": description}
+            {"code": code, "label": label, "description": description,
+             "assignable": code not in ADMIN_ROLES or is_super_admin(user)}
             for code, (label, description) in PLATFORM_ROLE_LABELS.items()
         ],
         "business_performance_levels": [
@@ -194,6 +198,7 @@ def access_options(user) -> dict:
             {"value": value, "label": value} for value in RLS_ROLE_OPTIONS
         ],
         "warnings": warnings,
+        "can_manage_administrators": is_super_admin(user),
     }
 
 
@@ -211,18 +216,29 @@ def _clean_list(value, field: str) -> list[str]:
 
 
 def _validated_access(payload: dict, *, item: PlatformUser | None = None, actor=None) -> dict:
-    roles = _clean_list(payload.get("platform_roles"), "platform_roles")
-    unknown = sorted(set(roles) - set(PLATFORM_ROLE_FIELDS))
+    roles = _clean_list(payload.get("platform_roles", _roles(item) if item else []), "platform_roles")
+    unknown = sorted(set(roles) - set(ROLE_LABELS))
     if unknown:
         raise UserAccessValidationError(f"Unknown platform role: {', '.join(unknown)}.", field="platform_roles")
-    if item and item.directory_roles_managed and payload.get("directory_roles_managed", True) and set(roles) != set(_roles(item)):
+    _authorize_actor(actor, item, roles)
+    was_managed = bool(item and item.auth_source == "active_directory" and item.directory_roles_managed)
+    managed = bool(payload.get("directory_roles_managed", was_managed))
+    if not is_super_admin(actor) and managed != was_managed:
+        raise UserAccessValidationError("Only a Super Admin can change Active Directory role management.", field="platform_roles")
+    if set(roles) >= ADMIN_ROLES:
+        raise UserAccessValidationError("Choose Admin or Super Admin, not both.", field="platform_roles")
+    if was_managed and managed and set(roles) != set(_roles(item)):
         raise UserAccessValidationError("Roles managed by Active Directory cannot be changed manually.", field="platform_roles")
-    bp_role = str(payload.get("business_performance_access") or "").strip()
+    bp_role = str(payload.get("business_performance_access", item.business_performance_role if item else "") or "").strip()
     if bp_role not in BP_ROLE_VALUES:
         raise UserAccessValidationError("Select a valid Business Performance access level.", field="business_performance_access")
-    countries = _clean_list(payload.get("countries"), "countries")
-    customers = _clean_list(payload.get("customers"), "customers")
-    minesites = _clean_list(payload.get("minesites"), "minesites")
+    if item and "super_admin" in _roles(item) and "super_admin" not in roles and bp_role == "Administrator":
+        bp_role = "Viewer"
+    if bp_role == "Administrator" and not is_super_admin(actor):
+        raise UserAccessValidationError("Only a Super Admin can assign unrestricted business administration.", field="business_performance_access")
+    countries = _clean_list(payload.get("countries", _scope_values(item, "country") if item else []), "countries")
+    customers = _clean_list(payload.get("customers", _scope_values(item, "customer") if item else []), "customers")
+    minesites = _clean_list(payload.get("minesites", _scope_values(item, "minesite") if item else []), "minesites")
     if actor is not None:
         allowed_countries, allowed_customers, _ = _business_options(actor)
         invalid_countries = sorted(set(countries) - set(allowed_countries), key=str.casefold)
@@ -234,7 +250,7 @@ def _validated_access(payload: dict, *, item: PlatformUser | None = None, actor=
         invalid_minesites = sorted(set(minesites) - set(_minesite_options()), key=str.casefold)
         if invalid_minesites:
             raise UserAccessValidationError("Select a MineSite from the governed list.", field="minesites")
-    rls = str(payload.get("powerbi_rls_role") or "").strip()
+    rls = str(payload.get("powerbi_rls_role", (item.business_performance_scope or {}).get("rls_role", "") if item else "") or "").strip()
     if rls and rls not in RLS_ROLE_OPTIONS:
         raise UserAccessValidationError("Select a configured Power BI RLS role.", field="powerbi_rls_role")
     if not bp_role and (countries or customers or minesites):
@@ -248,17 +264,29 @@ def _validated_access(payload: dict, *, item: PlatformUser | None = None, actor=
     return {
         "roles": roles, "bp_role": bp_role, "countries": countries,
         "customers": customers, "minesites": minesites, "rls": rls,
-        "directory_roles_managed": bool(payload.get("directory_roles_managed", False)),
+        "directory_roles_managed": managed,
     }
 
 
 def _apply_access(item: PlatformUser, values: dict):
-    administrator = "admin" in values["roles"]
-    for code, field in PLATFORM_ROLE_FIELDS.items():
-        setattr(item, field, administrator or code in values["roles"])
+    administrator = "super_admin" in values["roles"]
+    was_administrator = item.is_platform_admin
+    item.is_platform_admin = administrator
+    item.can_access_reporting = administrator or "reporting" in values["roles"]
+    # Existing separate AI/data capabilities are not reassigned by module checkboxes.
+    # A demoted full administrator must not retain implicit configuration access.
+    if was_administrator and not administrator:
+        item.can_access_data = False
+        item.can_access_sources = False
     item.directory_roles_managed = values["directory_roles_managed"] if item.auth_source == "active_directory" else False
-    item.business_performance_role = "Administrator" if administrator else values["bp_role"]
-    scope = {}
+    item.business_performance_role = values["bp_role"]
+    scope = dict(item.business_performance_scope or {})
+    if item.directory_roles_managed:
+        scope.pop(ROLE_KEY, None)
+    else:
+        scope[ROLE_KEY] = values["roles"]
+    for key in ("country", "customer", "minesite", "rls_role"):
+        scope.pop(key, None)
     if values["countries"]:
         scope["country"] = values["countries"]
     if values["customers"]:
@@ -283,8 +311,16 @@ def _audit(item, actor, action: str, before: dict, after: dict, metadata=None):
     )
 
 
+def _other_super_admin_exists(item):
+    others = PlatformUser.objects.select_for_update().select_related("django_user").filter(is_active=True).exclude(pk=item.pk)
+    if any("super_admin" in _roles(other) and other.django_user and other.django_user.is_active for other in others):
+        return True
+    return User.objects.filter(is_active=True, is_superuser=True, platformuser__isnull=True).exists()
+
+
 @transaction.atomic
 def add_directory_user(payload: dict, actor) -> PlatformUser:
+    _authorize_actor(actor)
     object_id = str(payload.get("directory_object_id") or "").strip()
     username = str(payload.get("directory_username") or "").strip()
     if not object_id or not username:
@@ -302,6 +338,7 @@ def add_directory_user(payload: dict, actor) -> PlatformUser:
     values = _validated_access(payload, actor=actor)
     synchronize_identity(identity, integration)
     item = PlatformUser.objects.select_for_update().get(directory_object_id=identity.object_id)
+    _authorize_actor(actor, item)
     item.is_active = True
     _apply_access(item, values)
     after = access_snapshot(item)
@@ -314,9 +351,9 @@ def update_user_access(item: PlatformUser, payload: dict, actor) -> PlatformUser
     item = PlatformUser.objects.select_for_update().select_related("django_user").get(pk=item.pk)
     before = access_snapshot(item)
     values = _validated_access(payload, item=item, actor=actor)
-    removing_admin = item.is_platform_admin and "admin" not in values["roles"]
-    if removing_admin and PlatformUser.objects.filter(is_active=True, is_platform_admin=True).exclude(pk=item.pk).count() == 0:
-        raise UserAccessValidationError("The final active administrator cannot lose the Admin role.", field="platform_roles")
+    removing_admin = "super_admin" in _roles(item) and "super_admin" not in values["roles"]
+    if removing_admin and not _other_super_admin_exists(item):
+        raise UserAccessValidationError("The final active Super Admin cannot lose that role.", field="platform_roles")
     _apply_access(item, values)
     after = access_snapshot(item)
     _audit(item, actor, "access_changed", before, after)
@@ -327,11 +364,12 @@ def update_user_access(item: PlatformUser, payload: dict, actor) -> PlatformUser
 def set_user_status(item: PlatformUser, active: bool, actor) -> PlatformUser:
     item = PlatformUser.objects.select_for_update().select_related("django_user").get(pk=item.pk)
     before = access_snapshot(item)
+    _authorize_actor(actor, item)
     if not active:
         if item.django_user_id == getattr(actor, "pk", None):
             raise UserAccessValidationError("You cannot disable your own account.")
-        if item.is_platform_admin and PlatformUser.objects.filter(is_active=True, is_platform_admin=True).exclude(pk=item.pk).count() == 0:
-            raise UserAccessValidationError("The final active administrator cannot be disabled.")
+        if "super_admin" in _roles(item) and not _other_super_admin_exists(item):
+            raise UserAccessValidationError("The final active Super Admin cannot be disabled.")
     item.is_active = bool(active)
     item.save(update_fields=["is_active", "updated_at"])
     if item.django_user:

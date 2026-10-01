@@ -5,7 +5,7 @@
     const $ = (selector, parent = document) => parent.querySelector(selector);
     const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector)];
     const csrf = $("[name=csrfmiddlewaretoken]")?.value || "";
-    const roleLabels = { admin: "Admin", reporting: "Reporting", ai: "AI", data: "Data", sources: "Data Source" };
+    const roleLabels = { excellence_center: "Excellence Center", business_overview: "Business Overview", reporting: "Reporting", resources: "Ressources", admin: "Admin", super_admin: "Super Admin" };
     const bpDescriptions = {
         "": "No access to Business Performance data.",
         Executive: "Organization-wide executive performance access.",
@@ -119,7 +119,7 @@
         const rows = state.users.map(user => `
             <tr tabindex="0" data-user-row="${user.id}" aria-label="Open access for ${escapeHtml(user.display_name)}">
                 <td><div class="user-cell"><span class="user-avatar">${escapeHtml(initials(user.display_name))}</span><span><strong>${escapeHtml(user.display_name)}</strong><small title="${escapeHtml(user.upn)}">${escapeHtml(user.upn)}</small></span></div></td>
-                <td>${roleChips(user)}</td><td>${escapeHtml(user.business_performance_access || "No access")}</td>
+                <td>${roleChips(user)}</td>
                 <td title="${escapeHtml([...user.countries, ...user.customers, ...(user.minesites || [])].join(", "))}">${escapeHtml(scopeText(user))}</td>
                 <td>${escapeHtml(user.powerbi_rls_role || "Not configured")}</td><td><span class="source-badge">${escapeHtml(sourceLabel(user.access_source))}</span></td>
                 <td><span class="status-badge status-badge--${user.status}">${user.status === "active" ? "Active" : "Disabled"}</span></td>
@@ -129,7 +129,7 @@
         $("[data-users-mobile]").innerHTML = state.users.map(user => `
             <article class="authorized-user-card" data-user-row="${user.id}">
                 <div class="user-cell"><span class="user-avatar">${escapeHtml(initials(user.display_name))}</span><span><strong>${escapeHtml(user.display_name)}</strong><small>${escapeHtml(user.upn)}</small></span></div>
-                ${roleChips(user)}<dl><div><dt>Business Performance</dt><dd>${escapeHtml(user.business_performance_access || "No access")}</dd></div><div><dt>Scope</dt><dd>${escapeHtml(scopeText(user))}</dd></div></dl>
+                ${roleChips(user)}<dl><div><dt>Scope</dt><dd>${escapeHtml(scopeText(user))}</dd></div></dl>
                 <div class="mobile-user-footer"><span class="status-badge status-badge--${user.status}">${user.status === "active" ? "Active" : "Disabled"}</span><button class="button secondary" type="button" data-user-open="${user.id}">View access</button></div>
             </article>`).join("");
         setUsersState("ready");
@@ -151,6 +151,7 @@
     async function loadOptions() {
         if (state.options) return state.options;
         state.options = await api("/api/access-control/options/");
+        $("[data-filter-role]").innerHTML = '<option value="">All roles</option>' + state.options.platform_roles.map(role => `<option value="${escapeHtml(role.code)}">${escapeHtml(role.label)}</option>`).join("");
         return state.options;
     }
 
@@ -283,6 +284,10 @@
         $("[data-status-action]").textContent = user.status === "active" ? "Disable user" : "Enable user";
         $("[data-status-action]").classList.toggle("danger", user.status === "active");
         $("[data-save-access]").textContent = mode === "add" ? "Add user" : "Save changes";
+        const protectedAccount = !state.options.can_manage_administrators && state.form.platform_roles.some(role => ["admin", "super_admin"].includes(role));
+        $("[data-save-access]").disabled = protectedAccount;
+        $("[data-status-action]").disabled = protectedAccount;
+        $("[data-protected-account]").hidden = !protectedAccount;
         state.dirty = false;
     }
 
@@ -292,13 +297,13 @@
         $("[data-directory-managed]").checked = locked;
         $("[data-role-options]").innerHTML = state.options.platform_roles.map(role => `
             <label class="platform-role-option ${locked ? "is-locked" : ""}">
-                <input type="checkbox" value="${escapeHtml(role.code)}" data-role-checkbox ${state.form.platform_roles.includes(role.code) ? "checked" : ""} ${locked ? "disabled" : ""}>
+                <input type="checkbox" value="${escapeHtml(role.code)}" data-role-checkbox ${state.form.platform_roles.includes(role.code) ? "checked" : ""} ${locked || role.assignable === false ? "disabled" : ""}>
                 <span><strong>${escapeHtml(role.label)}</strong><small>${escapeHtml(role.description)}</small>${locked && state.form.ad_managed_roles.includes(role.code) ? "<em>Managed by AD group</em>" : ""}</span>
             </label>`).join("");
     }
 
     function renderBusinessOptions() {
-        $("[data-bp-role]").innerHTML = state.options.business_performance_levels.map(option => `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}</option>`).join("");
+        $("[data-bp-role]").innerHTML = state.options.business_performance_levels.map(option => `<option value="${escapeHtml(option.value)}" ${option.value === "Administrator" && !state.options.can_manage_administrators ? "disabled" : ""}>${escapeHtml(option.label)}</option>`).join("");
         $("[data-bp-role]").value = state.form.business_performance_access || "";
         $("[data-bp-description]").textContent = bpDescriptions[state.form.business_performance_access || ""] || "Configured business access.";
         $("[data-scope-fields]").hidden = !state.form.business_performance_access;
@@ -445,11 +450,11 @@
     document.addEventListener("change", event => {
         if (!state.form) return;
         if (event.target.matches("[data-role-checkbox]")) {
-            state.form.platform_roles = $$('[data-role-checkbox]:checked').map(input => input.value);
-            if (state.form.platform_roles.includes("admin")) {
-                state.form.business_performance_access = "Administrator";
-                renderBusinessOptions();
+            if (event.target.checked && ["admin", "super_admin"].includes(event.target.value)) {
+                const other = $(`[data-role-checkbox][value="${event.target.value === "admin" ? "super_admin" : "admin"}"]`);
+                if (other) other.checked = false;
             }
+            state.form.platform_roles = $$('[data-role-checkbox]:checked').map(input => input.value);
             markDirty();
         }
         if (event.target.matches("[data-directory-managed]")) {

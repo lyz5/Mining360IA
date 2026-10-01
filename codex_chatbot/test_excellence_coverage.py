@@ -37,7 +37,7 @@ class ExcellenceEvidenceTests(SimpleTestCase):
 
     def test_downtime_drivers_are_measured_hours_not_root_causes(self):
         views=requested_views('Show top downtime drivers affecting Availability at Fekola YTD')
-        self.assertIn('downtime',views)
+        self.assertIn('downtime_systems',views)
         tables=evidence_sections({'breakdown':[{'entity':'A','downtime_hours':5}]},'availability',{'downtime'})
         self.assertIn('not root causes',tables[0]['title'])
         self.assertEqual(tables[0]['rows'][0]['downtime_hours'],5)

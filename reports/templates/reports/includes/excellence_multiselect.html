@@ -1,0 +1,19 @@
+<div class="control-group {{ code }}-group" data-filter-field="{{ code }}" data-multi-picker="{{ code }}">
+    <span id="{{ code }}-picker-label">{{ label }}</span>
+    <select data-filter="{{ code }}" multiple hidden aria-label="{{ label }}"></select>
+    <button type="button" class="minesite-picker-toggle" data-multi-toggle aria-labelledby="{{ code }}-picker-label {{ code }}-picker-value" aria-haspopup="dialog" aria-expanded="false" aria-controls="{{ code }}-picker-panel">
+        <span id="{{ code }}-picker-value" data-multi-value>{{ all_label }}</span>
+        <svg class="minesite-picker-chevron" aria-hidden="true" viewBox="0 0 20 20" focusable="false"><path d="m5 7.5 5 5 5-5"/></svg>
+    </button>
+    <div id="{{ code }}-picker-panel" class="minesite-picker-panel" data-multi-panel role="dialog" aria-labelledby="{{ code }}-picker-label" hidden>
+        <input type="search" data-multi-search aria-label="Search {{ label }}" placeholder="Search {{ label }}…" autocomplete="off">
+        <div data-multi-options role="group" aria-label="{{ label }} selections"></div>
+        <p data-multi-empty hidden>No matching options</p>
+        <p data-multi-count aria-live="polite">All selected</p>
+        <div class="multi-picker-actions">
+            <button type="button" data-multi-clear>Clear</button>
+            <button type="button" data-multi-cancel>Cancel</button>
+            <button type="button" data-multi-apply>Apply</button>
+        </div>
+    </div>
+</div>

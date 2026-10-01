@@ -19,18 +19,23 @@
         .replaceAll('"', "&quot;")
         .replaceAll("'", "&#039;");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const validMetrics = new Set(["availability", "mtbs", "mtbf", "mttr", "fuel"]);
+    const validMetrics = new Set(["availability", "mtbs", "mtbf", "mttr", "fuel", "connectivity"]);
     const validPeriods = new Set(["ytd", "last_12_months"]);
     const validBreakdowns = new Set(["overall", "minesite", "model", "equipment"]);
     const params = new URLSearchParams(window.location.search);
+    const filterValues = value => (Array.isArray(value) ? value : value ? [value] : []);
+    const compactFilter = values => values.length > 1 ? values : values[0] || '';
+    const appendFilter = (params, key, value) => filterValues(value).forEach(item => params.append(key, item));
+    const filterLabel = value => filterValues(value).join(', ');
     const state = {
         metric: validMetrics.has(params.get("metric")) ? params.get("metric") : "availability",
         period: validPeriods.has(params.get("period")) ? params.get("period") : "ytd",
         breakdown: validBreakdowns.has(params.get("breakdown")) ? params.get("breakdown") : "overall",
         filters: {
-            minesite: params.get("minesite") || "",
-            model: params.get("model") || "",
-            equipment: params.get("equipment") || "",
+            minesite: compactFilter(params.getAll("minesite")),
+            model: compactFilter(params.getAll("model")),
+            prefix: compactFilter(params.getAll("prefix")),
+            equipment: compactFilter(params.getAll("equipment")),
             serial_number: params.get("serial_number") || "",
             customer: params.get("customer") || "",
         },
@@ -74,21 +79,22 @@
             page_size: String(state.pageSize),
         });
         Object.entries(state.filters).forEach(([key, value]) => {
-            if (value) result.set(key, value);
+            appendFilter(result, key, value);
         });
+        if (state.metric === "connectivity") result.delete("period");
         if (state.query) result.set("q", state.query);
         return result;
     }
 
     function syncUrl(replace = false) {
         const url = new URL(window.location.href);
-        ["metric", "period", "breakdown", "ordering", "page", "minesite", "model", "equipment", "serial_number", "customer", "q"]
+        ["metric", "period", "breakdown", "ordering", "page", "minesite", "model", "prefix", "equipment", "serial_number", "customer", "q"]
             .forEach((key) => url.searchParams.delete(key));
         const current = apiParams();
         current.delete("page_size");
         current.forEach((value, key) => {
             if ((key === "page" && value === "1") || (key === "ordering" && value === "availability_desc")) return;
-            url.searchParams.set(key, value);
+            appendFilter(url.searchParams, key, value);
         });
         window.history[replace ? "replaceState" : "pushState"]({}, "", url);
     }
@@ -135,20 +141,23 @@
         modelField.hidden = !showModel;
         equipmentField.hidden = !showEquipment;
         context.hidden = !(showSite || showModel || showEquipment);
-        $('[data-filter="minesite"]').value = state.filters.minesite;
-        $('[data-filter="model"]').value = state.filters.model;
-        $('[data-filter="equipment"]').value = state.filters.equipment;
+
+
+
+        syncMultiPickers();
         const trendExportContext = [
             metricConfig().label,
             state.period === "ytd" ? "Year to Date" : "Last 12 Months",
             state.filters.minesite ? `MineSite: ${state.filters.minesite}` : "All MineSites",
             state.filters.model ? `Model: ${state.filters.model}` : "",
+            state.filters.prefix ? `Prefix: ${filterLabel(state.filters.prefix)}` : "",
             state.filters.equipment ? `Equipment: ${state.filters.equipment}` : "",
         ].filter(Boolean).join(" · ");
         const availabilityExportContext = [
             metricConfig().label,
             state.filters.minesite ? `MineSite: ${state.filters.minesite}` : "All MineSites",
             state.filters.model ? `Model: ${state.filters.model}` : "",
+            state.filters.prefix ? `Prefix: ${filterLabel(state.filters.prefix)}` : "",
             state.filters.equipment ? `Equipment: ${state.filters.equipment}` : "",
         ].filter(Boolean).join(" · ");
         const trendContext = $("[data-trend-export-context]");
@@ -162,7 +171,12 @@
         orderSelect.options[1].textContent = state.metric === "availability" ? "Lowest performing" : `Lowest ${metricName}`;
         $("[data-order-field]").hidden = state.breakdown === "overall";
         $("[data-breakdown-section]").hidden = state.breakdown === "overall" || state.breakdown === "equipment";
-        $("[data-period-label]").textContent = state.period === "ytd" ? "Year to Date" : "Last 12 Months";
+        const periodContext = state.payload?.context;
+        $("[data-period-label]").textContent = state.period === "ytd"
+            ? (periodContext?.ytd_complete_months
+                ? `YTD: ${periodContext.start_date} / ${periodContext.end_date} (completed months)`
+                : "YTD: completed months")
+            : "Last 12 Months";
         const titles = {
             overall: "Overall fleet performance",
             minesite: `${metricName} by Mine Site`,
@@ -176,29 +190,34 @@
 
     function syncMetricWorkspace() {
         const fuelMode = state.metric === "fuel";
+        const connectivityMode = state.metric === "connectivity";
+        root.classList.toggle("connectivity-mode", connectivityMode);
+        $(".period-group").hidden = connectivityMode;
+        $("[data-connectivity-workspace]").hidden = !connectivityMode;
         root.classList.toggle("fuel-mode", fuelMode);
         $("[data-fuel-workspace]").hidden = !fuelMode;
         $$('[data-fleet-workspace]').forEach((section) => {
-            if (fuelMode) section.hidden = true;
+            if (fuelMode || connectivityMode) section.hidden = true;
             else if (!section.matches("[data-breakdown-section]")) section.hidden = false;
         });
         const highlights = $(".performance-highlights");
-        if (highlights) highlights.hidden = false;
-        if (!fuelMode) {
+        if (highlights) highlights.hidden = connectivityMode;
+        if (!fuelMode && !connectivityMode) {
             $("[data-breakdown-section]").hidden = state.breakdown === "overall" || state.breakdown === "equipment";
         }
         const downtimeAction = $('[data-action="view-downtime"]');
         const reportAction = $('[data-action="open-report"]');
-        if (downtimeAction) downtimeAction.hidden = fuelMode;
-        if (reportAction) reportAction.textContent = fuelMode ? "Open Reporting Hub" : "Open Fleet Performance Report";
+        if (downtimeAction) downtimeAction.hidden = fuelMode || connectivityMode;
+        if (reportAction) reportAction.textContent = fuelMode || connectivityMode ? "Open Reporting Hub" : "Open Fleet Performance Report";
     }
 
     function renderBreadcrumb() {
         const holder = $("[data-breadcrumb]");
-        const parts = [{ label: "All MineSites", clear: ["minesite", "model", "equipment", "serial_number"] }];
-        if (state.filters.minesite) parts.push({ label: state.filters.minesite, clear: ["model", "equipment", "serial_number"] });
-        if (state.filters.model) parts.push({ label: `Model ${state.filters.model}`, clear: ["equipment", "serial_number"] });
-        if (state.filters.equipment || state.filters.serial_number) parts.push({ label: state.filters.equipment || state.filters.serial_number, clear: [] });
+        const parts = [{ label: "All Focus MineSites", clear: ["minesite", "model", "prefix", "equipment", "serial_number"] }];
+        if (state.filters.minesite) parts.push({ label: filterLabel(state.filters.minesite), clear: ["model", "prefix", "equipment", "serial_number"] });
+        if (state.filters.model) parts.push({ label: `Model ${state.filters.model}`, clear: ["prefix", "equipment", "serial_number"] });
+        if (state.filters.prefix) parts.push({ label: `Prefix ${filterLabel(state.filters.prefix)}`, clear: ["equipment", "serial_number"] });
+        if (state.filters.equipment || state.filters.serial_number) parts.push({ label: filterLabel(state.filters.equipment || state.filters.serial_number), clear: [] });
         holder.innerHTML = parts.map((part, index) => (
             `<button type="button" data-breadcrumb-index="${index}">${escapeHtml(part.label)}</button>`
         )).join("");
@@ -217,7 +236,9 @@
     }
 
     function setUpdating(active) {
+        if (active) $$('[data-multi-picker]').forEach(picker => closeMultiPicker(picker));
         root.classList.toggle("is-updating", active);
+        $("[data-connectivity-workspace]").setAttribute("aria-busy", String(active));
         $("[data-updating]").hidden = !active;
         $$("button, select, input", $(".analysis-controls")).forEach((control) => {
             if (control.matches("[data-filter='q']")) return;
@@ -248,6 +269,7 @@
     }
 
     function metricConfig() {
+        if (state.metric === "connectivity") return {code: "connectivity", label: "Connectivity", format: (value) => `${Number(value).toFixed(2)}%`};
         if (state.metric === "mtbs") {
             return {
                 code: "mtbs",
@@ -586,24 +608,108 @@
         $('[data-summary="minesite_count"]').textContent = numberLabel(summary.minesite_count, 0);
         $('[data-summary="equipment_count"]').textContent = numberLabel(summary.equipment_count, 0);
         $('[data-summary="downtime_hours"]').textContent = summary.downtime_hours == null ? "Not mapped" : numberLabel(summary.downtime_hours);
-        const scope = [state.filters.minesite, state.filters.model, state.filters.equipment || state.filters.serial_number].filter(Boolean).join(" / ") || "Overall";
+        const scope = [state.filters.minesite, state.filters.model, state.filters.prefix, state.filters.equipment || state.filters.serial_number].filter(Boolean).join(" / ") || "Overall";
         $('[data-summary="scope"]').textContent = scope;
     }
 
-    function renderFilterOptions(payload) {
-        ["minesite", "model", "equipment"].forEach((code) => {
-            const select = $(`[data-filter="${code}"]`);
-            const current = state.filters[code];
-            const allLabels = { minesite: "All MineSites", model: "All models", equipment: "All equipment" };
-            const options = new Set(payload.filter_options?.[code] || []);
-            if (current) options.add(current);
-            select.innerHTML = `<option value="">${allLabels[code]}</option>` + Array.from(options)
-                .sort((a, b) => a.localeCompare(b))
-                .map((value) => `<option value="${escapeHtml(value)}" title="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join("");
-            select.value = current;
-            select.title = select.selectedOptions[0]?.textContent || allLabels[code];
+    const multiLabels = {minesite: 'All Focus MineSites', model: 'All models', prefix: 'All prefixes', equipment: 'All equipment'};
+    const multiDrafts = new Map();
+
+    function syncMultiPickers() {
+        $$('[data-multi-picker]').forEach(picker => {
+            const code = picker.dataset.multiPicker;
+            const selected = filterValues(state.filters[code]);
+            const select = $('[data-filter]', picker);
+            Array.from(select.options).forEach(option => { option.selected = selected.includes(option.value); });
+            const title = selected.length ? selected.join(', ') : multiLabels[code];
+            $('[data-multi-value]', picker).textContent = title;
+            $('[data-multi-toggle]', picker).title = title;
         });
     }
+
+    function renderFilterOptions(payload) {
+        Object.keys(multiLabels).forEach(code => {
+            const select = $(`[data-filter="${code}"]`);
+            const selected = filterValues(state.filters[code]);
+            const available = new Set(payload.filter_options?.[code] || []);
+            const options = new Set([...available, ...selected]);
+            select.innerHTML = Array.from(options).sort((a,b) => a.localeCompare(b)).map(value =>
+                `<option value="${escapeHtml(value)}"${available.has(value) ? '' : ' disabled'}>${escapeHtml(value)}${available.has(value) ? '' : ' (unavailable in this scope)'}</option>`).join('');
+        });
+        syncMultiPickers();
+    }
+
+    function closeMultiPicker(picker, focus = false) {
+        $('[data-multi-panel]', picker).hidden = true;
+        $('[data-multi-toggle]', picker).setAttribute('aria-expanded', 'false');
+        multiDrafts.delete(picker.dataset.multiPicker);
+        if (focus) $('[data-multi-toggle]', picker).focus();
+    }
+
+    function renderMultiChoices(picker) {
+        const draft = multiDrafts.get(picker.dataset.multiPicker) || new Set();
+        const normalize = text => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase();
+        const query = normalize($('[data-multi-search]', picker).value.trim());
+        const options = Array.from($('[data-filter]', picker).options).filter(option => normalize(option.textContent).includes(query));
+        $('[data-multi-options]', picker).innerHTML = options.map(option =>
+            `<label class="multi-picker-choice"><input type="checkbox" value="${escapeHtml(option.value)}"${draft.has(option.value) ? ' checked' : ''}${option.disabled ? ' disabled' : ''}><span>${escapeHtml(option.textContent)}</span></label>`).join('');
+        $('[data-multi-empty]', picker).hidden = options.length > 0;
+        $('[data-multi-count]', picker).textContent = draft.size ? `${draft.size} selected` : 'All in authorized scope';
+    }
+
+    $$('[data-multi-picker]').forEach(picker => {
+        const code = picker.dataset.multiPicker;
+        $('[data-multi-toggle]', picker).addEventListener('click', () => {
+            if (!$('[data-multi-panel]', picker).hidden) return closeMultiPicker(picker);
+            $$('[data-multi-picker]').forEach(other => closeMultiPicker(other));
+            multiDrafts.set(code, new Set(filterValues(state.filters[code])));
+            $('[data-multi-search]', picker).value = '';
+            renderMultiChoices(picker);
+            $('[data-multi-panel]', picker).hidden = false;
+            const panel = $('[data-multi-panel]', picker);
+            panel.style.transform = '';
+            const bounds = panel.getBoundingClientRect();
+            let shift = Math.min(0, window.innerWidth - 12 - bounds.right);
+            if (bounds.left + shift < 12) shift = 12 - bounds.left;
+            panel.style.transform = `translateX(${shift}px)`;
+            $('[data-multi-toggle]', picker).setAttribute('aria-expanded', 'true');
+            $('[data-multi-search]', picker).focus();
+        });
+        $('[data-multi-search]', picker).addEventListener('input', () => renderMultiChoices(picker));
+        $('[data-multi-options]', picker).addEventListener('change', event => {
+            if (!event.target.matches('input[type="checkbox"]')) return;
+            const draft = multiDrafts.get(code);
+            event.target.checked ? draft.add(event.target.value) : draft.delete(event.target.value);
+            $('[data-multi-count]', picker).textContent = draft.size ? `${draft.size} selected` : 'All in authorized scope';
+        });
+        $('[data-multi-clear]', picker).addEventListener('click', () => {
+            multiDrafts.set(code, new Set()); renderMultiChoices(picker);
+        });
+        $('[data-multi-cancel]', picker).addEventListener('click', () => closeMultiPicker(picker, true));
+        $('[data-multi-apply]', picker).addEventListener('click', () => {
+            const draft = [...multiDrafts.get(code)].sort();
+            const previous = filterValues(state.filters[code]).slice().sort();
+            const select = $('[data-filter]', picker);
+            Array.from(select.options).forEach(option => { option.selected = draft.includes(option.value); });
+            closeMultiPicker(picker, true);
+            if (JSON.stringify(draft) !== JSON.stringify(previous)) select.dispatchEvent(new Event('change', {bubbles: true}));
+        });
+        picker.addEventListener('keydown', event => {
+            if (event.key === 'Escape') { event.preventDefault(); closeMultiPicker(picker, true); }
+            if (!$('[data-multi-panel]', picker).hidden && ['ArrowDown', 'ArrowUp'].includes(event.key)) {
+                event.preventDefault();
+                const items = $$('input[type="checkbox"]:not(:disabled)', picker);
+                const i = items.indexOf(document.activeElement);
+                items[Math.max(0, Math.min(items.length - 1, i + (event.key === 'ArrowDown' ? 1 : -1)))]?.focus();
+            }
+        });
+        picker.addEventListener('focusout', event => {
+            if (!picker.contains(event.relatedTarget)) closeMultiPicker(picker);
+        });
+    });
+    document.addEventListener('click', event => {
+        $$('[data-multi-picker]').forEach(picker => { if (!picker.contains(event.target)) closeMultiPicker(picker); });
+    });
 
     function performanceCard(item, index, maximumValue) {
         const meta = [];
@@ -732,14 +838,37 @@
         $("[data-fuel-benchmark]").textContent = metric.benchmark_formatted || "Not available";
         $("[data-fuel-scope]").textContent = state.filters.minesite || "All MineSites";
 
+        const referenceSelect = $("[data-fuel-reference-model]");
+        const catalog = payload.model_references?.models || [];
+        const filterModel = payload.context?.filters?.model || "";
+        const referenceContext = JSON.stringify(payload.context?.filters || {});
+        const sameReferenceContext = referenceSelect.dataset.context === referenceContext;
+        const previousReference = referenceSelect.value;
+        referenceSelect.dataset.context = referenceContext;
+        referenceSelect.innerHTML = '<option value="">Choose an exact model</option>' + catalog.map(item =>
+            `<option value="${escapeHtml(item.model)}">${escapeHtml(item.model)}${item.complete ? "" : " (partial reference)"}</option>`
+        ).join("");
+        referenceSelect.value = sameReferenceContext ? previousReference : (payload.selected_model_reference?.model || "");
+        referenceSelect.onchange = () => renderFuel(payload);
+        const reference = catalog.find(item => item.model === referenceSelect.value);
+        const referenceBands = ["low", "medium", "high"];
+        referenceBands.forEach(band => {
+            const number = reference?.[band];
+            $(`[data-fuel-reference-${band}]`).textContent = number == null ? "Not provided" : `${Number(number).toFixed(2)} L/h`;
+        });
+        $("[data-fuel-reference-note]").textContent = reference
+            ? `${reference.model}: estimated consumption references, not efficiency limits. Source: ${payload.model_references.source_filename}. The distribution keeps the selected fleet scope.`
+            : `${filterModel ? `${filterModel}: no exact reference selected. ` : ""}Choose a model to display Low / Medium / High values. Use the fleet model filter for a like-for-like comparison.`;
+
         const points = payload.distribution || [];
-        const density = fuelDensityCurve(payload.equipment, Math.max(180, ...points.map(item => Number(item.lph) || 0)));
+        const referenceValues = referenceBands.map(band => Number(reference?.[band]) || 0);
+        const maximumX = Math.ceil(Math.max(180, ...points.map(item => Number(item.lph) || 0), ...referenceValues.map(v => v * 1.12)) / 20) * 20;
+        const density = fuelDensityCurve(payload.equipment, maximumX);
         const chart = $("[data-fuel-chart]");
         const width = 960, height = 330;
         const padding = {left: 54, right: 20, top: 28, bottom: 46};
         const plotWidth = width - padding.left - padding.right;
         const plotHeight = height - padding.top - padding.bottom;
-        const maximumX = Math.max(160, ...points.map(item => Number(item.lph) || 0));
         const maximumY = Math.max(
             5,
             ...points.map(item => Number(item.percentage) || 0),
@@ -760,7 +889,8 @@
             const gy = padding.top + plotHeight * (1 - fraction);
             return `<line class="fuel-grid" x1="${padding.left}" y1="${gy}" x2="${width - padding.right}" y2="${gy}"></line><text class="fuel-axis-label" x="4" y="${gy + 4}">${(maximumY * fraction).toFixed(0)}%</text>`;
         }).join("");
-        const xLabels = points.map(item => `<text class="fuel-axis-label" text-anchor="middle" x="${x(item.lph)}" y="${height - 12}">${item.lph}</text>`).join("");
+        const axisValues = Array.from({length: Math.floor(maximumX / 20)}, (_, i) => (i + 1) * 20);
+        const xLabels = axisValues.map(lph => `<text class="fuel-axis-label" text-anchor="middle" x="${x(lph)}" y="${height - 12}">${lph}</text>`).join("");
         const nodes = points.map((item, index) => {
             const nearest = density.reduce((current, candidate) => (
                 Math.abs(candidate.lph - item.lph) < Math.abs(current.lph - item.lph) ? candidate : current
@@ -775,8 +905,14 @@
         const averageMarker = validValue
             ? `<line class="fuel-average-line" x1="${x(value)}" y1="${padding.top}" x2="${x(value)}" y2="${padding.top + plotHeight}"></line><text class="fuel-average-label" text-anchor="middle" x="${x(value)}" y="${height - 27}">${value.toFixed(1)} L/h</text>`
             : "";
+        const referenceMarkers = referenceBands.map((band, index) => {
+            const number = reference?.[band];
+            if (number == null || !Number.isFinite(Number(number))) return "";
+            const label = `${band[0].toUpperCase() + band.slice(1)} ${Number(number).toFixed(2)}`;
+            return `<line class="fuel-reference-line is-${band}" x1="${x(number)}" x2="${x(number)}" y1="${padding.top}" y2="${padding.top + plotHeight}"><title>${escapeHtml(reference.model)}: ${label} L/h</title></line><text class="fuel-reference-label" text-anchor="middle" x="${x(number)}" y="${padding.top + 14 + index * 16}">${label}</text>`;
+        }).join("");
         chart.innerHTML = points.length
-            ? `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" aria-hidden="true">${grid}<path class="fuel-area" d="${area}"></path><path class="fuel-line" d="${line}"></path>${nodes}${averageMarker}${xLabels}<text class="fuel-axis-title" text-anchor="middle" x="${padding.left + plotWidth / 2}" y="${height}">Average Fuel Rate (L/h)</text></svg>`
+            ? `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" aria-hidden="true">${grid}<path class="fuel-area" d="${area}"></path><path class="fuel-line" d="${line}"></path>${nodes}${averageMarker}${referenceMarkers}${xLabels}<text class="fuel-axis-title" text-anchor="middle" x="${padding.left + plotWidth / 2}" y="${height}">Average Fuel Rate (L/h)</text></svg>`
             : '<div class="command-empty">No Fuel consumption data is available for the selected context.</div>';
         chart.setAttribute("aria-label", points.length ? `Fuel distribution across ${payload.summary?.equipment_count || 0} equipment.` : "Fuel distribution unavailable.");
 
@@ -804,15 +940,11 @@
             minesite: item.minesite || null,
             formatted_value: fuelValue(item.lph),
         });
-        const veryHighCount = ranked.filter((item) => Number(item.lph) > 120).length;
-        const lowCount = ranked.filter((item) => Number(item.lph) < 40).length;
         const fallback = {
             lowest_observed: ranked.slice(0, 5).map(fallbackItem),
             highest_observed: ranked.slice(-5).reverse().map(fallbackItem),
             takeaway: ranked.length
-                ? (veryHighCount
-                    ? `${veryHighCount} equipment record an average Fuel rate above 120 L/h. Review model, duty cycle and operating conditions before drawing an efficiency conclusion.`
-                    : `No equipment records an average Fuel rate above 120 L/h; ${lowCount} are below 40 L/h. Compare equipment within the same model and duty cycle before taking action.`)
+                ? "Compare fuel rates with the exact model reference and duty cycle; lower consumption alone does not establish efficiency."
                 : "No equipment-level Fuel rate is available for decision support in this context.",
         };
         const support = payload.decision_support || fallback;
@@ -831,13 +963,50 @@
             || "No deterministic Fuel insight is available for this context.";
     }
 
+    function renderConnectivityProgress(values = {}) {
+        $$("[data-connectivity-progress]").forEach(el => {
+            const raw = values[el.dataset.connectivityProgress];
+            const valid = raw != null && Number.isFinite(Number(raw));
+            const percent = valid ? Number(raw) * 100 : 0;
+            el.firstElementChild.style.width = `${Math.max(0, Math.min(100, percent))}%`;
+            if (valid) el.setAttribute("aria-valuenow", String(Math.max(0, Math.min(100, percent))));
+            else el.removeAttribute("aria-valuenow");
+            el.setAttribute("aria-valuetext", valid ? `${percent.toFixed(2)}%` : "Unavailable");
+        });
+    }
+
+    function renderConnectivity(payload) {
+        const values = payload.connectivity || {};
+        const format = (value, percent = false) => value == null || !Number.isFinite(Number(value))
+            ? "—" : percent ? `${(Number(value) * 100).toFixed(2)}%` : Number(value).toLocaleString("en-GB");
+        $("[data-center-title]").textContent = "Fleet Connectivity";
+        $("[data-center-subtitle]").textContent = "Monitor fleet connectivity, reporting coverage and data visibility.";
+        $("[data-connectivity-period]").textContent = "Current state based on the latest available source data.";
+        $$("[data-connectivity-value]").forEach(el => {el.textContent = format(values[el.dataset.connectivityValue], el.dataset.connectivityValue.endsWith("_ratio"));});
+        $$("[data-connectivity-count]").forEach(el => {el.textContent = `${format(values[el.dataset.connectivityCount])} of ${format(values.total_assets)} assets`;});
+        renderConnectivityProgress(values);
+        $("[data-connection-status]").classList.remove("is-stale", "is-error");
+        $("[data-connection-status]").classList.add("is-ready");
+        $("[data-connection-status] span").textContent = "Connected · Neembers";
+        const retrieved = new Date(payload.meta.retrieved_at);
+        const freshness = Number.isNaN(retrieved.getTime()) ? "—" : `${retrieved.toLocaleDateString("en-GB", {day: "2-digit", month: "short", year: "numeric"})} · ${retrieved.toLocaleTimeString("en-GB", {hour: "2-digit", minute: "2-digit"})}`;
+        $("[data-refresh-status]").textContent = `Last retrieved ${freshness}${payload.meta.cached ? " · Cached" : ""}`;
+    }
+
     function render(payload) {
         state.payload = payload;
         state.pageSize = Number(payload.breakdown_pagination?.page_size) || state.pageSize;
+        if (state.metric === "connectivity") {
+            renderConnectivity(payload);
+            renderFilterOptions(payload);
+            syncControls();
+            return;
+        }
         if (state.metric === "fuel") {
             const canonicalFilters = payload.context?.filters || {};
             state.filters.minesite = canonicalFilters.minesite || state.filters.minesite;
             state.filters.model = canonicalFilters.model || state.filters.model;
+            state.filters.prefix = canonicalFilters.prefix || state.filters.prefix;
             state.filters.equipment = canonicalFilters.equipment || state.filters.equipment;
             renderFuel(payload);
             renderFilterOptions(payload);
@@ -874,7 +1043,14 @@
                 $('[data-refresh-status]').textContent = `BODEFM snapshot: ${new Date(snapshot.generated_at).toLocaleString('en-GB')}${snapshot.offline ? ' · Server unavailable; last received snapshot' : snapshot.stale ? ' · Daily update pending' : ''}`;
             }
         } catch (error) {
-            if (error.name !== "AbortError") showError(error.message);
+            if (error.name !== "AbortError") {
+                if (state.metric === "connectivity") {
+                    renderConnectivityProgress();
+                    $$("[data-connectivity-value], [data-connectivity-count]").forEach(el => {el.textContent = "—";});
+                    $("[data-connection-status] span").textContent = "Connectivity unavailable";
+                }
+                showError(error.message);
+            }
         } finally {
             if (!state.controller?.signal.aborted) setUpdating(false);
             if (!state.controller?.signal.aborted) dismissBrandLoader();
@@ -892,10 +1068,12 @@
         state.page = 1;
         if (value === "overall" || value === "minesite") {
             state.filters.model = "";
+            state.filters.prefix = "";
             state.filters.equipment = "";
             state.filters.serial_number = "";
             state.query = "";
         } else if (value === "model") {
+            state.filters.prefix = "";
             state.filters.equipment = "";
             state.filters.serial_number = "";
             state.query = "";
@@ -910,10 +1088,12 @@
         if (state.breakdown === "overall" || state.breakdown === "minesite") {
             state.filters.minesite = entity;
             state.filters.model = "";
+            state.filters.prefix = "";
             state.filters.equipment = "";
             state.breakdown = "model";
         } else if (state.breakdown === "model") {
             state.filters.model = entity;
+            state.filters.prefix = "";
             state.breakdown = "equipment";
         } else {
             state.filters.equipment = entity;
@@ -931,9 +1111,10 @@
         const context = [
             state.filters.minesite ? `at ${state.filters.minesite}` : "",
             state.filters.model ? `for model ${state.filters.model}` : "",
+            state.filters.prefix ? `with prefix ${filterLabel(state.filters.prefix)}` : "",
             state.filters.equipment || state.filters.serial_number ? `for equipment ${state.filters.equipment || state.filters.serial_number}` : "",
         ].filter(Boolean).join(" ");
-        const period = state.period === "ytd" ? "year to date" : "over the last 12 months";
+        const period = state.metric === "connectivity" ? "in the latest available data" : state.period === "ytd" ? "year to date" : "over the last 12 months";
         if (kind === "downtime") return `Show the top downtime drivers affecting ${metricConfig().label} ${context} ${period}.`.replace(/\s+/g, " ");
         return `Explain the ${metricConfig().label} performance ${context} ${period}.`.replace(/\s+/g, " ");
     }
@@ -942,13 +1123,14 @@
         const url = new URL(root.dataset.aiUrl, window.location.origin);
         url.searchParams.set("draft", question);
         url.searchParams.set("metric", state.metric);
-        url.searchParams.set("period", state.period);
+        if (state.metric !== "connectivity") url.searchParams.set("period", state.period);
         url.searchParams.set("breakdown", state.breakdown);
-        Object.entries(state.filters).forEach(([key, value]) => { if (value) url.searchParams.set(key, value); });
+        Object.entries(state.filters).forEach(([key, value]) => { if (value) appendFilter(url.searchParams, key, value); });
         window.location.href = url;
     }
 
     function resetFilters() {
+        $$('[data-multi-picker]').forEach(picker => { closeMultiPicker(picker); $('[data-multi-search]', picker).value = ''; });
         Object.keys(state.filters).forEach((key) => { state.filters[key] = ""; });
         state.query = "";
         state.page = 1;
@@ -964,16 +1146,16 @@
         const previousMetric = state.metric;
         state.metric = metric;
         if (metric === "fuel" && state.filters.minesite) {
-            state.filters.minesite = fuelSiteAliases[state.filters.minesite] || state.filters.minesite;
+            state.filters.minesite = compactFilter(filterValues(state.filters.minesite).map(value => fuelSiteAliases[value] || value));
         } else if (previousMetric === "fuel" && state.filters.minesite) {
-            state.filters.minesite = fleetSiteAliases[state.filters.minesite] || state.filters.minesite;
+            state.filters.minesite = compactFilter(filterValues(state.filters.minesite).map(value => fleetSiteAliases[value] || value));
         }
-        if (metric === "fuel") state.breakdown = "overall";
+        if (metric === "fuel" || metric === "connectivity") state.breakdown = "overall";
         state.renderedValue = null;
         state.page = 1;
         syncControls();
         syncUrl();
-        track("metric_change");
+        track("filter_change", { action: "metric_change" });
         loadData();
     });
 
@@ -987,14 +1169,19 @@
         loadData();
     }));
     $$('[data-breakdown]').forEach((button) => button.addEventListener("click", () => changeBreakdown(button.dataset.breakdown)));
-    $$('[data-filter="minesite"], [data-filter="model"], [data-filter="equipment"]').forEach((select) => select.addEventListener("change", () => {
+    $$('[data-filter="minesite"], [data-filter="model"], [data-filter="prefix"], [data-filter="equipment"]').forEach((select) => select.addEventListener("change", () => {
         select.title = select.selectedOptions[0]?.textContent || "";
-        state.filters[select.dataset.filter] = select.value;
+        state.filters[select.dataset.filter] = compactFilter(Array.from(select.selectedOptions, option => option.value));
         if (select.dataset.filter === "minesite") {
             state.filters.model = "";
+            state.filters.prefix = "";
             state.filters.equipment = "";
             state.filters.serial_number = "";
         } else if (select.dataset.filter === "model") {
+            state.filters.prefix = "";
+            state.filters.equipment = "";
+            state.filters.serial_number = "";
+        } else if (select.dataset.filter === "prefix") {
             state.filters.equipment = "";
             state.filters.serial_number = "";
         } else if (select.dataset.filter === "equipment") {

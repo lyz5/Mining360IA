@@ -14,6 +14,7 @@ from reports.intent_extractor_service import extract_intent
 
 from .minesite_resolution import resolve_minesite_from_question
 from .metric_intent import requested_metrics
+from .performance_request import completed_ytd_period, label_completed_ytd
 
 
 AVAILABILITY_TERMS = re.compile(
@@ -63,6 +64,7 @@ def availability_analysis_from_question(question: str, *, user) -> dict | None:
             params[key] = value
 
     try:
+        params['period']=completed_ytd_period(period)
         from reports.dashboard_snapshots import enabled, excellence_snapshot
         if enabled():
             payload = excellence_snapshot(user, {**params, 'metric': 'availability'})
@@ -72,6 +74,9 @@ def availability_analysis_from_question(question: str, *, user) -> dict | None:
             request = service.request_from_params(params)
             payload = service.get(request)
             metric_definition = service.metric
+        payload=label_completed_ytd(payload,period,params['period'])
+    except ValueError as exc:
+        return {'kind':'governed_answer','answer_status':'NEEDS_CLARIFICATION','text':str(exc)}
     except HomepageAvailabilityError as exc:
         return {
             "kind": "availability_access_restricted" if exc.status == 403 else "availability_unavailable",

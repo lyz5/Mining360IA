@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Users | Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260812-users1">
-    <script src="{% static 'reports/users_access.js' %}?v=20260919-english-ui" defer></script>
+    <script src="{% static 'reports/users_access.js' %}?v=20260929-six-roles" defer></script>
 </head>
 <body class="users-access-body">
     {% include "reports/includes/app_nav.html" %}
@@ -35,9 +35,9 @@
                     <input type="search" data-users-search placeholder="Search authorized users..." autocomplete="off">
                 </label>
                 <label><span class="sr-only">Status</span><select data-filter-status><option value="">All statuses</option><option value="active">Active</option><option value="disabled">Disabled</option></select></label>
-                <label><span class="sr-only">Platform role</span><select data-filter-role><option value="">All roles</option><option value="admin">Admin</option><option value="reporting">Reporting</option><option value="ai">AI</option><option value="data">Data</option><option value="sources">Data Source</option></select></label>
+                <label><span class="sr-only">Role</span><select data-filter-role><option value="">All roles</option><option value="excellence_center">Excellence Center</option><option value="business_overview">Business Overview</option><option value="reporting">Reporting</option><option value="resources">Ressources</option><option value="admin">Admin</option><option value="super_admin">Super Admin</option></select></label>
                 <label class="users-toolbar__secondary"><span class="sr-only">Access source</span><select data-filter-source><option value="">All sources</option><option value="manual">Manual</option><option value="ad_groups">AD Groups</option></select></label>
-                <label class="users-toolbar__secondary"><span class="sr-only">Business Performance</span><select data-filter-bp><option value="">All BP access</option><option value="none">No access</option><option value="MineSite">MineSite User</option><option value="Viewer">Viewer</option><option value="Account Manager">Account Manager</option><option value="Country Manager">Country Manager</option><option value="Business Manager">Business Manager</option><option value="Executive">Executive</option><option value="Administrator">Administrator</option></select></label>
+                <label class="users-toolbar__secondary" hidden><span class="sr-only">Business Performance</span><select data-filter-bp><option value="">All BP access</option><option value="none">No access</option><option value="MineSite">MineSite User</option><option value="Viewer">Viewer</option><option value="Account Manager">Account Manager</option><option value="Country Manager">Country Manager</option><option value="Business Manager">Business Manager</option><option value="Executive">Executive</option><option value="Administrator">Administrator</option></select></label>
                 <button class="button users-add-button" type="button" data-open-add>
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                     Add user
@@ -56,7 +56,7 @@
             <div class="users-error" data-users-error hidden><p>Authorized users could not be loaded.</p><button class="button secondary" type="button" data-users-retry>Retry</button></div>
             <div class="authorized-users-table-wrap" data-users-table-wrap hidden>
                 <table class="authorized-users-table">
-                    <thead><tr><th>User</th><th>Platform roles</th><th>Business Performance</th><th>Data scope</th><th>Power BI RLS</th><th>Source</th><th>Status</th><th><span class="sr-only">Actions</span></th></tr></thead>
+                    <thead><tr><th>User</th><th>Roles</th><th>Data scope</th><th>Power BI RLS</th><th>Source</th><th>Status</th><th><span class="sr-only">Actions</span></th></tr></thead>
                     <tbody data-users-tbody></tbody>
                 </table>
             </div>
@@ -100,13 +100,15 @@
                             </div>
                         </section>
                         <section class="access-section">
-                            <div class="access-section__heading"><h3>Platform access</h3><p>Select the Mining 360 modules this user can access.</p></div>
+                            <div class="access-section__heading"><h3>Roles</h3><p>Combine the four module roles as needed. Only a Super Admin can assign administrator roles.</p></div>
+                            <p data-protected-account hidden>Only a Super Admin can change this administrator account.</p>
                             <label class="ad-managed-toggle" data-ad-managed-row hidden><input type="checkbox" data-directory-managed> <span><strong>Roles managed by AD groups</strong><small>Effective platform roles are synchronized from Active Directory.</small></span></label>
                             <div class="platform-role-grid" data-role-options></div>
                             <p class="field-error" data-error-platform_roles hidden></p>
                         </section>
-                        <section class="access-section">
-                            <div class="access-section__heading"><h3>Business Performance</h3><p>Configure the business access level and governed data scope.</p></div>
+                        <details class="access-section">
+                            <summary>Advanced data scope</summary>
+                            <p>Existing countries, customers, MineSites and business restrictions are preserved when changing module roles.</p>
                             <label class="access-field"><span>Access level</span><select data-bp-role></select><small data-bp-description></small></label>
                             <div class="scope-fields" data-scope-fields>
                                 <div class="access-field" data-minesite-scope><span>Authorized MineSite</span><div class="access-multiselect" data-multiselect="minesites"></div><p class="field-error" data-error-minesites hidden></p></div>
@@ -114,7 +116,7 @@
                                 <div class="access-field" data-general-scope><span>Customers</span><div class="access-multiselect" data-multiselect="customers"></div></div>
                             </div>
                             <p class="field-error" data-error-business_performance_access hidden></p>
-                        </section>
+                        </details>
                         <section class="access-section">
                             <div class="access-section__heading"><h3>Power BI security</h3><p>Apply a configured RLS role when required.</p></div>
                             <label class="access-field"><span>Power BI RLS role</span><select data-rls-role></select></label>

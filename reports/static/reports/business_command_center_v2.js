@@ -280,13 +280,8 @@
     $('[data-brief-count="yesterday"]').textContent = yesterday.length;
     $('[data-brief-count="attention"]').textContent = data.attention_items.length;
     $('[data-attention]').innerHTML = attentionMarkup(data.attention_items);
-    $('[data-actions-attention]').innerHTML = attentionMarkup(data.attention_items);
     loadLeaders();
-    $('[data-watchlist]').innerHTML = data.watchlist.map(item => `<div class="bcc-watch-item"><span>${escapeHtml(item.display_name)}</span><button class="bcc-text-button" data-remove-watch="${item.id}">Remove</button></div>`).join('') || '<p class="bcc-empty">Add Customers, Countries or Key Accounts from a detail drawer.</p>';
-    $$('[data-remove-watch]').forEach(button => button.addEventListener('click', () => removeWatchlist(button.dataset.removeWatch)));
     Object.entries(data.actions_summary).forEach(([key, value]) => { const node = $(`[data-action="${key}"]`); if (node) node.textContent = value; });
-    const openActions = Number(data.actions_summary.open || 0); const actionsBadge = setHidden('[data-actions-badge]', !openActions); if (actionsBadge) actionsBadge.textContent = openActions;
-    $('[data-actions-state]').textContent = openActions ? `${openActions} open management action${openActions === 1 ? '' : 's'} in this business snapshot.` : 'No open management action matches the current context.';
     populateOptions(data.filter_options); renderChips(); switchWorkspace(state.workspace, false);
   }
 

@@ -32,10 +32,12 @@ class DataQualityRun(models.Model):
 
 class PlatformUser(models.Model):
     ROLE_CHOICES = [
+        ("excellence_center", "Excellence Center"),
+        ("business_overview", "Business Overview"),
         ("reporting", "Reporting"),
-        ("ai", "IA"),
-        ("data", "Data"),
-        ("sources", "Data Source"),
+        ("resources", "Ressources"),
+        ("admin", "Admin"),
+        ("super_admin", "Super Admin"),
     ]
 
     azure_ad_id = models.CharField(max_length=128, unique=True)
@@ -91,6 +93,10 @@ class PlatformUser(models.Model):
     def has_module_access(self, module_code: str) -> bool:
         if not self.is_active:
             return False
+        from .platform_roles import ROLE_LABELS, profile_roles
+        if module_code in ROLE_LABELS:
+            roles = profile_roles(self)
+            return "super_admin" in roles or module_code in roles
         if self.is_platform_admin:
             return True
         return bool(getattr(self, f"can_access_{module_code}", False))

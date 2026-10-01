@@ -1,0 +1,130 @@
+{
+  "source_filename": "Mondèle consumption 2.xlsx",
+  "sha256": "8996e53f793d84b58c23621c2fbe146424487bc4800b94507df12ba7faea9c66",
+  "sheet": "All model available",
+  "unit": "L/h",
+  "idle_percent": {
+    "low": 50,
+    "medium": 30,
+    "high": 10
+  },
+  "models": [
+    {
+      "row": 58,
+      "model": "Cat 777-05",
+      "low": 41.45,
+      "medium": 54.12,
+      "high": 66.78,
+      "complete": true,
+      "ordered": true
+    },
+    {
+      "row": 59,
+      "model": "Cat 777-07",
+      "low": 43.67,
+      "medium": 57.08,
+      "high": 70.49,
+      "complete": true,
+      "ordered": true
+    },
+    {
+      "row": 60,
+      "model": "Cat 777E",
+      "low": 42.3,
+      "medium": 55.45,
+      "high": 68.61,
+      "complete": true,
+      "ordered": true
+    },
+    {
+      "row": 61,
+      "model": "Cat 777G",
+      "low": 43.87,
+      "medium": 57.89,
+      "high": 71.9,
+      "complete": true,
+      "ordered": true
+    },
+    {
+      "row": 62,
+      "model": "Cat 785-04",
+      "low": null,
+      "medium": 81.81,
+      "high": null,
+      "complete": false,
+      "ordered": false
+    },
+    {
+      "row": 63,
+      "model": "Cat 785-08",
+      "low": 69.2,
+      "medium": 91.42,
+      "high": 113.65,
+      "complete": true,
+      "ordered": true
+    },
+    {
+      "row": 64,
+      "model": "Cat 785D",
+      "low": 71.91,
+      "medium": 93.48,
+      "high": 115.05,
+      "complete": true,
+      "ordered": true
+    },
+    {
+      "row": 65,
+      "model": "Cat 789-04",
+      "low": null,
+      "medium": 110.45,
+      "high": null,
+      "complete": false,
+      "ordered": false
+    },
+    {
+      "row": 66,
+      "model": "Cat 789-08",
+      "low": 91.3,
+      "medium": 121.57,
+      "high": 151.84,
+      "complete": true,
+      "ordered": true
+    },
+    {
+      "row": 67,
+      "model": "Cat 789D",
+      "low": 95.7,
+      "medium": 123.09,
+      "high": 150.47,
+      "complete": true,
+      "ordered": true
+    },
+    {
+      "row": 68,
+      "model": "Cat 793-04",
+      "low": null,
+      "medium": 136.91,
+      "high": null,
+      "complete": false,
+      "ordered": false
+    },
+    {
+      "row": 69,
+      "model": "Cat 793D",
+      "low": 117.49,
+      "medium": 153.11,
+      "high": 188.73,
+      "complete": true,
+      "ordered": true
+    },
+    {
+      "row": 70,
+      "model": "Cat 793F",
+      "low": 117.3,
+      "medium": 152.96,
+      "high": 188.62,
+      "complete": true,
+      "ordered": true
+    }
+  ]
+}

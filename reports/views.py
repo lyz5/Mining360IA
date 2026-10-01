@@ -191,6 +191,7 @@ from .active_directory_service import (
     synchronize_identity,
 )
 from .access_control import has_module_access, is_platform_admin, user_module_access, wants_json
+from .platform_roles import can_manage_users, active_profile, explicit_roles
 from .powerbi_interaction_orchestrator import process_user_question
 from .ad_auth import exchange_code, fetch_me, login_url, search_directory_users
 from .microsoft_delegated_auth import (
@@ -1074,149 +1075,24 @@ def powerbi_auth_disconnect(request):
 
 @login_required
 def users_manage(request):
-    if not _user_is_platform_admin(request.user):
+    if not can_manage_users(request.user):
         return JsonResponse({"ok": False, "error": "Admin access required."}, status=403)
-    if feature_enabled("ENABLE_USERS_PAGE_REDESIGN", request.user):
-        return render(request, "reports/users_access.html", {
-            "active_section": "users",
-            "sidebar_stats": [
-                {"label": "Users", "value": PlatformUser.objects.count()},
-                {"label": "Active", "value": PlatformUser.objects.filter(is_active=True).count()},
-            ],
-        })
-    query = request.GET.get("q", "").strip()
-    directory_results = []
-    search_error = ""
-    if query:
-        try:
-            ad_integration = active_directory_integration()
-            if ad_integration:
-                domain = str((ad_integration.settings_json or {}).get("netbios_domain") or "").upper()
-                directory_results = [{
-                    "id": person.object_id,
-                    "displayName": person.display_name,
-                    "userPrincipalName": person.upn,
-                    "primary_email": person.email,
-                    "jobTitle": "",
-                    "directory_username": person.username,
-                    "account_name": f"{domain}\\{person.username}" if domain else person.username,
-                    "source": "active_directory",
-                    "groups": person.groups,
-                } for person in search_directory_identities(ad_integration, query)]
-            else:
-                directory_results = search_directory_users(query)
-                for person in directory_results:
-                    person["primary_email"] = person.get("mail") or person.get("userPrincipalName") or ""
-                    person["account_name"] = person.get("userPrincipalName") or ""
-                    person["source"] = "microsoft_entra"
-        except Exception as exc:
-            search_error = str(exc)
-    return render(
-        request,
-        "reports/users.html",
-        {
-            "active_section": "users",
-            "query": query,
-            "directory_results": directory_results,
-            "search_error": search_error,
-            "platform_users": PlatformUser.objects.all(),
-            "role_choices": PlatformUser.ROLE_CHOICES,
-            "bp_role_choices": PlatformUser.BUSINESS_PERFORMANCE_ROLES,
-            "sidebar_stats": [
-                {"label": "Users", "value": PlatformUser.objects.count()},
-                {"label": "Auth", "value": "AD"},
-            ],
-        },
-    )
+    return render(request, "reports/users_access.html", {
+        "active_section": "users",
+        "sidebar_stats": [
+            {"label": "Users", "value": PlatformUser.objects.count()},
+            {"label": "Active", "value": PlatformUser.objects.filter(is_active=True).count()},
+        ],
+    })
 
 
-@login_required
-def users_add(request):
-    if not _user_is_platform_admin(request.user):
-        return JsonResponse({"ok": False, "error": "Admin access required."}, status=403)
-    if request.method != "POST":
-        return redirect("users-manage")
-    azure_id = request.POST.get("azure_ad_id", "").strip()
-    upn = request.POST.get("user_principal_name", "").strip().lower()
-    display_name = request.POST.get("display_name", "").strip() or upn
-    email = request.POST.get("email", "").strip() or upn
-    job_title = request.POST.get("job_title", "").strip()
-    role_payload = _platform_role_payload(request.POST)
-    if not azure_id or not upn:
-        messages.error(request, "Missing Azure AD user id or user principal name.")
-        return redirect("users-manage")
-    if request.POST.get("directory_source") == "active_directory":
-        integration = active_directory_integration()
-        if not integration:
-            messages.error(request, "Active Directory is not configured.")
-            return redirect("users-manage")
-        try:
-            identity = find_directory_identity(integration, request.POST.get("directory_username") or upn)
-            if identity.object_id != azure_id:
-                raise ValueError("The selected directory identity changed. Search and select it again.")
-            if not identity_is_allowed(integration, identity):
-                raise ValueError("This account is disabled or excluded by the configured Active Directory group filter.")
-            synchronize_identity(identity, integration)
-            platform_user = PlatformUser.objects.get(directory_object_id=identity.object_id)
-            for field, value in role_payload.items():
-                setattr(platform_user, field, value)
-            platform_user.directory_roles_managed = False
-            platform_user.is_active = True
-            platform_user.save()
-            if platform_user.django_user:
-                platform_user.django_user.is_active = True
-                platform_user.django_user.is_staff = platform_user.is_platform_admin
-                platform_user.django_user.is_superuser = platform_user.is_platform_admin
-                platform_user.django_user.save(update_fields=["is_active", "is_staff", "is_superuser"])
-        except Exception as exc:
-            messages.error(request, str(exc))
-            return redirect("users-manage")
-    else:
-        platform_user, _ = PlatformUser.objects.update_or_create(
-            azure_ad_id=azure_id,
-            defaults={
-                "user_principal_name": upn,
-                "email": email,
-                "display_name": display_name,
-                "job_title": job_title,
-                "is_active": True,
-                **role_payload,
-            },
-        )
-    messages.success(request, f"{platform_user.display_name} added to Mining360.")
-    return redirect("users-manage")
+def _retired_user_form(request, **kwargs):
+    return JsonResponse({"ok": False, "error": "Use the Users access panel to manage roles."}, status=403)
 
 
-@login_required
-def users_toggle(request, user_id):
-    if not _user_is_platform_admin(request.user):
-        return JsonResponse({"ok": False, "error": "Admin access required."}, status=403)
-    platform_user = get_object_or_404(PlatformUser, id=user_id)
-    if request.method == "POST":
-        platform_user.is_active = not platform_user.is_active
-        platform_user.save()
-        messages.success(request, f"{platform_user.display_name} status updated.")
-    return redirect("users-manage")
-
-
-@login_required
-def users_roles_update(request, user_id):
-    if not _user_is_platform_admin(request.user):
-        return JsonResponse({"ok": False, "error": "Admin access required."}, status=403)
-    if request.method != "POST":
-        return redirect("users-manage")
-    platform_user = get_object_or_404(PlatformUser, id=user_id)
-    for field, value in _platform_role_payload(request.POST).items():
-        setattr(platform_user, field, value)
-    if platform_user.auth_source == "active_directory":
-        platform_user.directory_roles_managed = request.POST.get("directory_roles_managed") == "on"
-    platform_user.save()
-    if platform_user.django_user_id:
-        platform_user.django_user.is_staff = platform_user.is_platform_admin
-        platform_user.django_user.is_superuser = platform_user.is_platform_admin
-        platform_user.django_user.save(update_fields=["is_staff", "is_superuser"])
-    messages.success(request, f"{platform_user.display_name} roles updated.")
-    return redirect("users-manage")
+users_add = login_required(_retired_user_form)
+users_toggle = login_required(_retired_user_form)
+users_roles_update = login_required(_retired_user_form)
 
 
 @login_required
@@ -1225,6 +1101,13 @@ def dashboard(request):
 
     if _command_center_allowed(request.user):
         return redirect("business-command-center")
+    if explicit_roles(active_profile(request.user)) is not None:
+        for module, route in (("excellence_center", "excellence-center"), ("reporting", "reporting"), ("resources", "resources")):
+            if has_module_access(request.user, module):
+                return redirect(route)
+        if can_manage_users(request.user):
+            return redirect("users-manage")
+        return HttpResponse("No module access is assigned. Contact an administrator.", status=403)
     return redirect("excellence-center")
 
 
@@ -1233,7 +1116,7 @@ def excellence_center(request):
     module_access = user_module_access(request.user)
     availability_command_center_enabled = bool(
         feature_enabled("ENABLE_AVAILABILITY_COMMAND_CENTER_HOME", request.user)
-        and (module_access.get("reporting") or _user_is_platform_admin(request.user))
+        and (module_access.get("excellence_center") or _user_is_platform_admin(request.user))
     )
     modules = [
         {

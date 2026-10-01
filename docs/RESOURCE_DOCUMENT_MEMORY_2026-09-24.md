@@ -2,6 +2,16 @@
 
 ## What is implemented locally
 
+### Library addition on 30 September 2026
+
+The local Resources library now contains **460 PDF paths / 450 distinct hashes** after adding 12 missing PDFs recovered from the user-provided `OneDrive_1_30-09-2026.zip`. All original 448 PDF hashes were verified unchanged. The 12 new documents were listed and served successfully through the authenticated local Resources routes, with HTTP content hashes matching the imported files.
+
+The archive is truncated: 250,457,583 bytes, SHA-256 `9fb1b582b1a3701275574661a8fb49c3afb2d3641254de8c40a0ea17ad754a0f`, no ZIP end directory. Only 156 complete members were recovered using verified CRC32 data descriptors; 144 matched existing sources exactly, 12 were new. Recovery stopped at `3.0 Component Life Management/3.03 Fluid Cleanliness/2. Tactical/Improving the Hydraulic Fluid Cleanliness of 794AC Fleet.pdf`. That incomplete member was not imported. This is NOT an exhaustive SharePoint synchronization.
+
+The 12 PDFs passed structural PDF parsing, but were not fully read, OCR-indexed or added to the original-source chatbot memory. The 448-document archive counts below remain the September 24 memory snapshot, not current library coverage. No deterministic knowledge generation was restarted. The original ZIP and staging evidence are preserved.
+
+Evidence, file list and hashes: `.migration-review/sharepoint-best-practices/import-result.json`, `recovered-members.json`, `archive-integrity.json`, `http-validation.json`. First-page-only SharePoint title comparison had identified `Grease Injection Test Optimization.pdf` as a candidate missing document; it was NOT recovered from the truncated portion and remains pending. A complete archive or smaller folder downloads are required to finish the comparison.
+
 The source memory is runtime/var/resource-memory/corpus.sqlite3 (relative to the workspace root).
 It contains all 448 PDF paths, 438 distinct source hashes, all 3,779 extracted/OCR pages and 5,617,333 characters.
 The original PDFs remain under res/bp. Images and table layout remain in these PDFs; they are not fully represented by extracted text.

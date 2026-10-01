@@ -334,9 +334,6 @@ def synchronize_identity(identity, item):
     user.first_name = identity.display_name[:150]
     user.set_unusable_password()
     user.is_active = active
-    user.is_staff = access["is_platform_admin"]
-    user.is_superuser = access["is_platform_admin"]
-    user.save()
     access_defaults = access
     if platform_user and not platform_user.directory_roles_managed:
         access_defaults = {
@@ -347,6 +344,15 @@ def synchronize_identity(identity, item):
             "can_access_sources": platform_user.can_access_sources,
             "business_performance_role": platform_user.business_performance_role,
         }
+    # Manual roles must survive login; directory group flags cannot elevate them.
+    user.is_staff = access_defaults["is_platform_admin"]
+    user.is_superuser = access_defaults["is_platform_admin"]
+    user.save()
+    if platform_user and platform_user.directory_roles_managed:
+        from .platform_roles import ROLE_KEY
+        scope = dict(platform_user.business_performance_scope or {})
+        scope.pop(ROLE_KEY, None)
+        platform_user.business_performance_scope = scope
     defaults = {
         "azure_ad_id": f"ad:{identity.object_id}"[:128], "entra_tenant_id": "",
         "email": identity.email or identity.upn, "display_name": identity.display_name,

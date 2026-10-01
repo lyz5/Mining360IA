@@ -1,0 +1,40 @@
+<section class="connectivity-workspace" data-connectivity-workspace hidden aria-labelledby="connectivity-title">
+    <header class="connectivity-heading">
+        <div><h2 id="connectivity-title">Connectivity Overview</h2>
+            <p data-connectivity-period>Current state based on the latest available source data.</p></div>
+        <span class="connectivity-loading" role="status">Updating overview…</span>
+    </header>
+    <div class="connectivity-cards" aria-live="polite" aria-atomic="true">
+        <article class="connectivity-card">
+            <div class="connectivity-card-heading"><h3>Total Assets</h3>
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 6h11v11H3zM14 10h4l3 4v3h-7M6 6V3h5v3"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+            </div>
+            <strong data-connectivity-value="total_assets">—</strong>
+            <p>Assets in selected scope</p>
+            <div class="connectivity-card-footer">Total fleet <span aria-hidden="true">→</span></div>
+        </article>
+        <article class="connectivity-card">
+            <div class="connectivity-card-heading"><h3>Connected</h3>
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 8a14 14 0 0 1 18 0M6 12a9 9 0 0 1 12 0M9 16a4 4 0 0 1 6 0"/><circle cx="12" cy="20" r="1"/></svg>
+            </div>
+            <strong data-connectivity-value="connected_ratio">—</strong>
+            <p data-connectivity-count="connected_count">—</p>
+            <div class="connectivity-progress" data-connectivity-progress="connected_ratio" role="progressbar" aria-label="Connected assets coverage" aria-valuemin="0" aria-valuemax="100"><span></span></div>
+            <div class="connectivity-card-footer">Connected fleet <span aria-hidden="true">→</span></div>
+        </article>
+        <article class="connectivity-card">
+            <div class="connectivity-card-heading"><h3>Reporting</h3>
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4v16h16M8 15v-4M12 15V7M16 15V9M20 15V5"/></svg>
+            </div>
+            <strong data-connectivity-value="reporting_ratio">—</strong>
+            <p data-connectivity-count="reporting_count">—</p>
+            <div class="connectivity-progress" data-connectivity-progress="reporting_ratio" role="progressbar" aria-label="Reporting assets coverage" aria-valuemin="0" aria-valuemax="100"><span></span></div>
+            <div class="connectivity-card-footer">Reporting fleet</div>
+        </article>
+    </div>
+    <aside class="connectivity-note" aria-label="Data source information">
+        <span class="connectivity-info" aria-hidden="true">i</span>
+        <div><p>Connected and Reporting use the report’s official measures.</p><p>Missing source values are displayed as —.</p></div>
+        <span class="connectivity-source">Mine Monthly Report · Neembers</span>
+    </aside>
+</section>

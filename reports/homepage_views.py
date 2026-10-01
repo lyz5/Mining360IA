@@ -11,6 +11,7 @@ from .homepage_availability_service import HomepageAvailabilityError, HomepageAv
 from .homepage_fuel_service import HomepageFuelService
 from .models import HomepageInteractionEvent
 from .powerbi_embed_strategy import feature_enabled
+from .performance_periods import completed_ytd_period, label_completed_ytd
 
 
 def _available(user) -> bool:
@@ -18,7 +19,7 @@ def _available(user) -> bool:
 
 
 def _authorized(user) -> bool:
-    return is_platform_admin(user) or has_module_access(user, "reporting")
+    return is_platform_admin(user) or has_module_access(user, "excellence_center")
 
 
 @login_required
@@ -33,7 +34,17 @@ def availability_command_center_api(request):
         )
     try:
         from .dashboard_snapshots import excellence_snapshot
-        return JsonResponse(excellence_snapshot(request.user, request.GET, force=request.GET.get("refresh") == "1"))
+        params = request.GET.copy()
+        if params.get('metric') == 'connectivity':
+            params['period'] = 'current'
+            return JsonResponse(excellence_snapshot(request.user, params, force=params.get('refresh') == '1'))
+        requested_period = params.get('period') or 'ytd'
+        try:
+            params['period'] = completed_ytd_period(requested_period)
+        except ValueError as exc:
+            raise HomepageAvailabilityError(str(exc), code='no_completed_ytd_month', status=400) from exc
+        payload = excellence_snapshot(request.user, params, force=params.get("refresh") == "1")
+        return JsonResponse(label_completed_ytd(payload, requested_period, params['period']))
     except HomepageAvailabilityError as exc:
         return JsonResponse(
             {"ok": False, "error": str(exc), "error_code": exc.code, "retryable": exc.status >= 500},
@@ -58,7 +69,7 @@ def homepage_interaction_api(request):
     allowed_context = {
         key: str(value)[:160]
         for key, value in raw_context.items()
-        if key in {"metric", "period", "breakdown", "minesite", "model", "serial_number", "customer", "action"}
+        if key in {"metric", "period", "breakdown", "minesite", "model", "prefix", "serial_number", "customer", "action"}
         and value not in (None, "")
     }
     HomepageInteractionEvent.objects.create(

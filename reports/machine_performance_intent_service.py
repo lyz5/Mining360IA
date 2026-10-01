@@ -86,7 +86,7 @@ def detect_machine_performance_intent(question: str, fallback: str = "single_kpi
         "open prime movers", "ouvre le rapport", "ouvrir le rapport", "affiche le rapport",
     )):
         return "powerbi_navigation"
-    serial_match = re.search(r"\b(?:serial(?: number| no)?|s/?n|num[eé]ro de s[eé]rie)\s*[:#-]?\s*([a-z0-9][a-z0-9 .-]{3,})\b", text)
+    serial_match = re.search(r"\b(?:serial(?: number| no)?|s/?n|num[eé]ro de s[eé]rie)\b\s*[:#-]?\s*([a-z0-9][a-z0-9 .-]{3,})\b", text)
     location_lookup = re.search(r"\b(?:where is|where is serial|ou se trouve|où se trouve|what model is|quel est le modele de)\s+([a-z0-9][a-z0-9.-]{4,})\b", text)
     standalone_identifier = re.fullmatch(r"(?=[a-z0-9 .-]*\d)[a-z0-9][a-z0-9 .-]{4,}", plain_text)
     if performance_request and serial_match:
@@ -222,7 +222,7 @@ def enrich_machine_performance_intent(intent: dict, question: str = "") -> dict:
             if site and site not in {"site", "minesite", "equipment", "machine"}:
                 filters["minesite"] = site.title()
     if enriched["intent_type"] == "lookup_equipment_by_serial":
-        match = re.search(r"\b(?:serial(?: number| no)?|s/?n|num[eé]ro de s[eé]rie)\s*[:#-]?\s*([a-z0-9][a-z0-9 .-]{3,})\b", text)
+        match = re.search(r"\b(?:serial(?: number| no)?|s/?n|num[eé]ro de s[eé]rie)\b\s*[:#-]?\s*([a-z0-9][a-z0-9 .-]{3,})\b", text)
         location = re.search(r"\b(?:where is|where is serial|ou se trouve|où se trouve|what model is|quel est le modele de)\s+([a-z0-9][a-z0-9.-]{4,})\b", text)
         candidate = (match.group(1) if match else (location.group(1) if location else text)).strip(" .?!")
         token = re.search(r"\b(?=[a-z0-9 .-]*\d)[a-z0-9][a-z0-9 .-]{4,}\b", candidate)

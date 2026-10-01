@@ -1,0 +1,5 @@
+<optgroup label="Coming next" disabled aria-disabled="true">
+    {% for capability in capabilities %}
+    <option value="{{ capability.id }}" disabled aria-disabled="true" title="Planned for a future Mining 360 release.">{{ capability.title }} &mdash; Coming soon</option>
+    {% endfor %}
+</optgroup>

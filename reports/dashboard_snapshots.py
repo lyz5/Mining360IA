@@ -158,24 +158,32 @@ def business_snapshot(user, params, *, explorer=False, force=False):
 
 def excellence_snapshot(user, params, *, force=False):
     if configuration().get('role') == 'replica':
+        from .excellence_filter_values import read_filters, MULTI_KEYS
+        from .homepage_availability_service import HomepageAvailabilityError
+        if params.get('prefix') or any(isinstance(value, list) for value in read_filters(params, MULTI_KEYS).values()):
+            raise HomepageAvailabilityError('Prefix and multiple selections are not yet supported by the remote snapshot server.', code='remote_multiselect_unavailable', status=400)
         from .dashboard_snapshot_client import remote_snapshot
         if params.get('metric') == 'fuel':
-            params = {**{key: params.get(key) for key in params}, 'payload_version': 'fuel-v3'}
+            params = {**{key: params.get(key) for key in params}, 'payload_version': 'fuel-v4-focus'}
         return remote_snapshot('excellence', user, params)
     from .homepage_availability_service import HomepageAvailabilityService
     from .homepage_fuel_service import HomepageFuelService
-    service = HomepageFuelService(user) if params.get('metric') == 'fuel' else HomepageAvailabilityService(user)
+    from .homepage_connectivity_service import HomepageConnectivityService
+    service_class = {'fuel': HomepageFuelService, 'connectivity': HomepageConnectivityService}.get(params.get('metric'), HomepageAvailabilityService)
+    service = service_class(user)
     request = service.request_from_params(params)
-    if not enabled():
+    if params.get('metric') == 'connectivity' or not enabled():
         return service.get(request, force_refresh=force)
     scope, role, identity = service._scope()
-    signature = {'scope': scope, 'role': role, 'identity': identity,
+    signature = {'scope': scope, 'role': role, 'identity': identity, 'multiselect_options_version': 2,
         'config': getattr(service.config, 'updated_at', None), 'dataset': service.report.semantic_model_id,
         'report': getattr(service.report, 'updated_at', None),
         'metrics': [getattr(service, name, None) for name in ('metric', 'mtbs_metric', 'mtbf_metric', 'mttr_metric')],
         'filter_mappings': getattr(service, 'filter_mappings', {})}
     if params.get('metric') == 'fuel':
-        signature['fuel_payload_version'] = 3
+        signature['fuel_payload_version'] = 4
+    if params.get('metric') == 'connectivity':
+        signature['connectivity_payload_version'] = 2
     return cached_payload('excellence', user, asdict(request), signature,
         lambda: service.get(request, force_refresh=force), force=force)
 

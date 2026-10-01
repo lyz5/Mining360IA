@@ -4,7 +4,7 @@ import re
 import unicodedata
 from datetime import date, timedelta
 from django.utils import timezone
-from reports.performance_periods import bounds
+from reports.performance_periods import bounds, completed_ytd_period, label_completed_ytd
 from reports.temporal_expression_resolution_service import resolve_temporal_expression, MONTHS
 
 
@@ -38,7 +38,7 @@ def parse_request(question, filters, today=None):
         if len(dates)!=2:
             raise ValueError('Specify both start and end dates, for example 2026-01-01 to 2026-03-31.')
         start,end=dates
-    elif re.search(r'\b(?:ytd|year to date)\b',text):
+    elif re.search(r"\b(?:ytd|year to date|depuis le debut de l[’']annee|since the beginning of the year)\b",text):
         years=re.findall(r'\b20\d{2}\b',text)
         if years and int(years[0])!=today.year:
             raise ValueError('For a previous year, specify an explicit start and end date.')
@@ -81,6 +81,7 @@ def parse_request(question, filters, today=None):
 
 
 def monthly_windows(period, reference_date):
+    period=completed_ytd_period(period,reference_date)
     window=bounds(period)
     if window:
         start,end=window

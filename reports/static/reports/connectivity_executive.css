@@ -1,0 +1,98 @@
+/* Presentation only; scoped to the existing Connectivity metric workspace. */
+.connectivity-eyebrow { display: none; }
+body:has(.connectivity-mode) { background: #f7f8fa; }
+body:has(.connectivity-mode)::before { background: none; }
+.connectivity-mode {
+    --connectivity-ink: #172033;
+    --connectivity-muted: #586579;
+    --connectivity-border: #e2e6ec;
+    --connectivity-accent: #ffc20e;
+}
+.connectivity-mode .connectivity-eyebrow { display: inline; }
+.connectivity-mode .command-header { align-items: center; gap: 20px; margin-bottom: 22px; }
+.connectivity-mode .command-header__identity { min-width: 0; }
+.connectivity-mode .command-kicker { color: #616c7c; font-size: 10px; letter-spacing: .12em; margin: 0 0 9px; }
+.connectivity-mode .command-header h1 { font-size: clamp(24px, 2.4vw, 34px); line-height: 1.15; letter-spacing: -.035em; margin: 0 0 8px; }
+.connectivity-mode .command-header__identity > p:last-child { font-size: 13px; line-height: 1.5; color: var(--connectivity-muted); margin: 0; }
+.connectivity-mode .command-header__status { display: grid; grid-template-columns: auto auto auto; gap: 6px 14px; align-items: center; flex-shrink: 0; }
+.connectivity-mode .connection-status { grid-column: 1; grid-row: 1; font-size: 11px; }
+.connectivity-mode .connection-status span { display: inline; }
+.connectivity-mode .refresh-status { display: block; grid-column: 1; grid-row: 2; font-size: 10px; color: var(--connectivity-muted); white-space: normal; max-width: 210px; line-height: 1.5; }
+.connectivity-mode .command-header [data-source-refresh] { grid-column: 2; grid-row: 1 / 3; background: white; border: 1px solid var(--connectivity-border); box-shadow: none; }
+.connectivity-mode .command-header [data-action="ask-ai"] { grid-column: 3; grid-row: 1 / 3; background: var(--connectivity-accent); border: 1px solid #e8af00; box-shadow: 0 2px 4px #17203308; }
+.connectivity-mode button { transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease; }
+.connectivity-mode .command-header button { min-height: 40px; padding: 9px 13px; margin: 0; font-size: 12px; border-radius: 8px; color: var(--connectivity-ink); }
+.connectivity-mode button:hover { box-shadow: 0 2px 7px #17203312; }
+.connectivity-mode :is(button, select):focus-visible { outline: 2px solid #576b89; outline-offset: 3px; }
+.connectivity-mode .analysis-controls {
+    display: grid; grid-template-columns: minmax(125px,.8fr) repeat(2,minmax(125px,1fr)) minmax(100px,.65fr) minmax(140px,1fr) auto;
+    grid-template-areas: none;
+    align-items: end; gap: 16px; padding: 16px 18px; background: #fff;
+    border: 1px solid var(--connectivity-border); border-radius: 12px; box-shadow: 0 2px 5px #17203303;
+}
+.connectivity-mode .context-controls { display: contents; }
+.connectivity-mode .analysis-controls .control-group { grid-column: auto; grid-row: auto; min-width: 0; margin: 0; }
+.connectivity-mode .analysis-controls .control-group > span { font-size: 10px; font-weight: 700; letter-spacing: .08em; color: var(--connectivity-muted); margin-bottom: 7px; }
+.connectivity-mode .analysis-controls select { width: 100%; min-width: 0; height: 40px; min-height: 40px; border: 1px solid #dce2ea; border-radius: 7px; padding: 8px 30px 8px 11px; background-color: #fff; color: var(--connectivity-ink); font-size: 12px; transition: border-color 180ms, box-shadow 180ms; }
+.connectivity-mode .analysis-controls select:hover { border-color: #8a98aa; }
+.connectivity-mode .analysis-controls select:focus { border-color: #576b89; box-shadow: 0 0 0 3px #576b8912; }
+.connectivity-mode .analysis-controls .reset-filters { grid-column: auto; grid-row: auto; height: 40px; min-height: 40px; padding: 8px 10px; border: 0; border-radius: 7px; color: #536075; background: #f7f8fa; font-size: 11px; }
+.connectivity-mode .analysis-breadcrumb { margin: 17px 0 23px; gap: 10px; font-size: 10px; letter-spacing: .065em; text-transform: uppercase; }
+.connectivity-mode .analysis-breadcrumb button { font-size: 10px; letter-spacing: .065em; color: #627086; font-weight: 500; text-transform: uppercase; }
+.connectivity-mode .analysis-breadcrumb button:last-child { color: var(--connectivity-ink); font-weight: 700; }
+.connectivity-mode .connectivity-workspace { border: 0; border-radius: 0; background: none; padding: 0; }
+.connectivity-mode .connectivity-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; }
+.connectivity-mode .connectivity-heading h2 { font-size: 18px; letter-spacing: -.02em; margin: 0 0 7px; }
+.connectivity-mode .connectivity-heading p { margin: 0; font-size: 12px; color: var(--connectivity-muted); }
+.connectivity-loading { display: none; }
+.connectivity-mode.is-updating .connectivity-loading { display: inline; color: #627086; font-size: 11px; }
+.connectivity-mode .connectivity-cards { gap: 18px; margin: 0; }
+.connectivity-mode .connectivity-card { position: relative; min-width: 0; padding: 22px 24px 15px; border: 1px solid var(--connectivity-border); border-radius: 12px; background: #fff; box-shadow: 0 3px 12px #17203304; transition: border-color 180ms, box-shadow 180ms; }
+.connectivity-mode .connectivity-card:first-child::before { content: ""; position: absolute; width: 35px; height: 3px; top: -1px; left: 24px; border-radius: 0 0 2px 2px; background: var(--connectivity-accent); }
+.connectivity-mode .connectivity-card:hover { border-color: #bdc7d4; box-shadow: 0 5px 18px #17203308; }
+.connectivity-mode .connectivity-card-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+.connectivity-mode .connectivity-card h3 { margin: 0; color: #526075; text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: .095em; }
+.connectivity-mode .connectivity-card svg { width: 22px; height: 22px; stroke: #728096; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.connectivity-mode .connectivity-card strong { display: block; font-size: clamp(32px, 3.7vw, 50px); font-weight: 700; line-height: 1.1; letter-spacing: -.045em; font-variant-numeric: tabular-nums; color: var(--connectivity-ink); }
+.connectivity-mode .connectivity-card > p { margin: 10px 0 18px; font-size: 12px; color: var(--connectivity-muted); }
+.connectivity-progress { height: 5px; background: #eef1f5; border-radius: 3px; overflow: hidden; }
+.connectivity-progress > span { display: block; height: 100%; width: 0; background: #415570; border-radius: inherit; transition: width 220ms ease; }
+.connectivity-progress[aria-valuetext="Unavailable"] { visibility: hidden; }
+.connectivity-mode .connectivity-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 19px; padding-top: 12px; border-top: 1px solid #f0f2f5; font-size: 10px; color: #677489; }
+.connectivity-mode .connectivity-card:first-child .connectivity-card-footer { margin-top: 24px; }
+.connectivity-mode .connectivity-note { display: flex; align-items: flex-start; gap: 10px; margin-top: 18px; padding: 13px 2px; color: var(--connectivity-muted); font-size: 11px; line-height: 1.6; }
+.connectivity-mode .connectivity-note p { margin: 0; }
+.connectivity-info { width: 16px; height: 16px; margin-top: 2px; border: 1px solid #8a98ab; border-radius: 50%; text-align: center; line-height: 14px; font-size: 10px; flex-shrink: 0; }
+.connectivity-source { margin-left: auto; font-size: 10px; }
+.connectivity-mode.is-updating .connectivity-cards { opacity: .5; transition: opacity 180ms; }
+.connectivity-mode .homepage-actions { margin-top: 8px; padding: 0; }
+.connectivity-mode .homepage-actions [data-action="ask-ai"] { display: none; }
+.connectivity-mode .homepage-actions [data-action="open-report"] { border: 0; background: none; box-shadow: none; color: #54657d; padding: 6px 0; font-size: 11px; }
+@media (max-width: 1250px) {
+    .connectivity-mode .command-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .connectivity-mode .command-header__status { width: 100%; grid-template-columns: 1fr auto auto; }
+    .connectivity-mode .analysis-controls { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .connectivity-mode .analysis-controls .reset-filters { grid-column: 2; justify-self: end; }
+    .connectivity-mode .connectivity-card { padding: 18px; }
+}
+@media (max-width: 900px) {
+    .connectivity-mode .connectivity-cards { grid-template-columns: minmax(0,1fr); gap: 12px; }
+}
+@media (max-width: 760px) {
+    body:has(.connectivity-mode) .app-nav { position: fixed; top: 0; bottom: 0; height: 100dvh; overflow-y: auto; }
+    .app-shell.availability-home.connectivity-mode { width: calc(100% - 76px); margin-left: 76px; padding: 16px 12px 28px; }
+}
+@media (max-width: 650px) {
+    .connectivity-mode .connectivity-card strong { font-size: 38px; }
+    .connectivity-mode .connectivity-card-heading { margin-bottom: 16px; }
+    .connectivity-mode .connectivity-note { flex-wrap: wrap; }
+    .connectivity-source { margin-left: 26px; width: 100%; }
+    .connectivity-mode .command-header__status { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .connectivity-mode .connection-status { grid-row: 1; grid-column: 1; }
+    .connectivity-mode .refresh-status { grid-row: 1; grid-column: 2; }
+    .connectivity-mode .command-header [data-source-refresh] { grid-row: 2; grid-column: 1; }
+    .connectivity-mode .command-header [data-action="ask-ai"] { grid-row: 2; grid-column: 2; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .connectivity-mode *, .connectivity-mode *::before { animation: none !important; transition: none !important; }
+}

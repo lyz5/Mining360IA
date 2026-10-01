@@ -8,7 +8,7 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_http_methods
 
-from .access_control import is_platform_admin
+from .platform_roles import can_manage_users
 from .active_directory_service import active_directory_integration, search_directory_identities
 from .models import PlatformUser
 from .user_access_service import (
@@ -38,7 +38,7 @@ def _error(message, *, status=400, field=""):
 
 
 def _admin(request):
-    return bool(request.user.is_authenticated and is_platform_admin(request.user))
+    return can_manage_users(request.user)
 
 
 def _payload(request):
