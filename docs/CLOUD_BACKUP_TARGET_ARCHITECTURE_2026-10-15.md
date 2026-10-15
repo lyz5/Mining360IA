@@ -203,6 +203,19 @@ secrets. Chaque dépôt doit aussi être exporté périodiquement sous forme de 
 Git dans Azure afin de permettre une reprise si le compte ou le service distant
 est indisponible. Le dépôt Marketing Digital doit recevoir un remote privé.
 
+### Identité Git personnelle obligatoire
+
+Tous les nouveaux commits doivent utiliser :
+
+- nom : `Papa Djibril Diagne` ;
+- adresse : `papadjibrildiagne@gmail.com`.
+
+Cette identité est configurée globalement sur le poste et explicitement dans le
+dépôt Mining360IA. Aucun nouveau commit ne doit utiliser l'adresse Neemba. Le
+compte GitHub personnel doit avoir cette adresse vérifiée ; l'identité de commit
+ne remplace pas l'authentification GitHub, qui doit elle aussi rester sous contrôle
+personnel.
+
 ## Défense contre la perte totale
 
 Le stockage Azure central réduit fortement la dépendance au poste, mais un seul
