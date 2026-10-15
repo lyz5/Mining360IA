@@ -1,0 +1,103 @@
+{
+  "as_of": "2026-10-15",
+  "owner": "Papa Djibril Diagne",
+  "project_count": 6,
+  "development_policy": {
+    "sequence": [
+      "local_development",
+      "local_testing",
+      "documented_validation",
+      "backup_and_rollback",
+      "explicit_production_approval",
+      "production_deployment",
+      "post_deployment_validation"
+    ],
+    "reference": "docs/LOCAL_FIRST_DEVELOPMENT_STANDARD_2026-10-15.md",
+    "machine_continuity_reference": "docs/DEV_MACHINE_CONTINUITY_RUNBOOK_2026-10-15.md"
+  },
+  "projects": [
+    {
+      "id": "mining360",
+      "name": "Mining 360",
+      "canonical_path": "C:\\Users\\diagnepa\\Documents\\MBA\\Mining360IA",
+      "repository": "restored working copy; active Git metadata absent",
+      "local_url": "http://127.0.0.1:8001/",
+      "local_check": {"date": "2026-10-15", "path": "/health/", "status": 200},
+      "remote_environment": "BODEFM",
+      "local_database_target": "SQL Server 2022 Developer 16.x / Mining360App_Dev",
+      "local_database_status": "SQL Server 2025 Enterprise Developer 17.0.1000.7 installed; SQL Server 2022 parity instance and migration still pending",
+      "deployment_requires_explicit_approval": true,
+      "primary_memory": "docs/MINING360_HANDOFF_2026-09-18.md"
+    },
+    {
+      "id": "miningprod",
+      "name": "MiningProd",
+      "canonical_path": "remote IIS application; local procedures live in Mining360IA",
+      "production_path": "C:\\inetpub\\wwwroot\\Miningprod",
+      "test_url": "http://172.17.0.111/Miningprod_test/",
+      "test_path": "D:\\Miningprod_test\\app",
+      "test_database": "Miningprod_test",
+      "local_test_target": "IIS + SQL Server 2022 Developer / Miningprod_test_Local",
+      "local_test_status": "pending transfer and isolated restore",
+      "deployment_requires_explicit_approval": true,
+      "primary_memory": "docs/MININGPROD_BROWSER_WORKING_MEMORY.md"
+    },
+    {
+      "id": "mayite",
+      "name": "Mayite",
+      "canonical_path": "C:\\Users\\diagnepa\\Documents\\Personal Projects\\Mayite",
+      "repository": "https://github.com/lyz5/MayiteService.git",
+      "branch": "backup/pythonanywhere-20261012",
+      "local_url": "http://127.0.0.1:8012/",
+      "local_check": {"date": "2026-10-15", "status": 200},
+      "production_url": "https://equivalence.mayite-service.com",
+      "deployment_requires_explicit_approval": true,
+      "primary_memory": "LOCAL_SETUP.md"
+    },
+    {
+      "id": "dstv",
+      "name": "DSTV",
+      "canonical_path": "C:\\Users\\diagnepa\\Documents\\Personal Projects\\Dstv",
+      "repository": "https://github.com/lyz5/DstvApp.git",
+      "branch": "backup/pythonanywhere-20261012",
+      "local_url": "http://127.0.0.1:8011/",
+      "local_check": {"date": "2026-10-15", "status": 200, "final_path": "/login/"},
+      "production_url": "https://dstvsenegal.pacdigitale.com",
+      "deployment_requires_explicit_approval": true,
+      "primary_memory": "LOCAL_SETUP.md"
+    },
+    {
+      "id": "pacdigitale_website",
+      "name": "Site web Pacdigitale",
+      "canonical_path": "C:\\Users\\diagnepa\\Documents\\Personal Projects\\Website",
+      "repository": "https://github.com/lyz5/pacdigitalewebsite.git",
+      "branch": "main",
+      "local_url": "http://127.0.0.1:8020/",
+      "local_check": {"date": "2026-10-15", "status": 200},
+      "production_url": "https://www.pacdigitale.com",
+      "deployment_requires_explicit_approval": true,
+      "primary_memory": "docs/IMPLEMENTATION.md"
+    },
+    {
+      "id": "executive_mba_thesis",
+      "name": "Mémoire Executive MBA",
+      "canonical_path": "C:\\Users\\diagnepa\\Documents\\MBA",
+      "working_exports": "C:\\Users\\diagnepa\\Documents\\MBA\\Mining360IA\\exports\\Memoire_MBA_Validation_2026-10-11",
+      "subject": "Mining 360 : levier de performance opérationnelle et de croissance commerciale",
+      "status": "15-page validation proposal produced; research scope and fieldwork decisions pending",
+      "submission_requires_explicit_approval": true,
+      "primary_memory": "exports/Memoire_MBA_Validation_2026-10-11/Mining360_Points_A_Confirmer.md"
+    }
+  ],
+  "relationships": [
+    {"from": "miningprod", "to": "mining360", "type": "operational source and reference data"},
+    {"from": "mining360", "to": "executive_mba_thesis", "type": "applied research case"},
+    {"from": "pacdigitale_website", "to": "mayite", "type": "Pac Digitale portfolio"},
+    {"from": "pacdigitale_website", "to": "dstv", "type": "Pac Digitale portfolio"}
+  ],
+  "security": {
+    "store_credentials": false,
+    "cross_project_deployment_authorization": false,
+    "production_deployment_default": "explicit approval required"
+  }
+}
