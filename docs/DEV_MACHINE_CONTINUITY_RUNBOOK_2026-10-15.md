@@ -143,5 +143,8 @@ La phrase de l'archive doit être conservée séparément du fichier. Une archiv
 Le script `scripts/dev_machine_manifest.py` génère l'inventaire non secret. Le script
 `scripts/check_local_sql_iis.ps1` contrôle en lecture seule les instances SQL et les
 composants IIS ; l'inventaire IIS complet peut demander une console administrateur.
+Le script `scripts/export_committed_sources.ps1` produit des archives ZIP des fichiers
+commités et un manifeste SHA-256. Il exclut volontairement les changements non
+commités, bases, médias et secrets, qui exigent leurs sauvegardes dédiées.
 Ces scripts ne sauvegardent ni données ni credentials et ne remplacent pas les
 backups natifs.
