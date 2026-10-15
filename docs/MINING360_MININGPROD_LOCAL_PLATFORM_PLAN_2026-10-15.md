@@ -20,11 +20,20 @@ La dernière preuve serveur disponible indique :
 - compatibilité `Mining360App` : 160 au 10 octobre 2026 ;
 - compatibilité historique `MiningProd` : 110.
 
-Le fichier téléchargé était `SQL2025-SSEI-EntDev.exe` et l'installation s'est terminée pendant l'audit. L'instance locale est maintenant SQL Server **2025 Enterprise Developer Edition**, version `17.0.1000.7`, service `MSSQLSERVER`. Elle ne reproduit pas la même major version. Pour la parité demandée, une instance **SQL Server 2022 Developer** reste nécessaire après une nouvelle lecture de `SERVERPROPERTY('ProductVersion')` sur BODEFM. Cette lecture a été tentée le 15 octobre mais BODEFM n'était pas joignable depuis le réseau courant ; aucune modification distante n'a eu lieu.
+Le fichier initialement téléchargé était `SQL2025-SSEI-EntDev.exe`. SQL Server **2025 Enterprise Developer Edition** `17.0.1000.7` et le service `MSSQLSERVER` ont été observés actifs pendant l'audit. Une action de désinstallation a ensuite été lancée le 15 octobre à 11:48 puis annulée par l'installateur avant la désinstallation complète. Au contrôle suivant, le service et la clé d'instance n'étaient plus visibles tandis que `setup.exe` restait actif. Cet état doit être réparé ou finalisé avant d'installer SQL Server 2022. Aucune base applicative n'avait été créée dans l'instance 2025.
+
+Pour la parité demandée, une instance **SQL Server 2022 Developer** reste nécessaire après une nouvelle lecture de `SERVERPROPERTY('ProductVersion')` sur BODEFM. Cette lecture a été tentée le 15 octobre mais BODEFM n'était pas joignable depuis le réseau courant ; aucune modification distante n'a eu lieu.
+
+L'installeur officiel SQL Server 2022 Developer a ensuite été téléchargé sous
+`C:\Users\diagnepa\Downloads\SQL2022-SSEI-Dev.exe`. Contrôles effectués : produit
+`Microsoft Sql Server Installer`, version `16.2211.5693.3`, signature Authenticode
+valide de Microsoft Corporation et SHA-256
+`5D9D277DCCEF80F2395F915664BD8E63FE7496B7B9C005C2F0C78A3C70D03813`.
+Le téléchargement ne constitue pas l'installation de l'instance `DEVSQL2022`.
 
 ## État local observé
 
-- instance par défaut `MSSQLSERVER` active en SQL Server 2025 Enterprise Developer `17.0.1000.7` ;
+- installation SQL Server 2025 `MSSQLSERVER` observée, puis désinstallation annulée ; service et enregistrement d'instance absents au dernier contrôle, état à stabiliser ;
 - `sqlcmd` 17.0 installé sous les outils ODBC mais absent du PATH ;
 - ODBC Driver 18 for SQL Server disponible dans l'environnement Python ;
 - MySQL 8.0.46 installé et service `MySQL80` observé actif ;
@@ -32,6 +41,7 @@ Le fichier téléchargé était `SQL2025-SSEI-EntDev.exe` et l'installation s'es
 - installeur SSMS présent ;
 - IIS existe sur le disque, mais les fonctionnalités Windows exactes exigent un inventaire UAC administrateur avant configuration ;
 - les premiers essais de connexion intégrée locale ont échoué au niveau SSL/package de sécurité. Aucune base applicative n'a été créée. Résoudre cette connexion avant toute migration.
+- bootstrapper officiel SQL Server 2022 Developer téléchargé et signé ; installation de l'instance nommée encore à réaliser.
 
 ## Installation SQL Server 2022 Developer
 
@@ -129,6 +139,6 @@ Utiliser une copie vérifiée du clone distant `D:\Miningprod_test\app`, pas les
 ## Limites
 
 - La version SQL Server BODEFM n'a pas pu être relue le 15 octobre en raison d'une indisponibilité DNS/réseau vers BODEFM.
-- SQL Server 2025 a été installé pendant l'audit par le processus utilisateur en cours ; ce plan n'a lancé aucun installeur et n'a créé aucune base applicative.
+- SQL Server 2025 a été installé puis une désinstallation a été lancée et annulée par le processus utilisateur ; les contrôles de ce plan n'ont lancé ni installation ni désinstallation et n'ont créé aucune base applicative.
 - Aucun backup de base distante ni fichier MiningProd n'a été transféré.
 - Le volume final des backups et la RAM réelle disponible doivent être vérifiés avant restauration.

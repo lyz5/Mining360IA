@@ -18,7 +18,8 @@ Le modèle de travail retenu est : **développement local → tests locaux → v
 ## Socle de données
 
 - MySQL 8.0.46 est installé et le service `MySQL80` a été observé actif.
-- SQL Server 2025 Enterprise Developer `17.0.1000.7`, instance `MSSQLSERVER`, a été installé.
+- SQL Server 2025 Enterprise Developer `17.0.1000.7` a été observé installé, puis une désinstallation a été lancée et annulée. Au dernier contrôle, le service `MSSQLSERVER` et la clé d'instance étaient absents tandis que `setup.exe` restait actif ; cet état doit être stabilisé avant l'installation 2022.
+- L'installeur officiel SQL Server 2022 Developer `16.2211.5693.3` est téléchargé et sa signature Microsoft est valide ; l'instance `DEVSQL2022` n'est pas encore installée.
 - La preuve disponible pour BODEFM indique SQL Server 2022 Developer 16.x et une compatibilité 160 pour `Mining360App`.
 - Les connexions locales à l'instance 2025 ont échoué au niveau SSL/package de sécurité ; aucune base Mining 360 ou MiningProd n'y a été créée.
 - La version BODEFM n'a pas pu être relue le 15 octobre en raison de l'indisponibilité DNS/réseau.

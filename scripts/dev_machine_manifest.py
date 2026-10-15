@@ -178,6 +178,7 @@ def build_manifest() -> dict[str, object]:
         "sql_server": {
             **local_sql_state(),
             "target_major_version": "16.x (SQL Server 2022 Developer), pending live BODEFM recheck",
+            "sql_2022_installer_present": (HOME / "Downloads" / "SQL2022-SSEI-Dev.exe").exists(),
             "sql_2025_installer_present": (HOME / "Downloads" / "SQL2025-SSEI-EntDev.exe").exists(),
         },
         "projects": project_rows,
