@@ -65,13 +65,17 @@ def command(args: list[str], cwd: Path | None = None) -> dict[str, object]:
 
 
 def git_state(path: Path) -> dict[str, object]:
-    top = command(["git", "rev-parse", "--show-toplevel"], path)
+    # The continuity inventory may run under a sandbox identity while the
+    # repositories belong to the signed-in Windows user. Scope Git's ownership
+    # exception to this command instead of mutating the user's global config.
+    git = ["git", "-c", f"safe.directory={path.resolve()}"]
+    top = command([*git, "rev-parse", "--show-toplevel"], path)
     if not top.get("ok"):
         return {"is_repository": False}
-    branch = command(["git", "branch", "--show-current"], path)
-    commit = command(["git", "rev-parse", "HEAD"], path)
-    status = command(["git", "status", "--porcelain"], path)
-    remote = command(["git", "remote", "get-url", "origin"], path)
+    branch = command([*git, "branch", "--show-current"], path)
+    commit = command([*git, "rev-parse", "HEAD"], path)
+    status = command([*git, "status", "--porcelain"], path)
+    remote = command([*git, "remote", "get-url", "origin"], path)
     lines = status.get("stdout", "").splitlines() if status.get("ok") else []
     return {
         "is_repository": True,
