@@ -6,6 +6,11 @@ L'exposition quantitative courante est enregistrée dans
 `docs/DEV_MACHINE_LOSS_EXPOSURE_2026-10-15.md`. La consulter avant de déclarer
 qu'une migration ou une sauvegarde est complète.
 
+L'architecture cloud cible est définie dans
+`docs/CLOUD_BACKUP_TARGET_ARCHITECTURE_2026-10-15.md` : Azure Blob Storage pour
+les sauvegardes, Azure Key Vault pour les secrets, avec des périmètres séparés
+pour Neemba et les projets personnels/Pac Digitale.
+
 ## Objectif
 
 Permettre de remplacer le poste de développement sans perdre le code, les bases et fichiers métier, les configurations et credentials, les environnements, les procédures, les connaissances et les preuves de validation.
