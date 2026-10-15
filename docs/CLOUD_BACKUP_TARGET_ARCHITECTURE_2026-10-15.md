@@ -4,7 +4,12 @@ Décision recommandée le 15 octobre 2026.
 
 ## Décision
 
-Utiliser **Microsoft Azure comme plateforme centrale de continuité**, avec :
+Utiliser **un tenant Microsoft Azure personnel dont Papa Djibril Diagne est le
+propriétaire et le responsable de facturation**, créé avec une adresse personnelle
+durable, jamais avec l'adresse Neemba, comme plateforme centrale de continuité.
+Ce tenant doit rester accessible après un changement d'employeur ou de poste.
+
+Il comprend :
 
 - **Azure Blob Storage** pour les sauvegardes de code, bases, médias, documents,
   exports, configurations non secrètes et preuves ;
@@ -14,21 +19,51 @@ Utiliser **Microsoft Azure comme plateforme centrale de continuité**, avec :
 - GitHub comme source de collaboration du code, complété par des bundles Git et
   archives de restauration dans Blob Storage.
 
-Azure constitue ici une plateforme commune, pas un dossier unique. Les données
-Neemba et les projets personnels doivent rester dans deux périmètres de propriété
-et d'accès distincts.
+Azure constitue ici une plateforme commune, pas un dossier unique ni un serveur
+unique. Un abonnement créé sur le portail Azure est hébergé dans le tenant Entra
+du compte propriétaire ; la propriété de facturation et les rôles Azure doivent
+être contrôlés avec le compte personnel.
 
-## Périmètres obligatoires
+## Propriété personnelle et périmètres obligatoires
 
-| Périmètre | Projets | Propriétaire recommandé | Règle |
+| Périmètre | Projets | Propriété | Règle |
 | --- | --- | --- | --- |
-| Professionnel Neemba | Mining 360, MiningProd et documents MBA contenant des informations internes | tenant et abonnement Azure approuvés par Neemba | aucune copie vers un abonnement personnel sans autorisation de Neemba |
-| Personnel / Pac Digitale | Mayite, DSTV, site Pacdigitale, Marketing Digital et documents MBA personnels non confidentiels | tenant Azure contrôlé par Papa Djibril Diagne ou Pac Digitale | accès indépendant d'un compte professionnel Neemba |
+| `PDD-PERSONAL` | Mayite, DSTV, site Pacdigitale, Marketing Digital, mémoire et documentation personnelle | Papa Djibril Diagne, compte et paiement personnels | aucune dépendance à l'adresse, au téléphone, au poste ou au tenant Neemba |
+| `PDD-NEEMBA-AUTHORIZED` | copies autorisées de Mining 360, MiningProd, AGENTS.md, documentation et travaux MBA contenant des éléments Neemba | Papa Djibril Diagne, dans une souscription et un coffre séparés | aucune donnée, base, secret, code ou documentation confidentielle Neemba sans autorisation de conservation hors des systèmes Neemba |
 
-Si Neemba n'a pas encore validé un abonnement de sauvegarde, les éléments Neemba
-restent dans les emplacements approuvés existants jusqu'à cette validation. La
-séparation évite qu'un changement d'emploi, de licence ou d'administrateur bloque
-la reprise des projets personnels ou expose des données d'entreprise.
+La demande de continuité personnelle ne transfère pas la propriété intellectuelle
+ou les obligations de confidentialité. Si Neemba n'autorise pas la conservation
+d'un élément dans le compte personnel, cet élément reste dans les systèmes
+Neemba. Le coffre personnel conserve alors un paquet de connaissance portable et
+assaini : méthodes génériques, procédures personnelles, inventaire des compétences
+et documentation sans données, secrets, URL internes, code propriétaire ou valeurs
+métier confidentielles.
+
+Cette séparation permet de garder un seul propriétaire personnel et une seule
+plateforme, tout en empêchant le mélange des droits, des secrets et des règles de
+conservation.
+
+## Serveur de travail cloud personnel
+
+Pour retrouver aussi l'environnement de développement après la perte du poste,
+ajouter une **machine virtuelle Azure Windows** personnelle et chiffrée. Elle sert
+de poste de reprise et peut héberger Git, les outils, IIS et les environnements de
+développement autorisés. Elle ne doit pas être la sauvegarde unique.
+
+La VM doit avoir :
+
+- un disque système et un disque de données séparés ;
+- le chiffrement des disques, l'accès administratif restreint et aucun port RDP
+  exposé directement à Internet ;
+- une extinction automatique lorsqu'elle n'est pas utilisée ;
+- une sauvegarde dans un Recovery Services vault avec suppression réversible,
+  immutabilité et alertes ;
+- une reconstruction automatisable à partir des manifestes, dépôts et archives ;
+- uniquement les composants Neemba dont l'utilisation hors poste professionnel a
+  été autorisée.
+
+Une VM facilite le travail, mais Blob Storage, Key Vault et les backups immuables
+restent les sources de reprise.
 
 ## Configuration Azure recommandée
 
@@ -156,11 +191,12 @@ changement de poste.
 
 ## Rôle de OneDrive et GitHub
 
-OneDrive/SharePoint reste adapté aux documents Office en cours, grâce à
+Un OneDrive personnel reste adapté aux documents Office en cours, grâce à
 l'historique de versions, à la corbeille et à Files Restore. Il ne doit pas être
 la seule sauvegarde des bases actives, des gros fichiers WAL, des médias, des clés
-ou des archives de reprise. Le OneDrive professionnel Neemba ne doit pas être la
-seule copie des projets personnels.
+ou des archives de reprise. Le OneDrive professionnel Neemba ne doit contenir que
+les éléments professionnels autorisés et ne doit jamais être la seule copie des
+projets personnels.
 
 GitHub reste la source du code versionné. Il ne contient ni bases, ni médias, ni
 secrets. Chaque dépôt doit aussi être exporté périodiquement sous forme de bundle
@@ -177,20 +213,25 @@ géorépliquée et versionnée, plus copie hors ligne périodique.
 
 ## Mise en œuvre par étapes
 
-1. Faire valider le tenant et l'abonnement destinés aux données Neemba.
-2. Créer ou confirmer un tenant Pac Digitale/personnel indépendant.
-3. Provisionner StorageV2, Key Vault, RBAC, MFA, rétention, immutabilité et
+1. Créer une adresse Microsoft personnelle durable et un tenant Azure dont Papa
+   Djibril Diagne détient la propriété et la facturation.
+2. Créer deux abonnements ou, au minimum, deux groupes de ressources et comptes de
+   stockage séparés : `PDD-PERSONAL` et `PDD-NEEMBA-AUTHORIZED`.
+3. Configurer un second compte de secours personnel, MFA, codes de récupération
+   hors ligne et alertes de facturation ; ne dépendre d'aucun moyen Neemba.
+4. Provisionner StorageV2, Key Vault, RBAC, rétention, immutabilité et
    journalisation dans chaque périmètre.
-4. Produire immédiatement une sauvegarde cohérente de la base Mining 360 et les
-   dumps des autres projets, sans déplacer de secret dans un fichier non chiffré.
-5. Téléverser une première génération complète avec manifestes SHA-256.
-6. Restaurer cette génération sur un emplacement vierge et consigner le résultat.
-7. Automatiser les sauvegardes quotidiennes et les alertes, puis tester la
+5. Créer la VM Windows personnelle de reprise et son Recovery Services vault.
+6. Produire les sauvegardes cohérentes des projets personnels. Pour Mining 360 et
+   MiningProd, inventorier d'abord ce qui est autorisé à quitter Neemba.
+7. Téléverser une première génération complète avec manifestes SHA-256.
+8. Restaurer cette génération sur un emplacement vierge et consigner le résultat.
+9. Automatiser les sauvegardes quotidiennes et les alertes, puis tester la
    restauration mensuellement.
 
-La création des ressources Azure, l'engagement de coût et le transfert des données
-Neemba nécessitent le choix explicite des abonnements et l'approbation de Neemba.
-Cette architecture ne vaut pas autorisation de transfert.
+La création des ressources Azure entraîne une facturation personnelle. Le transfert
+de données Neemba nécessite en plus une autorisation de Neemba. Cette architecture
+ne vaut pas autorisation de transfert.
 
 ## Références officielles
 
@@ -202,4 +243,6 @@ Cette architecture ne vaut pas autorisation de transfert.
 - Microsoft, [Secure access to a key vault](https://learn.microsoft.com/en-us/azure/key-vault/general/secure-your-key-vault).
 - Microsoft, [Version history overview](https://learn.microsoft.com/sharepoint/version-overview).
 - Microsoft, [Safeguarding your data in SharePoint and OneDrive](https://learn.microsoft.com/en-us/sharepoint/safeguarding-your-data).
+- Microsoft, [Transfer billing ownership of an Azure subscription](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/billing-subscription-transfer).
+- Microsoft, [Secure your Azure Backup deployment](https://learn.microsoft.com/en-us/azure/backup/secure-backup).
 
