@@ -2,6 +2,10 @@
 
 Version du 15 octobre 2026.
 
+L'exposition quantitative courante est enregistrée dans
+`docs/DEV_MACHINE_LOSS_EXPOSURE_2026-10-15.md`. La consulter avant de déclarer
+qu'une migration ou une sauvegarde est complète.
+
 ## Objectif
 
 Permettre de remplacer le poste de développement sans perdre le code, les bases et fichiers métier, les configurations et credentials, les environnements, les procédures, les connaissances et les preuves de validation.

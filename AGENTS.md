@@ -16,6 +16,8 @@ for one project or environment never authorizes deployment to another.
 All application changes follow the local-first lifecycle in
 `docs/LOCAL_FIRST_DEVELOPMENT_STANDARD_2026-10-15.md`. For workstation backup,
 restore or migration, read `docs/DEV_MACHINE_CONTINUITY_RUNBOOK_2026-10-15.md`.
+For the latest quantified single-machine loss exposure, also read
+`docs/DEV_MACHINE_LOSS_EXPOSURE_2026-10-15.md`.
 Mining 360 SQL Server parity and the local Miningprod_test build are governed by
 `docs/MINING360_MININGPROD_LOCAL_PLATFORM_PLAN_2026-10-15.md`.
 Before staging or publishing Mining 360 changes, read
