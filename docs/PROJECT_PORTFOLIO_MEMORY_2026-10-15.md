@@ -69,7 +69,7 @@ Elle consolide des données opérationnelles, techniques, de maintenance et comm
 
 ### Architecture et environnements
 
-- Code local : dépôt de travail courant, sans métadonnées Git actives dans cette copie.
+- Code local : dépôt Git `https://github.com/lyz5/Mining360IA.git`, branche `main`. Les métadonnées ont été restaurées et le commit de continuité `f54aa2c` a été poussé. La copie conserve un grand écart historique à réconcilier par lots contrôlés.
 - Local : Django, base SQLite `db.sqlite3`, URL de santé vérifiée le 15 octobre 2026 sur `http://127.0.0.1:8001/health/` avec HTTP 200.
 - BODEFM : Django/Waitress, base applicative SQL Server `Mining360App`, runtime et rollback gouvernés.
 - MiningProd reste une source externe ; ne jamais remplacer `Mining360App` par la base `MiningProd`.
@@ -147,7 +147,7 @@ Mayite est une application Django orientée professionnels de santé et référe
 - Dépôt : `https://github.com/lyz5/MayiteService.git`.
 - Copie canonique locale : `C:\Users\diagnepa\Documents\Personal Projects\Mayite`.
 - Branche locale : `backup/pythonanywhere-20261012`, liée à la branche distante du même nom.
-- Dernier commit observé : `9cc6f62`, sauvegarde de la source PythonAnywhere du 12 octobre 2026.
+- Dernier commit poussé : `d0191ec`, environnement local vérifié et documenté, au-dessus de la sauvegarde PythonAnywhere du 12 octobre 2026.
 - Production documentée : `/home/djimen10/mayiteservice` sur PythonAnywhere ; domaine `equivalence.mayite-service.com`.
 - Local : `http://127.0.0.1:8012/`, HTTP 200 vérifié le 15 octobre 2026, MySQL local `Mayite`.
 
@@ -155,7 +155,7 @@ Mayite est une application Django orientée professionnels de santé et référe
 
 - Le code de production a été sauvegardé sans données, médias, caches ni secrets.
 - Le projet repose historiquement sur Django 2.0.1 ; l'environnement local de compatibilité utilise Django 2.2.28 et des dépendances adaptées.
-- Des fichiers locaux de démarrage et des overrides sont présents mais non commités. `config/settings/base.py` et `v2/urls.py` ont aussi des modifications locales à examiner avant tout commit.
+- Les fichiers de démarrage, overrides locaux et corrections de compatibilité nécessaires sont versionnés sur la branche de sauvegarde. `.env.local` et `~/Downloads/mysql_access` restent exclus de Git.
 - Les médias de production ne sont pas restaurés localement.
 - La page publique de connexion est indexée et accessible à l'outil web ; cela ne remplace pas un test authentifié ni un audit de bout en bout.
 
@@ -176,7 +176,7 @@ DSTV est une application Django de gestion commerciale et opérationnelle des ab
 - Dépôt : `https://github.com/lyz5/DstvApp.git`.
 - Copie canonique locale : `C:\Users\diagnepa\Documents\Personal Projects\Dstv`.
 - Branche locale : `backup/pythonanywhere-20261012`, liée à la branche distante du même nom.
-- Dernier commit observé : `0beb435`, sauvegarde de la source PythonAnywhere du 12 octobre 2026.
+- Dernier commit poussé : `709b277`, environnement local vérifié et documenté, au-dessus de la sauvegarde PythonAnywhere du 12 octobre 2026.
 - Production documentée : `/home/djimen10/dstv` sur PythonAnywhere ; domaine `dstvsenegal.pacdigitale.com`.
 - Local : `http://127.0.0.1:8011/`, redirection vers `/login/` puis HTTP 200 vérifiée le 15 octobre 2026, MySQL local `DSTV`.
 
@@ -184,7 +184,7 @@ DSTV est une application Django de gestion commerciale et opérationnelle des ab
 
 - La base du projet est ancienne et indique une génération Django 1.10 ; l'environnement local de compatibilité utilise Django 2.2.28.
 - La source de production est sauvegardée sans données, médias, caches ni secrets.
-- `dstv/settings.py` est modifié localement ; les fichiers de démarrage et `dstv/local_overrides.py` sont non commités.
+- Les fichiers de démarrage, `dstv/local_overrides.py` et l'activation conditionnelle locale sont versionnés. `.env.local` et `~/Downloads/mysql_access` restent exclus de Git.
 - Le domaine public n'a pas pu être consulté par l'outil web lors de la consolidation. Cela ne prouve pas une panne.
 
 ### Discipline
@@ -204,7 +204,7 @@ Le site public Pacdigitale est un WordPress hébergé chez LWS. Le code versionn
 - Dépôt : `https://github.com/lyz5/pacdigitalewebsite.git`.
 - Copie canonique locale : `C:\Users\diagnepa\Documents\Personal Projects\Website`.
 - Branche : `main`, propre au contrôle du 15 octobre 2026.
-- Dernier commit observé : `0aa15de`, documentation du guide d'implémentation du 14 octobre 2026.
+- Dernier commit poussé : `04569ee`, guide de passation et continuité du 15 octobre 2026.
 - Local : `http://127.0.0.1:8020/`, HTTP 200 vérifié le 15 octobre 2026.
 - Production : `https://www.pacdigitale.com/`. Le contrôle automatisé rencontre la protection DDoS LWS ; cela ne prouve pas une indisponibilité utilisateur.
 

@@ -10,8 +10,8 @@ Le modèle de travail retenu est : **développement local → tests locaux → v
 | --- | --- | --- | --- |
 | Mining 360 | Application locale sur `127.0.0.1:8001` | endpoint de santé HTTP 200 ; SQLite encore utilisé pour la base locale courante | installer une instance SQL Server 2022 Developer conforme, migrer vers `Mining360App_Dev`, vérifier parité et performance |
 | MiningProd | À construire localement sous IIS | le clone distant `Miningprod_test` ne remplace pas un environnement local | restaurer application et base dans IIS/SQL locaux, isoler les intégrations, exécuter la recette browsers |
-| Mayite | `127.0.0.1:8012` | HTTP 200 ; guide de passation versionné et poussé | préserver les changements locaux existants, compléter backup DB/médias |
-| DSTV | `127.0.0.1:8011` | redirection login puis HTTP 200 ; guide versionné et poussé | préserver les changements locaux existants, compléter backup DB/médias |
+| Mayite | `127.0.0.1:8012` | HTTP 200 ; guide et runtime local poussés (`d0191ec`) | compléter backup DB/médias et test de restauration |
+| DSTV | `127.0.0.1:8011` | redirection login puis HTTP 200 ; guide et runtime local poussés (`709b277`) | compléter backup DB/médias et test de restauration |
 | Pacdigitale | `127.0.0.1:8020` | HTTP 200 ; guide versionné et poussé | compléter export WordPress, médias et inventaire plugins |
 | Mémoire MBA | fichiers locaux | pas d'environnement applicatif requis | sauvegarde versionnée/chiffrée des livrables, sources et hashes |
 
@@ -29,7 +29,8 @@ Le modèle de travail retenu est : **développement local → tests locaux → v
 
 - portefeuille humain et registre JSON créés ;
 - standard local-first et runbook de changement de machine créés ;
-- guides de passation Mayite, DSTV et Pacdigitale poussés vers leurs dépôts distants ;
+- guides de passation poussés : Mayite `93c9669`, DSTV `6e5e338`, Pacdigitale `04569ee` ;
+- runtimes locaux sans secrets poussés : Mayite `d0191ec` et DSTV `709b277` ;
 - métadonnées Git de Mining 360 restaurées ;
 - inventaire non secret automatisé par `scripts/dev_machine_manifest.py` ;
 - plan de réconciliation Git créé pour le grand écart de la copie Mining 360 ;
