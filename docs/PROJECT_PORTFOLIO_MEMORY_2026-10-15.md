@@ -2,7 +2,7 @@
 
 Dernière consolidation : **15 octobre 2026**.
 
-Ce document donne la vue commune des six projets suivis avec Papa Djibril Diagne. Il sert de point de reprise avant une demande qui peut concerner plusieurs applications. Il ne remplace pas les mémoires techniques propres à chaque projet et ne constitue pas une autorisation de déploiement.
+Ce document donne la vue commune des sept projets suivis avec Papa Djibril Diagne. Il sert de point de reprise avant une demande qui peut concerner plusieurs applications ou campagnes. Il ne remplace pas les mémoires propres à chaque projet et ne constitue pas une autorisation de déploiement ou de dépense.
 
 ## 1. Vue d'ensemble
 
@@ -13,9 +13,10 @@ Ce document donne la vue commune des six projets suivis avec Papa Djibril Diagne
 | Mayite | Application métier de référence pharmaceutique et de gestion des professionnels/abonnements | `C:\Users\diagnepa\Documents\Personal Projects\Mayite` | PythonAnywhere ; `https://equivalence.mayite-service.com` | Copie locale active ; source de production sauvegardée sur branche dédiée |
 | DSTV | Gestion de clients, abonnements, renouvellements, facturation et analyses Canal+/DSTV | `C:\Users\diagnepa\Documents\Personal Projects\Dstv` | PythonAnywhere ; `https://dstvsenegal.pacdigitale.com` | Copie locale active ; source de production sauvegardée sur branche dédiée |
 | Site web Pacdigitale | Site vitrine et génération de contacts de Pac Digitale | `C:\Users\diagnepa\Documents\Personal Projects\Website` | WordPress sur LWS ; `https://www.pacdigitale.com` | Dépôt `main` propre ; copie locale active |
+| Marketing Digital | Pilotage des campagnes Meta et développement d'audience | `C:\Users\diagnepa\Documents\Personal Projects\Marketing Digital` | Meta Business Suite / Ads Manager | Baseline du 9 au 15 octobre analysée ; dépôt Git local créé |
 | Mémoire Executive MBA | Recherche appliquée sur Mining 360, performance opérationnelle et croissance commerciale | Dossier MBA et livrables dans `exports/Memoire_MBA_Validation_2026-10-11` | Soumission académique à venir | Proposition de validation produite en 15 pages ; terrain et protocole à confirmer |
 
-Les six projets sont comptés séparément. `Miningprod_test` est l'environnement de test de MiningProd et non un septième projet.
+Les sept projets sont comptés séparément. `Miningprod_test` est l'environnement de test de MiningProd et non un huitième projet.
 
 ### Tableau de pilotage actuel
 
@@ -26,11 +27,12 @@ Les six projets sont comptés séparément. `Miningprod_test` est l'environnemen
 | Mayite | Source PythonAnywhere sauvegardée ; exécution locale confirmée | Définir la prochaine évolution fonctionnelle et décider comment réconcilier la branche sauvegardée avec `main` |
 | DSTV | Source PythonAnywhere sauvegardée ; exécution locale confirmée | Définir la prochaine évolution et auditer les routes de mutation avant modernisation |
 | Site Pacdigitale | Thème personnalisé versionné ; dépôt propre ; copie locale active | Confirmer les prochains contenus ou évolutions et la configuration SMTP avant de compter sur les contacts |
+| Marketing Digital | 605 abonnements ou mentions J'aime obtenus pour 34,23 USD sur la publicité d'acquisition ; coût calculé 0,0566 USD | Exporter le rapport Meta détaillé, confirmer l'objectif 100K, tester les créations puis décider la montée en charge |
 | Mémoire MBA | Proposition de validation de 15 pages terminée ; revue comparative des anciens mémoires disponible | Faire valider sujet/problématique, choisir le terrain, les données et les interlocuteurs |
 
 ### Modèle d'environnement adopté le 15 octobre 2026
 
-Le développement et les tests de toutes les applications doivent s'effectuer sur ce poste avant promotion. Mayite, DSTV et Pacdigitale disposent déjà de leurs environnements locaux. Mining 360 doit recevoir SQL Server 2022 Developer local pour reproduire la major version BODEFM, et Miningprod_test doit être transféré dans un IIS/SQL Server local isolé. Le mémoire MBA reste un flux documentaire et ne nécessite pas de runtime.
+Le développement et les tests de toutes les applications doivent s'effectuer sur ce poste avant promotion. Mayite, DSTV et Pacdigitale disposent déjà de leurs environnements locaux. Mining 360 doit recevoir SQL Server 2022 Developer local pour reproduire la major version BODEFM, et Miningprod_test doit être transféré dans un IIS/SQL Server local isolé. Marketing Digital suit un flux local de preuves, calculs, créations et campagnes en brouillon avant toute dépense ou publication. Le mémoire MBA reste un flux documentaire et ne nécessite pas de runtime.
 
 Références :
 
@@ -47,11 +49,14 @@ Mining 360 ── cas d'étude, données et modèle de valeur ──> Mémoire E
 Pac Digitale ── portefeuille numérique ──> Site Pacdigitale
                                       ├──> Mayite
                                       └──> DSTV
+
+Marketing Digital ── preuves, tests et pilotage ──> Meta Business Suite / Ads Manager
 ```
 
 - MiningProd et Mining 360 restent deux applications distinctes. MiningProd ne doit pas devenir la base applicative Django de Mining 360.
 - Le mémoire utilise Mining 360 comme cas de recherche appliquée. Une fonctionnalité, une mesure technique ou une roadmap ne devient pas une preuve académique de résultat sans données validées.
 - Mayite, DSTV et le site Pacdigitale ont chacun leur propre dépôt Git, leur propre runtime et leur propre procédure de déploiement.
+- Marketing Digital possède un dépôt Git local sans remote. Les lancements, budgets, audiences et publications restent des actions externes distinctes.
 
 ## 3. Mining 360
 
@@ -222,7 +227,49 @@ Le site public Pacdigitale est un WordPress hébergé chez LWS. Le code versionn
 - Ne jamais publier `wp-config.php`, un dump, les uploads ou des fichiers d'accès.
 - Le déploiement LWS/FTPS et l'activation de thème exigent une autorisation explicite.
 
-## 8. Mémoire Executive MBA
+## 8. Marketing Digital
+
+### Rôle et sources
+
+Le projet pilote une campagne Meta de développement de l'audience de **Thierno
+Alia Mbengue Officiel**. La copie canonique est
+`C:\Users\diagnepa\Documents\Personal Projects\Marketing Digital`. Le dépôt Git
+local `main` a été créé au commit `a1aa82b` ; aucun remote n'est configuré.
+
+Trois sources initiales sont conservées sans modification : la capture du 9 au
+15 octobre 2026, le classeur de budget et le document de stratégie 100K.
+`PROJECT_HANDOFF.md`, `CAMPAIGN_REVIEW_2026-10-15.md` et le CSV structuré portent
+les analyses dérivées.
+
+### Résultat contrôlé
+
+- publicité acquisition : 605 abonnements ou mentions J'aime, 34,23 USD dépensés, coût calculé 0,0566 USD ;
+- publicité visites : 1 360 visites de Page, 45 abonnements ou mentions J'aime secondaires et 33,76 USD ;
+- le coût affiché de 0,02 USD sur cette seconde publicité correspond aux visites de Page, pas aux abonnés ;
+- le plan de 8 000 USD correspond mathématiquement à 100 000 résultats à 0,08 USD, mais reste un scénario ;
+- l'objectif doit être précisé : 100 000 nouveaux abonnés ou 100 000 abonnés au total.
+
+### Poursuite retenue
+
+1. Obtenir l'export Ads Manager natif avec objectif, définition du résultat,
+   reach, impressions, fréquence, CPM, CTR, placements, pays et attribution.
+2. Préparer et tester les formats 1:1, 4:5 et 9:16 avec le même objectif.
+3. Monter le budget par paliers selon le coût vérifié par nouvel abonné.
+4. Mesurer séparément Sénégal et diaspora.
+5. Tenir un tableau hebdomadaire prévu/réalisé/écart/décision.
+
+Le passage direct d'environ 4,89 USD/jour observés sur la publicité acquisition
+à 95 USD/jour multiplierait le rythme par environ 19,4. Il n'est pas considéré
+comme validé par la seule capture disponible.
+
+### Protections
+
+- ne jamais confondre visites, vues, mentions J'aime et nouveaux abonnés ;
+- préserver les exports et captures sources ;
+- ne jamais versionner accès Meta, tokens, moyens de paiement ou données d'audience ;
+- obtenir une autorisation explicite avant publication, lancement, audience ou changement budgétaire.
+
+## 9. Mémoire Executive MBA
 
 ### Sujet et contribution attendue
 
@@ -256,7 +303,7 @@ La contribution visée est un modèle intégré allant des données aux actions,
 - `exports/Memoire_MBA_Validation_2026-10-11/Mining360_Points_A_Confirmer.md`
 - `docs/EMBA_ARCHIVES_REVIEW_MEMORY_2026-10-12.json`
 
-## 9. Règles communes de conduite
+## 10. Règles communes de conduite
 
 Avant toute intervention :
 
@@ -279,9 +326,10 @@ Une autorisation donnée pour un projet ou un environnement ne vaut pas pour les
 - Mayite PythonAnywhere ;
 - DSTV PythonAnywhere ;
 - Pacdigitale LWS ;
+- Marketing Digital : publication, lancement, audience et budget Meta ;
 - soumission ou transmission du mémoire MBA.
 
-## 10. Prochain cycle de consolidation
+## 11. Prochain cycle de consolidation
 
 À chaque changement important, mettre à jour d'abord la mémoire propre au projet, puis ce portefeuille uniquement si l'un des éléments suivants change : dépôt canonique, environnement, objectif, dépendance, statut de déploiement, risque majeur ou prochaine décision.
 

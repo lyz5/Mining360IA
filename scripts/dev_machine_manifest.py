@@ -27,6 +27,7 @@ PROJECTS = [
     {"id": "mayite", "name": "Mayite", "path": HOME / "Documents" / "Personal Projects" / "Mayite", "url": "http://127.0.0.1:8012/"},
     {"id": "dstv", "name": "DSTV", "path": HOME / "Documents" / "Personal Projects" / "Dstv", "url": "http://127.0.0.1:8011/"},
     {"id": "pacdigitale", "name": "Site web Pacdigitale", "path": HOME / "Documents" / "Personal Projects" / "Website", "url": "http://127.0.0.1:8020/"},
+    {"id": "marketing_digital", "name": "Marketing Digital", "path": HOME / "Documents" / "Personal Projects" / "Marketing Digital", "url": None},
     {"id": "mba", "name": "Mémoire Executive MBA", "path": HOME / "Documents" / "MBA", "url": None},
 ]
 

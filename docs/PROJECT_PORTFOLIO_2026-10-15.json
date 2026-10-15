@@ -1,7 +1,7 @@
 {
   "as_of": "2026-10-15",
   "owner": "Papa Djibril Diagne",
-  "project_count": 6,
+  "project_count": 7,
   "development_policy": {
     "sequence": [
       "local_development",
@@ -85,6 +85,20 @@
       "production_url": "https://www.pacdigitale.com",
       "deployment_requires_explicit_approval": true,
       "primary_memory": "docs/IMPLEMENTATION.md"
+    },
+    {
+      "id": "marketing_digital",
+      "name": "Marketing Digital",
+      "canonical_path": "C:\\Users\\diagnepa\\Documents\\Personal Projects\\Marketing Digital",
+      "repository": "local Git repository; remote not configured",
+      "branch": "main",
+      "head_commit": "a1aa82b",
+      "campaign_platform": "Meta Business Suite / Ads Manager",
+      "current_evidence_period": "2026-10-09/2026-10-15",
+      "current_verified_signal": "605 follows or likes for USD 34.23; derived USD 0.0566 per result",
+      "target": "100,000 followers by 2026-12-31; incremental versus total to confirm",
+      "external_actions_require_explicit_approval": true,
+      "primary_memory": "PROJECT_HANDOFF.md"
     },
     {
       "id": "executive_mba_thesis",

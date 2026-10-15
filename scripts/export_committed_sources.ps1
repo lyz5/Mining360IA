@@ -20,7 +20,8 @@ $projects = @(
     [pscustomobject]@{ Id = 'mining360'; Path = $rootDirectory },
     [pscustomobject]@{ Id = 'mayite'; Path = (Join-Path $homeDirectory 'Documents\Personal Projects\Mayite') },
     [pscustomobject]@{ Id = 'dstv'; Path = (Join-Path $homeDirectory 'Documents\Personal Projects\Dstv') },
-    [pscustomobject]@{ Id = 'pacdigitale'; Path = (Join-Path $homeDirectory 'Documents\Personal Projects\Website') }
+    [pscustomobject]@{ Id = 'pacdigitale'; Path = (Join-Path $homeDirectory 'Documents\Personal Projects\Website') },
+    [pscustomobject]@{ Id = 'marketing-digital'; Path = (Join-Path $homeDirectory 'Documents\Personal Projects\Marketing Digital') }
 )
 
 $resolvedOutput = [System.IO.Path]::GetFullPath($OutputDirectory)
@@ -37,7 +38,13 @@ foreach ($project in $projects) {
     $head = (& git @gitPrefix rev-parse HEAD).Trim()
     if ($LASTEXITCODE -ne 0) { throw "Cannot read HEAD for $($project.Id)" }
     $branch = (& git @gitPrefix branch --show-current).Trim()
-    $origin = (& git @gitPrefix remote get-url origin).Trim()
+    $remoteNames = @(& git @gitPrefix remote)
+    if ($remoteNames -contains 'origin') {
+        $origin = (& git @gitPrefix remote get-url origin).Trim()
+    }
+    else {
+        $origin = $null
+    }
     $dirtyCount = @(& git @gitPrefix status --porcelain).Count
 
     $safeBranch = $branch -replace '[^A-Za-z0-9._-]', '-'

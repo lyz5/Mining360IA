@@ -16,11 +16,12 @@ Une validation locale ne vaut pas autorisation automatique de déployer. Chaque 
 
 | Projet | Développement local | Test local | Production | État au 15 octobre 2026 |
 | --- | --- | --- | --- | --- |
-| Mining 360 | Application Django locale | SQL Server 2022 local à créer pour parité BODEFM ; SQLite conservé comme source de transition/contrôle | BODEFM, SQL Server `Mining360App` | Application locale opérationnelle ; SQL Server 2025 installé mais version non alignée |
+| Mining 360 | Application Django locale | SQL Server 2022 local à créer pour parité BODEFM ; SQLite conservé comme source de transition/contrôle | BODEFM, SQL Server `Mining360App` | Application locale opérationnelle ; installation SQL 2025 à stabiliser, bootstrapper SQL 2022 vérifié |
 | MiningProd | Code et configuration locaux à constituer | Clone local `Miningprod_test`, IIS et SQL Server isolés à créer | `/Miningprod` sur BODEFM | Clone distant de test opérationnel ; clone local absent |
 | Mayite | Django + MySQL local, port 8012 | Même environnement avec données locales et e-mails console | PythonAnywhere | Opérationnel localement |
 | DSTV | Django + MySQL local, port 8011 | Même environnement avec données locales | PythonAnywhere | Opérationnel localement |
 | Site Pacdigitale | WordPress + MySQL + PHP local, port 8020 | Thème testé localement sur desktop/mobile | WordPress LWS | Opérationnel localement |
+| Marketing Digital | preuves, calculs, créations et planification dans le dépôt local | revue des métriques, tests de créations et campagne en brouillon | Meta Business Suite / Ads Manager | baseline du 9 au 15 octobre structurée ; dépôt local créé |
 | Mémoire MBA | Sources, notes, Word et PDF locaux | Contrôles pagination, références, confidentialité et relecture | Soumission académique | Aucun runtime requis |
 
 ## Définition de « prêt pour production »
@@ -78,6 +79,7 @@ Les promotions suivantes sont indépendantes :
 - Mayite vers PythonAnywhere ;
 - DSTV vers PythonAnywhere ;
 - thème Pacdigitale vers LWS ;
+- lancement, publication, audience ou changement de budget Marketing Digital ;
 - transmission du mémoire MBA.
 
 ## Conservation des preuves

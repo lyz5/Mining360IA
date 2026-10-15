@@ -61,6 +61,14 @@ Le processus sépare strictement **code**, **données**, **secrets**, **outils**
 - Sauvegarde séparée de `wp-content/uploads` et inventaire des plugins/thèmes actifs.
 - `wp-config.php` local/production uniquement dans le paquet chiffré, jamais dans Git.
 
+### Marketing Digital
+
+- Committer les stratégies, analyses, créations autorisées et exports non sensibles.
+- Préserver séparément les exports Ads Manager bruts, captures et originaux ; ne jamais les écraser par des fichiers calculés.
+- Conserver les accès Meta, tokens, identifiants de compte et données d'audience dans le coffre approuvé, jamais dans Git.
+- Produire un export natif des campagnes et un manifeste SHA-256 avant changement de machine.
+- Le dépôt local sans remote doit être inclus dans l'archive de continuité et recevoir un remote privé approuvé avant migration définitive.
+
 ### Mémoire MBA
 
 - Conserver Word, PDF, sources utilisées, points à confirmer, archives de cours et anciens mémoires.
@@ -94,6 +102,7 @@ La phrase de l'archive doit être conservée séparément du fichier. Une archiv
 | Mayite | secret Django, MySQL, e-mail, paiement et API |
 | DSTV | secret Django, MySQL et tokens API |
 | Pacdigitale | accès WordPress/LWS/FTPS, MySQL, SMTP, clés WordPress |
+| Marketing Digital | accès Meta Business Suite/Ads Manager, moyens de paiement, identifiants de compte et audiences |
 | MBA | documents confidentiels, consentements et données anonymisées éventuelles |
 
 ## 6. Procédure avant changement de machine
@@ -131,6 +140,7 @@ La phrase de l'archive doit être conservée séparément du fichier. Une archiv
 | Mayite | login, statiques, lecture DB, e-mail console, aucune migration implicite |
 | DSTV | login, statiques, lecture DB, opérations de test sans effet externe |
 | Pacdigitale | accueil desktop/mobile, médias, carrousel, validation formulaire, e-mail de test contrôlé |
+| Marketing Digital | ouverture des preuves, cohérence des calculs, présence des exports bruts, aucune publication ou dépense pendant la restauration |
 | MBA | ouverture Word/PDF, 15 pages pour la version de validation, liens et hashes disponibles |
 
 ## 9. Cadence

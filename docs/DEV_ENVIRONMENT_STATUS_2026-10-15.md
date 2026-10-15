@@ -13,6 +13,7 @@ Le modèle de travail retenu est : **développement local → tests locaux → v
 | Mayite | `127.0.0.1:8012` | HTTP 200 ; guide et runtime local poussés (`d0191ec`) | compléter backup DB/médias et test de restauration |
 | DSTV | `127.0.0.1:8011` | redirection login puis HTTP 200 ; guide et runtime local poussés (`709b277`) | compléter backup DB/médias et test de restauration |
 | Pacdigitale | `127.0.0.1:8020` | HTTP 200 ; guide versionné et poussé | compléter export WordPress, médias et inventaire plugins |
+| Marketing Digital | dépôt documentaire local | baseline Meta structurée au commit local `a1aa82b` | exporter les résultats Ads Manager détaillés et configurer un remote privé approuvé |
 | Mémoire MBA | fichiers locaux | pas d'environnement applicatif requis | sauvegarde versionnée/chiffrée des livrables, sources et hashes |
 
 ## Socle de données

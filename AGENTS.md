@@ -7,8 +7,8 @@ Before changing this repository, read `docs/MINING360_HANDOFF_2026-09-18.md`.
 ## Multi-project portfolio
 
 For project identification, cross-project status, handoff or work that may concern
-Mining 360, MiningProd, Mayite, DSTV, the Pacdigitale website or the Executive MBA
-thesis, read `docs/PROJECT_PORTFOLIO_MEMORY_2026-10-15.md` first. Use
+Mining 360, MiningProd, Mayite, DSTV, the Pacdigitale website, Marketing Digital or
+the Executive MBA thesis, read `docs/PROJECT_PORTFOLIO_MEMORY_2026-10-15.md` first. Use
 `docs/PROJECT_PORTFOLIO_2026-10-15.json` as the machine-readable register. Confirm
 the canonical repository and target environment before changing files. Authorization
 for one project or environment never authorizes deployment to another.
@@ -22,6 +22,11 @@ Before staging or publishing Mining 360 changes, read
 `docs/MINING360_GIT_RECONCILIATION_PLAN_2026-10-15.md`; the restored repository
 contains a large, mixed working tree and must never be committed with a global
 `git add -A`.
+
+For Marketing Digital work, read the project-local `AGENTS.md`,
+`PROJECT_HANDOFF.md` and `CAMPAIGN_REVIEW_2026-10-15.md`. Keep Meta-reported
+results separate from derived metrics and forecasts. Campaign launches, budget
+changes, audience uploads and publications require explicit authorization.
 
 Treat the following as protected behavior unless the user explicitly requests a reconciled change:
 
