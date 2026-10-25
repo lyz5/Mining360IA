@@ -33,6 +33,13 @@ Le téléchargement ne constitue pas l'installation de l'instance `DEVSQL2022`.
 
 ## État local observé
 
+Mise à jour du **25 octobre 2026** : l'instance locale SQL Server 2022
+Developer `MSSQL_IA` (16.0.1000.6) est active et une connexion Windows locale a
+été validée. La base isolée `Mining360App_Dev` a été créée sur cette instance
+avec compatibilité 160 et `PAGE_VERIFY CHECKSUM`; elle est `ONLINE`, vide et
+aucune configuration Django ne pointe encore vers elle. Aucune donnée, backup,
+connexion ou modification BODEFM n'a été effectuée.
+
 - installation SQL Server 2025 `MSSQLSERVER` observée, puis désinstallation annulée ; service et enregistrement d'instance absents au dernier contrôle, état à stabiliser ;
 - `sqlcmd` 17.0 installé sous les outils ODBC mais absent du PATH ;
 - ODBC Driver 18 for SQL Server disponible dans l'environnement Python ;

@@ -36,7 +36,7 @@
       "production_release_memory": "docs/powerbi_viewer_runtime_recovery.md",
       "production_domain_memory": "docs/BODEFM_MINING360_PROD_LOCAL.md",
       "local_database_target": "SQL Server 2022 Developer 16.x / Mining360App_Dev",
-      "local_database_status": "SQL Server 2025 Enterprise Developer 17.0.1000.7 installed; SQL Server 2022 parity instance and migration still pending",
+      "local_database_status": "SQL Server 2022 Developer instance MSSQL_IA 16.0.1000.6 validated on 2026-10-25; empty Mining360App_Dev created with compatibility 160 and PAGE_VERIFY CHECKSUM. Django schema, data transfer and local configuration remain pending; SQL Server 2025 MSSQLSERVER coexistence still requires a separate decision.",
       "deployment_requires_explicit_approval": true,
       "primary_memory": "docs/MINING360_HANDOFF_2026-09-18.md"
     },
