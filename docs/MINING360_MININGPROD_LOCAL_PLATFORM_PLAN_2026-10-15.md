@@ -36,9 +36,16 @@ Le téléchargement ne constitue pas l'installation de l'instance `DEVSQL2022`.
 Mise à jour du **25 octobre 2026** : l'instance locale SQL Server 2022
 Developer `MSSQL_IA` (16.0.1000.6) est active et une connexion Windows locale a
 été validée. La base isolée `Mining360App_Dev` a été créée sur cette instance
-avec compatibilité 160 et `PAGE_VERIFY CHECKSUM`; elle est `ONLINE`, vide et
-aucune configuration Django ne pointe encore vers elle. Aucune donnée, backup,
-connexion ou modification BODEFM n'a été effectuée.
+avec compatibilité 160 et `PAGE_VERIFY CHECKSUM`; elle est `ONLINE`. Les 179
+migrations Django sont appliquées (219 tables utilisateur) et `manage.py check`
+passe avec le profil local `Mining360IA.settings_sqlserver_local`.
+
+Le profil force `localhost\MSSQL_IA`, `Mining360App_Dev` et l'authentification
+Windows, avec un garde-fou `MINING360_LOCAL_SQLSERVER=1`; il ne peut donc pas
+hériter silencieusement d'un endpoint BODEFM. Les lanceurs locaux sont
+`deployment/windows/Run Mining360 SQL Local Migrations.cmd` et
+`deployment/windows/Start Mining360 SQL Local.cmd`. La base ne contient encore
+aucune donnée BODEFM, backup, configuration chiffrée ou compte utilisateur.
 
 - installation SQL Server 2025 `MSSQLSERVER` observée, puis désinstallation annulée ; service et enregistrement d'instance absents au dernier contrôle, état à stabiliser ;
 - `sqlcmd` 17.0 installé sous les outils ODBC mais absent du PATH ;
@@ -47,7 +54,7 @@ connexion ou modification BODEFM n'a été effectuée.
 - Windows x64, environ 1 To de disque dont environ 676 Gio libres à l'observation ;
 - installeur SSMS présent ;
 - IIS existe sur le disque, mais les fonctionnalités Windows exactes exigent un inventaire UAC administrateur avant configuration ;
-- les premiers essais de connexion intégrée locale ont échoué au niveau SSL/package de sécurité. Aucune base applicative n'a été créée. Résoudre cette connexion avant toute migration.
+- les premiers essais de connexion intégrée locale ont échoué au niveau SSL/package de sécurité ; la connexion Windows via le profil local dédié est désormais validée sur `MSSQL_IA`.
 - bootstrapper officiel SQL Server 2022 Developer téléchargé et signé ; installation de l'instance nommée encore à réaliser.
 
 ## Installation SQL Server 2022 Developer
