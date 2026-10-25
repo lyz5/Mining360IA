@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "purpose": "Personal portfolio documentation and durable working memory only",
+  "authorization_note": "Owner authorized the 2026-10-24 operational-documentation backup. It excludes raw Neemba data and all secrets.",
+  "destination_folder": "Mining360IA-CommandCenter/portfolio-memory",
+  "include": [
+    "AGENTS.md",
+    "README.md",
+    "docs/PROJECT_PORTFOLIO_MEMORY_2026-10-15.md",
+    "docs/PROJECT_PORTFOLIO_2026-10-15.json",
+    "docs/LOCAL_FIRST_DEVELOPMENT_STANDARD_2026-10-15.md",
+    "docs/DEV_MACHINE_CONTINUITY_RUNBOOK_2026-10-15.md",
+    "docs/DEV_MACHINE_LOSS_EXPOSURE_2026-10-15.md",
+    "docs/TEN_YEAR_AGENT_CONTINUITY_ARCHITECTURE_2026-10-16.md"
+  ],
+  "include_directories": [
+    {
+      "path": "docs",
+      "extensions": [".md", ".json"],
+      "purpose": "Mining360 operational memory and recovery documentation"
+    }
+  ],
+  "external_projects": [
+    {
+      "id": "mayite",
+      "include": ["AGENTS.md", "LOCAL_SETUP.md", "PROJECT_HANDOFF.md", "PYTHONANYWHERE_BACKUP.md"]
+    },
+    {
+      "id": "dstv",
+      "include": ["AGENTS.md", "LOCAL_SETUP.md", "PROJECT_HANDOFF.md", "PYTHONANYWHERE_BACKUP.md"]
+    },
+    {
+      "id": "pacdigitale_website",
+      "include": ["AGENTS.md", "LOCAL_COPY.md", "PROJECT_HANDOFF.md", "README.md", "docs/DEPLOYMENT_2026-10-15.md", "docs/DEPLOYMENT_2026-10-16_FAVICON.md", "docs/IMPLEMENTATION.md"]
+    },
+    {
+      "id": "executive_mba_thesis",
+      "include": ["Mining360IA/exports/Memoire_MBA_Validation_2026-10-11/Mining360_Points_A_Confirmer.md", "Mining360IA/exports/Memoire_MBA_Validation_2026-10-11/Mining360_Sources_Utilisees.md"]
+    }
+  ],
+  "explicitly_excluded": [
+    "Neemba source data, customer data and raw operational exports",
+    "credentials, secrets and local configuration",
+    "databases, backups and media",
+    "exports and personal or confidential source materials"
+  ]
+}

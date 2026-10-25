@@ -27,6 +27,14 @@
       "local_url": "http://127.0.0.1:8001/",
       "local_check": {"date": "2026-10-15", "path": "/health/", "status": 200},
       "remote_environment": "BODEFM",
+      "production_url": "https://mining360.neemba.com/",
+      "production_domain_checked_at": "2026-10-24",
+      "production_domain_status": "2026-10-24: approved four-file Power BI token fix deployed; strict HTTPS health 200, app/database ok; FPR, Fuel and LCC rendered in real Edge with owner-administrator access. Native task's 72-hour cutoff removed (PT0S); command, principal, other settings and effective ACL unchanged. All employee identities/RLS scopes remain outside this audit. LCC upstream refresh failure and Fuel SDK events remain separate follow-up items; Revenue 05:20 schedule not changed.",
+      "production_release_commit": "df0aaa71556aa64faf383e99c3e4eb4cce70a266",
+      "production_runtime_task": "Mining360RuntimeServiceRecovery",
+      "production_runtime_execution_time_limit": "PT0S",
+      "production_release_memory": "docs/powerbi_viewer_runtime_recovery.md",
+      "production_domain_memory": "docs/BODEFM_MINING360_PROD_LOCAL.md",
       "local_database_target": "SQL Server 2022 Developer 16.x / Mining360App_Dev",
       "local_database_status": "SQL Server 2025 Enterprise Developer 17.0.1000.7 installed; SQL Server 2022 parity instance and migration still pending",
       "deployment_requires_explicit_approval": true,
@@ -35,6 +43,9 @@
     {
       "id": "miningprod",
       "name": "MiningProd",
+      "production_maintenance_checked_at": "2026-10-21",
+      "production_maintenance_status": "Verified COPY_ONLY backup; 55 statistics updated, one index reorganized (18% to 0.785714%), 514 old IIS logs archived recoverably to D:, DefaultAppPool recycled. Anonymous cookie-aware login HTTP 200; Mining360 HTTPS health 200. Eight statistic operations deferred on timeout; 75 eligible statistics remain. C: about 3.99 GiB free. Actual business data entry requires user retest; no global SQL cache flush or SQL restart.",
+      "production_maintenance_memory": "docs/MININGPROD_BROWSER_WORKING_MEMORY.md",
       "canonical_path": "remote IIS application; local procedures live in Mining360IA",
       "production_path": "C:\\inetpub\\wwwroot\\Miningprod",
       "test_url": "http://172.17.0.111/Miningprod_test/",
@@ -87,18 +98,17 @@
       "primary_memory": "docs/IMPLEMENTATION.md"
     },
     {
-      "id": "marketing_digital",
-      "name": "Marketing Digital",
-      "canonical_path": "C:\\Users\\diagnepa\\Documents\\Personal Projects\\Marketing Digital",
-      "repository": "local Git repository; remote not configured",
+      "id": "marketingdigital360",
+      "name": "MarketingDigital360",
+      "canonical_path": "C:\\Users\\diagnepa\\Documents\\Personal Projects\\Website",
+      "repository": "https://github.com/lyz5/pacdigitalewebsite.git (shared theme repository until a standalone platform repository exists)",
       "branch": "main",
-      "head_commit": "a1aa82b",
-      "campaign_platform": "Meta Business Suite / Ads Manager",
-      "current_evidence_period": "2026-10-09/2026-10-15",
-      "current_verified_signal": "605 follows or likes for USD 34.23; derived USD 0.0566 per result",
-      "target": "100,000 followers by 2026-12-31; incremental versus total to confirm",
-      "external_actions_require_explicit_approval": true,
-      "primary_memory": "PROJECT_HANDOFF.md"
+      "head_commit": "ca9412a",
+      "local_url": "http://127.0.0.1:8020/marketingdigital360/",
+      "production_url": "https://www.pacdigitale.com/marketingdigital360/",
+      "status": "Public landing and legal pages deployed; analytics platform remains under development.",
+      "deployment_requires_explicit_approval": true,
+      "primary_memory": "docs/MARKETINGDIGITAL360_PROJECT_HANDOFF.md"
     },
     {
       "id": "executive_mba_thesis",
@@ -115,7 +125,8 @@
     {"from": "miningprod", "to": "mining360", "type": "operational source and reference data"},
     {"from": "mining360", "to": "executive_mba_thesis", "type": "applied research case"},
     {"from": "pacdigitale_website", "to": "mayite", "type": "Pac Digitale portfolio"},
-    {"from": "pacdigitale_website", "to": "dstv", "type": "Pac Digitale portfolio"}
+    {"from": "pacdigitale_website", "to": "dstv", "type": "Pac Digitale portfolio"},
+    {"from": "pacdigitale_website", "to": "marketingdigital360", "type": "current shared theme repository and public landing pages"}
   ],
   "security": {
     "store_credentials": false,

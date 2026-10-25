@@ -6,14 +6,35 @@ Ce document donne la vue commune des sept projets suivis avec Papa Djibril Diagn
 
 ## 1. Vue d'ensemble
 
+### Identité opérationnelle de l’assistant
+
+À compter du **24 octobre 2026**, l’assistant chargé de ce portefeuille est
+désigné **« 360 »**. Cette appellation facilite les échanges avec Papa Djibril
+Diagne ; elle ne modifie ni les noms des projets, ni les dépôts, domaines,
+environnements ou identités juridiques.
+
+### Centre de commande de portefeuille
+
+Le centre de commande local se trouve dans `command-center/` à la racine de
+`Mining360IA`. Son application Windows principale est lancée par
+`deployment/windows/360 Global Command Center.cmd`, suivant l'architecture du
+Mining360 Control Center : barre d'état, cartes, espaces de travail, activité,
+détail projet et actions contrôlées. Elle présente les sept projets à partir du
+registre JSON canonique, leurs références mémoire et leurs états Git locaux.
+Le serveur local `command-center/server.py` reste disponible pour la vue web et
+le plan Dropbox. Toute synchronisation exige une configuration locale et une
+confirmation explicite. La copie Dropbox est limitée aux mémoires personnelles
+listées dans son manifeste ; les données et documents Neemba, secrets, bases,
+médias et exports restent exclus sans autorisation explicite.
+
 | Projet | Finalité | Référence locale canonique | Environnement distant connu | État observé |
 | --- | --- | --- | --- | --- |
-| Mining 360 | Plateforme intégrée de visibilité opérationnelle et commerciale minière | `C:\Users\diagnepa\Documents\MBA\Mining360IA` | BODEFM, entrée `https://bodefm/mining360` | Local actif ; BODEFM exploité avec procédures protégées |
+| Mining 360 | Plateforme intégrée de visibilité opérationnelle et commerciale minière | `C:\Users\diagnepa\Documents\MBA\Mining360IA` | BODEFM, nouveau nom `https://mining360.neemba.com/` | DNS interne et HTTPS sans résolution forcée validés depuis BODEFM le 19 octobre ; connexion Windows depuis un poste Neemba à confirmer |
 | MiningProd | Application opérationnelle historique, browsers, formulaires, tables et vues | Documentation, scripts et preuves dans le dépôt Mining 360 | Production `/Miningprod` et clone isolé `/Miningprod_test` sur `172.17.0.111` | Clone de test actif ; production protégée |
 | Mayite | Application métier de référence pharmaceutique et de gestion des professionnels/abonnements | `C:\Users\diagnepa\Documents\Personal Projects\Mayite` | PythonAnywhere ; `https://equivalence.mayite-service.com` | Copie locale active ; source de production sauvegardée sur branche dédiée |
 | DSTV | Gestion de clients, abonnements, renouvellements, facturation et analyses Canal+/DSTV | `C:\Users\diagnepa\Documents\Personal Projects\Dstv` | PythonAnywhere ; `https://dstvsenegal.pacdigitale.com` | Copie locale active ; source de production sauvegardée sur branche dédiée |
 | Site web Pacdigitale | Site vitrine et génération de contacts de Pac Digitale | `C:\Users\diagnepa\Documents\Personal Projects\Website` | WordPress sur LWS ; `https://www.pacdigitale.com` | Dépôt `main` propre ; copie locale active |
-| Marketing Digital | Pilotage des campagnes Meta et développement d'audience | `C:\Users\diagnepa\Documents\Personal Projects\Marketing Digital` | Meta Business Suite / Ads Manager | Baseline du 9 au 15 octobre analysée ; dépôt Git local créé |
+| MarketingDigital360 | Plateforme de social-media intelligence et analytics de PAC DIGITALE | Thème partagé `C:\Users\diagnepa\Documents\Personal Projects\Website` | `https://www.pacdigitale.com/marketingdigital360/` | Landing page et pages légales déployées ; plateforme analytique autonome à développer |
 | Mémoire Executive MBA | Recherche appliquée sur Mining 360, performance opérationnelle et croissance commerciale | Dossier MBA et livrables dans `exports/Memoire_MBA_Validation_2026-10-11` | Soumission académique à venir | Proposition de validation produite en 15 pages ; terrain et protocole à confirmer |
 
 Les sept projets sont comptés séparément. `Miningprod_test` est l'environnement de test de MiningProd et non un huitième projet.
@@ -22,17 +43,17 @@ Les sept projets sont comptés séparément. `Miningprod_test` est l'environneme
 
 | Projet | Dernier état de travail connu | Prochaine décision utile |
 | --- | --- | --- |
-| Mining 360 | Fuel réparé sur BODEFM ; Operating Hours, UX premium Chatbot et retrait du bouton Watchlist validés localement selon leurs périmètres respectifs | Autoriser séparément les déploiements BODEFM souhaités, puis vérifier parité, sécurité et performance |
-| MiningProd | Clone isolé opérationnel ; UI test modernisée ; browser CAT Price enrichi et tarif S2 2026 intégré | Continuer les changements dans le clone, mesurer CAT Price et valider toute promotion vers la production |
+| Mining 360 | 24 octobre : correctif jetons de quatre fichiers installé avec accord ; HTTPS 200 ; FPR, Fuel et LCC affichés dans Edge ; durée maximale de la tâche M360 passée de 72 h à illimitée, autres réglages et droits préservés ; sauvegardes vérifiées | Investiguer le refresh Power BI LCC en échec et les événements SDK Fuel ; traiter séparément la collecte Revenue à 05:20 ; valider les périmètres utilisateurs ; renouveler le certificat avant le 16 novembre |
+| MiningProd | Maintenance production BODEFM le 21 octobre : sauvegarde vérifiée, 55 statistiques actualisées, un index réorganisé, 514 anciens logs IIS archivés et pool ciblé recyclé ; login HTTP 200 | Faire retester la saisie signalée ; C: reste à environ 4 Gio libres ; 75 statistiques éligibles restent à traiter dans une fenêtre coordonnée. Voir la mémoire MiningProd |
 | Mayite | Source PythonAnywhere sauvegardée ; exécution locale confirmée | Définir la prochaine évolution fonctionnelle et décider comment réconcilier la branche sauvegardée avec `main` |
 | DSTV | Source PythonAnywhere sauvegardée ; exécution locale confirmée | Définir la prochaine évolution et auditer les routes de mutation avant modernisation |
 | Site Pacdigitale | Thème personnalisé versionné ; dépôt propre ; copie locale active | Confirmer les prochains contenus ou évolutions et la configuration SMTP avant de compter sur les contacts |
-| Marketing Digital | 605 abonnements ou mentions J'aime obtenus pour 34,23 USD sur la publicité d'acquisition ; coût calculé 0,0566 USD | Exporter le rapport Meta détaillé, confirmer l'objectif 100K, tester les créations puis décider la montée en charge |
+| MarketingDigital360 | Landing page publique et pages légales déployées ; aucune intégration sociale autonome confirmée | Définir le dépôt, le runtime local, les APIs autorisées et le périmètre de la première version |
 | Mémoire MBA | Proposition de validation de 15 pages terminée ; revue comparative des anciens mémoires disponible | Faire valider sujet/problématique, choisir le terrain, les données et les interlocuteurs |
 
 ### Modèle d'environnement adopté le 15 octobre 2026
 
-Le développement et les tests de toutes les applications doivent s'effectuer sur ce poste avant promotion. Mayite, DSTV et Pacdigitale disposent déjà de leurs environnements locaux. Mining 360 doit recevoir SQL Server 2022 Developer local pour reproduire la major version BODEFM, et Miningprod_test doit être transféré dans un IIS/SQL Server local isolé. Marketing Digital suit un flux local de preuves, calculs, créations et campagnes en brouillon avant toute dépense ou publication. Le mémoire MBA reste un flux documentaire et ne nécessite pas de runtime.
+Le développement et les tests de toutes les applications doivent s'effectuer sur ce poste avant promotion. Mayite, DSTV et Pacdigitale disposent déjà de leurs environnements locaux. Mining 360 doit recevoir SQL Server 2022 Developer local pour reproduire la major version BODEFM, et Miningprod_test doit être transféré dans un IIS/SQL Server local isolé. MarketingDigital360 utilise actuellement le thème Pacdigitale pour ses pages publiques ; un runtime et un dépôt autonomes restent à définir. Le mémoire MBA reste un flux documentaire et ne nécessite pas de runtime.
 
 Références :
 
@@ -50,13 +71,13 @@ Pac Digitale ── portefeuille numérique ──> Site Pacdigitale
                                       ├──> Mayite
                                       └──> DSTV
 
-Marketing Digital ── preuves, tests et pilotage ──> Meta Business Suite / Ads Manager
+Site Pacdigitale ── thème partagé et pages publiques ──> MarketingDigital360
 ```
 
 - MiningProd et Mining 360 restent deux applications distinctes. MiningProd ne doit pas devenir la base applicative Django de Mining 360.
 - Le mémoire utilise Mining 360 comme cas de recherche appliquée. Une fonctionnalité, une mesure technique ou une roadmap ne devient pas une preuve académique de résultat sans données validées.
 - Mayite, DSTV et le site Pacdigitale ont chacun leur propre dépôt Git, leur propre runtime et leur propre procédure de déploiement.
-- Marketing Digital possède un dépôt Git local sans remote. Les lancements, budgets, audiences et publications restent des actions externes distinctes.
+- MarketingDigital360 est actuellement hébergé dans le thème du site Pacdigitale ; une application autonome, ses APIs et ses secrets n'existent pas encore dans le portefeuille versionné.
 
 ## 3. Mining 360
 
@@ -76,7 +97,7 @@ Elle consolide des données opérationnelles, techniques, de maintenance et comm
 
 - Code local : dépôt Git `https://github.com/lyz5/Mining360IA.git`, branche `main`. Les métadonnées ont été restaurées et le commit de continuité `f54aa2c` a été poussé. La copie conserve un grand écart historique à réconcilier par lots contrôlés.
 - Local : Django, base SQLite `db.sqlite3`, URL de santé vérifiée le 15 octobre 2026 sur `http://127.0.0.1:8001/health/` avec HTTP 200.
-- BODEFM : Django/Waitress, base applicative SQL Server `Mining360App`, runtime et rollback gouvernés.
+- BODEFM : Django/Waitress, base applicative SQL Server `Mining360App`, runtime et rollback gouvernés. Nouveau nom `https://mining360.neemba.com/` raccordé le 19 octobre ; à 21:43 UTC, DNS ordinaire et santé/login HTTPS validés depuis BODEFM sans résolution forcée. Connexion Windows et parcours métier depuis un poste Neemba restent à confirmer ; le cas WARP local est distinct. Voir `docs/BODEFM_MINING360_PROD_LOCAL.md` pour preuves, sauvegardes et limites d’authentification.
 - MiningProd reste une source externe ; ne jamais remplacer `Mining360App` par la base `MiningProd`.
 
 ### État fonctionnel à retenir
@@ -227,47 +248,27 @@ Le site public Pacdigitale est un WordPress hébergé chez LWS. Le code versionn
 - Ne jamais publier `wp-config.php`, un dump, les uploads ou des fichiers d'accès.
 - Le déploiement LWS/FTPS et l'activation de thème exigent une autorisation explicite.
 
-## 8. Marketing Digital
+## 8. MarketingDigital360
 
-### Rôle et sources
+### Rôle et état vérifié
 
-Le projet pilote une campagne Meta de développement de l'audience de **Thierno
-Alia Mbengue Officiel**. La copie canonique est
-`C:\Users\diagnepa\Documents\Personal Projects\Marketing Digital`. Le dépôt Git
-local `main` a été créé au commit `a1aa82b` ; aucun remote n'est configuré.
+MarketingDigital360 est le projet de plateforme de social-media intelligence et
+d'analytics de PAC DIGITALE. Il ne doit pas être confondu avec le dossier local
+historique de campagnes nommé `Marketing Digital`.
 
-Trois sources initiales sont conservées sans modification : la capture du 9 au
-15 octobre 2026, le classeur de budget et le document de stratégie 100K.
-`PROJECT_HANDOFF.md`, `CAMPAIGN_REVIEW_2026-10-15.md` et le CSV structuré portent
-les analyses dérivées.
-
-### Résultat contrôlé
-
-- publicité acquisition : 605 abonnements ou mentions J'aime, 34,23 USD dépensés, coût calculé 0,0566 USD ;
-- publicité visites : 1 360 visites de Page, 45 abonnements ou mentions J'aime secondaires et 33,76 USD ;
-- le coût affiché de 0,02 USD sur cette seconde publicité correspond aux visites de Page, pas aux abonnés ;
-- le plan de 8 000 USD correspond mathématiquement à 100 000 résultats à 0,08 USD, mais reste un scénario ;
-- l'objectif doit être précisé : 100 000 nouveaux abonnés ou 100 000 abonnés au total.
-
-### Poursuite retenue
-
-1. Obtenir l'export Ads Manager natif avec objectif, définition du résultat,
-   reach, impressions, fréquence, CPM, CTR, placements, pays et attribution.
-2. Préparer et tester les formats 1:1, 4:5 et 9:16 avec le même objectif.
-3. Monter le budget par paliers selon le coût vérifié par nouvel abonné.
-4. Mesurer séparément Sénégal et diaspora.
-5. Tenir un tableau hebdomadaire prévu/réalisé/écart/décision.
-
-Le passage direct d'environ 4,89 USD/jour observés sur la publicité acquisition
-à 95 USD/jour multiplierait le rythme par environ 19,4. Il n'est pas considéré
-comme validé par la seule capture disponible.
+La version actuelle consiste en une landing page publique et des pages légales,
+déployées dans le thème WordPress PAC DIGITALE à
+`/marketingdigital360/`. La plateforme autonome, ses intégrations officielles,
+son runtime local et son dépôt propre restent à créer. Voir
+`docs/MARKETINGDIGITAL360_PROJECT_HANDOFF.md`.
 
 ### Protections
 
-- ne jamais confondre visites, vues, mentions J'aime et nouveaux abonnés ;
-- préserver les exports et captures sources ;
-- ne jamais versionner accès Meta, tokens, moyens de paiement ou données d'audience ;
-- obtenir une autorisation explicite avant publication, lancement, audience ou changement budgétaire.
+- toute connexion API sociale, tout jeton, toute donnée d'audience et tout
+  compte publicitaire reste hors de Git et Dropbox ;
+- aucune intégration, importation, publication, dépense ou déploiement ne doit
+  être déduite de l'existence des pages publiques ;
+- le partage temporaire du thème Website ne remplace pas un dépôt autonome.
 
 ## 9. Mémoire Executive MBA
 
@@ -326,7 +327,7 @@ Une autorisation donnée pour un projet ou un environnement ne vaut pas pour les
 - Mayite PythonAnywhere ;
 - DSTV PythonAnywhere ;
 - Pacdigitale LWS ;
-- Marketing Digital : publication, lancement, audience et budget Meta ;
+- MarketingDigital360 : intégrations API, import de données, publication, dépense et déploiement d'une future application ;
 - soumission ou transmission du mémoire MBA.
 
 ## 11. Prochain cycle de consolidation
