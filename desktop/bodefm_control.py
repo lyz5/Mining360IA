@@ -145,7 +145,7 @@ try {{
             "MachineSalesSynchronizationRun.objects.filter(status='Running').exists() or "
             "PartsSalesSynchronizationRun.objects.filter(status='Running').exists() or "
             "ReconciliationBufferSyncRun.objects.filter(status__in=['Queued','Running']).exists() or "
-            "CodexRun.objects.exclude(status__in=['QUEUED','SUCCEEDED','FAILED','CANCELLED']).exists() or "
+            "CodexRun.objects.exclude(status__in=['QUEUED','SUCCEEDED','PARTIALLY_SUCCEEDED','FAILED','CANCELLED','TIMED_OUT']).exists() or "
             "synchronization_state().get('running')); "
             "sys.exit('Active Mining360 processing prevents restart.' if blocked else 0)"
         )
