@@ -160,8 +160,10 @@ def _distinct_existing_scope(key: str) -> list[str]:
 
 
 def _minesite_options() -> list[str]:
+    from .focus_site_access_service import focus_site_catalog
     configured = set(_distinct_existing_scope("minesite"))
     configured.update(role for role in RLS_ROLE_OPTIONS if role and role != "Global")
+    configured.update(row['site'] for row in focus_site_catalog())
     return sorted(configured, key=str.casefold)
 
 
@@ -187,7 +189,9 @@ def _business_options(user) -> tuple[list[str], list[str], list[str]]:
 
 
 def access_options(user) -> dict:
+    from .focus_site_access_service import focus_site_catalog, focus_site_presets
     countries, customers, warnings = _business_options(user)
+    site_countries = {row['site']:row['country'] for row in focus_site_catalog()}
     return {
         "platform_roles": [
             {"code": code, "label": label, "description": description,
@@ -200,7 +204,8 @@ def access_options(user) -> dict:
         ],
         "countries": [{"value": value, "label": value} for value in countries],
         "customers": [{"value": value, "label": value} for value in customers],
-        "minesites": [{"value": value, "label": value} for value in _minesite_options()],
+        "minesites": [{"value": value, "label": f"{site_countries[value]} — {value}" if value in site_countries else value} for value in _minesite_options()],
+        "site_access_profiles": focus_site_presets(),
         "powerbi_rls_roles": [{"value": "", "label": "No RLS role"}] + [
             {"value": value, "label": value} for value in RLS_ROLE_OPTIONS
         ],
@@ -258,7 +263,7 @@ def _validated_access(payload: dict, *, item: PlatformUser | None = None, actor=
         if invalid_minesites:
             raise UserAccessValidationError("Select a MineSite from the governed list.", field="minesites")
     rls = str(payload.get("powerbi_rls_role", (item.business_performance_scope or {}).get("rls_role", "") if item else "") or "").strip()
-    if rls and rls not in RLS_ROLE_OPTIONS:
+    if rls and rls not in RLS_ROLE_OPTIONS and not (bp_role == 'MineSite' and len(minesites) == 1 and rls == minesites[0]):
         raise UserAccessValidationError("Select a configured Power BI RLS role.", field="powerbi_rls_role")
     if not bp_role and (countries or customers or minesites):
         raise UserAccessValidationError("Data scopes require Business Performance access.", field="business_performance_access")
@@ -280,7 +285,8 @@ def _apply_access(item: PlatformUser, values: dict):
     was_administrator = item.is_platform_admin
     item.is_platform_admin = administrator
     item.can_access_reporting = administrator or "reporting" in values["roles"]
-    # Existing separate AI/data capabilities are not reassigned by module checkboxes.
+    item.can_access_ai = administrator or "chatbot" in values["roles"]
+    # Data and source capabilities remain separate from module roles.
     # A demoted full administrator must not retain implicit configuration access.
     if was_administrator and not administrator:
         item.can_access_data = False

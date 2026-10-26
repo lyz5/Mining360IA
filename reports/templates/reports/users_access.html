@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Users | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20261026-user-audience-categories-v3">
-    <link rel="stylesheet" href="{% static 'reports/users_access.css' %}?v=20261026-user-audience-categories-v3">
-    <script src="{% static 'reports/users_access.js' %}?v=20261026-user-audience-categories-v3" defer></script>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20261026-users-local-restore-v4">
+    <link rel="stylesheet" href="{% static 'reports/users_access.css' %}?v=20261026-users-local-restore-v4">
+    <script src="{% static 'reports/users_access.js' %}?v=20261026-users-local-restore-v4" defer></script>
 </head>
 <body class="users-access-body">
     {% include "reports/includes/app_nav.html" %}
@@ -41,7 +41,7 @@
                     <input type="search" data-users-search placeholder="Rechercher un utilisateur Neemba..." autocomplete="off">
                 </label>
                 <label><span class="sr-only">Status</span><select data-filter-status><option value="">All statuses</option><option value="active">Active</option><option value="disabled">Disabled</option></select></label>
-                <label><span class="sr-only">Role</span><select data-filter-role><option value="">All roles</option><option value="excellence_center">Excellence Center</option><option value="business_overview">Business Overview</option><option value="reporting">Reporting</option><option value="resources">Ressources</option><option value="admin">Admin</option><option value="super_admin">Super Admin</option></select></label>
+                <label><span class="sr-only">Role</span><select data-filter-role><option value="">All roles</option><option value="excellence_center">Excellence Center</option><option value="business_overview">Business Overview</option><option value="reporting">Reporting</option><option value="chatbot">Chatbot</option><option value="resources">Ressources</option><option value="admin">Admin</option><option value="super_admin">Super Admin</option></select></label>
                 <label class="users-toolbar__secondary"><span class="sr-only">Access source</span><select data-filter-source><option value="">All sources</option><option value="manual">Manual</option><option value="ad_groups">AD Groups</option></select></label>
                 <label class="users-toolbar__secondary" hidden><span class="sr-only">Business Performance</span><select data-filter-bp><option value="">All BP access</option><option value="none">No access</option><option value="MineSite">MineSite User</option><option value="Viewer">Viewer</option><option value="Account Manager">Account Manager</option><option value="Country Manager">Country Manager</option><option value="Business Manager">Business Manager</option><option value="Executive">Executive</option><option value="Administrator">Administrator</option></select></label>
                 <button class="button users-add-button" type="button" data-open-add>
@@ -106,11 +106,15 @@
                             </div>
                         </section>
                         <section class="access-section">
-                            <div class="access-section__heading"><h3>Roles</h3><p>Combine the four module roles as needed. Only a Super Admin can assign administrator roles.</p></div>
+                            <div class="access-section__heading"><h3>Roles</h3><p>Combine the five module roles as needed. Only a Super Admin can assign administrator roles.</p></div>
                             <p data-protected-account hidden>Only a Super Admin can change this administrator account.</p>
                             <label class="ad-managed-toggle" data-ad-managed-row hidden><input type="checkbox" data-directory-managed> <span><strong>Roles managed by AD groups</strong><small>Effective platform roles are synchronized from Active Directory.</small></span></label>
                             <div class="platform-role-grid" data-role-options></div>
                             <p class="field-error" data-error-platform_roles hidden></p>
+                        </section>
+                        <section class="access-section" data-focus-profiles-section hidden>
+                            <div class="access-section__heading"><h3>Focus site access profiles</h3><p>Select a source-confirmed site profile, grouped by country. Review the access before saving.</p></div>
+                            <label class="access-field"><span>Country / Focus site</span><select data-focus-site-profile></select></label>
                         </section>
                         <details class="access-section">
                             <summary>Advanced data scope</summary>
