@@ -65,3 +65,24 @@ active `CodexRun` finishes.
 Next safe promotion requires restoring SSH, refreshing the active-work guard,
 then applying commit `40fb0eb` with the documented backup and rollback checks.
 Authenticated browser validation of `/users/` is still required.
+
+## Diagnostic après restauration du canal WinRM
+
+- SSH/22 remained unreachable, but WinRM/5985 authenticated successfully as
+  `RESDELMAS\diagnepa`; the remote machine identity was confirmed as BODEFM.
+- BODEFM IIS log `u_ex261026.log` recorded successful `/users/` responses
+  (HTTP 200) at 11:16, 11:21, 13:25 and 13:27. Later requests at 13:29,
+  13:33, 13:39 and 13:49 returned HTTP 302; a subsequent `/login/` returned
+  HTTP 200. This is the login-required redirect after the browser session ended,
+  not a missing route or server error.
+- A direct read-only call to the deployed Users API returned HTTP 200, 11 total
+  accounts, 5 Neemba and 6 system accounts. IIS also logged HTTP 200 for Users
+  options and list APIs.
+- The current safe user action is to sign in again at `/login/` using **Sign in
+  with Windows**, then reopen `/users/`. The login screen offers “Keep me signed
+  in” for 14 days on this device.
+- The last work-guard check through WinRM still found one active `CodexRun`.
+  No runtime restart was performed. The checked application and shared-static
+  hashes match the clean release commit `40fb0eb`; SSH being closed does not
+  prevent read-only and deployment administration over the authorized WinRM
+  channel, but any restart must continue to pass the active-work guard.
