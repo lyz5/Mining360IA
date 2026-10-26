@@ -6,8 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Users | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20261026-user-audience-categories-v2">
-    <script src="{% static 'reports/users_access.js' %}?v=20261026-user-audience-categories-v2" defer></script>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20261026-user-audience-categories-v3">
+    <link rel="stylesheet" href="{% static 'reports/users_access.css' %}?v=20261026-user-audience-categories-v3">
+    <script src="{% static 'reports/users_access.js' %}?v=20261026-user-audience-categories-v3" defer></script>
 </head>
 <body class="users-access-body">
     {% include "reports/includes/app_nav.html" %}
@@ -29,10 +30,10 @@
 
         <section class="users-workspace" aria-labelledby="authorized-users-title">
             <div class="users-audience-tabs" role="tablist" aria-label="Origine des utilisateurs">
-                <button type="button" role="tab" aria-selected="true" data-users-audience="neemba">Utilisateurs Neemba <span data-audience-count="neemba">0</span></button>
-                <button type="button" role="tab" aria-selected="false" data-users-audience="system">Cr??s dans Mining360 <span data-audience-count="system">0</span></button>
+                <button type="button" role="tab" aria-selected="true" data-users-audience="neemba">Neemba users <span data-audience-count="neemba">…</span></button>
+                <button type="button" role="tab" aria-selected="false" data-users-audience="system">Created in Mining360 <span data-audience-count="system">…</span></button>
             </div>
-            <p class="users-audience-note" data-audience-note>Comptes Neemba synchronis?s depuis Active Directory ou Microsoft Entra.</p>
+            <p class="users-audience-note" data-audience-note>Neemba accounts synchronized from Active Directory or Microsoft Entra.</p>
             <div class="users-toolbar">
                 <label class="users-search">
                     <span class="sr-only">Search authorized users</span>
