@@ -35,6 +35,7 @@ class PlatformUser(models.Model):
         ("excellence_center", "Excellence Center"),
         ("business_overview", "Business Overview"),
         ("reporting", "Reporting"),
+        ("chatbot", "Chatbot"),
         ("resources", "Ressources"),
         ("admin", "Admin"),
         ("super_admin", "Super Admin"),

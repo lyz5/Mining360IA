@@ -11,6 +11,7 @@ MODULES = {
     "business_overview": "Business Overview",
     "resources": "Ressources",
     "reporting": "Reporting",
+    "chatbot": "M360 Chatbot",
     "ai": "IA",
     "data": "Data",
     "sources": "Data Source",
@@ -22,6 +23,7 @@ MODULE_PATH_PREFIXES = (
     ("resources", ("/resources/",)),
     ("reporting", ("/business-performance/",)),
     ("reporting", ("/reporting/", "/reports/", "/api/reporting/", "/powerbi-interaction/")),
+    ("chatbot", ("/codex-chatbot/",)),
     ("ai", ("/ai/", "/api/ai/")),
     ("data", ("/data/", "/data-browsers", "/data-quality/")),
     ("sources", ("/data-sources/",)),
@@ -84,7 +86,10 @@ def user_module_access(user) -> dict[str, bool]:
         "business_overview": has_business_role(user, "business_overview"),
         "resources": has_business_role(user, "resources"),
         "reporting": has_business_role(user, "reporting"),
+        # `ai` remains an internal compatibility capability. User-facing
+        # chatbot access is governed by the explicit Chatbot role.
         "ai": platform_user.can_access_ai,
+        "chatbot": has_business_role(user, "chatbot"),
         "data": platform_user.can_access_data,
         "sources": platform_user.can_access_sources,
     }
