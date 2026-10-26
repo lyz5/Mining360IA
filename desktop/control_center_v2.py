@@ -12,6 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 from tkinter import messagebox, ttk
 
+from desktop.bodefm_control import BodefmControl
 from desktop.control_center_event_store import ControlCenterEventStore
 from desktop.control_center_models import OperationResult, OperationStatus, OperationStep
 from desktop.control_core import Mining360Controller, ServiceResult
@@ -129,6 +130,10 @@ class Mining360ControlCenterV2(tk.Tk):
         self.minsize(1000, 650)
         self.configure(bg=COLORS["background"])
         self.controller = Mining360Controller()
+        self.bodefm_control = BodefmControl()
+        self.bodefm_status: dict | None = None
+        self.bodefm_check_running = False
+        self.bodefm_action_running = False
         self.registry = ServiceRegistry()
         self.definitions = self.registry.by_code()
         self.event_store = ControlCenterEventStore(self.controller.log_directory)
@@ -273,7 +278,7 @@ class Mining360ControlCenterV2(tk.Tk):
         nav.grid(row=2, column=0, sticky="ew")
         nav.pack_propagate(False)
         self.nav_buttons = {}
-        for name in ("Overview", "Services", "Data & Integrations", "Jobs", "Deployment", "Logs & History"):
+        for name in ("Overview", "Services", "Data & Integrations", "Jobs", "Deployment", "BODEFM", "Logs & History"):
             button = tk.Button(
                 nav, text=name, command=lambda value=name: self._change_view(value),
                 bg=COLORS["surface"], fg=COLORS["text"] if name == "Overview" else COLORS["muted"],
@@ -416,6 +421,8 @@ class Mining360ControlCenterV2(tk.Tk):
             definitions = [item for item in definitions if item.category == "AI & Workers"]
         elif self.current_view == "Deployment":
             definitions = []
+        elif self.current_view == "BODEFM":
+            definitions = []
         for index, definition in enumerate(definitions):
             card = ServiceCard(self.service_grid, definition, self._select_service)
             column = index % self.card_columns
@@ -429,7 +436,9 @@ class Mining360ControlCenterV2(tk.Tk):
             self.cards[definition.code] = card
             if definition.code in self.results:
                 card.set_result(self.results[definition.code])
-        if not definitions:
+        if self.current_view == "BODEFM":
+            self._render_bodefm_panel()
+        elif not definitions:
             message = "Deployment controls are available through the governed web deployment workflow."
             tk.Label(
                 self.service_grid, text=message, bg=COLORS["surface"], fg=COLORS["muted"],
@@ -445,6 +454,8 @@ class Mining360ControlCenterV2(tk.Tk):
             return
         self.workspace_title.configure(text=view)
         self._render_cards()
+        if view == "BODEFM":
+            self._request_bodefm_refresh()
 
     def _select_service(self, code: str) -> None:
         self.selected_service = code
@@ -482,6 +493,7 @@ class Mining360ControlCenterV2(tk.Tk):
         self._submit_check("medium", self.controller.check_application_services)
         self._submit_check("slow", self.controller.check_external_services)
         self._submit_check("extended", self.extended_health.check)
+        self._request_bodefm_refresh()
         self._append_activity("INFO", "Manual health refresh requested.")
 
     def _refresh_fast(self) -> None:
@@ -501,7 +513,144 @@ class Mining360ControlCenterV2(tk.Tk):
             return
         self._submit_check("slow", self.controller.check_external_services)
         self._submit_check("extended", self.extended_health.check)
+        self._request_bodefm_refresh()
         self.after(self.SLOW_REFRESH_MS, self._refresh_slow)
+
+    def _render_bodefm_panel(self) -> None:
+        panel = tk.Frame(
+            self.service_grid, bg=COLORS["surface"],
+            highlightthickness=1, highlightbackground=COLORS["border"], padx=22, pady=20,
+        )
+        panel.grid(row=0, column=0, columnspan=self.card_columns, sticky="nsew", padx=(0, 8), pady=(0, 8))
+        panel.columnconfigure(0, weight=1)
+        heading = tk.Frame(panel, bg=COLORS["surface"])
+        heading.grid(row=0, column=0, sticky="ew")
+        tk.Label(
+            heading, text="BODEFM · Mining360 Production", bg=COLORS["surface"], fg=COLORS["text"],
+            font=("Segoe UI Semibold", 15),
+        ).pack(side="left")
+        self.bodefm_state_label = tk.Label(
+            heading, text="Waiting for SSH status", bg=COLORS["surface"], fg=COLORS["gray"],
+            font=("Segoe UI Semibold", 10),
+        )
+        self.bodefm_state_label.pack(side="right")
+        tk.Label(
+            panel, text="Secure connection to the verified BODEFM runtime", bg=COLORS["surface"],
+            fg=COLORS["muted"], font=("Segoe UI", 9),
+        ).grid(row=1, column=0, sticky="w", pady=(5, 15))
+        self.bodefm_details = tk.Text(
+            panel, height=7, bg="#091222", fg="#B9C6D9", relief="flat", bd=0,
+            font=("Cascadia Mono", 9), padx=14, pady=12, wrap="word", state="disabled",
+        )
+        self.bodefm_details.grid(row=2, column=0, sticky="ew")
+        actions = tk.Frame(panel, bg=COLORS["surface"])
+        actions.grid(row=3, column=0, sticky="ew", pady=(14, 0))
+        self.bodefm_refresh_button = ttk.Button(
+            actions, text="Refresh BODEFM status", style="Secondary.TButton",
+            command=self._request_bodefm_refresh,
+        )
+        self.bodefm_refresh_button.pack(side="left")
+        self.bodefm_restart_button = ttk.Button(
+            actions, text="Restart Mining360", style="Restart.TButton",
+            command=self._confirm_bodefm_restart,
+        )
+        self.bodefm_restart_button.pack(side="left", padx=(8, 0))
+        self._show_bodefm_status()
+
+    def _request_bodefm_refresh(self) -> None:
+        if self.bodefm_check_running or self.bodefm_action_running or self.closed:
+            return
+        self.bodefm_check_running = True
+        if hasattr(self, "bodefm_refresh_button") and self.bodefm_refresh_button.winfo_exists():
+            self.bodefm_refresh_button.configure(state="disabled")
+        future = self.executor.submit(self.bodefm_control.refresh_status)
+        future.add_done_callback(lambda completed: self._queue_future("bodefm_status", "status", completed))
+
+    def _confirm_bodefm_restart(self) -> None:
+        if self.bodefm_action_running:
+            return
+        dialog = tk.Toplevel(self)
+        dialog.title("Confirm BODEFM restart")
+        dialog.configure(bg=COLORS["surface"])
+        dialog.transient(self)
+        dialog.grab_set()
+        dialog.resizable(False, False)
+        tk.Label(
+            dialog, text="Restart Mining360 on BODEFM", bg=COLORS["surface"], fg=COLORS["red"],
+            font=("Segoe UI Semibold", 14),
+        ).pack(anchor="w", padx=22, pady=(20, 8))
+        tk.Label(
+            dialog,
+            text="The action checks active business processing and runtime ownership before restarting.",
+            bg=COLORS["surface"], fg=COLORS["text"], wraplength=440, justify="left",
+            font=("Segoe UI", 9),
+        ).pack(anchor="w", padx=22)
+        tk.Label(
+            dialog, text="Type RESTART BODEFM to continue.", bg=COLORS["surface"], fg=COLORS["muted"],
+            font=("Segoe UI", 9),
+        ).pack(anchor="w", padx=22, pady=(12, 0))
+        entry = tk.Entry(dialog, width=42, bg=COLORS["surface_high"], fg=COLORS["text"], insertbackground=COLORS["text"])
+        entry.pack(fill="x", padx=22, pady=10)
+        buttons = tk.Frame(dialog, bg=COLORS["surface"])
+        buttons.pack(fill="x", padx=22, pady=(0, 20))
+        confirm = ttk.Button(buttons, text="Restart Mining360", style="Danger.TButton", state="disabled")
+        confirm.pack(side="right")
+        ttk.Button(buttons, text="Cancel", style="Secondary.TButton", command=dialog.destroy).pack(side="right", padx=8)
+        accepted = {"value": False}
+
+        def validate(_event=None) -> None:
+            confirm.configure(state="normal" if entry.get().strip() == "RESTART BODEFM" else "disabled")
+
+        def finish() -> None:
+            accepted["value"] = True
+            dialog.destroy()
+
+        entry.bind("<KeyRelease>", validate)
+        confirm.configure(command=finish)
+        entry.focus_set()
+        self.wait_window(dialog)
+        if accepted["value"]:
+            self._start_bodefm_restart()
+
+    def _start_bodefm_restart(self) -> None:
+        self.bodefm_action_running = True
+        if hasattr(self, "bodefm_restart_button") and self.bodefm_restart_button.winfo_exists():
+            self.bodefm_restart_button.configure(state="disabled")
+        if hasattr(self, "bodefm_refresh_button") and self.bodefm_refresh_button.winfo_exists():
+            self.bodefm_refresh_button.configure(state="disabled")
+        self.event_store.append({"type": "bodefm_restart", "status": "requested", "host": "bodefm"})
+        self._append_activity("PRODUCTION", "BODEFM Mining360 restart requested after typed confirmation.")
+        future = self.executor.submit(self.bodefm_control.restart)
+        future.add_done_callback(lambda completed: self._queue_future("bodefm_restart", "restart", completed))
+
+    def _show_bodefm_status(self, error: str | None = None) -> None:
+        if not hasattr(self, "bodefm_details") or not self.bodefm_details.winfo_exists():
+            return
+        if error:
+            status_text, color = "Connection unavailable", COLORS["red"]
+            body = self.controller.redact(error)
+        elif not self.bodefm_status:
+            status_text, color = "Checking", COLORS["gray"]
+            body = "Waiting for a verified SSH status response."
+        else:
+            info = self.bodefm_status
+            online = info.get("application_health") == "ok" and info.get("database_health") == "ok"
+            public_ok = str(info.get("public_health")) == "200"
+            status_text, color = ("Operational", COLORS["green"]) if online and public_ok else (
+                ("Degraded", COLORS["amber"]) if online else ("Unavailable", COLORS["red"])
+            )
+            body = (
+                f"Machine: {info.get('machine', 'Unknown')}\n"
+                f"Runtime task: {info.get('task_status', 'Running' if info.get('application_health') == 'ok' else 'Unknown')}\n"
+                f"Application: {info.get('application_health', 'Unknown')}  |  Database: {info.get('database_health', 'Unknown')}\n"
+                f"Public HTTPS: {info.get('public_health', 'Unknown')}\n"
+                f"Last check: {info.get('checked_at', info.get('restarted_at', 'Unknown'))}"
+            )
+        self.bodefm_state_label.configure(text=status_text, fg=color)
+        self.bodefm_details.configure(state="normal")
+        self.bodefm_details.delete("1.0", "end")
+        self.bodefm_details.insert("1.0", body)
+        self.bodefm_details.configure(state="disabled")
 
     def _submit_check(self, cadence: str, function) -> None:
         if cadence in self.checks_running or self.lifecycle.operation_running:
@@ -648,6 +797,36 @@ class Mining360ControlCenterV2(tk.Tk):
                         self._append_activity("ERROR", f"Diagnostics failed: {value}")
                     else:
                         self._show_diagnostics(value)
+                elif event_type == "bodefm_status":
+                    _context, value = payload
+                    self.bodefm_check_running = False
+                    if isinstance(value, Exception):
+                        self._show_bodefm_status(str(value))
+                        if self.current_view == "BODEFM":
+                            self._append_activity("ERROR", f"BODEFM status refresh failed: {value}")
+                    else:
+                        self.bodefm_status = value
+                        self._show_bodefm_status()
+                    if hasattr(self, "bodefm_refresh_button") and self.bodefm_refresh_button.winfo_exists():
+                        self.bodefm_refresh_button.configure(state="normal" if not self.bodefm_action_running else "disabled")
+                elif event_type == "bodefm_restart":
+                    _context, value = payload
+                    self.bodefm_action_running = False
+                    if isinstance(value, Exception):
+                        message = self.controller.redact(str(value))
+                        self.event_store.append({"type": "bodefm_restart", "status": "failed", "detail": message})
+                        self._append_activity("ERROR", f"BODEFM restart failed: {message}")
+                        self._show_bodefm_status(message)
+                    else:
+                        self.bodefm_status = value
+                        self.event_store.append({"type": "bodefm_restart", "status": "completed", "result": value})
+                        self._append_activity("PRODUCTION", "BODEFM Mining360 restart completed and health checks passed.")
+                        self._show_bodefm_status()
+                    if hasattr(self, "bodefm_restart_button") and self.bodefm_restart_button.winfo_exists():
+                        self.bodefm_restart_button.configure(state="normal")
+                    if hasattr(self, "bodefm_refresh_button") and self.bodefm_refresh_button.winfo_exists():
+                        self.bodefm_refresh_button.configure(state="normal")
+                    self.after(500, self._request_bodefm_refresh)
         except queue.Empty:
             pass
         if not self.closed:

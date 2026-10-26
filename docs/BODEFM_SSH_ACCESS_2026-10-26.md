@@ -1,5 +1,31 @@
 # Accès SSH BODEFM — 26 octobre 2026
 
+## Etat actuel de la connexion dediee
+
+The following verified setup supersedes the earlier note that a dedicated key
+was still pending:
+
+- Local private key: `%USERPROFILE%\.ssh\mining360_bodefm_control`.
+- Public-key fingerprint: `SHA256:ie7VUR5IMAtW9UNrCD0AivkiAtBeQR9mbKWVmRpn6DI`.
+- The private key is restricted by Windows ACLs to the current user, SYSTEM and
+  local Administrators.
+- BODEFM uses `C:\ProgramData\ssh\administrators_authorized_keys` for this
+  administrator account. The key was added there without removing existing
+  entries; the existing SYSTEM and Administrators ACLs were preserved.
+- Strict-key SSH was verified with `hostname`; the result was `BODEFM`.
+- The client uses the existing `bodefm` known-hosts alias and the verified
+  server fingerprint recorded below. Password authentication is disabled in
+  the Control Center SSH command.
+
+The private key is not stored in Git, Dropbox, this document, or Control Center
+event logs. No password is stored by the Control Center.
+
+The local Control Center's BODEFM panel provides status refresh and a confirmed
+Mining360 restart. Restart checks the scheduled-task action and SYSTEM identity,
+refuses active/unverifiable processing and unknown port owners, restarts only
+`Mining360RuntimeServiceRecovery`, and checks application/database/public HTTPS
+health afterward.
+
 ## Connexion vérifiée
 
 Une connexion SSH en lecture seule vers BODEFM a été vérifiée le 26 octobre 2026.
@@ -22,9 +48,9 @@ La connexion vérifiée a utilisé l'authentification par mot de passe du compte
 `RESDELMAS\diagnepa`. Le mot de passe n'est pas conservé dans ce dépôt, dans la
 documentation, dans les journaux ou dans une configuration applicative.
 
-L'agent SSH local observé ne contenait qu'une clé PythonAnywhere et aucune clé
-privée BODEFM validée. L'absence de cette clé locale ne remet pas en cause
-l'identité du serveur ni l'accès par mot de passe confirmé ci-dessus.
+Au moment de ce premier contrôle, l'agent SSH ne contenait aucune clé BODEFM.
+La clé dédiée créée ensuite et son authentification stricte sont documentées
+dans la section d'état actuel en tête de ce document.
 
 ## Règles d'exploitation
 
@@ -33,8 +59,7 @@ l'identité du serveur ni l'accès par mot de passe confirmé ci-dessus.
 - Vérifier l'empreinte hôte avant de remplacer une entrée `known_hosts`.
 - Ne jamais transmettre, inscrire ou sauvegarder un mot de passe dans Git,
   Dropbox, un script ou une conversation.
-- Une future clé dédiée BODEFM est souhaitable, mais ne doit être créée et
-  autorisée côté serveur qu'avec validation du propriétaire et en préservant
-  les accès existants.
+- La clé dédiée décrite en tête de document est maintenant autorisée pour ce
+  compte. Préserver cette entrée et toutes les autres clés lors d'une rotation.
 - Toute intervention de production reste soumise aux préflights, sauvegardes,
   contrôles de runtime et rollback documentés pour BODEFM.
