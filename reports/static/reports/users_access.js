@@ -17,7 +17,7 @@
         Administrator: "Full Business Performance administration.",
     };
     const state = {
-        page: 1, pages: 1, query: "", status: "", role: "", source: "", bp: "", ordering: "display_name",
+        page: 1, pages: 1, query: "", status: "", role: "", source: "", bp: "", ordering: "display_name", audience: "neemba",
         users: [], options: null, form: null, mode: null, dirty: false, selectedResult: -1,
         usersController: null, directoryController: null, usersTimer: null, directoryTimer: null,
         lastDirectoryQuery: "", directoryCache: new Map(), confirmResolve: null,
@@ -70,7 +70,7 @@
         state.usersController?.abort();
         state.usersController = new AbortController();
         setUsersState("loading");
-        const params = new URLSearchParams({ page: state.page, page_size: 25, ordering: state.ordering });
+        const params = new URLSearchParams({ page: state.page, page_size: 25, ordering: state.ordering, audience: state.audience });
         if (state.query) params.set("q", state.query);
         if (state.status) params.set("status", state.status);
         if (state.role) params.set("role", state.role);
@@ -109,7 +109,10 @@
         $("[data-summary-active]").textContent = summary.active ?? 0;
         $("[data-summary-admins]").textContent = summary.administrators ?? 0;
         $("[data-summary-ad]").textContent = summary.ad_managed ?? 0;
-        $("[data-result-count]").textContent = `${payload.count} authorized ${payload.count === 1 ? "user" : "users"}`;
+        $$("[data-audience-count]").forEach(node => { node.textContent = summary[node.dataset.audienceCount] ?? 0; });
+        const platformUsers = state.audience === "system";
+        $("#authorized-users-title").textContent = platformUsers ? "Utilisateurs cr??s dans Mining360" : "Utilisateurs Neemba";
+        $("[data-result-count]").textContent = `${payload.count} ${payload.count === 1 ? "utilisateur" : "utilisateurs"}`;
         renderActiveFilters();
         if (!state.users.length) {
             setUsersState("empty");
@@ -121,7 +124,7 @@
                 <td><div class="user-cell"><span class="user-avatar">${escapeHtml(initials(user.display_name))}</span><span><strong>${escapeHtml(user.display_name)}</strong><small title="${escapeHtml(user.upn)}">${escapeHtml(user.upn)}</small></span></div></td>
                 <td>${roleChips(user)}</td>
                 <td title="${escapeHtml([...user.countries, ...user.customers, ...(user.minesites || [])].join(", "))}">${escapeHtml(scopeText(user))}</td>
-                <td>${escapeHtml(user.powerbi_rls_role || "Not configured")}</td><td><span class="source-badge">${escapeHtml(sourceLabel(user.access_source))}</span></td>
+                <td>${escapeHtml(user.powerbi_rls_role || "Not configured")}</td><td><span class="source-badge">${user.auth_source === "local" ? "Cr?? dans Mining360" : "Neemba"}</span></td>
                 <td><span class="status-badge status-badge--${user.status}">${user.status === "active" ? "Active" : "Disabled"}</span></td>
                 <td><button type="button" class="access-icon-button row-more" data-user-open="${user.id}" aria-label="View access for ${escapeHtml(user.display_name)}">•••</button></td>
             </tr>`).join("");
@@ -129,7 +132,7 @@
         $("[data-users-mobile]").innerHTML = state.users.map(user => `
             <article class="authorized-user-card" data-user-row="${user.id}">
                 <div class="user-cell"><span class="user-avatar">${escapeHtml(initials(user.display_name))}</span><span><strong>${escapeHtml(user.display_name)}</strong><small>${escapeHtml(user.upn)}</small></span></div>
-                ${roleChips(user)}<dl><div><dt>Scope</dt><dd>${escapeHtml(scopeText(user))}</dd></div></dl>
+                ${roleChips(user)}<dl><div><dt>P?rim?tre</dt><dd>${escapeHtml(scopeText(user))}</dd></div><div><dt>Origine</dt><dd>${platformUsers ? "Cr?? dans Mining360" : "Neemba (annuaire d?entreprise)"}</dd></div></dl>
                 <div class="mobile-user-footer"><span class="status-badge status-badge--${user.status}">${user.status === "active" ? "Active" : "Disabled"}</span><button class="button secondary" type="button" data-user-open="${user.id}">View access</button></div>
             </article>`).join("");
         setUsersState("ready");
@@ -503,6 +506,18 @@
     $("[data-filter-source]").addEventListener("change", event => { state.source = event.target.value; state.page = 1; loadUsers(); });
     $("[data-filter-bp]").addEventListener("change", event => { state.bp = event.target.value; state.page = 1; loadUsers(); });
     $("[data-ordering]").addEventListener("change", event => { state.ordering = event.target.value; state.page = 1; loadUsers(); });
+
+    $$("[data-users-audience]").forEach(tab => tab.addEventListener("click", () => {
+        state.audience = tab.dataset.usersAudience;
+        state.page = 1;
+        $$("[data-users-audience]").forEach(node => node.setAttribute("aria-selected", String(node === tab)));
+        const system = state.audience === "system";
+        $("[data-audience-note]").textContent = system
+            ? "Comptes cr??s directement dans Mining360. Ils ne proviennent pas de l?annuaire Neemba."
+            : "Comptes Neemba synchronis?s depuis Active Directory ou Microsoft Entra.";
+        $("[data-users-search]").placeholder = system ? "Rechercher un utilisateur cr?? dans Mining360..." : "Rechercher un utilisateur Neemba...";
+        loadUsers();
+    }));
 
     $("[data-directory-query]").addEventListener("keydown", event => {
         const options = $$('[data-directory-index]');

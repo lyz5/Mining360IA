@@ -81,6 +81,8 @@ def users_api(request):
             "active": all_users.filter(is_active=True).count(),
             "administrators": all_users.filter(is_active=True, is_platform_admin=True).count(),
             "ad_managed": all_users.filter(auth_source="active_directory", directory_roles_managed=True).count(),
+            "system": all_users.filter(auth_source="local").count(),
+            "neemba": all_users.exclude(auth_source="local").count(),
         },
         "results": [serialize_user(item) for item in page.object_list],
     })

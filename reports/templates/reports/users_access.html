@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Users | Mining360</title>
-    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260812-users1">
-    <script src="{% static 'reports/users_access.js' %}?v=20260929-six-roles" defer></script>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20261026-user-audience-categories-v2">
+    <script src="{% static 'reports/users_access.js' %}?v=20261026-user-audience-categories-v2" defer></script>
 </head>
 <body class="users-access-body">
     {% include "reports/includes/app_nav.html" %}
@@ -28,11 +28,16 @@
         </header>
 
         <section class="users-workspace" aria-labelledby="authorized-users-title">
+            <div class="users-audience-tabs" role="tablist" aria-label="Origine des utilisateurs">
+                <button type="button" role="tab" aria-selected="true" data-users-audience="neemba">Utilisateurs Neemba <span data-audience-count="neemba">0</span></button>
+                <button type="button" role="tab" aria-selected="false" data-users-audience="system">Cr??s dans Mining360 <span data-audience-count="system">0</span></button>
+            </div>
+            <p class="users-audience-note" data-audience-note>Comptes Neemba synchronis?s depuis Active Directory ou Microsoft Entra.</p>
             <div class="users-toolbar">
                 <label class="users-search">
                     <span class="sr-only">Search authorized users</span>
                     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-                    <input type="search" data-users-search placeholder="Search authorized users..." autocomplete="off">
+                    <input type="search" data-users-search placeholder="Rechercher un utilisateur Neemba..." autocomplete="off">
                 </label>
                 <label><span class="sr-only">Status</span><select data-filter-status><option value="">All statuses</option><option value="active">Active</option><option value="disabled">Disabled</option></select></label>
                 <label><span class="sr-only">Role</span><select data-filter-role><option value="">All roles</option><option value="excellence_center">Excellence Center</option><option value="business_overview">Business Overview</option><option value="reporting">Reporting</option><option value="resources">Ressources</option><option value="admin">Admin</option><option value="super_admin">Super Admin</option></select></label>
@@ -46,7 +51,7 @@
             <div class="users-active-filters" data-active-filters hidden></div>
 
             <div class="users-section-heading">
-                <div><h2 id="authorized-users-title">Authorized users</h2><p data-result-count>Loading users...</p></div>
+                <div><h2 id="authorized-users-title">Utilisateurs Neemba</h2><p data-result-count>Chargement des utilisateurs...</p></div>
                 <label>Sort <select data-ordering><option value="display_name">Name A-Z</option><option value="-display_name">Name Z-A</option><option value="-updated_at">Recently updated</option><option value="-is_active">Status</option></select></label>
             </div>
 

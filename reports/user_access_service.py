@@ -109,6 +109,13 @@ def serialize_user(item: PlatformUser, *, detail: bool = False) -> dict:
 
 def authorized_users_queryset(params):
     queryset = PlatformUser.objects.select_related("django_user").all()
+    # Presentation-only split: local technical identities belong to the System
+    # tab, while AD/Entra identities remain in the Neemba tab.
+    audience = str(params.get("audience") or "").strip().casefold()
+    if audience == "system":
+        queryset = queryset.filter(auth_source="local")
+    elif audience == "neemba":
+        queryset = queryset.exclude(auth_source="local")
     query = str(params.get("q") or "").strip()
     if query:
         queryset = queryset.filter(
