@@ -33,10 +33,12 @@ The previous template is backed up at
 `D:\Mining360Backups\release-20261026-users-tabs-ui-fix\backup\app\reports\templates\reports\users_access.html`.
 No CSS file existed at either destination before installation.
 
-The runtime restart was refused twice by the existing active-work guard because
-a `CodexRun` remains active. Mapping synchronization, reconciliation, machine
+The runtime restart was refused by the existing active-work guard, including
+again after the user's explicit deployment instruction and a further wait,
+because a `CodexRun` remains active. Mapping synchronization, reconciliation, machine
 sales, parts sales, reconciliation-buffer and Revenue synchronization checks
 were all inactive. No service or process was stopped. A separate read-only
 check confirmed the expected Waitress listener and HTTP 200 for both local and
-public health endpoints. Restart and authenticated browser validation remain
-pending until the active `CodexRun` finishes.
+public health endpoints. Every refused restart stopped before touching the
+runtime. Restart and authenticated browser validation remain pending until the
+active `CodexRun` finishes.
