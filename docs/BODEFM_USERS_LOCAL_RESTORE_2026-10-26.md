@@ -19,3 +19,15 @@ Le cache statique passe à `20261026-users-local-restore-v4`.
 ## Validation
 
 Confirmer le déploiement après santé application/base, contrôle Django, API Users/options HTTP 200, assets HTTP 200 et vérification authentifiée des deux onglets.
+## Résultat BODEFM
+
+- Code déployé : commit `8588c3d6577d0795b20c7012737965d9964def76`.
+- Sauvegarde ciblée : `C:\Mining360\backups\users-runtime-restore-8588c3d-20261026-095927`.
+- `manage.py check` : réussi. `collectstatic` : un fichier mis à jour, 210 inchangés, 568 post-traités.
+- Redémarrage protégé : application `ok`, base `ok`, santé HTTPS publique `200`.
+- JavaScript servi sous `reports/users_access.577246b1fd9e.js` : HTTP 200 ; feuille CSS : HTTP 200.
+- Rendu authentifié de `/users/` : HTTP 200, cache v4, onglets Neemba et Mining360 présents.
+- API Users : HTTP 200, 5 comptes Neemba et 6 comptes créés dans Mining360, 11 au total. API options : HTTP 200, 7 rôles et 25 profils Focus.
+- Aucun compte ni droit utilisateur existant n’a été modifié par cette promotion.
+
+La validation a été faite par rendu Django authentifié et appels API en lecture seule. Une capture Edge de la session utilisateur n’a pas été produite dans cette opération.
