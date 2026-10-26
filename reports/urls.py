@@ -19,9 +19,15 @@ from . import chat_suggestion_views
 from . import business_mapping_views
 from . import business_review_views
 from . import reconciliation_views
+from . import downtime_checking_views
 
 
 urlpatterns = [
+    path("config/downtime-checking/", downtime_checking_views.page, name="downtime-checking-home"),
+    path("config/downtime-checking/status/", downtime_checking_views.status_api, name="downtime-checking-status"),
+    path("config/downtime-checking/recheck/", downtime_checking_views.recheck_api, name="downtime-checking-recheck"),
+    path("config/downtime-checking/results/", downtime_checking_views.results_api, name="downtime-checking-results"),
+    path("config/downtime-checking/export/", downtime_checking_views.export_api, name="downtime-checking-export"),
     path("login/", views.login_page, name="login"),
     path("auth/start/", views.auth_start, name="auth-start"),
     path("auth/callback/", views.auth_callback, name="auth-callback"),

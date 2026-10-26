@@ -1,0 +1,53 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    {% include "reports/includes/favicon.html" %}
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Downtime Checking · Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'reports/downtime_checking.css' %}?v=20261026">
+</head>
+<body class="dtcheck-page">
+{% include "reports/includes/app_nav.html" %}
+<main class="app-shell dtcheck-shell" data-downtime-checking
+      data-status-url="{% url 'downtime-checking-status' %}"
+      data-recheck-url="{% url 'downtime-checking-recheck' %}"
+      data-results-url="{% url 'downtime-checking-results' %}"
+      data-export-url="{% url 'downtime-checking-export' %}">
+    <div hidden>{% csrf_token %}</div>
+    <header class="dtcheck-header">
+        <div><p class="dtcheck-eyebrow">CONFIG / DATA QUALITY</p><h1>Downtime Checking</h1><p>YTD {{ ytd_year }} · Labour Type, Description CAT and required downtime fields.</p></div>
+        <div class="dtcheck-head-actions"><span class="dtcheck-status" data-run-status>Loading status…</span><button type="button" class="dtcheck-recheck" data-recheck>Recheck YTD</button></div>
+    </header>
+
+    <section class="dtcheck-notice"><strong>Read-only control.</strong> Findings are review signals, not automatic corrections or certified CAT mappings. “Corrected” is shown only when the same event remains in the source and no longer triggers the same criterion.</section>
+    <section class="dtcheck-progress" data-progress hidden><div><strong data-progress-phase>Checking…</strong><span data-progress-count></span></div><div class="dtcheck-progress-track"><i data-progress-bar></i></div></section>
+    <section class="dtcheck-metrics" aria-label="YTD check summary">
+        <article><span>Events read</span><strong data-metric="events">—</strong><small data-metric-sites>— sites</small></article>
+        <article><span>Open findings</span><strong data-metric="findings">—</strong><small data-metric-open>— affected events</small></article>
+        <article><span>Missing / invalid</span><strong data-metric="missing">—</strong><small>Required data and integrity checks</small></article>
+        <article><span>Confirmed after recheck</span><strong data-metric="corrected">—</strong><small>Resolved findings, not source edits</small></article>
+    </section>
+
+    <section class="dtcheck-controls" aria-label="Downtime check filters">
+        <label class="dtcheck-search"><span class="sr-only">Search findings</span><input data-filter="q" type="search" autocomplete="off" placeholder="Search event, Labour Type, CAT, comment…"><button type="button" data-clear-search aria-label="Clear search" hidden>×</button></label>
+        <label>Type <select data-filter="kind"><option value="">All types</option><option value="missing">Missing fields</option><option value="invalid">Invalid data</option><option value="mismatch">Possible mismatch</option><option value="review">Needs clarification</option></select></label>
+        <label>State <select data-filter="change"><option value="open">Open findings</option><option value="new">New</option><option value="persistent">Persistent</option><option value="resolved">Corrected after recheck</option><option value="unverified">Not confirmed</option><option value="all">All states</option></select></label>
+        <label>MineSite <select data-filter="minesite"><option value="">All sites</option></select></label>
+        <label>Run <select data-run-select aria-label="Check history"></select></label>
+        <a class="dtcheck-export" data-export href="#">Export CSV</a>
+    </section>
+
+    <section class="dtcheck-results" aria-live="polite">
+        <div class="dtcheck-results-head"><div><h2>YTD findings</h2><p data-results-summary>No saved YTD check yet.</p></div><span data-last-success></span></div>
+        <div class="dtcheck-empty" data-empty><strong>No completed YTD check is available.</strong><p>Select <em>Recheck YTD</em> to read the configured MiningProd source. No check runs when this page opens.</p></div>
+        <div class="dtcheck-table-wrap" data-table-wrap hidden><table><thead><tr><th>Signal</th><th>MineSite / event</th><th>Labour Type</th><th>Description CAT</th><th>State</th><th>Details</th></tr></thead><tbody data-results></tbody></table></div>
+        <nav class="dtcheck-pagination" data-pagination aria-label="Results pages"></nav>
+    </section>
+    <details class="dtcheck-method"><summary>Source and checking method</summary><p>Source: Neemba - Downtimes Data (MiningProd browser 84). Period: {{ ytd_start|date:"d M Y" }} to {{ ytd_end|date:"d M Y" }}, based on YearMonth. This page reads saved check results; filters do not query MiningProd.</p></details>
+</main>
+<dialog class="dtcheck-dialog" data-detail-dialog aria-labelledby="dtcheck-detail-title"><form method="dialog"><button class="dtcheck-close" aria-label="Close">×</button></form><p class="dtcheck-eyebrow">FINDING DETAILS</p><h2 id="dtcheck-detail-title" data-detail-title></h2><p data-detail-reason></p><dl data-detail-fields></dl><details><summary>Source evidence and comparison</summary><pre data-detail-evidence></pre></details></dialog>
+<script src="{% static 'reports/downtime_checking.js' %}?v=20261026" defer></script>
+</body>
+</html>

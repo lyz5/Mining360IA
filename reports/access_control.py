@@ -28,6 +28,7 @@ MODULE_PATH_PREFIXES = (
 )
 
 ADMIN_ONLY_PREFIXES = (
+    "/config/downtime-checking/",
     "/config/deployment/",
     "/api/deployment/",
     "/users/",
@@ -40,6 +41,7 @@ ADMIN_ONLY_PREFIXES = (
 )
 
 ADMIN_WRITE_PREFIXES = (
+    "/config/downtime-checking/",
     "/config/deployment/",
     "/api/deployment/",
     "/data-browsers",

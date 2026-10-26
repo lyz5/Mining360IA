@@ -1,12 +1,22 @@
 # Standard de développement local et promotion en production
 
-Version du 15 octobre 2026.
+Version du 26 octobre 2026.
 
 ## Principe directeur
 
 Tous les développements des projets actifs suivent désormais le même flux :
 
-> **Développement local → tests locaux → validation documentée → sauvegarde/rollback → autorisation de promotion → production → validation post-déploiement**
+> **Local → Git → BODEFM**
+
+Pour Mining 360, cette séquence est obligatoire :
+
+1. **Local** : développer, tester et valider sur le poste et la base locale.
+2. **Git** : réviser un diff ciblé, créer un commit thématique sans secret ni donnée locale, puis pousser le commit validé.
+3. **BODEFM** : seulement après autorisation explicite, déployer le commit Git identifié, avec backup, rollback et validation post-déploiement.
+
+Un changement présent uniquement sur le poste local n'est pas déployable. Un changement sur BODEFM doit toujours être relié à un commit Git précis. Il est interdit de corriger directement BODEFM puis de tenter de reconstituer le code local ou Git a posteriori.
+
+Le flux détaillé reste : **développement local → tests locaux → validation documentée → commit Git ciblé → push Git validé → sauvegarde/rollback → autorisation de promotion → BODEFM → validation post-déploiement**.
 
 Le mémoire MBA n'a pas d'environnement applicatif. Il suit un flux documentaire séparé : sources locales → rédaction → contrôle Word/PDF → validation académique → soumission autorisée.
 
@@ -64,6 +74,9 @@ Un changement est prêt seulement si les éléments suivants sont réunis :
 
 ### Déploiement
 
+- Ne jamais copier une modification locale directement vers BODEFM : le commit Git validé est l'artefact de référence à promouvoir.
+- Noter dans chaque plan de déploiement la branche, le SHA du commit et les fichiers attendus ; les contrôler avant la copie.
+- Un push Git ne vaut pas autorisation de déployer sur BODEFM ; l'autorisation BODEFM reste explicite et distincte.
 - Le package contient seulement les fichiers attendus et un manifeste SHA-256.
 - La cible est inventoriée juste avant copie pour détecter une modification concurrente.
 - Le service arrêté doit être identifié par son nom, son chemin et son propriétaire ; aucun arrêt global opportuniste.

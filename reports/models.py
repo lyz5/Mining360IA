@@ -6388,3 +6388,61 @@ class ReconciliationMatchAccountingEntry(models.Model):
         constraints = [
             models.UniqueConstraint(fields=["match", "accounting_entry"], name="rec_unique_match_accounting_entry"),
         ]
+
+class DowntimeCheckingRun(models.Model):
+    """An explicit, read-only YTD source check; failed runs never replace results."""
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    year = models.PositiveSmallIntegerField(db_index=True)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    status = models.CharField(max_length=12, default="queued", db_index=True)
+    phase = models.CharField(max_length=120, default="Queued")
+    created_by = models.ForeignKey(User, null=True, on_delete=models.SET_NULL, related_name="downtime_checking_runs")
+    source_browser = models.ForeignKey(DataBrowser, null=True, on_delete=models.SET_NULL, related_name="downtime_checking_runs")
+    rules_version = models.CharField(max_length=40)
+    source_signature = models.CharField(max_length=64, blank=True)
+    total_rows = models.PositiveIntegerField(default=0)
+    processed_rows = models.PositiveIntegerField(default=0)
+    counts = models.JSONField(default=dict, blank=True)
+    error_code = models.CharField(max_length=40, blank=True)
+    created_at = models.DateTimeField(default=timezone.now)
+    started_at = models.DateTimeField(null=True, blank=True)
+    heartbeat_at = models.DateTimeField(null=True, blank=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        db_table = "downtime_checking_run"
+        ordering = ["-created_at", "-id"]
+        indexes = [models.Index(fields=["year", "status", "created_at"], name="dtcheck_run_year_status")]
+
+
+class DowntimeCheckingFinding(models.Model):
+    """Immutable per-run evidence, including before/after for rechecked issues."""
+
+    run = models.ForeignKey(DowntimeCheckingRun, on_delete=models.CASCADE, related_name="findings")
+    event_id = models.CharField(max_length=64)
+    rule_code = models.CharField(max_length=40)
+    kind = models.CharField(max_length=16)
+    change = models.CharField(max_length=16, default="new")
+    changed_evidence = models.BooleanField(default=False)
+    minesite = models.CharField(max_length=255, blank=True)
+    serial_number = models.CharField(max_length=120, blank=True)
+    labour_type = models.CharField(max_length=500, blank=True)
+    description_cat = models.CharField(max_length=500, blank=True)
+    comment = models.TextField(blank=True)
+    downtime_hours = models.DecimalField(max_digits=24, decimal_places=6, null=True)
+    title = models.CharField(max_length=255)
+    reason = models.TextField()
+    recommendation = models.TextField(blank=True)
+    evidence = models.JSONField(default=dict)
+    previous_evidence = models.JSONField(default=dict, blank=True)
+
+    class Meta:
+        db_table = "downtime_checking_finding"
+        ordering = ["minesite", "event_id", "rule_code", "id"]
+        constraints = [models.UniqueConstraint(fields=["run", "event_id", "rule_code"], name="dtcheck_finding_key")]
+        indexes = [
+            models.Index(fields=["run", "change", "kind"], name="dtcheck_run_change_kind"),
+            models.Index(fields=["run", "minesite"], name="dtcheck_run_site"),
+        ]
