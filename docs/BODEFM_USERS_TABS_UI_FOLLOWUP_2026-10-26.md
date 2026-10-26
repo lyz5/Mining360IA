@@ -42,3 +42,26 @@ check confirmed the expected Waitress listener and HTTP 200 for both local and
 public health endpoints. Every refused restart stopped before touching the
 runtime. Restart and authenticated browser validation remain pending until the
 active `CodexRun` finishes.
+
+## Reprise après la demande de déploiement
+
+- A clean release branch was prepared from the current `origin/main` commit
+  `97f5a9202e6ae6f30ed8ddef492abad32fad5514` and pushed as
+  `release/users-tabs-fix-20261026`, commit `40fb0eb`. Its only code changes are
+  the template cache refresh and the dedicated audience-tab stylesheet.
+- Read-only HTTPS checks from the workstation returned `/health/` **200** and
+  both Users static assets **200**. An unauthenticated request to `/users/`
+  followed the expected login redirect and ended at `/login/`; this does not
+  validate the user's authenticated session.
+- An authenticated Django view-level check performed earlier returned HTTP 200
+  with 11 users, split into 5 Neemba and 6 system users.
+- DNS resolves `bodefm` to `172.17.0.111`; TCP 443 is reachable, but TCP 22
+  currently times out. Therefore the clean Git release has not been applied as
+  a BODEFM release, and no runtime restart was performed in this reprise. The
+  earlier targeted file copy remains on disk with the backup recorded above.
+- The last successful anonymous active-work inspection found an active
+  `CodexRun`; this state could not be refreshed after SSH became unreachable.
+
+Next safe promotion requires restoring SSH, refreshing the active-work guard,
+then applying commit `40fb0eb` with the documented backup and rollback checks.
+Authenticated browser validation of `/users/` is still required.
