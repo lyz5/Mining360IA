@@ -332,6 +332,7 @@ def interaction_embed_config_api(request, report_id):
             request.user,
             configured.report_name or configured.display_name or configured.semantic_model_id,
             role,
+            report_id=str(getattr(configured, "report_id", report_id)),
         )
         if security["restricted"]:
             role = security["roles"][0]
@@ -386,6 +387,9 @@ def interaction_embed_config_api(request, report_id):
 def interaction_preflight_api(request, report_id):
     if not request.user.is_authenticated:
         return JsonResponse({"ok": False, "error": "Authentication required."}, status=401)
+    from .site_access_service import site_report_allowed
+    if not site_report_allowed(request.user, str(report_id)):
+        return JsonResponse({"ok": False, "error": "Report not found."}, status=404)
     configured = get_object_or_404(PowerBIReport, report_id=report_id, is_active=True)
     try:
         return JsonResponse({"ok": True, "preflight": PrimeMoversAccessPreflightService.run(request, configured)})

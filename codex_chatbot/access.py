@@ -23,9 +23,9 @@ def chatbot_access_allowed(user) -> bool:
         return False
     if is_mining360_super_administrator(user):
         return True
-    # Preserve access previously granted to Mining360 AI during consolidation.
-    # Business tools still enforce their own Reporting/financial permissions.
-    if has_module_access(user, "ai"):
+    # The explicit Chatbot role preserves previous Mining360 AI grants during
+    # the role-model transition. Business tools enforce their own permissions.
+    if has_module_access(user, "chatbot"):
         return True
     if mode not in {"pilot", "pilot users", "pilot_users"}:
         return False

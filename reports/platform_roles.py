@@ -1,4 +1,4 @@
-"""Six assignable roles, with compatibility for existing access records.
+"""Eight assignable roles, with compatibility for existing access records.
 
 The versioned role list lives alongside (not in place of) the existing scope.
 Accounts without that list keep their pre-existing permissions until edited.
@@ -7,7 +7,9 @@ ROLE_KEY = "platform_roles_v2"
 ROLE_LABELS = {
     "excellence_center": ("Excellence Center", "Consult fleet performance within the authorized data scope."),
     "business_overview": ("Business Overview", "Consult governed business performance within the authorized data scope."),
+    "site": ("Site", "Access one MineSite in Excellence Center, RLS enabled reports and the site-scoped chatbot."),
     "reporting": ("Reporting", "Open authorized reports with existing Power BI security."),
+    "chatbot": ("Chatbot", "Ask the governed Mining360 assistant within the authorized data scope."),
     "resources": ("Ressources", "Browse and read the document library."),
     "admin": ("Admin", "Manage business users and their module access."),
     "super_admin": ("Super Admin", "Manage administrator roles, integrations and sensitive configuration."),
@@ -27,6 +29,10 @@ def explicit_roles(profile):
 def profile_roles(profile):
     explicit = explicit_roles(profile)
     if explicit is not None:
+        # Existing AI grants represented chatbot access before it became an
+        # explicit, administrator-assignable platform role.
+        if profile.can_access_ai:
+            explicit.add("chatbot")
         return [role for role in ROLE_LABELS if role in explicit]
     user = profile.django_user
     if profile.is_platform_admin or (user and (user.is_superuser or user.is_staff)):
@@ -34,6 +40,8 @@ def profile_roles(profile):
     roles = {"resources"}  # The legacy library was available to signed-in users.
     if profile.can_access_reporting:
         roles.update({"reporting", "excellence_center"})
+    if profile.can_access_ai:
+        roles.add("chatbot")
     if user and user.has_perm("reports.view_business_review"):
         roles.add("business_overview")
     return [role for role in ROLE_LABELS if role in roles]
@@ -61,7 +69,14 @@ def has_business_role(user, role):
     if is_super_admin(user):
         return True
     profile = active_profile(user)
-    return bool(profile and profile.is_active and role in profile_roles(profile))
+    if not profile or not profile.is_active:
+        return False
+    roles = set(profile_roles(profile))
+    # Site is a separate least-privilege role: it grants only the fleet
+    # workspace, secured reports and the site-scoped chatbot.
+    if "site" in roles:
+        return role in {"excellence_center", "reporting", "chatbot"}
+    return role in roles
 
 
 def can_manage_users(user):

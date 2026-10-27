@@ -34,8 +34,8 @@ class SimplifiedRoleTests(TestCase):
         request.user = user
         return request
 
-    def test_exactly_six_roles_and_only_super_assigns_administrators(self):
-        self.assertEqual(list(ROLE_LABELS), ['excellence_center','business_overview','reporting','resources','admin','super_admin'])
+    def test_exactly_eight_roles_and_only_super_assigns_administrators(self):
+        self.assertEqual(list(ROLE_LABELS), ['excellence_center','business_overview','site','reporting','chatbot','resources','admin','super_admin'])
         options = access_options(self.admin)
         self.assertEqual([r['code'] for r in options['platform_roles'] if not r['assignable']], ['admin','super_admin'])
 
@@ -100,12 +100,13 @@ class SimplifiedRoleTests(TestCase):
         self.assertFalse(has_business_review_permission(self.user,'view_business_review'))
 
     def test_admin_assigns_independent_business_roles_without_superuser(self):
-        item = update_user_access(self.profile, {'platform_roles':['excellence_center','resources']}, self.admin)
+        item = update_user_access(self.profile, {'platform_roles':['excellence_center','chatbot','resources']}, self.admin)
         user = User.objects.get(pk=item.django_user_id)
         self.assertFalse(user.is_superuser)
         self.assertFalse(user.is_staff)
         self.assertTrue(has_module_access(user,'excellence_center'))
         self.assertFalse(has_module_access(user,'reporting'))
+        self.assertTrue(has_module_access(user,'chatbot'))
         self.assertTrue(has_module_access(user,'resources'))
 
     def test_module_direct_urls_enforced(self):

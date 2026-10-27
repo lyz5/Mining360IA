@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from django.http import JsonResponse
 from django.shortcuts import redirect
 from .platform_roles import active_profile, explicit_roles, has_business_role, is_super_admin, can_manage_users
@@ -11,6 +12,7 @@ MODULES = {
     "business_overview": "Business Overview",
     "resources": "Ressources",
     "reporting": "Reporting",
+    "chatbot": "M360 Chatbot",
     "ai": "IA",
     "data": "Data",
     "sources": "Data Source",
@@ -22,7 +24,7 @@ MODULE_PATH_PREFIXES = (
     ("resources", ("/resources/",)),
     ("reporting", ("/business-performance/",)),
     ("reporting", ("/reporting/", "/reports/", "/api/reporting/", "/powerbi-interaction/")),
-    ("ai", ("/ai/", "/api/ai/")),
+    ("chatbot", ("/codex-chatbot/", "/ai/", "/api/ai/")),
     ("data", ("/data/", "/data-browsers", "/data-quality/")),
     ("sources", ("/data-sources/",)),
 )
@@ -86,7 +88,10 @@ def user_module_access(user) -> dict[str, bool]:
         "business_overview": has_business_role(user, "business_overview"),
         "resources": has_business_role(user, "resources"),
         "reporting": has_business_role(user, "reporting"),
+        # `ai` remains an internal compatibility capability. User-facing
+        # chatbot access is governed by the explicit Chatbot role.
         "ai": platform_user.can_access_ai,
+        "chatbot": has_business_role(user, "chatbot"),
         "data": platform_user.can_access_data,
         "sources": platform_user.can_access_sources,
     }
@@ -128,6 +133,24 @@ def enforce_request_access(request):
         return forbidden_response(request, "Admin access required.")
 
     module_code = module_for_path(path)
+    # Chatbot has its own decorator, which also supports the controlled pilot
+    # allowlist. Let that policy evaluate the request instead of blocking
+    # pilot users at the generic module gate.
+    if module_code == "chatbot" and path.startswith("/codex-chatbot/"):
+        return None
+    from .site_access_service import site_role_enabled
+    if site_role_enabled(request.user) and module_code == "reporting":
+        report_id = r"[0-9a-fA-F-]{36}"
+        site_reporting_paths = (
+            path == "/reporting/"
+            or path == "/api/reporting/hub/"
+            or bool(re.fullmatch(rf"/reporting/reports/{report_id}/(?:launch/|refresh/|troubleshoot/)?", path))
+            or bool(re.fullmatch(rf"/reports/{report_id}/", path))
+            or bool(re.fullmatch(rf"/api/reporting/reports/{report_id}/(?:favorite|refresh|troubleshoot|viewer-configuration|viewer-switcher)/", path))
+            or bool(re.fullmatch(rf"/powerbi-interaction/(?:embed-config|preflight)/{report_id}/", path))
+        )
+        if not site_reporting_paths:
+            return forbidden_response(request, "The Site role can open only reports assigned with MineSite RLS.")
     # Legacy Business Overview permissions and library access remain intact.
     legacy_new_route = module_code in {"business_overview", "resources", "excellence_center"} and explicit_roles(active_profile(request.user)) is None
     if module_code and not legacy_new_route and not has_module_access(request.user, module_code):

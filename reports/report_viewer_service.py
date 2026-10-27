@@ -114,6 +114,9 @@ class ReportViewerConfigurationService:
         recent_rank = {report_id: index for index, report_id in enumerate(dict.fromkeys(recent_ids))}
         items = []
         for report_id, report_config in configured.items():
+            from .site_access_service import site_report_allowed
+            if not site_report_allowed(self.user, report_id):
+                continue
             preference = preferences.get(report_id)
             if not preference or not report_config:
                 continue

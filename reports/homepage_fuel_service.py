@@ -115,6 +115,18 @@ class HomepageFuelService:
             platform_user = None
         if not platform_user or platform_user.is_platform_admin:
             return {}, "", ""
+        from .platform_roles import explicit_roles
+        roles = explicit_roles(platform_user)
+        if roles is not None and "site" in roles:
+            from .site_access_service import SiteAccessDenied, effective_report_security, site_access_context
+            try:
+                security = effective_report_security(
+                    self.user, self.DATASET_NAME, self.report.default_rls_role,
+                    report_id=str(self.report.report_id),
+                )
+            except SiteAccessDenied as exc:
+                raise HomepageAvailabilityError(str(exc), code="site_rls_unavailable", status=403) from None
+            return {"minesite": [_fuel_site(site_access_context(self.user).sites[0])]}, security["roles"][0], security["effective_username"]
         raw_scope = platform_user.business_performance_scope or {}
         scope = {}
         if raw_scope.get("minesite"):

@@ -60,8 +60,21 @@ class HomepageConnectivityService:
         if is_platform_admin(self.user):
             return {}, self.report.default_rls_role or '', identity
         raw = getattr(platform, 'business_performance_scope', {}) or {}
+        from .platform_roles import explicit_roles
+        platform_roles = explicit_roles(platform)
+        if platform_roles is not None and "site" in platform_roles:
+            from .site_access_service import SiteAccessDenied, effective_report_security, site_access_context
+            try:
+                security = effective_report_security(
+                    self.user, self.DATASET_NAME, self.report.default_rls_role or "",
+                    report_id=str(self.report.report_id),
+                )
+            except SiteAccessDenied as exc:
+                raise HomepageAvailabilityError(str(exc), code="site_rls_unavailable", status=403) from None
+            return {"minesite": list(site_access_context(self.user).sites)}, security["roles"][0], security["effective_username"]
         # Do not silently discard customer/account restrictions: no verified mapping exists here.
-        if any(value for key, value in raw.items() if key not in {'minesite', 'minesites', 'sites', 'rls_role'}):
+        from .platform_roles import ROLE_KEY
+        if any(value for key, value in raw.items() if key not in {'minesite', 'minesites', 'sites', 'rls_role', ROLE_KEY}):
             raise HomepageAvailabilityError('Connectivity access scope has not been fully mapped.',
                 code='connectivity_scope_unmapped', status=403)
         sites = raw.get('minesite') or raw.get('minesites') or raw.get('sites')

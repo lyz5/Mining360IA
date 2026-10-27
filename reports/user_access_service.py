@@ -15,7 +15,7 @@ from .active_directory_service import (
     synchronize_identity,
 )
 from .business_performance_service import BusinessPerformanceService
-from .models import PlatformUser, UserAccessAuditLog
+from .models import PlatformUser, UserAccessAuditLog, PowerBIReport, ReportingReportPreference
 from .powerbi import RLS_ROLE_OPTIONS
 from .platform_roles import (
     ROLE_KEY, ROLE_LABELS, ADMIN_ROLES, explicit_roles, profile_roles,
@@ -60,6 +60,7 @@ def access_source(item: PlatformUser) -> str:
 
 
 def access_snapshot(item: PlatformUser) -> dict:
+    scope = item.business_performance_scope or {}
     return {
         "active": item.is_active,
         "platform_roles": _roles(item),
@@ -69,6 +70,7 @@ def access_snapshot(item: PlatformUser) -> dict:
         "customers": _scope_values(item, "customer"),
         "minesites": _scope_values(item, "minesite"),
         "powerbi_rls_role": str((item.business_performance_scope or {}).get("rls_role") or ""),
+        "report_rls_roles": dict(scope.get("report_rls_roles") or {}),
     }
 
 
@@ -95,6 +97,7 @@ def serialize_user(item: PlatformUser, *, detail: bool = False) -> dict:
         "customers": customers,
         "minesites": minesites,
         "powerbi_rls_role": str((item.business_performance_scope or {}).get("rls_role") or ""),
+        "report_rls_roles": dict((item.business_performance_scope or {}).get("report_rls_roles") or {}),
         "access_source": source,
         "updated_at": item.updated_at.isoformat(),
     }
@@ -159,10 +162,55 @@ def _distinct_existing_scope(key: str) -> list[str]:
     return sorted(values, key=str.casefold)
 
 
-def _minesite_options() -> list[str]:
-    configured = set(_distinct_existing_scope("minesite"))
-    configured.update(role for role in RLS_ROLE_OPTIONS if role and role != "Global")
-    return sorted(configured, key=str.casefold)
+def _minesite_options(user) -> list[str]:
+    cache_key = f"users-access:excellence-center-minesites:v2:{getattr(user, 'pk', 'anonymous')}"
+    cached = cache.get(cache_key)
+    if cached is not None:
+        return cached
+    try:
+        from .dashboard_snapshots import excellence_snapshot
+        payload = excellence_snapshot(user, {"metric": "availability", "period": "ytd", "breakdown": "overall"})
+        values = payload.get("filter_options", {}).get("minesite", [])
+        sites = sorted({str(value).strip() for value in values if str(value).strip()}, key=str.casefold)
+    except Exception:
+        sites = []
+    if not sites:
+        # Keep the reviewed Focus subset available during a temporary source
+        # outage; it is a confirmed subset of the Excellence Center MineSites.
+        from .focus_site_access_service import focus_site_catalog
+        sites = sorted({row["site"] for row in focus_site_catalog()}, key=str.casefold)
+    cache.set(cache_key, sites, 300)
+    return sites
+
+
+def _site_rls_reports(sites: list[str]) -> list[dict]:
+    """Reports with an explicit, non-Global RLS role configured and published."""
+    preferences = {
+        item.report_id: item
+        for item in ReportingReportPreference.objects.filter(is_visible=True)
+    }
+    from .powerbi import resolve_dataset_roles
+    result = []
+    for report in PowerBIReport.objects.filter(
+        is_active=True, launch_mode="generic_powerbi", validation_status="Validated",
+    ).order_by("display_name", "report_id"):
+        preference = preferences.get(report.report_id)
+        default_role = str(report.default_rls_role or "").strip()
+        if not preference or not default_role or default_role.casefold() == "global":
+            continue
+        roles_by_site = {}
+        for site in sites:
+            resolved = resolve_dataset_roles(report.report_name or report.display_name, [site])
+            if len(resolved) == 1 and resolved[0].strip() and resolved[0].casefold() != "global":
+                roles_by_site[site] = resolved[0]
+        result.append({
+            "report_id": report.report_id,
+            "label": preference.display_name or report.display_name,
+            "dataset_name": report.report_name or report.display_name,
+            "default_role": default_role,
+            "roles_by_site": roles_by_site,
+        })
+    return result
 
 
 def _business_options(user) -> tuple[list[str], list[str], list[str]]:
@@ -187,7 +235,9 @@ def _business_options(user) -> tuple[list[str], list[str], list[str]]:
 
 
 def access_options(user) -> dict:
+    from .focus_site_access_service import focus_site_catalog, focus_site_presets
     countries, customers, warnings = _business_options(user)
+    site_countries = {row['site']:row['country'] for row in focus_site_catalog()}
     return {
         "platform_roles": [
             {"code": code, "label": label, "description": description,
@@ -200,10 +250,12 @@ def access_options(user) -> dict:
         ],
         "countries": [{"value": value, "label": value} for value in countries],
         "customers": [{"value": value, "label": value} for value in customers],
-        "minesites": [{"value": value, "label": value} for value in _minesite_options()],
+        "minesites": [{"value": value, "label": f"{site_countries[value]} — {value}" if value in site_countries else value} for value in _minesite_options(user)],
+        "site_access_profiles": focus_site_presets(),
         "powerbi_rls_roles": [{"value": "", "label": "No RLS role"}] + [
             {"value": value, "label": value} for value in RLS_ROLE_OPTIONS
         ],
+        "site_rls_reports": _site_rls_reports(_minesite_options(user)),
         "warnings": warnings,
         "can_manage_administrators": is_super_admin(user),
     }
@@ -234,11 +286,17 @@ def _validated_access(payload: dict, *, item: PlatformUser | None = None, actor=
         raise UserAccessValidationError("Only a Super Admin can change Active Directory role management.", field="platform_roles")
     if set(roles) >= ADMIN_ROLES:
         raise UserAccessValidationError("Choose Admin or Super Admin, not both.", field="platform_roles")
+    if "site" in roles and set(roles) != {"site"}:
+        raise UserAccessValidationError("The Site role must be assigned by itself.", field="platform_roles")
+    if "site" in roles and managed:
+        raise UserAccessValidationError("The Site role requires manually managed platform access.", field="platform_roles")
     if was_managed and managed and set(roles) != set(_roles(item)):
         raise UserAccessValidationError("Roles managed by Active Directory cannot be changed manually.", field="platform_roles")
     bp_role = str(payload.get("business_performance_access", item.business_performance_role if item else "") or "").strip()
     if bp_role not in BP_ROLE_VALUES:
         raise UserAccessValidationError("Select a valid Business Performance access level.", field="business_performance_access")
+    if "site" in roles:
+        bp_role = "MineSite"
     if item and "super_admin" in _roles(item) and "super_admin" not in roles and bp_role == "Administrator":
         bp_role = "Viewer"
     if bp_role == "Administrator" and not is_super_admin(actor):
@@ -246,6 +304,17 @@ def _validated_access(payload: dict, *, item: PlatformUser | None = None, actor=
     countries = _clean_list(payload.get("countries", _scope_values(item, "country") if item else []), "countries")
     customers = _clean_list(payload.get("customers", _scope_values(item, "customer") if item else []), "customers")
     minesites = _clean_list(payload.get("minesites", _scope_values(item, "minesite") if item else []), "minesites")
+    raw_report_roles = payload.get(
+        "report_rls_roles",
+        (item.business_performance_scope or {}).get("report_rls_roles", {}) if item else {},
+    )
+    if not isinstance(raw_report_roles, dict):
+        raise UserAccessValidationError("Choose an RLS role for each authorized report.", field="report_rls_roles")
+    report_rls_roles = {
+        str(report_id).strip(): str(role).strip()
+        for report_id, role in raw_report_roles.items()
+        if str(report_id).strip() and str(role).strip()
+    }
     if actor is not None:
         allowed_countries, allowed_customers, _ = _business_options(actor)
         invalid_countries = sorted(set(countries) - set(allowed_countries), key=str.casefold)
@@ -254,11 +323,11 @@ def _validated_access(payload: dict, *, item: PlatformUser | None = None, actor=
             raise UserAccessValidationError("Select countries from the governed list.", field="countries")
         if invalid_customers:
             raise UserAccessValidationError("Select customers from the governed list.", field="customers")
-        invalid_minesites = sorted(set(minesites) - set(_minesite_options()), key=str.casefold)
+        invalid_minesites = sorted(set(minesites) - set(_minesite_options(actor)), key=str.casefold)
         if invalid_minesites:
             raise UserAccessValidationError("Select a MineSite from the governed list.", field="minesites")
     rls = str(payload.get("powerbi_rls_role", (item.business_performance_scope or {}).get("rls_role", "") if item else "") or "").strip()
-    if rls and rls not in RLS_ROLE_OPTIONS:
+    if rls and rls not in RLS_ROLE_OPTIONS and not (bp_role == 'MineSite' and len(minesites) == 1 and rls == minesites[0]):
         raise UserAccessValidationError("Select a configured Power BI RLS role.", field="powerbi_rls_role")
     if not bp_role and (countries or customers or minesites):
         raise UserAccessValidationError("Data scopes require Business Performance access.", field="business_performance_access")
@@ -268,9 +337,18 @@ def _validated_access(payload: dict, *, item: PlatformUser | None = None, actor=
         if countries or customers:
             raise UserAccessValidationError("MineSite access cannot be combined with country or customer scopes.", field="business_performance_access")
         rls = minesites[0]
+    if "site" in roles:
+        site = minesites[0]
+        report_roles = {row["report_id"]: row["roles_by_site"].get(site) for row in _site_rls_reports(_minesite_options(actor))}
+        report_rls_roles = {report_id: role for report_id, role in report_roles.items() if role}
+        if not report_rls_roles:
+            raise UserAccessValidationError("No validated report has an RLS role for the selected MineSite.", field="report_rls_roles")
+    else:
+        report_rls_roles = {}
     return {
         "roles": roles, "bp_role": bp_role, "countries": countries,
         "customers": customers, "minesites": minesites, "rls": rls,
+        "report_rls_roles": report_rls_roles,
         "directory_roles_managed": managed,
     }
 
@@ -279,8 +357,9 @@ def _apply_access(item: PlatformUser, values: dict):
     administrator = "super_admin" in values["roles"]
     was_administrator = item.is_platform_admin
     item.is_platform_admin = administrator
-    item.can_access_reporting = administrator or "reporting" in values["roles"]
-    # Existing separate AI/data capabilities are not reassigned by module checkboxes.
+    item.can_access_reporting = administrator or bool(set(values["roles"]) & {"reporting", "site"})
+    item.can_access_ai = administrator or "chatbot" in values["roles"]
+    # Data and source capabilities remain separate from module roles.
     # A demoted full administrator must not retain implicit configuration access.
     if was_administrator and not administrator:
         item.can_access_data = False
@@ -292,7 +371,7 @@ def _apply_access(item: PlatformUser, values: dict):
         scope.pop(ROLE_KEY, None)
     else:
         scope[ROLE_KEY] = values["roles"]
-    for key in ("country", "customer", "minesite", "rls_role"):
+    for key in ("country", "customer", "minesite", "rls_role", "report_rls_roles"):
         scope.pop(key, None)
     if values["countries"]:
         scope["country"] = values["countries"]
@@ -302,6 +381,8 @@ def _apply_access(item: PlatformUser, values: dict):
         scope["minesite"] = values["minesites"]
     if values["rls"]:
         scope["rls_role"] = values["rls"]
+    if values["report_rls_roles"]:
+        scope["report_rls_roles"] = values["report_rls_roles"]
     item.business_performance_scope = scope
     item.save()
     if item.django_user:

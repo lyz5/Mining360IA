@@ -1990,6 +1990,8 @@ def reporting_home(request):
     except Exception as exc:
         error = str(exc)
     reports = _visible_reporting_reports(reports)
+    from .site_access_service import filter_site_reports
+    reports = filter_site_reports(request.user, reports)
     if feature_enabled("ENABLE_PREMIUM_REPORTING_HUB", request.user):
         hub = ReportingHubService(
             request.user,
@@ -2101,6 +2103,8 @@ def reporting_hub_api(request):
         return JsonResponse({"ok": False, "error": "Reporting access required."}, status=403)
     try:
         reports = _visible_reporting_reports(list_workspace_reports_with_refresh())
+        from .site_access_service import filter_site_reports
+        reports = filter_site_reports(request.user, reports)
         hub = ReportingHubService(
             request.user,
             reports,
@@ -2120,6 +2124,8 @@ def reporting_report_favorite_api(request, report_id):
     report_id = str(report_id)
     try:
         reports = _visible_reporting_reports(list_workspace_reports())
+        from .site_access_service import filter_site_reports
+        reports = filter_site_reports(request.user, reports)
         visible_report = next((item for item in reports if str(item.id) == report_id), None)
         if visible_report is None:
             return JsonResponse({"ok": False, "error": "Report not found."}, status=404)
@@ -2146,6 +2152,8 @@ def reporting_report_launch(request, report_id):
         raise PermissionDenied("Reporting access required.")
     report_id = str(report_id)
     reports = _visible_reporting_reports(list_workspace_reports())
+    from .site_access_service import filter_site_reports
+    reports = filter_site_reports(request.user, reports)
     visible_report = next((item for item in reports if str(item.id) == report_id), None)
     if visible_report is None:
         raise Http404("Report not found")
@@ -2419,6 +2427,11 @@ def source_edit(request, source_key):
 def reporting_report_refresh_api(request, report_id):
     if not has_module_access(request.user, "reporting"):
         return JsonResponse({"ok": False, "error": "Reporting access required."}, status=403)
+    from .site_access_service import site_report_allowed, site_role_enabled
+    if site_role_enabled(request.user) and request.method != "GET":
+        return JsonResponse({"ok": False, "error": "Site users cannot trigger report refreshes."}, status=403)
+    if not site_report_allowed(request.user, str(report_id)):
+        return JsonResponse({"ok": False, "error": "Report not found."}, status=404)
 
     report_id = str(report_id)
     try:
@@ -2517,6 +2530,9 @@ def reporting_report_refresh_api(request, report_id):
 def reporting_report_troubleshoot_api(request, report_id):
     if not has_module_access(request.user, "reporting"):
         return JsonResponse({"ok": False, "error": "Reporting access required."}, status=403)
+    from .site_access_service import site_role_enabled
+    if site_role_enabled(request.user):
+        return JsonResponse({"ok": False, "error": "Site users cannot troubleshoot report configuration."}, status=403)
 
     report_id = str(report_id)
     checks = []
@@ -7955,6 +7971,9 @@ def report_detail(request, report_id):
 
     premium_viewer = feature_enabled("ENABLE_PREMIUM_GENERIC_REPORT_VIEWER", request.user)
     try:
+        from .site_access_service import site_report_allowed
+        if not site_report_allowed(request.user, str(report_id)):
+            raise Http404("Report not found")
         if premium_viewer:
             configured_report = PowerBIReport.objects.filter(report_id=str(report_id), is_active=True).first()
             preference = ReportingReportPreference.objects.filter(report_id=str(report_id)).first()

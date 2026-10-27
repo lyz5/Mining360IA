@@ -5,7 +5,7 @@
     const $ = (selector, parent = document) => parent.querySelector(selector);
     const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector)];
     const csrf = $("[name=csrfmiddlewaretoken]")?.value || "";
-    const roleLabels = { excellence_center: "Excellence Center", business_overview: "Business Overview", reporting: "Reporting", resources: "Ressources", admin: "Admin", super_admin: "Super Admin" };
+    const roleLabels = { excellence_center: "Excellence Center", business_overview: "Business Overview", site: "Site", reporting: "Reporting", chatbot: "Chatbot", resources: "Ressources", admin: "Admin", super_admin: "Super Admin" };
     const bpDescriptions = {
         "": "No access to Business Performance data.",
         Executive: "Organization-wide executive performance access.",
@@ -111,7 +111,7 @@
         $("[data-summary-ad]").textContent = summary.ad_managed ?? 0;
         $$("[data-audience-count]").forEach(node => { node.textContent = summary[node.dataset.audienceCount] ?? 0; });
         const platformUsers = state.audience === "system";
-        $("#authorized-users-title").textContent = platformUsers ? "Utilisateurs cr??s dans Mining360" : "Utilisateurs Neemba";
+        $("#authorized-users-title").textContent = platformUsers ? "Utilisateurs créés dans Mining360" : "Utilisateurs Neemba";
         $("[data-result-count]").textContent = `${payload.count} ${payload.count === 1 ? "utilisateur" : "utilisateurs"}`;
         renderActiveFilters();
         if (!state.users.length) {
@@ -124,7 +124,7 @@
                 <td><div class="user-cell"><span class="user-avatar">${escapeHtml(initials(user.display_name))}</span><span><strong>${escapeHtml(user.display_name)}</strong><small title="${escapeHtml(user.upn)}">${escapeHtml(user.upn)}</small></span></div></td>
                 <td>${roleChips(user)}</td>
                 <td title="${escapeHtml([...user.countries, ...user.customers, ...(user.minesites || [])].join(", "))}">${escapeHtml(scopeText(user))}</td>
-                <td>${escapeHtml(user.powerbi_rls_role || "Not configured")}</td><td><span class="source-badge">${user.auth_source === "local" ? "Cr?? dans Mining360" : "Neemba"}</span></td>
+                <td>${escapeHtml(user.powerbi_rls_role || "Not configured")}</td><td><span class="source-badge">${user.auth_source === "local" ? "Créé dans Mining360" : "Neemba"}</span></td>
                 <td><span class="status-badge status-badge--${user.status}">${user.status === "active" ? "Active" : "Disabled"}</span></td>
                 <td><button type="button" class="access-icon-button row-more" data-user-open="${user.id}" aria-label="View access for ${escapeHtml(user.display_name)}">•••</button></td>
             </tr>`).join("");
@@ -132,7 +132,7 @@
         $("[data-users-mobile]").innerHTML = state.users.map(user => `
             <article class="authorized-user-card" data-user-row="${user.id}">
                 <div class="user-cell"><span class="user-avatar">${escapeHtml(initials(user.display_name))}</span><span><strong>${escapeHtml(user.display_name)}</strong><small>${escapeHtml(user.upn)}</small></span></div>
-                ${roleChips(user)}<dl><div><dt>P?rim?tre</dt><dd>${escapeHtml(scopeText(user))}</dd></div><div><dt>Origine</dt><dd>${platformUsers ? "Cr?? dans Mining360" : "Neemba (annuaire d?entreprise)"}</dd></div></dl>
+                ${roleChips(user)}<dl><div><dt>Périmètre</dt><dd>${escapeHtml(scopeText(user))}</dd></div><div><dt>Origine</dt><dd>${platformUsers ? "Créé dans Mining360" : "Neemba (annuaire d’entreprise)"}</dd></div></dl>
                 <div class="mobile-user-footer"><span class="status-badge status-badge--${user.status}">${user.status === "active" ? "Active" : "Disabled"}</span><button class="button secondary" type="button" data-user-open="${user.id}">View access</button></div>
             </article>`).join("");
         setUsersState("ready");
@@ -237,7 +237,7 @@
             id: null, display_name: user.display_name, upn: user.upn, email: user.email,
             directory_object_id: user.directory_object_id, directory_username: user.directory_username,
             auth_source: "active_directory", platform_roles: [], ad_managed_roles: [], directory_roles_managed: false,
-            business_performance_access: "", countries: [], customers: [], minesites: [], powerbi_rls_role: "", status: "active",
+            business_performance_access: "", countries: [], customers: [], minesites: [], powerbi_rls_role: "", report_rls_roles: {}, status: "active",
         }, "add");
     }
 
@@ -265,7 +265,7 @@
     function showAccessForm(user, mode) {
         if (!$("[data-form-name]")) restoreAccessFormMarkup();
         state.mode = mode;
-        state.form = { ...user, platform_roles: [...(user.platform_roles || [])], countries: [...(user.countries || [])], customers: [...(user.customers || [])], minesites: [...(user.minesites || [])] };
+        state.form = { ...user, platform_roles: [...(user.platform_roles || [])], countries: [...(user.countries || [])], customers: [...(user.customers || [])], minesites: [...(user.minesites || [])], report_rls_roles: { ...(user.report_rls_roles || {}) } };
         $("[data-directory-step]").hidden = true;
         $("[data-access-form]").hidden = false;
         $("[data-drawer-footer]").hidden = false;
@@ -278,6 +278,9 @@
         $("[data-directory-username]").value = user.directory_username || "";
         renderRoleOptions();
         renderBusinessOptions();
+        const presets = state.options.site_access_profiles || [];
+        $("[data-focus-profiles-section]").hidden = !presets.length || state.form.directory_roles_managed;
+        $("[data-focus-site-profile]").innerHTML = '<option value="">Choose a Focus site profile</option>' + presets.map(preset => `<option value="${escapeHtml(preset.id)}">${escapeHtml(preset.label)}</option>`).join("");
         renderMultiSelect("countries");
         renderMultiSelect("customers");
         renderMultiSelect("minesites");
@@ -312,9 +315,28 @@
         $("[data-scope-fields]").hidden = !state.form.business_performance_access;
         $("[data-minesite-scope]").hidden = state.form.business_performance_access !== "MineSite";
         $$('[data-general-scope]').forEach(node => { node.hidden = state.form.business_performance_access === "MineSite"; });
-        $("[data-rls-role]").innerHTML = state.options.powerbi_rls_roles.map(option => `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}</option>`).join("");
+        const rlsOptions = [...state.options.powerbi_rls_roles];
+        if (state.form.business_performance_access === "MineSite" && state.form.minesites.length === 1 && !rlsOptions.some(option => option.value === state.form.powerbi_rls_role)) {
+            rlsOptions.push({ value: state.form.powerbi_rls_role, label: state.form.powerbi_rls_role });
+        }
+        $("[data-rls-role]").innerHTML = rlsOptions.map(option => `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}</option>`).join("");
         $("[data-rls-role]").value = state.form.powerbi_rls_role || "";
         $("[data-rls-role]").disabled = state.form.business_performance_access === "MineSite";
+        const siteRole = state.form.platform_roles.includes("site");
+        $("[data-site-role-settings]").hidden = !siteRole;
+        const selectedSite = state.form.minesites.length === 1 ? state.form.minesites[0] : "";
+        state.form.report_rls_roles = siteRole && selectedSite
+            ? Object.fromEntries(state.options.site_rls_reports.map(report => [report.report_id, report.roles_by_site[selectedSite]]).filter(([, role]) => role))
+            : {};
+        $("[data-site-report-rls]").innerHTML = state.options.site_rls_reports.length ? "<ul class=\"site-rls-report-list\">" + state.options.site_rls_reports.map(report => {
+            const role = selectedSite ? report.roles_by_site[selectedSite] : "";
+            return "<li><span><strong>" + escapeHtml(report.label) + "</strong><small>" + escapeHtml(report.dataset_name) + "</small></span><code>" + escapeHtml(role || (selectedSite ? "RLS unavailable for this site" : "Select one MineSite")) + "</code></li>";
+        }).join("") + "</ul>" : "<p>No validated RLS-enabled reports are configured.</p>";
+        const siteRlsOptions = state.options.powerbi_rls_roles.filter(option => option.value && option.value.toLowerCase() !== "global");
+        $("[data-site-report-rls]").innerHTML = state.options.site_rls_reports.length ? state.options.site_rls_reports.map(report => `
+            <label class="access-field"><span>${escapeHtml(report.label)}</span><select data-site-report-rls-id="${escapeHtml(report.report_id)}">
+                <option value="">Select report RLS role</option>${siteRlsOptions.map(option => `<option value="${escapeHtml(option.value)}" ${state.form.report_rls_roles[report.report_id] === option.value ? "selected" : ""}>${escapeHtml(option.label)}</option>`).join("")}
+            </select><small>${escapeHtml(report.dataset_name)}</small></label>`).join("") : '<p>No validated RLS-enabled reports are configured.</p>';
     }
 
     function renderMultiSelect(key) {
@@ -360,6 +382,7 @@
             customers: state.form.customers,
             minesites: state.form.minesites,
             powerbi_rls_role: state.form.powerbi_rls_role,
+            report_rls_roles: state.form.report_rls_roles,
         };
     }
 
@@ -452,13 +475,35 @@
 
     document.addEventListener("change", event => {
         if (!state.form) return;
+        if (event.target.matches("[data-focus-site-profile]")) {
+            const preset = (state.options.site_access_profiles || []).find(item => item.id === event.target.value);
+            if (!preset || state.form.directory_roles_managed) return;
+            state.form.platform_roles = [...preset.platform_roles];
+            state.form.business_performance_access = preset.business_performance_access;
+            state.form.countries = [];
+            state.form.customers = [];
+            state.form.minesites = [...preset.minesites];
+            state.form.powerbi_rls_role = preset.powerbi_rls_role;
+            renderRoleOptions(); renderBusinessOptions();
+            ["countries", "customers", "minesites"].forEach(renderMultiSelect);
+            markDirty();
+        }
         if (event.target.matches("[data-role-checkbox]")) {
+            if (event.target.value === "site" && event.target.checked) {
+                $$('[data-role-checkbox]').forEach(input => { if (input.value !== "site") input.checked = false; });
+                state.form.business_performance_access = "MineSite";
+                state.form.countries = [];
+                state.form.customers = [];
+            } else if (event.target.value !== "site" && event.target.checked) {
+                const siteRole = $('[data-role-checkbox][value="site"]');
+                if (siteRole?.checked) { siteRole.checked = false; state.form.report_rls_roles = {}; }
+            }
             if (event.target.checked && ["admin", "super_admin"].includes(event.target.value)) {
                 const other = $(`[data-role-checkbox][value="${event.target.value === "admin" ? "super_admin" : "admin"}"]`);
                 if (other) other.checked = false;
             }
             state.form.platform_roles = $$('[data-role-checkbox]:checked').map(input => input.value);
-            markDirty();
+            renderBusinessOptions(); renderMultiSelect("countries"); renderMultiSelect("customers"); renderMultiSelect("minesites"); markDirty();
         }
         if (event.target.matches("[data-directory-managed]")) {
             state.form.directory_roles_managed = event.target.checked;
@@ -475,6 +520,7 @@
             renderBusinessOptions(); renderMultiSelect("countries"); renderMultiSelect("customers"); renderMultiSelect("minesites"); markDirty();
         }
         if (event.target.matches("[data-rls-role]")) { state.form.powerbi_rls_role = event.target.value; markDirty(); }
+        if (event.target.matches("[data-site-report-rls-id]")) { state.form.report_rls_roles[event.target.dataset.siteReportRlsId] = event.target.value; markDirty(); }
     });
 
     document.addEventListener("input", event => {
@@ -513,9 +559,9 @@
         $$("[data-users-audience]").forEach(node => node.setAttribute("aria-selected", String(node === tab)));
         const system = state.audience === "system";
         $("[data-audience-note]").textContent = system
-            ? "Comptes cr??s directement dans Mining360. Ils ne proviennent pas de l?annuaire Neemba."
-            : "Comptes Neemba synchronis?s depuis Active Directory ou Microsoft Entra.";
-        $("[data-users-search]").placeholder = system ? "Rechercher un utilisateur cr?? dans Mining360..." : "Rechercher un utilisateur Neemba...";
+            ? "Comptes créés directement dans Mining360. Ils ne proviennent pas de l’annuaire Neemba."
+            : "Comptes Neemba synchronisés depuis Active Directory ou Microsoft Entra.";
+        $("[data-users-search]").placeholder = system ? "Rechercher un utilisateur créé dans Mining360..." : "Rechercher un utilisateur Neemba...";
         loadUsers();
     }));
 

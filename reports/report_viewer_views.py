@@ -8,6 +8,7 @@ from django.views.decorators.http import require_http_methods
 from .access_control import has_module_access, is_platform_admin
 from .models import PowerBIReport, ReportingReportPreference
 from .report_viewer_service import ReportViewerConfigurationService
+from .site_access_service import site_report_allowed
 
 
 @require_http_methods(["GET"])
@@ -16,6 +17,8 @@ def viewer_configuration_api(request, report_id):
         return JsonResponse({"ok": False, "error": "Authentication required."}, status=401)
     if not has_module_access(request.user, "reporting"):
         return JsonResponse({"ok": False, "error": "Reporting access required."}, status=403)
+    if not site_report_allowed(request.user, str(report_id)):
+        return JsonResponse({"ok": False, "error": "Report not found."}, status=404)
     configured = PowerBIReport.objects.filter(report_id=str(report_id), is_active=True).first()
     preference = ReportingReportPreference.objects.filter(report_id=str(report_id)).first()
     if configured is None or (preference is not None and not preference.is_visible):
@@ -37,6 +40,8 @@ def viewer_switcher_api(request, report_id):
         return JsonResponse({"ok": False, "error": "Authentication required."}, status=401)
     if not has_module_access(request.user, "reporting"):
         return JsonResponse({"ok": False, "error": "Reporting access required."}, status=403)
+    if not site_report_allowed(request.user, str(report_id)):
+        return JsonResponse({"ok": False, "error": "Report not found."}, status=404)
     configured = PowerBIReport.objects.filter(report_id=str(report_id), is_active=True).first()
     preference = ReportingReportPreference.objects.filter(report_id=str(report_id)).first()
     if configured is None or (preference is not None and not preference.is_visible):
