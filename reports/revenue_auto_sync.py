@@ -31,10 +31,13 @@ def synchronization_state():
     through = (success.source_context_json or {}).get('semantic_data_through') if success else None
     last_attempt = (latest.completed_at or latest.started_at or latest.created_at) if latest else None
     recent = last_attempt and now - last_attempt < timedelta(minutes=getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_RETRY_MINUTES', 60))
-    current = bool(success and success.completed_at and timezone.localdate(success.completed_at) == timezone.localdate(now)
-                   and through and through >= target.isoformat())
+    sync_hour = getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_HOUR', 5)
+    schedule_open = timezone.localtime(now).hour >= sync_hour
+    # One successful import per calendar day is sufficient even if the source lags.
+    # Keep source freshness visible, but do not repeatedly import unchanged data.
+    current = bool(success and success.completed_at and timezone.localdate(success.completed_at) == timezone.localdate(now))
     enabled = getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC', True)
-    return {'enabled': enabled, 'due': bool(enabled and not active and not current and not recent),
+    return {'enabled': enabled, 'due': bool(enabled and schedule_open and not active and not current and not recent),
             'running': active, 'last_attempt_failed': bool(latest and latest.status == 'Failed'),
             'source_sync_id': str(success.pk) if success else None,
             'latest_run_id': str(latest.pk) if latest else None, 'latest_run_status': latest.status if latest else None,
