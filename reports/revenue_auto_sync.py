@@ -5,6 +5,7 @@ import logging
 import os
 from pathlib import Path
 import threading
+from zoneinfo import ZoneInfo
 
 from django.conf import settings
 from django.db import close_old_connections
@@ -30,14 +31,25 @@ def synchronization_state():
     target = timezone.localdate(now) - timedelta(days=1)
     through = (success.source_context_json or {}).get('semantic_data_through') if success else None
     last_attempt = (latest.completed_at or latest.started_at or latest.created_at) if latest else None
-    recent = last_attempt and now - last_attempt < timedelta(minutes=getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_RETRY_MINUTES', 60))
     sync_hour = getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_HOUR', 5)
-    schedule_open = timezone.localtime(now).hour >= sync_hour
-    # One successful import per calendar day is sufficient even if the source lags.
-    # Keep source freshness visible, but do not repeatedly import unchanged data.
-    current = bool(success and success.completed_at and timezone.localdate(success.completed_at) == timezone.localdate(now))
+    sync_minute = getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_MINUTE', 30)
+    schedule_tz = ZoneInfo(getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_TIME_ZONE', 'Etc/GMT'))
+    schedule_now = timezone.localtime(now, schedule_tz)
+    schedule_open = (schedule_now.hour, schedule_now.minute) >= (sync_hour, sync_minute)
+    recent_failure = bool(
+        latest and latest.status == 'Failed' and last_attempt
+        and now - last_attempt < timedelta(minutes=getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_RETRY_MINUTES', 60))
+    )
+    # A pre-schedule import must not suppress the configured daily 05:30 GMT run.
+    # Any successful import after the scheduled time satisfies today's refresh.
+    success_schedule_time = timezone.localtime(success.completed_at, schedule_tz) if success and success.completed_at else None
+    current = bool(
+        success_schedule_time
+        and success_schedule_time.date() == schedule_now.date()
+        and (success_schedule_time.hour, success_schedule_time.minute) >= (sync_hour, sync_minute)
+    )
     enabled = getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC', True)
-    return {'enabled': enabled, 'due': bool(enabled and schedule_open and not active and not current and not recent),
+    return {'enabled': enabled, 'due': bool(enabled and schedule_open and not active and not current and not recent_failure),
             'running': active, 'last_attempt_failed': bool(latest and latest.status == 'Failed'),
             'source_sync_id': str(success.pk) if success else None,
             'latest_run_id': str(latest.pk) if latest else None, 'latest_run_status': latest.status if latest else None,
