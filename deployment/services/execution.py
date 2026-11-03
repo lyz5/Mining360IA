@@ -129,18 +129,11 @@ class WindowsDeploymentExecutionService:
             ).stdout.strip().lower()
             if head != commit:
                 raise RuntimeError("The requested offline release is not the current immutable Git commit.")
+            # A target mirror may not contain the last deployed commit (for
+            # example after its repository cache was rebuilt). Include the full
+            # reachable history so fetching the bundle never depends on that
+            # remote cache retaining a particular base object.
             revisions = ["HEAD"]
-            normalized_base = str(base_commit or "").strip().lower()
-            if COMMIT_PATTERN.fullmatch(normalized_base):
-                ancestor = subprocess.run(
-                    [git_executable, "merge-base", "--is-ancestor", normalized_base, "HEAD"],
-                    cwd=settings.BASE_DIR,
-                    capture_output=True,
-                    timeout=30,
-                    env={**os.environ, "GIT_TERMINAL_PROMPT": "0"},
-                )
-                if ancestor.returncode == 0:
-                    revisions = [f"{normalized_base}..HEAD"]
             subprocess.run(
                 [git_executable, "bundle", "create", str(bundle_path), *revisions],
                 cwd=settings.BASE_DIR,
