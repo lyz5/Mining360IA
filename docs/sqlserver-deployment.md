@@ -41,6 +41,14 @@ python manage.py check --deploy
 The service must start only after `migrate` succeeds. Do not copy `db.sqlite3`
 to BODEFM after the initial migration.
 
+For the controlled Windows deployment on BODEFM, the pre-deployment compressed
+`Mining360App` backup is written to `D:\Mining360Backups` when that directory is
+present. This is the established SQL Server backup location on BODEFM. Other
+Windows targets without that directory continue to use the SQL Server instance's
+default backup path. The SQL Server service identity must have write access to
+the selected directory; deployment stops before runtime shutdown if the backup
+fails.
+
 ## Initial migration
 
 Keep the original SQLite file as a read-only rollback artifact and run:
