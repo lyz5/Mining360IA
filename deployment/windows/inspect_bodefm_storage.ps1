@@ -23,14 +23,18 @@ $directories = @($roots | ForEach-Object { Get-DirectoryInventory $_ })
 $appBackups = @()
 if (Test-Path -LiteralPath 'C:\Mining360\backups' -PathType Container) {
     $appBackups = @(Get-ChildItem -LiteralPath 'C:\Mining360\backups' -Directory -Filter 'app-*' -Force |
-        ForEach-Object { Get-DirectoryInventory $_.FullName } |
-        Sort-Object last_write -Descending)
+        ForEach-Object {
+            $item = Get-DirectoryInventory $_.FullName
+            [pscustomobject]@{ name=$_.Name; files=$item.files; gigabytes=[math]::Round($item.bytes/1GB,2); last_write=$item.last_write }
+        } | Sort-Object last_write -Descending)
 }
 $releaseDirectories = @()
 if (Test-Path -LiteralPath 'C:\Mining360\releases' -PathType Container) {
     $releaseDirectories = @(Get-ChildItem -LiteralPath 'C:\Mining360\releases' -Directory -Force |
-        ForEach-Object { Get-DirectoryInventory $_.FullName } |
-        Sort-Object last_write -Descending)
+        ForEach-Object {
+            $item = Get-DirectoryInventory $_.FullName
+            [pscustomobject]@{ name=$_.Name; files=$item.files; gigabytes=[math]::Round($item.bytes/1GB,2); last_write=$item.last_write }
+        } | Sort-Object last_write -Descending)
 }
 $temporaryArtifacts = @()
 if (Test-Path -LiteralPath 'C:\Mining360\control' -PathType Container) {
@@ -43,7 +47,7 @@ $disks = @(Get-CimInstance Win32_LogicalDisk -Filter 'DriveType=3' | ForEach-Obj
 })
 [ordered]@{
     computer=$env:COMPUTERNAME
-    directories=$directories
+    directories=@($directories | ForEach-Object { [pscustomobject]@{ path=$_.path; files=$_.files; gigabytes=[math]::Round($_.bytes/1GB,2); last_write=$_.last_write } })
     app_backups=$appBackups
     release_directories=$releaseDirectories
     temporary_artifacts=$temporaryArtifacts
