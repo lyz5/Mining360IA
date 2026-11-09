@@ -1,6 +1,6 @@
 """Server-side refresh of the local Revenue snapshot, independent of viewers."""
 from contextlib import contextmanager
-from datetime import timedelta
+from datetime import timedelta, timezone as datetime_timezone
 import logging
 import os
 from pathlib import Path
@@ -33,7 +33,13 @@ def synchronization_state():
     last_attempt = (latest.completed_at or latest.started_at or latest.created_at) if latest else None
     sync_hour = getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_HOUR', 5)
     sync_minute = getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_MINUTE', 0)
-    schedule_tz = ZoneInfo(getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_TIME_ZONE', 'Etc/GMT'))
+    schedule_timezone_name = str(
+        getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_TIME_ZONE', 'Etc/GMT')
+    ).strip()
+    if schedule_timezone_name.upper() in {'GMT', 'UTC', 'ETC/GMT', 'ETC/UTC', 'GMT0', 'UTC0'}:
+        schedule_tz = datetime_timezone.utc
+    else:
+        schedule_tz = ZoneInfo(schedule_timezone_name)
     schedule_now = timezone.localtime(now, schedule_tz)
     schedule_open = (schedule_now.hour, schedule_now.minute) >= (sync_hour, sync_minute)
     recent_failure = bool(
