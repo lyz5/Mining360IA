@@ -32,7 +32,7 @@ def synchronization_state():
     through = (success.source_context_json or {}).get('semantic_data_through') if success else None
     last_attempt = (latest.completed_at or latest.started_at or latest.created_at) if latest else None
     sync_hour = getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_HOUR', 5)
-    sync_minute = getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_MINUTE', 30)
+    sync_minute = getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_MINUTE', 0)
     schedule_tz = ZoneInfo(getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_TIME_ZONE', 'Etc/GMT'))
     schedule_now = timezone.localtime(now, schedule_tz)
     schedule_open = (schedule_now.hour, schedule_now.minute) >= (sync_hour, sync_minute)
@@ -40,8 +40,8 @@ def synchronization_state():
         latest and latest.status == 'Failed' and last_attempt
         and now - last_attempt < timedelta(minutes=getattr(settings, 'BUSINESS_REVENUE_AUTO_SYNC_RETRY_MINUTES', 60))
     )
-    # A pre-schedule import must not suppress the configured daily 05:30 GMT run.
-    # Any successful import after the scheduled time satisfies today's refresh.
+    # A pre-schedule import must not suppress the configured daily 05:00 GMT run.
+    # Any successful import at or after the scheduled time satisfies today's refresh.
     success_schedule_time = timezone.localtime(success.completed_at, schedule_tz) if success and success.completed_at else None
     current = bool(
         success_schedule_time
