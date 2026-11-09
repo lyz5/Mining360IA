@@ -12,8 +12,12 @@ $names = @(
     'ee1ebb95f179905ef0e6c311a083993c848d1fa1'
 )
 
-$task = Get-ScheduledTask -TaskName 'Mining360DeploymentWorker' -ErrorAction Stop
-if ([string]$task.State -eq 'Running') { throw 'A deployment worker is running; no cleanup was applied.' }
+$taskName = '\Mining360DeploymentWorker'
+$taskText = (& schtasks.exe /Query /TN $taskName /FO LIST 2>&1 | Out-String)
+if ($LASTEXITCODE -ne 0) { throw 'The deployment worker state could not be read; no cleanup was applied.' }
+if ($taskText -notmatch '(?im)^\s*Status:\s*(.+)$') { throw 'The deployment worker state is missing; no cleanup was applied.' }
+$taskStatus = $Matches[1].Trim()
+if ($taskStatus -eq 'Running') { throw 'A deployment worker is running; no cleanup was applied.' }
 
 $manifestPath = 'C:\Mining360\shared\current-release.json'
 $currentCommit = ''
