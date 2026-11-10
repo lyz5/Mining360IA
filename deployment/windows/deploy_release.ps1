@@ -22,6 +22,7 @@ $python = Join-Path $Root 'venv\Scripts\python.exe'
 $git = Join-Path $Root 'tools\git\cmd\git.exe'
 $log = Join-Path $Root ("logs\deployment-$JobId.log")
 $runtimeTask = 'Mining360TestRuntime'
+$deploymentWorkerTask = 'Mining360DeploymentWorker'
 $backup = $null
 $runtimeStopped = $false
 
@@ -89,6 +90,10 @@ function Start-Mining360Runtime {
     if ($LASTEXITCODE -ne 0) { throw "Unable to enable $runtimeTask." }
     & schtasks.exe /Run /TN $runtimeTask *>> $log
     if ($LASTEXITCODE -ne 0) { throw "Unable to start $runtimeTask." }
+    & schtasks.exe /Change /TN $deploymentWorkerTask /ENABLE *>> $log
+    if ($LASTEXITCODE -ne 0) { throw "Unable to enable $deploymentWorkerTask." }
+    & schtasks.exe /Run /TN $deploymentWorkerTask *>> $log
+    if ($LASTEXITCODE -ne 0) { throw "Unable to start $deploymentWorkerTask." }
 }
 
 function Stop-Mining360Runtime {
@@ -97,6 +102,15 @@ function Stop-Mining360Runtime {
     & schtasks.exe /Change /TN $runtimeTask /DISABLE *>> $log
     if ($LASTEXITCODE -ne 0) { throw "Unable to temporarily disable $runtimeTask." }
     & schtasks.exe /End /TN $runtimeTask *>> $log
+    $workerTaskList = (& schtasks.exe /Query /TN $deploymentWorkerTask /FO LIST 2>&1 | Out-String)
+    if ($LASTEXITCODE -ne 0) { throw "Unable to read $deploymentWorkerTask status." }
+    $workerTaskWasRunning = $workerTaskList -match '(?im)^\s*Status:\s*Running\s*$'
+    & schtasks.exe /Change /TN $deploymentWorkerTask /DISABLE *>> $log
+    if ($LASTEXITCODE -ne 0) { throw "Unable to temporarily disable $deploymentWorkerTask." }
+    if ($workerTaskWasRunning) {
+        & schtasks.exe /End /TN $deploymentWorkerTask *>> $log
+        if ($LASTEXITCODE -ne 0) { throw "Unable to stop $deploymentWorkerTask." }
+    }
     Start-Sleep -Seconds 2
     # schtasks /End stops the PowerShell task host, but its Waitress/Python
     # descendants can remain alive. Terminate only processes whose command
@@ -105,8 +119,10 @@ function Stop-Mining360Runtime {
     $runtimeProcesses = @(
         Get-CimInstance Win32_Process | Where-Object {
             ($_.CommandLine -like '*C:\Mining360\app\deployment\windows\start_mining360.ps1*') -or
+            ($_.CommandLine -like '*C:\Mining360\app\deployment\windows\run_deployment_worker.ps1*') -or
             ($_.CommandLine -like '*C:\Mining360\venv\Scripts\waitress-serve.exe*') -or
             ($_.CommandLine -like '*C:\Mining360\app\manage.py*run_codex_worker*') -or
+            ($_.CommandLine -like '*C:\Mining360\app\manage.py*run_deployment_worker*') -or
             (
                 $_.ExecutablePath -eq $runtimePython -and
                 $_.CommandLine -like '*manage.py*run_codex_worker*'
