@@ -141,14 +141,35 @@ function Stop-Mining360Runtime {
     $deadline = (Get-Date).AddSeconds(30)
     do {
         $listeners = @(Get-NetTCPConnection -LocalPort 8000 -State Listen -ErrorAction SilentlyContinue)
+        $remainingManagedProcesses = @(
+            Get-CimInstance Win32_Process | Where-Object {
+                ($_.CommandLine -like '*C:\Mining360\app\deployment\windows\start_mining360.ps1*') -or
+                ($_.CommandLine -like '*C:\Mining360\app\deployment\windows\run_deployment_worker.ps1*') -or
+                ($_.CommandLine -like '*C:\Mining360\venv\Scripts\waitress-serve.exe*') -or
+                ($_.CommandLine -like '*C:\Mining360\app\manage.py*run_codex_worker*') -or
+                ($_.CommandLine -like '*C:\Mining360\app\manage.py*run_deployment_worker*') -or
+                (
+                    $_.ExecutablePath -eq $runtimePython -and
+                    $_.CommandLine -like '*manage.py*run_codex_worker*'
+                )
+            }
+        )
+        $managedProcessIds = @($remainingManagedProcesses | ForEach-Object { $_.ProcessId })
+        $unknownListeners = @($listeners | Where-Object { $managedProcessIds -notcontains $_.OwningProcess })
+        if ($unknownListeners.Count) {
+            throw 'An unmanaged process owns port 8000; release switching was stopped without terminating it.'
+        }
         foreach ($listener in $listeners) {
             Stop-Process -Id $listener.OwningProcess -Force -ErrorAction SilentlyContinue
         }
-        if (-not $listeners) { return }
+        if (-not $listeners -and -not $remainingManagedProcesses) { return }
         Start-Sleep -Seconds 1
     } while ((Get-Date) -lt $deadline)
     if (Get-NetTCPConnection -LocalPort 8000 -State Listen -ErrorAction SilentlyContinue) {
         throw 'Waitress did not release port 8000 after the runtime task stopped.'
+    }
+    if ($remainingManagedProcesses.Count) {
+        throw 'A managed Mining360 process still uses the active application directory.'
     }
 }
 
