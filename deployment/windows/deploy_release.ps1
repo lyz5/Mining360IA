@@ -212,6 +212,30 @@ try {
     }
     if ($bundle) { Remove-Item -LiteralPath $bundle -Force }
 
+    # Reclaim only the stage left by this release's failed first attempt. It
+    # is safe to remove only while the active-release manifest names another
+    # commit and no process references the exact staging path.
+    $failedAttemptCommit = '12800c281f36dccebbbf351c6b45207f13803867'
+    $failedAttemptStage = Join-Path $releases $failedAttemptCommit
+    if (Test-Path -LiteralPath $failedAttemptStage -PathType Container) {
+        $releaseManifest = Join-Path $shared 'current-release.json'
+        if (-not (Test-Path -LiteralPath $releaseManifest -PathType Leaf)) {
+            throw 'The current release manifest is missing; failed staging was preserved.'
+        }
+        $activeCommit = [string]((Get-Content -LiteralPath $releaseManifest -Raw | ConvertFrom-Json).commit)
+        if ($activeCommit -eq $failedAttemptCommit) {
+            throw 'The failed-attempt staging path is active; it was preserved.'
+        }
+        $stageUsers = @(Get-CimInstance Win32_Process | Where-Object {
+            ($_.ExecutablePath -and $_.ExecutablePath.StartsWith($failedAttemptStage + '\', [StringComparison]::OrdinalIgnoreCase)) -or
+            ($_.CommandLine -and $_.CommandLine.IndexOf($failedAttemptStage, [StringComparison]::OrdinalIgnoreCase) -ge 0)
+        })
+        if ($stageUsers.Count) { throw 'A running process references failed-attempt staging; it was preserved.' }
+        Remove-Item -LiteralPath $failedAttemptStage -Recurse -Force
+        if (Test-Path -LiteralPath $failedAttemptStage) { throw 'Failed-attempt staging remains after cleanup.' }
+        Write-DeploymentLog "Removed inactive staging left by failed commit $failedAttemptCommit."
+    }
+
     foreach ($name in @('powerbi_credentials.local.json', 'mining360_sqlserver.local.json', 'reports\live_sources_custom.json')) {
         $source = Join-Path $app $name
         $destination = Join-Path $stage $name
