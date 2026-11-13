@@ -10,17 +10,19 @@ remaining source-query limitations. The page is installed at:
 - Feature commit: `f1f94a1a06ee9ae2adce66e20a4d2a8be1e72e93`.
 - Static manifest correction: `69476d92fb85cc2430a06e2b438f77eb2f4aa859`.
 - Verified model measure name: `6209b0bb56c13256ccf4142803c8000f7962141e`.
-- Final installed code, including paginated live details:
+- Paginated live details:
   `a030a523364ef1dc7e48a428a5688a28455d13bd`.
+- Final installed code, including the reference trend styling:
+  `9d5978264c92fb9d30bad84c9020a74afd50a2ee`.
 - Git branch: `feature/parts-fulfillment-20261113`, pushed to origin.
 - Latest verified backup:
-  `D:\Mining360Backups\PartsFulfillment_20261113_141407_a030a523`.
+  `D:\Mining360Backups\PartsFulfillment_20261113_143537_9d597826`.
 - Initial feature backup:
   `D:\Mining360Backups\PartsFulfillment_20261113_130327_f1f94a1a`.
 - Final staged manifest:
-  `C:\Mining360\control\parts-fulfillment-a030a523\manifest.json`.
+  `C:\Mining360\control\parts-fulfillment-9d597826\manifest.json`.
 - Deployment log:
-  `C:\Mining360\logs\parts-fulfillment-a030a523.log`.
+  `C:\Mining360\logs\parts-fulfillment-9d597826.log`.
 
 The first installation exposed a production rendering error: the two new assets
 were physically served but absent from the production static manifest. The
@@ -46,8 +48,8 @@ reviewing current hashes and stopping the managed runtime. Both scripts support
 - Anonymous new-page request: HTTP 302 to authentication.
 - Authenticated new-page request: HTTP 200; expected page title present.
 - Existing Business Overview: HTTP 200; new navigation link present.
-- Rendered CSS `parts_fulfillment.87b13d18548e.css`: HTTP 200.
-- Rendered JavaScript `parts_fulfillment.3203ca7b3e0f.js`: HTTP 200.
+- Rendered CSS `parts_fulfillment.e42389229784.css`: HTTP 200.
+- Rendered JavaScript `parts_fulfillment.eb452cc7faa5.js`: HTTP 200.
 - The authenticated check used the existing web account linked by the platform
   directory profile to the authorized Windows identity. No other administrator
   was impersonated. The temporary validation session was removed afterwards.
@@ -104,3 +106,24 @@ Private receipts and the source-free deployment manifest are retained locally in
 `.runlogs/parts_fulfillment_deploy/`. Deployment staging, execution and verification
 were recorded in the local DeploymentAuditLog. Credential contents and session
 cookies were never printed, committed or included in release artifacts.
+
+## Reference chart follow-up
+
+The trend's two columns per month now match the user's reference composition:
+wider blue new-order bars, sales stacked red/yellow/green from bottom to top,
+totals above both columns, internal amounts when readable, a navy heading with
+chart icon, regular numeric axis ticks labelled in EUR units, and larger legend
+markers. Unallocated and Future Order remain separate and signed values retain
+their actual scale. The 12-month window and source data are unchanged.
+
+The browser check passed at 1440px and 390px, including pairing/stack geometry,
+month selection, cohort details, export interaction, credits below zero and
+source-error handling. No JavaScript errors were reported. An additional visual
+capture uses the actual BODEFM monthly response for November 2025–October 2026;
+the business-data snapshot and image remain private, outside Git.
+
+New assets use Django's verified content-hash manifest, preserving the other
+203 mappings: CSS `parts_fulfillment.e42389229784.css` and JavaScript
+`parts_fulfillment.eb452cc7faa5.js`. Old hashed assets remain available for
+existing browser caches and rollback. Source queries, permissions, flow settings
+and financial definitions were not changed by this visual follow-up.
