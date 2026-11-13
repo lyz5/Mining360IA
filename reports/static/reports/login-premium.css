@@ -1,0 +1,132 @@
+/* Login-only presentation. Authentication and shared application styles remain separate. */
+.login-body.login-experience {
+    --login-navy: #071831;
+    --login-gold: #ffd000;
+    isolation: isolate;
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: 48px 24px 72px;
+    overflow-x: hidden;
+    background: #10263d;
+    color: var(--login-navy);
+    -webkit-font-smoothing: antialiased;
+}
+.login-experience::before,
+.login-experience::after { content: none; }
+.login-scene { position: fixed; inset: 0; z-index: -1; overflow: hidden; background: #10263d; }
+.login-scene-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: login-landscape 1.5s cubic-bezier(.2,.65,.3,1) both;
+}
+.login-scene::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 35%, transparent 35%, #04152a22 100%); pointer-events: none; }
+.login-experience .login-shell { position: relative; z-index: 1; width: min(704px,100%); }
+.login-experience .login-panel {
+    display: grid;
+    gap: 34px;
+    padding: 55px 64px 39px;
+    overflow: hidden;
+    border: 1px solid #ffffffb8;
+    border-radius: 28px;
+    background: linear-gradient(135deg, #ffffffec, #fffaf2e8);
+    box-shadow: 0 36px 100px #00102738, 0 6px 20px #06162a12, inset 0 1px 0 #fff;
+    -webkit-backdrop-filter: blur(22px) saturate(1.15);
+    backdrop-filter: blur(22px) saturate(1.15);
+    animation: login-arrive .65s cubic-bezier(.2,.75,.3,1) .08s both;
+}
+.login-experience .login-panel::before {
+    top: 0;
+    left: 50%;
+    width: 132px;
+    height: 3px;
+    background: linear-gradient(90deg, #ffd00000, #ffd000, #ffd00000);
+    box-shadow: 0 0 18px #ffd00045;
+}
+.login-experience .login-brand { display: flex; justify-content: center; align-items: center; gap: 14px; flex-wrap: nowrap; color: var(--login-navy); font-size: 26px; font-weight: 850; letter-spacing: -.045em; }
+.login-experience .login-mark { width: 54px; height: 54px; flex: none; border-radius: 14px; background: linear-gradient(145deg,#ffdc29,#ffcc00); color: var(--login-navy); font-size: 27px; box-shadow: 0 7px 20px #e9b40026, inset 0 1px 0 #fff5; }
+.login-experience .login-brand-divider { height: 24px; flex: none; background: #8796ad66; }
+.login-experience .login-brand .eyebrow { color: #62718a; font-size: 12px; letter-spacing: .19em; font-weight: 750; white-space: nowrap; }
+.login-experience .login-panel-head { display: block; text-align: center; }
+.login-experience .login-panel-head h1 { color: var(--login-navy); font-size: clamp(40px,4.4vw,64px); font-weight: 820; letter-spacing: -.055em; line-height: 1.08; margin: 0; }
+.login-title-dot { color: #d7a400; }
+.login-experience .login-copy { margin: 17px 0 0; color: #5c6a80; font-size: 20px; line-height: 1.5; font-weight: 400; text-wrap: pretty; }
+.login-experience .windows-login { gap: 18px; }
+.login-experience .login-button { min-height: 72px; margin: 0; padding: 18px 26px; border: 1px solid #dcae00; border-radius: 14px; color: var(--login-navy); background: linear-gradient(110deg,#ffda24,#ffce00 55%,#f4be00); font-size: 20px; font-weight: 750; line-height: 1.3; box-shadow: 0 12px 28px #ddb21e35, inset 0 1px 0 #fff6; transition: transform .18s ease,box-shadow .18s ease,background .18s ease; }
+.login-experience .windows-login__start { display: flex; align-items: center; gap: 16px; }
+.login-experience .windows-login__start svg { width: 29px; height: 29px; flex: none; }
+.login-experience .windows-login__start > span { text-align: center; flex: 1; }
+.login-experience .windows-login__arrow { font-size: 28px; font-weight: 400; transition: transform .18s ease; }
+.login-experience .login-button:hover { background: linear-gradient(110deg,#ffe148,#ffd315 55%,#fac900); box-shadow: 0 16px 32px #cc9d0040; transform: translateY(-2px); }
+.login-experience .windows-login__start:hover .windows-login__arrow { transform: translateX(4px); }
+.login-experience :is(button,a,input):focus-visible { outline: 3px solid #163d65; outline-offset: 4px; }
+.login-experience [hidden] { display: none !important; }
+.login-experience .local-login-form { gap: 18px; }
+.login-experience .local-login-form label { color: #25364d; font-size: 13px; font-weight: 650; }
+.login-experience .local-login-form input { min-height: 54px; border: 1px solid #bac5d3; border-radius: 11px; background: #ffffffc9; color: #10263d; box-shadow: inset 0 1px 2px #07183104; font-size: 16px; }
+.login-experience .local-login-form input:focus { border-color: #a97b00; box-shadow: 0 0 0 4px #ffd00020; }
+.login-experience .windows-account { padding: 13px; border: 1px solid #ccd4df; border-radius: 12px; background: #ffffff94; }
+.login-experience .windows-account__icon { border-radius: 9px; background: #0c2948; }
+.login-experience .windows-account__change { border-radius: 6px; color: #173e63; }
+.login-experience .password-toggle { border-radius: 8px; }
+.login-experience .local-login-form .keep-signed-in { padding: 0; grid-template-columns: 20px minmax(0,1fr); }
+.login-experience .local-login-form .keep-signed-in input { width: 18px; height: 18px; min-height: 18px; box-shadow: none; accent-color: #a77d00; }
+.login-experience .keep-signed-in strong { color: #2f4058; }
+.login-experience .keep-signed-in small,
+.login-experience .windows-login__privacy { color: #58677c; line-height: 1.5; }
+.login-experience .windows-login__privacy { text-align: center; font-size: 11px; margin: 0; }
+.login-experience .login-messages { padding: 13px 16px; border: 1px solid #e6bd49; background: #fff4d7; color: #684c05; border-radius: 11px; line-height: 1.5; }
+.login-experience .login-security { display: grid; gap: 12px; border: 0; margin: 0; padding: 0; color: #61718a; font-size: 11px; font-weight: 700; letter-spacing: .23em; text-align: center; }
+.login-security-seal { display: flex; align-items: center; justify-content: center; gap: 18px; }
+.login-security-seal::before,
+.login-security-seal::after { content: ""; flex: 1; max-width: 190px; height: 1px; background: linear-gradient(90deg,transparent,#a6b2c56b); }
+.login-security-seal::after { transform: rotate(180deg); }
+.login-experience .login-security svg { width: 29px; height: 29px; stroke: #6d7f98; stroke-width: 1.7; }
+.login-experience .login-panel .button.secondary { min-height: 54px; border-color: #bdc8d5; background: #ffffffb8; color: #183650; box-shadow: none; font-size: 15px; }
+.login-experience .login-panel .button.secondary:hover { background: #fff; }
+.login-experience .login-divider { font-size: 11px; color: #5d6e85; }
+.login-footer { position: absolute; left: 32px; right: 32px; bottom: 19px; z-index: 1; display: flex; align-items: center; gap: 12px; color: #ffffffbd; font-size: 11px; letter-spacing: .035em; }
+.login-footer > span:first-child { font-weight: 750; color: #fff; }
+.login-footer-year { margin-left: auto; }
+.login-experience .login-panel:has(.windows-login__credentials:not([hidden])) { padding-top: 34px; padding-bottom: 30px; gap: 24px; }
+.login-experience .login-panel:has(.windows-login__credentials:not([hidden])) h1 { font-size: 43px; }
+.login-experience .login-panel:has(.windows-login__credentials:not([hidden])) .login-copy { margin-top: 10px; font-size: 16px; }
+.login-experience .login-panel:has(.windows-login__credentials:not([hidden])) .login-button { min-height: 58px; }
+@keyframes login-arrive { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: none; } }
+@keyframes login-landscape { from { transform: scale(1.025); } to { transform: scale(1); } }
+@media(max-width:760px) {
+    .login-body.login-experience { padding: 28px 18px 64px; }
+    .login-experience .login-panel { padding: 39px 28px 31px; gap: 30px; border-radius: 24px; }
+    .login-experience .login-brand { gap: 11px; font-size: 24px; }
+    .login-experience .login-brand .eyebrow { font-size: 10px; letter-spacing: .13em; }
+    .login-experience .login-mark { width: 46px; height: 46px; font-size: 24px; }
+    .login-experience .login-panel-head h1 { font-size: 48px; }
+    .login-experience .login-copy { font-size: 17px; }
+    .login-experience .login-button { min-height: 64px; font-size: 17px; padding: 16px 21px; }
+    .login-scene-image { object-position: 68% center; }
+    .login-footer { left: 22px; right: 22px; }
+}
+@media(max-width:480px) {
+    .login-experience .login-panel { padding: 32px 22px 27px; gap: 28px; border-radius: 22px; }
+    .login-experience .login-brand { flex-wrap: wrap; gap: 12px; }
+    .login-experience .login-brand .eyebrow { flex-basis: 100%; text-align: center; font-size: 10px; letter-spacing: .2em; }
+    .login-experience .login-brand-divider { display: none; }
+    .login-experience .login-panel-head h1 { font-size: clamp(35px,10.2vw,44px); }
+    .login-experience .login-copy { font-size: 16px; margin-top: 12px; }
+    .login-experience .login-button { font-size: 16px; min-height: 62px; padding: 16px; }
+    .login-experience .windows-login__start { gap: 10px; }
+    .login-experience .windows-login__start svg { width: 23px; height: 23px; }
+    .login-experience .windows-login__arrow { font-size: 25px; }
+    .login-experience .login-security { font-size: 9px; letter-spacing: .2em; }
+    .login-experience .login-panel:has(.windows-login__credentials:not([hidden])) { padding: 27px 21px; gap: 22px; }
+    .login-experience .login-panel:has(.windows-login__credentials:not([hidden])) h1 { font-size: 35px; }
+    .login-footer { gap: 8px; font-size: 10px; }
+}
+@media(prefers-reduced-motion:reduce) {
+    .login-experience *, .login-experience *::before, .login-experience *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
