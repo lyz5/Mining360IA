@@ -80,7 +80,10 @@ Keys are kept complete and textual, including initial zeros. No number is
 extracted from a key. DAX groups existing accounting amounts by the five detail
 dimensions and pages on the server using a complete stable sort. Unallocated
 rows retain blank order keys/dates. Future-order rows show both dates.
-Search is literal, including DAX quote/wildcard escaping. Sorting supports
+Control totals and paginated rows use separate cached model queries: a combined
+UNION of controls and rows exceeded the live source-query time budget. The full
+filtered detail still reconciles with its source measure, and export limits are
+checked before reading rows. Search is literal, including DAX quote/wildcard escaping. Sorting supports
 accounting date, order date and amount. Detail controls compare the full filtered
 accounting total with its source cohort measure when search is absent; a searched
 subset is explicitly labelled. Cohort selection never modifies summary totals.

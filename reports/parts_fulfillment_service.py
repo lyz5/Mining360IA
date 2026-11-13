@@ -321,25 +321,26 @@ class PartsFulfillmentService:
         order_args = ','.join(f'[{k}] {direction.upper() if k == sort else "ASC"}' for k in sort_keys)
         measure_total = f"CALCULATE([{MEASURES[cohort or 'sales']}], DATESBETWEEN('Date'[Date],{dax_date(month)},{dax_date(end)}))"
         # A TOPN with all group keys forms a stable server-side page, including ties.
-        dax = f'''EVALUATE
-VAR Base = CALCULATETABLE({FACT}, {','.join(filters)})
-VAR Grouped = GROUPBY(Base,{groups},"amount",SUMX(CURRENTGROUP(),{FACT}[AccountingCA_EUR]))
-VAR Rows = SELECTCOLUMNS(Grouped,{projection},"amount",[amount])
-VAR PageRows = EXCEPT(TOPN({page * size},Rows,{sort_args}),TOPN({(page-1)*size},Rows,{sort_args}))
-RETURN UNION(ROW("kind","meta","total_rows",COUNTROWS(Rows),"detail_total",SUMX(Rows,[amount]),"measure_total",{measure_total},"accounting_date",BLANK(),"order_date",BLANK(),"order_key",BLANK(),"invoice_key",BLANK(),"cohort",BLANK(),"amount",BLANK()),
-SELECTCOLUMNS(PageRows,"kind","row","total_rows",BLANK(),"detail_total",BLANK(),"measure_total",BLANK(),"accounting_date",[accounting_date],"order_date",[order_date],"order_key",[order_key],"invoice_key",[invoice_key],"cohort",[cohort],"amount",[amount]))
-ORDER BY [kind], {order_args}'''
-        result = self.source.cached_query(dax, ttl=45)
-        meta = next((r for r in result if r.get('kind') == 'meta'), None)
+        query_base = f'''EVALUATE
+VAR DetailBase = CALCULATETABLE({FACT}, {','.join(filters)})
+VAR DetailGroups = GROUPBY(DetailBase,{groups},"amount",SUMX(CURRENTGROUP(),{FACT}[AccountingCA_EUR]))
+VAR DetailRows = SELECTCOLUMNS(DetailGroups,{projection},"amount",[amount])
+'''
+        # Separate bounded aggregates and page reads. Mixing the control row and
+        # transaction rows in a UNION made the live model query exceed its budget.
+        controls = self.source.cached_query(query_base + f'''RETURN ROW("kind","meta","total_rows",COUNTROWS(DetailRows),"detail_total",SUMX(DetailRows,[amount]),"measure_total",{measure_total})''', ttl=45)
+        meta = next((r for r in controls if r.get('kind') == 'meta'), None)
         if meta is None:
             raise FulfillmentUnavailable('The detail query did not return its controls.')
         count = int(meta.get('total_rows') or 0)
         if export and count > 10000:
             raise ValueError('The filtered export exceeds 10,000 rows. Refine the search before exporting; no partial export was created.')
+        page_query = query_base + f'''VAR DetailPageRows = EXCEPT(TOPN({page * size},DetailRows,{sort_args}),TOPN({(page-1)*size},DetailRows,{sort_args}))
+RETURN DetailPageRows
+ORDER BY {order_args}'''
+        result = self.source.cached_query(page_query, ttl=45) if count else []
         rows = []
         for row in result:
-            if row.get('kind') != 'row':
-                continue
             item = {key: row.get(key) for key in FIELDS}
             for key in ('order_key', 'invoice_key'):
                 if item[key] is not None and not isinstance(item[key], str):

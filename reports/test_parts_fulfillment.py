@@ -108,13 +108,15 @@ class FulfillmentFinancialTests(SimpleTestCase):
 class FulfillmentDetailTests(SimpleTestCase):
     def setUp(self):
         self.source=Mock()
-        self.source.cached_query.return_value=[{'kind':'meta','total_rows':1,'detail_total':'12.50','measure_total':'12.50'},
-            {'kind':'row','accounting_date':'2026-10-20T00:00:00','order_date':None,'order_key':None,
-             'invoice_key':'22|22-01|000123','cohort':'Unallocated','amount':'12.50'}]
+        self.control={'kind':'meta','total_rows':1,'detail_total':'12.50','measure_total':'12.50'}
+        self.detail={'accounting_date':'2026-10-20T00:00:00','order_date':None,'order_key':None,
+                     'invoice_key':'22|22-01|000123','cohort':'Unallocated','amount':'12.50'}
+        self.source.cached_query.side_effect=lambda dax, **kwargs: [self.control] if 'RETURN ROW("kind","meta"' in dax else [self.detail]
         self.service=PartsFulfillmentService(SimpleNamespace(pk=7),source=self.source,today=date(2026,11,13))
 
     def test_unallocated_detail_keeps_absent_order_and_complete_text_invoice_key(self):
         data=self.service.details({'month':'2026-10','cohort':'unallocated'})
+        self.assertEqual(len(data['rows']),1)
         self.assertIsNone(data['rows'][0]['order_key'])
         self.assertEqual(data['rows'][0]['invoice_key'],'22|22-01|000123')
         self.assertEqual(data['reconciliation'],'reconciled')
@@ -123,14 +125,14 @@ class FulfillmentDetailTests(SimpleTestCase):
         self.service.details({'month':'2026-10','search':'00"*?','page':'2','sort':'amount'})
         query=self.source.cached_query.call_args.args[0]
         self.assertIn('00""~*~?',query)
-        self.assertIn('TOPN(50,Rows',query);self.assertIn('TOPN(25,Rows',query)
+        self.assertIn('TOPN(50,DetailRows',query);self.assertIn('TOPN(25,DetailRows',query)
         for key in ['order_key','invoice_key','order_date','accounting_date','cohort']:self.assertIn(f'[{key}],ASC',query)
         self.assertNotIn('LOOKUPVALUE',query)
 
     def test_export_ignores_visible_page_and_rejects_partial_export(self):
         self.service.details({'month':'2026-10','page':'4'},export=True)
-        self.assertIn('TOPN(10001,Rows',self.source.cached_query.call_args.args[0])
-        self.source.cached_query.return_value[0]['total_rows']=10001
+        self.assertIn('TOPN(10001,DetailRows',self.source.cached_query.call_args.args[0])
+        self.control['total_rows']=10001
         with self.assertRaisesRegex(ValueError,'no partial export'):
             self.service.details({'month':'2026-10'},export=True)
 
@@ -140,11 +142,11 @@ class FulfillmentDetailTests(SimpleTestCase):
         self.source.cached_query.assert_not_called()
 
     def test_numeric_keys_fail_closed_instead_of_losing_initial_zeros(self):
-        self.source.cached_query.return_value[1]['invoice_key']=123
+        self.detail['invoice_key']=123
         with self.assertRaises(FulfillmentUnavailable):self.service.details({'month':'2026-10'})
 
     def test_detail_quality_warning_is_independent_of_top_kpis(self):
-        self.source.cached_query.return_value[0]['measure_total']='14'
+        self.control['measure_total']='14'
         data=self.service.details({'month':'2026-10'})
         self.assertEqual(data['total'],'12.50');self.assertEqual(data['reconciliation'],'warning')
 
