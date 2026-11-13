@@ -63,3 +63,38 @@ backup/rollback, port ownership checks and health verification. Authentication
 views, Windows JavaScript and governed Revenue code are hash-protected. Static
 manifest additions preserve all existing mappings. No IIS, SQL, firewall, LDAP
 or service startup configuration change is part of this release.
+
+## BODEFM deployment and recovery
+
+- Initial page commit: `a94af46399b34ffdca684dbe81fc26b97191487b`.
+- Final presentation correction: `2980162b08a04c992e1be86561a69e18fd9e5bf0`.
+- Final backup: `D:\Mining360Backups\LoginPremium_20261113_151057_2980162b`.
+- Initial backup, restoring the previous login:
+  `D:\Mining360Backups\LoginPremium_20261113_150232_a94af463`.
+- Final manifest: `C:\Mining360\control\login-premium-2980162b\manifest.json`.
+- Final log: `C:\Mining360\logs\login-premium-2980162b.log`.
+- Deployment succeeded with application and database health `ok`. Authentication
+  view, Windows script and governed Revenue file hashes were unchanged.
+- Static manifest has 207 mappings; the 205 pre-existing mappings were preserved.
+  Final login stylesheet is `login-premium.01a5cefb2c24.css`; the background is
+  `login-mine-sunset-20261113.35db6069f53e.png`.
+
+The first genuine HTTPS browser pass on BODEFM returned page/assets HTTP 200,
+zero JavaScript errors, and passed the visible Windows-form interaction and
+mobile overflow check. No credentials were submitted. The anonymous Parts page
+still redirected to authentication (302). Complete page load and entrance
+animation took 3.348 seconds in that observed run; this is not a performance SLA.
+The final stylesheet makes the logo divider, gold accent and outline shield
+independent of the older shared stylesheet installed on BODEFM.
+The final genuine HTTPS browser pass also succeeded: page, final CSS and image
+HTTP 200; outline shield confirmed; Windows form and mobile passed; no JavaScript
+errors; application/database healthy; protected anonymous page still HTTP 302.
+Observed full load including the entrance animation was 3.456 seconds. Final
+captures are `login-live-desktop.png`, `login-live-mobile.png` and
+`login-live-credentials.png` in the private screenshot directory.
+
+Recovery uses the matching immutable manifest and `deploy_login_premium.ps1
+-Rollback -BackupPath <matching backup>`. The final backup restores the first
+new design; the initial backup restores the previous login. Review current hashes
+before invoking either rollback. Private live screenshots and validation JSON
+are retained in `.runlogs/login-premium/`.
