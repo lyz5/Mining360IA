@@ -64,6 +64,22 @@ becomes zero. Empty months, unavailable measures and source errors are distinct.
 
 ## Details and export
 
+### Trend styling follow-up
+
+The trend follows the supplied reference with wider paired columns, a navy
+heading and chart icon, rounded blue order bars, totals above both columns, a
+shared labelled EUR scale with regular ticks, and larger cohort legend markers.
+The positive sales stack places 2+ Months at the bottom, Last Month above it,
+then Current Month. Unallocated and Future Order retain their own segments;
+their legend entries appear when a displayed month has a nonzero contribution.
+Smaller segments retain exact EUR tooltips when an internal label cannot fit.
+
+The 12-month calendar window and real amounts are unchanged. Browser validation
+checks paired-column geometry, stack order, negative values below zero, month
+selection and cohort detail, with desktop/mobile captures and no JavaScript
+errors. A separate chart capture uses the actual BODEFM aggregate response for
+November 2025–October 2026; that private response and screenshot remain outside Git.
+
 The six fields supplied in the mission resolved successfully in a read-only
 `TOPN(0, SELECTCOLUMNS(...))` model query:
 

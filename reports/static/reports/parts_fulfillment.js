@@ -108,29 +108,50 @@
   }
 
   function renderChart(series) {
-    const width=1200,height=425,left=85,right=25,top=42,bottom=70,plotW=width-left-right,plotH=height-top-bottom;
+    const width=1200,height=475,left=90,right=25,top=34,bottom=64,plotW=width-left-right,plotH=height-top-bottom;
+    const stackOrder=['older','last','current','unallocated','future'];
     let low=0,high=0;
     series.forEach(r=>{const pos=cohorts.reduce((s,c)=>s+Math.max(number(r[c])||0,0),0),neg=cohorts.reduce((s,c)=>s+Math.min(number(r[c])||0,0),0);high=Math.max(high,pos,number(r.orders)||0);low=Math.min(low,neg,number(r.orders)||0);});
     if(high===low){high=1;}
-    const span=high-low;high+=span*.12;if(low<0)low-=span*.08;
+    const unit=Math.max(high,Math.abs(low))>=1e6?1e6:Math.max(high,Math.abs(low))>=1e3?1e3:1;
+    const suffix=unit===1e6?'M':unit===1e3?'K':'€';
+    const span=high-low,rawStep=span/5,power=10**Math.floor(Math.log10(rawStep));
+    const step=[1,2,2.5,5,10].find(n=>n*power>=rawStep)*power;
+    high=Math.ceil((high+span*.06)/step)*step;
+    low=low<0?Math.floor((low-span*.04)/step)*step:0;
     const y=n=>top+(high-n)/(high-low)*plotH;
-    const zero=y(0),groupW=plotW/series.length,barW=Math.min(42,groupW*.29),gap=Math.min(8,groupW*.08);
-    const axis=n=>compact(n);
-    let svg=`<svg viewBox="0 0 ${width} ${height}" role="group" aria-labelledby="pf-chart-title pf-chart-desc"><title id="pf-chart-title">Orders vs. Sales Trend</title><desc id="pf-chart-desc">Two columns for every available month: orders, then accounting sales stacked by order cohort. Negative values extend below zero. Labels select months; segments open detail.</desc>`;
-    for(let i=0;i<=4;i++){const value=low+(high-low)*i/4,py=y(value);svg+=`<line x1="${left}" x2="${width-right}" y1="${py}" y2="${py}" stroke="#e3eaf3"/><text x="${left-12}" y="${py+4}" text-anchor="end" font-size="12" fill="#65788e">${esc(axis(value))}</text>`;}
-    svg+=`<line x1="${left}" x2="${width-right}" y1="${zero}" y2="${zero}" stroke="#9bafc4"/>`;
-    const rect=(x,value,base,color,attrs,title)=>{const a=y(base),b=y(base+value),h=Math.max(Math.abs(a-b),1);return `<rect x="${x}" y="${Math.min(a,b)}" width="${barW}" height="${h}" fill="${color}" rx="2" tabindex="0" role="button" ${attrs} aria-label="${esc(title)}"><title>${esc(title)}</title></rect>`;};
+    const zero=y(0),groupW=plotW/series.length,barW=Math.min(80,groupW*.37),gap=Math.min(8,groupW*.055);
+    const digits=barW>=55?1:0;
+    const barNumber=n=>{
+      if(n!==0&&Math.abs(n)<unit/100)return compact(n);
+      const precision=Math.abs(n/unit)<.1?2:Math.abs(n/unit)<1?1:digits;
+      return `${new Intl.NumberFormat(locale,{maximumFractionDigits:precision}).format(n/unit)} ${suffix}`;
+    };
+    const axis=new Intl.NumberFormat(locale,{maximumFractionDigits:Math.max(0,-Math.floor(Math.log10(step/unit)))});
+    const labelSize=series.length>9?12:16,segmentSize=barW>=55?17:12;
+    let svg=`<svg viewBox="0 0 ${width} ${height}" role="group" aria-labelledby="pf-chart-title pf-chart-desc"><title id="pf-chart-title">Orders vs. Sales Trend</title><desc id="pf-chart-desc">Two columns for every available month: blue new orders on the left; accounting sales stacked by order cohort on the right. Older orders are red at the bottom, last month is yellow, and current month is green. Negative values extend below zero. Labels select months; segments open detail. Exact EUR values are available on each bar.</desc><defs><linearGradient id="pf-orders-gradient" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#005B9F"/><stop offset="1" stop-color="#08477A"/></linearGradient></defs>`;
+    for(let i=0;i<=Math.round((high-low)/step);i++){const value=low+step*i,py=y(value);svg+=`<line x1="${left}" x2="${width-right}" y1="${py}" y2="${py}" class="pf-grid-line"/><text x="${left-13}" y="${py+5}" text-anchor="end" class="pf-axis-tick">${esc(axis.format(value/unit))}</text>`;}
+    svg+=`<text transform="translate(24 ${(top+height-bottom)/2}) rotate(-90)" text-anchor="middle" class="pf-axis-title">Value (${suffix==='€'?'EUR':suffix+'€'})</text><line x1="${left}" x2="${left}" y1="${top}" y2="${height-bottom}" class="pf-axis-line"/><line x1="${left}" x2="${width-right}" y1="${zero}" y2="${zero}" class="pf-axis-line"/>`;
+    const rect=(x,value,base,color,attrs,title,rounded=false)=>{const a=y(base),b=y(base+value),h=Math.abs(a-b);return `<rect x="${x}" y="${Math.min(a,b)}" width="${barW}" height="${h}" fill="${color}" rx="${rounded?5:0}" tabindex="0" role="button" ${attrs} aria-label="${esc(title)}"><title>${esc(title)}</title></rect>`;};
     series.forEach((r,i)=>{
       const center=left+groupW*(i+.5),xOrder=center-gap/2-barW,xSales=center+gap/2;
       const order=number(r.orders),month=r.month;
-      if(order!==null){svg+=rect(xOrder,order,0,colors.orders,`data-chart-orders="${month}"`,`${monthLabel(month)}, Order Intake: ${eur(order)}. Order details unavailable.`);svg+=`<text x="${xOrder+barW/2}" y="${order>=0?y(order)-9:y(order)+17}" text-anchor="middle" font-weight="700" font-size="12" fill="#16446e">${esc(compact(order))}</text>`;}
+      if(order!==null){svg+=rect(xOrder,order,0,'url(#pf-orders-gradient)',`data-chart-orders="${month}"`,`${monthLabel(month)}, Order Intake: ${eur(order)}. Order details unavailable.`,true);svg+=`<text x="${xOrder+barW/2}" y="${order>=0?y(order)-10:y(order)+19}" text-anchor="middle" class="pf-bar-total" font-size="${labelSize}">${esc(barNumber(order))}</text>`;}
       let pos=0,neg=0;
-      cohorts.forEach(c=>{const n=number(r[c]);if(n===null||n===0)return;const base=n>=0?pos:neg;svg+=rect(xSales,n,base,colors[c],`data-chart-cohort="${c}" data-chart-month="${month}"`,`${monthLabel(month)}, ${labels[c]}: ${eur(n)}. Open details.`);const h=Math.abs(y(base+n)-y(base));if(h>26&&barW>=32)svg+=`<text pointer-events="none" x="${xSales+barW/2}" y="${(y(base)+y(base+n))/2+4}" text-anchor="middle" font-weight="700" font-size="10" fill="${c==='last'?'#152b42':'white'}">${esc(compact(n))}</text>`;if(n>=0)pos+=n;else neg+=n;});
-      if(cohorts.every(c=>number(r[c])!==null))svg+=`<text x="${xSales+barW/2}" y="${y(pos)-9}" text-anchor="middle" font-weight="700" font-size="12" fill="#16334d"><title>Accounting sales total: ${esc(eur(r.sales))}</title>${esc(compact(r.sales))}${neg<0?' net':''}</text>`;
-      svg+=`<text x="${center}" y="${height-26}" text-anchor="middle" fill="#405871" font-size="13" tabindex="0" role="button" data-select-month="${month}" aria-label="Select ${esc(monthLabel(month))}">${esc(monthLabel(month))}</text>`;
+      stackOrder.forEach(c=>{
+        const n=number(r[c]);if(n===null||n===0)return;
+        const base=n>=0?pos:neg;
+        svg+=rect(xSales,n,base,colors[c],`data-chart-cohort="${c}" data-chart-month="${month}"`,`${monthLabel(month)}, ${labels[c]}: ${eur(n)}. Open details.`);
+        const h=Math.abs(y(base+n)-y(base)),text=barNumber(n),fontSize=Math.min(segmentSize,Math.floor(h-4));
+        if(fontSize>=11&&barW>=30)svg+=`<text pointer-events="none" x="${xSales+barW/2}" y="${(y(base)+y(base+n))/2}" dy=".35em" text-anchor="middle" class="pf-segment-value" font-size="${fontSize}" fill="${c==='last'?'#13233b':'white'}">${esc(text)}</text>`;
+        if(n>=0)pos+=n;else neg+=n;
+      });
+      if(cohorts.every(c=>number(r[c])!==null))svg+=`<text x="${xSales+barW/2}" y="${y(pos)-10}" text-anchor="middle" class="pf-bar-total" font-size="${labelSize}"><title>Accounting sales total: ${esc(eur(r.sales))}</title>${esc(barNumber(Number(r.sales)))}${neg<0?' net':''}</text>`;
+      svg+=`<text x="${center}" y="${height-27}" text-anchor="middle" class="pf-month-tick" tabindex="0" role="button" data-select-month="${month}" aria-label="Select ${esc(monthLabel(month))}">${esc(monthLabel(month))}</text>`;
     });
     svg+='</svg>';$('[data-chart]').innerHTML=svg;
-    $('[data-chart-legend]').innerHTML=Object.keys(labels).map(c=>`<span><i class="pf-dot" style="--cohort-color:${colors[c]}"></i>${labels[c]}</span>`).join('');
+    const legend=['orders',...cohorts.filter(c=>!['unallocated','future'].includes(c)||series.some(r=>number(r[c])!==null&&number(r[c])!==0))];
+    $('[data-chart-legend]').innerHTML=legend.map(c=>`<span><i class="pf-dot" style="--cohort-color:${colors[c]}"></i>${c==='orders'?labels[c]:'Sales — '+labels[c]}</span>`).join('');
   }
 
   function openOrders(month=state.data?.selected_month) {

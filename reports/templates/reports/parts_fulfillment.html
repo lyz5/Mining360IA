@@ -16,6 +16,7 @@
   <symbol id="pf-target" viewBox="0 0 32 32"><circle cx="15" cy="17" r="12"/><circle cx="15" cy="17" r="6"/><path d="m15 17 14-14M23 3v6h6"/></symbol>
   <symbol id="pf-gauge" viewBox="0 0 32 32"><path d="M5 25a14 14 0 1 1 22 0M16 5v3M5 16h3M24 16h3M16 21l8-10"/><circle cx="16" cy="21" r="2"/></symbol>
   <symbol id="pf-layers" viewBox="0 0 32 32"><path d="m16 2 14 8-14 8L2 10zm-14 15 14 8 14-8M2 24l14 8 14-8"/></symbol>
+  <symbol id="pf-bars" viewBox="0 0 40 40"><path d="M2 25h8v13H2zm14-12h8v25h-8zM30 2h8v36h-8z"/></symbol>
 </defs></svg>
 <main class="app-shell pf-shell" data-parts-fulfillment data-number-locale="{{ number_locale|default:'en-GB' }}"
  data-summary-url="{% url 'parts-fulfillment-summary' %}" data-details-url="{% url 'parts-fulfillment-details' %}"
@@ -42,7 +43,7 @@
     </section>
     <p class="pf-realization-note" data-realization-note></p>
     <section class="pf-card pf-trend" aria-labelledby="pf-trend-title">
-      <header><div><h2 id="pf-trend-title">Orders vs. Sales Trend</h2><p>New Parts Orders and Accounting Sales by Order Cohort</p></div><span data-trend-period></span></header>
+      <header><div class="pf-trend-heading"><svg class="pf-trend-icon" aria-hidden="true"><use href="#pf-bars"/></svg><div><h2 id="pf-trend-title">Orders vs. Sales Trend</h2><p>New Parts Orders and Accounting Sales by Order Cohort</p></div></div><span data-trend-period></span></header>
       <div class="pf-chart-scroll"><div data-chart class="pf-chart"></div></div>
       <div class="pf-chart-legend" data-chart-legend></div>
       <p class="pf-chart-help">Select a month label to update the KPIs. Select a sales segment to view its accounting detail. Credits remain signed; older orders do not necessarily indicate late delivery.</p>

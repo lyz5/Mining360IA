@@ -88,6 +88,20 @@ def main():
             assert page.locator('[data-chart] svg').count()==1
             assert page.locator('[data-chart-orders]').count()==6
             assert page.locator('[data-chart-cohort]').count()==24 # zero Future Order omitted
+            # Every month has one order column and one shared sales stack, in the
+            # reference's bottom-to-top order: red, yellow, green.
+            bars=page.locator('[data-chart]').evaluate('''node => {
+                const sales=[...node.querySelectorAll('[data-chart-month="2026-10"]')];
+                const byCohort=Object.fromEntries(sales.map(n=>[n.dataset.chartCohort,{x:+n.getAttribute('x'),y:+n.getAttribute('y'),h:+n.getAttribute('height')}]));
+                const order=node.querySelector('[data-chart-orders="2026-10"]');
+                return {cohorts:byCohort,orderX:+order.getAttribute('x'),orderWidth:+order.getAttribute('width')};
+            }''')
+            assert len({r['x'] for r in bars['cohorts'].values()})==1
+            assert bars['orderX']+bars['orderWidth'] < bars['cohorts']['current']['x']
+            assert bars['cohorts']['current']['y'] < bars['cohorts']['last']['y'] < bars['cohorts']['older']['y']
+            assert bars['orderWidth']>50
+            assert 'Value (M€)' in page.locator('[data-chart]').inner_text()
+            assert 'Future Order' not in page.locator('[data-chart-legend]').inner_text()
             assert page.locator('[data-realization]').inner_text()=='N/A'
             assert page.locator('main').bounding_box()['x'] >= page.locator('.app-nav').bounding_box()['width']
             for month,bars in [('2026-08',4),('2026-09',5),('2026-10',6)]:
@@ -118,10 +132,13 @@ def main():
             page.screenshot(path=str(out/'mobile-fixtures.png'),full_page=True)
             assert page.evaluate('document.documentElement.scrollWidth <= 390')
             negative=dict(fixture)
-            negative['kpis']={**fixture['kpis'],'last':'-100','future':'100','reconciliation':{'status':'warning','label':'Data quality warning','difference':'5'}}
+            negative['kpis']={**fixture['kpis'],'orders':'75','sales':'75','current':'100','last':'-30','older':'0','unallocated':'0','future':'5','reconciliation':{'status':'reconciled','label':'Reconciled','difference':'0'}}
+            negative['series']=[negative['kpis']]
             original=fixture
             fixture=negative
             page.locator('[data-refresh]').click();page.locator('.pf-signed-table').wait_for()
+            assert page.locator('[data-chart-cohort="last"]').evaluate('n => +n.getAttribute("y") >= +n.ownerSVGElement.querySelectorAll(".pf-axis-line")[1].getAttribute("y1")')
+            assert 'Future Order' in page.locator('[data-chart-legend]').inner_text()
             fixture=original
             mode['value']='empty';page.locator('[data-refresh]').click();page.locator('[data-empty]').wait_for(state='visible')
             assert page.locator('[data-content]').is_hidden()
@@ -140,6 +157,9 @@ def main():
                 page.wait_for_timeout(350)
                 page.reload()
                 page.locator('[data-content]' if live.get('ready') and not live.get('empty') else '[data-error]').wait_for(state='visible')
+                if live.get('ready') and not live.get('empty'):
+                    assert page.locator('[data-chart-orders]').count()==len(live['series'])
+                    page.locator('.pf-trend').screenshot(path=str(out/'chart-source-response.png'))
                 page.screenshot(path=str(out/'source-response.png'),full_page=True)
             browser.close()
         if errors:
