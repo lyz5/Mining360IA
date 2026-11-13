@@ -231,7 +231,11 @@ preserving the server's existing downtime import ordering in `reports/urls.py`.
 
 `deploy_parts_fulfillment.ps1` accepts a commit-specific manifest under
 `C:\Mining360\control\parts-fulfillment-<commit8>\manifest.json`. It allowlists
-eleven app files and two matching shared-static files. It verifies before/after
+eleven app files, two matching shared-static files, their two hashed copies and
+the static manifest. The manifest update preserves every existing mapping and
+adds only these two assets; generated names and the manifest hash follow Django's
+ManifestStaticFilesStorage algorithm. This is required by the production
+CompressedManifestStaticFilesStorage backend. It verifies before/after
 hashes, Python syntax, host/SSH, disk capacity and the protected Revenue service
 hash; backs up all original files and records absence of newly introduced files;
 restarts the existing managed runtime and validates application/database health.

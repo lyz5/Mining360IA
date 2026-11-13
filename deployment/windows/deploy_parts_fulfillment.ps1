@@ -23,13 +23,23 @@ $allowed = @(
  'app|reports/templates/reports/business_command_center_v2.html',
  'static|reports/parts_fulfillment.css','static|reports/parts_fulfillment.js'
 )
+$hashedAssets=@($m.files|Where-Object {$_.root -eq 'static' -and $_.path -match '^reports/parts_fulfillment\.[0-9a-f]{12}\.(css|js)$'})
+if($hashedAssets.Count -ne 2){throw 'Two hashed static assets are required.'}
+$allowed+=@('static|staticfiles.json')
+foreach($f in $hashedAssets){$allowed+=('static|'+$f.path)}
 $seen=@()
 if ($m.files.Count -ne $allowed.Count) { throw 'Unexpected package size.' }
 foreach($f in $m.files){
  $key=$f.root+'|'+$f.path
  if($key -notin $allowed -or $key -in $seen){throw 'Unexpected or duplicate deployment target.'};$seen+=$key
  if($f.sha256 -notmatch '^[0-9A-Fa-f]{64}$'){throw 'Invalid file hash.'}
- if($f.source -ne $f.path -and -not($f.root -eq 'static' -and $f.source -eq ('reports/static/'+$f.path))){throw 'Unexpected source mapping.'}
+ if($f.root -eq 'app'){
+  if($f.source -ne $f.path){throw 'Unexpected app source mapping.'}
+ }elseif($f.path -eq 'staticfiles.json'){
+  if($f.source -ne 'generated/staticfiles.json'){throw 'Unexpected manifest source mapping.'}
+ }elseif($f.path -match '^reports/parts_fulfillment(?:\.[0-9a-f]{12})?\.(css|js)$'){
+  if($f.source -ne ('reports/static/reports/parts_fulfillment.'+$Matches[1])){throw 'Unexpected asset source mapping.'}
+ }else{throw 'Unexpected static target.'}
 }
 $changed=$false
 $backedUp=$false
