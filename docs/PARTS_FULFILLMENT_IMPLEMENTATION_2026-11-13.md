@@ -137,11 +137,10 @@ Successful October 2026 source responses matched the reference at the cent:
 - Future Order returned BLANK in the valid October measure query.
 - Reconciliation Difference returned approximately 0.00000000675, rounding to 0.00.
 
-The complete monthly query, October Order Intake/total CA/2+ Months and a real
-detail reconciliation could **not** all be validated because the source did not
-return a complete successful result. The page therefore shows an explicit source
-unavailable state in the observed local environment. It does not display the
-acceptance reference as live data.
+During the initial implementation, the complete monthly query and real detail
+reconciliation could not all be validated. Source failures were displayed as
+unavailable; acceptance references were never substituted. The subsequent BODEFM
+connection and acceptance results are recorded below and in the release receipt.
 
 Measure-expression metadata was unavailable through the attempted INFO queries;
 the XMLA metadata path also lacked the installed `clr` dependency. In particular
@@ -169,9 +168,9 @@ scope and tax comparability still require independent confirmation.
 
 Configuration/validation remaining after this source check:
 
-1. Verify the corrected code through the authenticated deployed summary and detail
-   APIs. Local TLS failures were observed during earlier probes; certificate
-   verification remains enabled. BODEFM's configured flow returned the full query.
+1. Monitor source reliability. The authenticated BODEFM summary and tested detail
+   APIs now return HTTP 200 and reconcile. Local TLS failures occurred during
+   earlier probes; certificate verification remains enabled.
 2. Make measure definitions accessible through the existing approved metadata
    tooling and confirm all eight exact names, cohort labels and order-date logic.
 3. Independently confirm Order Intake and Current Month have comparable EUR,
@@ -208,7 +207,9 @@ promoted. The private evidence JSON contains business data and must stay out of 
   are marked **UI TEST FIXTURES — NOT LIVE SOURCE DATA**.
 - `.runlogs/parts-fulfillment/desktop-fixtures.png` and `mobile-fixtures.png`:
   reviewed layout captures; `source-response.png`: genuine saved source error state.
-- No uncached complete-source timing or live financial approval is claimed.
+- BODEFM authenticated live summary and four detail contexts now pass with
+  reconciled source totals. No actual browser timing or independent approval of
+  Order Intake tax/scope comparability is claimed.
 
 Reproduce:
 
