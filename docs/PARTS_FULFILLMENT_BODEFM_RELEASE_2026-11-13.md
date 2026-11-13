@@ -12,17 +12,19 @@ remaining source-query limitations. The page is installed at:
 - Verified model measure name: `6209b0bb56c13256ccf4142803c8000f7962141e`.
 - Paginated live details:
   `a030a523364ef1dc7e48a428a5688a28455d13bd`.
-- Final installed code, including the reference trend styling:
+- Reference trend styling:
   `9d5978264c92fb9d30bad84c9020a74afd50a2ee`.
+- Final installed code, removing the performance strip at the user's request:
+  `2534b36ecacd31722ce9c7b4ed8698fbc5491c6d`.
 - Git branch: `feature/parts-fulfillment-20261113`, pushed to origin.
 - Latest verified backup:
-  `D:\Mining360Backups\PartsFulfillment_20261113_143537_9d597826`.
+  `D:\Mining360Backups\PartsFulfillment_20261113_152522_2534b36e`.
 - Initial feature backup:
   `D:\Mining360Backups\PartsFulfillment_20261113_130327_f1f94a1a`.
 - Final staged manifest:
-  `C:\Mining360\control\parts-fulfillment-9d597826\manifest.json`.
+  `C:\Mining360\control\parts-fulfillment-2534b36e\manifest.json`.
 - Deployment log:
-  `C:\Mining360\logs\parts-fulfillment-9d597826.log`.
+  `C:\Mining360\logs\parts-fulfillment-2534b36e.log`.
 
 The first installation exposed a production rendering error: the two new assets
 were physically served but absent from the production static manifest. The
@@ -48,8 +50,8 @@ reviewing current hashes and stopping the managed runtime. Both scripts support
 - Anonymous new-page request: HTTP 302 to authentication.
 - Authenticated new-page request: HTTP 200; expected page title present.
 - Existing Business Overview: HTTP 200; new navigation link present.
-- Rendered CSS `parts_fulfillment.e42389229784.css`: HTTP 200.
-- Rendered JavaScript `parts_fulfillment.eb452cc7faa5.js`: HTTP 200.
+- Rendered CSS `parts_fulfillment.11dba1f988fc.css`: HTTP 200.
+- Rendered JavaScript `parts_fulfillment.82256f1cd1b2.js`: HTTP 200.
 - The authenticated check used the existing web account linked by the platform
   directory profile to the authorized Windows identity. No other administrator
   was impersonated. The temporary validation session was removed afterwards.
@@ -127,3 +129,14 @@ New assets use Django's verified content-hash manifest, preserving the other
 `parts_fulfillment.eb452cc7faa5.js`. Old hashed assets remain available for
 existing browser caches and rollback. Source queries, permissions, flow settings
 and financial definitions were not changed by this visual follow-up.
+
+## Performance strip removed
+
+The user requested removal of the three performance indicators and their
+explanatory sentence. The template and their JavaScript bindings were removed;
+the chart now follows the top cards with normal spacing. Source measures and
+totals are unchanged. Browser checks passed without JavaScript errors.
+
+Authenticated BODEFM checks confirmed the strip is absent, the trend is present,
+and the page, assets, summary and tested detail APIs return HTTP 200. Financial
+controls remain reconciled. The 207 static mappings retain the new login assets.
