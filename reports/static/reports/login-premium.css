@@ -28,6 +28,7 @@
 .login-scene::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 35%, transparent 35%, #04152a22 100%); pointer-events: none; }
 .login-experience .login-shell { position: relative; z-index: 1; width: min(704px,100%); }
 .login-experience .login-panel {
+    position: relative;
     display: grid;
     gap: 34px;
     padding: 55px 64px 39px;
@@ -41,6 +42,9 @@
     animation: login-arrive .65s cubic-bezier(.2,.75,.3,1) .08s both;
 }
 .login-experience .login-panel::before {
+    content: "";
+    position: absolute;
+    transform: translateX(-50%);
     top: 0;
     left: 50%;
     width: 132px;
@@ -50,7 +54,7 @@
 }
 .login-experience .login-brand { display: flex; justify-content: center; align-items: center; gap: 14px; flex-wrap: nowrap; color: var(--login-navy); font-size: 26px; font-weight: 850; letter-spacing: -.045em; }
 .login-experience .login-mark { width: 54px; height: 54px; flex: none; border-radius: 14px; background: linear-gradient(145deg,#ffdc29,#ffcc00); color: var(--login-navy); font-size: 27px; box-shadow: 0 7px 20px #e9b40026, inset 0 1px 0 #fff5; }
-.login-experience .login-brand-divider { height: 24px; flex: none; background: #8796ad66; }
+.login-experience .login-brand-divider { display: block; width: 1px; height: 24px; flex: none; background: #8796ad66; }
 .login-experience .login-brand .eyebrow { color: #62718a; font-size: 12px; letter-spacing: .19em; font-weight: 750; white-space: nowrap; }
 .login-experience .login-panel-head { display: block; text-align: center; }
 .login-experience .login-panel-head h1 { color: var(--login-navy); font-size: clamp(40px,4.4vw,64px); font-weight: 820; letter-spacing: -.055em; line-height: 1.08; margin: 0; }
@@ -81,12 +85,12 @@
 .login-experience .windows-login__privacy { color: #58677c; line-height: 1.5; }
 .login-experience .windows-login__privacy { text-align: center; font-size: 11px; margin: 0; }
 .login-experience .login-messages { padding: 13px 16px; border: 1px solid #e6bd49; background: #fff4d7; color: #684c05; border-radius: 11px; line-height: 1.5; }
-.login-experience .login-security { display: grid; gap: 12px; border: 0; margin: 0; padding: 0; color: #61718a; font-size: 11px; font-weight: 700; letter-spacing: .23em; text-align: center; }
+.login-experience .login-security { display: grid; gap: 12px; border: 0; margin: 0; padding: 0; color: #61718a; font-size: 11px; font-weight: 700; letter-spacing: .23em; text-align: center; text-transform: uppercase; }
 .login-security-seal { display: flex; align-items: center; justify-content: center; gap: 18px; }
 .login-security-seal::before,
 .login-security-seal::after { content: ""; flex: 1; max-width: 190px; height: 1px; background: linear-gradient(90deg,transparent,#a6b2c56b); }
 .login-security-seal::after { transform: rotate(180deg); }
-.login-experience .login-security svg { width: 29px; height: 29px; stroke: #6d7f98; stroke-width: 1.7; }
+.login-experience .login-security svg { width: 29px; height: 29px; fill: none; stroke: #6d7f98; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .login-experience .login-panel .button.secondary { min-height: 54px; border-color: #bdc8d5; background: #ffffffb8; color: #183650; box-shadow: none; font-size: 15px; }
 .login-experience .login-panel .button.secondary:hover { background: #fff; }
 .login-experience .login-divider { font-size: 11px; color: #5d6e85; }
