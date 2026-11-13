@@ -1,6 +1,7 @@
 from django.urls import path
 from codex_chatbot import legacy_routes
 
+from . import downtime_checking_views
 from . import views
 from . import powerbi_interaction_views
 from . import downtime_explorer_views
@@ -18,8 +19,8 @@ from . import fleet_inventory_views
 from . import chat_suggestion_views
 from . import business_mapping_views
 from . import business_review_views
+from . import parts_fulfillment_views
 from . import reconciliation_views
-from . import downtime_checking_views
 
 
 urlpatterns = [
@@ -89,6 +90,10 @@ urlpatterns = [
     path("api/business-mapping/published/", business_mapping_views.published_mapping_api, name="business-mapping-published-api"),
     path("business-review/", business_review_views.business_review_landing, name="business-review"),
     path("business-review/command-center/", business_review_views.business_command_center, name="business-command-center"),
+    path("business-review/parts-fulfillment/", parts_fulfillment_views.page, name="parts-fulfillment"),
+    path("api/business-review/parts-fulfillment/summary/", parts_fulfillment_views.summary, name="parts-fulfillment-summary"),
+    path("api/business-review/parts-fulfillment/details/", parts_fulfillment_views.details, name="parts-fulfillment-details"),
+    path("api/business-review/parts-fulfillment/export/", parts_fulfillment_views.export, name="parts-fulfillment-export"),
     path("business-review/control-tower/", business_review_views.business_review, name="business-review-control-tower"),
     path("invoice-tracking/", reconciliation_views.invoice_tracking, name="invoice-tracking"),
     path("api/invoice-tracking/overview/", reconciliation_views.overview_api, name="invoice-tracking-overview-api"),

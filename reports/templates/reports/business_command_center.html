@@ -27,6 +27,7 @@
             <p>Executive Revenue Intelligence across Machines, Parts, Service and Rental.</p>
         </div>
         <div class="bcc-header-actions">
+            {% include "reports/includes/parts_fulfillment_link.html" %}
             <button class="bcc-icon-btn" type="button" data-refresh title="Refresh view" aria-label="Refresh view">&#8635;</button>
             {% if features.presentation %}<button class="bcc-button secondary" type="button" data-presentation>Presentation</button>{% endif %}
         </div>
