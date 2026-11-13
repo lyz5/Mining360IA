@@ -35,11 +35,11 @@ the registered workspace. No ID, endpoint or credential has been invented.
 | What We Sold This Month | `[CA Comptable EUR]` |
 | Sales from New Orders / Current Month | `[CA Current Month]` |
 | Last Month | `[CA Last Month]` |
-| 2+ Months | `[CA 2+ Months]` |
+| 2+ Months | `[CA +2 Months]` (verified model name) |
 | Unallocated | `[CA Unallocated]` |
 | Future Order | `[CA Future Order]` |
 | Source reconciliation | `[CA Reconciliation Difference]` |
-| Sales from Older Orders | `[CA Last Month] + [CA 2+ Months]` |
+| Sales from Older Orders | `[CA Last Month] + [CA +2 Months]` |
 | Same-Month Sales Realization | `[CA Current Month] / [Order Intake EUR]`, only after comparability is confirmed |
 
 Each monthly context filters `'Date'[Date]`. The existing Order Intake measure is
@@ -119,7 +119,7 @@ empty state and sanitized source errors prevent an indefinite loading state.
 The flow transport retries one transient failure with bounded timeouts and keeps
 TLS verification enabled. No secret or signed flow URL is sent to the frontend.
 
-## Observed source limitations — not an end-to-end financial sign-off
+## Initial source limitations — not an end-to-end financial sign-off
 
 The live catalogue was accessible, while direct ExecuteQueries returned HTTP 401
 `PowerBINotAuthorizedException`. The configured Mine Logistics flow executed
@@ -146,11 +146,29 @@ the underlying Order Intake table, date activation, tax basis and MI/Parts scope
 have not been independently verified from its definition. The expected scope is
 labelled as expected. Do not certify these merely because some cohorts reconcile.
 
-Configuration/validation still required:
+### Follow-up: configured flow and verified measure name
 
-1. Restore reliable, TLS-valid access to the **existing** Mine Logistics query
-   flow, or authorize ExecuteQueries for the already configured Power BI identity.
-   Investigate the observed 401/502/TLS results; do not disable certificate checks.
+After deployment, a read-only comparison found that BODEFM had no dedicated
+Mine Logistics flow configured, although the local encrypted integration held
+the exact workflow and signature supplied by the user. The missing dedicated
+setting was added on BODEFM after a successful read-only connection probe, with
+an encrypted backup and all other connection values preserved. No model, role,
+or generic Revenue connection was changed.
+
+The local PBIX's report metadata identifies the older-order measure as
+`[CA +2 Months]`, rather than the mission's `[CA 2+ Months]`. The latter failed
+while the other seven measures succeeded independently. A corrected full
+monthly query through the configured BODEFM flow returned HTTP 200 and 23 months.
+October CA and its cohorts matched the reference to the cent and reconciled;
+Order Intake was EUR 94,157,590.12, rather than the older rounded 124.49 M reference.
+This current source value is not overridden. Underlying Order Intake definition,
+scope and tax comparability still require independent confirmation.
+
+Configuration/validation remaining after this source check:
+
+1. Verify the corrected code through the authenticated deployed summary and detail
+   APIs. Local TLS failures were observed during earlier probes; certificate
+   verification remains enabled. BODEFM's configured flow returned the full query.
 2. Make measure definitions accessible through the existing approved metadata
    tooling and confirm all eight exact names, cohort labels and order-date logic.
 3. Independently confirm Order Intake and Current Month have comparable EUR,

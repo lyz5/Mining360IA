@@ -20,7 +20,7 @@ from .models import PowerBIReport, ReportingReportPreference
 
 MEASURES = {
     'orders': 'Order Intake EUR', 'sales': 'CA Comptable EUR',
-    'current': 'CA Current Month', 'last': 'CA Last Month', 'older': 'CA 2+ Months',
+    'current': 'CA Current Month', 'last': 'CA Last Month', 'older': 'CA +2 Months',
     'unallocated': 'CA Unallocated', 'future': 'CA Future Order',
     'difference': 'CA Reconciliation Difference',
 }
