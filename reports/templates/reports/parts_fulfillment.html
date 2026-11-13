@@ -13,9 +13,6 @@
 <svg class="pf-sprite" aria-hidden="true"><defs>
   <symbol id="pf-cart" viewBox="0 0 32 32"><path d="M3 5h4l4 16h14l4-12H9M13 27h.01M24 27h.01"/></symbol>
   <symbol id="pf-box" viewBox="0 0 32 32"><path d="m16 2 13 7v15l-13 7-13-7V9zm-13 7 13 7 13-7M16 16v15M9 5l13 7v6"/></symbol>
-  <symbol id="pf-target" viewBox="0 0 32 32"><circle cx="15" cy="17" r="12"/><circle cx="15" cy="17" r="6"/><path d="m15 17 14-14M23 3v6h6"/></symbol>
-  <symbol id="pf-gauge" viewBox="0 0 32 32"><path d="M5 25a14 14 0 1 1 22 0M16 5v3M5 16h3M24 16h3M16 21l8-10"/><circle cx="16" cy="21" r="2"/></symbol>
-  <symbol id="pf-layers" viewBox="0 0 32 32"><path d="m16 2 14 8-14 8L2 10zm-14 15 14 8 14-8M2 24l14 8 14-8"/></symbol>
   <symbol id="pf-bars" viewBox="0 0 40 40"><path d="M2 25h8v13H2zm14-12h8v25h-8zM30 2h8v36h-8z"/></symbol>
 </defs></svg>
 <main class="app-shell pf-shell" data-parts-fulfillment data-number-locale="{{ number_locale|default:'en-GB' }}"
@@ -36,12 +33,6 @@
       <article class="pf-card pf-kpi"><svg class="pf-icon" aria-hidden="true"><use href="#pf-box"/></svg><div><h2>What We Sold <br>This Month</h2><button class="pf-value pf-value-button" type="button" data-open-cohort="" data-kpi="sales">—</button><div class="pf-change" data-change="sales"></div></div></article>
       <article class="pf-card pf-origin"><h2>Where This Month’s Sales Came From</h2><p data-origin-subtitle></p><div data-breakdown></div><div class="pf-legend" data-origin-legend></div></article>
     </section>
-    <section class="pf-card pf-performance" aria-label="Sales realization">
-      <article><svg class="pf-icon" aria-hidden="true"><use href="#pf-target"/></svg><div><h2>Sales from New Orders</h2><p>Orders created this month</p></div><button class="pf-strip-value" type="button" data-open-cohort="current" data-kpi="current">—</button></article>
-      <article><svg class="pf-icon" aria-hidden="true"><use href="#pf-gauge"/></svg><div><h2>Same-Month Sales Realization</h2><p title="Share of this month’s new order value recognized as accounting sales during the same month.">Value recognized in the same month</p></div><strong class="pf-strip-value" data-realization>—</strong></article>
-      <article><svg class="pf-icon" aria-hidden="true"><use href="#pf-layers"/></svg><div><h2>Sales from Older Orders</h2><p>Last Month + 2+ Months</p></div><strong class="pf-strip-value" data-older>—</strong></article>
-    </section>
-    <p class="pf-realization-note" data-realization-note></p>
     <section class="pf-card pf-trend" aria-labelledby="pf-trend-title">
       <header><div class="pf-trend-heading"><svg class="pf-trend-icon" aria-hidden="true"><use href="#pf-bars"/></svg><div><h2 id="pf-trend-title">Orders vs. Sales Trend</h2><p>New Parts Orders and Accounting Sales by Order Cohort</p></div></div><span data-trend-period></span></header>
       <div class="pf-chart-scroll"><div data-chart class="pf-chart"></div></div>

@@ -74,10 +74,6 @@
       node.textContent=p===null?'N/A · month comparison':`${p>0?'+':''}${percent.format(p)}% vs Last Month`;
       node.title=change.reason||'Compared with the full preceding calendar month.';
     }
-    $('[data-realization]').textContent=number(data.realization_percent)===null?'N/A':`${percent.format(Number(data.realization_percent))}%`;
-    $('[data-realization]').title='Share of this month’s new order value recognized as accounting sales during the same month.';
-    $('[data-realization-note]').textContent=data.realization_note||'Value-based realization. This does not measure completed orders or prove that all parts were delivered.';
-    $('[data-older]').textContent=compact(data.older_sales);$('[data-older]').title=eur(data.older_sales);
     $('[data-period-note]').textContent=`${monthLabel(data.selected_month)} · ${data.month_to_date?'Month to date':'Calendar month'} · EUR`;
     $('[data-freshness]').textContent=data.source.coverage?`Accounting entries through ${dateLabel(data.source.coverage)} · Order coverage not supplied`:'Source coverage date not supplied';
     const refreshDate=data.source.last_refresh?new Date(data.source.last_refresh):null;

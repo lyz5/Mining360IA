@@ -102,7 +102,7 @@ def main():
             assert bars['orderWidth']>50
             assert 'Value (M€)' in page.locator('[data-chart]').inner_text()
             assert 'Future Order' not in page.locator('[data-chart-legend]').inner_text()
-            assert page.locator('[data-realization]').inner_text()=='N/A'
+            assert page.locator('.pf-performance,[data-realization-note]').count()==0
             assert page.locator('main').bounding_box()['x'] >= page.locator('.app-nav').bounding_box()['width']
             for month,bars in [('2026-08',4),('2026-09',5),('2026-10',6)]:
                 page.locator('[data-month]').select_option(month)

@@ -66,6 +66,12 @@ becomes zero. Empty months, unavailable measures and source errors are distinct.
 
 ### Trend styling follow-up
 
+The user subsequently requested removal of the entire three-indicator performance
+strip (Sales from New Orders, Same-Month Sales Realization, Sales from Older
+Orders) and its explanatory sentence. They are no longer rendered. The chart
+follows the top cards with normal spacing; source measures and API totals remain
+unchanged. JavaScript bindings to the removed elements were also removed.
+
 The trend follows the supplied reference with wider paired columns, a navy
 heading and chart icon, rounded blue order bars, totals above both columns, a
 shared labelled EUR scale with regular ticks, and larger cohort legend markers.
