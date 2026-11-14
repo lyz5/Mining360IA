@@ -145,8 +145,10 @@ def main():
             page.wait_for_timeout(250)
             assert page.locator('[data-kpi="sales"]').inner_text()==top_before
             page.locator('[data-detail-search]').fill('000123')
+            assert page.locator('[data-pf-copy="Cohort_Details"]').is_disabled()
             page.wait_for_timeout(550)
             assert any('search=000123' in r for r in requests)
+            assert page.locator('[data-pf-copy="Cohort_Details"]').is_enabled()
             with page.expect_download() as download:
                 page.locator('[data-export]').click()
             assert download.value.suggested_filename.startswith('parts-sales-')

@@ -22,7 +22,7 @@
   };
   const monthLabel = m => new Intl.DateTimeFormat(locale,{month:'short',year:'numeric'}).format(new Date(`${m}-01T12:00:00`));
   const dateLabel = d => d ? new Intl.DateTimeFormat(locale,{day:'2-digit',month:'short',year:'numeric'}).format(new Date(`${d.slice(0,10)}T12:00:00`)) : '—';
-  const state={data:null, summaryController:null,detailController:null,summaryRequest:0,detailRequest:0,detailMonth:null,cohort:'',page:1,pages:1,searchTimer:null,detailTotal:null};
+  const state={data:null, summaryController:null,detailController:null,summaryRequest:0,detailRequest:0,detailMonth:null,cohort:'',page:1,pages:1,searchTimer:null,detailTotal:null,detailSearch:''};
   const show = (selector,value) => {$(selector).hidden=!value;};
   const visualCopies=[];
   function setCopyReady(group,ready) {
@@ -46,7 +46,7 @@
     });
     const detailContext=clone.querySelector('[data-detail-context]');
     if(detailContext){
-      const search=$('[data-detail-search]').value.trim();
+      const search=state.detailSearch;
       if(search)detailContext.textContent+=` · Search: ${search}`;
     }
   }
@@ -221,6 +221,7 @@
     try{
       const data=await read(root.dataset.detailsUrl,detailParams(),controller);if(request!==state.detailRequest)return;
       state.pages=data.pages;
+      state.detailSearch=data.search||'';
       $('[data-detail-total]').textContent=`Filtered accounting total: ${eur(data.total)} · ${new Intl.NumberFormat(locale).format(data.total_rows)} rows`;
       const detailNotes={reconciled:'Detail reconciles with the source cohort measure.',warning:'Data quality warning: detail does not reconcile with the source cohort measure.',filtered:`Search subset · full cohort control: ${eur(data.control_total)}.`,unavailable:'Detail reconciliation is unavailable.'};
       $('[data-detail-status]').textContent=data.total_rows?(detailNotes[data.reconciliation]||''):'No matching accounting rows. This is an empty detail, not a source failure.';
@@ -254,7 +255,7 @@
   $('[data-detail-close]').addEventListener('click',()=>{clearTimeout(state.searchTimer);state.detailController?.abort();setCopyReady('detail',false);show('[data-detail-panel]',false);});
   $('[data-order-close]').addEventListener('click',()=>show('[data-order-note]',false));
   ['[data-detail-cohort]','[data-detail-sort]','[data-detail-direction]'].forEach(s=>$(s).addEventListener('change',()=>{state.page=1;loadDetails();}));
-  $('[data-detail-search]').addEventListener('input',()=>{clearTimeout(state.searchTimer);state.searchTimer=setTimeout(()=>{state.page=1;loadDetails();},350);});
+  $('[data-detail-search]').addEventListener('input',()=>{setCopyReady('detail',false);clearTimeout(state.searchTimer);state.searchTimer=setTimeout(()=>{state.page=1;loadDetails();},350);});
   $('[data-prev]').addEventListener('click',()=>{if(state.page>1){state.page--;loadDetails();}});$('[data-next]').addEventListener('click',()=>{if(state.page<state.pages){state.page++;loadDetails();}});
   $('[data-detail-retry]').addEventListener('click',loadDetails);$('[data-export]')?.addEventListener('click',exportDetails);
   initializeVisualCopies();loadSummary(new URLSearchParams(location.search).get('month')||'');
