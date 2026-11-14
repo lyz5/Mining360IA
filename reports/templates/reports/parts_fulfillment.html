@@ -6,6 +6,7 @@
   {% include "reports/includes/favicon.html" %}
   <title>Parts Orders &amp; Sales Fulfillment | Mining360</title>
   <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20261020-nav-icon-fix-v1">
+  <link rel="stylesheet" href="{% static 'reports/dashboard_visual_copy.css' %}?v=20261001-copy-all">
   <link rel="stylesheet" href="{% static 'reports/parts_fulfillment.css' %}?v=20261113-1">
 </head>
 <body class="pf-body">
@@ -37,26 +38,27 @@
       <header><div class="pf-trend-heading"><svg class="pf-trend-icon" aria-hidden="true"><use href="#pf-bars"/></svg><div><h2 id="pf-trend-title">Orders vs. Sales Trend</h2><p>New Parts Orders and Accounting Sales by Order Cohort</p></div></div><span data-trend-period></span></header>
       <div class="pf-chart-scroll"><div data-chart class="pf-chart"></div></div>
       <div class="pf-chart-legend" data-chart-legend></div>
-      <p class="pf-chart-help">Select a month label to update the KPIs. Select a sales segment to view its accounting detail. Credits remain signed; older orders do not necessarily indicate late delivery.</p>
+      <p class="pf-chart-help" data-export-ignore>Select a month label to update the KPIs. Select a sales segment to view its accounting detail. Credits remain signed; older orders do not necessarily indicate late delivery.</p>
     </section>
     <div class="pf-controls"><span data-reconciliation></span><span>Arithmetic reconciliation does not validate every business allocation.</span></div>
     <p class="pf-source-note" data-scope></p>
   </div>
   <section class="pf-card pf-detail" data-detail-panel hidden aria-labelledby="pf-detail-title" tabindex="-1">
-    <header><div><h2 id="pf-detail-title">Sales Cohort Details</h2><p data-detail-context></p></div><button type="button" data-detail-close aria-label="Close details">Close ×</button></header>
-    <div class="pf-detail-filters">
+    <header><div><h2 id="pf-detail-title">Sales Cohort Details</h2><p data-detail-context></p></div><button type="button" data-detail-close data-export-ignore aria-label="Close details">Close ×</button></header>
+    <div class="pf-detail-filters" data-export-ignore>
       <label>Cohort<select data-detail-cohort><option value="">All cohorts</option><option value="current">Current Month</option><option value="last">Last Month</option><option value="older">2+ Months</option><option value="unallocated">Unallocated</option><option value="future">Future Order</option></select></label>
       <label class="pf-search">Order or invoice key<input type="search" data-detail-search maxlength="100" placeholder="Search complete or partial key"></label>
       <label>Sort<select data-detail-sort><option value="accounting_date">Accounting Date</option><option value="order_date">Order Date</option><option value="amount">Accounting Sales EUR</option></select></label>
       <label>Direction<select data-detail-direction><option value="desc">Descending</option><option value="asc">Ascending</option></select></label>
       {% if can_export %}<button type="button" data-export>Export all filtered rows</button>{% endif %}
     </div>
-    <p class="pf-detail-total" data-detail-total></p><p data-detail-status role="status"></p><button type="button" data-detail-retry hidden>Retry details</button>
+    <p class="pf-detail-total" data-detail-total></p><p data-detail-status role="status"></p><button type="button" data-detail-retry data-export-ignore hidden>Retry details</button>
     <div class="pf-table-scroll"><table><thead><tr><th>Accounting Date</th><th>Order Date</th><th>Order Key</th><th>Invoice Key</th><th>Cohort</th><th class="pf-numeric">Accounting Sales EUR</th></tr></thead><tbody data-detail-rows></tbody></table></div>
-    <div class="pf-pagination"><button type="button" data-prev>← Previous</button><span data-page-label></span><button type="button" data-next>Next →</button></div>
+    <div class="pf-pagination"><button type="button" data-prev data-export-ignore>← Previous</button><span data-page-label></span><button type="button" data-next data-export-ignore>Next →</button></div>
     <p class="pf-source-note">Complete source keys are preserved. Accounting sales attributed to an order are not its initial order value. Unallocated rows remain visible without an order. Export includes the full announced filter, up to 10,000 rows.</p>
   </section>
   <section class="pf-card pf-order-note" data-order-note hidden role="status"><h2>New Parts Orders</h2><p>Order Intake is available as a model measure. A verified order-level detail source has not been exposed for this page. Accounting allocations cannot substitute for new orders.</p><button type="button" data-order-close>Close</button></section>
 </main>
+<script src="{% static 'reports/visual_export.js' %}?v=20261001-copy-all" defer></script>
 <script src="{% static 'reports/parts_fulfillment.js' %}?v=20261113-1" defer></script>
 </body></html>

@@ -3,6 +3,7 @@ import json
 import os
 import sys
 import threading
+import base64
 from pathlib import Path
 from socketserver import ThreadingMixIn
 from wsgiref.simple_server import WSGIServer, make_server, WSGIRequestHandler
@@ -58,6 +59,18 @@ def main():
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True, executable_path=r'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe')
             context = browser.new_context(viewport={'width':1440,'height':1100})
+            # Exercise the real PNG renderer and clipboard payload without
+            # overwriting the workstation user's clipboard during validation.
+            context.add_init_script('''
+                window.__visualCopies=[];
+                Object.defineProperty(navigator,'clipboard',{configurable:true,value:{write:async items=>{
+                    if(window.__denyVisualCopy)throw new DOMException('Browser test denial','NotAllowedError');
+                    const blob=await items[0].getType('image/png');
+                    const image=await createImageBitmap(blob);
+                    window.__lastVisualBlob=blob;
+                    window.__visualCopies.push({type:blob.type,size:blob.size,width:image.width,height:image.height});
+                }}});
+            ''')
             context.add_cookies([{'name':settings.SESSION_COOKIE_NAME,'value':cookie,'domain':'127.0.0.1','path':'/','httpOnly':True,'secure':False}])
             page = context.new_page()
             page.on('pageerror', lambda e: errors.append(str(e)))
@@ -103,18 +116,30 @@ def main():
             assert 'Value (M€)' in page.locator('[data-chart]').inner_text()
             assert 'Future Order' not in page.locator('[data-chart-legend]').inner_text()
             assert page.locator('.pf-performance,[data-realization-note]').count()==0
+            assert page.locator('[data-pf-copy]:visible').count()==4
             assert page.locator('main').bounding_box()['x'] >= page.locator('.app-nav').bounding_box()['width']
             for month,bars in [('2026-08',4),('2026-09',5),('2026-10',6)]:
                 page.locator('[data-month]').select_option(month)
                 page.wait_for_function('(m) => document.querySelector("[data-month]").value===m && !document.querySelector("[data-month]").disabled',arg=month)
                 assert page.locator('[data-chart-orders]').count()==bars
                 assert month in page.url
+            for name in ['New_Orders','Accounting_Sales','Sales_Origin','Orders_vs_Sales']:
+                before=page.evaluate('window.__visualCopies.length')
+                page.locator(f'[data-pf-copy="{name}"]').click()
+                page.wait_for_function('(n)=>window.__visualCopies.length===n+1',arg=before)
+                probe=page.evaluate('window.__visualCopies.at(-1)')
+                assert probe['type']=='image/png' and probe['size']>1000
+                assert probe['width']>100 and probe['height']>100
             page.evaluate("""() => {const n=document.createElement('div');n.textContent='UI TEST FIXTURES — NOT LIVE SOURCE DATA';n.style.cssText='background:#fff3bf;color:#704900;padding:10px;text-align:center;font-weight:bold';document.querySelector('main').prepend(n)}""")
             page.screenshot(path=str(out/'desktop-fixtures.png'), full_page=True)
             page.locator('[data-chart-cohort="current"]').last.click()
             page.locator('[data-detail-rows] tr').wait_for()
             assert '000001|22|01' in page.locator('[data-detail-rows]').inner_text()
             assert 'reconciles' in page.locator('[data-detail-status]').inner_text()
+            assert page.locator('[data-pf-copy]:visible').count()==5
+            before=page.evaluate('window.__visualCopies.length')
+            page.locator('[data-pf-copy="Cohort_Details"]').click()
+            page.wait_for_function('(n)=>window.__visualCopies.length===n+1',arg=before)
             top_before=page.locator('[data-kpi="sales"]').inner_text()
             page.locator('[data-detail-cohort]').select_option('unallocated')
             page.wait_for_timeout(250)
@@ -126,6 +151,14 @@ def main():
                 page.locator('[data-export]').click()
             assert download.value.suggested_filename.startswith('parts-sales-')
             page.locator('[data-detail-close]').click()
+            page.evaluate('window.__denyVisualCopy=true')
+            page.locator('[data-pf-copy="Orders_vs_Sales"]').click()
+            page.get_by_role('button',name='Download PNG',exact=True).wait_for()
+            with page.expect_download() as image_download:
+                page.get_by_role('button',name='Download PNG',exact=True).click()
+            assert '2026-10' in image_download.value.suggested_filename
+            assert image_download.value.suggested_filename.endswith('.png')
+            page.evaluate('window.__denyVisualCopy=false')
             page.set_viewport_size({'width':390,'height':844})
             page.wait_for_timeout(350)
             page.evaluate('window.scrollTo(0,0)')
@@ -138,10 +171,12 @@ def main():
             fixture=negative
             page.locator('[data-refresh]').click();page.locator('.pf-signed-table').wait_for()
             assert page.locator('[data-chart-cohort="last"]').evaluate('n => +n.getAttribute("y") >= +n.ownerSVGElement.querySelectorAll(".pf-axis-line")[1].getAttribute("y1")')
-            assert 'Future Order' in page.locator('[data-chart-legend]').inner_text()
+            assert 'Future Order' not in page.locator('[data-chart-legend]').inner_text()
+            assert page.locator('[data-chart-cohort="future"]').count()==1 # source total stays intact
             fixture=original
             mode['value']='empty';page.locator('[data-refresh]').click();page.locator('[data-empty]').wait_for(state='visible')
             assert page.locator('[data-content]').is_hidden()
+            assert page.locator('[data-pf-copy]:not([disabled])').count()==0
             assert 'No available month' in page.locator('[data-month]').inner_text()
             mode['value']='error';page.locator('[data-refresh]').click();page.locator('[data-error]').wait_for(state='visible')
             assert page.locator('[data-content]').is_hidden()
@@ -159,6 +194,15 @@ def main():
                 page.locator('[data-content]' if live.get('ready') and not live.get('empty') else '[data-error]').wait_for(state='visible')
                 if live.get('ready') and not live.get('empty'):
                     assert page.locator('[data-chart-orders]').count()==len(live['series'])
+                    before=page.evaluate('window.__visualCopies.length')
+                    page.locator('[data-pf-copy="Orders_vs_Sales"]').click()
+                    page.wait_for_function('(n)=>window.__visualCopies.length===n+1',arg=before)
+                    encoded=page.evaluate('''async()=>{
+                        const bytes=new Uint8Array(await window.__lastVisualBlob.arrayBuffer());
+                        let result='';for(let i=0;i<bytes.length;i+=0x8000)result+=String.fromCharCode(...bytes.subarray(i,i+0x8000));
+                        return btoa(result);
+                    }''')
+                    (out/'copied-chart-source.png').write_bytes(base64.b64decode(encoded))
                     page.locator('.pf-trend').screenshot(path=str(out/'chart-source-response.png'))
                 page.screenshot(path=str(out/'source-response.png'),full_page=True)
             browser.close()

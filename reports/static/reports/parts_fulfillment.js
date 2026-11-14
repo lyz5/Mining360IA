@@ -24,6 +24,56 @@
   const dateLabel = d => d ? new Intl.DateTimeFormat(locale,{day:'2-digit',month:'short',year:'numeric'}).format(new Date(`${d.slice(0,10)}T12:00:00`)) : '—';
   const state={data:null, summaryController:null,detailController:null,summaryRequest:0,detailRequest:0,detailMonth:null,cohort:'',page:1,pages:1,searchTimer:null,detailTotal:null};
   const show = (selector,value) => {$(selector).hidden=!value;};
+  const visualCopies=[];
+  function setCopyReady(group,ready) {
+    visualCopies.filter(entry=>entry.group===group).forEach(entry=>{
+      entry.target.dataset.exportReady=String(ready);
+      if(!entry.button.hasAttribute('aria-busy'))entry.button.disabled=!ready;
+      const month=group==='detail'?state.detailMonth:state.data?.selected_month;
+      entry.options.fileName=`Mining360_Parts_${entry.name}_${month||''}${group==='detail'?`_${$('[data-detail-cohort]').value||'all'}_page_${state.page}`:''}`;
+    });
+  }
+  function prepareVisualClone(clone) {
+    // The page's symbol sprite is outside each card. Inline these SVG paths so
+    // icons survive the existing shared PNG renderer's standalone SVG document.
+    clone.querySelectorAll('svg use').forEach(use=>{
+      const href=use.getAttribute('href')||use.getAttribute('xlink:href');
+      if(!href?.startsWith('#'))return;
+      const symbol=document.getElementById(href.slice(1)),svg=use.closest('svg');
+      if(!symbol||!svg)return;
+      if(symbol.hasAttribute('viewBox'))svg.setAttribute('viewBox',symbol.getAttribute('viewBox'));
+      use.replaceWith(...[...symbol.children].map(node=>node.cloneNode(true)));
+    });
+    const detailContext=clone.querySelector('[data-detail-context]');
+    if(detailContext){
+      const search=$('[data-detail-search]').value.trim();
+      if(search)detailContext.textContent+=` · Search: ${search}`;
+    }
+  }
+  function initializeVisualCopies() {
+    const exporter=window.Mining360VisualExport;
+    if(!exporter)return;
+    const visuals=[['.pf-kpi:first-child','New_Orders','summary'],['.pf-kpi:nth-child(2)','Accounting_Sales','summary'],
+      ['.pf-origin','Sales_Origin','summary'],['.pf-trend','Orders_vs_Sales','summary'],['[data-detail-panel]','Cohort_Details','detail']];
+    visuals.forEach(([selector,name,group])=>{
+      const target=$(selector);if(!target)return;
+      const button=document.createElement('button');
+      button.type='button';button.className='m360-visual-copy';button.textContent='Copy visual';
+      button.dataset.exportIgnore='true';button.dataset.pfCopy=name;button.disabled=true;
+      button.title='Copy this visual as a PNG image';
+      button.setAttribute('aria-label',`Copy ${target.querySelector('h2')?.textContent.trim()||name} as an image`);
+      target.classList.add('m360-copy-surface');target.dataset.exportReady='false';target.append(button);
+      const options={button,target,fileName:`Mining360_Parts_${name}`,background:'#ffffff',scale:2,
+        canCopy:()=>target.dataset.exportReady==='true'&&!target.closest('[hidden]')&&Boolean(target.getClientRects().length),
+        prepareClone:prepareVisualClone,
+        onFallback:()=>{
+          const notice=document.querySelector('[data-visual-export-notice]');if(!notice)return;
+          notice.classList.remove('is-error');notice.setAttribute('role','status');notice.textContent='PNG downloaded.';
+          setTimeout(()=>notice.remove(),2000);
+        }};
+      exporter.bindCopyAction(options);visualCopies.push({target,button,name,group,options});
+    });
+  }
 
   async function read(url, params, controller) {
     const timeout=setTimeout(()=>controller.abort('timeout'),60000);
@@ -37,6 +87,7 @@
   }
 
   async function loadSummary(month='') {
+    setCopyReady('summary',false);setCopyReady('detail',false);
     clearTimeout(state.searchTimer);
     state.summaryController?.abort(); state.detailController?.abort();
     const controller=new AbortController();state.summaryController=controller;
@@ -53,7 +104,7 @@
       $('[data-month]').disabled=!data.months?.length;
       if(data.empty){show('[data-empty]',true);$('[data-empty-message]').textContent=data.message;return;}
       const url=new URL(location.href);url.searchParams.set('month',data.selected_month);history.replaceState({},'',url);
-      render(data);show('[data-content]',true);
+      render(data);show('[data-content]',true);setCopyReady('summary',true);
     } catch(error) {
       if(controller.signal.aborted && controller.signal.reason!=='timeout')return;
       if(request!==state.summaryRequest)return;
@@ -146,7 +197,7 @@
       svg+=`<text x="${center}" y="${height-27}" text-anchor="middle" class="pf-month-tick" tabindex="0" role="button" data-select-month="${month}" aria-label="Select ${esc(monthLabel(month))}">${esc(monthLabel(month))}</text>`;
     });
     svg+='</svg>';$('[data-chart]').innerHTML=svg;
-    const legend=['orders',...cohorts.filter(c=>!['unallocated','future'].includes(c)||series.some(r=>number(r[c])!==null&&number(r[c])!==0))];
+    const legend=['orders',...cohorts.filter(c=>c!=='future'&&(c!=='unallocated'||series.some(r=>number(r[c])!==null&&number(r[c])!==0)))];
     $('[data-chart-legend]').innerHTML=legend.map(c=>`<span><i class="pf-dot" style="--cohort-color:${colors[c]}"></i>${c==='orders'?labels[c]:'Sales — '+labels[c]}</span>`).join('');
   }
 
@@ -162,6 +213,7 @@
   }
   function detailParams(){return new URLSearchParams({month:state.detailMonth,cohort:$('[data-detail-cohort]').value,search:$('[data-detail-search]').value,sort:$('[data-detail-sort]').value,direction:$('[data-detail-direction]').value,page:state.page});}
   async function loadDetails(){
+    setCopyReady('detail',false);
     state.detailController?.abort();const controller=new AbortController();state.detailController=controller;const request=++state.detailRequest;
     $('[data-detail-rows]').innerHTML='';$('[data-detail-status]').textContent='Loading accounting detail…';$('[data-detail-total]').textContent='';show('[data-detail-retry]',false);
     $('[data-detail-context]').textContent=`${monthLabel(state.detailMonth)} · ${labels[$('[data-detail-cohort]').value]||'All cohorts'}`;
@@ -174,6 +226,7 @@
       $('[data-detail-status]').textContent=data.total_rows?(detailNotes[data.reconciliation]||''):'No matching accounting rows. This is an empty detail, not a source failure.';
       $('[data-detail-rows]').innerHTML=data.rows.map(row=>`<tr><td>${esc(dateLabel(row.accounting_date))}</td><td>${esc(dateLabel(row.order_date))}</td><td>${esc(row.order_key||'—')}</td><td>${esc(row.invoice_key||'—')}</td><td>${esc(row.cohort||'—')}</td><td class="pf-numeric">${esc(eur(row.amount))}</td></tr>`).join('');
       $('[data-page-label]').textContent=`Page ${data.page} of ${data.pages}`;$('[data-prev]').disabled=data.page<=1;$('[data-next]').disabled=data.page>=data.pages;
+      setCopyReady('detail',true);
     }catch(error){if(controller.signal.aborted&&controller.signal.reason!=='timeout')return;if(request!==state.detailRequest)return;$('[data-detail-status]').textContent=controller.signal.reason==='timeout'?'The detail query timed out. Please retry.':error.message;show('[data-detail-retry]',true);$('[data-page-label]').textContent='';}
   }
   async function exportDetails(){
@@ -198,11 +251,11 @@
   root.addEventListener('keydown',event=>{if((event.key==='Enter'||event.key===' ')&&event.target.matches('svg [role=button]')){event.preventDefault();event.target.dispatchEvent(new MouseEvent('click',{bubbles:true}));}});
   $('[data-month]').addEventListener('change',event=>loadSummary(event.target.value));
   $('[data-refresh]').addEventListener('click',()=>loadSummary($('[data-month]').value||''));$('[data-retry]').addEventListener('click',()=>loadSummary($('[data-month]').value||''));
-  $('[data-detail-close]').addEventListener('click',()=>{clearTimeout(state.searchTimer);state.detailController?.abort();show('[data-detail-panel]',false);});
+  $('[data-detail-close]').addEventListener('click',()=>{clearTimeout(state.searchTimer);state.detailController?.abort();setCopyReady('detail',false);show('[data-detail-panel]',false);});
   $('[data-order-close]').addEventListener('click',()=>show('[data-order-note]',false));
   ['[data-detail-cohort]','[data-detail-sort]','[data-detail-direction]'].forEach(s=>$(s).addEventListener('change',()=>{state.page=1;loadDetails();}));
   $('[data-detail-search]').addEventListener('input',()=>{clearTimeout(state.searchTimer);state.searchTimer=setTimeout(()=>{state.page=1;loadDetails();},350);});
   $('[data-prev]').addEventListener('click',()=>{if(state.page>1){state.page--;loadDetails();}});$('[data-next]').addEventListener('click',()=>{if(state.page<state.pages){state.page++;loadDetails();}});
   $('[data-detail-retry]').addEventListener('click',loadDetails);$('[data-export]')?.addEventListener('click',exportDetails);
-  loadSummary(new URLSearchParams(location.search).get('month')||'');
+  initializeVisualCopies();loadSummary(new URLSearchParams(location.search).get('month')||'');
 })();
