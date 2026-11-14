@@ -102,3 +102,8 @@ is installed on BODEFM after explicit user authorization. Read
 and verified scope. The immutable tag above remains the pre-responsive baseline;
 it is no longer an exact snapshot of the current runtime. Preserve the recorded
 SSO, live embed/RLS, physical-device and historical test limitations.
+
+The subsequent UI-only follow-up `3b4721204a4d1d75d92baae27b34a8ef3766b313`
+is also installed. Read `docs/UI_POLISH_RELEASE_2026-11-14.md`: the welcome
+tagline is now Mining Performance Suite and the requested technical Parts footer
+is removed. Backend reconciliation and source-error handling remain active.

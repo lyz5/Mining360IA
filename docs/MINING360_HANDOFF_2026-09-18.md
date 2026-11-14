@@ -133,6 +133,12 @@ request. Deployment was separately authorized and completed at
 verified backup, financial comparisons, live Edge checks and remaining limits.
 The branch's later documentation commits do not require a runtime deployment.
 
+Follow-up `3b47212` is deployed: Mining Performance Suite replaces the welcome
+tagline; the requested Parts reconciliation badge/technical footer is removed.
+Read `docs/UI_POLISH_RELEASE_2026-11-14.md` for the nine-target manifest, verified
+backup and live checks. Measures, data scope, detail controls and permissions
+were preserved.
+
 - Confirm OneDrive reports the backup archive as fully synchronized, not `Sync pending`.
 - Restore and test on the replacement machine.
 - Review lower Customer/Country/Key Account mapping coverage for Construction and Energy.

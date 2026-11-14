@@ -1,0 +1,46 @@
+{
+  "deployed_commit": "3b4721204a4d1d75d92baae27b34a8ef3766b313",
+  "base_application_commit": "8460c2d55e850c592f327fd8b31ece8ee62fd0ce",
+  "status": "Succeeded",
+  "target": "BODEFM",
+  "application_url": "https://mining360.neemba.com",
+  "backup": "D:\\Mining360Backups\\UIPolish_20261114_143337_3b472120",
+  "scope": [
+    "Mining Performance Suite replaces Mining Intelligence in login/header/footer and fallback home.",
+    "Remove the summary reconciliation badge, arithmetic disclaimer and technical source/scope footer from Parts."
+  ],
+  "installed_hashes_verified": 9,
+  "protected_hashes_verified": 7,
+  "static_mappings": 211,
+  "served_asset_content_checks": 4,
+  "local_checks": {
+    "login_render_checks": 6,
+    "parts_browser_checks": 8,
+    "javascript_errors": 0
+  },
+  "live_checks": {
+    "login_formats": 4,
+    "parts_format_cycles": 4,
+    "javascript_errors": 0,
+    "document_overflow": 0,
+    "authenticated_pages_http_200": 7,
+    "financial_comparisons_identical": 6,
+    "active_revenue_index_preserved": true,
+    "temporary_authorized_sessions_removed": true,
+    "public_health": {
+      "status": "ok",
+      "database": "ok",
+      "http": 200
+    }
+  },
+  "preserved": [
+    "Backend measures and reconciliation calculation",
+    "Signed-value allocation table fallback and detail reconciliation",
+    "Source errors and empty states",
+    "Authentication, permissions and data sources"
+  ],
+  "limits": [
+    "Real AD credential submission and physical phones were not tested.",
+    "Fallback home template compiled locally; production feature settings were preserved."
+  ]
+}

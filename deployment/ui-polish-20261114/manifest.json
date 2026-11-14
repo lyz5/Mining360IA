@@ -1,0 +1,116 @@
+{
+  "commit": "3b4721204a4d1d75d92baae27b34a8ef3766b313",
+  "feature_commit": "3b4721204a4d1d75d92baae27b34a8ef3766b313",
+  "base_commit": "8460c2d55e850c592f327fd8b31ece8ee62fd0ce",
+  "files": [
+    {
+      "root": "app",
+      "path": "reports/templates/reports/login.html",
+      "source": "reports/templates/reports/login.html",
+      "sha256": "7B334AE58EC6B9866830B691255D6B55F79E55FA1090004EF6B61872CB7941D4",
+      "existed": true,
+      "previous_sha256": "AC0D0DC80C9B8F072E98AAC7AA1712F44601591FCC01C9213A98D1F02BE1EF3D"
+    },
+    {
+      "root": "app",
+      "path": "reports/templates/reports/dashboard.html",
+      "source": "reports/templates/reports/dashboard.html",
+      "sha256": "0E19DA80E5F9BE16093A9F9731AECEA96B8089D2C71BB25B31BBBAECD2A452F9",
+      "existed": true,
+      "previous_sha256": "FA5EBE10902E334E35B55B8BD88A51A7048966F6A0FE2214A0F8CF90CB9C71BF"
+    },
+    {
+      "root": "app",
+      "path": "reports/templates/reports/parts_fulfillment.html",
+      "source": "reports/templates/reports/parts_fulfillment.html",
+      "sha256": "A6F9063798CE598FAEA0136C59AD0E8B5975AFC386B02F33F0C89D59485B3036",
+      "existed": true,
+      "previous_sha256": "78C4503CCA98D63B8A27E81C9CE1BA0718B9AB650949E519F5ECD5CB9E9749F2"
+    },
+    {
+      "root": "app",
+      "path": "reports/static/reports/parts_fulfillment.js",
+      "source": "reports/static/reports/parts_fulfillment.js",
+      "sha256": "1CFA4365E07DEF1519C685D133AA794544ABEFB1AA824020A15852009C8CA15C",
+      "existed": true,
+      "previous_sha256": "2BA542BA10F94EB566A23E7EA35C7780F487E0FC1318E730B926DFFA26E7E08D"
+    },
+    {
+      "root": "static",
+      "path": "reports/parts_fulfillment.js",
+      "source": "reports/static/reports/parts_fulfillment.js",
+      "sha256": "1CFA4365E07DEF1519C685D133AA794544ABEFB1AA824020A15852009C8CA15C",
+      "existed": true,
+      "previous_sha256": "2BA542BA10F94EB566A23E7EA35C7780F487E0FC1318E730B926DFFA26E7E08D"
+    },
+    {
+      "root": "static",
+      "path": "reports/parts_fulfillment.js.gz",
+      "source": "generated/gzip/reports/parts_fulfillment.js.gz",
+      "sha256": "45814CEF1DC7934603452029CD9A631001C026DB1E157F87E4E0E9D5F5333DAE",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "reports/parts_fulfillment.5c3f27d50d9f.js",
+      "source": "reports/static/reports/parts_fulfillment.js",
+      "sha256": "1CFA4365E07DEF1519C685D133AA794544ABEFB1AA824020A15852009C8CA15C",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "reports/parts_fulfillment.5c3f27d50d9f.js.gz",
+      "source": "generated/gzip/reports/parts_fulfillment.5c3f27d50d9f.js.gz",
+      "sha256": "45814CEF1DC7934603452029CD9A631001C026DB1E157F87E4E0E9D5F5333DAE",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "staticfiles.json",
+      "source": "generated/staticfiles.json",
+      "sha256": "57004474F57D66750F1D3497C1A8ADF6204E2F37CF81BA2937858A2AFA43EBDD",
+      "existed": true,
+      "previous_sha256": "0F38348BF5D2F330CDFEB870FD2809BE56A326A7555358BEBCE8BCCDC4BE66FA"
+    }
+  ],
+  "protected": [
+    {
+      "path": "reports/business_command_center_service.py",
+      "sha256": "B5D3B07328B8289D7F0A99A77011DD2760F0E6A9C322941F71F9F62FD8756B4A"
+    },
+    {
+      "path": "reports/revenue_query.py",
+      "sha256": "A9D01BE71000D7BF9980E30CA39CAA27613CC7F76097CCFF81FF695D2AE7D774"
+    },
+    {
+      "path": "reports/parts_fulfillment_service.py",
+      "sha256": "2DA8205BCAF8C6EB95157E3FF0DF49BCB2E909BEF14117E1E5BC16DFC5A5AF49"
+    },
+    {
+      "path": "reports/models.py",
+      "sha256": "298FE1770551405C3AF00309924D52BBFE9D4E51512EC28F1E746E05F4A4FA76"
+    },
+    {
+      "path": "reports/business_review_access_service.py",
+      "sha256": "B062B345D023B8658E259CDEC273D04930B26AE0E07A321D98DEBAE3F7EB98A1"
+    },
+    {
+      "path": "reports/urls.py",
+      "sha256": "0D98C6F314E8734A2EED82A7F0D05C08FF1E8B8CC6448981A4B7904799E6A594"
+    },
+    {
+      "path": "deployment/windows/start_mining360.ps1",
+      "sha256": "A2901F81DEC446E30457F8521071725AF1AA23D9D88349F0939578A237BE5A95"
+    }
+  ],
+  "script_sha256": "544929DBE873B024108498807AC6A0BE8E76A829130F5B21884C89A90CA9A7C3",
+  "static_manifest_controls": {
+    "previous_entries": 211,
+    "new_entries": 211,
+    "unrelated_mappings_preserved": true,
+    "gzip_regenerated": true
+  }
+}
