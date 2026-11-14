@@ -1,0 +1,3 @@
+# Preserve the supplied source documents byte for byte on Windows checkouts.
+DOCUMENTATION_COMPLETE.md -text whitespace=-blank-at-eol
+CODEX_DOCUMENTATION_TASK.md -text

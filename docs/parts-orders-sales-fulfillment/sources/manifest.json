@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "integration_date": "2026-11-14",
+  "scope": "Documentation only; no application, model, permission or server mutation",
+  "source_documents": [
+    {
+      "name": "CODEX_DOCUMENTATION_TASK.md",
+      "source_location": "Downloads/CODEX_DOCUMENTATION_TASK.md",
+      "bytes": 3250,
+      "sha256": "5fe41a195ddb01466c10ebd2e98e0fcd63c7235f7413f20c82ecbf5d796158ba",
+      "status": "imported_byte_identical"
+    },
+    {
+      "name": "DOCUMENTATION_COMPLETE.md",
+      "source_location": "Downloads/DOCUMENTATION_COMPLETE.md",
+      "bytes": 79545,
+      "sha256": "0c6c30e3d9a620b2affe2fda632846e5f983e6e6fe52ef5c4c3bd682a314442c",
+      "status": "imported_byte_identical"
+    }
+  ],
+  "original_annex_inventory": [
+    {
+      "path": "README.md",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "sql/01_OrderHeader_History_snowflake.sql",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "sql/02_Neg_llf_complete_snowflake.sql",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "sql/03_Neg_FAC_complete_snowflake.sql",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "sql/04_Global_CA_Detailled_sqlserver.sql",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "sql/05_Global_CA_Aggregated_sqlserver.sql",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "sql/06_OrderLineItems_source_historique_snowflake.sql",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "sql/07_MiningCustomerNew_sqlserver.sql",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "sql/08_Controle_PK_V2_snowflake.sql",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "sql/09_Controle_jointure_composants_snowflake.sql",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "powerquery/01_PQ_BridgeCommandeFacture.pq",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "powerquery/02_PQ_AccountingSales_reconstitution.pq",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "powerquery/03_PQ_SingleOrderInvoices_reconstitution.pq",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "powerquery/04_FactSalesAllocation_reconstitution.pq",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "powerquery/05_SalesCohort_formule_historique.pq",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "dax/01_mesures_finales.dax",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "dax/02_tables_diagnostic_archive.dax",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "dax/03_controles_rapprochement_archive.dax",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "dax/04_kpi_derives_proposes.dax",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "validation/verification_Exports_N.json",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "validation/reconciliation_mensuelle_export.csv",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "validation/benchmarks_octobre_2026.json",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "validation/PLAN_DE_TESTS.md",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "validation/verify_exports.py",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "validation/verification_reproductible.json",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "sources/REGISTRE_SOURCES.md",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "assets/01_maquette_reference.png",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "assets/02_reconciliation_2026.png",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "assets/03_champs_final_fact.png",
+      "original_status": "not_supplied"
+    },
+    {
+      "path": "assets/04_dashboard_octobre.png",
+      "original_status": "not_supplied"
+    }
+  ],
+  "new_integration_documents": [
+    "README.md",
+    ".gitattributes",
+    "sources/REGISTRE_SOURCES.md",
+    "sources/manifest.json",
+    "../PARTS_FULFILLMENT_MEMORY_2026-11-14.md"
+  ],
+  "reference_status": {
+    "source_labels_S_and_T": "unresolved_without_original_register",
+    "live_measure_definitions": "not_retrieved_in_this_mission",
+    "financial_workbook_checks": "reported_by_source_not_rerun"
+  }
+}

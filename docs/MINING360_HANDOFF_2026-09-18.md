@@ -124,3 +124,12 @@ Mining360 is a Django application with a native Windows Control Center and sever
 - Keep Sales Machine/Parts details labelled Mining-only until governed cross-division detail sources exist.
 - Continue reversible changes and preserve reconciliation tests before deployment.
 
+## Parts Fulfillment documentation — 14 November 2026
+
+The original September handoff above remains historical. For Parts Orders & Sales
+Fulfillment, start with [the durable working memory](PARTS_FULFILLMENT_MEMORY_2026-11-14.md)
+and [the imported documentation index](parts-orders-sales-fulfillment/README.md).
+The supplied Power Query / Power BI reconstruction is preserved separately from
+the implemented Mining360 page and BODEFM receipts. Missing annexes, unverified
+Order Intake definitions and RLS limitations remain explicit.
+

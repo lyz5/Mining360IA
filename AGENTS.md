@@ -71,6 +71,18 @@ not guaranteed deadlines. Investigate a repeatable regression before accepting
 the change. Never trade data freshness or financial accuracy for loading speed.
 
 
+## Parts Orders & Sales Fulfillment
+
+Before work on this page or its model, read
+`docs/PARTS_FULFILLMENT_MEMORY_2026-11-14.md` and
+`docs/parts-orders-sales-fulfillment/README.md`. Preserve the evidence levels of
+the imported guide and its missing-annex status. The final model consumes
+FactSalesAllocation at invoice/accounting-date grain; historical V1/V2/V3/V4
+bridges are not the final application contract. Never infer Order Intake from
+invoiced sales, duplicate invoice CA onto LLF lines, or add a Customer / Site filter.
+The deployed older-order measure is `[CA +2 Months]`; original guide wording and
+snapshot figures must not silently override the verified application contract.
+
 ## MiningProd browser working memory
 
 Before MiningProd browser configuration work, read `docs/MININGPROD_BROWSER_WORKING_MEMORY.md`. Keep verified capabilities distinct from untested possibilities. Record each completed change and its evidence there. Identify CAT - Part List Price by MetaFormID 2406027; do not confuse it with Neemba PCR 2406025. The recorded rename script is a one-time mutation, not a read-only verification tool. User requests define the authorized scope; removing a displayed column does not authorize deleting source data.
