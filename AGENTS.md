@@ -94,3 +94,11 @@ Use tag `bodefm-validated-2026-11-14` as the immutable reference. Application
 sources in that publication were exported from BODEFM, not from the workstation's
 mixed working tree. Preserve the recorded test failures/limits; this reference
 does not assert that all historical tests or financial/RLS cases were approved.
+
+The subsequent responsive presentation release `8460c2d55e850c592f327fd8b31ece8ee62fd0ce`
+is installed on BODEFM after explicit user authorization. Read
+`docs/BODEFM_RESPONSIVE_RELEASE_2026-11-14.md` and
+`deployment/responsive-20261114/manifest.json` for the installed overlay, backup
+and verified scope. The immutable tag above remains the pre-responsive baseline;
+it is no longer an exact snapshot of the current runtime. Preserve the recorded
+SSO, live embed/RLS, physical-device and historical test limitations.

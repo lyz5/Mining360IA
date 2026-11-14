@@ -1,0 +1,60 @@
+{
+  "deployed_commit": "8460c2d55e850c592f327fd8b31ece8ee62fd0ce",
+  "feature_commit": "237c6e9f0b28f914be346b98a65a7c835608f0c6",
+  "base_commit": "401b9733641935843d687addaab6a3c9811ed871",
+  "branch": "feature/responsive-desktop-protected-20261114",
+  "target": "BODEFM",
+  "application": "https://mining360.neemba.com",
+  "status": "Succeeded",
+  "backup": "D:\\Mining360Backups\\Responsive_20261114_124548_8460c2d5",
+  "control_directory": "C:\\Mining360\\control\\responsive-8460c2d5",
+  "installed_targets": 41,
+  "protected_file_hashes_verified": 7,
+  "static_manifest": {
+    "previous_entries": 207,
+    "new_entries": 211,
+    "unrelated_mappings_preserved": true,
+    "gzip_regenerated": true
+  },
+  "served_asset_content_checks": 28,
+  "public_health": {
+    "status": "ok",
+    "database": "ok",
+    "http": 200
+  },
+  "anonymous_financial_access": "redirects to login; two routes checked",
+  "financial_validation": {
+    "same_source_and_aggregate_hashes": true,
+    "comparisons": 6,
+    "scope": "authorized mapped web identity; Mining; YTD all-business, MTD all-business, YTD Parts; two reads per context",
+    "active_revenue_index_preserved": true,
+    "precision_or_calculation_changes": false
+  },
+  "live_edge": {
+    "format_checks": 30,
+    "additional_loaded_excellence_checks": 4,
+    "widths": [
+      390,
+      1024,
+      1440
+    ],
+    "document_overflows": 0,
+    "javascript_exceptions": 0,
+    "resize_business_requests": 0,
+    "business_ready_median_seconds_before": 1.386,
+    "business_ready_median_seconds_after": 1.097,
+    "business_initial_seconds_before": 2.512,
+    "business_initial_seconds_after": 3.009,
+    "method": "Three navigations in a fresh Edge context per phase; real data, ordinary server caches; restart/cache/network state differs. Not p75 or a speed guarantee.",
+    "mtd_repeat_samples": 5,
+    "mtd_repeat_median_seconds": 0.906
+  },
+  "local_validation_reference": "docs/RESPONSIVE_VALIDATION_2026-11-14.md",
+  "limits": [
+    "Physical phones, Firefox/WebKit and actual Windows/AD login flow not tested.",
+    "Temporary sessions used the SSH identity matched to its own existing active web account; removed after checks.",
+    "No nonadmin identity/RLS or complete live embedded Power BI layouts revalidation.",
+    "Excellence initial before screenshot was loading; no live before/after layout comparison claimed for it. Loaded after state separately verified.",
+    "No database migration, source refresh request, mapping publication, SQL Server/IIS restart or integration-secret change."
+  ]
+}

@@ -70,3 +70,9 @@ Cette version fournit le point de départ de référence pour les futurs travaux
 responsive. Développer et tester les évolutions séparément, puis publier un nouveau
 commit identifié. Ne pas remplacer silencieusement cette référence par le contenu
 du poste local et ne pas déplacer le tag daté.
+
+Le responsive a ensuite été autorisé et installé au commit `8460c2d`.
+Voir [le reçu de cette promotion](BODEFM_RESPONSIVE_RELEASE_2026-11-14.md) pour
+les fichiers réellement installés, le rollback et les contrôles. Ce tag reste
+la référence antérieure immuable, et non une copie exacte du runtime après
+cette promotion. Les limites de validation historiques restent applicables.

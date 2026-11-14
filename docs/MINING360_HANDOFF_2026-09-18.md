@@ -118,17 +118,20 @@ Mining360 is a Django application with a native Windows Control Center and sever
 
 ## Immediate Next Work
 
-### Responsive local — 14 November 2026
+### Responsive BODEFM — 14 November 2026
 
-The BODEFM tag remains the immutable runtime reference. Native responsive work
+The BODEFM tag remains the immutable pre-responsive source baseline. Native responsive work
 is isolated in `feature/responsive-desktop-protected-20261114`, starting at
 `401b973`. Read `docs/RESPONSIVE_DESKTOP_PROTECTED_2026-11-14.md` and
 `docs/RESPONSIVE_VALIDATION_2026-11-14.md` for file groups, independent disable
 switches, tests, private screenshots and exact coverage limits. This work has
 been published at application commit `237c6e9` after the user's explicit push
-request. Deployment was separately authorized; do not infer its completion from
-local evidence. The scoped deployment script and verification limits are documented
-in the implementation guide; a server receipt must establish the deployed state.
+request. Deployment was separately authorized and completed at
+`8460c2d55e850c592f327fd8b31ece8ee62fd0ce`. Read
+`docs/BODEFM_RESPONSIVE_RELEASE_2026-11-14.md` and
+`deployment/responsive-20261114/validation.json` for the actual server receipt,
+verified backup, financial comparisons, live Edge checks and remaining limits.
+The branch's later documentation commits do not require a runtime deployment.
 
 - Confirm OneDrive reports the backup archive as fully synchronized, not `Sync pending`.
 - Restore and test on the replacement machine.

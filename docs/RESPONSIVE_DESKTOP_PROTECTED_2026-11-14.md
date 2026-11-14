@@ -5,6 +5,8 @@ immuable `bodefm-validated-2026-11-14` (`401b973`). Le commit applicatif `237c6e
 a été poussé sur cette branche à la demande de l'utilisateur. Le bilan initial
 ci-dessous décrit les vérifications locales avant promotion ; il ne prouve pas
 un déploiement BODEFM.
+La promotion ultérieure est désormais attestée par
+[le reçu BODEFM](BODEFM_RESPONSIVE_RELEASE_2026-11-14.md), commit installé `8460c2d`.
 Le prompt Responsive Desktop Protégé remplace le précédent prompt mobile-first.
 
 ## Audit initial
