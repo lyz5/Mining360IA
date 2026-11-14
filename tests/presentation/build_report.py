@@ -50,7 +50,7 @@ def package():
     assert not missing,missing
     assert set(changed)<=allowed,changed
     summary={'base_commit':'401b9733641935843d687addaab6a3c9811ed871',
-        'branch':'feature/responsive-desktop-protected-20261114','deployment':'local only; not pushed or deployed',
+        'branch':'feature/responsive-desktop-protected-20261114','deployment':'local validation snapshot; publication and deployment tracked separately',
         'django_tests':{'passed':92,'additional_final_presentation_rerun':7,
                         'database':'isolated SQLite; contract suite creates schema from models, not a migration/parity test'},
         'responsive_format_checks':len(responsive),'pages':len({r['page'] for r in responsive}),
@@ -85,7 +85,7 @@ def package():
     parts=[
         '# Validation locale — responsive, desktop protégé',
         '', 'Branche `feature/responsive-desktop-protected-20261114`, base BODEFM `401b973`.',
-        '**Aucun push, déploiement, redémarrage partagé ou changement de modèle/base de production.**',
+        '**Bilan des tests locaux avant publication ; aucun déploiement, redémarrage partagé ou changement de modèle/base de production pendant ces tests. Le statut Git/BODEFM est documenté séparément.**',
         '', '## Résultats', '',
         f'- 92 tests Django ciblés réussis ; les 7 tests de présentation ont aussi été rejoués après le bootstrap final.',
         f'- {len(responsive)} contrôles de format sur {summary["pages"]} pages, sans débordement horizontal du document ni exception JavaScript.',
