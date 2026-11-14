@@ -1,4 +1,4 @@
-{% load static %}
+{% load static presentation_tags %}{% presentation_flags as presentation %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,6 +22,7 @@
             </div>
             <div class="actions">
                 <a class="button secondary" href="{% url 'resources' %}">Back</a>
+                {% if presentation.responsive and resource.raw_url %}<a class="button secondary m360-resource-open" href="{{ resource.raw_url }}" target="_blank" rel="noopener">Open document</a>{% endif %}
                 <button type="button" class="icon-button fullscreen-toggle" data-resource-fullscreen aria-label="Read fullscreen" title="Read fullscreen"></button>
             </div>
         </header>

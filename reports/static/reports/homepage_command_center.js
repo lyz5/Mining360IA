@@ -6,7 +6,7 @@
 
     // Start the command center with compact navigation on small screens. The
     // existing global toggle remains available when the user needs the menu.
-    if (window.matchMedia("(max-width: 900px)").matches) {
+    if (!document.documentElement.classList.contains('m360-responsive') && window.matchMedia("(max-width: 900px)").matches) {
         document.body.classList.add("nav-collapsed");
     }
 
@@ -331,7 +331,9 @@
         const from = state.renderedValue == null ? 0 : state.renderedValue;
         const duration = reducedMotion.matches ? 0 : (state.renderedValue == null ? 850 : 360);
         const started = performance.now();
+        const drawingController = state.controller;
         const draw = (now) => {
+            if (document.documentElement.classList.contains('m360-responsive') && drawingController !== state.controller) return;
             const progress = duration ? Math.min(1, (now - started) / duration) : 1;
             const eased = 1 - Math.pow(1 - progress, 3);
             const current = from + (target - from) * eased;
@@ -1024,7 +1026,24 @@
 
     async function loadData(forceRefresh = false) {
         state.controller?.abort();
-        state.controller = new AbortController();
+        const controller = new AbortController();
+        state.controller = controller;
+        const guardedDisplay = document.documentElement.classList.contains('m360-responsive');
+        if (guardedDisplay) {
+            root.dataset.displayPending = 'true';
+            delete root.dataset.displayError;
+            const config = metricConfig();
+            $('[data-center-title]').textContent = config.centerTitle || `Fleet ${config.label} Excellence Center`;
+            let notice = $('[data-display-context]');
+            if (!notice) {
+                notice = document.createElement('p'); notice.dataset.displayContext = '';
+                notice.className = 'm360-display-context'; notice.setAttribute('role', 'status');
+                $('.analysis-controls').after(notice);
+            }
+            notice.textContent = `Loading ${config.label} for the selected context…`;
+            notice.style.top = `${$('.analysis-controls').offsetTop + $('.analysis-controls').offsetHeight + 10}px`;
+            notice.hidden = false;
+        }
         clearError();
         setUpdating(true);
         try {
@@ -1033,17 +1052,24 @@
             const response = await fetch(`${root.dataset.apiUrl}?${query}`, {
                 credentials: "same-origin",
                 headers: { "Accept": "application/json", "X-Requested-With": "XMLHttpRequest" },
-                signal: state.controller.signal,
+                signal: controller.signal,
             });
             const payload = await response.json().catch(() => ({}));
+            if (guardedDisplay && (controller !== state.controller || controller.signal.aborted)) return;
             if (!response.ok || !payload.ok) throw new Error(payload.error || "Fleet performance data could not be loaded.");
             render(payload);
+            if (guardedDisplay) { delete root.dataset.displayPending; $('[data-display-context]').hidden = true; }
             if (payload.dashboard_snapshot) {
                 const snapshot = payload.dashboard_snapshot;
                 $('[data-refresh-status]').textContent = `BODEFM snapshot: ${new Date(snapshot.generated_at).toLocaleString('en-GB')}${snapshot.offline ? ' · Server unavailable; last received snapshot' : snapshot.stale ? ' · Daily update pending' : ''}`;
             }
         } catch (error) {
+            if (guardedDisplay && (controller !== state.controller || controller.signal.aborted)) return;
             if (error.name !== "AbortError") {
+                if (guardedDisplay) {
+                    root.dataset.displayError = 'true';
+                    $('[data-display-context]').textContent = `${metricConfig().label} is unavailable for the selected context. Previous results are not shown.`;
+                }
                 if (state.metric === "connectivity") {
                     renderConnectivityProgress();
                     $$("[data-connectivity-value], [data-connectivity-count]").forEach(el => {el.textContent = "—";});
@@ -1052,8 +1078,9 @@
                 showError(error.message);
             }
         } finally {
-            if (!state.controller?.signal.aborted) setUpdating(false);
-            if (!state.controller?.signal.aborted) dismissBrandLoader();
+            if ((!guardedDisplay || controller === state.controller) && !controller.signal.aborted) {
+                setUpdating(false); dismissBrandLoader();
+            }
         }
     }
 

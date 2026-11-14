@@ -26,7 +26,9 @@
   }
   const csrf = $('[name=csrfmiddlewaretoken]')?.value || '';
   const features = JSON.parse(root.dataset.features || '{}');
-  const colors = { machine: '#ffd400', parts: '#3478c9', service: '#168b79', rental: '#7453a6', unclassified: '#8993a5' };
+  const originalColors = { machine: '#ffd400', parts: '#3478c9', service: '#168b79', rental: '#7453a6', unclassified: '#8993a5', total: '#10162f' };
+  const businessStyle = getComputedStyle(root);
+  const colors = Object.fromEntries(Object.entries(originalColors).map(([id, fallback]) => [id, businessStyle.getPropertyValue(`--bo-${id}`).trim() || fallback]));
   const countryNames = { BF: 'Burkina Faso', BJ: 'Benin', CI: "Côte d’Ivoire", CM: 'Cameroon', FR: 'France', GN: 'Guinea', GW: 'Guinea-Bissau', ML: 'Mali', MR: 'Mauritania', MU: 'Mauritius', NE: 'Niger', SN: 'Senegal', TG: 'Togo' };
   const state = {
     data: null, workspace: 'executive', dimension: 'customers', trendMode: 'ytd',
@@ -34,7 +36,7 @@
     turnoverController: null, turnoverLoaded: false, leadersController: null,
     machineController: null, machineLoaded: false, machinePage: 1, machinePages: 1,
     partsController: null, partsLoaded: false, partsPage: 1, partsPages: 1,
-    selectedLabels: { key_account_ids: '' }, searchTimers: {}, exportBound: false,
+    selectedLabels: { key_account_ids: '' }, searchTimers: {}, exportBound: false, filterDraft: null,
   };
 
   const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[c]));
@@ -75,7 +77,9 @@
   const syncFromUrl = () => {
     const query = new URLSearchParams(location.search);
     $$('[data-filter]').forEach(control => { if (query.has(control.dataset.filter)) control.value = query.get(control.dataset.filter); });
-    state.workspace = ['executive', 'explore', 'operations', 'actions'].includes(query.get('view')) ? query.get('view') : 'executive';
+    const workspaces = ['executive', 'explore', 'operations', 'actions'];
+    if (document.documentElement.classList.contains('m360-responsive')) workspaces.push('turnover');
+    state.workspace = workspaces.includes(query.get('view')) ? query.get('view') : 'executive';
     $('[data-division-toggle]').checked = $('[data-filter="division_scope"]').value === 'all_divisions';
     toggleCustomDates();
   };
@@ -193,7 +197,7 @@
     const values = steps.flatMap(item => [item.start, item.end]); const min = Math.min(0, ...values); const max = Math.max(1, ...values); const range = max - min || 1;
     const y = value => 205 - ((value - min) / range) * 165; const width = 86; const gap = (700 - width * steps.length) / Math.max(steps.length - 1, 1);
     $('[data-waterfall]').innerHTML = `<line x1="30" y1="205" x2="735" y2="205" stroke="#dfe4eb"/>${steps.map((item, index) => {
-      const x = 35 + index * (width + gap); const top = Math.min(y(item.start), y(item.end)); const height = Math.max(2, Math.abs(y(item.start) - y(item.end))); const fill = item.total ? '#10162f' : item.delta < 0 ? '#b43f49' : colors[item.code] || '#17765a';
+      const x = 35 + index * (width + gap); const top = Math.min(y(item.start), y(item.end)); const height = Math.max(2, Math.abs(y(item.start) - y(item.end))); const fill = item.total ? colors.total : item.delta < 0 ? '#b43f49' : colors[item.code] || '#17765a';
       return `<rect x="${x}" y="${top}" width="${width}" height="${height}" fill="${fill}" rx="2"><title>${item.label}: ${money(item.total ? item.end : item.delta, true)}</title></rect><text x="${x + width / 2}" y="224" text-anchor="middle" fill="#68748a" font-size="9">${escapeHtml(item.label)}</text><text x="${x + width / 2}" y="${Math.max(13, top - 5)}" text-anchor="middle" fill="#243047" font-size="9" font-weight="700">${money(item.total ? item.end : item.delta)}</text>`;
     }).join('')}`;
   }
@@ -323,6 +327,7 @@
   }
 
   async function refresh(forceRefresh = false) {
+    if (state.filterDraft) return; // Mobile choices are committed only by Apply.
     state.leadersController?.abort();
     toggleCustomDates(); updateUrl(); state.controller?.abort(); state.controller = new AbortController(); setUpdating(true); setHidden('[data-error]', true);
     try {
@@ -384,7 +389,7 @@
     $('[data-turnover-freshness]').textContent = `Revenue through ${dateLabel(data.freshness.data_through_date)} · Refreshed ${dateTimeLabel(data.freshness.source_snapshot_at)}`;
     $('[data-turnover-subtitle]').textContent = `Actual invoiced Revenue by Country · ${data.context.currency}`;
     const kpis = [...lines, { code: 'total', label: 'Total Sales', revenue: data.hero.revenue, absolute_delta: data.hero.absolute_delta, relative_delta: data.hero.relative_delta, growth_status: data.hero.growth_status }];
-    $('[data-turnover-kpis]').innerHTML = kpis.map(item => `<button type="button" class="bcc-turnover-kpi ${item.code}" data-turnover-line="${item.code}"><span>${escapeHtml(item.label)}</span><small>Total Revenue</small><strong>${money(item.revenue)}</strong><footer><em>vs Last Year</em><b class="${Number(item.absolute_delta || 0) < 0 ? 'negative' : 'positive'}">${growth(item)}</b></footer></button>`).join('');
+    $('[data-turnover-kpis]').innerHTML = kpis.map(item => `<button type="button" class="bcc-turnover-kpi ${item.code}" style="--bo-activity:${colors[item.code] || colors.unclassified}" data-turnover-line="${item.code}"><span>${escapeHtml(item.label)}</span><small>Total Revenue</small><strong>${money(item.revenue)}</strong><footer><em>vs Last Year</em><b class="${Number(item.absolute_delta || 0) < 0 ? 'negative' : 'positive'}">${growth(item)}</b></footer></button>`).join('');
     $$('[data-turnover-line]').forEach(button => button.addEventListener('click', () => { $('[data-filter="business_line"]').value = button.dataset.turnoverLine === 'total' ? 'all_business' : button.dataset.turnoverLine; refresh(); }));
     $('[data-turnover-matrix-head]').innerHTML = `<tr><th>Business Line</th>${countryRows.map(row => `<th>${escapeHtml(turnoverCountryName(row))}</th>`).join('')}</tr>`;
     $('[data-turnover-matrix-body]').innerHTML = lines.map(line => `<tr><th style="--line-color:${colors[line.code]}">${escapeHtml(line.label)}</th>${countryRows.map(row => { const current = row.business_line_mix?.[line.code]; const previous = row.comparison_business_line_mix?.[line.code]; const result = turnoverGrowth(current, previous); return `<td class="${result.status}" title="Current ${money(current, true)} · Last Year ${money(previous, true)}"><strong>${money(current)}</strong><small>${result.label} vs Last Year</small></td>`; }).join('')}</tr>`).join('');
@@ -598,8 +603,61 @@
     await searchEntities(input.dataset.entitySearch, '', target, true); bindComboboxResults(input, target);
   }));
   $$('[data-entity-search]').forEach(input => input.addEventListener('input', () => { window.clearTimeout(state.searchTimers[input.dataset.entitySearch]); state.searchTimers[input.dataset.entitySearch] = window.setTimeout(async () => { const target = $(`[data-search-results="${input.dataset.entitySearch}"]`); await searchEntities(input.dataset.entitySearch, input.value, target, true); bindComboboxResults(input, target); }, 250); }));
-  $('[data-filter-open]').addEventListener('click', () => $('[data-filter-sheet]').classList.add('open')); $('[data-filter-close]').addEventListener('click', () => $('[data-filter-sheet]').classList.remove('open'));
-  $('[data-reset]').addEventListener('click', () => { $$('[data-filter]').forEach(control => { control.value = control.dataset.filter === 'period' ? 'ytd' : control.dataset.filter === 'comparison' ? 'same_period_last_year' : control.dataset.filter === 'business_line' ? 'all_business' : control.dataset.filter === 'division_scope' ? 'mining' : ''; }); $('[data-division-toggle]').checked = false; state.selectedLabels = { key_account_ids: '' }; $('[data-filter-sheet]').classList.remove('open'); refresh(); });
+  const filterSheet = $('[data-filter-sheet]');
+  const responsiveFilters = () => document.documentElement.classList.contains('m360-responsive') && matchMedia('(max-width:1199px)').matches;
+  let filterInert = [];
+  let filterOpener = null;
+  let previousOverflow = '';
+  function closeFilters(apply = false) {
+    if (state.filterDraft) {
+      const snapshot = state.filterDraft;
+      if (!apply) {
+        snapshot.controls.forEach(([control, value, disabled]) => { control.value = value; control.disabled = disabled; });
+        state.selectedLabels = snapshot.labels;
+        $('[data-division-toggle]').checked = snapshot.division;
+        $$('[data-combobox-label]').forEach(label => { label.textContent = state.selectedLabels.key_account_ids || 'All Key Accounts'; });
+        toggleCustomDates();
+      }
+      state.filterDraft = null;
+      filterInert.forEach(([node, inert]) => { node.inert = inert; }); filterInert = [];
+      document.body.style.overflow = previousOverflow;
+      filterSheet.removeAttribute('role'); filterSheet.removeAttribute('aria-modal');
+      $('[data-filter-open]').setAttribute('aria-expanded', 'false');
+    }
+    filterSheet.classList.remove('open');
+    $$('[data-combobox-menu]').forEach(node => { node.hidden = true; });
+    filterOpener?.focus(); filterOpener = null;
+    if (apply) refresh();
+  }
+  function openFilters() {
+    if (responsiveFilters()) {
+      state.filterDraft = {controls: $$('[data-filter]').map(control => [control, control.value, control.disabled]), labels: {...state.selectedLabels}, division: $('[data-division-toggle]').checked};
+      filterOpener = document.activeElement;
+      filterInert = [...root.children].filter(node => node !== filterSheet).map(node => [node, node.inert]);
+      filterInert.forEach(([node]) => { node.inert = true; });
+      previousOverflow = document.body.style.overflow; document.body.style.overflow = 'hidden';
+      filterSheet.setAttribute('role', 'dialog'); filterSheet.setAttribute('aria-modal', 'true');
+      $('[data-filter-open]').setAttribute('aria-expanded', 'true');
+    }
+    filterSheet.classList.add('open');
+    $('[data-filter-close]').focus();
+  }
+  if (document.documentElement.classList.contains('m360-responsive')) {
+    const actions = document.createElement('div'); actions.className = 'm360-filter-actions';
+    const cancel = document.createElement('button'); cancel.type = 'button'; cancel.textContent = 'Cancel'; cancel.dataset.filterCancel = '';
+    const apply = document.createElement('button'); apply.type = 'button'; apply.textContent = 'Apply'; apply.className = 'bcc-button primary'; apply.dataset.filterApply = '';
+    cancel.addEventListener('click', () => closeFilters(false)); apply.addEventListener('click', () => closeFilters(true));
+    actions.append(cancel, apply); filterSheet.append(actions);
+    filterSheet.addEventListener('keydown', event => {
+      if (!state.filterDraft || event.key !== 'Tab') return;
+      const stops = [...filterSheet.querySelectorAll('button:not(:disabled),select:not(:disabled),input:not(:disabled)')].filter(node => node.getClientRects().length);
+      if (event.shiftKey && document.activeElement === stops[0]) { event.preventDefault(); stops.at(-1)?.focus(); }
+      else if (!event.shiftKey && document.activeElement === stops.at(-1)) { event.preventDefault(); stops[0]?.focus(); }
+    });
+    matchMedia('(max-width:1199px)').addEventListener('change', () => { if (state.filterDraft) closeFilters(false); });
+  }
+  $('[data-filter-open]').addEventListener('click', openFilters); $('[data-filter-close]').addEventListener('click', () => closeFilters(false));
+  $('[data-reset]').addEventListener('click', () => { $$('[data-filter]').forEach(control => { control.value = control.dataset.filter === 'period' ? 'ytd' : control.dataset.filter === 'comparison' ? 'same_period_last_year' : control.dataset.filter === 'business_line' ? 'all_business' : control.dataset.filter === 'division_scope' ? 'mining' : ''; }); $('[data-division-toggle]').checked = false; state.selectedLabels = { key_account_ids: '' }; if (state.filterDraft) { toggleCustomDates(); $$('[data-combobox-label]').forEach(label => { label.textContent = 'All Key Accounts'; }); return; } $('[data-filter-sheet]').classList.remove('open'); refresh(); });
   $('[data-refresh]').addEventListener('click', refreshSource); $('[data-retry]').addEventListener('click', refresh);
   $('[data-drawer-close]').addEventListener('click', closeDrawer);
   $$('[data-confidence-open]').forEach(button => button.addEventListener('click', () => { const confidence = state.data?.confidence; if (!confidence) return; $('[data-drawer-kicker]').textContent = 'Data & Freshness'; $('[data-drawer-title]').textContent = `Data Confidence: ${confidence.status}`; $('[data-drawer-body]').innerHTML = `<div class="bcc-detail-grid"><div class="bcc-detail-metric"><span>Revenue through</span><strong>${dateLabel(state.data.freshness.data_through_date)}</strong></div><div class="bcc-detail-metric"><span>Revenue reconciliation</span><strong>${escapeHtml(state.data.reconciliation.status)}</strong></div><div class="bcc-detail-metric"><span>Customer coverage</span><strong>${confidence.customer_coverage === null ? 'Not available' : confidence.customer_coverage.toFixed(1) + '%'}</strong></div><div class="bcc-detail-metric"><span>Country coverage</span><strong>${confidence.country_coverage === null ? 'Not available' : confidence.country_coverage.toFixed(1) + '%'}</strong></div><div class="bcc-detail-metric"><span>Key Account coverage</span><strong>${confidence.key_account_coverage === null ? 'Not available' : confidence.key_account_coverage.toFixed(1) + '%'}</strong></div><div class="bcc-detail-metric"><span>Unallocated Revenue</span><strong>${money(confidence.unallocated_revenue, true)}</strong></div><div class="bcc-detail-metric"><span>Machine Detail</span><strong>${state.machineLoaded ? $('[data-machine-source]').textContent : 'Load on demand'}</strong></div><div class="bcc-detail-metric"><span>Parts Classification</span><strong>${state.partsLoaded ? $('[data-parts-source]').textContent : 'Load on demand'}</strong></div></div><h3>Known limitations</h3>${confidence.warnings.map(warning => `<p>${escapeHtml(warning)}</p>`).join('') || '<p>No governed headline limitation is currently reported.</p>'}`; $('[data-drawer]').hidden = false; document.body.style.overflow = 'hidden'; $('[data-drawer-close]').focus(); }));
@@ -608,7 +666,7 @@
   $('[data-parts-refresh]').addEventListener('click', () => loadPartsSales(true)); $('[data-parts-group]').addEventListener('change', () => loadPartsSales(true)); $$('[data-parts-filter]').forEach(control => control.addEventListener('change', () => loadPartsSales(true))); let partsTimer; $('[data-parts-search]').addEventListener('input', () => { clearTimeout(partsTimer); partsTimer = setTimeout(() => loadPartsSales(true), 300); }); $('[data-parts-prev]').addEventListener('click', () => { if (state.partsPage > 1) { state.partsPage--; loadPartsSales(); } }); $('[data-parts-next]').addEventListener('click', () => { if (state.partsPage < state.partsPages) { state.partsPage++; loadPartsSales(); } });
   $('[data-parts-export]')?.addEventListener('click', () => { const query = apiParams(); query.set('group_by', $('[data-parts-group]').value || 'major'); location.href = `${root.dataset.partsSalesExportUrl}?${query}`; });
   $('[data-presentation]')?.addEventListener('click', () => { document.body.classList.toggle('presentation'); if (document.body.classList.contains('presentation')) document.documentElement.requestFullscreen?.().catch(() => {}); else document.exitFullscreen?.().catch(() => {}); });
-  document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeDrawer(); $('[data-filter-sheet]').classList.remove('open'); } });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeDrawer(); closeFilters(false); } });
   window.addEventListener('popstate', () => { syncFromUrl(); switchWorkspace(state.workspace, false); refresh(); });
   async function refreshSource() {
     const button = $('[data-refresh]');

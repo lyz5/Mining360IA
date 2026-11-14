@@ -1,0 +1,11 @@
+{% load static presentation_tags %}{% presentation_flags as presentation %}
+{% if presentation.responsive or presentation.business_theme %}
+<script src="{% static 'reports/presentation_bootstrap.js' %}?v=20261114-1" data-responsive="{{ presentation.responsive|yesno:'true,false' }}" data-business-theme="{{ presentation.business_theme|yesno:'true,false' }}"></script>
+{% endif %}
+{% if presentation.responsive %}
+<link rel="stylesheet" href="{% static 'reports/responsive.css' %}?v=20261114-1">
+<script src="{% static 'reports/responsive.js' %}?v=20261114-1" defer></script>
+{% endif %}
+{% if presentation.business_theme %}
+<link rel="stylesheet" href="{% static 'reports/business_theme.css' %}?v=20261114-1">
+{% endif %}

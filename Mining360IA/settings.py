@@ -29,6 +29,10 @@ SECRET_KEY = os.getenv('MINING360_SECRET_KEY', DEVELOPMENT_SECRET_KEY)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('MINING360_DEBUG', '1').strip().lower() in {'1', 'true', 'yes', 'on'}
 
+# Presentation only; either layer can be disabled independently for rollback.
+MINING360_RESPONSIVE_UI_ENABLED = os.getenv('MINING360_RESPONSIVE_UI_ENABLED', '1').strip().lower() in {'1', 'true', 'yes', 'on'}
+MINING360_BUSINESS_THEME_ENABLED = os.getenv('MINING360_BUSINESS_THEME_ENABLED', '1').strip().lower() in {'1', 'true', 'yes', 'on'}
+
 if not DEBUG and SECRET_KEY == DEVELOPMENT_SECRET_KEY:
     raise ImproperlyConfigured('MINING360_SECRET_KEY is required outside development.')
 

@@ -5,6 +5,7 @@
 {% business_review_visible request.user as show_business_review %}
 {% codex_chatbot_visible request.user as show_codex_chatbot %}
 {% codex_admin_visible request.user as show_codex_admin %}
+{% include "reports/includes/presentation.html" %}
 <nav class="app-nav" aria-label="Main navigation">
     <div class="app-nav-head">
         <a class="brand" href="{% url 'dashboard' %}">
@@ -15,7 +16,7 @@
     </div>
     <div class="nav-links">
         {% if show_business_review %}
-        <a href="{% url 'business-command-center' %}" class="{% if active_section == 'business-review' %}active{% endif %}" {% if active_section == 'business-review' %}aria-current="page"{% endif %}>
+        <a data-mobile-destination="Business" href="{% url 'business-command-center' %}" class="{% if active_section == 'business-review' %}active{% endif %}" {% if active_section == 'business-review' %}aria-current="page"{% endif %}>
             <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M4 18V9M10 18V5M16 18v-7M3 20h18" />
             </svg>
@@ -24,6 +25,7 @@
         {% endif %}
         {% if role_access.excellence_center %}
         <a href="{% url 'excellence-center' %}"
+           data-mobile-destination="Excellence"
            class="{% if active_section == 'dashboard' %}active{% endif %}"
            {% if active_section == 'dashboard' %}aria-current="page"{% endif %}
            title="Excellence Center">
@@ -37,7 +39,7 @@
         </a>
         {% endif %}
         {% if role_access.reporting %}
-        <a href="{% url 'reporting' %}" class="{% if active_section == 'reporting' %}active{% endif %}">
+        <a data-mobile-destination="Reports" href="{% url 'reporting' %}" class="{% if active_section == 'reporting' %}active{% endif %}">
             <svg class="nav-icon nav-icon-reporting" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M4 19h16" />
                 <path d="M7 16V9" />
@@ -48,7 +50,7 @@
         </a>
         {% endif %}
         {% if show_codex_chatbot %}
-        <a href="{% url 'codex_chatbot:home' %}" class="{% if active_section == 'codex-chatbot' %}active{% endif %}" {% if active_section == 'codex-chatbot' %}aria-current="page"{% endif %}>
+        <a data-mobile-destination="Chatbot" href="{% url 'codex_chatbot:home' %}" class="{% if active_section == 'codex-chatbot' %}active{% endif %}" {% if active_section == 'codex-chatbot' %}aria-current="page"{% endif %}>
             <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 5h14v11H9l-4 3z" />
                 <path d="M9 9h6M9 12h4" />

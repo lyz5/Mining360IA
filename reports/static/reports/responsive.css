@@ -1,0 +1,210 @@
+/* Lot A: inactive at >=1200px. No desktop typography, geometry or nav override. */
+.m360-compact-header,.m360-bottom-nav,.m360-menu-close,.m360-menu-backdrop,.m360-skip,.m360-filter-actions,.m360-history-close,.m360-resource-open{display:none}
+.m360-responsive .m360-skip{display:block;position:fixed;z-index:1000;left:4px;top:-200px;padding:12px;background:#ffcc00;color:#111827}
+.m360-skip:focus{display:block;position:fixed;z-index:1000;top:4px;left:4px;padding:12px;background:#ffcc00;color:#111827}
+/* Lot D: explicitly identified pre-existing stale-result display bug. */
+.m360-responsive #availability-command-center[data-display-pending] :is([data-fleet-workspace],[data-fuel-workspace],[data-connectivity-workspace]){visibility:hidden;pointer-events:none}
+.m360-responsive #availability-command-center[data-display-error] :is([data-fleet-workspace],[data-fuel-workspace],[data-connectivity-workspace]){display:none!important}
+.m360-responsive .m360-display-context{position:absolute;z-index:4;left:14px;right:14px;margin:0;padding:20px;border:1px solid #d6dee7;border-radius:10px;background:#fff;color:#475569}
+.m360-responsive [data-display-error] .m360-display-context{position:static;margin:12px 0}
+.m360-responsive .m360-latest-messages:not([hidden]){position:absolute;bottom:200px;right:20px;z-index:3;min-height:44px;border:1px solid #d6dee7;border-radius:8px;background:#fff8d6;color:#111827;padding:10px 14px;cursor:pointer}
+@media (max-width:1199px){
+  .m360-responsive body{--m360-header:60px;--m360-bottom:0px;--m360-safe-top:env(safe-area-inset-top,0px);--m360-safe-bottom:env(safe-area-inset-bottom,0px)}
+  .m360-responsive .app-nav{position:fixed;inset:0 auto 0 0;z-index:210;width:min(340px,calc(100% - 32px));height:100vh;height:100dvh;margin:0;padding:18px 16px;overflow-y:auto;visibility:hidden;transform:translateX(-100%);transition:transform 180ms ease,visibility 180ms;box-sizing:border-box}
+  .m360-responsive .m360-menu-open .app-nav{visibility:visible;transform:translateX(0)}
+  .m360-responsive .m360-menu-open{overflow:hidden}
+  .m360-responsive .app-nav .nav-links{display:flex;flex-direction:column;overflow:visible;gap:5px}
+  .m360-responsive .app-nav .nav-links a{min-height:44px;box-sizing:border-box;white-space:normal}
+  .m360-responsive .app-nav .brand,.m360-responsive .app-nav .nav-links a span,.m360-responsive .app-nav .nav-group-label,.m360-responsive .app-nav .nav-group-links a span{display:block;opacity:1;visibility:visible}
+  .m360-responsive .app-nav .nav-links>a,.m360-responsive .app-nav .nav-group-label{justify-content:flex-start;font-size:15px;gap:12px}
+  .m360-responsive .app-nav .nav-group-links{padding-left:16px}
+  .m360-responsive .app-nav .js-toggle-nav{display:none}
+  .m360-responsive .app-nav .app-nav-head{display:flex}
+  .m360-responsive .app-nav .sidebar-tiles{margin-top:20px}
+  .m360-responsive body.nav-collapsed .app-nav{width:min(340px,calc(100% - 32px));padding:18px 16px}
+  .m360-responsive body.nav-collapsed .app-nav .brand{width:auto;font-size:22px;padding:12px 0;overflow:visible}
+  .m360-responsive body.nav-collapsed .app-nav .brand-mark,.m360-responsive body.nav-collapsed .app-nav .nav-group-label>span{display:block}
+  .m360-responsive .app-nav .nav-links a,.m360-responsive body.nav-collapsed .app-nav .nav-group-label{width:auto;padding:10px 12px;justify-content:flex-start;flex:none}
+  .m360-responsive .m360-menu-close{display:block;align-self:flex-end;border:1px solid #64748b;background:transparent;color:white;border-radius:8px;padding:10px 14px;min-height:44px;font:inherit;cursor:pointer}
+  .m360-responsive .m360-menu-backdrop:not([hidden]){display:block;position:fixed;inset:0;z-index:209;border:0;background:#0f172a88;cursor:pointer}
+  .m360-responsive .visual-export-notice{bottom:calc(var(--m360-bottom) + var(--m360-safe-bottom) + 12px);left:14px;right:14px;width:auto;max-width:600px;box-sizing:border-box;z-index:230;flex-wrap:wrap}
+  /* The shared spinner is informational (pointer-events:none), not a mutation
+     lock. Keep its request accounting and all native disabled controls intact. */
+  .m360-responsive .m360-ajax-spinner{inset:auto 14px calc(var(--m360-bottom) + var(--m360-safe-bottom) + 12px) auto;z-index:75;display:block;width:min(270px,calc(100% - 28px));padding:0;background:transparent;backdrop-filter:none}
+  .m360-responsive .m360-ajax-spinner[hidden]{display:none}
+  .m360-responsive .m360-ajax-spinner__content{width:100%;max-width:100%;padding:10px 14px;flex-direction:row;gap:10px;border-radius:10px;box-shadow:0 4px 14px #0f172a14}
+  .m360-responsive .m360-ajax-spinner__content strong{margin:0;font-size:14px}
+  .m360-responsive .m360-ajax-spinner__content>span{display:none}
+  .m360-responsive .m360-ajax-spinner__mark{width:48px;height:32px;flex:none}
+  .m360-responsive body:has(.codex-chat) .m360-ajax-spinner{top:calc(70px + var(--m360-safe-top));bottom:auto}
+  .m360-responsive .m360-compact-header:not([hidden]){position:sticky;top:0;z-index:80;display:flex;align-items:center;gap:12px;min-height:60px;padding:var(--m360-safe-top) 16px 0;box-sizing:content-box;background:#111c2b;color:white;border-bottom:1px solid #334155}
+  .m360-responsive .m360-compact-brand{display:block;color:#fff;font-size:16px;font-weight:800;text-decoration:none;flex:none;margin:0;padding:0}
+  .m360-responsive .m360-compact-header .brand-mark{display:block}
+  .m360-responsive .m360-compact-title{min-width:0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;color:#cbd5e1}
+  .m360-responsive .m360-menu-button{min-height:44px;padding:9px 13px;border:1px solid #64748b;border-radius:8px;background:transparent;color:#fff;font:inherit;font-size:14px;cursor:pointer}
+  .m360-responsive .app-shell,.m360-responsive .app-shell.bcc-shell,.m360-responsive .app-shell.pf-shell{width:auto;min-width:0;max-width:none;margin-left:0;margin-right:0;box-sizing:border-box;padding:20px 20px calc(28px + var(--m360-bottom) + var(--m360-safe-bottom))}
+  .m360-responsive .app-shell :is(.topbar,.section-heading,.actions){flex-wrap:wrap;min-width:0}
+  .m360-responsive .app-shell>*,.m360-responsive .bcc-first-view>*,.m360-responsive .bcc-overview-row>*,.m360-responsive .pf-top>*{min-width:0;box-sizing:border-box}
+  .m360-responsive .bcc-first-view{grid-template-columns:minmax(0,1fr)}
+  .m360-responsive .bcc-line-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .m360-responsive .bcc-primary-analysis,.m360-responsive .bcc-secondary-analysis{grid-template-columns:minmax(0,1fr)}
+  .m360-responsive .bcc-workspace-nav{display:flex;gap:4px;max-width:100%;overflow-x:auto;scrollbar-width:thin}
+  .m360-responsive .bcc-workspace-nav button{min-height:44px;flex:none;white-space:nowrap}
+  .m360-responsive .bcc-mobile-nav{display:none}
+  .m360-responsive .bcc-header,.m360-responsive .bcc-header-actions{flex-wrap:wrap}
+  .m360-responsive .bcc-header-actions{gap:8px;min-width:0}
+  .m360-responsive .bcc-filter-ribbon{display:none}
+  .m360-responsive .bcc-mobile-filter-row{display:flex;gap:8px;align-items:center;margin:10px 0}
+  .m360-responsive .bcc-filter-ribbon.open{position:fixed;z-index:220;inset:12px max(12px,calc((100vw - 600px)/2));display:flex;flex-direction:column;gap:14px;overflow-y:auto;overscroll-behavior:contain;border-radius:16px;box-shadow:0 0 0 100vmax #0f172a77;padding:20px;padding-bottom:calc(20px + env(safe-area-inset-bottom,0px));background:#fff}
+  .m360-responsive .bcc-filter-sheet-head{display:flex;align-items:center;justify-content:space-between}
+  .m360-responsive .bcc-filter-secondary{display:flex}
+  .m360-responsive .bcc-filter-field :is(select,input),.m360-responsive .bcc-combobox>button{min-height:44px;font-size:16px;box-sizing:border-box;max-width:100%}
+  .m360-responsive .bcc-filter-chips{min-width:0;overflow:auto;display:flex}
+  .m360-responsive .bcc-filter-chips button{min-height:44px;flex:none}
+  .m360-responsive .m360-filter-actions{display:flex;gap:10px;position:sticky;bottom:-20px;background:#fff;padding:14px 0;flex:none}
+  .m360-responsive .m360-filter-actions button{flex:1;min-height:44px;font:inherit}
+  .m360-responsive .bcc-trust-ribbon{flex-wrap:wrap;white-space:normal;overflow:visible;gap:8px}
+  .m360-responsive .bcc-update-loader{inset-inline-start:0}
+  .m360-responsive .bcc-trend-visual{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+  .m360-responsive .bcc-trend-chart{min-width:640px;height:240px}
+  .m360-responsive .bcc-trend-chart text{font-size:14px}
+  .m360-responsive #availability-command-center .trend-chart{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+  .m360-responsive #availability-command-center .trend-chart svg{min-width:640px;width:100%;height:auto}
+  .m360-responsive .bcc-performance-matrix,.m360-responsive .bcc-table-wrap{max-width:100%;min-width:0;overflow:auto}
+  .m360-responsive .bcc-table-wrap :is(th,td){display:table-cell!important;white-space:nowrap}
+  .m360-responsive .bcc-table-wrap table{min-width:680px;table-layout:auto}
+  .m360-responsive .m360-table-scroll{max-width:100%;min-width:0;overflow:auto;overscroll-behavior-x:contain;border-radius:6px}
+  .m360-responsive .m360-table-scroll>table{min-width:100%;width:max-content;max-width:none}
+  .m360-responsive :is(.m360-bottom-nav,.m360-compact-header,.app-nav) :focus-visible{outline:3px solid #ffcc00;outline-offset:2px}
+  .m360-responsive .app-shell :focus-visible{outline:3px solid #2563eb;outline-offset:2px}
+  .m360-responsive .presentation :is(.m360-compact-header,.m360-bottom-nav){display:none}
+  /* Lot C: page-specific intermediate layouts. */
+  .m360-responsive .m360-compact-panel{min-width:0;margin:0 0 12px;border:1px solid #d6dee7;border-radius:10px;background:#fff;grid-column:1/-1}
+  .m360-responsive .m360-compact-panel>summary{min-height:44px;box-sizing:border-box;padding:13px 16px;font-weight:700;cursor:pointer;color:#172039}
+  .m360-responsive .m360-compact-panel>summary:focus-visible{outline:3px solid #2563eb;outline-offset:2px}
+  .m360-responsive .m360-compact-panel>:not(summary){position:static;width:auto;max-width:100%;min-height:0;max-height:55vh;height:auto;overflow:auto;margin:0;box-sizing:border-box}
+  .m360-responsive .m360-compact-panel[open]>.report-config-sidebar{display:flex!important;visibility:visible;transform:none}
+  .m360-responsive .app-shell.source-detail-shell{margin-left:0;width:auto}
+  .m360-responsive .m360-compact-panel[open]>.source-catalog-pane{position:static;width:auto;display:flex;visibility:visible}
+  .m360-responsive .m360-compact-panel .source-catalog-body{display:block}
+  .m360-responsive .m360-compact-panel .source-catalog-head :is(h2,p){display:block}
+  .m360-responsive .m360-compact-panel .source-catalog-head .js-toggle-catalog{display:none}
+  .m360-responsive .report-config-page .report-config-workspace,.m360-responsive .aiw-shell .aiw-workspace{grid-template-columns:minmax(0,1fr)}
+  .m360-responsive :is(.aiw-workspace,.report-config-workspace,.ia-config-grid,.data-browser-layout,.user-admin-grid){grid-template-columns:minmax(0,1fr);min-width:0}
+  .m360-responsive :is(.aiw-editor,.report-config-editor,.ia-config-main,.data-browser-preview-panel,.browser-pane-content){width:auto;min-width:0;max-width:100%;box-sizing:border-box}
+  .m360-responsive :is(.aiw-primary-nav,.aiw-entity-nav,.ia-tabs,.report-config-primary-nav,.report-config-tabs){display:flex;max-width:100%;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:thin}
+  .m360-responsive :is(.aiw-primary-nav,.aiw-entity-nav,.ia-tabs,.report-config-primary-nav,.report-config-tabs)>button{flex:none;min-height:44px;white-space:nowrap}
+  .m360-responsive .data-browser-layout .data-browser-list-panel{max-height:50vh}
+  .m360-responsive .data-browser-preview-panel :is(.legacy-browser-bar,.legacy-toolbar,.legacy-browser-title-row){flex-wrap:wrap;min-width:0;max-width:100%}
+  .m360-responsive .data-browser-preview-panel :is(.legacy-actions,.legacy-pager,.browser-option-actions){flex-wrap:wrap}
+  .m360-responsive .data-browser-preview-panel :is(.browser-preview-table-wrap,.browser-preview-table-container,.table-scroll){min-width:0;max-width:100%;overflow:auto}
+  .m360-responsive .reporting-hub :is(.reporting-hub-header,.reporting-toolbar,.reporting-toolbar-fields){flex-wrap:wrap;min-width:0}
+  .m360-responsive .reporting-hub .report-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .m360-responsive .resource-library-shell :is(.resource-grid,.resource-section-grid){grid-template-columns:repeat(2,minmax(0,1fr))}
+  .m360-responsive .resource-detail-shell :is(.resource-document-layout,.resource-reader-layout){grid-template-columns:minmax(0,1fr)}
+  .m360-responsive .resource-view-shell .resource-detail-header{display:flex;flex-wrap:wrap;min-width:0;gap:12px}
+  .m360-responsive .resource-view-shell .resource-detail-header>div{min-width:0;max-width:100%}
+  .m360-responsive .resource-view-shell .resource-detail-header h1{overflow-wrap:anywhere}
+  .m360-responsive .resource-view-shell .resource-detail-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:100%;min-width:0}
+  .m360-responsive .resource-view-shell .resource-detail-meta span{min-width:0;overflow-wrap:anywhere;white-space:normal}
+  .m360-responsive .resource-view-shell :is(.resource-viewer,.resource-text-viewer){min-width:0;max-width:100%;box-sizing:border-box}
+  .m360-responsive .resource-view-shell .resource-text-viewer pre{max-width:100%;overflow:auto}
+  .m360-responsive .resource-view-shell .m360-resource-open{display:inline-flex;align-items:center;min-height:44px}
+  .m360-responsive .report-viewer-body .report-viewer-shell{height:calc(100vh - 60px - var(--m360-safe-top));height:calc(100dvh - 60px - var(--m360-safe-top));width:100%;margin:0;padding:12px;min-height:0}
+  .m360-responsive .report-viewer-shell :is(.report-workspace-header,.report-canvas-toolbar,.report-command-bar){flex-wrap:wrap;min-width:0;gap:10px}
+  .m360-responsive .report-viewer-shell .report-workspace-header{grid-template-columns:minmax(0,1fr) auto}
+  .m360-responsive .report-viewer-shell .report-header-status{grid-column:1/-1;grid-row:2}
+  .m360-responsive .report-viewer-shell :is(.report-title-line,.report-workspace-identity,.report-canvas-workspace,.report-canvas-wrapper){min-width:0;max-width:100%}
+  .m360-responsive .report-viewer-shell .report-title-line{flex-wrap:wrap}
+  .m360-responsive .report-viewer-shell .report-page-navigation{max-width:100%;overflow:auto}
+  .m360-responsive .report-viewer-shell :is(.viewer-more-menu,.viewer-switcher-panel){max-width:calc(100vw - 28px);box-sizing:border-box}
+  .m360-responsive .codex-chat.app-shell{display:grid;grid-template-columns:minmax(0,1fr);width:100%;height:calc(var(--m360-visible-height,100dvh) - 60px - var(--m360-safe-top) - var(--m360-bottom) - var(--m360-safe-bottom));min-height:320px;margin:0;padding:0;overflow:hidden}
+  .m360-responsive .codex-chat .codex-chat__main{height:100%;min-height:0;min-width:0;overflow:hidden;grid-template-rows:auto minmax(0,1fr) auto}
+  .m360-responsive .codex-chat .codex-chat__main.has-conversation{grid-template-rows:auto auto minmax(0,1fr) auto}
+  .m360-responsive .codex-chat .codex-thread{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:18px 16px}
+  .m360-responsive .codex-chat .codex-composer{position:static;min-width:0;padding:12px 14px;grid-template-columns:minmax(0,1fr)}
+  .m360-responsive .codex-chat .codex-composer textarea{width:100%;box-sizing:border-box;font-size:16px}
+  .m360-responsive .codex-chat .codex-composer-tools{min-width:0;flex-wrap:wrap}
+  .m360-responsive .codex-chat .codex-chat__header{padding:12px 14px;gap:10px;flex-wrap:wrap}
+  .m360-responsive .codex-chat .codex-status{display:none}
+  .m360-responsive .codex-chat .codex-chat__history{display:none}
+  .m360-responsive .codex-chat.history-open .codex-chat__history{display:block;position:fixed;inset:60px 0 calc(var(--m360-bottom) + var(--m360-safe-bottom));width:100%;height:auto;max-width:100%;z-index:85;overflow:auto;box-sizing:border-box}
+  .m360-responsive .codex-chat #codex-history-toggle{display:block;min-height:44px;border:1px solid #d6dee7;border-radius:8px;background:#fff;color:#172039;padding:10px;font:inherit}
+  .m360-responsive .codex-chat .m360-history-close{display:block;min-height:44px;margin-bottom:12px;border:1px solid #d6dee7;border-radius:8px;background:#fff;color:#172039;padding:10px;font:inherit}
+  .m360-responsive .codex-chat.history-open #codex-history-toggle{position:fixed;right:14px;top:70px;z-index:86;background:#ffcc00;color:#111827}
+  .m360-responsive :is(.browser-modal__panel,.report-config-modal,.aiw-modal-panel){box-sizing:border-box;max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);overflow:auto}
+}
+@media (max-width:767px){
+  .m360-responsive body{--m360-bottom:64px}
+  .m360-responsive .app-shell,.m360-responsive .app-shell.bcc-shell,.m360-responsive .app-shell.pf-shell{padding:16px 14px calc(24px + var(--m360-bottom) + var(--m360-safe-bottom))}
+  .m360-responsive .m360-compact-header:not([hidden]){padding-left:14px;padding-right:14px;gap:8px}
+  .m360-responsive .m360-compact-title{font-size:12px}
+  .m360-responsive .m360-bottom-nav:not([hidden]){position:fixed;inset:auto 0 0;z-index:80;display:grid;grid-template-columns:repeat(var(--destinations),minmax(0,1fr));height:calc(64px + var(--m360-safe-bottom));padding:0 6px var(--m360-safe-bottom);background:#fff;border-top:1px solid #e2e8f0;box-sizing:border-box;box-shadow:0 -2px 14px #0f172a08}
+  .m360-responsive .m360-bottom-nav :is(a,button){display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;min-height:48px;gap:4px;border:0;border-radius:8px;color:#475569;background:none;text-decoration:none;font:inherit;font-size:11px;font-weight:600;cursor:pointer;padding:5px 0}
+  .m360-responsive .m360-bottom-nav a.active{background:#fff8d6;color:#111827}
+  .m360-responsive .m360-bottom-nav .nav-icon{width:22px;height:22px;margin:0;fill:none;stroke:currentColor;stroke-width:1.8}
+  .m360-responsive .m360-more-button>span{font-size:20px;line-height:22px;letter-spacing:2px}
+  .m360-responsive .bcc-header-actions{width:100%;justify-content:flex-start}
+  .m360-responsive .bcc-header-actions .secondary{display:inline-flex}
+  .m360-responsive .bcc-title-block h1{font-size:24px}
+  .m360-responsive .bcc-header-actions :is(.bcc-button,.bcc-division-toggle){min-height:44px;font-size:13px}
+  .m360-responsive .bcc-header-actions .m360-parts-link{max-width:100%;white-space:normal}
+  .m360-responsive .bcc-hero{min-height:200px}
+  .m360-responsive .bcc-primary-analysis .bcc-trend-panel,.m360-responsive .bcc-primary-analysis .bcc-brief-panel{order:initial}
+  .m360-responsive .bcc-line-card{min-width:0;min-height:120px}
+  .m360-responsive .bcc-line-card header span{font-size:13px}
+  .m360-responsive .bcc-line-card>strong{font-size:24px}
+  .m360-responsive .bcc-panel-head{gap:10px}
+  .m360-responsive .bcc-drawer{width:100%;max-width:100%;box-sizing:border-box}
+  .m360-responsive .bcc-shell :is(.bcc-leaders-controls,.bcc-explorer-controls,.bcc-trend-head-actions){min-width:0;flex-wrap:wrap;max-width:100%}
+  .m360-responsive .bcc-shell :is(.bcc-chart-action,.bcc-brief-tabs button,.bcc-operation-tabs button,.bcc-icon-btn){min-height:44px;min-width:44px}
+  .m360-responsive .bcc-shell .bcc-trend-statistics{gap:8px;flex-wrap:wrap}
+  .m360-responsive :is(.pf-shell,.reporting-hub,.resource-library-shell,.ia-config-shell,.aiw-shell,.report-config-page,.data-browser-page,#availability-command-center) :is(input,select,textarea){max-width:100%;min-width:0;font-size:16px;box-sizing:border-box}
+  .m360-responsive :is(.pf-shell,.reporting-hub,.resource-library-shell,.ia-config-shell,.aiw-shell,.report-config-page,.data-browser-page,#availability-command-center) :is(.button,.icon-button,.reset-filters,.viewer-button,.reporting-view-toggle button,.ia-tab){min-height:44px;box-sizing:border-box}
+  .m360-responsive .pf-shell :is(.pf-header,.pf-heading,.pf-trend>header,.pf-trend-heading,.pf-detail>header,.pf-pagination){min-width:0;max-width:100%;flex-wrap:wrap}
+  .m360-responsive .pf-shell .pf-heading h1{font-size:24px;overflow-wrap:anywhere}
+  .m360-responsive .pf-shell .pf-heading>div{min-width:0}
+  .m360-responsive .pf-shell :is(.pf-legend-item,.pf-shell .pf-pagination button){min-height:44px}
+  .m360-responsive .pf-shell .pf-detail-filters label{min-width:0;flex-basis:100%}
+  .m360-responsive .pf-shell .pf-detail-filters input{width:100%}
+  .m360-responsive .pf-shell .pf-pagination{justify-content:space-between;gap:10px}
+  .m360-responsive .pf-shell .pf-source{line-height:1.6}
+  .m360-responsive .reporting-hub .report-catalog-grid,.m360-responsive .reporting-hub .reporting-catalog{grid-template-columns:minmax(0,1fr)}
+  .m360-responsive .reporting-hub .reporting-toolbar-fields{display:flex;width:100%;gap:8px}
+  .m360-responsive .reporting-hub .reporting-toolbar-fields label{flex:1;min-width:0}
+  .m360-responsive .reporting-hub .reporting-card{min-width:0}
+  .m360-responsive .resource-library-shell :is(.resource-toolbar,.resource-search){display:flex;flex-wrap:wrap;min-width:0;gap:8px}
+  .m360-responsive .resource-library-shell :is(.resource-grid,.resource-section-grid){grid-template-columns:minmax(0,1fr)}
+  .m360-responsive .app-shell .source-grid{grid-template-columns:minmax(0,1fr)}
+  .m360-responsive .source-grid :is(.source-card,.empty){min-width:0;overflow-wrap:anywhere}
+  .m360-responsive .source-detail-shell .preview-top-actions{display:flex;flex-wrap:wrap;min-width:0;max-width:100%;gap:8px}
+  .m360-responsive .source-detail-shell .preview-limit-control{min-width:0;max-width:100%;flex-wrap:wrap}
+  .m360-responsive .source-detail-shell .preview-top-actions :is(button,select){min-height:44px;max-width:100%;box-sizing:border-box}
+  .m360-responsive .resource-library-shell .resource-toolbar input{width:100%;min-width:0}
+  .m360-responsive :is(.aiw-shell,.report-config-page,.ia-config-shell) :is(.topbar,.aiw-page-header,.report-config-header,.aiw-section-header,.ia-toolbar){flex-wrap:wrap;min-width:0}
+  .m360-responsive :is(.aiw-header-actions,.report-config-header__actions,.aiw-section-actions,.ia-inline-actions,.form-actions){flex-wrap:wrap;min-width:0;gap:8px}
+  .m360-responsive :is(.aiw-shell,.report-config-page,.ia-config-shell) :is(.form-grid,.ia-form-grid,.aiw-entity-workspace){grid-template-columns:minmax(0,1fr)}
+  .m360-responsive :is(.aiw-health-strip,.report-config-summary){overflow:auto;max-width:100%}
+  .m360-responsive .aiw-editor .aiw-primary-nav{width:100%;min-width:0}
+  .m360-responsive .report-config-page .report-config-footer{position:static;flex-wrap:wrap}
+  .m360-responsive .app-shell .m360-table-scroll>table{font-size:14px}
+  .m360-responsive #availability-command-center :is(.availability-control-grid,.analysis-context,.availability-hero-grid,.availability-main-grid,.availability-analysis-grid){grid-template-columns:minmax(0,1fr);min-width:0}
+  .m360-responsive #availability-command-center .analysis-controls{display:flex;flex-wrap:wrap;gap:10px}
+  .m360-responsive #availability-command-center .metric-control{width:100%}
+  .m360-responsive #availability-command-center .availability-header{flex-wrap:wrap}
+  .m360-responsive #availability-command-center :is(.availability-breakdown-tabs,.period-selector){max-width:100%;overflow:auto}
+  .m360-responsive .report-viewer-body .report-viewer-shell{height:calc(100vh - 124px - var(--m360-safe-top) - var(--m360-safe-bottom));height:calc(100dvh - 124px - var(--m360-safe-top) - var(--m360-safe-bottom));padding:10px}
+  .m360-responsive .report-viewer-shell .report-workspace-header h1{font-size:19px;overflow-wrap:anywhere}
+  .m360-responsive .report-viewer-shell .report-header-status{flex-basis:100%}
+  .m360-responsive .report-viewer-shell .viewer-fit-selector{overflow:auto;max-width:100%}
+  .m360-responsive .report-viewer-shell :is(.viewer-button,.viewer-icon-button){min-height:44px;min-width:44px}
+  .m360-responsive .m360-composing{--m360-bottom:0px}
+  .m360-responsive .m360-composing .m360-bottom-nav{display:none}
+  .m360-responsive .codex-chat .codex-chat__header h1{font-size:17px}
+  .m360-responsive .codex-chat .codex-empty h2{font-size:24px}
+  .m360-responsive .codex-chat .codex-empty>span{font-size:11px;line-height:1.5;display:block}
+  .m360-responsive .codex-chat .codex-composer-tools button{min-height:44px}
+  .m360-responsive .codex-chat .codex-composer-hint{font-size:12px}
+  .m360-responsive .codex-chat .codex-voice-status{font-size:11px;line-height:1.4}
+}
+@media (prefers-reduced-motion:reduce){.m360-responsive .app-nav{transition:none}}

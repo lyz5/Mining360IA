@@ -1,0 +1,33 @@
+/* Lot B. Single business activity registry, keyed by stable source identifiers.
+   No sizing, spacing, type scale, ordering, display or positioning changes. */
+.m360-business-theme :is(.bcc-body,.pf-body){
+  --bo-machine:#ffcc00;--bo-parts:#2563eb;--bo-service:#0f766e;
+  --bo-rental:#7c3aed;--bo-total:#111827;--bo-unclassified:#64748b;
+  --bo-background:#f5f6f8;--bo-surface:#fff;--bo-text:#111827;
+  --bo-muted:#475569;--bo-border:#e2e8f0;--bo-yellow:#ffcc00;--bo-yellow-soft:#fff8d6;
+  --bcc-ink:var(--bo-text);--bcc-muted:var(--bo-muted);--bcc-yellow:var(--bo-yellow);
+  background:var(--bo-background);color:var(--bo-text);
+}
+.m360-business-theme .bcc-body :is(.bcc-panel,.bcc-line-card,.bcc-turnover-card,.bcc-machine-summary article,.bcc-parts-summary article,.bcc-explorer,.bcc-drawer){background:var(--bo-surface);color:var(--bo-text);border-color:var(--bo-border)}
+.m360-business-theme .bcc-body .bcc-hero{background:var(--bo-total);border-color:var(--bo-yellow)}
+.m360-business-theme .bcc-body .bcc-hero-copy>strong{color:#fff}
+.m360-business-theme .bcc-body .bcc-line-card>strong{color:var(--bo-text)}
+.m360-business-theme .bcc-body .bcc-line-card.active{background:var(--bo-yellow-soft)}
+.m360-business-theme .bcc-body .bcc-turnover-kpi{background:var(--bo-surface);color:var(--bo-text);border-color:var(--bo-border);box-shadow:inset 0 3px var(--bo-activity)}
+.m360-business-theme .bcc-body .bcc-turnover-kpi :is(strong,span){color:var(--bo-text)}
+.m360-business-theme .bcc-body .bcc-turnover-kpi small{color:var(--bo-muted)}
+.m360-business-theme .bcc-body .bcc-turnover-kpi.total{background:var(--bo-total);color:#fff;box-shadow:inset 0 3px var(--bo-yellow)}
+.m360-business-theme .bcc-body .bcc-turnover-kpi.total :is(strong,span){color:#fff}
+.m360-business-theme .bcc-body .bcc-turnover-kpi.total small{color:#cbd5e1}
+.m360-business-theme .bcc-body .bcc-turnover-kpi footer{background:var(--bo-surface);color:var(--bo-muted)}
+.m360-business-theme .bcc-body :is(.bcc-button.primary,.bcc-workspace-nav button.active){color:var(--bo-text)}
+.m360-business-theme .bcc-body .bcc-button.primary{background:var(--bo-yellow);border-color:var(--bo-yellow)}
+.m360-business-theme .bcc-body .bcc-kicker{color:var(--bo-muted)}
+.m360-business-theme .pf-body :is(.pf-header,.pf-trend>header){background:var(--bo-total);color:#fff}
+.m360-business-theme .pf-body .pf-month select{background:var(--bo-total)!important}
+.m360-business-theme .pf-body .pf-card{background:var(--bo-surface);color:var(--bo-text);border-color:var(--bo-border)}
+.m360-business-theme .pf-body .pf-kpi{background:var(--bo-surface)}
+.m360-business-theme .pf-body .pf-value{color:var(--bo-text)}
+.m360-business-theme .pf-body .pf-back{color:var(--bo-muted)}
+/* Order Intake blue and all accounting cohort colors remain their own registry
+   in parts_fulfillment.js, including signed credits and hidden Future values. */

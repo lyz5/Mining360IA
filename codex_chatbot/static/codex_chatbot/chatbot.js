@@ -12,6 +12,26 @@
   const csrf = form.querySelector('[name=csrfmiddlewaretoken]').value;
   let activeRunId = root.dataset.activeRunId || '';
   let pollTimer = null;
+  const guardedScroll = document.documentElement.classList.contains('m360-responsive');
+  let followLatest = true;
+  let latestButton = null;
+  if (guardedScroll) {
+    latestButton = document.createElement('button'); latestButton.type = 'button';
+    latestButton.className = 'm360-latest-messages'; latestButton.textContent = 'Latest messages'; latestButton.hidden = true;
+    form.before(latestButton);
+    thread.addEventListener('scroll', () => {
+      followLatest = thread.scrollHeight - thread.clientHeight - thread.scrollTop < 64;
+      latestButton.hidden = followLatest;
+    }, {passive:true});
+    latestButton.addEventListener('click', () => { thread.scrollTop = thread.scrollHeight; followLatest = true; latestButton.hidden = true; });
+  }
+  const scrollLatest = (force = false) => {
+    if (!guardedScroll || followLatest || force) {
+      thread.scrollTop = thread.scrollHeight;
+      followLatest = true;
+      if (latestButton) latestButton.hidden = true;
+    } else if (latestButton) latestButton.hidden = false;
+  };
   const renderMessage = (element, content) => {
     const value = String(content || '');
     element.replaceChildren();
@@ -69,7 +89,7 @@
     }
     thread.querySelector('.codex-empty')?.remove();
     thread.append(article);
-    thread.scrollTop = thread.scrollHeight;
+    scrollLatest(role === 'USER');
   };
 
   const appendTable = (section, title, rows, columns) => {
@@ -320,7 +340,7 @@
     });
     section.append(exportButton);
     answer.after(section);
-    thread.scrollTop = thread.scrollHeight;
+    scrollLatest();
   };
 
   const setRunState = (run) => {
