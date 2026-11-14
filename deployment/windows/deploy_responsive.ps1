@@ -34,7 +34,7 @@ $protectedPaths = @(
  'reports/revenue_query.py',
  'reports/parts_fulfillment_service.py',
  'reports/models.py',
- 'reports/site_access.py',
+ 'reports/business_review_access_service.py',
  'reports/urls.py',
  'deployment/windows/start_mining360.ps1'
 )
