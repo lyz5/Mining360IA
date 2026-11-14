@@ -17,3 +17,6 @@ application = get_wsgi_application()
 
 from reports.revenue_auto_sync import start_revenue_scheduler
 start_revenue_scheduler()
+
+from reports.parts_fulfillment_auto_sync import start_parts_scheduler
+start_parts_scheduler()

@@ -99,7 +99,7 @@ class LogisticsSource:
     Neither a service-principal REST query nor a flow payload role proves end-user
     RLS. Until a delegated query contract is verified, global reads are admin-only.
     """
-    def __init__(self, user):
+    def __init__(self, user, *, refresh_metadata=True):
         self.user = user
         self.report = report_for(user)
         accounts = authorized_account_codes(user)
@@ -110,7 +110,7 @@ class LogisticsSource:
                 'SCOPED_QUERY_NOT_CONFIGURED')
         if self.report.requires_user_identity or self.report.authentication_mode != 'app_owns_data' or self.report.default_rls_role.casefold() != 'global':
             raise FulfillmentUnavailable('This report requires a verified delegated query identity.', 'SCOPED_QUERY_NOT_CONFIGURED')
-        self.refresh_id, self.last_refresh = self.refresh_state()
+        self.refresh_id, self.last_refresh = self.refresh_state() if refresh_metadata else ('unknown', None)
 
     def refresh_state(self):
         key = 'parts-fulfillment:refresh:' + hashlib.sha256(f'{self.report.workspace_id}:{self.report.semantic_model_id}'.encode()).hexdigest()
@@ -176,14 +176,14 @@ class LogisticsSource:
             # Never return signed flow URLs, tokens or upstream exception bodies.
             raise FulfillmentUnavailable('Mine Logistics is temporarily unavailable. Please retry.') from None
 
-    def cached_query(self, dax, ttl=90):
+    def cached_query(self, dax, ttl=90, *, force=False):
         scope = (self.user.pk, self.report.pk, self.report.semantic_model_id,
                  self.report.updated_at.isoformat(), self.report.configuration_version,
                  self.report.authentication_mode, self.report.default_rls_role,
                  authorized_account_codes(self.user), authorized_minesite_names(self.user), getattr(self, 'refresh_id', 'unknown'))
         digest = hashlib.sha256((repr(scope) + dax).encode()).hexdigest()
         key = 'parts-fulfillment:v1:' + digest
-        result = cache.get(key)
+        result = None if force else cache.get(key)
         if result is None:
             lock = key + ':loading'
             if not cache.add(lock, True, 90):
@@ -226,8 +226,9 @@ class PartsFulfillmentService:
         self.source = source or LogisticsSource(user)
         self.today = today or timezone.localdate()
 
-    def summary(self, selected=None):
-        rows = self.source.cached_query(monthly_dax(self.today))
+    def summary(self, selected=None, *, force_refresh=False):
+        query = monthly_dax(self.today)
+        rows = self.source.cached_query(query, force=True) if force_refresh else self.source.cached_query(query)
         series = []
         for row in rows:
             raw = str(row.get('MonthStart') or '')[:10]

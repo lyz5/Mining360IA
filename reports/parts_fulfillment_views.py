@@ -11,6 +11,7 @@ from django.views.decorators.http import require_GET
 from .business_review_access_service import has_business_review_permission
 from .business_review_views import _command_center_allowed
 from .parts_fulfillment_service import PartsFulfillmentService, FulfillmentUnavailable, FIELDS
+from .parts_fulfillment_auto_sync import state_for_source, state_for_user
 
 
 def allowed(user):
@@ -49,7 +50,24 @@ def summary(request):
     if not allowed(request.user):
         return private(JsonResponse({'detail': 'Forbidden'}, status=403))
     try:
-        return private(JsonResponse(PartsFulfillmentService(request.user).summary(request.GET.get('month'))))
+        service = PartsFulfillmentService(request.user)
+        # Capture before the query: a job completing during a cache read must
+        # never label older data with its newer completion token.
+        auto_refresh = state_for_source(request.user, service.source)
+        result = service.summary(request.GET.get('month'))
+        result['auto_refresh'] = auto_refresh
+        return private(JsonResponse(result))
+    except Exception as exc:
+        return error_response(exc)
+
+
+@login_required
+@require_GET
+def sync_status(request):
+    if not allowed(request.user):
+        return private(JsonResponse({'detail': 'Forbidden'}, status=403))
+    try:
+        return private(JsonResponse(state_for_user(request.user)))
     except Exception as exc:
         return error_response(exc)
 

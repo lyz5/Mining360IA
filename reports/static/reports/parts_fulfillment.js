@@ -22,7 +22,7 @@
   };
   const monthLabel = m => new Intl.DateTimeFormat(locale,{month:'short',year:'numeric'}).format(new Date(`${m}-01T12:00:00`));
   const dateLabel = d => d ? new Intl.DateTimeFormat(locale,{day:'2-digit',month:'short',year:'numeric'}).format(new Date(`${d.slice(0,10)}T12:00:00`)) : '—';
-  const state={data:null, summaryController:null,detailController:null,summaryRequest:0,detailRequest:0,detailMonth:null,cohort:'',page:1,pages:1,searchTimer:null,detailTotal:null,detailSearch:''};
+  const state={data:null, summaryController:null,detailController:null,summaryRequest:0,detailRequest:0,detailMonth:null,cohort:'',page:1,pages:1,searchTimer:null,detailTotal:null,detailSearch:'',syncTimer:null,syncController:null,syncVersion:undefined};
   const show = (selector,value) => {$(selector).hidden=!value;};
   const visualCopies=[];
   function setCopyReady(group,ready) {
@@ -102,19 +102,61 @@
       $('[data-month]').innerHTML=(data.months||[]).map(m=>`<option value="${esc(m)}">${esc(monthLabel(m))}</option>`).join('')||'<option value="">No available month</option>';
       if(data.selected_month)$('[data-month]').value=data.selected_month;
       $('[data-month]').disabled=!data.months?.length;
-      if(data.empty){show('[data-empty]',true);$('[data-empty-message]').textContent=data.message;return;}
+      if(data.empty){show('[data-empty]',true);$('[data-empty-message]').textContent=data.message;adoptSchedule(data.auto_refresh);return true;}
       const url=new URL(location.href);url.searchParams.set('month',data.selected_month);history.replaceState({},'',url);
       render(data);show('[data-content]',true);setCopyReady('summary',true);
+      adoptSchedule(data.auto_refresh);return true;
     } catch(error) {
       if(controller.signal.aborted && controller.signal.reason!=='timeout')return;
       if(request!==state.summaryRequest)return;
       $('[data-error-message]').textContent=controller.signal.reason==='timeout'?'The source did not respond in time. Please retry.':error.message;
       if(!state.data?.months?.length)$('[data-month]').innerHTML='<option value="">Unavailable</option>';
       show('[data-error]',true);
+      return false;
     } finally {
       if(request===state.summaryRequest){show('[data-loading]',false);root.removeAttribute('aria-busy');if(state.data?.months?.length)$('[data-month]').disabled=false;}
     }
   }
+
+  function scheduleSync(delay) {
+    clearTimeout(state.syncTimer);
+    if(!root.dataset.syncUrl || document.hidden)return;
+    state.syncTimer=setTimeout(checkScheduledRefresh,Math.max(1000,Math.min(delay,86400000)));
+  }
+  function adoptSchedule(meta) {
+    if(!meta)return;
+    state.syncVersion=meta.version;
+    scheduleMetadata(meta);
+  }
+  function scheduleMetadata(meta) {
+    clearTimeout(state.syncTimer);
+    if(!meta.enabled)return;
+    const delay=Date.parse(meta.next_check_at)-Date.parse(meta.server_time);
+    if(Number.isFinite(delay))scheduleSync(delay);
+  }
+  async function checkScheduledRefresh() {
+    if(document.hidden || state.syncController || !root.dataset.syncUrl)return;
+    const controller=new AbortController();state.syncController=controller;
+    const timeout=setTimeout(()=>controller.abort(),10000);
+    try {
+      const response=await fetch(root.dataset.syncUrl,{credentials:'same-origin',signal:controller.signal,headers:{Accept:'application/json'}});
+      if([401,403].includes(response.status) || !response.headers.get('content-type')?.includes('application/json'))return;
+      if(!response.ok)throw new Error('Schedule unavailable');
+      const meta=await response.json();
+      if(meta.enabled && state.syncVersion!==undefined && meta.version!==state.syncVersion){
+        // Preserve a detail search/export or visual copy already in progress.
+        if(root.getAttribute('aria-busy')==='true' || !$('[data-detail-panel]').hidden || !$('[data-order-note]').hidden || root.querySelector('[data-pf-copy][aria-busy="true"]')){scheduleSync(60000);return;}
+        if(!await loadSummary(state.data?.selected_month||$('[data-month]').value||''))scheduleSync(60000);
+      }else scheduleMetadata(meta);
+    }catch(_){scheduleSync(60000);}
+    finally{clearTimeout(timeout);state.syncController=null;}
+  }
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden){clearTimeout(state.syncTimer);state.syncController?.abort();}
+    else if(state.syncVersion!==undefined && state.data?.auto_refresh?.enabled)scheduleSync(1000);
+  });
+  window.addEventListener('pagehide',()=>{clearTimeout(state.syncTimer);state.syncController?.abort();});
+  window.addEventListener('pageshow',event=>{if(event.persisted && state.syncVersion!==undefined && state.data?.auto_refresh?.enabled)scheduleSync(1000);});
 
   function render(data) {
     const k=data.kpis;

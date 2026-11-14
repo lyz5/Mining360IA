@@ -92,6 +92,7 @@ urlpatterns = [
     path("business-review/command-center/", business_review_views.business_command_center, name="business-command-center"),
     path("business-review/parts-fulfillment/", parts_fulfillment_views.page, name="parts-fulfillment"),
     path("api/business-review/parts-fulfillment/summary/", parts_fulfillment_views.summary, name="parts-fulfillment-summary"),
+    path("api/business-review/parts-fulfillment/sync-status/", parts_fulfillment_views.sync_status, name="parts-fulfillment-sync-status"),
     path("api/business-review/parts-fulfillment/details/", parts_fulfillment_views.details, name="parts-fulfillment-details"),
     path("api/business-review/parts-fulfillment/export/", parts_fulfillment_views.export, name="parts-fulfillment-export"),
     path("business-review/control-tower/", business_review_views.business_review, name="business-review-control-tower"),

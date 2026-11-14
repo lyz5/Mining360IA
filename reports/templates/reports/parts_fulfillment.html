@@ -17,7 +17,7 @@
   <symbol id="pf-bars" viewBox="0 0 40 40"><path d="M2 25h8v13H2zm14-12h8v25h-8zM30 2h8v36h-8z"/></symbol>
 </defs></svg>
 <main class="app-shell pf-shell" data-parts-fulfillment data-number-locale="{{ number_locale|default:'en-GB' }}"
- data-summary-url="{% url 'parts-fulfillment-summary' %}" data-details-url="{% url 'parts-fulfillment-details' %}"
+ data-summary-url="{% url 'parts-fulfillment-summary' %}" data-sync-url="{% url 'parts-fulfillment-sync-status' %}" data-details-url="{% url 'parts-fulfillment-details' %}"
  {% if can_export %}data-export-url="{% url 'parts-fulfillment-export' %}"{% endif %}>
   <a class="pf-back" href="{% url 'business-command-center' %}">← Business Overview</a>
   <header class="pf-header">
