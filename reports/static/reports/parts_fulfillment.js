@@ -127,13 +127,8 @@
     }
     $('[data-period-note]').textContent=`${monthLabel(data.selected_month)} · ${data.month_to_date?'Month to date':'Calendar month'} · EUR`;
     $('[data-freshness]').textContent=data.source.coverage?`Accounting entries through ${dateLabel(data.source.coverage)} · Order coverage not supplied`:'Source coverage date not supplied';
-    const refreshDate=data.source.last_refresh?new Date(data.source.last_refresh):null;
-    const refreshed=refreshDate&&Number.isFinite(refreshDate.getTime())?`Source refresh completed ${new Intl.DateTimeFormat(locale,{dateStyle:'medium',timeStyle:'short'}).format(refreshDate)}.`:'Refresh time not supplied by source.';
-    $('[data-scope]').textContent=`${data.source.model} · ${data.source.scope}. ${data.source.scope_note} ${refreshed}`;
     $('[data-origin-subtitle]').textContent=`Accounting sales of ${compact(k.sales)}, by order month (value and share)`;
     renderBreakdown(k);
-    const r=k.reconciliation;
-    $('[data-reconciliation]').innerHTML=`<span class="pf-badge ${r.status==='reconciled'?'':'warning'}" title="Source reconciliation difference: ${esc(eur(r.difference))}; rounded component difference: ${esc(eur(r.arithmetic_difference))}">${esc(r.label)}</span>`;
     renderChart(data.series);
     $('[data-trend-period]').textContent=`${monthLabel(data.series[0].month)} — ${monthLabel(data.selected_month)} · up to 12 calendar months`;
   }
