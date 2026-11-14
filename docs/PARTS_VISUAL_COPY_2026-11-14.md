@@ -68,3 +68,13 @@ applied results, avoiding a new filter label on old rows.
 The deployed Parts assets are `parts_fulfillment.3a02ae6f3ce6.css` and
 `parts_fulfillment.6e1a692d5872.js`; existing shared assets remain
 `dashboard_visual_copy.adaa5950ee0b.css` and `visual_export.40094833c9bc.js`.
+
+## Business Overview header action
+
+The user subsequently requested the Parts Fulfillment navigation action to be
+aligned with Refresh, Presentation and All Divisions and given a yellow
+background. The shared link partial now centers its text with inline flex layout,
+uses Mining360 yellow with navy text, and allows the action row to wrap on narrow
+screens. An isolated render of the real Overview template verified all four
+desktop actions have the same 38px height and y position; 1440, 1024, 390 and 320px
+checks passed without horizontal overflow. No financial service or filter changed.
