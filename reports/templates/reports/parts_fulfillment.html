@@ -1,0 +1,64 @@
+{% load static i18n %}{% get_current_language as number_locale %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include "reports/includes/favicon.html" %}
+  <title>Parts Orders &amp; Sales Fulfillment | Mining360</title>
+  <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20261020-nav-icon-fix-v1">
+  <link rel="stylesheet" href="{% static 'reports/dashboard_visual_copy.css' %}?v=20261001-copy-all">
+  <link rel="stylesheet" href="{% static 'reports/parts_fulfillment.css' %}?v=20261113-1">
+</head>
+<body class="pf-body">
+{% include "reports/includes/app_nav.html" %}
+<svg class="pf-sprite" aria-hidden="true"><defs>
+  <symbol id="pf-cart" viewBox="0 0 32 32"><path d="M3 5h4l4 16h14l4-12H9M13 27h.01M24 27h.01"/></symbol>
+  <symbol id="pf-box" viewBox="0 0 32 32"><path d="m16 2 13 7v15l-13 7-13-7V9zm-13 7 13 7 13-7M16 16v15M9 5l13 7v6"/></symbol>
+  <symbol id="pf-bars" viewBox="0 0 40 40"><path d="M2 25h8v13H2zm14-12h8v25h-8zM30 2h8v36h-8z"/></symbol>
+</defs></svg>
+<main class="app-shell pf-shell" data-parts-fulfillment data-number-locale="{{ number_locale|default:'en-GB' }}"
+ data-summary-url="{% url 'parts-fulfillment-summary' %}" data-details-url="{% url 'parts-fulfillment-details' %}"
+ {% if can_export %}data-export-url="{% url 'parts-fulfillment-export' %}"{% endif %}>
+  <a class="pf-back" href="{% url 'business-command-center' %}">← Business Overview</a>
+  <header class="pf-header">
+    <div class="pf-heading"><svg class="pf-hero-icon" aria-hidden="true"><use href="#pf-box"/></svg><div><h1>Parts Orders &amp; Sales Fulfillment</h1><p>From Parts Orders to Sales — Monthly Performance</p></div></div>
+    <label class="pf-month"><span>Month</span><select data-month aria-label="Month" disabled><option value="">Loading months…</option></select></label>
+  </header>
+  <div class="pf-source"><span data-period-note>Mine Logistics Report · EUR</span><span data-freshness></span><button type="button" data-refresh>Refresh view</button></div>
+  <div class="pf-state" data-loading role="status">Loading source measures…</div>
+  <section class="pf-state pf-error" data-error hidden role="alert"><h2>Data unavailable</h2><p data-error-message></p><button type="button" data-retry>Retry</button></section>
+  <section class="pf-state" data-empty hidden><h2>No source data</h2><p data-empty-message></p></section>
+  <div data-content hidden>
+    <section class="pf-top" aria-label="Monthly performance">
+      <article class="pf-card pf-kpi"><svg class="pf-icon" aria-hidden="true"><use href="#pf-cart"/></svg><div><h2>New Parts Orders <br>This Month</h2><button class="pf-value pf-value-button" type="button" data-orders-open data-kpi="orders">—</button><div class="pf-change" data-change="orders"></div></div></article>
+      <article class="pf-card pf-kpi"><svg class="pf-icon" aria-hidden="true"><use href="#pf-box"/></svg><div><h2>What We Sold <br>This Month</h2><button class="pf-value pf-value-button" type="button" data-open-cohort="" data-kpi="sales">—</button><div class="pf-change" data-change="sales"></div></div></article>
+      <article class="pf-card pf-origin"><h2>Where This Month’s Sales Came From</h2><p data-origin-subtitle></p><div data-breakdown></div><div class="pf-legend" data-origin-legend></div></article>
+    </section>
+    <section class="pf-card pf-trend" aria-labelledby="pf-trend-title">
+      <header><div class="pf-trend-heading"><svg class="pf-trend-icon" aria-hidden="true"><use href="#pf-bars"/></svg><div><h2 id="pf-trend-title">Orders vs. Sales Trend</h2><p>New Parts Orders and Accounting Sales by Order Cohort</p></div></div><span data-trend-period></span></header>
+      <div class="pf-chart-scroll"><div data-chart class="pf-chart"></div></div>
+      <div class="pf-chart-legend" data-chart-legend></div>
+      <p class="pf-chart-help" data-export-ignore>Select a month label to update the KPIs. Select a sales segment to view its accounting detail. Credits remain signed; older orders do not necessarily indicate late delivery.</p>
+    </section>
+    <div class="pf-controls"><span data-reconciliation></span><span>Arithmetic reconciliation does not validate every business allocation.</span></div>
+    <p class="pf-source-note" data-scope></p>
+  </div>
+  <section class="pf-card pf-detail" data-detail-panel hidden aria-labelledby="pf-detail-title" tabindex="-1">
+    <header><div><h2 id="pf-detail-title">Sales Cohort Details</h2><p data-detail-context></p></div><button type="button" data-detail-close data-export-ignore aria-label="Close details">Close ×</button></header>
+    <div class="pf-detail-filters" data-export-ignore>
+      <label>Cohort<select data-detail-cohort><option value="">All cohorts</option><option value="current">Current Month</option><option value="last">Last Month</option><option value="older">2+ Months</option><option value="unallocated">Unallocated</option><option value="future">Future Order</option></select></label>
+      <label class="pf-search">Order or invoice key<input type="search" data-detail-search maxlength="100" placeholder="Search complete or partial key"></label>
+      <label>Sort<select data-detail-sort><option value="accounting_date">Accounting Date</option><option value="order_date">Order Date</option><option value="amount">Accounting Sales EUR</option></select></label>
+      <label>Direction<select data-detail-direction><option value="desc">Descending</option><option value="asc">Ascending</option></select></label>
+      {% if can_export %}<button type="button" data-export>Export all filtered rows</button>{% endif %}
+    </div>
+    <p class="pf-detail-total" data-detail-total></p><p data-detail-status role="status"></p><button type="button" data-detail-retry data-export-ignore hidden>Retry details</button>
+    <div class="pf-table-scroll"><table><thead><tr><th>Accounting Date</th><th>Order Date</th><th>Order Key</th><th>Invoice Key</th><th>Cohort</th><th class="pf-numeric">Accounting Sales EUR</th></tr></thead><tbody data-detail-rows></tbody></table></div>
+    <div class="pf-pagination"><button type="button" data-prev data-export-ignore>← Previous</button><span data-page-label></span><button type="button" data-next data-export-ignore>Next →</button></div>
+    <p class="pf-source-note">Complete source keys are preserved. Accounting sales attributed to an order are not its initial order value. Unallocated rows remain visible without an order. Export includes the full announced filter, up to 10,000 rows.</p>
+  </section>
+  <section class="pf-card pf-order-note" data-order-note hidden role="status"><h2>New Parts Orders</h2><p>Order Intake is available as a model measure. A verified order-level detail source has not been exposed for this page. Accounting allocations cannot substitute for new orders.</p><button type="button" data-order-close>Close</button></section>
+</main>
+<script src="{% static 'reports/visual_export.js' %}?v=20261001-copy-all" defer></script>
+<script src="{% static 'reports/parts_fulfillment.js' %}?v=20261113-1" defer></script>
+</body></html>

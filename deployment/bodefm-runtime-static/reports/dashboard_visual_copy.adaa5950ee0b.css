@@ -1,0 +1,14 @@
+.m360-copy-surface{position:relative}
+.m360-copy-surface>header,.m360-copy-surface>.section-heading-row,.m360-copy-surface>.connectivity-card-heading,.m360-copy-card-wrapper>button>header,.m360-copy-card-wrapper>button>.breakdown-card__head{padding-right:42px}
+.m360-copy-surface>h3,.m360-copy-surface>.command-kicker{padding-right:34px}
+.m360-copy-card-wrapper{min-width:0;display:flex;flex-direction:column}
+.m360-copy-card-wrapper>button:not(.m360-visual-copy){width:100%;flex:1}
+.m360-visual-copy{position:absolute;top:8px;right:10px;z-index:2;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:5px;border:1px solid #cbd2dc;border-radius:7px;background:#fff;color:#263449;font-size:0;cursor:pointer;transition:background .15s,border-color .15s}
+.m360-visual-copy::before{content:'\29C9';font-size:16px;line-height:1}
+.m360-visual-copy:hover:not(:disabled){background:#fff8d9;border-color:#b89924}
+.m360-visual-copy:focus-visible{outline:2px solid #916d00;outline-offset:3px}
+.m360-visual-copy:disabled{opacity:.45;cursor:default}
+@media print{.m360-visual-copy{display:none}}
+.visual-export-notice{position:fixed;right:16px;bottom:24px;z-index:1200;display:flex;align-items:center;gap:12px;max-width:min(460px,calc(100vw - 32px));padding:12px 14px;border:1px solid #b9e4cf;border-radius:7px;background:#ecfdf3;box-shadow:0 12px 28px #10182829;color:#05603a;font:600 13px/1.5 system-ui,sans-serif}
+.visual-export-notice.is-error{border-color:#f5cf9b;background:#fff8e8;color:#7a4b00}
+.visual-export-notice button{min-height:36px;white-space:nowrap}

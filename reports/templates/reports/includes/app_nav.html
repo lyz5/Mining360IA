@@ -128,6 +128,9 @@
                 <a href="{% url 'reporting-config-home' %}" class="{% if active_section == 'reporting-config' %}active{% endif %}">
                     <span>Reporting</span>
                 </a>
+                <a href="{% url 'downtime-checking-home' %}" class="{% if active_section == 'downtime-checking' %}active{% endif %}" {% if active_section == 'downtime-checking' %}aria-current="page"{% endif %}>
+                    <span>Downtime Checking</span>
+                </a>
                 <a href="{% url 'deployment-home' %}" class="{% if active_section == 'deployment' %}active{% endif %}">
                     <span>Deployment Process</span>
                 </a>

@@ -22,6 +22,7 @@ $python = Join-Path $Root 'venv\Scripts\python.exe'
 $git = Join-Path $Root 'tools\git\cmd\git.exe'
 $log = Join-Path $Root ("logs\deployment-$JobId.log")
 $runtimeTask = 'Mining360TestRuntime'
+$deploymentWorkerTask = 'Mining360DeploymentWorker'
 $backup = $null
 $runtimeStopped = $false
 
@@ -89,6 +90,10 @@ function Start-Mining360Runtime {
     if ($LASTEXITCODE -ne 0) { throw "Unable to enable $runtimeTask." }
     & schtasks.exe /Run /TN $runtimeTask *>> $log
     if ($LASTEXITCODE -ne 0) { throw "Unable to start $runtimeTask." }
+    & schtasks.exe /Change /TN $deploymentWorkerTask /ENABLE *>> $log
+    if ($LASTEXITCODE -ne 0) { throw "Unable to enable $deploymentWorkerTask." }
+    & schtasks.exe /Run /TN $deploymentWorkerTask *>> $log
+    if ($LASTEXITCODE -ne 0) { throw "Unable to start $deploymentWorkerTask." }
 }
 
 function Stop-Mining360Runtime {
@@ -97,6 +102,15 @@ function Stop-Mining360Runtime {
     & schtasks.exe /Change /TN $runtimeTask /DISABLE *>> $log
     if ($LASTEXITCODE -ne 0) { throw "Unable to temporarily disable $runtimeTask." }
     & schtasks.exe /End /TN $runtimeTask *>> $log
+    $workerTaskList = (& schtasks.exe /Query /TN $deploymentWorkerTask /FO LIST 2>&1 | Out-String)
+    if ($LASTEXITCODE -ne 0) { throw "Unable to read $deploymentWorkerTask status." }
+    $workerTaskWasRunning = $workerTaskList -match '(?im)^\s*Status:\s*Running\s*$'
+    & schtasks.exe /Change /TN $deploymentWorkerTask /DISABLE *>> $log
+    if ($LASTEXITCODE -ne 0) { throw "Unable to temporarily disable $deploymentWorkerTask." }
+    if ($workerTaskWasRunning) {
+        & schtasks.exe /End /TN $deploymentWorkerTask *>> $log
+        if ($LASTEXITCODE -ne 0) { throw "Unable to stop $deploymentWorkerTask." }
+    }
     Start-Sleep -Seconds 2
     # schtasks /End stops the PowerShell task host, but its Waitress/Python
     # descendants can remain alive. Terminate only processes whose command
@@ -105,8 +119,10 @@ function Stop-Mining360Runtime {
     $runtimeProcesses = @(
         Get-CimInstance Win32_Process | Where-Object {
             ($_.CommandLine -like '*C:\Mining360\app\deployment\windows\start_mining360.ps1*') -or
+            ($_.CommandLine -like '*C:\Mining360\app\deployment\windows\run_deployment_worker.ps1*') -or
             ($_.CommandLine -like '*C:\Mining360\venv\Scripts\waitress-serve.exe*') -or
             ($_.CommandLine -like '*C:\Mining360\app\manage.py*run_codex_worker*') -or
+            ($_.CommandLine -like '*C:\Mining360\app\manage.py*run_deployment_worker*') -or
             (
                 $_.ExecutablePath -eq $runtimePython -and
                 $_.CommandLine -like '*manage.py*run_codex_worker*'
@@ -125,14 +141,35 @@ function Stop-Mining360Runtime {
     $deadline = (Get-Date).AddSeconds(30)
     do {
         $listeners = @(Get-NetTCPConnection -LocalPort 8000 -State Listen -ErrorAction SilentlyContinue)
+        $remainingManagedProcesses = @(
+            Get-CimInstance Win32_Process | Where-Object {
+                ($_.CommandLine -like '*C:\Mining360\app\deployment\windows\start_mining360.ps1*') -or
+                ($_.CommandLine -like '*C:\Mining360\app\deployment\windows\run_deployment_worker.ps1*') -or
+                ($_.CommandLine -like '*C:\Mining360\venv\Scripts\waitress-serve.exe*') -or
+                ($_.CommandLine -like '*C:\Mining360\app\manage.py*run_codex_worker*') -or
+                ($_.CommandLine -like '*C:\Mining360\app\manage.py*run_deployment_worker*') -or
+                (
+                    $_.ExecutablePath -eq $runtimePython -and
+                    $_.CommandLine -like '*manage.py*run_codex_worker*'
+                )
+            }
+        )
+        $managedProcessIds = @($remainingManagedProcesses | ForEach-Object { $_.ProcessId })
+        $unknownListeners = @($listeners | Where-Object { $managedProcessIds -notcontains $_.OwningProcess })
+        if ($unknownListeners.Count) {
+            throw 'An unmanaged process owns port 8000; release switching was stopped without terminating it.'
+        }
         foreach ($listener in $listeners) {
             Stop-Process -Id $listener.OwningProcess -Force -ErrorAction SilentlyContinue
         }
-        if (-not $listeners) { return }
+        if (-not $listeners -and -not $remainingManagedProcesses) { return }
         Start-Sleep -Seconds 1
     } while ((Get-Date) -lt $deadline)
     if (Get-NetTCPConnection -LocalPort 8000 -State Listen -ErrorAction SilentlyContinue) {
         throw 'Waitress did not release port 8000 after the runtime task stopped.'
+    }
+    if ($remainingManagedProcesses.Count) {
+        throw 'A managed Mining360 process still uses the active application directory.'
     }
 }
 
@@ -196,6 +233,30 @@ try {
     }
     if ($bundle) { Remove-Item -LiteralPath $bundle -Force }
 
+    # Reclaim only the stage left by this release's failed first attempt. It
+    # is safe to remove only while the active-release manifest names another
+    # commit and no process references the exact staging path.
+    $failedAttemptCommit = '12800c281f36dccebbbf351c6b45207f13803867'
+    $failedAttemptStage = Join-Path $releases $failedAttemptCommit
+    if (Test-Path -LiteralPath $failedAttemptStage -PathType Container) {
+        $releaseManifest = Join-Path $shared 'current-release.json'
+        if (-not (Test-Path -LiteralPath $releaseManifest -PathType Leaf)) {
+            throw 'The current release manifest is missing; failed staging was preserved.'
+        }
+        $activeCommit = [string]((Get-Content -LiteralPath $releaseManifest -Raw | ConvertFrom-Json).commit)
+        if ($activeCommit -eq $failedAttemptCommit) {
+            throw 'The failed-attempt staging path is active; it was preserved.'
+        }
+        $stageUsers = @(Get-CimInstance Win32_Process | Where-Object {
+            ($_.ExecutablePath -and $_.ExecutablePath.StartsWith($failedAttemptStage + '\', [StringComparison]::OrdinalIgnoreCase)) -or
+            ($_.CommandLine -and $_.CommandLine.IndexOf($failedAttemptStage, [StringComparison]::OrdinalIgnoreCase) -ge 0)
+        })
+        if ($stageUsers.Count) { throw 'A running process references failed-attempt staging; it was preserved.' }
+        Remove-Item -LiteralPath $failedAttemptStage -Recurse -Force
+        if (Test-Path -LiteralPath $failedAttemptStage) { throw 'Failed-attempt staging remains after cleanup.' }
+        Write-DeploymentLog "Removed inactive staging left by failed commit $failedAttemptCommit."
+    }
+
     foreach ($name in @('powerbi_credentials.local.json', 'mining360_sqlserver.local.json', 'reports\live_sources_custom.json')) {
         $source = Join-Path $app $name
         $destination = Join-Path $stage $name
@@ -239,7 +300,17 @@ try {
         $sqlcmd = (Get-Command sqlcmd.exe -ErrorAction SilentlyContinue).Source
         if ($sqlcmd) {
             $sqlBackup = "Mining360App_PreDeploy_{0}_{1}.bak" -f (Get-Date -Format 'yyyyMMdd-HHmmss'), $Commit.Substring(0, 8)
-            $query = "DECLARE @p nvarchar(4000)=CAST(SERVERPROPERTY('InstanceDefaultBackupPath') AS nvarchar(4000)); DECLARE @f nvarchar(4000)=@p+CASE WHEN RIGHT(@p,1) IN (N'\',N'/') THEN N'' ELSE N'\' END+N'$sqlBackup'; BACKUP DATABASE [Mining360App] TO DISK=@f WITH COPY_ONLY, COMPRESSION, CHECKSUM;"
+            $backupDirectory = 'D:\Mining360Backups'
+            if (-not (Test-Path -LiteralPath $backupDirectory -PathType Container)) {
+                $backupDirectory = $null
+            }
+            if ($backupDirectory) {
+                $backupPath = "$backupDirectory\$sqlBackup"
+                $escapedBackupPath = $backupPath.Replace("'", "''")
+                $query = "BACKUP DATABASE [Mining360App] TO DISK=N'$escapedBackupPath' WITH COPY_ONLY, COMPRESSION, CHECKSUM;"
+            } else {
+                $query = "DECLARE @p nvarchar(4000)=CAST(SERVERPROPERTY('InstanceDefaultBackupPath') AS nvarchar(4000)); DECLARE @f nvarchar(4000)=@p+CASE WHEN RIGHT(@p,1) IN (N'\',N'/') THEN N'' ELSE N'\' END+N'$sqlBackup'; BACKUP DATABASE [Mining360App] TO DISK=@f WITH COPY_ONLY, COMPRESSION, CHECKSUM;"
+            }
             Invoke-Native 'SQL Server backup' { & $sqlcmd -S localhost -d master -E -b -Q $query }
         } else {
             throw 'sqlcmd is required to create the pre-deployment database backup.'

@@ -1,0 +1,18 @@
+/* Static roadmap, isolated from metric controls and business visualizations. */
+.excellence-available-label { margin: 0 0 8px; font-size: 10px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; color: #526075; }
+.excellence-roadmap { margin: 14px 0 20px; padding-top: 12px; border-top: 1px solid #dfe4eb; }
+.excellence-roadmap__heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 9px; }
+.excellence-roadmap__heading h2 { margin: 0; color: #344155; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.excellence-roadmap__heading p { margin: 0; color: #596577; font-size: 11px; }
+.excellence-roadmap__grid { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); gap: 9px; padding: 0; margin: 0; list-style: none; }
+.excellence-roadmap__grid li { min-width: 0; }
+.excellence-capability { box-sizing: border-box; height: 100%; display: grid; grid-template-rows: 20px auto 1fr auto; gap: 7px; padding: 12px; border: 1px solid #e0e5ec; border-radius: 10px; background: #f4f6f8; box-shadow: 0 1px 2px #17203304; cursor: default; opacity: .94; color: #273449; text-decoration: none; }
+.excellence-capability__icon { width: 20px; height: 20px; fill: none; stroke: #69768a; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.excellence-capability h3 { margin: 0; font-size: 12px; font-weight: 700; line-height: 1.35; color: #273449; }
+.excellence-capability p { margin: 0; font-size: 11px; line-height: 1.45; color: #526075; }
+.excellence-capability__badge { display: inline-flex; align-items: center; gap: 5px; width: fit-content; font-size: 9px; line-height: 1.4; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: #536174; }
+.excellence-capability__badge svg { width: 11px; height: 11px; fill: none; stroke: currentColor; stroke-width: 1.4; }
+.excellence-capability--active { background: #fff; opacity: 1; cursor: pointer; border-top: 2px solid #ffc20e; }
+.excellence-capability--active:focus-visible { outline: 2px solid #526b8e; outline-offset: 3px; }
+@media (max-width: 1200px) { .excellence-roadmap__grid { grid-template-columns: repeat(4,minmax(0,1fr)); } }
+@media (max-width: 620px) { .excellence-roadmap__grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }

@@ -1,0 +1,22 @@
+# Preserve BODEFM source/asset bytes, including Windows line endings.
+/Mining360IA/** -text whitespace=-blank-at-eol,cr-at-eol
+/codex_admin/** -text whitespace=-blank-at-eol,cr-at-eol
+/codex_chatbot/** -text whitespace=-blank-at-eol,cr-at-eol
+/codex_integration/** -text whitespace=-blank-at-eol,cr-at-eol
+/command-center/** -text whitespace=-blank-at-eol,cr-at-eol
+/deployment/** -text whitespace=-blank-at-eol,cr-at-eol
+/desktop/** -text whitespace=-blank-at-eol,cr-at-eol
+/reports/** -text whitespace=-blank-at-eol,cr-at-eol
+/scripts/** -text whitespace=-blank-at-eol,cr-at-eol
+/security/*.md -text whitespace=-blank-at-eol,cr-at-eol
+/.gitignore -text whitespace=-blank-at-eol,cr-at-eol
+/Documentation_Platforme_Mining360IA.md -text whitespace=-blank-at-eol,cr-at-eol
+/Mining360_Prompt_Codex_Reconciliation.md -text whitespace=-blank-at-eol,cr-at-eol
+/Mining360_Reconciliation_Dossier.md -text whitespace=-blank-at-eol,cr-at-eol
+/Prompt_Maitre_Codex_Mining360.md -text whitespace=-blank-at-eol,cr-at-eol
+/README.md -text whitespace=-blank-at-eol,cr-at-eol
+/manage.py -text whitespace=-blank-at-eol,cr-at-eol
+/powerbi_report_connections.json -text whitespace=-blank-at-eol,cr-at-eol
+/preview_knowledge_inventory.py -text whitespace=-blank-at-eol,cr-at-eol
+/requirements.txt -text whitespace=-blank-at-eol,cr-at-eol
+/semantic_model_dictionary.json -text whitespace=-blank-at-eol,cr-at-eol

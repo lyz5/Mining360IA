@@ -8,6 +8,22 @@
     if (node) node.hidden = hidden;
     return node;
   };
+  async function readJsonResponse(response, requestName) {
+    const finalUrl = new URL(response.url, window.location.href);
+    if (response.redirected && finalUrl.origin === window.location.origin && /(^|\/)login\/?$/i.test(finalUrl.pathname)) {
+      window.location.assign(finalUrl.href);
+      throw new Error('Your session has expired. Redirecting to sign in.');
+    }
+    const contentType = (response.headers.get('content-type') || '').toLowerCase();
+    if (!contentType.includes('application/json')) {
+      throw new Error(`${requestName} returned an unexpected non-JSON response (HTTP ${response.status}). Please retry or sign in again.`);
+    }
+    try {
+      return await response.json();
+    } catch (_error) {
+      throw new Error(`${requestName} returned invalid JSON (HTTP ${response.status}). Please retry.`);
+    }
+  }
   const csrf = $('[name=csrfmiddlewaretoken]')?.value || '';
   const features = JSON.parse(root.dataset.features || '{}');
   const colors = { machine: '#ffd400', parts: '#3478c9', service: '#168b79', rental: '#7453a6', unclassified: '#8993a5' };
@@ -234,7 +250,7 @@
     query.set('limit', $('[data-leaders-limit]').value);
     try {
       const response = await fetch(`${root.dataset.explorerUrl}?${query}`, {signal: controller.signal, headers: {Accept: 'application/json'}});
-      const payload = await response.json();
+      const payload = await readJsonResponse(response, 'Revenue Leaders');
       if (!response.ok) throw new Error(payload.message || 'Revenue Leaders are temporarily unavailable.');
       if (controller.signal.aborted) return;
       renderLeaders(payload.results, dimension);
@@ -312,7 +328,7 @@
     try {
       const query = apiParams(); if (forceRefresh === true) query.set("refresh", "1");
       const response = await fetch(`${root.dataset.bootstrapUrl}?${query}`, { signal: state.controller.signal, headers: { Accept: 'application/json' } });
-      const data = await response.json(); if (!response.ok) throw new Error(data.message || 'Revenue data is temporarily unavailable.');
+      const data = await readJsonResponse(response, 'Revenue data'); if (!response.ok) throw new Error(data.message || 'Revenue data is temporarily unavailable.');
       if (state.data && state.data.context.context_id === data.context.context_id) { state.data = data; render(data); setUpdating(false); return; }
       state.data = data; state.explorerLoaded = false; state.turnoverLoaded = false; state.machineLoaded = false; state.partsLoaded = false; render(data); setUpdating(false);
     } catch (error) {
@@ -400,7 +416,7 @@
     const query = apiParams(); query.set('dimension', 'countries'); query.set('ranking', 'revenue'); query.set('limit', '25');
     try {
       const response = await fetch(`${root.dataset.explorerUrl}?${query}`, { signal: state.turnoverController.signal, headers: { Accept: 'application/json' } });
-      const payload = await response.json(); if (!response.ok) throw new Error(payload.message || 'Mining Turnover is temporarily unavailable.');
+      const payload = await readJsonResponse(response, 'Mining Turnover'); if (!response.ok) throw new Error(payload.message || 'Mining Turnover is temporarily unavailable.');
       if (payload.context_id !== state.data.context.context_id) return;
       renderTurnover(payload.results); state.turnoverLoaded = true; setHidden('[data-turnover-status]', true);
     } catch (error) { if (error.name !== 'AbortError') { const status = setHidden('[data-turnover-status]', false); if (status) status.textContent = error.message; } }
@@ -412,7 +428,7 @@
     state.explorerController?.abort(); state.explorerController = new AbortController(); $('[data-explorer-status]').hidden = false; $('[data-explorer-status]').textContent = 'Loading Revenue Explorer...';
     const query = apiParams(); query.set('dimension', state.dimension); query.set('ranking', $('[data-ranking-mode]').value); query.set('limit', $('[data-explorer-limit]').value);
     try {
-      const response = await fetch(`${root.dataset.explorerUrl}?${query}`, { signal: state.explorerController.signal, headers: { Accept: 'application/json' } }); const payload = await response.json();
+      const response = await fetch(`${root.dataset.explorerUrl}?${query}`, { signal: state.explorerController.signal, headers: { Accept: 'application/json' } }); const payload = await readJsonResponse(response, 'Revenue Explorer');
       if (!response.ok) throw new Error(payload.message || 'Revenue Explorer is temporarily unavailable.');
       if (payload.context_id !== state.data.context.context_id) return;
       renderExplorer(payload.results); state.explorerLoaded = true; $('[data-explorer-status]').hidden = true;
@@ -438,7 +454,7 @@
     const query = apiParams(); query.set('dimension', dimension); query.set('entity_id', id);
     try {
       const response = await fetch(`${root.dataset.fleetUrl}?${query}`, {signal: controller.signal, headers: {Accept: 'application/json'}});
-      const data = await response.json();
+      const data = await readJsonResponse(response, 'Fleet');
       if (!response.ok) throw new Error(data.message || 'Fleet is temporarily unavailable.');
       if (controller.signal.aborted) return;
       if (!data.linked) { target.textContent = 'No published MineSite link is available for this selection.'; return; }
@@ -468,7 +484,7 @@
     const search = $('[data-machine-search]').value.trim(); if (search) query.set('search', search); $$('[data-machine-filter]').forEach(control => { if (control.value) query.set(control.dataset.machineFilter, control.value); });
     $('[data-machine-status]').hidden = false; $('[data-machine-status]').textContent = 'Loading Machine Sales detail...';
     try {
-      const response = await fetch(`${root.dataset.machineSalesUrl}?${query}`, { signal: state.machineController.signal, headers: { Accept: 'application/json' } }); const data = await response.json(); if (!response.ok) throw new Error(data.message || 'Machine Sales details are temporarily unavailable.');
+      const response = await fetch(`${root.dataset.machineSalesUrl}?${query}`, { signal: state.machineController.signal, headers: { Accept: 'application/json' } }); const data = await readJsonResponse(response, 'Machine Sales'); if (!response.ok) throw new Error(data.message || 'Machine Sales details are temporarily unavailable.');
       if (!data.ready) { $('[data-machine-status]').textContent = 'The governed Machine Sales buffer has not been synchronized yet.'; return; }
       state.machinePages = Math.max(1, data.pagination.pages || 1); state.machineLoaded = true;
       [['family', 'families', 'All Families'], ['brand', 'brands', 'All Brands']].forEach(([filter, key, label]) => { const control = $(`[data-machine-filter="${filter}"]`); const current = control.value; control.innerHTML = `<option value="">${label}</option>${(data.filter_options?.[key] || []).map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join('')}`; control.value = current; });
@@ -493,7 +509,7 @@
     const search = $('[data-parts-search]').value.trim(); if (search) query.set('search', search); $$('[data-parts-filter]').forEach(control => { if (control.value) query.set(control.dataset.partsFilter, control.value); });
     $('[data-parts-status]').hidden = false; $('[data-parts-status]').textContent = 'Loading Parts classification detail...';
     try {
-      const response = await fetch(`${root.dataset.partsSalesUrl}?${query}`, { signal: state.partsController.signal, headers: { Accept: 'application/json' } }); const data = await response.json(); if (!response.ok) throw new Error(data.message || 'Parts Sales classification is temporarily unavailable.');
+      const response = await fetch(`${root.dataset.partsSalesUrl}?${query}`, { signal: state.partsController.signal, headers: { Accept: 'application/json' } }); const data = await readJsonResponse(response, 'Parts Sales'); if (!response.ok) throw new Error(data.message || 'Parts Sales classification is temporarily unavailable.');
       if (!data.ready) { $('[data-parts-status]').textContent = 'The governed Parts Sales buffer has not been synchronized yet.'; return; }
       state.partsPages = Math.max(1, data.pagination.pages || 1); state.partsLoaded = true;
       const config = { major: ['major_classes', 'All Major Classes'], minor: ['minor_classes', 'All Minor Classes'], ppc: ['ppcs', 'All PPC'] }; $$('[data-parts-filter]').forEach(control => { const current = control.value; const [key, label] = config[control.dataset.partsFilter]; control.innerHTML = `<option value="">${label}</option>${(data.filter_options?.[key] || []).map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join('')}`; control.value = current; });
@@ -511,7 +527,7 @@
   async function searchEntities(type, query, target, dropdown = false) {
     if (query.trim().length < 2 && !(dropdown && !query.trim())) { target.innerHTML = '<p class="bcc-empty">Enter at least two characters.</p>'; return []; }
     const url = type === 'customers' ? root.dataset.customerSearchUrl : root.dataset.keyAccountSearchUrl; const params = apiParams(); params.set('q', query.trim());
-    const response = await fetch(`${url}?${params}`, { headers: { Accept: 'application/json' } }); const payload = await response.json();
+    const response = await fetch(`${url}?${params}`, { headers: { Accept: 'application/json' } }); const payload = await readJsonResponse(response, type === 'customers' ? 'Customer search' : 'Key Account search');
     const allLabel = type === 'customers' ? 'All Customer Groups' : 'All Key Accounts';
     const clear = dropdown ? `<button class="bcc-search-result bcc-search-result-all" type="button" data-search-id="" data-search-name=""><strong>${allLabel}</strong><small>Clear selection</small></button>` : '';
     const rows = payload.results.map(item => `<button class="bcc-search-result" type="button" data-search-id="${escapeHtml(item.id)}" data-search-name="${escapeHtml(item.name)}"><strong>${escapeHtml(item.name || 'Not available')}</strong><small>${escapeHtml(item.country || 'Country not assigned')}${item.revenue === null || item.revenue === undefined ? '' : ` · ${money(item.revenue)}`}</small></button>`).join('');
@@ -603,13 +619,13 @@
     try {
       const token = document.querySelector('[name=csrfmiddlewaretoken]')?.value || document.querySelector('meta[name="csrf-token"]')?.content || decodeURIComponent(document.cookie.split('; ').find(row => row.startsWith('csrftoken='))?.slice(10) || '');
       const response = await fetch(root.dataset.syncStatusUrl, {method:'POST', headers:{'X-CSRFToken':token, Accept:'application/json'}});
-      const started = await response.json();
+      const started = await readJsonResponse(response, 'Revenue refresh');
       if (!response.ok || !started.accepted) throw new Error(started.message || 'Revenue refresh could not be started.');
       for (let attempt=0; attempt<300; attempt++) {
         await new Promise(resolve => setTimeout(resolve, 2000));
         const check = await fetch(root.dataset.syncStatusUrl, {headers:{Accept:'application/json'}});
         if (!check.ok) throw new Error('Unable to check the Revenue refresh.');
-        const sync = await check.json();
+        const sync = await readJsonResponse(check, 'Revenue refresh status');
         if (sync.latest_run_id === started.run_id && ['Failed','Cancelled'].includes(sync.latest_run_status)) throw new Error('The source update failed. Previous data is retained.');
         if (sync.source_sync_id === started.run_id) {
           await refresh(true);
@@ -626,7 +642,7 @@
       if (document.hidden) return;
       const response = await fetch(root.dataset.syncStatusUrl, {headers: {Accept: 'application/json'}});
       if (!response.ok) return;
-      const sync = await response.json();
+      const sync = await readJsonResponse(response, 'Revenue refresh status');
       const status = $('[data-revenue-sync-status]');
       if (!sync.enabled) { if (!state.data?.dashboard_snapshot) status.textContent = ''; return; }
       if (sync.running) status.textContent = 'Updating Revenue automatically. The last available data remains visible.';

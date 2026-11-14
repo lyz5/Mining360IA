@@ -124,3 +124,13 @@ Mining360 is a Django application with a native Windows Control Center and sever
 - Keep Sales Machine/Parts details labelled Mining-only until governed cross-division detail sources exist.
 - Continue reversible changes and preserve reconciliation tests before deployment.
 
+
+## Current application reference — 14 November 2026
+
+The September recovery anchor above remains historical. The current user-approved
+application baseline is the BODEFM source export tagged
+`bodefm-validated-2026-11-14`. Read
+[the publication guide](BODEFM_VALIDATED_RELEASE_2026-11-14.md) and its source
+manifest before comparing a workstation branch with the deployed application.
+No workstation application changes or database/secret files were promoted in
+that publication. Test results and known limits accompany the source snapshot.

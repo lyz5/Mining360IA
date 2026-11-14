@@ -82,3 +82,15 @@ For Resources / Caterpillar Best Practices questions, read `docs/RESOURCES_READI
 The deterministic Best Practices knowledge base was retired on 2026-09-23. Read docs/KNOWLEDGE_RESET_2026-09-23.md before knowledge work. Only explicitly source-reviewed documents count as read; do not revive automatic fragment-to-knowledge generation or claim whole-library comprehension.
 
 For source-based Resources answers, read docs/RESOURCE_DOCUMENT_MEMORY_2026-09-24.md. The durable local corpus contains every extracted page, but only explicitly recorded reviews establish reading coverage. Use the archive and original PDF pages for citations; never equate searchable storage with full-corpus understanding.
+
+
+## Current BODEFM reference — 14 November 2026
+
+The user designated the application currently running on BODEFM as the latest
+validated baseline. Before application work, read
+`docs/BODEFM_VALIDATED_RELEASE_2026-11-14.md` and
+`deployment/bodefm-validated-20261114/source-manifest.json`.
+Use tag `bodefm-validated-2026-11-14` as the immutable reference. Application
+sources in that publication were exported from BODEFM, not from the workstation's
+mixed working tree. Preserve the recorded test failures/limits; this reference
+does not assert that all historical tests or financial/RLS cases were approved.

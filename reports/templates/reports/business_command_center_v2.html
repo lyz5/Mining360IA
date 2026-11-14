@@ -29,6 +29,7 @@
     <header class="bcc-header">
         <div class="bcc-title-block"><p class="bcc-kicker">Business Overview</p><h1>Business Overview</h1><p>Executive Revenue Intelligence</p></div>
         <div class="bcc-header-actions">
+            {% include "reports/includes/parts_fulfillment_link.html" %}
             <button class="bcc-button secondary" type="button" data-refresh title="Refresh source data" aria-label="Refresh source data">Refresh</button>
             {% if features.presentation %}<button class="bcc-button secondary" type="button" data-presentation>Presentation</button>{% endif %}
             <label class="bcc-division-toggle"><input type="checkbox" data-division-toggle><span>All Divisions</span></label>

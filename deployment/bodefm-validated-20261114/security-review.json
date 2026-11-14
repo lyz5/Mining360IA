@@ -1,0 +1,331 @@
+{
+  "scope": "BODEFM export candidates only; no history rewrite or exhaustive security audit",
+  "reviewed_text_files": 1141,
+  "reviewed_pattern_findings": [
+    {
+      "path": "Mining360IA/settings.py",
+      "line": 26,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/tests.py",
+      "line": 87,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/tests.py",
+      "line": 151,
+      "category": "literal_secret_assignment",
+      "classification": "requires_review",
+      "review": "Reviewed Django/unittest fixture, mock token response or redaction test; not a configured service credential"
+    },
+    {
+      "path": "reports/test_active_directory_auth.py",
+      "line": 28,
+      "category": "literal_secret_assignment",
+      "classification": "requires_review",
+      "review": "Reviewed Django/unittest fixture, mock token response or redaction test; not a configured service credential"
+    },
+    {
+      "path": "reports/test_active_directory_auth.py",
+      "line": 178,
+      "category": "literal_secret_assignment",
+      "classification": "requires_review",
+      "review": "Reviewed Django/unittest fixture, mock token response or redaction test; not a configured service credential"
+    },
+    {
+      "path": "reports/test_active_directory_auth.py",
+      "line": 194,
+      "category": "literal_secret_assignment",
+      "classification": "requires_review",
+      "review": "Reviewed Django/unittest fixture, mock token response or redaction test; not a configured service credential"
+    },
+    {
+      "path": "reports/test_active_directory_auth.py",
+      "line": 209,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_active_directory_auth.py",
+      "line": 234,
+      "category": "literal_secret_assignment",
+      "classification": "requires_review",
+      "review": "Reviewed Django/unittest fixture, mock token response or redaction test; not a configured service credential"
+    },
+    {
+      "path": "reports/test_active_directory_auth.py",
+      "line": 245,
+      "category": "literal_secret_assignment",
+      "classification": "requires_review",
+      "review": "Reviewed Django/unittest fixture, mock token response or redaction test; not a configured service credential"
+    },
+    {
+      "path": "reports/test_api_management_removal.py",
+      "line": 38,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_business_command_center.py",
+      "line": 191,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_business_command_center.py",
+      "line": 508,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_chatbot_capability_answerability.py",
+      "line": 268,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_data_browser_resilience.py",
+      "line": 17,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_downtime_explorer.py",
+      "line": 35,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_downtime_explorer.py",
+      "line": 98,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_downtime_explorer.py",
+      "line": 118,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_downtime_explorer.py",
+      "line": 236,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_downtime_explorer.py",
+      "line": 271,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_knowledge_reset.py",
+      "line": 25,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_miningprod_browser_write_preview.py",
+      "line": 90,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_openai_usage_removal.py",
+      "line": 30,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_parts_sales.py",
+      "line": 22,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_powerbi_viewer_runtime.py",
+      "line": 27,
+      "category": "literal_secret_assignment",
+      "classification": "requires_review",
+      "review": "Reviewed Django/unittest fixture, mock token response or redaction test; not a configured service credential"
+    },
+    {
+      "path": "reports/test_powerbi_viewer_runtime.py",
+      "line": 49,
+      "category": "literal_secret_assignment",
+      "classification": "requires_review",
+      "review": "Reviewed Django/unittest fixture, mock token response or redaction test; not a configured service credential"
+    },
+    {
+      "path": "reports/test_premium_report_viewer.py",
+      "line": 59,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_reporting_config.py",
+      "line": 32,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_reporting_config.py",
+      "line": 34,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_reporting_configuration_workspace.py",
+      "line": 39,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_report_visual_identity.py",
+      "line": 104,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_resource_knowledge.py",
+      "line": 116,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_resource_knowledge.py",
+      "line": 121,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_resource_knowledge_review.py",
+      "line": 10,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_resource_knowledge_review.py",
+      "line": 11,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_synonym_library.py",
+      "line": 273,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_system_configuration.py",
+      "line": 20,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_system_configuration.py",
+      "line": 32,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_system_configuration.py",
+      "line": 33,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_voice_input.py",
+      "line": 56,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/test_voice_input.py",
+      "line": 68,
+      "category": "literal_secret_assignment",
+      "classification": "placeholder_to_review",
+      "review": "Obvious test/example value or guarded development-only fallback"
+    },
+    {
+      "path": "reports/static/reports/windows_login.js",
+      "line": 54,
+      "category": "literal_secret_assignment",
+      "classification": "requires_review",
+      "review": "Reviewed password input type toggle; regex matched JavaScript syntax rather than credential data"
+    },
+    {
+      "path": "reports/static/reports/windows_login.js",
+      "line": 55,
+      "category": "literal_secret_assignment",
+      "classification": "requires_review",
+      "review": "Reviewed password input type toggle; regex matched JavaScript syntax rather than credential data"
+    },
+    {
+      "path": "deployment/bodefm-runtime-static/reports/windows_login.3075efc52e6a.js",
+      "line": 54,
+      "category": "literal_secret_assignment",
+      "classification": "requires_review",
+      "review": "Reviewed password input type toggle; regex matched JavaScript syntax rather than credential data"
+    },
+    {
+      "path": "deployment/bodefm-runtime-static/reports/windows_login.3075efc52e6a.js",
+      "line": 55,
+      "category": "literal_secret_assignment",
+      "classification": "requires_review",
+      "review": "Reviewed password input type toggle; regex matched JavaScript syntax rather than credential data"
+    },
+    {
+      "path": "deployment/bodefm-runtime-static/reports/windows_login.js",
+      "line": 54,
+      "category": "literal_secret_assignment",
+      "classification": "requires_review",
+      "review": "Reviewed password input type toggle; regex matched JavaScript syntax rather than credential data"
+    },
+    {
+      "path": "deployment/bodefm-runtime-static/reports/windows_login.js",
+      "line": 55,
+      "category": "literal_secret_assignment",
+      "classification": "requires_review",
+      "review": "Reviewed password input type toggle; regex matched JavaScript syntax rather than credential data"
+    }
+  ],
+  "unresolved_findings": 0,
+  "known_credential_occurrences_in_publication": 0,
+  "values_logged_or_published_in_review": false
+}

@@ -15,6 +15,7 @@ from django.db.models.functions import TruncDay, TruncMonth
 from django.utils import timezone
 
 from .business_mapping_country_scope import operating_country_label
+from .revenue_query import active_revenue_snapshots
 
 from .business_mapping_access_service import authorized_account_codes, authorized_minesite_names
 from .business_mapping_normalization_service import normalize_business_name
@@ -158,7 +159,7 @@ class BusinessCommandCenterService:
     def _context(self):
         division_scope = self._division_scope()
         division_codes = tuple(BUSINESS_REVENUE_DIVISIONS) if division_scope == "all_divisions" else (MINING_DIVISION,)
-        revenue = RevenueSourceSnapshot.objects.filter(active=True, division__in=division_codes)
+        revenue = active_revenue_snapshots().filter(division__in=division_codes)
         account_scope = authorized_account_codes(self.user)
         if account_scope is not None:
             scope_filter = Q()

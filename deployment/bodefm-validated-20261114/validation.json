@@ -1,0 +1,95 @@
+{
+  "reference": "bodefm-validated-2026-11-14",
+  "application_source": "BODEFM",
+  "source_file_bytes": "Preserved; verified SHA-256 against the read-only server export",
+  "source_export_second_hash_pass": "matched",
+  "django_system_check": "passed; zero issues",
+  "syntax_scan": "all exported Python files parsed; no syntax errors",
+  "secret_review": {
+    "unresolved_findings": 0,
+    "known_real_credential_matches": 0
+  },
+  "existing_test_suite": {
+    "modules": [
+      "reports.test_revenue_auto_sync",
+      "reports.test_powerbi_viewer_runtime",
+      "reports.test_active_directory_auth"
+    ],
+    "environment": "Isolated local SQLite test database; workstation Python 3.13 vs server Python 3.12.1",
+    "tests": 35,
+    "passed": 31,
+    "failed": 4,
+    "failures": [
+      {
+        "test": "reports.test_revenue_auto_sync.RevenueAutoSyncTests.test_source_lag_is_retried_with_backoff",
+        "observation": "Expected due=True, current daily scheduled implementation returned False"
+      },
+      {
+        "test": "reports.test_active_directory_auth.ActiveDirectoryAdminApiTests.test_direct_post_cannot_add_user_outside_authorized_groups",
+        "observation": "Expected 302, received 403"
+      },
+      {
+        "test": "reports.test_active_directory_auth.ActiveDirectoryAdminApiTests.test_selecting_directory_user_assigns_manual_roles",
+        "observation": "Expected 302, received 403"
+      },
+      {
+        "test": "reports.test_active_directory_auth.ActiveDirectoryAdminApiTests.test_user_search_displays_canonical_windows_account",
+        "observation": "Expected server-rendered canonical account text; current page uses the asynchronous access-management UI"
+      }
+    ]
+  },
+  "additional_financial_and_access_tests": {
+    "status": "passed",
+    "tests": 19,
+    "modules": [
+      "reports.test_business_command_center.BusinessRevenuePeriodTests",
+      "reports.test_business_review",
+      "reports.test_site_access",
+      "codex_integration.tests.test_access_policy"
+    ]
+  },
+  "browser_observation": {
+    "source": "Existing private capture run on the same BODEFM installation",
+    "views": 90,
+    "viewports": [
+      1440,
+      1024,
+      390
+    ],
+    "catalogue_report_viewers": 14,
+    "known_unavailable_route": {
+      "path": "/config/workflow/",
+      "http": 404
+    }
+  },
+  "limits": [
+    "Existing test failures are retained and not hidden by editing deployed source.",
+    "No exhaustive financial/RLS sign-off is implied by the user-designated baseline.",
+    "No production migration, data write, application restart or deployment was performed."
+  ],
+  "snapshot_checks": {
+    "bodefm_files_sha256_matched": 1561,
+    "application_files": 760,
+    "frozen_static_files": 801,
+    "python_312_grammar_files_passed": 584,
+    "javascript_syntax_files_passed": 43,
+    "javascript_checked_with_node": true,
+    "static_manifest_mappings_verified": 207,
+    "missing_active_static_assets": 0
+  },
+  "overall_test_results": {
+    "passed": 50,
+    "failed": 4,
+    "total": 54,
+    "failures_preserved_without_source_edits": true
+  },
+  "git_index_verification": {
+    "server_file_blobs_sha256_matched": 1561,
+    "unexpected_staged_paths": 0,
+    "source": "BODEFM export, not local working tree"
+  },
+  "powershell_syntax": {
+    "scripts": 19,
+    "parse_failures": 0
+  }
+}

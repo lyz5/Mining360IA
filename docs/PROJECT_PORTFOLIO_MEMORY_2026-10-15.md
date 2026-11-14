@@ -335,3 +335,16 @@ Une autorisation donnée pour un projet ou un environnement ne vaut pas pour les
 À chaque changement important, mettre à jour d'abord la mémoire propre au projet, puis ce portefeuille uniquement si l'un des éléments suivants change : dépôt canonique, environnement, objectif, dépendance, statut de déploiement, risque majeur ou prochaine décision.
 
 Les informations encore non vérifiées doivent rester marquées **À confirmer** plutôt que déduites d'un nom de fichier, d'une URL ou d'une fonctionnalité prévue.
+
+## Mining 360 — consolidation de référence du 14 novembre 2026
+
+À la demande explicite de l'utilisateur, la dernière version validée de référence
+est l'application actuellement en service sur **BODEFM**. Sa publication Git est
+identifiée par le tag `bodefm-validated-2026-11-14`, avec les sources, dépendances
+et assets actifs extraits du serveur et leurs empreintes. La copie de travail
+mixte du poste n'est pas la source de cette publication.
+
+Lire [le guide de publication BODEFM](BODEFM_VALIDATED_RELEASE_2026-11-14.md).
+Les résultats des tests, les réserves et les prérequis de restauration séparée
+des secrets/données y sont reliés. Cette consolidation ne déploie rien et ne
+modifie pas les autres projets du portefeuille.
