@@ -47,3 +47,24 @@ The local Edge browser harness passed with no JavaScript errors:
 The browser test uses a private in-memory clipboard stand-in, preserving the
 workstation user's clipboard. The real shared PNG renderer and ClipboardItem
 payload are exercised. Private evidence is in `.runlogs/parts-fulfillment/`.
+
+Copying a detail is disabled immediately when search text changes, including
+the debounce interval. The export caption uses the search returned with the
+applied results, avoiding a new filter label on old rows.
+
+## BODEFM publication
+
+- Feature commit: `9aac33c8bb628ed447061570d52637f54974e613`.
+- Final search-consistency commit: `e2123a2d44ade3d3c1defa2d6ca6a0895f1487cf`.
+- Final backup: `D:\Mining360Backups\PartsFulfillment_20261113_190945_e2123a2d`.
+- Final manifest: `C:\Mining360\control\parts-fulfillment-e2123a2d\manifest.json`.
+- The 207 static mappings preserve login and Business Overview assets.
+- Authenticated page, all four referenced CSS/JS assets, summary and tested detail
+  APIs returned HTTP 200. Application and database health remained `ok`.
+- October accounting total and detail controls remain reconciled. No financial
+  query, semantic-model definition, access permission or shared export dependency
+  was modified. The Revenue service protection hash remained unchanged.
+
+The deployed Parts assets are `parts_fulfillment.3a02ae6f3ce6.css` and
+`parts_fulfillment.6e1a692d5872.js`; existing shared assets remain
+`dashboard_visual_copy.adaa5950ee0b.css` and `visual_export.40094833c9bc.js`.
