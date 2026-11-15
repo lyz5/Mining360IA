@@ -80,3 +80,46 @@ l’application. L’exécution est séparée de cette installation. Le reçu do
 enregistrer la sauvegarde actuelle, les vrais nombres supprimés/conservés,
 l’espace C: avant/après, les totaux financiers et la performance ; il ne doit
 pas annoncer d’espace disque rendu avant sa mesure.
+
+
+## Ex?cution BODEFM v?rifi?e le 15 novembre
+
+Source livr?e : `e026ed7b58b7c3c585763a7282411149e846a621`. Installation des
+seuls deux modules, sans red?marrage. Ex?cution entre 15:47:35 et 15:56:04 UTC,
+apr?s backup actuel compress? de 11 109 662 889 octets sur D: et VERIFYONLY
+avec checksum. Chemin et preuves dans
+`deployment/revenue-cleanup-20261115/validation.json`.
+
+La transaction a conserv? **975 556 lignes** sur **31 779 508** et retir?
+**30 803 952 lignes** expir?es. Dur?e sous verrou Revenue : **179,406 secondes**.
+Il reste z?ro ligne ?ligible au cutoff 12 novembre 15:47:35 UTC. Les 108 769
+lignes actives, toutes leurs valeurs, les 21 index et la contrainte de source
+activ?e/fiable sont conserv?s ; les deux versions de rollback gardent
+respectivement 107 169 et 107 173 lignes.
+
+Le fichier de donn?es passe de **51 784 Mio ? 12 288 Mio**, dont environ
+3 146 Mio occup?s. Le journal garde 5 960 Mio ; r?cup?ration FULL inchang?e.
+C: passe de **14,27 Gio libres ? 52,58 Gio** en fin de commande, soit
+**38,31 Gio nets rendus** ; le contr?le suivant observe 52,56 Gio, avec la
+variation normale du syst?me. D: garde environ 16,97 Gio libres apr?s les
+sauvegardes conserv?es. Aucun autre fichier ancien ou autre base n'a ?t? purg?.
+
+Les six comparaisons financi?res, sur trois contextes autoris?s (YTD global,
+mois courant global, YTD Parts), conservent exactement la m?me empreinte et
+le m?me import actif. M?diane du service sans cache : 1,25 s avant, 0,954 s
+apr?s, observations sans garantie de d?lai. Sant? application et base : OK.
+Les dix fichiers applicatifs prot?g?s et les deux modules de maintenance
+correspondent au manifeste Git.
+
+Edge r?el affiche Business Overview avec contenu en 4,426 / 1,663 / 1,253 s
+et Parts avec contenu en 25,293 s. Dix contr?les de dimensions 1440 / 390 /
+1024 / 1440 px passent, sans d?bordement horizontal ni erreur JavaScript.
+La session temporaire de contr?le est retir?e ; les captures m?tier restent
+priv?es hors Git. Le v?rificateur HTTPS large lanc? avant maintenance avait
+expir? : il ne constitue pas une validation de sept pages. Le contr?le SQL
+avant/apr?s et les deux pages dans Edge ont, eux, r?ussi.
+
+La politique automatique reste activ?e ? trois jours. La r?duction de fichier
+est ponctuelle ; la purge quotidienne conserve ses petits lots. La sauvegarde
+actuelle permet une reprise isol?e ; VERIFYONLY ne vaut pas test complet de
+restauration. Les exceptions de rollback et d'audit restent conserv?es.

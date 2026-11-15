@@ -1,0 +1,197 @@
+{
+  "status": "Completed",
+  "cutoff": "2026-11-12T15:47:35.368694+00:00",
+  "backup": {
+    "path": "D:\\Mining360Backups\\Mining360App_before_expired_cleanup_20261115_154735_ea52880c.bak",
+    "verified_at": "2026-11-15T15:51:00.784805+00:00",
+    "copy_only": true,
+    "checksum": true,
+    "compressed_bytes": 11109662889,
+    "restore_test": "VERIFYONLY; not a production restore rehearsal"
+  },
+  "rows": {
+    "original_rows": 31779508,
+    "deleted_rows": 30803952,
+    "retained_rows": 975556,
+    "remaining_eligible_rows": 0
+  },
+  "active_rows": 108769,
+  "protected_rollback_rows": [
+    107169,
+    107173
+  ],
+  "transaction_seconds": 179.406,
+  "active_financials_unchanged": true,
+  "schema_and_indexes_unchanged": true,
+  "index_count": 21,
+  "constraints_enabled_and_trusted": true,
+  "recovery_model": "FULL",
+  "data_files": {
+    "before": [
+      {
+        "file_id": 1,
+        "name": "Mining360App",
+        "type_desc": "ROWS",
+        "allocated_mb": "51784.000000",
+        "used_mb": "51118.187500"
+      },
+      {
+        "file_id": 2,
+        "name": "Mining360App_log",
+        "type_desc": "LOG",
+        "allocated_mb": "5960.000000",
+        "used_mb": "2982.812500"
+      }
+    ],
+    "after": [
+      {
+        "file_id": 1,
+        "name": "Mining360App",
+        "type_desc": "ROWS",
+        "allocated_mb": "12288.000000",
+        "used_mb": "3145.562500"
+      },
+      {
+        "file_id": 2,
+        "name": "Mining360App_log",
+        "type_desc": "LOG",
+        "allocated_mb": "5960.000000",
+        "used_mb": "2719.351562"
+      }
+    ]
+  },
+  "disk_space": {
+    "c_free_before_bytes": 15321251840,
+    "c_free_after_bytes": 56458788864,
+    "c_net_gain_bytes": 41137537024,
+    "c_free_final_check_bytes": 56430829568,
+    "d_free_before_bytes": 30915121152,
+    "d_free_after_bytes": 18217754624
+  },
+  "retention": {
+    "enabled": true,
+    "days": 3,
+    "eligible_rows_after": 0
+  },
+  "financial_comparison": {
+    "samples": 6,
+    "same_source_all": true,
+    "same_financials_all": true,
+    "contexts": [
+      "YTD / all_business",
+      "current_month / all_business",
+      "YTD / parts"
+    ],
+    "uncached_before_seconds": [
+      1.375,
+      1.484,
+      1.063,
+      1.14,
+      1.344,
+      1.156
+    ],
+    "uncached_after_seconds": [
+      1.937,
+      1.063,
+      0.75,
+      0.797,
+      1.296,
+      0.844
+    ],
+    "median_before_seconds": 1.25,
+    "median_after_seconds": 0.9535
+  },
+  "health": {
+    "status": "ok",
+    "application": "Mining360",
+    "database": "ok"
+  },
+  "protected_file_checks": [
+    {
+      "path": "reports/revenue_history_catchup.py",
+      "unchanged": true
+    },
+    {
+      "path": "reports/management/commands/revenue_history_catchup.py",
+      "unchanged": true
+    },
+    {
+      "path": "Mining360IA/wsgi.py",
+      "unchanged": true
+    },
+    {
+      "path": "reports/revenue_history_retention.py",
+      "unchanged": true
+    },
+    {
+      "path": "reports/revenue_query.py",
+      "unchanged": true
+    },
+    {
+      "path": "reports/models.py",
+      "unchanged": true
+    },
+    {
+      "path": "reports/business_mapping_source_service.py",
+      "unchanged": true
+    },
+    {
+      "path": "reports/business_command_center_service.py",
+      "unchanged": true
+    },
+    {
+      "path": "reports/business_review_access_service.py",
+      "unchanged": true
+    },
+    {
+      "path": "reports/parts_fulfillment_service.py",
+      "unchanged": true
+    },
+    {
+      "path": "reports/revenue_auto_sync.py",
+      "unchanged": true
+    },
+    {
+      "path": "deployment/windows/start_mining360.ps1",
+      "unchanged": true
+    }
+  ],
+  "browser": {
+    "browser": "Microsoft Edge",
+    "pages": [
+      "Business Overview (3 loads)",
+      "Parts Orders & Sales Fulfillment"
+    ],
+    "checks": 10,
+    "http_all_200": true,
+    "source_content_all": true,
+    "javascript_errors": 0,
+    "horizontal_overflows": 0,
+    "business_ready_seconds": [
+      4.426,
+      1.663,
+      1.253
+    ],
+    "parts_ready_seconds": 25.293,
+    "temporary_session_removed": true
+  },
+  "local_tests": {
+    "sql_server_2022_catchup_tests": 6,
+    "previous_retention_sql_tests": 20,
+    "coverage": [
+      "typed copy, decimal scale 10, signed amounts, IDs, Unicode, dates, index identity",
+      "injected validation failure rolls back both expired and retained rows",
+      "20,060 original / 10,030 retained transaction benchmark",
+      "low-priority SHRINKFILE syntax outside transaction"
+    ],
+    "python_312_grammar": "pass",
+    "powershell_parse": "pass"
+  },
+  "limits": [
+    "A pre-maintenance broad HTTPS page verifier timed out; it is not a successful seven-page baseline. Direct SQL/scoped financial baseline and local health succeeded. Post-maintenance native Edge Business Overview and Parts content checks succeeded.",
+    "Preserved two explicitly pinned rollback copies and audited snapshot exceptions, irrespective of age. No backup files were deleted.",
+    "COPY_ONLY/checksum/VERIFYONLY is not a complete restore test.",
+    "Browser timings are observations; Parts data load took 25.293 seconds. Other pages were not comprehensively browser-tested by this catch-up.",
+    "No SQL/IIS/application restart; no changes to application calculations, roles, permissions, active index definition or refresh cadence."
+  ]
+}
