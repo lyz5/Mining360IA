@@ -1,0 +1,113 @@
+{
+  "application_source_commit": "c47ce306c9c31e81cdcc7fb4265279c2700a2fba",
+  "target": "BODEFM",
+  "status": "Succeeded",
+  "url": "https://mining360.neemba.com",
+  "code_backup": "D:\\Mining360Backups\\RevenueRetention_20261115_030857_c47ce306",
+  "retention_days": 3,
+  "policy_enabled": true,
+  "protected_data_rollback_versions": 2,
+  "last_observed_pass": {
+    "enabled": true,
+    "retention_days": 3,
+    "backup_file": "D:\\Mining360Backups\\Mining360App_PreDowntimeChecking_20261113-r8.bak",
+    "version": 1,
+    "status": "More pending",
+    "started_at": "2026-11-15T11:50:33.776418+00:00",
+    "deleted_rows": 5000,
+    "batches": 5,
+    "cutoff": "2026-11-12T11:50:33.772418+00:00",
+    "eligible_versions": 300,
+    "protected_versions": 3,
+    "active_financials_unchanged": true,
+    "finished_at": "2026-11-15T11:50:38.932924+00:00",
+    "seconds": 5.157,
+    "total_deleted_rows": 119091,
+    "code": null
+  },
+  "initial_backlog_complete": false,
+  "checksum_verified_full_backup": "D:\\Mining360Backups\\Mining360App_PreDowntimeChecking_20261113-r8.bak",
+  "full_backup_verification_utc": "2026-11-15T11:13:21.478605+00:00",
+  "log_backup_observed": {
+    "backup_finish_date": "2026-11-15 03:49:16",
+    "compressed_backup_size": "884729535",
+    "physical_device_name": "D:\\Mining360Backups\\RevenueRetentionLogs\\Mining360App_log_20261115_114902_f5c8388f.trn"
+  },
+  "log_used_percent_after_backup": 4.648935317993164,
+  "sql_file_space": [
+    {
+      "name": "Mining360App",
+      "type_desc": "ROWS",
+      "size_mb": "51784.000000",
+      "used_mb": "51708.437500"
+    },
+    {
+      "name": "Mining360App_log",
+      "type_desc": "LOG",
+      "size_mb": "5960.000000",
+      "used_mb": "277.070312"
+    }
+  ],
+  "validation": {
+    "retention_sqlite_tests_passed": 20,
+    "retention_local_sqlserver_2022_tests_passed": 20,
+    "earlier_regression_suite_passed": 83,
+    "earlier_regression_suite_included_previous_retention_tests": 14,
+    "installed_hashes": 3,
+    "protected_hashes": 8,
+    "static_mappings_unchanged": 211,
+    "anonymous_access_checks": 3,
+    "authenticated_pages": 7,
+    "business_financial_comparisons_identical": 6,
+    "parts_october_financials_identical": true,
+    "active_revenue_index_preserved": true,
+    "uncached_core_seconds": [
+      1.344,
+      1.125,
+      0.859,
+      0.906,
+      1.532,
+      0.984
+    ],
+    "edge_format_cycles": 10,
+    "edge_followup_seconds": [
+      2.781,
+      1.191,
+      1.242
+    ],
+    "edge_followup_median_seconds": 1.242,
+    "javascript_errors": 0,
+    "document_overflows": 0,
+    "temporary_sessions_removed": true,
+    "health": {
+      "status": "ok",
+      "database": "ok",
+      "http": 200
+    }
+  },
+  "observations": [
+    "Initial cadence was reduced to five batches of 1000 rows, with a five-second budget checked between operations.",
+    "An initial generic pause at the log-space safeguard was investigated; the same deployed safeguard then completed a controlled log backup successfully and automatic passes resumed.",
+    "One earlier Edge first navigation took 16.040 seconds; the followup was 2.781, 1.191, 1.242 seconds. The transient initial latency has no conclusively established cause.",
+    "Completed data batches survive interruption. Counters are filesystem checkpoints and should not be treated as a transactionally exact audit after a crash.",
+    "The existing full backup covers the initially expired copies. VERIFYONLY with checksums is not an actual restore test."
+  ],
+  "preserved": [
+    "Full active Revenue dataset and business dates",
+    "Import headers, audits and reviewed snapshot references",
+    "Two source versions cited by the existing Business Overview data rollback",
+    "Published mappings, permissions, financial formulas, literal active predicate and covering index",
+    "Revenue and Parts 05:00 GMT refresh schedules",
+    "FULL recovery model and existing SQL backup chain",
+    "MiningProd and other databases",
+    "IIS, SQL Server services, firewall and credentials"
+  ],
+  "limits": [
+    "The old backlog is still draining; this receipt does not claim all expired copies have been removed.",
+    "Space becomes reusable inside SQL files; no shrink or reclamation of C: filesystem space was performed.",
+    "Cleanup pauses under low disk space, a blocked log, source import activity or a new unreviewed dependency.",
+    "Log backups are retained. Their general retention and storage capacity must be monitored separately.",
+    "Raw Revenue row references outside the known contracts require an explicit retention hold.",
+    "No physical-phone or Windows/AD credential-submit test was added."
+  ]
+}

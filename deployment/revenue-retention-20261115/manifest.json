@@ -1,0 +1,72 @@
+{
+  "commit": "c47ce306c9c31e81cdcc7fb4265279c2700a2fba",
+  "feature_commit": "c47ce306c9c31e81cdcc7fb4265279c2700a2fba",
+  "base_commit": "083e38f",
+  "files": [
+    {
+      "root": "app",
+      "path": "Mining360IA/wsgi.py",
+      "source": "Mining360IA/wsgi.py",
+      "sha256": "420D31EDD5516631BFB0E9CA820AD5901E1B992A27D9A7998E63B9BB38FC8CCE",
+      "existed": true,
+      "previous_sha256": "420D31EDD5516631BFB0E9CA820AD5901E1B992A27D9A7998E63B9BB38FC8CCE"
+    },
+    {
+      "root": "app",
+      "path": "reports/revenue_history_retention.py",
+      "source": "reports/revenue_history_retention.py",
+      "sha256": "7A391B1522643119524060A060671A1E81BB912CD7B2F4CD4A99DF0511AA67E9",
+      "existed": true,
+      "previous_sha256": "A214A44D36FA6AC0DF4128D73C55CAAA66BB593C8FCE5C3386E8F89DBDD07B1B"
+    },
+    {
+      "root": "app",
+      "path": "reports/management/commands/revenue_history_retention.py",
+      "source": "reports/management/commands/revenue_history_retention.py",
+      "sha256": "5BA27CFA46805E18744967A389EDAE161DDDA81375E5DFF4C6E2AD22354C2EEE",
+      "existed": true,
+      "previous_sha256": "12CB97D257D3B284A64EED19DB745C169F48A6951E86B10DCDFDC0F3D7EE875F"
+    }
+  ],
+  "protected": [
+    {
+      "path": "reports/business_command_center_service.py",
+      "sha256": "B5D3B07328B8289D7F0A99A77011DD2760F0E6A9C322941F71F9F62FD8756B4A"
+    },
+    {
+      "path": "reports/revenue_query.py",
+      "sha256": "A9D01BE71000D7BF9980E30CA39CAA27613CC7F76097CCFF81FF695D2AE7D774"
+    },
+    {
+      "path": "reports/models.py",
+      "sha256": "298FE1770551405C3AF00309924D52BBFE9D4E51512EC28F1E746E05F4A4FA76"
+    },
+    {
+      "path": "reports/business_review_access_service.py",
+      "sha256": "B062B345D023B8658E259CDEC273D04930B26AE0E07A321D98DEBAE3F7EB98A1"
+    },
+    {
+      "path": "deployment/windows/start_mining360.ps1",
+      "sha256": "A2901F81DEC446E30457F8521071725AF1AA23D9D88349F0939578A237BE5A95"
+    },
+    {
+      "path": "reports/revenue_auto_sync.py",
+      "sha256": "6A36F631B6204E74D29C76EDA402E63F0B46BF3E2134709187455F4524DF265F"
+    },
+    {
+      "path": "reports/business_mapping_source_service.py",
+      "sha256": "8193EC2932B0501F176F31E6556C4F657AE8D6C547693931810D9F1484E56E18"
+    },
+    {
+      "path": "reports/parts_fulfillment_service.py",
+      "sha256": "531EA62AAC23BF0BD36C9C284F90BD5B1088486332EB485FD34DE099A516BAF3"
+    }
+  ],
+  "script_sha256": "D2117795E944A9F9DAEDC573A4A14FFAF971A7ECD51D288FF885FBC681CDADEE",
+  "static_manifest_controls": {
+    "previous_entries": 211,
+    "new_entries": 211,
+    "unrelated_mappings_preserved": true,
+    "gzip_regenerated": false
+  }
+}
