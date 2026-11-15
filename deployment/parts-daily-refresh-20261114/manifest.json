@@ -1,0 +1,156 @@
+{
+  "commit": "8b22a1d7252e905067b3c7aa3cdc740185a83db2",
+  "feature_commit": "8b22a1d7252e905067b3c7aa3cdc740185a83db2",
+  "base_commit": "2a4e7aef714a24c9a33a41359bb7f21787c951f3",
+  "files": [
+    {
+      "root": "app",
+      "path": "Mining360IA/settings.py",
+      "source": "Mining360IA/settings.py",
+      "sha256": "F11F48540985CF8D38BA446E4F2B47FC63F664D26B95744BC33B71A8BB927D0E",
+      "existed": true,
+      "previous_sha256": "64BA3DD1C9CE79D6531CD9F3862CB2C9F3F1ECDAC841ED8C3CAFE5ADE3FE4E76"
+    },
+    {
+      "root": "app",
+      "path": "Mining360IA/wsgi.py",
+      "source": "Mining360IA/wsgi.py",
+      "sha256": "8020039466D9B21964CA14540230DB8016694C149C2628F3A7F3195C600D280E",
+      "existed": true,
+      "previous_sha256": "5749DACADC40CF26CC3488CCED4B93ED3494A52408BC80947F8F8A9C5B8E225C"
+    },
+    {
+      "root": "app",
+      "path": "reports/parts_fulfillment_service.py",
+      "source": "reports/parts_fulfillment_service.py",
+      "sha256": "531EA62AAC23BF0BD36C9C284F90BD5B1088486332EB485FD34DE099A516BAF3",
+      "existed": true,
+      "previous_sha256": "2DA8205BCAF8C6EB95157E3FF0DF49BCB2E909BEF14117E1E5BC16DFC5A5AF49"
+    },
+    {
+      "root": "app",
+      "path": "reports/parts_fulfillment_auto_sync.py",
+      "source": "reports/parts_fulfillment_auto_sync.py",
+      "sha256": "BAA693702A5504B2DC478AE2D57467C0AE8C0EB2AB9961A4AE5BCEED4C852E15",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "app",
+      "path": "reports/management/commands/parts_fulfillment_sync_status.py",
+      "source": "reports/management/commands/parts_fulfillment_sync_status.py",
+      "sha256": "C297F75F3655EA730792497C99027D42ADE1599EBF9F33EB497AE0E189A5A395",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "app",
+      "path": "reports/parts_fulfillment_views.py",
+      "source": "reports/parts_fulfillment_views.py",
+      "sha256": "BEE11A474239894F476C65C9066A7F18EA0EE05E550CBC39D0D7D02FDD25A80E",
+      "existed": true,
+      "previous_sha256": "F2C16C660DAD09D479C7BE1E2CBB3EA06F2182FF25F1494F1F94877FE5C4B9A6"
+    },
+    {
+      "root": "app",
+      "path": "reports/urls.py",
+      "source": "reports/urls.py",
+      "sha256": "FACEC739E307FA1BA91F7DAAFADD9B4511B189F3A386A1B0A5FAF7A559288ED0",
+      "existed": true,
+      "previous_sha256": "0D98C6F314E8734A2EED82A7F0D05C08FF1E8B8CC6448981A4B7904799E6A594"
+    },
+    {
+      "root": "app",
+      "path": "reports/templates/reports/parts_fulfillment.html",
+      "source": "reports/templates/reports/parts_fulfillment.html",
+      "sha256": "C4A154524F11BC8C50230C6D214B2669DE2418A35788735E08F4046C9E47814B",
+      "existed": true,
+      "previous_sha256": "A6F9063798CE598FAEA0136C59AD0E8B5975AFC386B02F33F0C89D59485B3036"
+    },
+    {
+      "root": "app",
+      "path": "reports/static/reports/parts_fulfillment.js",
+      "source": "reports/static/reports/parts_fulfillment.js",
+      "sha256": "BEAD6E9C08F96216CDDA6CADF90B7CAE0D1E96BC79D2226CEA9BC1CA8BB91E7A",
+      "existed": true,
+      "previous_sha256": "1CFA4365E07DEF1519C685D133AA794544ABEFB1AA824020A15852009C8CA15C"
+    },
+    {
+      "root": "static",
+      "path": "reports/parts_fulfillment.js",
+      "source": "reports/static/reports/parts_fulfillment.js",
+      "sha256": "BEAD6E9C08F96216CDDA6CADF90B7CAE0D1E96BC79D2226CEA9BC1CA8BB91E7A",
+      "existed": true,
+      "previous_sha256": "1CFA4365E07DEF1519C685D133AA794544ABEFB1AA824020A15852009C8CA15C"
+    },
+    {
+      "root": "static",
+      "path": "reports/parts_fulfillment.js.gz",
+      "source": "generated/gzip/reports/parts_fulfillment.js.gz",
+      "sha256": "B821242FC4AE2B9BEAADA5DF21074678AEE3BF20CC51A3F9F8F4A126261AC16D",
+      "existed": true,
+      "previous_sha256": "45814CEF1DC7934603452029CD9A631001C026DB1E157F87E4E0E9D5F5333DAE"
+    },
+    {
+      "root": "static",
+      "path": "reports/parts_fulfillment.3c868c5cc8ba.js",
+      "source": "reports/static/reports/parts_fulfillment.js",
+      "sha256": "BEAD6E9C08F96216CDDA6CADF90B7CAE0D1E96BC79D2226CEA9BC1CA8BB91E7A",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "reports/parts_fulfillment.3c868c5cc8ba.js.gz",
+      "source": "generated/gzip/reports/parts_fulfillment.3c868c5cc8ba.js.gz",
+      "sha256": "B821242FC4AE2B9BEAADA5DF21074678AEE3BF20CC51A3F9F8F4A126261AC16D",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "staticfiles.json",
+      "source": "generated/staticfiles.json",
+      "sha256": "605C3B9B0DE236D1DCEB0D2A3D6CB56DF15E3634594E6D663F3B911D3EE98E49",
+      "existed": true,
+      "previous_sha256": "57004474F57D66750F1D3497C1A8ADF6204E2F37CF81BA2937858A2AFA43EBDD"
+    }
+  ],
+  "protected": [
+    {
+      "path": "reports/business_command_center_service.py",
+      "sha256": "B5D3B07328B8289D7F0A99A77011DD2760F0E6A9C322941F71F9F62FD8756B4A"
+    },
+    {
+      "path": "reports/revenue_query.py",
+      "sha256": "A9D01BE71000D7BF9980E30CA39CAA27613CC7F76097CCFF81FF695D2AE7D774"
+    },
+    {
+      "path": "reports/models.py",
+      "sha256": "298FE1770551405C3AF00309924D52BBFE9D4E51512EC28F1E746E05F4A4FA76"
+    },
+    {
+      "path": "reports/business_review_access_service.py",
+      "sha256": "B062B345D023B8658E259CDEC273D04930B26AE0E07A321D98DEBAE3F7EB98A1"
+    },
+    {
+      "path": "deployment/windows/start_mining360.ps1",
+      "sha256": "A2901F81DEC446E30457F8521071725AF1AA23D9D88349F0939578A237BE5A95"
+    },
+    {
+      "path": "reports/revenue_auto_sync.py",
+      "sha256": "6A36F631B6204E74D29C76EDA402E63F0B46BF3E2134709187455F4524DF265F"
+    },
+    {
+      "path": "reports/business_mapping_source_service.py",
+      "sha256": "8193EC2932B0501F176F31E6556C4F657AE8D6C547693931810D9F1484E56E18"
+    }
+  ],
+  "script_sha256": "852688F44048C5CAC1CF2308A086FE7AF90BA71ABC1F15FB39E3AE33FD9C5484",
+  "static_manifest_controls": {
+    "previous_entries": 211,
+    "new_entries": 211,
+    "unrelated_mappings_preserved": true,
+    "gzip_regenerated": true
+  }
+}

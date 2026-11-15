@@ -1,0 +1,79 @@
+{
+  "application_source_commit": "8b22a1d7252e905067b3c7aa3cdc740185a83db2",
+  "base_commit": "2a4e7aef714a24c9a33a41359bb7f21787c951f3",
+  "target": "BODEFM",
+  "url": "https://mining360.neemba.com",
+  "status": "Succeeded",
+  "backup": "D:\\Mining360Backups\\PartsDailySync_20261114_155701_8b22a1d7",
+  "scope": "Daily authorized Parts measure reads and open-page completion polling on the existing Business Overview clock.",
+  "schedule": {
+    "enabled": true,
+    "due": false,
+    "schedule_hour": 5,
+    "schedule_minute": 0,
+    "schedule_time_zone": "Etc/GMT",
+    "next_scheduled_at": "2026-11-15T05:00:00+00:00",
+    "last_success_at": "2026-11-14T23:57:44.462913+00:00",
+    "last_attempt_at": "2026-11-14T23:57:13.126921+00:00",
+    "status": "Completed",
+    "completed": 4,
+    "failed": 0,
+    "running": false
+  },
+  "first_observed_catchup": {
+    "status": "Completed",
+    "running": false,
+    "completed": 4,
+    "failed": 0,
+    "attempted_at": "2026-11-14T23:57:13.126921+00:00",
+    "last_success_at": "2026-11-14T23:57:44.462913+00:00",
+    "completed_slot": "2026-11-14T05:00:00+00:00",
+    "last_error_code": null
+  },
+  "validation": {
+    "installed_hashes": 14,
+    "protected_hashes": 7,
+    "static_mappings": 211,
+    "http_served_asset_checks": 4,
+    "anonymous_login_checks": 3,
+    "authenticated_pages": 7,
+    "business_financial_comparisons_identical": 6,
+    "parts_october_financial_hash_identical": true,
+    "parts_history_months": 12,
+    "active_revenue_index_preserved": true,
+    "specific_scheduler_tests_passed": 25,
+    "extended_tests": {
+      "total": 147,
+      "passed": 145,
+      "existing_precision_schema_mismatches": 2
+    },
+    "local_edge_scenarios": 6,
+    "live_edge_format_cycles": 10,
+    "javascript_errors": 0,
+    "document_overflows": 0,
+    "resize_source_requests": 0,
+    "business_edge_median_seconds": 1.186,
+    "business_edge_navigations": 3,
+    "temporary_sessions_removed": true,
+    "health": {
+      "status": "ok",
+      "database": "ok",
+      "http": 200
+    }
+  },
+  "preserved": [
+    "Source measures, monetary values and cohort rules",
+    "Revenue import and query services",
+    "Authentication and current source scope checks",
+    "Existing cache expiry after a successful scheduled read",
+    "Power BI semantic model and upstream refresh schedule",
+    "IIS, SQL Server and service configuration"
+  ],
+  "limits": [
+    "The next 05:00 execution is scheduled, not already observed.",
+    "Two canonical workstation precision tests expect ten decimals; the unchanged reference SQLite models declare two. This does not certify SQL Server column precision.",
+    "Canonical statistics tests are incompatible with this server source baseline; no missing helper was added.",
+    "Physical phones and actual Windows/AD credential submission were not retested.",
+    "Browser timing observations are not field percentiles or guaranteed deadlines."
+  ]
+}

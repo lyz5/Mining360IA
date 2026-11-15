@@ -101,3 +101,47 @@ et des transports simulés ; ils ne certifient pas une migration SQL Server.
 Le reçu de promotion doit établir séparément l'installation BODEFM, l'exécution
 réelle de rattrapage et le prochain créneau. Les tests de l'horloge ne constituent
 pas l'observation anticipée d'une exécution à 5 h le lendemain.
+
+## Livraison BODEFM vérifiée
+
+- Source applicative poussée puis installée : `8b22a1d7252e905067b3c7aa3cdc740185a83db2`.
+- Branche : `feature/responsive-desktop-protected-20261114`.
+- Sauvegarde vérifiée : `D:\Mining360Backups\PartsDailySync_20261114_155701_8b22a1d7`.
+- [Manifeste des quatorze cibles](../deployment/parts-daily-refresh-20261114/manifest.json).
+- [Reçu de validation](../deployment/parts-daily-refresh-20261114/validation.json).
+- Rattrapage réellement observé : début `2026-11-14T23:57:13.126921+00:00`,
+  fin `2026-11-14T23:57:44.462913+00:00`, état `Completed`, zéro échec.
+- Créneau suivant confirmé : `2026-11-15T05:00:00+00:00`.
+  Cette exécution future n'est pas présentée comme déjà observée.
+
+Quatorze empreintes installées et sept fichiers métier protégés sont conformes.
+Les 211 mappings statiques sont conservés ; seul le JavaScript Parts change.
+Quatre lectures HTTP des assets, trois protections anonymes vers le login et sept
+pages authentifiées passent. Les six comparaisons Business Overview ainsi que
+les KPI et les douze mois historiques Parts d'octobre sont identiques avant/après.
+L'index Revenue actif reste présent ; aucun import n'a été déclenché manuellement.
+
+Edge sur données réelles vérifie dix cycles de format, dont trois navigations
+Business Overview et Parts aux largeurs 390, 1024 et 1440 px : zéro exception,
+zéro débordement et aucune requête de source provoquée par un redimensionnement.
+Business Overview charge en médiane à **1.186 s**, première navigation
+incluse. Le service sans cache reste entre
+**0.906 et 1.469 s**
+sur les six lectures contrôlées après livraison. Ces observations ne garantissent
+pas les temps de tous les utilisateurs. Les sessions temporaires sont supprimées.
+
+Les captures réelles restent privées sous
+`exports/Mining360_Parts_Daily_Refresh_2026-11-15/INDEX.html` ; elles ne sont pas
+publiées dans Git. Le modèle Power BI n'est ni rafraîchi ni modifié par cette
+livraison : le traitement relit les mesures déjà disponibles dans ce modèle.
+
+Retour arrière ciblé, seulement dans une fenêtre autorisée :
+
+```powershell
+& 'C:\Mining360\control\parts-daily-sync-8b22a1d7\deploy_parts_daily_sync.ps1' -Manifest 'C:\Mining360\control\parts-daily-sync-8b22a1d7\manifest.json' -Rollback -BackupPath 'D:\Mining360Backups\PartsDailySync_20261114_155701_8b22a1d7'
+```
+
+Cette procédure restaure les seules cibles du paquet après vérification des
+empreintes et de l'absence de modification concurrente. Aucun rollback n'a été
+nécessaire. Aucun redémarrage SQL Server/IIS, migration, modification de données,
+permission, secret ou tâche de production supplémentaire n'est effectué.
