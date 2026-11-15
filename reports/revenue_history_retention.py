@@ -150,6 +150,9 @@ def _backup_log(policy):
     name = root / ('Mining360App_log_' + timezone.now().strftime('%Y%m%d_%H%M%S_') + uuid.uuid4().hex[:8] + '.trn')
     with connection.cursor() as cursor:
         cursor.execute('BACKUP LOG [Mining360App] TO DISK=%s WITH COMPRESSION, CHECKSUM', [str(name)])
+        # BACKUP emits multiple ODBC results/messages. Drain them before issuing
+        # another statement or restoring this connection's session options.
+        while cursor.nextset(): pass
     return str(name)
 
 
@@ -209,7 +212,17 @@ def set_enabled(enabled, backup_file=None, protected_run_ids=()):
     return status()
 
 
-def run_pass(*, now=None, max_batches=100, seconds=40, batch_size=1000):
+def _restore_lock_timeout(previous_timeout):
+    if previous_timeout is None: return True
+    try:
+        with connection.cursor() as cursor: cursor.execute('SET LOCK_TIMEOUT ' + str(previous_timeout))
+        return True
+    except Exception:
+        connection.close()
+        return False
+
+
+def run_pass(*, now=None, max_batches=5, seconds=5, batch_size=1000):
     if not 1 <= max_batches <= 2000 or not 1 <= batch_size <= 1000 or not 1 <= seconds <= 60:
         raise ValueError('Invalid bounded retention limits')
     policy = _read('policy.json')
@@ -217,7 +230,8 @@ def run_pass(*, now=None, max_batches=100, seconds=40, batch_size=1000):
     with retention_lock() as acquired:
         if not acquired: return {'status': 'Already running', 'deleted_rows': 0}
         started = time.monotonic(); state = _read('state.json')
-        result = {'status': 'Running', 'started_at': timezone.now().isoformat(), 'deleted_rows': 0, 'batches': 0}
+        result = {'status': 'Running', 'started_at': timezone.now().isoformat(), 'deleted_rows': 0, 'batches': 0,
+                  'active_financials_unchanged': None, 'finished_at': None, 'seconds': None, 'code': None}
         previous_timeout = None
         try:
             _check_dependencies()
@@ -259,8 +273,8 @@ def run_pass(*, now=None, max_batches=100, seconds=40, batch_size=1000):
             result.update(status='Paused', code='RETENTION_UNAVAILABLE')
             logger.warning('Revenue retention paused; active data and source refresh remain governed by their existing services.')
         finally:
-            if previous_timeout is not None:
-                with connection.cursor() as cursor: cursor.execute('SET LOCK_TIMEOUT ' + str(previous_timeout))
+            if not _restore_lock_timeout(previous_timeout):
+                result.update(status='Paused', code='CONNECTION_RESET')
             result.update(finished_at=timezone.now().isoformat(), seconds=round(time.monotonic() - started, 3))
             _write('state.json', {**state, **result, 'total_deleted_rows': state.get('total_deleted_rows', 0) + result['deleted_rows']})
         return result

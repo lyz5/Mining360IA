@@ -168,3 +168,22 @@ class RevenueHistoryRetentionTests(TestCase):
         retention._write('policy.json', {'enabled': False})
         with patch.object(retention, 'run_pass') as work:
             retention.scheduled_pass(NOW); work.assert_not_called()
+
+    def test_paused_pass_does_not_inherit_a_previous_financial_success(self):
+        self.row(self.old)
+        retention._write('state.json', {'active_financials_unchanged': True, 'finished_at': NOW.isoformat(), 'seconds': 4})
+        with patch.object(retention, '_headroom', side_effect=retention.RetentionStopped('LOG_REUSE_BLOCKED')):
+            result = self.apply()
+        self.assertEqual(result['status'], 'Paused')
+        self.assertIsNone(result['active_financials_unchanged'])
+
+    def test_session_restore_failure_is_persisted_instead_of_leaving_running(self):
+        with patch.object(retention, '_restore_lock_timeout', return_value=False): result = self.apply()
+        self.assertEqual(result['status'], 'Paused')
+        self.assertEqual(retention.status()['code'], 'CONNECTION_RESET')
+
+    def test_daily_worker_default_is_five_small_batches(self):
+        for _ in range(6): self.row(self.old)
+        result = self.apply(batch_size=1)
+        self.assertEqual(result['deleted_rows'], 5)
+        self.assertEqual(result['status'], 'More pending')

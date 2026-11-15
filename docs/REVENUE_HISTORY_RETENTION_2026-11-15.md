@@ -31,8 +31,10 @@ Un thread WSGI distinct vérifie chaque minute un registre privé sous
 `C:\Mining360\shared\revenue-history-retention`. Aucun nettoyage ne se produit
 tant que la politique n’a pas été activée par la commande administrateur.
 
-Une passe traite au plus 100 lots de 1 000 lignes et vise une durée maximale de
-40 secondes, vérifiée entre les lots. La fin d’un lot peut dépasser cette durée.
+Une passe traite au plus 5 lots de 1 000 lignes et vise une durée maximale de
+5 secondes, vérifiée entre les lots. La fin d’un lot ou d’une sauvegarde du journal
+peut dépasser cette durée. Cette cadence a été réduite après les premières mesures
+réelles pour préserver la performance interactive de Business Overview.
 Le backlog reprend à la minute suivante ; une passe complète sans reste est
 revérifiée au plus tard une heure après. Un verrou de fichier exclut deux
 travailleurs simultanés. Une synchronisation Revenue en attente/en cours met
@@ -88,7 +90,7 @@ active qui écraserait les opérations métier postérieures.
 
 ## Validation
 
-Dix-sept tests de rétention vérifient la frontière de 72 heures, les dates de vente
+Vingt tests de rétention vérifient la frontière de 72 heures, les dates de vente
 anciennes, les montants négatifs, les versions actives/protégées/référencées,
 les en-têtes/audits conservés, lots, reprise après erreur, concurrence, pauses et
 désactivation. Ils sont exécutés sur SQLite et sur une base SQL Server 2022 locale

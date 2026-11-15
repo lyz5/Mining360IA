@@ -14,8 +14,8 @@ class Command(BaseCommand):
         actions.add_argument('--plan', action='store_true')
         parser.add_argument('--backup-file')
         parser.add_argument('--protect-run', action='append', default=[])
-        parser.add_argument('--max-batches', type=int, default=100)
-        parser.add_argument('--seconds', type=int, default=40)
+        parser.add_argument('--max-batches', type=int, default=5)
+        parser.add_argument('--seconds', type=int, default=5)
 
     def handle(self, *args, **options):
         try:
