@@ -183,9 +183,14 @@ def main() -> None:
                 kpis: document.querySelectorAll('[data-turnover-line]').length,
                 removedCountryChart: document.querySelectorAll('[data-country-bars]').length,
                 matrixRows: document.querySelectorAll('[data-turnover-matrix-body] tr').length,
+                totalColumn: document.querySelector('[data-turnover-matrix-head] th:last-child')?.textContent,
+                totalRows: document.querySelectorAll('[data-turnover-matrix-foot] tr').length,
+                rowTotals: document.querySelectorAll('[data-turnover-matrix-body] td.bcc-turnover-total').length,
                 overflow: document.documentElement.scrollWidth > document.documentElement.clientWidth + 1,
             })""")
-            if turnover["kpis"] != 5 or turnover["removedCountryChart"] or turnover["matrixRows"] != 4 or turnover["overflow"]:
+            if (turnover["kpis"] != 5 or turnover["removedCountryChart"] or turnover["matrixRows"] != 4
+                    or turnover["totalColumn"] != "Total" or turnover["totalRows"] != 1
+                    or turnover["rowTotals"] != 4 or turnover["overflow"]):
                 raise AssertionError(f"Mining Turnover rendering failed: {turnover}")
             page.screenshot(path=str(OUTPUT / "09-mining-turnover.png"), full_page=True)
             page.set_viewport_size({"width": 390, "height": 844})

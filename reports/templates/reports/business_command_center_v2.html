@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Business Overview | Mining360</title>
     <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20260910-command-center">
-    <link rel="stylesheet" href="{% static 'reports/business_command_center_v2.css' %}?v=20261001-projects-waiting">
+    <link rel="stylesheet" href="{% static 'reports/business_command_center_v2.css' %}?v=20261117-turnover-totals">
     <link rel="stylesheet" href="{% static 'reports/dashboard_visual_copy.css' %}?v=20261001-copy-all">
 </head>
 <body class="bcc-body">
@@ -80,7 +80,7 @@
             <section class="bcc-turnover-kpis" data-turnover-kpis aria-label="Revenue summary"></section>
             <section class="bcc-turnover-grid">
                 <aside class="bcc-turnover-card bcc-turnover-insights"><header><span class="bcc-insight-symbol" aria-hidden="true">i</span><h3>Executive Insights</h3></header><ol data-turnover-insights></ol></aside>
-                <article class="bcc-turnover-card bcc-performance-matrix"><header><h3>Performance vs Last Year (%)</h3><p>Same governed period and currency</p></header><div class="bcc-turnover-table-wrap"><table><thead data-turnover-matrix-head></thead><tbody data-turnover-matrix-body></tbody></table></div></article>
+                <article class="bcc-turnover-card bcc-performance-matrix"><header><h3>Performance vs Last Year (%)</h3><p>Same governed period and currency</p></header><div class="bcc-turnover-table-wrap"><table><thead data-turnover-matrix-head></thead><tbody data-turnover-matrix-body></tbody><tfoot data-turnover-matrix-foot></tfoot></table></div><p class="bcc-turnover-totals-note">Totals cover the countries and business lines shown.</p></article>
                 <article class="bcc-turnover-card bcc-growth-countries"><header><h3>Top Growth Countries</h3><p>Total Revenue vs Last Year</p></header><div data-turnover-growth></div></article>
                 <article class="bcc-turnover-card bcc-attention-countries"><header><h3>Countries Requiring Attention</h3><p>Largest absolute Revenue declines</p></header><div data-turnover-country-attention></div></article>
                 <aside class="bcc-turnover-card bcc-turnover-conclusion"><span aria-hidden="true">“</span><p data-turnover-conclusion>Preparing the governed executive conclusion...</p></aside>
@@ -106,7 +106,7 @@
     <aside class="bcc-drawer" data-drawer hidden aria-modal="true" role="dialog" aria-labelledby="bcc-drawer-title"><div class="bcc-drawer-head"><div><p class="bcc-kicker" data-drawer-kicker>Business detail</p><h2 id="bcc-drawer-title" data-drawer-title>Detail</h2></div><button class="bcc-icon-btn" type="button" data-drawer-close aria-label="Close">&#10005;</button></div><div data-drawer-body></div></aside>
 </main>
 <script src="{% static 'reports/visual_export.js' %}?v=20261001-copy-all"></script>
-<script src="{% static 'reports/business_command_center_v2.js' %}?v=20261001-projects-waiting"></script>
+<script src="{% static 'reports/business_command_center_v2.js' %}?v=20261117-turnover-totals"></script>
 <script src="{% static 'reports/dashboard_visual_copy.js' %}?v=20261001-copy-all" defer></script>
 </body>
 </html>

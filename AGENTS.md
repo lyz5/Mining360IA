@@ -84,6 +84,14 @@ The deterministic Best Practices knowledge base was retired on 2026-09-23. Read 
 For source-based Resources answers, read docs/RESOURCE_DOCUMENT_MEMORY_2026-09-24.md. The durable local corpus contains every extracted page, but only explicitly recorded reviews establish reading coverage. Use the archive and original PDF pages for citations; never equate searchable storage with full-corpus understanding.
 
 
+## BODEFM deployment window — 17 November 2026
+
+The user requires all changes to be developed and tested on this workstation
+first. BODEFM is used during the day: deployments and deployment-related runtime
+restarts must take place in the evening, after the user's explicit Go for the
+prepared release. Reaching the evening is not approval or a scheduled task.
+Do not promote a daytime implementation request directly to BODEFM.
+
 ## Current BODEFM reference — 14 November 2026
 
 The user designated the application currently running on BODEFM as the latest

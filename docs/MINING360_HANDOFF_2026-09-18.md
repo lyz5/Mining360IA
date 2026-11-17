@@ -1,5 +1,13 @@
 # Mining360 Project Handoff
 
+## Local Business Overview role access — 17 November 2026
+
+The local preview at `http://localhost:8016/` now permits Business Overview readers
+through the read rollout gates, with the existing role and Account/MineSite checks.
+Eight security regression tests pass; a real non-Super-Admin reader received HTTP 200
+on the running SQL-backed local preview. Sensitive permissions and real user roles
+are unchanged. No BODEFM deployment. See `BUSINESS_OVERVIEW_ROLE_ACCESS_2026-11-17.md`.
+
 ## Recovery Anchor
 
 - Repository: `https://github.com/lyz5/Mining360IA.git`

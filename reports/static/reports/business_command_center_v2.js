@@ -391,8 +391,18 @@
     const kpis = [...lines, { code: 'total', label: 'Total Sales', revenue: data.hero.revenue, absolute_delta: data.hero.absolute_delta, relative_delta: data.hero.relative_delta, growth_status: data.hero.growth_status }];
     $('[data-turnover-kpis]').innerHTML = kpis.map(item => `<button type="button" class="bcc-turnover-kpi ${item.code}" style="--bo-activity:${colors[item.code] || colors.unclassified}" data-turnover-line="${item.code}"><span>${escapeHtml(item.label)}</span><small>Total Revenue</small><strong>${money(item.revenue)}</strong><footer><em>vs Last Year</em><b class="${Number(item.absolute_delta || 0) < 0 ? 'negative' : 'positive'}">${growth(item)}</b></footer></button>`).join('');
     $$('[data-turnover-line]').forEach(button => button.addEventListener('click', () => { $('[data-filter="business_line"]').value = button.dataset.turnoverLine === 'total' ? 'all_business' : button.dataset.turnoverLine; refresh(); }));
-    $('[data-turnover-matrix-head]').innerHTML = `<tr><th>Business Line</th>${countryRows.map(row => `<th>${escapeHtml(turnoverCountryName(row))}</th>`).join('')}</tr>`;
-    $('[data-turnover-matrix-body]').innerHTML = lines.map(line => `<tr><th style="--line-color:${colors[line.code]}">${escapeHtml(line.label)}</th>${countryRows.map(row => { const current = row.business_line_mix?.[line.code]; const previous = row.comparison_business_line_mix?.[line.code]; const result = turnoverGrowth(current, previous); return `<td class="${result.status}" title="Current ${money(current, true)} · Last Year ${money(previous, true)}"><strong>${money(current)}</strong><small>${result.label} vs Last Year</small></td>`; }).join('')}</tr>`).join('');
+    const matrixCell = (current, previous, total = false) => {
+      const result = turnoverGrowth(current, previous);
+      return `<td class="${result.status}${total ? ' bcc-turnover-total' : ''}" title="Current ${money(current, true)} · Last Year ${money(previous, true)}"><strong>${money(current)}</strong><small>${result.label} vs Last Year</small></td>`;
+    };
+    const matrixAmounts = (row, line) => [Number(row.business_line_mix?.[line.code] || 0), Number(row.comparison_business_line_mix?.[line.code] || 0)];
+    const addAmounts = (sum, amounts) => [sum[0] + amounts[0], sum[1] + amounts[1]];
+    const lineTotals = lines.map(line => countryRows.reduce((sum, row) => addAmounts(sum, matrixAmounts(row, line)), [0, 0]));
+    const countryTotals = countryRows.map(row => lines.reduce((sum, line) => addAmounts(sum, matrixAmounts(row, line)), [0, 0]));
+    const grandTotal = lineTotals.reduce(addAmounts, [0, 0]);
+    $('[data-turnover-matrix-head]').innerHTML = `<tr><th scope="col">Business Line</th>${countryRows.map(row => `<th scope="col">${escapeHtml(turnoverCountryName(row))}</th>`).join('')}<th scope="col" class="bcc-turnover-total">Total</th></tr>`;
+    $('[data-turnover-matrix-body]').innerHTML = lines.map((line, index) => `<tr><th scope="row" style="--line-color:${colors[line.code]}">${escapeHtml(line.label)}</th>${countryRows.map(row => matrixCell(row.business_line_mix?.[line.code], row.comparison_business_line_mix?.[line.code])).join('')}${matrixCell(...lineTotals[index], true)}</tr>`).join('');
+    $('[data-turnover-matrix-foot]').innerHTML = `<tr><th scope="row">Total</th>${countryTotals.map(amounts => matrixCell(...amounts)).join('')}${matrixCell(...grandTotal, true)}</tr>`;
 
     const growthCountries = countryRows.filter(row => row.growth_status === 'comparable' && Number(row.relative_delta) > 0).sort((a, b) => Number(b.relative_delta) - Number(a.relative_delta)).slice(0, 3);
     const decliningCountries = countryRows.filter(row => Number(row.absolute_delta) < 0).sort((a, b) => Number(a.absolute_delta) - Number(b.absolute_delta)).slice(0, 3);

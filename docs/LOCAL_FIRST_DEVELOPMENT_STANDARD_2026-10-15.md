@@ -2,6 +2,11 @@
 
 Version du 15 octobre 2026.
 
+Décision utilisateur du 17 novembre 2026 : développement et tests sur ce poste ;
+déploiement Mining360 sur BODEFM **le soir uniquement**, après Go explicite pour
+la version préparée. Aucun redémarrage de production lié à ces changements en
+journée. Aucune heure automatique n'est définie et le soir ne vaut pas accord.
+
 ## Principe directeur
 
 Tous les développements des projets actifs suivent désormais le même flux :

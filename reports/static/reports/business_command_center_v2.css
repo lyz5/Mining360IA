@@ -77,3 +77,8 @@
 @media(max-width:600px){.bcc-leader-list{max-height:340px}.bcc-leaders-panel .bcc-leader-row{grid-template-columns:32px minmax(0,1fr) max-content;column-gap:7px}}
 
 .bcc-approval-tag{display:inline-flex;align-items:center;padding:8px 14px;border:1px solid #e4d598;border-radius:999px;background:#fff8dc;color:#695414;font-size:13px;font-weight:700;line-height:1.4}
+
+.bcc-performance-matrix .bcc-turnover-total{position:sticky;right:0;z-index:1;border-left:2px solid var(--bcc-border);box-shadow:-2px 0 3px rgba(23,40,70,.06);font-weight:900}
+.bcc-performance-matrix tfoot th,.bcc-performance-matrix tfoot td{border-top:2px solid var(--bcc-border);font-weight:900}
+.bcc-performance-matrix tfoot th{background:#edf1f5;color:var(--bcc-navy);text-align:left;font-size:10px}
+.bcc-performance-matrix .bcc-turnover-totals-note{margin:7px 0 0;color:var(--bcc-muted);font-size:10px;line-height:1.4}
