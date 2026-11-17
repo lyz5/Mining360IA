@@ -1,0 +1,6 @@
+.login-experience .email-signin-help { margin: 0; color: #58677c; font-size: 13px; line-height: 1.55; text-align: center; }
+.email-signin-fallback { color: #173e63; font-size: 14px; text-align: center; text-underline-offset: 4px; }
+.email-signin-restart { margin: 0; text-align: center; }
+.email-signin-restart button { border: 0; padding: 5px; background: transparent; color: #173e63; font: inherit; font-size: 13px; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+.login-experience #signin-code { text-align: center; letter-spacing: .18em; font-variant-numeric: tabular-nums; font-size: 25px; }
+@media(max-width:480px) { .login-experience #signin-code { font-size: 23px; } }

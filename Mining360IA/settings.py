@@ -281,6 +281,7 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTHENTICATION_BACKENDS = [
     'reports.active_directory_backend.ActiveDirectoryBackend',
     'django.contrib.auth.backends.ModelBackend',
+    'reports.email_signin_service.EmailCodeBackend',
 ]
 
 
@@ -317,6 +318,9 @@ STORAGES = {
 }
 
 LOGIN_URL = '/login/'
+MINING360_EMAIL_CODE_LOGIN_ENABLED = _environment_boolean('MINING360_EMAIL_CODE_LOGIN_ENABLED', False)
+# Memory-only worker jobs; disabled only by isolated test/preview profiles.
+MINING360_EMAIL_CODE_DELIVERY_ASYNC = True
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
 AZURE_AD_REDIRECT_URI = os.getenv('AZURE_AD_REDIRECT_URI', '').strip()

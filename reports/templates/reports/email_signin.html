@@ -1,0 +1,58 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    {% include "reports/includes/favicon.html" %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign in with email | Mining360</title>
+    <link rel="stylesheet" href="{% static 'reports/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'reports/login-premium.css' %}">
+    <link rel="stylesheet" href="{% static 'reports/email-signin.css' %}">
+    <link rel="preload" as="image" href="{% static 'reports/images/login-mine-sunset-20261113.png' %}" fetchpriority="high">
+</head>
+<body class="login-body login-experience">
+    <div class="login-scene" aria-hidden="true">
+        <img class="login-scene-image" src="{% static 'reports/images/login-mine-sunset-20261113.png' %}" alt="" width="1672" height="941" fetchpriority="high">
+    </div>
+    <main class="login-shell" aria-labelledby="login-title">
+        <section class="login-panel" aria-label="Email sign in">
+            <div class="login-brand">
+                <div class="login-mark"><span>M</span></div><span>Mining360</span>
+                <span class="login-brand-divider" aria-hidden="true"></span>
+                <p class="eyebrow">Mining Performance Suite</p>
+            </div>
+            <div class="login-panel-head">
+                <h1 id="login-title">{% if stage == 'code' %}Check your email{% else %}Welcome back{% endif %}<span class="login-title-dot" aria-hidden="true">.</span></h1>
+                <p class="login-copy">{% if stage == 'code' %}Enter your eight-digit sign-in code.{% else %}Use your authorized work email to receive a sign-in code.{% endif %}</p>
+            </div>
+            {% if error %}<div class="login-messages" role="alert"><p class="alert-text">{{ error }}</p></div>{% endif %}
+            {% if unavailable %}
+                <p class="email-signin-help" role="status">Email sign-in is temporarily unavailable. You can still use your Windows account.</p>
+            {% elif stage == 'code' %}
+                <p class="email-signin-help" role="status">A sign-in code has been requested for your account. It expires in 10 minutes.</p>
+                <form method="post" class="local-login-form">
+                    {% csrf_token %}<input type="hidden" name="next" value="{{ next }}"><input type="hidden" name="action" value="verify">
+                    <label for="signin-code"><span>Sign-in code</span>
+                        <input id="signin-code" name="code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="12" pattern="[0-9\s\-]{8,12}" aria-describedby="code-help" autofocus required>
+                    </label>
+                    <p id="code-help" class="email-signin-help">Use the latest code requested in this browser. Never share it.</p>
+                    <label class="keep-signed-in"><input type="checkbox" name="remember"><span><strong>Keep me signed in on this device</strong><small>Do not use on a shared computer.</small></span></label>
+                    <button class="button login-button" type="submit">Verify and sign in</button>
+                </form>
+                <form method="post" class="email-signin-restart">{% csrf_token %}<input type="hidden" name="next" value="{{ next }}"><button type="submit" name="action" value="restart">Request another code or change email</button></form>
+            {% else %}
+                <form method="post" class="local-login-form">
+                    {% csrf_token %}<input type="hidden" name="next" value="{{ next }}"><input type="hidden" name="action" value="request">
+                    <label for="signin-email"><span>Work email</span><input id="signin-email" name="email" type="email" autocomplete="username" maxlength="254" value="{{ email|default:'' }}" placeholder="Your authorized email address" autofocus required></label>
+                    <button class="button login-button" type="submit">Send me a code</button>
+                    <p class="email-signin-help">Access is available to active accounts already authorized in Mining360.</p>
+                </form>
+            {% endif %}
+            <a class="email-signin-fallback" href="{% url 'login' %}?method=password&amp;next={{ next|urlencode }}">Sign in with Windows instead</a>
+            <div class="login-security" aria-label="Secure enterprise access"><span>Secure Enterprise Access</span></div>
+        </section>
+    </main>
+    <footer class="login-footer"><span>Mining360</span><span aria-hidden="true">/</span><span>Mining Performance Suite</span><span class="login-footer-year">&copy; {% now "Y" %}</span></footer>
+</body>
+</html>

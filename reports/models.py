@@ -1,5 +1,7 @@
 import uuid
 
+from .email_signin_models import EmailLoginChallenge, EmailLoginRateLock  # noqa: F401
+
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import Q

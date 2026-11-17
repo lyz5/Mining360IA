@@ -3,6 +3,7 @@ from codex_chatbot import legacy_routes
 
 from . import downtime_checking_views
 from . import views
+from . import email_signin_views
 from . import powerbi_interaction_views
 from . import downtime_explorer_views
 from . import resource_knowledge_views
@@ -30,6 +31,7 @@ urlpatterns = [
     path("config/downtime-checking/results/", downtime_checking_views.results_api, name="downtime-checking-results"),
     path("config/downtime-checking/export/", downtime_checking_views.export_api, name="downtime-checking-export"),
     path("login/", views.login_page, name="login"),
+    path("email-sign-in/", email_signin_views.email_signin, name="email-sign-in"),
     path("auth/start/", views.auth_start, name="auth-start"),
     path("auth/callback/", views.auth_callback, name="auth-callback"),
     path("auth/powerbi/start/", views.powerbi_auth_start, name="powerbi-auth-start"),

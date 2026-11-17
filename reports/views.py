@@ -851,6 +851,10 @@ def _platform_role_payload(data) -> dict:
 def login_page(request):
     if request.user.is_authenticated:
         return redirect(request.GET.get("next") or "dashboard")
+    if (request.method == 'GET' and getattr(settings, 'MINING360_EMAIL_CODE_LOGIN_ENABLED', False)
+            and request.GET.get('method') != 'password'):
+        from urllib.parse import urlencode
+        return redirect(reverse('email-sign-in') + '?' + urlencode({'next': request.GET.get('next', '')}))
     next_url = request.GET.get("next") or request.POST.get("next") or ""
     if request.method == "POST":
         username = request.POST.get("username", "").strip()

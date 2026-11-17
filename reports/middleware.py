@@ -14,6 +14,7 @@ class PlatformLoginRequiredMiddleware:
         path = request.path_info
         exempt_prefixes = (
             reverse("login"),
+            reverse("email-sign-in"),
             reverse("auth-start"),
             reverse("auth-callback"),
             reverse("logout"),

@@ -94,6 +94,7 @@ $env:ENTRA_REDIRECT_URI = Get-Mining360Setting "ENTRA_REDIRECT_URI" $defaultEntr
 $env:AZURE_AD_REDIRECT_URI = Get-Mining360Setting "AZURE_AD_REDIRECT_URI" $env:ENTRA_REDIRECT_URI
 $env:ENTRA_POST_LOGOUT_REDIRECT_URI = Get-Mining360Setting "ENTRA_POST_LOGOUT_REDIRECT_URI" "$($env:MINING360_PUBLIC_BASE_URL.TrimEnd('/'))/login/"
 $trustedProxy = Get-Mining360Setting "MINING360_TRUSTED_PROXY" "127.0.0.1"
+$env:MINING360_EMAIL_CODE_LOGIN_ENABLED = Get-Mining360Setting "MINING360_EMAIL_CODE_LOGIN_ENABLED" "0"
 
 if (-not $env:MINING360_SECRET_KEY) {
     throw "MINING360_SECRET_KEY is not configured for the runtime account."

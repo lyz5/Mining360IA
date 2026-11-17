@@ -160,6 +160,21 @@ INTEGRATION_SCHEMAS = {
             {"key": "enabled", "label": "Enabled", "type": "boolean", "default": False},
         ],
     },
+    "Notification": {
+        "provider": "Corporate email delivery",
+        "fields": [
+            {"key": "transport", "label": "Delivery", "type": "select", "options": ["SMTP", "Power Automate"], "default": "SMTP"},
+            {"key": "sender_email", "label": "Authorized sender email", "type": "text", "required": True},
+            {"key": "smtp_host", "label": "SMTP host", "type": "text"},
+            {"key": "smtp_port", "label": "SMTP port", "type": "number", "default": 587},
+            {"key": "smtp_tls", "label": "SMTP STARTTLS", "type": "boolean", "default": True},
+            {"key": "smtp_ssl", "label": "SMTP SSL", "type": "boolean", "default": False},
+            {"key": "smtp_username", "label": "SMTP account", "type": "text"},
+            {"key": "smtp_password", "label": "SMTP password", "type": "password", "secret": True},
+            {"key": "flow_url", "label": "Dedicated email flow URL", "type": "password", "secret": True,
+             "help": "Code email-signin. A dedicated corporate flow must send the message and respond HTTP 200/204 only after success. Do not reuse the DAX query flow."},
+        ],
+    },
     "Other": {"provider": "Custom", "fields": []},
 }
 
@@ -428,6 +443,29 @@ def save_integration(item, payload, user=None):
         if not 1 <= maximum_sync_users <= 100000:
             raise ValueError("Maximum Users per Synchronization must be between 1 and 100000.")
 
+    if integration_type == 'Notification':
+        from django.core.validators import validate_email
+        from django.core.exceptions import ValidationError
+        try:
+            validate_email(str(clean_settings.get('sender_email') or '').strip())
+        except ValidationError:
+            raise ValueError('A valid authorized sender email is required.') from None
+        transport = clean_settings.get('transport')
+        if transport == 'Power Automate':
+            from .email_signin_delivery import validate_flow_url
+            validate_flow_url(secret_values.get('flow_url', ''))
+        elif transport == 'SMTP':
+            if not str(clean_settings.get('smtp_host') or '').strip():
+                raise ValueError('SMTP host is required.')
+            if not 1 <= int(clean_settings.get('smtp_port') or 0) <= 65535:
+                raise ValueError('SMTP port must be between 1 and 65535.')
+            if bool(clean_settings.get('smtp_tls')) == bool(clean_settings.get('smtp_ssl')):
+                raise ValueError('Use exactly one of SMTP STARTTLS and SMTP SSL.')
+            if clean_settings.get('smtp_username') and not secret_values.get('smtp_password'):
+                raise ValueError('The configured SMTP account needs its secret.')
+        else:
+            raise ValueError('Select SMTP or Power Automate delivery.')
+
     item.code = str(payload.get("code") or item.code or "").strip().lower()
     item.name = str(payload.get("name") or item.name or "").strip()
     item.integration_type = integration_type
@@ -510,6 +548,15 @@ def test_integration(item):
             if parsed.scheme != "https" or not parsed.netloc:
                 raise ValueError("A valid HTTPS Flow URL is required.")
             message = "Flow URL is configured. Execution is tested with the DAX test tool."
+        elif item.integration_type == 'Notification':
+            from .email_signin_delivery import configuration_ready
+            if item.code != 'email-signin' or not configuration_ready():
+                raise ValueError('Configure the dedicated email-signin delivery settings first.')
+            item.status = 'Configured'
+            item.last_message = 'Email delivery settings validated. No email was sent; mailbox delivery is not yet verified.'
+            item.last_verified_at = started
+            item.save(update_fields=['status', 'last_message', 'last_verified_at', 'updated_at'])
+            return True, item.last_message
         elif item.integration_type == "Storage":
             path = Path(str(settings_values.get("root_path") or ""))
             if not path.exists() or not path.is_dir():
