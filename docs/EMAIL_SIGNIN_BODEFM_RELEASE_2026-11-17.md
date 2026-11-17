@@ -8,7 +8,9 @@ Le raccordement Outlook et la connexion locale sont donc validés par lui.
 La livraison vise uniquement Mining360 sur BODEFM, `Mining360App`,
 `https://mining360.neemba.com/`. Elle ne publie aucune ouverture anonyme.
 
-Cette note prépare la promotion ; le reçu final précise son résultat effectif.
+**Installé et actif sur BODEFM.** Le [reçu de livraison](../deployment/email-signin-20261117/validation.json)
+consigne les contrôles et les limites ; le [manifeste](../deployment/email-signin-20261117/manifest.json)
+identifie les vingt cibles et les six fichiers protégés.
 Le point de départ Git est `f81a3ad37e8b956f4a932a22db3320ab156095f5`.
 Le worktree de recette reste distinct de la racine historique mélangée.
 
@@ -63,3 +65,47 @@ d'authentification restent en place ; elles ne sont plus utilisées par l'ancien
 version. Aucun restore complet ne doit écraser l'activité métier ultérieure.
 Les contrôles d'existence et de hash arrêtent la restauration si un fichier a
 été modifié entre-temps.
+
+
+## Résultat effectif
+
+- Commit applicatif installé : `020bc5f7de259b05c1f5f726e2b9ce1017b110c8`.
+- Outil de recette HTTPS corrigé, sans changement applicatif : `5febc05eb8aa205ead71e87e9e94f24370a9b43c`.
+- Sauvegarde : `D:\Mining360Backups\EmailSignIn_20261116_220815_020bc5f7`.
+- Dossier de contrôle : `C:\Mining360\control\email-signin-020bc5f7`.
+- Vingt empreintes installées et six empreintes protégées conformes après recette.
+- Backup SQL de 848 151 040 octets, COPY_ONLY et checksum vérifié.
+- Envoi Outlook réel accepté, connexion du compte existant, code consommé/effacé,
+  session persistante de quatorze jours vérifiée. La session de recette a été supprimée.
+- Treize contrôles Edge : Business Overview réel, six autres pages autorisées,
+  login desktop/mobile, compte absent et refus de Config anonyme.
+- Empreintes financières, des accès et des autres connexions identiques ; index
+  actif et précision `numeric(28,10)` préservés. Aucun refresh demandé.
+- Cœur Business Overview sans cache après : 1,125 / 1,047 / 1,032 s.
+  Avant : 8,906 / 2,328 / 1,375 s. Navigations Edge initiales : 6,788 s avant,
+  3,359 s après ; suivantes : 1,798 / 1,724 s avant et 1,783 / 1,183 s après.
+  Ces observations dépendent de l'état des caches et ne certifient pas un gain.
+
+Le wildcard Sectigo `*.neemba.com` actuellement lié à IIS a expiré le
+16 novembre 2026 à 23:59:59 UTC. Le navigateur ordinaire échouait déjà avant
+l'installation (`ERR_CERT_DATE_INVALID`). L'utilisateur a expressément reporté
+ce sujet. Aucun certificat, binding, DNS, pare-feu, configuration TLS ou service
+IIS/SQL n'a été changé. La recette fonctionnelle Edge utilise exclusivement la
+clé publique exacte du certificat IIS, relue via le SSH à clé épinglée ; elle ne
+constitue pas une validation HTTPS normale et aucune exception n'est installée
+dans les navigateurs des utilisateurs. Le certificat doit être renouvelé séparément.
+
+Le paquet opérateur `7b8597fe` a été arrêté avant installation pendant la lecture
+CIM de la tâche Windows historique. Le paquet `020bc5f7` filtre la liste des tâches
+et a réussi sauvegarde puis installation. Aucun ancien paquet n'a été installé
+dans l'application. Les avertissements CIM restants ne sont pas
+une modification de la tâche ; la tâche existante a été relancée normalement.
+
+Retour arrière ciblé, dans PowerShell élevé sur BODEFM :
+
+```powershell
+& 'C:\Mining360\control\email-signin-020bc5f7\deploy_email_signin.ps1' -Manifest 'C:\Mining360\control\email-signin-020bc5f7\manifest.json' -Phase Rollback -BackupPath 'D:\Mining360Backups\EmailSignIn_20261116_220815_020bc5f7'
+```
+
+Le retour arrière interrompt brièvement Mining360 et doit rester une décision
+opérateur. Aucun retour arrière n'a été nécessaire après l'installation réussie.

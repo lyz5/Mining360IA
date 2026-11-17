@@ -1,0 +1,67 @@
+{
+  "status": "Deployed",
+  "application_commit": "020bc5f7de259b05c1f5f726e2b9ce1017b110c8",
+  "probe_operator_commit": "5febc05eb8aa205ead71e87e9e94f24370a9b43c",
+  "branch": "feature/email-code-signin-20261116",
+  "url": "https://mining360.neemba.com/",
+  "host": "BODEFM",
+  "database": "Mining360App",
+  "backup": "D:\\Mining360Backups\\EmailSignIn_20261116_220815_020bc5f7",
+  "sql_backup": {
+    "database": "Mining360App",
+    "path": "D:\\Mining360Backups\\EmailSignIn_20261116_220815_020bc5f7\\database\\Mining360App_before_email_signin.bak",
+    "bytes": 848151040,
+    "copy_only": true,
+    "checksum_verified": true
+  },
+  "installed_hashes_verified": 20,
+  "protected_hashes_verified": 6,
+  "local_sql_tests_passed": 45,
+  "baseline_historical_failures_unchanged": 8,
+  "financial_and_access_controls_unchanged": true,
+  "other_connections_unchanged": true,
+  "actual_runtime_email_page_ready": true,
+  "real_outlook_send_confirmed": true,
+  "normal_otp_signin_verified": true,
+  "single_use_code_consumed": true,
+  "remember_days": 14,
+  "unknown_email_refused_without_mail": true,
+  "anonymous_config_denied": true,
+  "existing_authorized_pages_checked": 6,
+  "edge_checks": 13,
+  "qa_sessions_removed": true,
+  "production_tls_modified": false,
+  "public_https_certificate_valid": false,
+  "certificate_expired_at": "2026-11-16T23:59:59+00:00",
+  "certificate_thumbprint": "335EF28E3689D3FC841B6DCD9A03014C66C14224",
+  "certificate_handling_deferred_by_user": true,
+  "edge_checks_used_only_ssh_verified_iis_public_key_for_diagnostics": true,
+  "uncached_core_seconds_before": [
+    8.906,
+    2.328,
+    1.375
+  ],
+  "uncached_core_seconds_after": [
+    1.125,
+    1.047,
+    1.032
+  ],
+  "browser_seconds_before": [
+    6.788,
+    1.798,
+    1.724
+  ],
+  "browser_seconds_after": [
+    3.359,
+    1.783,
+    1.183
+  ],
+  "source_refresh_requested": false,
+  "iis_or_sql_restarted": false,
+  "windows_login_fallback_preserved": true,
+  "limits": [
+    "Public TLS certificate was already expired before delivery; normal trusted HTTPS is not certified.",
+    "The new production email was accepted by Outlook; its inbox visibility was not independently read.",
+    "Operator-account and anonymous checks do not revalidate every role, Power BI RLS scope or physical device."
+  ]
+}

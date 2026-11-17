@@ -1,0 +1,199 @@
+{
+  "commit": "020bc5f7de259b05c1f5f726e2b9ce1017b110c8",
+  "base_commit": "f81a3ad37e8b956f4a932a22db3320ab156095f5",
+  "files": [
+    {
+      "root": "app",
+      "path": "Mining360IA/settings.py",
+      "source": "Mining360IA/settings.py",
+      "sha256": "f4a6776403bc38a5160f15e860235eb983abc1b50e1a83727ccc405e108b122c",
+      "existed": true,
+      "previous_sha256": "f11f48540985cf8d38ba446e4f2b47fc63f664d26b95744bc33b71a8bb927d0e"
+    },
+    {
+      "root": "app",
+      "path": "deployment/windows/start_mining360.ps1",
+      "source": "deployment/windows/start_mining360.ps1",
+      "sha256": "951299da70373ffb567bf1544a9c3a40ac90b07b4559b636ca542f10d221bcfd",
+      "existed": true,
+      "previous_sha256": "a2901f81dec446e30457f8521071725af1aa23d9d88349f0939578a237be5a95"
+    },
+    {
+      "root": "app",
+      "path": "reports/middleware.py",
+      "source": "reports/middleware.py",
+      "sha256": "55bc771152a1382c229b27361abbcb7a92a9ac0f08badc342412f13fb7588bd7",
+      "existed": true,
+      "previous_sha256": "5327f8a900bea3447447cf0ad6773f4f5c1700c87db53636670fc994bd288a29"
+    },
+    {
+      "root": "app",
+      "path": "reports/models.py",
+      "source": "reports/models.py",
+      "sha256": "c1911bcf7f559671cd0ecc234a9372b1cd0c973433eed0ecfa41d8f34fba4834",
+      "existed": true,
+      "previous_sha256": "298fe1770551405c3af00309924d52bbfe9d4e51512ec28f1e746e05f4a4fa76"
+    },
+    {
+      "root": "app",
+      "path": "reports/system_configuration_service.py",
+      "source": "reports/system_configuration_service.py",
+      "sha256": "4bc68cb0806aebf934002265f315a4feaafd178e964d7c0b89c231a61b8a7f12",
+      "existed": true,
+      "previous_sha256": "01436849c081a03fe973630d841055839803d409dfd0ff33077b940953155611"
+    },
+    {
+      "root": "app",
+      "path": "reports/urls.py",
+      "source": "reports/urls.py",
+      "sha256": "b525e671e5563d1b882926bb5642890f4cc837ab3a310635667f0f2e2bd6a32b",
+      "existed": true,
+      "previous_sha256": "facec739e307fa1ba91f7daafadd9b4511b189f3a386a1b0a5faf7a559288ed0"
+    },
+    {
+      "root": "app",
+      "path": "reports/views.py",
+      "source": "reports/views.py",
+      "sha256": "1099171ad0568d67ff394503a5513a601d0d0ccad076f84e154922a1fe7a6f4b",
+      "existed": true,
+      "previous_sha256": "cf75e330894471f4886abdc8fe6ef72299ed054acf3a06438ff8bfe64cf80cb4"
+    },
+    {
+      "root": "app",
+      "path": "reports/email_signin_delivery.py",
+      "source": "reports/email_signin_delivery.py",
+      "sha256": "3abcf4334fe2c6bf2127b527a13560cd21db38925a89fc82f073f5c944a78ecc",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "app",
+      "path": "reports/email_signin_models.py",
+      "source": "reports/email_signin_models.py",
+      "sha256": "ccb7af8c89fcd1f8389bea570c8dc22a14072bf17a264f03368d23aef8d3805f",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "app",
+      "path": "reports/email_signin_service.py",
+      "source": "reports/email_signin_service.py",
+      "sha256": "11d9254446eb3881c15c88de6d39fbacebe4a93eb28beaa3de1dbe5ecfd9a83f",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "app",
+      "path": "reports/email_signin_views.py",
+      "source": "reports/email_signin_views.py",
+      "sha256": "792f5ff618045c9e9d2d9ff310576b1d818f0b06d4883c89517608590c149a2c",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "app",
+      "path": "reports/management/commands/prune_email_signin.py",
+      "source": "reports/management/commands/prune_email_signin.py",
+      "sha256": "5665f8392e72fc38b28b3919d48d13e651c5534c4273838bdc6276f64c2fb78b",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "app",
+      "path": "reports/migrations/0150_email_code_signin.py",
+      "source": "reports/migrations/0150_email_code_signin.py",
+      "sha256": "0de1aaf55fcf21c77bf543c22a580ef0941c10fca6da8f0dfb4ef73c6571eae8",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "app",
+      "path": "reports/static/reports/email-signin.css",
+      "source": "reports/static/reports/email-signin.css",
+      "sha256": "4b488e6880c77a0eb6f07ce509fa9086b2daf4ce80aa2c15576e4dea70523731",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "app",
+      "path": "reports/templates/reports/email_signin.html",
+      "source": "reports/templates/reports/email_signin.html",
+      "sha256": "35e5f7fea54bdd09aad0a31be9081f6b005d6038c6a577ce62bc45d7cfa64082",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "reports/email-signin.css",
+      "source": "reports/static/reports/email-signin.css",
+      "sha256": "4b488e6880c77a0eb6f07ce509fa9086b2daf4ce80aa2c15576e4dea70523731",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "reports/email-signin.css.gz",
+      "source": "generated/gzip/reports/email-signin.css.gz",
+      "sha256": "bb3f49d6cc3c7b9f33570531c013ae6a9dbdbc774ce8ea19da19bd8f1905611a",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "reports/email-signin.fb50770ee4d0.css",
+      "source": "reports/static/reports/email-signin.css",
+      "sha256": "4b488e6880c77a0eb6f07ce509fa9086b2daf4ce80aa2c15576e4dea70523731",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "reports/email-signin.fb50770ee4d0.css.gz",
+      "source": "generated/gzip/reports/email-signin.fb50770ee4d0.css.gz",
+      "sha256": "bb3f49d6cc3c7b9f33570531c013ae6a9dbdbc774ce8ea19da19bd8f1905611a",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "staticfiles.json",
+      "source": "generated/staticfiles.json",
+      "sha256": "e3811506f832155616d7b126a9f7f6ed82b7e68b378011d18adcc02da58c78c8",
+      "existed": true,
+      "previous_sha256": "605c3b9b0de236d1dceb0d2a3d6cb56df15e3634594e6d663f3b911d3ee98e49"
+    }
+  ],
+  "protected": [
+    {
+      "path": "reports/business_command_center_service.py",
+      "sha256": "b5d3b07328b8289d7f0a99a77011dd2760f0e6a9c322941f71f9f62fd8756b4a"
+    },
+    {
+      "path": "reports/revenue_query.py",
+      "sha256": "a9d01be71000d7bf9980e30ca39caa27613cc7f76097ccff81ff695d2ae7d774"
+    },
+    {
+      "path": "reports/business_review_access_service.py",
+      "sha256": "b062b345d023b8658e259cdec273d04930b26ae0e07a321d98debae3f7eb98a1"
+    },
+    {
+      "path": "reports/parts_fulfillment_service.py",
+      "sha256": "531ea62aac23bf0bd36c9c284f90bd5b1088486332eb485fd34de099a516baf3"
+    },
+    {
+      "path": "Mining360IA/wsgi.py",
+      "sha256": "420d31edd5516631bfb0e9ca820ad5901e1b992a27d9a7998e63b9bb38fc8cce"
+    },
+    {
+      "path": "reports/revenue_auto_sync.py",
+      "sha256": "6a36f631b6204e74d29c76eda402e63f0b46bf3e2134709187455f4524df265f"
+    }
+  ],
+  "script_sha256": "aa5e46101914389af295941e8e575d582e0bc0fe96887fb931b7eb186eee2d6c",
+  "helper_sha256": "75a0c9613d17c3b1c99e08eea577a99ff0a590ced441ce2a5c09fab90daecf1c",
+  "static_controls": {
+    "existing_mappings_preserved": 211,
+    "added_mappings": 1,
+    "total": 212
+  }
+}
