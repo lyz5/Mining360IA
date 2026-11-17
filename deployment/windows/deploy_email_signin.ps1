@@ -253,8 +253,10 @@ try {
   $d=Get-CimInstance Win32_LogicalDisk|Where-Object DeviceID -eq 'D:'
   if($c.FreeSpace -lt 5GB -or $d.FreeSpace -lt 12GB){throw 'Backup capacity preflight failed.'}
   if(Test-Path -LiteralPath $backup){throw 'Backup folder already exists.'}
-  $task=Get-ScheduledTask -TaskName 'Mining360RuntimeServiceRecovery'
-  if($task.State.ToString() -ne 'Running' -or $task.Principal.UserId -ne 'SYSTEM'){throw 'Unexpected active runtime task.'}
+  # Enumerating then filtering handles the existing unlimited-duration task;
+  # the named CIM query rejects its historical XML on this server.
+  $tasks=@(Get-ScheduledTask | Where-Object {$_.TaskName -eq 'Mining360RuntimeServiceRecovery'})
+  if($tasks.Count -ne 1 -or $tasks[0].State.ToString() -ne 'Running' -or $tasks[0].Principal.UserId -ne 'SYSTEM'){throw 'Unexpected active runtime task.'}
   New-Item -ItemType Directory -Path $backup|Out-Null
   & icacls.exe $backup /inheritance:r /grant:r '*S-1-5-18:(OI)(CI)F' '*S-1-5-32-544:(OI)(CI)F' *> $null
   if($LASTEXITCODE -ne 0){throw 'Could not restrict the new backup directory.'}
