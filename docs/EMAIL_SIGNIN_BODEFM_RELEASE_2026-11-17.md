@@ -24,7 +24,8 @@ Le préparateur contrôle le serveur, la cible SSH approuvée et la clé épingl
 les empreintes précédentes, les fichiers protégés, l'espace disque et les tâches.
 Il sauvegarde les fichiers ciblés et fait un backup SQL COPY_ONLY, COMPRESSION,
 CHECKSUM, vérifié par RESTORE VERIFYONLY. Les sauvegardes sont sur D: et leur
-dossier est limité à SYSTEM/Administrators.
+dossier est limité à SYSTEM/Administrators. Seul le sous-dossier `database` donne
+également accès au compte de service SQL Server pour écrire/vérifier le backup.
 
 L'application est arrêtée par sa tâche de récupération existante. Seule la
 migration additive `0150_email_code_signin` peut être exécutée. La configuration

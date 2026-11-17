@@ -258,6 +258,14 @@ try {
   New-Item -ItemType Directory -Path $backup|Out-Null
   & icacls.exe $backup /inheritance:r /grant:r '*S-1-5-18:(OI)(CI)F' '*S-1-5-32-544:(OI)(CI)F' *> $null
   if($LASTEXITCODE -ne 0){throw 'Could not restrict the new backup directory.'}
+  $databaseFolder=Join-Path $backup 'database'
+  New-Item -ItemType Directory -Path $databaseFolder|Out-Null
+  $sqlAccount=(Get-CimInstance Win32_Service -Filter "Name='MSSQLSERVER'").StartName
+  if(-not $sqlAccount){throw 'SQL Server service identity is required for its backup folder.'}
+  if($sqlAccount -ne 'LocalSystem'){
+   & icacls.exe $databaseFolder /grant:r ($sqlAccount+':(OI)(CI)M') *> $null
+   if($LASTEXITCODE -ne 0){throw 'Could not authorize the SQL service on its database-only backup folder.'}
+  }
   Copy-Item -LiteralPath $Manifest -Destination (Join-Path $backup 'manifest.json')
   @{machine=[Environment]::GetEnvironmentVariable($flag,'Machine');process=[Environment]::GetEnvironmentVariable($flag,'Process')}|ConvertTo-Json|Set-Content -LiteralPath (Join-Path $backup 'environment.json') -Encoding UTF8
   foreach($f in $m.files|Where-Object existed){
@@ -298,6 +306,8 @@ try {
   [Environment]::SetEnvironmentVariable($flag,'1','Machine');[Environment]::SetEnvironmentVariable($flag,'1','Process')
   Run-Helper 'verify'|Out-Null
   Start-ManagedRuntime
+  $login=Invoke-WebRequest -Uri 'http://127.0.0.1:8000/email-sign-in/' -Headers @{'X-Forwarded-Proto'='https';Host='bodefm'} -UseBasicParsing -TimeoutSec 15
+  if($login.StatusCode -ne 200 -or $login.Content -notlike '*Send me a code*'){throw 'The actual runtime did not activate email sign-in.'}
   Run-Helper 'verify'|Out-Null
   Write-Log ('Email sign-in release installed: '+$m.commit)
   @{Status='Succeeded';Commit=$m.commit;Backup=$backup;Files=$m.files.Count;Health='ok';Database='ok'}|ConvertTo-Json -Compress

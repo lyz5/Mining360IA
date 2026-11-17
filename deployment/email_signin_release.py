@@ -76,14 +76,14 @@ def main():
         if owner.count() != 1:
             raise RuntimeError('The authorized test mailbox must match one active existing account.')
         with connection.cursor() as cursor:
-            cursor.execute("SELECT name,size*8192 AS allocated_bytes,FILEPROPERTY(name,'SpaceUsed')*8192 AS used_bytes FROM sys.database_files")
+            cursor.execute("SELECT name,CAST(size AS bigint)*8192 AS allocated_bytes,CAST(FILEPROPERTY(name,'SpaceUsed') AS bigint)*8192 AS used_bytes FROM sys.database_files")
             files = [list(row) for row in cursor.fetchall()]
             cursor.execute("SELECT app,name FROM django_migrations WHERE app='reports' AND name LIKE '0150%' ORDER BY name")
             migrations = [list(row) for row in cursor.fetchall()]
         result = dict(controls(), database_files=files, migration_0150=migrations, authorized_test_account_unique=True)
         write('preparation-controls.json', result)
     elif args.operation == 'backup':
-        filename = backup / 'Mining360App_before_email_signin.bak'
+        filename = backup / 'database' / 'Mining360App_before_email_signin.bak'
         if filename.exists():
             raise RuntimeError('Do not overwrite an existing database backup.')
         raw = connection.connection.cursor()
