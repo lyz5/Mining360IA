@@ -161,7 +161,7 @@ def main():
         profile = profile_for_email('papa.diagne@neemba.com')
         if not profile or EmailCodeBackend().get_user(profile.django_user_id) != profile.django_user:
             raise RuntimeError('Existing account could not be resolved by the new backend.')
-        client = Client(enforce_csrf_checks=True, HTTP_HOST='bodefm', HTTP_X_FORWARDED_PROTO='https')
+        client = Client(enforce_csrf_checks=True, HTTP_HOST='bodefm', HTTP_X_FORWARDED_PROTO='https', HTTP_ORIGIN='https://bodefm')
         if client.get('/login/', secure=True).status_code != 302:
             raise RuntimeError('The login route did not redirect to email sign-in.')
         if client.get('/email-sign-in/', secure=True).status_code != 200 or client.get('/login/?method=password', secure=True).status_code != 200:
@@ -190,7 +190,7 @@ def main():
             captured.update(challenge_id=challenge_id, code=code, user_id=user_id)
             return original(challenge_id, address, code, user_id)
 
-        client = Client(enforce_csrf_checks=True, HTTP_HOST='bodefm', HTTP_X_FORWARDED_PROTO='https')
+        client = Client(enforce_csrf_checks=True, HTTP_HOST='bodefm', HTTP_X_FORWARDED_PROTO='https', HTTP_ORIGIN='https://bodefm')
         try:
             response = client.get('/email-sign-in/', secure=True)
             token = client.cookies[settings.CSRF_COOKIE_NAME].value
