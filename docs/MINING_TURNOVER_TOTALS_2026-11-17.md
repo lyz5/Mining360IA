@@ -1,5 +1,9 @@
 # Mining Turnover — totaux du tableau Performance vs Last Year
 
+**Suivi : déployé sur BODEFM le 18 novembre 2026 UTC après Go explicite.**
+Voir [le reçu commun](TURNOVER_ROLE_BODEFM_RELEASE_2026-11-17.md). Les mentions
+« local uniquement » ci-dessous conservent la phase de préparation historique.
+
 Statut : **implémenté et vérifié en local uniquement**. Aucun contact avec
 BODEFM, push Git ou déploiement pendant cette évolution.
 

@@ -1,0 +1,169 @@
+{
+  "commit": "81f408c481f05aa287e641ae0d0fc30e62630274",
+  "base_commit": "bb4710f7194c233c1a01fa0c129600f01439c5d9",
+  "files": [
+    {
+      "root": "app",
+      "path": "Mining360IA/settings.py",
+      "source": "Mining360IA/settings.py",
+      "sha256": "2B07F5416C10C2D6BFB8053549AAA31A25DC1199FBF4EA101C24F073E4A1BAA3",
+      "existed": true,
+      "previous_sha256": "F4A6776403BC38A5160F15E860235EB983ABC1B50E1A83727CCC405E108B122C"
+    },
+    {
+      "root": "app",
+      "path": "reports/templates/reports/business_command_center_v2.html",
+      "source": "reports/templates/reports/business_command_center_v2.html",
+      "sha256": "367D2A25481B3EA70F88C68A29F835651D877C5525568B91AE8C2057A87990FB",
+      "existed": true,
+      "previous_sha256": "EC115430EFFEBBC6708E624633D484226299D7A0870968297D9327BFC151A7A9"
+    },
+    {
+      "root": "app",
+      "path": "reports/static/reports/business_command_center_v2.js",
+      "source": "reports/static/reports/business_command_center_v2.js",
+      "sha256": "D92F809B9A1AFE9C46B2D4C196A537FF60C68E4AD05C655842275204EC913932",
+      "existed": true,
+      "previous_sha256": "8D0F6429FFEC85CE2ED75572F66E9BD3EF5B4396405544564D2873ED75E72A16"
+    },
+    {
+      "root": "app",
+      "path": "reports/static/reports/business_command_center_v2.css",
+      "source": "reports/static/reports/business_command_center_v2.css",
+      "sha256": "1504741DB1C011A601E342424829A40E71378C61FA1506B72E8D54E49E9D2BAE",
+      "existed": true,
+      "previous_sha256": "299595BF2AA202D5ADBF30FB27DB71E964A74CD00EF85B2F02383E2A0F429903"
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.js",
+      "source": "reports/static/reports/business_command_center_v2.js",
+      "sha256": "D92F809B9A1AFE9C46B2D4C196A537FF60C68E4AD05C655842275204EC913932",
+      "existed": true,
+      "previous_sha256": "8D0F6429FFEC85CE2ED75572F66E9BD3EF5B4396405544564D2873ED75E72A16"
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.js.gz",
+      "source": "generated/gzip/reports/business_command_center_v2.js.gz",
+      "sha256": "ABD421BC35CB2FBEE119EBD745ACB324C53B35E82723F7790700AF7D8AFB05C8",
+      "existed": true,
+      "previous_sha256": "C8675AA223CFDE1F4F59B7B7B0394A3C54894BF5671089E160D6D94F64A650D0"
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.2e987deb8a26.js",
+      "source": "reports/static/reports/business_command_center_v2.js",
+      "sha256": "D92F809B9A1AFE9C46B2D4C196A537FF60C68E4AD05C655842275204EC913932",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.2e987deb8a26.js.gz",
+      "source": "generated/gzip/reports/business_command_center_v2.2e987deb8a26.js.gz",
+      "sha256": "ABD421BC35CB2FBEE119EBD745ACB324C53B35E82723F7790700AF7D8AFB05C8",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.css",
+      "source": "reports/static/reports/business_command_center_v2.css",
+      "sha256": "1504741DB1C011A601E342424829A40E71378C61FA1506B72E8D54E49E9D2BAE",
+      "existed": true,
+      "previous_sha256": "299595BF2AA202D5ADBF30FB27DB71E964A74CD00EF85B2F02383E2A0F429903"
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.css.gz",
+      "source": "generated/gzip/reports/business_command_center_v2.css.gz",
+      "sha256": "696B0D1AFF84AD0525B1716C91677F435C6810BE24089B2CE56CE14339F8BE27",
+      "existed": true,
+      "previous_sha256": "4D116277F3AB1B718B50142B0F2B26B6A61BF2635D1867A0796E7F245931C709"
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.57daa4cf24c1.css",
+      "source": "reports/static/reports/business_command_center_v2.css",
+      "sha256": "1504741DB1C011A601E342424829A40E71378C61FA1506B72E8D54E49E9D2BAE",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.57daa4cf24c1.css.gz",
+      "source": "generated/gzip/reports/business_command_center_v2.57daa4cf24c1.css.gz",
+      "sha256": "696B0D1AFF84AD0525B1716C91677F435C6810BE24089B2CE56CE14339F8BE27",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "staticfiles.json",
+      "source": "generated/staticfiles.json",
+      "sha256": "F2FC1E7068B85C4A765B7FF2D671AEF07C8EF8CEBD5F795FF6E050BE5252A356",
+      "existed": true,
+      "previous_sha256": "E3811506F832155616D7B126A9F7F6ED82B7E68B378011D18ADCC02DA58C78C8"
+    }
+  ],
+  "protected": [
+    {
+      "path": "reports/business_command_center_service.py",
+      "sha256": "B5D3B07328B8289D7F0A99A77011DD2760F0E6A9C322941F71F9F62FD8756B4A"
+    },
+    {
+      "path": "reports/revenue_query.py",
+      "sha256": "A9D01BE71000D7BF9980E30CA39CAA27613CC7F76097CCFF81FF695D2AE7D774"
+    },
+    {
+      "path": "reports/business_review_access_service.py",
+      "sha256": "B062B345D023B8658E259CDEC273D04930B26AE0E07A321D98DEBAE3F7EB98A1"
+    },
+    {
+      "path": "reports/business_mapping_access_service.py",
+      "sha256": "2C34C23634FA4E7D40C86631DA061FA983C09AB1FD10091178390206985F6DA5"
+    },
+    {
+      "path": "reports/access_control.py",
+      "sha256": "725770338AE842F5004DEA228D764A815C08883D288CB7819992D33D0999078F"
+    },
+    {
+      "path": "reports/platform_roles.py",
+      "sha256": "2950C39FAAC852A6C9211B2412934B715F09342C13F39ED9B734A6D5A642F104"
+    },
+    {
+      "path": "reports/models.py",
+      "sha256": "C1911BCF7F559671CD0ECC234A9372B1CD0C973433EED0ECFA41D8F34FBA4834"
+    },
+    {
+      "path": "reports/urls.py",
+      "sha256": "B525E671E5563D1B882926BB5642890F4CC837AB3A310635667F0F2E2BD6A32B"
+    },
+    {
+      "path": "Mining360IA/wsgi.py",
+      "sha256": "420D31EDD5516631BFB0E9CA820AD5901E1B992A27D9A7998E63B9BB38FC8CCE"
+    },
+    {
+      "path": "deployment/windows/start_mining360.ps1",
+      "sha256": "951299DA70373FFB567BF1544A9C3A40AC90B07B4559B636CA542F10D221BCFD"
+    },
+    {
+      "path": "reports/email_signin_service.py",
+      "sha256": "11D9254446EB3881C15C88DE6D39FBACEBE4A93EB28BEAA3DE1DBE5ECFD9A83F"
+    }
+  ],
+  "static_controls": {
+    "previous_entries": 212,
+    "entries": 212,
+    "changed_mappings": [
+      "reports/business_command_center_v2.js",
+      "reports/business_command_center_v2.css"
+    ],
+    "other_mappings_preserved": true
+  },
+  "read_rollout_environment_overrides_absent": true,
+  "user_authorized_immediate_exception_to_evening_window": true,
+  "script_sha256": "E6699FE6505AFC74B6E6CC8361A640A9DB889AA92AE99832F5972BDD53E19909",
+  "helper_sha256": "15E74B43B2B3EB4E0A244FC8AEE43880A78E77227A4F4989D33BB94265598283"
+}

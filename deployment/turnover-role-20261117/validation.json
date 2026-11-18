@@ -1,0 +1,66 @@
+{
+  "status": "Deployed",
+  "verified_at_utc": "2026-11-18T05:16:21.442044+00:00",
+  "commit": "81f408c481f05aa287e641ae0d0fc30e62630274",
+  "branch": "feature/mining-turnover-totals-20261117",
+  "url": "https://mining360.neemba.com/business-review/command-center/",
+  "immediate_deployment_explicitly_authorized": true,
+  "user_notified_before_live_switch": true,
+  "backup": "D:\\Mining360Backups\\TurnoverTotals_20261117_210911_81f408c4",
+  "installed_targets_verified": 13,
+  "protected_files_verified": 11,
+  "application_files_changed": 4,
+  "static_mappings_preserved": 212,
+  "local_sql_tests_passed": 33,
+  "role_tests_included": 8,
+  "local_browser_checks_passed": 9,
+  "live_edge_checks_passed": 7,
+  "existing_business_reader_without_super_admin_http": 200,
+  "existing_other_reader_http": 403,
+  "non_admin_config_http": 403,
+  "accounts_roles_and_scope_unchanged": true,
+  "financial_results_and_source_unchanged": true,
+  "active_revenue_index_preserved": true,
+  "monetary_precision_preserved": "numeric(28,10)",
+  "live_row_column_and_grand_totals_verified": true,
+  "strict_https": true,
+  "temporary_sessions_removed": true,
+  "sql_migrations": false,
+  "source_refresh_requested": false,
+  "environment_variables_changed": false,
+  "emails_sent": false,
+  "iis_sql_or_certificate_modified": false,
+  "other_session_access_fix_included": true,
+  "uncached_seconds_before": [
+    246.859,
+    1.141,
+    1.0
+  ],
+  "uncached_seconds_after": [
+    2.313,
+    3.64,
+    3.641
+  ],
+  "uncached_followup_seconds": [
+    1.328,
+    1.032,
+    1.015,
+    1.063,
+    1.672
+  ],
+  "uncached_followup_median_seconds": 1.063,
+  "followup_active_sql_requests": 0,
+  "browser_before_seconds": [
+    4.624,
+    1.031
+  ],
+  "browser_after_seconds": [
+    4.156,
+    1.639
+  ],
+  "timing_limit": "Observed timing dispersion, including a slow pre-deployment first request after daily refresh; no causal attribution or performance guarantee.",
+  "scope_limits": [
+    "Totals cover only the displayed countries and business lines.",
+    "Live role probes used two existing non-admin accounts; not an exhaustive revalidation of every identity or Power BI RLS profile."
+  ]
+}

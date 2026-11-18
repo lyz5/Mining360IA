@@ -1,5 +1,9 @@
 # Business Overview — accès par rôle, correction locale du 17 novembre 2026
 
+**Suivi : déployé sur BODEFM le 18 novembre 2026 UTC après Go explicite.**
+Voir [le reçu commun](TURNOVER_ROLE_BODEFM_RELEASE_2026-11-17.md). Les mentions
+« local uniquement » ci-dessous conservent la phase de préparation historique.
+
 Statut : corrigé et activé sur `http://localhost:8016/` uniquement. Aucun push,
 déploiement, redémarrage ou changement de configuration sur BODEFM.
 

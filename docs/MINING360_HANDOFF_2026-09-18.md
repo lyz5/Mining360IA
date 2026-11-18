@@ -1,5 +1,17 @@
 # Mining360 Project Handoff
 
+## BODEFM totals and Business Overview access — 18 November 2026 UTC
+
+The combined release is installed on BODEFM at application commit
+`81f408c481f05aa287e641ae0d0fc30e62630274`, branch
+`feature/mining-turnover-totals-20261117`. The user explicitly authorized immediate
+deployment and was notified before the live switch. Existing Business Overview
+readers can now enter without Super Admin, with Config and existing scopes
+preserved. Totals are verified live; users/roles and financial results are unchanged.
+Read [the release receipt and rollback](TURNOVER_ROLE_BODEFM_RELEASE_2026-11-17.md).
+The local-only notes below record the earlier preparation phase. The evening/Go
+rule remains the default for subsequent releases.
+
 ## Local Business Overview role access — 17 November 2026
 
 The local preview at `http://localhost:8016/` now permits Business Overview readers

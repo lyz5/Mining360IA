@@ -39,3 +39,51 @@ Aucune migration, modification SQL, clé, configuration de connexion, changement
 IIS/certificat ou refresh de source n'est demandé. Les sessions de contrôle
 temporaires doivent être supprimées. Le résultat effectif et le dossier de
 sauvegarde seront consignés dans le reçu de promotion.
+
+
+## Résultat effectif — 18 novembre 2026 UTC
+
+**Installé et contrôlé sur BODEFM** après notification à l'utilisateur avant la
+bascule. Le nom du dossier conserve le début de préparation du 17 novembre.
+
+- Commit applicatif : `81f408c481f05aa287e641ae0d0fc30e62630274`.
+- Branche publiée : `feature/mining-turnover-totals-20261117`.
+- Treize cibles et onze fichiers protégés vérifiés par SHA-256 après recette.
+- Les 212 références statiques sont conservées ; seuls les deux mappings JS/CSS
+  sont actualisés, avec variantes gzip vérifiées.
+- Sauvegarde : `D:\Mining360Backups\TurnoverTotals_20261117_210911_81f408c4`.
+- 33 tests SQL locaux, dont les huit tests de rôle, et neuf contrôles Edge locaux.
+- Sept contrôles Edge live en HTTPS strict : montants de tous les totaux,
+  document sans débordement en 1440/1024/390 et santé HTTP 200.
+- Compte Business Overview existant, non Super Admin : HTTP 403 avant, HTTP 200
+  après. Autre compte sans ce rôle : HTTP 403. Config : HTTP 403 en JSON pour
+  les deux. Les comptes, mots de passe, rôles, groupes et scopes sont conservés.
+- Mêmes agrégats financiers et même import avant/après ; index actif et précision
+  `numeric(28,10)` conservés. Aucun refresh demandé, migration ou mutation des
+  données métier ; seules les sessions de recette et leurs métadonnées normales
+  de connexion ont été créées puis les sessions supprimées.
+- Une seule relance ciblée du runtime Mining360 ; aucun redémarrage IIS/SQL,
+  changement de certificat, de variable d'environnement ou de connexion.
+- Sessions temporaires supprimées ; aucun e-mail envoyé.
+
+Les temps ont varié : premier calcul avant installation de 246,859 s, puis
+1,141 / 1,000 s ; premier groupe après de 2,313 / 3,640 / 3,641 s. L'import quotidien
+s'était achevé à 05:00:57 UTC ; sa causalité avec la première lenteur n'est pas
+établie. Cinq mesures supplémentaires justifiées par cette dispersion donnent
+1,328 / 1,032 / 1,015 / 1,063 / 1,672 s (médiane 1,063 s), mêmes montants/source,
+sans requête SQL active observée en fin de contrôle. Aucune modification de
+requête, cache ou réglage SQL n'a été appliquée. Edge : 4,624 / 1,031 s avant,
+4,156 / 1,639 s après. Ces observations ne constituent pas une garantie de délai.
+
+Voir [le manifeste](../deployment/turnover-role-20261117/manifest.json) et
+[le reçu](../deployment/turnover-role-20261117/validation.json).
+
+Retour arrière ciblé, après décision opérateur :
+
+```powershell
+& 'C:\Mining360\control\turnover-totals-81f408c4\deploy_turnover_totals.ps1' -Manifest 'C:\Mining360\control\turnover-totals-81f408c4\manifest.json' -Rollback -BackupPath 'D:\Mining360Backups\TurnoverTotals_20261117_210911_81f408c4'
+```
+
+Aucun rollback n'a été nécessaire. Les premiers dossiers préparés, non activés,
+ne sont pas des versions installées. Les tests de tous les rôles et périmètres
+Power BI restent hors du périmètre de cette recette ciblée.
