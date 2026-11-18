@@ -51,7 +51,7 @@ def main():
   http.cookies.set(settings.SESSION_COOKIE_NAME,key,domain='mining360.neemba.com',path='/',secure=True)
   try:
    response=http.get('https://mining360.neemba.com/business-review/command-center/',timeout=(5,25),allow_redirects=False)
-   config=http.get('https://mining360.neemba.com/system-config/',timeout=(5,25),allow_redirects=False)
+   config=http.get('https://mining360.neemba.com/system-config/',headers={'Accept':'application/json'},timeout=(5,25),allow_redirects=False)
    result={'role':role,'http':response.status_code,'config_http':config.status_code,'is_platform_admin':False,
            'read_permission':has_business_review_permission(user,'view_business_command_center')}
    if args.phase=='after':
