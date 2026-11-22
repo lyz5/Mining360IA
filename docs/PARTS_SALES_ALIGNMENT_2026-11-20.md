@@ -167,3 +167,20 @@ activités métier. Un calendrier atteint ne vaut jamais autorisation de déploy
 
 Preuves privées : `.runlogs/parts-sales-alignment-20261118/` à la racine canonique.
 Code et données de cette évolution restent locaux jusqu'à la revue de livraison.
+
+## Promotion autorisée — 22 novembre 2026
+
+L'utilisateur a donné son **Go**, puis confirmé `sshd Running` et le port 22
+en écoute depuis RDP. La cible approuvée à clé SSH épinglée a confirmé la santé
+application/base et les hashes des 26 fichiers ciblés ou protégés. Le catalogue
+est vide sur BODEFM ; les détails actifs s'arrêtent encore au 2 octobre.
+La livraison est en préparation, pas encore activée à la rédaction de cette note.
+Le Go est interprété pour cette livraison immédiate ; la règle habituelle du soir
+reste inchangée pour les autres interventions.
+
+Les opérateurs réutilisent le contrôle de runtime déjà vérifié, préparent une
+sauvegarde SQL COPY_ONLY vérifiée, le catalogue et les deux migrations additives
+avant la bascule du code. Un rollback conserve la précision et les nouvelles lignes
+inactives, réactive les seuls identifiants sauvegardés et refuse un hash divergent.
+Trois tests SQL supplémentaires vérifient cette restauration ciblée et son atomicité.
+Aucun redémarrage IIS/SQL global ni restauration globale de base n'est prévu.
