@@ -2,6 +2,14 @@
 
 Dernière consolidation : **15 octobre 2026**.
 
+**Mining360 — recette locale du 22 novembre 2026 :** Sales → Parts utilise le
+CA facture/date de Mine Logistics et le catalogue CAT existant. Import réel
+terminé ; 89 tests SQL, affichage Edge desktop/mobile et export PPC de 570 groupes
+validés. Prévisualisation isolée `http://localhost:8016/`, worktree
+`.release-worktrees/parts-sales-alignment`, branche
+`feature/parts-sales-alignment-20261118`. Aucun déploiement sur BODEFM ; notification
+et Go explicite requis. Voir `docs/PARTS_SALES_ALIGNMENT_2026-11-20.md` dans ce worktree.
+
 Ce document donne la vue commune des sept projets suivis avec Papa Djibril Diagne. Il sert de point de reprise avant une demande qui peut concerner plusieurs applications ou campagnes. Il ne remplace pas les mémoires propres à chaque projet et ne constitue pas une autorisation de déploiement ou de dépense.
 
 ## 1. Vue d'ensemble

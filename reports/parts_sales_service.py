@@ -5,8 +5,8 @@ import json
 from collections import defaultdict
 from decimal import Decimal, ROUND_HALF_UP
 
-from django.db import transaction
-from django.db.models import Count, Sum
+from django.db import connection, models, transaction
+from django.db.models import Count, Max, Sum
 from django.utils import timezone
 
 from .business_mapping_access_service import authorized_account_codes
@@ -21,6 +21,7 @@ from .models import (
     RevenueSourceSnapshot,
 )
 from .reconciliation_service import _token
+from .revenue_query import active_revenue_snapshots
 
 
 def _text(value):
@@ -33,6 +34,49 @@ def _part_key(value):
 
 def _hash(payload):
     return hashlib.sha256(json.dumps(payload, sort_keys=True, default=str).encode("utf-8")).hexdigest()
+
+
+def _insert_model_parts(rows, run, now):
+    """SQL Server array insert, preserving declared monetary scale and the outer transaction."""
+    if not rows:
+        return
+    if connection.vendor != 'microsoft':
+        PartSaleDetail.objects.bulk_create(rows, batch_size=500)
+        return
+    fields = [field for field in PartSaleDetail._meta.concrete_fields if not field.primary_key]
+    metadata = getattr(run, '_parts_insert_metadata', None)
+    if metadata is None:
+        with connection.cursor() as cursor:
+            cursor.execute('SELECT name,TYPE_NAME(user_type_id),max_length,precision,scale FROM sys.columns WHERE object_id=OBJECT_ID(%s)',[PartSaleDetail._meta.db_table])
+            metadata = {r[0]:r[1:] for r in cursor.fetchall()}
+        if metadata['allocated_revenue_eur'][3] < 10:
+            raise RuntimeError('Apply the Parts monetary precision migration before import.')
+        run._parts_insert_metadata = metadata
+    import pyodbc
+    sizes = []
+    for field in fields:
+        kind,length,precision,scale = metadata[field.column]
+        sizes.append((pyodbc.SQL_WVARCHAR,max(1,length//2) if length>0 else 0,0) if kind in {'nvarchar','nchar'}
+                     else (pyodbc.SQL_DECIMAL,precision,scale) if kind in {'numeric','decimal'} else None)
+    values = []
+    for item in rows:
+        item.created_at = item.updated_at = now
+        row = []
+        for field in fields:
+            value = getattr(item,field.attname)
+            if isinstance(field,models.DecimalField) and value is not None:
+                value = value.quantize(Decimal(1).scaleb(-metadata[field.column][3]),rounding=ROUND_HALF_UP)
+            row.append(field.get_db_prep_save(value,connection))
+        values.append(tuple(row))
+    columns = ','.join(connection.ops.quote_name(field.column) for field in fields)
+    placeholders = ','.join('?' for field in fields)
+    cursor = connection.connection.cursor()
+    try:
+        cursor.fast_executemany = True
+        cursor.setinputsizes(sizes)
+        cursor.executemany(f'INSERT INTO {connection.ops.quote_name(PartSaleDetail._meta.db_table)} ({columns}) VALUES ({placeholders})',values)
+    finally:
+        cursor.close()
 
 
 class PartsSalesSynchronizationService:
@@ -195,23 +239,28 @@ class PartsSalesSynchronizationService:
             raise
 
     @classmethod
-    def _persist(cls, payloads, run, now, counters):
+    def _persist(cls, payloads, run, now, counters, *, skip_unchanged=False):
         part_keys = {payload["normalized_part_number"] for payload in payloads if payload["normalized_part_number"]}
         classifications = {
             item.normalized_part_number: item
             for item in PartClassificationReference.objects.filter(
                 active=True, classification_status="Classified",
                 normalized_part_number__in=part_keys,
-            ).select_related("major_class")
+            ).select_related("major_class").only(
+                "normalized_part_number", "major_class", "minor_class", "ppc",
+                "major_class__code", "major_class__description")
         }
         source_ids = {payload["source_record_id"] for payload in payloads}
         existing = {
             item.source_record_id: item
-            for item in PartSaleDetail.objects.filter(source_record_id__in=source_ids)
+            for item in PartSaleDetail.objects.filter(source_record_id__in=source_ids).only(
+                "pk", "source_record_id", "source_hash", "active")
         }
         creates = []
         updates = []
+        unchanged_ids = []
         fields = [
+            "invoice_key", "source_line_count",
             "business_date", "company_code", "branch_code", "customer_code", "customer_name",
             "invoice_number", "part_number", "normalized_part_number", "brand", "brand_group", "major_class_code",
             "major_class_description", "minor_class", "ppc", "classification_status",
@@ -219,6 +268,8 @@ class PartsSalesSynchronizationService:
             "active", "synchronization_run", "source_last_seen_at",
         ]
         for payload in payloads:
+            payload.setdefault("invoice_key", "")
+            payload.setdefault("source_line_count", 1)
             classification = classifications.get(payload["normalized_part_number"])
             source_brand = _text(payload.get("brand")).upper()
             if source_brand in {"CAT", "CATERPILLAR"} or (not source_brand and classification):
@@ -251,6 +302,10 @@ class PartsSalesSynchronizationService:
                 counters["created"] += 1
             else:
                 changed = item.source_hash != source_hash or not item.active
+                if skip_unchanged and not changed:
+                    unchanged_ids.append(item.pk)
+                    counters["unchanged"] += 1
+                    continue
                 for field, value in payload.items():
                     setattr(item, field, value)
                 item.source_hash = source_hash
@@ -259,8 +314,14 @@ class PartsSalesSynchronizationService:
                 updates.append(item)
                 counters["updated" if changed else "unchanged"] += 1
         with transaction.atomic():
-            PartSaleDetail.objects.bulk_create(creates, batch_size=cls.BATCH_SIZE)
+            if skip_unchanged:
+                _insert_model_parts(creates, run, now)
+            else:
+                PartSaleDetail.objects.bulk_create(creates, batch_size=cls.BATCH_SIZE)
             PartSaleDetail.objects.bulk_update(updates, fields, batch_size=cls.UPDATE_BATCH_SIZE)
+            if unchanged_ids:
+                PartSaleDetail.objects.filter(pk__in=unchanged_ids).update(
+                    synchronization_run=run, source_last_seen_at=now)
 
     @classmethod
     def _backfill_explicit_brands(cls, invoice_brands, counters):
@@ -350,7 +411,7 @@ class PartsSalesDetailService:
         group_by = self.params.get("group_by") if self.params.get("group_by") in self.GROUP_FIELDS else "major"
         fields = self.GROUP_FIELDS[group_by]
         grouped = list(queryset.values(*fields).annotate(
-            revenue_eur=Sum("allocated_revenue_eur"), line_count=Count("id"),
+            revenue_eur=Sum("allocated_revenue_eur"), line_count=Sum("source_line_count"),
             part_count=Count("normalized_part_number", distinct=True),
         ).order_by("-revenue_eur"))
         page = max(1, int(self.params.get("page") or 1))
@@ -363,7 +424,7 @@ class PartsSalesDetailService:
         other_brands = queryset.filter(brand_group="Other Brands").aggregate(
             value=Sum("allocated_revenue_eur")
         )["value"] or Decimal("0")
-        certified = RevenueSourceSnapshot.objects.filter(active=True, division__iexact="MI", lob="PARTS")
+        certified = active_revenue_snapshots().filter(division__iexact="MI", lob="PARTS")
         if self.params.get("start_date"):
             certified = certified.filter(business_date__gte=self.params["start_date"])
         if self.params.get("end_date"):
@@ -376,6 +437,9 @@ class PartsSalesDetailService:
         last_run = PartsSalesSynchronizationRun.objects.filter(
             status__in=["Completed", "Completed with Warnings"]
         ).first()
+        detail_through = last_run.data_through_date if last_run else None
+        certified_through = certified.aggregate(value=Max('business_date'))['value']
+        source_context = last_run.source_context_json if last_run else {}
         results = []
         for rank, row in enumerate(grouped[offset:offset + page_size], start=offset + 1):
             brand_group = row.get("brand_group") or "Brand Not Available"
@@ -401,6 +465,13 @@ class PartsSalesDetailService:
                 "data_through_date": last_run.data_through_date.isoformat() if last_run and last_run.data_through_date else None,
                 "synchronized_at": last_run.completed_at if last_run else None,
                 "status": last_run.status if last_run else "Not synchronized",
+                "certified_through_date": certified_through.isoformat() if certified_through else None,
+                "coverage_lag": bool(certified_through and (not detail_through or detail_through < certified_through)),
+                "coverage_start_date": source_context.get('start_date'),
+                "coverage_end_date": source_context.get('end_date'),
+                "coverage_gap": bool(source_context.get('start_date') and self.params.get('start_date') and str(self.params['start_date']) < source_context['start_date']),
+                "source": source_context.get('source', 'Legacy reconciliation import'),
+                "allocation_method": source_context.get('allocation_method'),
             },
             "context": {"group_by": group_by},
             "summary": {
@@ -412,7 +483,7 @@ class PartsSalesDetailService:
                 "reconciliation_coverage_pct": float(total_allocated / certified_total * 100) if certified_total else None,
                 "classification_coverage_pct": float(classified / total_allocated * 100) if total_allocated else None,
                 "end_to_end_coverage_pct": float(classified / certified_total * 100) if certified_total else None,
-                "line_count": queryset.count(),
+                "line_count": queryset.aggregate(value=Sum('source_line_count'))['value'] or 0,
             },
             "filter_options": {
                 "major_classes": list(queryset.exclude(major_class_code="").values_list(

@@ -5619,7 +5619,8 @@ class PartsSalesSynchronizationRun(models.Model):
     STATUSES = [(value, value) for value in ("Running", "Completed", "Completed with Warnings", "Failed")]
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    reconciliation_run = models.ForeignKey("ReconciliationRun", related_name="parts_sales_runs", on_delete=models.PROTECT)
+    reconciliation_run = models.ForeignKey("ReconciliationRun", related_name="parts_sales_runs", on_delete=models.PROTECT, null=True, blank=True)
+    source_context_json = models.JSONField(default=dict, blank=True)
     status = models.CharField(max_length=30, choices=STATUSES, default="Running", db_index=True)
     data_through_date = models.DateField(null=True, blank=True, db_index=True)
     records_read = models.PositiveIntegerField(default=0)
@@ -5628,7 +5629,7 @@ class PartsSalesSynchronizationRun(models.Model):
     records_unchanged = models.PositiveIntegerField(default=0)
     records_deactivated = models.PositiveIntegerField(default=0)
     classified_records = models.PositiveIntegerField(default=0)
-    allocated_revenue_eur = models.DecimalField(max_digits=22, decimal_places=4, default=0)
+    allocated_revenue_eur = models.DecimalField(max_digits=28, decimal_places=10, default=0)
     warnings_json = models.JSONField(default=list, blank=True)
     error_message = models.TextField(blank=True)
     started_at = models.DateTimeField(auto_now_add=True)
@@ -5641,6 +5642,8 @@ class PartsSalesSynchronizationRun(models.Model):
 
 class PartSaleDetail(models.Model):
     source_record_id = models.CharField(max_length=255, unique=True)
+    invoice_key = models.CharField(max_length=255, blank=True, db_index=True)
+    source_line_count = models.PositiveIntegerField(default=1)
     business_date = models.DateField(db_index=True)
     company_code = models.CharField(max_length=40, blank=True, db_index=True)
     branch_code = models.CharField(max_length=40, blank=True, db_index=True)
@@ -5658,7 +5661,7 @@ class PartSaleDetail(models.Model):
     classification_status = models.CharField(max_length=30, default="Not Classified", db_index=True)
     invoiced_quantity = models.DecimalField(max_digits=20, decimal_places=4, null=True, blank=True)
     source_line_amount = models.DecimalField(max_digits=22, decimal_places=4, default=0)
-    allocated_revenue_eur = models.DecimalField(max_digits=22, decimal_places=4, default=0)
+    allocated_revenue_eur = models.DecimalField(max_digits=28, decimal_places=10, default=0)
     source_hash = models.CharField(max_length=64, db_index=True)
     active = models.BooleanField(default=True, db_index=True)
     synchronization_run = models.ForeignKey(PartsSalesSynchronizationRun, related_name="sales", on_delete=models.PROTECT)

@@ -1,5 +1,17 @@
 # Mining360 Project Handoff
 
+## Local Parts Sales alignment — 20 November 2026
+
+Sales → Parts has a new invoice/accounting-date import from the existing Mine
+Logistics model, preserving certified Revenue and the separate order cohorts.
+The local full import and CAT catalog copy have completed; 89 targeted SQL tests
+pass. Edge desktop/mobile and complete 570-group PPC export checks passed on
+22 November. No BODEFM deployment or production runtime restart occurred. The user
+requires notification and an explicit Go before deployment. Read
+[the alignment receipt and rollout requirements](PARTS_SALES_ALIGNMENT_2026-11-20.md).
+Worktree: `.release-worktrees/parts-sales-alignment`; branch
+`feature/parts-sales-alignment-20261118`. Local preview: `http://localhost:8016/`.
+
 ## BODEFM totals and Business Overview access — 18 November 2026 UTC
 
 The combined release is installed on BODEFM at application commit

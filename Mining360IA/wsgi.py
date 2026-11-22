@@ -21,5 +21,8 @@ start_revenue_scheduler()
 from reports.parts_fulfillment_auto_sync import start_parts_scheduler
 start_parts_scheduler()
 
+from reports.parts_sales_auto_sync import start_parts_sales_scheduler
+start_parts_sales_scheduler()
+
 from reports.revenue_history_retention import start_retention_scheduler
 start_retention_scheduler()

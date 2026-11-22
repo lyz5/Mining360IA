@@ -506,7 +506,8 @@
       renderMachineFamilyGroups(data.filter_options?.family_groups || []);
       const unclassified = data.filter_options?.unclassified_family || {};
       const unclassifiedNotice = $('[data-machine-unclassified]');
-      unclassifiedNotice.hidden = !Number(unclassified.detail_rows || 0);
+      unclassifiedNotice.dataset.hasRows = String(Number(unclassified.detail_rows || 0) > 0);
+      unclassifiedNotice.hidden = state.operation !== 'machine' || unclassifiedNotice.dataset.hasRows !== 'true';
       unclassifiedNotice.textContent = `Unclassified Machine detail remains visible: ${money(unclassified.revenue_eur)} across ${Number(unclassified.detail_rows || 0).toLocaleString('en-GB')} invoice lines. A governed model or serial mapping is required before assignment to a product group.`;
       const summary = data.summary; const adjustment = Number(summary.reconciliation_adjustment_eur || 0);
       $('[data-machine-source]').textContent = `Machine details through ${dateLabel(data.freshness.data_through_date)} · ${data.freshness.status}${adjustment ? ` · technical reconciliation adjustment ${money(adjustment, true)}` : ' · reconciled to certified Machine Revenue'}`;
@@ -529,7 +530,13 @@
       state.partsPages = Math.max(1, data.pagination.pages || 1); state.partsLoaded = true;
       const config = { major: ['major_classes', 'All Major Classes'], minor: ['minor_classes', 'All Minor Classes'], ppc: ['ppcs', 'All PPC'] }; $$('[data-parts-filter]').forEach(control => { const current = control.value; const [key, label] = config[control.dataset.partsFilter]; control.innerHTML = `<option value="">${label}</option>${(data.filter_options?.[key] || []).map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join('')}`; control.value = current; });
       const summary = data.summary; const matchedPct = summary.reconciliation_coverage_pct;
-      $('[data-parts-source]').textContent = `Parts details through ${dateLabel(data.freshness.data_through_date)} · matched subset analysis only`;
+      const detailCoverage = data.freshness;
+      const refreshed = detailCoverage.synchronized_at ? ` · Imported ${dateTimeLabel(detailCoverage.synchronized_at)}` : '';
+      const lag = detailCoverage.coverage_lag ? ` · Detail coverage ends before certified Revenue (${dateLabel(detailCoverage.certified_through_date)}). Coverage percentages include this gap.` : '';
+      const historicalGap = detailCoverage.coverage_gap ? ` · The current import starts ${dateLabel(detailCoverage.coverage_start_date)}; earlier detail is from a previous import.` : '';
+      $('[data-parts-source]').textContent = `Parts details through ${dateLabel(detailCoverage.data_through_date)}${refreshed} · matched subset analysis only${lag}${historicalGap}`;
+      $('[data-parts-source]').classList.toggle('bcc-parts-coverage-lag', Boolean(detailCoverage.coverage_lag || detailCoverage.coverage_gap));
+      $('[data-parts-source]').title = detailCoverage.allocation_method || 'Legacy imported invoice-line classification. This is distinct from unique-order allocation in Parts Orders & Sales Fulfillment.';
       $('[data-parts-summary]').innerHTML = [['Certified Parts Revenue', money(summary.certified_parts_revenue_eur)], ['Matched Revenue', money(summary.allocated_invoice_revenue_eur)], ['Unmatched Revenue', money(summary.unlinked_revenue_eur)], ['Matched Coverage', matchedPct === null ? 'Not available' : `${matchedPct.toFixed(1)}%`], ['Classified CAT Revenue', money(summary.classified_revenue_eur)], ['Other Brands', money(summary.other_brands_revenue_eur)]].map(([label, value]) => `<div><span>${label}</span><strong>${value}</strong></div>`).join('');
       const certified = Number(summary.certified_parts_revenue_eur || 0); const funnel = [['Certified Parts Revenue', summary.certified_parts_revenue_eur], ['Matched to Invoice Lines', summary.allocated_invoice_revenue_eur], ['Classified to Brand', Number(summary.classified_revenue_eur || 0) + Number(summary.other_brands_revenue_eur || 0)], ['CAT Major Class', summary.classified_revenue_eur]]; $('[data-parts-funnel]').innerHTML = funnel.map(([label, value]) => `<div class="bcc-funnel-step"><span>${label}</span><b>${money(value)}</b><small>${certified ? `${(Number(value || 0) / certified * 100).toFixed(1)}% of certified` : 'Not available'}</small></div>`).join('');
       $('[data-parts-body]').innerHTML = data.results.map(item => `<tr><td><span class="bcc-rank">${item.rank}</span></td><td><strong>${escapeHtml(item.brand_group || 'Brand Not Available')}</strong></td><td><strong>${escapeHtml(item.major_class || 'Not classified')}</strong></td><td>${escapeHtml(item.major_description || 'Not classified')}</td><td>${escapeHtml(item.minor_class || 'Not classified')}</td><td>${escapeHtml(item.ppc || 'Not classified')}</td><td>${money(item.revenue_eur, true)}</td><td>${Number(item.line_count).toLocaleString('en-GB')}</td><td>${Number(item.part_count).toLocaleString('en-GB')}</td></tr>`).join('') || '<tr><td colspan="9">No classified Parts sale matches this context.</td></tr>';
@@ -537,7 +544,7 @@
     } catch (error) { if (error.name !== 'AbortError') $('[data-parts-status]').textContent = error.message; }
   }
 
-  function loadOperation(name) { state.operation = name; $$('[data-operation-view]').forEach(node => { node.hidden = node.dataset.operationView !== name; }); setHidden('[data-machine-family-picker]', name !== 'machine'); $$('[data-operation-tab]').forEach(button => button.classList.toggle('active', button.dataset.operationTab === name)); if (name === 'machine' && !state.machineLoaded) loadMachineSales(true); if (name === 'parts' && !state.partsLoaded) loadPartsSales(true); }
+  function loadOperation(name) { state.operation = name; $$('[data-operation-view]').forEach(node => { node.hidden = node.dataset.operationView !== name; }); setHidden('[data-machine-family-picker]', name !== 'machine'); setHidden('[data-machine-unclassified]', name !== 'machine' || $('[data-machine-unclassified]').dataset.hasRows !== 'true'); $$('[data-operation-tab]').forEach(button => button.classList.toggle('active', button.dataset.operationTab === name)); if (name === 'machine' && !state.machineLoaded) loadMachineSales(true); if (name === 'parts' && !state.partsLoaded) loadPartsSales(true); }
 
   async function searchEntities(type, query, target, dropdown = false) {
     if (query.trim().length < 2 && !(dropdown && !query.trim())) { target.innerHTML = '<p class="bcc-empty">Enter at least two characters.</p>'; return []; }

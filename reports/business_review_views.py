@@ -297,7 +297,7 @@ def command_center_parts_sales_export_api(request):
     workbook = Workbook()
     sheet = workbook.active
     sheet.title = "Parts Classification"
-    headers = ["Rank", "Brand Group", "Major Class", "Major Description", "Minor Class", "PPC", "Revenue EUR", "Invoice Lines", "Distinct Parts"]
+    headers = ["Rank", "Brand Group", "Major Class", "Major Description", "Minor Class", "PPC", "Revenue EUR", "Invoice Line Allocations", "Distinct Parts"]
     sheet.append(headers)
     for cell in sheet[1]:
         cell.font = Font(bold=True, color="FFFFFF")
@@ -314,6 +314,7 @@ def command_center_parts_sales_export_api(request):
     metadata.append(["Start Date", period["start_date"].isoformat()])
     metadata.append(["End Date", period["end_date"].isoformat()])
     metadata.append(["Grouping", request.GET.get("group_by") or "major"])
+    metadata.append(["Invoice Line Allocations", "Source invoice lines counted per accounting-date allocation; one invoice line can contribute on several accounting dates."])
     metadata.append(["Generated At", timezone.now().isoformat()])
     output = BytesIO()
     workbook.save(output)

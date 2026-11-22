@@ -82,3 +82,4 @@
 .bcc-performance-matrix tfoot th,.bcc-performance-matrix tfoot td{border-top:2px solid var(--bcc-border);font-weight:900}
 .bcc-performance-matrix tfoot th{background:#edf1f5;color:var(--bcc-navy);text-align:left;font-size:10px}
 .bcc-performance-matrix .bcc-turnover-totals-note{margin:7px 0 0;color:var(--bcc-muted);font-size:10px;line-height:1.4}
+.bcc-sales-source-note.bcc-parts-coverage-lag{padding:9px 12px;border-left:3px solid #c38f00;background:#fff8dc;color:#695414}

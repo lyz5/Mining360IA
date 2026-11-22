@@ -23,7 +23,7 @@ os.environ.update({
     'MINING360_SECRET_KEY': _local['secret_key'],
     'MINING360_CONFIG_ENCRYPTION_KEY': _local['encryption_key'],
     'MINING360_SQL_CONFIG_STORE': '0',
-    'BUSINESS_REVENUE_AUTO_SYNC': 'false', 'PARTS_FULFILLMENT_AUTO_SYNC': 'false',
+    'BUSINESS_REVENUE_AUTO_SYNC': 'false', 'PARTS_FULFILLMENT_AUTO_SYNC': 'false', 'PARTS_SALES_AUTO_SYNC': 'false',
     'BUSINESS_MAPPING_AUTO_SYNC_ON_STUDIO_OPEN': 'false',
     'MINING360_DASHBOARD_CONFIG': str(LOCAL_PREVIEW_STATE / 'dashboard-disabled.json'),
     'MINING360_EMAIL_CODE_LOGIN_ENABLED': '1',

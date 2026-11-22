@@ -18,6 +18,16 @@
   "projects": [
     {
       "id": "mining360",
+      "local_parts_sales_alignment": {
+        "checked_at": "2026-11-22",
+        "worktree": ".release-worktrees/parts-sales-alignment",
+        "branch": "feature/parts-sales-alignment-20261118",
+        "url": "http://localhost:8016/",
+        "database": "Mining360App_BODEFM_Local_20261116",
+        "status": "Local real-data import, 89 SQL tests, Edge desktop/mobile and full PPC export validated; not deployed",
+        "memory": "docs/PARTS_SALES_ALIGNMENT_2026-11-20.md",
+        "requires_notification_and_explicit_go": true
+      },
       "name": "Mining 360",
       "canonical_path": "C:\\Users\\diagnepa\\Documents\\MBA\\Mining360IA",
       "repository": "https://github.com/lyz5/Mining360IA.git",
