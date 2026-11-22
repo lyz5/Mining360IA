@@ -1,5 +1,16 @@
 # Mining360 Project Handoff
 
+## Parts Sales installed on BODEFM — 22 November 2026
+
+Release `76197c7a` is installed and validated after explicit Go and advance switch
+notification. Code backup, verified SQL backup, 0151/0152 migrations and 960789 CAT
+references are recorded in [the production receipt](PARTS_SALES_BODEFM_RELEASE_2026-11-22.md).
+Automatic model import completed at 14:45 UTC: 320146 groups, detail through
+20 November. October matched-to-lines coverage is 95.93%; current YTD is 78.89%.
+Certified Revenue/roles/protected services unchanged; strict HTTPS Edge,
+desktop/mobile, complete 570-group PPC export and role checks pass. Daily refresh
+uses the existing 05:00 GMT clock. Later local-only sections are historical.
+
 ## Local Parts Sales alignment — 20 November 2026
 
 Sales → Parts has a new invoice/accounting-date import from the existing Mine

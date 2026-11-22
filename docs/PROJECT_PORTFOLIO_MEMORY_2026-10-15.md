@@ -2,6 +2,14 @@
 
 Dernière consolidation : **15 octobre 2026**.
 
+**Mining360 — livré sur BODEFM le 22 novembre 2026 :** Sales → Parts, commit
+`76197c7a`, après Go explicite et notification avant bascule. Import réel terminé,
+détails jusqu'au 20 novembre, rapprochement aux lignes YTD 78,89 % (octobre 95,93 %).
+CA certifié, rôles et services protégés conservés ; Edge HTTPS strict, mobile,
+export complet et contrôle d'accès validés. Source actualisée à 05:00 GMT sur le
+calendrier existant. Reçu : `docs/PARTS_SALES_BODEFM_RELEASE_2026-11-22.md`.
+Les états locaux antérieurs ci-dessous sont historiques, pas des tâches en attente.
+
 **Mining360 — recette locale du 22 novembre 2026 :** Sales → Parts utilise le
 CA facture/date de Mine Logistics et le catalogue CAT existant. Import réel
 terminé ; 89 tests SQL, affichage Edge desktop/mobile et export PPC de 570 groupes

@@ -1,0 +1,257 @@
+{
+  "commit": "76197c7a42310e0fcbd5051115c1f3ceba12c9f7",
+  "application_commit": "17bfc408b8580f260ea130e7882ed40a3f1daab6",
+  "base_commit": "755cab7",
+  "files": [
+    {
+      "root": "app",
+      "path": "Mining360IA/settings.py",
+      "source": "Mining360IA/settings.py",
+      "sha256": "1832a89423d8b77a2db8e29ebbeaa49dbef9ee9f9bb77f7859353657cdb7363f",
+      "existed": true,
+      "previous_sha256": "2b07f5416c10c2d6bfb8053549aaa31a25dc1199fbf4ea101c24f073e4a1baa3"
+    },
+    {
+      "root": "app",
+      "path": "Mining360IA/wsgi.py",
+      "source": "Mining360IA/wsgi.py",
+      "sha256": "74f8cb908844b50fe496680794864a866ae433e7c6d9eed69a1a806a11a020b7",
+      "existed": true,
+      "previous_sha256": "420d31edd5516631bfb0e9ca820ad5901e1b992a27d9a7998e63b9bb38fc8cce"
+    },
+    {
+      "root": "app",
+      "path": "reports/models.py",
+      "source": "reports/models.py",
+      "sha256": "2bb2cb2e3fc60cb10675532e6b5d38ddfa8c7b68e7d1f7ba67bc25fb833a625a",
+      "existed": true,
+      "previous_sha256": "c1911bcf7f559671cd0ecc234a9372b1cd0c973433eed0ecfa41d8f34fba4834"
+    },
+    {
+      "root": "app",
+      "path": "reports/business_review_views.py",
+      "source": "reports/business_review_views.py",
+      "sha256": "f10d9613ab66a4fb420bf00dd90a98a8c67b7bd780cc74961f0f3b8f6f5140dc",
+      "existed": true,
+      "previous_sha256": "975a436a8ea7abb410b38168126fd0b9ea7e94f0a519f4496d90f742aa126700"
+    },
+    {
+      "root": "app",
+      "path": "reports/parts_sales_service.py",
+      "source": "reports/parts_sales_service.py",
+      "sha256": "dd227e8553d292878992026abba5d36b0132f28e9568906cbdff78e37fb54cf7",
+      "existed": true,
+      "previous_sha256": "b41442d4f92e433d4feb4e1b3ef69ad7a44479bfc8ccc79724aa965ab58a37b9"
+    },
+    {
+      "root": "app",
+      "path": "reports/parts_sales_model_sync.py",
+      "source": "reports/parts_sales_model_sync.py",
+      "sha256": "cb3f41b3754e8a2f4c8184d58c02490e25ddea3b16ce481a80410e9c20544df9",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "app",
+      "path": "reports/parts_sales_auto_sync.py",
+      "source": "reports/parts_sales_auto_sync.py",
+      "sha256": "61d2e953e7dccbef3a818b5b7b17f420c1d046a44083b0c6fe64a81e47f5a268",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "app",
+      "path": "reports/management/commands/sync_parts_sales_model.py",
+      "source": "reports/management/commands/sync_parts_sales_model.py",
+      "sha256": "7ef9ad62496bc89039e43b59afbc035c9a46b741b5bf132143b39125e72fe627",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "app",
+      "path": "reports/migrations/0151_parts_sales_model_source.py",
+      "source": "reports/migrations/0151_parts_sales_model_source.py",
+      "sha256": "5902498acfa1d2357beb2ca3d12eb8a6b6c4e3bfeeeb8aeeff9a476c487230bb",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "app",
+      "path": "reports/migrations/0152_parts_sales_source_precision.py",
+      "source": "reports/migrations/0152_parts_sales_source_precision.py",
+      "sha256": "ffabcc829c99c598a7a64611d80370583ce8823f4a18440aae14a2b442f89205",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "app",
+      "path": "deployment/parts_classification_catalog.py",
+      "source": "deployment/parts_classification_catalog.py",
+      "sha256": "067be554dbc63b3348fb81054288f5d6023cf0e1f120194d358288e4ee217b4b",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "app",
+      "path": "reports/static/reports/business_command_center_v2.js",
+      "source": "reports/static/reports/business_command_center_v2.js",
+      "sha256": "e4a1b312206dd91449798e41aeabe2d71406384de20885ede94192d443476e0a",
+      "existed": true,
+      "previous_sha256": "d92f809b9a1afe9c46b2d4c196a537ff60c68e4ad05c655842275204ec913932"
+    },
+    {
+      "root": "app",
+      "path": "reports/static/reports/business_command_center_v2.css",
+      "source": "reports/static/reports/business_command_center_v2.css",
+      "sha256": "7196706d61c52dacbb07501fb36af994d40fe057ef7d88b37f9df5e78d32b8a9",
+      "existed": true,
+      "previous_sha256": "1504741db1c011a601e342424829a40e71378c61fa1506b72e8d54e49e9d2bae"
+    },
+    {
+      "root": "app",
+      "path": "reports/templates/reports/business_command_center_v2.html",
+      "source": "reports/templates/reports/business_command_center_v2.html",
+      "sha256": "9ac3c6a9d08d767e4a8e733018b17901deeccbe3272ab1d1fe88eb9633e0cae8",
+      "existed": true,
+      "previous_sha256": "367d2a25481b3ea70f88c68a29f835651d877c5525568b91ae8c2057a87990fb"
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.js",
+      "source": "reports/static/reports/business_command_center_v2.js",
+      "sha256": "e4a1b312206dd91449798e41aeabe2d71406384de20885ede94192d443476e0a",
+      "existed": true,
+      "previous_sha256": "d92f809b9a1afe9c46b2d4c196a537ff60c68e4ad05c655842275204ec913932"
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.js.gz",
+      "source": "generated/gzip/reports/business_command_center_v2.js.gz",
+      "sha256": "1285b9ee8cceef1142c8a9dc8ca6e63bd5aecc6ca57ecabce5cdde9518788b4f",
+      "existed": true,
+      "previous_sha256": "abd421bc35cb2fbee119ebd745acb324c53b35e82723f7790700af7d8afb05c8"
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.4f60b48cc00d.js",
+      "source": "reports/static/reports/business_command_center_v2.js",
+      "sha256": "e4a1b312206dd91449798e41aeabe2d71406384de20885ede94192d443476e0a",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.4f60b48cc00d.js.gz",
+      "source": "generated/gzip/reports/business_command_center_v2.4f60b48cc00d.js.gz",
+      "sha256": "1285b9ee8cceef1142c8a9dc8ca6e63bd5aecc6ca57ecabce5cdde9518788b4f",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.css",
+      "source": "reports/static/reports/business_command_center_v2.css",
+      "sha256": "7196706d61c52dacbb07501fb36af994d40fe057ef7d88b37f9df5e78d32b8a9",
+      "existed": true,
+      "previous_sha256": "1504741db1c011a601e342424829a40e71378c61fa1506b72e8d54e49e9d2bae"
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.css.gz",
+      "source": "generated/gzip/reports/business_command_center_v2.css.gz",
+      "sha256": "2d76f4dd0aa9d29207a94b28c47f49476eb65138bc8a1ae169acc61fe50055b5",
+      "existed": true,
+      "previous_sha256": "696b0d1aff84ad0525b1716c91677f435c6810be24089b2ce56ce14339f8be27"
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.30a11eb509cf.css",
+      "source": "reports/static/reports/business_command_center_v2.css",
+      "sha256": "7196706d61c52dacbb07501fb36af994d40fe057ef7d88b37f9df5e78d32b8a9",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "reports/business_command_center_v2.30a11eb509cf.css.gz",
+      "source": "generated/gzip/reports/business_command_center_v2.30a11eb509cf.css.gz",
+      "sha256": "2d76f4dd0aa9d29207a94b28c47f49476eb65138bc8a1ae169acc61fe50055b5",
+      "existed": false,
+      "previous_sha256": null
+    },
+    {
+      "root": "static",
+      "path": "staticfiles.json",
+      "source": "generated/staticfiles.json",
+      "sha256": "c76da8bef6713dfb32982c382e447c4acacd61407d21676250019af7aff5dce1",
+      "existed": true,
+      "previous_sha256": "f2fc1e7068b85c4a765b7ff2d671aef07c8ef8cebd5f795ff6e050be5252a356"
+    }
+  ],
+  "protected": [
+    {
+      "path": "reports/business_command_center_service.py",
+      "sha256": "b5d3b07328b8289d7f0a99a77011dd2760f0e6a9c322941f71f9f62fd8756b4a"
+    },
+    {
+      "path": "reports/revenue_query.py",
+      "sha256": "a9d01be71000d7bf9980e30ca39caa27613cc7f76097ccff81ff695d2ae7d774"
+    },
+    {
+      "path": "reports/business_review_access_service.py",
+      "sha256": "b062b345d023b8658e259cdec273d04930b26ae0e07a321d98debae3f7eb98a1"
+    },
+    {
+      "path": "reports/business_mapping_access_service.py",
+      "sha256": "2c34c23634fa4e7d40c86631da061fa983c09ab1fd10091178390206985f6da5"
+    },
+    {
+      "path": "reports/access_control.py",
+      "sha256": "725770338ae842f5004dea228d764a815c08883d288cb7819992d33d0999078f"
+    },
+    {
+      "path": "reports/platform_roles.py",
+      "sha256": "2950c39faac852a6c9211b2412934b715f09342c13f39ed9b734a6d5a642f104"
+    },
+    {
+      "path": "reports/urls.py",
+      "sha256": "b525e671e5563d1b882926bb5642890f4cc837ab3a310635667f0f2e2bd6a32b"
+    },
+    {
+      "path": "reports/parts_fulfillment_service.py",
+      "sha256": "531ea62aac23bf0bd36c9c284f90bd5b1088486332eb485fd34de099a516baf3"
+    },
+    {
+      "path": "reports/parts_fulfillment_auto_sync.py",
+      "sha256": "baa693702a5504b2dc478ae2d57467c0ae8c0eb2ab9961a4ae5bceed4c852e15"
+    },
+    {
+      "path": "reports/email_signin_service.py",
+      "sha256": "11d9254446eb3881c15c88de6d39fbacebe4a93eb28beaa3de1dbe5ecfd9a83f"
+    },
+    {
+      "path": "reports/business_mapping_source_service.py",
+      "sha256": "8193ec2932b0501f176f31e6556c4f657ae8d6c547693931810d9f1484e56e18"
+    },
+    {
+      "path": "deployment/windows/start_mining360.ps1",
+      "sha256": "951299da70373ffb567bf1544a9c3a40ac90b07b4559b636ca542f10d221bcfd"
+    }
+  ],
+  "static_controls": {
+    "entries": 212,
+    "other_mappings_preserved": true
+  },
+  "explicit_immediate_go": true,
+  "sshd_verified_by_user": true,
+  "catalog": {
+    "filename": "validated-cat-catalog.jsonl.gz",
+    "sha256": "f57102d26cbc2db59f6d9f1fcfb66c969eacdc301d631696cc53b4fbd80cc081"
+  },
+  "operators": {
+    "deploy_parts_sales.ps1": "ef3bc81e9658cdd65d66b397abf30cc3bc27ee3407055c1a2eefb89d978bbdc4",
+    "parts_sales_release_prepare.py": "222931e76173cfd3f7c02175074ffe0be1a839875602cbdb22e6c606a031d764",
+    "parts_sales_release_checks.py": "b49df710f568b69f15d090e255a9956698cbaed7f1c7fe090c136a2b53a63d37",
+    "parts_sales_rollback_data.py": "8f9232492b58b97e3af6c2bfacc3e0ea1e5e6dc646da90f62148fa222733d3b5"
+  }
+}

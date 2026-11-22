@@ -1,5 +1,10 @@
 # Sales → Parts : alignement de l'alimentation comptable
 
+**Mise à jour du 22 novembre : déployé et validé sur BODEFM après Go.** Lire le
+[reçu de production](PARTS_SALES_BODEFM_RELEASE_2026-11-22.md) pour l'état actuel,
+les chiffres actualisés, les preuves et le rollback. Les sections locales
+ci-dessous conservent l'historique de développement et ses limites.
+
 État du 20 novembre 2026 : développement et import réel **locaux uniquement**,
 sur `feature/parts-sales-alignment-20261118`, issu du commit `755cab7`.
 Aucun déploiement, redémarrage, changement de configuration ou de données métier

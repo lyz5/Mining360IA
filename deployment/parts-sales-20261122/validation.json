@@ -1,0 +1,232 @@
+{
+  "status": "DeployedAndValidated",
+  "date": "2026-11-22",
+  "release_commit": "76197c7a42310e0fcbd5051115c1f3ceba12c9f7",
+  "application_commit": "17bfc408b8580f260ea130e7882ed40a3f1daab6",
+  "branch": "feature/parts-sales-alignment-20261118",
+  "explicit_go": true,
+  "switch_announced": true,
+  "host_key_pinned": true,
+  "code_backup": "D:\\Mining360Backups\\PartsSales_20261122_063444_76197c7a",
+  "data_backup": "D:\\Mining360Backups\\PartsSalesData_20261122_76197c7a\\Mining360App_before_parts.bak",
+  "data_backup_sha256": "a2adc32cf79f3673539d0c56421bc6b5b120d4e0322144a5238ba7d8aeffb077",
+  "data_backup_verified": true,
+  "files_verified": 35,
+  "catalog_records": 960789,
+  "migrations": [
+    "0151_parts_sales_model_source",
+    "0152_parts_sales_source_precision"
+  ],
+  "run": "0b66d6a9-f74b-4de7-a636-508d49f4a4c4",
+  "source_import_status": "Completed with Warnings",
+  "import_started_at": "2026-11-22 14:35:15.636015+00:00",
+  "import_completed_at": "2026-11-22 14:45:47.899480+00:00",
+  "model_records": 320146,
+  "model_allocated_eur": "318093391.9740500002",
+  "coverage_start": "2025-01-01",
+  "data_through": "2026-11-20",
+  "source_warnings": [
+    "8751 invoice/date groups: no matching invoice lines.",
+    "9 invoice/date groups: no unique accounting customer.",
+    "2 invoice/date groups: zero net invoice-line value."
+  ],
+  "periods": {
+    "October": {
+      "summary": {
+        "certified_parts_revenue_eur": 20100153.90013,
+        "allocated_invoice_revenue_eur": 19281855.69506,
+        "classified_revenue_eur": 16339832.861188728,
+        "other_brands_revenue_eur": 2448911.6717365314,
+        "unlinked_revenue_eur": 818298.2050699997,
+        "reconciliation_coverage_pct": 95.92889582270956,
+        "classification_coverage_pct": 84.7420140447114,
+        "end_to_end_coverage_pct": 81.2920783710171,
+        "line_count": 21081
+      },
+      "freshness": {
+        "data_through_date": "2026-11-20",
+        "synchronized_at": "2026-11-22 14:45:47.899480+00:00",
+        "status": "Completed with Warnings",
+        "certified_through_date": "2026-10-31",
+        "coverage_lag": false,
+        "coverage_start_date": "2025-01-01",
+        "coverage_end_date": "2026-11-22",
+        "coverage_gap": false,
+        "source": "Mine Logistics Report / FactSalesAllocation",
+        "allocation_method": "Accounting EUR allocated by signed invoiced quantity \u00d7 actual net unit price, per invoice and accounting date"
+      },
+      "group_count": 10
+    },
+    "YTD": {
+      "summary": {
+        "certified_parts_revenue_eur": 224200353.36596,
+        "allocated_invoice_revenue_eur": 176869233.92918,
+        "classified_revenue_eur": 144361910.20032552,
+        "other_brands_revenue_eur": 24174603.40873209,
+        "unlinked_revenue_eur": 47331119.436780006,
+        "reconciliation_coverage_pct": 78.88891844897233,
+        "classification_coverage_pct": 81.620701912538,
+        "end_to_end_coverage_pct": 64.3896889692609,
+        "line_count": 211711
+      },
+      "freshness": {
+        "data_through_date": "2026-11-20",
+        "synchronized_at": "2026-11-22 14:45:47.899480+00:00",
+        "status": "Completed with Warnings",
+        "certified_through_date": "2026-11-20",
+        "coverage_lag": false,
+        "coverage_start_date": "2025-01-01",
+        "coverage_end_date": "2026-11-22",
+        "coverage_gap": false,
+        "source": "Mine Logistics Report / FactSalesAllocation",
+        "allocation_method": "Accounting EUR allocated by signed invoiced quantity \u00d7 actual net unit price, per invoice and accounting date"
+      },
+      "group_count": 10
+    }
+  },
+  "october_source": {
+    "sales": 20100153.900129993,
+    "unallocated_orders": 824169.23864,
+    "difference": -8.149072527885437e-10
+  },
+  "scheduler_enabled": true,
+  "revenue_financial_hash_unchanged": true,
+  "role_signature_unchanged": true,
+  "role_checks": [
+    {
+      "role": "business_reader",
+      "http": 200,
+      "config_http": 403,
+      "is_platform_admin": false,
+      "read_permission": true
+    },
+    {
+      "role": "other_reader",
+      "http": 403,
+      "config_http": 403,
+      "is_platform_admin": false,
+      "read_permission": false
+    }
+  ],
+  "service_seconds_before": [
+    2.094,
+    1.093,
+    1.032
+  ],
+  "service_seconds_after": [
+    1.735,
+    1.046,
+    0.954
+  ],
+  "browser_before": [
+    {
+      "case": "Business Overview",
+      "trial": 1,
+      "seconds": 24.786
+    },
+    {
+      "case": "Business Overview",
+      "trial": 2,
+      "seconds": 4.159
+    },
+    {
+      "case": "Sales Parts",
+      "seconds": 5.096,
+      "summary": {
+        "certified_parts_revenue_eur": 20100153.90013,
+        "allocated_invoice_revenue_eur": 344699.9282,
+        "classified_revenue_eur": 330581.0065,
+        "other_brands_revenue_eur": 4764.1159,
+        "unlinked_revenue_eur": 19755453.97193,
+        "reconciliation_coverage_pct": 1.714911885315319,
+        "classification_coverage_pct": 95.90399633277325,
+        "end_to_end_coverage_pct": 1.644669031603096,
+        "line_count": 876
+      },
+      "freshness": {
+        "data_through_date": "2026-10-02",
+        "synchronized_at": "2026-10-04T15:32:04.121Z",
+        "status": "Completed with Warnings"
+      }
+    },
+    {
+      "case": "responsive",
+      "width": 1600,
+      "overflow": false
+    }
+  ],
+  "browser_after": [
+    {
+      "case": "Business Overview",
+      "trial": 1,
+      "seconds": 4.755
+    },
+    {
+      "case": "Business Overview",
+      "trial": 2,
+      "seconds": 2.104
+    },
+    {
+      "case": "Sales Parts",
+      "seconds": 3.908,
+      "summary": {
+        "certified_parts_revenue_eur": 20100153.90013,
+        "allocated_invoice_revenue_eur": 19281855.69506,
+        "classified_revenue_eur": 16339832.861188728,
+        "other_brands_revenue_eur": 2448911.6717365314,
+        "unlinked_revenue_eur": 818298.2050699997,
+        "reconciliation_coverage_pct": 95.92889582270956,
+        "classification_coverage_pct": 84.7420140447114,
+        "end_to_end_coverage_pct": 81.2920783710171,
+        "line_count": 21081
+      },
+      "freshness": {
+        "data_through_date": "2026-11-20",
+        "synchronized_at": "2026-11-22T14:45:47.899Z",
+        "status": "Completed with Warnings",
+        "certified_through_date": "2026-10-31",
+        "coverage_lag": false,
+        "coverage_start_date": "2025-01-01",
+        "coverage_end_date": "2026-11-22",
+        "coverage_gap": false,
+        "source": "Mine Logistics Report / FactSalesAllocation",
+        "allocation_method": "Accounting EUR allocated by signed invoiced quantity \u00d7 actual net unit price, per invoice and accounting date"
+      }
+    },
+    {
+      "case": "responsive",
+      "width": 1600,
+      "overflow": false
+    },
+    {
+      "case": "responsive",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "case": "responsive",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "case": "Complete PPC export",
+      "groups": 570,
+      "amount_reconciled": true
+    },
+    {
+      "case": "Parts Fulfillment same accounting total",
+      "amount": "20100153.90013"
+    }
+  ],
+  "strict_https": true,
+  "temporary_sessions_removed": true,
+  "emails_sent": false,
+  "global_iis_or_sql_restart": false,
+  "health": {
+    "status": "ok",
+    "application": "Mining360",
+    "database": "ok"
+  },
+  "local_sql_tests": 89,
+  "additional_rollback_sql_tests": 3
+}
