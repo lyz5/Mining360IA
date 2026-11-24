@@ -1,5 +1,16 @@
 # Mining360 Project Handoff
 
+## Current-month Parts Fulfillment deployed — 24 November 2026
+
+Application commit `ef76b01c` is installed and validated after explicit Go,
+SSH confirmation and advance switch notice. Default current month, actual/prior
+MTD comparisons, October selection, current-month shortcut, refresh and responsive
+Edge HTTPS checks pass. All monthly measures, Revenue aggregates and access
+signatures are preserved. 13 targets/33 final hashes, no migration/import, no
+global IIS/SQL restart, no emails; temporary QA sessions removed. See
+[the production receipt](PARTS_CURRENT_BODEFM_RELEASE_2026-11-24.md) for backup and
+rollback. The local-only sections below are historical, not awaiting another Go.
+
 ## Local Parts Fulfillment current month — 24 November 2026
 
 Current-month default and Actual vs Last Month are ready in `.release-worktrees/pf-current`,

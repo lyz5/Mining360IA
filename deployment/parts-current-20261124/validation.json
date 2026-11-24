@@ -1,0 +1,188 @@
+{
+  "status": "DeployedAndValidated",
+  "date": "2026-11-24",
+  "commit": "ef76b01cad58aacd95edd4ebf5abd24fc9af8d5c",
+  "branch": "feature/parts-fulfillment-current-month-20261124",
+  "explicit_go": true,
+  "sshd_confirmed": true,
+  "switch_announced": true,
+  "host_key_pinned": true,
+  "backup": "D:\\Mining360Backups\\PartsCurrent_20261124_113150_ef76b01c",
+  "targets": 13,
+  "final_files_verified": 33,
+  "health": {
+    "status": "ok",
+    "application": "Mining360",
+    "database": "ok"
+  },
+  "migrations": false,
+  "business_data_import_requested": false,
+  "global_iis_or_sql_restart": false,
+  "local_tests": 41,
+  "revenue_financial_hash_unchanged": true,
+  "role_signature_unchanged": true,
+  "role_checks": [
+    {
+      "role": "business_reader",
+      "http": 200,
+      "config_http": 403
+    },
+    {
+      "role": "other_reader",
+      "http": 403,
+      "config_http": 403
+    }
+  ],
+  "series_financial_values_unchanged_to_cent": true,
+  "service_seconds_before": [
+    1.391,
+    1.093,
+    0.969
+  ],
+  "service_seconds_after": [
+    1.343,
+    1.125,
+    1.063
+  ],
+  "kpis": {
+    "month": "2026-11",
+    "orders": "17774111.88774796",
+    "sales": "9942490.008369997",
+    "current": "3634989.15278",
+    "last": "1536901.5616699997",
+    "older": "4662028.144660001",
+    "unallocated": "108571.14926",
+    "future": "0",
+    "difference": "-0.0000000034051481634378433",
+    "coverage": "2026-11-23",
+    "blank_cohorts": [
+      "future"
+    ],
+    "reconciliation": {
+      "status": "reconciled",
+      "label": "Reconciled",
+      "difference": "-0.00",
+      "arithmetic_difference": "0.01"
+    }
+  },
+  "changes": {
+    "orders": {
+      "percent": "56.68865527473322650391802309",
+      "reason": null,
+      "current_value": "17774111.88774796",
+      "previous_value": "11343585.696477745",
+      "previous_month_total": "18313766.09903794",
+      "absolute_difference": "6430526.191270215",
+      "basis": "month_to_date",
+      "current_start": "2026-11-01",
+      "current_end": "2026-11-24",
+      "previous_start": "2026-10-01",
+      "previous_end": "2026-10-24"
+    },
+    "sales": {
+      "percent": "-18.09662655966378464871756753",
+      "reason": null,
+      "current_value": "9942490.008369997",
+      "previous_value": "12139292.42562",
+      "previous_month_total": "20100153.900130004",
+      "absolute_difference": "-2196802.417250003",
+      "basis": "month_to_date",
+      "current_start": "2026-11-01",
+      "current_end": "2026-11-23",
+      "previous_start": "2026-10-01",
+      "previous_end": "2026-10-23"
+    }
+  },
+  "browser": {
+    "checks": [
+      {
+        "case": "Current month default",
+        "trial": 1,
+        "seconds": 14.694,
+        "selected_month": "2026-11",
+        "history_months": 12
+      },
+      {
+        "case": "Current month default",
+        "trial": 2,
+        "seconds": 0.334,
+        "selected_month": "2026-11",
+        "history_months": 12
+      },
+      {
+        "case": "responsive",
+        "width": 1600,
+        "overflow": false
+      },
+      {
+        "case": "responsive",
+        "width": 1024,
+        "overflow": false
+      },
+      {
+        "case": "responsive",
+        "width": 390,
+        "overflow": false
+      },
+      {
+        "case": "October selection, current-month shortcut and refresh",
+        "passed": true
+      }
+    ],
+    "javascript_errors": [],
+    "strict_https": true,
+    "temporary_session_removed": true,
+    "emails_sent": false,
+    "kpis": {
+      "month": "2026-11",
+      "orders": "17774111.88774796",
+      "sales": "9942490.008369997",
+      "current": "3634989.15278",
+      "last": "1536901.5616699997",
+      "older": "4662028.144660001",
+      "unallocated": "108571.14926",
+      "future": "0",
+      "difference": "-0.0000000034051481634378433",
+      "coverage": "2026-11-23",
+      "blank_cohorts": [
+        "future"
+      ],
+      "reconciliation": {
+        "status": "reconciled",
+        "label": "Reconciled",
+        "difference": "-0.00",
+        "arithmetic_difference": "0.01"
+      }
+    },
+    "changes": {
+      "orders": {
+        "percent": "56.68865527473322650391802309",
+        "reason": null,
+        "current_value": "17774111.88774796",
+        "previous_value": "11343585.696477745",
+        "previous_month_total": "18313766.09903794",
+        "absolute_difference": "6430526.191270215",
+        "basis": "month_to_date",
+        "current_start": "2026-11-01",
+        "current_end": "2026-11-24",
+        "previous_start": "2026-10-01",
+        "previous_end": "2026-10-24"
+      },
+      "sales": {
+        "percent": "-18.09662655966378464871756753",
+        "reason": null,
+        "current_value": "9942490.008369997",
+        "previous_value": "12139292.42562",
+        "previous_month_total": "20100153.900130004",
+        "absolute_difference": "-2196802.417250003",
+        "basis": "month_to_date",
+        "current_start": "2026-11-01",
+        "current_end": "2026-11-23",
+        "previous_start": "2026-10-01",
+        "previous_end": "2026-10-23"
+      }
+    }
+  },
+  "temporary_sessions_removed": true,
+  "emails_sent": false
+}

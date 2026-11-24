@@ -2,6 +2,12 @@
 
 Dernière consolidation : **15 octobre 2026**.
 
+**Mining360 — BODEFM le 24 novembre 2026 :** Parts Fulfillment `ef76b01c` déployé
+après Go et notification. Mois courant, Actual vs Last Month MTD, sélecteur,
+retour courant et responsive vérifiés dans Edge HTTPS strict. Montants, rôles et
+scopes inchangés ; pas de migration/import ni redémarrage IIS/SQL global. Reçu :
+`docs/PARTS_CURRENT_BODEFM_RELEASE_2026-11-24.md`. Les notes locales sont historiques.
+
 **Mining360 — local le 24 novembre 2026 :** Parts Fulfillment ouvre le mois courant
 avec Actual vs Last Month et dates explicites. Worktree `pf-current`, branche
 `feature/parts-fulfillment-current-month-20261124`, port 8016. 41 tests SQL et Edge

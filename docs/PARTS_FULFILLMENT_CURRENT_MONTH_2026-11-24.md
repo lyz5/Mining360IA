@@ -1,5 +1,9 @@
 # Parts Fulfillment : mois courant et comparaison mensuelle
 
+**Mise à jour : livré et validé sur BODEFM après Go le 24 novembre.** Voir
+[le reçu](PARTS_CURRENT_BODEFM_RELEASE_2026-11-24.md). Les états locaux ci-dessous
+conservent l'historique de préparation.
+
 24 novembre 2026 : **implémenté et testé localement, non déployé**. Worktree
 `.release-worktrees/pf-current`, branche
 `feature/parts-fulfillment-current-month-20261124`, basé sur `6113e1f`.
