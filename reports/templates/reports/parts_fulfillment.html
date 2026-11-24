@@ -7,7 +7,7 @@
   <title>Parts Orders &amp; Sales Fulfillment | Mining360</title>
   <link rel="stylesheet" href="{% static 'reports/styles.css' %}?v=20261020-nav-icon-fix-v1">
   <link rel="stylesheet" href="{% static 'reports/dashboard_visual_copy.css' %}?v=20261001-copy-all">
-  <link rel="stylesheet" href="{% static 'reports/parts_fulfillment.css' %}?v=20261113-1">
+  <link rel="stylesheet" href="{% static 'reports/parts_fulfillment.css' %}?v=20261124-current-month">
 </head>
 <body class="pf-body">
 {% include "reports/includes/app_nav.html" %}
@@ -22,7 +22,7 @@
   <a class="pf-back" href="{% url 'business-command-center' %}">← Business Overview</a>
   <header class="pf-header">
     <div class="pf-heading"><svg class="pf-hero-icon" aria-hidden="true"><use href="#pf-box"/></svg><div><h1>Parts Orders &amp; Sales Fulfillment</h1><p>From Parts Orders to Sales — Monthly Performance</p></div></div>
-    <label class="pf-month"><span>Month</span><select data-month aria-label="Month" disabled><option value="">Loading months…</option></select></label>
+    <div class="pf-month-controls"><label class="pf-month"><span>Month</span><select data-month aria-label="Month" disabled><option value="">Loading months…</option></select></label><button type="button" class="pf-month-current" data-current-month title="Show the current calendar month">Current month</button></div>
   </header>
   <div class="pf-source"><span data-period-note>Mine Logistics Report · EUR</span><span data-freshness></span><button type="button" data-refresh>Refresh view</button></div>
   <div class="pf-state" data-loading role="status">Loading source measures…</div>
@@ -30,8 +30,8 @@
   <section class="pf-state" data-empty hidden><h2>No source data</h2><p data-empty-message></p></section>
   <div data-content hidden>
     <section class="pf-top" aria-label="Monthly performance">
-      <article class="pf-card pf-kpi"><svg class="pf-icon" aria-hidden="true"><use href="#pf-cart"/></svg><div><h2>New Parts Orders <br>This Month</h2><button class="pf-value pf-value-button" type="button" data-orders-open data-kpi="orders">—</button><div class="pf-change" data-change="orders"></div></div></article>
-      <article class="pf-card pf-kpi"><svg class="pf-icon" aria-hidden="true"><use href="#pf-box"/></svg><div><h2>What We Sold <br>This Month</h2><button class="pf-value pf-value-button" type="button" data-open-cohort="" data-kpi="sales">—</button><div class="pf-change" data-change="sales"></div></div></article>
+      <article class="pf-card pf-kpi"><svg class="pf-icon" aria-hidden="true"><use href="#pf-cart"/></svg><div><h2>New Parts Orders <br>This Month</h2><button class="pf-value pf-value-button" type="button" data-orders-open data-kpi="orders">—</button><p class="pf-comparison-value" data-comparison-value="orders"></p><div class="pf-change" data-change="orders"></div><p class="pf-comparison-period" data-comparison-period="orders"></p></div></article>
+      <article class="pf-card pf-kpi"><svg class="pf-icon" aria-hidden="true"><use href="#pf-box"/></svg><div><h2>What We Sold <br>This Month</h2><button class="pf-value pf-value-button" type="button" data-open-cohort="" data-kpi="sales">—</button><p class="pf-comparison-value" data-comparison-value="sales"></p><div class="pf-change" data-change="sales"></div><p class="pf-comparison-period" data-comparison-period="sales"></p></div></article>
       <article class="pf-card pf-origin"><h2>Where This Month’s Sales Came From</h2><p data-origin-subtitle></p><div data-breakdown></div><div class="pf-legend" data-origin-legend></div></article>
     </section>
     <section class="pf-card pf-trend" aria-labelledby="pf-trend-title">
@@ -58,5 +58,5 @@
   <section class="pf-card pf-order-note" data-order-note hidden role="status"><h2>New Parts Orders</h2><p>Order Intake is available as a model measure. A verified order-level detail source has not been exposed for this page. Accounting allocations cannot substitute for new orders.</p><button type="button" data-order-close>Close</button></section>
 </main>
 <script src="{% static 'reports/visual_export.js' %}?v=20261001-copy-all" defer></script>
-<script src="{% static 'reports/parts_fulfillment.js' %}?v=20261113-1" defer></script>
+<script src="{% static 'reports/parts_fulfillment.js' %}?v=20261124-current-month" defer></script>
 </body></html>

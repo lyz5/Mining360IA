@@ -210,6 +210,13 @@ RETURN FILTER(ValuesByMonth, NOT(ISBLANK([orders]) && ISBLANK([sales])))
 ORDER BY [MonthStart]'''
 
 
+def previous_period_dax(periods):
+    expressions = ',\n'.join(
+        f'"{key}", CALCULATE([{MEASURES[key]}], DATESBETWEEN(\'Date\'[Date],{dax_date(period["previous_start"])},{dax_date(period["previous_end"])}))'
+        for key, period in periods.items())
+    return f'EVALUATE ROW({expressions})'
+
+
 def reconciliation(row):
     if any(row.get(k) is None for k in ('sales', 'difference', *COHORTS)):
         return {'status': 'unavailable', 'label': 'Reconciliation unavailable', 'difference': row.get('difference')}
@@ -252,32 +259,65 @@ class PartsFulfillmentService:
         if len({r['month'] for r in series}) != len(series):
             raise FulfillmentUnavailable('Duplicate monthly aggregates were returned.')
         months = [r['month'] for r in series]
+        current_month = self.today.strftime('%Y-%m')
+        selected = selected or current_month
+        start = month_start(selected)
         if not months:
-            return {'ready': True, 'empty': True, 'months': [], 'series': [], 'message': 'No data is available in the source for your scope.'}
-        if selected:
-            start = month_start(selected)
-            if selected not in months:
-                return {'ready': True, 'empty': True, 'months': months, 'selected_month': selected, 'series': [], 'message': 'No source data for this month.'}
-        else:
-            completed = [m for m in months if m < self.today.strftime('%Y-%m')]
-            selected = (completed or months)[-1]
-            start = month_start(selected)
+            return {'ready': True, 'empty': True, 'months': [], 'current_month': current_month,
+                    'selected_month': selected, 'series': [], 'message': 'No data is available in the source for your scope.'}
+        if selected not in months:
+            return {'ready': True, 'empty': True, 'months': months, 'current_month': current_month,
+                    'selected_month': selected, 'series': [], 'message': 'No source data for this month.'}
         current = next(r for r in series if r['month'] == selected)
-        previous = next((r for r in series if r['month'] == shift_month(start, -1).strftime('%Y-%m')), None)
-        partial = selected == self.today.strftime('%Y-%m')
+        previous_start = shift_month(start, -1)
+        previous = next((r for r in series if r['month'] == previous_start.strftime('%Y-%m')), None)
+        partial = selected == current_month
         comparable = bool(getattr(settings, 'PARTS_FULFILLMENT_COMPARABILITY_CONFIRMED', os.getenv('PARTS_FULFILLMENT_COMPARABILITY_CONFIRMED') == '1'))
+        periods = {}
+        for key in ('orders', 'sales'):
+            end = self.today if partial else start.replace(day=calendar.monthrange(start.year, start.month)[1])
+            if partial and key == 'sales' and current['coverage']:
+                try:
+                    coverage = date.fromisoformat(current['coverage'])
+                except ValueError:
+                    raise FulfillmentUnavailable('The source accounting coverage date is invalid.') from None
+                if not start <= coverage <= self.today:
+                    raise FulfillmentUnavailable('The source accounting coverage is outside this month.')
+                end = coverage
+            last_day = calendar.monthrange(previous_start.year, previous_start.month)[1]
+            previous_end = previous_start.replace(day=min(end.day, last_day) if partial else last_day)
+            periods[key] = {'current_start': start, 'current_end': end,
+                            'previous_start': previous_start, 'previous_end': previous_end}
+        previous_values = {key: previous.get(key) if previous else None for key in ('orders', 'sales')}
+        comparison_error = None
+        if partial and previous:
+            try:
+                query = previous_period_dax(periods)
+                comparison = self.source.cached_query(query, force=True) if force_refresh else self.source.cached_query(query)
+                if len(comparison) != 1:
+                    raise FulfillmentUnavailable('Previous-period comparison is unavailable.')
+                previous_values = {key: money(comparison[0].get(key)) for key in ('orders', 'sales')}
+            except FulfillmentUnavailable:
+                previous_values = dict.fromkeys(('orders', 'sales'))
+                comparison_error = 'Previous-period comparison is temporarily unavailable. Retry the view.'
         changes = {}
         for key in ('orders', 'sales'):
-            previous_value = previous.get(key) if previous else None
-            reason = 'Month to date: a comparable elapsed prior period is not available.' if partial else None
+            previous_value = previous_values[key]
+            reason = comparison_error
+            if partial and periods[key]['current_end'].day != periods[key]['previous_end'].day:
+                reason = reason or 'The preceding month has no matching calendar day; an equivalent elapsed-period percentage is not available.'
             if previous_value is None or current.get(key) is None or Decimal(previous_value) <= 0:
                 reason = reason or 'A positive, comparable previous-month value is not available.'
             changes[key] = {'percent': None if reason else str((Decimal(current[key]) - Decimal(previous_value)) / Decimal(previous_value) * 100),
-                            'reason': reason}
+                            'reason': reason, 'current_value': current[key], 'previous_value': previous_value,
+                            'previous_month_total': previous.get(key) if previous else None,
+                            'absolute_difference': str(Decimal(current[key]) - Decimal(previous_value)) if current.get(key) is not None and previous_value is not None else None,
+                            'basis': 'month_to_date' if partial else 'calendar_month',
+                            **{name: value.isoformat() for name, value in periods[key].items()}}
         realization = None
         if comparable and current['orders'] is not None and current['current'] is not None and Decimal(current['orders']) > 0:
             realization = str(Decimal(current['current']) / Decimal(current['orders']) * 100)
-        return {'ready': True, 'empty': False, 'months': months, 'selected_month': selected,
+        return {'ready': True, 'empty': False, 'months': months, 'selected_month': selected, 'current_month': current_month,
                 'month_to_date': partial, 'kpis': current, 'changes': changes,
                 'realization_percent': realization,
                 'realization_note': None if realization is not None else 'EUR, tax basis and business scope comparability have not been confirmed, or Order Intake is not positive.',

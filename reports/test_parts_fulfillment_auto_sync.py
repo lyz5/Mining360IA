@@ -293,8 +293,8 @@ class PartsForcedReadTests(SimpleTestCase):
         source = Mock(last_refresh=None)
         source.cached_query.return_value = rows
         service = PartsFulfillmentService(SimpleNamespace(pk=1), source=source, today=FIVE.date())
-        regular = service.summary()
-        forced = service.summary(force_refresh=True)
+        regular = service.summary('2026-10')
+        forced = service.summary('2026-10', force_refresh=True)
         self.assertEqual(regular, forced)
         self.assertEqual(forced['kpis']['orders'], '100.001')
         self.assertEqual(forced['kpis']['future'], '0')

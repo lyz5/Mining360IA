@@ -18,6 +18,15 @@
   "projects": [
     {
       "id": "mining360",
+      "local_parts_current_month": {
+        "checked_at": "2026-11-24",
+        "worktree": ".release-worktrees/pf-current",
+        "branch": "feature/parts-fulfillment-current-month-20261124",
+        "url": "http://localhost:8016/business-review/parts-fulfillment/",
+        "status": "41 SQL tests and real-model Edge checks passed; not deployed",
+        "memory": "docs/PARTS_FULFILLMENT_CURRENT_MONTH_2026-11-24.md",
+        "requires_new_go": true
+      },
       "local_parts_sales_alignment": {
         "checked_at": "2026-11-22",
         "worktree": ".release-worktrees/parts-sales-alignment",

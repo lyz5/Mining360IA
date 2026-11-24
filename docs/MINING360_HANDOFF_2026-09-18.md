@@ -1,5 +1,14 @@
 # Mining360 Project Handoff
 
+## Local Parts Fulfillment current month — 24 November 2026
+
+Current-month default and Actual vs Last Month are ready in `.release-worktrees/pf-current`,
+branch `feature/parts-fulfillment-current-month-20261124`. 41 targeted SQL tests and
+real-model Edge desktop/mobile checks pass. Preview port 8016 uses the standard
+isolated snapshot plus a private read-only helper. No BODEFM change or email sent.
+Read [the note](PARTS_FULFILLMENT_CURRENT_MONTH_2026-11-24.md). Four app files,
+no migration/import; new Go and advance notice required before deployment.
+
 ## Parts Sales installed on BODEFM — 22 November 2026
 
 Release `76197c7a` is installed and validated after explicit Go and advance switch

@@ -2,6 +2,12 @@
 
 Dernière consolidation : **15 octobre 2026**.
 
+**Mining360 — local le 24 novembre 2026 :** Parts Fulfillment ouvre le mois courant
+avec Actual vs Last Month et dates explicites. Worktree `pf-current`, branche
+`feature/parts-fulfillment-current-month-20261124`, port 8016. 41 tests SQL et Edge
+sur données réelles validés ; aucun déploiement BODEFM. Nouveau Go et annonce de
+bascule requis. Voir `docs/PARTS_FULFILLMENT_CURRENT_MONTH_2026-11-24.md`.
+
 **Mining360 — livré sur BODEFM le 22 novembre 2026 :** Sales → Parts, commit
 `76197c7a`, après Go explicite et notification avant bascule. Import réel terminé,
 détails jusqu'au 20 novembre, rapprochement aux lignes YTD 78,89 % (octobre 95,93 %).

@@ -22,7 +22,7 @@
   };
   const monthLabel = m => new Intl.DateTimeFormat(locale,{month:'short',year:'numeric'}).format(new Date(`${m}-01T12:00:00`));
   const dateLabel = d => d ? new Intl.DateTimeFormat(locale,{day:'2-digit',month:'short',year:'numeric'}).format(new Date(`${d.slice(0,10)}T12:00:00`)) : '—';
-  const state={data:null, summaryController:null,detailController:null,summaryRequest:0,detailRequest:0,detailMonth:null,cohort:'',page:1,pages:1,searchTimer:null,detailTotal:null,detailSearch:'',syncTimer:null,syncController:null,syncVersion:undefined};
+  const state={data:null, followCurrent:true,summaryController:null,detailController:null,summaryRequest:0,detailRequest:0,detailMonth:null,cohort:'',page:1,pages:1,searchTimer:null,detailTotal:null,detailSearch:'',syncTimer:null,syncController:null,syncVersion:undefined};
   const show = (selector,value) => {$(selector).hidden=!value;};
   const visualCopies=[];
   function setCopyReady(group,ready) {
@@ -87,23 +87,28 @@
   }
 
   async function loadSummary(month='') {
+    state.followCurrent=!month;
     setCopyReady('summary',false);setCopyReady('detail',false);
     clearTimeout(state.searchTimer);
     state.summaryController?.abort(); state.detailController?.abort();
     const controller=new AbortController();state.summaryController=controller;
     const request=++state.summaryRequest;
     show('[data-loading]',true); show('[data-error]',false);show('[data-empty]',false);show('[data-content]',false);show('[data-detail-panel]',false);show('[data-order-note]',false);
-    $('[data-month]').disabled=true;root.setAttribute('aria-busy','true');
+    $('[data-month]').disabled=true;$('[data-current-month]').disabled=true;root.setAttribute('aria-busy','true');
     if(!state.data?.months?.length)$('[data-month]').innerHTML='<option value="">Loading months…</option>';
     try {
       const data=await read(root.dataset.summaryUrl,new URLSearchParams(month?{month}:{}),controller);
       if(request!==state.summaryRequest)return;
       state.data=data;
-      $('[data-month]').innerHTML=(data.months||[]).map(m=>`<option value="${esc(m)}">${esc(monthLabel(m))}</option>`).join('')||'<option value="">No available month</option>';
+      const available=data.months||[],options=[...available];
+      if(data.selected_month&&!options.includes(data.selected_month))options.push(data.selected_month);
+      $('[data-month]').innerHTML=options.sort().map(m=>`<option value="${esc(m)}">${esc(monthLabel(m))}${available.includes(m)?'':' · No data'}</option>`).join('')||'<option value="">No available month</option>';
       if(data.selected_month)$('[data-month]').value=data.selected_month;
-      $('[data-month]').disabled=!data.months?.length;
+      $('[data-month]').disabled=!options.length;
+      const url=new URL(location.href);
+      if(state.followCurrent)url.searchParams.delete('month');else url.searchParams.set('month',data.selected_month);
+      history.replaceState({},'',url);
       if(data.empty){show('[data-empty]',true);$('[data-empty-message]').textContent=data.message;adoptSchedule(data.auto_refresh);return true;}
-      const url=new URL(location.href);url.searchParams.set('month',data.selected_month);history.replaceState({},'',url);
       render(data);show('[data-content]',true);setCopyReady('summary',true);
       adoptSchedule(data.auto_refresh);return true;
     } catch(error) {
@@ -114,7 +119,7 @@
       show('[data-error]',true);
       return false;
     } finally {
-      if(request===state.summaryRequest){show('[data-loading]',false);root.removeAttribute('aria-busy');if(state.data?.months?.length)$('[data-month]').disabled=false;}
+      if(request===state.summaryRequest){show('[data-loading]',false);root.removeAttribute('aria-busy');$('[data-current-month]').disabled=false;if(state.data?.selected_month)$('[data-month]').disabled=false;}
     }
   }
 
@@ -146,7 +151,7 @@
       if(meta.enabled && state.syncVersion!==undefined && meta.version!==state.syncVersion){
         // Preserve a detail search/export or visual copy already in progress.
         if(root.getAttribute('aria-busy')==='true' || !$('[data-detail-panel]').hidden || !$('[data-order-note]').hidden || root.querySelector('[data-pf-copy][aria-busy="true"]')){scheduleSync(60000);return;}
-        if(!await loadSummary(state.data?.selected_month||$('[data-month]').value||''))scheduleSync(60000);
+        if(!await loadSummary(state.followCurrent?'':state.data?.selected_month||$('[data-month]').value||''))scheduleSync(60000);
       }else scheduleMetadata(meta);
     }catch(_){scheduleSync(60000);}
     finally{clearTimeout(timeout);state.syncController=null;}
@@ -164,8 +169,14 @@
     for(const key of ['orders','sales']){
       const node=$(`[data-change="${key}"]`), change=data.changes[key];
       const p=number(change.percent);node.className=`pf-change${p===null?'':p>=0?' positive':' negative'}`;
-      node.textContent=p===null?'N/A · month comparison':`${p>0?'+':''}${percent.format(p)}% vs Last Month`;
-      node.title=change.reason||'Compared with the full preceding calendar month.';
+      const mtd=change.basis==='month_to_date';
+      node.textContent=p===null?'N/A · month comparison':`${p>0?'+':''}${percent.format(p)}% vs Last Month${mtd?' MTD':''}`;
+      const dates=`${dateLabel(change.current_start)} – ${dateLabel(change.current_end)} vs ${dateLabel(change.previous_start)} – ${dateLabel(change.previous_end)}`;
+      node.title=change.reason||dates;
+      const reference=$(`[data-comparison-value="${key}"]`);
+      reference.textContent=`Last Month${mtd?' MTD':''}: ${compact(change.previous_value)}`;
+      reference.title=`${dates}. Previous period: ${eur(change.previous_value)}. Full previous month: ${eur(change.previous_month_total)}.`;
+      $(`[data-comparison-period="${key}"]`).textContent=dates;
     }
     $('[data-period-note]').textContent=`${monthLabel(data.selected_month)} · ${data.month_to_date?'Month to date':'Calendar month'} · EUR`;
     $('[data-freshness]').textContent=data.source.coverage?`Accounting entries through ${dateLabel(data.source.coverage)} · Order coverage not supplied`:'Source coverage date not supplied';
@@ -288,7 +299,9 @@
   });
   root.addEventListener('keydown',event=>{if((event.key==='Enter'||event.key===' ')&&event.target.matches('svg [role=button]')){event.preventDefault();event.target.dispatchEvent(new MouseEvent('click',{bubbles:true}));}});
   $('[data-month]').addEventListener('change',event=>loadSummary(event.target.value));
-  $('[data-refresh]').addEventListener('click',()=>loadSummary($('[data-month]').value||''));$('[data-retry]').addEventListener('click',()=>loadSummary($('[data-month]').value||''));
+  $('[data-current-month]').addEventListener('click',()=>loadSummary());
+  const reloadSummary=()=>loadSummary(state.followCurrent?'':$('[data-month]').value||'');
+  $('[data-refresh]').addEventListener('click',reloadSummary);$('[data-retry]').addEventListener('click',reloadSummary);
   $('[data-detail-close]').addEventListener('click',()=>{clearTimeout(state.searchTimer);state.detailController?.abort();setCopyReady('detail',false);show('[data-detail-panel]',false);});
   $('[data-order-close]').addEventListener('click',()=>show('[data-order-note]',false));
   ['[data-detail-cohort]','[data-detail-sort]','[data-detail-direction]'].forEach(s=>$(s).addEventListener('change',()=>{state.page=1;loadDetails();}));
